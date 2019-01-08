@@ -17,7 +17,7 @@ core:
         تسهّل تنفيذ الأنماط الشائعة بطريقة فائقة الأداء.
         <p>على سبيل المثال، توفر العلامة [`amp-img`](/ar/docs/reference/components/amp-img.html)
         الدعم الكامل لـ `srcset` حتى في المتصفحات التي لا تدعمها حتى الآن.
-        تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك]({{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}).
+        تعرّف على كيفية [إنشاء صفحة <span dir="ltr" class="nowrap">AMP HTML</span> الأولى لك](/ar/docs/getting_started/create.html).
     - title: AMP JS
       subtitle: |
         تضمن مكتبة **<span dir="ltr" class="nowrap">AMP JS</span>** العرض السريع لصفحات <span dir="ltr" class="nowrap">AMP HTML</span>.
@@ -48,7 +48,7 @@ core:
         <p>وهناك إصدار آخر من أداة التحقق من الصحة يأتي مرفقًا بكل صفحة AMP. هذا الإصدار يمكنه تسجيل أخطاء التحقق من الصحة مباشرةً في وحدة التحكم بالمتصفح عند عرض الصفحة،
         مما يتيح لك مشاهدة كيف قد تؤثر التغييرات المعقّدة في الشفرة
         على الأداء وانطباع المستخدم.
-        <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+        <p>تعرّف على المزيد بشأن [اختبار صفحات <span dir="ltr" class="nowrap">AMP HTML</span>](/ar/docs/fundamentals/validate.html).
 
 video:
   id: 5Yjoe54vzwE

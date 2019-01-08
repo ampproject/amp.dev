@@ -27,7 +27,7 @@ $title: "Analytics: الأساسيات"
 ويمكنك قياس لأي مدى قام المستخدم بالتمرير عبر الصفحة،
 وما إذا كان المستخدم متفاعلاً مع الشبكات الاجتماعية أم لا، والمزيد
 (انظر
-[نظرة عميقة على AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})).
+[نظرة عميقة على AMP Analytics]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})).
 
 كجزء من الدمج مع النظام الأساسي لـ AMP،
 قدم المزودون تهيئات <span dir="ltr" class="nowrap">`amp-analytics`</span> مسبقة التحديد

@@ -69,7 +69,7 @@ Now, whenever the displayed slide for the `<amp-carousel>`  changes, the action 
 
 The `event.index` expression evaluates to the new slide index, and the `AMP.setState()` action merges this object literal into the current state. This replaces the current value of `selected.slide` with the value of `event.index`.
 
-Tip: `AMP.setState()` performs a deep merge of nested object literals. For more details, see the [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind.html) documentation.
+Tip: `AMP.setState()` performs a deep merge of nested object literals. For more details, see the [`<amp-bind>`](/docs/reference/components/amp-bind.html) documentation.
 
 ### Bind the indicator elements
 

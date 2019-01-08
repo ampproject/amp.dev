@@ -17,7 +17,7 @@ There are several ways available to validate an AMP document. They will all
 produce the exact same result, so use whichever one suits your development
 style the most.
 
-In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable](/docs/guides/discovery.html) to third-party platforms.
+In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable](/docs/fundamentals/discovery.html) to third-party platforms.
 
 ### Browser Developer Console
 
@@ -170,7 +170,7 @@ Unsurprisingly this page is valid AMP HTML. Let's try a page that is not valid:
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
 [/sourcecode]
@@ -267,7 +267,7 @@ Each tool gives several pieces of information:
 Carefully re-reading the [spec]({{g.doc('/content/docs/fundamentals/spec.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
 
 To better understand the complete list of potential errors,
-see the [AMP Validation Errors guide](https://www.ampproject.org/docs/reference/validation_errors.html).
+see the [AMP Validation Errors guide](/docs/troubleshooting/validation_errors.html).
 If you’re still stuck after careful evaluation, [ask a
 question](http://stackoverflow.com/questions/tagged/amp-html) and we'll try to
 help.

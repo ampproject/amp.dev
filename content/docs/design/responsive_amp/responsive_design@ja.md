@@ -99,7 +99,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 たとえば、端末のビューポートの幅が 412 px で DPR が 2.6 の場合、上記のコードに基づいて画像をビューポートの幅の 75% で表示する必要があるため、ブラウザは 803 px（412 * 0.75 * 2.6）に近い画像である `apple-800.jpg` を選択します。
 
-詳細情報: AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: AMP での srcset と sizes の使用について詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
 
 #### 画像のアート ディレクションを変更する
 
@@ -117,7 +117,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
 
-詳細情報: AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/docs/design/responsive/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
 
 #### 最適な画像を配信する
 
@@ -125,7 +125,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 HTML では `picture` タグを使うことで、異なる画像形式を配信できます。AMP では `picture` タグはサポートされていませんが、`fallback` 属性を使うことで、異なる画像を配信できます。
 
-詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
+詳細情報: フォールバックについて詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 ##### 例: 異なる画像形式を配信する
 

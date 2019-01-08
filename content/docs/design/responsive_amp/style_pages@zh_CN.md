@@ -67,7 +67,7 @@ AMP 网页中不允许出现以下样式：
 
 AMP 网页不能包含外部样式表，但是自定义字体除外。
 
-其他资料: 详细了解 [AMP 中的自定义字体]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}})。
+其他资料: 详细了解 [AMP 中的自定义字体]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}})。
 
 ## 使用 CSS 预处理器
 
@@ -76,7 +76,7 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 
 
 在使用预处理器时，请特别注意您所包含的内容；请仅加载您的网页会使用的内容。 例如，[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`](/zh_cn/docs/reference/extended/amp-youtube.html) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。
+包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`](/zh_cn/docs/reference/components/amp-youtube.html) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。
 
 [sourcecode:html]{% raw %}
 <head>

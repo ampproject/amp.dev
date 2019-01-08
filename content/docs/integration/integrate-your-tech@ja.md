@@ -49,7 +49,7 @@ amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信する
 
 - [AMP プロジェクト サイト](https://www.ampproject.org/)
 - [AMP GitHub プロジェクト](https://github.com/ampproject/amphtml)
-- [AMP ブログ](https://www.ampproject.org/id/latest/blog)
-- [AMP プロジェクトのロードマップ](https://www.ampproject.org/roadmap/)
+- [AMP ブログ](/id/latest/blog)
+- [AMP プロジェクトのロードマップ](/roadmap/)
  
  

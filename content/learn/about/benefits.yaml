@@ -45,4 +45,4 @@ case:
 cta:
   title@: Get Started
   link_text@: Quickstart
-  link_url: /content/docs/getting-started.md
+  link_url: /content/docs/getting_started/quickstart.md

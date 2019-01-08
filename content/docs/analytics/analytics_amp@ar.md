@@ -46,4 +46,4 @@ $title: تهيئة Analytics
 (انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/analytics/analytics_basics.html#هل-تستخدم-amp-pixel-أو-amp-analytics؟))؟
 * ما أنواع البيانات التي ستقوم بجمعها بشأن مستخدميك، أو محتواك،
 أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير](/ar/docs/analytics/analytics_basics.html#استبدال-المتغير))؟
-* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](/ar/guides/analytics/analytics_basics.html#هوية-المستخدم))؟
+* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](/ar/docs/analytics/analytics_basics.html#هوية-المستخدم))؟

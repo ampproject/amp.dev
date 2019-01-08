@@ -22,7 +22,7 @@ JSON レスポンスの例を次に示します。
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-フォーム コンポーネントは、[amp-mustache](/ja/docs/reference/components/amp-mustache) テンプレートを使用して、ページ内に値を表示します。
+フォーム コンポーネントは、[amp-mustache](/ja/docs/reference/components/amp-mustache.html) テンプレートを使用して、ページ内に値を表示します。
 
 [sourcecode:html]
 <div submit-success>

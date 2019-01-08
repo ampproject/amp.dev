@@ -175,7 +175,7 @@ Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 
 *   Tayangkan halaman AMP dari Cache AMP (waktu muat >1 detik lebih cepat).
 *   Tampilkan asal penayang artikel (misalnya dalam header yang dapat diciutkan).
-*   Sediakan tindakan berbagi (lihat juga bagian "[Membagikan Konten AMP](/id/docs/integration/integrate-with-apps#sharing-amp-content)"
+*   Sediakan tindakan berbagi (lihat juga bagian "[Membagikan Konten AMP](/id/docs/integration/integrate-with-apps.html#sharing-amp-content)"
     di bawah).
 *   Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
 *   Setel perujuk untuk platform/aplikasi Anda.

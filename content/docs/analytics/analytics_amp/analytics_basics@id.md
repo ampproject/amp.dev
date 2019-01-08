@@ -17,7 +17,7 @@ Jika Anda mencari perilaku seperti [piksel pelacakan sederhana](https://en.wikip
 
 Untuk sebagian besar solusi analitik, gunakan `amp-analytics`. Pelacakan tampilan halaman juga dapat berfungsi di `amp-analytics`. Namun, Anda juga dapat melacak interaksi pengguna dengan jenis konten halaman apa pun, termasuk klik pada link dan tombol. Selain itu, Anda dapat mengukur seberapa jauh halaman yang di-scroll oleh pengguna, apakah pengguna berinteraksi dengan media sosial atau tidak, dan aktivitas lainnya.
 
-Pelajari lebih lanjut: Lihat [Mendalami Analitik AMP]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
+Pelajari lebih lanjut: Lihat [Mendalami Analitik AMP]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi `amp-analytics`
 yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
@@ -144,5 +144,5 @@ Jika AMP menemukan bahwa cookie tersebut ditetapkan, penggantian ID klien akan m
 
 Pelajari lebih lanjut tentang penggantian ID klien, termasuk cara menambahkan ID pemberitahuan pengguna opsional, di [Variabel yang didukung dalam analitik AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Pelajari lebih lanjut: Lanjutkan untuk mempelajari tentang analitik dengan [Mendalami Analitik AMP]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) dan [Kasus Penggunaan]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).
+Pelajari lebih lanjut: Lanjutkan untuk mempelajari tentang analitik dengan [Mendalami Analitik AMP]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}}) dan [Kasus Penggunaan]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).
 

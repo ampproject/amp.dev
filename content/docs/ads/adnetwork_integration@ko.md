@@ -46,7 +46,7 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 
 ## 빠른 가져오기 통합 만들기
 
-[빠른 가져오기](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)는 광고 요청을 광고 응답과 분리하는 AMP 메커니즘으로, 광고 요청이 페이지 수명주기의 초기에 발생하고 사용자가 원하는 경우에만 광고를 렌더링하도록 해줍니다. 빠른 가져오기는 기본 HTML 광고보다 확인된 AMP HTML 광고를 처리하는 데 주로 사용됩니다. 빠른 가져오기 내에서 광고 유효성 검사에 실패한 경우 해당 광고는 교차 도메인 iframe으로 래핑 되어 나머지 AMP 문서에서 샌드박스로 전송됩니다. 반대로 유효성 검사를 통과한 AMP HTML 광고는 페이지에 직접 기록됩니다. 빠른 가져오기에서는 AMP 광고와 AMP가 아닌 광고를 모두 처리하므로 유효성 검사에 실패한 광고에 대한 추가 광고 요청이 필요하지 않습니다. 
+[빠른 가져오기](/latest/blog/even-faster-loading-ads-in-amp/)는 광고 요청을 광고 응답과 분리하는 AMP 메커니즘으로, 광고 요청이 페이지 수명주기의 초기에 발생하고 사용자가 원하는 경우에만 광고를 렌더링하도록 해줍니다. 빠른 가져오기는 기본 HTML 광고보다 확인된 AMP HTML 광고를 처리하는 데 주로 사용됩니다. 빠른 가져오기 내에서 광고 유효성 검사에 실패한 경우 해당 광고는 교차 도메인 iframe으로 래핑 되어 나머지 AMP 문서에서 샌드박스로 전송됩니다. 반대로 유효성 검사를 통과한 AMP HTML 광고는 페이지에 직접 기록됩니다. 빠른 가져오기에서는 AMP 광고와 AMP가 아닌 광고를 모두 처리하므로 유효성 검사에 실패한 광고에 대한 추가 광고 요청이 필요하지 않습니다. 
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='빠른 가져오기 통합 흐름', caption='빠른 가져오기 통합 흐름' ) }}
 
@@ -63,5 +63,5 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 
 *   [모든 AMP 광고 확장에 대한 GitHub 디렉토리](https://github.com/ampproject/amphtml/tree/master/ads)
 *   [지원되는 광고 공급업체 목록]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
-*   [빠른 가져오기 출시 관련 블로그 항목](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
+*   [빠른 가져오기 출시 관련 블로그 항목](/latest/blog/even-faster-loading-ads-in-amp/)
  

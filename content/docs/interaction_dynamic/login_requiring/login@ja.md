@@ -66,7 +66,7 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - AMP ランタイムはログインページを閉じて、return URL パラメータで指定されたページにリダイレクトします
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
-ヒント: このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access#login-flow)をご覧ください。
+ヒント: このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access.html#login-flow)をご覧ください。
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>

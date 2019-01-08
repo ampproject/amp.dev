@@ -45,7 +45,7 @@ faq:
       Tujuan project ini adalah agar semua konten, dari artikel berita hingga video dan dari blog hingga halaman niaga dan GIF, dapat berfungsi menggunakan Accelerated Mobile Pages.
   - title: Apakah memerlukan lebih banyak usaha untuk membuat konten saya berfungsi pada Accelerated Mobile Pages?
     answer: |
-      Singkatnya, tidak banyak. Karena “HTML AMP” secara keseluruhan dibuat dari teknologi web yang sudah ada, proses pengembangannya mencerminkan proses yang sudah digunakan penayang dan pengiklan saat ini. Penayang dan pengiklan dapat mempelajari [spesifikasi HTML AMP](/id/docs/reference/spec.html) di GitHub. Bagi mereka yang terbiasa dengan proses saat ini, kami tidak mengharapkan kurva pembelajaran yang signifikan.
+      Singkatnya, tidak banyak. Karena “HTML AMP” secara keseluruhan dibuat dari teknologi web yang sudah ada, proses pengembangannya mencerminkan proses yang sudah digunakan penayang dan pengiklan saat ini. Penayang dan pengiklan dapat mempelajari [spesifikasi HTML AMP](/id/docs/fundamentals/spec.html) di GitHub. Bagi mereka yang terbiasa dengan proses saat ini, kami tidak mengharapkan kurva pembelajaran yang signifikan.
   - title: Bagaimana cara penayang atau pengiklan mengubah konten menjadi HTML AMP?
     answer: |
       Penayang dan penyedia Sistem Pengelolaan Konten (CMS) dapat mengembangkan integrasi dengan CMS mereka untuk membuat konten AMP. Automattic sudah menerbitkan [plugin AMP WordPress](https://wordpress.org/plugins/amp/) dan kami berharap semua sistem pengelolaan konten akan menambah dukungan untuk halaman HTML AMP.

@@ -36,7 +36,7 @@ $title: لغة CSS المعتمدة
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 جميع ترميزات AMP المطلوبة ولغة CSS المضمّنة من ملفات المصدر `*.scss`.
 كما يتضمّن أيضًا النص البرمجي للعنصر المخصص لـ
-<a href="/docs/reference/extended/amp-youtube.html">`amp-youtube`</a>، وغيره،
+<a href="/docs/reference/components/amp-youtube.html">`amp-youtube`</a>، وغيره،
 وهكذا يمكن أن تتضمن العديد من الصفحات في الموقع مقاطع فيديو youtube مضمّنة.
 
 [sourcecode:html] {% raw %}

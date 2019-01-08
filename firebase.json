@@ -4,6 +4,15 @@
     "cleanUrls": true,
     "headers": [
       {
+        "source": "**/*",
+        "headers": [
+          {
+            "key":"X-Frame-Options",
+            "value":"SAMEORIGIN"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
         "headers": [
           {
@@ -14,24 +23,6 @@
       },
       {
         "source": "service-worker.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
-      },
-      {
-        "source": "/amp-conf-2017/",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
-      },
-      {
-        "source": "/amp-conf-2017-pwa/",
         "headers": [
           {
             "key": "Cache-Control",

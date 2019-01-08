@@ -45,7 +45,7 @@ faq:
       我们的目标是让所有内容（从新闻报道到视频，从博客到商务网页以及 GIF）都能使用 Accelerated Mobile Pages。
   - title: 让我的内容采用 Accelerated Mobile Pages 会增加工作量吗？
     answer: |
-      简言之，会增加，但不会增加很多。由于“AMP HTML”完全是在现有网络技术基础上打造出来的，因此开发流程与发布商和广告主如今已在使用的流程完全相同。发布商和广告主可以通过 GitHub 熟悉 [AMP HTML 规范](/zh_cn/docs/reference/spec.html)。已经习惯使用当前流程的发布商和广告主很快就能掌握相关技巧。
+      简言之，会增加，但不会增加很多。由于“AMP HTML”完全是在现有网络技术基础上打造出来的，因此开发流程与发布商和广告主如今已在使用的流程完全相同。发布商和广告主可以通过 GitHub 熟悉 [AMP HTML 规范](/zh_cn/docs/fundamentals/spec.html)。已经习惯使用当前流程的发布商和广告主很快就能掌握相关技巧。
   - title: 发布商或广告主如何将内容添加到 AMP HTML 中？
     answer: |
       发布商和内容管理系统 (CMS) 提供商可以将 AMP HTML 与其 CMS 相集成，以生成 AMP 内容。Automattic 已经发布了 [WordPress AMP 插件](https://wordpress.org/plugins/amp/)，我们希望所有内容管理系统都能增加对 AMP HTML 网页的支持。

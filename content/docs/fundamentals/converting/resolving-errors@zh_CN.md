@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 {% endcall %}
 
 {% call callout('重要提示', type='caution') %}
-整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})。
+整个 AMP 文档中只能有 1 个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})。
 {% endcall %}
 
 ## 排除第三方 JavaScript
@@ -339,7 +339,7 @@ AMP validation successful.
 
 - [什么是 DOM 重排？](http://stackoverflow.com/a/27637245)
 - [如果未定义 layout 属性，会怎样？](/zh_cn/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [如果未定义宽度和高度，会怎样？](https://www.ampproject.org/zh_cn/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [如果未定义宽度和高度，会怎样？](/zh_cn/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
 
 
 <div class="prev-next-buttons">

@@ -170,7 +170,7 @@ AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방�
 
 *   AMP 캐시에서 AMP 페이지 게재(1초 미만의 빠른 로드 시간)
 *   기사의 게시자 원본 표시(예: 접을 수 있는 헤더에 표시)
-*   공유 작업 제공(아래 '[AMP 콘텐츠 공유](/ko/docs/integration/integrate-with-apps#sharing-amp-content)'
+*   공유 작업 제공(아래 '[AMP 콘텐츠 공유](/ko/docs/integration/integrate-with-apps.html#sharing-amp-content)'
     섹션 참조)
 *   WebView 기반 뷰어에서 타사 쿠키 활성화
 *   플랫폼/앱에 대한 리퍼러 설정

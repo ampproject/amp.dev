@@ -27,7 +27,7 @@ core:
         [AMP 사양의 HTML 태그](/ko/docs/fundamentals/spec.html) 참조).
         AMP HTML 구성요소라고 하는 맞춤 요소는
         효율적인 방식으로 구현하기 쉽게 일반적인 패턴을 만듭니다.
-        <p>예를 들어 [`amp-img`](/ko/docs/reference/amp-img.html) 태그는
+        <p>예를 들어 [`amp-img`](/ko/docs/reference/components/amp-img.html) 태그는
         아직 `srcset`를 지원하지 않는 브라우저에서도 완전히 지원합니다.
         [첫 AMP HTML 페이지 만들기](/ko/docs/getting_started/create.html)에 대해 알아보세요.
         <p>검색엔진 및 기타 플랫폼은 `<link rel="">` HTML 태그를 통해

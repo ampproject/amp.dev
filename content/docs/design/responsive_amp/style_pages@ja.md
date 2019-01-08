@@ -67,7 +67,7 @@ $title: サポートされる CSS
 
 AMP ページでは外部のスタイルシートを使用できませんが、カスタム フォントは例外です。
 
-詳細情報: 詳しくは、[AMP のカスタム フォント]({{g.doc('/content/docs/design/responsive/custom_fonts.md', locale=doc.locale).url.path}}) をご覧ください。
+詳細情報: 詳しくは、[AMP のカスタム フォント]({{g.doc('/content/docs/design/responsive_amp/custom_fonts.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## CSS プリプロセッサを使用する
 
@@ -76,7 +76,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 
 
 プリプロセッサを使用する場合は、追加する対象に特に注意を払い、ページで使用するものだけを読み込むようにしてください。たとえば、[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-には、必要なすべての AMP マークアップと、`*.scss` ソースファイルからのインラインの CSS を含めます。また、サイトの多くのページで埋め込みの YouTube 動画を使用できるように、[`amp-youtube`](/ja/docs/reference/extended/amp-youtube.html) のカスタム要素のスクリプトも指定します。
+には、必要なすべての AMP マークアップと、`*.scss` ソースファイルからのインラインの CSS を含めます。また、サイトの多くのページで埋め込みの YouTube 動画を使用できるように、[`amp-youtube`](/ja/docs/reference/components/amp-youtube.html) のカスタム要素のスクリプトも指定します。
 
 [sourcecode:html]{% raw %}
 <head>

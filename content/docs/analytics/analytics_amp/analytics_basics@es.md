@@ -14,7 +14,7 @@ Si lo que buscas es un comportamiento como el de un [píxel de seguimiento senci
 
 En la mayor parte de las soluciones de análisis se debe utilizar `amp-analytics`. El seguimiento de páginas vistas también funciona con `amp-analytics`. También puedes hacer el seguimiento de la interacción de los usuarios con cualquier tipo de contenido de la página, incluidos los clics en los enlaces y en los botones. Además, permite medir hasta qué punto de la página llegó el usuario o saber si el usuario utilizó los medios sociales, entre otros datos.
 
-Más información: Consulta el artículo [Información detallada de AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})
+Más información: Consulta el artículo [Información detallada de AMP Analytics]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})
 
 Como parte de la integración en la plataforma AMP, los proveedores han ofrecido configuraciones de `amp-analytics` predefinidas, con lo que es más fácil captar datos y enviarlos a las herramientas de seguimiento. Se puede acceder a la documentación del proveedor desde la lista [de proveedores de Analytics]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
@@ -76,7 +76,7 @@ Al visualizarse la página (según lo especificado por el uso de la palabra clav
 
 Los componentes [amp-pixel](/es/docs/reference/components/amp-pixel.html)
 y [amp-analytics](/es/docs/reference/components/amp-analytics.html)
-permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente](/es/docs/analytics_basics.html#user-identification):
+permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente](/es/docs/analytics/analytics_basics.html#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -138,4 +138,4 @@ Si AMP detecta que esta cookie está definida, la sustitución del ID de cliente
 
 Si quieres obtener más información acerca de la sustitución del ID de cliente y de cómo añadir una ID de notificación del usuario opcional, consulta el artículo sobre [variables compatibles con las analíticas de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Más información: Obtén más información sobre Analytics en [Información detallada de AMP Analytics]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) y [Casos de uso]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).
+Más información: Obtén más información sobre Analytics en [Información detallada de AMP Analytics]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}}) y [Casos de uso]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}}).

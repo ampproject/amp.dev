@@ -65,14 +65,14 @@ $title: 이미지 및 동영상 삽입
 </amp-iframe>
 </div>
 
-읽어보기: Learn more about [고급 레이아웃 기술]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}})
+읽어보기: Learn more about [고급 레이아웃 기술]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}})
 에 관해 자세히 알아보세요.
 
 ### 동작 및 플레이스홀더
 
 AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시 영역 위치, 시스템 리소스, 연결 대역폭 등과 같은 요인을 바탕으로 리소스 로드를 지연시킬지 우선할지 선택할 수 있습니다.
 
-읽어보기: [이미지의 대체 내용 및 자리표시자를 제공]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}) 하는 방법에 관해 자세히 알아보세요.
+읽어보기: [이미지의 대체 내용 및 자리표시자를 제공]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}) 하는 방법에 관해 자세히 알아보세요.
 
 
 ## 애니메이션 이미지

@@ -15,9 +15,9 @@ core:
         [Balises HTML dans la spécification AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
         Ces éléments personnalisés, appelés composants AMP HTML,
         permettent d'implémenter facilement et efficacement des modèles communs.
-        <p>Par exemple, la balise [`amp-img`](/fr/docs/reference/components/amp-img)
+        <p>Par exemple, la balise [`amp-img`](/fr/docs/reference/components/amp-img.html)
         offre une entière prise en charge de `srcset` même dans les navigateurs qui ne sont pas encore compatibles.
-        Découvrez comment [créer votre première page AMP HTML]({{g.doc('/content/docs/getting_started/create.md', locale=doc.locale).url.path}}).
+        Découvrez comment [créer votre première page AMP HTML](/fr/docs/getting_started/create.html).
     - title: AMP JS
       subtitle: |
         La bibliothèque **AMP JS** garantit un rendu rapide des pages AMP HTML.
@@ -48,7 +48,7 @@ core:
         <p>Une autre version du système de validation est intégrée à chaque page AMP. Cette version peut consigner les erreurs de validation directement dans la console du navigateur lors du rendu de la page
         pour vous permettre de connaître l'impact des changements de code
         complexes sur la performance et l'expérience utilisateur.
-        <p>En savoir plus sur le [test des pages AMP HTML]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
+        <p>En savoir plus sur le [test des pages AMP HTML](/fr/docs/fundamentals/validate.html).
 
 video:
   id: FUXGfjII5iA

@@ -134,7 +134,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 {% endcall %}
 
 {% call callout('중요', type='caution') %}
-전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}})를 확인하세요.
+전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}})를 확인하세요.
 {% endcall %}
 
 ## 타사 자바스크립트 제외
@@ -339,7 +339,7 @@ AMP validation successful.
 
 - [DOM 리플로우란 무엇인가요?](http://stackoverflow.com/a/27637245)
 - [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](/ko/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](https://www.ampproject.org/ko/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](/ko/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
 
 
 <div class="prev-next-buttons">

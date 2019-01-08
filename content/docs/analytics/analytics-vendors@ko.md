@@ -3,11 +3,11 @@ $title: 애널리틱스 공급업체
 ---
 [TOC]
 
-이 도움말에서는 [`amp-analytics`](ko/docs/reference/components/amp-analytics.html) 구성요소에 사용할 내장형 구성을 갖춘 분석 공급업체를 소개합니다.
+이 도움말에서는 [`amp-analytics`](/ko/docs/reference/components/amp-analytics.html) 구성요소에 사용할 내장형 구성을 갖춘 분석 공급업체를 소개합니다.
 
 분석 데이터를 타사 공급업체로 전송하려면 다음 단계를 따르세요.
 
-1. [`<amp-analytics> `](ko/docs/reference/components/amp-analytics.html) 태그에서 `type` 속성을 추가하고 아래 [*공급업체*](#vendors) 섹션에서 설명한 대로 지정된 공급업체에 해당 값을 설정합니다.
+1. [`<amp-analytics> `](/ko/docs/reference/components/amp-analytics.html) 태그에서 `type` 속성을 추가하고 아래 [*공급업체*](#vendors) 섹션에서 설명한 대로 지정된 공급업체에 해당 값을 설정합니다.
 2. 어떤 데이터를 확보 및 추적할지 결정하고 구성 데이터에서 세부정보를 지정합니다. 분석 데이터를 확보하는 방법에 관한 정보는 공급업체의 도움말을 참조하세요.
 
 다음 예에서는 amp-analytics용 빌트인 환경설정을 지원하는 타사 애널리틱스 서비스 업체인 [Google 애널리틱스](#google-analytics)에 페이지뷰 데이터를 전송합니다.
@@ -35,7 +35,7 @@ $title: 애널리틱스 공급업체
 {% endcall %}
 
 {% call callout('참고', type='note') %}
-서비스를 [`<amp-analytics>`](ko/docs/reference/components/amp-analytics.html)와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](ko/docs/analytics/integrating-analytics.html) 세부정보를 참조하세요.
+서비스를 [`<amp-analytics>`](/ko/docs/reference/components/amp-analytics.html)와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](/ko/docs/analytics/integrating-analytics.html) 세부정보를 참조하세요.
 {% endcall %}
 
 <hr>

@@ -62,7 +62,7 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 
 ### Step 5: (Optional) Specify a placeholder
 
-Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -76,7 +76,7 @@ Depending on the ad network, you can choose to show a placeholder until the ad i
 
 ### Step 6: (Optional) Specify a fallback
 
-Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -92,7 +92,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serving direct-sold AMPHTML ads
 
-The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Augmenting targeting data on ad requests
 

@@ -22,7 +22,7 @@ $title: 添加评论
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-表单组件会通过使用 [amp-mustache](/zh_cn/docs/reference/components/amp-mustache) 模板来仅将上述值显示在该网页内：
+表单组件会通过使用 [amp-mustache](/zh_cn/docs/reference/components/amp-mustache.html) 模板来仅将上述值显示在该网页内：
 
 [sourcecode:html]
 <div submit-success>

@@ -9,10 +9,10 @@ Our ad is a simple image with a hyperlink to the advertised site (a shameless pl
 
 ```html hl_lines="2 3 4 5 6"
 <body>
-  <a target="_blank" href="https://www.ampproject.org">
+  <a target="_blank" href="https://www.amp.dev">
     <amp-img width="300" height="250"
         alt="Learn amp"
-        src="https://www.ampproject.org/static/img/docs/ads/amp-300x250.png"></amp-img>
+        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
   </a>
 </body>
 ```
@@ -24,6 +24,6 @@ If you open your html file in your browser, you should see the following image:
 If you click the image ad, it takes you to the advertised site (i.e., the AMP Project site).
 
 <div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_shell.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/docs/ads/amphtml_ads/track_views.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
+  <a class="button prev-button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_amphtml_ad/create_shell.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
+  <a class="button next-button" href="{{g.doc('/content/docs/ads/amphtml_ads/create_amphtml_ad/track_views.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
 </div>

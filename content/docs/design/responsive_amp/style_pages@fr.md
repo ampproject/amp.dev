@@ -21,7 +21,7 @@ Nous utilisons [Grow](http://grow.io/) pour créer les pages AMP statiques qui c
 
 Lorsque vous utilisez des préprocesseurs, accordez une attention particulière à ce que vous incluez ; chargez seulement ce que vos pages utilisent.
 Par exemple, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclut tout le balisage AMP requis et le CSS intégré à partir des fichiers sources `*.scss`.
-Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`](/docs/reference/extended/amp-youtube.html), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
+Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`](/docs/reference/components/amp-youtube.html), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
 
 [sourcecode:html] {% raw %}
 <head>

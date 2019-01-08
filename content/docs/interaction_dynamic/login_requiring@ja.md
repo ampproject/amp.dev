@@ -1,7 +1,7 @@
 ---
 $title: ログインが必要な AMP ページを作成する
 ---
-ページ上でユーザーが行う操作（たとえば「コメントを投稿する」）は、ログインフローを使って条件付けできます。AMP ページにログインフローを実装するには、[amp-access](/ja/docs/reference/components/amp-access) コンポーネントと [amp-form](/ja/docs/reference/components/amp-form) コンポーネントを組み合わせて使用します。
+ページ上でユーザーが行う操作（たとえば「コメントを投稿する」）は、ログインフローを使って条件付けできます。AMP ページにログインフローを実装するには、[amp-access](/ja/docs/reference/components/amp-access.html) コンポーネントと [amp-form](/ja/docs/reference/components/amp-form.html) コンポーネントを組み合わせて使用します。
 
 ヒント: 実装のサンプルを用意しています。[ampbyexample.com](https://ampbyexample.com) の[コメント欄の例](https://ampbyexample.com/samples_templates/comment_section/)をご覧ください。
 

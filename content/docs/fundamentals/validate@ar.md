@@ -11,7 +11,7 @@ $title: التحقق من صحة صفحات AMP
 إلى النتيجة ذاتها، فيمكنك استخدام أي طريقة تناسب
 نمط التطوير لديك بشكل أكبر.
 
-بالإضافة إلى صلاحية AMP، قد تحتاج أيضًا إلى التأكد من أن مستند AMP [قابل للاكتشاف](/ar/docs/guides/discovery.html) لدى الأنظمة الأساسية التابعة لجهات خارجية.
+بالإضافة إلى صلاحية AMP، قد تحتاج أيضًا إلى التأكد من أن مستند AMP [قابل للاكتشاف](/ar/docs/fundamentals/discovery.html) لدى الأنظمة الأساسية التابعة لجهات خارجية.
 
 ### وحدة تحكم Developer Console بالمتصفّح.
 
@@ -99,7 +99,7 @@ https://www.ampproject.org/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
 [/sourcecode]
@@ -179,6 +179,6 @@ $ amphtml-validator --help
 بعد إعادة قراءة المواصفات بعناية، تبيّن لنا أننا نستخدم علامة `<img>`، في حين كان يجب استخدم علامة `<amp-img>`.
 
 لفهم القائمة الكاملة للأخطاء المحتملة بشكل أفضل،
-راجع [دليل أخطاء التحقق من صحة صفحات AMP](/ar/docs/reference/validation_errors.html).
+راجع [دليل أخطاء التحقق من صحة صفحات AMP](/ar/docs/troubleshooting/validation_errors.html).
 إذا كنت لا تزال تعاني من مشكلات بعد التقييم بعناية، يمكنك <a href="http://stackoverflow.com/questions/tagged/amp-html">طرح
 سؤال</a> وسنحاول المساعدة.

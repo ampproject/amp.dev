@@ -14,7 +14,7 @@ Here are some quick tips to improve user engagement with AMP.
 
 ### Optimize for user engagement and retention
 
-- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`](/docs/reference/components/amp-carouse.html) to create rich image carousels and [`amp-iframe`](/docs/reference/components/amp-iframe) to
+- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`](/docs/reference/components/amp-carousel.html) to create rich image carousels and [`amp-iframe`](/docs/reference/components/amp-iframe.html) to
 incorporate interactive elements that AMP does not natively support.
 
 - **Create personalized user journeys.** Offer a login button, and if your content
@@ -46,7 +46,7 @@ readers. Use [`amp-install-serviceworker`](/docs/reference/components/amp-instal
 
 ### Participate in the open-source AMP Project to help shape its development
 
-- **Watch the AMP roadmap** for updates and features at [ampproject.org/roadmap](https://www.ampproject.org/roadmap).
+- **Watch the AMP roadmap** for updates and features at [ampproject.org/roadmap](/roadmap).
 
 - **Get involved.** Contribute source code, file bugs, or offer feedback
 on [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Share your input about AMP at [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).

@@ -48,5 +48,5 @@ http://localhost:8000/article.amp.html
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/review_code"><span class="arrow-next">Berikutnya</span></a>
+  <a class="button next-button" href="/id/docs/fundamentals/add_advanced/review_code.html"><span class="arrow-next">Berikutnya</span></a>
 </div>

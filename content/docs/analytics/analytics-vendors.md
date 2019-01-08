@@ -112,6 +112,13 @@ Type attribute value: `dynatrace`
 
 Adds support for Dynatrace real user monitoring. Requires defining *var* `app` with a Dynatrace provided *application id* and *var* `tenant` with a Dynatrace provided *environment identifier*. More details for adding Dynatrace real user monitoring can be found at [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
+### EPICA
+
+Type attribute value: `epica`
+
+Adds support for EPICA page views and events.
+More details can be found at [EPICA docs](https://www.epica.ai/docs/spec/).
+
 ### Eulerian Analytics
 
 Type attribute value: `euleriananalytics`
@@ -162,6 +169,17 @@ Additionally, the following variables must be defined:
 * `url`: HTTPS location of `amp-analytics-infonline.html`
 
 More details for adding INFOnline / IVW support can be found at [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
+
+### Keen
+
+Type attribute value: `keen`
+
+Adds support for Keen. Additionally, the following `vars` must be defined:
+
+* `projectId`: your project id
+* `writeKey`: your write key
+
+Use `extraUrlParams` to add more data. Configuration details can be found at [keen.io/docs/api](https://keen.io/docs/api/).
 
 ### Krux
 
@@ -255,11 +273,28 @@ Type attribute value: `parsely`
 
 Adds support for Parsely. Configuration details can be found at [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
+### Permutive
+
+Type attribute value: `permutive`
+
+Adds support for Permutive event collection. Additionally, the following `vars` must be defined:
+
+* `namespace`: your Permutive AMP namespace
+* `key`: your Permutive public API key
+
+Use `extraUrlParams` to add additional event properties. Full configuration details can be found at [support.permutive.com](http://support.permutive.com).
+
 ### Piano
 
 Type attribute value: `piano`
 
 Adds support for Piano.  Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+
+### Pinpoll
+
+Type attribute value: `pinpoll`
+
+Adds support for Pinpoll.  Configuration details can be found at [pinpoll.com](https://pinpoll.com/).
 
 ### Pressboard
 
@@ -330,7 +365,7 @@ Adds support for Treasure Data. Configuration details can be found at [treasured
 
 ### Webtrekk
 
-The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_2` instead
+The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_v2` instead
 
 Adds support for Webtrekk. Configuration details can be found at [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
 

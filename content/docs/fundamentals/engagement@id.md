@@ -48,7 +48,7 @@ Ikuti praktik terbaik [monetisasi iklan]({{g.doc('/content/docs/ads/monetization
 
 ### Berpartisipasi di Project AMP open source untuk membantu dalam membentuk pengembangannya
 
-- **Tonton panduan AMP** untuk update dan fitur di [ampproject.org/roadmap](https://www.ampproject.org/id/roadmap).
+- **Tonton panduan AMP** untuk update dan fitur di [ampproject.org/roadmap](/roadmap/).
 
 - **Libatkan diri Anda.**  Berikan kontribusi berupa kode sumber, bug file, atau tawarkan masukan di
 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Bagikan masukan tentang AMP di

@@ -11,7 +11,7 @@ toc: true
 [أحطنا علمًا.](https://github.com/ampproject/docs/issues/new)
 
 يمكنك أيضًا المساهمة بحالات الاستخدام الخاصة بك،
-انظر [كيفية المساهمة](/ar/docs/support/contribute.html).
+انظر [كيفية المساهمة](/ar/contribute/).
 
 ## تتبع مشاهدات الصفحة
 
@@ -20,7 +20,7 @@ toc: true
 ### باستخدام <span dir="ltr" class="nowrap">amp-pixel</span>
 
 أرسل بيانات مشاهدة الصفحة إلى عنوان URL محدّد باستخدام
-[<span dir="ltr" class="nowrap">amp-pixel</span>](/ar/docs/reference/amp-pixel.html):
+[<span dir="ltr" class="nowrap">amp-pixel</span>](/ar/docs/reference/components/amp-pixel.html):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>

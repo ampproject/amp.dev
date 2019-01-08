@@ -8,7 +8,7 @@ Menayangkan iklan ke halaman AMP tidak jauh berbeda dengan menayangkan iklan tra
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='menayangkan iklan ke halaman AMP', align='' ) }}
 
-1.  Dimulai dengan halaman AMP, penayang membuat slot di halaman untuk menampilkan iklan. Secara tradisional, tindakan ini dilakukan dengan memasukkan cuplikan JavaScript, namun di AMP, penayang menambahkan tag [`<amp-ad>`](id/docs/reference/components/amp-ad) ke halaman AMP-nya untuk jaringan iklan tertentu. Untuk mempelajari detailnya, lihat panduan [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}).
+1.  Dimulai dengan halaman AMP, penayang membuat slot di halaman untuk menampilkan iklan. Secara tradisional, tindakan ini dilakukan dengan memasukkan cuplikan JavaScript, namun di AMP, penayang menambahkan tag [`<amp-ad>`](/id/docs/reference/components/amp-ad.html) ke halaman AMP-nya untuk jaringan iklan tertentu. Untuk mempelajari detailnya, lihat panduan [Memonetasi halaman AMP dengan iklan]({{g.doc('/content/docs/ads/monetization.md', locale=doc.locale).url.path}}).
 
 2.  Ketika pengguna memuat halaman AMP, tag `<amp-ad>` akan mengirim permintaan iklan ke jaringan iklan. Untuk menampilkan iklan pada halaman AMP, jaringan iklan membuat implementasi `amp-ad`. Untuk mempelajari detailnya, lihat panduan [Mengintegrasikan jaringan iklan ke AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
@@ -24,7 +24,7 @@ Ingin mengintegrasikan teknologi iklan Anda dengan AMP? Lihat [panduan]({{g.doc(
 
 ## Iklan yang didukung
 
-AMP mendukung iklan tradisional serta iklan AMPHTML yang lebih cepat dan aman.  Terlepas dari cara membuatnya, iklan di halaman AMP sama seperti resource eksternal apa pun dan harus diputar dalam [batasan yang ditempatkan di semua resource di AMP](id/learn/about-how/) yang sama.   Untuk mempelajari lebih lanjut persyaratan iklan di AMP, lihat [panduan ini](https://github.com/ampproject/amphtml/blob/master/ads/README.md#constraints).
+AMP mendukung iklan tradisional serta iklan AMPHTML yang lebih cepat dan aman.  Terlepas dari cara membuatnya, iklan di halaman AMP sama seperti resource eksternal apa pun dan harus diputar dalam [batasan yang ditempatkan di semua resource di AMP](/id/learn/about-how/) yang sama.   Untuk mempelajari lebih lanjut persyaratan iklan di AMP, lihat [panduan ini](https://github.com/ampproject/amphtml/blob/master/ads/README.md#constraints).
 
 ### Lebih cepat dengan iklan AMPHTML
 

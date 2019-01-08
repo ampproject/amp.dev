@@ -24,22 +24,22 @@ Voici la liste complète des valeurs autorisées pour l'attribut de mise en page
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">Non</td>
-      <td data-th="Behavior">Élément non affiché. Cette mise en page peut être appliquée à chaque élément AMP. Le composant n'occupe pas de place à l'écran, comme si son style d'affichage était inexistant. On considère que l'élément peut s'afficher de lui-même en cas d'action de l'utilisateur, par exemple <a href="/docs/reference/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">Élément non affiché. Cette mise en page peut être appliquée à chaque élément AMP. Le composant n'occupe pas de place à l'écran, comme si son style d'affichage était inexistant. On considère que l'élément peut s'afficher de lui-même en cas d'action de l'utilisateur, par exemple <a href="/docs/reference/components/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Oui</td>
-      <td data-th="Behavior">L'élément a une largeur et une hauteur fixes. Il ne s'adapte donc pas. Les seules exceptions sont les éléments <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> et <a href="/docs/reference/amp-audio.html"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">L'élément a une largeur et une hauteur fixes. Il ne s'adapte donc pas. Les seules exceptions sont les éléments <a href="/docs/reference/components/amp-pixel.html"><code>amp-pixel</code></a> et <a href="/docs/reference/components/amp-audio.html"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
       <td class="col-twenty" data-th="Description">Oui</td>
-      <td data-th="Behavior">Élément ajusté à la largeur de son élément conteneur. Redimensionnement automatique de la hauteur au format donné par les attributs de largeur et de hauteur. Cette mise en page fonctionne très bien pour la plupart des éléments AMP, y compris <a href="/docs/reference/amp-img.html"><code>amp-img</code></a> et <a href="/docs/reference/amp-video.html"><code>amp-video</code></a>. L'espace disponible dépend de l'élément parent et peut également être personnalisé en utilisant le CSS <code>max-width</code>.</td>
+      <td data-th="Behavior">Élément ajusté à la largeur de son élément conteneur. Redimensionnement automatique de la hauteur au format donné par les attributs de largeur et de hauteur. Cette mise en page fonctionne très bien pour la plupart des éléments AMP, y compris <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a> et <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>. L'espace disponible dépend de l'élément parent et peut également être personnalisé en utilisant le CSS <code>max-width</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Hauteur seulement</td>
-      <td data-th="Behavior">L'élément prend l'espace qui lui est offert, mais sa hauteur reste inchangée. Cette mise en page fonctionne bien pour les éléments tels qu'<a href="/docs/reference/amp-carousel.html"><code>amp-carousel</code></a>, impliquant un contenu positionné horizontalement. L'attribut <code>width</code> ne doit pas être présent ou doit être égal à <code>auto</code>.</td>
+      <td data-th="Behavior">L'élément prend l'espace qui lui est offert, mais sa hauteur reste inchangée. Cette mise en page fonctionne bien pour les éléments tels qu'<a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>, impliquant un contenu positionné horizontalement. L'attribut <code>width</code> ne doit pas être présent ou doit être égal à <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -58,8 +58,8 @@ Voici la liste complète des valeurs autorisées pour l'attribut de mise en page
 
 Parfois, si `width` ou `height` ne sont pas spécifiés, l'exécution AMP peut utiliser les valeurs par défaut suivantes :
 
-* [`amp-pixel`](/docs/reference/amp-pixel.html): la largeur et la hauteur par défaut sont de 0.
-* [`amp-audio`](/docs/reference/amp-audio.html): la largeur et la hauteur par défaut proviennent du navigateur.
+* [`amp-pixel`](/docs/reference/components/amp-pixel.html): la largeur et la hauteur par défaut sont de 0.
+* [`amp-audio`](/docs/reference/components/amp-audio.html): la largeur et la hauteur par défaut proviennent du navigateur.
 
 ### Que se passe-t-il si l'attribut de mise en page n'est pas défini ?
 
@@ -107,7 +107,7 @@ En fonction de la largeur de l'écran, l'une ou l'autre sera récupérée et aff
 ## Utiliser les attributs "srcset" et "sizes"
 
 Utilisez l'attribut `srcset` pour contrôler les ressources d'un élément en fonction des différentes expressions de médias.
-En particulier, utilisez-le pour toutes les balises [`amp-img`](/docs/reference/amp-img.html) pour indiquer les ressources d'images à utiliser en fonction des diverses tailles d'écran.
+En particulier, utilisez-le pour toutes les balises [`amp-img`](/docs/reference/components/amp-img.html) pour indiquer les ressources d'images à utiliser en fonction des diverses tailles d'écran.
 
 Dans cet exemple simple, `srcset` indique l'image à utiliser en fonction de la largeur de l'écran.
 Le descripteur `w` indique au navigateur la largeur de chaque image de la liste :

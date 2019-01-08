@@ -66,7 +66,7 @@ Veja abaixo um breve resumo:
 - O tempo de execução de AMP fecha a página de login e faz o redirecionamento para a página especificada pelo parâmetro do URL de retorno.
 - O servidor deve coordenar a resposta assim que o usuário clicar no botão de login.
 
-Dica: Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](/pt_br/docs/reference/components/amp-access#login-flow).
+Dica: Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](/pt_br/docs/reference/components/amp-access.html#login-flow).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/interaction_dynamic/login_requiring.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>

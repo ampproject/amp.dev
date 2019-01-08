@@ -51,7 +51,7 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 | `<meta charset="utf-8">` 태그를 `<head>` 태그의 첫 번째 하위 요소로 포함해야 합니다. | 페이지 인코딩을 식별합니다. |
 | `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 `<head>` 태그의 두 번째 하위 요소로 포함해야 합니다. | AMP JS 라이브러리를 포함하고 로드합니다. |
 | `<head>` 내에 `<link rel="canonical" href="$SOME_URL">` 태그를 포함해야 합니다. | AMP HTML 문서의 일반 HTML 버전을 가리킵니다. HTML 버전이 존재하지 않으면 문서 자체를 가리킵니다. [페이지를 검색 가능하게 만들기]({{g.doc('/content/docs/fundamentals/discovery.html', locale=doc.locale).url.path}})에서 자세히 알아보세요.
-| `<head>` 태그 내에 `<meta name="viewport" content="width=device-width,minimum-scale=1">` 태그를 포함해야 합니다. `initial-scale=1`도 포함하는 것이 좋습니다. | 반응형 표시 영역을 지정합니다. [반응형 AMP 페이지 만들기]({{g.doc('/content/docs/design/responsive/responsive_design.html', locale=doc.locale).url.path}})에서 자세히 알아보세요. |
+| `<head>` 태그 내에 `<meta name="viewport" content="width=device-width,minimum-scale=1">` 태그를 포함해야 합니다. `initial-scale=1`도 포함하는 것이 좋습니다. | 반응형 표시 영역을 지정합니다. [반응형 AMP 페이지 만들기]({{g.doc('/content/docs/design/responsive_amp/responsive_design.md', locale=doc.locale).url.path}})에서 자세히 알아보세요. |
 | `<head>` 태그에 [AMP 상용구 코드]({{g.doc('/content/docs/fundamentals/spec/amp-boilerplate.html', locale=doc.locale).url.path}})를 포함해야 합니다.  | CSS 상용구는 AMP JS가 로드되기 전까지 우선 콘텐츠를 숨깁니다. |
 
 ## 선택적 메타데이터

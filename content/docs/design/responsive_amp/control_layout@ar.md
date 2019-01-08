@@ -26,22 +26,22 @@ $title: التنسيقات المعتمدة
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>بلا عرض<</code></td>
       <td class="col-twenty" data-th="Description">لا</td>
-      <td data-th="Behavior">لا يتم عرض العنصر. ويمكن تطبيق هذا التنسيق على كل عنصر من عناصر AMP. ولا يحتاج المكوّن إلى أي مساحة على الشاشة إذا كان نمط العرض لا شيء. ومن المفترض إمكانية عرض العنصر تلقائيًا عند اتخاذ المستخدم أي إجراء، على سبيل المثال، <a href="/ar/docs/reference/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">لا يتم عرض العنصر. ويمكن تطبيق هذا التنسيق على كل عنصر من عناصر AMP. ولا يحتاج المكوّن إلى أي مساحة على الشاشة إذا كان نمط العرض لا شيء. ومن المفترض إمكانية عرض العنصر تلقائيًا عند اتخاذ المستخدم أي إجراء، على سبيل المثال، <a href="/ar/docs/reference/components/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>تم الإصلاح</code></td>
       <td class="col-twenty" data-th="Description">نعم</td>
-      <td data-th="Behavior">يحتوي العنصر على عرض وارتفاع تم إصلاحهما مع عدم اعتماد التفاعل. والاستثناءات الوحيدان هما العنصران <a href="/docs/reference/amp-pixel.html"><code>amp-pixel</code></a> و<a href="/docs/reference/amp-audio.html"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">يحتوي العنصر على عرض وارتفاع تم إصلاحهما مع عدم اعتماد التفاعل. والاستثناءات الوحيدان هما العنصران <a href="/docs/reference/components/amp-pixel.html"><code>amp-pixel</code></a> و<a href="/docs/reference/components/amp-audio.html"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>سريع الاستجابة</code></td>
       <td class="col-twenty" data-th="Description">نعم</td>
-      <td data-th="Behavior">تم تغيير حجم العنصر ليلائم عرض عنصر الحاوية الخاص به كما يتم تغيير حجم ارتفاعه تلقائيًا ليلائم نسبة العرض إلى الارتفاع المحددة من خلال سمتي العرض والارتفاع. ويعمل هذا التنسيق بشكل جيد جدًا مع أغلب عناصر AMP، بما في ذلك <a href="/docs/reference/amp-img.html"><code>amp-img</code></a>، و<a href="/docs/reference/amp-video.html"><code>amp-video</code></a>. تعتمد المساحة المتاحة على العنصر الأصلي ويمكن أيضًا تخصيصها باستخدام <code>max-width</code> CSS.</td>
+      <td data-th="Behavior">تم تغيير حجم العنصر ليلائم عرض عنصر الحاوية الخاص به كما يتم تغيير حجم ارتفاعه تلقائيًا ليلائم نسبة العرض إلى الارتفاع المحددة من خلال سمتي العرض والارتفاع. ويعمل هذا التنسيق بشكل جيد جدًا مع أغلب عناصر AMP، بما في ذلك <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a>، و<a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>. تعتمد المساحة المتاحة على العنصر الأصلي ويمكن أيضًا تخصيصها باستخدام <code>max-width</code> CSS.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>الارتفاع مثبّت</code></td>
       <td class="col-twenty" data-th="Description">الارتفاع فقط</td>
-      <td data-th="Behavior">يحتل العنصر المساحة المتاحة له ولكنه يحتفظ بالارتفاع دون تغيير. ويعمل هذا التنسيق بشكل جيد مع عناصر، مثل <a href="/docs/reference/amp-carousel.html"><code>amp-carousel</code></a> الذي يتضمن المحتوى الموضوع بشكل أفقي. ويجب ألا تكون السمة <code>width</code> موجودة أو يجب أن تكون مساوية لـ <code>auto</code>.</td>
+      <td data-th="Behavior">يحتل العنصر المساحة المتاحة له ولكنه يحتفظ بالارتفاع دون تغيير. ويعمل هذا التنسيق بشكل جيد مع عناصر، مثل <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> الذي يتضمن المحتوى الموضوع بشكل أفقي. ويجب ألا تكون السمة <code>width</code> موجودة أو يجب أن تكون مساوية لـ <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>ملء</code></td>
@@ -61,8 +61,8 @@ $title: التنسيقات المعتمدة
 في بعض الحالات، إذا لم تحديد`width` أو `height`،
 يمكن لوقت تشغيل AMP ضبط هذه القيم افتراضيًا كما يلي:
 
-* [`amp-pixel`](/docs/reference/amp-pixel.html): يتم ضبط كل من العرض والارتفاع بشكل افتراضي على 0.
-* [`amp-audio`](/docs/reference/amp-audio.html): يتم استنتاج القيمة الافتراضية للعرض والارتفاع من المتصفّح.
+* [`amp-pixel`](/docs/reference/components/amp-pixel.html): يتم ضبط كل من العرض والارتفاع بشكل افتراضي على 0.
+* [`amp-audio`](/docs/reference/components/amp-audio.html): يتم استنتاج القيمة الافتراضية للعرض والارتفاع من المتصفّح.
 
 ### ماذا يحدث في حالة عدم تحديد سمة التنسيق؟
 
@@ -117,7 +117,7 @@ $title: التنسيقات المعتمدة
 
 استخدم السمة `srcset` للتحكم في مواد عرض العنصر
 بناءً على تعبيرات الوسائط المتنوعة.
-وبشكل خاص، يمكنك استخدامها لجميع علامات <a href="/docs/reference/amp-img.html">`amp-img`</a>
+وبشكل خاص، يمكنك استخدامها لجميع علامات <a href="/docs/reference/components/amp-img.html">`amp-img`</a>
 لتحديد مواد عرض الصور المُراد استخدامها بناءً على أحجام الشاشات المتنوعة.
 
 في هذا المثال البسيط،

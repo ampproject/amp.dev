@@ -27,7 +27,7 @@ core:
         [AMP 仕様の HTML タグ](/ja/docs/fundamentals/spec.html)もご覧ください）。
         AMP HTML コンポーネントと呼ばれるこれらのカスタム要素には、
         一般的なパターンを効果的な方法で簡単に実装できます。
-        <p>たとえば、[`amp-img`](/ja/docs/reference/amp-img.html) タグを使用すると、
+        <p>たとえば、[`amp-img`](/ja/docs/reference/components/amp-img.html) タグを使用すると、
         `srcset` にまだ対応していないブラウザでもこの属性を完全にサポートできます。
         詳しくは、[初めての AMP HTML ページを作成する](/ja/docs/getting_started/create.html)方法をご覧ください。
         <p>検索エンジンやその他のプラットフォームでは、AMP ページは

@@ -38,10 +38,10 @@ El tutorial con código de inicio ([`static/index.html`](https://github.com/goog
 
 Los componentes de AMP ofrecen funcionalidad adicional y componentes de interfaz de usuario que agregan interactividad a las páginas de AMP. El código de inicio utiliza los siguientes componentes de AMP:
 
-- [`<amp-carousel>`](https://www.ampproject.org/docs/reference/components/amp-carousel.html): Un carrusel de imágenes que muestra múltiples vistas del producto.
-- [`<amp-mustache>`](https://www.ampproject.org/docs/reference/components/amp-mustache.html): Un sistema de plantillas para procesar las respuestas de los servidores desde amp-form.
-- [`<amp-form>`](https://www.ampproject.org/docs/reference/components/amp-form.html): Añade funcionalidad especial para los elementos `<form>` que son necesarios para las páginas AMP.
-- [`<amp-selector>`](https://www.ampproject.org/docs/reference/components/amp-form.html): Ofrece una forma semántica de seleccionar uno o varios elementos de un grupo de elementos. Puede ser utilizado como una fuente de entrada a amp-form.
+- [`<amp-carousel>`](/docs/reference/components/amp-carousel.html): Un carrusel de imágenes que muestra múltiples vistas del producto.
+- [`<amp-mustache>`](/docs/reference/components/amp-mustache.html): Un sistema de plantillas para procesar las respuestas de los servidores desde amp-form.
+- [`<amp-form>`](/docs/reference/components/amp-form.html): Añade funcionalidad especial para los elementos `<form>` que son necesarios para las páginas AMP.
+- [`<amp-selector>`](/docs/reference/components/amp-form.html): Ofrece una forma semántica de seleccionar uno o varios elementos de un grupo de elementos. Puede ser utilizado como una fuente de entrada a amp-form.
 
 ## Interactividad básica
 

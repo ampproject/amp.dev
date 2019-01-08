@@ -39,6 +39,9 @@ The content in the body, so far, is pretty straightforward. But there’s a lot 
 
 Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
+ {% call callout('Tooling Tip', type='tip') %} Use the [AMP Boilerplate Generator](https://ampbyexample.com/boilerplate/) to quickly get started with creating new AMP pages.
+{% endcall %}
+
 ## Required mark-up
 
 AMP HTML documents MUST:
@@ -51,8 +54,8 @@ AMP HTML documents MUST:
 | Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifies the encoding for the page. |
 | Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`.| Includes and loads the AMP JS library. |
 | Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. Learn more in [Make Your Page Discoverable]({{g.doc('/content/docs/fundamentals/discovery.md', locale=doc.locale).url.path}}).
-| Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their `<head>` tag. It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages]({{g.doc('/content/docs/design/responsive/responsive_design.md', locale=doc.locale).url.path}}). |
-| Contain the [AMP boilerplate code](/docs/reference/spec/amp-boilerplate.html) in their `<head>` tag.  | CSS boilerplate to initially hide the content until AMP JS is loaded. |
+| Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their `<head>` tag. It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages]({{g.doc('/content/docs/design/responsive_amp/responsive_design.md', locale=doc.locale).url.path}}). |
+| Contain the [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html) in their `<head>` tag.  | CSS boilerplate to initially hide the content until AMP JS is loaded. |
 
 ## Optional metadata
 

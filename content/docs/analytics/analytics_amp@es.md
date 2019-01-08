@@ -40,13 +40,13 @@ Para hacer la configuración necesaria, primero tienes que identificar estos dat
 Puntos clave que hay que tener en cuenta:
 
 * ¿Registrarás solo las páginas vistas o tienes pensado supervisar más patrones de interacción?
-Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](/es/docs/analytics/analytics_basics#¿se-debe-utilizar-amp-pixel-o-amp-analytics?).
+Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](/es/docs/analytics/analytics_basics.html#¿se-debe-utilizar-amp-pixel-o-amp-analytics?).
 * ¿Qué tipos de datos quieres capturar de tus usuarios? ¿El contenido,
-el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](/es/docs/analytics/analytics_basics#sustitución-de-variables).
-* ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](/es/docs/analytics/analytics_basics#identificación-del-usuario).
+el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](/es/docs/analytics/analytics_basics.html#sustitución-de-variables).
+* ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](/es/docs/analytics/analytics_basics.html#identificación-del-usuario).
 
 
 {% call callout('Más información', type='read') %}
-Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos]({{g.doc('/content/docs/analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos]({{g.doc('/content/docs/analytics/analytics_amp/analytics_basics.md', locale=doc.locale).url.path}}).
 {% endcall %}
 

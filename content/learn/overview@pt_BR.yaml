@@ -27,7 +27,7 @@ core:
         [Tags HTML nas especificações das AMP](/pt_br/docs/fundamentals/spec.html)).
         Esses elementos personalizados, chamados de componentes HTML para AMP,
         permitem implementar padrões comuns com facilidade e eficiência.
-        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/amp-img.html)
+        <p>Por exemplo, a tag [`amp-img`](/pt_br/docs/reference/components/amp-img.html)
         é totalmente compatível com `srcset`, até mesmo em navegadores que ainda são incompatíveis.
         Saiba como [criar sua primeira página HTML para AMP](/pt_br/docs/getting_started/create.html).
         <p>As páginas AMP são detectadas por mecanismos de pesquisa e outras plataformas

@@ -84,11 +84,11 @@ Agora, **substitua** o seu carrossel simples pelo seguinte:
 
 **Atualize** a página e deverá ver algo como isto:
 
-{{ image('pt_pt/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='Um carrossel de conteúdo misto') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='Um carrossel de conteúdo misto') }}
 
-Para saber mais, consulte a documentação de referência do componente [amp-carousel](/pt_pt/docs/reference/components/amp-carousel.html).
+Para saber mais, consulte a documentação de referência do componente [amp-carousel](/pt_br/docs/reference/components/amp-carousel.html).
 
-Nota: No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](pt_pt{{g.doc('/content/docs/design/responsive/placeholders.md', locale=doc.locale).url.path}}).
+Nota: No nosso último exemplo, deverá ter reparado que o componente `amp-ad` incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o `amp-ad` a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/fundamentals/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>

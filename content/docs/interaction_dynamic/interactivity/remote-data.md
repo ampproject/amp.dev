@@ -9,7 +9,7 @@ toc: true
 What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a long time to look up? Looking up prices for SKUs for non-viewed items is wasted work.
 
 {% call callout('Tip', type='success') %}
-`<amp-state>` supports fetching remote data via its [`src`](/docs/reference/components/amp-bind#attributes) attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
+`<amp-state>` supports fetching remote data via its [`src`](/docs/reference/components/amp-bind.html#attributes) attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
 
 You can also bind the `src` attribute for the `<amp-state>` element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
 {% endcall %}

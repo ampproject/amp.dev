@@ -19,13 +19,13 @@ Les pages AMP sont des pages Web ; toute application de style sur la page et su
 </style>
 [/sourcecode]
 
-Chaque page AMP peut intégrer une seule feuille de style uniquement et l'utilisation de certains sélecteurs n'est pas autorisée. [Tout savoir sur les styles]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
+Chaque page AMP peut intégrer une seule feuille de style uniquement et l'utilisation de certains sélecteurs n'est pas autorisée. [Tout savoir sur les styles]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}).
 
 ## Contrôler la disposition
 
 AMP applique des règles strictes en matière de disposition des éléments sur la page. Sur une page HTML standard, vous utilisez presque exclusivement le style CSS pour disposer les éléments. Mais pour des performances optimales, AMP nécessite de définir dès le départ une taille explicite pour tous les éléments.
 
-Découvrez le rendu et la présentation d'une page AMP et comment vous pouvez modifier la disposition dans [Comment contrôler la disposition]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}).
+Découvrez le rendu et la présentation d'une page AMP et comment vous pouvez modifier la disposition dans [Comment contrôler la disposition]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}).
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Précédent</span></a>

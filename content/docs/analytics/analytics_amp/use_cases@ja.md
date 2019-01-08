@@ -5,7 +5,7 @@ $title: 使用事例
 
 このガイドでは、ユーザー エンゲージメントをトラッキングするための一般的な使用事例をご紹介します。
 
-注: 使用事例の追加を希望される場合は、[Google までお知らせください。](https://github.com/ampproject/docs/issues/new)ご自分の使用事例を公開することもできます。詳しくは、[公開方法についての記事](/ja/docs/support/contribute.html)をご覧ください。
+注: 使用事例の追加を希望される場合は、[Google までお知らせください。](https://github.com/ampproject/docs/issues/new)ご自分の使用事例を公開することもできます。詳しくは、[公開方法についての記事](/ja/contribute/)をご覧ください。
 
 ## ページビューをトラッキングする
 

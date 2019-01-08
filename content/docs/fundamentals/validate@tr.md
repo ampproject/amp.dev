@@ -8,7 +8,7 @@ AMP'nin temel gücü sadece sayfalarınızı hızlandırması değil, aynı zama
 
 Bir AMP dokümanını doğrulamanın çeşitli yolları vardır. Bu yolların tümü tam olarak aynı sonucu verir. Bu yüzden, geliştirme stiliniz için en uygun yolu kullanın.
 
-AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](/tr/docs/guides/discovery.html) de onaylamak isteyebilirsiniz.
+AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](/tr/docs/fundamentals/discovery.html) de onaylamak isteyebilirsiniz.
 
 ### Tarayıcı Developer Console.
 
@@ -84,7 +84,7 @@ Bu sayfanın geçerli bir AMP HTML sayfası olması şaşırtıcı değildir. Ş
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
 ...
 [/sourcecode]
@@ -158,5 +158,5 @@ Her araç çeşitli bilgiler sağlar:
 
 Bu spesifikasyonu dikkatlice yeniden okuduğumuzda, `<amp-img>` etiketi kullanmamız gerekirken bir `<img>` etiketi kullandığımızı fark ederiz.
 
-Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna](/tr/docs/reference/validation_errors.html) bakın.
+Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna](/tr/docs/troubleshooting/validation_errors.html) bakın.
 Dikkatli bir değerlendirmeden sonra ilerleme kaydedemezseniz [bir soru sorun](http://stackoverflow.com/questions/tagged/amp-html), size yardımcı olmaya çalışalım.

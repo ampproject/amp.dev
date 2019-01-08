@@ -56,9 +56,9 @@ AMP mendukung integrasi dengan banyak platform publikasi pihak ketiga. Lihat car
 
 Jika Anda membuat halaman AMP atau materi iklan dari awal, lihat referensi berikut:
 
-*   [Tutorial: Membuat halaman AMP pertama Anda](/id/docs/tutorials/create.html)
-*   [Tutorial: Menambahkan fitur AMP lanjutan](/id/docs/tutorials/add_advanced.html)
-*   [Spesifikasi HTML AMP](/id/docs/reference/spec.html#the-amp-html-format): *meliputi boilerplate, markup yang diperlukan, HTML yang diizinkan*
+*   [Tutorial: Membuat halaman AMP pertama Anda](/id/docs/getting_started/create.html)
+*   [Tutorial: Menambahkan fitur AMP lanjutan](/id/docs/fundamentals/add_advanced.html)
+*   [Spesifikasi HTML AMP](/id/docs/fundamentals/spec.html#the-amp-html-format): *meliputi boilerplate, markup yang diperlukan, HTML yang diizinkan*
 *   [Format Iklan AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md): *memberikan detail tentang cara membuat iklan dengan performa bagus di AMP*
 *   [Video YouTube: Apa yang diizinkan dan tidak diizinkan di AMP?](https://youtu.be/Gv8A4CktajQ)
 *   [Template dari AMP Start](https://www.ampstart.com/): *Coba beberapa template halaman AMP yang siap pakai*
@@ -67,22 +67,22 @@ Jika Anda membuat halaman AMP atau materi iklan dari awal, lihat referensi berik
 
 Jika Anda mengonversi halaman HTML yang sudah ada ke AMPHTML, buka referensi berikut:
 
-*   [Tutorial: Mengonversi HTML menjadi AMP](/id/docs/tutorials/converting.html)
+*   [Tutorial: Mengonversi HTML menjadi AMP](/id/docs/fundamentals/converting.html)
 *   [Video YouTube: Menggunakan HTML AMP untuk situs Anda yang sudah ada](https://youtu.be/OO9oKhs80aI)
 
 ### Validasi dan uji halaman AMP
 
 Sebelum memublikasikan konten, pastikan halaman AMP Anda sudah valid.  Berikut beberapa referensi yang dapat digunakan:
 
-*   [Memvalidasi halaman AMP](/id/docs/guides/validate.html): *memberikan daftar petunjuk dan fitur validasi untuk memvalidasi halaman Anda*
+*   [Memvalidasi halaman AMP](/id/docs/fundamentals/validate.html): *memberikan daftar petunjuk dan fitur validasi untuk memvalidasi halaman Anda*
 *   [Video YouTube: Cara memvalidasi & men-debug halaman AMP](https://www.youtube.com/watch?v=npum8JsITQE&t=13s)
-*   [Menguji CORS di AMP](/id/docs/guides/amp-cors-requests.html#testing-cors-in-amp)
+*   [Menguji CORS di AMP](/id/docs/fundamentals/amp-cors-requests.html#testing-cors-in-amp)
 
 ### Buat agar konten Anda dapat ditemukan
 
 Pastikan pengguna dapat menemukan konten Anda di platform pihak ketiga (misalnya, Twitter, Google, Bing, dll.). Berikut ini beberapa referensi yang bermanfaat:
 
-*   [Membuat halaman dapat ditemukan](/id/docs/guides/discovery.html): *tips untuk menautkan halaman AMP dan menggunakan metadata*
+*   [Membuat halaman dapat ditemukan](/id/docs/fundamentals/discovery.html): *tips untuk menautkan halaman AMP dan menggunakan metadata*
 *   [Panduan Google Penelusuran untuk halaman AMP](https://support.google.com/webmasters/answer/6340290)
 
 <hr>

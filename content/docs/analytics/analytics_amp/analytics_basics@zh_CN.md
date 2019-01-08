@@ -16,7 +16,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 对于大多数分析解决方案，请使用 `amp-analytics`。`amp-analytics` 也提供了网页浏览跟踪功能。此外，您还可以跟踪用户与任何类型的网页内容的互动情况，包括链接点击和按钮点击。而且，您还可以衡量用户在网页上滚动浏览了多少内容、用户是否与社交媒体进行了互动等信息。
 
-了解详情: 请参阅[深入了解 AMP 分析]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})。
+了解详情: 请参阅[深入了解 AMP 分析]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})。
 
 在与 AMP 平台集成的过程中，各个提供商均提供了预定义的 `amp-analytics` 配置，以便能够轻松地捕获数据并推送到其跟踪工具。您可以通过[分析供应商]({{g.doc('/content/docs/analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表访问各个供应商文档。
 
@@ -134,4 +134,4 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 如需详细了解客户端 ID 替换（包括如何添加可选的用户通知 ID），请参阅 [AMP 分析中支持的变量](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)。
 
-了解详情: 要继续了解分析相关知识，请参阅 [深入了解 AMP 分析]({{g.doc('/content/docs/analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})和[使用情形]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}})。
+了解详情: 要继续了解分析相关知识，请参阅 [深入了解 AMP 分析]({{g.doc('/content/docs/analytics/analytics_amp/deep_dive_analytics.md', locale=doc.locale).url.path}})和[使用情形]({{g.doc('/content/docs/analytics/use_cases.md', locale=doc.locale).url.path}})。

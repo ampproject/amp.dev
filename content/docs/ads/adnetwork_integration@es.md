@@ -46,7 +46,7 @@ Para obtener más información sobre cómo crear una integración "amp-ad", cons
 
 ## Crear una integración Fast Fetch
 
-[Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/) es un mecanismo AMP que separa la solicitud de anuncio de la respuesta de anuncio, lo que permite que las solicitudes de anuncios se produzcan antes en el ciclo de vida de la página y solo se rendericen los anuncios cuando es probable que los usuarios los vean. Fast Fetch ofrece un trato preferencial a los anuncios AMP HTML verificados por delante de los anuncios HTML tradicionales. En Fast Fetch, si un anuncio no pasa la validación, se incluye en un iframe multidominio para enviarlo a la zona de pruebas y separarlo del resto del documento AMP. En cambio, un anuncio AMP HTML que pasa la validación se incluye directamente en la página. Fast Fetch gestiona tanto anuncios AMP como anuncios no AMP; los anuncios que no pasan la validación no requieren solicitudes de anuncios adicionales. 
+[Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/) es un mecanismo AMP que separa la solicitud de anuncio de la respuesta de anuncio, lo que permite que las solicitudes de anuncios se produzcan antes en el ciclo de vida de la página y solo se rendericen los anuncios cuando es probable que los usuarios los vean. Fast Fetch ofrece un trato preferencial a los anuncios AMP HTML verificados por delante de los anuncios HTML tradicionales. En Fast Fetch, si un anuncio no pasa la validación, se incluye en un iframe multidominio para enviarlo a la zona de pruebas y separarlo del resto del documento AMP. En cambio, un anuncio AMP HTML que pasa la validación se incluye directamente en la página. Fast Fetch gestiona tanto anuncios AMP como anuncios no AMP; los anuncios que no pasan la validación no requieren solicitudes de anuncios adicionales. 
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Flujo de integración de Fast Fetch', caption='Flujo de integración de Fast Fetch' ) }}
 
@@ -62,6 +62,6 @@ Para obtener más información sobre cómo crear una integración Fast Fetch, co
 ## Recursos relacionados
 
 *   [Directorio GitHub de todas las extensiones amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [Lista de los proveedores de anuncios compatibles](es{{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
-*   [Entrada de blog que describe el lanzamiento de Fast Fetch](https://www.ampproject.org/latest/blog/even-faster-loading-ads-in-amp/)
+*   [Lista de los proveedores de anuncios compatibles]({{g.doc('/content/docs/ads/ads_vendors.md', locale=doc.locale).url.path}})
+*   [Entrada de blog que describe el lanzamiento de Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/)
  

@@ -19,13 +19,13 @@ AMP는 웹페이지이며, 페이지와 그 요소의 스타일링은 공통 CSS
 </style>
 [/sourcecode]
 
-모든 AMP 페이지에는 하나의 스타일시트만 삽입될 수 있으며, 특정 선택기는 사용이 허용되지 않습니다. [스타일링에 대해 자세히 알아보세요]({{g.doc('/content/docs/design/responsive/style_pages.md', locale=doc.locale).url.path}}).
+모든 AMP 페이지에는 하나의 스타일시트만 삽입될 수 있으며, 특정 선택기는 사용이 허용되지 않습니다. [스타일링에 대해 자세히 알아보세요]({{g.doc('/content/docs/design/responsive_amp/style_pages.md', locale=doc.locale).url.path}}).
 
 ## 레이아웃 제어
 
 AMP는 요소의 레이아웃을 페이지에 배치할 때 더 엄격한 규칙을 따릅니다. 일반 HTML 페이지에서는 거의 대부분 CSS를 사용하여 요소의 레이아웃을 배치합니다. 그러나 성능상의 이유로, AMP에서는 처음부터 모든 요소의 크기를 명시적으로 설정해야 합니다.
 
-AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 수정하는 방법은 [레이아웃 제어 방법]({{g.doc('/content/docs/design/responsive/control_layout.md', locale=doc.locale).url.path}}))에서 자세히 알아보세요.
+AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 수정하는 방법은 [레이아웃 제어 방법]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}))에서 자세히 알아보세요.
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/docs/getting_started/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>

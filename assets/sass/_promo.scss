@@ -1,23 +1,26 @@
 .promo {
   display: flex;
-  height: 60px;
   justify-content: center;
   overflow: hidden;
   position: relative;
   text-align: center;
+  height: 60px;
 
   .left,
   .right {
-    background: $gradient-anglebold;
+    background-color: #fcf7fe;
+    background-image: url(/static/img/amp-conf/sakura.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
     flex: 1 1 50%;
-    padding: 4px 0;
+    padding: 6px 0;
     display: block;
     text-transform: none;
-    font-weight: 300;
+    box-shadow: inset 0px -5px 5px 0px #0000000a;
   }
 
   .right {
-    background: $gradient-anglebold;
     position: relative;
     &::before {
       display: block;
@@ -33,13 +36,14 @@
   }
 
   .description, .link {
-    color: white;
+    color: #2b2b2b;
+    font-weight: 400;
     line-height: 1.5;
     position: relative;
   }
 
   .description {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   @include min-screen($mobile-breakpoint + 1) {
