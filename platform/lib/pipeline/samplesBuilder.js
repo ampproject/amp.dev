@@ -18,6 +18,7 @@ const { Signale } = require('signale');
 const gulp = require('gulp');
 const { parseSample } = require('amp-by-example');
 const through = require('through2');
+const del = require('del');
 
 // Where to import the samples from
 const EXAMPLE_SRC = '../examples/**/*.html';
@@ -36,28 +37,43 @@ class SamplesBuilder {
 
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Samples builder'
     });
   }
 
-  async build() {
-    this._log.start('Beginning to build samples ...');
+  async build(watch) {
+    // Only clean if it is not a watch call
+    // TODO: Add something like gulp-changed to enable incremental builds
+    if (!watch) {
+      this._log.await('Cleaning samples build destination ...');
+      del.sync([
+        `${EXAMPLE_DEST}/**/*.json`,
+        `${EXAMPLE_DEST}/**/*.html`,
+        `${EXAMPLE_DEST}/**/*.md`,
+        `!${EXAMPLE_DEST}/index.md`
+      ], {'force': true});
+
+      this._log.start('Starting to build samples ...');
+    }
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(EXAMPLE_SRC, {'read': true});
 
       stream = stream.pipe(through.obj((async function(sample, encoding, callback) {
         this._log.await(`Building sample ${sample.relative} ...`);
-        let parsedSample = await parseSample(sample.path);
+        let parsedSample = await parseSample(sample.path).then((parsedSample) => {
+          // Build various documents and sources that are needed for Grow
+          // to successfully render the example
+          stream.push(this._createDataSource(sample, parsedSample));
+          stream.push(this._createManualDoc(sample, parsedSample));
+          stream.push(this._createPreviewDoc(sample, parsedSample));
 
-        // Build various documents and sources that are needed for Grow
-        // to successfully render the example
-        stream.push(this._createDataSource(sample, parsedSample));
-        stream.push(this._createManualDoc(sample, parsedSample));
-        stream.push(this._createPreviewDoc(sample, parsedSample));
-
-        callback();
+          callback();
+        }).catch((e) => {
+          this._log.error(e);
+          callback();
+        });
       }).bind(this)));
 
       stream.pipe(gulp.dest(EXAMPLE_DEST));
@@ -134,6 +150,11 @@ class SamplesBuilder {
     sample.extname = '-preview.html';
 
     return sample;
+  }
+
+  watch() {
+    this._log.watch('Watching samples for changes ...');
+    gulp.watch(EXAMPLE_SRC, this.build.bind(this, true));
   }
 
 }

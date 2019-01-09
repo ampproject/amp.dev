@@ -1,5 +1,5 @@
-grow_version: ">=0.6.4"
-home: /content/amp-dev/index.html
+grow_version: ">=0.6.5"
+home: /content/amp-dev/index.md
 
 localization:
   root_path: /{locale}/

@@ -1,0 +1,106 @@
+/*
+
+#############################
+### MOLECULE: formats-visual ###
+#############################
+
+### INFO:
+
+formats-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
+the border and format around the images.
+
+### MODIFIERS:
+
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+.#{molecule('formats-visual')} {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  perspective: 120em;
+  animation: bounce 5s ease-in-out infinite;
+
+  &-image {
+    width: 50%;
+    @include box-shadow;
+    transform: rotate3d(-5, 5,-5 ,-40deg);
+  }
+
+  &-bottom-image {
+    margin-bottom: 25%;
+  }
+
+  &-top-image {
+    border: 5px solid color('doger-blue');
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%);
+    animation: slide 1s ease-in-out 3s forwards;
+    @include box-shadow;
+
+    &:before {
+      content: attr(title);
+      background-color: color('doger-blue');
+      @include txt;
+      @include color-white;
+      padding: 5px 10px;
+      margin-top: -40px;
+      position: absolute;
+    }
+  }
+
+  &-code-snippet {
+    position: absolute;
+    margin-left: -15%;
+    margin-top: -10%;
+    transform: rotate3d(-35, 10, -30, -35deg);
+    animation: bounce-code 5s ease-in-out 0.25s infinite;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%);
+  }
+
+  100% {
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%);
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(40px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-code {
+  0% {
+    transform: rotate3d(-35, 10, -30, -35deg) translateZ(0);
+  }
+
+  50% {
+    transform: rotate3d(-35, 10, -30, -35deg) translateZ(60px);
+  }
+
+  100% {
+    transform: rotate3d(-35, 10, -30, -35deg) translateZ(0);
+  }
+}
+

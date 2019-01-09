@@ -3,7 +3,7 @@ $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
 ---
 
-[stage color="dark-blue" icon=True image="/static/img/stage-image.png"]
+[stage color="dark-blue" icon=True formats=True]
 ##Compeling, smooth and instant
 #Easily create user first websites with Amp
 [/stage]
@@ -15,10 +15,10 @@ $view: /views/overview/what-is-amp.j2
     <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
   </div>
 
-  <div class="code-image">
-    <div class="copy">
+  <div class="component-visual">
+    <div class="component-visual-copy">
       <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
-      <div class="cta">
+      <div class="component-visual-cta">
         <a href="#" class="ad-m-lnk ad-m-lnk-square">
           <div class="ad-a-ico ad-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -28,7 +28,7 @@ $view: /views/overview/what-is-amp.j2
         </a>
       </div>
     </div>
-    <div class="image">
+    <div class="component-visual-image">
       <amp-img src="/static/img/the-blog.png" layout="responsive" height="0.78" width="1" />
     </div>
   </div>

@@ -22,7 +22,7 @@ const path = require('path');
 const fs = require('fs');
 
 // Where to look for existing documents
-const POD_BASE_PATH = '../../../pages/';
+const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.md';
 // The location to search for documents in
