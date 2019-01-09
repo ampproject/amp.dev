@@ -65,10 +65,17 @@
   }
 
   &-formats {
-    width: 50%;
+    width: 100%;
+    margin: 0;
 
     @media screen and (min-width: 768px) {
-      margin: 250px 50px 0 ;
+      margin: 150px 0 0 ;
+    }
+  }
+
+  .ad-m-formats-visual {
+    @media screen and (min-width: 768px) {
+      margin-left: 25%;
     }
   }
 
