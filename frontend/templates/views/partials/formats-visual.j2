@@ -4,7 +4,16 @@
   <div class="ad-m-formats-visual-image ad-m-formats-visual-bottom-image">
     <amp-img src="/static/img/component-visual-site.png" layout="responsive" height="1" width="1"></amp-img>
   </div>
-  <div class="ad-m-formats-visual-image ad-m-formats-visual-top-image">
-    <amp-img src="/static/img/component-visual-nav.png" layout="responsive" height="2" width="1"></amp-img>
+  <div class="ad-m-formats-visual-image ad-m-formats-visual-top-image" title="<amp-sidebar>">
+    <amp-img src="/static/img/component-visual-nav.png" layout="responsive" height="1.5" width="1"></amp-img>
+  </div>
+  <div class="ad-m-formats-visual-code-snippet">
+      {% set markdown = doc.pod.markdown %}
+      {% set section = '<amp-sidebar
+        id="sidebar"
+        layout="nodisplay"
+        slide="right">
+      </amp-sidebar>' %}
+      {{ markdown.convert('```html\n' + section + '\n```')|safe }}
   </div>
 </div>
