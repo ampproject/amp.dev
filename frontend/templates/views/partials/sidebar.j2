@@ -22,8 +22,9 @@
 
           {% set formats = collection.formats or [] %}
           <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
-            {% set collection_index = g.doc('content/' + collection.collection_path + '/index.md') %}
-            {% if collection_index.exists %}
+            {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
+            {% if doc.pod.file_exists(collection_index) %}
+            {% set collection_index = g.doc(collection_index) %}
             <a class="nav-link" href="{{ collection_index.url.path }}">{{ _(collection.title) }}</a>
             {% else %}
             <span class="nav-link">{{ _(collection.title) }}</span>
