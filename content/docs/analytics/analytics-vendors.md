@@ -308,6 +308,13 @@ Type attribute value: `quantcast`
 
 Adds support for Quantcast Measurement. More details for adding Quantcast Measurement can be found at [quantcast.com](https://www.quantcast.com/help/guides/)
 
+### Retargetly
+
+Type attribute value: `retargetly`
+
+Adds support for Retargetly pageviews and custom data.
+To access the implementation docs as well as all variables that can be sent, please visit [Retargetly Docs](https://retargetlydmp.zendesk.com/hc/es-419/articles/360012932034-Implementacion-del-tag-contenedor-AMP-Pages-).
+
 ### Segment
 
 Type attribute value: `segment`
