@@ -55,10 +55,8 @@
         {{ section.preview|safe }}
       </div>
       {% endif %}
-      <div class="ad-m-code-snippet ad-o-code-preview-code">
-        {% set markdown = doc.pod.markdown %}
-        {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
-      </div>
+      {% set markdown = doc.pod.markdown %}
+      {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
     </div>
     {% endif %}
     {% endfor %}
