@@ -18,7 +18,15 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{ doc.title }}</title>
     <link rel="shortcut icon" href="/static/img/favicon.png">
+
     <link rel="canonical" href="{{ doc.url }}">
+    {% for locale in doc.locales if not locale == doc.locale  %}
+    {% set localized_doc = doc.localize(locale) %}
+    {# If the document really is localized cross-reference it #}
+    {% if '@' in localized_doc.pod_path %}
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}">
+    {% endif %}
+    {% endfor %}
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Poppins:700" rel="stylesheet">
