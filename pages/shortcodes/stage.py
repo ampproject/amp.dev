@@ -51,7 +51,6 @@ class StageShortcode(Shortcode):
 
     def _get_icon(self, options):
         icon = options.get('icon')
-        print(options)
 
         if icon:
           icon = icon
