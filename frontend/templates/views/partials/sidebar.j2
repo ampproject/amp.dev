@@ -10,12 +10,16 @@
 
     <div class="nav">
       {% macro nav_tree(root, iteration=1, depth=None) -%}
+      {% if not depth or iteration <= depth %}
       <ul class="nav-list level-{{ iteration }}">
-          {% set collections = root.collections()|sort(attribute='order') %}
-          {% set documents = root.list_docs(order_by='order', locale=doc.locale) %}
+          {% set collections = root.collections() %}
+          {% set documents = root.list_docs_unread(locale=doc.locale) %}
 
-          {% if not depth or iteration <= depth %}
-          {% for collection in collections %}
+          {% set items = (collections + documents)|sort(attribute='order') %}
+          {% for item in items %}
+          {# Check if the item is a) collection ... #}
+          {% if '<Collection' in item|pprint %}
+          {% set collection = item %}
           {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
           {% set allCollectionPaths = collection.collection_path.split('/') %}
           {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
@@ -39,18 +43,20 @@
             </div>
             {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
           </li>
-          {% endfor %}
-
-          {% for document in documents %}
-          {# Check if document has format to filter on #}
+          {# Check if the item is b) document #}
+          {% elif '<Document' in item|pprint %}
+          {% set document = item %}
+          {% if not document.hidden %}
           {% set formats = document.formats or document.collection.formats or [] %}
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
             <a class="nav-link" href="{{ document.url.path }}">{{ _(document.title) }}</a>
           </li>
-          {% endfor %}
           {% endif %}
+          {% endif %}
+          {% endfor %}
       </ul>
+      {% endif %}
       {%- endmacro %}
 
       {% set split_path = doc.collection.collection_path.split('/') %}
