@@ -26,21 +26,20 @@
   }
   
   .#{utility('content')},
-  .intro,
-  .help {
+  .#{utility('help')} {
     @include content;
   }
   
-  .sidebar {
+  .#{utility('sidebar')} {
     @include sidebar;
   }
   
-  .toc-column {
+  .#{utility('toc')} {
     @include toc;
   }
   
-  .sidebar + .#{utility('content')},
-  .toc-column + .#{utility('content')} {
+  .#{utility('sidebar')} + .#{utility('content')},
+  .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
   
