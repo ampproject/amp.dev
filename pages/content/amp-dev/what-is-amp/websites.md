@@ -56,17 +56,21 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="ad--content">
-  <div class="ad-m-headline-icon">
-    <div class="ad-m-headline-icon-icon">
-     {% do doc.icons.useIcon('icons/exclamation.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exclamation"></use></svg>
-    </div>
-    <span class="ad-m-headline-icon-hl">Why Should I use AMP?</h1>
-  </div>
+<section class="ad--benefits-overview">
 
-  <div class="benefits">
-    <div class="benefits-list left">
+  <div class="ad-o-benefits-overview ad--container">
+  
+    <div class="ad-o-benefits-overview-header">
+      <div class="ad-m-headline-icon">
+        <div class="ad-m-headline-icon-icon">
+          {% do doc.icons.useIcon('icons/exclamation.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exclamation"></use></svg>
+        </div>
+        <h1 class="ad-m-headline-icon-hl">Why Should I use AMP?</h1>
+      </div>
+    </div>
+
+    <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-developers">
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
@@ -103,7 +107,7 @@ $view: /views/overview/what-is-amp.j2
 
     </div>
 
-    <div class="benefits-list right">
+    <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-business">
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
@@ -140,18 +144,17 @@ $view: /views/overview/what-is-amp.j2
 
     </div>
 
-  </div>
-
-  <div class="cta">
-    <a href="#" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
+    <div class="ad-o-benefits-overview-link">
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Read Success Story</span>
-    </a>
-  </div>
+        </div>
+        <span class="ad-m-lnk-text">Read Success Story</span>
+      </a>
+    </div>
 
+  </div>
 </section>
 
 

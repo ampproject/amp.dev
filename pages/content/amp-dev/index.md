@@ -19,11 +19,14 @@ $view: /views/home.j2
   </div>
 </section>
 
-<section class="ad--content">
+[bevel]
 
-  <div class="benefits">
-    <div class="benefits-list left">
-      <span class="benefits-hl">Benefits for Developers</span>
+<section class="ad--benefits-overview">
+  <div class="ad-o-benefits ad--container">
+
+    <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-developers">
+
+      <h2>Benefits for Developers</h2>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
@@ -60,9 +63,9 @@ $view: /views/home.j2
 
     </div>
 
+    <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-business">
 
-    <div class="benefits-list right">
-      <span class="benefits-hl">Benefits for Business</span>
+      <h2>Benefits for Business</h2>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
@@ -99,18 +102,17 @@ $view: /views/home.j2
 
     </div>
 
-  </div>
-
-  <div class="cta">
-    <a href="#" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
+    <div class="ad-o-benefits-overview-link">
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Get started with AMP</span>
-    </a>
-  </div>
+        </div>
+        <span class="ad-m-lnk-text">Get started with AMP</span>
+      </a>
+    </div>
 
+  </div>
 </section>
 
 <section class="ad--content quote">

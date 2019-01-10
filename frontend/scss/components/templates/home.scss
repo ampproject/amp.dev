@@ -15,11 +15,13 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/bevel.scss';
 
 @import '../molecules/quote';
 @import '../molecules/benefit';
 
 @import '../organisms/case-band.scss';
+@import '../organisms/benefits-overview.scss';
 
 @import '../templates/_default.scss';
 
@@ -69,42 +71,6 @@
       .cta {
         @media screen and (min-width: 768px) {
           margin-left: auto;
-        }
-      }
-
-
-      .benefits {
-        display: flex;
-        flex-direction: column;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-        }
-
-        &-hl {
-          @include hl;
-          @include hl-h4;
-        }
-
-        &-list {
-          width: 100%;
-
-          @media screen and (min-width: 768px) {
-            width: 50%;
-          }
-
-          &.left {
-            @media screen and (min-width: 768px) {
-              margin-right: 25px;
-            }
-          }
-
-          &.right {
-            @media screen and (min-width: 768px) {
-              margin-left: 25px;
-              margin-top: 80px;
-            }
-          }
         }
       }
 

@@ -73,6 +73,7 @@ section.#{utility('content')}.benefits {
     &-headline {
       @include txt;
       @include txt-strong;
+      @include color-black;
       margin-bottom: 0.3em;
     }
 
