@@ -55,10 +55,6 @@
     position: relative;
     z-index: 1;
 
-    &.#{organism('stage')} {
-       grid-column: 1 / -1;
-    }
-
     &.#{utility('content')} {
       grid-column: 1 / -1;
       display: flex;

@@ -50,11 +50,6 @@
     position: relative;
     z-index: 1;
 
-    &.#{organism('stage')} {
-      z-index: 2;
-    }
-
-    &.#{organism('stage')},
     &.#{utility('teaser-grid')} {
       @media screen and (min-width: 1024px){
         grid-column-start: 1;

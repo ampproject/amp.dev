@@ -9,6 +9,10 @@
 @import '../atoms/_headline.scss';
 @import '../atoms/_divider.scss';
 
+.#{utility('stage')} {
+  grid-column: 1 / -1;
+}
+
 .#{organism('stage')} {
   width: 100%;
   height: calc(100vh - 110px);
