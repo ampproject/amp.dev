@@ -1,6 +1,28 @@
 blogs:
 
 - type: Blog
+  title: "A year of open source funding"
+  id: a-year-of-open-source-funding
+  author: Malte Ubl
+  role:  Member of the AMP Project Technical Steering Committee
+  origin: "https://amphtml.wordpress.com/2019/01/09/a-year-of-open-source-funding/amp/"
+  excerpt: "Happy new year!!! One year ago we announced our New Year’s resolution to help the open-source ecosystem become a little bit more sustainable. This is our one year funding report. For 2019 we intend to continue on our path with significantly increased investment. We believe it is increasingly clear that relying on people’s volunteered free [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-01-09T12:55:09-08:00
+  date: "January 9, 2019"
+
+- type: Blog
+  title: "Announcing AMP Conf 2019: Tokyo"
+  id: announcing-amp-conf-2019-tokyo
+  author: Matt Ludwig
+  role:  AMP Project marketing lead at Google
+  origin: "https://amphtml.wordpress.com/2019/01/08/announcing-amp-conf-2019-tokyo/amp/"
+  excerpt: "Last year 400 of us gathered in AMPsterdam to share the latest AMP news, and learn from the hundreds of developers engaged with the open source project. The framework has continued to evolve since our time in the Netherlands, including a new governance model and many new publishers and e-commerce websites building with AMP. In [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-01-08T13:26:23-08:00
+  date: "January 8, 2019"
+
+- type: Blog
   title: "LaterPay, Lessons Learned"
   id: laterpay-lessons-learned
   author: Cosmin-Gabriel Ene
@@ -43,25 +65,3 @@ blogs:
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2018-12-07T06:10:29-08:00
   date: "December 7, 2018"
-
-- type: Blog
-  title: "Contributing to WebKit for a more predictable web platform"
-  id: contributing-to-webkit-for-a-more-predictable-web-platform
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/12/06/contributing-to-webkit-for-a-more-predictable-web-platform/amp/"
-  excerpt: "Over the past two years, the AMP Project has been working with Igalia to identify bugs and missing features within iOS WebKit and then fix them. We create repro cases, write web platform tests, perform debugging and analysis, and, of course, write patches to actually fix things. We think this is particular rewarding work, because [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-06T08:41:19-08:00
-  date: "December 6, 2018"
-
-- type: Blog
-  title: "Use AMPHTML ads for better ad performance, page usability and user safety"
-  id: use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/12/04/use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety/amp/"
-  excerpt: "This is part of a larger AMP monetization series on Medium that includes the below topics: Ensure Ad Density is equal on AMP &#38; non-AMP pages Optimize your AMP pages for high ad viewability or views Take advantage of more ad competition with multi-size ads &#38; fluid Better than header bidding → AMP RTC Take [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-04T07:58:54-08:00
-  date: "December 4, 2018"
