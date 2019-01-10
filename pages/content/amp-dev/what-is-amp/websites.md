@@ -9,7 +9,7 @@ $view: /views/overview/what-is-amp.j2
 [/stage]
 
 <section class="ad--content">
-  <div class="copy intro">
+  <div class="copy">
     <h1>What is AMP?</h1>
     <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
     <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>

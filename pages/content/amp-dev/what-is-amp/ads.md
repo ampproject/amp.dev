@@ -8,9 +8,8 @@ $view: /views/overview/what-is-amp.j2
 #Improve user engagement with rich and immersive AMP ads
 [/stage]
 
-
 <section class="ad--content">
-  <div class="copy intro">
+  <div class="copy">
     <h1>What is AMP?</h1>
     <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
     <p>Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users. </p>
