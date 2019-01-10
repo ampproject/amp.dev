@@ -12,12 +12,53 @@
 @import '../../mixins';
 @import '../../variables';
 
-@import '../atoms/_text.scss';
-@import '../atoms/_color.scss';
-@import '../atoms/_headline.scss';
+@import '../atoms/_color';
+@import '../atoms/_headline';
+@import '../atoms/_text';
 
-@import '../templates/_default.scss';
+@import '../templates/_default';
 
 .#{template('tools')} {
   @include container;
+
+  section {
+    &.main {
+      grid-column: 3 / 23;
+    }
+    .intro {
+      h1 {
+        @include hl-h2;
+      }
+    }
+
+    .tools {
+      h2 {
+        @include hl-h1;
+      }
+    }
+  }
+
+
+  .component-visual {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 50px;
+
+    @media screen and (min-width: 768px) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    &-copy {
+      width: auto;
+    }
+
+    &-cta {
+      margin-top: 50px;
+    }
+
+    &-media {
+      min-width: 50%;
+    }
+  }
 }

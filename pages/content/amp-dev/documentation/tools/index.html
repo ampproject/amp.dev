@@ -7,9 +7,173 @@ author: ampproject
 translator: ampproject
 $date: 11-09-2018
 ---
+{% do doc.styles.addCssFile('css/components/molecules/window-frame.css') %}
 
-{% do doc.styles.addCssFile('css/components/molecules/browser-window.css') %}
-
-<div>
+<section class="intro">
   <h1>AMP Tools</h1>
-</div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem maxime, libero dicta quisquam hic quis, officiis magnam corporis voluptas laborum cum minus explicabo eos placeat tempore fuga beatae similique, in!</p>
+</section>
+
+<section class="tools">
+
+  <!-- amp validator -->
+  <div class="component-visual">
+    <!-- media -->
+    <div class="component-visual-media">
+      <!-- window frame -->
+      <div class="ad-m-window-frame" data-title="AMP Validator">
+        <amp-img
+          alt="window frame"
+          height="350"
+          layout="responsive"
+          src="https://placehold.it/500x350"
+          width="500"
+        ></amp-img>
+      </div>
+    </div>
+
+    <!-- copy -->
+    <div class="component-visual-copy">
+      <!-- headline -->
+      <h2>AMP validator</h2>
+      <!-- copy -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit delectus deserunt sed. Suscipit aliquam, molestiae. Omnis unde iusto cum, recusandae? Neque commodi, deleniti quibusdam veniam consectetur earum odio tenetur.
+      </p>
+      <div class="component-visual-cta">
+        <!-- link -->
+        <a href="#" class="ad-m-lnk ad-m-lnk-square">
+          <!-- icon -->
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ad-m-lnk-text">Validate your AMP page</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- amp playground -->
+  <div class="component-visual">
+    <!-- copy -->
+    <div class="component-visual-copy">
+      <!-- headline -->
+      <h2>AMP playground</h2>
+      <!-- copy -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit delectus deserunt sed. Suscipit aliquam, molestiae. Omnis unde iusto cum, recusandae? Neque commodi, deleniti quibusdam veniam consectetur earum odio tenetur.
+      </p>
+      <div class="component-visual-cta">
+        <!-- link -->
+        <a href="#" class="ad-m-lnk ad-m-lnk-square">
+          <!-- icon -->
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ad-m-lnk-text">Start coding</span>
+        </a>
+      </div>
+    </div>
+    <!-- media -->
+    <div class="component-visual-media">
+      <!-- window frame -->
+      <div class="ad-m-window-frame" data-title="AMP Playground">
+        <amp-img
+          alt="window frame"
+          height="350"
+          layout="responsive"
+          src="https://placehold.it/500x350"
+          width="500"
+        ></amp-img>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- amp experiments -->
+  <div class="component-visual">
+    <!-- media -->
+    <div class="component-visual-media">
+      <!-- window frame -->
+      <div class="ad-m-window-frame" data-title="AMP Experiments">
+        <amp-img
+          alt="window frame"
+          height="350"
+          layout="responsive"
+          src="https://placehold.it/500x350"
+          width="500"
+        ></amp-img>
+      </div>
+    </div>
+
+    <!-- copy -->
+    <div class="component-visual-copy">
+      <!-- headline -->
+      <h2>AMP experiments</h2>
+      <!-- copy -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit delectus deserunt sed. Suscipit aliquam, molestiae. Omnis unde iusto cum, recusandae? Neque commodi, deleniti quibusdam veniam consectetur earum odio tenetur.
+      </p>
+      <div class="component-visual-cta">
+        <!-- link -->
+        <a href="#" class="ad-m-lnk ad-m-lnk-square">
+          <!-- icon -->
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ad-m-lnk-text">See AMP experiments</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- amp toolbox -->
+  <div class="component-visual">
+    <!-- copy -->
+    <div class="component-visual-copy">
+      <!-- headline -->
+      <h2>AMP toolbox</h2>
+      <!-- copy -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit delectus deserunt sed. Suscipit aliquam, molestiae. Omnis unde iusto cum, recusandae? Neque commodi, deleniti quibusdam veniam consectetur earum odio tenetur.
+      </p>
+      <div class="component-visual-cta">
+        <!-- link -->
+        <a href="#" class="ad-m-lnk ad-m-lnk-square">
+          <!-- icon -->
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ad-m-lnk-text">Explore AMP toolbox</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- media -->
+    <div class="component-visual-media">
+      <!-- window frame -->
+      <div class="ad-m-window-frame" data-title="AMP Toolbox">
+        <amp-img
+          alt="window frame"
+          height="350"
+          layout="responsive"
+          src="https://placehold.it/500x350"
+          width="500"
+        ></amp-img>
+      </div>
+    </div>
+  </div>
+</section>
