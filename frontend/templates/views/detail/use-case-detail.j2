@@ -7,8 +7,10 @@
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-use-case">
-  {% include 'views/partials/sidebar.j2' %}
-  {% include 'views/partials/main.j2' %}
-</div>
+<main class="ad--main ad-t-use-case">
+  <div class="ad--container">
+    {% include 'views/partials/sidebar.j2' %}
+    {% include 'views/partials/main.j2' %}
+  </div>
+</main>
 {% endblock %}

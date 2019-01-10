@@ -25,7 +25,9 @@
     @include container;
   }
   
-  .main {
+  .main,
+  .intro,
+  .help {
     @include content;
   }
   

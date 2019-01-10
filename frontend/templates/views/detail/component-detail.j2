@@ -7,9 +7,11 @@
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-component-detail">
-  {% include 'views/partials/component-sidebar.j2' %}
-  {% include 'views/partials/main.j2' %}
-  {% include 'views/partials/component-help.j2' %}
-</div>
+<main class="ad--main ad-t-component-detail">
+  <div class="ad--container">
+    {% include 'views/partials/component-sidebar.j2' %}
+    {% include 'views/partials/main.j2' %}
+    {% include 'views/partials/component-help.j2' %}
+  </div>
+</main>
 {% endblock %}
