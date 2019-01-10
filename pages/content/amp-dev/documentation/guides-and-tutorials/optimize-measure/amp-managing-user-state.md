@@ -1,6 +1,6 @@
 ---
 $title: "Managing non-authenticated user state with AMP"
-$order: 2
+$order: 6
 ---
 
 <!---

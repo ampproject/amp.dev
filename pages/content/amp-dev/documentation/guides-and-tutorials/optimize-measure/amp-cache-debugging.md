@@ -1,6 +1,6 @@
 ---
-$title: Debug AMP Cache issues
-$order: 8
+$title: Debug AMP Cache Issues
+$order: 1
 ---
 
 # AMP Cache Debugging

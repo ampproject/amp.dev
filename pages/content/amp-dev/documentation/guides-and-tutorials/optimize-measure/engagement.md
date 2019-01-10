@@ -1,6 +1,6 @@
 ---
 $title: Improve user engagement
-$order: 8
+$order: 0
 ---
 Here are some quick tips to improve user engagement with AMP.
 
