@@ -245,7 +245,7 @@
     }
 
 
-    &.teaser-grid {
+    &.#{utility('teaser-grid')} {
       grid-column: 1 / -1;
     }
 

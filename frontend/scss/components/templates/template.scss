@@ -56,7 +56,7 @@
       }
     }
 
-    &.teaser-grid {
+    &.#{utility('teaser-grid')} {
       grid-column: 1 / -1;
 
       .ad-o-teaser-grid-list {
