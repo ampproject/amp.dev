@@ -7,7 +7,7 @@ components:
 ---
 
 This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layout.html#layout), and how they work when a screen is resized.
- 
+
 <div class="layouts">
 
   <!-- fill -->
@@ -25,7 +25,7 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
 
   <!-- fixed -->
   <div class="layout-item">
-    <h3>fixed</h3> 
+    <h3>fixed</h3>
     <div class="description">With a <code>fixed</code> layout, the element retains its fixed dimensions based on the element's width and height attributes (no responsiveness).</div>
     <div class="fixed-container">
       <div class="parent">
@@ -56,7 +56,7 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
 
   <!-- flex-item -->
   <div class="layout-item">
-    <h3>flex-item</h3> 
+    <h3>flex-item</h3>
     <div class="description">With a <code>flex-item</code> layout, the element and other elements in its parent will take the available space based on the flexbox model.</div>
     <div class="fixed-container">
       <div class="parent">
@@ -89,7 +89,7 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
 
   <!-- intrinsic-->
   <div class="layout-item">
-    <h3>intrinsic</h3> 
+    <h3>intrinsic</h3>
     <div class="description">With an <code>intrinsic</code> layout, the element takes the space available to and resizes its height automatically to the aspect ratio given by the width and height attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint.</div>
     <div class="fixed-container">
       <div class="parent">
@@ -105,7 +105,7 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
 
   <!-- container -->
   <div class="layout-item">
-    <h3>container</h3> 
+    <h3>container</h3>
     <div class="description">With a <code>container</code> layout, the element lets its children define its size, much like a normal HTML <code>div</code> tag. The element is assumed to not have specific layout itself but only acts as a container.</div>
     <div class="fixed-container">
       <div class="parent">

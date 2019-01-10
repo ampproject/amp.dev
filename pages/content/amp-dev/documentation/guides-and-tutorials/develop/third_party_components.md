@@ -1,6 +1,6 @@
 ---
 $title: Include third-party content
-$order: 3
+$order: 9
 toc: true
 components:
   - iframe

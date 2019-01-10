@@ -272,4 +272,3 @@ see the [AMP Validation Errors guide](/docs/troubleshooting/validation_errors.ht
 If you’re still stuck after careful evaluation, [ask a
 question](http://stackoverflow.com/questions/tagged/amp-html) and we'll try to
 help.
-

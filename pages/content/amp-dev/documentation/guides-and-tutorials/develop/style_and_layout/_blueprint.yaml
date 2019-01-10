@@ -3,3 +3,4 @@ $path: /documentation/guides-and-tutorials/develop/style_and_layout/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/{base}.html
 $title@: Style & Layout
+$order: 6
