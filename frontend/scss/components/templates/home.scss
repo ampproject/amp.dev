@@ -36,6 +36,10 @@
        grid-column: 1 / -1;
     }
 
+    &.case-band {
+       grid-column: 1 / -1;
+    }
+
     &.main {
       grid-column: 1 / -1;
       display: flex;
