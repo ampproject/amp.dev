@@ -5,7 +5,7 @@
 
 @import '_text.scss';
 
-section.main {
+section.#{utility('content')} {
   .intro {
     @include txt-1;
     padding: 0;

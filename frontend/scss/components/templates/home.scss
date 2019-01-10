@@ -29,7 +29,7 @@
     @include container;
   }
   
-  .main,
+  .#{utility('content')},
   .intro,
   .help {
     @include content;
@@ -43,8 +43,8 @@
     @include toc;
   }
   
-  .sidebar + .main,
-  .toc-column + .main {
+  .sidebar + .#{utility('content')},
+  .toc-column + .#{utility('content')} {
     @include content-with-sidebar;
   }
 
@@ -60,7 +60,7 @@
        grid-column: 1 / -1;
     }
 
-    &.main {
+    &.#{utility('content')} {
       grid-column: 1 / -1;
       display: flex;
       flex-direction: column;

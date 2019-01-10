@@ -14,7 +14,7 @@ h5 {
 	margin-top: 2em;
 	
 	&:first-child {
-		section.main & {
+		section.#{utility('content')} & {
 			margin-top: 0;
 		}
 	}

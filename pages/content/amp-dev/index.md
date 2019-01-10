@@ -19,7 +19,7 @@ $view: /views/home.j2
   </div>
 </section>
 
-<section class="main">
+<section class="ad--content">
 
   <div class="benefits">
     <div class="benefits-list left">
@@ -113,7 +113,7 @@ $view: /views/home.j2
 
 </section>
 
-<section class="main quote">
+<section class="ad--content quote">
   <div class="ad-m-quote">
     <div class="ad-m-quote-source">
      <div class="ad-a-ico">

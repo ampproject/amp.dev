@@ -24,7 +24,7 @@
     @include container;
   }
   
-  .main,
+  .#{utility('content')},
   .intro,
   .help {
     @include content;
@@ -38,8 +38,8 @@
     @include toc;
   }
   
-  .sidebar + .main,
-  .toc-column + .main {
+  .sidebar + .#{utility('content')},
+  .toc-column + .#{utility('content')} {
     @include content-with-sidebar;
   }
 
@@ -52,7 +52,7 @@
       z-index: 2;
     }
 
-    &.main {
+    &.#{utility('content')} {
       padding: 20px;
       grid-column: 1 / -1;
 

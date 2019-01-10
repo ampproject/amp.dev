@@ -82,7 +82,7 @@
     grid-column-end: 25;
     padding-top: 20px;
     
-    & + .main {
+    & + .#{utility('content')} {
       padding-top: 0;
     }
   }
@@ -93,7 +93,7 @@
     grid-row: span 2;
     padding-top: 52px;
     
-    & + .main {
+    & + .#{utility('content')} {
       padding-top: 42px;
     }
   }

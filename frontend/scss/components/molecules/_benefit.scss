@@ -27,7 +27,7 @@ none
 @import '../atoms/_icon.scss';
 @import '../atoms/divider';
 
-section.main.benefits {
+section.#{utility('content')}.benefits {
   &.websites,
   &.ads {
     h3,

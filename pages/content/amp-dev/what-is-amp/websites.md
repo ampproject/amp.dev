@@ -8,7 +8,7 @@ $view: /views/overview/what-is-amp.j2
 #Easily create user first websites with Amp
 [/stage]
 
-<section class="main">
+<section class="ad--content">
   <div class="copy intro">
     <h1>What is AMP?</h1>
     <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
@@ -56,7 +56,7 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="main">
+<section class="ad--content">
   <div class="ad-m-headline-icon">
     <div class="ad-m-headline-icon-icon">
      {% do doc.icons.useIcon('icons/exclamation.svg') %}
@@ -155,7 +155,7 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="main quote">
+<section class="ad--content quote">
   <div class="ad-m-quote">
     <div class="ad-m-quote-source">
      <div class="ad-a-ico">
@@ -185,7 +185,7 @@ $view: /views/overview/what-is-amp.j2
 
 ##This is What AMP HTML is made of
 
- <section class="main made">
+ <section class="ad--content made">
 
     [sourcecode:html]
       <!doctype html>
@@ -205,7 +205,7 @@ $view: /views/overview/what-is-amp.j2
 
 </section>
 
-<section class="main">
+<section class="ad--content">
   <div class="copy">
     <h2>Built-in components</h2>
     <p>AMP HTML is HTML with some restrictions for reliable performance.</p>

@@ -28,7 +28,7 @@
     @include container;
   }
   
-  .main,
+  .#{utility('content')},
   .intro,
   .help {
     @include content;
@@ -42,8 +42,8 @@
     @include toc;
   }
   
-  .sidebar + .main,
-  .toc-column + .main {
+  .sidebar + .#{utility('content')},
+  .toc-column + .#{utility('content')} {
     @include content-with-sidebar;
   }
 
