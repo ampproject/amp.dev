@@ -1,6 +1,6 @@
 {
   "name": "amp-dev",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The successor of the former ampproject.org: the all-new amp.dev",
   "repository": "git@github.com:ampproject/docs.git",
   "main": "serve.js",
