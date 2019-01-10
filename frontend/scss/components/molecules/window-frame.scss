@@ -1,0 +1,63 @@
+/*
+
+##############################
+### MOLECULE: window frame ###
+##############################
+
+### INFO:
+
+The window frame molecule imitates the window of a desktop device and can contain an image or video. It uses the typical UI elements like buttons and a title to improve the look and feel.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color';
+@import '../atoms/_text';
+
+.#{molecule('window-frame')} {
+  @include river-ebony;
+
+  padding: 1rem;
+  position: relative;
+
+  &:before {
+    @include txt();
+    @include txt-3();
+    @include txt-center();
+    @include txt-mono();
+
+    background: color('mirage');
+    border-top-left-radius:  calc(1rem/4);
+    border-top-right-radius: calc(1rem/4);
+    color: color('white');
+    content: attr(data-title);
+    height: calc(1rem + 1px);
+    left: 0;
+    position: absolute;
+    top: -1rem;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:after {
+    background-image: radial-gradient(
+      circle at center,
+      color('white') 5px,
+      transparent 5px
+    );
+    background-size: 1rem;
+    color: color('white');
+    content: '';
+    height: 1rem;
+    left: 0;
+    margin-left: .1rem;
+    position: absolute;
+    top: -1rem;
+    width: 3rem;
+    z-index: 2;
+  }
+}
