@@ -17,7 +17,11 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{ doc.title }}</title>
+    {% if podspec.env.name == 'development' %}
+    <link rel="shortcut icon" href="/static/img/favicon-local.png">
+    {% else %}
     <link rel="shortcut icon" href="/static/img/favicon.png">
+    {% endif %}
 
     <link rel="canonical" href="{{ doc.url }}">
     <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}">
@@ -68,11 +72,15 @@
       </defs>
     </svg>
 
-    <div class="grid-toggle">
+    {# Only render the grid toggle during development #}
+    {% if podspec.env.name == 'development' %}
+    {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
+    <aside class="ad-a-grid-toggle">
         <input type="checkbox">
         <div class="toggle"><div class="dot"></div></div>
         <div class="grid"></div>
-    </div>
+    </aside>
+    {% endif %}
 
     {% include 'views/partials/header.j2' %}
 

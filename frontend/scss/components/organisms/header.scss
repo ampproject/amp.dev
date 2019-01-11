@@ -21,6 +21,8 @@
 
 .#{utility('header')} {
   width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -34,7 +36,6 @@
 }
 
 .#{organism('header')} {
-  max-width: 980px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
