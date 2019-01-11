@@ -36,194 +36,34 @@
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
-  
-  .#{utility('content')},
-  .#{utility('help')} {
-    @include content;
-  }
-  
-  .#{utility('sidebar')} {
-    @include sidebar;
-  }
-  
-  .#{utility('toc')} {
-    @include toc;
-  }
-  
-  .#{utility('sidebar')} + .#{utility('content')},
-  .#{utility('toc')} + .#{utility('content')} {
-    @include content-with-sidebar;
-  }
 
   h2 {
     @include hl-xlrg;
     margin-top: 0;
     grid-column: 4 / 16;
   }
+  
+  .component-visual {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column-reverse;
 
-  section {
-    position: relative;
-    z-index: 1;
-
-    &.#{utility('content')} {
-      grid-column: 1 / -1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      margin: 50px 0;
-
-      @media screen and (min-width: 768px) {
-        grid-column: 4 / -1;
-      }
-
-      .component-visual {
-        display: flex;
-        margin-top: 50px;
-        flex-direction: column-reverse;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-          align-items: center;
-        }
-
-        &-copy {
-          width: auto;
-        }
-
-        &-cta {
-          margin-top: 50px;
-        }
-
-        &-image {
-          min-width: 60%;
-        }
-      }
-
-      .gallery {
-        margin: 50px 0;
-      }
-
-      .copy {
-        width: 100%;
-        margin: 50px 0;
-
-        @media screen and (min-width: 768px) {
-          width: 65%;
-        }
-
-        &.intro {
-          width: 100%;
-          margin-bottom: 0;
-
-          @media screen and (min-width: 768px) {
-            width: 50%;
-          }
-        }
-
-        h1 {
-          @include hl;
-          font-size: 64px;
-
-          @media screen and (min-width: 768px) {
-            font-size: 72px;
-          }
-        }
-
-        h2 {
-          @include hl;
-          @include hl-xlrg;
-        }
-
-        p {
-          @include txt;
-          @include txt-2;
-        }
-
-        &-right {
-          margin-left: auto;
-        }
-      }
-
-      .cta {
-        @media screen and (min-width: 768px) {
-          margin-left: auto;
-        }
-      }
-
-      .ad-m-headline-icon {
-        @media screen and (min-width: 768px) {
-          margin-right: 50%;
-        }
-      }
-
-      .benefits {
-        display: flex;
-        flex-direction: column;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-        }
-
-        &-list {
-          width: 100%;
-
-          @media screen and (min-width: 768px) {
-            width: 50%;
-          }
-
-          &.left {
-            @media screen and (min-width: 768px) {
-              margin-right: 25px;
-            }
-          }
-
-          &.right {
-            @media screen and (min-width: 768px) {
-              margin-left: 25px;
-              margin-top: 80px;
-            }
-          }
-        }
-      }
-
-      &.quote {
-        grid-column: 6 / 20;
-        margin-top: 0;
-      }
-
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
     }
 
-    &.usecases {
-      grid-column: 1 / -1;
-      width: 100%;
-
-      .usecases-list {
-        display: flex;
-        flex-direction: column;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-      }
-
-      .usecase-image {
-        width: 100%;
-        margin: 20px 0px;
-
-        @media screen and (min-width: 768px) {
-          width: 30%;
-          margin: 20px;
-        }
-      }
+    &-copy {
+      width: auto;
     }
 
-
-    &.#{utility('teaser-grid')} {
-      grid-column: 1 / -1;
+    &-cta {
+      margin-top: 50px;
     }
 
+    &-image {
+      min-width: 60%;
+    }
   }
 
 }
