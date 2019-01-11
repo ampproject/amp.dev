@@ -1,6 +1,32 @@
 ---
 $title: Start
 $view: /views/home.j2
+
+format_explainer:
+  websites:
+    name: websites
+    image: /static/img/stage-image.png
+    headline: AMP enables great experiences across many web destinations
+    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    url: #
+  stories:
+    name: stories
+    image: /static/img/story.png
+    headline: AMP enables great experiences across many web destinations
+    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    url: #
+  ads:
+    name: ads
+    image: /static/img/ad.png
+    headline: AMP enables great experiences across many web destinations
+    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    url: #
+  emails:
+    name: emails
+    image: /static/img/e-mail.png
+    headline: AMP enables great experiences across many web destinations
+    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    url: #
 ---
 
 [stage color="dark-blue"]
@@ -20,6 +46,68 @@ $view: /views/home.j2
 </section>
 
 [bevel]
+
+<section class="ad--format-explainer">
+  <div class="ad--container">
+    <div class="ad-o-format-explainer">
+      <amp-state id="formats">
+        <script type="application/json">
+          {
+            "websites": {
+              "image": "{{ doc.format_explainer.websites.image }}",
+              "headline": "{{ doc.format_explainer.websites.headline }}",
+              "description": "{{ doc.format_explainer.websites.description }}",
+              "url": "{{ doc.format_explainer.websites.url }}"
+            },
+            "stories": {
+              "image": "{{ doc.format_explainer.stories.image }}",
+              "headline": "{{ doc.format_explainer.stories.headline }}",
+              "description": "{{ doc.format_explainer.stories.description }}",
+              "url": "{{ doc.format_explainer.stories.url }}"
+            },
+            "ads": {
+              "image": "{{ doc.format_explainer.ads.image }}",
+              "headline": "{{ doc.format_explainer.ads.headline }}",
+              "description": "{{ doc.format_explainer.ads.description }}",
+              "url": "{{ doc.format_explainer.ads.url }}"
+            },
+            "emails": {
+              "image": "{{ doc.format_explainer.emails.image }}",
+              "headline": "{{ doc.format_explainer.emails.headline }}",
+              "description": "{{ doc.format_explainer.emails.description }}",
+              "url": "{{ doc.format_explainer.emails.url }}"
+            }
+          }
+        </script>
+      </amp-state>
+          
+      <div class="ad-o-format-explainer-websites" [class]="'ad-o-format-explainer-' + activeFormat">
+        <amp-img
+          width="300"
+          height="200"
+          layout="fixed"
+          src="{{ doc.format_explainer.websites.image }}"
+          [src]="formats[activeFormat].image">
+        </amp-img>
+        <h3 [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h3>
+        <p [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
+        
+        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'})">AMP {{ doc.format_explainer.websites.name }}</button>
+        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'})">AMP {{ doc.format_explainer.stories.name }}</button>
+        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'})">AMP {{ doc.format_explainer.ads.name }}</button>
+        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'})">AMP {{ doc.format_explainer.emails.name }}</button>
+                  
+        <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="ad--benefits-overview">
   <div class="ad-o-benefits ad--container">
