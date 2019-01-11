@@ -6,6 +6,7 @@
 @import '../atoms/_headline.scss';
 
 .#{organism('case-grid')} {
+  grid-column: 1 / -1;
   width: 100%;
   height: auto;
   display: grid;
