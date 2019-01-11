@@ -15,9 +15,11 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+
 @import '../molecules/quote';
 @import '../molecules/benefit';
 
+@import '../organisms/case-band.scss';
 
 @import '../templates/_default.scss';
 

@@ -1,17 +1,17 @@
 {
   "name": "amp-dev",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The successor of the former ampproject.org: the all-new amp.dev",
   "repository": "git@github.com:ampproject/docs.git",
   "main": "serve.js",
   "scripts": {
     "develop": "node build.js",
-		"lint": "node lib/pipeline/growReferenceChecker.js",
+    "lint": "node lib/pipeline/growReferenceChecker.js",
     "build:local": "NODE_ENV=local node build.js",
     "build:staging": "NODE_ENV=staging node build.js",
     "deploy": "gcloud app deploy",
     "start:local": "NODE_ENV=local node serve.js",
-		"start": "NODE_ENV=staging node serve.js"
+    "start": "NODE_ENV=staging node serve.js"
   },
   "keywords": [
     "amphtml",

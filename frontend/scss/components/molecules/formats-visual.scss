@@ -18,30 +18,72 @@ the border and format around the images.
 @import '../../functions';
 @import '../../mixins';
 @import '../../variables';
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
 
 .#{molecule('formats-visual')} {
   width: 100%;
   position: relative;
   display: flex;
-  perspective: 65em;
-  animation: bounce 5s ease-in-out infinite;
+  align-items: center;
+  perspective: 120em;
+  animation: bounce 10s ease-in-out infinite;
 
   &-image {
-    z-index: 10;
-    width: 100%;
+    width: 50%;
+    @include box-shadow;
     transform: rotate3d(-5, 5,-5 ,-40deg);
+  }
+
+  &-bottom-image {
+    margin-bottom: 25%;
   }
 
   &-top-image {
     border: 5px solid color('doger-blue');
-    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-50%);
-    animation: slide 3s ease-in-out 5s forwards;
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%);
+    animation: slide 1s cubic-bezier(0.46, 0, 0.31, 1) 2.25s forwards;
+    @include box-shadow;
+
+    &:before {
+      content: attr(title);
+      background-color: color('doger-blue');
+      @include txt;
+      @include color-white;
+      padding: 5px 10px;
+      margin-top: -40px;
+      position: absolute;
+    }
+  }
+
+  &-code-snippet {
+    position: absolute;
+    margin-left: -15%;
+    margin-top: -10%;
+    transform: rotate3d(-55, 20, -40, -40deg);
+    animation: bounce-code 5s ease-in-out 0.25s infinite;
+
+    &-visible {
+      opacity: 1;
+      position: absolute;
+      animation: fade-out 2s forwards 1s ease-out;
+    }
+
+    &-hidden {
+      opacity: 0;
+      animation: fade-in 2s forwards 1s ease-in;
+    }
+
+    &-text-highlight {
+      background-color: color('pink-flamingo');
+      padding: 0 10px 0 0;
+    }
   }
 }
 
 @keyframes slide {
   0% {
-    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-50%);
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%);
   }
 
   100% {
@@ -56,10 +98,46 @@ the border and format around the images.
   }
 
   50% {
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
 
   100% {
     transform: translateY(0);
   }
 }
+
+@keyframes bounce-code {
+  0% {
+    transform: rotate3d(-55, 20, -40, -40deg) translateZ(0);
+  }
+
+  50% {
+    transform: rotate3d(-55, 20, -40, -40deg) translateZ(30px);
+  }
+
+  100% {
+    transform: rotate3d(-55, 20, -40, -40deg) translateZ(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
