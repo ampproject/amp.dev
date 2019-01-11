@@ -18,7 +18,7 @@
 
 @mixin container-fluid {
   @include container;
-  max-width: 100%;
+  max-width: 2560px;
   padding-left: 0;
   padding-right: 0;
   
