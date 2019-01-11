@@ -33,28 +33,26 @@ $view: /views/overview/what-is-amp.j2
     </div>
   </div>
 
-
-   <div class="copy">
-    <h3>Create great AMP experiences for all open web touchpoints</h3>
-    <p>AMP enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers can decide how to present their content that emphasizes a user-first experience.</p>
-  </div>
-
-  <div class="gallery">
-    <amp-img src="/static/img/bitmap-dummy.png" layout="responsive" width="2" height="1"></amp-img>
-  </div>
-
-  <div class="cta">
-    <a href="#" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Learn about AMP websites</span>
-    </a>
-  </div>
-
 </section>
 
+<section class="ad--case-band">
+  <div class="ad--container-fluid">
+    <div class="ad-m-copy ad-m-copy-left-small">
+      <h3>Create great AMP experiences for all open web touchpoints</h3>
+      <p>AMP enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers can decide how to present their content that emphasizes a user-first experience.</p>
+    </div>
+
+    <div class="ad-o-case-band">
+      <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-2"><amp-img src="/static/img/case-band-image-2.png" layout="responsive" width="9" height="16"></amp-img></div>
+      <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-1"><amp-img src="/static/img/case-band-image-1.png" layout="responsive" width="9" height="16"></amp-img></div>
+      <div class="ad-o-case-band-image ad-o-case-band-image-landscape ad-o-case-band-image-5"><amp-img src="/static/img/case-band-image-5.png" layout="responsive" width="16" height="9"></amp-img></div>
+      <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-4"><amp-img src="/static/img/case-band-image-4.png" layout="responsive" width="9" height="16"></amp-img></div>
+      <div class="ad-o-case-band-image ad-o-case-band-image-landscape ad-o-case-band-image-3"><amp-img src="/static/img/case-band-image-3.png" layout="responsive" width="16" height="9"></amp-img></div>
+      <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-6"><amp-img src="/static/img/case-band-image-6.png" layout="responsive" width="9" height="16"></amp-img></div>
+      <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-7"><amp-img src="/static/img/case-band-image-7.png" layout="responsive" width="9" height="16"></amp-img></div>
+    </div>
+  </div>
+</section>
 
 <section class="ad--benefits-overview">
 
@@ -215,7 +213,7 @@ $view: /views/overview/what-is-amp.j2
   <div class="ad--container">
     <div class="ad-m-copy ad-m-copy-left">
       <h2>Built-in components</h2>
-      <p>AMP HTML is HTML with some restrictions for reliable performance.</p>
+      <p class="intro">AMP HTML is HTML with some restrictions for reliable performance.</p>
 
       <p>Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML components, make common patterns easy to implement in a performant way.</p>
 
@@ -226,7 +224,7 @@ $view: /views/overview/what-is-amp.j2
 
     <div class="ad-m-copy ad-m-copy-right">
       <h2>Amp Cache</h2>
-      <p>The Google AMP Cache can be used to serve cached AMP HTML pages.</p>
+      <p class="intro">The Google AMP Cache can be used to serve cached AMP HTML pages.</p>
 
       <p>The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency.
       The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn't depend on external resources. The validation system runs  a series of assertions confirming the page’s markup meets the AMP HTML specification.</p>

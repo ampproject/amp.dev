@@ -7,7 +7,7 @@ $view: /views/home.j2
 # Amp is a web component framework for easily creating user first
 [/stage]
 
-<section class="case-band">
+<section class="ad--case-band">
   <div class="ad-o-case-band">
     <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-2"><amp-img src="/static/img/case-band-image-2.png" layout="responsive" width="9" height="16"></amp-img></div>
     <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-1"><amp-img src="/static/img/case-band-image-1.png" layout="responsive" width="9" height="16"></amp-img></div>

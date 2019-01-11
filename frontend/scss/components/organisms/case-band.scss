@@ -4,6 +4,7 @@
 @import '../../variables';
 
 .#{organism('case-band')} {
+  grid-column: 1 / -1;
   width: 100vw;
   height: auto;
   padding-top: 54.43%;
