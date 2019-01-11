@@ -158,7 +158,7 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="ad--content quote">
+<section class="ad--quote ad--container">
   <div class="ad-m-quote">
     <div class="ad-m-quote-source">
      <div class="ad-a-ico">
