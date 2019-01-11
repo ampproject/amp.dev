@@ -29,6 +29,10 @@
     @return null;
 }
 
+@function utility($selector) {
+    @return prefix('utility', $selector);
+}
+
 @function atom($selector) {
     @return prefix('atom', $selector);
 }

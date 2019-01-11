@@ -15,113 +15,20 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/bevel.scss';
 
 @import '../molecules/quote';
 @import '../molecules/benefit';
 
 @import '../organisms/case-band.scss';
+@import '../organisms/case-grid.scss';
+@import '../organisms/benefits-overview.scss';
 
 @import '../templates/_default.scss';
 
 .#{template('home')} {
-  @include container;
-
-  .ad-m-tip-container {
-    grid-column: 1 / -1;
-  }
-
-  section {
-    position: relative;
-    z-index: 1;
-
-    &.#{organism('stage')} {
-       grid-column: 1 / -1;
-    }
-
-    &.main {
-      grid-column: 1 / -1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      margin: 50px 0;
-
-      @media screen and (min-width: 768px) {
-        grid-column: 4 / -1;
-      }
-
-      .cta {
-        @media screen and (min-width: 768px) {
-          margin-left: auto;
-        }
-      }
-
-
-      .benefits {
-        display: flex;
-        flex-direction: column;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-        }
-
-        &-hl {
-          @include hl;
-          @include hl-h4;
-        }
-
-        &-list {
-          width: 100%;
-
-          @media screen and (min-width: 768px) {
-            width: 50%;
-          }
-
-          &.left {
-            @media screen and (min-width: 768px) {
-              margin-right: 25px;
-            }
-          }
-
-          &.right {
-            @media screen and (min-width: 768px) {
-              margin-left: 25px;
-              margin-top: 80px;
-            }
-          }
-        }
-      }
-
-      &.quote {
-        grid-column: 6 / 20;
-        margin-top: 0;
-      }
-
-    }
-
-    &.usecases {
-      grid-column: 1 / -1;
-      width: 100%;
-
-      .usecases-list {
-        display: flex;
-        flex-direction: column;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-      }
-
-      .usecase-image {
-        width: 100%;
-        margin: 20px 0px;
-
-        @media screen and (min-width: 768px) {
-          width: 30%;
-          margin: 20px;
-        }
-      }
-    }
+  
+  .#{utility('container')} {
+    @include container;
   }
 }

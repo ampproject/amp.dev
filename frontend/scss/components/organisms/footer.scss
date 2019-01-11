@@ -16,7 +16,7 @@
 @import '../atoms/_headline.scss';
 @import '../atoms/_icon.scss';
 
-.#{organism('footer')} {
+.#{utility('footer')} {
   padding: 75px 0 20px;
   @include txt;
   @include txt-1;
@@ -26,16 +26,16 @@
   @media screen and (min-width: 1024px) {
     padding: 35px 0 30px;
   }
+}
 
-  &-container {
-    width: 100%;
-    max-width: 1280px;
-    padding: 0 20px;
-    margin: 0 auto;
+.#{organism('footer')} {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
 
-    @media screen and (min-width: 768px) {
-      padding: 0 30px;
-    }
+  @media screen and (min-width: 768px) {
+    padding: 0 30px;
   }
 
   &-line-top {

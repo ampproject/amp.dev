@@ -19,5 +19,26 @@
 @import '../templates/_default.scss';
 
 .#{template('guide')} {
-  @include container;
+  
+  .#{utility('container')} {
+    @include container;
+  }
+  
+  .#{utility('content')},
+  .#{utility('help')} {
+    @include content;
+  }
+  
+  .#{utility('sidebar')} {
+    @include sidebar;
+  }
+  
+  .#{utility('toc')} {
+    @include toc;
+  }
+  
+  .#{utility('sidebar')} + .#{utility('content')},
+  .#{utility('toc')} + .#{utility('content')} {
+    @include content-with-sidebar;
+  }
 }

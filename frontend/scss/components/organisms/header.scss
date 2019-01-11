@@ -19,7 +19,7 @@
 
 @import '../molecules/_link.scss';
 
-.#{organism('header')} {
+.#{utility('header')} {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
@@ -30,6 +30,18 @@
 
   @media screen and (min-width: 1024px) {
     top: -50px;
+  }
+}
+
+.#{organism('header')} {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
   }
 
   &-list {
@@ -181,18 +193,6 @@
       &-expanded {
         margin-top: 40px;
       }
-    }
-  }
-
-  &-wrapper {
-    max-width: 980px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    @media screen and (min-width: 1024px) {
-      flex-direction: row;
     }
   }
 

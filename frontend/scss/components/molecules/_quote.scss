@@ -1,4 +1,5 @@
 .#{molecule('quote')} {
+  grid-column: 6 / 20;
   display: flex;
   flex-direction: column;
   padding: 75px 0;

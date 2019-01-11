@@ -7,7 +7,9 @@
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-template">
-  {{ doc.html|render|safe }}
-</div>
+<main class="ad--main ad-t-template">
+  <div class="ad--container">
+    {{ doc.html|render|safe }}
+  </div>
+</main>
 {% endblock %}

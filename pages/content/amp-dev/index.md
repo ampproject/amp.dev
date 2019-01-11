@@ -7,7 +7,7 @@ $view: /views/home.j2
 # Amp is a web component framework for easily creating user first
 [/stage]
 
-<section class="case-band">
+<section class="ad--case-band">
   <div class="ad-o-case-band">
     <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-2"><amp-img src="/static/img/case-band-image-2.png" layout="responsive" width="9" height="16"></amp-img></div>
     <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-1"><amp-img src="/static/img/case-band-image-1.png" layout="responsive" width="9" height="16"></amp-img></div>
@@ -19,11 +19,14 @@ $view: /views/home.j2
   </div>
 </section>
 
-<section class="main">
+[bevel]
 
-  <div class="benefits">
-    <div class="benefits-list left">
-      <span class="benefits-hl">Benefits for Developers</span>
+<section class="ad--benefits-overview">
+  <div class="ad-o-benefits ad--container">
+
+    <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-developers">
+
+      <h2>Benefits for Developers</h2>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
@@ -60,9 +63,9 @@ $view: /views/home.j2
 
     </div>
 
+    <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-business">
 
-    <div class="benefits-list right">
-      <span class="benefits-hl">Benefits for Business</span>
+      <h2>Benefits for Business</h2>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
@@ -99,21 +102,20 @@ $view: /views/home.j2
 
     </div>
 
-  </div>
-
-  <div class="cta">
-    <a href="#" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
+    <div class="ad-o-benefits-overview-link">
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Get started with AMP</span>
-    </a>
-  </div>
+        </div>
+        <span class="ad-m-lnk-text">Get started with AMP</span>
+      </a>
+    </div>
 
+  </div>
 </section>
 
-<section class="main quote">
+<section class="ad--quote ad--container">
   <div class="ad-m-quote">
     <div class="ad-m-quote-source">
      <div class="ad-a-ico">
@@ -141,10 +143,25 @@ $view: /views/home.j2
   </div>
 </section>
 
-<section class="usecases">
-  <div class="usecases-list">
-    <div class="usecase-image"><amp-img src="/static/img/band.png" layout="responsive" width="536" height="460"></amp-img></div>
-    <div class="usecase-image"><amp-img src="/static/img/education.png" layout="responsive" width="502" height="331"></amp-img></div>
-    <div class="usecase-image"><amp-img src="/static/img/data.png" layout="responsive" width="468" height="343"></amp-img></div>
-    <div class="usecase-image"><amp-img src="/static/img/choices.png" layout="responsive" width="372" height="409"></amp-img></div>
+<section class="ad--case-grid">
+  <div class="ad--container">
+    <h1 class="ad-o-case-grid-headline">Get inspired by AMP use cases</h1>
+  </div>
+
+  <div class="ad-o-case-grid">
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-4"><amp-img src="/static/img/case-grid-data.png" layout="responsive" width="936" height="686"></amp-img></div>
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-3"><amp-img src="/static/img/case-grid-education.png" layout="responsive" width="1004" height="662"></amp-img></div>
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-2"><amp-img src="/static/img/case-grid-choices.png" layout="responsive" width="744" height="818"></amp-img></div>
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-1"><amp-img src="/static/img/case-grid-band.png" layout="responsive" width="1072" height="920"></amp-img></div>
+    
+    <div class="ad-o-case-grid-link">
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">See all use cases</span>
+      </a>
+    </div>
+  </div>
 </section>

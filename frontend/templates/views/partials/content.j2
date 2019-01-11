@@ -5,7 +5,7 @@
 {% if has_toc %}
 {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
 {% set toc = doc.html[0:doc.html.find('</div>') + 6] %}
-<section class="toc-column">
+<section class="ad--toc">
   <div class="ad-o-toc">
     <b>Table of contents:</b>
     {{ toc|safe }}
@@ -13,7 +13,7 @@
 </section>
 {% endif %}
 
-<section class="main">
+<section class="ad--content">
   {% if doc.title and doc.view in ["/views/detail/docs-detail.j2", ] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
@@ -31,7 +31,7 @@
 {% else %}
 
 {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-<section class="main">
+<section class="ad--content">
   <h1>{{ doc.title }}</h1>
   <div class="ad-m-tip ad-m-tip-default">
     <div class="ad-m-tip-content">

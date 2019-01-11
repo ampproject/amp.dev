@@ -16,7 +16,37 @@ none
 */
 
 .#{molecule('copy')} {
+  margin-bottom: 3em;
+  
+  p {
+    @include txt;
+  }
+
   &-large p {
     @include txt-1;
+  }
+  
+  &-left {
+    grid-column: 3 / 17;
+    
+    &-small {
+      grid-column: 4 / 13;
+    }
+    
+    &-link {
+      grid-column: 3 / 12;
+    }
+  }
+  
+  &-right {
+    grid-column: 10 / 24;
+    
+    &-small {
+      grid-column: 11 / 20;
+    }
+    
+    &-link {
+      grid-column: 10 / 19;
+    }
   }
 }
