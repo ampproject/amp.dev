@@ -31,6 +31,8 @@ const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
 const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-analytics.md': '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-your-analytics-tools.md'
 };
 
 /**

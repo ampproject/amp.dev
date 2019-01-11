@@ -1,6 +1,6 @@
 ---
 $title: Create a live blog
-$order: 5
+$order: 2
 toc: true
 tutorial: true
 ---
@@ -94,4 +94,3 @@ Learn more from these resources:
 - [amp-live-list](/docs/reference/components/amp-live-list.html) reference documentation
 - [AMP BY Example's amp-live-list sample](https://ampbyexample.com/components/amp-live-list/)
 - [AMP BY Example's Live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/)
-

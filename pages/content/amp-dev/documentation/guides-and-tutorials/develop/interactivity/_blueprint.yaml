@@ -3,3 +3,4 @@ $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/interactivity/{base}.html
 $title@: Create interactive AMP pages
+$order: 0

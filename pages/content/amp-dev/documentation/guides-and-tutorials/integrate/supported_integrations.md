@@ -1,5 +1,5 @@
 ---
 $title@: Supported partners & integrations
-$order: 3
+$order: 30
 goto_internal: /content/support/faqs/supported-platforms.md
 ---

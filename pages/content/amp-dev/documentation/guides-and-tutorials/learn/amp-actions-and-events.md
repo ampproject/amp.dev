@@ -1,6 +1,6 @@
 ---
 $title: Actions and events in AMP
-$order: 1
+$order: 2
 ---
 
 

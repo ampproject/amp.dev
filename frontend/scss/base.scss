@@ -41,24 +41,32 @@ html, body {
   display: none;
 }
 
+body {
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top right;
+}
+
 body.ad--websites {
   display: inherit;
-  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('doger-blue'), 25%));
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#d5e6f2"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
 body.ad--ads {
   display: inherit;
-  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('electric-violet'), 50%));
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#ddd3eb"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
 body.ad--stories {
   display: inherit;
-  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('school-bus'), 33%));
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#ebdfd3"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
 body.ad--email {
   display: inherit;
-  background: linear-gradient(45deg, color('whisper') 85%, lighten(color('reef'), 10%));
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#d7ebd3"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
 .ad--websites .ad--websites,
