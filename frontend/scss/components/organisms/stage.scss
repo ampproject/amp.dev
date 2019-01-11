@@ -15,18 +15,13 @@
 
 .#{organism('stage')} {
   position: relative;
-  width: 100%;
-  height: calc(100vh - 110px);
+  height: 66vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  margin-bottom: 20vh;
 
-	@media screen and (min-width: 768px) {
-    width: calc(100% + 30px);
-    height: auto;
-    flex-direction: row-reverse;
-    padding-left: 64px;
-    margin: -30px 0 0px;
+	@media screen and (min-width: 1024px) {
+    flex-direction: row;
   }
 
   &-clipped-background {
@@ -34,15 +29,15 @@
       height: 100%;
       width: 100%;
       top: 0;
+      border-bottom-left-radius: 80px;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0% 101%);
+      clip-path: polygon(0 0, 100% 0, 100% 94%, 0% 101%);
 
-      @media screen and (min-width: 768px) {
-        border-bottom-left-radius: 80px;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 102%);
-      }
 
       @media screen and (min-width: 1080px) {
         border-bottom-left-radius: 100px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 101%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 101%);
       }
   }
 
@@ -53,8 +48,14 @@
 
 		@media screen and (min-width: 768px){
       padding: 5%;
-      width: 50%;
-		}
+      width: 60%;
+      display: flex;
+    }
+
+    &-headlines {
+      margin-left: 25px;
+    }
+
   }
 
   &-image {
@@ -63,7 +64,7 @@
     margin-bottom: 100px;
 
     @media screen and (min-width: 768px) {
-      width: 50%;
+      width: 40%;
       margin-top: 100px;
       margin-bottom: -200px;
       right: 0;
@@ -72,35 +73,26 @@
 
   &-formats {
     width: 100%;
-    margin: 0;
+    margin: 10% 30% 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       margin: 150px 0 0 ;
+      width: 40%;
     }
   }
 
-  .ad-m-formats-visual {
-    @media screen and (min-width: 768px) {
-      margin-left: 25%;
-    }
-  }
+
 
 	.hl {
     @include hl;
-    @include hl-h2;
+    @include hl-stage;
 		@include color-white;
 		margin: 0;
-    padding-right: 12px;
-
-    @media screen and (min-width: 1024px) {
-      @include hl-h3;
-    }
 
 
 		&-sub {
       @include txt;
-      @include txt-2;
-      @include txt-strong;
+      @include txt-stage;
       @include color-white;
 
       &:after {
@@ -115,11 +107,6 @@
       display: inline-block;
       width: 180px;
     }
-
-		&-divider {
-			@include divider;
-			@include divider-stage;
-		}
 
 		&-stories {
 			@include color-stories;
@@ -202,6 +189,7 @@
   .ad-a-ico {
     height: 5em;
     width: 5em;
+    margin-top: -1.5em;
     stroke: color('white');
   }
 }
