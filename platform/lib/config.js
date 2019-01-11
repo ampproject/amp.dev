@@ -12,7 +12,7 @@ class Config {
   constructor(environment = 'development') {
     const environmentConfig = require(`${CONFIG_BASE_PATH}/environments/${environment}.json`);
 
-    this.environment = environment;
+    this.environment = environmentConfig.name;
     this.hosts = environmentConfig.hosts;
 
     // Import the configs for importing stuff - basically only used in
