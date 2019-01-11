@@ -7,13 +7,30 @@
 
 <section class="ad--stage">
   <div class="ad-o-stage">
+
     <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
 
-    {% if image %}
-      <div class="ad-o-stage-image">
-        <amp-img src={{ image }} layout="responsive" height="1" width="1.33" />
-      </div>
-    {% endif %}
+    <div class="ad-o-stage-content">
+        {% if icon %}
+        <div class="ad-a-ico">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-white"></use></svg>
+        </div>
+        {% endif %}
+
+        <div class="ad-o-stage-content-headlines">
+          {% if sub_headline %}
+            <span class="hl-sub">{{ sub_headline }}</span>
+          {% endif %}
+
+          <span class="hl"> {{ headline }}</span>
+        </div>
+
+        {% if button.link and button.text %}
+        <button class="ad-o-stage-button">
+          <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
+        </button>
+        {% endif %}
+    </div>
 
     {% if formats %}
       <div class="ad-o-stage-formats">
@@ -21,28 +38,11 @@
       </div>
     {% endif %}
 
-    <div class="ad-o-stage-content">
-  		<div>
-        {% if icon %}
-          <div class="ad-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-white"></use></svg>
-          </div>
-        {% endif %}
-        <span class="hl-sub">{{ sub_headline }}</span>
+    {% if image %}
+      <div class="ad-o-stage-image">
+        <amp-img src={{ image }} layout="responsive" height="1" width="1.33" />
       </div>
-  		<span class="hl"> {{ headline }}</span>
-      {% if destination_switch %}
-      <div class="hl-inline">{{ destination_switch|safe }}</div>
-      {% endif %}
-      {% if headline_part_two %}
-      <span class="hl">{{ headline_part_two }}</span>
-      {% endif %}
+    {% endif %}
 
-      {% if button.link and button.text %}
-      <button class="ad-o-stage-button">
-        <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
-      </button>
-      {% endif %}
-    </div>
   </div>
 </section>

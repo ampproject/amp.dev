@@ -41,6 +41,17 @@ stories-home
   }
 }
 
+@mixin hl-stage {
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: 0;
+
+  @media screen and (min-width: 768px) {
+    font-size: 64px;
+    line-height: 75px;
+  }
+}
+
 // 56px TODO: Rename
 @mixin hl-lrg {
   font-size: 2.5em;
