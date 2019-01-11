@@ -211,37 +211,40 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 <section class="ad--content">
-  <div class="copy">
-    <h2>Built-in components</h2>
-    <p>AMP HTML is HTML with some restrictions for reliable performance.</p>
 
-    <p>Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML components, make common patterns easy to implement in a performant way.</p>
+  <div class="ad--container">
+    <div class="ad-m-copy ad-m-copy-left">
+      <h2>Built-in components</h2>
+      <p>AMP HTML is HTML with some restrictions for reliable performance.</p>
 
-    <p>For example, the amp-img tag provides full srcset support even in browsers that don’t support it yet. Learn how to create your first AMP HTML page.</p>
+      <p>Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML components, make common patterns easy to implement in a performant way.</p>
 
-    <p>AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. Learn more in Make Your Page Discoverable.</p>
-  </div>
+      <p>For example, the amp-img tag provides full srcset support even in browsers that don’t support it yet. Learn how to create your first AMP HTML page.</p>
 
-  <div class="copy copy-right">
-    <h2>Amp Cache</h2>
-    <p>The Google AMP Cache can be used to serve cached AMP HTML pages.</p>
+      <p>AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. Learn more in Make Your Page Discoverable.</p>
+    </div>
 
-    <p>The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency.
-    The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn't depend on external resources. The validation system runs  a series of assertions confirming the page’s markup meets the AMP HTML specification.</p>
+    <div class="ad-m-copy ad-m-copy-right">
+      <h2>Amp Cache</h2>
+      <p>The Google AMP Cache can be used to serve cached AMP HTML pages.</p>
 
-    <p>Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered, allowing you to see how complex changes in your code might impact performance and user experience.</p>
-  </div>
+      <p>The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency.
+      The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn't depend on external resources. The validation system runs  a series of assertions confirming the page’s markup meets the AMP HTML specification.</p>
 
-  <div class="cta">
-    <a href="#" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
+      <p>Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered, allowing you to see how complex changes in your code might impact performance and user experience.</p>
+    </div>
+    
+    <div class="ad-m-copy-right-link">
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Learn more about testing your Amp page</span>
-    </a>
-  </div>
+        </div>
+        <span class="ad-m-lnk-text">Learn more about testing your Amp page</span>
+      </a>
+    </div>
 
+  </div>
 </section>
 
 ##Explore use cases of Amp websites
