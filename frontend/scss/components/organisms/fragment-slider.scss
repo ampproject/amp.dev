@@ -51,6 +51,7 @@
     transform: scale(1);
     transition: 400ms;
     transition-delay: 400ms;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     width: 400px;
     amp-img {
       transition: 400ms;
@@ -283,6 +284,7 @@
     width: 50%;
     margin-left: auto;
     display: flex;
+    flex-direction: row-reverse;
     div {
       min-width: 100%;
       opacity: 0;
@@ -305,7 +307,7 @@
         } 
       }
       > div {
-        transform: translateX(calc(1 * -100%));
+        transform: translateX(calc(1 * 100%));
       }
     }
     &.slide3 {
@@ -316,7 +318,7 @@
         } 
       }
       > div {
-        transform: translateX(calc(2 * -100%));
+        transform: translateX(calc(2 * 100%));
       }
     }
     &.slide4 {
@@ -327,7 +329,7 @@
         } 
       }
       > div {
-        transform: translateX(calc(3 * -100%));
+        transform: translateX(calc(3 * 100%));
       }
     }
     &.slide5 {
@@ -338,7 +340,7 @@
         } 
       }
       > div {
-        transform: translateX(calc(4 * -100%));
+        transform: translateX(calc(4 * 100%));
       }
     }
     &.slide6 {
@@ -349,7 +351,7 @@
         } 
       }
       > div {
-        transform: translateX(calc(5 * -100%));
+        transform: translateX(calc(5 * 100%));
       }
     }
   }

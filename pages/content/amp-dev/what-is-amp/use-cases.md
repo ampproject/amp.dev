@@ -13,14 +13,14 @@ $view: /views/overview/use-cases.j2
 
 <section class="main">
 
-  <button [class]='"ad-o-fragment-slider-prevbtn slide" +slide' class="ad-o-fragment-slider-prevbtn slide1" on="tap:AMP.setState({slide: slide - 1})">
+  <button on="tap:AMP.setState({selected: {slide: selected.slide - 1}})" class="ad-o-fragment-slider-prevbtn slide1" [class]='"ad-o-fragment-slider-prevbtn slide" +selected.slide'>
     <div class="ad-a-ico ad-m-lnk-icon">
       {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
   </button>
 
-  <button [class]='"ad-o-fragment-slider-nextbtn slide" +slide' class="ad-o-fragment-slider-nextbtn slide1" on="tap:AMP.setState({slide: slide + 1})">
+  <button on="tap:AMP.setState({selected: {slide: selected.slide + 1}})" class="ad-o-fragment-slider-nextbtn" [class]='"ad-o-fragment-slider-nextbtn slide" +selected.slide'>
     <div class="ad-a-ico ad-m-lnk-icon">
       {% do doc.icons.useIcon('icons/internal.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
@@ -28,7 +28,7 @@ $view: /views/overview/use-cases.j2
   </button>
   
   {% do doc.styles.addCssFile('css/components/organisms/fragment-slider.css') %}
-  <div [class]='"ad-o-fragment-slider slide" +slide' class="ad-o-fragment-slider slide1">
+  <div [class]='"ad-o-fragment-slider slide" +selected.slide' class="ad-o-fragment-slider slide1">
 
     <div class="slide slide1">
       <amp-img src="/static/img/dummy-use-cases-example-01.png"
@@ -345,7 +345,7 @@ $view: /views/overview/use-cases.j2
   </div>
 
 
-  <div [class]='"ad-o-fragment-slider-text slide" +slide' class="ad-o-fragment-slider-text slide1">
+  <div [class]='"ad-o-fragment-slider-text slide" +selected.slide' class="ad-o-fragment-slider-text slide1">
 
     <div class="slide1">
       <h3>Use case 01</h3>
