@@ -1,8 +1,8 @@
 /*
 
-##########################
-### TEMPLATE: use case ###
-##########################
+###########################
+### TEMPLATE: use cases ###
+###########################
 
 ### INFO:
 
@@ -18,7 +18,7 @@
 
 @import '../templates/_default.scss';
 
-.#{template('use-case')} {
+.#{template('use-cases')} {
   
   .#{utility('container')} {
     @include container;
