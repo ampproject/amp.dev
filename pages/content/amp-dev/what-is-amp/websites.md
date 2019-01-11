@@ -248,14 +248,27 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-##Explore use cases of Amp websites
+<section class="ad--case-grid">
+  <div class="ad--container">
+    <h1 class="ad-o-case-grid-headline">Explore use cases of Amp websites</h1>
+  </div>
 
-<section class="usecases">
-  <div class="usecases-list">
-    <div class="usecase-image"><amp-img src="/static/img/band.png" layout="responsive" width="536" height="460"></amp-img></div>
-    <div class="usecase-image"><amp-img src="/static/img/education.png" layout="responsive" width="502" height="331"></amp-img></div>
-    <div class="usecase-image"><amp-img src="/static/img/data.png" layout="responsive" width="468" height="343"></amp-img></div>
-    <div class="usecase-image"><amp-img src="/static/img/choices.png" layout="responsive" width="372" height="409"></amp-img></div>
+  <div class="ad-o-case-grid">
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-4"><amp-img src="/static/img/case-grid-data.png" layout="responsive" width="936" height="686"></amp-img></div>
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-3"><amp-img src="/static/img/case-grid-education.png" layout="responsive" width="1004" height="662"></amp-img></div>
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-2"><amp-img src="/static/img/case-grid-choices.png" layout="responsive" width="744" height="818"></amp-img></div>
+    <div class="ad-o-case-grid-image ad-o-case-grid-image-1"><amp-img src="/static/img/case-grid-band.png" layout="responsive" width="1072" height="920"></amp-img></div>
+    
+    <div class="ad-o-case-grid-link">
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ad-m-lnk-text">See all use cases</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 ##Explore use cases of Amp websites
