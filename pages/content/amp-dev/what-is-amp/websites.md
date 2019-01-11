@@ -9,16 +9,20 @@ $view: /views/overview/what-is-amp.j2
 [/stage]
 
 <section class="ad--content">
-  <div class="copy">
-    <h1>What is AMP?</h1>
-    <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
-    <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
-  </div>
-
-  <div class="component-visual">
-    <div class="component-visual-copy">
+  <div class="ad--container-fluid">
+    <div class="ad-m-copy ad-m-copy-left-small">
+      <h1>What is AMP?</h1>
+      <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
       <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
-      <div class="component-visual-cta">
+    </div>
+  </div>
+</section>
+
+<section class="ad--component-visual">
+  <div class="ad-o-component-visual ad--container-fluid">
+    <div class="ad-o-component-visual-copy ad-m-copy ad-m-copy-left-small">
+      <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
+      <div class="ad-o-component-visual-link">
         <a href="#" class="ad-m-lnk ad-m-lnk-square">
           <div class="ad-a-ico ad-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -28,11 +32,10 @@ $view: /views/overview/what-is-amp.j2
         </a>
       </div>
     </div>
-    <div class="component-visual-image">
+    <div class="ad-o-component-visual-image">
       <amp-img src="/static/img/the-blog.png" layout="responsive" height="0.78" width="1" />
     </div>
   </div>
-
 </section>
 
 <section class="ad--case-band">

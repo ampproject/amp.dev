@@ -24,6 +24,7 @@
 @import '../molecules/headline-icon.scss';
 
 @import '../organisms/case-band.scss';
+@import '../organisms/component-visual.scss';
 @import '../organisms/benefits-overview.scss';
 @import '../organisms/made-of.scss';
 
@@ -44,29 +45,5 @@
     margin-top: 0;
     grid-column: 4 / 16;
   }
-  
-  .component-visual {
-    display: flex;
-    margin-top: 50px;
-    flex-direction: column-reverse;
-
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      align-items: center;
-    }
-
-    &-copy {
-      width: auto;
-    }
-
-    &-cta {
-      margin-top: 50px;
-    }
-
-    &-image {
-      min-width: 60%;
-    }
-  }
-
 }
 
