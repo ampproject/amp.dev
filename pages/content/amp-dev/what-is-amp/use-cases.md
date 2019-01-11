@@ -11,8 +11,8 @@ $view: /views/overview/use-cases.j2
   </script>
 </amp-state>
 
-<section class="main">
 
+<section class="main">
   <button on="tap:AMP.setState({selected: {slide: selected.slide - 1}})" class="ad-o-fragment-slider-prevbtn slide1" [class]='"ad-o-fragment-slider-prevbtn slide" +selected.slide'>
     <div class="ad-a-ico ad-m-lnk-icon">
       {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -26,7 +26,8 @@ $view: /views/overview/use-cases.j2
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
   </button>
-  
+
+
   {% do doc.styles.addCssFile('css/components/organisms/fragment-slider.css') %}
   <div [class]='"ad-o-fragment-slider slide" +selected.slide' class="ad-o-fragment-slider slide1">
 
@@ -343,6 +344,12 @@ $view: /views/overview/use-cases.j2
     </div>
 
   </div>
+</section>
+
+<section class="main">
+
+  
+  
 
 
   <div [class]='"ad-o-fragment-slider-text slide" +selected.slide' class="ad-o-fragment-slider-text slide1">
