@@ -1,13 +1,13 @@
 ---
 $title: AMPHTML Email for Email Providers
-$order: 7
+$order: 4
 toc: true
 
 ---
 
 AMP is an open source initiative that enables the creation of consistently fast, beautiful, and high-performing web experiences across devices and distribution platforms. The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.
 
-There are [AMP components](/docs/reference/components.html) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message. 
+There are [AMP components](/docs/reference/components.html) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message.
 
 This guide is a high-level overview of implementing support for the AMPHTML email format, aimed at  Email Providers. For further technical details, please see [the spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md).
 
@@ -33,7 +33,7 @@ Just like regular AMP, only the Javascript from the allowed AMP components can b
 
 Email clients or servers should host copies of AMP’s JavaScript files themselves. All sophisticated AMP integrations use this method; the Google AMP Cache hosts the files separately from the central CDN and so does the CloudFlare AMP Cache. However, AMP cache is neither used nor needed for AMPHTML Emails.
 
-While AMPHTML Emails provides certain level of security, a few more measures must be taken to safely provide users with the features and interactivity of AMP components. 
+While AMPHTML Emails provides certain level of security, a few more measures must be taken to safely provide users with the features and interactivity of AMP components.
 
 ##Spam Check and Sanitize Spam
 While the AMP Validator will only allow [whitelisted components](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md#amp-components) through, a spam checker should analyze and sanitize an AMPHTML Email much like it would analyze a regular HTML email. The system should also ensure the email passes at minimum DKIM, DMARC, and SPF checks. Furthermore, a sender whitelist is also a strong way to mitigate risks.
@@ -41,7 +41,7 @@ While the AMP Validator will only allow [whitelisted components](https://github.
 ##Include a Proxy Server
 A proxy server is fundamental and should be responsible for handling XHR requests that originate from the AMPHTML Emails (e.g. from [amp-list](/docs/reference/components/amp-list.html), [amp-form](/docs/reference/components/amp-form.html), etc) and perform spam checks and sanitization on the content fetched by these requests.
 
-Some dynamic elements in AMPHTML Emails may rely on remote content. Additional steps should be taken to prevent user data, such as IP address, cookies, and type of device, from being leaked to third party endpoints and giving rewrite access to parts of the AMPHTML Email. 
+Some dynamic elements in AMPHTML Emails may rely on remote content. Additional steps should be taken to prevent user data, such as IP address, cookies, and type of device, from being leaked to third party endpoints and giving rewrite access to parts of the AMPHTML Email.
 
 ##Update CORS Headers
 Since the requests go through a proxy server, the AMPHTML Email CORS requirements are slightly different than the existing [AMP CORS](/docs/fundamentals/amp-cors-requests.html) requirements.
@@ -72,7 +72,7 @@ All responses should contain the following 3 headers:
 Access-Control-Allow-Origin: https://MAIL.YOURDOMAIN.com
 AMP-Access-Control-Allow-Source-Origin:
     <your sender email address>
-Access-Control-Allow-Source-Origin:   
+Access-Control-Allow-Source-Origin:
     AMP-Access-Control-Allow-Source-Origin
 [/sourcecode]
 
@@ -99,4 +99,4 @@ Make clear to the user that the email is an AMPHTML email and offer the regular 
 If an invalid AMPHTML email is sent, render the HTML version as a standard fallback. For older emails, you may need to store and use older versions of the AMP runtime when new ones are released for breaking changes.
 
 ##Current AMPHTML Email Support
-Gmail will support AMPHTML emails on iOS, Android, and Web. We're working with other email providers and clients to have their Web and mobile apps support it as well. Please reach out by [filing an issue on GitHub](https://github.com/ampproject/amphtml/issues/new) if you’re interested in including AMPHTML Emails in your service. 
+Gmail will support AMPHTML emails on iOS, Android, and Web. We're working with other email providers and clients to have their Web and mobile apps support it as well. Please reach out by [filing an issue on GitHub](https://github.com/ampproject/amphtml/issues/new) if you’re interested in including AMPHTML Emails in your service.

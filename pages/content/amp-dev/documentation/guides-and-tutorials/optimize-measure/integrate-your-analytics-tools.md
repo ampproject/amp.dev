@@ -1,7 +1,7 @@
 ---
-$title: Integrate your analytics
+$title: Integrate your analytics tools
+$order: 5
 ---
-# Integrate your analytics tools in AMP HTML
 
 ## Overview
 

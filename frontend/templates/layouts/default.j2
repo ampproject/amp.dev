@@ -18,7 +18,22 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{ doc.title }}</title>
     <link rel="shortcut icon" href="/static/img/favicon.png">
+
     <link rel="canonical" href="{{ doc.url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}">
+    {% for locale in doc.locales if not locale == doc.locale  %}
+    {% set localized_doc = doc.localize(locale) %}
+    {# If the document really is localized cross-reference it #}
+    {% if '@' in localized_doc.pod_path %}
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}">
+    {% endif %}
+    {% endfor %}
+
+    {# Do not index untranslated content #}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
+    <meta name="robots" content="noindex,follow">
+    {% endif %}
+
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Poppins:700" rel="stylesheet">
@@ -71,5 +86,13 @@
     <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
     <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
     {% endblock %}
+
+    {# For untranslated content add hint that we might use help to translate it #}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
+    {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
+    <aside class="ad-o-translation-hint">
+      <p class="ad-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
+    </aside>
+    {% endif %}
   </body>
 </html>

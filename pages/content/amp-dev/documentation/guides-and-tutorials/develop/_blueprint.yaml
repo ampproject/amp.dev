@@ -5,4 +5,4 @@ $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/{base}.html
 
-$order: 3
+$order: 2

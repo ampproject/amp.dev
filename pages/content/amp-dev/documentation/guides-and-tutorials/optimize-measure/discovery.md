@@ -1,6 +1,6 @@
 ---
 $title: Make your page discoverable
-$order: 10
+$order: 3
 
 toc: true
 ---
