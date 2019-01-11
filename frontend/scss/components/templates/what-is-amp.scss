@@ -23,6 +23,7 @@
 @import '../molecules/headline-icon.scss';
 
 @import '../organisms/benefits-overview.scss';
+@import '../organisms/made-of.scss';
 
 @import '../templates/_default.scss';
 
@@ -186,32 +187,6 @@
         margin-top: 0;
       }
 
-
-      &.made {
-        grid-column: 1 / -1;
-        display: flex;
-
-        @media screen and (min-width: 768px) {
-          flex-direction: row;
-        }
-
-        .made-headline {
-          @include hl;
-          font-size: 100px;
-          width: 50%;
-          margin-bottom: 0;
-          opacity: 0.1;
-          line-height: 1em;
-
-          @media screen and (min-width: 768px) {
-            font-size: 100px;
-          }
-        }
-
-        .ad-m-code-snippet {
-          width: 50%;
-        }
-      }
     }
 
     &.usecases {

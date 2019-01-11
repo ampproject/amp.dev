@@ -1,0 +1,34 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+
+.#{organism('made-of')} {
+  
+  &-headline {
+    grid-column: 3 / 19;
+    @include hl-xlrg;
+  }
+  
+  .#{molecule('code-snippet')} {
+    grid-column: 1 / 12;
+    padding: 3em 0;
+  }
+
+  &-hello-world {
+    grid-column: 13 / -1;
+    @include hl;
+    font-size: 100px;
+    margin: auto 0 0;
+    opacity: 0.1;
+    line-height: 1em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 140px;
+      line-height: 0.85;
+    }
+  }
+}

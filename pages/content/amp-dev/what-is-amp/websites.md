@@ -186,26 +186,28 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-##This is What AMP HTML is made of
+[bevel position="left"]
 
- <section class="ad--content made">
-
-    [sourcecode:html]
-      <!doctype html>
-        <html ⚡>
-          <head>
-            <meta charset="utf-8">
-            <link rel="canonical" href="hello-world.html">
-            <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-            <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1></style>
-            <script async src="https://cdn.ampproject.org/v0.js"></script>
-          </head>
-          <body>Hello World!</body>
-      </html>
-    [/sourcecode]
-
-  <div class="made-headline">Hello World!</div>
-
+ <section class="ad--made-of">
+  <div class="ad-o-made-of">
+    <div class="ad--container">
+      <h1 class="ad-o-made-of-headline">This is What AMP HTML is made of</h1>
+    </div>
+    <div class="ad--container-fluid">
+      [sourcecode:html]
+        <!doctype html>
+          <html ⚡>
+            <head>
+              <meta charset="utf-8">
+              <link rel="canonical" href="hello-world.html">
+              <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+              <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1></style>
+              <script async src="https://cdn.ampproject.org/v0.js"></script>
+            </head>
+            <body>Hello World!</body>
+        </html>
+      [/sourcecode]<div class="ad-o-made-of-hello-world">Hello<br> World!</div></div>
+  </div>
 </section>
 
 <section class="ad--content">
