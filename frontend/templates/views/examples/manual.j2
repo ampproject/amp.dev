@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block main %}
-<main class="main ad-t-docs-detail">
+<main class="ad--main ad-t-docs-detail">
   <div class="ad--container">
     {% include 'views/partials/sidebar.j2' %}
 
@@ -50,14 +50,27 @@
       {% if render_code %}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
       <div class="ad-o-code-preview">
+        {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody %}
-        {% if show_preview %}
+        {% if story_preview %}
+        {# Storys should be repeatable, therefore render meta bar with
+        reload icon #}
+        <div class="ad-o-code-preview-meta-bar">
+          <button class="ad-o-code-preview-reload">
+            <div class="ad-a-ico">
+              {% do doc.icons.useIcon('icons/reload.svg') %}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+            </div>
+          </button>
+        </div>
+        <div class="ad-o-code-preview-preview">
+          Story.
+        </div>
+        {% elif show_preview %}
         <div class="ad-o-code-preview-preview">
           {{ section.preview|safe }}
         </div>
         {% endif %}
-        {% set markdown = doc.pod.markdown %}
-        {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
       </div>
       {% endif %}
       {% endfor %}

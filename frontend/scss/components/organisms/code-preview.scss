@@ -14,9 +14,26 @@
 
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
+@import '../atoms/_button.scss';
 
 .#{organism('code-preview')} {
   background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+
+  &-meta-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    margin-bottom: -1em;
+    background-color: color('bright-gray');
+  }
+
+    &-reload {
+      @include unset-button;
+
+      .ad-a-ico {
+        fill: #FFF;
+      }
+    }
 
   &-preview {
     position: relative;
