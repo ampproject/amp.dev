@@ -71,6 +71,8 @@
           {{ section.preview|safe }}
         </div>
         {% endif %}
+        {% set markdown = doc.pod.markdown %}
+        {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
       </div>
       {% endif %}
       {% endfor %}
