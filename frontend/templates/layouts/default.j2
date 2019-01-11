@@ -72,11 +72,15 @@
       </defs>
     </svg>
 
-    <div class="grid-toggle">
+    {# Only render the grid toggle during development #}
+    {% if podspec.env.name == 'development' %}
+    {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
+    <aside class="ad-a-grid-toggle">
         <input type="checkbox">
         <div class="toggle"><div class="dot"></div></div>
         <div class="grid"></div>
-    </div>
+    </aside>
+    {% endif %}
 
     {% include 'views/partials/header.j2' %}
 

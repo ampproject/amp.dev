@@ -1,4 +1,9 @@
-@import 'components/atoms/_color.scss';
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_color.scss';
 
 $columnCount: 24;
 $columnColor: rgba(#aaa, 0.15);
@@ -29,7 +34,7 @@ $gutterColor: transparent;
   height: 28px;
   cursor: pointer;
   pointer-events: auto;
-  
+
   @media screen and (min-width: 1334px) {
     left: 5px;
     width: 26px;
@@ -37,10 +42,10 @@ $gutterColor: transparent;
   }
 }
 
-.grid-toggle {
+.#{atom('grid-toggle')} {
   display: none;
   pointer-events: none;
-  
+
   @media screen and (min-width: 768px) {
     display: block;
   }
@@ -69,7 +74,7 @@ $gutterColor: transparent;
       background: color('gray-chateau');
       border-radius: 3px;
       transition: transform 0.15s ease-out, opacity 0.15s ease-out;
-      
+
       @media screen and (min-width: 1334px) {
         left: 30px;
       }
@@ -85,7 +90,7 @@ $gutterColor: transparent;
     background: #fff;
     border-radius: 10px;
     transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1), opacity 0.3s ease-out;
-    
+
     @media screen and (min-width: 1334px) {
       width: 20px;
       height: 20px;
@@ -118,7 +123,7 @@ $gutterColor: transparent;
       & + .toggle .dot {
         opacity: 1;
         transform: translateY(13px);
-        
+
         @media screen and (min-width: 1334px) {
           transform: translateY(30px);
         }
