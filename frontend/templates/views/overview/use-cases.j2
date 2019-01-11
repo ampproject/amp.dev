@@ -1,0 +1,13 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/use-cases.css') %}
+{% endblock %}
+
+{% block main %}
+<div class="ad-t-container ad-t-use-cases">
+    {{ doc.html|render|safe }}
+</div>
+{% endblock %}
