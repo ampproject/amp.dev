@@ -19,18 +19,34 @@
 @import '../templates/_default.scss';
 
 .#{template('overview-success-stories')} {
-  @include container;
+  
+  .#{utility('container')} {
+    @include container;
+  }
+  
+  .#{utility('content')},
+  .#{utility('help')} {
+    @include content;
+  }
+  
+  .#{utility('sidebar')} {
+    @include sidebar;
+  }
+  
+  .#{utility('toc')} {
+    @include toc;
+  }
+  
+  .#{utility('sidebar')} + .#{utility('content')},
+  .#{utility('toc')} + .#{utility('content')} {
+    @include content-with-sidebar;
+  }
 
   section {
     position: relative;
     z-index: 1;
 
-    &.#{organism('stage')} {
-      grid-column: 1 / -1;
-      z-index: 2;
-    }
-
-    &.main {
+    &.#{utility('content')} {
       padding: 20px;
       grid-column: 1 / -1;
 

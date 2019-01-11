@@ -1,0 +1,21 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{organism('component-visual')} {
+  margin-top: 50px;
+  
+  &-copy {
+    grid-column: 4 / 10;
+    margin: auto 0;
+  }
+  
+  &-link {
+    margin-top: 3em;
+  }
+
+  &-image {
+    grid-column: 13 / 25;
+  }
+}

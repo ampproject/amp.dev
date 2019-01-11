@@ -5,6 +5,7 @@ $projectPrefix: 'ad';
 /* All category codes which are prepended to selector by using either atom(selector),
 molecule(selector) or organism(selector) */
 $categoryPrefixes: (
+  utility: '',
   atom: 'a',
   molecule: 'm',
   organism: 'o',

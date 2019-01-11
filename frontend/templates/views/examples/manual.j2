@@ -16,50 +16,52 @@
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-docs-detail">
-  {% include 'views/partials/sidebar.j2' %}
+<main class="main ad-t-docs-detail">
+  <div class="ad--container">
+    {% include 'views/partials/sidebar.j2' %}
 
-  {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
-  <section class="toc-column">
-    <div class="ad-o-toc">
-      <b>Table of contents:</b>
-      <div class="toc">
-        <ul>
-          <li>
-            {% for section in doc.example.document.sections %}
-            {% for heading in section.headings %}
-            <a href="{{ heading.id }}">{{ heading.name }}</a>
-            {% endfor %}
-            {% endfor %}
-          </li>
-        </ul>
+    {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
+    <section class="ad--toc">
+      <div class="ad-o-toc">
+        <b>Table of contents:</b>
+        <div class="toc">
+          <ul>
+            <li>
+              {% for section in doc.example.document.sections %}
+              {% for heading in section.headings %}
+              <a href="{{ heading.id }}">{{ heading.name }}</a>
+              {% endfor %}
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {# The examples manual template does not make use of the main partial
-  as it's content is rendered from the JSON loaded in doc.example #}
-  <section class="main">
-    <h1>{{ doc.example.document.title }}</h1>
+    {# The examples manual template does not make use of the main partial
+    as it's content is rendered from the JSON loaded in doc.example #}
+    <section class="ad--content">
+      <h1>{{ doc.example.document.title }}</h1>
 
-    {% for section in doc.example.document.sections %}
-    {{ section.doc|markdown|safe }}
+      {% for section in doc.example.document.sections %}
+      {{ section.doc|markdown|safe }}
 
-    {% set render_code = section.doc.strip() and section.code.strip() %}
-    {% if render_code %}
-    {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
-    <div class="ad-o-code-preview">
-      {% set show_preview = section.preview and section.inBody %}
-      {% if show_preview %}
-      <div class="ad-o-code-preview-preview">
-        {{ section.preview|safe }}
+      {% set render_code = section.doc.strip() and section.code.strip() %}
+      {% if render_code %}
+      {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
+      <div class="ad-o-code-preview">
+        {% set show_preview = section.preview and section.inBody %}
+        {% if show_preview %}
+        <div class="ad-o-code-preview-preview">
+          {{ section.preview|safe }}
+        </div>
+        {% endif %}
+        {% set markdown = doc.pod.markdown %}
+        {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
       </div>
       {% endif %}
-      {% set markdown = doc.pod.markdown %}
-      {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
-    </div>
-    {% endif %}
-    {% endfor %}
-  </section>
-</div>
+      {% endfor %}
+    </section>
+  </div>
+</main>
 {% endblock %}

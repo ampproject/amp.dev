@@ -8,9 +8,8 @@ $view: /views/overview/what-is-amp.j2
 #Improve user engagement with rich and immersive AMP ads
 [/stage]
 
-
-<section class="main">
-  <div class="copy intro">
+<section class="ad--content">
+  <div class="copy">
     <h1>What is AMP?</h1>
     <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
     <p>Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users. </p>
@@ -57,7 +56,7 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="main">
+<section class="ad--content">
   <div class="ad-m-headline-icon">
     <div class="ad-m-headline-icon-icon">
      {% do doc.icons.useIcon('icons/exclamation.svg') %}
@@ -157,7 +156,7 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="main quote">
+<section class="ad--content quote">
   <div class="ad-m-quote">
     <div class="ad-m-quote-source">
      <div class="ad-a-ico">
@@ -186,7 +185,7 @@ $view: /views/overview/what-is-amp.j2
 </section>
 
 
-<section class="main">
+<section class="ad--content">
   <div class="copy">
     <h2>AMP Ads works for all browsers</h2>
     <p>In general we support the latest two versions of major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the webview version of these respective browsers.</p>

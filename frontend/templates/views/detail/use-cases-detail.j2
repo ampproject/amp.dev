@@ -3,11 +3,11 @@
 {% block styles %}
 {{ super() }}
 
-{% do doc.styles.addCssFile('css/components/templates/template.css') %}
+{% do doc.styles.addCssFile('css/components/templates/use-cases.css') %}
 {% endblock %}
 
 {% block main %}
-<main class="ad--main ad-t-template">
+<main class="ad--main ad-t-use-cases">
   <div class="ad--container">
     {% include 'views/partials/sidebar.j2' %}
     {% include 'views/partials/content.j2' %}
