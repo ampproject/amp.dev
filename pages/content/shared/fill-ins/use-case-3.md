@@ -1,5 +1,5 @@
 ---
-$view: /views/detail/use-case-detail.j2
+$view: /views/detail/use-cases-detail.j2
 $path: /shared/fill-ins/use-case-3.html
 $title: Sample use case
 $titles:

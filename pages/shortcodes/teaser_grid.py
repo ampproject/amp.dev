@@ -15,7 +15,7 @@ TYPE_TEMPLATES = {
     '/views/detail/guide-detail.j2': TEASER_TYPE_GUIDE,
     '/views/detail/success-story-detail.j2': TEASER_TYPE_SUCCESS_STORY,
     '/views/detail/template-detail.j2': TEASER_TYPE_TEMPLATE,
-    '/views/detail/use-case-detail.j2': TEASER_TYPE_USE_CASE,
+    '/views/detail/use-cases-detail.j2': TEASER_TYPE_USE_CASE,
 }
 
 
