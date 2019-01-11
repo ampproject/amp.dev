@@ -33,6 +33,10 @@
     @include container;
   }
   
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+  
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
