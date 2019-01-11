@@ -23,6 +23,11 @@ The window frame molecule imitates the window of a desktop device and can contai
 
   padding: 1rem;
   position: relative;
+  box-shadow: shadows('drop');
+
+  border-top: 1rem solid color('mirage');
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 
   &:before {
     @include txt();
@@ -30,34 +35,20 @@ The window frame molecule imitates the window of a desktop device and can contai
     @include txt-center();
     @include txt-mono();
 
-    background: color('mirage');
+    background-image: radial-gradient(circle at center, color('white') 5px, transparent 5px), radial-gradient(circle at center, color('white') 5px, transparent 5px), radial-gradient(circle at center, color('white') 5px, transparent 5px);
+    background-position: 0.15rem, 1.15rem, 2.15rem;
+    background-repeat: no-repeat;
+    background-size: 1rem, 1rem, 1rem;
     border-top-left-radius:  calc(1rem/4);
     border-top-right-radius: calc(1rem/4);
     color: color('white');
     content: attr(data-title);
-    height: calc(1rem + 1px);
-    left: 0;
-    position: absolute;
-    top: -1rem;
-    width: 100%;
-    z-index: 1;
-  }
-
-  &:after {
-    background-image: radial-gradient(
-      circle at center,
-      color('white') 5px,
-      transparent 5px
-    );
-    background-size: 1rem;
-    color: color('white');
-    content: '';
     height: 1rem;
     left: 0;
-    margin-left: .1rem;
     position: absolute;
+    text-align: center;
     top: -1rem;
-    width: 3rem;
+    width: 100%;
     z-index: 2;
   }
 }
