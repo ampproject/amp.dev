@@ -117,7 +117,8 @@ class Pipeline {
     log.start(`Transpiling SCSS from ${TRANSPILE_SCSS_SRC} ...`);
 
     let options = {
-      'outputStyle': 'compact' ? config.environment === 'development' : 'compressed'
+      'outputStyle': 'compact' ? config.environment === 'development' : 'compressed',
+      'includePaths': '../frontend/scss/'
     };
 
     return new Promise((resolve, reject) => {
