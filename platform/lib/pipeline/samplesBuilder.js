@@ -21,7 +21,7 @@ const through = require('through2');
 const del = require('del');
 
 // Where to import the samples from
-const EXAMPLE_SRC = '../examples/**/*.html';
+const EXAMPLE_SRC = '../examples/source/**/*.html';
 // The pod path inside
 const POD_PATH = 'content/amp-dev/documentation/examples';
 // Where to store the samples inside the Grow pod in
