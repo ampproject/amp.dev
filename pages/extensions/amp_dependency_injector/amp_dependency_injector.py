@@ -50,7 +50,7 @@ VALID_DEPENDENCIES = {
     'amp-position-observer': True,
     'amp-selector': True,
     'amp-sidebar': True,
-    'amp-sidebar': True,
+    'amp-story': True,
     'amp-sticky-ad': True,
     'amp-user-notification': True,
     'amp-video': True,
@@ -153,7 +153,8 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
         for dependency in dependencies:
             if dependency in seen_dependencies: continue
             if dependency in BUILT_INS: continue
-            if dependency not in VALID_DEPENDENCIES and dependency not in FALSE_POSITIVES:
+            if dependency in FALSE_POSITIVES: continue
+            if dependency not in VALID_DEPENDENCIES:
                 self.pod.logger.warning('Document uses unknown AMP dependency: {}'.format(dependency))
                 continue
 
