@@ -165,8 +165,8 @@ class SamplesBuilder {
       '$path: ' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
       'example: !g.json /' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '$hidden: true',
+      '$$injectAmpDependencies: false',
       '---',
-      sample.contents.toString()
     ].join('\n'));
     sample.extname = '-preview.html';
 
@@ -187,6 +187,7 @@ class SamplesBuilder {
       '$view: ' + SOURCE_TEMPLATE,
       '$path: ' + PATH_BASE + sample.relative.replace('.html', '/source.html'),
       '$hidden: true',
+      '$$injectAmpDependencies: false',
       '---',
       sample.contents.toString()
     ].join('\n'));
