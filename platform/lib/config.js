@@ -1,6 +1,7 @@
 const signale = require('signale');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 const CONFIG_BASE_PATH = '../config';
 const GROW_CONFIG_TEMPLATE_PATH = `${CONFIG_BASE_PATH}/templates/podspec.yaml`;
@@ -25,6 +26,15 @@ class Config {
     }
   }
 
+  _getSampleEmbedUrl() {
+    let sampleEmbedUrl = `${this.hosts.samples.scheme}://${this.hosts.samples.host}`;
+    if (this.hosts.samples.port) {
+      sampleEmbedUrl = sampleEmbedUrl + `:${this.hosts.samples.port}`
+    }
+
+    return sampleEmbedUrl;
+  }
+
   _writeGrowConfig() {
     let template = fs.readFileSync(path.join(__dirname, GROW_CONFIG_TEMPLATE_PATH));
     let podspec = `${template}\n`
@@ -37,6 +47,8 @@ class Config {
                 + `base_urls:\n`
                 + `  repository: ${this.shared.baseUrls.repository}\n`
                 + `  playground: ${this.shared.baseUrls.playground}\n`
+                + `  sample_embed: ${this._getSampleEmbedUrl()}\n`
+                + `\n`
                 + `deployments:\n`
                 + `  default:\n`
                 + `    name: default\n`

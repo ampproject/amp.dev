@@ -17,23 +17,19 @@
 @import '../atoms/_button.scss';
 
 .#{organism('code-preview')} {
+  position: relative;
   background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
 
-  &-meta-bar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1em;
-    margin-bottom: -1em;
-    background-color: color('bright-gray');
-  }
+  &-reload {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    @include unset-button;
 
-    &-reload {
-      @include unset-button;
-
-      .ad-a-ico {
-        fill: #FFF;
-      }
+    .ad-a-ico {
+      fill: #FFF;
     }
+  }
 
   &-preview {
     position: relative;
@@ -41,5 +37,22 @@
     margin: 1em;
     background: color('white');
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+  }
+
+  &-preview-story {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 1em;
+    margin: 1em;
+  }
+
+    &-story {
+      background: color('white');
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+    }
+
+  .ad-m-code-snippet {
+    background: none;
   }
 }

@@ -9,7 +9,7 @@
 		"samples": {
 			"scheme": "http",
 			"host": "localhost",
-			"port": "8082"
+			"port": "8081"
 		},
 		"platform": {
 			"scheme": "http",

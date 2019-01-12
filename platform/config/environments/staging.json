@@ -8,7 +8,7 @@
 		},
 		"samples": {
 			"scheme": "https",
-			"host": "api.amp-dev-staging.appspot.com",
+			"host": "samples.amp-dev-staging.appspot.com",
 			"port": ""
 		},
 		"platform": {

@@ -64,18 +64,17 @@
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody %}
         {% if story_preview %}
-        {# Storys should be repeatable, therefore render meta bar with
-        reload icon #}
-        <div class="ad-o-code-preview-meta-bar">
-          <button class="ad-o-code-preview-reload">
-            <div class="ad-a-ico">
-              {% do doc.icons.useIcon('icons/reload.svg') %}
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
-            </div>
-          </button>
-        </div>
-        <div class="ad-o-code-preview-preview">
-          Story.
+        {% set preview_document = g.doc(doc.pod_path.replace('-manual.html', '-preview.html')) %}
+        {% set story_preview_src = podspec.base_urls.sample_embed + preview_document.url.path + '?id=' +  section.storyPageId %}
+        {# Storys should be repeatable, therefore render reload icon #}
+        <button class="ad-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_src + '&' }}' + random()})">
+          <div class="ad-a-ico">
+            {% do doc.icons.useIcon('icons/reload.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+          </div>
+        </button>
+        <div class="ad-o-code-preview-preview-story">
+          <amp-iframe class="ad-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
         </div>
         {% elif show_preview %}
         <div class="ad-o-code-preview-preview">

@@ -1,3 +1,126 @@
-{% for section in doc.example.document.sections %}
-{{ section.code|safe }}
-{% endfor %}
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/examples/preview.css') %}
+
+{# Add eventual specific sample styles to page #}
+{{ doc.example.document.styles|safe }}
+{% endblock %}
+
+{% block body %}
+{% set body_tag = doc.example.document.body %}
+{{ (body_tag.replace('<body', '<body class=""') if 'class="' not in body_tag else body_tag)|safe }}
+{{ doc.example.document.elementsAfterBody|safe }}
+{% endblock %}
+
+{% block icons %}
+{% if not doc.example.document.isAmpStory %}
+{{ super() }}
+{% endif %}
+{% endblock %}
+
+{% block header %}
+{% if not doc.example.document.isAmpStory %}
+<aside class="ad--header">
+  {% do doc.icons.useIcon('/icons/internal.svg') %}
+
+</aside>
+{% endif %}
+{% endblock %}
+
+{% block main %}
+{% if doc.example.document.isAmpStory %}
+<amp-story standalone>
+{% endif %}
+  {% for section in doc.example.document.sections %}
+  {% set render_code = section.doc.strip() and section.code.strip() %}
+  {% if render_code %}
+  {% set show_preview = section.preview and section.inBody %}
+  {% if show_preview %}
+  {{ section.preview|safe }}
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+{% if doc.example.document.isAmpStory %}
+</amp-story>
+
+<script>
+var COOKIE_AMP_EXP = 'AMP_EXP';
+var AMP_STORY = 'amp-story';
+var COOKIE_EXPIRY_TIME = 365; // one year
+
+// Move story to the selected page
+var pageId = getUrlParameter('id');
+switchToPage(pageId);
+
+function switchToPage(pageId) {
+  if (!pageId) {
+    return;
+  }
+  var story = document.querySelector('amp-story');
+  story.addEventListener('ampstory:load', function() {
+    var event = new CustomEvent('ampstory:switchpage',  {
+      bubbles: true,
+      detail: {
+        targetPageId: pageId
+      }
+    });
+    story.dispatchEvent(event);
+  });
+}
+
+function getUrlParameter(name) {
+  var url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\</body>");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// Enable story experiment
+enableExperiment();
+
+function enableExperiment() {
+  var expCookie = getCookie(COOKIE_AMP_EXP);
+  if (expCookie) {
+    if (expCookie.indexOf(AMP_STORY) != -1) {
+      return;
+    } else {
+      expCookie += encodeURIComponent(' ') + AMP_STORY;
+    }
+  } else {
+    expCookie = AMP_STORY;
+  }
+  setCookie(COOKIE_AMP_EXP, expCookie, COOKIE_EXPIRY_TIME);
+}
+
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days*24*60*60*1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+</script>
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
