@@ -11,12 +11,12 @@ class Config {
 
   constructor(environment = 'development') {
     const environmentConfig = require(`${CONFIG_BASE_PATH}/environments/${environment}.json`);
+    const sharedConfig = require(`${CONFIG_BASE_PATH}/shared.json`);
 
     this.environment = environmentConfig.name;
     this.hosts = environmentConfig.hosts;
 
-    // Import the configs for importing stuff - basically only used in
-    // platform/lib/pipeline/import/reference.js
+    this.shared = sharedConfig;
 
     // Synchronously write podspec for Grow to run flawlessly later in pipeline.
     // Check if running inside GAE as writes are not permitted there
@@ -34,6 +34,9 @@ class Config {
                 + `  port: ${this.hosts.pages.port}\n`
                 + `  scheme: ${this.hosts.pages.scheme}\n`
                 + `\n`
+                + `base_urls:\n`
+                + `  repository: ${this.shared.baseUrls.repository}\n`
+                + `  playground: ${this.shared.baseUrls.playground}\n`
                 + `deployments:\n`
                 + `  default:\n`
                 + `    name: default\n`

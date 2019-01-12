@@ -1,0 +1,6 @@
+{
+	"baseUrls": {
+	 	"playground": "https://ampbyexample.com/playground/#url=",
+		"repository": "https://github.com/ampproject/docs/blob/future/"
+	}
+}
