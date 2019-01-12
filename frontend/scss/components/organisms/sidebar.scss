@@ -96,4 +96,16 @@
       width: calc(100% + 15px);
     }
   }
+
+  .#{atom('sidebar-toggle-input')}:not(:checked) + & {
+    @media screen and (max-width: 768px) {
+      transform: translateX(-100%);
+    }
+  }
+
+  .#{atom('sidebar-toggle-input')}:checked + & {
+    @media screen and (max-width: 768px) {
+      transform: translateX(0);
+    }
+  }
 }

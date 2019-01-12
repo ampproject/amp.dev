@@ -6,28 +6,38 @@
 @import '../atoms/_text.scss';
 
 .#{organism('toc')} {
-  
-  @media screen and (min-width: 1024px){
+  position: fixed;
+  z-index: 16;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: auto;
+  padding: 15px;
+  background-color: color('white');
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease;
+
+  @media screen and (min-width: 1024px) {
     position: -webkit-sticky;
     position: sticky;
+    padding: 0;
     height: auto;
     top: 80px;
+    right: auto;
+    background: none;
+    box-shadow: none;
   }
-  
-  b {
-    display: block;
-    margin-bottom: 13px;
-    @include txt;
-    @include txt-2;
-    @include txt-strong;
-    @include color-black;
+
+  &-hl {
+    @include txt-font-accent;
+    margin-top: 0;
   }
-  
+
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
     li {
       display: block;
 
@@ -35,12 +45,26 @@
         display: block;
         @include txt;
         @include txt-3;
+        @include txt-strong;
+        text-transform: uppercase;
         padding: 6px 0 7px;
-        
+
         &:hover {
           @include color-blue-ribbon;
         }
       }
+    }
+  }
+
+  .#{atom('sidebar-toggle-input')}:not(:checked) + & {
+    @media screen and (max-width: 1024px) {
+      transform: translateX(100%);
+    }
+  }
+
+  .#{atom('sidebar-toggle-input')}:checked + & {
+    @media screen and (max-width: 1024px) {
+      transform: translateX(0);
     }
   }
 }

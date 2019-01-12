@@ -2,19 +2,13 @@
 {% if doc.html %}
 {% set has_toc = 'class="toc"' in doc.html %}
 
-{% if has_toc %}
-{% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
+{% if doc.toc or has_toc %}
 {% set toc = doc.html[0:doc.html.find('</div>') + 6] %}
-<section class="ad--toc">
-  <div class="ad-o-toc">
-    <b>Table of contents:</b>
-    {{ toc|safe }}
-  </div>
-</section>
+{% include '/views/partials/toc.j2' with context %}
 {% endif %}
 
 <section class="ad--content">
-  {% if doc.title and doc.view in ["/views/detail/docs-detail.j2", ] %}
+  {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
 
