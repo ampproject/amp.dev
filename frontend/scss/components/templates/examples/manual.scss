@@ -1,0 +1,61 @@
+/*
+
+###################################
+### TEMPLATE: Examples / Manual ###
+###################################
+
+*/
+
+@import 'extends.scss';
+@import 'functions.scss';
+@import 'mixins.scss';
+@import 'variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
+
+@import 'components/templates/_default.scss';
+
+.#{template('examples-manual')} {
+
+  .#{utility('container')} {
+    @include container;
+  }
+
+  .#{utility('content')},
+  .#{utility('help')} {
+    @include content;
+  }
+
+    .#{utility('ctas')} {
+      display: flex;
+      list-style: none;
+      padding: 0;
+
+      & > li {
+        flex: 1 0 auto;
+      }
+    }
+
+
+  .#{utility('sidebar')} {
+    @include sidebar;
+  }
+
+  .#{utility('toc')} {
+    @include toc;
+  }
+
+  .#{utility('sidebar')} + .#{utility('content')},
+  .#{utility('toc')} + .#{utility('content')} {
+    @include content-with-sidebar;
+  }
+
+  .#{utility('content')} {
+    h1 {@include hl-h2;}
+    h2 {@include hl-h3;}
+    h3 {@include hl-h4;}
+    h4 {@include hl-h5;}
+  }
+}
