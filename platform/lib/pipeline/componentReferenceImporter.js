@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { Signale } = require('signale');
 const del = require('del');
-
-const config = require('../config');
 const GitHubImporter = require('./gitHubImporter');
-const Document = require('./markdownDocument');
 const Collection = require('./collection');
 
 // The view that the collections should define in their frontmatter
