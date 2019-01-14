@@ -1,0 +1,75 @@
+/*
+
+##############################
+### MOLECULE: window frame ###
+##############################
+
+### INFO:
+
+The window frame molecule imitates the window of a desktop device and can contain an image or video. It uses the typical UI elements like buttons and a title to improve the look and feel.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color';
+@import '../atoms/_text';
+
+.#{molecule('window-frame')} {
+  @include river-ebony;
+
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top: calc(1.5rem + 1px) solid color('mirage');
+  display: inline-block;
+  margin-bottom: auto;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  &:before {
+    @include txt();
+    @include txt-2();
+    @include txt-center();
+    @include txt-mono();
+
+    background-image: radial-gradient(circle at center, color('white') 5px, transparent 5px), radial-gradient(circle at center, color('white') 5px, transparent 5px), radial-gradient(circle at center, color('white') 5px, transparent 5px);
+    background-position: 0.15rem, 1.15rem, 2.15rem;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem, 1rem 1rem, 1rem 1rem;
+    border-top-left-radius:  calc(1rem/6);
+    border-top-right-radius: calc(1rem/6);
+    color: color('white');
+    content: attr(data-title);
+    height: calc(1.5rem + 1px);
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: calc(-1.5rem - 1px);
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:after {
+    -webkit-filter: blur(15px);
+    -webkit-transform: scale(1, 0.2);
+    background: linear-gradient(to right, transparent 20%, color('black'));
+    border-radius: 50%;
+    bottom: -3rem;
+    content: '';
+    height: 3rem;
+    opacity: 0.5;
+    position: absolute;
+    transform: rotate(-8deg);
+    width: 100%;
+    z-index: -1;
+  }
+}
