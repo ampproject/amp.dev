@@ -31,7 +31,7 @@ The window frame molecule imitates the window of a desktop device and can contai
   width: 100%;
   z-index: 0;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 30px;
   }
 

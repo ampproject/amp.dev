@@ -4,21 +4,12 @@ $view: /views/overview/template-overview.j2
 ---
 [stage color="dark-blue"]
 ## How to Build with AMP without knowing how to code?
-# Easily build user first
-[destination-switch type="dropdown"]
-- [websites](/content/amp-dev/documentation/templates/websites.md)
-- [stories](/content/amp-dev/documentation/templates/stories.md)
-- [ads](/content/amp-dev/documentation/templates/ads.md)
-- [e-mails](/content/amp-dev/documentation/templates/e-mails.md)
-- [overview](/content/amp-dev/documentation/templates/overview.md)
-[/destination-switch]
-# with our templates
+# Easily build user first with our templates
 [/stage]
 
-[intro]
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.
-[/intro]
 
+<section class="ad--intro ad--container">
+  <div class="ad--content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.</div>
 
 [filter-bubbles]
   - All
@@ -27,6 +18,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex
   - Art & Desgin
   - Food & Drinks
 [/filter-bubbles]
+</section>
+
 
 [teaser-grid]
 [](/content/shared/fill-ins/template.md)
