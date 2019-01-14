@@ -22,12 +22,11 @@ const express = require('express');
 const config = require('./config.js');
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
-  'pages': require('./routers/pages.js')
+  'pages': require('./routers/pages.js'),
 };
 
 class Platform {
-
-  constructor() {
+  start() {
     signale.await(`Starting platform with environment ${config.environment} ...`);
     this.server = express();
 
@@ -40,8 +39,8 @@ class Platform {
   }
 
   _check() {
-      // TODO: Check (dependening on environment) if all needed files are
-      // there and otherwise only vend a static error page
+    // TODO: Check (dependening on environment) if all needed files are
+    // there and otherwise only vend a static error page
   }
 
   _registerRouters() {

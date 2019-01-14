@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
+/* eslint-disable no-invalid-this */
 'use strict';
 
-const { Signale } = require('signale');
+const {Signale} = require('signale');
 const signale = require('signale');
 const fs = require('fs');
 const path = require('path');
@@ -33,14 +34,14 @@ const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
 const SamplesBuilder = require('./pipeline/samplesBuilder');
-const { FilteredPage, isFilterableRoute, FORMATS } = require('./pipeline/filteredPage');
+const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
 const TRANSPILE_SCSS_DEST = '../pages/css';
 const TEMPLATES_SRC = '../frontend/templates/**/*';
 const TEMPLATES_WATCH_SRC = TEMPLATES_SRC;
-const TEMPLATES_DEST = '../pages'
+const TEMPLATES_DEST = '../pages';
 const ICONS_SRC = '../frontend/icons/**/*';
 const ICONS_WATCH_SRC = ICONS_SRC;
 const ICONS_DEST = '../pages/icons';
@@ -49,7 +50,6 @@ const STATICS_SRC = ['../pages/static/**/*', '../examples/static/**/*'];
 const STATIC_DEST = '../platform/static';
 
 class Pipeline {
-
   constructor() {
     signale.await(`Starting pipeline for environment ${config.environment} ...`);
   }
@@ -77,7 +77,7 @@ class Pipeline {
       `${TEMPLATES_DEST}/views`,
 
       PAGES_DEST,
-      STATIC_DEST
+      STATIC_DEST,
     ], {'force': true});
   }
 
@@ -101,7 +101,7 @@ class Pipeline {
 
     if (config.environment === 'development') {
       this._watchFrontendChanges();
-      signale.watch(`Watching frontend source and static files for changes ...`);
+      signale.watch('Watching frontend source and static files for changes ...');
     }
   }
 
@@ -113,19 +113,19 @@ class Pipeline {
   }
 
   _transpileScss() {
-    const log = signale.scope(`Transpile SCSS`);
+    const log = signale.scope('Transpile SCSS');
     log.start(`Transpiling SCSS from ${TRANSPILE_SCSS_SRC} ...`);
 
-    let options = {
+    const options = {
       'outputStyle': 'compact' ? config.environment === 'development' : 'compressed',
-      'includePaths': '../frontend/scss/'
+      'includePaths': '../frontend/scss/',
     };
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(TRANSPILE_SCSS_SRC)
-                   .pipe(sass(options).on('error', log.error))
-                   .pipe(stripCssComments())
-                   .pipe(gulp.dest(TRANSPILE_SCSS_DEST));
+      const stream = gulp.src(TRANSPILE_SCSS_SRC)
+          .pipe(sass(options).on('error', log.error))
+          .pipe(stripCssComments())
+          .pipe(gulp.dest(TRANSPILE_SCSS_DEST));
 
       stream.on('error', (error) => {
         log.fatal('There was an error transpiling the pages SCSS.', error);
@@ -151,8 +151,8 @@ class Pipeline {
     log.start(`Collecting ${entity} from ${src} ...`);
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(src)
-                   .pipe(gulp.dest(dest));
+      const stream = gulp.src(src)
+          .pipe(gulp.dest(dest));
 
       stream.on('error', () => {
         log.error(`There was an error moving ${entity}`);
@@ -164,7 +164,6 @@ class Pipeline {
         resolve();
       });
     });
-
   }
 
   _collectTemplates() {
@@ -183,7 +182,7 @@ class Pipeline {
    * @return {Promise}
    */
   async importReference() {
-    let importer = new ComponentReferenceImporter();
+    const importer = new ComponentReferenceImporter();
     await importer.initialize();
 
     return importer.import();
@@ -194,7 +193,7 @@ class Pipeline {
    * @return {Promise}
    */
   async importSpec() {
-    let importer = new SpecImporter();
+    const importer = new SpecImporter();
     await importer.initialize();
 
     return importer.import();
@@ -206,7 +205,7 @@ class Pipeline {
    * @return {Promise}
    */
   generatePages() {
-    let grow = new Grow();
+    const grow = new Grow();
     if (config.environment === 'development') {
       // During development start Grow's dev server
       return grow.run().when('Server ready.');
@@ -217,17 +216,17 @@ class Pipeline {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve();
-          }, 2500)
+          }, 2500);
         });
       });
     }
   }
 
   async buildSamples() {
-    let samplesBuilder = new SamplesBuilder();
+    const samplesBuilder = new SamplesBuilder();
 
     // Start the samples build
-    let build = samplesBuilder.build();
+    const build = samplesBuilder.build();
 
     // And after the samples have been built start watching them in
     // development mode
@@ -267,40 +266,40 @@ class Pipeline {
     return new Promise((resolve, reject) => {
       const minifyCss = this._minifyCss;
 
-      let stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
-                   .pipe(through.obj(function (page, encoding, callback) {
-                     let html = page.contents.toString();
-                     log.await(`Minifying page ${page.relative} ...`);
+      const stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
+          .pipe(through.obj(function(page, encoding, callback) {
+            let html = page.contents.toString();
+            log.await(`Minifying page ${page.relative} ...`);
 
-                     // Clean up common markup fuck ups before minfying as
-                     // it would break the tree otherwise
-                     html = html.replace('<p></section>', '</section>');
-                     html = html.replace(/(<section [^>]*>)<\/p>/, '$1');
+            // Clean up common markup fuck ups before minfying as
+            // it would break the tree otherwise
+            html = html.replace('<p></section>', '</section>');
+            html = html.replace(/(<section [^>]*>)<\/p>/, '$1');
 
-                     // As minifyHtml's removeEmptyElements would be a bit to
-                     // radical, cleanup frequent empty tags ourselves
-                     html = html.replace(/<section .*><\/section>/, '');
-                     html = html.replace('<p></p>', '');
+            // As minifyHtml's removeEmptyElements would be a bit to
+            // radical, cleanup frequent empty tags ourselves
+            html = html.replace(/<section .*><\/section>/, '');
+            html = html.replace('<p></p>', '');
 
-                     try {
-                       html = minifyHtml(html, {
-                         'minifyCSS': minifyCss,
-                         'minifyJS': true,
-                         'collapseWhitespace': true,
-                         'removeEmptyElements': false,
-                         'removeRedundantAttributes': true,
-                         'ignoreCustomFragments': [/<use.*<\/use>/]
-                       });
-                     } catch(e) {
-                       log.error(`Could not minify ${page.relative}. Invalid markup.`);
-                     }
+            try {
+              html = minifyHtml(html, {
+                'minifyCSS': minifyCss,
+                'minifyJS': true,
+                'collapseWhitespace': true,
+                'removeEmptyElements': false,
+                'removeRedundantAttributes': true,
+                'ignoreCustomFragments': [/<use.*<\/use>/],
+              });
+            } catch (e) {
+              log.error(`Could not minify ${page.relative}. Invalid markup.`);
+            }
 
-                     page.contents = Buffer.from(html);
+            page.contents = Buffer.from(html);
 
-                     this.push(page);
-                     callback();
-                   }))
-                   .pipe(gulp.dest('./'));
+            this.push(page);
+            callback();
+          }))
+          .pipe(gulp.dest('./'));
 
       stream.on('error', (error) => {
         log.fatal(`Something went wrong while minifying HTML: ${error}`);
@@ -308,7 +307,7 @@ class Pipeline {
       });
 
       stream.on('end', () => {
-        log.success(`Minified page's HTML.`);
+        log.success('Minified page\'s HTML.');
         resolve();
       });
     });
@@ -324,67 +323,68 @@ class Pipeline {
     log.await('Filtering pages by formats ...');
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
-                   .pipe(through.obj(function (page, encoding, callback) {
-                     // Check if the page should even be filtered
-                     if (!isFilterableRoute(page.relative)) {
-                       log.info(`Skipping ${page.relative} as it is not filterable.`);
-                       callback();
-                       return;
-                     }
+      const stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
+          .pipe(through.obj(function(page, encoding, callback) {
+            // Check if the page should even be filtered
+            if (!isFilterableRoute(page.relative)) {
+              log.info(`Skipping ${page.relative} as it is not filterable.`);
+              callback();
+              return;
+            }
 
-                     // Already pull the contents form the buffer
-                     let html = page.contents.toString();
+            // Already pull the contents form the buffer
+            const html = page.contents.toString();
 
-                     // And check if it is a manually filtered page because
-                     // then the other formats will be created from the unfiltered one
-                     let manualFilter = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
-                     manualFilter = manualFilter ? manualFilter[1] : null;
-                     if (manualFilter && FORMATS.indexOf(manualFilter) !== -1) {
-                       log.warn(`${page.relative} is already a manual variant for ${manualFilter}.`);
+            // And check if it is a manually filtered page because
+            // then the other formats will be created from the unfiltered one
+            let manualFilter = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
+            manualFilter = manualFilter ? manualFilter[1] : null;
+            if (manualFilter && FORMATS.indexOf(manualFilter) !== -1) {
+              log.warn(`${page.relative} is already a manual variant for ${manualFilter}.`);
 
-                       let filteredPage = new FilteredPage(manualFilter, html);
-                       page.contents = Buffer.from(filteredPage.content);
+              const filteredPage = new FilteredPage(manualFilter, html);
+              page.contents = Buffer.from(filteredPage.content);
 
-                       this.push(page);
-                       callback();
-                       return;
-                     }
+              this.push(page);
+              callback();
+              return;
+            }
 
-                     // If it is the original, unfiltered document create
-                     // the not already existant filtered documents
-                     log.await(`Creating variant for page ${page.relative} ...`);
-                     for (let format of FORMATS) {
-                        let variantPath = page.relative.replace(path.extname(page.relative), `.${format}.html`);
+            // If it is the original, unfiltered document create
+            // the not already existant filtered documents
+            log.await(`Creating variant for page ${page.relative} ...`);
+            for (const format of FORMATS) {
+              const variantPath =
+                page.relative.replace(path.extname(page.relative), `.${format}.html`);
 
-                        // Check if there is a manually maintained format variant
-                        if (fs.existsSync(path.join(__dirname, '/../', variantPath))) {
-                          log.warn(`Page has a manual variant for format ${format}`);
-                          continue;
-                        } else {
-                          let filteredPage = new FilteredPage(format, html);
+              // Check if there is a manually maintained format variant
+              if (fs.existsSync(path.join(__dirname, '/../', variantPath))) {
+                log.warn(`Page has a manual variant for format ${format}`);
+                continue;
+              } else {
+                const filteredPage = new FilteredPage(format, html);
 
-                          let variantPage = page.clone();
-                          variantPage.contents = Buffer.from(filteredPage.content);
-                          variantPage.extname = `.${format}.html`;
-                          this.push(variantPage);
+                const variantPage = page.clone();
+                variantPage.contents = Buffer.from(filteredPage.content);
+                variantPage.extname = `.${format}.html`;
+                this.push(variantPage);
 
-                          log.success(`Created variant for format ${format}`);
-                        }
-                     }
+                log.success(`Created variant for format ${format}`);
+              }
+            }
 
-                     this.push(page);
-                     callback();
-                   }))
-                   .pipe(gulp.dest('./'));
+            this.push(page);
+            callback();
+          }))
+          .pipe(gulp.dest('./'));
 
       stream.on('error', (error) => {
-        log.fatal(`Something went wrong while filtering pages by format.`);
+        log.fatal('Something went wrong while filtering pages by format.');
         reject(error);
       });
 
       stream.on('end', () => {
-        log.success(`Created filtered pages.`);
+        log.success('Created filtered pages.');
         resolve();
       });
     });
@@ -398,7 +398,6 @@ class Pipeline {
     // TODO: Run AMP validator over generated pages
     signale.warn('Testing of build is not yet implemented!');
   }
-
 };
 
 module.exports = Pipeline;

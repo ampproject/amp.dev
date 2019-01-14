@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const { Signale } = require('signale');
+const {Signale} = require('signale');
 const gulp = require('gulp');
 const through = require('through2');
 const search = require('recursive-search');
@@ -30,10 +30,12 @@ const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
 // The pattern used by Grow to make up references
 const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
+/* eslint-disable max-len */
 const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-analytics.md': '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-your-analytics-tools.md'
+  '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-analytics.md': '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-your-analytics-tools.md',
 };
+/* eslint-enable max-len */
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -41,10 +43,9 @@ const LOOKUP_TABLE = {
  * exists at the pointed path and tries to adjust the path if not
  */
 class GrowReferenceChecker {
-
   constructor() {
     this._log = new Signale({
-      'scope': 'Reference checker'
+      'scope': 'Reference checker',
     });
 
     // Keeps track of documents that could not be found and therefore need
@@ -64,33 +65,39 @@ class GrowReferenceChecker {
     return new Promise((resolve, reject) => {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
 
-      stream = stream.pipe(through.obj((function(doc, encoding, callback) {
+      stream = stream.pipe(through.obj((doc, encoding, callback) => {
         this._log.await(`Checking ${doc.relative} ...`);
         stream.push(this._check(doc, callback));
         callback();
-      }).bind(this)));
+      }));
 
       stream.pipe(gulp.dest('./'));
 
       stream.on('end', () => {
-        this._log.complete(`Finished fixing. A total of ${this._brokenReferencesCount} had errors. ${this._unfindableDocuments.length + Object.keys(this._multipleMatches).length} still have.`);
+        this._log.complete(`Finished fixing. A total of ${this._brokenReferencesCount} had ` +
+        `errors. ${this._unfindableDocuments.length + Object.keys(this._multipleMatches).length}` +
+        'still have.');
 
         if (this._unfindableDocuments.length) {
-          this._log.info(`Could not automatically fix ${this._unfindableDocuments.length} as there wasn't any document with a matching basename:`);
-          for (let documentPath of this._unfindableDocuments) {
+          this._log.info(`Could not automatically fix ${this._unfindableDocuments.length} ` +
+            'as there wasn\'t any document with a matching basename:');
+          for (const documentPath of this._unfindableDocuments) {
             this._log.pending(`- ${documentPath}`);
           }
         }
 
         this._log.info('');
 
-        let multipleMatchesCount = Object.keys(this._multipleMatches).length;
+        const multipleMatchesCount = Object.keys(this._multipleMatches).length;
         if (multipleMatchesCount !== 0) {
-          this._log.info(`Encountered multiple possible matches for ${multipleMatchesCount} documents:`);
-          for (let documentPath in this._multipleMatches) {
-            this._log.pending(`${documentPath}`);
-            for (let possibleMatch of this._multipleMatches[documentPath]) {
-              this._log.pending(`-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`);
+          this._log.info(`Encountered multiple possible matches for ${multipleMatchesCount} ` +
+          'documents:');
+          for (const documentPath in this._multipleMatches) {
+            if (Object.prototype.hasOwnProperty.call(this._multipleMatches, documentPath)) {
+              this._log.pending(`${documentPath}`);
+              for (const possibleMatch of this._multipleMatches[documentPath]) {
+                this._log.pending(`-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`);
+              }
             }
           }
         }
@@ -108,8 +115,8 @@ class GrowReferenceChecker {
    */
   _check(doc) {
     let content = doc.contents.toString();
-    content = content.replace(REFERENCE_PATTERN, (match, path, offset, input) => {
-      let newPath = this._verifyReference(path);
+    content = content.replace(REFERENCE_PATTERN, (match, path) => {
+      const newPath = this._verifyReference(path);
       return match.replace(path, newPath);
     });
 
@@ -133,23 +140,23 @@ class GrowReferenceChecker {
     this._brokenReferencesCount++;
 
     this._log.warn(`No document found for ${documentPath}`);
-    this._log.info(`Trying to resolve new location from lookup table ...`);
+    this._log.info('Trying to resolve new location from lookup table ...');
 
     // Check if there is a manual match for the path in the lookup table
-    let lookedUpPath = LOOKUP_TABLE[documentPath.replace(POD_BASE_PATH, '/')]
+    const lookedUpPath = LOOKUP_TABLE[documentPath.replace(POD_BASE_PATH, '/')];
     if (lookedUpPath) {
       this._log.success(`Found new path in lookup table: ${lookedUpPath}`);
       return lookedUpPath;
     }
 
-    let basename = path.basename(documentPath);
+    const basename = path.basename(documentPath);
     this._log.info(`Trying to find new destination by basename ${basename}`);
-    let results = search.recursiveSearchSync(basename, PAGES_BASE_PATH);
+    const results = search.recursiveSearchSync(basename, PAGES_BASE_PATH);
 
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(`More than one possible match. Needs manual fixing.`);
+      this._log.error('More than one possible match. Needs manual fixing.');
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
@@ -161,24 +168,23 @@ class GrowReferenceChecker {
         return this._verifyReference(documentPath);
       }
 
-      this._log.error(`No matching document found. Needs manual fixing.`);
+      this._log.error('No matching document found. Needs manual fixing.');
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }
       return documentPath;
     }
 
-    let newPath = results[0].replace(POD_BASE_PATH, '/');
+    const newPath = results[0].replace(POD_BASE_PATH, '/');
     this._log.success(`Found new location of document: ${newPath}`);
 
     return newPath;
   }
-
 }
 
 // If not required, run directly
 if (!module.parent) {
-  let referenceChecker = new GrowReferenceChecker();
+  const referenceChecker = new GrowReferenceChecker();
   referenceChecker.start();
 }
 
