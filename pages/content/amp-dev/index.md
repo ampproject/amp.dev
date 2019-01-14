@@ -8,25 +8,25 @@ format_explainer:
     image: /static/img/stage-image.png
     headline: AMP enables great experiences across many web destinations
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
-    url: #
+    url: /what-is-amp/websites.html
   stories:
     name: stories
     image: /static/img/story.png
     headline: AMP enables great experiences across many stories
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on stories. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
-    url: #
+    url: /what-is-amp/stories.html
   ads:
     name: ads
     image: /static/img/ad.png
     headline: AMP enables great experiences across many ads
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on ads. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
-    url: #
+    url: /what-is-amp/ads.html
   emails:
     name: emails
     image: /static/img/e-mail.png
     headline: AMP enables great experiences across many emails
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on emails. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
-    url: #
+    url: /what-is-amp/email.html
 ---
 
 [stage color="dark-blue"]
