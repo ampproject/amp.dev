@@ -1,0 +1,76 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_color.scss';
+
+@import '../molecules/_copy.scss';
+
+.#{organism('format-explainer')} {
+  
+  &-image {
+    position: relative;
+    grid-column: 1 / -1;
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 1 / 13;
+      padding-top: 8em;
+    }
+  }
+  
+  &-content {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 13 / 23;
+    }
+  }
+  
+  &-headline {
+    margin-top: 0;
+  }
+  
+  &-copy {
+    margin-bottom: 2.250em;
+  }
+  
+  &-button {
+    @include hl;
+    @include hl-h5;
+    -webkit-appearance: none;
+    display: block;
+    min-width: 300px;
+    padding: 14px;
+    margin: 0 0 1.125em;
+    text-align: left;
+    background: none transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &-websites.active {
+      color: #fff;
+      @include gradient-websites;
+    }
+    &-stories.active {
+      color: #fff;
+      @include gradient-stories;
+    }
+    &-ads.active {
+      color: #fff;
+      @include gradient-ads;
+    }
+    &-emails.active {
+      color: #fff;
+      @include gradient-e-mails;
+    }
+  }
+  
+  &-link {
+    margin: 6em 0 0;
+  }
+}

@@ -3,3 +3,5 @@ view: /views/default.j2
 
 localization:
   path: /{locale}/documentation/tools/{base}.html
+
+index: /content/amp-dev/documentation/tools/index.html
