@@ -33,17 +33,7 @@ format_explainer:
 # Amp is a web component framework for easily creating user first
 [/stage]
 
-<section class="ad--case-band">
-  <div class="ad-o-case-band">
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-2"><amp-img src="/static/img/case-band-image-2.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-1"><amp-img src="/static/img/case-band-image-1.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-landscape ad-o-case-band-image-5"><amp-img src="/static/img/case-band-image-5.png" layout="responsive" width="16" height="9"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-4"><amp-img src="/static/img/case-band-image-4.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-landscape ad-o-case-band-image-3"><amp-img src="/static/img/case-band-image-3.png" layout="responsive" width="16" height="9"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-6"><amp-img src="/static/img/case-band-image-6.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-7"><amp-img src="/static/img/case-band-image-7.png" layout="responsive" width="9" height="16"></amp-img></div>
-  </div>
-</section>
+{% include 'views/partials/case-band.j2' %}
 
 [bevel]
 
