@@ -19,11 +19,12 @@
 const express = require('express');
 const config = require('../config.js');
 
+// eslint-disable-next-line new-cap
 const whoAmI = express.Router();
 
 whoAmI.get('/', (request, response) => {
-  let whoAmI = {
-    'environment': config.environment
+  const whoAmI = {
+    'environment': config.environment,
   };
 
   response.setHeader('Content-Type', 'application/json');

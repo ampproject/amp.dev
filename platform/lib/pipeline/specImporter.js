@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-const fs = require('fs');
 const path = require('path');
-const { Signale } = require('signale');
 
-const config = require('../config');
 const GitHubImporter = require('./gitHubImporter');
-const Document = require('./markdownDocument');
 
 // Where to save the documents to
 const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/';
 
 class SpecImporter extends GitHubImporter {
-
   async import() {
     this._log.start('Beginning to import spec docs ...');
     await this._importSpecDocs();
@@ -38,12 +33,12 @@ class SpecImporter extends GitHubImporter {
    * @return {undefined}
    */
   async _importSpecDocs() {
-    let importDocs = require(__dirname + '/../../config/imports/spec.json');
-    let importedDocs = [];
-    for (let importDoc of importDocs) {
-      let doc = await this._fetchDocument(importDoc.from)
+    const importDocs = require(__dirname + '/../../config/imports/spec.json');
+    const importedDocs = [];
+    for (const importDoc of importDocs) {
+      const doc = await this._fetchDocument(importDoc.from);
 
-      if(!doc) {
+      if (!doc) {
         this._log.warn(`Fetching for '${importDoc.title}' failed.`);
         continue;
       }
@@ -64,7 +59,7 @@ class SpecImporter extends GitHubImporter {
 
 // If not required, run directly
 if (!module.parent) {
-  let importer = new SpecImporter();
+  const importer = new SpecImporter();
 
   (async () => {
     await importer.initialize();

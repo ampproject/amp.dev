@@ -18,7 +18,6 @@
 
 'use strict';
 
-const config = require('./lib/config.js');
 const Platform = require('./lib/platform');
 
-let platform = new Platform();
+new Platform().start();

@@ -14,28 +14,22 @@
  * limitations under the License.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { Signale } = require('signale');
-
-const config = require('../config');
 const GitHubImporter = require('./gitHubImporter');
-const Document = require('./markdownDocument');
 const Collection = require('./collection');
 
 // The view that the collections should define in their frontmatter
 const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
 // Where to save the documents/collection to
-const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/documentation/components';
+const DESTINATION_BASE_PATH =
+  __dirname + '/../../../pages/content/amp-dev/documentation/components';
 // Base to define the request path for Grow
-const PATH_BASE = '/documentation/components'
+const PATH_BASE = '/documentation/components';
 // Names of the built-in components that need to be fetched from ...
 const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
 // ... this path
-const BUILT_IN_PATH = 'builtins'
+const BUILT_IN_PATH = 'builtins';
 
 class ComponentReferenceImporter extends GitHubImporter {
-
   async import() {
     this._log.start('Beginning to import extension docs ...');
     await this._importExtensionsDocs();
@@ -55,16 +49,16 @@ class ComponentReferenceImporter extends GitHubImporter {
     extensions = extensions[0].filter((doc) => doc.type === 'dir');
 
     // Add built-in components to list to fetch them all in one go
-    for (let builtInExtension of BUILT_INS) {
-      extensions.push({'name': builtInExtension, 'path': BUILT_IN_PATH})
+    for (const builtInExtension of BUILT_INS) {
+      extensions.push({'name': builtInExtension, 'path': BUILT_IN_PATH});
     }
 
     // Keep track of all saved documents (as promises) to complete function
-    let savedDocuments = [];
+    const savedDocuments = [];
     for (const extension of extensions) {
-      let document = await this._findExtensionDoc(extension);
+      const document = await this._findExtensionDoc(extension);
 
-      if(!document) {
+      if (!document) {
         this._log.warn(`No matching document for component: ${extension.name}`);
       } else {
         // Ensure that the document has a TOC
@@ -72,7 +66,6 @@ class ComponentReferenceImporter extends GitHubImporter {
         savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }
-
 
 
     return Promise.all(savedDocuments);
@@ -93,7 +86,7 @@ class ComponentReferenceImporter extends GitHubImporter {
 
     // Set the documents title
     document.title = extensionName;
-    let documentPath = `${DESTINATION_BASE_PATH}/${initial}/${extensionName}.md`;
+    const documentPath = `${DESTINATION_BASE_PATH}/${initial}/${extensionName}.md`;
 
     return document.save(documentPath).then(() => {
       this._log.success('Saved document to ' + documentPath);
@@ -110,10 +103,10 @@ class ComponentReferenceImporter extends GitHubImporter {
    * @return {Promise}
    */
   async _ensureCollection(initial) {
-    let destination = `${DESTINATION_BASE_PATH}/${initial}`;
-    let path = `${PATH_BASE}/${initial}/{base}.html`;
+    const destination = `${DESTINATION_BASE_PATH}/${initial}`;
+    const path = `${PATH_BASE}/${initial}/{base}.html`;
 
-    let collection = new Collection(destination, initial, DOCUMENT_VIEW, path);
+    const collection = new Collection(destination, initial, DOCUMENT_VIEW, path);
     return collection.create(false);
   }
 
@@ -127,8 +120,8 @@ class ComponentReferenceImporter extends GitHubImporter {
 
     // Find the Markdown document that is named like the extension
     let documentPath = '';
-    for (var i = 0; i < files.length; i++) {
-      if(files[i].type === 'file' && files[i].name === extension.name + '.md') {
+    for (let i = 0; i < files.length; i++) {
+      if (files[i].type === 'file' && files[i].name === extension.name + '.md') {
         documentPath = files[i].path;
         break;
       }
@@ -141,12 +134,11 @@ class ComponentReferenceImporter extends GitHubImporter {
 
     return this._fetchDocument(documentPath);
   }
-
 }
 
 // If not required, run directly
 if (!module.parent) {
-  let importer = new ComponentReferenceImporter();
+  const importer = new ComponentReferenceImporter();
 
   (async () => {
     await importer.initialize();

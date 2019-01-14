@@ -16,10 +16,8 @@
 
 const octonode = require('octonode');
 const fs = require('fs');
-const path = require('path');
-const { Signale } = require('signale');
+const {Signale} = require('signale');
 
-const config = require('../config');
 const Document = require('./markdownDocument');
 
 // TODO: Eventually make it possible to pass these in as a) command line args
@@ -31,17 +29,18 @@ const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
 const LOCAL_AMPHTML_REPOSITORY = false;
 
 class GitHubImporter {
-
   constructor() {
     this._log = new Signale({
       'interactive': true,
-      'scope': 'GitHub Importer'
+      'scope': 'GitHub Importer',
     });
 
     if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID))) {
-      this._log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more information.');
+      this._log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
+        'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
+        'information.');
 
-      throw 'Error: No GitHub credentials provided.';
+      throw new Error('Error: No GitHub credentials provided.');
     }
   }
 
@@ -49,9 +48,9 @@ class GitHubImporter {
     this._log.start('Instantiating GitHub client ...');
 
     this._github = octonode.client(CLIENT_TOKEN || {
-       'id': CLIENT_ID,
-       'secret': CLIENT_SECRET
-     });
+      'id': CLIENT_ID,
+      'secret': CLIENT_SECRET,
+    });
 
     this._repository = this._github.repo('ampproject/amphtml');
     this._latestReleaseTag = await this._fetchLatestReleaseTag();
@@ -85,12 +84,14 @@ class GitHubImporter {
    */
   _fetchDocument(path) {
     if (!path) {
-      this._log.warn(`Can not download from undefined path.`);
-      return new Promise((resolve) => { resolve(null); });
+      this._log.warn('Can not download from undefined path.');
+      return new Promise((resolve) => {
+        resolve(null);
+      });
     }
 
     return new Promise((resolve) => {
-      let process = (function (err, data) {
+      const process = (function(err, data) {
         if (err) {
           this._log.fatal(`Error while downloading ${path}`, err);
           throw err;
@@ -104,7 +105,7 @@ class GitHubImporter {
         let contents = new Buffer(data.content || data, 'base64');
         contents = contents.toString();
 
-        let relativePath = path.substr(0, path.lastIndexOf('/'));
+        const relativePath = path.substr(0, path.lastIndexOf('/'));
 
         resolve(new Document(relativePath, contents));
       }).bind(this);
