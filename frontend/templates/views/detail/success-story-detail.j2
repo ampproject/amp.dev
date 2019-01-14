@@ -8,9 +8,7 @@
 
 {% block main %}
 <main class="ad--main ad-t-success-story">
-  <div class="ad--container">
-    {% include 'views/partials/sidebar.j2' %}
-    {% include 'views/partials/content.j2' %}
-  </div>
+  {{ doc.headline }}
+  {# {% include 'views/partials/content.j2' %} #}
 </main>
 {% endblock %}
