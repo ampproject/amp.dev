@@ -5,21 +5,25 @@ $view: /views/home.j2
 format_explainer:
   websites:
     name: websites
+    visual: views/partials/formats-visual.j2
     headline: AMP enables great experiences across many web destinations
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/websites.html
   stories:
     name: stories
+    visual: views/partials/formats-visual.j2
     headline: AMP enables great experiences across many stories
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on stories. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/stories.html
   ads:
     name: ads
+    visual: views/partials/formats-visual.j2
     headline: AMP enables great experiences across many ads
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on ads. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/ads.html
   emails:
     name: emails
+    visual: views/partials/formats-visual.j2
     headline: AMP enables great experiences across many emails
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on emails. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/email.html
@@ -110,7 +114,22 @@ format_explainer:
     </amp-animation>
     
     <div class="ad-o-format-explainer-visual">
-      Visual Placeholder
+      <div class="ad-o-format-explainer-visual-{{ doc.format_explainer.websites.name }}"
+        [hidden]="activeFormat != '{{ doc.format_explainer.websites.name }}'">
+        {% include doc.format_explainer.websites.visual %}
+      </div>
+      <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.stories.name }}"
+        [hidden]="activeFormat != '{{ doc.format_explainer.stories.name }}'">
+        {% include doc.format_explainer.websites.visual %}
+      </div>
+      <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.ads.name }}"
+        [hidden]="activeFormat != '{{ doc.format_explainer.ads.name }}'">
+        {% include doc.format_explainer.websites.visual %}
+      </div>
+      <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.emails.name }}"
+        [hidden]="activeFormat != '{{ doc.format_explainer.emails.name }}'">
+        {% include doc.format_explainer.websites.visual %}
+      </div>
     </div>
     
     <div class="ad-o-format-explainer-content ad-m-copy">
