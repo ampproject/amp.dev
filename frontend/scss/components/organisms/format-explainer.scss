@@ -23,6 +23,7 @@
   
   &-content {
     grid-column: 1 / -1;
+    margin-bottom: 0;
 
     @media screen and (min-width: 1024px) {
       grid-column: 13 / 23;
