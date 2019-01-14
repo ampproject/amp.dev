@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block main %}
-<div class="ad-t-container ad-t-tools">
-  {% include 'views/partials/main.j2' %}
-</div>
+<main class="ad--main ad-t-tools">
+  {{ doc.html|render|safe }}
+</main>
 {% endblock %}
