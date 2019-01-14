@@ -90,9 +90,9 @@ format_explainer:
       </amp-img>
     </div>
     
-    <div class="ad-o-format-explainer-content">
-      <h3 [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h3>
-      <p [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
+    <div class="ad-o-format-explainer-content ad-m-copy">
+      <h2 class="ad-o-format-explainer-headline" [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h2>
+      <p class="ad-o-format-explainer-copy" [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
       
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
         [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
