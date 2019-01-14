@@ -39,7 +39,9 @@ class ComponentReferenceImporter extends GitHubImporter {
 
   async import() {
     this._log.info('Cleaning import path ...');
-    del.sync(DESTINATION_BASE_PATH, {'force': true});
+    del.sync([
+      `${DESTINATION_BASE_PATH}/*/*`,
+    ], {'force': true});
 
     this._log.start('Beginning to import extension docs ...');
     await this._importExtensionsDocs();
