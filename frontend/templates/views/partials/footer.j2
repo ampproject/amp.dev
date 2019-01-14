@@ -1,10 +1,5 @@
 {% do doc.styles.addCssFile('css/components/organisms/footer.css') %}
 {% do doc.icons.useIcon('icons/internal.svg') %}
-{% do doc.icons.useIcon('icons/twitter.svg') %}
-{% do doc.icons.useIcon('icons/youtube.svg') %}
-{% do doc.icons.useIcon('icons/wordpress.svg') %}
-{% do doc.icons.useIcon('icons/github.svg') %}
-{% do doc.icons.useIcon('icons/slack.svg') %}
 
 <footer class="ad--footer" role="content-info">
   <div class="ad-o-footer">
@@ -14,10 +9,15 @@
       <div class="ad-o-footer-follow">
         <h5 class="ad-o-footer-follow-title">{{_('Follow us')}}</h5>
         <ul class="ad-o-footer-follow-menu">
-          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
-          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
-          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress"></use></svg></a></li>
-          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use></svg></a></li>
+          {% do doc.icons.useIcon('icons/twitter.svg') %}
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="https://twitter.com/AMPhtml" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+          {% do doc.icons.useIcon('icons/youtube.svg') %}
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
+          {% do doc.icons.useIcon('icons/wordpress.svg') %}
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="https://amphtml.wordpress.com/" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress"></use></svg></a></li>
+          {% do doc.icons.useIcon('icons/github.svg') %}
+          <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="https://github.com/ampproject"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use></svg></a></li>
+          {% do doc.icons.useIcon('icons/slack.svg') %}
           <li class="ad-o-footer-follow-item"><a class="ad-a-ico ad-o-footer-follow-icon" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#slack"></use></svg></a></li>
         </ul>
       </div>
