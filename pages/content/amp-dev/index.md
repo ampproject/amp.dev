@@ -48,8 +48,7 @@ format_explainer:
 [bevel]
 
 <section class="ad--format-explainer">
-  <div class="ad--container">
-    <div class="ad-o-format-explainer">
+    <div class="ad-o-format-explainer ad--container">
       <amp-state id="formats">
         <script type="application/json">
           {
@@ -81,14 +80,17 @@ format_explainer:
         </script>
       </amp-state>
           
-      <div class="ad-o-format-explainer-websites" [class]="'ad-o-format-explainer-' + activeFormat">
+      <div class="ad-o-format-explainer-image">
         <amp-img
-          width="300"
-          height="200"
-          layout="fixed"
+          width="1"
+          height="1"
+          layout="responsive"
           src="{{ doc.format_explainer.websites.image }}"
           [src]="formats[activeFormat].image">
         </amp-img>
+      </div>
+      
+      <div class="ad-o-format-explainer-content">
         <h3 [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h3>
         <p [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
         
@@ -106,7 +108,6 @@ format_explainer:
         </a>
       </div>
     </div>
-  </div>
 </section>
 
 <section class="ad--benefits-overview">
