@@ -11,6 +11,22 @@
   <div class="ad--container">
     {% include 'views/partials/sidebar.j2' %}
     {% include 'views/partials/content.j2' %}
+
+    {% if doc.collection.chaptered %}
+    <section class="ad--content">
+      <div class="ad--chapter-indicator">
+        {# If the document hasn't got a previous document, it's the first one #}
+        {% set previous_document = doc.prev() %}
+        {% set next_document = doc.next() %}
+        {% if not previous_document and next_document %}
+        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+        <a href="{{ next_document.url.path }}" class="ad-a-button">
+          {{ _('Get started') }}
+        </a>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
   </div>
 </main>
 {% endblock %}
