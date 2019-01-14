@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const { Signale } = require('signale');
+const del = require('del');
 
 const config = require('../config');
 const GitHubImporter = require('./gitHubImporter');
@@ -37,6 +38,9 @@ const BUILT_IN_PATH = 'builtins'
 class ComponentReferenceImporter extends GitHubImporter {
 
   async import() {
+    this._log.info('Cleaning import path ...');
+    del.sync(DESTINATION_BASE_PATH, {'force': true});
+
     this._log.start('Beginning to import extension docs ...');
     await this._importExtensionsDocs();
   }
