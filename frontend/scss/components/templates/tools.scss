@@ -6,6 +6,8 @@
 
 ### INFO:
 
+The page with all AMP tools.
+
 */
 @import '../../extends';
 @import '../../functions';
@@ -16,49 +18,54 @@
 @import '../atoms/_headline';
 @import '../atoms/_text';
 
+@import '../molecules/copy';
+
+@import '../organisms/tool-block';
+
 @import '../templates/_default';
 
 .#{template('tools')} {
-  @include container;
+  .#{utility('container')} {
+    @include container;
 
-  section {
-    &.main {
-      grid-column: 3 / 23;
-    }
-    .intro {
-      h1 {
-        @include hl-h2;
-      }
-    }
-
-    .tools {
-      h2 {
-        @include hl-h1;
+    @media screen and (min-width: 768px) {
+      & {
+        padding-top: 70px;
       }
     }
   }
 
 
-  .component-visual {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-top: 50px;
 
-    @media screen and (min-width: 768px) {
-      align-items: center;
-      flex-direction: row;
+  .#{utility('content')} {
+    @include content;
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      & {
+        grid-column: 3 / 23
+      }
     }
+  }
 
-    &-copy {
-      width: auto;
-    }
 
-    &-cta {
-      margin-top: 50px;
-    }
 
-    &-media {
-      min-width: 50%;
+  h1 {
+    @include hl;
+    @include hl-h2;
+  }
+
+  h2 {
+    @include hl;
+    @include hl-h1;
+
+    &:before {
+      background: linear-gradient(to right, color('blue-ribbon'), color('robins-egg'));
+      content: '';
+      display: block;
+      height: 10px;
+      margin-bottom: 20px;
+      width: 80px;
+      border-radius: 100px;
     }
   }
 }
