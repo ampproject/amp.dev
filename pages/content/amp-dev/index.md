@@ -48,66 +48,66 @@ format_explainer:
 [bevel]
 
 <section class="ad--format-explainer">
-    <div class="ad-o-format-explainer ad--container">
-      <amp-state id="formats">
-        <script type="application/json">
-          {
-            "websites": {
-              "image": "{{ doc.format_explainer.websites.image }}",
-              "headline": "{{ doc.format_explainer.websites.headline }}",
-              "description": "{{ doc.format_explainer.websites.description }}",
-              "url": "{{ doc.format_explainer.websites.url }}"
-            },
-            "stories": {
-              "image": "{{ doc.format_explainer.stories.image }}",
-              "headline": "{{ doc.format_explainer.stories.headline }}",
-              "description": "{{ doc.format_explainer.stories.description }}",
-              "url": "{{ doc.format_explainer.stories.url }}"
-            },
-            "ads": {
-              "image": "{{ doc.format_explainer.ads.image }}",
-              "headline": "{{ doc.format_explainer.ads.headline }}",
-              "description": "{{ doc.format_explainer.ads.description }}",
-              "url": "{{ doc.format_explainer.ads.url }}"
-            },
-            "emails": {
-              "image": "{{ doc.format_explainer.emails.image }}",
-              "headline": "{{ doc.format_explainer.emails.headline }}",
-              "description": "{{ doc.format_explainer.emails.description }}",
-              "url": "{{ doc.format_explainer.emails.url }}"
-            }
+  <div class="ad-o-format-explainer ad--container">
+    <amp-state id="formats">
+      <script type="application/json">
+        {
+          "websites": {
+            "image": "{{ doc.format_explainer.websites.image }}",
+            "headline": "{{ doc.format_explainer.websites.headline }}",
+            "description": "{{ doc.format_explainer.websites.description }}",
+            "url": "{{ doc.format_explainer.websites.url }}"
+          },
+          "stories": {
+            "image": "{{ doc.format_explainer.stories.image }}",
+            "headline": "{{ doc.format_explainer.stories.headline }}",
+            "description": "{{ doc.format_explainer.stories.description }}",
+            "url": "{{ doc.format_explainer.stories.url }}"
+          },
+          "ads": {
+            "image": "{{ doc.format_explainer.ads.image }}",
+            "headline": "{{ doc.format_explainer.ads.headline }}",
+            "description": "{{ doc.format_explainer.ads.description }}",
+            "url": "{{ doc.format_explainer.ads.url }}"
+          },
+          "emails": {
+            "image": "{{ doc.format_explainer.emails.image }}",
+            "headline": "{{ doc.format_explainer.emails.headline }}",
+            "description": "{{ doc.format_explainer.emails.description }}",
+            "url": "{{ doc.format_explainer.emails.url }}"
           }
-        </script>
-      </amp-state>
-          
-      <div class="ad-o-format-explainer-image">
-        <amp-img
-          width="1"
-          height="1"
-          layout="responsive"
-          src="{{ doc.format_explainer.websites.image }}"
-          [src]="formats[activeFormat].image">
-        </amp-img>
-      </div>
-      
-      <div class="ad-o-format-explainer-content">
-        <h3 [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h3>
-        <p [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
+        }
+      </script>
+    </amp-state>
         
-        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'})">AMP {{ doc.format_explainer.websites.name }}</button>
-        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'})">AMP {{ doc.format_explainer.stories.name }}</button>
-        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'})">AMP {{ doc.format_explainer.ads.name }}</button>
-        <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'})">AMP {{ doc.format_explainer.emails.name }}</button>
-                  
-        <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
-          <div class="ad-a-ico ad-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
-        </a>
-      </div>
+    <div class="ad-o-format-explainer-image">
+      <amp-img
+        width="1"
+        height="1"
+        layout="responsive"
+        src="{{ doc.format_explainer.websites.image }}"
+        [src]="formats[activeFormat].image">
+      </amp-img>
     </div>
+    
+    <div class="ad-o-format-explainer-content">
+      <h3 [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h3>
+      <p [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
+      
+      <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'})">AMP {{ doc.format_explainer.websites.name }}</button>
+      <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'})">AMP {{ doc.format_explainer.stories.name }}</button>
+      <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'})">AMP {{ doc.format_explainer.ads.name }}</button>
+      <button on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'})">AMP {{ doc.format_explainer.emails.name }}</button>
+                
+      <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="ad--benefits-overview">
