@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const del = require('del');
 const GitHubImporter = require('./gitHubImporter');
 const Collection = require('./collection');
 
@@ -31,6 +32,11 @@ const BUILT_IN_PATH = 'builtins';
 
 class ComponentReferenceImporter extends GitHubImporter {
   async import() {
+    this._log.info('Cleaning import path ...');
+    del.sync([
+      `${DESTINATION_BASE_PATH}/*/*`,
+    ], {'force': true});
+
     this._log.start('Beginning to import extension docs ...');
     await this._importExtensionsDocs();
   }
