@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-const { spawn, spawnSync, exec } = require('child_process');
-const { Signale } = require('signale');
-const stream = require('stream');
+const {spawn} = require('child_process');
+const {Signale} = require('signale');
 const config = require('../config.js');
 const fs = require('fs');
 const os = require('os');
@@ -31,7 +30,6 @@ const GROW_DEFAULT_PATH = path.join(os.homedir(), './bin/grow');
  * running in parallel to the JavaScript based pipeline
  */
 class Grow {
-
   constructor() {
     this._log = new Signale({
       'interactive': true,
@@ -41,9 +39,9 @@ class Grow {
         'running': {
           'badge': '…',
           'color': 'cyan',
-          'label': 'running'
-        }
-      }
+          'label': 'running',
+        },
+      },
     });
 
     this._command = this._determineCommand();
@@ -59,7 +57,7 @@ class Grow {
       this._log.info(`Using Grow installation from ${GROW_DEFAULT_PATH}`);
       return GROW_DEFAULT_PATH;
     } else {
-      this._log.info(`Using global Grow if present.`);
+      this._log.info('Using global Grow if present.');
       return 'grow';
     }
   }
@@ -85,7 +83,7 @@ class Grow {
   }
 
   when(message) {
-    let process = this._process;
+    const process = this._process;
     return new Promise((resolve, reject) => {
       // Listen for the specified message in the output streams
       function listen(data) {
@@ -105,12 +103,12 @@ class Grow {
   }
 
   run() {
-    let args = [
-      'run', '--port', `${config.hosts.pages.port}`, '--no-preprocess'
+    const args = [
+      'run', '--port', `${config.hosts.pages.port}`, '--no-preprocess',
     ];
-    let options = {
+    const options = {
       'stdio': 'pipe',
-      'cwd': GROW_POD_PATH
+      'cwd': GROW_POD_PATH,
     };
 
     this._spawn(this._command, args, options);
@@ -119,12 +117,12 @@ class Grow {
   }
 
   deploy() {
-    let args = [
-      'deploy', '--noconfirm'
+    const args = [
+      'deploy', '--noconfirm',
     ];
-    let options = {
+    const options = {
       'stdio': 'pipe',
-      'cwd': GROW_POD_PATH
+      'cwd': GROW_POD_PATH,
     };
 
     this._spawn(this._command, args, options);

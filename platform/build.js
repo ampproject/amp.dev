@@ -18,15 +18,14 @@
 
 'use strict';
 
-const signale = require('signale');
 const mri = require('mri');
 
 const config = require('./lib/config');
 const Pipeline = require('./lib/pipeline');
 const Platform = require('./lib/platform');
 
-let args = mri(process.argv.slice(2));
-let pipeline = new Pipeline();
+const args = mri(process.argv.slice(2));
+const pipeline = new Pipeline();
 
 pipeline.clean();
 
@@ -45,8 +44,8 @@ pipeline.clean();
   // - The reference docs for the various components
   // - Some documents that get maintained inside ampproject/amphtml
   if (args['import'] === true) {
-    let referenceImport = pipeline.importReference();
-    let specImport = pipeline.importSpec();
+    const referenceImport = pipeline.importReference();
+    const specImport = pipeline.importSpec();
 
     await referenceImport;
     await specImport;
@@ -73,6 +72,6 @@ pipeline.clean();
 })().then(() => {
   // For development we also want to directly serve the current build
   if (config.environment == 'development') {
-    let platform = new Platform();
+    new Platform().start();
   }
 });

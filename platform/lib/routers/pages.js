@@ -20,10 +20,11 @@ const express = require('express');
 const config = require('../config');
 const HttpProxy = require('http-proxy');
 const modifyResponse = require('http-proxy-response-rewrite');
-const { Signale } = require('signale');
-const { FilteredPage } = require('../pipeline/filteredPage');
+const {Signale} = require('signale');
+const {FilteredPage} = require('../pipeline/filteredPage');
 const got = require('got');
 
+// eslint-disable-next-line new-cap
 const pages = express.Router();
 const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
 
@@ -36,9 +37,8 @@ const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${co
 function getFilteredFormat(request) {
   const QUERY_PARAMETER_NAME = 'format';
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  const FILTERABLE_ROUTES = [];
 
-  let activeFormat = request.query[QUERY_PARAMETER_NAME] || '';
+  const activeFormat = request.query[QUERY_PARAMETER_NAME] || '';
   if (ALLOWED_FORMATS.indexOf(activeFormat.toLowerCase()) == -1) {
     // If the format that should be filtered by isn't valid go on
     return;
@@ -48,9 +48,9 @@ function getFilteredFormat(request) {
 }
 
 async function hasManualFormatVariant(request, format) {
-  let path = request.originalUrl.replace('.html', `.${format}.html`);
+  const path = request.originalUrl.replace('.html', `.${format}.html`);
 
-  let page = await got(`${growHost}${path}`).catch(() => {
+  const page = await got(`${growHost}${path}`).catch(() => {
     return {};
   });
 
@@ -68,7 +68,7 @@ if (config.environment === 'development') {
   // what's going on
   const log = new Signale({
     'interactive': true,
-    'scope': 'Format filter'
+    'scope': 'Format filter',
   });
 
   // Grow has problems delivering the index.html on a root request
@@ -87,16 +87,16 @@ if (config.environment === 'development') {
 
   // As the filtering will happen on content from the proxy (which will end
   // expressjs' native middleware chain) we need to hook into the proxy
-  proxy.on('proxyRes', async function (proxyResponse, request, response) {
+  proxy.on('proxyRes', async (proxyResponse, request, response) => {
     // Check if this response should be filtered
-    let activeFormat = getFilteredFormat(request);
+    const activeFormat = getFilteredFormat(request);
 
     if (activeFormat) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
 
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-          let filteredPage = new FilteredPage(activeFormat, body);
-          return filteredPage.content;
+        const filteredPage = new FilteredPage(activeFormat, body);
+        return filteredPage.content;
       });
     }
   });
@@ -104,11 +104,11 @@ if (config.environment === 'development') {
   pages.get('/*', async (request, response, next) => {
     // Check if there is a manually filtered variant of the requested page
     // and if so rewrite the request to this URL
-    let activeFormat = getFilteredFormat(request);
+    const activeFormat = getFilteredFormat(request);
     if (activeFormat) {
       log.info('Checking for manual variant of requested page ...');
       if (await hasManualFormatVariant(request, activeFormat)) {
-        let url = request.url.replace('.html', `.${activeFormat}.html`);
+        const url = request.url.replace('.html', `.${activeFormat}.html`);
         log.success(`Manually filtered variant exists - rewriting request to ${url}`);
         request.url = url;
       }
@@ -117,7 +117,7 @@ if (config.environment === 'development') {
     next();
   }, (request, response, next) => {
     proxy.web(request, response, {
-      'target': growHost
+      'target': growHost,
     }, next);
   });
 }
@@ -125,7 +125,7 @@ if (config.environment === 'development') {
 if (config.environment !== 'development') {
   pages.use('/', (request, response, next) => {
     // Check if this request should be filtered
-    let activeFormat = getFilteredFormat(request);
+    const activeFormat = getFilteredFormat(request);
     if (activeFormat) {
       // And if it should be filtered rewrite to the correct file
       request.url = request.url.replace('.html', `.${activeFormat}.html`);

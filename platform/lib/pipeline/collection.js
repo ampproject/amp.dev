@@ -15,13 +15,9 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const writeYaml = require('write-yaml');
 
-const config = require('../config');
-
 class Collection {
-
   /**
    * Creates a virtual collection that will be reflected inside a
    * _blueprint.yaml upon create()
@@ -37,8 +33,8 @@ class Collection {
       '$view': view,
       '$path': path,
       '$localization': {
-        'path': '/{locale}' + path
-      }
+        'path': '/{locale}' + path,
+      },
     };
   }
 
@@ -49,7 +45,7 @@ class Collection {
   create(path, overwrite=false) {
     // Check if the collection already exists and only write (new) blueprint
     // if overwrite is set to true
-    let blueprintPath = this.destination + '/_blueprint.yaml'
+    const blueprintPath = this.destination + '/_blueprint.yaml';
     if (fs.existsSync(blueprintPath) && !overwrite) {
       return false;
     }
