@@ -5,25 +5,21 @@ $view: /views/home.j2
 format_explainer:
   websites:
     name: websites
-    image: /static/img/stage-image.png
     headline: AMP enables great experiences across many web destinations
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/websites.html
   stories:
     name: stories
-    image: /static/img/story.png
     headline: AMP enables great experiences across many stories
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on stories. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/stories.html
   ads:
     name: ads
-    image: /static/img/ad.png
     headline: AMP enables great experiences across many ads
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on ads. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/ads.html
   emails:
     name: emails
-    image: /static/img/e-mail.png
     headline: AMP enables great experiences across many emails
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on emails. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/email.html
@@ -53,25 +49,21 @@ format_explainer:
       <script type="application/json">
         {
           "websites": {
-            "image": "{{ doc.format_explainer.websites.image }}",
             "headline": "{{ doc.format_explainer.websites.headline }}",
             "description": "{{ doc.format_explainer.websites.description }}",
             "url": "{{ doc.format_explainer.websites.url }}"
           },
           "stories": {
-            "image": "{{ doc.format_explainer.stories.image }}",
             "headline": "{{ doc.format_explainer.stories.headline }}",
             "description": "{{ doc.format_explainer.stories.description }}",
             "url": "{{ doc.format_explainer.stories.url }}"
           },
           "ads": {
-            "image": "{{ doc.format_explainer.ads.image }}",
             "headline": "{{ doc.format_explainer.ads.headline }}",
             "description": "{{ doc.format_explainer.ads.description }}",
             "url": "{{ doc.format_explainer.ads.url }}"
           },
           "emails": {
-            "image": "{{ doc.format_explainer.emails.image }}",
             "headline": "{{ doc.format_explainer.emails.headline }}",
             "description": "{{ doc.format_explainer.emails.description }}",
             "url": "{{ doc.format_explainer.emails.url }}"
@@ -88,7 +80,7 @@ format_explainer:
           "fill": "forwards",
           "easing": "ease-out",
           "iterations": "1",
-          "selector": ".ad-o-format-explainer-image",
+          "selector": ".ad-o-format-explainer-visual",
           "keyframes": [{
             "opacity": "0.5",
             "transform": "translateX(-5%)"
@@ -117,14 +109,8 @@ format_explainer:
       </script>
     </amp-animation>
     
-    <div class="ad-o-format-explainer-image">
-      <amp-img
-        width="1"
-        height="1"
-        layout="responsive"
-        src="{{ doc.format_explainer.websites.image }}"
-        [src]="formats[activeFormat].image">
-      </amp-img>
+    <div class="ad-o-format-explainer-visual">
+      Visual Placeholder
     </div>
     
     <div class="ad-o-format-explainer-content ad-m-copy">
