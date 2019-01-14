@@ -1,0 +1,27 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+
+.#{organism('format-explainer')} {
+  
+  &-image {
+    position: relative;
+    grid-column: 1 / -1;
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 2 / 13;
+    }
+  }
+  
+  &-content {
+    grid-column: 1 / -1;
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 13 / 24;
+    }
+  }
+}
