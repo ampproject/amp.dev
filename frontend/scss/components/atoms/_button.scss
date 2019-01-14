@@ -15,6 +15,22 @@ none
 
 */
 
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '_color.scss';
+@import '_text.scss';
+@import '_headline.scss';
+
+@mixin unset-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+
 .#{atom('btn')} {
 	@include hl;
 	@include hl-h3;

@@ -1,10 +1,9 @@
-{% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
-
-{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
-{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-{% do doc.icons.useIcon('icons/angle-down-light.svg') %}
-
 <section class="ad--sidebar">
+  {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" for="sidebar">Sidebar</label>
+  <input class="ad-a-sidebar-toggle-input" type="checkbox" name="sidebar" id="sidebar">
+
+  {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
   <div class="ad-o-sidebar">
     {% include '/views/partials/format-toggle.j2' %}
 
@@ -36,8 +35,10 @@
             <input class="nav-trigger" {% if activeCollection or iteration == 1  %}checked {% endif %} type="checkbox">
             <div class="nav-icon">
               {% if iteration==1 %}
+              {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
               <svg class="ad-a-ico solid"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
               {% else %}
+              {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
               <svg class="ad-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
               {% endif %}
             </div>

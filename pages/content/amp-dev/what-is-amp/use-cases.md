@@ -12,7 +12,7 @@ $view: /views/overview/use-cases.j2
 </amp-state>
 
 
-<section class="ad-o-stage">
+<section class="main">
   <button on="tap:AMP.setState({selected: {slide: selected.slide - 1}})" class="ad-o-fragment-slider-prevbtn slide1" [class]='"ad-o-fragment-slider-prevbtn slide" +selected.slide'>
     <div class="ad-a-ico ad-m-lnk-icon">
       {% do doc.icons.useIcon('icons/internal.svg') %}

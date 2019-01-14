@@ -1,5 +1,5 @@
 {
-	"logLevel": 2,
+	"name": "staging",
 	"hosts": {
 		"pages": {
 			"scheme": "https",
@@ -8,7 +8,7 @@
 		},
 		"samples": {
 			"scheme": "https",
-			"host": "api.amp-dev-staging.appspot.com",
+			"host": "samples.amp-dev-staging.appspot.com",
 			"port": ""
 		},
 		"platform": {

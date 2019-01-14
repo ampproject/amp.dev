@@ -45,7 +45,7 @@ const ICONS_SRC = '../frontend/icons/**/*';
 const ICONS_WATCH_SRC = ICONS_SRC;
 const ICONS_DEST = '../pages/icons';
 const PAGES_DEST = '../platform/pages';
-const STATICS_SRC = ['../pages/static/**/*'];
+const STATICS_SRC = ['../pages/static/**/*', '../examples/static/**/*'];
 const STATIC_DEST = '../platform/static';
 
 class Pipeline {
@@ -101,7 +101,7 @@ class Pipeline {
 
     if (config.environment === 'development') {
       this._watchFrontendChanges();
-      signale.watch(`Watching frontend source for changes ...`);
+      signale.watch(`Watching frontend source and static files for changes ...`);
     }
   }
 
@@ -109,6 +109,7 @@ class Pipeline {
     gulp.watch(TEMPLATES_WATCH_SRC, this._collectTemplates.bind(this));
     gulp.watch(ICONS_WATCH_SRC, this._collectIcons.bind(this));
     gulp.watch(TRANSPILE_SCSS_WATCH_SRC, this._transpileScss.bind(this));
+    gulp.watch(STATICS_SRC, this.collectStatics.bind(this));
   }
 
   _transpileScss() {
@@ -116,7 +117,8 @@ class Pipeline {
     log.start(`Transpiling SCSS from ${TRANSPILE_SCSS_SRC} ...`);
 
     let options = {
-      'outputStyle': 'compact' ? config.environment === 'development' : 'compressed'
+      'outputStyle': 'compact' ? config.environment === 'development' : 'compressed',
+      'includePaths': '../frontend/scss/'
     };
 
     return new Promise((resolve, reject) => {

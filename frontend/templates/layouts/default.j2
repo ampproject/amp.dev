@@ -17,7 +17,11 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{ doc.title }}</title>
+    {% if podspec.env.name == 'development' %}
+    <link rel="shortcut icon" href="/static/img/favicon-local.png">
+    {% else %}
     <link rel="shortcut icon" href="/static/img/favicon.png">
+    {% endif %}
 
     <link rel="canonical" href="{{ doc.url }}">
     <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}">
@@ -62,25 +66,35 @@
   {% block body %}
   <body class="">
   {% endblock %}
+    {% block icons %}
 	  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         {{ doc.icons.emit() }}
       </defs>
     </svg>
+    {% endblock %}
 
-    <div class="grid-toggle">
+    {% block header %}
+    {% include 'views/partials/header.j2' %}
+    {% endblock %}
+
+    {% block main %}
+    {# Only render the grid toggle during development #}
+    {% if podspec.env.name == 'development' %}
+    {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
+    <aside class="ad-a-grid-toggle">
         <input type="checkbox">
         <div class="toggle"><div class="dot"></div></div>
         <div class="grid"></div>
-    </div>
+    </aside>
+    {% endif %}
 
-    {% include 'views/partials/header.j2' %}
-
-    {% block main %}
     {% include 'views/partials/content.j2' %}
     {% endblock %}
 
+    {% block footer %}
     {% include 'views/partials/footer.j2' %}
+    {% endblock %}
 
     {% block fonts %}
     <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>

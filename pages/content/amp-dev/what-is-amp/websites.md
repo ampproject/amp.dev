@@ -4,25 +4,25 @@ $view: /views/overview/what-is-amp.j2
 ---
 
 [stage color="dark-blue" icon=True formats=True]
-##Compeling, smooth and instant
-#Easily create user first websites with Amp
+##The AMP web component framework
+#Deliver fast and compelling user experiences across all screens.
 [/stage]
 
 <section class="ad--content">
   <div class="ad--container-fluid">
-    <div class="ad-m-copy ad-m-copy-left-small">
+    <div class="ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
       <h1>What is AMP?</h1>
       <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
-      <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
+      <p >AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
     </div>
   </div>
 </section>
 
 <section class="ad--component-visual">
   <div class="ad-o-component-visual ad--container-fluid">
-    <div class="ad-o-component-visual-copy ad-m-copy ad-m-copy-left-small">
+    <div class="ad-o-component-visual-copy ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
       <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
-      <div class="ad-o-component-visual-link">
+      <div class="ad-o-component-visual-link" >
         <a href="#" class="ad-m-lnk ad-m-lnk-square">
           <div class="ad-a-ico ad-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -32,7 +32,7 @@ $view: /views/overview/what-is-amp.j2
         </a>
       </div>
     </div>
-    <div class="ad-o-component-visual-image">
+    <div class="ad-o-component-visual-image" amp-fx="fly-in-bottom" data-duration="1.5s" data-fly-in-distance="10%">
       <amp-img src="/static/img/the-blog.png" layout="responsive" height="0.78" width="1" />
     </div>
   </div>
@@ -40,7 +40,7 @@ $view: /views/overview/what-is-amp.j2
 
 <section class="ad--case-band">
   <div class="ad--container-fluid">
-    <div class="ad-m-copy ad-m-copy-left-small">
+    <div class="ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
       <h3>Create great AMP experiences for all open web touchpoints</h3>
       <p>AMP enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers can decide how to present their content that emphasizes a user-first experience.</p>
     </div>
@@ -60,7 +60,7 @@ $view: /views/overview/what-is-amp.j2
 <section class="ad--benefits-overview">
 
   <div class="ad-o-benefits-overview ad--container">
-  
+
     <div class="ad-o-benefits-overview-header">
       <div class="ad-m-headline-icon">
         <div class="ad-m-headline-icon-icon">
@@ -192,7 +192,7 @@ $view: /views/overview/what-is-amp.j2
  <section class="ad--made-of">
   <div class="ad-o-made-of">
     <div class="ad--container">
-      <h1 class="ad-o-made-of-headline">This is What AMP HTML is made of</h1>
+      <h1 class="ad-o-made-of-headline" amp-fx="fade-in fly-in-left"  data-duration="1s" data-fly-in-distance="5%">This is What AMP HTML is made of</h1>
     </div>
     <div class="ad--container-fluid">
       [sourcecode:html]
@@ -214,28 +214,28 @@ $view: /views/overview/what-is-amp.j2
 <section class="ad--content">
 
   <div class="ad--container">
-    <div class="ad-m-copy ad-m-copy-left">
+    <div class="ad-m-copy ad-m-copy-left" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
       <h2>Built-in components</h2>
-      <p class="intro">AMP HTML is HTML with some restrictions for reliable performance.</p>
+      <p>AMP HTML is HTML with some restrictions for reliable performance.</p>
 
-      <p>Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML components, make common patterns easy to implement in a performant way.</p>
+      <p>Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML  components, make common patterns easy to implement in a performant way.</p>
 
       <p>For example, the amp-img tag provides full srcset support even in browsers that don’t support it yet. Learn how to create your first AMP HTML page.</p>
 
-      <p>AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. Learn more in Make Your Page Discoverable.</p>
+      <p>AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. Learn more in  Make Your Page Discoverable.</p>
     </div>
 
-    <div class="ad-m-copy ad-m-copy-right">
+    <div class="ad-m-copy ad-m-copy-right"  amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
       <h2>Amp Cache</h2>
-      <p class="intro">The Google AMP Cache can be used to serve cached AMP HTML pages.</p>
+
+      <p>The Google AMP Cache can be used to serve cached AMP HTML pages.</p>
 
       <p>The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency.
-      The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn't depend on external resources. The validation system runs  a series of assertions confirming the page’s markup meets the AMP HTML specification.</p>
+        The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn't depend on external resources. The validation system runs a series of  assertions confirming the page’s markup meets the AMP HTML specification.</p>
 
       <p>Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered, allowing you to see how complex changes in your code might impact performance and user experience.</p>
-    </div>
-    
-    <div class="ad-m-copy-right-link">
+
+    <div class="ad-m-copy-right-link" >
       <a href="#" class="ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -246,6 +246,7 @@ $view: /views/overview/what-is-amp.j2
     </div>
 
   </div>
+  </div>
 </section>
 
 <section class="ad--case-grid">
@@ -253,20 +254,22 @@ $view: /views/overview/what-is-amp.j2
     <h1 class="ad-o-case-grid-headline">Explore use cases of Amp websites</h1>
   </div>
 
-  <div class="ad-o-case-grid">
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-4"><amp-img src="/static/img/case-grid-data.png" layout="responsive" width="936" height="686"></amp-img></div>
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-3"><amp-img src="/static/img/case-grid-education.png" layout="responsive" width="1004" height="662"></amp-img></div>
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-2"><amp-img src="/static/img/case-grid-choices.png" layout="responsive" width="744" height="818"></amp-img></div>
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-1"><amp-img src="/static/img/case-grid-band.png" layout="responsive" width="1072" height="920"></amp-img></div>
-    
-    <div class="ad-o-case-grid-link">
-      <a href="#" class="ad-m-lnk ad-m-lnk-square">
-        <div class="ad-a-ico ad-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ad-m-lnk-text">See all use cases</span>
-      </a>
+  <div class="ad--container-fluid">
+    <div class="ad-o-case-grid">
+      <div class="ad-o-case-grid-image ad-o-case-grid-image-4"><amp-img src="/static/img/case-grid-data.png" layout="responsive" width="936" height="686"></amp-img></div>
+      <div class="ad-o-case-grid-image ad-o-case-grid-image-3"><amp-img src="/static/img/case-grid-education.png" layout="responsive" width="1004" height="662"></amp-img></div>
+      <div class="ad-o-case-grid-image ad-o-case-grid-image-2"><amp-img src="/static/img/case-grid-choices.png" layout="responsive" width="744" height="818"></amp-img></div>
+      <div class="ad-o-case-grid-image ad-o-case-grid-image-1"><amp-img src="/static/img/case-grid-band.png" layout="responsive" width="1072" height="920"></amp-img></div>
+      
+      <div class="ad-o-case-grid-link">
+        <a href="#" class="ad-m-lnk ad-m-lnk-square">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">See all use cases</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

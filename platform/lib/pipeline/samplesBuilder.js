@@ -16,12 +16,13 @@
 
 const { Signale } = require('signale');
 const gulp = require('gulp');
-const { parseSample } = require('amp-by-example');
+const abe = require('amp-by-example');
 const through = require('through2');
 const del = require('del');
+const path = require('path');
 
 // Where to import the samples from
-const EXAMPLE_SRC = '../examples/**/*.html';
+const EXAMPLE_SRC = '../examples/source/**/*.html';
 // The pod path inside
 const POD_PATH = 'content/amp-dev/documentation/examples';
 // Where to store the samples inside the Grow pod in
@@ -30,6 +31,8 @@ const EXAMPLE_DEST = `../pages/${POD_PATH}`;
 const MANUAL_TEMPLATE = '/views/examples/manual.j2';
 // What Grow template to use to render the preview
 const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
+// What Grow template to use to render the actual source file
+const SOURCE_TEMPLATE = '/layouts/blank.j2';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples/';
 
@@ -62,12 +65,14 @@ class SamplesBuilder {
 
       stream = stream.pipe(through.obj((async function(sample, encoding, callback) {
         this._log.await(`Building sample ${sample.relative} ...`);
-        let parsedSample = await parseSample(sample.path).then((parsedSample) => {
+        await this._parseSample(sample.path).then((parsedSample) => {
           // Build various documents and sources that are needed for Grow
           // to successfully render the example
           stream.push(this._createDataSource(sample, parsedSample));
+
           stream.push(this._createManualDoc(sample, parsedSample));
           stream.push(this._createPreviewDoc(sample, parsedSample));
+          stream.push(this._createSourceDoc(sample, parsedSample));
 
           callback();
         }).catch((e) => {
@@ -91,6 +96,21 @@ class SamplesBuilder {
   }
 
   /**
+   * Parse a sample source file into a JSON using the parser from the
+   * ampbyexample.com package and while doing so updates some fields
+   * @return {Promise}
+   */
+  async _parseSample(samplePath) {
+    return await abe.parseSample(samplePath).then((parsedSample) => {
+      // parsedSample.filePath is absolute but needs to be relative in order
+      // to use it to build a URL to GitHub
+      parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
+
+      return parsedSample;
+    })
+  }
+
+  /**
    * Creates a file for the data source that is then consumed by a Grow
    * template to render the examples manual
    * @param  {Vinyl} sample       The sample from the gulp stream
@@ -99,7 +119,11 @@ class SamplesBuilder {
    */
   _createDataSource(sample, parsedSample) {
     sample = sample.clone();
-    sample.contents = Buffer.from(JSON.stringify(parsedSample));
+    sample.contents = Buffer.from([
+      JSON.stringify(parsedSample)
+    ].join('\n'));
+
+    sample = sample.clone();
     sample.extname = '.json';
 
     return sample;
@@ -118,20 +142,18 @@ class SamplesBuilder {
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + sample.relative,
-      '$localization: ',
-      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative,
-      'example: !g.json ' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
+      'example: !g.json /' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '---'
     ].join('\n'));
-    sample.extname = '.md';
+    sample.extname = '-manual.html';
 
     return sample;
   }
 
   /**
-   * Creates a markdown document referencing the JSON that is going to be
-   * created by _createDataSource
+   * Creates a html document that holds the initial sample source
    * @param  {Vinyl} sample The sample from the gulp stream
+   * @param  {Object} parsedSample The sample parsed by abe.com
    * @return {Vinyl}
    */
   _createPreviewDoc(sample, parsedSample) {
@@ -141,13 +163,34 @@ class SamplesBuilder {
       '$title: ' + parsedSample.document.title,
       '$view: ' + PREVIEW_TEMPLATE,
       '$path: ' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
-      '$localization: ',
-      '  ' + 'path: /{locale}' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
+      'example: !g.json /' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
       '$hidden: true',
-      'example: !g.json ' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
-      '---'
+      '---',
     ].join('\n'));
     sample.extname = '-preview.html';
+
+    return sample;
+  }
+
+  /**
+   * Creates a html document that holds the initial sample source
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @param  {Object} parsedSample The sample parsed by abe.com
+   * @return {Vinyl}
+   */
+  _createSourceDoc(sample, parsedSample) {
+    sample = sample.clone();
+    sample.contents = Buffer.from([
+      '---',
+      '$title: ' + parsedSample.document.title,
+      '$view: ' + SOURCE_TEMPLATE,
+      '$path: ' + PATH_BASE + sample.relative.replace('.html', '/source.html'),
+      '$hidden: true',
+      '$$injectAmpDependencies: false',
+      '---',
+      sample.contents.toString()
+    ].join('\n'));
+    sample.extname = '-source.html';
 
     return sample;
   }

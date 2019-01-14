@@ -3,7 +3,7 @@
 {% block styles %}
 {{ super() }}
 
-{% do doc.styles.addCssFile('css/components/templates/docs-detail.css') %}
+{% do doc.styles.addCssFile('css/components/templates/examples/manual.css') %}
 
 {# Add eventual specific sample styles to page #}
 {{ doc.example.document.styles|safe }}
@@ -16,14 +16,18 @@
 {% endblock %}
 
 {% block main %}
-<main class="main ad-t-docs-detail">
+<main class="ad--main ad-t-examples-manual">
   <div class="ad--container">
     {% include 'views/partials/sidebar.j2' %}
 
-    {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
     <section class="ad--toc">
+      {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+      <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" for="toc">Contents</label>
+      <input class="ad-a-sidebar-toggle-input" type="checkbox" name="toc" id="toc">
+
+      {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
       <div class="ad-o-toc">
-        <b>Table of contents:</b>
+        <p class="ad-o-toc-hl">Table of contents</p>
         <div class="toc">
           <ul>
             <li>
@@ -43,6 +47,17 @@
     <section class="ad--content">
       <h1>{{ doc.example.document.title }}</h1>
 
+      <ul class="ad--ctas">
+        <li>
+          {% do doc.icons.useIcon('/icons/external.svg') %}
+          {% set source_document = g.doc(doc.pod_path.replace('-manual.html', '-source.html')) %}
+          <a href="{{ podspec.base_urls.playground + source_document.url|string }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg></div><span class="ad-m-lnk-text">{{ _('Open in playground') }}</span></a>
+        </li>
+        <li>
+          <a href="{{ podspec.base_urls.repository + doc.example.filePath }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg></div><span class="ad-m-lnk-text">{{ _('Edit on GitHub') }}</span></a>
+        </li>
+      </ul>
+
       {% for section in doc.example.document.sections %}
       {{ section.doc|markdown|safe }}
 
@@ -50,8 +65,22 @@
       {% if render_code %}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
       <div class="ad-o-code-preview">
+        {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody %}
-        {% if show_preview %}
+        {% if story_preview %}
+        {% set preview_document = g.doc(doc.pod_path.replace('-manual.html', '-preview.html')) %}
+        {% set story_preview_src = podspec.base_urls.sample_embed + preview_document.url.path + '?id=' +  section.storyPageId %}
+        {# Storys should be repeatable, therefore render reload icon #}
+        <button class="ad-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_src + '&' }}' + random()})">
+          <div class="ad-a-ico">
+            {% do doc.icons.useIcon('icons/reload.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+          </div>
+        </button>
+        <div class="ad-o-code-preview-preview-story">
+          <amp-iframe class="ad-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
+        </div>
+        {% elif show_preview %}
         <div class="ad-o-code-preview-preview">
           {{ section.preview|safe }}
         </div>

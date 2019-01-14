@@ -1,0 +1,27 @@
+/*
+
+###################################
+### TEMPLATE: Examples / Manual ###
+###################################
+
+*/
+
+@import 'extends.scss';
+@import 'functions.scss';
+@import 'mixins.scss';
+@import 'variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
+
+@import 'components/templates/_default.scss';
+
+/* There is no surrounding template on preview */
+.#{template('examples-preview')} {
+}
+
+  .#{utility('header')} {
+    background-color: color('white');
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+  }

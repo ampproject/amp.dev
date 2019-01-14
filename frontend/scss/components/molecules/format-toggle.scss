@@ -1,20 +1,26 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '../atoms/_color.scss';
-@import '../atoms/_text';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text';
 
 .#{molecule('format-toggle')} {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0 15px;
-  padding: 10px 0px;
+  margin: 0 15px;
+  padding: 15px 0 0 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    margin: 0;
+  }
 
   &-format {
     flex: 1 50%;
+    max-width: 50%;
     padding: 2px;
   }
 
@@ -38,6 +44,7 @@
 
       &-stories {
         @include gradient-stories;
+        color: color('ultramarine');
       }
 
       &-ads {

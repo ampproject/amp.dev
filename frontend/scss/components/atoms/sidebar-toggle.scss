@@ -1,0 +1,60 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+
+.#{atom('sidebar-toggle')} {
+
+  &-input {
+    position: absolute;
+    top: -99px;
+
+    &:checked {
+        &:after {
+          content: "";
+          position: fixed;
+          z-index: 15;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+    }
+  }
+
+  &-label {
+    @include txt-1;
+    @include txt-font-accent;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100;
+    top: 50vh;
+    left: -26px;
+    padding: 2px 10px;
+    color: color('white');
+    background-color: color('blue-ribbon');
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.2s ease;
+
+    &-toc {
+      left: auto;
+      right: -34px;
+      transform: translateY(-50%) rotate(-90deg);
+
+      @media screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    &-sidebar {
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

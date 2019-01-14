@@ -3,8 +3,6 @@
 @import '_extends.scss';
 @import '_mixins.scss';
 
-@import 'grid-toggle.scss';
-
 * {
   box-sizing: border-box;
 }
@@ -47,6 +45,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: top right;
+  background-attachment: fixed;
 }
 
 body.ad--websites {

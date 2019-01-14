@@ -1,0 +1,11 @@
+<section class="ad--toc">
+  {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" for="toc">Contents</label>
+  <input class="ad-a-sidebar-toggle-input" type="checkbox" name="toc" id="toc">
+
+  {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
+  <div class="ad-o-toc">
+    <p class="ad-o-toc-hl">Table of contents</p>
+    {{ toc|safe }}
+  </div>
+</section>
