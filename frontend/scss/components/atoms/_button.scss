@@ -20,9 +20,9 @@ none
 @import '_mixins.scss';
 @import '_variables.scss';
 
-@import 'components/atoms/color.scss';
-@import 'components/atoms/text.scss';
-@import 'components/atoms/headline.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
 
 @mixin unset-button {
   background-color: transparent;
