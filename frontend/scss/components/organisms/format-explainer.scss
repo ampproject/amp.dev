@@ -16,7 +16,8 @@
     grid-column: 1 / -1;
 
     @media screen and (min-width: 1024px) {
-      grid-column: 2 / 13;
+      grid-column: 1 / 13;
+      padding-top: 8em;
     }
   }
   
@@ -24,8 +25,16 @@
     grid-column: 1 / -1;
 
     @media screen and (min-width: 1024px) {
-      grid-column: 13 / 24;
+      grid-column: 13 / 23;
     }
+  }
+  
+  &-headline {
+    margin-top: 0;
+  }
+  
+  &-copy {
+    margin-bottom: 2.250em;
   }
   
   &-button {
@@ -35,7 +44,7 @@
     display: block;
     min-width: 300px;
     padding: 14px;
-    margin: 0 0 18px;
+    margin: 0 0 1.125em;
     text-align: left;
     background: none transparent;
     border: none;
@@ -61,6 +70,6 @@
   }
   
   &-link {
-    margin: 95px 0 0;
+    margin: 6em 0 0;
   }
 }
