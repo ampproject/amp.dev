@@ -79,7 +79,44 @@ format_explainer:
         }
       </script>
     </amp-state>
-        
+    
+    <amp-animation id="switchFormat" layout="nodisplay">
+      <script type="application/json">
+        [{
+          "duration": "1s",
+          "delay": "0s",
+          "fill": "forwards",
+          "easing": "ease-out",
+          "iterations": "1",
+          "selector": ".ad-o-format-explainer-image",
+          "keyframes": [{
+            "opacity": "0.5",
+            "transform": "translateX(-5%)"
+          },
+          {
+            "opacity": "1",
+            "transform": "translateX(0%)"
+          }]
+        },
+        {
+          "duration": "1s",
+          "delay": "0s",
+          "fill": "forwards",
+          "easing": "ease-out",
+          "iterations": "1",
+          "selector": ".ad-o-format-explainer-content",
+          "keyframes": [{
+            "opacity": "0.5",
+            "transform": "translateX(5%)"
+          },
+          {
+            "opacity": "1",
+            "transform": "translateX(0%)"
+          }]
+        }]
+      </script>
+    </amp-animation>
+    
     <div class="ad-o-format-explainer-image">
       <amp-img
         width="1"
@@ -96,22 +133,22 @@ format_explainer:
       
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
         [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
-        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'})">
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'}),switchFormat.restart">
         AMP {{ doc.format_explainer.websites.name }}
       </button>
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}"
         [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}'"
-        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'})">
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'}),switchFormat.restart">
         AMP {{ doc.format_explainer.stories.name }}
       </button>
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}"
         [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}'"
-        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'})">
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'}),switchFormat.restart">
         AMP {{ doc.format_explainer.ads.name }}
       </button>
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}"
         [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}'"
-        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'})">
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'}),switchFormat.restart">
         AMP {{ doc.format_explainer.emails.name }}
       </button>
                 
