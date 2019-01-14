@@ -54,22 +54,14 @@
     border-radius: 4px;
     cursor: pointer;
     
-    &-websites.active {
+    &.active {
       color: #fff;
-      @include gradient-websites;
     }
-    &-stories.active {
-      color: #fff;
-      @include gradient-stories;
-    }
-    &-ads.active {
-      color: #fff;
-      @include gradient-ads;
-    }
-    &-emails.active {
-      color: #fff;
-      @include gradient-e-mails;
-    }
+    
+    &-websites.active { @include gradient-websites; }
+    &-stories.active { @include gradient-stories; }
+    &-ads.active { @include gradient-ads; }
+    &-emails.active { @include gradient-e-mails; }
     
     &-icon {
       width: 30px;
