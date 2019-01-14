@@ -28,14 +28,12 @@ The page with all AMP tools.
   .#{utility('container')} {
     @include container;
 
+    padding-top: 3rem;
+
     @media screen and (min-width: 768px) {
-      & {
-        padding-top: 70px;
-      }
+      padding-top: 6rem;
     }
   }
-
-
 
   .#{utility('content')} {
     @include content;
@@ -44,6 +42,14 @@ The page with all AMP tools.
       & {
         grid-column: 3 / 23
       }
+    }
+  }
+
+  .#{organism('tool-block')} {
+    padding-bottom: 3rem;
+
+    @media screen and (min-width: 768px) {
+      padding-bottom: 12rem;
     }
   }
 

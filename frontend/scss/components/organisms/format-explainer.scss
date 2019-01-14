@@ -5,6 +5,7 @@
 
 @import '../atoms/_text.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/_icon.scss';
 @import '../atoms/_color.scss';
 
 @import '../molecules/_copy.scss';
@@ -42,31 +43,34 @@
     @include hl;
     @include hl-h5;
     -webkit-appearance: none;
-    display: block;
+    display: flex;
+    align-items: center;
     min-width: 300px;
-    padding: 14px;
-    margin: 0 0 1.125em;
+    padding: 10px 20px;
+    margin: 0 0 1em;
     text-align: left;
     background: none transparent;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     
-    &-websites.active {
+    &.active {
       color: #fff;
-      @include gradient-websites;
     }
-    &-stories.active {
-      color: #fff;
-      @include gradient-stories;
-    }
-    &-ads.active {
-      color: #fff;
-      @include gradient-ads;
-    }
-    &-emails.active {
-      color: #fff;
-      @include gradient-e-mails;
+    
+    &-websites.active { @include gradient-websites; }
+    &-stories.active { @include gradient-stories; }
+    &-ads.active { @include gradient-ads; }
+    &-emails.active { @include gradient-e-mails; }
+    
+    &-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 14px;
+      
+      &.active {
+        fill: #fff;
+      }
     }
   }
   
