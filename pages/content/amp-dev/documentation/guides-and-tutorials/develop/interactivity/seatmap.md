@@ -10,7 +10,7 @@ tutorial: true
 
 
 Seatmap are important parts of ticketers web apps, however the implementation in AMP can be difficult. This doc describes how to implement a seatmap in AMP by using a combination of available AMP components.
-A living sample implementing the practices described below is available at [sample]https://ampbyexample.com/advanced/seatmap/preview/.
+A living sample implementing the practices described below is available at [sample](https://ampbyexample.com/advanced/seatmap/preview/).
 
 This tutorial will start by quickly reviewing the components needed to implement a seatmap in AMP.
 
@@ -28,9 +28,9 @@ This tutorial will start by quickly reviewing the components needed to implement
 ### amp-selector
 [`amp-selector`](/docs/reference/components/amp-selector.html) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered as a menu of options where each seat is an option. It becomes very useful when it comes to styling clicked-unclicked seats as you can use css expressions. For example, the following expression fills a seat with color orange once selected.
 
-```html
+```css
 rect[selected].seat {
-fill: var(--orange-theme);
+  fill: var(--orange-theme);
 }
 ```
 
@@ -42,13 +42,13 @@ Also, every seat must have an unique identifier that can be used to make the boo
 ## Seatmap drawing
 The seatmap is rendered by using `amp-list` and `amp-mustache`. Upon returning of the data from the `amp-list` call, the data can be used to iterate through the seats.
 
-[​sourcecode:html]
-<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-{% raw %}{{#seats}}{% endraw %}
+[sourcecode:html]
+{% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
 <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
-{% raw %}{{/seats}}{% endraw %}
-</svg>
-[​/sourcecode]
+{{/seats}}
+</svg>{% endraw %}
+[/sourcecode]
 
 ## Styling unavailable seats
 In the above example, `{% raw %}{{unavailable}}{% endraw %}` is the value of a field returned by the json endpoint and used to style an unavailable seat. This approach doesn’t allow to remove attributes like `option="{{id}}"` in case a seat is unavailable because the template cannot break the entire html tag.
@@ -57,12 +57,10 @@ An alternative verbose approach, could be to repeat the tags as following:
 
 [sourcecode:html]
 {% raw %}{{#available }}{% endraw %}
-<rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
-{% raw %}{{/available }}{% endraw %}
-{% raw %}{{^available}}{% endraw %}
-<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
-{% raw %}{{/available }}{% endraw %}
-[​/sourcecode]
+<rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
+
+{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
+[/sourcecode]
 
 ## Seatmap sizing
 Unless you have a fixed size for the seatmap, it can become very difficult to size the `amp-list` containing the seatmap. `amp-list` needs either a dimension and can use `layout="fill"` which will use the available space of the parent container.
@@ -96,28 +94,28 @@ The second approach allows also to reduce the duplication of the `amp-bind` expr
 
 Here it follows the structure of a simple seatmap in terms of html tags:
 
-[​sourcecode:html]{% raw %}
-<div class="seatmap-container">
-<amp-list layout="fill" src="/json/seats.json" items="." single-item noloading>
-<template type="amp-mustache">
-<amp-pan-zoom layout="fill" class="seatmap">
-<amp-selector multiple on="select:AMP.setState({
-       selectedSeats: event.selectedOptions
-   })" layout="fill">
-<div class="svg-container">
-<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-{{#seats}}
-<rect option="{{id}}" role="button"
- tabindex="0" class="seat {{unavailable}}"
-x="{{x}}" y="{{y}}"
-width="{{width}}" height="{{height}}"
-rx="{{rx}}" ry="{{ry}}"/>
-{{/seats}}
-</svg>
-</div>
-</amp-selector>
-</amp-pan-zoom>
-</template>
-</amp-list>
-</div>
-{% endraw %}[/​sourcecode]
+[sourcecode:html]
+{% raw %}<div class="seatmap-container">
+  <amp-list layout="fill" src="/json/seats.json" items="." single-item noloading>
+    <template type="amp-mustache">
+      <amp-pan-zoom layout="fill" class="seatmap">
+        <amp-selector multiple on="select:AMP.setState({
+          selectedSeats: event.selectedOptions
+        })" layout="fill">
+          <div class="svg-container">
+            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+            {{#seats}}
+              <rect option="{{id}}" role="button"
+               tabindex="0" class="seat {{unavailable}}"
+              x="{{x}}" y="{{y}}"
+              width="{{width}}" height="{{height}}"
+              rx="{{rx}}" ry="{{ry}}"/>
+            {{/seats}}
+            </svg>
+          </div>
+        </amp-selector>
+      </amp-pan-zoom>
+    </template>
+  </amp-list>
+</div>{% endraw %}
+[/sourcecode]
