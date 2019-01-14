@@ -1,6 +1,15 @@
 # Maintenance
 This document holds all the information that is relevant to maintain and contribute the content for each if its packages.
 
+## Collections
+Pages inside [Grow](https://grow.io/docs/) are stored in so called collections. A collection is established by creating a *_blueprint.yaml* in a directory. The following fields are evaluated by the amp.dev setup:
+
+```yaml
+# If true on a collection, "Get started" and "Previous chapter" and "Next chapter"
+# link are automatically added to the bottom of the page
+chaptered: true|false
+```
+
 ## Documents
 
 ### Frontmatter
