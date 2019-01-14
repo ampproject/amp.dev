@@ -5,6 +5,7 @@
 
 @import '../atoms/_text.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/_icon.scss';
 @import '../atoms/_color.scss';
 
 @import '../molecules/_copy.scss';
@@ -42,10 +43,11 @@
     @include hl;
     @include hl-h5;
     -webkit-appearance: none;
-    display: block;
+    display: flex;
+    align-items: center;
     min-width: 300px;
-    padding: 14px;
-    margin: 0 0 1.125em;
+    padding: 10px 20px;
+    margin: 0 0 1em;
     text-align: left;
     background: none transparent;
     border: none;
@@ -67,6 +69,16 @@
     &-emails.active {
       color: #fff;
       @include gradient-e-mails;
+    }
+    
+    &-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 14px;
+      
+      &.active {
+        fill: #fff;
+      }
     }
   }
   
