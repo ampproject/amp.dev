@@ -35,20 +35,20 @@ Nossa página de abertura é composta por duas camadas:
 
 Vamos adicionar a primeira camada à página de abertura. Essa camada contém uma imagem que preenche a tela.  
 
-Crie essa camada adicionando o elemento `<amp-story-grid-layer>` como filho de `<amp-story-page>`. Como a ideia é que a imagem preencha a tela, especifique o atributo `template="fill"` para `amp-story-grid-layer`. Dentro da camada, adicione um elemento `<amp-image>` ao arquivo `cover.jpg` e certifique-se de que ele seja responsivo (ou seja, `layout="responsive"`) com as dimensões de 720 x 1280 px da imagem.  A camada terá esta aparência: 
+Crie essa camada adicionando o elemento `<amp-story-grid-layer>` como filho de `<amp-story-page>`. Como a ideia é que a imagem preencha a tela, especifique o atributo `template="fill"` para `amp-story-grid-layer`. Dentro da camada, adicione um elemento `<amp-image>` ao arquivo `cover.jpg` e certifique-se de que ele seja responsivo (ou seja, `layout="responsive"`) com as dimensões de 720 x 1280 px da imagem.  A camada terá esta aparência:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Vejamos como a página é exibida.  Abra a página no navegador: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>. 
+Vejamos como a página é exibida.  Abra a página no navegador: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Ela terá esta aparência:
 
@@ -60,19 +60,19 @@ Já temos nosso pano de fundo. Agora, precisamos da segunda camada, que fica em 
 
 #### Inserir elementos em um modelo
 
-O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em uma grade com base na [grade CSS](https://www.w3.org/TR/css-grid-1/) (em inglês).  Para indicar como você quer organizar os filhos, é preciso especificar um dos seguintes modelos de layout: 
+O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em uma grade com base na [grade CSS](https://www.w3.org/TR/css-grid-1/) (em inglês).  Para indicar como você quer organizar os filhos, é preciso especificar um dos seguintes modelos de layout:
 
 <table class="noborder">
 <tr>
     <td colspan="2"><h5 id="fill">Modelo: preenchimento</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">O modelo de <strong>preenchimento</strong> preenche a tela com o primeiro elemento filho na camada. Nenhum outro filho é mostrado nessa camada.
-    
+
     <p>O modelo de preenchimento é bom para planos de fundo, incluindo imagens e vídeos.</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
@@ -84,8 +84,8 @@ O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em um
 <tr>
     <td colspan="2"><h5 id="vertical">Modelo: vertical</h5></td>
 </tr>
-<tr> 
-    <td width="65%">O modelo <strong>vertical</strong> posiciona os elementos filhos no eixo y. Os elementos são alinhados no topo da tela e a ocupam completamente ao longo do eixo x. 
+<tr>
+    <td width="65%">O modelo <strong>vertical</strong> posiciona os elementos filhos no eixo y. Os elementos são alinhados no topo da tela e a ocupam completamente ao longo do eixo x.
 
     <p>O modelo vertical é ideal quando o objetivo é empilhar elementos verticalmente, um após o outro.</p>
 
@@ -101,7 +101,7 @@ O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em um
 <tr>
     <td colspan="2"><h5 id="horizontal">Modelo: horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">O modelo <strong>horizontal</strong> posiciona os elementos filhos no eixo x.  Eles são alinhados no início da tela e a ocupam completamente ao longo do eixo y.
 
     <p>O modelo horizontal funciona bem quando o objetivo é empilhar elementos horizontalmente, um após o outro.</p>
@@ -119,7 +119,7 @@ O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em um
 <tr>
     <td colspan="2"><h5 id="thirds">Modelo: terços</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 O modelo de <strong>terços</strong> divide a tela em três linhas de mesmo tamanho e permite alocar conteúdo em cada uma das áreas.
 
@@ -151,14 +151,6 @@ Para a camada 2, vamos posicionar o título e a autoria na parte superior, e que
 </amp-story-grid-layer>
 ```
 
-Atualize o navegador e revise seu trabalho.  A página de abertura está pronta. 
+Atualize o navegador e revise seu trabalho.  A página de abertura está pronta.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Página de capa, pronta' ) }}
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
- 
- 
- 

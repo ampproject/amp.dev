@@ -2,10 +2,12 @@
 $title: Templates
 $view: /views/overview/template-overview.j2
 ---
-[stage color="dark-blue"]
+<section class="ad--stage ad--container-fluid">
+[stage]
 ## How to Build with AMP without knowing how to code?
 # Easily build user first with our templates
 [/stage]
+</section>
 
 
 <section class="ad--intro ad--container">

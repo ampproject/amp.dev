@@ -84,8 +84,3 @@ http://localhost:8000/article.amp.html#development=1
 {{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='我们的 AMP 网页的移动版模拟效果') }}
 
 现在，我们可以开始修正错误了！我们将逐个查看各项验证错误，并弄清楚它们与 AMP 的关系。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>

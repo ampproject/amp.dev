@@ -17,7 +17,3 @@ Dalam tutorial ini, Anda akan mempelajari konsep utama AMP dan perbedaan antara 
 ## Anda akan membuat:
 
 Halaman artikel berita sederhana yang sesuai dengan spesifikasi AMP dan menyertakan fitur umum yang ditemukan di situs berita seluler.
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Mulai</span></a>
-</div>

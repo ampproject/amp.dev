@@ -20,7 +20,3 @@ In this tutorial, you’ll learn the key concepts of AMP and how AMP documents d
 ## You'll build:
 
 A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
-</div>

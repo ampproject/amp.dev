@@ -147,8 +147,3 @@ There are various components that you can use to display related content and lin
 There's more to learn about the bookend component. For details, see the [amp-story](/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) reference documentation.
 
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

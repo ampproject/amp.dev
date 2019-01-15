@@ -106,8 +106,3 @@ Leer más: Para obtener más información sobre la detección de páginas, consu
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ¡Impresionante trabajo! Has completado tu artículo de noticias de AMP.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
-</div>

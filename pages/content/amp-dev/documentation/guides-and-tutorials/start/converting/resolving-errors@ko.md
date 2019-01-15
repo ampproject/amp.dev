@@ -340,9 +340,3 @@ AMP validation successful.
 - [DOM 리플로우란 무엇인가요?](http://stackoverflow.com/a/27637245)
 - [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](/ko/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
 - [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](/ko/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>

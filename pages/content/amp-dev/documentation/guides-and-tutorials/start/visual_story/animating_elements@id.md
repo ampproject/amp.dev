@@ -188,7 +188,7 @@ Kita akan mulai dengan menganimasikan titik masuk teks banner dan menyetelnya ag
 Pets can lower your stress levels!</p>
 ```
 
-Muat ulang halaman artikel Anda di browser, dan pastikan banner bergerak cepat. 
+Muat ulang halaman artikel Anda di browser, dan pastikan banner bergerak cepat.
 
 Selanjutnya, mari kita buat semua gambar muncul perlahan. Tambahkan `animate-in="fade-in"` ke setiap elemen `amp-img` agar kode tampak seperti ini:
 
@@ -224,13 +224,13 @@ Mari kita tunda masuknya gambar pertama sehingga gambar akan dimunculkan setelah
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -253,10 +253,3 @@ Muat ulang artikel Anda.  Halaman terakhir Anda akan terlihat seperti ini:
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 Ada banyak kemungkinan yang bisa dilakukan pada animasi dalam artikel AMP (misalnya, menggabungkan animasi, membuat animasi berantai), dan tutorial ini hanya menjelaskan sebagian kecil saja. Untuk mempelajari animasi lebih lanjut, lihat dokumentasi referensi [amp-story](/id/docs/reference/components/amp-story.html#animations).
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>
- 

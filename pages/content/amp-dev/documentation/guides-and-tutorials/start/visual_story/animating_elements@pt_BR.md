@@ -188,7 +188,7 @@ Primeiro, animamos a entrada do texto de banner com o efeito "whoosh in" a parti
 Pets can lower your stress levels!</p>
 ```
 
-Atualize a página da história no seu navegador e verifique se ela surge da direita. 
+Atualize a página da história no seu navegador e verifique se ela surge da direita.
 
 Em seguida, faremos todas as imagens aparecerem lentamente. Insira `animate-in="fade-in"` em todos os elementos `amp-img`. Seu código será semelhante a este:
 
@@ -224,13 +224,13 @@ Vamos atrasar a entrada da primeira imagem para que ela apareça próximo de qua
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -253,10 +253,3 @@ Atualize sua história.  A última página terá a seguinte aparência:
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 As histórias AMP oferecem muitas possibilidades de animações (por exemplo, com a combinação e encadeamento de efeitos). Este tutorial mostra somente o básico. Para saber mais sobre animações, consulte a [documentação de referência do componente amp-story](/pt_br/docs/reference/components/amp-story.html#animations).
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
- 
