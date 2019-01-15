@@ -3,12 +3,29 @@
 {% block styles %}
 {{ super() }}
 
-{% do doc.styles.addCssFile('css/components/templates/sucess-story.css') %}
+{% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
 {% endblock %}
 
 {% block main %}
 <main class="ad--main ad-t-success-story">
   {{ doc.headline }}
-  {# {% include 'views/partials/content.j2' %} #}
+
+  {% if doc.ghostFrameDesktop %}
+    <div class="ad-m-ghost-frame-desktop">
+      GFD
+    </div>
+  {% endif %}
+
+  {% if doc.ghostFrameTablet %}
+    <div class="ad-m-ghost-frame-tablet">
+      GFT
+    </div>
+  {% endif %}
+
+  {% if doc.ghostFrameMobile %}
+    <div class="ad-m-ghost-frame-mobile">
+      GFM
+    </div>
+  {% endif %}
 </main>
 {% endblock %}

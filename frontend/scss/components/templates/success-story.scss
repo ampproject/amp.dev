@@ -19,26 +19,12 @@
 @import '../templates/_default.scss';
 
 .#{template('success-story')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
-  .#{utility('content')},
-  .#{utility('help')} {
+
+  .#{utility('content')} {
     @include content;
-  }
-  
-  .#{utility('sidebar')} {
-    @include sidebar;
-  }
-  
-  .#{utility('toc')} {
-    @include toc;
-  }
-  
-  .#{utility('sidebar')} + .#{utility('content')},
-  .#{utility('toc')} + .#{utility('content')} {
-    @include content-with-sidebar;
   }
 }
