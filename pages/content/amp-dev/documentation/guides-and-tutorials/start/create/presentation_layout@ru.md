@@ -26,8 +26,3 @@ $title: Изменение представления и макета
 В разметке AMP используются более строгие правила расположения элементов на странице. Для расположения элементов на обычной странице HTML как правило используются только таблицы CSS. Однако разметка AMP в целях повышения скорости отображения требует указания точных размеров всех элементов с самого начала.
 
 Дополнительная информация о том, как разметка AMP выполняет визуализацию и компоновку страницы, а также о способах изменения макета содержится в разделе [Управление макетом]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Предыдущий</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">Следующий</span></a>
-</div>
