@@ -59,12 +59,14 @@ The video ID (`npum8JsITQE` in the above example) will be extracted automaticall
 
 **Stage**
 ```md
-[stage color="dark-blue|light-blue|orange|purple|green"]
+<section class="ad--stage ad--container-fluid">
+[stage format="websites|stories|ads|emails"]
 ## What is AMP?
 # Amp is a web component framework for easily creating user first
 
 [Get Started](/content/amp-dev/documentation/guides-and-tutorials/index.md)
 [/stage]
+</section>
 ```
 
 The Link is optional and will create a button inside the stage.

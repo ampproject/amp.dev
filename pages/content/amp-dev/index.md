@@ -30,7 +30,7 @@ format_explainer:
 ---
 
 <section class="ad--stage ad--container-fluid">
-[stage format="default"]
+[stage]
 # Amp is a web component framework for easily creating user first
 [/stage]
 
