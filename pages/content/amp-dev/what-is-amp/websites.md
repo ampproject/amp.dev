@@ -3,10 +3,14 @@ $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
 ---
 
-[stage color="dark-blue" icon=True formats=True]
-##The AMP web component framework
-#Deliver fast and compelling user experiences across all screens.
+<section class="ad--stage ad--container-fluid">
+[stage format="websites" icon=True]
+## Compelling, smooth and instant
+# Easily create user first websites with Amp.
 [/stage]
+
+{% include 'views/partials/format-visual.j2' %}
+</section>
 
 <section class="ad--content">
   <div class="ad--container-fluid">

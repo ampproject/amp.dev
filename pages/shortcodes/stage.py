@@ -4,8 +4,8 @@ from shortcodes import Shortcode
 
 # Used to pluck out the destination switch to put it in between headlines
 
-# Allowed values for color options
-ALLOWED_BACKGROUND_COLORS = ['dark-blue', 'light-blue', 'orange', 'purple', 'green',]
+# Allowed values for format options
+ALLOWED_FORMATS = ['default', 'websites', 'stories', 'ads', 'emails',]
 
 class StageShortcode(Shortcode):
     name = 'stage'
@@ -13,12 +13,12 @@ class StageShortcode(Shortcode):
     prerender_markdown = True
     template = 'views/partials/stage.j2'
 
-    # If stage includes a subheadline, retrieve and return it
-    def _get_sub_headline(self, dom):
-        sub_headline = dom.getElementsByTagName('h2')
+    # If stage includes a subline, retrieve and return it
+    def _get_subline(self, dom):
+        subline = dom.getElementsByTagName('h2')
 
-        if len(sub_headline):
-            return sub_headline[0].childNodes[0].nodeValue
+        if len(subline):
+            return subline[0].childNodes[0].nodeValue
 
         return ''
 
@@ -31,11 +31,11 @@ class StageShortcode(Shortcode):
 
         return ''
 
-    def _get_background_color(self, options):
-        background_color = options.get('color', None)
-        if background_color not in ALLOWED_BACKGROUND_COLORS:
-            background_color = ALLOWED_BACKGROUND_COLORS[0]
-        return background_color
+    def _get_format(self, options):
+        format = options.get('format', None)
+        if format not in ALLOWED_FORMATS:
+            format = ALLOWED_FORMATS[0]
+        return format
 
     def _get_button(self, dom):
         # Destinations will be inside a list - so only elements outside
@@ -59,41 +59,19 @@ class StageShortcode(Shortcode):
 
         return icon
 
-    def _get_image(self, options):
-        image = options.get('image')
-
-        if image:
-          return image
-        else:
-          return {}
-
-    def _get_formats(self, options):
-        formats = options.get('formats')
-
-        if formats:
-          formats = True
-        else:
-          formats = False
-
-        return formats
-
     def transform(self, value, options):
         dom = minidom.parseString('<html>{}</html>'.format(value))
 
-        self.context['sub_headline'] = self._get_sub_headline(dom)
+        self.context['subline'] = self._get_subline(dom)
         self.context['headline'] = self._get_headline(dom)
 
         # Only try to get button after destination switch has been plucked
         # out as it also contains links that might interfer
         self.context['button'] = self._get_button(dom)
 
-        self.context['background_color'] = self._get_background_color(options)
+        self.context['format'] = self._get_format(options)
 
         self.context['icon'] = self._get_icon(options)
-
-        self.context['image'] = self._get_image(options)
-
-        self.context['formats'] = self._get_formats(options)
 
         return value
 

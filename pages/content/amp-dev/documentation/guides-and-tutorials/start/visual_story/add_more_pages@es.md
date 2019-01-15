@@ -123,9 +123,3 @@ Explica cómo organizar texto y mostrar un vídeo que ocupe toda la pantalla en 
 </table>
 
 Ya casi hemos acabado la historia de las mascotas. Usaremos animaciones en la última página para reunir a todas las mascotas.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
-</div>
- 

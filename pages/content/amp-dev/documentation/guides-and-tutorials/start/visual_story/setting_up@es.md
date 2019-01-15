@@ -41,9 +41,3 @@ Asegúrate de que la URL se sirve desde "localhost"; de lo contrario, es posible
 [/tip]
 
 Haz clic en la historia completa para tener una idea de lo que crearemos.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
-</div>
-

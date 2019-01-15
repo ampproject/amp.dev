@@ -15,14 +15,14 @@ none
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '_color.scss';
-@import '_text.scss';
-@import '_headline.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
 
 @mixin unset-button {
   background-color: transparent;
@@ -31,9 +31,9 @@ none
 }
 
 
-.#{atom('btn')} {
+@mixin btn {
 	@include hl;
-	@include hl-h3;
+  font-size: 1em;
 	@include color-white;
 
 	display: inline-block;
@@ -41,7 +41,7 @@ none
 	min-width: 230px;
 	width: auto;
 	height: auto;
-	padding: .813rem 1.626rem;
+	padding: .5em 1em;
 	margin: 0;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -52,9 +52,5 @@ none
 	&:hover {
 		background-color: color('river-bed');
 		border: 3px solid color('river-bed');
-	}
-
-	@media screen and (min-width: 768px) {
-		min-width: 280px;
 	}
 }

@@ -5,44 +5,28 @@
 
 {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-<section class="ad--stage">
-  <div class="ad-o-stage">
-
-    <div class="ad-o-stage-clipped-background {{ background_color }}"></div>
-
+<div class="ad-o-stage ad-o-stage-{{ format }}">
+  <div class="ad--container">
     <div class="ad-o-stage-content">
         {% if icon %}
-        <div class="ad-a-ico">
+        <div class="ad-o-stage-content-icon ad-a-ico">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-white"></use></svg>
         </div>
         {% endif %}
 
-        <div class="ad-o-stage-content-headlines">
-          {% if sub_headline %}
-            <span class="hl-sub">{{ sub_headline }}</span>
-          {% endif %}
+        {% if subline %}
+        <h2 class="ad-o-stage-content-subline">{{ subline }}</h2>
+        {% endif %}
 
-          <span class="hl"> {{ headline }}</span>
-        </div>
+        {% if headline %}
+        <h1 class="ad-o-stage-content-headline">{{ headline }}</h1>
+        {% endif %}
 
         {% if button.link and button.text %}
-        <button class="ad-o-stage-button">
+        <button class="ad-o-stage-content-button">
           <a href="{{ g.doc(button.link).url.path }}">{{ button.text }}</a>
         </button>
         {% endif %}
     </div>
-
-    {% if formats %}
-      <div class="ad-o-stage-formats">
-        {% include 'views/partials/formats-visual.j2' %}
-      </div>
-    {% endif %}
-
-    {% if image %}
-      <div class="ad-o-stage-image">
-        <amp-img src={{ image }} layout="responsive" height="1" width="1.33" />
-      </div>
-    {% endif %}
-
   </div>
-</section>
+</div>

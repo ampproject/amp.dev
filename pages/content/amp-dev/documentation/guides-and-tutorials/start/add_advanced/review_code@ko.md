@@ -130,8 +130,3 @@ Chrome이나 선호하는 브라우저에서 [개발자 콘솔](https://develope
 우리는 이 페이지를 휴대기기용으로 디자인하고 있습니다. 그러니 브라우저의 개발자 도구에서 휴대기기 사용자 경험을 **시뮬레이션**해 봅시다. 예를 들어 Chrome DevTools에서는 휴대전화 아이콘을 클릭하고 메뉴에서 휴대기기를 선택하면 됩니다.
 
 이제 페이지 작업을 시작할 수 있습니다. 페이지에 AMP 구성요소 몇 가지를 추가해 보겠습니다.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>

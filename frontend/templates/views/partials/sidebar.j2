@@ -1,7 +1,7 @@
 <section class="ad--sidebar">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" for="sidebar">Sidebar</label>
-  <input class="ad-a-sidebar-toggle-input" type="checkbox" name="sidebar" id="sidebar">
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" for="sidebar">{{ _('Categories') }}</label>
+  <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
 
   {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
   <div class="ad-o-sidebar">
@@ -28,15 +28,27 @@
             {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
             {% if doc.pod.file_exists(collection_index) %}
             {% set collection_index = g.doc(collection_index) %}
-            <a class="nav-link" href="{{ collection_index.url.path }}">{{ _(collection.title) }}</a>
+            <a class="nav-link" href="{{ collection_index.url.path }}">
+              <span>{{ _(collection.title) }}</span>
+              {% if collection.tutorial %}
+              {% do doc.icons.useIcon('icons/tutorial.svg') %}
+              <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+              {% endif %}
+            </a>
             {% else %}
-            <span class="nav-link">{{ _(collection.title) }}</span>
+            <span class="nav-link">
+              <span>{{ _(collection.title) }}</span>
+              {% if collection.tutorial %}
+              {% do doc.icons.useIcon('icons/tutorial.svg') %}
+              <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+              {% endif %}
+            </span>
             {% endif %}
             <input class="nav-trigger" {% if activeCollection or iteration == 1  %}checked {% endif %} type="checkbox">
             <div class="nav-icon">
               {% if iteration==1 %}
               {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-              <svg class="ad-a-ico solid"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+              <svg class="ad-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
               {% else %}
               {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
               <svg class="ad-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
@@ -51,7 +63,13 @@
           {% set formats = document.formats or document.collection.formats or [] %}
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
-            <a class="nav-link" href="{{ document.url.path }}">{{ _(document.title) }}</a>
+            <a class="nav-link" href="{{ document.url.path }}">
+              {{ document.title }}
+              {% if document.tutorial %}
+              {% do doc.icons.useIcon('icons/tutorial.svg') %}
+              <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+              {% endif %}
+            </a>
           </li>
           {% endif %}
           {% endif %}

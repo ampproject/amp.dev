@@ -123,9 +123,3 @@ $title: ページを追加する
 </table>
 
 これで、「ペットとの楽しい時間」ストーリーはほぼ完成に近づきました。最後のページでは、アニメーション機能を使用してすべてのペットを一堂に表示させてみましょう。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="/ja/docs/getting_started/visual_story/create_cover_page.html"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="/ja/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-next">次へ</span></a>
-</div>
- 

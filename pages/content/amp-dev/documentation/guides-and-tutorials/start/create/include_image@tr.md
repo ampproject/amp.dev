@@ -11,9 +11,3 @@ Ek işaretlerin nasıl görüneceğini örneklendirmek için, sayfaya bir görü
 [/sourcecode]
 
 `<img>` gibi etiketleri `<amp-img>` ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.md', locale=doc.locale).url.path}}) bölümüne gidin.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Önceki</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Sonraki</span></a>
-</div>
-

@@ -1,6 +1,15 @@
 # Maintenance
 This document holds all the information that is relevant to maintain and contribute the content for each if its packages.
 
+## Collections
+Pages inside [Grow](https://grow.io/docs/) are stored in so called collections. A collection is established by creating a *_blueprint.yaml* in a directory. The following fields are evaluated by the amp.dev setup:
+
+```yaml
+# If true on a collection, "Get started" and "Previous chapter" and "Next chapter"
+# link are automatically added to the bottom of the page
+chaptered: true|false
+```
+
 ## Documents
 
 ### Frontmatter
@@ -59,12 +68,14 @@ The video ID (`npum8JsITQE` in the above example) will be extracted automaticall
 
 **Stage**
 ```md
-[stage color="dark-blue|light-blue|orange|purple|green"]
+<section class="ad--stage ad--container-fluid">
+[stage format="websites|stories|ads|emails"]
 ## What is AMP?
 # Amp is a web component framework for easily creating user first
 
 [Get Started](/content/amp-dev/documentation/guides-and-tutorials/index.md)
 [/stage]
+</section>
 ```
 
 The Link is optional and will create a button inside the stage.

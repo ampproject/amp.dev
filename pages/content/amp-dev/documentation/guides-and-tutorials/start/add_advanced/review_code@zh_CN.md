@@ -130,8 +130,3 @@ http://localhost:8000/article.amp.html#development=1
 此网页是专门针对移动设备设计的，所以我们要在您的浏览器的开发者工具中**模拟**移动设备体验。例如，在 Chrome DevTools 中，点击手机图标，然后从菜单中选择一种移动设备。
 
 现在，我们便可开始更改此网页了。首先，让我们向此网页中添加一些 AMP 组件。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>

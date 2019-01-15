@@ -67,9 +67,3 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 <hr>
 
 좋은 소식을 전해드립니다. 첫 AMP 페이지를 만드는 데 필요한 것은 이게 전부지만, 본문에는 더 많은 내용이 있습니다. 다음 섹션에서는 이미지, 맞춤 AMP 요소와 같은 기본사항을 추가하는 방법, 페이지 스타일을 지정하는 방법 및 반응형 레이아웃을 만드는 방법을 다루겠습니다.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
- 

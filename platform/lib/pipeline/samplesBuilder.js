@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const { Signale } = require('signale');
+const {Signale} = require('signale');
 const gulp = require('gulp');
 const abe = require('amp-by-example');
 const through = require('through2');
@@ -37,11 +37,10 @@ const SOURCE_TEMPLATE = '/layouts/blank.j2';
 const PATH_BASE = '/documentation/examples/';
 
 class SamplesBuilder {
-
   constructor() {
     this._log = new Signale({
       'interactive': false,
-      'scope': 'Samples builder'
+      'scope': 'Samples builder',
     });
   }
 
@@ -54,7 +53,7 @@ class SamplesBuilder {
         `${EXAMPLE_DEST}/**/*.json`,
         `${EXAMPLE_DEST}/**/*.html`,
         `${EXAMPLE_DEST}/**/*.md`,
-        `!${EXAMPLE_DEST}/index.md`
+        `!${EXAMPLE_DEST}/index.md`,
       ], {'force': true});
 
       this._log.start('Starting to build samples ...');
@@ -63,7 +62,7 @@ class SamplesBuilder {
     return new Promise((resolve, reject) => {
       let stream = gulp.src(EXAMPLE_SRC, {'read': true});
 
-      stream = stream.pipe(through.obj((async function(sample, encoding, callback) {
+      stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
         await this._parseSample(sample.path).then((parsedSample) => {
           // Build various documents and sources that are needed for Grow
@@ -79,7 +78,7 @@ class SamplesBuilder {
           this._log.error(e);
           callback();
         });
-      }).bind(this)));
+      }));
 
       stream.pipe(gulp.dest(EXAMPLE_DEST));
 
@@ -107,7 +106,7 @@ class SamplesBuilder {
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
 
       return parsedSample;
-    })
+    });
   }
 
   /**
@@ -120,7 +119,7 @@ class SamplesBuilder {
   _createDataSource(sample, parsedSample) {
     sample = sample.clone();
     sample.contents = Buffer.from([
-      JSON.stringify(parsedSample)
+      JSON.stringify(parsedSample),
     ].join('\n'));
 
     sample = sample.clone();
@@ -143,7 +142,7 @@ class SamplesBuilder {
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + sample.relative,
       'example: !g.json /' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
-      '---'
+      '---',
     ].join('\n'));
     sample.extname = '-manual.html';
 
@@ -188,7 +187,7 @@ class SamplesBuilder {
       '$hidden: true',
       '$$injectAmpDependencies: false',
       '---',
-      sample.contents.toString()
+      sample.contents.toString(),
     ].join('\n'));
     sample.extname = '-source.html';
 
@@ -199,7 +198,6 @@ class SamplesBuilder {
     this._log.watch('Watching samples for changes ...');
     gulp.watch(EXAMPLE_SRC, this.build.bind(this, true));
   }
-
 }
 
 module.exports = SamplesBuilder;

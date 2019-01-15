@@ -27,8 +27,3 @@ $title: تحضير صفحتك للاكتشاف والتوزيع
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">سابق</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">التالى</span></a>
-</div>

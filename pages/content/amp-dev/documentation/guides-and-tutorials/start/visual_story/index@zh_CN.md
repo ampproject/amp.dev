@@ -18,9 +18,3 @@ $title: 创建一个视觉效果丰富的 AMP 故事
 [tip type="note"]
  [amp-story](/zh_cn/docs/reference/components/amp-story.html) 组件是**实验性**组件。
 [/tip]
-
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始</span></a>
-</div>
- 

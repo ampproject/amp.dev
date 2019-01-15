@@ -51,8 +51,3 @@ In addition to these required attributes, there are other attributes you can app
 Note: These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your AMP pages are discovered across all platforms, you should add [Structured Data](/docs/fundamentals/discovery.html#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
 
 At this point, we have a shell of a story without any content. Let's create that page.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>
