@@ -124,9 +124,3 @@ $order: 4
 </table>
 
 我们的故事“宠物的乐趣”即将完成。最后一页，我们将使用动画来集中展示所有宠物。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
- 

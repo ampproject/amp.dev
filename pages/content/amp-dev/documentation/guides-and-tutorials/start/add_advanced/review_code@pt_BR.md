@@ -130,8 +130,3 @@ Saiba mais no guia [Validar páginas AMP]({{g.doc('/content/amp-dev/documentatio
 A página é projetada para dispositivos móveis, então, **simule** a experiência no dispositivo móvel nas ferramentas para desenvolvedores do seu navegador. Por exemplo, no Chrome DevTools, clique no ícone de smartphone e selecione um dispositivo móvel no menu.
 
 Agora, é possível começar a trabalhar na página. Adicione alguns componentes de AMP à página.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

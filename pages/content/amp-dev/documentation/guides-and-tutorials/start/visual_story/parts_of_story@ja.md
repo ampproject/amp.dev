@@ -13,8 +13,3 @@ AMP ストーリーに含まれる基本的な構成要素は個々の**ペー�
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
 それでは、`amp-story` コンテナを使用してストーリーを作成してみましょう。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>

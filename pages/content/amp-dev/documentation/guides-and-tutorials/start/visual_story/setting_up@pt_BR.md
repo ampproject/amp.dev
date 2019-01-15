@@ -42,9 +42,3 @@ O URL precisa ser disponibilizado por `localhost`. Caso contrário, a história 
 
 
 Clique para ver a história concluída e ter uma ideia do resultado.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
-

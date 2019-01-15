@@ -18,8 +18,3 @@ En este tutorial te presentamos el componente [amp-story](/es/docs/reference/com
 [tip type="note"]
  El componente [amp-story](/es/docs/reference/components/amp-story.html) es **experimental**.
 [/tip]
-
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Empezar</span></a>
-</div>

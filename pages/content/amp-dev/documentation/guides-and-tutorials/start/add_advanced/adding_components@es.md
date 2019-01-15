@@ -203,10 +203,3 @@ O, ¿qué pasa si la cita es más larga?
 Como último experimento con `amp-fit-text`, intente crear un fragmento corto de texto, como "Hello" con una altura mucho mayor (por ejemplo, un valor de 400), y manteniendo el valor de atributo max-font-size de 42. ¿Cómo sería la página resultante? ¿Está el texto centrado verticalmente? ¿O la altura de la etiqueta de ajuste de amplificación de texto se encoge para ajustarse al tamaño de fuente máximo? Con lo que ya sabes sobre el sistema de distribución de AMP, intenta responder a la pregunta antes de jugar con el código!
 
 Puede obtener más información sobre el amplificador de ajuste de texto de la demostración en vivo de [AMP BY Example](https://ampbyexample.com/components/amp-fit-text/).
-
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
-</div>

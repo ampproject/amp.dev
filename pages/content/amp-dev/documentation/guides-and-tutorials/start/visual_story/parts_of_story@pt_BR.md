@@ -13,8 +13,3 @@ Cada ingrediente é traduzido em componentes AMP, em que a história é represen
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
 Para começar a criar nossa história, usaremos o contêiner `amp-story`.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

@@ -71,8 +71,3 @@ AMP 문서(AMP 스토리를 포함하여)를 여러 플랫폼이나 서비스에
 여기까지 왔으면 껍데기만 만들어진 셈인데 아직 유효(valid)한 문서는 아닙니다.
 amp-story 컴포넌트는 최소한 하나 이상의 페이지를 갖고 있어야합니다. 그럼 이제
 페이지를 만들어보겠습니다.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

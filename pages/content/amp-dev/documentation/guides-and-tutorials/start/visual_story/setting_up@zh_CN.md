@@ -42,9 +42,3 @@ http://localhost:8000/pets-completed.html
 
 
 点击浏览故事的完成版，了解我们将要创作什么样的内容。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
-

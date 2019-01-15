@@ -188,7 +188,7 @@ $title: 요소에 애니메이션 효과 추가
 Pets can lower your stress levels!</p>
 ```
 
-브라우저에서 페이지를 새로고침하고 배너가 빠르게 표시되는지 확인합니다. 
+브라우저에서 페이지를 새로고침하고 배너가 빠르게 표시되는지 확인합니다.
 
 이제 모든 이미지를 페이드 인해 보겠습니다. 코드가 다음과 같이 표시되도록 'animate-in="fade-in"`를 각 `amp-img` 요소에 추가합니다.
 
@@ -224,13 +224,13 @@ Pets can lower your stress levels!</p>
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -253,10 +253,3 @@ Pets can lower your stress levels!</p>
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 AMP 스토리에 애니메이션 효과를 추가하는 방법은 다양합니다(예: 애니메이션 결합, 애니메이션 연결). 이 가이드에서는 기본적인 내용만 설명합니다. 자세한 애니메이션 관련 내용을 알아보려면 [amp-story](/ko/docs/reference/components/amp-story.html#animations) 참조 문서를 확인하세요.
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
- 

@@ -224,13 +224,13 @@ Pets can lower your stress levels!</p>
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -253,10 +253,3 @@ Pets can lower your stress levels!</p>
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 您可以采用诸多形式（例如动画组合、动画链）在 AMP 故事中实现动画效果，本教程只是浅谈则止。若想详细了解动画，请查阅 [amp-story](/zh_cn/docs/reference/components/amp-story.html#animations) 参考文档。
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
- 

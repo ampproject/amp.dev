@@ -16,11 +16,5 @@ $title: 시각적 AMP 스토리 작성하기
 - 스토리 마지막 부분에 관련 링크를 추가하여 독자의 콘텐츠 몰입도 유지
 
 [tip type="note"]
- [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소는 아직 **실험 단계**에 있습니다. 
+ [amp-story](/ko/docs/reference/components/amp-story.html) 구성요소는 아직 **실험 단계**에 있습니다.
 [/tip]
-
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">시작하기</span></a>
-</div>
- 

@@ -35,20 +35,20 @@ La portada se compone de dos capas:
 
 Vamos a añadir la primera capa a la portada. La capa incluye una imagen que llena la pantalla.  
 
-Para crear la capa, añade el elemento `<amp-story-grid-layer>` como componente secundario de `<amp-story-page>`. Como queremos que la imagen ocupe la pantalla, utiliza el atributo `template="fill"` para `amp-story-grid-layer`. Dentro de la capa, añade un elemento `<amp-image>` para el archivo `cover.jpg` y asegúrate de que el diseño se adapte (es decir, `layout="responsive"`) a las dimensiones de imagen 720x1280 píxeles.  A continuación, te indicamos el aspecto que debe tener la capa: 
+Para crear la capa, añade el elemento `<amp-story-grid-layer>` como componente secundario de `<amp-story-page>`. Como queremos que la imagen ocupe la pantalla, utiliza el atributo `template="fill"` para `amp-story-grid-layer`. Dentro de la capa, añade un elemento `<amp-image>` para el archivo `cover.jpg` y asegúrate de que el diseño se adapte (es decir, `layout="responsive"`) a las dimensiones de imagen 720x1280 píxeles.  A continuación, te indicamos el aspecto que debe tener la capa:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Veamos cómo se muestra la página.  Abre la página en tu navegador: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>. 
+Veamos cómo se muestra la página.  Abre la página en tu navegador: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Si todo ha salido bien, debería tener un aspecto similar al de esta imagen:
 
@@ -60,19 +60,19 @@ Ya tenemos un fondo de pantalla, pero necesitamos una segunda capa, que se coloc
 
 #### Colocar elementos con una plantilla
 
-El elemento `<amp-story-grid-layer>` organiza los elementos secundarios en una cuadrícula (que se basa en la [cuadrícula de CSS](https://www.w3.org/TR/css-grid-1/)).  Para indicar cómo quieres que se coloquen los elementos secundarios, debes utilizar una de las siguientes plantillas de diseño: 
+El elemento `<amp-story-grid-layer>` organiza los elementos secundarios en una cuadrícula (que se basa en la [cuadrícula de CSS](https://www.w3.org/TR/css-grid-1/)).  Para indicar cómo quieres que se coloquen los elementos secundarios, debes utilizar una de las siguientes plantillas de diseño:
 
 <table class="noborder">
 <tr>
     <td colspan="2"><h5 id="fill">Plantilla: fill</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">La plantilla <strong>fill</strong> rellena la pantalla con el primer elemento secundario de la capa. El resto de elementos secundarios de esta capa no se muestran.
-    
+
     <p>La plantilla "fill" se utiliza para fondos de pantalla que incluyen imágenes y vídeos.</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
@@ -84,8 +84,8 @@ El elemento `<amp-story-grid-layer>` organiza los elementos secundarios en una c
 <tr>
     <td colspan="2"><h5 id="vertical">Plantilla: vertical</h5></td>
 </tr>
-<tr> 
-    <td width="65%">La plantilla <strong>vertical</strong> organiza los elementos secundarios a lo largo del eje "y". Los elementos se alinean con respecto a la parte superior de la pantalla y se distribuyen por todo el espacio a lo largo del eje "x". 
+<tr>
+    <td width="65%">La plantilla <strong>vertical</strong> organiza los elementos secundarios a lo largo del eje "y". Los elementos se alinean con respecto a la parte superior de la pantalla y se distribuyen por todo el espacio a lo largo del eje "x".
 
     <p>Utiliza la plantilla "vertical" cuando quieras apilar elementos verticalmente uno debajo de otro.</p>
 
@@ -101,7 +101,7 @@ El elemento `<amp-story-grid-layer>` organiza los elementos secundarios en una c
 <tr>
     <td colspan="2"><h5 id="horizontal">Plantilla: horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%">La plantilla <strong>horizontal</strong> organiza los elementos secundarios a lo largo del eje "x".  Los elementos se alinean con respecto al inicio de la pantalla y se distribuyen por todo el espacio a lo largo del eje "x".
 
     <p>Utiliza la plantilla "horizontal" cuando quieras apilar elementos horizontalmente uno después del otro.</p>
@@ -119,7 +119,7 @@ El elemento `<amp-story-grid-layer>` organiza los elementos secundarios en una c
 <tr>
     <td colspan="2"><h5 id="thirds">Plantilla: thirds</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 La plantilla <strong>thirds</strong> divide la pantalla en tres filas de igual tamaño que puedes rellenar con contenido.
 
@@ -151,14 +151,6 @@ Para la capa 2, vamos a colocar el título y la firma en la parte superior de la
 </amp-story-grid-layer>
 ```
 
-Actualiza la página del navegador y revisa el trabajo realizado.  La portada está terminada. 
+Actualiza la página del navegador y revisa el trabajo realizado.  La portada está terminada.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Portada terminada' ) }}
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
-</div>
- 
- 
- 

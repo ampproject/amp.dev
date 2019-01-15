@@ -130,8 +130,3 @@ Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP]({{g.doc('/content/amp
 Kami mendesain halaman ini untuk perangkat seluler, jadi mari kita **buat simulasi** pengalaman perangkat seluler di developer tools browser Anda. Misalnya, di DevTools Chrome, klik ikon ponsel, dan pilih perangkat seluler dari menu.
 
 Sekarang, kita dapat mulai bekerja di halaman itu sendiri. Mari kita tambahkan beberapa komponen AMP di halaman.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>

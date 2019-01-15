@@ -224,13 +224,13 @@ Pets can lower your stress levels!</p>
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -253,10 +253,3 @@ Pets can lower your stress levels!</p>
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='ページ 5 のコラージュ', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 AMP ストーリーのアニメーションでは、アニメーションの組み合わせやアニメーションの変更などによって、このチュートリアルで紹介した以外にもさまざまな視覚効果を追加できます。アニメーションについて詳しくは、[amp-story](/ja/docs/reference/components/amp-story.html#animations) の関連ドキュメントをご覧ください。
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
- 

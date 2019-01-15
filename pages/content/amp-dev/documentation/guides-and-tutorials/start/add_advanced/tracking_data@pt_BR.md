@@ -94,8 +94,3 @@ Se você tiver uma plataforma personalizada de acompanhamento para integração,
 Observação: `“UA-YYYY-Y”` é uma conta de exemplo do Google Analytics. Se você usar esse exemplo, substitua esse valor pelo código de acompanhamento do Google Analytics do seu site.
 
 Dica: Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Caso você só precise acompanhar exibições de página, o amp-pixel é uma solução mais leve do que o amp-analytics, porque só atende aos requisitos do acompanhamento de pixels tradicional. Saiba mais em [Analytics: conceitos básicos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

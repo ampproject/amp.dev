@@ -41,7 +41,7 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
@@ -66,13 +66,13 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 <tr>
     <td colspan="2"><h5 id="fill">模板：Fill</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>fill</strong> 模板会使用该图层中的第一个子级元素填满屏幕。但该图层中的任何其他子级元素都不会显示。
-    
+
     <p>fill 模板非常适用于添加背景内容（包括图片和视频）。</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
@@ -84,7 +84,7 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 <tr>
     <td colspan="2"><h5 id="vertical">模板：Vertical</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>vertical</strong> 模板会沿着 y 轴放置子级元素。这些元素会与屏幕顶部对齐，并会沿着 x 轴占据整个屏幕。
 
     <p>当您想沿垂直方向一个紧挨着一个地堆叠元素时，vertical 模板堪称理想之选。</p>
@@ -101,7 +101,7 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 <tr>
     <td colspan="2"><h5 id="horizontal">模板：Horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>horizontal</strong> 模板会沿着 x 轴放置子级元素。这些元素会与屏幕起始位置对齐，并会沿着 y 轴占据整个屏幕。
 
     <p>当您想沿水平方向一个紧挨着一个地堆叠元素时，horizontal 模板无疑是不错的选择。</p>
@@ -119,7 +119,7 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 <tr>
     <td colspan="2"><h5 id="thirds">模板：Thirds</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 <strong>thirds</strong> 模板会将屏幕均分为 3 行，以便您在各个区域中放置相应内容。
 
@@ -154,11 +154,3 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>`
 刷新浏览器即可查看您的工作成果。至此，我们的封面页就制作完毕了。
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='完成后的封面页' ) }}
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
- 
- 
- 

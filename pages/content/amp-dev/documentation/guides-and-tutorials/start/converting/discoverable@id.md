@@ -110,8 +110,3 @@ Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang kemampuan halaman untu
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 Kerja bagus!  Anda telah menyelesaikan artikel berita AMP.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>

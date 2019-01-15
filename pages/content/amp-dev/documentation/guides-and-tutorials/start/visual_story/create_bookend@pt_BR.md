@@ -40,7 +40,7 @@ Para este tutorial, escolhemos Facebook, Twitter e e-mail como nossos provedores
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
 
-O restante da tela de bookend é para o conteúdo relacionado.  Todo esse conteúdo está em um objeto `components`. 
+O restante da tela de bookend é para o conteúdo relacionado.  Todo esse conteúdo está em um objeto `components`.
 
 Há vários componentes que você pode usar para exibir links e conteúdo relacionado. Cada componente é especificado com um atributo de tipo. Vejamos os componentes disponíveis:
 
@@ -146,9 +146,3 @@ Há vários componentes que você pode usar para exibir links e conteúdo relaci
 Veja mais informações sobre o componente de bookend. Acesse a documentação de referência do [amp-story](/pt_br/docs/reference/components/amp-story.html#bookend:-amp-story-bookend).
 
 Nossa história está quase pronta.  Antes de publicar o conteúdo, vamos verificar se o HTML para AMP é válido.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
- 

@@ -131,8 +131,3 @@ Learn more in the [Validate AMP pages]({{g.doc('/content/amp-dev/documentation/g
 We're designing this page for a mobile device, so let's **simulate** the mobile device experience in your browser's developer tools. For example, in Chrome DevTools, click the mobile phone icon, and select a mobile device from the menu.
 
 Now, we can start working on the page itself. Let’s add some AMP components to our page.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

@@ -18,9 +18,3 @@ $title: ビジュアルに訴える AMP ストーリーを作成する
 [tip type="note"]
  [amp-story](/ja/docs/reference/components/amp-story.html) は**試験運用コンポーネント**です。
 [/tip]
-
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">開始する</span></a>
-</div>
- 

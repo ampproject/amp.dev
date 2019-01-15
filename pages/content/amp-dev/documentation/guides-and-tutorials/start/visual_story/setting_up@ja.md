@@ -42,9 +42,3 @@ URL は必ず `localhost` から提供されるようにしてください。そ
 
 
 クリックしながら完成したストーリー全体を見返し、このコンポーネントの仕組みを把握するようにしてください。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
-
