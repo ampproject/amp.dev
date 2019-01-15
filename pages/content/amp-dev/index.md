@@ -300,4 +300,13 @@ format_explainer:
   </div>
 </section>
 
-{% include 'views/partials/case-grid.j2' %}
+
+<section class="ad--case-grid">
+  <div class="ad--container">
+    <h1 class="ad-o-case-grid-headline">Get inspired by AMP use cases</h1>
+  </div>
+
+  <div class="ad--container-fluid">
+    {% include 'views/partials/case-grid.j2' %}
+  </div>
+</section>
