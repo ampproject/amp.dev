@@ -14,6 +14,7 @@
   
   &-visual {
     position: relative;
+    width: 100%;
     grid-column: 1 / -1;
 
     @media screen and (min-width: 1024px) {
