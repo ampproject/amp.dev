@@ -9,7 +9,7 @@ $view: /views/overview/what-is-amp.j2
 # Easily create user first websites with Amp.
 [/stage]
 
-{% include 'views/partials/formats-visual.j2' %}
+{% include 'views/partials/format-visual.j2' %}
 </section>
 
 <section class="ad--content">

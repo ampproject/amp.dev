@@ -9,7 +9,7 @@ $view: /views/overview/what-is-amp.j2
 #Improve user engagement with rich and immersive AMP ads
 [/stage]
 
-{% include 'views/partials/formats-visual.j2' %}
+{% include 'views/partials/format-visual.j2' %}
 </section>
 
 <section class="ad--content">

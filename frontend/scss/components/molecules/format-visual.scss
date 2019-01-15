@@ -1,12 +1,12 @@
 /*
 
 #############################
-### MOLECULE: formats-visual ###
+### MOLECULE: format-visual ###
 #############################
 
 ### INFO:
 
-formats-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
+format-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
 the border and format around the images.
 
 ### MODIFIERS:
@@ -21,7 +21,7 @@ the border and format around the images.
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
-.#{molecule('formats-visual')} {
+.#{molecule('format-visual')} {
   width: 100%;
   display: flex;
   align-items: center;
