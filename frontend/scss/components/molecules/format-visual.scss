@@ -76,31 +76,19 @@ the border and format around the images.
 }
 
 @keyframes slide {
-  0% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
-  9% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
-  18% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
-  36% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
-  45% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
-  54% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
-  63% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
-  72% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
-  81% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
-  90% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
-  100% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
+  0%, 9%, 18%, 36%, 90%, 100% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
+  45%, 54%, 63%, 72%, 81% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
 }
 
 @keyframes highlight-code {
-  0% { content: 'right'; background-color: transparent; }
+  0%, 90%, 100% { content: 'right'; background-color: transparent; }
   9% { content: 'right'; background-color: color('pink-flamingo'); }
   18% { content: " "; background-color: color('pink-flamingo'); }
   36% { content: 'left'; background-color: color('pink-flamingo'); }
-  45% { content: 'left'; background-color: transparent; }
-  54% { content: 'left'; background-color: transparent; }
+  45%, 54% { content: 'left'; background-color: transparent; }
   63% { content: 'left'; background-color: color('pink-flamingo'); }
   72% { content: " "; background-color: color('pink-flamingo'); }
   81% { content: 'right'; background-color: color('pink-flamingo'); }
-  90% { content: 'right'; background-color: transparent; }
-  100% { content: 'right'; background-color: transparent; }
 }
 
 @keyframes bounce {
