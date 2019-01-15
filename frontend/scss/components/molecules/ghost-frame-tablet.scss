@@ -1,0 +1,22 @@
+/*
+
+####################################
+### MOLECULE: ghost frame tablet ###
+####################################
+
+### INFO:
+
+The ghost frame tablet wraps an element with a tablet-like frame.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color';
+
+.#{molecule('ghost-frame-tablet')} {
+  outline: 1px solid green;
+}

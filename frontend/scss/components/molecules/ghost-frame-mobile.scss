@@ -1,0 +1,22 @@
+/*
+
+####################################
+### MOLECULE: ghost frame mobile ###
+####################################
+
+### INFO:
+
+The ghost frame mobile wraps an element with a mobile-like frame.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color';
+
+.#{molecule('ghost-frame-mobile')} {
+  outline: 1px solid purple;
+}
