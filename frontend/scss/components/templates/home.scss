@@ -30,4 +30,20 @@
   .#{utility('container')} {
     @include container;
   }
+  
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+  
+  .#{organism('stage')} {
+    &-content {
+      grid-column: 5 / 20;
+      padding-bottom: 23vw;
+      text-align: center;
+      
+      &-headline {
+        @include hl-stage;
+      }
+    }
+  }
 }
