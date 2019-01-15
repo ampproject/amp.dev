@@ -2,7 +2,6 @@
 $title: Create interactive AMP pages
 $path: /documentation/guides-and-tutorials/develop/interactivity/create-interactive.html
 $order: 0
-tutorial: true
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}

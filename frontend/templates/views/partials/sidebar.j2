@@ -64,8 +64,8 @@
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
             <a class="nav-link" href="{{ document.url.path }}">
-              {{ _(document.title) }}
-              {% if doc.tutorial %}
+              {{ document.title }}
+              {% if document.tutorial %}
               {% do doc.icons.useIcon('icons/tutorial.svg') %}
               <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
               {% endif %}
