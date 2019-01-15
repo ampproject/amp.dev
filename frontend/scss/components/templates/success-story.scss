@@ -16,6 +16,10 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 
+@import '../molecules/ghost-frame-desktop.scss';
+@import '../molecules/ghost-frame-tablet.scss';
+@import '../molecules/ghost-frame-mobile.scss';
+
 @import '../templates/_default.scss';
 
 .#{template('success-story')} {
