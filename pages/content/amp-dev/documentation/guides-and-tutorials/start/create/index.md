@@ -2,6 +2,8 @@
 $title: Create your first AMP page
 $order: 0
 $path: /documentation/guides-and-tutorials/start/create.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/start/create.html
 numbered: 0
 tutorial: true
 ---
