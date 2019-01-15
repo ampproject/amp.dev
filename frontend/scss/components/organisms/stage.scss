@@ -10,7 +10,11 @@
 .#{utility('stage')} {
   .#{organism('case-band')} {
     grid-column: 1 / -1;
-    margin-top: -30%;
+    margin-top: -10%;
+    
+    @media screen and (min-width: 768px){
+      margin-top: -30%;
+    }
   }
 
   .#{molecule('format-visual')} {
