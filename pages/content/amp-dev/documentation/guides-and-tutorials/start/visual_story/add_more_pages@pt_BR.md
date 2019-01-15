@@ -124,9 +124,3 @@ Demonstra como definir a disposição do texto e exibir um vídeo que preenche a
 </table>
 
 Nossa história "A alegria de ter animais de estimação" está quase pronta. Usaremos animações na última página para mostrar todos os animais de estimação.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
- 

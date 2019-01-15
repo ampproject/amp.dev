@@ -19,9 +19,3 @@ Chrome（または任意のブラウザ）で [デベロッパー コンソー�
 ```text
 AMP の検証に成功しました。
 ```
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
-

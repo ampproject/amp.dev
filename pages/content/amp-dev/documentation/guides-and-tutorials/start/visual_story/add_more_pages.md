@@ -120,8 +120,3 @@ Demonstrates how to arrange text and display a screen-filling video for the page
 </table>
 
 Our "Joy of Pets" story is nearly complete. We'll use animations in our last page to bring all the pets together.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

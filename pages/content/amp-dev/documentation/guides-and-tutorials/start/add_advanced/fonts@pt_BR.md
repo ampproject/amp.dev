@@ -37,9 +37,3 @@ Você pode usar o amp-font para ocultar o texto até que a fonte seja totalmente
 Seu artigo de notícias AMP está pronto! Ele terá esta aparência:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='Artigo de notícias concluído') }}
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

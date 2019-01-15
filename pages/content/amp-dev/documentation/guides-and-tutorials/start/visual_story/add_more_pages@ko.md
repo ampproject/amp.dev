@@ -124,9 +124,3 @@ $order: 4
 </table>
 
 '애완동물이 주는 기쁨' 스토리가 거의 완성되었습니다. 마지막 페이지에서는 애니메이션을 사용하여 모든 애완동물을 한곳에 모을 것입니다.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
- 

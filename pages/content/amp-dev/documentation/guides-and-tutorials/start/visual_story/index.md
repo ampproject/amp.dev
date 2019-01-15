@@ -19,7 +19,3 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 - Keep readers engaged with your content by adding related links to the end of the story
 
 Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
-</div>

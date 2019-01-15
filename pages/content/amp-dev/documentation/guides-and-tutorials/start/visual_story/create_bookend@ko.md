@@ -40,7 +40,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='북엔드 소셜 공유' ) }}
 
-북엔드 화면의 나머지는 관련 콘텐츠를 위한 부분입니다.  모든 관련 콘텐츠는 `components` 개체에 포함되어 있습니다. 
+북엔드 화면의 나머지는 관련 콘텐츠를 위한 부분입니다.  모든 관련 콘텐츠는 `components` 개체에 포함되어 있습니다.
 
 관련 콘텐츠와 링크를 표시하는 데 사용할 수 있는 다양한 구성 요소가 있습니다. 각 구성 요소는 타입 속성으로 지정됩니다. 사용 가능한 구성 요소에 대해 살펴보겠습니다.
 
@@ -146,9 +146,3 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 북엔드 구성 요소에 대한 더 자세한 내용이 있습니다. [amp-story](/ko/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) 참조 문서를 확인하세요.
 
 스토리가 거의 완성되었습니다.  콘텐츠를 게시하기 전에 AMP HTML이 유효한지 확인하세요.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
- 

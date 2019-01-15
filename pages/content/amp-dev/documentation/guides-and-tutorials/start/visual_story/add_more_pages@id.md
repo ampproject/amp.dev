@@ -123,9 +123,3 @@ Menunjukkan cara menata teks dan menampilkan video pengisi layar untuk halaman.
 </table>
 
 Artikel "Joy of Pets" kita hampir selesai. Kita akan menggunakan animasi di halaman terakhir untuk menampilkan semua hewan peliharaan itu bersama-sama.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>
- 

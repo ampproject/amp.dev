@@ -122,8 +122,3 @@ article {
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='サイドバー メニューのナビゲーション') }}
 
 ページの見栄えがよくなりました。では、仕上げとしてフォントをカスタマイズします。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>

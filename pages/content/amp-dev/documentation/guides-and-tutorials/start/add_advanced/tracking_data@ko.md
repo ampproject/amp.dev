@@ -98,8 +98,3 @@ AMP에서 이 기능을 복제하려면 먼저 문서의 `<head>`에 [amp-analyt
 [tip]
 더 간단한 추적 시스템에 관심이 있다면 [amp-pixel](/ko/docs/reference/components/amp-pixel.html)을 확인해 보세요. amp-pixel은 기존의 픽셀 추적 요구사항을 해결하기 위한 목적으로만 사용되므로, 페이지뷰만 추적해야 하는 경우 amp-analytics보다 가벼운 솔루션으로 amp-pixel을 이용할 수 있습니다. [애널리틱스: 기본 가이드]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 [/tip]
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/navigating.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>

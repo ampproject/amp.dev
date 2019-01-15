@@ -66,13 +66,13 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 <tr>
     <td colspan="2"><h5 id="fill">テンプレート: Fill</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>fill</strong> テンプレートは、レイヤ内の 1 番目の子要素を画面全体に表示します。レイヤ内のそれ以外の子要素は表示されません。
-    
+
     <p>fill テンプレートは、画像や動画を背景として表示したい場合に適しています。</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
@@ -84,7 +84,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 <tr>
     <td colspan="2"><h5 id="vertical">テンプレート: Vertical</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>vertical</strong> テンプレートは、子要素を y 軸に沿って配置します。つまり、要素は画面の上端から順番に並べられ、x 軸方向に画面の最下部まで表示されます。
 
     <p>vertical テンプレートは、要素を垂直に積み重ねるように、順番に並べて表示したい場合に適しています。</p>
@@ -101,7 +101,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 <tr>
     <td colspan="2"><h5 id="horizontal">テンプレート: Horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>horizontal</strong> テンプレートは、子要素を x 軸に沿って配置します。つまり、要素は画面の左端から順番に並べられ、y 軸方向に画面の右端まで表示されます。
 
     <p>horizontal テンプレートは、要素を水平に隣接するように、順番に並べて表示したい場合に適しています。</p>
@@ -119,7 +119,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 <tr>
     <td colspan="2"><h5 id="thirds">テンプレート: Thirds</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 <strong>thirds</strong> テンプレートを使用すると、画面を水平方向に三等分し、それぞれの領域にコンテンツを割り当てることができます。
 
@@ -154,11 +154,3 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 ブラウザの表示を更新して確認してみましょう。これでカバーページは完成です。
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='完成したカバーページ' ) }}
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
- 
- 
- 

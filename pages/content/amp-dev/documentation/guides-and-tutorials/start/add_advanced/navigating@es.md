@@ -120,8 +120,3 @@ Bueno, veamos nuestra barra lateral. **Actualiza** y vuelve a cargar tu página 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Navegación por el menú de la barra lateral') }}
 
 Nuestra página se ve muy bien! Añadamos un toque final: una fuente personalizada!
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
-</div>

@@ -200,9 +200,3 @@ AMP には、この問題を解決するための専用のコンポーネント�
 `amp-fit-text` を使った最後の実験として、max-font-size 属性の値は 42 のまま、height に 400 などの大きな値を設定し、「こんにちは」などの短いテキストを指定してみましょう。 テキストはページ上でどのように表示されるでしょうか。垂直方向の中央揃えで表示されるでしょうか。それとも、最大フォントサイズに合わせて、amp-fit-text タグの高さが縮小されるでしょうか。AMP のレイアウト システムについてこれまでに学んだ知識を踏まえ、実際にコードを試す前に答えを考えてみてください。
 
 `amp-fit-text` について詳しくは、[AMP by Example のライブデモ](https://ampbyexample.com/components/amp-fit-text/)をご覧ください。
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>

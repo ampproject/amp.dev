@@ -41,9 +41,3 @@ URL이 `localhost`에서 제공되는지 확인하십시오. 그렇지 않으면
 [/tip]
 
 완성된 스토리를 클릭해 보면서 어떤 스토리를 만들게 될지 파악해 보십시오.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
-

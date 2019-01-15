@@ -16,11 +16,5 @@ Dalam tutorial ini, kami akan memperkenalkan Anda dengan komponen [amp-story](/i
 - Mempertahankan interaksi pembaca dengan konten melalui penambahan link terkait ke akhir artikel
 
 [tip type="note"]
- Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**. 
+ Komponen [amp-story](/id/docs/reference/components/amp-story.html) masih bersifat **eksperimental**.
 [/tip]
-
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Mulai</span></a>
-</div>
- 

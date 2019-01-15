@@ -35,20 +35,20 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 
 커버 페이지에 첫 번째 레이어를 추가하겠습니다. 이 레이어에는 화면을 채우는 이미지가 들어 있습니다.  
 
-`<amp-story-grid-layer>` 요소를 `<amp-story-page>`의 하위 요소로 추가하여 레이어를 만듭니다. 이미지가 화면을 채워야 하니 `amp-story-grid-layer`에 `template="fill"` 속성을 지정합니다. 레이어 안에서 `cover.jpg` 파일에 `<amp-image>` 요소를 추가하고 이미지 크기가 720x1280px인 반응형(즉, `layout="responsive"`)인지 확인합니다.  다음은 만들어진 레이어의 모습입니다. 
+`<amp-story-grid-layer>` 요소를 `<amp-story-page>`의 하위 요소로 추가하여 레이어를 만듭니다. 이미지가 화면을 채워야 하니 `amp-story-grid-layer`에 `template="fill"` 속성을 지정합니다. 레이어 안에서 `cover.jpg` 파일에 `<amp-image>` 요소를 추가하고 이미지 크기가 720x1280px인 반응형(즉, `layout="responsive"`)인지 확인합니다.  다음은 만들어진 레이어의 모습입니다.
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
-        width="720" height="1280" 
+        width="720" height="1280"
         layout="responsive">
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-페이지가 어떻게 표시되는지 보겠습니다.  브라우저에서 페이지를 열어봅니다. <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>. 
+페이지가 어떻게 표시되는지 보겠습니다.  브라우저에서 페이지를 열어봅니다. <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 다음과 같이 표시될 것입니다.
 
@@ -60,19 +60,19 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 
 #### 템플릿으로 요소 레이아웃하기
 
-`<amp-story-grid-layer>` 요소를 사용하면 하위 요소가 그리드에 배치됩니다([CSS 그리드] 기반(https://www.w3.org/TR/css-grid-1/)).  하위 요소 배치 방식을 지시하려면 다음 레이아웃 템플릿 중 하나를 지정해야 합니다. 
+`<amp-story-grid-layer>` 요소를 사용하면 하위 요소가 그리드에 배치됩니다([CSS 그리드] 기반(https://www.w3.org/TR/css-grid-1/)).  하위 요소 배치 방식을 지시하려면 다음 레이아웃 템플릿 중 하나를 지정해야 합니다.
 
 <table class="noborder">
 <tr>
     <td colspan="2"><h5 id="fill">Template: Fill</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>채우기</strong> 템플릿을 사용하면 레이어의 첫 번째 하위 요소가 화면을 채웁니다. 이 레이어의 다른 하위 요소는 표시되지 않습니다.
-    
+
     <p>채우기 템플릿은 이미지와 동영상을 포함한 배경에 효과적입니다.</p>
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
-      width="720" height="1280" 
+      width="720" height="1280"
       layout="responsive">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
@@ -84,8 +84,8 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 <tr>
     <td colspan="2"><h5 id="vertical">Template: Vertical</h5></td>
 </tr>
-<tr> 
-    <td width="65%"><strong>세로</strong> 템플릿을 사용하면 하위 요소가 Y축을 따라 배치됩니다. 요소가 화면 상단에 정렬되고 X축을 따라 전체 화면을 차지합니다. 
+<tr>
+    <td width="65%"><strong>세로</strong> 템플릿을 사용하면 하위 요소가 Y축을 따라 배치됩니다. 요소가 화면 상단에 정렬되고 X축을 따라 전체 화면을 차지합니다.
 
     <p>수직 템플릿은 요소를 수직으로 바로 쌓아 올릴 때 적합합니다.</p>
 
@@ -101,7 +101,7 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 <tr>
     <td colspan="2"><h5 id="horizontal">Template: Horizontal</h5></td>
 </tr>
-<tr> 
+<tr>
     <td width="65%"><strong>가로</strong> 템플릿을 사용하면 하위 요소가 X축을 따라 배치됩니다.  요소가 화면 시작 부분에 정렬되고 Y축을 따라 전체 화면을 차지합니다.
 
     <p>가로 템플릿은 요소를 수평으로 바로 연결할 때 적합합니다.</p>
@@ -119,7 +119,7 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 <tr>
     <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
 </tr>
-<tr> 
+<tr>
 <td width="65%">
 <strong>3등분</strong> 템플릿을 사용하면 화면을 가로로 3등분하여 각 영역에 콘텐츠를 배치할 수 있습니다.
 
@@ -151,14 +151,6 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 </amp-story-grid-layer>
 ```
 
-브라우저를 새로고침하고 작업 결과를 확인하세요.  커버 페이지가 완성되었습니다. 
+브라우저를 새로고침하고 작업 결과를 확인하세요.  커버 페이지가 완성되었습니다.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Completed cover page' ) }}
-
-<div class="prev-next-buttons">
-   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>	  <a class="button prev-button" href="/ko/docs/getting_started/visual_story/start_story.html"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
- 
- 
- 

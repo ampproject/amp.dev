@@ -212,9 +212,3 @@ Or, what if the quotation is longer?
 As a last experiment with `amp-fit-text`, try creating a short piece of text,  such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the amp-fit-text tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
 
 You can learn more about `amp-fit-text` from [AMP by Example's live demo](https://ampbyexample.com/components/amp-fit-text/).
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

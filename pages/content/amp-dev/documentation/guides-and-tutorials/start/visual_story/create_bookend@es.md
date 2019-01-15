@@ -40,7 +40,7 @@ Para este tutorial, hemos escogido Facebook, Twitter y el correo electrónico co
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='compartir el enmarcado a través de las redes sociales' ) }}
 
-El resto de la pantalla del enmarcado está dedicado a contenido relacionado,  el cual se almacena en el objeto `components`. 
+El resto de la pantalla del enmarcado está dedicado a contenido relacionado,  el cual se almacena en el objeto `components`.
 
 Hay varios componentes que se pueden usar para mostrar contenidos y enlaces relacionados, y cada uno de ellos está especificado con un tipo de atributo. Veamos los componentes disponibles:
 
@@ -146,8 +146,3 @@ Hay varios componentes que se pueden usar para mostrar contenidos y enlaces rela
 Puedes aprender más sobre el componente bookend. Para obtener más información, consulta la documentación de referencia de [amp-story](/es/docs/reference/components/amp-story.html#bookend:-amp-story-bookend).
 
 Nuestra historia está casi terminada.  Antes de poder publicar nuestro contenido, comprobaremos que el HTML de nuestro AMP es válido.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="/es/docs/getting_started/visual_story/animating_elements.html"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="/es/docs/getting_started/visual_story/validation.html"><span class="arrow-next">Siguiente</span></a>
-</div>
