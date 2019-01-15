@@ -1,0 +1,27 @@
+/*
+
+####################
+### ATOM: button ###
+####################
+
+### INFO:
+
+The regular button has only one size and no modifiers yet.
+The text style is always extended from light headline 3 but in uppercase letters.
+
+### MODIFIERS:
+
+none
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_button.scss';
+
+.#{atom('btn')} {
+  @include btn;
+}

@@ -24,7 +24,7 @@ const BODY_CLASSES = {
   'websites': 'ad--websites',
   'stories': 'ad--stories',
   'ads': 'ad--ads',
-  'email': 'ad--email'
+  'email': 'ad--email',
 };
 
 const FILTERED_ROUTES = [
@@ -35,7 +35,7 @@ const FILTERED_ROUTES = [
 
 function isFilterableRoute(route) {
   let filterableRoute = false;
-  for (let expression of FILTERED_ROUTES) {
+  for (const expression of FILTERED_ROUTES) {
     if (expression.test(route)) {
       filterableRoute = true;
       break;
@@ -46,7 +46,6 @@ function isFilterableRoute(route) {
 }
 
 class FilteredPage {
-
   constructor(format, content) {
     this._format = format;
     this._content = content;
@@ -65,7 +64,7 @@ class FilteredPage {
       return attribute.value + ' ' + BODY_CLASSES[this._format];
     }, {
       'tag': 'body',
-      'attr': 'class'
+      'attr': 'class',
     });
   }
 
@@ -85,12 +84,17 @@ class FilteredPage {
       return attribute.value + '?format=' + this._format;
     }, {
       'tag': 'a',
-      'attr': 'href'
+      'attr': 'href',
     });
 
     // Rewrite the link of the toggle that matches the active format as it
     // should bring the user back to the unfiltered state
-    this._content = this._content.replace(`ad-m-format-toggle-link-${this._format}" href="?format=${this._format}">${this._format}</a>`, `ad-m-format-toggle-link-${this._format}" href="?format=all">${this._format}</a>`)
+    /* eslint-disable max-len */
+    this._content = this._content.replace(
+        `ad-m-format-toggle-link-${this._format}" href="?format=${this._format}">${this._format}</a>`,
+        `ad-m-format-toggle-link-${this._format}" href="?format=all">${this._format}</a>`
+    );
+    /* eslint-enable max-len */
   }
 
   get content() {

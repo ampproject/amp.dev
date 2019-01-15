@@ -20,33 +20,61 @@
 @import '../templates/_default.scss';
 
 .#{template('docs-detail')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
   }
-  
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
-  
+
   .#{utility('toc')} {
     @include toc;
   }
-  
+
   .#{utility('sidebar')} + .#{utility('content')},
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
-  
+
   .#{utility('content')} {
     h1 {@include hl-h2;}
     h2 {@include hl-h3;}
     h3 {@include hl-h4;}
     h4 {@include hl-h5;}
+  }
+
+  hr {
+    height: 1px;
+    margin: 0.75em 0;
+    background-color: color('gray-chateau');
+    border: none;
+  }
+
+  .#{utility('chapter-indicator')} {
+    display: flex;
+    justify-content: space-between;
+
+    .#{utility('previous')} {
+
+      .ad-m-lnk-icon {
+        transform: scaleX(-1);
+      }
+    }
+
+    .#{utility('next')} {
+      justify-self: flex-end;
+
+      .ad-m-lnk-icon {
+        margin-left: 0.625em;
+        margin-right: 0;
+      }
+    }
   }
 }

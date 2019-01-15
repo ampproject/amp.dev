@@ -24,7 +24,7 @@ that makes a merge over to the original repository beneficial.
 1.  Install the dependencies for the project:
     ```sh
     $ cd platform
-    $ yarn
+    $ npm install
     ```
 
 ## Develop
@@ -56,13 +56,13 @@ To build and deploy to the staging environment on [Google App Engine](https://cl
 
 ```sh
 $ cd platform
-$ yarn run build:staging
-$ yarn run start:staging
+$ npm run build:staging
+$ npm run deploy
 ```
 
 - - -
 
- Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ Copyright 2019 The AMP HTML Authors. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.

@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-const fs = require('fs');
-const path = require('path');
 const writeFile = require('write');
-
-const config = require('../config');
 
 TOC_MARKER = '[TOC]';
 
 class MarkdownDocument {
-
   constructor(path, contents) {
     this._contents = this._convertSyntax(contents);
     this._frontmatter = {
-      '$title': ''
+      '$title': '',
     };
 
     this.toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
@@ -68,7 +63,8 @@ class MarkdownDocument {
     contents = this._rewriteCodeBlocks(contents);
 
     // Rewrite mustache style parts
-    contents = contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
+    contents =
+      contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
 
     // Replace dividers (---) as they will break front matter
     contents = contents.replace(/\n---\n/gm, '\n***\n');
@@ -88,7 +84,7 @@ class MarkdownDocument {
       'note': 'note',
       'read': 'read-on',
       'caution': 'important',
-      'success': 'success'
+      'success': 'success',
     };
 
     contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
@@ -106,13 +102,14 @@ class MarkdownDocument {
    */
   _rewriteCodeBlocks(contents) {
     // replace code blocks
-    contents = contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
+    contents =
+      contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
       // Fence curly braces to not mess with Grow/jinja2
-      if (p4.indexOf('{{') > -1) {
-        p4 = '{% raw %}' + p4 + '{% endraw %}';
-      }
-      return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
-    });
+        if (p4.indexOf('{{') > -1) {
+          p4 = '{% raw %}' + p4 + '{% endraw %}';
+        }
+        return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
+      });
 
     return contents;
   }
@@ -124,8 +121,10 @@ class MarkdownDocument {
    */
   save(path) {
     let frontmatter = '---\n';
-    for (let key in this._frontmatter) {
-      frontmatter += `${key}: ${this._frontmatter[key]}\n`;
+    for (const key in this._frontmatter) {
+      if (Object.prototype.hasOwnProperty.call(this._frontmatter, key)) {
+        frontmatter += `${key}: ${this._frontmatter[key]}\n`;
+      }
     }
     frontmatter += '---\n\n';
 
