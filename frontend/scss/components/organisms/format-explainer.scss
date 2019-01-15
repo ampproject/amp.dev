@@ -10,6 +10,16 @@
 
 @import '../molecules/_copy.scss';
 
+.#{utility('format-explainer')} {
+  padding-left: 30px;
+  padding-right: 30px;
+  
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .#{organism('format-explainer')} {
   
   &-visual {
@@ -18,8 +28,8 @@
     grid-column: 1 / -1;
 
     @media screen and (min-width: 1024px) {
-      grid-column: 1 / 13;
-      padding-top: 8em;
+      grid-column: 1 / 14;
+      padding-top: 7em;
     }
   }
   
@@ -28,7 +38,7 @@
     margin-bottom: 0;
 
     @media screen and (min-width: 1024px) {
-      grid-column: 13 / 23;
+      grid-column: 14 / 22;
     }
   }
   

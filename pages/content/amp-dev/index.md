@@ -38,7 +38,7 @@ format_explainer:
 </section>
 
 <section class="ad--format-explainer">
-  <div class="ad-o-format-explainer ad--container">
+  <div class="ad-o-format-explainer ad--container-fluid">
     <amp-state id="formats">
       <script type="application/json">
         {
