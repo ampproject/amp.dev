@@ -68,9 +68,3 @@ Consulta estos recursos para obtener más información:
 <hr>
 
 ¡Y ya está! Esto es todo lo que necesitamos para crear nuestra primera página AMP, aunque si solo incluimos esto, nos quedará una página sin mucho contenido, claro. En la siguiente sección explicaremos cómo añadir elementos básicos como imágenes, personalizar elementos AMP, editar páginas y crear un diseño adaptable.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
-</div>
- 

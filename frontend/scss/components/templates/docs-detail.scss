@@ -61,6 +61,10 @@
     display: flex;
     justify-content: space-between;
 
+    .ad-a-btn {
+      margin: 0 auto;
+    }
+
     .#{utility('previous')} {
 
       .ad-m-lnk-icon {
