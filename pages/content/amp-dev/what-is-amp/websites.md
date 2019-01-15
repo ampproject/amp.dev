@@ -26,7 +26,7 @@ $view: /views/overview/what-is-amp.j2
   <div class="ad-o-component-visual ad--container-fluid">
     <div class="ad-o-component-visual-copy ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
       <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
-      <div class="ad-o-component-visual-link" >
+      <div class="ad-o-component-visual-link">
         <a href="#" class="ad-m-lnk ad-m-lnk-square">
           <div class="ad-a-ico ad-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -36,9 +36,7 @@ $view: /views/overview/what-is-amp.j2
         </a>
       </div>
     </div>
-    <div class="ad-o-component-visual-image" amp-fx="fly-in-bottom" data-duration="1.5s" data-fly-in-distance="10%">
-      <amp-img src="/static/img/the-blog.png" layout="responsive" height="0.78" width="1" />
-    </div>
+    {% include 'views/partials/component-visual-image.j2' %}    
   </div>
 </section>
 
