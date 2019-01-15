@@ -46,8 +46,3 @@ Após configurar o servidor da Web local, acesse o artigo de exemplo no navegado
 ```text
 http://localhost:8000/article.html
 ```
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

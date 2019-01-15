@@ -334,9 +334,3 @@ AMP validation successful.
 - [Apa yang dimaksud dengan perubahan posisi DOM?](http://stackoverflow.com/a/27637245)
 - [Bagaimana jika atribut tata letak tidak ditentukan?](/id/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
 - [Bagaimana jika lebar dan tinggi tidak ditentukan?](/id/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>

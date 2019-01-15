@@ -340,9 +340,3 @@ AMP validation successful.
 - [DOM リフローとは](http://stackoverflow.com/a/27637245)
 - [layout 属性が定義されていない場合](/ja/docs/design/responsive/control_layout.html#layout-属性が指定されていない場合)
 - [width と height が定義されていない場合](/ja/docs/design/responsive/control_layout.html#幅と高さが指定されていない場合)
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>

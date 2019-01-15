@@ -79,8 +79,3 @@ Debería ver una resolución móvil simulada en su navegador como la siguiente:
 {{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Simulación móvil de nuestra página AMP') }}
 
 ¡Ahora estamos listos para trabajar! Paso a paso a través de los errores de validación, uno por uno y la dirección de cómo se relacionan con AMP.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
-</div>

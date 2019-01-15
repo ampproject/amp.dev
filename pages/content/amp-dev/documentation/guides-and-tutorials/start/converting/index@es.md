@@ -19,7 +19,3 @@ En este tutorial, aprenderá los conceptos clave de AMP y cómo los documentos d
 ## Usted construirá:
 
 Una sencilla página de noticias que se ajusta a las especificaciones de AMP e incorpora características comunes que se encuentran en los sitios de noticias para móviles.
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Comenzar</span></a>
-</div>
