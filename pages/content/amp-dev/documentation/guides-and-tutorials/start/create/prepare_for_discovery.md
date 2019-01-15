@@ -30,8 +30,3 @@ If you only have one page, and that page is an AMP page, you must still add the 
 [/sourcecode]
 
 Read on: Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

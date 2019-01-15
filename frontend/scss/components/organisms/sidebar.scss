@@ -1,11 +1,12 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '_sidebar.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+
+@import 'components/organisms/_sidebar.scss';
 
 .#{organism('sidebar')} {
   @include sidebar;
@@ -90,6 +91,10 @@
 
     &-icon .#{atom('ico')} {
       @include sidebar-nav-icon;
+    }
+
+    &-type-icon {
+      @include sidebar-type-icon;
     }
 
     span.nav-link + .nav-trigger {

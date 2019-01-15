@@ -26,8 +26,3 @@ Chaque page AMP peut intégrer une seule feuille de style uniquement et l'utilis
 AMP applique des règles strictes en matière de disposition des éléments sur la page. Sur une page HTML standard, vous utilisez presque exclusivement le style CSS pour disposer les éléments. Mais pour des performances optimales, AMP nécessite de définir dès le départ une taille explicite pour tous les éléments.
 
 Découvrez le rendu et la présentation d'une page AMP et comment vous pouvez modifier la disposition dans [Comment contrôler la disposition]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Précédent</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path}}"><span class="arrow-next">Prochain</span></a>
-</div>
