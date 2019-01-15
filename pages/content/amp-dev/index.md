@@ -29,13 +29,13 @@ format_explainer:
     url: /what-is-amp/email.html
 ---
 
-[stage color="dark-blue"]
+<section class="ad--stage ad--container-fluid">
+[stage format="default"]
 # Amp is a web component framework for easily creating user first
 [/stage]
 
 {% include 'views/partials/case-band.j2' %}
-
-[bevel]
+</section>
 
 <section class="ad--format-explainer">
   <div class="ad-o-format-explainer ad--container">

@@ -8,7 +8,15 @@
 @import '../atoms/_headline.scss';
 
 .#{utility('stage')} {
-  grid-column: 1 / -1;
+  .#{organism('case-band')} {
+    grid-column: 1 / -1;
+    margin-top: -30%;
+  }
+
+  .#{molecule('formats-visual')} {
+    grid-column: 13 / -1;
+    margin-top: -50%;
+  }
 }
 
 .#{organism('stage')} {
