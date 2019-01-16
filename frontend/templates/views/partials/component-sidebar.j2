@@ -10,7 +10,7 @@
     {% include '/views/partials/format-toggle.j2' %}
 
     <div class="nav">
-      {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs() %}
+      {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
       {% set scope = namespace(initial=components[0].title[4]) %}
       <ul class="nav-list level-1">
         <li class="nav-item level-1 ">
