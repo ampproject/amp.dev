@@ -33,7 +33,7 @@ pipeline.clean();
 // TODO(matthiasrohmer): Use task runner (like gulp.series/gulp.parallel) to
 // execute tasks to better handle flow
 (async () => {
-  signale.time('Build');
+  signale.time('Pipeline');
 
   await pipeline.check();
 
@@ -73,7 +73,7 @@ pipeline.clean();
     await pipeline.testBuild();
   }
 
-  signale.timeEnd('Build');
+  signale.timeEnd('Pipeline');
 })().then(() => {
   // For development we also want to directly serve the current build
   if (config.environment == 'development') {
