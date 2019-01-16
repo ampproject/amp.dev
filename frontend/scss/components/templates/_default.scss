@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 1280px;
-  padding: 120px 20px 0;
+  padding: 0 20px;
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
@@ -12,7 +12,7 @@
     grid-gap: 30px;
     grid-template-columns: 1fr;
     grid-template-columns: repeat(24, 1fr);
-    padding: 19px 30px 0;
+    padding: 0 30px;
   }
 }
 

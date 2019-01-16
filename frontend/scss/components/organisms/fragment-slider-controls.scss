@@ -15,20 +15,15 @@
 @import '../atoms/_text.scss';
 
 .#{organism('fragment-slider')} {
-  padding: 100px 0;
-  width: 100%;
-  display: flex;
-  transform: perspective(300em) rotateX(38deg) rotateY(0deg) rotateZ(-18deg) skewX(2deg);
-
   input:focus {
     outline: none;
   }
 
   &-prevbtn {
     position: absolute;
+    top: 20vh;
     left: 0;
     z-index: 3;
-    position: absolute;
     border: none;
     border-radius: 50%;
     height: 60px;
@@ -50,9 +45,9 @@
 
   &-nextbtn {
     position: absolute;
+    top: 20vh;
     right: 0;
     z-index: 3;
-    position: absolute;
     border: none;
     border-radius: 50%;
     height: 60px;
