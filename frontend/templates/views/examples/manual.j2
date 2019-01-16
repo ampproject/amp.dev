@@ -45,7 +45,14 @@
     {# The examples manual template does not make use of the main partial
     as it's content is rendered from the JSON loaded in doc.example #}
     <section class="ad--content">
-      <h1>{{ doc.example.document.title }}</h1>
+      <ul class="ad--format-tags">
+        {% do doc.styles.addCssFile('/css/components/atoms/format-tags.css') %}
+        {% for format in doc.formats %}
+        <li class="ad--format-tag ad-a-format-tag ad-a-format-tag-{{ format }}">{{ format }}</li>
+        {% endfor %}
+      </ul>
+
+      <h1 class="ad--title">{{ doc.example.document.title }}</h1>
 
       <ul class="ad--ctas">
         <li>

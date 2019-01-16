@@ -1,0 +1,32 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+
+.#{atom('format-tag')} {
+  display: inline-block;
+  padding: 0 4px;
+  @include txt-font-accent;
+  color: color('white');
+
+  &-websites {
+    @include gradient-websites;
+  }
+
+  &-stories {
+    @include gradient-stories;
+    color: color('pigment-indigo');
+  }
+
+  &-ads {
+    @include gradient-ads;
+  }
+
+  &-email {
+    @include gradient-e-mails;
+    color: color('ultramarine');
+  }
+}

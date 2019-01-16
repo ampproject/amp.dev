@@ -58,4 +58,14 @@
     h3 {@include hl-h4;}
     h4 {@include hl-h5;}
   }
+
+    .#{utility('title')} {
+      margin-top: 20px;
+    }
+
+    .#{utility('format-tags')} {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 }
