@@ -16,81 +16,31 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 
-
-
 @import '../templates/_default.scss';
 
-
 .#{template('use-cases')} {
-  @include container;
-
-  h2 {
-    @include hl-xlrg;
-    margin-top: 0;
-    grid-column: 4 / 16;
+  
+  .#{utility('container')} {
+    @include container;
   }
-
-  section {
-
-    position: relative;
-    z-index: 1;
-
-    &.#{organism('stage')} {
-      grid-column: 1 / -1;
-      z-index: 2;
+  
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+  
+  .#{organism('stage')} {
+    .#{utility('container')} {
+      @include container-fluid;
     }
 
-    &.main {
+    &-content {
       grid-column: 1 / -1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      margin: 50px 0;
-
-      @media screen and (min-width: 768px) {
-        grid-column: 4 / -1;
-      }
+      padding: 48% 0 0;
     }
   }
-
-  .copy {
-    width: 100%;
-    margin: 50px 0;
-
-    @media screen and (min-width: 768px) {
-      width: 50%;
-    }
-
-    &.intro {
-      width: 100%;
-      margin-bottom: 0;
-
-      @media screen and (min-width: 768px) {
-        width: 50%;
-      }
-    }
-
-    h1 {
-      @include hl;
-      font-size: 64px;
-
-      @media screen and (min-width: 768px) {
-        font-size: 72px;
-      }
-    }
-
-    h2 {
-      @include hl;
-      @include hl-xlrg;
-    }
-
-    p {
-      @include txt;
-      @include txt-2;
-    }
-
-    &-right {
-      margin-left: auto;
-    }
+  
+  .#{organism('fragment-slider')} {
+    grid-column: 1 / -1;
+    margin-top: -48%;
   }
 }
