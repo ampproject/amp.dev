@@ -12,11 +12,12 @@
 @import '../../variables';
 
 @import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
+@import '../atoms/_headline.scss';
+
 
 .#{organism('fragment-slider')} {
   &-text {
-    grid-column: 13 / 25;
+    grid-column: 14 / 25;
     display: flex;
     flex-direction: row-reverse;
     h2,h3 {
@@ -30,71 +31,47 @@
         min-width: 100%;
       }
       opacity: 0;
-      transition: 400ms;
+      transition: opacity 400ms, transform 400ms;
       transition-delay: 400ms;
-    }
-    &.slide1 {
-      .slide1 {
+      &.active {
         opacity: 1;
         div {
           opacity: 1;
         }
       }
     }
+
     &.slide2 {
-      .slide2 {
-        opacity: 1;
-        div {
-          opacity: 1;
-        }
-      }
       > div {
-        transform: translateX(calc(1 * 100%));
+        transform: translateX(100%);
       }
     }
     &.slide3 {
-      .slide3 {
-        opacity: 1;
-        div {
-          opacity: 1;
-        }
-      }
       > div {
-        transform: translateX(calc(2 * 100%));
+        transform: translateX(200%);
       }
     }
     &.slide4 {
-      .slide4 {
-        opacity: 1;
-        div {
-          opacity: 1;
-        }
-      }
       > div {
-        transform: translateX(calc(3 * 100%));
+        transform: translateX(300%);
       }
     }
     &.slide5 {
-      .slide5 {
-        opacity: 1;
-        div {
-          opacity: 1;
-        }
-      }
       > div {
-        transform: translateX(calc(4 * 100%));
+        transform: translateX(400%);
       }
     }
     &.slide6 {
-      .slide6 {
-        opacity: 1;
-        div {
-          opacity: 1;
-        }
-      }
       > div {
-        transform: translateX(calc(5 * 100%));
+        transform: translateX(500%);
       }
     }
+  }
+  &-preheadline {
+    margin: 0;
+  }
+  &-headline {
+    @include hl-lrg;
+    margin: 0 0 30% 0;
   }
 }
