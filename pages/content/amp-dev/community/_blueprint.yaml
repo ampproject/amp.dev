@@ -1,8 +1,11 @@
 $path: /community/{base}.html
 $view: /views/default.j2
 $title@: Community
-
 $localization:
   path: /{locale}/community/{base}.html
 
-index: /content/amp-dev/community/index.md
+index: /content/amp-dev/community/contribute.md
+sub_navigation:
+    - /content/amp-dev/community/contribute.md
+    - /content/amp-dev/community/platform-and-vendor-partners.md
+    - /content/amp-dev/community/roadmap.md
