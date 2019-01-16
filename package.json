@@ -5,17 +5,17 @@
   "repository": "git@github.com:ampproject/docs.git",
   "main": "serve.js",
   "scripts": {
-    "develop": "node build.js",
+    "develop": "cd platform && node build.js",
     "lint": "npm-run-all lint:*",
-    "lint:grow": "node lib/pipeline/growReferenceChecker.js",
+    "lint:grow": "cd platform && node lib/pipeline/growReferenceChecker.js",
     "lint:node": "eslint \"**/*.js\" --ignore-path ../.gitignore",
     "fix:node": "eslint \"**/*.js\" --fix --ignore-path ../.gitignore",
-    "build:playground": "cd ../playground && npm run build",
-    "build:local": "NODE_ENV=local node build.js",
-    "build:staging": "NODE_ENV=staging node build.js",
+    "build:playground": "cd playground && npm run build",
+    "build:local": "NODE_ENV=local cd platform && node build.js",
+    "build:staging": "NODE_ENV=staging cd platform && node build.js",
     "deploy": "gcloud app deploy",
-    "start:local": "NODE_ENV=local node serve.js",
-    "start": "NODE_ENV=staging node serve.js"
+    "start:local": "NODE_ENV=local cd platform && node serve.js",
+    "start": "NODE_ENV=staging cd platform && node serve.js"
   },
   "keywords": [
     "amphtml",

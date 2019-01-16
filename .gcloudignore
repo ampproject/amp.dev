@@ -6,12 +6,25 @@
 # For more information, run:
 #   $ gcloud topic gcloudignore
 #
+
 .gcloudignore
+
 # If you would like to upload your .git directory, .gitignore file or files
 # from your .gitignore file, remove the corresponding line
 # below:
 .git
 .gitignore
+.github
 
-# Node.js dependencies:
 node_modules/
+yarn.lock
+package-lock.json
+LICENSE
+MAINTENANCE.md
+README.md
+CONTRIBUTING.md
+
+# The complete frontend, pages and examples packages aren't needed on App Engine
+frontend/
+pages/
+examples/
