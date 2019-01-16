@@ -18,5 +18,40 @@ The ghost frame mobile wraps an element with a mobile-like frame.
 @import '../atoms/_color';
 
 .#{molecule('ghost-frame-mobile')} {
-  outline: 1px solid purple;
+  background: rgba(color('white'), .7);
+  border-radius: 5px;
+  box-shadow: shadows('drop');
+  display: inline-block;
+  margin-bottom: auto;
+  padding: 3rem .8rem 2.5rem;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+
+  &.-right {
+    transform: rotate3d(-0.1, -0.1, 0.1, -87deg);
+    perspective: 1000px;
+  }
+
+  &.-left {
+    transform: rotate3d(-0.1, -0.1, 0.1, 87deg);
+    perspective: 1000px;
+  }
+
+  // ui
+  &:before {
+    background-repeat: no-repeat;
+    background: color('athens-gray');
+    border-radius: 2rem;
+    content: '';
+    height: .5rem;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 0;
+    top: 1.6rem;
+    width: 4.5rem;
+    z-index: 1;
+  }
 }

@@ -18,5 +18,74 @@ The ghost frame desktop wraps an element with a desktop-like frame.
 @import '../atoms/_color';
 
 .#{molecule('ghost-frame-desktop')} {
-  outline: 1px solid blue;
+  background: rgba(color('white'), .7);
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: auto;
+  padding: 2rem 1rem 1rem;
+  position: relative;
+  width: 50%;
+  z-index: 0;
+  box-shadow: shadows('drop');
+
+  &[class*='-left'] {
+    width: 50%;
+  }
+
+  &.left-flat {
+    -webkit-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform:
+      rotateX(45deg)
+      rotateY(5deg)
+      rotateZ(-50deg);
+  }
+
+  &.left {
+    -webkit-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform:
+      rotateX(60deg)
+      rotateY(-5deg)
+      rotateZ(30deg)
+      skewX(-20deg)
+      skewY(20deg);
+  }
+
+  // ui
+  &:before {
+    background-image: radial-gradient(circle at center, color('athens-gray') 4px, transparent 4px), radial-gradient(circle at center, color('athens-gray') 4px, transparent 4px), radial-gradient(circle at center, color('athens-gray') 4px, transparent 4px);
+    background-position: 0, 0.8rem, 1.6rem;
+    background-repeat: no-repeat;
+    background-size: 0.5rem 0.5rem, 0.5rem 0.5rem, 0.5rem 0.5rem;
+    border-top-left-radius: calc(1rem/6);
+    border-top-right-radius: calc(1rem/6);
+    content: '';
+    height: 0.5rem;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    z-index: 1;
+  }
 }
