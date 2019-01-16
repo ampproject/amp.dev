@@ -35,12 +35,12 @@
 
     &-content {
       grid-column: 1 / -1;
-      padding: 48% 0 0;
+      padding: 52% 0 0;
     }
   }
   
   .#{organism('fragment-slider')} {
     grid-column: 1 / -1;
-    margin-top: -48%;
+    margin-top: -52%;
   }
 }

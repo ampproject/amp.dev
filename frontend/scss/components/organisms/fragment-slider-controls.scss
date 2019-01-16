@@ -11,26 +11,27 @@
 @import '../../mixins';
 @import '../../variables';
 
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
 
 .#{organism('fragment-slider')} {
   input:focus {
     outline: none;
   }
 
-  &-prevbtn {
+  button {
     position: absolute;
     top: 20vh;
-    left: 0;
-    z-index: 3;
-    border: none;
     border-radius: 50%;
     height: 60px;
     width: 60px;
     display: flex;
     justify-content: center;
     box-shadow: 0 10px 25px 0 rgba(0,0,0,0.4);
+    z-index: 3;
+    border: none;
+  }
+
+  &-prevbtn {
+    left: 0;
     div {
       margin: 0;
       transform: rotate(180deg);
@@ -44,17 +45,7 @@
   }
 
   &-nextbtn {
-    position: absolute;
-    top: 20vh;
     right: 0;
-    z-index: 3;
-    border: none;
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.4);
     div {
       margin: 0;
     }
