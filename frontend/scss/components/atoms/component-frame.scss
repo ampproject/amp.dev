@@ -1,0 +1,59 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+
+/*
+
+#####################
+### ATOM: component-frame ###
+#####################
+
+A simple border and component flag for responsive images. A title attribute is required for rendering the flag text.
+
+### MODIFIERS:
+
+format modifiers for differen color rendering (e.g. websites -> blue border, ads -> purple border). Default is blue
+
+*/
+
+@mixin component-frame {
+  border: 5px solid color('doger-blue');
+
+  &:before {
+    content: attr(title);
+    position: absolute;
+    padding: 5px 10px;
+    margin-top: -40px;
+    background-color: color('doger-blue');
+    @include txt;
+    @include txt-mono;
+    @include color-white;
+  }
+}
+
+@mixin component-frame-ads {
+  border: 5px solid color('electric-violet');
+
+  &:before {
+    background-color: color('electric-violet');
+  }
+}
+
+@mixin component-frame-stories {
+  border: 5px solid color('pizazz');
+
+  &:before {
+    background-color: color('pizazz');
+  }
+}
+
+
+@mixin component-frame-emails {
+  border: 5px solid color('forest-green');
+
+  &:before {
+    background-color: color('forest-green');
+  }
+}

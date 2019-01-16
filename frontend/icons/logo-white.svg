@@ -1,13 +1,1 @@
-<svg id="logo-white" viewBox="0 0 77 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
-    <g id="logo-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-157.000000, -177.000000)" fill-rule="nonzero">
-            <g id="Group" transform="translate(158.000000, 178.000000)">
-                <g id="Oval-5">
-                    <circle id="Oval" stroke="#FFFFFF" cx="37.5" cy="37.5" r="37.5"></circle>
-                    <path d="M34.3808813,60.2095833 L31.5093727,60.2095833 L34.348346,43.6437609 L25.55645,43.6559 C25.55645,43.6559 25.4735373,43.6579232 25.4336552,43.6579232 C24.6423111,43.6579232 24,43.0388292 24,42.2760893 C24,41.9483336 24.3169574,41.3939815 24.3169574,41.3939815 L40.1144527,16 L43.0342396,16.0111275 L40.1238986,32.6032513 L48.9609242,32.5931354 C48.9609242,32.5931354 49.0564313,32.5911122 49.101561,32.5911122 C49.8929051,32.5911122 50.5341667,33.2091946 50.5341667,33.9729463 C50.5341667,34.2824933 50.4092729,34.5546113 50.2298036,34.7852541 L34.3808813,60.2095833 Z" id="logo-white" fill="#FFFFFF" transform="translate(37.267083, 38.104792) rotate(-180.000000) translate(-37.267083, -38.104792) "></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<symbol id="logo-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77 77"><g fill="none" fill-rule="nonzero" transform="translate(1 1)"><circle cx="37.5" cy="37.5" r="37.5" stroke="#FFF"/><path fill="#FFF" d="M40.153 16h2.872l-2.84 16.566 8.793-.012.123-.002c.79 0 1.433.619 1.433 1.381 0 .328-.317.883-.317.883L34.42 60.21l-2.92-.012 2.91-16.592-8.837.01-.14.002C24.64 43.618 24 43 24 42.237c0-.31.125-.582.304-.813L40.154 16z"/></g></symbol>

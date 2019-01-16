@@ -116,8 +116,3 @@ $title: 페이지를 검색할 수 있도록 설정
 [/tip]
 
 훌륭합니다.  이제 AMP 뉴스 기사가 완성되었습니다.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>

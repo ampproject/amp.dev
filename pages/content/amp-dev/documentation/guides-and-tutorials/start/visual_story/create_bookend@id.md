@@ -40,7 +40,7 @@ Untuk tutorial ini, kita memilih Facebook, Twitter, dan email sebagai penyedia b
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
 
-Bagian lain dari layar bookend digunakan untuk konten terkait.  Semua konten terkait ditampung dalam objek `components`. 
+Bagian lain dari layar bookend digunakan untuk konten terkait.  Semua konten terkait ditampung dalam objek `components`.
 
 Ada berbagai komponen yang dapat Anda gunakan untuk menampilkan link dan konten terkait; setiap komponen ditentukan dengan atribut type. Mari kita lihat komponen yang tersedia:
 
@@ -146,9 +146,3 @@ Ada berbagai komponen yang dapat Anda gunakan untuk menampilkan link dan konten 
 Masih ada lagi yang bisa dipelajari tentang komponen bookend. Untuk informasi selengkapnya, lihat dokumen referensi [amp-story](/id/docs/reference/components/amp-story.html#bookend:-amp-story-bookend).
 
 Artikel kita hampir jadi.  Sebelum kita memublikasikannya, mari pastikan bahwa HTML AMP kita valid.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>
- 

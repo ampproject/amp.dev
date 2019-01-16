@@ -40,11 +40,5 @@
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
-
-  h2 {
-    @include hl-xlrg;
-    margin-top: 0;
-    grid-column: 4 / 16;
-  }
 }
 

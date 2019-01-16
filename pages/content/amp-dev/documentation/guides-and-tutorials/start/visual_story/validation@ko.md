@@ -19,9 +19,3 @@ Chrome이나 선호하는 브라우저에서 [개발자 콘솔](https://develope
 ```text
 AMP 유효성 검사에 성공했습니다.
 ```
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
-

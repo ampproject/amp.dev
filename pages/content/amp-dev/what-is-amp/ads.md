@@ -3,10 +3,14 @@ $title: Amp Ads
 $view: /views/overview/what-is-amp.j2
 ---
 
-[stage color="purple" icon=True formats=True]
+<section class="ad--stage ad--container-fluid">
+[stage format="ads" icon=True]
 ##Compeling, smooth and instant
 #Improve user engagement with rich and immersive AMP ads
 [/stage]
+
+{% include 'views/partials/format-visual.j2' %}
+</section>
 
 <section class="ad--content">
   <div class="copy">

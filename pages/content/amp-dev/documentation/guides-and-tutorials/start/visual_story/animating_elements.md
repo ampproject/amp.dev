@@ -254,9 +254,3 @@ Refresh and reload your story.  Your last page should look like this:
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 There are a lot of possibilities with animations in AMP stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [amp-story](/docs/reference/components/amp-story.html#animations) reference documentation.
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

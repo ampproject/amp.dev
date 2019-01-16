@@ -124,8 +124,3 @@ Okay, let's see our sidebar. **Refresh** and reload your AMP page.  You should s
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Sidebar menu navigation') }}
 
 Our page is looking great!  Let's add one final touch&mdash;a custom font.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/fonts.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

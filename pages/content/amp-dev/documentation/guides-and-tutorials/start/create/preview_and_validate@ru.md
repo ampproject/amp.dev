@@ -15,8 +15,3 @@ $title: Предварительный просмотр и проверка
   1. Откройте [консоль Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) и проверьте наличие ошибок.
 
 [Ознакомьтесь с дополнительной информацией о проверке]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) и способах устранения ошибок.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Предыдущий</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery.md', locale=doc.locale).url.path}}"><span class="arrow-next">Следующий</span></a>
-</div>

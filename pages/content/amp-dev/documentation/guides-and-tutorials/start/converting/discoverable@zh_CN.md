@@ -116,8 +116,3 @@ $title: 使您的网页可被轻松发现
 [/tip]
 
 真棒！至此，您的 AMP 新闻报道便已完成了。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>

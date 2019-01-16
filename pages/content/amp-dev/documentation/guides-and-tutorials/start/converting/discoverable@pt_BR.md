@@ -110,8 +110,3 @@ Leia mais: Para saber mais sobre detecção de página, consulte o guia [Torne s
 >>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 Bom trabalho!  Seu artigo em AMP está pronto!
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

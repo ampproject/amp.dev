@@ -8,16 +8,16 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '../atoms/_text.scss';
-@import '../atoms/_color.scss';
-@import '../atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
 
-@import '../templates/_default.scss';
+@import 'components/templates/_default.scss';
 
 .#{template('docs-detail')} {
 
@@ -53,13 +53,17 @@
   hr {
     height: 1px;
     margin: 0.75em 0;
-    background-color: color('gray-chateau');
+    background-color: color('athens-gray');
     border: none;
   }
 
   .#{utility('chapter-indicator')} {
     display: flex;
     justify-content: space-between;
+
+    .ad-a-btn {
+      margin: 0 auto;
+    }
 
     .#{utility('previous')} {
 

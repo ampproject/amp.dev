@@ -45,8 +45,3 @@ Después de configurar su servidor web local, acceda al artículo de ejemplo en 
 ```text
 http://localhost:8000/article.amp.html
 ```
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
-</div>

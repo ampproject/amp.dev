@@ -5,174 +5,93 @@
 
 @import '../atoms/_color.scss';
 @import '../atoms/_icon.scss';
-@import '../atoms/_text.scss';
 @import '../atoms/_headline.scss';
-@import '../atoms/_divider.scss';
+@import '../atoms/_text.scss';
 
 .#{utility('stage')} {
-  grid-column: 1 / -1;
+  .#{organism('case-band')} {
+    grid-column: 1 / -1;
+    margin-top: -10%;
+
+    @media screen and (min-width: 768px){
+      margin-top: -30%;
+    }
+  }
+
+  .#{molecule('format-visual')} {
+    grid-column: 13 / -1;
+    margin-top: -8%;
+
+    @media screen and (min-width: 768px) {
+      margin-top: -50%;
+    }
+  }
 }
 
 .#{organism('stage')} {
+  grid-column: 2 / -1;
   position: relative;
   width: 100%;
-  margin-bottom: calc((100vh - 66vh) + 35%);
+  border-bottom-left-radius: 4em;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
 
-	@media screen and (min-width: 1024px) {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: calc((100vh - 66vh) + 15%);
+  @media screen and (min-width: 768px) {
+    border-bottom-left-radius: 6.250em;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
   }
 
-  &-clipped-background {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      border-bottom-left-radius: 80px;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0% 101%);
-      clip-path: polygon(0 0, 100% 0, 100% 94%, 0% 101%);
-      padding-bottom: calc(100vh - 33vh);
+  &-default { @include gradient-default; }
+  &-websites { @include gradient-websites; }
+  &-stories { @include gradient-stories; }
+	&-ads { @include gradient-ads; }
+	&-emails { @include gradient-e-mails; }
 
-
-      @media screen and (min-width: 1080px) {
-        border-bottom-left-radius: 100px;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 101%);
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 101%);
-      }
+  .#{utility('container')} {
+    padding: 0 0 0 2.5em;
   }
 
 	&-content {
+    grid-column: 3 / 17;
     position: relative;
-    padding: 30px 0;
-    margin: 20px;
-
-		@media screen and (min-width: 1024px){
-      display: flex;
-      max-width: 75%;
-    }
-
-    &-headlines {
-      margin-left: 25px;
-    }
-
-  }
-
-  &-image {
-    width: 100%;
-    top: 0;
-    margin-bottom: 100px;
+    padding: 20vw 0;
 
     @media screen and (min-width: 768px) {
-      width: 40%;
-      margin-top: 100px;
-      margin-bottom: -200px;
-      right: 0;
+      padding: 7vw 0 11vw;
     }
-  }
 
-  &-formats {
-    position: absolute;
-    width: 100%;
-    margin: 50px 25vw 0;
+    &-icon {
+      @include ico;
+      @include ico-3;
+      position: absolute;
+      left: 0;
+      top: 5vw;
 
-    @media screen and (min-width: 1024px) {
-      left: 35%;
-      top: 75%;
-      width: 50%;
-    }
-  }
-
-
-
-	.hl {
-    @include hl;
-    @include hl-stage;
-		@include color-white;
-		margin: 0;
-
-
-		&-sub {
-      @include txt;
-      @include txt-stage;
-      @include color-white;
-
-      &:after {
-        content: '';
-        display: block;
-        margin-bottom: 30px;
+      @media screen and (min-width: 768px) {
+        @include ico-5;
+        left: auto;
+        right: calc(100% + 1em);
+        top: calc(7vw - 1.5em);
       }
     }
 
-    &-inline {
-      height: 28px;
-      display: inline-block;
-      width: 180px;
+    &-headline {
+      @include hl;
+      @include hl-xlrg;
+      @include color-white;
+      margin: 0;
     }
 
-		&-stories {
-			@include color-stories;
-		}
+    &-subline {
+      @include txt;
+      @include txt-1;
+      @include color-white;
+      margin-top: 0;
 
-		&-ads {
-			@include color-ads;
-		}
-
-		&-emails {
-			@include color-e-mails;
-		}
-  }
-
-
-  .dark-blue {
-    @include gradient-default;
-
-    & ~ .ad-o-stage-content .hl,
-    & ~ .ad-o-stage-content .hl-sub {
-      @include color-websites;
+      @media screen and (min-width: 768px) {
+        @include txt-lrg;
+      }
     }
-  }
-
-  .light-blue {
-    @include gradient-websites;
-
-    & ~ .ad-o-stage-content .hl,
-    & ~ .ad-o-stage-content .hl-sub {
-      @include color-websites;
-    }
-  }
-
-  .orange {
-    @include gradient-stories;
-
-    & ~ .ad-o-stage-content .hl,
-    & ~ .ad-o-stage-content .hl-sub {
-      @include color-stories;
-    }
-  }
-
-  .purple {
-    @include gradient-ads;
-
-    & ~ .ad-o-stage-content .hl,
-    & ~ .ad-o-stage-content .hl-sub {
-      @include color-ads;
-    }
-  }
-
-  .green {
-    @include gradient-e-mails;
-
-    & ~ .ad-o-stage-content .hl,
-    & ~ .ad-o-stage-content .hl-sub {
-      @include color-e-mails;
-    }
-  }
-
-  .ad-a-ico {
-    height: 5em;
-    width: 5em;
-    margin-top: -1.5em;
-    stroke: color('white');
   }
 }

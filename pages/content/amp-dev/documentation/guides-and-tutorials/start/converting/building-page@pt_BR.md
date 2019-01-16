@@ -81,8 +81,3 @@ Uma resolução simulada em dispositivo móvel, como a mostrada abaixo, aparecer
 {{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Simulação da página AMP em dispositivo móvel ') }}
 
 Agora podemos começar! Vamos analisar cada erro de validação e ver como eles estão relacionados a AMP.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>

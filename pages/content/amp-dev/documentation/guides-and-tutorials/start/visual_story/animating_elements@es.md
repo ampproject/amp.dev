@@ -188,7 +188,7 @@ Empezaremos animando la entrada del banner de texto y haremos que entre rápidam
 Pets can lower your stress levels!</p>
 ```
 
-Vuelve a cargar la página de la historia en el navegador y comprueba que el banner entre rápidamente. 
+Vuelve a cargar la página de la historia en el navegador y comprueba que el banner entre rápidamente.
 
 Ahora vamos a hacer que todas las imágenes se desvanezcan. Para hacerlo, añade `animate-in="fade-in"` a todos los elementos `amp-img`:
 
@@ -224,13 +224,13 @@ Vamos a retrasar la entrada de la primera imagen para que entre justo después d
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
-    animate-in="fade-in" 
+    animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
@@ -253,10 +253,3 @@ Actualiza y vuelve a cargar la historia.  La última página tendría que quedar
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Mosaico de la página 5', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
 Las animaciones de las historias de AMP ofrecen muchísimas posibilidades (por ejemplo, combinar o encadenar animaciones) y en este tutorial solo mostramos lo más básico. Para obtener más información sobre las animaciones, consulta la documentación de referencia [amp-story](/es/docs/reference/components/amp-story.html#animations).
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
-</div>
- 

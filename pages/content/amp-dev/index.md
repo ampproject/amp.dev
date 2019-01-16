@@ -5,50 +5,40 @@ $view: /views/home.j2
 format_explainer:
   websites:
     name: websites
-    visual: views/partials/formats-visual.j2
+    visual: views/partials/format-visual.j2
     headline: AMP enables great experiences across many web destinations
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/websites.html
   stories:
     name: stories
-    visual: views/partials/formats-visual.j2
+    visual: views/partials/format-visual.j2
     headline: AMP enables great experiences across many stories
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on stories. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/stories.html
   ads:
     name: ads
-    visual: views/partials/formats-visual.j2
+    visual: views/partials/format-visual.j2
     headline: AMP enables great experiences across many ads
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on ads. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/ads.html
   emails:
     name: emails
-    visual: views/partials/formats-visual.j2
+    visual: views/partials/format-visual.j2
     headline: AMP enables great experiences across many emails
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on emails. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/email.html
 ---
 
-[stage color="dark-blue"]
+<section class="ad--stage ad--container-fluid">
+[stage]
 # Amp is a web component framework for easily creating user first
 [/stage]
 
-<section class="ad--case-band">
-  <div class="ad-o-case-band">
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-2"><amp-img src="/static/img/case-band-image-2.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-1"><amp-img src="/static/img/case-band-image-1.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-landscape ad-o-case-band-image-5"><amp-img src="/static/img/case-band-image-5.png" layout="responsive" width="16" height="9"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-4"><amp-img src="/static/img/case-band-image-4.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-landscape ad-o-case-band-image-3"><amp-img src="/static/img/case-band-image-3.png" layout="responsive" width="16" height="9"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-6"><amp-img src="/static/img/case-band-image-6.png" layout="responsive" width="9" height="16"></amp-img></div>
-    <div class="ad-o-case-band-image ad-o-case-band-image-portrait ad-o-case-band-image-7"><amp-img src="/static/img/case-band-image-7.png" layout="responsive" width="9" height="16"></amp-img></div>
-  </div>
+{% include 'views/partials/case-band.j2' %}
 </section>
 
-[bevel]
-
 <section class="ad--format-explainer">
-  <div class="ad-o-format-explainer ad--container">
+  <div class="ad-o-format-explainer ad--container-fluid">
     <amp-state id="formats">
       <script type="application/json">
         {
@@ -151,8 +141,8 @@ format_explainer:
         on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'}),switchFormat.restart">
         <div class="ad-o-format-explainer-button-icon ad-a-ico"
         [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-          {% do doc.icons.useIcon('icons/stories.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use></svg>
+          {% do doc.icons.useIcon('icons/amp-stories.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
         </div>
         <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.stories.name }}</span>
       </button>
@@ -310,25 +300,13 @@ format_explainer:
   </div>
 </section>
 
+
 <section class="ad--case-grid">
   <div class="ad--container">
     <h1 class="ad-o-case-grid-headline">Get inspired by AMP use cases</h1>
   </div>
 
-  <div class="ad-o-case-grid">
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-4"><amp-img src="/static/img/case-grid-data.png" layout="responsive" width="936" height="686"></amp-img></div>
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-3"><amp-img src="/static/img/case-grid-education.png" layout="responsive" width="1004" height="662"></amp-img></div>
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-2"><amp-img src="/static/img/case-grid-choices.png" layout="responsive" width="744" height="818"></amp-img></div>
-    <div class="ad-o-case-grid-image ad-o-case-grid-image-1"><amp-img src="/static/img/case-grid-band.png" layout="responsive" width="1072" height="920"></amp-img></div>
-    
-    <div class="ad-o-case-grid-link">
-      <a href="#" class="ad-m-lnk ad-m-lnk-square">
-        <div class="ad-a-ico ad-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ad-m-lnk-text">See all use cases</span>
-      </a>
-    </div>
+  <div class="ad--container-fluid">
+    {% include 'views/partials/case-grid.j2' %}
   </div>
 </section>

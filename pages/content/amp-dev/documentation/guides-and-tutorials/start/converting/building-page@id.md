@@ -81,8 +81,3 @@ Anda akan melihat resolusi simulasi seluler di browser seperti berikut:
 {{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Simulasi seluler halaman AMP kami') }}
 
 Sekarang kita siap untuk mulai bekerja! Mari periksa error validasi satu per satu dan lihat bagaimana mereka berkaitan dengan AMP.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>

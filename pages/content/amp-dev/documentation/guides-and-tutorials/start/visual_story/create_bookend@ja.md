@@ -146,9 +146,3 @@ $title: ブックエンドを作成する
 ブックエンド コンポーネントについてさらに詳しく学ぶ場合は、[amp-story](/ja/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) のリファレンス ドキュメントをご覧ください。
 
 ストーリーは完成間近です。コンテンツを公開する前に、AMP HTML が有効かどうかを確認してみましょう。
-
-<div class="prev-next-buttons">
-<a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-<a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
- 

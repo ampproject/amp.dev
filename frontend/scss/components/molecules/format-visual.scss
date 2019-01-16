@@ -1,0 +1,132 @@
+/*
+
+#############################
+### MOLECULE: format-visual ###
+#############################
+
+### INFO:
+
+format-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
+the border and format around the images.
+
+### MODIFIERS:
+
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/component-frame.scss';
+
+.#{molecule('format-visual')} {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  perspective: 80em;
+  padding-left: 7.5vw;
+  animation: 10s ease-in-out infinite bounce;
+
+  &-image {
+    width: 100%;
+    @include box-shadow;
+    transform: rotate3d(-5, 5,-5 ,-40deg);
+    transform-origin: bottom left;
+  }
+
+  &-bottom-image {
+    margin: 0 0 25% 5%;
+  }
+
+  &-top-image {
+    @include component-frame;
+    @include box-shadow;
+    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%);
+    transform-origin: bottom left;
+    animation: 10s cubic-bezier(0.46, 0, 0.31, 1) 3.5s infinite both slide;
+    @include box-shadow;
+
+    &:before {
+      content: attr(title);
+      background-color: color('doger-blue');
+      @include txt;
+      @include color-white;
+      padding: 5px 10px;
+      margin-top: -40px;
+      position: absolute;
+    }
+  }
+
+  &-code-snippet {
+    position: absolute;
+    margin-right: -15%;
+    margin-top: -10%;
+    transform: rotate3d(-55, 20, -40, -40deg);
+    transform-origin: bottom left;
+    animation: 5s ease-in-out 0.25s infinite bounce-code;
+
+    &-highlight:before {
+      content: 'right';
+      color: #e6db74;
+      animation: 10s ease-in-out 3.5s infinite both highlight-code;
+    }
+
+  }
+}
+
+@keyframes slide {
+  0%, 9%, 18%, 36%, 90%, 100% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
+  45%, 54%, 63%, 72%, 81% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
+}
+
+@keyframes highlight-code {
+  0%, 90%, 100% { content: 'right'; background-color: transparent; }
+  9% { content: 'right'; background-color: color('pink-flamingo'); }
+  18% { content: " "; background-color: color('pink-flamingo'); }
+  36% { content: 'left'; background-color: color('pink-flamingo'); }
+  45%, 54% { content: 'left'; background-color: transparent; }
+  63% { content: 'left'; background-color: color('pink-flamingo'); }
+  72% { content: " "; background-color: color('pink-flamingo'); }
+  81% { content: 'right'; background-color: color('pink-flamingo'); }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-code {
+  0% {
+    transform: rotate3d(-55, 20, -40, -40deg) translateZ(0);
+  }
+
+  50% {
+    transform: rotate3d(-55, 20, -40, -40deg) translateZ(30px);
+  }
+
+  100% {
+    transform: rotate3d(-55, 20, -40, -40deg) translateZ(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

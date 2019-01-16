@@ -142,11 +142,53 @@ class SamplesBuilder {
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + sample.relative,
       'example: !g.json /' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
+      // Since the manual doc is also the one that will be teasered add some
+      // additional information
+      ...this._getTeaserData(parsedSample),
       '---',
     ].join('\n'));
     sample.extname = '-manual.html';
 
     return sample;
+  }
+
+  _getTeaserData(parsedSample) {
+    const teaserData = [];
+    teaserData.push('formats:');
+    if (parsedSample.document.isAmpWeb) {
+      teaserData.push('  - websites');
+    }
+    if (parsedSample.document.isAmpStory) {
+      teaserData.push('  - stories');
+    }
+    if (parsedSample.document.isAmpAds) {
+      teaserData.push('  - ads');
+    }
+    if (parsedSample.document.isAmpEmail) {
+      teaserData.push('  - email');
+    }
+
+    teaserData.push('used_components:');
+    teaserData.push(...this._getUsedComponents(parsedSample));
+
+    return teaserData;
+  }
+
+  _getUsedComponents(parsedSample) {
+    // Dirty RegEx to quickly parse component names from head
+    const usedComponents = [];
+    const COMPONENT_PATTERN = /custom-element="amp-.*?"/g;
+    const matches = parsedSample.document.head.match(COMPONENT_PATTERN) || [];
+    for (let match of matches) {
+      // Strip custom-element= from match, while doing so directly
+      // pad the components to render them as YAML list
+      match = match.replace('custom-element="', '  - ');
+      match = match.replace('"', '');
+
+      usedComponents.push(match);
+    }
+
+    return usedComponents;
   }
 
   /**

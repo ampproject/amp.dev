@@ -336,9 +336,3 @@ AMP validation successful.
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
 - [What if the layout attribute isn’t defined?](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
 - [What if width and height are undefined?](/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

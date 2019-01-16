@@ -146,9 +146,3 @@ $title: 创建结束画面
 关于 bookend 组件，还有更多信息有待了解。有关详情，请参阅 [amp-story](/zh_cn/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) 参考文档。
 
 我们的故事就快完成了。我们需要先检查 AMP HTML 是否有效，然后才能发布内容。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
- 

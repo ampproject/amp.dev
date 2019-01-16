@@ -17,7 +17,3 @@ $title: 将 HTML 网页转换成 AMP 网页
 ## 您将制作：
 
 一个简单的新闻报道网页，该网页不仅要遵循 AMP 规范，还要囊括移动新闻网站上的常见功能。
-
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始</span></a>
-</div>
