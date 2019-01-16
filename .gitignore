@@ -24,7 +24,7 @@ pages/layouts
 pages/views
 pages/content/amp-dev/documentation/examples/*/**
 !pages/content/amp-dev/documentation/examples/*/**/_blueprint.yaml
-pages/content/amp-dev/documentation/components/*/**
+pages/content/amp-dev/documentation/components/reference/*.md
 
 # Ignore files created during build process
 platform/pages
