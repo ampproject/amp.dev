@@ -33,7 +33,7 @@
             <li>
               {% for section in doc.example.document.sections %}
               {% for heading in section.headings %}
-              <a href="{{ heading.id }}">{{ heading.name }}</a>
+              <a href="#{{ heading.id }}">{{ heading.name }}</a>
               {% endfor %}
               {% endfor %}
             </li>
