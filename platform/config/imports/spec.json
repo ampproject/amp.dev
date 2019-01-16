@@ -21,7 +21,7 @@
         "title": "AMP HTML Layout System",
         "order": 4,
         "from": "spec/amp-html-layout.md",
-        "to": "documentation/guides-and-tutorials/learn/amp-html-layout.md"
+        "to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md"
     },
     {
         "title": "Actions and events in AMP",
