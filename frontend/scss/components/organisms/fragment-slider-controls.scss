@@ -1,0 +1,73 @@
+/*
+
+#################################
+### ORGANISM: fragment-slider ###
+#################################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+.#{organism('fragment-slider')} {
+  padding: 100px 0;
+  width: 100%;
+  display: flex;
+  transform: perspective(300em) rotateX(38deg) rotateY(0deg) rotateZ(-18deg) skewX(2deg);
+
+  input:focus {
+    outline: none;
+  }
+
+  &-prevbtn {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.4);
+    div {
+      margin: 0;
+      transform: rotate(180deg);
+    }
+    &:focus {
+      outline: none;
+    }
+    &.slide1 {
+      display: none;
+    }
+  }
+
+  &-nextbtn {
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.4);
+    div {
+      margin: 0;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.slide6 {
+      display: none;
+    }
+  }
+}

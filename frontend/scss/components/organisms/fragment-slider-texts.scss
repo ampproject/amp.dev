@@ -1,0 +1,101 @@
+/*
+
+#################################
+### ORGANISM: fragment-slider ###
+#################################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+.#{organism('fragment-slider')} {
+  &-text {
+    width: 40%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    h2,h3 {
+      @include color-white;
+    }
+    > div {
+      min-width: 100%;
+    }
+    div {
+      &.copy {
+        min-width: 100%;
+      }
+      opacity: 0;
+      transition: 400ms;
+      transition-delay: 400ms;
+    }
+    &.slide1 {
+      .slide1 {
+        opacity: 1;
+        div {
+          opacity: 1;
+        }
+      }
+    }
+    &.slide2 {
+      .slide2 {
+        opacity: 1;
+        div {
+          opacity: 1;
+        }
+      }
+      > div {
+        transform: translateX(calc(1 * 100%));
+      }
+    }
+    &.slide3 {
+      .slide3 {
+        opacity: 1;
+        div {
+          opacity: 1;
+        }
+      }
+      > div {
+        transform: translateX(calc(2 * 100%));
+      }
+    }
+    &.slide4 {
+      .slide4 {
+        opacity: 1;
+        div {
+          opacity: 1;
+        }
+      }
+      > div {
+        transform: translateX(calc(3 * 100%));
+      }
+    }
+    &.slide5 {
+      .slide5 {
+        opacity: 1;
+        div {
+          opacity: 1;
+        }
+      }
+      > div {
+        transform: translateX(calc(4 * 100%));
+      }
+    }
+    &.slide6 {
+      .slide6 {
+        opacity: 1;
+        div {
+          opacity: 1;
+        }
+      }
+      > div {
+        transform: translateX(calc(5 * 100%));
+      }
+    }
+  }
+}
