@@ -1,7 +1,6 @@
 ---
 $title: AMP HTML Specification
-$order: 0
-$path: /documentation/guides-and-tutorials/learn/spec.html
+$order: 2
 ---
 
 
