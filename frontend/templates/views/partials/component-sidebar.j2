@@ -2,43 +2,37 @@
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
 
 <section class="ad--sidebar">
+  {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" for="sidebar">{{ _('Components') }}</label>
+  <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
+
   <div class="ad-o-component-sidebar">
     {% include '/views/partials/format-toggle.j2' %}
 
     <div class="nav">
-      {% macro nav_tree(root, iteration=1, depth=None) -%}
-      <ul class="nav-list level-{{ iteration }}">
-          {% set collections = root.collections() %}
-          {% set documents = root.list_docs(order_by='order') %}
-
-          {% if not depth or iteration <= depth %}
-          {% for collection in collections %}
-          {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
-          {% set allCollectionPaths = collection.collection_path.split('/') %}
-          {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
-
-          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
-            <span class="nav-link">{{ collection.title }}</span>
-            {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
-          </li>
-          {% endfor %}
-
-          {% for document in documents %}
-          {# Only list the document if it matches the current locale #}
-          {% if doc.locale == document.locale %}
-          {% set activeDocument = true if document.url == doc.url %}
-          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
-            <a class="nav-link" href="{{ document.url.path }}">{{ document.title }}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
-          {% endif %}
+      {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs() %}
+      {% set scope = namespace(initial=components[0].title[4]) %}
+      <ul class="nav-list level-1">
+        <li class="nav-item level-1 ">
+          <span class="nav-link">{{ scope.initial|upper }}</span>
+          <ul class="nav-list level-2">
+            {% for component in components %}
+            {% set initial = component.title[4] %}
+            {% if scope.initial != initial %}
+            {% set scope.initial = initial %}
+          </ul>
+        </li>
+        <li class="nav-item level-1 ">
+          <span class="nav-link">{{ scope.initial|upper }}</span>
+          <ul class="nav-list level-2">
+            {% endif %}
+            <li class="nav-item level-2">
+              <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
       </ul>
-      {%- endmacro %}
-
-      {% set split_path = doc.collection.collection_path.split('/') %}
-      {% set current_path = '/'.join(split_path[:3]) %}
-      {{ nav_tree(root=g.collection(current_path)) }}
     </div>
   </div>
 </section>
