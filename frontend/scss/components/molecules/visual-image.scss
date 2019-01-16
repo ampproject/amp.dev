@@ -1,0 +1,55 @@
+/*
+
+######################
+### MOLECULE: visual-image ###
+######################
+
+### INFO:
+
+visual image molecule includes repsonsive amp images, one with a framed broder from the component-frame atom. It also includes two code snippets that
+include the amp-img components.
+
+### MODIFIERS:
+ none
+*/
+
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_icon.scss';
+@import '../atoms/component-frame';
+
+
+@include viewboxGradientAnimation;
+@include rollingAnimation;
+
+.#{molecule('visual-image')} {
+  height: auto;
+  display: grid;
+  grid-template-columns: 13fr 23fr 1fr 7fr 19fr 33fr 4fr;
+  grid-template-rows: 18fr 28fr 28fr 4fr 8fr 7fr 7fr;
+
+  &-framed {
+    grid-column: 3 / 7;
+    grid-row: 2 / 4;
+
+    &--border {
+      @include component-frame;
+    }
+  }
+
+  &-background {
+    grid-column: 2 / 8;
+    grid-row: 1 / 7;
+  }
+
+  &-code-large {
+    grid-column: 1 / 5;
+    grid-row: 3 / 6;
+  }
+
+  &-code-small {
+    grid-column: 4 / 6;
+    grid-row: 5 / 8;
+  }
+}

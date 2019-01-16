@@ -1,0 +1,41 @@
+{% do doc.styles.addCssFile('css/components/molecules/visual-image.css') %}
+
+<div class="ad-o-component-visual-image">
+  <div class="ad-m-visual-image">
+    <div class="ad-m-visual-image-background" amp-fx="fly-in-bottom">
+      <amp-img src="/static/img/the-blog.png" layout="responsive" height="517" width="682" />
+    </div>
+    <div class="ad-m-visual-image-framed">
+      <div class="ad-m-visual-image-framed--border" title="<amp-img>" amp-fx="fly-in-right" data-margin-start="20%" data-duration="1.5s" data-fly-in-distance="15%">
+        <amp-img src="/static/img/beach.jpg" layout="responsive" height="313" width="469" />
+      </div>
+    </div>
+    <div class="ad-m-visual-image-code-large" amp-fx="fly-in-bottom" data-margin-start="80%" data-duration="1.5s">
+      {% set markdown = doc.pod.markdown %}
+      {% set code = 
+      '<amp-img
+      alt="Destop"
+      width="550"
+      height="368"
+      src="images/Desktop.jpeg">
+      <amp-img
+        alt="Destop"
+        fallback
+        width="550"
+        height="368"
+        src="images/Desktop.jpeg"></amp-img>
+      </amp-img>' %}
+      {{ markdown.convert('```html\n' + code + '\n```')|safe }}
+    </div>
+    <div class="ad-m-visual-image-code-small" amp-fx="fly-in-bottom" data-margin-start="65%" data-duration="1.5s">
+      {% set markdown = doc.pod.markdown %}
+      {% set code = 
+      '<style amp-custom>
+        .resp-img {
+          max-width: 700px;
+        }
+      </style>' %}
+      {{ markdown.convert('```html\n' + code + '\n```')|safe }}
+    </div>
+  </div>
+</div>
