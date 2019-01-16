@@ -23,12 +23,28 @@
 @import '../templates/_default.scss';
 
 .#{template('success-story')} {
+  // background: linear-gradient(to bottom right, color('blue-ribbon'), color('alto'));
 
   .#{utility('container')} {
     @include container;
+    height: 100vh;
+
+    .#{molecule('ghost-frame-desktop')} {
+      grid-column: 3 / 23;
+    }
+
+    .#{molecule('ghost-frame-tablet')} {
+      grid-column: 7 / 18;
+    }
+
+    .#{molecule('ghost-frame-mobile')} {
+      grid-column: 9 / 15;
+    }
   }
 
   .#{utility('content')} {
     @include content;
+
+    perspective: 80rem;
   }
 }

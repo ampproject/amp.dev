@@ -7,25 +7,88 @@
 {% endblock %}
 
 {% block main %}
-<main class="ad--main ad-t-success-story">
-  {{ doc.headline }}
+  <main class="ad--main ad-t-success-story">
+    <div class="stage">
+      {% if doc.stage.subline %}
+        <h2>{{ doc.stage.subline }}</h2>
+      {% endif %}
+      {% if doc.stage.headline%}
+        <h1>{{ doc.stage.headline }}</h1>
+      {% endif %}
 
-  {% if doc.ghostFrameDesktop %}
-    <div class="ad-m-ghost-frame-desktop">
-      GFD
-    </div>
-  {% endif %}
 
-  {% if doc.ghostFrameTablet %}
-    <div class="ad-m-ghost-frame-tablet">
-      GFT
-    </div>
-  {% endif %}
 
-  {% if doc.ghostFrameMobile %}
-    <div class="ad-m-ghost-frame-mobile">
-      GFM
+      {% if doc.stage.devices %}
+        <div class="ad--container">
+          {% for device in doc.stage.devices %}
+            {% if device %}
+              <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
+                <amp-img
+                  alt="{{device.alt}}"
+                  height="{{device.height}}"
+                  layout="responsive"
+                  src="{{device.image_src}}"
+                  width="{{device.width}}"
+                ></amp-img>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
-</main>
+
+
+
+    {#
+      KPI
+    #}
+    {% if doc.kpis %}
+      <div class="ad--container">
+        {% for kpi in doc.kpis %}
+          <div class="kpi">
+            {% if kpi.value %}
+              <span class="value">{{kpi.value|safe}}</span>
+            {% endif %}
+            {% if kpi.text %}
+              <span class="text">{{kpi.text|safe}}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif%}
+
+
+
+    {#
+      CONTENT
+    #}
+    {% if doc.contents %}
+      <div class="content">
+        {% for content in doc.contents %}
+          {# text-only #}
+          {% if content.text and content.image_src != None %}
+            <div class="text-only">
+              <h2>{{content.headline|safe}}</h2>
+              <p>{{content.text|safe}}</p>
+            </div>
+          {% endif %}
+
+          {# medium-only #}
+          {% if content.text != None and content.image_src %}
+            <div class="medium-only">
+              <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+                <amp-img
+                  alt="{{content.alt}}"
+                  height="{{content.height}}"
+                  layout="responsive"
+                  src="{{content.image_src}}"
+                  width="{{content.width}}"
+                ></amp-img>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </main>
 {% endblock %}
