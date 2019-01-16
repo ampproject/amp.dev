@@ -34,13 +34,8 @@ TODO: mono (inline, block)
 	color: color('river-bed');
 }
 
-@mixin txt-stage {
-  font-size: 15px;
-  letter-spacing: 0;
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-  }
+@mixin txt-lrg {
+  font-size: 1.125em; //18px
 }
 
 @mixin txt-1 {
@@ -57,10 +52,6 @@ TODO: mono (inline, block)
 
 @mixin txt-4 {
 	font-size: 0.625em; //10px
-}
-
-@mixin txt-logo {
-  font-size: 18px;
 }
 
 @mixin txt-font-accent {
