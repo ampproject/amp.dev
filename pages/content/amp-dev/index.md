@@ -141,8 +141,8 @@ format_explainer:
         on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'}),switchFormat.restart">
         <div class="ad-o-format-explainer-button-icon ad-a-ico"
         [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-          {% do doc.icons.useIcon('icons/stories.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stories"></use></svg>
+          {% do doc.icons.useIcon('icons/amp-stories.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
         </div>
         <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.stories.name }}</span>
       </button>
