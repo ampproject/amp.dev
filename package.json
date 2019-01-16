@@ -11,11 +11,11 @@
     "lint:node": "eslint \"**/*.js\" --ignore-path ../.gitignore",
     "fix:node": "eslint \"**/*.js\" --fix --ignore-path ../.gitignore",
     "build:playground": "cd playground && npm run build",
-    "build:local": "NODE_ENV=local cd platform && node build.js",
-    "build:staging": "NODE_ENV=staging cd platform && node build.js",
+    "build:local": "cd platform && NODE_ENV=local node build.js",
+    "build:staging": "cd platform && NODE_ENV=staging node build.js",
     "deploy": "gcloud app deploy",
-    "start:local": "NODE_ENV=local cd platform && node serve.js",
-    "start": "NODE_ENV=staging cd platform && node serve.js"
+    "start:local": "cd platform && NODE_ENV=local node serve.js",
+    "start": "cd platform && NODE_ENV=staging node serve.js"
   },
   "keywords": [
     "amphtml",
