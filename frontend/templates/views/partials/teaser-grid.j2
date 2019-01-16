@@ -153,30 +153,78 @@
     {% do doc.icons.useIcon('icons/example.svg') %}
 
     <div class="ad-m-teaser ad-m-teaser-example">
-      <a href="{{ teaser.doc.url|relative }}">
+      <div class="ad-m-teaser-linking">
         <div class="ad-m-teaser-card">
-          {% if teaser.destinations %}
-          {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-          <div class="ad-m-teaser-tags">
-            {% for destination in teaser.destinations %}
-            <div class="ad-m-tag ad-m-tag-{{ destination }} ad-m-teaser-tag"></div>
-            {% endfor %}
+          {% if teaser.image %}
+          <div class="ad-a-img ad-m-teaser-image">
+            <amp-img
+              src="{{ teaser.image.src }}"
+              layout="responsive"
+              width="{{ teaser.image.width }}"
+              height="{{ teaser.image.height }}"
+              alt="{{ teaser.image.alt }}">
+            </amp-img>
           </div>
           {% endif %}
 
-          <div class="ad-m-teaser-header">
-            <div class="ad-a-ico ad-m-teaser-header-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example"></use></svg>
-            </div>
-          </div>
-
           <div class="ad-m-teaser-content">
+            {% if teaser.destinations %}
+            {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
+            <div class="ad-m-teaser-tags">
+              {% for destination in teaser.destinations %}
+              <div class="ad-m-tag ad-m-tag-{{ destination }} ad-m-teaser-tag"></div>
+              {% endfor %}
+            </div>
+            {% endif %}
             <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
             <p class="ad-m-teaser-copy">{{ teaser.text }}</p>
           </div>
+          <div class="ad-m-teaser-info">
+            <p>
+              <strong>8 amp components</strong> used
+            </p>
+          </div>
+
+          <div class="ad-m-teaser-content-hover">
+            <h5>Used components</h5>
+            <ul class="ad-m-teaser-content-hover-list">
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-carousel</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-bind</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-selector</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-bind</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-selector</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-call-tracking</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-form</a>
+              </li>
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">amp-access</a>
+              </li>
+            </ul>
+            <a class="ad-m-lnk" href="#">
+              <div class="ad-a-ico ad-m-lnk-icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              </div>
+              <span class="ad-m-lnk-text">See example</span>
+            </a>
+          </div>
+
         </div>
-      </a>
+      </div>
     </div>
+
 
     {# Teaser for components and as fallback if no fitting type is available #}
     {% elif teaser.type == 'component' or not teaser.type %}
