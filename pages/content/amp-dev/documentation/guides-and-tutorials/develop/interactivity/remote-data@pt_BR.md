@@ -169,9 +169,3 @@ Estamos quase terminando. Desative o botão "Adicionar ao carrinho" quando o tam
 ```
 
 **Faça um teste**: se você selecionar um tamanho indisponível, não será possível adicioná-lo ao carrinho.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
-

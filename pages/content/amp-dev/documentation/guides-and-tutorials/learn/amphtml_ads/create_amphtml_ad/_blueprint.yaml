@@ -5,3 +5,7 @@ $localization:
 $title@: Create an AMPHTML ad
 formats:
   - ads
+
+targeted: true
+chaptered: true
+tutorial: true

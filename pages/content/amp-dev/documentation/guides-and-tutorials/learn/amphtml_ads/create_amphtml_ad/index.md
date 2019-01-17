@@ -1,8 +1,7 @@
 ---
 $path: /documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/index.html
 $title: Create an AMPHTML ad
-$hidden: true
-tutorial: true
+
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}
@@ -22,9 +21,6 @@ AMPHTML ads are similar to traditional HTML ads, but instead of coding them in t
 * A basic knowledge of HTML, CSS, and JavaScript
 * A browser and text editor of your choice
 
-<div class="start-button">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/create_shell.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
-</div>
 
 [tip]
 *Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:

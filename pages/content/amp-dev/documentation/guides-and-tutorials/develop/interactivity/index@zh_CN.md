@@ -13,9 +13,3 @@ $title: 创建互动式 AMP 网页
 - 使用 AMP HTML 和 AMP 组件提供畅快且丰富的用户体验。
 - 使用 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 添加跨元素互动性。
 - 使用 [`<amp-state>`](/zh_cn/docs/reference/components/amp-bind.html#state) 按需提取更多商品数据。
-
-
-<div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup.md', locale=doc.locale).url.path}}"><span class="arrow-next">开始</span></a>
-</div>
-

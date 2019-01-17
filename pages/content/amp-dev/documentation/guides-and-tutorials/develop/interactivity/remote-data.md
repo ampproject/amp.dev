@@ -171,8 +171,3 @@ We're almost done! Let's disable the "Add to cart" button when the selected size
 ```
 
 **Try it out**:  If you select a size that's unavailable, you can't add it to the cart.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

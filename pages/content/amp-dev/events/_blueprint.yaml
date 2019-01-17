@@ -4,9 +4,10 @@ $title@: Events
 $localization:
   path: /{locale}/events/{base}.html
 
-index: /content/amp-dev/events/upcoming-events.md
+index: /content/amp-dev/events/amp-conf-2019.md
 sub_navigation:
     - /content/amp-dev/events/upcoming-events.md
+    - /content/amp-dev/events/amp-conf-2019.md
     - /content/amp-dev/events/amp-roadshow.md
     - /content/amp-dev/events/contributor-summit.md
     - /content/amp-dev/events/past-events.md

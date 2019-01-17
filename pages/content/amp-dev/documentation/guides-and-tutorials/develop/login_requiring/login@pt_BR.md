@@ -67,8 +67,3 @@ Veja abaixo um breve resumo:
 - O servidor deve coordenar a resposta assim que o usuário clicar no botão de login.
 
 Dica: Veja uma explicação detalhada sobre esse fluxo na [documentação sobre amp-access](/pt_br/docs/reference/components/amp-access.html#login-flow).
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
