@@ -1,5 +1,0 @@
-$title: Samples & Templates
-$view: /views/detail/example-detail.j2
-$path: '/documentation/examples/samples/{base}.html'
-$localization:
-  path: '/{locale}/documentation/examples/samples/{base}.html'

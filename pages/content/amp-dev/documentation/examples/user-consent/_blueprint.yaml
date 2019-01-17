@@ -3,3 +3,4 @@ $view: /views/detail/example-detail.j2
 $path: '/documentation/examples/user-consent/{base}.html'
 $localization:
   path: '/{locale}/documentation/examples/user-consent/{base}.html'
+$order: 6
