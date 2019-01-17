@@ -1,0 +1,119 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_headline';
+@import '../atoms/_text';
+
+@import '../molecules/_copy';
+
+.#{utility('news')} {
+  background: linear-gradient(30deg, color('whisper') 30%, color('athens-gray') 100%);
+
+  .ad-m-copy {
+    padding: 20px 20px 0;
+    margin: 0;
+    
+    @media screen and (min-width: 768px) {
+      grid-column: 2 / 11;
+      padding: 0;
+      margin: auto 0;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      grid-column: 3 / 10;
+    }
+    
+    @media screen and (min-width: 1280px) {
+      grid-column: 3 / 9;
+    }
+    
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0.375em;
+    }
+    
+    p {
+      @include txt-2;
+      margin-top: 0;
+      margin-bottom: 3.75em;
+    }
+  }
+}
+
+.#{organism('news')} {
+  grid-column: 11 / 25;
+  width: 100%;
+  
+  &-list {
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+  }
+  
+  &-item {
+    flex: 1 0 75%;
+    display: block;
+    scroll-snap-align: start;
+    padding: 0 2em 0 0;
+    margin: 2.125em 0 4.125em;
+  	transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    
+    @media screen and (min-width: 768px) {
+      flex: 1 0 65%;
+      padding: 0 0 0 2em;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      flex: 1 0 37.5%;
+    }
+    
+    &:hover {
+      transform: translateY(-0.125em);
+      
+      & > div {
+        box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
+      }
+    }
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  &-title {
+    @include txt;
+    @include txt-3;
+    @include txt-strong;
+    @include txt-uppercase;
+    padding: 0.625em 24px;
+    color: color('gray-chateau');
+  }
+  
+  &-image {
+    width: 100%;
+  }
+  
+  &-headline {
+    padding: 0 24px;
+    margin-top: 1.375em;
+  }
+  
+  &-date {
+    @include txt;
+    @include txt-2;
+    padding: 0 24px;
+    margin-top: auto;
+    margin-bottom: 1.5em;
+    color: color('river-bed');
+  }
+}
