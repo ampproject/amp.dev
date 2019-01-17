@@ -8,7 +8,7 @@ AMP プロジェクトは、ウェブページの表示を高速化して、最�
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='AMP ページへの広告配信', align='' ) }}
 
-1. まずサイト運営者が、広告を掲載する AMP ページに広告用のスロットを作成します。通常のページでは、JavaScript のスニペットを挿入しますが、AMP の場合は、特定の広告ネットワーク用の [`<amp-ad>`](/ja/docs/reference/components/amp-ad.html) タグを AMP ページに追加します。詳しくは、[広告による AMP ページの収益化に関するガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})をご覧ください。
+1. まずサイト運営者が、広告を掲載する AMP ページに広告用のスロットを作成します。通常のページでは、JavaScript のスニペットを挿入しますが、AMP の場合は、特定の広告ネットワーク用の [`<amp-ad>`](/ja/docs/reference/components/amp-ad.html) タグを AMP ページに追加します。詳しくは、[広告による AMP ページの収益化に関するガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})をご覧ください。
 
 2. ユーザーが AMP ページを読み込むと、`<amp-ad>` タグが広告ネットワークに広告リクエストを送信します。広告ネットワークは、AMP ページに広告を返すために、`amp-ad` の実装を作成します。詳しくは、[AMP への広告ネットワークの統合に関するガイド](https://github.com/ampproject/amphtml/blob/master/ads/README.md)をご覧ください。
 
@@ -37,7 +37,7 @@ AMP HTML 広告について詳しくは、[AMP HTML 広告に関するガイド]
 
 AMP ページで広告掲載を始めるには、次のリソースをご確認ください。
 
-* [広告で AMP ページを収益化する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
+* [広告で AMP ページを収益化する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})
 * [AMP との統合でディスプレイ広告を掲載する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [AMP HTML 広告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  
