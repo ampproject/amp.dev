@@ -13,7 +13,7 @@ A hands-on introduction to Accelerated Mobile Pages (AMP) focusing on code and l
 [/intro]
 
 [teaser-grid]
-[](content/shared/fill-ins/example.md)
-[](content/shared/fill-ins/example.md)
-[](content/shared/fill-ins/example.md)
+[](/content/amp-dev/documentation/examples/advanced/Layout_System-manual.html)
+[](/content/amp-dev/documentation/examples/components/amp-accordion-manual.html)
+[](/content/amp-dev/documentation/examples/components/amp-accordion-manual.html)
 [/teaser-grid]

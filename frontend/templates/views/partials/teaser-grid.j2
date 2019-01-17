@@ -153,30 +153,61 @@
     {% do doc.icons.useIcon('icons/example.svg') %}
 
     <div class="ad-m-teaser ad-m-teaser-example">
-      <a href="{{ teaser.doc.url|relative }}">
+      <div class="ad-m-teaser-linking">
         <div class="ad-m-teaser-card">
-          {% if teaser.destinations %}
-          {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-          <div class="ad-m-teaser-tags">
-            {% for destination in teaser.destinations %}
-            <div class="ad-m-tag ad-m-tag-{{ destination }} ad-m-teaser-tag"></div>
-            {% endfor %}
+          {% if teaser.image or True %}
+          <div class="ad-a-img ad-m-teaser-image">
+            <amp-img
+              src="/static/img/teaser-placeholder-5x3.jpg"
+              layout="responsive"
+              width="5"
+              height="3"
+              alt="Dummy.">
+            </amp-img>
           </div>
           {% endif %}
 
-          <div class="ad-m-teaser-header">
-            <div class="ad-a-ico ad-m-teaser-header-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example"></use></svg>
-            </div>
-          </div>
-
           <div class="ad-m-teaser-content">
+            {% if teaser.doc.formats %}
+            {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+            <div class="ad-m-teaser-tags">
+              {% for format in teaser.doc.formats %}
+              <div class="ad-m-tag ad-m-tag-{{ format }} ad-m-teaser-tag"></div>
+              {% endfor %}
+            </div>
+            {% endif %}
             <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
             <p class="ad-m-teaser-copy">{{ teaser.text }}</p>
           </div>
+          <div class="ad-m-teaser-info">
+            {% if teaser.doc.used_components %}
+            <p>
+              <strong>{{ teaser.doc.used_components|length }} AMP components</strong> used
+            </p>
+            {% endif %}
+          </div>
+
+          <div class="ad-m-teaser-content-hover">
+            <h5>Used components</h5>
+            <ul class="ad-m-teaser-content-hover-list">
+              {% for used_component in teaser.doc.used_components %}
+              <li class="ad-m-teaser-content-hover-list-item">
+                <a href="#" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            <a class="ad-m-lnk" href="{{ teaser.doc.url.path }}">
+              <div class="ad-a-ico ad-m-lnk-icon">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              </div>
+              <span class="ad-m-lnk-text">{{ _('See example' ) }}</span>
+            </a>
+          </div>
+
         </div>
-      </a>
+      </div>
     </div>
+
 
     {# Teaser for components and as fallback if no fitting type is available #}
     {% elif teaser.type == 'component' or not teaser.type %}

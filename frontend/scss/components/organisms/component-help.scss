@@ -14,16 +14,18 @@ currently none
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-@import '../atoms/_headline.scss';
-@import '../atoms/_text.scss';
-@import '../atoms/_image.scss';
-@import '../atoms/_icon.scss';
-@import '../molecules/_link.scss';
-@import '../atoms/_divider.scss';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_image.scss';
+@import 'components/atoms/_icon.scss';
+@import 'components/atoms/_divider.scss';
+
+@import 'components/molecules/_link.scss';
 
 
 .#{organism('component-help')} {
@@ -44,18 +46,6 @@ currently none
   &-copy {
     @include txt;
     @include txt-1;
-  }
-
-  &-lnk-img {
-    display: flex;
-    align-items: center;
-
-    & .#{atom('img')} {
-      height: 100px;
-      width: 100px;
-      @include img-circle;
-      @include box-shadow;
-    }
   }
 
   &-divider {

@@ -1,0 +1,5 @@
+$title@: Components
+$path: /documentation/components/reference/{base}.html
+$localization:
+  path: /{locale}/documentation/components/reference/{base}.html
+$view: /views/detail/component-detail.j2

@@ -1,0 +1,12 @@
+$path: /community/{base}.html
+$view: /views/default.j2
+$title@: Events
+$localization:
+  path: /{locale}/events/{base}.html
+
+index: /content/amp-dev/events/upcoming-events.md
+sub_navigation:
+    - /content/amp-dev/events/upcoming-events.md
+    - /content/amp-dev/events/amp-roadshow.md
+    - /content/amp-dev/events/contributor-summit.md
+    - /content/amp-dev/events/past-events.md

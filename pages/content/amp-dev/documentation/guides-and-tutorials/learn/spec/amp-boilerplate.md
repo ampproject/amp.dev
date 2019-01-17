@@ -1,6 +1,6 @@
 ---
 $title: AMP Boilerplate Code
-$order: 1
+$order: 3
 ---
 
 <!---

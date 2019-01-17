@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const del = require('del');
 const GitHubImporter = require('./gitHubImporter');
 const Collection = require('./collection');
 
@@ -22,7 +21,7 @@ const Collection = require('./collection');
 const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
-  __dirname + '/../../../pages/content/amp-dev/documentation/components';
+  __dirname + '/../../../pages/content/amp-dev/documentation/components/reference';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/components';
 // Names of the built-in components that need to be fetched from ...
@@ -32,11 +31,6 @@ const BUILT_IN_PATH = 'builtins';
 
 class ComponentReferenceImporter extends GitHubImporter {
   async import() {
-    this._log.info('Cleaning import path ...');
-    del.sync([
-      `${DESTINATION_BASE_PATH}/*/*`,
-    ], {'force': true});
-
     this._log.start('Beginning to import extension docs ...');
     await this._importExtensionsDocs();
   }
@@ -83,16 +77,9 @@ class ComponentReferenceImporter extends GitHubImporter {
    * @return {undefined}
    */
   _saveDocument(extensionName, document) {
-    let initial = extensionName.replace('amp-', '')[0];
-    // Check if initial is numeric as those will all be grouped
-    initial = !isNaN(initial) ? '1-9' : initial.toUpperCase();
-
-    // Make sure that the collection the document is put in to is defined
-    this._ensureCollection(initial);
-
     // Set the documents title
     document.title = extensionName;
-    const documentPath = `${DESTINATION_BASE_PATH}/${initial}/${extensionName}.md`;
+    const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}.md`;
 
     return document.save(documentPath).then(() => {
       this._log.success('Saved document to ' + documentPath);
@@ -100,20 +87,6 @@ class ComponentReferenceImporter extends GitHubImporter {
       this._log.success('There was an error saving the document to ' + documentPath);
       throw e;
     });
-  }
-
-  /**
-   * Checks that the folder (collection) the document is saved to
-   * has a Grow compatible blueprint
-   * @param  {String}  initial The first letter of the extension
-   * @return {Promise}
-   */
-  async _ensureCollection(initial) {
-    const destination = `${DESTINATION_BASE_PATH}/${initial}`;
-    const path = `${PATH_BASE}/${initial}/{base}.html`;
-
-    const collection = new Collection(destination, initial, DOCUMENT_VIEW, path);
-    return collection.create(false);
   }
 
   /**

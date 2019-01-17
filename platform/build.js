@@ -19,6 +19,7 @@
 'use strict';
 
 const mri = require('mri');
+const signale = require('signale');
 
 const config = require('./lib/config');
 const Pipeline = require('./lib/pipeline');
@@ -32,6 +33,8 @@ pipeline.clean();
 // TODO(matthiasrohmer): Use task runner (like gulp.series/gulp.parallel) to
 // execute tasks to better handle flow
 (async () => {
+  signale.time('Pipeline');
+
   await pipeline.check();
 
   // Collection of static files does not need to be waited for as it happens
@@ -69,6 +72,8 @@ pipeline.clean();
 
     await pipeline.testBuild();
   }
+
+  signale.timeEnd('Pipeline');
 })().then(() => {
   // For development we also want to directly serve the current build
   if (config.environment == 'development') {
