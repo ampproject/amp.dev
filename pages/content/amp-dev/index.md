@@ -364,7 +364,7 @@ format_explainer:
 
 [bevel]
 
-<section class="ad--teaser-grid ad--container-fluid">
+<section class="ad--teaser-grid ad--container">
 [teaser-grid]
 [](content/shared/fill-ins/success-story.md)
 [](content/shared/fill-ins/success-story.md)
