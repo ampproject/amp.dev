@@ -16,22 +16,37 @@
   input:focus {
     outline: none;
   }
-
   button {
     position: absolute;
-    top: 20vh;
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
+    top: 50vw;
+    @media screen and (min-width: 768px) {
+      top: 23vw;
+      height: 60px;
+      width: 60px;
+    }
     display: flex;
     justify-content: center;
-    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.4);
     z-index: 3;
     border: none;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
+    transition: 400ms;
+    overflow: hidden;
+    background: #F3F3F3;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
+      background: #FFFFFF;
+    }
+    div {
+      font-size: 20px;
+    }
   }
-
+  
   &-prevbtn {
-    left: 0;
+    left: 10px;
     div {
       margin: 0;
       transform: rotate(180deg);
@@ -45,7 +60,7 @@
   }
 
   &-nextbtn {
-    right: 0;
+    right: 10px;
     div {
       margin: 0;
     }
