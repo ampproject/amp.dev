@@ -1,0 +1,35 @@
+### SUCCESS STORY (EXAMPLE STRUCTURE)
+###
+### Array can contain multiple elements.
+### The medium source can be `image_src` or `video_src`
+### The order of contents elements is equal to the order of the resulting page.
+### It is possible to use the following content combinations within content:
+###   - image + text
+###   - image only
+###   - text only
+#
+# stage:
+#   headline: lorem ipsum
+#   subline: dolor sit amet
+#   devices:
+#     - image_src: [url] | video_src: [url]
+#       width: <number>
+#       height: <number>
+#       type: [mobile |  tablet | desktop] (optional)
+#       direction: [left | right | left-flat | right-flat] (optional)
+#       alt: <string>
+#
+# kpis:
+#   - value: <string>
+#     text: <string> (optional)
+#
+# contents:
+#   - image_src: [url] | video_src: [url]
+#     width: <number>
+#     height: <number>
+#     type: [mobile |  tablet | desktop] (optional)
+#     direction: [left | right | left-flat | right-flat] (optional)
+#     alt: <string>
+# (AND/OR)
+#  (-)headline: <string> (optional)
+#     text: <string>
