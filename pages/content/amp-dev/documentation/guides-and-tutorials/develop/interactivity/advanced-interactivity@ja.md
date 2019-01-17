@@ -201,10 +201,3 @@ selected.slide // Evaluates to 0.
 注: 実際には、カルーセル内の各画像はそれぞれ別の `src` を持つ可能性があります。そのようにするには、上記の単一の画像を複数の画像で置き換えます。説明を簡単にするため、このチュートリアルでは単一の画像を異なる複数のサイズで使用しています。
 
 **試してみる**: ページを更新して、シャツに別の色を選択してみましょう。別の色を選択するとカルーセルの画像が更新され、選択した色のシャツが表示されます。
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
-

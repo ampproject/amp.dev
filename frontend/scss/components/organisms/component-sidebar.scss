@@ -40,8 +40,6 @@
         pointer-events: none;
 
         .nav-link {
-          position: sticky;
-          top: 0;
           @include hl;
           @include hl-h2;
           padding: 0;
@@ -54,8 +52,6 @@
 
         & > .nav-link {
           padding-top: 10px;
-          background: #FAFAFC;
-          background: linear-gradient(0deg, rgba(color('whisper'), 0) 0%, color('whisper') 25%);
           pointer-events: none;
           z-index: 1;
           transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);

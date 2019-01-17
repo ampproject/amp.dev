@@ -361,3 +361,62 @@ format_explainer:
     {% include 'views/partials/case-grid.j2' %}
   </div>
 </section>
+
+[bevel]
+
+<section class="ad--teaser-grid ad--container">
+[teaser-grid]
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[/teaser-grid]
+
+  <div class="ad-m-copy">
+    <h2>Explore AMP<br> success stories</h2>
+    <p>Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.</p>
+    
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">See all success stories</span>
+    </a>
+  </div>
+</section>
+
+<section class="ad--collaboration">
+  {% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
+  
+  <div class="ad--container-fluid">
+    <h2>AMP is a dynamic<br> collaborative project</h2>
+
+    <div class="ad-m-collabo-card ad-m-collabo-card-1">
+      <div class="ad-m-collabo-card-image">
+        <amp-img
+          src="/static/img/dummy-collabo-image-1.png"
+          layout="responsive"
+          width="16"
+          height="9">
+        </amp-img>
+      </div>
+      <h3 class="ad-m-collabo-card-headline">Many ways for you to contribute</h3>
+      <p class="ad-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+    </div>
+
+    <div class="ad-m-collabo-card ad-m-collabo-card-2">
+      <div class="ad-m-collabo-card-image">
+        <amp-img
+          src="/static/img/dummy-collabo-image-2.png"
+          layout="responsive"
+          width="16"
+          height="9">
+        </amp-img>
+      </div>
+      <h3 class="ad-m-collabo-card-headline">Reporting issues with AMP</h3>
+      <p class="ad-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the <a href="#">issue tracker</a>.</p>
+    </div>
+
+  </div>
+</section>

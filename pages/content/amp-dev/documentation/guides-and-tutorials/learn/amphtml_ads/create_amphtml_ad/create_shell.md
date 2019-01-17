@@ -70,8 +70,3 @@ Here's the complete code for your HTML file:
 ```
 
 You now have a valid AMPHTML ad, albeit a rather empty one. Let's create the image ad.
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/image_ad.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

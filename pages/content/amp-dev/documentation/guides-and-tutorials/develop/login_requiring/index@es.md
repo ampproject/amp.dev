@@ -7,9 +7,3 @@ Quizás te interese que los usuarios tengan que iniciar sesión para realizar de
 Tip: Para consultar un ejemplo de implementación, echa un vistazo a una [sección de comentarios de muestra](https://ampbyexample.com/samples_templates/comment_section/), en [ampbyexample.com](https://ampbyexample.com).
 
 En la [sección de comentarios de muestra](https://ampbyexample.com/samples_templates/comment_section/), se combinan los componentes `amp-access` y `amp-form` para crear una sección de comentarios que se habilite solo cuando un usuario inicie sesión. Para explicar cómo se ha implementado este ejemplo, vamos a ver el proceso que tiene lugar al acceder a la página.
-
-
-
-<div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">Empezar</span></a>
-</div>

@@ -33,9 +33,9 @@ class MarkdownDocument {
     // Remove markers from document to have them in a defined spot
     this._contents = this._contents.replace(TOC_MARKER, '');
 
-    // And if TOC should be rendered put it directly in front of content
+    // And if TOC should be rendered mark it in the frontmatter
     if (active) {
-      this._contents = '\n' + TOC_MARKER + '\n\n' + this._contents;
+      this._frontmatter['toc'] = true;
     }
 
     this._toc = active;
@@ -51,6 +51,10 @@ class MarkdownDocument {
 
   set order(order) {
     this._frontmatter['$order'] = order;
+  }
+
+  set category(category) {
+    this._frontmatter['$category'] = category;
   }
 
   set contents(contents) {

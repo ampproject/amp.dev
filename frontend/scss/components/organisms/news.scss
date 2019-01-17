@@ -43,7 +43,7 @@
 }
 
 .#{organism('news')} {
-  grid-column: 11 / 25;
+  grid-column: 11 / -1;
   width: 100%;
   
   &-list {

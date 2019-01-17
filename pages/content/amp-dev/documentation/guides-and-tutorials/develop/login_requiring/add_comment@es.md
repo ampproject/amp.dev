@@ -59,10 +59,3 @@ Adicionalmente, añadimos el atributo `required` para exigir que el comentario t
 Cuando añades un comentario y haces clic en el botón para enviarlo, aparece algo similar a lo que se ve en esta captura de pantalla:
 
 <amp-img src="/static/img/logout-button.png" alt="Comentario añadido" height="352" width="300"></amp-img>
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/logout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Siguiente</span></a>
-</div>
- 
- 

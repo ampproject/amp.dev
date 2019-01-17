@@ -4,3 +4,6 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/login_requiring/{base}.html
 $title@: Create a login-requiring AMP page
 $order: 1
+
+targeted: true
+chaptered: true

@@ -169,9 +169,3 @@ $title: リモートデータの使用
 ```
 
 **試してみる**: 購入できないサイズを選択した場合は、そのサイズの商品をカートに追加することはできません。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>
-

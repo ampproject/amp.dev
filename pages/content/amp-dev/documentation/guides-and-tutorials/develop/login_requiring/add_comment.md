@@ -1,6 +1,6 @@
 ---
 $title: Add a comment
-$order: 1
+$order: 2
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
@@ -60,8 +60,3 @@ As an extra touch, we add the `required` attribute to enforce the presence of co
 When you add a comment and click the submit button, you should now see something similar to the following screenshot:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/logout.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>
