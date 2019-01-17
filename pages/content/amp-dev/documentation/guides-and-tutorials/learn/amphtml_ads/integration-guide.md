@@ -1,10 +1,8 @@
 ---
 $title: Guidelines for integrating ad technologies with AMP
 $order: 3
+toc: true
 ---
-
-
-[TOC]
 
 # Guidelines for Integrating with AMP
 

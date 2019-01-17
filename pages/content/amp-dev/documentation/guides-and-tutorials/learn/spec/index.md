@@ -1,10 +1,8 @@
 ---
 $title: AMP HTML Specification
+toc: true
 $order: 2
 ---
-
-
-
 
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
