@@ -19,15 +19,22 @@
     padding: 8% 0;
     display: flex;
     transform: perspective(300em) rotateX(38deg) rotateY(0deg) rotateZ(-18deg) skewX(2deg);
-    
+    margin-left: 18%;
+    @media screen and (min-width: 768px) {
+      margin-left: 0;
+    } 
     .slide {
-      margin-right: 8vw;
+      width: 50%;
+      margin-right: 16vw;
       flex-shrink: 0;
       transform: scale(1);
       transition: transform 400ms, opacity 400ms, box-shadow 400ms;
       transition-delay: 400ms;
       transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-      width: 34%;
+      @media screen and (min-width: 768px) {
+        width: 34%;
+        margin-right: 8vw;
+      } 
       amp-img {
         transition: transform 400ms, opacity 400ms, box-shadow 400ms;
         box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -68,31 +75,46 @@
 
     &.slide2 {
       .slide {
-        transform: translateX(calc(-100% - 8vw));
+        transform: translateX(calc(-100% - 16vw));
+        @media screen and (min-width: 768px) {
+          transform: translateX(calc(-100% - 8vw));
+        }
       }
     }
 
     &.slide3 {
       .slide {
-        transform: translateX(calc(-200% - 16vw));
+        transform: translateX(calc(-200% - 32vw));
+        @media screen and (min-width: 768px) {
+          transform: translateX(calc(-200% - 16vw));
+        }
       }
     }
 
     &.slide4 {
       .slide {
-        transform: translateX(calc(-300% - 24vw));
+        transform: translateX(calc(-300% - 48vw));
+        @media screen and (min-width: 768px) {
+          transform: translateX(calc(-300% - 24vw));
+        }
       }
     }
 
     &.slide5 {
       .slide {
-        transform: translateX(calc(-400% - 32vw));
+        transform: translateX(calc(-400% - 64vw));
+        @media screen and (min-width: 768px) {
+          transform: translateX(calc(-400% - 32vw));
+        }
       }
     }
 
     &.slide6 {
       .slide {
-        transform: translateX(calc(-500% - 40vw));
+        transform: translateX(calc(-500% - 80vw));
+        @media screen and (min-width: 768px) {
+          transform: translateX(calc(-500% - 40vw));
+        }
       }
     }
   }
