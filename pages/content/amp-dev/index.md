@@ -136,31 +136,15 @@ format_explainer:
     <amp-animation id="switchFormat" layout="nodisplay">
       <script type="application/json">
         [{
-          "duration": "1s",
+          "duration": "1.5s",
           "delay": "0s",
           "fill": "forwards",
-          "easing": "ease-out",
+          "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
           "iterations": "1",
           "selector": ".ad-o-format-explainer-visual",
           "keyframes": [{
-            "opacity": "0.5",
-            "transform": "translateX(-5%)"
-          },
-          {
-            "opacity": "1",
-            "transform": "translateX(0%)"
-          }]
-        },
-        {
-          "duration": "1s",
-          "delay": "0s",
-          "fill": "forwards",
-          "easing": "ease-out",
-          "iterations": "1",
-          "selector": ".ad-o-format-explainer-content",
-          "keyframes": [{
-            "opacity": "0.5",
-            "transform": "translateX(5%)"
+            "opacity": "0",
+            "transform": "translateX(-15%)"
           },
           {
             "opacity": "1",

@@ -17,11 +17,19 @@
 
 .#{organism('fragment-slider')} {
   &-text {
-    grid-column: 14 / 25;
+    grid-column: 1 / -1;
     display: flex;
     flex-direction: row-reverse;
+    margin-top: 40vw;
+    max-width: 100%;
+    @media screen and (min-width: 1024px) {
+      margin-top: -20px;
+      grid-column: 14 / 25;
+    }
     h2,h3 {
-      @include color-white;
+      @media screen and (min-width: 1024px) {
+        @include color-white;
+      }
     }
     > div {
       min-width: 100%;
@@ -29,6 +37,14 @@
     div {
       &.copy {
         min-width: 100%;
+        a {
+          display: block;
+          margin-bottom: 15px;
+          @media screen and (min-width: 1280px) {
+            display: inline-block;
+            width: 49%;
+          }
+        }
       }
       opacity: 0;
       transition: opacity 400ms, transform 400ms;
@@ -72,6 +88,12 @@
   }
   &-headline {
     @include hl-lrg;
-    margin: 0 0 30% 0;
+    margin: 0;
+    @media screen and (min-width: 1024px) {
+      margin: 0 0 25% 0;
+    }
+    @media screen and (min-width: 1280px) {
+      margin: 0 0 13vw 0;
+    }
   }
 }
