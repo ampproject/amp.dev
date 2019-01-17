@@ -108,18 +108,22 @@
       }
       
       h2 {
-        
         @media screen and (min-width: 768px) {
           margin-top: 5em;
         }
       }
       
       p {
-        
         @media screen and (min-width: 768px) {
           margin-bottom: 6em;
         }
       }
+    }
+  }
+  
+  .#{utility('get-started')} {
+    h2 {
+      @include hl-h1;
     }
   }
 }

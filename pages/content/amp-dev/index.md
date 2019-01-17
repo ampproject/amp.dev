@@ -420,3 +420,12 @@ format_explainer:
 
   </div>
 </section>
+
+<section class="ad--get-started ad--container">
+  {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+  <div class="ad-m-copy ad-m-copy-center">
+    <h2>Build your first AMP page now</h2>
+    <p>You don’t need to download AMP and no installation is required.<br> Because it is a open-source project, it is free!</p>
+    <a href="#" class="ad-a-btn">Get started</a>
+  </div>
+</section>
