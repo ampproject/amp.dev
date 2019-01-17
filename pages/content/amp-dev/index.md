@@ -377,3 +377,27 @@ format_explainer:
     {% include 'views/partials/case-grid.j2' %}
   </div>
 </section>
+
+[bevel]
+
+<section class="ad--teaser-grid ad--container-fluid">
+[teaser-grid]
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[/teaser-grid]
+
+  <div class="ad-m-copy">
+    <h2>Explore AMP<br> success stories</h2>
+    <p>Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.</p>
+    
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">See all success stories</span>
+    </a>
+  </div>
+</section>

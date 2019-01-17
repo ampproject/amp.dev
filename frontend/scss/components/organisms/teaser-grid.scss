@@ -14,13 +14,11 @@
 
 .#{utility('teaser-grid')} {
   @media screen and (min-width: 768px){
-    grid-column-start: 1;
-    grid-column-end: 25;
+    grid-column: 1 / -1;
   }
 
   @media screen and (min-width: 1024px){
-    grid-column-start: 4;
-    grid-column-end: 22;
+    grid-column: 4 / 22;
   }
 }
 
@@ -47,7 +45,7 @@
   }
 
   &-list {
-    grid-column: 1 / 25;
+    grid-column: 1 / -1;
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
