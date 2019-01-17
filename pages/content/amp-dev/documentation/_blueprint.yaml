@@ -4,4 +4,4 @@ $title@: Documentation
 $localization:
   path: /{locale}/documentation/{base}.html
 $order: 2
-index: /content/amp-dev/documentation/guides-and-tutorials/index.md
+index: /content/amp-dev/documentation/guides-and-tutorials/index.html
