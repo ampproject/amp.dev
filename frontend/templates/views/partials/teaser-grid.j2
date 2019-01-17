@@ -166,7 +166,7 @@
         <ul class="ad-m-teaser-content-hover-list">
           {% for used_component in teaser.doc.used_components %}
           <li class="ad-m-teaser-content-hover-list-item">
-            <a href="#" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+            <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + used_component + '.md', locale=doc.locale).url.path }}" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
           </li>
           {% endfor %}
         </ul>
