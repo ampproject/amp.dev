@@ -10,10 +10,10 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
 .#{molecule('code-snippet')} {
   max-width: 100vw;
