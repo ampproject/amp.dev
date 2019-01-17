@@ -99,7 +99,7 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/benefits/ads/developer-01.svg') %}
+          {% do doc.icons.useIcon('icons/benefits/emails/developer-01.svg') %}
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#developer-01"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
@@ -110,23 +110,23 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/benefits/ads/developer-02.svg') %}
+          {% do doc.icons.useIcon('icons/benefits/emails/developer-02.svg') %}
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#developer-02"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Reduce complexity in your operations</span>
-          <span class="ad-m-benefit-text-copy">AMP is simple and straightforward and quickly becoming the turnkey solution for building pages. AMP supports both traditional ads, and the faster, more secure AMPHTML ads. Ads on AMP pages are like any external resource and must play within the same constraints placed on all resources in AMP.</span>
+          <span class="ad-m-benefit-text-headline">Safe and secure</span>
+          <span class="ad-m-benefit-text-copy">AMP for email has no arbitrary 3rd party features to limit security issues, and far surpasses the capabilities currently provided by third party providers. Ad components are not allowed in AMP email, keeping users safe. To maintain users’ expectations of security and privacy, only a conservative subset of AMP functionality will be allowed.</span>
         </div>
       </div>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/benefits/ads/developer-03.svg') %}
+          {% do doc.icons.useIcon('icons/benefits/emails/developer-03.svg') %}
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#developer-03"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Collaborative community</span>
-          <span class="ad-m-benefit-text-copy">The AMP Project has a vast network of resources for getting started in the Documentation section including great-looking ad templates, demos and examples. AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few.</span>
+          <span class="ad-m-benefit-text-headline">Consistency and scalability</span>
+          <span class="ad-m-benefit-text-copy">Embedding AMP within an email is simple, add a new MIME part with a content type of text/x-amp-html as a descendant of multipart/alternative. It should live alongside the existing text/html or text/plain parts. This ensures that the email message works on all clients.</span>
         </div>
       </div>
 
@@ -136,34 +136,34 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/benefits/ads/business-01.svg') %}
+          {% do doc.icons.useIcon('icons/benefits/emails/business-01.svg') %}
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#business-01"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Measurable viewability</span>
-          <span class="ad-m-benefit-text-copy">AMPHTML ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective and more likely to perform well. You can monitor performance and adjust pricing accordingly, and offer the most engaging ad products to optimize your ad placements. In AMP, tweaking your pages to drive higher viewability rate or views is easy for publishers using the ‘data-loading-strategy’ attribute on the `amp-ad` component.</span>
+          <span class="ad-m-benefit-text-headline">Increased personalization</span>
+          <span class="ad-m-benefit-text-copy">AMP for email allows exciting smarter and efficient user engagement, as customers can take action directly within their email such as managing their subscriptions, responding to polls, doodles, and bookings. This is possible because the server retrieves fresh content from remote endpoints, keeping email up to date.</span>
         </div>
       </div>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/benefits/ads/business-02.svg') %}
+          {% do doc.icons.useIcon('icons/benefits/emails/business-02.svg') %}
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#business-02"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Maximize your revenue</span>
-          <span class="ad-m-benefit-text-copy">In order to engage with your brand and improve the performance of your campaigns, you have to speed things up. AMP ads load on average 5x faster than the non-AMP version, leading to higher conversion rates. Because AMPHTML ads are 3x lighter, the AMP framework guarantees that these ads only behave as intended so users always have a positive experience with your brand.</span>
+          <span class="ad-m-benefit-text-headline">Interactive customer experience</span>
+          <span class="ad-m-benefit-text-copy">AMP Email’s expanding capabilities allows you to take action right inside your Inbox. This includes carousels and accordions, and taking user input on forms and questionnaires.</span>
         </div>
       </div>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/benefits/ads/business-03.svg') %}
+          {% do doc.icons.useIcon('icons/benefits/emails/business-03.svg') %}
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#business-03"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Maximize your ROI</span>
-          <span class="ad-m-benefit-text-copy">AMP ads are safe from malware because AMPHTML ads are verified before being served, thus, advertisers can ensure a safe user experience and building trust in the brands users are engaging with. Establish yourself as the adtech platform for the fast web and join the hundreds of technology platforms currently supporting the open source AMP ecosystem.</span>
+          <span class="ad-m-benefit-text-headline">Improved and smarter services</span>
+          <span class="ad-m-benefit-text-copy">AMP email allows an attractive option for promotional and subscriber-list emails. Through smarter engagement you can improve customer satisfaction through hassle-free feedback and subscription management all within their inbox.</span>
         </div>
       </div>
 
