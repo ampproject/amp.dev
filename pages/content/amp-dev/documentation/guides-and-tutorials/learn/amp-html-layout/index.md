@@ -1,8 +1,7 @@
 ---
-$title: "AMP HTML Layout System"
-$path: /documentation/guides-and-tutorials/learn/spec/amp-html-layout.html
-$order: 0
+$title: AMP HTML Layout System
 toc: true
+$order: 4
 ---
 
 <!---
@@ -21,9 +20,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# AMP HTML Layout System
 
 
-[TOC]
 
 ## Overview
 
@@ -69,7 +68,6 @@ values of `layout`, `width` and `height` attributes.
 Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
 
 In a few cases, if `width` or `height` are not specified, the AMP runtime can default these values as follows:
-
 - `amp-pixel`: Both `width` and `height` are defaulted to 0.
 - `amp-audio`: The default `width` and `height` are inferred from browser.
 

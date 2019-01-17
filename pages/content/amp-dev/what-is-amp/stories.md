@@ -81,8 +81,8 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/smile.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#smile"></use></svg>
+          {% do doc.icons.useIcon('icons/benefits/stories/developer-01.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#developer-01"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
           <span class="ad-m-benefit-text-headline">Create beautiful and engaging content easily</span>
@@ -92,8 +92,8 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/bolt.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt"></use></svg>
+          {% do doc.icons.useIcon('icons/benefits/stories/developer-02.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#developer-02"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
           <span class="ad-m-benefit-text-headline">Creative flexibility for editorial freedom and branding</span>
@@ -103,8 +103,8 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/build.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#build"></use></svg>
+          {% do doc.icons.useIcon('icons/benefits/stories/developer-03.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#developer-03"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
           <span class="ad-m-benefit-text-headline">Sharable and linkable on the open web</span>
@@ -118,19 +118,19 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/bolt-code.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-code"></use></svg>
+          {% do doc.icons.useIcon('icons/benefits/stories/business-01.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#business-01"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Immersive storytelling</span>
-          <span class="ad-m-benefit-text-copy">AMP stories is a new and modern way to reach existing readers.</span>
+          <span class="ad-m-benefit-text-headline">Track and measure</span>
+          <span class="ad-m-benefit-text-copy">Supports analytics and bookend capabilities for viral sharing and monetization.</span>
         </div>
       </div>
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/web-page.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#web-page"></use></svg>
+          {% do doc.icons.useIcon('icons/benefits/stories/business-02.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#business-02"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
           <span class="ad-m-benefit-text-headline">Fast loading times</span>
@@ -140,12 +140,12 @@ $view: /views/overview/what-is-amp.j2
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/code-small.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code-small"></use></svg>
+          {% do doc.icons.useIcon('icons/benefits/stories/business-03.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#business-03"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Track and measure</span>
-          <span class="ad-m-benefit-text-copy">Supports analytics and bookend capabilities for viral sharing and monetization.</span>
+          <span class="ad-m-benefit-text-headline">Immersive storytelling</span>
+          <span class="ad-m-benefit-text-copy">AMP stories is a new and modern way to reach existing readers.</span>
         </div>
       </div>
 
@@ -181,8 +181,17 @@ $view: /views/overview/what-is-amp.j2
         <h2>Animations and interactions</h2>
         <p>It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.</p>
       </div>
-      
+
 
     </div>
 
 </section>
+
+##Explore use cases of Amp stories
+
+[teaser-grid]
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
+[](content/shared/fill-ins/use-case.md)
+[/teaser-grid]

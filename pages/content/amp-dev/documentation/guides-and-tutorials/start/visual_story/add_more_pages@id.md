@@ -44,7 +44,7 @@ Menunjukkan cara menata teks dan menampilkan gambar pengisi layar dengan dua lap
       <ul>
         <li>Memuat 2 lapisan:
       <ul>
-        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat elemen <a href="{{g.doc('/content/amp-dev/documentation/components/I/amp-img.md', locale=doc.locale).url.path}}">amp-img</a> responsif (<code class="filename">dog.jpg</code>, 720 x 1280 piksel).</li>
+        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat elemen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">amp-img</a> responsif (<code class="filename">dog.jpg</code>, 720 x 1280 piksel).</li>
         <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> dan memuat 2 elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Anjing</em></li>

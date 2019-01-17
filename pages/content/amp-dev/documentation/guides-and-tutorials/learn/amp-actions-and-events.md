@@ -1,10 +1,8 @@
 ---
 $title: Actions and events in AMP
+toc: true
 $order: 1
 ---
-
-
-
 
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.

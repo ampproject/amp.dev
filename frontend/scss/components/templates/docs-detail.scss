@@ -50,13 +50,6 @@
     h4 {@include hl-h5;}
   }
 
-  hr {
-    height: 1px;
-    margin: 0.75em 0;
-    background-color: color('athens-gray');
-    border: none;
-  }
-
   .#{utility('chapter-indicator')} {
     display: flex;
     justify-content: space-between;

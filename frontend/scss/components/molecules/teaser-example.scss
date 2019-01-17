@@ -112,7 +112,8 @@
 		}
 
 		&-fallback-image {
-			height: 150px;
+			height: 100%;
+    	padding-top: 60%;
 		}
 
 		&-headline {
@@ -187,7 +188,7 @@
 
 				&-item {
 					@include txt-mono;
-					@include txt-3;
+					@include txt-2;
 					margin: 4px 10px 4px 0;
 					flex: 0 0 calc(50% - 10px);
 

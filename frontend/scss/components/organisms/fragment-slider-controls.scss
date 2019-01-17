@@ -20,9 +20,8 @@
     position: absolute;
     height: 50px;
     width: 50px;
-    top: 50vw;
+    top: 23vw;
     @media screen and (min-width: 768px) {
-      top: 23vw;
       height: 60px;
       width: 60px;
     }
@@ -68,6 +67,11 @@
       outline: none;
     }
     &.slide6 {
+      display: none;
+    }
+  }
+  &-carouselcontroller {
+    @media screen and (min-width: 768px) {
       display: none;
     }
   }

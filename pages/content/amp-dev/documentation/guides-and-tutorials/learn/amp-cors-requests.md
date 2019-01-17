@@ -1,10 +1,8 @@
 ---
 $title: CORS in AMP
 $order: 12
+toc: true
 ---
-
-
-[TOC]
 
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
