@@ -201,10 +201,3 @@ selected.slide // 0으로 평가합니다.
 참고: 실제 상황에서는 캐러셀의 각 이미지에 다른 `src`가 있을 가능성이 높습니다. 이는 하나의 이미지를 이미지 배열로 대체함으로써 실행할 수 있습니다. 간단한 설명을 위해 이 가이드에서는 다양한 배율에서 하나의 이미지를 사용합니다.
 
 **직접 해보기**: 페이지를 새로고침하고 다른 색상의 셔츠를 선택하세요. 다른 색상을 선택하면 캐러셀의 이미지가 업데이트되어 선택한 색상의 셔츠가 표시됩니다.
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">이전</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">다음</span></a>
-</div>
-
