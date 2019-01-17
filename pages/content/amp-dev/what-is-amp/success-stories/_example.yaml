@@ -2,11 +2,12 @@
 ###
 ### Array can contain multiple elements.
 ### The medium source can be `image_src` or `video_src`
-### The order of contents elements is equal to the order of the resulting page.
-### It is possible to use the following content combinations within content:
-###   - image + text
-###   - image only
+### The order of contents' elements is equal to the order of the resulting page.
+### content formats:
+###   - medium + text
+###   - medium only
 ###   - text only
+###   - quote
 #
 # stage:
 #   headline: lorem ipsum
@@ -24,12 +25,33 @@
 #     text: <string> (optional)
 #
 # contents:
-#   - image_src: [url] | video_src: [url]
-#     width: <number>
-#     height: <number>
-#     type: [mobile |  tablet | desktop] (optional)
-#     direction: [left | right | left-flat | right-flat] (optional)
-#     alt: <string>
-# (AND/OR)
-#  (-)headline: <string> (optional)
-#     text: <string>
+# (medium + text)
+#  - image_src: [url] | video_src: [url]
+#    width: <number>
+#    height: <number>
+#    type: [mobile |  tablet | desktop] (optional)
+#    direction: [left | right | left-flat | right-flat] (optional)
+#    alt: <string>
+#    headline: <string> (optional)
+#    text: <string>
+#
+# (medium only)
+#  - image_src: [url] | video_src: [url]
+#    width: <number>
+#    height: <number>
+#    type: [mobile |  tablet | desktop] (optional)
+#    direction: [left | right | left-flat | right-flat] (optional)
+#    alt: <string>
+#
+# (text only)
+#  - headline: <string> (optional)
+#    text: <string>
+#
+# (quote)
+#  - quote: <string>
+#    image_src: [url]
+#    width: <number>
+#    height: <number>
+#    alt: <string>
+#    author: <string>
+#    story_url: [url]
