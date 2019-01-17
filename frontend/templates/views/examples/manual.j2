@@ -66,9 +66,9 @@
       </ul>
 
       {% for section in doc.example.document.sections %}
-      {{ section.doc|markdown|safe }}
+      {{ section.doc_.strip()|markdown|safe }}
 
-      {% set render_code = section.doc.strip() and section.code.strip() %}
+      {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
       <div class="ad-o-code-preview">
