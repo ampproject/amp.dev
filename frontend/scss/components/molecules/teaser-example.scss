@@ -183,8 +183,7 @@
 				list-style: none;
 				padding: 0 25px;
 				display: flex;
-				flex-wrap: wrap;
-				align-items: flex-start;
+				flex-direction: column;
 
 				&-item {
 					@include txt-mono;
