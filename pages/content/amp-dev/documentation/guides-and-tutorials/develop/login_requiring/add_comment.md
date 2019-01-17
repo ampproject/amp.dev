@@ -1,6 +1,6 @@
 ---
 $title: Add a comment
-$order: 1
+$order: 2
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>

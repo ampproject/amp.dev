@@ -1,6 +1,6 @@
 ---
 $title: Login
-$order: 0
+$order: 1
 ---
 
 The first time you land on the [page](https://ampbyexample.com/samples_templates/comment_section/preview/), you can see 2 comments and a login button.

@@ -1,6 +1,6 @@
 ---
 $title: Logout
-$order: 2
+$order: 3
 ---
 
 Similar to the login button, the presence of the logout button is conditionally dependent on the state of the `amp-access` component:
