@@ -70,7 +70,7 @@ format_explainer:
   <div class="ad-m-copy">
     <h2>The latest News</h2>
     <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
-    
+
     <a href="#" class="ad-m-lnk ad-m-lnk-square">
       <div class="ad-a-ico ad-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -79,7 +79,7 @@ format_explainer:
       <span class="ad-m-lnk-text">Subscribe</span>
     </a>
   </div>
-  
+
   <div class="ad-o-news">
     <div class="ad-o-news-list">
       {% for news in doc.news %}
@@ -132,7 +132,7 @@ format_explainer:
         }
       </script>
     </amp-state>
-    
+
     <amp-animation id="switchFormat" layout="nodisplay">
       <script type="application/json">
         [{
@@ -153,7 +153,7 @@ format_explainer:
         }]
       </script>
     </amp-animation>
-    
+
     <div class="ad-o-format-explainer-visual">
       <div class="ad-o-format-explainer-visual-{{ doc.format_explainer.websites.name }}"
         [hidden]="activeFormat != '{{ doc.format_explainer.websites.name }}'">
@@ -172,11 +172,11 @@ format_explainer:
         {% include doc.format_explainer.websites.visual %}
       </div>
     </div>
-    
+
     <div class="ad-o-format-explainer-content ad-m-copy">
       <h2 class="ad-o-format-explainer-headline" [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h2>
       <p class="ad-o-format-explainer-copy" [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
-      
+
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
         [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
         on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'}),switchFormat.restart">
@@ -217,7 +217,7 @@ format_explainer:
         </div>
         <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.emails.name }}</span>
       </button>
-                
+
       <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-o-format-explainer-link ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -311,7 +311,7 @@ format_explainer:
     </div>
 
     <div class="ad-o-benefits-overview-link">
-      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
@@ -375,7 +375,7 @@ format_explainer:
   <div class="ad-m-copy">
     <h2>Explore AMP<br> success stories</h2>
     <p>Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.</p>
-    
+
     <a href="#" class="ad-m-lnk ad-m-lnk-square">
       <div class="ad-a-ico ad-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -388,7 +388,7 @@ format_explainer:
 
 <section class="ad--collaboration">
   {% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
-  
+
   <div class="ad--container-fluid">
     <h2>AMP is a dynamic<br> collaborative project</h2>
 
@@ -426,6 +426,6 @@ format_explainer:
   <div class="ad-m-copy ad-m-copy-center">
     <h2>Build your first AMP page now</h2>
     <p>You don’t need to download AMP and no installation is required.<br> Because it is a open-source project, it is free!</p>
-    <a href="#" class="ad-a-btn">Get started</a>
+    <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-a-btn">Get started</a>
   </div>
 </section>
