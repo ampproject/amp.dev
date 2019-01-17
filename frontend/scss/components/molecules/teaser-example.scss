@@ -13,60 +13,85 @@
 @import '../../mixins';
 @import '../../variables';
 
+@import 'components/atoms/_text.scss';
+
 @import 'teaser';
 
 .#{molecule('teaser-example')} {
 	&.#{molecule('teaser')} {
-		@include teaser;
-	}
+		position: relative;
+		overflow: hidden;
+		padding-top: 2px;
+		margin: 0 20px 2em 0;
+		flex: 1 0 85%;
+		display: flex;
+		flex-direction: column-reverse;
+		scroll-snap-align: center;
+		box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
+		transition: box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-	.#{molecule('teaser')} {
+		@media screen and (min-width: 575px) {
+			margin: 0 0 2em;
+		}
 
-		&-linking {
-			@include teaser-linking;
-			height: 100%;
+		&:hover {
+			box-shadow: 0 12px 50px 0 rgba(0, 0, 0, 0.05);
 
-			&:hover {
-				@include teaser-linking-hover;
+			& > .#{molecule('teaser-linking')} {
+				transform: translateY(-2px);
+			}
 
-				.#{molecule('teaser')}  {
-					&-card {
-						@include teaser-card-hover;
+			& > .#{molecule('teaser-info')} {
+				transform: translateY(-2px);
+
+				&:hover {
+					transform: translateY(0);
+
+					& ~ .#{molecule('teaser-linking')} {
+						transform: translateY(0);
 					}
 
-					&-tags {
-						animation: 0.3s ease-out forwards toggleTags;
-					}
-
-					&-content {
-						position: static;
-
-						&-hover {
-							top: 0;
-							transition: top 0.3s;
-						}
+					& ~ .#{molecule('teaser-content-hover')} {
+						top: 8px;
 					}
 				}
 			}
 		}
+
+		& > .#{molecule('teaser-linking')} {
+			display: block;
+			height: 100%;
+			transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+		}
+	}
 
 		@keyframes toggleTags {
 			0%, 50% { visibility: hidden; transform: translateY(-100%); }
 			100% { visibility: visible; transform: translateY(0); }
 		}
 
+	.#{molecule('teaser')} {
 		&-tags {
 			font-size: 0;
 			position: absolute;
 			right: 0;
 			top: 0;
 			z-index: 3;
+
+			background-color: white;
+			width: 100%;
+			text-align: right;
+		}
+
+		&-linking {
+			background: color('white');
 		}
 
 		&-card {
-			@include teaser-card;
+			overflow: hidden;
+			position: relative;
+			background-color: white;
 			height: 100%;
-			border-radius: 0;
 		}
 
 		&-header {
@@ -80,49 +105,14 @@
 		&-content {
 			@include teaser-content;
 			position: relative;
-
-			&-hover{
-				position: absolute;
-				display: flex;
-				flex-direction: column;
-		    top: 100%;
-		    left: 0;
-		    height: 100%;
-		    width: 100%;
-		    background-color: color('white');
-				z-index: 2;
-				transition: top 0.3s;
-
-				& > h5 {
-					padding-left: 25px;
-					color: color('mine-shaft');
-				}
-
-				& > a {
-					padding: 25px;
-					margin-top: auto;
-				}
-
-				&-list {
-					list-style: none;
-					padding: 0px 25px;
-					display: grid;
-					grid-template-columns: auto auto;
-					grid-column-gap: 10px;
-
-					&-item {
-
-						&-link {
-							font-weight: normal;
-							color: color('black');
-						}
-					}
-				}
-			}
 		}
 
 		&-image {
 			@include teaser-image;
+		}
+
+		&-fallback-image {
+			height: 150px;
 		}
 
 		&-headline {
@@ -135,9 +125,78 @@
 		}
 
 		&-info {
+			@include txt;
 			color: color('black');
-			padding-left: 25px;
+			background-color: color('white');
+			padding: 0px 25px;
 			border-top: solid 1px color('silver');
+			transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+		}
+
+		&-content-hover {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			top: 100%;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: color('white');
+			z-index: 2;
+			transition: top 0.5s;
+
+			&:hover {
+				top: 8px;
+
+				& + .#{molecule('teaser-linking')} {
+				.#{molecule('teaser')} {
+
+						&-tags {
+							animation: 0.3s ease-out forwards toggleTags;
+						}
+
+						&-content {
+							position: static;
+
+							&-hover {
+								display: flex;
+								top: 0;
+								transition: top 0.5s;
+							}
+						}
+					}
+				}
+			}
+
+			& > h5 {
+				padding-left: 25px;
+				color: color('mine-shaft');
+			}
+
+			& > a {
+				padding: 25px;
+				margin-top: auto;
+			}
+
+			&-list {
+				list-style: none;
+				padding: 0 25px;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: flex-start;
+
+				&-item {
+					@include txt-mono;
+					@include txt-3;
+					margin: 4px 10px 4px 0;
+					flex: 0 0 calc(50% - 10px);
+
+					&-link {
+						font-weight: normal;
+						color: color('black');
+					}
+				}
+			}
 		}
 	}
 }
