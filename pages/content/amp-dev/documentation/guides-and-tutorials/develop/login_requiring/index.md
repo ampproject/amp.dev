@@ -10,9 +10,3 @@ Some user interactions with a page, such as leaving a comment, could be conditio
 Tip: To see a sample implementation, visit the [comment section sample](https://ampbyexample.com/samples_templates/comment_section/) at [ampbyexample.com](https://ampbyexample.com).
 
 The [comment section sample](https://ampbyexample.com/samples_templates/comment_section/) combines `amp-access` and `amp-form` to create a comment section which is enabled only when an user has logged in. In order to explain how this sample works, let's follow the set of actions that will be performed once you land on the page.
-
-
-
-<div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md', locale=doc.locale).url.path}}"><span class="arrow-next">Get started</span></a>
-</div>

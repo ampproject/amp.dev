@@ -67,8 +67,3 @@ $title: 登录
 - 一旦用户点击了“登录”按钮，服务器即应编排响应
 
 提示: 您可在 [amp-access 文档](/zh_cn/docs/reference/components/amp-access.html#login-flow) 中找到有关此流程的更详细的说明。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
