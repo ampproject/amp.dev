@@ -87,8 +87,25 @@
               </div>
             </div>
           {% endif %}
+
+          {# quote #}
+          {% if content.quote %}
+            <div class="quote">
+              <amp-img
+                alt="{{content.quote.alt}}"
+                height="{{content.quote.height}}"
+                layout="responsive"
+                src="{{content.quote.image_src}}"
+                width="{{content.quote.width}}"
+              ></amp-img>
+              <p>{{content.quote|safe}}</p>
+              <p>{{content.author|safe}}</p>
+              <a href="{{story_url}}">Read success story</a>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     {% endif %}
+
   </main>
 {% endblock %}

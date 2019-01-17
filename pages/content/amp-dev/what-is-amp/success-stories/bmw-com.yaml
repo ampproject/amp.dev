@@ -61,3 +61,11 @@ contents:
 
   # text without headline
   - text: "BMW’s goal was to have “the world’s fastest automotive content marketing website.” What most excites the company about the AMP pages, Liedgens says, is “the tremendous improvement in user experience due to the speed it provides.” The new website loads three to four times faster than before relaunch. The proportion of visitors clicking through from BMW.com to a national sales company (NSC) website has soared from 8 percent to 30 percent. The number of mobile users has climbed to 50 percent, up from 40 percent previously. Search engine optimization (SEO) delivers 49 percent more site visits than before. Overall, the company says, BMW.com now gives car lovers “a high-performance experience they’d only expect from a native app.”"
+
+  - quote: this is a quote
+    image_src: https://placegold.it/100x50
+    width: 100
+    height: 50
+    alt: lorem
+    author: john doe
+    story_url: https://google.com
