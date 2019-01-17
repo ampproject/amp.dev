@@ -1,0 +1,71 @@
+@import 'base.scss';
+@import 'components/atoms/_text.scss';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background: color('white');
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 0;
+  animation: revealMenu 150ms ease-in-out forwards;
+  &.hide {
+    display: none;
+  }
+  > {
+    * {
+      @include txt;
+      padding: 0 2rem;
+      line-height: 32px;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+      opacity: 0;
+      animation: revealMenuContent 100ms ease-out forwards 120ms;
+      display: flex;
+      align-items: center;
+    }
+    h2 {
+      display: inline-block;
+      font-size: 1.2em;
+      margin: 0;
+      color: color('blue-ribbon');
+    }
+    img {
+      padding: 0;
+      margin: 0 1.5rem;
+    }
+  }
+  input {
+    margin-right: 8px;
+  }
+  label:active, [role=button]:active {
+    background: color('oslo-gray');
+  }
+  [role=separator] {
+    padding: 0;
+    height: 0;
+    margin: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+}
+
+@keyframes revealMenuContent {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes revealMenu {
+  0% {
+    transform: translateX(110%) translateY(-110%);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}

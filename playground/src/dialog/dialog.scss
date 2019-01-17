@@ -1,3 +1,5 @@
+@import 'base.scss';
+
 .dialog {
   position: fixed;
   display: flex;
@@ -8,26 +10,28 @@
   right: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   animation: fadein 0.25s ease-in-out;
-  -webkit-overflow-scrolling: touch; 
+  -webkit-overflow-scrolling: touch;
 }
+
 .dialog-content {
   position: relative;
   min-width: 700px;
   margin: 2rem auto auto auto;
   padding: 2rem;
-  background-color: #fff;
+  background-color: color('white');
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+  }
 }
-.dialog-content .close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 8px;
-  width: 48px;
-  height: 48px;
-}
-@media (max-width: 767px) { 
+
+@media (max-width: 767px) {
   .dialog {
     display: block;
     min-width: auto;
@@ -36,13 +40,12 @@
   .dialog-content {
     position: initial;
     padding: 1rem;
-    background-color: #fff;
+    background-color: color('white');
     width: 100%;
     min-height: 100%;
     margin: 0;
-  }
-  .dialog-content .close {
-    position: fixed;
+    .close {
+      position: fixed;
+    }
   }
 }
-
