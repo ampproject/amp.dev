@@ -22,6 +22,7 @@
   
   .#{utility('container')} {
     @include container;
+    max-width: 100vw;
   }
   
   .#{utility('container-fluid')} {
@@ -35,12 +36,18 @@
 
     &-content {
       grid-column: 1 / -1;
-      padding: 52% 0 0;
+      padding: 82% 0 0;
+      @media screen and (min-width: 768px) {
+        padding: 52% 0 0;
+      } 
     }
   }
   
   .#{organism('fragment-slider')} {
     grid-column: 1 / -1;
-    margin-top: -52%;
+    margin-top: -76%;
+    @media screen and (min-width: 768px) {
+      margin-top: -56%;
+    }
   }
 }

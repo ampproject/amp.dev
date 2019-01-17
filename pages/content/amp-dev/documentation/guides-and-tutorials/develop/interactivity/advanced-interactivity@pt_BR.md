@@ -201,10 +201,3 @@ Em seguida, adicione vinculações aos elementos [`<amp-img>`](/pt_br/docs/refer
 Observação: Na prática, é provável que cada imagem do carrossel tenha um "src" diferente. Você pode fazer isso substituindo a imagem única por uma matriz de imagens. Para simplificar, este tutorial usa uma imagem única em diferentes ampliações.
 
 **Faça um teste**: atualize a página e selecione uma cor de camisa diferente. Ao fazer isso, as imagens do carrossel serão atualizadas para mostrar as camisas da cor selecionada.
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próxima</span></a>
-</div>
-

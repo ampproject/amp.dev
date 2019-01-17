@@ -201,9 +201,3 @@ selected.slide // Evaluates to 0.
 注意: 在实践中，轮换展示内容中的每张图片都可能需要具有不同的 `src`。若想实现这一点，只需将单张图片替换为一组图片即可。为简单起见，本教程就以不同的放大程度使用了单张图片。
 
 **试试看**：刷新网页，并另选一种衬衫颜色。当您选完之后，轮换展示内容中的图片便会更新为显示与所选颜色对应的衬衫。
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>

@@ -67,8 +67,3 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
 ヒント: このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access.html#login-flow)をご覧ください。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index.md', locale=doc.locale).url.path}}"><span class="arrow-prev">前へ</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md', locale=doc.locale).url.path}}"><span class="arrow-next">次へ</span></a>
-</div>

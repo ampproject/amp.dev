@@ -2,6 +2,33 @@
 $title: Start
 $view: /views/home.j2
 
+news:
+  - title: News
+    image: /static/img/dummy-news-1.png
+    headline: Setka provides beautiful post design with AMP
+    date: September 26, 2018
+    url: /
+  - title: Announcement
+    image: /static/img/dummy-news-2.png
+    headline: Optimize yor AMP pages for high ad viewability Lorem
+    date: September 26, 2018
+    url: /
+  - title: News
+    image: /static/img/dummy-news-1.png
+    headline: Setka provides beautiful post design with AMP
+    date: September 26, 2018
+    url: /
+  - title: Announcement
+    image: /static/img/dummy-news-2.png
+    headline: Optimize yor AMP pages for high ad viewability
+    date: September 26, 2018
+    url: /
+  - title: News
+    image: /static/img/dummy-news-1.png
+    headline: Setka provides beautiful post design with AMP
+    date: September 26, 2018
+    url: /
+
 format_explainer:
   websites:
     name: websites
@@ -37,6 +64,46 @@ format_explainer:
 {% include 'views/partials/case-band.j2' %}
 </section>
 
+<section class="ad--news ad--container-fluid">
+  {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
+
+  <div class="ad-m-copy">
+    <h2>The latest News</h2>
+    <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+    
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">Subscribe</span>
+    </a>
+  </div>
+  
+  <div class="ad-o-news">
+    <div class="ad-o-news-list">
+      {% for news in doc.news %}
+      <a class="ad-o-news-item" href="{{ news.url }}">
+        <div class="ad-o-news-card">
+          <div class="ad-o-news-title">{{ news.title }}</div>
+          <div class="ad-o-news-image">
+            <amp-img
+              src="{{ news.image }}"
+              layout="responsive"
+              width="16"
+              height="9">
+            </amp-img>
+          </div>
+          <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
+          <div class="ad-o-news-date">{{ news.date }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
 <section class="ad--format-explainer">
   <div class="ad-o-format-explainer ad--container-fluid">
     <amp-state id="formats">
@@ -69,31 +136,15 @@ format_explainer:
     <amp-animation id="switchFormat" layout="nodisplay">
       <script type="application/json">
         [{
-          "duration": "1s",
+          "duration": "1.5s",
           "delay": "0s",
           "fill": "forwards",
-          "easing": "ease-out",
+          "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
           "iterations": "1",
           "selector": ".ad-o-format-explainer-visual",
           "keyframes": [{
-            "opacity": "0.5",
-            "transform": "translateX(-5%)"
-          },
-          {
-            "opacity": "1",
-            "transform": "translateX(0%)"
-          }]
-        },
-        {
-          "duration": "1s",
-          "delay": "0s",
-          "fill": "forwards",
-          "easing": "ease-out",
-          "iterations": "1",
-          "selector": ".ad-o-format-explainer-content",
-          "keyframes": [{
-            "opacity": "0.5",
-            "transform": "translateX(5%)"
+            "opacity": "0",
+            "transform": "translateX(-15%)"
           },
           {
             "opacity": "1",
@@ -308,5 +359,29 @@ format_explainer:
 
   <div class="ad--container-fluid">
     {% include 'views/partials/case-grid.j2' %}
+  </div>
+</section>
+
+[bevel]
+
+<section class="ad--teaser-grid ad--container">
+[teaser-grid]
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[/teaser-grid]
+
+  <div class="ad-m-copy">
+    <h2>Explore AMP<br> success stories</h2>
+    <p>Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.</p>
+    
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">See all success stories</span>
+    </a>
   </div>
 </section>
