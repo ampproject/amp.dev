@@ -13,8 +13,9 @@
 .#{utility('format-explainer')} {
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 8vw;
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -23,21 +24,28 @@
 .#{organism('format-explainer')} {
   
   &-visual {
+    grid-column: 1 / -1;
+    order: 2;
     position: relative;
     width: 100%;
-    grid-column: 1 / -1;
 
     @media screen and (min-width: 1024px) {
       grid-column: 1 / 14;
+      order: inherit;
       padding-top: 7em;
     }
   }
   
   &-content {
     grid-column: 1 / -1;
+    width: 100%;
     margin-bottom: 0;
 
     @media screen and (min-width: 1024px) {
+      grid-column: 14 / 24;
+    }
+
+    @media screen and (min-width: 1280px) {
       grid-column: 14 / 22;
     }
   }
@@ -50,25 +58,57 @@
     margin-bottom: 2.250em;
   }
   
+  &-navigation {
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    margin: 0 -30px 2em;
+    padding: 0 15px 30px;
+    
+    @media screen and (min-width: 1024px) {
+      flex-direction: column;
+      max-width: 300px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
   &-button {
+    scroll-snap-align: start;
     @include hl;
     @include hl-h5;
+    line-height: 1;
     -webkit-appearance: none;
+    min-width: 160px;
     display: flex;
     align-items: center;
-    min-width: 300px;
     padding: 10px 20px;
-    margin: 0 0 1em;
+    margin: 0 15px 1em;
     text-align: left;
-    background: none transparent;
+    background-color: color('athens-gray');
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
+    @media screen and (min-width: 1024px) {
+      margin: 0 0 1em 0;
+      background: none transparent;
+    }
+
     &:focus {
       outline: none;
     }
+
     &.active {
       color: #fff;
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    &:hover {
+      background-color: color('athens-gray');
     }
     
     &-websites.active { @include gradient-websites; }
@@ -88,6 +128,14 @@
   }
   
   &-link {
-    margin: 6em 0 0;
+    grid-column: 1 / -1;
+    order: 3;
+    margin-top: 3em;
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 14 / 20;
+      order: inherit;
+      margin: 0;
+    }
   }
 }

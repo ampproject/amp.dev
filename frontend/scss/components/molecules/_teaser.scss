@@ -24,8 +24,8 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 @mixin teaser {
 	position: relative;
 	margin: 0 20px 2em 0;
-	flex: 1 0 85%;
-	scroll-snap-align: center;
+	flex: 1 0 15em;
+	scroll-snap-align: start;
 	
 	@media screen and (min-width: 575px) {
 		margin: 0 0 2em;

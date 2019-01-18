@@ -8,7 +8,9 @@
 *.log
 node_modules
 .com.apple.timemachine.supported
+.checksums
 
+dist
 build
 assets/css/*
 .depcache.json
@@ -30,3 +32,4 @@ pages/content/amp-dev/documentation/components/reference/*.md
 # Ignore files created during build process
 platform/pages
 platform/static
+package-lock.json

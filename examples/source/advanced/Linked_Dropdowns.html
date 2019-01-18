@@ -1,6 +1,7 @@
 <!---
 
 preview: default
+category: 'dynamic-content'
 
 --->
 
@@ -67,9 +68,9 @@ preview: default
     and it renders its template using the data in the `cities` array.
   -->
   <div class="linked-dropdown">
-    <amp-list layout="fixed-height" 
-              height="25" 
-              src="<%host%>/json/linked_dropdowns.json" 
+    <amp-list layout="fixed-height"
+              height="25"
+              src="<%host%>/json/linked_dropdowns.json"
               single-item items="." noloading>
       <template type="amp-mustache">
         <label for="country">Country:</label>
@@ -82,17 +83,17 @@ preview: default
         {{/countries}}
         </select>
       </template>
-      <div placeholder role="listitem"> 
+      <div placeholder role="listitem">
         <label for="country">Country:</label>
         <select disabled>
           <option value="">Choose a country</option>
         </select>
       </div>
     </amp-list>
-    <amp-list layout="fixed-height" 
-              height="25" 
-              [src]="cities || '<%host%>/json/linked_dropdowns.json'" 
-              src="<%host%>/json/linked_dropdowns.json" 
+    <amp-list layout="fixed-height"
+              height="25"
+              [src]="cities || '<%host%>/json/linked_dropdowns.json'"
+              src="<%host%>/json/linked_dropdowns.json"
               single-item items="." noloading>
       <template type="amp-mustache">
         <label for="city">City:</label>
@@ -101,7 +102,7 @@ preview: default
           {{#cities}}<option value="{{.}}">{{.}}</option>{{/cities}}
         </select>
       </template>
-      <div placeholder role="listitem"> 
+      <div placeholder role="listitem">
         <label>City:</label>
         <select disabled>
           <option value="">Choose a city</option>

@@ -1,14 +1,14 @@
 <!---
 
 preview: default
+category: 'dynamic-content'
 
 --->
-
 <!--
   ## Introduction
 
   This sample demonstrastes a classic dropdown combo, with a text field which filters the dropdown elements
-  according to the user's input. The options are rendered via `amp-list`. 
+  according to the user's input. The options are rendered via `amp-list`.
 -->
 <!doctype html>
 <html ⚡>
@@ -38,9 +38,9 @@ preview: default
           --color-bg-light: #FAFAFC;
           --combo-box-width: 300px;
           --combo-box-height: 36px;
-          --space-1: .5rem;  
-          --space-2: 1rem; 
-          --space-3: 1.5rem;  
+          --space-1: .5rem;
+          --space-2: 1rem;
+          --space-3: 1.5rem;
           --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
         }
         .combobox {
@@ -111,12 +111,12 @@ preview: default
     </style>
 </head>
 <body>
-  <div class="preview-container"> 
+  <div class="preview-container">
 
-      <!-- 
+      <!--
         ## Data source
 
-        First we need to add a data source. Here we're using an inline `amp-state` declaration defining a list of `cities` in the US. 
+        First we need to add a data source. Here we're using an inline `amp-state` declaration defining a list of `cities` in the US.
         For long lists of suggestions, it's possible to fetch `amp-state` from a remote JSON endpoint using the `src` attribute.
       -->
       <amp-state id="cities">
@@ -173,13 +173,13 @@ preview: default
           "Trenton, New Jersey"
     ]</script></amp-state>
 
-        <!-- 
-          ## Filtering 
+        <!--
+          ## Filtering
 
           We define a helper function to filter the cities based on a given text input as an `amp-bind-macro`.
         -->
-        <amp-bind-macro id="filterCities" 
-                        arguments="query" 
+        <amp-bind-macro id="filterCities"
+                        arguments="query"
                         expression="cities.filter( city => city.toLowerCase().indexOf(query.toLowerCase()) >= 0 )">
         </amp-bind-macro>
 
@@ -189,7 +189,7 @@ preview: default
         </label>
         <div class="combobox">
         <!--
-          ## The text input 
+          ## The text input
 
           The implementation of the combobox is based on the [Autosuggest Sample](/advanced/autosuggest/). It takes an input field with auto suggestion and adds an additional button to expand and collapse the suggestions.  We listen to the [`input-debounced`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#input-elements) event
           for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. We also bind the input value
@@ -220,7 +220,7 @@ preview: default
           We use `amp-selector` to make the suggestions selectable. When the user clicks on a suggestions, the `select` event will be fired and the selected city
           will be written to the `city` variable: `city: event.targetOption`. The `filteredCities` will be cleared, which also results in the suggestion box being hidden.
 
-          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the  height in pixels of a single 
+          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the  height in pixels of a single
           suggestion.
         -->
         <amp-selector on="select:AMP.setState({

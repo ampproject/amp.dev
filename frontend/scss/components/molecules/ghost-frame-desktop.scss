@@ -24,8 +24,8 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   display: inline-block;
   height: auto;
   margin-bottom: auto;
-  max-width: calc((5/8) * 70vw);
-  padding: 4% 1% 1%;
+  max-width: calc((5/8) * 100vw);
+  padding: 5% 2% 2%;
   position: relative;
   width: 100%;
   z-index: 0;
@@ -43,6 +43,7 @@ The ghost frame desktop wraps an element with a desktop-like frame.
       -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
       inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
     transform:
       rotateX(45deg)
       rotateY(5deg)
@@ -62,17 +63,51 @@ The ghost frame desktop wraps an element with a desktop-like frame.
       -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
       inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform: rotateY(30deg);
+  }
+
+  &.right-flat {
+    -webkit-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
     transform:
-      rotateX(60deg)
+      rotateX(45deg)
       rotateY(-5deg)
-      rotateZ(30deg)
-      skewX(-20deg)
-      skewY(20deg);
+      rotateZ(50deg);
+  }
+
+  &.right {
+    -webkit-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform: rotateY(-30deg);
+    transform-origin: center;
   }
 
   // ui
   &:before {
-        background-image: radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%);
+    background-image: radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%);
     background-position: 0%, 2%, 4%;
     background-repeat: no-repeat;
     background-size: 4% 100%, 4% 100%, 4% 100%;
@@ -80,7 +115,7 @@ The ghost frame desktop wraps an element with a desktop-like frame.
     border-top-right-radius: calc(1rem/6);
     content: '';
     height: 3%;
-    left: 0;
+    left: 1%;
     position: absolute;
     top: 2%;
     width: 100%;

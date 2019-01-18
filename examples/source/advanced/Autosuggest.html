@@ -1,6 +1,7 @@
 <!---
 
 preview: default
+category: 'dynamic-content'
 
 --->
 <!--
@@ -9,8 +10,8 @@ preview: default
 This sample showcases how to implement an interactive autosuggest form field.
 The example below suggests cities in an address form, but the list of
 suggestions may contain any content, such as anticipated search queries, or
-product listings with images. You can see the full demo [here](./preview). For 
-a more complex example implementing an address input form with autosuggestion, 
+product listings with images. You can see the full demo [here](./preview). For
+a more complex example implementing an address input form with autosuggestion,
 take a look at [this sample](/advanced/autosuggest_form/).
 -->
 <!-- -->
@@ -71,10 +72,10 @@ take a look at [this sample](/advanced/autosuggest_form/).
   <body>
     <div class="preview-container" on="tap: AMP.setState({ filteredCities: [] })" tabindex="0" role="button">
 
-      <!-- 
+      <!--
         ## Data source
 
-        First we need to add a data source. Here we're using an inline `amp-state` declaration defining a list of `cities` in the US. 
+        First we need to add a data source. Here we're using an inline `amp-state` declaration defining a list of `cities` in the US.
         For long lists of suggestions, it's possible to fetch `amp-state` from a remote JSON endpoint using the `src` attribute.
       -->
       <amp-state id="cities">
@@ -157,7 +158,7 @@ take a look at [this sample](/advanced/autosuggest_form/).
           will be written to the `city` variable: `city: event.targetOption`. The `filteredCities` will be cleared, which also results in the suggestion box being hidden.
 
           The Suggestion box will appear below the input field once the user enters text into the input field. It uses an `amp-list` to dynamically render the filtered suggestions: `[src]="filteredCities"`.
-          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the height in pixels of a single 
+          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the height in pixels of a single
           suggestion.
         -->
         <amp-selector on="select:AMP.setState({

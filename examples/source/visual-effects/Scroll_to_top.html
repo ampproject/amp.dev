@@ -1,6 +1,7 @@
 <!---
 
 preview: default
+category: 'visual-effects'
 
 --->
 <!--
@@ -88,8 +89,8 @@ preview: default
 
   <!-- ## Position observer and animation
 
-    We add an element with id `top-page` that we can reference later for scrolling. We use `amp-position-observer` to start the animation when the user starts to scroll and the element 
-    at the top is no longer visible. 
+    We add an element with id `top-page` that we can reference later for scrolling. We use `amp-position-observer` to start the animation when the user starts to scroll and the element
+    at the top is no longer visible.
 
   -->
   <h3 class="target">
@@ -142,12 +143,12 @@ preview: default
      }
     </script>
   </amp-animation>
-  <!--     
+  <!--
     Here is a dummy spacer.
   -->
   <div class="spacer"></div>
   <!--## The scroll to top button -->
-  <!--     
+  <!--
     We use the `scrollTo` action to scroll the page when the button is tapped. Find more about actions [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md).
   -->
   <button id="scrollToTopButton" on="tap:top.scrollTo(duration=200)" class="scrollToTop">⌃</button>

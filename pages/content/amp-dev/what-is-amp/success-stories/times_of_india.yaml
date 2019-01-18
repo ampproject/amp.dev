@@ -1,0 +1,63 @@
+$title: Times of India
+
+stage:
+  headline: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP
+  subline: i am a subline
+  devices:
+    - image_src: ../../../static/img/success-stories/times_of_india/amp_toi_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Times of India
+
+kpis:
+  - value: 6x
+    text: more overall traffic
+
+  - value: 1.5x
+    text: more overall revenue
+
+  - value: 3.6x
+    text: improved load time on slow networks
+
+contents:
+
+  - layout: text
+    text: Gurugram-based Times Internet is a leading Indian digital-products company and the digital venture of BCCL, the country’s largest media and entertainment group. Times Internet reaches over 400 million monthly unique visitors, totalling 130 billion minutes spent on the web and mobile.
+    direction: left-flat
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/times_of_india/amp_toi_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Times of India
+    headline: Solution
+    text: Times Internet, as an early adopter of technology, has partnered with Google to launch an AMP version of its news sites. "We want to ensure that our customers get the best experience, irrespective of their connection speeds or where they access us from," says Rudra Prasad Kasturi, Times Internet vice president. “Since AMP helps in page load performance, we were excited to partner with Google on it.”
+    direction: left-flat
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/times_of_india/amp_toi_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    background: gradient
+    alt: Times of India
+    headline: Approach
+    text: An in-house team rolled out the first AMP pages within a week of the Google announcement, and optimized them for all page types across the sites. The rollout was progressive, depending on success and lessons learned. It began with a few sections of the Times of India, followed by the rest of the site, and eventually by eight Indian-languages sites as well.
+    direction: left-flat
+
+  - layout: quote
+    quote: "Developing your page in AMP is fairly simple and easy, and there is a lot of active support from the AMP project team for any implementation challenges."
+    image_src: ../../../static/img/success-stories/times_of_india/toi_logo.png
+    width: 100
+    height: 50
+    alt: Times of India
+    author: Puneet Walia, technology head, Times of India.
+    story_url: https://google.com
+
+  - layout: text-button
+    headline: Result
+    text: The digital giant soon saw benefits from AMP. “AMP's fast-loading web pages and caching layer helped in increasing total served and viewed impressions, thereby considerably increasing page CPMs with respect to normal web pages,” Kasturi explains. After implementing AMP, Times of India's overall traffic increased six-fold, revenue from Google Ads and their own ad network grew 1.5X, and page-load times improved 3.6X on slow 3G networks. Revenue, new users, and content consumption all improved as well, Kasturi adds.
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/Times_of_India.pdf

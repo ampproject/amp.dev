@@ -60,7 +60,7 @@ none
 				@include ico-2;
 				@include ico-square;
 				padding: 0.563em;
-				@include box-shadow;
+				box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.25);
 			}
 		}
 	}

@@ -23,6 +23,7 @@ const config = require('./config.js');
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
+  'sampleSources': require('./routers/sampleSources.js'),
   'playground': require('../../playground/backend/'),
 };
 
@@ -46,6 +47,7 @@ class Platform {
 
   _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
+    this.server.use(routers.sampleSources);
     this.server.use('/playground', routers.playground);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
