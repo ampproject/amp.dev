@@ -1,30 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const clientSecret = process.argv[2] || process.env.AMP_DOC_SECRET;
-const clientId = process.argv[3] || process.env.AMP_DOC_ID;
-const clientToken = process.env.AMP_DOC_TOKEN;
-const writeDestination = '../content/includes/roadmap.json';
-const templateSource = fs.readFileSync('../content/latest/roadmap.html', 'utf8')
-  .replace('$parent: /content/latest/latest.html', '$parent: /content/latest/roadmap.html')
-  .replace('\n$path: /{base}/', '');
-
-function slugify(text) {
-  return text.toString().toLowerCase()
-    .replace(/\s+/g, '-')           // Replace spaces with -
-    .replace(/[/&]/g, '-')           // Replace \ and & with dash
-    .replace(/[^\w-]+/g, '')       // Remove all non-word chars
-    .replace(/--+/g, '-')         // Replace multiple - with single -
-    .replace(/^-+/, '')             // Trim - from start of text
-    .replace(/-+$/, '');            // Trim - from end of text
-}
-
-// exit early if the proper environment variables aren't available
-if(!(clientToken || (clientSecret && clientId))) {
-  console.error('This script reads the roadmap from GitHub which requires providing either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET).  See README.md for more information.');
-  process.exit(1);
-}
-
+const {Signale} = require('signale');
 // initialize Github API with custom accept headers to be able to use
 // experimental Projects and Emoji APIs
 const octokit = require('@octokit/rest')({
@@ -33,19 +10,28 @@ const octokit = require('@octokit/rest')({
   }
 });
 
-// Authenticate using either a private token or oauth
-octokit.authenticate(clientToken ? {
+const gitHubImporter = require('./gitHubImporter');
+
+const DESTINATION_JSON = __dirname + '/../../../pages/content/amp-dev/community/roadmap.json';
+
+gitHubImporter.checkCredentials();
+octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
   type: 'token',
-  token: clientToken
+  token: gitHubImporter.CLIENT_TOKEN
 } : {
   type: 'oauth',
-  key: clientId,
-  secret: clientSecret
+  key: gitHubImporter.CLIENT_ID,
+  secret: gitHubImporter.CLIENT_SECRET
 });
 
-// From here on application code..
-async function importRoadmap() {
+const log = new Signale({
+  'interactive': true,
+  'scope': 'Roadmap Importer',
+});
 
+console.log(octokit.projects);
+
+async function importRoadmap() {
   const result = await octokit.projects.getProjectColumns({ project_id: '1344133' });
 
   // grab all card data for each column
@@ -54,12 +40,6 @@ async function importRoadmap() {
     // strip out stuff we don't need
     let cards = result.data.map(card => ({
       url: card.url,
-      /*id: card.id,
-      creator: {
-        username: card.creator.login,
-        avatarUrl: card.creator.avatar_url,
-        profileUrl: card.creator.html_url
-      },*/
       createdAt: card.created_at,
       updatedAt: card.updated_at,
       issueUrl: card.content_url
@@ -114,16 +94,14 @@ async function importRoadmap() {
     .reduce((acc, val) => acc.concat(val), [])
     .filter((value, index, self) => self.indexOf(value) === index);
 
-  // copy the roadmap page for each label (ugh, needed for filtering)
-  labels.forEach(label => {
-    fs.writeFileSync('../content/latest/roadmap/' + slugify(label) + '.html', templateSource);
-  });
-
   // Write finalized JSON to config file that gets imported by the roadmap template
-  fs.writeFileSync(writeDestination, JSON.stringify({ labels: labels, columns: columns }, null, '  '));
+  fs.writeFileSync(DESTINATION_JSON, JSON.stringify({ labels: labels, columns: columns }, null, '  '));
 
-  console.log('Successfully imported roadmap');
-
+  log.success('Successfully imported roadmap!');
 }
 
 importRoadmap();
+
+module.exports = {
+  'importRoadmap': importRoadmap
+}

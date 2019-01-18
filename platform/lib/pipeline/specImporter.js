@@ -16,7 +16,7 @@
 
 const path = require('path');
 
-const GitHubImporter = require('./gitHubImporter');
+const {GitHubImporter} = require('./gitHubImporter');
 
 // Where to save the documents to
 const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/';
