@@ -3,6 +3,8 @@
 {% block styles %}
 {{ super() }}
 
+{% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+
 {% do doc.styles.addCssFile('css/components/templates/examples/manual.css') %}
 
 {# Add eventual specific sample styles to page #}
