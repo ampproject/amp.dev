@@ -52,6 +52,7 @@ contents:
     headline: Results
     text: The team at Wired.com took a measured approach to rolling out AMP. They began by creating AMP pages for all stories published in 2016. After a few months of positive data with that group, they expanded coverage to include the entire 24-year archive of Wired.com, over 100k stories. There are a few exceptions, however. At the moment they currently exclude digital interactives, high impact feature stories, liveblogs (these pages will be implemented in AMP soon), and any story that has an image gallery in it.
     direction: left-flat
+    background: gray
 
   - layout: quote
     quote: „We’re exited to try more AMP features and see the format supported on a variety of new platforms.”

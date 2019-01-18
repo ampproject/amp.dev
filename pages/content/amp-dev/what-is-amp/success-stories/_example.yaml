@@ -71,3 +71,4 @@
 #   alt: <string>
 #   headline: <string> (optional)
 #   text: <string>
+#   download_url: [url]
