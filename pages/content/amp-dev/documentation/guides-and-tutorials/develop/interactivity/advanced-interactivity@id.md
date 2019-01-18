@@ -201,10 +201,3 @@ Kemudian, tambahkan pengikatan ke elemen [`<amp-img>`](/id/docs/reference/compon
 Catatan: Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `src` yang berbeda. Hal ini dapat dilakukan dengan mengganti 1 gambar dengan deretan gambar. Ringkasnya, tutorial ini menggunakan 1 gambar dengan berbagai pembesaran.
 
 **Cobalah**: Muat ulang halaman dan pilih warna kemeja yang berbeda. Saat Anda melakukannya, gambar carousel akan diupdate untuk menampilkan kemeja dengan warna yang dipilih.
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Sebelumnya</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Berikutnya</span></a>
-</div>
-

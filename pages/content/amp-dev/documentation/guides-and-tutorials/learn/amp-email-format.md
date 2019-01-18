@@ -1,10 +1,8 @@
 ---
 $title: AMPHTML email
 $order: 2
+toc: true
 ---
-
-
-[TOC]
 
 <!---
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.

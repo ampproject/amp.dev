@@ -43,6 +43,7 @@ class ComponentReferenceImporter extends GitHubImporter {
   async _importExtensionsDocs() {
     // Gives the contents of ampproject/amphtml/extensions
     let extensions = await this._repository.contentsAsync('extensions', this._latestReleaseTag);
+    const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 
     // As inside /extensions each component has its own folder filter
     // down by directory
@@ -63,6 +64,8 @@ class ComponentReferenceImporter extends GitHubImporter {
       } else {
         // Ensure that the document has a TOC
         document.toc = true;
+        // And try to add in the matching category
+        document.category = categories[extension.name];
         savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }

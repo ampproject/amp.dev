@@ -21,12 +21,12 @@
 
 .#{utility('header')} {
   width: 100%;
-  max-width: 1300px;
+  max-width: 2020px;
   margin: 0 auto;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 17;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
 
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
+  max-width: 1300px;
   @media screen and (min-width: 1024px) {
     flex-direction: row;
   }

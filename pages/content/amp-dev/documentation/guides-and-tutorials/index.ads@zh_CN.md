@@ -8,7 +8,7 @@ AMP 项目的目标是帮助提高网页加载速度，让用户获得最佳体�
 
 {{ image('/static/img/docs/ads/ads_in_amp.svg', 647, 263, alt='在 AMP 网页上投放广告', align='' ) }}
 
-1.  首先要有一个 AMP 网页，然后发布商在该网页上创建一个广告位来展示广告。传统的做法是插入一段 JavaScript 代码，但在 AMP 中，发布商需要在其 AMP 网页中为特定的广告网络添加 [`<amp-ad>`](/zh_cn/docs/reference/components/amp-ad.html) 标记。要了解详细信息，请参阅[在您的 AMP 网页中利用广告获利]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})指南。
+1.  首先要有一个 AMP 网页，然后发布商在该网页上创建一个广告位来展示广告。传统的做法是插入一段 JavaScript 代码，但在 AMP 中，发布商需要在其 AMP 网页中为特定的广告网络添加 [`<amp-ad>`](/zh_cn/docs/reference/components/amp-ad.html) 标记。要了解详细信息，请参阅[在您的 AMP 网页中利用广告获利]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})指南。
 
 2.  当用户加载 AMP 网页时，`<amp-ad>` 标记会向广告网络发送广告请求。为了将广告返回到 AMP 网页，广告网络需要构建一个 `amp-ad` 实现。要了解详细信息，请参阅[将广告网络集成到 AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md) 指南。
 
@@ -37,7 +37,7 @@ AMPHTML 广告是一种更快速、更精简且更安全地在网页上投放广
 
 请访问以下资源，开始了解 AMP 中的广告：
 
-* [在您的 AMP 网页中利用广告获利]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md', locale=doc.locale).url.path}})
+* [在您的 AMP 网页中利用广告获利]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})
 * [与 AMP 集成以投放展示广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}})
 * [AMPHTML 广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}})
  

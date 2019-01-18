@@ -169,9 +169,3 @@ $title: 使用远程数据
 ```
 
 **试试看**：如果您选择的尺寸不可用，您便无法将其加入购物车。
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md', locale=doc.locale).url.path}}"><span class="arrow-prev">上一页</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md', locale=doc.locale).url.path}}"><span class="arrow-next">下一页</span></a>
-</div>
-

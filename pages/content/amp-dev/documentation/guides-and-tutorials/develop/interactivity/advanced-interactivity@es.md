@@ -201,9 +201,3 @@ A continuación, agregue enlaces a los elementos [`<amp-img>`](/docs/reference/c
 Nota: En la práctica, cada imagen en el carrusel probablemente tendría un `src` diferente. Esto podría hacerse reemplazando la imagen única por una matriz de imágenes. Para simplificar, este tutorial utiliza una sola imagen con diferentes ampliaciones.
 
 **Pruébalo**: actualice la página y seleccione un color diferente para una camisa. Cuando lo hace, las imágenes del carrusel se actualizan para mostrar las camisetas del color seleccionado.
-
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Anterior</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md', locale=doc.locale).url.path}}"><span class="arrow-next">Próximo</span></a>
-</div>

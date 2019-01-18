@@ -1,19 +1,13 @@
 {# If the doc has content to render, render it and pluck out the TOC if needed #}
 {% if doc.html %}
-{% set has_toc = 'class="toc"' in doc.html %}
-
-{% if doc.toc or has_toc %}
-{% set toc = doc.html[0:doc.html.find('</div>') + 6] %}
 {% include '/views/partials/toc.j2' with context %}
-{% endif %}
 
 <section class="ad--content">
   {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
 
-  {% set content = doc.html.split('</div>', 1)[1] if has_toc else doc.html %}
-  {{ content|render|safe }}
+  {{ doc.html|render|safe }}
 
   {# Always assume doc.author and doc.translator are GitHub handles #}
   {% if doc.author %}

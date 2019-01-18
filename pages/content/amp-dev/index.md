@@ -2,6 +2,33 @@
 $title: Start
 $view: /views/home.j2
 
+news:
+  - title: News
+    image: /static/img/dummy-news-1.png
+    headline: Setka provides beautiful post design with AMP
+    date: September 26, 2018
+    url: /
+  - title: Announcement
+    image: /static/img/dummy-news-2.png
+    headline: Optimize yor AMP pages for high ad viewability Lorem
+    date: September 26, 2018
+    url: /
+  - title: News
+    image: /static/img/dummy-news-1.png
+    headline: Setka provides beautiful post design with AMP
+    date: September 26, 2018
+    url: /
+  - title: Announcement
+    image: /static/img/dummy-news-2.png
+    headline: Optimize yor AMP pages for high ad viewability
+    date: September 26, 2018
+    url: /
+  - title: News
+    image: /static/img/dummy-news-1.png
+    headline: Setka provides beautiful post design with AMP
+    date: September 26, 2018
+    url: /
+
 format_explainer:
   websites:
     name: websites
@@ -37,6 +64,46 @@ format_explainer:
 {% include 'views/partials/case-band.j2' %}
 </section>
 
+<section class="ad--news ad--container-fluid">
+  {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
+
+  <div class="ad-m-copy">
+    <h2>The latest News</h2>
+    <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">Subscribe</span>
+    </a>
+  </div>
+
+  <div class="ad-o-news">
+    <div class="ad-o-news-list">
+      {% for news in doc.news %}
+      <a class="ad-o-news-item" href="{{ news.url }}">
+        <div class="ad-o-news-card">
+          <div class="ad-o-news-title">{{ news.title }}</div>
+          <div class="ad-o-news-image">
+            <amp-img
+              src="{{ news.image }}"
+              layout="responsive"
+              width="16"
+              height="9">
+            </amp-img>
+          </div>
+          <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
+          <div class="ad-o-news-date">{{ news.date }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
 <section class="ad--format-explainer">
   <div class="ad-o-format-explainer ad--container-fluid">
     <amp-state id="formats">
@@ -65,35 +132,19 @@ format_explainer:
         }
       </script>
     </amp-state>
-    
+
     <amp-animation id="switchFormat" layout="nodisplay">
       <script type="application/json">
         [{
-          "duration": "1s",
+          "duration": "1.5s",
           "delay": "0s",
           "fill": "forwards",
-          "easing": "ease-out",
+          "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
           "iterations": "1",
           "selector": ".ad-o-format-explainer-visual",
           "keyframes": [{
-            "opacity": "0.5",
-            "transform": "translateX(-5%)"
-          },
-          {
-            "opacity": "1",
-            "transform": "translateX(0%)"
-          }]
-        },
-        {
-          "duration": "1s",
-          "delay": "0s",
-          "fill": "forwards",
-          "easing": "ease-out",
-          "iterations": "1",
-          "selector": ".ad-o-format-explainer-content",
-          "keyframes": [{
-            "opacity": "0.5",
-            "transform": "translateX(5%)"
+            "opacity": "0",
+            "transform": "translateX(-15%)"
           },
           {
             "opacity": "1",
@@ -102,7 +153,7 @@ format_explainer:
         }]
       </script>
     </amp-animation>
-    
+
     <div class="ad-o-format-explainer-visual">
       <div class="ad-o-format-explainer-visual-{{ doc.format_explainer.websites.name }}"
         [hidden]="activeFormat != '{{ doc.format_explainer.websites.name }}'">
@@ -121,11 +172,11 @@ format_explainer:
         {% include doc.format_explainer.websites.visual %}
       </div>
     </div>
-    
+
     <div class="ad-o-format-explainer-content ad-m-copy">
       <h2 class="ad-o-format-explainer-headline" [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h2>
       <p class="ad-o-format-explainer-copy" [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
-      
+
       <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
         [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
         on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'}),switchFormat.restart">
@@ -166,7 +217,7 @@ format_explainer:
         </div>
         <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.emails.name }}</span>
       </button>
-                
+
       <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-o-format-explainer-link ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -260,7 +311,7 @@ format_explainer:
     </div>
 
     <div class="ad-o-benefits-overview-link">
-      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
@@ -308,5 +359,73 @@ format_explainer:
 
   <div class="ad--container-fluid">
     {% include 'views/partials/case-grid.j2' %}
+  </div>
+</section>
+
+[bevel]
+
+<section class="ad--teaser-grid ad--container">
+[teaser-grid]
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[](content/shared/fill-ins/success-story.md)
+[/teaser-grid]
+
+  <div class="ad-m-copy">
+    <h2>Explore AMP<br> success stories</h2>
+    <p>Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.</p>
+
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">See all success stories</span>
+    </a>
+  </div>
+</section>
+
+<section class="ad--collaboration">
+  {% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
+
+  <div class="ad--container-fluid">
+    <h2>AMP is a dynamic<br> collaborative project</h2>
+
+    <div class="ad-m-collabo-card ad-m-collabo-card-1">
+      <div class="ad-m-collabo-card-image">
+        <amp-img
+          src="/static/img/dummy-collabo-image-1.png"
+          layout="responsive"
+          width="16"
+          height="9">
+        </amp-img>
+      </div>
+      <h3 class="ad-m-collabo-card-headline">Many ways for you to contribute</h3>
+      <p class="ad-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+    </div>
+
+    <div class="ad-m-collabo-card ad-m-collabo-card-2">
+      <div class="ad-m-collabo-card-image">
+        <amp-img
+          src="/static/img/dummy-collabo-image-2.png"
+          layout="responsive"
+          width="16"
+          height="9">
+        </amp-img>
+      </div>
+      <h3 class="ad-m-collabo-card-headline">Reporting issues with AMP</h3>
+      <p class="ad-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the <a href="#">issue tracker</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="ad--get-started ad--container">
+  {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+  <div class="ad-m-copy ad-m-copy-center">
+    <h2>Build your first AMP page now</h2>
+    <p>You don’t need to download AMP and no installation is required.<br> Because it is a open-source project, it is free!</p>
+    <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-a-btn">Get started</a>
   </div>
 </section>

@@ -1,0 +1,157 @@
+<!---
+
+preview: default
+
+--->
+<!--
+  ## Introduction
+
+  [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer)
+  combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) can be used to
+  implement a scroll to top button. This pattern is often used in e-commerce pages where the user has to scroll
+  through a long list of items.
+
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡>
+
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+  <!--  Import amp-position-observer extension -->
+  <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+
+  <!--  Import amp-animation extension -->
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+
+  <link rel="canonical" href="<%host%>/visual_effects/scroll_to_top/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!--
+    ## Styles
+
+    The CSS used for these samples are included here for reference.
+
+    These rules are simply needed to make the samples work but are not fundamental
+    to the concepts covered here.
+  -->
+  <style amp-custom>
+    :root {
+      --color-primary: #005AF0;
+      --color-secondary: #00DCC0;
+      --color-text-light: #fff;
+
+      --space-2: 1rem;   /* 16px */
+
+      --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+    .scrollToTop {
+      color: var(--color-text-light);
+      font-size: 1.4em;
+      box-shadow: var(--box-shadow-1);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      background: var(--color-primary);
+      z-index: 9999;
+      bottom: var(--space-2);
+      right: var(--space-2);
+      position: fixed;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spacer {
+      width: 100vw;
+      max-width: 700px;
+      height: 200vh;
+      background-color: var(--color-secondary);
+    }
+    /* we move the anchor down to componsate the fixed header */
+    .target {
+      position: relative;
+    }
+    .target-anchor {
+      position: absolute;
+      top: -72px;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ## Position observer and animation
+
+    We add an element with id `top-page` that we can reference later for scrolling. We use `amp-position-observer` to start the animation when the user starts to scroll and the element 
+    at the top is no longer visible. 
+
+  -->
+  <h3 class="target">
+    <a class="target-anchor" id="top"></a>
+    This is the target.
+    <amp-position-observer
+      on="enter:hideAnim.start; exit:showAnim.start"
+      layout="nodisplay">
+    </amp-position-observer>
+  </h3>
+
+  <!--
+    We use 2 `amp-animation` elements to trigger the visibility of the button.
+    The first one is for making the button visible...
+  -->
+  <amp-animation id="showAnim" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "200ms",
+         "fill": "both",
+         "iterations": "1",
+         "direction": "alternate",
+         "animations": [
+           {
+             "selector": "#scrollToTopButton",
+             "keyframes": [
+               { "opacity": "1", "visibility": "visible" }
+             ]
+           }
+         ]
+      }
+    </script>
+  </amp-animation>
+  <!-- ... and the second one is for adding the button.-->
+  <amp-animation id="hideAnim" layout="nodisplay">
+    <script type="application/json">
+      {
+       "duration": "200ms",
+         "fill": "both",
+         "iterations": "1",
+         "direction": "alternate",
+         "animations": [
+           {
+             "selector": "#scrollToTopButton",
+             "keyframes": [
+               { "opacity": "0", "visibility": "hidden" }
+             ]
+           }
+         ]
+     }
+    </script>
+  </amp-animation>
+  <!--     
+    Here is a dummy spacer.
+  -->
+  <div class="spacer"></div>
+  <!--## The scroll to top button -->
+  <!--     
+    We use the `scrollTo` action to scroll the page when the button is tapped. Find more about actions [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md).
+  -->
+  <button id="scrollToTopButton" on="tap:top.scrollTo(duration=200)" class="scrollToTop">⌃</button>
+
+</body>
+
+</html>

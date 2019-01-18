@@ -10,10 +10,12 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
 
 .#{molecule('code-snippet')} {
   max-width: 100vw;
@@ -31,6 +33,10 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
   @media screen and (min-width: 1024px) {
     margin-right: 0;
+  }
+
+  pre {
+    @include txt-mono;
   }
 
   .hll { background-color: #49483e }

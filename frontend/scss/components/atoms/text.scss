@@ -30,7 +30,8 @@
   }
 
   pre {
-    @include txt-2;
+    @include txt-mono;
+    @include txt-1;
   }
 
   ul,
@@ -44,5 +45,12 @@
     li {
       padding-left: 0.5em;
     }
+  }
+
+  hr {
+    height: 1px;
+    margin: 0.75em 0;
+    background-color: color('athens-gray');
+    border: none;
   }
 }

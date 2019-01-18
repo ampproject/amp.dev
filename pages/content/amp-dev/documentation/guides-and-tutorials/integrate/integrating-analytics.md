@@ -1,10 +1,8 @@
 ---
 $title: Integrating your analytics tool with AMP
 $order: 1
+toc: true
 ---
-
-
-[TOC]
 
 # Integrate your analytics tools in AMP HTML
 

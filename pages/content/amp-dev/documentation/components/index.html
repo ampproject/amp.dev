@@ -1,0 +1,47 @@
+---
+$title: Components
+$view: /views/overview/components-overview.j2
+$path: /documentation/components.html
+$hidden: true
+---
+<h1>The AMP component catalogue</h1>
+
+<p>The AMP HTML library provides components that are classified as:</p>
+<ul>
+  <li><b>built-in:</b> Components that are included in the base library, such as amp-img and amp-pixel.</li>
+  <li><b>extended:</b> Extensions to the base library that must be explicitly included in the document as custom elements</li>
+  <li><b>experimental</b>: Components that are released but are not yet ready for wide use.</li>
+</ul>
+
+<hr>
+
+{% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
+
+{% for category, components in g.categories('/content/amp-dev/documentation/components/reference') %}
+<div class="ad-o-teaser-grid">
+  <h2>{{ category }}</h2>
+  <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
+    {% for component in components %}
+    <div class="ad-m-teaser ad-m-teaser-component">
+      <a href="{{ component.url.path }}">
+        <div class="ad-m-teaser-card">
+          {% if component.formats %}
+          {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
+          <div class="ad-m-teaser-tags">
+            {% for format in component.formats %}
+            <div class="ad-m-tag ad-m-tag-{{ format }} ad-m-teaser-tag"></div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="ad-m-teaser-header">
+            <h4 class="ad-m-teaser-header-title">{{ component.title }}</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}

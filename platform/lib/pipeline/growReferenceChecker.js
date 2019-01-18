@@ -32,8 +32,8 @@ const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 /* eslint-disable max-len */
 const LOOKUP_TABLE = {
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-analytics.md': '/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-your-analytics-tools.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md': '/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md',
+  '/content/amp-dev/documentation/components/I/amp-img.md': '/content/amp-dev/documentation/components/reference/amp-img.md',
 };
 /* eslint-enable max-len */
 

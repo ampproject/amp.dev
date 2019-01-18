@@ -49,4 +49,9 @@ none
       grid-column: 10 / 19;
     }
   }
+  
+  &-center {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
 }

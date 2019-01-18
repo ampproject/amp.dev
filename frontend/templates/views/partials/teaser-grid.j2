@@ -153,7 +153,34 @@
     {% do doc.icons.useIcon('icons/example.svg') %}
 
     <div class="ad-m-teaser ad-m-teaser-example">
-      <div class="ad-m-teaser-linking">
+
+      {% if teaser.doc.used_components %}
+      <div class="ad-m-teaser-info">
+        <p>
+          <strong>{{ teaser.doc.used_components|length }} AMP components</strong> used
+        </p>
+      </div>
+
+      <div class="ad-m-teaser-content-hover">
+        <h5>Used components</h5>
+        <ul class="ad-m-teaser-content-hover-list">
+          {% for used_component in teaser.doc.used_components %}
+          <li class="ad-m-teaser-content-hover-list-item">
+            <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + used_component + '.md', locale=doc.locale).url.path }}" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        <a class="ad-m-lnk" href="{{ teaser.doc.url.path }}">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">{{ _('See example' ) }}</span>
+        </a>
+      </div>
+
+      {% endif %}
+
+      <a class="ad-m-teaser-linking" href="{{ teaser.doc.url|relative }}">
         <div class="ad-m-teaser-card">
           {% if teaser.image or True %}
           <div class="ad-a-img ad-m-teaser-image">
@@ -165,6 +192,8 @@
               alt="Dummy.">
             </amp-img>
           </div>
+          {% else %}
+          <div class="ad-m-teaser-fallback-image"></div>
           {% endif %}
 
           <div class="ad-m-teaser-content">
@@ -179,33 +208,9 @@
             <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
             <p class="ad-m-teaser-copy">{{ teaser.text }}</p>
           </div>
-          <div class="ad-m-teaser-info">
-            {% if teaser.doc.used_components %}
-            <p>
-              <strong>{{ teaser.doc.used_components|length }} AMP components</strong> used
-            </p>
-            {% endif %}
-          </div>
-
-          <div class="ad-m-teaser-content-hover">
-            <h5>Used components</h5>
-            <ul class="ad-m-teaser-content-hover-list">
-              {% for used_component in teaser.doc.used_components %}
-              <li class="ad-m-teaser-content-hover-list-item">
-                <a href="#" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-            <a class="ad-m-lnk" href="{{ teaser.doc.url.path }}">
-              <div class="ad-a-ico ad-m-lnk-icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-              </div>
-              <span class="ad-m-lnk-text">{{ _('See example' ) }}</span>
-            </a>
-          </div>
-
         </div>
-      </div>
+      </a>
+
     </div>
 
 
