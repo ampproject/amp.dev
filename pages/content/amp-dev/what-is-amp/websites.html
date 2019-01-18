@@ -8,6 +8,7 @@ $view: /views/overview/what-is-amp.j2
     <div class="ad--container">
       <div class="ad-o-stage-content">
           <div class="ad-o-stage-content-icon ad-a-ico">
+            {% do doc.icons.useIcon('icons/logo-white.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-white"></use></svg>
           </div>
 
@@ -201,6 +202,7 @@ $view: /views/overview/what-is-amp.j2
       <h1 class="ad-o-made-of-headline" amp-fx="fade-in fly-in-left"  data-duration="1s" data-fly-in-distance="5%">This is What AMP HTML is made of</h1>
     </div>
     <div class="ad--container-fluid">
+      {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
       {% set code_snippet = '      <html ⚡>
         <head>
           <meta charset="utf-8">

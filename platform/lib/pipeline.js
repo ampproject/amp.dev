@@ -34,6 +34,7 @@ const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
 const SamplesBuilder = require('./pipeline/samplesBuilder');
+const roadmapImporter = require('./pipeline/roadmapImporter');
 const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
@@ -197,6 +198,14 @@ class Pipeline {
     await importer.initialize();
 
     return importer.import();
+  }
+
+  /**
+   * Imports the data needed to render the roadmap
+   * @return {Promise}
+   */
+  importRoadmap() {
+    return roadmapImporter.importRoadmap();
   }
 
   /**
