@@ -1,13 +1,14 @@
 <!---
 
 preview: default
+category: 'dynamic-content'
 
 --->
 
 <!--
   ## Introduction
 
-  This sample demonstrates different approaches for how to implement a multi-step flow in AMP. These could 
+  This sample demonstrates different approaches for how to implement a multi-step flow in AMP. These could
   be used for checkout flows, sign-ups or surveys.
 -->
 <!-- -->
@@ -26,7 +27,7 @@ preview: default
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
- 
+
 <style amp-custom>
 :root {
   --color-primary: #005AF0;
@@ -90,7 +91,7 @@ preview: default
 .stepper.simple .bottom-bar .button-prev {
   position: absolute;
   height: 100%;
-  border: none;  
+  border: none;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
@@ -413,7 +414,7 @@ We update the `currentPage` variable to progress forward in the dialog. In this 
 ```
 -->
   <div class="stepper simple">
-    <section [hidden]="currentPage > 0"> 
+    <section [hidden]="currentPage > 0">
       <div class="top-bar">
         Step 1
       </div>
@@ -429,7 +430,7 @@ We update the `currentPage` variable to progress forward in the dialog. In this 
                 >next</button>
       </div>
     </section>
-    <section hidden [hidden]="currentPage != 1"> 
+    <section hidden [hidden]="currentPage != 1">
       <div class="top-bar">
         Step 2
       </div>
@@ -446,7 +447,7 @@ We update the `currentPage` variable to progress forward in the dialog. In this 
                 >next</button>
       </div>
     </section>
-    <section hidden [hidden]="currentPage != 2"> 
+    <section hidden [hidden]="currentPage != 2">
       <div class="top-bar">
         Step 3
       </div>
@@ -464,22 +465,22 @@ We update the `currentPage` variable to progress forward in the dialog. In this 
   <h2 class="preview-only">A vertical Stepper</h2>
   <p>Use the browser back button to go to the previous view.</p>
 <!-- ## A vertical Stepper -->
-<!-- Vertical steppers work well if steps depend on each other. The stepper is implemented similar to the first sample using a 
-  `currentStep` variable to keep track of the currently active step. We additionally define a step title button which is always visible 
-  and shows the status of the current step. The title needs to reflect three different states (active, complete, disabled). To avoid too complex amp-bind expressions, the three states are split into three different bindings:    
+<!-- Vertical steppers work well if steps depend on each other. The stepper is implemented similar to the first sample using a
+  `currentStep` variable to keep track of the currently active step. We additionally define a step title button which is always visible
+  and shows the status of the current step. The title needs to reflect three different states (active, complete, disabled). To avoid too complex amp-bind expressions, the three states are split into three different bindings:
 
   * The title class gets updated if the current step is active.
   * The title gets a `disabled` attribute if the **previous** step has not yet been completed
-  * The nested icon's class gets set to `step-complete` or `step-incomplete` based on whether the step has finished. 
+  * The nested icon's class gets set to `step-complete` or `step-incomplete` based on whether the step has finished.
 
 Clicking on the title will go to the corresponding step (if already possible):
 
   ```html
-  <button class="step-title" 
-      [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'" 
+  <button class="step-title"
+      [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'"
        disabled [disabled]="!animalSelected"
        on="tap:AMP.pushState({ currentStep: 1 })">
-    <i class="step-incomplete" 
+    <i class="step-incomplete"
        [class]="colorSelected ? 'step-complete' : 'step-incomplete'" data-step-nr="2"></i>
        Color
   </button>
@@ -493,18 +494,18 @@ By default, the Continue button is disabled. Only when the step is completed (in
     continue
   </button>
 ```
-  
+
   Here is the full example:
 -->
   <div class="stepper vertical">
-    <button class="step-title step-active" 
-        [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
+    <button class="step-title step-active"
+        [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'"
          on="tap:AMP.pushState({ currentStep: 0 })">
-      <i class="step-incomplete" 
+      <i class="step-incomplete"
          [class]="animalSelected ? 'step-complete' : 'step-incomplete'" data-step-nr="1"></i>
          Animal
     </button>
-    <section [hidden]="currentStep > 0"> 
+    <section [hidden]="currentStep > 0">
       <div class="content">
         <p>What's your favorite animal?</p>
         <amp-selector on="select:AMP.setState({animalSelected: true})" class="poll" name="animal-poll">
@@ -518,15 +519,15 @@ By default, the Continue button is disabled. Only when the step is completed (in
         </button>
       </div>
     </section>
-    <button class="step-title" 
-        [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'" 
+    <button class="step-title"
+        [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'"
          disabled [disabled]="!animalSelected"
          on="tap:AMP.pushState({ currentStep: 1 })">
-      <i class="step-incomplete" 
+      <i class="step-incomplete"
          [class]="colorSelected ? 'step-complete' : 'step-incomplete'" data-step-nr="2"></i>
          Color
     </button>
-    <section hidden [hidden]="currentStep != 1"> 
+    <section hidden [hidden]="currentStep != 1">
       <div class="content">
         <p>What's your favorite color?</p>
         <amp-selector on="select:AMP.setState({colorSelected: true})" class="poll" name="color-poll">
@@ -540,15 +541,15 @@ By default, the Continue button is disabled. Only when the step is completed (in
         </button>
       </div>
     </section>
-    <button class="step-title" 
-        [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'" 
+    <button class="step-title"
+        [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'"
          disabled [disabled]="!colorSelected"
          on="tap:AMP.pushState({ currentStep: 2 })">
-      <i class="step-incomplete" 
+      <i class="step-incomplete"
          [class]="fruitSelected ? 'step-complete' : 'step-incomplete'" data-step-nr="3"></i>
          Fruit
     </button>
-    <section hidden [hidden]="currentStep != 2"> 
+    <section hidden [hidden]="currentStep != 2">
       <div class="content">
         <p>What's your favorite fruit?</p>
         <amp-selector on="select:AMP.setState({fruitSelected: true})" class="poll" name="fruit-poll">
@@ -567,12 +568,12 @@ By default, the Continue button is disabled. Only when the step is completed (in
   <h2 class="preview-only">Stepper with Sliding Animation</h2>
   <p>Use the browser back button to go to the previous view.</p>
   <!-- ## Stepper with Sliding Animation -->
-  <!-- This sample demonstrates a simple sliding animation visualising the dialog progress. The basic approach is 
-  the same as in the previous two samples: a variable keeps track of the current page. The only difference is 
+  <!-- This sample demonstrates a simple sliding animation visualising the dialog progress. The basic approach is
+  the same as in the previous two samples: a variable keeps track of the current page. The only difference is
   that here we can't use the `hidden` attribute as we want to transition between the different pages. The `hidden`
-  attribute uses `display: none`, which cannot be animated in CSS. Instead we use three different CSS classes (`active`, 
+  attribute uses `display: none`, which cannot be animated in CSS. Instead we use three different CSS classes (`active`,
   `next` and `previous`) to slide between the different pages:
-  
+
 ```css
   .page.active {
     transform: translateX(0%);
@@ -593,8 +594,8 @@ By default, the Continue button is disabled. Only when the step is completed (in
   For each page we assign the matching class based on whether the page index is smaller, same or larger:
 
   ```html
-    <section class="page next" 
-             [class]="slidingStepperPage < 1 ? 'page next' : 
+    <section class="page next"
+             [class]="slidingStepperPage < 1 ? 'page next' :
                       (slidingStepperPage > 1 ? 'page previous' : 'page active')"> ...</section>
    ```
 
@@ -602,14 +603,14 @@ By default, the Continue button is disabled. Only when the step is completed (in
    in hidden steps, e.g.:
 
    ```html
-     <input type="text" value="" name="password" 
+     <input type="text" value="" name="password"
             disabled [disabled]="slidingStepperPage != 1" ...>
    ```
 
    We sync the entered email address between the two steps using an amp-state variable `email`:
 
    ```html
-      <input type="email" value="" name="email" 
+      <input type="email" value="" name="email"
                on="input-debounced: AMP.setState({ email: event.value })" ...>
         ...
       <button class="back" [text]="email" ...></button>
@@ -617,7 +618,7 @@ By default, the Continue button is disabled. Only when the step is completed (in
 
    Here is the full example:
   -->
-  <form class="stepper sliding" 
+  <form class="stepper sliding"
         method="post"
         action-xhr="/components/amp-form/submit-form-input-text-xhr"
         novalidate
@@ -625,8 +626,8 @@ By default, the Continue button is disabled. Only when the step is completed (in
             submit-success: AMP.setState({ slidingStepperPage: 3 });
             submit-error: AMP.setState({ slidingStepperPage: 4 });
         ">
-    <section class="page active" 
-             [class]="slidingStepperPage > 0 ? 'page previous' : 'page active'"> 
+    <section class="page active"
+             [class]="slidingStepperPage > 0 ? 'page previous' : 'page active'">
       <h3>Sign in</h3>
       <div class="input">
         <input type="email" value="" name="email" autocomplete="email" id="id1" placeholder="Enter your Email"
@@ -638,9 +639,9 @@ By default, the Continue button is disabled. Only when the step is completed (in
       <button type="button" on="tap:AMP.pushState({ slidingStepperPage: slidingStepperPage + 1 })"
               disabled [disabled]="!email">next</button>
     </section>
-    <section class="page next" 
-             [class]="slidingStepperPage < 1 ? 'page next' : 
-             (slidingStepperPage > 1 ? 'page previous' : 'page active')"> 
+    <section class="page next"
+             [class]="slidingStepperPage < 1 ? 'page next' :
+             (slidingStepperPage > 1 ? 'page previous' : 'page active')">
       <h3>Welcome</h3>
       <button class="back" [text]="email" on="tap:AMP.pushState({ slidingStepperPage: slidingStepperPage - 1 })"
             disabled [disabled]="slidingStepperPage != 1" type="button"></button>
@@ -655,20 +656,20 @@ By default, the Continue button is disabled. Only when the step is completed (in
       <button disabled [disabled]="slidingStepperPage != 1 || !password"
               type="submit">submit</button>
     </section>
-    <section class="page next" 
-             [class]="slidingStepperPage < 2 ? 'page next' : 
-             (slidingStepperPage > 2 ? 'page previous' : 'page active')"> 
+    <section class="page next"
+             [class]="slidingStepperPage < 2 ? 'page next' :
+             (slidingStepperPage > 2 ? 'page previous' : 'page active')">
         <p>Submitting ...</p>
     </section>
-    <section class="page next" 
-             [class]="slidingStepperPage < 3 ? 'page next' : 
-             (slidingStepperPage > 3 ? 'page previous' : 'page active')"> 
+    <section class="page next"
+             [class]="slidingStepperPage < 3 ? 'page next' :
+             (slidingStepperPage > 3 ? 'page previous' : 'page active')">
         <h3>Success</h3>
         <p>You did it!</p>
     </section>
-    <section class="page next" 
-             [class]="slidingStepperPage < 4 ? 'page next' : 
-             (slidingStepperPage > 4 ? 'page previous' : 'page active')"> 
+    <section class="page next"
+             [class]="slidingStepperPage < 4 ? 'page next' :
+             (slidingStepperPage > 4 ? 'page previous' : 'page active')">
       <h3>Something went wrong. </h3>
       <button on="tap:AMP.setState({ slidingStepperPage: 0 })" type="button">Try again</button>
     </section>

@@ -1,6 +1,7 @@
 <!---
 
 preview: default
+category: 'layout'
 
 --->
 
@@ -24,7 +25,7 @@ preview: default
     <!-- Import `amp-selector` component in the header which we'll use to implement the tab switching. -->
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <!-- There's just a bit of CSS that's needed. -->
-    <style amp-custom>       
+    <style amp-custom>
         :root {
           --color-primary: #005AF0;
           --space-1: .5rem;  /* 8px */
@@ -90,8 +91,8 @@ preview: default
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
-    <!-- 
-      ## Simple tabs using a flex layout 
+    <!--
+      ## Simple tabs using a flex layout
 
       This is the most basic example with three panels. Each `tabpanel` is defined below it's `tab` and is hidden by default. Only if a `tab` is selected, the `tabpanel` is set to visible via the following CSS rule:
 
@@ -136,7 +137,7 @@ preview: default
     <!--
       ## A more flexible tab layout with two amp-selectors
 
-      If for any reason, the flex layout based approach is not feasible, it's possible to implement tabs and tabpanels using two different `amp-selectors`. 
+      If for any reason, the flex layout based approach is not feasible, it's possible to implement tabs and tabpanels using two different `amp-selectors`.
      -->
     <div>
       <amp-selector class="tabs-with-selector" role="tablist"

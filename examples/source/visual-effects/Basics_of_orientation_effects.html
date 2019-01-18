@@ -1,6 +1,7 @@
 <!---
 
 preview: default
+category: 'visual-effects'
 
 --->
 
@@ -22,11 +23,11 @@ preview: default
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- ## Setup 
+  <!-- ## Setup
 
     [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer) is a
     functional component that monitors the orientation of the device as it moves,
-    and dispatches `alpha`, `beta` and `gamma` events dependant on what axis the device has moved in. 
+    and dispatches `alpha`, `beta` and `gamma` events dependant on what axis the device has moved in.
     For more details on DeviceOrientationEvents read this [article on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation).
 
     These events in return can be used to `seek` animation timelines
@@ -35,7 +36,7 @@ preview: default
   -->
   <script async custom-element="amp-orientation-observer" src="https://cdn.ampproject.org/v0/amp-orientation-observer-0.1.js"></script>
 
-  <!--  
+  <!--
   [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a UI component
   that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and
   run keyframe animations in AMP documents.
@@ -95,7 +96,7 @@ preview: default
   <!--
     ## Tilt based scroll animations
 
-    Let's create a tilt based scroll animation where you can scroll up 
+    Let's create a tilt based scroll animation where you can scroll up
     and down on a page as you tilt a device along the y axis.
 
     This sample showcases the core concept behind combining
@@ -103,9 +104,9 @@ preview: default
     through a keyframe animation timeline as the device is tilted.
 
     Our scroll scene is a `div` with some Lorem Ipsum text in it. We add an
-    `amp-orientation-observer` element as child of the scene to monitor the device's position. 
+    `amp-orientation-observer` element as child of the scene to monitor the device's position.
     Let's take a look at the details:
-    - **`on:beta`**: This event is triggered by orientation observer as deivce orientation 
+    - **`on:beta`**: This event is triggered by orientation observer as deivce orientation
     along the `beta` axis changes. The event provides a percentage value
     (decimal between 0 and 1) representing how far the device is within the `beta` axis.
     - **`anim.seekTo(percent=event.percent)`**: We will define an `amp-animation`
@@ -113,11 +114,11 @@ preview: default
     `amp-animation` by triggering a `seekTo` action on the animation as `beta` events occurs.
     This is how we specify that we like to progress through the animation
     timeline as the device moves along the `beta` axis.
-    - **`beta-range`**: Each axis has a range of degrees it tracks. 
-    For the `beta` axis the default range is -180 to 180 degrees. 
-    If you want to set the range to something custom as we do in this 
-    case you can specify it using the `beta-range` attribute here. 
-    In this sample we set the `beta-range` to "0 180" to make sure that 
+    - **`beta-range`**: Each axis has a range of degrees it tracks.
+    For the `beta` axis the default range is -180 to 180 degrees.
+    If you want to set the range to something custom as we do in this
+    case you can specify it using the `beta-range` attribute here.
+    In this sample we set the `beta-range` to "0 180" to make sure that
     the text doesn't scroll beyond it's first paragraph.
   -->
   <div id="scrollText">
@@ -136,7 +137,7 @@ preview: default
 
       Curabitur dignissim consequat ante, quis facilisis ipsum faucibus nec. Suspendisse potenti. Mauris lorem eros, finibus id tincidunt quis, bibendum at urna. Aenean quis tortor ultricies, sodales ipsum id, imperdiet felis. Maecenas vestibulum cursus est convallis imperdiet. In convallis tempus lacus, suscipit tempus turpis mattis id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin massa massa, molestie eu pretium in, eleifend vel erat. Pellentesque dictum turpis sit amet neque elementum aliquam a sed metus. Donec dignissim laoreet massa vel vehicula. Praesent pretium arcu consequat augue dignissim, at ultrices quam placerat. Proin justo odio, fermentum sed malesuada eu, facilisis non quam. In molestie enim nec ligula tempus, sed condimentum dui molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, lacus cursus varius malesuada, lacus enim blandit ipsum, non hendrerit est sapien et ex. Nullam quis pulvinar nulla, vitae venenatis massa.
 
-      In mattis at eros id ullamcorper. Aenean ac hendrerit magna. Sed volutpat sapien quis justo accumsan eleifend. Praesent lobortis, velit sed elementum molestie, urna nibh malesuada lacus, vitae efficitur tellus elit ac augue. Aliquam erat volutpat. Praesent ultricies felis erat, ut luctus nulla pellentesque in. Etiam lacinia neque id neque egestas tempor.      
+      In mattis at eros id ullamcorper. Aenean ac hendrerit magna. Sed volutpat sapien quis justo accumsan eleifend. Praesent lobortis, velit sed elementum molestie, urna nibh malesuada lacus, vitae efficitur tellus elit ac augue. Aliquam erat volutpat. Praesent ultricies felis erat, ut luctus nulla pellentesque in. Etiam lacinia neque id neque egestas tempor.
       <h3>End of text</h3>
     </div>
   </div>
@@ -170,9 +171,9 @@ preview: default
   <!--
     ## Tilt based translation animations
 
-    Let's create a tilt based animation where the clock's hand moves 
-    as you tilt the device along a specific axis. The first animation 
-    is along the `beta` axis, to see this in action rotate your phone along the y axis. 
+    Let's create a tilt based animation where the clock's hand moves
+    as you tilt the device along a specific axis. The first animation
+    is along the `beta` axis, to see this in action rotate your phone along the y axis.
   -->
 
   <div id="clock-scene-1" class="clock-scene">
@@ -187,8 +188,8 @@ preview: default
   </div>
 
   <!--
-    The animation in this case is a rotation of the clock hand from 
-    -180 degrees to 180 degrees to allow the hand to start and end at 
+    The animation in this case is a rotation of the clock hand from
+    -180 degrees to 180 degrees to allow the hand to start and end at
     the 12 o' clock position.
   -->
 
@@ -214,7 +215,7 @@ preview: default
   <p>Rotate phone along X axis</p>
   <!--
     The second animation is along the `gamma` axis, to see this in action rotate your phone along the x axis:
-  -->  
+  -->
   <div id="clock-scene-2" class="clock-scene">
     <amp-orientation-observer
       on="gamma:clockAnim2.seekTo(percent=event.percent)"
@@ -226,9 +227,9 @@ preview: default
   </div>
 
   <!--
-    The animation in this case is a rotation of the clock hand from 
-    -270 degrees to 90 degrees to allow the hand to start and end at 
-    the 12 o' clock position. The motion here is limited from the 
+    The animation in this case is a rotation of the clock hand from
+    -270 degrees to 90 degrees to allow the hand to start and end at
+    the 12 o' clock position. The motion here is limited from the
     9 o' clock position to the 3 o' clock position.
   -->
 
@@ -254,7 +255,7 @@ preview: default
   <p>Rotate phone horizontally</p>
   <!--
     The third animation is along the `alpha` axis, to see this in action rotate your phone along the horizontal axis:
-  -->  
+  -->
   <div id="clock-scene-3" class="clock-scene">
     <amp-orientation-observer
       alpha-range="0 360"
@@ -267,8 +268,8 @@ preview: default
   </div>
 
   <!--
-    The animation in this case is a rotation of the clock hand from 
-    90 degrees to -270 degrees to allow the hand to start and end at 
+    The animation in this case is a rotation of the clock hand from
+    90 degrees to -270 degrees to allow the hand to start and end at
     the 12 o' clock position.
   -->
 
