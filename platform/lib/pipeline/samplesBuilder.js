@@ -38,6 +38,8 @@ const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
 const PATH_BASE = '/documentation/examples/';
 // Path the all source files are written to, to vend them via express
 const SOURCE_DEST = path.join(__dirname, `../../../dist/sampleSources`);
+// Path to store the cache in
+const CACHE_DEST = path.join(__dirname, `../../../.cache/samples.json`);
 
 class SamplesBuilder {
   constructor() {
@@ -48,6 +50,19 @@ class SamplesBuilder {
   }
 
   async build(watch) {
+    // If samples should be rebuild (due to architectural changes for example)
+    // then you should be able to clean the sample build destinations
+    if (!watch && config.options['clean-samples'] === true) {
+      this._log.info('Cleaning sample destinations for rebuild ...');
+      del.sync([
+        `${MANUAL_DEST}/**/*.html`,
+        `${MANUAL_DEST}/**/*.json`,
+        CACHE_DEST
+      ], {
+        'force': true
+      });
+    }
+
     if (!watch && config.environment == 'development' && module.parent) {
       this._watch();
     }
@@ -57,8 +72,12 @@ class SamplesBuilder {
     return new Promise((resolve, reject) => {
       let stream = gulp.src(SAMPLE_SRC, {'read': true});
 
-      // Only build samples changed since last run
-      // stream = stream.pipe(once());
+      // Only build samples changed since last run and if it's not a fresh build
+      if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
+        stream = stream.pipe(once({
+          'file': CACHE_DEST
+        }));
+      }
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
@@ -112,6 +131,8 @@ class SamplesBuilder {
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
+
+      //
 
       return parsedSample;
     });
