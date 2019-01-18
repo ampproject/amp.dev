@@ -82,7 +82,7 @@
         {# layout: text + media #}
         {% if content.layout == 'text-media' %}
           <div class="ad-o-text-media-block ad--container">
-            <div class="ad-m-text-media text">
+            <div class="ad-m-text-media text ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
             </div>
@@ -165,7 +165,7 @@
             </div>
             <div class="ad-m-quote-quote">
               <blockquote>
-                <p class="ad-a-txt">{{content.quote|safe}}<p>
+                <p class="ad-a-txt">{{content.quote|safe}}</p>
               </blockquote>
               <p>{{content.author|safe}}</p>
                 <a href="{{story_url}}" class="ad-m-lnk">
@@ -183,7 +183,7 @@
         {# layout: text with button #}
         {% if content.layout == 'text-button' %}
           <div class="ad-o-text-media-block ad--container">
-            <div class="ad-m-text-media text">
+            <div class="ad-m-text-media text ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
               <a href="{{content.download_url}}" download class="ad-m-lnk ad-m-lnk-square">
