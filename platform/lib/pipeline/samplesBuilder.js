@@ -16,6 +16,7 @@
 
 const {Signale} = require('signale');
 const gulp = require('gulp');
+const once = require('gulp-once');
 const abe = require('amp-by-example');
 const through = require('through2');
 const del = require('del');
@@ -61,6 +62,9 @@ class SamplesBuilder {
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(EXAMPLE_SRC, {'read': true});
+
+      // Only build samples changed since last run
+      stream = stream.pipe(once());
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);

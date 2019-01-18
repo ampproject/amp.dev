@@ -1,6 +1,7 @@
 <!---
 
 preview: default
+category: 'visual-effects'
 
 --->
 
@@ -60,8 +61,8 @@ preview: default
 
   <!-- ## The animation -->
   <!--
-    We want to show a snackbar that disappears after a few seconds. This could be easily accomplished by adding a CSS class using `amp-bind` to show the snackbar and then using CSS animations to hide the snackbar after a few seconds. However, with this approach it's not possible to trigger the snackbar multiple times (the newly added CSS class won't dissappear). 
-    
+    We want to show a snackbar that disappears after a few seconds. This could be easily accomplished by adding a CSS class using `amp-bind` to show the snackbar and then using CSS animations to hide the snackbar after a few seconds. However, with this approach it's not possible to trigger the snackbar multiple times (the newly added CSS class won't dissappear).
+
     We can solve this problem by using the [`amp-animation`](https://www.ampproject.org/docs/reference/components/amp-animation)  extension, which makes it possible to execute animations repeatedly. We define an animation that will slide-in the snackbar and then hide it after a few seconds using the `offset` attribute to time the different keyframes.
   -->
   <amp-animation id="snackbarSlideIn" layout="nodisplay">
@@ -81,7 +82,7 @@ preview: default
           {
             "transform": "translateY(0)", "offset": 0.9
           },
-          
+
           {
             "transform": "translateY(100%)"
           }

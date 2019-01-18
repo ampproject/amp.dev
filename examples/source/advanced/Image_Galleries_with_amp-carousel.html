@@ -1,3 +1,9 @@
+<!---
+
+preview: default
+category: 'media'
+
+--->
 <!--
   ## Introduction
 
@@ -19,7 +25,7 @@
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
   <!-- We sync the carousel state using the `amp-bind` component. -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-   <!-- The `amp-lightbox-gallery` component allows us to quickly create a lightbox gallery. --> 
+   <!-- The `amp-lightbox-gallery` component allows us to quickly create a lightbox gallery. -->
   <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
   <link rel="canonical" href="<%host%>/advanced/image_galleries_with_amp-carousel/">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -121,7 +127,7 @@
       z-index: 1000;
       /* some styling */
       color: var(--caption-color);
-      background: var(--caption-bg-color);      
+      background: var(--caption-bg-color);
     }
     /* expanded caption */
     .collapsible-captions figcaption.expanded {
@@ -151,7 +157,7 @@
       text-align: center;
       font-size: 12px;
       color: inherit;
-      cursor: pointer; 
+      cursor: pointer;
     }
   </style>
 </head>
@@ -217,7 +223,7 @@
 
   <!-- ## Collapsible Image Captions with `amp-bind`
 
-    Here is another workaround for image captions: expandable captions. The idea is to first show only the first line of a caption (using `text-overflow: ellipsis;`). When the user clicks on the caption, the caption is expanded to show the full text. This works by using `amp-bind` to toggle a CSS class `expanded` when the caption is clicked. 
+    Here is another workaround for image captions: expandable captions. The idea is to first show only the first line of a caption (using `text-overflow: ellipsis;`). When the user clicks on the caption, the caption is expanded to show the full text. This works by using `amp-bind` to toggle a CSS class `expanded` when the caption is clicked.
 
     This sample uses the trick described [here](/advanced/how_to_support_images_with_unknown_dimensions/) to ensure that images never overlap the caption. A positive side-effect is that image dimensions don't need to be known in advance either. This makes it a very flexible approach for an image carousel with images and captions of unknown size/length.
   -->
@@ -246,8 +252,8 @@
     </figure>
   </amp-carousel>
 
-  <!-- 
-    ## Linking carousels with `amp-bind` 
+  <!--
+    ## Linking carousels with `amp-bind`
 
     With [`amp-bind`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/amp-bind.md) it's possible to link carousel state across multiple `amp-carousels`.
     Whenever the carousel slide changes, it updates `selectedSlide`. This causes the `text`
@@ -261,7 +267,7 @@
 
     <amp-carousel controls
                   type="slides"
-                  width="400" 
+                  width="400"
                   height="300"
                   [slide]="selectedSlide" on="slideChange:AMP.setState({ selectedSlide: event.index })">
       <amp-img src="/img/image1.jpg" layout="fill"></amp-img>
@@ -280,10 +286,10 @@
       <amp-img option="2" src="https://unsplash.it/60/40?image=12" width="60" height="40" alt="a sample image"></amp-img>
       <amp-img option="3" src="https://unsplash.it/60/40?image=13" width="60" height="40" alt="a sample image"></amp-img>
     </amp-selector>
-    <amp-carousel id="carouselWithPreview" 
-                  width="400" 
-                  height="300" 
-                  layout="responsive" 
+    <amp-carousel id="carouselWithPreview"
+                  width="400"
+                  height="300"
+                  layout="responsive"
       type="slides"
       on="slideChange:carouselWithPreviewSelector.toggle(index=event.index, value=true)">
       <amp-img src="https://unsplash.it/400/300?image=10" layout="fill" alt="a sample image"></amp-img>
@@ -294,7 +300,7 @@
   </div>
 
   <!-- ## Image gallery with a preview carousel -->
-  <!-- You can even use a second carousel for the preview if a carousel contains a large number of images (make sure to use the `type=carousel` for the second one). 
+  <!-- You can even use a second carousel for the preview if a carousel contains a large number of images (make sure to use the `type=carousel` for the second one).
   Both carousels sync the selected element using the `goToSlide` action. -->
   <div>
     <amp-selector id="carouselSelector" on="select:carousel.goToSlide(index=event.targetOption)" layout="container">
@@ -319,10 +325,10 @@
         <amp-img option="17" src="https://unsplash.it/60/40?image=117" width="60" height="40" alt="a sample image"></amp-img>
       </amp-carousel>
     </amp-selector>
-    <amp-carousel id="carousel" 
-      width="400" 
-      height="300" 
-      layout="responsive" 
+    <amp-carousel id="carousel"
+      width="400"
+      height="300"
+      layout="responsive"
       type="slides"
       on="slideChange:
               carouselSelector.toggle(index=event.index, value=true),
@@ -349,8 +355,8 @@
     </amp-carousel>
   </div>
 
-  <!-- 
-    ## Image gallery with lightbox 
+  <!--
+    ## Image gallery with lightbox
 
     You can link an image gallery to a lightbox using [amp-lightbox-gallery](https://www.ampproject.org/docs/reference/components/amp-lightbox-gallery) so that:
 
@@ -367,11 +373,11 @@
     </amp-carousel>
   </div>
 
-  <!-- 
+  <!--
     ## Metadata
 
     The Top Stories carousel requires schema.org markup for one of the following types: Article, NewsArticle, BlogPosting, or VideoObject. If your Image Gallery is also a NewsArticle, you may want to mark it up as such:
-     
+
     ```html
     <script type="application/ld+json">
     [

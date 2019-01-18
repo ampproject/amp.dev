@@ -2,6 +2,7 @@
 
 preview: default
 experiments: [amp-list-resizable-children]
+category: 'dynamic-content'
 
 --->
 
@@ -158,17 +159,17 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
         <button amp-access="loggedIn" amp-access-hide on="tap:amp-access.login-sign-out">Logout</button>
         <h2>Comments</h2>
 
-        <!-- 
-          ## Listing all comments 
+        <!--
+          ## Listing all comments
 
           We use an `amp-list` to render existing comments to make sure that the latest comments appear if the page is loaded via the AMP Cache. As we don't know the number of comments in avance,
-          we add an `overflow` button. 
+          we add an `overflow` button.
         -->
         <amp-list id="comments"
-                  class="comments" 
-                  src="/samples_templates/comment_section/comments" 
-                  layout="fixed-height" 
-                  height="200" 
+                  class="comments"
+                  src="/samples_templates/comment_section/comments"
+                  layout="fixed-height"
+                  height="200"
                   items="."
                   single-item
                   binding="no"
@@ -193,30 +194,30 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
             </div>
           </div>
         </amp-list>
-        <!-- It's easy to implement a button to refresh the comments using the `amp-list`'s refresh action. We combine it 
+        <!-- It's easy to implement a button to refresh the comments using the `amp-list`'s refresh action. We combine it
           with the `changeLayoutToContainer` action to resize the `amp-list` to fit the updated content. -->
         <button on="tap: comments.changeToLayoutContainer, comments.refresh">Refresh comments</button>
 
         <!-- ## Writing a comment -->
 
-        <!-- 
-          Use `amp-form` for submitting a new comment. When the `submit-success` event is fired, we trigger a refresh 
+        <!--
+          Use `amp-form` for submitting a new comment. When the `submit-success` event is fired, we trigger a refresh
           of the comments list via the `refresh` action and resize the list via `changeToContainerLayout`. We also clear
           all form fields using the `clear` action.
         -->
-        <form id="comment" 
-              class="comment-form" 
-              amp-access="loggedIn" 
-              amp-access-hide 
-              method="post" 
-              action-xhr="/samples_templates/comment_section/comments/new" 
+        <form id="comment"
+              class="comment-form"
+              amp-access="loggedIn"
+              amp-access-hide
+              method="post"
+              action-xhr="/samples_templates/comment_section/comments/new"
               target="_top"
-              on="submit-success: 
-                    comments.changeToLayoutContainer, 
-                    comments.refresh, 
+              on="submit-success:
+                    comments.changeToLayoutContainer,
+                    comments.refresh,
                     comment.clear">
             <label for="ta1" class="">
-             Your comment: 
+             Your comment:
             </label>
             <template amp-access-template type="amp-mustache">
               <small>Logged in as <strong>{{name}}</strong>.</small>

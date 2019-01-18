@@ -1,3 +1,8 @@
+<!---
+
+category: 'dynamic-content'
+
+--->
 <!--
   ## Introduction
 
@@ -141,7 +146,7 @@
     value that is returned by our `/favorite` endpoint: `{{#.}}heart-fill{{/.}}`.
 
     We also declare a placeholder icon inside the `amp-list` using the `placeholder` attribute which
-    is shown while the `amp-list` is loading. 
+    is shown while the `amp-list` is loading.
 
     There are a few things that are happening when the user presses the favorite button:
 
@@ -151,7 +156,7 @@
     favorite state to the original version and show an error message (`favorite-failed-message.show`).
     * We hide any existing error messages (`favorite-failed-message.hide`).
     -->
-    <form class="favorite-button" 
+    <form class="favorite-button"
           method="post"
           action-xhr="/favorite"
           target="_top"

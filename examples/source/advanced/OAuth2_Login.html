@@ -1,9 +1,9 @@
 <!---
 
 preview: default
+category: 'personalization'
 
 --->
-
 <!--
 ## Introduction
 
@@ -29,7 +29,7 @@ to allow an OAuth2-based login flow on your AMP pages, such as Google, Facebook 
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-    <!-- 
+    <!--
       [amp-access](/components/amp-access) requires the definition of 3 endpoints as documented [here](https://www.ampproject.org/docs/reference/components/amp-access).
       This sample allows an user to login and logout using an OAuth2-based flow. Logout is implemented by configuring a second endpoint in the login property `sign-out`,
       find more [here](https://www.ampproject.org/docs/reference/components/amp-access#login-page).
@@ -52,12 +52,12 @@ to allow an OAuth2-based login flow on your AMP pages, such as Google, Facebook 
     </script>
   </head>
   <body>
-    <!-- 
+    <!--
       ## Implementation
-      
+
       We use `amp-access` to integrate an OAuth2-based login and to show and hide the login button depending on whether the user is logged in.
       `on="tap:amp-access.login-google-sign-in"` specifies which action should be taken when clicking on the login button:
-      `login` defines the property inside the `amp-access` json configuration, while `google-sign-in` defines the endpoint. 
+      `login` defines the property inside the `amp-access` json configuration, while `google-sign-in` defines the endpoint.
     -->
     <div amp-access="NOT loggedIn" amp-access-hide>
       <h3>Please login to view content</h3>
