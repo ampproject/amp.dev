@@ -9,15 +9,11 @@
 @import '../molecules/_copy';
 
 .#{utility('collaboration')} {
-  padding: 0 20px;
+  padding: 8vw 20px;
   background: #FAFAFC;
   
   @media screen and (min-width: 768px) {
-    padding: 30px;
-  }
-  
-  @media screen and (min-width: 1024px) {
-    padding: 0;
+    padding: 8vw 0;
   }
   
   h2 {
@@ -26,10 +22,7 @@
     @include hl;
     @include hl-lrg;
     text-align: center;
-    
-    @media screen and (min-width: 768px) {
-      margin-top: 10rem;
-    }
+    margin-top: 0;
   }
 }
 

@@ -9,11 +9,11 @@
 @import '../molecules/_copy';
 
 .#{utility('news')} {
-  background: linear-gradient(30deg, color('whisper') 30%, color('athens-gray') 100%);
-  margin-bottom: 8em;
+  background: linear-gradient(30deg, #fff 30%, color('athens-gray') 100%);
+  margin-bottom: 8vw;
 
-  .ad-m-copy {
-    padding: 20px 20px 0;
+  .#{molecule('copy')} {
+    padding: 2.5em 1.25em 0;
     margin: 0;
     
     @media screen and (min-width: 768px) {

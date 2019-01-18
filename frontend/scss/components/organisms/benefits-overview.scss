@@ -6,8 +6,11 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_headline.scss';
 
+.#{utility('benefits-overview')} {
+  margin-bottom: 4vw;
+}
+
 .#{organism('benefits-overview')} {
-  
   &-header {
     grid-column: 1 / 16;
 
