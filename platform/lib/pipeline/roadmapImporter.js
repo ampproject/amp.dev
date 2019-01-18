@@ -29,13 +29,11 @@ const log = new Signale({
   'scope': 'Roadmap Importer',
 });
 
-console.log(octokit.projects);
-
 async function importRoadmap() {
-  const result = await octokit.projects.getProjectColumns({ project_id: '1344133' });
+  const result = await octokit.projects.listColumns({ project_id: '1344133' });
 
   // grab all card data for each column
-  const columns = await Promise.all(result.data.map(column => octokit.projects.getProjectCards({ column_id: column.id }).then(result => {
+  const columns = await Promise.all(result.data.map(column => octokit.projects.listCards({ column_id: column.id }).then(result => {
 
     // strip out stuff we don't need
     let cards = result.data.map(card => ({
@@ -99,8 +97,6 @@ async function importRoadmap() {
 
   log.success('Successfully imported roadmap!');
 }
-
-importRoadmap();
 
 module.exports = {
   'importRoadmap': importRoadmap
