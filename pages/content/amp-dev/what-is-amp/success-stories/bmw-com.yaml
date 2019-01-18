@@ -1,0 +1,63 @@
+$title: BMW.com
+
+stage:
+  headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
+  subline: i am a subline
+  devices:
+    - image_src: https://placeimg.com/800/500/any
+      width: 8
+      height: 5
+      type: desktop
+      alt: lorem
+
+    - image_src: https://placeimg.com/400/300/any
+      width: 4
+      height: 3
+      type: tablet
+      alt: lorem
+
+    - image_src: https://placeimg.com/300/500/any
+      width: 3
+      height: 5
+      type: mobile
+      alt: lorem
+
+kpis:
+  - value: 3-4x
+    text: faster load times
+
+  - value: 30%
+    text: higher clickthrough to national websites
+
+  - value: 26%
+    text: more mobile users
+
+contents:
+  - layout: quote
+    quote: „We’re exited to try more AMP features and see the format supported on a variety of new platforms.”
+    image_src: https://placehold.it/100x50
+    width: 100
+    height: 50
+    alt: lorem
+    author: John Doe
+    story_url: https://google.com
+
+  - layout: text-media
+    image_src: https://placeimg.com/800/500/nature
+    width: 8
+    height: 5
+    type: desktop
+    alt: lorem ipsum
+    headline: Challenge
+    text: Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
+    direction: left-flat
+
+  - layout: text-media
+    image_src: https://placeimg.com/800/500/nature
+    width: 8
+    height: 5
+    type: desktop
+    alt: lorem ipsum
+    headline: Challenge
+    text: Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
+    direction: left-flat

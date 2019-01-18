@@ -1,0 +1,16 @@
+$title@: Success Stories
+$path: /success-stories/{base}.html
+$view: /views/detail/success-story-detail.j2
+$localization:
+  path: /{locale}/success-stories/{base}.html
+$order: 1
+
+index: /content/amp-dev/success-stories/index.md
+
+sub_navigation:
+    - /content/amp-dev/what-is-amp/websites.md
+    - /content/amp-dev/what-is-amp/stories.md
+    - /content/amp-dev/what-is-amp/ads.md
+    - /content/amp-dev/what-is-amp/email.md
+    - /content/amp-dev/what-is-amp/how-amp-works.md
+    - /content/amp-dev/what-is-amp/mission-and-vision.md
