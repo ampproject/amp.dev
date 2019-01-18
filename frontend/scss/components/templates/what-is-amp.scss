@@ -41,7 +41,30 @@
     @include container-fluid;
   }
 
+    
+  .#{utility('content')} {
+    @include default-section-padding;
+    .#{utility('container')} {
+      padding: 0;
+    }
+  }
+
+  .#{organism('component-visual')} {
+    &-copy {
+      @include default-section-padding;
+    }
+  }
+  .#{utility('case-band')} {
+    .#{molecule('copy')} {
+      @include default-section-padding;
+    }
+  }
+
   .#{organism('stage')} {
+    margin-bottom: 50px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
     &-content {
       margin: 85vw 0 20vw;
       @media screen and (min-width: 768px) {
@@ -63,5 +86,25 @@
     }
   }
 
+  .#{utility('kpi')} {
+    padding: 5rem 0;
+    
+    .#{molecule('kpi')} {
+      grid-column: span 8;
+      padding-bottom: 56.25%;
+
+      &:nth-child(3n+1) {
+        grid-column: 4 / 10;
+      }
+
+      &:nth-child(3n+2) {
+        grid-column: 10 / 16;
+      }
+
+      &:nth-child(3n+3) {
+        grid-column: 16 / 22;
+      }
+    }
+  }
 }
 
