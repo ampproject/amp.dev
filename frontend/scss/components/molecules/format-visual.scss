@@ -35,6 +35,10 @@ the border and format around the images.
     @include box-shadow;
     transform: rotate3d(-5, 5,-5 ,-40deg);
     transform-origin: bottom left;
+    max-width: 140px;
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   &-bottom-image {
@@ -55,8 +59,13 @@ the border and format around the images.
       @include txt;
       @include color-white;
       padding: 5px 10px;
-      margin-top: -40px;
+      margin-top: -32px;
       position: absolute;
+      font-size: 12px;
+      @media screen and (min-width: 768px) {
+        font-size: inherit;
+        margin-top: -40px;
+      }
     }
   }
 
@@ -64,6 +73,10 @@ the border and format around the images.
     position: absolute;
     margin-right: -15%;
     margin-top: -10%;
+    font-size: 12px;
+    @media screen and (min-width: 768px) {
+      font-size: inherit;
+    }
     transform: rotate3d(-55, 20, -40, -40deg);
     transform-origin: bottom left;
     animation: 5s ease-in-out 0.25s infinite bounce-code;

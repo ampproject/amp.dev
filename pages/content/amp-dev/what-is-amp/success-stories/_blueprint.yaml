@@ -8,7 +8,7 @@ $order: 1
 index: /content/amp-dev/success-stories/index.md
 
 sub_navigation:
-    - /content/amp-dev/what-is-amp/websites.md
+    - /content/amp-dev/what-is-amp/websites.html
     - /content/amp-dev/what-is-amp/stories.md
     - /content/amp-dev/what-is-amp/ads.md
     - /content/amp-dev/what-is-amp/email.md
