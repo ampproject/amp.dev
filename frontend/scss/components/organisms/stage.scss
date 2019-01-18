@@ -22,6 +22,18 @@
     grid-column: 13 / -1;
     margin-top: -8%;
 
+    .#{molecule('ghost-frame-mobile')} {
+      width: 10vw;
+    }
+
+    .#{molecule('ghost-frame-tablet')} {
+      width: 27vw;
+    }
+
+    .#{molecule('ghost-frame-desktop')} {
+      width: 45vw;
+    }
+
     @media screen and (min-width: 768px) {
       margin-top: -50%;
     }
