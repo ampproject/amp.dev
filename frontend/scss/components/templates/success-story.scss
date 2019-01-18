@@ -86,9 +86,5 @@
 
   .#{utility('quote')} {
     padding: 11rem 0;
-
-    & + div {
-      padding-bottom: 0;
-    }
   }
 }
