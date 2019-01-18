@@ -64,44 +64,46 @@ format_explainer:
 {% include 'views/partials/case-band.j2' %}
 </section>
 
-<section class="ad--news ad--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
+<section class="ad--news">
+  <div class="ad--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
 
-  <div class="ad-m-copy">
-    <h2>The latest News</h2>
-    <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+    <div class="ad-m-copy">
+      <h2>The latest News</h2>
+      <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
 
-    <a href="#" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Subscribe</span>
-    </a>
-  </div>
-
-  <div class="ad-o-news">
-    <div class="ad-o-news-list">
-      {% for news in doc.news %}
-      <a class="ad-o-news-item" href="{{ news.url }}">
-        <div class="ad-o-news-card">
-          <div class="ad-o-news-title">{{ news.title }}</div>
-          <div class="ad-o-news-image">
-            <amp-img
-              src="{{ news.image }}"
-              layout="responsive"
-              width="16"
-              height="9">
-            </amp-img>
-          </div>
-          <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
-          <div class="ad-o-news-date">{{ news.date }}</div>
+      <a href="#" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
+        <span class="ad-m-lnk-text">Subscribe</span>
       </a>
-      {% endfor %}
     </div>
-  </div>
 
+    <div class="ad-o-news">
+      <div class="ad-o-news-list">
+        {% for news in doc.news %}
+        <a class="ad-o-news-item" href="{{ news.url }}">
+          <div class="ad-o-news-card">
+            <div class="ad-o-news-title">{{ news.title }}</div>
+            <div class="ad-o-news-image">
+              <amp-img
+                src="{{ news.image }}"
+                layout="responsive"
+                width="16"
+                height="9">
+              </amp-img>
+            </div>
+            <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
+            <div class="ad-o-news-date">{{ news.date }}</div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section class="ad--format-explainer">
