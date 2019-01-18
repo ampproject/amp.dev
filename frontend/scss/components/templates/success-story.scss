@@ -17,10 +17,11 @@
 @import '../atoms/_text.scss';
 
 @import '../molecules/copy';
+@import '../molecules/ghost-frame-desktop.scss';
 @import '../molecules/ghost-frame-mobile.scss';
 @import '../molecules/ghost-frame-tablet.scss';
-@import '../molecules/ghost-frame-desktop.scss';
 @import '../molecules/quote';
+@import '../molecules/text-media.scss';
 
 @import '../organisms/ghost-frame-block.scss';
 @import '../organisms/text-media-block.scss';
@@ -73,5 +74,9 @@
         grid-column: 16 / 22;
       }
     }
+  }
+
+  .#{organism('text-media-block')} {
+
   }
 }
