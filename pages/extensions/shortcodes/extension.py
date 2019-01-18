@@ -26,10 +26,8 @@ class ShortcodesPreRenderHook(hooks.PreRenderHook):
         if isinstance(doc, static_document.StaticDocument):
             return False
 
-        # TODO: This is extremly ugly but without it Grow will cache
-        # the result of rendered shortcodes. At least try to only bust
-        # needed caches
-        doc.pod.podcache.reset()
+        # Do not cache rendered documents as it will kill shortcodes
+        doc.pod.podcache.document_cache.reset()
         return True
 
     def trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):

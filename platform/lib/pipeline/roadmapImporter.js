@@ -20,6 +20,8 @@ const log = new Signale({
 });
 
 async function importRoadmap() {
+  log.start('Starting import of roadmap.');
+
   gitHubImporter.checkCredentials();
   octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
     type: 'token',
@@ -32,6 +34,7 @@ async function importRoadmap() {
 
   const result = await octokit.projects.listColumns({ project_id: '1344133' });
 
+  log.await('Fetching cards per column ...');
   // grab all card data for each column
   const columns = await Promise.all(result.data.map(column => octokit.projects.listCards({ column_id: column.id }).then(result => {
 

@@ -40,5 +40,28 @@
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
+
+  .#{organism('stage')} {
+    &-content {
+      margin: 85vw 0 20vw;
+      @media screen and (min-width: 768px) {
+        margin: 7vw 0 11vw;
+      }
+    }
+  }
+
+  .#{molecule('format')} {
+    &-visual {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 60px 0 0 20vw;
+      @media screen and (min-width: 768px) {
+        padding: 0 0 0 7.5vw;
+        position: relative;
+      } 
+    }
+  }
+
 }
 

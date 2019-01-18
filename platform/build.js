@@ -57,7 +57,7 @@ pipeline.clean();
   }
 
   // // Create sample sources which get used while generating the pages
-  // await pipeline.buildSamples();
+  await pipeline.buildSamples();
 
   // Generate pages does not statically build the pages for development
   // but instead starts the development server
