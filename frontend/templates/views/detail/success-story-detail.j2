@@ -77,8 +77,8 @@
     {% if doc.contents %}
       {% for content in doc.contents %}
             {# layout: text #}
-            {% if content.layout == 'media-text' %}
-              <div class="media-text">
+            {% if content.layout == 'text-media' %}
+              <div class="ad-o-text-media">
                 <h2>{{content.headline|safe}}</h2>
                 <p>{{content.text|safe}}</p>
                 {% if content.type %}

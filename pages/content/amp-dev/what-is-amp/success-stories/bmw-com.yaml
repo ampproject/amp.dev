@@ -4,22 +4,22 @@ stage:
   headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
   subline: i am a subline
   devices:
-    # tablet
-    - image_src: https://placeimg.com/800/600/nature
-      # video_src: https://
-      width: 800
-      height: 600
-      type: tablet #(mobile, tablet, desktop)
-      # direction: #(left, right, left-flat, right-flat) optional
+    - image_src: https://placeimg.com/800/500/any
+      width: 8
+      height: 5
+      type: desktop
       alt: lorem
 
-    # mobile
-    - image_src: https://placeimg.com/400/600/nature
-      # video_src: https://
-      width: 400
-      height: 600
-      type: mobile #(mobile, tablet, desktop)
-      #direction: #(left, right, left-flat, right-flat) optional
+    - image_src: https://placeimg.com/400/300/any
+      width: 4
+      height: 3
+      type: tablet
+      alt: lorem
+
+    - image_src: https://placeimg.com/300/500/any
+      width: 3
+      height: 5
+      type: mobile
       alt: lorem
 
 kpis:
@@ -33,39 +33,20 @@ kpis:
     text: more mobile users
 
 contents:
-  # image + text
-  - image_src: https://placeimg.com/600/400/nature
-    #video_src: https://
-    width: 600
-    height: 400
-    type: mobile
-    direction: left-flat
-    alt: lorem
-    type: desktop
-    headline: Solution
-    text: "<b>BMW</b> set out to create a high-performance, mobile-first approach that offered entertaining stories, videos, and images to the target audience. Christian Liedgens, BMW digital marketer, says the company’s goals for the site were: “Speed, speed, speed, and highly engaging content based on data insights.” To create a new “main stage” for their brand, BMW turned to Hamburg-based digital agency Jung von Matt. The site incorporates a Progressive Web App (PWA) shell, which loads custom-built, all-AMP content to deliver a fast page experience for first and all following page visits. BMW and Jung von Matt are such strong believers in AMP that they used all across the completely relaunched BWM.com."
-
-  # image
-  - image_src: https://placeimg.com/600/400/nature
-    #video_src: https://
-    width: 600
-    height: 400
-    type: mobile #optional
-    direction: left-flat #optional
-    alt: lorem
-    type: desktop
-
-  # text
-  - headline: Results
-    text: "“We built the new mobile BMW.com from scratch with AMP,” Liedgens says. Development took about six months and dramatically increased performance. Once the new site launched in fall 2017, visitors began browsing colorful, informative, fast-loading article pages. The broad range of topics includes Automotive Life, Design, Innovation, Performance, and Models. “Inspiring articles and entertaining videos capture the users’ attention, answer questions about mobility, and let them feel the beauty of our brand,” BMW says. Plus, nearly one-third of visitors continue on to access information about models, products, and services in their countries with a single tap."
-
-  # text without headline
-  - text: "BMW’s goal was to have “the world’s fastest automotive content marketing website.” What most excites the company about the AMP pages, Liedgens says, is “the tremendous improvement in user experience due to the speed it provides.” The new website loads three to four times faster than before relaunch. The proportion of visitors clicking through from BMW.com to a national sales company (NSC) website has soared from 8 percent to 30 percent. The number of mobile users has climbed to 50 percent, up from 40 percent previously. Search engine optimization (SEO) delivers 49 percent more site visits than before. Overall, the company says, BMW.com now gives car lovers “a high-performance experience they’d only expect from a native app.”"
-
-  - quote: this is a quote
-    image_src: https://placegold.it/100x50
+  - layout: quote
+    quote: „We’re exited to try more AMP features and see the format supported on a variety of new platforms.”
+    image_src: https://placehold.it/100x50
     width: 100
     height: 50
     alt: lorem
-    author: john doe
+    author: John Doe
     story_url: https://google.com
+
+  - layout: text-media
+    image_src: https://placeimg.com/800/500/nature
+    width: 8
+    height: 5
+    type: desktop
+    alt: lorem ipsum
+    headline: eine headline
+    text: ein text
