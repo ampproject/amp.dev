@@ -1,5 +1,18 @@
 $title: BMW.com
 
+teaser:
+  image:
+    src: '/static/img/teaser-dummy-5x3-2.jpg'
+    width: 1
+    height: 1
+    alt: A placeholder image
+  logo:
+    src: '/static/img/logo-dummy-time.png'
+    width: 153
+    height: 38
+    alt: Teads
+  text: The story of the all-new BMW.com
+
 stage:
   headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
   subline: MAR 12, 2018
