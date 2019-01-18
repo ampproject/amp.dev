@@ -11,7 +11,17 @@
 .#{utility('stage')} {
   .#{organism('case-band')} {
     grid-column: 1 / -1;
-    margin-top: -30%;
+    width: 150vw;
+    padding-top: 84.43%;
+    margin-top: -40%;
+    margin-right: -150vw;
+    
+    @media screen and (min-width: 768px) {
+      width: 100%;
+      padding-top: 54.43%;
+      margin-top: -30%;
+      margin-right: 0;
+    }
   }
 
   .#{organism('ghost-frame-block')} {
