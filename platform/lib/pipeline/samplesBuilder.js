@@ -150,6 +150,7 @@ class SamplesBuilder {
     let manual = sample.clone();
     manual.contents = Buffer.from([
       '---',
+      '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + manual.relative,
