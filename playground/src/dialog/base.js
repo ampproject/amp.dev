@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './base.css';
+require('./dialog.scss');
+
 import dialogHtml from './dialog-container.html';
 
 export default function createDialog() {

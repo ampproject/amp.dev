@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './base.css';
+require('./menu.scss');
+
 import events from '../events/events.js';
 import '../../static/images/logo.svg';
 import {runtimes, EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
@@ -34,7 +35,6 @@ class Menu {
     if (this._root) {
       return;
     }
-    console.log(' create menu');
     this._root = this.doc.createElement('div');
     this._root.innerHTML = this._buildMenu();
     this._menu = this._root.querySelector('.menu');
@@ -45,12 +45,12 @@ class Menu {
   show() {
     this._setActiveRuntime();
     this._menu.classList.toggle('hide', false);
-    setTimeout(() => this.doc.body.addEventListener('touchend', this._clickHandler, false), 10);
+    setTimeout(() => this.doc.body.addEventListener('click', this._clickHandler, false), 10);
   }
 
   hide() {
     this._menu.classList.toggle('hide', true);
-    this.doc.body.removeEventListener('touchend', this._clickHandler, false);
+    this.doc.body.removeEventListener('click', this._clickHandler, false);
   }
 
   _setActiveRuntime() {

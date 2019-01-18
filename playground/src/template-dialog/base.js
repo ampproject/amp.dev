@@ -12,8 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+require('./template-dialog.scss');
+
 import createDialog from '../dialog/base.js';
-import './base.css';
 import ListFilter from '../filter/filter.js';
 import absolutify from 'absolutify';
 import dialogHeader from './header.html';
