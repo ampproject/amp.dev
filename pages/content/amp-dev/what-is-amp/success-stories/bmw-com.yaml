@@ -33,15 +33,6 @@ kpis:
     text: more mobile users
 
 contents:
-  - layout: quote
-    quote: „We’re exited to try more AMP features and see the format supported on a variety of new platforms.”
-    image_src: https://placehold.it/100x50
-    width: 100
-    height: 50
-    alt: lorem
-    author: John Doe
-    story_url: https://google.com
-
   - layout: text-media
     image_src: https://placeimg.com/800/500/nature
     width: 8
@@ -51,6 +42,25 @@ contents:
     headline: Challenge
     text: Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
     direction: left-flat
+
+  - layout: text-media
+    image_src: https://placeimg.com/800/500/nature
+    width: 8
+    height: 5
+    type: desktop
+    alt: lorem ipsum
+    headline: Results
+    text: The team at Wired.com took a measured approach to rolling out AMP. They began by creating AMP pages for all stories published in 2016. After a few months of positive data with that group, they expanded coverage to include the entire 24-year archive of Wired.com, over 100k stories. There are a few exceptions, however. At the moment they currently exclude digital interactives, high impact feature stories, liveblogs (these pages will be implemented in AMP soon), and any story that has an image gallery in it.
+    direction: left-flat
+
+  - layout: quote
+    quote: „We’re exited to try more AMP features and see the format supported on a variety of new platforms.”
+    image_src: https://placehold.it/100x50
+    width: 100
+    height: 50
+    alt: lorem
+    author: John Doe
+    story_url: https://google.com
 
   - layout: text-media
     image_src: https://placeimg.com/800/500/nature
