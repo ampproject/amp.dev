@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './error-list.css';
+require('./error-list.scss');
+
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
