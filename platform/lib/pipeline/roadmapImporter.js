@@ -14,22 +14,22 @@ const gitHubImporter = require('./gitHubImporter');
 
 const DESTINATION_JSON = __dirname + '/../../../pages/content/amp-dev/community/roadmap.json';
 
-gitHubImporter.checkCredentials();
-octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
-  type: 'token',
-  token: gitHubImporter.CLIENT_TOKEN
-} : {
-  type: 'oauth',
-  key: gitHubImporter.CLIENT_ID,
-  secret: gitHubImporter.CLIENT_SECRET
-});
-
 const log = new Signale({
   'interactive': true,
   'scope': 'Roadmap Importer',
 });
 
 async function importRoadmap() {
+  gitHubImporter.checkCredentials();
+  octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
+    type: 'token',
+    token: gitHubImporter.CLIENT_TOKEN
+  } : {
+    type: 'oauth',
+    key: gitHubImporter.CLIENT_ID,
+    secret: gitHubImporter.CLIENT_SECRET
+  });
+
   const result = await octokit.projects.listColumns({ project_id: '1344133' });
 
   // grab all card data for each column
