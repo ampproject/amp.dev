@@ -1,6 +1,7 @@
 const signale = require('signale');
 const fs = require('fs');
 const path = require('path');
+const mri = require('mri');
 
 const CONFIG_BASE_PATH = '../config';
 const GROW_CONFIG_TEMPLATE_PATH = `${CONFIG_BASE_PATH}/templates/podspec.yaml`;
@@ -16,6 +17,9 @@ class Config {
     this.hosts = environmentConfig.hosts;
 
     this.shared = sharedConfig;
+
+    // Globally initialize command line arguments for use across all modules
+    this.options = mri(process.argv.slice(2));
 
     // Synchronously write podspec for Grow to run flawlessly later in pipeline.
     // Check if running inside GAE as writes are not permitted there

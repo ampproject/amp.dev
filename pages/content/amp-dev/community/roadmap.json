@@ -22,7 +22,7 @@
           "updatedAt": "2019-01-17T22:48:08Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/20226",
-            "title": "Launch `amp-date-display`",
+            "title": "Launch 'amp-date-display'",
             "description": "This feature allows you to display a time that is local to the user (shown in their timezone) as opposed to a constant timezone as set by the author.",
             "labels": [
               {
