@@ -72,3 +72,5 @@ contents:
     headline: Conclusion
     text: With AMP pages showing positive results, Wired hopes to expand its investment in the format by contributing to the open source project around the image gallery experience. About 40% of Wired’s content has not yet been implemented in the AMP format - much of this is content containing image galleries. “Galleries are a template with high ad inventory impact on the mobile web and low inventory impact with the current AMP implementation options. We need a better UX for AMP galleries, something that can accommodate long captions, images with different aspect ratios, recirculation widgets, and, of course, ads. It also needs to feel cool and load fast,” said Baldwin. Overall, the team is pleased with early AMP results. Baldwin added, “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”
     download_url: "../../../static/files/case-studies/BMW.pdf"
+    direction: left-flat
+    background: gradient
