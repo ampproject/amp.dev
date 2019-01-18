@@ -116,9 +116,11 @@
 
         {# layout: text #}
         {% if content.layout == 'text' %}
-          <div class="ad-o-text-media-block ad-m-copy">
-            <h2>{{content.headline|safe}}</h2>
-            <p>{{content.text|safe}}</p>
+          <div class="ad--container">
+            <div class="ad-o-text-media-block ad--content ad-m-copy">
+              <h2>{{content.headline|safe}}</h2>
+              <p>{{content.text|safe}}</p>
+            </div>
           </div>
         {% endif %}
 
