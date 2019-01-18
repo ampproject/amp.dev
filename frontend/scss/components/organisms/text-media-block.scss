@@ -16,12 +16,38 @@
 @import '../../variables';
 
 .#{organism('text-media-block')} {
-  &:nth-child(even) {
+  position: relative;
+
+  .#{molecule('text-media')} {
+    h2 {
+      margin-top: 0;
+    }
+
+    &.media {
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 220px;
+        margin-top: -2%;
+        position: absolute;
+        width: 145%;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
     .#{molecule('text-media')} {
       grid-row: 1;
       perspective: 80rem;
+
       &.media {
         grid-column: 2/10;
+
+        &.bg-gray, &.bg-gradient {
+          &:before {
+            left: -35%;
+          }
+        }
       }
 
       &.text {
@@ -35,12 +61,19 @@
     }
   }
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     .#{molecule('text-media')} {
       grid-row: 1;
       perspective: 80rem;
+
       &.media {
         grid-column: 14/23;
+
+        &.bg-gray, &.bg-gradient {
+          &:before {
+            right: -45%;
+          }
+        }
       }
 
       &.text {
