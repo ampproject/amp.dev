@@ -15,13 +15,13 @@
 workbox.skipWaiting();
 workbox.clientsClaim();
 
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   const urls = [
     'https://cdn.ampproject.org/v0.js',
     'https://cdn.ampproject.org/v0/validator.js',
   ];
   event.waitUntil(
-    caches.open(workbox.core.cacheNames.runtime).then(cache => cache.addAll(urls))
+      caches.open(workbox.core.cacheNames.runtime).then((cache) => cache.addAll(urls))
   );
 });
 

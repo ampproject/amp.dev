@@ -1,0 +1,95 @@
+@import 'base.scss';
+@import 'components/atoms/_text.scss';
+
+#error-list {
+  @include txt;
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  top: 0;
+  right: 0;
+  margin-left: 8px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: none;
+  transform: translateX(110%);
+  transition: transform 0.2s cubic-bezier(0, 0, 0.3, 1);
+  max-width: calc(50% - 4px);
+  height: 100%;
+  .title {
+    display: flex;
+    align-items: center;
+    .close {
+      margin: 8px;
+    }
+  }
+  h2 {
+    margin-left: 1rem;
+  }
+  &.show {
+    transform: translateX(0%);
+    pointer-events: auto;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0.5rem;
+    padding-left: 3.5rem;
+    cursor: pointer;
+    background-color: white;
+    background-position: left 1rem center;
+    background-repeat: no-repeat;
+    &:hover, &:active {
+      background-color: var(--dark-bg-color);
+    }
+    .category {
+      padding-top: 8px;
+      color: color('gray-chateau');
+    }
+    .location {
+      padding-top: 8px;
+      line-height: 18px;
+      font-size: 14px;
+    }
+    &.error {
+      background-image: url(./icons/error.svg);
+    }
+    &.warning {
+      background-image: url(./icons/warning.svg);
+    }
+    border-bottom: 1px solid color('silver');
+    &:first-child {
+      border-top: 1px solid color('silver');
+    }
+  }
+}
+
+#error-indicator.close {
+  width: 24px;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  background-image: url(./icons/close.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  #error-indicator {
+    margin-right: 0;
+  }
+  #error-list {
+    margin: 0;
+    li .category {
+      display: none;
+    }
+    max-width: 100%;
+  }
+}

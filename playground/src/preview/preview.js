@@ -33,7 +33,7 @@ class Preview {
     this.loader = loader;
     this.container = container;
     this.previewContainer = container.querySelector('#preview-container');
-    this.panelHeader = this.container.querySelector('.panel-header');
+    this.panelHeader = container.querySelector('.panel-header');
     this.createHeader();
   }
 
@@ -82,8 +82,6 @@ class Preview {
   }
 
   createHeader() {
-    const closeButton = this.container.querySelector('#preview-header-close');
-    closeButton.addEventListener('click', () => history.back());
     const refreshButton = this.container.querySelector('#preview-header-refresh');
     refreshButton.addEventListener('click', this.reload.bind(this));
   }
@@ -95,7 +93,7 @@ class Preview {
       root.appendChild(this.select);
       this.customSizeInput = this.createCustomSizeInputs();
       root.appendChild(this.customSizeInput);
-      this.panelHeader.insertBefore(root, this.panelHeader.firstChild.nextSibling.nextSibling);
+      this.panelHeader.insertBefore(root, this.panelHeader.firstChild);
     }
 
     const fragment = this.doc.createDocumentFragment();
@@ -115,7 +113,7 @@ class Preview {
 
   createPreviewSelect() {
     const select = this.doc.createElement('select');
-    select.setAttribute('class', 'minimal');
+    select.setAttribute('class', 'caret');
     select.setAttribute('id', 'preview-size');
     select.setAttribute('label', 'select preview size');
     select.addEventListener('change', () => {
