@@ -4,19 +4,8 @@ stage:
   headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
   subline: i am a subline
   devices:
-    - image_src: https://placeimg.com/800/500/any
-      width: 8
-      height: 5
-      type: desktop
-      alt: lorem
 
-    - image_src: https://placeimg.com/400/300/any
-      width: 4
-      height: 3
-      type: tablet
-      alt: lorem
-
-    - image_src: https://placeimg.com/300/500/any
+    - image_src: ../../../static/img/success-stories/carved/amp_carved_1.jpg
       width: 3
       height: 5
       type: mobile
