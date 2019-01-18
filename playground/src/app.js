@@ -12,10 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './app.critical.css';
-import './loader/base.critical.css';
-import './embed-mode/embed.critical.css';
-import './preview/preview.critical.css';
+require('./app.critical.scss');
+require('./loader/loader.critical.scss');
+require('./embed-mode/embed.critical.scss');
+require('./preview/preview.critical.scss');
+
 import './event-listener-options/base.js';
 
 import DocumentController from './document/controller.js';
@@ -52,10 +53,11 @@ addSplitPaneBehavior(document.querySelector('main'));
 // configure error list behavior
 const errorIndicator = document.getElementById('error-indicator');
 const errorListContainer = document.getElementById('error-list');
+ErrorList.createErrorList(errorListContainer, errorIndicator);
 
 events.subscribe(
-  ErrorList.EVENT_ERROR_SELECTED,
-  error => editor.setCursorAndFocus(error.line, error.col)
+    ErrorList.EVENT_ERROR_SELECTED,
+    (error) => editor.setCursorAndFocus(error.line, error.col)
 );
 
 const validator = Validator.createValidator();
@@ -66,7 +68,7 @@ const componentsProvider = ComponentsProvider.createComponentsProvider();
 const autoImporter = AutoImporter.createAutoImporter(componentsProvider, editor);
 
 // runtime select
-const runtimeChanged = runtimeId => {
+const runtimeChanged = (runtimeId) => {
   const newRuntime = runtimes.get(runtimeId);
   if (!newRuntime) {
     console.error('unknown runtime: ' + newRuntime);
@@ -76,20 +78,22 @@ const runtimeChanged = runtimeId => {
 };
 
 const runtimeSelector = createSelector(document.getElementById('runtime-select'), {
-  classes: ['minimal'],
+  classes: ['caret'],
   id: 'runtime',
   label: 'select runtime',
-  values: runtimes.values.map(r => {return {
-    id: r.id,
-    label: r.name,
-    selected: r === runtimes.activeRuntime,
-  };}),
-  onChange: runtimeChanged
+  values: runtimes.values.map((r) => {
+    return {
+      id: r.id,
+      label: r.name,
+      selected: r === runtimes.activeRuntime,
+    };
+  }),
+  onChange: runtimeChanged,
 });
 runtimeSelector.show();
 
 let activeRuntime;
-events.subscribe(EVENT_SET_RUNTIME, newRuntime => {
+events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   preview.setRuntime(newRuntime);
   runtimeSelector.selectOption(newRuntime.id);
   // change editor input to new runtime default if current input is unchanged
@@ -112,10 +116,10 @@ const editorUpdateListener = () => {
   titleUpdater.update(source);
 };
 events.subscribe(
-  [Editor.EVENT_INPUT_CHANGE],
-  editorUpdateListener
+    [Editor.EVENT_INPUT_CHANGE],
+    editorUpdateListener
 );
-events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, validationResult => {
+events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
   editor.setValidationResult(validationResult);
 });
 events.subscribe([Editor.EVENT_INPUT_NEW], () => {
@@ -126,16 +130,16 @@ events.subscribe([Editor.EVENT_INPUT_NEW], () => {
 });
 
 // configure auto-importer
-events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, validationResult => {
+events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
   autoImporter.update(validationResult);
 });
 
 // setup document
 const documentController = new DocumentController(
-  editor,
-  runtimes.activeRuntime,
-  document.querySelector('header'),
-  window
+    editor,
+    runtimes.activeRuntime,
+    document.querySelector('header'),
+    window
 );
 documentController.show();
 
@@ -143,34 +147,39 @@ documentController.show();
 preview.setRuntime(runtimes.activeRuntime);
 const previewPanel = document.getElementById('preview');
 const showPreview = new Fab(document.body, '▶', () => {
-  previewPanel.classList.add('show');
   params.push('preview', true);
+  previewPanel.classList.add('show');
 });
-
+const closeButton = document.getElementById('preview-header-close');
+closeButton.addEventListener('click', () => {
+  params.push('preview', false);
+  previewPanel.classList.remove('show');
+  showPreview.show();
+});
 // load template dialog
 const loadTemplateButton = Button.from(
-  document.getElementById('document-title'),
-  () => templateDialog.open(runtimes.activeRuntime)
+    document.getElementById('document-title'),
+    () => templateDialog.open(runtimes.activeRuntime)
 );
 const templateDialog = createTemplateDialog(loadTemplateButton, {
   onStart: () => editor.showLoadingIndicator(),
-  onSuccess: template => {
+  onSuccess: (template) => {
     editor.setSource(template.content);
     params.replace('url', template.url);
   },
-  onError: err => {
+  onError: (err) => {
     snackbar.show(err);
-  }
+  },
 });
 
-//configure menu
+// configure menu
 const menu = Menu.create();
 Button.from(document.getElementById('show-menu'), () => {
   menu.show();
 });
 
 const formatSource = () => {
-  formatter.format(editor.getSource()).then(formattedCode => editor.setSource(formattedCode));
+  formatter.format(editor.getSource()).then((formattedCode) => editor.setSource(formattedCode));
 };
 Button.from(document.getElementById('format-source'), formatSource);
 Button.from(document.getElementById('menu-format-source'), formatSource);

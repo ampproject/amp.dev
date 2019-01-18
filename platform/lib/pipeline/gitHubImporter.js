@@ -35,7 +35,7 @@ const log = new Signale({
 
 function checkCredentials() {
   if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID))) {
-    this._log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
+    log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
       'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
       'information.');
 
