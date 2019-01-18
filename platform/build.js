@@ -18,14 +18,12 @@
 
 'use strict';
 
-const mri = require('mri');
 const signale = require('signale');
 
 const config = require('./lib/config');
 const Pipeline = require('./lib/pipeline');
 const Platform = require('./lib/platform');
 
-const args = mri(process.argv.slice(2));
 const pipeline = new Pipeline();
 
 pipeline.clean();
@@ -46,7 +44,7 @@ pipeline.clean();
   // Before pages can be built all needed documents need to be imported:
   // - The reference docs for the various components
   // - Some documents that get maintained inside ampproject/amphtml
-  if (args['import'] === true) {
+  if (config.options['import'] === true) {
     const referenceImport = pipeline.importReference();
     const specImport = pipeline.importSpec();
 
