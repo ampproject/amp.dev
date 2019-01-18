@@ -1,6 +1,6 @@
 $title: Samples & Templates
 $view: /views/detail/example-detail.j2
-$path: '/documentation/examples/samples-and-templates/{base}.html'
+$path: /documentation/examples/samples-and-templates/{base}.html
 $localization:
-  path: '/{locale}/documentation/examples/samples-and-templates/{base}.html'
+  path: /{locale}/documentation/examples/samples-and-templates/{base}.html
 $order: 5

@@ -1,0 +1,21 @@
+---
+$title: Roadmap
+$order: 2
+$view: /views/default.j2
+roadmap: !g.json /content/amp-dev/community/roadmap.json
+---
+{% block main %}
+<!-- Filter bubbles -->
+{% for label in doc.roadmap.labels %}
+<button>{{ label }}</button>
+{% endfor %}
+
+<!-- Columns -->
+{% for column in doc.roadmap.columns %}
+<ul>
+  {% for card in column.cards %}
+  <li>{{ card.issue.title }}</li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}

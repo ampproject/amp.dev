@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const GitHubImporter = require('./gitHubImporter');
+const {GitHubImporter} = require('./gitHubImporter');
 const Collection = require('./collection');
 
 // The view that the collections should define in their frontmatter
