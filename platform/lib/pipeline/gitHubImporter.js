@@ -28,20 +28,25 @@ const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
 // TODO: Make it possible to pass in a local repository path with argv
 const LOCAL_AMPHTML_REPOSITORY = false;
 
+const log = new Signale({
+  'interactive': true,
+  'scope': 'GitHub Importer',
+});
+
+function checkCredentials() {
+  if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID))) {
+    this._log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
+      'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
+      'information.');
+
+    throw new Error('Error: No GitHub credentials provided.');
+  }
+}
+
 class GitHubImporter {
   constructor() {
-    this._log = new Signale({
-      'interactive': true,
-      'scope': 'GitHub Importer',
-    });
-
-    if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID))) {
-      this._log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
-        'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
-        'information.');
-
-      throw new Error('Error: No GitHub credentials provided.');
-    }
+    this._log = log;
+    checkCredentials();
   }
 
   async initialize() {
@@ -119,4 +124,10 @@ class GitHubImporter {
   }
 }
 
-module.exports = GitHubImporter;
+module.exports = {
+  'CLIENT_TOKEN': CLIENT_TOKEN,
+  'CLIENT_SECRET': CLIENT_SECRET,
+  'CLIENT_ID': CLIENT_ID,
+  'checkCredentials': checkCredentials,
+  'GitHubImporter': GitHubImporter,
+};
