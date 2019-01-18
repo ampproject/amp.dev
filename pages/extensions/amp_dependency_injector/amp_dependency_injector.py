@@ -113,34 +113,42 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
 
     def find_dependencies(self, content):
         """Checks the generated output for possible AMP dependencies."""
-        # TODO: Remove code snippets from content before searching for deps
+        # Remove code snippets from content before searching for deps
+        PRE_CODE_REGEX = r"<pre[^>]*>.+</pre>|<code[^>]*>.+</code>"
+        stripped_content = content
+        for pre_code in re.findall(PRE_CODE_REGEX, content):
+          stripped_content = stripped_content.replace(pre_code)
 
         dependencies = []
 
         # Finds all <amp-*> tags that may introduce a dependency to a component
         ELEMENT_REGEX = r"<(amp-\S*?)(>|\s)"
-        for element in re.findall(ELEMENT_REGEX, content):
+        for element in re.findall(ELEMENT_REGEX, stripped_content):
             # The first capturing group will be the component name
             component_name = element[0]
             dependencies.append(component_name)
 
         # Checks if document depends on <amp-form>
-        if '<form' in content:
+        if '<form' in stripped_content:
             dependencies.append('amp-form')
 
         # Checks if document depends on <amp-bind>, also see:
         # https://www.ampproject.org/docs/reference/components/amp-bind#element-specific-attributes
         # TODO: Add remainig bindable values
         AMP_BIND_MARKERS_REGEX = r"(<amp-state|<amp-bind-macro|\s\[(text|class|hidden|width|height|src|title|alt|srcset|open|selected|controls|loop|poster|preload|disabled|href|type|value)\]=)"
-        if re.search(AMP_BIND_MARKERS_REGEX, content):
+        if re.search(AMP_BIND_MARKERS_REGEX, stripped_content):
             dependencies.append('amp-bind')
 
+        # Checks if document depends on <amp-access>
+        if ' amp-access="' in stripped_content:
+            dependencies.append('amp-access')
+
         # Checks if document depends on <amp-mustache>
-        if '<template type="amp-mustache"' in content:
+        if '<template type="amp-mustache"' in stripped_content:
             dependencies.append('amp-mustache')
 
         # Checks if document uses <amp-fx-collection>
-        if 'amp-fx="' in content:
+        if ' amp-fx="' in stripped_content:
             dependencies.append('amp-fx-collection')
 
         return dependencies
