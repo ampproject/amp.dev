@@ -1,3 +1,5 @@
+@import 'base.scss';
+
 #preview-container {
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
@@ -8,6 +10,7 @@
   position: relative;
 }
 #previewIframe {
+  @include box-shadow;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
@@ -19,6 +22,7 @@
   transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), height 280ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow-x: hidden;
   background-color: #fff;
+  border: 1px solid rgba(0,0,0,.15);
 }
 #preview-header {
   display: none;
@@ -28,17 +32,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 16px;
 }
 #preview-custom-dimension input {
   width: 48px;
   margin: 0 8px;
   text-align: center; 
+  background-color: #dfdfdf;
+  border: none;
+  -webkit-appearance: none;
+  border-radius: 4px;
+  font-size: 1rem;
 }
+
 #preview-custom-dimension input.invalid {
   width: 48px;
   margin: 0 8px;
   text-align: center; 
-  background: var(--error-bg-color);
+  background: color('red');
 }
 
 @media (max-width: 767px) { 
@@ -79,7 +90,7 @@
     user-select: none;
   }
   #preview-header-close:active {
-    background-color: #ccc;
+    background-color: color('silver');
   }
   #preview-header-close:focus,
   #preview-header-close:active {

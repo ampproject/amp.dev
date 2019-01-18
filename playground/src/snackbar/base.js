@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './base.css';
+import './snackbar.scss';
 import '../request-idle-callback/base.js';
 
 const SNACKBAR_TIMEOUT = 4000;
