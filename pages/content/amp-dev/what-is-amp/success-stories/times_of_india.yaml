@@ -41,6 +41,7 @@ contents:
     width: 3
     height: 5
     type: mobile
+    background: gradient
     alt: Times of India
     headline: Approach
     text: An in-house team rolled out the first AMP pages within a week of the Google announcement, and optimized them for all page types across the sites. The rollout was progressive, depending on success and lessons learned. It began with a few sections of the Times of India, followed by the rest of the site, and eventually by eight Indian-languages sites as well.

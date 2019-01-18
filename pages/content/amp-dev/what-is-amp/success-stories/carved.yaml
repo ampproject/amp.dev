@@ -1,0 +1,49 @@
+$title: Carved
+
+stage:
+  headline: Carved increases conversion rate by 75% with AMP and PWA
+  subline: May 25, 2018
+  devices:
+    - image_src: ../../../static/img/success-stories/carved/amp_carved_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Carved
+
+kpis:
+  - value: 75%
+    text: higher e-commerce conversion rate
+
+  - value: 37%
+    text: faster average load speed
+
+  - value: 33%
+    text: lower bounce rate
+
+contents:
+
+  - layout: text
+    text: "In 2011, John Webber founded Carved in Elkhart, Indiana, to use computer-controlled machine tooling to make best-in-class phone cases. The first product was a skin made from wood veneer that customers could stick on the back of their phone. The company now offers a full line of cases, wallets, phone batteries, and more via their e-commerce website.<br><br>Their responsive, e-commerce website, built in-house in 2016, was only ”50% responsive,” Webber says. About 90 to 95 percent of their sales come through the site, half from mobile users. “Increasing mobile speed has been a top priority, as we know that performance is central to capturing, engaging, and creating loyal customers,” Webber adds. “Over the years, we experienced a surge in mobile traffic, but the conversions just weren’t keeping up.”"
+    direction: left-flat
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/carved/amp_carved_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Carved
+    headline: Solution
+    text: "Founded in 2011, San Francisco-based Carved offers pay-per-mile car insurance that gives drivers control over their monthly bill. By offering affordable car insurance, transparent pricing based on mileage, instant access to detailed vehicle diagnostics via the driving app, and a fully-automated claims process, Carved is transforming car insurance to be more intelligent, seamless, and accessible than ever before.<br><br>Carved’s mobile site had a background image and other features that slowed page load speeds. The main mobile call-to-action (CTA), “Get a Quote,” also took several seconds to load. “We always knew speed was important. When we heard about AMP, we wanted to measure to what extent shorter load times would improve clickthrough rates (CTR) and conversions down the funnel,” says April Zaratsian, Carved digital marketing associate. To test the impact of AMP, Carved’s site development team worked over a two-week period to test and implement the AMP framework for a specific landing page where potential customers could request a quote. Then, to isolate AMP’s impact on their search advertising, they used AdWords Campaign Experiments to split mobile search ad traffic between the new AMP landing page and a visually-identical page that did not use the AMP framework."
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/carved/amp_carved_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Carved
+    background: gradient
+    headline: Results
+    text: "Carved saw the speeds they hoped for—AMP page load time was almost 80% faster on a 3G connection and 76% faster on a 4G connection. CTR to the AMP page page was also 13% higher than to the non-AMP mobile landing page, and the overall cost per conversion on mobile was 23% lower for AMP traffic than for non-AMP mobile traffic.<br><br>What most excites Carved about AMP is “the ability to increase CTR and conversion rate at a lower cost per conversion,” Zaratsian says. “We’re using wins we see on our landing page tests in other channels and implementing them on our AMP page. What works on a non-AMP page also should work on an AMP mobile landing page.” While Carved are continuing to test and improve their AMP landing page, they’re also working to implement AMP into other channels outside of paid search, as well as considering using only AMP for pages further in the conversion funnel."
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/carved.pdf
