@@ -18,19 +18,17 @@ The ghost frame desktop wraps an element with a desktop-like frame.
 @import '../atoms/_color';
 
 .#{molecule('ghost-frame-desktop')} {
-  background: rgba(color('white'), .7);
-  border-radius: 8px;
-  display: inline-block;
-  margin-bottom: auto;
-  padding: 2rem 1rem 1rem;
-  position: relative;
-  width: 50%;
-  z-index: 0;
+  background: rgba(color('white'), .9);
+  border-radius: 5px;
   box-shadow: shadows('drop');
-
-  &[class*='-left'] {
-    width: 50%;
-  }
+  display: inline-block;
+  height: auto;
+  margin-bottom: auto;
+  max-width: calc((5/8) * 70vw);
+  padding: 4% 1% 1%;
+  position: relative;
+  width: 100%;
+  z-index: 0;
 
   &.left-flat {
     -webkit-box-shadow:
@@ -74,17 +72,17 @@ The ghost frame desktop wraps an element with a desktop-like frame.
 
   // ui
   &:before {
-    background-image: radial-gradient(circle at center, color('athens-gray') 4px, transparent 4px), radial-gradient(circle at center, color('athens-gray') 4px, transparent 4px), radial-gradient(circle at center, color('athens-gray') 4px, transparent 4px);
-    background-position: 0, 0.8rem, 1.6rem;
+        background-image: radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%);
+    background-position: 0%, 2%, 4%;
     background-repeat: no-repeat;
-    background-size: 0.5rem 0.5rem, 0.5rem 0.5rem, 0.5rem 0.5rem;
+    background-size: 4% 100%, 4% 100%, 4% 100%;
     border-top-left-radius: calc(1rem/6);
     border-top-right-radius: calc(1rem/6);
     content: '';
-    height: 0.5rem;
-    left: 1rem;
+    height: 3%;
+    left: 0;
     position: absolute;
-    top: 1rem;
+    top: 2%;
     width: 100%;
     z-index: 1;
   }
