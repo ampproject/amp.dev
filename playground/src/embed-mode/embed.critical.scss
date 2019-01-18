@@ -6,6 +6,7 @@
   }
   main {
     top: 0;
+    padding: 0;
     &.elevation-2dp {
       box-shadow: none;
       padding: 0;
@@ -24,5 +25,10 @@
   .panel {
     width: calc(50% - 4px);
     box-shadow: none !important;
+  }
+  @media (max-width: 767px) { 
+    .panel {
+      width: 100vw;
+    }
   }
 }
