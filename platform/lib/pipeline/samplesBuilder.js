@@ -280,5 +280,6 @@ if (!module.parent) {
 }
 
 module.exports = {
-  'samplesBuilder': new SamplesBuilder()
+  'samplesBuilder': new SamplesBuilder(),
+  'SOURCE_DEST': SOURCE_DEST
 }
