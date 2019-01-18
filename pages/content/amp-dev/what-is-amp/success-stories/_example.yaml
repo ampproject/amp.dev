@@ -1,11 +1,11 @@
 ### SUCCESS STORY (EXAMPLE STRUCTURE)
 ###
 ### Array can contain multiple elements.
-### The medium source can be `image_src` or `video_src`
+### The media source can be `image_src` or `video_src`
 ### The order of contents' elements is equal to the order of the resulting page.
-### content formats:
-###   - medium + text
-###   - medium only
+### content layouts:
+###   - media + text
+###   - media only
 ###   - text only
 ###   - quote
 #
@@ -25,8 +25,9 @@
 #     text: <string> (optional)
 #
 # contents:
-# (medium + text)
-#  - image_src: [url] | video_src: [url]
+# (media + text)
+#  - layout: [media-text | media | text | quote]
+#    image_src: [url] | video_src: [url]
 #    width: <number>
 #    height: <number>
 #    type: [mobile |  tablet | desktop] (optional)
@@ -35,8 +36,9 @@
 #    headline: <string> (optional)
 #    text: <string>
 #
-# (medium only)
-#  - image_src: [url] | video_src: [url]
+# (media only)
+#  - layout: [media-text | media | text | quote]
+#    image_src: [url] | video_src: [url]
 #    width: <number>
 #    height: <number>
 #    type: [mobile |  tablet | desktop] (optional)
@@ -44,11 +46,13 @@
 #    alt: <string>
 #
 # (text only)
-#  - headline: <string> (optional)
+#  - layout: [media-text | media | text | quote]
+#    headline: <string> (optional)
 #    text: <string>
 #
 # (quote)
-#  - quote: <string>
+#  - layout: [media-text | media | text | quote]
+#    quote: <string>
 #    image_src: [url]
 #    width: <number>
 #    height: <number>

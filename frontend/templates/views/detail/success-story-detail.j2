@@ -8,18 +8,26 @@
 
 {% block main %}
   <main class="ad--main ad-t-success-story">
-    <div class="stage">
-      {% if doc.stage.subline %}
-        <h2>{{ doc.stage.subline }}</h2>
-      {% endif %}
-      {% if doc.stage.headline%}
-        <h1>{{ doc.stage.headline }}</h1>
-      {% endif %}
+    <section class="ad--stage ad--container-fluid">
+      {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-
-
-      {% if doc.stage.devices %}
+      <div class="ad-o-stage ad-o-stage-default">
         <div class="ad--container">
+          <div class="ad-o-stage-content">
+            {% if doc.stage.subline %}
+              <h2 class="ad-o-stage-content-subline">{{ doc.stage.subline }}</h2>
+            {% endif %}
+
+            {% if doc.stage.headline %}
+              <h1 class="ad-o-stage-content-headline">{{ doc.stage.headline }}</h1>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {# ghost frame block #}
+      {% if doc.stage.devices %}
+        <div class="ad-o-ghost-frame-block">
           {% for device in doc.stage.devices %}
             {% if device %}
               <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
@@ -35,7 +43,7 @@
           {% endfor %}
         </div>
       {% endif %}
-    </div>
+    </section>
 
 
 
@@ -43,15 +51,19 @@
       KPI
     #}
     {% if doc.kpis %}
-      <div class="ad--container">
+      {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
+      <div class="ad--kpi ad--container">
+        {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
         {% for kpi in doc.kpis %}
-          <div class="kpi">
-            {% if kpi.value %}
-              <span class="value">{{kpi.value|safe}}</span>
-            {% endif %}
-            {% if kpi.text %}
-              <span class="text">{{kpi.text|safe}}</span>
-            {% endif %}
+          <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
+            <div class="ad-m-kpi-content">
+              {% if kpi.value %}
+                <span class="ad-m-kpi-number">{{kpi.value|safe}}</span>
+              {% endif %}
+              {% if kpi.text %}
+                <span class="ad-m-kpi-text">{{kpi.text|safe}}</span>
+              {% endif %}
+            </div>
           </div>
         {% endfor %}
       </div>
@@ -63,48 +75,98 @@
       CONTENT
     #}
     {% if doc.contents %}
-      <div class="content">
-        {% for content in doc.contents %}
-          {# text-only #}
-          {% if content.text and content.image_src != None %}
-            <div class="text-only">
-              <h2>{{content.headline|safe}}</h2>
-              <p>{{content.text|safe}}</p>
-            </div>
-          {% endif %}
-
-          {# medium-only #}
-          {% if content.text != None and content.image_src %}
-            <div class="medium-only">
-              <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
-                <amp-img
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
-                  layout="responsive"
-                  src="{{content.image_src}}"
-                  width="{{content.width}}"
-                ></amp-img>
+      {% for content in doc.contents %}
+            {# layout: text #}
+            {% if content.layout == 'media-text' %}
+              <div class="media-text">
+                <h2>{{content.headline|safe}}</h2>
+                <p>{{content.text|safe}}</p>
+                {% if content.type %}
+                  <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+                    <amp-img
+                      alt="{{content.alt}}"
+                      height="{{content.height}}"
+                      layout="responsive"
+                      src="{{content.image_src}}"
+                      width="{{content.width}}"
+                    ></amp-img>
+                  </div>
+                {% else %}
+                  <amp-img
+                    alt="{{content.alt}}"
+                    height="{{content.height}}"
+                    layout="responsive"
+                    src="{{content.image_src}}"
+                    width="{{content.width}}"
+                  ></amp-img>
+                {% endif %}
               </div>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          {# quote #}
-          {% if content.quote %}
-            <div class="quote">
-              <amp-img
-                alt="{{content.quote.alt}}"
-                height="{{content.quote.height}}"
-                layout="responsive"
-                src="{{content.quote.image_src}}"
-                width="{{content.quote.width}}"
-              ></amp-img>
-              <p>{{content.quote|safe}}</p>
-              <p>{{content.author|safe}}</p>
-              <a href="{{story_url}}">Read success story</a>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
+            {# layout: text #}
+            {% if content.layout == 'text' %}
+              <div class="text">
+                <h2>{{content.headline|safe}}</h2>
+                <p>{{content.text|safe}}</p>
+              </div>
+            {% endif %}
+
+            {# layout: media #}
+            {% if content.layout == 'media' %}
+              <div class="media">
+                {% if content.type %}
+                  <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+                    <amp-img
+                      alt="{{content.alt}}"
+                      height="{{content.height}}"
+                      layout="responsive"
+                      src="{{content.image_src}}"
+                      width="{{content.width}}"
+                    ></amp-img>
+                  </div>
+                {% else %}
+                  <amp-img
+                    alt="{{content.alt}}"
+                    height="{{content.height}}"
+                    layout="responsive"
+                    src="{{content.image_src}}"
+                    width="{{content.width}}"
+                  ></amp-img>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {# layout: quote #}
+            {% if content.layout == 'quote' %}
+              <section class="ad--quote ad--container">
+                <div class="ad-m-quote">
+                  <div class="ad-m-quote-source">
+                   <div class="ad-a-ico">
+                    {% do doc.icons.useIcon('icons/quote.svg') %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+                  </div>
+                  <div class="ad-a-img ad-a-img-static">
+                    <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" height="96" width="630" alt="placeholder" />
+                  </div>
+                </div>
+                <div class="ad-m-quote-quote">
+                  <blockquote>
+                    <p class="ad-a-txt">{{content.quote|safe}}<p>
+                  </blockquote>
+                  <p>{{content.author|safe}}</p>
+                    <a href="{{story_url}}" class="ad-m-lnk">
+                      <div class="ad-a-ico ad-m-lnk-icon">
+                        {% do doc.icons.useIcon('icons/internal.svg') %}
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                      </div>
+                      <span class="ad-m-lnk-text">Read success story</a></span>
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+            {% endif %}
+      {% endfor %}
     {% endif %}
 
   </main>
