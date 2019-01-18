@@ -36,6 +36,7 @@
 #    alt: <string>
 #    headline: <string> (optional)
 #    text: <string>
+#    background: [gradient | gray]
 #
 # (media only)
 #  - layout: [media-text | media | text | quote | text-button]
@@ -72,3 +73,4 @@
 #   headline: <string> (optional)
 #   text: <string>
 #   download_url: [url]
+#   background: [gradient | gray]
