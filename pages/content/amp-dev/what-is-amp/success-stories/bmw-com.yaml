@@ -71,3 +71,12 @@ contents:
     headline: Challenge
     text: Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
     direction: left-flat
+
+  - layout: text-button
+    image_src: https://placeimg.com/800/500/nature
+    width: 8
+    height: 5
+    type: desktop
+    alt: lorem ipsum
+    headline: Conclusion
+    text: With AMP pages showing positive results, Wired hopes to expand its investment in the format by contributing to the open source project around the image gallery experience. About 40% of Wired’s content has not yet been implemented in the AMP format - much of this is content containing image galleries. “Galleries are a template with high ad inventory impact on the mobile web and low inventory impact with the current AMP implementation options. We need a better UX for AMP galleries, something that can accommodate long captions, images with different aspect ratios, recirculation widgets, and, of course, ads. It also needs to feel cool and load fast,” said Baldwin. Overall, the team is pleased with early AMP results. Baldwin added, “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”
