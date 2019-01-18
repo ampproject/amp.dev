@@ -85,12 +85,16 @@ tags are specific for amp.dev #}
       <h1 class="ad--title">{{ doc.example.document.title }}</h1>
 
       <ul class="ad--ctas">
+        {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
+        {% set playground_url = podspec.base_urls.playground + podspec.base_urls.sample_source + doc.url.path + '/source' %}
+        {% if not playground_disabled %}
+        <li>
+          {% do doc.icons.useIcon('/icons/internal.svg') %}
+          <a href="{{ playground_url }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div><span class="ad-m-lnk-text">{{ _('Open in playground') }}</span></a>
+        </li>
+        {% endif %}
         <li>
           {% do doc.icons.useIcon('/icons/external.svg') %}
-          {% set source_document = g.doc(doc.pod_path.replace('-manual.html', '-source.html')) %}
-          <a href="{{ podspec.base_urls.playground + source_document.url|string }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg></div><span class="ad-m-lnk-text">{{ _('Open in playground') }}</span></a>
-        </li>
-        <li>
           <a href="{{ podspec.base_urls.repository + doc.example.filePath }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg></div><span class="ad-m-lnk-text">{{ _('Edit on GitHub') }}</span></a>
         </li>
       </ul>
@@ -105,17 +109,16 @@ tags are specific for amp.dev #}
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody %}
         {% if story_preview %}
-        {% set preview_document = g.doc(doc.pod_path.replace('-manual.html', '-preview.html')) %}
-        {% set story_preview_src = podspec.base_urls.sample_embed + preview_document.url.path + '?id=' +  section.storyPageId %}
         {# Storys should be repeatable, therefore render reload icon #}
-        <button class="ad-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_src + '&' }}' + random()})">
+        <button class="ad-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ '#' + '&' }}' + random()})">
           <div class="ad-a-ico">
             {% do doc.icons.useIcon('icons/reload.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
           </div>
         </button>
         <div class="ad-o-code-preview-preview-story">
-          <amp-iframe class="ad-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
+          Story-Previews are currently disabled.
+          <!-- <amp-iframe class="ad-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe> -->
         </div>
         {% elif show_preview %}
         <div class="ad-o-code-preview-preview">
@@ -125,6 +128,15 @@ tags are specific for amp.dev #}
         {% set markdown = doc.pod.markdown %}
         {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
       </div>
+
+      {% if not playground_disabled %}
+      <a href="{{ playground_url }}/{{ section.id }}" class="ad-m-lnk">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">{{ _('Open this snippet in playground' ) }}</span>
+      </a>
+      {% endif %}
       {% endif %}
       {% endfor %}
     </section>

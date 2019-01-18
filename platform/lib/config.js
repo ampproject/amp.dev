@@ -37,6 +37,15 @@ class Config {
     return sampleEmbedUrl;
   }
 
+  _getSampleSourceUrl() {
+    let sampleSourceUrl = `${this.hosts.platform.scheme}://${this.hosts.platform.host}`;
+    if (this.hosts.platform.port) {
+      sampleSourceUrl = sampleSourceUrl + `:${this.hosts.platform.port}`;
+    }
+
+    return sampleSourceUrl;
+  }
+
   _writeGrowConfig() {
     const template = fs.readFileSync(path.join(__dirname, GROW_CONFIG_TEMPLATE_PATH));
     const podspec = `${template}\n`
@@ -50,6 +59,7 @@ class Config {
                 + `  repository: ${this.shared.baseUrls.repository}\n`
                 + `  playground: ${this.shared.baseUrls.playground}\n`
                 + `  sample_embed: ${this._getSampleEmbedUrl()}\n`
+                + `  sample_source: ${this._getSampleSourceUrl()}\n`
                 + '\n'
                 + 'deployments:\n'
                 + '  default:\n'
