@@ -1,0 +1,41 @@
+/*
+
+###################################
+### ORGANSIM: ghost-frame-block ###
+###################################
+
+### INFO:
+
+The tool-block can contain two children. On larger screens, the children will be placed side by side; On smaller screens, among each another.
+This positioning can be change by using the modifier `-alternate`.
+
+### MODIFIERS:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../templates/_default.scss';
+
+.#{organism('ghost-frame-block')} {
+  position: relative;
+
+  .#{molecule('ghost-frame-mobile')},
+  .#{molecule('ghost-frame-tablet')},
+  .#{molecule('ghost-frame-desktop')} {
+    position: absolute;
+  }
+
+  .#{molecule('ghost-frame-mobile')} {
+    margin-top: 30%;
+    margin-left: 40%;
+  }
+
+  .#{molecule('ghost-frame-tablet')} {
+    margin-top: 20%;
+    margin-left: -10%;
+  }
+}
