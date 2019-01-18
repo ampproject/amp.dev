@@ -24,20 +24,86 @@ The ghost frame mobile wraps an element with a mobile-like frame.
   display: inline-block;
   height: auto;
   margin-bottom: auto;
-  max-width: calc((3/5) * 15vw);
-  padding: 5% 1% 4%;
+  max-width: 100%;
+  width: calc((3/5) * 100vw);
+  padding: 8% 3% 3%;
   position: relative;
-  width: 100%;
+  width: 60%;
   z-index: 0;
 
-  &.-right {
-    transform: rotate3d(-0.1, -0.1, 0.1, -87deg);
-    perspective: 1000px;
+  &.left-flat {
+    -webkit-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform:
+      rotateX(45deg)
+      rotateY(5deg)
+      rotateZ(-50deg);
   }
 
-  &.-left {
-    transform: rotate3d(-0.1, -0.1, 0.1, 87deg);
-    perspective: 1000px;
+  &.left {
+    -webkit-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform: rotateY(30deg);
+  }
+
+  &.right-flat {
+    -webkit-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform:
+      rotateX(45deg)
+      rotateY(-5deg)
+      rotateZ(50deg);
+  }
+
+  &.right {
+    -webkit-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform: rotateY(-30deg);
+    transform-origin: center;
   }
 
   // ui
@@ -52,7 +118,7 @@ The ghost frame mobile wraps an element with a mobile-like frame.
     margin-right: auto;
     position: absolute;
     right: 0;
-    top: 10%;
+    top: 4%;
     width: 23%;
     z-index: 1;
   }

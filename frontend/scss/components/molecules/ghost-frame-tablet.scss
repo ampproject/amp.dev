@@ -24,15 +24,85 @@ The ghost frame tablet wraps an element with a tablet-like frame.
   display: inline-block;
   height: auto;
   margin-bottom: auto;
-  max-width: calc((4/3) * 20vw);
-  padding: 3% 1% 1%;
+  max-width: calc((4/3) * 100vw);
+  padding: 5% 2% 2%;
   position: relative;
-  width: 100%;
+  width: 90%;
   z-index: 0;
 
-  &.-right {
-    transform: rotate3d(-0.1, -0.1, 0.1, -87deg);
-    perspective: 1000px;
+  &.left-flat {
+    -webkit-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform:
+      rotateX(45deg)
+      rotateY(5deg)
+      rotateZ(-50deg);
+  }
+
+  &.left {
+    -webkit-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform: rotateY(30deg);
+  }
+
+  &.right-flat {
+    -webkit-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform:
+      rotateX(45deg)
+      rotateY(-5deg)
+      rotateZ(50deg);
+  }
+
+  &.right {
+    -webkit-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    box-shadow:
+      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
+      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
+      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
+    transform-origin: center;
+    transform: rotateY(-30deg);
+    transform-origin: center;
   }
 
   // ui

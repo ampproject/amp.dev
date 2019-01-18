@@ -58,7 +58,7 @@ format_explainer:
 
 <section class="ad--stage ad--container-fluid">
 [stage]
-# Amp is a web component framework for easily creating user first
+# AMP is a web component framework for easily creating user first
 [/stage]
 
 {% include 'views/partials/case-band.j2' %}
@@ -246,7 +246,7 @@ format_explainer:
           <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#smile"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
-          <span class="ad-m-benefit-text-headline">Amp can be applied across various web touch points</span>
+          <span class="ad-m-benefit-text-headline">AMP can be applied across various web touch points</span>
           <span class="ad-m-benefit-text-copy">Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web.</span>
         </div>
       </div>

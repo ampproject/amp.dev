@@ -8,6 +8,7 @@
 ###   - media only
 ###   - text only
 ###   - quote
+###   - text with media + button
 #
 # stage:
 #   headline: lorem ipsum
@@ -26,7 +27,7 @@
 #
 # contents:
 # (media + text)
-#  - layout: [media-text | media | text | quote]
+#  - layout: [media-text | media | text | quote | text-button]
 #    image_src: [url] | video_src: [url]
 #    width: <number>
 #    height: <number>
@@ -35,9 +36,10 @@
 #    alt: <string>
 #    headline: <string> (optional)
 #    text: <string>
+#    background: [gradient | gray]
 #
 # (media only)
-#  - layout: [media-text | media | text | quote]
+#  - layout: [media-text | media | text | quote | text-button]
 #    image_src: [url] | video_src: [url]
 #    width: <number>
 #    height: <number>
@@ -46,12 +48,12 @@
 #    alt: <string>
 #
 # (text only)
-#  - layout: [media-text | media | text | quote]
+#  - layout: [media-text | media | text | quote | text-button]
 #    headline: <string> (optional)
 #    text: <string>
 #
 # (quote)
-#  - layout: [media-text | media | text | quote]
+#  - layout: [media-text | media | text | quote | text-button]
 #    quote: <string>
 #    image_src: [url]
 #    width: <number>
@@ -59,3 +61,16 @@
 #    alt: <string>
 #    author: <string>
 #    story_url: [url]
+#
+# (text with media + button)
+# - layout: [media-text | media | text | quote | text-button]
+#   image_src: [url] | video_src: [url]
+#   width: <number>
+#   height: <number>
+#   type: [mobile |  tablet | desktop] (optional)
+#   direction: [left | right | left-flat | right-flat] (optional)
+#   alt: <string>
+#   headline: <string> (optional)
+#   text: <string>
+#   download_url: [url]
+#   background: [gradient | gray]

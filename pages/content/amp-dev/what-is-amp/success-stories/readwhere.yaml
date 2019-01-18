@@ -1,0 +1,48 @@
+$title: Readwhere
+
+stage:
+  headline: Readwhere provides seamless mobile content via AMP and PWA
+  subline: i am a subline
+  devices:
+    - image_src: ../../../static/img/success-stories/readwhere/amp_readwhere_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Readwhere
+
+kpis:
+  - value: 30%
+    text: incremental revenue
+
+  - value: 30%
+    text: higher user engagement
+
+  - value: 20%
+    text: better ad viewability
+
+contents:
+
+  - layout: text
+    text: "Readwhere is an online reading and publishing hub. Operating under Gurugram-based parent company Mediology Software, Readwhere delivers content from popular Indian newspapers, magazines, comics, books, and journals from 300+ cities and in 15 languages—all within a single mobile application."
+    direction: left-flat
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/readwhere/amp_readwhere_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Readwhere
+    headline: Solution
+    text: "Readwhere chose Accelerated Mobile Pages (AMP) to provide a seamless mobile experience for readers of publications such as The Tribune, one of North India’s largest daily newspapers. The Readwhere Complete Mobile Solution (CMS) is a do-it-yourself platform, meaning publishers input their content feeds and receive AMP- and Progressive Web App (PWA)-coded content as output. “We implemented AMP across all publisher content, as we wanted to provide a fast, engaging mobile experience, as well as a better way to discover new content,” says Jitin Kumar Choudhary, general manager of Mediology Software.<br><br>The in-house development team at Readwhere handled The Tribune’s AMP implementation and ensured the site was ready for monetization with AMPHTML ads. “We implemented AMPHTML ads in the masthead, within articles, at the end of each article, and after the related content section,” Choudhary explains. “The ad space can be filled either programmatically or through the open auction.”"
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/readwhere/amp_readwhere_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Readwhere
+    headline: Results
+    text: "After the implementation of AMP and AMPHTML ads, time on site and user engagement rose 30 percent, while viewability improved by 20 percent. This resulted in 30 percent incremental revenue. “In the future, I would love to see PWA features working across all browsers,” Choudhary says.<br><br>“AMP helps with content discovery, and PWA provides a seamless user experience,” he adds. “AMP and PWA are mirror images—you can’t get a perfect reflection without both together. We recommend having both to provide a perfect user journey.”"
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/readwhere.pdf

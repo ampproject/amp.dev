@@ -33,7 +33,7 @@ const config = require('./config');
 const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
-const SamplesBuilder = require('./pipeline/samplesBuilder');
+const {samplesBuilder} = require('./pipeline/samplesBuilder');
 const roadmapImporter = require('./pipeline/roadmapImporter');
 const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
 
@@ -232,18 +232,7 @@ class Pipeline {
   }
 
   async buildSamples() {
-    const samplesBuilder = new SamplesBuilder();
-
-    // Start the samples build
-    const build = samplesBuilder.build();
-
-    // And after the samples have been built start watching them in
-    // development mode
-    if (config.environment == 'development') {
-      await samplesBuilder.watch();
-    };
-
-    return build;
+    return samplesBuilder.build();
   }
 
   /**
