@@ -12,11 +12,33 @@ $view: /views/overview/what-is-amp.j2
 {% include 'views/partials/format-visual.j2' %}
 </section>
 
+<div class="ad--kpi ad--container">
+  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+  <div class="ad-m-kpi ad-m-kpi-e-mails ad-m-teaser-kpi ad-m-teaser-kpi-e-mails">
+    <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
+    </div>
+  </div>
+  <div class="ad-m-kpi ad-m-kpi-e-mails ad-m-teaser-kpi ad-m-teaser-kpi-e-mails">
+      <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+      </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-e-mails ad-m-teaser-kpi ad-m-teaser-kpi-e-mails">
+        <div class="ad-m-kpi-content">
+            <span class="ad-m-kpi-number">3-4x</span>
+            <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+      </div>
+</div>
+
 <section class="ad--content">
   <div class="ad--container-fluid">
     <div class="ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h5>AMP emails</h5>
-      <h1>A whole new world of possibilities for content engagement</h1>
+      <h1>AMP emails</h1>
+      <h5>A whole new world of possibilities for content engagement</h5>
       <amp-youtube id="myLiveChannel" data-videoid="R_YQB6rLo_M" width="358" height="204" layout="responsive"></amp-youtube>
       <p>AMP for email allows senders to include AMP components inside rich engaging emails, making modern app functionality available within email. The AMP email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMP emails to interact dynamically with content directly in the message.</p>
       <p>More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMP email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe.</p>

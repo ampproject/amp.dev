@@ -12,11 +12,33 @@ $view: /views/overview/what-is-amp.j2
 {% include 'views/partials/format-visual.j2' %}
 </section>
 
+<div class="ad--kpi ad--container">
+  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+  <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
+    <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
+    </div>
+  </div>
+  <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
+      <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+      </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
+        <div class="ad-m-kpi-content">
+            <span class="ad-m-kpi-number">3-4x</span>
+            <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+      </div>
+</div>
+
 <section class="ad--content">
   <div class="ad--container-fluid">
     <div class="ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h5>AMP stories</h5>
-      <h1>visual storytelling for the open web</h1>
+      <h1>AMP stories</h1>
+      <h5>visual storytelling for the open web</h5>
       <p>AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The AMP story format is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform.</p>
       <p>AMP stories provides content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. AMP stories offer design flexibility, are easy to build and are specifically designed for mobile consumption. Worry less about tech, and have more time to make fast and captivating user-first stories that will go viral.</p>
       <div class="ad-o-component-visual-link">
