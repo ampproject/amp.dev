@@ -1,0 +1,59 @@
+/*
+
+####################################
+### MOLECULE: ghost frame mobile ###
+####################################
+
+### INFO:
+
+The ghost frame mobile wraps an element with a mobile-like frame.
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color';
+
+.#{molecule('ghost-frame-mobile')} {
+  background: rgba(color('white'), .9);
+  border-radius: 5px;
+  box-shadow: shadows('drop');
+  display: inline-block;
+  height: auto;
+  margin-bottom: auto;
+  max-width: calc((3/5) * 15vw);
+  padding: 5% 1% 4%;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+
+  &.-right {
+    transform: rotate3d(-0.1, -0.1, 0.1, -87deg);
+    perspective: 1000px;
+  }
+
+  &.-left {
+    transform: rotate3d(-0.1, -0.1, 0.1, 87deg);
+    perspective: 1000px;
+  }
+
+  // ui
+  &:before {
+    background-repeat: no-repeat;
+    background: color('silver');
+    border-radius: 50px;
+    content: '';
+    height: 1.5%;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 23%;
+    z-index: 1;
+  }
+}

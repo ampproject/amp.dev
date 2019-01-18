@@ -12,33 +12,71 @@
 @import '../../mixins';
 @import '../../variables';
 
-@import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+
+@import '../molecules/copy';
+@import '../molecules/ghost-frame-desktop.scss';
+@import '../molecules/ghost-frame-mobile.scss';
+@import '../molecules/ghost-frame-tablet.scss';
+@import '../molecules/quote';
+@import '../molecules/text-media.scss';
+
+@import '../organisms/ghost-frame-block.scss';
+@import '../organisms/text-media-block.scss';
 
 @import '../templates/_default.scss';
 
 .#{template('success-story')} {
-  
+  perspective: 80rem;
+
   .#{utility('container')} {
     @include container;
   }
-  
-  .#{utility('content')},
-  .#{utility('help')} {
+
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+
+  .#{utility('content')} {
     @include content;
+
   }
-  
-  .#{utility('sidebar')} {
-    @include sidebar;
+
+  .#{utility('stage')} {
+    .#{organism('stage-content')} {
+      grid-column: 3 / 12;
+
+      h1 {
+        @include hl;
+        @include hl-h2;
+        color: color('white');
+      }
+    }
   }
-  
-  .#{utility('toc')} {
-    @include toc;
+
+  .#{utility('kpi')} {
+    .#{molecule('kpi')} {
+      grid-column: span 8;
+      padding-bottom: 56.25%;
+
+
+      &:nth-child(3n+1) {
+        grid-column: 4 / 10;
+      }
+
+      &:nth-child(3n+2) {
+        grid-column: 10 / 16;
+      }
+
+      &:nth-child(3n+3) {
+        grid-column: 16 / 22;
+      }
+    }
   }
-  
-  .#{utility('sidebar')} + .#{utility('content')},
-  .#{utility('toc')} + .#{utility('content')} {
-    @include content-with-sidebar;
+
+  .#{organism('text-media-block')} {
+
   }
 }

@@ -18,6 +18,14 @@
     }
   }
 
+  .#{organism('ghost-frame-block')} {
+    grid-column: 13 / -1;
+    margin-top: -8%;
+
+    @media screen and (min-width: 768px) {
+      margin-top: -50%;
+    }
+  }
   .#{molecule('format-visual')} {
     grid-column: 13 / -1;
     margin-top: -8%;

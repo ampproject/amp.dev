@@ -1,0 +1,51 @@
+/*
+
+##################################
+### ORGANSIM: text-media-block ###
+##################################
+
+### INFO:
+
+### MODIFIERS:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{organism('text-media-block')} {
+  &:nth-child(even) {
+    .#{molecule('text-media')} {
+      grid-row: 1;
+      perspective: 80rem;
+      &.media {
+        grid-column: 2/10;
+      }
+
+      &.text {
+        grid-column: 11/21;
+
+        h2 {
+          margin-top: 0;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    .#{molecule('text-media')} {
+      grid-row: 1;
+      perspective: 80rem;
+      &.media {
+        grid-column: 14/23;
+      }
+
+      &.text {
+        grid-column: 3/12;
+      }
+    }
+  }
+}

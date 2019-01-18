@@ -1,0 +1,22 @@
+/*
+
+############################
+### MOLECULE: text-media ###
+############################
+
+### INFO:
+
+### MODIFIERS:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_headline';
+
+.#{molecule('text-media')} {
+
+}
