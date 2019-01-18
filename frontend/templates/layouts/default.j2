@@ -47,11 +47,11 @@
     <style amp-custom>
     {% block styles %}
     {# Some basic styling should always be present #}
-    {% do doc.styles.addCssFile('css/base.css') %}
-    {% do doc.styles.addCssFile('css/components/atoms/headline.css') %}
-    {% do doc.styles.addCssFile('css/components/atoms/text.css') %}
-    {% do doc.styles.addCssFile('css/components/atoms/anchor.css') %}
-    {% do doc.styles.addCssFile('css/components/atoms/icon.css') %}
+    {% do doc.styles.addCssFile('css/base.css', -5) %}
+    {% do doc.styles.addCssFile('css/components/atoms/headline.css', -4) %}
+    {% do doc.styles.addCssFile('css/components/atoms/text.css', -3) %}
+    {% do doc.styles.addCssFile('css/components/atoms/anchor.css', -2) %}
+    {% do doc.styles.addCssFile('css/components/atoms/icon.css', -1) %}
 
     {% endblock %}
 
