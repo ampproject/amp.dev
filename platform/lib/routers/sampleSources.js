@@ -16,10 +16,11 @@
 
 'use strict';
 
+const path = require('path');
 const express = require('express');
 const config = require('../config.js');
-const {SOURCE_DEST} = require('../pipeline/samplesBuilder.js');
 
+const SOURCE_DEST = path.join(__dirname, `../../../dist/sampleSources`);
 const SOURCE_DEST_BASE = '/sampleSources';
 const SAMPLE_MANUALS_ROUTE = '/documentation/examples';
 
