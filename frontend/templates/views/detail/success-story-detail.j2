@@ -76,13 +76,25 @@
     #}
     {% if doc.contents %}
       {% for content in doc.contents %}
-            {# layout: text #}
+            {# layout: text + media #}
             {% if content.layout == 'text-media' %}
-              <div class="ad-o-text-media">
-                <h2>{{content.headline|safe}}</h2>
-                <p>{{content.text|safe}}</p>
-                {% if content.type %}
-                  <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+              <div class="ad-o-text-media-block ad--container">
+                <div class="ad-m-text-media text">
+                  <h2>{{content.headline|safe}}</h2>
+                  <p>{{content.text|safe}}</p>
+                </div>
+                <div class="ad-m-text-media media">
+                  {% if content.type %}
+                    <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+                      <amp-img
+                        alt="{{content.alt}}"
+                        height="{{content.height}}"
+                        layout="responsive"
+                        src="{{content.image_src}}"
+                        width="{{content.width}}"
+                      ></amp-img>
+                    </div>
+                  {% else %}
                     <amp-img
                       alt="{{content.alt}}"
                       height="{{content.height}}"
@@ -90,22 +102,14 @@
                       src="{{content.image_src}}"
                       width="{{content.width}}"
                     ></amp-img>
-                  </div>
-                {% else %}
-                  <amp-img
-                    alt="{{content.alt}}"
-                    height="{{content.height}}"
-                    layout="responsive"
-                    src="{{content.image_src}}"
-                    width="{{content.width}}"
-                  ></amp-img>
-                {% endif %}
+                  {% endif %}
+                </div>
               </div>
             {% endif %}
 
             {# layout: text #}
             {% if content.layout == 'text' %}
-              <div class="text">
+              <div class="ad-o-text-media-block">
                 <h2>{{content.headline|safe}}</h2>
                 <p>{{content.text|safe}}</p>
               </div>
@@ -113,7 +117,7 @@
 
             {# layout: media #}
             {% if content.layout == 'media' %}
-              <div class="media">
+              <div class="ad-o-text-media-block">
                 {% if content.type %}
                   <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
                     <amp-img
