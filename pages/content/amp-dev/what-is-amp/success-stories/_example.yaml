@@ -1,25 +1,47 @@
 ### SUCCESS STORY (EXAMPLE STRUCTURE)
 ###
-### Array can contain multiple elements.
-### The media source can be `image_src` or `video_src`
+### Arrays can contain multiple elements.
+###
+### The media source can be `image_src` or `video_src`.
+###
+### Leave the device.direction property empty to get a flat front view.
+### Device.layouts and their ratios:
+###   - Desktop: 8:5
+###   - Tablet: 4:3
+###   - Desktop: 3:5
+###
 ### The order of contents' elements is equal to the order of the resulting page.
-### content layouts:
+### Content layouts:
 ###   - media + text
 ###   - media only
 ###   - text only
 ###   - quote
 ###   - text with media + button
-#
+###
+### The stage has the ability to display three different device layouts:
+###   - all (Three elements with devices.type desktop, tablet and mobile)
+###   - tablet-mobile (Two elements with devices.type tablet and mobile)
+###   - mobile (One element with devices.type mobile)
+### Other combinations aren't allowed and can lead to broken layouts.
+
+
+
 # stage:
-#   headline: lorem ipsum
-#   subline: dolor sit amet
+#   headline: <string>
+#   subline: <string>
+#   layout: [all | tablet-mobile | mobile]
 #   devices:
 #     - image_src: [url] | video_src: [url]
 #       width: <number>
 #       height: <number>
-#       type: [mobile |  tablet | desktop] (optional)
+#       type: [mobile |  tablet | desktop] (depends on the layout)
 #       direction: [left | right | left-flat | right-flat] (optional)
 #       alt: <string>
+#       poster_src: [url]
+#       artwork_src: [url]
+#       video_title: <string>
+#       video_artist: <string>
+#       video_album: <string>
 #
 # kpis:
 #   - value: <string>
@@ -27,50 +49,50 @@
 #
 # contents:
 # (media + text)
-#  - layout: [media-text | media | text | quote | text-button]
-#    image_src: [url] | video_src: [url]
-#    width: <number>
-#    height: <number>
-#    type: [mobile |  tablet | desktop] (optional)
-#    direction: [left | right | left-flat | right-flat] (optional)
-#    alt: <string>
-#    headline: <string> (optional)
-#    text: <string>
-#    background: [gradient | gray]
+#   - layout: text-media
+#     image_src: [url] | video_src: [url]
+#     width: <number>
+#     height: <number>
+#     type: [mobile |  tablet | desktop] (optional)
+#     direction: [left | right | left-flat | right-flat] (optional)
+#     alt: <string>
+#     headline: <string> (optional)
+#     text: <string>
+#     background: [gradient | gray]
 #
 # (media only)
-#  - layout: [media-text | media | text | quote | text-button]
-#    image_src: [url] | video_src: [url]
-#    width: <number>
-#    height: <number>
-#    type: [mobile |  tablet | desktop] (optional)
-#    direction: [left | right | left-flat | right-flat] (optional)
-#    alt: <string>
+#   - layout: media
+#     image_src: [url] | video_src: [url]
+#     width: <number>
+#     height: <number>
+#     type: [mobile |  tablet | desktop] (optional)
+#     direction: [left | right | left-flat | right-flat] (optional)
+#     alt: <string>
 #
 # (text only)
-#  - layout: [media-text | media | text | quote | text-button]
-#    headline: <string> (optional)
-#    text: <string>
+#   - layout: text
+#     headline: <string> (optional)
+#     text: <string>
 #
 # (quote)
-#  - layout: [media-text | media | text | quote | text-button]
-#    quote: <string>
-#    image_src: [url]
-#    width: <number>
-#    height: <number>
-#    alt: <string>
-#    author: <string>
-#    story_url: [url]
+#   - layout: quote
+#     quote: <string>
+#     image_src: [url]
+#     width: <number>
+#     height: <number>
+#     alt: <string>
+#     author: <string>
+#     story_url: [url]
 #
-# (text with media + button)
-# - layout: [media-text | media | text | quote | text-button]
-#   image_src: [url] | video_src: [url]
-#   width: <number>
-#   height: <number>
-#   type: [mobile |  tablet | desktop] (optional)
-#   direction: [left | right | left-flat | right-flat] (optional)
-#   alt: <string>
-#   headline: <string> (optional)
-#   text: <string>
-#   download_url: [url]
-#   background: [gradient | gray]
+# (text + media + button)
+#   - layout: text-button
+#     image_src: [url] | video_src: [url]
+#     width: <number>
+#     height: <number>
+#     type: [mobile |  tablet | desktop] (optional)
+#     direction: [left | right | left-flat | right-flat] (optional)
+#     alt: <string>
+#     headline: <string> (optional)
+#     text: <string>
+#     download_url: [url]
+#     background: [gradient | gray]
