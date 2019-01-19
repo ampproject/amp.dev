@@ -2,6 +2,9 @@
 $title: Actions and events in AMP
 toc: true
 $order: 1
+
+formats:
+  - websites
 ---
 
 <!---

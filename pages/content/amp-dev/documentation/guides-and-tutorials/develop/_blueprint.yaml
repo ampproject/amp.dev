@@ -6,3 +6,9 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/{base}.html
 
 $order: 2
+formats:
+  - websites
+  - stories
+  - ads
+  - email
+  

@@ -4,3 +4,6 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/visual_story/{base}.html
 $title@: Create your first AMP Story
 chaptered: true
+
+formats:
+  - stories

@@ -5,6 +5,9 @@ $category: Develop
 toc: true
 components:
     - youtube
+
+formats:
+    - stories
 ---
 
 [TOC]
