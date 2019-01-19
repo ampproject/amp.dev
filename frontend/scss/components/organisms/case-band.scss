@@ -3,6 +3,8 @@
 @import '../../mixins';
 @import '../../variables';
 
+@include levitateAnimation;
+
 .#{organism('case-band')} {
   grid-column: 1 / -1;
   width: 100%;

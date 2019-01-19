@@ -7,3 +7,9 @@ $title@: Create Your First AMP Page
 
 chaptered: true
 tutorial: true
+
+formats:
+  - websites
+  - stories
+  - ads
+  - email

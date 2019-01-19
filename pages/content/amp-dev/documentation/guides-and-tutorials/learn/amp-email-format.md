@@ -2,6 +2,10 @@
 $title: AMPHTML email
 $order: 2
 toc: true
+
+
+formats:
+  - email
 ---
 
 <!---

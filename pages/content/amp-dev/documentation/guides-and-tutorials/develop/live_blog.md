@@ -3,6 +3,9 @@ $title: Create a live blog
 $order: 2
 toc: true
 tutorial: true
+
+formats:
+    - websites
 ---
 
 [TOC]

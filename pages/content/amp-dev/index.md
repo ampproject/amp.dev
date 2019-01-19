@@ -54,6 +54,20 @@ format_explainer:
     headline: AMP enables great experiences across many emails
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on emails. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/email.html
+
+sampler:
+  - title: Hello World
+    url: http://localhost:8080/playground/embed#url=http://localhost:8080/documentation/examples/components/amp-accordion.html/source/12
+  - title: Lorem Ipsum 1
+    url: http://localhost:8080/playground/embed#url=http://localhost:8080/documentation/examples/components/amp-accordion.html/source/12
+  - title: Lorem Ipsum 2
+    url: http://localhost:8080/playground/embed#url=http://localhost:8080/documentation/examples/components/amp-accordion.html/source/12
+  - title: Lorem Ipsum 3
+    url: http://localhost:8080/playground/embed#url=http://localhost:8080/documentation/examples/components/amp-accordion.html/source/12
+  - title: Lorem Ipsum 4
+    url: http://localhost:8080/playground/embed#url=http://localhost:8080/documentation/examples/components/amp-accordion.html/source/12
+  - title: Lorem Ipsum 5
+    url: http://localhost:8080/playground/embed#url=http://localhost:8080/documentation/examples/components/amp-accordion.html/source/12
 ---
 
 <section class="ad--stage ad--container-fluid">
@@ -230,6 +244,78 @@ format_explainer:
       </div>
       <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
     </a>
+  </div>
+</section>
+
+<section class="ad--sampler">
+  {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
+
+  <amp-state id="sampler">
+    <script type="application/json">
+      [
+        {% for sample in doc.sampler %}
+        {
+          "title": "{{ sample.title }}",
+          "url": "{{ sample.url }}"
+        }{{ "," if not loop.last }}
+        {% endfor %}
+      ]
+    </script>
+  </amp-state>
+
+  <div class="ad--container">
+
+    <div class="ad-m-copy ad-m-copy-center">
+      <div class="ad-o-sampler-icon ad-a-ico">
+        {% do doc.icons.useIcon('icons/logo.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+      </div>
+      <h2>compelling, smooth, and instant</h2>
+    </div>
+    <div class="ad-m-copy">
+      <p>AMP is an open-source html framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
+    </div>
+
+    <div class="ad-o-sampler">
+      <div class="ad-o-sampler-tab-bar">
+
+        {% for tab in doc.sampler %}
+        <div class="ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
+          [class]="activeSample == '{{ loop.index-1 }}' ? 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} active' : 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }}'"
+          on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
+          <span class="ad-o-sampler-tab-title">{{ tab.title }}</span>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <div class="ad-o-sampler-iframe">
+        <amp-iframe
+          width="11"
+          height="5"
+          sandbox="allow-scripts"
+          layout="responsive"
+          resizable
+          frameborder="0"
+          src="{{ doc.sampler[0].url }}"
+          [src]="sampler[activeSample].url">
+          <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
+        </amp-iframe>
+      </div>
+
+      <div class="ad-o-sampler-link">
+        <a href="{{ doc.sampler[0].url }}"
+          [href]="sampler[activeSample].url"
+          class="ad-m-lnk">
+          <div class="ad-a-ico ad-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ad-m-lnk-text">Open in AMP Playground</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 

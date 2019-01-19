@@ -1,6 +1,9 @@
 ---
 $title: Integrate your analytics tools
 $order: 5
+
+formats:
+  - websites
 ---
 
 ## Overview

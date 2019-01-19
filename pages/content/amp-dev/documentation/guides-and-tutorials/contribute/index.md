@@ -2,6 +2,9 @@
 $title: How to contribute
 $path: /documentation/guides-and-tutorials/contribute/index.html
 $order: 0
+
+formats:
+  - websites
 ---
 
 The AMP Project would not be possible without help from all members of the community

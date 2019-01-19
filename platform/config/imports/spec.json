@@ -67,7 +67,7 @@
         "title": "Integrating your analytics tool with AMP",
         "order": 1,
         "from": "extensions/amp-analytics/integrating-analytics.md",
-        "to": "documentation/guides-and-tutorials/integrate/integrating-analytics.md",
+        "to": "documentation/guides-and-tutorials/integrate/integrate-your-analytics-tools.md",
         "toc": true
     },
     {
