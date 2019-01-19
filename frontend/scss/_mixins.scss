@@ -139,16 +139,18 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   }
 }
 
-@keyframes levitate {
-  0% {
-    transform: translate3d(0, -2.3%, 0);
-  }
-  
-  50% {
-    transform: translate3d(0, 2.3%, 0);
-  }
-  
-  100% {
-    transform: translate3d(0, -2.3%, 0);
-  }
+@mixin levitateAnimation {
+	@keyframes levitate {
+	  0% {
+	    transform: translate3d(0, -2.3%, 0);
+	  }
+	  
+	  50% {
+	    transform: translate3d(0, 2.3%, 0);
+	  }
+	  
+	  100% {
+	    transform: translate3d(0, -2.3%, 0);
+	  }
+	}
 }
