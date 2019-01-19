@@ -222,7 +222,7 @@ format_explainer:
         </button>
       </div>
     </div>
-    
+
     <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-o-format-explainer-link ad-m-lnk ad-m-lnk-square">
       <div class="ad-a-ico ad-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -370,10 +370,10 @@ format_explainer:
 
 <section class="ad--teaser-grid ad--container">
 [teaser-grid]
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story.md)
-[](content/shared/fill-ins/success-story.md)
+[](/content/amp-dev/what-is-amp/success-stories/bmw-com.yaml)
+[](/content/amp-dev/what-is-amp/success-stories/bmw-com.yaml)
+[](/content/amp-dev/what-is-amp/success-stories/bmw-com.yaml)
+[](/content/amp-dev/what-is-amp/success-stories/bmw-com.yaml)
 [/teaser-grid]
 
   <div class="ad-m-copy">

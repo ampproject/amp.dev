@@ -1,21 +1,40 @@
 ---
 $title: Roadmap
 $order: 2
-$view: /views/default.j2
+$view: /views/overview/roadmap.j2
 roadmap: !g.json /content/amp-dev/community/roadmap.json
 ---
-{% block main %}
-<!-- Filter bubbles -->
-{% for label in doc.roadmap.labels %}
-<button>{{ label }}</button>
-{% endfor %}
 
-<!-- Columns -->
-{% for column in doc.roadmap.columns %}
-<ul>
-  {% for card in column.cards %}
-  <li>{{ card.issue.title }}</li>
-  {% endfor %}
-</ul>
-{% endfor %}
-{% endblock %}
+<div class="ad--container">
+  <div class="ad-o-roadmap">
+
+    {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+
+
+    {% block main %}
+    <!-- Filter bubbles -->
+    <div class="ad-o-roadmap-filter-list">
+      {% for label in doc.roadmap.labels %}
+      <button class="ad-m-filter-bubble">{{ label }}</button>
+      {% endfor %}
+    </div>
+
+  </div>
+  <div class="ad-o-roadmap-tiles">
+    <!-- Columns -->
+    {% for column in doc.roadmap.columns %}
+
+    <ul class="ad-o-roadmap-tiles-list">
+      {% for card in column.cards %}
+      <li class="ad-o-roadmap-tiles-item ad-m-copy {% if card.issue.labels[0] %} {{ card.issue.labels[0].name | slug}} {% endif %}">
+        <a href="">{{ card.issue.title }}</a>
+        <p>{{ card.issue.description }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% endfor %}
+  {% endblock %}
+
+  </div>
+</div>

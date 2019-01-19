@@ -117,7 +117,7 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
         PRE_CODE_REGEX = r"<pre[^>]*>.+</pre>|<code[^>]*>.+</code>"
         stripped_content = content
         for pre_code in re.findall(PRE_CODE_REGEX, content):
-          stripped_content = stripped_content.replace(pre_code)
+          stripped_content = stripped_content.replace(pre_code, '')
 
         dependencies = []
 

@@ -1,26 +1,28 @@
 $title: BMW.com
 
+teaser:
+  image:
+    src: '/static/img/teaser-dummy-5x3-2.jpg'
+    width: 1
+    height: 1
+    alt: A placeholder image
+  logo:
+    src: '/static/img/logo-dummy-time.png'
+    width: 153
+    height: 38
+    alt: Teads
+  text: The story of the all-new BMW.com
+
 stage:
   headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
-  subline: i am a subline
+  subline: MAR 12, 2018
   devices:
-    - image_src: https://placeimg.com/800/500/any
-      width: 8
-      height: 5
-      type: desktop
-      alt: lorem
 
-    - image_src: https://placeimg.com/400/300/any
-      width: 4
-      height: 3
-      type: tablet
-      alt: lorem
-
-    - image_src: https://placeimg.com/300/500/any
+    - image_src: ../../../static/img/success-stories/bmw_jvm/amp_bmw_1.jpg
       width: 3
       height: 5
       type: mobile
-      alt: lorem
+      alt: BMW and Jung von Matt
 
 kpis:
   - value: 3-4x
@@ -33,44 +35,27 @@ kpis:
     text: more mobile users
 
 contents:
-  - layout: text-media
-    image_src: https://placeimg.com/800/500/nature
-    width: 8
-    height: 5
-    type: desktop
-    alt: lorem ipsum
-    headline: Challenge
-    text: Wired’s philosophy is to meet audiences wherever they are online. The San Francisco-based print and online publisher reports on technology and its impact on politics, culture, and the economy. The publisher saw AMP as an opportunity to speed up the mobile experience as well as to be eligible for the AMP-powered Google Search Top Stories carousel. Samuel Baldwin, Product Manager for Wired.com, said “Site performance is a company-wide KPI, and we see our work on AMP as furthering the business need of providing a fast, clean user experience to our audience.”
-    direction: left-flat
+  - layout: text
+    text: BMW is one of the world’s largest automotive companies, known for the style and performance of their cars. With millions of satisfied customers already around the globe, they also wanted to reach and excite new car enthusiasts and those generally interested in mobility and technology.
 
   - layout: text-media
-    image_src: https://placeimg.com/800/500/nature
-    width: 8
+    image_src: ../../../static/img/success-stories/bmw_jvm/amp_bmw_1.jpg
+    width: 3
     height: 5
-    type: desktop
-    alt: lorem ipsum
-    headline: Results
-    text: The team at Wired.com took a measured approach to rolling out AMP. They began by creating AMP pages for all stories published in 2016. After a few months of positive data with that group, they expanded coverage to include the entire 24-year archive of Wired.com, over 100k stories. There are a few exceptions, however. At the moment they currently exclude digital interactives, high impact feature stories, liveblogs (these pages will be implemented in AMP soon), and any story that has an image gallery in it.
+    type: mobile
+    alt: BMW and Jung von Matt
+    headline: Solution
+    text: "BMW set out to create a high-performance, mobile-first approach that offered entertaining stories, videos, and images to the target audience. Christian Liedgens, BMW digital marketer, says the company’s goals for the site were: “Speed, speed, speed, and highly engaging content based on data insights.” To create a new “main stage” for their brand, BMW turned to Hamburg-based digital agency Jung von Matt. The site incorporates a Progressive Web App (PWA) shell, which loads custom-built, all-AMP content to deliver a fast page experience for first and all following page visits. BMW and Jung von Matt are such strong believers in AMP that they used all across the completely relaunched BWM.com."
     direction: left-flat
-    background: gray
-
-  - layout: quote
-    quote: „We’re exited to try more AMP features and see the format supported on a variety of new platforms.”
-    image_src: https://placehold.it/100x50
-    width: 100
-    height: 50
-    alt: lorem
-    author: John Doe
-    story_url: https://google.com
 
   - layout: text-button
-    image_src: https://placeimg.com/800/500/nature
-    width: 8
+    image_src: ../../../static/img/success-stories/bmw_jvm/amp_bmw_2.jpg
+    width: 3
     height: 5
-    type: desktop
-    alt: lorem ipsum
-    headline: Conclusion
-    text: With AMP pages showing positive results, Wired hopes to expand its investment in the format by contributing to the open source project around the image gallery experience. About 40% of Wired’s content has not yet been implemented in the AMP format - much of this is content containing image galleries. “Galleries are a template with high ad inventory impact on the mobile web and low inventory impact with the current AMP implementation options. We need a better UX for AMP galleries, something that can accommodate long captions, images with different aspect ratios, recirculation widgets, and, of course, ads. It also needs to feel cool and load fast,” said Baldwin. Overall, the team is pleased with early AMP results. Baldwin added, “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”
-    download_url: "../../../static/files/case-studies/BMW.pdf"
+    type: mobile
+    alt: BMW and Jung von Matt
+    headline: Results
+    text: "“We built the new mobile BMW.com from scratch with AMP,” Liedgens says. Development took about six months and dramatically increased performance. Once the new site launched in fall 2017, visitors began browsing colorful, informative, fast-loading article pages. The broad range of topics includes Automotive Life, Design, Innovation, Performance, and Models. “Inspiring articles and entertaining videos capture the users’ attention, answer questions about mobility, and let them feel the beauty of our brand,” BMW says. Plus, nearly one-third of visitors continue on to access information about models, products, and services in their countries with a single tap.<br><br>BMW’s goal was to have “the world’s fastest automotive content marketing website.” What most excites the company about the AMP pages, Liedgens says, is “the tremendous improvement in user experience due to the speed it provides.” The new website loads three to four times faster than before relaunch. The proportion of visitors clicking through from BMW.com to a national sales company (NSC) website has soared from 8 percent to 30 percent. The number of mobile users has climbed to 50 percent, up from 40 percent previously. Search engine optimization (SEO) delivers 49 percent more site visits than before. Overall, the company says, BMW.com now gives car lovers “a high-performance experience they’d only expect from a native app.”"
+    download_url: ../../../static/files/case-studies/BMW.pdf
     direction: left-flat
-    background: gradient
+    background: gray
