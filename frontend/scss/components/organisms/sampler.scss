@@ -11,6 +11,7 @@
 .#{utility('sampler')} {
   padding-left: 30px;
   padding-right: 30px;
+  margin-bottom: 4vw;
   
   @media screen and (min-width: 840px) {
     padding-left: 0;
@@ -18,7 +19,7 @@
   }
 
   .#{molecule('copy')} {
-    grid-column: 3 / 13;
+    grid-column: 2 / 13;
 
     &-center {
       grid-column: 6 / 20;
@@ -37,12 +38,8 @@
 }
 
 .#{organism('sampler')} {
-  grid-column: 3 / -1;
+  grid-column: 2 / -1;
   width: calc(100% + 30px);
-  
-  @media screen and (min-width: 840px) {
-    width: 100%;
-  }
   
   &-tab-bar {
     display: flex;

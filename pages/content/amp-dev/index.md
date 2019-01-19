@@ -263,7 +263,7 @@ sampler:
     </script>
   </amp-state>
 
-  <div class="ad--container-fluid">
+  <div class="ad--container">
 
     <div class="ad-m-copy ad-m-copy-center">
       <div class="ad-o-sampler-icon ad-a-ico">
