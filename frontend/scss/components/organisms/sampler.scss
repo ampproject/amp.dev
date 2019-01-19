@@ -9,6 +9,14 @@
 @import '../atoms/_color.scss';
 
 .#{utility('sampler')} {
+  padding-left: 30px;
+  padding-right: 30px;
+  
+  @media screen and (min-width: 840px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .#{molecule('copy')} {
     grid-column: 3 / 13;
 
@@ -30,11 +38,10 @@
 
 .#{organism('sampler')} {
   grid-column: 3 / -1;
-  width: 100%;
-  margin-left: 30px;
+  width: calc(100% + 30px);
   
   @media screen and (min-width: 840px) {
-    margin-left: 0;
+    width: 100%;
   }
   
   &-tab-bar {
