@@ -249,7 +249,7 @@ sampler:
 
 <section class="ad--sampler">
   {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
-  
+
   <amp-state id="sampler">
     <script type="application/json">
       [
@@ -278,7 +278,7 @@ sampler:
 
     <div class="ad-o-sampler">
       <div class="ad-o-sampler-tab-bar">
-        
+
         {% for tab in doc.sampler %}
         <div class="ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
           [class]="activeSample == '{{ loop.index-1 }}' ? 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} active' : 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }}'"
@@ -286,7 +286,7 @@ sampler:
           <span class="ad-o-sampler-tab-title">{{ tab.title }}</span>
         </div>
         {% endfor %}
-        
+
       </div>
 
       <div class="ad-o-sampler-iframe">
@@ -299,10 +299,10 @@ sampler:
           frameborder="0"
           src="{{ doc.sampler[0].url }}"
           [src]="sampler[activeSample].url">
-          <div overflow tabindex=0 role=button aria-label="">Read more...</div>
+          <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
         </amp-iframe>
       </div>
-        
+
       <div class="ad-o-sampler-link">
         <a href="{{ doc.sampler[0].url }}"
           [href]="sampler[activeSample].url"

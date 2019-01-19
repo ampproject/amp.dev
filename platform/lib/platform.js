@@ -18,6 +18,7 @@
 
 const signale = require('signale');
 const express = require('express');
+const ampCors = require('amp-toolbox-cors');
 
 const config = require('./config.js');
 const routers = {
@@ -32,6 +33,8 @@ class Platform {
     signale.await(`Starting platform with environment ${config.environment} ...`);
     this.server = express();
 
+    this._enableCors();
+
     this._check();
     this._registerRouters();
 
@@ -39,6 +42,20 @@ class Platform {
       signale.success(`amp.dev available on ${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}!`);
     });
   }
+
+  _enableCors() {
+    this.server.use((request, response, next) => {
+      response.header("Access-Control-Allow-Origin", "*");
+      response.header("Access-Control-Allow-Credentials", "true");
+      response.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+      response.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, X-Requested-By, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+      next();
+    });
+
+    this.server.use(ampCors({
+      'verifyOrigin': false,
+    }));
+  };
 
   _check() {
     // TODO: Check (dependening on environment) if all needed files are
@@ -48,7 +65,7 @@ class Platform {
   _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.sampleSources);
-    this.server.use('/playground', routers.playground);
+    this.server.use('/playground',  routers.playground);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }
