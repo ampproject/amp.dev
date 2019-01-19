@@ -69,6 +69,7 @@
     padding: 0 15px 30px;
     
     @media screen and (min-width: 1024px) {
+      overflow: visible;
       flex-direction: column;
       max-width: 300px;
       padding: 0;
