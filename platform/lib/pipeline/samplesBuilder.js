@@ -245,7 +245,7 @@ class SamplesBuilder {
 
     for (let section of parsedSample.document.sections) {
       // Check if the section qualifies to show standalone
-      if (section.preview !== "" && !section.inBody) {
+      if (section.preview.replace(/\s/g, '') == '' || !section.inBody) {
         continue;
       }
 
