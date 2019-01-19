@@ -1,6 +1,8 @@
 ---
 $title: Open Source Governance
 $order: 2
+formats:
+  - websites
 ---
 
 # AMP Project open source governance

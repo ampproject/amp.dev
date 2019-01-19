@@ -1,6 +1,9 @@
 ---
 $title: Debug AMP Cache issues
 $order: 8
+
+formats:
+  - websites
 ---
 
 # AMP Cache Debugging
