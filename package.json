@@ -8,8 +8,8 @@
     "develop": "cd platform && node build.js",
     "lint": "npm-run-all lint:*",
     "lint:grow": "cd platform && node lib/pipeline/growReferenceChecker.js",
-    "lint:node": "eslint \"**/*.js\" --ignore-path ../.gitignore",
-    "fix:node": "eslint \"**/*.js\" --fix --ignore-path ../.gitignore",
+    "lint:node": "eslint \"platform/**/*.js\" --ignore-path ./.gitignore",
+    "fix:node": "eslint \"platform/**/*.js\" --fix --ignore-path ./.gitignore",
     "build:playground": "cd playground && npm run build",
     "build:local": "cd platform && NODE_ENV=local node build.js",
     "build:staging": "cd platform && NODE_ENV=staging node build.js",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "@octokit/rest": "^16.10.0",
     "amp-by-example": "^0.2.5",
+    "babel-eslint": "^10.0.1",
     "crass": "^0.12.3",
     "del": "^3.0.0",
     "eslint": "5.12.0",
