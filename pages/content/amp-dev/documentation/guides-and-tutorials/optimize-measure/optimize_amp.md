@@ -2,6 +2,9 @@
 $title: Optimizing your hosted AMP pages
 $order: 2
 toc: true
+
+formats:
+  - websites
 ---
 [TOC]
 

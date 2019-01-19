@@ -3,6 +3,9 @@ $title: Make your page discoverable
 $order: 3
 
 toc: true
+
+formats:
+  - websites
 ---
 [TOC]
 

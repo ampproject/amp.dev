@@ -21,7 +21,9 @@ const abe = require('amp-by-example');
 const through = require('through2');
 const del = require('del');
 const path = require('path');
+const crypto = require('crypto');
 
+const MarkdownDocument = require('./markdownDocument.js');
 const config = require('../config.js');
 
 // Where to import the samples from
@@ -44,7 +46,7 @@ const CACHE_DEST = path.join(__dirname, `../../../.cache/samples.json`);
 class SamplesBuilder {
   constructor() {
     this._log = new Signale({
-      'interactive': false,
+      'interactive': true,
       'scope': 'Samples builder',
     });
   }
@@ -57,6 +59,7 @@ class SamplesBuilder {
       del.sync([
         `${MANUAL_DEST}/**/*.html`,
         `${MANUAL_DEST}/**/*.json`,
+        `${SOURCE_DEST}`,
         CACHE_DEST
       ], {
         'force': true
@@ -132,7 +135,38 @@ class SamplesBuilder {
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
 
-      //
+      // Rewrite some markdown to be consumable by Grow
+      for (let index in parsedSample.document.sections) {
+        // Replace GitHub sourcecode syntax by python-markdown
+        let markdown = parsedSample.document.sections[index].doc_;
+        markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
+
+        // Splice out sourcecode blocks to preserve whitespace
+        let codeBlocks = {};
+        const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms
+        markdown.replace(CODE_BLOCK_PATTERN, (match) => {
+          // Hash and save the code block for later restore
+          let hash = crypto.createHash('md5')
+          hash.update(match)
+          hash = hash.digest('utf-8');
+
+          codeBlocks[hash] = match;
+          return hash;
+        });
+
+        // Replace empty lines with leading space with just a new line
+        markdown = markdown.replace(/^\s+/gm, '\n');
+
+        // Replace new lines with following space by just a new line
+        markdown = markdown.replace(/\n +/gm, '\n');
+
+        // Restore codeblocks
+        for (let hash in Object.keys(codeBlocks)) {
+          markdown = markdown.replace(hash, codeBlocks[hash]);
+        }
+
+        parsedSample.document.sections[index].doc_ = markdown;
+      }
 
       return parsedSample;
     });
@@ -232,20 +266,20 @@ class SamplesBuilder {
     // Then create a document structure that can be used to write a full document
     // for each of the individual sections
     let barebone = [
-      '<!doctype html><html ⚡><head>',
+      '<!doctype html>\n<html ⚡>\n<head>',
       parsedSample.document.head,
       `<title>${parsedSample.document.title} / ${TITLE_PLACEHOLDER}</title>`,
       '<style amp-custom>',
       parsedSample.document.styles,
-      '</style><meta name="robots" content="noindex, nofollow"></head>',
+      '</style>\n<meta name="robots" content="noindex, nofollow">\n</head>',
       parsedSample.document.body,
       parsedSample.document.elementsAfterBody,
-      `${SECTION_PLACEHOLDER}</body><html>`
-    ].join('');
+      `${SECTION_PLACEHOLDER}</body>\n</html>`
+    ].join('\n');
 
     for (let section of parsedSample.document.sections) {
       // Check if the section qualifies to show standalone
-      if (section.preview !== "" && !section.inBody) {
+      if (section.preview.replace(/\s/g, '') == '' || !section.inBody) {
         continue;
       }
 
