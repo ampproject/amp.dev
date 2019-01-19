@@ -5,6 +5,8 @@ toc: true
 components:
     - youtube
 
+formats:
+    - websites
 ---
 
 [TOC]

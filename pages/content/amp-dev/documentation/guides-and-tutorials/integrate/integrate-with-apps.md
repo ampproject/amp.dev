@@ -3,6 +3,8 @@ $title: Integrate AMP with your app
 $order: 2
 toc: true
 
+formats:
+  - websites
 ---
 
 This guide is intended for mobile and web app developers who want to integrate and link to AMP pages. For example, consider a mobile chat app that loads the AMP version of a shared URL to achieve a faster experience for users.

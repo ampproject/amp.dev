@@ -6,3 +6,6 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/contribute/{base}.html
 
 $order: 6
+
+formats:
+  - websites

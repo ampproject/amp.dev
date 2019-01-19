@@ -21,7 +21,9 @@ const abe = require('amp-by-example');
 const through = require('through2');
 const del = require('del');
 const path = require('path');
+const crypto = require('crypto');
 
+const MarkdownDocument = require('./markdownDocument.js');
 const config = require('../config.js');
 
 // Where to import the samples from
@@ -37,14 +39,14 @@ const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples/';
 // Path the all source files are written to, to vend them via express
-const SOURCE_DEST = path.join(__dirname, `../../../dist/sampleSources`);
+const SOURCE_DEST = path.join(__dirname, '../../../dist/sampleSources');
 // Path to store the cache in
-const CACHE_DEST = path.join(__dirname, `../../../.cache/samples.json`);
+const CACHE_DEST = path.join(__dirname, '../../../.cache/samples.json');
 
 class SamplesBuilder {
   constructor() {
     this._log = new Signale({
-      'interactive': false,
+      'interactive': true,
       'scope': 'Samples builder',
     });
   }
@@ -57,9 +59,10 @@ class SamplesBuilder {
       del.sync([
         `${MANUAL_DEST}/**/*.html`,
         `${MANUAL_DEST}/**/*.json`,
-        CACHE_DEST
+        `${SOURCE_DEST}`,
+        CACHE_DEST,
       ], {
-        'force': true
+        'force': true,
       });
     }
 
@@ -75,7 +78,7 @@ class SamplesBuilder {
       // Only build samples changed since last run and if it's not a fresh build
       if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
         stream = stream.pipe(once({
-          'file': CACHE_DEST
+          'file': CACHE_DEST,
         }));
       }
 
@@ -84,13 +87,14 @@ class SamplesBuilder {
         await this._parseSample(sample.path).then((parsedSample) => {
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
-          let files = [
+          const files = [
             ...this._createManual(sample, parsedSample),
             ...this._buildRawSources(sample, parsedSample),
           ];
 
           // Since stream.push doesn't allow to push multiple files at once
-          for (let file of files) {
+          /* eslint-disable guard-for-in */
+          for (const file of files) {
             stream.push(file);
           }
 
@@ -132,7 +136,38 @@ class SamplesBuilder {
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
 
-      //
+      // Rewrite some markdown to be consumable by Grow
+      for (const index in parsedSample.document.sections) {
+        // Replace GitHub sourcecode syntax by python-markdown
+        let markdown = parsedSample.document.sections[index].doc_;
+        markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
+
+        // Splice out sourcecode blocks to preserve whitespace
+        const codeBlocks = {};
+        const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms;
+        markdown.replace(CODE_BLOCK_PATTERN, (match) => {
+          // Hash and save the code block for later restore
+          let hash = crypto.createHash('md5');
+          hash.update(match);
+          hash = hash.digest('utf-8');
+
+          codeBlocks[hash] = match;
+          return hash;
+        });
+
+        // Replace empty lines with leading space with just a new line
+        markdown = markdown.replace(/^\s+/gm, '\n');
+
+        // Replace new lines with following space by just a new line
+        markdown = markdown.replace(/\n +/gm, '\n');
+
+        // Restore codeblocks
+        for (const hash in Object.keys(codeBlocks)) {
+          markdown = markdown.replace(hash, codeBlocks[hash]);
+        }
+
+        parsedSample.document.sections[index].doc_ = markdown;
+      }
 
       return parsedSample;
     });
@@ -147,9 +182,10 @@ class SamplesBuilder {
   _createManual(sample, parsedSample) {
     // Create the actual page that is rendered by Grow and add needed
     // frontmatter that is required ...
-    let manual = sample.clone();
+    const manual = sample.clone();
     manual.contents = Buffer.from([
       '---',
+      '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + manual.relative,
@@ -161,7 +197,7 @@ class SamplesBuilder {
     manual.extname = '.html';
 
     // ... and the parsed sample as data source to render the manual
-    let data = sample.clone();
+    const data = sample.clone();
     data.contents = Buffer.from([
       JSON.stringify(parsedSample),
     ].join('\n'));
@@ -198,6 +234,7 @@ class SamplesBuilder {
     const matches = parsedSample.document.head.match(COMPONENT_PATTERN) || [];
 
     const usedComponents = [];
+    /* eslint-disable guard-for-in */
     for (let match of matches) {
       // Strip custom-element= from match, while doing so directly
       // pad the components to render them as YAML list
@@ -218,10 +255,10 @@ class SamplesBuilder {
    * @return {Array} An array of Vinyl files to write
    */
   _buildRawSources(sample, parsedSample) {
-    let sources = [];
+    const sources = [];
 
     // Keep the full sample for the big playground
-    let fullSource = sample.clone();
+    const fullSource = sample.clone();
     fullSource.isSourceFile = true;
 
     sources.push(fullSource);
@@ -230,28 +267,28 @@ class SamplesBuilder {
     const SECTION_PLACEHOLDER = '<!-- samplesBuilder: section-->';
     // Then create a document structure that can be used to write a full document
     // for each of the individual sections
-    let barebone = [
-      '<!doctype html><html ⚡><head>',
+    const barebone = [
+      '<!doctype html>\n<html ⚡>\n<head>',
       parsedSample.document.head,
       `<title>${parsedSample.document.title} / ${TITLE_PLACEHOLDER}</title>`,
       '<style amp-custom>',
       parsedSample.document.styles,
-      '</style><meta name="robots" content="noindex, nofollow"></head>',
+      '</style>\n<meta name="robots" content="noindex, nofollow">\n</head>',
       parsedSample.document.body,
       parsedSample.document.elementsAfterBody,
-      `${SECTION_PLACEHOLDER}</body><html>`
-    ].join('');
+      `${SECTION_PLACEHOLDER}</body>\n</html>`,
+    ].join('\n');
 
-    for (let section of parsedSample.document.sections) {
+    for (const section of parsedSample.document.sections) {
       // Check if the section qualifies to show standalone
-      if (section.preview !== "" && !section.inBody) {
+      if (section.preview.replace(/\s/g, '') == '' || !section.inBody) {
         continue;
       }
 
       let contents = barebone.replace(SECTION_PLACEHOLDER, section.preview);
       contents = contents.replace(TITLE_PLACEHOLDER, section.id);
 
-      let sectionSource = sample.clone();
+      const sectionSource = sample.clone();
       sectionSource.isSourceFile = true;
       sectionSource.contents = Buffer.from(contents);
       sectionSource.extname = `-${section.id}.html`;
@@ -293,14 +330,11 @@ class SamplesBuilder {
 if (!module.parent) {
   (async () => {
     const samplesBuilder = new SamplesBuilder();
-
-    // Start the samples build
-    const build = samplesBuilder.build();
-
+    samplesBuilder.build();
   })();
 }
 
 module.exports = {
   'samplesBuilder': new SamplesBuilder(),
-  'SOURCE_DEST': SOURCE_DEST
-}
+  'SOURCE_DEST': SOURCE_DEST,
+};

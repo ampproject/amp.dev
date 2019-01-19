@@ -3,6 +3,9 @@ $title: AMPHTML Email for Email Providers
 $order: 4
 toc: true
 
+formats:
+  - email
+
 ---
 
 AMP is an open source initiative that enables the creation of consistently fast, beautiful, and high-performing web experiences across devices and distribution platforms. The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.

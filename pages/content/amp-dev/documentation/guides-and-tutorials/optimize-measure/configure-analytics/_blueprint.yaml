@@ -3,3 +3,6 @@ $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/optimize-measure/configure-analytics/{base}.html
 $title@: Configure Analytics
+
+formats:
+  - websites

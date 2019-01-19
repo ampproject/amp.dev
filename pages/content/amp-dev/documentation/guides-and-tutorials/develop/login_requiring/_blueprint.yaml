@@ -7,3 +7,6 @@ $order: 1
 
 targeted: true
 chaptered: true
+
+formats:
+  - websites

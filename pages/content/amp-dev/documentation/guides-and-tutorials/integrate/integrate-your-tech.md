@@ -1,6 +1,9 @@
 ---
 $title: Integrate your technology with AMP
 $order: 1
+
+formats:
+  - websites
 ---
 
 Publishers have created over 1.4B AMP documents that are hosted on over 750K unique domains. Such growth would have been impossible without strong support from over 100 third party tech companies that have already integrated with AMP.

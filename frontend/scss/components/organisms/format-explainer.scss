@@ -13,7 +13,7 @@
 .#{utility('format-explainer')} {
   padding-left: 30px;
   padding-right: 30px;
-  margin-bottom: 8vw;
+  margin-bottom: 16vw;
   
   @media screen and (min-width: 1024px) {
     padding-left: 0;
@@ -69,6 +69,7 @@
     padding: 0 15px 30px;
     
     @media screen and (min-width: 1024px) {
+      overflow: visible;
       flex-direction: column;
       max-width: 300px;
       padding: 0;

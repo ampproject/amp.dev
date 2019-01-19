@@ -6,3 +6,6 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/optimize-and-measure/{base}.html
 
 $order: 4
+
+formats:
+  - websites
