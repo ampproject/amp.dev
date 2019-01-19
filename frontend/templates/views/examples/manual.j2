@@ -129,7 +129,7 @@ tags are specific for amp.dev #}
         {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
       </div>
 
-      {% if not playground_disabled %}
+      {% if not playground_disabled and show_preview %}
       <a href="{{ playground_url }}/{{ section.id }}" class="ad-m-lnk">
           <div class="ad-a-ico ad-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
