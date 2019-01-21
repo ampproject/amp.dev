@@ -20,15 +20,15 @@ The ghost frame desktop wraps an element with a desktop-like frame.
 .#{molecule('ghost-frame-desktop')} {
   background: rgba(color('white'), .9);
   border-radius: 5px;
-  box-shadow: shadows('drop');
-  display: inline-block;
-  height: auto;
-  margin-bottom: auto;
-  max-width: calc((5/8) * 100vw);
-  padding: 5% 2% 2%;
+  box-shadow: 0 20px 50px -5px rgba(0, 0, 0, 0.25);
+  width: calc((5/8) * 100%);
+  padding: 3% 2% 2%;
   position: relative;
-  width: 100%;
   z-index: 0;
+
+  &.left-flat, &.left, &.right-flat, &.right {
+    border-radius: 7px;
+  }
 
   &.left-flat {
     -webkit-box-shadow:
@@ -108,16 +108,16 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   // ui
   &:before {
     background-image: radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%);
-    background-position: 0%, 2%, 4%;
+    background-position: 0%, 2%, 3.9%;
     background-repeat: no-repeat;
     background-size: 4% 100%, 4% 100%, 4% 100%;
     border-top-left-radius: calc(1rem/6);
     border-top-right-radius: calc(1rem/6);
     content: '';
-    height: 3%;
-    left: 1%;
+    height: 2%;
+    left: 1.5%;
     position: absolute;
-    top: 2%;
+    top: 3%;
     width: 100%;
     z-index: 1;
   }

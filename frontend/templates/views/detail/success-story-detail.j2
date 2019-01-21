@@ -14,7 +14,7 @@
     <section class="ad--stage ad--container-fluid">
       {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-      <div class="ad-o-stage ad-o-stage-default">
+      <div class="ad-o-stage ad-o-stage-default {{doc.stage.layout}}">
         <div class="ad--container">
           <div class="ad-o-stage-content">
             {% if doc.stage.subline %}
@@ -34,13 +34,27 @@
           {% for device in doc.stage.devices %}
             {% if device %}
               <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
-                <amp-img
-                  alt="{{device.alt}}"
-                  height="{{device.height}}"
-                  layout="responsive"
-                  src="{{device.image_src}}"
-                  width="{{device.width}}"
-                ></amp-img>
+                {% if device.video_src %}
+                <amp-video
+                    width="{{device.width}}"
+                    height="{{device.height}}"
+                    layout="responsive"
+                    src="{{device.video_src}}"
+                    poster="{{device.poster_src}}"
+                    artwork="{{device.artwork_src}}"
+                    title="{{device.video_title}}"
+                    artist="{{device.video_artist}}"
+                    album="{{device.video_album}}">
+                  </amp-video>
+                {% else %}
+                  <amp-img
+                    alt="{{device.alt}}"
+                    height="{{device.height}}"
+                    layout="responsive"
+                    src="{{device.image_src}}"
+                    width="{{device.width}}"
+                  ></amp-img>
+                {% endif%}
               </div>
             {% endif %}
           {% endfor %}
