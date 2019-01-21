@@ -9,14 +9,7 @@
 @import '../atoms/_color.scss';
 
 .#{utility('sampler')} {
-  padding-left: 30px;
-  padding-right: 30px;
   margin-bottom: 4vw;
-  
-  @media screen and (min-width: 840px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
 
   .#{molecule('copy')} {
     grid-column: 2 / 13;
