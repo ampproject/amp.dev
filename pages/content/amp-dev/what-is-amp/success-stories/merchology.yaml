@@ -1,0 +1,47 @@
+$title: Merchology
+
+stage:
+  headline: Merchology increases conversions, lowers load times with AMP
+  subline: FEB 2, 2018
+  devices:
+
+    - image_src: ../../../static/img/success-stories/merchology/amp_merchology_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Merchology
+
+kpis:
+  - value: 39%
+    text: increase in conversion rate
+
+  - value: 19%
+    text: more pages per session
+
+  - value: 286%
+    text: faster load time than non-amp pages
+
+contents:
+  - layout: text
+    text: Based in Minneapolis, <a href="https://www.merchology.com/" target="_blank">Merchology</a> allows customers to easily add their own logos to fashionable apparel and gifts. The company prides itself on “tailoring solutions that are uniquely suited to our customers’ tastes.”
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/merchology/amp_merchology_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Merchology
+    headline: Solution
+    text: Merchology began looking at AMP in late 2017 “for speed and improved opportunities for online discovery,” explains Noah Jeffrey, senior marketing engineer at <a href="https://rangempls.com/" target="_blank">Range Digital Media</a>, Merchology’s marketing agency. Range Digital Media helped Merchology put AMP to the test with a simple A/B experiment in which they ran AdWords ads for a popular brand. Half the ads directed users to Merchology’s standard responsive mobile webpages, and the other half directed users to eight new AMP pages created specifically for the experiment. Content on the two types of pages was roughly the same, but their page-load speeds were very different. The AMP pages loaded as much as 286% faster than the standard, responsive pages in testing—a “mind-blowing decrease,” Jeffrey says.
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/merchology/amp_merchology_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Merchology
+    headline: Results
+    text: Merchology ran the experiment in December 2017, and the impact of AMP’s faster load speeds was clear. Ads directing users to AMP pages resulted in a 4.8% lower bounce rate and a 39% lift in conversion rates, as measured by users adding products to their cart and submitting forms (for custom requests, for example). Users also averaged 19.2% more page views per session, with mobile users going about one page deeper into the website when starting out on AMP pages. “When we look at page load speeds,” Jeffrey shares, “it's really no surprise that the AMP pages outperformed our standard responsive pages on nearly every metric we analyzed.”<br><br>In addition to being impressed with the “sheer speed at which the pages load on mobile devices,” Jeffrey adds that “AMP’s simplicity and the universality of its functionality are stellar. AMP’s simple, focused framework made it easy to integrate, while providing impressive and immediate results on Merchology’s mobile site.”
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/merchology.pdf

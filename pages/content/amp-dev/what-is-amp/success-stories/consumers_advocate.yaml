@@ -1,0 +1,47 @@
+$title: ConsumersAdvocate.org
+
+stage:
+  headline: ConsumersAdvocate.org boosts site performance with AMP
+  subline: DEC 20, 2017
+  devices:
+
+    - image_src: ../../../static/img/success-stories/consumer_advocate/amp_consumer_advocate_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: ConsumersAdvocate.org
+
+kpis:
+  - value: 20-30%
+    text: more user time on pages
+
+  - value: 15-30%
+    text: lower bounce rate
+
+  - value: 5-10%
+    text: higher conversion rate on adwords
+
+contents:
+  - layout: text
+    text: <a href="https://www.consumersadvocate.org/" target="_blank">ConsumersAdvocate.org</a> helps millions of people make smarter buying decisions across close to 100 product and service categories, including everything from accounting software to identity theft protection. The site’s editors research and compare top performing companies, based on factors such as price, quality, and customer satisfaction, to help consumers save time and money. ConsumersAdvocate.org’s earns referral commissions from their advertising partners’ sites if users choose to click through and buy. “Our team works to write helpful and thorough comparisons, and we try to buy and test out as many of the products and services as we can” explains CEO Greg Powel.
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/consumer_advocate/amp_consumer_advocate_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: ConsumersAdvocate.org
+    headline: Solution
+    text: "The Puerto Rico-based organization had two goals for improving their site’s performance: lowering the bounce rate on their most-visited pages and increasing conversion rates from their AdWords campaigns. After seeing a number news articles about AMP, ConsumersAdvocate.org learned that AMP could help speed up their site and improve conversion rates. They decided to test the framework, and after about a week of in-house development, they began replacing their existing mobile webpages with AMP pages.<br><br>“We implemented AMP for sections of our site that drove views and business value, namely reviews of pet insurance and home-security systems,” CEO Greg Powel. “It made sense to test AMP on our most valuable content to see if it led to an increase in time on site and conversion rates.”"
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/consumer_advocate/amp_consumer_advocate_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: ConsumersAdvocate.org
+    headline: Results
+    text: AMP implementation on ConsumersAdvocate.org resulted in as much as a 30% reduction in bounce rate, a 3x increase in page load speeds, and a 5-10% increase in conversion rates on pages linked from their Google AdWords campaigns—“an overall win-win for user experience and monetization,” Powel says. “Higher conversion rates mean users are spending time reading our content and finding value.” Site visitors now spend as much as 30% longer on the AMP pages.<br><br>The ConsumersAdvocate.org team remains excited about the future of AMP. “Improvements to the user experience and page-load speeds are definitely the biggest advantages,” Powel concludes. “We plan to roll out AMP more widely across our site.”
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/consumers_advocate.pdf
