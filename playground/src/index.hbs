@@ -31,10 +31,12 @@
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="manifest.json">
-    <link rel="preload" href="https://cdn.ampproject.org/v0.js" as="script">
-    <link rel="preload" href="https://cdn.ampproject.org/v0/validator.js" as="script">
 
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Poppins:700|Inconsolata:400,700" rel="stylesheet">
+    <link rel="preload" href="/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/fonts/inconsolata-v16-latin-regular.woff2" as="font" crossorigin>
+
   </head>
   <body {{#htmlWebpackPlugin.options.embed}}class="embed"{{/htmlWebpackPlugin.options.embed}}>
     <header class="ad-o-header">
