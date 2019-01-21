@@ -9,10 +9,19 @@
 @import '../atoms/_color.scss';
 
 .#{utility('sampler')} {
+  padding-left: 20px;
   margin-bottom: 4vw;
+  
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+  }
 
   .#{molecule('copy')} {
-    grid-column: 2 / 13;
+    grid-column: 3 / 13;
+    
+    @media screen and (min-width: 1680px) {
+      grid-column: 5 /  13;
+    }
 
     &-center {
       grid-column: 6 / 20;
@@ -31,8 +40,12 @@
 }
 
 .#{organism('sampler')} {
-  grid-column: 2 / -1;
-  width: calc(100% + 20px);
+  grid-column: 3 / -1;
+  width: 100%;
+  
+  @media screen and (min-width: 1680px) {
+    grid-column: 5 /  -1;
+  }
   
   &-tab-bar {
     display: flex;

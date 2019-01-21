@@ -114,7 +114,6 @@ sampler:
       </a>
       {% endfor %}
     </div>
-
   </div>
 </section>
 
@@ -262,7 +261,6 @@ sampler:
   </amp-state>
 
   <div class="ad--container">
-
     <div class="ad-m-copy ad-m-copy-center">
       <div class="ad-o-sampler-icon ad-a-ico">
         {% do doc.icons.useIcon('icons/logo.svg') %}
@@ -270,6 +268,9 @@ sampler:
       </div>
       <h2>compelling, smooth, and instant</h2>
     </div>
+  </div>
+    
+  <div class="ad--container-fluid">
     <div class="ad-m-copy">
       <p>AMP is an open-source html framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
     </div>
