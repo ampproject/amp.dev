@@ -59,9 +59,9 @@
   }
   
   &-navigation {
-    scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     display: flex;
     flex-wrap: nowrap;
     width: auto;
@@ -83,7 +83,6 @@
   }
   
   &-button {
-    scroll-snap-align: start;
     @include hl;
     @include hl-h5;
     line-height: 1;

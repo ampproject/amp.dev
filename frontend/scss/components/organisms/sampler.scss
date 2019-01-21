@@ -40,6 +40,7 @@
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     background: color('ebony-clay');
   }
