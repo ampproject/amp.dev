@@ -51,24 +51,20 @@
     }
   }
   
-  .#{utility('case-grid')} {
-    margin-bottom: 27vw;
-  }
-  
   .#{utility('teaser-grid')} {
     flex-direction: column-reverse;
-    padding: 0 20px 10vw;
+    padding: 0 20px;
+    margin-bottom: 7em;
 
     .#{organism('teaser-grid')} {
       grid-column: 1 / 15;
       display: block;
       width: 100%;
-      margin-bottom: 8em;
+      margin-bottom: 0;
 
       @media screen and (min-width: 1024px) {
         grid-column: 2 / 14;
         margin-top: -6em;
-        margin-bottom: 0;
       }
 
       @media screen and (min-width: 1280px) {
@@ -106,12 +102,12 @@
       }
       
       h2 {
-        @media screen and (min-width: 768px) {
-          margin-top: 5em;
-        }
+        margin-top: 0;
       }
       
       p {
+        margin-bottom: 2em;
+      
         @media screen and (min-width: 768px) {
           margin-bottom: 6em;
         }

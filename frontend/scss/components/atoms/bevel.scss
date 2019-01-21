@@ -6,6 +6,7 @@
 @import '_color.scss';
 
 .#{atom('bevel')} {
+	display: none;
 	position: relative;
 	width: calc(100% + 60px);
 	margin-left: -30px;
