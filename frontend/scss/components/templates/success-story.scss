@@ -34,6 +34,11 @@
 
   .#{utility('container')} {
     @include container;
+    @include txt;
+    @include txt-p;
+    @include txt-2;
+    padding-left: 2em;
+    margin: 1.5em 0 2.5em;
   }
 
   .#{utility('container-fluid')} {
@@ -102,6 +107,21 @@
         display: flex;
         justify-content: center;
         width: 100%;
+      }
+    }
+
+    &-center {
+      grid-column: 1;
+      position: relative;
+
+      @media screen and (min-width: 768px){
+        grid-column-start: 9;
+        grid-column-end: 25;
+      }
+
+      @media screen and (min-width: 1024px){
+        grid-column-start: 7;
+        grid-column-end: 19;
       }
     }
   }
