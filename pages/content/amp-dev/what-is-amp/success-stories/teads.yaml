@@ -1,0 +1,89 @@
+$title: Teads
+
+stage:
+  headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers
+  subline: DEC 2, 2016
+  devices:
+
+    - image_src: ../../../static/img/success-stories/teads/amp_teads.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Teads
+
+kpis:
+  - value: 15%
+    text: increase in average completion rates
+
+  - value: 200%
+    text: increase in average clickthrough rate
+
+  - value: 18%
+    text: increase in available inventory
+
+contents:
+
+  - layout: text
+    text: Historically, demand for digital video has <a href="https://www.emarketer.com/Article/Mobile-Video-Advertisers-Demand-More-Inventory/1013575" target="_blanked">far outstripped</a> online publishers’ limited supply of premium in-stream video inventory. So in 2011, French startup Teads designed a new type of video ad that appears natively inside editorial articles, without requiring existing video content.
+    direction: left-flat
+
+  - layout: quote
+    quote: We invented outstream video formats, which turn premium editorial content into new video ad inventory that can be monetized at scale.
+    image_src: ../../../static/img/success-stories/teads/teads_logo.png
+    width: 100
+    height: 50
+    alt: Teads
+    author: ERIC SHIH, global senior vice president of business development
+    story_url: https://google.com
+
+  - layout: text
+    headline: Achieving a better user experience, together
+    text: Four years later, as a global company reaching 1.2 billion unique users across hundreds of leading websites, Teads signed on as one of the first advertising partners to join the AMP Project when it launched as an open source initiative to build a better, faster mobile web for everybody.
+    direction: left-flat
+
+  - layout: quote
+    quote: Our products are very much aligned with the AMP Project’s mission to provide the best user experience across platforms. We believe that ads should be fast-loading, non-intrusive, skippable, and complement the surrounding content. They’re also optimized for mobile first, since most media consumption – including 70% of our publisher traffic – is now on mobile.
+    image_src: ../../../static/img/success-stories/teads/teads_logo.png
+    width: 100
+    height: 50
+    alt: Teads
+    author: ERIC SHIH, global senior vice president of business development
+    story_url: https://google.com
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/teads/amp_teads.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Teads
+    text: The Teads team worked closely with the AMP Project’s leads, sharing their unique expertise in outstream video. They also adjusted their ad format, which was originally designed to expand into view as the user scrolled down the page and collapse away after the video ended. Because this functionality caused paragraphs to shift on the screen, it diverged from the AMP Project’s design principles. The AMP’d version of the ad would always be open, keeping the page layout consistent and creating a more seamless user experience.<br><br>Results have been so positive that Teads rolled out the change to non-AMP’d pages as well. “We have since modified the behavior of our formats outside of the AMP HTML environment – on desktop, mobile web, and in-app – to be consistent with AMP HTML,” Mr. Shih says.
+    direction: left-flat
+
+  - layout: text
+    headline: Clearing clutter, encouraging engagement
+    text: In the months since Teads built support for its native video ads to be served on AMP’d pages, nearly 100 of its premium publishers have also joined the AMP Project, including Trinity Mirror, The Telegraph, L’Express, Ouest-France, Público, Rodale, Mashable and The McClatchy Company.
+    direction: left-flat
+
+  - layout: quote
+    quote: AMP HTML delivers our most optimal mobile browsing experience. Being able to marry this with native video advertising allows us to not only make revenue from the fastest-growing area of digital but to do so whilst respecting our users.
+    image_src: ../../../static/img/success-stories/teads/teads_logo.png
+    width: 100
+    height: 50
+    alt: Teads
+    author: Amir Malik, programmatic director for Trinity Mirror
+    story_url: https://google.com
+
+  - layout: text-media
+    video_src: "https://player.vimeo.com/video/163543060?color=7cbce7&byline=0&portrait=0"
+    width: 640
+    height: 360
+    type: desktop
+    alt: Teads
+    headline: Clearing clutter, encouraging engagement
+    text: Across Teads’ publisher portfolio, video ads perform significantly better on AMP’d pages than on the traditional mobile web, Mr. Shih notes. “The completion rate is 15% higher, and clickthrough rates have increased by 200%,” he explains. “When there are fewer, less intrusive ads and a cleaner environment, it lends itself to more engagement.”<br><br>Shih also points out that Teads’ video ads appear 18% more frequently on AMP’d pages than on non-optimized mobile pages, creating even more inventory for publishers. He attributes the uptick to faster load times and minimal ad clutter.<br><br>One partner seeing success is French publisher L’Express, with AMP’d pages representing 15% of L’Express’ mobile inventory. “The AMP Project allows us to monetize our premium content with elegant native video advertising solutions such as Teads that respect our readers,” says Sophie Gohier, head of digital for L’Express. “Therefore, we believe that the revenue will grow significantly in the next quarters."
+    direction: left-flat
+
+  - layout: text-button
+    text: One partner seeing success is French publisher L’Express, with AMP’d pages representing 15% of L’Express’ mobile inventory. “The AMP Project allows us to monetize our premium content with elegant native video advertising solutions such as Teads that respect our readers,” says Sophie Gohier, head of digital for L’Express. “Therefore, we believe that the revenue will grow significantly in the next quarters."
+    direction: flat
+    download_url: ../../../static/files/case-studies/teads.pdf

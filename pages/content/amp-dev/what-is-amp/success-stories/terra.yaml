@@ -1,0 +1,53 @@
+$title: Terra
+
+stage:
+  headline: Terra drives mobile viewership up with AMP
+  subline: MARCH 6, 2017
+  devices:
+
+    - image_src: ../../../static/img/success-stories/terra/amp_terra_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Terra
+
+kpis:
+  - value: 2X
+    text: increase in page speed
+
+  - value: 2X
+    text: more time spent on amp pages than on other mobile pages (brazil)
+
+  - value: 3,175%
+    text: increase in total clicks (all countries)
+
+  - value: 33%
+    text: increase in clickthrough rate (all countries)
+
+contents:
+
+  - layout: text
+    text: A subsidiary of Telefonica, a global telecommunications enterprise, Terra is the largest online media company in the Spanish-speaking world, offering a valuable, popular resource for news and entertainment to more than 100 million people monthly across Spain, Latin America, and the U.S.
+    direction: left-flat
+
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/terra/amp_terra_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Terra
+    headline: Solution
+    text: As an online media provider in an increasingly mobile world, Terra’s ability to deliver fast-loading, easy-to-read pages, especially on smartphones, is critical to their success. “More than 60 percent of our traffic in the last six months came from mobile” said Guilherme Moser de Souza, a Senior Systems Analyst for Terra.<br><br>To meet the demand from mobile, Terra’s development team has been focused on technologies that can deliver an engaging mobile experience, and AMP presented itself as a slam-dunk strategic fit. “Since we had experience running a mobile version of the site from 2010 until 2014, we understood how critical fast performance is to engagement,” said Souza. “AMP offered the promise of a faster, easier-to-use mobile web for our readers and our advertisers. And we rushed to adopt it as soon as possible.”<br><br>Working with the Terra Brazil team, Souza and his colleagues began creating the AMP framework, launching AMP pages in the fall of 2016. AMP development, testing, and implementation was completed in two weeks by two engineers.
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/terra/amp_terra_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Terra
+    headline: Results
+    text: 'The initial results on Terra.com.br, which supports their Brazilian market, are impressive. AMP pages load 2x faster than non-AMP mobile pages. As a result, users are spending 2x more time on AMP pages than non-AMP mobile pages. Recently, Terra began building advertising solutions into its AMP pages, which drove an increase in clicks and clickthrough rates. The first two months of results speak for themselves:<ul><li>3,175% increase in total clicks on AMP pages</li><li>33% increase in clickthrough rate on AMP pages</li></ul>“The benefit of AMP is already paying off in terms of our readers’ user experience, our advertisers’ results, and our company’s bottom line,” said Souza. “We’re thrilled at how quickly going AMP has made a difference.” Terra is fulfilling the promise of an instant-everywhere mobile web and it’s making all the difference.<br><br>Looking to the future, Terra aims to keep improving their AMP pages, always testing new features and striving to deliver the best possible experience for both their readers and advertisers.'
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/terra.pdf
