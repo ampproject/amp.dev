@@ -107,6 +107,19 @@
             {% endif %}
               {% if content.type %}
                 <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+                {% if content.video_src %}
+                <amp-video
+                    width="{{content.width}}"
+                    height="{{content.height}}"
+                    layout="responsive"
+                    src="{{content.video_src}}"
+                    poster="{{content.poster_src}}"
+                    artwork="{{content.artwork_src}}"
+                    title="{{content.video_title}}"
+                    artist="{{content.video_artist}}"
+                    album="{{content.video_album}}">
+                </amp-video>
+                {% else %}
                   <amp-img
                     alt="{{content.alt}}"
                     height="{{content.height}}"
@@ -114,15 +127,8 @@
                     src="{{content.image_src}}"
                     width="{{content.width}}"
                   ></amp-img>
+                  {% endif %}
                 </div>
-              {% else %}
-                <amp-img
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
-                  layout="responsive"
-                  src="{{content.image_src}}"
-                  width="{{content.width}}"
-                ></amp-img>
               {% endif %}
             </div>
           </div>
@@ -131,7 +137,7 @@
         {# layout: text #}
         {% if content.layout == 'text' %}
           <div class="ad--container">
-            <div class="ad-o-text-media-block ad--content ad-m-copy">
+            <div class="ad-o-text-media-block ad-o-text-media-block-center ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
             </div>
@@ -143,6 +149,19 @@
           <div class="ad-o-text-media-block">
             {% if content.type %}
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+              {% if content.type.video_src %}
+              <amp-video
+                  width="{{content.width}}"
+                  height="{{content.height}}"
+                  layout="responsive"
+                  src="{{content.video_src}}"
+                  poster="{{content.poster_src}}"
+                  artwork="{{content.artwork_src}}"
+                  title="{{content.video_title}}"
+                  artist="{{content.video_artist}}"
+                  album="{{content.video_album}}">
+              </amp-video>
+              {% else %}
                 <amp-img
                   alt="{{content.alt}}"
                   height="{{content.height}}"
@@ -150,15 +169,8 @@
                   src="{{content.image_src}}"
                   width="{{content.width}}"
                 ></amp-img>
+                {% endif %}
               </div>
-            {% else %}
-              <amp-img
-                alt="{{content.alt}}"
-                height="{{content.height}}"
-                layout="responsive"
-                src="{{content.image_src}}"
-                width="{{content.width}}"
-              ></amp-img>
             {% endif %}
           </div>
         {% endif %}
