@@ -1,8 +1,15 @@
+.#{utility('quote')} {
+  margin-bottom: 7em;
+  
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8vw;
+  }
+}
+
 .#{molecule('quote')} {
   grid-column: 6 / 20;
   display: flex;
   flex-direction: column;
-  padding: 75px 0;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -25,8 +32,8 @@
     }
 
     .#{atom('ico')} {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       margin: 0 1em 0 0;
       fill: color('blue-ribbon');
 
@@ -39,7 +46,7 @@
   }
 
   &-quote {
-    padding: 0 0 0 4em;
+    padding: 0 0 0 3.375em;
     
     @media screen and (min-width: 768px) {
       padding: 50px 0 0 30px;

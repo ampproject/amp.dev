@@ -9,16 +9,22 @@
 @import '../atoms/_color.scss';
 
 .#{utility('sampler')} {
-  padding-left: 20px;
-  margin-bottom: 4vw;
+  margin-bottom: 7em;
   
   @media screen and (min-width: 768px) {
-    padding-left: 0;
+    margin-bottom: 8vw;
   }
 
   .#{molecule('copy')} {
     grid-column: 3 / 13;
+    padding: 0 20px;
+    margin-bottom: 1.5em;
     
+    @media screen and (min-width: 768px) {
+      padding-left: 20px;
+      margin-bottom: 3em;
+    }
+
     @media screen and (min-width: 1680px) {
       grid-column: 5 /  13;
     }
@@ -42,9 +48,11 @@
 .#{organism('sampler')} {
   grid-column: 3 / -1;
   width: 100%;
+  padding-left: 20px;
   
   @media screen and (min-width: 1680px) {
     grid-column: 5 /  -1;
+    padding-left: 0;
   }
   
   &-tab-bar {
