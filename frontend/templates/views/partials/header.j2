@@ -21,7 +21,7 @@
       <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">AMP</span>
-        <span class="ad-o-header-title">{{ _(active_section.title) }}</span>
+        <span class="ad-o-header-title">{{ active_section.title or doc.title }}</span>
       </a>
     </div>
 
