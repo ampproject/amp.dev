@@ -9,7 +9,7 @@
   margin-bottom: 7em;
   
   @media screen and (min-width: 768px) {
-    margin-bottom: 8vw;
+    margin-bottom: calc(16vw + 6em);
   }
 }
 
