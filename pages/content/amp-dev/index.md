@@ -14,17 +14,17 @@ news:
     date: September 26, 2018
     url: /
   - title: News
-    image: /static/img/dummy-news-1.png
+    image: /static/img/dummy-use-cases-example-01.png
     headline: Setka provides beautiful post design with AMP
     date: September 26, 2018
     url: /
   - title: Announcement
-    image: /static/img/dummy-news-2.png
+    image: /static/img/dummy-use-cases-example-04.png
     headline: Optimize yor AMP pages for high ad viewability
     date: September 26, 2018
     url: /
   - title: News
-    image: /static/img/dummy-news-1.png
+    image: /static/img/dummy-use-cases-example-02.png
     headline: Setka provides beautiful post design with AMP
     date: September 26, 2018
     url: /
