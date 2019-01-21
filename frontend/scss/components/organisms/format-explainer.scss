@@ -66,7 +66,7 @@
     flex-wrap: nowrap;
     width: auto;
     margin: 0 -30px 2em;
-    padding: 0 15px 30px;
+    padding: 0 30px 30px;
     
     @media screen and (min-width: 1024px) {
       overflow: visible;
@@ -74,6 +74,11 @@
       max-width: 300px;
       padding: 0;
       margin: 0;
+    }
+    
+    &:after {
+      content: '';
+      padding-right: 1px;
     }
   }
   
@@ -86,8 +91,8 @@
     min-width: 160px;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    margin: 0 15px 1em;
+    padding: 10px 15px;
+    margin: 0 15px 1em 0;
     text-align: left;
     background-color: color('athens-gray');
     border: none;
