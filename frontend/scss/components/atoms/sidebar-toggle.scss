@@ -16,6 +16,7 @@
         &:after {
           content: "";
           position: fixed;
+          pointer-events: none;
           z-index: 15;
           top: 0;
           left: 0;
@@ -31,14 +32,16 @@
     @include txt-font-accent;
     cursor: pointer;
     position: fixed;
-    z-index: 100;
+    z-index: 17;
     top: 50vh;
     padding: 2px 10px;
     color: color('white');
     background-color: color('blue-ribbon');
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-    transition: transform 0.2s ease;
-
+    transition: transform 0.2s ease, left 0.14s;
+    &.categorymenuopen {
+      left: 359px;
+    }
     &-sidebar {
       left: 28px;
       transform-origin: top left;

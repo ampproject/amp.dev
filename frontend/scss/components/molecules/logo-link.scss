@@ -1,0 +1,43 @@
+/*
+
+###########################
+### MOLECULE: logo-link ###
+###########################
+
+### INFO:
+
+### MODIFIERS:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+
+a.#{molecule('logo-link')} {
+  align-items: center;
+  background: color('white');
+  box-shadow: 0 5px 15px -3px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row;
+  font-weight: normal;
+  padding: 8px;
+  position: relative;
+  white-space: nowrap;
+
+  @include txt;
+  @include txt-strong;
+
+  amp-img {
+    width: 35px;
+    display: inline-block;
+  }
+
+  span {
+    padding-left: 10%;
+  }
+}
