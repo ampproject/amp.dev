@@ -4,7 +4,7 @@ $order: 1
 toc: true
 ---
 
-[TOC]
+
 
 ## AMP boilerplate
 Una página AMP es una página HTML con algunas restricciones para un rendimiento fiable. Las páginas de AMP tienen un poco de marcado especial que lo identifica como una página de AMP.

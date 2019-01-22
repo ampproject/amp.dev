@@ -1,7 +1,8 @@
 ---
 $title: Agregar fuentes personalizadas
+toc: true
 ---
-[TOC]
+
 
 
 Las páginas AMP no pueden incluir plantillas externas con la excepción de fuentes personalizadas.

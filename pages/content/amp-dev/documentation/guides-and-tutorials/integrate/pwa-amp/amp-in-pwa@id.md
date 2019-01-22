@@ -1,7 +1,8 @@
 ---
 $title: Menyematkan & menggunakan AMP sebagai sumber data
+toc: true
 ---
-[TOC]
+
 
 Jika Anda telah berinvestasi di AMP, namun belum membuat Progressive Web App, Halaman AMP Anda dapat menyederhanakan pengembangan Progressive Web App secara drastis. Dalam panduan ini, Anda akan mempelajari cara membuat AMP dalam Progressive Web App dan mengunakan Halaman AMP yang sudah ada sebagai sumber data.
 

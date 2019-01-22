@@ -1,8 +1,9 @@
 ---
 $title: AMP ページでプログレッシブ ウェブアプリ機能を有効にする
+toc: true
 ---
 
-[TOC]
+
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample で表示される「ホーム画面に追加」のプロンプト') }}
 

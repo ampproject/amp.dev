@@ -1,7 +1,8 @@
 ---
 $title: 深入了解 AMP 分析
+toc: true
 ---
-[TOC]
+
 
 本指南深入介绍了
 [amp-analytics 组件](/zh_cn/docs/reference/components/amp-analytics.html)，

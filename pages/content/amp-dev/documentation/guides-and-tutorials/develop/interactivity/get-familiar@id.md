@@ -1,8 +1,9 @@
 ---
 $title: Mempelajari kode pembuka
+toc: true
 ---
 
-[TOC]
+
 
 ## Boilerplate AMP
 Halaman AMP adalah halaman HTML yang memiliki beberapa batasan untuk memberikan performa yang andal. Halaman AMP memiliki markup khusus yang menandainya sebagai halaman AMP.

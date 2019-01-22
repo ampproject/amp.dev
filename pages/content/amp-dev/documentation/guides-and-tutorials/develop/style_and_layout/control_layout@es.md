@@ -1,7 +1,8 @@
 ---
 $title: Diseño y media queries
+toc: true
 ---
-[TOC]
+
 
 
 AMP admite **media queries** y **media queries de elementos** y tiene un potente mecanismo integrado para controlar el **diseño** de elementos concretos. Con el atributo `layout`, crear o trabajar con diseños completamente adaptables es mucho más sencillo que si solo utilizaras CSS.

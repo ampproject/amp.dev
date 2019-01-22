@@ -1,10 +1,11 @@
 ---
 $title: 分析：基础知识
+toc: true
 ---
 
 从这里开始了解 AMP 分析的相关基础知识。
 
-[TOC]
+
 
 ## 使用 amp-pixel 还是 amp-analytics？
 

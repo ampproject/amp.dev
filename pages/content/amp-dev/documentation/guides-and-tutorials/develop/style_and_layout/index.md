@@ -5,7 +5,7 @@ $order: 0
 $hidden: true
 toc: true
 ---
-[TOC]
+
 
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.

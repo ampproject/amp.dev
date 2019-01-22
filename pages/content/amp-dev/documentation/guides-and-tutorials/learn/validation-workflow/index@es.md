@@ -1,7 +1,8 @@
 ---
 $title: Validar páginas AMP
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Mira nuestro vídeo sobre las diversas opciones de validación.']
 

@@ -1,8 +1,9 @@
 ---
 $title: Agregando componentes AMP ampliados
+toc: true
 ---
 
-[TOC]
+
 
 El sistema de componentes de AMP le permite crear rápidamente características eficientes y de respuesta en sus artículos con un mínimo esfuerzo. La biblioteca HTML de AMP tiene tres clasificaciones para los componentes de AMP:
 

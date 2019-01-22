@@ -1,7 +1,8 @@
 ---
 $title: Casos prácticos
+toc: true
 ---
-[TOC]
+
 
 Esta guía presenta un conjunto de casos prácticos que se utilizan con frecuencia al realizar el seguimiento de las interacciones de los usuarios:
 

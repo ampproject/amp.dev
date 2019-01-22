@@ -15,7 +15,7 @@ There are [AMP components](/docs/reference/components.html) for everything from 
 This guide is a high-level overview of implementing support for the AMPHTML email format, aimed at  Email Providers. For further technical details, please see [the spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md).
 
 
-[TOC]
+
 
 ## AMPHTML Email Specification
 

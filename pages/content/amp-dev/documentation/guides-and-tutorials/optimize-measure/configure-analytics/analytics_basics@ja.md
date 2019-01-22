@@ -1,10 +1,11 @@
 ---
 $title: "アナリティクス: 基本"
+toc: true
 ---
 
 このページで AMP アナリティクスの基本を学びましょう。
 
-[TOC]
+
 
 ## amp-pixel または amp-analytics を使う
 

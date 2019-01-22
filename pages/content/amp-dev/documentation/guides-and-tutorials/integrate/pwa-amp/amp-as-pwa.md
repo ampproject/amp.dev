@@ -4,7 +4,7 @@ $order: 1
 toc: true
 ---
 
-[TOC]
+
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample triggering the "Add to Home Screen" prompt.') }}
 

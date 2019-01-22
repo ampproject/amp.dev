@@ -4,7 +4,7 @@ $order: 3
 toc: true
 ---
 
-[TOC]
+
 
 Another common feature in mobile pages is a carousel.  You can easily add carousels to AMP pages by using the [amp-carousel](/docs/reference/components/amp-carousel.html) component. Let’s start with a simple example, such as a carousel of images.
 

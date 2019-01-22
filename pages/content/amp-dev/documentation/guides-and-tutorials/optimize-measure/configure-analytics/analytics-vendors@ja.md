@@ -1,7 +1,8 @@
 ---
 $title: アナリティクス ベンダー
+toc: true
 ---
-[TOC]
+
 
 このドキュメントでは、[`amp-analytics`](/ja/docs/reference/components/amp-analytics.html) コンポーネントで使用するための組み込み設定を提供するアナリティクス ベンダーを一覧表示しています。
 

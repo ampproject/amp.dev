@@ -1,7 +1,8 @@
 ---
 $title: Membuat halaman AMP responsif
+toc: true
 ---
-[TOC]
+
 
 ## Pendahuluan
 

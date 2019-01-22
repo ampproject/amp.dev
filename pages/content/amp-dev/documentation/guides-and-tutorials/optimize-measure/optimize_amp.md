@@ -6,7 +6,7 @@ toc: true
 formats:
   - websites
 ---
-[TOC]
+
 
 This guide provides tips and guidance for webmasters on how to optimize their hosted AMP websites.
 

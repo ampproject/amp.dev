@@ -1,7 +1,8 @@
 ---
 $title: AMP 애널리틱스 심층 분석
+toc: true
 ---
-[TOC]
+
 
 이 가이드에서는
 [amp-analytics 구성요소](/ko/docs/reference/components/amp-analytics.html)를 심층 분석하여

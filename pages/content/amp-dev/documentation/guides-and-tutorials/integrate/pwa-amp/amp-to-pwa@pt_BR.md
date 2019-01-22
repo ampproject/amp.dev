@@ -1,7 +1,8 @@
 ---
 $title: Pré-carregar Progressive Web App a partir de páginas AMP
+toc: true
 ---
-[TOC]
+
 
 Uma boa estratégia é fazer com que o **ponto de entrada do seu site seja uma página AMP**, **carregar o PWA em segundo plano** e mudar para ele durante a navegação:
 

@@ -1,7 +1,8 @@
 ---
 $title: 制作自适应 AMP 网页
+toc: true
 ---
-[TOC]
+
 
 ## 简介
 

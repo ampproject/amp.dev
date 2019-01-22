@@ -1,8 +1,9 @@
 ---
 $title: Membuat blog langsung
+toc: true
 ---
 
-[TOC]
+
 
 
 

@@ -1,8 +1,9 @@
 ---
 $title: 添加轮换展示内容
+toc: true
 ---
 
-[TOC]
+
 
 移动版网页中的另一项常见功能是轮换展示。[amp-carousel](/zh_cn/docs/reference/components/amp-carousel.html) 组件让您可以非常轻松地向 AMP 网页添加轮换展示内容。我们先来看一个简单的示例，例如图片轮换展示。
 

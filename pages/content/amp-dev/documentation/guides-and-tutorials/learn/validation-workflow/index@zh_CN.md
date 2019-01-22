@@ -1,7 +1,8 @@
 ---
 $title: 验证 AMP 网页
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='观看我们的视频，了解各种验证选项。']
 

@@ -1,5 +1,6 @@
 ---
 $title: AMP 验证错误
+toc: true
 ---
 
 <!---
@@ -25,7 +26,7 @@ limitations under the License.
 有关验证错误的完整概述，
 请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 
-[TOC]
+
 
 ## AMP HTML 标记和属性错误
 

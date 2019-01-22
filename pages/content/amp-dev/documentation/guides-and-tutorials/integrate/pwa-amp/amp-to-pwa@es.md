@@ -1,7 +1,8 @@
 ---
 $title: Precargar una aplicación web progresiva (PWA) desde páginas AMP
+toc: true
 ---
-[TOC]
+
 
 Una buena estrategia es definir que **una página AMP sea el punto de entrada de los usuarios a tu sitio web** y después **preparar la PWA en segundo plano** y dirigirlos a ella durante el resto de la visita:
 
