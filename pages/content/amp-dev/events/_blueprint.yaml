@@ -3,6 +3,7 @@ $view: /views/default.j2
 $title@: Events
 $localization:
   path: /{locale}/events/{base}.html
+$order: 4
 
 index: /content/amp-dev/events/amp-conf-2019.md
 sub_navigation:
