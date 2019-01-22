@@ -55,13 +55,62 @@
     }
   }
 
+  .#{organism('teaser-grid')} {
+    display: block;
+  }
+
   .#{molecule('teaser')} {
     @include teaser;
     @include teaser-linking;
     height: 100%;
 
+    & > a {
+      @include teaser-linking;
+      height: 100%;
+    }
+
+    &-tags {
+      font-size: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    &-card {
+      @include teaser-card;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    &-header {
+      @include teaser-header;
+      height: 90px;
+
+      &-title {
+        @include teaser-header-title;
+      }
+    }
+
+    &-content {
+      @include teaser-content;
+    }
+
+    &-headline {
+      @include teaser-headline;
+      margin-bottom: 0.65em;
+    }
+
+    &-copy {
+      @include teaser-copy;
+    }
+
     &-image {
       @include teaser-image;
+
+      &:before {
+        height: 100%;
+      }
 
       + .#{molecule('teaser-card')} {
         background-color: transparent;
