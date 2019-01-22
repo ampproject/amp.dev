@@ -31,25 +31,17 @@ const routers = {
 
 class Platform {
   start() {
-    signale.await(`Starting platform with environment ${config.environment} ...`);
-    this.server = express();
-
-    this._enableCors();
-
-    this._check();
-    this._registerRouters();
-
     const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
-    this.server.listen(config.hosts.platform.port, () => {
-      signale.success(`amp.dev available on ${host}!`);
-    });
+
+    signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
+    this.server = express();
 
     if (config.environment == 'development') {
       // When in development fire up a second server as a simple proxy
       // to simulate CORS requests for stuff like playground
       this.proxy = express();
       this.proxy.listen(config.hosts.api.port, () => {
-        signale.success(`amp.dev proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
+        signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
       });
 
       const proxy = new HttpProxy();
@@ -59,6 +51,15 @@ class Platform {
         }, next);
       });
     }
+
+    this._enableCors();
+
+    this._check();
+    this._registerRouters();
+
+    this.server.listen(config.hosts.platform.port, () => {
+      signale.success(`amp.dev available on ${host}!`);
+    });
   }
 
   _enableCors() {
