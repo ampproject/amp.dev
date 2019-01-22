@@ -1,5 +1,4 @@
 $title: CNBC
-$lang: eng #|fr, chin, ..
 $category: publisher
 formats:
   - websites
