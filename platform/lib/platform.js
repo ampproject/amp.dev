@@ -19,6 +19,7 @@
 const signale = require('signale');
 const express = require('express');
 const ampCors = require('amp-toolbox-cors');
+const HttpProxy = require('http-proxy');
 
 const config = require('./config.js');
 const routers = {
@@ -38,9 +39,26 @@ class Platform {
     this._check();
     this._registerRouters();
 
+    const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
     this.server.listen(config.hosts.platform.port, () => {
-      signale.success(`amp.dev available on ${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}!`);
+      signale.success(`amp.dev available on ${host}!`);
     });
+
+    if (config.environment == 'development') {
+      // When in development fire up a second server as a simple proxy
+      // to simulate CORS requests for stuff like playground
+      this.proxy = express();
+      this.proxy.listen(config.hosts.api.port, () => {
+        signale.success(`amp.dev proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
+      });
+
+      const proxy = new HttpProxy();
+      this.proxy.get('/*', (request, response, next) => {
+        proxy.web(request, response, {
+          'target': host,
+        }, next);
+      });
+    }
   }
 
   _enableCors() {
