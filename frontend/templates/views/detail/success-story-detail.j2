@@ -69,7 +69,7 @@
     #}
     {% if doc.kpis %}
       {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-      <div class="ad--kpi ad--container">
+      <div class="ad--kpi ad--container-fluid">
         {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
         {% for kpi in doc.kpis %}
           <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
@@ -95,7 +95,7 @@
       {% for content in doc.contents %}
         {# layout: text + media #}
         {% if content.layout == 'text-media' %}
-          <div class="ad-o-text-media-block ad--container">
+          <div class="ad-o-text-media-block ad--container-fluid">
             <div class="ad-m-text-media text ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
@@ -136,7 +136,7 @@
 
         {# layout: text #}
         {% if content.layout == 'text' %}
-          <div class="ad--container">
+          <div class="ad--container-fluid">
             <div class="ad-o-text-media-block ad-o-text-media-block-center ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
@@ -180,7 +180,7 @@
           {% do doc.styles.addCssFile('css/components/atoms/bevel.css') %}
           <div class="ad-a-bevel ad-a-bevel-right"></div>
 
-          <section class="ad--quote ad--container">
+          <section class="ad--quote ad--container-fluid">
             <div class="ad-m-quote">
               <div class="ad-m-quote-source">
                <div class="ad-a-ico">
@@ -210,7 +210,7 @@
 
         {# layout: text with button #}
         {% if content.layout == 'text-button' %}
-          <div class="ad-o-text-media-block ad--container">
+          <div class="ad-o-text-media-block ad--container-fluid">
             <div class="ad-m-text-media text ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
