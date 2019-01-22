@@ -10,7 +10,7 @@ teaser:
     height: 1
     alt: A placeholder image
   logo:
-    src: '/static/img/logo-dummy-time.png'
+    src: '/static/img/success-stories/bmw_jvm/bmw_logo.png'
     width: 153
     height: 38
     alt: Teads
