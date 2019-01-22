@@ -51,18 +51,17 @@
     {% endblock %}
 
     <style amp-custom>
-    {% block styles %}
-    {# Some basic styling should always be present #}
-    {% do doc.styles.addCssFile('css/base.css', -5) %}
-    {% do doc.styles.addCssFile('css/components/atoms/headline.css', -4) %}
-    {% do doc.styles.addCssFile('css/components/atoms/text.css', -3) %}
-    {% do doc.styles.addCssFile('css/components/atoms/anchor.css', -2) %}
-    {% do doc.styles.addCssFile('css/components/molecules/link.css', -2) %}
-    {% do doc.styles.addCssFile('css/components/atoms/icon.css', -1) %}
+      {% block styles %}
+      {# Some basic styling should always be present #}
+      {% do doc.styles.addCssFile('css/base.css', -5) %}
+      {% do doc.styles.addCssFile('css/components/atoms/headline.css', -4) %}
+      {% do doc.styles.addCssFile('css/components/atoms/text.css', -3) %}
+      {% do doc.styles.addCssFile('css/components/atoms/anchor.css', -2) %}
+      {% do doc.styles.addCssFile('css/components/molecules/link.css', -2) %}
+      {% do doc.styles.addCssFile('css/components/atoms/icon.css', -1) %}
+      {% endblock %}
 
-    {% endblock %}
-
-    {{ doc.styles.emit() }}
+      {{ doc.styles.emit() }}
     </style>
   </head>
   {# The body tag needs an empty class attribute in order to add the filter class.
@@ -83,8 +82,6 @@
     {% include 'views/partials/burger-menu.j2' %}
     {% endblock %}
 
-    {% block main %}
-    {# Only render the grid toggle during development #}
     {% if podspec.env.name == 'development' %}
     {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
     <aside class="ad-a-grid-toggle">
@@ -94,6 +91,8 @@
     </aside>
     {% endif %}
 
+    {% block main %}
+    {# Only render the grid toggle during development #}
     {% include 'views/partials/content.j2' %}
     {% endblock %}
 
