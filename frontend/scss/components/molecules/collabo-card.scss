@@ -16,6 +16,10 @@
     padding: 8vw 0;
   }
   
+  .#{utility('container-fluid')} {
+    grid-template-rows: auto 100px auto 100px;
+  }
+  
   h2 {
     grid-column: 1 / -1;
     width: 100%;
@@ -29,18 +33,25 @@
 .#{molecule('collabo-card')} {
   grid-column: span 6;
   width: 100%;
-  margin-bottom: 3em;
   text-align: center;
   background: #fff;
   border-radius: 10px;
-  @include box-shadow;
+  box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   
-  @media screen and (min-width: 768px) {
-    margin-bottom: 10rem;
+  &:hover {
+    transform: translateY(-0.125em);
+    box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
+  }
+  
+  & > a {
+    display: block;
+    height: 100%;
   }
   
   &-1 {
     grid-column: 1 / 13;
+    grid-row: 2 / 4;
     
     @media screen and (min-width: 1024px) {
       grid-column: 2 / 12;
@@ -53,10 +64,7 @@
   
   &-2 {
     grid-column: 13 / 25;
-    
-    @media screen and (min-width: 768px) {
-      transform: translateY(7rem);
-    }
+    grid-row: 3 / 5;
     
     @media screen and (min-width: 1024px) {
       grid-column: 14 / 24;
@@ -80,11 +88,11 @@
   &-copy {
     @include txt;
     @include txt-2;
-    padding: 0 2.5rem;
-    margin-bottom: 3em;
+    padding: 0 2.5rem 3em;
+    margin-bottom: 0;
     
     @media screen and (min-width: 768px) {
-      padding: 0 5rem;
+      padding: 0 5rem 3em;
       @include txt-1;
     }
   }
