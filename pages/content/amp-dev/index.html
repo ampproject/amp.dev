@@ -297,6 +297,8 @@ sampler:
 
         </div>
 
+        {% set playground_url = podspec.base_urls.api + '/playground' %}
+        {% set embed_url = playground_url + '/embed#url=' + podspec.base_urls.platform + doc.sampler[0].src %}
         <div class="ad-o-sampler-iframe">
           <amp-iframe
             width="11"
@@ -305,7 +307,7 @@ sampler:
             layout="responsive"
             resizable
             frameborder="0"
-            src="{{ doc.sampler[0].url }}"
+            src="{{ embed_url }}"
             [src]="sampler[activeSample].url">
             <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
           </amp-iframe>
