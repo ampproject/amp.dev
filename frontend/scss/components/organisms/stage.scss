@@ -100,17 +100,23 @@
 
     &-icon {
       @include ico;
-      @include ico-3;
+      @include ico-2;
       position: absolute;
       left: 0;
       bottom: calc(100% + 1em);
+      padding: 0.5em;
+      border: 1px solid color('white');
+      border-radius: 50%;
 
       @media screen and (min-width: 768px) {
-        @include ico-5;
+        width: 3em;
+        height: 3em;
         left: auto;
         bottom: auto;
         right: calc(100% + 1em);
         top: -1.5em;
+        padding: 1em;
+        border-width: 2px;
       }
     }
 
@@ -129,6 +135,26 @@
 
       @media screen and (min-width: 768px) {
         @include txt-lrg;
+      }
+    }
+  }
+
+  &-websites, &-ads {
+    .#{organism('stage')} {
+      &-content {
+        &-icon { @include fill-websites; border-color: color('white'); }
+        &-headline { @include color-websites; }
+        &-subline { @include color-websites; }
+      }
+    }
+  }
+
+  &-emails, &-stories {
+    .#{organism('stage')} {
+      &-content {
+        &-icon { @include fill-stories; border-color: color('ultramarine'); }
+        &-headline { @include color-stories; }
+        &-subline { @include color-stories; }
       }
     }
   }
