@@ -19,7 +19,6 @@
 @import '../molecules/copy';
 @import '../molecules/quote';
 @import '../molecules/benefit';
-@import '../molecules/link';
 @import '../molecules/table.scss';
 @import '../molecules/headline-icon.scss';
 
@@ -32,24 +31,24 @@
 @import '../templates/_default.scss';
 
 .#{template('what-is-amp')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
 
-    
+
   .#{utility('content')} {
     @include default-section-padding;
     margin-bottom: 7em;
-    
+
     @media screen and (min-width: 768px) {
       margin-bottom: 8vw;
     }
-    
+
     .#{utility('container')} {
       padding: 0;
     }
@@ -85,18 +84,18 @@
         }
       }
     }
-    
+
     .#{molecule('format-visual')} {
       padding: 0 5em;
-      
+
       &:after {
         width: 75%;
-        
+
         @media screen and (min-width: 768px) {
           width: 100%;
         }
       }
-      
+
       @media screen and (min-width: 768px) {
         padding: 0;
       }
@@ -105,7 +104,7 @@
 
   .#{utility('kpi')} {
     padding: 5rem 0;
-    
+
     .#{molecule('kpi')} {
       grid-column: span 8;
       padding-bottom: 56.25%;
@@ -124,4 +123,3 @@
     }
   }
 }
-
