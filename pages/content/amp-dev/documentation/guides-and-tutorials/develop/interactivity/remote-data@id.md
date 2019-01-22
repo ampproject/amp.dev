@@ -1,8 +1,9 @@
 ---
 $title: Bekerja dengan data jarak jauh
+toc: true
 ---
 
-[TOC]
+
 
 Bagaimana jika data Anda yang dapat diikat terlalu besar atau kompleks untuk diambil saat pemuatan halaman? Atau, bagaimana jika setiap SKU memiliki harga yang butuh waktu lama untuk dicari? Mencari harga SKU untuk item yang tidak dilihat adalah pekerjaan yang sia-sia.
 

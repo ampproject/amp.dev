@@ -1,5 +1,6 @@
 ---
 $title: AMP 検証エラー
+toc: true
 ---
 
 <!---
@@ -25,7 +26,7 @@ limitations under the License.
 検証エラーの概要については、
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
 
-[TOC]
+
 
 ## AMP HTML タグと属性のエラー
 

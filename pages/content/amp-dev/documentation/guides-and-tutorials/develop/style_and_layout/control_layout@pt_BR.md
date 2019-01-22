@@ -1,7 +1,8 @@
 ---
 $title: Consultas de mídia e layout
+toc: true
 ---
-[TOC]
+
 
 
 A tecnologia AMP é compatível com **consultas de mídia** e **consultas de elemento**, além de ter um recurso integrado e eficiente para controlar o **layout** de elementos individuais. O atributo `layout` facilita muito o uso e a criação de design completamente responsivo em comparação com a aplicação somente de CSS.

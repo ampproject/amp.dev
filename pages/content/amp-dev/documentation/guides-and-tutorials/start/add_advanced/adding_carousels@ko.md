@@ -1,8 +1,9 @@
 ---
 $title: 캐러셀 추가
+toc: true
 ---
 
-[TOC]
+
 
 또 다른 모바일 페이지의 일반적인 특징은 캐러셀입니다.  [amp-carousel](/ko/docs/reference/components/amp-carousel.html) 구성요소를 사용하여 AMP 페이지에 캐러셀을 쉽게 추가할 수 있습니다. 이미지 캐러셀과 같은 간단한 예로 시작해 보겠습니다.
 

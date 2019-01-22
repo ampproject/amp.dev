@@ -1,7 +1,8 @@
 ---
 $title: Hacer que una página sea reconocible
+toc: true
 ---
-[TOC]
+
 
 En ocasiones, puede que prefieras tener tanto una versión de AMP como una que no lo sea de una misma página, por ejemplo, en un artículo de noticias. Pero si la búsqueda de Google encuentra la versión que no es de AMP de esa página, ¿cómo puede saber que también hay una versión de AMP?
 

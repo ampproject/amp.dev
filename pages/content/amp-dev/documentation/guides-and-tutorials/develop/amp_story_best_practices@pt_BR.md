@@ -1,8 +1,9 @@
 ---
 $title: Práticas recomendadas para criar uma história AMP
+toc: true
 ---
 
-[TOC]
+
 
 Este guia mostra práticas recomendadas que precisam ser implementadas ao criar uma [história AMP](/pt_br/docs/reference/components/amp-story.html).
 

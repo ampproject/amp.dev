@@ -1,8 +1,9 @@
 ---
 $title: AMPHTML 广告
+toc: true
 ---
 
-[TOC]
+
 
 ## 什么是 AMPHTML 广告？
 

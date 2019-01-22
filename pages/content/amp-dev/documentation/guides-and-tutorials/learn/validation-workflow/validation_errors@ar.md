@@ -1,5 +1,6 @@
 ---
 $title: أخطاء التحقق من صحة AMP
+toc: true
 ---
 
 <!---
@@ -25,7 +26,7 @@ limitations under the License.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-[TOC]
+
 
 ## أخطاء علامات وسمات HTML لصفحات AMP
 

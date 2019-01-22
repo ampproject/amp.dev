@@ -49,6 +49,7 @@
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     width: auto;
     display: flex;
     flex-wrap: nowrap;

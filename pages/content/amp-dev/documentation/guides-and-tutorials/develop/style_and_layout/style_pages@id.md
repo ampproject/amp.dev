@@ -1,7 +1,8 @@
 ---
 $title: CSS yang didukung
+toc: true
 ---
-[TOC]
+
 
 Seperti semua halaman, halaman AMP digayakan dengan CSS, tapi tidak dapat mereferensikan stylesheet eksternal (dengan pengecualian [font kustom](#the-custom-fonts-exception)). Selain itu, gaya tertentu tidak diizinkan karena implikasi performa. Atribut gaya sisipan pun tidak diizinkan.
 

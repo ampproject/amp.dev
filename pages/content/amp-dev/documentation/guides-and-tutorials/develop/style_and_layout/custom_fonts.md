@@ -3,7 +3,7 @@ $title: Add custom fonts
 $order: 6
 toc: true
 ---
-[TOC]
+
 
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.

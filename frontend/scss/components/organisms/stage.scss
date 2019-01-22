@@ -9,6 +9,8 @@
 @import '../atoms/_text.scss';
 
 .#{utility('stage')} {
+  overflow: hidden;
+
   .#{organism('case-band')} {
     grid-column: 1 / -1;
     width: 150vw;

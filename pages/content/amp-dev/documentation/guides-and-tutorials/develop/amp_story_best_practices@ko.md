@@ -1,8 +1,9 @@
 ---
 $title: AMP 스토리 만들기 관련 권장사항
+toc: true
 ---
 
-[TOC]
+
 
 이 가이드는 [AMP 스토리](/ko/docs/reference/components/amp-story.html)를 만들 때 구현해야 하는 권장사항을 제공합니다.
 

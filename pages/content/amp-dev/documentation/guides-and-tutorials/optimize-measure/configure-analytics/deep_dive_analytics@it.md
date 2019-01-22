@@ -1,7 +1,8 @@
 ---
 $title: Immersione nel mondo di AMP Analytics
+toc: true
 ---
-[TOC]
+
 
 
 Questa guida si addentra nella sfera del

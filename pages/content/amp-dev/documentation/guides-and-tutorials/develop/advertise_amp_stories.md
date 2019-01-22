@@ -7,7 +7,7 @@ formats:
   - stories
 ---
 
-[TOC]
+
 
 AMP Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free integration into the user’s journey, keeping them engaged and delighted by the platform.
 

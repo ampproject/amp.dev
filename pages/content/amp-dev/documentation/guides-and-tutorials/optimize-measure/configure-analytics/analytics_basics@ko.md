@@ -1,10 +1,11 @@
 ---
 $title: '애널리틱스: 기초'
+toc: true
 ---
 
 AMP 애널리틱스의 기초에 관해 알아보세요.
 
-[TOC]
+
 
 ## amp-pixel과 amp-analytics 중 무엇을 사용해야 할까요?
 

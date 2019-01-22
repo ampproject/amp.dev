@@ -1,8 +1,9 @@
 ---
 $title: Meningkatkan interaktivitas
+toc: true
 ---
 
-[TOC]
+
 
 Kode pembuka memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa cara yang dapat kita lakukan untuk meningkatkannya:
 

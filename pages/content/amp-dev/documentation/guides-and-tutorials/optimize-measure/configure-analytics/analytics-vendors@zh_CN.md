@@ -1,7 +1,8 @@
 ---
 $title: 分析工具供应商
+toc: true
 ---
-[TOC]
+
 
 本文档列出了具有可与 [`amp-analytics`](/zh_cn/docs/reference/components/amp-analytics.html) 组件配合使用的内置配置的分析工具供应商。
 

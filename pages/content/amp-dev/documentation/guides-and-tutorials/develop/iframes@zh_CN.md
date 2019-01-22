@@ -1,7 +1,8 @@
 ---
 $title: 添加 iframe
+toc: true
 ---
-[TOC]
+
 
 了解如何在您的网页中显示媒体内容，以及如何使用 iframe 在 AMP 的限制之外显示高级内容。
 

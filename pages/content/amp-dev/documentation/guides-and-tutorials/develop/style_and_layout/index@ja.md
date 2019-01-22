@@ -1,7 +1,8 @@
 ---
 $title: スタイルとレイアウト
+toc: true
 ---
-[TOC]
+
 
 AMP HTML のスタイルとレイアウトには、通常の HTML と同じように CSS を使用します。
 

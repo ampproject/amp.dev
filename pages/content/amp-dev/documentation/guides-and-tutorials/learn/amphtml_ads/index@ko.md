@@ -1,8 +1,9 @@
 ---
 $title: AMP HTML 광고
+toc: true
 ---
 
-[TOC]
+
 
 ## AMP HTML 광고란 무엇인가요?
 

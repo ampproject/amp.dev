@@ -3,7 +3,7 @@ $title: Layout & media queries
 $order: 1
 toc: true
 ---
-[TOC]
+
 
 
 AMP supports both **media queries** &amp; **element queries**, plus comes with a powerful, built-in way to control the **layout** of individual elements. The `layout` attribute makes working with and creating fully responsive design much easier than if you'd use CSS alone.

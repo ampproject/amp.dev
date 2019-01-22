@@ -5,7 +5,7 @@ toc: true
 components:
   - iframe
 ---
-[TOC]
+
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 

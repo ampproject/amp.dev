@@ -1,12 +1,13 @@
 ---
 $title: AMP Doğrulama Hataları
+toc: true
 ---
 
 Geçerli AMP dokümanları hiçbir doğrulama hatası içermemelidir.
 Bu dokümanın amacı, [AMP sayfalarınızı doğrularken]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
 Doğrulama hatalarıyla ilgili eksiksiz bir genel bakış için [AMP doğrulayıcı spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
 
-[TOC]
+
 
 ## AMP HTML etiketi ve öznitelik hataları
 

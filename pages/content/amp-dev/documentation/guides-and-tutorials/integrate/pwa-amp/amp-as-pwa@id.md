@@ -1,8 +1,9 @@
 ---
 $title: Mengaktifkan fitur Progressive Web App untuk halaman AMP
+toc: true
 ---
 
-[TOC]
+
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample memicu permintaan "Tambahkan ke Layar Utama".') }}
 

@@ -6,7 +6,7 @@ toc: true
 components:
     - youtube
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Watch the intro to combining AMP and PWA.']
 

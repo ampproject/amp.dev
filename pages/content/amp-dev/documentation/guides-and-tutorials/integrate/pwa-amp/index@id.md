@@ -1,7 +1,8 @@
 ---
 $title: Mengombinasikan AMP dengan Progressive Web App
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Tonton pengantar tentang menggabungkan AMP dan PWA.']
 

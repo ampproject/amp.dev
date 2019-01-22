@@ -4,7 +4,7 @@ $order: 2
 toc: true
 ---
 
-[TOC]
+
 
 The starter code provides a pretty bare user experience. There are a couple ways we can improve it:
 
