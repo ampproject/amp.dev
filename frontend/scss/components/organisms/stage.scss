@@ -51,11 +51,10 @@
   }
 
   .#{molecule('format-visual')} {
-    grid-column: 13 / -1;
-    margin-top: -8%;
+    grid-column: 9 / -1;
 
     @media screen and (min-width: 768px) {
-      margin-top: -60%;
+      margin-top: -40%;
     }
   }
 }
@@ -84,6 +83,7 @@
 
   div.#{utility('container')} {
     padding: 0 2em;
+    
     @media screen and (min-width: 768px) {
       padding: 0 0 0 2.5em;
     }

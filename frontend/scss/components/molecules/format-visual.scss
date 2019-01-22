@@ -24,6 +24,10 @@ the border and format around the images.
 
 .#{molecule('format-visual')} {
   width: 100%;
+  max-width: 26em;
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 0 2em;
   margin: 0 auto;
   transform: rotate3d(135, -90, 90, 50deg);
@@ -33,6 +37,8 @@ the border and format around the images.
   
   @media screen and (min-width: 768px) {
     width: 50%;
+    max-width: 100%;
+    position: relative;
     padding: 0;
   }
   
@@ -67,25 +73,37 @@ the border and format around the images.
   &-bottom-image {
     grid-column: 2 / 5;
     grid-row: 1 / 5;
+    max-width: 8.125em;
     transform: translate3d(0%, 3%, 0) scale(0.9);
+    
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   &-top-image {
     grid-column: 3 / 6;
     grid-row: 2 / 6;
+    max-width: 5.625em;
     @include component-frame;
     @include component-frame-websites;
     animation: 10s ease-in-out 3.5s infinite both slide;
+    
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   &-code-snippet {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
+    width: 12em;
     font-size: 10px;
     filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
     animation: 10s ease-in-out infinite bounce -2s;
     
     @media screen and (min-width: 768px) {
+      width: auto;
       font-size: inherit;
     }
     

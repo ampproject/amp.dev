@@ -442,7 +442,6 @@ sampler:
   </div>
 </section>
 
-
 <section class="ad--case-grid">
   <div class="ad--container">
     <h1 class="ad-o-case-grid-headline">Get inspired by AMP use cases</h1>
