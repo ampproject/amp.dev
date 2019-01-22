@@ -1,4 +1,21 @@
 $title: Times of India
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/times_of_india/teaser_toi.jpg'
+    width: 1
+    height: 1
+    alt: Times of India
+  logo:
+    src: '/static/img/success-stories/times_of_india/toi_logo.png'
+    width: 153
+    height: 38
+    alt: Times of India
+  text: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP
+
 
 stage:
   headline: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP

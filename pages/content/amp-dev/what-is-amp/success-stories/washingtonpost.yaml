@@ -1,4 +1,21 @@
 $title: Washington Post
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/washington_post/teaser_washington_post.jpg'
+    width: 1
+    height: 1
+    alt: Washington Post
+  logo:
+    src: '/static/img/success-stories/washington_post/washington_post_logo.png'
+    width: 153
+    height: 38
+    alt: Washington Post
+  text: AMP helps the Washington Post increase returning users from mobile search by 23%
+
 
 stage:
   headline: AMP helps the Washington Post increase returning users from mobile search by 23%

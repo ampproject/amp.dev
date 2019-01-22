@@ -1,4 +1,21 @@
 $title: Innkeeper's Advantage
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/innkeepers/teaser_innkeepers.jpg'
+    width: 1
+    height: 1
+    alt: Innkeeper's Advantage
+  logo:
+    src: '/static/img/success-stories/innkeepers/innkeepers_logo.jpg'
+    width: 153
+    height: 38
+    alt: Innkeeper's Advantage
+  text: Innkeeper’s Advantage helps B&Bs book guests quicker with AMP
+
 
 stage:
   headline: Innkeeper’s Advantage helps B&Bs book guests quicker with AMP

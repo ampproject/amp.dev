@@ -1,4 +1,21 @@
 $title: Terra
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/terra/teaser_terra.jpg'
+    width: 1
+    height: 1
+    alt: Terra
+  logo:
+    src: '/static/img/success-stories/terra/terra_logo.png'
+    width: 153
+    height: 38
+    alt: Terra
+  text: Terra drives mobile viewership up with AMP
+
 
 stage:
   headline: Terra drives mobile viewership up with AMP

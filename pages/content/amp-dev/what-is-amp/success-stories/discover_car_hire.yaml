@@ -1,4 +1,20 @@
 $title: DiscoverCarHire.com
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/discover_car/teaser_discover_car.jpg'
+    width: 1
+    height: 1
+    alt: DiscoverCarHire.com
+  logo:
+    src: '/static/img/success-stories/discover_car/discover_car_logo.png'
+    width: 153
+    height: 38
+    alt: DiscoverCarHire.com
+  text: DiscoverCarHire.com drives conversions with faster mobile page load times via AMP
 
 stage:
   headline: DiscoverCarHire.com drives conversions with faster mobile page load times via AMP

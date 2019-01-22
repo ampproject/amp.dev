@@ -1,4 +1,21 @@
 $title: Slate
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/slate/teaser_slate.jpg'
+    width: 1
+    height: 1
+    alt: Slate
+  logo:
+    src: '/static/img/success-stories/slate/slate_logo.png'
+    width: 153
+    height: 38
+    alt: Slate
+  text: Slate gets efficient with AMP
+
 
 stage:
   headline: Slate gets efficient with AMP

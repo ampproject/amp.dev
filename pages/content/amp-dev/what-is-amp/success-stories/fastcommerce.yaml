@@ -1,4 +1,20 @@
 $title: Fastcommerce
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/fastcommerce/teaser_fastcommerce.jpg'
+    width: 1
+    height: 1
+    alt: Fastcommerce
+  logo:
+    src: '/static/img/success-stories/fastcommerce/fastcommerce_logo.png'
+    width: 153
+    height: 38
+    alt: Fastcommerce
+  text: Fastcommerce drives conversions for clients by building AMP-first
 
 stage:
   headline: Fastcommerce drives conversions for clients by building AMP-first

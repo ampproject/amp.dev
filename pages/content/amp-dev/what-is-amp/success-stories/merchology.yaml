@@ -1,4 +1,21 @@
 $title: Merchology
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/merchology/teaser_merchology.jpg'
+    width: 1
+    height: 1
+    alt: Merchology
+  logo:
+    src: '/static/img/success-stories/merchology/merchology_logo.png'
+    width: 153
+    height: 38
+    alt: Merchology
+  text: Merchology increases conversions, lowers load times with AMP
+
 
 stage:
   headline: Merchology increases conversions, lowers load times with AMP

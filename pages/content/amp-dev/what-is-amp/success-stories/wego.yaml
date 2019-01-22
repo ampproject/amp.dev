@@ -1,4 +1,21 @@
 $title: Wego
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/wego/teaser_wego.jpg'
+    width: 1
+    height: 1
+    alt: Wego
+  logo:
+    src: '/static/img/success-stories/wego/wego_logo.png'
+    width: 153
+    height: 38
+    alt: Wego
+  text: Wego.com increases mobile conversion rates 95% with AMP
+
 
 stage:
   headline: Wego.com increases mobile conversion rates 95% with AMP

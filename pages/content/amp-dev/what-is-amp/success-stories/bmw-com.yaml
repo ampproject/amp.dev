@@ -5,15 +5,15 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/teaser-dummy-5x3-2.jpg'
+    src: '/static/img/success-stories/bmw_jvm/teaser_bmw.jpg'
     width: 1
     height: 1
-    alt: A placeholder image
+    alt: BMW.com
   logo:
     src: '/static/img/success-stories/bmw_jvm/bmw_logo.png'
     width: 153
     height: 38
-    alt: Teads
+    alt: BMW.com
   text: The story of the all-new BMW.com
 
 stage:

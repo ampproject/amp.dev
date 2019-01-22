@@ -1,4 +1,21 @@
 $title: Readwhere
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/readwhere/teaser_readwhere.jpg'
+    width: 1
+    height: 1
+    alt: Readwhere
+  logo:
+    src: '/static/img/success-stories/readwhere/readwhere_logo.png'
+    width: 153
+    height: 38
+    alt: Readwhere
+  text: Readwhere provides seamless mobile content via AMP and PWA
+
 
 stage:
   headline: Readwhere provides seamless mobile content via AMP and PWA

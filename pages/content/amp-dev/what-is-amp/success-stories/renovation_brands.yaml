@@ -1,4 +1,21 @@
 $title: Renovation Brands
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/renovation/teaser_renovation.jpg'
+    width: 1
+    height: 1
+    alt: Renovation Brands
+  logo:
+    src: '/static/img/success-stories/renovation/renovation_logo.png'
+    width: 153
+    height: 38
+    alt: Renovation Brands
+  text: Leading French organic retailer doubles mobile conversions with AMP
+
 
 stage:
   headline: Renovation Brands improves speed and site duration with AMP

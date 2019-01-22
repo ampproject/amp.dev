@@ -1,5 +1,20 @@
 $title: Carved
 $category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/carved/teaser_carved.jpg'
+    width: 1
+    height: 1
+    alt: Carved
+  logo:
+    src: '/static/img/success-stories/carved/carved_logo.png'
+    width: 153
+    height: 38
+    alt: Carved
+  text: Carved increases conversion rate by 75% with AMP and PWA
 
 stage:
   headline: Carved increases conversion rate by 75% with AMP and PWA

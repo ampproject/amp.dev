@@ -1,4 +1,21 @@
 $title: Teads
+$category: advertisers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/teads/teaser_teads.jpg'
+    width: 1
+    height: 1
+    alt: Teads
+  logo:
+    src: '/static/img/success-stories/teads/teads_logo.png'
+    width: 153
+    height: 38
+    alt: Teads
+  text: Teads brings AMP'd mobile video inventory to nearly 100 publishers
+
 
 stage:
   headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers

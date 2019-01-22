@@ -1,4 +1,21 @@
 $title: WompMobile
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/womp/teaser_wompmobile.jpg'
+    width: 1
+    height: 1
+    alt: WompMobile
+  logo:
+    src: '/static/img/success-stories/womp/wompmobile_logo.png'
+    width: 153
+    height: 38
+    alt: WompMobile
+  text: WompMobile consistently improves e-commerce clients’ conversion rates with AMP sites
+
 
 stage:
   headline: WompMobile consistently improves e-commerce clients’ conversion rates with AMP sites

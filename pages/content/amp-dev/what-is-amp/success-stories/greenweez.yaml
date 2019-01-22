@@ -1,4 +1,20 @@
 $title: Greenweez
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/greenweez/teaser_greenweez.jpg'
+    width: 1
+    height: 1
+    alt: Greenweez
+  logo:
+    src: '/static/img/success-stories/greenweez/greenweez_logo.png'
+    width: 153
+    height: 38
+    alt: Greenweez
+  text: Leading French organic retailer doubles mobile conversions with AMP
 
 stage:
   headline: Leading French organic retailer doubles mobile conversions with AMP

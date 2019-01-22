@@ -1,4 +1,21 @@
 $title: TransUnion
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/transunion/teaser_transunion.jpg'
+    width: 1
+    height: 1
+    alt: TransUnion
+  logo:
+    src: '/static/img/success-stories/transunion/transunion_logo.png'
+    width: 153
+    height: 38
+    alt: TransUnion
+  text: TransUnion scores more conversions with faster page loads via AMP
+
 
 stage:
   headline: TransUnion scores more conversions with faster page loads via AMP

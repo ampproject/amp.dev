@@ -1,4 +1,20 @@
 $title: Gizmodo
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/Gizmodo/teaser_gizmodo.jpg'
+    width: 1
+    height: 1
+    alt: Gizmodo
+  logo:
+    src: '/static/img/success-stories/Gizmodo/gizmodo_logo.png'
+    width: 153
+    height: 38
+    alt: Gizmodo
+  text: AMP makes Gizmodo 3x faster on mobile
 
 stage:
   headline: AMP makes Gizmodo 3x faster on mobile

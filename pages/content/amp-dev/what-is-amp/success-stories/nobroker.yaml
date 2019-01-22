@@ -1,4 +1,21 @@
 $title: NoBroker
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/nobroker/teaser_nobroker.jpg'
+    width: 1
+    height: 1
+    alt: NoBroker
+  logo:
+    src: '/static/img/success-stories/nobroker/nobroker_logo.png'
+    width: 153
+    height: 38
+    alt: NoBroker
+  text: Leading French organic retailer doubles mobile conversions with AMP
+
 
 stage:
   headline: India’s leading rental site improved owner-to-renter connections by 77% with AMP

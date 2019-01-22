@@ -1,4 +1,21 @@
 $title: Triplelift
+$category: advertisers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/triplelift/teaser_triplelift.jpg'
+    width: 1
+    height: 1
+    alt: Triplelift
+  logo:
+    src: '/static/img/success-stories/triplelift/triplelift_logo.png'
+    width: 153
+    height: 38
+    alt: Triplelift
+  text: Triplelift and Cloudflare boost Time Inc.’s revenue with AMP Ads
+
 
 stage:
   headline: Triplelift and Cloudflare boost Time Inc.’s revenue with AMP Ads

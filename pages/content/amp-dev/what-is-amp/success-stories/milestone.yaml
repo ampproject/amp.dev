@@ -1,4 +1,21 @@
 $title: Milestone
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/milestone/teaser_milestone.jpg'
+    width: 1
+    height: 1
+    alt: Milestone
+  logo:
+    src: '/static/img/success-stories/milestone/milestone_logo.png'
+    width: 153
+    height: 38
+    alt: Milestone
+  text: Milestone drives conversions with AMP pages for local hospitality site
+
 
 stage:
   headline: Milestone drives conversions with AMP pages for local hospitality site

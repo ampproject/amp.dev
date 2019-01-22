@@ -1,4 +1,21 @@
 $title: Wired
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/wired/teaser_wired.jpg'
+    width: 1
+    height: 1
+    alt: Wired
+  logo:
+    src: '/static/img/success-stories/wired/wired_logo.png'
+    width: 153
+    height: 38
+    alt: Wired
+  text: Wired AMP’s its 20+ year archive to meet audiences online
+
 
 stage:
   headline: Wired AMP’s its 20+ year archive to meet audiences online

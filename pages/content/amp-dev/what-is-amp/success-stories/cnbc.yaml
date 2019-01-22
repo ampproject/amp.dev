@@ -5,17 +5,16 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/teaser-dummy-5x3-2.jpg'
+    src: '/static/img/success-stories/cnbc/teaser_cnbc.jpg'
     width: 1
     height: 1
-    alt: A placeholder image
+    alt: CNBC
   logo:
-    src: '/static/img/logo-dummy-time.png'
+    src: '/static/img/success-stories/cnbc/cnbc_logo_thumb.png'
     width: 153
     height: 38
-    alt: Teads
-  text: The story of the all-new BMW.com
-
+    alt: CNBC
+  text: CNBC sees mobile speed and engagement gains with AMP
 
 stage:
   headline: CNBC sees mobile speed and engagement gains with AMP

@@ -1,4 +1,21 @@
 $title: U.S. Xpress
+$category: advertisers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/us_xpress/teaser_us_xpress.jpg'
+    width: 1
+    height: 1
+    alt: U.S. Xpress
+  logo:
+    src: '/static/img/success-stories/us_xpress/us_xpress_logo.png'
+    width: 153
+    height: 38
+    alt: U.S. Xpress
+  text: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress
+
 
 stage:
   headline: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress

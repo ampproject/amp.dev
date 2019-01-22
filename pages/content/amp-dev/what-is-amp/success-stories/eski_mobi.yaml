@@ -1,4 +1,20 @@
 $title: Eski.mobi
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/eski/teaser_eski.jpg'
+    width: 1
+    height: 1
+    alt: Eski.mobi
+  logo:
+    src: '/static/img/success-stories/eski/eski_logo.png'
+    width: 153
+    height: 38
+    alt: Eski.mobi
+  text: Eski.mobi serves businesses going mobile with AMP
 
 stage:
   headline: Eski.mobi serves businesses going mobile with AMP
