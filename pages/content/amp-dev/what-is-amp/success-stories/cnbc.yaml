@@ -1,4 +1,22 @@
 $title: CNBC
+$lang: eng #|fr, chin, ..
+$category: publisher
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/teaser-dummy-5x3-2.jpg'
+    width: 1
+    height: 1
+    alt: A placeholder image
+  logo:
+    src: '/static/img/logo-dummy-time.png'
+    width: 153
+    height: 38
+    alt: Teads
+  text: The story of the all-new BMW.com
+
 
 stage:
   headline: CNBC sees mobile speed and engagement gains with AMP
