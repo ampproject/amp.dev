@@ -48,6 +48,15 @@
     h2 {@include hl-h3;}
     h3 {@include hl-h4;}
     h4 {@include hl-h5;}
+
+    figure {
+      amp-img{
+        @include box-shadow;
+      }
+      figcaption {
+        padding-top: 20px;
+      }
+    }
   }
 
   .#{utility('chapter-indicator')} {
