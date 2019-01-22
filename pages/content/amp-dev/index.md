@@ -271,7 +271,7 @@ sampler:
       <h2>compelling, smooth, and instant</h2>
     </div>
   </div>
-    
+
   <div class="ad--container-fluid">
     <div class="ad-m-copy">
       <p>AMP is an open-source html framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
@@ -340,8 +340,8 @@ sampler:
 
       <div class="ad-m-benefit">
         <div class="ad-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/bolt.svg') %}
-          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt"></use></svg>
+          {% do doc.icons.useIcon('icons/bolt-outline.svg') %}
+          <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-outline"></use></svg>
         </div>
         <div class="ad-m-benefit-text">
           <span class="ad-m-benefit-text-headline">Web page speed improves the user experience and core business metrics</span>
