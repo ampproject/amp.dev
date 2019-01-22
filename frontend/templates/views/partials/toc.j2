@@ -1,4 +1,6 @@
-{% if doc.format.toc != '<div class="toc">\n<ul></ul>\n</div>\n' %}
+{% set empty_toc = doc.format.toc == '<div class="toc">\n<ul></ul>\n</div>\n' or not doc.format.toc %}
+
+{% if not empty_toc and (doc.toc or doc.content.find('[TOC]')) %}
 <section class="ad--toc">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
   <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" for="toc">Contents</label>
