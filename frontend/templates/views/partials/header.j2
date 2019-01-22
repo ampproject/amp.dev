@@ -7,10 +7,10 @@
 
 {% set active_section = g.collection('/content/amp-dev/' + doc.pod_path.split('/')[3]) or None %}
 
-<header class="ad--header">
+<header class="ad--header" [class]="menuopen == true ? 'ad--header menuopen' : 'ad--header'">
   <div class="ad-o-header">
     <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox"/>
-    <label class="ad-o-header-burger-menu" for="burger-menu-state">
+    <label class="ad-o-header-burger-menu" for="burger-menu-state" on="tap:AMP.setState({menuopen: !menuopen})" role="mobiletrigger" tabindex="0">
       <div class="ad-a-ico ad-o-header-burger-menu-icon">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
       </div>
