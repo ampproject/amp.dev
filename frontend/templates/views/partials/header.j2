@@ -1,154 +1,61 @@
-{% do doc.styles.addCssFile('css/components/organisms/header.css') %}
-{% do doc.icons.useIcon('icons/logo.svg') %}
-{% do doc.icons.useIcon('icons/search.svg') %}
-{% do doc.icons.useIcon('icons/globe.svg') %}
-{% do doc.icons.useIcon('icons/menu.svg') %}
-{% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+{% set second_level = doc.sub_navigation or doc.collection.sub_navigation or doc.collection.parent.sub_navigation or None %}
 
-{% set active_section = g.collection('/content/amp-dev/' + doc.pod_path.split('/')[3]) or None %}
+{% macro active_class(tested_doc, depth=3) -%}
+{% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ad-m-nav-link-active{% endif %}
+{%- endmacro %}
 
-<header class="ad--header" [class]="menuopen == true ? 'ad--header menuopen' : 'ad--header'">
+{% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
+<header class="ad--header {% if not second_level %}ad--header-fixed{% endif%}">
   <div class="ad-o-header">
-    <input id="burger-menu-state" class="ad-o-header-burger-menu-btn" type="checkbox"/>
-    <label class="ad-o-header-burger-menu" for="burger-menu-state" on="tap:AMP.setState({menuopen: !menuopen})" role="mobiletrigger" tabindex="0">
-      <div class="ad-a-ico ad-o-header-burger-menu-icon">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
-      </div>
-    </label>
+    <a class="ad-o-header-home" href="{{ doc.pod.get_home_doc().url.path }}">
+      {% do doc.icons.useIcon('/icons/logo.svg') %}
+      <svg class="ad-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+      <span class="ad-o-header-home-title">AMP</span>
+    </a>
 
-    {% set home = g.doc('/content/amp-dev/index.md') %}
-    <div class="ad-o-header-lnk ad-o-header-lnk-home">
-      <a class="ad-o-header-icon ad-o-header-icon-logo" href="{{ home.url.path }}">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-        <span class="ad-o-header-icon-text ad-o-header-icon-text-uppercase">AMP</span>
-        <span class="ad-o-header-title">{{ active_section.title or doc.title }}</span>
+    {% do doc.styles.addCssFile('/css/components/molecules/nav-link.css') %}
+    <nav class="ad-o-header-first-level">
+      {# Sections #}
+      {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
+      {% if section.index %}
+      {% set section_index = g.doc(section.index, locale=doc.locale) %}
+      <a class="ad-o-header-first-level-link ad-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
+        {{ section.title }}
       </a>
+      {% endif %}
+      {% endfor %}
+    </nav>
+
+    {# Add language selector between first- and second level navigation #}
+    {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
+    <div class="ad-m-language-selector" href="#">
+      <a class="ad-m-language-selector-toggle">
+        <span class="ad-m-nav-link">{{ doc.locale.language|upper }}</span>
+        {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+        <div class="ad-a-ico ad-m-language-selector-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        </div>
+      </a>
+      <ul class="ad-m-language-selector-list">
+        {% for locale in doc.locales if not locale == doc.locale  %}
+        {% set localized_doc = doc.localize(locale) %}
+        <li class="ad-m-language-selector-list-item">
+          <a class="ad-m-nav-link" href="{{ localized_doc.url.path }}">{{ locale.get_language_name()|capitalize }}</a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
 
-    {# Due to the UX design and behavior of the menu, two versions fo the navigation list are needed #}
-    <nav class="ad-o-header-nav ad-o-header-mainnav">
-
-      {# Mobile version #}
-      <ul class="ad-o-header-list-mobile-expanded">
-        {# Language switcher #}
-        <li class="ad-o-header-lang-switcher">
-          <div class="ad-o-header-lang-current">
-            <span>{{ doc.locale }}</span>
-            <div class="ad-a-ico ad-o-header-lang-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-            </div>
-          </div>
-          <ul class="ad-o-header-lang-list">
-            {% for locale in doc.locales if not locale == doc.locale  %}
-            {% set localized_doc = doc.localize(locale) %}
-            <li class="ad-o-header-lang-list-item">
-              <a href="{{ localized_doc.url.path }}">{{ locale }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </li>
-
-        <li class="ad-o-header-lnk ad-o-header-lnk-expanded ad-o-header-search ad-o-header-search-expanded">
-          <form method="GET" id="ampsearch" action="//www.google.com/search" target="_top">
-            <input class="ad-o-header-search-input" type="text" name="ampsearch_field" value="" placeholder="Search">
-            <button class="ad-o-header-search-button" name="search" type="submit">
-              <a class="ad-o-header-icon" href="">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
-              </a>
-            </button>
-          </form>
-        </li>
-
-        {# Sections #}
-        {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
-        {% if section.index %}
-        {% set section_index = g.doc(section.index, locale=doc.locale) %}
-        {% set section_name = section.pod_path.split('/')[3] %}
-        <li class="ad-o-header-lnk ad-o-header-lnk-expanded {% if section_name == active_section %}ad-o-header-lnk-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ _(section.title) }}</a>
-        </li>
-        {% endif %}
-        {% endfor %}
-
-        {# Link to the support section #}
-        {% set support = g.doc('/content/amp-dev/support/index.md') %}
-        <li class="ad-o-header-lnk ad-o-header-lnk-expanded ad-o-header-lnk-support-expanded">
-          <a href="{{ support.url.path }}">{{ _(support.title) }}</a>
-        </li>
-      </ul>
-
-      {# Desktop version #}
-      <ul class="ad-o-header-list ad-o-header-list-desktop">
-        {# Sections #}
-        {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
-        {% if section.index %}
-        {% set section_index = g.doc(section.index, locale=doc.locale) %}
-        <li class="ad-o-header-lnk {% if section == active_section %}ad-o-header-lnk-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ _(section.title) }}</a>
-        </li>
-        {% endif %}
-        {% endfor %}
-
-        {# Search icon and bar #}
-        <li class="ad-o-header-lnk ad-o-header-search">
-          <button class="ad-o-header-search-button" name="search" type="submit">
-            <a class="ad-o-header-icon" href="">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
-            </a>
-          </button>
-        </li>
-
-        {# Link to the support section #}
-        {% set support = g.doc('/content/amp-dev/support/index.md') %}
-        <li class="ad-o-header-lnk ad-o-header-lnk-support">
-          <a href="{{ support.url.path }}">{{ _(support.title) }}</a>
-        </li>
-
-        {# Language switcher #}
-        <li class="ad-o-header-lang-switcher">
-          <div class="ad-o-header-lang-current">
-            <span>{{ doc.locale.language }}</span>
-            <div class="ad-a-ico ad-o-header-lang-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-            </div>
-          </div>
-          <ul class="ad-o-header-lang-list">
-            {% for locale in doc.locales if not locale == doc.locale  %}
-            {% set localized_doc = doc.localize(locale) %}
-            <li class="ad-o-header-lang-list-item">
-              <a href="{{ localized_doc.url.path }}">{{ locale.get_language_name() }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <nav class="ad-o-header-nav ad-o-header-subnav">
-      <ul class="ad-o-header-list ad-o-header-list-subnav">
-      {# Check if the document or collections defines its own sub navigation #}
-      {% if doc.collection.sub_navigation or doc.sub_navigation %}
-      {% set sub_navigation_items = doc.collection.sub_navigation or doc.sub_navigation %}
-      {% for path in sub_navigation_items %}
-      {% set path_doc = g.doc(path) %}
-      <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if doc == path_doc %}ad-o-header-lnk-subnav-selected{% endif %}">
-        <a href="{{ path_doc.url.path }}">{{ _(path_doc.titles('header')) }}</a>
-      </li>
+    {% if second_level %}
+    <nav class="ad-o-header-second-level">
+      {# Get eventual sub-navigations defined per collection #}
+      {% for second_level_path in second_level %}
+      {% set second_level_doc = g.doc(second_level_path, locale=doc.locale) %}
+      <a class="ad-o-header-second-level-link ad-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
+        {{ second_level_doc.titles('header') }}
+      </a>
       {% endfor %}
-
-      {# Otherwise fallback to sub collections and their indexes #}
-      {% else %}
-      {% set sub_sections = active_section.collections()|sort(attribute='order') %}
-        {% for sub_section in sub_sections %}
-        {% if sub_section.index %}
-        {% set section_index = g.doc(sub_section.index, locale=doc.locale) %}
-        <li class="ad-o-header-lnk ad-o-header-lnk-subnav {% if section_index == doc %}ad-o-header-lnk-subnav-selected{% endif %}">
-          <a href="{{ section_index.url.path }}">{{ _(section_index.titles('header')) }}</a>
-        </li>
-        {% endif %}
-        {% endfor %}
-      {% endif %}
-      </ul>
     </nav>
+    {% endif %}
   </div>
 </header>
