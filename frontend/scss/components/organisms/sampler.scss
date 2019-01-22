@@ -9,17 +9,25 @@
 @import '../atoms/_color.scss';
 
 .#{utility('sampler')} {
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 4vw;
+  margin-bottom: 7em;
   
-  @media screen and (min-width: 840px) {
-    padding-left: 0;
-    padding-right: 0;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8vw;
   }
 
   .#{molecule('copy')} {
-    grid-column: 2 / 13;
+    grid-column: 3 / 13;
+    padding: 0 20px;
+    margin-bottom: 1.5em;
+    
+    @media screen and (min-width: 768px) {
+      padding-left: 20px;
+      margin-bottom: 3em;
+    }
+
+    @media screen and (min-width: 1680px) {
+      grid-column: 5 /  13;
+    }
 
     &-center {
       grid-column: 6 / 20;
@@ -38,8 +46,14 @@
 }
 
 .#{organism('sampler')} {
-  grid-column: 2 / -1;
-  width: calc(100% + 30px);
+  grid-column: 3 / -1;
+  width: 100%;
+  padding-left: 20px;
+  
+  @media screen and (min-width: 1680px) {
+    grid-column: 5 /  -1;
+    padding-left: 0;
+  }
   
   &-tab-bar {
     display: flex;
@@ -47,6 +61,7 @@
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     background: color('ebony-clay');
   }

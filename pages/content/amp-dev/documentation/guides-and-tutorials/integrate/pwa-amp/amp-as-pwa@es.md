@@ -1,8 +1,9 @@
 ---
 $title: Habilitar las funciones de las aplicaciones web progresivas en páginas AMP
+toc: true
 ---
 
-[TOC]
+
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample activa el mensaje "Añadir a la pantalla de inicio".') }}
 

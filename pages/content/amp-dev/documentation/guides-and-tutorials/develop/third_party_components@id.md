@@ -1,10 +1,11 @@
 ---
 $title: Menyertakan Konten Pihak Ketiga
+toc: true
 ---
 
 Pelajari cara menyertakan komponen pihak ketiga di laman.
 
-[TOC]
+
 
 ## Menyematkan Tweet
 

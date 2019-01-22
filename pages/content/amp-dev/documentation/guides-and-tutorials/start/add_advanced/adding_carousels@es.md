@@ -1,8 +1,9 @@
 ---
 $title: Agregar carruseles
+toc: true
 ---
 
-[TOC]
+
 
 Otra característica común en las páginas móviles es un carrusel. Puede agregar fácilmente carruseles a las páginas de AMP utilizando el componente de [amp-carousel](/es/docs/reference/components/amp-carousel.html). Comencemos con un ejemplo simple, como un carrusel de imágenes.
 

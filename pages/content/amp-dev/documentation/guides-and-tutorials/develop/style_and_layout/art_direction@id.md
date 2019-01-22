@@ -1,7 +1,8 @@
 ---
 $title: Gambar responsif dengan atribut srcset, sizes & heights
+toc: true
 ---
-[TOC]
+
 
 ## srcset
 

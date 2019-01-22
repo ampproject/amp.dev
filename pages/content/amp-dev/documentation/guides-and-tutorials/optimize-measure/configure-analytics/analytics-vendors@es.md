@@ -1,7 +1,8 @@
 ---
 $title: Proveedores de Analytics
+toc: true
 ---
-[TOC]
+
 
 En este documento se enumeran los proveedores de analíticas que cuentan con configuraciones integradas que se pueden usar con el componente [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
 

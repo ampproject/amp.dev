@@ -1,7 +1,8 @@
 ---
 $title: Style & Layout
+toc: true
 ---
-[TOC]
+
 
 AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매우 유사합니다. 두 가지 경우 모두 CSS 를 사용합니다.
 

@@ -4,7 +4,7 @@ $order: 2
 toc: true
 ---
 
-[TOC]
+
 
 In this section, we'll go through and resolve the AMP validation errors from our AMP page.  Note that the errors may appear in a different order in your console.
 

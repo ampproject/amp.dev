@@ -4,7 +4,7 @@ $order: 2
 toc: true
 ---
 
-[TOC]
+
 
 El código de inicio proporciona una experiencia de usuario bastante básico. Hay un par de maneras en que podemos mejorarlo:
 

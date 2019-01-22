@@ -1,9 +1,10 @@
 ---
 $title: Quickstart
 $order: 0
+toc: true
 ---
 
-[TOC]
+
 
 This guide provides key resources to quickly get you up and running with AMP.  For in-depth information, dive into the [AMP documentation](/docs/) or our [YouTube channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw).
 

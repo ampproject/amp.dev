@@ -1,7 +1,8 @@
 ---
 $title: AMP ページを検証する
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='各種検証オプションについての動画をご覧ください。']
 

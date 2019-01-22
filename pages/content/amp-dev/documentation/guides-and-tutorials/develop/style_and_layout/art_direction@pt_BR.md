@@ -1,7 +1,8 @@
 ---
 $title: Imagens responsivas com os atributos "srcset", "sizes" e "heights"
+toc: true
 ---
-[TOC]
+
 
 ## srcset
 

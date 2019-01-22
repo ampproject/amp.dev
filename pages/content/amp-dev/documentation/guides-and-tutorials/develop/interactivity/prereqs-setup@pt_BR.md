@@ -1,8 +1,9 @@
 ---
 $title: Configuração
+toc: true
 ---
 
-[TOC]
+
 
 ## Pré-requisitos
 

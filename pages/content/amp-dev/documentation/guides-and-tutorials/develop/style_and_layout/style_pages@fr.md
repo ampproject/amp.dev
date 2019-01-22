@@ -1,5 +1,6 @@
 ---
 $title: CSS compatibles
+toc: true
 ---
 
 Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#exception-:-les-polices-personnalisées)).
@@ -11,7 +12,7 @@ Cependant, vous pouvez utiliser des préprocesseurs CSS et des modèles pour cr�
 **Remarque** : Les composants AMP ont des styles par défaut pour faciliter la création de pages responsives.
 Ces styles sont définis dans l'[`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
-[TOC]
+
 
 ## Utiliser les préprocesseurs CSS
 

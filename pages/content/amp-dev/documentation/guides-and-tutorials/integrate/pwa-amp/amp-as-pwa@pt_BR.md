@@ -1,8 +1,9 @@
 ---
 $title: Ativar os recursos de Progressive Web App nas suas páginas AMP
+toc: true
 ---
 
-[TOC]
+
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample acionando a solicitação "Adicione à tela inicial".') }}
 

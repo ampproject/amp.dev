@@ -1,7 +1,8 @@
 ---
 $title: AMP アナリティクスについて詳しく知る
+toc: true
 ---
-[TOC]
+
 
 このガイドでは、
 [amp-analytics コンポーネント](/ja/docs/reference/components/amp-analytics.html)

@@ -3,7 +3,7 @@ $title: Embed & use AMP as a data source
 $order: 1
 toc: true
 ---
-[TOC]
+
 
 If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App. In this guide you'll learn how to consume AMP within your Progressive Web App and use your existing AMP Pages as a data source.
 

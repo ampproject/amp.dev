@@ -1,7 +1,8 @@
 ---
 $title: Tata letak & kueri media
+toc: true
 ---
-[TOC]
+
 
 
 AMP mendukung **kueri media** &amp; **kueri elemen**, juga disertai cara bawaan yang canggih untuk mengontrol **tata letak** masing-masing elemen. Atribut `layout` mempermudah pembuatan desain yang sepenuhnya responsif dibandingkan jika Anda hanya menggunakan CSS.

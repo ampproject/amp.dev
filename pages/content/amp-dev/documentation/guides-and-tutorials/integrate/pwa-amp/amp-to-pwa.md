@@ -3,7 +3,7 @@ $title: Preload your Progressive Web App from your AMP pages
 $order: 1
 toc: true
 ---
-[TOC]
+
 
 A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
 

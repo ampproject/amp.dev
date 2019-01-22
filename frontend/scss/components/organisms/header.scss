@@ -74,17 +74,23 @@
       }
 
       &-expanded {
-        height: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
         padding: 0;
         margin: 0;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        z-index: 10;
+        z-index: 1;
         background: #fff;
         list-style: none;
-        transition: height 0.5s ease-out;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(1.2);
+        transition: transform 0.2s ease-out, opacity 0.2s ease;
 
         @media screen and (min-width: 1024px) {
           display: none;
@@ -441,8 +447,9 @@
 
       &:checked ~ .ad-o-header-mainnav .ad-o-header-list-mobile-expanded {
         width: 100vw;
-        height: calc(100vh - 60px);
-        transition: height 0.5s ease-in;
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
 
         .ad-o-header-lnk-home-expanded {
           display: block;

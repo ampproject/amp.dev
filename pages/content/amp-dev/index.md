@@ -14,17 +14,17 @@ news:
     date: September 26, 2018
     url: /
   - title: News
-    image: /static/img/dummy-news-1.png
+    image: /static/img/dummy-use-cases-example-01.png
     headline: Setka provides beautiful post design with AMP
     date: September 26, 2018
     url: /
   - title: Announcement
-    image: /static/img/dummy-news-2.png
+    image: /static/img/dummy-use-cases-example-04.png
     headline: Optimize yor AMP pages for high ad viewability
     date: September 26, 2018
     url: /
   - title: News
-    image: /static/img/dummy-news-1.png
+    image: /static/img/dummy-use-cases-example-02.png
     headline: Setka provides beautiful post design with AMP
     date: September 26, 2018
     url: /
@@ -78,45 +78,42 @@ sampler:
 {% include 'views/partials/case-band.j2' %}
 </section>
 
-<section class="ad--news">
-  <div class="ad--container-fluid">
-    {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
+<section class="ad--news ad--container-fluid">
+  {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
 
-    <div class="ad-m-copy">
-      <h2>The latest News</h2>
-      <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+  <div class="ad-m-copy">
+    <h2>The latest News</h2>
+    <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
 
-      <a href="#" class="ad-m-lnk ad-m-lnk-square">
-        <div class="ad-a-ico ad-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ad-m-lnk-text">Subscribe</span>
-      </a>
-    </div>
-
-    <div class="ad-o-news">
-      <div class="ad-o-news-list">
-        {% for news in doc.news %}
-        <a class="ad-o-news-item" href="{{ news.url }}">
-          <div class="ad-o-news-card">
-            <div class="ad-o-news-title">{{ news.title }}</div>
-            <div class="ad-o-news-image">
-              <amp-img
-                src="{{ news.image }}"
-                layout="responsive"
-                width="16"
-                height="9">
-              </amp-img>
-            </div>
-            <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
-            <div class="ad-o-news-date">{{ news.date }}</div>
-          </div>
-        </a>
-        {% endfor %}
+    <a href="#" class="ad-m-lnk ad-m-lnk-square">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-    </div>
+      <span class="ad-m-lnk-text">Subscribe</span>
+    </a>
+  </div>
 
+  <div class="ad-o-news">
+    <div class="ad-o-news-list">
+      {% for news in doc.news %}
+      <a class="ad-o-news-item" href="{{ news.url }}">
+        <div class="ad-o-news-card">
+          <div class="ad-o-news-title">{{ news.title }}</div>
+          <div class="ad-o-news-image">
+            <amp-img
+              src="{{ news.image }}"
+              layout="responsive"
+              width="16"
+              height="9">
+            </amp-img>
+          </div>
+          <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
+          <div class="ad-o-news-date">{{ news.date }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -192,58 +189,60 @@ sampler:
     <div class="ad-o-format-explainer-content ad-m-copy">
       <h2 class="ad-o-format-explainer-headline" [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h2>
       <p class="ad-o-format-explainer-copy" [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
-
-      <div class="ad-o-format-explainer-navigation">
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
-          [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico active"
-          [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-websites.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.websites.name }}</span>
-        </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-stories.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.stories.name }}</span>
-        </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-ads.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.ads.name }}</span>
-        </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-emails.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-emails"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.emails.name }}</span>
-        </button>
-      </div>
     </div>
 
-    <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-o-format-explainer-link ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
-    </a>
+    <div class="ad-o-format-explainer-navigation">
+      <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
+        [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'}),switchFormat.restart">
+        <div class="ad-o-format-explainer-button-icon ad-a-ico active"
+        [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+          {% do doc.icons.useIcon('icons/amp-websites.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites"></use></svg>
+        </div>
+        <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.websites.name }}</span>
+      </button>
+      <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}"
+        [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}'"
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'}),switchFormat.restart">
+        <div class="ad-o-format-explainer-button-icon ad-a-ico"
+        [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+          {% do doc.icons.useIcon('icons/amp-stories.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
+        </div>
+        <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.stories.name }}</span>
+      </button>
+      <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}"
+        [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}'"
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'}),switchFormat.restart">
+        <div class="ad-o-format-explainer-button-icon ad-a-ico"
+        [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+          {% do doc.icons.useIcon('icons/amp-ads.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads"></use></svg>
+        </div>
+        <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.ads.name }}</span>
+      </button>
+      <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}"
+        [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}'"
+        on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'}),switchFormat.restart">
+        <div class="ad-o-format-explainer-button-icon ad-a-ico"
+        [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+          {% do doc.icons.useIcon('icons/amp-emails.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-emails"></use></svg>
+        </div>
+        <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.emails.name }}</span>
+      </button>
+    </div>
+
+    <div class="ad-o-format-explainer-link">
+      <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -264,7 +263,6 @@ sampler:
   </amp-state>
 
   <div class="ad--container">
-
     <div class="ad-m-copy ad-m-copy-center">
       <div class="ad-o-sampler-icon ad-a-ico">
         {% do doc.icons.useIcon('icons/logo.svg') %}
@@ -272,6 +270,9 @@ sampler:
       </div>
       <h2>compelling, smooth, and instant</h2>
     </div>
+  </div>
+    
+  <div class="ad--container-fluid">
     <div class="ad-m-copy">
       <p>AMP is an open-source html framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
     </div>

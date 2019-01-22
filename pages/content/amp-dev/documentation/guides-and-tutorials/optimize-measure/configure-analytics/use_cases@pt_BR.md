@@ -3,7 +3,7 @@ $title: Casos de uso
 $order: 2
 toc: true
 ---
-[TOC]
+
 
 Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário:
 

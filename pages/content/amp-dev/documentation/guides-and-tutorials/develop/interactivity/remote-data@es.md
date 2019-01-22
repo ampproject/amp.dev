@@ -1,8 +1,9 @@
 ---
 $title: Trabajar con datos remotos
+toc: true
 ---
 
-[TOC]
+
 
 ¿Qué sucede si los datos enlazables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que toma mucho tiempo para buscar? Buscar precios de SKU para artículos no vistos es un trabajo desperdiciado.
 

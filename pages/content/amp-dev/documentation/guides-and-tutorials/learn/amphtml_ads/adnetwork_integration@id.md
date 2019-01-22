@@ -1,8 +1,9 @@
 ---
 $title: Berintegrasi dengan AMP untuk menayangkan iklan display
+toc: true
 ---
 
-[TOC]
+
 
 Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP untuk menayangkan iklan display ke halaman AMP.
 

@@ -1,10 +1,11 @@
 ---
 $title: "Analytics: الأساسيات"
+toc: true
 ---
 
 ابدأ من هنا للتعرّف على أساسيات تحليلات AMP.
 
-[TOC]
+
 
 ## هل تستخدم <span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>؟
 

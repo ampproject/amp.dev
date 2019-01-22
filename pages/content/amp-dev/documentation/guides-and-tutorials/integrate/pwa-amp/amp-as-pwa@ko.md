@@ -1,8 +1,9 @@
 ---
 $title: AMP 페이지에 프로그레시브 웹 앱 기능 사용 설정
+toc: true
 ---
 
-[TOC]
+
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='"홈 화면에 추가" 메시지를 트리거하는 AMPbyExample.') }}
 

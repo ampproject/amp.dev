@@ -1,8 +1,9 @@
 ---
 $title: Aprimoramento da interatividade
+toc: true
 ---
 
-[TOC]
+
 
 O código inicial oferece uma experiência do usuário bastante crua. Há algumas maneiras de aprimorá-lo:
 

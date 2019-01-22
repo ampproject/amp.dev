@@ -1,10 +1,11 @@
 ---
 $title: "Analytics: aspectos básicos"
+toc: true
 ---
 
 Con este artículo conocerás los aspectos básicos de Analytics en las páginas AMP.
 
-[TOC]
+
 
 ## ¿Se debe utilizar amp-pixel o amp-analytics?
 

@@ -1,8 +1,9 @@
 ---
 $title: Almacenar páginas AMP en caché
+toc: true
 ---
 
-[TOC]
+
 
 En este documento, aprenderá sobre el papel de AMP Cache en el ecosistema de AMP y cómo se almacena en caché su página de AMP.
 

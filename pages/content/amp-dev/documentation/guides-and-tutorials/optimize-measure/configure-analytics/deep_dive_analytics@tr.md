@@ -1,7 +1,8 @@
 ---
 $title: AMP Analytics Derinlemesine Giriş
+toc: true
 ---
-[TOC]
+
 
 
 Bu kılavuz

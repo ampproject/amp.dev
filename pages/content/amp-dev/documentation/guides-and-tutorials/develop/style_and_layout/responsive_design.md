@@ -6,7 +6,7 @@ components:
   - iframe
   - youtube
 ---
-[TOC]
+
 
 ## Introduction
 

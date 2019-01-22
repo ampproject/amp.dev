@@ -1,10 +1,11 @@
 ---
 $title: Integre AMP con su aplicación
+toc: true
 ---
 
 Esta guía está destinada a desarrolladores de aplicaciones móviles y webs que deseen integrar y vincular páginas de AMP. Por ejemplo, considere una aplicación de chat móvil que carga la versión de AMP de una URL compartida para lograr una experiencia más rápida para los usuarios.
 
-[TOC]
+
 
 ## Transforme enlaces a AMP
 

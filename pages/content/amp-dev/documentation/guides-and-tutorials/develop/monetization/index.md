@@ -5,7 +5,7 @@ toc: true
 $path: /documentation/guides-and-tutorials/develop/monetization/monetization.html
 ---
 
-[TOC]
+
 
 This guide provides  instructions and best practices for displaying ads on your AMP pages.
 

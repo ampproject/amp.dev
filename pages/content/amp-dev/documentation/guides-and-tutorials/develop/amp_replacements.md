@@ -9,7 +9,7 @@ formats:
   - websites
 ---
 
-[TOC]
+
 
 Like on a normal HTML page, AMP allows you to embed **images**, **video** and **audio**
 content. Learn what's different about the AMP equivalents and learn how to

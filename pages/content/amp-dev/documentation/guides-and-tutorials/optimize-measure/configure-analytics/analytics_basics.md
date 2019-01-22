@@ -6,7 +6,7 @@ toc: true
 
 Start here to learn the basics about AMP analytics.
 
-[TOC]
+
 
 ## Use amp-pixel or amp-analytics?
 
