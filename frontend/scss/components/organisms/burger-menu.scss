@@ -70,9 +70,11 @@
 
     /* Shrink header and footer to not interfer with scrolling */
     & ~ main, & ~ footer {
-      max-height: 0;
-      overflow: hidden;
-      pointer-events: none;
+      @media screen and (max-width: 1024px) {
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
     }
   }
 
