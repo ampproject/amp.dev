@@ -234,13 +234,15 @@ sampler:
       </button>
     </div>
 
-    <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-o-format-explainer-link ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
-    </a>
+    <div class="ad-o-format-explainer-link">
+      <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
+        <div class="ad-a-ico ad-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
+      </a>
+    </div>
   </div>
 </section>
 
