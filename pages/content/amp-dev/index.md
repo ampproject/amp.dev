@@ -484,29 +484,33 @@ sampler:
     <h2>AMP is a dynamic<br> collaborative project</h2>
 
     <div class="ad-m-collabo-card ad-m-collabo-card-1">
-      <div class="ad-m-collabo-card-image">
-        <amp-img
-          src="/static/img/dummy-collabo-image-1.png"
-          layout="responsive"
-          width="16"
-          height="9">
-        </amp-img>
-      </div>
-      <h3 class="ad-m-collabo-card-headline">Many ways for you to contribute</h3>
-      <p class="ad-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+      <a href="https://github.com/orgs/ampproject/people">
+        <div class="ad-m-collabo-card-image">
+          <amp-img
+            src="/static/img/dummy-collabo-image-1.png"
+            layout="responsive"
+            width="16"
+            height="9">
+          </amp-img>
+        </div>
+        <h3 class="ad-m-collabo-card-headline">Many ways for you to contribute</h3>
+        <p class="ad-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+      </a>
     </div>
 
     <div class="ad-m-collabo-card ad-m-collabo-card-2">
-      <div class="ad-m-collabo-card-image">
-        <amp-img
-          src="/static/img/dummy-collabo-image-2.png"
-          layout="responsive"
-          width="16"
-          height="9">
-        </amp-img>
-      </div>
-      <h3 class="ad-m-collabo-card-headline">Reporting issues with AMP</h3>
-      <p class="ad-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the <a href="#">issue tracker</a>.</p>
+      <a href="https://github.com/ampproject/docs/issues">
+        <div class="ad-m-collabo-card-image">
+          <amp-img
+            src="/static/img/dummy-collabo-image-2.png"
+            layout="responsive"
+            width="16"
+            height="9">
+          </amp-img>
+        </div>
+        <h3 class="ad-m-collabo-card-headline">Reporting issues with AMP</h3>
+        <p class="ad-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.</p>
+      </a>
     </div>
 
   </div>
