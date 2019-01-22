@@ -42,18 +42,13 @@ contents:
     author: Explains Mark Binns, acidgreen’s digital marketing manager.
     story_url: https://google.com
 
-  - layout: text-media
+  - layout: text-button
     image_src: ../../../static/img/success-stories/greenlips/amp_greenlips_2.jpg
     width: 3
     height: 5
     type: mobile
     alt: Greenlips
     headline: Results
-    text: "The team launched the new greenslips.com.au site in April 2018. “We now have a site that is totally in the AMP framework,” Treacey says. “It's fast and nimble, it ticks all the boxes, and it gives us great outcomes.” Thanks to AMP as well as the other site changes, the all-important conversion rate—the number of visitors who complete a green slip calculation—rose approximately 15 percent.<br><br>Treacey had previously invested in mobile optimizations, but AMP delivered even better results. AMP made the site up to 12 percent faster on mobile and as much as 40 percent faster on some devices. “I didn't think it would have that effect on devices in addition to mobiles,” Binns shares. “It's important to look at AMP not just as a way of improving the mobile experience, but also as much more than that.” Treacey adds, “I have no doubt that our designers had an impact, and the pathway to the calculator has had an impact. Moreover, I have no doubt that the speed of our site has a major impact on the whole user experience."
-    direction: left-flat
-
-  - layout: text-button
-    headline: Result
-    text: The digital giant soon saw benefits from AMP. “AMP's fast-loading web pages and caching layer helped in increasing total served and viewed impressions, thereby considerably increasing page CPMs with respect to normal web pages,” Kasturi explains. After implementing AMP, Times of India's overall traffic increased six-fold, revenue from Google Ads and their own ad network grew 1.5X, and page-load times improved 3.6X on slow 3G networks. Revenue, new users, and content consumption all improved as well, Kasturi adds.
+    text: The team launched the new greenslips.com.au site in April 2018. “We now have a site that is totally in the AMP framework,” Treacey says. “It's fast and nimble, it ticks all the boxes, and it gives us great outcomes.” Thanks to AMP as well as the other site changes, the all-important conversion rate—the number of visitors who complete a green slip calculation—rose approximately 15 percent.<br><br>Treacey had previously invested in mobile optimizations, but AMP delivered even better results. AMP made the site up to 12 percent faster on mobile and as much as 40 percent faster on some devices. “I didn't think it would have that effect on devices in addition to mobiles,” Binns shares. “It's important to look at AMP not just as a way of improving the mobile experience, but also as much more than that.” Treacey adds, “I have no doubt that our designers had an impact, and the pathway to the calculator has had an impact. Moreover, I have no doubt that the speed of our site has a major impact on the whole user experience.”
     direction: left-flat
     download_url: ../../../static/files/case-studies/greenslips.pdf
