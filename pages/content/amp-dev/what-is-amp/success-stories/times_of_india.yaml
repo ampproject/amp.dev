@@ -2,7 +2,7 @@ $title: Times of India
 
 stage:
   headline: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP
-  subline: i am a subline
+  subline: NOV 5, 2018
   devices:
     - image_src: ../../../static/img/success-stories/times_of_india/amp_toi_1.jpg
       width: 3
