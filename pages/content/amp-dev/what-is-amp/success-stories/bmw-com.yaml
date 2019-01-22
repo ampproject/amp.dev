@@ -1,4 +1,7 @@
 $title: BMW.com
+$category: e-commerce
+formats:
+  - websites
 
 teaser:
   image:
