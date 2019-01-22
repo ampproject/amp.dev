@@ -9,7 +9,7 @@
 @import '../molecules/_copy';
 
 .#{utility('collaboration')} {
-  padding: 8vw 20px;
+  padding: 8vw 30px;
   background: #FAFAFC;
   
   @media screen and (min-width: 768px) {
@@ -20,7 +20,7 @@
     grid-column: 1 / -1;
     width: 100%;
     @include hl;
-    @include hl-lrg;
+    @include hl-h1;
     text-align: center;
     margin-top: 0;
   }
@@ -69,19 +69,23 @@
   
   &-headline {
     padding: 0 2.5rem;
+    @include hl-h4;
     
     @media screen and (min-width: 768px) {
       padding: 0 5rem;
+      @include hl-h3;
     }
   }
   
   &-copy {
     @include txt;
+    @include txt-2;
     padding: 0 2.5rem;
     margin-bottom: 3em;
     
     @media screen and (min-width: 768px) {
       padding: 0 5rem;
+      @include txt-1;
     }
   }
 }

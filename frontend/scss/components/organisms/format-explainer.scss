@@ -11,13 +11,15 @@
 @import '../molecules/_copy.scss';
 
 .#{utility('format-explainer')} {
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 16vw;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 7em;
   
   @media screen and (min-width: 1024px) {
     padding-left: 0;
     padding-right: 0;
+    margin-bottom: 8vw;
   }
 }
 
@@ -25,18 +27,21 @@
   
   &-visual {
     grid-column: 1 / -1;
+    grid-row: 1 / 4;
     order: 2;
     position: relative;
     width: 100%;
+    padding: 1.5em;
 
     @media screen and (min-width: 1024px) {
       grid-column: 1 / 14;
       order: inherit;
-      padding-top: 7em;
+      padding: 7em 0 0;
     }
   }
   
-  &-content {
+  &-content,
+  &-navigation {
     grid-column: 1 / -1;
     width: 100%;
     margin-bottom: 0;
@@ -55,20 +60,22 @@
   }
   
   &-copy {
-    margin-bottom: 2.250em;
+    margin-bottom: 0;
   }
   
   &-navigation {
+    order: 2;
     overflow-y: hidden;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     display: flex;
     flex-wrap: nowrap;
     width: auto;
-    margin: 0 -30px 2em;
-    padding: 0 30px 30px;
+    padding: 0 20px 15px;
+    margin: 0 -20px 15px;
     
     @media screen and (min-width: 1024px) {
+      order: inherit;
       overflow: visible;
       flex-direction: column;
       max-width: 300px;
@@ -109,7 +116,7 @@
 
     &.active {
       color: #fff;
-      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
     }
     
     &:hover {
@@ -135,12 +142,10 @@
   &-link {
     grid-column: 1 / -1;
     order: 3;
-    margin-top: 3em;
 
     @media screen and (min-width: 1024px) {
       grid-column: 14 / 20;
       order: inherit;
-      margin: 0;
     }
   }
 }
