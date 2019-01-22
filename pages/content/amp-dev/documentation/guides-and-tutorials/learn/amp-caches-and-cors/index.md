@@ -5,7 +5,7 @@ $path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/how-cached.
 toc: true
 ---
 
-[TOC]
+
 
 In this document, you'll learn about the role of the AMP Cache in the AMP ecosystem, and how your AMP page gets cached.
 

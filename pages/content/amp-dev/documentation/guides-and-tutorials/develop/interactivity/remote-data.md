@@ -4,7 +4,7 @@ $order: 3
 toc: true
 ---
 
-[TOC]
+
 
 What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a long time to look up? Looking up prices for SKUs for non-viewed items is wasted work.
 

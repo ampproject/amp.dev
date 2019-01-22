@@ -1,7 +1,8 @@
 ---
 $title: AMP Analytics dans le détail
+toc: true
 ---
-[TOC]
+
 
 
 Ce guide propose une analyse détaillée du

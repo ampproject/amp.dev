@@ -1,8 +1,9 @@
 ---
 $title: 创作 AMP 故事的最佳做法
+toc: true
 ---
 
-[TOC]
+
 
 本指南介绍了在创作 [AMP 故事](/zh_cn/docs/reference/components/amp-story.html)时应采取的最佳做法。
 

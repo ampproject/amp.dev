@@ -5,7 +5,7 @@ toc: true
 $parent: /content/docs/interaction_dynamic/interactivity.md
 ---
 
-[TOC]
+
 
 ## Prerequisites
 

@@ -1,8 +1,9 @@
 ---
 $title: カルーセルを追加する
+toc: true
 ---
 
-[TOC]
+
 
 モバイルページでよく使われるもう 1 つの機能は、カルーセルです。[amp-carousel](/ja/docs/reference/components/amp-carousel.html) コンポーネントを使用すると、AMP ページにカルーセルを簡単に追加できます。まずは、画像のカルーセルなどの簡単な例から見てみましょう。
 

@@ -3,7 +3,7 @@ $title: Analytics vendors
 $order: 3
 toc: true
 ---
-[TOC]
+
 
 This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/amp-analytics.html) component.
 

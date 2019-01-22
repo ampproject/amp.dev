@@ -1,8 +1,9 @@
 ---
 $title: 创建封面页
+toc: true
 ---
 
-[TOC]
+
 
 AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 `<amp-story>` 中可包含一个或多个 `<amp-story-page>` 组件，以用于呈现故事的各个画面。您按文档顺序指定的第一页即是故事中显示的第一页。
 

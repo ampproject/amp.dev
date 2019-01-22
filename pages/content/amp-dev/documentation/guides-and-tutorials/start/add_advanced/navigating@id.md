@@ -1,8 +1,9 @@
 ---
 $title: Bernavigasi di situs Anda
+toc: true
 ---
 
-[TOC]
+
 
 Sebagian besar situs seluler menyertakan menu navigasi situs. Menu ini dapat berupa berbagai bentuk. Dalam tutorial ini, kita akan mencoba contoh berikut untuk menampilkan navigasi di halaman AMP:
 

@@ -1,7 +1,8 @@
 ---
 $title: 반응형 AMP 페이지 만들기
+toc: true
 ---
-[TOC]
+
 
 ## 소개
 

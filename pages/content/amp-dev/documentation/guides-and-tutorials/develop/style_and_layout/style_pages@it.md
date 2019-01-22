@@ -1,5 +1,6 @@
 ---
 $title: Stili CSS supportati
+toc: true
 ---
 
 Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#l'eccezione-dei-tipi-di-carattere-personalizzati)).
@@ -11,7 +12,7 @@ Puoi però utilizzare i preprocessori e i modelli CSS per creare pagine statiche
 **Nota.** Nei componenti AMP ci sono stili predefiniti integrati che facilitano la creazione di pagine reattive.
 Questi stili sono definiti nell'elemento [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
-[TOC]
+
 
 ## Utilizzare i preprocessori CSS
 

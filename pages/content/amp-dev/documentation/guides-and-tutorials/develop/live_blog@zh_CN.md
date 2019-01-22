@@ -1,8 +1,9 @@
 ---
 $title: 制作实时博客
+toc: true
 ---
 
-[TOC]
+
 
 
 

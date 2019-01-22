@@ -1,8 +1,9 @@
 ---
 $title: Como trabalhar com dados remotos
+toc: true
 ---
 
-[TOC]
+
 
 E se os dados vinculáveis forem muito grandes ou complexos de recuperar no carregamento de página? E se levar muito tempo para pesquisar o preço de cada SKU? Não vale a pena pesquisar preços de SKUs para itens não visualizados.
 

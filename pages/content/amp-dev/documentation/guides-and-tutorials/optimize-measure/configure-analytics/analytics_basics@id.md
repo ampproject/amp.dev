@@ -1,10 +1,11 @@
 ---
 $title: "Analtik: Dasar-Dasar"
+toc: true
 ---
 
 Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
 
-[TOC]
+
 
 ## Menggunakan amp-pixel atau amp-analytics?
 

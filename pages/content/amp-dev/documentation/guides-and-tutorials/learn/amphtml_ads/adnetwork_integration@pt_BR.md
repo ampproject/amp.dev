@@ -1,8 +1,9 @@
 ---
 $title: Integração com AMP para veicular anúncios de display
+toc: true
 ---
 
-[TOC]
+
 
 Este guia é voltado a redes de publicidade que pretendem fazer a integração com AMP para veicular anúncios de display em páginas AMP.
 

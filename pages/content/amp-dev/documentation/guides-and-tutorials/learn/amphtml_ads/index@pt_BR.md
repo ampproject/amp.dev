@@ -1,8 +1,9 @@
 ---
 $title: Anúncios HTML para AMP
+toc: true
 ---
 
-[TOC]
+
 
 ## O que é um anúncio HTML para AMP?
 

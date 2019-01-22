@@ -5,7 +5,7 @@ $hidden: true
 toc: true
 ---
 
-[TOC]
+
 
 ## What's an AMPHTML ad?
 

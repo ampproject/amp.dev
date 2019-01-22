@@ -3,7 +3,7 @@ $title: "CORS in AMP"
 $order: 1
 toc: true
 ---
-[TOC]
+
 
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.

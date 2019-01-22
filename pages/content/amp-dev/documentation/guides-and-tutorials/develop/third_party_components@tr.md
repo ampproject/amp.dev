@@ -1,10 +1,11 @@
 ---
 $title: Üçüncü Taraf İçeriği Ekleme
+toc: true
 ---
 
 Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin.
 
-[TOC]
+
 
 ## Tweet Yerleştirme
 

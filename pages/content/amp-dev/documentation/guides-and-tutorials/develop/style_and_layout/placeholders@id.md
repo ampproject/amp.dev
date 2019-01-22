@@ -1,7 +1,8 @@
 ---
 $title: Placeholder & fallback
+toc: true
 ---
-[TOC]
+
 
 Dalam upaya meningkatkan performa dan progressive enhancement yang dirasakan, salah satu praktik terbaik dalam AMP adalah menyediakan placeholder dan fallback di mana pun dimungkinkan.
 

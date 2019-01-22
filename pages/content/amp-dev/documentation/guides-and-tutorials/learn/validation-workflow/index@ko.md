@@ -1,7 +1,8 @@
 ---
 $title: AMP 페이지 유효성 검사
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='동영상을 시청하여 다양한 유효성 검사 옵션을 확인해 보세요.']
 

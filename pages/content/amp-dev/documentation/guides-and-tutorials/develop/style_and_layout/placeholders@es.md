@@ -1,7 +1,8 @@
 ---
 $title: Marcadores de posición y respaldos
+toc: true
 ---
-[TOC]
+
 
 En cuanto al rendimiento percibido y la mejora progresiva, en AMP se recomienda incluir marcadores de posición y respaldos donde sea posible.
 

@@ -1,8 +1,9 @@
 ---
 $title: Crear la portada
+toc: true
 ---
 
-[TOC]
+
 
 El componente `<amp-story-page>` representa una página de una historia AMP. Dentro de `<amp-story>`, puede haber uno o varios componentes `<amp-story-page>` que contienen cada una de las pantallas individuales de una historia. La primera página que especificas en el orden del documento es la primera página que se muestra en la historia.  
 

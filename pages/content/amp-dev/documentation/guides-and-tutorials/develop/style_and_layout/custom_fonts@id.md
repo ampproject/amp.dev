@@ -1,8 +1,9 @@
 ---
 $title: Menambahkan font kustom
+toc: true
 ---
 
-[TOC]
+
 
 Halaman AMP tidak dapat menyertakan stylesheet, kecuali dengan font kustom. Anda dapat menyematkan font kustom ke halaman dengan 2 cara:
 

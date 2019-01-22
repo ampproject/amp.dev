@@ -1,8 +1,9 @@
 ---
 $title: Sayfanızı Bulunabilir Yapma
+toc: true
 ---
 
-[TOC]
+
 
 Bazı durumlarda, aynı sayfanın (örneğin, bir haber makalesinin) hem AMP olmayan hem de AMP sürümüne sahip olmak isteyebilirsiniz. Şunu düşünün: Google Arama, o sayfanın AMP olmayan sürümünü bulursa bunun bir AMP sürümünün olduğunu nasıl bilebilir?
 

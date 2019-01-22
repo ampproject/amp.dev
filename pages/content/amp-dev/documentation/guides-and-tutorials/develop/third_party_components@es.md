@@ -1,10 +1,11 @@
 ---
 $title: Incluir contenido de terceros
+toc: true
 ---
 
 Obtén información sobre cómo incluir componentes de terceros en tus páginas.
 
-[TOC]
+
 
 ## Insertar un tuit
 

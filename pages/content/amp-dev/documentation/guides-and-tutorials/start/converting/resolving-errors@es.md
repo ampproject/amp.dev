@@ -1,8 +1,9 @@
 ---
 $title: Resolución de errores de validación
+toc: true
 ---
 
-[TOC]
+
 
 En esta sección, examinaremos y resolveremos los errores de validación de AMP de nuestra página de AMP.
 

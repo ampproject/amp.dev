@@ -1,8 +1,9 @@
 ---
 $title: Menyiapkan
+toc: true
 ---
 
-[TOC]
+
 
 ## Prasyarat
 

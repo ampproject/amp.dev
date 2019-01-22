@@ -1,7 +1,8 @@
 ---
 $title: Memvalidasi halaman AMP
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Tonton video kami tentang berbagai opsi validasi.']
 

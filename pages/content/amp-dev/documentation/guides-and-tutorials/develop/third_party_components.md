@@ -9,7 +9,7 @@ components:
 formats:
     - websites
 ---
-[TOC]
+
 
 
 Learn how to include third-party components in your pages.

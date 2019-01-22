@@ -1,8 +1,9 @@
 ---
 $title: AMP ストーリーのおすすめの作成方法
+toc: true
 ---
 
-[TOC]
+
 
 [AMP ストーリー](/ja/docs/reference/components/amp-story.html)を作成する場合は、このガイドで紹介する内容に沿って作業することをおすすめします。
 

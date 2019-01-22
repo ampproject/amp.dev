@@ -1,7 +1,8 @@
 ---
 $title: Incorporar e usar AMP como fonte de dados
+toc: true
 ---
-[TOC]
+
 
 Se você já usar AMP, mas ainda não tiver criado um Progressive Web App, aproveite as páginas AMP para simplificar muito o desenvolvimento do seu Progressive Web App. Neste guia, você verá como aproveitar as AMP no seu Progressive Web App e usar as páginas AMP existentes como fonte de dados.
 

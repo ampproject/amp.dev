@@ -1,7 +1,8 @@
 ---
 $title: Vendor analisis
+toc: true
 ---
-[TOC]
+
 
 Dokumen ini mencantumkan daftar vendor analisis yang menyediakan konfigurasi terpasang untuk digunakan dengan komponen [`amp-analytics`](/id/docs/reference/components/amp-analytics.html).
 

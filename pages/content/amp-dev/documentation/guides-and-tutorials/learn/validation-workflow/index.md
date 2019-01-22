@@ -6,7 +6,7 @@ toc: true
 components:
     - youtube
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Watch our video about the various validation options.']
 

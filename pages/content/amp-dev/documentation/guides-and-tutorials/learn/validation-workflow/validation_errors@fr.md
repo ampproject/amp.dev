@@ -1,5 +1,6 @@
 ---
 $title: Erreurs de validation AMP
+toc: true
 ---
 
 <!---
@@ -22,7 +23,7 @@ Pour être valides, les documents AMP ne doivent comprendre aucune erreur de val
 Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-[TOC]
+
 
 ## Erreurs de balise HTML et d'attributs AMP
 

@@ -1,7 +1,8 @@
 ---
 $title: 借助 srcset、sizes 和 heights 属性制作自适应图片
+toc: true
 ---
-[TOC]
+
 
 ## srcset
 

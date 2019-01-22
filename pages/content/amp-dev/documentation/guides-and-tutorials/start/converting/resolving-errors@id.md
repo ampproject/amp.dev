@@ -1,8 +1,9 @@
 ---
 $title: Mengatasi error validasi
+toc: true
 ---
 
-[TOC]
+
 
 Pada bagian ini, kita akan membahas dan menyelesaikan error validasi AMP dari halaman AMP.  Perhatikan bahwa error mungkin muncul dalam urutan yang berbeda di konsol Anda.
 
