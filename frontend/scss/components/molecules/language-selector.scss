@@ -1,0 +1,54 @@
+/*
+
+######################################
+### MOLECULES: language-selector #####
+######################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('language-selector')} {
+  position: relative;
+  margin-left: auto;
+  margin-right: 80px;
+  padding-bottom: 10px;
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 0;
+    padding-right: 30px;
+  }
+
+  &-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+    &-icon {
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+    }
+
+  &-list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    right: 15%;
+    margin: 0;
+    padding: 2px 8px;
+    background: color('white');
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  /* For when the selector is active */
+  &-toggle:focus ~ &-list, &-toggle:hover ~ &-list, &-list:hover {
+      display: block;
+  }
+}
