@@ -121,4 +121,8 @@ The ghost frame mobile wraps an element with a mobile-like frame.
     width: 15%;
     z-index: 1;
   }
+
+  amp-img, amp-video {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
