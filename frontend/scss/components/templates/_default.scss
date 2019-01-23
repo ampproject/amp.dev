@@ -32,6 +32,7 @@
 @mixin content {
   grid-column: 1;
   position: relative;
+  max-width: 100%;
 
   @media screen and (min-width: 768px){
     grid-column-start: 9;

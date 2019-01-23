@@ -9,33 +9,32 @@ $view: /views/overview/what-is-amp.j2
 # Use AMP to easily create user first stories.
 [/stage]
 
-{% include 'views/partials/format-visual.j2' %}
+{% include 'views/partials/format-visuals/websites.j2' %}
 </section>
 
-<div class="ad--kpi ad--container">
+<section class="ad--kpi">
   {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  {% do doc.styles.addCssFile('css/components/organisms/kpi-list.css') %}
-  <div class="ad-o-kpi-list">
-    <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
+  <div class="ad-o-kpi-list ad--container">
+    <div class="ad-m-kpi ad-m-kpi-stories">
       <div class="ad-m-kpi-content">
         <span class="ad-m-kpi-number">3-4x</span>
         <span class="ad-m-kpi-text">faster load times</span>
       </div>
     </div>
-    <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
-      <div class="ad-m-kpi-content">
-        <span class="ad-m-kpi-number">3-4x</span>
-        <span class="ad-m-kpi-text">faster load times</span>
-      </div>
+    <div class="ad-m-kpi ad-m-kpi-stories">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
     </div>
-    <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
-      <div class="ad-m-kpi-content">
-        <span class="ad-m-kpi-number">3-4x</span>
-        <span class="ad-m-kpi-text">faster load times</span>
-      </div>
+    <div class="ad-m-kpi ad-m-kpi-stories">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
     </div>
   </div>
-</div>
+</section>
 
 <section class="ad--content">
   <div class="ad--container-fluid">

@@ -74,6 +74,7 @@ $borderSize: 5px;
   &-default {
     border-right: $borderSize solid color('malachite');
     border-radius: 0 $borderSize $borderSize 0;
+    word-break: break-word;
     
     &:before {
       @extend %pseudo-base;

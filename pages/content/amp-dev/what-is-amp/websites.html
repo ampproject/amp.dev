@@ -18,12 +18,12 @@ $view: /views/overview/what-is-amp.j2
     </div>
   </div>
 
-  {% include 'views/partials/format-visual.j2' %}
+  {% include 'views/partials/format-visuals/websites.j2' %}
 </section>
 
 <section class="ad--content">
   <div class="ad--container-fluid">
-    <div class="ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
+    <div class="ad-m-copy ad-m-copy-left-small">
       <h1>What is<br> AMP?</h1>
       <h5>Web pages that are compelling, smooth, and load near instantaneously</h5>
       <p >AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
@@ -31,33 +31,9 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-<div class="ad--kpi">
-  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ad-o-kpi-list">
-    <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
-      <div class="ad-m-kpi-content">
-        <span class="ad-m-kpi-number">3-4x</span>
-        <span class="ad-m-kpi-text">faster load times</span>
-      </div>
-    </div>
-    <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
-        <div class="ad-m-kpi-content">
-          <span class="ad-m-kpi-number">3-4x</span>
-          <span class="ad-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-    <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
-        <div class="ad-m-kpi-content">
-          <span class="ad-m-kpi-number">3-4x</span>
-          <span class="ad-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-  </div>
-</div>
-
 <section class="ad--component-visual">
   <div class="ad-o-component-visual ad--container-fluid">
-    <div class="ad-o-component-visual-copy ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
+    <div class="ad-o-component-visual-copy ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%" data-margin-start="0%">
       <p>AMP websites support the long-term success of ecommerce vendors, publishers, and advertisers, who enjoy the benefits of increased returning users on mobile devices through AMP’s intelligent preloading site features.</p>
       <div class="ad-o-component-visual-link">
         <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-m-lnk ad-m-lnk-square">
@@ -70,6 +46,30 @@ $view: /views/overview/what-is-amp.j2
       </div>
     </div>
     {% include 'views/partials/component-visual-image.j2' %}
+  </div>
+</section>
+
+<section class="ad--kpi">
+  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+  <div class="ad-o-kpi-list ad--container">
+    <div class="ad-m-kpi ad-m-kpi-websites">
+      <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
+      </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-websites">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-websites">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+    </div>
   </div>
 </section>
 
@@ -223,7 +223,7 @@ $view: /views/overview/what-is-amp.j2
  <section class="ad--made-of">
   <div class="ad-o-made-of">
     <div class="ad--container">
-      <h1 class="ad-o-made-of-headline" amp-fx="fade-in fly-in-left"  data-duration="1s" data-fly-in-distance="5%">This is What AMP HTML is made of</h1>
+      <h1 class="ad-o-made-of-headline">This is What AMP HTML is made of</h1>
     </div>
     <div class="ad--container-fluid">
       {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
@@ -246,7 +246,7 @@ $view: /views/overview/what-is-amp.j2
 
 <section class="ad--content">
   <div class="ad--container">
-    <div class="ad-m-copy ad-m-copy-left" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
+    <div class="ad-m-copy ad-m-copy-left">
       <h2>Built-in components</h2>
       <p>AMP HTML is HTML with some restrictions for reliable performance.</p>
 
@@ -257,7 +257,7 @@ $view: /views/overview/what-is-amp.j2
       <p>AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. Learn more in  Make Your Page Discoverable.</p>
     </div>
 
-    <div class="ad-m-copy ad-m-copy-right" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
+    <div class="ad-m-copy ad-m-copy-right">
       <h2>AMP Cache</h2>
 
       <p>The Google AMP Cache can be used to serve cached AMP HTML pages.</p>

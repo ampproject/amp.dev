@@ -9,7 +9,7 @@ $view: /views/overview/what-is-amp.j2
 # Easily create user first emails with AMP.
 [/stage]
 
-{% include 'views/partials/format-visual.j2' %}
+{% include 'views/partials/format-visuals/websites.j2' %}
 </section>
 
 <div class="ad--kpi ad--container">

@@ -15,22 +15,31 @@
 @import '../../mixins';
 @import '../../variables';
 
-@import '../templates/_default.scss';
+.#{utility('kpi')} {
+  margin-bottom: 2em;
+  
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8vw;
+  }
+
+  .#{organism('kpi-list')} {
+    &.#{utility('container')} {
+      flex-wrap: nowrap;
+      padding: 0;
+      
+      @media screen and (min-width: 768px) {
+        padding: 0 30px;
+      }
+    }
+  }
+}
 
 .#{organism('kpi-list')} {
-  @include container;
-
-  // @media screen and (max-width: 1023px) {
-  //   grid-template-columns: repeat(23, 1fr);
-  //   padding: 0;
-  // }
-
-  grid-column: 1/-1;
-  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 }
