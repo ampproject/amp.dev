@@ -26,6 +26,12 @@
     width: calc(50% - 4px);
     box-shadow: none !important;
   }
+  .CodeMirror {
+    pre {
+      line-height: 1.25em;
+      font-size: 1em;
+    }
+  }
   @media (max-width: 767px) { 
     .panel {
       width: 100vw;
