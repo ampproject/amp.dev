@@ -47,8 +47,8 @@ contents:
   - layout: quote
     quote: We invented outstream video formats, which turn premium editorial content into new video ad inventory that can be monetized at scale.
     image_src: ../../../static/img/success-stories/teads/teads_logo.png
-    width: 100
-    height: 50
+    width: 259
+    height: 97
     alt: Teads
     author: ERIC SHIH, global senior vice president of business development
     story_url: https://google.com
@@ -61,8 +61,8 @@ contents:
   - layout: quote
     quote: Our products are very much aligned with the AMP Project’s mission to provide the best user experience across platforms. We believe that ads should be fast-loading, non-intrusive, skippable, and complement the surrounding content. They’re also optimized for mobile first, since most media consumption – including 70% of our publisher traffic – is now on mobile.
     image_src: ../../../static/img/success-stories/teads/teads_logo.png
-    width: 100
-    height: 50
+    width: 259
+    height: 97
     alt: Teads
     author: ERIC SHIH, global senior vice president of business development
     story_url: https://google.com
@@ -84,8 +84,8 @@ contents:
   - layout: quote
     quote: AMP HTML delivers our most optimal mobile browsing experience. Being able to marry this with native video advertising allows us to not only make revenue from the fastest-growing area of digital but to do so whilst respecting our users.
     image_src: ../../../static/img/success-stories/teads/teads_logo.png
-    width: 100
-    height: 50
+    width: 259
+    height: 97
     alt: Teads
     author: Amir Malik, programmatic director for Trinity Mirror
     story_url: https://google.com
