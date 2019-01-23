@@ -84,22 +84,6 @@
         }
       }
     }
-
-    .#{molecule('format-visual')} {
-      padding: 0 5em;
-
-      &:after {
-        width: 75%;
-
-        @media screen and (min-width: 768px) {
-          width: 100%;
-        }
-      }
-
-      @media screen and (min-width: 768px) {
-        padding: 0;
-      }
-    }
   }
 
   .#{utility('kpi')} {

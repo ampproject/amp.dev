@@ -52,8 +52,12 @@
 
   .#{molecule('format-visual')} {
     grid-column: 9 / -1;
+    position: absolute;
+    left: 3em;
+    top: 0;
 
     @media screen and (min-width: 768px) {
+      position: static;
       margin-top: -40%;
     }
   }

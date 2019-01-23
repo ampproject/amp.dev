@@ -47,7 +47,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     padding: 3px 6px;
     background-color: color('doger-blue');
     @include txt;
-    @include txt-3;
+    font-size: 8px;
     @include txt-mono;
     @include txt-strong;
     @include color-white;
