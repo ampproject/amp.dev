@@ -290,7 +290,7 @@ sampler:
 
         </div>
 
-        {% set playground_url = podspec.base_urls.api + '/playground' %}
+        {% set playground_url = podspec.base_urls.platform + '/playground' %}
         {% set embed_url = playground_url + '/embed#url=' + podspec.base_urls.api + doc.sampler[0].src %}
         <div class="ad-o-sampler-iframe">
           <amp-iframe
