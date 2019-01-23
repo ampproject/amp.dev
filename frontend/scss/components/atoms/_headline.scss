@@ -33,6 +33,18 @@ stories-home
 }
 
 //64px TODO: Rename
+@mixin hl-xxlrg {
+  font-size: 2.125em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.125em;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 4.5em;
+  }
+}
+
 @mixin hl-xlrg {
   font-size: 2.125em;
 
