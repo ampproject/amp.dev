@@ -15,6 +15,7 @@
  */
 
 const writeFile = require('write');
+const yaml = require('js-yaml');
 
 TOC_MARKER = '[TOC]';
 
@@ -55,6 +56,10 @@ class MarkdownDocument {
 
   set category(category) {
     this._frontmatter['$category'] = category;
+  }
+
+  set formats(formats) {
+    this._frontmatter['formats'] = formats;
   }
 
   set contents(contents) {
@@ -124,13 +129,7 @@ class MarkdownDocument {
    * @return {Promise}
    */
   save(path) {
-    let frontmatter = '---\n';
-    for (const key in this._frontmatter) {
-      if (Object.prototype.hasOwnProperty.call(this._frontmatter, key)) {
-        frontmatter += `${key}: ${this._frontmatter[key]}\n`;
-      }
-    }
-    frontmatter += '---\n\n';
+    let frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
 
     path = path ? path : this._path;
     return writeFile.promise(path, frontmatter + this._contents);
