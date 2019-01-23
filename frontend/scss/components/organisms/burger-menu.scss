@@ -22,6 +22,10 @@
     right: 20px;
     cursor: pointer;
 
+    &.mainmenuopen {
+      z-index: 23;
+    }
+
     @media screen and (min-width: 768px) {
       right: 30px;
     }
@@ -66,6 +70,9 @@
       pointer-events: auto;
       opacity: 1;
       transform: translateY(0) scale(1);
+      &.mainmenuopen {
+        z-index: 22;
+      }
     }
 
     /* Shrink header and footer to not interfer with scrolling */
