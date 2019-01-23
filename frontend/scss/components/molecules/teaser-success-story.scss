@@ -21,7 +21,7 @@
 
 		& > a {
 			@include teaser-linking;
-			
+
 			&:hover {
 				@include teaser-linking-hover;
 
@@ -39,6 +39,14 @@
 
 		&-card {
 			@include teaser-card;
+
+			.#{molecule('teaser')} {
+				&-logo {
+						width: 40%;
+						height: auto;
+					}
+				}
+			}
 		}
 
 		&-content {
