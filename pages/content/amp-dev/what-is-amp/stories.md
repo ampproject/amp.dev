@@ -14,6 +14,7 @@ $view: /views/overview/what-is-amp.j2
 
 <div class="ad--kpi ad--container">
   {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+  {% do doc.styles.addCssFile('css/components/organisms/kpi-list.css') %}
   <div class="ad-o-kpi-list">
     <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
       <div class="ad-m-kpi-content">
