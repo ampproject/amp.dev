@@ -25,18 +25,49 @@
   }
 
     &-link {
-      display: block;
+      display: flex;
+      align-items: center;
       position: relative;
       padding: 8px;
       @include txt;
       @include txt-font-accent;
-      text-transform: capitalize;
+      line-height: 1.2em;
+      font-size: 1em;
+      @media screen and (min-width: 768px) {
+        font-size: 0.75em;
+      }
       text-overflow: ellipsis;
       border-radius: 4px;
       color: color('white');
       opacity: 0.9;
       transition: opacity 0.2s ease;
       overflow: hidden;
+
+      .#{atom('ico')} {
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        @media screen and (min-width: 768px) {
+          width: 22px;
+          height: 22px;
+          margin-right: 8px;
+        }
+        @media screen and (min-width: 1024px) {
+          width: 18px;
+          height: 18px;
+          margin-right: 6px;
+        }
+
+        @media screen and (min-width: 1200px) {
+          width: 22px;
+          height: 22px;
+          margin-right: 8px;
+        }
+      }
+
+      svg {
+        fill: color('white');
+      }
 
       &-websites {
         @include gradient-websites;
@@ -45,6 +76,9 @@
       &-stories {
         @include gradient-stories;
         color: color('pigment-indigo');
+        svg {
+          fill: color('pigment-indigo');
+        }
       }
 
       &-ads {
@@ -54,6 +88,9 @@
       &-email {
         @include gradient-e-mails;
         color: color('ultramarine');
+        svg {
+          fill: color('ultramarine');
+        }
       }
 
       @each $format in websites, stories, ads, email {
