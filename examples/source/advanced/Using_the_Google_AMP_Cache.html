@@ -9,7 +9,7 @@ hidePreview: true
 <!--
   ## Introduction
 
-  The [Google AMP Cache](https://developers.google.com/amp/cache/overview) stores valid AMPs and provides a consistently fast access to AMPs. It is available for anyone to use. 
+  The [Google AMP Cache](https://developers.google.com/amp/cache/overview) stores valid AMPs and provides a consistently fast access to AMPs. It is available for anyone to use.
 -->
 <!-- -->
 <!doctype html>
@@ -27,12 +27,12 @@ hidePreview: true
   <!--
 ## AMP Cache URL Format
 
-When possible, the Google AMP Cache will create a subdomain for each AMP document's domain by first converting it from [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) to UTF-8. The caches replaces every `-` (dash) with `--` (2 dashes) and replace every `.` (dot) with `-` (dash). For example, `pub.com` will map to `pub-com.cdn.ampproject.org`. 
+When possible, the Google AMP Cache will create a subdomain for each AMP document's domain by first converting it from [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) to UTF-8. The caches replaces every `-` (dash) with `--` (2 dashes) and replace every `.` (dot) with `-` (dash). For example, `pub.com` will map to `pub-com.cdn.ampproject.org`.
 
 Here is AMP Cache URL for `https://ampbyexample.com/components/amp-img`:
 
 <amp-iframe title="Google AMP Cache tool"
-            height="149" 
+            height="149"
             layout="fixed-height"
             sandbox="allow-scripts allow-same-origin allow-popups"
             src="https://amp-by-example-api.appspot.com/iframe/amp-url-converter.html?url=https://ampbyexample.com/components/amp-img">
@@ -47,7 +47,7 @@ The converted AMP Cache URL consists of the following parts:
 * `s`: indicating that the AMP Cache fetches the content from the origin using TLS (secure HTTPS).
 * `ampbyexample.com/components/amp-img`: the original URL excluding the scheme.
 
-It is OK for URLs to include parameters in the query string, simply include these in the AMP Cache URL as well. 
+It is OK for URLs to include parameters in the query string, simply include these in the AMP Cache URL as well.
 
 Example: [https://ampbyexample-com.cdn.ampproject.org/c/s/ampbyexample.com/g?value=Hello%20World](https://ampbyexample-com.cdn.ampproject.org/c/s/ampbyexample.com/g?value=Hello%20World).
 
@@ -68,26 +68,26 @@ Location: https://ampbyexample.com/components/amp-img/
 ...
 ```
 
-Then the AMP Cache will return the content of the resolved redirect for the original URL. 
+Then the AMP Cache will return the content of the resolved redirect for the original URL.
 
 Example: [https://ampbyexample-com.cdn.ampproject.org/ampbyexample.com/amp-img.html](https://cdn.ampproject.org/c/s/ampbyexample.com/amp-img.html).
     <p class="card important">**Important**: if you move the location of the AMP Files on your server, make sure to set up a redirect from the old location to the new one. </p>
 
 **Not Found**
 
-When a page is not found in the AMP Cache, it will show an error page and return a 404 status. 
+When a page is not found in the AMP Cache, it will show an error page and return a 404 status.
 
 Example: [https://ampbyexample-com.cdn.ampproject.org/ampbyexample.com/not-found](https://cdn.ampproject.org/c/s/ampbyexample.com/not-found)
 
-**Invalid AMP** 
+**Invalid AMP**
 
 When a page is invalid AMP, the AMP Cache will return a 404 status.
 
 Example: [https://ampbyexample-com.cdn.ampproject.org/ampbyexample.com/invalid_amp.html](https://cdn.ampproject.org/c/s/ampbyexample.com/invalid_amp.html)
 
-**Server Errors** 
+**Server Errors**
 
-If an URL returns a 5XX server errors, the AMP Cache will return a 404 status. 
+If an URL returns a 5XX server errors, the AMP Cache will return a 404 status.
 
 Example: [https://ampbyexample-com.cdn.ampproject.org/ampbyexample.com/error](https://cdn.ampproject.org/c/s/ampbyexample.com/error)
 
