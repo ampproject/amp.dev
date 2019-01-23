@@ -53,6 +53,13 @@
     .#{utility('container')} {
       padding: 0;
     }
+
+    .#{molecule('copy')} {
+      &:last-child,
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .#{utility('component-visual')} {
