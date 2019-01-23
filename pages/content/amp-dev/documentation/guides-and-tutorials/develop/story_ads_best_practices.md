@@ -2,9 +2,12 @@
 $title: Best practices for creating an AMP Story ad
 $order: 16
 toc: true
+
+formats:
+    - ads
 ---
 
-[TOC]
+
 
 AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for AMP Stories.
 

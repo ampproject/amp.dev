@@ -6,8 +6,15 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_headline.scss';
 
-.#{organism('benefits-overview')} {
+.#{utility('benefits-overview')} {
+  margin-bottom: 7em;
   
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 8vw;
+  }
+}
+
+.#{organism('benefits-overview')} {
   &-header {
     grid-column: 1 / 16;
 
@@ -16,12 +23,24 @@
     }
 
     @media screen and (min-width: 1280px) {
-      grid-column: 1 / 9;
+      grid-column: 1 / 10;
     }
   }
   
   &-list {
     grid-column: 1 / 13;
+    
+    h2 {
+      margin-top: 0;
+    }
+    
+    .#{molecule('benefit')} {
+      margin: 20px 20px 0 0;
+      
+      &-icon {
+        margin-right: 15px;
+      }
+    }
 
     &-developers {
       @media screen and (min-width: 1024px) {
@@ -41,5 +60,12 @@
   
   &-link {
     grid-column: 17 / -1;
+    width: 100%;
+    margin-top: 2em;
+    
+    @media screen and (min-width: 768px) {
+      width: auto;
+      margin-top: 0;
+    }
   }
 }

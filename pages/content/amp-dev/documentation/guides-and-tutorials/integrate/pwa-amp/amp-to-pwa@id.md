@@ -1,7 +1,8 @@
 ---
 $title: Memuat Progressive Web App di awal dari halaman AMP
+toc: true
 ---
-[TOC]
+
 
 Strategi yang baik adalah membuat **pintu masuk ke situs sebagai halaman AMP**, kemudian **menyiapkan PWA di belakang layar** dan beralih ke PWA untuk perjalanan selanjutnya:
 

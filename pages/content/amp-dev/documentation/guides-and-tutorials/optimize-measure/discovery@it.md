@@ -1,8 +1,9 @@
 ---
 $title: Rendere rilevabile la propria pagina
+toc: true
 ---
 
-[TOC]
+
 
 In alcuni casi, potresti voler avere sia una versione non AMP sia una versione AMP della stessa pagina, ad esempio di un articolo. Se la Ricerca Google trova la versione non AMP della pagina, come fa a sapere che esiste una versione AMP?
 

@@ -1,8 +1,9 @@
 ---
 $title: Criar um blog ao vivo
+toc: true
 ---
 
-[TOC]
+
 
 
 

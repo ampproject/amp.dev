@@ -1,7 +1,8 @@
 ---
 $title: Incluir iframes
+toc: true
 ---
-[TOC]
+
 
 Descubre cómo incluir contenido multimedia en tus páginas y cómo usar iframes para mostrar contenido avanzado saltándose las limitaciones de AMP.
 

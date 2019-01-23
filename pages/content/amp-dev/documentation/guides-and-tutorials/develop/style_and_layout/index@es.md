@@ -1,7 +1,8 @@
 ---
 $title: Estilo y Layout
+toc: true
 ---
-[TOC]
+
 
 Dar diseño y mejorar el layout de las páginas AMP HTML es muy similar al HTML de páginas normales – en ambos casos, usarás CSS.
 

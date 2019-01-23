@@ -11,33 +11,46 @@
 @import '../molecules/_copy.scss';
 
 .#{utility('format-explainer')} {
-  padding-left: 30px;
-  padding-right: 30px;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 7em;
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     padding-left: 0;
     padding-right: 0;
+    margin-bottom: 8vw;
   }
 }
 
 .#{organism('format-explainer')} {
   
   &-visual {
+    grid-column: 1 / -1;
+    grid-row: 1 / 4;
+    order: 2;
     position: relative;
     width: 100%;
-    grid-column: 1 / -1;
+    padding: 0 1.5em;
 
     @media screen and (min-width: 1024px) {
       grid-column: 1 / 14;
-      padding-top: 7em;
+      order: inherit;
+      padding: 7em 0 0;
     }
   }
   
-  &-content {
+  &-content,
+  &-navigation {
     grid-column: 1 / -1;
+    width: 100%;
     margin-bottom: 0;
 
     @media screen and (min-width: 1024px) {
+      grid-column: 14 / 24;
+    }
+
+    @media screen and (min-width: 1280px) {
       grid-column: 14 / 22;
     }
   }
@@ -47,28 +60,67 @@
   }
   
   &-copy {
-    margin-bottom: 2.250em;
+    margin-bottom: 0;
+  }
+  
+  &-navigation {
+    order: 2;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    padding: 0 20px 15px;
+    margin: 0 -20px 15px;
+    
+    @media screen and (min-width: 1024px) {
+      order: inherit;
+      overflow: visible;
+      flex-direction: column;
+      max-width: 300px;
+      padding: 0;
+      margin: 0;
+    }
+    
+    &:after {
+      content: '';
+      padding-right: 1px;
+    }
   }
   
   &-button {
     @include hl;
     @include hl-h5;
+    line-height: 1;
     -webkit-appearance: none;
+    min-width: 160px;
     display: flex;
     align-items: center;
-    min-width: 300px;
-    padding: 10px 20px;
-    margin: 0 0 1em;
+    padding: 10px 15px;
+    margin: 0 15px 1em 0;
     text-align: left;
-    background: none transparent;
+    background-color: color('athens-gray');
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
+    @media screen and (min-width: 1024px) {
+      margin: 0 0 1em 0;
+      background: none transparent;
+    }
+
     &:focus {
       outline: none;
     }
+
     &.active {
       color: #fff;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    &:hover {
+      background-color: color('athens-gray');
     }
     
     &-websites.active { @include gradient-websites; }
@@ -88,6 +140,12 @@
   }
   
   &-link {
-    margin: 6em 0 0;
+    grid-column: 1 / -1;
+    order: 3;
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 14 / 20;
+      order: inherit;
+    }
   }
 }

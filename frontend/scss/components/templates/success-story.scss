@@ -46,7 +46,11 @@
   }
 
   .#{utility('stage')} {
-    padding-bottom: 10rem;
+    padding-bottom: 20vw;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 100vw;
+    }
 
     .#{organism('stage-content')} {
       grid-column: 3 / 12;
@@ -62,9 +66,17 @@
   .#{utility('kpi')} {
     padding-bottom: 17rem;
 
+    @media screen and (max-width: 767px) {
+      padding-bottom: 8.5rem;
+    }
+
     .#{molecule('kpi')} {
       grid-column: span 8;
       padding-bottom: 56.25%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
 
       &:nth-child(3n+1) {
         grid-column: 4 / 10;
@@ -82,9 +94,23 @@
 
   .#{organism('text-media-block')} {
     padding-bottom: 17.5rem;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 8.75rem;
+
+      .media {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+    }
   }
 
   .#{utility('quote')} {
     padding: 11rem 0;
+
+    @media screen and (max-width: 767px) {
+      padding: 5.5 0;
+    }
   }
 }

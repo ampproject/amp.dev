@@ -2,6 +2,7 @@
 @import '_functions.scss';
 @import '_extends.scss';
 @import '_mixins.scss';
+@import '_fonts.scss';
 
 * {
   box-sizing: border-box;
@@ -12,7 +13,7 @@ html, body {
     margin: 0;
     min-width: 320px;
     color: color('black');
-    background-color: color('whisper');
+    background-color: #fff;
     font-size: 16px;
     font-family: sans-serif;
     overflow-x: hidden;

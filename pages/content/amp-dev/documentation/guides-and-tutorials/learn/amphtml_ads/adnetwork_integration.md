@@ -4,7 +4,7 @@ $order: 5
 toc: true
 ---
 
-[TOC]
+
 
 This guide is for ad networks that want to integrate with AMP to serve display ads to AMP pages.
 

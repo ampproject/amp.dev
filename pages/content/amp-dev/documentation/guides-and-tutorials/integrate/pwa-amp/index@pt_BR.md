@@ -1,7 +1,8 @@
 ---
 $title: Combinar AMP com Progressive Web Apps
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Assista o vídeo de introdução sobre como combinar AMP e PWA.']
 

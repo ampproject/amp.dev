@@ -1,8 +1,9 @@
 ---
 $title: Integrar AMP para publicar anuncios de display
+toc: true
 ---
 
-[TOC]
+
 
 En esta guía se exponen los pasos que se deben seguir para integrar redes publicitarias en AMP y así publicar anuncios de display en páginas AMP.
 

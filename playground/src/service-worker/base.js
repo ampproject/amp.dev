@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // install serviceWorker
-if ('requestIdleCallback' in window && navigator.serviceWorker) {
+if ('requestIdleCallback' in window && !window.parent && navigator.serviceWorker) {
   window.onload = () => {
     window.requestIdleCallback(() => {
       console.log('registering service worker');
@@ -24,4 +24,3 @@ if ('requestIdleCallback' in window && navigator.serviceWorker) {
     });
   };
 }
-

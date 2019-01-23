@@ -1,8 +1,9 @@
 ---
 $title: Corrigir erros de validação
+toc: true
 ---
 
-[TOC]
+
 
 Nesta seção, analisaremos e resolveremos os erros de validação de AMP na nossa página AMP.  Esses erros podem aparecer em outra ordem no seu console.
 

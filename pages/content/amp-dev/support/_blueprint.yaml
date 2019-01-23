@@ -1,6 +1,8 @@
-path: /support/{base}.html
-view: /views/default.j2
-title: Support
-
-localization:
+$title@: Support
+$path: /support/{base}.html
+$view: /views/default.j2
+$localization:
   path: /{locale}/support/{base}.html
+$order: 999
+
+index: /content/amp-dev/support/index.md

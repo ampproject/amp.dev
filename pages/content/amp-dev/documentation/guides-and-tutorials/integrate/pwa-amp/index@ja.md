@@ -1,7 +1,8 @@
 ---
 $title: AMP とプログレッシブ ウェブアプリを組み合わせる
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='AMP と PWA の併用に関する動画をご覧ください。']
 

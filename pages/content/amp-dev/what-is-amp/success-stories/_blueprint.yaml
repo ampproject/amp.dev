@@ -5,7 +5,7 @@ $localization:
   path: /{locale}/success-stories/{base}.html
 $order: 1
 
-index: /content/amp-dev/success-stories/index.md
+index: /content/amp-dev/success-stories/index.html
 
 sub_navigation:
     - /content/amp-dev/what-is-amp/websites.html
@@ -14,3 +14,5 @@ sub_navigation:
     - /content/amp-dev/what-is-amp/email.md
     - /content/amp-dev/what-is-amp/how-amp-works.md
     - /content/amp-dev/what-is-amp/mission-and-vision.md
+    - /content/amp-dev/what-is-amp/use-cases.md
+    - /content/amp-dev/what-is-amp/success-stories/index.html

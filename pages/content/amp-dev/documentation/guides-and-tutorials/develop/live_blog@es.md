@@ -1,8 +1,9 @@
 ---
 $title: Crear un blog en directo
+toc: true
 ---
 
-[TOC]
+
 
 
 

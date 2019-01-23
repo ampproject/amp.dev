@@ -1,7 +1,8 @@
 ---
 $title: CSS compatível
+toc: true
 ---
-[TOC]
+
 
 Assim como todas as páginas da Web, as páginas AMP são estilizadas com CSS. Contudo, não é possível fazer referência a folhas de estilos externas (exceto [fontes personalizadas](#the-custom-fonts-exception)). Além disso, alguns estilos não são permitidos devido ao impacto que têm no desempenho. Por exemplo, os atributos de estilo in-line.
 

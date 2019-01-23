@@ -1,7 +1,8 @@
 ---
 $title: AMP와 프로그레시브 웹 앱 통합하기
+toc: true
 ---
-[TOC]
+
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='AMP와 PWA를 통합하는 방법을 소개하는 동영상을 시청하세요.']
 

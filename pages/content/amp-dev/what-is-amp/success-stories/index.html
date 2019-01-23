@@ -1,0 +1,42 @@
+---
+$title@: Success Stories
+$path: /success-stories.html
+$view: /views/overview/success-story-overview.j2
+$localization:
+  path: /{locale}/success-stories.html
+---
+<section class="ad--stage ad--container-fluid">
+  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  <div class="ad-o-stage ad-o-stage-websites">
+    <div class="ad--container">
+      <div class="ad-o-stage-content">
+          <h2 class="ad-o-stage-content-subline">{{ _('See what others have built') }}</h2>
+          <h1 class="ad-o-stage-content-headline">{{ _('Success stories' ) }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set categories = g.categories('/content/amp-dev/what-is-amp/success-stories') %}
+<section class="ad--intro ad--container">
+  <div class="ad--content">Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</div>
+
+  {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+  <div class="ad-o-filter-bubbles-list">
+    {% for category, stories in categories %}
+    <button class="ad-m-filter-bubble">{{ category }}</button>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="ad--teaser-grid">
+  <div class="ad-o-teaser-grid">
+    <div class="ad-o-teaser-grid-list">
+      {% for category, stories in categories %}
+      {% for teaser_doc in stories %}
+      {% include '/views/partials/teaser.j2' %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

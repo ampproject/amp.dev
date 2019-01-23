@@ -1,8 +1,9 @@
 ---
 $title: Apresentação do código inicial
+toc: true
 ---
 
-[TOC]
+
 
 ## Texto informativo sobre as AMP
 As AMP são páginas HTML com algumas restrições que proporcionam um desempenho estável. As páginas AMP têm algumas marcações especiais que as identificam como AMP.

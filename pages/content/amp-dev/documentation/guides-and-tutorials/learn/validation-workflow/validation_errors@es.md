@@ -1,12 +1,13 @@
 ---
 $title: Errores de validación de AMP
+toc: true
 ---
 
 Los documentos de AMP no pueden tener errores de validación.
 La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
 Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-[TOC]
+
 
 ## Errores en atributos y etiquetas AMP HTML
 

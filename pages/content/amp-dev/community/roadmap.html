@@ -1,21 +1,87 @@
 ---
 $title: Roadmap
 $order: 2
-$view: /views/default.j2
+$view: /views/custom.j2
 roadmap: !g.json /content/amp-dev/community/roadmap.json
 ---
-{% block main %}
-<!-- Filter bubbles -->
-{% for label in doc.roadmap.labels %}
-<button>{{ label }}</button>
-{% endfor %}
+{% do doc.styles.addCssFile('css/components/templates/roadmap.css') %}
 
-<!-- Columns -->
-{% for column in doc.roadmap.columns %}
-<ul>
-  {% for card in column.cards %}
-  <li>{{ card.issue.title }}</li>
-  {% endfor %}
-</ul>
-{% endfor %}
-{% endblock %}
+<main class="ad--main ad-t-roadmap">
+  <div class="ad--container">
+    <div class="ad-o-roadmap">
+
+      <amp-state id="roadmapfilter">
+        <script type="application/json">
+          {
+            "activefilter": "all"
+          }
+        </script>
+      </amp-state>
+
+      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+
+      <section class="ad--content">
+        <h1>The AMP Project Roadmap</h1>
+        <div class="ad-m-tip ad-m-tip-note">
+          <div class="ad-m-tip-content">
+            {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+            <p><b>NOTE -</b> This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a></p>
+          </div>
+        </div>
+
+
+        <!-- Filter bubbles -->
+        <p>Filter by category:</p>
+        {% do doc.icons.useIcon('icons/close.svg') %}
+        <div class="ad-o-roadmap-filter-list all" [class]="roadmapfilter.activefilter != 'all' ? 'ad-o-roadmap-filter-list filtered' : 'ad-o-roadmap-filter-list all' ">
+          {% for label in doc.roadmap.labels %}
+
+          <button class="ad-m-filter-bubble {{ label | slug}} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label | slug}}' } })"
+          [class]="roadmapfilter.activefilter == 'all' || roadmapfilter.activefilter == '{{label|slug}}' ? 'ad-m-filter-bubble {{ label | slug}} active' : 'ad-m-filter-bubble {{ label | slug}}'">
+            {{ label }}
+            <span tabindex=0 role="reset" class="ad-m-filter-bubble-reset" [class]="roadmapfilter.activefilter == '{{ label | slug}}' ? 'ad-m-filter-bubble-reset show': 'ad-m-filter-bubble-reset'" on="tap:AMP.setState({roadmapfilter: {activefilter: 'all' }})">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+            </span>
+          </button>
+
+          {% endfor %}
+        </div>
+      </section>
+
+      <div class="ad-o-roadmap-tiles ad--container-fluid">
+        <!-- Columns -->
+        {% do doc.icons.useIcon('icons/notepad.svg') %}
+        {% do doc.icons.useIcon('icons/wrench.svg') %}
+        {% do doc.icons.useIcon('icons/dolly.svg') %}
+
+        {% for column in doc.roadmap.columns %}
+        <div class="ad-o-roadmap-tiles-list">
+          <div class="ad-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{% if loop.index == 1 %}notepad{% elif loop.index == 2 %}wrench{% elif loop.index == 3 %}dolly{% endif %}"></use></svg>
+          </div>
+          <h4>{{ column.name }}</h4>
+          <ul>
+            {% for card in column.cards %}
+            <li class="ad-o-roadmap-tiles-item ad-m-copy active {% if card.issue.labels[0] %}{% for label in card.issue.labels %}{{ label.name | slug}} {% endfor %}{% endif %}"
+            [class]= "{% if card.issue.labels[0] %}{% for label in card.issue.labels %}roadmapfilter.activefilter == '{{ label.name | slug}}' ||{% endfor %}{% endif %} roadmapfilter.activefilter == 'all' ? 'ad-o-roadmap-tiles-item ad-m-copy active ' : 'ad-o-roadmap-tiles-item ad-m-copy '"
+            >
+              <a class="ad-o-roadmap-tiles-link" href="{{ card.issue.url }}">
+                <div class="ad-o-roadmap-tiles-title">{{ card.issue.title }}</div>
+                <p class="ad-o-roadmap-tiles-description">{{ card.issue.description }}</p>
+              </a>
+              <div class="ad-o-roadmap-tiles-categories">
+                {% if card.issue.labels[0] %}
+                  {% for label in card.issue.labels %}
+                  <button class="ad-m-filter-bubble {{ label.name | slug }} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label.name | slug}}' }})">{{ label.name }}</button>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>

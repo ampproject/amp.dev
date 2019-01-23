@@ -37,6 +37,7 @@
     &-content {
       grid-column: 1 / -1;
       padding: 82% 0 0;
+      margin: 0;
       @media screen and (min-width: 768px) {
         padding: 52% 0 0;
       } 
@@ -46,7 +47,6 @@
   .#{organism('fragment-slider')} {
     grid-column: 1 / -1;
     margin-top: -76%;
-    overflow: hidden;
     @media screen and (min-width: 768px) {
       margin-top: -56%;
     }

@@ -27,7 +27,7 @@ when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guide
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-[TOC]
+
 
 ## AMP HTML tag and attribute errors
 

@@ -15,15 +15,10 @@
  */
 
 const {GitHubImporter} = require('./gitHubImporter');
-const Collection = require('./collection');
 
-// The view that the collections should define in their frontmatter
-const DOCUMENT_VIEW = '/views/detail/component-detail.j2';
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
   __dirname + '/../../../pages/content/amp-dev/documentation/components/reference';
-// Base to define the request path for Grow
-const PATH_BASE = '/documentation/components';
 // Names of the built-in components that need to be fetched from ...
 const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
 // ... this path

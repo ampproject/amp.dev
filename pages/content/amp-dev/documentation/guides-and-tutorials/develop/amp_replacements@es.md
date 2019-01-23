@@ -1,7 +1,8 @@
 ---
 $title: Incluir imágenes y videos
+toc: true
 ---
-[TOC]
+
 
  Al igual que las páginas HTML normales, las páginas AMP te permiten insertar **imágenes** ,**videos**  y **audios**
 Contenido. Descubre cómo incluir las versiones AMP equivalentes en tus páginas y qué diferencias existen entre ellas.

@@ -1,6 +1,7 @@
 const signale = require('signale');
 const fs = require('fs');
 const path = require('path');
+const mri = require('mri');
 
 const CONFIG_BASE_PATH = '../config';
 const GROW_CONFIG_TEMPLATE_PATH = `${CONFIG_BASE_PATH}/templates/podspec.yaml`;
@@ -17,6 +18,9 @@ class Config {
 
     this.shared = sharedConfig;
 
+    // Globally initialize command line arguments for use across all modules
+    this.options = mri(process.argv.slice(2));
+
     // Synchronously write podspec for Grow to run flawlessly later in pipeline.
     // Check if running inside GAE as writes are not permitted there
     if (!process.env.GAE_SERVICE) {
@@ -24,13 +28,17 @@ class Config {
     }
   }
 
-  _getSampleEmbedUrl() {
-    let sampleEmbedUrl = `${this.hosts.samples.scheme}://${this.hosts.samples.host}`;
-    if (this.hosts.samples.port) {
-      sampleEmbedUrl = sampleEmbedUrl + `:${this.hosts.samples.port}`;
+  /**
+   * Builds a URL from a host object containing scheme, host and port
+   * @return {[type]} [description]
+   */
+  _buildUrl(host) {
+    let url = `${host.scheme}://${host.host}`;
+    if (host.port) {
+      url = url + `:${host.port}`;
     }
 
-    return sampleEmbedUrl;
+    return url;
   }
 
   _writeGrowConfig() {
@@ -45,7 +53,8 @@ class Config {
                 + 'base_urls:\n'
                 + `  repository: ${this.shared.baseUrls.repository}\n`
                 + `  playground: ${this.shared.baseUrls.playground}\n`
-                + `  sample_embed: ${this._getSampleEmbedUrl()}\n`
+                + `  platform: ${this._buildUrl(this.hosts.platform)}\n`
+                + `  api: ${this._buildUrl(this.hosts.api)}\n`
                 + '\n'
                 + 'deployments:\n'
                 + '  default:\n'

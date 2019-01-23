@@ -1,8 +1,9 @@
 ---
 $title: Memonetisasi halaman AMP dengan iklan
+toc: true
 ---
 
-[TOC]
+
 
 Panduan ini memberikan petunjuk dan praktik terbaik untuk menampilkan iklan di halaman AMP.
 

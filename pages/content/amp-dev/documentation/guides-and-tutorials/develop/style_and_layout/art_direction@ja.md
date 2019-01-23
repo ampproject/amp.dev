@@ -1,7 +1,8 @@
 ---
 $title: srcset、sizes、heights を使ったレスポンシブな画像
+toc: true
 ---
-[TOC]
+
 
 ## srcset
 

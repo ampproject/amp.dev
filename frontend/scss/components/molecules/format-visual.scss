@@ -24,75 +24,109 @@ the border and format around the images.
 
 .#{molecule('format-visual')} {
   width: 100%;
-  display: flex;
-  align-items: center;
-  perspective: 80em;
-  padding-left: 7.5vw;
-  animation: 10s ease-in-out infinite bounce;
+  max-width: 16em;
+  padding: 0;
+  margin: 0 auto;
+  transform: rotate3d(135, -90, 90, 50deg);
+  display: grid;
+  grid-template-columns: 11.1fr 32.4fr 18.1fr 32.1fr 7fr;
+  grid-template-rows: 3.5fr 56.3fr 25.1fr 12.3fr 3.3fr;
+  
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    max-width: 100%;
+    position: relative;
+    padding: 0;
+  }
+  
+  &:after {
+    content: '';
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 75%;
+    border-radius: 1000% 0 0 0 / 1000% 0 0 0;
+    opacity: 0.5;
+    transform: rotate(-5deg) scale(1, 1.1) skew(-25deg);
+    transform-origin: left bottom;
+    background: linear-gradient(-225deg, transparent 30%, color('black'));
+    filter: blur(20px);
+    z-index: -1;
+    animation: 10s ease-in-out 3.5s infinite both rotateShadow;
+    
+    @media screen and (min-width: 768px) {
+      padding-top: 100%;
+      transform-origin: right bottom;
+    }
+  }
 
   &-image {
     width: 100%;
-    @include box-shadow;
-    transform: rotate3d(-5, 5,-5 ,-40deg);
-    transform-origin: bottom left;
-    max-width: 140px;
+    height: auto;
+    margin: auto;
+  }
+
+  &-bottom-image {
+    grid-column: 2 / 5;
+    grid-row: 1 / 5;
+    max-width: 8.125em;
+    transform: translate3d(0%, 3%, 0) scale(0.9);
+    
     @media screen and (min-width: 768px) {
       max-width: 100%;
     }
   }
 
-  &-bottom-image {
-    margin: 0 0 25% 5%;
-  }
-
   &-top-image {
+    grid-column: 3 / 6;
+    grid-row: 2 / 6;
+    max-width: 5.625em;
     @include component-frame;
-    @include box-shadow;
-    transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%);
-    transform-origin: bottom left;
-    animation: 10s cubic-bezier(0.46, 0, 0.31, 1) 3.5s infinite both slide;
-    @include box-shadow;
-
-    &:before {
-      content: attr(title);
-      background-color: color('doger-blue');
-      @include txt;
-      @include color-white;
-      padding: 5px 10px;
-      margin-top: -32px;
-      position: absolute;
-      font-size: 12px;
-      @media screen and (min-width: 768px) {
-        font-size: inherit;
-        margin-top: -40px;
-      }
+    @include component-frame-websites;
+    animation: 10s ease-in-out 3.5s infinite both slide;
+    
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
     }
   }
 
   &-code-snippet {
-    position: absolute;
-    margin-right: -15%;
-    margin-top: -10%;
-    font-size: 12px;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    width: 12em;
+    font-size: 10px;
+    filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
+    transform: translateY(-4em);
+    
     @media screen and (min-width: 768px) {
+      width: auto;
       font-size: inherit;
+      transform: translateY(0);
     }
-    transform: rotate3d(-55, 20, -40, -40deg);
-    transform-origin: bottom left;
-    animation: 5s ease-in-out 0.25s infinite bounce-code;
+    
+    .#{molecule('code-snippet')} {
+      margin: 0;
+      animation: 10s ease-in-out infinite bounce -2s;
+    }
 
     &-highlight:before {
       content: 'right';
       color: #e6db74;
       animation: 10s ease-in-out 3.5s infinite both highlight-code;
     }
-
   }
 }
 
 @keyframes slide {
-  0%, 9%, 18%, 36%, 90%, 100% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-100%); }
-  45%, 54%, 63%, 72%, 81% { transform: rotate3d(-5, 5,-5 ,-40deg) translateX(-150%); }
+  0%, 9%, 18%, 36%, 90%, 100% { transform: translateX(0); }
+  45%, 54%, 63%, 72%, 81% { transform: translateX(-90%); }
+}
+
+@keyframes rotateShadow {
+  0%, 9%, 18%, 36%, 90%, 100% { transform: rotate(-5deg) scale(1, 1.1) skew(-25deg); }
+  45%, 54%, 63%, 72%, 81% { transform: rotate(-10deg) scale(1, 1.1) skew(-22deg); }
 }
 
 @keyframes highlight-code {
@@ -107,39 +141,7 @@ the border and format around the images.
 }
 
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(20px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce-code {
-  0% {
-    transform: rotate3d(-55, 20, -40, -40deg) translateZ(0);
-  }
-
-  50% {
-    transform: rotate3d(-55, 20, -40, -40deg) translateZ(30px);
-  }
-
-  100% {
-    transform: rotate3d(-55, 20, -40, -40deg) translateZ(0);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 20px); }
+  100% { transform: translate(0, 0); }
 }

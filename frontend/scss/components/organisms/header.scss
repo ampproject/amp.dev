@@ -1,23 +1,17 @@
-
 /*
 
 #############################
-### ORGANISM: header ###
+### ORGANISM: header ########
 #############################
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
-@import '../atoms/_headline.scss';
-@import '../atoms/_icon.scss';
-
-@import '../molecules/_link.scss';
+@import 'components/atoms/_text.scss';
 
 .#{utility('header')} {
   width: 100%;
@@ -28,435 +22,94 @@
   top: 0;
   z-index: 17;
   background-color: color('white');
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
 
   @media screen and (min-width: 1024px) {
     top: -50px;
   }
+
+  &-fixed {
+    top: 0;
+  }
 }
 
 .#{organism('header')} {
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   max-width: 1300px;
+  padding-top: 12px;
+  padding-left: 20px;
+  margin: 0 auto;
+
   @media screen and (min-width: 1024px) {
-    flex-direction: row;
+    display: flex;
+    padding-left: 30px;
   }
 
-  &-list {
-    height: 50px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    align-items: center;
-
-    &-desktop {
-      display: none;
-
-      @media screen and (min-width: 1024px) {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    &-mobile {
-      display: flex;
-      height: 60px;
-      opacity: 1;
-      transition: opacity 0.5s ease;
-
-      @media screen and (min-width: 1024px) {
-        display: none;
-      }
-
-      &-expanded {
-        height: 0;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 10;
-        background: #fff;
-        list-style: none;
-        transition: height 0.5s ease-out;
-
-        @media screen and (min-width: 1024px) {
-          display: none;
-        }
-      }
-    }
-
-    &-subnav {
-      display: flex;
-      height: 60px;
-      overflow-x: scroll;
-
-      @media screen and (min-width: 1024px) {
-        height: 45px;
-        padding-left: 105px;
-        overflow: hidden;
-      }
-    }
-  }
-
-  &-lnk {
-    white-space: nowrap;
-    margin: 0 5px;
-    z-index: 2;
-
-    @media screen and (min-width: 1024px) {
-      margin: 0 20px;
-    }
-
-    a {
-      @include txt-font-accent;
-      @include hl-h3;
-      @include color-black;
-      margin: 0;
-
-      &:hover {
-        @include color-blue-ribbon;
-      }
-
-      @media screen and (min-width: 768px) {
-        @include hl-h4;
-      }
-
-      @media screen and (min-width: 1024px) {
-        @include txt-1;
-      }
-    }
-
-    &-selected {
-      @include txt-strong;
-      @include txt-font-accent;
-      @include txt-1;
-
-      a {
-        color: color('blue-ribbon');
-      }
-    }
-
-    &-subnav {
-      margin: 0 15px;
-
-      a {
-        @include txt;
-        @include txt-2;
-        @include color-black;
-      }
-
-      &-selected {
-        a {
-          @include txt-strong;
-          color: color('blue-ribbon');
-        }
-      }
-    }
-
-    &-home {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 10px;
-      margin: 10px 0 10px 20px;
-      display: flex;
-
-      @media screen and (min-width: 768px) {
-        margin-left: 30px;
-      }
-
-      @media screen and (min-width: 1024px) {
-        margin: 10px 0 10px 30px;
-      }
-
-      a {
-        @include color-blue-ribbon;
-      }
-    }
-
-    &-expanded {
-      margin: 7px 0 8px;
-
-      @media screen and (min-width: 768px) {
-        margin-left: 30px;
-      }
-    }
-
-    &-support {
-      margin: 0 30px;
-
-      &-expanded {
-        margin-top: 40px;
-      }
-    }
-  }
-
-  &-nav {
-    flex: 1 1 auto;
-  }
-
-  &-mainnav {
-
-    @media screen and (min-width: 1024px) {
-      padding: 0 30px;
-      position: relative;
-      height: auto;
-    }
-
-    & > ul {
-      padding: 0 20px;
-
-      @media screen and (min-width: 1024px) {
-        padding: 0;
-      }
-    }
-  }
-
-  &-subnav {
-    display: block;
-    flex: 1 1 100%;
-    height: 60px;
-    border-top: 1px solid color('wild-sand');
-
-    @media screen and (min-width: 768px) {
-      padding-left: 10px;
-    }
-
-    @media screen and (min-width: 1024px) {
-      padding: 0 40px;
-      height: 45px;
-    }
-  }
-
-  &-lang {
-    &-switcher {
-      opacity: 0;
-      display: flex;
-      position: absolute;
-      right: 85px;
-      top: 9px;
-      z-index: 1;
-      @include hl-h3;
-      transition: opacity 0.5s ease;
-
-      @media screen and (min-width: 1024px) {
-        opacity: 1;
-        position: relative;
-        right: auto;
-        top: auto;
-        @include txt-1;
-      }
-
-      &:hover {
-        .#{atom('ico')} {
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    &-current {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      z-index: 2;
-
-      span {
-        @include txt-font-accent;
-        @include color-black;
-        display: block;
-        padding: 0 0 0 10px;
-        text-transform: uppercase;
-      }
-    }
-
-    &-icon.#{atom('ico')} {
-      width: 10px;
-      height: 10px;
-      margin-left: 5px;
-      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    &-list {
-      opacity: 0;
-      pointer-events: none;
-      position: absolute;
-      right: 0;
-      text-align: right;
-      top: 100%;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      background-color: color('white');
-      transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      transform: translateY(-20px);
-
-      &-item {
-        &:first-child {
-          padding-top: 7px;
-        }
-
-        &:last-child {
-          padding-bottom: 7px;
-        }
-
-        a {
-          @include txt-font-accent;
-          @include color-black;
-          display: block;
-          padding: 2px 15px 2px 10px;
-          text-transform: uppercase;
-        }
-
-        &:hover a {
-          @include color-blue-ribbon;
-          background-color: color('whisper');
-        }
-      }
-    }
-
-    &-current:hover + ul,
-    &-list:hover {
-      opacity: 1;
-      transform: translateY(0px);
-      pointer-events: all;
-    }
-  }
-
-  &-icon {
+  &-home {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 12px;
     display: flex;
     align-items: center;
+    padding-bottom: 10px;
 
-    & svg {
-      @include ico;
-      @include ico-2;
-
-      @media screen and (min-width: 1024px) {
-        @include ico-1;
-      }
-    }
-
-    &-text {
-      display: none;
-      margin-left: 4px;
-
-      @media screen and (min-width: 1024px) {
-        display: block;
-        @include txt-lrg;
-      }
-    }
-
-    &-logo {
-      & svg {
-        @include ico;
-        @include ico-blue-ribbon;
-        @include drop-shadow;
+      &-logo {
         height: 30px;
-        width: 30px;
         margin-right: 6px;
+        width: 30px;
+      }
+
+      &-title {
+        margin-left: 4px;
+        @include txt-font-accent;
+        font-size: 1.5em;
+        color: color('blue-ribbon');
+
+        @media screen and (min-width: 1024px) {
+          @include txt-lrg;
+        }
+      }
+  }
+
+  &-first-level {
+    display: none;
+    flex: 1 1 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+    }
+
+    &-link {
+      margin: 0 20px;
+
+      &:last-child {
+        margin-left: auto;
       }
     }
   }
 
-  &-title {
-    opacity: 1;
-    margin-left: 4px;
-    transition: opacity 0.5s ease;
+  &-second-level {
+    display: none;
+    flex: 1 1 100%;
+    padding-top: 10px;
+    /* Pull out to have a 100% width border */
+    margin-left: -30px;
+    padding-left: 145px;
+    padding-bottom: 10px;
+    border-top: 1px solid color('wild-sand');
 
     @media screen and (min-width: 1024px) {
-      display: none;
-    }
-  }
-
-  &-search {
-    position: relative;
-    width: 100%;
-    padding: 0;
-    margin: 70px 0 35px;
-
-    @media screen and (min-width: 1024px) {
-      width: auto;
-      margin: 0 0 0 auto;
-      padding: 17.5px 0 12.5px;
-    }
-
-    &-input {
       display: block;
-      width: 100%;
-      @include txt-font-accent;
-      @include hl-h3;
-      @include color-black;
-      padding: 0;
-      margin: 0;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid color('alto');
-
-      &::placeholder {
-        color: color('alto');
-      }
     }
 
-    &-button {
-      position: absolute;
-      right: 14px;
-      top: 2px;
-      background: transparent;
-      border: none;
-      padding: 0;
-
-      @media screen and (min-width: 1024px) {
-        position: static;
-      }
-    }
-  }
-
-  &-burger-menu {
-    position: fixed;
-    padding: 0;
-    right: 0;
-    z-index: 100;
-
-    @media screen and (min-width: 1024px) {
-      display: none;
-    }
-
-    &-icon.#{atom('ico')} {
-      width: 30px;
-      height: 30px;
-      padding: 12px 20px;
-
-      @media screen and (min-width: 768px) {
-        padding: 12px 30px;
-      }
-    }
-
-    &-btn {
-      display: none;
-
-      &:checked ~ .ad-o-header-mainnav .ad-o-header-list-mobile-expanded {
-        width: 100vw;
-        height: calc(100vh - 60px);
-        transition: height 0.5s ease-in;
-
-        .ad-o-header-lnk-home-expanded {
-          display: block;
-        }
-
-        .ad-o-header-lang-switcher {
-          opacity: 1;
-        }
-      }
-
-      &:checked ~ .ad-o-header-lnk .ad-o-header-title {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
+    &-link {
+      margin: 0 15px;
     }
   }
 }

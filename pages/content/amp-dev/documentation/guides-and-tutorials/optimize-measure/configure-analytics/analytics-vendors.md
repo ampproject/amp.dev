@@ -3,7 +3,7 @@ $title: Analytics vendors
 $order: 3
 toc: true
 ---
-[TOC]
+
 
 This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/amp-analytics.html) component.
 
@@ -34,7 +34,7 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 
 Tip: If you're comfortable digging through code, you can explore the raw configurations in the [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
 
-Note: Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
+Note: Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
 
 <hr>
 

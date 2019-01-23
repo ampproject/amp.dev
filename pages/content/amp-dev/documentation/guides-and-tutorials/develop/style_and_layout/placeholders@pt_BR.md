@@ -1,7 +1,8 @@
 ---
 $title: Marcadores e substitutos
+toc: true
 ---
-[TOC]
+
 
 Uma prática recomendada para melhorar o desempenho e fazer aprimoramento progressivo do seu material é usar marcadores e substitutos nas AMP sempre que possível.
 

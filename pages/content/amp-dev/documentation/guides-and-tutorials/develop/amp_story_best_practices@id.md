@@ -1,8 +1,9 @@
 ---
 $title: Praktik terbaik untuk membuat artikel AMP
+toc: true
 ---
 
-[TOC]
+
 
 Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP](/id/docs/reference/components/amp-story.html).
 

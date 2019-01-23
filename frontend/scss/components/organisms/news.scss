@@ -9,11 +9,16 @@
 @import '../molecules/_copy';
 
 .#{utility('news')} {
-  background: linear-gradient(30deg, color('whisper') 30%, color('athens-gray') 100%);
+  background: linear-gradient(30deg, #fff 30%, color('athens-gray') 100%);
+  margin-bottom: 5em;
+  
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8vw;
+  }
 
-  .ad-m-copy {
-    padding: 20px 20px 0;
-    margin: 0;
+  .#{molecule('copy')} {
+    padding: 2.5em 1.25em 0;
+    margin: 0 0 2em;
     
     @media screen and (min-width: 768px) {
       grid-column: 2 / 11;
@@ -37,7 +42,11 @@
     p {
       @include txt-2;
       margin-top: 0;
-      margin-bottom: 3.75em;
+      margin-bottom: 2em;
+      
+      @media screen and (min-width: 768px) {
+        margin-bottom: 3.75em;
+      }
     }
   }
 }
@@ -50,13 +59,14 @@
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     display: flex;
     flex-wrap: nowrap;
     width: auto;
   }
   
   &-item {
-    flex: 1 0 75%;
+    flex: 1 0 20em;
     display: block;
     scroll-snap-align: start;
     padding: 0 2em 0 0;
@@ -64,12 +74,11 @@
   	transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     
     @media screen and (min-width: 768px) {
-      flex: 1 0 65%;
       padding: 0 0 0 2em;
     }
     
-    @media screen and (min-width: 1024px) {
-      flex: 1 0 37.5%;
+    &:last-child {
+      padding-right: 0;
     }
     
     &:hover {

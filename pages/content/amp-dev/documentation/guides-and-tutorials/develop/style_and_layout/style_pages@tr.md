@@ -1,5 +1,6 @@
 ---
 $title: Desteklenen CSS
+toc: true
 ---
 
 
@@ -12,7 +13,7 @@ Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak i�
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
 Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) içinde tanımlanır.
 
-[TOC]
+
 
 ## CSS ön işlemcilerini kullanma
 

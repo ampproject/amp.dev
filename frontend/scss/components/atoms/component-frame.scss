@@ -3,6 +3,8 @@
 @import '../../mixins';
 @import '../../variables';
 
+@import 'components/atoms/_color.scss';
+
 
 /*
 
@@ -19,41 +21,65 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
 */
 
 @mixin component-frame {
-  border: 5px solid color('doger-blue');
 
   &:before {
+    content: '';
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    @include gradient-default;
+    
+    @media screen and (min-width: 768px) {
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      left: -5px;
+      top: -5px;
+    }
+  }
+  
+  &:after {
     content: attr(title);
     position: absolute;
-    padding: 5px 10px;
-    margin-top: -40px;
+    left: -3px;
+    bottom: 100%;
+    padding: 3px 6px;
     background-color: color('doger-blue');
     @include txt;
+    font-size: 8px;
     @include txt-mono;
+    @include txt-strong;
     @include color-white;
+
+    @media screen and (min-width: 768px) {
+      left: -5px;
+      padding: 5px 10px;
+      font-size: inherit;
+    }
+  }
+}
+
+@mixin component-frame-websites {
+  &:before {
+    @include gradient-websites;
   }
 }
 
 @mixin component-frame-ads {
-  border: 5px solid color('electric-violet');
-
   &:before {
-    background-color: color('electric-violet');
+    @include gradient-ads;
   }
 }
 
 @mixin component-frame-stories {
-  border: 5px solid color('pizazz');
-
   &:before {
-    background-color: color('pizazz');
+    @include gradient-stories;
   }
 }
 
-
 @mixin component-frame-emails {
-  border: 5px solid color('forest-green');
-
   &:before {
-    background-color: color('forest-green');
+    @include gradient-emails;
   }
 }

@@ -1,7 +1,8 @@
 ---
 $title: Crear páginas AMP responsivas
+toc: true
 ---
-[TOC]
+
 
 ## Introducción
 

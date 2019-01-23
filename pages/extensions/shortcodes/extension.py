@@ -27,7 +27,7 @@ class ShortcodesPreRenderHook(hooks.PreRenderHook):
             return False
 
         # Do not cache rendered documents as it will kill shortcodes
-        doc.pod.podcache.document_cache.reset()
+        doc.pod.podcache.reset()
         return True
 
     def trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):

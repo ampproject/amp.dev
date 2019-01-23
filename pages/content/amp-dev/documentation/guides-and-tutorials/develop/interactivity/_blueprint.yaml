@@ -5,6 +5,9 @@ $localization:
 $title@: Create interactive AMP pages
 $order: 0
 
+formats:
+  - websites
+
 targeted: true
 chaptered: true
 tutorial: true

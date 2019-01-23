@@ -5,9 +5,12 @@ $category: Develop
 toc: true
 components:
     - youtube
+
+formats:
+    - stories
 ---
 
-[TOC]
+
 
 This guide provides recommended practices that you should implement when creating an [AMP story](/docs/reference/components/amp-story.html).
 

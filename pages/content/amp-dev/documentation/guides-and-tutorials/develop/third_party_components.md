@@ -5,8 +5,11 @@ toc: true
 components:
   - iframe
   - facebook
+
+formats:
+    - websites
 ---
-[TOC]
+
 
 
 Learn how to include third-party components in your pages.

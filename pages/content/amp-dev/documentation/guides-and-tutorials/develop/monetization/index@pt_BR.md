@@ -1,8 +1,9 @@
 ---
 $title: Monetização de páginas AMP com anúncios
+toc: true
 ---
 
-[TOC]
+
 
 Este guia oferece instruções e práticas recomendadas para a exibição de anúncios nas páginas AMP.
 

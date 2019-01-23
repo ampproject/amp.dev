@@ -5,4 +5,4 @@ $localization:
   path: /{locale}/documentation/examples/{base}.html
 $order: 3
 
-index: /content/amp-dev/documentation/examples/index.md
+index: /content/amp-dev/documentation/examples/index.html

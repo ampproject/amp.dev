@@ -1,40 +1,72 @@
+.#{utility('quote')} {
+  margin-bottom: 7em;
+  
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8vw;
+  }
+}
+
 .#{molecule('quote')} {
   grid-column: 6 / 20;
   display: flex;
   flex-direction: column;
-  padding: 75px 0;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 
   &-source {
-    flex: 0 0 30%;
+    flex: 0 0 auto;
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+    
+    @media screen and (min-width: 768px) {
+      flex: 0 0 30%;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .#{atom('img')} {
+      width: 100%;
+    }
 
     .#{atom('ico')} {
-      width: 100px;
-      height: 100px;
+      width: 40px;
+      height: 40px;
+      margin: 0 1em 0 0;
       fill: color('blue-ribbon');
 
       @media screen and (min-width: 768px) {
-        margin-left: auto;
+        width: 100px;
+        height: 100px;
+        margin: 0 0 1em auto;
       }
     }
   }
 
   &-quote {
-    padding: 50px 0 0 30px;
+    padding: 0 0 0 3.375em;
+    
+    @media screen and (min-width: 768px) {
+      padding: 50px 0 0 30px;
+    }
 
     blockquote {
       flex: 0 0 70%;
-      margin: 0;
+      margin: 0 0 2em;
 
       p.#{atom('txt')} {
         @include hl;
-        @include hl-h4;
-        line-height: 2;
+        @include hl-h6;
+        line-height: 1.8;
         font-style: italic;
         display: block;
+        
+        @media screen and (min-width: 768px) {
+          @include hl-h4;
+          line-height: 2;
+        }
 
         &:before {
           content: '\201C';
@@ -47,6 +79,11 @@
     }
     & p {
       @include txt;
+      @include txt-3;
+      
+      @media screen and (min-width: 768px) {
+        @include txt-2;
+      }
     }
   }
 }

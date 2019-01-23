@@ -1,7 +1,8 @@
 ---
 $title: 样式和布局
+toc: true
 ---
-[TOC]
+
 
 AMP HTML 网页的样式和布局与普通的 HTML 网页非常类似，均采用 CSS。
 

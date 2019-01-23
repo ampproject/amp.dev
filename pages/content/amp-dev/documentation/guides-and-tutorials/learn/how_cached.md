@@ -5,9 +5,11 @@ toc: true
 components:
     - youtube
 
+formats:
+    - websites
 ---
 
-[TOC]
+
 
 In this document, you'll learn about the role of the AMP Cache in the AMP ecosystem, and how your AMP page gets cached.
 
