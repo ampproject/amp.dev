@@ -62,6 +62,14 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
+  set teaser(teaser) {
+    this._frontmatter['teaser'] = teaser;
+  }
+
+  get contents() {
+    return this._contents;
+  }
+
   set contents(contents) {
     contents = this._convertSyntax(content);
     this._contents = contents;
