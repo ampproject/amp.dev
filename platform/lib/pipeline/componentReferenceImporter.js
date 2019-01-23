@@ -15,6 +15,8 @@
  */
 
 const {GitHubImporter} = require('./gitHubImporter');
+const categories = require(__dirname + '/../../config/imports/componentCategories.json');
+const formats = require(__dirname + '/../../config/imports/componentFormats.json');
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
@@ -38,7 +40,6 @@ class ComponentReferenceImporter extends GitHubImporter {
   async _importExtensionsDocs() {
     // Gives the contents of ampproject/amphtml/extensions
     let extensions = await this._repository.contentsAsync('extensions', this._latestReleaseTag);
-    const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 
     // As inside /extensions each component has its own folder filter
     // down by directory
@@ -57,16 +58,35 @@ class ComponentReferenceImporter extends GitHubImporter {
       if (!document) {
         this._log.warn(`No matching document for component: ${extension.name}`);
       } else {
-        // Ensure that the document has a TOC
-        document.toc = true;
-        // And try to add in the matching category
-        document.category = categories[extension.name];
+        this._setMetadata(extension.name, document);
         savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }
 
-
     return Promise.all(savedDocuments);
+  }
+
+  /**
+   * Set metadata that is required for the teaser
+   * @param {MarkdownDocument} document
+   */
+  _setMetadata(extensionName, document) {
+    // Splice out first sentence to show in teaser ...
+    const FIRST_SENTENCE = /#.*$\n(^.*)$/gm;
+    let firstSentence = FIRST_SENTENCE.exec(document.contents);
+    if (firstSentence !== null) {
+      firstSentence = firstSentence[1].replace(/<\/?[^>]+(>|$)/g, "");
+      console.log(firstSentence);
+
+      document.teaser = {'text': firstSentence};
+    }
+
+    // Ensure that the document has a TOC
+    document.toc = true;
+    // And try to add in the matching category ...
+    document.category = categories[extensionName];
+    // ... as well as all the formats the component is available in
+    document.formats = formats[extensionName];
   }
 
   /**

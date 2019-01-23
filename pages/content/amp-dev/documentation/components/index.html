@@ -18,7 +18,7 @@ $hidden: true
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
 
-{% for category, components in g.categories('/content/amp-dev/documentation/components/reference') %}
+{% for category, components in g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
 <div class="ad-o-teaser-grid">
   <h2>{{ category }}</h2>
   <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
@@ -38,6 +38,12 @@ $hidden: true
           <div class="ad-m-teaser-header">
             <h4 class="ad-m-teaser-header-title">{{ component.title }}</h4>
           </div>
+
+          {% if component.teaser and component.teaser.text %}
+          <div class="ad-m-teaser-content">
+            <p class="ad-m-teaser-copy">{{ component.teaser.text }}</p>
+          </div>
+          {% endif %}
         </div>
       </a>
     </div>

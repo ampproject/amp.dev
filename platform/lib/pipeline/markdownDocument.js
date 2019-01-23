@@ -15,6 +15,7 @@
  */
 
 const writeFile = require('write');
+const yaml = require('js-yaml');
 
 TOC_MARKER = '[TOC]';
 
@@ -57,14 +58,26 @@ class MarkdownDocument {
     this._frontmatter['$category'] = category;
   }
 
+  set formats(formats) {
+    this._frontmatter['formats'] = formats;
+  }
+
+  set teaser(teaser) {
+    this._frontmatter['teaser'] = teaser;
+  }
+
+  get contents() {
+    return this._contents;
+  }
+
   set contents(contents) {
     contents = this._convertSyntax(content);
     this._contents = contents;
   }
 
   _convertSyntax(contents) {
-    contents = this._rewriteCalloutToTip(contents);
-    contents = this.rewriteCodeBlocks(contents);
+    contents = MarkdownDocument.rewriteCalloutToTip(contents);
+    contents = MarkdownDocument.rewriteCodeBlocks(contents);
 
     // Rewrite mustache style parts
     contents =
@@ -82,7 +95,7 @@ class MarkdownDocument {
    * @param  {String} contents
    * @return {String}          The rewritten input
    */
-  static _rewriteCalloutToTip(contents) {
+  static rewriteCalloutToTip(contents) {
     const CALLOUT_PATTERN = /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
     const AVAILABLE_CALLOUT_TYPES = {
       'note': 'note',
@@ -124,13 +137,7 @@ class MarkdownDocument {
    * @return {Promise}
    */
   save(path) {
-    let frontmatter = '---\n';
-    for (const key in this._frontmatter) {
-      if (Object.prototype.hasOwnProperty.call(this._frontmatter, key)) {
-        frontmatter += `${key}: ${this._frontmatter[key]}\n`;
-      }
-    }
-    frontmatter += '---\n\n';
+    let frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
 
     path = path ? path : this._path;
     return writeFile.promise(path, frontmatter + this._contents);
