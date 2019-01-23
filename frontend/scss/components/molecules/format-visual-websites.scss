@@ -18,11 +18,12 @@ the border and format around the images.
 @import '../../functions';
 @import '../../mixins';
 @import '../../variables';
+
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/component-frame.scss';
 
-.#{molecule('format-visual')} {
+.#{molecule('format-visual-websites')} {
   width: 100%;
   max-width: 16em;
   padding: 0;
