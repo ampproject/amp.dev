@@ -1,6 +1,6 @@
 <section class="ad--sidebar">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen == true ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})">{{ _('Categories') }}</label>
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen == true ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0"></label>
   <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
 
   {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
