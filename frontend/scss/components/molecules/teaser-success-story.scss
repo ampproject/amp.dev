@@ -43,6 +43,7 @@
 			.#{molecule('teaser')} {
 				&-logo {
 					position: relative;
+					margin-bottom: 10px;
 
 					amp-img{
 						max-width: 180px;
