@@ -21,9 +21,14 @@ const URL = require('url').URL;
 const api = express.Router();
 
 const VALID_ORIGINS = new Set([
+  'amp.dev',
+  'api.amp.dev',
+  'amp-dev-staging.appspot.com',
+  'api-dot-amp-dev-staging.appspot.com',
   'ampbyexample.com',
   'ampstart.com',
   'ampstart-staging.firebaseapp.com',
+  'localhost:8082',
   'localhost:8080',
   'amp-by-example-staging.appspot.com',
   'amp-by-example-sebastian.appspot.com',

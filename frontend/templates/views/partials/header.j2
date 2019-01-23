@@ -28,7 +28,7 @@
 
     {# Add language selector between first- and second level navigation #}
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
-    <div class="ad-m-language-selector" href="#">
+    <div class="ad-m-language-selector">
       <a class="ad-m-language-selector-toggle">
         <span class="ad-m-nav-link">{{ doc.locale.language|upper }}</span>
         {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}

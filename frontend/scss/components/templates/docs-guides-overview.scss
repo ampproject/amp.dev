@@ -59,6 +59,10 @@
     display: block;
   }
 
+  .#{organism('teaser-grid-list')} {
+    padding-left: 1.25rem;
+  }
+
   .#{molecule('teaser')} {
     @include teaser;
     @include teaser-linking;
