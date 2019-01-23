@@ -18,7 +18,7 @@ $hidden: true
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
 
-{% for category, components in g.categories('/content/amp-dev/documentation/components/reference') %}
+{% for category, components in g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
 <div class="ad-o-teaser-grid">
   <h2>{{ category }}</h2>
   <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
