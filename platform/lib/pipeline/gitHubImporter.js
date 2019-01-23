@@ -16,6 +16,7 @@
 
 const octonode = require('octonode');
 const fs = require('fs');
+const path = require('path');
 const {Signale} = require('signale');
 
 const Document = require('./markdownDocument');
@@ -34,7 +35,7 @@ const log = new Signale({
 });
 
 function checkCredentials() {
-  if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID))) {
+  if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID)) && !LOCAL_AMPHTML_REPOSITORY) {
     log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
       'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
       'information.');
@@ -87,8 +88,8 @@ class GitHubImporter {
    * @param  {String} path Path to the file
    * @return {Document}    A document object containing all information
    */
-  _fetchDocument(path) {
-    if (!path) {
+  _fetchDocument(filePath) {
+    if (!filePath) {
       this._log.warn('Can not download from undefined path.');
       return new Promise((resolve) => {
         resolve(null);
@@ -98,27 +99,29 @@ class GitHubImporter {
     return new Promise((resolve) => {
       const process = (function(err, data) {
         if (err) {
-          this._log.fatal(`Error while downloading ${path}`, err);
+          this._log.fatal(`Error while downloading ${filePath}`, err);
           throw err;
         }
 
         if (data && data.content !== undefined && !data.content.length) {
-          this._log.info(`${path} is empty. Skipping ...`);
+          this._log.info(`${filePath} is empty. Skipping ...`);
           return;
         }
 
         let contents = new Buffer(data.content || data, 'base64');
         contents = contents.toString();
 
-        const relativePath = path.substr(0, path.lastIndexOf('/'));
+        const relativePath = filePath.substr(0, filePath.lastIndexOf('/'));
 
         resolve(new Document(relativePath, contents));
       }).bind(this);
 
       if (LOCAL_AMPHTML_REPOSITORY) {
-        fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, path), process);
+        this._log.info(`Reading ${filePath} from local disk ...`);
+        fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, filePath), process);
       } else {
-        this._repository.contents(path, this._latestReleaseTag, process);
+        this._log.info(`Downloading ${filePath} from remote ...`);
+        this._repository.contents(filePath, this._latestReleaseTag, process);
       }
     });
   }
