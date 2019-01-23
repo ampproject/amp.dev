@@ -1,13 +1,18 @@
 {% set empty_toc = doc.format.toc == '<div class="toc">\n<ul></ul>\n</div>\n' or not doc.format.toc %}
 
 {% if not empty_toc and (doc.toc or doc.content.find('[TOC]')) %}
+{% do doc.icons.useIcon('icons/contentmenu.svg') %}
+{% do doc.icons.useIcon('icons/close.svg') %}
 <section class="ad--toc">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" for="toc">Contents</label>
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" [class]="contentmenuopen == true ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc contentmenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc'" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#contentmenu"></use></svg>
+    <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+  </label>
   <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc">
 
   {% do doc.styles.addCssFile('/css/components/organisms/toc.css') %}
-  <div class="ad-o-toc">
+  <div class="ad-o-toc" [class]="contentmenuopen == true ? 'ad-o-toc contentmenuopen' : 'ad-o-toc'">
     <p class="ad-o-toc-hl">Table of contents</p>
     {{ doc.format.toc|safe }}
   </div>

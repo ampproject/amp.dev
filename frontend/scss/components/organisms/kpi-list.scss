@@ -1,0 +1,36 @@
+/*
+
+##########################
+### ORGANSIM: kpi-list ###
+##########################
+
+### INFO:
+
+### MODIFIERS:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../templates/_default.scss';
+
+.#{organism('kpi-list')} {
+  @include container;
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: repeat(23, 1fr);
+    padding: 0;
+  }
+
+  grid-column: 1/-1;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}

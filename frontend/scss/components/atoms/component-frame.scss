@@ -32,6 +32,13 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     @include gradient-default;
     
     @media screen and (min-width: 768px) {
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      left: -4px;
+      top: -4px;
+    }
+    
+    @media screen and (min-width: 1024px) {
       width: calc(100% + 10px);
       height: calc(100% + 10px);
       left: -5px;
@@ -47,7 +54,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     padding: 3px 6px;
     background-color: color('doger-blue');
     @include txt;
-    @include txt-3;
+    font-size: 8px;
     @include txt-mono;
     @include txt-strong;
     @include color-white;

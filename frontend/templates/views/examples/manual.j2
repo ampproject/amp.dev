@@ -86,7 +86,7 @@ tags are specific for amp.dev #}
 
       <ul class="ad--ctas">
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
-        {% set playground_url = podspec.base_urls.playground + podspec.base_urls.sample_source + doc.url.path + '/source' %}
+        {% set playground_url = podspec.base_urls.playground + podspec.base_urls.api + doc.url.path + '/source' %}
         {% if not playground_disabled %}
         <li>
           {% do doc.icons.useIcon('/icons/internal.svg') %}

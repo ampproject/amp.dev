@@ -7,7 +7,7 @@
 
 .#{organism('toc')} {
   position: fixed;
-  z-index: 16;
+  z-index: 17;
   top: 0;
   right: 0;
   height: 100vh;
@@ -15,7 +15,10 @@
   padding: 15px;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  transition: transform 0.2s ease;
+  transition: transform 0.4s ease;
+  &.contentmenuopen {
+    z-index: 18;
+  }
 
   @media screen and (min-width: 1024px) {
     position: -webkit-sticky;

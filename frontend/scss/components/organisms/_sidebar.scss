@@ -8,15 +8,16 @@
 
 @mixin sidebar {
   position: fixed;
-  z-index: 15;
+  z-index: 20;
   top: 0;
   left: 0;
   height: 100vh;
+  padding-bottom: 80px;
   overflow-y: auto;
-  width: auto;
+  width: 100%;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  transition: transform 0.2s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   @media screen and (min-width: 768px) {
     position: -webkit-sticky;
@@ -24,6 +25,7 @@
     z-index: 0;
     top: 132px;
     left: auto;
+    padding-bottom: 0;
     height: calc(100vh - 132px);
     width: auto;
     margin-right: 0;

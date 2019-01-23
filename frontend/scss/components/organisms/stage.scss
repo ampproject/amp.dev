@@ -51,11 +51,21 @@
   }
 
   .#{molecule('format-visual')} {
-    grid-column: 13 / -1;
-    margin-top: -8%;
+    grid-column: 9 / -1;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -30%;
 
     @media screen and (min-width: 768px) {
-      margin-top: -60%;
+      position: static;
+      margin-top: -50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin-top: -40%;
     }
   }
 }
@@ -84,33 +94,49 @@
 
   div.#{utility('container')} {
     padding: 0 2em;
+    
     @media screen and (min-width: 768px) {
       padding: 0 0 0 2.5em;
     }
   }
 
 	&-content {
-    grid-column: 3 / 17;
     position: relative;
     margin: 20vw 0;
 
     @media screen and (min-width: 768px) {
+      grid-column: 3 / 16;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      grid-column: 3 / 18;
       margin: 7vw 0 11vw;
     }
 
     &-icon {
       @include ico;
-      @include ico-3;
+      @include ico-2;
       position: absolute;
       left: 0;
       bottom: calc(100% + 1em);
+      padding: 0.5em;
+      border: 1px solid color('white');
+      border-radius: 50%;
 
       @media screen and (min-width: 768px) {
-        @include ico-5;
         left: auto;
         bottom: auto;
+        right: calc(100% + 0.75em);
+        top: -0.6em;
+      }
+      
+      @media screen and (min-width: 1024px) {
+        width: 3em;
+        height: 3em;
         right: calc(100% + 1em);
         top: -1.5em;
+        padding: 1em;
+        border-width: 2px;
       }
     }
 
@@ -128,7 +154,31 @@
       margin-top: 0;
 
       @media screen and (min-width: 768px) {
+        @include txt-2;
+      }
+
+      @media screen and (min-width: 1024px) {
         @include txt-lrg;
+      }
+    }
+  }
+
+  &-websites, &-ads {
+    .#{organism('stage')} {
+      &-content {
+        &-icon { @include fill-websites; border-color: color('white'); }
+        &-headline { @include color-websites; }
+        &-subline { @include color-websites; }
+      }
+    }
+  }
+
+  &-emails, &-stories {
+    .#{organism('stage')} {
+      &-content {
+        &-icon { @include fill-stories; border-color: color('ultramarine'); }
+        &-headline { @include color-stories; }
+        &-subline { @include color-stories; }
       }
     }
   }

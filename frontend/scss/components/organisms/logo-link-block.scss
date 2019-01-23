@@ -1,0 +1,58 @@
+/*
+
+#################################
+### ORGANSIM: logo-link-block ###
+#################################
+
+### INFO:
+
+### MODIFIERS:
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../templates/_default.scss';
+
+ul.#{organism('logo-link-block')} {
+  & {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+li.#{organism('logo-link-block-item')} {
+  flex: 1 100%;
+  margin-bottom: 1.25rem;
+  max-width: 100%;
+  padding-left: 0 !important;
+
+  @media screen and (min-width: 550px) and (max-width: 1023px) {
+    &:nth-child(odd) {
+      padding-right: 1.5rem;
+    }
+
+    flex: 1 50%;
+    max-width: 50%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:nth-child(n + 1), &:nth-child(n + 2) {
+      padding-right: 1.5rem;
+    }
+
+    &:nth-child(3n) {
+      padding-right: 0;
+    }
+
+    flex: 1 33.333%;
+    max-width: 33.333%;
+    padding-left: 1.5rem;
+  }
+}
