@@ -80,20 +80,23 @@
     #}
     {% if doc.kpis %}
       {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-      <div class="ad--kpi ad--container-fluid">
-        {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-        {% for kpi in doc.kpis %}
-          <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
-            <div class="ad-m-kpi-content">
-              {% if kpi.value %}
-                <span class="ad-m-kpi-number">{{kpi.value|safe}}</span>
-              {% endif %}
-              {% if kpi.text %}
-                <span class="ad-m-kpi-text">{{kpi.text|safe}}</span>
-              {% endif %}
+      {% do doc.styles.addCssFile('css/components/organisms/kpi-list.css') %}
+      <div class="ad--kpi">
+        <div class="ad-o-kpi-list">
+          {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+          {% for kpi in doc.kpis %}
+            <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
+              <div class="ad-m-kpi-content">
+                {% if kpi.value %}
+                  <span class="ad-m-kpi-number">{{kpi.value|safe}}</span>
+                {% endif %}
+                {% if kpi.text %}
+                  <span class="ad-m-kpi-text">{{kpi.text|safe}}</span>
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     {% endif%}
 
