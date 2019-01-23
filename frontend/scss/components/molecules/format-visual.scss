@@ -98,15 +98,17 @@ the border and format around the images.
     width: 12em;
     font-size: 10px;
     filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
-    animation: 10s ease-in-out infinite bounce -2s;
+    transform: translateY(-4em);
     
     @media screen and (min-width: 768px) {
       width: auto;
       font-size: inherit;
+      transform: translateY(0);
     }
     
     .#{molecule('code-snippet')} {
       margin: 0;
+      animation: 10s ease-in-out infinite bounce -2s;
     }
 
     &-highlight:before {
