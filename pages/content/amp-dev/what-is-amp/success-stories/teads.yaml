@@ -11,8 +11,8 @@ teaser:
     alt: Teads
   logo:
     src: '/static/img/success-stories/teads/teads_logo.png'
-    width: 153
-    height: 38
+    width: 260
+    height: 160
     alt: Teads
   text: Teads brings AMP'd mobile video inventory to nearly 100 publishers
 

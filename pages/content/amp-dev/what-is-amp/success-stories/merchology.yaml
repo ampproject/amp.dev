@@ -11,8 +11,8 @@ teaser:
     alt: Merchology
   logo:
     src: '/static/img/success-stories/merchology/merchology_logo.png'
-    width: 153
-    height: 38
+    width: 709
+    height: 169
     alt: Merchology
   text: Merchology increases conversions, lowers load times with AMP
 

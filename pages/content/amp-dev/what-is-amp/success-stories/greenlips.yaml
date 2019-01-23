@@ -11,8 +11,8 @@ teaser:
     alt: greenslips.com.au
   logo:
     src: '/static/img/success-stories/greenslips/greenslips_logo.png'
-    width: 153
-    height: 38
+    width: 220
+    height: 25
     alt: greenslips.com.au
   text: greenslips.com.au boosts conversions by 12-15%, mobile speed by 15% with AMP
 

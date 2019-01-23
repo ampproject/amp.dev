@@ -11,8 +11,8 @@ teaser:
     alt: Fastcommerce
   logo:
     src: '/static/img/success-stories/fastcommerce/fastcommerce_logo.png'
-    width: 153
-    height: 38
+    width: 170
+    height: 42
     alt: Fastcommerce
   text: Fastcommerce drives conversions for clients by building AMP-first
 

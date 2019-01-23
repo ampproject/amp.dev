@@ -11,8 +11,8 @@ teaser:
     alt: Metromile
   logo:
     src: '/static/img/success-stories/metromile/metromile_logo.png'
-    width: 153
-    height: 38
+    width: 250
+    height: 41
     alt: Metromile
   text: Metromile lowers costs, reaches more potential customers with AMP
 

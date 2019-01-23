@@ -11,8 +11,8 @@ teaser:
     alt: DiscoverCarHire.com
   logo:
     src: '/static/img/success-stories/discover_car/discover_car_logo.png'
-    width: 153
-    height: 38
+    width: 409
+    height: 80
     alt: DiscoverCarHire.com
   text: DiscoverCarHire.com drives conversions with faster mobile page load times via AMP
 

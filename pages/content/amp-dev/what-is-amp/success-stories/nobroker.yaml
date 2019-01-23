@@ -11,8 +11,8 @@ teaser:
     alt: NoBroker
   logo:
     src: '/static/img/success-stories/nobroker/nobroker_logo.png'
-    width: 153
-    height: 38
+    width: 200
+    height: 59
     alt: NoBroker
   text: Leading French organic retailer doubles mobile conversions with AMP
 

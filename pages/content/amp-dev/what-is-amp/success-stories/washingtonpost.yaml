@@ -11,8 +11,8 @@ teaser:
     alt: Washington Post
   logo:
     src: '/static/img/success-stories/washington_post/washington_post_logo.png'
-    width: 153
-    height: 38
+    width: 1280
+    height: 197
     alt: Washington Post
   text: AMP helps the Washington Post increase returning users from mobile search by 23%
 

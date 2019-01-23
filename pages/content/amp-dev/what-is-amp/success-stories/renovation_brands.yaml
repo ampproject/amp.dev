@@ -11,8 +11,8 @@ teaser:
     alt: Renovation Brands
   logo:
     src: '/static/img/success-stories/renovation/renovation_logo.png'
-    width: 153
-    height: 38
+    width: 250
+    height: 42
     alt: Renovation Brands
   text: Leading French organic retailer doubles mobile conversions with AMP
 

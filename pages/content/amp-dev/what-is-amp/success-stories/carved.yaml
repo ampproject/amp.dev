@@ -11,8 +11,8 @@ teaser:
     alt: Carved
   logo:
     src: '/static/img/success-stories/carved/carved_logo.png'
-    width: 153
-    height: 38
+    width: 214
+    height: 50
     alt: Carved
   text: Carved increases conversion rate by 75% with AMP and PWA
 
