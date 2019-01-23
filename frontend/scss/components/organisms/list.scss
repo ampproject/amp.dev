@@ -22,6 +22,11 @@ nowrap-desktop
 
 */
 
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
 .#{organism('list')} {
 	margin: 0 -0.625em;
 
