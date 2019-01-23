@@ -38,6 +38,12 @@ $hidden: true
           <div class="ad-m-teaser-header">
             <h4 class="ad-m-teaser-header-title">{{ component.title }}</h4>
           </div>
+
+          {% if component.teaser and component.teaser.text %}
+          <div class="ad-m-teaser-content">
+            <p class="ad-m-teaser-copy">{{ component.teaser.text }}</p>
+          </div>
+          {% endif %}
         </div>
       </a>
     </div>
