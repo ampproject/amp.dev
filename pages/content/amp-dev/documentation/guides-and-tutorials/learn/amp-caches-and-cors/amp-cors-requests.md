@@ -256,7 +256,7 @@ There are two scenarios to account for in CORS requests to your endpoint:
 
 Let's walk though these scenarios with an example. In our example, we manage the `example.com` site that hosts an AMP page named `article-amp.html.`The AMP page contains an `amp-list` to retrieve dynamic data from a `data.json` file that is also hosted on `example.com`.  We want to process requests to our `data.json` file that come from our AMP page.  These requests could be from the AMP page on the same origin (non-cached) or from the AMP page on a different origin (cached).
 
-<amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
+<amp-img alt="CORS example" layout="responsive" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
   <noscript>
     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" />
   </noscript>
@@ -353,7 +353,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
 In the following scenario, the `article-amp.html` page requests the `data.json` file; the origins are the same.
 
-<amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
+<amp-img alt="CORS example - scenario 1" layout="responsive" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
   <noscript>
     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" />
   </noscript>
@@ -382,7 +382,7 @@ AMP-Access-Control-Allow-Source-Origin: https://example.com
 
 In the following scenario, the `article-amp.html` page cached on the Google AMP Cache requests the `data.json` file; the origins differ.
 
-<amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
+<amp-img alt="CORS example - scenario 2" layout="responsive" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
   <noscript>
     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" />
   </noscript>
