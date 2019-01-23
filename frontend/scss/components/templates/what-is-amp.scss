@@ -85,5 +85,13 @@
         }
       }
     }
+    
+    & + .#{utility('content')} {
+      margin-top: -15%;
+
+      h1 {
+        @include hl-xxlrg;
+      }
+    }
   }
 }
