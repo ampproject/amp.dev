@@ -14,24 +14,26 @@ $view: /views/overview/what-is-amp.j2
 
 <div class="ad--kpi ad--container">
   {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
-    <div class="ad-m-kpi-content">
+  <div class="ad-o-kpi-list">
+    <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
+      <div class="ad-m-kpi-content">
         <span class="ad-m-kpi-number">3-4x</span>
         <span class="ad-m-kpi-text">faster load times</span>
-    </div>
-  </div>
-  <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
-      <div class="ad-m-kpi-content">
-          <span class="ad-m-kpi-number">3-4x</span>
-          <span class="ad-m-kpi-text">faster load times</span>
       </div>
     </div>
     <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
-        <div class="ad-m-kpi-content">
-            <span class="ad-m-kpi-number">3-4x</span>
-            <span class="ad-m-kpi-text">faster load times</span>
-        </div>
+      <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
       </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-stories ad-m-teaser-kpi ad-m-teaser-kpi-stories">
+      <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <section class="ad--content">

@@ -28,20 +28,21 @@
 @import '../organisms/component-visual.scss';
 @import '../organisms/benefits-overview.scss';
 @import '../organisms/made-of.scss';
+@import '../organisms/kpi-list.scss';
 
 @import '../templates/_default.scss';
 
 .#{template('what-is-amp')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
 
-    
+
   .#{utility('content')} {
     @include default-section-padding;
     .#{utility('container')} {
@@ -82,29 +83,12 @@
       @media screen and (min-width: 768px) {
         padding: 0 0 0 7.5vw;
         position: relative;
-      } 
+      }
     }
   }
 
   .#{utility('kpi')} {
     padding: 5rem 0;
-    
-    .#{molecule('kpi')} {
-      grid-column: span 8;
-      padding-bottom: 56.25%;
-
-      &:nth-child(3n+1) {
-        grid-column: 4 / 10;
-      }
-
-      &:nth-child(3n+2) {
-        grid-column: 10 / 16;
-      }
-
-      &:nth-child(3n+3) {
-        grid-column: 16 / 22;
-      }
-    }
   }
 }
 
