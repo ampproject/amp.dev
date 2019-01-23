@@ -4,14 +4,14 @@
 {% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ad-m-nav-link-active{% endif %}
 {%- endmacro %}
 
-<label class="ad-o-burger-menu-label" for="burger-menu">
+<label class="ad-o-burger-menu-label" [class]="mainmenuopen ? 'ad-o-burger-menu-label mainmenuopen' : 'ad-o-burger-menu-label'" for="burger-menu" on="tap:AMP.setState({mainmenuopen: !mainmenuopen})">
   <div class="ad-a-ico ad-o-burger-menu-icon">
     {% do doc.icons.useIcon('/icons/menu.svg') %}
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
   </div>
 </label>
-<input id="burger-menu" class="ad-o-burger-menu-input" type="checkbox"/>
-<nav class="ad-o-burger-menu">
+<input id="burger-menu" class="ad-o-burger-menu-input" type="checkbox" autocomplete="off"/>
+<nav class="ad-o-burger-menu" [class]="mainmenuopen ? 'ad-o-burger-menu mainmenuopen' : 'ad-o-burger-menu'">
   <ul class="ad-o-burger-menu-items">
     {# Sections #}
     {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
