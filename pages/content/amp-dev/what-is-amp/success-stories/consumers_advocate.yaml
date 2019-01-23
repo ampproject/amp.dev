@@ -11,8 +11,8 @@ teaser:
     alt: ConsumersAdvocate.org
   logo:
     src: '/static/img/success-stories/consumer_advocate/ca_logo.png'
-    width: 153
-    height: 38
+    width: 1650
+    height: 228
     alt: ConsumersAdvocate.org
   text: ConsumersAdvocate.org boosts site performance with AMP
 

@@ -11,8 +11,8 @@ teaser:
     alt: U.S. Xpress
   logo:
     src: '/static/img/success-stories/us_xpress/us_xpress_logo.png'
-    width: 153
-    height: 38
+    width: 493
+    height: 132
     alt: U.S. Xpress
   text: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress
 

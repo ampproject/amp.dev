@@ -11,8 +11,8 @@ teaser:
     alt: CNBC
   logo:
     src: '/static/img/success-stories/cnbc/cnbc_logo_thumb.png'
-    width: 153
-    height: 38
+    width: 200
+    height: 35
     alt: CNBC
   text: CNBC sees mobile speed and engagement gains with AMP
 

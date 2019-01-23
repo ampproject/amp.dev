@@ -11,8 +11,8 @@ teaser:
     alt: Tokopedia
   logo:
     src: '/static/img/success-stories/tokopedia/tokopedia_logo.png'
-    width: 153
-    height: 38
+    width: 200
+    height: 200
     alt: Tokopedia
   text: Tokopedia boosts mobile performance with AMP and PWA
 

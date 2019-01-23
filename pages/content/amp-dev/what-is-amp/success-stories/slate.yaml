@@ -11,8 +11,8 @@ teaser:
     alt: Slate
   logo:
     src: '/static/img/success-stories/slate/slate_logo.png'
-    width: 153
-    height: 38
+    width: 200
+    height: 84
     alt: Slate
   text: Slate gets efficient with AMP
 

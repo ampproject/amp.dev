@@ -11,8 +11,8 @@ teaser:
     alt: India Today
   logo:
     src: '/static/img/success-stories/indiatoday/indiatoday_logo.png'
-    width: 153
-    height: 38
+    width: 340
+    height: 154
     alt: India Today
   text: India Today delights readers and boosts revenue with AMP
 

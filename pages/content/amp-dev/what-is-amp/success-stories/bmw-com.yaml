@@ -11,8 +11,8 @@ teaser:
     alt: BMW.com
   logo:
     src: '/static/img/success-stories/bmw_jvm/bmw_logo.png'
-    width: 153
-    height: 38
+    width: 231
+    height: 80
     alt: BMW.com
   text: The story of the all-new BMW.com
 

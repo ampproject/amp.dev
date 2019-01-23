@@ -11,8 +11,8 @@ teaser:
     alt: Hearst
   logo:
     src: '/static/img/success-stories/hearst/hearst_logo.png'
-    width: 153
-    height: 38
+    width: 600
+    height: 138
     alt: Hearst
   text: Hearst integrates key partner and product solutions on AMP
 

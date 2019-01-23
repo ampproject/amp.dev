@@ -11,8 +11,8 @@ teaser:
     alt: Relay Media
   logo:
     src: '/static/img/success-stories/relay_media/relay_media_logo.png'
-    width: 153
-    height: 38
+    width: 800
+    height: 90
     alt: Relay Media
   text: Relay Media helps publishers get AMP’d
 

@@ -11,8 +11,8 @@ teaser:
     alt: Eski.mobi
   logo:
     src: '/static/img/success-stories/eski/eski_logo.png'
-    width: 153
-    height: 38
+    width: 367
+    height: 100
     alt: Eski.mobi
   text: Eski.mobi serves businesses going mobile with AMP
 

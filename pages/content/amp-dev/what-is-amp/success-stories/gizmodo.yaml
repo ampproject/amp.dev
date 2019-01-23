@@ -11,8 +11,8 @@ teaser:
     alt: Gizmodo
   logo:
     src: '/static/img/success-stories/Gizmodo/gizmodo_logo.png'
-    width: 153
-    height: 38
+    width: 711
+    height: 105
     alt: Gizmodo
   text: AMP makes Gizmodo 3x faster on mobile
 

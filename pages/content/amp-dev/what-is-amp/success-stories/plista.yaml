@@ -11,8 +11,8 @@ teaser:
     alt: plista
   logo:
     src: '/static/img/success-stories/plista/plista_logo.png'
-    width: 153
-    height: 38
+    width: 1000
+    height: 358
     alt: plista
   text: plista grows publisher revenue & user engagement with AMP
 

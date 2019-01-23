@@ -11,8 +11,8 @@ teaser:
     alt: Readwhere
   logo:
     src: '/static/img/success-stories/readwhere/readwhere_logo.png'
-    width: 153
-    height: 38
+    width: 261
+    height: 65
     alt: Readwhere
   text: Readwhere provides seamless mobile content via AMP and PWA
 
