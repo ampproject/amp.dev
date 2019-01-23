@@ -103,10 +103,8 @@ Untuk memverifikasi bahwa data terstruktur Anda benar, banyak platform menyediak
 
 Jika data terstruktur valid, Anda seharusnya melihat **0 error** dan **0 peringatan**.
 
-<<<<<<< HEAD
+[tip type="read-on"]
 Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang kemampuan halaman untuk ditemukan, lihat panduan [Membuat halaman Anda dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}).
-=======
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang kemampuan halaman untuk ditemukan, lihat panduan [Membuat halaman Anda dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}).
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
+[/tip]
 
 Kerja bagus!  Anda telah menyelesaikan artikel berita AMP.
