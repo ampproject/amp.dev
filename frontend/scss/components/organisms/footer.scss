@@ -17,12 +17,12 @@
 @import '../atoms/_icon.scss';
 
 .#{utility('footer')} {
-  padding: 75px 0 20px;
+  padding: 75px 0 100px;
   @include txt;
   @include txt-1;
   @include color-white;
   @include river-ebony;
-
+  
   @media screen and (min-width: 1024px) {
     padding: 35px 0 30px;
   }
