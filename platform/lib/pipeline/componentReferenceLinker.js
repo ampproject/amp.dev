@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const { Signale } = require('signale');
+const {Signale} = require('signale');
 const gulp = require('gulp');
 const through = require('through2');
 const path = require('path');
@@ -33,10 +33,9 @@ const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components
  * exists at the pointed path and tries to adjust the path if not
  */
 class ComponentReferenceLinker {
-
   constructor() {
     this._log = new Signale({
-      'scope': 'Reference linker'
+      'scope': 'Reference linker',
     });
     this._placeholders = {};
   }
@@ -46,15 +45,15 @@ class ComponentReferenceLinker {
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
-      stream = stream.pipe(through.obj((function(doc, encoding, callback) {
+      stream = stream.pipe(through.obj((doc, encoding, callback) => {
         // this._log.await(`Checking ${doc.relative} ...`);
         stream.push(this._link(doc));
         callback();
-      }).bind(this)));
+      }));
 
       stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
-        this._log.complete(`Linked all component references!`);
+        this._log.complete('Linked all component references!');
 
         resolve();
       });
@@ -69,38 +68,44 @@ class ComponentReferenceLinker {
     let content = doc.contents.toString();
 
     // Cases
-    let cases = [
+    const cases = [
       content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
       content.match(/\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
       content.match(/\[amp-\w*(-\w*)*]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
       content.match(/\[\`amp-\w*(-\w*)*\`]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
       content.match(/\`amp-\w*(-\w*)*`/gm),
-      content.match(/amp-\w*(-\w*)*/gm)
+      content.match(/amp-\w*(-\w*)*/gm),
     ];
 
-    for (var i = 0; i < cases.length; i++) {
-      let results = Array.from(new Set(cases[i]))
+    this._log.error('Check: ', cases[cases.length - 1]);
+
+    for (let i = 0; i < cases.length; i++) {
+      const results = Array.from(new Set(cases[i]));
       for (let j = 0; j < results.length; j++) {
-        let result = results[j];
-        console.log(result);
+        const result = results[j];
+
         if (i > 3 && (result.includes(']') || result.includes('/') || result.includes('"'))) {
-          this._log.error(result)
-          continue
+          this._log.error('continue:', result);
+          continue;
         }
 
-        let component = result.match(/amp-\w*(-\w*)*/g)[0];
-        if (this._componentExist(component) === true) {
-          this._log.start(this._componentPath(component));
-          while (content.includes(result)) {
-            content = content.replace(result, this._createPlaceholder(component));
-          }
+
+        if (i === 5) {
+
         } else {
-          this._log.error(component)
+          const component = result.match(/amp-\w*(-\w*)*/g)[0];
+          if (this._componentExist(component) === true) {
+            while (content.includes(result)) {
+              content = content.replace(result, this._createPlaceholder(component));
+            }
+          } else {
+            // this._log.error('component does not exist', component);
+          }
         }
       }
     }
 
-    for (let placeholder of Object.keys(this._placeholders)) {
+    for (const placeholder of Object.keys(this._placeholders)) {
       while (content.includes(placeholder)) {
         content = content.replace(placeholder, this._placeholders[placeholder]);
       }
@@ -111,43 +116,49 @@ class ComponentReferenceLinker {
   }
 
   _hash(str) {
-  	let hash = 0;
-  	if (this.length == 0) return hash;
-  	for (let i = 0; i < this.length; i++) {
-  		char = this.charCodeAt(i);
-  		hash = ((hash<<5)-hash)+char;
-  		hash = hash & hash; // Convert to 32bit integer
-  	}
-  	return hash;
+  	// let hash = 0;
+  	// if (this.length == 0) return hash;
+  	// for (let i = 0; i < this.length; i++) {
+  	// 	char = this.charCodeAt(i);
+  	// 	hash = ((hash<<5)-hash)+char;
+  	// 	hash = hash & hash; // Convert to 32bit integer
+  	// }
+  	// return hash;
+
+    const hash = str.split('').reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+    this._log.error(hash);
+    return hash;
   }
 
   _createPlaceholder(component) {
-    let placeholder = `<!--${this._hash(component)}-->`;
+    const placeholder = `<!--${this._hash(component)}-->`;
     if (!this._placeholders[placeholder]) {
-        this._placeholders[placeholder] = this._componentPath(component);
+      this._placeholders[placeholder] = this._componentPath(component);
     }
-    return placeholder
+    return placeholder;
   }
 
   _componentPath(component) {
-    let char = component.slice(4, 5).toUpperCase();
-    let path = `({{g.doc('/content/amp-dev/documentation/components/${char}/${component}.md', locale=doc.locale).url.path}})`
+    const char = component.slice(4, 5).toUpperCase();
+    const path = `({{g.doc('/content/amp-dev/documentation/components/reference/${component}.md', locale=doc.locale).url.path}})`;
     return `[\`${component}\`]${path}`;
   }
 
   _componentExist(component) {
-    let char = component.slice(4, 5).toUpperCase();
-    let path = COMPONENTS_SRC + char + '/' + component + '.md';
+    const char = component.slice(4, 5).toUpperCase();
+    const path = COMPONENTS_SRC + '/reference/' + component + '.md';
+
+    this._log.start('Path:', path);
 
     if (fs.existsSync(path)) {
-      return true
+      return true;
     }
   }
 }
 
 // If not required, run directly
 if (!module.parent) {
-  let referenceLinker = new ComponentReferenceLinker();
+  const referenceLinker = new ComponentReferenceLinker();
   referenceLinker.start();
 }
 
