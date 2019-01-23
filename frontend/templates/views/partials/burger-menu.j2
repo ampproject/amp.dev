@@ -4,7 +4,7 @@
 {% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ad-m-nav-link-active{% endif %}
 {%- endmacro %}
 
-<label class="ad-o-burger-menu-label" [class]="mainmenuopen ? 'ad-o-burger-menu-label mainmenuopen' : 'ad-o-burger-menu-label'" for="burger-menu" on="tap:AMP.setState({mainmenuopen: !mainmenuopen})">
+<label class="ad-o-burger-menu-label" [class]="mainmenuopen ? 'ad-o-burger-menu-label mainmenuopen' : 'ad-o-burger-menu-label'" for="burger-menu" on="tap:AMP.setState({mainmenuopen: !mainmenuopen})" role="burgermenutrigger" tabindex="0">
   <div class="ad-a-ico ad-o-burger-menu-icon">
     {% do doc.icons.useIcon('/icons/menu.svg') %}
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
