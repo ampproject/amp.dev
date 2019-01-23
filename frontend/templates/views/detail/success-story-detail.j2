@@ -30,9 +30,13 @@
 
       {# ghost frame block #}
       {% if doc.stage.devices %}
+        {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
         <div class="ad-o-ghost-frame-block">
           {% for device in doc.stage.devices %}
             {% if device %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
                 {% if device.video_src %}
                 <amp-video
@@ -106,6 +110,9 @@
               <div class="ad-m-text-media media">
             {% endif %}
               {% if content.type %}
+                {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+                {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+                {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
                 <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
                 {% if content.video_src %}
                 <amp-video
@@ -148,6 +155,9 @@
         {% if content.layout == 'media' %}
           <div class="ad-o-text-media-block">
             {% if content.type %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
               <amp-video
@@ -228,6 +238,9 @@
               <div class="ad-m-text-media media">
             {% endif %}
               {% if content.type %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
                 <amp-img
                   alt="{{content.alt}}"
