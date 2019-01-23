@@ -24,9 +24,14 @@
 
 @import '../templates/_default.scss';
 
+body {
+  background-color: color('whisper');
+}
+
 .#{template('success-story')} {
   overflow: hidden;
   perspective: 80rem;
+
 
   .#{utility('container')} {
     @include container;
@@ -47,10 +52,10 @@
   }
 
   .#{utility('stage')} {
-    padding-bottom: 20vw;
+    padding-bottom: 70vw;
 
-    @media screen and (max-width: 767px) {
-      padding-bottom: 100vw;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 8vw;
     }
 
     .#{organism('stage-content')} {
@@ -95,6 +100,22 @@
 
   .#{organism('text-media-block')} {
     padding-bottom: 17.5rem;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .media {
+      .#{molecule('ghost-frame-tablet')}{
+        max-width: 60%;
+      }
+
+      .#{molecule('ghost-frame-mobile')}{
+        max-width: 40%;
+      }
+    }
 
     @media screen and (max-width: 767px) {
       padding-bottom: 8.75rem;
