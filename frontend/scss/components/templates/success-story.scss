@@ -80,6 +80,13 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      li {
+        font-family: 'Noto Sans';
+        line-height: 1.6em;
+        font-weight: normal;
+        color: #48525C;
+      }
     }
 
     .media {
