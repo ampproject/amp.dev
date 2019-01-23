@@ -1,31 +1,22 @@
 ---
 $title: Templates
-$view: /views/overview/template-overview.j2
+$view: /views/custom.j2
+$path: /documentation/templates.html
+$localization:
+  path: /{locale}/documentation/templates/index.md
 ---
-<section class="ad--stage ad--container-fluid">
-[stage]
-## How to Build with AMP without knowing how to code?
-# Easily build user first with our templates
-[/stage]
-</section>
+{% do doc.styles.addCssFile('css/components/templates/template.css') %}
 
-
-<section class="ad--intro ad--container">
-  <div class="ad--content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex. Vivamus eget est nec lorem semper ultrices eu eu elit. Ut id sem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac accumsan ex.</div>
-
-[filter-bubbles]
-  - All
-  - E-Commerce
-  - News & Blogs
-  - Art & Desgin
-  - Food & Drinks
-[/filter-bubbles]
-</section>
-
-
-[teaser-grid]
-[](/content/shared/fill-ins/template.md)
-[](/content/shared/fill-ins/template.md)
-[](/content/shared/fill-ins/template.md)
-[](/content/shared/fill-ins/template.md)
-[/teaser-grid]
+<main class="ad--main ad-t-template">
+  <section class="ad--stage ad--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+    <div class="ad-o-stage ad-o-stage-websites">
+      <div class="ad--container">
+        <div class="ad-o-stage-content">
+            <h2 class="ad-o-stage-content-subline">{{ _('How to build AMP without knowing how to code?') }}</h2>
+            <h1 class="ad-o-stage-content-headline">{{ _('Easily build user first websites with our templates' ) }}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
