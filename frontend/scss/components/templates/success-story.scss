@@ -55,7 +55,12 @@ body {
     padding-bottom: 70vw;
 
     @media screen and (min-width: 768px) {
-      padding-bottom: 8vw;
+      padding-bottom: 5vw;
+    }
+
+    .stage-logo {
+      width: 15%;
+      height: auto;
     }
 
     .#{organism('stage-content')} {
@@ -70,7 +75,7 @@ body {
   }
 
   .#{utility('kpi')} {
-    padding-bottom: 17rem;
+    padding-bottom: 5rem;
 
     @media screen and (max-width: 767px) {
       padding-bottom: 8.5rem;
@@ -99,7 +104,7 @@ body {
   }
 
   .#{organism('text-media-block')} {
-    padding-bottom: 17.5rem;
+    padding-bottom: 5rem;
 
     .text {
       display: flex;
@@ -109,12 +114,17 @@ body {
 
     .media {
       .#{molecule('ghost-frame-tablet')}{
-        max-width: 60%;
+        max-width: 80%;
       }
 
       .#{molecule('ghost-frame-mobile')}{
-        max-width: 40%;
+        max-width: 100%;
+        margin-left: 15%;
       }
+    }
+
+    .#{molecule('lnk')} {
+      margin-top: 30px;
     }
 
     @media screen and (max-width: 767px) {
@@ -141,13 +151,14 @@ body {
         grid-column-end: 19;
       }
     }
-  }
+
 
   .#{utility('quote')} {
-    padding: 11rem 0;
+    padding: 8rem 0;
 
     @media screen and (max-width: 767px) {
       padding: 5.5 0;
     }
   }
+}
 }
