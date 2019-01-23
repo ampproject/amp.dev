@@ -3,12 +3,24 @@
 @import '../../mixins';
 @import '../../variables';
 
+.#{utility('component-visual')} {
+  margin-bottom: 7em;
+  
+  @media screen and (min-width: 768px) {
+    margin-bottom: 12vw;
+  }
+}
+
 .#{organism('component-visual')} {
-  margin-top: 50px;
   
   &-copy {
     grid-column: 4 / 10;
+    order: 2;
     margin: auto 0;
+    
+    @media screen and (min-width: 768px) {
+      order: inherit;
+    }
   }
   
   &-link {
@@ -18,5 +30,10 @@
   &-image {
     width: 100%;
     grid-column: 13 / 25;
+    order: 1;
+    
+    @media screen and (min-width: 768px) {
+      order: inherit;
+    }
   }
 }
