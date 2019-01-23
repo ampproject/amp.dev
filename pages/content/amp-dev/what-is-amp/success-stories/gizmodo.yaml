@@ -1,0 +1,84 @@
+$title: Gizmodo
+$category: publishers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/Gizmodo/teaser_gizmodo.jpg'
+    width: 1
+    height: 1
+    alt: Gizmodo
+  logo:
+    src: '/static/img/success-stories/Gizmodo/gizmodo_logo.png'
+    width: 711
+    height: 105
+    alt: Gizmodo
+  text: AMP makes Gizmodo 3x faster on mobile
+
+stage:
+  headline: AMP makes Gizmodo 3x faster on mobile
+  subline: OCTOBER 7, 2016
+  devices:
+    - image_src: ../../../static/img/success-stories/gizmodo/amp_gizmodo_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: Gizmodo
+
+kpis:
+  - value: 100k
+    text: amp page visits daily
+
+  - value: 3x
+    text: faster page load time
+
+  - value: 50%
+    text: increase in impressions
+
+contents:
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/gizmodo/amp_gizmodo_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Gizmodo
+    text: User experience has always been a major focus at Gizmodo, the popular design, technology, and science fiction blog. With over half of traffic coming to their mobile website, keeping the site clear and fast is key to keeping readers on mobile devices engaged with their content.<br><br>Over the past two years Gizmodo has implemented a number of optimizations to improve page load times, such as removing unnecessary scripts, setting a fallback font for web fonts and lazy loading below-the-fold site components. Yet, the team still felt like more could be done to improve performance for their mobile users. Josh Laurito, Head of Data and Analytics, highlighted their main challenge:<br><br>“We delivered the same (large) JavaScript & CSS payloads to users on mobile and desktop, making it difficult to improve one experience without degrading the other.”<br><br>With the launch of AMP, Gizmodo saw an opportunity to address this obstacle.
+    direction: left-flat
+
+  - layout: text
+    headline: Solution
+    text: "Gizmodo implemented AMP in May of 2016 and is now publishing AMP pages for 100% their posts, as well as creating AMP versions of previous work. Gizmodo has been early to test and adopt new AMP features. They are among the first to publish reader comments and conversations and run A/B tests on AMP articles. Ali Philippides, product lead for the implementation of AMP, said the most pleasant surprise has been the flexibility of the format:"
+    direction: left-flat
+
+  - layout: quote
+    quote: We were very impressed with how many features we could translate from our mobile experience. We were able to implement a navigation menu, social sharing toolbar, and a newsletter subscription module, which kept the user experience consistent between our sites and our AMP articles.
+    image_src: ../../../static/img/success-stories/gizmodo/gizmodo_logo.png
+    width: 100
+    height: 50
+    alt: Gizmodo
+    author: Ali Philippides, product lead for the implmentation of AMP
+    story_url: https://google.com
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/gizmodo/amp_gizmodo_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: Gizmodo
+    headline: Results
+    text: As of September Gizmodo has published over 24,000 AMP pages and is receiving 100k visits to those pages daily. AMP has been highly successful in making Gizmodo’s mobile pages fast -- page load time for AMP is 3x faster than the regular mobile site. AMP has even helped Gizmodo attract new readers. Over 80% of Gizmodo’s traffic from AMP pages is new traffic, compared to under 50% of all mobile sessions. Gizmodo has also seen a 50% increase in impressions per pageview on AMP.<br><br>Gizmodo is looking forward to seeing how the AMP format evolves over time. Laurito said “we would like to work with the AMP community to expand support for reader log-in and commenting, more high-impact ad units, and broader capacity to recommend stories to our readers.” Overall, implementing AMP has made a meaningful difference to Gizmodo’s mobile experience.
+    direction: left
+
+  - layout: quote
+    quote: AMP has been an overwhelmingly positive experience for Gizmodo
+    image_src: ../../../static/img/success-stories/gizmodo/gizmodo_logo.png
+    width: 100
+    height: 50
+    alt: Gizmodo
+    author: JOSH LAURITO, Head of Data and Analytics
+    story_url: https://google.com
+
+  - layout: text-button
+    download_url: ../../../static/files/case-studies/gizmodo.pdf

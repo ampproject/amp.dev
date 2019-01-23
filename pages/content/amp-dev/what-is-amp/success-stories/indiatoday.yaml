@@ -1,5 +1,21 @@
 $title: India Today
 $category: publisher
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/indiatoday/teaser_indiatoday.jpg'
+    width: 1
+    height: 1
+    alt: India Today
+  logo:
+    src: '/static/img/success-stories/indiatoday/indiatoday_logo.jpg'
+    width: 340
+    height: 154
+    alt: India Today
+  text: India Today delights readers and boosts revenue with AMP
+
 
 stage:
   headline: India Today delights readers and boosts revenue with AMP

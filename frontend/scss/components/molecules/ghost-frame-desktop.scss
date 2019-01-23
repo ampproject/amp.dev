@@ -21,9 +21,9 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   background: rgba(color('white'), .9);
   border-radius: 5px;
   box-shadow: 0 20px 50px -5px rgba(0, 0, 0, 0.25);
-  width: calc((5/8) * 100%);
-  padding: 3% 2% 2%;
+  padding: 5% 2% 2%;
   position: relative;
+  width: 100%;
   z-index: 0;
 
   &.left-flat, &.left, &.right-flat, &.right {
@@ -114,11 +114,15 @@ The ghost frame desktop wraps an element with a desktop-like frame.
     border-top-left-radius: calc(1rem/6);
     border-top-right-radius: calc(1rem/6);
     content: '';
-    height: 2%;
-    left: 1.5%;
+    height: 3%;
+    left: 0.5%;
     position: absolute;
     top: 3%;
     width: 100%;
     z-index: 1;
+  }
+
+  amp-img, amp-video {
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }

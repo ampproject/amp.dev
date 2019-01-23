@@ -121,5 +121,8 @@ The ghost frame tablet wraps an element with a tablet-like frame.
     width: 10%;
     z-index: 1;
   }
-}
 
+  amp-img, amp-video {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

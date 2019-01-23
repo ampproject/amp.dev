@@ -1,0 +1,66 @@
+$title: WompMobile
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/womp/teaser_wompmobile.jpg'
+    width: 1
+    height: 1
+    alt: WompMobile
+  logo:
+    src: '/static/img/success-stories/womp/wompmobile_logo.png'
+    width: 902
+    height: 135
+    alt: WompMobile
+  text: WompMobile consistently improves e-commerce clients’ conversion rates with AMP sites
+
+
+stage:
+  headline: WompMobile consistently improves e-commerce clients’ conversion rates with AMP sites
+  subline: MARCH 15, 2017
+  devices:
+
+    - image_src: ../../../static/img/success-stories/womp/amp_womp_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: WompMobile
+
+kpis:
+  - value: 105%
+    text: conversion rate increase on AMP pages
+
+  - value: 31%
+    text: decrease in bounce rate on AMP pages
+
+  - value: 29%
+    text: increase in ctr from search platforms on AMP sites
+
+contents:
+
+  - layout: text
+    text: WompMobile is a digital agency specializing in converting traditional e-commerce and enterprise sites into effective mobile experiences. "We tell our clients that today's mobile shoppers are won and lost in less than one second," says co-founder Robert Gara. "Being mobile friendly isn't enough. People expect instant access to information—and page speed is critical to getting customers to engage with our clients’ mobile sites."
+    direction: left-flat
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/womp/amp_womp_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: WompMobile
+    headline: Solution
+    text: AMP hit WompMobile’s radar in 2015. “It was a pause-worthy moment in our evolution,” Gara recalls. “AMP offered the ability to combine blazing speed with rich functionality.”<br><br>WompMobile integrated AMP into their proprietary development platform and now converts complex websites into beautiful AMP sites—like portero.com and campmor.com—leveraging their clients’ existing IT infrastructure, including checkout systems. Newly-created AMP pages remain automatically synchronized with their desktop counterparts. And the AMP format enables WompMobile to build pages that always contain the essential e-commerce elements, including product specs, brand attributes, product photos, and more. “AMP was the perfect addition to our business, giving us a new level of impact for our e-commerce clients,” notes Gara.
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/womp/amp_womp_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: WompMobile
+    headline: Results
+    text: 'AMP is working for WompMobile, lowering bounce rates and driving user engagement. Clients are seeing how important fast-loading pages are to improving these metrics—and, ultimately, converting site visitors to paying customers. “Today, we balance the usability and speed of AMP with the functionality necessary to create a continuous, effective shopping experience,” says Gara. “AMP has been a huge differentiator for our business.”<br><br>In an overall comparison of WompMobile’s e-commerce clients, AMP pages clearly outperform those not using AMP, increasing conversion rates by 105%, decreasing bounce rates by 31%, and increasing click-through rates (CTR) from search engines by 29%.<br><br>Homing in on metrics for a few of WompMobile’s clients, it’s clear that AMP pages are driving impressive bottom-line results.<ul><li>JM Bullion: the coin-and-precious-metals retailer saw a 26% increase per order and a 39% higher conversion rate</li><li>Portero: the luxury goods reseller saw a 29% decrease in bounce rates and a 208% increase in conversion rates</li><li>Campmor: the outdoor outfitter saw a 28% increase per order and a 20% lower bounce rate</li></ul>Today, WompMobile has fully integrated AMP into their offering. In fact, most of WompMobile’s clients—mainly e-commerce and enterprise-level organizations—hire WompMobile for their turnkey AMP solution.'
+    direction: flat
+    download_url: ../../../static/files/case-studies/wompmobile.pdf

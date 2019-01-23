@@ -31,7 +31,7 @@
     margin-top: -10%;
 
     @media screen and (min-width: 768px) {
-      margin-top: -60%;
+      margin-top: -65%;
     }
 
     .#{molecule('ghost-frame-mobile')} {
@@ -40,12 +40,12 @@
     }
 
     .#{molecule('ghost-frame-tablet')} {
-      max-width: 50%;
-      padding: 2% 1% 1%;
+      max-width: 38%;
+      padding: 3% 1% 1%;
     }
 
     .#{molecule('ghost-frame-desktop')} {
-      max-width: 80%;
+      max-width: 90%;
       padding: 3% 1.5% 1.5%;
     }
   }
@@ -94,7 +94,7 @@
 
   div.#{utility('container')} {
     padding: 0 2em;
-    
+
     @media screen and (min-width: 768px) {
       padding: 0 0 0 2.5em;
     }
@@ -107,7 +107,7 @@
     @media screen and (min-width: 768px) {
       grid-column: 3 / 16;
     }
-    
+
     @media screen and (min-width: 1024px) {
       margin: 7vw 0 11vw;
     }
@@ -128,7 +128,7 @@
         right: calc(100% + 0.75em);
         top: -0.6em;
       }
-      
+
       @media screen and (min-width: 1024px) {
         width: 3em;
         height: 3em;

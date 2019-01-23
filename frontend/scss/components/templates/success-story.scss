@@ -17,27 +17,37 @@
 @import '../atoms/_text.scss';
 
 @import '../molecules/copy';
-@import '../molecules/ghost-frame-desktop.scss';
-@import '../molecules/ghost-frame-mobile.scss';
-@import '../molecules/ghost-frame-tablet.scss';
 @import '../molecules/quote';
 @import '../molecules/text-media.scss';
 
-@import '../organisms/ghost-frame-block.scss';
 @import '../organisms/text-media-block.scss';
 
 @import '../templates/_default.scss';
+
+body {
+  background-color: color('whisper');
+}
 
 .#{template('success-story')} {
   overflow: hidden;
   perspective: 80rem;
 
+
   .#{utility('container')} {
     @include container;
+    @include txt;
+    @include txt-p;
+    @include txt-2;
+    padding-left: 2em;
+    margin: 1.5em 0 2.5em;
   }
 
   .#{utility('container-fluid')} {
     @include container-fluid;
+
+    @media screen and (max-width: 767px) {
+      padding: 0 20px;
+    }
   }
 
   .#{utility('content')} {
@@ -46,10 +56,15 @@
   }
 
   .#{utility('stage')} {
-    padding-bottom: 20vw;
+    padding-bottom: 70vw;
 
-    @media screen and (max-width: 767px) {
-      padding-bottom: 100vw;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 5vw;
+    }
+
+    .stage-logo {
+      width: 15%;
+      height: auto;
     }
 
     .#{organism('stage-content')} {
@@ -63,37 +78,29 @@
     }
   }
 
-  .#{utility('kpi')} {
-    padding-bottom: 17rem;
-
-    @media screen and (max-width: 767px) {
-      padding-bottom: 8.5rem;
-    }
-
-    .#{molecule('kpi')} {
-      grid-column: span 8;
-      padding-bottom: 56.25%;
-
-      @media screen and (max-width: 767px) {
-        width: 100%;
-      }
-
-      &:nth-child(3n+1) {
-        grid-column: 4 / 10;
-      }
-
-      &:nth-child(3n+2) {
-        grid-column: 10 / 16;
-      }
-
-      &:nth-child(3n+3) {
-        grid-column: 16 / 22;
-      }
-    }
-  }
-
   .#{organism('text-media-block')} {
-    padding-bottom: 17.5rem;
+    padding-bottom: 5rem;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .media {
+      .#{molecule('ghost-frame-tablet')}{
+        max-width: 80%;
+      }
+
+      .#{molecule('ghost-frame-mobile')}{
+        max-width: 100%;
+        margin-left: 15%;
+      }
+    }
+
+    .#{molecule('lnk')} {
+      margin-top: 30px;
+    }
 
     @media screen and (max-width: 767px) {
       padding-bottom: 8.75rem;
@@ -104,13 +111,42 @@
         width: 100%;
       }
     }
-  }
+
+    &-center {
+      grid-column: 1;
+      position: relative;
+
+      @media screen and (min-width: 768px){
+        grid-column-start: 9;
+        grid-column-end: 25;
+      }
+
+      @media screen and (min-width: 1024px){
+        grid-column-start: 7;
+        grid-column-end: 19;
+      }
+    }
+
 
   .#{utility('quote')} {
-    padding: 11rem 0;
+    padding: 8rem 0;
 
     @media screen and (max-width: 767px) {
       padding: 5.5 0;
     }
+  }
+
+@media screen and (max-width: 767px) {
+  &:nth-child(odd) {
+    display: flex;
+
+     .text  {
+       order: 2;
+     }
+     + .media {
+      order: 1;
+    }
+  }
+}
   }
 }

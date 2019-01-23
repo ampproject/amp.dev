@@ -1,0 +1,64 @@
+$title: U.S. Xpress
+$category: advertisers
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/us_xpress/teaser_us_xpress.jpg'
+    width: 1
+    height: 1
+    alt: U.S. Xpress
+  logo:
+    src: '/static/img/success-stories/us_xpress/us_xpress_logo.png'
+    width: 493
+    height: 132
+    alt: U.S. Xpress
+  text: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress
+
+
+stage:
+  headline: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress
+  subline: DEC 20, 2017
+  devices:
+
+    - image_src: ../../../static/img/success-stories/us_xpress/amp_usx_1.jpg
+      width: 3
+      height: 5
+      type: mobile
+      alt: U.S. Xpress
+
+kpis:
+  - value: 5X
+    text: increase in page load speed
+
+  - value: $1M
+    text: yearly projected savings
+
+  - value: 62%
+    text: increase in applications
+
+contents:
+  - layout: text
+    text: Virtually every product on every shelf in the U.S. was brought there by a truck—making the trucking industry the unsung workhorse of our economy. But currently, this critical industry is being constrained by one of the largest driver shortages in history. Unfilled positions have more than tripled over the past decade, and just this year, the driver turnover rate at major carriers jumped to an incredible 90%. As the largest independent truckload carrier in the country, U.S. Xpress was feeling the strain of 7,000 empty driver’s seats.<br><br>Due to the nature of their jobs, truckers are in constant motion and the vast majority of potential hires access U.S. Xpress’ landing pages on their phones—often from areas with painfully slow mobile service. As a result, filling out online job applications can be tedious, and frustrated drivers often abandon the process without completing the necessary forms.
+
+  - layout: text-media
+    image_src: ../../../static/img/success-stories/us_xpress/amp_usx_1.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: U.S. Xpress
+    headline: Solution
+    text: As revisions to recruiting creative and media became less effective and failed to generate substantial hiring gains, the U.S. Xpress recruiting team decided to see whether smarter—and faster—technology was the answer. They theorized that the speed and user experience benefits of Accelerated Mobile Pages (AMP) could open this bottleneck and make a significant difference in conversion rates and cost-per-application.<br><br>Their agency, The Johnson Group, ran a 20-day test on one of U.S. Xpress’ key recruiting websites. Over the course of the test, a $10,641 spend generated a total of 35,470 clicks and 33,032 landing page visits—equally split between a cached, AMP-based landing page and an identical, but non-AMP landing page.<br><br>The difference in load speed was immediately apparent. While the non-AMP page frequently struggled to load—in same cases taking more than a minute—the AMP page loaded almost instantaneously, a direct result of the AMP runtime and loading from an AMP cache.
+    direction: left-flat
+
+  - layout: text-button
+    image_src: ../../../static/img/success-stories/us_xpress/amp_usx_2.jpg
+    width: 3
+    height: 5
+    type: mobile
+    alt: U.S. Xpress
+    headline: Results
+    text: On average, the AMP page loaded 5X faster than the non-AMP version. That dramatic increase in speed led to a rise in completed applications, and an even more dramatic projected cost savings of more than $1M per year.<br><br>The AMP landing page converted 3.412% of visits into completed job applications, whereas the non-AMP page converted only 2.118%. U.S. Xpress received 62% more applications from the AMP landing page. Chris Luke, CTO of The Johnson Group, said “AMP enabled us to deliver job offers at incredible speed, which has had a direct, positive impact on our ability to hire new drivers.”
+    direction: left-flat
+    download_url: ../../../static/files/case-studies/us_xpress.pdf

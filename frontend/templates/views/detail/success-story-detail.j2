@@ -17,10 +17,14 @@
       <div class="ad-o-stage ad-o-stage-default {{doc.stage.layout}}">
         <div class="ad--container">
           <div class="ad-o-stage-content">
+            {% if doc.stage.logo %}
+            <div class="ad-a-img ad-a-img-static stage-logo">
+              <amp-img src="{{doc.stage.logo.image_src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
+            </div>
+            {% endif %}
             {% if doc.stage.subline %}
               <h2 class="ad-o-stage-content-subline">{{ doc.stage.subline }}</h2>
             {% endif %}
-
             {% if doc.stage.headline %}
               <h1 class="ad-o-stage-content-headline">{{ doc.stage.headline }}</h1>
             {% endif %}
@@ -30,9 +34,13 @@
 
       {# ghost frame block #}
       {% if doc.stage.devices %}
+        {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
         <div class="ad-o-ghost-frame-block">
           {% for device in doc.stage.devices %}
             {% if device %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
                 {% if device.video_src %}
                 <amp-video
@@ -44,7 +52,10 @@
                     artwork="{{device.artwork_src}}"
                     title="{{device.video_title}}"
                     artist="{{device.video_artist}}"
-                    album="{{device.video_album}}">
+                    album="{{device.video_album}}"
+                    controls
+                    autoplay
+                    loop>
                   </amp-video>
                 {% else %}
                   <amp-img
@@ -69,20 +80,23 @@
     #}
     {% if doc.kpis %}
       {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-      <div class="ad--kpi ad--container">
-        {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-        {% for kpi in doc.kpis %}
-          <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
-            <div class="ad-m-kpi-content">
-              {% if kpi.value %}
-                <span class="ad-m-kpi-number">{{kpi.value|safe}}</span>
-              {% endif %}
-              {% if kpi.text %}
-                <span class="ad-m-kpi-text">{{kpi.text|safe}}</span>
-              {% endif %}
+      {% do doc.styles.addCssFile('css/components/organisms/kpi-list.css') %}
+      <div class="ad--kpi">
+        <div class="ad-o-kpi-list">
+          {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+          {% for kpi in doc.kpis %}
+            <div class="ad-m-kpi ad-m-kpi-websites ad-m-teaser-kpi ad-m-teaser-kpi-websites">
+              <div class="ad-m-kpi-content">
+                {% if kpi.value %}
+                  <span class="ad-m-kpi-number">{{kpi.value|safe}}</span>
+                {% endif %}
+                {% if kpi.text %}
+                  <span class="ad-m-kpi-text">{{kpi.text|safe}}</span>
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     {% endif%}
 
@@ -95,7 +109,7 @@
       {% for content in doc.contents %}
         {# layout: text + media #}
         {% if content.layout == 'text-media' %}
-          <div class="ad-o-text-media-block ad--container">
+          <div class="ad-o-text-media-block ad--container-fluid">
             <div class="ad-m-text-media text ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
@@ -106,7 +120,23 @@
               <div class="ad-m-text-media media">
             {% endif %}
               {% if content.type %}
+                {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+                {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+                {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
                 <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+                {% if content.video_src %}
+                <amp-video
+                    width="{{content.width}}"
+                    height="{{content.height}}"
+                    layout="responsive"
+                    src="{{content.video_src}}"
+                    poster="{{content.poster_src}}"
+                    artwork="{{content.artwork_src}}"
+                    title="{{content.video_title}}"
+                    artist="{{content.video_artist}}"
+                    album="{{content.video_album}}">
+                </amp-video>
+                {% else %}
                   <amp-img
                     alt="{{content.alt}}"
                     height="{{content.height}}"
@@ -114,15 +144,8 @@
                     src="{{content.image_src}}"
                     width="{{content.width}}"
                   ></amp-img>
+                  {% endif %}
                 </div>
-              {% else %}
-                <amp-img
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
-                  layout="responsive"
-                  src="{{content.image_src}}"
-                  width="{{content.width}}"
-                ></amp-img>
               {% endif %}
             </div>
           </div>
@@ -130,8 +153,8 @@
 
         {# layout: text #}
         {% if content.layout == 'text' %}
-          <div class="ad--container">
-            <div class="ad-o-text-media-block ad--content ad-m-copy">
+          <div class="ad--container-fluid">
+            <div class="ad-o-text-media-block ad-o-text-media-block-center ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
             </div>
@@ -142,7 +165,23 @@
         {% if content.layout == 'media' %}
           <div class="ad-o-text-media-block">
             {% if content.type %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
+              {% if content.type.video_src %}
+              <amp-video
+                  width="{{content.width}}"
+                  height="{{content.height}}"
+                  layout="responsive"
+                  src="{{content.video_src}}"
+                  poster="{{content.poster_src}}"
+                  artwork="{{content.artwork_src}}"
+                  title="{{content.video_title}}"
+                  artist="{{content.video_artist}}"
+                  album="{{content.video_album}}">
+              </amp-video>
+              {% else %}
                 <amp-img
                   alt="{{content.alt}}"
                   height="{{content.height}}"
@@ -150,15 +189,8 @@
                   src="{{content.image_src}}"
                   width="{{content.width}}"
                 ></amp-img>
+                {% endif %}
               </div>
-            {% else %}
-              <amp-img
-                alt="{{content.alt}}"
-                height="{{content.height}}"
-                layout="responsive"
-                src="{{content.image_src}}"
-                width="{{content.width}}"
-              ></amp-img>
             {% endif %}
           </div>
         {% endif %}
@@ -168,7 +200,7 @@
           {% do doc.styles.addCssFile('css/components/atoms/bevel.css') %}
           <div class="ad-a-bevel ad-a-bevel-right"></div>
 
-          <section class="ad--quote ad--container">
+          <section class="ad--quote ad--container-fluid">
             <div class="ad-m-quote">
               <div class="ad-m-quote-source">
                <div class="ad-a-ico">
@@ -176,7 +208,7 @@
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
               </div>
               <div class="ad-a-img ad-a-img-static">
-                <amp-img src="{{content.image_src}}" layout="responsive" height="96" width="630" alt="placeholder" />
+                <amp-img src="{{content.image_src}}" layout="responsive" height="{{ content.height }}" width="{{ content.width }}" alt="placeholder" />
               </div>
             </div>
             <div class="ad-m-quote-quote">
@@ -198,16 +230,16 @@
 
         {# layout: text with button #}
         {% if content.layout == 'text-button' %}
-          <div class="ad-o-text-media-block ad--container">
+          <div class="ad-o-text-media-block ad--container-fluid">
             <div class="ad-m-text-media text ad-m-copy">
               <h2>{{content.headline|safe}}</h2>
               <p>{{content.text|safe}}</p>
-              <a href="{{content.download_url}}" download class="ad-m-lnk ad-m-lnk-square">
+              <a href="{{content.download_url}}" target="_blank" class="ad-m-lnk ad-m-lnk-square">
                 <div class="ad-a-ico ad-m-lnk-icon">
                   {% do doc.icons.useIcon('icons/internal.svg') %}
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                 </div>
-                <span class="ad-m-lnk-text">Download pdf</span>
+                <span class="ad-m-lnk-text">Download PDF</span>
               </a>
             </div>
             {% if content.background %}
@@ -216,6 +248,9 @@
               <div class="ad-m-text-media media">
             {% endif %}
               {% if content.type %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
                 <amp-img
                   alt="{{content.alt}}"

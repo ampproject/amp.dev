@@ -1,4 +1,20 @@
 $title: Metromile
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/metromile/teaser_metromile.jpg'
+    width: 1
+    height: 1
+    alt: Metromile
+  logo:
+    src: '/static/img/success-stories/metromile/metromile_logo.png'
+    width: 250
+    height: 41
+    alt: Metromile
+  text: Metromile lowers costs, reaches more potential customers with AMP
 
 stage:
   headline: Metromile lowers costs, reaches more potential customers with AMP
