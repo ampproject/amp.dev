@@ -20,7 +20,10 @@
 @import '../templates/_default.scss';
 
 .#{template('roadmap')} {
+  margin-top: -20px;
+  padding-top: 20px;
   background: color('whisper');
+
   .#{utility('container')} {
     @include container;
     max-width: 100vw;
@@ -165,8 +168,12 @@
         display: flex;
       }
       h4 {
-        margin-left: 46px;
-        margin-bottom: 1.75em;
+        padding-left: 46px;
+        padding-bottom: 1em;
+        border-bottom: 1px solid color('athens-gray');
+        @media screen and (min-width: 1024px) {
+          border: none;
+        }
       }
       ul {
         padding: 0;
@@ -186,7 +193,7 @@
               margin-left: 20px;
             }
             h4 {
-              padding-left: 20px;
+              padding-left: 66px;
             }
             ul {
               padding: 0 20px;
@@ -199,7 +206,7 @@
               margin-left: 20px;
             }
             h4 {
-              padding-left: 20px;
+              padding-left: 66px;
             }
             ul {
               padding-left: 20px;

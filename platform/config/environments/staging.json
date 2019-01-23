@@ -6,9 +6,9 @@
 			"host": "amp-dev-staging.appspot.com",
 			"port": ""
 		},
-		"samples": {
+		"api": {
 			"scheme": "https",
-			"host": "samples.amp-dev-staging.appspot.com",
+			"host": "playground-dot-amp-dev-staging.appspot.com",
 			"port": ""
 		},
 		"platform": {

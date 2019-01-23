@@ -1,0 +1,117 @@
+/*
+
+#############################
+### MOLECULES: nav-link #####
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{organism('burger-menu')} {
+  /* The following elements are not inside the burger-menu itself */
+  &-label {
+    position: fixed;
+    z-index: 18;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      right: 30px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+  &-input {
+    display: none;
+  }
+
+  /* This is where the actual burger-menu starts */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 70px;
+  padding-right: 20px;
+  padding-left: 20px;
+  z-index: 16;
+  background-color: color('white');
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(5%) scale(1.2);
+  transition: transform 0.2s ease, opacity 0.15s ease;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+
+  /* Styles for the opened burger menu */
+  &-input:checked {
+    & + .#{organism('burger-menu')} {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Shrink header and footer to not interfer with scrolling */
+    & ~ main, & ~ footer {
+      @media screen and (max-width: 1024px) {
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* This block defines the styles for the second level elements */
+    & & {
+      margin-top: 8px;
+
+      & .#{organism('burger-menu')}-item {
+        &:before {
+          display: inline-block;
+          vertical-align: middle;
+          content: "";
+          width: 20px;
+          border-bottom: 1px solid color('alto');
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+    &-item {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-top: auto;
+      }
+    }
+
+}

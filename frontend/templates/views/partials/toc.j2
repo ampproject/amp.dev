@@ -3,7 +3,7 @@
 {% if not empty_toc and (doc.toc or doc.content.find('[TOC]')) %}
 <section class="ad--toc">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" for="toc">Contents</label>
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" [class]="contentmenuopen == true ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc contentmenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc'" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">Contents</label>
   <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc">
 
   {% do doc.styles.addCssFile('/css/components/organisms/toc.css') %}

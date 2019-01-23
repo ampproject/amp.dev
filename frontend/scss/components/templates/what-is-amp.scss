@@ -19,7 +19,6 @@
 @import '../molecules/copy';
 @import '../molecules/quote';
 @import '../molecules/benefit';
-@import '../molecules/link';
 @import '../molecules/table.scss';
 @import '../molecules/headline-icon.scss';
 
@@ -28,7 +27,6 @@
 @import '../organisms/component-visual.scss';
 @import '../organisms/benefits-overview.scss';
 @import '../organisms/made-of.scss';
-@import '../organisms/kpi-list.scss';
 
 @import '../templates/_default.scss';
 
@@ -45,50 +43,46 @@
 
   .#{utility('content')} {
     @include default-section-padding;
+    margin-bottom: 7em;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 8vw;
+    }
+
     .#{utility('container')} {
       padding: 0;
     }
   }
 
-  .#{organism('component-visual')} {
-    &-copy {
-      @include default-section-padding;
+  .#{utility('component-visual')} {
+    .#{organism('component-visual')} {
+      &-copy {
+        @include default-section-padding;
+      }
     }
   }
+
   .#{utility('case-band')} {
     .#{molecule('copy')} {
       @include default-section-padding;
     }
   }
 
-  .#{organism('stage')} {
-    margin-bottom: 50px;
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0;
-    }
-    &-content {
-      margin: 85vw 0 20vw;
+  .#{utility('stage')} {
+    .#{organism('stage')} {
+      margin-bottom: 50px;
+
       @media screen and (min-width: 768px) {
-        margin: 7vw 0 11vw;
+        margin-bottom: 0;
+      }
+
+      &-content {
+        margin: 20em 0 4em;
+
+        @media screen and (min-width: 768px) {
+          margin: 7vw 0 11vw;
+        }
       }
     }
-  }
-
-  .#{molecule('format')} {
-    &-visual {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 60px 0 0 20vw;
-      @media screen and (min-width: 768px) {
-        padding: 0 0 0 7.5vw;
-        position: relative;
-      }
-    }
-  }
-
-  .#{utility('kpi')} {
-    padding: 5rem 0;
   }
 }
-

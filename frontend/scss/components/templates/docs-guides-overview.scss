@@ -107,6 +107,7 @@
 
     &-image {
       @include teaser-image;
+      @include box-shadow;
 
       &:before {
         height: 100%;

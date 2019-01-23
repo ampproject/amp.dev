@@ -24,7 +24,8 @@ the border and format around the images.
 
 .#{molecule('format-visual')} {
   width: 100%;
-  padding: 0 2em;
+  max-width: 16em;
+  padding: 0;
   margin: 0 auto;
   transform: rotate3d(135, -90, 90, 50deg);
   display: grid;
@@ -33,6 +34,8 @@ the border and format around the images.
   
   @media screen and (min-width: 768px) {
     width: 50%;
+    max-width: 100%;
+    position: relative;
     padding: 0;
   }
   
@@ -43,7 +46,7 @@ the border and format around the images.
     position: absolute;
     bottom: 0;
     left: 0;
-    padding-top: 100%;
+    padding-top: 75%;
     border-radius: 1000% 0 0 0 / 1000% 0 0 0;
     opacity: 0.5;
     transform: rotate(-5deg) scale(1, 1.1) skew(-25deg);
@@ -54,6 +57,7 @@ the border and format around the images.
     animation: 10s ease-in-out 3.5s infinite both rotateShadow;
     
     @media screen and (min-width: 768px) {
+      padding-top: 100%;
       transform-origin: right bottom;
     }
   }
@@ -67,30 +71,44 @@ the border and format around the images.
   &-bottom-image {
     grid-column: 2 / 5;
     grid-row: 1 / 5;
+    max-width: 8.125em;
     transform: translate3d(0%, 3%, 0) scale(0.9);
+    
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   &-top-image {
     grid-column: 3 / 6;
     grid-row: 2 / 6;
+    max-width: 5.625em;
     @include component-frame;
     @include component-frame-websites;
     animation: 10s ease-in-out 3.5s infinite both slide;
+    
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   &-code-snippet {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
+    width: 12em;
     font-size: 10px;
     filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
-    animation: 10s ease-in-out infinite bounce -2s;
+    transform: translateY(-4em);
     
     @media screen and (min-width: 768px) {
+      width: auto;
       font-size: inherit;
+      transform: translateY(0);
     }
     
     .#{molecule('code-snippet')} {
       margin: 0;
+      animation: 10s ease-in-out infinite bounce -2s;
     }
 
     &-highlight:before {

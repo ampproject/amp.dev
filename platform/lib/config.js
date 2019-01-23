@@ -28,22 +28,17 @@ class Config {
     }
   }
 
-  _getSampleEmbedUrl() {
-    let sampleEmbedUrl = `${this.hosts.samples.scheme}://${this.hosts.samples.host}`;
-    if (this.hosts.samples.port) {
-      sampleEmbedUrl = sampleEmbedUrl + `:${this.hosts.samples.port}`;
+  /**
+   * Builds a URL from a host object containing scheme, host and port
+   * @return {[type]} [description]
+   */
+  _buildUrl(host) {
+    let url = `${host.scheme}://${host.host}`;
+    if (host.port) {
+      url = url + `:${host.port}`;
     }
 
-    return sampleEmbedUrl;
-  }
-
-  _getSampleSourceUrl() {
-    let sampleSourceUrl = `${this.hosts.platform.scheme}://${this.hosts.platform.host}`;
-    if (this.hosts.platform.port) {
-      sampleSourceUrl = sampleSourceUrl + `:${this.hosts.platform.port}`;
-    }
-
-    return sampleSourceUrl;
+    return url;
   }
 
   _writeGrowConfig() {
@@ -58,8 +53,8 @@ class Config {
                 + 'base_urls:\n'
                 + `  repository: ${this.shared.baseUrls.repository}\n`
                 + `  playground: ${this.shared.baseUrls.playground}\n`
-                + `  sample_embed: ${this._getSampleEmbedUrl()}\n`
-                + `  sample_source: ${this._getSampleSourceUrl()}\n`
+                + `  platform: ${this._buildUrl(this.hosts.platform)}\n`
+                + `  api: ${this._buildUrl(this.hosts.api)}\n`
                 + '\n'
                 + 'deployments:\n'
                 + '  default:\n'

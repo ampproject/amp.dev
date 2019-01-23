@@ -1,0 +1,46 @@
+/*
+
+#############################
+### MOLECULES: nav-link #####
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('nav-link')} {
+  @include txt-font-accent;
+  font-size: 1.5em;
+  color: color('black');
+
+  @media screen and (min-width: 1024px) {
+    @include txt-1;
+  }
+
+  &-2 {
+    @include txt;
+    @include txt-1;
+
+    @media screen and (min-width: 1024px) {
+      @include txt-2;
+    }
+
+    &.#{molecule('nav-link')}-active {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover {
+    color: color('blue-ribbon');
+  }
+
+  &-active {
+    font-weight: bold;
+    color: color('blue-ribbon');
+  }
+}

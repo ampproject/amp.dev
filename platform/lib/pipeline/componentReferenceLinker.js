@@ -77,24 +77,30 @@ class ComponentReferenceLinker {
       content.match(/amp-\w*(-\w*)*/gm),
     ];
 
+    this._log.error('Check: ', cases[cases.length - 1]);
+
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
       for (let j = 0; j < results.length; j++) {
         const result = results[j];
-        console.log(result);
+
         if (i > 3 && (result.includes(']') || result.includes('/') || result.includes('"'))) {
-          this._log.error(result);
+          this._log.error('continue:', result);
           continue;
         }
 
-        const component = result.match(/amp-\w*(-\w*)*/g)[0];
-        if (this._componentExist(component) === true) {
-          this._log.start(this._componentPath(component));
-          while (content.includes(result)) {
-            content = content.replace(result, this._createPlaceholder(component));
-          }
+
+        if (i === 5) {
+
         } else {
-          this._log.error(component);
+          const component = result.match(/amp-\w*(-\w*)*/g)[0];
+          if (this._componentExist(component) === true) {
+            while (content.includes(result)) {
+              content = content.replace(result, this._createPlaceholder(component));
+            }
+          } else {
+            // this._log.error('component does not exist', component);
+          }
         }
       }
     }
@@ -110,14 +116,18 @@ class ComponentReferenceLinker {
   }
 
   _hash(str) {
-  	let hash = 0;
-  	if (this.length == 0) return hash;
-  	for (let i = 0; i < this.length; i++) {
-  		char = this.charCodeAt(i);
-  		hash = ((hash<<5)-hash)+char;
-  		hash = hash & hash; // Convert to 32bit integer
-  	}
-  	return hash;
+  	// let hash = 0;
+  	// if (this.length == 0) return hash;
+  	// for (let i = 0; i < this.length; i++) {
+  	// 	char = this.charCodeAt(i);
+  	// 	hash = ((hash<<5)-hash)+char;
+  	// 	hash = hash & hash; // Convert to 32bit integer
+  	// }
+  	// return hash;
+
+    const hash = str.split('').reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+    this._log.error(hash);
+    return hash;
   }
 
   _createPlaceholder(component) {
@@ -130,13 +140,15 @@ class ComponentReferenceLinker {
 
   _componentPath(component) {
     const char = component.slice(4, 5).toUpperCase();
-    const path = `({{g.doc('/content/amp-dev/documentation/components/${char}/${component}.md', locale=doc.locale).url.path}})`;
+    const path = `({{g.doc('/content/amp-dev/documentation/components/reference/${component}.md', locale=doc.locale).url.path}})`;
     return `[\`${component}\`]${path}`;
   }
 
   _componentExist(component) {
     const char = component.slice(4, 5).toUpperCase();
-    const path = COMPONENTS_SRC + char + '/' + component + '.md';
+    const path = COMPONENTS_SRC + '/reference/' + component + '.md';
+
+    this._log.start('Path:', path);
 
     if (fs.existsSync(path)) {
       return true;

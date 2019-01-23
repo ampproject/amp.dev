@@ -3,8 +3,9 @@ $view: /views/default.j2
 $title@: Community
 $localization:
   path: /{locale}/community/{base}.html
+$order: 3
 
-index: /content/amp-dev/community/contribute.md
+index: /content/amp-dev/community/roadmap.html
 sub_navigation:
     - /content/amp-dev/community/contribute.md
     - /content/amp-dev/community/platform-and-vendor-partners.md

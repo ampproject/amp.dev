@@ -5,4 +5,8 @@ $localization:
   path: /{locale}/documentation/components/{base}.html
 $order: 2
 
-index: /content/amp-dev/documentation/components/index.html
+sub_navigation:
+    - /content/amp-dev/documentation/guides-and-tutorials/index.html
+    - /content/amp-dev/documentation/components/index.html
+    - /content/amp-dev/documentation/examples/index.html
+    - /content/amp-dev/documentation/templates/index.md
