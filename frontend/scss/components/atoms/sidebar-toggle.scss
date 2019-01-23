@@ -72,6 +72,11 @@
           }
         }
       }
+
+      &.contentmenuopen {
+        transform: translateX(-120px);
+      }
+
       @media screen and (min-width: 768px) {
         display: none;
       }
@@ -80,15 +85,24 @@
     &-toc {
       right: 20px;
       z-index: 19;
+      svg {
+        transition: transform 0s, opacity 0.2s;
+      }
       &.contentmenuopen {
         svg {
           opacity: 0;
-          transform: rotate(180deg);
+          transform: rotate(-90deg);
+          transition: transform 0.4s, opacity 0s;
           &.closemenu {
             opacity: 1;
           }
         }
       }
+
+      &.categorymenuopen {
+        transform: translateX(120px);
+      }
+
       @media screen and (min-width: 1024px) {
         display: none;
       }
