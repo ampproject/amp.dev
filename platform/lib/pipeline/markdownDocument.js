@@ -63,8 +63,8 @@ class MarkdownDocument {
   }
 
   _convertSyntax(contents) {
-    contents = this._rewriteCalloutToTip(contents);
-    contents = this.rewriteCodeBlocks(contents);
+    contents = MarkdownDocument.rewriteCalloutToTip(contents);
+    contents = MarkdownDocument.rewriteCodeBlocks(contents);
 
     // Rewrite mustache style parts
     contents =
@@ -82,7 +82,7 @@ class MarkdownDocument {
    * @param  {String} contents
    * @return {String}          The rewritten input
    */
-  static _rewriteCalloutToTip(contents) {
+  static rewriteCalloutToTip(contents) {
     const CALLOUT_PATTERN = /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
     const AVAILABLE_CALLOUT_TYPES = {
       'note': 'note',
