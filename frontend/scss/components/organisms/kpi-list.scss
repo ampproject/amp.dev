@@ -20,10 +20,10 @@
 .#{organism('kpi-list')} {
   @include container;
 
-  @media screen and (max-width: 1023px) {
-    grid-template-columns: repeat(23, 1fr);
-    padding: 0;
-  }
+  // @media screen and (max-width: 1023px) {
+  //   grid-template-columns: repeat(23, 1fr);
+  //   padding: 0;
+  // }
 
   grid-column: 1/-1;
   -webkit-overflow-scrolling: touch;
