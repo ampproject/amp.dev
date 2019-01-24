@@ -19,7 +19,9 @@ $localization:
 
 {% set categories = g.categories('/content/amp-dev/what-is-amp/success-stories', locale=doc.locale) %}
 <section class="ad--intro ad--container">
-  <div class="ad--content">Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</div>
+  <div class="ad--content">
+    <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
+  </div>
 
   {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
   <div class="ad-o-filter-bubbles-list">
