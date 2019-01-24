@@ -81,7 +81,7 @@
     {% include 'views/partials/burger-menu.j2' %}
     {% endblock %}
 
-    {% if podspec.env.name == 'development' %}
+    {% if doc.pod.env.dev %}
     {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
     <aside class="ad-a-grid-toggle">
         <input type="checkbox">
