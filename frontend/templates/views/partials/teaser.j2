@@ -94,4 +94,72 @@
     </div>
   </a>
 </div>
+{% elif teaser_doc.view == '/views/examples/manual.j2' %}
+{# Example teaser #}
+{% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
+<div class="ad-m-teaser ad-m-teaser-example">
+  {% if teaser_doc.used_components %}
+  <div class="ad-m-teaser-info">
+    <p>
+      <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used
+    </p>
+  </div>
+
+  <div class="ad-m-teaser-content-hover">
+    <h5>Used components</h5>
+    <ul class="ad-m-teaser-content-hover-list">
+      {% for used_component in teaser_doc.used_components %}
+      <li class="ad-m-teaser-content-hover-list-item">
+        {% set component_path = '/content/amp-dev/documentation/components/reference/' + used_component + '.md' %}
+        {% if doc.pod.file_exists(component_path) %}
+        <a href="{{ g.doc(component_path, locale=doc.locale).url.path }}" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+        {% else %}
+        <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <a class="ad-m-lnk" href="{{ teaser_doc.url.path }}">
+      <div class="ad-a-ico ad-m-lnk-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ad-m-lnk-text">{{ _('See example' ) }}</span>
+    </a>
+  </div>
+  {% endif %}
+
+  <a class="ad-m-teaser-linking" href="{{ teaser_doc.url|relative }}">
+    <div class="ad-m-teaser-card">
+      {% set teaser = teaser_doc.teaser or {} %}
+      {% if teaser.image %}
+      <div class="ad-a-img ad-m-teaser-image">
+        <amp-img
+          src="/static/img/teaser-placeholder-5x3.jpg"
+          layout="responsive"
+          width="5"
+          height="3"
+          alt="Dummy.">
+        </amp-img>
+      </div>
+      {% else %}
+      <div class="ad-m-teaser-fallback-image"></div>
+      {% endif %}
+
+      <div class="ad-m-teaser-content">
+        {% if teaser_doc.formats %}
+        {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+        <div class="ad-m-teaser-tags">
+          {% for format in teaser_doc.formats %}
+          <div class="ad-m-tag ad-m-tag-{{ format }} ad-m-teaser-tag"></div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <h4 class="ad-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+        {% if teaser_doc.teaser %}
+        <p class="ad-m-teaser-copy">{{ teaser_doc.teaser.text }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>
 {% endif %}

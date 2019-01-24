@@ -1,19 +1,43 @@
 ---
 $title: Examples
-$view: /views/examples/overview.j2
+$view: /views/custom.j2
 $path: /documentation/examples.html
 $localization:
   path: /{locale}/documentation/examples.html
 $hidden: true
 ---
-# Learn AMP by example
+{% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
-[intro]
-A hands-on introduction to Accelerated Mobile Pages (AMP) focusing on code and live samples. Learn how to create AMP pages and see examples for all AMP components.
-[/intro]
+{% block main %}
+<main class="ad--main ad-t-component-overview">
+  <div class="ad--container">
+    {% include 'views/partials/sidebar.j2' %}
+    <section class="ad--content">
+      <h1>Learn AMP by example</h1>
 
-[teaser-grid]
-[](/content/amp-dev/documentation/examples/advanced/Layout_System-manual.html)
-[](/content/amp-dev/documentation/examples/components/amp-accordion-manual.html)
-[](/content/amp-dev/documentation/examples/components/amp-accordion-manual.html)
-[/teaser-grid]
+      <p>A hands-on introduction to Accelerated Mobile Pages (AMP) focusing on code and live samples. Learn how to create AMP pages and see examples for all AMP components.</p>
+
+      <hr>
+      {% set collections = g.collection('/content/amp-dev/documentation/examples').collections() %}
+
+      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+      <div class="ad-o-filter-bubbles-list">
+        {% for collection in collections %}
+        <a class="ad-m-filter-bubble" href="#{{ collection.title|slug }}">{{ collection.title }}</a>
+        {% endfor %}
+      </div>
+
+      {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+      {% for collection in collections %}
+      <div class="ad-o-teaser-grid">
+        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
+          {% for teaser_doc in collection.list_docs(locale=doc.locale) %}
+          {% include '/views/partials/teaser.j2' %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  </div>
+</main>
+{% endblock %}
