@@ -1,8 +1,8 @@
 $title: Land & See
 $view: /views/detail/template-detail.j2
-$category: News + Blog
+$category: News & Blog
 formats:
-  - stories
+  - websites
 
 teaser:
   image:
