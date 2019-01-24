@@ -4,35 +4,23 @@ $view: /views/overview/what-is-amp.j2
 ---
 
 <section class="ad--stage ad--container-fluid">
-[stage format="ads" icon=True]
-## AMP ads
-# Easily create user first ads with AMP.
-[/stage]
+  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  <div class="ad-o-stage ad-o-stage-ads">
+    <div class="ad--container">
+      <div class="ad-o-stage-content">
+          <div class="ad-o-stage-content-icon ad-a-ico">
+            {% do doc.icons.useIcon('icons/bolt-solid.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use></svg>
+          </div>
 
-{% include 'views/partials/format-visuals/websites.j2' %}
-</section>
-
-<div class="ad--kpi ad--container">
-  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ad-m-kpi ad-m-kpi-ads ad-m-teaser-kpi ad-m-teaser-kpi-ads">
-    <div class="ad-m-kpi-content">
-        <span class="ad-m-kpi-number">3-4x</span>
-        <span class="ad-m-kpi-text">faster load times</span>
+          <h2 class="ad-o-stage-content-subline">AMP ads</h2>
+          <h1 class="ad-o-stage-content-headline">Easily create user first ads with AMP.</h1>
+      </div>
     </div>
   </div>
-  <div class="ad-m-kpi ad-m-kpi-ads ad-m-teaser-kpi ad-m-teaser-kpi-ads">
-      <div class="ad-m-kpi-content">
-          <span class="ad-m-kpi-number">3-4x</span>
-          <span class="ad-m-kpi-text">faster load times</span>
-      </div>
-    </div>
-    <div class="ad-m-kpi ad-m-kpi-ads ad-m-teaser-kpi ad-m-teaser-kpi-ads">
-        <div class="ad-m-kpi-content">
-            <span class="ad-m-kpi-number">3-4x</span>
-            <span class="ad-m-kpi-text">faster load times</span>
-        </div>
-      </div>
-</div>
+
+  {% include 'views/partials/format-visuals/websites.j2' %}
+</section>
 
 <section class="ad--content">
   <div class="ad--container-fluid">
@@ -76,9 +64,31 @@ $view: /views/overview/what-is-amp.j2
     </div>
 </section>
 
+<section class="ad--kpi">
+  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+  <div class="ad-o-kpi-list ad--container">
+    <div class="ad-m-kpi ad-m-kpi-ads">
+      <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
+      </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-ads">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+    </div>
+  </div>
+</section>
 
 <section class="ad--benefits-overview">
-
   <div class="ad-o-benefits-overview ad--container">
 
     <div class="ad-o-benefits-overview-header">
@@ -244,14 +254,3 @@ $view: /views/overview/what-is-amp.j2
     </div>
   </div>
 </section>
-
-
-
-##Explore use cases of Amp ads
-
-[teaser-grid]
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[/teaser-grid]

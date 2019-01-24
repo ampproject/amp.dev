@@ -4,12 +4,22 @@ $view: /views/overview/what-is-amp.j2
 ---
 
 <section class="ad--stage ad--container-fluid">
-[stage format="stories" icon=True]
-## AMP Stories
-# Use AMP to easily create user first stories.
-[/stage]
+  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  <div class="ad-o-stage ad-o-stage-stories">
+    <div class="ad--container">
+      <div class="ad-o-stage-content">
+          <div class="ad-o-stage-content-icon ad-a-ico">
+            {% do doc.icons.useIcon('icons/bolt-solid.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use></svg>
+          </div>
 
-{% include 'views/partials/format-visuals/stories.j2' %}
+          <h2 class="ad-o-stage-content-subline">AMP Stories</h2>
+          <h1 class="ad-o-stage-content-headline">Use AMP to easily create user first stories.</h1>
+      </div>
+    </div>
+  </div>
+
+  {% include 'views/partials/format-visuals/stories.j2' %}
 </section>
 
 <section class="ad--kpi">
@@ -56,8 +66,6 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-[bevel position="right"]
-
 <section class="ad--quote ad--container">
   <div class="ad-m-quote">
     <div class="ad-m-quote-source">
@@ -85,7 +93,6 @@ $view: /views/overview/what-is-amp.j2
     </div>
   </div>
 </section>
-
 
 <section class="ad--benefits-overview">
 
@@ -210,12 +217,3 @@ $view: /views/overview/what-is-amp.j2
     </div>
 
 </section>
-
-##Explore use cases of Amp stories
-
-[teaser-grid]
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[](content/shared/fill-ins/use-case.md)
-[/teaser-grid]
