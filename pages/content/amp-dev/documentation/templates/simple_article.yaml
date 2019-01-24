@@ -1,0 +1,12 @@
+$title: Simple Article
+$view: /views/detail/template-detail.j2
+$category: News & Blog
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/templates/simple_article.jpg'
+    width: 1
+    height: 1
+    alt: Simple Article

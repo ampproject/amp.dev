@@ -62,4 +62,4 @@ contents:
     text: Innkeeper’s Advantage’s network of inns and B&Bs accept direct online reservations. Those that switched from a traditional responsive site to AMP saw “a significant increase in online mobile bookings,” Bachmann reports, “rising from just 1% of revenue in test cases to 17% after full implementation.” Thanks to the new AMP pages, some sites also saw an 8% to 10% reduction in bounce rates. In addition, there was “a slight trend toward more time on the site and more pageviews,” she adds.<br><br>The company was especially pleased with the more flexible forms, especially those with dependent fields (such as the checkout form, for example). “Once we established a framework, we were able to implement new customers more quickly,” Bachmann says, “and we are seeing good returns for their businesses. Our customers are focused on bookings, so they’re very pleased with their return on investment in AMP.”
     download_url: '/static/files/case-studies/Innkeepers_Advantage.pdf'
     direction: left-flat
-    background: gray
+    background: gradient

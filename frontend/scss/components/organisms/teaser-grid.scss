@@ -13,6 +13,7 @@
 @import '../../variables';
 
 .#{utility('teaser-grid')} {
+  max-width: 100%;
   @media screen and (min-width: 768px){
     grid-column: 1 / -1;
   }

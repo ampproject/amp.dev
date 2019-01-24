@@ -24,69 +24,67 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
 
   &:before {
     content: '';
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
+    width: 100%;
+    height: 100%;
     position: absolute;
     left: -3px;
     top: -3px;
-    @include gradient-default;
+    border: 3px solid color('doger-blue');
     
     @media screen and (min-width: 768px) {
-      width: calc(100% + 8px);
-      height: calc(100% + 8px);
       left: -4px;
       top: -4px;
+      border-width: 4px;
     }
     
     @media screen and (min-width: 1024px) {
-      width: calc(100% + 10px);
-      height: calc(100% + 10px);
       left: -5px;
       top: -5px;
+      border-width: 5px;
     }
   }
   
   &:after {
+    @include txt;
+    @include txt-mono;
+    @include txt-strong;
+    @include color-white;
     content: attr(title);
     position: absolute;
     left: -3px;
     bottom: 100%;
     padding: 3px 6px;
-    background-color: color('doger-blue');
-    @include txt;
     font-size: 8px;
-    @include txt-mono;
-    @include txt-strong;
-    @include color-white;
-
+    background-color: color('doger-blue');
+    
     @media screen and (min-width: 768px) {
-      left: -5px;
+      left: -4px;
       padding: 5px 10px;
       font-size: inherit;
+    }
+
+    @media screen and (min-width: 1024px) {
+      left: -5px;
     }
   }
 }
 
 @mixin component-frame-websites {
-  &:before {
-    @include gradient-websites;
-  }
-}
-
-@mixin component-frame-ads {
-  &:before {
-    @include gradient-ads;
-  }
+  &:before { border-color: color('doger-blue'); }
+  &:after { @include gradient-websites; }
 }
 
 @mixin component-frame-stories {
-  &:before {
-    @include gradient-stories;
-  }
+  &:before { border-color: color('school-bus'); }
+  &:after { @include gradient-stories; }
 }
 
-@mixin component-frame-emails {
-  &:before {
-    @include gradient-emails;
-  }
+@mixin component-frame-ads {
+  &:before { border-color: color('lavender-magenta'); }
+  &:after { @include gradient-ads; }
+}
+
+@mixin component-frame-email {
+  &:before { border-color: color('confetti'); }
+  &:after { @include gradient-e-mails; }
 }

@@ -1,0 +1,12 @@
+$title: Travel
+$view: /views/detail/template-detail.j2
+$category: E-Commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/templates/travel.jpg'
+    width: 1
+    height: 1
+    alt: Travel

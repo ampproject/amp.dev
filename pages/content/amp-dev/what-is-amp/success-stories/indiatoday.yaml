@@ -1,5 +1,5 @@
 $title: India Today
-$category: publisher
+$category: publishers
 formats:
   - websites
 
@@ -72,7 +72,7 @@ contents:
     alt: India Today
     headline: Results
     text: After their AMP site was completed, India Today saw an almost immediate uptick in traffic. Hoping to capitalize on this, the team shifted their focus to monetization and decided to implement two ads per AMP page. From there, they worked on optimization.Nagpal explains, “Together, we discussed optimizing engagement by changing ad sizes and placements. We learned, for example, that 300x250 ads perform better than the 320x50 ads we were displaying previously.”<br><br>Since implementing ads on AMP pages in July 2016, they have quickly seen impressive results. The average CTR on AMP pages is 2X what they are seeing on non-AMP pages. As a result, their AMP pages are generating 23% more revenue per page than their non-AMP pages, despite having lower ad density. “Even though our ad density on AMP pages is lower, we are seeing much better monetization due to faster load times and up to 200% higher viewability. This makes the proposition very attractive.”
-    direction: left-flat
+    direction: right
     background: gray
 
   - layout: quote

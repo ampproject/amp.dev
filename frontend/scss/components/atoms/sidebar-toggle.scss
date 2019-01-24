@@ -9,7 +9,7 @@
 .#{atom('sidebar-toggle')} {
   
   &-input {
-    position: absolute;
+    position: fixed;
     top: -99px;
     // &:after {
     //   content: "";

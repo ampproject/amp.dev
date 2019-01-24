@@ -4,40 +4,28 @@ $view: /views/overview/what-is-amp.j2
 ---
 
 <section class="ad--stage ad--container-fluid">
-[stage format="emails" icon=True]
-## AMP email
-# Easily create user first emails with AMP.
-[/stage]
+  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  <div class="ad-o-stage ad-o-stage-emails">
+    <div class="ad--container">
+      <div class="ad-o-stage-content">
+          <div class="ad-o-stage-content-icon ad-a-ico">
+            {% do doc.icons.useIcon('icons/bolt-solid.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use></svg>
+          </div>
 
-{% include 'views/partials/format-visuals/websites.j2' %}
-</section>
-
-<div class="ad--kpi ad--container">
-  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ad-m-kpi ad-m-kpi-e-mails ad-m-teaser-kpi ad-m-teaser-kpi-e-mails">
-    <div class="ad-m-kpi-content">
-        <span class="ad-m-kpi-number">3-4x</span>
-        <span class="ad-m-kpi-text">faster load times</span>
+          <h2 class="ad-o-stage-content-subline">AMP Email</h2>
+          <h1 class="ad-o-stage-content-headline">Easily create user first emails with AMP.</h1>
+      </div>
     </div>
   </div>
-  <div class="ad-m-kpi ad-m-kpi-e-mails ad-m-teaser-kpi ad-m-teaser-kpi-e-mails">
-      <div class="ad-m-kpi-content">
-          <span class="ad-m-kpi-number">3-4x</span>
-          <span class="ad-m-kpi-text">faster load times</span>
-      </div>
-    </div>
-    <div class="ad-m-kpi ad-m-kpi-e-mails ad-m-teaser-kpi ad-m-teaser-kpi-e-mails">
-        <div class="ad-m-kpi-content">
-            <span class="ad-m-kpi-number">3-4x</span>
-            <span class="ad-m-kpi-text">faster load times</span>
-        </div>
-      </div>
-</div>
+
+  {% include 'views/partials/format-visuals/email.j2' %}
+</section>
 
 <section class="ad--content">
   <div class="ad--container-fluid">
     <div class="ad-m-copy ad-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h1>AMP emails</h1>
+      <h1>AMP<br> Email</h1>
       <h5>A whole new world of possibilities for content engagement</h5>
       <amp-youtube id="myLiveChannel" data-videoid="R_YQB6rLo_M" width="358" height="204" layout="responsive"></amp-youtube>
       <p>AMP for email allows senders to include AMP components inside rich engaging emails, making modern app functionality available within email. The AMP email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMP emails to interact dynamically with content directly in the message.</p>
@@ -51,6 +39,31 @@ $view: /views/overview/what-is-amp.j2
           <span class="ad-m-lnk-text">Get Started</span>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ad--kpi">
+  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
+  <div class="ad-o-kpi-list ad--container">
+    <div class="ad-m-kpi ad-m-kpi-e-mails">
+      <div class="ad-m-kpi-content">
+        <span class="ad-m-kpi-number">3-4x</span>
+        <span class="ad-m-kpi-text">faster load times</span>
+      </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-e-mails">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
+    </div>
+    <div class="ad-m-kpi ad-m-kpi-e-mails">
+        <div class="ad-m-kpi-content">
+          <span class="ad-m-kpi-number">3-4x</span>
+          <span class="ad-m-kpi-text">faster load times</span>
+        </div>
     </div>
   </div>
 </section>
@@ -104,7 +117,6 @@ $view: /views/overview/what-is-amp.j2
 
 
 <section class="ad--benefits-overview">
-
   <div class="ad-o-benefits-overview ad--container">
 
     <div class="ad-o-benefits-overview-header">

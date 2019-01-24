@@ -15,6 +15,8 @@
  */
 
 const {GitHubImporter} = require('./gitHubImporter');
+const categories = require(__dirname + '/../../config/imports/componentCategories.json');
+const formats = require(__dirname + '/../../config/imports/componentFormats.json');
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
@@ -38,7 +40,6 @@ class ComponentReferenceImporter extends GitHubImporter {
   async _importExtensionsDocs() {
     // Gives the contents of ampproject/amphtml/extensions
     let extensions = await this._repository.contentsAsync('extensions', this._latestReleaseTag);
-    const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 
     // As inside /extensions each component has its own folder filter
     // down by directory
@@ -57,16 +58,45 @@ class ComponentReferenceImporter extends GitHubImporter {
       if (!document) {
         this._log.warn(`No matching document for component: ${extension.name}`);
       } else {
-        // Ensure that the document has a TOC
-        document.toc = true;
-        // And try to add in the matching category
-        document.category = categories[extension.name];
+        this._setMetadata(extension.name, document);
         savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }
 
-
     return Promise.all(savedDocuments);
+  }
+
+  /**
+   * Set metadata that is required for the teaser
+   * @param {MarkdownDocument} document
+   */
+  _setMetadata(extensionName, document) {
+    // Splice out an excerpt to show in the teaser ...
+    const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
+    let excerpt = FIRST_PARAGRAPH.exec(document.contents);
+    if (excerpt == null || !excerpt[1].trim()) {
+      const SECOND_PARAGRAPH = /##.*$\n+((.|\n(?=\w))*)$/gm;
+      excerpt = SECOND_PARAGRAPH.exec(document.contents);
+    }
+
+    // If the extraction of an excerpt was successful write it to the teaser
+    if (excerpt) {
+      // Strip out all possible HTML tags
+      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, "");
+      // Unwrap back ticks
+      excerpt = excerpt.replace(/`(.+)`/g, '$1');
+      // And unwrap possible markdown links
+      excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
+
+      document.teaser = {'text': excerpt};
+    }
+
+    // Ensure that the document has a TOC
+    document.toc = true;
+    // And try to add in the matching category ...
+    document.category = categories[extensionName];
+    // ... as well as all the formats the component is available in
+    document.formats = formats[extensionName];
   }
 
   /**

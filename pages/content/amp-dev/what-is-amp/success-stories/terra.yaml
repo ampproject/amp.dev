@@ -11,8 +11,8 @@ teaser:
     alt: Terra
   logo:
     src: '/static/img/success-stories/terra/terra_logo.png'
-    width: 512
-    height: 379
+    width: 400
+    height: 115
     alt: Terra
   text: Terra drives mobile viewership up with AMP
 
@@ -65,6 +65,6 @@ contents:
     type: mobile
     alt: Terra
     headline: Results
-    text: 'The initial results on Terra.com.br, which supports their Brazilian market, are impressive. AMP pages load 2x faster than non-AMP mobile pages. As a result, users are spending 2x more time on AMP pages than non-AMP mobile pages. Recently, Terra began building advertising solutions into its AMP pages, which drove an increase in clicks and clickthrough rates. The first two months of results speak for themselves:<ul><li>3,175% increase in total clicks on AMP pages</li><li>33% increase in clickthrough rate on AMP pages</li></ul>“The benefit of AMP is already paying off in terms of our readers’ user experience, our advertisers’ results, and our company’s bottom line,” said Souza. “We’re thrilled at how quickly going AMP has made a difference.” Terra is fulfilling the promise of an instant-everywhere mobile web and it’s making all the difference.<br><br>Looking to the future, Terra aims to keep improving their AMP pages, always testing new features and striving to deliver the best possible experience for both their readers and advertisers.'
+    text: 'The initial results on Terra.com.br, which supports their Brazilian market, are impressive. AMP pages load 2x faster than non-AMP mobile pages. As a result, users are spending 2x more time on AMP pages than non-AMP mobile pages. Recently, Terra began building advertising solutions into its AMP pages, which drove an increase in clicks and clickthrough rates. The first two months of results speak for themselves:<ul><li>3,175% increase in total clicks on AMP pages</li><li>33% increase in clickthrough rate on AMP pages</li></ul><p>“The benefit of AMP is already paying off in terms of our readers’ user experience, our advertisers’ results, and our company’s bottom line,” said Souza. “We’re thrilled at how quickly going AMP has made a difference.” Terra is fulfilling the promise of an instant-everywhere mobile web and it’s making all the difference.<br><br>Looking to the future, Terra aims to keep improving their AMP pages, always testing new features and striving to deliver the best possible experience for both their readers and advertisers.'
     direction: left-flat
     download_url: '/static/files/case-studies/terra.pdf'

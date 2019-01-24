@@ -35,11 +35,6 @@ body {
 
   .#{utility('container')} {
     @include container;
-    @include txt;
-    @include txt-p;
-    @include txt-2;
-    padding-left: 2em;
-    margin: 1.5em 0 2.5em;
   }
 
   .#{utility('container-fluid')} {
@@ -85,6 +80,13 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      li {
+        font-family: 'Noto Sans';
+        line-height: 1.6em;
+        font-weight: normal;
+        color: #48525C;
+      }
     }
 
     .media {
