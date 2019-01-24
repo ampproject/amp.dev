@@ -31,7 +31,8 @@
           <span class="nav-link">{{ scope.initial|upper }}</span>
           <ul class="nav-list level-2">
             {% endif %}
-            <li class="nav-item level-2">
+            {% set formats = component.formats or [] %}
+            <li class="nav-item level-2 {% for format in formats %}ad--{{ format }} {% endfor %}">
               <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
             </li>
             {% endfor %}

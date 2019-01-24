@@ -91,8 +91,8 @@ class FilteredPage {
     // should bring the user back to the unfiltered state
     /* eslint-disable max-len */
     this._content = this._content.replace(
-        `ad-m-format-toggle-link-${this._format}" href="?format=${this._format}">${this._format}</a>`,
-        `ad-m-format-toggle-link-${this._format}" href="?format=all">${this._format}</a>`
+        `ad-m-format-toggle-link-${this._format}" href="?format=${this._format}"><div class="ad-a-ico">`,
+        `ad-m-format-toggle-link-${this._format}" href="?format=all"><div class="ad-a-ico">`
     );
     /* eslint-enable max-len */
   }

@@ -31,11 +31,11 @@ stage:
   <section class="ad--stage ad--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-    <div class="ad-o-stage ad-o-stage-websites">
+    <div class="ad-o-stage ad-o-stage-websites {{doc.stage.layout}}">
       <div class="ad--container">
         <div class="ad-o-stage-content">
             <h2 class="ad-o-stage-content-subline">{{ _('How to build AMP without knowing how to code?') }}</h2>
-            <h1 class="ad-o-stage-content-headline">{{ _('Easily build user first websites with our templates' )}}<h1>
+            <h1 class="ad-o-stage-content-headline">{{ _('Easily build user first websites with our templates' )}}</h1>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@ stage:
   {# {% set categories = g.categories('/content/amp-dev/what-is-amp/success-stories', locale=doc.locale) %} #}
   <section class="ad--intro ad--container">
     <div class="ad--content">
-      <p>{{ _('Get started quickly with a ready-made design.') }}</p>
+      <p>{{ _('Get started quickly with a ready-made design. Templates designed to work with all devices - mobile, tablet and desktop.') }}</p>
     </div>
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
@@ -96,7 +96,7 @@ stage:
     </div>
   </section>
 
-  <section class="ad--teaser-grid">
+  <section class="ad--teaser-grid ad--container">
     <div class="ad-o-teaser-grid">
       <div class="ad-o-teaser-grid-list">
         {% for category, stories in categories %}

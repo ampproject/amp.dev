@@ -105,8 +105,14 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):
         content = previous_result if previous_result else raw_content
 
-        dependencies = self.find_dependencies(content)
-        dependencies = self.verify_dependencies(dependencies)
+        doc_path = document.Document.clean_localized_path(doc.pod_path, doc.locale)
+        dependencies = self.extension._dependencyCache.get(doc_path)
+        if not dependencies or self.extension.pod.env.dev:
+          dependencies = self.find_dependencies(content=content)
+          dependencies = self.verify_dependencies(dependencies, doc=doc)
+          # Dependencies will not change so cache them
+          self.extension._dependencyCache.add(doc_path, dependencies)
+
         content = self.inject_dependencies(dependencies, content)
 
         return content
@@ -153,7 +159,7 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
 
         return dependencies
 
-    def verify_dependencies(self, dependencies):
+    def verify_dependencies(self, dependencies, doc):
         """Verifies that the found dependencies are valid components
         and filters out duplicates."""
         seen_dependencies = {}
@@ -163,7 +169,7 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
             if dependency in BUILT_INS: continue
             if dependency in FALSE_POSITIVES: continue
             if dependency not in VALID_DEPENDENCIES:
-                self.pod.logger.warning('Document uses unknown AMP dependency: {}'.format(dependency))
+                self.pod.logger.warning('{} uses unknown AMP dependency: {}'.format(doc, dependency))
                 continue
 
             seen_dependencies[dependency] = True
@@ -189,6 +195,11 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
 
 class AmpDependencyInjectorExtension(extensions.BaseExtension):
     """AMP Dependency Injector Extension."""
+
+    def __init__(self, pod, config):
+        super(AmpDependencyInjectorExtension, self).__init__(pod, config)
+        # Initialize a cache for the found dependencies
+        self._dependencyCache = pod.podcache.get_object_cache('ampDeps')
 
     @property
     def available_hooks(self):

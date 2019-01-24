@@ -1,6 +1,6 @@
 $title: Travel
 $view: /views/detail/template-detail.j2
-$category: e-commerce
+$category: E-Commerce
 formats:
   - websites
 

@@ -1,10 +1,10 @@
 ---
-$title: Integrate your analytics tools
-$order: 5
-
-formats:
-  - websites
+$title: Integrating your analytics tool with AMP
+$order: 1
+toc: true
 ---
+
+# Integrate your analytics tools in AMP HTML
 
 ## Overview
 
@@ -56,9 +56,9 @@ Tag management services have two options for integrating with AMP Analytics:
 
 The endpoint approach is the same as the standard approach detailed in the previous section.  The config approach consists of creating a unique configuration for amp-analytics that is specific to each publisher and includes all of their compatible analytics packages.  A publisher would include the configuration using a syntax similar to this:
 
-```html
+[sourcecode:html]
   <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json">
-```
+[/sourcecode]
 
 To take this approach, review the documentation for publishers' integration with AMP Analytics.
 
