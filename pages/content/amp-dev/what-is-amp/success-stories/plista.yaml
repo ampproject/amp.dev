@@ -22,7 +22,7 @@ stage:
   subline: OCTOBER 7, 2016
   devices:
 
-    - image_src: ../../../static/img/success-stories/plista/plista_graphic.png
+    - image_src: '/static/img/success-stories/plista/plista_graphic.png'
       width: 5
       height: 3
       type: desktop
@@ -47,7 +47,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/plista/plista_graphic.png
+    image_src: '/static/img/success-stories/plista/plista_graphic.png'
     width: 5
     height: 3
     type: desktop
@@ -63,7 +63,7 @@ contents:
 
   - layout: quote
     quote: From day one, through its publisher test and beyond, plista has found AMP an amazingly fast, easy and effective way to help its publishers significantly increase their bottom lines by speeding up mobile web app widget load times -- which also boosts user engagement and exposure for advertisers
-    image_src: ../../../static/img/success-stories/plista/plista_logo.png
+    image_src: '/static/img/success-stories/plista/plista_logo.png'
     width: 100
     height: 50
     alt: Plista
@@ -72,4 +72,4 @@ contents:
 
   - layout: text-button
     direction: left-flat
-    download_url: ../../../static/files/case-studies/plista.pdf
+    download_url: '/static/files/case-studies/plista.pdf'

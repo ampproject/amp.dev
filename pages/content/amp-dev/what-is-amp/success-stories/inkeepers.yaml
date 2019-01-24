@@ -22,7 +22,7 @@ stage:
   subline: MAR 2, 2018
   devices:
 
-    - image_src: ../../../static/img/success-stories/innkeepers/amp_innkeepers_1.jpg
+    - image_src: '/static/img/success-stories/innkeepers/amp_innkeepers_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -43,7 +43,7 @@ contents:
     text: <a href="https://www.innkeepersadvantage.com/" target="_blank">Innkeeper’s Advantage</a> provides inns and bed and breakfasts with integrated online reservations, guest management, a website content management system, online gift certificates, and shops, blogs, and analytics. From their headquarters outside Pittsburgh, they serve businesses across the U.S., Canada, Mexico, and the Caribbean.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/innkeepers/amp_innkeepers_1.jpg
+    image_src: '/static/img/success-stories/innkeepers/amp_innkeepers_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -53,13 +53,13 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/innkeepers/amp_innkeepers_2.jpg
+    image_src: '/static/img/success-stories/innkeepers/amp_innkeepers_2.jpg'
     width: 3
     height: 5
     type: mobile
     alt: lorem ipsum
     headline: Results
     text: Innkeeper’s Advantage’s network of inns and B&Bs accept direct online reservations. Those that switched from a traditional responsive site to AMP saw “a significant increase in online mobile bookings,” Bachmann reports, “rising from just 1% of revenue in test cases to 17% after full implementation.” Thanks to the new AMP pages, some sites also saw an 8% to 10% reduction in bounce rates. In addition, there was “a slight trend toward more time on the site and more pageviews,” she adds.<br><br>The company was especially pleased with the more flexible forms, especially those with dependent fields (such as the checkout form, for example). “Once we established a framework, we were able to implement new customers more quickly,” Bachmann says, “and we are seeing good returns for their businesses. Our customers are focused on bookings, so they’re very pleased with their return on investment in AMP.”
-    download_url: "../../../static/files/case-studies/Innkeepers_Advantage.pdf"
+    download_url: '/static/files/case-studies/Innkeepers_Advantage.pdf'
     direction: left-flat
     background: gray

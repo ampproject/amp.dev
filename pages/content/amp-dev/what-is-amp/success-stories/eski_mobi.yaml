@@ -21,7 +21,7 @@ stage:
   subline: JAN 23, 2018
   devices:
 
-    - image_src: ../../../static/img/success-stories/eski/amp_eski_1.jpg
+    - image_src: '/static/img/success-stories/eski/amp_eski_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -42,7 +42,7 @@ contents:
     text: Founded in 2012, Moscow-based Eski.mobi is a web design studio that specializes in adapting websites to run quickly and smoothly on smartphones and tablets. Their portfolio comprises over 200 projects, including ones for top Russian e-commerce companies such as OZON.ru, MebelVia, and Utkonos.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/eski/amp_eski_1.jpg
+    image_src: '/static/img/success-stories/eski/amp_eski_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -52,7 +52,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/eski/amp_eski_2.jpg
+    image_src: '/static/img/success-stories/eski/amp_eski_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -60,4 +60,4 @@ contents:
     headline: Results
     text: "Eski.mobi converted 50 websites to AMP in 2017. With each site, the studio looked for similar outcomes: “We analyze clickthrough rates (CTR) and conversion rates before and after launching AMP,” Tsympov says. Results so far have been impressive: Bookseller AlpinaBook saw a 29% increase in CTR and a 170% increase in purchases Coins and currency marketplace Monetnik saw a 29% increase in CTR and lowered bounce rate by 20% Online marketing publisher Cossa increased page-load speed 10X and time on site by 150%<br><br>“A site made with AMP is loaded in one second,” Tsympov says. “This significantly increases conversions and reduces bounce rate.” AMP sites often see an increase in traffic as well.<br><br>Russian businesses are still getting to know AMP, and many don’t yet realize it’s usefulness for e-commerce. “Apart from implementing the technology, our job is also educating businesses about AMP and the importance of serving fast pages,” Tsympov says. “We're experimenting with a DIY tool to create AMP versions for any website, which we hope will help increase the number of AMP sites created every day.”"
     direction: left-flat
-    download_url: ../../../static/files/case-studies/eski_mobi.pdf
+    download_url: '/static/files/case-studies/eski_mobi.pdf'

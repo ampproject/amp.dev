@@ -22,7 +22,7 @@ stage:
   subline: JANUARY 24, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/milestone/amp_milestone_1.jpg
+    - image_src: '/static/img/success-stories/milestone/amp_milestone_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -45,7 +45,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/milestone/amp_milestone_2.jpg
+    image_src: '/static/img/success-stories/milestone/amp_milestone_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -56,7 +56,7 @@ contents:
 
   - layout: quote
     quote: The fast-growing AMP ecosystem supported all the key advertising and analytics requirements to run our business
-    image_src: ../../../static/img/success-stories/hearst/hearst_logo.png
+    image_src: '/static/img/success-stories/hearst/hearst_logo.png'
     width: 100
     height: 50
     alt: Hearst
@@ -68,7 +68,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/milestone/amp_milestone_1.jpg
+    image_src: '/static/img/success-stories/milestone/amp_milestone_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -76,4 +76,4 @@ contents:
     headline: Results
     text: Hearst has published over 1 million AMP pages across Hearst Magazines, Hearst Newspapers, and Hearst Television. Across all properties they have seen strong results -- 29% better ad viewability in AMP compared to non-AMP pages with a 45% increase in ad CTR.<br><br>Results are more pronounced when looking at AMP’s impact in individual business units. Hearst Newspapers has seen 237% higher ad CTR on AMP pages and achieved an 83% reduction in total page load time. Chron.com has experienced higher engagement after AMP implementation, with 2x as many return visitors on AMP as on mobile.<br><br>In Hearst Magazines, AMP pages now account for 10% of total unique pageviews on Elle.com. In a page speed test, Elle found that the average page load time on an AMP article was 12 seconds faster than the average page load time of its mobile counterpart.<br><br>Total unique pageviews grew by 25% since implementation of AMP across Hearst Television. They have measured an 89% improvement in page speed load times on their articles.<br><br>Looking ahead, the Hearst team would like to work with the open source AMP Project to develop support for more content types like quizzes, ratings, 360 video, and shop modules. “We’re constantly looking for creative new ways to engage our audiences with unique, compelling content and bringing those experiences to the AMP platform is a key part of our product roadmap on mobile,” said Wiser.
     direction: left-flat
-    download_url: ../../../static/files/case-studies/hearst.pdf
+    download_url: '/static/files/case-studies/hearst.pdf'

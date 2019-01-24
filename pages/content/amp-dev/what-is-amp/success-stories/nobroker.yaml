@@ -22,7 +22,7 @@ stage:
   subline: MARCH 27, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/nobroker/amp_nobroker_1.jpg
+    - image_src: '/static/img/success-stories/nobroker/amp_nobroker_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -48,7 +48,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/nobroker/amp_nobroker_2.jpg
+    image_src: '/static/img/success-stories/nobroker/amp_nobroker_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -58,7 +58,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/nobroker/amp_nobroker_2.jpg
+    image_src: '/static/img/success-stories/nobroker/amp_nobroker_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -66,4 +66,4 @@ contents:
     headline: Results
     text: NoBroker implemented their AMP framework in less than three weeks with just two engineers. “After our AMP pages went live,” Gupta says, “we saw an 18% decrease in bounce rate, 10% more page views, a 25% increase in registrations, and most importantly, a 77% increase in the number of connections between renters and tenants.”<br><br>Because NoBroker’s business model relies so much on the mobile experience, AMP is critical to the continued success of the business. “If you need to provide a super-fast experience to a mobile customer, then AMP is the easiest way to do it,” notes Gupta. “The best part is that it doesn’t require any changes to your existing site architecture, and it’s super-quick to implement.”
     direction: flat
-    download_url: ../../../static/files/case-studies/NoBroker.pdf
+    download_url: '/static/files/case-studies/NoBroker.pdf'

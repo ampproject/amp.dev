@@ -21,7 +21,7 @@ stage:
   headline: Renovation Brands improves speed and site duration with AMP
   subline: JUL 11, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/renovation/amp_renovation_1.jpg
+    - image_src: '/static/img/success-stories/renovation/amp_renovation_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -44,7 +44,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/renovation/amp_renovation_1.jpg
+    image_src: '/static/img/success-stories/renovation/amp_renovation_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -54,7 +54,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/renovation/amp_renovation_2.jpg
+    image_src: '/static/img/success-stories/renovation/amp_renovation_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -62,4 +62,4 @@ contents:
     headline: Results
     text: "“AMP lets us quickly generate new, interactive content while optimizing our overall site experience,” James shares. “Building and testing AMP pages is a breeze for our design team, and the capacity of our A/B testing has nearly tripled. And introducing new interactive pages like AMP stories will help us get the most out of our content.”<br><br>For all their web traffic, Renovation Brands saw 27% longer session duration, 24% more pages per session, and a 30% lower bounce rate on their new AMP pages. Specifically for Google Shopping campaign traffic directed to AMP pages, session duration rose 124%, pages per session doubled, and the bounce rate dropped by 56%. In addition, average load times fell by nearly half, from 6.5 to 3.5 seconds, while the conversion rate rose 79%.<br><br>“Using all possible channel types was key for us, to test the increases in performance compared to the non-AMP experience,” James adds. “By deploying AMP pages to multiple platforms, we’ve been able to unify all front-end development. As a result, our development costs have been cut nearly 60%.”"
     direction: left-flat
-    download_url: ../../../static/files/case-studies/renovation_brands.pdf
+    download_url: '/static/files/case-studies/renovation_brands.pdf'

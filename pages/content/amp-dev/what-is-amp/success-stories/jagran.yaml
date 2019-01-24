@@ -21,7 +21,7 @@ stage:
   headline: Jagran New Media boosts traffic by 115% and revenue by 4.5X by expanding AMP strategy
   subline: SEP 12, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/jagran/amp_jagran_1.jpg
+    - image_src: '/static/img/success-stories/jagran/amp_jagran_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -44,7 +44,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/jagran/amp_jagran_1.jpg
+    image_src: '/static/img/success-stories/jagran/amp_jagran_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -54,7 +54,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/jagran/amp_jagran_2.jpg
+    image_src: '/static/img/success-stories/jagran/amp_jagran_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -62,4 +62,4 @@ contents:
     headline: Results
     text: "JNM made user-centric, data-driven decisions and adopted best practices for ads running on AMP pages. Consequently, they achieved impressive results within a month. Ad requests were 3.3 times higher, generating 15 percent more mobile web (mWeb) revenue. JNM maintained their momentum by quickly enabling AMP for top traffic landing pages. They subsequently saw 115 percent more AMP pageviews and 4.5 times more AMP revenue.<br><br>The JNM mobile web team is excited to continue optimizing the AMP experience for their users. They expect to drive more traffic to AMP pages and to deliver a fast, optimal customer experience.<br><br>“AMP has enabled high content discoverability in faster load times, resulting in higher user engagement through greater content consumption,” says Jagran CEO, Bharat Gupta. “The same environment helps with greater ad efficiencies, resulting in higher revenues.”"
     direction: left-flat
-    download_url: ../../../static/files/case-studies/jagran.pdf
+    download_url: '/static/files/case-studies/jagran.pdf'

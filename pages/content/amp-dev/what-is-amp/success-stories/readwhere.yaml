@@ -21,7 +21,7 @@ stage:
   headline: Readwhere provides seamless mobile content via AMP and PWA
   subline: SEP 20, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/readwhere/amp_readwhere_1.jpg
+    - image_src: '/static/img/success-stories/readwhere/amp_readwhere_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -44,7 +44,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/readwhere/amp_readwhere_1.jpg
+    image_src: '/static/img/success-stories/readwhere/amp_readwhere_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -54,7 +54,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/readwhere/amp_readwhere_2.jpg
+    image_src: '/static/img/success-stories/readwhere/amp_readwhere_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -62,4 +62,4 @@ contents:
     headline: Results
     text: "After the implementation of AMP and AMPHTML ads, time on site and user engagement rose 30 percent, while viewability improved by 20 percent. This resulted in 30 percent incremental revenue. “In the future, I would love to see PWA features working across all browsers,” Choudhary says.<br><br>“AMP helps with content discovery, and PWA provides a seamless user experience,” he adds. “AMP and PWA are mirror images—you can’t get a perfect reflection without both together. We recommend having both to provide a perfect user journey.”"
     direction: left-flat
-    download_url: ../../../static/files/case-studies/readwhere.pdf
+    download_url: '/static/files/case-studies/readwhere.pdf'
