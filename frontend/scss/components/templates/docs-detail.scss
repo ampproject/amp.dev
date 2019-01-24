@@ -54,6 +54,7 @@
         @include box-shadow;
       }
       figcaption {
+        @include txt;
         padding-top: 20px;
       }
     }

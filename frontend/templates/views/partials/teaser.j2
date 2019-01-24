@@ -33,9 +33,11 @@
 
       <div class="ad-m-teaser-content">
         {% if teaser.logo %}
-        {% set landscape = (teaser.logo.width / teaser.logo.height >= 1) %}
-        <div class="ad-a-img ad-m-teaser-logo ad-m-teaser-logo-{{ 'landscape' if landscape else 'portrait' }}">
-          <amp-img src="{{ teaser.logo.src }}" layout="responsive" width="{{ teaser.logo.width }}" height="{{ teaser.logo.height }}" alt="{{ teaser.logo.alt }}"></amp-img>
+        {% set landscape = (teaser.logo.width / teaser.logo.height < 1) %}
+        <div class="logo-wrapper"  layout="container">
+          <div class="ad-a-img ad-m-teaser-logo ad-m-teaser-logo-{{ 'landscape' if landscape else 'portrait' }}">
+            <amp-img src="{{ teaser.logo.src }}" layout="responsive" width="{{ teaser.logo.width }}" height="{{ teaser.logo.height }}" alt="{{ teaser.logo.alt }}"></amp-img>
+          </div>
         </div>
         {% endif %}
 
@@ -62,6 +64,33 @@
     </div>
     <div class="ad-m-teaser-content">
       <h4 class="ad-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+    </div>
+  </a>
+</div>
+{% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
+{# Component teaser #}
+{% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
+<div class="ad-m-teaser ad-m-teaser-component">
+  <a href="{{ teaser_doc.url.path }}">
+    <div class="ad-m-teaser-card">
+      {% if teaser_doc.formats %}
+      {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+      <div class="ad-m-teaser-tags">
+        {% for format in teaser_doc.formats %}
+        <div class="ad-m-tag ad-m-tag-{{ format }} ad-m-teaser-tag"></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="ad-m-teaser-header">
+        <h4 class="ad-m-teaser-header-title">{{ teaser_doc.title }}</h4>
+      </div>
+
+      {% if teaser_doc.teaser and teaser_doc.teaser.text %}
+      <div class="ad-m-teaser-content">
+        <p class="ad-m-teaser-copy">{{ teaser_doc.teaser.text|truncate(100, false, '...') }}</p>
+      </div>
+      {% endif %}
     </div>
   </a>
 </div>

@@ -11,8 +11,8 @@ teaser:
     alt: Terra
   logo:
     src: '/static/img/success-stories/terra/terra_logo.png'
-    width: 512
-    height: 379
+    width: 400
+    height: 115
     alt: Terra
   text: Terra drives mobile viewership up with AMP
 

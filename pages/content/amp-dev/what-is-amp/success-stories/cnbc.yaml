@@ -21,7 +21,7 @@ stage:
   subline: MAY 22, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/cnbc/amp_cnbc_1.jpg
+    - image_src: '/static/img/success-stories/cnbc/amp_cnbc_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -39,7 +39,7 @@ contents:
     text: CNBC works hard to ensure that their users have access to the content they need, wherever they need it. With mobile traffic now accounting for roughly 50% of CNBC's total traffic, it has become a strategic priority to provide a fast loading, less frustrating user experience to this expanding user base. “Improving performance for all our pages is a top priority. As we see our traffic from mobile devices increasing, it’s become paramount we provide the fastest experience we can for those users,” said Viktor Cea, Director of Content and Design. The AMP format offers an enhanced experience for users, with its promise of near-instant page load times.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/cnbc/amp_cnbc_1.jpg
+    image_src: '/static/img/success-stories/cnbc/amp_cnbc_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -49,7 +49,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/cnbc/amp_cnbc_2.jpg
+    image_src: '/static/img/success-stories/cnbc/amp_cnbc_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -57,4 +57,4 @@ contents:
     headline: Results
     text: AMP’s promise of increased page performance has proved true. CNBC is now seeing average AMP page load times of 1.23 seconds. Since implementing AMP, CNBC has seen a 22% increase in mobile search users who returned to CNBC.com within 7 days.<br><br>CNBC is impressed by these numbers given how quickly they were able to adopt the AMP format. Front-end engineering manager Roshan Varghese said, “AMP is like web on steroids. We were able to achieve huge performance gains by using the format’s approach of going back to the basics and making user experience the primary goal.”
     direction: left-flat
-    download_url: ../../../static/files/case-studies/cnbc.pdf
+    download_url: '/static/files/case-studies/cnbc.pdf'
