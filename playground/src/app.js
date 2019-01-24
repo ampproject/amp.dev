@@ -146,7 +146,7 @@ documentController.show();
 // configure preview
 preview.setRuntime(runtimes.activeRuntime);
 const previewPanel = document.getElementById('preview');
-const showPreview = new Fab(document.body, '▶', () => {
+const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
   params.push('preview', true);
   previewPanel.classList.add('show');
 });

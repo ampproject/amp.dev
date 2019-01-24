@@ -27,6 +27,9 @@
   will-change: transform;
   animation: loader-dots 2s infinite;
 }
+.loader.light .loader-dot {
+  background-color: color('white');
+}
 
 .loader .loader-dot {
   &:nth-child(1) {
