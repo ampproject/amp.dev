@@ -1,0 +1,118 @@
+/*
+
+#############################
+### MOLECULE: format-visual ###
+#############################
+
+### INFO:
+
+format-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
+the border and format around the images.
+
+### MODIFIERS:
+
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/component-frame.scss';
+
+.#{molecule('format-visual-stories')} {
+  position: relative;
+  width: 100%;
+  max-width: 55%;
+  padding: 0.5em 0;
+  margin: 0 auto;
+  transform: rotate3d(135, -90, 90, 50deg);
+  display: grid;
+  grid-template-columns: 3fr 94fr 3fr;
+  grid-template-rows: 17fr 76fr 7fr;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-top: 100%;
+    border-radius: 1000% 0 0 0 / 1000% 0 0 0;
+    opacity: 0.5;
+    transform: rotate(-5deg) scale(1, 1.1) skew(-25deg);
+    transform-origin: right bottom;
+    background: linear-gradient(-225deg, transparent 30%, color('black'));
+    filter: blur(20px);
+    z-index: -1;
+  }
+
+  &-image {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  &-bottom-image {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    max-width: 100%;
+    transform: translateX(0);
+  }
+
+  &-top-image {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    max-width: 100%;
+    @include component-frame;
+    @include component-frame-stories;
+    background-color: transparent;
+    transform: translateX(0);
+  }
+
+  &-code-snippet {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 75%;
+    margin-top: auto;
+    font-size: 10px;
+    filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
+    transform: translate(75%, -30px);
+    
+    @media screen and (min-width: 768px) {
+      font-size: inherit;
+    }
+    
+    .#{molecule('code-snippet')} {
+      margin: 0;
+      animation: 10s ease-in-out infinite bounce -2s;
+    }
+
+    &-highlight:before {
+      content: 'right';
+      color: #e6db74;
+      animation: 10s ease-in-out 3.5s infinite both highlight-code;
+    }
+  }
+}
+
+@keyframes highlight-code {
+  0%, 90%, 100% { content: 'right'; background-color: transparent; }
+  9% { content: 'right'; background-color: color('pink-flamingo'); }
+  18% { content: " "; background-color: color('pink-flamingo'); }
+  36% { content: 'left'; background-color: color('pink-flamingo'); }
+  45%, 54% { content: 'left'; background-color: transparent; }
+  63% { content: 'left'; background-color: color('pink-flamingo'); }
+  72% { content: " "; background-color: color('pink-flamingo'); }
+  81% { content: 'right'; background-color: color('pink-flamingo'); }
+}
+
+@keyframes bounce {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 20px); }
+  100% { transform: translate(0, 0); }
+}
