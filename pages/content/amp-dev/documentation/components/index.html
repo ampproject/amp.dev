@@ -21,12 +21,19 @@ $hidden: true
       </ul>
 
       <hr>
+      {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
+
+      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+      <div class="ad-o-filter-bubbles-list">
+        {% for category, components in categories %}
+        <a class="ad-m-filter-bubble" href="#{{ category }}">{{ category }}</a>
+        {% endfor %}
+      </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-
-      {% for category, components in g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
+      {% for category, components in categories %}
       <div class="ad-o-teaser-grid">
-        <h2>{{ category }}</h2>
+        <h2 id="{{ category }}">{{ category }}</h2>
         <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
           {% for teaser_doc in components %}
           {% include '/views/partials/teaser.j2' %}
