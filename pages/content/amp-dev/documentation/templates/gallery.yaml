@@ -1,0 +1,12 @@
+$title: Gallery
+$view: /views/detail/template-detail.j2
+$category: Art & Design
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/templates/gallery.jpg'
+    width: 3
+    height: 4
+    alt: Gallery
