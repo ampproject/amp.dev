@@ -1,4 +1,7 @@
-{% set second_level = doc.sub_navigation or doc.collection.sub_navigation or doc.collection.parent.sub_navigation or doc.collection.parent.parent.sub_navigation or None %}
+{% set second_level = doc.sub_navigation or doc.collection.sub_navigation or None %}
+{% if not second_level %}
+{% set second_level = g.collection('/content/amp-dev/' + doc.pod_path.split('/')[3]).sub_navigation %}
+{% endif %}
 
 {% macro active_class(tested_doc, depth=3) -%}
 {% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ad-m-nav-link-active{% endif %}
