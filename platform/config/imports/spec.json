@@ -3,84 +3,97 @@
         "title": "Open Source Governance",
         "order": 2,
         "from": "GOVERNANCE.md",
-        "to": "documentation/guides-and-tutorials/contribute/governance.md"
+        "to": "documentation/guides-and-tutorials/contribute/governance.md",
+				"formats": ["websites"]
     },
     {
         "title": "AMP HTML Specification",
         "order": 2,
         "from": "spec/amp-html-format.md",
-        "to": "documentation/guides-and-tutorials/learn/spec/index.md"
+        "to": "documentation/guides-and-tutorials/learn/spec/index.md",
+				"formats": ["websites"]
     },
     {
         "title": "AMP Boilerplate Code",
         "order": 3,
         "from": "spec/amp-boilerplate.md",
-        "to": "documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md"
+        "to": "documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md",
+				"formats": ["websites"]
     },
     {
         "title": "AMP HTML Layout System",
         "order": 4,
         "from": "spec/amp-html-layout.md",
-        "to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md"
+        "to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
+				"formats": ["websites"]
     },
     {
         "title": "Actions and events in AMP",
         "order": 1,
         "from": "spec/amp-actions-and-events.md",
-        "to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md"
+        "to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
+				"formats": ["websites"]
     },
     {
         "title": "Debug AMP Cache issues",
         "order": 8,
         "from": "spec/amp-cache-debugging.md",
-        "to": "documentation/guides-and-tutorials/optimize-measure/amp-cache-debugging.md"
+        "to": "documentation/guides-and-tutorials/optimize-measure/amp-cache-debugging.md",
+				"formats": ["websites"]
     },
     {
         "title": "CORS in AMP",
         "order": 12,
         "from": "spec/amp-cors-requests.md",
         "to": "documentation/guides-and-tutorials/learn/amp-cors-requests.md",
-        "toc": true
+        "toc": true,
+				"formats": ["websites"]
     },
     {
         "title": "Getting Support",
         "order": 1,
         "from": "SUPPORT.md",
         "to": "documentation/guides-and-tutorials/learn/get_support.md",
-        "group": 1
+        "group": 1,
+				"formats": ["websites"]
     },
     {
         "title": "Guidelines for integrating ad technologies with AMP",
         "order": 3,
         "from": "ads/_integration-guide.md",
         "to": "documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md",
-        "toc": true
+        "toc": true,
+				"formats": ["ads"]
     },
     {
         "title": "AMPHTML ad specification",
         "order": 3,
         "from": "extensions/amp-a4a/amp-a4a-format.md",
         "to": "documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md",
-        "toc": true
+        "toc": true,
+				"formats": ["ads"]
     },
     {
         "title": "Integrating your analytics tool with AMP",
         "order": 1,
         "from": "extensions/amp-analytics/integrating-analytics.md",
         "to": "documentation/guides-and-tutorials/integrate/integrate-your-analytics-tools.md",
-        "toc": true
+        "toc": true,
+				"formats": ["websites"]
     },
     {
         "title": "Managing non-authenticated user state with AMP",
         "order": 2,
         "from": "spec/amp-managing-user-state.md",
-        "to": "documentation/guides-and-tutorials/integrate/amp-managing-user-state.md"
+        "to": "documentation/guides-and-tutorials/integrate/amp-managing-user-state.md",
+				"formats": ["websites"]
     },
     {
         "title": "AMPHTML email",
         "order": 2,
         "from": "spec/amp-email-format.md",
         "to": "documentation/guides-and-tutorials/learn/amp-email-format.md",
-        "toc": true
+        "toc": true,
+				"formats": ["email"]
     }
 ]
