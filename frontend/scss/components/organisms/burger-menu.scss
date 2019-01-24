@@ -14,6 +14,7 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('burger-menu')} {
+  padding-bottom: 50px;
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
