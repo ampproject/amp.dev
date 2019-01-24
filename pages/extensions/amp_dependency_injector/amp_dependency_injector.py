@@ -105,7 +105,7 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):
         content = previous_result if previous_result else raw_content
 
-        doc_path = document.Document.clean_localized_path(doc.pod_path)
+        doc_path = document.Document.clean_localized_path(doc.pod_path, doc.locale)
         dependencies = self.extension._dependencyCache.get(doc_path)
         if not dependencies or self.extension.pod.env.dev:
           dependencies = self.find_dependencies(content=content)
