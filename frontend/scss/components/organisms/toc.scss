@@ -23,6 +23,7 @@
   @media screen and (min-width: 1024px) {
     position: -webkit-sticky;
     position: sticky;
+    z-index: 1;
     padding: 0;
     height: auto;
     top: 80px;
