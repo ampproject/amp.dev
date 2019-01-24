@@ -73,7 +73,15 @@
 
   .#{organism('teaser-grid')} {
     grid-column: 1 / -1;
-    margin-bottom: 5vw;
+    margin-bottom: 7em;
+    
+    @media screen and (min-width: 768px) {
+      margin-bottom: calc(12.5em + 7em);
+    }
+    
+    @media screen and (min-width: 1024px) {
+      margin-bottom: calc(12.5em + 8vw);
+    }
 
     &-list {
       display: grid;
@@ -93,6 +101,7 @@
 
           @media screen and (min-width: 768px) {
             grid-column: 4 / 10;
+            transform: translateY(6.25em);
           }
         }
 
@@ -101,6 +110,7 @@
 
           @media screen and (min-width: 768px) {
             grid-column: 10 / 16;
+            transform: translateY(12.5em);
           }
         }
 
@@ -109,6 +119,7 @@
 
           @media screen and (min-width: 768px) {
             grid-column: 16 / 22;
+            transform: translateY(0);
           }
         }
       }
