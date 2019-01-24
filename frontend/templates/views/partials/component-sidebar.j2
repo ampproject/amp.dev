@@ -3,7 +3,12 @@
 
 <section class="ad--sidebar">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" for="sidebar">{{ _('Components') }}</label>
+  {% do doc.icons.useIcon('icons/categorymenu.svg') %}
+  {% do doc.icons.useIcon('icons/close.svg') %}
+  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar contentmenuopen' :'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#categorymenu"></use></svg>
+    <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+  </label>
   <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
 
   <div class="ad-o-component-sidebar">
