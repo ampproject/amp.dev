@@ -41,7 +41,7 @@ $hidden: true
 
           {% if component.teaser and component.teaser.text %}
           <div class="ad-m-teaser-content">
-            <p class="ad-m-teaser-copy">{{ component.teaser.text }}</p>
+            <p class="ad-m-teaser-copy">{{ component.teaser.text|truncate(100, false, '...') }}</p>
           </div>
           {% endif %}
         </div>

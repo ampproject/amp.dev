@@ -36,6 +36,8 @@ This positioning can be change by using the modifier `-alternate`.
 
   .all + & {
     .#{molecule('ghost-frame-desktop')} {
+      margin-left: 10%;
+
       &:before {
         height: 3%;
         top: 2%;
@@ -44,12 +46,12 @@ This positioning can be change by using the modifier `-alternate`.
 
     .#{molecule('ghost-frame-mobile')} {
       margin-top: 25%;
-      margin-left: 20%;
+      margin-left: 30%;
     }
 
     .#{molecule('ghost-frame-tablet')} {
       margin-top: 10%;
-      margin-left: -10%;
+      margin-left: 0%;
     }
   }
 

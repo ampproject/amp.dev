@@ -27,11 +27,17 @@
   }
 
   .#{organism('ghost-frame-block')} {
-    grid-column: 14 / -1;
     margin-top: -10%;
+    grid-column: 15 / -1;
 
     @media screen and (min-width: 768px) {
       margin-top: -65%;
+      grid-column: 14 / -2;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 13 / -3;
+      margin-top: -60%;
     }
 
     .#{molecule('ghost-frame-mobile')} {
@@ -108,9 +114,6 @@
 
     @media screen and (min-width: 768px) {
       grid-column: 3 / 16;
-    }
-
-    @media screen and (min-width: 1024px) {
       margin: 7vw 0 11vw;
     }
 

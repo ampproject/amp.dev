@@ -71,14 +71,24 @@ class ComponentReferenceImporter extends GitHubImporter {
    * @param {MarkdownDocument} document
    */
   _setMetadata(extensionName, document) {
-    // Splice out first sentence to show in teaser ...
-    const FIRST_SENTENCE = /#.*$\n(^.*)$/gm;
-    let firstSentence = FIRST_SENTENCE.exec(document.contents);
-    if (firstSentence !== null) {
-      firstSentence = firstSentence[1].replace(/<\/?[^>]+(>|$)/g, "");
-      console.log(firstSentence);
+    // Splice out an excerpt to show in the teaser ...
+    const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
+    let excerpt = FIRST_PARAGRAPH.exec(document.contents);
+    if (excerpt == null || !excerpt[1].trim()) {
+      const SECOND_PARAGRAPH = /##.*$\n+((.|\n(?=\w))*)$/gm;
+      excerpt = SECOND_PARAGRAPH.exec(document.contents);
+    }
 
-      document.teaser = {'text': firstSentence};
+    // If the extraction of an excerpt was successful write it to the teaser
+    if (excerpt) {
+      // Strip out all possible HTML tags
+      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, "");
+      // Unwrap back ticks
+      excerpt = excerpt.replace(/`(.+)`/g, '$1');
+      // And unwrap possible markdown links
+      excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
+
+      document.teaser = {'text': excerpt};
     }
 
     // Ensure that the document has a TOC
