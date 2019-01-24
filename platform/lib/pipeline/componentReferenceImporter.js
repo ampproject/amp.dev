@@ -84,9 +84,9 @@ class ComponentReferenceImporter extends GitHubImporter {
       // Strip out all possible HTML tags
       excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, "");
       // Unwrap back ticks
-      excerpt = excerpt.replace(/`(.+)`/, '$1');
+      excerpt = excerpt.replace(/`(.+)`/g, '$1');
       // And unwrap possible markdown links
-      excerpt = excerpt.replace(/\[(.+)\]\(.+\)/, '$1');
+      excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
 
       document.teaser = {'text': excerpt};
     }

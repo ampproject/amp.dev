@@ -1,53 +1,47 @@
 ---
 $title: Components
-$view: /views/overview/components-overview.j2
+$view: /views/custom.j2
 $path: /documentation/components.html
 $hidden: true
 ---
-<h1>The AMP component catalogue</h1>
+{% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
-<p>The AMP HTML library provides components that are classified as:</p>
-<ul>
-  <li><b>built-in:</b> Components that are included in the base library, such as amp-img and amp-pixel.</li>
-  <li><b>extended:</b> Extensions to the base library that must be explicitly included in the document as custom elements</li>
-  <li><b>experimental</b>: Components that are released but are not yet ready for wide use.</li>
-</ul>
+{% block main %}
+<main class="ad--main ad-t-component-overview">
+  <div class="ad--container">
+    {% include 'views/partials/component-sidebar.j2' %}
+    <section class="ad--content">
+      <h1>The AMP component catalogue</h1>
 
-<hr>
+      <p>The AMP HTML library provides components that are classified as:</p>
+      <ul>
+        <li><b>built-in:</b> Components that are included in the base library, such as amp-img and amp-pixel.</li>
+        <li><b>extended:</b> Extensions to the base library that must be explicitly included in the document as custom elements</li>
+        <li><b>experimental</b>: Components that are released but are not yet ready for wide use.</li>
+      </ul>
 
-{% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
+      <hr>
+      {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
 
-{% for category, components in g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
-<div class="ad-o-teaser-grid">
-  <h2>{{ category }}</h2>
-  <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
-    {% for component in components %}
-    <div class="ad-m-teaser ad-m-teaser-component">
-      <a href="{{ component.url.path }}">
-        <div class="ad-m-teaser-card">
-          {% if component.formats %}
-          {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-          <div class="ad-m-teaser-tags">
-            {% for format in component.formats %}
-            <div class="ad-m-tag ad-m-tag-{{ format }} ad-m-teaser-tag"></div>
-            {% endfor %}
-          </div>
-          {% endif %}
+      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+      <div class="ad-o-filter-bubbles-list">
+        {% for category, components in categories %}
+        <a class="ad-m-filter-bubble" href="#{{ category }}">{{ category }}</a>
+        {% endfor %}
+      </div>
 
-          <div class="ad-m-teaser-header">
-            <h4 class="ad-m-teaser-header-title">{{ component.title }}</h4>
-          </div>
-
-          {% if component.teaser and component.teaser.text %}
-          <div class="ad-m-teaser-content">
-            <p class="ad-m-teaser-copy">{{ component.teaser.text|truncate(100, false, '...') }}</p>
-          </div>
-          {% endif %}
+      {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+      {% for category, components in categories %}
+      <div class="ad-o-teaser-grid">
+        <h2 id="{{ category }}">{{ category }}</h2>
+        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
+          {% for teaser_doc in components %}
+          {% include '/views/partials/teaser.j2' %}
+          {% endfor %}
         </div>
-      </a>
-    </div>
-    {% endfor %}
+      </div>
+      {% endfor %}
+    </section>
   </div>
-</div>
-{% endfor %}
+</main>
+{% endblock %}

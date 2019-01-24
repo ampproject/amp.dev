@@ -55,7 +55,7 @@ class MarkdownDocument {
   }
 
   set category(category) {
-    this._frontmatter['$category'] = category;
+    this._frontmatter['$category@'] = category;
   }
 
   set formats(formats) {

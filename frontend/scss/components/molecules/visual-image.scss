@@ -28,6 +28,7 @@ include the amp-img components.
   display: grid;
   grid-template-columns: 13fr 23fr 1fr 7fr 19fr 33fr 4fr;
   grid-template-rows: 18fr 28fr 28fr 4fr 8fr 7fr 7fr;
+  padding-bottom: 2em;
 
   &-framed {
     grid-column: 3 / 7;

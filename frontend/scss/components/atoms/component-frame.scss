@@ -84,7 +84,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
   &:after { @include gradient-ads; }
 }
 
-@mixin component-frame-emails {
+@mixin component-frame-email {
   &:before { border-color: color('confetti'); }
-  &:after { @include gradient-emails; }
+  &:after { @include gradient-e-mails; }
 }
