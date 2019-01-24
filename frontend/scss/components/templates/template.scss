@@ -50,6 +50,28 @@
     position: relative;
     z-index: 1;
 
+    .#{organism('stage-content')} {
+      grid-column: 3 / 12;
+
+      &-headline {
+        font-size: 2em;
+      }
+    }
+
+    .#{organism('ghost-frame-block')}{
+
+      .#{molecule('ghost-frame-tablet')}{
+        margin-top: 10%;
+        margin-left: -10%;
+      }
+
+      .#{molecule('ghost-frame-mobile')}{
+        margin-top: 25%;
+        margin-left: 20%;
+      }
+    }
+
+
     &.#{utility('content')} {
       @media screen and (min-width: 768px ){
         grid-column: 7 / 19;
