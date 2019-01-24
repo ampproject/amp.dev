@@ -1,0 +1,12 @@
+$title: Land & See
+$view: /views/detail/template-detail.j2
+$category: News + Blog
+formats:
+  - stories
+
+teaser:
+  image:
+    src: '/static/img/templates/landsee.jpg'
+    width: 3
+    height: 4
+    alt: Land & See

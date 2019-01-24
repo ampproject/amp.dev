@@ -50,7 +50,8 @@
     }
   }
 
-  .#{molecule('format-visual-websites')} {
+  .#{molecule('format-visual-websites')},
+  .#{molecule('format-visual-stories')} {
     grid-column: 9 / -1;
     position: absolute;
     left: 50%;

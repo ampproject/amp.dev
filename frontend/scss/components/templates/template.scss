@@ -46,6 +46,10 @@
     @include content-with-sidebar;
   }
 
+  .ad--stage {
+    padding-bottom: 5vw;
+  }
+
   section {
     position: relative;
     z-index: 1;

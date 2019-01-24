@@ -1,0 +1,12 @@
+$title: Bike Shop
+$view: /views/detail/template-detail.j2
+$category: e-commerce
+formats:
+  - stories
+
+teaser:
+  image:
+    src: '/static/img/templates/bikeshop.jpg'
+    width: 3
+    height: 4
+    alt: Bike Shop
