@@ -21,7 +21,7 @@ stage:
   subline: DEC 20, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/event_ticket/amp_etc_1.jpg
+    - image_src: '/static/img/success-stories/event_ticket/amp_etc_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -42,7 +42,7 @@ contents:
     text: Serving nearly 1.5 million people since 2005, Orlando-based Event Tickets Center is a leading resale marketplace for professional and collegiate sports, concerts, and Broadway events. Most of the tickets they offer come from the secondary market, providing fans access to the best seats, even to sold-out games and shows.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/event_ticket/amp_etc_1.jpg
+    image_src: '/static/img/success-stories/event_ticket/amp_etc_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -52,7 +52,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/event_ticket/amp_etc_2.jpg
+    image_src: '/static/img/success-stories/event_ticket/amp_etc_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -60,4 +60,4 @@ contents:
     headline: Results
     text: AMP helps Event Tickets Center reach their goal of optimizing their conversion rate (ticket sales). The responsive site they used previously was already fast, but today “our AMP pages are even faster and more secure,” Young says. “We’ve tried to keep our AMP pages visually and functionally similar to our non-AMP pages to provide a consistent user experience. After running A/B tests between the company’s AMP pages and standard responsive pages, they noticed a 20% lift in conversion rate.<br><br>One day, Young envisions having a “full-blown site built on AMP,” including complicated, deep-funnel pages such as interactive maps and checkout, and “eventually getting rid of the responsive version.”<br><br>He continues to believe that AMP represents the future of content delivery. Building your website with AMP and using tools such as AdWords to drive traffic is a “no-brainer," he says. “The user experience is lightning-fast and simple. Customers don’t realize when a site is fast. They only notice a slow site—and then they bounce.”
     direction: left-flat
-    download_url: ../../../static/files/case-studies/Event_Ticket_Center.pdf
+    download_url: '/static/files/case-studies/Event_Ticket_Center.pdf'

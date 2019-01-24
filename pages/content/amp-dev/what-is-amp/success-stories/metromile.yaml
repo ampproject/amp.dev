@@ -20,7 +20,7 @@ stage:
   headline: Metromile lowers costs, reaches more potential customers with AMP
   subline: JUN 20, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/metromile/amp_metromile_1.jpg
+    - image_src: '/static/img/success-stories/metromile/amp_metromile_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -39,7 +39,7 @@ kpis:
 contents:
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/metromile/amp_metromile_1.jpg
+    image_src: '/static/img/success-stories/metromile/amp_metromile_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -49,7 +49,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/metromile/amp_metromile_2.jpg
+    image_src: '/static/img/success-stories/metromile/amp_metromile_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -57,4 +57,4 @@ contents:
     headline: Results
     text: "Metromile saw the speeds they hoped for—AMP page load time was almost 80% faster on a 3G connection and 76% faster on a 4G connection. CTR to the AMP page page was also 13% higher than to the non-AMP mobile landing page, and the overall cost per conversion on mobile was 23% lower for AMP traffic than for non-AMP mobile traffic.<br><br>What most excites Metromile about AMP is “the ability to increase CTR and conversion rate at a lower cost per conversion,” Zaratsian says. “We’re using wins we see on our landing page tests in other channels and implementing them on our AMP page. What works on a non-AMP page also should work on an AMP mobile landing page.” While Metromile are continuing to test and improve their AMP landing page, they’re also working to implement AMP into other channels outside of paid search, as well as considering using only AMP for pages further in the conversion funnel."
     direction: left-flat
-    download_url: ../../../static/files/case-studies/metromile.pdf
+    download_url: '/static/files/case-studies/metromile.pdf'

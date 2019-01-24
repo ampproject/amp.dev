@@ -20,7 +20,7 @@ stage:
   headline: AMP makes Gizmodo 3x faster on mobile
   subline: OCTOBER 7, 2016
   devices:
-    - image_src: ../../../static/img/success-stories/gizmodo/amp_gizmodo_1.jpg
+    - image_src: '/static/img/success-stories/gizmodo/amp_gizmodo_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -39,7 +39,7 @@ kpis:
 contents:
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/gizmodo/amp_gizmodo_1.jpg
+    image_src: '/static/img/success-stories/gizmodo/amp_gizmodo_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -54,7 +54,7 @@ contents:
 
   - layout: quote
     quote: We were very impressed with how many features we could translate from our mobile experience. We were able to implement a navigation menu, social sharing toolbar, and a newsletter subscription module, which kept the user experience consistent between our sites and our AMP articles.
-    image_src: ../../../static/img/success-stories/gizmodo/gizmodo_logo.png
+    image_src: '/static/img/success-stories/gizmodo/gizmodo_logo.png'
     width: 100
     height: 50
     alt: Gizmodo
@@ -62,7 +62,7 @@ contents:
     story_url: https://google.com
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/gizmodo/amp_gizmodo_2.jpg
+    image_src: '/static/img/success-stories/gizmodo/amp_gizmodo_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -73,7 +73,7 @@ contents:
 
   - layout: quote
     quote: AMP has been an overwhelmingly positive experience for Gizmodo
-    image_src: ../../../static/img/success-stories/gizmodo/gizmodo_logo.png
+    image_src: '/static/img/success-stories/gizmodo/gizmodo_logo.png'
     width: 100
     height: 50
     alt: Gizmodo
@@ -81,4 +81,4 @@ contents:
     story_url: https://google.com
 
   - layout: text-button
-    download_url: ../../../static/files/case-studies/gizmodo.pdf
+    download_url: '/static/files/case-studies/gizmodo.pdf'

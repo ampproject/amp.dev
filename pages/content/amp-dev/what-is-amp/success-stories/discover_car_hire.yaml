@@ -20,7 +20,7 @@ stage:
   headline: DiscoverCarHire.com drives conversions with faster mobile page load times via AMP
   subline: SEP 20, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/discover_car/amp_discover_car_1.jpg
+    - image_src: '/static/img/success-stories/discover_car/amp_discover_car_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -43,7 +43,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/discover_car/amp_discover_car_1.jpg
+    image_src: '/static/img/success-stories/discover_car/amp_discover_car_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -62,4 +62,4 @@ contents:
     headline: Result
     text: After implementing AMP, DiscoverCarHire.com quickly saw results. The load speed on the mobile site’s key landing pages decreased from more than seven seconds to less than one second. With quick-loading webpages, DiscoverCarHire.com saw a 22% increase in mobile visits and 29% more conversions from mobile devices through its Google Ads. AMP also helped boost the site’s organic performance, with a 73% increase in mobile traffic through AMP pages. The results confirmed DiscoverCarHire.com’s belief that an improved mobile experience leads to increased conversion rates. Following its success, DiscoverCarHire.com plans to continue incorporating AMP on its site.<br><br>“AMP implementation dramatically changed our performance,” said Dmitrijs Zaznovs, CMO at DiscoverCarHire.com. “We increased speed significantly and improved user experience for our mobile website. By delivering a lightning-fast mobile website experience, we were able to improve mobile ROI by 20%. AMP really moved the needle for us.”
     direction: left-flat
-    download_url: ../../../static/files/case-studies/discover_car_hire.pdf
+    download_url: '/static/files/case-studies/discover_car_hire.pdf'

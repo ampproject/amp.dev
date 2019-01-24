@@ -22,7 +22,7 @@ stage:
   subline: FEB 13, 2018
   devices:
 
-    - image_src: ../../../static/img/success-stories/grupo/amp_grupo_1.jpg
+    - image_src: '/static/img/success-stories/grupo/amp_grupo_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -44,7 +44,7 @@ contents:
     text: Founded in 1966, Mexico City-based Grupo Expansión began by providing business and finance news to readers throughout Mexico. Today, the company has grown to include a portfolio of 19 magazines and 12 websites, including InStyle, Elle, Travel + Leisure Mexico and CNNMéxico. As the largest online conglomerate in Mexico, Grupo Expansión reaches nearly 30 million unique readers each month.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/grupo/amp_grupo_1.jpg
+    image_src: '/static/img/success-stories/grupo/amp_grupo_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -55,7 +55,7 @@ contents:
 
   - layout: quote
     quote: When we noticed traffic to our AMP pages was growing, we started paying more attention to the advertising, looking around at which formats worked better and which ad positions would be nice to have on the search results page.
-    image_src: ../../../static/img/success-stories/grupo/grupo_logo.png
+    image_src: '/static/img/success-stories/grupo/grupo_logo.png'
     width: 100
     height: 50
     author:  Marco Fernandez, development manager at Grupo Expansión
@@ -63,7 +63,7 @@ contents:
     story_url: https://google.com
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/grupo/amp_grupo_2.jpg
+    image_src: '/static/img/success-stories/grupo/amp_grupo_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -75,7 +75,7 @@ contents:
 
   - layout: quote
     quote: We think that AMP is a great decision. Publishers should look at AMP as a starting point for growing their business, not a destination.
-    image_src: ../../../static/img/success-stories/grupo/grupo_logo.png
+    image_src: '/static/img/success-stories/grupo/grupo_logo.png'
     width: 100
     height: 50
     author:  Flores shared words of advice with industry peers who are considering adopting AMP

@@ -22,7 +22,7 @@ stage:
   subline: MARCH 6, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/milestone/amp_milestone_1.jpg
+    - image_src: '/static/img/success-stories/milestone/amp_milestone_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -46,7 +46,7 @@ contents:
 
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/milestone/amp_milestone_2.jpg
+    image_src: '/static/img/success-stories/milestone/amp_milestone_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -56,7 +56,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/milestone/amp_milestone_1.jpg
+    image_src: '/static/img/success-stories/milestone/amp_milestone_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -64,4 +64,4 @@ contents:
     headline: Results
     text: 'Once Milestone launched Millwood Inn’s new mobile site, the results were astonishing.<ul><li>Mobile transactions jumped more than 83%</li><li>Conversion rates leaped more than 68%</li><li>Total booked revenue on mobile increased more than 52%</li></ul><p>Additionally, compared to the non-AMP pages, the AMP pages yielded a 61% better clickthrough rate (CTR) and those users drove 83% higher rates of transactions. “Engagement and conversions are especially important for our clients,” said Aggarwal. “And as mobile traffic continues to grow, we expect the engagement and conversion numbers to grow as well.”<br><br>Milestone itself was so impressed by the metrics generated for Millwood that the agency has featured AMP development as part of their core offering, and they’re ready to add new AMP features as they become available.'
     direction: left-flat
-    download_url: ../../../static/files/case-studies/milestone.pdf
+    download_url: '/static/files/case-studies/milestone.pdf'

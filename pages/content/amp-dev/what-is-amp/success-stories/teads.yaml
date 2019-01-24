@@ -22,7 +22,7 @@ stage:
   subline: DEC 2, 2016
   devices:
 
-    - image_src: ../../../static/img/success-stories/teads/amp_teads.jpg
+    - image_src: '/static/img/success-stories/teads/amp_teads.jpg'
       width: 3
       height: 5
       type: mobile
@@ -46,7 +46,7 @@ contents:
 
   - layout: quote
     quote: We invented outstream video formats, which turn premium editorial content into new video ad inventory that can be monetized at scale.
-    image_src: ../../../static/img/success-stories/teads/teads_logo.png
+    image_src: '/static/img/success-stories/teads/teads_logo.png'
     width: 259
     height: 97
     alt: Teads
@@ -60,7 +60,7 @@ contents:
 
   - layout: quote
     quote: Our products are very much aligned with the AMP Project’s mission to provide the best user experience across platforms. We believe that ads should be fast-loading, non-intrusive, skippable, and complement the surrounding content. They’re also optimized for mobile first, since most media consumption – including 70% of our publisher traffic – is now on mobile.
-    image_src: ../../../static/img/success-stories/teads/teads_logo.png
+    image_src: '/static/img/success-stories/teads/teads_logo.png'
     width: 259
     height: 97
     alt: Teads
@@ -68,7 +68,7 @@ contents:
     story_url: https://google.com
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/teads/amp_teads.jpg
+    image_src: '/static/img/success-stories/teads/amp_teads.jpg'
     width: 3
     height: 5
     type: mobile
@@ -83,7 +83,7 @@ contents:
 
   - layout: quote
     quote: AMP HTML delivers our most optimal mobile browsing experience. Being able to marry this with native video advertising allows us to not only make revenue from the fastest-growing area of digital but to do so whilst respecting our users.
-    image_src: ../../../static/img/success-stories/teads/teads_logo.png
+    image_src: '/static/img/success-stories/teads/teads_logo.png'
     width: 259
     height: 97
     alt: Teads
@@ -103,4 +103,4 @@ contents:
   - layout: text-button
     text: One partner seeing success is French publisher L’Express, with AMP’d pages representing 15% of L’Express’ mobile inventory. “The AMP Project allows us to monetize our premium content with elegant native video advertising solutions such as Teads that respect our readers,” says Sophie Gohier, head of digital for L’Express. “Therefore, we believe that the revenue will grow significantly in the next quarters."
     direction: flat
-    download_url: ../../../static/files/case-studies/teads.pdf
+    download_url: '/static/files/case-studies/teads.pdf'

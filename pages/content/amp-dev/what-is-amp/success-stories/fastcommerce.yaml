@@ -21,7 +21,7 @@ stage:
   subline: JUNE 12, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/fastcommerce/amp_fastcomm_1.jpg
+    - image_src: '/static/img/success-stories/fastcommerce/amp_fastcomm_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -42,7 +42,7 @@ contents:
     text: Brazil-based Fastcommerce provides a full-service e-commerce solution for 35,000 companies, from projector company Global Projetores to tie retailer SóGravatas, to many, many more. An early adopter of Responsive Web Design, CTO and Co-founder Guilherme Rudnitzki says, “Mobile is in our DNA.” With more than half of all searches now occurring on mobile, Fastcommerce’s mobile-first philosophy is driven by the needs of its clients’ always-connected, smartphone-in-hand lifestyles.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/fastcommerce/amp_fastcomm_1.jpg
+    image_src: '/static/img/success-stories/fastcommerce/amp_fastcomm_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -52,7 +52,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/fastcommerce/amp_fastcomm_2.jpg
+    image_src: '/static/img/success-stories/fastcommerce/amp_fastcomm_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -60,4 +60,4 @@ contents:
     headline: Results
     text: The bottom line for Fastcommerce’s clients is sales. This is where the adoption and integration of AMP into the core of the company’s solution yields the biggest dividend. So far, the company has published more than 2 million AMP pages for almost 80 stores. With page-load speeds improved by 2.5x—from 3-4 seconds to less than one second on 3G networks— Fastcommerce’s clients are seeing a 15% lift in conversions on mobile as compared to non-AMP pages.<br><br>Rudnitzki is excited about the future. “With our AMP-first strategy, every new store we host is built with the AMP framework at its core,” he says. “We are now looking at using the latest in amp-bind, so we can provide the shopping cart flow within our AMP product pages. This will improve our offering and help even more of our clients provide fast, mobile-friendly service to their customers.”
     direction: left-flat
-    download_url: ../../../static/files/case-studies/Fastcommerce.pdf
+    download_url: '/static/files/case-studies/Fastcommerce.pdf'

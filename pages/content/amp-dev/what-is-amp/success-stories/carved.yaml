@@ -20,7 +20,7 @@ stage:
   headline: Carved increases conversion rate by 75% with AMP and PWA
   subline: MAY 25, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/carved/amp_carved_1.jpg
+    - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -43,7 +43,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/carved/amp_carved_1.jpg
+    image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -53,7 +53,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/carved/amp_carved_2.jpg
+    image_src: '/static/img/success-stories/carved/amp_carved_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -62,4 +62,4 @@ contents:
     headline: Results
     text: "The Progressive Web AMP dominated the standard responsive site, creating tangible, real-world business gains for Carved. Most importantly, the e-commerce conversion rate was 75% higher. The average page load speed was 37% faster, and the bounce rate was 33% lower. The exit rate dipped 38%, while session duration was 47% longer and viewers visited 63% more pages per session.<br><br>“The addition of a PWA ignited our mobile experience—and, for the first time, we’re measuring conversions that keep up with those on our desktop site,” Webber says. “Our PWA has become a windfall and is giving our desktop site a run for its money.”<br><br>Seeing the strong impact of Progressive Web AMP for Carved, WompMobile wants to apply the lessons learned to help other clients. Their technology platform makes it easy to convert any web page to AMP, while retaining the rich, e-commerce functionality, and to quickly integrate PWA components, including the manifest, service worker and app-shell. They also monitor and measure the health and success of a project, which they can typically deploy in 6 weeks.<br><br>“Carved always has been a mobile-first company—we were founded to make phone cases, after all,” Webber says. “We're excited that the performance of our new Progressive Web AMP meets the expectations of today’s on-the-go shopper—users that expect speed and usability. Finally, for the first time, we’re measuring conversions that keep up with desktop!”"
     direction: right-flat
-    download_url: ../../../static/files/case-studies/carved.pdf
+    download_url: '/static/files/case-studies/carved.pdf'

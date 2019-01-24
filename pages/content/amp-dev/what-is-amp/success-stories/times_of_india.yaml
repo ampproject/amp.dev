@@ -21,7 +21,7 @@ stage:
   headline: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP
   subline: NOV 5, 2018
   devices:
-    - image_src: ../../../static/img/success-stories/times_of_india/amp_toi_1.jpg
+    - image_src: '/static/img/success-stories/times_of_india/amp_toi_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -44,7 +44,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/times_of_india/amp_toi_1.jpg
+    image_src: '/static/img/success-stories/times_of_india/amp_toi_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -54,7 +54,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/times_of_india/amp_toi_2.jpg
+    image_src: '/static/img/success-stories/times_of_india/amp_toi_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -66,7 +66,7 @@ contents:
 
   - layout: quote
     quote: "Developing your page in AMP is fairly simple and easy, and there is a lot of active support from the AMP project team for any implementation challenges."
-    image_src: ../../../static/img/success-stories/times_of_india/toi_logo.png
+    image_src: '/static/img/success-stories/times_of_india/toi_logo.png'
     width: 100
     height: 50
     alt: Times of India
@@ -77,4 +77,4 @@ contents:
     headline: Result
     text: The digital giant soon saw benefits from AMP. “AMP's fast-loading web pages and caching layer helped in increasing total served and viewed impressions, thereby considerably increasing page CPMs with respect to normal web pages,” Kasturi explains.<br><br>After implementing AMP, Times of India's overall traffic increased six-fold, revenue from Google Ads and their own ad network grew 1.5X, and page-load times improved 3.6X on slow 3G networks. Revenue, new users, and content consumption all improved as well, Kasturi adds.
     direction: left-flat
-    download_url: ../../../static/files/case-studies/Times_of_India.pdf
+    download_url: '/static/files/case-studies/Times_of_India.pdf'

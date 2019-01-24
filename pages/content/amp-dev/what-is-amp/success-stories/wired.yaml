@@ -21,7 +21,7 @@ stage:
   headline: Wired AMP’s its 20+ year archive to meet audiences online
   subline: OCTOBER 7, 2016
   devices:
-    - image_src: ../../../static/img/success-stories/wired/amp_wired_1.jpg
+    - image_src: '/static/img/success-stories/wired/amp_wired_1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -45,7 +45,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/wired/amp_wired_1.jpg
+    image_src: '/static/img/success-stories/wired/amp_wired_1.jpg'
     width: 3
     height: 5
     type: mobile
@@ -60,7 +60,7 @@ contents:
     direction: left-flat
 
   - layout: text-button
-    image_src: ../../../static/img/success-stories/wired/amp_wired_2.jpg
+    image_src: '/static/img/success-stories/wired/amp_wired_2.jpg'
     width: 3
     height: 5
     type: mobile
@@ -68,4 +68,4 @@ contents:
     headline: Conclusion
     text: “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”<br><br>With AMP pages showing positive results, Wired hopes to expand its investment in the format by contributing to the open source project around the image gallery experience. About 40% of Wired’s content has not yet been implemented in the AMP format - much of this is content containing image galleries. “Galleries are a template with high ad inventory impact on the mobile web and low inventory impact with the current AMP implementation options. We need a better UX for AMP galleries, something that can accommodate long captions, images with different aspect ratios, recirculation widgets, and, of course, ads. It also needs to feel cool and load fast,” said Baldwin. Overall, the team is pleased with early AMP results. Baldwin added, “We’re excited to try more AMP features and see the format supported on a variety of new platforms.”
     direction: right
-    download_url: ../../../static/files/case-studies/wired.pdf
+    download_url: '/static/files/case-studies/wired.pdf'

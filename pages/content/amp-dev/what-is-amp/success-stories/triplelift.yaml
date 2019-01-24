@@ -22,7 +22,7 @@ stage:
   subline: MAY 5, 2017
   devices:
 
-    - image_src: ../../../static/img/success-stories/triplelift/amp_triplelift.jpg
+    - image_src: '/static/img/success-stories/triplelift/amp_triplelift.jpg'
       width: 3
       height: 5
       type: mobile
@@ -43,7 +43,7 @@ contents:
     text: Native ad tech firm Triplelift takes advertising assets such as images, video and text and transforms them to programmatically deliver native ads that fit the look and feel of a publisher’s site. Since 2012, the company has worked with some of the world’s biggest brands, employing a user-centric methodology to deliver beautiful and non-intrusive ads across screens of all sizes.
 
   - layout: text-media
-    image_src: ../../../static/img/success-stories/triplelift/amp_triplelift.jpg
+    image_src: '/static/img/success-stories/triplelift/amp_triplelift.jpg'
     width: 3
     height: 5
     type: mobile
@@ -64,7 +64,7 @@ contents:
 
   - layout: quote
     quote: They load way faster. Users pick up on every small delay, and when the ads load fast, this has a very positive impact on their perception and advertiser performance.
-    image_src: ../../../static/img/success-stories/triplelift/triplelift_logo.png
+    image_src: '/static/img/success-stories/triplelift/triplelift_logo.png'
     width: 100
     height: 50
     alt: Triplelift
@@ -75,4 +75,4 @@ contents:
     headline: Leveling the playing field for publishers
     text: Triplelift and Cloudflare look forward to collaborating more in the future. Cloudflare is doubling down on both AMP Ads and the core AMP format to provide more value to ad tech platforms and publishers. “Publishers don’t always have the resources to optimize their web pages and lose the ability to make money off broadly accessible content,” says Dane Knecht, Head of Product Strategy at Cloudflare. “AMP evens the playing field by standardizing the mobile web format, and our collaboration ensures that publishers can get paid for their content.”
     direction: left-flat
-    download_url: ../../../static/files/case-studies/triplelift.pdf
+    download_url: '/static/files/case-studies/triplelift.pdf'
