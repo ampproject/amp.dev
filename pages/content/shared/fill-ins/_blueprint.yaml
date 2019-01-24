@@ -1,5 +1,0 @@
-$path: /shared/fill-ins/{base}.html
-$view: /views/default.j2
-
-$localization:
-  path: /{locale}/shared/fill-ins/{base}.html
