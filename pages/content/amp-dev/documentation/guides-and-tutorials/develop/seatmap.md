@@ -5,10 +5,6 @@ toc: true
 tutorial: true
 ---
 
-[TOC]
-
-
-
 Seatmap are important parts of ticketers web apps, however the implementation in AMP can be difficult. This doc describes how to implement a seatmap in AMP by using a combination of available AMP components.
 A living sample implementing the practices described below is available at [sample](https://ampbyexample.com/advanced/seatmap/preview/).
 
