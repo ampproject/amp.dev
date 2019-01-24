@@ -38,6 +38,7 @@ class ComponentReferenceLinker {
       'scope': 'Reference linker',
     });
     this._placeholders = {};
+    this._codePlaceholders = {};
   }
 
   async start() {
@@ -67,6 +68,13 @@ class ComponentReferenceLinker {
   _check(doc) {
     let content = doc.contents.toString();
 
+    const codeExamples = content.match(/```html(.*?)*?```/gsm);
+    for (let i = 0; i < codeExamples.length; i++) {
+      const codeExample = codeExamples[i];
+      content = content.replace(codeExample, this._createCodePlaceholder(codeExample));
+    }
+
+
     // Cases
     const cases = [
       content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
@@ -77,29 +85,15 @@ class ComponentReferenceLinker {
       content.match(/amp-\w*(-\w*)*/gm),
     ];
 
-    this._log.error('Check: ', cases[cases.length - 1]);
-
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
       for (let j = 0; j < results.length; j++) {
         const result = results[j];
 
-        if (i > 3 && (result.includes(']') || result.includes('/') || result.includes('"'))) {
-          this._log.error('continue:', result);
-          continue;
-        }
-
-
-        if (i === 5) {
-
-        } else {
-          const component = result.match(/amp-\w*(-\w*)*/g)[0];
-          if (this._componentExist(component) === true) {
-            while (content.includes(result)) {
-              content = content.replace(result, this._createPlaceholder(component));
-            }
-          } else {
-            // this._log.error('component does not exist', component);
+        const component = result.match(/amp-\w*(-\w*)*/g)[0];
+        if (this._componentExist(component) === true) {
+          while (content.includes(result)) {
+            content = content.replace(result, this._createPlaceholder(component));
           }
         }
       }
@@ -110,21 +104,18 @@ class ComponentReferenceLinker {
         content = content.replace(placeholder, this._placeholders[placeholder]);
       }
     }
+    for (const codePlaceholder of Object.keys(this._codePlaceholders)) {
+      while (content.includes(codePlaceholder)) {
+        content = content.replace(codePlaceholder, this._codePlaceholders[codePlaceholder]);
+      }
+    }
 
     doc.contents = Buffer.from(content);
     return doc;
   }
 
-  _hash(str) {
-  	// let hash = 0;
-  	// if (this.length == 0) return hash;
-  	// for (let i = 0; i < this.length; i++) {
-  	// 	char = this.charCodeAt(i);
-  	// 	hash = ((hash<<5)-hash)+char;
-  	// 	hash = hash & hash; // Convert to 32bit integer
-  	// }
-  	// return hash;
 
+  _hash(str) {
     const hash = str.split('').reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
     this._log.error(hash);
     return hash;
@@ -136,6 +127,14 @@ class ComponentReferenceLinker {
       this._placeholders[placeholder] = this._componentPath(component);
     }
     return placeholder;
+  }
+
+  _createCodePlaceholder(codeExample) {
+    const codePlaceholder = `<!--${this._hash(codeExample)}-->`;
+    if (!this._codePlaceholders[codePlaceholder]) {
+      this._codePlaceholders[codePlaceholder] = codeExample;
+    }
+    return codePlaceholder;
   }
 
   _componentPath(component) {
