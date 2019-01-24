@@ -9,7 +9,7 @@ $view: /views/overview/what-is-amp.j2
 # Use AMP to easily create user first stories.
 [/stage]
 
-{% include 'views/partials/format-visuals/websites.j2' %}
+{% include 'views/partials/format-visuals/stories.j2' %}
 </section>
 
 <section class="ad--kpi">
