@@ -1,0 +1,22 @@
+{% do doc.styles.addCssFile('css/components/molecules/format-visual-ads.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+
+<div class="ad-m-format-visual-ads">
+  <div class="ad-m-format-visual-ads-image ad-m-format-visual-ads-bottom-image">
+    <amp-img class="ad--media" src="/static/img/amp-ads-top.png" layout="responsive" width="760" height="0"></amp-img>
+  </div>
+  <div class="ad-m-format-visual-ads-image ad-m-format-visual-ads-top-image" title="<amp-ad>">
+    <amp-img src="/static/img/amp-ads-top.png" layout="responsive" width="760" height="665"></amp-img>
+  </div>
+  <div class="ad-m-format-visual-ads-code-snippet">
+    {% set code_snippet = '
+<amp-ad type="foo"
+  width="300"
+  height="250">
+  <div placeholder>Loading</div>
+</amp-ad>
+    ' %}
+    {% set markdown = doc.pod.markdown %}
+    {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
+  </div>
+</div>
