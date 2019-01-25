@@ -55,8 +55,8 @@ contents:
   - layout: quote
     quote: AMP provides an open standard for publishers to quickly load pages on mobile. This improves the user experience by giving them a lighter version of the content.
     image_src: '/static/img/success-stories/indiatoday/indiatoday_logo.jpg'
-    width: 100
-    height: 50
+    width: 340
+    height: 154
     author:  Sanjay Nagpal, India Today’s Head of Technology
     alt: India Today
     story_url: https://google.com

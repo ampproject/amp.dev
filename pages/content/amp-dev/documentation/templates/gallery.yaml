@@ -10,3 +10,5 @@ teaser:
     width: 3
     height: 4
     alt: Gallery
+
+  download_url: '/static/files/templates/gallery.zip'

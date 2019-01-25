@@ -55,8 +55,8 @@ contents:
   - layout: quote
     quote: We were very impressed with how many features we could translate from our mobile experience. We were able to implement a navigation menu, social sharing toolbar, and a newsletter subscription module, which kept the user experience consistent between our sites and our AMP articles.
     image_src: '/static/img/success-stories/gizmodo/gizmodo_logo.png'
-    width: 100
-    height: 50
+    width: 711
+    height: 105
     alt: Gizmodo
     author: Ali Philippides, product lead for the implmentation of AMP
     story_url: https://google.com

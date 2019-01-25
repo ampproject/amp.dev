@@ -19,7 +19,7 @@
           <div class="ad-o-stage-content">
             {% if doc.stage.logo %}
             <div class="ad-a-img ad-a-img-static stage-logo">
-              <amp-img src="{{doc.stage.logo.image_src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
+              <amp-img class="ad--media" src="{{doc.stage.logo.image_src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
             </div>
             {% endif %}
             {% if doc.stage.subline %}
@@ -43,6 +43,14 @@
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
                 {% if device.video_src %}
+                {% if device.video_id %}
+                <amp-vimeo
+                  data-videoid="{{device.video_id}}"
+                  layout="responsive"
+                  width="16"
+                  height="9">
+                </amp-vimeo>
+                {% else %}
                 <amp-video
                     width="{{device.width}}"
                     height="{{device.height}}"
@@ -53,18 +61,21 @@
                     title="{{device.video_title}}"
                     artist="{{device.video_artist}}"
                     album="{{device.video_album}}"
+                    class="ad--media"
                     controls
                     autoplay
                     loop>
                   </amp-video>
+                  {% endif %}
                 {% else %}
                   <amp-img
+                    class="ad--media"
                     alt="{{device.alt}}"
                     height="{{device.height}}"
                     layout="responsive"
                     src="{{device.image_src}}"
-                    width="{{device.width}}"
-                  ></amp-img>
+                    width="{{device.width}}">
+                  </amp-img>
                 {% endif%}
               </div>
             {% endif %}
@@ -125,7 +136,16 @@
                 {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
                 <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
                 {% if content.video_src %}
+                {% if content.video_id %}
+                <amp-vimeo
+                  data-videoid="{{content.video_id}}"
+                  layout="responsive"
+                  width="{{content.width}}"
+                  height="{{content.height}}">
+                </amp-vimeo>
+                {% else %}
                 <amp-video
+                    class="ad--media"
                     width="{{content.width}}"
                     height="{{content.height}}"
                     layout="responsive"
@@ -136,14 +156,16 @@
                     artist="{{content.video_artist}}"
                     album="{{content.video_album}}">
                 </amp-video>
+                {% endif %}
                 {% else %}
                   <amp-img
+                    class="ad--media"
                     alt="{{content.alt}}"
                     height="{{content.height}}"
                     layout="responsive"
                     src="{{content.image_src}}"
-                    width="{{content.width}}"
-                  ></amp-img>
+                    width="{{content.width}}">
+                  </amp-img>
                   {% endif %}
                 </div>
               {% endif %}
@@ -171,6 +193,7 @@
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
               <amp-video
+                  class="ad--media"
                   width="{{content.width}}"
                   height="{{content.height}}"
                   layout="responsive"
@@ -183,12 +206,13 @@
               </amp-video>
               {% else %}
                 <amp-img
+                  class="ad--media"
                   alt="{{content.alt}}"
                   height="{{content.height}}"
                   layout="responsive"
                   src="{{content.image_src}}"
-                  width="{{content.width}}"
-                ></amp-img>
+                  width="{{content.width}}">
+                </amp-img>
                 {% endif %}
               </div>
             {% endif %}
@@ -207,9 +231,9 @@
                 {% do doc.icons.useIcon('icons/quote.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
               </div>
-              <div class="ad-a-img ad-a-img-static">
-                <amp-img src="{{content.image_src}}" layout="responsive" height="{{ content.height }}" width="{{ content.width }}" alt="placeholder" />
-              </div>
+                <div class="ad-a-img ad-a-img-static" layout="container">
+                  <amp-img class="ad--media" src="{{content.image_src}}" layout="responsive" height="{{ content.height }}" width="{{ content.width }}" alt="placeholder" />
+                </div>
             </div>
             <div class="ad-m-quote-quote">
               <blockquote>
@@ -258,7 +282,8 @@
                   layout="responsive"
                   src="{{content.image_src}}"
                   width="{{content.width}}"
-                ></amp-img>
+                  class="ad--media">
+                </amp-img>
               </div>
               {% else %}
               <amp-img
@@ -267,7 +292,8 @@
                 layout="responsive"
                 src="{{content.image_src}}"
                 width="{{content.width}}"
-              ></amp-img>
+                class="ad--media">
+              </amp-img>
               {% endif %}
             </div>
           </div>

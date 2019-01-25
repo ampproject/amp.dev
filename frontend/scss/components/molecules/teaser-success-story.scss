@@ -40,20 +40,14 @@
 		&-card {
 			@include teaser-card;
 
-			.logo-wrapper {
-				width: 160px;
-				height: auto;
-			}
-
 			.#{molecule('teaser')} {
 
 				&-logo {
+					width: 100%;
+					max-width: 120px;
 					position: relative;
 					margin-bottom: 10px;
 
-					amp-img {
-						max-width: 120px;
-					}
 				}
 			}
 		}
