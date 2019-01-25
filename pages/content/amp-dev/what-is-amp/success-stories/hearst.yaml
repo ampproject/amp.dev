@@ -57,8 +57,8 @@ contents:
   - layout: quote
     quote: The fast-growing AMP ecosystem supported all the key advertising and analytics requirements to run our business
     image_src: '/static/img/success-stories/hearst/hearst_logo.png'
-    width: 100
-    height: 50
+    width: 600
+    height: 138
     alt: Hearst
     author: Phil Wiser, Chief Technology Officer.
     story_url: https://google.com

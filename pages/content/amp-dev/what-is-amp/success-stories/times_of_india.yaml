@@ -67,8 +67,8 @@ contents:
   - layout: quote
     quote: "Developing your page in AMP is fairly simple and easy, and there is a lot of active support from the AMP project team for any implementation challenges."
     image_src: '/static/img/success-stories/times_of_india/toi_logo.png'
-    width: 100
-    height: 50
+    width: 200
+    height: 20
     alt: Times of India
     author: Puneet Walia, technology head, Times of India.
     story_url: https://google.com

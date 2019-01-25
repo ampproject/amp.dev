@@ -10,3 +10,5 @@ teaser:
     width: 1
     height: 1
     alt: Travel
+
+  download_url: '/static/files/templates/travel.zip'

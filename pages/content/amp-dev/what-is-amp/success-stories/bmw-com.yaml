@@ -72,8 +72,8 @@ contents:
   - layout: quote
     quote: We built the new mobile BMW.com from scratch with AMP
     image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
-    width: 1
-    height: 1
+    width: 856
+    height: 944
     alt: BMW
     author: Christian Liedgens, BMW digital marketer
     story_url: https://google.com

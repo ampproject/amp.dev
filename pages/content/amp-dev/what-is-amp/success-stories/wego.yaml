@@ -11,8 +11,8 @@ teaser:
     alt: Wego
   logo:
     src: '/static/img/success-stories/wego/wego_logo.png'
-    width: 195
-    height: 93
+    width: 175
+    height: 73
     alt: Wego
   text: Wego.com increases mobile conversion rates 95% with AMP
 
