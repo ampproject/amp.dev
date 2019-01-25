@@ -130,25 +130,44 @@ body {
     }
 
 
-  .#{utility('quote')} {
-    padding: 8rem 0;
+    .#{utility('quote')} {
+      padding: 8rem 0;
+
+      @media screen and (max-width: 767px) {
+        padding: 5.5 0;
+      }
+    }
 
     @media screen and (max-width: 767px) {
-      padding: 5.5 0;
+      &:nth-child(odd) {
+        display: flex;
+
+        .text  {
+          order: 2;
+        }
+        + .media {
+          order: 1;
+        }
+      }
     }
   }
+  .#{molecule('quote')}{
 
-@media screen and (max-width: 767px) {
-  &:nth-child(odd) {
-    display: flex;
+    &-source {
+      .logo-wrapper {
+        width: 160px;
+        height: auto;
+      }
 
-     .text  {
-       order: 2;
-     }
-     + .media {
-      order: 1;
+      .#{atom('img')}  {
+        width: 100%;
+        position: relative;
+        margin-bottom: 10px;
+
+        amp-img {
+          max-width: 160px;
+        }
+      }
     }
-  }
-}
   }
 }

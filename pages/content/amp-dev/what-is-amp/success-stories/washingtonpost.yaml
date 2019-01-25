@@ -50,9 +50,9 @@ contents:
 
   - layout: quote
     quote: We are committed to improving speed across the board. If our site takes a long time to load, it doesn’t matter how great our journalism is, some people will leave the page before they see what’s there.
-    image_src: '/static/img/success-stories/washington_post/wapo_logo.png'
-    width: 100
-    height: 50
+    image_src: '/static/img/success-stories/washington_post/washington_post_logo.png'
+    width: 1280
+    height: 197
     author: David Merrell, Senior Product Manager at The Washington Post.
     alt: The Washington Post
     story_url: https://google.com
@@ -63,9 +63,9 @@ contents:
 
   - layout: quote
     quote: Getting started with AMP was easy because it is built on existing web technologies. And since AMP is not a template based system, we were able to host our content, style it as we see fit, and easily integrate our existing advertising, analytics and other business tools
-    image_src: '/static/img/success-stories/washington_post/wapo_logo.png'
-    width: 100
-    height: 50
+    image_src: '/static/img/success-stories/washington_post/washington_post_logo.png'
+    width: 1280
+    height: 197
     alt: The Washington Post
     author: David Merrell, Senior Product Manager at The Washington Post.
     story_url: https://google.com

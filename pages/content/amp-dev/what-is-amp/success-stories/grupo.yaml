@@ -11,8 +11,8 @@ teaser:
     alt: Grupo Expansión
   logo:
     src: '/static/img/success-stories/grupo/grupo_logo.png'
-    width: 1428
-    height: 843
+    width: 1369
+    height: 793
     alt: Grupo Expansión
   text: Grupo Expansión boosts monetization with AMP
 
@@ -56,8 +56,8 @@ contents:
   - layout: quote
     quote: When we noticed traffic to our AMP pages was growing, we started paying more attention to the advertising, looking around at which formats worked better and which ad positions would be nice to have on the search results page.
     image_src: '/static/img/success-stories/grupo/grupo_logo.png'
-    width: 100
-    height: 50
+    width: 1369
+    height: 793
     author:  Marco Fernandez, development manager at Grupo Expansión
     alt: Grupo Expansión
     story_url: https://google.com
