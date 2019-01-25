@@ -69,12 +69,12 @@
                   {% endif %}
                 {% else %}
                   <amp-img
+                    class="ad—media"
                     alt="{{device.alt}}"
                     height="{{device.height}}"
                     layout="responsive"
                     src="{{device.image_src}}"
                     width="{{device.width}}">
-                    class="ad—media"
                   </amp-img>
                 {% endif%}
               </div>
@@ -140,11 +140,12 @@
                 <amp-vimeo
                   data-videoid="{{content.video_id}}"
                   layout="responsive"
-                  width="16"
-                  height="9">
+                  width="{{content.width}}"
+                  height="{{content.height}}">
                 </amp-vimeo>
                 {% else %}
                 <amp-video
+                    class="ad—media"
                     width="{{content.width}}"
                     height="{{content.height}}"
                     layout="responsive"
@@ -154,17 +155,16 @@
                     title="{{content.video_title}}"
                     artist="{{content.video_artist}}"
                     album="{{content.video_album}}">
-                    class="ad—media"
                 </amp-video>
                 {% endif %}
                 {% else %}
                   <amp-img
+                    class="ad—media"
                     alt="{{content.alt}}"
                     height="{{content.height}}"
                     layout="responsive"
                     src="{{content.image_src}}"
                     width="{{content.width}}">
-                    class="ad—media"
                   </amp-img>
                   {% endif %}
                 </div>
@@ -193,6 +193,7 @@
               <div class="ad-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
               <amp-video
+                  class="ad—media"
                   width="{{content.width}}"
                   height="{{content.height}}"
                   layout="responsive"
@@ -202,16 +203,15 @@
                   title="{{content.video_title}}"
                   artist="{{content.video_artist}}"
                   album="{{content.video_album}}">
-                  class="ad—media"
               </amp-video>
               {% else %}
                 <amp-img
+                  class="ad—media"
                   alt="{{content.alt}}"
                   height="{{content.height}}"
                   layout="responsive"
                   src="{{content.image_src}}"
                   width="{{content.width}}">
-                  class="ad—media"
                 </amp-img>
                 {% endif %}
               </div>

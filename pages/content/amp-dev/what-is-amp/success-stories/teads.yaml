@@ -94,6 +94,8 @@ contents:
     video_src: https://vimeo.com/163543060
     video_type: vimeo
     video_id: 163543060
+    width: 8
+    height: 5
     type: desktop
     alt: Teads
     headline: Clearing clutter, encouraging engagement
