@@ -57,8 +57,9 @@ class SamplesBuilder {
     if (!watch && config.options['clean-samples'] === true) {
       this._log.info('Cleaning sample destinations for rebuild ...');
       del.sync([
-        `${MANUAL_DEST}/**/*.html`,
         `${MANUAL_DEST}/**/*.json`,
+        `${MANUAL_DEST}/**/*.html`,
+        `!${MANUAL_DEST}/index.html`,
         `${SOURCE_DEST}`,
         CACHE_DEST,
       ], {
@@ -189,6 +190,7 @@ class SamplesBuilder {
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + manual.relative,
+      '$category: ' + (parsedSample.document.metadata.category ? parsedSample.document.metadata.category : 'None'),
       'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
       // ... and some additional information that is used by the example teaser
       ...this._getTeaserData(parsedSample),
@@ -224,6 +226,10 @@ class SamplesBuilder {
 
     teaserData.push('used_components:');
     teaserData.push(...this._getUsedComponents(parsedSample));
+
+    if (parsedSample.document.metadata.teaserImage) {
+      teaserData.push(`teaser:\n  image:\n    src: ${parsedSample.document.metadata.teaserImage}`);
+    }
 
     return teaserData;
   }
