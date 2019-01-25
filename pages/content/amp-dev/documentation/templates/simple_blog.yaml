@@ -10,3 +10,5 @@ teaser:
     width: 3
     height: 4
     alt: Simple Blog
+
+  download_url: '/static/files/templates/blog.zip'
