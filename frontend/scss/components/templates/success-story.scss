@@ -154,19 +154,12 @@ body {
   .#{molecule('quote')}{
 
     &-source {
-      .logo-wrapper {
-        width: 160px;
-        height: auto;
-      }
 
       .#{atom('img')}  {
         width: 100%;
+        max-width: 150px;
         position: relative;
         margin-bottom: 10px;
-
-        amp-img {
-          max-width: 160px;
-        }
       }
     }
   }

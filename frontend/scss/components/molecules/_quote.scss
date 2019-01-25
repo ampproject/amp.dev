@@ -29,7 +29,8 @@
     }
 
     .#{atom('img')} {
-      width: 30%;
+      width: 100%;
+      max-width: 150px;
     }
 
     .#{atom('ico')} {

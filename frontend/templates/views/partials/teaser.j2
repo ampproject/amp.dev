@@ -34,11 +34,9 @@
       <div class="ad-m-teaser-content">
         {% if teaser.logo %}
         {% set landscape = (teaser.logo.width / teaser.logo.height < 1) %}
-        <div class="logo-wrapper"  layout="container">
-          <div class="ad-a-img ad-m-teaser-logo ad-m-teaser-logo-{{ 'landscape' if landscape else 'portrait' }}">
+          <div class="ad-a-img ad-m-teaser-logo ad-m-teaser-logo-{{ 'landscape' if landscape else 'portrait' }}" layout="container">
             <amp-img src="{{ teaser.logo.src }}" layout="responsive" width="{{ teaser.logo.width }}" height="{{ teaser.logo.height }}" alt="{{ teaser.logo.alt }}"></amp-img>
           </div>
-        </div>
         {% endif %}
 
         <h4 class="ad-m-teaser-headline">{{ teaser.text }}</h4>
