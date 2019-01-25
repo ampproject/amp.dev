@@ -32,6 +32,8 @@
 @import '../templates/_default.scss';
 
 .#{template('custom-content')} {
+  background: color('whisper');
+  padding-bottom: 30px;
 
   .#{utility('container')} {
     @include container;
@@ -45,8 +47,32 @@
     @include content;
   }
 
+  .#{organism('amp-conf')} {
+    grid-column: 2 / 24;
+    width: 100%;
+
+    &-helloworld {
+      grid-column: 13 / -1;
+      @include hl;
+      font-size: 100px;
+      margin: auto 0 0;
+      opacity: 0.1;
+      line-height: 1em;
+
+      @media screen and (min-width: 768px) {
+        font-size: 140px;
+        line-height: 0.85;
+      }
+    }
+
+    &-location {
+      grid-column: 1 / 12;
+    }
+  }
+
   .#{organism('platformandvendor')} {
     grid-column: 2 / 24;
+    width: 100%;
 
     &-accordion-header {
       background: none;
@@ -55,17 +81,30 @@
       border-left: none;
       border-right: none;
       border-radius: 4px;
+      padding: 0;
       box-shadow: 0 10px 25px 0px rgba(0, 0, 0, 0.07);
       transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       h4 {
-        margin: 15px;
+        margin: 30px;
       }
     }
 
     &-item-container {
       list-style: none;
-      columns: 4;
+      columns: 2;
+      padding-left: 30px;
+      @media screen and (min-width: 768px) {
+        columns: 3;
+      }
+      @media screen and (min-width: 1024px) {
+        columns: 4;
+      }
+      li {
+         margin-bottom: 10px;
+         @include txt;
+         @include txt-2;
+      }
     }
   }
 
