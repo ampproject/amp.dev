@@ -28,4 +28,4 @@ CONTRIBUTING.md
 frontend/
 pages/
 !platform/pages
-examples/
+/examples

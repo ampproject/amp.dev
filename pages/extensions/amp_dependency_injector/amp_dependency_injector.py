@@ -54,6 +54,7 @@ VALID_DEPENDENCIES = {
     'amp-sticky-ad': True,
     'amp-user-notification': True,
     'amp-video': True,
+    'amp-vimeo': True,
     'amp-youtube': True,
     'amp-web-push': True,
 }
