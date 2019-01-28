@@ -78,7 +78,7 @@
 
     /* Shrink header and footer to not interfer with scrolling */
     & ~ main, & ~ footer {
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1023px) {
         max-height: 0;
         overflow: hidden;
         pointer-events: none;
