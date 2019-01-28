@@ -29,6 +29,14 @@ class Config {
   }
 
   /**
+   * Helper method to make it possible to write absolute project paths
+   * @return {String} an absolute ready to use path
+   */
+  path(relativePath) {
+    return path.join(__dirname, '../../', relativePath);
+  }
+
+  /**
    * Builds a URL from a host object containing scheme, host and port
    * @return {[type]} [description]
    */
