@@ -1,33 +1,25 @@
 /*
 
 #################################
-### ORGANSIM: logo-link-block ###
+### ORGANSIM: mini-card-list ####
 #################################
-
-### INFO:
-
-### MODIFIERS:
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '../templates/_default.scss';
-
-ul.#{organism('logo-link-block')} {
-  & {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+ul.#{organism('mini-card-list')} {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-li.#{organism('logo-link-block-item')} {
+.#{organism('mini-card-list-item')} {
   flex: 1 100%;
   margin-bottom: 1.25rem;
   max-width: 100%;
