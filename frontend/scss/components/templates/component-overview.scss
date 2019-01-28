@@ -51,4 +51,14 @@
       }
     }
   }
+
+  
+  &-anchor-list {
+    margin: 2em 0;
+    &-item {
+      &:not(:last-child):after {
+        content: " |";
+      }
+    }
+  } 
 }
