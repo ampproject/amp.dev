@@ -4,29 +4,22 @@ $view: /views/custom.j2
 
 news:
   - title: News
-    image: /static/img/dummy-news-1.png
-    headline: Setka provides beautiful post design with AMP
-    date: September 26, 2018
+    headline: A year of open source funding
+    date: January 9, 2019
     url: /
   - title: Announcement
-    image: /static/img/dummy-news-2.png
-    headline: Optimize yor AMP pages for high ad viewability Lorem
-    date: September 26, 2018
+    image: /static/img/news/amp_conf.png
+    headline: "Announcing AMP Conf 2019: Tokyo"
+    date: January 8, 2019
     url: /
   - title: News
-    image: /static/img/dummy-use-cases-example-01.png
-    headline: Setka provides beautiful post design with AMP
-    date: September 26, 2018
-    url: /
-  - title: Announcement
-    image: /static/img/dummy-use-cases-example-04.png
-    headline: Optimize yor AMP pages for high ad viewability
-    date: September 26, 2018
+    image: /static/img/news/laterpay1.png
+    headline: LaterPay, Lessons Learned
+    date:  December 19, 2018
     url: /
   - title: News
-    image: /static/img/dummy-use-cases-example-02.png
-    headline: Setka provides beautiful post design with AMP
-    date: September 26, 2018
+    headline: Why AddThis chose to integrate with AMP
+    date: December 13, 2018
     url: /
 
 format_explainer:
@@ -90,7 +83,7 @@ sampler:
 
     <div class="ad-m-copy">
       <h2>The latest News</h2>
-      <p>Duis dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+      <p>Get the latest news and tips from our newsletter:</p>
 
       <a href="#" class="ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
@@ -108,6 +101,7 @@ sampler:
           <div class="ad-o-news-card">
             <div class="ad-o-news-title">{{ news.title }}</div>
             <div class="ad-o-news-image">
+              {% if news.image %}
               <amp-img
                 class="ad--media"
                 src="{{ news.image }}"
@@ -115,6 +109,14 @@ sampler:
                 width="16"
                 height="9">
               </amp-img>
+              {% else %}
+              <div class="ad-o-news-icon">
+                <div class="ad-a-ico">
+                  {% do doc.icons.useIcon('icons/news.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
+                </div>
+              </div>
+              {% endif %}
             </div>
             <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
             <div class="ad-o-news-date">{{ news.date }}</div>
