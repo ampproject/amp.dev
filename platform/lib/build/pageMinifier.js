@@ -16,10 +16,11 @@
 
 const {Signale} = require('signale');
 const gulp = require('gulp');
-const once = require('gulp-once');
 const minifyHtml = require('html-minifier').minify;
 const through = require('through2');
 const crass = require('crass');
+const path = require('path');
+const crypto = require('crypto');
 
 const PAGES_DEST = '../platform/pages';
 
@@ -43,9 +44,9 @@ class PageMinifier {
     // Ugly but needed to keep scope for .pipe
     let scope = this;
 
-    return gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
+    return gulp.src(`${path}/**/*.html`, {'base': './'})
            .pipe(through.obj(function(page, encoding, callback) {
-             log.await(`Minifying ${page.relative} ...`);
+             scope._log.await(`Minifying ${page.relative} ...`);
              this.push(scope._minifyPage(page));
 
              callback();
@@ -60,10 +61,14 @@ class PageMinifier {
    * @return {Vinyl}
    */
   _minifyPage(page) {
-    const html = page.contents.toString();
+    let html = page.contents.toString();
 
-    html = this._cleanHtml(html);
-    html = this._minifyHtml(html);
+    try {
+      html = this._cleanHtml(html);
+      html = this._minifyHtml(html);
+    } catch(e) {
+      this._log.error(`Could not minify ${page.relative}: ${e}`);
+    }
 
     page.contents = Buffer.from(html);
     return page;
@@ -84,17 +89,13 @@ class PageMinifier {
   }
 
   _minifyHtml(html) {
-    try {
-      html = minifyHtml(html, {
-        'minifyCSS': this._minifyCss,
-        'collapseWhitespace': true,
-        'removeEmptyElements': false,
-        'removeRedundantAttributes': true,
-        'ignoreCustomFragments': [/<use.*<\/use>/],
-      });
-    } catch (e) {
-      this._log.error(`Could not minify ${page.relative}. Invalid markup.`);
-    }
+    html = minifyHtml(html, {
+      'minifyCSS': this._minifyCss.bind(this),
+      'collapseWhitespace': true,
+      'removeEmptyElements': false,
+      'removeRedundantAttributes': true,
+      'ignoreCustomFragments': [/<use.*<\/use>/],
+    });
 
     return html;
   }
@@ -106,17 +107,17 @@ class PageMinifier {
     }
 
     // Hash it to check if that bundle has already been minified
-    let hash = crypto.createHash('md5');
+    let hash = crypto.createHash('sha1');
     hash.update(css);
-    hash = hash.digest('utf-8');
+    hash = hash.digest('base64');
 
     if (!this._minifiedCssCache[hash]) {
       let cssOm = crass.parse(css);
       cssOm = cssOm.optimize();
 
-      this._minifiedCssCache[hash] = thiscssOm.toString();
-    } else {
-      this._log.info(`CSS bundle ${hash} has already been minified.`);
+      this._log.info(`Caching CSS bundle with ${hash}`);
+
+      this._minifiedCssCache[hash] = cssOm.toString();
     }
 
     return this._minifiedCssCache[hash];

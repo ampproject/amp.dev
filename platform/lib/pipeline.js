@@ -34,7 +34,7 @@ const SpecImporter = require('./pipeline/specImporter');
 const {samplesBuilder} = require('./pipeline/samplesBuilder');
 const roadmapImporter = require('./pipeline/roadmapImporter');
 const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
-const pageMinifier = require('./build/pageMinifier');
+const {pageMinifier} = require('./build/pageMinifier');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
@@ -246,15 +246,15 @@ class Pipeline {
 
   _minifyPages() {
     return new Promise((resolve, reject) => {
-      const stream = pageMinifier.start();
+      const stream = pageMinifier.start(config.path('platform/pages'));
 
       stream.on('error', (error) => {
-        log.fatal(`Something went wrong while minifying HTML: ${error}`);
+        pageMinifier._log.fatal(`Something went wrong while minifying HTML: ${error}`);
         reject(error);
       });
 
       stream.on('end', () => {
-        log.success('Minified page\'s HTML.');
+        pageMinifier._log.success('Minified page\'s HTML.');
         resolve();
       });
     });
