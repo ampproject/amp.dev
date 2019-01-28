@@ -45,7 +45,7 @@
         "title": "CORS in AMP",
         "order": 12,
         "from": "spec/amp-cors-requests.md",
-        "to": "documentation/guides-and-tutorials/learn/amp-cors-requests.md",
+        "to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
         "toc": true,
 				"formats": ["websites"]
     },
