@@ -47,14 +47,15 @@
 {% elif teaser_doc.view == '/views/detail/template-detail.j2' %}
 {# Template teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-template.css') %}
-<div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser_doc.formats[0] }}">
+{% set teaser = teaser_doc.teaser or {} %}
+{% set square = (teaser.image.width / teaser.image.height == 1) %}
+<div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser_doc.formats[0] }}{{ ' ad-m-teaser-square' if square }}">
   <a href="{{ teaser_doc.teaser.download_url }}">
     {% if teaser_doc.formats %}
     {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
     <div class="ad-m-tag ad-m-tag-{{ teaser_doc.formats[0] }} ad-m-teaser-tag">{{ teaser_doc.formats[0] }}</div>
     {% endif %}
 
-    {% set teaser = teaser_doc.teaser or {} %}
     <div class="ad-m-teaser-card">
       <div class="ad-a-img ad-m-teaser-image">
         <amp-img class="ad--media" src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>

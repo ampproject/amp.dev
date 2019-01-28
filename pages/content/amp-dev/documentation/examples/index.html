@@ -28,15 +28,16 @@ $hidden: true
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-      {% for collection in collections %}
       <div class="ad-o-teaser-grid">
-        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
+        {# Hardcode to a length of 16 teasers as there will be at least that much #}
+        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-16">
+          {% for collection in collections %}
           {% for teaser_doc in collection.list_docs(locale=doc.locale) %}
           {% include '/views/partials/teaser.j2' %}
           {% endfor %}
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </section>
   </div>
 </main>
