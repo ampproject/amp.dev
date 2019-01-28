@@ -40,6 +40,7 @@
     color: color('black');
     background: color('athens-gray');
     transition: opacity 0.2s ease;
+    cursor: pointer;
 
     @media screen and (min-width: 768px) {
       font-size: 0.75em;
