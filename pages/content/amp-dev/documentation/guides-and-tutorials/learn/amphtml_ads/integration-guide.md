@@ -4,8 +4,6 @@ $order: 3
 toc: true
 ---
 
-# Guidelines for Integrating with AMP
-
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
 To ensure minimum latency and quality, please follow the instructions listed [here](../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to the AMP project, please see [here](../CONTRIBUTING.md).
 

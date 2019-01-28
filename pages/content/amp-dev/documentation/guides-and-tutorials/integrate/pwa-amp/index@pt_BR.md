@@ -18,8 +18,6 @@ Saiba mais sobre os [Progressive Web Apps](https://developers.google.com/web/pro
 
 [/tip]
 
-# Páginas AMP com recursos de PWA
-
 As páginas AMP podem usar muitos recursos de PWA por conta própria, desde que sejam veiculadas a partir da sua origem (o domínio do site), e não de um cache de AMP. Isso significa que os recursos de PWA não serão iniciados ao usar uma página AMP de uma plataforma como o Google ou o Bing, mas sim durante a navegação ou se os usuários acessarem as páginas AMP diretamente.
 
 Leia mais: Saiba como [ativar recursos de PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-as-pwa.md', locale=doc.locale).url.path}}) para suas páginas AMP.

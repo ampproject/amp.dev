@@ -28,27 +28,6 @@ Cross-Origin Resource Sharing (CORS) requests.  This document explains the key
 aspects of using CORS in AMP.  To learn about CORS itself, see the
 [W3 CORS Spec](https://www.w3.org/TR/cors/).
 
-<div class="noshowtoc">
-
-* [Why do I need CORS for my own origin?](#why-do-i-need-cors-for-my-own-origin-)
-* [Utilizing cookies for CORS requests](#utilizing-cookies-for-cors-requests)
-* [CORS security in AMP](#cors-security-in-amp)
-    * [Verify CORS requests](#verify-cors-requests)
-      - [1) Allow requests for specific CORS origins](#1-allow-requests-for-specific-cors-origins)
-      - [2) Allow same-origin requests](#2-allow-same-origin-requests)
-      - [3) Restrict requests to source origins](#3-restrict-requests-to-source-origins)
-    + [Send CORS response headers](#send-cors-response-headers)
-
-        * [Access-Control-Allow-Origin: &lt;origin&gt;](#access-control-allow-origin-origin)
-        * [AMP-Access-Control-Allow-Source-Origin: &lt;source-origin&gt;](#amp-access-control-allow-source-origin-source-origin)
-        * [Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin](#access-control-expose-headers-amp-access-control-allow-source-origin)
-    + [Processing state changing requests](#processing-state-changing-requests)
-
-  * [Example walkthrough: Handing CORS requests and responses](#example-walkthrough-handing-cors-requests-and-responses)
-  * [Testing CORS in AMP](#testing-cors-in-amp)
-
-</div>
-
 ## Why do I need CORS for my own origin?
 
 You might be confused as to why you'd need CORS for requests to your own origin,

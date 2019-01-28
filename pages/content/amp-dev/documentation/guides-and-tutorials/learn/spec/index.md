@@ -20,8 +20,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# AMP HTML ⚡
-
 
 
 AMP HTML is a subset of HTML for authoring content pages such as news articles in a way that guarantees certain baseline performance characteristics.

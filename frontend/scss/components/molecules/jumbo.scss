@@ -1,0 +1,47 @@
+/*
+
+#######################
+### MOLECULE: jumbo ###
+#######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_icon.scss';
+
+.#{molecule('jumbo')} {
+  grid-column: 6 / 20;
+  padding: 0 20px;
+  margin-bottom: 1.5em;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 20px;
+    margin-bottom: 3em;
+  }
+
+  .#{atom('ico')} {
+    @include ico-4;
+    fill: color('blue-ribbon');
+    margin: 0 auto 0.5em;
+  }
+
+  &-headline {
+    @include hl-lrg;
+    margin: 0;
+  }
+
+  &-subline {
+    @include hl-h3;
+  }
+
+  &-copy {
+    @include txt;
+  }
+}

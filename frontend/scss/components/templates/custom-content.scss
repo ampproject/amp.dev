@@ -33,7 +33,12 @@
 
 .#{template('custom-content')} {
   background: color('whisper');
+  padding-top: 30px;
   padding-bottom: 30px;
+
+  section {
+    margin-bottom: 50px;
+  }
 
   .#{utility('container')} {
     @include container;
@@ -45,29 +50,6 @@
 
   .#{utility('content')} {
     @include content;
-  }
-
-  .#{organism('amp-conf')} {
-    grid-column: 2 / 24;
-    width: 100%;
-
-    &-helloworld {
-      grid-column: 13 / -1;
-      @include hl;
-      font-size: 100px;
-      margin: auto 0 0;
-      opacity: 0.1;
-      line-height: 1em;
-
-      @media screen and (min-width: 768px) {
-        font-size: 140px;
-        line-height: 0.85;
-      }
-    }
-
-    &-location {
-      grid-column: 1 / 12;
-    }
   }
 
   .#{organism('platformandvendor')} {
@@ -158,7 +140,7 @@
         }
       }
     }
-    
+
     & + .#{utility('content')} {
       @media screen and (min-width: 768px) {
         margin-top: -15%;

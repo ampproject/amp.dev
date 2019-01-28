@@ -222,9 +222,7 @@
         {# layout: quote #}
         {% if content.layout == 'quote' %}
           {% do doc.styles.addCssFile('css/components/atoms/bevel.css') %}
-          <div class="ad-a-bevel ad-a-bevel-right"></div>
-
-          <section class="ad--quote ad--container-fluid">
+          <section class="ad--quote ad--container-fluid ad-a-bevel ad-a-bevel-right">
             <div class="ad-m-quote">
               <div class="ad-m-quote-source">
                <div class="ad-a-ico">
