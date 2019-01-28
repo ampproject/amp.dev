@@ -106,7 +106,7 @@ teaser:
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ad-o-filter-bubbles-list">
       {% for category, stories in categories %}
-      <button class="ad-m-filter-bubble">{{ category }}</button>
+      <button class="ad-m-filter-bubble" on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">{{ category }}</button>
       {% endfor %}
     </div>
   </section>

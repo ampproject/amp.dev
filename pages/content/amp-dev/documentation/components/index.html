@@ -32,16 +32,21 @@ teaser:
 
       <hr>
       {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
-
-      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-      <div class="ad-o-filter-bubbles-list">
+      
+      <div class="ad-t-component-overview-anchor-list">
+      <p>Quicklinks:</p>
+      <p>
         {% for category, components in categories %}
-        <a class="ad-m-filter-bubble" href="#{{ category }}">{{ category }}</a>
+        <span class="ad-t-component-overview-anchor-list-item">
+          <a href="#{{ category }}">{{ category }}</a>
+        </span>
         {% endfor %}
+      </p>
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
       {% for category, components in categories %}
+      <div id="{{ category }}"></div>
       <div class="ad-o-teaser-grid">
         <h2 id="{{ category }}">{{ category }}</h2>
         <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
