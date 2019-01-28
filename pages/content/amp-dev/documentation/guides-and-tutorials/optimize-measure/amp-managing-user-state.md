@@ -23,19 +23,6 @@ limitations under the License.
 -->
 
 
-
-**Table of contents**
-
-- [Background](#background)
-- [Implementation guide](#implementation-guide)
-    - [Before getting started](#before-getting-started)
-    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
-    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
-    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
-    - [Task 5: Using Client ID in linking and form submission](#task5)
-- [Strongly recommended practices](#strongly-recommended-practices)
-
 User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
 
  - A merchant builds a useful **shopping cart** that shows a user the same items during their second visit that they had added to the cart during their first visit many weeks ago. Such an experience increases the chance of the user buying that item by making sure they remain aware of the item they considered buying in the past.

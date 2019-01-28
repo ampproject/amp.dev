@@ -1,0 +1,45 @@
+/*
+
+#######################
+### MOLECULE: biggy ###
+#######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('biggy')} {
+  grid-column: 2 / 24;
+  width: 100%;
+
+  &-aside {
+    grid-column: 1 / 12;
+  }
+
+  &-main {
+    grid-column: 13 / -1;
+  }
+
+    &-text {
+      @include txt;
+    }
+
+    &-headline {
+      @include hl;
+      font-size: 100px;
+      line-height: 1em;
+      margin: 0 0 40px;
+      color: color('athens-gray');
+
+      @media screen and (min-width: 768px) {
+        font-size: 140px;
+        line-height: 0.85;
+      }
+    }
+}

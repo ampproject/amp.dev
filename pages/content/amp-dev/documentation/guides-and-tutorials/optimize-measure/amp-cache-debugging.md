@@ -3,8 +3,6 @@ $title: Debug AMP Cache issues
 $order: 8
 ---
 
-# AMP Cache Debugging
-
 ## Why is my doc broken on an AMP cache?
 
 Valid AMP documents typically appear and behave the same on AMP Caches as they

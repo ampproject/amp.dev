@@ -4,8 +4,6 @@ $order: 1
 toc: true
 ---
 
-# Integrate your analytics tools in AMP HTML
-
 ## Overview
 
 If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`. This will enable your customers to view traffic patterns for their AMP HTML pages.
