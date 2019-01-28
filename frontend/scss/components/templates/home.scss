@@ -15,7 +15,6 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
-@import '../atoms/bevel.scss';
 
 @import '../molecules/quote';
 @import '../molecules/benefit';
@@ -26,33 +25,33 @@
 @import '../templates/_default.scss';
 
 .#{template('home')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
-  
+
   .#{utility('stage')} {
     .#{organism('stage')} {
       &-content {
         grid-column: 5 / 20;
         margin-bottom: 33vw;
         text-align: center;
-        
+
         @media screen and (min-width: 768px) {
           margin-bottom: 23vw;
         }
-        
+
         &-headline {
           @include hl-stage;
         }
       }
     }
   }
-  
+
   .#{utility('teaser-grid')} {
     flex-direction: column-reverse;
     padding: 0 20px;
@@ -75,7 +74,7 @@
       @media screen and (min-width: 1280px) {
         grid-column: 1 / 13;
       }
-      
+
       &-list {
         @media screen and (min-width: 575px) {
           grid-template-columns: repeat(2, 1fr);
@@ -83,7 +82,7 @@
         }
       }
     }
-    
+
     .#{molecule('teaser')} {
       grid-column: 1;
       margin-bottom: 1em;
@@ -97,32 +96,32 @@
 
     .#{molecule('copy')} {
       grid-column: 16 / 25;
-      
+
       @media screen and (min-width: 1024px) {
         grid-column: 15 / 24;
       }
-      
+
       @media screen and (min-width: 1280px) {
         grid-column: 14 / 23;
       }
-      
+
       h2 {
         margin-top: 0;
       }
-      
+
       p {
         margin-bottom: 2em;
-      
+
         @media screen and (min-width: 768px) {
           margin-bottom: 6em;
         }
       }
     }
   }
-  
+
   .#{utility('get-started')} {
     padding: 2.5em 30px 3em;
-    
+
     @media screen and (min-width: 768px) {
       padding: 6em 0 7em;
     }
@@ -131,7 +130,7 @@
       @include hl-h1;
       margin-top: 0;
     }
-    
+
     .#{molecule('copy')} {
       width: 100%;
       margin-bottom: 0;
