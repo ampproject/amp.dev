@@ -8,8 +8,8 @@ role:  Product Manager, AMP Project
 origin: "https://amphtml.wordpress.com/2018/11/14/launching-ad-monetization-for-amp-stories/amp/"
 excerpt: "We’ve seen steady growth over the past year in AMP Stories and we are delighted to see the various ways content creators have taken advantage of the rich, immersive canvas for storytelling. We’ve been testing this with a handful for pilot partners and today, we are excited to give all content creators an opportunity to [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-11-15T04:41:40+09:00
-$date: November 15, 2018
+date_data: 2018-11-14T11:41:40-08:00
+$date: November 14, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

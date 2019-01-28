@@ -8,8 +8,8 @@ role:  Mobile Solutions Consultant and Monisha Varadan, Global Product Partnersh
 origin: "https://amphtml.wordpress.com/2018/11/20/progressively-amplify-ec-cube/amp/"
 excerpt: "EC-CUBE, one of the largest open source ecommerce CMSes in Japan, has released a beta plugin to use AMP for their ecommerce stores. The plugin was built by EC-CUBE’s well known partner SUNDAY SYSTEMS, Inc. in collaboration with Mobile Solutions Consultants from Google, in just one month 😲. For websites who use EC-CUBE, you can [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-11-21T00:45:09+09:00
-$date: November 21, 2018
+date_data: 2018-11-20T07:45:09-08:00
+$date: November 20, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

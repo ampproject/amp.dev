@@ -8,8 +8,8 @@ role:  Product Manager at Google, AMP Project
 origin: "https://amphtml.wordpress.com/2018/12/11/ads-on-amp-pages-became-safer-and-more-user-friendly-in-2018/amp/"
 excerpt: "In the past year, the AMP team took advantage of the latest browser features to keep users safe &#38; deliver a jank-free browsing experience. Because AMP powers billions of ads and pages on the web, these updates required no work from content creators or ad networks, making all AMP pages safer and faster for all [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-12-12T06:36:15+09:00
-$date: December 12, 2018
+date_data: 2018-12-11T13:36:15-08:00
+$date: December 11, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

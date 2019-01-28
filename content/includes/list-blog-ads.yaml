@@ -1,6 +1,17 @@
 blogs:
 
 - type: Blog
+  title: "AMP Conf 2019 が東京で開催されます"
+  id: ads-amp-conf-2019-jp
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2019/01/11/amp-conf-2019-jp/amp/"
+  excerpt: "この記事は AMP プロジェクト マーケティング リード、Matt Ludwig による Accelerated Mobile Pages Project の記事 &#8220;Announcing AMP Conf 2019: Tokyo&#8221; を元に翻訳・加筆したものです。詳しくは元記事をご覧ください。 昨年 2 月アムステルダムにて AMP というオープンソースプロジェクトの最新情報や学びを共有すべく AMP Conf 2018 が開催され、400 名もの方々が集まりました。この AMP というフレームワークはそれ以降も進化のスピードを止めることはなく、新たなガバナンスモデルを導入し、多くのパブリッシャーや E コマースのウェブサイトに採用され続けています。その中でも注目すべきははアジア・パシフィックでの普及です。たとえば最近の事例では、インドのパブリッシャーである&#160;Times of India&#160;やオーストラリアの自動車保険の&#160;Greenslips.co.au&#160;そして日本の CMS の&#160;EC-CUBE&#160;など、この地域での盛り上がりには目を見張るものがあります。 このような盛り上がりを受けて、2019 年の AMP Conf は 4 月 17 日、18 日に東京で開催することが決定されました。AMP のコアデベロッパーやコントリビューター、AMP を利用してサイト制作をしているエンジニアやデザイナー、そして新たなガバナンスモデルを形成しているコミッティーのメンバーと一緒に、AMP の最新情報や事例を見ていきましょう。コアな AMPHTML のトピックだけでなく、AMP stories、AMP for email、AMPHTML ads [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-01-11T12:11:51-08:00
+  date: "January 11, 2019"
+
+- type: Blog
   title: "Announcing AMP Conf 2019: Tokyo"
   id: ads-announcing-amp-conf-2019-tokyo
   author: Matt Ludwig
@@ -54,14 +65,3 @@ blogs:
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2018-12-04T07:58:54-08:00
   date: "December 4, 2018"
-
-- type: Blog
-  title: "Progressively AMPlify EC-CUBE"
-  id: ads-progressively-amplify-ec-cube
-  author: Yusuke Utsunomiya
-  role:  Mobile Solutions Consultant and Monisha Varadan, Global Product Partnerships at Google
-  origin: "https://amphtml.wordpress.com/2018/11/20/progressively-amplify-ec-cube/amp/"
-  excerpt: "EC-CUBE, one of the largest open source ecommerce CMSes in Japan, has released a beta plugin to use AMP for their ecommerce stores. The plugin was built by EC-CUBE’s well known partner SUNDAY SYSTEMS, Inc. in collaboration with Mobile Solutions Consultants from Google, in just one month 😲. For websites who use EC-CUBE, you can [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-20T07:45:09-08:00
-  date: "November 20, 2018"

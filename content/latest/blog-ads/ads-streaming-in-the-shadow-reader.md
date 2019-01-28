@@ -8,8 +8,8 @@ role:  Developer Advocate for AMP, at Google
 origin: "https://amphtml.wordpress.com/2018/11/05/streaming-in-the-shadow-reader/amp/"
 excerpt: "What did we do? We made The Shadow Reader faster again! We created The Shadow Reader (https://amp.cards) to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site folds real articles from The Guardian into an immersive news reader experience. It&#8217;s a demo, but [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-11-06T06:42:20+09:00
-$date: November 6, 2018
+date_data: 2018-11-05T13:42:20-08:00
+$date: November 5, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:
