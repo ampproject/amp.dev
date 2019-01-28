@@ -12,6 +12,8 @@
 @import '../../mixins';
 @import '../../variables';
 
+@import 'components/atoms/_headline';
+
 .#{utility('teaser-grid')} {
   max-width: 100%;
   @media screen and (min-width: 768px){
@@ -38,7 +40,7 @@
   & > h4,
   & > h5,
   & > h6 {
-    grid-column: 3 / 14;
+    grid-column: 1 / 14;
   }
   
   .#{molecule('lnk')} {
@@ -78,6 +80,12 @@
     &-count-16 {
       @media screen and (min-width: 768px) {
         grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .#{molecule('teaser')} {
+        &-headline {
+          @include hl-h6;
+        }
       }
     }
   }

@@ -1,11 +1,22 @@
 ---
 $title: Make your page discoverable
+$titles:
+  teaser: Make your page discoverable
 $order: 3
 
 toc: true
 
 formats:
   - websites
+
+teaser:
+  image:
+    src: 'https://placehold.it/400x200'
+    width: 2
+    height: 1
+    alt: lorem ipsum
+  text: Tips for linking AMP pages and using metadata.
+  label: Learn more
 ---
 
 

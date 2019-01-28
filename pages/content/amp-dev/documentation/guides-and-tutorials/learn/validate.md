@@ -1,9 +1,22 @@
 ---
 $title: Validate AMP pages
+$titles:
+  teaser: How to validate & debug AMP pages
+$view: /views/overview/guides.j2
+$path: /documentation/learn/validation-workflow/validate-amp.html
 $order: 7
 formats:
 - websites
 toc: true
+
+teaser:
+  image:
+    src: 'http://placehold.it/400x200'
+    width: 2
+    height: 1
+    alt: lorem ipsum
+  text: Tips for linking AMP pages and using metadata.
+  label: See in YouTube
 ---
 
 

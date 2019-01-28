@@ -5,54 +5,57 @@ $view: /views/overview/custom-content.j2
 ---
 {% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
 
-<div class="ad--container">
-  <div class="ad--content">
-    <h1>AMP Conf 2019</h1>
-    <p>ようこそ from Tokyo, Japan.</p>
-    <p>
-      <a href="#schedule">Schedule</a> | 
-      <a href="#speakers">Speakers</a> | 
-      <a href="#location">Location</a> | 
-      <a href="#faq">FAQ</a>
-    </p>
-    <p>
-      The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
-    </p>
+{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+<section class="ad--container">
+  <div class="ad-m-jumbo">
+    <div class="ad-a-ico">
+      {% do doc.icons.useIcon('/icons/japan.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#japan"></use></svg>
+    </div>
+    <h1 class="ad-m-jumbo-headline">AMP Conf 2019 in Tokyo, Japan</h1>
+    <h2 class="ad-m-jumbo-subline">April 17 & 18, 2019</h2>
+    <p class="ad-m-jumbo-copy">The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.</p>
+
+    {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+    <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ad-a-btn">Request an invitation</a>
   </div>
+</section>
 
-  <div class="ad-m-copy ad-m-copy-left-small">
-    <h3 id="schedule">Schedule</h3>
-    <p>
-      The schedule will be announced in February/March. The CfP has just opened and will run until Feb 14. We encourage everyone who has something great to share about AMP, regardless of speaking experience, to apply and submit a talk!
-    </p>
-
-    <a href="https://goo.gl/forms/bWdzWs28nUrC6Fq13" class="ad-m-lnk ad-m-lnk-square">
-      <div class="ad-a-ico ad-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ad-m-lnk-text">Submit a talk proposal</span>
-    </a>
-
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
+<section class="ad--container ad-m-biggy">
+  <div class="ad-m-biggy-aside">
+    <amp-iframe class="ad--media" width="300" height="300" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12966.682416981088!2d139.7288467!3d35.6604864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x374cd67b22a9c8a5!2sAcademy+Hills+Roppongi+forum!5e0!3m2!1sen!2sus!4v1545397494682"></amp-iframe>
   </div>
-    
-  <div class="ad-m-copy ad-m-copy-right-small">
-    <h3 id="speakers">Speakers</h3>
-    <p>The speakers will be announced soon.</p>
-  </div>
-
-  <div class="ad-o-amp-conf-location">
-    <h3 id="location">Location</h3>
-    <p>
+  <div class="ad-m-biggy-main">
+    <h2 class="ad-m-biggy-headline">Hello<br>Tokyo!</h2>
+    <p class="ad-m-biggy-text">
+      This year we are really happy and excited to host the AMP Conf not in North America nor in Europe but in beautiful Japan. The exact venue is:
+      <br>
+      <br>
       Roppongi Academy Hills, Tokyo<br>
       〒106-6149 Tōkyō-to, Minato-ku, Roppongi<br>
       6 Chome−6−10-1 六本木ヒルズ森タワー49階<br>
-      Japan<br>
-      ..and live-streamed around the world.
+      Japan
     </p>
-  </div>
-  <div class="ad-o-amp-conf-helloworld">Hello<br> World!</div>
+</section>
 
+{% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
+<section class="ad--container">
+  <div class="ad-m-collabo-card ad-m-collabo-card-1">
+    <h2 class="ad-m-collabo-card-headline">Schedule</h2>
+    <div class="ad-m-collabo-card-copy">
+      <p>The schedule will be announced in February/March. The CfP has just opened and will run until Feb 14. We encourage everyone who has something great to share about AMP, regardless of speaking experience, to apply and submit a talk!</p>
+      <a href="https://goo.gl/forms/bWdzWs28nUrC6Fq13" class="ad-a-btn">Submit a talk proposal</a>
+    </div>
+  </div>
+
+  <div class="ad-m-collabo-card ad-m-collabo-card-2">
+    <h2 class="ad-m-collabo-card-headline">Speakers</h2>
+    <p class="ad-m-collabo-card-copy">After the evaluation of the currently running Call for Papers you'll be able to find a list of speakers here.</p>
+  </div>
+</section>
+
+<section class="ad--container">
   <div class="ad--content">
     <h3 id="faq">FAQ</h3>
     <p><b>Does it cost anything?</b><br>
@@ -72,10 +75,4 @@ $view: /views/overview/custom-content.j2
     <p><b>When will the schedule be announced?</b><br>
     We'll announce a detailed schedule in February.</p>
   </div>
-
-  <div class="ad-m-copy-center">
-    <a href="/amp-conf/code-of-conduct">Code of Conduct</a> |
-    <a href="/amp-conf/accessibility">Accessibility</a> |
-    <a href="mailto:amp-conf-support@google.com">Contact</a>
-  </div> 
-</div> 
+</section>

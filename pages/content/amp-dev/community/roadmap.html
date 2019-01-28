@@ -25,13 +25,12 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
         <div class="ad-m-tip ad-m-tip-note">
           <div class="ad-m-tip-content">
             {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-            <p><b>NOTE -</b> This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a></p>
+            <p>This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a></p>
           </div>
         </div>
 
 
         <!-- Filter bubbles -->
-        <p>Filter by category:</p>
         {% do doc.icons.useIcon('icons/close.svg') %}
         <div class="ad-o-roadmap-filter-list all" [class]="roadmapfilter.activefilter != 'all' ? 'ad-o-roadmap-filter-list filtered' : 'ad-o-roadmap-filter-list all' ">
           {% for label in doc.roadmap.labels %}

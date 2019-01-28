@@ -1,0 +1,35 @@
+/*
+
+########################
+### MOLECULE: banner ###
+########################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('banner')} {
+  padding: 5px;
+  text-align: center;
+  color: color('whisper');
+  @include txt-font-accent;
+  background: color('blue-ribbon');
+
+  &-link {
+    @include txt-2;
+    color: color('white');
+
+    svg {
+      margin-right: 5px;
+      width: 10px;
+      height: 10px;
+      fill: color('white');
+    }
+  }
+}

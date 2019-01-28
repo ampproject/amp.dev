@@ -1,9 +1,16 @@
 ---
 $title: Templates
+$titles:
+  teaser: Templates.
 $view: /views/custom.j2
 $path: /documentation/templates.html
 $localization:
   path: /{locale}/documentation/templates.html
+formats:
+  - websites
+  - email
+  - stories
+  - ads
 stage:
   layout: all
   devices:
@@ -24,6 +31,14 @@ stage:
       height: 5
       type: mobile
       alt: image
+
+teaser:
+  image:
+    src: 'https://placehold.it/400x400'
+    width: 1
+    height: 1
+    alt: lorem ipsum
+  text: AMP Start provides templates and components to create styled AMP sites.
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
 
@@ -91,7 +106,7 @@ stage:
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ad-o-filter-bubbles-list">
       {% for category, stories in categories %}
-      <button class="ad-m-filter-bubble">{{ category }}</button>
+      <button class="ad-m-filter-bubble" on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">{{ category }}</button>
       {% endfor %}
     </div>
   </section>
