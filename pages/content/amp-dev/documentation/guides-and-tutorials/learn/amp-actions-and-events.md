@@ -20,10 +20,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# Actions and events in AMP
-
-
-
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
 The value for the syntax is a simple domain-specific language of the form:

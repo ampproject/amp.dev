@@ -20,10 +20,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# AMP HTML Layout System
-
-
-
 ## Overview
 
 The main goal of the layout system is to ensure that AMP elements can express their layout

@@ -3,8 +3,6 @@ $title: Getting Support
 $order: 1
 ---
 
-# Getting Support
-
 There are many ways to get help for questions and issues related to AMP:
 
 **Need help with AMP?**
