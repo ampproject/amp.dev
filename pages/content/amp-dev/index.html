@@ -49,18 +49,14 @@ format_explainer:
     url: /what-is-amp/email.html
 
 sampler:
-  - title: Hello World
-    src: /documentation/examples/components/amp-accordion.html/source/12
-  - title: Lorem Ipsum 1
+  - title: amp-accordion / 6
+    url: /documentation/examples/components/amp-accordion.html/source/6
+  - title: amp-accordion / 9
+    url: /documentation/examples/components/amp-accordion.html/source/9
+  - title: amp-accordion / 12
     url: /documentation/examples/components/amp-accordion.html/source/12
-  - title: Lorem Ipsum 2
-    url: /documentation/examples/components/amp-accordion.html/source/12
-  - title: Lorem Ipsum 3
-    url: /documentation/examples/components/amp-accordion.html/source/12
-  - title: Lorem Ipsum 4
-    url: /documentation/examples/components/amp-accordion.html/source/12
-  - title: Lorem Ipsum 5
-    url: /documentation/examples/components/amp-accordion.html/source/12
+  - title: amp-accordion / 15
+    url: /documentation/examples/components/amp-accordion.html/source/18
 ---
 {% do doc.styles.addCssFile('css/components/templates/home.css') %}
 
@@ -258,10 +254,19 @@ sampler:
 
   <section class="ad--sampler">
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
+    {% set playground_url = podspec.base_urls.api + '/playground' %}
 
+    {# Can't use |tojson filter here since URLs need to be built #}
     <amp-state id="sampler">
       <script type="application/json">
-        {{ doc.sampler|tojson }}
+      [{% for sample in doc.sampler %}
+        {% set embed_url = playground_url + '/embed?' + loop.index|pprint + '#url=' + podspec.base_urls.platform + sample.url %}
+
+        {
+          "title": "{{ sample.title }}",
+          "url": "{{ embed_url }}"
+        }{{ "," if not loop.last }}
+      {% endfor %}]
       </script>
     </amp-state>
 
@@ -293,14 +298,12 @@ sampler:
 
         </div>
 
-        {% set playground_url = podspec.base_urls.platform + '/playground' %}
-        {% set embed_url = playground_url + '/embed#url=' + podspec.base_urls.api + doc.sampler[0].src %}
+        {% set embed_url = playground_url + '/embed#url=' + podspec.base_urls.platform + doc.sampler[0].url %}
         <div class="ad-o-sampler-iframe">
           <amp-iframe
-            class="ad--media"
             width="11"
             height="5"
-            sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
             layout="responsive"
             resizable
             frameborder="0"
