@@ -7,8 +7,4 @@ $order: 4
 
 index: /content/amp-dev/events/amp-conf-2019.html
 sub_navigation:
-    - /content/amp-dev/events/upcoming-events.md
     - /content/amp-dev/events/amp-conf-2019.html
-    - /content/amp-dev/events/amp-roadshow.md
-    - /content/amp-dev/events/contributor-summit.md
-    - /content/amp-dev/events/past-events.md
