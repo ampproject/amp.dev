@@ -1,4 +1,4 @@
-$path: /community/{base}.html
+$path: /events/{base}.html
 $view: /views/default.j2
 $title@: Events
 $localization:
