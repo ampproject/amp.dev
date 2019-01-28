@@ -10,7 +10,7 @@ node_modules
 .com.apple.timemachine.supported
 
 dist
-build
+/build
 assets/css/*
 .depcache.json
 
