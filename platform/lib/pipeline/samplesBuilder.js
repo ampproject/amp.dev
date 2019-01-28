@@ -148,9 +148,9 @@ class SamplesBuilder {
         const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms;
         markdown.replace(CODE_BLOCK_PATTERN, (match) => {
           // Hash and save the code block for later restore
-          let hash = crypto.createHash('md5');
+          let hash = crypto.createHash('sha1');
           hash.update(match);
-          hash = hash.digest('utf-8');
+          hash = hash.digest('base64');
 
           codeBlocks[hash] = match;
           return hash;
