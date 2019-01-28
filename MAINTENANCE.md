@@ -101,7 +101,7 @@ Leave the device.direction property empty to get a flat front view.
 Device.layouts and their ratios:
   - Desktop: 8:5
   - Tablet: 4:3
-  - Desktop: 3:5
+  - Mobile: 3:5
 
 The order of contents' elements is equal to the order of the resulting page.
 Content layouts:
