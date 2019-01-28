@@ -67,7 +67,7 @@ class PageMinifier {
       html = this._cleanHtml(html);
       html = this._minifyHtml(html);
     } catch(e) {
-      this._log.error(`Could not minify ${page.relative}: ${e}`);
+      this._log.error(`Could not minify ${page.relative} cause of invalid markup.`);
     }
 
     page.contents = Buffer.from(html);
