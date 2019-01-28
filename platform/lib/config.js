@@ -42,7 +42,7 @@ class Config {
    */
   _buildUrl(host) {
     let url = `${host.scheme}://${host.host}`;
-    if (host.port) {
+    if (host.port && host.port !== "8080") {
       url = url + `:${host.port}`;
     }
 
