@@ -21,6 +21,9 @@
 
 .#{template('docs-detail')} {
 
+  background-color: color('whisper');
+
+
   .#{utility('container')} {
     @include container;
   }
