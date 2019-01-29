@@ -7,11 +7,7 @@ $path: /documentation/guides-and-tutorials/start/converting/converting.html
 $hidden: true
 
 teaser:
-  image:
-    src: '/static/img/docs/guides/converttoamp.jpg'
-    width: 566
-    height: 314
-    alt: Convert to AMP
+  icon: convert
   text: Learn how to convert HTML to AMP in this step by step tutorial.
   label: Learn more
 ---

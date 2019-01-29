@@ -24,7 +24,7 @@ const VALID_ORIGINS = new Set([
   'amp.dev',
   'api.amp.dev',
   'amp-dev-staging.appspot.com',
-  'api-dot-amp-dev-staging.appspot.com',
+  'playground-dot-amp-dev-staging.appspot.com',
   'ampbyexample.com',
   'ampstart.com',
   'ampstart-staging.firebaseapp.com',
