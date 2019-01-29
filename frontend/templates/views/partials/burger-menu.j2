@@ -18,10 +18,10 @@
     {% if section.index %}
     {% set section_index = g.doc(section.index, locale=doc.locale) %}
     <li class="ad-o-burger-menu-item">
-      <a class="ad-o-burger-menu-link ad-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
+      <span class="ad-o-burger-menu-link ad-m-nav-link {{ active_class(section_index) }}">
         {{ section.title }}
-      </a>
-
+      </span>
+      <input class="ad-o-burger-menu-item-trigger" type="checkbox" {% if active_class(section_index) %}checked {% endif %}>
       {# Section's sub level navigation if that's the current section #}
       <ul class="ad-o-burger-menu-items">
       {% for path in section.sub_navigation %}

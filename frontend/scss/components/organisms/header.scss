@@ -101,11 +101,11 @@
   &-second-level {
     display: none;
     flex: 1 1 100%;
-    padding-top: 10px;
+    padding-top: 8px;
     /* Pull out to have a 100% width border */
     margin-left: -30px;
     padding-left: 145px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     border-top: 1px solid color('wild-sand');
 
     @media screen and (min-width: 1024px) {
@@ -113,7 +113,9 @@
     }
 
     &-link {
-      margin: 0 15px;
+      margin: 2px 15px;
+      display: inline-block;
+      white-space: nowrap;
     }
   }
 }
