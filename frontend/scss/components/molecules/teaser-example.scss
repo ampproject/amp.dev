@@ -29,7 +29,7 @@
 		justify-content: flex-end;
 		scroll-snap-align: start;
 		scroll-snap-type: x mandatory;
-		box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
+		box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
 		transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
 		@media screen and (min-width: 575px) {
@@ -38,7 +38,7 @@
 
 		&:hover {
 			transform: translate3d(0, -2px, 0);
-			box-shadow: 0 12px 50px 0 rgba(0, 0, 0, 0.05);
+			box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
 		}
 	}
 
