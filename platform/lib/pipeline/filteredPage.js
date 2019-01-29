@@ -133,11 +133,12 @@ class FilteredPage {
   }
 
   _setActiveFormatToggle() {
-    // Set overall active state for format toggle list
-    this._dom('.ad-m-format-toggle').addClass('filtered');
+    // Set states for all the format toggles
+    this._dom('.ad-m-format-toggle-link').addClass('inactive');
 
     // The current active format should make it possible to go back to unfiltered
     let activeToggle = this._dom(`.ad-m-format-toggle-link-${this._format}`);
+    activeToggle.removeClass('inactive');
     activeToggle.addClass('active');
     activeToggle.attr('href', '?');
   }
