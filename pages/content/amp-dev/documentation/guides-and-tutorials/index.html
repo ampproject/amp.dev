@@ -149,8 +149,11 @@ cms: !g.yaml /content/shared/data/cms.yaml
         </div>
 
         {# image #}
-        <div class="ad-a-img ad-m-teaser-image">
-          <amp-img src="/static/img/docs/guides/testingcorsinamp.jpg" layout="responsive" width="566" height="314" alt="Google Search guidelines"></amp-img>
+        <div class="ad-m-teaser-icon">
+          {% do doc.icons.useIcon('icons/guidelines.svg') %}
+          <div class="ad-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#guidelines"></use></svg>
+          </div>
         </div>
 
         {# card container #}

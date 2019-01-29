@@ -113,6 +113,20 @@
       @include teaser-copy;
     }
 
+    &-image, &-icon {
+      + .#{molecule('teaser-card')} {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+
+        .#{molecule('teaser-content')} {
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 25px;
+        }
+      }
+    }
+
     &-image {
       @include teaser-image;
       @include box-shadow;
@@ -124,16 +138,28 @@
       &.no-shadow {
         box-shadow: none;
       }
+    }
 
-      + .#{molecule('teaser-card')} {
-        background-color: transparent;
-        box-shadow: none;
-        padding: 0;
+    &-icon {
+      @include box-shadow;
 
-        .#{molecule('teaser-content')} {
-          padding-left: 0;
-          padding-right: 0;
-          padding-top: 25px;
+      align-items: center;
+      background: color('ebony-clay');
+      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+      display: flex;
+      justify-content: center;
+      left: 0;
+      min-height: 100px;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      .#{atom('ico')} {
+        @include ico-10;
+        fill: #fff;
+
+        svg {
+          padding: 1.75rem 0;
         }
       }
     }

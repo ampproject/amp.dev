@@ -13,11 +13,7 @@ formats:
   - ads
 
 teaser:
-  image:
-    src: '/static/img/docs/guides/makeyourpagediscoverable.jpg'
-    width: 566
-    height: 314
-    alt: Make your page discoverable
+  icon: discover
   text: Learn how search engines find out that there is an AMP version of your site.
   label: Learn more
 ---
