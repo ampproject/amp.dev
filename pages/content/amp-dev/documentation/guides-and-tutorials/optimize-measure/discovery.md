@@ -8,14 +8,17 @@ toc: true
 
 formats:
   - websites
+  - email
+  - stories
+  - ads
 
 teaser:
   image:
-    src: 'https://placehold.it/400x200'
-    width: 2
-    height: 1
-    alt: lorem ipsum
-  text: Tips for linking AMP pages and using metadata.
+    src: '/static/img/docs/guides/makeyourpagediscoverable.jpg'
+    width: 566
+    height: 314
+    alt: Make your page discoverable
+  text: Learn how search engines find out that there is an AMP version of your site.
   label: Learn more
 ---
 

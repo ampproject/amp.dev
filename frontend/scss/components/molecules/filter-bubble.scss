@@ -38,6 +38,7 @@ The filter-bubble molecule is a simple button used to filter content based on th
 
   @media screen and (min-width: 768px) {
     margin: 5px;
+    padding: 5px 20px;
   }
 
   &:hover, &.filtered {
