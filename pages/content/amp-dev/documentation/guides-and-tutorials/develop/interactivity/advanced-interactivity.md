@@ -69,7 +69,9 @@ Now, whenever the displayed slide for the `<amp-carousel>`  changes, the action 
 
 The `event.index` expression evaluates to the new slide index, and the `AMP.setState()` action merges this object literal into the current state. This replaces the current value of `selected.slide` with the value of `event.index`.
 
-Tip: `AMP.setState()` performs a deep merge of nested object literals. For more details, see the [`<amp-bind>`](/docs/reference/components/amp-bind.html) documentation.
+[tip type="tip"]
+**TIP –** `AMP.setState()` performs a deep merge of nested object literals. For more details, see the [`<amp-bind>`](/docs/reference/components/amp-bind.html) documentation.
+[/tip]
 
 ### Bind the indicator elements
 
@@ -184,7 +186,9 @@ Add an "on" action to the [`<amp-selector>`](/docs/reference/components/amp-sele
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-Tip: This could also be done by adding `on="tap:AMP.setState(...)` actions to each `<amp-img>` child inside the `<amp-selector>`. One of the great things about `<amp-selector>` is that it simplifies markup in ways like this.
+[tip type="tip"]
+**TIP –** This could also be done by adding `on="tap:AMP.setState(...)` actions to each `<amp-img>` child inside the `<amp-selector>`. One of the great things about `<amp-selector>` is that it simplifies markup in ways like this.
+[/tip]
 
 ### Bind the image elements
 
@@ -200,6 +204,8 @@ Then, add bindings to the [`<amp-img>`](/docs/reference/components/amp-img.html)
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-Note: In practice, each image in the carousel would likely have a different `src`. This could be done by replacing the single image with an array of images. For simplicity, this tutorial uses a single image at different magnifications.
+[tip type="note"]
+**NOTE –**  In practice, each image in the carousel would likely have a different `src`. This could be done by replacing the single image with an array of images. For simplicity, this tutorial uses a single image at different magnifications.
+[/tip]
 
 **Try it out**: Refresh the page and select a different color for a shirt. When you do, the carousel's images are updated to show shirts of the selected color.

@@ -48,7 +48,9 @@ Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign
 
 [/sourcecode]
 
-Note: Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`.
+[tip type="note"]
+**NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`.
+[/tip]
 
 The login page is a non-AMP page in which we populate the login and password values for the sake of simplicity. Notice the usage of `returnURL` hidden input type, which is populated by the AMPByExample server via server-side templating. The server reads this value from a parameter called `return`, automatically added by the AMP library to the sign-in URL.
 
@@ -67,4 +69,6 @@ As a quick recap:
 - The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
 - The server should orchestrate the response once the user clicks on the login button
 
-Tip: A more detailed explanation about this flow can also be found in the [amp-access documentation](/docs/reference/components/amp-access.html#login-flow).
+[tip type="tip"]
+**TIP –** A more detailed explanation about this flow can also be found in the [amp-access documentation](/docs/reference/components/amp-access.html#login-flow).
+[/tip]

@@ -69,7 +69,9 @@ Ahora, siempre que la diapositiva mostrada para el `<amp-carousel>` cambie, la a
 
 La expresión `event.index` se evalúa al nuevo índice de diapositivas y la acción `AMP.setState()` fusiona este literal de objeto en el estado actual. Esto reemplaza el valor actual de `selected.slide` con el valor de `event.index`.
 
-Tip: `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](/docs/reference/components/amp-bind.html).
+[tip type="tip"]
+**TIP –** `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`<amp-bind>`](/docs/reference/components/amp-bind.html).
+[/tip]
 
 ### Vincular los elementos indicadores
 
@@ -182,7 +184,9 @@ Agregue una acción "on" al [`<amp-selector>`](/docs/reference/components/amp-se
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-Tip: Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada `<amp-img>` secundario dentro del `<amp-selector>`. Una de las grandes cosas sobre `<amp-selector>` es que simplifica el marcado.
+[tip type="tip"]
+**TIP –** Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada `<amp-img>` secundario dentro del `<amp-selector>`. Una de las grandes cosas sobre `<amp-selector>` es que simplifica el marcado
+[/tip]
 
 ### Vincular los elementos de la imagen
 

@@ -37,7 +37,9 @@ untuk memilih rasio aspek berdasarkan lebar layar.
 </amp-iframe>
 </div>
 
-Tip: Lihat lebih banyak contoh `amp-twitter` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-twitter/).
+[tip type="tip"]
+**TIP –** Lihat lebih banyak contoh `amp-twitter` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-twitter/).
+[/tip]
 
 ## Menyematkan Instagram
 
@@ -69,7 +71,9 @@ sehingga nilai lebar dan tinggi harus universal
 </amp-iframe>
 </div>
 
-Tip: Lihat lebih banyak contoh `amp-instagram` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-instagram/).
+[tip type="tip"]
+**TIP –** Lihat lebih banyak contoh `amp-instagram` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-instagram/).
+[/tip]
 
 ## Menampilkan pos atau video Facebook
 
@@ -114,7 +118,9 @@ Pratinjau:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-Tip: Lihat lebih banyak contoh `amp-facebook` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-facebook/).
+[tip type="tip"]
+**TIP –** Lihat lebih banyak contoh `amp-facebook` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-facebook/).
+[/tip]
 
 ## Menyertakan video youtube
 
@@ -145,7 +151,9 @@ Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk vide
 </amp-iframe>
 </div>
 
-Tip: Lihat lebih banyak contoh `amp-youtube` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-youtube/).
+[tip type="tip"]
+**TIP –** Lihat lebih banyak contoh `amp-youtube` di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-youtube/).
+[/tip]
 
 ## Menampilkan iklan
 

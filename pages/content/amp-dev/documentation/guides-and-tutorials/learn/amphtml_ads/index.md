@@ -102,7 +102,9 @@ After creating your AMPHTML ad, you should make sure that the ad is using the co
 *   Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
 *   Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
 
-Note: To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly.
+[tip type="note"]
+**NOTE –**  To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly.
+[/tip]
 
 ## Supporting AMPHTML ads in RTB
 

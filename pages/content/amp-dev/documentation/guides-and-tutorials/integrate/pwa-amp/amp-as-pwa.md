@@ -54,13 +54,17 @@ Then link to it from the `<head>` of your AMP page:
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
-Tip: Learn more about the [Web App Manifest at WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
+[tip type="tip"]
+**TIP –** Learn more about the [Web App Manifest at WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
+[/tip]
 
 ## Install a Service Worker to enable offline access
 
 A Service Worker is a client-side proxy that sits between your page and your server, and can be used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
 
-Note: If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
+[tip type="note"]
+**NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
+[/tip]
 
 Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker.html) component to achieve the same.
 

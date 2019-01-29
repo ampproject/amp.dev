@@ -29,7 +29,9 @@ Di sisi lain, Progressive Web App memungkinkan interaktivitas dan engagement yan
 
 AMP memiliki kemampuan untuk menginstal Service Worker Progressive Web App Anda dari dalam halaman AMP – ya, meskipun halaman AMP tersebut ditayangkan dari Cache AMP. Jika dilakukan dengan benar, link yang mengarah ke PWA (dari salah satu halaman AMP Anda) akan terasa hampir instan, mirip dengan saat pertama kali membuka halaman AMP.
 
-Tip: Jika Anda belum terbiasa dengan Service Worker, sebaiknya buka [kursus Udacity](https://www.udacity.com/course/offline-web-applications--ud899) yang disampaikan oleh Jake Archibald.
+[tip type="tip"]
+**TIP –** Jika Anda belum terbiasa dengan Service Worker, sebaiknya buka [kursus Udacity](https://www.udacity.com/course/offline-web-applications--ud899) yang disampaikan oleh Jake Archibald.
+[/tip]
 
 Pertama-tama, instal Service Worker di semua Halaman AMP Anda menggunakan [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html), dengan terlebih dahulu menyertakan komponen melalui skripnya di `<head>` halaman Anda:
 
@@ -69,7 +71,9 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-Tip: Terdapat cara yang lebih mudah untuk menangani Service Worker. Lihat [library bantuan Service Worker](https://github.com/GoogleChrome/sw-helpers).
+[tip type="tip"]
+**TIP –** Terdapat cara yang lebih mudah untuk menangani Service Worker. Lihat [library bantuan Service Worker](https://github.com/GoogleChrome/sw-helpers).
+[/tip]
 
 ## Membuat semua link di Halaman AMP menuju ke PWA
 

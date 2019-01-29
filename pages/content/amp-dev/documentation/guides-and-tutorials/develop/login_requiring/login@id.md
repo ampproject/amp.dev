@@ -66,4 +66,6 @@ Sebagai rangkuman singkat:
 - Waktu proses AMP menutup halaman login dan mengalihkan ke halaman yang ditentukan oleh parameter URL respons
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
-Tip: Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access.html#login-flow).
+[tip type="tip"]
+**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access.html#login-flow).
+[/tip]

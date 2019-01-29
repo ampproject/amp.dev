@@ -35,7 +35,9 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
 </amp-iframe>
 </div>
 
-Tip: Puedes encontrar más ejemplos de `amp-twitter` en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+[tip type="tip"]
+**TIP –** Puedes encontrar más ejemplos de `amp-twitter` en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+[/tip]
 
 ## Insertar una foto de Instagram
 
@@ -63,7 +65,9 @@ Además, Instagram utiliza una relación de aspecto fija para los diseños adapt
 </amp-iframe>
 </div>
 
-Tip: Puedes encontrar más ejemplos de `amp-instagram` en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+[tip type="tip"]
+**TIP –** Puedes encontrar más ejemplos de `amp-instagram` en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+[/tip]
 
 ## Mostrar entradas o vídeos de Facebook
 
@@ -107,7 +111,9 @@ Avance:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-Tip: Puedes encontrar más ejemplos de `amp-facebook` en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+[tip type="tip"]
+**TIP –** Puedes encontrar más ejemplos de `amp-facebook` en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+[/tip]
 
 ## Insertar un vídeo de YouTube
 
@@ -137,7 +143,9 @@ Utiliza `layout="responsive"` para producir diseños correctos para los vídeos 
 </amp-iframe>
 </div>
 
-Tip: Puedes encontrar más ejemplos de `amp-youtube` en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+[tip type="tip"]
+**TIP –** Puedes encontrar más ejemplos de `amp-youtube` en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+[/tip]
 
 ## Mostrar un anuncio
 

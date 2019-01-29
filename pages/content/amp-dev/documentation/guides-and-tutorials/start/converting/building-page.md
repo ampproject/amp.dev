@@ -8,7 +8,9 @@ In the project directory, you will find a file named [`article.html`](https://gi
 1.  **Copy** the entire code from the `article.html `file and paste it into a new file.
 2.  **Save** the new file as `article.amp.html`.
 
-Note: You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example:  `http://publisher.com/article.html?amp`.
+[tip type="note"]
+**NOTE –**  You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example:  `http://publisher.com/article.html?amp`.
+[/tip]
 
 
 Your `article.amp.html` file should look like the following:

@@ -44,7 +44,9 @@ Kode ini berarti:
 
 Cara ini dapat berfungsi karena library AMP Bayangan, saat pemuatan yang sebenarnya, akan mengetahui bahwa telah ada array panggilan balik pada `window.AMP`, lalu memproses seluruh antrean. Jika kemudian Anda menjalankan kembali fungsi yang sama, fungsi tersebut akan tetap bekerja, karena AMP Bayangan menggantikan `window.AMP` dengan sendirinya beserta metode `push` kustom, yang langsung mengaktifkan panggilan balik.
 
-Tip: Agar contoh kode di atas lebih praktis, sebaiknya gabungkan ke dalam 1 Promise, lalu selalu gunakan Promise tersebut sebelum dijalankan dengan API AMP. Lihat [Kode demo React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) kami untuk mengetahui contohnya.
+[tip type="tip"]
+**TIP –** Agar contoh kode di atas lebih praktis, sebaiknya gabungkan ke dalam 1 Promise, lalu selalu gunakan Promise tersebut sebelum dijalankan dengan API AMP. Lihat [Kode demo React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) kami untuk mengetahui contohnya.
+[/tip]
 
 ## Menangani navigasi di Progressive Web App
 
@@ -94,7 +96,9 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-Tip: Sebelum Anda benar-benar menyerahkan dokumen ke AMP, saatnya menghapus elemen halaman yang dapat dimengerti saat menampilkan halaman AMP secara mandiri, namun bukan dalam mode tersemat: Misalnya, footer dan header.
+[tip type="tip"]
+**TIP –** Sebelum Anda benar-benar menyerahkan dokumen ke AMP, saatnya menghapus elemen halaman yang dapat dimengerti saat menampilkan halaman AMP secara mandiri, namun bukan dalam mode tersemat: Misalnya, footer dan header.
+[/tip]
 
 Dan selesai! Halaman AMP Anda akan dirender sebagai turunan dari seluruh Progressive Web App.
 
@@ -123,5 +127,3 @@ Anda juga dapat melihat contoh PWA dan AMP menggunakan framework Polymer. Contoh
 
 * Dapatkan kodenya di sini: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * Lihat cara kerjanya di sini: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
-
