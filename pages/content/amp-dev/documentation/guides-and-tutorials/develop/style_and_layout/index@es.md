@@ -8,7 +8,9 @@ Dar diseño y mejorar el layout de las páginas AMP HTML es muy similar al HTML 
 
 Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, mientras expande algunas capacidades de diseño responsivo con caracteristicas como [placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}), [uso avanzado vía srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) y los [atributos del layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) para un mejor control sobre cómo se muestran los elementos en la página.
 
-Tip: Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](/es/docs/design/responsive/responsive_design.html)
+[tip type="tip"]
+**TIP –** Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](/es/docs/design/responsive/responsive_design.html)
+[/tip]
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Vea a UpperQuad hablar sobre el rediseño del sitio de AMPproject, incluyendo los retos de usar AMP por primera vez.']
 

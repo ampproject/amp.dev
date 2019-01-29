@@ -66,7 +66,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 Let's go through it step-by-step:
 
 1.  The first tag should be the `meta charset` tag, followed by any remaining `meta` tags.
-1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.png"
+1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
          width="1230" height="1068" layout="responsive"
          alt="Priority level changes when preload is applied">
 </amp-img>

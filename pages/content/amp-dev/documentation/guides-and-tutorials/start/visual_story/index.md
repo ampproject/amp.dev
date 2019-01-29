@@ -18,4 +18,6 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 - Animate elements on a page
 - Keep readers engaged with your content by adding related links to the end of the story
 
-Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
+[tip type="note"]
+**NOTE –**  The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
+[/tip]

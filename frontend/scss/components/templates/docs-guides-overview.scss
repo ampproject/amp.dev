@@ -32,6 +32,16 @@
     @include content;
   }
 
+  .#{utility('content')} {
+    p.limit {
+      margin-bottom: 1.75em;
+    }
+
+    h1, h2 {
+      margin-bottom: .5em;
+    }
+  }
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
@@ -74,7 +84,6 @@
 
     & > a {
       @include teaser-linking;
-      height: 100%;
     }
 
     &-tags {
@@ -87,16 +96,8 @@
 
     &-card {
       @include teaser-card;
+      height: 100%;
       border-radius: 0;
-    }
-
-    &-header {
-      @include teaser-header;
-      height: 90px;
-
-      &-title {
-        @include teaser-header-title;
-      }
     }
 
     &-content {
@@ -118,6 +119,10 @@
 
       &:before {
         height: 100%;
+      }
+
+      &.no-shadow {
+        box-shadow: none;
       }
 
       + .#{molecule('teaser-card')} {

@@ -143,7 +143,9 @@ Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específ
 
 Tenga en cuenta que no estamos inicializando el valor de `selectedSize` a través del elemento `amp-state#selected`. Eso es porque intencionalmente no proporcionamos un tamaño seleccionado por defecto y en lugar de eso queremos obligar al usuario a elegir un tamaño.
 
-Tip: `AMP.setState()` se puede utilizar para definir nuevas variables además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`.
+[tip type="tip"]
+**TIP –** `AMP.setState()` se puede utilizar para definir nuevas variables además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`.
+[/tip]
 
 Añada un nuevo elemento `<span>` que enrolle la etiqueta de precio y cambie el texto predeterminado a "---" ya que no hay una selección de tamaño predeterminada.
 

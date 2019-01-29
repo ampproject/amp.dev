@@ -83,7 +83,9 @@ For our news article, **add** the following structured data to the bottom of the
 </script>
 ```
 
-Note: The content should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
+[tip type="note"]
+**NOTE –**  The content should always be the same. For news articles, specify the “NewsArticle” type. The headline should match your article’s title. The image object refers to the hero image of the article.
+[/tip]
 
 **Reload** the page in your browser and verify that no AMP Validation errors were introduced.
 
@@ -106,7 +108,7 @@ To verify that your structured data is correct, many platforms provide validatio
 If your structured data is valid, you should see **0 errors**, and **0 warnings**.
 
 [tip type="read-on"]
-Read on: To learn more about page discoverability, see the [Make your page discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) guide.
+**READ ON –** To learn more about page discoverability, see the [Make your page discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) guide.
 [/tip]
 
 Awesome work!  You've completed your AMP news article.

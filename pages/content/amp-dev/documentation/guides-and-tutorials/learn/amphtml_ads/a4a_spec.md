@@ -331,8 +331,10 @@ HTML5 compatible.
 
 4.2.4 `<link>`
   - `<link rel=...>` tags are disallowed, except for `<link rel=stylesheet>`.
-  - __Note:__ Unlike in general AMP, `<link rel="canonical">` tags are
-    prohibited.
+[tip type="note"]
+**NOTE –** Unlike in general AMP, `<link rel="canonical">` tags are
+  prohibited.
+[/tip]
 
 4.2.5 `<style>`
 4.2.6 `<meta>`

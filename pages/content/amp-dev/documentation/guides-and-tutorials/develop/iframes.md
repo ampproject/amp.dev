@@ -27,7 +27,9 @@ main page context, such as content requiring user-authored JavaScript.
 * Must be at least **600px** or **75%** of the first viewport away from the top (except for iframes that use a [`placeholder`](#using-placeholders)).
 * Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin.
 
-Read on: Learn more at the [full specification for <code>amp-iframe</code>](/docs/reference/components/amp-iframe.html).
+[tip type="read-on"]
+**READ ON –** Learn more at the [full specification for <code>amp-iframe</code>](/docs/reference/components/amp-iframe.html).
+[/tip]
 
 ### Include the script
 
@@ -64,8 +66,9 @@ Renders as:
 
 You can display an `amp-iframe` at the top of a document, provided the `amp-iframe` contains an element with the `placeholder` attribute, (for example, an `amp-img` element) which would be rendered as a placeholder until the iframe is ready to be displayed.
 
-Read on: Learn more about placeholders in [Iframe with placeholder](/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-
+[tip type="read-on"]
+**READ ON –**: Learn more about placeholders in [Iframe with placeholder](/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
+[/tip]
 
 Example with placeholder:
 

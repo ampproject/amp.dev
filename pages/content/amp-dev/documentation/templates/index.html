@@ -7,11 +7,6 @@ $path: /documentation/templates.html
 $hidden: true
 $localization:
   path: /{locale}/documentation/templates.html
-formats:
-  - websites
-  - email
-  - stories
-  - ads
 stage:
   layout: all
   devices:
@@ -98,7 +93,6 @@ teaser:
   </section>
 
   {% set categories = g.categories('/content/amp-dev/documentation/templates', locale=doc.locale) %}
-  {# {% set categories = g.categories('/content/amp-dev/what-is-amp/success-stories', locale=doc.locale) %} #}
   <section class="ad--intro ad--container">
     <div class="ad--content">
       <p>{{ _('Get started quickly with a ready-made design. Templates designed to work with all devices - mobile, tablet and desktop.') }}</p>
@@ -106,8 +100,17 @@ teaser:
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ad-o-filter-bubbles-list">
+      <button class="ad-m-filter-bubble filtered"
+        [class]="chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+        on="tap:AMP.setState({ chosenFilter: 'none' })">
+        All
+      </button>
       {% for category, stories in categories %}
-      <button class="ad-m-filter-bubble" [class]="chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'" on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">{{ category }}</button>
+      <button class="ad-m-filter-bubble"
+        [class]="chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+        on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">
+        {{ category }}
+      </button>
       {% endfor %}
     </div>
   </section>

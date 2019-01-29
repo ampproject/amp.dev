@@ -1,6 +1,7 @@
 $title: Lune
 $view: /views/detail/template-detail.j2
 $category: E-Commerce
+$order: 1
 formats:
   - websites
 

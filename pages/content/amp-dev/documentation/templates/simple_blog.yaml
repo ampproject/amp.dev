@@ -1,6 +1,7 @@
 $title: Simple Blog
 $view: /views/detail/template-detail.j2
 $category: News & Blog
+$order: 3
 formats:
   - websites
 

@@ -3,7 +3,7 @@ $title: 양방향 AMP 페이지 만들기
 $order: 3
 ---
 
-{{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='이 가이드를 통해 완성된 AMP 페이지') }}
+{{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='이 가이드를 통해 완성된 AMP 페이지') }}
 
 이 가이드에서는 데이터 바인딩 및 표현식을 사용하여 [`<amp-bind>`](/ko/docs/reference/components/amp-bind.html)를 활용한 멋진 양방향 AMP 페이지를 만드는 방법을 알아봅니다.
 

@@ -2,7 +2,7 @@
 $title: Membuat halaman AMP interaktif
 ---
 
-{{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='Menyelesaikan halaman AMP untuk tutorial ini') }}
+{{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Menyelesaikan halaman AMP untuk tutorial ini') }}
 
 Dalam tutorial ini, Anda akan mempelajari cara menggunakan pengikatan data dan ekspresi untuk membuat halaman AMP interaktif yang keren dengan [`<amp-bind>`](/id/docs/reference/components/amp-bind.html).
 

@@ -2,7 +2,7 @@
 $title: 创建互动式 AMP 网页
 ---
 
-{{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='本教程的最终完成版 AMP 网页') }}
+{{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='本教程的最终完成版 AMP 网页') }}
 
 在本教程中，您将学习如何通过 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 使用数据绑定关系和表达式创建性能卓越的互动式 AMP 网页。
 

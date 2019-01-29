@@ -761,13 +761,15 @@ For more on how layout works,
 see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
 the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
 
-**Note:** If you don't specify the layout,
+[tip type="note"]
+**NOTE –**  If you don't specify the layout,
 and you don't include `width` and `height` values,
 the layout defaults to CONTAINER.
 The validator throws an error
 as CONTAINER isn't supported in any AMP tags.
 Specify a layout other than CONTAINER,
 or add a `width` and/or `height` value and the error goes away.
+[/tip]
 
 ### Attribute not allowed by implied layout
 

@@ -8,10 +8,10 @@ $hidden: true
 
 teaser:
   image:
-    src: 'https://placehold.it/400x200'
-    width: 2
-    height: 1
-    alt: lorem ipsum
+    src: '/static/img/docs/guides/converttoamp.jpg'
+    width: 566
+    height: 314
+    alt: Convert to AMP
   text: Learn how to convert HTML to AMP in this step by step tutorial.
   label: Learn more
 ---

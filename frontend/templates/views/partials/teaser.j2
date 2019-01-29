@@ -160,9 +160,9 @@
         </div>
         {% else %}
         <div class="ad-m-teaser-icon">
-          {% do doc.icons.useIcon('icons/code.svg') %}
+          {% do doc.icons.useIcon('icons/example-default.svg') %}
           <div class="ad-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example-default"></use></svg>
           </div>
         </div>
         {% endif %}
@@ -198,7 +198,7 @@
 
       {# image #}
       {% if teaser.image %}
-        <div class="ad-a-img ad-m-teaser-image">
+        <div class="ad-a-img ad-m-teaser-image {% if teaser_doc.view == '/views/custom.j2' %} no-shadow {% endif %}">
           <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
         </div>
       {% endif %}

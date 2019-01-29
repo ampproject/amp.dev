@@ -186,7 +186,9 @@ in the `amp-analytics` configuration.
 The `canonicalUrl` and `clientId` variables aren't defined in the configuration,
 so their values get substituted by the platform.
 
-Important: Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+[tip type="important"]
+**IMPORTANT –** Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+[/tip]
 
 ## User identification
 

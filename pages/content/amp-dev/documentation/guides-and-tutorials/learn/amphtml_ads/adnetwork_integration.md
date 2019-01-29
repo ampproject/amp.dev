@@ -26,7 +26,9 @@ As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP
 
 As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher's website. Because AMP doesn't allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`](/docs/reference/components/amp-ad.html)  tag to request ads from your ad server.
 
-Note: You can use this amp-ad implementation to display traditional HTML ads **and** AMPHTML ads.
+[tip type="note"]
+**NOTE –** You can use this amp-ad implementation to display traditional HTML ads **and** AMPHTML ads.
+[/tip]
 
 For example, the Amazon A9 server can be invoked by using following syntax:
 
