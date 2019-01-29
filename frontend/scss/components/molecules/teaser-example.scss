@@ -94,6 +94,22 @@
 			padding: 20px;
 			z-index: 5;
 		}
+		
+		&-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			
+			.#{atom('ico')} {
+				@include ico-5;
+				fill: #fff;
+			}
+		}
 
 		&-image {
 			@include teaser-image;
