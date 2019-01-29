@@ -32,6 +32,16 @@
     @include content;
   }
 
+  .#{utility('content')} {
+    p.limit {
+      margin-bottom: 1.75em;
+    }
+
+    h1, h2 {
+      margin-bottom: .5em;
+    }
+  }
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
