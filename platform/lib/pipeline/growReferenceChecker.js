@@ -24,7 +24,7 @@ const fs = require('fs');
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.md';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.{md,html}';
 // The location to search for documents in
 const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
 // The pattern used by Grow to make up references
