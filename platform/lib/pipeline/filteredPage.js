@@ -123,7 +123,7 @@ class FilteredPage {
   _rewriteUrls() {
     this._dom('a').each((index, a) => {
       a = this._dom(a);
-      let href = a.attr('href');
+      let href = a.attr('href') || '';
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
       if (!href.includes('?') && isFilterableRoute(href)) {
