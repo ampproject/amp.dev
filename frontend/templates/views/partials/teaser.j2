@@ -198,7 +198,7 @@
 
       {# image #}
       {% if teaser.image %}
-        <div class="ad-a-img ad-m-teaser-image">
+        <div class="ad-a-img ad-m-teaser-image {% if teaser_doc.view == '/views/custom.j2' %} no-shadow {% endif %}">
           <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
         </div>
       {% endif %}
