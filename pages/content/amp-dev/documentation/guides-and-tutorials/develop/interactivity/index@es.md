@@ -2,7 +2,7 @@
 $title: Crear páginas AMP interactivas
 ---
 
-{{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='Página de AMP completada para este tutorial') }}
+{{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Página de AMP completada para este tutorial') }}
 
 En este tutorial, aprenderá a utilizar el enlace de datos y las expresiones para crear páginas AMP impresionantes e interactivas con  [`<amp-bind>`](/es/docs/reference/components/amp-bind.html).
 

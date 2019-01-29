@@ -1,6 +1,7 @@
 $title: Beck & Galo
 $view: /views/detail/template-detail.j2
 $category: Food & Drink
+$order: 1
 formats:
   - websites
 

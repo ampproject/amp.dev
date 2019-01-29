@@ -1,6 +1,7 @@
 $title: Gallery
 $view: /views/detail/template-detail.j2
 $category: Art & Design
+$order: 1
 formats:
   - websites
 
