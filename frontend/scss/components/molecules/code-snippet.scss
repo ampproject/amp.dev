@@ -19,6 +19,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
 .#{molecule('code-snippet')} {
   max-width: 100%;
+  max-height: 500px;
   overflow-x: auto;
   margin: 0 -20px 1em 0;
   padding: 0 1em;
@@ -27,6 +28,16 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   font-weight: bold;
   background: rgb(41,50,60);
   background: linear-gradient(225deg, rgba(41,50,60,1) 0%, rgba(72,85,99,1) 75%);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color('oslo-gray');
+  }
 
   @media screen and (min-width: 768px) {
     margin-right: -30px;
