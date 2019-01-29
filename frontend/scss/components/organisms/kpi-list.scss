@@ -42,4 +42,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   width: 100%;
+  @media screen and (min-width: 768px) {
+    overflow: hidden;
+  }
 }
