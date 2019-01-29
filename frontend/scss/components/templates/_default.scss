@@ -1,3 +1,7 @@
+.#{utility('main')} > .#{utility('container')}:first-child {
+  padding-top: 26px;
+}
+
 @mixin container {
   position: relative;
   display: flex;
