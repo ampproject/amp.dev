@@ -16,11 +16,11 @@
 
 'use strict';
 
-const htmlFindReplaceElementAttrs = require('html-find-replace-element-attrs');
+const cheerio = require('cheerio');
 
 const FORMATS = ['websites', 'stories', 'ads', 'email'];
 
-const BODY_CLASSES = {
+const FILTER_CLASSES = {
   'websites': 'ad--websites',
   'stories': 'ad--stories',
   'ads': 'ad--ads',
@@ -50,8 +50,13 @@ class FilteredPage {
     this._format = format;
     this._content = content;
 
-    this._addClassToBody();
+    this._dom = cheerio.load(this._content);
+
+    this._removeHiddenElements();
     this._rewriteUrls();
+    this._setActiveFormatToggle();
+    this._removeStaleFilterClass();
+    this._addClassToBody();
   }
 
   /**
@@ -60,11 +65,53 @@ class FilteredPage {
    * @return {undefined}
    */
   _addClassToBody() {
-    this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
-      return attribute.value + ' ' + BODY_CLASSES[this._format];
-    }, {
-      'tag': 'body',
-      'attr': 'class',
+    this._dom('body').addClass(FILTER_CLASSES[this._format]);
+  }
+
+  /**
+   * Tries to remove all elements that would otherwise be hidden by CSS
+   * and then checks for empty lists afterwards
+   * @return {undefined}
+   */
+  _removeHiddenElements() {
+    let inactiveFormatClasses = Object.assign({}, FILTER_CLASSES);
+    delete inactiveFormatClasses[this._format];
+    inactiveFormatClasses = Object.values(inactiveFormatClasses);
+    inactiveFormatClasses = '.' + inactiveFormatClasses.join(', .');
+
+    let activeFormatClass = FILTER_CLASSES[this._format];
+
+    // Find all hidden elements and remove them if they aren't matching
+    // the current filter
+    this._dom(inactiveFormatClasses).each((index, filteredElement) => {
+      filteredElement = this._dom(filteredElement);
+
+      // Check if the filtered element is also valid for the current format
+      if (filteredElement.hasClass(activeFormatClass)) {
+        return;
+      }
+
+      filteredElement.remove();
+    });
+
+    // Find possibly empty lists and remove them for ...
+    // a) component sidebar and normal sidebar
+    this._dom('.nav-list .level-2', '.ad-o-component-sidebar').each((index, navList) => {
+      navList = this._dom(navList);
+
+      if (navList.children().length == 0) {
+        navList.parent().remove();
+      }
+    });
+
+    // b) normal sidebar
+    // a) component sidebar and normal sidebar
+    this._dom('.nav-list .level-2', '.ad-o-sidebar').each((index, navList) => {
+      navList = this._dom(navList);
+
+      if (navList.children().length == 0) {
+        navList.parent().remove();
+      }
     });
   }
 
@@ -74,31 +121,47 @@ class FilteredPage {
    * @return {undefined}
    */
   _rewriteUrls() {
-    this._content = htmlFindReplaceElementAttrs.replace(this._content, (attribute) => {
+    this._dom('a').each((index, a) => {
+      a = this._dom(a);
+      let href = a.attr('href');
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
-      if (attribute.value.indexOf('?') > -1 || !isFilterableRoute(attribute.value)) {
-        return attribute.value;
+      if (!href.includes('?') && isFilterableRoute(href)) {
+        a.attr('href', `${href}?format=${this._format}`);
       }
-
-      return attribute.value + '?format=' + this._format;
-    }, {
-      'tag': 'a',
-      'attr': 'href',
     });
+  }
 
-    // Rewrite the link of the toggle that matches the active format as it
-    // should bring the user back to the unfiltered state
-    /* eslint-disable max-len */
-    this._content = this._content.replace(
-        `ad-m-format-toggle-link-${this._format}" href="?format=${this._format}"><div class="ad-a-ico">`,
-        `ad-m-format-toggle-link-${this._format}" href="?format=all"><div class="ad-a-ico">`
-    );
-    /* eslint-enable max-len */
+  _setActiveFormatToggle() {
+    // Set overall active state for format toggle list
+    this._dom('.ad-m-format-toggle').addClass('filtered');
+
+    // The current active format should make it possible to go back to unfiltered
+    let activeToggle = this._dom(`.ad-m-format-toggle-link-${this._format}`);
+    activeToggle.addClass('active');
+    activeToggle.attr('href', '?');
+  }
+
+  /**
+   * Remove the unneeded filter classes on the elements as they are not needed
+   * anymore after static filtering has been applied
+   * @return {undefined}
+   */
+  _removeStaleFilterClass() {
+    let filteredElementsSelector = Object.values(FILTER_CLASSES);
+    filteredElementsSelector = '.' + filteredElementsSelector.join(', .');
+
+    let filterClasses = Object.values(FILTER_CLASSES).join(' ');
+
+    this._dom(filteredElementsSelector).each((index, filteredElement) => {
+      filteredElement = this._dom(filteredElement);
+
+      filteredElement.removeClass(filterClasses);
+    });
   }
 
   get content() {
-    return this._content;
+    return this._dom.html();
   }
 }
 
