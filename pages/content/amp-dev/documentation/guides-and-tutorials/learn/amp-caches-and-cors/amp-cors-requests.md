@@ -5,11 +5,7 @@ toc: true
 formats:
   - websites
 teaser:
-  image:
-    src: '/static/img/docs/guides/testingcorsinamp.jpg'
-    width: 566
-    height: 314
-    alt: testing cors in amp
+  icon: cors
   text: Find instructions for validation your AMP pages.
   label: Learn more
 ---
