@@ -30,7 +30,9 @@ Progressive Web Apps, on the other hand, allow for much greater interactivity an
 
 AMP has the ability to install the Service Worker of your Progressive Web App from within an AMP page – yes, even if that AMP page is served from an AMP Cache! If done correctly, a link that leads to your PWA (from one of your AMP pages) will feel almost instant, similar to the first hop to the AMP page.
 
-Tip: If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899).
+[tip type="tip"]
+**TIP –** If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899).
+[/tip]
 
 First, install the service worker on all of your AMP Pages using [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker.html), by first including the component via its script in the `<head>` of your page:
 
@@ -70,7 +72,9 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-Tip: There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers).
+[tip type="tip"]
+**TIP –** There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers).
+[/tip]
 
 ## Make all links on an AMP Page navigate to the PWA
 
@@ -113,4 +117,6 @@ AMP solves this with something called [shell URL rewriting](/docs/reference/comp
 
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
-Read on: You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).
+[tip type="read-on"]
+**READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).
+[/tip]

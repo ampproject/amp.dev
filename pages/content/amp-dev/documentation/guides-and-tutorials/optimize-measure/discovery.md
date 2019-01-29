@@ -8,14 +8,17 @@ toc: true
 
 formats:
   - websites
+  - email
+  - stories
+  - ads
 
 teaser:
   image:
-    src: 'https://placehold.it/400x200'
-    width: 2
-    height: 1
-    alt: lorem ipsum
-  text: Tips for linking AMP pages and using metadata.
+    src: '/static/img/docs/guides/makeyourpagediscoverable.jpg'
+    width: 566
+    height: 314
+    alt: Make your page discoverable
+  text: Learn how search engines find out that there is an AMP version of your site.
   label: Learn more
 ---
 
@@ -47,7 +50,9 @@ If you only have one page, and that page is an AMP page, you must still add the 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-Read on: Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
+[tip type="read-on"]
+**READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
+[/tip]
 
 ## Integrate with third-party platforms through additional metadata
 

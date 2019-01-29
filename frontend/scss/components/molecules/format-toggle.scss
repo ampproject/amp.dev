@@ -129,7 +129,7 @@ body {
 
 body.ad--websites {
   display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#d5e6f2"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d5e6f2"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   @each $format in stories, ads, email {
     .ad--#{$format}:not(.ad--websites) {
@@ -140,7 +140,7 @@ body.ad--websites {
 
 body.ad--ads {
   display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#ddd3eb"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23ddd3eb"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   @each $format in websites, stories, email {
     .ad--#{$format}:not(.ad--ads) {
@@ -151,7 +151,7 @@ body.ad--ads {
 
 body.ad--stories {
   display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#ebdfd3"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23ebdfd3"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   @each $format in websites, ads, email {
     .ad--#{$format}:not(.ad--stories) {
@@ -162,7 +162,7 @@ body.ad--stories {
 
 body.ad--email {
   display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#d7ebd3"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d7ebd3"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   @each $format in websites, ads, stories {
     .ad--#{$format}:not(.ad--email) {

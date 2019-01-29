@@ -135,7 +135,9 @@ to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
 }
 ```
 
-Important: AMP doesn’t validate against multiple uses of the same variable. Values get populated following a variable substitution order of preference, and values in remote URLs are top of that order (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+[tip type="important"]
+**IMPORTANT –** AMP doesn’t validate against multiple uses of the same variable. Values get populated following a variable substitution order of preference, and values in remote URLs are top of that order (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+[/tip]
 
 ## Requests, triggers & transports
 
@@ -220,7 +222,9 @@ and each time an `a` tag is clicked:
 }
 ```
 
-Important: The above approach is only recommended for AMP pages and not AMPHTML ads. Since analytics priority is lower compared to content on the page, it's recommended that clicks are tracked using a browser redirect to avoid click loss.
+[tip type="important"]
+**IMPORTANT –** The above approach is only recommended for AMP pages and not AMPHTML ads. Since analytics priority is lower compared to content on the page, it's recommended that clicks are tracked using a browser redirect to avoid click loss.
+[/tip]
 
 AMP supports the following trigger configurations:
 
@@ -259,7 +263,9 @@ AMP supports the following trigger configurations:
   </tbody>
 </table>
 
-Important: Triggers from a configuration with lower precedence are overridden by triggers with the same names from a configuration with higher precedence (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+[tip type="important"]
+**IMPORTANT –** Triggers from a configuration with lower precedence are overridden by triggers with the same names from a configuration with higher precedence (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+[/tip]
 
 ### How data gets sent: transport attribute
 

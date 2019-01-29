@@ -27,7 +27,9 @@ The AMP runtime makes the ad call as early as possible and places the first one 
   </amp-img>
 </amp-anim>
 
-Note: A longer AMP Story creates more opportunities for ad placement. The exact placement of the ad algorithm will continue to be optimized over time.
+[tip type="note"]
+**NOTE –** A longer AMP Story creates more opportunities for ad placement. The exact placement of the ad algorithm will continue to be optimized over time.
+[/tip]
 
 ##User Interaction
 Users can progress past ads the same way as normal story pages; by tapping the right two thirds of the screen.

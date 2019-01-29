@@ -88,9 +88,9 @@ Let’s examine each of these situations more closely.
 
 Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content “paired” with non-AMP content). The “paired” model requires some [particular steps](https://www.ampproject.org/docs/fundamentals/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
 
-> **NOTE:**
->
-> Due to the “paired” publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+[tip type="note"]
+**NOTE –** Due to the “paired” publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+[/tip]
 
 **Context #2: an AMP cache.** AMP files can be cached in the cloud by a third-party cache to reduce the time content takes to get to a user’s mobile device.
 

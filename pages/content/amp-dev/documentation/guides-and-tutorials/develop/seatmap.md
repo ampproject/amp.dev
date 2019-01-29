@@ -68,10 +68,12 @@ Another approach is to use a flex layout when knowing the height of the page lay
 ## amp-pan-zoom styling
 If using the approach described in Seatmap Sizing, `amp-pan-zoom` needs to use `layout="fill"` as well.
 
-Tip: If you want to keep some white space around the seamap and still make it part of the pinch and zooming area, apply the following tip:
+[tip type="tip"]
+**TIP –** If you want to keep some white space around the seamap and still make it part of the pinch and zooming area, apply the following tip:
 
 - Add a wrapping div for the svg
 - Add padding
+[/tip]
 
 The alternative approach where you don’t have a wrapping div and adding margin to the svg, will not make the margins part of the pinch and zooming area.
 

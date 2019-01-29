@@ -52,7 +52,9 @@ Your final result should look something like this:
 
 **Refresh** the page and give it a spin!
 
-Note: You might have noticed that when the `amp-carousel` had the `carousel` type we used the `fixed-height` layout type.  The supported layout types for the `carousel` type are limited; for example the `carousel` type does not support `responsive` layout.  As the name implies, fixed-height elements take the space available to them, but keep the height unchanged. For fixed-height elements, you must define the `height` attribute, while the `width` attribute should either be `auto` or not set.
+[tip type="note"]
+**NOTE –**  You might have noticed that when the `amp-carousel` had the `carousel` type we used the `fixed-height` layout type.  The supported layout types for the `carousel` type are limited; for example the `carousel` type does not support `responsive` layout.  As the name implies, fixed-height elements take the space available to them, but keep the height unchanged. For fixed-height elements, you must define the `height` attribute, while the `width` attribute should either be `auto` or not set.
+[/tip]
 
 ## Mixed carousel content
 
@@ -90,4 +92,6 @@ Now, **replace** your simple carousel with this:
 
 To learn more, see the [amp-carousel](/docs/reference/components/amp-carousel.html) component reference documentation.
 
-Note: In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) guide.
+[tip type="note"]
+**NOTE –**  In our last example you may have noticed the `amp-ad` component included a child `div` element with the `placeholder` attribute. Earlier in the tutorial, we encountered a similar scenario with `amp-ad` using a `fallback`. What’s the difference between placeholder and fallback? `Fallback` elements appear when the parent element fails to load, i.e. if there was no ad available. `placeholder` elements appear in place of the parent element, while it is loading. In a sense, these elements bookend the loading process of the parent element. You can learn more in [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) guide.
+[/tip]
