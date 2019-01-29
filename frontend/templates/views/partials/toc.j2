@@ -15,8 +15,8 @@
   <div class="ad-o-toc" [class]="contentmenuopen ? 'ad-o-toc contentmenuopen' : 'ad-o-toc'">
     <p class="ad-o-toc-hl">Table of contents</p>
     {# Unwrap TOC from useless markup and strip first level #}
-    {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n<li>', '').replace('</li>\n</ul>\n</div>', '') %}
-    {{ toc[toc.find('</a>'):]|safe }}
+    {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n', '<ul>').replace('\n</ul>\n</div>', '</ul>') %}
+    {{ toc|safe }}
   </div>
 </section>
 {% endif %}
