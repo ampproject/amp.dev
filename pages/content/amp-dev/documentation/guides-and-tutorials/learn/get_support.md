@@ -1,7 +1,11 @@
 ---
 $title: Getting Support
 $order: 1
+formats:
+  - websites
 ---
+
+
 
 There are many ways to get help for questions and issues related to AMP:
 
