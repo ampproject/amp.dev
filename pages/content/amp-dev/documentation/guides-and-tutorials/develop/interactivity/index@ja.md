@@ -2,7 +2,7 @@
 $title: インタラクティブな AMP ページを作成する
 ---
 
-{{ image('/static/img/docs/tutorials/interactivity-final-page.png', 415, 738, align='right third', caption='このチュートリアルで作成する AMP ページ') }}
+{{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='このチュートリアルで作成する AMP ページ') }}
 
 このチュートリアルでは、データ バインディングと式を使用して高機能のインタラクティブな AMP ページを作成できる [`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) の使い方を学びます。
 
