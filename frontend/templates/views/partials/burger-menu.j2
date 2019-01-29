@@ -23,7 +23,6 @@
       </a>
 
       {# Section's sub level navigation if that's the current section #}
-      {% if doc.pod_path.split('/')[3] == section.pod_path.split('/')[3] and section.sub_navigation %}
       <ul class="ad-o-burger-menu-items">
       {% for path in section.sub_navigation %}
       <li class="ad-o-burger-menu-item">
@@ -34,7 +33,6 @@
       </li>
       {% endfor %}
       </ul>
-      {% endif %}
     {% endif %}
     </li>
     {% endfor %}
