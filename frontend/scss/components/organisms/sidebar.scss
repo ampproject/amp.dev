@@ -80,6 +80,10 @@
       @include sidebar-nav-link;
     }
 
+    &-link-lastword {
+      @include sidebar-nav-link-lastword;
+    }
+
     &-icon,
     &-trigger {
       @include sidebar-nav-trigger;

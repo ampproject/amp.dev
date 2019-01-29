@@ -107,6 +107,10 @@
   background-color: transparent;
 }
 
+@mixin sidebar-nav-link-lastword {
+  white-space: nowrap;
+}
+
 @mixin sidebar-nav-link-level-1 {
   padding: 10px 25px 10px 0;
   @include txt-1;

@@ -34,10 +34,17 @@
             {% if doc.pod.file_exists(collection_index) %}
             {% set collection_index = g.doc(collection_index) %}
             <a class="nav-link" href="{{ collection_index.url.path }}">
-              <span>{{ _(collection.title) }}</span>
               {% if collection.tutorial %}
+
+              {% set tutorial_title = _(collection.title).split(' ') %}
+              {% set tutorial_first_part = ' '.join(tutorial_title[0:-1]) %}
+              {% set tutorial_last_word = tutorial_title[-1] %}
+
               {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+              <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
+              
+              {% else %}
+                <span>{{ _(collection.title) }}</span>
               {% endif %}
             </a>
             {% else %}

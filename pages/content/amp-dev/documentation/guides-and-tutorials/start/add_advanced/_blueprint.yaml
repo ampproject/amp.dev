@@ -5,6 +5,7 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/add_advanced/{base}.html
 $title@: Add advanced AMP features
 chaptered: true
+tutorial: true
 
 formats:
   - websites

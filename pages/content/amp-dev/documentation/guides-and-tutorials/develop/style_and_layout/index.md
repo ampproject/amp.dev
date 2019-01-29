@@ -113,4 +113,4 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Read on: Learn more about how to [validate and fix your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})
+Read on: Learn more about how to [validate and fix your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})

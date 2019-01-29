@@ -86,6 +86,7 @@ class GitHubImporter {
   /**
    * Downloads a path/document from GitHub and returns its contents
    * @param  {String} path Path to the file
+   * @param  {Boolean} stripTitle Whether to remove the first markdown heading to avoid double titles
    * @return {Document}    A document object containing all information
    */
   _fetchDocument(filePath) {
