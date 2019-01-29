@@ -96,7 +96,7 @@
 {% elif teaser_doc.view == '/views/examples/manual.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
-<div class="ad-m-teaser ad-m-teaser-example">
+<div class="ad-m-teaser ad-m-teaser-example" [hidden]="chosenFilter != 'none' && chosenFilter != '{{ teaser_doc.collection.title|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ad-m-teaser-info-trigger">
     <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used

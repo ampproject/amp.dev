@@ -24,10 +24,6 @@
     width: 2px;
   }
 
-  &::-webkit-scrollbar-track {
-    box-shadow: inset -1px 0 rgba(color('black'), 0.10);
-  }
-
   &::-webkit-scrollbar-thumb {
     background-color: #979797;
   }
