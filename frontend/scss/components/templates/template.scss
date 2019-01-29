@@ -61,6 +61,12 @@
 
       &-headline {
         @include hl-h2;
+
+        &-big {
+          @include hl-xlrg;
+          color: color('white');
+          margin: 0;
+        }
       }
     }
   }
@@ -75,11 +81,11 @@
     grid-column: 4 / 22;
     width: 100%;
     margin-bottom: 7em;
-    
+
     @media screen and (min-width: 768px) {
       margin-bottom: calc(12.5em + 7em);
     }
-    
+
     @media screen and (min-width: 1024px) {
       margin-bottom: calc(12.5em + 8vw);
     }
@@ -100,7 +106,7 @@
         grid-column: 1;
         grid-row: auto;
         margin: 0;
-        
+
         @media screen and (min-width: 768px) {
           grid-column: span 4;
           grid-row: span 6;
