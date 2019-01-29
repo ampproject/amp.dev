@@ -4,9 +4,3 @@ $view: /views/overview/components-detail.j2
 $localization:
   path: /{locale}/documentation/components/{base}.html
 $order: 2
-
-sub_navigation:
-    - /content/amp-dev/documentation/guides-and-tutorials/index.html
-    - /content/amp-dev/documentation/components/index.html
-    - /content/amp-dev/documentation/examples/index.html
-    - /content/amp-dev/documentation/templates/index.html
