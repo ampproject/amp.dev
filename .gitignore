@@ -10,7 +10,7 @@ node_modules
 .com.apple.timemachine.supported
 
 dist
-build
+/build
 assets/css/*
 .depcache.json
 
@@ -32,6 +32,7 @@ pages/content/amp-dev/documentation/components/reference/*.md
 platform/pages
 platform/static
 package-lock.json
+yarn.lock
 
 # Ignore pipeline cache
 .cache/**/*

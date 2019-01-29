@@ -1,10 +1,20 @@
 ---
 $title: Examples
+$titles:
+  teaser: Examples.
 $view: /views/custom.j2
 $path: /documentation/examples.html
 $localization:
   path: /{locale}/documentation/examples.html
 $hidden: true
+
+teaser:
+  image:
+    src: 'https://placehold.it/400x400'
+    width: 1
+    height: 1
+    alt: lorem ipsum
+  text: AMP By Example provides hands-on samples and a playground for using AMP components.
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
@@ -29,8 +39,8 @@ $hidden: true
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
       <div class="ad-o-teaser-grid">
-        {# Hardcode to a length of 16 teasers as there will be at least that much #}
-        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-16">
+        {# Hardcode to a length of 9 teasers as there will be at least that much #}
+        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-9">
           {% for collection in collections %}
           {% for teaser_doc in collection.list_docs(locale=doc.locale) %}
           {% include '/views/partials/teaser.j2' %}

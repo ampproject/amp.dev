@@ -21,6 +21,9 @@
 
 .#{template('docs-detail')} {
 
+  background-color: color('whisper');
+
+
   .#{utility('container')} {
     @include container;
   }
@@ -49,12 +52,20 @@
     h3 {@include hl-h4;}
     h4 {@include hl-h5;}
 
+    amp-anim {
+      @include box-shadow;
+    }
+
     figure {
-      amp-img{
+      margin: 0;
+
+      amp-img {
         @include box-shadow;
       }
+
       figcaption {
         @include txt;
+        @include txt-3;
         padding-top: 20px;
       }
     }

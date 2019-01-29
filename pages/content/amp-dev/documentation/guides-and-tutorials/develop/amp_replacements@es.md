@@ -14,7 +14,7 @@ Contenido. Descubre cómo incluir las versiones AMP equivalentes en tus páginas
 *  Conocer el diseño de la página antes de que se carguen los recursos es fundamental para [admitir las ventanas gráficas iniciales precargadas.](/es/learn/about-how/#size-all-resources-statically)
 *  Debemos controlar las solicitudes de red para [realizar cargas diferidas y priorizar los recursos de un modo efectivo.](/es/learn/about-how/#prioritize-resource-loading)
 
-Precaución: Aunque no se admitan, se *renderizarán*, pero AMP no [validará tus páginas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})
+Precaución: Aunque no se admitan, se *renderizarán*, pero AMP no [validará tus páginas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
 y no podrás aprovechar todas las ventajas que aporta AMP.
 
 ## Imágenes

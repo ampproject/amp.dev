@@ -29,12 +29,20 @@ class Config {
   }
 
   /**
+   * Helper method to make it possible to write absolute project paths
+   * @return {String} an absolute ready to use path
+   */
+  path(relativePath) {
+    return path.join(__dirname, '../../', relativePath);
+  }
+
+  /**
    * Builds a URL from a host object containing scheme, host and port
    * @return {[type]} [description]
    */
   _buildUrl(host) {
     let url = `${host.scheme}://${host.host}`;
-    if (host.port) {
+    if (host.port && host.port !== "8080") {
       url = url + `:${host.port}`;
     }
 
