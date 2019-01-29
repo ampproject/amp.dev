@@ -201,6 +201,20 @@
         <div class="ad-a-img ad-m-teaser-image {% if teaser_doc.view == '/views/custom.j2' %} no-shadow {% endif %}">
           <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
         </div>
+      {% elif teaser.icon %}
+        <div class="ad-m-teaser-icon">
+          {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
+          <div class="ad-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
+          </div>
+        </div>
+      {% else %}
+        <div class="ad-m-teaser-icon">
+          {% do doc.icons.useIcon('icons/example-default.svg') %}
+          <div class="ad-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example-default"></use></svg>
+          </div>
+        </div>
       {% endif %}
 
       {# card container #}
