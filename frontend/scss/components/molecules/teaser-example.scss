@@ -104,6 +104,8 @@
 			position: absolute;
 			left: 0;
 			top: 0;
+			background: color('ebony-clay');
+			background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
 			
 			.#{atom('ico')} {
 				@include ico-5;
@@ -114,7 +116,6 @@
 		&-image {
 			@include teaser-image;
 			padding-bottom: 33.33333333%;
-			background-color: color('river-bed')
 		}
 
 		&-headline {
