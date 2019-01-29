@@ -106,6 +106,7 @@
 			top: 0;
 			background: color('ebony-clay');
 			background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+			z-index: 2;
 			
 			.#{atom('ico')} {
 				@include ico-5;
