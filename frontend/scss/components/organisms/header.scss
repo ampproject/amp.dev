@@ -34,6 +34,10 @@
 
   &-fixed {
     top: 0;
+
+    @media screen and (min-width: 1024px) {
+      top: -35px;
+    }
   }
 }
 
