@@ -117,7 +117,7 @@ The response body contains the AMP URL mapping in JSON format:
 
 ## Using AMP Caches
 
-An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}}) is a
+An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) is a
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 

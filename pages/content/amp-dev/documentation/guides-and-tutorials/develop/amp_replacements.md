@@ -25,7 +25,7 @@ We provide equivalent components for the following reasons:
 * We need to control network requests to [lazy load and prioritize resources
 effectively](/learn/about-how/#prioritize-resource-loading)
 
-Caution: While they're not supported, they *will* render, but AMP won't [validate your pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) and you won't get all the benefits AMP provides.
+Caution: While they're not supported, they *will* render, but AMP won't [validate your pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) and you won't get all the benefits AMP provides.
 
 ## Images
 

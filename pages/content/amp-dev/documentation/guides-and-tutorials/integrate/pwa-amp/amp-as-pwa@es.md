@@ -106,7 +106,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Esta técnica te permite modificar tu página AMP con todo tipo de funcionalidades adicionales
-que, de otra manera, no superarían la [validación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) como, por ejemplo:
+que, de otra manera, no superarían la [validación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) como, por ejemplo:
 
 * Las funciones dinámicas que necesitan código JavaScript personalizado.
 * Los componentes que están personalizados o que solo son relevantes para tu sitio web.

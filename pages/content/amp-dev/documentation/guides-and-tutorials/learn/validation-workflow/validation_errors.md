@@ -23,7 +23,7 @@ limitations under the License.
 Valid AMP documents must not include any validation errors.
 The purpose of this document is to help you better understand
 and fix any validation errors you encounter
-when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
+when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 

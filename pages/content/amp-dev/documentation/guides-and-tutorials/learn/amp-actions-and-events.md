@@ -1,7 +1,9 @@
 ---
-$title: Actions and events in AMP
+$title: Actions and events
 toc: true
-$order: 1
+$order: 3
+formats:
+  - websites
 ---
 
 <!---
@@ -19,6 +21,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+
+
+
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 

@@ -1,6 +1,8 @@
 ---
 $title: Managing non-authenticated user state with AMP
 $order: 2
+formats:
+  - websites
 ---
 
 <!---
@@ -18,6 +20,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+
+
+**Table of contents**
+
+- [Background](#background)
+- [Implementation guide](#implementation-guide)
+    - [Before getting started](#before-getting-started)
+    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
+    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
+    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
+    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
+    - [Task 5: Using Client ID in linking and form submission](#task5)
+- [Strongly recommended practices](#strongly-recommended-practices)
 
 User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
 

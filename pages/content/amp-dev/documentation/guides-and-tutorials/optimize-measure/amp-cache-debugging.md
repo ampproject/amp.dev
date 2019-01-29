@@ -1,7 +1,11 @@
 ---
 $title: Debug AMP Cache issues
 $order: 8
+formats:
+  - websites
 ---
+
+
 
 ## Why is my doc broken on an AMP cache?
 

@@ -25,19 +25,27 @@ The filter-bubble molecule is a simple button used to filter content based on th
   @include filter-bubble-shadow-regular;
   border-radius: 25px;
   border: none;
-  padding: 5px 20px;
+  padding: 5px 10px;
   background: color('white');
   color: color('oslo-gray');
   cursor: pointer;
-  margin: 5px 10px;
+  margin: 5px 5px;
+  
+  @media screen and (min-width: 550) {
+    padding: 5px 20px;
+    margin: 5px 10px;
+  }
 
   @media screen and (min-width: 768px) {
     margin: 5px;
   }
 
-  &:hover {
+  &:hover, &.filtered {
     @include filter-bubble-shadow-selected;
     background: color('blue-ribbon');
     color: color('white');
+  }
+  &:focus {
+    outline: none;
   }
 }

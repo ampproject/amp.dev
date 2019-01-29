@@ -108,7 +108,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Dengan menggunakan teknik ini, Anda dapat mengubah Halaman AMP dengan segala fungsi
-tambahan yang sebaliknya akan menggagalkan [validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}), misalnya:
+tambahan yang sebaliknya akan menggagalkan [validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}), misalnya:
 
 * Fitur dinamis yang memerlukan JS kustom.
 * Komponen yang disesuaikan/hanya relevan untuk situs Anda.

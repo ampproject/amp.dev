@@ -19,10 +19,11 @@
 
 @import 'components/templates/_default.scss';
 
-.#{template('docs-detail')} {
-
+body {
   background-color: color('whisper');
+}
 
+.#{template('docs-detail')} {
 
   .#{utility('container')} {
     @include container;

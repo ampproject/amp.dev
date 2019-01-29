@@ -4,7 +4,7 @@ toc: true
 ---
 
 В AMP-документах не должно быть ошибок кода.
-В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
+В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
 Полный список неполадок приведен в [спецификации](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 

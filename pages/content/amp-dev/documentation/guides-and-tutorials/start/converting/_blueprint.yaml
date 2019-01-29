@@ -5,6 +5,7 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/converting/{base}.html
 $title@: Convert HTML to AMP
 chaptered: true
+tutorial: true
 
 formats:
   - websites

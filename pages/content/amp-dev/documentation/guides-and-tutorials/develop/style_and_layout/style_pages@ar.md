@@ -11,7 +11,7 @@ toc: true
 فسمات الأنماط المضمّنة غير مسموح بها.
 
 يجب أن تبقى جميع الأنماط في رأس المستند
-(راجع [إضافة أنماط إلى إحدى الصفحات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})).
+(راجع [إضافة أنماط إلى إحدى الصفحات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
 ولكن يمكنك استخدام المعالجات التمهيدية والنماذج في CSS لإنشاء صفحات ثابتة
 لإدارة المحتوى التابع لك على نحو أفضل.
 

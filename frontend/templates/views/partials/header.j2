@@ -9,6 +9,8 @@
 
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
 <header class="ad--header {% if not second_level %}ad--header-fixed{% endif%}" [class]="mainmenuopen ? 'ad--header {% if not second_level %}ad--header-fixed{% endif%} mainmenuopen' : 'ad--header {% if not second_level %}ad--header-fixed{% endif%}'">
+  {% include '/views/partials/banner.j2' %}
+
   <div class="ad-o-header">
     <a class="ad-o-header-home" href="{{ doc.pod.get_home_doc().url.path }}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}

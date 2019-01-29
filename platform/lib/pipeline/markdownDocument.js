@@ -132,6 +132,16 @@ class MarkdownDocument {
   }
 
   /**
+   * Removes the first heading to avoid double titles
+   * @return {String}          The rewritten input
+   */
+  stripInlineTitle() {
+    const TITLE_PATTERN = /^#{1}\s.+/m;
+    this._contents = this._contents.replace(TITLE_PATTERN, '');
+    return true;
+  }
+
+  /**
    * Writes the file to the specified path or the relative one
    * if none is set
    * @return {Promise}
