@@ -90,6 +90,14 @@
           padding: 1.25em;
         }
       }
+      &-anchor {
+        position: relative;
+        top: -180px;
+        &:target::before {
+          height: 0;
+          margin: 0;
+        }
+      }
     }
   }
 }
