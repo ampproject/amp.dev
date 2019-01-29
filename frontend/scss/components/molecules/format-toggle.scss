@@ -25,91 +25,87 @@
     padding: 2px;
   }
 
-    &-link {
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: 8px;
-      @include txt;
-      @include txt-font-accent;
-      line-height: 1.2em;
-      font-size: 1em;
+  &-link {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 8px;
+    @include txt;
+    @include txt-font-accent;
+    line-height: 1.2em;
+    font-size: 1em;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    color: color('black');
+    background: color('athens-gray');
+    transition: opacity 0.2s ease;
+    
+    @media screen and (min-width: 768px) {
+      font-size: 0.75em;
+    }
+
+    .#{atom('ico')} {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+      fill: color('black');
+
       @media screen and (min-width: 768px) {
-        font-size: 0.75em;
-      }
-      text-overflow: ellipsis;
-      border-radius: 4px;
-      color: color('white');
-      opacity: 0.9;
-      transition: opacity 0.2s ease;
-      overflow: hidden;
-
-      .#{atom('ico')} {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
-        @media screen and (min-width: 768px) {
-          width: 22px;
-          height: 22px;
-          margin-right: 8px;
-        }
-        @media screen and (min-width: 1024px) {
-          width: 18px;
-          height: 18px;
-          margin-right: 6px;
-        }
-
-        @media screen and (min-width: 1200px) {
-          width: 22px;
-          height: 22px;
-          margin-right: 8px;
-        }
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
       }
 
-      svg {
-        fill: color('white');
+      @media screen and (min-width: 1024px) {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
       }
 
-      &-websites {
-        @include gradient-websites;
-      }
-
-      &-stories {
-        @include gradient-stories;
-        color: color('pigment-indigo');
-        svg {
-          fill: color('pigment-indigo');
-        }
-      }
-
-      &-ads {
-        @include gradient-ads;
-      }
-
-      &-email {
-        @include gradient-e-mails;
-        color: color('ultramarine');
-        svg {
-          fill: color('ultramarine');
-        }
-      }
-
-      @each $format in websites, stories, ads, email {
-        .ad--#{$format} & {
-          opacity: 0.6;
-
-          &-#{$format} {
-            opacity: 1;
-          }
-        }
+      @media screen and (min-width: 1200px) {
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
       }
     }
 
-  &:hover &-link {
-    opacity: 0.6;
+    &-websites:not(.inactive),
+    &-websites.active {
+      @include gradient-websites; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
 
+    &-stories:not(.inactive),
+    &-stories.active {
+      @include gradient-stories; color: color('pigment-indigo');
+      .#{atom('ico')} { fill: color('pigment-indigo'); }
+    }
+
+    &-ads:not(.inactive),
+    &-ads.active {
+      @include gradient-ads; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &-email:not(.inactive),
+    &-email.active {
+      @include gradient-e-mails; color: color('ultramarine');
+      .#{atom('ico')} { fill: color('ultramarine'); }
+    }
+  }
+
+  &:hover &-link.inactive,
+  &:hover &-link:not(.active) {
+    color: color('black');
+    background: color('athens-gray');
+    
+    .#{atom('ico')} {
+      fill: color('black');
+    }
+    
     &:hover {
-      opacity: 1;
+      background: color('alto');
     }
   }
 }
