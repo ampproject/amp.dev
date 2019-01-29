@@ -22,7 +22,7 @@ limitations under the License.
 يجب ألا تتضمن مستندات AMP الصالحة أي أخطاء تتعلق بالتحقق من الصحة.
 والغرض من هذا المستند هو مساعدتك في فهم أفضل
 لأي أخطاء تتعلق بالتحقق من الصحة قد تصادفها عند
-[التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) وإصلاح هذه الأخطاء.
+[التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
