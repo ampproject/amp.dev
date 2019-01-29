@@ -2,6 +2,15 @@
 $title: "CORS in AMP"
 $order: 1
 toc: true
+
+teaser:
+  image:
+    src: '/static/img/docs/guides/testingcorsinamp.jpg'
+    width: 566
+    height: 314
+    alt: testing cors in amp
+  text: Find instructions for validation your AMP pages.
+  label: Learn more
 ---
 
 

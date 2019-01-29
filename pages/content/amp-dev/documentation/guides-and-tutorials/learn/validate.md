@@ -5,16 +5,14 @@ $titles:
 $view: /views/overview/guides.j2
 $path: /documentation/learn/validation-workflow/validate-amp.html
 $order: 7
-formats:
-- websites
 toc: true
 
 teaser:
   image:
-    src: 'http://placehold.it/400x200'
-    width: 2
-    height: 1
-    alt: lorem ipsum
+    src: '/static/img/docs/guides/howtovalidate.jpg'
+    width: 568
+    height: 320
+    alt: How to validate
   text: Tips for linking AMP pages and using metadata.
   label: See in YouTube
 ---
