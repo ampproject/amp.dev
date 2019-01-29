@@ -26,13 +26,14 @@
 }
 
 .#{organism('teaser-grid')} {
+  width: 100%;
   margin-bottom: 30px;
 
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(24, 1fr);
-  }
+  // @media screen and (min-width: 768px) {
+  //   display: grid;
+  //   grid-gap: 30px;
+  //   grid-template-columns: repeat(24, 1fr);
+  // }
   
   & > h1,
   & > h2,
@@ -72,6 +73,10 @@
     }
 
     @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
     }
 

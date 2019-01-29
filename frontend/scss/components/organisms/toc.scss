@@ -83,13 +83,13 @@
   }
 
   .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
       transform: translateX(100%);
     }
   }
 
   .#{atom('sidebar-toggle-input')}:checked + & {
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
       transform: translateX(0);
     }
   }

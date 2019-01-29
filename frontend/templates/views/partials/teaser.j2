@@ -103,7 +103,7 @@
   </div>
 
   <div class="ad-m-teaser-info-content">
-    <h5 class="ad-m-teaser-info-headline">Used components</h5>
+    <div class="ad-m-teaser-info-headline">Used components</div>
     <ul class="ad-m-teaser-info-list">
       {% for used_component in teaser_doc.used_components %}
       <li class="ad-m-teaser-info-list-item">
@@ -147,7 +147,7 @@
         <div class="ad-a-img">
           <amp-img
             src="{{ teaser.image.src }}"
-            layout="responsive"
+            layout="fill"
             width="3"
             height="1"
             alt="Dummy.">
