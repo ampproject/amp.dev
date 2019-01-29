@@ -8,6 +8,7 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials.html
 $order: 1
 $hidden: true
+cms: !g.yaml /content/shared/data/cms.yaml
 ---
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 <h1>Get started with AMP!</h1>
@@ -25,174 +26,20 @@ $hidden: true
 {% do doc.styles.addCssFile('/css/components/molecules/mini-card.css') %}
 {% do doc.styles.addCssFile('/css/components/organisms/mini-card-list.css') %}
 <ul class="ad-o-mini-card-list">
+  {% for cms in doc.cms.cmsUsers %}
   <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
+    <a href="{{ cms.url }}" class="ad-m-mini-card" target="_blank">
       <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
+        alt="{{ cms.image.alt }}"
+        src="{{ cms.image.src }}"
         width="35"
         height="35"
         layout="responsive">
       </amp-img>
-      <span>AMPize.me</span>
+      <span>{{ cms.label }}</span>
     </a>
   </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>AMPize.me</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Squarespace</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>AMPize.me</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Fast Commerce</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Fast Commerce</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Fast Commerce</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>AMPize.me</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>AMPize.me</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Squarespace</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>AMPize.me</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Fast Commerce</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Fast Commerce</span>
-    </a>
-  </li>
-  <li class="ad-o-mini-card-list-item">
-    <a href="#" class="ad-m-mini-card">
-      <amp-img
-        alt="logo"
-        src="https://placehold.it/35x35"
-        width="35"
-        height="35"
-        layout="responsive">
-      </amp-img>
-      <span>Fast Commerce</span>
-    </a>
-  </li>
+  {% endfor %}
 </ul>
 
 <h2>Convert existing content</h2>
@@ -201,11 +48,6 @@ $hidden: true
 </p>
 <div class="ad-o-teaser-grid">
   <div class="ad-o-teaser-grid-list">
-    {% with %}
-    {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md') %}
-    {% include '/views/partials/teaser.j2' %}
-    {% endwith %}
-
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
     {% include '/views/partials/teaser.j2' %}
@@ -218,7 +60,7 @@ $hidden: true
   These resources will help with your day-to-day AMP journey:
 </p>
 <div class="ad-o-teaser-grid">
-  <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
+  <div class="ad-o-teaser-grid-list">
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/components/index.html') %}
     {% include '/views/partials/teaser.j2' %}
@@ -236,15 +78,80 @@ $hidden: true
   </div>
 </div>
 
+<h2>Up-to-date</h2>
+<p>
+  Stay up-to-date with the latest AMP news:<br>
+  Subscribe to our blog, subscribe to The AMP Channel on YouTube, Follow us on Twitter @AMPhtml<br>
+  <a href="#">Go to News</a>
+</p>
+
+<h2>Support</h2>
+<p>
+  Need support? See getting Support resources.<br>
+  <a href="#">Go to Support</a>
+</p>
+
+<h2>Validate & test AMP pages</h2>
+<p>
+  If you are converting your existing HTML pages to AMPHTML, visit these resources:
+</p>
+<div class="ad-o-teaser-grid">
+  <div class="ad-o-teaser-grid-list">
+    {% with %}
+    {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md') %}
+    {% include '/views/partials/teaser.j2' %}
+    {% endwith %}
+
+    {% with %}
+    {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md') %}
+    {% include '/views/partials/teaser.j2' %}
+    {% endwith %}
+  </div>
+</div>
+
 <h2>Make content discoverable</h2>
 <p>
   Ensure users can discover your content on third-party platforms (e.g., Twitter, Google, Bing, etc.). Here are some helpful resources:
 </p>
 <div class="ad-o-teaser-grid">
-  <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-3">
+  <div class="ad-o-teaser-grid-list">
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md') %}
     {% include '/views/partials/teaser.j2' %}
     {% endwith %}
+
+    <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
+      <a href="https://support.google.com/webmasters/answer/6340290" target="_blank">
+
+        {# tags #}
+        {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+        <div class="ad-m-teaser-tags">
+          <div class="ad-m-tag ad-m-tag-websites ad-m-teaser-tag"></div>
+          <div class="ad-m-tag ad-m-tag-email ad-m-teaser-tag"></div>
+          <div class="ad-m-tag ad-m-tag-stories ad-m-teaser-tag"></div>
+          <div class="ad-m-tag ad-m-tag-ads ad-m-teaser-tag"></div>
+        </div>
+
+        {# image #}
+        <div class="ad-a-img ad-m-teaser-image">
+          <amp-img src="/static/img/docs/guides/testingcorsinamp.jpg" layout="responsive" width="566" height="314" alt="Google Search guidelines"></amp-img>
+        </div>
+
+        {# card container #}
+        <div class="ad-m-teaser-card">
+          <div class="ad-m-teaser-content">
+            <h4 class="ad-m-teaser-headline">Google Search guidelines for AMP pages</h4>
+            <p class="ad-m-teaser-copy">Learn more about how Google Search finds AMP pages.</p>
+            <span class="ad-m-lnk">
+              <span class="ad-a-ico ad-m-lnk-icon">
+                {% do doc.icons.useIcon('icons/internal.svg') %}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              </span>
+              <span class="ad-m-lnk-text">Learn more</span>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
