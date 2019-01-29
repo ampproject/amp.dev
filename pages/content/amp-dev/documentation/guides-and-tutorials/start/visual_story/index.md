@@ -2,7 +2,7 @@
 $title: Create your first AMP Story
 $order: 0
 $path: /documentation/guides-and-tutorials/start/first-story.html
-tutorial: true
+$hidden: true
 ---
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
@@ -18,4 +18,6 @@ In this tutorial, we'll introduce you to the [amp-story](/docs/reference/compone
 - Animate elements on a page
 - Keep readers engaged with your content by adding related links to the end of the story
 
-Note: The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
+[tip type="note"]
+**NOTE –**  The [amp-story](/docs/reference/components/amp-story.html) component is **experimental**.
+[/tip]

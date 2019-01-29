@@ -19,7 +19,7 @@
     <section class="ad--content">
       <div class="ad--chapter-indicator">
         {# If the document hasn't got a previous document, it's the first one #}
-        {% set document_list = doc.collection.list_docs(locale=doc.locale) %}
+        {% set document_list = doc.collection.list_docs(locale=doc.locale, include_hidden=True) %}
 
         {% set previous_document = doc.prev(docs=document_list) %}
         {% set next_document = doc.next(docs=document_list) %}

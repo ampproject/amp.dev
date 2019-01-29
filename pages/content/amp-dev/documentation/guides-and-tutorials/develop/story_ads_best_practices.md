@@ -32,7 +32,9 @@ AMP Story ads are AMPHTML ads, but have required meta tag data, meet defined lay
 
 To keep the user experience consistent, the AMP Story runtime is responsible for rendering the ad label and the CTA button.
 
-Important: Only the CTA button is clickable in an AMP Story ad, so keep this in mind when developing your creative.
+[tip type="important"]
+**IMPORTANT –** Only the CTA button is clickable in an AMP Story ad, so keep this in mind when developing your creative.
+[/tip]
 
 ##Meta tag data
 
@@ -93,8 +95,10 @@ The call to action button must be configured from a predefined set of choices:
 * `WATCH`: "Watch"
 * `WATCH_EPISODE`: "Watch Episode"
 
-Note: Deep links to apps are not supported, but links to the App Store page or the Google Play Store page are supported using http/https.
+[tip type="note"]
+**NOTE –**  Deep links to apps are not supported, but links to the App Store page or the Google Play Store page are supported using http/https.
 The CTA button text enum is specified in the ad response payload.
+[/tip]
 
 If support is needed for a new CTA button text enum, please open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new).
 
@@ -177,7 +181,9 @@ For optimal performance, you should aim to provide videos that are no larger tha
 ####Video formats
 If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
-Note: The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
+[tip type="note"]
+**NOTE –**  The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
+[/tip]
 
 ####Video resolution
 
@@ -202,7 +208,9 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
   </tbody>
 </table>
 
-Note: For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
+[tip type="note"]
+**NOTE –**  For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
+[/tip]
 
 #### Video codec
 

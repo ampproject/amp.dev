@@ -8,7 +8,9 @@ Dar diseño y mejorar el layout de las páginas AMP HTML es muy similar al HTML 
 
 Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, mientras expande algunas capacidades de diseño responsivo con caracteristicas como [placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}), [uso avanzado vía srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) y los [atributos del layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) para un mejor control sobre cómo se muestran los elementos en la página.
 
-Tip: Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](/es/docs/design/responsive/responsive_design.html)
+[tip type="tip"]
+**TIP –** Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](/es/docs/design/responsive/responsive_design.html)
+[/tip]
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Vea a UpperQuad hablar sobre el rediseño del sitio de AMPproject, incluyendo los retos de usar AMP por primera vez.']
 
@@ -98,4 +100,4 @@ Ejemplo de error en la consola de una página con CSS que excede el límite de 5
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leer más: Aprende más sobre cómo [validar las páginas de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
+Leer más: Aprende más sobre cómo [validar las páginas de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).

@@ -60,7 +60,9 @@ Remember, not all components are included in the core AMP library JavaScript fil
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
 
-Important: You might have some errors in your developer console, such as `Mixed Content` or `XMLHttpRequest cannot load`. The former error is likely related to the A9 advertisement because not all the content it loads is secure. This is a notable requirement for all ads served on AMP.
+[tip type="important"]
+**IMPORTANT –** You might have some errors in your developer console, such as `Mixed Content` or `XMLHttpRequest cannot load`. The former error is likely related to the A9 advertisement because not all the content it loads is secure. This is a notable requirement for all ads served on AMP.
+[/tip]
 
 The two `amp-ad`s below provide an example of the flexibility `amp-ad` provides for supporting ad platform features.  In this case we've configured (using DoubleClick's dashboard) two DoubleClick test ads to only show in certain countries--the first will show only in the UK and the second will show only in the US.  Try **adding** these two geotargeting ad configurations in the AMP document below the ads you added earlier:
 
@@ -86,11 +88,17 @@ The two `amp-ad`s below provide an example of the flexibility `amp-ad` provides 
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-Note: You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+[tip type="note"]
+**NOTE –**  You might notice that inside these amp-ad tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+[/tip]
 
-Read on: To see the latest supported ad networks, read the reference documentation for the [amp-ad](/docs/reference/components/amp-ad.html#supported-ad-networks) component.
+[tip type="read-on"]
+**READ ON –** To see the latest supported ad networks, read the reference documentation for the [amp-ad](/docs/reference/components/amp-ad.html#supported-ad-networks) component.
+[/tip]
 
-Note: No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via an iframe sandbox) as the AMP document and executes the ad network’s JS inside that iframe sandbox.
+[tip type="note"]
+**NOTE –**  No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via an iframe sandbox) as the AMP document and executes the ad network’s JS inside that iframe sandbox.
+[/tip]
 
 Our AMP document now includes text, an image, and an advertisement embedded on the page, which are all key ingredients to telling a story and monetizing your content. However, modern websites often include more functionality than simply pictures and text.
 
@@ -121,7 +129,9 @@ Even if your browser can show YouTube videos without issue, you will still recei
 
 Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the YouTube component.
 
-Note: If you still have your developer console open and `#development=1` in your URL, you'll see an AMP validator error at this point reminding you to add the `amp-youtube` JavaScript and a link to documentation that will tell you the `script` tag to add.
+[tip type="note"]
+**NOTE –**  If you still have your developer console open and `#development=1` in your URL, you'll see an AMP validator error at this point reminding you to add the `amp-youtube` JavaScript and a link to documentation that will tell you the `script` tag to add.
+[/tip]
 
 **Add** the following script to the `<head>` tag:
 
@@ -137,7 +147,9 @@ As with the other elements on the page, we specified the `width` and `height` of
 
 To learn more about embedding YouTube videos, read the [amp-youtube](/docs/reference/components/amp-youtube.html) component documentation. For even more video and media components, check out the [list of media AMP components](/docs/reference/components.html#media).
 
-Tip: Use the [`fallback`](/docs/design/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
+[tip type="tip"]
+**TIP –**  Use the [`fallback`](/docs/design/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
+[/tip]
 
 ## Display a Tweet
 Embedding preformatted tweets from Twitter is a common feature in news articles. The [amp-twitter](/docs/reference/components/amp-twitter.html) component can provide this functionality with ease.
@@ -167,7 +179,9 @@ The `data-tweetid` attribute is another example of a custom attribute required b
 
 To learn more about embedding Twitter Tweets, read the [amp-twitter](/docs/reference/components/amp-twitter.html) component documentation.
 
-Tip: AMP provides even more components for embedding content from social networks. See the latest [social AMP components](/docs/reference/components.html#social).
+[tip type="tip"]
+**TIP –** AMP provides even more components for embedding content from social networks. See the latest [social AMP components](/docs/reference/components.html#social).
+[/tip]
 
 ## Highlight an article quote
 

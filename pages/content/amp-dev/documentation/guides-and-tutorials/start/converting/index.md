@@ -4,7 +4,7 @@ $titles:
   teaser: Convert HTML to AMP
 $order: 0
 $path: /documentation/guides-and-tutorials/start/converting/converting.html
-tutorial: true
+$hidden: true
 
 teaser:
   image:

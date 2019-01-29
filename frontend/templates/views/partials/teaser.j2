@@ -96,14 +96,14 @@
 {% elif teaser_doc.view == '/views/examples/manual.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
-<div class="ad-m-teaser ad-m-teaser-example">
+<div class="ad-m-teaser ad-m-teaser-example" [hidden]="chosenFilter != 'none' && chosenFilter != '{{ teaser_doc.collection.title|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ad-m-teaser-info-trigger">
     <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used
   </div>
 
   <div class="ad-m-teaser-info-content">
-    <h5 class="ad-m-teaser-info-headline">Used components</h5>
+    <div class="ad-m-teaser-info-headline">Used components</div>
     <ul class="ad-m-teaser-info-list">
       {% for used_component in teaser_doc.used_components %}
       <li class="ad-m-teaser-info-list-item">
@@ -144,21 +144,25 @@
 
       <div class="ad-m-teaser-image">
         {% if teaser.image %}
-        <div class="ad-a-img">
-          <amp-img
-            src="{{ teaser.image.src }}"
-            layout="responsive"
-            width="3"
-            height="1"
-            alt="Dummy.">
-          </amp-img>
-        </div>
-        {% endif %}
-        {% if teaser.icon and not teaser.image %}
+        <amp-img
+          src="{{ teaser.image.src }}"
+          layout="fill"
+          width="3"
+          height="1"
+          alt="Dummy.">
+        </amp-img>
+        {% elif teaser.icon %}
         <div class="ad-m-teaser-icon">
-        {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
+          {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
           <div class="ad-a-ico">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
+          </div>
+        </div>
+        {% else %}
+        <div class="ad-m-teaser-icon">
+          {% do doc.icons.useIcon('icons/code.svg') %}
+          <div class="ad-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
           </div>
         </div>
         {% endif %}

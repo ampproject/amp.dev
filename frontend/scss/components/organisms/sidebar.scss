@@ -80,6 +80,10 @@
       @include sidebar-nav-link;
     }
 
+    &-link-lastword {
+      @include sidebar-nav-link-lastword;
+    }
+
     &-icon,
     &-trigger {
       @include sidebar-nav-trigger;
@@ -103,13 +107,13 @@
   }
 
   .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       transform: translateX(-100%);
     }
   }
 
   .#{atom('sidebar-toggle-input')}:checked + & {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       transform: translateX(0);
     }
   }

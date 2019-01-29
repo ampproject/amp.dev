@@ -46,6 +46,6 @@ within your AMP stylesheet:
 </style>
 [/sourcecode]
 
-Note: Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
-
-
+[tip type="note"]
+**NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
+[/tip]

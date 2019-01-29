@@ -125,7 +125,9 @@ And, we'll need to update the default state of relevant elements:
 </amp-selector>
 ```
 
-Note: `<amp-bind>` does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of `<amp-bind>` usage.
+[tip type="note"]
+**NOTE –**  `<amp-bind>` does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of `<amp-bind>` usage.
+[/tip]
 
 ## Variable shirt prices
 
@@ -142,7 +144,9 @@ Our AMPPAREL store is peculiar in that shirt price is specific to both color AND
 
 Notice that we're not initializing the value of `selectedSize` via the `amp-state#selected` element. That's because we intentionally don't provide a default selected size and instead want to force the user to choose a size.
 
-Tip: `AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`.
+[tip type="tip"]
+**TIP –** `AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`.
+[/tip]
 
 Add a new `<span>` element wrapping the price label and change the default text to "---" since there's no default size selection.
 

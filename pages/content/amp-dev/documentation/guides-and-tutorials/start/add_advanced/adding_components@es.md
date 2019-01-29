@@ -128,7 +128,9 @@ Una vez más, especificamos el `width` y la `height` del video para que el siste
 
 Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [amp-youtube](/es/docs/reference/components/amp-youtube.html). Para obtener más componentes de vídeo y multimedia, consulte la [lista de componentes AMP](/es/docs/reference/components.html#media).
 
-Tip: Use el atributo [`fallback`](/es/docs/design/responsive/placeholders.html#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
+[tip type="tip"]
+**TIP –** Use el atributo [`fallback`](/es/docs/design/responsive/placeholders.html#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
+[/tip]
 
 ## Mostrar un Tweet
 La incorporación de tweets preformateados de Twitter es una característica común en los artículos de noticias. El componente [amp-twitter](/es/docs/reference/components/amp-twitter.html) puede proporcionar esta funcionalidad con facilidad.
@@ -159,7 +161,9 @@ El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerid
 
 Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [amp-twitter](/es/docs/reference/components/amp-twitter.html).
 
-Tip: AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/es/docs/reference/components.html#social).
+[tip type="tip"]
+**TIP –** AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](/es/docs/reference/components.html#social).
+[/tip]
 
 ## Resaltar una cita de artículo
 

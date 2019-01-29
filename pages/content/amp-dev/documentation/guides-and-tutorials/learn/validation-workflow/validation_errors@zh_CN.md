@@ -22,7 +22,7 @@ limitations under the License.
 有效的 AMP 文档不得包含任何验证错误。
 本文档旨在帮助您更好地了解
 并更正在[验证 AMP 网页]
-({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
+({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
 有关验证错误的完整概述，
 请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 

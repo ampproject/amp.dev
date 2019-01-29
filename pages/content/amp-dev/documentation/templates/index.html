@@ -4,6 +4,7 @@ $titles:
   teaser: Templates.
 $view: /views/custom.j2
 $path: /documentation/templates.html
+$hidden: true
 $localization:
   path: /{locale}/documentation/templates.html
 stage:
@@ -101,7 +102,7 @@ teaser:
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ad-o-filter-bubbles-list">
       {% for category, stories in categories %}
-      <button class="ad-m-filter-bubble" on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">{{ category }}</button>
+      <button class="ad-m-filter-bubble" [class]="chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'" on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">{{ category }}</button>
       {% endfor %}
     </div>
   </section>

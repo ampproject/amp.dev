@@ -16,7 +16,9 @@ Live blogs are web pages that are updated frequently throughout an on-going even
 
 This tutorial provides a short overview of the `amp-live-list` component and focuses on some implementation details for live blogs, like [pagination](#pagination) and [deep linking](#deeplinking). We'll use AMP By Example's [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) to illustrate implementing live blogs in AMP.
 
-Tip: Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features.
+[tip type="tip"]
+**TIP –** Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features.
+[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 

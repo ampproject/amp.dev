@@ -14,7 +14,9 @@ However, AMP limits some use of CSS for performance and usability reasons, while
 expanding responsive design capabilities with features like [placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}),
 [advanced art direction via srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) and the [layout attribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) for better control over how your elements display.
 
-Tip: It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design.html).
+[tip type="tip"]
+**TIP –** It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design.html).
+[/tip]
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.']
 
@@ -44,7 +46,9 @@ For example:
   </head>
 [/sourcecode]
 
-Important: Make sure there’s only one `<style amp-custom>` tag on your page, as more than one isn’t allowed in AMP.
+[tip type="important"]
+**IMPORTANT –** Make sure there’s only one `<style amp-custom>` tag on your page, as more than one isn’t allowed in AMP.
+[/tip]
 
 Define component styles with class or element selectors
 using common CSS properties. For example:
@@ -64,7 +68,9 @@ using common CSS properties. For example:
 </body>
 [/sourcecode]
 
-Important: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+[tip type="important"]
+**IMPORTANT –**: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+[/tip]
 
 If needed, AMP also allows inline styles. For example:
 
@@ -85,19 +91,25 @@ Set the layout to responsive.
 This sizes the element to the width of its container element
 and resizes its height automatically to the aspect ratio given by width and height attributes.
 
-Read on: Learn more about [supported layouts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
+[tip type="read-on"]
+**READ ON –** Learn more about [supported layouts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
+[/tip]
 
 ## Provide placeholders & fallbacks
 
 The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
 
-Read on: Learn more about [Placeholders and fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+[tip type="read-on"]
+**READ ON –** Learn more about [Placeholders and fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+[/tip]
 
 ## Art direct your images
 
 AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
 
-Read on: Learn more about [art direction with srcset and sizes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+[tip type="read-on"]
+**READ ON –** Learn more about [art direction with srcset and sizes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+[/tip]
 
 ## Validate your styles and layout
 
@@ -113,4 +125,6 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Read on: Learn more about how to [validate and fix your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})
+[tip type="read-on"]
+**READ ON –** Learn more about how to [validate and fix your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
+[/tip]

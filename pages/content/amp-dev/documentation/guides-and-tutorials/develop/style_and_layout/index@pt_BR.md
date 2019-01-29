@@ -89,4 +89,4 @@ Exemplo de erro no console de uma página com CSS que ultrapassa o limite de 50 
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leia mais: Saiba mais sobre como [validar e corrigir suas páginas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})
+Leia mais: Saiba mais sobre como [validar e corrigir suas páginas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})

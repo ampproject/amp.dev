@@ -8,7 +8,9 @@ toc: true
 
 This guide provides a set of common use cases for tracking user engagement:
 
-Note: Want to add a use case? [Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute](/docs/contribute/).
+[tip type="note"]
+**NOTE –**  Want to add a use case? [Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute](/docs/contribute/).
+[/tip]
 
 ## Tracking page views
 

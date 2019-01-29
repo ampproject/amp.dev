@@ -24,10 +24,8 @@ const path = require('path');
 const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const crass = require('crass');
 const stripCssComments = require('gulp-strip-css-comments');
 const through = require('through2');
-const minifyHtml = require('html-minifier').minify;
 
 const config = require('./config');
 const Grow = require('./pipeline/grow');
@@ -36,6 +34,7 @@ const SpecImporter = require('./pipeline/specImporter');
 const {samplesBuilder} = require('./pipeline/samplesBuilder');
 const roadmapImporter = require('./pipeline/roadmapImporter');
 const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
+const {pageMinifier} = require('./build/pageMinifier');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
@@ -245,67 +244,17 @@ class Pipeline {
     await this._minifyPages();
   }
 
-  _minifyCss(css, type) {
-    // Leave alone inline styles and the AMP boilerplate
-    if (type !== 'inline' && css.indexOf('body{-webkit-') == -1) {
-      let cssOm = crass.parse(css);
-      cssOm = cssOm.optimize();
-
-      return cssOm.toString();
-    }
-
-    return css;
-  }
-
   _minifyPages() {
-    const log = new Signale({'interactive': false, 'scope': 'Minify pages'});
-    log.await('Minifying page\'s ...');
-
     return new Promise((resolve, reject) => {
-      const minifyCss = this._minifyCss;
-
-      const stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
-          .pipe(through.obj(function(page, encoding, callback) {
-            let html = page.contents.toString();
-            log.await(`Minifying page ${page.relative} ...`);
-
-            // Clean up common markup fuck ups before minfying as
-            // it would break the tree otherwise
-            html = html.replace('<p></section>', '</section>');
-            html = html.replace(/(<section [^>]*>)<\/p>/, '$1');
-
-            // As minifyHtml's removeEmptyElements would be a bit to
-            // radical, cleanup frequent empty tags ourselves
-            html = html.replace(/<section .*><\/section>/, '');
-            html = html.replace('<p></p>', '');
-
-            try {
-              html = minifyHtml(html, {
-                'minifyCSS': minifyCss,
-                'minifyJS': true,
-                'collapseWhitespace': true,
-                'removeEmptyElements': false,
-                'removeRedundantAttributes': true,
-                'ignoreCustomFragments': [/<use.*<\/use>/],
-              });
-            } catch (e) {
-              log.error(`Could not minify ${page.relative}. Invalid markup.`);
-            }
-
-            page.contents = Buffer.from(html);
-
-            this.push(page);
-            callback();
-          }))
-          .pipe(gulp.dest('./'));
+      const stream = pageMinifier.start(config.path('platform/pages'));
 
       stream.on('error', (error) => {
-        log.fatal(`Something went wrong while minifying HTML: ${error}`);
+        pageMinifier._log.fatal(`Something went wrong while minifying HTML: ${error}`);
         reject(error);
       });
 
       stream.on('end', () => {
-        log.success('Minified page\'s HTML.');
+        pageMinifier._log.success('Minified page\'s HTML.');
         resolve();
       });
     });

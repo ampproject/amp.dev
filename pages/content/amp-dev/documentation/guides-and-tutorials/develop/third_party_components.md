@@ -45,7 +45,9 @@ to select the aspect ratio based on screen width.
 </amp-iframe>
 </div>
 
-Tip: See more `amp-twitter` examples at [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+[tip type="tip"]
+**TIP –** See more `amp-twitter` examples at [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+[/tip]
 
 ## Embed an Instagram
 
@@ -78,7 +80,9 @@ so the value for width and height should be universal.
 </amp-iframe>
 </div>
 
-Tip: See more `amp-instagram` examples at [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+[tip type="tip"]
+**TIP –** See more `amp-instagram` examples at [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+[/tip]
 
 ## Display a Facebook post or video
 
@@ -124,7 +128,9 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-Tip: See more `amp-facebook` examples at [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+[tip type="tip"]
+**TIP –** See more `amp-facebook` examples at [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+[/tip]
 
 ## Embed a YouTube video
 
@@ -156,7 +162,9 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 </amp-iframe>
 </div>
 
-Tip: See more `amp-youtube` examples at [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+[tip type="tip"]
+**TIP –** See more `amp-youtube` examples at [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+[/tip]
 
 ## Display an ad
 
@@ -203,4 +211,6 @@ to be shown if no ad is available:
 
 AMP supports a wide range of ad networks. See the [amp-ad reference documentation](/docs/reference/components/amp-ad.html#supported-ad-networks)  for a full list.
 
-Read on: Learn more about ads in the [Serving Ads on AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.
+[tip type="read-on"]
+**READ ON –** Learn more about ads in the [Serving Ads on AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.
+[/tip]

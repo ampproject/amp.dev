@@ -2,7 +2,7 @@
 $title: Add advanced AMP features
 $order: 0
 $path: /documentation/guides-and-tutorials/start/add_advanced/add_advanced.html
-tutorial: true
+$hidden: true
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
@@ -22,4 +22,6 @@ In this tutorial, you'll build on your understanding of AMP foundations and lear
 
 A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
 
-Note: This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial.
+[tip type="note"]
+**NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial.
+[/tip]

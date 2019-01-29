@@ -36,6 +36,8 @@ After setting up your local web server, have a look at what our completed story 
 http://localhost:8000/pets-completed.html
 ```
 
-Important: Make sure the URL serves from `localhost` otherwise the AMP story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
+[tip type="important"]
+**IMPORTANT –** Make sure the URL serves from `localhost` otherwise the AMP story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
+[/tip]
 
 Click through the completed story and get a sense of what we'll be creating.

@@ -13,7 +13,9 @@ This guide provides  instructions and best practices for displaying ads on your 
 
 In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`<amp-ad>`](/docs/reference/components/amp-ad.html) component to your AMP page.
 
-Tip: See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
+[tip type="tip"]
+**TIP –** See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
+[/tip]
 
 Let's walk through the steps of adding the component so you can display ads on your AMP page.
 

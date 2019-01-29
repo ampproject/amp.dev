@@ -35,7 +35,9 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-Tip: Considere proporcionar a los usuarios la opción de ver la versión que no es de AMP en lugar de la versión de AMP a través de la configuración de preferencias en su aplicación.
+[tip type="tip"]
+**TIP –** Considere proporcionar a los usuarios la opción de ver la versión que no es de AMP en lugar de la versión de AMP a través de la configuración de preferencias en su aplicación.
+[/tip]
 
 ### Maneras de transformar enlaces
 
@@ -104,7 +106,7 @@ Nota: Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP
 
 ## Usando cachés AMP
 
-Un [caché AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}}) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
+Un [caché AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
 
 *   Entregar solo páginas válidas de AMP.
 *   Permitir que las páginas de AMP se carguen de manera eficiente y segura.

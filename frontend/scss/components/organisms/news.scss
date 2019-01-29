@@ -5,13 +5,14 @@
 
 @import '../atoms/_headline';
 @import '../atoms/_text';
+@import '../atoms/_icon';
 
 @import '../molecules/_copy';
 
 .#{utility('news')} {
   background: linear-gradient(30deg, #fff 30%, color('athens-gray') 100%);
   margin-bottom: 5em;
-  
+
   @media screen and (min-width: 768px) {
     margin-bottom: 8vw;
   }
@@ -19,31 +20,31 @@
   .#{molecule('copy')} {
     padding: 2.5em 1.25em 0;
     margin: 0 0 2em;
-    
+
     @media screen and (min-width: 768px) {
       grid-column: 2 / 11;
       padding: 0;
       margin: auto 0;
     }
-    
+
     @media screen and (min-width: 1024px) {
       grid-column: 3 / 10;
     }
-    
+
     @media screen and (min-width: 1280px) {
       grid-column: 3 / 9;
     }
-    
+
     h2 {
       margin-top: 0;
       margin-bottom: 0.375em;
     }
-    
+
     p {
       @include txt-2;
       margin-top: 0;
       margin-bottom: 2em;
-      
+
       @media screen and (min-width: 768px) {
         margin-bottom: 3.75em;
       }
@@ -54,7 +55,7 @@
 .#{organism('news')} {
   grid-column: 11 / -1;
   width: 100%;
-  
+
   &-list {
     scroll-snap-type: x mandatory;
     overflow-y: hidden;
@@ -64,7 +65,7 @@
     flex-wrap: nowrap;
     width: auto;
   }
-  
+
   &-item {
     flex: 1 0 20em;
     display: block;
@@ -72,18 +73,18 @@
     padding: 0 2em 0 0;
     margin: 2.125em 0 4.125em;
   	transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    
+
     @media screen and (min-width: 768px) {
       padding: 0 0 0 2em;
     }
-    
+
     &:last-child {
       padding-right: 0;
     }
-    
+
     &:hover {
       transform: translateY(-0.125em);
-      
+
       & > div {
         box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
       }
@@ -98,7 +99,7 @@
     box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  
+
   &-title {
     @include txt;
     @include txt-3;
@@ -107,16 +108,18 @@
     padding: 0.625em 24px;
     color: color('gray-chateau');
   }
-  
+
   &-image {
     width: 100%;
+    height: 56.25%;
+    background-color: color('blue-ribbon');
   }
-  
+
   &-headline {
     padding: 0 24px;
     margin-top: 1.375em;
   }
-  
+
   &-date {
     @include txt;
     @include txt-2;
@@ -124,5 +127,19 @@
     margin-top: auto;
     margin-bottom: 1.5em;
     color: color('river-bed');
+  }
+
+  &-icon {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    fill: color('white');
+
+    .#{atom('ico')} {
+      @include ico;
+      @include ico-4;
+    }
   }
 }

@@ -1,6 +1,8 @@
 ---
 $title: AMP Boilerplate Code
 $order: 3
+formats:
+  - websites
 ---
 
 <!---
@@ -18,6 +20,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+
 
 AMP HTML documents must contain the following boilerplate in their `head` tag.
 Validation is currently done with regular expressions, so it's important to keep

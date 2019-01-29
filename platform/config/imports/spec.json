@@ -8,7 +8,7 @@
     },
     {
         "title": "AMP HTML Specification",
-        "order": 2,
+        "order": 1,
         "from": "spec/amp-html-format.md",
         "to": "documentation/guides-and-tutorials/learn/spec/index.md",
 				"formats": ["websites"]
@@ -21,15 +21,15 @@
 				"formats": ["websites"]
     },
     {
-        "title": "AMP HTML Layout System",
-        "order": 4,
+        "title": "AMPHTML Layout System",
+        "order": 1,
         "from": "spec/amp-html-layout.md",
         "to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
 				"formats": ["websites"]
     },
     {
-        "title": "Actions and events in AMP",
-        "order": 1,
+        "title": "Actions and events",
+        "order": 3,
         "from": "spec/amp-actions-and-events.md",
         "to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
 				"formats": ["websites"]
