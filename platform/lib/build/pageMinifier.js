@@ -18,7 +18,7 @@ const {Signale} = require('signale');
 const gulp = require('gulp');
 const minifyHtml = require('html-minifier').minify;
 const through = require('through2');
-const crass = require('crass');
+const CleanCSS = require('clean-css')
 const path = require('path');
 const crypto = require('crypto');
 
@@ -31,6 +31,12 @@ class PageMinifier {
       'scope': 'Page minifier',
     });
 
+    // An instance of CleanCSS
+    this._cleanCss = new CleanCSS({
+      2: {
+        'all': true
+      },
+    });
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {}
   }
@@ -112,12 +118,9 @@ class PageMinifier {
     hash = hash.digest('base64');
 
     if (!this._minifiedCssCache[hash]) {
-      let cssOm = crass.parse(css);
-      cssOm = cssOm.optimize();
-
       this._log.info(`Caching CSS bundle with ${hash}`);
 
-      this._minifiedCssCache[hash] = cssOm.toString();
+      this._minifiedCssCache[hash] = this._cleanCss.minify(css);
     }
 
     return this._minifiedCssCache[hash];
