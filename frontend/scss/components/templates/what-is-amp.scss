@@ -27,7 +27,6 @@
 @import '../organisms/case-grid.scss';
 @import '../organisms/component-visual.scss';
 @import '../organisms/kpi-list.scss';
-@import '../organisms/made-of.scss';
 
 @import '../templates/_default.scss';
 
@@ -102,5 +101,37 @@
         @include hl-xxlrg;
       }
     }
+  }
+
+  .#{utility('made-of-headline')} {
+    grid-column: 3/19;
+    margin-top: 0;
+    @include hl-xlrg;
+
+  }
+
+  .#{molecule('biggy')} {
+    margin-bottom: 7em;
+  
+    @media screen and (min-width: 768px) {
+      margin-bottom: 8vw;
+    }
+
+    &-main {
+      margin-top: auto;
+    }
+
+    &-headline {
+      grid-column: 3 / 19;
+      margin-bottom: 0;
+    }
+
+    &-aside {
+      .#{molecule('code-snippet')} {
+        padding: 3em 0;
+        margin-bottom: 12px;
+      }
+    }
+
   }
 }
