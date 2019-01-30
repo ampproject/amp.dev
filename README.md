@@ -35,13 +35,21 @@ $ cd platform
 $ npm run develop
 ```
 
-If you additionally want to import the needed documents pass in the `--import` option to the command and export a valid [GitHub access token](https://github.com/settings/tokens) beforehand like with
+### Import data & documents
+If you additionally want to import the needed documents and data from GitHub pass in the `--import` option to the command and export a valid [GitHub access token](https://github.com/settings/tokens) beforehand like with
 
 ```sh
 $ export AMP_DOC_TOKEN="c59f6..."
 $ npm run develop -- --import
 ```
 
+If you have checked out a local copy of the `amphtml` repository you can also import from there by running the following command. An exported GitHub token is required nevertheless.
+
+```sh
+$ npm run develop -- --import --local-amphtml-repository='</Users/...>'
+```
+
+### Run a test build
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run
 
