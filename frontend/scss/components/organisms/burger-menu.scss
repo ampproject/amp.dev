@@ -22,7 +22,9 @@
     top: 50px;
     right: 20px;
     cursor: pointer;
-
+    &:focus {
+      outline: none;
+    }
     &.mainmenuopen {
       z-index: 23;
     }

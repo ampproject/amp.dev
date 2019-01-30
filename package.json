@@ -31,7 +31,7 @@
     "amp-toolbox-cors": "^0.2.1",
     "express": "^4.16.3",
     "got": "^9.5.0",
-    "html-find-replace-element-attrs": "^1.0.0",
+    "cheerio": "0.22.0",
     "http-proxy": "^1.17.0",
     "http-proxy-response-rewrite": "0.0.1",
     "mri": "^1.1.4",

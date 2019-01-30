@@ -47,7 +47,7 @@ TODO: mono (inline, block)
 }
 
 @mixin txt-3 {
-	font-size: 0.75em; //12px
+	font-size: 0.8125em; //13px
 }
 
 @mixin txt-4 {
@@ -73,6 +73,7 @@ TODO: mono (inline, block)
 
 @mixin txt-mono {
 	font-family: 'Inconsolata', monospace;
+	letter-spacing: 0.06em;
 }
 
 @mixin txt-mono-inline {

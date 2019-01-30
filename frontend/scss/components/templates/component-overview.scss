@@ -19,6 +19,8 @@
 @import '../templates/_default.scss';
 
 .#{template('component-overview')} {
+
+  background: color('whisper');
   
   .#{utility('container')} {
     @include container;
@@ -55,10 +57,47 @@
   
   &-anchor-list {
     margin: 2em 0;
+    p {
+      margin: 0;
+    }
     &-item {
       &:not(:last-child):after {
         content: " |";
       }
     }
-  } 
+  }
+
+
+  .#{organism('teaser')} {
+    &-grid-list {
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      .#{molecule('teaser-component')} {
+        @media screen and (max-width: 559px){
+          margin: 0 0 2em 0;
+        }
+        .ad-m-teaser-header {
+          align-items: flex-end;
+          padding-bottom: 10px;
+          padding-top: 30px;
+          height: auto;
+          .ad-m-teaser-header-title {
+            font-size: 1.125em;
+          }
+        }
+        .ad-m-teaser-content {
+          padding: 1.25em;
+        }
+      }
+      &-anchor {
+        position: relative;
+        top: -180px;
+        &:target::before {
+          height: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
 }
