@@ -1,16 +1,8 @@
 /*
 
-##################
-### Organism: Component help ###
-##################
-
-### INFO:
-
-Component help contains the headline atom, paragraph text, a stack overflow image along with link.
-
-### MODIFIERS:
-
-currently none
+######################
+### Organism: Help ###
+######################
 
 */
 
@@ -28,7 +20,7 @@ currently none
 @import 'components/molecules/_link.scss';
 
 
-.#{organism('component-help')} {
+.#{organism('help')} {
 
   &-hl {
     @include hl;
