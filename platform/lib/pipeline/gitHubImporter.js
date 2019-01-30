@@ -18,6 +18,7 @@ const octonode = require('octonode');
 const fs = require('fs');
 const path = require('path');
 const {Signale} = require('signale');
+const config = require('../config.js');
 
 const Document = require('./markdownDocument');
 
