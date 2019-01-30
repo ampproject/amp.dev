@@ -7,6 +7,7 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const config = require('../platform/config/shared.json');
 
 module.exports = (env, argv) => {
   const devMode = argv.mode !== 'production';
@@ -52,11 +53,13 @@ module.exports = (env, argv) => {
         template: './src/index.hbs',
         filename: './index.html',
         inlineSource: 'critical\..+$',
+        gaTrackingId: config.gaTrackingId,
       }),
       new HtmlWebpackPlugin({
         template: './src/index.hbs',
         filename: './embed.html',
         inlineSource: 'critical\..+$',
+        gaTrackingId: config.gaTrackingId,
         embed: true,
       }),
       new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
