@@ -114,8 +114,12 @@
     margin: 20vw 0;
 
     @media screen and (min-width: 768px) {
-      grid-column: 3 / 16;
+      grid-column: 3 / 13;
       margin: 7vw 0 11vw;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-column: 3 / 16;
     }
 
     &-icon {

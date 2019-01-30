@@ -31,10 +31,11 @@ table {
   position: relative;
   border-collapse: collapse;
   padding: 0 0 0 20px;
-  margin: 0 -20px;
+  margin: 1.5em -20px 2em -20px;
   max-width: calc(100% + 40px);
   display: block;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   @include txt;
   @include txt-2;
 
