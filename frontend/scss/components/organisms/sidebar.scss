@@ -76,6 +76,10 @@
       }
     }
 
+    &-item-tutorial-divider {
+      @include sidebar-nav-item-tutorial-divider;
+    }
+
     &-link {
       @include sidebar-nav-link;
     }

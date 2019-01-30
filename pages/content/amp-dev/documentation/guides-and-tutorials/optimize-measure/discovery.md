@@ -1,7 +1,7 @@
 ---
-$title: Make your page discoverable
+$title: Make your pages discoverable
 $titles:
-  teaser: Make your page discoverable
+  teaser: Make your pages discoverable
 $order: 3
 
 toc: true

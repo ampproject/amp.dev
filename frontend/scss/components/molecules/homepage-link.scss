@@ -1,0 +1,40 @@
+/*
+
+######################################
+### MOLECULES: homepage-link #####
+######################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('homepage-link')} {
+  position: relative;
+  margin-left: auto;
+  margin-right: 0;
+  padding-bottom: 10px;
+  @include txt-strong;
+  @include txt-uppercase;
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 0;
+    padding-right: 30px;
+  }
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+
+  & .icon {
+    height: 9pt;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    width: 9pt;
+    fill: color('blue-ribbon');
+    display: inline-block;
+  }
+}

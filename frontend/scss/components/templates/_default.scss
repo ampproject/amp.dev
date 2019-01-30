@@ -1,5 +1,6 @@
 .#{utility('main')} > .#{utility('container')}:first-child {
   padding-top: 26px;
+  padding-bottom: 3rem;
 }
 
 @mixin container {

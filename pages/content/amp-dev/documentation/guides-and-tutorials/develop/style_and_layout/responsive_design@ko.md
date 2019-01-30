@@ -76,7 +76,7 @@ toc: true
 
 ### 반응형 이미지 표시하기
 
-이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.md', locale=doc.locale).url.path}}) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
+이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
 
 - [적절한 해상도로 선명한 이미지 게재](#적절한-해상도로-선명한-이미지-게재)
 - [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경)

@@ -1,0 +1,299 @@
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Generate custom optimized AMPHTML templates for your AMP websites, stories, emails or ads.">
+    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <style amp-custom>
+    {{{ highlightTheme }}}
+    {{scss 'components/atoms/headline.scss' }}
+    {{scss 'components/atoms/icon.scss' }}
+    {{scss 'components/molecules/code-snippet.scss' }}
+    {{scss 'main.scss' }}
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <link rel="manifest" href="/manifest.json">
+      <link rel="shortcut icon" href="/static/img/favicon.png">
+      <link rel="canonical" href="https://ampbyexample.com/boilerplate/">
+      <title>AMP Boilerplate Generator</title>
+      <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <meta name="apple-mobile-web-app-title" content="AMP by Example">
+      <link rel="icon" type="image/png" sizes="228x228" href="/favicons/coast-228x228.png">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="theme-color" content="#ffffff">
+      <meta name="application-name" content="AMP by Example">
+      <link rel="yandex-tableau-widget" href="/favicons/yandex-browser-manifest.json">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+      <link rel="shortcut icon" href="/favicons/favicon.ico">
+      <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/favicons/apple-touch-startup-image-320x460.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/favicons/apple-touch-startup-image-640x920.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/favicons/apple-touch-startup-image-640x1096.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/favicons/apple-touch-startup-image-750x1294.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/favicons/apple-touch-startup-image-1182x2208.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/favicons/apple-touch-startup-image-1242x2148.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/favicons/apple-touch-startup-image-748x1024.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/favicons/apple-touch-startup-image-768x1004.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/favicons/apple-touch-startup-image-1496x2048.png">
+      <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/favicons/apple-touch-startup-image-1536x2008.png">
+  </head>
+  <body [class]=" 'ad--' + config.format" class="ad--{{#formats}}{{#default}}{{id}}{{/default}}{{/formats}}">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      {{> 'logo.svg' }}
+      {{> 'angle-down-solid.svg' }}
+      {{> 'amp-stories.svg' }}
+      {{> 'amp-websites.svg' }}
+      {{> 'amp-ads.svg' }}
+      {{> 'amp-emails.svg' }}
+    </svg>
+    <amp-state id="config">
+      <script type="application/json">
+        {
+           {{#categories}}
+           {{#options}}
+            "{{id}}": {
+              {{#values}}
+              "{{key}}": "{{value}}",
+              {{/values}}
+              "selected": false
+            },
+           {{/options}}
+           {{/categories}}
+          "format": "{{#formats}}{{#default}}{{id}}{{/default}}{{/formats}}",
+          "changed": false
+        }
+      </script>
+    </amp-state>
+    <amp-animation id="showAnim"
+      layout="nodisplay">
+      <script type="application/json">
+        {
+          "duration": "200ms",
+          "fill": "both",
+          "iterations": "1",
+          "direction": "alternate",
+          "animations": [{
+            "selector": "#scrollToBoilerplate",
+            "keyframes": [{
+              "opacity": "1",
+              "visibility": "visible"
+            }]
+          }]
+        }
+      </script>
+    </amp-animation>
+    <amp-animation id="hideAnim"
+      layout="nodisplay">
+      <script type="application/json">
+        {
+          "duration": "200ms",
+          "fill": "both",
+          "iterations": "1",
+          "direction": "alternate",
+          "animations": [{
+            "selector": "#scrollToBoilerplate",
+            "keyframes": [{
+              "opacity": "0",
+              "visibility": "hidden"
+            }]
+          }]
+        }
+      </script>
+    </amp-animation>
+    <header class="ad--header ad--header-fixed">
+      <div class="ad-o-header">
+        <a class="ad-o-header-home" href="/boilerplate">
+          <svg class="ad-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> 
+          <span class="ad-o-header-home-title">AMP</span> <span class="ad-o-header-home-sub-title">Boilerplate Generator</span>
+        </a>
+        <a class="ad-m-homepage-link" href="/">amp.dev
+          <svg class="ad-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        </a>
+      </div>
+    </header>
+
+    <main>
+    <section class="config">
+      <h3>Select Format</h3>
+      <p>What do you want to build with AMP?</p>
+      <ul class="ad-m-format-toggle">
+        {{#formats}}
+        <li class="ad-m-format-toggle-format">
+          <div class="ad-m-format-toggle-link ad-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}" 
+             [class]="'ad-m-format-toggle-link ad-m-format-toggle-link-{{id}} ' + (config.format == '{{id}}' ? 'active' : 'inactive')"
+          on="tap:AMP.setState({
+              config: {
+                format: '{{id}}',
+                changed: true
+              }
+            })"
+            role="button"
+            tabindex="0">
+            <div class="ad-a-ico">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{id}}"></use>
+              </svg>
+            </div>AMP
+            <br>{{name}}</div>
+        </li>
+        {{/formats}}
+      </ul>
+
+      <div [hidden]="config.format == 'email'">
+      <h3>Select Features</h3>
+      <p>Select the features you need on your AMP page.</p>
+      {{#categories}}
+      <div class="category" [hidden]="{{#formats}} config.format != '{{.}}' && {{/formats}} true">
+      <h4>{{label}} {{#help}}<span on="tap:{{id}}-help.toggleVisibility" tabindex="0" role="button" aria-label="Show help" class="help-toggle">?</span>{{/help}}
+      {{#help}}
+      <div id="{{id}}-help" class="help" hidden>{{{.}}}</div>
+      {{/help}}
+      </h4>
+      {{#options}}
+      <div class="option">
+        {{#checkbox}}
+        <input id="{{id}}" type="checkbox" on="change:{{id}}-values.toggleVisibility,codeSnippet.changeToLayoutContainer,AMP.setState({
+          config: {
+            {{id}}: {
+              selected: event.checked
+            },
+            {{#component}}
+            {{.}}: config.{{.}} || event.checked,
+            {{/component}}
+            changed: true
+          }
+        })">
+        {{/checkbox}}
+        {{#radio}}
+        <input id="{{id}}" type="radio" name="{{categoryId}}" on="change:{{id}}-values.toggleVisibility,codeSnippet.changeToLayoutContainer,AMP.setState({
+          config: {
+            {{#options}}
+              {{id}}: {
+                selected: false
+              },
+              {{#component}}
+              {{.}}: config.{{.}} || event.checked,
+              {{/component}}
+            {{/options}}
+              {{id}}: {
+                selected: event.checked
+              },
+              changed: true
+          }
+        })">
+        {{/radio}}
+        <label for="{{id}}">{{{label}}}</label>
+        {{#description}}
+        <span on="tap:{{id}}-help.toggleVisibility" tabindex="0" role="button" aria-label="Show help" class="help-toggle">?</span>
+        <div id="{{id}}-help" class="help" hidden>{{{.}}}</div>
+        {{/description}}
+        <div id="{{id}}-values" class="values" hidden>
+          {{#values}}
+          <div class="value">
+            <label for="{{key}}">{{{label}}}</label>
+            <input id="{{key}}" value="{{value}}" type="text" on="input-debounced:codeSnippet.changeToLayoutContainer,AMP.setState({
+              config: {
+                {{id}}: {
+                  {{key}}: event.value
+                }
+              }
+            })">
+          </div>
+          {{/values}}
+        </div>
+      </div>
+      {{/options}}
+      </div>
+      {{/categories}}
+      </div>
+      <p class="config-footer">Something missing? <a href="https://github.com/ampproject/docs/issues/new/">Let us know</a>!</p>
+    </section>
+    <section class="boilerplate">
+      <a id="boilerplate" class="anchor"></a>
+      <amp-position-observer on="enter:hideAnim.start; exit:showAnim.start" layout="nodisplay"></amp-position-observer>
+      <h3>Boilerplate</h3>
+      <p>Start your AMP page by copying and pasting this code:</p>
+      <div class="ad-m-code-snippet"><pre  [hidden]="config.changed"><code>{{{initialCode}}}</code></pre></div>
+      <amp-list id="codeSnippet"
+                width="auto"
+                height="3240"
+                layout="fixed-height"
+                [src]="config"
+                single-item
+                items="config"
+                hidden [hidden]="!config.changed">
+        <template type="amp-mustache">
+          {{#formats}}
+          <div class="ad-m-code-snippet"><pre hidden [hidden]="config.format != '{{id}}'"><code>{{{template}}}</code></pre></div>
+          {{/formats}}
+          <section [hidden]="!config.serviceworker.selected">
+            <h3>Serviceworker Iframe</h3>
+            <p>The webdocument that <a href="https://www.ampproject.org/docs/reference/components/amp-install-serviceworker#data-iframe-src-(optional)">installs your service worker</a>. Copy this code and serve it together with your serviceworker implemenation.</p>
+            <div class="ad-m-code-snippet"><pre><code>{{{templates.serviceworkerIframe}}}</code></pre></div>
+          </section>
+          <section [hidden]="!config.serviceworker.selected">
+            <h3>Serviceworker Boilerplate</h3>
+            <p>A sample serviceworker implementation using <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>. Copy this code and from the specified path.</p>
+            <div class="ad-m-code-snippet"><pre><code>{{{templates.serviceworkerJs}}}</code></pre></div>
+          </section>
+          <section [hidden]="config.format != 'stories'">
+            <h3>Bookend Sample</h3>
+            <p>A sample <a href="https://www.ampproject.org/docs/reference/components/amp-story#bookend:-amp-story-bookend">AMP Story bookend</a> JSON configuration.</p>
+            <div class="ad-m-code-snippet"><pre><code>{{{templates.bookend}}}</code></pre></div>
+          </section>
+        </template>
+        <div tabindex="0" role="button" overflow>Show More</div>
+      </amp-list>
+    </section>
+    </main>
+    <div id="scrollToBoilerplate" 
+         tabindex="0" 
+         role="button"
+         on="tap:boilerplate.scrollTo(duration=200)"
+         class="fab">View Code</div>
+    <amp-analytics type="googleanalytics" id="analytics">
+      <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-73836974-1"
+          },
+          "triggers": {
+            "default pageview": {
+              "on": "visible",
+              "request": "pageview",
+              "vars": {
+                "title": "AMP Boilerplate Generator"
+              }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    <amp-install-serviceworker
+      src="/sw.js"
+      data-iframe-src="https://amp.dev/sw.html"
+      layout="nodisplay">
+    </amp-install-serviceworker>
+  </body>
+</html>

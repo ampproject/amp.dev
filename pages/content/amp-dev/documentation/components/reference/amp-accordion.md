@@ -6,7 +6,7 @@ teaser:
     Provides a way for viewers to glance at the content outline and jump to any
     section. This is helpful for mobile devices where even a couple of sentences
     into a section requires scrolling.
-$category: layout
+$category@: layout
 formats:
   - websites
   - email
@@ -85,7 +85,7 @@ To see more demos of the `amp-accordion`, visit [AMP By Example](https://ampbyex
 ### Events
 The events below will be triggered on `section`s of `accordion`.
 
-<table class="ad--table-listing">
+<table class="ad-m-table-listing">
   <tr>
     <td width="40%"><strong>`expand`</strong></td>
     <td>This event is triggered on the target `section` that changes from collapsed state to expanded state. Notice that calling `expand` on an already expanded `section` would not trigger this event.</td>
@@ -97,7 +97,7 @@ The events below will be triggered on `section`s of `accordion`.
 </table>
 
 ### Actions
-<table class="ad--table-listing">
+<table class="ad-m-table-listing">
   <tr>
     <td width="40%"><strong>`expand`</strong></td>
     <td>This event is triggered on the target `section` that changes from collapsed state to expanded state. Notice that calling `expand` on an already expanded `section` would not trigger this event.</td>
@@ -117,7 +117,7 @@ The events below will be triggered on `section`s of `accordion`.
 </table>
 
 #### Attributes
-<table class="ad--table-listing">
+<table class="ad-m-table-listing">
   <tr>
     <td width="40%"><strong>`animate`</strong></td>
     <td>Set this attribute on the `<amp-accordion>` to animate the expansion / collapse of all accordion sections.</td>

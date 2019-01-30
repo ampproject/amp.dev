@@ -24,7 +24,7 @@ const fs = require('fs');
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
 // const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/develop/third_party_components.md';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md';
 const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components/';
 
 /**

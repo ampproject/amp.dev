@@ -30,9 +30,19 @@ example markup:
 table {
   position: relative;
   border-collapse: collapse;
-  margin: 1.5em 0 2em;
+  padding: 0 0 0 20px;
+  margin: 1.5em -20px 2em -20px;
+  max-width: calc(100% + 40px);
+  display: block;
+  overflow-x: scroll;
   @include txt;
   @include txt-2;
+
+  @media screen and (min-width: 768px){
+    max-width: 100%;
+    padding: 0;
+    margin: 1.5em 0 2em;
+  }
 
   th {
     padding: 20px;
@@ -51,7 +61,7 @@ thead {
 
 tbody {
   tr:nth-child(odd) {
-    background-color: color('whisper');
+    background-color: rgba(255, 255, 255, 0.75);
   }
 
   tr {
@@ -65,7 +75,7 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
-
+    white-space: nowrap;
     code {
       @include txt-mono-inline;
       @include color-blue-ribbon;
