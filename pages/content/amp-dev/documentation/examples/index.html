@@ -32,8 +32,17 @@ teaser:
 
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
       <div class="ad-o-filter-bubbles-list">
+        <button class="ad-m-filter-bubble filtered"
+          [class]="chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+          on="tap:AMP.setState({ chosenFilter: 'none' })">
+          All
+        </button>
         {% for collection in collections %}
-        <button class="ad-m-filter-bubble" [class]="chosenFilter == '{{ collection.title|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'" on="tap:AMP.setState({ chosenFilter: '{{ collection.title|slug }}' })">{{ collection.title }}</button>
+        <button class="ad-m-filter-bubble"
+          [class]="chosenFilter == '{{ collection.title|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+          on="tap:AMP.setState({ chosenFilter: '{{ collection.title|slug }}' })">
+          {{ collection.title }}
+        </button>
         {% endfor %}
       </div>
 
