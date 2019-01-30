@@ -81,8 +81,8 @@ $borderSize: 5px;
       @extend %pseudo-base;
       left: 0;
       bottom: 100%;
-      border-bottom: $cornerSize/2 solid white;
-      border-right: $cornerSize/2 solid transparent;
+      border-bottom: ($cornerSize/1.6) solid white;
+      border-right: ($cornerSize/1.6) solid transparent;
       border-left: 0 solid white;
     }
   }
