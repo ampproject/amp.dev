@@ -24,6 +24,8 @@ const fs = require('fs');
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
 // const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
+
+// eslint-disable-next-line max-len
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md';
 const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components/';
 
@@ -76,6 +78,7 @@ class ComponentReferenceLinker {
 
 
     // Cases
+    /* eslint-disable max-len */
     const cases = [
       content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
       content.match(/\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
@@ -84,6 +87,7 @@ class ComponentReferenceLinker {
       content.match(/\`amp-\w*(-\w*)*`/gm),
       content.match(/amp-\w*(-\w*)*/gm),
     ];
+    /* eslint-enable max-len */
 
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
@@ -116,7 +120,8 @@ class ComponentReferenceLinker {
 
 
   _hash(str) {
-    const hash = str.split('').reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+    const hash = str.split('')
+        .reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
     this._log.error(hash);
     return hash;
   }
@@ -138,13 +143,14 @@ class ComponentReferenceLinker {
   }
 
   _componentPath(component) {
-    const char = component.slice(4, 5).toUpperCase();
-    const path = `({{g.doc('/content/amp-dev/documentation/components/reference/${component}.md', locale=doc.locale).url.path}})`;
+    /* eslint-disable max-len */
+    const path =
+      `({{g.doc('/content/amp-dev/documentation/components/reference/${component}.md', locale=doc.locale).url.path}})`;
     return `[\`${component}\`]${path}`;
+    /* eslint-enable max-len */
   }
 
   _componentExist(component) {
-    const char = component.slice(4, 5).toUpperCase();
     const path = COMPONENTS_SRC + '/reference/' + component + '.md';
 
     this._log.start('Path:', path);

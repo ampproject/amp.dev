@@ -7,7 +7,7 @@ workbox.clientsClaim();
 const OFFLINE_PAGE = '/offline.html';
 
 // Pre-cache the AMP Runtime
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   const urls = [
     'https://cdn.ampproject.org/v0.js',
     // Add AMP extensions used on your pages
@@ -17,7 +17,7 @@ self.addEventListener('install', event => {
     urls.push(OFFLINE_PAGE);
   }
   event.waitUntil(
-      caches.open(workbox.core.cacheNames.runtime).then(cache => cache.addAll(urls))
+      caches.open(workbox.core.cacheNames.runtime).then((cache) => cache.addAll(urls))
   );
 });
 
@@ -29,7 +29,7 @@ workbox.navigationPreload.enable();
 // network connection
 let navigationStrategy;
 if (OFFLINE_PAGE) {
-  const networkFirstWithOfflinePage = async args => {
+  const networkFirstWithOfflinePage = async (args) => {
     const response = await workbox.strategies.networkFirst().handle(args);
     if (response) {
       return response;

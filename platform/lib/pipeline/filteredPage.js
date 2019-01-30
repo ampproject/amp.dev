@@ -79,7 +79,7 @@ class FilteredPage {
     inactiveFormatClasses = Object.values(inactiveFormatClasses);
     inactiveFormatClasses = '.' + inactiveFormatClasses.join(', .');
 
-    let activeFormatClass = FILTER_CLASSES[this._format];
+    const activeFormatClass = FILTER_CLASSES[this._format];
 
     // Find all hidden elements and remove them if they aren't matching
     // the current filter
@@ -123,7 +123,7 @@ class FilteredPage {
   _rewriteUrls() {
     this._dom('a').each((index, a) => {
       a = this._dom(a);
-      let href = a.attr('href') || '';
+      const href = a.attr('href') || '';
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
       if (!href.includes('?') && isFilterableRoute(href)) {
@@ -137,7 +137,7 @@ class FilteredPage {
     this._dom('.ad-m-format-toggle-link').addClass('inactive');
 
     // The current active format should make it possible to go back to unfiltered
-    let activeToggle = this._dom(`.ad-m-format-toggle-link-${this._format}`);
+    const activeToggle = this._dom(`.ad-m-format-toggle-link-${this._format}`);
     activeToggle.removeClass('inactive');
     activeToggle.addClass('active');
     activeToggle.attr('href', '?');
@@ -152,7 +152,7 @@ class FilteredPage {
     let filteredElementsSelector = Object.values(FILTER_CLASSES);
     filteredElementsSelector = '.' + filteredElementsSelector.join(', .');
 
-    let filterClasses = Object.values(FILTER_CLASSES).join(' ');
+    const filterClasses = Object.values(FILTER_CLASSES).join(' ');
 
     this._dom(filteredElementsSelector).each((index, filteredElement) => {
       filteredElement = this._dom(filteredElement);
