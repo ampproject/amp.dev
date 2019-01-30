@@ -5,6 +5,9 @@ $order: 0
 
 formats:
   - websites
+  - stories
+  - ads
+  - email
 ---
 
 The AMP Project would not be possible without help from all members of the community

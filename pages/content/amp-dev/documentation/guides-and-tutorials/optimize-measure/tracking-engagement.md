@@ -1,6 +1,7 @@
 ---
-$title: Tracking engagement with analytics
-$order: 4
+$title: How to configure Google Analytics for your AMP pages
+$order: 100
+tutorial: true
 formats:
     - websites
     - stories

@@ -1,7 +1,7 @@
 ---
-$title: Make your page discoverable
+$title: Make your pages discoverable
 $titles:
-  teaser: Make your page discoverable
+  teaser: Make your pages discoverable
 $order: 3
 
 toc: true
@@ -17,7 +17,7 @@ teaser:
     src: '/static/img/docs/guides/makeyourpagediscoverable.jpg'
     width: 566
     height: 314
-    alt: Make your page discoverable
+    alt: Make your pages discoverable
   text: Learn how search engines find out that there is an AMP version of your site.
   label: Learn more
 ---

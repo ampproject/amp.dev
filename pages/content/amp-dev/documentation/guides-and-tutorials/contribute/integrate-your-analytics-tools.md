@@ -1,9 +1,10 @@
 ---
-$title: Integrating your analytics tool with AMP
+$title: Integrate your analytics service with AMP
 $order: 1
 toc: true
 formats:
   - websites
+  - stories
 ---
 
 

@@ -1,0 +1,12 @@
+$path: /documentation/guides-and-tutorials/start/create_email/{base}.html
+$view: /views/detail/docs-detail.j2
+$order: 0
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/start/create_email/{base}.html
+$title@: Create Your First AMP Email (TBD)
+
+chaptered: true
+tutorial: true
+
+formats:
+  - email
