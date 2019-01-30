@@ -1,0 +1,39 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+
+    <style amp-custom>
+      {{{css 'base.css' }}}
+
+      {{{css 'components/atoms/headline.css' }}}
+      {{{css 'components/atoms/text.css' }}}
+      {{{css 'components/atoms/anchor.css' }}}
+      {{{css 'components/atoms/icon.css' }}}
+
+      {{{css 'components/molecules/link.css' }}}
+      {{{css 'components/molecules/homepage-link.css' }}}
+
+      {{{css 'components/organisms/header.css' }}}
+
+      {{{ document.styles }}}
+    </style>
+
+    {{{ document.head }}}
+  {{{ document.body }}}
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      {{{icon 'logo.svg' }}}
+      {{{icon 'angle-down-solid.svg' }}}
+    </svg>
+
+    {{> 'header.hbs' }}
+
+    <main>
+      {{#document.sections}}
+      {{{preview}}}
+      {{/document.sections}}
+    </main>
+  </body>
+</html>
