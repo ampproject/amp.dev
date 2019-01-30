@@ -94,17 +94,18 @@ the border and format around the images.
   }
 
   &-code-snippet {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    width: 12em;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    width: 17em;
+    margin-top: auto;
     font-size: 10px;
     filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
-    transform: translateY(-4em);
+    transform: translate(75%, -4em);
     
     @media screen and (min-width: 768px) {
-      width: auto;
+      width: 100%;
       font-size: inherit;
-      transform: translateY(0);
+      transform: translate(50%, -50px);
     }
     
     .#{molecule('code-snippet')} {
