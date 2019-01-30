@@ -25,10 +25,9 @@ const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
 
-const utils = require('../utils');
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
+const utils = require('@lib/utils');
 const config = require('@lib/config.js');
-
 const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 
 // Where to import the samples from
