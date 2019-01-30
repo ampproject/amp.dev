@@ -1,0 +1,11 @@
+$path: /documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
+$title@: Create your first AMPHTML ad
+formats:
+  - ads
+
+targeted: true
+chaptered: true
+tutorial: true

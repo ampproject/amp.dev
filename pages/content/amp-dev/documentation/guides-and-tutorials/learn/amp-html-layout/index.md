@@ -4,6 +4,9 @@ toc: true
 $order: 1
 formats:
   - websites
+  - email
+  - stories
+  - ads
 ---
 
 <!---

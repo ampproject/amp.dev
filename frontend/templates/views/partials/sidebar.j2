@@ -20,7 +20,13 @@
           {% set documents = root.list_docs_unread(locale=doc.locale) %}
 
           {% set items = (collections + documents)|sort(attribute='order') %}
+
           {% for item in items %}
+
+          {% if loop.previtem and item.tutorial and not loop.previtem.tutorial %}
+          <li class="nav-item-tutorial-divider"></li>
+          {% endif %}
+
           {# Check if the item is a) collection ... #}
           {% if '<Collection' in item|pprint %}
           {% set collection = item %}
@@ -85,6 +91,7 @@
           </li>
           {% endif %}
           {% endif %}
+
           {% endfor %}
       </ul>
       {% endif %}

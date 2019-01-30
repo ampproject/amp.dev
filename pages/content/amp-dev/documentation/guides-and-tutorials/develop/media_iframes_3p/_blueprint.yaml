@@ -1,0 +1,12 @@
+$path: /documentation/guides-and-tutorials/develop/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/develop/{base}.html
+$title@: Include media, iframes & third-party content
+$order: 1
+
+formats:
+  - websites
+  - ads
+  - stories
+  - email
