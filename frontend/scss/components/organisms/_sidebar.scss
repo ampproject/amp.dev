@@ -89,6 +89,10 @@
   padding: 0;
 }
 
+@mixin sidebar-nav-item-tutorial-divider {
+  border-bottom: 1px dashed rgba(color('black'), 0.15);
+}
+
 @mixin sidebar-nav-item-level-1 {
   border-bottom: 1px solid rgba(color('black'), 0.15);
 

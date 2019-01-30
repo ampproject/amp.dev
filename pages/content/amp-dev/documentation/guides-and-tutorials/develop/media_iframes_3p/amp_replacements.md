@@ -7,6 +7,9 @@ components:
 
 formats:
   - websites
+  - stories
+  - email
+  - ads
 ---
 
 

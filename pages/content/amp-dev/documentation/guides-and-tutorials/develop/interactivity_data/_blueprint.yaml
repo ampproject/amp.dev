@@ -1,0 +1,9 @@
+$path: /documentation/guides-and-tutorials/develop/interactivity_data/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/develop/interactivity_data/{base}.html
+$title@: Add interactivity & dynamic data (TBD)
+$order: 3
+
+formats:
+  - websites

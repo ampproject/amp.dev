@@ -7,3 +7,6 @@ $order: 4
 
 formats:
   - websites
+  - email
+  - stories
+  - ads

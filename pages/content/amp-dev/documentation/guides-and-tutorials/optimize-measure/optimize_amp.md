@@ -1,5 +1,5 @@
 ---
-$title: Optimizing your hosted AMP pages
+$title: Optimize your hosted AMP pages
 $order: 2
 toc: true
 

@@ -1,5 +1,5 @@
 ---
-$path: /documentation/guides-and-tutorials/learn/amphtml_ads/create_amphtml_ad/index.html
+$path: /documentation/guides-and-tutorials/start/index.html
 $title: Create an AMPHTML ad
 
 ---

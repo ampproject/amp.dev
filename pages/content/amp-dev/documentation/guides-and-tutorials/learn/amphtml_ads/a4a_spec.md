@@ -1,6 +1,6 @@
 ---
 $title: AMPHTML ad specification
-$order: 3
+$order: 2
 toc: true
 formats:
   - ads
@@ -331,10 +331,8 @@ HTML5 compatible.
 
 4.2.4 `<link>`
   - `<link rel=...>` tags are disallowed, except for `<link rel=stylesheet>`.
-[tip type="note"]
-**NOTE –** Unlike in general AMP, `<link rel="canonical">` tags are
-  prohibited.
-[/tip]
+  - __Note:__ Unlike in general AMP, `<link rel="canonical">` tags are
+    prohibited.
 
 4.2.5 `<style>`
 4.2.6 `<meta>`
