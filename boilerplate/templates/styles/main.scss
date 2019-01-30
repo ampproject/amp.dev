@@ -84,7 +84,7 @@ section {
   .value {
     max-width: 500px;
     padding: 8px;
-    background-color: color('alto');
+    background-color: color('athens-gray');
     display: flex;
     justify-content: space-between;
     > * {
@@ -173,7 +173,7 @@ section {
 }
 
 .help {
-  background-color: color('alto');
+  background-color: color('athens-gray');
   padding: 8px;
   @include txt;
   @include txt-1;
@@ -213,7 +213,7 @@ section {
   width: 24px;
   height: 24px;
   cursor: pointer;
-  background: color('alto');
+  background-color: color('athens-gray');
   border-radius: 50%;
   text-align: center;
   @include txt;
