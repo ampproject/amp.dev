@@ -84,16 +84,20 @@ tags are specific for amp.dev #}
 
       <h1 class="ad--title">{{ doc.example.document.title }}</h1>
 
-      <ul class="ad--ctas">
+      <div class="ad--ctas">
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
+        {% set demo_enabled = doc.example.document.metadata.preview %}
+
         {% set playground_url = podspec.base_urls.playground + podspec.base_urls.api + doc.url.path + '/source' %}
         {% if not playground_disabled %}
-        <li>
-          {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-          <a href="{{ playground_url }}" class="ad-a-btn">{{ _('Open in playground') }}</a>
-        </li>
+        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+        <a href="{{ playground_url }}" class="ad-a-btn">{{ _('Open in playground') }}</a>
         {% endif %}
-      </ul>
+        {% if demo_enabled %}
+        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+        <a href="./preview" class="ad-a-btn">{{ _('View demo') }}</a>
+        {% endif %}
+      </div>
 
       {% for section in doc.example.document.sections %}
       {{ section.doc_.strip()|markdown|safe }}
