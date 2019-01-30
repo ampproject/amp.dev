@@ -94,8 +94,8 @@ class Pipeline {
    * Transpiles SCSS files to CSS, moves templates icons and more
    * @return {Promise}
    */
-  buildFrontend() {
-    this._transpileScss();
+  async buildFrontend() {
+    await this._transpileScss();
     this._collectTemplates();
     this._collectIcons();
 
