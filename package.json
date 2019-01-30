@@ -41,6 +41,8 @@
   "devDependencies": {
     "@octokit/rest": "^16.10.0",
     "amp-by-example": "^0.2.5",
+    "amp-toolbox-optimizer": "^0.4.6",
+    "amp-toolbox-runtime-version": "^0.2.3",
     "babel-eslint": "^10.0.1",
     "crass": "^0.12.3",
     "del": "^3.0.0",
@@ -50,6 +52,7 @@
     "gulp-once": "^2.0.3",
     "gulp-sass": "^4.0.2",
     "gulp-strip-css-comments": "^2.0.0",
+    "handlebars": "^4.0.12",
     "html-minifier": "^3.5.21",
     "js-yaml": "^3.12.1",
     "npm-run-all": "^4.1.5",
