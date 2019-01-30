@@ -41,7 +41,7 @@ format_explainer:
     headline: AMP enables great experiences across many ads
     description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on ads. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
     url: /what-is-amp/ads.html
-  emails:
+  email:
     name: email
     visual: views/partials/format-visuals/email.j2
     headline: AMP enables great experiences across many emails
@@ -143,10 +143,10 @@ sampler:
               "description": "{{ doc.format_explainer.ads.description }}",
               "url": "{{ doc.format_explainer.ads.url }}"
             },
-            "emails": {
-              "headline": "{{ doc.format_explainer.emails.headline }}",
-              "description": "{{ doc.format_explainer.emails.description }}",
-              "url": "{{ doc.format_explainer.emails.url }}"
+            "email": {
+              "headline": "{{ doc.format_explainer.email.headline }}",
+              "description": "{{ doc.format_explainer.email.description }}",
+              "url": "{{ doc.format_explainer.email.url }}"
             }
           }
         </script>
@@ -186,9 +186,9 @@ sampler:
           [hidden]="activeFormat != '{{ doc.format_explainer.ads.name }}'">
           {% include doc.format_explainer.ads.visual %}
         </div>
-        <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.emails.name }}"
-          [hidden]="activeFormat != '{{ doc.format_explainer.emails.name }}'">
-          {% include doc.format_explainer.emails.visual %}
+        <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.email.name }}"
+          [hidden]="activeFormat != '{{ doc.format_explainer.email.name }}'">
+          {% include doc.format_explainer.email.visual %}
         </div>
       </div>
 
@@ -228,15 +228,15 @@ sampler:
           </div>
           <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.ads.name }}</span>
         </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.emails.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.emails.name }}'}),switchFormat.restart">
+        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.email.name }}"
+          [class]="activeFormat == '{{ doc.format_explainer.email.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.email.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.email.name }}'"
+          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.email.name }}'}),switchFormat.restart">
           <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.emails.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-emails.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-emails"></use></svg>
+          [class]="activeFormat == '{{ doc.format_explainer.email.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+            {% do doc.icons.useIcon('icons/amp-email.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
           </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.emails.name }}</span>
+          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.email.name }}</span>
         </button>
       </div>
 
