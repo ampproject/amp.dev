@@ -4,6 +4,7 @@ $order: 1
 toc: true
 formats:
   - websites
+  - stories
 ---
 
 

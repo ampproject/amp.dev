@@ -7,7 +7,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **AMP ページにブランドを反映する。** 非 AMP ページと同じヘッダーやデザイン（色、間隔、書体など）を使用することで、そのブランドのページであることをすぐに認識できるようにします。
 
-- **最も魅力的なコンテンツで目を引く。**  AMP ページに変換する際は、画像、動画、埋め込み、構造化データ、コメント、ソーシャル メディアなど、目を引くページ要素を含めます。詳しくは、[サードパーティ コンテンツを含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/third_party_components.md', locale=doc.locale).url.path}})をご覧ください。
+- **最も魅力的なコンテンツで目を引く。**  AMP ページに変換する際は、画像、動画、埋め込み、構造化データ、コメント、ソーシャル メディアなど、目を引くページ要素を含めます。詳しくは、[サードパーティ コンテンツを含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md', locale=doc.locale).url.path}})をご覧ください。
 
 - **AMP ページを常に最新にする。**  ライブブログを、[`amp-live-list`](/ja/docs/reference/components/amp-live-list.html) を使って動的に更新します。
 

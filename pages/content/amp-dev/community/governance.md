@@ -1,8 +1,11 @@
 ---
-$title: Open Source Governance
+$title: Governance
 $order: 2
 formats:
   - websites
+  - email
+  - stories
+  - ads
 ---
 
 

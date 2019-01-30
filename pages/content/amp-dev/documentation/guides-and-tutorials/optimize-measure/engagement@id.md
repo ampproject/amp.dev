@@ -11,7 +11,7 @@ yang sama dengan yang ada di halaman non-AMP untuk memastikan halaman dapat dike
 
 - **Tampilkan konten yang paling menarik** saat mengonversi halaman. Sertakan elemen halaman utama seperti
 gambar, video, penyematan, data terstruktur, komentar, dan media sosial. Pelajari cara
-[menyertakan konten pihak ketiga]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/third_party_components.md', locale=doc.locale).url.path}}).
+[menyertakan konten pihak ketiga]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md', locale=doc.locale).url.path}}).
 
 - **Simpan halaman AMP saat ini.** Update live blog secara dinamis dengan [`amp-live-list`](/id/docs/reference/components/amp-live-list.html).
 
