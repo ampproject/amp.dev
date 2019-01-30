@@ -107,7 +107,7 @@ tags are specific for amp.dev #}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
       <div class="ad-o-code-preview">
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
-        {% set show_preview = section.preview and section.inBody %}
+        {% set show_preview = section.preview and section.inBody and not doc.example.document.hidePreview %}
         {% if story_preview %}
         {# Storys should be repeatable, therefore render reload icon #}
         <button class="ad-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ '#' + '&' }}' + random()})">
