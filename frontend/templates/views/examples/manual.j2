@@ -61,11 +61,16 @@ tags are specific for amp.dev #}
         <div class="toc">
           <ul>
             <li>
-              {% for section in doc.example.document.sections %}
-              {% for heading in section.headings %}
-              <a href="#{{ heading.id }}">{{ heading.name }}</a>
-              {% endfor %}
-              {% endfor %}
+              <a href="#{{ doc.example.document.title|slug }}">{{ doc.example.document.title }}</a>
+              <ul>
+                <li>
+                  {% for section in doc.example.document.sections %}
+                  {% for heading in section.headings %}
+                  <a href="#{{ heading.id }}">{{ heading.name }}</a>
+                  {% endfor %}
+                  {% endfor %}
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -82,7 +87,7 @@ tags are specific for amp.dev #}
         {% endfor %}
       </ul>
 
-      <h1 class="ad--title">{{ doc.example.document.title }}</h1>
+      <h1 class="ad--title" id="{{ doc.example.document.title|slug }}">{{ doc.example.document.title }}</h1>
 
       <div class="ad--ctas">
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
