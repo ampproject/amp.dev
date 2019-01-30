@@ -20,7 +20,7 @@ const fs = require('fs');
 const path = require('path');
 
 function listFiles(currentDirPath, result = [], recursive = false) {
-  fs.readdirSync(currentDirPath).forEach(name => {
+  fs.readdirSync(currentDirPath).forEach((name) => {
     const filePath = path.join(currentDirPath, name);
     const stat = fs.statSync(filePath);
     if (stat.isFile() && !path.basename(filePath).startsWith('.')) {
@@ -32,12 +32,12 @@ function listFiles(currentDirPath, result = [], recursive = false) {
   return result;
 }
 
-function writeFile() {
-  if (arguments.length < 2) {
+function writeFile(...args) {
+  if (args.length < 2) {
     throw new Error('expect path segments followed by content');
   }
-  const filePath = Array.prototype.slice.call(arguments, 0, -1).join(path.sep);
-  const content = arguments[arguments.length - 1];
+  const filePath = Array.prototype.slice.call(args, 0, -1).join(path.sep);
+  const content = args[args.length - 1];
   mkdir(path.dirname(filePath));
   fs.writeFileSync(filePath, content, 'utf-8');
 }

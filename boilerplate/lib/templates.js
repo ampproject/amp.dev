@@ -22,12 +22,12 @@ const path = require('path');
 const hljs = require('highlight.js');
 const sass = require('node-sass');
 
-const FRONTEND_DIR =  '../../frontend/scss';
-const TEMPLATES_DIR =  '../templates';
-const NODE_MODULES =  '../../node_modules';
-const STYLES =  path.join(TEMPLATES_DIR, 'styles');
+const FRONTEND_DIR = '../../frontend/scss';
+const TEMPLATES_DIR = '../templates';
+const NODE_MODULES = '../../node_modules';
+const STYLES = path.join(TEMPLATES_DIR, 'styles');
 
-const INCLUDE_PATHS = [FRONTEND_DIR, NODE_MODULES, STYLES].map(dir => path.join(__dirname, dir));
+const INCLUDE_PATHS = [FRONTEND_DIR, NODE_MODULES, STYLES].map((dir) => path.join(__dirname, dir));
 
 
 Handlebars.registerHelper('scss', (scssPath) => {
@@ -65,7 +65,7 @@ function findTemplates(dir) {
   Handlebars.registerPartial(partials);
   const icons = findPartials(path.join(dir, ICONS_DIR));
   Handlebars.registerPartial(icons);
-  io.listFiles(dir).forEach(name => {
+  io.listFiles(dir).forEach((name) => {
     const templateName = path.basename(name, path.extname(name));
     templates[templateName] = readTemplate(name);
   });
@@ -106,15 +106,15 @@ function replaceEndTag(match) {
 
 function findPartials(dir) {
   const partialFiles = io.listFiles(dir, [], true);
-  return partialFiles.map(f => {
+  return partialFiles.map((f) => {
     const name = f.replace(dir, '');
     const content = io.readFile(f, 'utf-8');
     return [name, content];
   })
-  .reduce((obj, prop) => {
-    obj[prop[0]] = prop[1];
-    return obj;
-  }, {});
+      .reduce((obj, prop) => {
+        obj[prop[0]] = prop[1];
+        return obj;
+      }, {});
 }
 module.exports.find = findTemplates;
 module.exports.render = renderTemplate;

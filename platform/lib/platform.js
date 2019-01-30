@@ -65,10 +65,13 @@ class Platform {
 
   _enableCors() {
     this.server.use((request, response, next) => {
-      response.header("Access-Control-Allow-Origin", "*");
-      response.header("Access-Control-Allow-Credentials", "true");
-      response.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-      response.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, X-Requested-By, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+      response.header('Access-Control-Allow-Origin', '*');
+      response.header('Access-Control-Allow-Credentials', 'true');
+      response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+      response.header(
+          'Access-Control-Allow-Headers',
+          'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, X-Requested-By, ' +
+        'Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
       next();
     });
 

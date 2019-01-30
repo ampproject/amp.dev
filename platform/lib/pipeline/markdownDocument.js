@@ -147,7 +147,7 @@ class MarkdownDocument {
    * @return {Promise}
    */
   save(path) {
-    let frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
+    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
 
     path = path ? path : this._path;
     return writeFile.promise(path, frontmatter + this._contents);

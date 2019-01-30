@@ -212,8 +212,15 @@ class SamplesBuilder {
       '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
+<<<<<<< HEAD:platform/lib/pipeline/samplesBuilder.js
+      '$path: ' + PATH_BASE + manual.relative,
+      '$category: ' + (parsedSample.document.metadata.category ?
+        parsedSample.document.metadata.category :
+        'None'),
+=======
       '$path: ' + PATH_BASE + manual.relative.toLowerCase(),
       '$category: ' + (parsedSample.document.metadata.category ? parsedSample.document.metadata.category : 'None'),
+>>>>>>> origin/future:platform/lib/build/samplesBuilder.js
       'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
       // ... and some additional information that is used by the example teaser
       ...this._getTeaserData(parsedSample),

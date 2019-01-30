@@ -34,7 +34,7 @@ const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md'
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
 };
 /* eslint-enable max-len */
 
