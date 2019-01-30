@@ -31,7 +31,7 @@ const config = require('@lib/config.js');
 const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 
 // Where to import the samples from
-const SAMPLE_SRC = path.join(__dirname, '../../../examples/source/**/amp-accordion.html');
+const SAMPLE_SRC = path.join(__dirname, '../../../examples/source/**/*.html');
 // The pod path inside
 const POD_PATH = 'content/amp-dev/documentation/examples';
 // Where to store the samples inside the Grow pod in
@@ -212,15 +212,10 @@ class SamplesBuilder {
       '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
-<<<<<<< HEAD:platform/lib/pipeline/samplesBuilder.js
       '$path: ' + PATH_BASE + manual.relative,
       '$category: ' + (parsedSample.document.metadata.category ?
         parsedSample.document.metadata.category :
         'None'),
-=======
-      '$path: ' + PATH_BASE + manual.relative.toLowerCase(),
-      '$category: ' + (parsedSample.document.metadata.category ? parsedSample.document.metadata.category : 'None'),
->>>>>>> origin/future:platform/lib/build/samplesBuilder.js
       'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
       // ... and some additional information that is used by the example teaser
       ...this._getTeaserData(parsedSample),
