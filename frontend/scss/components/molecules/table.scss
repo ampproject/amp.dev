@@ -35,6 +35,7 @@ table {
   max-width: calc(100% + 40px);
   display: block;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   @include txt;
   @include txt-2;
 
