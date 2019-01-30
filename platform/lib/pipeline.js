@@ -31,7 +31,7 @@ const config = require('./config');
 const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
-const {samplesBuilder} = require('./pipeline/samplesBuilder');
+const {samplesBuilder} = require('./build/samplesBuilder');
 const roadmapImporter = require('./pipeline/roadmapImporter');
 const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
 const {pageMinifier} = require('./build/pageMinifier');
@@ -94,8 +94,8 @@ class Pipeline {
    * Transpiles SCSS files to CSS, moves templates icons and more
    * @return {Promise}
    */
-  buildFrontend() {
-    this._transpileScss();
+  async buildFrontend() {
+    await this._transpileScss();
     this._collectTemplates();
     this._collectIcons();
 

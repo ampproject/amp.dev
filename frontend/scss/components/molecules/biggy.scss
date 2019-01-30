@@ -20,6 +20,8 @@
 
   &-aside {
     grid-column: 1 / 12;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   &-main {
@@ -32,14 +34,19 @@
 
     &-headline {
       @include hl;
-      font-size: 100px;
+      font-size: 26vw;
       line-height: 1em;
       margin: 0 0 40px;
       color: color('athens-gray');
 
       @media screen and (min-width: 768px) {
-        font-size: 140px;
+        font-size: 13vw;
         line-height: 0.85;
       }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 140px;
+      }
+
     }
 }

@@ -14,7 +14,7 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('burger-menu')} {
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
@@ -95,7 +95,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     /* This block defines the styles for the second level elements */

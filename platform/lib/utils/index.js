@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
  *
@@ -16,10 +14,8 @@
  * limitations under the License.
  */
 
-'use strict';
+const project = require('./project.js');
 
-require('module-alias/register');
-
-const Platform = require('./lib/platform');
-
-new Platform().start();
+module.exports = {
+  'project': project,
+};

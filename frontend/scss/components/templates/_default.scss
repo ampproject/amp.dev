@@ -50,7 +50,9 @@
   }
 
   p.limit {
-    max-width: 70%;
+    @media (min-width: 1024px) {
+      max-width: 70%;
+    }
   }
 }
 
