@@ -40,9 +40,14 @@
     color: color('black');
     background: color('athens-gray');
     transition: opacity 0.2s ease;
+    cursor: pointer;
 
     @media screen and (min-width: 768px) {
       font-size: 0.75em;
+    }
+    
+    &.active {
+      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
     }
 
     .#{atom('ico')} {
@@ -95,17 +100,35 @@
     }
   }
 
-  &:hover &-link.inactive,
-  &:hover &-link:not(.active) {
-    color: color('black');
-    background: color('athens-gray');
+  &:hover &-link {
+    &:not(.active),
+    &.inactive {
+      color: color('black');
+      background: color('athens-gray');
 
-    .#{atom('ico')} {
-      fill: color('black');
+      .#{atom('ico')} {
+        fill: color('black');
+      }
+    }
+    
+    &-websites:hover {
+      @include gradient-websites; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
     }
 
-    &:hover {
-      background: color('alto');
+    &-stories:hover {
+      @include gradient-stories; color: color('pigment-indigo');
+      .#{atom('ico')} { fill: color('pigment-indigo'); }
+    }
+
+    &-ads:hover {
+      @include gradient-ads; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &-email:hover {
+      @include gradient-e-mails; color: color('ultramarine');
+      .#{atom('ico')} { fill: color('ultramarine'); }
     }
   }
 }

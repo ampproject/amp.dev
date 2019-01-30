@@ -22,12 +22,9 @@ const config = require('../config.js');
 
 const Document = require('./markdownDocument');
 
-// TODO: Eventually make it possible to pass these in as a) command line args
-// or inside of config aswell
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.argv[2] || process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
-// TODO: Make it possible to pass in a local repository path with argv
 const LOCAL_AMPHTML_REPOSITORY = config.options['local-amphtml-repository'] || false;
 
 const log = new Signale({

@@ -70,7 +70,7 @@
         width: 30px;
       }
 
-      &-title {
+      &-title, &-sub-title {
         margin-left: 4px;
         @include txt-font-accent;
         font-size: 1.5em;
@@ -79,6 +79,9 @@
         @media screen and (min-width: 1024px) {
           @include txt-lrg;
         }
+      }
+      &-sub-title {
+        color: color('black');
       }
   }
 

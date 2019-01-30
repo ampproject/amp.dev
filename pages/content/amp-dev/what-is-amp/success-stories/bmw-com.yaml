@@ -39,7 +39,7 @@ stage:
       type: tablet
       alt: BMW and Jung von Matt
 
-    - video_src: '/static/img/success-stories/bmw_jvm/BMW-Stage.mp4'
+    - video_src: '/static/img/success-stories/bmw_jvm/BMW-Stage_small.mp4'
       width: 375
       height: 667
       type: mobile
