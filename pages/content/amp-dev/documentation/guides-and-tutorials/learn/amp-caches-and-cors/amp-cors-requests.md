@@ -7,10 +7,6 @@ formats:
   - email
   - stories
   - ads
-teaser:
-  icon: cors
-  text: Find instructions for validation your AMP pages.
-  label: Learn more
 ---
 
 <!---

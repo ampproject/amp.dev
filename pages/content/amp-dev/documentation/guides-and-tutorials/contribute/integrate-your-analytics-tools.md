@@ -1,5 +1,5 @@
 ---
-$title: Integrate your analytics service with AMP
+$title: Integrating your analytics tool with AMP
 $order: 1
 toc: true
 formats:
