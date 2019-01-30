@@ -55,8 +55,10 @@ square
 }
 
 @mixin ico-10 {
-	width: 10em;
-	height: 10em;
+  max-width: 10em;
+  max-height: 10em;
+  height: auto;
+  width: 100%;
 }
 
 @mixin ico-blue-ribbon {
