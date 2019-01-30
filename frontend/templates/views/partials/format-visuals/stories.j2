@@ -1,14 +1,15 @@
+{% do doc.styles.addCssFile('css/components/molecules/format-visual.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/format-visual-stories.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
-<div class="ad-m-format-visual-stories">
-  <div class="ad-m-format-visual-stories-image ad-m-format-visual-stories-bottom-image">
+<div class="ad-m-format-visual ad-m-format-visual-stories">
+  <div class="ad-m-format-visual-image ad-m-format-visual-bottom-image">
     <amp-img class="ad--media" src="/static/img/amp-stories-base.png" layout="responsive" width="750" height="1050"></amp-img>
   </div>
-  <div class="ad-m-format-visual-stories-image ad-m-format-visual-stories-top-image" title="<amp-story-grid-layer>">
+  <div class="ad-m-format-visual-image ad-m-format-visual-top-image" title="<amp-story-grid-layer>">
     <amp-img src="/static/img/amp-stories-monde.png" layout="responsive" width="800" height="800"></amp-img>
   </div>
-  <div class="ad-m-format-visual-stories-code-snippet">
+  <div class="ad-m-format-visual-code-snippet">
     {% set code_snippet = '
 <amp-story-grid-layer
   template="vertical">

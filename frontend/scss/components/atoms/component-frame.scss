@@ -1,16 +1,8 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-
-@import 'components/atoms/_color.scss';
-
-
 /*
 
-#####################
+#############################
 ### ATOM: component-frame ###
-#####################
+#############################
 
 A simple border and component flag for responsive images. A title attribute is required for rendering the flag text.
 
@@ -19,6 +11,14 @@ A simple border and component flag for responsive images. A title attribute is r
 format modifiers for differen color rendering (e.g. websites -> blue border, ads -> purple border). Default is blue
 
 */
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
 
 @mixin component-frame {
 

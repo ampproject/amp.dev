@@ -16,34 +16,38 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 
+@import '../molecules/benefit';
+
+@import '../organisms/benefits-overview.scss';
+
 @import '../templates/_default.scss';
 
 .#{template('component-overview')} {
 
   background: color('whisper');
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
   }
-  
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
-  
+
   .#{utility('toc')} {
     @include toc;
   }
-  
+
   .#{utility('sidebar')} + .#{utility('content')},
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
-  
+
   section {
     &.#{utility('content')},
     &.#{utility('teaser-grid')} {
@@ -54,7 +58,6 @@
     }
   }
 
-  
   &-anchor-list {
     margin: 2em 0;
     p {
@@ -66,7 +69,6 @@
       }
     }
   }
-
 
   .#{organism('teaser')} {
     &-grid-list {

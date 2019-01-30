@@ -218,12 +218,13 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
- <section class="ad--made-of">
-  <div class="ad-o-made-of">
-    <div class="ad--container">
-      <h1 class="ad-o-made-of-headline">This is What AMP HTML is made of</h1>
-    </div>
-    <div class="ad--container-fluid">
+<div class="ad--container">
+  <h1 class="ad--made-of-headline">This is What AMP HTML is made of</h1>
+</div>
+
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
+<section class="ad--container-fluid ad-m-biggy">
+  <div class="ad-m-biggy-aside">
       {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
       {% set code_snippet = '      <html ⚡>
         <head>
@@ -237,9 +238,10 @@ $view: /views/overview/what-is-amp.j2
       </html>' %}
       {% set markdown = doc.pod.markdown %}
       {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
-      <div class="ad-o-made-of-hello-world">Hello<br> World!</div
     </div>
-  </div>
+    <div class="ad-m-biggy-main">
+      <h2 class="ad-m-biggy-headline">Hello<br> World!</h2>
+    </div>
 </section>
 
 <section class="ad--content">

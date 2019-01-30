@@ -1,14 +1,15 @@
+{% do doc.styles.addCssFile('css/components/molecules/format-visual.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/format-visual-email.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
-<div class="ad-m-format-visual-email">
-  <div class="ad-m-format-visual-email-image ad-m-format-visual-email-bottom-image">
+<div class="ad-m-format-visual ad-m-format-visual-email">
+  <div class="ad-m-format-visual-image ad-m-format-visual-bottom-image">
     <amp-img class="ad--media" src="/static/img/amp-email-base.jpg" layout="responsive" width="1060" height="1670"></amp-img>
   </div>
-  <div class="ad-m-format-visual-email-image ad-m-format-visual-email-top-image" title="<amp-story-grid-layer>">
+  <div class="ad-m-format-visual-image ad-m-format-visual-top-image" title="<amp-email>">
     <amp-img src="/static/img/amp-email-top.jpg" layout="responsive" width="883" height="600"></amp-img>
   </div>
-  <div class="ad-m-format-visual-email-code-snippet">
+  <div class="ad-m-format-visual-code-snippet">
     {% set code_snippet = '
 <button class="false"
   [class]="clicked"
