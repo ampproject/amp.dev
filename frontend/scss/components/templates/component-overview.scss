@@ -47,6 +47,12 @@
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
+  
+  .#{utility('benefits--list')} {
+    @media screen and (min-width: 1024px){
+      display: flex;
+    }
+  }
 
   section {
     &.#{utility('content')},
