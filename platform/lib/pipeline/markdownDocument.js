@@ -201,6 +201,8 @@ class MarkdownDocument {
     path = path ? path : this._path;
     return writeFile.promise(path, frontmatter + this._contents).then(() => {
       LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+    }).catch((e) => {
+      LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`);
     });
   }
 }
