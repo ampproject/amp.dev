@@ -93,7 +93,7 @@ tags are specific for amp.dev #}
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
         {% set preview_enabled = doc.example.document.metadata.preview %}
 
-        {% set playground_url = podspec.base_urls.playground + podspec.base_urls.api + doc.url.path + '/source' %}
+        {% set playground_url = podspec.base_urls.playground + podspec.base_urls.api + doc.url.path + '/source/' %}
         {% if not playground_disabled %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
         <a href="{{ playground_url }}" class="ad-a-btn">{{ _('Open in playground') }}</a>
@@ -108,6 +108,7 @@ tags are specific for amp.dev #}
       {% for section in doc.example.document.sections %}
       {{ section.doc_.strip()|markdown|safe }}
 
+      {{ section|pprint }}
       {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}

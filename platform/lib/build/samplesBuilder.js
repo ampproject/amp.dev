@@ -104,7 +104,7 @@ class SamplesBuilder {
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
-        await this._parseSample(sample.path).then((parsedSample) => {
+        await this._parseSample(sample.path, sample.relative).then((parsedSample) => {
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
           const files = [
@@ -153,11 +153,14 @@ class SamplesBuilder {
    * ampbyexample.com package and while doing so updates some fields
    * @return {Promise}
    */
-  async _parseSample(samplePath) {
+  async _parseSample(samplePath, sampleRelativePath) {
     return await abe.parseSample(samplePath).then((parsedSample) => {
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
+
+      // Add the delivery path of the manual for preview rendering
+      parsedSample.route = PATH_BASE + sampleRelativePath.toLowerCase();
 
       // Rewrite some markdown to be consumable by Grow
       for (const index in parsedSample.document.sections) {
@@ -213,7 +216,7 @@ class SamplesBuilder {
       '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
-      '$path: ' + PATH_BASE + manual.relative.toLowerCase(),
+      '$path: ' + parsedSample.route,
       '$category: ' + (parsedSample.document.metadata.category ?
         parsedSample.document.metadata.category :
         'None'),
@@ -308,11 +311,6 @@ class SamplesBuilder {
    * @return {Array} An array of Vinyl files to write
    */
   _buildRawSources(sample, parsedSample) {
-    // Only build raw sources if the snippets can run standalone
-    if (!parsedSample.document.metadata.standaloneSnippets) {
-      return [];
-    }
-
     const sources = [];
 
     // Keep the full sample for the big playground
@@ -320,6 +318,11 @@ class SamplesBuilder {
     fullSource.isSourceFile = true;
 
     sources.push(fullSource);
+
+    // Only build snippet sources if they can run standalone
+    if (!parsedSample.document.metadata.standaloneSnippets) {
+      return sources;
+    }
 
     const TITLE_PLACEHOLDER = '<!-- samplesBuilder: title-->';
     const SECTION_PLACEHOLDER = '<!-- samplesBuilder: section-->';
