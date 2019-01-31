@@ -30,12 +30,20 @@
 
     .#{utility('ctas')} {
       display: flex;
-      list-style: none;
-      padding: 0;
+      flex-wrap: wrap;
+
+      @media screen and (min-width: 768px) {
+        flex-wrap: nowrap;
+      }
 
       .#{atom('btn')} {
-        flex: 1 0 auto;
+        flex: 1 0 100%;
         margin-right: 10px;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 768px) {
+          flex: 1 0 50%;
+        }
       }
     }
 
