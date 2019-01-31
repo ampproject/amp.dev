@@ -96,11 +96,11 @@ class SamplesBuilder {
       let stream = gulp.src(SAMPLE_SRC, {'read': true});
 
       // Only build samples changed since last run and if it's not a fresh build
-      // if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
-      //   stream = stream.pipe(once({
-      //     'file': CACHE_DEST,
-      //   }));
-      // }
+      if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
+        stream = stream.pipe(once({
+          'file': CACHE_DEST,
+        }));
+      }
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
