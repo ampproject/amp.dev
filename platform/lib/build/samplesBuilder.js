@@ -181,8 +181,9 @@ class SamplesBuilder {
         // Replace empty lines with leading space with just a new line
         markdown = markdown.replace(/^\s+/gm, '\n');
 
-        // Replace new lines with following space by just a new line
-        markdown = markdown.replace(/\n +/gm, '\n');
+        // Replace new lines with following space or multiple new lines
+        // by just a new line
+        markdown = markdown.replace(/(\n +|\n+)/gm, '\n');
 
         // Restore codeblocks
         /* eslint-disable guard-for-in */
