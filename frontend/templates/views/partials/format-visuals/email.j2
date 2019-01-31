@@ -11,8 +11,10 @@
   </div>
   <div class="ad-m-format-visual-code-snippet">
     {% set code_snippet = '
-<button class="false"
+<button
+  class="false"
   [class]="clicked"
+  role="button" tabindex="0"
   on="tap:AMP.setState({
     clicked: !clicked
   })">
