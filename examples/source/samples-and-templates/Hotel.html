@@ -164,7 +164,7 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
   src="https://amp-by-example-live.glitch.me/rooms" [src]="filteredRooms()" items="."
   [height]="(80 + (16*2)) * filteredRooms().length">
     <template type="amp-mustache">
-    <amp-img width="108" height="80" src="{{img}}" lightbox alt="{{name}}-{{desc}}"></amp-img>
+    <amp-img width="108" height="80" src="/static/samples/{{img}}" lightbox alt="{{name}}-{{desc}}"></amp-img>
     <div>{{name}} {{#petFriendly}}&#128062;{{/petFriendly}}</div>
     <button>book</button>
     </template>

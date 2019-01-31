@@ -27,15 +27,15 @@
     `amp-video` supports the following formats: mp4, webm, ogg together with all the formats
     supported by the HTML5 video tag including HLS.
   -->
-  <amp-video width="480" height="270" src="/video/tokyo.mp4"
-             poster="/img/tokyo.jpg"
+  <amp-video width="480" height="270" src="/static/samples/video/tokyo.mp4"
+             poster="/static/samples/img/tokyo.jpg"
              layout="responsive"
              controls>
     <div fallback>
       <p>Your browser doesn't support HTML5 video.</p>
     </div>
-    <source type="video/mp4" src="/video/tokyo.mp4">
-    <source type="video/webm" src="/video/tokyo.webm">
+    <source type="video/mp4" src="/static/samples/video/tokyo.mp4">
+    <source type="video/webm" src="/static/samples/video/tokyo.webm">
   </amp-video>
 
   <!-- ## Autoplay -->
@@ -50,8 +50,8 @@
     (e.g., mutes/unmutes, pauses/resumes, etc.), and the video is scrolled in
     or out of view, the state of the video remains as how the user left it.
   -->
-  <amp-video width="720" 
-             height="405" 
+  <amp-video width="720"
+             height="405"
              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
              poster="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
              layout="responsive"
@@ -76,7 +76,7 @@
     packager](https://github.com/google/shaka-packager).
   -->
   <amp-video width="480" height="270"
-             poster="/img/tokyo.jpg"
+             poster="/static/samples/img/tokyo.jpg"
              layout="responsive"
              controls
              autoplay>
@@ -84,7 +84,7 @@
       <p>Your browser doesn't support HTML5 video.</p>
     </div>
     <source type="application/vnd.apple.mpegurl" src="/video/tokyo.m3u8">
-    <source type="video/mp4" src="/video/tokyo-no-hls.mp4">
+    <source type="video/mp4" src="/static/samples/video/tokyo-no-hls.mp4">
   </amp-video>
 
   <!-- ## Custom media notifications -->
@@ -122,7 +122,7 @@
     See a [more advanced example](/advanced/video_rotate_to_fullscreen_with_hint/) for displaying a user hint signaling that the device
     can be rotated to enter fullscreen.
   -->
-  <amp-video width="720" height="405" 
+  <amp-video width="720" height="405"
                          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                          poster="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
                          layout="responsive"

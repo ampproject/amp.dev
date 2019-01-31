@@ -46,7 +46,7 @@ This is a sample recipe AMP article demonstrating how to express machine-readabl
       "@id": "12345",
       "image": {
         "@type": "ImageObject",
-        "url": "<%host%>/img/lamb-garlic-done.jpg",
+        "url": "/static/samples/img/lamb-garlic-done.jpg",
         "height": 1280,
         "width": 479
       },
@@ -210,8 +210,8 @@ This is a sample recipe AMP article demonstrating how to express machine-readabl
       background-position: left 16px center;
       background-repeat: no-repeat;
       background-image: -webkit-image-set(
-          url(/img/ic_menu_white_1x_web_24dp.png) 1x,
-          url(/img/ic_menu_white_2x_web_24dp.png) 2x
+          url(/static/samples/img/ic_menu_white_1x_web_24dp.png) 1x,
+          url(/static/samples/img/ic_menu_white_2x_web_24dp.png) 2x
       );
       background-color: #333;
       text-align: left;
@@ -288,7 +288,7 @@ This is a sample recipe AMP article demonstrating how to express machine-readabl
 
 
   <figure>
-    <amp-img src="/img/lamb-garlic-done.jpg" width="1280" height="479" layout="responsive" attribution="Dan Dascalescu"></amp-img>
+    <amp-img src="/static/samples/img/lamb-garlic-done.jpg" width="1280" height="479" layout="responsive" attribution="Dan Dascalescu"></amp-img>
     <figcaption>Garlic-studded roast lamb. Serve with a side of baked potatoes.</figcaption>
   </figure>
 
@@ -299,23 +299,23 @@ This is a sample recipe AMP article demonstrating how to express machine-readabl
   -->
   <amp-carousel width="1280" height="970" layout="responsive" type="slides">
     <figure>
-      <amp-img src="/img/meat-silverskin-cutting.jpg" width="401" height="542" layout="fill" attribution="Scott Phillips"></amp-img>
+      <amp-img src="/static/samples/img/meat-silverskin-cutting.jpg" width="401" height="542" layout="fill" attribution="Scott Phillips"></amp-img>
       <figcaption>Prepare the meat by washing and removing the silverskin.</figcaption>
     </figure>
     <figure>
-      <amp-img src="/img/garlic.jpg" width="1280" height="960" layout="fill" attribution="Wikipedia"></amp-img>
+      <amp-img src="/static/samples/img/garlic.jpg" width="1280" height="960" layout="fill" attribution="Wikipedia"></amp-img>
       <figcaption>Prepare the garlic.</figcaption>
     </figure>
     <figure>
-      <amp-img src="/img/lamb-with-garlic-slivers.jpg" width="1021" height="763" layout="fill" attribution="Kara / EatDrinkAdventure"></amp-img>
+      <amp-img src="/static/samples/img/lamb-with-garlic-slivers.jpg" width="1021" height="763" layout="fill" attribution="Kara / EatDrinkAdventure"></amp-img>
       <figcaption>Insert slivers of garlic into the meat; the deeper the better.</figcaption>
     </figure>
     <figure>
-      <amp-img src="/img/tomatoes-cut.jpg" width="720" height="720" attribution="CC0 - https://pixabay.com/en/chopped-tomatoes-tomato-food-red-1375892/" layout="fill"></amp-img>
+      <amp-img src="/static/samples/img/tomatoes-cut.jpg" width="720" height="720" attribution="CC0 - https://pixabay.com/en/chopped-tomatoes-tomato-food-red-1375892/" layout="fill"></amp-img>
       <figcaption>Cut the tomatoes.</figcaption>
     </figure>
     <figure>
-      <amp-img src="/img/lamb-garlic-ready-for-oven.jpg" width="1280" height="1703" attribution="Dan Dascalescu"  layout="fill"></amp-img>
+      <amp-img src="/static/samples/img/lamb-garlic-ready-for-oven.jpg" width="1280" height="1703" attribution="Dan Dascalescu"  layout="fill"></amp-img>
       <figcaption>The garlic lamb roast is ready for baking.</figcaption>
     </figure>
   </amp-carousel>
@@ -430,7 +430,7 @@ This is a sample recipe AMP article demonstrating how to express machine-readabl
   <!--
   It's a good idea to recommend related content to your readers. With `amp-list` it is possible to dynamically include personalized content into your AMPs. It's best to link to the AMP version of related content in order to keep the user in the fast AMP world. [Learn more about `amp-list`](/components/amp-list/)
   -->
-  <amp-list width="300" height="75" layout="responsive" src="/json/related_articles.json">
+  <amp-list width="300" height="75" layout="responsive" src="/static/samples/json/related_articles.json">
     <template type="amp-mustache">
       <a class="card related" href="{{url}}"><amp-img width="101" height="75" src="{{thumbnail}}"></amp-img><span>{{title}}</span></a>
     </template>

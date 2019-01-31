@@ -42,7 +42,7 @@ teaserImage: '/static/samples/img/teaser/mixing_dynamic_and_cached_data.jpg'
      <p>This is a really great product.</p>
      <amp-list height="24"
                layout="fixed-height"
-               src="/json/product.json"
+               src="/static/samples/json/product.json"
                binding="no">
        <template type="amp-mustache">
          Price: ${{price}}
@@ -55,7 +55,7 @@ teaserImage: '/static/samples/img/teaser/mixing_dynamic_and_cached_data.jpg'
   two similar calls one after the other to the same endpoint, so to better verify this behaviour, go to Application -> Service workers and click on Unregister.-->
   <amp-list height="24"
             layout="fixed-height"
-            src="/json/product.json"
+            src="/static/samples/json/product.json"
             binding="no">
     <template type="amp-mustache">
       Availability: {{availability}}

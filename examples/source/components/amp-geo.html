@@ -16,13 +16,13 @@
   <style amp-custom>
     .flag {
       min-height: 16px;
-      background: url("/img/unknown-flag.png") no-repeat;
+      background: url("/static/samples/img/unknown-flag.png") no-repeat;
     }
     body.amp-iso-country-ca .flag {
-      background: url("/img/canadian-flag.png") no-repeat;
+      background: url("/static/samples/img/canadian-flag.png") no-repeat;
     }
     body.amp-iso-country-us .flag {
-      background: url("/img/american-flag.png") no-repeat;
+      background: url("/static/samples/img/american-flag.png") no-repeat;
     }
     .football:after {
       content: 'football';
@@ -35,8 +35,8 @@
       display: none;
     }
   </style>
-  <!-- 
-    ## Setup 
+  <!--
+    ## Setup
 
    Import the `amp-geo` component.
   -->
@@ -64,7 +64,7 @@
         }
       </script>
     </amp-geo>
-  <!-- 
+  <!--
     `amp-geo` makes available a class `amp-iso-country-XX` where XX is an ISO Country Code.
     In the following example, the component determines the ISO Country Code corresponding to the user's approximate location. If this is "ca" (Canada), the page displays a maple leaf flag, otherwise the American flag.
     For testing, if you want to force the country to be Canada, you can append `#amp-geo=ca` to the URL like [https://ampbyexample.com/components/amp-geo#amp-geo=ca](https://ampbyexample.com/components/amp-geo#amp-geo=ca) and enable the `dev-channel` [here](https://cdn.ampproject.org/experiments.html).
@@ -104,7 +104,7 @@
       ...
    }
    ```
-   
+
    In this sample, we show a different message to users inside and outside the EEA based on the presence of the `amp-geo-group-eea` class in the body tag using the following css rule:
 
    ```css

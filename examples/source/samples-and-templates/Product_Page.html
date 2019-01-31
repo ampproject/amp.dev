@@ -229,8 +229,8 @@ This sample showcases how to build a product page in AMP HTML.
     }
     .info-button {
       background: -webkit-image-set(
-        url(/img/ic_info_outline_black_24dp_1x.png) 1x,
-        url(/img/ic_info_outline_black_24dp_2x.png) 2x
+        url(/static/samples/img/ic_info_outline_black_24dp_1x.png) 1x,
+        url(/static/samples/img/ic_info_outline_black_24dp_2x.png) 2x
       );
       background-repeat: no-repeat;
       width: 24px;
@@ -348,7 +348,7 @@ This sample showcases how to build a product page in AMP HTML.
       <!-- AMP doesn't support custom Javascript, but you can use CSS3 animations to enrich your page. The expanding text field when the search box is focused is implemented with CSS only.-->
       <div class="header">
         <a id="sample-menu" on="tap:drawermenu.toggle">
-          <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x"
+          <amp-img srcset="/static/samples/img/ic_menu_white_1x_web_24dp.png 1x, /static/samples/img/ic_menu_white_2x_web_24dp.png 2x"
                   width="24" height="24"
                   alt="navigation"></amp-img>
         </a>
@@ -417,7 +417,7 @@ This sample showcases how to build a product page in AMP HTML.
     <ul [hidden]="product.selectedColor != 'green'">
       <li>
         <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
-                  src="/img/green_apple_1_60x40.jpg"
+                  src="/static/samples/img/green_apple_1_60x40.jpg"
                   width="60" height="40"
                   class="selected"
                   [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
@@ -426,7 +426,7 @@ This sample showcases how to build a product page in AMP HTML.
       </li>
       <li>
         <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
-                  src="/img/green_apple_2_60x40.jpg"
+                  src="/static/samples/img/green_apple_2_60x40.jpg"
                   width="60" height="40"
                   [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
                   tabindex="1" role="button">
@@ -437,7 +437,7 @@ This sample showcases how to build a product page in AMP HTML.
     <ul hidden [hidden]="product.selectedColor != 'golden'">
       <li>
         <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
-                src="/img/product1_alt1_60x40.jpg"
+                src="/static/samples/img/product1_alt1_60x40.jpg"
                  width="60" height="40"
                  class="selected fadeIn"
                  [class]="product.selectedSlideForGolden == 0 ? 'selected fadeIn' : '' "
@@ -449,7 +449,7 @@ This sample showcases how to build a product page in AMP HTML.
     <ul hidden [hidden]="product.selectedColor != 'red'">
       <li>
         <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
-                 src="/img/red_apple_1_60x40.jpg"
+                 src="/static/samples/static/samples/img/red_apple_1_60x40.jpg"
                  width="60" height="40"
                  class="selected fadeIn"
                  [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
@@ -458,7 +458,7 @@ This sample showcases how to build a product page in AMP HTML.
       </li>
       <li>
         <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
-                 src="/img/red_apple_2_60x46.jpg"
+                 src="/static/samples/static/samples/img/red_apple_2_60x46.jpg"
                  width="60" height="40"
                  [class]="product.selectedSlideForRed == 1 ? 'selected' : '' "
                  tabindex="1" role="button">
@@ -480,12 +480,12 @@ This sample showcases how to build a product page in AMP HTML.
             on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})"
             class="fadeIn"
             [hidden]="product.selectedColor != 'green'">
-      <amp-img src="/img/green_apple_1_1024x682.jpg"
+      <amp-img src="/static/samples/img/green_apple_1_1024x682.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
       </amp-img>
-      <amp-img src="/img/green_apple_2_1024x685.jpg"
+      <amp-img src="/static/samples/img/green_apple_2_1024x685.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
@@ -501,7 +501,7 @@ This sample showcases how to build a product page in AMP HTML.
             hidden
             class="fadeIn"
             [hidden]="product.selectedColor != 'golden'">
-        <amp-img src="/img/golden_apple1_1024x682.jpg"
+        <amp-img src="/static/samples/img/golden_apple1_1024x682.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
@@ -517,12 +517,12 @@ This sample showcases how to build a product page in AMP HTML.
             hidden
             class="fadeIn"
             [hidden]="product.selectedColor != 'red'">
-        <amp-img src="/img/red_apple_1_1024x682.jpg"
+        <amp-img src="/static/samples/img/red_apple_1_1024x682.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
         </amp-img>
-        <amp-img src="/img/red_apple_2_1024x793.jpg"
+        <amp-img src="/static/samples/img/red_apple_2_1024x793.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
@@ -741,7 +741,7 @@ This sample showcases how to build a product page in AMP HTML.
               width="auto"
               height="145"
               layout="fixed-height"
-              src="/json/related_products.json"
+              src="/static/samples/json/related_products.json"
               [src]="myState.items"
               id="show-more-list">
       <template type="amp-mustache">
@@ -765,7 +765,7 @@ This sample showcases how to build a product page in AMP HTML.
     from that component as a `src`. The `amp-state` initial value is set by setting the `src` value
     to the same endpoint used by `amp-list`. We append items to the `amp-state` everytime the user click on the Show more button, see below for more info.
     -->
-    <amp-state id="myState" src="/json/related_products.json">
+    <amp-state id="myState" src="/static/samples/json/related_products.json">
     </amp-state>
     <!--
     You can show or hide a Show more button by using `amp-form` and the `submit-success` event: notice
