@@ -5,15 +5,13 @@
 {% do doc.icons.useIcon('icons/close.svg') %}
 <section class="ad--toc">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" [class]="contentmenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc contentmenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc' && categorymenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc categorymenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc'" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
-    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#contentmenu"></use></svg>
-    <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-  </label>
-  <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
-
   {% do doc.styles.addCssFile('/css/components/organisms/toc.css') %}
+
   <div class="ad-o-toc" [class]="contentmenuopen ? 'ad-o-toc contentmenuopen' : 'ad-o-toc'">
-    <p class="ad-o-toc-hl">Table of contents</p>
+    <label class="ad-o-toc-toggle" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
+      <p class="ad-o-toc-hl">Table of contents</p>
+    </label>
+    <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
     {# Unwrap TOC from useless markup and strip first level #}
     {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n', '<ul>').replace('\n</ul>\n</div>', '</ul>') %}
     {{ toc|safe }}
