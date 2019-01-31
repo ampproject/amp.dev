@@ -1,17 +1,16 @@
 {% do doc.styles.addCssFile('css/components/molecules/format-toggle.css') %}
 
-{% do doc.icons.useIcon('icons/amp-websites.svg') %}
-{% do doc.icons.useIcon('icons/amp-stories.svg') %}
-{% do doc.icons.useIcon('icons/amp-ads.svg') %}
-{% do doc.icons.useIcon('icons/amp-emails.svg') %}
-
 {% set formats = ['websites', 'stories', 'ads', 'email'] %}
+
+{% for format in formats %}
+{% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
+{% endfor %}
 
 <ul class="ad-m-format-toggle">
   {% for format in formats %}
   <li class="ad-m-format-toggle-format">
     <a class="ad-m-format-toggle-link ad-m-format-toggle-link-{{ format }}" href="?format={{ format }}"><div class="ad-a-ico">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{% if loop.index == 1 %}amp-websites{% elif loop.index == 2 %}amp-stories{% elif loop.index == 3 %}amp-ads{% elif loop.index == 4 %}amp-emails{% endif %}"></use></svg>
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
       </div>AMP<br>{{ format|capitalize }}</a>
   </li>
   {% endfor %}
