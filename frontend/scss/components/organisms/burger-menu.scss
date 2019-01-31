@@ -94,24 +94,16 @@
     flex-direction: column;
     height: 100%;
     margin: 0;
+    margin-top: 1rem;
     padding: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     /* This block defines the styles for the second level elements */
     & & {
-      margin-top: 8px;
+      margin-top: 1rem;
 
       & .#{organism('burger-menu')}-item {
-        &:before {
-          display: inline-block;
-          vertical-align: middle;
-          content: "";
-          width: 20px;
-          border-bottom: 1px solid color('alto');
-          margin-right: .5rem;
-        }
-
         &:last-child {
           margin-bottom: 0;
         }
@@ -120,7 +112,7 @@
   }
 
     &-item {
-      margin-bottom: 8px;
+      margin-bottom: 1rem;
       position: relative;
       &:last-child {
         margin-top: auto;
@@ -143,8 +135,21 @@
           & ~ ul {
             display: block;
           }
+          & + .nav-icon .#{atom('ico')} {
+            transform: rotate(-90deg);
+          }
+        }
+        & + .nav-icon .#{atom('ico')} {
+          display: inline-block;
+          transform: rotate(0);
         }
       }
-    }
 
+      .#{atom('ico')} {
+        height: 0.6em;
+        margin-bottom: 0.3em;
+        margin-left: 0.3em;
+        width: 0.6em;
+      }
+    }
 }
