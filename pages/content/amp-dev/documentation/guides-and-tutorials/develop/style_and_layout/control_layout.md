@@ -2,6 +2,11 @@
 $title: Layout & media queries
 $order: 1
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 ---
 
 
