@@ -18,6 +18,8 @@
 
 'use strict';
 
+require('module-alias/register');
+
 const signale = require('signale');
 
 const config = require('./lib/config');

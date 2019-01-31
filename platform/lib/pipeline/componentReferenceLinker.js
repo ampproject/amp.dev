@@ -69,35 +69,46 @@ class ComponentReferenceLinker {
 
   _check(doc) {
     let content = doc.contents.toString();
+    const codeExamples = content.match(/(<(amp-[^\s]+)(?:\s[^>]*)?>(.*?)<\/\2>|```html(.*?)*?```|Preview:(.*?)*?<\/amp-\w*(-\w*)*\>|\[sourcecode:html](.*?)*?\[\/sourcecode])/gsm);
 
-    const codeExamples = content.match(/```html(.*?)*?```/gsm);
-    for (let i = 0; i < codeExamples.length; i++) {
-      const codeExample = codeExamples[i];
-      content = content.replace(codeExample, this._createCodePlaceholder(codeExample));
+    if (codeExamples !== null) {
+      for (let i = 0; i < codeExamples.length; i++) {
+        const codeExample = codeExamples[i];
+        content = content.replace(codeExample, this._createCodePlaceholder(codeExample));
+      }
     }
-
 
     // Cases
     /* eslint-disable max-len */
     const cases = [
-      content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
-      content.match(/\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
-      content.match(/\[amp-\w*(-\w*)*]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
-      content.match(/\[\`amp-\w*(-\w*)*\`]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
+      // content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
+      // content.match(/\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
+      // content.match(/\[amp-\w*(-\w*)*]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
+      // content.match(/\[\`amp-\w*(-\w*)*\`]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
+      // content.match(/\[\`amp-\w*(-\w*)*\`]\(https:\/\/github.*\.md\)/gm),
+      // content.match(/\[amp-\w*(-\w*)*.*]\(.*\)/gm),
+      content.match(/\[(.*)?amp-\w*(-\w*)*.*]\(.*\)/gm),
+      content.match(/\`<amp-\w*(-\w*)*>`/gm),
       content.match(/\`amp-\w*(-\w*)*`/gm),
-      content.match(/amp-\w*(-\w*)*/gm),
+      content.match(/amp-\w*(-\w*)*./gm),
     ];
     /* eslint-enable max-len */
 
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
       for (let j = 0; j < results.length; j++) {
-        const result = results[j];
-
-        const component = result.match(/amp-\w*(-\w*)*/g)[0];
-        if (this._componentExist(component) === true) {
-          while (content.includes(result)) {
-            content = content.replace(result, this._createPlaceholder(component));
+        let result = results[j];
+        if (result.slice(-1) === '/' || result.slice(-1) === '.') {
+          continue
+        } else {
+          const component = result.match(/amp-\w*(-\w*)*/g)[0];
+          const linkDescription = result.match(/(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g)
+          let description = ((linkDescription !== null) ? linkDescription[0].replace(component, `\`${component}\``) : `\`${component}\``)
+          if (this._componentExist(component) === true) {
+            while (content.includes(result)) {
+              let placeholder = ((i === cases.length-1) ? this._createPlaceholder(component, description) + ' ' : this._createPlaceholder(component, description));
+              content = content.replace(result, placeholder);
+            }
           }
         }
       }
@@ -113,11 +124,9 @@ class ComponentReferenceLinker {
         content = content.replace(codePlaceholder, this._codePlaceholders[codePlaceholder]);
       }
     }
-
     doc.contents = Buffer.from(content);
     return doc;
   }
-
 
   _hash(str) {
     const hash = str.split('')
@@ -126,10 +135,10 @@ class ComponentReferenceLinker {
     return hash;
   }
 
-  _createPlaceholder(component) {
-    const placeholder = `<!--${this._hash(component)}-->`;
+  _createPlaceholder(component, description) {
+    const placeholder =`<!--${this._hash(description)}-->`;
     if (!this._placeholders[placeholder]) {
-      this._placeholders[placeholder] = this._componentPath(component);
+      this._placeholders[placeholder] = this._componentPath(component, description);
     }
     return placeholder;
   }
@@ -152,9 +161,6 @@ class ComponentReferenceLinker {
 
   _componentExist(component) {
     const path = COMPONENTS_SRC + '/reference/' + component + '.md';
-
-    this._log.start('Path:', path);
-
     if (fs.existsSync(path)) {
       return true;
     }
