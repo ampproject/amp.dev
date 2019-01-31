@@ -8,11 +8,11 @@ Dalam tutorial ini, Anda akan meningkatkan pemahaman tentang dasar-dasar AMP dan
 
 ## Anda akan mempelajari tentang:
 
-- Iklan Display menggunakan [amp-ad](/id/docs/reference/components/amp-ad.html)
+- Iklan Display menggunakan [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 - Video YouTube tersemat, kartu Twitter, dan elemen teks responsif
-- Pembuatan carousel dengan gambar dan kombinasi konten menggunakan [amp-carousel](/id/docs/reference/components/amp-carousel.html)
-- Pemantauan pola sederhana menggunakan [amp-analytics](/id/docs/reference/components/amp-analytics.html)
-- Penambahan navigasi situs ke halaman menggunakan [amp-sidebar](/id/docs/reference/components/amp-sidebar.html)
+- Pembuatan carousel dengan gambar dan kombinasi konten menggunakan [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
+- Pemantauan pola sederhana menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+- Penambahan navigasi situs ke halaman menggunakan [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
 - Penggunaan font khusus di AMP
 
 ## Anda akan membuat:

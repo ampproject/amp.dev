@@ -14,7 +14,7 @@ AMPHTML ads are similar to traditional HTML ads, but instead of coding them in t
 ## You will learn to:
 
 * Create a valid AMPHTML ad according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})
-* Track ad views by using the [`amp-pixel`](/docs/reference/components/amp-pixel.html) component
+* Track ad views by using the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) component
 * Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
 
 ## Prerequisites:

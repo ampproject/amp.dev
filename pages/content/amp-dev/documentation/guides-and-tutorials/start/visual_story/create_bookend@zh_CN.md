@@ -6,7 +6,7 @@ $title: 创建结束画面
 
 结束画面屏幕上的信息来自在 `<amp-story-bookend>` 标记中指定的 JSON 文件。对于我们的教程，我们已经有一个包含结束画面数据的 JSON 文件 ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json))。
 
-`<amp-story-bookend>` 标记必须是 `amp-story` 中的最后一个标记。因此，我们在末尾的 `</amp-story>` 标记前面**添加** `<amp-story-bookend></amp-story-bookend>`。在 `amp-story-bookend` 标记中，将 `src` 属性指向 `bookend.json` 文件，并设置 `layout="nodisplay"`：
+`<amp-story-bookend>` 标记必须是 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 中的最后一个标记。因此，我们在末尾的 `</amp-story>` 标记前面**添加** `<amp-story-bookend></amp-story-bookend>`。在 `amp-story-bookend` 标记中，将 `src` 属性指向 `bookend.json` 文件，并设置 `layout="nodisplay"`：
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -143,6 +143,6 @@ $title: 创建结束画面
 </tbody>
 </table>
 
-关于 bookend 组件，还有更多信息有待了解。有关详情，请参阅 [amp-story](/zh_cn/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) 参考文档。
+关于 bookend 组件，还有更多信息有待了解。有关详情，请参阅 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 参考文档。
 
 我们的故事就快完成了。我们需要先检查 AMP HTML 是否有效，然后才能发布内容。

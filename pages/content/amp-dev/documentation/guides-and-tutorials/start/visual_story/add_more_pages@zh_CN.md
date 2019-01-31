@@ -25,7 +25,7 @@ $order: 4
         <li>包含 3 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：猫咪</li>
-            <li>1 个自适应 <a href="/zh_cn/docs/reference/components/amp-img.html">amp-img</a>（<code class="filename">cat.jpg</code>，大小为 720 x 1280px）</li>
+            <li>1 个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">cat.jpg</code>，大小为 720 x 1280px）</li>
             <li>1 个 <code><q></code> 元素，用于引用以下语录：狗随招随到，猫闻声会意，但稍后才会来到您身边。--玛丽·布莱</li>
           </ul>
         </li>
@@ -45,7 +45,7 @@ $order: 4
       <ul>
         <li>包含 2 个图层：
       <ul>
-        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>（<code class="filename">dog.jpg</code>，大小为 720 x 1280px）。</li>
+        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">dog.jpg</code>，大小为 720 x 1280px）。</li>
         <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 模板，并包含 2 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：狗狗</li>
@@ -68,7 +68,7 @@ $order: 4
       <ul>
       <li>包含 3 个图层：
       <ul>
-        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="/zh_cn/docs/reference/components/amp-img.html">amp-img</a>（<code class="filename">bird.jpg</code>，大小为 720 x 1280px）。</li>
+        <li><b>第 1 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">bird.jpg</code>，大小为 720 x 1280px）。</li>
         <li><b>第 2 个图层</b>：实施 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：
           <ul>
             <li>1 个 <code><h1></code> 元素，标题为：小鸟</li>

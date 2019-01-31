@@ -211,24 +211,24 @@ AMP에서는 미디어를 표시할 때 기본 HTML의 상응하는 페이지를
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP에는 `<img>` 태그를 대체하기 위해 특별히 만들어진 웹 구성요소인 [`<amp-img>`](/ko/docs/reference/components/amp-img.html) 태그가 있습니다.
+AMP에는 `<img>` 태그를 대체하기 위해 특별히 만들어진 웹 구성요소인 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그가 있습니다.
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-`<img>` 태그를 위에 설명된 `<amp-img>` 태그로 **교체**하고 검사기를 다시 실행합니다. 다음과 같이 여러 가지 새로운 오류가 표시될 것입니다.
+`<img>` 태그를 위에 설명된 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그로 **교체**하고 검사기를 다시 실행합니다. 다음과 같이 여러 가지 새로운 오류가 표시될 것입니다.
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-`amp-img`가 다른 오류를 유발하는 이유는 무엇일까요? `amp-img`는 전통적인 HTML img 태그를 직접적으로 대체하지 않기 때문입니다. `amp-img`를 사용하려면 추가 요구사항이 있습니다.
+[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})가 다른 오류를 유발하는 이유는 무엇일까요? [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})는 전통적인 HTML img 태그를 직접적으로 대체하지 않기 때문입니다. [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})를 사용하려면 추가 요구사항이 있습니다.
 
 ### AMP 레이아웃 시스템
 
-레이아웃 오류를 통해 `amp-img`가 `container` 레이아웃 유형을 지원하지 않는다는 사실을 알았습니다. AMP 디자인에서 가장 중요한 개념 중 하나는 웹페이지를 렌더링하는 데 필요한 DOM 리플로우의 양을 줄이는 것입니다.
+레이아웃 오류를 통해 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})가 `container` 레이아웃 유형을 지원하지 않는다는 사실을 알았습니다. AMP 디자인에서 가장 중요한 개념 중 하나는 웹페이지를 렌더링하는 데 필요한 DOM 리플로우의 양을 줄이는 것입니다.
 
 DOM 리플로우를 줄이기 위해 AMP에는 페이지를 다운로드하고 렌더링하는 주기 중 페이지의 레이아웃을 가능한 한 빠르게 파악하기 위한 레이아웃 시스템이 포함되어 있습니다.
 
@@ -238,11 +238,11 @@ DOM 리플로우를 줄이기 위해 AMP에는 페이지를 다운로드하고 �
 
 AMP 레이아웃 시스템에서는 페이지에 있는 구성요소가 크기 고정, 반응형 디자인, 높이 고정 등 다양한 방식으로 배치 및 확장될 수 있습니다.
 
-여기서는 레이아웃 시스템이 `amp-img`의 레이아웃 유형을 `container` 유형으로 추정했습니다. 하지만 `container` 유형은 하위 요소가 포함되어 있는 요소에만 적용할 수 있습니다. `container` 유형은 `amp-img` 태그와 호환되지 않기 때문에 오류가 발생했습니다.
+여기서는 레이아웃 시스템이 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})의 레이아웃 유형을 `container` 유형으로 추정했습니다. 하지만 `container` 유형은 하위 요소가 포함되어 있는 요소에만 적용할 수 있습니다. `container` 유형은 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그와 호환되지 않기 때문에 오류가 발생했습니다.
 
-`container` 유형을 추정한 이유는 무엇일까요? `amp-img` 태그에 `height` 속성을 지정하지 않았기 때문입니다. HTML에서는 페이지에 있는 요소에 고정된 너비와 높이를 지정함으로써 리플로우를 줄일 수 있습니다. AMP에서는 amp-img 요소의 가로 세로 비율을 사전에 결정할 수 있도록 해당 요소의 너비와 높이를 정의해야 합니다.
+`container` 유형을 추정한 이유는 무엇일까요? [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그에 `height` 속성을 지정하지 않았기 때문입니다. HTML에서는 페이지에 있는 요소에 고정된 너비와 높이를 지정함으로써 리플로우를 줄일 수 있습니다. AMP에서는 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소의 가로 세로 비율을 사전에 결정할 수 있도록 해당 요소의 너비와 높이를 정의해야 합니다.
 
-다음과 같이 `<amg-img>` 태그에 `width` 및 `height`를 **추가**합니다.
+다음과 같이 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그에 `width` 및 `height`를 **추가**합니다.
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -250,7 +250,7 @@ AMP 레이아웃 시스템에서는 페이지에 있는 구성요소가 크기 �
 
 페이지를 새로고침하고 검사기를 확인합니다. 더 이상 오류가 표시되지 않아야 합니다.
 
-이제 AMP 문서가 유효해졌습니다. 하지만 페이지에서 이미지 위치가 어색하여 이미지가 멋져 보이지 않습니다.  `amp-img`의 높이와 너비를 지정하면 기본적으로 AMP가 사용자가 지정한 값으로 크기를 조정합니다. 하지만 AMP에서 어떤 화면이든 페이지 크기에 *반응하여* 이미지를 알맞게 늘려준다면 좋지 않을까요?
+이제 AMP 문서가 유효해졌습니다. 하지만 페이지에서 이미지 위치가 어색하여 이미지가 멋져 보이지 않습니다.  [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})의 높이와 너비를 지정하면 기본적으로 AMP가 사용자가 지정한 값으로 크기를 조정합니다. 하지만 AMP에서 어떤 화면이든 페이지 크기에 *반응하여* 이미지를 알맞게 늘려준다면 좋지 않을까요?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption='이미지가 반응하지 않습니다') }}
 

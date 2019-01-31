@@ -13,11 +13,11 @@ In this tutorial, you'll build on your understanding of AMP foundations and lear
 
 ## You’ll learn to:
 
-- Display ads by using [amp-ad](/docs/reference/components/amp-ad.html)
+- Display ads by using [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 - Embed YouTube videos, Twitter cards and responsive text elements
-- Build carousels with images and combinations of content by using [amp-carousel](/docs/reference/components/amp-carousel.html)
-- Track simple patterns with [amp-analytics](/docs/reference/components/amp-analytics.html)
-- Add site navigation to your page with [amp-sidebar](/docs/reference/components/amp-sidebar.html)
+- Build carousels with images and combinations of content by using [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
+- Track simple patterns with [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+- Add site navigation to your page with [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
 - Use custom fonts in AMP
 
 ## You'll build:

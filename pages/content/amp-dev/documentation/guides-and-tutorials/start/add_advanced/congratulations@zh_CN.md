@@ -6,13 +6,13 @@ $title: 恭喜！
 
 在本教程中，您学会了：
 
-- 如何使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad.html) 展示广告
-- 如何使用 [amp-youtube](/zh_cn/docs/reference/components/amp-youtube.html) 嵌入 YouTube 视频
-- 如何使用 [amp-twitter](/zh_cn/docs/reference/components/amp-twitter.html) 嵌入 Twitter 卡片
-- 如何使用 [amp-fit-text](/zh_cn/docs/reference/components/amp-fit-text.html) 添加自适应文本元素
-- 如何使用 [amp-carousel](/zh_cn/docs/reference/components/amp-carousel.html) 制作轮换展示内容
-- 如何使用 [amp-analytics](/zh_cn/docs/reference/components/amp-analytics.html) 跟踪简单的分析模式
-- 如何使用 [amp-img](/zh_cn/docs/reference/components/amp-img.html) 和 [amp-sidebar](/zh_cn/docs/reference/components/amp-sidebar.html) 添加网站导航元素
+- 如何使用 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 展示广告
+- 如何使用 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 嵌入 YouTube 视频
+- 如何使用 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 嵌入 Twitter 卡片
+- 如何使用 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 添加自适应文本元素
+- 如何使用 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 制作轮换展示内容
+- 如何使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 跟踪简单的分析模式
+- 如何使用 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 添加网站导航元素
 - 如何在 AMP 网页中使用自定义字体
 
 
@@ -21,7 +21,7 @@ $title: 恭喜！
 
 要想进一步提升您的 AMP 专业知识，请参阅以下资源：
 
-- [创建交互式 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}})教程：学习如何使用 amp-bind 制作交互式 AMP 网页
+- [创建交互式 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}})教程：学习如何使用 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 制作交互式 AMP 网页
 - [将 AMP 与 PWA 相结合]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md', locale=doc.locale).url.path}})：了解渐进式网页应用如何与 AMP 网页相辅相成
 - [AMP Start](https://www.ampstart.com/)：使用已预设样式的模板和组件来设置网页样式
 - [AMP By Example](https://ampbyexample.com/)：从实例和在线演示中学习相关知识
