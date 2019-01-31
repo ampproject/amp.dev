@@ -44,12 +44,6 @@ table {
     padding: 0;
     margin: 1.5em 0 2em;
   }
-
-  th {
-    padding: 20px;
-    border-bottom: 1px solid color('silver');
-  }
-
 }
 
 thead {
@@ -57,16 +51,21 @@ thead {
 
   tr {
     text-align: left;
+    
+    th {
+      padding: 20px;
+      border-bottom: 1px solid color('silver');
+    }
   }
 }
 
 tbody {
-  tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.75);
-  }
-
   tr {
     border-bottom: 1px solid color('silver');
+
+    &:nth-child(odd) {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
 
     td:nth-child(1) {
       border-right: 1px solid color('silver');
@@ -76,6 +75,15 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
+    
+    @media screen and (orientation: portrait) and (max-width: 575px) {
+      min-width: 40vw;
+      
+      &:last-child {
+        min-width: 80vw;
+      }
+    }
+
     code {
       @include txt-mono-inline;
       @include color-blue-ribbon;
