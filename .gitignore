@@ -29,7 +29,7 @@ pages/content/amp-dev/documentation/examples/*/**
 pages/content/amp-dev/documentation/components/reference/*.md
 
 # Ignore files created during build process
-platform/pages
+platform/pages*
 platform/static
 package-lock.json
 yarn.lock

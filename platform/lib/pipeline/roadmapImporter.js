@@ -2,14 +2,7 @@
 
 const fs = require('fs');
 const {Signale} = require('signale');
-// initialize Github API with custom accept headers to be able to use
-// experimental Projects and Emoji APIs
-const octokit = require('@octokit/rest')({
-  headers: {
-    accept:
-    'application/vnd.github.inertia-preview+json,application/vnd.github.symmetra-preview+json',
-  },
-});
+const Octokit = require('@octokit/rest');
 
 const gitHubImporter = require('./gitHubImporter');
 
@@ -21,7 +14,13 @@ const log = new Signale({
 });
 
 async function importRoadmap() {
-  log.start('Starting import of roadmap.');
+  log.start('Starting import of roadmap ...');
+  const octokit = new Octokit({
+    'previews': [
+      'symmetra-preview',
+      'inertia-preview',
+    ]
+  })
 
   gitHubImporter.checkCredentials();
   octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
