@@ -6,10 +6,10 @@
 {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
 {% endfor %}
 
-<ul class="ad-m-format-toggle">
+<ul class="ap-m-format-toggle">
   {% for format in formats %}
-  <li class="ad-m-format-toggle-format">
-    <a class="ad-m-format-toggle-link ad-m-format-toggle-link-{{ format }}" href="?format={{ format }}"><div class="ad-a-ico">
+  <li class="ap-m-format-toggle-format">
+    <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="?format={{ format }}"><div class="ap-a-ico">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
       </div>AMP<br>{{ format|capitalize }}</a>
   </li>

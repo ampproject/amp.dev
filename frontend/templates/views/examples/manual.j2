@@ -46,18 +46,18 @@ tags are specific for amp.dev #}
 {% endblock %}
 
 {% block main %}
-<main class="ad--main ad-t-examples-manual">
-  <div class="ad--container">
+<main class="ap--main ap-t-examples-manual">
+  <div class="ap--container">
     {% include 'views/partials/sidebar.j2' %}
 
-    <section class="ad--toc">
+    <section class="ap--toc">
       {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-      <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-toc" for="toc">Contents</label>
-      <input class="ad-a-sidebar-toggle-input" type="checkbox" name="toc" id="toc">
+      <label class="ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-toc" for="toc">Contents</label>
+      <input class="ap-a-sidebar-toggle-input" type="checkbox" name="toc" id="toc">
 
       {% do doc.styles.addCssFile('css/components/organisms/toc.css') %}
-      <div class="ad-o-toc">
-        <p class="ad-o-toc-hl">Table of contents</p>
+      <div class="ap-o-toc">
+        <p class="ap-o-toc-hl">Table of contents</p>
         <div class="toc">
           <ul>
             <li>
@@ -74,28 +74,28 @@ tags are specific for amp.dev #}
 
     {# The examples manual template does not make use of the main partial
     as it's content is rendered from the JSON loaded in doc.example #}
-    <section class="ad--content">
-      <ul class="ad--format-tags">
+    <section class="ap--content">
+      <ul class="ap--format-tags">
         {% do doc.styles.addCssFile('/css/components/atoms/format-tags.css') %}
         {% for format in doc.formats %}
-        <li class="ad--format-tag ad-a-format-tag ad-a-format-tag-{{ format }}">{{ format }}</li>
+        <li class="ap--format-tag ap-a-format-tag ap-a-format-tag-{{ format }}">{{ format }}</li>
         {% endfor %}
       </ul>
 
-      <h1 class="ad--title">{{ doc.example.document.title }}</h1>
+      <h1 class="ap--title">{{ doc.example.document.title }}</h1>
 
-      <ul class="ad--ctas">
+      <ul class="ap--ctas">
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
         {% set playground_url = podspec.base_urls.playground + podspec.base_urls.api + doc.url.path + '/source' %}
         {% if not playground_disabled %}
         <li>
           {% do doc.icons.useIcon('/icons/internal.svg') %}
-          <a href="{{ playground_url }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div><span class="ad-m-lnk-text">{{ _('Open in playground') }}</span></a>
+          <a href="{{ playground_url }}" class="ap-m-lnk ap-m-lnk-square"><div class="ap-a-ico ap-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div><span class="ap-m-lnk-text">{{ _('Open in playground') }}</span></a>
         </li>
         {% endif %}
         <li>
           {% do doc.icons.useIcon('/icons/external.svg') %}
-          <a href="{{ podspec.base_urls.repository + doc.example.filePath }}" class="ad-m-lnk ad-m-lnk-square"><div class="ad-a-ico ad-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg></div><span class="ad-m-lnk-text">{{ _('Edit on GitHub') }}</span></a>
+          <a href="{{ podspec.base_urls.repository + doc.example.filePath }}" class="ap-m-lnk ap-m-lnk-square"><div class="ap-a-ico ap-m-lnk-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg></div><span class="ap-m-lnk-text">{{ _('Edit on GitHub') }}</span></a>
         </li>
       </ul>
 
@@ -105,23 +105,23 @@ tags are specific for amp.dev #}
       {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
-      <div class="ad-o-code-preview">
+      <div class="ap-o-code-preview">
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody and not doc.example.document.hidePreview %}
         {% if story_preview %}
         {# Storys should be repeatable, therefore render reload icon #}
-        <button class="ad-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ '#' + '&' }}' + random()})">
-          <div class="ad-a-ico">
+        <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ '#' + '&' }}' + random()})">
+          <div class="ap-a-ico">
             {% do doc.icons.useIcon('icons/reload.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
           </div>
         </button>
-        <div class="ad-o-code-preview-preview-story">
+        <div class="ap-o-code-preview-preview-story">
           Story-Previews are currently disabled.
-          <!-- <amp-iframe class="ad-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe> -->
+          <!-- <amp-iframe class="ap-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe> -->
         </div>
         {% elif show_preview %}
-        <div class="ad-o-code-preview-preview">
+        <div class="ap-o-code-preview-preview">
           {{ section.preview|safe }}
         </div>
         {% endif %}
@@ -130,11 +130,11 @@ tags are specific for amp.dev #}
       </div>
 
       {% if not playground_disabled and show_preview %}
-      <a href="{{ playground_url }}/{{ section.id }}" class="ad-m-lnk">
-          <div class="ad-a-ico ad-m-lnk-icon">
+      <a href="{{ playground_url }}/{{ section.id }}" class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ad-m-lnk-text">{{ _('Open this snippet in playground' ) }}</span>
+          <span class="ap-m-lnk-text">{{ _('Open this snippet in playground' ) }}</span>
       </a>
       {% endif %}
       {% endif %}

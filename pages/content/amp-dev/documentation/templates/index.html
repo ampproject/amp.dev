@@ -38,8 +38,8 @@ teaser:
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
 
-<main class="ad--main ad-t-template">
-  <section class="ad--stage ad--container-fluid">
+<main class="ap--main ap-t-template">
+  <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
     <amp-state id="activeFilter">
@@ -50,11 +50,11 @@ teaser:
         </script>
       </amp-state>
 
-    <div class="ad-o-stage ad-o-stage-websites {{doc.stage.layout}}">
-      <div class="ad--container">
-        <div class="ad-o-stage-content">
-            <h2 class="ad-o-stage-content-subline">{{ _('How to build AMP without knowing how to code?') }}</h2>
-            <h1 class="ad-o-stage-content-headline">{{ _('Easily build user first websites with our templates' )}}</h1>
+    <div class="ap-o-stage ap-o-stage-websites {{doc.stage.layout}}">
+      <div class="ap--container">
+        <div class="ap-o-stage-content">
+            <h2 class="ap-o-stage-content-subline">{{ _('How to build AMP without knowing how to code?') }}</h2>
+            <h1 class="ap-o-stage-content-headline">{{ _('Easily build user first websites with our templates' )}}</h1>
         </div>
       </div>
     </div>
@@ -62,13 +62,13 @@ teaser:
     {# ghost frame block #}
     {% if doc.stage.devices %}
       {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
-      <div class="ad-o-ghost-frame-block">
+      <div class="ap-o-ghost-frame-block">
         {% for device in doc.stage.devices %}
           {% if device %}
             {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
             {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
             {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
-            <div class="ad-m-ghost-frame-{{device.type}} {{device.direction}}">
+            <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
               {% if device.video_src %}
               <amp-video
                 width="{{device.width}}"
@@ -101,21 +101,21 @@ teaser:
   </section>
 
   {% set categories = g.categories('/content/amp-dev/documentation/templates', locale=doc.locale) %}
-  <section class="ad--intro ad--container">
-    <div class="ad--content">
+  <section class="ap--intro ap--container">
+    <div class="ap--content">
       <p>{{ _('Get started quickly with a ready-made design. Templates designed to work with all devices - mobile, tablet and desktop.') }}</p>
     </div>
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-    <div class="ad-o-filter-bubbles-list">
-      <button class="ad-m-filter-bubble filtered"
-        [class]="activeFilter.chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+    <div class="ap-o-filter-bubbles-list">
+      <button class="ap-m-filter-bubble filtered"
+        [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
         on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
         All
       </button>
       {% for category, stories in categories %}
-      <button class="ad-m-filter-bubble"
-        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+      <button class="ap-m-filter-bubble"
+        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
         on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
         {{ category }}
       </button>
@@ -123,9 +123,9 @@ teaser:
     </div>
   </section>
 
-  <section class="ad--teaser-grid ad--container">
-    <div class="ad-o-teaser-grid">
-      <div class="ad-o-teaser-grid-list">
+  <section class="ap--teaser-grid ap--container">
+    <div class="ap-o-teaser-grid">
+      <div class="ap-o-teaser-grid-list">
         {% for category, stories in categories %}
         {% for teaser_doc in stories %}
         {% include '/views/partials/teaser.j2' %}

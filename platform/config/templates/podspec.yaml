@@ -22,10 +22,10 @@ markdown:
   extensions:
   - kind: sourcecode
     classes: True
-    class_name: ad-m-code-snippet
+    class_name: ap-m-code-snippet
   - kind: markdown.extensions.codehilite
     classes: True
-    class_name: ad-m-code-snippet
+    class_name: ap-m-code-snippet
 
 ext:
 - extensions.inline_text_assets.InlineTextAssetsExtension:

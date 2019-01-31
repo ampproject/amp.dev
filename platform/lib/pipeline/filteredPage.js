@@ -21,10 +21,10 @@ const cheerio = require('cheerio');
 const FORMATS = ['websites', 'stories', 'ads', 'email'];
 
 const FILTER_CLASSES = {
-  'websites': 'ad--websites',
-  'stories': 'ad--stories',
-  'ads': 'ad--ads',
-  'email': 'ad--email',
+  'websites': 'ap--websites',
+  'stories': 'ap--stories',
+  'ads': 'ap--ads',
+  'email': 'ap--email',
 };
 
 const FILTERED_ROUTES = [
@@ -96,7 +96,7 @@ class FilteredPage {
 
     // Find possibly empty lists and remove them for ...
     // a) component sidebar and normal sidebar
-    this._dom('.nav-list .level-2', '.ad-o-component-sidebar').each((index, navList) => {
+    this._dom('.nav-list .level-2', '.ap-o-component-sidebar').each((index, navList) => {
       navList = this._dom(navList);
 
       if (navList.children().length == 0) {
@@ -106,7 +106,7 @@ class FilteredPage {
 
     // b) normal sidebar
     // a) component sidebar and normal sidebar
-    this._dom('.nav-list .level-2', '.ad-o-sidebar').each((index, navList) => {
+    this._dom('.nav-list .level-2', '.ap-o-sidebar').each((index, navList) => {
       navList = this._dom(navList);
 
       if (navList.children().length == 0) {
@@ -134,10 +134,10 @@ class FilteredPage {
 
   _setActiveFormatToggle() {
     // Set states for all the format toggles
-    this._dom('.ad-m-format-toggle-link').addClass('inactive');
+    this._dom('.ap-m-format-toggle-link').addClass('inactive');
 
     // The current active format should make it possible to go back to unfiltered
-    const activeToggle = this._dom(`.ad-m-format-toggle-link-${this._format}`);
+    const activeToggle = this._dom(`.ap-m-format-toggle-link-${this._format}`);
     activeToggle.removeClass('inactive');
     activeToggle.addClass('active');
     activeToggle.attr('href', '?');

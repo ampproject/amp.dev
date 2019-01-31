@@ -7,21 +7,21 @@ $view: /views/custom.j2
 {% endblock %}
 
 {% block main %}
-<main class="ad--main ad-t-use-cases">
-  <section class="ad--stage ad--container-fluid">
+<main class="ap--main ap-t-use-cases">
+  <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-    <div class="ad-o-stage ad-o-stage-websites">
-      <div class="ad--container">
-        <div class="ad-o-stage-content"></div>
+    <div class="ap-o-stage ap-o-stage-websites">
+      <div class="ap--container">
+        <div class="ap-o-stage-content"></div>
       </div>
     </div>
 
-    <div class="ad-o-fragment-slider">
-        <div class="ad--container-fluid">
+    <div class="ap-o-fragment-slider">
+        <div class="ap--container-fluid">
           {% include 'views/partials/fragment-slider-controls.j2' %}
           {% include 'views/partials/fragment-slider-images.j2' %}
         </div>
-        <div class="ad--container">
+        <div class="ap--container">
           {% include 'views/partials/fragment-slider-texts.j2' %}
         </div>
     </div>

@@ -19,10 +19,10 @@ teaser:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-<main class="ad--main ad-t-component-overview">
-  <div class="ad--container">
+<main class="ap--main ap-t-component-overview">
+  <div class="ap--container">
     {% include 'views/partials/sidebar.j2' %}
-    <section class="ad--content">
+    <section class="ap--content">
 
       <amp-state id="activeFilter">
         <script type="application/json">
@@ -40,15 +40,15 @@ teaser:
       {% set collections = g.collection('/content/amp-dev/documentation/examples').collections() %}
 
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-      <div class="ad-o-filter-bubbles-list">
-        <button class="ad-m-filter-bubble filtered"
-          [class]="activeFilter.chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+      <div class="ap-o-filter-bubbles-list">
+        <button class="ap-m-filter-bubble filtered"
+          [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
           on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
           All
         </button>
         {% for collection in collections %}
-        <button class="ad-m-filter-bubble"
-          [class]="activeFilter.chosenFilter == '{{ collection.title|slug }}' && activeFilter.chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+        <button class="ap-m-filter-bubble"
+          [class]="activeFilter.chosenFilter == '{{ collection.title|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
           on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ collection.title|slug }}' } })">
           {{ collection.title }}
         </button>
@@ -56,9 +56,9 @@ teaser:
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-      <div class="ad-o-teaser-grid">
+      <div class="ap-o-teaser-grid">
         {# Hardcode to a length of 9 teasers as there will be at least that much #}
-        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-9">
+        <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
           {% for collection in collections %}
           {% for teaser_doc in collection.list_docs(locale=doc.locale) %}
           {% include '/views/partials/teaser.j2' %}

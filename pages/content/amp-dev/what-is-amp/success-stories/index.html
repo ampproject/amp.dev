@@ -5,35 +5,35 @@ $view: /views/overview/success-story-overview.j2
 $localization:
   path: /{locale}/success-stories.html
 ---
-<section class="ad--stage ad--container-fluid">
+<section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <div class="ad-o-stage ad-o-stage-websites">
-    <div class="ad--container">
-      <div class="ad-o-stage-content">
-          <h2 class="ad-o-stage-content-subline">{{ _('See what others have built') }}</h2>
-          <h1 class="ad-o-stage-content-headline-big">{{ _('Success stories' ) }}</h1>
+  <div class="ap-o-stage ap-o-stage-websites">
+    <div class="ap--container">
+      <div class="ap-o-stage-content">
+          <h2 class="ap-o-stage-content-subline">{{ _('See what others have built') }}</h2>
+          <h1 class="ap-o-stage-content-headline-big">{{ _('Success stories' ) }}</h1>
       </div>
     </div>
   </div>
 </section>
 
 {% set categories = g.categories('/content/amp-dev/what-is-amp/success-stories', locale=doc.locale) %}
-<section class="ad--intro ad--container">
-  <div class="ad--content">
+<section class="ap--intro ap--container">
+  <div class="ap--content">
     <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
   </div>
 
   {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-  <div class="ad-o-filter-bubbles-list">
+  <div class="ap-o-filter-bubbles-list">
     {% for category, stories in categories %}
-    <button class="ad-m-filter-bubble">{{ category }}</button>
+    <button class="ap-m-filter-bubble">{{ category }}</button>
     {% endfor %}
   </div>
 </section>
 
-<section class="ad--teaser-grid ad--container">
-  <div class="ad-o-teaser-grid">
-    <div class="ad-o-teaser-grid-list">
+<section class="ap--teaser-grid ap--container">
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
       {% for category, stories in categories %}
       {% for teaser_doc in stories %}
       {% include '/views/partials/teaser.j2' %}

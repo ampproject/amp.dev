@@ -1,15 +1,15 @@
-<section class="ad--sidebar">
+<section class="ap--sidebar">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
   {% do doc.icons.useIcon('icons/categorymenu.svg') %}
   {% do doc.icons.useIcon('icons/close.svg') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar contentmenuopen' :'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
+  <label class="ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar contentmenuopen' :'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#categorymenu"></use></svg>
       <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
   </label>
-  <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar" autocomplete="off">
+  <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar" autocomplete="off">
 
   {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
-  <div class="ad-o-sidebar">
+  <div class="ap-o-sidebar">
     {% include '/views/partials/format-toggle.j2' %}
 
     <div class="nav">
@@ -35,7 +35,7 @@
           {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
           {% set formats = collection.formats or [] %}
-          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
+          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
             {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
             {% if doc.pod.file_exists(collection_index) %}
             {% set collection_index = g.doc(collection_index) %}
@@ -47,7 +47,7 @@
               {% set tutorial_last_word = tutorial_title[-1] %}
 
               {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
+              <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
               
               {% else %}
                 <span>{{ _(collection.title) }}</span>
@@ -58,7 +58,7 @@
               <span>{{ _(collection.title) }}</span>
               {% if collection.tutorial %}
               {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+              <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
               {% endif %}
             </span>
             {% endif %}
@@ -66,10 +66,10 @@
             <div class="nav-icon">
               {% if iteration==1 %}
               {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-              <svg class="ad-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+              <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
               {% else %}
               {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
-              <svg class="ad-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
+              <svg class="ap-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
               {% endif %}
             </div>
             {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
@@ -80,12 +80,12 @@
           {% if not document.hidden %}
           {% set formats = document.formats or document.collection.formats or [] %}
           {% set activeDocument = true if document.url == doc.url %}
-          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ad--{{ format }} {% endfor %}">
+          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
             <a class="nav-link" href="{{ document.url.path }}">
               {{ document.title }}
               {% if document.tutorial %}
               {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <svg class="ad-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+              <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
               {% endif %}
             </a>
           </li>
