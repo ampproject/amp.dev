@@ -9,11 +9,11 @@ En este tutorial, se basará en su comprensión de las fundaciones de AMP y apre
 
 ## Aprenderás:
 
-- Mostrar anuncios mediante el uso de [amp-ad](/es/docs/reference/components/amp-ad.html)
+- Mostrar anuncios mediante el uso de [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 - Incorporar videos de YouTube, tarjetas de Twitter y elementos de texto de respuesta
-- Construir carruseles con imágenes y combinaciones de contenido mediante el uso de [amp-carousel](/es/docs/reference/components/amp-carousel.html)
-- Seguimiento de patrones simples con [amp-analytics](/es/docs/reference/components/amp-analytics.html)
-- Agregue la navegación del sitio a su página con [amp-sidebar](/es/docs/reference/components/amp-sidebar.html)
+- Construir carruseles con imágenes y combinaciones de contenido mediante el uso de [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
+- Seguimiento de patrones simples con [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+- Agregue la navegación del sitio a su página con [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
 - Utilizar fuentes personalizadas en AMP
 
 ## Construirás:
