@@ -183,7 +183,7 @@ class SamplesBuilder {
 
         // Replace new lines with following space or multiple new lines
         // by just a new line
-        markdown = markdown.replace(/(\n +|\n+)/gm, '\n');
+        markdown = markdown.replace(/(\n +|\n{2,})/gm, '\n');
 
         // Restore codeblocks
         /* eslint-disable guard-for-in */
@@ -213,7 +213,7 @@ class SamplesBuilder {
       '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
-      '$path: ' + PATH_BASE + manual.relative,
+      '$path: ' + PATH_BASE + manual.relative.toLowerCase(),
       '$category: ' + (parsedSample.document.metadata.category ?
         parsedSample.document.metadata.category :
         'None'),
