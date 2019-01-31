@@ -38,6 +38,10 @@ There are specific files for each format, to keep css rendering low.
     position: relative;
     padding: 0;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 5em;
+  }
   
   &:after {
     content: '';
