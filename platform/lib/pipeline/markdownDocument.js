@@ -16,17 +16,22 @@
 
 const writeFile = require('write');
 const yaml = require('js-yaml');
+const {Signale} = require('signale');
+const utils = require('@lib/utils');
 
-TOC_MARKER = '[TOC]';
+const TOC_MARKER = '[TOC]';
+// It doesn't make sense to give every MarkdownDocument their own logger instance
+// therefore have one shared one
+const LOG = new Signale({'scope': 'Markdown Documents',});
 
 class MarkdownDocument {
   constructor(path, contents) {
-    this._contents = this._convertSyntax(contents);
-    this._frontmatter = {
-      '$title': '',
-    };
+    this._contents = contents.trim();
 
-    this.toc = contents.indexOf(TOC_MARKER) == -1 ? false : true;
+    this._bootstrapFrontmatter();
+    this._convertSyntax();
+
+    this.toc = contents.includes(TOC_MARKER) ? false : true;
     this.path = path;
   }
 
@@ -42,6 +47,10 @@ class MarkdownDocument {
     this._toc = active;
   }
 
+  get path() {
+    return this._path;
+  }
+
   set path(path) {
     this._path = path;
   }
@@ -54,6 +63,10 @@ class MarkdownDocument {
     this._frontmatter['$order'] = order;
   }
 
+  get category() {
+    return this._frontmatter['$category@'] || this._frontmatter['$category'];
+  }
+
   set category(category) {
     this._frontmatter['$category@'] = category;
   }
@@ -62,8 +75,12 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
+  get teaser() {
+    return this._frontmatter['teaser'] || {};
+  }
+
   set teaser(teaser) {
-    this._frontmatter['teaser'] = teaser;
+    this._frontmatter['teaser'] = Object.assign(this._frontmatter['teaser'] || {}, teaser);
   }
 
   get contents() {
@@ -71,22 +88,54 @@ class MarkdownDocument {
   }
 
   set contents(contents) {
-    contents = this._convertSyntax(content);
     this._contents = contents;
+    this._convertSyntax();
   }
 
+  _bootstrapFrontmatter() {
+    // Check if the document defines its own frontmatter already
+    if (this._contents.startsWith('---\n')) {
+      const FRONTMATTER_PATTERN = /---\n.*\n---\n/ms;
+      let frontmatter = this._contents.match(FRONTMATTER_PATTERN);
+
+      if (!frontmatter) {
+        LOG.warn(`Unparseable frontmatter in ${this.path}`);
+      } else {
+        frontmatter = frontmatter[0];
+
+        // Strip out the frontmatter string from the actual content prior
+        // syntax conversion
+        this._contents = this._contents.replace(frontmatter, '');
+
+        // Strip out limiters from frontmatter string to be able to parse it
+        frontmatter = frontmatter.replace(/---/g, '');
+
+        // Parse frontmatter and use it as initial fill for the actual properties
+        try {
+          this._frontmatter = yaml.safeLoad(frontmatter);
+          return;
+        } catch(e) {
+          LOG.error(`Couldn't parse embedded frontmatter from ${this.path}`);
+        }
+      }
+    }
+
+    this._frontmatter = {
+      '$title': '',
+    };
+  }
+
+
   _convertSyntax(contents) {
-    contents = MarkdownDocument.rewriteCalloutToTip(contents);
-    contents = MarkdownDocument.rewriteCodeBlocks(contents);
+    this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
+    this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
 
     // Rewrite mustache style parts
-    contents =
-      contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
+    this._contents =
+      this._contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
 
     // Replace dividers (---) as they will break front matter
-    contents = contents.replace(/\n---\n/gm, '\n***\n');
-
-    return contents;
+    this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
   }
 
   /**
@@ -150,7 +199,9 @@ class MarkdownDocument {
     const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
 
     path = path ? path : this._path;
-    return writeFile.promise(path, frontmatter + this._contents);
+    return writeFile.promise(path, frontmatter + this._contents).then(() => {
+      LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+    });
   }
 }
 
