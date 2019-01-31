@@ -2,6 +2,8 @@
 $title: Embed & use AMP as a data source
 $order: 1
 toc: true
+formats:
+  - websites
 ---
 
 

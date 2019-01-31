@@ -4,7 +4,7 @@ $title: Configure analytics
 $order: 0
 $hidden: true
 formats:
-- ads
+  - websites
 ---
 
 ## Decide before you start

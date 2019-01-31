@@ -2,6 +2,8 @@
 $title: Preload your Progressive Web App from your AMP pages
 $order: 1
 toc: true
+formats:
+  - websites
 ---
 
 

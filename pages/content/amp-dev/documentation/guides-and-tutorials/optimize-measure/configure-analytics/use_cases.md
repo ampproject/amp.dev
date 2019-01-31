@@ -2,6 +2,8 @@
 $title: Use cases
 $order: 2
 toc: true
+formats:
+  - websites
 ---
 
 
