@@ -4,8 +4,12 @@ $title: Configure analytics
 $order: 0
 $hidden: true
 formats:
-- ads
+  - websites
 ---
+
+[tip]
+**TIP –** If you're using Google Analytics as your analytics provider, learn [how to set up basic Google Analytics for AMP](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views), and [how to link AMP and non-AMP content using Client ID](https://support.google.com/analytics/answer/7486764).
+[/tip]
 
 ## Decide before you start
 

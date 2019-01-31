@@ -2,6 +2,11 @@
 $title: Placeholders & fallbacks
 $order: 3
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 components:
   - iframe
 ---

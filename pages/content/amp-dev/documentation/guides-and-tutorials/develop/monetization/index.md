@@ -3,6 +3,8 @@ $title: Monetizing your AMP page with ads
 $order: 0
 toc: true
 $path: /documentation/guides-and-tutorials/develop/monetization/monetization.html
+formats:
+  - websites
 ---
 
 

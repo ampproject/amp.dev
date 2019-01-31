@@ -3,6 +3,8 @@ $path: /documentation/guides-and-tutorials/learn/amphtml_ads/index.html
 $title: AMPHTML ads
 $hidden: true
 toc: true
+formats:
+  - ads
 ---
 
 

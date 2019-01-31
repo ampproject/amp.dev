@@ -2,12 +2,11 @@
 $title: Include third-party content
 $order: 9
 toc: true
+formats:
+    - websites
 components:
   - iframe
   - facebook
-
-formats:
-    - websites
 ---
 
 

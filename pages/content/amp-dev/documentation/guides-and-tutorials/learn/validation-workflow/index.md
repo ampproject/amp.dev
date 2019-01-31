@@ -3,6 +3,11 @@ $title: Validate AMP pages
 $order: 0
 $path: /documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.html
 toc: true
+formats:
+  - websites
+  - email
+  - stories
+  - ads
 ---
 
 

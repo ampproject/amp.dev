@@ -12,13 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/* global ga */
-// https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/
-export const init = () => {
-  // Initialize the command queue in case analytics.js hasn't loaded yet.
-  window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args));
+const config = require('../../../platform/config/shared.json');
 
-  ga('create', 'UA-73836974-1', 'auto');
-  ga('set', 'transport', 'beacon');
-  ga('send', 'pageview');
-};
+class Analytics {
+  init() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', config.gaTrackingId, {'use_amp_client_id': true});
+  }
+}
+
+export default new Analytics();

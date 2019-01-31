@@ -2,14 +2,13 @@
 $title: Include images & video
 $order: 8
 toc: true
-components:
-  - iframe
-
 formats:
   - websites
   - stories
   - email
   - ads
+components:
+  - iframe
 ---
 
 
