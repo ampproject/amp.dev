@@ -3,6 +3,11 @@ $title: How AMP pages are cached
 $order: 0
 $path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/how-cached.html
 toc: true
+formats:
+  - websites
+  - email
+  - stories
+  - ads
 ---
 
 

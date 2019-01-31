@@ -113,7 +113,7 @@ class Preview {
 
   createPreviewSelect() {
     const select = this.doc.createElement('select');
-    select.setAttribute('class', 'caret');
+    select.setAttribute('class', 'caret-right');
     select.setAttribute('id', 'preview-size');
     select.setAttribute('label', 'select preview size');
     select.addEventListener('change', () => {

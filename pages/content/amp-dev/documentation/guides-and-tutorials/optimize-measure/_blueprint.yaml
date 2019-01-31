@@ -9,3 +9,6 @@ $order: 4
 
 formats:
   - websites
+  - email
+  - ads
+  - stories

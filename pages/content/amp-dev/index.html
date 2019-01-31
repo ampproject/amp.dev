@@ -23,29 +23,25 @@ news:
     url: 'https://amphtml.wordpress.com/2018/12/13/why-addthis-chose-to-integrate-with-amp/'
 
 format_explainer:
-  websites:
-    name: websites
+  - name: websites
     visual: views/partials/format-visuals/websites.j2
-    headline: AMP enables great experiences across many web destinations
-    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    headline: Use AMP to build great experiences for many web destinations.
+    description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
     url: /what-is-amp/websites.html
-  stories:
-    name: stories
+  - name: stories
     visual: views/partials/format-visuals/stories.j2
-    headline: AMP enables great experiences across many stories
-    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on stories. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    headline: Use AMP to create visual stories on the web.
+    description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
     url: /what-is-amp/stories.html
-  ads:
-    name: ads
+  - name: ads
     visual: views/partials/format-visuals/ads.j2
-    headline: AMP enables great experiences across many ads
-    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on ads. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    headline: Use AMP to build and serve lightning fast, safe ads to pages and stories.
+    description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
     url: /what-is-amp/ads.html
-  email:
-    name: email
+  - name: email
     visual: views/partials/format-visuals/email.j2
-    headline: AMP enables great experiences across many emails
-    description: Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on emails. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.
+    headline: Use AMP to send interactive, dynamic emails to your customers.
+    description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
     url: /what-is-amp/email.html
 
 sampler:
@@ -66,7 +62,7 @@ sampler:
     <div class="ad-o-stage ad-o-stage-websites">
       <div class="ad--container">
         <div class="ad-o-stage-content">
-            <h1 class="ad-o-stage-content-headline">AMP is a web component framework for easily creating user first websites</h1>
+            <h1 class="ad-o-stage-content-headline">AMP is a web component framework to easily create user-first websites.</h1>
         </div>
       </div>
     </div>
@@ -129,24 +125,24 @@ sampler:
         <script type="application/json">
           {
             "websites": {
-              "headline": "{{ doc.format_explainer.websites.headline }}",
-              "description": "{{ doc.format_explainer.websites.description }}",
-              "url": "{{ doc.format_explainer.websites.url }}"
+              "headline": "{{ doc.format_explainer[0].headline }}",
+              "description": "{{ doc.format_explainer[0].description }}",
+              "url": "{{ doc.format_explainer[0].url }}"
             },
             "stories": {
-              "headline": "{{ doc.format_explainer.stories.headline }}",
-              "description": "{{ doc.format_explainer.stories.description }}",
-              "url": "{{ doc.format_explainer.stories.url }}"
+              "headline": "{{ doc.format_explainer[1].headline }}",
+              "description": "{{ doc.format_explainer[1].description }}",
+              "url": "{{ doc.format_explainer[1].url }}"
             },
             "ads": {
-              "headline": "{{ doc.format_explainer.ads.headline }}",
-              "description": "{{ doc.format_explainer.ads.description }}",
-              "url": "{{ doc.format_explainer.ads.url }}"
+              "headline": "{{ doc.format_explainer[2].headline }}",
+              "description": "{{ doc.format_explainer[2].description }}",
+              "url": "{{ doc.format_explainer[2].url }}"
             },
             "email": {
-              "headline": "{{ doc.format_explainer.email.headline }}",
-              "description": "{{ doc.format_explainer.email.description }}",
-              "url": "{{ doc.format_explainer.email.url }}"
+              "headline": "{{ doc.format_explainer[3].headline }}",
+              "description": "{{ doc.format_explainer[3].description }}",
+              "url": "{{ doc.format_explainer[3].url }}"
             }
           }
         </script>
@@ -155,99 +151,71 @@ sampler:
       <amp-animation id="switchFormat" layout="nodisplay">
         <script type="application/json">
           [{
-            "duration": "1.5s",
-            "delay": "0s",
-            "fill": "forwards",
-            "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+            "duration": "0.4s",
+            "delay": "0.4s",
+            "fill": "backwards",
+            "easing": "cubic-bezier(.55,0,.1,1)",
             "iterations": "1",
-            "selector": ".ad-o-format-explainer-visual",
+            "selector": ".swift > .active",
             "keyframes": [{
               "opacity": "0",
-              "transform": "translateX(-15%)"
+              "transform": "translateX(-7.5%)"
             },
             {
               "opacity": "1",
-              "transform": "translateX(0%)"
+              "transform": "translateX(0)"
             }]
           }]
         </script>
       </amp-animation>
 
-      <div class="ad-o-format-explainer-visual">
-        <div class="ad-o-format-explainer-visual-{{ doc.format_explainer.websites.name }}"
-          [hidden]="activeFormat != '{{ doc.format_explainer.websites.name }}'">
-          {% include doc.format_explainer.websites.visual %}
+      <div class="ad-o-format-explainer-visual swift">
+        {% for format in doc.format_explainer %}
+        <div class="ad-o-format-explainer-visual-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-visual-{{ format.name }} active' : 'ad-o-format-explainer-visual-{{ format.name }}'">
+          {% include format.visual %}
         </div>
-        <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.stories.name }}"
-          [hidden]="activeFormat != '{{ doc.format_explainer.stories.name }}'">
-          {% include doc.format_explainer.stories.visual %}
-        </div>
-        <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.ads.name }}"
-          [hidden]="activeFormat != '{{ doc.format_explainer.ads.name }}'">
-          {% include doc.format_explainer.ads.visual %}
-        </div>
-        <div hidden class="ad-o-format-explainer-visual-{{ doc.format_explainer.email.name }}"
-          [hidden]="activeFormat != '{{ doc.format_explainer.email.name }}'">
-          {% include doc.format_explainer.email.visual %}
-        </div>
+        {% endfor %}
       </div>
 
-      <div class="ad-o-format-explainer-content ad-m-copy">
-        <h2 class="ad-o-format-explainer-headline" [text]="formats[activeFormat].headline">{{ doc.format_explainer.websites.headline }}</h2>
-        <p class="ad-o-format-explainer-copy" [text]="formats[activeFormat].description">{{ doc.format_explainer.websites.description }}</p>
+      <div class="ad-o-format-explainer-content swift">
+        {% for format in doc.format_explainer %}
+        <div class="ad-o-format-explainer-content-{{ format.name }} ad-m-copy {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-content-{{ format.name }} ad-m-copy active' : 'ad-o-format-explainer-content-{{ format.name }} ad-m-copy'">
+          <h2 class="ad-o-format-explainer-headline">{{ format.headline }}</h2>
+          <p class="ad-o-format-explainer-copy">{{ format.description }}</p>
+        </div>
+        {% endfor %}
       </div>
 
       <div class="ad-o-format-explainer-navigation">
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active"
-          [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.websites.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.websites.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico active"
-          [class]="activeFormat == '{{ doc.format_explainer.websites.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-websites.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites"></use></svg>
+        {% for format in doc.format_explainer %}
+        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }}'"
+          on="tap:AMP.setState({activeFormat: '{{ format.name }}'}),switchFormat.start">
+          <div class="ad-o-format-explainer-button-icon ad-a-ico {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+            {% do doc.icons.useIcon('icons/amp-' + format.name + '.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.websites.name }}</span>
+          <span class="ad-o-format-explainer-button-text">AMP {{ format.name }}</span>
         </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.stories.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.stories.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.stories.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-stories.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.stories.name }}</span>
-        </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.ads.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.ads.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.ads.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-ads.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.ads.name }}</span>
-        </button>
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.email.name }}"
-          [class]="activeFormat == '{{ doc.format_explainer.email.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.email.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ doc.format_explainer.email.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ doc.format_explainer.email.name }}'}),switchFormat.restart">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico"
-          [class]="activeFormat == '{{ doc.format_explainer.email.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
-            {% do doc.icons.useIcon('icons/amp-email.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
-          </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ doc.format_explainer.email.name }}</span>
-        </button>
+        {% endfor %}
       </div>
 
-      <div class="ad-o-format-explainer-link">
-        <a href="{{ doc.format_explainer.websites.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
-          <div class="ad-a-ico ad-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span [text]="'Learn more about AMP ' + activeFormat" class="ad-m-lnk-text">Learn more about AMP {{ doc.format_explainer.websites.name }}</span>
-        </a>
+      <div class="ad-o-format-explainer-link swift">
+        {% for format in doc.format_explainer %}
+        <div class="ad-o-format-explainer-link-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-link-{{ format.name }} active' : 'ad-o-format-explainer-link-{{ format.name }}'">
+          <a href="{{ format.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
+            <div class="ad-a-ico ad-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </div>
+            <span class="ad-m-lnk-text">Learn more about AMP {{ format.name }}</span>
+          </a>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -276,13 +244,13 @@ sampler:
           {% do doc.icons.useIcon('icons/logo.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </div>
-        <h2>compelling, smooth, and instant</h2>
+        <h2>AMP by Example</h2>
       </div>
     </div>
 
     <div class="ad--container-fluid">
       <div class="ad-m-copy">
-        <p>AMP is an open-source html framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
+        <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
       </div>
 
       <div class="ad-o-sampler">
@@ -334,7 +302,7 @@ sampler:
 
       <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-developers">
 
-        <h2>Benefits for Developers</h2>
+        <h2>Business Benefits</h2>
 
         <div class="ad-m-benefit">
           <div class="ad-m-benefit-icon">
@@ -373,7 +341,7 @@ sampler:
 
       <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-business">
 
-        <h2>Benefits for Business</h2>
+        <h2>Developer Benefits</h2>
 
         <div class="ad-m-benefit">
           <div class="ad-m-benefit-icon">
@@ -436,7 +404,7 @@ sampler:
       </div>
       <div class="ad-m-quote-quote">
         <blockquote>
-          <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combiningreporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.<p>
+          <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.<p>
         </blockquote>
         <p>Greg Manifold, Design Director of The Washington Post</p>
 
@@ -453,7 +421,7 @@ sampler:
 
   <section class="ad--case-grid">
     <div class="ad--container">
-      <h1 class="ad-o-case-grid-headline">Get inspired by AMP use cases</h1>
+      <h1 class="ad-o-case-grid-headline">Build anything with AMP.</h1>
     </div>
 
     <div class="ad--container-fluid">
@@ -476,7 +444,7 @@ sampler:
 
     <div class="ad-m-copy">
       <h2>Explore AMP<br> success stories</h2>
-      <p>Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web. By ensuring user experience comes first, developers can rest assured what they create will be compelling and engaging.</p>
+      <p>Don't take our word for it – read case studies from your industry and competitors and see how AMP gives them a competitive edge.</p>
 
       <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/index.html').url.path }}" class="ad-m-lnk ad-m-lnk-square">
         <div class="ad-a-ico ad-m-lnk-icon">
@@ -492,7 +460,7 @@ sampler:
     {% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
 
     <div class="ad--container">
-      <h2>AMP is a dynamic<br> collaborative project</h2>
+      <h2>By the community,<br>for the community</h2>
 
       <div class="ad-m-collabo-card ad-m-collabo-card-1">
         <a href="https://github.com/orgs/ampproject/people">

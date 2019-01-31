@@ -41,9 +41,12 @@ import {runtimes, EVENT_SET_RUNTIME} from './runtime/runtimes.js';
 import detectRuntime from './runtime/detector.js';
 import addSplitPaneBehavior from './split-pane/base.js';
 import formatter from './formatter/';
+import analytics from './analytics';
 
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
+
+analytics.init();
 
 // create editing/preview panels
 const editor = Editor.createEditor(document.getElementById('source'));
@@ -78,7 +81,7 @@ const runtimeChanged = (runtimeId) => {
 };
 
 const runtimeSelector = createSelector(document.getElementById('runtime-select'), {
-  classes: ['caret'],
+  classes: ['caret-right'],
   id: 'runtime',
   label: 'select runtime',
   values: runtimes.values.map((r) => {

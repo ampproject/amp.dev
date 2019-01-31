@@ -74,7 +74,8 @@ class PageMinifier {
       html = this._cleanHtml(html);
       html = this._minifyHtml(html);
     } catch (e) {
-      this._log.error(`Could not minify ${page.relative} cause of invalid markup.`);
+      this._log.error(`Could not minify ${page.path}`);
+      console.error(e);
     }
 
     page.contents = Buffer.from(html);
@@ -121,7 +122,7 @@ class PageMinifier {
     if (!this._minifiedCssCache[hash]) {
       this._log.info(`Caching CSS bundle with ${hash}`);
 
-      this._minifiedCssCache[hash] = this._cleanCss.minify(css);
+      this._minifiedCssCache[hash] = this._cleanCss.minify(css).styles;
     }
 
     return this._minifiedCssCache[hash];

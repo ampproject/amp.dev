@@ -2,6 +2,8 @@
 $title: Deep dive into AMP analytics
 $order: 1
 toc: true
+formats:
+  - websites
 ---
 
 

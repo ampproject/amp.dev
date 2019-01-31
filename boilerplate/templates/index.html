@@ -272,23 +272,19 @@
          role="button"
          on="tap:boilerplate.scrollTo(duration=200)"
          class="fab">View Code</div>
-    <amp-analytics type="googleanalytics" id="analytics">
-      <script type="application/json">
-        {
-          "vars": {
-            "account": "UA-73836974-1"
-          },
-          "triggers": {
-            "default pageview": {
-              "on": "visible",
-              "request": "pageview",
-              "vars": {
-                "title": "AMP Boilerplate Generator"
-              }
-            }
+    <amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+    {
+      "vars" : {
+        "gtag_id": "{{ gaTrackingId }}",
+        "config" : {
+          "{{ gaTrackingId }}": {
+            "groups": "default"
           }
         }
-      </script>
+      }
+    }
+    </script>
     </amp-analytics>
     <amp-install-serviceworker
       src="/sw.js"

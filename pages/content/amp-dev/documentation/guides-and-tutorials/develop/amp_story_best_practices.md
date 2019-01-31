@@ -3,11 +3,10 @@ $title: Best practices for creating an AMP story
 $order: 12
 $category: Develop
 toc: true
-components:
-    - youtube
-
 formats:
     - stories
+components:
+    - youtube
 ---
 
 

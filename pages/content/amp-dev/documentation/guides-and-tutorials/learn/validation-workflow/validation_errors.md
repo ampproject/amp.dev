@@ -2,6 +2,11 @@
 $title: AMP validation errors
 $order: 1
 toc: true
+formats:
+  - websites
+  - email
+  - stories
+  - ads
 ---
 
 <!---

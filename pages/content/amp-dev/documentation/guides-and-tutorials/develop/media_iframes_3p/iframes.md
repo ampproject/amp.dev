@@ -1,12 +1,11 @@
 ---
 $title: Include iframes
 $order: 10
+formats:
+    - websites
 components:
   - iframe
 toc: true
-
-formats:
-    - websites
 ---
 
 

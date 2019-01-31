@@ -112,5 +112,20 @@
       <p class="ad-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
     </aside>
     {% endif %}
+
+    <amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+    {
+      "vars" : {
+        "gtag_id": "{{ podspec.gaTrackingId }}",
+        "config" : {
+          "{{ podspec.gaTrackingId }}": {
+            "groups": "default"
+          }
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
   </body>
 </html>

@@ -34,6 +34,7 @@ generateOptimizedAmpFiles(generatorPage);
 
 function initConfig() {
   const config = {
+    gaTrackingId: require('../platform/config/shared.json').gaTrackingId,
     categories: require('./data/categories.json'),
     formats: require('./data/formats.json'),
     templates: templates.find('./templates/files'),
