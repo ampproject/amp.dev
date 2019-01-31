@@ -102,9 +102,7 @@
 
   <!-- ## Basic usage -->
   <!--
-  The `amp-list` content is provided by a JSON CORS endpoint, which is defined by the `src`
-  attribute. The URL's protocol must be HTTPS. The response must be a JSON object containing
-  an array property `items`, for example:
+  The `amp-list` content is provided by a JSON CORS endpoint, which is defined by the `src` attribute. The URL's protocol must be HTTPS. The response must be a JSON object containing an array property `items`, for example:
   ```json
   {
     "items": [
@@ -127,8 +125,7 @@
 
   <!-- ## Re-using an existing template -->
   <!--
-    The template can also be specified using an ID of an existing
-    `template` element.
+The template can also be specified using an ID of an existing `template` element.
   -->
   <div>
     <template type="amp-mustache" id="amp-template-id">
@@ -171,10 +168,7 @@
 
   <!-- ## Rendering `amp-state` -->
   <!--
-    This sample shows off once of `amp-list`'s most powerful features: being able to directly render objects from `amp-state`, This
-    is possible by binding the results of an `amp-bind` expression to the `src` attribute: `[src]="items"`. To make sure that the `amp-list`
-    resizes accordingly, we dynamically calculate the `height` based on the number of list elements: `[height]="items.length * 24"`.
-    The initial state (an empty list) is defined in an `amp-state` element.
+    This sample shows off once of `amp-list`'s most powerful features: being able to directly render objects from `amp-state`, This is possible by binding the results of an `amp-bind` expression to the `src` attribute: `[src]="items"`. To make sure that the `amp-list` resizes accordingly, we dynamically calculate the `height` based on the number of list elements: `[height]="items.length * 24"`. The initial state (an empty list) is defined in an `amp-state` element.
 
     [tip type="important"]
     Important: `amp-bind` expressions are **not** evaluated on page load, but only after an user interaction has taken place. Initial
@@ -261,8 +255,7 @@
 
   <!-- ## Triggering refresh -->
   <!--
-    You can use the `refresh` action to trigger a refresh on `amp-list`. Notice how we are using `reset-on-refresh` attribute
-    to ensure that the placeholder is reloaded.
+    You can use the `refresh` action to trigger a refresh on `amp-list`. Notice how we are using `reset-on-refresh` attribute to ensure that the placeholder is reloaded.
   -->
   <div>
   <button on="tap:myAmpList.refresh">Refresh list</button>

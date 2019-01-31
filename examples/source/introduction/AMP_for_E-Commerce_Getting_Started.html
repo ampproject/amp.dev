@@ -174,9 +174,9 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
    </amp-list>
 
   <!--
-    <div class="ampstart-card info">
+
     **Best Practice:** use multiple `amp-list` instances with a single shared JSON endpoint to benefit from the AMP runtimes request caching and avoid multiple requests to this JSON endpoints.
-    </div>
+
 
     Another approach is to use [amp-bind](/components/amp-bind/) with a JSON endpoint, This works well if up-to-date data needs to be available after an user interaction, for example, a hotel page displays room availability when the user selects specific dates.
   -->
@@ -204,15 +204,14 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
   </amp-list>
 
   <!--
-    <div class="ampstart-card info">
+
     **Best Practice:** make sure to configure the [AMP CORS headers](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md) when using `amp-list` for personalization.
-    </div>
 
     If you rely on logged-in users, you can use the [amp-access](/components/amp-access/) component to log users into your website directly from an AMP page. Check out [this sample](/samples_templates/comment_section/) for how to implement a login flow in AMP.
 
-    <div class="ampstart-card info">
+
     **Good to know:** `amp-access` works on your origin and on AMP Caches.
-    </div>
+
 
 
     ## Checkout flow and Payments
@@ -225,17 +224,15 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
     * Re-direct users to the checkout flow on your website. Important: make the transition as seamless as possible, in particular, don't let users enter the same information twice.
 
 
-    <div class="ampstart-card info">
     **Best Practice:** speed-up the transition from your AMPs to your normal website using [amp-install-serviceworker](/components/amp-install-serviceworker/) to pre-cache parts of your normal website.
-    </div>
 
     ## Analytics
 
     Make sure to measure how users engage with your AMP Pages using [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics). **Important:** test your analytics integration and make sure that AMP traffic is correctly attributed, in particular if the AMP is served from a different origin. For testing, you can [load your AMPs via the Google AMP Cache](https://ampbyexample.com/advanced/using_the_google_amp_cache/).
 
-    <div class="ampstart-card info">
+
     **Best Practice:** treat your AMPs as a different platform similar to like you would treat an email campaign. Make sure to properly attribute links from your AMPs back to your website.
-    </div>
+
 
   -->
 
