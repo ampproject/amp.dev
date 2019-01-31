@@ -190,7 +190,7 @@ sampler:
 
       <div class="ad-o-format-explainer-navigation">
         {% for format in doc.format_explainer %}
-        <button class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+        <button tabindex="0" role="button" class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
           [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }}'"
           on="tap:AMP.setState({activeFormat: '{{ format.name }}'}),switchFormat.start">
           <div class="ad-o-format-explainer-button-icon ad-a-ico {{ 'active' if loop.index == 1 }}"
@@ -257,7 +257,7 @@ sampler:
         <div class="ad-o-sampler-tab-bar">
 
           {% for tab in doc.sampler %}
-          <div class="ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
+          <div tabindex="0" role="button" class="ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
             [class]="activeSample == '{{ loop.index-1 }}' ? 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} active' : 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }}'"
             on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
             <span class="ad-o-sampler-tab-title">{{ tab.title }}</span>
