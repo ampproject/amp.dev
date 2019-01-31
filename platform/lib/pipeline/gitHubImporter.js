@@ -56,7 +56,7 @@ class GitHubImporter {
       'secret': CLIENT_SECRET,
     });
 
-    this._repository = this._github.repo('ampproject/amphtml');
+    this._repository = this._github.repo(config.options['remote-amphtml-repository'] || 'ampproject/amphtml');
     this._latestReleaseTag = await this._fetchLatestReleaseTag();
   }
 
