@@ -60,7 +60,7 @@
   background-color: color('white');
   pointer-events: none;
   opacity: 0;
-  
+
   transition: transform 0.2s ease, opacity 0.2s ease;
 
   @media screen and (min-width: 1024px) {
@@ -72,7 +72,7 @@
     & + .#{organism('burger-menu')} {
       pointer-events: auto;
       opacity: 1;
-      
+
       &.mainmenuopen {
         z-index: 22;
       }
@@ -109,6 +109,7 @@
           content: "";
           width: 20px;
           border-bottom: 1px solid color('alto');
+          margin-right: .5rem;
         }
 
         &:last-child {
