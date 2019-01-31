@@ -1,7 +1,8 @@
 ---
 $path: /documentation/guides-and-tutorials/start/index.html
 $title: Create an AMPHTML ad
-
+formats:
+  - ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}
