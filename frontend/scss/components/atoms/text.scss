@@ -60,6 +60,14 @@
       }
     }
   }
+  
+  figure {
+    figcaption {
+      @include txt;
+      @include txt-3;
+      margin-top: 0.3em;
+    }
+  }
 
   hr {
     height: 1px;
