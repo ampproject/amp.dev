@@ -23,6 +23,15 @@ teaser:
   <div class="ad--container">
     {% include 'views/partials/sidebar.j2' %}
     <section class="ad--content">
+
+      <amp-state id="activeFilter">
+        <script type="application/json">
+          {
+            "chosenFilter": "none"
+          }
+        </script>
+      </amp-state>
+
       <h1>Learn AMP by example</h1>
 
       <p>A hands-on introduction to Accelerated Mobile Pages (AMP) focusing on code and live samples. Learn how to create AMP pages and see examples for all AMP components.</p>
@@ -33,14 +42,14 @@ teaser:
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
       <div class="ad-o-filter-bubbles-list">
         <button class="ad-m-filter-bubble filtered"
-          [class]="chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
-          on="tap:AMP.setState({ chosenFilter: 'none' })">
+          [class]="activeFilter.chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+          on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
           All
         </button>
         {% for collection in collections %}
         <button class="ad-m-filter-bubble"
-          [class]="chosenFilter == '{{ collection.title|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
-          on="tap:AMP.setState({ chosenFilter: '{{ collection.title|slug }}' })">
+          [class]="activeFilter.chosenFilter == '{{ collection.title|slug }}' && activeFilter.chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ collection.title|slug }}' } })">
           {{ collection.title }}
         </button>
         {% endfor %}

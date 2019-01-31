@@ -42,6 +42,14 @@ teaser:
   <section class="ad--stage ad--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
+    <amp-state id="activeFilter">
+        <script type="application/json">
+          {
+            "chosenFilter": "none"
+          }
+        </script>
+      </amp-state>
+
     <div class="ad-o-stage ad-o-stage-websites {{doc.stage.layout}}">
       <div class="ad--container">
         <div class="ad-o-stage-content">
@@ -101,14 +109,14 @@ teaser:
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ad-o-filter-bubbles-list">
       <button class="ad-m-filter-bubble filtered"
-        [class]="chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
-        on="tap:AMP.setState({ chosenFilter: 'none' })">
+        [class]="activeFilter.chosenFilter == 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+        on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
         All
       </button>
       {% for category, stories in categories %}
       <button class="ad-m-filter-bubble"
-        [class]="chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
-        on="tap:AMP.setState({ chosenFilter: '{{ category|slug }}' })">
+        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ad-m-filter-bubble filtered' : 'ad-m-filter-bubble'"
+        on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
         {{ category }}
       </button>
       {% endfor %}

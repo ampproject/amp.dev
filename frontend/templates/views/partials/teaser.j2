@@ -49,7 +49,7 @@
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-template.css') %}
 {% set teaser = teaser_doc.teaser or {} %}
 {% set square = (teaser.image.width / teaser.image.height == 1) %}
-<div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser_doc.formats[0] }}{{ ' ad-m-teaser-square' if square }}" [hidden]="chosenFilter != 'none' && chosenFilter != '{{ teaser_doc.category|slug }}'" >
+<div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser_doc.formats[0] }}{{ ' ad-m-teaser-square' if square }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
   <a href="{{ teaser_doc.teaser.download_url }}">
     {% if teaser_doc.formats %}
     {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
@@ -96,7 +96,7 @@
 {% elif teaser_doc.view == '/views/examples/manual.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
-<div class="ad-m-teaser ad-m-teaser-example" [hidden]="chosenFilter != 'none' && chosenFilter != '{{ teaser_doc.collection.title|slug }}'">
+<div class="ad-m-teaser ad-m-teaser-example" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.collection.title|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ad-m-teaser-info-trigger">
     <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used
