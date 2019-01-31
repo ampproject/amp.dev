@@ -1,5 +1,7 @@
 ---
 $title: Convert HTML to AMP
+formats:
+  - websites
 $titles:
   teaser: Convert HTML to AMP
 $order: 0

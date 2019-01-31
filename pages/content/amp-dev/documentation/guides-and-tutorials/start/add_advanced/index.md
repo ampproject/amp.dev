@@ -3,6 +3,8 @@ $title: Add advanced AMP features
 $order: 0
 $path: /documentation/guides-and-tutorials/start/add_advanced/add_advanced.html
 $hidden: true
+formats:
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}

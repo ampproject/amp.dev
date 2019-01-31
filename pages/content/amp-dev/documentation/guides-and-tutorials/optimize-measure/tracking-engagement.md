@@ -1,5 +1,5 @@
 ---
-$title: How to configure Google Analytics for your AMP pages
+$title: How to configure basic analytics for your AMP pages
 $order: 100
 tutorial: true
 formats:
@@ -8,7 +8,14 @@ formats:
     - ads
     - email
 ---
+
 Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
+
+[tip]
+**TIP –** If you're using Google Analytics as your analytics provider, learn [how to set up basic Google Analytics for AMP](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views), and [how to link AMP and non-AMP content using Client ID](https://support.google.com/analytics/answer/7486764).
+[/tip]
+
+## For context: Analytics on non-AMP pages
 
 The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [amp-analytics](/docs/reference/components/amp-analytics.html) JSON format but first, let's look at the traditional approach:
 
@@ -26,11 +33,15 @@ ga('send', 'pageview');
 
 This JavaScript is quite simple; it sends a notification to track the pageview event.
 
+## Step 1: Include amp-analytics script
+
 To replicate this functionality in AMP, we must first **include** the [amp-analytics](/docs/reference/components/amp-analytics.html) component library in our document’s `<head>`:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
+
+## Step 2: Add configuration code
 
 Then, let's **add** the `amp-analytics` component to the end of the `body` of the document:
 
@@ -60,6 +71,8 @@ Just as with the JavaScript example at the top of this page, this `amp-analytics
 To specify this, we've set the `type` to `googleanalytics` and then in the JSON we've created a trigger we've called "default pageview".  This trigger will fire when the page is visible (due to the `"on": "visible"`) and when it fires we'll send a `pageview` analytics request to Google Analytics with the `vars` we have specified.
 
 The JSON used to configure `amp-analytics` is a very flexible format for describing what analytics data to send and when to send it.  The [amp-analytics Specifying configuration data](/docs/reference/components/amp-analytics.html#specifying-configuration-data) has complete details on the format.
+
+## Step 3: Adding more triggers
 
 Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
 

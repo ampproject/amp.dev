@@ -2,6 +2,11 @@
 $title: Create responsive AMP pages
 $order: 5
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 components:
   - iframe
   - youtube
