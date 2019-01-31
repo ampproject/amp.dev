@@ -34,82 +34,82 @@ stories-home
 
 //64px TODO: Rename
 @mixin hl-xxlrg {
-  font-size: 2.125em;
+  font-size: 2.125rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 2.125em;
+    font-size: 2.125rem;
   }
 
   @media screen and (min-width: 1024px) {
-    font-size: 4.5em;
+    font-size: 4.5rem;
   }
 }
 
 @mixin hl-xlrg {
-  font-size: 2.125em;
+  font-size: 2.125rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 2.125em;
+    font-size: 2.125rem;
   }
 
   @media screen and (min-width: 1024px) {
-    font-size: 4em;
+    font-size: 4rem;
   }
 }
 
 @mixin hl-stage {
-  font-size: 2.25em;
+  font-size: 2.25rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 3.25em;
+    font-size: 3.25rem;
   }
 }
 
 // 56px TODO: Rename
 @mixin hl-lrg {
-  font-size: 2.5em;
+  font-size: 2.5rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 3.5em;
+    font-size: 3.5rem;
   }
 }
 
 @mixin hl-h1 {
-  font-size: 2.125em;
+  font-size: 2.125rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 2.625em;
+    font-size: 2.625rem;
   }
 }
 
 @mixin hl-h2 {
-  font-size: 1.75em;
+  font-size: 1.75rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
 
 @mixin hl-h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 1.75em;
+    font-size: 1.75rem;
   }
 }
 
 @mixin hl-h4 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 1.375em;
+    font-size: 1.375rem;
   }
 }
 
 @mixin hl-h5 {
-  font-size: 1.125em;
+  font-size: 1.125rem;
 }
 
 @mixin hl-h6 {
-  font-size: 1em;
+  font-size: 1rem;
 }
