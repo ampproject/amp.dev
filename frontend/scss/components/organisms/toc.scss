@@ -7,8 +7,7 @@
 
 .#{utility('toc')} {
   width: 100%;
-  background-color: color('white');
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+  
 
   @media screen and (min-width: 1024px) {
     background: none;
@@ -23,6 +22,9 @@
     width: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    background-color: color('white');
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
     padding: 15px 15px 15px 15px;
     transition: 0.4s ease;
 
