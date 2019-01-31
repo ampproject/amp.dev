@@ -76,6 +76,8 @@ class Config {
                 + `  port: ${this.hosts.pages.port}\n`
                 + `  scheme: ${this.hosts.pages.scheme}\n`
                 + '\n'
+                + `gaTrackingId: ${this.shared.gaTrackingId}\n`
+                + '\n'
                 + 'base_urls:\n'
                 + `  repository: ${this.shared.baseUrls.repository}\n`
                 + `  playground: ${this.shared.baseUrls.playground}\n`
