@@ -56,7 +56,7 @@ class GitHubImporter {
       'secret': CLIENT_SECRET,
     });
 
-    this._repository = this._github.repo('ampproject/amphtml');
+    this._repository = this._github.repo(config.options['remote-amphtml-repository'] || 'ampproject/amphtml');
     this._latestReleaseTag = await this._fetchLatestReleaseTag();
   }
 
@@ -110,16 +110,14 @@ class GitHubImporter {
         let contents = new Buffer(data.content || data, 'base64');
         contents = contents.toString();
 
-        const relativePath = filePath.substr(0, filePath.lastIndexOf('/'));
-
-        resolve(new Document(relativePath, contents));
+        resolve(new Document(filePath, contents));
       }).bind(this);
 
       if (LOCAL_AMPHTML_REPOSITORY) {
-        this._log.info(`Reading ${filePath} from local disk ...`);
+        this._log.await(`Reading ${filePath} from local disk ...`);
         fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, filePath), process);
       } else {
-        this._log.info(`Downloading ${filePath} from remote ...`);
+        this._log.await(`Downloading ${filePath} from remote ...`);
         this._repository.contents(filePath, this._latestReleaseTag, process);
       }
     });
