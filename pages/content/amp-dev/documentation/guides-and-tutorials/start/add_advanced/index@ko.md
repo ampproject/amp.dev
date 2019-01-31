@@ -9,11 +9,11 @@ $title: 고급 AMP 기능 추가
 
 ## 이런 것들을 배웁니다:
 
-- [amp-ad](/ko/docs/reference/components/amp-ad.html)를 사용하여 광고 표시
+- [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})를 사용하여 광고 표시
 - 유튜브 동영상, 트위터 카드, 반응적인 텍스트 요소 포함
-- [amp-carousel](/ko/docs/reference/components/amp-carousel.html)을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
-- [amp-analytics](/ko/docs/reference/components/amp-analytics.html)로 단순한 패턴들 추적
-- [amp-sidebar](/ko/docs/reference/components/amp-sidebar.html)를 사용하여 사이트 탐색 기능 추가
+- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
+- [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})로 단순한 패턴들 추적
+- [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})를 사용하여 사이트 탐색 기능 추가
 - AMP에서 사용자 정의 글꼴을 사용
 
 ## 다음을 구축합니다:

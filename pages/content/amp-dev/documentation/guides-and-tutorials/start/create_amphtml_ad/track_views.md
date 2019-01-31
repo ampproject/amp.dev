@@ -3,7 +3,7 @@ $title: Track ad views
 $order: 2
 ---
 
-Within AMPHTML ads, you can track metrics by using the [`amp-pixel`](/docs/reference/components/amp-pixel.html) or [`amp-analytics`](/docs/reference/components/amp-analytics.html) components.  In our basic sample, we'll add the ability to track pageviews with the `amp-pixel` component and point to a URL that logs the pageviews (in this case, a fictious URL):
+Within AMPHTML ads, you can track metrics by using the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) or [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) components.  In our basic sample, we'll add the ability to track pageviews with the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) component and point to a URL that logs the pageviews (in this case, a fictious URL):
 
 ```html hl_lines="7"
 <body>

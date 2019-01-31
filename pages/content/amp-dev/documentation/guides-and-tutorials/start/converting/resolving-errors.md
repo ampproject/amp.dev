@@ -212,24 +212,24 @@ AMP doesn't support the default HTML counterparts to displaying media, which exp
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP has a web component specifically designed to replace the `<img>` tag, it's the [`<amp-img>`](/docs/reference/components/amp-img.html) tag:
+AMP has a web component specifically designed to replace the `<img>` tag, it's the [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag:
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Replace** the `<img>` tag with the above `<amp-img>` tag and run the validator again. You should receive several new errors:
+**Replace** the `<img>` tag with the above [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag and run the validator again. You should receive several new errors:
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-Why did `amp-img` trigger another error? Because `amp-img` is not a direct substitute of the traditional HTML img tag. There are additional requirements when using `amp-img`.
+Why did [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) trigger another error? Because [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) is not a direct substitute of the traditional HTML img tag. There are additional requirements when using [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ### AMP layout system
 
-The layout error is telling us that `amp-img` does not support the `container` layout type. One of the most important concepts in AMP’s design is its focus on reducing the amount of DOM reflow required to render its web pages.
+The layout error is telling us that [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) does not support the `container` layout type. One of the most important concepts in AMP’s design is its focus on reducing the amount of DOM reflow required to render its web pages.
 
 To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is known as early as possible in the lifecycle of downloading and rendering the page.
 
@@ -239,11 +239,11 @@ The image below compares how an HTML page is often laid out compared to the appr
 
 The AMP layout system allows for elements on a page to be positioned and scaled in a variety of ways -- fixed dimensions, responsive design, fixed height and more.
 
-In the case of our article, the layout system inferred the layout type for the `amp-img` as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the `amp-img` tag, which is the reason for this error.
+In the case of our article, the layout system inferred the layout type for the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag, which is the reason for this error.
 
-Why was the `container` type inferred? Because we did not specify a `height` attribute for the `amp-img` tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for amp-img elements so that AMP can pre-determine the aspect ratio of the element.
+Why was the `container` type inferred? Because we did not specify a `height` attribute for the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements so that AMP can pre-determine the aspect ratio of the element.
 
-**Add** the `width` and `height` to your `<amg-img>` tag as follows:
+**Add** the `width` and `height` to your [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag as follows:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -251,7 +251,7 @@ Why was the `container` type inferred? Because we did not specify a `height` att
 
 Refresh the page and check the validator; you should no longer see any errors!
 
-You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page.  By default when you specify the height and width for an `amp-img` AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to *responsively* stretch and fit the page no matter the screen size?
+You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page.  By default when you specify the height and width for an [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to *responsively* stretch and fit the page no matter the screen size?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 

@@ -6,7 +6,7 @@ Setelah menambahkan semua halaman, sekarang mari kita lihat layar terakhir artik
 
 Informasi pada layar bookend berasal dari file JSON yang ditetapkan dalam tag `<amp-story-bookend>`. Untuk tutorial ini, kita telah memiliki file JSON ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) yang memuat data bookend.
 
-Tag `<amp-story-bookend>` harus menjadi tag terakhir dalam `amp-story`. Jadi, mari kita **tambahkan** `<amp-story-bookend></amp-story-bookend>` tepat sebelum tag `</amp-story>` penutup.  Pada tag `amp-story-bookend`, arahkan atribut `src` ke file `bookend.json` dan tetapkan `layout="nodisplay"`:
+Tag `<amp-story-bookend>` harus menjadi tag terakhir dalam [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). Jadi, mari kita **tambahkan** `<amp-story-bookend></amp-story-bookend>` tepat sebelum tag `</amp-story>` penutup.  Pada tag `amp-story-bookend`, arahkan atribut `src` ke file `bookend.json` dan tetapkan `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -143,6 +143,6 @@ Ada berbagai komponen yang dapat Anda gunakan untuk menampilkan link dan konten 
 </tbody>
 </table>
 
-Masih ada lagi yang bisa dipelajari tentang komponen bookend. Untuk informasi selengkapnya, lihat dokumen referensi [amp-story](/id/docs/reference/components/amp-story.html#bookend:-amp-story-bookend).
+Masih ada lagi yang bisa dipelajari tentang komponen bookend. Untuk informasi selengkapnya, lihat dokumen referensi [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 Artikel kita hampir jadi.  Sebelum kita memublikasikannya, mari pastikan bahwa HTML AMP kita valid.

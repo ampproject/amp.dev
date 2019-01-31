@@ -69,10 +69,10 @@ There are specific files for each format, to keep css rendering low.
 
   &-bottom-image {
     position: relative;
-    grid-column: 1 / 4;
+    grid-column: 2 / 3;
     grid-row: 1 / 4;
-    max-width: 8.85em;
-    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.15);
+    max-width: 9em;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
 
     @media screen and (min-width: 768px) {
       max-width: 100%;
@@ -81,11 +81,12 @@ There are specific files for each format, to keep css rendering low.
 
   &-top-image {
     position: relative;
-    grid-column: 2 / 3;
+    grid-column: 1 / 4;
     grid-row: 2 / 3;
-    max-width: 7.5em;
+    max-width: 11em;
     @include component-frame;
-    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 30px 90px 60px -40px rgba(0, 0, 0, 0.5);
+    animation: 10s ease-in-out infinite bounce -4s;
 
     @media screen and (min-width: 768px) {
       max-width: 100%;
@@ -95,26 +96,24 @@ There are specific files for each format, to keep css rendering low.
   &-code-snippet {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    width: 17em;
-    margin-top: auto;
+    width: auto;
+    margin: auto auto 0;
     font-size: 10px;
-    filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
     transform: translate(75%, -4em);
     
     @media screen and (min-width: 768px) {
-      width: 100%;
-      font-size: inherit;
-      transform: translate(50%, -50px);
+      font-size: 1.25vw;
+      transform: translate(50%, -75px);
     }
     
-    @media screen and (min-width: 1024px) {
-      width: 60%;
-      transform: translate(100%, -100px);
+    @media screen and (min-width: 1280px) {
+      font-size: inherit;
     }
     
     .#{molecule('code-snippet')} {
       margin: 0;
-      animation: 10s ease-in-out infinite bounce -2s;
+      box-shadow: 15px 30px 45px -5px rgba(0, 0, 0, 0.25);
+      animation: 10s ease-in-out infinite bounce;
     }
 
     &-highlight:before {
@@ -125,7 +124,7 @@ There are specific files for each format, to keep css rendering low.
 }
 
 @keyframes bounce {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(10px, 20px); }
-  100% { transform: translate(0, 0); }
+  0% { transform: translate(-1.5%, -3%); }
+  50% { transform: translate(1.5%, 3%); }
+  100% { transform: translate(-1.5%, -3%); }
 }

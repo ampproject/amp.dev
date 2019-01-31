@@ -12,5 +12,5 @@ To demonstrate what additional markup could look like, here’s the code require
 [/sourcecode]
 
 [tip type="read-on"]
-**READ ON –** To learn why we’re replacing tags like `<img>` with `<amp-img>`, and how many are available, visit [Include Images & Video]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}).
+**READ ON –** To learn why we’re replacing tags like `<img>` with [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), and how many are available, visit [Include Images & Video]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}).
 [/tip]

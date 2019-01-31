@@ -29,6 +29,7 @@
       grid-row: 1 / 5;
       max-width: 8.125em;
       transform: translate3d(0%, 3%, 0) scale(0.9);
+      animation: none;
       
       @media screen and (min-width: 768px) {
         max-width: 100%;
@@ -40,6 +41,7 @@
       grid-row: 2 / 6;
       max-width: 5.625em;
       @include component-frame-websites;
+      box-shadow: 20px 40px 60px -5px rgba(0, 0, 0,0.25);
       animation: 10s ease-in-out 3.5s infinite both slide;
       
       @media screen and (min-width: 768px) {

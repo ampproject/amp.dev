@@ -56,15 +56,13 @@
     }
   }
 
-  .#{molecule('format-visual-websites')},
-  .#{molecule('format-visual-stories')},
-  .#{molecule('format-visual-ads')},
-  .#{molecule('format-visual-email')} {
-    grid-column: 9 / -1;
+  .#{molecule('format-visual')} {
+    grid-column: 11 / -1;
     position: absolute;
     left: 50%;
     top: 0;
     margin-left: -30%;
+    margin-bottom: 5em;
 
     @media screen and (min-width: 768px) {
       position: static;
