@@ -76,10 +76,10 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
-    white-space: nowrap;
     code {
       @include txt-mono-inline;
       @include color-blue-ribbon;
+      white-space: nowrap;
     }
   }
 }
