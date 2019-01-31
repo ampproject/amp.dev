@@ -47,6 +47,20 @@
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
+  
+  .#{utility('benefits--list')} {
+    @media screen and (min-width: 1024px){
+      display: flex;
+    }
+    
+    .#{molecule('benefit')} {
+      margin: 20px 0;
+
+      @media screen and (min-width: 768px){
+        margin-right: 40px;
+      }
+    }
+  }
 
   section {
     &.#{utility('content')},
