@@ -74,4 +74,9 @@ The page with all AMP tools.
       border-radius: 100px;
     }
   }
+
+
+  .#{molecule('code-snippet')} {
+    margin-bottom: 0;
+  }
 }

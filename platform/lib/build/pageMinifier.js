@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
+/* eslint-disable no-invalid-this */
+'use strict';
+
 const {Signale} = require('signale');
 const gulp = require('gulp');
 const minifyHtml = require('html-minifier').minify;
 const through = require('through2');
-const CleanCSS = require('clean-css')
 const path = require('path');
+const CleanCSS = require('clean-css');
 const crypto = require('crypto');
-
-const PAGES_DEST = '../platform/pages';
 
 class PageMinifier {
   constructor() {
@@ -34,11 +35,11 @@ class PageMinifier {
     // An instance of CleanCSS
     this._cleanCss = new CleanCSS({
       2: {
-        'all': true
+        'all': true,
       },
     });
     // Holds CSS by hash that has already been minified
-    this._minifiedCssCache = {}
+    this._minifiedCssCache = {};
   }
 
   /**
@@ -48,16 +49,16 @@ class PageMinifier {
    */
   start(path) {
     // Ugly but needed to keep scope for .pipe
-    let scope = this;
+    const scope = this;
 
     return gulp.src(`${path}/**/*.html`, {'base': './'})
-           .pipe(through.obj(function(page, encoding, callback) {
-             scope._log.await(`Minifying ${page.relative} ...`);
-             this.push(scope._minifyPage(page));
+        .pipe(through.obj(function(page, encoding, callback) {
+          scope._log.await(`Minifying ${page.relative} ...`);
+          this.push(scope._minifyPage(page));
 
-             callback();
-           }))
-           .pipe(gulp.dest('./'));
+          callback();
+        }))
+        .pipe(gulp.dest('./'));
   }
 
   /**
@@ -72,7 +73,7 @@ class PageMinifier {
     try {
       html = this._cleanHtml(html);
       html = this._minifyHtml(html);
-    } catch(e) {
+    } catch (e) {
       this._log.error(`Could not minify ${page.relative} cause of invalid markup.`);
     }
 
@@ -135,5 +136,5 @@ if (!module.parent) {
 }
 
 module.exports = {
-  'pageMinifier': new PageMinifier()
+  'pageMinifier': new PageMinifier(),
 };

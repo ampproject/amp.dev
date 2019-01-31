@@ -82,7 +82,7 @@ class ComponentReferenceImporter extends GitHubImporter {
     // If the extraction of an excerpt was successful write it to the teaser
     if (excerpt) {
       // Strip out all possible HTML tags
-      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, "");
+      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
       // Unwrap back ticks
       excerpt = excerpt.replace(/`(.+)`/g, '$1');
       // And unwrap possible markdown links

@@ -19,22 +19,30 @@
 const path = require('path');
 const express = require('express');
 
-const SOURCE_DEST = path.join(__dirname, '../../../dist/sampleSources');
-const SOURCE_DEST_BASE = '/sampleSources';
+const utils = require('@lib/utils');
+
 const SAMPLE_MANUALS_ROUTE = '/documentation/examples';
+const SOURCES_DEST = utils.project.absolute('/dist/examples/sources');
+const PREVIEWS_DEST = utils.project.absolute('/dist/examples/previews');
 
 // eslint-disable-next-line new-cap
-const sampleSources = express.Router();
+const examples = express.Router();
 
-sampleSources.use(`${SAMPLE_MANUALS_ROUTE}/*/source(/)?:sectionId?`, (request, response, next) => {
+examples.use(`${SAMPLE_MANUALS_ROUTE}/*/source(/)?:sectionId?`, (request, response, next) => {
   // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
-  request.url = `${SOURCE_DEST_BASE}/${request.params[0]}`;
+  request.url = `//${request.params[0]}`;
   // If a specific section is requested rewrite the URL to that document
   if (request.params.sectionId) {
     request.url = request.url.replace('.html', `-${request.params.sectionId}.html`);
   }
 
   next();
-}, express.static(SOURCE_DEST));
+}, express.static(SOURCES_DEST));
 
-module.exports = sampleSources;
+examples.use(`${SAMPLE_MANUALS_ROUTE}/*/preview`, (request, response, next) => {
+  // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
+  request.url = `//${request.params[0]}`;
+  next();
+}, express.static(PREVIEWS_DEST));
+
+module.exports = examples;

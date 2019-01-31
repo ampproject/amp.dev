@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+require('module-alias/register');
 
 const {Signale} = require('signale');
 const gulp = require('gulp');
@@ -21,10 +22,13 @@ const abe = require('amp-by-example');
 const through = require('through2');
 const del = require('del');
 const path = require('path');
+const fs = require('fs');
 const crypto = require('crypto');
 
-const MarkdownDocument = require('./markdownDocument.js');
-const config = require('../config.js');
+const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
+const utils = require('@lib/utils');
+const config = require('@lib/config.js');
+const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 
 // Where to import the samples from
 const SAMPLE_SRC = path.join(__dirname, '../../../examples/source/**/*.html');
@@ -35,13 +39,20 @@ const MANUAL_DEST = path.join(__dirname, `../../../pages/${POD_PATH}`);
 // What Grow template to use to render the sample's manual
 const MANUAL_TEMPLATE = '/views/examples/manual.j2';
 // What Grow template to use to render the preview
-const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
+const PREVIEW_TEMPLATES = {
+  'websites': utils.project.absolute('frontend/hbs/preview-websites.hbs'),
+  'stories': utils.project.absolute('frontend/hbs/preview-stories.hbs'),
+  'ads': utils.project.absolute('frontend/hbs/preview-ads.hbs'),
+  'email': utils.project.absolute('frontend/hbs/preview-email.hbs'),
+};
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples/';
 // Path the all source files are written to, to vend them via express
-const SOURCE_DEST = path.join(__dirname, '../../../dist/sampleSources');
+const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
 // Path to store the cache in
-const CACHE_DEST = path.join(__dirname, '../../../.cache/samples.json');
+const CACHE_DEST = path.join(__dirname, '../../../.cache/examples.json');
+// Where to store the samples inside the Grow pod in
+const PREVIEW_DEST = path.join(__dirname, `../../../dist/examples/previews`);
 
 class SamplesBuilder {
   constructor() {
@@ -49,6 +60,13 @@ class SamplesBuilder {
       'interactive': true,
       'scope': 'Samples builder',
     });
+
+    // Preload preview templates
+    this._previewTemplates = {};
+    /* eslint-disable guard-for-in */
+    for (let format of Object.keys(PREVIEW_TEMPLATES)) {
+      this._previewTemplates[format] = fs.readFileSync(PREVIEW_TEMPLATES[format], 'utf-8');
+    }
   }
 
   async build(watch) {
@@ -61,6 +79,7 @@ class SamplesBuilder {
         `${MANUAL_DEST}/**/*.html`,
         `!${MANUAL_DEST}/index.html`,
         `${SOURCE_DEST}`,
+        `${PREVIEW_DEST}`,
         CACHE_DEST,
       ], {
         'force': true,
@@ -77,11 +96,11 @@ class SamplesBuilder {
       let stream = gulp.src(SAMPLE_SRC, {'read': true});
 
       // Only build samples changed since last run and if it's not a fresh build
-      if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
-        stream = stream.pipe(once({
-          'file': CACHE_DEST,
-        }));
-      }
+      // if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
+      //   stream = stream.pipe(once({
+      //     'file': CACHE_DEST,
+      //   }));
+      // }
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
@@ -91,6 +110,7 @@ class SamplesBuilder {
           const files = [
             ...this._createManual(sample, parsedSample),
             ...this._buildRawSources(sample, parsedSample),
+            ...this._createPreview(sample, parsedSample),
           ];
 
           // Since stream.push doesn't allow to push multiple files at once
@@ -109,6 +129,8 @@ class SamplesBuilder {
       stream.pipe(gulp.dest((file) => {
         if (file.isSourceFile) {
           return SOURCE_DEST;
+        } else if (file.isPreview) {
+          return PREVIEW_DEST;
         } else {
           return MANUAL_DEST;
         }
@@ -163,6 +185,7 @@ class SamplesBuilder {
         markdown = markdown.replace(/\n +/gm, '\n');
 
         // Restore codeblocks
+        /* eslint-disable guard-for-in */
         for (const hash in Object.keys(codeBlocks)) {
           markdown = markdown.replace(hash, codeBlocks[hash]);
         }
@@ -190,7 +213,9 @@ class SamplesBuilder {
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
       '$path: ' + PATH_BASE + manual.relative,
-      '$category: ' + (parsedSample.document.metadata.category ? parsedSample.document.metadata.category : 'None'),
+      '$category: ' + (parsedSample.document.metadata.category ?
+        parsedSample.document.metadata.category :
+        'None'),
       'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
       // ... and some additional information that is used by the example teaser
       ...this._getTeaserData(parsedSample),
@@ -208,21 +233,17 @@ class SamplesBuilder {
     return [manual, data];
   }
 
+  /**
+   * Builds a YAML string that is added to the manual document to
+   * build a nice teaser for the sample
+   * @param  {Object} parsedSample
+   * @return {String}
+   */
   _getTeaserData(parsedSample) {
     const teaserData = [];
     teaserData.push('formats:');
-    if (parsedSample.document.isAmpWeb) {
-      teaserData.push('  - websites');
-    }
-    if (parsedSample.document.isAmpStory) {
-      teaserData.push('  - stories');
-    }
-    if (parsedSample.document.isAmpAds) {
-      teaserData.push('  - ads');
-    }
-    if (parsedSample.document.isAmpEmail) {
-      teaserData.push('  - email');
-    }
+    teaserData.push(`  - ${this._getSampleFormat(parsedSample)}`);
+
 
     teaserData.push('used_components:');
     teaserData.push(...this._getUsedComponents(parsedSample));
@@ -234,6 +255,31 @@ class SamplesBuilder {
     return teaserData;
   }
 
+  /**
+   * Used to determine the sample format by string
+   * @param  {Object} parsedSample
+   * @return {String}
+   */
+  _getSampleFormat(parsedSample) {
+    if (parsedSample.document.isAmpWeb) {
+      return 'websites';
+    }
+    if (parsedSample.document.isAmpStory) {
+      return 'stories';
+    }
+    if (parsedSample.document.isAmpAds) {
+      return 'ads';
+    }
+    if (parsedSample.document.isAmpEmail) {
+      return 'email';
+    }
+  }
+
+  /**
+   * Parses the all components used in sample and gives them back as an Array
+   * @param  {Object} parsedSample
+   * @return {Array}
+   */
   _getUsedComponents(parsedSample) {
     // Dirty RegEx to quickly parse component names from head
     const COMPONENT_PATTERN = /custom-element="amp-.*?"/g;
@@ -261,6 +307,11 @@ class SamplesBuilder {
    * @return {Array} An array of Vinyl files to write
    */
   _buildRawSources(sample, parsedSample) {
+    // Only build raw sources if the snippets can run standalone
+    if (!parsedSample.document.metadata.standaloneSnippets) {
+      return [];
+    }
+
     const sources = [];
 
     // Keep the full sample for the big playground
@@ -311,20 +362,22 @@ class SamplesBuilder {
    * @param  {Object} parsedSample The sample parsed by abe.com
    * @return {Vinyl}
    */
-  _createPreviewDoc(sample, parsedSample) {
-    sample = sample.clone();
-    sample.contents = Buffer.from([
-      '---',
-      '$title: ' + parsedSample.document.title,
-      '$view: ' + PREVIEW_TEMPLATE,
-      '$path: ' + PATH_BASE + sample.relative.replace('.html', '/preview.html'),
-      'example: !g.json /' + POD_PATH + '/' + sample.relative.replace('.html', '.json'),
-      '$hidden: true',
-      '---',
-    ].join('\n'));
-    sample.extname = '-preview.html';
+  _createPreview(sample, parsedSample) {
+    // Check if the sample should have a preview at all
+    if (!parsedSample.document.metadata.hidePreview && !parsedSample.document.metadata.preview) {
+      return [];
+    }
 
-    return sample;
+    // Determine the template needed for that specific sample
+    const template = this._previewTemplates[this._getSampleFormat(parsedSample)];
+    const preview = sample.clone();
+
+    // Set flag to determine correct output location
+    preview.isPreview = true;
+
+    preview.contents = Buffer.from(handlebars.render(template, parsedSample));
+
+    return [preview];
   }
 
   _watch() {

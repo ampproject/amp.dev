@@ -8,8 +8,8 @@
     "develop": "cd platform && node build.js",
     "lint": "npm-run-all lint:*",
     "lint:grow": "cd platform && node lib/pipeline/growReferenceChecker.js",
-    "lint:node": "eslint \"platform/**/*.js\" --ignore-path ./.gitignore",
-    "fix:node": "eslint \"platform/**/*.js\" --fix --ignore-path ./.gitignore",
+    "lint:node": "eslint \"**/*.js\" --ignore-path ./.gitignore",
+    "fix:node": "eslint \"**/*.js\" --fix --ignore-path ./.gitignore",
     "build:playground": "cd playground && npm run build",
     "build:local": "cd platform && NODE_ENV=local node build.js",
     "build:staging": "cd platform && NODE_ENV=staging node build.js",
@@ -26,6 +26,9 @@
   "license": "ISC",
   "signale": {
     "displayTimestamp": true
+  },
+  "_moduleAliases": {
+    "@lib": "platform/lib"
   },
   "dependencies": {
     "amp-toolbox-cors": "^0.2.1",
@@ -53,8 +56,10 @@
     "gulp-sass": "^4.0.2",
     "gulp-strip-css-comments": "^2.0.0",
     "handlebars": "^4.0.12",
+    "handlebars-registrar": "^1.5.2",
     "html-minifier": "^3.5.21",
     "js-yaml": "^3.12.1",
+    "module-alias": "^2.1.0",
     "npm-run-all": "^4.1.5",
     "octonode": "^0.9.5",
     "recursive-search": "^1.0.1",

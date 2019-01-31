@@ -25,7 +25,7 @@ const config = require('./config.js');
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
-  'sampleSources': require('./routers/sampleSources.js'),
+  'examples': require('./routers/examples.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
 };
@@ -65,10 +65,13 @@ class Platform {
 
   _enableCors() {
     this.server.use((request, response, next) => {
-      response.header("Access-Control-Allow-Origin", "*");
-      response.header("Access-Control-Allow-Credentials", "true");
-      response.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-      response.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, X-Requested-By, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+      response.header('Access-Control-Allow-Origin', '*');
+      response.header('Access-Control-Allow-Credentials', 'true');
+      response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+      response.header(
+          'Access-Control-Allow-Headers',
+          'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, X-Requested-By, ' +
+        'Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
       next();
     });
 
@@ -84,7 +87,7 @@ class Platform {
 
   _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(routers.sampleSources);
+    this.server.use(routers.examples);
     this.server.use('/playground',  routers.playground);
     this.server.use('/boilerplate',  routers.boilerplate);
     // Register the following router at last as it works as a catch-all
