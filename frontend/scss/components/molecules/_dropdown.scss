@@ -58,7 +58,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     animation: none;
     z-index: 10;
 
-		.ad-a-ico {
+		.#{atom('ico')} {
 			transform: rotate(100deg);
 			fill: color('white');
 		}
@@ -98,7 +98,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
     &:focus {
 
-        .ad-a-ico {
+        .#{atom('ico')} {
           transform: rotate(100deg);
         }
 

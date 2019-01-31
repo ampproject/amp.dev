@@ -127,7 +127,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   	}
 
   	&:hover {
-  		.ad-a-ico {
+  		.#{atom('ico')} {
   			transform: rotate(100deg);
       }
   	}

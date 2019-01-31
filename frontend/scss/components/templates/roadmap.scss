@@ -39,7 +39,7 @@
     margin: 0 auto;
   }
 
-  button.ad-m-filter-bubble {
+  button.#{molecule('filter-bubble')} {
     background: color('white');
     color: color('silver');
     position: relative;

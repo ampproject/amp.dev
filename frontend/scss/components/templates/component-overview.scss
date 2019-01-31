@@ -93,17 +93,19 @@
         @media screen and (max-width: 559px){
           margin: 0 0 2em 0;
         }
-        .ad-m-teaser-header {
-          align-items: flex-end;
-          padding-bottom: 10px;
-          padding-top: 30px;
-          height: auto;
-          .ad-m-teaser-header-title {
-            font-size: 1.125em;
+        .#{molecule('teaser')} {
+          &-header {
+            align-items: flex-end;
+            padding-bottom: 10px;
+            padding-top: 30px;
+            height: auto;
+            &-title {
+              font-size: 1.125em;
+            }
           }
-        }
-        .ad-m-teaser-content {
-          padding: 1.25em;
+          &-content {
+            padding: 1.25em;
+          }
         }
       }
       &-anchor {

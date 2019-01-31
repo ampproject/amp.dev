@@ -31,20 +31,24 @@ section.#{utility('content')}.benefits {
   &.websites,
   &.ads {
     h3,
-    .ad-m-lnk-text {
-      color: color('white');
-    }
-    .ad-m-lnk-icon {
-      fill: color('blue-ribbon');
-      background: color('white');
+    .#{molecule('lnk')} {
+      &-text {
+        color: color('white');
+      }
+      &-icon {
+        fill: color('blue-ribbon');
+        background: color('white');
+      }
     }
   }
 
   &.stories,
   &.e-mails {
     h3,
-    .ad-m-lnk-text {
-      color: color('black');
+    .#{molecule('lnk')} {
+      &-text {
+        color: color('black');
+      }
     }
   }
 }
