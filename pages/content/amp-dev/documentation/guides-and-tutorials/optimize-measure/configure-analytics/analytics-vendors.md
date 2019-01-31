@@ -2,6 +2,8 @@
 $title: Analytics vendors
 $order: 3
 toc: true
+formats:
+  - websites
 ---
 
 
