@@ -57,16 +57,16 @@
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
-  
+
   .#{utility('benefits--list')} {
-    @media screen and (min-width: 1024px){
+    @media (min-width: 1024px){
       display: flex;
     }
-    
+
     .#{molecule('benefit')} {
       margin: 20px 0;
 
-      @media screen and (min-width: 768px){
+      @media (min-width: 768px){
         margin-right: 40px;
       }
     }
@@ -75,7 +75,7 @@
   section {
     &.#{utility('content')},
     &.#{utility('teaser-grid')} {
-      @media screen and (min-width: 1024px){
+      @media (min-width: 1024px){
         grid-column-start: 7;
         grid-column-end: 25;
       }
@@ -106,7 +106,7 @@
       margin: 0;
       padding: 0;
       .#{molecule('teaser-component')} {
-        @media screen and (max-width: 559px){
+        @media (max-width: 559px){
           margin: 0 0 2em 0;
         }
         .#{molecule('teaser')} {

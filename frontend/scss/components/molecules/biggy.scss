@@ -39,12 +39,12 @@
       margin: 0 0 40px;
       color: color('athens-gray');
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         font-size: 13vw;
         line-height: 0.85;
       }
 
-      @media screen and (min-width: 1280px) {
+      @media (min-width: 1280px) {
         font-size: 140px;
       }
 

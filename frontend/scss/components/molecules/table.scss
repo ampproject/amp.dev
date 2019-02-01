@@ -39,7 +39,7 @@ table {
   @include txt;
   @include txt-2;
 
-  @media screen and (min-width: 768px){
+  @media (min-width: 768px){
     max-width: 100%;
     padding: 0;
     margin: 1.5em 0 2em;
@@ -51,7 +51,7 @@ thead {
 
   tr {
     text-align: left;
-    
+
     th {
       padding: 20px;
       border-bottom: 1px solid color('silver');
@@ -75,10 +75,10 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
-    
-    @media screen and (orientation: portrait) and (max-width: 575px) {
+
+    @media (orientation: portrait) and (max-width: 575px) {
       min-width: 40vw;
-      
+
       &:last-child {
         min-width: 80vw;
       }

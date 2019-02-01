@@ -20,9 +20,9 @@
     display: flex;
     transform: perspective(300em) rotateX(38deg) rotateY(0deg) rotateZ(-18deg) skewX(2deg);
     margin-left: 18%;
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-left: 0;
-    } 
+    }
     .slide {
       width: 50%;
       margin-right: 16vw;
@@ -31,10 +31,10 @@
       transition: transform 400ms, opacity 400ms, box-shadow 400ms;
       transition-delay: 400ms;
       transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         width: 34%;
         margin-right: 8vw;
-      } 
+      }
       amp-img {
         transition: transform 400ms, opacity 400ms, box-shadow 400ms;
         box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -44,7 +44,7 @@
           width: 38%;
           z-index: 1;
           opacity: 0;
-          transform: translate3d(100%, -180%, 0) scale(0.5); 
+          transform: translate3d(100%, -180%, 0) scale(0.5);
           transition-delay: 0;
         }
       }
@@ -76,7 +76,7 @@
     &.slide2 {
       .slide {
         transform: translateX(calc(-100% - 16vw));
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           transform: translateX(calc(-100% - 8vw));
         }
       }
@@ -85,7 +85,7 @@
     &.slide3 {
       .slide {
         transform: translateX(calc(-200% - 32vw));
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           transform: translateX(calc(-200% - 16vw));
         }
       }
@@ -94,7 +94,7 @@
     &.slide4 {
       .slide {
         transform: translateX(calc(-300% - 48vw));
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           transform: translateX(calc(-300% - 24vw));
         }
       }
@@ -103,7 +103,7 @@
     &.slide5 {
       .slide {
         transform: translateX(calc(-400% - 64vw));
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           transform: translateX(calc(-400% - 32vw));
         }
       }
@@ -112,7 +112,7 @@
     &.slide6 {
       .slide {
         transform: translateX(calc(-500% - 80vw));
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           transform: translateX(calc(-500% - 40vw));
         }
       }

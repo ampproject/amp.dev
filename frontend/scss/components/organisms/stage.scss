@@ -19,7 +19,7 @@
     margin-right: -150vw;
     pointer-events: none;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       width: 100%;
       padding-top: 54.43%;
       margin-top: -30%;
@@ -31,12 +31,12 @@
     margin-top: -10%;
     grid-column: 15 / -1;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-top: -65%;
       grid-column: 14 / -2;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       grid-column: 13 / -3;
       margin-top: -60%;
     }
@@ -64,14 +64,14 @@
     top: 0;
     margin-left: -30%;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       position: static;
       margin-top: -50%;
       margin-left: auto;
       margin-right: auto;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       margin-top: -40%;
     }
   }
@@ -86,7 +86,7 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     margin-left: 64px;
     border-bottom-left-radius: 6.250em;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
@@ -99,11 +99,12 @@
 	&-ads { @include gradient-ads; }
 	&-emails { @include gradient-e-mails; }
 
-  div.#{utility('container')} {
+  div.#{utility('container-fluid')} {
     padding: 0 2em;
 
     @media screen and (min-width: 768px) {
-      padding: 0 0 0 2.5em;
+      padding: 0 2.5em;
+      margin-left: -64px;
     }
   }
 
@@ -111,12 +112,17 @@
     position: relative;
     margin: 20vw 0;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       grid-column: 3 / 13;
-      margin: 7vw 0 11vw;
+      margin: 7vw 0 11vw 3em;
     }
 
     @media screen and (min-width: 1024px) {
+      grid-column: 3 / 19;
+      margin-left: 5em;
+    }
+
+    @media screen and (min-width: 1280px) {
       grid-column: 3 / 16;
     }
 
@@ -130,14 +136,14 @@
       border: 1px solid color('white');
       border-radius: 50%;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         left: auto;
         bottom: auto;
         right: calc(100% + 0.75em);
         top: -0.6em;
       }
 
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         width: 3em;
         height: 3em;
         right: calc(100% + 1em);
@@ -160,11 +166,11 @@
       @include color-white;
       margin-top: 0;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         @include txt-2;
       }
 
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         @include txt-lrg;
       }
     }
