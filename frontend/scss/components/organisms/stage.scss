@@ -10,69 +10,6 @@
 
 .#{utility('stage')} {
   overflow: hidden;
-
-  .#{organism('case-band')} {
-    grid-column: 1 / -1;
-    width: 150vw;
-    margin-top: -40%;
-    margin-right: -150vw;
-    pointer-events: none;
-
-    @media (min-width: 768px) {
-      width: 100%;
-      margin-top: -30%;
-      margin-right: 0;
-    }
-  }
-
-  .#{organism('ghost-frame-block')} {
-    margin-top: -10%;
-    grid-column: 15 / -1;
-
-    @media (min-width: 768px) {
-      margin-top: -65%;
-      grid-column: 14 / -2;
-    }
-
-    @media (min-width: 1024px) {
-      grid-column: 13 / -3;
-      margin-top: -60%;
-    }
-
-    .#{molecule('ghost-frame-mobile')} {
-      max-width: 25%;
-      padding: 2.5% 1% 1.5%;
-    }
-
-    .#{molecule('ghost-frame-tablet')} {
-      max-width: 38%;
-      padding: 3% 1% 1%;
-    }
-
-    .#{molecule('ghost-frame-desktop')} {
-      max-width: 90%;
-      padding: 3% 1.5% 1.5%;
-    }
-  }
-
-  .#{molecule('format-visual')} {
-    grid-column: 11 / -1;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: -30%;
-
-    @media (min-width: 768px) {
-      position: static;
-      margin-top: -50%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (min-width: 1024px) {
-      margin-top: -40%;
-    }
-  }
 }
 
 .#{organism('stage')} {

@@ -28,6 +28,7 @@ const stripCssComments = require('gulp-strip-css-comments');
 const through = require('through2');
 
 const config = require('./config');
+const utils = require('@lib/utils');
 const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
@@ -246,7 +247,7 @@ class Pipeline {
 
   _minifyPages() {
     return new Promise((resolve, reject) => {
-      const stream = pageMinifier.start(config.path('platform/pages'));
+      const stream = pageMinifier.start(utils.project.absolute('platform/pages'));
 
       stream.on('error', (error) => {
         pageMinifier._log.fatal(`Something went wrong while minifying HTML: ${error}`);

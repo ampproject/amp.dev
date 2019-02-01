@@ -60,8 +60,26 @@ body {
     figure {
       margin: 0;
 
+      &.half {
+        amp-img {
+          @media (min-width: 768px) {
+            width: 50%;
+          }
+        }
+      }
+
+      &.third {
+        amp-img {
+          width: 50%;
+          @media (min-width: 768px) {
+            width: 33%;
+          }
+        }
+      }
+
       amp-img {
         @include box-shadow;
+        margin: 0 auto;
       }
 
       figcaption {

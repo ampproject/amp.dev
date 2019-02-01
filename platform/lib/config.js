@@ -20,21 +20,21 @@ const signale = require('signale');
 const fs = require('fs');
 const path = require('path');
 const mri = require('mri');
+const yaml = require('js-yaml');
+const utils = require('@lib/utils');
 
-const CONFIG_BASE_PATH = '../config';
-const GROW_CONFIG_TEMPLATE_PATH = `${CONFIG_BASE_PATH}/templates/podspec.yaml`;
-const GROW_CONFIG_DEST = '../../pages/podspec.yaml';
+const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
+const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const GROW_OUT_DIR = '../platform/pages';
 
 class Config {
   constructor(environment = 'development') {
-    const environmentConfig = require(`${CONFIG_BASE_PATH}/environments/${environment}.json`);
-    const sharedConfig = require(`${CONFIG_BASE_PATH}/shared.json`);
+    const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
-    this.environment = environmentConfig.name;
-    this.hosts = environmentConfig.hosts;
+    this.environment = env.name;
+    this.hosts = env.hosts;
 
-    this.shared = sharedConfig;
+    this.shared = require(utils.project.absolute(`platform/config/shared.json`));
 
     // Globally initialize command line arguments for use across all modules
     this.options = mri(process.argv.slice(2));
@@ -42,21 +42,13 @@ class Config {
     // Synchronously write podspec for Grow to run flawlessly later in pipeline.
     // Check if running inside GAE as writes are not permitted there
     if (!process.env.GAE_SERVICE) {
-      this._writeGrowConfig();
+      this._configureGrow();
     }
   }
 
   /**
-   * Helper method to make it possible to write absolute project paths
-   * @return {String} an absolute ready to use path
-   */
-  path(relativePath) {
-    return path.join(__dirname, '../../', relativePath);
-  }
-
-  /**
    * Builds a URL from a host object containing scheme, host and port
-   * @return {[type]} [description]
+   * @return {String} The full URL
    */
   _buildUrl(host) {
     let url = `${host.scheme}://${host.host}`;
@@ -67,36 +59,61 @@ class Config {
     return url;
   }
 
-  _writeGrowConfig() {
-    const template = fs.readFileSync(path.join(__dirname, GROW_CONFIG_TEMPLATE_PATH));
-    const podspec = `${template}\n`
-                + 'env:\n'
-                + `  name: ${this.environment}\n`
-                + `  host: ${this.hosts.pages.host}\n`
-                + `  port: ${this.hosts.pages.port}\n`
-                + `  scheme: ${this.hosts.pages.scheme}\n`
-                + '\n'
-                + `gaTrackingId: ${this.shared.gaTrackingId}\n`
-                + '\n'
-                + 'base_urls:\n'
-                + `  repository: ${this.shared.baseUrls.repository}\n`
-                + `  playground: ${this.shared.baseUrls.playground}\n`
-                + `  platform: ${this._buildUrl(this.hosts.platform)}\n`
-                + `  api: ${this._buildUrl(this.hosts.api)}\n`
-                + '\n'
-                + 'deployments:\n'
-                + '  default:\n'
-                + '    name: default\n'
-                + '    destination: local\n'
-                + `    out_dir: ${GROW_OUT_DIR}\n`
-                + '    env:\n'
-                + `      name: ${this.environment}\n`
-                + `      host: ${this.hosts.pages.host}\n`
-                + `      port: ${this.hosts.pages.port}\n`
-                + `      scheme: ${this.hosts.pages.scheme}`;
+  /**
+   * Builds a podspec for the current environment and writes it to the Grow pod
+   * @return {undefined}
+   */
+  _configureGrow() {
+    let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
+    podspec = yaml.safeLoad(podspec);
 
-    fs.writeFileSync(path.join(__dirname, GROW_CONFIG_DEST), podspec);
-    signale.info(`Wrote podspec to ${GROW_CONFIG_DEST}`);
+    // Force-enable all languages during development
+    if (this.environment == 'development') {
+      podspec.localization.locales = [
+        'fr',
+        'ar',
+        'es',
+        'it',
+        'id',
+        'ja',
+        'ko',
+        'pt_BR',
+        'ru',
+        'tr',
+        'zh_CN',
+      ];
+    }
+
+    // Add environment specific information to configuration needed for URLs
+    podspec['env'] = {
+      'name': this.environment,
+      'host': this.hosts.pages.host,
+      'port': this.hosts.pages.port,
+      'scheme': this.hosts.pages.scheme
+    };
+
+    // Add Google Analytics Tracking ID for use in templates
+    podspec['gaTrackingId'] = this.shared.gaTrackingId;
+
+    podspec['base_urls'] = {
+      'repository': this.shared.baseUrls.repository,
+      'playground': this.shared.baseUrls.playground,
+      'platform': this._buildUrl(this.hosts.platform),
+      'api': this._buildUrl(this.hosts.api),
+    }
+
+    // Deployment specific
+    podspec['deployments'] = {
+      'default': {
+        'name': 'default',
+        'destination': 'local',
+        'out_dir': GROW_OUT_DIR,
+        'env': podspec['env']
+      }
+    };
+
+    fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podspec, {'noRefs': true}));
+    signale.success('Configured Grow!');
   }
 }
 

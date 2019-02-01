@@ -44,6 +44,7 @@ function _require(relativePath) {
  */
 const paths = {
   'ROOT': absolute('.'),
+  'CSS': absolute('pages/css'),
 };
 
 module.exports = {

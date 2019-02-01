@@ -24,6 +24,23 @@ const through = require('through2');
 const path = require('path');
 const CleanCSS = require('clean-css');
 const crypto = require('crypto');
+const rcs = require('rcs-core');
+const utils = require('@lib/utils');
+const config = require('@lib/config');
+
+// List of selectors that will not be minified
+const EXCLUDED_SELECTORS = [
+  /^ap-o-sidebar-toggle*?/,
+  /^ap-o-burger-menu.*?/,
+  /^ap-o-fragment-slider*?/,
+  /^ap--header*/,
+  "ap-o-toc",
+  "categorymenuopen",
+  "contentmenuopen",
+  "mainmenuopen",
+  "slide",
+  "noScroll"
+];
 
 class PageMinifier {
   constructor() {
@@ -31,6 +48,12 @@ class PageMinifier {
       'interactive': true,
       'scope': 'Page minifier',
     });
+
+    // Set excludes for classes
+    for (let selector of EXCLUDED_SELECTORS) {
+      this._log.info('Excluding selector', selector);
+      rcs.selectorLibrary.setExclude(selector);
+    }
 
     // An instance of CleanCSS
     this._cleanCss = new CleanCSS({
@@ -75,8 +98,16 @@ class PageMinifier {
    * @return {String} The minified or the unmodified markup in case of error
    */
   minifyPage(html, path) {
+    html = this._cleanHtml(html);
+
     try {
-      html = this._cleanHtml(html);
+      html = this._rewriteSelectors(html);
+    } catch(e) {
+      this._log.warn(`Could not rewrite selectors for ${path}`);
+      console.error(e);
+    }
+
+    try {
       html = this._minifyHtml(html);
     } catch (e) {
       this._log.error(`Could not minify ${path}`);
@@ -84,6 +115,33 @@ class PageMinifier {
     }
 
     return html;
+  }
+
+  /**
+   * Minifies the used CSS selectors to hashes
+   * @param  {String} html
+   * @return {String}
+   */
+  _rewriteSelectors(html) {
+      const AMP_CUSTOM_STYLE_PATTERN = /<style amp-custom>.*?<\/style>/ms;
+      let css = html.match(AMP_CUSTOM_STYLE_PATTERN);
+
+      if (css) {
+        css = css[0].replace(/<style amp-custom>|<\/style>/g, '');
+
+        // Fake replace <script> tags as espree chokes on them
+        html = html.replace(/<script/g, '<script-placeholder');
+        html = html.replace(/<\/script>/g, '</script-placeholder>');
+
+        rcs.fillLibraries(css);
+        html = rcs.replace.html(html);
+
+        // Restore script tags
+        html = html.replace(/<script-placeholder/g, '<script');
+        html = html.replace(/<\/script-placeholder>/g, '</script>');
+      }
+
+      return html;
   }
 
   _cleanHtml(html) {
@@ -117,6 +175,11 @@ class PageMinifier {
     // Leave alone inline styles and the AMP boilerplate
     if (type == 'inline' || css.includes('body{-webkit-')) {
       return css;
+    }
+
+    // Do not cache styles during development
+    if (config.environment == 'development') {
+      return this._cleanCss.minify(css).styles;
     }
 
     // Hash it to check if that bundle has already been minified
