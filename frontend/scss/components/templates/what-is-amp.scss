@@ -77,17 +77,12 @@
 
   .#{utility('stage')} {
     .#{organism('stage')} {
-      margin-bottom: 50px;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 50px;
 
-      @media screen and (min-width: 768px) {
-        margin-bottom: 0;
-      }
-
-      &-content {
-        margin: 20em 0 4em;
-
-        @media screen and (min-width: 768px) {
-          margin: 7vw 0 11vw;
+        &-content {
+          margin-top: 20em;
+          margin-bottom: 4em;
         }
       }
     }
@@ -104,7 +99,7 @@
   }
 
   .#{utility('made-of-headline')} {
-    grid-column: 3/19;
+    grid-column: 3 / 19;
     margin-top: 0;
     @include hl-xlrg;
 

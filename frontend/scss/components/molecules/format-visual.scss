@@ -110,10 +110,6 @@ There are specific files for each format, to keep css rendering low.
       transform: translate(50%, -75px);
     }
     
-    @media screen and (min-width: 1280px) {
-      font-size: inherit;
-    }
-    
     .#{molecule('code-snippet')} {
       margin: 0;
       box-shadow: 15px 30px 45px -5px rgba(0, 0, 0, 0.25);
