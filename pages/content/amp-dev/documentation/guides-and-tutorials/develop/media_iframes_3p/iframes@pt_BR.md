@@ -39,16 +39,9 @@ Um `amp-iframe` exemplo:
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## Usar marcadores
 

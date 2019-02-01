@@ -36,17 +36,9 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## 플레이스홀더 사용하기
 
