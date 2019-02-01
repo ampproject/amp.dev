@@ -58,6 +58,10 @@
       order: inherit;
       padding: 7em 0 0;
     }
+
+    .#{molecule('format-visual')} {
+      margin-bottom: 0;
+    }
   }
 
   &-content {
