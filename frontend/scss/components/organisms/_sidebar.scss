@@ -20,7 +20,7 @@
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
   transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     position: -webkit-sticky;
     position: sticky;
     z-index: 0;
@@ -35,7 +35,7 @@
     box-shadow: none;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     top: 120px;
     height: calc(100vh - 120px);
   }
@@ -44,12 +44,12 @@
 @mixin sidebar-nav {
   margin: 34px 0 0;
 
-  @media screen and (min-width: 768px){
+  @media (min-width: 768px){
     overflow-y: scroll;
     max-height: calc(100vh - 281px);
   }
 
-  @media screen and (min-width: 1024px){
+  @media (min-width: 1024px){
     overflow-y: scroll;
     max-height: calc(100vh - 299px);
   }

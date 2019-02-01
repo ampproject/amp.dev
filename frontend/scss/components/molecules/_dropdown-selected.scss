@@ -26,7 +26,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   overflow: hidden;
   position: absolute;
 
-	@media screen and (min-width: 1024px){
+	@media (min-width: 1024px){
     padding-right: 200px;
 	}
 
@@ -38,7 +38,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     animation: none;
     z-index: 10;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       height: 245px;
     }
 

@@ -7,9 +7,9 @@
 
 .#{utility('toc')} {
   width: 100%;
-  
 
-  @media screen and (min-width: 1024px) {
+
+  @media (min-width: 1024px) {
     background: none;
     box-shadow: none;
   }
@@ -36,7 +36,7 @@
       background-color: color('oslo-gray');
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       position: -webkit-sticky;
       position: sticky;
       z-index: 1;
@@ -85,7 +85,7 @@
     }
 
     .#{atom('sidebar-toggle-input-toc')}:not(:checked) + ul {
-      @media screen and (max-width: 1023px) {
+      @media (max-width: 1023px) {
         overflow: hidden;
         max-height: 0;
         transition: 0.2s;
@@ -93,7 +93,7 @@
     }
 
     .#{atom('sidebar-toggle-input-toc')}:checked + ul {
-      @media screen and (max-width: 1023px) {
+      @media (max-width: 1023px) {
         overflow: hidden;
         max-height: 200vh;
         margin-top: 15px;

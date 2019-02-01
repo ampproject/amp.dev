@@ -6,24 +6,24 @@
 .#{utility('component-visual')} {
   overflow: hidden;
   margin-bottom: 7em;
-  
-  @media screen and (min-width: 768px) {
+
+  @media (min-width: 768px) {
     margin-bottom: 12vw;
   }
 }
 
 .#{organism('component-visual')} {
-  
+
   &-copy {
     grid-column: 4 / 10;
     order: 2;
     margin: auto 0;
-    
-    @media screen and (min-width: 768px) {
+
+    @media (min-width: 768px) {
       order: inherit;
     }
   }
-  
+
   &-link {
     margin-top: 3em;
   }
@@ -32,8 +32,8 @@
     width: 100%;
     grid-column: 13 / 25;
     order: 1;
-    
-    @media screen and (min-width: 768px) {
+
+    @media (min-width: 768px) {
       order: inherit;
     }
   }

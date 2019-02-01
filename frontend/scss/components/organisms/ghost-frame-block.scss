@@ -24,7 +24,7 @@ This positioning can be change by using the modifier `-alternate`.
   position: relative;
   width: 100%;
 
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     left: 25%;
   }
 

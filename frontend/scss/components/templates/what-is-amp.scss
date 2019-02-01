@@ -45,7 +45,7 @@
     @include default-section-padding;
     margin-bottom: 7em;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-bottom: 8vw;
     }
 
@@ -79,21 +79,21 @@
     .#{organism('stage')} {
       margin-bottom: 50px;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin-bottom: 0;
       }
 
       &-content {
         margin: 20em 0 4em;
 
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           margin: 7vw 0 11vw;
         }
       }
     }
-    
+
     & + .#{utility('content')} {
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin-top: -15%;
       }
 
@@ -113,7 +113,7 @@
   .#{molecule('biggy')} {
     margin-bottom: 7em;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-bottom: 8vw;
     }
 
@@ -124,7 +124,7 @@
     &-headline {
       grid-column: 3 / 19;
       margin: 0 0 0 30px;
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin: 0;
       }
     }

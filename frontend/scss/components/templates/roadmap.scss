@@ -164,14 +164,14 @@
       grid-column: 2 / 24;
       display: block;
       margin-top: 50px;
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         display: flex;
       }
       h4 {
         padding-left: 46px;
         padding-bottom: 1em;
         border-bottom: 1px solid color('athens-gray');
-        @media screen and (min-width: 1024px) {
+        @media (min-width: 1024px) {
           border: none;
         }
       }
@@ -183,7 +183,7 @@
         padding: 0;
         width: 100%;
 
-        @media screen and (min-width: 1024px) {
+        @media (min-width: 1024px) {
           h4 {
             margin-top: 10px;
           }
@@ -225,7 +225,7 @@
           width: 36px;
           height: 36px;
           position: absolute;
-          @media screen and (min-width: 1024px) {
+          @media (min-width: 1024px) {
             margin-top: 10px;
           }
           svg {

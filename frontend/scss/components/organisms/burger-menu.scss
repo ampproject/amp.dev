@@ -29,11 +29,11 @@
       z-index: 23;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       right: 30px;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       display: none;
     }
   }
@@ -63,7 +63,7 @@
 
   transition: transform 0.2s ease, opacity 0.2s ease;
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 
@@ -75,15 +75,6 @@
 
       &.mainmenuopen {
         z-index: 22;
-      }
-    }
-
-    /* Shrink header and footer to not interfer with scrolling */
-    & ~ main, & ~ footer {
-      @media screen and (max-width: 1023px) {
-        // max-height: 0;
-        // overflow: hidden;
-        // pointer-events: none;
       }
     }
   }

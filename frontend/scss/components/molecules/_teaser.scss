@@ -26,8 +26,8 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	margin: 0 20px 2em 0;
 	flex: 1 0 15em;
 	scroll-snap-align: start;
-	
-	@media screen and (min-width: 575px) {
+
+	@media (min-width: 575px) {
 		margin: 0 0 2em;
 	}
 }
@@ -129,7 +129,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	@include color-blue-ribbon;
 	border: 1px solid color('blue-ribbon');
 	border-radius: 12px;
-	
+
 	&-text {
 		margin-left: auto;
 		margin-right: 15px;
