@@ -73,7 +73,7 @@ toc: true
 
 ## 占位符和后备行为的互动
 
-对于依赖于动态内容的 AMP 组件（例如 `amp-twitter`、`amp-list`），后备行为和占位符的互动方式如下：
+对于依赖于动态内容的 AMP 组件（例如 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})、[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})），后备行为和占位符的互动方式如下：
 
 <ol>
   <li>在加载内容时显示占位符。</li>

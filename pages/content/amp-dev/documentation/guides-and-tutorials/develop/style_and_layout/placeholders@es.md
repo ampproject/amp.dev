@@ -73,7 +73,7 @@ En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que u
 
 ## Cómo interactúan los marcadores de posición y los respaldos
 
-En el caso de los componentes AMP que dependen de contenido dinámico (por ejemplo, `amp-twitter`, `amp-list`), los respaldos y los marcadores de posición interactúan de la siguiente manera:
+En el caso de los componentes AMP que dependen de contenido dinámico (por ejemplo, [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), los respaldos y los marcadores de posición interactúan de la siguiente manera:
 
 <ol>
   <li>Se muestra el marcador de posición mientras se carga el contenido.</li>

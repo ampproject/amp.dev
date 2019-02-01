@@ -25,11 +25,11 @@ Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzen
 </amp-img>
 [/sourcecode]
 
-Bu `amp-img` öğesi, kapsayıcı öğesinin genişliğine otomatik olarak sığar ve yüksekliği, belirtilen genişlik ve yüksekliğe göre belirlenen en boy oranına otomatik olarak ayarlanır:
+Bu [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) öğesi, kapsayıcı öğesinin genişliğine otomatik olarak sığar ve yüksekliği, belirtilen genişlik ve yüksekliğe göre belirlenen en boy oranına otomatik olarak ayarlanır:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-Ayrıca [Örneklerle AMP amp-img](https://ampbyexample.com/components/amp-img/) konusuna bakabilirsiniz.
+Ayrıca [Örneklerle AMP `amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) konusuna bakabilirsiniz.
 
 ## Sayfaya stil ekleme
 

@@ -54,7 +54,7 @@ toc: true
 
 <a id="fn1"></a>
 [tip type="note"]
-***既然借助“width=100%”样式就能轻松地使元素根据屏幕尺寸进行调整，为什么还说这有些棘手呢？*** 我们所说的棘手之处是指：怎样才能让自适应元素在网页上按预期呈现，而不会对性能指标或用户体验产生不良影响。借助“width=100%”确实能轻松地使图片适应屏幕尺寸，但会导致出现性能问题。浏览器必须先下载图片以获取图片的尺寸信息，然后才能根据屏幕尺寸相应地调整图片大小，最后还需重排并重绘网页。在 AMP 中，呈现路径已经过优化，因此系统会先展开网页，根据 amp-img 中提供的尺寸（使用这些数值确定宽高比）为图片预留占位符，然后下载资源并绘制（无需重排）网页。
+***既然借助“width=100%”样式就能轻松地使元素根据屏幕尺寸进行调整，为什么还说这有些棘手呢？*** 我们所说的棘手之处是指：怎样才能让自适应元素在网页上按预期呈现，而不会对性能指标或用户体验产生不良影响。借助“width=100%”确实能轻松地使图片适应屏幕尺寸，但会导致出现性能问题。浏览器必须先下载图片以获取图片的尺寸信息，然后才能根据屏幕尺寸相应地调整图片大小，最后还需重排并重绘网页。在 AMP 中，呈现路径已经过优化，因此系统会先展开网页，根据 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 中提供的尺寸（使用这些数值确定宽高比）为图片预留占位符，然后下载资源并绘制（无需重排）网页。
 [/tip]
 
 ## 为网页缩放媒体
@@ -67,7 +67,7 @@ toc: true
 
 ##### 示例：嵌入 YouTube 视频
 
-在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 `amp-youtube` 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
+在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
 
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div> <div placeholder></div> </amp-iframe></div>

@@ -73,7 +73,7 @@ toc: true
 
 ## 자리표시자 및 대체 콘텐츠 상호작용
 
-동적 콘텐츠에 의존하는 AMP 요소(예: `amp-twitter`, `amp-list`)에서 대체 콘텐츠 및 자리표시자는 다음과 같이 상호작용합니다.
+동적 콘텐츠에 의존하는 AMP 요소(예: [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}))에서 대체 콘텐츠 및 자리표시자는 다음과 같이 상호작용합니다.
 
 <ol>
   <li>콘텐츠가 로드되는 동안 자리표시자를 표시합니다.</li>

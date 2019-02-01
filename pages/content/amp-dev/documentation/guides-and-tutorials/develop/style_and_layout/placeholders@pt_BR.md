@@ -73,7 +73,7 @@ No exemplo abaixo, o atributo `fallback` é usado para instruir o navegador a us
 
 ## Interação entre marcadores e substitutos
 
-No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, `amp-twitter` e `amp-list`), a interação entre marcadores e substitutos é a seguinte:
+No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) e [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), a interação entre marcadores e substitutos é a seguinte:
 
 <ol>
   <li>O marcador é exibido durante o carregamento do conteúdo.</li>

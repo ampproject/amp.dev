@@ -25,11 +25,11 @@ Créez des images responsives en indiquant leur largeur et leur hauteur, en déf
 </amp-img>
 [/sourcecode]
 
-Cet élément `amp-img` s'adapte automatiquement à la largeur de son élément conteneur, et sa hauteur est définie automatiquement sur le format déterminé par la largeur et la hauteur données :
+Cet élément [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) s'adapte automatiquement à la largeur de son élément conteneur, et sa hauteur est définie automatiquement sur le format déterminé par la largeur et la hauteur données :
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857"></amp-img>
 
-Voir aussi [amp-img sur AMP by Example](https://ampbyexample.com/components/amp-img/).
+Voir aussi [`amp-img` sur AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ## Ajouter des styles à une page
 

@@ -69,7 +69,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 [tip type="note"]
 **Why is it tricky to make elements resize to fit the screen when I can easily do this with the `width=100%` style?**
 
-The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in amp-img (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
+The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
 [/tip]
 
 ## Scaling media for the page
@@ -82,7 +82,7 @@ When you include a video in your web page, you want to ensure that the user can 
 
 ##### Example: Embedding a YouTube video
 
-In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the `amp-youtube` element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
+In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
 
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>

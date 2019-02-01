@@ -32,14 +32,14 @@ toc: true
 </amp-img>
 [/sourcecode]
 
-يتلاءم هذا العنصر `amp-img` بشكل تلقائي مع عرض
+يتلاءم هذا العنصر [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) بشكل تلقائي مع عرض
 عنصر الحاوية المتعلق به،
 ويتم ضبط ارتفاعه تلقائيًا على نسبة العرض إلى الارتفاع
 المُحددة من خلال العرض والارتفاع المحددين:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857"></amp-img>
 
-راجع أيضًا [AMP بحسب علامة amp-img للنموذج](https://ampbyexample.com/components/amp-img/).
+راجع أيضًا [AMP بحسب علامة `amp-img` للنموذج]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ## إضافة أنماط إلى إحدى الصفحات
 

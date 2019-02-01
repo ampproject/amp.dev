@@ -73,7 +73,7 @@ toc: true
 
 ## プレースホルダとフォールバックの相互作用
 
-動的コンテンツ（`amp-twitter`、`amp-list` など）に依存する AMP コンポーネントでは、フォールバックとプレースホルダは次のように作用します。
+動的コンテンツ（[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})、[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) など）に依存する AMP コンポーネントでは、フォールバックとプレースホルダは次のように作用します。
 
 <ol>
   <li>コンテンツの読み込み中はプレースホルダが表示されます。</li>

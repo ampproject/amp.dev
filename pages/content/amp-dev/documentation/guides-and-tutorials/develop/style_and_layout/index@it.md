@@ -25,11 +25,11 @@ Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il lay
 </amp-img>
 [/sourcecode]
 
-Questo elemento `amp-img` si adatta automaticamente alla larghezza del relativo elemento contenitore, mentre la sua altezza viene impostata automaticamente in base alle proporzioni stabilite secondo la larghezza e l'altezza indicate:
+Questo elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) si adatta automaticamente alla larghezza del relativo elemento contenitore, mentre la sua altezza viene impostata automaticamente in base alle proporzioni stabilite secondo la larghezza e l'altezza indicate:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-Visita anche la pagina [amp-img del sito AMP by Example](https://ampbyexample.com/components/amp-img/).
+Visita anche la pagina [`amp-img` del sito AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ## Aggiungere stili a una pagina
 

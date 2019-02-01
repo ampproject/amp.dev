@@ -23,7 +23,7 @@ toc: true
 
 Если вы используете препроцессоры, загружайте только те элементы, которые применяются на ваших страницах.
 Например, файл [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) будет содержать всю необходимую разметку AMP и встроенные стили CSS из исходных файлов `*.scss`,
-а также скрипт специальных элементов для атрибута [`amp-youtube`](/docs/reference/components/amp-youtube.html). Благодаря этому на многих страницах сайта можно встраивать видео YouTube.
+а также скрипт специальных элементов для атрибута [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}). Благодаря этому на многих страницах сайта можно встраивать видео YouTube.
 
 [sourcecode:html] {% raw %}
 <head>

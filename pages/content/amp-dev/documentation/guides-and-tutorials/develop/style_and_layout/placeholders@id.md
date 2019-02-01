@@ -73,7 +73,7 @@ Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu brow
 
 ## Interaksi placeholder dan fallback
 
-Untuk komponen AMP yang mengandalkan konten dinamis (misalnya `amp-twitter`, `amp-list`), interaksi fallback dan placeholder beroperasi sebagai berikut:
+Untuk komponen AMP yang mengandalkan konten dinamis (misalnya [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), interaksi fallback dan placeholder beroperasi sebagai berikut:
 
 <ol>
   <li>Tampilkan placeholder saat konten sedang dimuat.</li>

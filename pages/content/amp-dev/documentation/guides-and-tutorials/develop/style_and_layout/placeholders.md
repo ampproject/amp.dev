@@ -78,7 +78,7 @@ In the following example, we use the `fallback` attribute to tell the browser to
 
 ## Interaction of placeholders and fallbacks
 
-For AMP components that rely on dynamic content (e.g., `amp-twitter`, `amp-list`), the interaction of fallbacks and placeholders operates as follows:
+For AMP components that rely on dynamic content (e.g., [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), the interaction of fallbacks and placeholders operates as follows:
 
 <ol>
   <li>Display the placeholder while the content is loading.</li>

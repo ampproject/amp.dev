@@ -25,7 +25,7 @@ toc: true
 </amp-img>
 [/sourcecode]
 
-Ширина элемента `amp-img` устанавливается равной ширине контейнера, а его высота автоматически меняется в соответствии с соотношением сторон, определяемым атрибутами width и height:
+Ширина элемента [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) устанавливается равной ширине контейнера, а его высота автоматически меняется в соответствии с соотношением сторон, определяемым атрибутами width и height:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
