@@ -36,7 +36,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 
 ではまず、カバーページに 1 番目のレイヤを追加します。このレイヤには、画面全体に表示する画像を含めます。
 
-レイヤを作成するには、`<amp-story-page>` の子要素として `<amp-story-grid-layer>` を追加します。画像を画面全体に表示したいので、`amp-story-grid-layer` に `template="fill"` 属性を指定します。レイヤ内には、[`amp-image`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image.md', locale=doc.locale).url.path}}) 要素を追加して `cover.jpg` ファイルを指定します。画像のサイズは 720 x 1280 ピクセルとし、レスポンシブにするため `layout="responsive"`と指定します。このレイヤは次のようになります。
+レイヤを作成するには、`<amp-story-page>` の子要素として `<amp-story-grid-layer>` を追加します。画像を画面全体に表示したいので、`amp-story-grid-layer` に `template="fill"` 属性を指定します。レイヤ内には、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素を追加して `cover.jpg` ファイルを指定します。画像のサイズは 720 x 1280 ピクセルとし、レスポンシブにするため `layout="responsive"`と指定します。このレイヤは次のようになります。
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">

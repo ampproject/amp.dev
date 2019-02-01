@@ -36,7 +36,7 @@ La portada se compone de dos capas:
 
 Vamos a añadir la primera capa a la portada. La capa incluye una imagen que llena la pantalla.
 
-Para crear la capa, añade el elemento `<amp-story-grid-layer>` como componente secundario de `<amp-story-page>`. Como queremos que la imagen ocupe la pantalla, utiliza el atributo `template="fill"` para `amp-story-grid-layer`. Dentro de la capa, añade un elemento [`amp-image`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image.md', locale=doc.locale).url.path}}) para el archivo `cover.jpg` y asegúrate de que el diseño se adapte (es decir, `layout="responsive"`) a las dimensiones de imagen 720x1280 píxeles.  A continuación, te indicamos el aspecto que debe tener la capa:
+Para crear la capa, añade el elemento `<amp-story-grid-layer>` como componente secundario de `<amp-story-page>`. Como queremos que la imagen ocupe la pantalla, utiliza el atributo `template="fill"` para `amp-story-grid-layer`. Dentro de la capa, añade un elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) para el archivo `cover.jpg` y asegúrate de que el diseño se adapte (es decir, `layout="responsive"`) a las dimensiones de imagen 720x1280 píxeles.  A continuación, te indicamos el aspecto que debe tener la capa:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
