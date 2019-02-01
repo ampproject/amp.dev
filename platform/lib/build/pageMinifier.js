@@ -49,9 +49,8 @@ class PageMinifier {
       'scope': 'Page minifier',
     });
 
-    // Set excludes for classes
+    // Set excludes for class name rewriting
     for (let selector of EXCLUDED_SELECTORS) {
-      this._log.info('Excluding selector', selector);
       rcs.selectorLibrary.setExclude(selector);
     }
 
