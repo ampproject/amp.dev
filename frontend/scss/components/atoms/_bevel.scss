@@ -10,8 +10,7 @@
   z-index: 0;
 
   @media (min-width: 768px){
-    grid-column-start: 1;
-    grid-column-end: 25;
+    grid-column: 1 / 25;
   }
 
 

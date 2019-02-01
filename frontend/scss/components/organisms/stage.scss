@@ -99,11 +99,12 @@
 	&-ads { @include gradient-ads; }
 	&-emails { @include gradient-e-mails; }
 
-  div.#{utility('container')} {
+  div.#{utility('container-fluid')} {
     padding: 0 2em;
 
-    @media (min-width: 768px) {
-      padding: 0 0 0 2.5em;
+    @media screen and (min-width: 768px) {
+      padding: 0 2.5em;
+      margin-left: -64px;
     }
   }
 
@@ -113,10 +114,15 @@
 
     @media (min-width: 768px) {
       grid-column: 3 / 13;
-      margin: 7vw 0 11vw;
+      margin: 7vw 0 11vw 3em;
     }
 
-    @media (min-width: 1024px) {
+    @media screen and (min-width: 1024px) {
+      grid-column: 3 / 19;
+      margin-left: 5em;
+    }
+
+    @media screen and (min-width: 1280px) {
       grid-column: 3 / 16;
     }
 

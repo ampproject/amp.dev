@@ -37,17 +37,29 @@
   .#{utility('stage')} {
     .#{organism('stage')} {
       &-content {
-        grid-column: 5 / 20;
         margin-bottom: 33vw;
         text-align: center;
 
-        @media (min-width: 768px) {
+        @media screen and (min-width: 768px) {
+          grid-column: 3 / 23;
           margin-bottom: 23vw;
+        }
+
+        @media screen and (min-width: 1024px) {
+          grid-column: 4 / 22;
+        }
+
+        @media screen and (min-width: 1280px) {
+          grid-column: 5 / 21;
         }
 
         &-headline {
           @include hl-stage;
         }
+      }
+
+      .#{utility('container')} {
+        padding-left: 0;
       }
     }
   }
