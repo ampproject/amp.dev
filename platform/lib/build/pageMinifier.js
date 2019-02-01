@@ -59,7 +59,7 @@ class PageMinifier {
 
           let html = page.contents.toString();
           html = scope.minifyPage(html, page.path);
-          page.contents = Buffer.fromString(html);
+          page.contents = Buffer.from(html);
 
           this.push(page);
 
