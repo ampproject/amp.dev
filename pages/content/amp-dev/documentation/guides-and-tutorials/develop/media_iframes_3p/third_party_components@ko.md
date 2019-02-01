@@ -10,7 +10,7 @@ toc: true
 ## 트윗 가져오기
 
 페이지에 트위터 트윗을 가져올 때
-[`amp-twitter`](/ko/docs/reference/components/amp-twitter.html) 요소를 사용합니다.
+[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
 트위터를 페이지에 추가하고자 할 때,
 `<head>` 요소 안에 아래 스크립트를 먼저 가져와야 합니다.
@@ -37,12 +37,12 @@ toc: true
 </amp-iframe>
 </div>
 
-도움말: [AMP By Example](https://ampbyexample.com/components/amp-twitter/)에서 더 많은 `amp-twitter` 예시를 확인하세요.
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-twitter/)에서 더 많은 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 예시를 확인하세요.
 
 ## 인스타그램 가져오기
 
 페이지에 인스타그램을 가져올 때
-[`amp-instagram`](/ko/docs/reference/components/amp-instagram.html) 요소를 사용합니다.
+[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
 인스타그램을 페이지에 추가하고자 할 때,
 `<head>` 요소 안에 아래 스크립트를 먼저 가져와야 합니다.
@@ -70,12 +70,12 @@ width와 height 값은 전역으로 사용해야합니다.
 </amp-iframe>
 </div>
 
-도움말: [AMP By Example](https://ampbyexample.com/components/amp-instagram/)에서 더 많은 `amp-instagram` 예시를 확인하세요.
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-instagram/)에서 더 많은 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 예시를 확인하세요.
 
 ## 페이스북 포스트나 비디오 보여주기
 
 페이지에서 페이스북 포스트나 비디오를 보여줄 때는
-[`amp-facebook`](/ko/docs/reference/components/amp-facebook.html) 요소를 사용합니다.
+[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
 아래 스크립트를 `<head>` 안에 추가해야합니다:
 
@@ -116,12 +116,12 @@ width와 height 값은 전역으로 사용해야합니다.
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-도움말: [AMP By Example](https://ampbyexample.com/components/amp-facebook/)에서 더 많은 `amp-facebook` 예시를 확인하세요.
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-facebook/)에서 더 많은 [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 예시를 확인하세요.
 
 ## 유튜브 비디오 가져오기
 
 페이지에 유튜브 비디오를 가져올 때는
-[`amp-youtube`](/ko/docs/reference/components/amp-youtube.html) 요소를 사용합니다
+[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 요소를 사용합니다
 
 아래 스크립트를 `<head>` 안에 추가해야합니다:
 
@@ -148,12 +148,12 @@ Z1q71gFeRqM가 video id입니다.
 </amp-iframe>
 </div>
 
-도움말: [AMP By Example](https://ampbyexample.com/components/amp-youtube/)에서 더 많은 `amp-youtube` 예시를 확인하세요.
+도움말: [AMP By Example](https://ampbyexample.com/components/amp-youtube/)에서 더 많은 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 예시를 확인하세요.
 
 ## 광고 보여주기
 
 페이지에서 광고를 보여줄 때는
-[`amp-ad`](/ko/docs/reference/components/amp-ad.html) 요소를 사용합니다.
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 HTTPS로 제공한 광고만 지원합니다.
 
 AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 허용하지 않습니다.

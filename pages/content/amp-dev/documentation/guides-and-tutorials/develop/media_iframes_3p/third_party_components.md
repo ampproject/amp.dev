@@ -16,7 +16,7 @@ Learn how to include third-party components in your pages.
 ## Embed a Tweet
 
 Embed a  Tweet from Twitter in your page by
-using the [`amp-twitter`](/docs/reference/components/amp-twitter.html) element.
+using the [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) element.
 
 To embed a tweet in your page,
 first include the following script in the `<head>`:
@@ -45,13 +45,13 @@ to select the aspect ratio based on screen width.
 </div>
 
 [tip type="tip"]
-**TIP –** See more `amp-twitter` examples at [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+**TIP –** See more [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) examples at [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
 [/tip]
 
 ## Embed an Instagram
 
 Embed an Instagram in your page by
-using the [`amp-instagram`](/docs/reference/components/amp-instagram.html) element.
+using the [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) element.
 
 To embed an Instagram,
 first include the following script in the `<head>`:
@@ -80,13 +80,13 @@ so the value for width and height should be universal.
 </div>
 
 [tip type="tip"]
-**TIP –** See more `amp-instagram` examples at [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+**TIP –** See more [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) examples at [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
 [/tip]
 
 ## Display a Facebook post or video
 
 Display a Facebook post or video in your page by
-using the [`amp-facebook`](/docs/reference/components/amp-facebook.html) element.
+using the [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) element.
 
 You must include the following script in the `<head>`:
 
@@ -128,13 +128,13 @@ Preview:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** See more `amp-facebook` examples at [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+**TIP –** See more [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) examples at [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
 [/tip]
 
 ## Embed a YouTube video
 
 Embed a YouTube video in your page by
-using the [`amp-youtube`](/docs/reference/components/amp-youtube.html) element.
+using the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) element.
 
 You must include the following script in the `<head>`:
 
@@ -162,13 +162,13 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 </div>
 
 [tip type="tip"]
-**TIP –** See more `amp-youtube` examples at [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+**TIP –** See more [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) examples at [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
 [/tip]
 
 ## Display an ad
 
 Display an ad in your page by
-using the [`amp-ad`](/docs/reference/components/amp-ad.html) element.
+using the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) element.
 Only ads served via HTTPS are supported.
 
 No ad network-provided JavaScript is allowed to run inside the AMP document.
@@ -208,7 +208,7 @@ to be shown if no ad is available:
 </amp-iframe>
 </div>
 
-AMP supports a wide range of ad networks. See the [amp-ad reference documentation](/docs/reference/components/amp-ad.html#supported-ad-networks)  for a full list.
+AMP supports a wide range of ad networks. See the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  for a full list.
 
 [tip type="read-on"]
 **READ ON –** Learn more about ads in the [Serving Ads on AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.

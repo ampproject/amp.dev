@@ -18,7 +18,7 @@ toc: true
 
 ## 이미지
 
- 다음과 같이 [`amp-img`](/ko/docs/reference/components/amp-img.html) 요소를 사용하여 페이지에 이미지를 삽입합니다.
+ 다음과 같이 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소를 사용하여 페이지에 이미지를 삽입합니다.
 
 <!--embedded example - fixed size image -->
 <div>
@@ -78,7 +78,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 ## 애니메이션 이미지
 
- The [`amp-anim`](/ko/docs/reference/components/amp-anim.html) 요소는 `amp-img` 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
+ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 요소는 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -96,7 +96,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 ## 동영상
 
- 페이지에 동영상을 삽입하려면 [`amp-video`](/ko/docs/reference/components/amp-video.html) 요소를 사용합니다.
+ 페이지에 동영상을 삽입하려면 [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
  직접 HTML5 동영상 파일 삽입에만 이 요소를 사용하세요. 이 요소는 `src` 속성으로 지정한 비디오 리소스를 AMP 가 결정한 시간에 레이지 로드합니다.
 
@@ -116,7 +116,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 ## 오디오
 
- 페이지에 오디오 리소스를 삽입하려면 [`amp-audio`](/ko/docs/reference/components/amp-audio.html) 요소를 사용합니다.
+ 페이지에 오디오 리소스를 삽입하려면 [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
  직접 HTML5 오디오 파일 삽입에만 이 요소를 사용하세요. AMP 페이지에 삽입되는 모든 외부 리소스와 같이, 이 요소는 `src` 속성으로 지정한 오디오 리소스를 AMP가 결정한 시간에 레이지 로드합니다.
 

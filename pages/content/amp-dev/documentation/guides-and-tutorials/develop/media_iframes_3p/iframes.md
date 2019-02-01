@@ -16,7 +16,7 @@ to display advanced content outside of AMP's limitations.
 ## The basics
 
 You can display an iframe in your page by using the
-[`amp-iframe`](/docs/reference/components/amp-iframe.html) element.
+[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) element.
 
 Iframes are especially useful in AMP to display content not supported in the
 main page context, such as content requiring user-authored JavaScript.
@@ -27,12 +27,12 @@ main page context, such as content requiring user-authored JavaScript.
 * Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin.
 
 [tip type="read-on"]
-**READ ON –** Learn more at the [full specification for <code>amp-iframe</code>](/docs/reference/components/amp-iframe.html).
+**READ ON –** Learn more at the [full specification for `amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ### Include the script
 
-To include an `amp-iframe` in your page,
+To include an [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) in your page,
 first include the following script to the `<head>`, which loads the additional
 code for the extended component:
 
@@ -43,7 +43,7 @@ code for the extended component:
 
 ### Write the markup
 
-In the following example, we created a responsive `amp-iframe` to embed a Google Map via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
+In the following example, we created a responsive [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) to embed a Google Map via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
 
 ```html
 <amp-iframe width="200" height="100"
@@ -63,7 +63,7 @@ Renders as:
 
 ## Using placeholders
 
-You can display an `amp-iframe` at the top of a document, provided the `amp-iframe` contains an element with the `placeholder` attribute, (for example, an `amp-img` element) which would be rendered as a placeholder until the iframe is ready to be displayed.
+You can display an [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) at the top of a document, provided the [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) contains an element with the `placeholder` attribute, (for example, an [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element) which would be rendered as a placeholder until the iframe is ready to be displayed.
 
 [tip type="read-on"]
 **READ ON –**: Learn more about placeholders in [Iframe with placeholder](/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
@@ -93,4 +93,4 @@ Renders as:
 
 ## Examples
 
-You can find more advanced amp-iframe examples in [AMP By Example](https://ampbyexample.com/components/amp-iframe/).
+You can find more advanced [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) examples in [AMP By Example](https://ampbyexample.com/components/amp-iframe/).

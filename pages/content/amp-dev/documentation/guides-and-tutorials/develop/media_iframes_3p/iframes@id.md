@@ -8,21 +8,21 @@ Pelajari cara menampilkan penyertaan konten media di halaman, dan cara menggunak
 
 ## Dasar-Dasar
 
-Menampilkan iframe di halaman menggunakan elemen [`amp-iframe`](/id/docs/reference/components/amp-iframe.html).
+Menampilkan iframe di halaman menggunakan elemen [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
 
 Iframe sangat bermanfaat di AMP untuk menampilkan konten yang tidak didukung di konteks halaman menu,
 seperti konten yang memerlukan JavaScript yang ditulis oleh pengguna.
 
-### `amp-iframe` persyaratan
+### [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) persyaratan
 
 * Harus setidaknya **600 piksel** atau **75%** viewport pertama yang jauh dari bagian atas.
 * Hanya dapat meminta referensi melalui HTTPS, dan tidak boleh memiliki asal yang sama dengan penampung, kecuali permintaan tidak menentukan izinkan-asal-yang-sama.
 
-Baca Lebih Lanjut: Pelajari lebih lanjut di [spesifikasi penuh untuk <code>amp-iframe</code>](/id/docs/reference/components/amp-iframe.html).
+Baca Lebih Lanjut: Pelajari lebih lanjut di [spesifikasi penuh untuk `amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
 
 ### Menyertakan Skrip
 
-Untuk menyertakan `amp-iframe` di halaman, pertama-tama sertakan skrip berikut ke `<head>`, yang memuat kode
+Untuk menyertakan [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) di halaman, pertama-tama sertakan skrip berikut ke `<head>`, yang memuat kode
 tambahan untuk komponen yang diperluas:
 
 [sourcecode:html]
@@ -32,7 +32,7 @@ tambahan untuk komponen yang diperluas:
 
 ### Menulis markup
 
-Contoh `amp-iframe`:
+Contoh [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-iframe width="200" height="100"
@@ -52,7 +52,7 @@ Preview:
 
 ## Menggunakan placeholder
 
-Anda dapat menampilkan `amp-iframe` di bagian atas dokumen, `amp-iframe` yang diberikan berisi elemen dengan atribut `placeholder`, (misalnya, elemen `amp-img`) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
+Anda dapat menampilkan [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) di bagian atas dokumen, [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) yang diberikan berisi elemen dengan atribut `placeholder`, (misalnya, elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
 
 Baca Lebih Lanjut: Pelajari lebih lanjut tentang placeholder di [Iframe dengan placeholder](/id/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
 

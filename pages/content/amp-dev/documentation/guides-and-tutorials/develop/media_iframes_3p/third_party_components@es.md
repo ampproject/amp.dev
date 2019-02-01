@@ -10,7 +10,7 @@ Obtén información sobre cómo incluir componentes de terceros en tus páginas.
 ## Insertar un tuit
 
 Inserta un tuit de Twitter en tu página
-con el elemento <a href="/es/docs/reference/components/amp-twitter.html">`amp-twitter`</a>.
+con el elemento <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}"><code>amp-twitter</code></a>.
 
 Para incluir un tuit en tu página,
 incluye en primer lugar la siguiente secuencia de comandos en `<head>`:
@@ -36,12 +36,12 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
 </div>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de `amp-twitter` en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
 [/tip]
 
 ## Insertar una foto de Instagram
 
-Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`](/es/docs/reference/components/amp-instagram.html).
+Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
 
 Para incluir una foto de Instagram, en primer lugar incluye la siguiente secuencia de comandos en `<head>`:
 
@@ -66,12 +66,12 @@ Además, Instagram utiliza una relación de aspecto fija para los diseños adapt
 </div>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de `amp-instagram` en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
 [/tip]
 
 ## Mostrar entradas o vídeos de Facebook
 
-Muestra una entrada o un vídeo de Facebook en tu página con el elemento [`amp-facebook`](/es/docs/reference/components/amp-facebook.html).
+Muestra una entrada o un vídeo de Facebook en tu página con el elemento [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
 
 Debes incluir la siguiente secuencia de comandos en `<head>`:
 
@@ -112,12 +112,12 @@ Avance:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de `amp-facebook` en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
 [/tip]
 
 ## Insertar un vídeo de YouTube
 
-Inserta un vídeo de YouTube en tu página con el elemento [`amp-youtube`](/es/docs/reference/components/amp-youtube.html).
+Inserta un vídeo de YouTube en tu página con el elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
 
 Debes incluir la siguiente secuencia de comandos en `<head>`:
 
@@ -144,12 +144,12 @@ Utiliza `layout="responsive"` para producir diseños correctos para los vídeos 
 </div>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de `amp-youtube` en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
 [/tip]
 
 ## Mostrar un anuncio
 
-Muestra un anuncio en tu página utilizando el elemento [`amp-ad`](/es/docs/reference/components/amp-ad.html).
+Muestra un anuncio en tu página utilizando el elemento [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 Únicamente son compatibles los anuncios que se publiquen a través de HTTPS.
 
 No se puede ejecutar ningún JavaScript proporcionado por una red publicitaria en el documento de AMP.

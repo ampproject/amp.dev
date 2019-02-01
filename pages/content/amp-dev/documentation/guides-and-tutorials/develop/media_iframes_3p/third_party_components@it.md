@@ -9,7 +9,7 @@ Scopri come includere componenti di terze parti nelle tue pagine.
 
 ## Incorporare un tweet
 
-Incorpora un tweet di Twitter nella pagina utilizzando l'elemento [`amp-twitter`](/docs/reference/components/amp-twitter.html).
+Incorpora un tweet di Twitter nella pagina utilizzando l'elemento [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
 Per includere un tweet nella pagina, inserisci innanzitutto lo script seguente nella sezione `<head>`:
 
@@ -35,7 +35,7 @@ Regola manualmente la larghezza e l'altezza fornite oppure utilizza l'attributo 
 
 ## Incorporare una foto di Instagram
 
-Incorpora una foto di Instagram nella pagina utilizzando l'elemento [`amp-instagram`](/docs/reference/components/amp-instagram.html).
+Incorpora una foto di Instagram nella pagina utilizzando l'elemento [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
 
 Per includere una foto di Instagram, inserisci innanzitutto lo script seguente nella sezione `<head>`:
 
@@ -60,7 +60,7 @@ Inoltre, Instagram utilizza proporzioni fisse per i layout reattivi, quindi il v
 
 ## Mostrare post o video di Facebook
 
-Mostra un post o un video di Facebook nella pagina utilizzando l'elemento [`amp-facebook`](/docs/reference/components/amp-facebook.html).
+Mostra un post o un video di Facebook nella pagina utilizzando l'elemento [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
 
 Devi includere lo script seguente nella sezione `<head>`:
 
@@ -103,7 +103,7 @@ Preview:
 
 ## Includere un video di YouTube
 
-Includi un video di YouTube nella pagina utilizzando l'elemento [`amp-youtube`](/docs/reference/components/amp-youtube.html).
+Includi un video di YouTube nella pagina utilizzando l'elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
 
 Devi includere lo script seguente nella sezione `<head>`:
 
@@ -130,7 +130,7 @@ Utilizza `layout="responsive"` per ottenere i layout corretti per video con prop
 
 ## Mostrare un annuncio
 
-Mostra un annuncio nella pagina utilizzando l'elemento [`amp-ad`](/docs/reference/components/amp-ad.html).
+Mostra un annuncio nella pagina utilizzando l'elemento [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 Sono supportati soltanto gli annunci pubblicati tramite HTTPS.
 
 All'interno del documento AMP non è possibile eseguire codice JavaScript fornito da reti pubblicitarie.

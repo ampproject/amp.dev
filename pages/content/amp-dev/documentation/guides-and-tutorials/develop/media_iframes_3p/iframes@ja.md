@@ -8,7 +8,7 @@ toc: true
 
 ## 基本
 
-[`amp-iframe`](/ja/docs/reference/components/amp-iframe.html) 要素を使用すると、ページに iframe を表示できます。
+[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) 要素を使用すると、ページに iframe を表示できます。
 
 iframe は、メインページのコンテキストでサポートされていないコンテンツ（ユーザー作成の JavaScript を必要とするコンテンツなど）を AMP で表示する場合に特に便利です。
 
@@ -17,11 +17,11 @@ iframe は、メインページのコンテキストでサポートされてい�
 * 最初のビューポートが上部から **600 ピクセル** または **75%** 以上離れていること。
 * HTTPS 経由でのみリソースをリクエストできること（allow-same-origin を指定している場合を除き、リソースのオリジンはコンテナとは別である必要があります）。
 
-参照: [<code>amp-iframe</code>](/ja/docs/reference/components/amp-iframe.html) の仕様もご確認ください。
+参照: [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) の仕様もご確認ください。
 
 ### スクリプトを追加する
 
-ページに `amp-iframe` を含めるには、
+ページに [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) を含めるには、
 まず `<head>` に以下のスクリプトを追加します。これにより、拡張コンポーネントの追加コードが読み込まれます。
 
 [sourcecode:html]
@@ -31,7 +31,7 @@ iframe は、メインページのコンテキストでサポートされてい�
 
 ### マークアップを作成する
 
-`amp-iframe` の例:
+[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) の例:
 
 ```html
 <amp-iframe width="200" height="100"
@@ -51,7 +51,7 @@ Preview:
 
 ## プレースホルダの使用
 
-`placeholder` 属性を指定した要素（`amp-img` 要素など）を `amp-iframe` に追加して、iframe が表示できる状態になるまでプレースホルダとしてレンダリングされるようにすると、`amp-iframe` をドキュメントの一番上に表示することが可能です。
+`placeholder` 属性を指定した要素（[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素など）を [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) に追加して、iframe が表示できる状態になるまでプレースホルダとしてレンダリングされるようにすると、[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) をドキュメントの一番上に表示することが可能です。
 
 参照: プレースホルダについて詳しくは、[プレースホルダを含む iframe](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) をご覧ください。
 

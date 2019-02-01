@@ -9,21 +9,21 @@ Descubre cómo incluir contenido multimedia en tus páginas y cómo usar iframes
 ## Aspectos básicos
 
 Incluye un iframe en tu página usando el elemento
-[`amp-iframe`](/es/docs/reference/components/amp-iframe.html).
+[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
 
 Los iframes son especialmente útiles en AMP para mostrar contenido que no se admita en
 la página principal, como el contenido que requiere JavaScript creado por usuarios.
 
-### Requisitos de `amp-iframe`
+### Requisitos de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})
 
 * Debe tener al menos **600 píxeles** o un **75%** de la primera ventana gráfica si empezamos por el principio de la página.
 * Solo puede solicitar recursos por HTTPS, y estos no deben tener el mismo origen que el contenedor salvo que no se especifique allow-same-origin.
 
-Leer más: Obtén más información [en la especificación completa de <code>amp-iframe</code>](/es/docs/reference/components/amp-iframe.html).
+Leer más: Obtén más información [en la especificación completa de `amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
 
 ### Incluir la secuencia de comandos
 
-Para incluir un `amp-iframe` en tu página,
+Para incluir un [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) en tu página,
 primero debe constar la siguiente secuencia de comandos en el `<head>`, que carga el código adicional del componente ampliado:
 
 [sourcecode:html]
@@ -33,7 +33,7 @@ primero debe constar la siguiente secuencia de comandos en el `<head>`, que carg
 
 ### Escribir las etiquetas
 
-Un ejemplo de `amp-iframe`:
+Un ejemplo de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-iframe width="200" height="100"
@@ -53,7 +53,7 @@ Preview:
 
 ## Usar elementos placeholder
 
-Puedes mostrar un `amp-iframe` en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de `amp-iframe` como, (por ejemplo, `amp-img`). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
+Puedes mostrar un [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) como, (por ejemplo, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
 
 Leer más: Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder](/es/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
 

@@ -9,7 +9,7 @@ toc: true
 
 ## Как добавлять твиты
 
-При публикации твитов на своих страницах используйте элемент [`amp-twitter`](/docs/reference/components/amp-twitter.html).
+При публикации твитов на своих страницах используйте элемент [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -34,7 +34,7 @@ toc: true
 
 ## Как добавлять изображения из Instagram
 
-При публикации изображений из Instagram на своих страницах используйте элемент [`amp-instagram`](/docs/reference/components/amp-instagram.html).
+При публикации изображений из Instagram на своих страницах используйте элемент [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -59,7 +59,7 @@ toc: true
 
 ## Как добавлять записи или видео Facebook
 
-При публикации записей или видео Facebook на своих страницах используйте элемент [`amp-facebook`](/docs/reference/components/amp-facebook.html).
+При публикации записей или видео Facebook на своих страницах используйте элемент [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -101,7 +101,7 @@ Preview:
 
 ## Как добавлять видео YouTube
 
-При публикации видео YouTube на своих страницах используйте элемент [`amp-youtube`](/docs/reference/components/amp-youtube.html).
+При публикации видео YouTube на своих страницах используйте элемент [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
 
 Для этого разместите между тегами `<head>` следующий скрипт:
 
@@ -127,7 +127,7 @@ Preview:
 
 ## Как добавлять объявления
 
-При публикации объявлений на своих страницах используйте элемент [`amp-ad`](/docs/reference/components/amp-ad.html).
+При публикации объявлений на своих страницах используйте элемент [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 Помните о том, что поддерживаются только объявления, использующие протокол HTTPS.
 
 Код JavScript, предоставляемый рекламными сетями, запрещено обрабатывать непосредственно в документах AMP,
