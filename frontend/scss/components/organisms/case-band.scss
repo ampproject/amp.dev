@@ -5,6 +5,22 @@
 
 @include levitateAnimation;
 
+.#{utility('stage')} {
+  .#{organism('case-band')} {
+    grid-column: 1 / -1;
+    width: 150vw;
+    margin-top: -40%;
+    margin-right: -150vw;
+    pointer-events: none;
+
+    @media (min-width: 768px) {
+      width: 100%;
+      margin-top: -30%;
+      margin-right: 0;
+    }
+  }
+}
+
 .#{utility('case-band')} {
   overflow: hidden;
   margin-bottom: 7em;
