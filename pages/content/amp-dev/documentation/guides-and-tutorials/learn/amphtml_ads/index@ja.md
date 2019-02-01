@@ -51,7 +51,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='AMP HTML 広告を AMP ページに配信', caption='AMP HTML 広告を AMP ページに配信', align='' ) }}
 
-1. サイト運営者が、[`<amp-ad>`](/ja/docs/reference/components/amp-ad.html) タグを使用して AMP ページに広告スロットを挿入し、使用する広告ネットワークを指定します。
+1. サイト運営者が、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) タグを使用して AMP ページに広告スロットを挿入し、使用する広告ネットワークを指定します。
 1. AMP ランタイムが、広告を取得するための広告リクエストを指定の広告ネットワークに送信します。AMP HTML 広告の配信に対応している広告ネットワークは、広告を検証して署名する[高速フェッチ実装](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)を提供しています。
 1. 広告ネットワークが AMP HTML 広告を返し、AMP ランタイムがその広告を AMP ページに表示します。
 
@@ -79,7 +79,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### 広告ネットワーク / 広告サーバー
 
-AMP HTML 広告を AMP ページに配信するには、[高速フェッチ広告リクエスト実装](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)を使用する `amp-ad` 拡張機能を自社のネットワーク用に作成する必要があります（まだ作成していない場合）。詳しくは、[AMP との統合でディスプレイ広告を掲載](/ja/docs/ads/adnetwork_integration.html)する方法についての説明をご確認ください。なお、AMP HTML 広告を非 AMP ページに配信する場合、特別な統合は必要ありません。
+AMP HTML 広告を AMP ページに配信するには、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})する方法についての説明をご確認ください。なお、AMP HTML 広告を非 AMP ページに配信する場合、特別な統合は必要ありません。
 
 ## AMP HTML 広告を作成する
 
@@ -118,15 +118,15 @@ SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）�
 
 #### AMP HTML 広告は、サードパーティによる検証や視認性検出に対応していますか？
 
-はい、対応しています。[`amp-analytics`](/ja/docs/reference/components/amp-analytics.html) を使用した検証と視認性検出をネイティブ サポートしています（Google の ActiveView はこの方法で統合されています）。MOAT など、その他のベンダーも、両機能への対応を積極的に進めています。
+はい、対応しています。[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使用した検証と視認性検出をネイティブ サポートしています（Google の ActiveView はこの方法で統合されています）。MOAT など、その他のベンダーも、両機能への対応を積極的に進めています。
 
 #### AMP HTML 広告は、タイムラインベースのアニメーションに対応していますか？
 
-はい、対応しています。[`amp-animation`](/ja/docs/reference/components/amp-animation.html) についての説明をご覧ください。
+はい、対応しています。[`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
 
 #### ほとんどの広告は、タップ可能なターゲットや設定可能な広告終了に対応しています。AMP HTML 広告にも同様の仕組みがありますか？
 
-はい、あります。[`amp-ad-exit`](/ja/docs/reference/components/amp-ad-exit.html) についての説明をご覧ください。
+はい、あります。[`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
 
 #### 必要な情報を見つけられません。どこで質問をすればよいですか？
 

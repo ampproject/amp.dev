@@ -18,12 +18,8 @@
 
 const express = require('express');
 const config = require('../config');
-const HttpProxy = require('http-proxy');
-const modifyResponse = require('http-proxy-response-rewrite');
 const {Signale} = require('signale');
-const {FilteredPage} = require('../pipeline/filteredPage');
-const got = require('got');
-const {pageMinifier} = require('@lib/build/pageMinifier');
+
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -65,6 +61,13 @@ async function hasManualFormatVariant(request, format) {
 
 // Setup a proxy over to Grow during development
 if (config.environment === 'development') {
+  // Only import the stuff needed for proxying during development
+  const HttpProxy = require('http-proxy');
+  const modifyResponse = require('http-proxy-response-rewrite');
+  const {FilteredPage} = require('../pipeline/filteredPage');
+  const got = require('got');
+  const {pageMinifier} = require('@lib/build/pageMinifier');
+
   // Also create a logger during development since you want to know
   // what's going on
   const log = new Signale({

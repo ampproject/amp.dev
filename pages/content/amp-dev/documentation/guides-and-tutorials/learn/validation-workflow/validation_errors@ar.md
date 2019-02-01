@@ -439,10 +439,10 @@ limitations under the License.
 يحدث هذا الخطأ عندما يكون لإحدى العلامات كلتا السمتين الحصريتين اللتين يمكن استخدامهما بشكل تبادلي.
 على سبيل المثال، يُسمح بسمة واحدة فقط للعلامات التالية:
 
-* ‏[amp-twitter](/docs/reference/components/amp-twitter.html):‏ `data-tweetid` أو `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html):‏ `data-shortcode` أو `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html):‏ `src` أو `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html):‏ `src` أو `data-videoid`
+* ‏[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}):‏ `data-tweetid` أو `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}):‏ `data-shortcode` أو `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):‏ `src` أو `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}):‏ `src` أو `data-videoid`
 
 ### السمة الإلزامية غير موجودة في القائمة
 
@@ -465,10 +465,10 @@ limitations under the License.
 من الخيارات المتعددة.
 على سبيل المثال، تتطلب هذه العلامات سمة واحدة من خيارين محتملين:
 
-* ‏[amp-twitter](/docs/reference/components/amp-twitter.html):‏ `data-tweetid` أو `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html):‏ `data-shortcode` أو `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html):‏ `src` أو `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html):‏ `src` أو `data-videoid`
+* ‏[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}):‏ `data-tweetid` أو `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}):‏ `data-shortcode` أو `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):‏ `src` أو `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}):‏ `src` أو `data-videoid`
 
 ### علامة أصل خاطئة
 
@@ -501,7 +501,7 @@ limitations under the License.
 * تتطلب `style` علامة الأًصل `boilerplate (noscript)`.
 * تتطلب `noscript` علامة الأصل `head`.
 * تتطلب `script` علامة الأصل `head`.
-* تتطلب `source` علامة وسائط (`amp-audio`، `amp-video`، وغيرها).
+* تتطلب `source` علامة وسائط ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})، [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})، وغيرها).
 
 ### علامة الأصل غير مسموح بها
 
@@ -867,14 +867,14 @@ limitations under the License.
 على سبيل المثال، ينتج عن `<amp-img src="" layout="responsive" width="42px" height="42rem">`
 رسالة الخطأ هذه:
 
-"وحدات غير متناسقة للعرض والارتفاع في العلامة 'amp-img' - العرض محدد في 'px' بينما الارتفاع محدد في 'rem'."
+"وحدات غير متناسقة للعرض والارتفاع في العلامة '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  - العرض محدد في 'px' بينما الارتفاع محدد في 'rem'."
 
 ## أخطاء النماذج
 
 لا يمكن أن تشمل صفحات AMP بنية نماذج،
 ما لم تكن البنية في نطاق علامة AMP المصممة
 خصيصًا لتضمين النماذج، مثل،
-[amp-mustache](/docs/reference/components/amp-mustache.html).
+[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 يمكن تضمين النماذج في ملفات المصدر،
 طالما أن الناتج الناشئ عن هذه الملفات لا يحتوي على النماذج

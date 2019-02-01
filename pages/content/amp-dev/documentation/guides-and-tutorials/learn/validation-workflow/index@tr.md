@@ -39,7 +39,7 @@ AMP Doğrulayıcı'ya, bir tarayıcı uzantısı aracılığıyla doğrudan tara
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_invalid.png" width="20" height="20" alt="Geçersiz AMP dokümanını belirten kırmızı AMP simgesi." layout="fixed"></amp-img>
-      
+
     </td>
     <td>AMP sayfasında hatalar olduğunda, uzantı simgesi kırmızı renkte görünür ve karşılaşılan hataların sayısını gösterir.
     </td>
@@ -47,7 +47,7 @@ AMP Doğrulayıcı'ya, bir tarayıcı uzantısı aracılığıyla doğrudan tara
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_valid.png" width="20" height="20" alt="Geçerli AMP dokümanını belirten yeşil AMP simgesi." layout="fixed"></amp-img>
-      
+
     </td>
     <td>AMP sayfasında hata yoksa simge yeşil renkte görünür ve varsa uyarıların sayısını gösterir.
     </td>
@@ -55,7 +55,7 @@ AMP Doğrulayıcı'ya, bir tarayıcı uzantısı aracılığıyla doğrudan tara
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_link.png" width="20" height="20" alt="Tıklandığında AMP HTML varyantını belirten mavi AMP simgesi." layout="fixed"></amp-img>
-      
+
     </td>
     <td>Sayfanın AMP olmadığı, ancak bir AMP sürümünün bulunduğunu belirttiği durumlarda simge, bir bağlantı simgesiyle mavi renkte gösterilir ve uzantı tıklandığında tarayıcı AMP sürümüne yönlendirilir.
     </td>
@@ -153,10 +153,10 @@ AMP doğrulama hatasının farklı araçlardaki gösterimi şu şekilde olur:
 Her araç çeşitli bilgiler sağlar:
 
 1. HTML dokümanında, hatanın ortaya çıktığı konum (satır ve sütun) bazı arayüzlerde ilgili konumun vurgulanması için tıklanabilir. Bu örnekte, sorun 11. satır, 2. sütunda ortaya çıkmıştır.
-1. Hatayı açıklayan bir metin satırı. Bu örnekte, metin `<img>` etiketi kullandığımızı, ancak onun yerine bir `<amp-img>` etiketi kullanmış olmamız gerektiğini belirtmektedir.
-1. Hatayla ilgili bir dokümanın bağlantısı. Bu örnekte, `<amp-img>` etiketine ilişkin dokümanlar. Tüm hatalarda doküman bağlantıları oluşturulmaz.
+1. Hatayı açıklayan bir metin satırı. Bu örnekte, metin `<img>` etiketi kullandığımızı, ancak onun yerine bir [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketi kullanmış olmamız gerektiğini belirtmektedir.
+1. Hatayla ilgili bir dokümanın bağlantısı. Bu örnekte, [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketine ilişkin dokümanlar. Tüm hatalarda doküman bağlantıları oluşturulmaz.
 
-Bu spesifikasyonu dikkatlice yeniden okuduğumuzda, `<amp-img>` etiketi kullanmamız gerekirken bir `<img>` etiketi kullandığımızı fark ederiz.
+Bu spesifikasyonu dikkatlice yeniden okuduğumuzda, [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketi kullanmamız gerekirken bir `<img>` etiketi kullandığımızı fark ederiz.
 
 Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna](/tr/docs/troubleshooting/validation_errors.html) bakın.
 Dikkatli bir değerlendirmeden sonra ilerleme kaydedemezseniz [bir soru sorun](http://stackoverflow.com/questions/tagged/amp-html), size yardımcı olmaya çalışalım.

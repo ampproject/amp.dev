@@ -34,7 +34,7 @@ limitations under the License.
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_TAG_MISSING</td>
   </tr>
    <tr>
@@ -67,7 +67,7 @@ limitations under the License.
 <table>
   </tr>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>TAG_REQUIRED_BY_MISSING</td>
   </tr>
    <tr>
@@ -93,7 +93,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DISALLOWED_TAG</td>
   </tr>
    <tr>
@@ -114,7 +114,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DISALLOWED_SCRIPT_TAG</td>
   </tr>
    <tr>
@@ -142,7 +142,7 @@ AMP HTML ライブラリに対応する実装があります。AMP HTML ペー�
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_ATTR_MISSING</td>
   </tr>
    <tr>
@@ -167,7 +167,7 @@ AMP タグに必須の属性は、
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>INVALID_ATTR_VALUE</td>
   </tr>
    <tr>
@@ -188,21 +188,21 @@ AMP タグに必須の属性は、
 
 <strong>重要:</strong> AMP で使用する URL 値の多くは HTTPS であることが必要です。
 このエラーが発生して、その原因がわからない場合は、
-該当する AMP タグの仕様を調べて 
+該当する AMP タグの仕様を調べて
 属性を HTTPS にする必要がないかどうかを確認してください。
 
 ### 属性が許可されていない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DISALLOWED_ATTR</td>
   </tr>
-    </tr> 
+    </tr>
                 <td class="col-thirty"><strong>形式</strong></td>
                 <td>"The attribute '%1' may not appear in tag '%2'."</td>
   </tr>
-    </tr> 
+    </tr>
                 <td class="col-thirty"><strong>修正方法</strong></td>
                 <td>HTML タグから属性を削除します。</td>
   </tr>
@@ -220,8 +220,8 @@ AMP タグに必須の属性は、
 ### 必須のテキストがない、または正しくない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_CDATA_MISSING_OR_INCORRECT</td>
   </tr>
    <tr>
@@ -266,7 +266,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>CDATA_VIOLATES_BLACKLIST</td>
   </tr>
    <tr>
@@ -298,7 +298,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DISALLOWED_PROPERTY_IN_ATTR_VALUE</td>
   </tr>
    <tr>
@@ -332,7 +332,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>INVALID_PROPERTY_VALUE_IN_ATTR_VALUE</td>
   </tr>
    <tr>
@@ -355,12 +355,12 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-注: 値のない属性を出力しようとしているのに（たとえば、`<amp-video>` コンポーネントの `autoplay`、`controls`、`loop` など）、HTML のビルドプロセスで `true` などのデフォルト値（しかし無効な値）が生成される場合は（たとえば、React では、[デフォルトで](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ... と生成されます）、回避策として、属性の名前を値として出力してください。たとえば、`<amp-video autoplay="autoplay" ...>` のようになります。
+注: 値のない属性を出力しようとしているのに（たとえば、[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) コンポーネントの `autoplay`、`controls`、`loop` など）、HTML のビルドプロセスで `true` などのデフォルト値（しかし無効な値）が生成される場合は（たとえば、React では、[デフォルトで](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ... と生成されます）、回避策として、属性の名前を値として出力してください。たとえば、`<amp-video autoplay="autoplay" ...>` のようになります。
 
 ### URL が指定されていない
 
 <table>
-    </tr> 
+    </tr>
     <td class="col-thirty"><strong>コード</strong></td>
     <td>MISSING_URL</td>
   </tr>
@@ -380,9 +380,9 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### URL が無効
 
 <table>
-    </tr> 
+    </tr>
     <td class="col-thirty"><strong>コード</strong></td>
-    <td>INVALID_URL_PROTOCOL</td> 
+    <td>INVALID_URL_PROTOCOL</td>
   </tr>
    <tr>
     <td class="col-thirty"><strong>形式</strong></td>
@@ -400,9 +400,9 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### URL プロトコルが無効
 
 <table>
-    </tr> 
+    </tr>
     <td class="col-thirty"><strong>コード</strong></td>
-    <td>INVALID_URL_PROTOCOL</td> 
+    <td>INVALID_URL_PROTOCOL</td>
   </tr>
    <tr>
     <td class="col-thirty"><strong>形式</strong></td>
@@ -421,8 +421,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### 属性値に必須のプロパティがない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_PROPERTY_MISSING_FROM_ATTR_VALUE</td>
   </tr>
    <tr>
@@ -449,8 +449,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### 同時に指定できない属性が含まれている
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MUTUALLY_EXCLUSIVE_ATTRS</td>
   </tr>
    <tr>
@@ -466,14 +466,14 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 このエラーは、同時に指定できない 2 つの属性がどちらもタグに含まれている場合に発生します。
 たとえば、次のタグではどちらか 1 つの属性しか指定できません。
 
-* [amp-iframe](/ja/docs/reference/components/amp-iframe.html): `src` または `srcdoc`
-* [amp-jwplayer](/ja/docs/reference/components/amp-jwplayer.html): `data-media-id` または `data-playlist-id`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` または `srcdoc`
+* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` または `data-playlist-id`
 
 ### リスト内の必須属性がない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_ONEOF_ATTR_MISSING</td>
   </tr>
    <tr>
@@ -487,19 +487,19 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 </table>
 
 このエラーは、複数の選択肢がある必須属性が 1 つも
-指定されていない場合に発生します。 
+指定されていない場合に発生します。
 たとえば、次のタグでは 2 つの属性のうちどちらか 1 つを指定する必要があります。
 
-* [amp-twitter](/ja/docs/reference/components/amp-twitter.html): `data-tweetid` または `src`
-* [amp-instagram](/ja/docs/reference/components/amp-instagram.html): `data-shortcode` または `src`
-* [amp-iframe](/ja/docs/reference/components/amp-iframe.html): `src` または `srcdoc`
-* [amp-youtube](/ja/docs/reference/components/amp-youtube.html): `src` または `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` または `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` または `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` または `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` または `data-videoid`
 
 ### 親タグが間違っている
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>WRONG_PARENT_TAG</td>
   </tr>
    <tr>
@@ -526,13 +526,13 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 * `style` には親タグ `boilerplate (noscript)` が必要
 * `noscript` には親タグ `head` が必要
 * `script` には親タグ `head` が必要
-* `source` にはメディアタグ（`amp-audio`、`amp-video` など）が必要
+* `source` にはメディアタグ（[`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})、[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) など）が必要
 
 ### 祖先にできないタグ
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DISALLOWED_TAG_ANCESTOR</td>
   </tr>
    <tr>
@@ -553,8 +553,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### 必須の祖先タグ
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_TAG_ANCESTOR</td>
   </tr>
    <tr>
@@ -571,7 +571,7 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 [AMP 検証ツール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)の仕様で
 `mandatory_ancestor` として定義されています。
 
-このエラーは、以下のタグで 
+このエラーは、以下のタグで
 `mandatory_ancestor` が指定されていない場合に発生します（タグ、祖先の順）。
 
 * `img` は必ず `noscript` の子孫にする
@@ -582,13 +582,13 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### 必須の祖先タグとヒント
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>MANDATORY_TAG_ANCESTOR_WITH_HINT</td>
   </tr>
    <tr>
                 <td class="col-thirty"><strong>形式</strong></td>
-                <td>"The tag '%1' may only appear as a descendant of tag '%2'. Did you mean '%3'?"</td> 
+                <td>"The tag '%1' may only appear as a descendant of tag '%2'. Did you mean '%3'?"</td>
   </tr>
    <tr>
                 <td class="col-thirty"><strong>修正方法</strong></td>
@@ -607,8 +607,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 ### 一意のタグが重複している
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DUPLICATE_UNIQUE_TAG</td>
   </tr>
    <tr>
@@ -666,8 +666,8 @@ AMP 検証ツールでエラーになることはありません。
 ### スタイルシートが長すぎる
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>STYLESHEET_TOO_LONG</td>
   </tr>
    <tr>
@@ -688,7 +688,7 @@ AMP 検証ツールがこのエラーを返すのは、
 
 <table>
    <tr>
-                <td class="col-thirty"><strong>コード</strong></td> 
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>CSS_SYNTAX</td>
   </tr>
    <tr>
@@ -705,14 +705,14 @@ AMP 検証ツールがこのエラーを返すのは、
 あった場合に発生します。
 エラーの原因がわからない場合は、
 オンラインの CSS 検証ツール
-（[csslint](http://csslint.net/)）などで 
+（[csslint](http://csslint.net/)）などで
 CSS を実行してみてください。
 
 ### 特定のルールでの CSS 構文エラー
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>CSS_SYNTAX_INVALID_AT_RULE</td>
   </tr>
    <tr>
@@ -725,10 +725,10 @@ CSS を実行してみてください。
   </tr>
 </table>
 
-このエラーは、CSS 内のアットルールに関するものです。 
+このエラーは、CSS 内のアットルールに関するものです。
 AMP で使用できるアットルールはごくわずかです
 （[AMP 仕様](/ja/docs/fundamentals/spec.html)もご覧ください）。
-たとえば、<code>@import</code> は許可されていません。 
+たとえば、<code>@import</code> は許可されていません。
 検証エラーでは無効なルールが
 具体的に示されるため、
 該当するルールを簡単に修正できます。
@@ -736,8 +736,8 @@ AMP で使用できるアットルールはごくわずかです
 ### 暗黙的レイアウトが AMP タグでサポートされていない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>IMPLIED_LAYOUT_INVALID</td>
   </tr>
    <tr>
@@ -757,7 +757,7 @@ AMP で使用できるアットルールはごくわずかです
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
-[レイアウトを設定する方法](/ja/docs/design/responsive/control_layout.html)についての説明や 
+[レイアウトを設定する方法](/ja/docs/design/responsive/control_layout.html)についての説明や
 [AMP HTML レイアウト システムの仕様](/ja/docs/design/amp-html-layout.html)のページをご覧ください。
 
 **注:** レイアウトを指定せず、
@@ -771,7 +771,7 @@ AMP タグで CONTAINER がサポートされていないと、
 ### 暗黙的レイアウトで属性が許可されていない
 
 <table>
-    </tr> 
+    </tr>
     <td class="col-thirty"><strong>コード</strong></td>
     <td>ATTR_DISALLOWED_BY_IMPLIED_LAYOUT</td>
   </tr>
@@ -794,8 +794,8 @@ AMP タグで CONTAINER がサポートされていないと、
 ### 指定されたレイアウトが AMP タグでサポートされていない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>SPECIFIED_LAYOUT_INVALID</td>
   </tr>
    <tr>
@@ -815,13 +815,13 @@ AMP タグで CONTAINER がサポートされていないと、
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
-[レイアウトを設定する方法](/ja/docs/design/responsive/control_layout.html)についての説明や 
+[レイアウトを設定する方法](/ja/docs/design/responsive/control_layout.html)についての説明や
 [AMP HTML レイアウト システムの仕様](/ja/docs/design/amp-html-layout.html)のページをご覧ください。
 
 ### 指定されたレイアウトで属性が許可されていない
 
 <table>
-    </tr> 
+    </tr>
     <td class="col-thirty"><strong>コード</strong></td>
     <td>ATTR_DISALLOWED_BY_SPECIFIED_LAYOUT</td>
   </tr>
@@ -844,8 +844,8 @@ AMP タグで CONTAINER がサポートされていないと、
 ### レイアウトで必要な属性の値が無効
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>ATTR_VALUE_REQUIRED_BY_LAYOUT</td>
   </tr>
    <tr>
@@ -872,8 +872,8 @@ AMP タグで CONTAINER がサポートされていないと、
 ### 幅と高さの単位が一致していない
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>INCONSISTENT_UNITS_FOR_WIDTH_AND_HEIGHT</td>
   </tr>
    <tr>
@@ -893,14 +893,14 @@ AMP タグで CONTAINER がサポートされていないと、
 たとえば、`<amp-img src="" layout="responsive" width="42px" height="42rem">` と指定すると、
 次のエラー メッセージが表示されます。
 
-「タグ「amp-img」の幅と高さの単位が一致していません。幅は「px」で指定されていますが、高さは「rem」で指定されています。」
+「タグ「[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) の幅と高さの単位が一致していません。幅は「px」で指定されていますが、高さは「rem」で指定されています。」
 
 ## テンプレートのエラー
 
 AMP ページにテンプレートの構文を含めることはできません。
 ただし、テンプレートを含めるために
 特別に設計された AMP タグ
-（たとえば [amp-mustache](/ja/docs/reference/components/amp-mustache.html)）内にあるテンプレートの構文は例外です。
+（たとえば [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})）内にあるテンプレートの構文は例外です。
 
 ソースファイルから生成された出力にテンプレートが含まれなければ、
 ソースファイルにテンプレートを追加してもかまいません
@@ -910,8 +910,8 @@ AMP ページにテンプレートの構文を含めることはできません�
 ### テンプレートの構文が属性に含まれている
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>TEMPLATE_IN_ATTR_NAME</td>
   </tr>
    <tr>
@@ -924,15 +924,15 @@ AMP ページにテンプレートの構文を含めることはできません�
   </tr>
 </table>
 
-このエラーは、属性値内に 
+このエラーは、属性値内に
 [Mustache テンプレートの構文](https://mustache.github.io/mustache.5.html)
 が見つかった場合に発生します。
 
 ### エスケープされていないテンプレートの構文が属性に含まれている
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>UNESCAPED_TEMPLATE_IN_ATTR_VALUE</td>
   </tr>
    <tr>
@@ -945,15 +945,15 @@ AMP ページにテンプレートの構文を含めることはできません�
   </tr>
 </table>
 
-このエラーは、属性値内に 
+このエラーは、属性値内に
 [エスケープされていない Mustache テンプレートの構文](https://mustache.github.io/mustache.5.html)
 が見つかった場合に発生します。
 
 ### テンプレートのパーシャルが属性に含まれている
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>TEMPLATE_PARTIAL_IN_ATTR_VALUE</td>
   </tr>
    <tr>
@@ -966,7 +966,7 @@ AMP ページにテンプレートの構文を含めることはできません�
   </tr>
 </table>
 
-このエラーは、属性値内に 
+このエラーは、属性値内に
 [Mustache のパーシャル](https://mustache.github.io/mustache.5.html)
 が見つかった場合に発生します。
 
@@ -975,8 +975,8 @@ AMP ページにテンプレートの構文を含めることはできません�
 ### サポートが終了したタグ
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DEPRECATED_TAG</td>
   </tr>
    <tr>
@@ -996,8 +996,8 @@ AMP ページにテンプレートの構文を含めることはできません�
 ### サポートが終了した属性
 
 <table>
-    </tr> 
-                <td class="col-thirty"><strong>コード</strong></td> 
+    </tr>
+                <td class="col-thirty"><strong>コード</strong></td>
                 <td>DEPRECATED_ATTR</td>
   </tr>
    <tr>
@@ -1016,4 +1016,3 @@ AMP ページにテンプレートの構文を含めることはできません�
 各 AMP タグについて、サポートが終了した属性を確認するには、
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
 で `deprecation` を検索してください。
- 
