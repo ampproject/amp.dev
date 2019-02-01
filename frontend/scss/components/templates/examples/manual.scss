@@ -68,4 +68,8 @@
       margin: 0;
       padding: 0;
     }
+
+    .#{molecule('code-snippet')} {
+      max-height: 500px;
+    }
 }
