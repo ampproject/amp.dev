@@ -36,6 +36,8 @@ class PageMinifier {
     this._cleanCss = new CleanCSS({
       2: {
         'all': true,
+        'mergeSemantically': true,
+        'restructureRules': true,
       },
     });
     // Holds CSS by hash that has already been minified
@@ -105,6 +107,7 @@ class PageMinifier {
       'removeEmptyElements': false,
       'removeRedundantAttributes': true,
       'ignoreCustomFragments': [/<use.*<\/use>/],
+      'processScripts': ['application/json']
     });
 
     return html;

@@ -69,7 +69,7 @@ if (config.environment === 'development') {
   // what's going on
   const log = new Signale({
     'interactive': true,
-    'scope': 'Format filter',
+    'scope': 'Grow (Proxy)',
   });
 
   // Grow has problems delivering the index.html on a root request
@@ -95,14 +95,18 @@ if (config.environment === 'development') {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         const filteredPage = new FilteredPage(activeFormat, body);
+        response.setHeader('content-length', filteredPage.content.length.toString());
         return filteredPage.content;
       });
     }
 
     // Check if the request should be minified on the fly
     if (request.query['minify']) {
+      log.await(`Minifying request ...`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        return pageMinifier.minifyPage(body, request.url);
+        const minifiedPage = pageMinifier.minifyPage(body, request.url);
+        response.setHeader('content-length', minifiedPage.length.toString());
+        return minifiedPage;
       });
     }
   });
