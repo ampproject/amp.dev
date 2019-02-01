@@ -1,0 +1,37 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+$showTime: 4s;
+
+.#{molecule('rolling-formats')} {
+  display: inline-block;
+  
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  &-item {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    margin-right: auto;
+    animation-name: roll;
+    animation-duration: $showTime * 4;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+  }
+  
+  &-stories { animation-delay: $showTime * 4 * 1 / 4; }
+  &-ads { animation-delay: $showTime * 4 * 1 / 2; }
+  &-email { animation-delay: $showTime * 4 * 3 / 4; }
+}
+
+@keyframes roll {
+  0% { opacity: 0; transform: translate3d(0, -70%, 0); }
+  2.5%, 25% { opacity: 1; transform: translate3d(0, 0, 0); }
+  27.5%, 100% { opacity: 0; transform: translate3d(0, 70%, 0); }
+}
