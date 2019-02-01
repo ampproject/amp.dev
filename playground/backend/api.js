@@ -17,9 +17,11 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const URL = require('url').URL;
+const {setMaxAge} = require('../../platform/lib/utils/cacheHelpers.js');
 // eslint-disable-next-line new-cap
 const api = express.Router();
 
+const ONE_HOUR = 60 * 60;
 const VALID_ORIGINS = new Set([
   'amp.dev',
   'api.amp.dev',
@@ -40,6 +42,7 @@ api.get('/fetch', async (request, response) => {
   try {
     const doc = await fetchDocument(url, request.headers.host);
     response.send(doc);
+    setMaxAge(response, ONE_HOUR);
   } catch (error) {
     console.error('Could not fetch URL', error);
     response.send(`Could not fetch URL ${url}`).status(400).end();
