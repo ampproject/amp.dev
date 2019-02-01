@@ -1,4 +1,4 @@
-.#{utility('main')} > .#{utility('container')}:first-child {
+.#{utility('main')}>.#{utility('container')}:first-child {
   padding-top: 26px;
   padding-bottom: 3rem;
 }
@@ -13,24 +13,29 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: 1fr;
     grid-template-columns: repeat(24, 1fr);
     padding: 0 30px;
   }
 }
 
 @mixin container-fluid {
-  @include container;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1920px;
-  padding-left: 0;
-  padding-right: 0;
 
-  @media screen and (min-width: 768px) {
-    padding-left: 0;
-    padding-right: 0;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(24, 1fr);
+    padding: 0 30px;
   }
 }
 
@@ -39,14 +44,12 @@
   position: relative;
   max-width: 100%;
 
-  @media screen and (min-width: 768px){
-    grid-column-start: 9;
-    grid-column-end: 25;
+  @media (min-width: 768px) {
+    grid-column: 9/25;
   }
 
-  @media screen and (min-width: 1024px){
-    grid-column-start: 7;
-    grid-column-end: 19;
+  @media (min-width: 1024px) {
+    grid-column: 7 / 19;
   }
 
   p.limit {
@@ -61,7 +64,7 @@
 
   &:nth-of-type(2),
   &:nth-of-type(3) {
-    @media screen and (min-width: 1024px){
+    @media (min-width: 1024px) {
       grid-row: 1;
     }
   }
@@ -71,36 +74,32 @@
   grid-column: auto;
   padding: 0;
 
-  @media screen and (min-width: 768px) {
-    grid-column-start: 1;
-    grid-column-end: 8;
+  @media (min-width: 768px) {
+    grid-column: 1 / 8;
     grid-row: span 6;
     margin-right: 0;
   }
 
-  @media screen and (min-width: 1024px) {
-    grid-column-start: 1;
-    grid-column-end: 6;
+  @media (min-width: 1024px) {
+    grid-column: 1 / 6;
   }
 }
 
 @mixin toc {
-  @media screen and (min-width: 768px) {
-    grid-column-start: 9;
-    grid-column-end: 25;
+  @media (min-width: 768px) {
+    grid-column: 9 / 25;
 
-    & + .#{utility('content')} {
+    &+.#{utility('content')} {
       padding-top: 0;
     }
   }
 
-  @media screen and (min-width: 1024px) {
-    grid-column-start: 20;
-    grid-column-end: 25;
+  @media (min-width: 1024px) {
+    grid-column: 20 / 25;
     grid-row: span 2;
     padding-top: 46px;
 
-    & + .#{utility('content')} {
+    &+.#{utility('content')} {
       padding-top: 42px;
     }
   }

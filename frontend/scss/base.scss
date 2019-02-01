@@ -29,7 +29,7 @@ html, body {
   margin-top: -145px;
   visibility: hidden;
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     height: 110px;
     margin-top: -110px;
   }

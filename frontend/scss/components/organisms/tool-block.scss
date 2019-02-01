@@ -40,7 +40,7 @@ This positioning can be change by using the modifier `-alternate`.
     grid-column: 14 / span 9;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     &.-alternate {
       &:nth-child(odd) {
         :first-child {

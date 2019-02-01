@@ -25,13 +25,13 @@ Filter-bubble-list is a list of filter-bubble molecules. For reference see docum
   padding: 15px 0;
   margin: 0 -10px;
 
-  @media screen and (min-width: 550) {
+  @media (min-width: 550px) {
     padding: 30px 10px;
     margin: 0;
     width: auto;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     padding: 30px 0;
   }
 }

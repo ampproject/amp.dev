@@ -39,11 +39,11 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
     background-color: color('oslo-gray');
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     margin-right: -30px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     margin-right: 0;
   }
 
