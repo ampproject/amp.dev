@@ -85,8 +85,7 @@ teaser:
 
       <div class="ap-o-teaser-grid">
 
-        <h2>{{ category }}</h2>
-        <div id="{{ category }}" class="ap-o-teaser-grid-list-anchor"></div>
+        <h2 id="{{ category }}">{{ category }}</h2>
         <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ components|count }}">
           {% for teaser_doc in components %}
           {% include '/views/partials/teaser.j2' %}
