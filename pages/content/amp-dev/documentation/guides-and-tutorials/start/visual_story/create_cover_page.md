@@ -37,7 +37,8 @@ Our cover page is actually comprised of two layers:
 
 Let's add our first layer to our cover page. The layer contains an image that fills the screen.
 
-Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<amp-story-page>`. As we want the image to fill the screen, specify the `template="fill"` attribute for the `amp-story-grid-layer`. Inside the layer, add an [`amp-image`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image.md', locale=doc.locale).url.path}}) element for the `cover.jpg` file, and make sure it's responsive (i.e., `layout="responsive"`) with the image's dimensions of 720 x 1280 px.  Here's what our layer looks like:
+Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<amp-story-page>`. As we want the image to fill the screen, specify the `template="fill"` attribute for the `amp-story-grid-layer`. Inside the layer, add an [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element for the `cover.jpg` file, and make sure it's responsive (i.e., `layout="responsive"`) with the image's dimensions of 720 x 1280 px.  Here's what our layer looks like:
+
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
