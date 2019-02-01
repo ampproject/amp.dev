@@ -456,15 +456,17 @@ sampler:
     </div>
   </section>
 
-  <section class="ap--collaboration">
-    {% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
-
+  {% do doc.styles.addCssFile('css/components/molecule/shift-cards.css') %}
+  <section class="ap--shift-cards">
     <div class="ap--container">
       <h2>By the community,<br>for the community</h2>
+    </div>
 
-      <div class="ap-m-collabo-card ap-m-collabo-card-1">
-        <a href="https://github.com/orgs/ampproject/people">
-          <div class="ap-m-collabo-card-image">
+    <div class="ap--container">
+
+      <div class="ap-m-shift-card ap-m-shift-card-1">
+        <a class="ap-m-shift-card-linking" href="https://github.com/orgs/ampproject/people">
+          <div class="ap-m-shift-card-image">
             <amp-img
               class="ap--media"
               src="/static/img/dummy-collabo-image-1.png"
@@ -473,14 +475,14 @@ sampler:
               height="9">
             </amp-img>
           </div>
-          <h3 class="ap-m-collabo-card-headline">Many ways for you to contribute</h3>
-          <p class="ap-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+          <h3 class="ap-m-shift-card-headline">Many ways for you to contribute</h3>
+          <p class="ap-m-shift-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
         </a>
       </div>
 
-      <div class="ap-m-collabo-card ap-m-collabo-card-2">
-        <a href="https://github.com/ampproject/docs/issues">
-          <div class="ap-m-collabo-card-image">
+      <div class="ap-m-shift-card ap-m-shift-card-2">
+        <a class="ap-m-shift-card-linking" href="https://github.com/ampproject/docs/issues">
+          <div class="ap-m-shift-card-image">
             <amp-img
               class="ap--media"
               src="/static/img/dummy-collabo-image-2.png"
@@ -489,8 +491,8 @@ sampler:
               height="9">
             </amp-img>
           </div>
-          <h3 class="ap-m-collabo-card-headline">Reporting issues with AMP</h3>
-          <p class="ap-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.</p>
+          <h3 class="ap-m-shift-card-headline">Reporting issues with AMP</h3>
+          <p class="ap-m-shift-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.</p>
         </a>
       </div>
 
