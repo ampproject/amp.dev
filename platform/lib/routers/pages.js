@@ -23,6 +23,7 @@ const modifyResponse = require('http-proxy-response-rewrite');
 const {Signale} = require('signale');
 const {FilteredPage} = require('../pipeline/filteredPage');
 const got = require('got');
+const {pageMinifier} = require('@lib/build/pageMinifier');
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -90,13 +91,18 @@ if (config.environment === 'development') {
   proxy.on('proxyRes', async (proxyResponse, request, response) => {
     // Check if this response should be filtered
     const activeFormat = getFilteredFormat(request);
-
     if (activeFormat) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
-
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         const filteredPage = new FilteredPage(activeFormat, body);
         return filteredPage.content;
+      });
+    }
+
+    // Check if the request should be minified on the fly
+    if (request.query['minify']) {
+      modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
+        return pageMinifier.minifyPage(body, request.url);
       });
     }
   });

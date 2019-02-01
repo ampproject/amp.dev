@@ -54,7 +54,12 @@ class PageMinifier {
     return gulp.src(`${path}/**/*.html`, {'base': './'})
         .pipe(through.obj(function(page, encoding, callback) {
           scope._log.await(`Minifying ${page.relative} ...`);
-          this.push(scope._minifyPage(page));
+
+          let html = page.contents.toString();
+          html = scope.minifyPage(html, page.path);
+          page.contents = Buffer.fromString(html);
+
+          this.push(page);
 
           callback();
         }))
@@ -64,22 +69,19 @@ class PageMinifier {
   /**
    * Extracts the contents of a Vinyl file and passes the string on
    * to other minifying functions
-   * @param  {Vinyl} page
-   * @return {Vinyl}
+   * @param  {String} The page's markup
+   * @return {String} The minified or the unmodified markup in case of error
    */
-  _minifyPage(page) {
-    let html = page.contents.toString();
-
+  minifyPage(html, path) {
     try {
       html = this._cleanHtml(html);
       html = this._minifyHtml(html);
     } catch (e) {
-      this._log.error(`Could not minify ${page.path}`);
+      this._log.error(`Could not minify ${path}`);
       console.error(e);
     }
 
-    page.contents = Buffer.from(html);
-    return page;
+    return html;
   }
 
   _cleanHtml(html) {
