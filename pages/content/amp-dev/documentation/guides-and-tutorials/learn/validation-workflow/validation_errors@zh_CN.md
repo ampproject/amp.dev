@@ -313,7 +313,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当属性中的 property 名称是不允许使用的名称时，就会出现此错误。
 在这种情况下，“property”一词指的是属性中的结构化键/值数据。
-例如，在 
+例如，在
 `<meta name="viewport content="width=device-width;minimum-scale=1">` 中，
 `width` 和 `minimum-scale` 是 property 名称。
 
@@ -347,7 +347,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当属性内的 property 值无效时，就会出现这种错误。
 在这种情况下，“property”一词指的是属性中的结构化键/值数据。
-例如，在 
+例如，在
 `<meta name="viewport content="width=device-width;minimum-scale=1">` 中，
 `device-width` 和 `1` 是 property 值。
 
@@ -355,7 +355,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-请注意，如果您尝试输出无值的属性（例如，`<amp-video>` 组件的 `autoplay`、`controls` 或 `loop` 等属性），但 HTML 构建流程却生成一个默认（但无效的）值，如 `true`（例如，React 将[默认](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)生成 `<amp-video autoplay="true" ...>`），解决方法是将属性名称作为值来输出。例如，`<amp-video autoplay="autoplay" ...>`。
+请注意，如果您尝试输出无值的属性（例如，[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 组件的 `autoplay`、`controls` 或 `loop` 等属性），但 HTML 构建流程却生成一个默认（但无效的）值，如 `true`（例如，React 将[默认](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)生成 `<amp-video autoplay="true" ...>`），解决方法是将属性名称作为值来输出。例如，`<amp-video autoplay="autoplay" ...>`。
 
 ### 缺少网址
 
@@ -466,8 +466,8 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 当标记中包含两个互斥属性时，就会出现这种错误。
 例如，下列标记只能包含两个属性中的一个：
 
-* [amp-iframe](/zh_cn/docs/reference/components/amp-iframe.html)：`src` 或 `srcdoc`
-* [amp-jwplayer](/zh_cn/docs/reference/components/amp-jwplayer.html)：`data-media-id` 或 `data-playlist-id`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})：`src` 或 `srcdoc`
+* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}})：`data-media-id` 或 `data-playlist-id`
 
 ### 列表中缺少必需的属性
 
@@ -490,10 +490,10 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 就会出现这种错误。
 例如，下列标记必须包含两个可选属性中的一个：
 
-* [amp-twitter](/zh_cn/docs/reference/components/amp-twitter.html)：`data-tweetid` 或 `src`
-* [amp-instagram](/zh_cn/docs/reference/components/amp-instagram.html)：`data-shortcode` 或 `src`
-* [amp-iframe](/zh_cn/docs/reference/components/amp-iframe.html)：`src` 或 `srcdoc`
-* [amp-youtube](/zh_cn/docs/reference/components/amp-youtube.html)：`src` 或 `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})：`data-tweetid` 或 `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}})：`data-shortcode` 或 `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})：`src` 或 `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})：`src` 或 `data-videoid`
 
 ### 父级标记不正确
 
@@ -526,7 +526,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `style` 需要父级标记 `boilerplate (noscript)`。
 * `noscript` 需要父级标记 `head`。
 * `script` 需要父级标记 `head`。
-* `source` 需要媒体标记（`amp-audio`、`amp-video` 等）。
+* `source` 需要媒体标记（[`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})、[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 等）。
 
 ### 不允许使用的祖级标记
 
@@ -680,7 +680,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
   </tr>
 </table>
 
-当 AMP 验证工具经过衡量发现 
+当 AMP 验证工具经过衡量发现
 `<style amp-custom>` 中的样式内容大小超出
 上限（50000 字节）时，就会出现这种错误。
 
@@ -757,7 +757,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
-请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和 
+请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和
 [AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
 
 **注意**：如果您没有指定布局，
@@ -815,7 +815,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
-请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和 
+请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和
 [AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
 
 ### 指定的布局不允许的属性
@@ -893,14 +893,14 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 例如，`<amp-img src="" layout="responsive" width="42px" height="42rem">`
 会触发以下错误消息：
 
-“标记‘amp-img’中的宽度和高度单位不一致 - 宽度单位指定‘px’，而高度单位却指定为‘rem’。”
+“标记‘[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 中的宽度和高度单位不一致 - 宽度单位指定‘px’，而高度单位却指定为‘rem’。”
 
 ## 模板错误
 
 AMP 网页不能包含模板语法，
 除非该语法位于专为包含模板
-而设计的 AMP 标记中，例如 
-[amp-mustache](/zh_cn/docs/reference/components/amp-mustache.html)。
+而设计的 AMP 标记中，例如
+[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})。
 
 您的源文件中可以包含模板，
 但前提是此类文件生成的输出内容中不包含模板
@@ -924,7 +924,7 @@ AMP 网页不能包含模板语法，
   </tr>
 </table>
 
-一旦验证工具在属性值中发现 
+一旦验证工具在属性值中发现
 [Mustache 模板语法](https://mustache.github.io/mustache.5.html)，
 就会出现这种错误。
 
@@ -966,7 +966,7 @@ AMP 网页不能包含模板语法，
   </tr>
 </table>
 
-一旦验证工具在属性值中发现 
+一旦验证工具在属性值中发现
 [Mustache partial](https://mustache.github.io/mustache.5.html)，
 就会出现这种错误。
 
@@ -1016,4 +1016,3 @@ AMP 网页不能包含模板语法，
 请在 [AMP 验证工具规范]
 (https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 `deprecation`
 ，以查看每个 AMP 标记的已弃用属性。
- 

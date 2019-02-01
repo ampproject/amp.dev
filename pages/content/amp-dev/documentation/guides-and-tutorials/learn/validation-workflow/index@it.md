@@ -39,7 +39,7 @@ L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgent
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_invalid.png" width="20" height="20" alt="Icona AMP rossa che indica un documento AMP non valido."></amp-img>
-      
+
     </td>
     <td>Quando vengono riscontrati errori all'interno di una pagina AMP, l'icona dell'estensione viene visualizzata in rosso e viene indicato il numero di errori riscontrati.
     </td>
@@ -47,7 +47,7 @@ L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgent
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_valid.png" width="20" height="20" alt="Icona AMP verde che indica un documento AMP valido."></amp-img>
-      
+
     </td>
     <td>Quando non vengono riscontrati errori all'interno di una pagina AMP, l'icona viene visualizzata in verde e viene indicato il numero di avvisi, se presenti.
     </td>
@@ -55,7 +55,7 @@ L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgent
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_link.png" width="20" height="20" alt="Icona AMP blu che indica l&#39;esistenza di una variante HTML AMP, accessibile facendo clic."></amp-img>
-      
+
     </td>
     <td>Se la pagina non è in formato AMP, ma viene indicato che è disponibile una versione AMP, l'icona diventa un'icona di collegamento blu. Se si fa clic sull'estensione, il browser viene reindirizzato alla versione AMP.
     </td>
@@ -152,10 +152,10 @@ Questo genera il seguente errore di convalida AMP, mostrato nei vari strumenti c
 Ogni strumento fornisce diverse informazioni:
 
   * La posizione (riga e colonna) nel documento HTML in cui si è verificato l'errore, selezionabile in alcune interfacce per evidenziare tale posizione. In questo esempio il problema si è verificato nella riga 11, colonna 2.
-  * Una riga di testo che descrive l'errore. In questo esempio il testo indica che abbiamo utilizzato un tag `<img>`, ma che invece avremmo dovuto utilizzare un tag `<amp-img>`.
-  * Un link che rimanda a un documento pertinente relativo all'errore; in questo esempio la documentazione relativa al tag `<amp-img>`. Non vengono generati link alla documentazione per tutti gli errori.
+  * Una riga di testo che descrive l'errore. In questo esempio il testo indica che abbiamo utilizzato un tag `<img>`, ma che invece avremmo dovuto utilizzare un tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+  * Un link che rimanda a un documento pertinente relativo all'errore; in questo esempio la documentazione relativa al tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Non vengono generati link alla documentazione per tutti gli errori.
 
-Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag `<amp-img>`.
+Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP](/it/docs/troubleshooting/validation_errors.html).
 Se dopo un'attenta valutazione hai ancora difficoltà, [pubblica una domanda](http://stackoverflow.com/questions/tagged/amp-html) e cercheremo di aiutarti.

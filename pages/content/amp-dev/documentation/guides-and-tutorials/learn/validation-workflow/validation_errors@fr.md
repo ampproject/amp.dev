@@ -406,10 +406,10 @@ Elles renvoient à des balises attendues :
 Cette erreur se produit lorsqu'une balise possède deux attributs s'excluant mutuellement.
 Ainsi, un seul de ces attributs est autorisé pour les balises suivantes :
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html) : `data-tweetid` ou `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html) : `data-shortcode` ou `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html) : `src` ou `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html) : `src` ou `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) : `data-tweetid` ou `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) : `data-shortcode` ou `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) : `src` ou `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) : `src` ou `data-videoid`
 
 ### Absence d'attribut obligatoire figurant sur la liste
 
@@ -431,10 +431,10 @@ Ainsi, un seul de ces attributs est autorisé pour les balises suivantes :
 Cette erreur se produit lorsqu'une balise ne comprend aucun des attributs possibles.
 Par exemple, pour les balises suivantes, il faut choisir l'un des deux attributs proposés :
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html) : `data-tweetid` ou `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html) : `data-shortcode` ou `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html) : `src` ou `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html) : `src` ou `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) : `data-tweetid` ou `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) : `data-shortcode` ou `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) : `src` ou `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) : `src` ou `data-videoid`
 
 ### Balise parent incorrecte
 
@@ -466,7 +466,7 @@ La liste ci-dessous répertorie le parent requis pour des balises spécifiques (
 * `style` nécessite une balise parent `boilerplate (noscript)`.
 * `noscript` nécessite une balise parent `head`.
 * `script` nécessite une balise parent `head`.
-* `source` nécessite une balise média (`amp-audio`, `amp-video`, etc.).
+* `source` nécessite une balise média ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.).
 
 ### Balise ancêtre non autorisée
 
@@ -780,11 +780,11 @@ Dans le cas contraire, cette erreur est générée.
 
 Par exemple, `<amp-img src="" layout="responsive" width="42px" height="42rem">` entraîne le message d'erreur suivant :
 
-"La balise 'amp-img' contient des unités incohérentes pour la largeur et la hauteur. La largeur est indiquée en 'px', alors que la hauteur est indiquée en 'rem'."
+"La balise '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  contient des unités incohérentes pour la largeur et la hauteur. La largeur est indiquée en 'px', alors que la hauteur est indiquée en 'rem'."
 
 ## Erreurs de création de modèles
 
-Les pages AMP ne peuvent pas inclure de syntaxe de création de modèles, sauf si cette syntaxe est comprise dans une balise AMP spécialement conçue pour intégrer des modèles, par exemple [amp-mustache](/docs/reference/components/amp-mustache.html).
+Les pages AMP ne peuvent pas inclure de syntaxe de création de modèles, sauf si cette syntaxe est comprise dans une balise AMP spécialement conçue pour intégrer des modèles, par exemple [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 

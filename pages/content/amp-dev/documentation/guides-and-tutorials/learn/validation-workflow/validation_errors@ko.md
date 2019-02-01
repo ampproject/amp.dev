@@ -355,7 +355,7 @@ CDATA가 필수인 태그는 다음과 같습니다.
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-참고: 값이 없는 속성(예: `<amp-video>` 구성요소의 `autoplay`, `controls`, `loop` 속성)을 출력하려고 할 때 HTML 개발 과정에서 `true`와 같이 기본값이지만 유효하지 않은 값(예: React를 사용하면 [기본적으로](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ...>`가 생성되는 경우)이 생성되는 경우 속성 이름을 값으로 출력하면 해결됩니다. 예를 들어 다음과 같습니다. `<amp-video autoplay="autoplay" ...>`
+참고: 값이 없는 속성(예: [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 구성요소의 `autoplay`, `controls`, `loop` 속성)을 출력하려고 할 때 HTML 개발 과정에서 `true`와 같이 기본값이지만 유효하지 않은 값(예: React를 사용하면 [기본적으로](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ...>`가 생성되는 경우)이 생성되는 경우 속성 이름을 값으로 출력하면 해결됩니다. 예를 들어 다음과 같습니다. `<amp-video autoplay="autoplay" ...>`
 
 ### URL 누락
 
@@ -466,8 +466,8 @@ URL이 잘못된 경우에 발생합니다.
 이 오류는 태그에 상호 배타적인 속성이 포함되어 있을 때 발생합니다.
 예를 들어 다음 태그에서는 하나의 속성만 허용됩니다:
 
-* [amp-iframe](/ko/docs/reference/components/amp-iframe.html): `src` 또는 `srcdoc`
-* [amp-jwplayer](/ko/docs/reference/components/amp-jwplayer.html): `data-media-id` 또는 `data-playlist-id`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` 또는 `srcdoc`
+* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` 또는 `data-playlist-id`
 
 ### 목록에서 필수 속성 누락
 
@@ -490,10 +490,10 @@ URL이 잘못된 경우에 발생합니다.
 하나의 필수 속성이 누락된 경우 발생합니다.
 예를 들어 다음 태그의 경우 두 가지 필수 속성 중에 하나가 포함되어야 합니다:
 
-* [amp-twitter](/ko/docs/reference/components/amp-twitter.html): `data-tweetid` 또는 `src`
-* [amp-instagram](/ko/docs/reference/components/amp-instagram.html): `data-shortcode` 또는 `src`
-* [amp-iframe](/ko/docs/reference/components/amp-iframe.html): `src` 또는 `srcdoc`
-* [amp-youtube](/ko/docs/reference/components/amp-youtube.html): `src` 또는 `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` 또는 `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` 또는 `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` 또는 `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` 또는 `data-videoid`
 
 ### 잘못된 상위 태그
 
@@ -526,7 +526,7 @@ URL이 잘못된 경우에 발생합니다.
 * `style`에는 상위 태그 `boilerplate(noscript)`가 필요합니다.
 * `noscript`에는 상위 태그 `head`가 필요합니다.
 * `script`에는 상위 태그 `head`가 필요합니다.
-* `source`에는 미디어 태그(`amp-audio`, `amp-video` 등)가 필요합니다.
+* `source`에는 미디어 태그([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 등)가 필요합니다.
 
 ### 허용되지 않는 태그 상위 요소
 
@@ -893,12 +893,12 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 예를 들어 `<amp-img src="" layout="responsive" width="42px" height="42rem">`의 경우
 다음의 오류 메시지가 표시됩니다:
 
-'태그 'amp-img'의 너비와 높이 단위가 일치하지 않습니다. 너비는 'px'로 지정되어 있으며 높이는 'rem'으로 지정되어 있습니다.'
+'태그 '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 의 너비와 높이 단위가 일치하지 않습니다. 너비는 'px'로 지정되어 있으며 높이는 'rem'으로 지정되어 있습니다.'
 
 ### 템플릿 오류
 
 AMP 태그 내 구문이
-[amp-mustache](/ko/docs/reference/components/amp-mustache.html)
+[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})
 등의 템플릿을 포함하도록 설계되어 있는 경우가 아니라면
 AMP 페이지는 템플릿 구문을 포함할 수 없습니다.
 
@@ -1016,4 +1016,3 @@ AMP 페이지는 템플릿 구문을 포함할 수 없습니다.
 [AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에서
 `deprecation`을 검색하여 AMP 태그별로
 지원 중단된 속성을 확인하시기 바랍니다.
- 

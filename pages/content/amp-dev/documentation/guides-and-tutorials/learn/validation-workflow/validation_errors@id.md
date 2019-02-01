@@ -355,7 +355,7 @@ Berikut ini yang menyebabkan error INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Perhatikan bahwa jika Anda mencoba membuat atribut yang tidak bernilai (misalnya, atribut seperti `autoplay`, `controls`, atau `loop` untuk komponen `<amp-video>`), tapi proses pembuatan HTML menghasilkan nilai default (tapi tidak valid) seperti `true` (misalnya, React akan menghasilkan `<amp-video autoplay="true" ...>` [secara default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), solusinya adalah membuat nama atribut sebagai nilai. Misalnya, `<amp-video autoplay="autoplay" ...>`.
+Perhatikan bahwa jika Anda mencoba membuat atribut yang tidak bernilai (misalnya, atribut seperti `autoplay`, `controls`, atau `loop` untuk komponen [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})), tapi proses pembuatan HTML menghasilkan nilai default (tapi tidak valid) seperti `true` (misalnya, React akan menghasilkan `<amp-video autoplay="true" ...>` [secara default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), solusinya adalah membuat nama atribut sebagai nilai. Misalnya, `<amp-video autoplay="autoplay" ...>`.
 
 ### URL tidak tersedia
 
@@ -466,8 +466,8 @@ Properti tersebut mengacu pada tag yang diharapkan:
 Error ini terjadi jika tag memiliki atribut yang saling lepas.
 Misalnya, hanya satu yang diizinkan dari tag berikut:
 
-* [amp-iframe](/id/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
-* [amp-jwplayer](/id/docs/reference/components/amp-jwplayer.html): `data-media-id` atau `data-playlist-id`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` atau `srcdoc`
+* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` atau `data-playlist-id`
 
 ### Atribut wajib tidak tersedia di daftar
 
@@ -490,10 +490,10 @@ Error ini terjadi jika atribut yang dibutuhkan tag tidak tersedia
 di pilihan.
 Misalnya, tag berikut memerlukan salah satu atribut dari dua pilihan yang tersedia:
 
-* [amp-twitter](/id/docs/reference/components/amp-twitter.html): `data-tweetid` atau `src`
-* [amp-instagram](/id/docs/reference/components/amp-instagram.html): `data-shortcode` atau `src`
-* [amp-iframe](/id/docs/reference/components/amp-iframe.html): `src` atau `srcdoc`
-* [amp-youtube](/id/docs/reference/components/amp-youtube.html): `src` atau `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` atau `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` atau `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` atau `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` atau `data-videoid`
 
 ### Tag induk salah
 
@@ -526,7 +526,7 @@ Berikut ini daftar tag tertentu yang membutuhkan induk
 * `style` membutuhkan tag induk `boilerplate (noscript)`.
 * `noscript` membutuhkan tag induk `head`.
 * `script` membutuhkan tag induk `head`.
-* `source` membutuhkan tag media (`amp-audio`, `amp-video`, dll.).
+* `source` membutuhkan tag media ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), dll.).
 
 ### Induk tag tidak diizinkan
 
@@ -893,14 +893,14 @@ Jika tidak, hal ini akan memicu error.
 Misalnya, `<amp-img src="" layout="responsive" width="42px" height="42rem">`,
 akan menyebabkan pesan error ini:
 
-"Inconsistent units for width and height in tag 'amp-img' - width is specified in 'px' whereas height is specified in 'rem'."
+"Inconsistent units for width and height in tag '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  - width is specified in 'px' whereas height is specified in 'rem'."
 
 ## Error pemberian template
 
 Halaman AMP tidak dapat menyertakan sintaks pemberian template,
 kecuali sintaks tersebut dalam tag AMP yang
 dirancang khusus untuk menyertakan template, misalnya,
-[amp-mustache](/id/docs/reference/components/amp-mustache.html).
+[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
@@ -1016,4 +1016,3 @@ Ini hanya peringatan; dokumen AMP dengan peringatan ini masih tetap valid.
 Identifikasi atribut yang sudah tidak berlaku untuk setiap tag AMP
 dengan menelusuri `deprecation` di
 [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
- 

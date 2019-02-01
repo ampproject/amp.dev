@@ -16,20 +16,20 @@ As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP
 
 ##### Want to serve traditional HTML ads?
 
-1.  [Create an amp-ad implementation](#creating-an-amp-ad-implementation)
+1.  [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 
 ##### Want to serve AMPHTML ads?
 
-1. [Create an amp-ad implementation](#creating-an-amp-ad-implementation) (i.e., if you haven't already created one to serve traditional HTML ads).
+1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) (i.e., if you haven't already created one to serve traditional HTML ads).
 2. [Create a Fast Fetch integration to serve AMPHTML ads](#creating-a-fast-fetch-integration).
 
 
-## Creating an amp-ad implementation
+## Creating an `amp-ad`
 
-As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher's website. Because AMP doesn't allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`](/docs/reference/components/amp-ad.html)  tag to request ads from your ad server.
+As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher's website. Because AMP doesn't allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  tag to request ads from your ad server.
 
 [tip type="note"]
-**NOTE –** You can use this amp-ad implementation to display traditional HTML ads **and** AMPHTML ads.
+**NOTE –** You can use this [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) implementation to display traditional HTML ads **and** AMPHTML ads.
 [/tip]
 
 For example, the Amazon A9 server can be invoked by using following syntax:
@@ -43,9 +43,9 @@ For example, the Amazon A9 server can be invoked by using following syntax:
 </amp-ad>
 ```
 
-In the above code, the `type` attribute specifies the ad network, which in this case is A9. The `data-*` attributes are dependent on the parameters that the Amazon's A9 server expects to deliver an ad. The [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) file shows you how the parameters are mapped to making a JavaScript call to the A9 server's URL. The corresponding parameters passed by the amp-ad tag are appended to the URL to return an ad.
+In the above code, the `type` attribute specifies the ad network, which in this case is A9. The `data-*` attributes are dependent on the parameters that the Amazon's A9 server expects to deliver an ad. The [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) file shows you how the parameters are mapped to making a JavaScript call to the A9 server's URL. The corresponding parameters passed by the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) tag are appended to the URL to return an ad.
 
-For instructions on creating an `amp-ad` integration, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+For instructions on creating an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) integration, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
 ## Creating a Fast Fetch integration
 
@@ -64,6 +64,6 @@ For instructions on creating a Fast Fetch integration, see the [Fast Fetch Netwo
 
 ## Related resources
 
-*   [GitHub directory for all amp-ad extensions](https://github.com/ampproject/amphtml/tree/master/ads)
+*   [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 *   [List of supported ad vendors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
 *   [Blog entry describing launch of Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/)

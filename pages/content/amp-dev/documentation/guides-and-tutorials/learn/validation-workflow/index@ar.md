@@ -49,7 +49,7 @@ toc: true
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_invalid.png" width="20" height="20" layout="fixed" alt="Red AMP icon indicating invalid AMP document."></amp-img>
-      
+
     </td>
     <td>عند وجود أخطاء في صفحة AMP، سيظهر رمز
       الإضافة بلون أحمر ويعرض عدد الأخطاء التي حدثت.
@@ -58,7 +58,7 @@ toc: true
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_valid.png" width="20" height="20" layout="fixed" alt="Green AMP icon indicating valid AMP document."></amp-img>
-      
+
     </td>
     <td>عند عدم وجود أخطاء في صفحة AMP، سيعرض الرمز لونًا
       أخضر مع بيان عدد التحذيرات، إن وجدت.
@@ -67,7 +67,7 @@ toc: true
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_link.png" width="20" height="20" layout="fixed" alt="Blue AMP icon indicating AMP HTML variant if clicked."></amp-img>
-      
+
     </td>
     <td>إذا لم تكن الصفحة من صفحات AMP ولكن الصفحة تشير إلى توفّر إصدار AMP،
       فسيظهر الرمز بلون أزرق مع رمز رابط، حيث يؤدي النقر على
@@ -172,12 +172,12 @@ $ amphtml-validator --help
      ، حيث يمكن النقر عليه في بي بضع الواجهات لتمييز الموقع. وفي هذه الحالة
      ، تظهر المشكلة في السطر 11، بالعمود 2.
   1. سطر نصّي يصف الخطأ. وفي هذه الحالة، يشير النص إلى
-     استخدامنا لعلامة `<img>` في حين كان يجب استخدام علامة `<amp-img>`.
+     استخدامنا لعلامة `<img>` في حين كان يجب استخدام علامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
   1. رابط إلى مستند ذي صلة يتعلق بالخطأ. في هذه الحالة،
-     مستندات لعلامة `<amp-img>`. ولا تنشئ كل الأخطاء
+     مستندات لعلامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). ولا تنشئ كل الأخطاء
      روابط للمستندات.
 
-بعد إعادة قراءة المواصفات بعناية، تبيّن لنا أننا نستخدم علامة `<img>`، في حين كان يجب استخدم علامة `<amp-img>`.
+بعد إعادة قراءة المواصفات بعناية، تبيّن لنا أننا نستخدم علامة `<img>`، في حين كان يجب استخدم علامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 لفهم القائمة الكاملة للأخطاء المحتملة بشكل أفضل،
 راجع [دليل أخطاء التحقق من صحة صفحات AMP](/ar/docs/troubleshooting/validation_errors.html).

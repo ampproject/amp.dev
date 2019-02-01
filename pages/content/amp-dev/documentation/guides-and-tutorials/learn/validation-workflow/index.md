@@ -263,12 +263,12 @@ Each tool gives several pieces of information:
      occurred, clickable in some interfaces to highlight that location. In this
      case the issue occurs on line 11, column 2.
   1. A line of text describing the error. In this case the text indicates that
-     we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+     we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
   1. A link to a relevant document about the error. In this case the
-     documentation for the `<amp-img>` tag. Not all errors generate
+     documentation for the [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an `<amp-img>` tag.
+Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide](/docs/troubleshooting/validation_errors.html).

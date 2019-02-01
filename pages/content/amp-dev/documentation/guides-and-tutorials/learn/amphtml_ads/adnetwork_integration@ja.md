@@ -13,21 +13,21 @@ toc: true
 
 ##### 通常の HTML 広告を配信する
 
-1. [amp-ad の実装を作成します](#creating-an-amp-ad-implementation)。
+1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})。
 
 ##### AMP HTML 広告を配信する
 
-1. [amp-ad の実装を作成します](#creating-an-amp-ad-implementation)（通常の HTML 広告を配信するための実装をまだ作成していない場合）。
+1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})（通常の HTML 広告を配信するための実装をまだ作成していない場合）。
 2. [AMP HTML 広告を配信するための高速フェッチ統合を作成します](#creating-a-fast-fetch-integration)。
 
 
-## amp-ad の実装を作成する
+## [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) の実装を作成する
 
-広告の配信先となるサイトの運営者が、広告ネットワークから提供される JavaScript ライブラリを広告サーバーとして設定し、各種の「広告スニペット」を設置します。広告スニペットは、JavaScript ライブラリを使用して広告をフェッチし、サイト運営者のウェブサイトに広告を表示します。AMP では、サイト運営者が任意の JavaScript を実行することは禁止されているため、広告ネットワークでは、AMP のオープンソース コードの開発に参加して、[`amp-ad`](/ja/docs/reference/components/amp-ad.html) タグで自社の広告サーバーの広告をリクエストできるようにする必要があります。
+広告の配信先となるサイトの運営者が、広告ネットワークから提供される JavaScript ライブラリを広告サーバーとして設定し、各種の「広告スニペット」を設置します。広告スニペットは、JavaScript ライブラリを使用して広告をフェッチし、サイト運営者のウェブサイトに広告を表示します。AMP では、サイト運営者が任意の JavaScript を実行することは禁止されているため、広告ネットワークでは、AMP のオープンソース コードの開発に参加して、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) タグで自社の広告サーバーの広告をリクエストできるようにする必要があります。
 
 [tip type="note"]
 
-この amp-ad の実装で、従来の HTML 広告と AMP HTML 広告の**両方**を表示することができます。
+この [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) の実装で、従来の HTML 広告と AMP HTML 広告の**両方**を表示することができます。
 
 [/tip]
 
@@ -43,9 +43,9 @@ toc: true
 </amp-ad>
 ```
 
-上記のコードでは、`type` 属性で広告ネットワーク（この例では A9）を指定しています。`data-*` 属性の値は、Amazon A9 サーバーが広告を配信するために必要とするパラメータによって決まります。各パラメータと、A9 サーバーの URL に対する JavaScript の呼び出しの対応関係は、[`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) ファイルに記述されています。amp-ad タグによって渡される、対応するパラメータは前述の URL に付加され、広告を返すために使用されます。
+上記のコードでは、`type` 属性で広告ネットワーク（この例では A9）を指定しています。`data-*` 属性の値は、Amazon A9 サーバーが広告を配信するために必要とするパラメータによって決まります。各パラメータと、A9 サーバーの URL に対する JavaScript の呼び出しの対応関係は、[`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) ファイルに記述されています。[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) タグによって渡される、対応するパラメータは前述の URL に付加され、広告を返すために使用されます。
 
-`amp-ad` の統合を作成する手順については、[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/master/ads/README.md)に関する説明をご確認ください。
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) の統合を作成する手順については、[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/master/ads/README.md)に関する説明をご確認ください。
 
 ## 高速フェッチ統合を作成する
 
@@ -64,7 +64,7 @@ toc: true
 
 ## 関連資料
 
-*   [amp-ad の全拡張機能の GitHub ディレクトリ](https://github.com/ampproject/amphtml/tree/master/ads)
+*   [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 *   [対応広告ベンダーの一覧]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
 *   [高速フェッチのリリースに関するブログ記事](/latest/blog/even-faster-loading-ads-in-amp/)
  
