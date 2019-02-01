@@ -86,12 +86,12 @@
   <!-- ## Resizable iframe -->
   <!--
     One important feature of `amp-iframe` is the ability to resize the iframe  at runtime. For this to work:
-
-    * The `amp-iframe` must set the `allow-same-origin` sandbox attribute.
-    * The `amp-iframe` must be defined with the `resizable` attribute.
-    * The `amp-iframe` must have an `overflow` child element.
-    * The iframe document must send an `embed-size` request:
-
+  <ul>
+    <li>The `amp-iframe` must set the `allow-same-origin` sandbox attribute.</li>
+    <li>The `amp-iframe` must be defined with the `resizable` attribute.</li>
+    <li>The `amp-iframe` must have an `overflow` child element.</li>
+    <li>The iframe document must send an `embed-size` request:</li>
+  </ul>
 
     ```html
     window.parent.postMessage({

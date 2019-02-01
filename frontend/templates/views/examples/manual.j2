@@ -108,7 +108,6 @@ tags are specific for amp.dev #}
       {% for section in doc.example.document.sections %}
       {{ section.doc_.strip()|markdown|safe }}
 
-      {{ section|pprint }}
       {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}

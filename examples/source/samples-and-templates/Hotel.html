@@ -85,9 +85,9 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
   <!--
   This sample shows how to search for available rooms based on date selection.
   You can implement an availability search by using the `amp-date-picker` as input of a form.
-  Here we are using `type=range` as we need 2 dates: the arriving and leaving date of an hotel reservation.
+  <p>Here we are using `type=range` as we need 2 dates: the arriving and leaving date of an hotel reservation.
   Upon receiving a `submit-succes` event from the form response, we set the value of a global variable `rooms`
-  to the form response. We are using the variable `rooms` throughout the sample to access the response from other AMP components.
+  to the form response. We are using the variable `rooms` throughout the sample to access the response from other AMP components.</p>
   -->
   <form method="GET"
         action="https://amp-by-example-live.glitch.me/rooms"
@@ -139,10 +139,10 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
     We are using `amp-state` to set the initial value of the variable `rooms` to the list of rooms
     returned by the server.
 
-    This is necessary for client-side filtering to work after the initial
-    page load. We are using the variable `rooms` throughout the sample to access this list from other AMP components.
+    <p>This is necessary for client-side filtering to work after the initial
+    page load. We are using the variable `rooms` throughout the sample to access this list from other AMP components.</p>
 
-    Both, `amp-list` and `amp-state`, use the same endpoint.
+    <p>Both, `amp-list` and `amp-state`, use the same endpoint.</p>
   -->
   <amp-state id="rooms" src="https://amp-by-example-live.glitch.me/rooms"></amp-state>
 
@@ -151,13 +151,13 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
     We are using `amp-list` to show a list of rooms. We bind the value of the `src` variable
     to the result of the function `filterRooms` so that we can show the available rooms based on the user selection.
 
-    The user can view an enlarged version of each image by clicking on it. This can be implemented using the `amp-lightbox-gallery`
+    <p>The user can view an enlarged version of each image by clicking on it. This can be implemented using the `amp-lightbox-gallery`
     by adding the `lightbox` attribute to every `amp-img`; the `alt` parameter content adds also
-    a caption for every image in the lightbox gallery.
+    a caption for every image in the lightbox gallery.</p>
 
-    `amp-list` content takes the entire height on the page from the `height` attribute; after filtering, it could take unused space:
+    <p>`amp-list` content takes the entire height on the page from the `height` attribute; after filtering, it could take unused space:
     we are resizing by binding the `height` attribute to the result of the height of the image plus the margins multiplied by
-    the length of the list.
+    the length of the list.</p>
   -->
   <amp-list class="rooms"
   layout="fixed-height" height="800"
