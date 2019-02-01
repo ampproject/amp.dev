@@ -19,7 +19,6 @@
 const signale = require('signale');
 const express = require('express');
 const ampCors = require('amp-toolbox-cors');
-const HttpProxy = require('http-proxy');
 
 const config = require('./config.js');
 const routers = {
@@ -38,6 +37,8 @@ class Platform {
     this.server = express();
 
     if (config.environment == 'development') {
+      const HttpProxy = require('http-proxy');
+
       // When in development fire up a second server as a simple proxy
       // to simulate CORS requests for stuff like playground
       this.proxy = express();
