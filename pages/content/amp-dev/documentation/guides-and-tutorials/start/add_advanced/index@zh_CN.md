@@ -8,11 +8,11 @@ $title: 添加高级 AMP 功能
 
 ## 您将学习：
 
-- 如何使用 [amp-ad](/zh_cn/docs/reference/components/amp-ad.html) 展示广告
+- 如何使用 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 展示广告
 - 如何嵌入 YouTube 视频、Twitter 卡片和自适应文本元素
-- 如何使用 [amp-carousel](/zh_cn/docs/reference/components/amp-carousel.html) 制作包含图片和内容组合的轮换展示内容
-- 如何使用 [amp-analytics](/zh_cn/docs/reference/components/amp-analytics.html) 跟踪简单模式
-- 如何使用 [amp-sidebar](/zh_cn/docs/reference/components/amp-sidebar.html) 在网页中添加网站导航元素
+- 如何使用 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 制作包含图片和内容组合的轮换展示内容
+- 如何使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 跟踪简单模式
+- 如何使用 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 在网页中添加网站导航元素
 - 如何在 AMP 网页中使用自定义字体
 
 ## 您将制作：

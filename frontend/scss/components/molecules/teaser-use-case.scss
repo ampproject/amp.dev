@@ -20,22 +20,9 @@
 	&.#{molecule('teaser')} {
 		@include teaser;
 
-		// &:nth-child(1),
-		// &:nth-child(4) {
-		// 	padding-top: 40px;
-		// }
-		//
-		// &:nth-child(2) {
-		// 	padding-top: 80px;
-		// }
-		//
-		// &:nth-child(3) {
-		// 	padding-top: 0;
-		// }
-
 		& > a {
 			@include teaser-linking;
-			
+
 			&:hover {
 				@include teaser-linking-hover;
 

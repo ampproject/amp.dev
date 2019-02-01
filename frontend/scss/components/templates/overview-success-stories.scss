@@ -19,24 +19,24 @@
 @import '../templates/_default.scss';
 
 .#{template('overview-success-stories')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
   }
-  
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
-  
+
   .#{utility('toc')} {
     @include toc;
   }
-  
+
   .#{utility('sidebar')} + .#{utility('content')},
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
@@ -50,7 +50,7 @@
       padding: 20px;
       grid-column: 1 / -1;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         grid-column: 7 / 19;
       }
     }

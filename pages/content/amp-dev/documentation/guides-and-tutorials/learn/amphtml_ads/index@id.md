@@ -51,7 +51,7 @@ Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak forma
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Menayangkan iklan AMPHTML ke halaman AMP', caption='Menayangkan iklan AMPHTML ke halaman AMP', align='' ) }}
 
-1.  Penayang memasukkan slot iklan di halaman AMP-nya melalui tag [`<amp-ad>`](/id/docs/reference/components/amp-ad.html), yang menetapkan jaringan iklan yang ingin digunakan.
+1.  Penayang memasukkan slot iklan di halaman AMP-nya melalui tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), yang menetapkan jaringan iklan yang ingin digunakan.
 2.  AMP Runtime mengirim permintaan iklan ke jaringan iklan tertentu untuk mengambil iklan. Jaringan iklan yang dapat menayangkan iklan AMPHTML menyediakan [implementasi Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) yang memvalidasi dan menandatangani materi iklan. 
 3.  Jaringan iklan merespons iklan AMPHTML dan AMP Runtime merender iklan di halaman AMP.
 
@@ -79,7 +79,7 @@ Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifi
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi `amp-ad` untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}}).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/adnetwork_integration.md', locale=doc.locale).url.path}}).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan AMPHTML
 
@@ -118,15 +118,15 @@ Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat
 
 #### Apakah iklan AMPHTML mendukung deteksi visibilitas dan verifikasi pihak ketiga?
 
-Ya. Terdapat dukungan bawaan untuk verifikasi dan deteksi visibilitas menggunakan [`amp-analytics`](/id/docs/reference/components/amp-analytics.html) (mis., Tampilan Aktif Google mengintegrasikan cara ini). Ada juga vendor lain seperti MOAT yang secara aktif menerapkan dukungan untuk hal tersebut.
+Ya. Terdapat dukungan bawaan untuk verifikasi dan deteksi visibilitas menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Ada juga vendor lain seperti MOAT yang secara aktif menerapkan dukungan untuk hal tersebut.
 
 #### Apakah iklan AMPHTML mendukung animasi berbasis timeline?
 
-Ya. Lihat [`amp-animation`](/id/docs/reference/components/amp-animation.html).
+Ya. Lihat [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}).
 
 #### Sebagian besar iklan memiliki titik keluar iklan yang dapat dikonfigurasi dan target yang dapat di-tap. Apakah iklan AMPHTML juga memiliki mekanisme yang sama?
 
-Ya. Lihat [`amp-ad-exit`](/id/docs/reference/components/amp-ad-exit.html).
+Ya. Lihat [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}).
 
 #### Saya tidak dapat menemukan apa yang saya butuhkan. Ke mana saya harus bertanya?
 

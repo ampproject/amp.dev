@@ -7,13 +7,13 @@ You’ve finished the "Add advanced AMP features" tutorial and successfully expl
 
 In this tutorial, you learned to:
 
-- Display ads by using [amp-ad](/docs/reference/components/amp-ad.html)
-- Embed YouTube videos by using [amp-youtube](/docs/reference/components/amp-youtube.html)
-- Embed Twitter cards by using [amp-twitter](/docs/reference/components/amp-twitter.html)
-- Include responsive text elements by using [amp-fit-text](/docs/reference/components/amp-fit-text.html)
-- Build carousels by using [amp-carousel](/docs/reference/components/amp-carousel.html)
-- Track simple analytic patterns by using [amp-analytics](/docs/reference/components/amp-analytics.html)
-- Add site navigation by using [amp-img](/docs/reference/components/amp-img.html), and [amp-sidebar](/docs/reference/components/amp-sidebar.html)
+- Display ads by using [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+- Embed YouTube videos by using [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})
+- Embed Twitter cards by using [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})
+- Include responsive text elements by using [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})
+- Build carousels by using [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
+- Track simple analytic patterns by using [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+- Add site navigation by using [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), and [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
 - Use custom fonts in AMP
 
 
@@ -22,7 +22,7 @@ In this tutorial, you learned to:
 
 To further advance your AMP expertise, check out these resources:
 
-- [Create interactive AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}) tutorial : Learn how to use amp-bind to build interactive AMP pages
+- [Create interactive AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}) tutorial : Learn how to use [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to build interactive AMP pages
 - [Combine AMP with PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md', locale=doc.locale).url.path}}): Learn how Progressive Web Apps and AMP pages complement each other
 - [AMP Start](https://www.ampstart.com/): Style your pages with pre-styled templates and components
 - [AMP By Example](https://ampbyexample.com/): Learn from live samples and demos

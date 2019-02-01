@@ -51,7 +51,7 @@ Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar div
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Servir anuncios AMP HTML en páginas AMP', caption='Servir anuncios AMP HTML en páginas AMP', align='' ) }}
 
-1.  Los editores insertan un espacio publicitario en su página AMP mediante la etiqueta [`<amp-ad>`](/es/docs/reference/components/amp-ad.html) para especificar la red publicitaria que quieren utilizar.
+1.  Los editores insertan un espacio publicitario en su página AMP mediante la etiqueta [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) para especificar la red publicitaria que quieren utilizar.
 1.  El tiempo de ejecución de AMP envía una solicitud de anuncio a la red publicitaria especificada para recuperar el anuncio. Las redes publicitarias que admiten el servicio de anuncios AMP HTML proporcionan una [implementación de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) que valida y firma la creatividad. 
 1.  La red publicitaria responde con el anuncio AMP HTML y el tiempo de ejecución de AMP publica el anuncio en la página AMP.
 
@@ -79,7 +79,7 @@ Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con 
 
 ### Redes publicitarias y servidores de anuncios
 
-Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión `amp-ad` para tu red (a menos que ya tengas una), que utiliza la [implementación de solicitud de anuncio de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Para obtener más información, consulta el artículo [Integración de AMP para publicar anuncios de display](/es/docs/ads/adnetwork_integration.html).  Ten en cuenta que no se necesita ninguna integración especial para publicar anuncios AMP HTML en páginas que no sean AMP.
+Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) para tu red (a menos que ya tengas una), que utiliza la [implementación de solicitud de anuncio de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Para obtener más información, consulta el artículo [Integración de AMP para publicar anuncios de display](/es/docs/ads/adnetwork_integration.html).  Ten en cuenta que no se necesita ninguna integración especial para publicar anuncios AMP HTML en páginas que no sean AMP.
 
 ## Crear anuncios AMP HTML
 
@@ -118,15 +118,15 @@ Sí. Puedes consultar una serie de magníficas plantillas de anuncios AMP HTML e
 
 #### ¿Los anuncios AMP HTML admiten la verificación de terceros y la detección de visibilidad?
 
-Sí, [`amp-analytics`](/es/docs/reference/components/amp-analytics.html) ofrece detección de visibilidad y verificación de forma nativa (p. ej., Active View de Google se integra con este componente). También existen otros proveedores, como MOAT, que están trabajando de forma activa para ofrecer compatibilidad con estas funciones.
+Sí, [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). También existen otros proveedores, como MOAT, que están trabajando de forma activa para ofrecer compatibilidad con estas funciones.
 
 #### ¿Los anuncios AMP HTML admiten animaciones basadas en línea de tiempo?
 
-Sí. Consulta [`amp-animation`](/es/docs/reference/components/amp-animation.html).
+Sí. Consulta [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}).
 
 #### La mayoría de anuncios cuentan con objetivos que se pueden tocar y salidas que se pueden configurar. ¿Los anuncios AMP HTML utilizan un mecanismo parecido?
 
-Sí. Consulta [`amp-ad-exit`](/es/docs/reference/components/amp-ad-exit.html).
+Sí. Consulta [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}).
 
 #### No encuentro lo que necesito. ¿Dónde puedo resolver mis dudas?
 

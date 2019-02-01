@@ -26,7 +26,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
   overflow: hidden;
   position: absolute;
 
-	@media screen and (min-width: 1024px){
+	@media (min-width: 1024px){
     padding-right: 200px;
 	}
 
@@ -38,7 +38,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
     animation: none;
     z-index: 10;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       height: 245px;
     }
 
@@ -50,7 +50,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 			color: inherit;
 		}
 
-		.ad-a-ico {
+		.#{atom('ico')} {
 			transform: rotate(180deg);
 			fill: color('white');
 		}
@@ -64,7 +64,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	&-websites {
 		background-color: color('white');
 
-		.ad-a-ico {
+		.#{atom('ico')} {
 			fill: color('robins-egg');
 		}
 	}
@@ -72,7 +72,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	&-stories {
 		background: color('ultramarine');
 
-		.ad-a-ico {
+		.#{atom('ico')} {
 			fill: color('turbo');
 		}
 	}
@@ -80,7 +80,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	&-ads {
 		background: color('hawkes-blue');
 
-		.ad-a-ico {
+		.#{atom('ico')} {
 			fill: color('pizazz');
 		}
 	}
@@ -88,7 +88,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 	&-e-mails {
 		background: color('reef');
 
-		.ad-a-ico {
+		.#{atom('ico')} {
 			fill: color('pink-flamingo');
 		}
   }
@@ -118,7 +118,7 @@ requires rollingAnimation and viewboxGradientAnimation from /source/scss/mixins.
 
   	&:hover {
 
-  		.ad-a-ico {
+  		.#{atom('ico')} {
   			transform: rotate(100deg);
   		}
 

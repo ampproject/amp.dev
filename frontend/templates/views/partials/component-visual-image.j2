@@ -1,17 +1,17 @@
 {% do doc.styles.addCssFile('css/components/molecules/visual-image.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
-<div class="ad-o-component-visual-image">
-  <div class="ad-m-visual-image">
-    <div class="ad-m-visual-image-background" amp-fx="fade-in fly-in-bottom" data-duration="1s" data-fly-in-distance="5%" data-margin-start="40%">
+<div class="ap-o-component-visual-image">
+  <div class="ap-m-visual-image">
+    <div class="ap-m-visual-image-background" amp-fx="fade-in fly-in-bottom" data-duration="1s" data-fly-in-distance="5%" data-margin-start="40%">
       <amp-img src="/static/img/the-blog.jpg" layout="responsive" height="517" width="682" />
     </div>
-    <div class="ad-m-visual-image-framed">
-      <div class="ad-m-visual-image-framed--border" title="<amp-img>" amp-fx="fade-in fly-in-right" data-duration="1s" data-fly-in-distance="5%" data-margin-start="40%">
+    <div class="ap-m-visual-image-framed">
+      <div class="ap-m-visual-image-framed--border" title="<amp-img>" amp-fx="fade-in fly-in-right" data-duration="1s" data-fly-in-distance="5%" data-margin-start="40%">
         <amp-img src="/static/img/beach.jpg" layout="responsive" height="313" width="469" />
       </div>
     </div>
-    <div class="ad-m-visual-image-code-large" amp-fx="fade-in fly-in-bottom" data-duration="1s" data-fly-in-distance="5%" data-margin-start="30%">
+    <div class="ap-m-visual-image-code-large" amp-fx="fade-in fly-in-bottom" data-duration="1s" data-fly-in-distance="5%" data-margin-start="30%">
       {% set markdown = doc.pod.markdown %}
       {% set code = '
 <amp-img class="resp-img"
@@ -23,7 +23,7 @@
       ' %}
       {{ markdown.convert('```html\n' + code + '\n```')|safe }}
     </div>
-    <div class="ad-m-visual-image-code-small" amp-fx="fade-in fly-in-bottom" data-duration="1s" data-fly-in-distance="5%" data-margin-start="25%">
+    <div class="ap-m-visual-image-code-small" amp-fx="fade-in fly-in-bottom" data-duration="1s" data-fly-in-distance="5%" data-margin-start="25%">
       {% set markdown = doc.pod.markdown %}
       {% set code = '
 <style amp-custom>

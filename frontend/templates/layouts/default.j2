@@ -83,7 +83,7 @@
 
     {% if doc.pod.env.dev %}
     {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
-    <aside class="ad-a-grid-toggle">
+    <aside class="ap-a-grid-toggle">
         <input type="checkbox">
         <div class="toggle"><div class="dot"></div></div>
         <div class="grid"></div>
@@ -108,8 +108,8 @@
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
-    <aside class="ad-o-translation-hint">
-      <p class="ad-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
+    <aside class="ap-o-translation-hint">
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
     </aside>
     {% endif %}
 

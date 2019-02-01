@@ -24,7 +24,7 @@ Explica cómo mostrar una imagen y texto en una sola capa.
         <li>Contiene 3 elementos:
           <ul>
             <li>Un elemento <code>&lt;h1></code> con el título <em>Cats</em>.</li>
-            <li>Un componente <a href="/es/docs/reference/components/amp-img.html">amp-img</a> adaptable (<code class="filename">cat.jpg</code>, 720x1280px).</li>
+            <li>Un componente <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> adaptable (<code class="filename">cat.jpg</code>, 720x1280px).</li>
             <li>Un elemento <code><q></code> para incluir la siguiente cita: <em>Dogs come when they're called. Cats take a message and get back to you. —Mary Bly</em></li>
           </ul>
         </li>
@@ -44,7 +44,7 @@ Explica cómo organizar el texto y mostrar una imagen que ocupe toda la pantalla
       <ul>
         <li>Contiene 2 capas:
       <ul>
-        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">amp-img adaptable</a> (<code class="filename">dog.jpg</code>, 720x1280px).</li>
+        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code> adaptable</a> (<code class="filename">dog.jpg</code>, 720x1280px).</li>
         <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> y contiene 2 elementos:
           <ul>
             <li>Un elemento <code>&lt;h1></code> con el título <em>Dogs</em>.</li>
@@ -67,7 +67,7 @@ Explica cómo organizar un texto, mostrar una imagen que ocupe toda la pantalla 
       <ul>
       <li>Contiene 3 capas:
       <ul>
-        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="/es/docs/reference/components/amp-img.html">amp-img</a> adaptable (<code class="filename">bird.jpg</code>, 720x1280px).</li>
+        <li><b>Capa 1:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> y contiene un componente <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> adaptable (<code class="filename">bird.jpg</code>, 720x1280px).</li>
         <li><b>Capa 2:</b> Implementa la plantilla <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> y contiene un elemento:
           <ul>
             <li>Un elemento <code><h1></code> con el título <em>Birds</em>.</li>
@@ -97,9 +97,9 @@ Explica cómo organizar texto y mostrar un vídeo que ocupe toda la pantalla en 
       <ul>
       <li>Contiene 3 capas:
       <ul>
-        <li><b>Capa 1:</b> Implementa la plantilla <code>fill</code> y contiene un componente <a href="/es/docs/reference/components/amp-video.html">amp-video</a> adaptable (<code class="filename">rabbit.mp4</code>).
+        <li><b>Capa 1:</b> Implementa la plantilla <code>fill</code> y contiene un componente <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> adaptable (<code class="filename">rabbit.mp4</code>).
           <ul>
-            <li>Recuerda añadir el <strong>script necesario</strong> del componente <a href="/es/docs/reference/components/amp-video.html">amp-video</a> a la sección <code>&lt;head></code> de la página para que se muestre el vídeo.</li>
+            <li>Recuerda añadir el <strong>script necesario</strong> del componente <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> a la sección <code>&lt;head></code> de la página para que se muestre el vídeo.</li>
             <li>Indica una imagen de póster con <code>poster</code> (<code class="filename">rabbit.jpg</code>). Este atributo es necesario<strong></strong> para que las historias de AMP sean válidas.</li>
             <li>Configura el vídeo para que se reproduzca automáticamente con el atributo <code>autoplay</code>. Este atributo es necesario<strong></strong> para que las historias de AMP sean válidas.</li>
             <li>Configura el vídeo para que se reproduzca en bucle con el atributo <code>loop</code>.</li>

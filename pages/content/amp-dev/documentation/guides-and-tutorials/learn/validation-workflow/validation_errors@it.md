@@ -411,10 +411,10 @@ Si riferiscono ai tag previsti:
 Questo errore si verifica quando un tag ha entrambi gli attributi che si escludono a vicenda.
 Ad esempio, è consentito un solo tag tra i seguenti:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
 
 
 ### Attributo obbligatorio mancante tra quelli dell'elenco
@@ -437,10 +437,10 @@ Ad esempio, è consentito un solo tag tra i seguenti:
 Questo errore si verifica quando in un tag manca un attributo obbligatorio a scelta tra quelli forniti.
 Ad esempio, i seguenti tag richiedono uno dei due attributi possibili:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
 
 
 ### Tag principale errato
@@ -473,7 +473,7 @@ Di seguito è elencato il tag principale richiesto per tag specifici (tag, princ
 * `style` richiede il tag principale `boilerplate (noscript)`.
 * `noscript` richiede il tag principale `head`.
 * `script` richiede il tag principale `head`.
-* `source` richiede un tag multimediale (`amp-audio`, `amp-video` e così via).
+* `source` richiede un tag multimediale ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) e così via).
 
 
 ### Predecessore del tag non consentito
@@ -791,11 +791,11 @@ In caso contrario viene generato questo errore.
 
 Ad esempio, `<amp-img src="" layout="responsive" width="42px" height="42rem">` genera il seguente messaggio di errore:
 
-"Le unità di misura relative alla larghezza e all'altezza sono disomogenee nel tag 'amp-img'. La larghezza è indicata in 'px' mentre l'altezza è indicata in 'rem'."
+"Le unità di misura relative alla larghezza e all'altezza sono disomogenee nel tag '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) . La larghezza è indicata in 'px' mentre l'altezza è indicata in 'rem'."
 
 ## Errori relativi ai modelli
 
-Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [amp-mustache](/docs/reference/components/amp-mustache.html).
+Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 

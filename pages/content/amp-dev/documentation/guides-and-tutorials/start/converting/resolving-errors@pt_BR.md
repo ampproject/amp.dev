@@ -207,13 +207,13 @@ A AMP não é compatível com os elementos HTML padrão correspondentes à exibi
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-A AMP tem um componente Web criado especificamente para substituir a tag `<img>`, a tag [`<amp-img>`](/pt_br/docs/reference/components/amp-img.html):
+A AMP tem um componente Web criado especificamente para substituir a tag `<img>`, a tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Substitua** a tag `<img>` pela tag `<amp-img>` acima e repita a validação. Vários novos erros serão exibidos:
+**Substitua** a tag `<img>` pela tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) acima e repita a validação. Vários novos erros serão exibidos:
 
 <pre class="error-text">
 Layout not supported: container
@@ -236,9 +236,9 @@ O sistema de layout AMP permite que os elementos da página sejam posicionados e
 
 No caso do nosso artigo, o sistema de layout inferiu que o layout de `amp-img` é do tipo `container`. No entanto, o tipo `container` só é aplicável a elementos que tenham elementos filhos. O tipo `container` é incompatível com a tag `amp-img`, o que causa esse erro.
 
-Por que o tipo `container` foi inferido? Porque não especificamos um atributo `height` para a tag `amp-img`. No HTML, sempre especifique largura e altura fixas para os elementos da página a fim de reduzir o reflow. Na AMP, é necessário definir a largura e a altura dos elementos do amp-img para que a AMP possa predeterminar a proporção do elemento.
+Por que o tipo `container` foi inferido? Porque não especificamos um atributo `height` para a tag `amp-img`. No HTML, sempre especifique largura e altura fixas para os elementos da página a fim de reduzir o reflow. Na AMP, é necessário definir a largura e a altura dos elementos do [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) para que a AMP possa predeterminar a proporção do elemento.
 
-**Adicione** `width` e `height` à tag `<amg-img>` da seguinte forma:
+**Adicione** `width` e `height` à tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) da seguinte forma:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -246,7 +246,7 @@ Por que o tipo `container` foi inferido? Porque não especificamos um atributo `
 
 Atualize a página e verifique o validador, que não deverá exibir mais erros.
 
-Agora você tem um documento AMP válido, mas a imagem está posicionada na página de uma maneira estranha.  Por padrão, quando você especificar a altura e a largura de um `amp-img`, a AMP corrigirá as dimensões fornecidas. Mas não seria ótimo se a AMP dimensionasse a imagem para se estender de maneira *responsiva* e se ajustar à página independentemente do tamanho da tela?
+Agora você tem um documento AMP válido, mas a imagem está posicionada na página de uma maneira estranha.  Por padrão, quando você especificar a altura e a largura de um [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), a AMP corrigirá as dimensões fornecidas. Mas não seria ótimo se a AMP dimensionasse a imagem para se estender de maneira *responsiva* e se ajustar à página independentemente do tamanho da tela?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="A imagem não é responsiva.") }}
 

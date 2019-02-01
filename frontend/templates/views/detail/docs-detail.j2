@@ -10,14 +10,14 @@
 {% endblock %}
 
 {% block main %}
-<main class="ad--main ad-t-docs-detail">
-  <div class="ad--container">
+<main class="ap--main ap-t-docs-detail">
+  <div class="ap--container">
     {% include 'views/partials/sidebar.j2' %}
     {% include 'views/partials/content.j2' %}
 
     {% if doc.collection.chaptered %}
-    <section class="ad--content">
-      <div class="ad--chapter-indicator">
+    <section class="ap--content">
+      <div class="ap--chapter-indicator">
         {# If the document hasn't got a previous document, it's the first one #}
         {% set document_list = doc.collection.list_docs(locale=doc.locale, include_hidden=True) %}
 
@@ -26,24 +26,24 @@
 
         {% if not previous_document and next_document %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-        <a href="{{ next_document.url.path }}" class="ad-a-btn">
+        <a href="{{ next_document.url.path }}" class="ap-a-btn">
           {{ _('Get started') }}
         </a>
         {% else %}
         {% if previous_document %}
         {% do doc.icons.useIcon('icons/internal.svg') %}
-        <a href="{{ previous_document.url.path }}" class="ad-m-lnk ad-m-lnk-square ad--previous">
-          <div class="ad-a-ico ad-m-lnk-icon">
+        <a href="{{ previous_document.url.path }}" class="ap-m-lnk ap-m-lnk-square ap--previous">
+          <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ad-m-lnk-text">{{ _('Previous chapter') }}</span>
+          <span class="ap-m-lnk-text">{{ _('Previous chapter') }}</span>
         </a>
         {% endif %}
         {% if next_document %}
         {% do doc.icons.useIcon('icons/internal.svg') %}
-        <a href="{{ next_document.url.path }}" class="ad-m-lnk ad-m-lnk-square ad--next">
-          <span class="ad-m-lnk-text">{{ _('Next chapter') }}</span>
-          <div class="ad-a-ico ad-m-lnk-icon">
+        <a href="{{ next_document.url.path }}" class="ap-m-lnk ap-m-lnk-square ap--next">
+          <span class="ap-m-lnk-text">{{ _('Next chapter') }}</span>
+          <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
         </a>

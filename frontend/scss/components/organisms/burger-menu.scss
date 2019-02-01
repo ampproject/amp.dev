@@ -14,7 +14,19 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('burger-menu')} {
-  padding-bottom: 80px;
+/* This is where the actual burger-menu starts */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 110px 20px 80px;
+  z-index: 16;
+  background-color: color('white');
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
@@ -26,44 +38,28 @@
       outline: none;
     }
     &.mainmenuopen {
-      z-index: 23;
+      z-index: 1004;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       right: 30px;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       display: none;
     }
   }
 
-    &-icon {
-      width: 30px;
-      height: 30px;
-    }
+  &-icon {
+    width: 30px;
+    height: 30px;
+  }
 
   &-input {
     display: none;
   }
 
-  /* This is where the actual burger-menu starts */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 110px;
-  padding-right: 20px;
-  padding-left: 20px;
-  z-index: 16;
-  background-color: color('white');
-  pointer-events: none;
-  opacity: 0;
-
-  transition: transform 0.2s ease, opacity 0.2s ease;
-
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 
@@ -74,16 +70,7 @@
       opacity: 1;
 
       &.mainmenuopen {
-        z-index: 22;
-      }
-    }
-
-    /* Shrink header and footer to not interfer with scrolling */
-    & ~ main, & ~ footer {
-      @media screen and (max-width: 1023px) {
-        // max-height: 0;
-        // overflow: hidden;
-        // pointer-events: none;
+        z-index: 1003;
       }
     }
   }

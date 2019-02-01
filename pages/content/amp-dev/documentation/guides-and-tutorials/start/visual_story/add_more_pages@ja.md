@@ -24,7 +24,7 @@ $title: ページを追加する
         <li>次の 3 つの要素を含めます。
           <ul>
             <li><code>&lt;h1></code> 要素に「Cats」というタイトルを含めます。</li>
-            <li>レスポンシブな <a href="https://www.ampproject.org/docs/reference/components/amp-img">amp-img</a>（<code class="filename">cat.jpg</code>、720 x 1280 px）を指定します。</li>
+            <li>レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">cat.jpg</code>、720 x 1280 px）を指定します。</li>
             <li><code>&lt;q></code> 要素に<em>「Dogs come when they're called. Cats take a message and get back to you. --Mary Bly」という引用文を含めます。</em></li>
           </ul>
         </li>
@@ -44,7 +44,7 @@ $title: ページを追加する
       <ul>
         <li>次の 2 つのレイヤを含めます。
       <ul>
-        <li><b>レイヤ 1</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="https://www.ampproject.org/docs/reference/components/amp-img">amp-img</a>（<code class="filename">dog.jpg</code>、720 x 1280 px）を指定します。</li>
+        <li><b>レイヤ 1</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">dog.jpg</code>、720 x 1280 px）を指定します。</li>
         <li><b>レイヤ 2</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> テンプレートを実装し、次の 2 つの要素を含めます。
           <ul>
             <li><code>&lt;h1></code> 要素に「Dogs」というタイトルを含めます。</li>
@@ -67,7 +67,7 @@ $title: ページを追加する
       <ul>
       <li>次の 3 つのレイヤを含めます。
       <ul>
-        <li><b>レイヤ 1</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="https://www.ampproject.org/docs/reference/components/amp-img">amp-img</a>（<code class="filename">bird.jpg</code>、720 x 1280 px）を指定します。</li>
+        <li><b>レイヤ 1</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">bird.jpg</code>、720 x 1280 px）を指定します。</li>
         <li><b>レイヤ 2</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> テンプレートを実装し、次の 1 つの要素を含めます。
           <ul>
             <li><code>&lt;h1></code> 要素に「Birds」というタイトルを含めます。</li>
@@ -97,9 +97,9 @@ $title: ページを追加する
       <ul>
       <li>次の 3 つのレイヤを含めます。
       <ul>
-        <li><b>レイヤ 1</b>: <code>fill</code> テンプレートを実装し、レスポンシブな <a href="https://www.ampproject.org/docs/reference/components/amp-video">amp-video</a>（<code class="filename">rabbit.mp4</code>）を指定します。
+        <li><b>レイヤ 1</b>: <code>fill</code> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>（<code class="filename">rabbit.mp4</code>）を指定します。
           <ul>
-            <li>動画を表示するには、<a href="https://www.ampproject.org/docs/reference/components/amp-video">amp-video</a> コンポーネントを使用するために<strong>必要なスクリプト</strong>を <code>&lt;head></code> セクションに追加する必要があります。</li>
+            <li>動画を表示するには、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> コンポーネントを使用するために<strong>必要なスクリプト</strong>を <code>&lt;head></code> セクションに追加する必要があります。</li>
             <li><code>poster</code> 画像（<code class="filename">rabbit.jpg</code>）を指定します。この属性は、有効な AMP ストーリーに<strong>必須</strong>です。</li>
             <li>動画が自動再生されるよう、<code>autoplay</code> 属性を指定します。この属性は、有効な AMP ストーリーに<strong>必須</strong>です。</li>
             <li>動画が自動的にループ再生されるよう、<code>loop</code> 属性を指定します。</li>

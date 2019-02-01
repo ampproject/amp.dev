@@ -29,11 +29,11 @@
 
   code {
     @include txt-mono-inline;
+    letter-spacing: 0.3px;
   }
 
   a {
     code {
-      @include txt-mono-inline;
       @include color-blue-ribbon;
     }
   }
@@ -54,10 +54,19 @@
 
     li {
       padding-left: 0.5em;
+      margin-bottom: 0.5em;
 
       p {
         font-size: 1em;
       }
+    }
+  }
+
+  figure {
+    figcaption {
+      @include txt;
+      @include txt-3;
+      margin-top: 0.3em;
     }
   }
 

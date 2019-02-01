@@ -361,7 +361,7 @@ The following results in a INVALID_PROPERTY_VALUE_IN_ATTR_VALUE error:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the `<amp-video>` component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
+Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.) component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
 
 ### Missing URL
 
@@ -472,8 +472,8 @@ They refer to expected tags:
 This error occurs when a tag has both of the mutually exclusive attributes.
 For example, only one is allowed for the following tags:
 
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` or `srcdoc`
-* [amp-jwplayer](/docs/reference/components/amp-jwplayer.html): `data-media-id` or `data-playlist-id`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` or `srcdoc`
+* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` or `data-playlist-id`
 
 ### Missing mandatory attribute from list
 
@@ -496,10 +496,10 @@ This error occurs when a tag is missing one required attribute
 from multiple choices.
 For example, these tags require one attribute from two possible choices:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` or `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` or `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` or `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` or `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` or `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` or `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` or `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` or `data-videoid`
 
 ### Wrong parent tag
 
@@ -532,7 +532,7 @@ The following lists the required parent for specific tags
 * `style` requires parent tag `boilerplate (noscript)`.
 * `noscript` requires parent tag `head`.
 * `script` requires parent tag `head`.
-* `source` requires a media tag (`amp-audio`, `amp-video`, etc.).
+* `source` requires a media tag ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.).
 
 ### Disallowed tag ancestor
 
@@ -901,14 +901,14 @@ When they are not, this error is triggered.
 For example, `<amp-img src="" layout="responsive" width="42px" height="42rem">`,
 results in this error message:
 
-"Inconsistent units for width and height in tag 'amp-img' - width is specified in 'px' whereas height is specified in 'rem'."
+"Inconsistent units for width and height in tag '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  - width is specified in 'px' whereas height is specified in 'rem'."
 
 ## Templating errors
 
 AMP pages can't include templating syntax,
 unless that syntax is within an AMP tag specifically
 designed to include templates, for example,
-[amp-mustache](/docs/reference/components/amp-mustache.html).
+[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates

@@ -56,13 +56,13 @@ sampler:
 ---
 {% do doc.styles.addCssFile('css/components/templates/home.css') %}
 
-<main class="ad--main ad-t-home">
+<main class="ap--main ap-t-home">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <section class="ad--stage ad--container-fluid">
-    <div class="ad-o-stage ad-o-stage-websites">
-      <div class="ad--container">
-        <div class="ad-o-stage-content">
-            <h1 class="ad-o-stage-content-headline">AMP is a web component framework to easily create user-first websites.</h1>
+  <section class="ap--stage ap--container-fluid">
+    <div class="ap-o-stage ap-o-stage-websites">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content">
+            <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create user-first {% include 'views/partials/rolling-formats.j2' %}</h1>
         </div>
       </div>
     </div>
@@ -70,48 +70,48 @@ sampler:
     {% include 'views/partials/case-band.j2' %}
   </section>
 
-  <section class="ad--news ad--container-fluid">
+  <section class="ap--news ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
 
-    <div class="ad-m-copy">
+    <div class="ap-m-copy">
       <h2>The latest News</h2>
-      <p>Get the latest news and tips from our newsletter:</p>
+      <p>Don't want to miss any of the great stuff that happens around AMP? The always be first in line and subscribe to our newsletter!</p>
 
-      <a href="https://amphtml.wordpress.com/" class="ad-m-lnk ad-m-lnk-square">
-        <div class="ad-a-ico ad-m-lnk-icon">
+      <a href="https://services.google.com/fb/forms/ampnewsletter/" class="ap-m-lnk ap-m-lnk-square">
+        <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/external.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
         </div>
-        <span class="ad-m-lnk-text">Read more in our blog</span>
+        <span class="ap-m-lnk-text">Subscribe</span>
       </a>
     </div>
 
-    <div class="ad-o-news">
-      <div class="ad-o-news-list">
+    <div class="ap-o-news">
+      <div class="ap-o-news-list">
         {% for news in doc.news %}
-        <a class="ad-o-news-item" href="{{ news.url }}">
-          <div class="ad-o-news-card">
-            <div class="ad-o-news-title">{{ news.title }}</div>
-            <div class="ad-o-news-image">
+        <a class="ap-o-news-item" href="{{ news.url }}">
+          <div class="ap-o-news-card">
+            <div class="ap-o-news-title">{{ news.title }}</div>
+            <div class="ap-o-news-image">
               {% if news.image %}
               <amp-img
-                class="ad--media"
+                class="ap--media"
                 src="{{ news.image }}"
                 layout="responsive"
                 width="16"
                 height="9">
               </amp-img>
               {% else %}
-              <div class="ad-o-news-icon">
-                <div class="ad-a-ico">
+              <div class="ap-o-news-icon">
+                <div class="ap-a-ico">
                   {% do doc.icons.useIcon('icons/news.svg') %}
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
                 </div>
               </div>
               {% endif %}
             </div>
-            <h5 class="ad-o-news-headline">{{ news.headline }}</h5>
-            <div class="ad-o-news-date">{{ news.date }}</div>
+            <h5 class="ap-o-news-headline">{{ news.headline }}</h5>
+            <div class="ap-o-news-date">{{ news.date }}</div>
           </div>
         </a>
         {% endfor %}
@@ -119,8 +119,8 @@ sampler:
     </div>
   </section>
 
-  <section class="ad--format-explainer">
-    <div class="ad-o-format-explainer ad--container-fluid">
+  <section class="ap--format-explainer">
+    <div class="ap-o-format-explainer ap--container-fluid">
       <amp-state id="formats">
         <script type="application/json">
           {
@@ -169,50 +169,50 @@ sampler:
         </script>
       </amp-animation>
 
-      <div class="ad-o-format-explainer-visual swift">
+      <div class="ap-o-format-explainer-visual swift">
         {% for format in doc.format_explainer %}
-        <div class="ad-o-format-explainer-visual-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-visual-{{ format.name }} active' : 'ad-o-format-explainer-visual-{{ format.name }}'">
+        <div class="ap-o-format-explainer-visual-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-visual-{{ format.name }} active' : 'ap-o-format-explainer-visual-{{ format.name }}'">
           {% include format.visual %}
         </div>
         {% endfor %}
       </div>
 
-      <div class="ad-o-format-explainer-content swift">
+      <div class="ap-o-format-explainer-content swift">
         {% for format in doc.format_explainer %}
-        <div class="ad-o-format-explainer-content-{{ format.name }} ad-m-copy {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-content-{{ format.name }} ad-m-copy active' : 'ad-o-format-explainer-content-{{ format.name }} ad-m-copy'">
-          <h2 class="ad-o-format-explainer-headline">{{ format.headline }}</h2>
-          <p class="ad-o-format-explainer-copy">{{ format.description }}</p>
+        <div class="ap-o-format-explainer-content-{{ format.name }} ap-m-copy {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
+          <h2 class="ap-o-format-explainer-headline">{{ format.headline }}</h2>
+          <p class="ap-o-format-explainer-copy">{{ format.description }}</p>
         </div>
         {% endfor %}
       </div>
 
-      <div class="ad-o-format-explainer-navigation">
+      <div class="ap-o-format-explainer-navigation">
         {% for format in doc.format_explainer %}
-        <button tabindex="0" role="button" class="ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }} active' : 'ad-o-format-explainer-button ad-o-format-explainer-button-{{ format.name }}'"
+        <button tabindex="0" role="button" class="ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} active' : 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }}'"
           on="tap:AMP.setState({activeFormat: '{{ format.name }}'}),switchFormat.start">
-          <div class="ad-o-format-explainer-button-icon ad-a-ico {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-button-icon ad-a-ico active' : 'ad-o-format-explainer-button-icon ad-a-ico'">
+          <div class="ap-o-format-explainer-button-icon ap-a-ico {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button-icon ap-a-ico active' : 'ap-o-format-explainer-button-icon ap-a-ico'">
             {% do doc.icons.useIcon('icons/amp-' + format.name + '.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
-          <span class="ad-o-format-explainer-button-text">AMP {{ format.name }}</span>
+          <span class="ap-o-format-explainer-button-text">AMP {{ format.name }}</span>
         </button>
         {% endfor %}
       </div>
 
-      <div class="ad-o-format-explainer-link swift">
+      <div class="ap-o-format-explainer-link swift">
         {% for format in doc.format_explainer %}
-        <div class="ad-o-format-explainer-link-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ad-o-format-explainer-link-{{ format.name }} active' : 'ad-o-format-explainer-link-{{ format.name }}'">
-          <a href="{{ format.url }}" [href]="formats[activeFormat].url" class="ad-m-lnk ad-m-lnk-square">
-            <div class="ad-a-ico ad-m-lnk-icon">
+        <div class="ap-o-format-explainer-link-{{ format.name }} {{ 'active' if loop.index == 1 }}"
+          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-link-{{ format.name }} active' : 'ap-o-format-explainer-link-{{ format.name }}'">
+          <a href="{{ format.url }}" [href]="formats[activeFormat].url" class="ap-m-lnk ap-m-lnk-square">
+            <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ad-m-lnk-text">Learn more about AMP {{ format.name }}</span>
+            <span class="ap-m-lnk-text">Learn more about AMP {{ format.name }}</span>
           </a>
         </div>
         {% endfor %}
@@ -220,7 +220,7 @@ sampler:
     </div>
   </section>
 
-  <section class="ad--sampler">
+  <section class="ap--sampler">
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
     {% set playground_url = podspec.base_urls.api + '/playground' %}
 
@@ -238,9 +238,9 @@ sampler:
       </script>
     </amp-state>
 
-    <div class="ad--container">
-      <div class="ad-m-copy ad-m-copy-center">
-        <div class="ad-o-sampler-icon ad-a-ico">
+    <div class="ap--container">
+      <div class="ap-m-copy ap-m-copy-center">
+        <div class="ap-o-sampler-icon ap-a-ico">
           {% do doc.icons.useIcon('icons/logo.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </div>
@@ -248,26 +248,26 @@ sampler:
       </div>
     </div>
 
-    <div class="ad--container-fluid">
-      <div class="ad-m-copy">
+    <div class="ap--container-fluid">
+      <div class="ap-m-copy">
         <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
       </div>
 
-      <div class="ad-o-sampler">
-        <div class="ad-o-sampler-tab-bar">
+      <div class="ap-o-sampler">
+        <div class="ap-o-sampler-tab-bar">
 
           {% for tab in doc.sampler %}
-          <div tabindex="0" role="button" class="ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
-            [class]="activeSample == '{{ loop.index-1 }}' ? 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }} active' : 'ad-o-sampler-tab ad-o-sampler-tab-{{ loop.index-1 }}'"
+          <div tabindex="0" role="button" class="ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
+            [class]="activeSample == '{{ loop.index-1 }}' ? 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} active' : 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }}'"
             on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
-            <span class="ad-o-sampler-tab-title">{{ tab.title }}</span>
+            <span class="ap-o-sampler-tab-title">{{ tab.title }}</span>
           </div>
           {% endfor %}
 
         </div>
 
         {% set embed_url = playground_url + '/embed#mode=responsive&url=' + podspec.base_urls.platform + doc.sampler[0].url %}
-        <div class="ad-o-sampler-iframe">
+        <div class="ap-o-sampler-iframe">
           <amp-iframe
             width="11"
             height="5"
@@ -281,15 +281,15 @@ sampler:
           </amp-iframe>
         </div>
 
-        <div class="ad-o-sampler-link">
+        <div class="ap-o-sampler-link">
           <a href="{{ doc.sampler[0].url }}"
             [href]="sampler[activeSample].url"
-            class="ad-m-lnk">
-            <div class="ad-a-ico ad-m-lnk-icon">
+            class="ap-m-lnk">
+            <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ad-m-lnk-text">Open in AMP Playground</span>
+            <span class="ap-m-lnk-text">Open in AMP Playground</span>
           </a>
         </div>
       </div>
@@ -297,142 +297,142 @@ sampler:
     </div>
   </section>
 
-  <section class="ad--benefits-overview">
-    <div class="ad-o-benefits ad--container">
+  <section class="ap--benefits-overview">
+    <div class="ap-o-benefits ap--container">
 
-      <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-developers">
+      <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-developers">
 
         <h2>Business Benefits</h2>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/bolt-code-circle.svg') %}
-            <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-code-circle"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-code-circle"></use></svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">AMP can be applied across various web touch points</span>
-            <span class="ad-m-benefit-text-copy">Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">AMP can be applied across various web touch points</span>
+            <span class="ap-m-benefit-text-copy">Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web.</span>
           </div>
         </div>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/simple-modules.svg') %}
-            <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#simple-modules"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#simple-modules"></use></svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Web page speed improves the user experience and core business metrics</span>
-            <span class="ad-m-benefit-text-copy">AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Web page speed improves the user experience and core business metrics</span>
+            <span class="ap-m-benefit-text-copy">AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms.</span>
           </div>
         </div>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/star.svg') %}
-            <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use></svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Building AMP pages is simple and straightforward.</span>
-            <span class="ad-m-benefit-text-copy">You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Building AMP pages is simple and straightforward.</span>
+            <span class="ap-m-benefit-text-copy">You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal.</span>
           </div>
         </div>
 
       </div>
 
-      <div class="ad-o-benefits-overview-list ad-o-benefits-overview-list-business">
+      <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
 
         <h2>Developer Benefits</h2>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/ux-improvement.svg') %}
-            <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ux-improvement"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ux-improvement"></use></svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Maintain flexibility and control and reduce complexity in your code</span>
-            <span class="ad-m-benefit-text-copy">You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible userexperience     for your customers.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Maintain flexibility and control and reduce complexity in your code</span>
+            <span class="ap-m-benefit-text-copy">You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible userexperience     for your customers.</span>
           </div>
         </div>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/fast-loading.svg') %}
-            <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fast-loading"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fast-loading"></use></svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Build for a sustainable future in the open web for everyone</span>
-            <span class="ad-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster more user-friendly    experience.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Build for a sustainable future in the open web for everyone</span>
+            <span class="ap-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster more user-friendly    experience.</span>
           </div>
         </div>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/circle-arrows-money.svg') %}
-            <svg class="ad-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circle-arrows-money"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circle-arrows-money"></use></svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Less effort, more performance and built and controlled by you</span>
-            <span class="ad-m-benefit-text-copy">It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Less effort, more performance and built and controlled by you</span>
+            <span class="ap-m-benefit-text-copy">It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.</span>
           </div>
         </div>
 
       </div>
 
-      <div class="ad-o-benefits-overview-link">
-        <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-m-lnk ad-m-lnk-square">
-          <div class="ad-a-ico ad-m-lnk-icon">
+      <div class="ap-o-benefits-overview-link">
+        <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
+          <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ad-m-lnk-text">Get started with AMP</span>
+          <span class="ap-m-lnk-text">Get started with AMP</span>
         </a>
       </div>
 
     </div>
   </section>
 
-  <section class="ad--quote ad--container">
-    <div class="ad-m-quote">
-      <div class="ad-m-quote-source">
-       <div class="ad-a-ico">
+  <section class="ap--quote ap--container">
+    <div class="ap-m-quote">
+      <div class="ap-m-quote-source">
+       <div class="ap-a-ico">
           {% do doc.icons.useIcon('icons/quote.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
        </div>
-        <div class="ad-a-img ad-a-img-static">
-          <amp-img class="ad--media" src="/static/img/success-stories/washington_post/washington_post_logo.png" layout="responsive" height="197" width="1280" alt="placeholder" />
+        <div class="ap-a-img ap-a-img-static">
+          <amp-img class="ap--media" src="/static/img/success-stories/washington_post/washington_post_logo.png" layout="responsive" height="197" width="1280" alt="placeholder" />
         </div>
       </div>
-      <div class="ad-m-quote-quote">
+      <div class="ap-m-quote-quote">
         <blockquote>
-          <p class="ad-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.<p>
+          <p class="ap-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.<p>
         </blockquote>
         <p>Greg Manifold, Design Director of The Washington Post</p>
 
-        <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/washingtonpost.yaml').url.path }}" class="ad-m-lnk">
-          <div class="ad-a-ico ad-m-lnk-icon">
+        <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/washingtonpost.yaml').url.path }}" class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ad-m-lnk-text">Read Success Story</span>
+          <span class="ap-m-lnk-text">Read Success Story</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="ad--case-grid">
-    <div class="ad--container">
-      <h1 class="ad-o-case-grid-headline">Build anything with AMP.</h1>
+  <section class="ap--case-grid">
+    <div class="ap--container">
+      <h1 class="ap-o-case-grid-headline">Build anything with AMP.</h1>
     </div>
 
-    <div class="ad--container-fluid">
+    <div class="ap--container-fluid">
       {% include 'views/partials/case-grid.j2' %}
     </div>
   </section>
 
   {% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
-  <section class="ad--teaser-grid ad--container">
-    <div class="ad-o-teaser-grid">
-      <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ teasers|count }}">
+  <section class="ap--teaser-grid ap--container">
+    <div class="ap-o-teaser-grid">
+      <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
         {% for n in range(0, 4) %}
         {% with %}
         {% set teaser_doc = g.doc('/content/amp-dev/what-is-amp/success-stories/bmw-com.yaml') %}
@@ -442,67 +442,67 @@ sampler:
       </div>
     </div>
 
-    <div class="ad-m-copy">
+    <div class="ap-m-copy">
       <h2>Explore AMP<br> success stories</h2>
       <p>Don't take our word for it – read case studies from your industry and competitors and see how AMP gives them a competitive edge.</p>
 
-      <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/index.html').url.path }}" class="ad-m-lnk ad-m-lnk-square">
-        <div class="ad-a-ico ad-m-lnk-icon">
+      <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/index.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
+        <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ad-m-lnk-text">See all success stories</span>
+        <span class="ap-m-lnk-text">See all success stories</span>
       </a>
     </div>
   </section>
 
-  <section class="ad--collaboration">
+  <section class="ap--collaboration">
     {% do doc.styles.addCssFile('css/components/molecules/collabo-card.css') %}
 
-    <div class="ad--container">
+    <div class="ap--container">
       <h2>By the community,<br>for the community</h2>
 
-      <div class="ad-m-collabo-card ad-m-collabo-card-1">
+      <div class="ap-m-collabo-card ap-m-collabo-card-1">
         <a href="https://github.com/orgs/ampproject/people">
-          <div class="ad-m-collabo-card-image">
+          <div class="ap-m-collabo-card-image">
             <amp-img
-              class="ad--media"
+              class="ap--media"
               src="/static/img/dummy-collabo-image-1.png"
               layout="responsive"
               width="16"
               height="9">
             </amp-img>
           </div>
-          <h3 class="ad-m-collabo-card-headline">Many ways for you to contribute</h3>
-          <p class="ad-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+          <h3 class="ap-m-collabo-card-headline">Many ways for you to contribute</h3>
+          <p class="ap-m-collabo-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
         </a>
       </div>
 
-      <div class="ad-m-collabo-card ad-m-collabo-card-2">
+      <div class="ap-m-collabo-card ap-m-collabo-card-2">
         <a href="https://github.com/ampproject/docs/issues">
-          <div class="ad-m-collabo-card-image">
+          <div class="ap-m-collabo-card-image">
             <amp-img
-              class="ad--media"
+              class="ap--media"
               src="/static/img/dummy-collabo-image-2.png"
               layout="responsive"
               width="16"
               height="9">
             </amp-img>
           </div>
-          <h3 class="ad-m-collabo-card-headline">Reporting issues with AMP</h3>
-          <p class="ad-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.</p>
+          <h3 class="ap-m-collabo-card-headline">Reporting issues with AMP</h3>
+          <p class="ap-m-collabo-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.</p>
         </a>
       </div>
 
     </div>
   </section>
 
-  <section class="ad--get-started ad--container">
+  <section class="ap--get-started ap--container">
     {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-    <div class="ad-m-copy ad-m-copy-center">
+    <div class="ap-m-copy ap-m-copy-center">
       <h2>Build your first AMP page now</h2>
       <p>You don’t need to download AMP and no installation is required.<br> Because it is a open-source project, it is free!</p>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ad-a-btn">Get started</a>
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ap-a-btn">Get started</a>
     </div>
   </section>
 </main>

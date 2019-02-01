@@ -3,15 +3,15 @@
 {% if not empty_toc and (doc.toc or doc.content.find('[TOC]')) %}
 {% do doc.icons.useIcon('icons/contentmenu.svg') %}
 {% do doc.icons.useIcon('icons/close.svg') %}
-<section class="ad--toc">
+<section class="ap--toc">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
   {% do doc.styles.addCssFile('/css/components/organisms/toc.css') %}
 
-  <div class="ad-o-toc" [class]="contentmenuopen ? 'ad-o-toc contentmenuopen' : 'ad-o-toc'">
-    <label class="ad-o-toc-toggle" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
-      <p class="ad-o-toc-hl">Table of contents</p>
+  <div class="ap-o-toc" [class]="contentmenuopen ? 'ap-o-toc contentmenuopen' : 'ap-o-toc'">
+    <label class="ap-o-toc-toggle" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
+      <p class="ap-o-toc-hl">Table of contents</p>
     </label>
-    <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
+    <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
     {# Unwrap TOC from useless markup and strip first level #}
     {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n', '<ul>').replace('\n</ul>\n</div>', '</ul>') %}
     {{ toc|safe }}

@@ -3,50 +3,50 @@
 {% set extract_teasers = 'detail' in doc.view or 'overview' in doc.view %}
 {% if extract_teasers %}
 </section>
-<section class="ad--teaser-grid">
+<section class="ap--teaser-grid">
 {% endif %}
 
-<div class="ad-o-teaser-grid">
+<div class="ap-o-teaser-grid">
 
   {% if headline %}
   <h2>{{ headline }}</h2>
   {% endif %}
 
-  <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ teasers|count }}">
+  <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
     {% for teaser in teasers %}
 
     {# Teaser for guides and tutorial pages #}
     {% if teaser.type == 'guide' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-guide-tutorial.css') %}
 
-    <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
+    <div class="ap-m-teaser ap-m-teaser-guide-tutorial">
       <a href="{{ teaser.doc.url|relative }}">
 
         {% if teaser.image %}
-        <div class="ad-a-img ad-m-teaser-image">
+        <div class="ap-a-img ap-m-teaser-image">
           <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
         </div>
         {% endif %}
 
-        <div class="ad-m-teaser-card">
+        <div class="ap-m-teaser-card">
           {% if teaser.destinations %}
           {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-          <div class="ad-m-teaser-tags">
+          <div class="ap-m-teaser-tags">
             {% for destination in teaser.destinations %}
-            <div class="ad-m-tag ad-m-tag-{{ destination }} ad-m-teaser-tag"></div>
+            <div class="ap-m-tag ap-m-tag-{{ destination }} ap-m-teaser-tag"></div>
             {% endfor %}
           </div>
           {% endif %}
 
-          <div class="ad-m-teaser-content">
-            <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
+          <div class="ap-m-teaser-content">
+            <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
             {% if teaser.video %}
-            <div class="ad-m-teaser-video-length">
+            <div class="ap-m-teaser-video-length">
               {% do doc.icons.useIcon('icons/play.svg') %}
-              <div class="ad-a-ico ad-m-teaser-video-length-icon">
+              <div class="ap-a-ico ap-m-teaser-video-length-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play"></use></svg>
               </div>
-              <span class="ad-m-teaser-video-length-text">{{ teaser.video.length }}</span>
+              <span class="ap-m-teaser-video-length-text">{{ teaser.video.length }}</span>
             </div>
           {% endif %}
           </div>
@@ -62,20 +62,20 @@
     {% elif teaser.type == 'template' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-template.css') %}
 
-    <div class="ad-m-teaser ad-m-teaser-template ad-m-teaser-template-{{ teaser.destination }}">
+    <div class="ap-m-teaser ap-m-teaser-template ap-m-teaser-template-{{ teaser.destination }}">
       <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-        <div class="ad-m-tag ad-m-tag-{{ teaser.destination }} ad-m-teaser-tag">{{ teaser.destination }}</div>
+        <div class="ap-m-tag ap-m-tag-{{ teaser.destination }} ap-m-teaser-tag">{{ teaser.destination }}</div>
         {% endif %}
 
-        <div class="ad-m-teaser-card">
-          <div class="ad-a-img ad-m-teaser-image">
+        <div class="ap-m-teaser-card">
+          <div class="ap-a-img ap-m-teaser-image">
             <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
           </div>
         </div>
-        <div class="ad-m-teaser-content">
-          <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
+        <div class="ap-m-teaser-content">
+          <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
         </div>
       </a>
     </div>
@@ -84,22 +84,22 @@
     {% elif teaser.type == 'use-case' %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-use-case.css') %}
 
-    <div class="ad-m-teaser ad-m-teaser-use-case">
+    <div class="ap-m-teaser ap-m-teaser-use-case">
       <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-        <div class="ad-m-tag ad-m-tag-{{ teaser.destination }} ad-m-teaser-tag">{{ teaser.destination }}</div>
+        <div class="ap-m-tag ap-m-tag-{{ teaser.destination }} ap-m-teaser-tag">{{ teaser.destination }}</div>
         {% endif %}
 
-        <div class="ad-m-teaser-card">
+        <div class="ap-m-teaser-card">
           {% if teaser.image %}
-          <div class="ad-a-img ad-m-teaser-image">
+          <div class="ap-a-img ap-m-teaser-image">
             <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
           </div>
           {% endif %}
 
-          <div class="ad-m-teaser-content">
-            <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
+          <div class="ap-m-teaser-content">
+            <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
           </div>
         </div>
       </a>
@@ -110,38 +110,38 @@
     {% do doc.styles.addCssFile('css/components/molecules/teaser-example.css') %}
     {% do doc.icons.useIcon('icons/example.svg') %}
 
-    <div class="ad-m-teaser ad-m-teaser-example">
+    <div class="ap-m-teaser ap-m-teaser-example">
 
       {% if teaser.doc.used_components %}
-      <div class="ad-m-teaser-info">
+      <div class="ap-m-teaser-info">
         <p>
           <strong>{{ teaser.doc.used_components|length }} AMP components</strong> used
         </p>
       </div>
 
-      <div class="ad-m-teaser-content-hover">
+      <div class="ap-m-teaser-content-hover">
         <h5>Used components</h5>
-        <ul class="ad-m-teaser-content-hover-list">
+        <ul class="ap-m-teaser-content-hover-list">
           {% for used_component in teaser.doc.used_components %}
-          <li class="ad-m-teaser-content-hover-list-item">
-            <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + used_component + '.md', locale=doc.locale).url.path }}" class="ad-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+          <li class="ap-m-teaser-content-hover-list-item">
+            <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + used_component + '.md', locale=doc.locale).url.path }}" class="ap-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
           </li>
           {% endfor %}
         </ul>
-        <a class="ad-m-lnk" href="{{ teaser.doc.url.path }}">
-          <div class="ad-a-ico ad-m-lnk-icon">
+        <a class="ap-m-lnk" href="{{ teaser.doc.url.path }}">
+          <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ad-m-lnk-text">{{ _('See example' ) }}</span>
+          <span class="ap-m-lnk-text">{{ _('See example' ) }}</span>
         </a>
       </div>
 
       {% endif %}
 
-      <a class="ad-m-teaser-linking" href="{{ teaser.doc.url|relative }}">
-        <div class="ad-m-teaser-card">
+      <a class="ap-m-teaser-linking" href="{{ teaser.doc.url|relative }}">
+        <div class="ap-m-teaser-card">
           {% if teaser.image or True %}
-          <div class="ad-a-img ad-m-teaser-image">
+          <div class="ap-a-img ap-m-teaser-image">
             <amp-img
               src="/static/img/teaser-placeholder-5x3.jpg"
               layout="responsive"
@@ -151,20 +151,20 @@
             </amp-img>
           </div>
           {% else %}
-          <div class="ad-m-teaser-fallback-image"></div>
+          <div class="ap-m-teaser-fallback-image"></div>
           {% endif %}
 
-          <div class="ad-m-teaser-content">
+          <div class="ap-m-teaser-content">
             {% if teaser.doc.formats %}
             {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
-            <div class="ad-m-teaser-tags">
+            <div class="ap-m-teaser-tags">
               {% for format in teaser.doc.formats %}
-              <div class="ad-m-tag ad-m-tag-{{ format }} ad-m-teaser-tag"></div>
+              <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
               {% endfor %}
             </div>
             {% endif %}
-            <h4 class="ad-m-teaser-headline">{{ teaser.headline }}</h4>
-            <p class="ad-m-teaser-copy">{{ teaser.text }}</p>
+            <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
+            <p class="ap-m-teaser-copy">{{ teaser.text }}</p>
           </div>
         </div>
       </a>
@@ -176,24 +176,24 @@
     {% elif teaser.type == 'component' or not teaser.type %}
     {% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
 
-    <div class="ad-m-teaser ad-m-teaser-component">
+    <div class="ap-m-teaser ap-m-teaser-component">
       <a href="{{ teaser.doc.url|relative }}">
-        <div class="ad-m-teaser-card">
+        <div class="ap-m-teaser-card">
           {% if teaser.destinations %}
           {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-          <div class="ad-m-teaser-tags">
+          <div class="ap-m-teaser-tags">
             {% for destination in teaser.destinations %}
-            <div class="ad-m-tag ad-m-tag-{{ destination }} ad-m-teaser-tag"></div>
+            <div class="ap-m-tag ap-m-tag-{{ destination }} ap-m-teaser-tag"></div>
             {% endfor %}
           </div>
           {% endif %}
 
-          <div class="ad-m-teaser-header">
-            <h4 class="ad-m-teaser-header-title">{{ teaser.headline }}</h4>
+          <div class="ap-m-teaser-header">
+            <h4 class="ap-m-teaser-header-title">{{ teaser.headline }}</h4>
           </div>
 
-          <div class="ad-m-teaser-content">
-            <p class="ad-m-teaser-copy">{{ teaser.text }}</p>
+          <div class="ap-m-teaser-content">
+            <p class="ap-m-teaser-copy">{{ teaser.text }}</p>
           </div>
         </div>
       </a>
@@ -204,16 +204,16 @@
 
   {% if cta %}
   {% do doc.icons.useIcon('icons/internal.svg') %}
-  <a class="ad-m-lnk ad-m-lnk-square" href="{{ cta.doc.url }}">
-    <div class="ad-a-ico ad-m-lnk-icon">
+  <a class="ap-m-lnk ap-m-lnk-square" href="{{ cta.doc.url }}">
+    <div class="ap-a-ico ap-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ad-m-lnk-text">{{ cta.text }}</span>
+    <span class="ap-m-lnk-text">{{ cta.text }}</span>
   </a>
   {% endif %}
 </div>
 
 {% if extract_teasers %}
 </section>
-<section class="ad--content">
+<section class="ap--content">
 {% endif %}

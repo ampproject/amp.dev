@@ -261,18 +261,15 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
      일부 인터페이스에서는 이 위치를 클릭하여 강조표시할 수 있습니다. 이 경우
      문제는 행 11, 열 2에서 발생했습니다.
   1. 해당 오류를 설명하는 텍스트 행: 이 경우 텍스트는
-     `<amp-img>` 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 나타냅니다.
+     [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 나타냅니다.
   1. 오류 관련 문서에 대한 링크: 이 경우
-     `<amp-img>` 태그에 대한 문서입니다. 일부 오류는 문서 링크를
+     [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그에 대한 문서입니다. 일부 오류는 문서 링크를
      생성하지 않습니다.
 
-[spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})을 신중히 다시 읽으면 `<amp-img>` 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
+[spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})을 신중히 다시 읽으면 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
 
 발생할 수 있는 오류의 전체 목록에 대해 자세히 알아보려면
 [AMP 유효성 오류 가이드]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}})를 참조하세요.
 신중한 평가 후에도 문제가 해결되지 않는 경우
 [문의해 주시면](http://stackoverflow.com/questions/tagged/amp-html) 도움을
 드리겠습니다.
-
-
-

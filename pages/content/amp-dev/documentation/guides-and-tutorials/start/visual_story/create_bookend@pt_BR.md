@@ -6,7 +6,7 @@ Depois de adicionar todas as páginas, veremos a última tela da história, o "b
 
 As informações na tela de bookend vêm de um arquivo JSON especificado na tag `<amp-story-bookend>`. Para nosso tutorial, já temos um arquivo JSON ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) com os dados correspondentes.
 
-A tag `<amp-story-bookend>` precisa ser a última tag em `amp-story`. Então, **adicionaremos** `<amp-story-bookend></amp-story-bookend>` antes da tag `</amp-story>`.  Na tag `amp-story-bookend`, vincule o atributo `src` ao arquivo `bookend.json` e defina `layout="nodisplay"`:
+A tag `<amp-story-bookend>` precisa ser a última tag em [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). Então, **adicionaremos** `<amp-story-bookend></amp-story-bookend>` antes da tag `</amp-story>`.  Na tag `amp-story-bookend`, vincule o atributo `src` ao arquivo `bookend.json` e defina `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -143,6 +143,6 @@ Há vários componentes que você pode usar para exibir links e conteúdo relaci
 </tbody>
 </table>
 
-Veja mais informações sobre o componente de bookend. Acesse a documentação de referência do [amp-story](/pt_br/docs/reference/components/amp-story.html#bookend:-amp-story-bookend).
+Veja mais informações sobre o componente de bookend. Acesse a documentação de referência do [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 Nossa história está quase pronta.  Antes de publicar o conteúdo, vamos verificar se o HTML para AMP é válido.

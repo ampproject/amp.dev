@@ -355,7 +355,7 @@ O seguinte resultaria em um erro INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Se você estiver tentando usar um atributo sem valor (como `autoplay`, `controls` ou `loop` para o componente `<amp-video>`), mas o processo de criação de HTML gerar um valor padrão (mas inválido) como `true` (por exemplo, o React produzirá `<amp-video autoplay="true" ...>` [por padrão](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) (em inglês)), é possível usar o nome do atributo como valor. Por exemplo: `<amp-video autoplay="autoplay" ...>`.
+Se você estiver tentando usar um atributo sem valor (como `autoplay`, `controls` ou `loop` para o componente [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})), mas o processo de criação de HTML gerar um valor padrão (mas inválido) como `true` (por exemplo, o React produzirá `<amp-video autoplay="true" ...>` [por padrão](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) (em inglês)), é possível usar o nome do atributo como valor. Por exemplo: `<amp-video autoplay="autoplay" ...>`.
 
 ### URL ausente
 
@@ -466,8 +466,8 @@ Elas fazem referência a tags esperadas:
 Esse erro ocorre quando uma tag tem os dois atributos mutuamente exclusivos.
 Por exemplo, somente um é permitido para as seguintes tags:
 
-* [amp-iframe](/pt_br/docs/reference/components/amp-iframe.html): `src` ou `srcdoc`
-* [amp-jwplayer](/pt_br/docs/reference/components/amp-jwplayer.html): `data-media-id` ou `data-playlist-id`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` ou `srcdoc`
+* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` ou `data-playlist-id`
 
 ### Atributo obrigatório ausente na lista
 
@@ -490,10 +490,10 @@ Esse erro ocorre quando um atributo obrigatório de várias opções
 está ausente na tag.
 Por exemplo, estas tags exigem um atributo de uma das duas opções possíveis:
 
-* [amp-twitter](/pt_br/docs/reference/components/amp-twitter.html): `data-tweetid` ou `src`
-* [amp-instagram](/pt_br/docs/reference/components/amp-instagram.html): `data-shortcode` ou `src`
-* [amp-iframe](/pt_br/docs/reference/components/amp-iframe.html): `src` ou `srcdoc`
-* [amp-youtube](/pt_br/docs/reference/components/amp-youtube.html): `src` ou `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` ou `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` ou `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` ou `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` ou `data-videoid`
 
 ### Tag pai incorreta
 
@@ -526,7 +526,7 @@ A lista a seguir exibe o pai necessário para tags específicas
 * `style` requer a tag pai `boilerplate (noscript)`.
 * `noscript` requer a tag pai `head`.
 * `script` requer a tag pai `head`.
-* `source` requer uma tag de mídia (`amp-audio`, `amp-video` etc.).
+* `source` requer uma tag de mídia ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) etc.).
 
 ### Tag ancestral não permitida
 
@@ -893,14 +893,14 @@ Quando isso não acontecer, esse erro ocorrerá.
 Por exemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">`,
 resulta nesta mensagem de erro:
 
-"Unidades inconsistentes para largura e altura na tag 'amp-img'. A largura é especificada em 'px' enquanto a altura é especificada em 'rem'."
+"Unidades inconsistentes para largura e altura na tag '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) . A largura é especificada em 'px' enquanto a altura é especificada em 'rem'."
 
 ## Erros de modelos
 
 As páginas AMP não podem incluir a sintaxe de modelos,
 a menos que essa sintaxe esteja dentro de uma tag AMP
 projetada especificamente para incluir modelos, como
-[amp-mustache](/pt_br/docs/reference/components/amp-mustache.html).
+[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 É possível incluir modelos nos seus arquivos de origem,
 desde que a saída gerada por esses arquivos não tenha os modelos
@@ -1016,4 +1016,3 @@ Esse aviso ocorre quando um atributo das AMP que era válido anteriormente é en
 Identifique atributos com uso suspenso para cada tag AMP
 pesquisando `deprecation` nas
 [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês)
- 

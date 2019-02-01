@@ -22,8 +22,8 @@
   @include txt-1;
   @include color-white;
   @include river-ebony;
-  
-  @media screen and (min-width: 1024px) {
+
+  @media (min-width: 1024px) {
     padding: 35px 0 30px;
   }
 }
@@ -34,20 +34,20 @@
   padding: 0 20px;
   margin: 0 auto;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     padding: 0 30px;
   }
 
   &-line-top {
     padding-bottom: 100px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       flex-direction: row;
     }
   }
@@ -56,7 +56,7 @@
     margin-top: 0;
     margin-bottom: 40px;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       margin: 0;
     }
   }
@@ -66,11 +66,11 @@
     }
 
   &-follow {
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       text-align: center;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       margin-left: auto;
       text-align: left;
       display: flex;
@@ -82,7 +82,7 @@
       vertical-align: middle;
       @include color-white;
 
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         margin: 0 30px 0;
       }
     }
@@ -95,7 +95,7 @@
       margin: 0;
       line-height: 0;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin-left: auto;
       }
     }
@@ -105,13 +105,13 @@
       display: flex;
       justify-content: center;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         flex: 0 0 auto;
         margin: 0 16px;
       }
 
       &:last-child {
-        @media screen and (min-width: 1024px) {
+        @media (min-width: 1024px) {
           margin-right: 0;
         }
       }
@@ -130,7 +130,7 @@
     width: 100%;
     padding: 0;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       display: grid;
       grid-gap: 30px;
       grid-template-columns: 1fr;
@@ -142,21 +142,21 @@
       flex: 1 1 100%;
 
       &:nth-child(2n+1) {
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           grid-column: 2 / 7;
         }
 
-        @media screen and (min-width: 1024px) {
+        @media (min-width: 1024px) {
           grid-column: span 3;
         }
       }
 
       &:nth-child(2n+2) {
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           grid-column: 7 / 12;
         }
 
-        @media screen and (min-width: 1024px) {
+        @media (min-width: 1024px) {
           grid-column: span 3;
         }
       }
@@ -171,7 +171,7 @@
       padding: 0;
       margin: 0 0 40px;
 
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         margin: 0;
       }
     }
@@ -199,12 +199,12 @@
   &-line-bottom {
     padding-top: 20px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       text-align: center;
       padding-top: 40px;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -240,7 +240,7 @@
     @include txt-2;
     @include txt-strong;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       padding-left: 30px;
       margin: 0;
     }

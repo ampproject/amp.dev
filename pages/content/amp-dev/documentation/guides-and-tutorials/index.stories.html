@@ -1,0 +1,38 @@
+---
+$title: Learn AMP Stories with Guides and tutorials
+$titles:
+  header: Guides & Tutorials
+$view: /views/overview/guides.j2
+$path: /documentation/guides-and-tutorials.stories.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials.stories.html
+$order: 1
+$hidden: true
+---
+{% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+<h1>Introduction to AMP Stories</h1>
+<p class="limit">AMP Stories are interactive web experience that immerses readers in full-screen content. Use them to break longform articles into bite-sized chunks, a tappable list, or a Sponsored Story.</p>
+
+<h2>Daily Resources</h2>
+<p>Use our resources to make your day to day work with AMP easy and productive:</p>
+<div class="ap-o-teaser-grid">
+  <div class="ap-o-teaser-grid-list">
+    {% with %}
+    {% set teaser_doc = g.doc('/content/amp-dev/documentation/components/index.html') %}
+    {% include '/views/partials/teaser.j2' %}
+    {% endwith %}
+
+    {% with %}
+    {% set teaser_doc = g.doc('/content/amp-dev/documentation/examples/index.html') %}
+    {% include '/views/partials/teaser.j2' %}
+    {% endwith %}
+
+    {% with %}
+    {% set teaser_doc = g.doc('/content/amp-dev/documentation/templates/index.html') %}
+    {% include '/views/partials/teaser.j2' %}
+    {% endwith %}
+  </div>
+</div>
+
+<h2>Get Involved</h2>
+<p>AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less.</p>

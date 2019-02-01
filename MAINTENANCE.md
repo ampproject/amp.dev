@@ -68,7 +68,7 @@ The video ID (`npum8JsITQE` in the above example) will be extracted automaticall
 
 **Stage**
 ```md
-<section class="ad--stage ad--container-fluid">
+<section class="ap--stage ap--container-fluid">
 [stage format="websites|stories|ads|emails"]
 ## What is AMP?
 # AMP is a web component framework for easily creating user first

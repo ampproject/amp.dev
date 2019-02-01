@@ -17,63 +17,65 @@ teaser:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-<main class="ad--main ad-t-component-overview">
-  <div class="ad--container">
+<main class="ap--main ap-t-component-overview">
+  <div class="ap--container">
     {% include 'views/partials/component-sidebar.j2' %}
-    <section class="ad--content">
+    <section class="ap--content">
       <h1>The AMP component catalogue</h1>
 
-      <p>The AMP HTML library provides components that are classified as:</p>
+      <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
 
-      <div class="ad--benefits--list">
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/built-in.svg') %}
-            <svg class="ad-m-benefit-icon">
+      <div class="ap--benefits--list">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('/icons/built-in.svg') %}
+            <svg class="ap-m-benefit-icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#built-in"></use>
             </svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Built-in</span>
-            <span class="ad-m-benefit-text-copy">Components that are included in the base library, such as <code>amp-img</code> and <code>amp-pixel</code>.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Built-in</span>
+            <span class="ap-m-benefit-text-copy">Components that are included in the base library, such as <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path }}"><code>amp-img</code></a> and <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path }}"><code>amp-pixel</code></a>.</span>
           </div>
         </div>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/extended.svg') %}
-            <svg class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('/icons/extended.svg') %}
+            <svg class="ap-m-benefit-icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#extended"></use>
             </svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Extended</span>
-            <span class="ad-m-benefit-text-copy">Extensions to the base library that must be explicitly included in the document as custom elements.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Extended</span>
+            <span class="ap-m-benefit-text-copy">Extensions to the base library that must be explicitly included in the document as custom elements.</span>
           </div>
         </div>
 
-        <div class="ad-m-benefit">
-          <div class="ad-m-benefit-icon">
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/experimental.svg') %}
-            <svg class="ad-m-benefit-icon">
+            <svg class="ap-m-benefit-icon">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#experimental"></use>
             </svg>
           </div>
-          <div class="ad-m-benefit-text">
-            <span class="ad-m-benefit-text-headline">Experimental</span>
-            <span class="ad-m-benefit-text-copy">Components that are released but are not yet ready for wide use.</span>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Experimental</span>
+            <span class="ap-m-benefit-text-copy">Components that are released but are not yet ready for wide use.</span>
           </div>
         </div>
       </div>
 
+      <p>If you want to know more about how AMP handles those under the hood read on with <a href="{{ g.doc('/content/amp-dev/what-is-amp/how-amp-works.html', locale=doc.locale).url.path }}">How AMP works</a>.</p>
+
       <hr>
       {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
 
-      <div class="ad-t-component-overview-anchor-list">
+      <div class="ap-t-component-overview-anchor-list">
       <p>Quicklinks:</p>
       <p>
         {% for category, components in categories %}
-        <span class="ad-t-component-overview-anchor-list-item">
+        <span class="ap-t-component-overview-anchor-list-item">
           <a href="#{{ category }}">{{ category }}</a>
         </span>
         {% endfor %}
@@ -83,11 +85,10 @@ teaser:
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
       {% for category, components in categories %}
 
-      <div class="ad-o-teaser-grid">
+      <div class="ap-o-teaser-grid">
 
-        <h2>{{ category }}</h2>
-        <div id="{{ category }}" class="ad-o-teaser-grid-list-anchor"></div>
-        <div class="ad-o-teaser-grid-list ad-o-teaser-grid-list-count-{{ components|count }}">
+        <h2 id="{{ category }}">{{ category }}</h2>
+        <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ components|count }}">
           {% for teaser_doc in components %}
           {% include '/views/partials/teaser.j2' %}
           {% endfor %}

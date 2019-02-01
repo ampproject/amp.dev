@@ -25,7 +25,7 @@ Demonstra como exibir imagem e texto em uma única camada.
         <li>Contém três elementos:
           <ul>
             <li>um elemento <code>&lt;h1></code> com o título: <em>Cats</em></li>
-            <li>um <a href="/pt_br/docs/reference/components/amp-img.html">componente amp-img</a> responsivo (<code class="filename">cat.jpg</code>, 720 x 1280 px)</li>
+            <li>um <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">componente <code>amp-img</code></a> responsivo (<code class="filename">cat.jpg</code>, 720 x 1280 px)</li>
             <li>um elemento <code>&lt;q></code> com a seguinte mensagem: <em>"Dogs come when they're called. Cats take a message and get back to you." — Mary Bly</em></li>
           </ul>
         </li>
@@ -45,7 +45,7 @@ Demonstra como definir a disposição do texto e exibir uma imagem com duas cama
       <ul>
         <li>Contém duas camadas:
       <ul>
-        <li><b>Camada 1</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> e contém um <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">componente amp-img</a> responsivo (<code class="filename">dog.jpg</code>, 720 x 1280 px).</li>
+        <li><b>Camada 1</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> e contém um <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">componente <code>amp-img</code></a> responsivo (<code class="filename">dog.jpg</code>, 720 x 1280 px).</li>
         <li><b>Camada 2</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> e contém dois elementos:
           <ul>
             <li>um elemento <code>&lt;h1></code> com o título: <em>Dogs</em></li>
@@ -68,7 +68,7 @@ Demonstra como definir a disposição do texto, exibir uma imagem que preenche a
       <ul>
       <li>Contém três camadas:
       <ul>
-        <li><b>Camada 1</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> e contém um <a href="/pt_br/docs/reference/components/amp-img.html">componente amp-img</a> responsivo (<code class="filename">bird.jpg</code>, 720 x 1280 px).</li>
+        <li><b>Camada 1</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> e contém um <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">componente <code>amp-img</code></a> responsivo (<code class="filename">bird.jpg</code>, 720 x 1280 px).</li>
         <li><b>Camada 2</b>: implementa o modelo <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> e contém:
           <ul>
             <li>um elemento <code>&lt;h1></code> com o título: <em>Birds</em></li>
@@ -98,9 +98,9 @@ Demonstra como definir a disposição do texto e exibir um vídeo que preenche a
       <ul>
       <li>Contém três camadas:
       <ul>
-        <li><b>Camada 1</b>: implementa o modelo <code>fill</code> e contém um <a href="/pt_br/docs/reference/components/amp-video.html">componente amp-video</a> responsivo (<code class="filename">rabbit.mp4</code>).
+        <li><b>Camada 1</b>: implementa o modelo <code>fill</code> e contém um <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}">componente <code>amp-video</code></a> responsivo (<code class="filename">rabbit.mp4</code>).
           <ul>
-            <li>Para exibir o vídeo, inclua o <strong>script necessário</strong> do <a href="/pt_br/docs/reference/components/amp-video.html">componente amp-video</a> na seção <code>&lt;head></code>.</li>
+            <li>Para exibir o vídeo, inclua o <strong>script necessário</strong> do <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}">componente <code>amp-video</code></a> na seção <code>&lt;head></code>.</li>
             <li>Especifique uma imagem de <code>poster</code> (<code class="filename">rabbit.jpg</code>). Esse atributo é <strong>obrigatório</strong> para histórias AMP.</li>
             <li>Defina a exibição automática do vídeo com o atributo <code>autoplay</code>. Esse atributo é <strong>obrigatório</strong> para histórias AMP.</li>
             <li>Configure o vídeo para voltar ao início automaticamente com o atributo <code>loop</code>.</li>

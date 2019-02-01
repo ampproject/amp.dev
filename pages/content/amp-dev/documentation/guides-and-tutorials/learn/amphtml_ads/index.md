@@ -55,7 +55,7 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
-1.  Publishers insert an ad slot on their AMP page via the [`<amp-ad>`](/docs/reference/components/amp-ad.html) tag, specifying the ad network they wish to use.
+1.  Publishers insert an ad slot on their AMP page via the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) tag, specifying the ad network they wish to use.
 1.  The AMP Runtime sends an ad request to the specified ad network to retrieve the ad. Ad networks capable of serving AMPHTML ads provide a [Fast Fetch implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) that validates and signs the creative.
 1.  The ad network responds with the AMPHTML ad and the AMP Runtime renders the ad on the AMP page.
 
@@ -83,7 +83,7 @@ If you are a creative agency, you must create the ads in accordance with  the [A
 
 ### Ad networks/servers
 
-To deliver AMPHTML ads to AMP pages, you need to create an `amp-ad` extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](/docs/ads/adnetwork_integration.html) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](/docs/ads/adnetwork_integration.html) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creating AMPHTML ads
 
@@ -120,15 +120,15 @@ Yes. A number of great looking AMPHTML ad templates can be found on [AMP By Exam
 
 #### Do AMPHTML ads support 3rd party verification and viewability detection?
 
-Yes, there is native support for verification and viewability detection using [`amp-analytics`](/docs/reference/components/amp-analytics.html) (e.g., Google's ActiveView integrates this way). There are also other vendors like MOAT that are actively implementing support for it.
+Yes, there is native support for verification and viewability detection using [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) (e.g., Google's ActiveView integrates this way). There are also other vendors like MOAT that are actively implementing support for it.
 
 #### Do AMPHTML ads support timeline-based animation?
 
-Yes. See [`amp-animation`](/docs/reference/components/amp-animation.html).
+Yes. See [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}).
 
 #### Most ads have tappable targets and configurable ad exits. Do AMPHTML ads have a similar mechanism?
 
-Yes. See [`amp-ad-exit`](/docs/reference/components/amp-ad-exit.html).
+Yes. See [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}).
 
 #### I can't find what I need, where can I ask questions?
 

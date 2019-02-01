@@ -23,6 +23,16 @@
 @import '../templates/_default.scss';
 
 .#{template('component-overview')} {
+  
+  :target::before {
+    height: 145px;
+    margin-top: -145px;
+  
+    @media screen and (min-width: 1024px) {
+      height: 180px;
+      margin-top: -180px;
+    }
+  }
 
   background: color('whisper');
 
@@ -47,16 +57,16 @@
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
-  
+
   .#{utility('benefits--list')} {
-    @media screen and (min-width: 1024px){
+    @media (min-width: 1024px){
       display: flex;
     }
-    
+
     .#{molecule('benefit')} {
       margin: 20px 0;
 
-      @media screen and (min-width: 768px){
+      @media (min-width: 768px){
         margin-right: 40px;
       }
     }
@@ -65,7 +75,7 @@
   section {
     &.#{utility('content')},
     &.#{utility('teaser-grid')} {
-      @media screen and (min-width: 1024px){
+      @media (min-width: 1024px){
         grid-column-start: 7;
         grid-column-end: 25;
       }
@@ -73,7 +83,13 @@
   }
 
   &-anchor-list {
-    margin: 2em 0;
+    margin: 2em -30px;
+    background: linear-gradient(to bottom, #fafafc 0%, #fafafc 80%, rgba(250, 250, 252, 0) 100%);
+    position: sticky;
+    top: 90px;
+    padding: 10px 30px 20px 30px;
+    z-index: 2;
+    
     p {
       margin: 0;
     }
@@ -90,20 +106,22 @@
       margin: 0;
       padding: 0;
       .#{molecule('teaser-component')} {
-        @media screen and (max-width: 559px){
+        @media (max-width: 559px){
           margin: 0 0 2em 0;
         }
-        .ad-m-teaser-header {
-          align-items: flex-end;
-          padding-bottom: 10px;
-          padding-top: 30px;
-          height: auto;
-          .ad-m-teaser-header-title {
-            font-size: 1.125em;
+        .#{molecule('teaser')} {
+          &-header {
+            align-items: flex-end;
+            padding-bottom: 10px;
+            padding-top: 30px;
+            height: auto;
+            &-title {
+              font-size: 1.125em;
+            }
           }
-        }
-        .ad-m-teaser-content {
-          padding: 1.25em;
+          &-content {
+            padding: 1.25em;
+          }
         }
       }
       &-anchor {

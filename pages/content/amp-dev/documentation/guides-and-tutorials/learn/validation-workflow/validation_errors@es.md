@@ -278,7 +278,7 @@ La cadena siguiente devuelve un error INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Tenga en cuenta que si está intentando generar un atributo sin valor (por ejemplo, un atributo como `autoplay`, `controls` o `loop` para el componente `<amp-video>`), pero su proceso de compilación HTML está generando un valor predeterminado (pero no válido) como `true` (React, por ejemplo, producirá `<amp-video autoplay = "true" ...>` [de forma predeterminada](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), la solución alternativa es mostrar el nombre del atributo como el valor. Por ejemplo, `<amp-video autoplay="autoplay"...>`.
+Tenga en cuenta que si está intentando generar un atributo sin valor (por ejemplo, un atributo como `autoplay`, `controls` o `loop` para el componente [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})), pero su proceso de compilación HTML está generando un valor predeterminado (pero no válido) como `true` (React, por ejemplo, producirá `<amp-video autoplay = "true" ...>` [de forma predeterminada](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), la solución alternativa es mostrar el nombre del atributo como el valor. Por ejemplo, `<amp-video autoplay="autoplay"...>`.
 
 ### Falta la URL
 
@@ -386,10 +386,10 @@ Hacen referencia a etiquetas previstas:
 Este error se produce cuando una etiqueta contiene dos atributos que se excluyen mutuamente.
 Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
 
 ### Falta un atributo obligatorio en la lista
 
@@ -411,10 +411,10 @@ Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 Este error se produce cuando a una etiqueta le falta un atributo requerido de varias opciones.
 Por ejemplo, las siguientes etiquetas requieren uno de los dos atributos posibles:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` o `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` o `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` o `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` o `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
 
 ### Etiqueta principal incorrecta
 
@@ -446,7 +446,7 @@ A continuación se enumeran las etiquetas principales necesarias para etiquetas 
 * `style` requiere la etiqueta principal `boilerplate (noscript)`.
 * `noscript` requiere la etiqueta principal `head`.
 * `script` requiere la etiqueta principal `head`.
-* `source` requiere una etiqueta multimedia (`amp-audio`, `amp-video`, etc.).
+* `source` requiere una etiqueta multimedia ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.).
 
 ### Etiqueta antecesora no permitida
 
@@ -761,11 +761,11 @@ De no ser así, se produce este error.
 
 Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` tiene como resultado el mensaje de error siguiente:
 
-"La anchura y la altura de la etiqueta 'amp-img' se expresan con unidades distintas. La anchura se indica en 'px', mientras que la altura se indica en 'rem'."
+"La anchura y la altura de la etiqueta '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  se expresan con unidades distintas. La anchura se indica en 'px', mientras que la altura se indica en 'rem'."
 
 ## Errores en las plantillas
 
-Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [amp-mustache](/es/docs/reference/components/amp-mustache.html).
+Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 

@@ -30,20 +30,20 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     left: -3px;
     top: -3px;
     border: 3px solid color('doger-blue');
-    
-    @media screen and (min-width: 768px) {
+
+    @media (min-width: 768px) {
       left: -4px;
       top: -4px;
       border-width: 4px;
     }
-    
-    @media screen and (min-width: 1024px) {
+
+    @media (min-width: 1024px) {
       left: -5px;
       top: -5px;
       border-width: 5px;
     }
   }
-  
+
   &:after {
     @include txt;
     @include txt-mono;
@@ -56,15 +56,19 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     padding: 3px 6px;
     font-size: 8px;
     background-color: color('doger-blue');
-    
-    @media screen and (min-width: 768px) {
+
+    @media (min-width: 768px) {
       left: -4px;
       padding: 5px 10px;
-      font-size: inherit;
+      font-size: 1.25vw;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       left: -5px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: inherit;
     }
   }
 }
