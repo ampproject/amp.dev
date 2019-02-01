@@ -88,9 +88,13 @@ class Config {
     podspec['env'] = {
       'name': this.environment,
       'host': this.hosts.pages.host,
-      'port': this.hosts.pages.port,
       'scheme': this.hosts.pages.scheme
     };
+
+    // Only add port if there really is one, otherwise Grow fails on an empty field
+    if (this.hosts.pages.port) {
+      podspec.env.port = this.hosts.pages.port
+    }
 
     // Add Google Analytics Tracking ID for use in templates
     podspec['gaTrackingId'] = this.shared.gaTrackingId;
