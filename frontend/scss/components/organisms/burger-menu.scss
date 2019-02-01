@@ -14,7 +14,19 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('burger-menu')} {
-  padding-bottom: 80px;
+/* This is where the actual burger-menu starts */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 110px 20px 80px;
+  z-index: 16;
+  background-color: color('white');
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
@@ -38,30 +50,14 @@
     }
   }
 
-    &-icon {
-      width: 30px;
-      height: 30px;
-    }
+  &-icon {
+    width: 30px;
+    height: 30px;
+  }
 
   &-input {
     display: none;
   }
-
-  /* This is where the actual burger-menu starts */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 110px;
-  padding-right: 20px;
-  padding-left: 20px;
-  z-index: 16;
-  background-color: color('white');
-  pointer-events: none;
-  opacity: 0;
-
-  transition: transform 0.2s ease, opacity 0.2s ease;
 
   @media (min-width: 1024px) {
     display: none;

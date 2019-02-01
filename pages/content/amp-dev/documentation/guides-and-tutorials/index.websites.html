@@ -3,20 +3,16 @@ $title: Learn AMP with Guides and tutorials
 $titles:
   header: Guides & Tutorials
 $view: /views/overview/guides.j2
-$path: /documentation/guides-and-tutorials.html
+$path: /documentation/guides-and-tutorials.websites.html
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials.html
+  path: /{locale}/documentation/guides-and-tutorials.websites.html
 $order: 1
 $hidden: true
-cms: !g.yaml /content/shared/data/cms.yaml
 ---
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 <h1>Get started with AMP!</h1>
 <h2>Discover your journey</h2>
 <p class="limit">The AMP Project started as a web component library designed to make mobile websites load instantaneously. And while we've stuck to our original ideals of speed and great user experiences, AMP has epxanded its capabilites beyond the mobile web.</p>
-
-{% do doc.styles.addCssFile('/css/components/atoms/format-tags.css') %}
-<p class="limit">Today, AMP can build responsive and interactive <a href="{{ doc.url.path }}?format=websites" class="ap-a-format-tag ap-a-format-tag-websites">websites</a>, immersive full-screen <a href="{{ doc.url.path }}?format=stories" class="ap-a-format-tag ap-a-format-tag-stories">stories</a>, secure and engaging <a href="{{ doc.url.path }}?format=ads" class="ap-a-format-tag ap-a-format-tag-ads">ads</a> and dynamic <a href="{{ doc.url.path }}?format=email" class="ap-a-format-tag ap-a-format-tag-email">email</a>.</p>
 
 <h2>CMS Users</h2>
 <p class="limit">
@@ -174,3 +170,6 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
   </div>
 </div>
+
+<h2>Get Involved</h2>
+<p>AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less.</p>
