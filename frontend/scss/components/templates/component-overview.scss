@@ -23,6 +23,16 @@
 @import '../templates/_default.scss';
 
 .#{template('component-overview')} {
+  
+  :target::before {
+    height: 145px;
+    margin-top: -145px;
+  
+    @media screen and (min-width: 1024px) {
+      height: 180px;
+      margin-top: -180px;
+    }
+  }
 
   background: color('whisper');
 
@@ -73,7 +83,13 @@
   }
 
   &-anchor-list {
-    margin: 2em 0;
+    margin: 2em -30px;
+    background: linear-gradient(to bottom, #fafafc 0%, #fafafc 80%, rgba(250, 250, 252, 0) 100%);
+    position: sticky;
+    top: 90px;
+    padding: 10px 30px 20px 30px;
+    z-index: 2;
+    
     p {
       margin: 0;
     }
