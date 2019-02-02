@@ -62,7 +62,7 @@
               {% endif %}
             </span>
             {% endif %}
-            <input class="nav-trigger" {% if activeCollection or (iteration == 1 and doc.view == "/views/overview/guides.j2") %}checked {% endif %} type="checkbox">
+            <input class="nav-trigger" {% if activeCollection or (iteration == 1 and doc.view == "/views/overview/guides.j2") %}checked {% endif %} type="checkbox"/>
             <div class="nav-icon">
               {% if iteration==1 %}
               {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
