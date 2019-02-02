@@ -4,15 +4,6 @@
     "cleanUrls": true,
     "headers": [
       {
-        "source": "**/*",
-        "headers": [
-          {
-            "key":"Content-Security-Policy",
-            "value":"frame-ancestors 'self' ampproject-b5f4c.firebaseapp.com www.ampproject.org;"
-          }
-        ]
-      },
-      {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
         "headers": [
           {
