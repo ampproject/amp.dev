@@ -9,7 +9,7 @@ En esta guía se exponen los pasos que se deben seguir para integrar redes publi
 
 ## Descripción general
 
-Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradicionales en páginas AMP, así como publicar anuncios [AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}).
+Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradicionales en páginas AMP, así como publicar anuncios [AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}).
 
 ##### ¿Quieres publicar anuncios HTML tradicionales?
 

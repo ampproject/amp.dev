@@ -6,13 +6,11 @@ formats:
   - ads
 ---
 
-
-
 This guide is for ad networks that want to integrate with AMP to serve display ads to AMP pages.
 
 ## Overview
 
-As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP pages, as well as serving [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) ads.
+As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP pages, as well as serving [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}) ads.
 
 ##### Want to serve traditional HTML ads?
 

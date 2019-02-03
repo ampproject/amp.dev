@@ -61,7 +61,7 @@
         "title": "Guidelines for integrating ad technologies with AMP",
         "order": 3,
         "from": "ads/_integration-guide.md",
-        "to": "documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md",
+        "to": "documentation/guides-and-tutorials/contribute/ad-integration-guide.md",
         "toc": true,
 		"formats": ["ads"]
     },
@@ -69,7 +69,7 @@
         "title": "AMPHTML ad specification",
         "order": 2,
         "from": "extensions/amp-a4a/amp-a4a-format.md",
-        "to": "documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md",
+        "to": "documentation/guides-and-tutorials/learn/a4a_spec.md",
         "toc": true,
 		"formats": ["ads"]
     },
@@ -89,7 +89,7 @@
 		"formats": ["websites"]
     },
     {
-        "title": "AMPHTML email",
+        "title": "AMPHTML email specification",
         "order": 2,
         "from": "spec/amp-email-format.md",
         "to": "documentation/guides-and-tutorials/learn/amp-email-format.md",

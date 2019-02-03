@@ -9,7 +9,7 @@ Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP
 
 ## Ringkasan
 
-Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan HTML biasa ke halaman AMP, serta menayangkan iklan [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}).
+Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan HTML biasa ke halaman AMP, serta menayangkan iklan [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}).
 
 ##### Ingin menayangkan iklan HTML biasa?
 
