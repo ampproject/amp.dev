@@ -9,6 +9,9 @@ $title: Style & layout
 $order: 0
 $hidden: true
 toc: true
+author: pbakaus
+contributors:
+  - Meggin
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 $title: Creating the bookend
 $order: 7
+author: bpaduch
 ---
 
 Now that you've added all of your pages, let's look at the last screen of the story, the "bookend".  This last screen wraps up the story, and allows you to provide social sharing and related links to your story, so users can share your story or dive further into other content on your site.

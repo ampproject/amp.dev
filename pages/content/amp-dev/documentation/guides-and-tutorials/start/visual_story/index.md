@@ -5,6 +5,7 @@ $path: /documentation/guides-and-tutorials/start/first-story.html
 $hidden: true
 formats:
   - stories
+author: bpaduch
 ---
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]

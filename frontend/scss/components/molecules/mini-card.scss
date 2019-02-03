@@ -26,19 +26,26 @@
   transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   @include txt;
-  @include txt-strong;
 
   amp-img {
     width: 35px;
     display: inline-block;
     border: 1px solid color('athens-gray');
     border-radius: 100%;
+    &.large {
+      width: 38px;
+      flex-shrink: 0;
+    }
   }
 
   span {
     padding-left: 8%;
     // just for the case if the small mini-card item gets two lines
     line-height: 1.3em;
+  }
+
+  strong  {
+    @include txt-strong;
   }
 
   @media (max-width: 374px) {

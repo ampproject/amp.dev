@@ -1,6 +1,7 @@
 ---
 $title: Starting our story
 $order: 3
+author: bpaduch
 ---
 
 An entire story is represented by the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) component, which serves as a container for all the pages in a story.  The [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) component is also responsible for creating the UI shell, including handling gestures and navigation.

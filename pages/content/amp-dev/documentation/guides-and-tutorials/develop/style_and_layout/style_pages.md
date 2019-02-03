@@ -7,6 +7,12 @@ formats:
   - email
   - ads
   - stories
+author: Meggin
+contributors:
+  - pbakaus
+  - crystalfaith
+  - bpaduch
+  - choumx
 ---
 
 

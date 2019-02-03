@@ -8,11 +8,6 @@
   {% endif %}
 
   {{ doc.html|render|safe }}
-
-  {# Always assume doc.author and doc.translator are GitHub handles #}
-  {% if doc.author %}
-  <p>This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
-  {% endif %}
 </section>
 
 {# If its a empty doc render short information about it #}
