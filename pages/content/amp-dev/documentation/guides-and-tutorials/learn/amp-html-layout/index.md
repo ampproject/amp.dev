@@ -2,6 +2,7 @@
 $title: AMPHTML Layout System
 toc: true
 $order: 1
+$hidden: true
 formats:
   - websites
   - email

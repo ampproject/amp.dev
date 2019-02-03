@@ -7,6 +7,9 @@ formats:
   - email
   - ads
   - stories
+author: Meggin
+contributors:
+  - pbakaus
 ---
 
 

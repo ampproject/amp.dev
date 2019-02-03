@@ -2,6 +2,7 @@
 $title: Include images & video
 $order: 8
 toc: true
+$path: /documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html
 formats:
   - websites
   - stories

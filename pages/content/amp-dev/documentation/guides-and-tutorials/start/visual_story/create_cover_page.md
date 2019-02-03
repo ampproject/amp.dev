@@ -2,6 +2,7 @@
 $title: Creating the cover page
 $order: 4
 toc: true
+author: bpaduch
 ---
 
 
