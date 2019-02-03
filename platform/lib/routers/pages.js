@@ -44,27 +44,6 @@ function getFilteredFormat(request) {
   return activeFormat;
 }
 
-/**
- * Queries Grow for a manually filtered page variant to eventually rewrite
- * request to this one
- * @param  {Request}  request The original request
- * @param  {String}  format  The format to test for
- * @return {Boolean}
- */
-async function hasManualFormatVariant(request, format) {
-  const path = request.originalUrl.replace('.html', `.${format}.html`);
-
-  const page = await got(`${growHost}${path}`).catch(() => {
-    return {};
-  });
-
-  if (!page.error && page.body) {
-    return true;
-  }
-
-  return false;
-}
-
 
 // Setup a proxy over to Grow during development
 if (config.environment === 'development') {
@@ -81,6 +60,27 @@ if (config.environment === 'development') {
     'interactive': true,
     'scope': 'Grow (Proxy)',
   });
+
+  /**
+   * Queries Grow for a manually filtered page variant to eventually rewrite
+   * request to this one
+   * @param  {Request}  request The original request
+   * @param  {String}  format  The format to test for
+   * @return {Boolean}
+   */
+  async function hasManualFormatVariant(request, format) {
+    const path = request.originalUrl.replace('.html', `.${format}.html`);
+
+    const page = await got(`${growHost}${path}`).catch(() => {
+      return {};
+    });
+
+    if (!page.error && page.body) {
+      return true;
+    }
+
+    return false;
+  }
 
   // Grow has problems delivering the index.html on a root request
   pages.get('/', (request, response, next) => {
