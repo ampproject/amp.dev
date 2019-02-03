@@ -9,7 +9,7 @@ toc: true
 
 ## 概要
 
-広告サーバーでは、AMP との統合により、[AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) 広告と通常の HTML 広告の両方を AMP ページに配信できます。
+広告サーバーでは、AMP との統合により、[AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}) 広告と通常の HTML 広告の両方を AMP ページに配信できます。
 
 ##### 通常の HTML 広告を配信する
 

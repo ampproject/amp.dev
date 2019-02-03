@@ -23,8 +23,13 @@
       {# Sections #}
       {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
       {% if section.index %}
+      
       {% set section_index = g.doc(section.index, locale=doc.locale) %}
       <a class="ap-o-header-first-level-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
+        {{ section.title }}
+      </a>
+      {% elif section.external_index %}
+      <a class="ap-o-header-first-level-link ap-m-nav-link" href="{{ section.external_index }}">
         {{ section.title }}
       </a>
       {% endif %}

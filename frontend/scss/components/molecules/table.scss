@@ -87,7 +87,6 @@ tbody {
     code {
       @include txt-mono-inline;
       @include color-blue-ribbon;
-      white-space: nowrap;
     }
   }
 }

@@ -9,7 +9,7 @@ toc: true
 
 ## 개요
 
-광고 서버에서는 AMP와 통합하여 기본 HTML 광고를 AMP 페이지에 게재할 뿐 아니라 [AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) 광고를 게재할 수 있습니다.
+광고 서버에서는 AMP와 통합하여 기본 HTML 광고를 AMP 페이지에 게재할 뿐 아니라 [AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}) 광고를 게재할 수 있습니다.
 
 ##### 기본 HTML 광고를 게재하고 싶나요?
 

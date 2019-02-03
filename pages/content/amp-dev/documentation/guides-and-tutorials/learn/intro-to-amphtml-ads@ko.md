@@ -9,7 +9,7 @@ toc: true
 
 AMP HTML 광고는 더 빠르고 가벼우면서 안전한 웹 광고 기법입니다. AMP 페이지에서는 기존의 HTML 광고를 지원하지만, 이러한 광고는 로드 속도가 느릴 수 있습니다. 광고를 나머지 AMP 페이지만큼 빠르게 만들려면 AMP HTML 형식으로 광고를 만들 수 있습니다. AMP HTML 광고는 검사 결과 안전하고 효율적이라고 확인된 경우에만 게재됩니다. 무엇보다 AMP 페이지뿐 아니라 웹상의 어느 곳이든 게재할 수 있습니다.
 
-AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})(AMP HTML + CSS의 변형)에 따라 AMP HTML 형식으로 작성됩니다. 일반적으로 광고 실적 저하의 가장 큰 원인인 임의의 자바스크립트를 실행하는 기능이 광고에서 더 이상 지원되지 않는다는 의미입니다. 따라서 핵심 AMP와 마찬가지로 AMP 오픈소스 프로젝트에는 핵심 광고 자바스크립트 사용 사례가 포함되어 있어 광고의 정상적인 동작을 보장합니다.
+AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})(AMP HTML + CSS의 변형)에 따라 AMP HTML 형식으로 작성됩니다. 일반적으로 광고 실적 저하의 가장 큰 원인인 임의의 자바스크립트를 실행하는 기능이 광고에서 더 이상 지원되지 않는다는 의미입니다. 따라서 핵심 AMP와 마찬가지로 AMP 오픈소스 프로젝트에는 핵심 광고 자바스크립트 사용 사례가 포함되어 있어 광고의 정상적인 동작을 보장합니다.
 
 ### 이점
 
@@ -51,7 +51,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='AMP 페이지에 AMP HTML 광고 게재', caption='AMP 페이지에 AMP HTML 광고 게재', align='' ) }}
 
-1.  게시자가 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 태그를 통해 AMP 페이지에 광고 슬롯을 삽입하여 사용하려는 광고 네트워크를 지정합니다.
+1.  게시자가 [`<amp-ad>`](/ko/docs/reference/components/amp-ad.html) 태그를 통해 AMP 페이지에 광고 슬롯을 삽입하여 사용하려는 광고 네트워크를 지정합니다.
 1.  AMP 런타임이 지정된 광고 네트워크에 광고 요청을 보내 광고를 가져옵니다. AMP HTML 광고를 게재할 수 있는 광고 네트워크는 광고 소재를 검사하고 서명하는 [빠른 가져오기 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)을 지원합니다. 
 1.  광고 네트워크가 AMP HTML 광고로 응답하고 AMP 런타임이 AMP 페이지에 광고를 렌더링합니다.
 
@@ -59,7 +59,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 게시자
 
-직접 판매 광고 형식을 AMP HTML로 게재하려면 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})에 따라 광고를 만들고 AMP HTML 광고 게재를 지원하는 광고 서버를 사용하여 광고를 게재해야 합니다.  현재 AMP HTML 광고를 지원하는 광고 서버는 다음과 같습니다.
+직접 판매 광고 형식을 AMP HTML로 게재하려면 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})에 따라 광고를 만들고 AMP HTML 광고 게재를 지원하는 광고 서버를 사용하여 광고를 게재해야 합니다.  현재 AMP HTML 광고를 지원하는 광고 서버는 다음과 같습니다.
 
 * DoubleClick for Publishers
 * TripleLift
@@ -71,7 +71,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 광고 회사
 
-광고 회사에서는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})에 따라 광고를 만들어야 합니다. 아이디어를 얻고 예시를 확인하려면 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)의 오픈소스 AMP HTML 광고 템플릿을 참조하세요. 또한 다음 도구 중 하나를 사용하여 AMP HTML 광고를 만들 수도 있습니다.
+광고 회사에서는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})에 따라 광고를 만들어야 합니다. 아이디어를 얻고 예시를 확인하려면 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)의 오픈소스 AMP HTML 광고 템플릿을 참조하세요. 또한 다음 도구 중 하나를 사용하여 AMP HTML 광고를 만들 수도 있습니다.
 
 *  [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -79,11 +79,11 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 광고 네트워크/서버
 
-AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})를 참조하세요.  비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
+AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우).  자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}})를 참조하세요.  비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
 
 ## AMP HTML 광고 만들기
 
-**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
+**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/a4a_spec.md', locale=doc.locale).url.path}})을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
 
 **도구 사용**: 다음 중 원하는 도구를 사용하여 AMP HTML 광고 소재를 만들 수 있습니다.
 
@@ -118,15 +118,15 @@ AMP 페이지에서 AMP HTML 광고를 빠르게 렌더링하려면(즉, 빠른 
 
 #### AMP HTML 광고는 타사 인증과 조회가능성 감지 기능을 지원하나요?
 
-예. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). 또한 MOAT 등의 다른 공급업체도 이 기능을 적극적으로 지원하고 있습니다.
+예. [`amp-analytics`](/ko/docs/reference/components/amp-analytics.html)를 사용한 인증 및 조회가능성 감지 기능이 기본으로 지원됩니다(예: Google ActiveView의 경우 이 방식으로 통합됨). 또한 MOAT 등의 다른 공급업체도 이 기능을 적극적으로 지원하고 있습니다.
 
 #### AMP HTML 광고는 타임라인 기반 애니메이션을 지원하나요?
 
-예. [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}})을 참조하세요.
+예. [`amp-animation`](/ko/docs/reference/components/amp-animation.html)을 참조하세요.
 
 #### 대부분의 광고에는 탭할 수 있는 대상과 설정 가능한 광고 이탈이 있습니다. AMP HTML 광고에도 비슷한 메커니즘이 있나요?
 
-예. [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}})을 참조하세요.
+예. [`amp-ad-exit`](/ko/docs/reference/components/amp-ad-exit.html)을 참조하세요.
 
 #### 필요한 기능을 찾을 수 없습니다. 어디에 질문하면 되나요?
 

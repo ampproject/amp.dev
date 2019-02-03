@@ -9,7 +9,7 @@ toc: true
 
 ## 概览
 
-作为广告服务商，您可以集成 AMP 以便向 AMP 网页投放传统 HTML 广告，还可以投放 [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}) 广告。
+作为广告服务商，您可以集成 AMP 以便向 AMP 网页投放传统 HTML 广告，还可以投放 [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}) 广告。
 
 ##### 想要投放传统 HTML 广告？
 

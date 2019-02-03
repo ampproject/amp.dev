@@ -9,7 +9,7 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 
 ## Visão geral
 
-É possível integrar um servidor de anúncios às AMP para veicular anúncios HTML tradicionais em páginas AMP, além dos anúncios [HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/index.md', locale=doc.locale).url.path}}).
+É possível integrar um servidor de anúncios às AMP para veicular anúncios HTML tradicionais em páginas AMP, além dos anúncios [HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}).
 
 ##### Quer veicular anúncios HTML tradicionais?
 

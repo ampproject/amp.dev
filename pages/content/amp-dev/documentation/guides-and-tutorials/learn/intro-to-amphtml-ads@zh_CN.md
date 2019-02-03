@@ -9,7 +9,7 @@ toc: true
 
 AMPHTML 广告是一种更快速、更精简且更安全地在网页上投放广告的方式。虽然 AMP 网页支持传统的 HTML 广告，但这些广告的加载速度可能很慢。要让广告本身与 AMP 网页的其余内容一样快速显示，您可以制作 AMPHTML 格式的广告。AMPHTML 广告仅在经过验证后才会投放，可确保广告的安全性和良好表现。最重要的是，此类广告可以在网络上的任何位置（而不只是在 AMP 网页上）投放。
 
-AMPHTML 广告是按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})使用 AMP HTML 编写的（AMP HTML 的一种变体 + CSS）。这意味着广告无法再运行任意 JavaScript，而任意 JavaScript 正是导致传统广告表现很差的首要原因。因此，与核心 AMP 一样，核心广告 JavaScript 用例也内置于 AMP 开放源代码项目中，以保证广告实现良好行为。
+AMPHTML 广告是按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})使用 AMP HTML 编写的（AMP HTML 的一种变体 + CSS）。这意味着广告无法再运行任意 JavaScript，而任意 JavaScript 正是导致传统广告表现很差的首要原因。因此，与核心 AMP 一样，核心广告 JavaScript 用例也内置于 AMP 开放源代码项目中，以保证广告实现良好行为。
 
 ### 优势
 
@@ -51,7 +51,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='向 AMP 网页投放 AMPHTML 广告', caption='向 AMP 网页投放 AMPHTML 广告', align='' ) }}
 
-1. 发布商通过 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 标记在 AMP 网页上插入广告位，并指定想要使用的广告网络。
+1. 发布商通过 [`<amp-ad>`](/zh_cn/docs/reference/components/amp-ad.html) 标记在 AMP 网页上插入广告位，并指定想要使用的广告网络。
 1. AMP Runtime 向指定的广告网络发送广告请求以获取广告。能够投放 AMPHTML 广告的广告网络会提供[快速获取实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)，以验证广告并进行签名。
 1. 广告网络以 AMPHTML 广告作出响应，并由 AMP Runtime 在 AMP 网页上呈现该广告。
 
@@ -59,7 +59,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 发布商
 
-要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
+要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
 
 *   DFP 广告管理系统
 *   TripleLift
@@ -79,11 +79,11 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告网络/广告服务器
 
-要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
+要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
 
 ## 制作 AMPHTML 广告
 
-**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
+**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
 
 **使用工具**：您可以使用以下任一工具制作 AMPHTML 广告：
 
@@ -118,15 +118,15 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 #### AMPHTML 广告支持第三方验证和可见度检测吗？
 
-支持，使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 即可实现对验证和可见度检测的原生支持（例如，Google 的 ActiveView 集成了这种方式）。MOAT 等其他供应商也在积极实现相关支持。
+支持，使用 [`amp-analytics`](/zh_cn/docs/reference/components/amp-analytics.html) 即可实现对验证和可见度检测的原生支持（例如，Google 的 ActiveView 集成了这种方式）。MOAT 等其他供应商也在积极实现相关支持。
 
 #### AMPHTML 广告支持基于时间轴的动画吗？
 
-支持。请参阅 [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}})。
+支持。请参阅 [`amp-animation`](/zh_cn/docs/reference/components/amp-animation.html)。
 
 #### 大多数广告都拥有可点按的目标和可配置的广告退出事件。AMPHTML 广告拥有类似的机制吗？
 
-有。请参阅 [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}})。
+有。请参阅 [`amp-ad-exit`](/zh_cn/docs/reference/components/amp-ad-exit.html)。
 
 #### 我找不到我需要的东西，可以在哪里提问？
 
