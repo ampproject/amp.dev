@@ -76,7 +76,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 ### レスポンシブな画像を表示する
 
-画像はウェブページの大部分（[ページのデータ量の約 65%](http://httparchive.org/interesting.php#bytesperpage)）を構成しています。少なくとも、どのような画面サイズや画面の向きでも画像が表示される（つまり、スクロール、ピンチ、ズームをしなくても画像全体を見られる）ようにする必要があります。AMP では `"layout=responsive"` 属性を使ってこれを簡単に実現できます（[画像や動画を含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})をご覧ください）。基本となるレスポンシブの画像に加えて、複数の画像リソースを配信して次のようにすることをおすすめします。
+画像はウェブページの大部分（[ページのデータ量の約 65%](http://httparchive.org/interesting.php#bytesperpage)）を構成しています。少なくとも、どのような画面サイズや画面の向きでも画像が表示される（つまり、スクロール、ピンチ、ズームをしなくても画像全体を見られる）ようにする必要があります。AMP では `"layout=responsive"` 属性を使ってこれを簡単に実現できます（[画像や動画を含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})をご覧ください）。基本となるレスポンシブの画像に加えて、複数の画像リソースを配信して次のようにすることをおすすめします。
 
 - [解像度に合った鮮明な画像を配信する](#解像度に合った鮮明な画像を配信する)
 - [画像のアート ディレクションを変更する](#例:%2D画面にフィットするくっきりした画像を表示する)
