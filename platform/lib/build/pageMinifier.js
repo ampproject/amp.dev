@@ -28,19 +28,19 @@ const rcs = require('rcs-core');
 const utils = require('@lib/utils');
 const config = require('@lib/config');
 
-// List of selectors that will not be minified
-const EXCLUDED_SELECTORS = [
-  /^ap-o-sidebar-toggle*?/,
-  /^ap-o-burger-menu.*?/,
-  /^ap-o-fragment-slider*?/,
-  /^ap--header*/,
-  "ap-o-toc",
-  "categorymenuopen",
-  "contentmenuopen",
-  "mainmenuopen",
-  "slide",
-  "noScroll"
+// List of selectors that can be safely minified
+const SELECTOR_REWRITE_SAFE = [
+  'ap-o-header',
+  'ap-m-language-selector',
+  'ap-o-stage',
+  'ap-o-case-band',
+  'ap-o-teaser-grid',
+  'ap-m-teaser',
+  'ap-o-benefits',
+  'ap-o-footer',
 ];
+
+const SELECTOR_REWRITE_EXCLUDED_PATHS = /\/documentation\/examples.*/;
 
 class PageMinifier {
   constructor() {
@@ -49,10 +49,10 @@ class PageMinifier {
       'scope': 'Page minifier',
     });
 
-    // Set excludes for class name rewriting
-    for (let selector of EXCLUDED_SELECTORS) {
-      rcs.selectorLibrary.setExclude(selector);
-    }
+    // Set excludes for CSS selector rewriting
+    rcs.selectorLibrary.setExclude(
+      new RegExp('^(?!' + SELECTOR_REWRITE_SAFE.join('|') + ').*$')
+    );
 
     // An instance of CleanCSS
     this._cleanCss = new CleanCSS({
@@ -62,6 +62,7 @@ class PageMinifier {
         'restructureRules': true,
       },
     });
+
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
   }
@@ -100,17 +101,21 @@ class PageMinifier {
     html = this._cleanHtml(html);
 
     try {
-      html = this._rewriteSelectors(html);
-    } catch(e) {
-      this._log.warn(`Could not rewrite selectors for ${path}`);
-      console.error(e);
-    }
-
-    try {
       html = this._minifyHtml(html);
     } catch (e) {
       this._log.error(`Could not minify ${path}`);
       console.error(e);
+    }
+
+    if (!path.match(SELECTOR_REWRITE_EXCLUDED_PATHS)) {
+      try {
+        html = this._rewriteSelectors(html);
+      } catch(e) {
+        this._log.warn(`Could not rewrite selectors for ${path}`);
+        console.error(e);
+      }
+    } else {
+      this._log.info(`Skipping ${path} from selector rewriting!`);
     }
 
     return html;
@@ -128,17 +133,12 @@ class PageMinifier {
       if (css) {
         css = css[0].replace(/<style amp-custom>|<\/style>/g, '');
 
-        // Fake replace <script> tags as espree chokes on them
-        html = html.replace(/<script/g, '<script-placeholder');
-        html = html.replace(/<\/script>/g, '</script-placeholder>');
-
-        rcs.fillLibraries(css);
-        html = rcs.replace.html(html);
-
-        // Restore script tags
-        html = html.replace(/<script-placeholder/g, '<script');
-        html = html.replace(/<\/script-placeholder>/g, '</script>');
+        rcs.fillLibraries(css, {
+          'prefix': 'ap',
+        });
+        return rcs.replace.html(html);
       }
+
 
       return html;
   }
@@ -163,6 +163,7 @@ class PageMinifier {
       'collapseWhitespace': true,
       'removeEmptyElements': false,
       'removeRedundantAttributes': true,
+      'collapseBooleanAttributes': true,
       'ignoreCustomFragments': [/<use.*<\/use>/],
       'processScripts': ['application/json']
     });
