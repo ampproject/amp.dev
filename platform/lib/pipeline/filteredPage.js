@@ -51,12 +51,23 @@ class FilteredPage {
     this._content = content;
 
     this._dom = cheerio.load(this._content);
+    if (!this._isAvailable()) {
+      throw new Error(`This page is not available for format ${this._format}`);
+    } else {
+      this._removeHiddenElements();
+      this._rewriteUrls();
+      this._setActiveFormatToggle();
+      this._removeStaleFilterClass();
+      this._addClassToBody();
+    }
+  }
 
-    this._removeHiddenElements();
-    this._rewriteUrls();
-    this._setActiveFormatToggle();
-    this._removeStaleFilterClass();
-    this._addClassToBody();
+  /**
+   * Checks if the constructed one is a actually valid format variant
+   * @return {Boolean}
+   */
+  _isAvailable() {
+    return this._dom('body').hasClass(`ap--${this._format}`);
   }
 
   /**
