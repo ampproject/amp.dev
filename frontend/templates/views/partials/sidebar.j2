@@ -17,7 +17,7 @@
       {% if not depth or iteration <= depth %}
       <ul class="nav-list level-{{ iteration }}">
           {% set collections = root.collections() %}
-          {% set documents = root.list_docs_unread(locale=doc.locale) %}
+          {% set documents = root.list_docs(locale=doc.locale)|list %}
 
           {% set items = (collections + documents)|sort(attribute='order') %}
 
@@ -38,7 +38,7 @@
           <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
             {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
             {% if doc.pod.file_exists(collection_index) %}
-            {% set collection_index = g.doc(collection_index) %}
+            {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
             <a class="nav-link" href="{{ collection_index.url.path }}">
               {% if collection.tutorial %}
 
@@ -48,7 +48,7 @@
 
               {% do doc.icons.useIcon('icons/tutorial.svg') %}
               <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
-              
+
               {% else %}
                 <span>{{ _(collection.title) }}</span>
               {% endif %}
