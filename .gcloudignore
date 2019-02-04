@@ -32,11 +32,11 @@ pages/
 /examples
 
 # playground: ignore everything except the dist folder
-playground/
+playground/*
 !playground/backend
 !playground/dist
 
 # boilerplate: ignore everything except the dist folder
-boilerplate/
+boilerplate/*
 !boilerplate/backend
 !boilerplate/dist
