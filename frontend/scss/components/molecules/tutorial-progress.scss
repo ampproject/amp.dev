@@ -1,0 +1,28 @@
+/*
+
+######################################
+### MOLECULES: tutorial-progress #####
+######################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('tutorial-progress')} {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  /* The actual height of the link plus it's padding to reach the next one */
+  height: 100%;
+  width: 2px;
+  background-color: color('oslo-gray');
+
+  &-finished {
+    background-color: color('malachite');
+  }
+}
