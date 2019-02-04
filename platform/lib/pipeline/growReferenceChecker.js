@@ -35,6 +35,8 @@ const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
   '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md':
+  '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md'
 };
 /* eslint-enable max-len */
 

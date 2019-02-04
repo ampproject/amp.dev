@@ -10,4 +10,4 @@ $title: イメージを含める
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-参照: `<img>` タグの代わりに `<amp-img>` タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})をご覧ください。
+参照: `<img>` タグの代わりに [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグを使っている理由や、使用できるタグの種類については、[画像や動画を含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})をご覧ください。

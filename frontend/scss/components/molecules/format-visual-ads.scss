@@ -14,8 +14,8 @@
 @import '../atoms/component-frame.scss';
 
 .#{molecule('format-visual-ads')} {
-  grid-template-columns: 15px auto 15px;
-  grid-template-rows: 17fr auto 7fr;
+  grid-template-columns: 12% auto 12%;
+  grid-template-rows: 16fr auto 9fr;
   
   .#{molecule('format-visual')} {
     &-top-image {

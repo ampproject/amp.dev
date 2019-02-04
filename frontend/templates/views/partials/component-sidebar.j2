@@ -1,17 +1,17 @@
 {% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
 
-<section class="ad--sidebar">
+<section class="ap--sidebar">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
   {% do doc.icons.useIcon('icons/categorymenu.svg') %}
   {% do doc.icons.useIcon('icons/close.svg') %}
-  <label class="ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar contentmenuopen' :'ad-a-sidebar-toggle-label ad-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
+  <label class="ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar contentmenuopen' :'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#categorymenu"></use></svg>
     <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
   </label>
-  <input class="ad-a-sidebar-toggle-input ad-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
+  <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
 
-  <div class="ad-o-component-sidebar">
+  <div class="ap-o-component-sidebar">
     {% include '/views/partials/format-toggle.j2' %}
 
     <div class="nav">
@@ -32,7 +32,7 @@
           <ul class="nav-list level-2">
             {% endif %}
             {% set formats = component.formats or [] %}
-            <li class="nav-item level-2 {% for format in formats %}ad--{{ format }} {% endfor %}">
+            <li class="nav-item level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
               <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
             </li>
             {% endfor %}

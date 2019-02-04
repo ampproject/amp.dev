@@ -5,7 +5,7 @@ $order: 1
 
 Inside the `<body>` of your AMPHTML ad document, you can include HTML and AMP tags; however, not all tags are allowed.  Refer to the [AMPHTML ad spec](/docs/ads/a4a_spec.html#allowed-amp-extensions-and-builtins) for a list of allowed tags.
 
-Our ad is a simple image with a hyperlink to the advertised site (a shameless plug for ampproject.org).  We'll display the image using the [`<amp-img>`](/docs/reference/components/amp-img.html) tag.  Here's the code:
+Our ad is a simple image with a hyperlink to the advertised site (a shameless plug for ampproject.org).  We'll display the image using the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.  Here's the code:
 
 ```html hl_lines="2 3 4 5 6"
 <body>

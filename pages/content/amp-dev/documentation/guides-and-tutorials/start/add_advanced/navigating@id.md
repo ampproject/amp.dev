@@ -8,7 +8,7 @@ toc: true
 Sebagian besar situs seluler menyertakan menu navigasi situs. Menu ini dapat berupa berbagai bentuk. Dalam tutorial ini, kita akan mencoba contoh berikut untuk menampilkan navigasi di halaman AMP:
 
 - Link kembali ke halaman beranda -- opsi paling sederhana.
-- Menu navigasi samping dengan menggunakan komponen [amp-sidebar](/id/docs/reference/components/amp-sidebar.html).
+- Menu navigasi samping dengan menggunakan komponen [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}).
 
 ## Link kembali ke beranda
 
@@ -60,9 +60,9 @@ Ini adalah pendekatan paling sederhana yang memanfaatkan navigasi situs yang sud
 
 ## Bernavigasi dengan sidebar
 
-Teknik navigasi umum adalah menambahkan ikon menu yang ketika diklik akan menampilkan kumpulan link navigasi (dari samping halaman). Di AMP,  kita dapat membuat navigasi tersebut dengan komponen [amp-sidebar](/id/docs/reference/components/amp-sidebar.html).
+Teknik navigasi umum adalah menambahkan ikon menu yang ketika diklik akan menampilkan kumpulan link navigasi (dari samping halaman). Di AMP,  kita dapat membuat navigasi tersebut dengan komponen [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}).
 
-Pertama-tama, kita harus **menambahkan** JavaScript komponen `amp-sidebar` ke tag `<head>`:
+Pertama-tama, kita harus **menambahkan** JavaScript komponen [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) ke tag `<head>`:
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -77,7 +77,7 @@ Kemudian, kita ingin menampilkan ikon menu.  Ketika di-tap, ikon akan membuka si
 </header>
 ```
 
-Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen `amp-sidebar`, yang ditunjukkan oleh ID `sidebar1`.  Mari kita tambahkan sidebar.
+Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}), yang ditunjukkan oleh ID `sidebar1`.  Mari kita tambahkan sidebar.
 
 
 **Tambahkan** HTML berikut setelah `</header>`:

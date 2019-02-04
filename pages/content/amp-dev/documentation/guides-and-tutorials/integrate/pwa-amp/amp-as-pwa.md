@@ -2,6 +2,8 @@
 $title: Enable Progressive Web App features for your AMP pages
 $order: 1
 toc: true
+formats:
+  - websites
 ---
 
 

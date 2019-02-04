@@ -13,10 +13,10 @@ cms: !g.yaml /content/shared/data/cms.yaml
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 <h1>Get started with AMP!</h1>
 <h2>Discover your journey</h2>
-<p class="limit">The AMP Project started as a web componentl library designed to make mobile websites load instantaneously. And while we've stuck to our original ideals of speed and great user experiences, AMP has epxanded its capabilites beyond the mobile web.</p>
+<p class="limit">The AMP Project started as a web component library designed to make mobile websites load instantaneously. And while we've stuck to our original ideals of speed and great user experiences, AMP has epxanded its capabilites beyond the mobile web.</p>
 
 {% do doc.styles.addCssFile('/css/components/atoms/format-tags.css') %}
-<p class="limit">Today, AMP can build responsive and interactive <span class="ad-a-format-tag ad-a-format-tag-websites">websites</span>, immersive full-screen <span class="ad-a-format-tag ad-a-format-tag-stories">stories</span>, secure and engaging <span class="ad-a-format-tag ad-a-format-tag-ads">ads</span> and dynamic <span class="ad-a-format-tag ad-a-format-tag-email">email</span>.</p>
+<p class="limit">Today, AMP can build responsive and interactive <a href="{{ doc.url.path }}?format=websites" class="ap-a-format-tag ap-a-format-tag-websites">websites</a>, immersive full-screen <a href="{{ doc.url.path }}?format=stories" class="ap-a-format-tag ap-a-format-tag-stories">stories</a>, secure and engaging <a href="{{ doc.url.path }}?format=ads" class="ap-a-format-tag ap-a-format-tag-ads">ads</a> and dynamic <a href="{{ doc.url.path }}?format=email" class="ap-a-format-tag ap-a-format-tag-email">email</a>.</p>
 
 <h2>CMS Users</h2>
 <p class="limit">
@@ -25,10 +25,10 @@ cms: !g.yaml /content/shared/data/cms.yaml
 
 {% do doc.styles.addCssFile('/css/components/molecules/mini-card.css') %}
 {% do doc.styles.addCssFile('/css/components/organisms/mini-card-list.css') %}
-<ul class="ad-o-mini-card-list">
+<ul class="ap-o-mini-card-list ap-o-mini-card-list-condensable">
   {% for cms in doc.cms.cmsUsers %}
-  <li class="ad-o-mini-card-list-item">
-    <a href="{{ cms.url }}" class="ad-m-mini-card" target="_blank">
+  <li class="ap-o-mini-card-list-item ap-o-mini-card-list-item-condensable">
+    <a href="{{ cms.url }}" class="ap-m-mini-card" target="_blank">
       <amp-img
         alt="{{ cms.image.alt }}"
         src="{{ cms.image.src }}"
@@ -46,8 +46,8 @@ cms: !g.yaml /content/shared/data/cms.yaml
 <p>
   If you are converting your existing HTML pages to AMPHTML, visit these resources:
 </p>
-<div class="ad-o-teaser-grid">
-  <div class="ad-o-teaser-grid-list">
+<div class="ap-o-teaser-grid">
+  <div class="ap-o-teaser-grid-list">
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
     {% include '/views/partials/teaser.j2' %}
@@ -59,8 +59,8 @@ cms: !g.yaml /content/shared/data/cms.yaml
 <p>
   These resources will help with your day-to-day AMP journey:
 </p>
-<div class="ad-o-teaser-grid">
-  <div class="ad-o-teaser-grid-list">
+<div class="ap-o-teaser-grid">
+  <div class="ap-o-teaser-grid-list">
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/components/index.html') %}
     {% include '/views/partials/teaser.j2' %}
@@ -83,12 +83,12 @@ cms: !g.yaml /content/shared/data/cms.yaml
   Stay up-to-date with the latest AMP news:<br>
   Subscribe to our blog, Subscribe to The AMP Channel on YouTube, Follow us on Twitter @AMPhtml<br>
   <a href="https://amphtml.wordpress.com">
-    <span class="ad-m-lnk">
-      <span class="ad-a-ico ad-m-lnk-icon">
+    <span class="ap-m-lnk">
+      <span class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/external.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
       </span>
-      <span class="ad-m-lnk-text">Go to News</span>
+      <span class="ap-m-lnk-text">Go to News</span>
     </span>
   </a>
 </p>
@@ -97,12 +97,12 @@ cms: !g.yaml /content/shared/data/cms.yaml
 <p class="limit">
   Need support? See getting Support resources.<br>
   <a href="{{ g.doc('/content/amp-dev/support/index.md', locale=doc.locale).url.path }}">
-    <span class="ad-m-lnk">
-      <span class="ad-a-ico ad-m-lnk-icon">
+    <span class="ap-m-lnk">
+      <span class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </span>
-      <span class="ad-m-lnk-text">Go to Support</span>
+      <span class="ap-m-lnk-text">Go to Support</span>
     </span>
   </a>
 </p>
@@ -111,8 +111,8 @@ cms: !g.yaml /content/shared/data/cms.yaml
 <p class="limit">
   If you are converting your existing HTML pages to AMPHTML, visit these resources:
 </p>
-<div class="ad-o-teaser-grid">
-  <div class="ad-o-teaser-grid-list">
+<div class="ap-o-teaser-grid">
+  <div class="ap-o-teaser-grid-list">
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md') %}
     {% include '/views/partials/teaser.j2' %}
@@ -129,44 +129,44 @@ cms: !g.yaml /content/shared/data/cms.yaml
 <p class="limit">
   Ensure users can discover your content on third-party platforms (e.g., Twitter, Google, Bing, etc.). Here are some helpful resources:
 </p>
-<div class="ad-o-teaser-grid">
-  <div class="ad-o-teaser-grid-list">
+<div class="ap-o-teaser-grid">
+  <div class="ap-o-teaser-grid-list">
     {% with %}
     {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md') %}
     {% include '/views/partials/teaser.j2' %}
     {% endwith %}
 
-    <div class="ad-m-teaser ad-m-teaser-guide-tutorial">
+    <div class="ap-m-teaser ap-m-teaser-guide-tutorial">
       <a href="https://support.google.com/webmasters/answer/6340290" target="_blank">
 
         {# tags #}
         {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
-        <div class="ad-m-teaser-tags">
-          <div class="ad-m-tag ad-m-tag-websites ad-m-teaser-tag"></div>
-          <div class="ad-m-tag ad-m-tag-email ad-m-teaser-tag"></div>
-          <div class="ad-m-tag ad-m-tag-stories ad-m-teaser-tag"></div>
-          <div class="ad-m-tag ad-m-tag-ads ad-m-teaser-tag"></div>
+        <div class="ap-m-teaser-tags">
+          <div class="ap-m-tag ap-m-tag-websites ap-m-teaser-tag"></div>
+          <div class="ap-m-tag ap-m-tag-email ap-m-teaser-tag"></div>
+          <div class="ap-m-tag ap-m-tag-stories ap-m-teaser-tag"></div>
+          <div class="ap-m-tag ap-m-tag-ads ap-m-teaser-tag"></div>
         </div>
 
         {# image #}
-        <div class="ad-m-teaser-icon">
+        <div class="ap-m-teaser-icon">
           {% do doc.icons.useIcon('icons/guidelines.svg') %}
-          <div class="ad-a-ico">
+          <div class="ap-a-ico">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#guidelines"></use></svg>
           </div>
         </div>
 
         {# card container #}
-        <div class="ad-m-teaser-card">
-          <div class="ad-m-teaser-content">
-            <h4 class="ad-m-teaser-headline">Google Search guidelines for AMP pages</h4>
-            <p class="ad-m-teaser-copy">Learn more about how Google Search finds AMP pages.</p>
-            <span class="ad-m-lnk">
-              <span class="ad-a-ico ad-m-lnk-icon">
+        <div class="ap-m-teaser-card">
+          <div class="ap-m-teaser-content">
+            <h4 class="ap-m-teaser-headline">Google Search guidelines for AMP pages</h4>
+            <p class="ap-m-teaser-copy">Learn more about how Google Search finds AMP pages.</p>
+            <span class="ap-m-lnk">
+              <span class="ap-a-ico ap-m-lnk-icon">
                 {% do doc.icons.useIcon('icons/internal.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
               </span>
-              <span class="ad-m-lnk-text">Learn more</span>
+              <span class="ap-m-lnk-text">Learn more</span>
             </span>
           </div>
         </div>

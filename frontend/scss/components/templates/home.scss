@@ -37,17 +37,29 @@
   .#{utility('stage')} {
     .#{organism('stage')} {
       &-content {
-        grid-column: 5 / 20;
         margin-bottom: 33vw;
         text-align: center;
 
         @media screen and (min-width: 768px) {
+          grid-column: 3 / 23;
           margin-bottom: 23vw;
+        }
+
+        @media screen and (min-width: 1024px) {
+          grid-column: 4 / 22;
+        }
+
+        @media screen and (min-width: 1280px) {
+          grid-column: 5 / 21;
         }
 
         &-headline {
           @include hl-stage;
         }
+      }
+
+      .#{utility('container')} {
+        padding-left: 0;
       }
     }
   }
@@ -62,20 +74,20 @@
       width: 100%;
       margin-bottom: 0;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin-top: -6em;
       }
 
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         grid-column: 2 / 14;
       }
 
-      @media screen and (min-width: 1280px) {
+      @media (min-width: 1280px) {
         grid-column: 1 / 13;
       }
 
       &-list {
-        @media screen and (min-width: 575px) {
+        @media (min-width: 575px) {
           grid-template-columns: repeat(2, 1fr);
           grid-template-rows: repeat(5, 1fr);
         }
@@ -96,11 +108,11 @@
     .#{molecule('copy')} {
       grid-column: 16 / 25;
 
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         grid-column: 15 / 24;
       }
 
-      @media screen and (min-width: 1280px) {
+      @media (min-width: 1280px) {
         grid-column: 14 / 23;
       }
 
@@ -111,7 +123,7 @@
       p {
         margin-bottom: 2em;
 
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           margin-bottom: 6em;
         }
       }
@@ -121,7 +133,7 @@
   .#{utility('get-started')} {
     padding: 2.5em 30px 3em;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       padding: 6em 0 7em;
     }
 

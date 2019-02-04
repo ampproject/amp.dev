@@ -30,13 +30,13 @@ The filter-bubble molecule is a simple button used to filter content based on th
   color: color('oslo-gray');
   cursor: pointer;
   margin: 5px 5px;
-  
-  @media screen and (min-width: 550) {
+
+  @media (min-width: 550px) {
     padding: 5px 20px;
     margin: 5px 10px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     margin: 5px;
     padding: 5px 20px;
   }

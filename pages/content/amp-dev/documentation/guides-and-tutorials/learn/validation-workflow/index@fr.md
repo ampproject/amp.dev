@@ -39,7 +39,7 @@ Le validateur AMP est accessible directement à partir de la barre d'outils de v
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_invalid.png" width="20" height="20" alt="Icône AMP rouge indiquant un document AMP incorrect."></amp-img>
-      
+
     </td>
     <td>Si la page AMP comporte des erreurs, l'icône de l'extension concernée s'affiche en rouge et indique le nombre d'erreurs trouvées.
     </td>
@@ -47,7 +47,7 @@ Le validateur AMP est accessible directement à partir de la barre d'outils de v
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_valid.png" width="20" height="20" alt="Icône AMP verte indiquant un document AMP valide."></amp-img>
-      
+
     </td>
     <td>Si la page AMP ne comporte pas d'erreur, l'icône s'affiche en vert et, le cas échéant, indique le nombre d'avertissements.
     </td>
@@ -55,7 +55,7 @@ Le validateur AMP est accessible directement à partir de la barre d'outils de v
   <tr>
     <td>
       <amp-img src="/static/img/docs/validator_icon_link.png" width="20" height="20" alt="Icône AMP bleue indiquant une variante AMP HTML si l&#39;on clique dessus."></amp-img>
-      
+
     </td>
     <td>Si une version AMP d'une page standard est disponible, l'icône s'affiche en bleu, avec une icône de lien. Il suffit de cliquer sur l'extension pour être redirigé vers la version AMP de la page dans le navigateur.
     </td>
@@ -152,10 +152,10 @@ Elle génère cette erreur de validation AMP, présentée dans ces différents o
 Chaque outil donne plusieurs informations :
 
   * L'endroit (ligne et colonne) où l'erreur est survenue dans le document HTML. Certaines interfaces permettent de cliquer dessus pour mettre en surbrillance cet endroit. Dans le cas présent, le problème se trouve à la ligne 11, colonne 2.
-  * Une ligne de texte décrivant l'erreur. Dans le cas présent, le texte indique que nous utilisons une balise `<img>`, alors que nous aurions dû utiliser une balise `<amp-img>`.
-  * Un lien vers un document pertinent à propos de l'erreur. Dans le cas présent, il s'agit de la documentation concernant la balise `<amp-img>`. Toutes les erreurs ne génèrent pas de liens vers la documentation connexe.
+  * Une ligne de texte décrivant l'erreur. Dans le cas présent, le texte indique que nous utilisons une balise `<img>`, alors que nous aurions dû utiliser une balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+  * Un lien vers un document pertinent à propos de l'erreur. Dans le cas présent, il s'agit de la documentation concernant la balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Toutes les erreurs ne génèrent pas de liens vers la documentation connexe.
 
-En relisant attentivement la spécification, nous réalisons que nous utilisons une balise `<img>` au lieu d'une balise `<amp-img>`.
+En relisant attentivement la spécification, nous réalisons que nous utilisons une balise `<img>` au lieu d'une balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 Pour mieux comprendre la liste complète des erreurs potentielles, consultez le [guide des erreurs de validation AMP](/fr/docs/troubleshooting/validation_errors.html).
 Si vous êtes toujours bloqué après un examen minutieux du guide, [posez-nous votre question](http://stackoverflow.com/questions/tagged/amp-html) et nous essaierons de vous aider.

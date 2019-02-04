@@ -2,13 +2,14 @@
 $title: Creating the cover page
 $order: 4
 toc: true
+author: bpaduch
 ---
 
 
 
-A page within an AMP story is represented by the `<amp-story-page>` component. Within an `<amp-story>`, you can have one or more `<amp-story-page>` components, containing each of the individual screens of a story. The first page you specify in the document order is the first page that displays in the story.  
+A page within an AMP story is represented by the `<amp-story-page>` component. Within an [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}), you can have one or more `<amp-story-page>` components, containing each of the individual screens of a story. The first page you specify in the document order is the first page that displays in the story.
 
-To create a page, **add** the `<amp-story-page>` element as a child of `amp-story`. **Assign** a unique id to the page. For our first page, which is the cover page, let's assign a unique id of `cover`:
+To create a page, **add** the `<amp-story-page>` element as a child of [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). **Assign** a unique id to the page. For our first page, which is the cover page, let's assign a unique id of `cover`:
 
 ```html hl_lines="6 7"
 <amp-story standalone
@@ -35,9 +36,10 @@ Our cover page is actually comprised of two layers:
 
 ### Creating layer 1
 
-Let's add our first layer to our cover page. The layer contains an image that fills the screen.  
+Let's add our first layer to our cover page. The layer contains an image that fills the screen.
 
-Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<amp-story-page>`. As we want the image to fill the screen, specify the `template="fill"` attribute for the `amp-story-grid-layer`. Inside the layer, add an `<amp-image>` element for the `cover.jpg` file, and make sure it's responsive (i.e., `layout="responsive"`) with the image's dimensions of 720 x 1280 px.  Here's what our layer looks like:
+Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<amp-story-page>`. As we want the image to fill the screen, specify the `template="fill"` attribute for the `amp-story-grid-layer`. Inside the layer, add an [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element for the `cover.jpg` file, and make sure it's responsive (i.e., `layout="responsive"`) with the image's dimensions of 720 x 1280 px.  Here's what our layer looks like:
+
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
@@ -79,7 +81,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
-    <td>   
+    <td>
     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
     </td>
 </tr>

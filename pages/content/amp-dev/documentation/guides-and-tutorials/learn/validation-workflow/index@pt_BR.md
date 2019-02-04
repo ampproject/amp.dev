@@ -261,18 +261,15 @@ Cada ferramenta fornece várias informações:
      Em algumas interfaces, é possível clicar no texto para destacar esse local. Nesse
      caso, o problema ocorre na linha 11, coluna 2.
   2. Uma linha de texto descreve o erro. Nesse caso, o texto indica que
-     estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
+     estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
   3. Há um link para um documento relevante sobre o erro. Nesse caso, o link
-     leva à documentação da tag `<amp-img>`. Nem todos os erros geram
+     leva à documentação da tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Nem todos os erros geram
      links de documentação.
 
-Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag `<amp-img>`.
+Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 Para entender melhor a lista completa de possíveis erros,
 consulte o [guia sobre erros de validação de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Se você ainda tiver dúvidas após uma análise detalhada, [faça uma
 pergunta](http://stackoverflow.com/questions/tagged/amp-html) (em inglês) para receber
 ajuda.
-
-
-

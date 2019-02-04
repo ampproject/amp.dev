@@ -1,0 +1,66 @@
+$title: TransUnion
+$category: e-commerce
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/transunion/teaser_transunion.jpg'
+    width: 1
+    height: 1
+    alt: TransUnion
+  logo:
+    src: '/static/img/success-stories/transunion/transunion_logo.png'
+    width: 230
+    height: 65
+    alt: TransUnion
+  text: TransUnion scores more conversions with faster page loads via AMP
+
+
+stage:
+  headline: TransUnion scores more conversions with faster page loads via AMP
+  subline: APR 9, 2018
+  devices:
+    - image_src: '/static/img/success-stories/transunion/amp_transunion_1.jpg'
+      width: 3
+      height: 5
+      type: mobile
+      alt: TransUnion
+
+kpis:
+  - value: 3%
+    text: increase in conversion
+
+  - value: 26%
+    text: lower bounce rate
+
+  - value: 2.5X
+    text: time on site
+
+contents:
+
+  - layout: text
+    text: "Smartphones have empowered people to take control of their personal finances in a way that’s never been possible before. Important information, like credit scores, is right at our fingertips—ready to be accessed anytime, anywhere. In fact, 56% of searches for credit reporting now come from mobile devices. This affects not only consumers, but financial institutions too. TransUnion, one of the three national credit bureaus, has seen a significant increase in mobile traffic, which now accounts for the majority of visitors to the consumer services division of its site.<br><br>TransUnion had a hypothesis that slow loading mobile pages could be leading to higher bounce rates and lower mobile conversion rates compared to desktop. They wanted to create a best-in-class mobile site on their CMS, HP TeamSite, to both improve the experience for users and get the highest return on their advertising investment."
+    direction: left-flat
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/transunion/amp_transunion_1.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: TransUnion
+    headline: Solution
+    text: To enhance the mobile experience, TransUnion turned to Accelerated Mobile Pages (AMP)—recommended by the brand’s marketing consultant, <a href="https://www.brightedge.com/" target="_blank">BrightEdge</a>—with the hope of increasing mobile conversions at an efficient cost per order. Because the site was already mobile-friendly, TransUnion didn’t have to redesign the content. This allowed the bureau to go live with AMP in less than a week—a quick turnaround.
+    direction: left-flat
+
+  - layout: text-button
+    image_src: '/static/img/success-stories/transunion/amp_transunion_2.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: TransUnion
+    background: gradient
+    headline: Results
+    text: "AMP was quickly confirmed to be an ROI positive project. On a 3G fast connection the AMP pages loaded in 1.6 seconds, compared to 7.1 seconds for the non-AMP versions, leading to a 26% lower bounce rate and users spending 2.5X the amount of time on site. Ultimately the AMP pages drove 3% more conversions than their non-AMP counterparts, affirming Transunion’s hypothesis that improved mobile page speed does lead to better conversion rates.<br><br>“Not only was AMP easy to implement, but the AMP pages’ instant loading of static content capability is amazing,” said Amber Liu, Performance Marketing and Innovation Lead of Consumer Interactive at TransUnion. “We look forward to driving better performance in user engagement with AMP and partnering with our Google partners to continue to be at the forefront of mobile technology.” Following its success, TransUnion plans to continue incorporating AMP on high-mobile traffic pages in the coming months."
+    direction: right-flat
+    download_url: '/static/files/case-studies/transunion.pdf'

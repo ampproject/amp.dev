@@ -5,20 +5,27 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
+.#{utility('toc')} {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    background: none;
+    box-shadow: none;
+  }
+}
+
 .#{organism('toc')} {
-  position: fixed;
-  z-index: 17;
+  position: relative;
+  z-index: 1;
   top: 0;
   right: 0;
-  height: 100vh;
-  width: auto;
-  max-width: 80vw;
+  width: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 15px 15px 100px 15px;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  transition: transform 0.4s ease;
+  border-radius: 8px;
+  padding: 15px 15px 15px 15px;
 
   &::-webkit-scrollbar {
     width: 2px;
@@ -27,39 +34,31 @@
   &::-webkit-scrollbar-thumb {
     background-color: color('oslo-gray');
   }
-  &.contentmenuopen {
-    z-index: 18;
-  }
 
-  @media screen and (min-width: 768px) {
-    overflow-y: scroll;
-    max-height: calc(100vh);
-  }
-
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     position: -webkit-sticky;
     position: sticky;
     z-index: 1;
-    padding: 0;
+    padding: 0 10px 0 0;
     height: auto;
-    top: 120px;
+    top: 114px;
     right: auto;
     background: none;
     box-shadow: none;
     overflow-y: scroll;
-    max-height: calc(100vh - 180px);
+    max-height: calc(100vh - 214px);
   }
 
   &-hl {
     @include txt-font-accent;
-    margin-top: 0;
+    margin: 0;
   }
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
+    transition: 0.4s;
   }
 
   ul > li {
@@ -83,15 +82,16 @@
     }
   }
 
-  .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media screen and (max-width: 1023px) {
-      transform: translateX(100%);
+  .#{atom('sidebar-toggle-input-toc')}:not(:checked) + ul {
+    @media (max-width: 1023px) {
+      display: none;
+      transition: 0.2s;
     }
   }
 
-  .#{atom('sidebar-toggle-input')}:checked + & {
-    @media screen and (max-width: 1023px) {
-      transform: translateX(0);
+  .#{atom('sidebar-toggle-input-toc')}:checked + ul {
+    @media (max-width: 1023px) {
+      margin-top: 15px;
     }
   }
 }

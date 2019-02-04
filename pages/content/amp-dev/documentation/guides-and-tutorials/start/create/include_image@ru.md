@@ -10,4 +10,4 @@ $title: Вставка изображения
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-Чтобы узнать о причинах замены тегов `<img>` на `<amp-img>`, а также о других доступных возможностях, ознакомьтесь с разделом [Вставка встроенных фреймов и мультимедийного содержимого]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}).
+Чтобы узнать о причинах замены тегов `<img>` на [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), а также о других доступных возможностях, ознакомьтесь с разделом [Вставка встроенных фреймов и мультимедийного содержимого]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}}).

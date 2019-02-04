@@ -60,8 +60,26 @@ body {
     figure {
       margin: 0;
 
+      &.half {
+        amp-img {
+          @media (min-width: 768px) {
+            width: 50%;
+          }
+        }
+      }
+
+      &.third {
+        amp-img {
+          width: 50%;
+          @media (min-width: 768px) {
+            width: 33%;
+          }
+        }
+      }
+
       amp-img {
         @include box-shadow;
+        margin: 0 auto;
       }
 
       figcaption {
@@ -76,23 +94,27 @@ body {
     display: flex;
     justify-content: space-between;
 
-    .ad-a-btn {
+    .#{atom('btn')} {
       margin: 0 auto;
     }
 
     .#{utility('previous')} {
 
-      .ad-m-lnk-icon {
-        transform: scaleX(-1);
+      .#{molecule('lnk')} {
+        &-icon {
+          transform: scaleX(-1);
+        }
       }
     }
 
     .#{utility('next')} {
       justify-self: flex-end;
 
-      .ad-m-lnk-icon {
-        margin-left: 0.625em;
-        margin-right: 0;
+      .#{molecule('lnk')} {
+        &-icon {
+          margin-left: 0.625em;
+          margin-right: 0;
+        }
       }
     }
   }

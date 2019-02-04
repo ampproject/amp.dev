@@ -390,10 +390,10 @@ Bunlar beklenen etiketlere başvuruda bulunur:
 Bu hata, bir etiket aynı anda kullanılamayan (ayrışık) özniteliklerin her ikisine de sahip olduğunda ortaya çıkar.
 Örneğin, aşağıdaki etiketler için yalnızca birine izin verilir:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` veya `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` veya `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` veya `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` veya `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` veya `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` veya `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` veya `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` veya `data-videoid`
 
 ### Listede zorunlu öznitelik eksik
 
@@ -415,10 +415,10 @@ Bu hata, bir etiket aynı anda kullanılamayan (ayrışık) özniteliklerin her 
 Bu hata, bir etikette birden çok seçenek arasından gerekli bir öznitelik eksik olduğunda ortaya çıkar.
 Örneğin, şu etiketler iki olası seçenekten bir özniteliğin bulunmasını gerektirir:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` veya `src`
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` veya `src`
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` veya `srcdoc`
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` veya `data-videoid`
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` veya `src`
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` veya `src`
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` veya `srcdoc`
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` veya `data-videoid`
 
 ### Yanlış üst etiket
 
@@ -450,7 +450,7 @@ Aşağıda, belirli etiketler için gerekli üst etiketler listelenmiştir (etik
 * `style`, `boilerplate (noscript)` üst etiketini gerektirir.
 * `noscript`, `head` üst etiketini gerektirir.
 * `script`, `head` üst etiketini gerektirir.
-* `source`, bir medya etiketi (`amp-audio`, `amp-video` vb.) gerektirir.
+* `source`, bir medya etiketi ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) vb.) gerektirir.
 
 ### İzin verilmeyen etiket üst etiketi
 
@@ -769,7 +769,7 @@ Aynı birimlerde ifade edilmediklerinde bu hata tetiklenir.
 
 ## Şablon oluşturma hataları
 
-AMP sayfaları şablon oluşturma sözdizimini içeremez. Bunun için, sözdiziminin [amp-mustache](/docs/reference/components/amp-mustache.html) gibi özellikle şablonları içermek üzere tasarlanmış bir AMP etiketi içinde olması gerekir.
+AMP sayfaları şablon oluşturma sözdizimini içeremez. Bunun için, sözdiziminin [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) gibi özellikle şablonları içermek üzere tasarlanmış bir AMP etiketi içinde olması gerekir.
 
 Şablonları kaynak dosyalarınıza dahil etmeniz bir sıkıntı oluşturmaz, ancak sorun olmaması için bu dosyaların oluşturulan çıktısının şablonları içermemesi gerekir ([CSS ön işlemcilerini kullanma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) konusuna da bakın).
 

@@ -52,9 +52,7 @@ class SpecImporter extends GitHubImporter {
       // Remove the double heading
       doc.stripInlineTitle();
 
-      importDocs.push(doc.save().then(() => {
-        this._log.success(`Saved '${importDoc.title}' to ${importDoc.to}`);
-      }));
+      importedDocs.push(doc.save());
     }
 
     return Promise.all(importedDocs);

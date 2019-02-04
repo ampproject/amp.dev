@@ -25,7 +25,7 @@ $order: 4
         <li>요소 3개 포함:
           <ul>
             <li>제목이 <em>고양이</em></li>인 <code>&lt;h1></code> 요소
-            <li>반응형 <a href="/docs/reference/components/amp-img.html">amp-img</a>(<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
+            <li>반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>(<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
             <li>다음 인용문의 <code>&lt;q></code> 요소: <em>개는 사람이 부르면 옵니다. 고양이는 뭔가 할 말이 있으면 사람에게 옵니다. --Mary Bly</em></li>
           </ul>
         </li>
@@ -45,7 +45,7 @@ $order: 4
       <ul>
         <li>레이어 2개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">amp-img</a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
         <li><b>레이어 2</b>:  <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 템플릿을 구현하고 요소 2개를 포함합니다.
           <ul>
             <li>제목이 <em>개</em></li>인 <code>&lt;h1></code> 요소
@@ -68,7 +68,7 @@ $order: 4
       <ul>
       <li>레이어 3개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="/docs/reference/components/amp-img.html">amp-img</a>(<code class="filename">bird.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>(<code class="filename">bird.jpg</code>, 720 x 1280px)</li>를 포함합니다.
         <li><b>레이어 2</b>:  <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
             <li>제목이 <em>새</em></li>인 <code>&lt;h1></code> 요소
@@ -98,9 +98,9 @@ $order: 4
       <ul>
       <li>레이어 3개 포함:
       <ul>
-        <li><b>레이어 1</b>: <code>fill</code> 템플릿을 구현하고 반응형 <a href="/docs/reference/components/amp-video.html">amp-video</a>(<code class="filename">rabbit.mp4</code>)를 포함합니다.
+        <li><b>레이어 1</b>: <code>fill</code> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>(<code class="filename">rabbit.mp4</code>)를 포함합니다.
           <ul>
-            <li>동영상이 표시되도록 <code><head></code> 섹션에 <a href="/docs/reference/components/amp-video.html">amp-video</a> 구성요소의 <strong>필수 스크립트</strong>를 추가합니다.</li>
+            <li>동영상이 표시되도록 <code><head></code> 섹션에 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> 구성요소의 <strong>필수 스크립트</strong>를 추가합니다.</li>
             <li><code>poster</code> 이미지(<code class="filename">rabbit.jpg</code>)를 지정합니다. 이 속성은 유효한 AMP 스토리를 위해 <strong>필요</strong>합니다.</li>
             <li><code>autoplay</code> 속성으로 동영상이 자동 재생되도록 설정합니다. 이 속성은 유효한 AMP 스토리를 위해 <strong>필요</strong>합니다.</li>
             <li><code>loop</code> 속성으로 동영상이 자동 루프백되도록 설정합니다.</li>

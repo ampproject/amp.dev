@@ -15,35 +15,35 @@
 <html amp lang="{{ doc.locale }}">
 <head>
     {% block head %}
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{ doc.title }}</title>
     {% if podspec.env.name == 'development' %}
-    <link rel="shortcut icon" href="/static/img/favicon-local.png">
+    <link rel="shortcut icon" href="/static/img/favicon-local.png"/>
     {% else %}
-    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
-    <link rel="canonical" href="{{ doc.url }}">
-    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}">
+    <link rel="canonical" href="{{ doc.url }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
     {% for locale in doc.locales if not locale == doc.locale  %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
-    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}">
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}"/>
     {% endif %}
     {% endfor %}
 
     {# Do not index untranslated content #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
-    <meta name="robots" content="noindex,follow">
+    <meta name="robots" content="noindex,follow"/>
     {% endif %}
 
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin/>
+    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin/>
+    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin/>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -83,8 +83,8 @@
 
     {% if doc.pod.env.dev %}
     {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
-    <aside class="ad-a-grid-toggle">
-        <input type="checkbox">
+    <aside class="ap-a-grid-toggle">
+        <input type="checkbox"/>
         <div class="toggle"><div class="dot"></div></div>
         <div class="grid"></div>
     </aside>
@@ -108,9 +108,24 @@
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
-    <aside class="ad-o-translation-hint">
-      <p class="ad-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
+    <aside class="ap-o-translation-hint">
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
     </aside>
     {% endif %}
+
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars" : {
+          "gtag_id": "{{ podspec.gaTrackingId }}",
+          "config" : {
+            "{{ podspec.gaTrackingId }}": {
+              "groups": "default"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
   </body>
 </html>

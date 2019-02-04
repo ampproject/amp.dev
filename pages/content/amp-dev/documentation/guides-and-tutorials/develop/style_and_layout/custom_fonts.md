@@ -2,6 +2,12 @@
 $title: Add custom fonts
 $order: 6
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
+author: pbakaus
 ---
 
 

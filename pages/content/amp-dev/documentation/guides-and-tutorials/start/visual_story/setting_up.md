@@ -1,7 +1,7 @@
 ---
 $title: Setting up
 $order: 1
-$parent: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md
+author: bpaduch
 ---
 
 ## Prerequisites

@@ -16,13 +16,24 @@
 
 const path = require('path');
 const express = require('express');
+const {setImmutable} = require('../../platform/lib/utils/cacheHelpers.js');
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
 playground.use(express.static(
     path.join(__dirname, '../dist'),
-    {extensions: ['html']},
+    {
+      extensions: ['html'],
+      setHeaders: setCustomCacheControl,
+    },
 ));
 playground.use('/api', require('./api.js'));
+
+function setCustomCacheControl(response, path) {
+  // playground assets are versioned
+  if (path.endsWith('.js') || path.endsWith('.css')) {
+    setImmutable(response);
+  }
+}
 
 module.exports = playground;

@@ -16,7 +16,7 @@
   padding-right: 20px;
   margin-bottom: 7em;
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     padding-left: 0;
     padding-right: 0;
     margin-bottom: 8vw;
@@ -24,6 +24,26 @@
 }
 
 .#{organism('format-explainer')} {
+
+  .swift {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    & > div {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      opacity: 0;
+      transform: translateX(7.5%);
+      transition: opacity 0.4s cubic-bezier(.55,0,.1,1), transform 0.4s cubic-bezier(.55,0,.1,1);
+
+      &.active {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.4s;
+      }
+    }
+  }
 
   &-visual {
     grid-column: 1 / -1;
@@ -33,11 +53,19 @@
     width: 100%;
     padding: 0 1.5em;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       grid-column: 1 / 14;
       order: inherit;
       padding: 7em 0 0;
     }
+
+    .#{molecule('format-visual')} {
+      margin-bottom: 0;
+    }
+  }
+
+  &-content {
+    align-items: end;
   }
 
   &-content,
@@ -46,11 +74,11 @@
     width: 100%;
     margin-bottom: 0;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       grid-column: 14 / 24;
     }
 
-    @media screen and (min-width: 1280px) {
+    @media (min-width: 1280px) {
       grid-column: 14 / 22;
     }
   }
@@ -74,7 +102,7 @@
     padding: 0 20px 15px;
     margin: 0 -20px 15px;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       order: inherit;
       overflow: visible;
       flex-direction: column;
@@ -105,7 +133,7 @@
     border-radius: 4px;
     cursor: pointer;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       margin: 0 0 1em 0;
       background: none transparent;
     }
@@ -143,7 +171,7 @@
     grid-column: 1 / -1;
     order: 3;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       grid-column: 14 / 20;
       order: inherit;
     }

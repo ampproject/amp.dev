@@ -51,6 +51,10 @@ $borderSize: 5px;
   margin-bottom: 50px;
   background-color: color('white');
   filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
+  
+  code {
+    white-space: normal;
+  }
 
   .#{molecule('tip')}-content {
     h4 {

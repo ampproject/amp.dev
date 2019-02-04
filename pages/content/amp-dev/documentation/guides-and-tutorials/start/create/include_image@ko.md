@@ -10,4 +10,4 @@ $title: 이미지 포함
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-읽어보기: `<img>`와 같은 태그를 `<amp-img>`로 대체하는 이유와 얼마나 많은 태그를 사용할 수 있는지에 대해 알아보려면, [이미지 및 동영상 삽입]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})으로 이동하세요.
+읽어보기: `<img>`와 같은 태그를 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})로 대체하는 이유와 얼마나 많은 태그를 사용할 수 있는지에 대해 알아보려면, [이미지 및 동영상 삽입]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})으로 이동하세요.

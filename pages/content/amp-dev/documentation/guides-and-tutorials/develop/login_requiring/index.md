@@ -4,6 +4,8 @@ $path: /documentation/guides-and-tutorials/develop/login_requiring/create-login.
 $order: 0
 numbered: 1
 $hidden: true
+formats:
+  - websites
 ---
 Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow with AMP by using the [amp-access](/docs/reference/components/amp-access.html) component combined with the [amp-form](/docs/reference/components/amp-form.html) component.
 

@@ -5,9 +5,9 @@ toc: true
 
 
 
-El componente `<amp-story-page>` representa una página de una historia AMP. Dentro de `<amp-story>`, puede haber uno o varios componentes `<amp-story-page>` que contienen cada una de las pantallas individuales de una historia. La primera página que especificas en el orden del documento es la primera página que se muestra en la historia.  
+El componente `<amp-story-page>` representa una página de una historia AMP. Dentro de [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}), puede haber uno o varios componentes `<amp-story-page>` que contienen cada una de las pantallas individuales de una historia. La primera página que especificas en el orden del documento es la primera página que se muestra en la historia.
 
-Para crear una página, **añade** el elemento `<amp-story-page>` como componente secundario de `amp-story`. **Asigna** un ID único a la página. En nuestro caso, vamos a asignar el ID único `cover` a la primera página, que se conoce como portada:
+Para crear una página, **añade** el elemento `<amp-story-page>` como componente secundario de [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). **Asigna** un ID único a la página. En nuestro caso, vamos a asignar el ID único `cover` a la primera página, que se conoce como portada:
 
 ```html hl_lines="6 7"
 <amp-story standalone
@@ -34,9 +34,9 @@ La portada se compone de dos capas:
 
 ### Crear la capa 1
 
-Vamos a añadir la primera capa a la portada. La capa incluye una imagen que llena la pantalla.  
+Vamos a añadir la primera capa a la portada. La capa incluye una imagen que llena la pantalla.
 
-Para crear la capa, añade el elemento `<amp-story-grid-layer>` como componente secundario de `<amp-story-page>`. Como queremos que la imagen ocupe la pantalla, utiliza el atributo `template="fill"` para `amp-story-grid-layer`. Dentro de la capa, añade un elemento `<amp-image>` para el archivo `cover.jpg` y asegúrate de que el diseño se adapte (es decir, `layout="responsive"`) a las dimensiones de imagen 720x1280 píxeles.  A continuación, te indicamos el aspecto que debe tener la capa:
+Para crear la capa, añade el elemento `<amp-story-grid-layer>` como componente secundario de `<amp-story-page>`. Como queremos que la imagen ocupe la pantalla, utiliza el atributo `template="fill"` para `amp-story-grid-layer`. Dentro de la capa, añade un elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) para el archivo `cover.jpg` y asegúrate de que el diseño se adapte (es decir, `layout="responsive"`) a las dimensiones de imagen 720x1280 píxeles.  A continuación, te indicamos el aspecto que debe tener la capa:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
@@ -78,7 +78,7 @@ El elemento `<amp-story-grid-layer>` organiza los elementos secundarios en una c
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
-    <td>   
+    <td>
     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
     </td>
 </tr>

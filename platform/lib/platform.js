@@ -18,8 +18,9 @@
 
 const signale = require('signale');
 const express = require('express');
+const compression = require('compression');
 const ampCors = require('amp-toolbox-cors');
-const HttpProxy = require('http-proxy');
+const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 
 const config = require('./config.js');
 const routers = {
@@ -38,6 +39,8 @@ class Platform {
     this.server = express();
 
     if (config.environment == 'development') {
+      const HttpProxy = require('http-proxy');
+
       // When in development fire up a second server as a simple proxy
       // to simulate CORS requests for stuff like playground
       this.proxy = express();
@@ -53,12 +56,14 @@ class Platform {
       });
     }
 
+    this.server.use(compression());
+    this.server.use(defaultCachingStrategy);
     this._enableCors();
 
     this._check();
     this._registerRouters();
 
-    this.server.listen(config.hosts.platform.port, () => {
+    this.server.listen(config.hosts.platform.port || 8080, () => {
       signale.success(`amp.dev available on ${host}!`);
     });
   }

@@ -19,7 +19,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 2. 使用 amp-ad 扩展组件
 
-amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[开发概览](https://github.com/ampproject/amphtml/tree/master/ads#overview)或转到[开发者指南](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)了解如何添加对 amp-ad 扩展组件的支持。另外，您可能会发现这些[集成指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}})比较有用，具体取决于贵公司提供的广告技术。
+amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[开发概览](https://github.com/ampproject/amphtml/tree/master/ads#overview)或转到[开发者指南](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)了解如何添加对 amp-ad 扩展组件的支持。另外，您可能会发现这些[集成指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/ad-integration-guide.md', locale=doc.locale).url.path}})比较有用，具体取决于贵公司提供的广告技术。
 
 目前已有超过 90 家广告技术提供商添加了对广告相关功能（如 amp-ad）的支持。敬请查看广告网络 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/2299)。
 

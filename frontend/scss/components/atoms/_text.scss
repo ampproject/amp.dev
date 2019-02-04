@@ -35,23 +35,23 @@ TODO: mono (inline, block)
 }
 
 @mixin txt-lrg {
-  font-size: 1.125em; //18px
+  font-size: 1.125rem; //18px
 }
 
 @mixin txt-1 {
-	font-size: 1em; //16px
+	font-size: 1rem; //16px
 }
 
 @mixin txt-2 {
-	font-size: 0.875em; //14px
+	font-size: 0.875rem; //14px
 }
 
 @mixin txt-3 {
-	font-size: 0.8125em; //13px
+	font-size: 0.8125rem; //13px
 }
 
 @mixin txt-4 {
-	font-size: 0.625em; //10px
+	font-size: 0.625rem; //10px
 }
 
 @mixin txt-font-accent {
@@ -81,7 +81,7 @@ TODO: mono (inline, block)
 	padding: 2px 4px;
 	font-weight: bold;
 	font-family: 'Inconsolata', monospace;
-	word-break: break-word;
+	word-break: normal;
 	color: color('black');
 	background-color: #eee;
 }

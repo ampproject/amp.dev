@@ -5,9 +5,9 @@ toc: true
 
 
 
-AMP ストーリーのページは、`<amp-story-page>` コンポーネントで表します。`<amp-story>` 内には 1 つ以上の `<amp-story-page>` コンポーネントを含めることができ、この `<amp-story-page>` コンポーネントにストーリーの個別の画面を格納します。ドキュメントの順序で 1 番目に指定したページが、ストーリーで最初に表示されるページとなります。
+AMP ストーリーのページは、`<amp-story-page>` コンポーネントで表します。[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 内には 1 つ以上の `<amp-story-page>` コンポーネントを含めることができ、この `<amp-story-page>` コンポーネントにストーリーの個別の画面を格納します。ドキュメントの順序で 1 番目に指定したページが、ストーリーで最初に表示されるページとなります。
 
-ページを作成するには、`amp-story` の子要素として `<amp-story-page>` を**追加**します。ページには固有の ID を**割り当て**ます。ここでは、最初のページ（カバーページ）に、固有の ID `cover` を割り当てます。
+ページを作成するには、[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) の子要素として `<amp-story-page>` を**追加**します。ページには固有の ID を**割り当て**ます。ここでは、最初のページ（カバーページ）に、固有の ID `cover` を割り当てます。
 
 ```html hl_lines="6 7"
 <amp-story standalone
@@ -36,7 +36,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 
 ではまず、カバーページに 1 番目のレイヤを追加します。このレイヤには、画面全体に表示する画像を含めます。
 
-レイヤを作成するには、`<amp-story-page>` の子要素として `<amp-story-grid-layer>` を追加します。画像を画面全体に表示したいので、`amp-story-grid-layer` に `template="fill"` 属性を指定します。レイヤ内には、`<amp-image>` 要素を追加して `cover.jpg` ファイルを指定します。画像のサイズは 720 x 1280 ピクセルとし、レスポンシブにするため `layout="responsive"`と指定します。このレイヤは次のようになります。
+レイヤを作成するには、`<amp-story-page>` の子要素として `<amp-story-grid-layer>` を追加します。画像を画面全体に表示したいので、`amp-story-grid-layer` に `template="fill"` 属性を指定します。レイヤ内には、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素を追加して `cover.jpg` ファイルを指定します。画像のサイズは 720 x 1280 ピクセルとし、レスポンシブにするため `layout="responsive"`と指定します。このレイヤは次のようになります。
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
@@ -78,7 +78,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
-    <td>   
+    <td>
     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
     </td>
 </tr>

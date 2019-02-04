@@ -1,16 +1,13 @@
 ---
+formats:
+  - websites
+  - stories
 $title: Make your pages discoverable
 $titles:
   teaser: Make your pages discoverable
 $order: 3
 
 toc: true
-
-formats:
-  - websites
-  - email
-  - stories
-  - ads
 
 teaser:
   icon: discover

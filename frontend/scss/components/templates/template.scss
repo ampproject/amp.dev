@@ -33,11 +33,11 @@
     position: relative;
     max-width: 100%;
 
-    @media screen and (min-width: 768px){
+    @media (min-width: 768px){
       grid-column: 3 / -3;
     }
 
-    @media screen and (min-width: 1024px){
+    @media (min-width: 1024px){
       grid-column: 7 / 19;
     }
   }
@@ -45,7 +45,7 @@
   .#{utility('stage')} {
     padding-bottom: 70vw;
 
-    @media screen and (min-width: 768px ){
+    @media (min-width: 768px ){
       padding-bottom: 5vw;
     }
   }
@@ -55,7 +55,7 @@
     &-content {
       grid-column: 3 / 13;
 
-      @media screen and (min-width: 1024px ){
+      @media (min-width: 1024px ){
         grid-column: 3 / 12;
       }
 
@@ -72,7 +72,7 @@
   }
 
   &.#{utility('content')} {
-    @media screen and (min-width: 768px ){
+    @media (min-width: 768px ){
       grid-column: 7 / 19;
     }
   }
@@ -82,11 +82,11 @@
     width: 100%;
     margin-bottom: 7em;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-bottom: calc(12.5em + 7em);
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       margin-bottom: calc(12.5em + 8vw);
     }
 
@@ -96,7 +96,7 @@
       grid-gap: 30px;
       margin: 0 40px;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         grid-template-columns: repeat(12, 1fr);
         grid-auto-flow: dense;
         margin: 0;
@@ -107,13 +107,13 @@
         grid-row: auto;
         margin: 0;
 
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           grid-column: span 4;
           grid-row: span 6;
         }
 
         &-square {
-          @media screen and (min-width: 768px) {
+          @media (min-width: 768px) {
             grid-row: span 5;
           }
         }

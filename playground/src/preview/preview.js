@@ -54,10 +54,11 @@ class Preview {
   }
 
   initDimensionFromParamsOrUseDefault(runtime) {
-    const label = params.get(PARAM_MODE) || runtime.preview.default;
-    const newDimension = this.findDimensionByLabel(label);
+    let label = params.get(PARAM_MODE);
+    let newDimension = this.findDimensionByLabel(label);
     if (!newDimension) {
-      return;
+      label = runtime.preview.default;
+      newDimension = this.findDimensionByLabel(runtime.preview.default);
     }
     this.dimension = newDimension;
     if (label === 'Custom') {
@@ -72,7 +73,10 @@ class Preview {
   }
 
   findDimensionByLabel(label) {
-    return this.dimensions.find((d) => d.label === label);
+    if (!label) {
+      return null;
+    }
+    return this.dimensions.find((d) => d.label.toLowerCase() === label.toLowerCase());
   }
 
   updateParams() {
@@ -113,7 +117,7 @@ class Preview {
 
   createPreviewSelect() {
     const select = this.doc.createElement('select');
-    select.setAttribute('class', 'caret');
+    select.setAttribute('class', 'caret-right');
     select.setAttribute('id', 'preview-size');
     select.setAttribute('label', 'select preview size');
     select.addEventListener('change', () => {
@@ -128,15 +132,15 @@ class Preview {
     const div = this.doc.createElement('div');
     div.setAttribute('id', 'preview-custom-dimension');
     div.appendChild(
-        this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), (width) => {
-          this.dimension.width = width;
-        })
+      this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), (width) => {
+        this.dimension.width = width;
+      })
     );
     div.appendChild(this.doc.createTextNode('✕'));
     div.appendChild(
-        this.createSizeInput(PARAM_HEIGHT, params.get(PARAM_HEIGHT, 250), (height) => {
-          this.dimension.height = height;
-        })
+      this.createSizeInput(PARAM_HEIGHT, params.get(PARAM_HEIGHT, 250), (height) => {
+        this.dimension.height = height;
+      })
     );
     return div;
   }
@@ -231,7 +235,7 @@ class Preview {
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
       const oldIframes = [].slice.call(this.previewContainer.querySelectorAll('iframe'))
-          .filter((e) => e !== this.previewIframe);
+        .filter((e) => e !== this.previewIframe);
       oldIframes.forEach((e) => {
         e.classList.add('fadeout');
       });

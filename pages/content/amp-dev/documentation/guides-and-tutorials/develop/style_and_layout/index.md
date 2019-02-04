@@ -1,9 +1,17 @@
 ---
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 $path: /documentation/guides-and-tutorials/develop/style_and_layout/style_and_layout.html
 $title: Style & layout
 $order: 0
 $hidden: true
 toc: true
+author: pbakaus
+contributors:
+  - Meggin
 ---
 
 

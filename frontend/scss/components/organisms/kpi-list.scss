@@ -17,8 +17,8 @@
 
 .#{utility('kpi')} {
   margin-bottom: 2em;
-  
-  @media screen and (min-width: 768px) {
+
+  @media (min-width: 768px) {
     margin-bottom: 8vw;
   }
 
@@ -26,8 +26,8 @@
     &.#{utility('container')} {
       flex-wrap: nowrap;
       padding: 0;
-      
-      @media screen and (min-width: 768px) {
+
+      @media (min-width: 768px) {
         padding: 0 30px;
       }
     }
@@ -42,7 +42,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   width: 100%;
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     overflow: hidden;
   }
 }

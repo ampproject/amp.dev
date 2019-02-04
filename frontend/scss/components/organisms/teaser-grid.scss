@@ -16,11 +16,11 @@
 
 .#{utility('teaser-grid')} {
   max-width: 100%;
-  @media screen and (min-width: 768px){
+  @media (min-width: 768px){
     grid-column: 1 / -1;
   }
 
-  @media screen and (min-width: 1024px){
+  @media (min-width: 1024px){
     grid-column: 4 / 22;
   }
 }
@@ -29,12 +29,6 @@
   width: 100%;
   margin-bottom: 30px;
 
-  // @media screen and (min-width: 768px) {
-  //   display: grid;
-  //   grid-gap: 30px;
-  //   grid-template-columns: repeat(24, 1fr);
-  // }
-  
   & > h1,
   & > h2,
   & > h3,
@@ -43,7 +37,7 @@
   & > h6 {
     grid-column: 1 / 14;
   }
-  
+
   .#{molecule('lnk')} {
     grid-column: 16 / 22;
   }
@@ -60,7 +54,7 @@
     padding: 20px 0;
     margin: 0 -20px;
 
-    @media screen and (min-width: 575px) {
+    @media (min-width: 575px) {
       overflow: visible;
       width: 100%;
       display: grid;
@@ -72,21 +66,21 @@
       margin: 0;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
     }
 
     &-count-4,
     &-count-8,
     &-count-16 {
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         grid-template-columns: repeat(4, 1fr);
       }
-      
+
       .#{molecule('teaser')} {
         &-headline {
           @include hl-h6;

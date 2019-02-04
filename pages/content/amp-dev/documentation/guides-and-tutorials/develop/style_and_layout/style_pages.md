@@ -2,6 +2,17 @@
 $title: Supported CSS
 $order: 0
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
+author: Meggin
+contributors:
+  - pbakaus
+  - crystalfaith
+  - bpaduch
+  - choumx
 ---
 
 
