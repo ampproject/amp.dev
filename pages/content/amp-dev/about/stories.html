@@ -1,6 +1,16 @@
 ---
 $title: AMP Stories
 $view: /views/overview/what-is-amp.j2
+kpis:
+  - figure: +63%
+    description: Clickthrough rate on ads in AMP Stories
+    success_story: !g.doc /content/amp-dev/about/success-stories/wired.yaml
+  - figure: +63%
+    description: Clickthrough rate on ads in AMP Stories
+    success_story: !g.doc /content/amp-dev/about/success-stories/wired.yaml
+  - figure: +63%
+    description: Clickthrough rate on ads in AMP Stories
+    success_story: !g.doc /content/amp-dev/about/success-stories/wired.yaml
 ---
 
 <section class="ap--stage ap--container-fluid">
@@ -42,29 +52,11 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-<section class="ap--kpi">
-  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ap-o-kpi-list ap--container">
-    <div class="ap-m-kpi ap-m-kpi-stories">
-      <div class="ap-m-kpi-content">
-        <span class="ap-m-kpi-number">3-4x</span>
-        <span class="ap-m-kpi-text">faster load times</span>
-      </div>
-    </div>
-    <div class="ap-m-kpi ap-m-kpi-stories">
-        <div class="ap-m-kpi-content">
-          <span class="ap-m-kpi-number">3-4x</span>
-          <span class="ap-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-    <div class="ap-m-kpi ap-m-kpi-stories">
-        <div class="ap-m-kpi-content">
-          <span class="ap-m-kpi-number">3-4x</span>
-          <span class="ap-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-  </div>
-</section>
+{% with %}
+{% set kpis = doc.kpis %}
+{% set format = 'stories' %}
+{% include 'views/partials/kpis.j2' %}
+{% endwith %}
 
 <section class="ap--quote ap--container">
   <div class="ap-m-quote">

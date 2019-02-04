@@ -1,6 +1,16 @@
 ---
 $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
+kpis:
+  - figure: 23%
+    description: Increase in returning users from mobile search
+    success_story: !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
+  - figure: 6x
+    description: More overall traffic
+    success_story: !g.doc /content/amp-dev/about/success-stories/indiatoday.yaml
+  - figure: 3x
+    description: Faster page load time
+    success_story: !g.doc /content/amp-dev/about/success-stories/gizmodo.yaml
 ---
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
@@ -49,29 +59,11 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-<section class="ap--kpi">
-  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ap-o-kpi-list ap--container">
-    <div class="ap-m-kpi ap-m-kpi-websites">
-      <div class="ap-m-kpi-content">
-        <span class="ap-m-kpi-number">3-4x</span>
-        <span class="ap-m-kpi-text">faster load times</span>
-      </div>
-    </div>
-    <div class="ap-m-kpi ap-m-kpi-websites">
-        <div class="ap-m-kpi-content">
-          <span class="ap-m-kpi-number">3-4x</span>
-          <span class="ap-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-    <div class="ap-m-kpi ap-m-kpi-websites">
-        <div class="ap-m-kpi-content">
-          <span class="ap-m-kpi-number">3-4x</span>
-          <span class="ap-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-  </div>
-</section>
+{% with %}
+{% set kpis = doc.kpis %}
+{% set format = 'websites' %}
+{% include 'views/partials/kpis.j2' %}
+{% endwith %}
 
 <section class="ap--case-band">
   <div class="ap--container-fluid">

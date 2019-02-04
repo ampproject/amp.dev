@@ -43,30 +43,11 @@ $view: /views/overview/what-is-amp.j2
   </div>
 </section>
 
-
-<section class="ap--kpi">
-  {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ap-o-kpi-list ap--container">
-    <div class="ap-m-kpi ap-m-kpi-e-mails">
-      <div class="ap-m-kpi-content">
-        <span class="ap-m-kpi-number">3-4x</span>
-        <span class="ap-m-kpi-text">faster load times</span>
-      </div>
-    </div>
-    <div class="ap-m-kpi ap-m-kpi-e-mails">
-        <div class="ap-m-kpi-content">
-          <span class="ap-m-kpi-number">3-4x</span>
-          <span class="ap-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-    <div class="ap-m-kpi ap-m-kpi-e-mails">
-        <div class="ap-m-kpi-content">
-          <span class="ap-m-kpi-number">3-4x</span>
-          <span class="ap-m-kpi-text">faster load times</span>
-        </div>
-    </div>
-  </div>
-</section>
+{% with %}
+{% set kpis = doc.kpis %}
+{% set format = 'email' %}
+{% include 'views/partials/kpis.j2' %}
+{% endwith %}
 
 <section class="ap--quote ap--container">
   <div class="ap-m-quote">
