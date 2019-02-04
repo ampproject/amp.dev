@@ -1,7 +1,7 @@
 ---
 $title: Integrating your analytics tool with AMP
-$order: 1
 toc: true
+$order: 1
 formats:
   - websites
   - stories

@@ -1,5 +1,6 @@
 ---
 $title: Getting Support
+toc: true
 $order: 1
 formats:
   - websites

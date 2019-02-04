@@ -1,5 +1,6 @@
 ---
 $title: Governance
+toc: true
 $order: 2
 formats:
   - websites

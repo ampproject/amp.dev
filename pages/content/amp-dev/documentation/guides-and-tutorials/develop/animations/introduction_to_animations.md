@@ -5,6 +5,7 @@ toc: true
 formats:
   - websites
   - ads
+author: CrystalOnScript
 ---
 
 For animations that can't be driven by [adding and removing classes](/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.html), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work. 
