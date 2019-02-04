@@ -1,4 +1,4 @@
-$title@: What is AMP?
+$title@: About
 $path: /about/{base}.html
 $view: /views/default.j2
 $localization:
