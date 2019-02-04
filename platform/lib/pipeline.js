@@ -310,7 +310,12 @@ class Pipeline {
                 log.warn(`Page has a manual variant for format ${format}`);
                 continue;
               } else {
-                const filteredPage = new FilteredPage(format, html);
+                try {
+                  const filteredPage = new FilteredPage(format, html);
+                } catch(e) {
+                  log.warn(`Page is not available in format ${format}`);
+                  continue;
+                }
 
                 const variantPage = page.clone();
                 variantPage.contents = Buffer.from(filteredPage.content);
