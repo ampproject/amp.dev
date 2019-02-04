@@ -267,7 +267,7 @@ class Pipeline {
    * @return {Promise}
    */
   createFilteredPages() {
-    const log = new Signale({'interactive': false, 'scope': 'Filter pages'});
+    const log = new Signale({'interactive': true, 'scope': 'Filter pages'});
     log.await('Filtering pages by formats ...');
 
     return new Promise((resolve, reject) => {
@@ -288,9 +288,9 @@ class Pipeline {
             let manualFilter = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
             manualFilter = manualFilter ? manualFilter[1] : null;
             if (manualFilter && FORMATS.indexOf(manualFilter) !== -1) {
-              log.warn(`${page.relative} is already a manual variant for ${manualFilter}.`);
+              log.info(`${page.relative} is already a manual variant for ${manualFilter}.`);
 
-              const filteredPage = new FilteredPage(manualFilter, html);
+              const filteredPage = new FilteredPage(manualFilter, html, true);
               page.contents = Buffer.from(filteredPage.content);
 
               this.push(page);
@@ -310,19 +310,22 @@ class Pipeline {
                 log.warn(`Page has a manual variant for format ${format}`);
                 continue;
               } else {
+                let filteredPage = null;
+
                 try {
-                  const filteredPage = new FilteredPage(format, html);
+                  filteredPage = new FilteredPage(format, html);
                 } catch(e) {
                   log.warn(`Page is not available in format ${format}`);
-                  continue;
                 }
 
-                const variantPage = page.clone();
-                variantPage.contents = Buffer.from(filteredPage.content);
-                variantPage.extname = `.${format}.html`;
-                this.push(variantPage);
+                if (filteredPage) {
+                  const variantPage = page.clone();
+                  variantPage.contents = Buffer.from(filteredPage.content);
+                  variantPage.extname = `.${format}.html`;
+                  this.push(variantPage);
 
-                log.success(`Created variant for format ${format}`);
+                  log.success(`Created variant for format ${format}`);
+                }
               }
             }
 

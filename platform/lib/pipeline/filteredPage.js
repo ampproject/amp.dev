@@ -46,12 +46,19 @@ function isFilterableRoute(route) {
 }
 
 class FilteredPage {
-  constructor(format, content) {
+
+  /**
+   * [constructor description]
+   * @param {String} format  One of FORMATS
+   * @param {String} content A valid HTML document string
+   * @param {Boolean} force  Flag if format should be validated
+   */
+  constructor(format, content, force) {
     this._format = format;
     this._content = content;
 
     this._dom = cheerio.load(this._content);
-    if (!this._isAvailable()) {
+    if (!this._isAvailable() && !force) {
       throw new Error(`This page is not available for format ${this._format}`);
     } else {
       this._removeHiddenElements();
@@ -67,7 +74,8 @@ class FilteredPage {
    * @return {Boolean}
    */
   _isAvailable() {
-    return this._dom('body').hasClass(`ap--${this._format}`);
+    let body = this._dom('body');
+    return body.hasClass(`ap--${this._format}`) || !!body.attr('class');
   }
 
   /**
