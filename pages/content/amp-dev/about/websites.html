@@ -24,6 +24,9 @@ kpis:
 
           <h2 class="ap-o-stage-content-subline">Compelling, smooth and instant</h2>
           <h1 class="ap-o-stage-content-headline">Easily create user first websites with AMP.</h1>
+
+          {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}" class="ap-o-stage-content-button ap-a-btn">Get started</a>
       </div>
     </div>
   </div>

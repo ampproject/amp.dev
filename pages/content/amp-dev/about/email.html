@@ -15,6 +15,9 @@ $view: /views/overview/what-is-amp.j2
 
           <h2 class="ap-o-stage-content-subline">AMP Email</h2>
           <h1 class="ap-o-stage-content-headline">Use AMP to send interactive, dynamic emails to your customers.</h1>
+
+          {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email/index.md', locale=doc.locale).url.path }}" class="ap-o-stage-content-button ap-a-btn">Get started</a>
       </div>
     </div>
   </div>
