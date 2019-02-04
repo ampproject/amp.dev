@@ -27,22 +27,22 @@ format_explainer:
     visual: views/partials/format-visuals/websites.j2
     headline: Use AMP to build great experiences for many web destinations.
     description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
-    url: /what-is-amp/websites.html
+    url: /about/websites.html
   - name: stories
     visual: views/partials/format-visuals/stories.j2
     headline: Use AMP to create visual stories on the web.
     description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
-    url: /what-is-amp/stories.html
+    url: /about/stories.html
   - name: ads
     visual: views/partials/format-visuals/ads.j2
     headline: Use AMP to build and serve lightning fast, safe ads to pages and stories.
     description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
-    url: /what-is-amp/ads.html
+    url: /about/ads.html
   - name: email
     visual: views/partials/format-visuals/email.j2
     headline: Use AMP to send interactive, dynamic emails to your customers.
     description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
-    url: /what-is-amp/email.html
+    url: /about/email.html
 
 sampler:
   - title: amp-accordion / 6
@@ -409,7 +409,7 @@ sampler:
         </blockquote>
         <p>Greg Manifold, Design Director of The Washington Post</p>
 
-        <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/washingtonpost.yaml').url.path }}" class="ap-m-lnk">
+        <a href="{{ g.doc('/content/amp-dev/about/success-stories/washingtonpost.yaml').url.path }}" class="ap-m-lnk">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
@@ -436,7 +436,7 @@ sampler:
       <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
         {% for n in range(0, 4) %}
         {% with %}
-        {% set teaser_doc = g.doc('/content/amp-dev/what-is-amp/success-stories/bmw-com.yaml') %}
+        {% set teaser_doc = g.doc('/content/amp-dev/about/success-stories/bmw-com.yaml') %}
         {% include '/views/partials/teaser.j2' %}
         {% endwith %}
         {% endfor %}
@@ -447,7 +447,7 @@ sampler:
       <h2>Explore AMP<br/> success stories</h2>
       <p>Don't take our word for it - read case studies from your industry and competitors and see how AMP gives them a competitive edge.</p>
 
-      <a href="{{ g.doc('/content/amp-dev/what-is-amp/success-stories/index.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
+      <a href="{{ g.doc('/content/amp-dev/about/success-stories/index.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
