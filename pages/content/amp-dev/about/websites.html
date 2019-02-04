@@ -210,16 +210,7 @@ kpis:
 <section class="ap--container-fluid ap-m-biggy">
   <div class="ap-m-biggy-aside">
       {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-      {% set code_snippet = '      <html ⚡>
-        <head>
-          <meta charset="utf-8">
-          <link rel="canonical" href="hello-world.html">
-          <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-          <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1></style>
-          <script async src="https://cdn.ampproject.org/v0.js"></script>
-        </head>
-        <body>Hello World!</body>
-      </html>' %}
+      {% set code_snippet = g.doc('/content/shared/data/hello-world.html').content %}
       {% set markdown = doc.pod.markdown %}
       {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
     </div>
