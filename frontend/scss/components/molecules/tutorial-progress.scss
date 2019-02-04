@@ -17,10 +17,9 @@
   position: absolute;
   top: 0;
   left: 4px;
-  /* The actual height of the link plus it's padding to reach the next one */
   height: 100%;
   width: 2px;
-  background-color: color('oslo-gray');
+  background-color: color('alto');
 
   &-finished {
     background-color: color('malachite');
