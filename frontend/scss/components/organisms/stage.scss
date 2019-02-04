@@ -109,6 +109,10 @@
         @include txt-lrg;
       }
     }
+
+    &-button {
+      margin-top: 20px;
+    }
   }
 
   &-websites, &-ads {
