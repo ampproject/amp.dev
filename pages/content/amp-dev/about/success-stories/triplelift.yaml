@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Triplelift and Cloudflare boost Time Inc.’s revenue with AMP Ads
+  layout: mobile
   subline: MAY 5, 2017
   devices:
 
@@ -30,13 +31,13 @@ stage:
 
 kpis:
   - value: 13%
-    text: increase in click-through rate (ctr)
+    text: Increase in click-through rate (CTR)
 
   - value: 13%
-    text: increase in revenue
+    text: Increase in revenue
 
   - value: 6X
-    text: increase in ad-load speed
+    text: Increase in ad-load speed
 
 contents:
   - layout: text

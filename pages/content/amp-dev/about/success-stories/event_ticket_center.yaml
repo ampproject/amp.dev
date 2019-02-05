@@ -18,6 +18,7 @@ teaser:
 
 stage:
   headline: Event Tickets Center significantly boosts conversions with AMP
+  layout: mobile
   subline: DEC 20, 2017
   devices:
 
@@ -29,13 +30,13 @@ stage:
 
 kpis:
   - value: 20%
-    text: lift in conversion rate over responsive site
+    text: Lift in conversion rate over responsive site
 
   - value: 10%
-    text: lower bounce rate
+    text: Lower bounce rate
 
   - value: 13%
-    text: longer time on site
+    text: Longer time on site
 
 contents:
   - layout: text

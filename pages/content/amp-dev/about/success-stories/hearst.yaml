@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Hearst integrates key partner and product solutions on AMP
+  layout: mobile
   subline: JANUARY 24, 2017
   devices:
 
@@ -30,13 +31,13 @@ stage:
 
 kpis:
   - value: 29%
-    text: increase in mobile viewability
+    text: Increase in mobile viewability
 
   - value: 45%
-    text: increase in ctr on ads
+    text: Increase in CTR on ads
 
   - value: +1M
-    text: amp pages published
+    text: AMP pages published
 
 contents:
 

@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: India Today delights readers and boosts revenue with AMP
+  layout: mobile
   subline: FEB 13, 2018
   devices:
 
@@ -30,13 +31,13 @@ stage:
 
 kpis:
   - value: 23%
-    text: higher revenue per page on amp vs. non-amp
+    text: Higher revenue per page on AMP vs. non-AMP
 
   - value: 2X
-    text: increase in ctr
+    text: Increase in CTR
 
   - value: 3X
-    text: increase in ad viewability rates
+    text: Increase in ad viewability rates
 
 contents:
   - layout: text

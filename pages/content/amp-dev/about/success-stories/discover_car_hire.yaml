@@ -18,6 +18,7 @@ teaser:
 
 stage:
   headline: DiscoverCarHire.com drives conversions with faster mobile page load times via AMP
+  layout: mobile
   subline: SEP 20, 2018
   devices:
     - image_src: '/static/img/success-stories/discover_car/amp_discover_car_1.jpg'
@@ -28,13 +29,13 @@ stage:
 
 kpis:
   - value: 20%
-    text: increase in roi from mobile
+    text: Increase in ROI from mobile
 
   - value: 29%
-    text: more conversions from mobile
+    text: More conversions from mobile
 
   - value: 73%
-    text: mobile organic traffic
+    text: Mobile organic traffic
 
 contents:
 

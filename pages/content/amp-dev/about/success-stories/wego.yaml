@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Wego.com increases mobile conversion rates 95% with AMP
+  layout: mobile
   subline: MAY 11, 2017
   devices:
 
@@ -30,16 +31,16 @@ stage:
 
 kpis:
   - value: 10X
-    text: increase in page speed
+    text: Increase in page speed
 
   - value: 95%
-    text: increase in partner conversion rates
+    text: Increase in partner conversion rates
 
   - value: 49%
-    text: increase in search-to-conversion rates
+    text: Increase in search-to-conversion rates
 
   - value: 3X
-    text: increase in ad ctrs
+    text: Increase in ad CTRs
 
 contents:
 

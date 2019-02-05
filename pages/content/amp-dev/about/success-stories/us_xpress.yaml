@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress
+  layout: mobile
   subline: DEC 20, 2017
   devices:
 
@@ -30,13 +31,13 @@ stage:
 
 kpis:
   - value: 5X
-    text: increase in page load speed
+    text: Increase in page load speed
 
   - value: $1M
-    text: yearly projected savings
+    text: Yearly projected savings
 
   - value: 62%
-    text: increase in applications
+    text: Increase in applications
 
 contents:
   - layout: text

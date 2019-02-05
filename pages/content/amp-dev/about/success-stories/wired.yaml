@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Wired AMP’s its 20+ year archive to meet audiences online
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
     - image_src: '/static/img/success-stories/wired/amp_wired_1.jpg'
@@ -29,13 +30,13 @@ stage:
 
 kpis:
   - value: 25%
-    text: increase in ctr from search results
+    text: Increase in CTR from search results
 
   - value: +63%
-    text: in ctr on ads in amp stories
+    text: In CTR on ads in AMP Stories
 
-  - value: 100k
-    text: stories amp’ed from 20+ year archive
+  - value: 100K
+    text: Stories AMP’ed from 20+ year archive
 
 contents:
 

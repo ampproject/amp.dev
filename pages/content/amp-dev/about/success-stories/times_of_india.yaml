@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP
+  layout: mobile
   subline: NOV 5, 2018
   devices:
     - image_src: '/static/img/success-stories/times_of_india/amp_toi_1.jpg'
@@ -28,14 +29,14 @@ stage:
       alt: Times of India
 
 kpis:
-  - value: 6x
-    text: more overall traffic
+  - value: 6X
+    text: More overall traffic
 
-  - value: 1.5x
-    text: more overall revenue
+  - value: 1.5X
+    text: More overall revenue
 
-  - value: 3.6x
-    text: improved load time on slow networks
+  - value: 3.6X
+    text: Improved load time on slow networks
 
 contents:
 

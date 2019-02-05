@@ -36,7 +36,9 @@ const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
   '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md'
+  '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md':
+  '/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md',
 };
 /* eslint-enable max-len */
 

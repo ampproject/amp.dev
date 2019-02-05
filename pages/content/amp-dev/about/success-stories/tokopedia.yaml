@@ -11,14 +11,15 @@ teaser:
     alt: Tokopedia
   logo:
     src: '/static/img/success-stories/tokopedia/tokopedia_logo.png'
-    width: 100
-    height: 100
+    width: 600
+    height: 200
     alt: Tokopedia
   text: Tokopedia boosts mobile performance with AMP and PWA
 
 
 stage:
   headline: Tokopedia boosts mobile performance with AMP and PWA
+  layout: mobile
   subline: SEP 30, 2018
   devices:
     - image_src: '/static/img/success-stories/tokopedia/amp_tokopedia_1.jpg'
@@ -29,13 +30,13 @@ stage:
 
 kpis:
   - value: 5x
-    text: higher mobile conversion rates
+    text: Higher mobile conversion rates
 
   - value: 60%
-    text: lower bounce rate
+    text: Lower bounce rate
 
   - value: 65%
-    text: faster load time
+    text: Faster load time
 
 contents:
 

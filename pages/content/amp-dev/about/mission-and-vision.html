@@ -11,6 +11,7 @@ $view: /views/overview/custom-content.j2
     <p>Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it.</p>
   </div>
 
+  {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
   <div class="ap-m-copy ap-m-copy-left-small">
     <h3>Vision</h3>
     <p>
@@ -18,7 +19,7 @@ $view: /views/overview/custom-content.j2
     </p>
 
   </div>
-    
+
   <div class="ap-m-copy ap-m-copy-right-small">
     <h3>Mission</h3>
     <p>Provide a user-first format for web content, supporting the long-term success of every web publisher, merchant, and advertiser.</p>
@@ -34,4 +35,4 @@ $view: /views/overview/custom-content.j2
       <span class="ap-m-lnk-text">Tutorials</span>
     </a>
   </div>
-</div> 
+</div>

@@ -18,6 +18,7 @@ teaser:
 
 stage:
   headline: Eski.mobi serves businesses going mobile with AMP
+  layout: mobile
   subline: JAN 23, 2018
   devices:
 
@@ -29,13 +30,13 @@ stage:
 
 kpis:
   - value: 29%
-    text: higher ctr (alpinabook)
+    text: Higher CTR (AlpinaBook)
 
   - value: 20%
-    text: lower bounce rate (monetnik)
+    text: Lower bounce rate (Monetnik)
 
   - value: 39-208%
-    text: more conversions (various)
+    text: More conversions (various)
 
 contents:
   - layout: text
