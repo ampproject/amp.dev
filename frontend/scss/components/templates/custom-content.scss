@@ -21,7 +21,9 @@
 @import '../templates/_default.scss';
 
 .#{template('custom-content')} {
-  background: color('whisper');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d5e6f2"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+  background-repeat: no-repeat;
+  
 
   section {
     margin-bottom: 50px;
