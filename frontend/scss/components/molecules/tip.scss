@@ -66,6 +66,10 @@ $borderSize: 5px;
       margin-bottom: 0;
       @include txt-3;
     }
+
+    ul {
+      margin-bottom: 1.5em;
+    }
   }
 
   &-icon {
