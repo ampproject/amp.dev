@@ -1,5 +1,7 @@
 $title: Jagran New Media
 $category: publishers
+$date: 2018-09-12
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Jagran New Media boosts traffic by 115% and revenue by 4.5X by expanding AMP strategy
+  layout: mobile
   subline: SEP 12, 2018
   devices:
     - image_src: '/static/img/success-stories/jagran/amp_jagran_1.jpg'
@@ -29,13 +32,13 @@ stage:
 
 kpis:
   - value: 4.5X
-    text: more revenue on amp pages
+    text: More revenue on AMP pages
 
   - value: 15%
-    text: higher revenue on mobile pages
+    text: Higher revenue on mobile pages
 
   - value: 115%
-    text: more amp pageviews
+    text: More AMP pageviews
 
 contents:
 

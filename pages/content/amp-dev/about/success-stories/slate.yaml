@@ -1,5 +1,7 @@
 $title: Slate
 $category: publishers
+$date: 2016-10-07
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Slate gets efficient with AMP
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
 
@@ -30,13 +33,13 @@ stage:
 
 kpis:
   - value: 44%
-    text: increase in monthly unique visitors
+    text: Increase in monthly unique visitors
 
   - value: 73%
-    text: increase in visits per monthly unique visitor
+    text: Increase in visits per monthly unique visitor
 
-  - value: ~$85k
-    text: saved in development resources/yr
+  - value: ~$85K
+    text: Saved in development resources p.a.
 
 contents:
 

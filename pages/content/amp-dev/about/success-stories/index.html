@@ -23,11 +23,20 @@ $localization:
     <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
   </div>
 
+  <amp-state id="activeFilter">
+      <script type="application/json">
+        {
+          "chosenFilter": "none"
+        }
+      </script>
+    </amp-state>
+
   {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
   <div class="ap-o-filter-bubbles-list">
     <button class="ap-m-filter-bubble filtered"
       [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-      on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
+      on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+      name="all">
       All
     </button>
     {% for category, stories in categories %}

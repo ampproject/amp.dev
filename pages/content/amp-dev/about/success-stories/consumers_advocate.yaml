@@ -1,5 +1,6 @@
 $title: ConsumersAdvocate.org
 $category: publishers
+$date: 2017-12-20
 formats:
   - websites
 
@@ -18,6 +19,7 @@ teaser:
 
 stage:
   headline: ConsumersAdvocate.org boosts site performance with AMP
+  layout: mobile
   subline: DEC 20, 2017
   devices:
 
@@ -29,13 +31,13 @@ stage:
 
 kpis:
   - value: 20-30%
-    text: more user time on pages
+    text: More user time on pages
 
   - value: 15-30%
-    text: lower bounce rate
+    text: Lower bounce rate
 
   - value: 5-10%
-    text: higher conversion rate on adwords
+    text: Higher conversion rate on AdWords
 
 contents:
   - layout: text

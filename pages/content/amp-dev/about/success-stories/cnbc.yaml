@@ -1,5 +1,6 @@
 $title: CNBC
 $category: publishers
+$date: 2017-05-22
 formats:
   - websites
 
@@ -19,6 +20,7 @@ teaser:
 stage:
   headline: CNBC sees mobile speed and engagement gains with AMP
   subline: MAY 22, 2017
+  layout: mobile
   devices:
 
     - image_src: '/static/img/success-stories/cnbc/amp_cnbc_1.jpg'
@@ -29,10 +31,10 @@ stage:
 
 kpis:
   - value: 22%
-    text: increase in mobile search users returning to cnbc.com in 7 days
+    text: Increase in mobile search users returning to CNBC.com in 7 days
 
   - value: 4X
-    text: decrease in mobile page load time
+    text: Decrease in mobile page load time
 
 contents:
   - layout: text

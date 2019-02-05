@@ -3,7 +3,7 @@
 @import '../../mixins';
 @import '../../variables';
 
-$showTime: 4s;
+$showTime: 2s;
 
 .#{molecule('rolling-formats')} {
   display: inline-block;

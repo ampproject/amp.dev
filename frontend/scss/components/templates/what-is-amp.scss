@@ -102,34 +102,13 @@
     grid-column: 3 / 19;
     margin-top: 0;
     @include hl-xlrg;
-
   }
 
   .#{molecule('biggy')} {
-    margin-bottom: 7em;
-
-    @media (min-width: 768px) {
-      margin-bottom: 8vw;
-    }
-
-    &-main {
-      margin-top: auto;
-    }
-
+    align-items: end;
+    
     &-headline {
-      grid-column: 3 / 19;
-      margin: 0 0 0 30px;
-      @media (min-width: 768px) {
-        margin: 0;
-      }
+      margin-bottom: -.688rem;
     }
-
-    &-aside {
-      .#{molecule('code-snippet')} {
-        padding: 3em 0;
-        margin-bottom: 12px;
-      }
-    }
-
   }
 }

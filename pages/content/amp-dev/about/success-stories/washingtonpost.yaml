@@ -1,5 +1,7 @@
 $title: Washington Post
 $category: publishers
+$date: 2016-10-07
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: AMP helps the Washington Post increase returning users from mobile search by 23%
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
     - image_src: '/static/img/success-stories/washington_post/amp_thewashingtonpost.jpg'
@@ -29,13 +32,13 @@ stage:
 
 kpis:
   - value: 23%
-    text: increase in mobile search users who return within 7 days
+    text: Increase in mobile search users who return within 7 days
 
   - value: 88%
-    text: improvement in load time for amp content versus traditional mobile web
+    text: Improvement in load time for AMP content versus traditional mobile web
 
   - value: 1000+
-    text: articles the washington post publishes in amp html daily
+    text: Articles the Washington Post publishes in AMP HTML daily
 
 contents:
 
