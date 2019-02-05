@@ -34,5 +34,5 @@ ext:
           method: 'addCssFile'
         - name: 'icons'
           method: 'useIcon'
-- extensions.shortcodes.ShortcodesExtension
+- extensions.amp_dev.AmpDevExtension
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension
