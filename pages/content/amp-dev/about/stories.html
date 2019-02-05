@@ -11,6 +11,47 @@ kpis:
   - figure: +63%
     description: Clickthrough rate on ads in AMP Stories
     success_story: !g.doc /content/amp-dev/about/success-stories/wired.yaml
+stories:
+  - image: /static/img/stories/story-cnn.jpg
+    immage_alt@: The Missions Still Exploring Our Solar System
+    logo: /static/img/stories/logo-cnn.png
+    logo_alt@: CNN
+    url: https://www.cnn.com/ampstories/us/still-missing-cassini-heres-what-else-is-out-there
+  - image: /static/img/stories/story-hearst.jpg
+    immage_alt@: Apple Cider Vinegar is the Magic Potion You Need in Your Life
+    logo: /static/img/stories/logo-hearst.png
+    logo_alt@: Hearst
+    url: http://www.cosmopolitan.com/stamp/apple-cider-vinegar/
+  - image: /static/img/stories/story-mashable.jpg
+    immage_alt@: Black Panther
+    logo: /static/img/stories/logo-mashable.png
+    logo_alt@: Mashable
+    url: https://mashable.com/2017/10/24/reels-guide-to-black-panther.amp
+  - image: /static/img/stories/story-time.jpg
+    immage_alt@: Harry & Meghan A to Z
+    logo: /static/img/stories/logo-meredith.png
+    logo_alt@: Meredith
+    url: https://people.com/amp-stories/royal-a-to-z/
+  - image: /static/img/stories/story-mic.jpg
+    immage_alt@: The Art of an Organized Refrigerator
+    logo: /static/img/stories/logo-mic.png
+    logo_alt@: Mic
+    url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
+  - image: /static/img/stories/story-vox.jpg
+    image_alt@: How College Football Playoff Rankings Actually Work
+    logo: /static/img/stories/logo-vox.png
+    logo_alt@: Vox
+    url: https://www.sbnation.com/2018/2/12/16719476/college-football-playoff-rankings-explained
+  - image: /static/img/stories/story-wapo.jpg
+    immage_alt@: The Evolution of Trump's Wall
+    logo: /static/img/stories/logo-wapo.png
+    logo_alt@: Washington Post
+    url: https://www.washingtonpost.com/graphics/2018/national/amp-stories/border-wall/
+  - image: /static/img/stories/story-wired.jpg
+    immage_alt@: Space Photos of the Week
+    logo: /static/img/stories/logo-wired.png
+    logo_alt@: Wired
+    url: https://www.wired.com/amp-stories/space-photos-of-the-week-111817/
 ---
 
 <section class="ap--stage ap--container-fluid">
@@ -191,8 +232,8 @@ kpis:
 </section>
 
 <section class="ap--content">
-
     <div class="ap--container-fluid">
+
       <div class="ap-m-copy ap-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
         <h2>Images, videos and GIFs</h2>
         <p>AMP stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.</p>
@@ -208,7 +249,77 @@ kpis:
         <p>It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site.</p>
       </div>
 
-
     </div>
+</section>
 
+{% do doc.styles.addCssFile('css/components/organisms/story-carousel.css') %}
+<section class="ap--story-carousel ap--container-fluid">
+  
+  <div class="ap-m-copy ap-m-copy-center">
+    <h2>Check out AMP stories on the web</h2>
+  </div>
+
+  <div class="ap-o-story-carousel">
+    <amp-carousel
+      layout="fixed-height"
+      media="(min-width: 1024px)"
+      height="555"
+      type="carousel">
+      {% for story in doc.stories %}
+      <a
+        class="ap-o-story-carousel-slide"
+        href="{{story.url}}"
+        target="_blank">
+        <div class="ap-o-story-carousel-slide-image">
+          <amp-img
+            src="{{story.image}}"
+            width="282"
+            height="470"
+            alt="{{_(story.image_alt)}}">
+          </amp-img>
+        </div>
+        <div class="ap-o-story-carousel-slide-logo">
+          <amp-img
+            layout="responsive"
+            src="{{story.logo}}"
+            width="395"
+            height="45"
+            alt="{{_(story.logo_alt)}}">
+          </amp-img>
+        </div>
+      </a>
+      {% endfor %}
+    </amp-carousel>
+    
+    <amp-carousel
+      layout="fixed-height"
+      media="(max-width: 1023px)"
+      height="370"
+      type="carousel">
+      {% for story in doc.stories %}
+      <a
+        class="ap-o-story-carousel-slide"
+        href="{{story.url}}"
+        target="_blank">
+        <div class="ap-o-story-carousel-slide-image">
+          <amp-img
+            src="{{story.image}}"
+            width="171"
+            height="285"
+            alt="{{_(story.image_alt)}}">
+          </amp-img>
+        </div>
+        <div class="ap-o-story-carousel-slide-logo">
+          <amp-img
+            layout="responsive"
+            src="{{story.logo}}"
+            width="395"
+            height="45"
+            alt="{{_(story.logo_alt)}}">
+          </amp-img>
+        </div>
+      </a>
+      {% endfor %}
+    </amp-carousel>
+  </div>
 </section>
