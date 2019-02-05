@@ -1,9 +1,6 @@
 ---
 $title: 설정
-toc: true
 ---
-
-
 
 ## 기본 요건
 
@@ -32,7 +29,6 @@ git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 cd advanced-interactivity-in-amp
 npm install
 ```
-
 
 ## 3단계: 개발 서버 실행
 

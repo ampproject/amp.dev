@@ -215,7 +215,6 @@ Em seguida, faremos todas as imagens aparecerem lentamente. Insira `animate-in="
 </amp-img>
 ```
 
-
 Se você atualizar a página, todas as imagens aparecerão lentamente.  Isso é ótimo, mas quase não é possível ver o efeito porque todas as imagens aparecem ao mesmo tempo. Para melhorar o efeito visual, podemos alterar o tempo das animações.
 
 Vamos atrasar a entrada da primeira imagem para que ela apareça próximo de quando a animação do banner de texto terminar: por exemplo, 0,4s. As três imagens restantes podem aparecer 0,2s após a entrada da anterior. Adicione `animate-in-delay=""` a cada elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) com o valor de atraso adequado. Seu código será semelhante a este exemplo:

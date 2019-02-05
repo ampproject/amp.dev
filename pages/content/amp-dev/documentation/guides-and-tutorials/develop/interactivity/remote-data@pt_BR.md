@@ -1,9 +1,6 @@
 ---
 $title: Como trabalhar com dados remotos
-toc: true
 ---
-
-
 
 E se os dados vinculáveis forem muito grandes ou complexos de recuperar no carregamento de página? E se levar muito tempo para pesquisar o preço de cada SKU? Não vale a pena pesquisar preços de SKUs para itens não visualizados.
 
@@ -24,7 +21,6 @@ Vamos fazer uso da capacidade de busca de dados remotos para pesquisar os preço
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Assim como os dados JSON nos elementos `<amp-state>`, os dados remotos retornados por essas buscas são mesclados e disponibilizados no atributo `id` do elemento. Por exemplo, os dados retornados do exemplo de resposta acima podem ser acessados em uma expressão:
-
 
 |  Expressão                  |  Resultado |
 |------------------------------|---------|

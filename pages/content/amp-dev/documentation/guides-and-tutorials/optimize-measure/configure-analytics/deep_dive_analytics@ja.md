@@ -1,8 +1,6 @@
 ---
 $title: AMP アナリティクスについて詳しく知る
-toc: true
 ---
-
 
 このガイドでは、
 [amp-analytics コンポーネント](/ja/docs/reference/components/amp-analytics.html)
@@ -136,7 +134,6 @@ JSON オブジェクトには、アナリティクス アカウントの変数�
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
-
 
 [tip type="important"]
 

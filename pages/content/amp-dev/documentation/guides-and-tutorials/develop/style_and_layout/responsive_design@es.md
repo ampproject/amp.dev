@@ -1,8 +1,6 @@
 ---
 $title: Crear páginas AMP responsivas
-toc: true
 ---
-
 
 ## Introducción
 
@@ -25,7 +23,6 @@ Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](/e
 ```
 
 Éstas son las configuraciones típicas del viewport que utilizarías para un sitio responsivo. Aunque `initial-scale = 1` no es necesario para una página AMP válida, se recomienda porque establece el nivel de zoom en 1 cuando se cargue la página por primera vez.
-
 
 ## Creando el layout responsivo
 
@@ -77,7 +74,7 @@ Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más de
 
 ### Mostrando imágenes responsivas
 
-Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
+Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
 
 - [Mostrando imágenes nítidas para la resolución correcta](#mostrando-imágenes-nítidas-para-la-resolución-correcta)
 - [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen)

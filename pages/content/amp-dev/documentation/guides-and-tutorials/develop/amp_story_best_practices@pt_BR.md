@@ -1,12 +1,8 @@
 ---
 $title: Práticas recomendadas para criar uma história AMP
-toc: true
 ---
 
-
-
 Este guia mostra práticas recomendadas que precisam ser implementadas ao criar uma [história AMP](/pt_br/docs/reference/components/amp-story.html).
-
 
 ## Cor do plano de fundo  
 
@@ -105,20 +101,17 @@ Os vídeos das histórias AMP sempre são verticais, ou seja, no modo retrato, c
   </tbody>
 </table>
 
-
 [tip type="note"]
 
 Em dispositivos móveis com uma proporção diferente de 16:9, o vídeo pode ser cortado na horizontal ou na vertical para se ajustar à janela de visualização.
 
 [/tip]
 
-
 ### Codec de vídeo
 
 1.  Para MP4, use `H.264`.
 1.  Para WEBM, use `VP9`.
 1.  Para HLS ou DASH, use `H.264`.
-
 
 ### Qualidade do vídeo
 

@@ -31,8 +31,8 @@ import loaderHtml from './loader.hbs';
 
 const FADE_OUT_ANIMATION_LENGTH = 250;
 
-export default function createLoader(container) {
-  return new Loader(container);
+export default function createLoader(container, theme='') {
+  return new Loader(container, theme);
 }
 
 /**
@@ -44,8 +44,9 @@ export class Loader {
    *
    * @param container {htmlelement} the element containing the loader
    */
-  constructor(container) {
+  constructor(container, theme) {
     this.container = container;
+    this.theme = theme;
   }
 
   /**
@@ -55,7 +56,7 @@ export class Loader {
     if (this._findLoaders().length > 0) {
       return;
     }
-    this.container.insertAdjacentHTML('afterbegin', loaderHtml());
+    this.container.insertAdjacentHTML('afterbegin', loaderHtml({theme: this.theme}));
   }
 
   /**

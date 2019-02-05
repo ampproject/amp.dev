@@ -28,6 +28,7 @@ const stripCssComments = require('gulp-strip-css-comments');
 const through = require('through2');
 
 const config = require('./config');
+const utils = require('@lib/utils');
 const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
@@ -246,7 +247,7 @@ class Pipeline {
 
   _minifyPages() {
     return new Promise((resolve, reject) => {
-      const stream = pageMinifier.start(config.path('platform/pages'));
+      const stream = pageMinifier.start(utils.project.absolute('platform/pages'));
 
       stream.on('error', (error) => {
         pageMinifier._log.fatal(`Something went wrong while minifying HTML: ${error}`);
@@ -266,7 +267,7 @@ class Pipeline {
    * @return {Promise}
    */
   createFilteredPages() {
-    const log = new Signale({'interactive': false, 'scope': 'Filter pages'});
+    const log = new Signale({'interactive': true, 'scope': 'Filter pages'});
     log.await('Filtering pages by formats ...');
 
     return new Promise((resolve, reject) => {
@@ -287,9 +288,9 @@ class Pipeline {
             let manualFilter = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
             manualFilter = manualFilter ? manualFilter[1] : null;
             if (manualFilter && FORMATS.indexOf(manualFilter) !== -1) {
-              log.warn(`${page.relative} is already a manual variant for ${manualFilter}.`);
+              log.info(`${page.relative} is already a manual variant for ${manualFilter}.`);
 
-              const filteredPage = new FilteredPage(manualFilter, html);
+              const filteredPage = new FilteredPage(manualFilter, html, true);
               page.contents = Buffer.from(filteredPage.content);
 
               this.push(page);
@@ -309,14 +310,22 @@ class Pipeline {
                 log.warn(`Page has a manual variant for format ${format}`);
                 continue;
               } else {
-                const filteredPage = new FilteredPage(format, html);
+                let filteredPage = null;
 
-                const variantPage = page.clone();
-                variantPage.contents = Buffer.from(filteredPage.content);
-                variantPage.extname = `.${format}.html`;
-                this.push(variantPage);
+                try {
+                  filteredPage = new FilteredPage(format, html);
+                } catch(e) {
+                  log.warn(`Page is not available in format ${format}`);
+                }
 
-                log.success(`Created variant for format ${format}`);
+                if (filteredPage) {
+                  const variantPage = page.clone();
+                  variantPage.contents = Buffer.from(filteredPage.content);
+                  variantPage.extname = `.${format}.html`;
+                  this.push(variantPage);
+
+                  log.success(`Created variant for format ${format}`);
+                }
               }
             }
 

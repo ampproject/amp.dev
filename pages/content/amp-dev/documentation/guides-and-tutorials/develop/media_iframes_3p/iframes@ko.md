@@ -1,8 +1,6 @@
 ---
 $title: iframe 포함하기
-toc: true
 ---
-
 
 페이지에 미디어 콘텐츠를 표시하고 iframe 을 사용하여 AMP 의 제약을 넘어서는 고급 콘텐츠를 표시하는 방법을 자세히 알아보세요.
 
@@ -36,17 +34,9 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## 플레이스홀더 사용하기
 

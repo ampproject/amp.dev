@@ -10,4 +10,4 @@ Ek işaretlerin nasıl görüneceğini örneklendirmek için, sayfaya bir görü
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-`<img>` gibi etiketleri [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}) bölümüne gidin.
+`<img>` gibi etiketleri [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) ile neden değiştirdiğimizi ve kaç tane mevcut olduğunu öğrenmek için, [Bilgi İletim Birimleri ve Medya Ekle]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}}) bölümüne gidin.

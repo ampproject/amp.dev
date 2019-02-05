@@ -1,6 +1,9 @@
 ---
 $title: Modify presentation and layout
 $order: 3
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ## Modify the presentation

@@ -51,14 +51,13 @@
 
   &-hl {
     @include txt-font-accent;
-    margin: 0;
+    margin-bottom: 10px;
   }
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
     transition: 0.4s;
   }
 

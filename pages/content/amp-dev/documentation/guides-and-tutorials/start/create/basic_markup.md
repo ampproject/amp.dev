@@ -1,6 +1,9 @@
 ---
 $title: Create your AMP HTML page
 $order: 1
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 The following markup is a decent starting point or boilerplate.

@@ -1,12 +1,9 @@
 ---
 $title: Use cases
 $order: 2
-toc: true
 formats:
   - websites
 ---
-
-
 
 This guide provides a set of common use cases for tracking user engagement:
 

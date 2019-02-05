@@ -1,9 +1,6 @@
 ---
 $title: Adicionar componentes estendidos de AMP
-toc: true
 ---
-
-
 
 Com o sistema de componentes AMP, é fácil e rápido criar recursos eficientes e responsivos nos seus artigos. A biblioteca de HTML para AMP tem três classificações de componentes AMP:
 

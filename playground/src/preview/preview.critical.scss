@@ -2,9 +2,9 @@
 
 #preview-container {
   -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
   overflow-y: scroll;
-  overflow-y: scroll;
-  background-color: var(--light-bg-color); 
+  background-color: var(--light-bg-color);
   width: 100%;
   height: calc(100vh - 96px);
   position: relative;
@@ -37,7 +37,7 @@
 #preview-custom-dimension input {
   width: 48px;
   margin: 0 8px;
-  text-align: center; 
+  text-align: center;
   background-color: #dfdfdf;
   border: none;
   -webkit-appearance: none;
@@ -48,11 +48,11 @@
 #preview-custom-dimension input.invalid {
   width: 48px;
   margin: 0 8px;
-  text-align: center; 
+  text-align: center;
   background: color('red');
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
   #preview-size {
     display: none;
   }

@@ -1,8 +1,6 @@
 ---
 $title: サポートされる CSS
-toc: true
 ---
-
 
  他のウェブページと同様に、AMP ページは CSS でスタイル設定されますが、外部のスタイルシートを参照することはできません（[カスタム フォント](#the-custom-fonts-exception)を除く）。また、パフォーマンス上の理由から特定のスタイルが許可されていません。たとえば、インラインのスタイル属性は使用できません。
 
@@ -74,7 +72,6 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 
  プリプロセッサで生成される出力は、他のウェブページと同様に AMP でも機能します。たとえば、[ampproject.org](https://www.ampproject.org/)
 のサイトでは [Sass](http://sass-lang.com/) を使用しています（[Grow](http://grow.io/) を使用して、 [ampproject.org](https://www.ampproject.org/) サイトを構成する静的な AMP ページを作成しています）。
-
 
 プリプロセッサを使用する場合は、追加する対象に特に注意を払い、ページで使用するものだけを読み込むようにしてください。たとえば、[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 には、必要なすべての AMP マークアップと、`*.scss` ソースファイルからのインラインの CSS を含めます。また、サイトの多くのページで埋め込みの YouTube 動画を使用できるように、[`amp-youtube`](/ja/docs/reference/components/amp-youtube.html) のカスタム要素のスクリプトも指定します。

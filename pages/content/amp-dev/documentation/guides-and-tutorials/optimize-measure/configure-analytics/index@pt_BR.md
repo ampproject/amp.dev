@@ -45,7 +45,6 @@ Que tipos de dados você pretende coletar sobre seus usuários, seu conteúdo,
 o dispositivo ou o navegador (consulte também [Substituição de variáveis](/pt_br/docs/analytics/analytics_basics.html#substituição-de-variáveis))?
 * Como você pretende identificar seus usuários (consulte também [Identificação de usuários](/pt_br/docs/analytics/analytics_basics.html#identificação-do-usuário))?
 
-
 [tip type="read-on"]
 
 Conheça os recursos de análise no artigo [Analytics: conceitos básicos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).

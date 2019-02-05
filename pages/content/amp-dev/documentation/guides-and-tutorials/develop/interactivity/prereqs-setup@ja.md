@@ -1,9 +1,6 @@
 ---
 $title: 設定
-toc: true
 ---
-
-
 
 ## 必要な準備
 
@@ -32,7 +29,6 @@ git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 cd advanced-interactivity-in-amp
 npm install
 ```
-
 
 ### ステップ 3. 開発用サーバーを稼働させる
 

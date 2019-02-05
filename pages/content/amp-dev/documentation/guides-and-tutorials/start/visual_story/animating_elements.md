@@ -3,6 +3,7 @@ $title: Animating elements
 $order: 6
 components:
     - anim
+author: bpaduch
 ---
 
 You can further enhance an AMP story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations:
@@ -215,7 +216,6 @@ Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of t
   animate-in="fade-in">
 </amp-img>
 ```
-
 
 If you refresh and reload the page, each of the images fade in.  That's great but you can barely notice the effect because all the images fade in at the same time! We can improve the visual effect by changing the timing of these animations.
 

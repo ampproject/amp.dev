@@ -5,6 +5,22 @@
 
 @include levitateAnimation;
 
+.#{utility('stage')} {
+  .#{organism('case-band')} {
+    grid-column: 1 / -1;
+    width: 150vw;
+    margin-top: -40%;
+    margin-right: -150vw;
+    pointer-events: none;
+
+    @media (min-width: 768px) {
+      width: 100%;
+      margin-top: -30%;
+      margin-right: 0;
+    }
+  }
+}
+
 .#{utility('case-band')} {
   overflow: hidden;
   margin-bottom: 7em;
@@ -30,7 +46,7 @@
   grid-template-columns: 17fr 5.5fr 3fr 9fr 7fr 12.5fr 3fr 9fr 4fr 12.5fr 6fr 10.5fr;
   grid-template-rows: 19fr 6fr 12.5fr 12.5fr 25fr 5fr 5fr 5fr 5fr 5fr;
   padding: 7vw 0 11vw;
-  filter: drop-shadow(50px 50px 35px rgba(0, 0, 0, 0.25));
+  // filter: drop-shadow(50px 50px 35px rgba(0, 0, 0, 0.25));
   transform: perspective(100px) rotate(0.1deg) rotateY(-0.1deg) skewX(-4deg) skewY(0deg) translateX(6.3%);
   transform-origin: center;
 

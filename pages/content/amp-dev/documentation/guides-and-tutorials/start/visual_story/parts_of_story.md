@@ -1,6 +1,7 @@
 ---
 $title: Understanding the parts of an AMP story
 $order: 2
+author: bpaduch
 ---
 
 An AMP story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.  

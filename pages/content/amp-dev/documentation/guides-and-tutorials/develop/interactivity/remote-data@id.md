@@ -1,9 +1,6 @@
 ---
 $title: Bekerja dengan data jarak jauh
-toc: true
 ---
-
-
 
 Bagaimana jika data Anda yang dapat diikat terlalu besar atau kompleks untuk diambil saat pemuatan halaman? Atau, bagaimana jika setiap SKU memiliki harga yang butuh waktu lama untuk dicari? Mencari harga SKU untuk item yang tidak dilihat adalah pekerjaan yang sia-sia.
 
@@ -24,7 +21,6 @@ Mari kita manfaatkan kemampuan pengambilan data jarak jauh untuk mencari harga S
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Serupa dengan data JSON dalam elemen `<amp-state>`, data jarak jauh yang ditampilkan dari pengambilan ini digabungkan dan tersedia di atribut `id` elemen. Misalnya, data yang ditampilkan dari contoh respons di atas dapat diakses di ekspresi:
-
 
 |  Ekspresi                  |  Hasil |
 |------------------------------|---------|

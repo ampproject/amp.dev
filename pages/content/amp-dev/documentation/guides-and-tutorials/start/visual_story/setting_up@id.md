@@ -40,5 +40,4 @@ Pastikan URL ditayangkan dari `localhost`; jika tidak, artikel AMP mungkin tidak
 
 [/tip]
 
-
 Klik pada artikel yang sudah jadi dan pahami apa yang akan kita buat.

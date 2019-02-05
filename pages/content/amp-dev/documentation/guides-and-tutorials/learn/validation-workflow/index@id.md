@@ -1,8 +1,6 @@
 ---
 $title: Memvalidasi halaman AMP
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Tonton video kami tentang berbagai opsi validasi.']
 
@@ -14,11 +12,7 @@ Ada beberapa cara untuk memvalidasi dokumen AMP. Semua cara akan
 memberikan hasil yang sama persis, jadi gunakan cara mana saja yang paling sesuai
 dengan gaya pengembangan Anda.
 
-<<<<<<< HEAD
 Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
-=======
-Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### Developer Console Browser
 
@@ -98,7 +92,6 @@ Ekstensi Validator AMP untuk
 ### Paket NPM untuk CI
 
 Sebagai bagian dari pipeline build dan pengujian, Anda dapat mengintegrasikan validasi AMP melalui paket NPM Validator AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) atau [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (plugin gulp).  Misalnya, Anda dapat menggunakan paket NPM Validator AMP untuk uji integrasi atau dalam tugas terjadwal untuk memverifikasi halaman AMP produksi.
-
 
 ##### Contoh: Memvalidasi file HTML AMP
 
@@ -255,7 +248,6 @@ yang menyebabkan error validasi AMP seperti ditunjukkan pada fitur lain berikut:
 </amp-img>
 
 Setiap fitur memberikan beberapa informasi:
-
 
   1. Lokasi (baris dan kolom) dalam dokumen HTML tempat error terjadi,
      yang pada beberapa antarmuka dapat diklik untuk menyorot lokasi tersebut. Pada

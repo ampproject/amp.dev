@@ -1,11 +1,14 @@
 ---
 $title: Create a live blog
 $order: 102
-toc: true
 tutorial: true
 
 formats:
     - websites
+
+author: kul3r4
+contributors:
+  - bpaduch
 ---
 
 Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using the [`amp-live-list`](/docs/reference/components/amp-live-list.html) component.
@@ -21,7 +24,6 @@ This tutorial provides a short overview of the `amp-live-list` component and foc
 ## Overview of `amp-live-list`
 
 The [`amp-live-list`](/docs/reference/components/amp-live-list.html) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata](https://ampbyexample.com/samples_templates/live_blog/#metadata) section of the page.
-
 
 This is what the initial code for the blog could look like:
 
@@ -86,7 +88,6 @@ You can add the disabled attribute to  the hosted page to prevent the polling me
 When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With `amp-live-list`, deep linking is possible by simply using the `id` of the blog item. For example, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) allows you to navigate directly to the blog post with the `post3` id.
 
 AMP By Example uses a cookie to in the [live blog sample](https://www.ampbyexample.com/samples_templates/live_blog/) to generate fresh content, so if it’s the first time you are landing on the page, the post with id “post3” might not be available, in that case, you are redirected to the first post.
-
 
 ## Resources
 

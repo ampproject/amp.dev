@@ -8,7 +8,6 @@ $title: 貴社のテクノロジーに AMP を統合する
 
 AMP を統合するには主に 4 つの方法があります。
 
-
 ## 1. amp-analytics 拡張機能のサポートを追加する
 AMP アナリティクスを使用すると、貴社で設定したトリガーに基づいてサーバーにイベントを返送することができます。使用を開始する際は、[アナリティクス統合ガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})をご覧ください。
 
@@ -16,10 +15,9 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 20 社以上のアナリティクス プロバイダが amp-analytics のサポートを導入しています。アナリティクス プロバイダ [Parse.ly](https://www.parsely.com/help/integration/google-amp/) による[プルリクエストの例](https://github.com/ampproject/amphtml/pull/1595)をご覧ください。
 
-
 ## 2. amp-ad 拡張機能を使用する
 
-amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}})も役立ちます。
+amp-ad 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/ad-integration-guide.md', locale=doc.locale).url.path}})も役立ちます。
 
 90 社以上の広告プロバイダが amp-ad のような広告関連機能のサポートを導入しています。広告ネットワーク [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) による[プルリクエスト](https://github.com/ampproject/amphtml/pull/2299)の例をご覧ください。
 

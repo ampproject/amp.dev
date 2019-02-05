@@ -1,12 +1,11 @@
 ---
 $title: Optimize your hosted AMP pages
 $order: 2
-toc: true
 
 formats:
   - websites
+author: sebastianbenz
 ---
-
 
 This guide provides tips and guidance for webmasters on how to optimize their hosted AMP websites.
 
@@ -89,7 +88,7 @@ The AMP Cache performs all these optimizations automatically (and a few more). Y
 
 ### Preload hero images
 
-[AMP HTML uses its own image element: amp-img](/docs/media/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [amp-img](/docs/reference/components/amp-img.html) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
+[AMP HTML uses its own image element: amp-img](/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [amp-img](/docs/reference/components/amp-img.html) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
 
 [sourcecode:html]
 <head>
@@ -175,7 +174,6 @@ If your AMP website uses a service worker, here are some best practices:
 *   When using a network-first strategy for navigation requests, make sure to enable [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
 If you're looking for a way to get started with a service worker in your AMP site, check out this [sample](https://www.google.com/url?q=https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449&sa=D&ust=1529413323498000&usg=AFQjCNE4fepX-hqVeRBW8df43uV5Bi4Llg) that provides a service worker that implements all these best practices.
-
 
 [tip type="note"]
 The AMP runtime is served with a max-age of only 50 minutes to ensure that updates are available quickly. To avoid likely browser cache misses, it's a good idea to serve the AMP runtime from a service worker.

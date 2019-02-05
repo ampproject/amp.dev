@@ -1,11 +1,8 @@
 ---
 $title: Integrar AMP ao seu aplicativo
-toc: true
 ---
 
 Este guia é voltado a desenvolvedores de apps da Web e para dispositivos móveis que queiram integrar e vincular aplicativos a páginas AMP. Um exemplo disso seria um aplicativo de bate-papo para dispositivos móveis que carrega a versão AMP de um URL compartilhado para proporcionar uma experiência mais rápida aos usuários.
-
-
 
 ## Transformar links em AMP
 
@@ -28,7 +25,6 @@ This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-
 Mensagem transformada:
 
 ```text
@@ -37,10 +33,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ```
 
 [tip type="success"]
-
 Considere oferecer aos usuários também a opção de visualizar a versão não AMP
 por meio das configurações de preferências no aplicativo.
-
 [/tip]
 
 ### Maneiras de transformar os links
@@ -65,14 +59,11 @@ Há três maneiras programáticas de transformar os links:
     o conteúdo estiver disponível, antes de qualquer interação com o usuário.
 
 [tip type="important"]
-
 Nunca solicite URLs de AMP usando a AMP API do Google como resultado da interação
 com um usuário, porque isso compromete o desempenho do seu aplicativo devido à introdução
 de uma solicitação de rede adicional. Em vez disso, use uma das três abordagens
 descritas acima.
-
 [/tip]
-
 
 #### AMP URL API do Google
 
@@ -85,7 +76,6 @@ de AMP do Google.
 
 Por exemplo, para uma determinada lista de URLs:
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -93,9 +83,7 @@ Por exemplo, para uma determinada lista de URLs:
 ]}
 ```
 
-
 O corpo da resposta contém o mapeamento do URL de AMP no formato JSON:
-
 
 ```json
 {
@@ -117,13 +105,10 @@ O corpo da resposta contém o mapeamento do URL de AMP no formato JSON:
 ```
 
 [tip type="note"]
-
 URLs de páginas AMP armazenadas em caches de AMP que não forem do Google não podem ser recuperados com a
 AMP URL API. No entanto, é fácil derivar o URL em cache do URL de AMP
 retornado (ampURL).
-
 [/tip]
-
 
 ## Usar caches de AMP
 
@@ -160,11 +145,9 @@ Recomendamos usar o cache de AMP pelos seguintes motivos:
     sempre vejam o mesmo arquivo AMP que está no cache.
 
 [tip type="important"]
-
 Ao disponibilizar páginas AMP por meio do cache de AMP, ofereça uma experiência de visualização que
 mostre claramente a origem do AMP e que ofereça aos usuários a possibilidade de compartilhar o
 URL canônico (veja também as duas seções a seguir para saber mais).
-
 [/tip]
 
 ## Implementar um visualizador de AMP
@@ -189,7 +172,6 @@ Veja algumas práticas recomendadas gerais para implementar um visualizador de A
 *   Nos visualizadores baseados em WebView, permita cookies de terceiros.
 *   Defina um referenciador para sua plataforma ou seu aplicativo.
 
-
 ### Compartilhar conteúdo AMP
 
 Ao compartilhar um documento AMP a partir do visualizador de AMP de uma plataforma, ela
@@ -201,4 +183,3 @@ versão de um documento apresentar ao usuário. Por isso, faz mais
 sentido compartilhar a versão canônica (e não a versão AMP) ao
 fazer o compartilhamento em outra plataforma para depois esperar que a plataforma de destino faça a
 escolha certa.
-

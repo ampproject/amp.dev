@@ -55,7 +55,6 @@ En el ejemplo que se muestra a continuación, se añade el valor del parámetro 
 
 <amp-img src="/static/img/return-parameter.png" alt="Parámetro return" height="150" width="600"></amp-img>
 
-
 Cuando el servidor AMPByExample recibe la solicitud POST de la página de inicio de sesión, si las credenciales son correctas, se redirige la solicitud a la URL de `returnURL` que hemos comentado anteriormente y se le añade el parámetro `#success=true`. Una vez hecho, el tiempo de ejecución de AMP puede finalmente autorizar la página, por lo que ya se puede añadir un comentario.
 
 Es importante que sepas qué tareas desempeña el tiempo de ejecución de AMP y qué debería hacer el servidor, puesto que el editor de la página debe encargarse de implementar este último.

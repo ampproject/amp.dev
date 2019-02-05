@@ -45,7 +45,6 @@ Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](/es/docs/an
 el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](/es/docs/analytics/analytics_basics.html#sustitución-de-variables).
 * ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](/es/docs/analytics/analytics_basics.html#identificación-del-usuario).
 
-
 [tip type="read-on"]
 Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
 [/tip]

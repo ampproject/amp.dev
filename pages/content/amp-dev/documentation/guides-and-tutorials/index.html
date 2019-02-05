@@ -25,9 +25,9 @@ cms: !g.yaml /content/shared/data/cms.yaml
 
 {% do doc.styles.addCssFile('/css/components/molecules/mini-card.css') %}
 {% do doc.styles.addCssFile('/css/components/organisms/mini-card-list.css') %}
-<ul class="ap-o-mini-card-list">
+<ul class="ap-o-mini-card-list ap-o-mini-card-list-condensable">
   {% for cms in doc.cms.cmsUsers %}
-  <li class="ap-o-mini-card-list-item">
+  <li class="ap-o-mini-card-list-item ap-o-mini-card-list-item-condensable">
     <a href="{{ cms.url }}" class="ap-m-mini-card" target="_blank">
       <amp-img
         alt="{{ cms.image.alt }}"

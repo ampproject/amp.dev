@@ -3,7 +3,7 @@ $path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}.html
 $title@: AMP Caches & CORS
-$order: 4
+$order: 6
 
 formats:
   - websites

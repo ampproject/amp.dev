@@ -1,8 +1,6 @@
 ---
 $title: 애널리틱스 공급업체
-toc: true
 ---
-
 
 이 도움말에서는 [`amp-analytics`](/ko/docs/reference/components/amp-analytics.html) 구성요소에 사용할 내장형 구성을 갖춘 분석 공급업체를 소개합니다.
 

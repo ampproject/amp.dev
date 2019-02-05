@@ -1,8 +1,6 @@
 ---
 $title: AMP ページを検証する
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='各種検証オプションについての動画をご覧ください。']
 
@@ -75,7 +73,6 @@ alt="Screen grab of validator.ampproject.org with error examples.">
   </tr>
 </table>
 
-
 AMP 検証ツール拡張機能は、[Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)  と [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/) でご利用いただけます。
 
 ### CI 向けの NPM パッケージ
@@ -144,7 +141,6 @@ AMP HTML ファイルの検証は、[AMP HTML 検証ツールのコマンドラ�
 $ amphtml-validator https://www.ampproject.org/
 https://www.ampproject.org/: PASS
 [/sourcecode]
-
 
 当然ですが、このページは有効な AMP HTML です。有効でないページ [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) を試してみましょう。`amphtml-validator` コマンドを実行するには、ページの URL またはローカル ファイル名を指定します。 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) をダウンロードしてファイルとして保存してから、実行します。
 

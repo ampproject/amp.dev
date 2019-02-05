@@ -1,8 +1,6 @@
 ---
 $title: 添加 iframe
-toc: true
 ---
-
 
 了解如何在您的网页中显示媒体内容，以及如何使用 iframe 在 AMP 的限制之外显示高级内容。
 
@@ -36,17 +34,9 @@ iframe 在 AMP 中特别有用，可显示主网页中不支持的内容，例�
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## 使用占位符
 

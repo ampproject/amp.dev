@@ -1,8 +1,6 @@
 ---
 $title: 支持的 CSS
-toc: true
 ---
-
 
 和所有网页一样，AMP 网页也通过 CSS 来设定样式，但是您无法引用外部样式表（[自定义字体](#the-custom-fonts-exception)除外）。 此外，由于性能会受到影响，某些样式不允许使用；内嵌样式属性也不允许使用。
 
@@ -74,7 +72,6 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 
 预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[ampproject.org](https://www.ampproject.org/)
 网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [ampproject.org](https://www.ampproject.org/) 网站的静态 AMP 网页。）
-
 
 在使用预处理器时，请特别注意您所包含的内容；请仅加载您的网页会使用的内容。 例如，[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`](/zh_cn/docs/reference/components/amp-youtube.html) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。

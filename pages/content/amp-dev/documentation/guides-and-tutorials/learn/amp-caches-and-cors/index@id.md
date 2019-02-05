@@ -1,9 +1,6 @@
 ---
 $title: Cara halaman AMP disimpan dalam cache
-toc: true
 ---
-
-
 
 Dalam dokumen ini, Anda akan mempelajari tentang peran Cache AMP dalam ekosistem AMP, dan cara halaman AMP disimpan dalam cache.
 

@@ -1,9 +1,6 @@
 ---
 $title: Casistica
-toc: true
 ---
-
-
 
 Questa guida offre una serie di tipologie di utilizzo comuni per seguire l’evoluzione del coinvolgimento degli utenti:
 

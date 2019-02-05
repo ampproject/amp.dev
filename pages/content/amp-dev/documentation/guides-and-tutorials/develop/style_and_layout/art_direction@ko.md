@@ -1,9 +1,6 @@
 ---
 $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
-toc: true
 ---
-
-
 
 ## srcset
 

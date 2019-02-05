@@ -1,0 +1,38 @@
+---
+$title: Mission and Vision
+$order: 1
+$view: /views/overview/custom-content.j2
+---
+{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+
+<div class="ap--container">
+  <div class="ap--content">
+    <h1>Vision & Mission</h1>
+    <p>Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it.</p>
+  </div>
+
+  {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
+  <div class="ap-m-copy ap-m-copy-left-small">
+    <h3>Vision</h3>
+    <p>
+      A strong, user-first open web forever.
+    </p>
+
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-right-small">
+    <h3>Mission</h3>
+    <p>Provide a user-first format for web content, supporting the long-term success of every web publisher, merchant, and advertiser.</p>
+  </div>
+
+  <div class="ap--content">
+    <h3>Get started building</h3>
+    <a href="https://www.ampproject.org/docs/getting_started/create.html" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Tutorials</span>
+    </a>
+  </div>
+</div>

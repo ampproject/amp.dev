@@ -17,9 +17,12 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const URL = require('url').URL;
+const config = require('../../platform/lib/config.js');
+const {setMaxAge} = require('../../platform/lib/utils/cacheHelpers.js');
 // eslint-disable-next-line new-cap
 const api = express.Router();
 
+const ONE_HOUR = 60 * 60;
 const VALID_ORIGINS = new Set([
   'amp.dev',
   'api.amp.dev',
@@ -28,17 +31,21 @@ const VALID_ORIGINS = new Set([
   'ampbyexample.com',
   'ampstart.com',
   'ampstart-staging.firebaseapp.com',
-  'localhost:8082',
+  'localhost',
   'localhost:8080',
+  'localhost:8082',
   'amp-by-example-staging.appspot.com',
   'amp-by-example-sebastian.appspot.com',
   '0.1.0.1',
 ]);
 
+const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
+
 api.get('/fetch', async (request, response) => {
   const url = request.query.url;
   try {
-    const doc = await fetchDocument(url, request.headers.host);
+    const doc = await fetchDocument(url, host);
+    setMaxAge(response, ONE_HOUR);
     response.send(doc);
   } catch (error) {
     console.error('Could not fetch URL', error);
@@ -49,7 +56,7 @@ api.get('/fetch', async (request, response) => {
 async function fetchDocument(urlString, host) {
   const url = new URL(urlString, host);
   if (!VALID_ORIGINS.has(url.host)) {
-    throw new Error(`Unsupported host ${host}`);
+    throw new Error(`Unsupported host ${url.host}`);
   }
   const response = await fetch(url, {
     compress: true,

@@ -1,8 +1,6 @@
 ---
 $title: Incluir iframes
-toc: true
 ---
-
 
 Saiba como exibir conteúdo de mídia nas páginas e usar iframes para exibir conteúdo avançado e superar as limitações da AMP.
 
@@ -39,16 +37,9 @@ Um `amp-iframe` exemplo:
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## Usar marcadores
 

@@ -25,7 +25,9 @@ teaser:
 
       <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
 
+      {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
       <div class="ap--benefits--list">
+        {% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('/icons/built-in.svg') %}
@@ -66,20 +68,18 @@ teaser:
         </div>
       </div>
 
-      <p>If you want to know more about how AMP handles those under the hood read on with <a href="{{ g.doc('/content/amp-dev/what-is-amp/how-amp-works.html', locale=doc.locale).url.path }}">How AMP works</a>.</p>
+      <p>If you want to know more about how AMP handles those under the hood read on with <a href="{{ g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path }}">How AMP works</a>.</p>
 
       <hr>
+
       {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
 
       <div class="ap-t-component-overview-anchor-list">
-      <p>Quicklinks:</p>
-      <p>
         {% for category, components in categories %}
         <span class="ap-t-component-overview-anchor-list-item">
           <a href="#{{ category }}">{{ category }}</a>
         </span>
         {% endfor %}
-      </p>
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
