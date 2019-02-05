@@ -1,9 +1,6 @@
 ---
 $title: 布局和媒体查询
-toc: true
 ---
-
-
 
 AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大的功能来控制各个元素的**布局**。与仅使用 CSS 相比，使用 `layout` 属性可以更轻松地处理和创建完全自适应的设计。
 
@@ -105,7 +102,6 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 请访问[演示 AMP 布局](/zh_cn/docs/design/amp-html-layout/layouts_demonstrated.html)页面，了解各种布局如何随屏幕尺寸的调整而变化。此外，您还可访问 [AMP By Example](https://ampbyexample.com/advanced/layout_system/) 以了解更多详情。
 
 [/tip]
-
 
 ### 如果未定义宽度和高度，会怎样？
 

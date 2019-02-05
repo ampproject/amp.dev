@@ -1,7 +1,6 @@
 ---
 $title: AMPHTML ad specification
 $order: 2
-toc: true
 formats:
   - ads
 ---
@@ -21,9 +20,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
-
 
 _If you'd like to propose changes to the standard, please comment on the [Intent
 to Implement](https://github.com/ampproject/amphtml/issues/4264)_.
@@ -175,7 +171,6 @@ the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/
 </tbody>
 </table>
 
-
 #### CSS animations and transitions
 
 ##### Selectors
@@ -249,7 +244,6 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-
 ### Allowed AMP extensions and builtins
 
 The following are _allowed_ AMP extension modules and AMP built-in tags in an
@@ -275,8 +269,6 @@ AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohib
 * [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}})
 * [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})
 * [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})
-
-
 
 Most of the omissions are either for performance or to make AMPHTML ads
 simpler to analyze.
@@ -304,7 +296,6 @@ _Example:_ [`amp-lightbox`]({{g.doc('/content/amp-dev/documentation/components/r
 may be rendered in an iframe and there is currently no mechanism for an ad to
 expand beyond an iframe.  Support may be added for this in the future, if there
 is demonstrated desire for it.
-
 
 ### HTML tags
 

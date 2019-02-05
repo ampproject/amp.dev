@@ -1,9 +1,6 @@
 ---
 $title: AMP ページでプログレッシブ ウェブアプリ機能を有効にする
-toc: true
 ---
-
-
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample で表示される「ホーム画面に追加」のプロンプト') }}
 
@@ -110,5 +107,3 @@ self.addEventListener('fetch', function(event) {
 
 * カスタム JS を必要とする動的な機能
 * サイト向けにカスタマイズされたコンポーネントやサイトにのみ関連するコンポーネント
-
-

@@ -16,8 +16,6 @@ In this tutorial, you learned to:
 - Add site navigation by using [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), and [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
 - Use custom fonts in AMP
 
-
-
 ## Next steps
 
 To further advance your AMP expertise, check out these resources:

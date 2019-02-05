@@ -1,8 +1,6 @@
 ---
 $title: Incorporar e usar AMP como fonte de dados
-toc: true
 ---
-
 
 Se você já usar AMP, mas ainda não tiver criado um Progressive Web App, aproveite as páginas AMP para simplificar muito o desenvolvimento do seu Progressive Web App. Neste guia, você verá como aproveitar as AMP no seu Progressive Web App e usar as páginas AMP existentes como fonte de dados.
 
@@ -123,5 +121,4 @@ Você também pode ver uma amostra de PWA e AMP usando a biblioteca Polymer. A a
 
 * Encontre o código aqui: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp) (em inglês).
 * Veja na prática aqui: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/) (em inglês).
-
 

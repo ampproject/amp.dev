@@ -15,7 +15,6 @@ En este tutorial, aprenderá los conceptos clave de AMP y cómo los documentos d
 - Validar una página AMP
 - Prepare su contenido de AMP para descubrirlo
 
-
 ## Usted construirá:
 
 Una sencilla página de noticias que se ajusta a las especificaciones de AMP e incorpora características comunes que se encuentran en los sitios de noticias para móviles.

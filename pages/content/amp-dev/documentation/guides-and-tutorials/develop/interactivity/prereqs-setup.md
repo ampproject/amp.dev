@@ -1,11 +1,8 @@
 ---
 $title: Setting up
 $order: 0
-toc: true
 $parent: /content/docs/interaction_dynamic/interactivity.md
 ---
-
-
 
 ## Prerequisites
 
@@ -34,7 +31,6 @@ Unzip the archive file (if necessary) and navigate into the directory. Install t
 cd advanced-interactivity-in-amp
 npm install
 ```
-
 
 ### Step 3. Run the development server
 

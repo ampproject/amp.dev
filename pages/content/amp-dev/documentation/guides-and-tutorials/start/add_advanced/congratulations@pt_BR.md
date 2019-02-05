@@ -15,8 +15,6 @@ Nesse tutorial, você aprendeu como:
 - adicionar elementos de navegação do site usando [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}});
 - usar fontes personalizadas em conteúdo AMP.
 
-
-
 ## Próximas etapas
 
 Para ampliar seu conhecimento de AMP, veja estes recursos:

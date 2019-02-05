@@ -1,8 +1,6 @@
 ---
 $title: Imagens responsivas com os atributos "srcset", "sizes" e "heights"
-toc: true
 ---
-
 
 ## srcset
 
@@ -47,7 +45,6 @@ Veja o seguinte exemplo:
 O atributo `sizes` define a largura do elemento como 50% do tamanho da janela de visualização, quando ela tiver 650 px ou mais. Por exemplo, se a janela de visualização tiver 800 px, a largura do elemento será definida como 400 px. Em seguida, o navegador seleciona o recurso `srcset` relativo a 400 px, assumindo que a proporção de pixels do dispositivo seja 1, que neste caso é `narrow.jpg` (320 px).
 
 Importante: Quando o atributo sizes for especificado juntamente com width e height, o layout será `responsive` por padrão.
-
 
 Saiba mais sobre como os atributos `sizes` e `srcset` se comparam às consultas de mídia nesta postagem de blog [Srcset e sizes](https://ericportis.com/posts/2014/srcset-sizes/).
 

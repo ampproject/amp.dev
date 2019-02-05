@@ -1,6 +1,5 @@
 ---
 $title: Actions and events
-toc: true
 $order: 3
 formats:
   - websites
@@ -24,10 +23,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
-
-
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
@@ -84,13 +79,11 @@ You can listen to multiple events on an element by separating the events with a 
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-
 ## Multiple actions for one event
 
 You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
 
 Example: `on="tap:target1.actionA,target2.actionB"`
-
 
 ## Globally-defined events and actions
 
@@ -309,7 +302,6 @@ event.response</pre></td>
     <td></td>
   </tr>
 </table>
-
 
 ## Element-specific actions
 

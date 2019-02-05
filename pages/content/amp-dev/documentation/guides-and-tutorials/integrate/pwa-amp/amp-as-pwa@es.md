@@ -1,9 +1,6 @@
 ---
 $title: Habilitar las funciones de las aplicaciones web progresivas en páginas AMP
-toc: true
 ---
-
-
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample activa el mensaje "Añadir a la pantalla de inicio".') }}
 
@@ -110,5 +107,3 @@ que, de otra manera, no superarían la [validación de AMP]({{g.doc('/content/am
 
 * Las funciones dinámicas que necesitan código JavaScript personalizado.
 * Los componentes que están personalizados o que solo son relevantes para tu sitio web.
-
-

@@ -1,7 +1,5 @@
 ---
 $title: Supported CSS
-$order: 0
-toc: true
 formats:
   - websites
   - email
@@ -14,7 +12,6 @@ contributors:
   - bpaduch
   - choumx
 ---
-
 
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets

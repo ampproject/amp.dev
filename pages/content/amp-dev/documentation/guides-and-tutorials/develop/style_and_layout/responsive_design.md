@@ -1,7 +1,6 @@
 ---
 $title: Create responsive AMP pages
 $order: 5
-toc: true
 formats:
   - websites
   - email
@@ -14,7 +13,6 @@ author: bpaduch
 contributors:
   - pbakaus
 ---
-
 
 ## Introduction
 

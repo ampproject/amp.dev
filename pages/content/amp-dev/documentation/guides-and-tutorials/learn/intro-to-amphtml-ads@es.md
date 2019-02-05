@@ -1,9 +1,6 @@
 ---
 $title: Anuncios AMP HTML
-toc: true
 ---
-
-
 
 ## ¿Qué es un anuncio AMP HTML?
 
@@ -21,7 +18,6 @@ Los anuncios AMP HTML se escriben en lenguaje AMP HTML, de acuerdo con las [espe
 1.  **Mayor interacción:** los usuarios no pueden interactuar con los anuncios que no ven. Unos anuncios más rápidos generan una mayor visibilidad y, por lo tanto, unos porcentajes de clics más altos y un mejor rendimiento de los anuncios.
 1.  **Protección frente a software malicioso:** es imposible que el software malicioso afecte a los anuncios AMP HTML, porque se verifican antes de servirse. Gracias a esto, los anunciantes pueden garantizar una experiencia de usuario segura y una percepción positiva de su marca. 
 1.  **Mayor flexibilidad:** los anuncios AMP HTML se pueden utilizar en páginas web AMP y de otro tipo, así como en cualquier dispositivo.
-
 
 ### Formatos
 
@@ -45,7 +41,6 @@ Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar div
     <td>Lightbox</td>
   </tr>
 </table>
-
 
 ## Cómo funcionan los anuncios AMP HTML
 
@@ -90,7 +85,6 @@ Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión [`am
 *  [Creador de anuncios de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate (*disponible próximamente*)
-
 
 ### Validar la sintaxis de los anuncios AMP HTML
 

@@ -1,8 +1,6 @@
 ---
 $title: AMP を埋め込んでデータソースとして使用する
-toc: true
 ---
-
 
 すでに AMP を採用している場合は、プログレッシブ ウェブアプリ（PWA）の構築をおすすめします。AMP ページを使用すると、PWA を非常に簡単に開発できます。ここでは、PWA 内に AMP を埋め込み、既存の AMP ページをデータソースとして使用する方法について説明します。
 
@@ -123,5 +121,4 @@ Polymer フレームワークを使用した PWA と AMP のサンプルも用�
 
 * コードはこちら: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * 操作可能なサンプルはこちら: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
 

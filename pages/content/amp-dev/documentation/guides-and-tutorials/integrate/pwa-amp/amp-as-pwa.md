@@ -1,12 +1,10 @@
 ---
 $title: Enable Progressive Web App features for your AMP pages
 $order: 1
-toc: true
 formats:
   - websites
+author: pbakaus
 ---
-
-
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample triggering the "Add to Home Screen" prompt.') }}
 

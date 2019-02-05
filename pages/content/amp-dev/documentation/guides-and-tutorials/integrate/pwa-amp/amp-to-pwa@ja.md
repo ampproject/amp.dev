@@ -1,8 +1,6 @@
 ---
 $title: AMP ページからプログレッシブ ウェブアプリを事前に読み込む
-toc: true
 ---
-
 
 **サイトの入り口を AMP ページに**して、**その裏側でプログレッシブ ウェブアプリ（PWA）を準備**し、以降のページでは PWA に切り替えるという効果的な使い方をご紹介します。
 
@@ -11,7 +9,6 @@ toc: true
 * ユーザーがウェブサイト上の別のリンク（たとえば、下部に設置した、アプリのように使うためのカスタム外部リンク）をクリックすると、Service Worker がそのリクエストを検出し、ページを引き継いで、代わりに PWA シェルを読み込みます。
 
 この開発パターンを使用する理由とその方法について、以下に説明します。
-
 
 ## PWA にリンクすることでユーザー エクスペリエンスを向上させる
 
@@ -73,11 +70,7 @@ self.addEventListener('install', function(event) {
 
 ## AMP ページ上のすべてのリンクで PWA に誘導する
 
-<<<<<<< HEAD
 おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})次の 2 つの方法があります。
-=======
-おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})次の 2 つの方法があります。
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 1. 正規ページと AMP ページを組み合わせている場合
 

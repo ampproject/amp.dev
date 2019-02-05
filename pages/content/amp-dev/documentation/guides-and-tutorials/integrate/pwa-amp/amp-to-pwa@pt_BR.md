@@ -1,8 +1,6 @@
 ---
 $title: Pré-carregar Progressive Web App a partir de páginas AMP
-toc: true
 ---
-
 
 Uma boa estratégia é fazer com que o **ponto de entrada do seu site seja uma página AMP**, **carregar o PWA em segundo plano** e mudar para ele durante a navegação:
 
@@ -11,7 +9,6 @@ Uma boa estratégia é fazer com que o **ponto de entrada do seu site seja uma p
 * Quando o usuário clicar em outro link no site (por exemplo, a call-to-action na parte inferior, que cria uma experiência mais semelhante a um aplicativo), o service worker interceptará a solicitação, assumirá o controle da página e carregará o shell do PWA.
 
 Leia mais para saber como e por que usar esse padrão de desenvolvimento.
-
 
 ## Melhorar a jornada do usuário com a conexão a um PWA
 
@@ -73,11 +70,7 @@ Dica: existem maneiras mais fáceis de lidar com o service worker. Confira as [b
 
 ## Fazer todos os links de uma página AMP navegarem para o PWA
 
-<<<<<<< HEAD
 Provavelmente, a maioria dos links nas suas páginas AMP leva a outras páginas de conteúdo. Há duas estratégias que podem ser usadas para garantir que os cliques em links subsequentes façam o "upgrade" para o Progressive Web App, [dependendo da forma como você usa as AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
-=======
-Provavelmente, a maioria dos links nas suas páginas AMP leva a outras páginas de conteúdo. Há duas estratégias que podem ser usadas para garantir que os cliques em links subsequentes façam o "upgrade" para o Progressive Web App, [dependendo da forma como você usa as AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 1. Caso você faça o pareamento das páginas canônicas com as páginas AMP
 

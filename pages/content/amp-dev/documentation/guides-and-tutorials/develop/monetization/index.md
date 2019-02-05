@@ -1,13 +1,10 @@
 ---
 $title: Monetizing your AMP page with ads
 $order: 0
-toc: true
 $path: /documentation/guides-and-tutorials/develop/monetization/monetization.html
 formats:
   - websites
 ---
-
-
 
 This guide provides  instructions and best practices for displaying ads on your AMP pages.
 
@@ -110,11 +107,9 @@ Or, learn more from these RTC resources:
 *   [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 *   [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-
 ## Best practices
 
 Here are some tips to maximize the effectiveness of ads on your AMP pages:
-
 
 ### Placement & controls: optimize your ad placements
 

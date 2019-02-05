@@ -1,8 +1,6 @@
 ---
 $title: 通过 AMP 网页预加载渐进式网页应用
-toc: true
 ---
-
 
 推荐采取的策略：**将一个 AMP 网页作为您网站的进入点**，然后**让 PWA 在后台做好准备**并切换到 PWA 以便用户继续进行浏览之旅。
 
@@ -11,7 +9,6 @@ toc: true
 * 当用户点击您网站上的另一个链接（例如，点击底部的号召性用语，以便获得与应用更相似的体验）时，Service Worker 会拦截相应请求、接管相应网页并改为加载 PWA Shell。
 
 若想了解为何要使用此开发模式以及如何使用它，请继续阅读下文。
-
 
 ## 通过关联到 PWA，让用户的浏览之旅更顺畅
 
@@ -73,11 +70,7 @@ self.addEventListener('install', function(event) {
 
 ## 将 AMP 网页上的所有链接都指向 PWA
 
-<<<<<<< HEAD
 可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})：
-=======
-可能会发生的情况是：您的 AMP 网页上的大多数链接都会指向更多内容页。您可以采用两种策略来确保后续的链接点击能够将 AMP 网页“升级”为渐进式网页应用，[具体取决于您使用 AMP 的方式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})：
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 1. 如果您的规范网页有对应的 AMP 网页
 

@@ -1,9 +1,6 @@
 ---
 $title: 広告で AMP ページを収益化する
-toc: true
 ---
-
-
 
 このガイドでは、AMP ページで広告を表示する手順とおすすめの方法を紹介します。
 
@@ -108,11 +105,9 @@ RTC について詳しくは、以下の YouTube 動画をご覧ください。
 *   [AMP RTC サイト運営者向け実装ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 *   [AMP のリアルタイム設定](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-
 ## おすすめの方法
 
 AMP ページで広告効果を最大化するためのヒントをいくつか紹介します。
-
 
 ### プレースメントと管理: 広告のプレースメントを最適化する
 

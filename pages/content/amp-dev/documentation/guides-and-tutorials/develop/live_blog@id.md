@@ -1,11 +1,6 @@
 ---
 $title: Membuat blog langsung
-toc: true
 ---
-
-
-
-
 
 Blog langsung adalah halaman yang sering diperbarui sepanjang acara yang sedang berlangsung, seperti acara olahraga atau pemilu. Di AMP, Anda dapat menerapkan blog langsung menggunakan komponen [`amp-live-list`](/id/docs/reference/components/amp-live-list.html).
 
@@ -22,7 +17,6 @@ Gunakan markup metadata [LiveBlogPosting](http://schema.org/LiveBlogPosting) aga
 ## Ringkasan tentang `amp-live-list`
 
 Komponen [`amp-live-list`](/id/docs/reference/components/amp-live-list.html) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] (https://ampbyexample.com/samples_templates/live_blog/#metadata) pada halaman.
-
 
 Kode awal untuk blog dapat terlihat seperti berikut:
 
@@ -87,7 +81,6 @@ Anda dapat menambahkan atribut yang dinonaktifkan ke halaman yang dihosting untu
 Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan `amp-live-list`, deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
 
 AMP By Example menggunakan cookie di [contoh blog langsung](https://www.ampbyexample.com/samples_templates/live_blog/) untuk membuat konten terkini. Karena itu, jika ini pertama kalinya Anda membuka halaman, postingan dengan ID “post3” mungkin tidak tersedia, dan Anda akan diarahkan ke postingan pertama.
-
 
 ## Referensi
 

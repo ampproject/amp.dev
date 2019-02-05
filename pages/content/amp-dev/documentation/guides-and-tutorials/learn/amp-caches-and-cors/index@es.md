@@ -1,9 +1,6 @@
 ---
 $title: Almacenar páginas AMP en caché
-toc: true
 ---
-
-
 
 En este documento, aprenderá sobre el papel de AMP Cache en el ecosistema de AMP y cómo se almacena en caché su página de AMP.
 
@@ -38,7 +35,6 @@ El almacenamiento en caché es una parte central del ecosistema de AMP. La publi
 
 Si no desea almacenar su documento en caché, una opción es eliminar el atributo `amp` de la etiqueta HTML. Esto hace que el documento sea técnicamente no válido AMP, sin afectar la funcionalidad del documento.
 
-
 ## ¿Quién solicita páginas de AMP en caché?
 
 Las plataformas (como Google Search, Google News y Cloudflare) y las aplicaciones móviles acceden a las páginas de AMP almacenadas en caché. Las aplicaciones móviles pueden vincular el contenido de AMP almacenado en caché a través de la URL (consulte [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)) o mediante XHR de origen cruzado en Progressive Web Apps (obtenga más información en "[Incruste y use AMP como fuente de datos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})").
@@ -60,7 +56,6 @@ Al usar el formato AMP, usted está haciendo que su contenido esté disponible p
 Nota: La URL de caché de AMP no es una URL de usuario, es decir, los usuarios normalmente no solicitan contenido a través de esas URL.
 
 * **Agregados del Editor**: los editores pueden agregar específicamente la página de AMP al caché de AMP. Esta opción solo se aplica a Google AMP Cache (consulte [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
-
 
 ## Recursos Adicionales
 

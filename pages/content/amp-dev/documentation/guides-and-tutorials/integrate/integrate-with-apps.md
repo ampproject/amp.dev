@@ -1,15 +1,12 @@
 ---
 $title: Integrate AMP with your app
 $order: 2
-toc: true
 
 formats:
   - websites
 ---
 
 This guide is intended for mobile and web app developers who want to integrate and link to AMP pages. For example, consider a mobile chat app that loads the AMP version of a shared URL to achieve a faster experience for users.
-
-
 
 ## Transform links to AMP
 
@@ -31,7 +28,6 @@ Original message:
 This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
-
 
 Transformed message:
 
@@ -80,7 +76,6 @@ AMP Cache.
 
 For example, for a given list of URLs:
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -88,9 +83,7 @@ For example, for a given list of URLs:
 ]}
 ```
 
-
 The response body contains the AMP URL mapping in JSON format:
-
 
 ```json
 {
@@ -174,7 +167,6 @@ Here are some general best practices for implementing an AMP Viewer:
     section below).
 *   In webView-based viewers, enable third-party cookies.
 *   Set a referrer for your platform/app.
-
 
 ### Sharing AMP Content
 

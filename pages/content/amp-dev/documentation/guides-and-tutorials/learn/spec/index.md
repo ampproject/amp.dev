@@ -1,6 +1,5 @@
 ---
 $title: AMP HTML Specification
-toc: true
 $order: 1
 formats:
   - websites
@@ -21,10 +20,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
-
-
 
 AMP HTML is a subset of HTML for authoring content pages such as news articles in a way that guarantees certain baseline performance characteristics.
 
@@ -340,7 +335,6 @@ IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP Cache CSP ru
 
 Authors are free to include all custom fonts via an `@font-face` CSS instruction via their custom CSS. Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
 
-
 ## AMP runtime
 
 The AMP runtime is a piece of JavaScript that runs inside every AMP document. It provides implementations for AMP custom elements, manages resource loading and prioritization and optionally includes a runtime validator for AMP HTML for use during development.
@@ -349,7 +343,6 @@ The AMP runtime is loaded via the mandatory `<script src="https://cdn.ampproject
 
 The AMP runtime can be placed into a development mode for any page. Development mode will trigger AMP validation on the embedded page, which will emit the validation status and any errors to the JavaScript developer console. Development mode may be triggered by appending `#development=1` to the URL of the page.
 
-
 ## Resources
 
 Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). We call them “managed resources” because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
@@ -357,7 +350,6 @@ Resources such as images, videos, audio files or ads must be included into an AM
 There are no particular guarantees as to the loading behavior of the AMP runtime, but it should generally strive to load resources quickly enough, so that they are loaded by the time the user would like to see them if possible. The runtime should prioritize resources currently in the viewport and attempt to predict changes to the viewport and preload resources accordingly.
 
 The AMP runtime may at any time decide to unload resources that are not currently in viewport or reuse the resource containers such as iframes to reduce overall RAM consumption.
-
 
 ## AMP Components
 
@@ -437,7 +429,6 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 See the [AMP versioning policy](amp-versioning-policy.md).
 
-
 ### Extended templates
 
 Templates render HTML content based on the language-specific template and provided JSON data.
@@ -482,7 +473,6 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 ##### Versioning
 
 See versioning of custom elements for more details.
-
 
 ## Security
 

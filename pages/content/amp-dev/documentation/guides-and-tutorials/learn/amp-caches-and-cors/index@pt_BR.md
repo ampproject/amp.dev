@@ -1,9 +1,6 @@
 ---
 $title: Como as páginas AMP são armazenadas em cache
-toc: true
 ---
-
-
 
 Neste documento, você descobrirá qual é a função do cache de AMP no ecossistema AMP e como a página AMP é armazenada em cache.
 

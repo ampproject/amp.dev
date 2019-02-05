@@ -12,7 +12,6 @@ $title: 总结
 
 如果您遇到了问题，请参阅 [`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) 文件以获取完整的解决方案。
 
-
 ## 后续步骤
 
 查看 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 文档和其他[动态 AMP 组件](/zh_cn/docs/reference/components.html#动态内容)，详细了解创建互动式 AMP 网页可带来的卓越性能和超凡灵活度。

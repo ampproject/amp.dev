@@ -215,7 +215,6 @@ Pets can lower your stress levels!</p>
 </amp-img>
 ```
 
-
 페이지를 새로고침하면 각 이미지가 페이드 인됩니다.  하지만, 모든 이미지가 동시에 페이드 인되므로 애니메이션 효과를 제대로 알아차릴 수 없습니다. 각 이미지의 애니메이션 시간을 변경하여 시각 효과를 개선할 수 있습니다.
 
 첫 번째 이미지의 등장을 지연시켜 텍스트 배너가 완전히 등장한 후 0.4초 뒤에 나타나도록 해보겠습니다. 그 뒤에 나머지 이미지 세 개를 0.2초 간격으로 표시되게 할 수 있습니다. 각 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소에 `animate-in-delay=""`를 추가하고 적절한 지연 시간 값을 지정합니다. 코드는 다음과 같습니다.

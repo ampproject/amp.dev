@@ -12,7 +12,6 @@ Agora você já sabe:
 
 Se você ainda tiver dúvidas, consulte o arquivo [`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) (em inglês) para ver todas as etapas concluídas.
 
-
 ## Próximas etapas
 
 Saiba mais sobre a eficiência e a flexibilidade da criação de páginas AMP interativas na documentação do componente [`<amp-bind>`](/pt_br/docs/reference/components/amp-bind.html) e de outros [componentes AMP dinâmicos](/pt_br/docs/reference/components.html#dynamic-content).

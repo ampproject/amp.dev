@@ -1,26 +1,18 @@
 ---
 $title: ライブブログを作成する
-toc: true
 ---
-
-
-
-
 
 ライブブログは、スポーツ イベントや選挙などのイベント開催中に頻繁に更新されるウェブページです。AMP では、[`amp-live-list`](/ja/docs/reference/components/amp-live-list.html) コンポーネントを使用してライブブログを実装できます。
 
 このチュートリアルでは、`amp-live-list` コンポーネントの概要を簡単に紹介し、[ページ指定](#pagination)や[ディープリンク](#deeplinking)など、ライブブログの実装の詳細に重点を置いて説明します。ライブブログを AMP で実装する方法の説明では、AMP by Example の[ライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/) を使用します。
 
-
 ヒント: [LiveBlogPosting](http://schema.org/LiveBlogPosting) メタデータ マークアップを使用して、ブログをサードパーティ プラットフォームの機能と統合することができます。
-
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
 
 ## `amp-live-list` の概要
 
 [`amp-live-list`](/ja/docs/reference/components/amp-live-list.html) コンポーネントは、ホスト ドキュメントを定期的にポーリングして新しいコンテンツがないか確認し、新しい項目が利用できるようになったらユーザーのブラウザを更新します。つまり、新しいブログ投稿を追加するたびに、CMS でホスト ドキュメントを更新し、ページの本文と[メタデータ](https://ampbyexample.com/samples_templates/live_blog/#metadata) セクションの両方に更新を含める必要があるということです。
-
 
 たとえば、次のようなシンプルなブログのコードがあるとします。
 
@@ -85,7 +77,6 @@ toc: true
 ブログ投稿を公開する際は、共有などの機能を利用できるようにするため、投稿へのディープリンクをできるようにすることが重要です。`amp-live-list` では、ブログ項目の `id` を使うだけでディープリンクできます。たとえば、[https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) とすると、ID が `post3` のブログ投稿に直接移動できます。
 
 AMP by Example の[ライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/)では、Cookie を使用して新しいコンテンツを生成しているため、初めてページを表示したときには、ID “post3” の投稿にアクセスできない可能性があります。その場合は、最初の投稿にリダイレクトされます。
-
 
 ## 関連資料
 

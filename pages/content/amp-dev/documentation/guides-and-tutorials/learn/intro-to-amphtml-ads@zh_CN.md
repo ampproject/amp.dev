@@ -1,9 +1,6 @@
 ---
 $title: AMPHTML 广告
-toc: true
 ---
-
-
 
 ## 什么是 AMPHTML 广告？
 
@@ -21,7 +18,6 @@ AMPHTML 广告比传统广告更好的原因何在？
 1. **更具吸引力**：用户无法与系统不显示的广告进行互动。更快的广告加载速度使可见度更高，继而产生更高的点击率，最终带来更好的广告效果。
 1. **免受恶意软件侵害**：谁都无法通过 AMPHTML 广告传播恶意软件，因为广告需要先经过验证才能投放。因此，广告主可以确保安全的用户体验，并打造正面的品牌形象。
 1. **更灵活**：AMPHTML 广告适用于 AMP 网页和非 AMP 网页以及任何设备。
-
 
 ### 格式
 
@@ -45,7 +41,6 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
     <td>灯箱</td>
   </tr>
 </table>
-
 
 ## AMPHTML 广告的工作原理
 
@@ -90,7 +85,6 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 *  [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate（即将推出）
-
 
 ### 验证 AMPHTML 广告语法
 

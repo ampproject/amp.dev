@@ -1,9 +1,6 @@
 ---
 $title: Anúncios HTML para AMP
-toc: true
 ---
-
-
 
 ## O que é um anúncio HTML para AMP?
 
@@ -21,7 +18,6 @@ Por que os anúncios HTML para AMP são melhores que os anúncios tradicionais?
 1.  **Mais interessantes**: os usuários não interagem com anúncios que não conseguem ver. Anúncios mais rápidos levam a maior visibilidade e, consequentemente, a taxas de cliques mais elevadas, o que, por sua vez, leva a um melhor desempenho do anúncio.
 1.  **Protegidos contra malware**: com anúncios HTML para AMP, é impossível propagar malware, porque eles são verificados antes da veiculação. Devido a isso, os anunciantes podem garantir uma experiência do usuário segura e uma percepção positiva da marca. 
 1.  **Mais flexíveis**: os anúncios HTML para AMP foram concebidos para funcionar em páginas da Web AMP e não AMP, bem como em qualquer dispositivo.
-
 
 ### Formatos
 
@@ -45,7 +41,6 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
     <td>Lightbox</td>
   </tr>
 </table>
-
 
 ## Como funcionam os anúncios HTML para AMP
 
@@ -90,7 +85,6 @@ Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma ext
 *  [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate (*em breve*)
-
 
 ### Validar a sintaxe do anúncio HTML para AMP
 

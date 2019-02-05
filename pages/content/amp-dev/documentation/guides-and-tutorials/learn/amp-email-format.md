@@ -1,7 +1,6 @@
 ---
 $title: AMPHTML email
 $order: 2
-toc: true
 formats:
   - email
 ---
@@ -21,8 +20,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 AMP is a technology commonly known for developing super fast web pages on mobile clients. AMP is in fact a set of HTML tags backed by JavaScript that allow all kinds of functionality with a focus on performance and security.
 

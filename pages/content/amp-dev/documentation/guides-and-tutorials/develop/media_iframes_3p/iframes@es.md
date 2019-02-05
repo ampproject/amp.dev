@@ -1,8 +1,6 @@
 ---
 $title: Incluir iframes
-toc: true
 ---
-
 
 Descubre cómo incluir contenido multimedia en tus páginas y cómo usar iframes para mostrar contenido avanzado saltándose las limitaciones de AMP.
 
@@ -48,7 +46,6 @@ Un ejemplo de `amp-iframe`:
 Puedes mostrar un `amp-iframe` en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de `amp-iframe` como, (por ejemplo, `amp-img`). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
 
 Leer más: Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder](/es/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-
 
 Este ejemplo de un elemento placeholder:
 

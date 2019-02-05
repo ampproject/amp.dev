@@ -1,8 +1,6 @@
 ---
 $title: Insertar y utilizar AMP como fuente de datos
-toc: true
 ---
-
 
 Si ya utilizas AMP pero todavía no has creado una aplicación web progresiva, tus páginas AMP podrían simplificar drásticamente el desarrollo de esta aplicación. Con esta guía aprenderás a utilizar AMP en aplicaciones web progresivas y como fuente de datos.
 

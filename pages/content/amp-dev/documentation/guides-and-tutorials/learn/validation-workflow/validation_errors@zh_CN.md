@@ -1,6 +1,5 @@
 ---
 $title: AMP 验证错误
-toc: true
 ---
 
 <!---
@@ -25,8 +24,6 @@ limitations under the License.
 ({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
 有关验证错误的完整概述，
 请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
-
-
 
 ## AMP HTML 标记和属性错误
 

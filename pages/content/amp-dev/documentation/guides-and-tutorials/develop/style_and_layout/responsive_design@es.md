@@ -1,8 +1,6 @@
 ---
 $title: Crear páginas AMP responsivas
-toc: true
 ---
-
 
 ## Introducción
 
@@ -25,7 +23,6 @@ Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](/e
 ```
 
 Éstas son las configuraciones típicas del viewport que utilizarías para un sitio responsivo. Aunque `initial-scale = 1` no es necesario para una página AMP válida, se recomienda porque establece el nivel de zoom en 1 cuando se cargue la página por primera vez.
-
 
 ## Creando el layout responsivo
 

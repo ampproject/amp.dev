@@ -1,10 +1,7 @@
 ---
 $title: Adding extended AMP components
 $order: 2
-toc: true
 ---
-
-
 
 AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components:
 

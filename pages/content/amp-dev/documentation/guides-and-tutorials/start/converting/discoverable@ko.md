@@ -81,11 +81,9 @@ $title: 페이지를 검색할 수 있도록 설정
 </script>
 ```
 
-
 [tip type="note"]
 콘텐츠는 동일해야 합니다. 뉴스 기사에는 'NewsArticle' 유형을 지정하세요. 제목은 기사 제목과 일치해야 합니다. 이미지 객체는 기사의 히어로 이미지를 참조합니다.
 [/tip]
-
 
 브라우저에서 페이지를 **다시 로드**하고 AMP 유효성 검사 오류가 없는지 확인합니다.
 
@@ -108,11 +106,7 @@ $title: 페이지를 검색할 수 있도록 설정
 구조화된 데이터가 유효하면 **오류 0개** 및 **경고 0개**가 표시됩니다.
 
 [tip type="read-on"]
-<<<<<<< HEAD
 페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
-=======
-페이지 검색 가능성에 관해 자세히 알아보려면 [페이지를 더 발견할 수 있게 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 [/tip]
 
 훌륭합니다.  이제 AMP 뉴스 기사가 완성되었습니다.

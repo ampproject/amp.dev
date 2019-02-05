@@ -1,8 +1,6 @@
 ---
 $title: Precargar una aplicación web progresiva (PWA) desde páginas AMP
-toc: true
 ---
-
 
 Una buena estrategia es definir que **una página AMP sea el punto de entrada de los usuarios a tu sitio web** y después **preparar la PWA en segundo plano** y dirigirlos a ella durante el resto de la visita:
 
@@ -11,7 +9,6 @@ Una buena estrategia es definir que **una página AMP sea el punto de entrada de
 * Cuando el usuario hace clic en otro enlace de tu sitio web (por ejemplo, en la llamada a la acción de la parte inferior, para obtener una experiencia más similar a una aplicación), el componente service worker intercepta la solicitud, toma el control de la página y carga el esqueleto de la PWA en su lugar.
 
 Sigue leyendo para saber por qué y cómo usar este patrón de desarrollo.
-
 
 ## Mejora la visita del usuario al conectarlo con una PWA
 
@@ -73,11 +70,7 @@ Consejo: Hay formas más sencillas de trabajar con un service worker. Echa un vi
 
 ## Redirigir a la PWA todos los enlaces de una página AMP
 
-<<<<<<< HEAD
 Es posible que la mayoría de los enlaces de tus páginas AMP dirijan a otras páginas de contenido. Se pueden seguir dos estrategias distintas para asegurarse de que los clics a otros enlaces provoquen una "actualización" de la aplicación web progresiva, [según cómo utilices AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
-=======
-Es posible que la mayoría de los enlaces de tus páginas AMP dirijan a otras páginas de contenido. Se pueden seguir dos estrategias distintas para asegurarse de que los clics a otros enlaces provoquen una "actualización" de la aplicación web progresiva, [según cómo utilices AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 1. Si emparejas tus páginas canónicas con páginas AMP
 

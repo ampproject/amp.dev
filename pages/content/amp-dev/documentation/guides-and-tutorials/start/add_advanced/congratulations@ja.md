@@ -15,8 +15,6 @@ $title: おつかれさまでした
 - [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) を使用して、サイトのナビゲーションを追加する
 - AMP でカスタム フォントを使用する
 
-
-
 ## 次のステップ
 
 AMP に関する知識をさらに深めるためには、次のリソースをご参照ください。

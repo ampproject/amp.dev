@@ -1,9 +1,6 @@
 ---
 $title: 为 AMP 网页启用渐进式网页应用功能
-toc: true
 ---
-
-
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample 触发了“添加到主屏幕”提示。') }}
 
@@ -110,5 +107,3 @@ self.addEventListener('fetch', function(event) {
 
 * 需要使用自定义 JS 的动态功能。
 * 专为您的网站定制/仅与您的网站相关的组件。
-
-

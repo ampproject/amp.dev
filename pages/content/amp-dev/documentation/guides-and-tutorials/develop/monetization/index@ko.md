@@ -1,9 +1,6 @@
 ---
 $title: AMP 페이지에서 광고로 수익 창출하기
-toc: true
 ---
-
-
 
 이 가이드에서는 AMP 페이지에 광고를 게재하기 위한 안내와 권장사항을 제공합니다.
 
@@ -108,11 +105,9 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 *   [AMP RTC 게시자 구현 가이드](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 *   [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-
 ## 권장사항
 
 AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세요.
-
 
 ### 게재위치 및 제어: 광고 게재위치 최적화
 

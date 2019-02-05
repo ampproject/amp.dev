@@ -1,12 +1,8 @@
 ---
 $title: Praktik terbaik untuk membuat artikel AMP
-toc: true
 ---
 
-
-
 Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP](/id/docs/reference/components/amp-story.html).
-
 
 ## Warna background  
 
@@ -105,20 +101,17 @@ Video artikel AMP selalu ditampilkan vertikal (tampilan potret) dengan rasio tin
   </tbody>
 </table>
 
-
 [tip type="note"]
 
 Untuk perangkat seluler yang rasio tinggi lebarnya tidak 16:9, video mungkin akan di-crop secara vertikal atau horizontal agar pas dengan viewport.
 
 [/tip]
 
-
 ### Codec video
 
 1.  Untuk MP4, gunakan `H.264`.
 2.  Untuk WEBM, gunakan `VP9`.
 3.  Untuk HLS atau DASH, gunakan `H.264`.
-
 
 ### Kualitas video
 

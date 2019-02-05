@@ -1,8 +1,6 @@
 ---
 $title: AMP 삽입 및 데이터 소스로 사용하기
-toc: true
 ---
-
 
 AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 만들지 않으셨나요? AMP 페이지를 통해 프로그레시브 웹 앱의 개발 과정을 크게 간소화할 수 있습니다. 이 가이드에서는 프로그레시브 웹 앱 내에서 AMP를 사용하고, 기존 AMP 페이지를 데이터 소스로 사용하는 방법을 알아봅니다.
 
@@ -123,5 +121,4 @@ Google에서 제작한 [React 샘플](https://github.com/ampproject/amp-publishe
 
 * 코드 받기: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * 실제 작동 모습 확인하기: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
 

@@ -8,8 +8,6 @@ formats:
   - ads
 ---
 
-
-
 ## Why is my doc broken on an AMP cache?
 
 Valid AMP documents typically appear and behave the same on AMP Caches as they

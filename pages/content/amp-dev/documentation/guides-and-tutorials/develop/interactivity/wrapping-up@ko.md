@@ -12,7 +12,6 @@ $title: 마무리
 
 도움이 필요한 경우 [`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) 파일에서 완성된 솔루션을 확인하세요.
 
-
 ## 다음 단계
 
 [`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 설명서 및 기타 [동적 AMP 구성요소](/ko/docs/reference/components.html#dynamic-content)에서 양방향 AMP 페이지를 구축하여 얻을 수 있는 강력한 기능과 유연성에 관해 자세히 알아보세요.

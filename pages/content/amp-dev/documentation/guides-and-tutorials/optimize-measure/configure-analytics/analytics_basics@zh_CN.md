@@ -1,17 +1,12 @@
 ---
 $title: 分析：基础知识
-toc: true
 ---
 
 从这里开始了解 AMP 分析的相关基础知识。
 
-
-
 ## 使用 amp-pixel 还是 amp-analytics？
 
-
 AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pixel](/zh_cn/docs/reference/components/amp-pixel.html) 和 [amp-analytics](/zh_cn/docs/reference/components/amp-analytics.html)。两个组件都会将分析数据发送到定义的端点。
-
 
 如果您只是跟踪诸如简单的[跟踪像素](https://en.wikipedia.org/wiki/Web_beacon#Implementation)之类的行为，则可以使用 `amp-pixel` 组件，它提供了基本的网页浏览跟踪功能；网页浏览数据将发送到定义的网址。某些与供应商的集成功能可能需要使用此组件，在这种情况下，这些集成功能将指定确切的网址端点。
 
@@ -131,7 +126,6 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 ```
 
 如果 AMP 发现此 Cookie 已设置，则客户端 ID 替换将返回 Cookie 的值。如果 AMP 发现此 Cookie 未设置，则 AMP 将生成一个值，格式为 `amp-` ，后跟一个随机 base64 编码字符串。
-
 
 如需详细了解客户端 ID 替换（包括如何添加可选的用户通知 ID），请参阅 [AMP 分析中支持的变量](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)。
 

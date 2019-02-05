@@ -12,7 +12,6 @@ Anda telah mempelajari cara:
 
 Jika mengalami kesulitan, lihat file [`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) untuk mendapatkan solusi lengkap.
 
-
 ## Langkah berikutnya
 
 Pelajari lebih lanjut tentang kecanggihan dan fleksibilitas dalam pembuatan halaman AMP interaktif di dokumentasi  [`<amp-bind>`](/id/docs/reference/components/amp-bind.html) dan dari [komponen AMP dinamis](/id/docs/reference/components.html#dynamic-content) lainnya.

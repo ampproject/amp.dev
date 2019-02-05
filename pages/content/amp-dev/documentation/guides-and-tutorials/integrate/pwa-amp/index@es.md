@@ -1,8 +1,6 @@
 ---
 $title: Combinar AMP con aplicaciones web progresivas
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Introducción a la combinación de páginas AMP y PWA.']
 

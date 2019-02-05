@@ -1,11 +1,10 @@
 ---
 $title: Preload your Progressive Web App from your AMP pages
 $order: 1
-toc: true
 formats:
   - websites
+author: pbakaus
 ---
-
 
 A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
 
@@ -14,7 +13,6 @@ A good strategy is to make the **entry point into your site an AMP page**, then 
 * When the user clicks another link on your website (for example, the call to action at the bottom for a more app-like experience), the service worker intercepts the request, takes over the page and loads the PWA shell instead.
 
 Read on to learn why, and how to use this development pattern.
-
 
 ## Improve the user journey by connecting to a PWA
 

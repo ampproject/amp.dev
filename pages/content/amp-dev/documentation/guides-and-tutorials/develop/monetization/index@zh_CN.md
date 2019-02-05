@@ -1,9 +1,6 @@
 ---
 $title: 在您的 AMP 网页中利用广告获利
-toc: true
 ---
-
-
 
 本指南提供了关于在 AMP 网页上展示广告的说明和最佳做法。
 
@@ -108,11 +105,9 @@ toc: true
 *   [AMP RTC 发布商实现指南](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 *   [AMP 实时配置](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-
 ## 最佳做法
 
 以下提示可帮助您最大限度地提升您 AMP 网页上广告的效果：
-
 
 ### 展示位置与控件：优化广告展示位置
 

@@ -1,8 +1,6 @@
 ---
 $title: Kasus Penggunaan
-toc: true
 ---
-
 
 Panduan ini memberikan rangkaian kasus penggunaan umum untuk melacak keterlibatan pengguna:
 
@@ -14,7 +12,6 @@ Pelajari cara melacak jumlah kunjungan halaman menggunakan `amp-pixel` dan `amp-
 
 ### Menggunakan amp-pixel
 
-
 Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [amp-pixel](/id/docs/reference/components/amp-pixel.html):
 
 ```html
@@ -22,7 +19,6 @@ Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [amp-p
 ```
 
 ### Menggunakan amp-analytics - tanpa vendor
-
 
 Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [amp-analytics](/id/docs/reference/components/amp-analytics.html):
 

@@ -1,9 +1,6 @@
 ---
 $title: Ativar os recursos de Progressive Web App nas suas páginas AMP
-toc: true
 ---
-
-
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample acionando a solicitação "Adicione à tela inicial".') }}
 
@@ -110,5 +107,3 @@ funcionalidades adicionais que não passariam na [validação de AMP]({{g.doc('/
 
 * recursos dinâmicos que exigem JS personalizado
 * componentes personalizados/relevantes apenas para seu site
-
-

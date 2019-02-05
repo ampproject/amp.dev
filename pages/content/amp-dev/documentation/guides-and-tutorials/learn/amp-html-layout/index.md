@@ -1,6 +1,5 @@
 ---
 $title: AMPHTML Layout System
-toc: true
 $order: 1
 $hidden: true
 formats:
@@ -25,10 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
-
-
 
 ## Overview
 
@@ -180,7 +175,6 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 **Example**: Using the `heights` attribute
 
 In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
-
 
 [sourcecode:html]
 <amp-img src="https://acme.org/image1.png"

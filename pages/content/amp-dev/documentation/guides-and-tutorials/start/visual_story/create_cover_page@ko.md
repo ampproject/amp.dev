@@ -1,9 +1,6 @@
 ---
 $title: 커버 페이지 만들기
-toc: true
 ---
-
-
 
 AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩니다. [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 내에 스토리의 각 화면을 담고 있는 `<amp-story-page>` 구성요소를 하나 이상 둘 수 있습니다. 문서 순서에서 가장 먼저 지정하는 페이지가 스토리에서 표시되는 첫 번째 페이지입니다.
 

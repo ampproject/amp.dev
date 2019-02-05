@@ -1,12 +1,9 @@
 ---
 $title: Intro to AMPHTML ads
 $order: 2
-toc: true
 formats:
   - ads
 ---
-
-
 
 ## What's an AMPHTML ad?
 
@@ -24,7 +21,6 @@ Why are AMPHTML ads better than traditional ads?
 1.  **More Engaging**: Users can't engage with ads they can't see. Faster ads lead to higher viewability and therefore higher click-through rates, which ultimately leads to better ad performance.
 1.  **Safe from Malware**: It's impossible to spread malware with AMPHTML ads because the ads are verified before being served. Because of this, advertisers can ensure a safe user experience and positive brand perception.
 1.  **More Flexible**: AMPHTML ads are designed to work on both AMP and non-AMP web pages, as well as across any device.
-
 
 ### Formats
 
@@ -48,7 +44,6 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
     <td>Lightbox</td>
   </tr>
 </table>
-
 
 ## How AMPHTML ads work
 
@@ -93,7 +88,6 @@ To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`]({{g.doc('/
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate (*coming soon*)
-
 
 ### Validate AMPHTML ad syntax
 

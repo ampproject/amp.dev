@@ -1,9 +1,6 @@
 ---
 $title: AMP와 통합하여 디스플레이 광고 게재
-toc: true
 ---
-
-
 
 이 가이드는 AMP와 통합하여 디스플레이 광고를 AMP 페이지에 게재하려는 광고 네트워크를 위한 것입니다.
 
@@ -20,17 +17,13 @@ toc: true
 1. [AMP 광고 구현 만들기](#creating-an-amp-ad-implementation)(예: 기본 HTML 광고를 게재하기 위한 광고 구현을 아직 만들지 않은 경우)
 2. [AMP HTML 광고 게재를 위한 빠른 가져오기 통합 만들기](#creating-a-fast-fetch-integration)
 
-
 ## AMP 광고 구현 만들기
 
 광고 서버로서 지원되는 게시자는 제공된 JavaScript 라이브러리를 포함하며, JavaScript 라이브러리를 사용하여 광고를 가져온 다음 게시자의 웹사이트에 렌더링하는 다양한 '광고 스니펫'을 배치합니다. 게시자는 AMP를 사용하여 임의의 JavaScript를 실행할 수 없으므로 AMP 오픈소스 코드를 작성하여 [`AMP 광고`](/ko/docs/reference/components/amp-ad.html) 태그를 통해 광고 서버에서 광고를 요청하도록 허용해야 합니다.
 
 [tip type="note"]
-
 이 AMP 광고 구현을 사용하여 기본 HTML 광고 **및** AMP HTML 광고를 표시할 수 있습니다.
-
 [/tip]
-
 
 예를 들어, 다음 구문을 사용하여 Amazon A9 서버를 호출할 수 있습니다.
 
@@ -60,7 +53,6 @@ toc: true
 1.  유효성 검사 서비스를 통한 광고 소재 유효성 검사 및 서명. [Cloudflare](https://blog.cloudflare.com/firebolt/)는 AMP 광고 확인 서비스를 제공하여, 독립 광고 제공업체에서 더 빠르고, 가볍고, 참여가 높은 광고를 게재할 수 있도록 지원합니다.
 
 빠른 가져오기 통합을 생성하는 방법은 [빠른 가져오기 네트워크 구현 가이드](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)를 참조하세요. 
-
 
 ## 관련 리소스
 

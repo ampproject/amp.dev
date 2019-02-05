@@ -2,13 +2,12 @@
 $title: Combine AMP with Progressive Web Apps
 $order: 0
 $path: /documentation/guides-and-tutorials/integration/pwa-amp/combine-amp-pwa.html
-toc: true
 formats:
   - websites
 components:
     - youtube
+author: pbakaus
 ---
-
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Watch the intro to combining AMP and PWA.']
 

@@ -1,8 +1,6 @@
 ---
 $title: 嵌入 AMP 网页并将其用作数据源
-toc: true
 ---
-
 
 如果您已经制作了 AMP 网页，但尚未构建渐进式网页应用，那么您的 AMP 网页可以极大地简化您的渐进式网页应用的开发工作。本指南将向您介绍如何在渐进式网页应用中使用 AMP 以及如何将现有 AMP 网页用作数据源。
 
@@ -123,5 +121,4 @@ ampedDoc.close();
 
 * 获取代码：[https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
 * 了解实际运作方式：[https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
 

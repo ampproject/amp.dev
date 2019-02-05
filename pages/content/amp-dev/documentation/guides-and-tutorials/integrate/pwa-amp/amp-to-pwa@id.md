@@ -1,8 +1,6 @@
 ---
 $title: Memuat Progressive Web App di awal dari halaman AMP
-toc: true
 ---
-
 
 Strategi yang baik adalah membuat **pintu masuk ke situs sebagai halaman AMP**, kemudian **menyiapkan PWA di belakang layar** dan beralih ke PWA untuk perjalanan selanjutnya:
 
@@ -11,7 +9,6 @@ Strategi yang baik adalah membuat **pintu masuk ke situs sebagai halaman AMP**, 
 * Saat pengguna mengklik link lain di situs Anda (misalnya, pesan ajakan (CTA) di bagian bawah untuk pengalaman yang lebih mirip aplikasi), Service Worker akan mencegat permintaan, mengambil alih halaman, dan memuat shell PWA.
 
 Baca terus untuk mengetahui alasan dan cara menggunakan pola pengembangan ini.
-
 
 ## Meningkatkan perjalanan pengguna dengan menghubungkan ke PWA
 
@@ -77,11 +74,7 @@ self.addEventListener('install', function(event) {
 
 ## Membuat semua link di Halaman AMP menuju ke PWA
 
-<<<<<<< HEAD
 Sebagian besar link di halaman AMP Anda kemungkinan mengarah ke lebih banyak halaman konten. Ada 2 strategi untuk memastikan bahwa klik link berikutnya akan menghasilkan "upgrade" ke Progressive Web App, [bergantung pada cara Anda menggunakan AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
-=======
-Sebagian besar link di halaman AMP Anda kemungkinan mengarah ke lebih banyak halaman konten. Ada 2 strategi untuk memastikan bahwa klik link berikutnya akan menghasilkan "upgrade" ke Progressive Web App, [bergantung pada cara Anda menggunakan AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 1. Jika Anda menyambungkan halaman kanonis dengan halaman AMP
 

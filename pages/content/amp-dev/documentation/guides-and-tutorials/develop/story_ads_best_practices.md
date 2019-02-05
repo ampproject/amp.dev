@@ -1,13 +1,10 @@
 ---
 $title: Best practices for creating an AMP Story ad
 $order: 16
-toc: true
 
 formats:
     - ads
 ---
-
-
 
 AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for AMP Stories.
 
@@ -28,7 +25,6 @@ To be consistent with these principles, the AMP Story runtime determines the rig
 AMP Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. An AMP Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
 
 {{ image('/static/img/docs/stampads/stamp_ad.png', 425, 800, layout='intrinsic', alt='Example of an AMP Story ad', caption='Example of an AMP Story ad', align='' ) }}
-
 
 To keep the user experience consistent, the AMP Story runtime is responsible for rendering the ad label and the CTA button.
 
@@ -72,7 +68,6 @@ The `amp-cta-type` tag must include one of the [available options]({{g.doc('/con
 ##Call to action button text enum
 The call to action button must be configured from a predefined set of choices:
 
-
 * `APPLY_NOW`: "Apply Now"
 * `BOOK_NOW`: "Book"
 * `BUY_TICKETS`: "Buy Tickets"
@@ -108,7 +103,6 @@ You can specify one of three options for an AMP Story ad landing page.
 * `STORY`: Landing page is a [sponsored story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path}}#sponsored-story).
 * `AMP`: Landing page is a valid AMP Page.
 * `NONAMP`: Any other type of webpage.
-
 
 ##Layout
 AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.

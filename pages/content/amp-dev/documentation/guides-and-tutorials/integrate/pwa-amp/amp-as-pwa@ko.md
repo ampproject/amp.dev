@@ -1,9 +1,6 @@
 ---
 $title: AMP 페이지에 프로그레시브 웹 앱 기능 사용 설정
-toc: true
 ---
-
-
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='"홈 화면에 추가" 메시지를 트리거하는 AMPbyExample.') }}
 
@@ -110,5 +107,3 @@ self.addEventListener('fetch', function(event) {
 
 * 맞춤 JS를 필요로 하는 동적 기능
 * 내 사이트에 맞춤설정되었거나 내 사이트에만 관련이 있는 구성요소
-
-

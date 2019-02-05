@@ -1,9 +1,6 @@
 ---
 $title: Diseño y media queries
-toc: true
 ---
-
-
 
 AMP admite **media queries** y **media queries de elementos** y tiene un potente mecanismo integrado para controlar el **diseño** de elementos concretos. Con el atributo `layout`, crear o trabajar con diseños completamente adaptables es mucho más sencillo que si solo utilizaras CSS.
 
@@ -105,7 +102,6 @@ Se pueden asignar los siguientes valores al atributo `layout`:
 Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP](/es/docs/design/amp-html-layout/layouts_demonstrated.html). También encontrarás más información en [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 
 [/tip]
-
 
 ### ¿Qué ocurre si la altura y la anchura no están definidas?
 

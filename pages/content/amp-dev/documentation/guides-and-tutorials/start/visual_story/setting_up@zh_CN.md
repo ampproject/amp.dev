@@ -40,5 +40,4 @@ http://localhost:8000/pets-completed.html
 
 [/tip]
 
-
 点击浏览故事的完成版，了解我们将要创作什么样的内容。

@@ -1,7 +1,6 @@
 ---
 $title: Placeholders & fallbacks
 $order: 3
-toc: true
 formats:
   - websites
   - email
@@ -13,7 +12,6 @@ author: pbakaus
 contributors:
   - bpaduch
 ---
-
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 

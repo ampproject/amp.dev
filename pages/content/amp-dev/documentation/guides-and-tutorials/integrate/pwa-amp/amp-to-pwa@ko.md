@@ -1,8 +1,6 @@
 ---
 $title: AMP 페이지에서 프로그레시브 웹 앱 미리 로드하기
-toc: true
 ---
-
 
 **AMP 페이지를 사이트의 진입점으로 만든 다음**, 향후 사용자 여정을 위해 **보이지 않는 곳에서 PWA를 준비**한 후 전환하는 것이 좋습니다.
 
@@ -11,7 +9,6 @@ toc: true
 * 사용자가 웹사이트에서 다른 링크(예: 앱과 더욱 비슷한 환경을 제공하기 위한 하단의 클릭 유도문안)를 클릭하면 서비스 워커가 그 요청을 가로채어 페이지를 넘겨받고 PWA 셸을 대신 로드합니다.
 
 계속 읽어나가며 이 개발 패턴을 사용하는 이유와 방법을 알아보세요.
-
 
 ## PWA로 연결하여 사용자 여정 개선하기
 
@@ -73,11 +70,7 @@ self.addEventListener('install', function(event) {
 
 ## AMP 페이지의 모든 링크를 PWA로 연결하기
 
-<<<<<<< HEAD
 AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 두 가지 전략이 있습니다.
-=======
-AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 두 가지 전략이 있습니다.
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 1. 표준 페이지를 AMP 페이지와 연결하는 경우
 

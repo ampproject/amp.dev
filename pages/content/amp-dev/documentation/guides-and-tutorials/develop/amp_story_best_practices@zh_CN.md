@@ -1,12 +1,8 @@
 ---
 $title: 创作 AMP 故事的最佳做法
-toc: true
 ---
 
-
-
 本指南介绍了在创作 [AMP 故事](/zh_cn/docs/reference/components/amp-story.html)时应采取的最佳做法。
-
 
 ## 背景颜色
 
@@ -105,20 +101,17 @@ AMP 故事视频始终是竖直显示的（即纵向视图），要求宽高比�
   </tbody>
 </table>
 
-
 [tip type="note"]
 
 对于宽高比不是 16:9 的移动设备，可以水平或垂直剪裁视频，使其适应视口大小。
 
 [/tip]
 
-
 ### 视频编解码器
 
 1.  对于 MP4，请使用 `H.264`。
 1.  对于 WEBM，请使用 `VP9`。
 1.  对于 HLS 或 DASH，请使用 `H.264`。
-
 
 ### 视频画质
 

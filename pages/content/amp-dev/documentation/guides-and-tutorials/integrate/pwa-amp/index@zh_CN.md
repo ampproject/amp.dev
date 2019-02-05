@@ -1,8 +1,6 @@
 ---
 $title: 将 AMP 与渐进式网页应用相结合
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='欢迎观看这个简介性视频，了解如何将 AMP 与 PWA 相结合。']
 
