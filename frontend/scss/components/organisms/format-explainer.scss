@@ -8,8 +8,6 @@
 @import '../atoms/_icon.scss';
 @import '../atoms/_color.scss';
 
-@import '../molecules/_copy.scss';
-
 .#{utility('format-explainer')} {
   overflow: hidden;
   padding-left: 20px;

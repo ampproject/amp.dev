@@ -1,8 +1,8 @@
 /*
 
-#############################################
-### TEMPLATE: overview benefits ###
-#############################################
+################################
+### TEMPLATE: custom content ###
+################################
 
 ### INFO:
 
@@ -15,18 +15,6 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
-
-@import '../molecules/benefit';
-@import '../molecules/copy';
-@import '../molecules/headline-icon.scss';
-@import '../molecules/quote';
-@import '../molecules/table.scss';
-
-@import '../organisms/benefits-overview.scss';
-@import '../organisms/case-band.scss';
-@import '../organisms/case-grid.scss';
-@import '../organisms/component-visual.scss';
-@import '../organisms/kpi-list.scss';
 
 @import '../templates/_default.scss';
 

@@ -4,16 +4,14 @@
 ### MOLECULE: copy ###
 ######################
 
-### INFO:
-
-The copy molecule is a combination of headline and text atom.
-Currently no custom styles are required here.
-
-### MODIFIERS:
-
-none
-
 */
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
 
 .#{molecule('copy')} {
   margin-bottom: 3em;
@@ -56,7 +54,8 @@ none
     grid-column: 1 / -1;
     text-align: center;
 
-    &-left {
+    &-small {
+      grid-column: 6 / 19;
       text-align: left;
     }
   }
