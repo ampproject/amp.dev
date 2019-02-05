@@ -1,29 +1,34 @@
 ---
 $title@: Success Stories
 $path: /success-stories.html
-$view: /views/overview/success-story-overview.j2
 $localization:
   path: /{locale}/success-stories.html
+$view: /views/custom.j2
+$hidden: true
 ---
-<section class="ap--stage ap--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <div class="ap-o-stage ap-o-stage-websites">
-    <div class="ap--container-fluid">
-      <div class="ap-o-stage-content">
-          <h2 class="ap-o-stage-content-subline">{{ _('See what others have built') }}</h2>
-          <h1 class="ap-o-stage-content-headline-big">{{ _('Success stories' ) }}</h1>
+{% do doc.styles.addCssFile('css/components/templates/template.css') %}
+
+{% block main %}
+<main class="ap--main ap-t-template">
+  <section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+    <div class="ap-o-stage ap-o-stage-websites">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content">
+            <h2 class="ap-o-stage-content-subline">{{ _('See what others have built') }}</h2>
+            <h1 class="ap-o-stage-content-headline-big">{{ _('Success stories' ) }}</h1>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-{% set categories = g.categories('/content/amp-dev/about/success-stories', locale=doc.locale) %}
-<section class="ap--intro ap--container">
-  <div class="ap--content">
-    <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
-  </div>
+  {% set categories = g.categories('/content/amp-dev/about/success-stories', locale=doc.locale) %}
+  <section class="ap--intro ap--container">
+    <div class="ap--content">
+      <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
+    </div>
 
-  <amp-state id="activeFilter">
+    <amp-state id="activeFilter">
       <script type="application/json">
         {
           "chosenFilter": "none"
@@ -31,33 +36,33 @@ $localization:
       </script>
     </amp-state>
 
-  {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-  <div class="ap-o-filter-bubbles-list">
-    <button class="ap-m-filter-bubble filtered"
-      [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-      on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
-      name="all">
-      All
-    </button>
-    {% for category, stories in categories %}
-    <button class="ap-m-filter-bubble"
-        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-        on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
-        name="{{ category|slug }}">
-        {{ category }}
+    {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+    <div class="ap-o-filter-bubbles-list">
+      <button class="ap-m-filter-bubble filtered"
+        [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+        on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+        name="all">
+        All
       </button>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="ap--teaser-grid ap--container">
-  <div class="ap-o-teaser-grid">
-    <div class="ap-o-teaser-grid-list">
       {% for category, stories in categories %}
-      {% for teaser_doc in stories %}
-      {% include '/views/partials/teaser.j2' %}
-      {% endfor %}
+      <button class="ap-m-filter-bubble"
+          [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
+          name="{{ category|slug }}">
+          {{ category }}
+        </button>
       {% endfor %}
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="ap--teaser-grid ap--container">
+    <div class="ap-o-teaser-grid">
+      <div class="ap-o-teaser-grid-list">
+        {% for teaser_doc in doc.collection.list_docs(locale=doc.locale, order_by='date')|reverse %}
+        {% include '/views/partials/teaser.j2' %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

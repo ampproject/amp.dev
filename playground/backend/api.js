@@ -23,6 +23,7 @@ const {setMaxAge} = require('../../platform/lib/utils/cacheHelpers.js');
 const api = express.Router();
 
 const ONE_HOUR = 60 * 60;
+const ONE_DAY = ONE_HOUR * 24;
 const VALID_ORIGINS = new Set([
   'amp.dev',
   'api.amp.dev',
@@ -53,18 +54,36 @@ api.get('/fetch', async (request, response) => {
   }
 });
 
+api.get('/amp-component-versions', async (request, response) => {
+  const url = 'https://ampbyexample.com/playground/amp-component-versions';
+  try {
+    const body = await doFetch(url);
+    setMaxAge(response, ONE_DAY);
+    response.send(body);
+  } catch (error) {
+    console.error('Could not fetch component versions', error);
+    response.send(`Could not fetch component versions ${url}`).status(400).end();
+  }
+});
+
+
 async function fetchDocument(urlString, host) {
   const url = new URL(urlString, host);
   if (!VALID_ORIGINS.has(url.host)) {
     throw new Error(`Unsupported host ${url.host}`);
   }
+  return doFetch(url.toString());
+}
+
+async function doFetch(url) {
   const response = await fetch(url, {
     compress: true,
     headers: {
       'Accept': 'text/html',
+      'x-requested-by': 'playground',
       'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MTC19V) '+
-        'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile '+
-        'Safari/537.36 (compatible; amp.dev/playground)',
+      'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile '+
+      'Safari/537.36 (compatible; amp.dev/playground)',
       'Referer': 'https://amp.dev/playground',
     },
   });
