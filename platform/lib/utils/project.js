@@ -36,11 +36,11 @@ function relative(base, relativePath) {
 const paths = {
   'ROOT': absolute('.'),
   'CSS': absolute('pages/css'),
+  'GROW_BUILD_DEST': absolute('platform/pages'),
 };
 
 module.exports = {
   'absolute': absolute,
   'relative': relative,
-  'require': _require,
   'paths': paths,
 };
