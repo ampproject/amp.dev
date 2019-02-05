@@ -8,7 +8,7 @@ formats:
 author: Meggin
 contributors:
   - pbakaus
-  - crystalfaith
+  - CrystalOnScript
   - bpaduch
   - choumx
 ---

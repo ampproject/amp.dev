@@ -81,6 +81,12 @@
           {% set formats = document.formats or document.collection.formats or [] %}
           {% set activeDocument = true if document.url == doc.url %}
           <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+            {# If the document is part of a tutorial render progress #}
+            {% if document.collection.tutorial %}
+            {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
+            <div class="ap-m-tutorial-progress {% if doc.order > document.order %}ap-m-tutorial-progress-finished{% endif %}"></div>
+            {% endif %}
+
             <a class="nav-link" href="{{ document.url.path }}">
               {{ document.title }}
               {% if document.tutorial %}

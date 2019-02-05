@@ -1,5 +1,6 @@
 ---
-$title: Manage non-authenticated user state with AMP
+$title: Managing non-authenticated user state with AMP
+toc: true
 $order: 2
 formats:
   - websites
