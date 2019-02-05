@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 3%
-    text: increase in conversion
+    text: Increase in conversion
 
   - value: 26%
-    text: lower bounce rate
+    text: Lower bounce rate
 
   - value: 2.5X
-    text: time on site
+    text: Time on site
 
 contents:
 

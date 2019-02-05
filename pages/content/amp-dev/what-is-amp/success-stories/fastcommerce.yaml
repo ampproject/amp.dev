@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 2M
-    text: million amp pages published
+    text: Million AMP pages published
 
   - value: 2.5X
-    text: increase in page speed
+    text: Increase in page speed
 
   - value: 15%
-    text: increase in mobile conversions
+    text: Increase in mobile conversions
 
 contents:
   - layout: text

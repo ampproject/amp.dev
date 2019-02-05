@@ -27,14 +27,14 @@ stage:
       alt: Gizmodo
 
 kpis:
-  - value: 100k
-    text: amp page visits daily
+  - value: 100K
+    text: AMP page visits daily
 
-  - value: 3x
-    text: faster page load time
+  - value: 3X
+    text: Faster page load time
 
   - value: 50%
-    text: increase in impressions
+    text: Increase in impressions
 
 contents:
 

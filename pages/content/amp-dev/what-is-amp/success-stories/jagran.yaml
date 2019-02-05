@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 4.5X
-    text: more revenue on amp pages
+    text: More revenue on AMP pages
 
   - value: 15%
-    text: higher revenue on mobile pages
+    text: Higher revenue on mobile pages
 
   - value: 115%
-    text: more amp pageviews
+    text: More AMP pageviews
 
 contents:
 

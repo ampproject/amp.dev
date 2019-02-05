@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 5X
-    text: increase in mobile page speed
+    text: Increase in mobile page speed
 
   - value: 80%
-    text: increase in mobile conversion rates
+    text: Increase in mobile conversion rates
 
   - value: 66%
-    text: decrease in mobile acquisition costs
+    text: Decrease in mobile acquisition costs
 
 contents:
   - layout: text

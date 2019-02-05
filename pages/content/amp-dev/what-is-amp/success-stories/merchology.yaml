@@ -30,13 +30,13 @@ stage:
 
 kpis:
   - value: 39%
-    text: increase in conversion rate
+    text: Increase in conversion rate
 
   - value: 19%
-    text: more pages per session
+    text: More pages per session
 
   - value: 286%
-    text: faster load time than non-amp pages
+    text: Faster load time than non-AMP pages
 
 contents:
   - layout: text

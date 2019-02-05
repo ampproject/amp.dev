@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 23%
-    text: increase in mobile search users who return within 7 days
+    text: Increase in mobile search users who return within 7 days
 
   - value: 88%
-    text: improvement in load time for amp content versus traditional mobile web
+    text: Improvement in load time for AMP content versus traditional mobile web
 
   - value: 1000+
-    text: articles the washington post publishes in amp html daily
+    text: Articles the Washington Post publishes in AMP HTML daily
 
 contents:
 

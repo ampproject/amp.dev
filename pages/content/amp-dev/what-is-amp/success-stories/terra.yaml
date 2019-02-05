@@ -30,16 +30,16 @@ stage:
 
 kpis:
   - value: 2X
-    text: increase in page speed
+    text: Increase in page speed
 
   - value: 2X
-    text: more time spent on amp pages than on other mobile pages (brazil)
+    text: More time spent on AMP pages than on other mobile pages (Brazil)
 
-  - value: 3,175%
-    text: increase in total clicks (all countries)
+  - value: 3.175%
+    text: Increase in total clicks (all countries)
 
   - value: 33%
-    text: increase in clickthrough rate (all countries)
+    text: Increase in clickthrough rate (all countries)
 
 contents:
 

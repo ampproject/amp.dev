@@ -28,13 +28,13 @@ stage:
 
 kpis:
   - value: 20%
-    text: increase in roi from mobile
+    text: Increase in ROI from mobile
 
   - value: 29%
-    text: more conversions from mobile
+    text: More conversions from mobile
 
   - value: 73%
-    text: mobile organic traffic
+    text: Mobile organic traffic
 
 contents:
 

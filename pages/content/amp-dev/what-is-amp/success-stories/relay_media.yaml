@@ -30,16 +30,16 @@ stage:
 
 kpis:
   - value: 2.5M
-    text: amps made (last 30 days)
+    text: AMPs made (last 30 days)
 
-  - value: 700ms
-    text: page load time
+  - value: 700MS
+    text: Page load time
 
   - value: 10%
-    text: increase in session time (the miami herald)
+    text: Increase in session time (The Miami Herald)
 
   - value: 90%
-    text: new traffic on amp (the daily dot)
+    text: New traffic on AMP (The Daily Dot)
 
 contents:
 

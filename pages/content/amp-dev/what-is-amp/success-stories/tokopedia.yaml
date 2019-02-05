@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 5x
-    text: higher mobile conversion rates
+    text: Higher mobile conversion rates
 
   - value: 60%
-    text: lower bounce rate
+    text: Lower bounce rate
 
   - value: 65%
-    text: faster load time
+    text: Faster load time
 
 contents:
 

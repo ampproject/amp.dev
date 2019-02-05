@@ -29,10 +29,10 @@ stage:
 
 kpis:
   - value: 22%
-    text: increase in mobile search users returning to cnbc.com in 7 days
+    text: Increase in mobile search users returning to CNBC.com in 7 days
 
   - value: 4X
-    text: decrease in mobile page load time
+    text: Decrease in mobile page load time
 
 contents:
   - layout: text

@@ -46,14 +46,14 @@ stage:
       alt: BMW and Jung von Matt
 
 kpis:
-  - value: 3-4x
-    text: faster load times
+  - value: 3-4X
+    text: Faster load times
 
   - value: 30%
-    text: higher clickthrough to national websites
+    text: Higher clickthrough to national websites
 
   - value: 26%
-    text: more mobile users
+    text: More mobile users
 
 contents:
   - layout: text
@@ -70,7 +70,7 @@ contents:
     direction: right-flat
 
   - layout: quote
-    quote: We built the new mobile BMW.com from scratch with AMP
+    quote: We built the new mobile BMW.com from scratch with AMP.
     image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
     width: 856
     height: 944

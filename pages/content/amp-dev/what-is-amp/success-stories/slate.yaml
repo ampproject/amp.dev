@@ -30,13 +30,13 @@ stage:
 
 kpis:
   - value: 44%
-    text: increase in monthly unique visitors
+    text: Increase in monthly unique visitors
 
   - value: 73%
-    text: increase in visits per monthly unique visitor
+    text: Increase in visits per monthly unique visitor
 
-  - value: ~$85k
-    text: saved in development resources/yr
+  - value: ~$85K
+    text: Saved in development resources p.a.
 
 contents:
 

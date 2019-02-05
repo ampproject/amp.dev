@@ -28,13 +28,13 @@ stage:
 
 kpis:
   - value: 75%
-    text: higher e-commerce conversion rate
+    text: Higher e-commerce conversion rate
 
   - value: 37%
-    text: faster average load speed
+    text: Faster average load speed
 
   - value: 33%
-    text: lower bounce rate
+    text: Lower bounce rate
 
 contents:
 

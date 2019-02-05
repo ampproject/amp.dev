@@ -29,13 +29,13 @@ stage:
 
 kpis:
   - value: 20-30%
-    text: more user time on pages
+    text: More user time on pages
 
   - value: 15-30%
-    text: lower bounce rate
+    text: Lower bounce rate
 
   - value: 5-10%
-    text: higher conversion rate on adwords
+    text: Higher conversion rate on AdWords
 
 contents:
   - layout: text

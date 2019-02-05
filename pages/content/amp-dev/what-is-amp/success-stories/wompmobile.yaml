@@ -30,13 +30,13 @@ stage:
 
 kpis:
   - value: 105%
-    text: conversion rate increase on AMP pages
+    text: Conversion rate increase on AMP pages
 
   - value: 31%
-    text: decrease in bounce rate on AMP pages
+    text: Decrease in bounce rate on AMP pages
 
   - value: 29%
-    text: increase in ctr from search platforms on AMP sites
+    text: Increase in CTR from search platforms on AMP sites
 
 contents:
 

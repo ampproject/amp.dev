@@ -26,17 +26,17 @@ stage:
       width: 3
       height: 5
       type: mobile
-      alt: Inkeepers Advantage
+      alt: Grupo Expansión
 
 kpis:
   - value: 76%
-    text: increase in traffic on amp pages
+    text: Increase in traffic on AMP pages
 
   - value: 2X
-    text: increase in time spent on site
+    text: Increase in time spent on site
 
   - value: 2X
-    text: increase in ctr
+    text: Increase in CTR
 
 contents:
   - layout: text
@@ -48,7 +48,7 @@ contents:
     width: 3
     height: 5
     type: mobile
-    alt: lorem ipsum
+    alt: Grupo Expansión
     headline: Solution
     text: Grupo Expansión sought to enhance the user experience on their mobile websites, so they decided to implement a solution using the Accelerated Mobile Pages (AMP) framework. The publisher’s in-house development team took a phased approach through their content management system (Brightspot), with the first stage of development taking only two weeks. During this time, they converted existing content across both articles and galleries—where 90% of their traffic resides. Grupo Expansión then began making improvements based on best practices, including adding links to related content at the bottom of each article as well as applying a robust advertising strategy to ensure their AMP pages are profitable.
     direction: left-flat
@@ -67,7 +67,7 @@ contents:
     width: 3
     height: 5
     type: mobile
-    alt: lorem ipsum
+    alt: Grupo Expansión
     headline: Results
     text: Since launching their AMP pages, Grupo Expansión has seen a 76% increase in traffic with users spending more than twice the amount of time on site. Additionally, their AMP pages are 80% faster than non-AMP pages.<br><br>The team also implemented a range of engaging ad formats that were easy to implement on AMP, including video ads, sticky ads and flying carpet ads. The ads have yielded a 150% increase in clickthrough rate (CTR) compared to ads on non-AMP pages. “We saw a great increase here,” says Rene Flores, innovation manager, Grupo Expansión. “In fact, we prioritize serving ads on AMP pages in our direct sales and programmatic guaranteed deals because the ads perform better, with an average viewability rate of 83%.”<br><br>Looking to the future, Grupo Expansión plans to move all of their mobile content to AMP, starting with redirecting all of their Twitter traffic and newsletter traffic to AMP pages. They’re also planning to integrate their data management platform and header bidding solution to generate even more revenue from ads on their AMP pages.
     direction: left-flat

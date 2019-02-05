@@ -30,16 +30,16 @@ stage:
 
 kpis:
   - value: 25%
-    text: increase in new user registration
+    text: Increase in new user registration
 
   - value: 77%
-    text: increase in connections (between owners and renters)
+    text: Increase in connections (between owners and renters)
 
   - value: 18%
-    text: reduction in bounce rate
+    text: Reduction in bounce rate
 
   - value: 10%
-    text: increase in pages per session
+    text: Increase in pages per session
 
 contents:
 
