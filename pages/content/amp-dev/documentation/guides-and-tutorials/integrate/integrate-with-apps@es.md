@@ -1,11 +1,8 @@
 ---
 $title: Integre AMP con su aplicación
-toc: true
 ---
 
 Esta guía está destinada a desarrolladores de aplicaciones móviles y webs que deseen integrar y vincular páginas de AMP. Por ejemplo, considere una aplicación de chat móvil que carga la versión de AMP de una URL compartida para lograr una experiencia más rápida para los usuarios.
-
-
 
 ## Transforme enlaces a AMP
 
@@ -26,7 +23,6 @@ Mensaje Original:
 This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
-
 
 Mensaje Transformado:
 
@@ -71,7 +67,6 @@ para una lista dada de URL ([documentación oficial](https://developers.google.c
 
 Por ejemplo, para una lista dada de URLs:
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -79,9 +74,7 @@ Por ejemplo, para una lista dada de URLs:
 ]}
 ```
 
-
 El cuerpo de respuesta contiene la asignación de URL de AMP en formato JSON:
-
 
 ```json
 {

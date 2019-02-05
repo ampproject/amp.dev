@@ -94,6 +94,20 @@
     height: auto;
     background: color('bright-gray');
     box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.4);
+    [placeholder] {
+      display: flex;
+    }
+    [placeholder] &-source,
+    [placeholder] &-preview {
+      width: calc(50% - 4px);
+    }
+    [placeholder] &-drag {
+      width: 4px;
+    }
+    [placeholder] &-drag,
+    [placeholder] &-preview {
+      background: color('white');
+    }
   }
 
   &-link {

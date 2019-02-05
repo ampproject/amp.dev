@@ -13,7 +13,6 @@ $title: 恭喜！
 - 关联 AMP 内容
 - 为搜索引擎添加结构化数据
 
-
 ## 后续步骤
 
 继续学习 AMP 相关知识：按照[添加高级 AMP 功能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}})教程，在您的 AMP 网页中构建更高级的功能。

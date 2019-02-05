@@ -39,7 +39,7 @@ $view: /views/overview/custom-content.j2
     </p>
 </section>
 
-{% do doc.styles.addCssFile('css/components/molecule/shift-cards.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/shift-cards.css') %}
 <section class="ap--shift-cards">
   <div class="ap--container">
     <div class="ap-m-shift-card ap-m-shift-card-1">
@@ -57,24 +57,28 @@ $view: /views/overview/custom-content.j2
   </div>
 </section>
 
-<section class="ap--container">
-  <div class="ap--content">
-    <h3 id="faq">FAQ</h3>
-    <p><b>Does it cost anything?</b><br>
-    No - tickets are free of charge.</p>
-    <p><b>What language will the talks be in?</b><br>
-    All talks are being simultaneously presented and streamed in English and Japanese.</p>
-    <p><b>Do I have to register for the live-stream?</b><br>
-    No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on April 17th for a link and embed of the live-stream.</p>
-    <p><b>Who is the event for?</b><br>
-    Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</p>
-    <p><b>Does registering mean I am all set to attend?</b><br>
-    Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</p>
-    <p><b>When will I hear back if I have a spot?</b><br>
-    We'll try to confirm you within less than a week!</p>
-    <p><b>What determines if I have a spot?</b><br>
-    The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</p>
-    <p><b>When will the schedule be announced?</b><br>
-    We'll announce a detailed schedule in February.</p>
+<section class="ap--content">
+  <div class="ap--container-fluid">
+    {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
+    <div class="ap-m-copy ap-m-copy-left-small">
+    <div class="ap--content">
+      <h3 id="faq">FAQ</h3>
+      <p><b>Does it cost anything?</b><br>
+      No - tickets are free of charge.</p>
+      <p><b>What language will the talks be in?</b><br>
+      All talks are being simultaneously presented and streamed in English and Japanese.</p>
+      <p><b>Do I have to register for the live-stream?</b><br>
+      No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on April 17th for a link and embed of the live-stream.</p>
+      <p><b>Who is the event for?</b><br>
+      Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</p>
+      <p><b>Does registering mean I am all set to attend?</b><br>
+      Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</p>
+      <p><b>When will I hear back if I have a spot?</b><br>
+      We'll try to confirm you within less than a week!</p>
+      <p><b>What determines if I have a spot?</b><br>
+      The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</p>
+      <p><b>When will the schedule be announced?</b><br>
+      We'll announce a detailed schedule in February.</p>
+    </div>
   </div>
 </section>

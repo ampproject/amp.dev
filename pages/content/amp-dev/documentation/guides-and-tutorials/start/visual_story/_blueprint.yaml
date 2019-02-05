@@ -1,5 +1,6 @@
 $path: /documentation/guides-and-tutorials/start/visual_story/{base}.html
 $view: /views/detail/docs-detail.j2
+$order: 1
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/visual_story/{base}.html
 $title@: Create your first AMP Story

@@ -1,23 +1,19 @@
 ---
 $title: Introduction to complex animations
 $order: 2
-toc: true
 formats:
   - websites
   - ads
+author: CrystalOnScript
 ---
 
 For animations that can't be driven by [adding and removing classes](/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.html), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work. 
-
 
 ## Creating a basic AMP Animation 
 
 The [`<amp-animation>`](/docs/reference/components/amp-animation) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP. 
 
-
 A basic `<amp-animation>` is a JSON object made of the following key parts:
-
-
 
 *   The element the component is animating, or `selector`. 
 *   [Timing Properties](docs/reference/components/amp-animation#timing-properties)
@@ -40,20 +36,15 @@ A basic `<amp-animation>` is a JSON object made of the following key parts:
 <button on="tap:exampleAnimation.start">
 ```
 
-
-
-
 ### Selector
 
 Much like CSS, the `<amp-animation>` component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element. 
-
 
 ### Timing Properties 
 
 The [timing properties](/docs/reference/components/amp-animation#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute. 
 
 While none of the timing properties are required, an animation might not run correctly if properties related to time and display are missing, such as `duration` and `fill`. 
-
 
 ### Keyframes 
 
@@ -69,7 +60,6 @@ The trigger starts the animation sequence. The `<amp-animation>` extension start
 
 Triggering on visibility of `<body>` is useful when the animation should run as soon as the page loads because it appears "above the fold", or within the first viewport of the page. Animations trigger through visibility by adding `trigger="visibility"` as an attribute to the component.
 
-
 ```
 <amp-animation layout="nodisplay"
     trigger="visibility">
@@ -77,9 +67,7 @@ Triggering on visibility of `<body>` is useful when the animation should run as 
 </amp-animation>
 ```
 
-
 Animations connect to an action or event by assigning the `<amp-animation>` component an `id` and linking that `id` to the desired event trigger, such as tapping a button.
-
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -89,17 +77,13 @@ Animations connect to an action or event by assigning the `<amp-animation>` comp
 <button on="tap:exampleAnimation.start">
 ```
 
-
-
 ## Building Complex Animations 
 
 Building an animation in `<amp-animation>` allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and directed to a specific point. You can even chain multiple animations together and animate elements in a sequence. 
 
-
 ### Subtargets
 
 Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
-
 
 ```
 {
@@ -118,8 +102,6 @@ Elements of the same tag or class can have specified timing properties and overr
   ]
 }
 ```
-
-
 
 ### Chained Animations
 
@@ -157,7 +139,6 @@ Multiple animations can connect together to form a large sequence. You can creat
 </amp-animation>
 
 ```
-
 
 This setup plays each animation for 3 seconds in a sequence.
 
@@ -207,11 +188,9 @@ For larger animations, animations inside the `animations` array are able to refe
 </amp-animation> 
 ```
 
-
 ### Animating an unknown amount of elements 
 
 By using [`var()` and `calc()` expressions](/docs/reference/components/amp-animation#var()-and-calc()-expressions) along with[ CSS extensions](/docs/reference/components/amp-animation#css-extensions), you can write complex and timed animationsthat work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity. 
-
 
 ```
 <amp-animation layout="nodisplay" id="cardAdmin">
@@ -236,7 +215,6 @@ By using [`var()` and `calc()` expressions](/docs/reference/components/amp-anima
 </amp-animation> 
 ```
 
-
 This example works by:
 
 *   Declaring a variable, `--duration`, and gives it the value of two seconds. 
@@ -251,7 +229,6 @@ This example works by:
 ### Look Great, Everywhere 
 
 Animations can include [`conditions`](/docs/reference/components/amp-animation#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](/docs/reference/components/amp-animation#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](/docs/reference/components/amp-animation#supports-condition) in a [`switch` statement](/docs/reference/components/amp-animation#animation-switch-statement).
-
 
 ```
 {

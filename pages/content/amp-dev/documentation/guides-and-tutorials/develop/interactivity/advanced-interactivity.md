@@ -1,10 +1,7 @@
 ---
 $title: Improving the interactivity
 $order: 2
-toc: true
 ---
-
-
 
 The starter code provides a pretty bare user experience. There are a couple ways we can improve it:
 
@@ -110,7 +107,6 @@ See if you can add functionality so that when a user taps on a slide's indicator
 ## Change the images in the carousel
 
 It would be nice if we could see images of different shirt colors when we change the selected color. With amp-bind we can do this by binding `[src]` on the `<amp-img>` elements within the `<amp-carousel>`.
-
 
 ### Initialize the SKU state
 

@@ -1,11 +1,8 @@
 ---
 $title: "アナリティクス: 基本"
-toc: true
 ---
 
 このページで AMP アナリティクスの基本を学びましょう。
-
-
 
 ## amp-pixel または amp-analytics を使う
 
@@ -130,7 +127,6 @@ AMP ページがサイト運営者のサイトから提供されている場合�
 ```
 
 AMP で Cookie が設定済みと判断されると、クライアント ID は置換されて Cookie の値が返されます。AMP で Cookie が未設定と判断されると、AMP は `amp-` の後ろに base64 エンコードされたランダムな文字列をつけたフォーマットの値を生成します。
-
 
 クライアント ID の置換や任意のユーザー通知 ID の追加方法については、[AMP アナリティクスでサポートされる変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)をご覧ください。
 

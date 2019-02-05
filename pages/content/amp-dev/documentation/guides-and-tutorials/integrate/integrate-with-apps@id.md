@@ -1,11 +1,8 @@
 ---
 $title: Mengintegrasikan AMP dengan aplikasi Anda
-toc: true
 ---
 
 Panduan ini ditujukan untuk developer aplikasi seluler dan web yang ingin mengintegrasikan dan menautkan aplikasi ke halaman AMP. Sebagai contoh, pertimbangkan aplikasi chat seluler yang memuat versi AMP dari sebuah URL bersama untuk memberikan pengalaman yang lebih cepat kepada pengguna.
-
-
 
 ## Mentransformasi link ke AMP
 
@@ -28,7 +25,6 @@ This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-
 Pesan hasil transformasi:
 
 ```text
@@ -37,10 +33,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ```
 
 [tip type="success"]
-
 Pertimbangkan untuk memberi pengguna opsi untuk melihat versi non-AMP, bukan
 versi AMP, melalui setelan preferensi di aplikasi Anda.
-
 [/tip]
 
 ### Cara mentransformasi link
@@ -65,14 +59,11 @@ Ada tiga cara untuk mentransformasi link secara terprogram:
     konten tersedia, sebelum terjadi interaksi pengguna.
 
 [tip type="important"]
-
 Jangan minta URL AMP melalui AMP API Google sebagai hasil dari interaksi
 pengguna karena hal itu akan menurunkan performa aplikasi Anda saat
 memasukkan permintaan jaringan tambahan. Sebaliknya, gunakan salah satu dari tiga pendekatan yang
 dijelaskan di atas.
-
 [/tip]
-
 
 #### AMP URL API Google
 
@@ -85,7 +76,6 @@ Cache AMP Google.
 
 Misalnya, untuk daftar URL tertentu:
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -93,9 +83,7 @@ Misalnya, untuk daftar URL tertentu:
 ]}
 ```
 
-
 Bagian isi respons berisi pemetaan URL AMP dalam format JSON:
-
 
 ```json
 {
@@ -117,13 +105,10 @@ Bagian isi respons berisi pemetaan URL AMP dalam format JSON:
 ```
 
 [tip type="note"]
-
 URL untuk halaman AMP yang tersimpan di Cache AMP non-Google tidak dapat diambil melalui
 AMP URL API. Namun, Anda dapat mengambil URL tersimpan dari URL AMP
 (ampURL) yang ditampilkan dengan mudah.
-
 [/tip]
-
 
 ## Menggunakan Cache AMP
 
@@ -160,11 +145,9 @@ Kami merekomendasikan penggunaan Cache AMP dengan alasan berikut:
     pengguna akan selalu melihat file AMP yang sama dengan Cache.
 
 [tip type="important"]
-
 Saat menayangkan halaman AMP melalui Cache AMP, berikan pengalaman yang
 menunjukkan dengan jelas asal AMP dan menawarkan kemungkinan bagi pengguna untuk
 membagikan URL kanonis (untuk mengetahui lebih lanjut tentang ini, lihat juga dua bagian berikut).
-
 [/tip]
 
 ## Mengimplementasikan AMP Viewer
@@ -189,7 +172,6 @@ Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 *   Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
 *   Setel perujuk untuk platform/aplikasi Anda.
 
-
 ### Membagikan Konten AMP
 
 Jika dokumen AMP dibagikan dari dalam AMP Viewer platform, maka platform tersebut
@@ -201,4 +183,3 @@ ditampilkan ke pengguna. Karena alasan ini, membagikan versi kanonis
 (bukan versi AMP) merupakan pendekatan yang paling masuk akal saat
 membagikan ke platform yang berbeda, lalu platform target diharapkan membuat
 pilihan yang tepat.
-

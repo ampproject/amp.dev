@@ -2,14 +2,11 @@
 $title: Best practices for creating an AMP story
 $order: 12
 $category: Develop
-toc: true
 formats:
     - stories
 components:
     - youtube
 ---
-
-
 
 This guide provides recommended practices that you should implement when creating an [AMP story](/docs/reference/components/amp-story.html).
 
@@ -119,7 +116,6 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
 1.  For MP4, use `H.264`.
 1.  For WEBM, use `VP9`.
 1.  For HLS or DASH, use `H.264`.
-
 
 ### Video quality
 

@@ -1,9 +1,6 @@
 ---
 $title: Adicionar carrosséis
-toc: true
 ---
-
-
 
 Outra funcionalidade comum das páginas para dispositivos móveis são os carrosséis.  Pode adicionar facilmente carrosséis a páginas AMP ao utilizar o componente [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}). Vamos começar com um exemplo simples, como um carrossel de imagens.
 

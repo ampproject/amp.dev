@@ -58,7 +58,9 @@ body {
     }
 
     figure {
-      margin: 0;
+      &.alignment-wrapper {
+        margin: 0;
+      }
 
       &.half {
         amp-img {

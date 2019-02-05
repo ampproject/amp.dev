@@ -1,8 +1,6 @@
 ---
 $title: Gambar responsif dengan atribut srcset, sizes & heights
-toc: true
 ---
-
 
 ## srcset
 
@@ -43,7 +41,6 @@ Pertimbangkan contoh berikut:
   <div placeholder></div>
 </amp-iframe>
 </div>
-
 
 Atribut `sizes` menentukan lebar elemen menjadi 50% dari ukuran viewport jika viewport berukuran 650px atau lebih. Contoh, jika viewport berukuran 800px, lebar elemen disetel menjadi 400px. Kemudian, browser akan memilih sumber daya `srcset` yang relatif dengan 400px, dengan asumsi rasio piksel perangkat adalah 1, yang dalam kasus ini adalah `narrow.jpg` (320px).
 

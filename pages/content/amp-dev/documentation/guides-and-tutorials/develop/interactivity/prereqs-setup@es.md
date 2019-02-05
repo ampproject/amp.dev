@@ -1,9 +1,6 @@
 ---
 $title: Configuración
-toc: true
 ---
-
-
 
 ## Requisitos previos
 
@@ -32,7 +29,6 @@ Descomprima el archivo de archivo (si es necesario) y navegue hacia el directori
 cd advanced-interactivity-in-amp
 npm install
 ```
-
 
 ### Paso 3. Ejecute el servidor de desarrollo
 

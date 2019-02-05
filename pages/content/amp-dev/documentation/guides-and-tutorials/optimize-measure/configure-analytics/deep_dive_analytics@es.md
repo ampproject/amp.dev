@@ -1,8 +1,6 @@
 ---
 $title: Información detallada sobre Analytics para AMP
-toc: true
 ---
-
 
 Esta guía analiza en profundidad el
 [componente amp-analytics](/es/docs/reference/components/amp-analytics.html),
@@ -136,7 +134,6 @@ según el valor de la cuenta de la URL remota (`"account": "UA-XXXXX-Y"`):
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
-
 
 [tip type="important"]
 

@@ -1,9 +1,6 @@
 ---
 $title: 사이트 탐색
-toc: true
 ---
-
-
 
 대부분의 모바일 웹사이트에는 사이트 탐색 메뉴가 포함되어 있습니다. 탐색 메뉴는 형식이 매우 다양합니다. 이 가이드에서는 아래 예시를 통해 AMP 페이지에 탐색 메뉴를 추가해 보겠습니다.
 
@@ -57,7 +54,6 @@ article {
 
 지금까지 설명한 방법은 웹사이트의 기존 탐색 메뉴를 활용하는 가장 단순한 접근방식입니다. 이제 사이트 탐색에 보다 자주 이용되는 옵션을 살펴보겠습니다.
 
-
 ## 사이드바로 탐색
 
 페이지 측면에 메뉴 아이콘을 추가하여 이 아이콘을 클릭하면 일련의 탐색 링크가 표시되도록 하는 탐색 기술이 많이 쓰이고 있습니다. AMP에서는 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 구성요소를 사용하여 이러한 탐색 메뉴를 만들 수 있습니다.
@@ -78,7 +74,6 @@ article {
 ```
 
 위의 코드에서는 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `전환`합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다.  사이드바를 추가해 보겠습니다.
-
 
 `</header>` 바로 뒤에 다음 HTML을 **추가**하세요.
 

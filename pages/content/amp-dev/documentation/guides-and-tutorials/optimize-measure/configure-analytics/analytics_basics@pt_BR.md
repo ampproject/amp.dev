@@ -1,11 +1,8 @@
 ---
 $title: "Analytics: conceitos básicos"
-toc: true
 ---
 
 Conheça os conceitos básicos da análise de AMP.
-
-
 
 ## Usar amp-pixel ou amp-analytics?
 

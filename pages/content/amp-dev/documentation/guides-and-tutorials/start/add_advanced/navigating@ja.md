@@ -1,9 +1,6 @@
 ---
 $title: サイトのナビゲーション
-toc: true
 ---
-
-
 
 モバイルサイトには通常、サイトのナビゲーション メニューを設けます。こうしたメニューにはさまざまな形式があります。このチュートリアルでは、AMP ページでのナビゲーションの表示について、以下のような例を試してみましょう。
 
@@ -57,7 +54,6 @@ article {
 
 これは既存のウェブサイトのナビゲーションを活用する最も簡単な方法です。では次に、サイトのナビゲーションとして一般的な方法を試しましょう。
 
-
 ## サイドバーでの移動
 
 ナビゲーションの一般的な方法は、メニュー アイコンを追加して、クリックするとナビゲーションのリンク一式が（ページの横に）表示されるようにすることです。AMP では、こうしたナビゲーションを [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) コンポーネントを使って作成できます。
@@ -78,7 +74,6 @@ article {
 ```
 
 上記のコードではサイドバーを `toggle`（切り替える）のに、[`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 要素の [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) アクション属性を使用しています。サイドバー要素は `sidebar1` ID で識別されます。では、サイドバーを追加しましょう。
-
 
 下記の HTML を `</header>` のすぐ後に**追加**します。
 

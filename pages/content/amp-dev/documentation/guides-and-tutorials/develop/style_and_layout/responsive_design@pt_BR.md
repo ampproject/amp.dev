@@ -1,8 +1,6 @@
 ---
 $title: Criar páginas AMP responsivas
-toc: true
 ---
-
 
 ## Introdução
 
@@ -76,7 +74,7 @@ Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP
 
 ### Como exibir imagens responsivas
 
-As imagens compõem grande parte de uma página da Web, (aproximadamente [65% dos bytes da página](http://httparchive.org/interesting.php#bytesperpage)).  No mínimo, suas imagens devem ser visíveis em vários tamanhos e orientações de tela. Por exemplo, um usuário não precisará rolar a tela, fazer gesto de pinça ou usar o zoom para ver a imagem completa.  Isso é fácil de fazer em páginas AMP com o atributo `"layout=responsive"`. Consulte o artigo [Incluir imagens em páginas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}).  Além da imagem responsiva básica, você poderá veicular vários recursos de imagens para:
+As imagens compõem grande parte de uma página da Web, (aproximadamente [65% dos bytes da página](http://httparchive.org/interesting.php#bytesperpage)).  No mínimo, suas imagens devem ser visíveis em vários tamanhos e orientações de tela. Por exemplo, um usuário não precisará rolar a tela, fazer gesto de pinça ou usar o zoom para ver a imagem completa.  Isso é fácil de fazer em páginas AMP com o atributo `"layout=responsive"`. Consulte o artigo [Incluir imagens em páginas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}}).  Além da imagem responsiva básica, você poderá veicular vários recursos de imagens para:
 
 - [Como veicular imagens nítidas na resolução correta](#como-veicular-imagens-nítidas-na-resolução-correta);
 - [Como alterar a direção de arte de uma imagem](#como-alterar-a-direção-de-arte-de-uma-imagem);

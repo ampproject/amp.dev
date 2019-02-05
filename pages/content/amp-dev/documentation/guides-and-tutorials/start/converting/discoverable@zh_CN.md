@@ -81,11 +81,9 @@ $title: 使您的网页可被轻松发现
 </script>
 ```
 
-
 [tip type="note"]
 这些内容应始终相同。对于新闻报道，请指定“NewsArticle”类型。标题应与您报道的标题一致。图片对象是指报道的主打图片。
 [/tip]
-
 
 在浏览器中**重新加载**网页，验证并确保未引入任何 AMP 验证错误。
 
@@ -108,11 +106,7 @@ $title: 使您的网页可被轻松发现
 如果您的结构化数据是有效的，您应该会看到 **0 个错误**和 **0 条警告**。
 
 [tip type="read-on"]
-<<<<<<< HEAD
 要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})指南。
-=======
-要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})指南。
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 [/tip]
 
 真棒！至此，您的 AMP 新闻报道便已完成了。

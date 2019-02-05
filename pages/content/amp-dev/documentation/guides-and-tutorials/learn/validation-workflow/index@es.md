@@ -1,8 +1,6 @@
 ---
 $title: Validar páginas AMP
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Mira nuestro vídeo sobre las diversas opciones de validación.']
 
@@ -14,11 +12,7 @@ Existen varias formas de validar un documento AMP. Todas ellas
 producen exactamente el mismo resultado, por lo que puedes utilizar la que más se ajuste
 a tu estilo de desarrollo.
 
-<<<<<<< HEAD
 Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
-=======
-Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### Developers Console para el navegador
 
@@ -98,7 +92,6 @@ Extensión del validador de AMP para
 ### Paquetes de NPM para CI
 
 Como parte de tus flujos de procesamiento de compilación y prueba, puedes integrar la validación de AMP mediante los paquetes de NPM del validador de AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) o [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (un complemento de gulp).  Por ejemplo, puedes usar el paquete de NPM del validador de AMP para realizar pruebas de integración o en una tarea programada con el objetivo de verificar la producción de páginas AMP.
-
 
 ##### Ejemplo: Validar un archivo AMP HTML
 
@@ -255,7 +248,6 @@ Esta etiqueta genera el error de validación de AMP que se muestra en estas dife
 </amp-img>
 
 Cada herramienta ofrece varios fragmentos de información:
-
 
   1. Ubicación (línea y columna) en el documento HTML en el que ha ocurrido
      el error; es posible hacer clic en algunas interfaces para resaltar esa ubicación. En este

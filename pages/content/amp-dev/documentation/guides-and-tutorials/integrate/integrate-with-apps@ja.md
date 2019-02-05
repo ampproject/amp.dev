@@ -1,11 +1,8 @@
 ---
 $title: アプリに AMP を統合する
-toc: true
 ---
 
 このガイドは、AMP ページの統合とリンクを希望するモバイルおよびウェブアプリ開発者を対象としています。たとえば、共有された URL の AMP バージョンを読み込んで、ユーザー エクスペリエンスを高速化するモバイル チャット アプリについて考えてみましょう。
-
-
 
 ## AMP へのリンクを変換する
 
@@ -28,7 +25,6 @@ This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-
 変換されたメッセージ:
 
 ```text
@@ -37,10 +33,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ```
 
 [tip type="success"]
-
 アプリの環境設定で、AMP バージョンではなく AMP 以外のバージョンを
 表示するオプションを選択できるようにすることを検討してください。
-
 [/tip]
 
 ### リンクを変換する方法
@@ -65,14 +59,11 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     すぐに URL 変換を開始してください。
 
 [tip type="important"]
-
 Google の AMP API を介した AMP URL のリクエストを
 ユーザー操作の結果として行わないでください。追加のネットワーク リクエストが発生し、アプリのパフォーマンスが
 低下するためです。代わりに、上記の 3 つの手法のいずれかを
 使用してください。
-
 [/tip]
-
 
 #### Google の AMP URL API
 
@@ -85,7 +76,6 @@ URL が含まれます。
 
 たとえば、URL のリストは次のようになります。
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -93,9 +83,7 @@ URL が含まれます。
 ]}
 ```
 
-
 レスポンスの本文には、JSON 形式の AMP URL マッピングが含まれています。
-
 
 ```json
 {
@@ -117,13 +105,10 @@ URL が含まれます。
 ```
 
 [tip type="note"]
-
 Google 以外の AMP キャッシュ上にキャッシュされた AMP ページの URL は、
 AMP URL API で取得できません。ただし、返された AMP URL（ampURL）からキャッシュされた URL を簡単に派生させることが
 できます。
-
 [/tip]
-
 
 ## AMP キャッシュの使用
 
@@ -160,11 +145,9 @@ AMP キャッシュは次のような目的で設計されています。
     キャッシュと同じ AMP ファイルを参照できます。
 
 [tip type="important"]
-
 AMP キャッシュを介して AMP ページを提供する場合、閲覧者が AMP の生成元を
 はっきりと確認でき、ユーザーが正規 URL を共有できるようにします
 （この詳細については、次の 2 つのセクションも参照してください）。
-
 [/tip]
 
 ## AMP ビューアの実装
@@ -189,7 +172,6 @@ AMP ドキュメントのプリレンダリング、スワイプによる記事�
 *   WebView ベースのビューアでは、サードパーティの Cookie を有効にします。
 *   使用するプラットフォーム / アプリの参照 URL を設定します。
 
-
 ### AMP コンテンツの共有
 
 プラットフォームの AMP ビューア内から AMP ドキュメントを共有する場合、
@@ -201,4 +183,3 @@ AMP プロジェクトの理念は、ユーザーに提示するドキュメン�
 別のプラットフォームに共有する場合は（AMP バージョンではなく）正規バージョンを共有し、
 ターゲット プラットフォームで適切なバージョンが選択されるのを期待するのが
 最も理にかなっています。
-

@@ -1,11 +1,8 @@
 ---
 $title: 将 AMP 与应用集成
-toc: true
 ---
 
 本指南面向希望集成和链接到 AMP 网页的移动应用和网页应用开发者。例如，某移动聊天应用可以加载所分享网址的 AMP 版本，为用户带来更快的体验。
-
-
 
 ## 转换指向 AMP 的链接
 
@@ -28,7 +25,6 @@ This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-
 转换后的消息：
 
 ```text
@@ -37,10 +33,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ```
 
 [tip type="success"]
-
 建议在应用的偏好设置中给用户提供选项，以便其能够选择查看
 非 AMP 版本（而不是 AMP 版本）。
-
 [/tip]
 
 ### 转换链接的方式
@@ -65,14 +59,11 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     立即触发网址转换。
 
 [tip type="important"]
-
 请勿在用户互动后通过 Google 的 AMP API 请求 AMP 网址，
 因为这样做会导致网络请求增加，
 进而降低应用性能。
 请使用如上所述的三种方法之一。
-
 [/tip]
-
 
 #### Google 的 AMP URL API
 
@@ -85,7 +76,6 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 例如，对于给定的网址列表：
 
-
 ```json
 {"urls": [
   "https://www.example.org/article-with-amp-version",
@@ -93,9 +83,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ]}
 ```
 
-
 响应正文包含 JSON 格式的 AMP 网址映射：
-
 
 ```json
 {
@@ -117,13 +105,10 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ```
 
 [tip type="note"]
-
 您无法通过 AMP URL API 检索非 Google AMP Cache 中缓存的 AMP 网页
 对应的网址。但是，您可以从返回的 AMP
 网址 (ampURL) 轻松得出缓存的网址。
-
 [/tip]
-
 
 ## 使用 AMP 缓存
 
@@ -160,11 +145,9 @@ AMP 缓存旨在：
     AMP 文件始终与 AMP 缓存看到的相同。
 
 [tip type="important"]
-
 通过 AMP 缓存提供 AMP 网页时，提供的查看工具体验
 应清楚地显示 AMP 来源并使用户能够分享
 规范网址（要了解详情，另请参阅以下两节内容）。
-
 [/tip]
 
 ## 实现 AMP 查看工具
@@ -189,7 +172,6 @@ AMP runtime 提供了一个 Viewer API，后者提供了
 *   在基于 WebView 的查看工具中，启用第三方 Cookie。
 *   为您的平台/应用设置引荐来源网址。
 
-
 ### 分享 AMP 内容
 
 在平台的 AMP 查看工具内分享 AMP 文档时，该平台
@@ -201,4 +183,3 @@ AMP 项目的理念是平台应该要选择
 在与不同平台分享时，应该分享规范版本
 （而不是 AMP 版本），然后让目标平台做出
 正确的选择。
-

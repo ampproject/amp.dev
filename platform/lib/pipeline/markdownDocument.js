@@ -39,9 +39,9 @@ class MarkdownDocument {
     // Remove markers from document to have them in a defined spot
     this._contents = this._contents.replace(TOC_MARKER, '');
 
-    // And if TOC should be rendered mark it in the frontmatter
-    if (active) {
-      this._frontmatter['toc'] = true;
+    // And if TOC should not be rendered mark it in the frontmatter
+    if (!active) {
+      this._frontmatter['toc'] = false;
     }
 
     this._toc = active;

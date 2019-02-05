@@ -12,7 +12,6 @@ $title: まとめ
 
 途中でわからなくなった場合は、[`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) ファイルで完成形をご確認ください。
 
-
 ## 次のステップ
 
 インタラクティブな AMP ページは効果的かつ柔軟に作成することができます。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントや、他の [動的な AMP コンポーネント](/ja/docs/reference/components.html#動的コンテンツ)についての説明をご覧ください。

@@ -12,7 +12,6 @@ Has aprendido a:
 
 Si te quedaste atascado, mira el archivo [`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) para la solución completa.
 
-
 ## Próximos pasos
 
 Obtenga más información sobre el poder y la flexibilidad de crear páginas de AMP interactivas con la documentación de [`<amp-bind>`](/es/docs/reference/components/amp-bind.html) y con otros [componentes AMP dinámicos](/es/docs/reference/components.html#conteido-dinámico).

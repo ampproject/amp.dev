@@ -12,7 +12,7 @@
   {% include '/views/partials/banner.j2' %}
 
   <div class="ap-o-header">
-    <a class="ap-o-header-home" href="{{ doc.pod.get_home_doc().url.path }}">
+    <a class="ap-o-header-home" href="{{ doc.pod.get_home_doc().localize(locale=doc.locale).url.path }}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span>
@@ -23,7 +23,7 @@
       {# Sections #}
       {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
       {% if section.index %}
-      
+
       {% set section_index = g.doc(section.index, locale=doc.locale) %}
       <a class="ap-o-header-first-level-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
         {{ section.title }}

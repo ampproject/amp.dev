@@ -4,7 +4,6 @@ $title: 고급 AMP 기능 추가
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='완성된 뉴스 기사') }}
 
-
 본 튜토리얼에서는 AMP 기초에 대한 이해를 바탕으로 AMP가 광고, 분석, 임베디드 비디오, 소셜 미디어 통합, 캐러셀 등을 어떻게 처리하는지에 대해 설명합니다. 이 튜토리얼을 마치면 이러한 기능들이 포함된 모바일 뉴스 기사를 작성하게 됩니다.
 
 ## 이런 것들을 배웁니다:

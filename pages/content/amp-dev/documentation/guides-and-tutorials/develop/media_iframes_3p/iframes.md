@@ -5,10 +5,11 @@ formats:
     - websites
 components:
   - iframe
-toc: true
+author: pbakaus
+contributors:
+  - Meggin
+  - bpaduch
 ---
-
-
 
 Learn how to display include media content in your pages, and how to use iframes
 to display advanced content outside of AMP's limitations.
@@ -81,7 +82,6 @@ Renders as:
   <amp-img placeholder layout="fill"
       src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
 </amp-iframe>
-
 
 ## Examples
 

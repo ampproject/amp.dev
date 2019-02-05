@@ -215,7 +215,6 @@ Selanjutnya, mari kita buat semua gambar muncul perlahan. Tambahkan `animate-in=
 </amp-img>
 ```
 
-
 Jika Anda memuat ulang halaman, masing-masing gambar akan muncul perlahan.  Itu akan tampak bagus, tetapi Anda hampir tidak dapat melihat efeknya karena semua gambar muncul perlahan secara bersamaan. Kita dapat meningkatkan efek visual dengan mengubah pengaturan waktu animasi ini.
 
 Mari kita tunda masuknya gambar pertama sehingga gambar akan dimunculkan setelah banner teks masuk, misalnya .4s (0,4 detik). Tiga gambar yang tersisa dapat muncul .2s (0,2 detik) setelah gambar sebelumnya masuk. Untuk setiap elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  tambahkan `animate-in-delay=""` dengan nilai waktu tunda yang sesuai. Kode Anda akan terlihat seperti ini:

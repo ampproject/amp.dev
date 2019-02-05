@@ -1,9 +1,6 @@
 ---
 $title: AMP との統合でディスプレイ広告を掲載する
-toc: true
 ---
-
-
 
 このガイドは、AMP との統合で AMP ページにディスプレイ広告を配信したいと考えている広告ネットワークの運営者を対象としています。
 
@@ -20,17 +17,13 @@ toc: true
 1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})（通常の HTML 広告を配信するための実装をまだ作成していない場合）。
 2. [AMP HTML 広告を配信するための高速フェッチ統合を作成します](#creating-a-fast-fetch-integration)。
 
-
 ## [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) の実装を作成する
 
 広告の配信先となるサイトの運営者が、広告ネットワークから提供される JavaScript ライブラリを広告サーバーとして設定し、各種の「広告スニペット」を設置します。広告スニペットは、JavaScript ライブラリを使用して広告をフェッチし、サイト運営者のウェブサイトに広告を表示します。AMP では、サイト運営者が任意の JavaScript を実行することは禁止されているため、広告ネットワークでは、AMP のオープンソース コードの開発に参加して、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) タグで自社の広告サーバーの広告をリクエストできるようにする必要があります。
 
 [tip type="note"]
-
 この [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) の実装で、従来の HTML 広告と AMP HTML 広告の**両方**を表示することができます。
-
 [/tip]
-
 
 たとえば、Amazon A9 サーバーを呼び出すには、次の構文を使用します。
 
@@ -60,7 +53,6 @@ toc: true
 1. 検証サービスを通じて広告を検証、署名する。たとえば [Cloudflare](https://blog.cloudflare.com/firebolt/) は AMP 広告の検証サービスを提供しており、第三者の広告プロバイダは、このサービスを利用して軽量で訴求力のある広告を高速に配信できます。
 
 高速フェッチ統合を作成する手順については、[高速フェッチのネットワーク実装ガイド](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)をご確認ください。
-
 
 ## 関連資料
 

@@ -1,6 +1,6 @@
 ---
 $title: Limitations of AMP Story (TBD)
-$order: 1
+$order: 2
 formats:
   - stories
 ---

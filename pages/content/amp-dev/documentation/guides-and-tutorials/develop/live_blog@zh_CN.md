@@ -1,11 +1,6 @@
 ---
 $title: 制作实时博客
-toc: true
 ---
-
-
-
-
 
 实时博客是在整个持续性事件（如体育赛事或选举）中频繁更新的网页。在 AMP 中，您可以使用 [`amp-live-list`](/zh_cn/docs/reference/components/amp-live-list.html) 组件实现实时博客。
 
@@ -22,7 +17,6 @@ toc: true
 ## `amp-live-list`概述
 
 [`amp-live-list`](/zh_cn/docs/reference/components/amp-live-list.html) 组件会定期轮询主文档以查找新内容，并在出现新条目后更新用户的浏览器。这意味着每当需要添加新博文时，CMS 都应该更新主文档，以便将更新内容添加到网页的正文和[元数据](https://ampbyexample.com/samples_templates/live_blog/#metadata)部分。
-
 
 博客的初始代码如下所示：
 
@@ -87,7 +81,6 @@ toc: true
 在您发布博文时，务必要能够深层链接到该博文，以便启用分享等功能。借助 `amp-live-list`，您只需使用博客条目的 `id` 即可实现深层链接。例如，点击 [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) 可以直接转到 ID 为 `post3` 的博文。
 
 AMP By Example 在[实时博客示例](https://www.ampbyexample.com/samples_templates/live_blog/)中使用 Cookie 生成新内容，因此如果您是首次进入到该网页，则可能无法访问 ID 为“post3”的博文；在这种情况下，系统会将您重定向到第一篇博文。
-
 
 ## 资源
 

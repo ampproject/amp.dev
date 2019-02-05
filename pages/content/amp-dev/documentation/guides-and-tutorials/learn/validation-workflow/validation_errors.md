@@ -1,7 +1,6 @@
 ---
 $title: AMP validation errors
 $order: 1
-toc: true
 formats:
   - websites
   - email
@@ -31,8 +30,6 @@ and fix any validation errors you encounter
 when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
-
-
 
 ## AMP HTML tag and attribute errors
 

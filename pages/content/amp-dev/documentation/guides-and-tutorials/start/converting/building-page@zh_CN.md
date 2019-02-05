@@ -11,7 +11,6 @@ $title: 构建一个常规的 HTML 网页
 您无需将 AMP 文件命名为 `.amp.html`。实际上，AMP 文件可使用您想要的任何扩展名。发布商往往会通过在网址中使用参数来区分 AMP 网页和其权威版本。例如：`http://publisher.com/article.html?amp`。
 [/tip]
 
-
 您的 `article.amp.html` 文件应该大致如下：
 
 ```html

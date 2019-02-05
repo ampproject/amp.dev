@@ -1,9 +1,6 @@
 ---
 $title: Meningkatkan interaktivitas
-toc: true
 ---
-
-
 
 Kode pembuka memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa cara yang dapat kita lakukan untuk meningkatkannya:
 
@@ -109,7 +106,6 @@ Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titi
 ## Mengubah gambar di carousel
 
 Sangatlah bagus jika kita dapat melihat berbagai warna kemeja saat mengubah warna yang dipilih. Dengan amp-bind, kita dapat melakukannya dengan mengikat `[src]` di elemen `<amp-img>` dalam `<amp-carousel>`.
-
 
 ### Melakukan inisialiasi status SKU
 

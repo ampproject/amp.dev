@@ -11,7 +11,6 @@ $title: 일반 HTML 페이지 만들기
 사실 AMP 파일의 이름을 반드시 `.amp.html`로 저장할 필요는 없으며 모든 확장자를 사용할 수 있습니다. 실제로 URL의 매개변수를 사용하여 AMP 페이지와 표준 버전을 구별하는 게시자도 많습니다. 예: `http://publisher.com/article.html?amp`
 [/tip]
 
-
 `article.amp.html` 파일은 다음과 같아야 합니다.
 
 ```html

@@ -1,7 +1,6 @@
 ---
 $title: Integrating with AMP to serve display ads
 $order: 5
-toc: true
 formats:
   - ads
 ---
@@ -20,7 +19,6 @@ As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP
 
 1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) (i.e., if you haven't already created one to serve traditional HTML ads).
 2. [Create a Fast Fetch integration to serve AMPHTML ads](#creating-a-fast-fetch-integration).
-
 
 ## Creating an `amp-ad`
 
@@ -58,7 +56,6 @@ To serve AMPHTML ads from your ad server, you must provide a Fast Fetch integrat
 1.  Validating and signing the creative through a validation service. [Cloudflare](https://blog.cloudflare.com/firebolt/) provides an AMP ad verification service, enabling any independent ad provider to deliver faster, lighter, and more engaging ads.
 
 For instructions on creating a Fast Fetch integration, see the [Fast Fetch Network Implementation Guide](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
-
 
 ## Related resources
 

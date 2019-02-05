@@ -55,7 +55,6 @@ $title: ログイン
 
 <amp-img src="/static/img/return-parameter.png" alt="return パラメータ" height="150" width="600"></amp-img>
 
-
 AMPByExample サーバーがログインページから POST リクエストを受け取り、ログイン ID とパスワードが正しい場合、サーバーはリクエストを前述の `returnURL` にリダイレクトし、`#success=true` パラメータを末尾に追加します。これで AMP ランタイムがページを承認でき、コメントの追加が可能になりました。
 
 サーバーの実装はページ公開元の責任であるため、AMP ランタイムの機能とサーバーの機能について理解することが重要です。

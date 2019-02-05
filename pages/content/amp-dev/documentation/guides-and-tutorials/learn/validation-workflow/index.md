@@ -2,14 +2,12 @@
 $title: Validate AMP pages
 $order: 0
 $path: /documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.html
-toc: true
 formats:
   - websites
   - email
   - stories
   - ads
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Watch our video about the various validation options.']
 
@@ -101,7 +99,6 @@ AMP Validator Extension for
 ### NPM Packages for CI
 
 As part of your build and test pipelines, you can integrate AMP validation through the AMP Validator NPM packages: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) or [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (a gulp plugin).  For example, you can use the AMP Validator NPM package for integration tests or in a scheduled task to verify production AMP pages.
-
 
 ##### Example: Validating an AMP HTML file
 
@@ -257,7 +254,6 @@ Which generates this AMP validation error, shown in these different tools:
 </amp-img>
 
 Each tool gives several pieces of information:
-
 
   1. The location (line and column) in the HTML document where the error
      occurred, clickable in some interfaces to highlight that location. In this

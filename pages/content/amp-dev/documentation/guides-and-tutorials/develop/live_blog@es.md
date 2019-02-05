@@ -1,11 +1,6 @@
 ---
 $title: Crear un blog en directo
-toc: true
 ---
-
-
-
-
 
 Los blogs en directo son páginas web que se actualizan frecuentemente durante el desarrollo de eventos como competiciones deportivas o días de elecciones. En AMP, puedes implementar un blog en directo usando el componente [`amp-live-list`](/es/docs/reference/components/amp-live-list.html).
 
@@ -22,7 +17,6 @@ Usa la etiqueta de metadatos [LiveBlogPosting](http://schema.org/LiveBlogPosting
 ## Descripción general de `amp-live-list`
 
 El componente [`amp-live-list`](/es/docs/reference/components/amp-live-list.html) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata](https://ampbyexample.com/samples_templates/live_blog/#metadata) de la página.
-
 
 El código inicial del blog podría tener el siguiente aspecto:
 
@@ -87,7 +81,6 @@ Puedes añadir a la página el atributo inhabilitado para desactivar el mecanism
 Cuando publicas una entrada en el blog, es importante poder enlazarla de forma profunda para habilitar funciones (por ejemplo, para poder compartirla). Con `amp-live-list`, solo hay que usar el atributo `id` del elemento del blog para realizar enlaces profundos. Por ejemplo, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) te permite navegar directamente a la entrada del blog con el ID `post3`.
 
 AMP By Example usa una cookie en el [blog en directo de ejemplo](https://www.ampbyexample.com/samples_templates/live_blog/) para generar contenido actualizado, así que si es la primera vez que llegas a la página, la entrada con el ID `post3` quizá no esté disponible. En ese caso, serás redirigido a la primera entrada.
-
 
 ## Recursos
 

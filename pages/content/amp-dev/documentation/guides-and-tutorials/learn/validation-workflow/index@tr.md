@@ -22,14 +22,12 @@ Developer Console hataları aşağıdaki gibi görünür:
 
 <amp-img src="/static/img/docs/validator_errors.png" width="713" height="243" alt="Chrome Developer Console&#39;daki AMP Doğrulayıcı hatalarının ekran görüntüsü" layout="responsive"></amp-img>
 
-
 ### Web Arayüzü
 
 AMP Doğrulayıcı, [validator.ampproject.org](https://validator.ampproject.org/) adresindeki bir web arayüzü gibi kullanılabilir. Bu arayüzde, sayfanın HTML kaynağıyla birlikte hatalar satır içinde görüntülenir.
 Arayüz etkileşimli bir düzenleyicidir: HTML kaynağında yapılan değişiklikler etkileşimli  bir şekilde yeniden doğrulamaya neden olur.
 
 <amp-img src="/static/img/docs/validator_web_ui.png" width="660" height="507" alt="Hata örneklerinin bulunduğu validator.ampproject.org web sitesinin ekran görüntüsü." layout="responsive"></amp-img>
-
 
 ### Tarayıcı Uzantısı
 

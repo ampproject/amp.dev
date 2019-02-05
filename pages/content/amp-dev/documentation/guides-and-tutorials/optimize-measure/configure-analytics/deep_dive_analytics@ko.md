@@ -1,8 +1,6 @@
 ---
 $title: AMP 애널리틱스 심층 분석
-toc: true
 ---
-
 
 이 가이드에서는
 [amp-analytics 구성요소](/ko/docs/reference/components/amp-analytics.html)를 심층 분석하여
@@ -136,7 +134,6 @@ JSON 개체에 포함된 구성은 분석 계정의 변수 값일 뿐입니다.
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
-
 
 [tip type="important"]
 

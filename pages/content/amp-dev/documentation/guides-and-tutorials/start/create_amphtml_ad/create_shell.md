@@ -26,7 +26,6 @@ Now, let's modify the HTML to make it an AMPHTML ad.
 
 In the `<html> `tag,  add the  `⚡4ads` attribute, which identifies the document as an AMPHTML ad.  Alternatively, you could specify the `amp4ads` attribute, which is also valid.
 
-
 ```html hl_lines="2"
 <!doctype html>
 <html ⚡4ads>

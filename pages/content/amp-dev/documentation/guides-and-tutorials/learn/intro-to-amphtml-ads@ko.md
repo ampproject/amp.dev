@@ -1,9 +1,6 @@
 ---
 $title: AMP HTML 광고
-toc: true
 ---
-
-
 
 ## AMP HTML 광고란 무엇인가요?
 
@@ -21,7 +18,6 @@ AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentat
 1.  **사용자 상호작용 증가**: 사용자는 자신이 볼 수 있는 광고와만 상호작용할 수 있습니다. 광고 속도가 빨라지면 조회가능성이 증가하고 클릭률이 높아져 광고 실적이 향상됩니다.
 1.  **멀웨어로부터 안전하게 보호**: AMP HTML 광고는 게재되기 전에 확인 절차를 거치므로 AMP HTML을 통해 멀웨어가 확산될 수 없습니다. 따라서 광고주는 안전한 사용자 환경과 긍정적인 브랜드 인식을 확보할 수 있습니다. 
 1.  **높은 유연성**: AMP HTML 광고는 모든 기기뿐만 아니라 AMP와 비 AMP 웹페이지에서도 작동하도록 설계되었습니다.
-
 
 ### 형식
 
@@ -45,7 +41,6 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
     <td>라이트박스</td>
   </tr>
 </table>
-
 
 ## AMP HTML 광고의 작동 방식
 
@@ -83,14 +78,13 @@ AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 �
 
 ## AMP HTML 광고 만들기
 
-**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/a4a_spec.md', locale=doc.locale).url.path}})을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
+**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
 
 **도구 사용**: 다음 중 원하는 도구를 사용하여 AMP HTML 광고 소재를 만들 수 있습니다.
 
 *  [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate(*출시 예정*)
-
 
 ### AMP HTML 광고 구문의 유효성 검사
 

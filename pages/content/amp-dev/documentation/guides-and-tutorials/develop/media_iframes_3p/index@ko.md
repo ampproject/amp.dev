@@ -1,9 +1,6 @@
 ---
 $title: 이미지 및 동영상 삽입
-toc: true
 ---
-
-
 
  일반적인 HTML 페이지와 마찬가지로, AMP 에도 **이미지**, **동영상**, "**오디오** 콘텐츠를 삽입할 수 있습니다."
 
@@ -74,7 +71,6 @@ toc: true
 AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시 영역 위치, 시스템 리소스, 연결 대역폭 등과 같은 요인을 바탕으로 리소스 로드를 지연시킬지 우선할지 선택할 수 있습니다.
 
 읽어보기: [이미지의 대체 내용 및 자리표시자를 제공]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) 하는 방법에 관해 자세히 알아보세요.
-
 
 ## 애니메이션 이미지
 

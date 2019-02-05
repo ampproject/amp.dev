@@ -4,7 +4,6 @@ $title: Añadir funciones avanzadas de AMP
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Artículo terminado') }}
 
-
 En este tutorial, se basará en su comprensión de las fundaciones de AMP y aprenderá cómo AMP maneja publicidad, análisis, videos incrustados, integración de medios sociales, carruseles y más. Al final de este tutorial, habrás creado un artículo de noticias para móviles que incluye estas características.
 
 ## Aprenderás:

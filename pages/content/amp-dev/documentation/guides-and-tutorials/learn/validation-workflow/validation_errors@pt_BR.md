@@ -1,6 +1,5 @@
 ---
 $title: Erros de validação das AMP
-toc: true
 ---
 
 <!---
@@ -25,8 +24,6 @@ e corrigir esses erros
 ao [validar suas páginas AMP](/pt_br/docs/fundamentals/validate.html).
 Para ter uma visão geral completa dos erros de validação,
 consulte as [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
-
-
 
 ## Erros de atributos e tags HTML para AMP
 

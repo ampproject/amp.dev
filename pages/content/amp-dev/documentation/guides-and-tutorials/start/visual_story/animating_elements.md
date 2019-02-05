@@ -217,7 +217,6 @@ Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of t
 </amp-img>
 ```
 
-
 If you refresh and reload the page, each of the images fade in.  That's great but you can barely notice the effect because all the images fade in at the same time! We can improve the visual effect by changing the timing of these animations.
 
 Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:

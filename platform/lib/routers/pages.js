@@ -104,9 +104,14 @@ if (config.environment === 'development') {
     if (activeFormat) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        const filteredPage = new FilteredPage(activeFormat, body);
-        response.setHeader('content-length', filteredPage.content.length.toString());
-        return filteredPage.content;
+        try {
+          const filteredPage = new FilteredPage(activeFormat, body);
+          response.setHeader('content-length', filteredPage.content.length.toString());
+          return filteredPage.content;
+        } catch(e) {
+          log.warn(`Requested page is not available in format ${activeFormat}`);
+          return body;
+        }
       });
     }
 

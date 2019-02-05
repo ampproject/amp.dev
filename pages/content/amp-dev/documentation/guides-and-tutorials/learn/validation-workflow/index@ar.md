@@ -1,8 +1,6 @@
 ---
 $title: التحقق من صحة صفحات AMP
-toc: true
 ---
-
 
 لا تقتصر الميزة الأساسية لتطبيق AMP على زيادة سرعة صفحاتك تحميل، ولكنها تجعل صفحاتك سريعة على نحو يمكن معه *التحقق من صحتها*. وبناءً على ذلك، يمكن للجهات الأخرى، مثل Twitter أو Instagram أو بحث Google الثقة في عرض صفحات AMP للقرّاء من خلال طُرُق أكثر تشويقًا.
 
@@ -26,7 +24,6 @@ toc: true
 
 <amp-img src="/static/img/docs/validator_errors.png" width="713" height="243" layout="responsive" alt="Screen grab of AMP Validator errors in chrome developer console"></amp-img>
 
-
 ### واجهة الويب
 
 يمكن استخدام أداة التحقق من صحة صفحات AMP كواجهة ويب على الموقع
@@ -36,7 +33,6 @@ toc: true
 إعادة التحقق من الصحة بشكل تفاعلي.
 
 <amp-img src="/static/img/docs/validator_web_ui.png" width="660" height="507" layout="responsive" alt="Screen grab of validator.ampproject.org with error examples."></amp-img>
-
 
 ### إضافة المتصفح
 

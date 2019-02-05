@@ -1,8 +1,6 @@
 ---
 $title: Formato CSS admitido
-toc: true
 ---
-
 
 Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de un elemento CSS, pero en ellas no se puede hacer referencia a hojas de estilo externas (salvo en el caso de las [fuentes personalizadas](#the-custom-fonts-exception)). Además, algunos estilos no están permitidos porque afectan al rendimiento. Por ejemplo, los atributos de estilo insertados no se admiten.
 
@@ -74,7 +72,6 @@ Más artículos: Consulta más información [sobre las fuentes personalizadas en
 
 El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [ampproject.org](https://www.ampproject.org/)
 emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [ampproject.org](https://www.ampproject.org/).
-
 
 Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](/es/docs/reference/components/amp-youtube.html), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.

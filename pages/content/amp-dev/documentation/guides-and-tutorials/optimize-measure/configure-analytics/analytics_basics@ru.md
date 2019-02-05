@@ -1,11 +1,8 @@
 ---
 $title: "Analytics: основы"
-toc: true
 ---
 
 Ознакомьтесь с основами аналитики AMP.
-
-
 
 ## Что использовать: amp-pixel или amp-analytics?
 

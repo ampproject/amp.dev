@@ -1,10 +1,7 @@
 ---
 $title: Adding carousels
 $order: 3
-toc: true
 ---
-
-
 
 Another common feature in mobile pages is a carousel.  You can easily add carousels to AMP pages by using the [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) component. Let’s start with a simple example, such as a carousel of images.
 

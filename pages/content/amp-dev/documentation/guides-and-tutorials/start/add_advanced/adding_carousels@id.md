@@ -1,9 +1,6 @@
 ---
 $title: Menambahkan carousel
-toc: true
 ---
-
-
 
 Fitur umum lainnya di halaman seluler adalah carousel.  Anda dapat dengan mudah menambahkan carousel ke halaman AMP dengan menggunakan komponen [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}). Mari kita mulai dengan contoh sederhana, misalnya carousel gambar.
 

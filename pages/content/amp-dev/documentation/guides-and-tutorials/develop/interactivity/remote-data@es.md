@@ -1,9 +1,6 @@
 ---
 $title: Trabajar con datos remotos
-toc: true
 ---
-
-
 
 ¿Qué sucede si los datos enlazables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que toma mucho tiempo para buscar? Buscar precios de SKU para artículos no vistos es un trabajo desperdiciado.
 
@@ -19,13 +16,11 @@ También puede vincular el atributo `src` para el elemento `<amp-state>`. Esto s
 
 Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya tiene un endpoint `/shirts/sizes?shirt=<sku>` que, dado un SKU de camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retardo artificial de un segundo para simular la latencia de la red.
 
-
 |  Solicitud                            | Respuesta |
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 De forma similar a los datos JSON dentro de los elementos `<amp-state>`, los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
-
 
 |  Expresión                   | Resultado |
 |------------------------------|-----------|
@@ -76,7 +71,6 @@ Ahora, vuelva a cargar la página y pruébela. Si selecciona un nuevo SKU (color
 ### Especificar estados iniciales
 
 Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque `<amp-bind>` sólo se ejecuta en respuesta a una acción explícita del usuario:
-
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">

@@ -1,8 +1,6 @@
 ---
 $title: CSS yang didukung
-toc: true
 ---
-
 
 Seperti semua halaman, halaman AMP digayakan dengan CSS, tapi tidak dapat mereferensikan stylesheet eksternal (dengan pengecualian [font kustom](#the-custom-fonts-exception)). Selain itu, gaya tertentu tidak diizinkan karena implikasi performa. Atribut gaya sisipan pun tidak diizinkan.
 
@@ -75,7 +73,6 @@ Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP]({{g.doc('/
 
 Keluaran praprosesor berfungsi sama baiknya di AMP dengan di halaman web lainnya. Misalnya, situs [ampproject.org](https://www.ampproject.org/)
 menggunakan [Sass](http://sass-lang.com/) . (Kami menggunakan [Grow](http://grow.io/)  untuk membangun halaman AMP statis yang menyusun situs [ampproject.org](https://www.ampproject.org/) .)
-
 
 Jika menggunakan praprosesor, selalu perhatikan hal yang Anda sertakan. Muatlah hanya yang digunakan halaman Anda. Misalnya, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file sumber `*.scss`. Juga disertakan skrip elemen kustom untuk [`amp-youtube`](/id/docs/reference/components/amp-youtube.html), di antara lainnya, agar banyak halaman di seluruh situs dapat menyertakan video YouTube yang disematkan.

@@ -1,9 +1,6 @@
 ---
 $title: 设置
-toc: true
 ---
-
-
 
 ## 前提条件
 
@@ -32,7 +29,6 @@ git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 cd advanced-interactivity-in-amp
 npm install
 ```
-
 
 ### 第 3 步：运行开发服务器
 

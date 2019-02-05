@@ -1,12 +1,11 @@
 ---
 $title: Optimize your hosted AMP pages
 $order: 2
-toc: true
 
 formats:
   - websites
+author: sebastianbenz
 ---
-
 
 This guide provides tips and guidance for webmasters on how to optimize their hosted AMP websites.
 
@@ -175,7 +174,6 @@ If your AMP website uses a service worker, here are some best practices:
 *   When using a network-first strategy for navigation requests, make sure to enable [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
 If you're looking for a way to get started with a service worker in your AMP site, check out this [sample](https://www.google.com/url?q=https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449&sa=D&ust=1529413323498000&usg=AFQjCNE4fepX-hqVeRBW8df43uV5Bi4Llg) that provides a service worker that implements all these best practices.
-
 
 [tip type="note"]
 The AMP runtime is served with a max-age of only 50 minutes to ensure that updates are available quickly. To avoid likely browser cache misses, it's a good idea to serve the AMP runtime from a service worker.
