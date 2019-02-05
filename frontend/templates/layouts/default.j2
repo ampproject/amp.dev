@@ -2,7 +2,7 @@
 {% with %}
 {% set text = caller() %}
 {% include '/views/partials/tip.j2' %}
-{% with %}
+{% endwith %}
 {%- endmacro %}
 
 {% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
