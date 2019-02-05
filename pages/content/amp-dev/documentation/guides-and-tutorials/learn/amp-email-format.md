@@ -25,7 +25,6 @@ AMP is a technology commonly known for developing super fast web pages on mobile
 
 There are [AMP components](https://www.ampproject.org/docs/reference/components) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMP components that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email message.
 
-<div class="noshowtoc">
 
 **Contents**
 
@@ -47,7 +46,6 @@ There are [AMP components](https://www.ampproject.org/docs/reference/components)
 * [FAQ](#faq)
 * [Feedback & Support](#feedback--support)
 
-</div>
 
 ## The AMPHTML Email Format
 

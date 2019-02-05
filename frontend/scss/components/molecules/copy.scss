@@ -58,5 +58,11 @@
       grid-column: 6 / 19;
       text-align: left;
     }
+
+    &-medium {
+      grid-column: 4 / 22;
+      text-align: left;
+      max-width: 100%;
+    }
   }
 }
