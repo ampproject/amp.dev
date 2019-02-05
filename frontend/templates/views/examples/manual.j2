@@ -2,6 +2,11 @@
 
 {% block head %}
 {{ doc.example.document.head|safe }}
+{% if doc.example.document.isAmpStory %}
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+{% endif %}
+
 {# The samples head already includes a lot of the required tags, the following
 tags are specific for amp.dev #}
 {% if podspec.env.name == 'development' %}
@@ -116,16 +121,16 @@ tags are specific for amp.dev #}
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody and not doc.example.document.hidePreview %}
         {% if story_preview %}
+        {% set story_preview_embed = podspec.base_urls.api + doc.url.path + '/embed?id=' + section.storyPageId %}
         {# Storys should be repeatable, therefore render reload icon #}
-        <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ '#' + '&' }}' + random()})">
+        <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_embed + '&' }}' + random()})">
           <div class="ap-a-ico">
             {% do doc.icons.useIcon('icons/reload.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
           </div>
         </button>
         <div class="ap-o-code-preview-preview-story">
-          Story-Previews are currently disabled.
-          <!-- <amp-iframe class="ap-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_src }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe> -->
+          <amp-iframe class="ap-o-code-preview-story" media="(min-width: 650px)" src="{{ story_preview_embed }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
         </div>
         {% elif show_preview %}
         <div class="ap-o-code-preview-preview">
