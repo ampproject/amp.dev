@@ -30,26 +30,17 @@ function relative(base, relativePath) {
 }
 
 /**
- * Another helper method that enables for project relative requiring of modules
- * @param  {String} modulePath The path to the module
- * @return {Object} the required module
- */
-function _require(relativePath) {
-  return require(relative(relativePath));
-}
-
-/**
  * Various paths that are critic for the project and are used around the library
  * @type {Object}
  */
 const paths = {
   'ROOT': absolute('.'),
   'CSS': absolute('pages/css'),
+  'GROW_BUILD_DEST': absolute('platform/pages'),
 };
 
 module.exports = {
   'absolute': absolute,
   'relative': relative,
-  'require': _require,
   'paths': paths,
 };

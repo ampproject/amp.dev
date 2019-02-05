@@ -105,7 +105,7 @@ The following values can be used in the `layout` attribute:
 </table>
 
 [tip type="tip"]
-**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 [/tip]
 
 ### What if width and height are undefined?

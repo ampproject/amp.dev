@@ -26,5 +26,4 @@ def _transform(content):
             content = content.replace(match[0], '{% call tip(\'\', type=\'' + match[2] + '\') %}')
     # Then also replace end tags
     content = content.replace(TIP_END_TAG_PATTERN, '{% endcall %}')
-    print content
     return content
