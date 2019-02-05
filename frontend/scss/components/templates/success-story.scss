@@ -63,12 +63,16 @@ body {
     }
 
     .#{organism('stage-content')} {
-      grid-column: 3 / 12;
+      grid-column: 4 / 13;
 
       h1 {
         @include hl;
         @include hl-h2;
         color: color('white');
+      }
+
+      @media (min-width: 768px) {
+        margin: 7vw 1em 11vw 3em;
       }
     }
   }

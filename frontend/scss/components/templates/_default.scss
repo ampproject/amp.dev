@@ -45,12 +45,13 @@
   max-width: 100%;
 
   @media (min-width: 768px) {
-    grid-column: 9/25;
+    grid-column: 9 / 25;
   }
 
   @media (min-width: 1024px) {
-    grid-column: 7 / 19;
+    grid-column: 7 / 24;
   }
+
 
   p.limit {
     @media (min-width: 1024px) {
@@ -91,6 +92,13 @@
 
     &+.#{utility('content')} {
       padding-top: 0;
+      @media (min-width: 768px) {
+        grid-column: 9/25;
+      }
+    
+      @media (min-width: 1024px) {
+        grid-column: 7 / 19;
+      }
     }
   }
 
