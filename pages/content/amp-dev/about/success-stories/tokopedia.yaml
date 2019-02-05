@@ -1,5 +1,7 @@
 $title: Tokopedia
 $category: e-commerce
+$order: 14
+
 formats:
   - websites
 
@@ -10,9 +12,9 @@ teaser:
     height: 1
     alt: Tokopedia
   logo:
-    src: '/static/img/success-stories/tokopedia/tokopedia_logo.png'
-    width: 600
-    height: 200
+    src: '/static/img/success-stories/tokopedia/tokopedia_logo.jpg'
+    width: 240
+    height: 95
     alt: Tokopedia
   text: Tokopedia boosts mobile performance with AMP and PWA
 
