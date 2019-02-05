@@ -1,5 +1,7 @@
 $title: Washington Post
 $category: publishers
+$order: 14
+
 formats:
   - websites
 

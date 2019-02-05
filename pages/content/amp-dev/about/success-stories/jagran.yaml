@@ -1,5 +1,7 @@
 $title: Jagran New Media
 $category: publishers
+$order: 7
+
 formats:
   - websites
 

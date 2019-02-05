@@ -1,5 +1,7 @@
 $title: Readwhere
 $category: publishers
+$order: 9
+
 formats:
   - websites
 

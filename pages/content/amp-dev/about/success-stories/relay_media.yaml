@@ -1,5 +1,7 @@
 $title: Relay Media
 $category: publishers
+$order: 10
+
 formats:
   - websites
 

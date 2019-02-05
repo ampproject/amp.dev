@@ -1,5 +1,7 @@
 $title: Times of India
 $category: publishers
+$order: 13
+
 formats:
   - websites
 

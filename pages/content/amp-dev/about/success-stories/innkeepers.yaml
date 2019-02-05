@@ -1,5 +1,7 @@
 $title: Innkeeper's Advantage
 $category: e-commerce
+$order: 9
+
 formats:
   - websites
 

@@ -1,5 +1,6 @@
 $title: Event Ticket Center
 $category: e-commerce
+$order: 5
 formats:
   - websites
 

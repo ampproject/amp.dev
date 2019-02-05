@@ -1,5 +1,7 @@
 $title: Slate
 $category: publishers
+$order: 11
+
 formats:
   - websites
 

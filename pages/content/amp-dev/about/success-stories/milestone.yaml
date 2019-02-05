@@ -1,5 +1,7 @@
 $title: Milestone
 $category: e-commerce
+$order: 12
+
 formats:
   - websites
 

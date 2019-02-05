@@ -1,5 +1,7 @@
 $title: India Today
 $category: publishers
+$order: 6
+
 formats:
   - websites
 

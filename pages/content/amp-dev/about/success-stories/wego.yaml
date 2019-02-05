@@ -1,5 +1,7 @@
 $title: Wego
 $category: e-commerce
+$order: 16
+
 formats:
   - websites
 

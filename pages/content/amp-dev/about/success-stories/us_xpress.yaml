@@ -1,5 +1,7 @@
 $title: U.S. Xpress
 $category: advertisers
+$order: 2
+
 formats:
   - websites
 

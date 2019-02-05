@@ -1,5 +1,6 @@
 $title: Grupo Expansión
 $category: publishers
+$order: 4
 formats:
   - websites
 
@@ -11,8 +12,8 @@ teaser:
     alt: Grupo Expansión
   logo:
     src: '/static/img/success-stories/grupo/grupo_logo.png'
-    width: 200
-    height: 60
+    width: 1369
+    height: 793
     alt: Grupo Expansión
   text: Grupo Expansión boosts monetization with AMP
 

@@ -1,5 +1,7 @@
 $title: Wired
 $category: publishers
+$order: 15
+
 formats:
   - websites
 

@@ -1,5 +1,6 @@
 $title: CNBC
 $category: publishers
+$order: 1
 formats:
   - websites
 

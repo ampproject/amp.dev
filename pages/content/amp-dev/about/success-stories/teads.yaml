@@ -1,5 +1,7 @@
 $title: Teads
 $category: advertisers
+$order: 3
+
 formats:
   - websites
 

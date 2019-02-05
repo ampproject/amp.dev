@@ -1,5 +1,7 @@
 $title: Hearst
 $category: publishers
+$order: 5
+
 formats:
   - websites
 

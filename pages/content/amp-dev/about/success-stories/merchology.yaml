@@ -1,5 +1,7 @@
 $title: Merchology
 $category: e-commerce
+$order: 10
+
 formats:
   - websites
 
