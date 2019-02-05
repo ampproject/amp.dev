@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: Slate gets efficient with AMP
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
 

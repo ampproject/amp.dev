@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: Faster page loads with AMP deliver truckloads of new drivers to U.S. Xpress
+  layout: mobile
   subline: DEC 20, 2017
   devices:
 

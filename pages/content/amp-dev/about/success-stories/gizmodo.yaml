@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: AMP makes Gizmodo 3x faster on mobile
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
     - image_src: '/static/img/success-stories/gizmodo/amp_gizmodo_1.jpg'

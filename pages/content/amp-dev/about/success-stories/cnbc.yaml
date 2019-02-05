@@ -20,6 +20,7 @@ teaser:
 stage:
   headline: CNBC sees mobile speed and engagement gains with AMP
   subline: MAY 22, 2017
+  layout: mobile
   devices:
 
     - image_src: '/static/img/success-stories/cnbc/amp_cnbc_1.jpg'

@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: India Today delights readers and boosts revenue with AMP
+  layout: mobile
   subline: FEB 13, 2018
   devices:
 

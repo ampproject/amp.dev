@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Eski.mobi serves businesses going mobile with AMP
+  layout: mobile
   subline: JAN 23, 2018
   devices:
 

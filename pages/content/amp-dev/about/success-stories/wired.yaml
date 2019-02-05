@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: Wired AMP’s its 20+ year archive to meet audiences online
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
     - image_src: '/static/img/success-stories/wired/amp_wired_1.jpg'

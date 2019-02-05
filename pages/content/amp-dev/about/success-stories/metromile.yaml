@@ -20,6 +20,7 @@ teaser:
 
 stage:
   headline: Metromile lowers costs, reaches more potential customers with AMP
+  layout: mobile
   subline: JUN 20, 2018
   devices:
     - image_src: '/static/img/success-stories/metromile/amp_metromile_1.jpg'

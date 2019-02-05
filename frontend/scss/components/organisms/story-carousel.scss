@@ -1,0 +1,62 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_headline';
+@import '../atoms/_text';
+@import '../atoms/_icon';
+
+@import '../molecules/_copy';
+
+.#{utility('story-carousel')} {
+  margin-bottom: 5em;
+
+  @media (min-width: 768px) {
+    margin-bottom: 8vw;
+  }
+}
+
+.#{organism('story-carousel')} {
+  grid-column: 1 / -1;
+  width: 100%;
+
+  &-slide {
+    display: block;
+    margin-left: 85px;
+
+    @media (max-width: 1023px) {
+        margin-left: 25px;
+    }
+    
+    &:first-child {
+      margin-left: 20%;
+    }
+    
+    &:last-child {
+      margin-right: 22px;
+    }
+    
+    &-image {
+      overflow: hidden;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.1);
+      }
+      
+      amp-img {
+        display: block;
+      }
+    }
+    
+    &-logo {
+      margin: 33px auto 0;
+      width: 80%;
+    }
+  }
+}

@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: Tokopedia boosts mobile performance with AMP and PWA
+  layout: mobile
   subline: SEP 30, 2018
   devices:
     - image_src: '/static/img/success-stories/tokopedia/amp_tokopedia_1.jpg'

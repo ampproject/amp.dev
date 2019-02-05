@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: Merchology increases conversions, lowers load times with AMP
+  layout: mobile
   subline: FEB 2, 2018
   devices:
 

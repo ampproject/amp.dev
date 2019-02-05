@@ -21,6 +21,7 @@ teaser:
 
 stage:
   headline: AMP helps the Washington Post increase returning users from mobile search by 23%
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
     - image_src: '/static/img/success-stories/washington_post/amp_thewashingtonpost.jpg'
