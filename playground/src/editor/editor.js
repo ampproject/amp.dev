@@ -66,7 +66,7 @@ class Editor {
     this.debounceRate = DEFAULT_DEBOUNCE_RATE;
     this.createCodeMirror();
     this.errorMarkers = [];
-    this.loader = new Loader(this.container);
+    this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
   }
 

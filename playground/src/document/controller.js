@@ -42,6 +42,7 @@ export default class DocumentController {
         PlaygroundDocument.EVENT_DOCUMENT_STATE_CHANGED,
         this._onStateChange.bind(this)
     );
+    win.addEventListener('hashchange', this._onHashChange.bind(this), false);
     // TODO find a better place for key handling
     key.filter = () => true;
     key('⌘+s, ctrl+s', (e) => {
@@ -58,11 +59,11 @@ export default class DocumentController {
   }
 
   _setupDocument(runtime) {
-    const docUrl = params.get('url');
+    this.docUrl = params.get('url');
     this.docId = this._getDocumentId();
     let promise;
-    if (docUrl) {
-      promise = this.srcDoc.fetchUrl(docUrl);
+    if (this.docUrl) {
+      promise = this.srcDoc.fetchUrl(this.docUrl);
     } else if (this.docId) {
       promise = this.srcDoc.fetchDocument(this.docId);
     } else {
@@ -137,6 +138,14 @@ export default class DocumentController {
           this.saveButton.enable();
           snackbar.show('Could not save document');
         });
+  }
+
+  _onHashChange() {
+    if (this.docUrl !== params.getUrl) {
+      this.editor.setSource('');
+      this.editor.showLoadingIndicator();
+      this._setupDocument();
+    }
   }
 
   _onStateChange(newState, disableSnackbar) {
