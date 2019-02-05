@@ -84,9 +84,9 @@ If using the approach described in the previous section, `amp-pan-zoom` needs to
 
 - Add a wrapping div for the svg
 - Add padding
-[/tip]
 
 If you don’t have a wrapping div and add margin to the SVG instead, it won't make the margins part of the pinch and zooming area.
+[/tip]
 
 ## Handling state
 

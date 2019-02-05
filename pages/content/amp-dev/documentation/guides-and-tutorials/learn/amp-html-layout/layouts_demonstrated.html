@@ -11,14 +11,70 @@ components:
     - selector
 ---
 
-This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layout.html#layout), and how they work when a screen is resized.
+<style>
+  .layouts amp-img {
+    margin: 0;
+  }
 
-<div class="layouts">
+  .layouts .parent {
+    padding: 10px;
+    background: #ffa500;
+    animation-name: resize;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .layouts .description {
+    margin-bottom: 20px;
+  }
+
+  @keyframes resize {
+    from {
+      height: 200px;
+      width: 200px;
+    }
+    to {
+      height: 330px;
+      width: 330px;
+    }
+  }
+
+  .layouts .wrapper {
+    display: block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .layouts .fixed-container {
+    height: 350px;
+  }
+
+  .layouts .flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 330px;
+    height: 150px;
+  }
+
+  .layouts .layout-item {
+    width: 400px;
+  }
+
+  .layouts amp-selector {
+    background-color: #1e5091;
+  }
+</style>
+
+<div class="ap--content layouts">
+  
+  <p>This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layout.html#layout), and how they work when a screen is resized.</p>
 
   <!-- fill -->
+  <h2>fill</h2>
   <div class="layout-item">
-    <h3>fill</h3>
-     <div class="description">With a <code>fill</code> layout, the element takes the space available to it—both width and height. In other words, the layout and size of a fill element matches its parent.</div>
+     <p class="description">With a <code>fill</code> layout, the element takes the space available to it—both width and height. In other words, the layout and size of a fill element matches its parent.</p>
     <div class="fixed-container">
       <div class="parent">
         <div class="wrapper">
@@ -29,8 +85,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- fixed -->
+  <h2>fixed</h2>
   <div class="layout-item">
-    <h3>fixed</h3>
     <div class="description">With a <code>fixed</code> layout, the element retains its fixed dimensions based on the element's width and height attributes (no responsiveness).</div>
     <div class="fixed-container">
       <div class="parent">
@@ -45,8 +101,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- fixed-height -->
+  <h2>fixed-height</h2>
   <div class="layout-item">
-    <h3>fixed-height</h3>
     <div class="description">With a <code>fixed-height</code> layout, the element takes the space available to it but keeps the height unchanged. This layout works well for elements that need to position content horizontally (e.g., <code>amp-carousel</code>).</div>
     <div class="fixed-container">
       <div class="parent">
@@ -60,8 +116,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- flex-item -->
+  <h2>flex-item</h2>
   <div class="layout-item">
-    <h3>flex-item</h3>
     <div class="description">With a <code>flex-item</code> layout, the element and other elements in its parent will take the available space based on the flexbox model.</div>
     <div class="fixed-container">
       <div class="parent">
@@ -77,8 +133,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- responsive -->
+  <h2>responsive</h2>
   <div class="layout-item">
-    <h3>responsive</h3>
     <div class="description">With a <code>responsive</code> layout, the element takes the space available to it and resizes its height automatically to the aspect ratio specified by the element's width and height attributes.</div>
     <div class="fixed-container">
       <div class="parent">
@@ -93,8 +149,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- intrinsic-->
+  <h2>intrinsic</h2>
   <div class="layout-item">
-    <h3>intrinsic</h3>
     <div class="description">With an <code>intrinsic</code> layout, the element takes the space available to and resizes its height automatically to the aspect ratio given by the width and height attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint.</div>
     <div class="fixed-container">
       <div class="parent">
@@ -109,8 +165,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- container -->
+  <h2>container</h2>
   <div class="layout-item">
-    <h3>container</h3>
     <div class="description">With a <code>container</code> layout, the element lets its children define its size, much like a normal HTML <code>div</code> tag. The element is assumed to not have specific layout itself but only acts as a container.</div>
     <div class="fixed-container">
       <div class="parent">
@@ -126,8 +182,8 @@ This page demonstrates the different [layouts in AMP](/docs/design/amp-html-layo
   </div>
 
   <!-- nodisplay -->
+  <h2>nodisplay</h2>
   <div class="layout-item">
-    <h3>nodisplay</h3>
     <div class="description">With a <code>nodisplay</code> layout, the element doesn't displayed. The element takes up zero space on the screen as if its display style was <code>none</code>.</div>
     <div class="fixed-container">
       <div class="parent">
