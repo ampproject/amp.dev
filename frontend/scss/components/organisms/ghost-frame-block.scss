@@ -69,6 +69,7 @@ This positioning can be change by using the modifier `-alternate`.
 
   .all + & {
     .#{molecule('ghost-frame-desktop')} {
+      margin-top: 5%;
       margin-left: 10%;
 
       &:before {
@@ -78,12 +79,12 @@ This positioning can be change by using the modifier `-alternate`.
     }
 
     .#{molecule('ghost-frame-mobile')} {
-      margin-top: 25%;
+      margin-top: 30%;
       margin-left: 30%;
     }
 
     .#{molecule('ghost-frame-tablet')} {
-      margin-top: 10%;
+      margin-top: 15%;
       margin-left: 0%;
     }
   }
@@ -98,14 +99,14 @@ This positioning can be change by using the modifier `-alternate`.
     }
 
     .#{molecule('ghost-frame-mobile')} {
-      margin-top: 10%;
-      margin-left: 40%;
-      max-width: 35%;
+      margin-top: 26%;
+      margin-left: 0%;
+      max-width: 25%;
     }
 
     .#{molecule('ghost-frame-tablet')} {
-      margin-top: 0%;
-      margin-left: 0%;
+      margin-top: 5%;
+      margin-left: 20%;
       max-width: 50%;
     }
   }
@@ -127,7 +128,8 @@ This positioning can be change by using the modifier `-alternate`.
       padding: 3.5% 2% 2.5%;
 
       @media (min-width: 768px) {
-        margin-left: 20%;
+        margin-top: 0;
+        margin-left: 5%;
         width: 17vw;
       }
     }
