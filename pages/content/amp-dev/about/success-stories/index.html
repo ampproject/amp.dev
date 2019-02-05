@@ -5,22 +5,79 @@ $localization:
   path: /{locale}/success-stories.html
 $view: /views/custom.j2
 $hidden: true
+stage:
+  headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
+  subline: MAR 12, 2018
+  layout: all
+  logo:
+  image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
+  width: 1
+  height: 1
+  alt: BMW
+  devices:
+    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-desktop.jpg'
+      width: 8
+      height: 5
+      type: desktop
+      alt: BMW and Jung von Matt
+    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: BMW and Jung von Matt
+    - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
+      width: 3
+      height: 5
+      type: mobile
+      alt: Carved
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
 
 {% block main %}
 <main class="ap--main ap-t-template">
-  <section class="ap--stage ap--container-fluid">
-    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-    <div class="ap-o-stage ap-o-stage-websites">
-      <div class="ap--container-fluid">
-        <div class="ap-o-stage-content">
-            <h2 class="ap-o-stage-content-subline">{{ _('See what others have built') }}</h2>
-            <h1 class="ap-o-stage-content-headline-big">{{ _('Success stories' ) }}</h1>
-        </div>
+{% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
+<section class="ap--stage ap--container-fluid">
+  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  <div class="ap-o-stage ap-o-stage-websites {{doc.stage.layout}}">
+    <div class="ap--container-fluid">
+      <div class="ap-o-stage-content">
+          <h2 class="ap-o-stage-content-subline">{{ _('See what others have built') }}</h2>
+          <h1 class="ap-o-stage-content-headline-big">{{ _('Success stories' ) }}</h1>
       </div>
     </div>
-  </section>
+  </div>
+
+  {# ghost frame block #}
+  {% if doc.stage.devices %}
+  {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
+    <div class="ap-o-ghost-frame-block">
+      {% for device in doc.stage.devices %}
+      {% if device %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+      <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
+        {% if device.video_src %}
+        {% if device.video_id %}
+        <amp-vimeo data-videoid="{{device.video_id}}" layout="responsive" width="16" height="9">
+        </amp-vimeo>
+        {% else %}
+        <amp-video width="{{device.width}}" height="{{device.height}}" layout="responsive" src="{{device.video_src}}"
+          poster="{{device.poster_src}}" artwork="{{device.artwork_src}}" title="{{device.video_title}}" artist="{{device.video_artist}}"
+          album="{{device.video_album}}" class="ap--media" controls autoplay loop>
+        </amp-video>
+        {% endif %}
+        {% else %}
+        <amp-img class="ap--media" alt="{{device.alt}}" height="{{device.height}}" layout="responsive" src="{{device.image_src}}"
+          width="{{device.width}}">
+        </amp-img>
+        {% endif%}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
 
   {% set categories = g.categories('/content/amp-dev/about/success-stories', locale=doc.locale) %}
   <section class="ap--intro ap--container">
