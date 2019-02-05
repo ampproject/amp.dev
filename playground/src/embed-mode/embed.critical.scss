@@ -15,8 +15,14 @@
   .panel .panel-header {
     display: none;
   }
+  #drag {
+    width: 4px;
+  }
   #preview-container {
     height: 100vh !important;
+  }
+  #previewIframe {
+    border: none;
   }
   #source {
     margin-left: 0;
@@ -26,7 +32,8 @@
     width: calc(50% - 4px);
     box-shadow: none !important;
   }
-  .CodeMirror {
+  .cm-s-monokai.CodeMirror {
+    background: color('bright-gray');
     pre {
       line-height: 1.25em;
       font-size: 1em;

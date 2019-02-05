@@ -235,13 +235,17 @@ success_stories:
     <amp-state id="sampler">
       <script type="application/json">
       [{% for sample in doc.sampler %}
-        {% set embed_url = playground_url + '/embed?' + loop.index|pprint + '#url=' + podspec.base_urls.platform + sample.url %}
-
+        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + sample.url %}
         {
           "title": "{{ sample.title }}",
-          "url": "{{ embed_url }}"
+          "url": "{{ embed_url|safe }}"
         }{{ "," if not loop.last }}
       {% endfor %}]
+      </script>
+    </amp-state>
+    <amp-state id="activeSample">
+      <script type="application/json">
+        0
       </script>
     </amp-state>
 
@@ -273,7 +277,7 @@ success_stories:
 
         </div>
 
-        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + podspec.base_urls.platform + doc.sampler[0].url %}
+        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
             width="11"
@@ -281,10 +285,16 @@ success_stories:
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
             layout="responsive"
             resizable
+            noloading
             frameborder="0"
             src="{{ embed_url }}"
             [src]="sampler[activeSample].url">
             <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
+            <div placeholder>
+              <div class="ap-o-sampler-iframe-source"></div>
+              <div class="ap-o-sampler-iframe-drag"></div>
+              <div class="ap-o-sampler-iframe-preview"></div>
+            </div>
           </amp-iframe>
         </div>
 
