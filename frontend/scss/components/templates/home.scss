@@ -130,6 +130,23 @@
     }
   }
 
+  .#{utility('shift-cards')} {
+    background: color('whisper');
+    
+    &-grid {
+      grid-template-rows: 100px auto 100px;
+    }
+
+    &-headline {
+      grid-column: 1 / -1;
+      width: 100%;
+      @include hl;
+      @include hl-h1;
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+
   .#{utility('get-started')} {
     padding: 2.5em 30px 3em;
 

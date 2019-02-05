@@ -6,48 +6,55 @@
 @import '../atoms/_headline';
 @import '../atoms/_text';
 
-
 .#{utility('shift-cards')} {
   padding: 3em 0;
-  background: color('whisper');
 
   @media (min-width: 768px) {
     padding: 8vw 0;
-
   }
 
-  .#{utility('container')} {
-    grid-template-rows: 100px auto 100px;
+  &-grid {
+    grid-template-rows: 10px auto 100px;
+  }
+  
+  &-link {
+    grid-column: 3 / 12;
 
-    & > h2 {
-      grid-column: 1 / -1;
-      width: 100%;
-      @include hl;
-      @include hl-h1;
-      text-align: center;
-      margin-top: 0;
+    @media (min-width: 1024px) {
+      grid-column: 19 / -1;
     }
   }
 }
 
 .#{molecule('shift-card')} {
-  grid-column: span 6;
+  flex: 1 0 calc(50% - 1em);
   width: 100%;
   padding-bottom: 2em;
-  margin-bottom: 2em;
+  margin: 0 0.5em 2em;
   text-align: center;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   @media (min-width: 768px) {
-    margin-bottom: 0;
+    margin: 0;
+  }
+  
+  &-shadow {
+    box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
   }
 
-  &:hover {
-    transform: translateY(-0.125em);
-    box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
+  &-hover {
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    &:hover {
+      transform: translateY(-0.125em);
+      box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
+    }
+  }
+  
+  .#{molecule('ghost-frame-mobile')} {
+    width: 100%;
+    margin: auto;
   }
 
   &-linking {
@@ -66,6 +73,10 @@
     @media (min-width: 1280px) {
       grid-column: 3 / 12;
     }
+
+    &.small {
+      grid-column: 5 / 12;
+    }
   }
 
   &-2 {
@@ -80,6 +91,10 @@
     @media (min-width: 1280px) {
       grid-column: 14 / 23;
     }
+
+    &.small {
+      grid-column: 14 / 21;
+    }
   }
 
   &-headline {
@@ -90,6 +105,12 @@
       padding: 0 5rem;
       @include hl-h3;
     }
+  }
+
+  &-title {
+    @include txt;
+    @include txt-2;
+    margin-bottom: 0.5em;
   }
 
   &-copy {
