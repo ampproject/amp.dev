@@ -25,6 +25,7 @@ $view: /views/overview/custom-content.j2
 
 <section class="ap--content">
   <div class="ap--container-fluid">
+    {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
     <div class="ap-m-copy ap-m-copy-left-small">
       <h2>Execute all AMP JavaScript asynchronously</h2>
       <p>JavaScript is powerful, it can modify just about every aspect of the page, but it can also block DOM construction and delay page rendering (see also <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adding interactivity with JavaScript</a>). To keep JavaScript from delaying page rendering, AMP allows only asynchronous JavaScript. </p>
@@ -36,7 +37,7 @@ $view: /views/overview/custom-content.j2
 
 <section class="ap--content">
   <div class="ap--container">
-    <div class="ap-m-copy ap-m-copy-center ap-m-copy-center-left">
+    <div class="ap-m-copy ap-m-copy-center-small">
       <h2>Size all resources statically</h2>
       <p>External resources such as images, ads or iframes must state their size in the HTML so that AMP can determine each element’s size and position before resources are downloaded. AMP loads the layout of the page without waiting for any resources to download. </p>
       <p>AMP uncouples document layout from resource layout. Only one HTTP request is needed to layout the entire doc (<a href="#font-triggering-must-be-efficient">+fonts</a>). Since AMP is optimized to avoid expensive style recalculations and layouts in the browser, there won’t be any re-layout when resources load.</p>
@@ -72,7 +73,7 @@ $view: /views/overview/custom-content.j2
 
 <section class="ap--content">
   <div class="ap--container">
-    <div class="ap-m-copy ap-m-copy-center ap-m-copy-center-left">
+    <div class="ap-m-copy ap-m-copy-center-small">
       <h2>All CSS must be inline and size-bound</h2>
       <p>CSS blocks all rendering, it blocks page load, and it tends to get bloated. In AMP HTML pages, only inline styles are allowed. This removes 1 or often more HTTP requests from the critical rendering path compared to most web pages. </p>
       <p>Also, the inline style sheet has a maximum size of 50 kilobytes. While this size is big enough for very sophisticated pages, it still requires the page author to practice good CSS hygiene.</p>
@@ -102,7 +103,7 @@ $view: /views/overview/custom-content.j2
 
 <section class="ap--content">
   <div class="ap--container">
-    <div class="ap-m-copy ap-m-copy-center ap-m-copy-center-left">
+    <div class="ap-m-copy ap-m-copy-center-small">
       <h2>Only run GPU-accelerated animations</h2>
       <p>The only way to have fast optimizations is to run them on the GPU. GPU knows about layers, it knows how to perform some things on these layers, it can move them, it can fade them, but it can’t update the page layout; it will hand that task over to the browser, and that’s not good. </p>
       <p>The rules for animation-related CSS ensure that animations can be GPU-accelerated. Specifically, AMP only allows animating and transitioning on transform and opacity so that page layout isn’t required. Learn more about <a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">using transform and opacity for animation changes</a>.</p>
