@@ -131,6 +131,7 @@ class FormatFilter {
 
       let variantPage = page.clone();
       variantPage = this._filterPage(variantPage, format);
+      variantPage.extname = `.${format}.html`;
 
       if (variantPage) {
         variantPages.push(variantPage);
