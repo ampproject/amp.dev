@@ -166,18 +166,16 @@ success_stories:
             "iterations": "1",
             "selector": ".swift > .active",
             "keyframes": [{
-              "opacity": "0",
               "transform": "translateX(-7.5%)"
             },
             {
-              "opacity": "1",
               "transform": "translateX(0)"
             }]
           }]
         </script>
       </amp-animation>
 
-      <div class="ap-o-format-explainer-visual swift">
+      <div class="ap-o-format-explainer-visual ap-o-format-explainer-group swift">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-visual-{{ format.name }} {{ 'active' if loop.index == 1 }}"
           [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-visual-{{ format.name }} active' : 'ap-o-format-explainer-visual-{{ format.name }}'">
@@ -186,7 +184,7 @@ success_stories:
         {% endfor %}
       </div>
 
-      <div class="ap-o-format-explainer-content swift">
+      <div class="ap-o-format-explainer-content ap-o-format-explainer-group">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-content-{{ format.name }} ap-m-copy {{ 'active' if loop.index == 1 }}"
           [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
@@ -211,7 +209,7 @@ success_stories:
         {% endfor %}
       </div>
 
-      <div class="ap-o-format-explainer-link swift">
+      <div class="ap-o-format-explainer-link ap-o-format-explainer-group">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-link-{{ format.name }} {{ 'active' if loop.index == 1 }}"
           [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-link-{{ format.name }} active' : 'ap-o-format-explainer-link-{{ format.name }}'">
