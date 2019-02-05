@@ -472,15 +472,15 @@ success_stories:
     </div>
   </section>
 
-  {% do doc.styles.addCssFile('css/components/molecules/shift-cards.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/shift-card.css') %}
   <section class="ap--shift-cards">
     <div class="ap--container">
-      <h2>By the community,<br/>for the community</h2>
+      <h2 class="ap--shift-cards-headline">By the community,<br/>for the community</h2>
     </div>
 
-    <div class="ap--container">
+    <div class="ap--shift-cards-grid ap--container">
 
-      <div class="ap-m-shift-card ap-m-shift-card-1">
+      <div class="ap-m-shift-card ap-m-shift-card-shadow ap-m-shift-card-hover ap-m-shift-card-1">
         <a class="ap-m-shift-card-linking" href="https://github.com/orgs/ampproject/people">
           <div class="ap-m-shift-card-image">
             <amp-img
@@ -496,7 +496,7 @@ success_stories:
         </a>
       </div>
 
-      <div class="ap-m-shift-card ap-m-shift-card-2">
+      <div class="ap-m-shift-card ap-m-shift-card-shadow ap-m-shift-card-hover ap-m-shift-card-2">
         <a class="ap-m-shift-card-linking" href="https://github.com/ampproject/docs/issues">
           <div class="ap-m-shift-card-image">
             <amp-img
