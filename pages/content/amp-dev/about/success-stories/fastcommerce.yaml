@@ -1,5 +1,7 @@
 $title: Fastcommerce
 $category: e-commerce
+$date: 2017-06-12
+
 formats:
   - websites
 
@@ -18,6 +20,7 @@ teaser:
 
 stage:
   headline: Fastcommerce drives conversions for clients by building AMP-first
+  layout: mobile
   subline: JUNE 12, 2017
   devices:
 

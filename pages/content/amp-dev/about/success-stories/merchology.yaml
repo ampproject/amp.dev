@@ -1,5 +1,7 @@
 $title: Merchology
 $category: e-commerce
+$date: 2018-02-02
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Merchology increases conversions, lowers load times with AMP
+  layout: mobile
   subline: FEB 2, 2018
   devices:
 

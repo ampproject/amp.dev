@@ -1,5 +1,6 @@
 $title: Eski.mobi
 $category: e-commerce
+$date: 2018-01-23
 formats:
   - websites
 
@@ -18,6 +19,7 @@ teaser:
 
 stage:
   headline: Eski.mobi serves businesses going mobile with AMP
+  layout: mobile
   subline: JAN 23, 2018
   devices:
 

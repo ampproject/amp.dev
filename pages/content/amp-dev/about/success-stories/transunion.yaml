@@ -1,5 +1,7 @@
 $title: TransUnion
 $category: e-commerce
+$date: 2018-04-09
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: TransUnion scores more conversions with faster page loads via AMP
+  layout: mobile
   subline: APR 9, 2018
   devices:
     - image_src: '/static/img/success-stories/transunion/amp_transunion_1.jpg'

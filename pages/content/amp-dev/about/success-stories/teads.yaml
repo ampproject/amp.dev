@@ -1,5 +1,7 @@
 $title: Teads
 $category: advertisers
+$date: 2016-12-02
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers
+  layout: mobile
   subline: DEC 2, 2016
   devices:
 

@@ -19,7 +19,7 @@ The ghost frame mobile wraps an element with a mobile-like frame.
 
 .#{molecule('ghost-frame-mobile')} {
   background: rgba(color('white'), .9);
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 20px 50px -5px rgba(0, 0, 0, 0.25);
   width: calc((3/5) * 100%);
   padding: 8% 4% 5%;
@@ -31,14 +31,6 @@ The ghost frame mobile wraps an element with a mobile-like frame.
   }
 
   &.left-flat {
-    -webkit-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
@@ -51,14 +43,6 @@ The ghost frame mobile wraps an element with a mobile-like frame.
   }
 
   &.left {
-    -webkit-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
@@ -68,14 +52,6 @@ The ghost frame mobile wraps an element with a mobile-like frame.
   }
 
   &.right-flat {
-    -webkit-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
@@ -88,14 +64,6 @@ The ghost frame mobile wraps an element with a mobile-like frame.
   }
 
   &.right {
-    -webkit-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),

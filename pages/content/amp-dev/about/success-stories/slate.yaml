@@ -1,5 +1,7 @@
 $title: Slate
 $category: publishers
+$date: 2016-10-07
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Slate gets efficient with AMP
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
 

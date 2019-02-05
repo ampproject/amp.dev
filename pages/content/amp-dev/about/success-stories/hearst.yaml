@@ -1,5 +1,7 @@
 $title: Hearst
 $category: publishers
+$date: 2017-01-24
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Hearst integrates key partner and product solutions on AMP
+  layout: mobile
   subline: JANUARY 24, 2017
   devices:
 

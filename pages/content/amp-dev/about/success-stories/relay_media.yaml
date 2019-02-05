@@ -1,5 +1,7 @@
 $title: Relay Media
 $category: publishers
+$date: 2016-10-07
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Relay Media helps publishers get AMP’d
+  layout: mobile
   subline: OCTOBER 7, 2016
   devices:
 

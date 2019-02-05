@@ -1,5 +1,7 @@
 $title: NoBroker
 $category: publishers
+$date: 2017-03-27
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: India’s leading rental site improved owner-to-renter connections by 77% with AMP
+  layout: mobile
   subline: MARCH 27, 2017
   devices:
 
