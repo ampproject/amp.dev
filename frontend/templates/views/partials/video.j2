@@ -1,13 +1,13 @@
 {% do doc.styles.addCssFile('css/components/atoms/video.css') %}
 
-<figure class="ad-a-video">
+<figure class="ap-a-video">
   {% if type == 'youtube' %}
-  <amp-youtube class="ad-a-video-video" data-videoid={{ youtube_id }} layout="responsive" width="{{ width }}" height="{{ height }}"></amp-youtube>
+  <amp-youtube class="ap-a-video-video" data-videoid={{ youtube_id }} layout="responsive" width="{{ width }}" height="{{ height }}"></amp-youtube>
   {% else %}
   <amp-video src="{{ src }}" layout="responsive" width="{{ width }}" height="{{ height}}" poster="{{ poster }}" {% if muted %}muted{% endif %} {% if autoplay %}autoplay{% endif %} {% if loop %}loop{% endif %} {% if controls %}controls{% endif %}></amp-video>
   {% endif %}
 
   {% if caption %}
-  <figcaption class="ad-a-video-caption">{{ caption }}</figcaption>
+  <figcaption class="ap-a-video-caption">{{ caption }}</figcaption>
   {% endif %}
 </figure>

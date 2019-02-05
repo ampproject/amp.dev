@@ -18,11 +18,8 @@
 
 const express = require('express');
 const config = require('../config');
-const HttpProxy = require('http-proxy');
-const modifyResponse = require('http-proxy-response-rewrite');
 const {Signale} = require('signale');
-const {FilteredPage} = require('../pipeline/filteredPage');
-const got = require('got');
+
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -47,29 +44,43 @@ function getFilteredFormat(request) {
   return activeFormat;
 }
 
-async function hasManualFormatVariant(request, format) {
-  const path = request.originalUrl.replace('.html', `.${format}.html`);
-
-  const page = await got(`${growHost}${path}`).catch(() => {
-    return {};
-  });
-
-  if (!page.error && page.body) {
-    return true;
-  }
-
-  return false;
-}
-
 
 // Setup a proxy over to Grow during development
 if (config.environment === 'development') {
+  // Only import the stuff needed for proxying during development
+  const HttpProxy = require('http-proxy');
+  const modifyResponse = require('http-proxy-response-rewrite');
+  const {FilteredPage} = require('../pipeline/filteredPage');
+  const got = require('got');
+  const {pageMinifier} = require('@lib/build/pageMinifier');
+
   // Also create a logger during development since you want to know
   // what's going on
   const log = new Signale({
     'interactive': true,
-    'scope': 'Format filter',
+    'scope': 'Grow (Proxy)',
   });
+
+  /**
+   * Queries Grow for a manually filtered page variant to eventually rewrite
+   * request to this one
+   * @param  {Request}  request The original request
+   * @param  {String}  format  The format to test for
+   * @return {Boolean}
+   */
+  async function hasManualFormatVariant(request, format) {
+    const path = request.originalUrl.replace('.html', `.${format}.html`);
+
+    const page = await got(`${growHost}${path}`).catch(() => {
+      return {};
+    });
+
+    if (!page.error && page.body) {
+      return true;
+    }
+
+    return false;
+  }
 
   // Grow has problems delivering the index.html on a root request
   pages.get('/', (request, response, next) => {
@@ -90,13 +101,22 @@ if (config.environment === 'development') {
   proxy.on('proxyRes', async (proxyResponse, request, response) => {
     // Check if this response should be filtered
     const activeFormat = getFilteredFormat(request);
-
     if (activeFormat) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
-
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         const filteredPage = new FilteredPage(activeFormat, body);
+        response.setHeader('content-length', filteredPage.content.length.toString());
         return filteredPage.content;
+      });
+    }
+
+    // Check if the request should be minified on the fly
+    if (request.query['minify']) {
+      log.await(`Minifying request ...`);
+      modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
+        const minifiedPage = pageMinifier.minifyPage(body, request.url);
+        response.setHeader('content-length', minifiedPage.length.toString());
+        return minifiedPage;
       });
     }
   });

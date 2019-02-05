@@ -24,7 +24,7 @@ Menunjukkan cara menampilkan gambar dan teks dalam satu lapisan.
         <li>Memuat 3 elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Kucing</em></li>
-            <li>Elemen <a href="/docs/reference/components/amp-img.html">amp-img</a> responsif (<code class="filename">cat.jpg</code>, 720 x 1280 piksel)</li>
+            <li>Elemen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> responsif (<code class="filename">cat.jpg</code>, 720 x 1280 piksel)</li>
             <li>Elemen <code>&lt;q></code> untuk kutipan berikut: <em>Anjing mendekat jika dipanggil. Kucing menerima pesan dan kembali ke Anda. --Mary Bly</em></li>
           </ul>
         </li>
@@ -44,7 +44,7 @@ Menunjukkan cara menata teks dan menampilkan gambar pengisi layar dengan dua lap
       <ul>
         <li>Memuat 2 lapisan:
       <ul>
-        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat elemen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}">amp-img</a> responsif (<code class="filename">dog.jpg</code>, 720 x 1280 piksel).</li>
+        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat elemen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> responsif (<code class="filename">dog.jpg</code>, 720 x 1280 piksel).</li>
         <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> dan memuat 2 elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Anjing</em></li>
@@ -67,7 +67,7 @@ Menunjukkan cara menata teks, menampilkan gambar pengisi layar, dan memberikan b
       <ul>
       <li>Memuat 3 lapisan:
       <ul>
-        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat komponen <a href="/id/docs/reference/components/amp-img.html">amp-img</a> responsif (<code class="filename">bird.jpg</code>, 720 x 1280 piksel).</li>
+        <li><b>Lapisan 1</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a>, dan memuat komponen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> responsif (<code class="filename">bird.jpg</code>, 720 x 1280 piksel).</li>
         <li><b>Lapisan 2</b>: Mengimplementasikan template <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> dan memuat satu elemen:
           <ul>
             <li>Elemen <code>&lt;h1></code> dengan judul: <em>Burung</em></li>
@@ -97,9 +97,9 @@ Menunjukkan cara menata teks dan menampilkan video pengisi layar untuk halaman.
       <ul>
       <li>Memuat 3 lapisan:
       <ul>
-        <li><b>Lapisan 1</b>: Mengimplementasikan template <code>fill</code> , dan memuat elemen <a href="/id/docs/reference/components/amp-video.html">amp-video</a> responsif (<code class="filename">rabbit.mp4</code>).
+        <li><b>Lapisan 1</b>: Mengimplementasikan template <code>fill</code> , dan memuat elemen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> responsif (<code class="filename">rabbit.mp4</code>).
           <ul>
-            <li>Ingatlah untuk menambahkan <strong>skrip wajib</strong> untuk komponen <a href="/id/docs/reference/components/amp-video.html">amp-video</a> di bagian <code>&lt;head></code> agar video dapat ditampilkan.</li>
+            <li>Ingatlah untuk menambahkan <strong>skrip wajib</strong> untuk komponen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> di bagian <code>&lt;head></code> agar video dapat ditampilkan.</li>
             <li>Tetapkan gambar <code>poster</code> (<code class="filename">rabbit.jpg</code>). Atribut ini <strong>harus ada</strong> agar artikel AMP dinyatakan valid.</li>
             <li>Setel video agar otomatis diputar dengan atribut <code>autoplay</code>. Atribut ini <strong>harus ada</strong> agar artikel AMP dinyatakan valid.</li>
             <li>Setel video agar otomatis diulang lagi dengan atribut <code>loop</code>.</li>

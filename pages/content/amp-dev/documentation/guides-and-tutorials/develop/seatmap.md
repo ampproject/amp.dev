@@ -1,11 +1,13 @@
 ---
 $title: Create a seatmap
-$order: 6
+$order: 104
 toc: true
 tutorial: true
+formats:
+  - websites
 ---
 
-Seatmap are important parts of ticketers web apps, however the implementation in AMP can be difficult. This doc describes how to implement a seatmap in AMP by using a combination of available AMP components.
+Seatmaps are important parts of ticketers web apps, however the implementation in AMP can be difficult. This doc describes how to implement a seatmap in AMP by using a combination of available AMP components.
 A living sample implementing the practices described below is available at [sample](https://ampbyexample.com/advanced/seatmap/preview/).
 
 This tutorial will start by quickly reviewing the components needed to implement a seatmap in AMP.
@@ -68,10 +70,12 @@ Another approach is to use a flex layout when knowing the height of the page lay
 ## amp-pan-zoom styling
 If using the approach described in Seatmap Sizing, `amp-pan-zoom` needs to use `layout="fill"` as well.
 
-Tip: If you want to keep some white space around the seamap and still make it part of the pinch and zooming area, apply the following tip:
+[tip type="tip"]
+**TIP –** If you want to keep some white space around the seatmap and still make it part of the pinch and zooming area, apply the following tip:
 
 - Add a wrapping div for the svg
 - Add padding
+[/tip]
 
 The alternative approach where you don’t have a wrapping div and adding margin to the svg, will not make the margins part of the pinch and zooming area.
 

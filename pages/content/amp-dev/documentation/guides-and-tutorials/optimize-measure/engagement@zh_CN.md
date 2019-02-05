@@ -8,7 +8,7 @@ $title: 提高用户互动度
 
 - **在 AMP 网页上树立您的品牌。** 使用与非 AMP 网页相同的标题和设计方案（例如，颜色，间距和类型样式，确保您的网页易于识别且显示得当。
 
-- **主推最具吸引力的内容**（转换网页时）。 请纳入图片，视频，嵌入式内容，结构化数据，评论和社交媒体等关键网页元素。 了解如何[纳入第三方内容]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/third_party_components.md', locale=doc.locale).url.path}})。
+- **主推最具吸引力的内容**（转换网页时）。 请纳入图片，视频，嵌入式内容，结构化数据，评论和社交媒体等关键网页元素。 了解如何[纳入第三方内容]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md', locale=doc.locale).url.path}})。
 
 - **确保 AMP 网页保持最新状态。** 借助 [`amp-live-list`](/zh_cn/docs/reference/components/amp-live-list.html) 动态更新博客实况。
 

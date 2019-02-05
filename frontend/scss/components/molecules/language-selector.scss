@@ -18,10 +18,12 @@
   margin-left: auto;
   margin-right: 80px;
   padding-bottom: 10px;
+  display: none;
 
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     margin-right: 0;
     padding-right: 30px;
+    display: block;
   }
 
   &-toggle {
@@ -50,5 +52,9 @@
   /* For when the selector is active */
   &-toggle:focus ~ &-list, &-toggle:hover ~ &-list, &-list:hover {
       display: block;
+  }
+
+  .mainmenuopen & {
+    display: block;
   }
 }

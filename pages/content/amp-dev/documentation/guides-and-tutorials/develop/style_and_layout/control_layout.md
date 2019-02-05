@@ -2,6 +2,14 @@
 $title: Layout & media queries
 $order: 1
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
+author: Meggin
+contributors:
+  - pbakaus
 ---
 
 
@@ -33,7 +41,9 @@ determined by the given width and height. Try it out by resizing this browser wi
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
-Tip: See our side-by-side live demos of `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
+[tip type="tip"]
+**TIP –** See our side-by-side live demos of `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
+[/tip]
 
 ## The layout attribute
 
@@ -97,7 +107,9 @@ The following values can be used in the `layout` attribute:
   </tbody>
 </table>
 
-Tip: Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+[tip type="tip"]
+**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+[/tip]
 
 
 ### What if width and height are undefined?
@@ -150,7 +162,9 @@ When the browser window changes size or orientation,
 the media queries are re-evaluated and elements are hidden and shown
 based on the new results.
 
-Read on: Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
+[tip type="read-on"]
+**READ ON –** Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
+[/tip]
 
 ### Element media queries
 

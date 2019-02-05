@@ -2,6 +2,11 @@
 $title: Demonstrating AMP layouts
 $order: 1
 stylesheet: pages/layouts.css
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 components:
     - selector
 ---

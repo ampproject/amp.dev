@@ -3,6 +3,8 @@ $title: Monetizing your AMP page with ads
 $order: 0
 toc: true
 $path: /documentation/guides-and-tutorials/develop/monetization/monetization.html
+formats:
+  - websites
 ---
 
 
@@ -13,7 +15,9 @@ This guide provides  instructions and best practices for displaying ads on your 
 
 In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`<amp-ad>`](/docs/reference/components/amp-ad.html) component to your AMP page.
 
-Tip: See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
+[tip type="tip"]
+**TIP –** See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
+[/tip]
 
 Let's walk through the steps of adding the component so you can display ads on your AMP page.
 
@@ -91,7 +95,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serving direct-sold AMPHTML ads
 
-The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Augmenting targeting data on ad requests
 

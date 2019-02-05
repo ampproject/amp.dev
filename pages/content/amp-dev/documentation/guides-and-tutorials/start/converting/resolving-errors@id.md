@@ -207,24 +207,24 @@ AMP tidak mendukung partner HTML default untuk menampilkan media, yang menjelask
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP memiliki komponen web yang secara spesifik dirancang untuk menggantikan tag `<img>`, yaitu tag [`<amp-img>`](/id/docs/reference/components/amp-img.html):
+AMP memiliki komponen web yang secara spesifik dirancang untuk menggantikan tag `<img>`, yaitu tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Ganti** tag `<img>` dengan tag `<amp-img>` di atas, dan jalankan validator lagi. Anda akan menerima beberapa error baru:
+**Ganti** tag `<img>` dengan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) di atas, dan jalankan validator lagi. Anda akan menerima beberapa error baru:
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-Mengapa `amp-img` memicu error lain? Karena `amp-img` bukanlah pengganti langsung untuk tag img HTML tradisional. Terdapat persyaratan tambahan saat menggunakan `amp-img`.
+Mengapa [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) memicu error lain? Karena [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) bukanlah pengganti langsung untuk tag img HTML tradisional. Terdapat persyaratan tambahan saat menggunakan [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ### Sistem tata letak AMP
 
-Error tata letak menyatakan bahwa `amp-img` tidak mendukung jenis tata letak `container`. Salah satu konsep paling penting dalam desain AMP adalah fokusnya untuk mengurangi jumlah perubahan posisi DOM yang diperlukan untuk merender halaman webnya.
+Error tata letak menyatakan bahwa [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tidak mendukung jenis tata letak `container`. Salah satu konsep paling penting dalam desain AMP adalah fokusnya untuk mengurangi jumlah perubahan posisi DOM yang diperlukan untuk merender halaman webnya.
 
 Untuk mengurangi perubahan posisi DOM, AMP menyertakan sistem tata letak untuk memastikan tata letak halaman dikenal sedini mungkin dalam siklus proses download dan perenderan halaman.
 
@@ -234,11 +234,11 @@ Gambar di bawah ini menunjukkan bagaimana halaman HTML jika sering ditata diband
 
 Sistem tata letak AMP memungkinkan elemen pada halaman diposisikan dan diskalakan dengan berbagai cara - dimensi tetap, desain yang responsif, tinggi tetap, dan lainnya.
 
-Pada contoh dalam artikel ini, sistem tata letak menganggap jenis tata letak untuk `amp-img` sebagai jenis `container`. Namun, jenis `container` hanya berlaku untuk elemen yang berisi elemen turunan. Jenis `container` tidak kompatibel dengan tag `amp-img`, yang menjadi alasan untuk error ini.
+Pada contoh dalam artikel ini, sistem tata letak menganggap jenis tata letak untuk [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) sebagai jenis `container`. Namun, jenis `container` hanya berlaku untuk elemen yang berisi elemen turunan. Jenis `container` tidak kompatibel dengan tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), yang menjadi alasan untuk error ini.
 
-Mengapa dianggap jenis `container`? Karena kita tidak menentukan atribut `height` untuk tag `amp-img`. Dalam HTML, perubahan posisi dapat dikurangi dengan selalu menetapkan lebar dan tinggi tetap untuk elemen pada halaman. Di AMP, Anda perlu menentukan lebar dan tinggi untuk elemen amp-img agar AMP dapat lebih dahulu menentukan rasio tinggi lebar elemen.
+Mengapa dianggap jenis `container`? Karena kita tidak menentukan atribut `height` untuk tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Dalam HTML, perubahan posisi dapat dikurangi dengan selalu menetapkan lebar dan tinggi tetap untuk elemen pada halaman. Di AMP, Anda perlu menentukan lebar dan tinggi untuk elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) agar AMP dapat lebih dahulu menentukan rasio tinggi lebar elemen.
 
-**Tambahkan** `width` dan `height` ke tag `<amg-img>` sebagai berikut:
+**Tambahkan** `width` dan `height` ke tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) sebagai berikut:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -246,7 +246,7 @@ Mengapa dianggap jenis `container`? Karena kita tidak menentukan atribut `height
 
 Muat ulang halaman dan periksa validatornya. Seharusnya sudah tidak muncul error apa pun!
 
-Anda kini memiliki dokumen AMP yang valid, tetapi gambarnya tidak terlihat bagus karena diposisikan dengan tidak tepat pada halaman.  Secara default, jika Anda menentukan tinggi dan lebar untuk `amp-img`, AMP akan memperbaiki dimensi sesuai dengan yang Anda tentukan. Namun, bukankah akan lebih baik jika AMP akan menskalakan gambar agar *secara responsif* meregang dan sesuai dengan halaman, terlepas dari ukuran layarnya?
+Anda kini memiliki dokumen AMP yang valid, tetapi gambarnya tidak terlihat bagus karena diposisikan dengan tidak tepat pada halaman.  Secara default, jika Anda menentukan tinggi dan lebar untuk [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), AMP akan memperbaiki dimensi sesuai dengan yang Anda tentukan. Namun, bukankah akan lebih baik jika AMP akan menskalakan gambar agar *secara responsif* meregang dan sesuai dengan halaman, terlepas dari ukuran layarnya?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Gambar tidak responsif.") }}
 

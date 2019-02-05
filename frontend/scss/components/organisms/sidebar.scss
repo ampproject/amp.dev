@@ -76,8 +76,16 @@
       }
     }
 
+    &-item-tutorial-divider {
+      @include sidebar-nav-item-tutorial-divider;
+    }
+
     &-link {
       @include sidebar-nav-link;
+    }
+
+    &-link-lastword {
+      @include sidebar-nav-link-lastword;
     }
 
     &-icon,
@@ -103,13 +111,13 @@
   }
 
   .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media screen and (max-width: 768px) {
+    @media (max-width: 767px) {
       transform: translateX(-100%);
     }
   }
 
   .#{atom('sidebar-toggle-input')}:checked + & {
-    @media screen and (max-width: 768px) {
+    @media (max-width: 767px) {
       transform: translateX(0);
     }
   }

@@ -128,5 +128,5 @@ toc: true
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}})،
+تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})،
 بما في ذلك كيفية تتبع أخطاء الأنماط وإصلاحها.

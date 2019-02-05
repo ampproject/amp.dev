@@ -1,7 +1,6 @@
 ---
-$title: "Managing non-authenticated user state with AMP"
-$order: 6
-
+$title: Manage non-authenticated user state with AMP
+$order: 2
 formats:
   - websites
 ---
@@ -22,6 +21,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+
+
+**Table of contents**
+
+- [Background](#background)
+- [Implementation guide](#implementation-guide)
+    - [Before getting started](#before-getting-started)
+    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
+    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
+    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
+    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
+    - [Task 5: Using Client ID in linking and form submission](#task5)
+- [Strongly recommended practices](#strongly-recommended-practices)
 
 User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
 
@@ -366,7 +378,7 @@ In this task, we’ll cover an additional optimization that helps when the user 
 
 ##### Using substitution features
 
-Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Our approach will take advantage of two types of [AMP variable substitutions](./amp-var-substitutions.md).
 
 **To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` (“referrer ID”), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 

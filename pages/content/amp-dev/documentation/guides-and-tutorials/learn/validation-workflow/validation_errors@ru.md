@@ -4,7 +4,7 @@ toc: true
 ---
 
 В AMP-документах не должно быть ошибок кода.
-В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}).
+В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
 Полный список неполадок приведен в [спецификации](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 
@@ -390,10 +390,10 @@ CDATA – это контент между открывающим и закры
 Эта ошибка возникает, если в теге обнаружены взаимоисключающие атрибуты.
 Например, для следующих тегов допускается только один из указанных атрибутов:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` или `src`;
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` или `src`;
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` или `srcdoc`;
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` или `data-videoid`.
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` или `src`;
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` или `src`;
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` или `srcdoc`;
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` или `data-videoid`.
 
 ### Отсутствует обязательный атрибут из списка
 
@@ -415,10 +415,10 @@ CDATA – это контент между открывающим и закры
 Эта ошибка возникает, если в теге отсутствует какой-либо из обязательных атрибутов, перечисленных в списке:
 Например, для следующих тегов необходимо указать любой из двух атрибутов:
 
-* [amp-twitter](/docs/reference/components/amp-twitter.html): `data-tweetid` или `src`;
-* [amp-instagram](/docs/reference/components/amp-instagram.html): `data-shortcode` или `src`;
-* [amp-iframe](/docs/reference/components/amp-iframe.html): `src` или `srcdoc`;
-* [amp-youtube](/docs/reference/components/amp-youtube.html): `src` или `data-videoid`.
+* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` или `src`;
+* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` или `src`;
+* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` или `srcdoc`;
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` или `data-videoid`.
 
 ### Неверный родительский тег
 
@@ -450,7 +450,7 @@ CDATA – это контент между открывающим и закры
 * Для тега `style` требуется родительский тег `boilerplate (noscript)`.
 * Для тега `noscript` требуется родительский тег `head`.
 * Для тега `script` требуется родительский тег `head`.
-* Для тега `source` требуется медиатег (`amp-audio`, `amp-video` и т. п.).
+* Для тега `source` требуется медиатег ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) и т. п.).
 
 ### Недопустимый родительский тег
 
@@ -765,11 +765,11 @@ CDATA – это контент между открывающим и закры
 
 Пример неверного кода: `<amp-img src="" layout="responsive" width="42px" height="42rem">`.
 
-В теге "amp-img" разные единицы измерения ширины и высоты – "px" и "rem" соответственно.
+В теге "[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  разные единицы измерения ширины и высоты – "px" и "rem" соответственно.
 
 ## Ошибки, связанные с шаблонами
 
-AMP-страницы не могут содержать синтаксис шаблонов, если он не включен в тег, специально созданный для таких случаев, например [amp-mustache](/docs/reference/components/amp-mustache.html).
+AMP-страницы не могут содержать синтаксис шаблонов, если он не включен в тег, специально созданный для таких случаев, например [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
 
 Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
 

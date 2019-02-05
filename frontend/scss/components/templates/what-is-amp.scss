@@ -27,7 +27,6 @@
 @import '../organisms/case-grid.scss';
 @import '../organisms/component-visual.scss';
 @import '../organisms/kpi-list.scss';
-@import '../organisms/made-of.scss';
 
 @import '../templates/_default.scss';
 
@@ -46,7 +45,7 @@
     @include default-section-padding;
     margin-bottom: 7em;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-bottom: 8vw;
     }
 
@@ -78,29 +77,38 @@
 
   .#{utility('stage')} {
     .#{organism('stage')} {
-      margin-bottom: 50px;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 50px;
 
-      @media screen and (min-width: 768px) {
-        margin-bottom: 0;
-      }
-
-      &-content {
-        margin: 20em 0 4em;
-
-        @media screen and (min-width: 768px) {
-          margin: 7vw 0 11vw;
+        &-content {
+          margin-top: 20em;
+          margin-bottom: 4em;
         }
       }
     }
-    
+
     & + .#{utility('content')} {
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin-top: -15%;
       }
 
       h1 {
         @include hl-xxlrg;
       }
+    }
+  }
+
+  .#{utility('made-of-headline')} {
+    grid-column: 3 / 19;
+    margin-top: 0;
+    @include hl-xlrg;
+  }
+
+  .#{molecule('biggy')} {
+    align-items: end;
+    
+    &-headline {
+      margin-bottom: -.688rem;
     }
   }
 }

@@ -21,7 +21,7 @@
     height: 50px;
     width: 50px;
     top: 23vw;
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       height: 60px;
       width: 60px;
     }
@@ -43,7 +43,7 @@
       font-size: 20px;
     }
   }
-  
+
   &-prevbtn {
     left: 10px;
     div {
@@ -66,12 +66,12 @@
     &:focus {
       outline: none;
     }
-    &.slide6 {
+    &.slide2 {
       display: none;
     }
   }
   &-carouselcontroller {
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       display: none;
     }
   }

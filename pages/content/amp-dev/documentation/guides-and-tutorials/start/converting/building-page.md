@@ -8,7 +8,9 @@ In the project directory, you will find a file named [`article.html`](https://gi
 1.  **Copy** the entire code from the `article.html `file and paste it into a new file.
 2.  **Save** the new file as `article.amp.html`.
 
-Note: You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example:  `http://publisher.com/article.html?amp`.
+[tip type="note"]
+**NOTE –**  You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example:  `http://publisher.com/article.html?amp`.
+[/tip]
 
 
 Your `article.amp.html` file should look like the following:
@@ -58,7 +60,7 @@ When you inspect the JavaScript output in the Developer Console (make sure you h
 Powered by AMP ⚡ HTML
 ```
 
-The AMP library includes an [AMP validator]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
+The AMP library includes an [AMP validator]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
 
 ```text
 #development=1

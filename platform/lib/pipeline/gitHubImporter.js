@@ -18,16 +18,14 @@ const octonode = require('octonode');
 const fs = require('fs');
 const path = require('path');
 const {Signale} = require('signale');
+const config = require('../config.js');
 
 const Document = require('./markdownDocument');
 
-// TODO: Eventually make it possible to pass these in as a) command line args
-// or inside of config aswell
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.argv[2] || process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
-// TODO: Make it possible to pass in a local repository path with argv
-const LOCAL_AMPHTML_REPOSITORY = false;
+const LOCAL_AMPHTML_REPOSITORY = config.options['local-amphtml-repository'] || false;
 
 const log = new Signale({
   'interactive': true,
@@ -58,7 +56,7 @@ class GitHubImporter {
       'secret': CLIENT_SECRET,
     });
 
-    this._repository = this._github.repo('ampproject/amphtml');
+    this._repository = this._github.repo(config.options['remote-amphtml-repository'] || 'ampproject/amphtml');
     this._latestReleaseTag = await this._fetchLatestReleaseTag();
   }
 
@@ -86,6 +84,7 @@ class GitHubImporter {
   /**
    * Downloads a path/document from GitHub and returns its contents
    * @param  {String} path Path to the file
+   * @param  {Boolean} stripTitle Whether to remove the first markdown heading to avoid double titles
    * @return {Document}    A document object containing all information
    */
   _fetchDocument(filePath) {
@@ -111,16 +110,14 @@ class GitHubImporter {
         let contents = new Buffer(data.content || data, 'base64');
         contents = contents.toString();
 
-        const relativePath = filePath.substr(0, filePath.lastIndexOf('/'));
-
-        resolve(new Document(relativePath, contents));
+        resolve(new Document(filePath, contents));
       }).bind(this);
 
       if (LOCAL_AMPHTML_REPOSITORY) {
-        this._log.info(`Reading ${filePath} from local disk ...`);
+        this._log.await(`Reading ${filePath} from local disk ...`);
         fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, filePath), process);
       } else {
-        this._log.info(`Downloading ${filePath} from remote ...`);
+        this._log.await(`Downloading ${filePath} from remote ...`);
         this._repository.contents(filePath, this._latestReleaseTag, process);
       }
     });

@@ -2,8 +2,16 @@
 $title: Placeholders & fallbacks
 $order: 3
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 components:
   - iframe
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 
@@ -34,7 +42,9 @@ By default, the placeholder is immediately shown for the AMP element,
 even if the AMP element's resources have not been downloaded or initialized.
 Once ready, the AMP element typically hides its placeholder and shows the content.
 
-Note: The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder.
+[tip type="note"]
+**NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder.
+[/tip]
 
 ## Fallbacks
 

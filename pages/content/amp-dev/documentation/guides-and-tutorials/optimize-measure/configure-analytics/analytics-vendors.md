@@ -2,6 +2,8 @@
 $title: Analytics vendors
 $order: 3
 toc: true
+formats:
+  - websites
 ---
 
 
@@ -32,9 +34,13 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 </amp-analytics>
 ```
 
-Tip: If you're comfortable digging through code, you can explore the raw configurations in the [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
+[tip type="tip"]
+**TIP –** If you're comfortable digging through code, you can explore the raw configurations in the [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) file.
+[/tip]
 
-Note: Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
+[tip type="note"]
+**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
+[/tip]
 
 <hr>
 
@@ -265,7 +271,9 @@ In the `requests` section:
 - `url`: HTTPS location of `amp-analytics-oewa.html`
 
 
-Note: There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
+[tip type="note"]
+**NOTE –**  There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
+[/tip]
 
 ### Parsely
 

@@ -2,6 +2,8 @@
 $title: Embed & use AMP as a data source
 $order: 1
 toc: true
+formats:
+  - websites
 ---
 
 
@@ -45,7 +47,9 @@ This code translates to:
 
 It works because the Shadow AMP library, upon actual load, will realize there's already an array of callbacks under `window.AMP`, then process the entire queue. If you later execute the same function again, it will still work, as Shadow AMP replaces `window.AMP` with itself and a custom `push` method that simply fires the callback right away.
 
-Tip: To make the above code sample practical, we recommend that you wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example.
+[tip type="tip"]
+**TIP –** To make the above code sample practical, we recommend that you wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example.
+[/tip]
 
 ## Handle navigation in your Progressive Web App
 
@@ -77,7 +81,9 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-Important: To simplify the above code example, we skipped over error handling. You should always make sure to catch and handle errors gracefully.
+[tip type="important"]
+**IMPORTANT –** To simplify the above code example, we skipped over error handling. You should always make sure to catch and handle errors gracefully.
+[/tip]
 
 Now that we have our ready-to-use `Document` object, it's time to let AMP take over and render it. Get a reference to the DOM element that serves as container for the AMP document, then call `AMP.attachShadowDoc()`, like so:
 
@@ -95,7 +101,9 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-Tip: Before you actually hand the document over to AMP, it's the perfect time to remove page elements that make sense when displaying the AMP page standalone, but not in embedded mode: For example, footers and headers.
+[tip type="tip"]
+**TIP –** Before you actually hand the document over to AMP, it's the perfect time to remove page elements that make sense when displaying the AMP page standalone, but not in embedded mode: For example, footers and headers.
+[/tip]
 
 And that's it! Your AMP page renders as a child of your overall Progressive Web App.
 

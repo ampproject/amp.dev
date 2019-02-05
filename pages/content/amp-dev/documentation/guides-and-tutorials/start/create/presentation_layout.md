@@ -1,6 +1,9 @@
 ---
 $title: Modify presentation and layout
 $order: 3
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ## Modify the presentation
@@ -26,4 +29,6 @@ Every AMP page can only have a single embedded stylesheet and inline styles, but
 
 AMP follows stricter rules when laying out elements on the page. On a normal HTML page, you almost exclusively use CSS to lay out elements. But for performance reasons, AMP requires all elements to have an explicit size set from the get-go.
 
-Read on: Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+[tip type="read-on"]
+**READ ON –** Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+[/tip]

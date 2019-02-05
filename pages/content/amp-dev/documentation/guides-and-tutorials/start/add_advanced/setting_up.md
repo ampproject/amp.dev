@@ -40,7 +40,9 @@ To test the sample AMP page, we need to access the files from a web server. Ther
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-Note: It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
+[tip type="note"]
+**NOTE –** It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
+[/tip]
 
 After setting up your local web server, access the sample article in your browser at [this URL](http://localhost:8000/article.amp.html):
 

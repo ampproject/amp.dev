@@ -18,6 +18,8 @@
 
 'use strict';
 
+require('module-alias/register');
+
 const Platform = require('./lib/platform');
 
 new Platform().start();

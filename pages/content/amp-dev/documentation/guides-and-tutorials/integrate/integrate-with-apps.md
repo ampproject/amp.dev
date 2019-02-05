@@ -40,7 +40,9 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-Tip: Consider providing users the option to view the non-AMP version instead of the AMP version through the preference settings in your app.
+[tip type="tip"]
+**TIP –** Consider providing users the option to view the non-AMP version instead of the AMP version through the preference settings in your app.
+[/tip]
 
 ### Ways to transform links
 
@@ -63,8 +65,9 @@ There are three ways to programmatically transform links:
     end-to-end encryption). Make sure to trigger URL transformation as soon as
     the content is available, before any user interaction has taken place.
 
-Important: Never request AMP URLs through the Google's AMP API as a result of a user interaction because that degrades the performance of your app as it introduces an additional network request. Instead, use one of the three approaches described above.
-
+[tip type="important"]
+**IMPORTANT –** Never request AMP URLs through the Google's AMP API as a result of a user interaction because that degrades the performance of your app as it introduces an additional network request. Instead, use one of the three approaches described above.
+[/tip]
 
 #### Google's AMP URL API
 
@@ -108,11 +111,13 @@ The response body contains the AMP URL mapping in JSON format:
 }
 ```
 
-Note: URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the AMP URL API. However, you can easily derive the cached URL from the returned AMP URL (ampURL).
+[tip type="note"]
+**NOTE –**  URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the AMP URL API. However, you can easily derive the cached URL from the returned AMP URL (ampURL).
+[/tip]
 
 ## Using AMP Caches
 
-An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md', locale=doc.locale).url.path}}) is a
+An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) is a
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 
@@ -144,7 +149,9 @@ We recommend using the AMP Cache for the following reasons:
     Cache crawler and to your users. Using an AMP Cache guarantees that users
     always see the same AMP file as the Cache.
 
-Important: When serving AMP pages through the AMP Cache, provide a viewer experience that clearly shows the AMP's origin and offers the possibility for users to share the canonical URL (see also the following two sections for more about this).
+[tip type="important"]
+**IMPORTANT –** When serving AMP pages through the AMP Cache, provide a viewer experience that clearly shows the AMP's origin and offers the possibility for users to share the canonical URL (see also the following two sections for more about this).
+[/tip]
 
 ## Implementing an AMP Viewer
 

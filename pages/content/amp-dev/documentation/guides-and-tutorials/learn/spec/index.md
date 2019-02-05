@@ -1,7 +1,9 @@
 ---
 $title: AMP HTML Specification
 toc: true
-$order: 2
+$order: 1
+formats:
+  - websites
 ---
 
 <!---
@@ -19,6 +21,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+
 
 
 
@@ -120,7 +124,7 @@ We also recommend that AMP HTML documents are marked up with [schema.org/Creativ
 
 ### HTML Tags
 
-HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom tags (such as `<img>` and `<amp-img>`) and other tags are outright prohibited:
+HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom tags (such as `<img>` and [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})) and other tags are outright prohibited:
 
 <table>
   <tr>
@@ -129,7 +133,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">script</td>
-    <td>Prohibited unless the type is <code>application/ld+json</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
+    <td>Prohibited unless the type is <code>application/ld+json</code> or <code>text/plain</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
   </tr>
   <tr>
     <td width="30%">noscript</td>
@@ -140,21 +144,21 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
     <td>Prohibited.</td>
   </tr>
   <tr>
-    <td width="30%">img</td>
-    <td>Replaced with <code>amp-img</code>.<br>
-        Please note: <code>&lt;img&gt;</code> is a <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">Void Element according to HTML5</a>, so it does not have an end tag. However, <code>&lt;amp-img&gt;</code> does have an end tag <code>&lt;/amp-img&gt;</code>.</td>
+  <td width="30%">img</td>
+  <td>Replaced with <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>.<br>
+      Please note: <code>&lt;img&gt;</code> is a <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">Void Element according to HTML5</a>, so it does not have an end tag. However, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>&lt;amp-img&gt;</code></a> does have an end tag <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>&lt;/amp-img&gt;</code></a>.</td>
   </tr>
   <tr>
     <td width="30%">video</td>
-    <td>Replaced with <code>amp-video</code>.</td>
+    <td>Replaced with <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>.</td>
   </tr>
   <tr>
     <td width="30%">audio</td>
-    <td>Replaced with <code>amp-audio</code>.</td>
+    <td>Replaced with <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a>.</td>
   </tr>
   <tr>
     <td width="30%">iframe</td>
-    <td>Replaced with <code>amp-iframe</code>.</td>
+    <td>Replaced with <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}"><code>amp-iframe</code></a>.</td>
   </tr>
     <tr>
     <td width="30%">frame</td>
@@ -182,11 +186,11 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">form</td>
-    <td>Allowed. Require including <a href="https://www.ampproject.org/docs/reference/components/amp-form">amp-form</a> extension.</td>
+    <td>Allowed. Require including <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}"><code>amp-form</code></a> extension.</td>
   </tr>
   <tr>
     <td width="30%">input elements</td>
-    <td>Mostly allowed with <a href="https://www.ampproject.org/docs/reference/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code>&lt;input[type=image]&gt;</code>, <code>&lt;input[type=button]&gt;</code>, <code>&lt;input[type=password]&gt;</code>, <code>&lt;input[type=file]&gt;</code> are invalid. Related tags are also allowed: <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code></td>
+    <td>Mostly allowed with <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}">exception of some input types</a>, namely, <code>&lt;input[type=image]&gt;</code>, <code>&lt;input[type=button]&gt;</code>, <code>&lt;input[type=password]&gt;</code>, <code>&lt;input[type=file]&gt;</code> are invalid. Related tags are also allowed: <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code></td>
   </tr>
   <tr>
     <td width="30%">button</td>
@@ -240,7 +244,7 @@ All other authored class names are allowed in AMP HTML markup.
 
 Internal AMP IDs prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
 
-Consult AMP documentation for specific extensions before using `amp-` and `AMP` IDs to avoid conflict with the features provided by these extensions, such as `amp-access`.
+Consult AMP documentation for specific extensions before using `amp-` and `AMP` IDs to avoid conflict with the features provided by these extensions, such as [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 All other authored IDs are allowed in AMP HTML markup.
 
@@ -348,7 +352,7 @@ The AMP runtime can be placed into a development mode for any page. Development 
 
 ## Resources
 
-Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as `<amp-img>`. We call them “managed resources” because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
+Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). We call them “managed resources” because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
 
 There are no particular guarantees as to the loading behavior of the AMP runtime, but it should generally strive to load resources quickly enough, so that they are loaded by the time the user would like to see them if possible. The runtime should prioritize resources currently in the viewport and attempt to predict changes to the viewport and preload resources accordingly.
 
@@ -366,7 +370,7 @@ There are 2 types of supported AMP components:
 1. Built-in
 2. Extended
 
-Built-in components are always available in an AMP document and have a dedicated custom element such as `<amp-img>`. Extended components must be explicitly included into the document.
+Built-in components are always available in an AMP document and have a dedicated custom element such as [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Extended components must be explicitly included into the document.
 
 ### Common attributes
 

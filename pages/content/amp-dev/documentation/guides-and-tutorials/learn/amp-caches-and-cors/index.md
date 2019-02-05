@@ -3,6 +3,11 @@ $title: How AMP pages are cached
 $order: 0
 $path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/how-cached.html
 toc: true
+formats:
+  - websites
+  - email
+  - stories
+  - ads
 ---
 
 
@@ -58,7 +63,9 @@ By using the AMP format, you are making your content available to be cached by A
     - Cloudflare AMP Cache URL example: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-Note: The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs.
+[tip type="note"]
+**NOTE –** The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs.
+[/tip]
 
 * **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
 

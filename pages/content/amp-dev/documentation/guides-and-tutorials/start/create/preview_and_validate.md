@@ -1,6 +1,9 @@
 ---
 $title: Preview and validate
 $order: 6
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ## Preview
@@ -19,4 +22,6 @@ Next, make sure that your AMP page **is actually valid AMP**, or it won’t get 
   1. Add "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
-Read on: [Learn more about validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md', locale=doc.locale).url.path}}), and what to do when you get errors.
+[tip type="read-on"]
+**READ ON –** [Learn more about validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}), and what to do when you get errors.
+[/tip]

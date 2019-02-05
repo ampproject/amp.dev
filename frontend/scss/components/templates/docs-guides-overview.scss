@@ -32,6 +32,16 @@
     @include content;
   }
 
+  .#{utility('content')} {
+    p.limit {
+      margin-bottom: 1.75em;
+    }
+
+    h1, h2 {
+      margin-bottom: .5em;
+    }
+  }
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
@@ -48,7 +58,7 @@
   section {
     &.#{utility('content')},
     &.#{utility('teaser-grid')} {
-      @media screen and (min-width: 1024px){
+      @media (min-width: 1024px){
         grid-column-start: 7;
         grid-column-end: 25;
       }
@@ -62,7 +72,7 @@
   .#{organism('teaser-grid-list')} {
     padding-left: 1.25rem;
 
-    @media screen and (min-width: 575px) {
+    @media (min-width: 575px) {
       padding-left: 0;
     }
   }
@@ -74,7 +84,6 @@
 
     & > a {
       @include teaser-linking;
-      height: 100%;
     }
 
     &-tags {
@@ -91,15 +100,6 @@
       border-radius: 0;
     }
 
-    &-header {
-      @include teaser-header;
-      height: 90px;
-
-      &-title {
-        @include teaser-header-title;
-      }
-    }
-
     &-content {
       @include teaser-content;
     }
@@ -113,14 +113,7 @@
       @include teaser-copy;
     }
 
-    &-image {
-      @include teaser-image;
-      @include box-shadow;
-
-      &:before {
-        height: 100%;
-      }
-
+    &-image, &-icon {
       + .#{molecule('teaser-card')} {
         background-color: transparent;
         box-shadow: none;
@@ -130,6 +123,43 @@
           padding-left: 0;
           padding-right: 0;
           padding-top: 25px;
+        }
+      }
+    }
+
+    &-image {
+      @include teaser-image;
+      @include box-shadow;
+
+      &:before {
+        height: 100%;
+      }
+
+      &.no-shadow {
+        box-shadow: none;
+      }
+    }
+
+    &-icon {
+      @include box-shadow;
+
+      align-items: center;
+      background: color('ebony-clay');
+      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+      display: flex;
+      justify-content: center;
+      left: 0;
+      min-height: 100px;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      .#{atom('ico')} {
+        @include ico-10;
+        fill: #fff;
+
+        svg {
+          padding: 1.75rem 0;
         }
       }
     }

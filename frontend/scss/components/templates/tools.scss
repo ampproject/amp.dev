@@ -30,7 +30,7 @@ The page with all AMP tools.
 
     padding-top: 3rem;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       padding-top: 6rem;
     }
   }
@@ -38,7 +38,7 @@ The page with all AMP tools.
   .#{utility('content')} {
     @include content;
 
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       & {
         grid-column: 3 / 23
       }
@@ -48,7 +48,7 @@ The page with all AMP tools.
   .#{organism('tool-block')} {
     padding-bottom: 3rem;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       padding-bottom: 12rem;
     }
   }
@@ -73,5 +73,10 @@ The page with all AMP tools.
       width: 80px;
       border-radius: 100px;
     }
+  }
+
+
+  .#{molecule('code-snippet')} {
+    margin-bottom: 0;
   }
 }

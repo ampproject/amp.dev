@@ -52,43 +52,48 @@ $borderSize: 5px;
   background-color: color('white');
   filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
   
+  code {
+    white-space: normal;
+  }
+
   .#{molecule('tip')}-content {
     h4 {
       @include txt-1;
       margin: 0 0 0.75em;
     }
-    
+
     p {
       margin-bottom: 0;
       @include txt-3;
     }
   }
-  
+
   &-icon {
     @include ico;
     @include ico-1;
     float: left;
     margin-right: 5px;
   }
-  
+
   &-default {
     border-right: $borderSize solid color('malachite');
     border-radius: 0 $borderSize $borderSize 0;
     word-break: break-word;
-    
+    margin: 50px 0 0 0;
+
     &:before {
       @extend %pseudo-base;
       left: 0;
-      top: 100%;
-      border-top: $cornerSize solid white;
-      border-left: 0px solid white;
-      border-right: $cornerSize solid transparent;
+      bottom: 100%;
+      border-bottom: ($cornerSize/1.6) solid white;
+      border-right: ($cornerSize/1.6) solid transparent;
+      border-left: 0 solid white;
     }
   }
-  
+
   &-note {
     width: calc(100% - #{$cornerSize});
-    
+
     &:before {
       @extend %pseudo-base;
       left: 100%;
@@ -97,7 +102,7 @@ $borderSize: 5px;
       border-left: 0px solid color('blue-ribbon');
       border-right: $cornerSize solid transparent;
     }
-    
+
     &:after {
       @extend %pseudo-base;
       width: $cornerSize - $borderSize;
@@ -109,18 +114,18 @@ $borderSize: 5px;
       border-radius: 0 $borderSize 0 0;
     }
   }
-  
+
   &-important {
     width: calc(100% - #{$cornerSize/2});
     margin-left: $cornerSize/2;
     padding-left: ($cornerSize/2 - 10px);
     border-right: $borderSize solid color('red');
     border-radius: 0 $borderSize $borderSize 0;
-    
+
     h4 {
       color: color('red')
     }
-    
+
     .#{molecule('tip')} {
       &-content:before {
         @extend %pseudo-base;
@@ -130,12 +135,12 @@ $borderSize: 5px;
         top: $cornerSize/2;
         background-color: color('white');
       }
-      
+
       &-icon {
         fill: red;
       }
     }
-    
+
     &:before,
     &:after {
       @extend %pseudo-base;
@@ -145,7 +150,7 @@ $borderSize: 5px;
       border-left: 0px solid transparent;
       border-right: $cornerSize/2 solid white;
     }
-    
+
     &:after {
       top: auto;
       bottom: 0;
@@ -155,11 +160,11 @@ $borderSize: 5px;
       border-right: $cornerSize/2 solid white;
     }
   }
-  
+
   &-read-on {
     border-right: $borderSize solid color('turbo');
     border-radius: 0 $borderSize 0 0;
-    
+
     &:before,
     &:after {
       @extend %pseudo-base;
@@ -169,7 +174,7 @@ $borderSize: 5px;
       border-left: 0px solid color('turbo');
       border-right: $cornerSize solid transparent;
     }
-    
+
     &:after {
       border-top: $cornerSize solid color('turbo');
       border-right: 0px solid color('turbo');

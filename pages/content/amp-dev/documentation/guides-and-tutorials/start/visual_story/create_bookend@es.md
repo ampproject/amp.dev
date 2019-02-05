@@ -6,7 +6,7 @@ Ahora que ya has añadido todas las páginas, veamos la última pantalla de la h
 
 La información de la pantalla del enmarcado se extrae de un archivo JSON especificado en la etiqueta `<amp-story-bookend>`. Para este tutorial ya tenemos un archivo JSON ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) que contiene los datos del enmarcado.
 
-La etiqueta `<amp-story-bookend>` debe ser la última etiqueta de `amp-story`. Así pues, **vamos a añadir** `<amp-story-bookend></amp-story-bookend>` justo antes del final de la etiqueta `</amp-story>`.  En la etiqueta `amp-story-bookend`, dirige el atributo `src` al archivo `bookend.json` y define `layout="nodisplay"`:
+La etiqueta `<amp-story-bookend>` debe ser la última etiqueta de [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). Así pues, **vamos a añadir** `<amp-story-bookend></amp-story-bookend>` justo antes del final de la etiqueta `</amp-story>`.  En la etiqueta `amp-story-bookend`, dirige el atributo `src` al archivo `bookend.json` y define `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -143,6 +143,6 @@ Hay varios componentes que se pueden usar para mostrar contenidos y enlaces rela
 </tbody>
 </table>
 
-Puedes aprender más sobre el componente bookend. Para obtener más información, consulta la documentación de referencia de [amp-story](/es/docs/reference/components/amp-story.html#bookend:-amp-story-bookend).
+Puedes aprender más sobre el componente bookend. Para obtener más información, consulta la documentación de referencia de [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 Nuestra historia está casi terminada.  Antes de poder publicar nuestro contenido, comprobaremos que el HTML de nuestro AMP es válido.

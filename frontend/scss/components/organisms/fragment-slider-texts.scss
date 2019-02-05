@@ -22,15 +22,15 @@
     flex-direction: row-reverse;
     margin-top: 40vw;
     max-width: 100%;
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       margin-top: 30vw;
     }
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       margin-top: -20px;
-      grid-column: 14 / 25;
+      grid-column: 14 / 22;
     }
     h2,h3 {
-      @media screen and (min-width: 1024px) {
+      @media (min-width: 1024px) {
         @include color-white;
       }
     }
@@ -40,14 +40,6 @@
     div {
       &.copy {
         min-width: 100%;
-        a {
-          display: block;
-          margin-bottom: 15px;
-          @media screen and (min-width: 1280px) {
-            display: inline-block;
-            width: 49%;
-          }
-        }
       }
       opacity: 0;
       transition: opacity 400ms, transform 400ms;
@@ -86,17 +78,32 @@
       }
     }
   }
+
+  &-component-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+    &-component {
+      flex: 1 0 50%;
+      line-height: 1.8em;
+    }
+
   &-preheadline {
     margin: 0;
   }
+
+
   &-headline {
     @include hl-lrg;
-    margin: 0;
-    @media screen and (min-width: 1024px) {
+    margin: 0 0 30px 0;
+    @media (min-width: 1024px) {
       margin: 0 0 25% 0;
       min-height: 2.5em;
     }
-    @media screen and (min-width: 1280px) {
+    @media (min-width: 1280px) {
       margin: 0 0 13vw 0;
     }
   }

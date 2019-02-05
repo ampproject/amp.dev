@@ -13,7 +13,7 @@
   margin: 0 10px;
   padding: 15px 0 0 0;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     padding: 0;
     margin: 0;
     margin-left: 12px;
@@ -25,91 +25,110 @@
     padding: 2px;
   }
 
-    &-link {
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: 8px;
-      @include txt;
-      @include txt-font-accent;
-      line-height: 1.2em;
-      font-size: 1em;
-      @media screen and (min-width: 768px) {
-        font-size: 0.75em;
-      }
-      text-overflow: ellipsis;
-      border-radius: 4px;
-      color: color('white');
-      opacity: 0.9;
-      transition: opacity 0.2s ease;
-      overflow: hidden;
+  &-link {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 8px;
+    @include txt;
+    @include txt-font-accent;
+    line-height: 1.2em;
+    font-size: 1em;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    color: color('black');
+    background: color('athens-gray');
+    transition: opacity 0.2s ease;
+    cursor: pointer;
 
-      .#{atom('ico')} {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
-        @media screen and (min-width: 768px) {
-          width: 22px;
-          height: 22px;
-          margin-right: 8px;
-        }
-        @media screen and (min-width: 1024px) {
-          width: 18px;
-          height: 18px;
-          margin-right: 6px;
-        }
+    @media (min-width: 768px) {
+      font-size: 0.75em;
+    }
 
-        @media screen and (min-width: 1200px) {
-          width: 22px;
-          height: 22px;
-          margin-right: 8px;
-        }
+    &.active {
+      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
+    }
+
+    .#{atom('ico')} {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+      fill: color('black');
+
+      @media (min-width: 768px) {
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
       }
 
-      svg {
-        fill: color('white');
+      @media (min-width: 1024px) {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
       }
 
-      &-websites {
-        @include gradient-websites;
-      }
-
-      &-stories {
-        @include gradient-stories;
-        color: color('pigment-indigo');
-        svg {
-          fill: color('pigment-indigo');
-        }
-      }
-
-      &-ads {
-        @include gradient-ads;
-      }
-
-      &-email {
-        @include gradient-e-mails;
-        color: color('ultramarine');
-        svg {
-          fill: color('ultramarine');
-        }
-      }
-
-      @each $format in websites, stories, ads, email {
-        .ad--#{$format} & {
-          opacity: 0.6;
-
-          &-#{$format} {
-            opacity: 1;
-          }
-        }
+      @media (min-width: 1200px) {
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
       }
     }
 
-  &:hover &-link {
-    opacity: 0.6;
+    &-websites:not(.inactive),
+    &-websites.active {
+      @include gradient-websites; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
 
-    &:hover {
-      opacity: 1;
+    &-stories:not(.inactive),
+    &-stories.active {
+      @include gradient-stories; color: color('pigment-indigo');
+      .#{atom('ico')} { fill: color('pigment-indigo'); }
+    }
+
+    &-ads:not(.inactive),
+    &-ads.active {
+      @include gradient-ads; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &-email:not(.inactive),
+    &-email.active {
+      @include gradient-e-mails; color: color('ultramarine');
+      .#{atom('ico')} { fill: color('ultramarine'); }
+    }
+  }
+
+  &:hover &-link {
+    &:not(.active),
+    &.inactive {
+      color: color('black');
+      background: color('athens-gray');
+
+      .#{atom('ico')} {
+        fill: color('black');
+      }
+    }
+
+    &-websites:hover {
+      @include gradient-websites; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &-stories:hover {
+      @include gradient-stories; color: color('pigment-indigo');
+      .#{atom('ico')} { fill: color('pigment-indigo'); }
+    }
+
+    &-ads:hover {
+      @include gradient-ads; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &-email:hover {
+      @include gradient-e-mails; color: color('ultramarine');
+      .#{atom('ico')} { fill: color('ultramarine'); }
     }
   }
 }
@@ -127,46 +146,18 @@ body {
   background-attachment: fixed;
 }
 
-body.ad--websites {
-  display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#d5e6f2"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
-
-  @each $format in stories, ads, email {
-    .ad--#{$format}:not(.ad--websites) {
-      display: none;
-    }
-  }
+body.#{utility('websites')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d5e6f2"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
-body.ad--ads {
-  display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#ddd3eb"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
-
-  @each $format in websites, stories, email {
-    .ad--#{$format}:not(.ad--ads) {
-      display: none;
-    }
-  }
+body.#{utility('ads')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23ddd3eb"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
-body.ad--stories {
-  display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#ebdfd3"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
-
-  @each $format in websites, ads, email {
-    .ad--#{$format}:not(.ad--stories) {
-      display: none;
-    }
-  }
+body.#{utility('stories')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23ebdfd3"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }
 
-body.ad--email {
-  display: inherit;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#d7ebd3"/></linearGradient></defs><g><path fill="url(#a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
-
-  @each $format in websites, ads, stories {
-    .ad--#{$format}:not(.ad--email) {
-      display: none;
-    }
-  }
+body.#{utility('email')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d7ebd3"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 }

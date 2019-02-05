@@ -1,5 +1,5 @@
 ---
-$title: Optimizing your hosted AMP pages
+$title: Optimize your hosted AMP pages
 $order: 2
 toc: true
 
@@ -66,7 +66,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 Let's go through it step-by-step:
 
 1.  The first tag should be the `meta charset` tag, followed by any remaining `meta` tags.
-1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.png"
+1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
          width="1230" height="1068" layout="responsive"
          alt="Priority level changes when preload is applied">
 </amp-img>
@@ -89,7 +89,7 @@ The AMP Cache performs all these optimizations automatically (and a few more). Y
 
 ### Preload hero images
 
-[AMP HTML uses its own image element: amp-img](/docs/media/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [amp-img](/docs/reference/components/amp-img.html) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
+[AMP HTML uses its own image element: amp-img](/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [amp-img](/docs/reference/components/amp-img.html) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
 
 [sourcecode:html]
 <head>

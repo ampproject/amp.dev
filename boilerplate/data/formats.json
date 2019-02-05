@@ -1,0 +1,19 @@
+[
+  {
+    "id": "websites",
+    "name": "Websites",
+    "default": true
+  },
+  {
+    "id": "stories",
+    "name": "Stories"
+  },
+  {
+    "id": "email",
+    "name": "Email"
+  },
+  {
+    "id": "ads",
+    "name": "Ads"
+  }
+]

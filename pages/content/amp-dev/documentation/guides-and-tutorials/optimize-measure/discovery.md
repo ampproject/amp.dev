@@ -1,11 +1,18 @@
 ---
-$title: Make your page discoverable
+formats:
+  - websites
+  - stories
+$title: Make your pages discoverable
+$titles:
+  teaser: Make your pages discoverable
 $order: 3
 
 toc: true
 
-formats:
-  - websites
+teaser:
+  icon: discover
+  text: Learn how search engines find out that there is an AMP version of your site.
+  label: Learn more
 ---
 
 
@@ -36,7 +43,9 @@ If you only have one page, and that page is an AMP page, you must still add the 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-Read on: Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
+[tip type="read-on"]
+**READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
+[/tip]
 
 ## Integrate with third-party platforms through additional metadata
 

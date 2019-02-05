@@ -31,20 +31,24 @@ section.#{utility('content')}.benefits {
   &.websites,
   &.ads {
     h3,
-    .ad-m-lnk-text {
-      color: color('white');
-    }
-    .ad-m-lnk-icon {
-      fill: color('blue-ribbon');
-      background: color('white');
+    .#{molecule('lnk')} {
+      &-text {
+        color: color('white');
+      }
+      &-icon {
+        fill: color('blue-ribbon');
+        background: color('white');
+      }
     }
   }
 
   &.stories,
   &.e-mails {
     h3,
-    .ad-m-lnk-text {
-      color: color('black');
+    .#{molecule('lnk')} {
+      &-text {
+        color: color('black');
+      }
     }
   }
 }
@@ -54,7 +58,7 @@ section.#{utility('content')}.benefits {
   display: flex;
   margin: 20px;
 
-	@media screen and (min-width: 768px) {
+	@media (min-width: 768px) {
     padding: 0;
     margin: 50px 0;
     flex: 0 0 calc(33.333333333% - 40px);
@@ -82,7 +86,7 @@ section.#{utility('content')}.benefits {
       @include txt-2;
       margin-bottom: 10px;
     }
-    
+
     b {
       @include txt-2;
     }
@@ -95,7 +99,7 @@ section.#{utility('content')}.benefits {
       @include benefit-card-left-shadow;
       z-index: 1;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         margin-left: 55px;
       }
     }

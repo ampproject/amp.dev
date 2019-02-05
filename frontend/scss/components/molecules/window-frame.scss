@@ -26,12 +26,12 @@ The window frame molecule imitates the window of a desktop device and can contai
   border-top: calc(1.5rem + 1px) solid color('mirage');
   display: inline-block;
   margin-bottom: auto;
-  padding: 1rem;
+  padding: .5rem;
   position: relative;
   width: 100%;
   z-index: 0;
 
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     margin-bottom: 30px;
   }
 

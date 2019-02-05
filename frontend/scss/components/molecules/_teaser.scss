@@ -26,8 +26,8 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	margin: 0 20px 2em 0;
 	flex: 1 0 15em;
 	scroll-snap-align: start;
-	
-	@media screen and (min-width: 575px) {
+
+	@media (min-width: 575px) {
 		margin: 0 0 2em;
 	}
 }
@@ -54,12 +54,12 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	position: relative;
 	background-color: white;
 	border-radius: 10px;
-	box-shadow: inset 0 0 0 1px color('athens-gray'), 0 2px 25px 0 rgba(0, 0, 0, 0.07);
+	box-shadow: inset 0 0 0 1px color('athens-gray'), 0 15px 30px 0px rgba(0, 0, 0, 0.15);
 	transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @mixin teaser-card-hover {
-	box-shadow: inset 0 0 0 1px color('athens-gray'), 0 12px 50px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 0 0 1px color('athens-gray'), 0 25px 60px 0px rgba(0, 0, 0, 0.1);
 }
 
 @mixin teaser-header {
@@ -113,7 +113,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 @mixin teaser-copy {
 	@include txt;
 	@include txt-3;
-	line-height: 1.867em;
+	line-height: 1.6em;
 	margin: 0;
 }
 
@@ -129,7 +129,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	@include color-blue-ribbon;
 	border: 1px solid color('blue-ribbon');
 	border-radius: 12px;
-	
+
 	&-text {
 		margin-left: auto;
 		margin-right: 15px;

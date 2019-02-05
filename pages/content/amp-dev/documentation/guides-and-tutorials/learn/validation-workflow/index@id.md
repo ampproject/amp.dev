@@ -261,18 +261,15 @@ Setiap fitur memberikan beberapa informasi:
      yang pada beberapa antarmuka dapat diklik untuk menyorot lokasi tersebut. Pada
      kasus ini, masalah terjadi di baris 11, kolom 2.
   2. Baris teks yang menjelaskan error itu. Pada kasus ini, teks menunjukkan bahwa
-     kita menggunakan tag `<img>`, saat seharusnya menggunakan tag `<amp-img>`.
+     kita menggunakan tag `<img>`, saat seharusnya menggunakan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
   3. Link ke dokumen yang relevan tentang error itu. Pada kasus ini,
-     dokumentasi untuk tag `<amp-img>`. Tidak semua error menghasilkan
+     dokumentasi untuk tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Tidak semua error menghasilkan
      link dokumentasi.
 
-Dengan membaca ulang [spek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag `<amp-img>`.
+Dengan membaca ulang [spek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 Untuk memahami daftar lengkap potensi error dengan lebih baik,
 baca [panduan Error Validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Jika masih mengalami masalah setelah menjalankan evaluasi dengan cermat, [ajukan
 pertanyaan](http://stackoverflow.com/questions/tagged/amp-html) dan kami akan
 mencoba untuk membantu.
-
-
-

@@ -1,6 +1,7 @@
 $title: The Scenic
 $view: /views/detail/template-detail.j2
 $category: News & Blog
+$order: 2
 formats:
   - websites
 

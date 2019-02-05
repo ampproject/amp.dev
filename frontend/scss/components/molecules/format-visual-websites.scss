@@ -1,16 +1,8 @@
 /*
 
-#############################
-### MOLECULE: format-visual ###
-#############################
-
-### INFO:
-
-format-visual contains a code-snippet component along with two amp-img components. The component inside the the code-snippet should manipulate
-the border and format around the images.
-
-### MODIFIERS:
-
+########################################
+### MOLECULE: format-visual-websites ###
+########################################
 
 */
 
@@ -19,106 +11,54 @@ the border and format around the images.
 @import '../../mixins';
 @import '../../variables';
 
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
 @import '../atoms/component-frame.scss';
 
 .#{molecule('format-visual-websites')} {
-  width: 100%;
-  max-width: 16em;
   padding: 0;
-  margin: 0 auto;
-  transform: rotate3d(135, -90, 90, 50deg);
-  display: grid;
   grid-template-columns: 11.1fr 32.4fr 18.1fr 32.1fr 7fr;
   grid-template-rows: 3.5fr 56.3fr 25.1fr 12.3fr 3.3fr;
-  
-  @media screen and (min-width: 768px) {
-    width: 50%;
-    max-width: 100%;
-    position: relative;
-    padding: 0;
-  }
-  
+
   &:after {
-    content: '';
-    width: 100%;
-    height: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-top: 75%;
-    border-radius: 1000% 0 0 0 / 1000% 0 0 0;
-    opacity: 0.5;
-    transform: rotate(-5deg) scale(1, 1.1) skew(-25deg);
     transform-origin: left bottom;
-    background: linear-gradient(-225deg, transparent 30%, color('black'));
-    filter: blur(20px);
-    z-index: -1;
     animation: 10s ease-in-out 3.5s infinite both rotateShadow;
-    
-    @media screen and (min-width: 768px) {
-      padding-top: 100%;
-      transform-origin: right bottom;
-    }
   }
 
-  &-image {
-    width: 100%;
-    height: auto;
-    margin: auto;
-  }
+  .#{molecule('format-visual')} {
+    &-bottom-image {
+      grid-column: 2 / 5;
+      grid-row: 1 / 5;
+      max-width: 8.125em;
+      transform: translate3d(0%, 3%, 0) scale(0.9);
+      animation: none;
 
-  &-bottom-image {
-    grid-column: 2 / 5;
-    grid-row: 1 / 5;
-    max-width: 8.125em;
-    transform: translate3d(0%, 3%, 0) scale(0.9);
-    
-    @media screen and (min-width: 768px) {
-      max-width: 100%;
-    }
-  }
-
-  &-top-image {
-    grid-column: 3 / 6;
-    grid-row: 2 / 6;
-    max-width: 5.625em;
-    @include component-frame;
-    @include component-frame-websites;
-    animation: 10s ease-in-out 3.5s infinite both slide;
-    
-    @media screen and (min-width: 768px) {
-      max-width: 100%;
-    }
-  }
-
-  &-code-snippet {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    width: 12em;
-    font-size: 10px;
-    filter: drop-shadow(20px 20px 20px rgba(0, 0, 0, 0.2));
-    transform: translateY(-4em);
-    
-    @media screen and (min-width: 768px) {
-      width: auto;
-      font-size: inherit;
-      transform: translateY(0);
-    }
-    
-    .#{molecule('code-snippet')} {
-      margin: 0;
-      animation: 10s ease-in-out infinite bounce -2s;
+      @media (min-width: 768px) {
+        max-width: 100%;
+      }
     }
 
-    &-highlight:before {
-      content: 'right';
-      color: #e6db74;
-      animation: 10s ease-in-out 3.5s infinite both highlight-code;
+    &-top-image {
+      grid-column: 3 / 6;
+      grid-row: 2 / 6;
+      max-width: 5.625em;
+      @include component-frame-websites;
+      box-shadow: 20px 40px 60px -5px rgba(0, 0, 0,0.25);
+      animation: 10s ease-in-out 3.5s infinite both slide;
+
+      @media (min-width: 768px) {
+        max-width: 100%;
+      }
+    }
+
+    &-code-snippet {
+      &-highlight:before {
+        content: 'right';
+        color: #e6db74;
+        animation: 10s ease-in-out 3.5s infinite both highlight-code;
+      }
     }
   }
 }
+
 
 @keyframes slide {
   0%, 9%, 18%, 36%, 90%, 100% { transform: translateX(0); }
@@ -139,10 +79,4 @@ the border and format around the images.
   63% { content: 'left'; background-color: color('pink-flamingo'); }
   72% { content: " "; background-color: color('pink-flamingo'); }
   81% { content: 'right'; background-color: color('pink-flamingo'); }
-}
-
-@keyframes bounce {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(10px, 20px); }
-  100% { transform: translate(0, 0); }
 }

@@ -6,7 +6,7 @@ $title: ブックエンドを作成する
 
 ブックエンド画面上の情報は、`<amp-story-bookend>` タグで指定された JSON ファイルから読み込まれます。このチュートリアルでは、ブックエンド データを含む JSON ファイル（[bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)）を用意してありますので、こちらのファイルを使用します。
 
-`<amp-story-bookend>` タグは、`amp-story` 内の最後のタグにする必要があります。終了タグ `</amp-story>` の直前に、`<amp-story-bookend></amp-story-bookend>` を**追加**しましょう。`amp-story-bookend` タグ内では、次のように `src` 属性で `bookend.json` ファイルを指定し、`layout="nodisplay"` を設定します。
+`<amp-story-bookend>` タグは、[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 内の最後のタグにする必要があります。終了タグ `</amp-story>` の直前に、`<amp-story-bookend></amp-story-bookend>` を**追加**しましょう。`amp-story-bookend` タグ内では、次のように `src` 属性で `bookend.json` ファイルを指定し、`layout="nodisplay"` を設定します。
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -143,6 +143,6 @@ $title: ブックエンドを作成する
 </tbody>
 </table>
 
-ブックエンド コンポーネントについてさらに詳しく学ぶ場合は、[amp-story](/ja/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) のリファレンス ドキュメントをご覧ください。
+ブックエンド コンポーネントについてさらに詳しく学ぶ場合は、[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) のリファレンス ドキュメントをご覧ください。
 
 ストーリーは完成間近です。コンテンツを公開する前に、AMP HTML が有効かどうかを確認してみましょう。

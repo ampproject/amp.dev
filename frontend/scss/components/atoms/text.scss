@@ -4,6 +4,8 @@
 @import '../../variables';
 
 @import '_text.scss';
+@import './_color';
+
 
 .#{utility('content')} {
   .intro {
@@ -18,7 +20,7 @@
   p {
     @include txt;
     @include txt-p;
-    @include txt-2;
+    @include txt-1;
 
   	small {
   		@include txt-2;
@@ -27,6 +29,13 @@
 
   code {
     @include txt-mono-inline;
+    letter-spacing: 0.3px;
+  }
+
+  a {
+    code {
+      @include color-blue-ribbon;
+    }
   }
 
   pre {
@@ -45,6 +54,19 @@
 
     li {
       padding-left: 0.5em;
+      margin-bottom: 0.5em;
+
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+
+  figure {
+    figcaption {
+      @include txt;
+      @include txt-3;
+      margin-top: 0.3em;
     }
   }
 

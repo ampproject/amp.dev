@@ -27,19 +27,19 @@ stage:
     alt: BMW
   devices:
 
-    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-desktop.png'
+    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-desktop.jpg'
       width: 8
       height: 5
       type: desktop
       alt: BMW and Jung von Matt
 
-    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet.png'
+    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet.jpg'
       width: 3
       height: 4
       type: tablet
       alt: BMW and Jung von Matt
 
-    - video_src: '/static/img/success-stories/bmw_jvm/BMW-Stage.mp4'
+    - video_src: '/static/img/success-stories/bmw_jvm/BMW-Stage_small.mp4'
       width: 375
       height: 667
       type: mobile
@@ -60,7 +60,7 @@ contents:
     text: BMW is one of the world’s largest automotive companies, known for the style and performance of their cars. With millions of satisfied customers already around the globe, they also wanted to reach and excite new car enthusiasts and those generally interested in mobility and technology.
 
   - layout: text-media
-    image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet3.png'
+    image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet3.jpg'
     width: 3
     height: 4
     type: tablet
@@ -79,7 +79,7 @@ contents:
     story_url: https://google.com
 
   - layout: text-button
-    image_src: '/static/img/success-stories/bmw_jvm/amp-bmw-mobile2.png'
+    image_src: '/static/img/success-stories/bmw_jvm/amp-bmw-mobile2.jpg'
     width: 3
     height: 5
     type: mobile

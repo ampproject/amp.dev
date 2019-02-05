@@ -27,7 +27,9 @@ The AMP runtime makes the ad call as early as possible and places the first one 
   </amp-img>
 </amp-anim>
 
-Note: A longer AMP Story creates more opportunities for ad placement. The exact placement of the ad algorithm will continue to be optimized over time.
+[tip type="note"]
+**NOTE –** A longer AMP Story creates more opportunities for ad placement. The exact placement of the ad algorithm will continue to be optimized over time.
+[/tip]
 
 ##User Interaction
 Users can progress past ads the same way as normal story pages; by tapping the right two thirds of the screen.
@@ -71,7 +73,7 @@ Ad servers that currently support AMP Story ads:
 
 * [Google Ad Manager (previously  DoubleClick)]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/advertise_amp_stories.md', locale=doc.locale).url.path}}#google-ad-manager)
 
-If you are an add server interested in serving story adds please contact us by filing a [GitHub Issue](https://github.com/ampproject/amphtml/issues/new). The AMP team will happily get in touch!
+If you are an ad server interested in serving story ads please contact us by filing a [GitHub Issue](https://github.com/ampproject/amphtml/issues/new). The AMP team will happily get in touch!
 
 Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 

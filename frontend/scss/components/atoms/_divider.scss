@@ -21,12 +21,12 @@ desktop
 	margin-bottom: 0.813em;
 	background-color: color('whisper');
 
-	@media screen and (min-width: 768px) {
+	@media (min-width: 768px) {
 		display: none;
 	}
 
 	&-desktop {
-		@media screen and (min-width: 768px) {
+		@media (min-width: 768px) {
 			display: block;
 		}
 	}
@@ -45,7 +45,7 @@ desktop
   width: 60px;
   height: 4px;
   background-color: color('white');
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
 	  margin-bottom: 3em;
   }
 }
@@ -54,7 +54,7 @@ desktop
   width: 60px;
   height: 4px;
   background-color: color('blue-ribbon');
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
 	  margin-bottom: 3em;
   }
 }

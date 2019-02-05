@@ -1,13 +1,14 @@
 ---
 $title: Creating the bookend
 $order: 7
+author: bpaduch
 ---
 
 Now that you've added all of your pages, let's look at the last screen of the story, the "bookend".  This last screen wraps up the story, and allows you to provide social sharing and related links to your story, so users can share your story or dive further into other content on your site.
 
 The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag. For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
 
-The `<amp-story-bookend>` tag must be the last tag in `amp-story`. So, let's **add** `<amp-story-bookend></amp-story-bookend>` just before the ending `</amp-story>` tag.  In the `amp-story-bookend` tag, point the `src` attribute to the `bookend.json` file and set `layout="nodisplay"`:
+The `<amp-story-bookend>` tag must be the last tag in [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). So, let's **add** `<amp-story-bookend></amp-story-bookend>` just before the ending `</amp-story>` tag.  In the `amp-story-bookend` tag, point the `src` attribute to the `bookend.json` file and set `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -144,6 +145,6 @@ There are various components that you can use to display related content and lin
 </tbody>
 </table>
 
-There's more to learn about the bookend component. For details, see the [amp-story](/docs/reference/components/amp-story.html#bookend:-amp-story-bookend) reference documentation.
+There's more to learn about the bookend component. For details, see the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) reference documentation.
 
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.

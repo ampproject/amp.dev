@@ -30,15 +30,20 @@ example markup:
 table {
   position: relative;
   border-collapse: collapse;
-  margin: 1.5em 0 2em;
+  padding: 0 0 0 20px;
+  margin: 1.5em -20px 2em -20px;
+  max-width: calc(100% + 40px);
+  display: block;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   @include txt;
   @include txt-2;
 
-  th {
-    padding: 20px;
-    border-bottom: 1px solid color('silver');
+  @media (min-width: 768px){
+    max-width: 100%;
+    padding: 0;
+    margin: 1.5em 0 2em;
   }
-
 }
 
 thead {
@@ -46,16 +51,21 @@ thead {
 
   tr {
     text-align: left;
+
+    th {
+      padding: 20px;
+      border-bottom: 1px solid color('silver');
+    }
   }
 }
 
 tbody {
-  tr:nth-child(odd) {
-    background-color: color('whisper');
-  }
-
   tr {
     border-bottom: 1px solid color('silver');
+
+    &:nth-child(odd) {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
 
     td:nth-child(1) {
       border-right: 1px solid color('silver');
@@ -65,6 +75,14 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
+
+    @media (orientation: portrait) and (max-width: 575px) {
+      min-width: 40vw;
+
+      &:last-child {
+        min-width: 80vw;
+      }
+    }
 
     code {
       @include txt-mono-inline;

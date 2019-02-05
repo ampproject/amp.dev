@@ -211,24 +211,24 @@ AMP では、メディアの表示に対応するデフォルトの HTML をサ�
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP には、`<img>` タグを置き換えるための専用のウェブ コンポーネントとして、[`<amp-img>`](/ja/docs/reference/components/amp-img.html) タグが用意されています。
+AMP には、`<img>` タグを置き換えるための専用のウェブ コンポーネントとして、[`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグが用意されています。
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-`<img>` タグを上記の `<amp-img>` タグで**置き換えて**から、検証ツールを再度実行してください。新しいエラーがいくつか発生します。
+`<img>` タグを上記の [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグで**置き換えて**から、検証ツールを再度実行してください。新しいエラーがいくつか発生します。
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-なぜ `amp-img` によって別のエラーが発生したのでしょうか。`amp-img` は従来の HTML img タグを直接置き換えたものではないからです。`amp-img` を使用する場合は、追加の要件があります。
+なぜ [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) によって別のエラーが発生したのでしょうか。[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) は従来の HTML img タグを直接置き換えたものではないからです。[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) を使用する場合は、追加の要件があります。
 
 ### AMP のレイアウト システム
 
-このレイアウト エラーは、`amp-img` が `container` レイアウト タイプをサポートしていないことを伝えています。AMP の設計における最も重要な概念の 1 つは、ウェブページのレンダリングに必要な DOM リフローの量を削減することに重点を置いている点です。
+このレイアウト エラーは、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) が `container` レイアウト タイプをサポートしていないことを伝えています。AMP の設計における最も重要な概念の 1 つは、ウェブページのレンダリングに必要な DOM リフローの量を削減することに重点を置いている点です。
 
 DOM リフローを削減するため、AMP には、ページのダウンロードとレンダリングのライフサイクルのできるだけ早い段階で、ページのレイアウトを認識できるようにするレイアウト システムがあります。
 
@@ -238,11 +238,11 @@ DOM リフローを削減するため、AMP には、ページのダウンロー
 
 AMP のレイアウト システムでは、ページ上の要素をさまざまな方法（サイズの固定、レスポンシブ デザイン、高さの固定など）で配置し、拡大縮小できます。
 
-この記事のケースでは、レイアウト システムは `amp-img` のレイアウト タイプを `container` タイプと推測しました。しかし、`container` タイプは、子要素を含む要素にのみ適用可能です。`container` タイプは `amp-img` タグに対応していないため、このエラーの原因となりました。
+この記事のケースでは、レイアウト システムは [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) のレイアウト タイプを `container` タイプと推測しました。しかし、`container` タイプは、子要素を含む要素にのみ適用可能です。`container` タイプは [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに対応していないため、このエラーの原因となりました。
 
-なぜ `container` タイプが推測されたのでしょうか。その理由は、`amp-img` タグに `height` 属性を指定していなかったためです。HTML では、ページ上の要素に固定の幅と高さを常に指定することで、リフローを削減できます。AMP では、AMP が要素のアスペクト比を事前に判断できるように、amp-img 要素の幅と高さを定義する必要があります。
+なぜ `container` タイプが推測されたのでしょうか。その理由は、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに `height` 属性を指定していなかったためです。HTML では、ページ上の要素に固定の幅と高さを常に指定することで、リフローを削減できます。AMP では、AMP が要素のアスペクト比を事前に判断できるように、amp-img 要素の幅と高さを定義する必要があります。
 
-次のように、`<amg-img>` タグに `width` と `height` を**追加**してください。
+次のように、[`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに `width` と `height` を**追加**してください。
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -250,7 +250,7 @@ AMP のレイアウト システムでは、ページ上の要素をさまざま
 
 ページを更新して、検証ツールで確認してみましょう。エラーが表示されなくなるはずです。
 
-これで有効な AMP ドキュメントになりましたが、ページ上の配置が不自然なため、画像の見栄えがよくありません。デフォルトでは、`amp-img` の高さと幅を指定した場合、AMP は指定に合わせてサイズを修正します。しかし、どのような画面サイズでも、AMP が画像を*レスポンシブ*に拡大縮小してページに合わせられたら、最適でしょう。
+これで有効な AMP ドキュメントになりましたが、ページ上の配置が不自然なため、画像の見栄えがよくありません。デフォルトでは、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) の高さと幅を指定した場合、AMP は指定に合わせてサイズを修正します。しかし、どのような画面サイズでも、AMP が画像を*レスポンシブ*に拡大縮小してページに合わせられたら、最適でしょう。
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="この画像はレスポンシブではない")}}
 

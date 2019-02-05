@@ -6,7 +6,9 @@ toc: true
 
 Esta guía presenta un conjunto de casos prácticos que se utilizan con frecuencia al realizar el seguimiento de las interacciones de los usuarios:
 
-Note: ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](/es/contribute/).
+[tip type="note"]
+**NOTE –**  ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](/es/contribute/).
+[/tip]
 
 ## Seguimiento de páginas vistas
 
@@ -217,4 +219,3 @@ En el ejemplo siguiente se utiliza el atributo `selector` del `trigger` para env
 </script>
 </amp-analytics>
 ```
-

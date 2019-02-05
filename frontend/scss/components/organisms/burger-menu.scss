@@ -14,54 +14,52 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('burger-menu')} {
-  padding-bottom: 50px;
-  /* The following elements are not inside the burger-menu itself */
-  &-label {
-    position: fixed;
-    z-index: 17;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
-
-    &.mainmenuopen {
-      z-index: 23;
-    }
-
-    @media screen and (min-width: 768px) {
-      right: 30px;
-    }
-
-    @media screen and (min-width: 1024px) {
-      display: none;
-    }
-  }
-
-    &-icon {
-      width: 30px;
-      height: 30px;
-    }
-
-  &-input {
-    display: none;
-  }
-
-  /* This is where the actual burger-menu starts */
+/* This is where the actual burger-menu starts */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding-top: 70px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 110px 20px 80px;
   z-index: 16;
   background-color: color('white');
   pointer-events: none;
   opacity: 0;
-  transform: translateY(5%) scale(1.2);
-  transition: transform 0.2s ease, opacity 0.15s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 
-  @media screen and (min-width: 1024px) {
+  /* The following elements are not inside the burger-menu itself */
+  &-label {
+    position: fixed;
+    z-index: 17;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &.mainmenuopen {
+      z-index: 1004;
+    }
+
+    @media (min-width: 768px) {
+      right: 30px;
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &-input {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
     display: none;
   }
 
@@ -70,18 +68,9 @@
     & + .#{organism('burger-menu')} {
       pointer-events: auto;
       opacity: 1;
-      transform: translateY(0) scale(1);
-      &.mainmenuopen {
-        z-index: 22;
-      }
-    }
 
-    /* Shrink header and footer to not interfer with scrolling */
-    & ~ main, & ~ footer {
-      @media screen and (max-width: 1024px) {
-        max-height: 0;
-        overflow: hidden;
-        pointer-events: none;
+      &.mainmenuopen {
+        z-index: 1003;
       }
     }
   }
@@ -92,21 +81,16 @@
     flex-direction: column;
     height: 100%;
     margin: 0;
+    margin-top: 1rem;
     padding: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     /* This block defines the styles for the second level elements */
     & & {
-      margin-top: 8px;
+      margin-top: 1rem;
 
       & .#{organism('burger-menu')}-item {
-        &:before {
-          display: inline-block;
-          vertical-align: middle;
-          content: "";
-          width: 20px;
-          border-bottom: 1px solid color('alto');
-        }
-
         &:last-child {
           margin-bottom: 0;
         }
@@ -115,11 +99,44 @@
   }
 
     &-item {
-      margin-bottom: 8px;
-
+      margin-bottom: 1rem;
+      position: relative;
       &:last-child {
         margin-top: auto;
       }
-    }
+      ul {
+        display: none;
+      }
+      &-trigger {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 36px;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        background: none transparent;
+        cursor: pointer;
+        &:checked {
+          & ~ ul {
+            display: block;
+          }
+          & + .nav-icon .#{atom('ico')} {
+            transform: rotate(-90deg);
+          }
+        }
+        & + .nav-icon .#{atom('ico')} {
+          display: inline-block;
+          transform: rotate(0);
+        }
+      }
 
+      .#{atom('ico')} {
+        height: 0.6em;
+        margin-bottom: 0.3em;
+        margin-left: 0.3em;
+        width: 0.6em;
+      }
+    }
 }

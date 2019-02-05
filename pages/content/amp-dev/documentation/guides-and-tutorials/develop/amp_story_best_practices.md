@@ -3,11 +3,10 @@ $title: Best practices for creating an AMP story
 $order: 12
 $category: Develop
 toc: true
-components:
-    - youtube
-
 formats:
     - stories
+components:
+    - youtube
 ---
 
 
@@ -84,7 +83,9 @@ When specifying the source for an [amp-video](/docs/reference/components/amp-vid
 
 If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
-Note: The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
+[tip type="note"]
+**NOTE –**  The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
+[/tip]
 
 ### Video resolution
 
@@ -109,7 +110,9 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
   </tbody>
 </table>
 
-Note: For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
+[tip type="note"]
+**NOTE –**  For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
+[/tip]
 
 ### Video codec
 

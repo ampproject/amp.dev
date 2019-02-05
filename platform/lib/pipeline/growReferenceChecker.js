@@ -24,7 +24,7 @@ const fs = require('fs');
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.md';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.{md,html}';
 // The location to search for documents in
 const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
 // The pattern used by Grow to make up references
@@ -32,8 +32,9 @@ const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 /* eslint-disable max-len */
 const LOOKUP_TABLE = {
-  '/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/monetization.md': '/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md',
-  '/content/amp-dev/documentation/components/I/amp-img.md': '/content/amp-dev/documentation/components/reference/amp-img.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
 };
 /* eslint-enable max-len */
 

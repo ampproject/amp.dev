@@ -2,31 +2,26 @@
 {% if doc.html %}
 {% include '/views/partials/toc.j2' with context %}
 
-<section class="ad--content">
+<section class="ap--content">
   {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
 
   {{ doc.html|render|safe }}
-
-  {# Always assume doc.author and doc.translator are GitHub handles #}
-  {% if doc.author %}
-  <p>This particular document was written by <a href="https://github.com/{{ doc.author }}" target="_blank" rel="nofollow">@{{ doc.author }}</a>{% if doc.translator %} and translated by <a href="https://github.com/{{ doc.translator }}" target="_blank" rel="nofollow">@{{ doc.translator }}</a>{% endif %}.</p>
-  {% endif %}
 </section>
 
 {# If its a empty doc render short information about it #}
 {% else %}
 
 {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-<section class="ad--content">
+<section class="ap--content">
   <h1>{{ doc.title }}</h1>
-  <div class="ad-m-tip ad-m-tip-default">
-    <div class="ad-m-tip-content">
+  <div class="ap-m-tip ap-m-tip-default">
+    <div class="ap-m-tip-content">
       <h4>Empty space.</h4>
       <p>For now this page is purposefully empty. Its only purpose is to have something to link to if the real content does not yet exist.</p>
 
-      <div class="ad-m-code-snippet">
+      <div class="ap-m-code-snippet">
         <pre>
 <span class="l l-Scalar l-Scalar-Plain">view</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.view }}"</span>
 <span class="l l-Scalar l-Scalar-Plain">collection_path</span><span class="p p-Indicator">: </span><span class="s">"{{ doc.collection.collection_path }}{{ doc.collection_path }}"</span>

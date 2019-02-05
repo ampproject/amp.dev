@@ -2,9 +2,17 @@
 $title: Create responsive AMP pages
 $order: 5
 toc: true
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 components:
   - iframe
   - youtube
+author: bpaduch
+contributors:
+  - pbakaus
 ---
 
 
@@ -56,7 +64,9 @@ However, we want the image to not stretch beyond its intended size, so we set th
 </style>
 ```
 
-Read on: To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/design/responsive/control_layout.html#the-layout-attribute) guide.
+[tip type="read-on"]
+**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/design/responsive/control_layout.html#the-layout-attribute) guide.
+[/tip]
 
  <a id="fn1"></a>
 [tip type="note"]
@@ -84,7 +94,7 @@ There are many types of videos that you can add to your AMP pages.  For details,
 
 ### Displaying responsive images
 
-Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_replacements.md', locale=doc.locale).url.path}})).  In addition to the basic responsive image, you might want to serve multiple image resources to:
+Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})).  In addition to the basic responsive image, you might want to serve multiple image resources to:
 
 - [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
 - [Change the art direction of an image](#changing-the-art-direction-of-an-image)
@@ -94,7 +104,9 @@ Images make up a large part of a web page (approximately [65% of the page's byte
 
 For high-resolution screens (e.g., Retina display), you should provide images that look crisp and sharp; however, you don't want to use that same image on low-res devices because that'll cause unnecessary extra load time.  In non-AMP and AMP pages,  you can serve the correct image for the screen's pixel density by using `srcset` with the width descriptor ( `w` ).
 
-Note: The DPR (`x`) based srcset selector also works; however, for more flexibility, we recommend using the `w` selector. Previously (in the old srcset proposal), the `w` descriptor described the viewport width, but now it describes the width of the image source file, which allows the user agent to calculate the effective pixel density of each image and choose the appropriate image to render.
+[tip type="note"]
+**NOTE –**  The DPR (`x`) based srcset selector also works; however, for more flexibility, we recommend using the `w` selector. Previously (in the old srcset proposal), the `w` descriptor described the viewport width, but now it describes the width of the image source file, which allows the user agent to calculate the effective pixel density of each image and choose the appropriate image to render.
+[/tip]
 
 ##### Example: Displaying a crisp image that fits the screen
 
@@ -109,7 +121,9 @@ In the following example we have several image files that are of the same aspect
 
 For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
-Read on: To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) guide.
+[tip type="read-on"]
+**READ ON –** To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) guide.
+[/tip]
 
 #### Changing the art direction of an image
 
@@ -123,11 +137,15 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 470 - 669 px,  display `cat-medium.jpg`  (450 x 340 px)
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
-Note: As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+[tip type="note"]
+**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+[/tip]
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 
-Read on: To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) guide.
+[tip type="read-on"]
+**READ ON –** To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) guide.
+[/tip]
 
 #### Providing optimized images
 
@@ -135,7 +153,9 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
-Read on: To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) guide.
+[tip type="read-on"]
+**READ ON –** To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) guide.
+[/tip]
 
 ##### Example: Serve different image formats
 
@@ -146,7 +166,9 @@ In the following example, if the browser supports WebP, serve mountains.webp, ot
 
 As a nice bonus, some caches, like the Google AMP Cache, automatically compress and convert images to WebP and the right resolutions if you don't. However, not all platforms use caches, so you should still optimize images manually on your end.
 
-Read on: To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
+[tip type="read-on"]
+**READ ON –** To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
+[/tip]
 
 ## Examples to inspire you
 
@@ -163,4 +185,3 @@ Here are some examples that we hope inspire you to create responsive AMP pages:
 - [AMP by Example:  Samples & Templates](https://ampbyexample.com/#samples_templates)
 - [AMP Start templates](https://www.ampstart.com/)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
-

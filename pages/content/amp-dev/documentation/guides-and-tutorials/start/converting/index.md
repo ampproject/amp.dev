@@ -1,8 +1,17 @@
 ---
 $title: Convert HTML to AMP
+formats:
+  - websites
+$titles:
+  teaser: Convert HTML to AMP
 $order: 0
 $path: /documentation/guides-and-tutorials/start/converting/converting.html
-tutorial: true
+$hidden: true
+
+teaser:
+  icon: convert
+  text: Learn how to convert HTML to AMP in this step by step tutorial.
+  label: Learn more
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}

@@ -3,7 +3,7 @@ $path: /documentation/guides-and-tutorials/learn/spec/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/learn/spec/{base}.html
 $title@: AMP HTML Specification
-$order: 1
+$order: 2
 
 formats:
   - websites

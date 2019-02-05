@@ -1,7 +1,7 @@
 @mixin default-section-padding {
 	padding-left: 30px;
 	padding-right: 30px;
-	@media screen and (min-width: 768px) {
+	@media (min-width: 768px) {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -144,11 +144,11 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	  0% {
 	    transform: translate3d(0, -2.3%, 0);
 	  }
-	  
+
 	  50% {
 	    transform: translate3d(0, 2.3%, 0);
 	  }
-	  
+
 	  100% {
 	    transform: translate3d(0, -2.3%, 0);
 	  }

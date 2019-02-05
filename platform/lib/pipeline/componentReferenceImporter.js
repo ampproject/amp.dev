@@ -71,6 +71,31 @@ class ComponentReferenceImporter extends GitHubImporter {
    * @param {MarkdownDocument} document
    */
   _setMetadata(extensionName, document) {
+    // Ensure that the document has a TOC
+    document.toc = true;
+
+    // Only try to add meta information (category, format teaser text)
+    // if the document hasn't defined them in their frontmatter already
+    if (!document.teaser.text) {
+      document.teaser = {'text': this._parseTeaserText(document)};
+    }
+
+    if (!document.category) {
+      document.category = categories[extensionName];
+    }
+
+    if (!document.formats) {
+      document.formats = formats[extensionName];
+    }
+  }
+
+  /**
+   * Tries to parse the first or second paragraph of the imported document
+   * to use as a teaser text
+   * @param  {MarkdownDocument} document
+   * @return {String}           The teaser text
+   */
+  _parseTeaserText(document) {
     // Splice out an excerpt to show in the teaser ...
     const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
     let excerpt = FIRST_PARAGRAPH.exec(document.contents);
@@ -82,21 +107,14 @@ class ComponentReferenceImporter extends GitHubImporter {
     // If the extraction of an excerpt was successful write it to the teaser
     if (excerpt) {
       // Strip out all possible HTML tags
-      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, "");
+      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
       // Unwrap back ticks
       excerpt = excerpt.replace(/`(.+)`/g, '$1');
       // And unwrap possible markdown links
       excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
-
-      document.teaser = {'text': excerpt};
     }
 
-    // Ensure that the document has a TOC
-    document.toc = true;
-    // And try to add in the matching category ...
-    document.category = categories[extensionName];
-    // ... as well as all the formats the component is available in
-    document.formats = formats[extensionName];
+    return excerpt;
   }
 
   /**
@@ -109,12 +127,7 @@ class ComponentReferenceImporter extends GitHubImporter {
     document.title = extensionName;
     const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}.md`;
 
-    return document.save(documentPath).then(() => {
-      this._log.success('Saved document to ' + documentPath);
-    }).catch((e) => {
-      this._log.success('There was an error saving the document to ' + documentPath);
-      throw e;
-    });
+    return document.save(documentPath);
   }
 
   /**
