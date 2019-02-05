@@ -18,6 +18,7 @@ teaser:
 
 stage:
   headline: greenslips.com.au boosts conversions by 12-15%, mobile speed by 15% with AMP
+  layout: mobile
   subline: OCT 8, 2018
   devices:
     - image_src: '/static/img/success-stories/greenslips/amp_greenslips_1.jpg'

@@ -19,6 +19,7 @@ teaser:
 
 stage:
   headline: Innkeeper’s Advantage helps B&Bs book guests quicker with AMP
+  layout: mobile
   subline: MAR 2, 2018
   devices:
 
