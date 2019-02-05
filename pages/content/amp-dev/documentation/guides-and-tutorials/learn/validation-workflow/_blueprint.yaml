@@ -4,7 +4,7 @@ $path: /documentation/guides-and-tutorials/learn/validation-workflow/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/learn/validation-workflow/{base}.html
 index_path: /content/docs/troubleshooting.md
-$order: 5
+$order: 4
 
 formats:
   - websites

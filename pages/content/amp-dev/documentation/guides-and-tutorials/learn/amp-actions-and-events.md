@@ -1,6 +1,6 @@
 ---
 $title: Actions and events
-$order: 3
+$order: 7
 formats:
   - websites
   - email

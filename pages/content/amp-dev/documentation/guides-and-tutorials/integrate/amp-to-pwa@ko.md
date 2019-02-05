@@ -109,4 +109,4 @@ AMP에서는 이 문제를 [셸 URL 재작성](/ko/docs/reference/components/amp
 
 이러한 속성이 있다면 AMP에서 첫 로드 이후 클릭되는 모든 링크는 서비스 워커에 관계없이 PWA로 연결됩니다.
 
-자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](/ko/docs/integration/pwa-amp/amp-in-pwa.html)를 참조하세요.
+자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](/ko/docs/integration/amp-in-pwa.html)를 참조하세요.

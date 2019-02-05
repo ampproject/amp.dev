@@ -1,6 +1,6 @@
 ---
 $title: AMPHTML email specification
-$order: 2
+$order: 3
 formats:
   - email
 ---

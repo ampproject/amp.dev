@@ -1,5 +1,5 @@
 ---
-$title: Enable Progressive Web App features for your AMP pages
+$title: Make installable and add offline access
 $order: 1
 formats:
   - websites

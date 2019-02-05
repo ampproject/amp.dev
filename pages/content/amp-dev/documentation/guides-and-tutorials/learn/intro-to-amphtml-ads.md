@@ -1,6 +1,6 @@
 ---
 $title: Intro to AMPHTML ads
-$order: 2
+$order: 1
 formats:
   - ads
 ---

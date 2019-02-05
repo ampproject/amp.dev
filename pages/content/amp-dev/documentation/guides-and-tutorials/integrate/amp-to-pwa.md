@@ -1,5 +1,5 @@
 ---
-$title: Preload your Progressive Web App from your AMP pages
+$title: Preload your PWA from your AMP pages
 $order: 1
 formats:
   - websites
@@ -118,5 +118,5 @@ AMP solves this with something called [shell URL rewriting](/docs/reference/comp
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
 [tip type="read-on"]
-**READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}}).
+**READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).
 [/tip]

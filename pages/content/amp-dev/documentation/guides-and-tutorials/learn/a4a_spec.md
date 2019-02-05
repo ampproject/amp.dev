@@ -1,6 +1,6 @@
 ---
 $title: AMPHTML ad specification
-$order: 2
+$order: 3
 formats:
   - ads
 ---

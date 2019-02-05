@@ -113,4 +113,4 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shel
 
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari Service Worker apa pun.
 
-Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/integration/pwa-amp/amp-in-pwa.html).
+Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/integration/amp-in-pwa.html).

@@ -109,4 +109,4 @@ AMP では、[シェル URL の書き換え](/ja/docs/reference/components/amp-i
 
 これらの属性を指定することで、Service Worker 対応かどうかにかかわらず、AMP ページで発生する初回以降のすべてのクリックで PWA に移動できるようになります。
 
-詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/integration/pwa-amp/amp-in-pwa.html)。
+詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/integration/amp-in-pwa.html)。

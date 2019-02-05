@@ -1,5 +1,5 @@
 ---
-$title: Embed & use AMP as a data source
+$title: Use AMP as a data source for your PWA
 $order: 1
 formats:
   - websites

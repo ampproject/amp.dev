@@ -1,5 +1,5 @@
 ---
-$title: Integrating your analytics tool with AMP
+$title: Integrate your analytics tool with AMP
 $order: 1
 formats:
   - websites
