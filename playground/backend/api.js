@@ -45,8 +45,8 @@ api.get('/fetch', async (request, response) => {
   const url = request.query.url;
   try {
     const doc = await fetchDocument(url, host);
-    response.send(doc);
     setMaxAge(response, ONE_HOUR);
+    response.send(doc);
   } catch (error) {
     console.error('Could not fetch URL', error);
     response.send(`Could not fetch URL ${url}`).status(400).end();
