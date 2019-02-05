@@ -58,7 +58,7 @@
 		"formats": ["websites","email","stories", "ads"]
     },
     {
-        "title": "Guidelines for integrating ad technologies with AMP",
+        "title": "Integrate your ad technologies into AMP",
         "order": 3,
         "from": "ads/_integration-guide.md",
         "to": "documentation/guides-and-tutorials/contribute/ad-integration-guide.md",
@@ -74,7 +74,7 @@
 		"formats": ["ads"]
     },
     {
-        "title": "Integrating your analytics tool with AMP",
+        "title": "Integrate your analytics tool with AMP",
         "order": 1,
         "from": "extensions/amp-analytics/integrating-analytics.md",
         "to": "documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md",
@@ -82,7 +82,7 @@
 		"formats": ["websites", "stories"]
     },
     {
-        "title": "Managing non-authenticated user state with AMP",
+        "title": "Manage non-authenticated user state with AMP",
         "order": 2,
         "from": "spec/amp-managing-user-state.md",
         "to": "documentation/guides-and-tutorials/optimize-measure/amp-managing-user-state.md",
