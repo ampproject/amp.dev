@@ -1,8 +1,6 @@
 ---
 $title: 深入了解 AMP 分析
-toc: true
 ---
-
 
 本指南深入介绍了
 [amp-analytics 组件](/zh_cn/docs/reference/components/amp-analytics.html)，
@@ -136,7 +134,6 @@ JSON 对象中包含的配置仅仅是分析工具帐号的变量值。
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
-
 
 [tip type="important"]
 

@@ -22,7 +22,6 @@ AMPHTML ads are similar to traditional HTML ads, but instead of coding them in t
 * A basic knowledge of HTML, CSS, and JavaScript
 * A browser and text editor of your choice
 
-
 [tip]
 *Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:
 

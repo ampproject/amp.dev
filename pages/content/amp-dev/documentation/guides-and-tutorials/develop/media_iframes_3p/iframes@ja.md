@@ -1,8 +1,6 @@
 ---
 $title: iframe の追加
-toc: true
 ---
-
 
 ここでは、ページにメディア コンテンツを含めたり、iframe を使用して AMP の制限を受けずに高度なコンテンツを表示したりする方法について解説します。
 
@@ -46,7 +44,6 @@ iframe は、メインページのコンテキストでサポートされてい�
 `placeholder` 属性を指定した要素（`amp-img` 要素など）を `amp-iframe` に追加して、iframe が表示できる状態になるまでプレースホルダとしてレンダリングされるようにすると、`amp-iframe` をドキュメントの一番上に表示することが可能です。
 
 参照: プレースホルダについて詳しくは、[プレースホルダを含む iframe](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) をご覧ください。
-
 
 プレースホルダを使用した例:
 

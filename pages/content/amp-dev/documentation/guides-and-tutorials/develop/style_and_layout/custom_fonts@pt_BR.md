@@ -1,8 +1,6 @@
 ---
 $title: Adicionar fontes personalizadas
-toc: true
 ---
-
 
 As páginas AMP não incluem folhas de estilo externas, com exceção das fontes personalizadas. É possível incorporar fontes personalizadas nas suas páginas de duas formas:
 
@@ -46,5 +44,4 @@ within your AMP stylesheet:
 [/sourcecode]
 
 Observação: Fontes incluídas através de `@font-face` precisam ser buscadas por meio do esquema HTTP ou HTTPS.
-
 

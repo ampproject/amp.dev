@@ -1,8 +1,6 @@
 ---
 $title: Menyertakan iframe
-toc: true
 ---
-
 
 Pelajari cara menampilkan penyertaan konten media di halaman, dan cara menggunakan iframe untuk menampilkan konten tingkat lanjut di luar batasan AMP.
 

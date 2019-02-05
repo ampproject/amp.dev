@@ -13,7 +13,6 @@ $title: 축하합니다!
 - AMP 콘텐츠 연결
 - 검색엔진을 위한 구조화된 데이터 추가
 
-
 ## 다음 단계
 
 [고급 AMP 기능 추가]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md', locale=doc.locale).url.path}}) 가이드를 통해 AMP 페이지에 더 많은 고급 기능을 구축하면서 AMP를 계속 학습해 보세요.

@@ -1,9 +1,6 @@
 ---
 $title: Incluir imagens e vídeo
-toc: true
 ---
-
-
 
 Como qualquer página HTML, as AMP permitem incorporar **imagens**, **vídeo** e **áudio**
 content. Learn what's different about the AMP equivalents and learn how to

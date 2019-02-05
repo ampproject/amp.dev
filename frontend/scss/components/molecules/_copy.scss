@@ -17,7 +17,7 @@ none
 
 .#{molecule('copy')} {
   margin-bottom: 3em;
-  
+
   p {
     @include txt;
   }
@@ -25,35 +25,39 @@ none
   &-large p {
     @include txt-1;
   }
-  
+
   &-left {
     grid-column: 3 / 17;
-    
+
     &-small {
       grid-column: 4 / 13;
     }
-    
+
     &-link {
       grid-column: 3 / 12;
       margin-top: 3em;
     }
   }
-  
+
   &-right {
     grid-column: 10 / 24;
-    
+
     &-small {
       grid-column: 11 / 20;
     }
-    
+
     &-link {
       grid-column: 10 / 19;
       margin-top: 3em;
     }
   }
-  
+
   &-center {
     grid-column: 1 / -1;
     text-align: center;
+
+    &-left {
+      text-align: left;
+    }
   }
 }

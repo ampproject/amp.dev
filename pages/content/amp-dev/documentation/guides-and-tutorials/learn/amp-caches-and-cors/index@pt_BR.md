@@ -1,9 +1,6 @@
 ---
 $title: Como as páginas AMP são armazenadas em cache
-toc: true
 ---
-
-
 
 Neste documento, você descobrirá qual é a função do cache de AMP no ecossistema AMP e como a página AMP é armazenada em cache.
 
@@ -40,7 +37,7 @@ Se você não quiser armazenar seu documento em cache, uma opção é remover o 
 
 ## Quem solicita páginas AMP armazenadas em cache?
 
-As páginas AMP armazenadas em cache são acessadas por plataformas, como a Pesquisa Google, o Google Notícias e o Cloudflare, e aplicativos para dispositivos móveis. Os aplicativos para dispositivos móveis podem vincular o conteúdo armazenado em cache de AMP por meio do URL (consulte a [AMP URL API] do Google(https://developers.google.com/amp/cache/use-amp-url)) ou por XHRs de origem cruzada em Progressive Web Apps (saiba mais em [Incorporar e usar AMP como fonte de dados]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})).
+As páginas AMP armazenadas em cache são acessadas por plataformas, como a Pesquisa Google, o Google Notícias e o Cloudflare, e aplicativos para dispositivos móveis. Os aplicativos para dispositivos móveis podem vincular o conteúdo armazenado em cache de AMP por meio do URL (consulte a [AMP URL API] do Google(https://developers.google.com/amp/cache/use-amp-url)) ou por XHRs de origem cruzada em Progressive Web Apps (saiba mais em [Incorporar e usar AMP como fonte de dados]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

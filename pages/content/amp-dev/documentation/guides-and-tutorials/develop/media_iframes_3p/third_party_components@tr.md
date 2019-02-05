@@ -1,11 +1,8 @@
 ---
 $title: Üçüncü Taraf İçeriği Ekleme
-toc: true
 ---
 
 Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin.
-
-
 
 ## Tweet Yerleştirme
 
@@ -32,7 +29,6 @@ Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy
 </amp-iframe>
 </div>
 
-
 ## Instagram Fotoğrafı Yerleştirme
 
 [`amp-instagram`](/docs/reference/components/amp-instagram.html) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
@@ -57,7 +53,6 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
   <div placeholder></div> 
 </amp-iframe>
 </div>
-
 
 ## Facebook yayını veya videosu gösterme
 

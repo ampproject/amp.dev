@@ -1,9 +1,6 @@
 ---
 $title: Monetização de páginas AMP com anúncios
-toc: true
 ---
-
-
 
 Este guia oferece instruções e práticas recomendadas para a exibição de anúncios nas páginas AMP.
 
@@ -108,11 +105,9 @@ Veja também estes recursos de RTC:
 *   [guia de implementação do editor de RTC para AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md) (em inglês)
 *   [configuração em tempo real para AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (em inglês)
 
-
 ## Práticas recomendadas
 
 Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
-
 
 ### Colocação e controles: otimize o posicionamento dos anúncios
 

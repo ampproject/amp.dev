@@ -15,8 +15,6 @@ Dalam tutorial ini, Anda akan mempelajari cara:
 - Menambahkan navigasi situs menggunakan [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
 - Menggunakan font kustom di AMP
 
-
-
 ## Langkah berikutnya
 
 Untuk lebih meningkatkan keahlian Anda terkait AMP, lihat resource berikut:

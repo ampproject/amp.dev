@@ -1,11 +1,8 @@
 ---
 $title: Duyarlı AMP Sayfaları Oluşturma
-toc: true
 ---
 
 AMP'de duyarlı öğeleri son derece kolay bir şekilde oluşturabilirsiniz. Bunun için öğelere `layout=responsive` kodunu eklemeniz yeterlidir.
-
-
 
 ## Duyarlı resimler oluşturma
 

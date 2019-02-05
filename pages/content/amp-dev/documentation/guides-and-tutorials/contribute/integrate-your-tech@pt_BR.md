@@ -8,14 +8,12 @@ Convidamos todos os fornecedores de tecnologia para editores ou anunciantes na W
 
 Há quatro maneiras principais de fazer a integração com AMP:
 
-
 ## 1. Adicionar compatibilidade com a extensão amp-analytics
 Com AMP Analytics, é possível enviar eventos de volta ao servidor com base em acionadores configurados por você. Criamos um [guia de integração de análise]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) para ajudá-lo a começar.
 
 Se você só precisar adicionar um pixel de rastreamento com parâmetros dinâmicos ao URL de rastreamento, confira [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html). Documente o uso nas suas páginas de suporte para os desenvolvedores que queiram usar sua tecnologia com AMP.
 
 Mais de 20 fornecedores de análise já oferecem compatibilidade com a extensão amp-analytics. Veja um [exemplo de solicitação pull](https://github.com/ampproject/amphtml/pull/1595) do fornecedor de análise [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
-
 
 ## 2. Usar uma extensão amp-ad
 

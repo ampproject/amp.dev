@@ -18,7 +18,9 @@
 
 const signale = require('signale');
 const express = require('express');
+const compression = require('compression');
 const ampCors = require('amp-toolbox-cors');
+const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 
 const config = require('./config.js');
 const routers = {
@@ -54,6 +56,8 @@ class Platform {
       });
     }
 
+    this.server.use(compression());
+    this.server.use(defaultCachingStrategy);
     this._enableCors();
 
     this._check();

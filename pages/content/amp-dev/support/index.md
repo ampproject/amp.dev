@@ -1,5 +1,6 @@
 ---
 $title: Getting Support
+toc: true
 $order: 1
 formats:
   - websites
@@ -7,8 +8,6 @@ formats:
   - stories
   - ads
 ---
-
-
 
 There are many ways to get help for questions and issues related to AMP:
 

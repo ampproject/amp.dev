@@ -1,9 +1,6 @@
 ---
 $title: Menambahkan komponen AMP yang diperpanjang
-toc: true
 ---
-
-
 
 Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif ke dalam artikel dengan cepat dan mudah. Koleksi HTML AMP memiliki 3 klasifikasi komponen AMP:
 

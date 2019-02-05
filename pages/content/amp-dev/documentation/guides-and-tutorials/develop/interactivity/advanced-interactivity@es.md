@@ -1,10 +1,7 @@
 ---
 $title: Mejorar la interactividad
 $order: 2
-toc: true
 ---
-
-
 
 El código de inicio proporciona una experiencia de usuario bastante básico. Hay un par de maneras en que podemos mejorarlo:
 
@@ -109,7 +106,6 @@ Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el 
 ## Cambiar las imágenes en el carrusel
 
 Sería agradable si pudiéramos ver imágenes de diferentes colores de camisa cuando cambiamos el color seleccionado. Con amp-bind podemos hacer esto uniendo `[src]` en los elementos `<amp-img>` dentro del `<amp-carousel>`.
-
 
 ### Inicializar el estado SKU
 

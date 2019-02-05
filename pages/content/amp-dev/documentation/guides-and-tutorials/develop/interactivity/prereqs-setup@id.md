@@ -1,9 +1,6 @@
 ---
 $title: Menyiapkan
-toc: true
 ---
-
-
 
 ## Prasyarat
 
@@ -32,7 +29,6 @@ Ekstrak file arsip (jika perlu) lalu buka direktori. Instal dependensi dengan me
 cd advanced-interactivity-in-amp
 npm install
 ```
-
 
 ### Langkah 3. Jalankan server pengembangan
 

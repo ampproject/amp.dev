@@ -1,6 +1,5 @@
 ---
 $title: Error validasi AMP
-toc: true
 ---
 
 <!---
@@ -25,8 +24,6 @@ dan memperbaiki error validasi apa pun yang dihadapi
 saat Anda [memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
 Untuk ringkasan lengkap mengenai error validasi,
 lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
-
-
 
 ## Error atribut dan tag HTML AMP
 

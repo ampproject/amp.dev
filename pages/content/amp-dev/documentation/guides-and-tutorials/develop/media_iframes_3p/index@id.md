@@ -1,9 +1,6 @@
 ---
 $title: Menyertakan Gambar & Video
-toc: true
 ---
-
-
 
  Seperti halnya pada halaman HTML normal, AMP memungkinkan Anda menyematkan konten **gambar**, **video** dan **audio**
 Isi. Pelajari perbedaan mengenai fitur yang setara dengan AMP dan pelajari cara menyertakannya di halaman Anda.

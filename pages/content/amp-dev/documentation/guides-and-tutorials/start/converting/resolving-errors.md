@@ -1,10 +1,7 @@
 ---
 $title: Resolving validation errors
 $order: 2
-toc: true
 ---
-
-
 
 In this section, we'll go through and resolve the AMP validation errors from our AMP page.  Note that the errors may appear in a different order in your console.
 
@@ -19,7 +16,6 @@ The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 To correctly display text, AMP requires that you specify the charset for the page. The meta charset information must also be the first child of the `<head> ` tag. The reason this tag must be first is to avoid re-interpreting content that was added before the meta charset tag.
 
 **Add** the following code as the first line of the `<head>` tag:
-
 
 ```html
 <meta charset="utf-8" />

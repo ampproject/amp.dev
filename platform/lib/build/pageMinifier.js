@@ -31,6 +31,7 @@ const config = require('@lib/config');
 // List of selectors that can be safely minified
 const SELECTOR_REWRITE_SAFE = [
   'ap-o-header',
+  'ap-m-nav-link',
   'ap-m-language-selector',
   'ap-o-stage',
   'ap-o-case-band',

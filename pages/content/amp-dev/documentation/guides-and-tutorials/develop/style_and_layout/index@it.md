@@ -1,11 +1,8 @@
 ---
 $title: Creare pagine AMP reattive
-toc: true
 ---
 
 È facilissimo creare elementi reattivi in AMP. È sufficiente inserire `layout=responsive`.
-
-
 
 ## Creare immagini reattive
 

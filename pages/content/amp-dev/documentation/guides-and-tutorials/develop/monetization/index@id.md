@@ -1,9 +1,6 @@
 ---
 $title: Memonetisasi halaman AMP dengan iklan
-toc: true
 ---
-
-
 
 Panduan ini memberikan petunjuk dan praktik terbaik untuk menampilkan iklan di halaman AMP.
 
@@ -108,11 +105,9 @@ Atau, pelajari lebih lanjut dari referensi RTC ini:
 *   [Panduan implementasi penayang RTC AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 *   [Real Time Config AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-
 ## Praktik terbaik
 
 Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
-
 
 ### Penempatan & kontrol: optimalkan penempatan iklan Anda
 

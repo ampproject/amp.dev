@@ -1,9 +1,6 @@
 ---
 $title: AMP Analytics Derinlemesine Giriş
-toc: true
 ---
-
-
 
 Bu kılavuz
 [amp-analitik bileşen](/tr/docs/reference/components/amp-analytics.html) içerisine derinlemesine girerek, bir örnek

@@ -1,9 +1,6 @@
 ---
 $title: Membuat halaman sampul
-toc: true
 ---
-
-
 
 Halaman dalam artikel AMP diwakili oleh komponen `<amp-story-page>`. Dalam [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}), Anda bisa memiliki satu atau beberapa komponen `<amp-story-page>`, yang masing-masing berisi layar individual dari sebuah artikel. Halaman pertama yang Anda tetapkan dalam urutan dokumen akan menjadi halaman pertama yang ditampilkan dalam artikel tersebut.
 

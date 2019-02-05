@@ -40,5 +40,4 @@ O URL precisa ser disponibilizado por `localhost`. Caso contrário, a história 
 
 [/tip]
 
-
 Clique para ver a história concluída e ter uma ideia do resultado.

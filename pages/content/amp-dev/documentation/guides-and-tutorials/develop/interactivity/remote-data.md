@@ -1,10 +1,7 @@
 ---
 $title: Working with remote data
 $order: 3
-toc: true
 ---
-
-
 
 What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a long time to look up? Looking up prices for SKUs for non-viewed items is wasted work.
 
@@ -25,7 +22,6 @@ Let's make use of the ability to fetch remote data to look up prices of SKUs in 
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Similar to the JSON data within `<amp-state>` elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
-
 
 |  Expression                  |  Result |
 |------------------------------|---------|

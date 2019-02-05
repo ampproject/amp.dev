@@ -1,8 +1,6 @@
 ---
 $title: AMP 페이지 유효성 검사
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='동영상을 시청하여 다양한 유효성 검사 옵션을 확인해 보세요.']
 
@@ -14,11 +12,7 @@ AMP 문서의 유효성을 검사하는 방법에는 여러 가지가 있습니�
 모두 동일하므로 내 개발 스타일에 맞는 방법을
 사용하세요.
 
-<<<<<<< HEAD
 AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서 [검색되는지]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 확인하고 싶을 수도 있습니다.
-=======
-AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서 [검색되는지]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 확인하고 싶을 수도 있습니다.
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 브라우저 개발용 콘솔
 
@@ -92,13 +86,11 @@ AMP 유효성 검사 도구는 브라우저 확장 프로그램을 통해 브라
   </tr>
 </table>
 
-
 유효성 검사 도구 확장 프로그램은 [Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) 및 [Opera](https://addons.opera.com/ko/extensions/details/amp-validator/)에서 사용할 수 있습니다.
 
 ### CI용 NPM 패키지
 
 [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) 또는 [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator)(gulp 플러그인) 등의 AMP 유효성 검사 도구 NPM 패키지를 사용하여 AMP 유효성 검사를 빌드 및 테스트 파이프라인의 일부로 통합할 수 있습니다.  예를 들어, AMP 유효성 검사 도구 NPM 패키지로 통합 테스트를 진행하거나, 해당 패키지를 프로덕션 단계의 AMP 페이지의 유효성을 검사하는 예약된 작업에 응용할 수 있습니다.
-
 
 ##### 예: AMP HTML 파일 유효성 검사
 
@@ -255,7 +247,6 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
 </amp-img>
 
 각 도구는 여러 정보를 제공합니다.
-
 
   1. HTML 문서에서 오류가 발생한 위치(행과 열):
      일부 인터페이스에서는 이 위치를 클릭하여 강조표시할 수 있습니다. 이 경우

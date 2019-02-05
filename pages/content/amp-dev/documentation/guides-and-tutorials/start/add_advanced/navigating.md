@@ -1,10 +1,7 @@
 ---
 $title: Navigating your site
 $order: 5
-toc: true
 ---
-
-
 
 Most mobile websites include a site navigation menu. These menus can take many different forms. In this tutorial, we'll try out the following examples for presenting navigation in AMP pages:
 
@@ -58,7 +55,6 @@ This link can be replaced with the URL of your website’s homepage to allow you
 
 This is the simplest approach that leverages your existing website navigation. Next, we’ll explore a popular option for site navigation.
 
-
 ## Navigate with a sidebar
 
 A common navigation technique is to add a menu icon that when clicked reveals a set of navigation links (from the side of the page). In AMP,  we can create such navigation with the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) component.
@@ -79,7 +75,6 @@ Next, we want to display a menu icon.  When the icon is tapped, it will open the
 ```
 
 In the above code, we `toggle` the sidebar through the [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) action attribute on the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
-
 
 **Add** the following HTML just after the `</header>`:
 

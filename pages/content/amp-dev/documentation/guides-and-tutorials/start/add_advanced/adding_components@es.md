@@ -1,9 +1,6 @@
 ---
 $title: Agregando componentes AMP ampliados
-toc: true
 ---
-
-
 
 El sistema de componentes de AMP le permite crear rápidamente características eficientes y de respuesta en sus artículos con un mínimo esfuerzo. La biblioteca HTML de AMP tiene tres clasificaciones para los componentes de AMP:
 
@@ -155,7 +152,6 @@ Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
 El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerido por una plataforma particular. En este caso, Twitter correlaciona el valor del atributo `data-tweetid` con un determinado Tweet.
 
 **Actualiza** tu navegador y echa un vistazo a la página. Usted debe ver el Tweet aparecer:
-
 
 {{ image('/static/img/docs/tutorials/tut-advanced-twitter.png', 412, 613, align='center half', caption='Tweet Insertado') }}
 

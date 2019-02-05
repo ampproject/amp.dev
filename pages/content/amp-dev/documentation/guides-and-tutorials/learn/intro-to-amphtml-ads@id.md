@@ -1,9 +1,6 @@
 ---
 $title: Iklan AMPHTML
-toc: true
 ---
-
-
 
 ## Apa yang dimaksud dengan iklan AMPHTML?
 
@@ -21,7 +18,6 @@ Mengapa iklan AMPHTML lebih baik daripada iklan tradisional?
 4.  **Lebih Menarik**: Pengguna tidak dapat berinteraksi dengan iklan yang tidak dapat dilihat. Iklan yang lebih cepat mendorong visibilitas yang lebih tinggi, yang kemudian membuat rasio klik-tayang jadi lebih tinggi, sehingga akan menghasilkan performa iklan yang lebih baik.
 5.  **Aman dari Malware**: Penyebaran malware dengan iklan AMPHTML tidak akan dapat dilakukan karena iklan telah diverifikasi sebelum ditayangkan. Karena itulah, pengiklan dapat memastikan pengalaman pengguna yang aman dan memberikan persepsi merek yang positif. 
 6.  **Lebih Fleksibel**: Iklan AMPHTML dirancang agar berfungsi pada halaman AMP dan non-AMP, serta di semua jenis perangkat.
-
 
 ### Format
 
@@ -45,7 +41,6 @@ Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak forma
     <td>Lightbox</td>
   </tr>
 </table>
-
 
 ## Cara kerja iklan AMPHTML
 
@@ -90,7 +85,6 @@ Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi `amp
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate (*segera hadir*)
-
 
 ### Memvalidasi sintaks iklan AMPHTML
 

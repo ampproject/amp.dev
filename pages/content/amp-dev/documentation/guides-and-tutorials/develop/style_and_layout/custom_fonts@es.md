@@ -1,9 +1,6 @@
 ---
 $title: Agregar fuentes personalizadas
-toc: true
 ---
-
-
 
 Las páginas AMP no pueden incluir plantillas externas con la excepción de fuentes personalizadas.
 Puede incrustar fonts de forma personalizada en su página de dos maneras:

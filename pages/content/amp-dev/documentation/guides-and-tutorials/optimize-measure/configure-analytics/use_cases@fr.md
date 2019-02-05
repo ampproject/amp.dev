@@ -1,8 +1,6 @@
 ---
 $title: Cas d'utilisation
-toc: true
 ---
-
 
 Ce guide propose des cas d'utilisation courants pour suivre l'engagement des utilisateurs :
 

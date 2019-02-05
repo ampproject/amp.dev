@@ -15,8 +15,6 @@ En este tutorial, aprendiste a:
 - Agregar navegación del sitio utilizando [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
 - Utilizar fuentes personalizadas en AMP
 
-
-
 ## Próximos pasos
 
 Para avanzar más en su experiencia de AMP, eche un vistazo a estos recursos:

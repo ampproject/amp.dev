@@ -1,11 +1,6 @@
 ---
 $title: 라이브 블로그 만들기
-toc: true
 ---
-
-
-
-
 
 라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 [`amp-live-list`](/ko/docs/reference/components/amp-live-list.html) 구성요소를 사용하여 라이브 블로그를 구현할 수 있습니다.
 
@@ -22,7 +17,6 @@ toc: true
 ## `amp-live-list` 개요
 
 [`amp-live-list`](/ko/docs/reference/components/amp-live-list.html) 구성요소는 새 콘텐츠의 호스트 문서를 주기적으로 폴링하고, 새 항목을 사용할 수 있게 되면 사용자의 브라우저를 업데이트합니다. 즉, 새 블로그 게시물을 추가해야 할 때마다 CMS로 호스트 문서를 업데이트하여 페이지 본문과 [메타데이터](https://ampbyexample.com/samples_templates/live_blog/#metadata) 섹션에 업데이트를 포함해야 합니다.
-
 
 블로그의 초기 코드는 다음과 같습니다.
 
@@ -87,7 +81,6 @@ toc: true
 블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. `amp-live-list`를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
 
 AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)에서 쿠키를 사용하여 새 콘텐츠를 생성하므로 페이지에 처음 방문한 경우 ID가 'post3'인 게시물은 사용하지 못할 수 있으며, 이 경우 첫 번째 게시물로 리디렉션됩니다.
-
 
 ## 리소스
 

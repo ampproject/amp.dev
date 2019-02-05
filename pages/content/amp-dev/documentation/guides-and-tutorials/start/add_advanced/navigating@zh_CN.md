@@ -1,9 +1,6 @@
 ---
 $title: 为您的网站添加导航元素
-toc: true
 ---
-
-
 
 大多数移动网站都有网站导航菜单。这些菜单形式各异。在本教程中，我们将尝试通过以下示例为您演示如何在 AMP 网页中添加导航元素：
 
@@ -57,7 +54,6 @@ article {
 
 若想充分利用您网站上的现有导航选项，这是最简单的方法。接下来，我们将探索一个热门的网站导航选项。
 
-
 ## 使用边栏导航
 
 一种比较常见的导航方法是添加菜单图标 - 当用户点击该图标时，它即会在网页一侧显示一系列导航链接。在 AMP 网页中，我们可以使用 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 组件创建此类导航元素。
@@ -78,7 +74,6 @@ article {
 ```
 
 在上面的代码中，我们通过 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 元素（由 `sidebar1` ID 标识）的 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 操作属性来 `toggle` 边栏。下面我们来添加边栏。
-
 
 **添加**以下 HTML（使其紧跟在 `</header>` 后面）：
 

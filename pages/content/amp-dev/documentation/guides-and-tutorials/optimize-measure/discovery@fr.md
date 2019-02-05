@@ -1,8 +1,6 @@
 ---
 $title: Rendre votre page visible
-toc: true
 ---
-
 
 Il peut arriver que vous souhaitiez avoir une version AMP et standard d'une même page, par exemple pour un article d'actualités. Posez-vous la question suivante : si la recherche Google trouve la version standard de cette page, comment savoir qu'il existe une version AMP de cette dernière ?
 

@@ -15,8 +15,6 @@ $title: 恭喜！
 - 如何使用 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 添加网站导航元素
 - 如何在 AMP 网页中使用自定义字体
 
-
-
 ## 后续步骤
 
 要想进一步提升您的 AMP 专业知识，请参阅以下资源：

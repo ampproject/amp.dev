@@ -22,14 +22,12 @@ AMP-документ можно проверить несколькими спо
 
 <amp-img src="/static/img/docs/validator_errors.png" width="713" height="243" alt="Скриншот страницы с ошибками, обнаруженными инструментом AMP Validator, в консоли разработчика Chrome" layout="responsive"></amp-img>
 
-
 ### Веб-интерфейс
 
 На сайте [validator.ampproject.org](https://validator.ampproject.org/) реализован веб-интерфейс для инструмента AMP Validator. В нем показывается HTML-код страницы и ее ошибки.
 Интерфейс представляет собой интерактивный редактор: за внесением изменений в HTML-код следует повторная проверка страницы.
 
 <amp-img src="/static/img/docs/validator_web_ui.png" width="660" height="507" alt="Скриншот страницы сайта validator.ampproject.org с примерами ошибок" layout="responsive"></amp-img>
-
 
 ### Расширение для браузера
 

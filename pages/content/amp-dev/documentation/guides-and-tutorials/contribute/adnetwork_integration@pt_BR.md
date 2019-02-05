@@ -1,9 +1,6 @@
 ---
 $title: Integração com AMP para veicular anúncios de display
-toc: true
 ---
-
-
 
 Este guia é voltado a redes de publicidade que pretendem fazer a integração com AMP para veicular anúncios de display em páginas AMP.
 
@@ -20,17 +17,13 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) se você ainda não tiver feito isso para veicular anúncios HTML tradicionais.
 2. [Crie uma integração com o Fast Fetch para veicular anúncios HTML para AMP](#creating-a-fast-fetch-integration).
 
-
 ## Criar uma implementação `amp-ad`
 
 Assim como um servidor de anúncios, os editores compatíveis incluem uma biblioteca JavaScript fornecida por você e adicionam vários "snippets de anúncios". Esses snippets usam a biblioteca para buscar anúncios e renderizá-los no site do editor. Como a AMP não permite que os editores executem JavaScript arbitrário, será preciso contribuir para o código aberto da AMP se você quiser que a tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) solicite anúncios do seu servidor de anúncios.
 
 [tip type="note"]
-
 Use essa implementação [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  para exibir anúncios HTML tradicionais **e** HTML para AMP.
-
 [/tip]
-
 
 Por exemplo, é possível chamar o servidor Amazon A9 usando esta sintaxe:
 
@@ -60,7 +53,6 @@ Para veicular anúncios HTML para AMP no servidor de anúncios, é necessário f
 1.  validação e assinatura do criativo por meio de um serviço de validação (O [Cloudflare](https://blog.cloudflare.com/firebolt/) oferece um serviço de verificação de anúncios AMP. Com ele, qualquer provedor de anúncios independente pode exibir anúncios mais rápidos, leves e interessantes.)
 
 Para ver instruções sobre como criar uma integração com o Fast Fetch, confira o [guia de implementação de rede do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês).
-
 
 ## Recursos relacionados
 

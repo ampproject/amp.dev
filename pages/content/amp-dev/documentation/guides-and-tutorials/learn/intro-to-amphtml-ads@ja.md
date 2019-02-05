@@ -1,9 +1,6 @@
 ---
 $title: AMP HTML 広告
-toc: true
 ---
-
-
 
 ## AMP HTML 広告とは
 
@@ -21,7 +18,6 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 1. **高い訴求力**: ユーザーは、表示されていない広告に反応することはできません。高速に表示される広告は、視認性が高いためにクリックされやすく、最終的に広告の掲載結果の向上につながります。
 1. **マルウェアを排除**: AMP HTML 広告は配信前に検証されるため、マルウェアを拡散させることがありません。このため広告主は、ユーザー エクスペリエンスの安全性を保証し、ブランド イメージを守ることができます。
 1. **高い柔軟性**: AMP HTML 広告は、AMP ページと通常のウェブページの両方に掲載でき、端末の種類も問いません。
-
 
 ### フォーマット
 
@@ -45,7 +41,6 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
     <td>ライトボックス</td>
   </tr>
 </table>
-
 
 ## AMP HTML 広告の仕組み
 
@@ -90,7 +85,6 @@ AMP HTML 広告を AMP ページに配信するには、[`amp-ad`]({{g.doc('/con
 *  [Celtra の AdCreator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 *  Adobe Animate（近日公開予定）
-
 
 ### AMP HTML 広告の構文を検証する
 

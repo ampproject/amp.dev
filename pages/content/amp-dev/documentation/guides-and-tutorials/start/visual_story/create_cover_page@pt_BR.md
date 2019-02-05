@@ -1,9 +1,6 @@
 ---
 $title: Criar a página de abertura
-toc: true
 ---
-
-
 
 As páginas de histórias AMP são representadas pelo componente `<amp-story-page>`. Em um [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}), é possível ter um ou mais componentes `<amp-story-page>` com cada uma das telas da história. A primeira página que você especificar na ordem do documento será a primeira página exibida na história.
 

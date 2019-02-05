@@ -1,11 +1,8 @@
 ---
 $title: "Analytics: les bases"
-toc: true
 ---
 
 Commencez ici pour tout savoir sur les bases des analyses AMP.
-
-
 
 ## Utiliser amp-pixel ou amp-analytics ?
 

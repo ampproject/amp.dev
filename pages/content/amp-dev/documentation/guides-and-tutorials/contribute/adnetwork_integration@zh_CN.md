@@ -1,9 +1,6 @@
 ---
 $title: 与 AMP 集成以投放展示广告
-toc: true
 ---
-
-
 
 本指南适用于想要与 AMP 集成以向 AMP 网页投放展示广告的广告网络。
 
@@ -20,17 +17,13 @@ toc: true
 1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})（即，如果您尚未创建用于投放传统 HTML 广告的实现，则需要创建一个）。
 2. [进行快速获取集成以投放 AMPHTML 广告](#creating-a-fast-fetch-integration)。
 
-
 ## 创建 `amp-ad`
 
 作为广告服务商，您支持的发布商会导入您提供的 JavaScript 库，并会在其网站上添加各种“广告代码段”，这些代码段要依赖该 JavaScript 库来获取并呈现这些广告。AMP 不允许发布商执行任意 JavaScript，因此您需要向 AMP 开放源代码贡献代码，以允许 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 标记从您的广告服务器请求广告。
 
 [tip type="note"]
-
 您可以使用此 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 实现来展示传统 HTML 广告**和** AMPHTML 广告。
-
 [/tip]
-
 
 例如，可使用以下语法调用 Amazon A9 服务器：
 
@@ -60,7 +53,6 @@ toc: true
 1.  通过验证服务验证广告并进行签名。[Cloudflare](https://blog.cloudflare.com/firebolt/) 提供 AMP 广告验证服务，使所有独立广告提供商都能提供更快速、更精简且更具吸引力的广告。
 
 有关进行快速获取集成的说明，请参阅[快速获取网络实现指南](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)。
-
 
 ## 相关资源
 

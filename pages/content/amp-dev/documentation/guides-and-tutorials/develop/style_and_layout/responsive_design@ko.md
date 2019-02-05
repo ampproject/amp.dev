@@ -1,8 +1,6 @@
 ---
 $title: 반응형 AMP 페이지 만들기
-toc: true
 ---
-
 
 ## 소개
 
@@ -76,7 +74,7 @@ toc: true
 
 ### 반응형 이미지 표시하기
 
-이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}}) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
+이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}}) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
 
 - [적절한 해상도로 선명한 이미지 게재](#적절한-해상도로-선명한-이미지-게재)
 - [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경)
@@ -126,7 +124,6 @@ toc: true
 빠르게 로드되는 페이지를 게재하려면 크기, 품질, 형식이 최적화된 이미지가 필요합니다.  항상 파일 크기를 허용되는 최저 수준까지 줄이세요.  이미지를 '고속으로 처리'하기 위해 다양한 도구를 사용할 수 있습니다(예: [ImageAlph](http://pngmini.com/lossypng.html) 또는 [TinyPNG](https://tinypng.com/)).  이미지 형식별로 살펴보면 다른 형식에 비해 우수한 압축 기능을 제공하는 이미지 형식이 있습니다(예: WebP 및 JPEG XR의 압축 기능이 JPEG보다 우수함).  사용자에게 가장 최적화된 이미지를 제공하고 사용자의 브라우저에서 이미지가 지원되도록 해야 합니다([브라우저별로 지원되는 이미지 형식 보기](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
 
 HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재할 수 있습니다.  AMP에서는 `picture` 태그가 지원되지 않지만 `fallback` 속성을 사용하여 다른 이미지를 게재할 수 있습니다.
-
 
 읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 

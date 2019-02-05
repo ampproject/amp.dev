@@ -1,9 +1,6 @@
 ---
 $title: AMP 페이지가 캐시되는 방법
-toc: true
 ---
-
-
 
 이 문서에서는 AMP 에코 시스템에서의 AMP 캐시의 역할과 AMP 페이지의 캐시 처리 방법에 대해 설명합니다.
 
@@ -40,7 +37,7 @@ AMP는 오픈 에코 시스템이며 AMP 프로젝트는 AMP 캐시의 개발을
 
 ## 캐시 된 AMP 페이지는 누가 요청합니까?
 
-캐시 된 AMP 페이지는 플랫폼(예 : GoogleSearch, GoogleNews 및 Cloudflare)및 모바일 앱들에 의해 액세스됩니다. 모바일 앱들은 URL이나 Progressive Web Apps의 cross-origin XHRs를 통해 캐시 된 AMP 콘텐츠에 링크할 수 있습니다. (Google의 [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)참고) (더욱 자세한 것은 "[Embed & use AMP as a data source]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/amp-in-pwa.md', locale=doc.locale).url.path}})"를 참고하십시오).
+캐시 된 AMP 페이지는 플랫폼(예 : GoogleSearch, GoogleNews 및 Cloudflare)및 모바일 앱들에 의해 액세스됩니다. 모바일 앱들은 URL이나 Progressive Web Apps의 cross-origin XHRs를 통해 캐시 된 AMP 콘텐츠에 링크할 수 있습니다. (Google의 [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)참고) (더욱 자세한 것은 "[Embed & use AMP as a data source]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})"를 참고하십시오).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
@@ -59,7 +56,6 @@ AMP 형식을 사용함으로써 콘텐츠가 AMP 캐시에 의해 캐시될 수
 참고 : AMP 캐시 URL은 사용자를 대상으로하는 URL이 아니며, 사용자는 일반적으로 이러한 URL을 통해 콘텐츠를 요청하지 않습니다.
 
 * **게시자 추가**: 게시자들은 AMP 캐시에 AMP 페이지를 특별히 추가할 수 있습니다. 이 옵션은 오직 Google AMP 캐시에만 적용됩니다. ([Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache) 참조).
-
 
 ## 추가 리소스
 

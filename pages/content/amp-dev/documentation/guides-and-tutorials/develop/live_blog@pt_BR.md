@@ -1,11 +1,6 @@
 ---
 $title: Criar um blog ao vivo
-toc: true
 ---
-
-
-
-
 
 Os blogs ao vivo são páginas da Web atualizadas com frequência durante eventos em andamento, como competições esportivas ou eleições. É possível implementar um blog ao vivo nas AMP por meio do componente [`amp-live-list`](/pt_br/docs/reference/components/amp-live-list.html).
 
@@ -22,7 +17,6 @@ Use a [marcação de metadados LiveBlogPosting](http://schema.org/LiveBlogPostin
 ## Visão geral do `amp-live-list`
 
 O componente [`amp-live-list`](/pt_br/docs/reference/components/amp-live-list.html) normalmente busca conteúdo atualizado no documento do host e atualiza o navegador do usuário à medida que novos itens se tornam disponíveis Assim, sempre que for preciso adicionar uma nova postagem no blog, o documento do host será atualizado pelo CMS para incluir a atualização no corpo e na [seção de metadados](https://ampbyexample.com/samples_templates/live_blog/#metadata) da página.
-
 
 Este é um exemplo do código inicial do blog:
 
@@ -87,7 +81,6 @@ Quando o tamanho das postagens do blog ultrapassar o número máximo de itens es
 Ao publicar uma postagem do blog, é importante poder criar links diretos para a postagem, porque isso permite o uso de recursos como o compartilhamento. Com o `amp-live-list`, basta usar o `id` do item do blog para criar um link direto. Por exemplo, na amostra [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3), é possível navegar diretamente para a postagem do blog com o código `post3`.
 
 O AMP By Example usa um cookie na [amostra de blog ao vivo](https://www.ampbyexample.com/samples_templates/live_blog/) para gerar conteúdo novo. Assim, se for a primeira vez que você acessa a página, talvez a postagem com código "post3" não esteja disponível, mas você será redirecionado para a primeira postagem.
-
 
 ## Recursos
 

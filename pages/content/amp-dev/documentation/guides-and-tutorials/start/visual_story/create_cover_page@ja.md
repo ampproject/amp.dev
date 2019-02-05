@@ -1,9 +1,6 @@
 ---
 $title: カバーページを作成する
-toc: true
 ---
-
-
 
 AMP ストーリーのページは、`<amp-story-page>` コンポーネントで表します。[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 内には 1 つ以上の `<amp-story-page>` コンポーネントを含めることができ、この `<amp-story-page>` コンポーネントにストーリーの個別の画面を格納します。ドキュメントの順序で 1 番目に指定したページが、ストーリーで最初に表示されるページとなります。
 

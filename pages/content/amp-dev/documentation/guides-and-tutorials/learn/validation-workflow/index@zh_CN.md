@@ -1,8 +1,6 @@
 ---
 $title: 验证 AMP 网页
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='观看我们的视频，了解各种验证选项。']
 
@@ -14,11 +12,7 @@ AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验�
 产生的结果完全相同，因此不妨使用最适合您的开发模式的
 方法。
 
-<<<<<<< HEAD
 除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})。
-=======
-除了 AMP 有效性之外，您可能还需要确认 AMP 文档能被第三方平台[发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})。
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### 浏览器开发者控制台
 
@@ -98,7 +92,6 @@ AMP 验证工具。在您浏览网页时，该扩展程序会自动验证您访�
 ### 适用于 CI 的 NPM 软件包
 
 作为编译和测试管道的一部分，您可以通过以下 AMP 验证工具 NPM 软件包集成 AMP 验证功能：[amphtml-validator](https://www.npmjs.com/package/amphtml-validator) 或 [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator)（一种 gulp 插件）。例如，您可以将 AMP 验证工具 NPM 软件包用于集成测试或调度任务，以验证已向广大用户投放的实际 AMP 网页。
-
 
 ##### 示例：验证 AMP HTML 文件
 
@@ -255,7 +248,6 @@ AMP 验证工具不仅能在开发过程中为您提供便利，还可供将您�
 </amp-img>
 
 每种工具都提供了以下几个信息：
-
 
   1. HTML 文档中存在错误的位置（行和列），
      在某些界面中可以点击，以突出显示相应位置。在本例中，

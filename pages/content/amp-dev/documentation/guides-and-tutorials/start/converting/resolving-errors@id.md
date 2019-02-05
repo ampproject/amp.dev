@@ -1,9 +1,6 @@
 ---
 $title: Mengatasi error validasi
-toc: true
 ---
-
-
 
 Pada bagian ini, kita akan membahas dan menyelesaikan error validasi AMP dari halaman AMP.  Perhatikan bahwa error mungkin muncul dalam urutan yang berbeda di konsol Anda.
 
@@ -18,7 +15,6 @@ The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 Untuk menampilkan teks dengan benar, AMP mewajibkan Anda menentukan charset untuk halaman. Informasi charset meta juga harus menjadi turunan pertama tag `<head>`. Tag ini harus menjadi turunan pertama untuk menghindari konten yang ditafsirkan ulang ditambahkan sebelum tag charset meta.
 
 *Tambahkan** kode berikut sebagai baris pertama tag `<head>`:
-
 
 ```html
 <meta charset="utf-8" />

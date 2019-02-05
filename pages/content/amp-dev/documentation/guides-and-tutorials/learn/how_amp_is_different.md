@@ -1,6 +1,6 @@
 ---
 $title: How AMP is different (TBD)
-$order: 1
+$order: 0
 formats:
   - websites
   - email

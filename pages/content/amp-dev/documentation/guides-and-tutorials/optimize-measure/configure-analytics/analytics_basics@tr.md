@@ -1,11 +1,8 @@
 ---
 $title: "Analytics: Temel Bilgiler"
-toc: true
 ---
 
 AMP analitik hakkında temel bilgileri öğrenmek için buraya tıklayın.
-
-
 
 ## Amp-piksel veya amp-analitik kullanıyor musunuz?
 

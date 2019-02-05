@@ -1,11 +1,8 @@
 ---
 $title: AMPHTML Email for Email Providers
 $order: 4
-toc: true
-
 formats:
   - email
-
 ---
 
 AMP is an open source initiative that enables the creation of consistently fast, beautiful, and high-performing web experiences across devices and distribution platforms. The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.
@@ -13,9 +10,6 @@ AMP is an open source initiative that enables the creation of consistently fast,
 There are [AMP components](/docs/reference/components.html) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message.
 
 This guide is a high-level overview of implementing support for the AMPHTML email format, aimed at  Email Providers. For further technical details, please see [the spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md).
-
-
-
 
 ## AMPHTML Email Specification
 

@@ -1,11 +1,9 @@
 ---
 $title: Analytics vendors
 $order: 3
-toc: true
 formats:
   - websites
 ---
-
 
 This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/amp-analytics.html) component.
 
@@ -269,7 +267,6 @@ In the `vars` section:
 In the `requests` section:
 
 - `url`: HTTPS location of `amp-analytics-oewa.html`
-
 
 [tip type="note"]
 **NOTE –**  There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.

@@ -1,8 +1,6 @@
 ---
 $title: Gaya & Tata Letak
-toc: true
 ---
-
 
 Gaya dan tata letak pada halaman HTML AMP sangat mirip dengan halaman HTML normal – pada kedua kasus tersebut, Anda akan menggunakan CSS.
 

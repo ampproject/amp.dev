@@ -1,9 +1,6 @@
 ---
 $title: Integrar AMP para publicar anuncios de display
-toc: true
 ---
-
-
 
 En esta guía se exponen los pasos que se deben seguir para integrar redes publicitarias en AMP y así publicar anuncios de display en páginas AMP.
 
@@ -20,17 +17,13 @@ Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradi
 1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) (es decir, si todavía no has creado ninguna para publicar anuncios HTML tradicionales).
 2. [Crea una integración Fast Fetch para publicar anuncios AMP HTML](#creating-a-fast-fetch-integration).
 
-
 ## Crear una implementación `amp-ad`
 
 Como servidor de anuncios, los editores admitidos incluyen una biblioteca JavaScript proporcionada por ti (el servidor) y colocan distintos "fragmentos de anuncios" que se basan en la biblioteca JavaScript para obtener anuncios y renderizarlos en el sitio web del editor. Dado que AMP no permite que los editores ejecuten JavaScript de forma arbitraria, deberás aportar el código AMP (de código abierto) para permitir que la etiqueta [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) solicite anuncios de tu servidor de anuncios.
 
 [tip type="note"]
-
 Puedes utilizar esta implementación [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  para mostrar anuncios HTML tradicionales **y** anuncios AMP HTML.
-
 [/tip]
-
 
 Por ejemplo, se puede invocar el servidor A9 de Amazon con esta sintaxis:
 
@@ -58,8 +51,6 @@ Para publicar anuncios AMP HTML desde tu servidor de anuncios, debes proporciona
 1.  Comunicación de red compatible con SSL.
 1.  JavaScript para crear la solicitud de anuncio (implementaciones de ejemplo: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) y [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 1.  Creatividad validada y firmada con un servicio de validación. [Cloudflare](https://blog.cloudflare.com/firebolt/) proporciona un servicio de verificación de anuncios AMP, que permite que cualquier proveedor de anuncios independiente publique anuncios más atractivos de forma más rápida y ligera.
-
-
 
 ## Recursos relacionados
 

@@ -109,6 +109,10 @@
         @include txt-lrg;
       }
     }
+
+    &-button {
+      margin-top: 20px;
+    }
   }
 
   &-websites, &-ads {
@@ -121,12 +125,20 @@
     }
   }
 
+
+  &-ads {
+    .#{organism('stage')}-content-button {
+      color: color('white'); background-color: color('electric-violet');
+    }
+  }
+
   &-emails, &-stories {
     .#{organism('stage')} {
       &-content {
         &-icon { @include fill-stories; border-color: color('ultramarine'); }
         &-headline { @include color-stories; }
         &-subline { @include color-stories; }
+        &-button { background-color: color('ultramarine'); }
       }
     }
   }

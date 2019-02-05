@@ -55,7 +55,6 @@ $title: 登录
 
 <amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
 
-
 当 AMPByExample 服务器收到来自登录页面的 POST 请求并确认相应的登录值和密码值正确无误后，它会将该请求重定向到我们在上文中提及的 `returnURL`，并会附加 `#success=true` 参数。现在，AMP 运行时便可授权该页面，并最终允许您添加评论。
 
 请务必了解 AMP 运行时会执行哪些操作以及服务器应执行哪些操作，因为服务器实现是页面发布者的职责。

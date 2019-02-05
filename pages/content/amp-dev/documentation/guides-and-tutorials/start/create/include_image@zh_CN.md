@@ -10,4 +10,4 @@ $title: 包括图像
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-阅读: 如需了解我们为何要将诸如 `<img>` 等标记替换为 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 以及有多少标记可用，请查看[添加图片和视频]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})。
+阅读: 如需了解我们为何要将诸如 `<img>` 等标记替换为 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 以及有多少标记可用，请查看[添加图片和视频]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})。

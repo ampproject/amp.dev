@@ -18,6 +18,12 @@
     {% if section.index %}
     {% set section_index = g.doc(section.index, locale=doc.locale) %}
     <li class="ap-o-burger-menu-item">
+      {# If the section has only one child it shouldn't be collapsable #}
+      {% if section.list_docs(locale=doc.locale)|length == 1 %}
+      <a class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
+        {{ section.title }}
+      </a>
+      {% else %}
       <label class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section_index) }}">
         {{ section.title }}
       </label>
@@ -38,6 +44,7 @@
       </li>
       {% endfor %}
       </ul>
+      {% endif %}
     {% endif %}
     </li>
     {% endfor %}

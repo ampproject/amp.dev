@@ -1,9 +1,6 @@
 ---
 $title: Tata letak & kueri media
-toc: true
 ---
-
-
 
 AMP mendukung **kueri media** &amp; **kueri elemen**, juga disertai cara bawaan yang canggih untuk mengontrol **tata letak** masing-masing elemen. Atribut `layout` mempermudah pembuatan desain yang sepenuhnya responsif dibandingkan jika Anda hanya menggunakan CSS.
 
@@ -105,7 +102,6 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
 Kunjungi halaman [Mendemonstrasikan tata letak AMP](/id/docs/design/amp-html-layout/layouts_demonstrated.html) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar. Anda juga dapat menemukan lebih banyak informasi di [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 
 [/tip]
-
 
 ### Bagaimana jika atribut width dan height tidak ditentukan?
 

@@ -1,9 +1,6 @@
 ---
 $title: Berintegrasi dengan AMP untuk menayangkan iklan display
-toc: true
 ---
-
-
 
 Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP untuk menayangkan iklan display ke halaman AMP.
 
@@ -20,17 +17,13 @@ Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan
 1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) (misalnya jika Anda belum membuat implementasi untuk menayangkan iklan HTML biasa)
 2. [Buat integrasi Fast Fetch untuk menayangkan iklan AMPHTML](#membuat-integrasi-fast-fetch).
 
-
 ## Membuat implementasi `amp-ad`
 
 Sebagai server iklan, penayang yang Anda dukung menyertakan library JavaScript yang Anda sediakan dan menempatkan berbagai "cuplikan iklan" yang mengandalkan library JavaScript untuk mengambil iklan dan merendernya di situs penayang. Karena AMP tidak mengizinkan penayang untuk menjalankan JavaScript arbitrer, Anda harus berkontribusi pada kode open-source AMP untuk mengizinkan tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) meminta iklan dari server iklan.
 
 [tip type="note"]
-
 Anda dapat menggunakan implementasi [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  ini untuk menampilkan iklan HTML biasa **dan** iklan AMPHTML.
-
 [/tip]
-
 
 Misalnya, server Amazon A9 dapat dijalankan dengan menggunakan sintaks berikut:
 
@@ -60,7 +53,6 @@ Untuk menampilkan iklan AMPHTML dari server iklan, Anda harus memberikan integra
 1.  Memvalidasi dan menandatangani materi iklan melalui layanan validasi. [Cloudflare](https://blog.cloudflare.com/firebolt/) menyediakan layanan verifikasi iklan AMP, sehingga penyedia iklan independen dapat menayangkan iklan yang lebih cepat, lebih ringan, dan lebih menarik.
 
 Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi Jaringan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
-
 
 ## Referensi terkait
 

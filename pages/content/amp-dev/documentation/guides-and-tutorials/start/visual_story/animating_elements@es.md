@@ -215,7 +215,6 @@ Ahora vamos a hacer que todas las imágenes se desvanezcan. Para hacerlo, añade
 </amp-img>
 ```
 
-
 Si actualizas y vuelves a cargar la página, todas las imágenes se desvanecerán.  Está bien, pero apenas se nota el efecto porque todas las imágenes se desvanecen a la vez. Podemos mejorar el efecto visual si modificamos los valores temporales de las animaciones.
 
 Vamos a retrasar la entrada de la primera imagen para que entre justo después del banner de texto, unos 4 s más o menos. Las otras tres imágenes pueden entrar 2 s después de la entrada de la imagen anterior. Para cada uno de los elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  añade `animate-in-delay=""` con el valor de retraso temporal correspondiente. El código debería quedar así:

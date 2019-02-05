@@ -1,7 +1,6 @@
 ---
 $title: Create responsive AMP pages
 $order: 5
-toc: true
 formats:
   - websites
   - email
@@ -14,7 +13,6 @@ author: bpaduch
 contributors:
   - pbakaus
 ---
-
 
 ## Introduction
 
@@ -94,7 +92,7 @@ There are many types of videos that you can add to your AMP pages.  For details,
 
 ### Displaying responsive images
 
-Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md', locale=doc.locale).url.path}})).  In addition to the basic responsive image, you might want to serve multiple image resources to:
+Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})).  In addition to the basic responsive image, you might want to serve multiple image resources to:
 
 - [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
 - [Change the art direction of an image](#changing-the-art-direction-of-an-image)

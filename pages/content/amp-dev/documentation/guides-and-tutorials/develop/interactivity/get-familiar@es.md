@@ -1,10 +1,7 @@
 ---
 $title: Familiarizarse con el código de inicio
 $order: 1
-toc: true
 ---
-
-
 
 ## AMP boilerplate
 Una página AMP es una página HTML con algunas restricciones para un rendimiento fiable. Las páginas de AMP tienen un poco de marcado especial que lo identifica como una página de AMP.
@@ -49,6 +46,5 @@ El código de inicio ofrece alguna interactividad básica:
 
 - El carrusel de imágenes (`<amp-carousel>`) muestra varias vistas del producto.
 - El producto se puede añadir al carrito del usuario (a través de `<amp-form>`) pulsando el botón "Añadir al carrito" en la parte inferior de la página.
-
 
 **Pruébalo**: Desliza el carrusel de imágenes y toca el botón "Añadir al carrito".

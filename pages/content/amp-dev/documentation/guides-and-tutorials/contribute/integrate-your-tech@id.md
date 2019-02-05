@@ -8,14 +8,12 @@ Jika Anda adalah penyedia teknologi bagi penayang atau pengiklan di web, kami me
 
 Ada 4 cara utama Anda dapat berintegrasi dengan AMP:
 
-
 ## 1. Menambahkan dukungan ke ekstensi amp-analytics
 Analytics AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang dikonfigurasi. Kami telah membuat [panduan integrasi analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) untuk membantu Anda memulai.
 
 Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan, buka [amp-pixel](/id/docs/reference/components/amp-pixel.html). Pastikan mendokumentasikan penggunaan di halaman dukungan Anda untuk developer yang mungkin ingin menggunakan teknologi Anda dengan AMP.
 
 Ada lebih dari 20 penyedia analytics yang telah menambahkan dukungan ke amp-analytics. Berikut adalah [contoh pull request](https://github.com/ampproject/amphtml/pull/1595) dari penyedia analytics [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
-
 
 ## 2. Menggunakan ekstensi amp-ad
 

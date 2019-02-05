@@ -58,7 +58,6 @@ In the example below, the value for the `return` parameter is added to the reque
 
 <amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
 
-
 Once the AMPByExample server receives the POST request from the login page and the login and password are correct, it redirects the request to the `returnURL` that we mentioned above, and appends the `#success=true` parameter. The AMP runtime can now authorize the page and finally allow you to add a comment.
 
 It’s important to understand what the AMP runtime does and what the server should be doing, as the implementation of the server is the responsibility of the publisher of the page.

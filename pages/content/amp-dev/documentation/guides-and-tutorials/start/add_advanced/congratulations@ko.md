@@ -15,8 +15,6 @@ AMP의 주요 고급 구성요소를 살펴보는 '고급 AMP 기능 추가' 가
 - [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})를 사용하여 사이트 탐색 기능 추가
 - AMP에서 맞춤 글꼴 사용
 
-
-
 ## 다음 단계
 
 AMP에 관한 전문 지식을 더욱 발전시키려면 다음 리소스를 확인하세요.
