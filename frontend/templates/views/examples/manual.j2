@@ -2,8 +2,11 @@
 
 {% block head %}
 {{ doc.example.document.head|safe }}
-{% if doc.example.document.isAmpStory %}
+{# We always need amp-bind for the header and TOC if the sample doesn't include it #}
+{% if 'custom-element="amp-bind"' not in doc.example.document.head %}
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+{% endif %}
+{% if doc.example.document.isAmpStory %}
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 {% endif %}
 
