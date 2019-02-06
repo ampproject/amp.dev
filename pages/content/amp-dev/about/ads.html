@@ -233,16 +233,13 @@ kpis:
 
   <div class="ap--container">
     <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h1>What’s the difference between an AMPHTML ad and a regular ad? .</h1>
-      <h5>Seconds.</h5>
+      <h1>What’s the difference between an AMPHTML ad and a regular ad? Seconds.</h1>
     </div>
   </div>
 
   <div class="ap--shift-cards-grid ap--container">
     <div class="ap-m-shift-card ap-m-shift-card-1 small">
-      <div class="ap-m-shift-card-title">
-        <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}?format=ads">AMPHTML AD</a>
-      </div>
+      <div class="ap-m-shift-card-title">AMPHTML Ad</div>
       {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
       <div class="ap-m-ghost-frame-mobile">
         <amp-video
@@ -251,14 +248,14 @@ kpis:
           layout="responsive"
           src="/static/img/amp_ad_video_left.mp4"
           poster="/static/img/amp_ad_video_left.jpg"
-          title="AMPHTML AD"
+          title="An ad implemented as AMPHTML Ad"
           autoplay
           loop
         ></amp-video>
       </div>
     </div>
     <div class="ap-m-shift-card ap-m-shift-card-2 small">
-      <div class="ap-m-shift-card-title">REGULAR AD</div>
+      <div class="ap-m-shift-card-title">Regular Ad</div>
       <div class="ap-m-ghost-frame-mobile">
         <amp-video
           width="410"
@@ -266,23 +263,11 @@ kpis:
           layout="responsive"
           src="/static/img/amp_ad_video_right.mp4"
           poster="/static/img/amp_ad_video_right.jpg"
-          title="REGULAR AD"
+          title="A regular ad"
           autoplay
           loop
         ></amp-video>
       </div>
-    </div>
-  </div>
-
-  <div class="ap--container">
-    <div class="ap--shift-cards-link ap-m-copy" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <a href="#" class="ap-m-lnk ap-m-lnk-square">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">Get Started</span>
-      </a>
     </div>
   </div>
 
