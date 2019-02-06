@@ -1,6 +1,6 @@
 ---
 $title: Final steps before publishing
-$order: 7
+$order: 6
 author: pbakaus
 contributors:
   - bpaduch
