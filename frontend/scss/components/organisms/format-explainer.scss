@@ -44,7 +44,7 @@
       grid-row: 1 / -1;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.4s cubic-bezier(.55,0,.1,1), transform 0.4s cubic-bezier(.55,0,.1,1);
+      transition: opacity 0.4s cubic-bezier(.55,0,.1,1), visibility 0.4s cubic-bezier(.55,0,.1,1), transform 0.4s cubic-bezier(.55,0,.1,1);
       
       &.active {
         opacity: 1;
