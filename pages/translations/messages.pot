@@ -181,18 +181,6 @@ msgstr ""
 msgid "Guides and Tutorials"
 msgstr ""
 
-#: /content/amp-dev/about/stories.html
-msgid "Harry & Meghan A to Z"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Hearst"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "How College Football Playoff Rankings Actually Work"
-msgstr ""
-
 #: /content/amp-dev/documentation/templates/index.html:18
 msgid "How to build AMP without knowing how to code?"
 msgstr ""
@@ -207,18 +195,6 @@ msgstr ""
 
 #: /content/amp-dev/documentation/guides-and-tutorials/learn/_blueprint.yaml
 msgid "Learn"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Mashable"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Meredith"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Mic"
 msgstr ""
 
 #: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/_blueprint.yaml
@@ -281,10 +257,6 @@ msgstr ""
 msgid "Show everything"
 msgstr ""
 
-#: /content/amp-dev/about/stories.html
-msgid "Space Photos of the Week"
-msgstr ""
-
 #: /content/amp-dev/documentation/guides-and-tutorials/start/_blueprint.yaml
 msgid "Start"
 msgstr ""
@@ -319,18 +291,6 @@ msgid ""
 "passionate about."
 msgstr ""
 
-#: /content/amp-dev/about/stories.html
-msgid "The Art of an Organized Refrigerator"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "The Evolution of Trump's Wall"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "The Missions Still Exploring Our Solar System"
-msgstr ""
-
 #: /views/partials/footer.j2:43
 msgid "Tools"
 msgstr ""
@@ -347,18 +307,6 @@ msgstr ""
 msgid "Validation Workflow"
 msgstr ""
 
-#: /content/amp-dev/about/stories.html
-msgid "Vox"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Washington Post"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Wired"
-msgstr ""
-
 #: /views/detail/component-detail.j2:24
 msgid ""
 "You've red this document a dozen times but it doesn't really cover all of "
@@ -369,4 +317,3 @@ msgstr ""
 #: /content/amp-dev/documentation/components/reference/amp-accordion.md
 msgid "layout"
 msgstr ""
-

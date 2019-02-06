@@ -1,0 +1,139 @@
+#: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/_blueprint.yaml
+msgid "AMP Caches & CORS"
+msgstr ""
+
+#: /views/partials/footer.j2:57
+msgid "AMP Conf 2019"
+msgstr ""
+
+#: /views/partials/banner.j2:7
+msgid "AMP Conf 2019. April 17/18. Tokyo."
+msgstr ""
+
+#: /content/amp-dev/documentation/tools.html:22
+msgid "AMP Experiments"
+msgstr ""
+
+#: /views/partials/footer.j2:29
+msgid "AMP Framework"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/_blueprint.yaml
+msgid "AMP HTML Specification"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/_blueprint.yaml
+msgid "AMP's Layout System"
+msgstr ""
+
+#: /content/amp-dev/about/_blueprint.yaml
+msgid "About"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/_blueprint.yaml
+msgid "Add advanced AMP features"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_data/_blueprint.yaml
+msgid "Add interactivity & dynamic data (TBD)"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/animations/_blueprint.yaml
+msgid "Animate & transition"
+msgstr ""
+
+#: /content/amp-dev/about/stories.html
+msgid "Apple Cider Vinegar is the Magic Potion You Need in Your Life"
+msgstr ""
+
+#: /content/amp-dev/about/stories.html
+msgid "Black Panther"
+msgstr ""
+
+#: /content/amp-dev/blog/_blueprint.yaml
+msgid "Blog"
+msgstr ""
+
+#: /content/amp-dev/about/stories.html
+msgid "CNN"
+msgstr ""
+
+#: /content/amp-dev/community/_blueprint.yaml /views/partials/footer.j2:47
+msgid "Community"
+msgstr ""
+
+#: /content/amp-dev/documentation/components/_blueprint.yaml
+#: /content/amp-dev/documentation/components/reference/_blueprint.yaml
+#: /views/partials/footer.j2:40
+msgid "Components"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/contribute/_blueprint.yaml
+#: /views/partials/footer.j2:50
+msgid "Contribute"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/converting/_blueprint.yaml
+msgid "Convert HTML to AMP"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/create_email/_blueprint.yaml
+msgid "Create Your First AMP Email (TBD)"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/create/_blueprint.yaml
+msgid "Create Your First AMP Page"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/interactive_widget/_blueprint.yaml
+msgid "Create a custom interactive widget with amp-script"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/_blueprint.yaml
+msgid "Create a login-requiring AMP page"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/_blueprint.yaml
+msgid "Create interactive AMP pages"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/_blueprint.yaml
+msgid "Create your first AMP Story"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/_blueprint.yaml
+msgid "Create your first AMPHTML ad"
+msgstr ""
+
+#: /views/partials/footer.j2:42
+msgid "Design Templates"
+msgstr ""
+
+#: /content/amp-dev/documentation/guides-and-tutorials/develop/_blueprint.yaml
+msgid "Develop"
+msgstr ""
+
+#: /views/partials/footer.j2:36
+msgid "Docs"
+msgstr ""
+
+#: /content/amp-dev/documentation/_blueprint.yaml
+msgid "Documentation"
+msgstr "Documents"
+
+#: /content/amp-dev/documentation/templates/index.html:19
+msgid "Easily build user first websites with our templates"
+msgstr ""
+
+#: /views/examples/manual.j2:99
+msgid "Edit on GitHub"
+msgstr ""
+
+#: /content/amp-dev/events/_blueprint.yaml /views/partials/footer.j2:55
+msgid "Events"
+msgstr ""
+
+#: /content/amp-dev/documentation/examples/_blueprint.yaml
+#: /views/partials/footer.j2:41
+msgid "Examples"
+msgstr ""
