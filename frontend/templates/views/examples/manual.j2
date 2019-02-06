@@ -104,7 +104,7 @@ tags are specific for amp.dev #}
         {% set playground_url = podspec.base_urls.playground + doc.url.path + '/source/' %}
         {% if not playground_disabled %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-        <a href="{{ playground_url }}" class="ap-a-btn">{{ _('Open in playground') }}</a>
+        <a href="{{ playground_url }}" class="ap-a-btn ap--playground-link">{{ _('Open in playground') }}</a>
         {% endif %}
         {% if preview_enabled %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
@@ -144,7 +144,7 @@ tags are specific for amp.dev #}
       </div>
 
       {% if not playground_disabled and show_preview %}
-      <a href="{{ playground_url }}/{{ section.id }}" class="ap-m-lnk">
+      <a href="{{ playground_url }}/{{ section.id }}" class="ap-m-lnk ap--playground-link">
           <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>

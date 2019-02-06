@@ -48,6 +48,11 @@
       }
     }
 
+  .#{utility('playground-link')} {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
 
   .#{utility('sidebar')} {
     @include sidebar;
