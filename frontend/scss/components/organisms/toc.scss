@@ -5,6 +5,8 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 
+@import '../organisms/_sidebar.scss';
+
 .#{utility('toc')} {
   width: 100%;
 
@@ -51,7 +53,20 @@
 
   &-hl {
     @include txt-font-accent;
-    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 0px;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: 0;
   }
 
   ul {
@@ -92,6 +107,31 @@
   .#{atom('sidebar-toggle-input-toc')}:checked + ul {
     @media (max-width: 1023px) {
       margin-top: 15px;
+    }
+  }
+
+  // icon
+  .nav-icon {
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  // toc closed icon state
+  .nav-icon .#{atom('ico')} {
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+
+  // toc open icon state
+  &.contentmenuopen {
+    .nav-icon .#{atom('ico')} {
+      transform: rotate(0);
     }
   }
 }
