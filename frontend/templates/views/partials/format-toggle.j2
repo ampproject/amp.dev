@@ -1,14 +1,19 @@
 {% do doc.styles.addCssFile('css/components/molecules/format-toggle.css') %}
 
 {% set formats = ['websites', 'stories', 'ads', 'email'] %}
-{% set landing_page = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html') %}
 
-{% for format in formats %}
-{% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
-{% endfor %}
+{# Define various landing pages for sections #}
+{% if 'examples' in doc.url.path %}
+{% set landing_page = g.doc('/content/amp-dev/documentation/examples/index.html') %}
+{% elif 'components' in doc.url.path %}
+{% set landing_page = g.doc('/content/amp-dev/documentation/components/index.html') %}
+{% else %}
+{% set landing_page = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html') %}
+{% endif %}
 
 <ul class="ap-m-format-toggle">
   {% for format in formats %}
+  {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
   <li class="ap-m-format-toggle-format">
     <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="{{ landing_page.url.path }}?format={{ format }}"><div class="ap-a-ico">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
