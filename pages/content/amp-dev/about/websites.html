@@ -74,7 +74,19 @@ kpis:
       <p>AMP enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers can decide how to present their content that emphasizes a user-first experience.</p>
     </div>
 
+    {% with %}
+    {% set case_band_images = [
+      {"src": "/static/img/case-band-post-mobile.png", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-vox-mobile.png", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-magebit-desktop.png", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-bmw-mobile.png", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-iene-desktop.png", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-renovationbrands-desktop.png", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-tasty-mobile.png", "width": "750", "height": "1334"}
+      ]
+    %}
     {% include 'views/partials/case-band.j2' %}
+    {% endwith %}
   </div>
 </section>
 
