@@ -40,9 +40,12 @@
             {% if doc.pod.file_exists(collection_index) %}
             {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
             <a class="nav-link" href="{{ collection_index.url.path }}">
+              {# Get translated collection title #}
+              {% set collection_title = collection.tagged_fields.get('$title@' + doc.locale.language, collection.title) %}
+
               {% if collection.tutorial %}
 
-              {% set tutorial_title = _(collection.title).split(' ') %}
+              {% set tutorial_title = collection_title.split(' ') %}
               {% set tutorial_first_part = ' '.join(tutorial_title[0:-1]) %}
               {% set tutorial_last_word = tutorial_title[-1] %}
 
@@ -50,7 +53,7 @@
               <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
 
               {% else %}
-                <span>{{ _(collection.title) }}</span>
+                <span>{{ collection_title }}</span>
               {% endif %}
             </a>
             {% else %}
