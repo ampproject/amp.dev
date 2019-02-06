@@ -49,10 +49,10 @@ The page with all AMP tools.
   .#{utility('container')} {
     @include container;
 
-    padding-top: 3rem;
+    padding-bottom: 3rem;
 
     @media (min-width: 768px) {
-      padding-top: 6rem;
+      padding-bottom: 6rem;
     }
   }
 
@@ -102,6 +102,8 @@ The page with all AMP tools.
   }
 
   &-anchor-list {
+    grid-column: 2 / 24;
     margin-bottom: 4rem;
+    text-align: center;
   }
 }
