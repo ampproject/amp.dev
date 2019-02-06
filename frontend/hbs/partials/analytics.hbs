@@ -1,18 +1,14 @@
-<amp-analytics type="googleanalytics" id="analytics">
+<amp-analytics type="gtag" data-credentials="include">
   <script type="application/json">
-    {
-      "vars": {
-        "account": "{{ config.shared.gaTrackingId }}"
-      },
-      "triggers": {
-        "default pageview": {
-          "on": "visible",
-          "request": "pageview",
-          "vars": {
-            "title": "{{ title }}"
-          }
+  {
+    "vars" : {
+      "gtag_id": "{{ config.shared.gaTrackingId }}",
+      "config" : {
+        "{{ config.shared.gaTrackingId }}": {
+          "groups": "default"
         }
       }
     }
+  }
   </script>
 </amp-analytics>
