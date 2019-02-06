@@ -22,12 +22,18 @@ This positioning can be change by using the modifier `-alternate`.
 
 .#{utility('stage')} {
   .#{organism('ghost-frame-block')} {
-    margin-top: -10%;
     grid-column: 15 / -1;
+    max-width: 360px;
+    position: absolute;
+    left: 60px;
+    top: 0;
 
     @media (min-width: 768px) {
-      margin-top: -65%;
       grid-column: 14 / -2;
+      max-width: 100%;
+      position: relative;
+      left: 0;
+      margin-top: -65%;
     }
 
     @media (min-width: 1024px) {
