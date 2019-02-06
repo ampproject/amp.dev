@@ -37,12 +37,12 @@
   .#{utility('stage')} {
     .#{organism('stage')} {
       &-content {
-        margin-bottom: 33vw;
-        text-align: center;
+        margin-bottom: 42vw;
 
         @media screen and (min-width: 768px) {
           grid-column: 3 / 23;
           margin-bottom: 23vw;
+          text-align: center;
         }
 
         @media screen and (min-width: 1024px) {

@@ -45,7 +45,7 @@
 
 	&-content {
     position: relative;
-    margin: 20vw 0;
+    margin: 10vw 0 22vw;
 
     @media (min-width: 768px) {
       grid-column: 3 / 13;
@@ -121,14 +121,14 @@
         &-icon { @include fill-websites; border-color: color('white'); }
         &-headline { @include color-websites; }
         &-subline { @include color-websites; }
+        &-button { color: color('blue-ribbon'); background-color: color('white'); }
       }
     }
   }
 
-
   &-ads {
     .#{organism('stage')}-content-button {
-      color: color('white'); background-color: color('electric-violet');
+      color: color('electric-violet');
     }
   }
 
