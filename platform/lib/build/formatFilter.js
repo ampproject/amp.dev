@@ -133,6 +133,7 @@ class FormatFilter {
       variantPage = this._filterPage(variantPage, format);
 
       if (variantPage) {
+        variantPage.extname = `.${format}.html`;
         variantPages.push(variantPage);
       }
     }

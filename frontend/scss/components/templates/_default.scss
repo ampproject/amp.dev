@@ -90,12 +90,12 @@
   @media (min-width: 768px) {
     grid-column: 9 / 25;
 
-    &+.#{utility('content')} {
+    & ~ .#{utility('content')} {
       padding-top: 0;
       @media (min-width: 768px) {
         grid-column: 9/25;
       }
-    
+
       @media (min-width: 1024px) {
         grid-column: 7 / 19;
       }
@@ -107,7 +107,7 @@
     grid-row: span 2;
     padding-top: 46px;
 
-    &+.#{utility('content')} {
+    & ~ .#{utility('content')} {
       padding-top: 42px;
     }
   }

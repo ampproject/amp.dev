@@ -6,30 +6,25 @@ $localization:
 $view: /views/custom.j2
 $hidden: true
 stage:
-  headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
-  subline: MAR 12, 2018
   layout: all
-  logo:
-  image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
-  width: 1
-  height: 1
-  alt: BMW
   devices:
-    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-desktop.jpg'
+    - image_src: '/static/img/success-stories/tasty/tasty-desktop.jpg'
       width: 8
       height: 5
       type: desktop
-      alt: BMW and Jung von Matt
-    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet.jpg'
+      alt: Tasty
+    - image_src: '/static/img/success-stories/bmw_jvm/bmw-com-tablet.jpg'
       width: 3
       height: 4
       type: tablet
       alt: BMW and Jung von Matt
+      url: bmw-com
     - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
       width: 3
       height: 5
       type: mobile
       alt: Carved
+      url: carved
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
 
@@ -59,18 +54,30 @@ stage:
       <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
         {% if device.video_src %}
         {% if device.video_id %}
-        <amp-vimeo data-videoid="{{device.video_id}}" layout="responsive" width="16" height="9">
-        </amp-vimeo>
-        {% else %}
-        <amp-video width="{{device.width}}" height="{{device.height}}" layout="responsive" src="{{device.video_src}}"
-          poster="{{device.poster_src}}" artwork="{{device.artwork_src}}" title="{{device.video_title}}" artist="{{device.video_artist}}"
-          album="{{device.video_album}}" class="ap--media" controls autoplay loop>
-        </amp-video>
+        {% if device.url %}
+        <a href="{{ g.doc('/content/amp-dev/about/success-stories/' + device.url + '.yaml', locale=doc.locale).url.path }}">
+        {% endif %}
+          <amp-vimeo data-videoid="{{device.video_id}}" layout="responsive" width="16" height="9">
+          </amp-vimeo>
+          {% else %}
+          <amp-video width="{{device.width}}" height="{{device.height}}" layout="responsive" src="{{device.video_src}}"
+            poster="{{device.poster_src}}" artwork="{{device.artwork_src}}" title="{{device.video_title}}" artist="{{device.video_artist}}"
+            album="{{device.video_album}}" class="ap--media" controls autoplay loop>
+          </amp-video>
+        {% if device.url %}
+        </a>
+        {% endif %}
         {% endif %}
         {% else %}
-        <amp-img class="ap--media" alt="{{device.alt}}" height="{{device.height}}" layout="responsive" src="{{device.image_src}}"
-          width="{{device.width}}">
-        </amp-img>
+        {% if device.url %}
+        <a href="{{ g.doc('/content/amp-dev/about/success-stories/' + device.url + '.yaml', locale=doc.locale).url.path }}">
+        {% endif %}
+          <amp-img class="ap--media" alt="{{device.alt}}" height="{{device.height}}" layout="responsive" src="{{device.image_src}}"
+            width="{{device.width}}">
+          </amp-img>
+        {% if device.url %}
+        </a>
+        {% endif %}
         {% endif%}
       </div>
       {% endif %}

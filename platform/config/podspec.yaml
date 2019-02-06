@@ -18,6 +18,12 @@ localization:
   # - tr
   # - zh_CN
 
+sitemap:
+  enabled: yes
+  path: "/sitemap.xml"
+  collections:
+  - amp-dev
+
 markdown:
   extensions:
   - kind: sourcecode
