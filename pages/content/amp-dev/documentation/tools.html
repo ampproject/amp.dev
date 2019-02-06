@@ -7,19 +7,41 @@ translator: ampproject
 $date: 11-09-2018
 ---
 {% do doc.styles.addCssFile('css/components/molecules/window-frame.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+
+<section class="ap--stage ap--container-fluid">
+  <div class="ap-o-stage ap-o-stage-websites all">
+    <div class="ap--container-fluid">
+      <div class="ap-o-stage-content">
+        <h1 class="ap-o-stage-content-headline">AMP Tools</h1>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- intro -->
-<div class="ap--container">
+<!-- <div class="ap--container">
   <div class="ap--content">
     <div class="ap-m-copy">
       <h1>AMP Tools</h1>
-      <p class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem maxime, libero dicta quisquam hic quis, officiis magnam corporis voluptas laborum cum minus explicabo eos placeat tempore fuga beatae similique, in!</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="ap--container">
+  <div class="ap--content">
+    <div class="ap-t-tools-anchor-list">
+      <a href="#AMP validator">AMP validator</a> |
+      <a href="#AMP playground">AMP playground</a> |
+      <a href="#AMP toolbox">AMP toolbox</a> |
+      <a href="#AMP experiments">AMP experiments</a> |
+      <a href="#Visual Studio Code Extension">Visual Studio Code Extension</a>
     </div>
   </div>
 </div>
 
 <!-- amp validator -->
-<div class="ap-o-tool-block -alternate">
+<div class="ap-o-tool-block -alternate" id="AMP validator">
   <div class="ap--container">
     <!-- window frame -->
     <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
@@ -57,7 +79,7 @@ $date: 11-09-2018
 
 
 <!-- amp playground -->
-<div class="ap-o-tool-block -alternate">
+<div class="ap-o-tool-block -alternate" id="AMP playground">
   <div class="ap--container">
     <!-- window frame -->
     <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Playground">
@@ -93,7 +115,7 @@ $date: 11-09-2018
 </div>
 
 <!-- amp toolbox -->
-<div class="ap-o-tool-block -alternate">
+<div class="ap-o-tool-block -alternate" id="AMP toolbox">
   <div class="ap--container">
     <!-- window frame -->
     <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Optimizer">
@@ -148,7 +170,7 @@ ampOptimizer.transformHtml(originalHtml, {
 </div>
 
 <!-- amp experiments -->
-<div class="ap-o-tool-block -alternate">
+<div class="ap-o-tool-block -alternate"  id="AMP experiments">
   <div class="ap--container">
     <!-- window frame -->
     <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Experiments">
@@ -184,7 +206,7 @@ ampOptimizer.transformHtml(originalHtml, {
 </div>
 
 <!-- VSCode extension -->
-<div class="ap-o-tool-block -alternate">
+<div class="ap-o-tool-block -alternate" id="Visual Studio Code Extension">
   <div class="ap--container">
     <!-- window frame -->
     <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">

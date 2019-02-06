@@ -25,6 +25,27 @@ The page with all AMP tools.
 @import '../templates/_default';
 
 .#{template('tools')} {
+
+  // :target::before {
+  //   height: 125px;
+  //   margin-top: -125px;
+
+  //   @media screen and (min-width: 1024px) {
+  //     height: 160px;
+  //     margin-top: -160px;
+  //   }
+  // }
+
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+
+    .#{organism('stage')} {
+      &-content {
+        margin-bottom: 7vw;
+      }
+    }
+  }
+
   .#{utility('container')} {
     @include container;
 
@@ -49,7 +70,7 @@ The page with all AMP tools.
     padding-bottom: 3rem;
 
     @media (min-width: 768px) {
-      padding-bottom: 12rem;
+      padding-bottom: 6rem;
     }
   }
 
@@ -78,5 +99,9 @@ The page with all AMP tools.
 
   .#{molecule('code-snippet')} {
     margin-bottom: 0;
+  }
+
+  &-anchor-list {
+    margin-bottom: 4rem;
   }
 }
