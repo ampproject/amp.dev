@@ -1,220 +1,231 @@
 ---
 $title: Tools
-$view: /views/overview/tools.j2
-
-author: ampproject
-translator: ampproject
-$date: 11-09-2018
+$view: /views/custom.j2
 ---
+{% do doc.styles.addCssFile('css/components/templates/tools.css') %}
+
 {% do doc.styles.addCssFile('css/components/molecules/window-frame.css') %}
 
-<!-- intro -->
-<div class="ap--container">
-  <div class="ap--content">
-    <div class="ap-m-copy">
-      <h1>AMP Tools</h1>
-      <p class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem maxime, libero dicta quisquam hic quis, officiis magnam corporis voluptas laborum cum minus explicabo eos placeat tempore fuga beatae similique, in!</p>
-    </div>
-  </div>
-</div>
+<main class="ap--main ap-t-tools">
 
-<!-- amp validator -->
-<div class="ap-o-tool-block -alternate">
-  <div class="ap--container">
-    <!-- window frame -->
-    <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
-      <amp-img
-        alt="window frame"
-        height="578"
-        layout="responsive"
-        src="/static/img/docs/tools/ampvalidator.jpg"
-        width="782"
-      ></amp-img>
+  <section class="ap--container">
+    {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+    <div class="ap-m-jumbo">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/wrench.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wrench"></use></svg>
+      </div>
+      <h1 class="ap-m-jumbo-headline">Tools</h1>
+      <p class="ap-m-jumbo-copy">Over the years a lot of useful tools were created to easen up your daily life with AMP. There are tools that validate your pages, help to quickly set up a demo and even one that helps you making your AMP pages even faster. Check them out!</p>
     </div>
 
-    <!-- copy -->
-    <div class="ap-o-tool-block-copy ap-m-copy">
-      <!-- headline -->
-      <h2>AMP validator</h2>
-      <!-- copy -->
-      <p>
-        The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be validated. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
-      </p>
-      <!-- link -->
-      <a href="https://validator.ampproject.org/" class="ap-m-lnk ap-m-lnk-square">
-        <!-- icon -->
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <!-- label -->
-        <span class="ap-m-lnk-text">Validate your AMP page</span>
-      </a>
+    <div class="ap-t-tools-anchor-list">
+      <a href="#validator">AMP validator</a> |
+      <a href="#playground">AMP playground</a> |
+      <a href="#toolbox">AMP toolbox</a> |
+      <a href="#experiments">AMP experiments</a> |
+      <a href="#vscode">Visual Studio Code Extension</a>
     </div>
-  </div>
-</div>
+  </section>
 
-
-
-<!-- amp playground -->
-<div class="ap-o-tool-block -alternate">
-  <div class="ap--container">
-    <!-- window frame -->
-    <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Playground">
-      <amp-img
-        alt="window frame"
-        height="711"
-        layout="responsive"
-        src="/static/img/docs/tools/ampplayground.jpg"
-        width="1280"
-      ></amp-img>
-    </div>
-
-    <!-- copy -->
-    <div class="ap-o-tool-block-copy ap-m-copy">
-      <!-- headline -->
-      <h2>AMP playground</h2>
-      <!-- copy -->
-      <p>
-        If you want to play around with the sample code: all samples can now be opened in an interactive playground. At the moment it’s limited to only editing existing samples, but we plan to make this even more useful by making it possible to share samples with others.
-      </p>
-      <!-- link -->
-      <a href="/playground" class="ap-m-lnk ap-m-lnk-square">
-        <!-- icon -->
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <!-- label -->
-        <span class="ap-m-lnk-text">Start coding</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- amp toolbox -->
-<div class="ap-o-tool-block -alternate">
-  <div class="ap--container">
-    <!-- window frame -->
-    <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Optimizer">
-
-      <div class="ap-m-format-visual-websites-code-snippet">
-        <div class="ap-m-code-snippet">
-{% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-{% set code_snippet = "
-const ampOptimizer = require('amp-toolbox-optimizer');
-
-// Transformer expects a string (streams are not supported)
-const originalHtml = `
-<!doctype html>
-<html ⚡>
-...
-`
-
-// Additional options can be passed as the second argument
-ampOptimizer.transformHtml(originalHtml, {
-  ampUrl: 'canonical.amp.html'
-}).then(optimizedHtml => {
-  console.log(optimizedHtml);
-});"
-%}
-{% set markdown = doc.pod.markdown %}
-{{ markdown.convert('```javascript\n' + code_snippet + '\n```')|safe }}
-        </div>
+  <!-- amp validator -->
+  <div class="ap-o-tool-block -alternate" id="validator">
+    <div class="ap--container">
+      <!-- window frame -->
+      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
+        <amp-img
+          alt="window frame"
+          height="578"
+          layout="responsive"
+          src="/static/img/docs/tools/ampvalidator.jpg"
+          width="782"
+        ></amp-img>
       </div>
 
-    </div>
-
-    <!-- copy -->
-    <div class="ap-o-tool-block-copy ap-m-copy">
-      <!-- headline -->
-      <h2>AMP toolbox</h2>
       <!-- copy -->
-      <p>
-        A collection of AMP tools making it easier to publish and host AMP pages.
-      </p>
-      <!-- link -->
-      <a href="https://github.com/ampproject/amp-toolbox" class="ap-m-lnk ap-m-lnk-square">
-        <!-- icon -->
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-        </div>
-        <!-- label -->
-        <span class="ap-m-lnk-text">Explore AMP toolbox</span>
-      </a>
+      <div class="ap-o-tool-block-copy ap-m-copy">
+        <!-- headline -->
+        <h2>AMP validator</h2>
+        <!-- copy -->
+        <p>
+          The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages fast in a way that can be validated. This way, third parties such as Twitter, Instagram or Google Search can feel great about serving AMP pages to readers in increasingly interesting ways.
+        </p>
+        <!-- link -->
+        <a href="https://validator.ampproject.org/" class="ap-m-lnk ap-m-lnk-square">
+          <!-- icon -->
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ap-m-lnk-text">Validate your AMP page</span>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- amp experiments -->
-<div class="ap-o-tool-block -alternate">
-  <div class="ap--container">
-    <!-- window frame -->
-    <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Experiments">
-      <amp-img
-        alt="window frame"
-        height="7"
-        layout="responsive"
-        src="/static/img/docs/tools/ampexperiments.jpg"
-        width="10"
-      ></amp-img>
-    </div>
 
-    <!-- copy -->
-    <div class="ap-o-tool-block-copy ap-m-copy">
-      <!-- headline -->
-      <h2>AMP experiments</h2>
+
+  <!-- amp playground -->
+  <div class="ap-o-tool-block -alternate" id="playground">
+    <div class="ap--container">
+      <!-- window frame -->
+      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Playground">
+        <amp-img
+          alt="window frame"
+          height="711"
+          layout="responsive"
+          src="/static/img/docs/tools/ampplayground.jpg"
+          width="1280"
+        ></amp-img>
+      </div>
+
       <!-- copy -->
-      <p>
-        AMP experimental components are released features not yet ready for wide use, so they are protected by an experimental status. Developers and users can opt-in to using these features before they are fully released. But they should be used with caution, as they may contain bugs or have unexpected side effects.
-      </p>
-      <!-- link -->
-      <a href="https://cdn.ampproject.org/experiments.html" class="ap-m-lnk ap-m-lnk-square">
-        <!-- icon -->
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-        </div>
-        <!-- label -->
-        <span class="ap-m-lnk-text">See AMP experiments</span>
-      </a>
+      <div class="ap-o-tool-block-copy ap-m-copy">
+        <!-- headline -->
+        <h2>AMP playground</h2>
+        <!-- copy -->
+        <p>
+          If you want to play around with the sample code: all samples can now be opened in an interactive playground. At the moment it’s limited to only editing existing samples, but we plan to make this even more useful by making it possible to share samples with others.
+        </p>
+        <!-- link -->
+        <a href="/playground" class="ap-m-lnk ap-m-lnk-square">
+          <!-- icon -->
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ap-m-lnk-text">Start coding</span>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- VSCode extension -->
-<div class="ap-o-tool-block -alternate">
-  <div class="ap--container">
-    <!-- window frame -->
-    <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
-      <amp-img
-        alt="window frame"
-        height="1849"
-        layout="responsive"
-        src="/static/img/docs/tools/visualstudiocode.jpg"
-        width="2670"
-      ></amp-img>
-    </div>
+  <!-- amp toolbox -->
+  <div class="ap-o-tool-block -alternate" id="toolbox">
+    <div class="ap--container">
+      <!-- window frame -->
+      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Optimizer">
 
-    <!-- copy -->
-    <div class="ap-o-tool-block-copy ap-m-copy">
-      <!-- headline -->
-      <h2>Visual Studio Code Extension</h2>
-      <!-- copy -->
-      <p>
-        This extension makes authoring AMP HTML documents, easy by validating for errors/warnings as you type within Visual Studio Code editor. The PROBLEMS (View->Problems) panel renders the AMP HTML validation error/warning messages with the row and column number in the document from where error/warning were reported.
-      </p>
-      <!-- link -->
-      <a href="https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator" class="ap-m-lnk ap-m-lnk-square">
-        <!-- icon -->
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+        <div class="ap-m-format-visual-websites-code-snippet">
+          <div class="ap-m-code-snippet">
+  {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+  {% set code_snippet = "
+  const ampOptimizer = require('amp-toolbox-optimizer');
+
+  // Transformer expects a string (streams are not supported)
+  const originalHtml = `
+  <!doctype html>
+  <html ⚡>
+  ...
+  `
+
+  // Additional options can be passed as the second argument
+  ampOptimizer.transformHtml(originalHtml, {
+    ampUrl: 'canonical.amp.html'
+  }).then(optimizedHtml => {
+    console.log(optimizedHtml);
+  });"
+  %}
+  {% set markdown = doc.pod.markdown %}
+  {{ markdown.convert('```javascript\n' + code_snippet + '\n```')|safe }}
+          </div>
         </div>
-        <!-- label -->
-        <span class="ap-m-lnk-text">Get the Extension</span>
-      </a>
+
+      </div>
+
+      <!-- copy -->
+      <div class="ap-o-tool-block-copy ap-m-copy">
+        <!-- headline -->
+        <h2>AMP toolbox</h2>
+        <!-- copy -->
+        <p>
+          A collection of AMP tools making it easier to publish and host AMP pages.
+        </p>
+        <!-- link -->
+        <a href="https://github.com/ampproject/amp-toolbox" class="ap-m-lnk ap-m-lnk-square">
+          <!-- icon -->
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ap-m-lnk-text">Explore AMP toolbox</span>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- amp experiments -->
+  <div class="ap-o-tool-block -alternate"  id="experiments">
+    <div class="ap--container">
+      <!-- window frame -->
+      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Experiments">
+        <amp-img
+          alt="window frame"
+          height="7"
+          layout="responsive"
+          src="/static/img/docs/tools/ampexperiments.jpg"
+          width="10"
+        ></amp-img>
+      </div>
+
+      <!-- copy -->
+      <div class="ap-o-tool-block-copy ap-m-copy">
+        <!-- headline -->
+        <h2>AMP experiments</h2>
+        <!-- copy -->
+        <p>
+          AMP experimental components are released features not yet ready for wide use, so they are protected by an experimental status. Developers and users can opt-in to using these features before they are fully released. But they should be used with caution, as they may contain bugs or have unexpected side effects.
+        </p>
+        <!-- link -->
+        <a href="https://cdn.ampproject.org/experiments.html" class="ap-m-lnk ap-m-lnk-square">
+          <!-- icon -->
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ap-m-lnk-text">See AMP experiments</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VSCode extension -->
+  <div class="ap-o-tool-block -alternate" id="vscode">
+    <div class="ap--container">
+      <!-- window frame -->
+      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
+        <amp-img
+          alt="window frame"
+          height="1849"
+          layout="responsive"
+          src="/static/img/docs/tools/visualstudiocode.jpg"
+          width="2670"
+        ></amp-img>
+      </div>
+
+      <!-- copy -->
+      <div class="ap-o-tool-block-copy ap-m-copy">
+        <!-- headline -->
+        <h2>Visual Studio Code Extension</h2>
+        <!-- copy -->
+        <p>
+          This extension makes authoring AMP HTML documents, easy by validating for errors/warnings as you type within Visual Studio Code editor. The PROBLEMS (View->Problems) panel renders the AMP HTML validation error/warning messages with the row and column number in the document from where error/warning were reported.
+        </p>
+        <!-- link -->
+        <a href="https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator" class="ap-m-lnk ap-m-lnk-square">
+          <!-- icon -->
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          </div>
+          <!-- label -->
+          <span class="ap-m-lnk-text">Get the Extension</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
