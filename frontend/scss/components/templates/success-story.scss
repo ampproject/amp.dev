@@ -51,10 +51,10 @@ body {
   }
 
   .#{utility('stage')} {
-    padding-bottom: 70vw;
+    padding: 0 0 3em;
 
-    @media (min-width: 768px) {
-      padding-bottom: 5vw;
+    @media (min-width: 768px ){
+      padding-bottom: 10vw;
     }
 
     .stage-logo {
@@ -64,15 +64,20 @@ body {
 
     .#{organism('stage-content')} {
       grid-column: 4 / 13;
+      
+      @media (max-width: 767px) {
+        margin-top: 20em;
+        margin-bottom: 4em;
+      }
+      
+      @media (min-width: 768px) {
+        margin: 7vw 1em 11vw 3em;
+      }
 
       h1 {
         @include hl;
         @include hl-h2;
         color: color('white');
-      }
-
-      @media (min-width: 768px) {
-        margin: 7vw 1em 11vw 3em;
       }
     }
   }

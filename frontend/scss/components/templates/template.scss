@@ -43,18 +43,28 @@
   }
 
   .#{utility('stage')} {
-    padding-bottom: 70vw;
-
     @media (min-width: 768px ){
+      padding-bottom: 10vw;
+    }
+
+    @media (min-width: 1024px ){
       padding-bottom: 5vw;
     }
   }
 
-
   .#{organism('stage')} {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 50px;
+    }
+    
     &-content {
       grid-column: 3 / 13;
-
+      
+      @media screen and (max-width: 767px) {
+        margin-top: 18em;
+        margin-bottom: 4em;
+      }
+      
       @media (min-width: 1024px ){
         grid-column: 3 / 12;
       }
@@ -68,12 +78,6 @@
           margin: 0;
         }
       }
-    }
-  }
-
-  &.#{utility('content')} {
-    @media (min-width: 768px ){
-      grid-column: 7 / 19;
     }
   }
 
