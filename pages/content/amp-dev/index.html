@@ -73,8 +73,20 @@ success_stories:
         </div>
       </div>
     </div>
-
+    
+    {% with %}
+    {% set case_band_images = [
+      {"src": "/static/img/case-band-image-2.jpg", "width": "519", "height": "931"},
+      {"src": "/static/img/case-band-image-1.png", "width": "711", "height": "826"},
+      {"src": "/static/img/case-band-image-5.jpg", "width": "923", "height": "592"},
+      {"src": "/static/img/case-band-image-4.png", "width": "738", "height": "890"},
+      {"src": "/static/img/case-band-image-3.jpg", "width": "860", "height": "554"},
+      {"src": "/static/img/case-band-image-6.jpg", "width": "531", "height": "467"},
+      {"src": "/static/img/case-band-image-7.jpg", "width": "478", "height": "828"}
+      ]
+    %}
     {% include 'views/partials/case-band.j2' %}
+    {% endwith %}
   </section>
 
   <section class="ap--news ap--container-fluid">
