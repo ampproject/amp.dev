@@ -19,10 +19,10 @@
   text-align: center;
   color: color('whisper');
   @include txt-font-accent;
+  @include txt-2;
   background: color('blue-ribbon');
 
   &-link {
-    @include txt-2;
     color: color('white');
 
     svg {

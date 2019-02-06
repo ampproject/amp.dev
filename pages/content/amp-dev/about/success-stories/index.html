@@ -1,13 +1,39 @@
 ---
 $title@: Success Stories
 $path: /success-stories.html
-$view: /views/overview/success-story-overview.j2
 $localization:
   path: /{locale}/success-stories.html
+$view: /views/custom.j2
+$hidden: true
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/success-stories/tasty/tasty-desktop.jpg'
+      width: 8
+      height: 5
+      type: desktop
+      alt: Tasty
+    - image_src: '/static/img/success-stories/bmw_jvm/bmw-com-tablet.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: BMW and Jung von Matt
+      url: bmw-com
+    - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
+      width: 3
+      height: 5
+      type: mobile
+      alt: Carved
+      url: carved
 ---
+{% do doc.styles.addCssFile('css/components/templates/template.css') %}
+
+{% block main %}
+<main class="ap--main ap-t-template">
+{% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <div class="ap-o-stage ap-o-stage-websites">
+  <div class="ap-o-stage ap-o-stage-websites {{doc.stage.layout}}">
     <div class="ap--container-fluid">
       <div class="ap-o-stage-content">
           <h2 class="ap-o-stage-content-subline">{{ _('See what others have built') }}</h2>
@@ -15,40 +41,92 @@ $localization:
       </div>
     </div>
   </div>
-</section>
 
-{% set categories = g.categories('/content/amp-dev/about/success-stories', locale=doc.locale) %}
-<section class="ap--intro ap--container">
-  <div class="ap--content">
-    <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
-  </div>
-
-  {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-  <div class="ap-o-filter-bubbles-list">
-    <button class="ap-m-filter-bubble filtered"
-      [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-      on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
-      All
-    </button>
-    {% for category, stories in categories %}
-    <button class="ap-m-filter-bubble"
-        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-        on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
-        name="{{ category|slug }}">
-        {{ category }}
-      </button>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="ap--teaser-grid ap--container">
-  <div class="ap-o-teaser-grid">
-    <div class="ap-o-teaser-grid-list">
-      {% for category, stories in categories %}
-      {% for teaser_doc in stories %}
-      {% include '/views/partials/teaser.j2' %}
-      {% endfor %}
+  {# ghost frame block #}
+  {% if doc.stage.devices %}
+  {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
+    <div class="ap-o-ghost-frame-block">
+      {% for device in doc.stage.devices %}
+      {% if device %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+      <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
+        {% if device.video_src %}
+        {% if device.video_id %}
+        {% if device.url %}
+        <a href="{{ g.doc('/content/amp-dev/about/success-stories/' + device.url + '.yaml', locale=doc.locale).url.path }}">
+        {% endif %}
+          <amp-vimeo data-videoid="{{device.video_id}}" layout="responsive" width="16" height="9">
+          </amp-vimeo>
+          {% else %}
+          <amp-video width="{{device.width}}" height="{{device.height}}" layout="responsive" src="{{device.video_src}}"
+            poster="{{device.poster_src}}" artwork="{{device.artwork_src}}" title="{{device.video_title}}" artist="{{device.video_artist}}"
+            album="{{device.video_album}}" class="ap--media" controls autoplay loop>
+          </amp-video>
+        {% if device.url %}
+        </a>
+        {% endif %}
+        {% endif %}
+        {% else %}
+        {% if device.url %}
+        <a href="{{ g.doc('/content/amp-dev/about/success-stories/' + device.url + '.yaml', locale=doc.locale).url.path }}">
+        {% endif %}
+          <amp-img class="ap--media" alt="{{device.alt}}" height="{{device.height}}" layout="responsive" src="{{device.image_src}}"
+            width="{{device.width}}">
+          </amp-img>
+        {% if device.url %}
+        </a>
+        {% endif %}
+        {% endif%}
+      </div>
+      {% endif %}
       {% endfor %}
     </div>
-  </div>
+  {% endif %}
 </section>
+
+  {% set categories = g.categories('/content/amp-dev/about/success-stories', locale=doc.locale) %}
+  <section class="ap--intro ap--container">
+    <div class="ap--content">
+      <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
+    </div>
+
+    <amp-state id="activeFilter">
+      <script type="application/json">
+        {
+          "chosenFilter": "none"
+        }
+      </script>
+    </amp-state>
+
+    {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+    <div class="ap-o-filter-bubbles-list">
+      <button class="ap-m-filter-bubble filtered"
+        [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+        on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+        name="all">
+        All
+      </button>
+      {% for category, stories in categories %}
+      <button class="ap-m-filter-bubble"
+          [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
+          name="{{ category|slug }}">
+          {{ category }}
+        </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="ap--teaser-grid ap--container">
+    <div class="ap-o-teaser-grid">
+      <div class="ap-o-teaser-grid-list">
+        {% for teaser_doc in doc.collection.list_docs(locale=doc.locale, order_by='date')|reverse %}
+        {% include '/views/partials/teaser.j2' %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

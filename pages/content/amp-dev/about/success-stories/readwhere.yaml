@@ -1,5 +1,7 @@
 $title: Readwhere
 $category: publishers
+$date: 2018-09-20
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Readwhere provides seamless mobile content via AMP and PWA
+  layout: mobile
   subline: SEP 20, 2018
   devices:
     - image_src: '/static/img/success-stories/readwhere/amp_readwhere_1.jpg'
@@ -29,13 +32,13 @@ stage:
 
 kpis:
   - value: 30%
-    text: incremental revenue
+    text: Incremental revenue
 
   - value: 30%
-    text: higher user engagement
+    text: Higher user engagement
 
   - value: 20%
-    text: better ad viewability
+    text: Better ad viewability
 
 contents:
 

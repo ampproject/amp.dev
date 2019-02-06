@@ -1,5 +1,7 @@
 $title: Milestone
 $category: e-commerce
+$date: 2017-03-06
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Milestone drives conversions with AMP pages for local hospitality site
+  layout: mobile
   subline: MARCH 6, 2017
   devices:
 
@@ -30,13 +33,13 @@ stage:
 
 kpis:
   - value: 83%
-    text: increase in mobile transactions
+    text: Increase in mobile transactions
 
   - value: 68%
-    text: increase in conversion rates
+    text: Increase in conversion rates
 
   - value: 52%
-    text: increase in booked revenue
+    text: Increase in booked revenue
 
 contents:
 

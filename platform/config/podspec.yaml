@@ -18,6 +18,12 @@ localization:
   # - tr
   # - zh_CN
 
+sitemap:
+  enabled: yes
+  path: "/sitemap.xml"
+  collections:
+  - amp-dev
+
 markdown:
   extensions:
   - kind: sourcecode
@@ -34,5 +40,5 @@ ext:
           method: 'addCssFile'
         - name: 'icons'
           method: 'useIcon'
-- extensions.shortcodes.ShortcodesExtension
+- extensions.amp_dev.AmpDevExtension
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension

@@ -1,5 +1,6 @@
 $title: plista
 $category: advertisers
+$date: 2016-10-07
 formats:
   - websites
 
@@ -19,6 +20,7 @@ teaser:
 
 stage:
   headline: plista grows publisher revenue & user engagement with AMP
+  layout: all
   subline: OCTOBER 7, 2016
   devices:
 
@@ -26,14 +28,14 @@ stage:
       width: 5
       height: 3
       type: desktop
-      alt: Plista
+      alt: plista
 
 kpis:
   - value: 133%
-    text: avg growth in cpms
+    text: Average growth in CPMs
 
   - value: 220%
-    text: avg growth in ctrs
+    text: Average growth in CTRs
 
 contents:
 
@@ -51,7 +53,7 @@ contents:
     width: 5
     height: 3
     type: desktop
-    alt: Plista
+    alt: plista
     headline: Speed = Revenue
     text: “The results of the tests were impressive”, says Torben Brodt, Director Data Engineering at plista. For one publisher, CTRs were 600% greater after the implementation of AMP, while the average increase for publishers in the test was 220%. CPMs also grew 133% on average, with one client seeing 5X greater returns. Looking at both CTRs and CPMs together, it was clear that publishers in the test were seeing greater overall revenue and engagement after the mobile web app widget was AMPified.
     direction: left-flat
@@ -66,7 +68,7 @@ contents:
     image_src: '/static/img/success-stories/plista/plista_logo.png'
     width: 400
     height: 133
-    alt: Plista
+    alt: plista
     author: Torben Brodt, Director Data Engineering at plista.
     story_url: https://google.com
 

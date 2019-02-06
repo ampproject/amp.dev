@@ -36,8 +36,8 @@ kpis:
 </section>
 
 <section class="ap--content">
-  <div class="ap--container-fluid">
-    <div class="ap-m-copy ap-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
+  <div class="ap--container">
+    <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
       <h1>AMP<br> Ads</h1>
       <h5>These days, if it isn’t instant - it's not fast enough. Even the most memorable creative won’t serve its purpose if the ad is slow and disruptive for a user.</h5>
       <p>AMP is fundamentally changing the way ads are built, delivered and measured on the web, making them faster and minimizing disruptions for users. This increases viewability and click-through rates to improve monetization, making everyone happy: users, publishers and advertisers alike.</p>
@@ -209,8 +209,8 @@ kpis:
 </section>
 
 <section class="ap--content">
-  <div class="ap--container-fluid">
-    <div class="ap-m-copy ap-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
+  <div class="ap--container">
+    <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
       <h1>AMP for advertisers</h1>
       <h5>Grow engagement and increase conversions with faster experiences</h5>
       <p>The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. </p>
@@ -228,21 +228,47 @@ kpis:
   </div>
 </section>
 
-<section class="ap--content">
-  <div class="ap--container-fluid">
-    <div class="ap-m-copy ap-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h1>What’s the difference between an AMPHTML ad and a regular ad? .</h1>
-      <h5>Seconds.</h5>
-      <amp-img src="/static/img/ad-comparison.jpg" layout="responsive" width="1150" height="744"></amp-img>
-      <div class="ap-o-component-visual-link">
-        <a href="#" class="ap-m-lnk ap-m-lnk-square">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">Get Started</span>
-        </a>
+{% do doc.styles.addCssFile('css/components/molecules/shift-card.css') %}
+<section class="ap--shift-cards">
+
+  <div class="ap--container">
+    <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
+      <h1>What’s the difference between an AMPHTML ad and a regular ad? Seconds.</h1>
+    </div>
+  </div>
+
+  <div class="ap--shift-cards-grid ap--container">
+    <div class="ap-m-shift-card ap-m-shift-card-1 small">
+      <div class="ap-m-shift-card-title">AMPHTML Ad</div>
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+      <div class="ap-m-ghost-frame-mobile">
+        <amp-video
+          width="410"
+          height="732"
+          layout="responsive"
+          src="/static/img/amp_ad_video_left.mp4"
+          poster="/static/img/amp_ad_video_left.jpg"
+          title="An ad implemented as AMPHTML Ad"
+          autoplay
+          loop
+        ></amp-video>
+      </div>
+    </div>
+    <div class="ap-m-shift-card ap-m-shift-card-2 small">
+      <div class="ap-m-shift-card-title">Regular Ad</div>
+      <div class="ap-m-ghost-frame-mobile">
+        <amp-video
+          width="410"
+          height="732"
+          layout="responsive"
+          src="/static/img/amp_ad_video_right.mp4"
+          poster="/static/img/amp_ad_video_right.jpg"
+          title="A regular ad"
+          autoplay
+          loop
+        ></amp-video>
       </div>
     </div>
   </div>
+
 </section>

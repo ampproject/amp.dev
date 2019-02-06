@@ -1,5 +1,6 @@
 $title: Greenweez
 $category: e-commerce
+$date: 2017-06-06
 formats:
   - websites
 
@@ -18,6 +19,7 @@ teaser:
 
 stage:
   headline: Leading French organic retailer doubles mobile conversions with AMP
+  layout: mobile
   subline: JUNE 6, 2017
   devices:
 
@@ -29,13 +31,13 @@ stage:
 
 kpis:
   - value: 5X
-    text: increase in mobile page speed
+    text: Increase in mobile page speed
 
   - value: 80%
-    text: increase in mobile conversion rates
+    text: Increase in mobile conversion rates
 
   - value: 66%
-    text: decrease in mobile acquisition costs
+    text: Decrease in mobile acquisition costs
 
 contents:
   - layout: text

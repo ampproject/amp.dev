@@ -33,8 +33,8 @@ const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
 const {samplesBuilder} = require('./build/samplesBuilder');
+const {formatFilter} = require('./build/formatFilter');
 const roadmapImporter = require('./pipeline/roadmapImporter');
-const {FilteredPage, isFilterableRoute, FORMATS} = require('./pipeline/filteredPage');
 const {pageMinifier} = require('./build/pageMinifier');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
@@ -267,80 +267,16 @@ class Pipeline {
    * @return {Promise}
    */
   createFilteredPages() {
-    const log = new Signale({'interactive': true, 'scope': 'Filter pages'});
-    log.await('Filtering pages by formats ...');
-
     return new Promise((resolve, reject) => {
-      const stream = gulp.src(`${PAGES_DEST}/**/*.html`, {'base': './'})
-          .pipe(through.obj(function(page, encoding, callback) {
-            // Check if the page should even be filtered
-            if (!isFilterableRoute(page.relative)) {
-              log.info(`Skipping ${page.relative} as it is not filterable.`);
-              callback();
-              return;
-            }
-
-            // Already pull the contents form the buffer
-            const html = page.contents.toString();
-
-            // And check if it is a manually filtered page because
-            // then the other formats will be created from the unfiltered one
-            let manualFilter = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
-            manualFilter = manualFilter ? manualFilter[1] : null;
-            if (manualFilter && FORMATS.indexOf(manualFilter) !== -1) {
-              log.info(`${page.relative} is already a manual variant for ${manualFilter}.`);
-
-              const filteredPage = new FilteredPage(manualFilter, html, true);
-              page.contents = Buffer.from(filteredPage.content);
-
-              this.push(page);
-              callback();
-              return;
-            }
-
-            // If it is the original, unfiltered document create
-            // the not already existant filtered documents
-            log.await(`Creating variant for page ${page.relative} ...`);
-            for (const format of FORMATS) {
-              const variantPath =
-                page.relative.replace(path.extname(page.relative), `.${format}.html`);
-
-              // Check if there is a manually maintained format variant
-              if (fs.existsSync(path.join(__dirname, '/../', variantPath))) {
-                log.warn(`Page has a manual variant for format ${format}`);
-                continue;
-              } else {
-                let filteredPage = null;
-
-                try {
-                  filteredPage = new FilteredPage(format, html);
-                } catch(e) {
-                  log.warn(`Page is not available in format ${format}`);
-                }
-
-                if (filteredPage) {
-                  const variantPage = page.clone();
-                  variantPage.contents = Buffer.from(filteredPage.content);
-                  variantPage.extname = `.${format}.html`;
-                  this.push(variantPage);
-
-                  log.success(`Created variant for format ${format}`);
-                }
-              }
-            }
-
-            this.push(page);
-            callback();
-          }))
-          .pipe(gulp.dest('./'));
+      const stream = formatFilter.start();
 
       stream.on('error', (error) => {
-        log.fatal('Something went wrong while filtering pages by format.');
+        formatFilter._log.fatal('Something went wrong while filtering pages by format.');
         reject(error);
       });
 
       stream.on('end', () => {
-        log.success('Created filtered pages.');
+        formatFilter._log.success('Created filtered pages.');
         resolve();
       });
     });

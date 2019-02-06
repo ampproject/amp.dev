@@ -1,5 +1,7 @@
 $title: NoBroker
 $category: publishers
+$date: 2017-03-27
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: India’s leading rental site improved owner-to-renter connections by 77% with AMP
+  layout: mobile
   subline: MARCH 27, 2017
   devices:
 
@@ -30,16 +33,16 @@ stage:
 
 kpis:
   - value: 25%
-    text: increase in new user registration
+    text: Increase in new user registration
 
   - value: 77%
-    text: increase in connections (between owners and renters)
+    text: Increase in connections (between owners and renters)
 
   - value: 18%
-    text: reduction in bounce rate
+    text: Reduction in bounce rate
 
   - value: 10%
-    text: increase in pages per session
+    text: Increase in pages per session
 
 contents:
 

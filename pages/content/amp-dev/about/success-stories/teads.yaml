@@ -1,5 +1,7 @@
 $title: Teads
 $category: advertisers
+$date: 2016-12-02
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Teads brings AMP'd mobile video inventory to nearly 100 publishers
+  layout: mobile
   subline: DEC 2, 2016
   devices:
 
@@ -30,13 +33,13 @@ stage:
 
 kpis:
   - value: 15%
-    text: increase in average completion rates
+    text: Increase in average completion rates
 
   - value: 200%
-    text: increase in average clickthrough rate
+    text: Increase in average clickthrough rate
 
   - value: 18%
-    text: increase in available inventory
+    text: Increase in available inventory
 
 contents:
 

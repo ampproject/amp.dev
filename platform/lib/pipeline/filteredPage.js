@@ -75,7 +75,7 @@ class FilteredPage {
    */
   _isAvailable() {
     let body = this._dom('body');
-    return body.hasClass(`ap--${this._format}`) || !!body.attr('class');
+    return body.attr('data-available-formats').includes(this._format);
   }
 
   /**

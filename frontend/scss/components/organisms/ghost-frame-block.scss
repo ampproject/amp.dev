@@ -31,8 +31,8 @@ This positioning can be change by using the modifier `-alternate`.
     }
 
     @media (min-width: 1024px) {
-      grid-column: 13 / -3;
-      margin-top: -60%;
+      grid-column: 14 / -3;
+      margin-top: -70%;
     }
 
     .#{molecule('ghost-frame-mobile')} {
@@ -58,7 +58,7 @@ This positioning can be change by using the modifier `-alternate`.
   width: 100%;
 
   @media (max-width: 767px) {
-    left: 25%;
+    left: 0;
   }
 
   .#{molecule('ghost-frame-mobile')},
@@ -69,6 +69,7 @@ This positioning can be change by using the modifier `-alternate`.
 
   .all + & {
     .#{molecule('ghost-frame-desktop')} {
+      margin-top: 5%;
       margin-left: 10%;
 
       &:before {
@@ -78,29 +79,35 @@ This positioning can be change by using the modifier `-alternate`.
     }
 
     .#{molecule('ghost-frame-mobile')} {
-      margin-top: 25%;
+      margin-top: 30%;
       margin-left: 30%;
     }
 
     .#{molecule('ghost-frame-tablet')} {
-      margin-top: 10%;
+      margin-top: 15%;
       margin-left: 0%;
     }
   }
 
   .tablet-mobile + & {
+    @media (max-width: 767px) {
+      margin-left: 15%;
+    }
+
     .#{molecule('ghost-frame-desktop')} {
       display: none;
     }
 
     .#{molecule('ghost-frame-mobile')} {
-      margin-top: 18%;
-      margin-left: 50%;
+      margin-top: 26%;
+      margin-left: 0%;
+      max-width: 25%;
     }
 
     .#{molecule('ghost-frame-tablet')} {
-      margin-top: 10%;
-      margin-left: 0%;
+      margin-top: 5%;
+      margin-left: 20%;
+      max-width: 50%;
     }
   }
 
@@ -114,9 +121,17 @@ This positioning can be change by using the modifier `-alternate`.
     }
 
     .#{molecule('ghost-frame-mobile')} {
-      margin-top: 0%;
-      margin-left: 20%;
-      width: 17vw;
+      margin-top: 5%;
+      margin-left: 30%;
+      width: 40vw;
+      max-width: 50%;
+      padding: 3.5% 2% 2.5%;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+        margin-left: 5%;
+        width: 17vw;
+      }
     }
   }
 }

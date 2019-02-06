@@ -36,6 +36,24 @@
     @include txt;
   }
 
+  &-background {
+    * {
+      position: relative;
+    }
+    &-headline {
+      &.ap-m-biggy-headline {
+        position: absolute;
+        margin-top: -48px;
+        margin-left: -40px;
+        font-size: 140px;
+        @media (min-width: 768px) {
+          margin-top: -25px;
+          margin-left: -150px;
+        }
+      }
+    }
+  }
+
   &-headline {
     @include hl;
     font-size: 26vw;

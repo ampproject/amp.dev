@@ -207,7 +207,7 @@ Last but not least, try to minimize the number of custom fonts that you use on y
 
 [Server-side-rendering](https://docs.google.com/document/d/1gViU1hxtGXwMSTNnum2zY_p9ZWvFwMKoachNdIRUgh0/edit) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
 
-[tip type='important']
+[tip type="important"]
 Server-side rendering currently results in invalid AMP pages. Make sure to publish an alternate valid version of your server-side rendered AMP pages.
 [/tip]
 

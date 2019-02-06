@@ -1,5 +1,7 @@
 $title: Renovation Brands
 $category: e-commerce
+$date: 2018-07-11
+
 formats:
   - websites
 
@@ -19,6 +21,7 @@ teaser:
 
 stage:
   headline: Renovation Brands improves speed and site duration with AMP
+  layout: mobile
   subline: JUL 11, 2018
   devices:
     - image_src: '/static/img/success-stories/renovation/amp_renovation_1.jpg'
@@ -29,13 +32,13 @@ stage:
 
 kpis:
   - value: 27%
-    text: longer sessions
+    text: Longer sessions
 
   - value: 24%
-    text: more pages viewed
+    text: More pages viewed
 
   - value: 30%
-    text: lower bounce rate
+    text: Lower bounce rate
 
 contents:
 

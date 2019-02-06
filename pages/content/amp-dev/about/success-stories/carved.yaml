@@ -1,5 +1,6 @@
 $title: Carved
 $category: e-commerce
+$date: 2018-05-25
 formats:
   - websites
 
@@ -19,6 +20,7 @@ teaser:
 stage:
   headline: Carved increases conversion rate by 75% with AMP and PWA
   subline: MAY 25, 2018
+  layout: mobile
   devices:
     - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
       width: 3
@@ -28,13 +30,13 @@ stage:
 
 kpis:
   - value: 75%
-    text: higher e-commerce conversion rate
+    text: Higher e-commerce conversion rate
 
   - value: 37%
-    text: faster average load speed
+    text: Faster average load speed
 
   - value: 33%
-    text: lower bounce rate
+    text: Lower bounce rate
 
 contents:
 

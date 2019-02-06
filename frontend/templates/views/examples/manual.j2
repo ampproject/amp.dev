@@ -46,7 +46,8 @@ tags are specific for amp.dev #}
 
 {% block body %}
 {% set body_tag = doc.example.document.body %}
-{{ (body_tag.replace('<body', '<body class=""') if 'class="' not in body_tag else body_tag)|safe }}
+{% set available_formats = ' '.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
+{{ (body_tag.replace('>', 'data-available-formats="' + available_formats + '">'))|safe }}
 {{ doc.example.document.elementsAfterBody|safe }}
 {% endblock %}
 
