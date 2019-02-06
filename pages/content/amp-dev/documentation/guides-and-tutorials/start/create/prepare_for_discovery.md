@@ -1,6 +1,6 @@
 ---
 $title: Prepare your page for discovery and distribution
-$order: 5
+$order: 4
 author: pbakaus
 contributors:
   - bpaduch
