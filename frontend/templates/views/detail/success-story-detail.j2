@@ -122,7 +122,7 @@
         {% if content.layout == 'text-media' %}
           <div class="ap-o-text-media-block ap--container-fluid">
             <div class="ap-m-text-media text ap-m-copy">
-              <h2>{{content.headline|safe}}</h2>
+              {% if content.headline %}<h2>{{content.headline|safe}}</h2>{% endif %}
               <p>{{content.text|safe}}</p>
             </div>
             {% if content.background %}
@@ -177,7 +177,7 @@
         {% if content.layout == 'text' %}
           <div class="ap--container-fluid">
             <div class="ap-o-text-media-block ap-o-text-media-block-center ap-m-copy">
-              <h2>{{content.headline|safe}}</h2>
+              {% if content.headline %}<h2>{{content.headline|safe}}</h2>{% endif %}
               <p>{{content.text|safe}}</p>
             </div>
           </div>
@@ -222,7 +222,7 @@
         {# layout: quote #}
         {% if content.layout == 'quote' %}
           {% do doc.styles.addCssFile('css/components/atoms/bevel.css') %}
-          <section class="ap--quote ap--container-fluid ap-a-bevel ap-a-bevel-right">
+          <section class="ap--quote ap--container-fluid{% if content.bevel %} ap-a-bevel ap-a-bevel-{{ content.bevel }}{% endif %}">
             <div class="ap-m-quote">
               <div class="ap-m-quote-source">
                <div class="ap-a-ico">
@@ -254,7 +254,7 @@
         {% if content.layout == 'text-button' %}
           <div class="ap-o-text-media-block ap--container-fluid">
             <div class="ap-m-text-media text ap-m-copy">
-              <h2>{{content.headline|safe}}</h2>
+              {% if content.headline %}<h2>{{content.headline|safe}}</h2>{% endif %}
               <p>{{content.text|safe}}</p>
               <a href="{{content.download_url}}" target="_blank" class="ap-m-lnk ap-m-lnk-square">
                 <div class="ap-a-ico ap-m-lnk-icon">
