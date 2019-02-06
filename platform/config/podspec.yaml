@@ -21,8 +21,6 @@ localization:
 sitemap:
   enabled: yes
   path: "/sitemap.xml"
-  collections:
-  - amp-dev
 
 markdown:
   extensions:
