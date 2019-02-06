@@ -1,38 +1,35 @@
 ---
 $title: Tools
-$view: /views/custom-content.j2
+$view: /views/custom.j2
 ---
 {% do doc.styles.addCssFile('css/components/templates/tools.css') %}
 
 {% do doc.styles.addCssFile('css/components/molecules/window-frame.css') %}
-{% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
 <main class="ap--main ap-t-tools">
 
-  <section class="ap--stage ap--container-fluid">
-    <div class="ap-o-stage ap-o-stage-websites all">
-      <div class="ap--container-fluid">
-        <div class="ap-o-stage-content">
-          <h1 class="ap-o-stage-content-headline">AMP Tools</h1>
-        </div>
+  <section class="ap--container">
+    {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+    <div class="ap-m-jumbo">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/wrench.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wrench"></use></svg>
       </div>
+      <h1 class="ap-m-jumbo-headline">Tools</h1>
+      <p class="ap-m-jumbo-copy">Over the years a lot of useful tools were created to easen up your daily life with AMP. There are tools that validate your pages, help to quickly set up a demo and even one that helps you making your AMP pages even faster. Check them out!</p>
+    </div>
+
+    <div class="ap-t-tools-anchor-list">
+      <a href="#validator">AMP validator</a> |
+      <a href="#playground">AMP playground</a> |
+      <a href="#toolbox">AMP toolbox</a> |
+      <a href="#experiments">AMP experiments</a> |
+      <a href="#vscode">Visual Studio Code Extension</a>
     </div>
   </section>
 
-  <div class="ap--container">
-    <div class="ap--content">
-      <div class="ap-t-tools-anchor-list">
-        <a href="#AMP validator">AMP validator</a> |
-        <a href="#AMP playground">AMP playground</a> |
-        <a href="#AMP toolbox">AMP toolbox</a> |
-        <a href="#AMP experiments">AMP experiments</a> |
-        <a href="#Visual Studio Code Extension">Visual Studio Code Extension</a>
-      </div>
-    </div>
-  </div>
-
   <!-- amp validator -->
-  <div class="ap-o-tool-block -alternate" id="AMP validator">
+  <div class="ap-o-tool-block -alternate" id="validator">
     <div class="ap--container">
       <!-- window frame -->
       <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
@@ -70,7 +67,7 @@ $view: /views/custom-content.j2
 
 
   <!-- amp playground -->
-  <div class="ap-o-tool-block -alternate" id="AMP playground">
+  <div class="ap-o-tool-block -alternate" id="playground">
     <div class="ap--container">
       <!-- window frame -->
       <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Playground">
@@ -106,7 +103,7 @@ $view: /views/custom-content.j2
   </div>
 
   <!-- amp toolbox -->
-  <div class="ap-o-tool-block -alternate" id="AMP toolbox">
+  <div class="ap-o-tool-block -alternate" id="toolbox">
     <div class="ap--container">
       <!-- window frame -->
       <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Optimizer">
@@ -161,7 +158,7 @@ $view: /views/custom-content.j2
   </div>
 
   <!-- amp experiments -->
-  <div class="ap-o-tool-block -alternate"  id="AMP experiments">
+  <div class="ap-o-tool-block -alternate"  id="experiments">
     <div class="ap--container">
       <!-- window frame -->
       <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Experiments">
@@ -197,7 +194,7 @@ $view: /views/custom-content.j2
   </div>
 
   <!-- VSCode extension -->
-  <div class="ap-o-tool-block -alternate" id="Visual Studio Code Extension">
+  <div class="ap-o-tool-block -alternate" id="vscode">
     <div class="ap--container">
       <!-- window frame -->
       <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
