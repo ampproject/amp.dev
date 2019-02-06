@@ -45,44 +45,6 @@
     @include content;
   }
 
-  .#{organism('platformandvendor')} {
-    grid-column: 2 / 24;
-    width: 100%;
-
-    &-accordion-header {
-      background: none;
-      background-color: color('white');
-      border: 1px solid color('whisper');
-      border-left: none;
-      border-right: none;
-      border-radius: 4px;
-      padding: 0;
-      box-shadow: 0 10px 25px 0px rgba(0, 0, 0, 0.07);
-      transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      margin-bottom: 1em;
-      h4 {
-        margin: 30px;
-      }
-    }
-
-    &-item-container {
-      list-style: none;
-      columns: 2;
-      padding-left: 30px;
-      @media (min-width: 768px) {
-        columns: 3;
-      }
-      @media (min-width: 1024px) {
-        columns: 4;
-      }
-      li {
-         margin-bottom: 10px;
-         @include txt;
-         @include txt-2;
-      }
-    }
-  }
-
   .#{utility('content')} {
     @include default-section-padding;
     margin-bottom: 7em;
