@@ -465,6 +465,15 @@ success_stories:
   </section>
 
   {% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
+
+  <amp-state id="activeFilter">
+    <script type="application/json">
+      {
+        "chosenFilter": "none"
+      }
+    </script>
+  </amp-state>
+
   <section class="ap--teaser-grid ap--container">
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
