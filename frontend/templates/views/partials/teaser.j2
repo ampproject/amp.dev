@@ -127,7 +127,7 @@
   </div>
   {% endif %}
 
-  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url|relative }}">
+  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% set teaser = teaser_doc.teaser or {} %}
 
@@ -147,9 +147,9 @@
         <amp-img
           src="{{ teaser.image.src }}"
           layout="fill"
-          width="3"
-          height="1"
-          alt="Dummy.">
+          width="22"
+          height="9"
+          alt="{{ teaser_doc.title }}">
         </amp-img>
         {% elif teaser.icon %}
         <div class="ap-m-teaser-icon">

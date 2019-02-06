@@ -8,6 +8,7 @@ from grow.documents import document, document_format, static_document
 from grow.extensions import hooks
 
 from .markdown_extras import block_tip as BlockTip
+from .markdown_extras import block_video as BlockVideo
 from .markdown_extras import inline_tip as InlineTip
 
 
@@ -33,6 +34,7 @@ class AmpDevPreRenderHook(hooks.PreRenderHook):
         # Trigger for all markdown extensions
         content = InlineTip.trigger(original_body, content)
         content = BlockTip.trigger(original_body, content)
+        content = BlockVideo.trigger(original_body, content)
 
         return content
 
