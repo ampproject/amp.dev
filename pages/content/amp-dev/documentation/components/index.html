@@ -74,27 +74,43 @@ teaser:
 
       {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
 
-      <div class="ap-t-component-overview-anchor-list">
+      <amp-state id="activeFilter">
+        <script type="application/json">
+          {
+            "chosenFilter": "none"
+          }
+        </script>
+      </amp-state>
+
+      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+      <div class="ap-o-filter-bubbles-list">
+        <button class="ap-m-filter-bubble filtered"
+          [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+          on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+          name="all">
+          All
+        </button>
         {% for category, components in categories %}
-        <span class="ap-t-component-overview-anchor-list-item">
-          <a href="#{{ category }}">{{ category }}</a>
-        </span>
+        <button class="ap-m-filter-bubble"
+          [class]="activeFilter.chosenFilter == '{{ category|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
+          name="{{ category }}">
+          {{ category }}
+        </button>
         {% endfor %}
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-      {% for category, components in categories %}
-
+      
+      
       <div class="ap-o-teaser-grid">
-
-        <h2 id="{{ category }}">{{ category }}</h2>
-        <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ components|count }}">
-          {% for teaser_doc in components %}
-          {% include '/views/partials/teaser.j2' %}
+        {# Hardcode to a length of 9 teasers as there will be at least that much #}
+        <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
+          {% for teaser_doc in g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale, order_by='title') %}
+            {% include '/views/partials/teaser.j2' %}
           {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </section>
   </div>
 </main>

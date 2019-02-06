@@ -1,0 +1,43 @@
+/*
+
+#####################
+### TEMPLATE: 404 ###
+#####################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+.#{template('404')} {
+  padding-top: 3em;
+
+  .#{utility('container')} {
+    @include container;
+  }
+
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+
+  .#{molecule('copy-center')} {
+    grid-column: 8 / 18;
+    
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .#{molecule('biggy-headline')} {
+    margin-bottom: 0;
+  }
+}

@@ -38,6 +38,7 @@ const SELECTOR_REWRITE_SAFE = [
   'ap-o-teaser-grid',
   'ap-m-teaser',
   'ap-o-benefits',
+  'ap-o-consent',
   'ap-o-footer',
 ];
 

@@ -73,8 +73,20 @@ success_stories:
         </div>
       </div>
     </div>
-
+    
+    {% with %}
+    {% set case_band_images = [
+      {"src": "/static/img/case-band-image-2.jpg", "width": "519", "height": "931"},
+      {"src": "/static/img/case-band-image-1.png", "width": "711", "height": "826"},
+      {"src": "/static/img/case-band-image-5.jpg", "width": "923", "height": "592"},
+      {"src": "/static/img/case-band-image-4.png", "width": "738", "height": "890"},
+      {"src": "/static/img/case-band-image-3.jpg", "width": "860", "height": "554"},
+      {"src": "/static/img/case-band-image-6.jpg", "width": "531", "height": "467"},
+      {"src": "/static/img/case-band-image-7.jpg", "width": "478", "height": "828"}
+      ]
+    %}
     {% include 'views/partials/case-band.j2' %}
+    {% endwith %}
   </section>
 
   <section class="ap--news ap--container-fluid">
@@ -175,10 +187,18 @@ success_stories:
         </script>
       </amp-animation>
 
+      <amp-state id="chosenFormat">
+          <script type="application/json">
+            {
+              "activeFormat": "websites"
+            }
+          </script>
+        </amp-state>
+
       <div class="ap-o-format-explainer-visual ap-o-format-explainer-group swift">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-visual-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-visual-{{ format.name }} active' : 'ap-o-format-explainer-visual-{{ format.name }}'">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-visual-{{ format.name }} active' : 'ap-o-format-explainer-visual-{{ format.name }}'">
           {% include format.visual %}
         </div>
         {% endfor %}
@@ -187,7 +207,7 @@ success_stories:
       <div class="ap-o-format-explainer-content ap-o-format-explainer-group">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-content-{{ format.name }} ap-m-copy {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
           <h2 class="ap-o-format-explainer-headline">{{ format.headline }}</h2>
           <p class="ap-o-format-explainer-copy">{{ format.description }}</p>
         </div>
@@ -197,10 +217,10 @@ success_stories:
       <div class="ap-o-format-explainer-navigation">
         {% for format in doc.format_explainer %}
         <button tabindex="0" role="button" class="ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} active' : 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ format.name }}'}),switchFormat.start">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} active' : 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }}'"
+          on="tap:AMP.setState({chosenFormat: {activeFormat: '{{ format.name }}'} }),switchFormat.start">
           <div class="ap-o-format-explainer-button-icon ap-a-ico {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button-icon ap-a-ico active' : 'ap-o-format-explainer-button-icon ap-a-ico'">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button-icon ap-a-ico active' : 'ap-o-format-explainer-button-icon ap-a-ico'">
             {% do doc.icons.useIcon('icons/amp-' + format.name + '.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
@@ -212,8 +232,8 @@ success_stories:
       <div class="ap-o-format-explainer-link ap-o-format-explainer-group">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-link-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-link-{{ format.name }} active' : 'ap-o-format-explainer-link-{{ format.name }}'">
-          <a href="{{ format.url }}" [href]="formats[activeFormat].url" class="ap-m-lnk ap-m-lnk-square">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-link-{{ format.name }} active' : 'ap-o-format-explainer-link-{{ format.name }}'">
+          <a href="{{ format.url }}" [href]="formats[chosenFormat.activeFormat].url" class="ap-m-lnk ap-m-lnk-square">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
