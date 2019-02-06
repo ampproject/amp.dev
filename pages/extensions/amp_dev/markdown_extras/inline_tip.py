@@ -41,7 +41,7 @@ def _transform(content):
 
         # Determine actual tip type by leading keyword
         if name in SUCCESS_KEYWORDS:
-          type = 'success'
+          type = 'default'
         elif name in READ_ON_KEYWORDS:
           type = 'read-on'
         elif name in IMPORTANT_KEYWORDS:
