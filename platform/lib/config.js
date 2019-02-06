@@ -70,6 +70,7 @@ class Config {
     // Force-enable all languages during development
     if (this.environment == 'development') {
       podspec.localization.locales = [
+        'en',
         'fr',
         'ar',
         'es',

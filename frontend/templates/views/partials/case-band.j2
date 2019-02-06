@@ -1,25 +1,14 @@
 {% do doc.styles.addCssFile('css/components/organisms/case-band.css') %}
 
 <div class="ap-o-case-band">
-  <div class="ap-o-case-band-image ap-o-case-band-image-2">
-    <amp-img class="ap--media" src="/static/img/case-band-image-2.jpg" layout="responsive" width="519" height="931"></amp-img>
+  {% for image in case_band_images %}
+  <div class="ap-o-case-band-image">
+    <amp-img class="ap--media"
+     src="{{ image.src }}"
+     layout="responsive"
+     width="{{ image.width }}"
+     height="{{ image.height }}">
+    </amp-img>
   </div>
-  <div class="ap-o-case-band-image ap-o-case-band-image-1">
-    <amp-img class="ap--media" src="/static/img/case-band-image-1.png" layout="responsive" width="711" height="826"></amp-img>
-  </div>
-  <div class="ap-o-case-band-image ap-o-case-band-image-5">
-    <amp-img class="ap--media" src="/static/img/case-band-image-5.jpg" layout="responsive" width="923" height="592"></amp-img>
-  </div>
-  <div class="ap-o-case-band-image ap-o-case-band-image-4">
-    <amp-img class="ap--media" src="/static/img/case-band-image-4.png" layout="responsive" width="738" height="890"></amp-img>
-  </div>
-  <div class="ap-o-case-band-image ap-o-case-band-image-3">
-    <amp-img class="ap--media" src="/static/img/case-band-image-3.jpg" layout="responsive" width="860" height="554"></amp-img>
-  </div>
-  <div class="ap-o-case-band-image ap-o-case-band-image-6">
-    <amp-img class="ap--media" src="/static/img/case-band-image-6.jpg" layout="responsive" width="531" height="467"></amp-img>
-  </div>
-  <div class="ap-o-case-band-image ap-o-case-band-image-7">
-    <amp-img class="ap--media" src="/static/img/case-band-image-7.jpg" layout="responsive" width="478" height="828"></amp-img>
-  </div>
+  {% endfor %}
 </div>

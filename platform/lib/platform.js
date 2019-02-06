@@ -27,6 +27,7 @@ const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
   'examples': require('./routers/examples.js'),
+  'static': require('./routers/static.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
 };
@@ -93,8 +94,9 @@ class Platform {
   _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.examples);
-    this.server.use('/playground',  routers.playground);
-    this.server.use('/boilerplate',  routers.boilerplate);
+    this.server.use(routers.static);
+    this.server.use('/playground', routers.playground);
+    this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }

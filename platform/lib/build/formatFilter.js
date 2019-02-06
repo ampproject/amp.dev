@@ -85,7 +85,7 @@ class FormatFilter {
    * @return {Boolean}
    */
   _isManuallyFiltered(page) {
-    let format = page.relative.match(/\.(websites|ads|stories|emails)\.html/);
+    let format = page.relative.match(/\.(websites|ads|stories|email)\.html/);
     return format ? format[1] : null;
   }
 

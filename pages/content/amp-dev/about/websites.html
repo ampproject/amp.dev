@@ -74,7 +74,19 @@ kpis:
       <p>AMP enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms. Publishers and advertisers can decide how to present their content that emphasizes a user-first experience.</p>
     </div>
 
+    {% with %}
+    {% set case_band_images = [
+      {"src": "/static/img/case-band-post-mobile.png", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-vox-mobile.png", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-magebit-desktop.png", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-bmw-mobile.png", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-iene-desktop.png", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-renovationbrands-desktop.png", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-tasty-mobile.png", "width": "750", "height": "1334"}
+      ]
+    %}
     {% include 'views/partials/case-band.j2' %}
+    {% endwith %}
   </div>
 </section>
 
@@ -189,9 +201,9 @@ kpis:
     </div>
     <div class="ap-m-quote-quote">
       <blockquote>
-        <p class="ap-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combiningreporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.<p>
+        <p class="ap-a-txt">We are committed to improving speed across the board. If our site takes a long time to load, it doesn’t matter how great our journalism is, some people will leave the page before they see what’s there.<p>
       </blockquote>
-      <p>Greg Manifold, Design Director of The Washington Post</p>
+      <p>David Merrell, Senior Product Manager</p>
 
       <a href="{{ g.doc('/content/amp-dev/about/success-stories/washingtonpost.yaml').url.path }}" class="ap-m-lnk">
         <div class="ap-a-ico ap-m-lnk-icon">
@@ -236,7 +248,7 @@ kpis:
 
     <div class="ap-m-copy ap-m-copy-right">
       <h2>AMP Cache</h2>
-      
+
       <p>AMP pages can be cached for near instantaneous loading on the web. Platforms like Google run AMP caches to enable fast loading of your content from their service.</p>
 
       <p>The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency.

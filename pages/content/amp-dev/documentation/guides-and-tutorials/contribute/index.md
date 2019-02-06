@@ -1,5 +1,7 @@
 ---
 $title: How to contribute
+$titles:
+  header: Contribute
 $path: /documentation/guides-and-tutorials/contribute/index.html
 $order: 0
 

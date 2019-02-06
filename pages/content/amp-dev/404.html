@@ -1,0 +1,17 @@
+---
+$title: 404
+$view: /views/custom.j2
+---
+{% do doc.styles.addCssFile('css/components/templates/404.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
+
+<main class="ap--main ap-t-404">
+  <div class="ap--container">
+    <div class="ap-m-copy ap-m-copy-center">
+      <h1 class="ap-m-biggy-headline">404</h1>
+      <h3>Uh oh! That's an error.</h3>
+      <p>The page you've requested can't be found. Why don't you browse around, or while you're here, play a game of tic-tac-toe made with AMP?</p>
+    </div>
+  </div>
+</main>

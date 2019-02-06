@@ -4,6 +4,7 @@ $order: 0
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/create/{base}.html
 $title@: Create Your First AMP Page
+$title@fr: Créer votre page AMP HTML
 
 chaptered: true
 tutorial: true

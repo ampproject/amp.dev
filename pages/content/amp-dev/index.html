@@ -68,13 +68,25 @@ success_stories:
     <div class="ap-o-stage ap-o-stage-websites">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
-            <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create user-first {% include 'views/partials/rolling-formats.j2' %}</h1>
+            <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create <span style="white-space: nowrap;">user-first</span> {% include 'views/partials/rolling-formats.j2' %}</h1>
             <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ap-o-stage-content-button ap-a-btn">Get started</a>
         </div>
       </div>
     </div>
 
+    {% with %}
+    {% set case_band_images = [
+      {"src": "/static/img/case-band-image-2.jpg", "width": "519", "height": "931"},
+      {"src": "/static/img/case-band-image-1.png", "width": "711", "height": "826"},
+      {"src": "/static/img/case-band-image-5.jpg", "width": "923", "height": "592"},
+      {"src": "/static/img/case-band-image-4.png", "width": "738", "height": "890"},
+      {"src": "/static/img/case-band-image-3.jpg", "width": "860", "height": "554"},
+      {"src": "/static/img/case-band-image-6.jpg", "width": "531", "height": "467"},
+      {"src": "/static/img/case-band-image-7.jpg", "width": "478", "height": "828"}
+      ]
+    %}
     {% include 'views/partials/case-band.j2' %}
+    {% endwith %}
   </section>
 
   <section class="ap--news ap--container-fluid">
@@ -175,10 +187,18 @@ success_stories:
         </script>
       </amp-animation>
 
+      <amp-state id="chosenFormat">
+          <script type="application/json">
+            {
+              "activeFormat": "websites"
+            }
+          </script>
+        </amp-state>
+
       <div class="ap-o-format-explainer-visual ap-o-format-explainer-group swift">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-visual-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-visual-{{ format.name }} active' : 'ap-o-format-explainer-visual-{{ format.name }}'">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-visual-{{ format.name }} active' : 'ap-o-format-explainer-visual-{{ format.name }}'">
           {% include format.visual %}
         </div>
         {% endfor %}
@@ -187,7 +207,7 @@ success_stories:
       <div class="ap-o-format-explainer-content ap-o-format-explainer-group">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-content-{{ format.name }} ap-m-copy {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
           <h2 class="ap-o-format-explainer-headline">{{ format.headline }}</h2>
           <p class="ap-o-format-explainer-copy">{{ format.description }}</p>
         </div>
@@ -197,10 +217,10 @@ success_stories:
       <div class="ap-o-format-explainer-navigation">
         {% for format in doc.format_explainer %}
         <button tabindex="0" role="button" class="ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} active' : 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }}'"
-          on="tap:AMP.setState({activeFormat: '{{ format.name }}'}),switchFormat.start">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }} active' : 'ap-o-format-explainer-button ap-o-format-explainer-button-{{ format.name }}'"
+          on="tap:AMP.setState({chosenFormat: {activeFormat: '{{ format.name }}'} }),switchFormat.start">
           <div class="ap-o-format-explainer-button-icon ap-a-ico {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button-icon ap-a-ico active' : 'ap-o-format-explainer-button-icon ap-a-ico'">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button-icon ap-a-ico active' : 'ap-o-format-explainer-button-icon ap-a-ico'">
             {% do doc.icons.useIcon('icons/amp-' + format.name + '.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
@@ -212,8 +232,8 @@ success_stories:
       <div class="ap-o-format-explainer-link ap-o-format-explainer-group">
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-link-{{ format.name }} {{ 'active' if loop.index == 1 }}"
-          [class]="activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-link-{{ format.name }} active' : 'ap-o-format-explainer-link-{{ format.name }}'">
-          <a href="{{ format.url }}" [href]="formats[activeFormat].url" class="ap-m-lnk ap-m-lnk-square">
+          [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-link-{{ format.name }} active' : 'ap-o-format-explainer-link-{{ format.name }}'">
+          <a href="{{ format.url }}" [href]="formats[chosenFormat.activeFormat].url" class="ap-m-lnk ap-m-lnk-square">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
@@ -254,13 +274,13 @@ success_stories:
           {% do doc.icons.useIcon('icons/logo.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </div>
-        <h2>AMP by Example</h2>
+        <h2>AMP in action</h2>
       </div>
     </div>
 
     <div class="ap--container-fluid">
       <div class="ap-m-copy">
-        <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
+        <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. Can't believe it? Try it out for yourself in the playground below:</p>
       </div>
 
       <div class="ap-o-sampler">
@@ -279,10 +299,9 @@ success_stories:
         {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
-            width="11"
-            height="5"
+            height="450px"
+            layout="fixed-height"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
-            layout="responsive"
             resizable
             noloading
             frameborder="0"
@@ -446,6 +465,15 @@ success_stories:
   </section>
 
   {% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
+
+  <amp-state id="activeFilter">
+    <script type="application/json">
+      {
+        "chosenFilter": "none"
+      }
+    </script>
+  </amp-state>
+
   <section class="ap--teaser-grid ap--container">
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
