@@ -132,19 +132,7 @@
     </div>
     {% endif %}
 
-    <amp-analytics type="gtag" data-credentials="include">
-      <script type="application/json">
-      {
-        "vars" : {
-          "gtag_id": "{{ podspec.gaTrackingId }}",
-          "config" : {
-            "{{ podspec.gaTrackingId }}": {
-              "groups": "default"
-            }
-          }
-        }
-      }
-      </script>
-    </amp-analytics>
+    {% include 'views/partials/analytics.j2' %}
+    {% include 'views/partials/consent.j2' %}
   </body>
 </html>

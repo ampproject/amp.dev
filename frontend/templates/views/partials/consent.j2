@@ -1,0 +1,34 @@
+<amp-geo layout="nodisplay">
+  <script type="application/json">
+    {
+      "ISOCountryGroups": {
+        "eu": ["at", "be", "bg", "ch", "cy", "cz", "dk", "de", "ee", "el", "es", "fi", "fr", "hr", "ie", "is", "it", "li", "lv", "lt", "lu", "hu", "mt", "nl", "no", "pl", "pt", "ro", "si", "sk", "se", "uk"]
+      }
+    }
+  </script>
+</amp-geo>
+
+{% do doc.styles.addCssFile('/css/components/organisms/consent.css') %}
+<amp-consent id="consent" class="ap-o-consent" layout="nodisplay">
+  <script type="application/json">
+    {
+      "consents": {
+        "eu": {
+          "promptIfUnknownForGeoGroup": "eu",
+          "promptUI": "consent-popup"
+        }
+      }
+    }
+  </script>
+
+  <div id="consent-popup" class="consent-popup">
+    <button type="reset" class="ap-o-consent-close" on="tap:consent.dismiss" role="button" tabindex="0">
+      {% do doc.icons.useIcon('/icons/cross.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cross"></use></svg>
+    </button>
+    <p class="ap-o-consent-text">
+        We use cookies to understand how you use our site and to improve your experience. By continuing to use our site, you accept our <a href="https://policies.google.com/technologies/cookies">use of cookies</a> and <a href="https://policies.google.com/privacy">privacy policy</a>.
+    </p>
+    <button on="tap:consent.accept" class="ap-a-btn" role="button" tabindex="1">OK</button>
+  </div>
+</amp-consent>
