@@ -69,7 +69,7 @@
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
-<div class="ap-m-teaser ap-m-teaser-component">
+<div class="ap-m-teaser ap-m-teaser-component" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
   <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% if teaser_doc.formats %}
