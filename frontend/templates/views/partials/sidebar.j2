@@ -27,6 +27,7 @@
           <li class="nav-item-tutorial-divider"></li>
           {% endif %}
 
+          {% if not item.draft or doc.pod.env.dev %}
           {# Check if the item is a) collection ... #}
           {% if '<Collection' in item|pprint %}
           {% set collection = item %}
@@ -98,6 +99,7 @@
               {% endif %}
             </a>
           </li>
+          {% endif %}
           {% endif %}
           {% endif %}
 
