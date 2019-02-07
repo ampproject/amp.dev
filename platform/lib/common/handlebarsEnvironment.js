@@ -30,7 +30,6 @@ PARTIALS_BASE_PATH = utils.project.absolute('frontend/hbs/partials/');
  * one that is used by Grow
  */
 class HandlebarsEnvironment {
-
   constructor() {
     this._log = new Signale({
       'interactive': false,
@@ -49,9 +48,9 @@ class HandlebarsEnvironment {
       'helpers': {
         'css': (filePath) => {
           try {
-            let css = fs.readFileSync(CSS_BASE_PATH + filePath);
+            const css = fs.readFileSync(CSS_BASE_PATH + filePath);
             return css;
-          } catch(e) {
+          } catch (e) {
             this._log.warn(`Can't find stylesheet ${CSS_BASE_PATH + filePath}`, e);
             return `/* Not found: ${filePath} */`;
           }
@@ -59,12 +58,12 @@ class HandlebarsEnvironment {
         'icon': (filePath) => {
           try {
             return fs.readFileSync(ICONS_BASE_PATH + filePath);
-          } catch(e) {
+          } catch (e) {
             this._log.warn(`Can't find icon ${ICONS_BASE_PATH + filePath}`, e);
             return `<!-- Not found: ${filePath} -->`;
           }
-        }
-      }
+        },
+      },
     });
   }
 

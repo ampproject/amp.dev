@@ -19,8 +19,8 @@ async function importRoadmap() {
     'previews': [
       'symmetra-preview',
       'inertia-preview',
-    ]
-  })
+    ],
+  });
 
   gitHubImporter.checkCredentials();
   octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {

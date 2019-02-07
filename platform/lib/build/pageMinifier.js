@@ -21,11 +21,9 @@ const {Signale} = require('signale');
 const gulp = require('gulp');
 const minifyHtml = require('html-minifier').minify;
 const through = require('through2');
-const path = require('path');
 const CleanCSS = require('clean-css');
 const crypto = require('crypto');
 const rcs = require('rcs-core');
-const utils = require('@lib/utils');
 const config = require('@lib/config');
 
 // List of selectors that can be safely minified
@@ -53,7 +51,7 @@ class PageMinifier {
 
     // Set excludes for CSS selector rewriting
     rcs.selectorLibrary.setExclude(
-      new RegExp('^(?!' + SELECTOR_REWRITE_SAFE.join('|') + ').*$')
+        new RegExp('^(?!' + SELECTOR_REWRITE_SAFE.join('|') + ').*$')
     );
 
     // An instance of CleanCSS
@@ -112,7 +110,7 @@ class PageMinifier {
     if (!path.match(SELECTOR_REWRITE_EXCLUDED_PATHS)) {
       try {
         html = this._rewriteSelectors(html);
-      } catch(e) {
+      } catch (e) {
         this._log.warn(`Could not rewrite selectors for ${path}`);
         console.error(e);
       }
@@ -129,20 +127,20 @@ class PageMinifier {
    * @return {String}
    */
   _rewriteSelectors(html) {
-      const AMP_CUSTOM_STYLE_PATTERN = /<style amp-custom>.*?<\/style>/ms;
-      let css = html.match(AMP_CUSTOM_STYLE_PATTERN);
+    const AMP_CUSTOM_STYLE_PATTERN = /<style amp-custom>.*?<\/style>/ms;
+    let css = html.match(AMP_CUSTOM_STYLE_PATTERN);
 
-      if (css) {
-        css = css[0].replace(/<style amp-custom>|<\/style>/g, '');
+    if (css) {
+      css = css[0].replace(/<style amp-custom>|<\/style>/g, '');
 
-        rcs.fillLibraries(css, {
-          'prefix': 'ap',
-        });
-        return rcs.replace.html(html);
-      }
+      rcs.fillLibraries(css, {
+        'prefix': 'ap',
+      });
+      return rcs.replace.html(html);
+    }
 
 
-      return html;
+    return html;
   }
 
   _cleanHtml(html) {
@@ -167,7 +165,7 @@ class PageMinifier {
       'removeRedundantAttributes': true,
       'collapseBooleanAttributes': true,
       'ignoreCustomFragments': [/<use.*<\/use>/],
-      'processScripts': ['application/json']
+      'processScripts': ['application/json'],
     });
 
     return html;

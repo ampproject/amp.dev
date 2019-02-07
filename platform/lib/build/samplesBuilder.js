@@ -52,7 +52,7 @@ const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
 // Path to store the cache in
 const CACHE_DEST = path.join(__dirname, '../../../.cache/examples.json');
 // Where to store the samples inside the Grow pod in
-const PREVIEW_DEST = path.join(__dirname, `../../../dist/examples/previews`);
+const PREVIEW_DEST = path.join(__dirname, '../../../dist/examples/previews');
 
 class SamplesBuilder {
   constructor() {
@@ -64,7 +64,7 @@ class SamplesBuilder {
     // Preload preview templates
     this._previewTemplates = {};
     /* eslint-disable guard-for-in */
-    for (let format of Object.keys(PREVIEW_TEMPLATES)) {
+    for (const format of Object.keys(PREVIEW_TEMPLATES)) {
       this._previewTemplates[format] = fs.readFileSync(PREVIEW_TEMPLATES[format], 'utf-8');
     }
   }

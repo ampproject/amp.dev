@@ -17,15 +17,11 @@
 /* eslint-disable no-invalid-this */
 'use strict';
 
-const {Signale} = require('signale');
 const signale = require('signale');
-const fs = require('fs');
-const path = require('path');
 const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const stripCssComments = require('gulp-strip-css-comments');
-const through = require('through2');
 
 const config = require('./config');
 const utils = require('@lib/utils');
