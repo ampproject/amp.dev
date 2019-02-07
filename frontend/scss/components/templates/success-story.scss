@@ -81,6 +81,45 @@ body {
       }
     }
   }
+  
+  .#{organism('teaser-grid')} {
+    grid-column: 4 / 22;
+    width: 100%;
+    margin-bottom: 7em;
+
+    @media (min-width: 768px) {
+      margin-bottom: calc(12.5em + 7em);
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: calc(12.5em + 8vw);
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 60px 30px;
+      margin: 0 40px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+      }
+
+      .#{molecule('teaser')}{
+        grid-column: 1;
+        margin: 0;
+
+        @media (min-width: 768px) {
+          grid-column: span 4;
+        }
+      }
+    }
+  }
+  
+  .#{organism('filter-bubbles-list')}{
+    padding: 30px 0 60px 0;
+  }
 
   .#{organism('text-media-block')} {
     padding-bottom: 5rem;
