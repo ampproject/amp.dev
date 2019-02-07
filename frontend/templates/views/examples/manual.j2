@@ -130,6 +130,22 @@ tags are specific for amp.dev #}
         {% endif %}
       </div>
 
+      {# Render widget to toggle experiments if there are any #}
+      {% set experiments = doc.example.document.metadata.experiments %}
+      {% if experiments %}
+      {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+      <div class="ap-m-tip ap-m-tip-default">
+        <p>{{ _('This example uses the following experimental feature:') }} {% for experiment in experiments %}<code>{{ experiment }}</code>{% endfor %}. {{ _('Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale) }}">experimental features</a> here.</p>
+
+        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+        <div class="ap--ctas">
+          <button id="experimenttoggle" class="ap-a-btn" disabled>Enable Experiment</button>
+
+          <a id="canarytoggle" class="ap-a-btn" href="https://cdn.ampproject.org/experiments.html" target="_blank"><span class="caps inline-block white text-decoration-none">Enable Dev Channel</span></a>
+        </div>
+      </div>
+      {% endif %}
+
       {% for section in doc.example.document.sections %}
       {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
 
@@ -194,6 +210,63 @@ tags are specific for amp.dev #}
     </section>
   </div>
 </main>
+
+{% if doc.example.document.metadata.experiments %}
+{% set experiments = doc.example.document.metadata.experiments %}
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  (window.AMP = window.AMP || []).push(function(AMP) {
+
+    function enableButton(elementId) {
+      const element = document.getElementById(elementId);
+      if (element.nodeName.toLowerCase() === 'button') {
+        element.removeAttribute('disabled');
+      } else {
+        element.classList.remove('disabled');
+      }
+    }
+
+    function areAllExperimentsEnabled() {
+      {% for experiment in experiments %}
+      console.log('isExperimentOn {{ experiment }}:' + AMP.isExperimentOn('{{ experiment }}'));
+      if (!AMP.isExperimentOn('{{ experiment }}')) {
+        return false;
+      }
+      {% endfor %}
+
+      return true;
+    }
+
+    function enableExperiments() {
+      {% for experiment in experiments %}
+      if (!AMP.isExperimentOn('{{ experiment }}')) {
+        AMP.toggleExperiment('{{ experiment }}');
+      }
+      {% endfor %}
+
+      location.reload();
+    }
+
+    // enable active experiment button
+    if (!areAllExperimentsEnabled()) {
+      var experimentToggle = document.getElementById('experimenttoggle');
+      experimentToggle.addEventListener('click', enableExperiments);
+      enableButton('experimenttoggle');
+    }
+
+    // enable active dev channel button
+    if (!window.AMP_CONFIG.canary) {
+      enableButton('canarytoggle');
+    }
+
+    // show invalid AMP message in dev mode
+    if (window.location.hash.includes('development=1')) {
+      console.log('This sample is intentionally not valid AMP.');
+    }
+  });
+});
+</script>
+{% endif %}
 {% endblock %}
 
 {% block analytics %}
