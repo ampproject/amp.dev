@@ -30,12 +30,7 @@ class AmpDevPreRenderHook(hooks.PreRenderHook):
 
     def trigger(self, previous_result, doc, original_body, *_args, **_kwargs):
         content = previous_result if previous_result else original_body
-
-        # Trigger for all markdown extensions
-        content = InlineTip.trigger(original_body, content)
-        content = BlockTip.trigger(original_body, content)
-        content = BlockVideo.trigger(original_body, content)
-
+        content = self.extension.transform_markdown(original_body, content)
         return content
 
 class AmpDevExtension(extensions.BaseExtension):
@@ -43,6 +38,14 @@ class AmpDevExtension(extensions.BaseExtension):
 
     def __init__(self, pod, config):
         super(AmpDevExtension, self).__init__(pod, config)
+        # Expose extension direclty on pod for use in templates
+        setattr(pod, 'amp_dev', self)
+
+    def transform_markdown(self, original_body, content):
+        content = InlineTip.trigger(original_body, content)
+        content = BlockTip.trigger(original_body, content)
+        content = BlockVideo.trigger(original_body, content)
+        return content
 
     @property
     def available_hooks(self):

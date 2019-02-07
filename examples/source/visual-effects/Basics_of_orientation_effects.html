@@ -97,30 +97,32 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   <!--
     ## Tilt based scroll animations
 
-    Let's create a tilt based scroll animation where you can scroll up
-    and down on a page as you tilt a device along the y axis.
+    <p>Let's create a tilt based scroll animation where you can scroll up
+    and down on a page as you tilt a device along the y axis.</p>
 
-    This sample showcases the core concept behind combining
+    <p>This sample showcases the core concept behind combining
     `amp-orientation-observer` and `amp-animation`: The ability to progress
-    through a keyframe animation timeline as the device is tilted.
+    through a keyframe animation timeline as the device is tilted.</p>
 
-    Our scroll scene is a `div` with some Lorem Ipsum text in it. We add an
+    <p>Our scroll scene is a `div` with some Lorem Ipsum text in it. We add an
     `amp-orientation-observer` element as child of the scene to monitor the device's position.
-    Let's take a look at the details:
-    - **`on:beta`**: This event is triggered by orientation observer as deivce orientation
-    along the `beta` axis changes. The event provides a percentage value
-    (decimal between 0 and 1) representing how far the device is within the `beta` axis.
-    - **`anim.seekTo(percent=event.percent)`**: We will define an `amp-animation`
-    that will do the spinning in the next step, here we are coupling `amp-orientation-observer` and
-    `amp-animation` by triggering a `seekTo` action on the animation as `beta` events occurs.
-    This is how we specify that we like to progress through the animation
-    timeline as the device moves along the `beta` axis.
-    - **`beta-range`**: Each axis has a range of degrees it tracks.
-    For the `beta` axis the default range is -180 to 180 degrees.
-    If you want to set the range to something custom as we do in this
-    case you can specify it using the `beta-range` attribute here.
-    In this sample we set the `beta-range` to "0 180" to make sure that
-    the text doesn't scroll beyond it's first paragraph.
+    Let's take a look at the details:</p>
+    <ul>
+      <li>**`on:beta`**: This event is triggered by orientation observer as deivce orientation
+      along the `beta` axis changes. The event provides a percentage value
+      (decimal between 0 and 1) representing how far the device is within the `beta` axis.</li>
+      <li>**`anim.seekTo(percent=event.percent)`**: We will define an `amp-animation`
+      that will do the spinning in the next step, here we are coupling `amp-orientation-observer` and
+      `amp-animation` by triggering a `seekTo` action on the animation as `beta` events occurs.
+      This is how we specify that we like to progress through the animation
+      timeline as the device moves along the `beta` axis.</li>
+      <li>**`beta-range`**: Each axis has a range of degrees it tracks.
+      For the `beta` axis the default range is -180 to 180 degrees.
+      If you want to set the range to something custom as we do in this
+      case you can specify it using the `beta-range` attribute here.
+      In this sample we set the `beta-range` to "0 180" to make sure that
+      the text doesn't scroll beyond it's first paragraph.</li>
+    </ul>
   -->
   <div id="scrollText">
     <amp-orientation-observer
@@ -183,7 +185,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
       on="beta:clockAnim1.seekTo(percent=event.percent)"
       layout="nodisplay">
     </amp-orientation-observer>
-    <amp-img layout="responsive" width="2" height="1.5" src="/img/clock.jpg">
+    <amp-img layout="responsive" width="2" height="1.5" src="/static/samples/img/clock.jpg">
       <div class="clock-hand rotate-1"></div>
     </amp-img>
   </div>
@@ -222,7 +224,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
       on="gamma:clockAnim2.seekTo(percent=event.percent)"
       layout="nodisplay">
     </amp-orientation-observer>
-    <amp-img layout="responsive" width="2" height="1.5" src="/img/clock.jpg">
+    <amp-img layout="responsive" width="2" height="1.5" src="/static/samples/img/clock.jpg">
       <div class="clock-hand rotate-2"></div>
     </amp-img>
   </div>
@@ -263,7 +265,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
       on="alpha:clockAnim3.seekTo(percent=event.percent)"
       layout="nodisplay">
     </amp-orientation-observer>
-    <amp-img layout="responsive" width="2" height="1.5" src="/img/clock.jpg">
+    <amp-img layout="responsive" width="2" height="1.5" src="/static/samples/img/clock.jpg">
       <div class="clock-hand rotate-3"></div>
     </amp-img>
   </div>

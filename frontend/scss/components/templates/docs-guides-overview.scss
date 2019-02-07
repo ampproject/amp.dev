@@ -210,6 +210,14 @@
           font-size: inherit;
         }
 
+        &-copy {
+          .#{atom('ico')} {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
         &-block {
           margin-bottom: 40px;
         }
@@ -221,9 +229,9 @@
 
       &-twocolumns {
         margin: 40px 0;
-        flex: 0 0 calc(50% - 40px);
+        flex: 0 0 calc(50% - 25px);
         &:first-child {
-          margin-right: 80px;
+          margin-right: 50px;
         }
         
         p {

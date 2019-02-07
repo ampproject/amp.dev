@@ -64,7 +64,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       },
       "image": {
         "@type": "ImageObject",
-        "url": "<%host%>/img/landscape_lake_1280x857.jpg",
+        "url": "/static/samples/img/landscape_lake_1280x857.jpg",
         "height": 1280,
         "width": 857
       }
@@ -168,7 +168,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       </p>
 
       <figure class="figure">
-        <amp-img src="/img/landscape_village_1280x853.jpg" width="1280" height="768" layout="responsive"></amp-img>
+        <amp-img src="/static/samples/img/landscape_village_1280x853.jpg" width="1280" height="768" layout="responsive"></amp-img>
         <figcaption>Here is a responsive image.</figcaption>
       </figure>
 
@@ -200,15 +200,15 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       <!-- Use `amp-carousel` for image galleries. Learn more about creating image galleries in AMP [here](/advanced/image_galleries_with_amp-carousel/).  -->
       <amp-carousel width="1280" height="1000" layout="responsive" type="slides">
         <figure class="figure">
-          <amp-img src="/img/landscape_lake_1280x857.jpg" width="1280" height="857" layout="responsive"></amp-img>
+          <amp-img src="/static/samples/img/landscape_lake_1280x857.jpg" width="1280" height="857" layout="responsive"></amp-img>
           <figcaption>Each image has a different caption.</figcaption>
         </figure>
         <figure class="figure">
-          <amp-img src="/img/landscape_village_1280x853.jpg" width="1280" height="853" layout="responsive"></amp-img>
+          <amp-img src="/static/samples/img/landscape_village_1280x853.jpg" width="1280" height="853" layout="responsive"></amp-img>
           <figcaption>This caption is different.</figcaption>
         </figure>
         <figure class="figure">
-          <amp-img src="/img/landscape_desert_1280x853.jpg" width="1280" height="853" layout="responsive"></amp-img>
+          <amp-img src="/static/samples/img/landscape_desert_1280x853.jpg" width="1280" height="853" layout="responsive"></amp-img>
           <figcaption>The third image has its caption.</figcaption>
         </figure>
       </amp-carousel>
@@ -231,7 +231,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
                     layout="fixed-height"
                     frameborder="0"
                     sandbox="allow-scripts allow-same-origin">
-          <amp-img src="/img/oscars_placeholder_1.png"
+          <amp-img src="/static/samples/img/oscars_placeholder_1.png"
                    layout="fixed-height"
                    height="360"
                    width="auto"
@@ -254,7 +254,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       <h2>Related Articles</h2>
       <p>These articles might be interesting for you as well:</p>
       <!-- It's a good idea to recommend related content to your readers. With `amp-list` it is possible to dynamically include personalized content into your AMPs. It's a good idea to link to the AMP version of related content in order to keep the user in the fast AMP world. Learn more about `amp-list` [here](/components/amp-list/) -->
-      <amp-list width="300" height="75" layout="responsive" src="/json/related_articles.json">
+      <amp-list width="300" height="75" layout="responsive" src="/static/samples/json/related_articles.json">
         <template type="amp-mustache">
           <a class="related" href="{{url}}"><amp-img width="101" height="75" src="{{thumbnail}}"></amp-img><span>{{title}}</span></a>
         </template>

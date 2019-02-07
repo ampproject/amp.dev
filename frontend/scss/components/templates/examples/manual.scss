@@ -30,14 +30,29 @@
 
     .#{utility('ctas')} {
       display: flex;
-      list-style: none;
-      padding: 0;
+      flex-wrap: wrap;
 
-      & > li {
-        flex: 1 0 auto;
+      @media screen and (min-width: 768px) {
+        flex-wrap: nowrap;
+      }
+
+      .#{atom('btn')} {
+        flex: 1 0 100%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 768px) {
+          flex: 1 0 50%;
+          max-width: 50%;
+        }
       }
     }
 
+  .#{utility('playground-link')} {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
 
   .#{utility('sidebar')} {
     @include sidebar;

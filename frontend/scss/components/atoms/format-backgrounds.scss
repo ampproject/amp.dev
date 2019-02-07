@@ -1,0 +1,33 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+/* The following selectors are not specifically styles for the format format-toggle
+but are needed to make it work. As they will always be needed when there is a format
+toggle on the page this is the most fitting place to put them */
+
+body {
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top right;
+  background-attachment: fixed;
+}
+
+body.#{utility('websites')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d5e6f2"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+}
+
+body.#{utility('ads')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23ddd3eb"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+}
+
+body.#{utility('stories')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23ebdfd3"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+}
+
+body.#{utility('email')} {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" x2="606.28" y1="855.23" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23d7ebd3"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+}

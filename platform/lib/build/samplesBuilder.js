@@ -38,7 +38,7 @@ const POD_PATH = 'content/amp-dev/documentation/examples';
 const MANUAL_DEST = path.join(__dirname, `../../../pages/${POD_PATH}`);
 // What Grow template to use to render the sample's manual
 const MANUAL_TEMPLATE = '/views/examples/manual.j2';
-// What Grow template to use to render the preview
+// What template to use to render the preview
 const PREVIEW_TEMPLATES = {
   'websites': utils.project.absolute('frontend/hbs/preview-websites.hbs'),
   'stories': utils.project.absolute('frontend/hbs/preview-stories.hbs'),
@@ -47,25 +47,27 @@ const PREVIEW_TEMPLATES = {
 };
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples/';
-// Path the all source files are written to, to vend them via express
-const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
 // Path to store the cache in
 const CACHE_DEST = path.join(__dirname, '../../../.cache/examples.json');
-// Where to store the samples inside the Grow pod in
-const PREVIEW_DEST = path.join(__dirname, `../../../dist/examples/previews`);
+// Path the all source files are written to, to vend them via express
+const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
+// Where to store the sample preview files with header
+const PREVIEW_DEST = path.join(__dirname, '../../../dist/examples/previews');
+// Where to store the embeds for Grow
+const EMBED_DEST = path.join(__dirname, '../../../dist/examples/embeds');
 
 class SamplesBuilder {
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Samples builder',
     });
 
     // Preload preview templates
-    this._previewTemplates = {};
+    this._templates = {};
     /* eslint-disable guard-for-in */
-    for (let format of Object.keys(PREVIEW_TEMPLATES)) {
-      this._previewTemplates[format] = fs.readFileSync(PREVIEW_TEMPLATES[format], 'utf-8');
+    for (const format of Object.keys(PREVIEW_TEMPLATES)) {
+      this._templates[format] = fs.readFileSync(PREVIEW_TEMPLATES[format], 'utf-8');
     }
   }
 
@@ -80,6 +82,7 @@ class SamplesBuilder {
         `!${MANUAL_DEST}/index.html`,
         `${SOURCE_DEST}`,
         `${PREVIEW_DEST}`,
+        `${EMBED_DEST}`,
         CACHE_DEST,
       ], {
         'force': true,
@@ -104,13 +107,14 @@ class SamplesBuilder {
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
-        await this._parseSample(sample.path).then((parsedSample) => {
+        await this._parseSample(sample.path, sample.relative).then((parsedSample) => {
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
           const files = [
             ...this._createManual(sample, parsedSample),
             ...this._buildRawSources(sample, parsedSample),
             ...this._createPreview(sample, parsedSample),
+            ...this._renderEmbed(sample, parsedSample),
           ];
 
           // Since stream.push doesn't allow to push multiple files at once
@@ -131,6 +135,8 @@ class SamplesBuilder {
           return SOURCE_DEST;
         } else if (file.isPreview) {
           return PREVIEW_DEST;
+        } else if (file.isEmbed) {
+          return EMBED_DEST;
         } else {
           return MANUAL_DEST;
         }
@@ -138,11 +144,11 @@ class SamplesBuilder {
 
       stream.on('error', (error) => {
         this._log.fatal('There was an error building the samples', error);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {
-        this._log.success(`Built sample manuals to ${MANUAL_DEST} and ${SOURCE_DEST}.`);
+        this._log.success(`Built samples.`);
         resolve();
       });
     });
@@ -153,11 +159,14 @@ class SamplesBuilder {
    * ampbyexample.com package and while doing so updates some fields
    * @return {Promise}
    */
-  async _parseSample(samplePath) {
+  async _parseSample(samplePath, sampleRelativePath) {
     return await abe.parseSample(samplePath).then((parsedSample) => {
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
+
+      // Add the delivery path of the manual for preview rendering
+      parsedSample.route = PATH_BASE + sampleRelativePath.toLowerCase();
 
       // Rewrite some markdown to be consumable by Grow
       for (const index in parsedSample.document.sections) {
@@ -181,8 +190,9 @@ class SamplesBuilder {
         // Replace empty lines with leading space with just a new line
         markdown = markdown.replace(/^\s+/gm, '\n');
 
-        // Replace new lines with following space by just a new line
-        markdown = markdown.replace(/\n +/gm, '\n');
+        // Replace new lines with following space or multiple new lines
+        // by just a new line
+        markdown = markdown.replace(/(\n +|\n{2,})/gm, '\n');
 
         // Restore codeblocks
         /* eslint-disable guard-for-in */
@@ -212,7 +222,7 @@ class SamplesBuilder {
       '$$injectAmpDependencies: false',
       '$title: ' + parsedSample.document.title,
       '$view: ' + MANUAL_TEMPLATE,
-      '$path: ' + PATH_BASE + manual.relative,
+      '$path: ' + parsedSample.route,
       '$category: ' + (parsedSample.document.metadata.category ?
         parsedSample.document.metadata.category :
         'None'),
@@ -261,9 +271,6 @@ class SamplesBuilder {
    * @return {String}
    */
   _getSampleFormat(parsedSample) {
-    if (parsedSample.document.isAmpWeb) {
-      return 'websites';
-    }
     if (parsedSample.document.isAmpStory) {
       return 'stories';
     }
@@ -273,10 +280,13 @@ class SamplesBuilder {
     if (parsedSample.document.isAmpEmail) {
       return 'email';
     }
+
+    // Use websites as fallback as isAmpWebsites could be true for all formats
+    return 'websites';
   }
 
   /**
-   * Parses the all components used in sample and gives them back as an Array
+   * Parses all components used in sample and gives them back as an Array
    * @param  {Object} parsedSample
    * @return {Array}
    */
@@ -307,11 +317,6 @@ class SamplesBuilder {
    * @return {Array} An array of Vinyl files to write
    */
   _buildRawSources(sample, parsedSample) {
-    // Only build raw sources if the snippets can run standalone
-    if (!parsedSample.document.metadata.standaloneSnippets) {
-      return [];
-    }
-
     const sources = [];
 
     // Keep the full sample for the big playground
@@ -319,6 +324,11 @@ class SamplesBuilder {
     fullSource.isSourceFile = true;
 
     sources.push(fullSource);
+
+    // Only build snippet sources if they can run standalone
+    if (!parsedSample.document.metadata.standaloneSnippets) {
+      return sources;
+    }
 
     const TITLE_PLACEHOLDER = '<!-- samplesBuilder: title-->';
     const SECTION_PLACEHOLDER = '<!-- samplesBuilder: section-->';
@@ -357,6 +367,30 @@ class SamplesBuilder {
   }
 
   /**
+   * Renders embedabble preview versions
+   * @param  {Vinyl} sample
+   * @param  {Object} parsedSample
+   * @return {Array}
+   */
+  _renderEmbed(sample, parsedSample) {
+    // Also render embed file for stories
+    if (parsedSample.document.isAmpStory) {
+      const template = this._templates[this._getSampleFormat(parsedSample)];
+
+      console.log(this._getSampleFormat(parsedSample));
+
+      const embed = sample.clone();
+      embed.isEmbed = true;
+      embed.contents = Buffer.from(handlebars.render(
+        template, Object.assign({'isEmbed': true}, parsedSample)));
+
+      return [embed];
+    }
+
+    return [];
+  }
+
+  /**
    * Creates a html document that holds the initial sample source
    * @param  {Vinyl} sample The sample from the gulp stream
    * @param  {Object} parsedSample The sample parsed by abe.com
@@ -369,12 +403,11 @@ class SamplesBuilder {
     }
 
     // Determine the template needed for that specific sample
-    const template = this._previewTemplates[this._getSampleFormat(parsedSample)];
+    const template = this._templates[this._getSampleFormat(parsedSample)];
     const preview = sample.clone();
 
     // Set flag to determine correct output location
     preview.isPreview = true;
-
     preview.contents = Buffer.from(handlebars.render(template, parsedSample));
 
     return [preview];

@@ -27,7 +27,6 @@ const fs = require('fs');
 
 const {FilteredPage, isFilterableRoute, FORMATS} = require('@lib/pipeline/filteredPage');
 const utils = require('@lib/utils');
-const config = require('@lib/config');
 
 class FormatFilter {
   constructor() {
@@ -51,13 +50,13 @@ class FormatFilter {
           scope._log.start(`Filtering ${page.relative} ...`);
 
           if (!isFilterableRoute(page.relative)) {
-            scope._log.info(`Skipping as it is not filterable.`);
+            scope._log.info('Skipping as it is not filterable.');
             callback();
             return;
           }
 
           if (scope._isManuallyFiltered(page)) {
-            let manualFormat = scope._isManuallyFiltered(page);
+            const manualFormat = scope._isManuallyFiltered(page);
             scope._log.info(`Page is a manual variant for ${manualFormat}.`);
             page = scope._filterPage(page, manualFormat, true);
 
@@ -85,7 +84,7 @@ class FormatFilter {
    * @return {Boolean}
    */
   _isManuallyFiltered(page) {
-    let format = page.relative.match(/\.(websites|ads|stories|email)\.html/);
+    const format = page.relative.match(/\.(websites|ads|stories|email)\.html/);
     return format ? format[1] : null;
   }
 
@@ -104,7 +103,7 @@ class FormatFilter {
       this._log.success(`Applied format ${format}`);
 
       return page;
-    } catch(e) {
+    } catch (e) {
       this._log.warn(`Couldn't filter for format ${format}:`, e.message);
       return null;
     }

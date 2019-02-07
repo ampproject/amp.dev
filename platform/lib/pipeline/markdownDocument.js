@@ -22,7 +22,7 @@ const utils = require('@lib/utils');
 const TOC_MARKER = '[TOC]';
 // It doesn't make sense to give every MarkdownDocument their own logger instance
 // therefore have one shared one
-const LOG = new Signale({'scope': 'Markdown Documents',});
+const LOG = new Signale({'scope': 'Markdown Documents'});
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -114,7 +114,7 @@ class MarkdownDocument {
         try {
           this._frontmatter = yaml.safeLoad(frontmatter);
           return;
-        } catch(e) {
+        } catch (e) {
           LOG.error(`Couldn't parse embedded frontmatter from ${this.path}`);
         }
       }
@@ -126,7 +126,7 @@ class MarkdownDocument {
   }
 
 
-  _convertSyntax(contents) {
+  _convertSyntax() {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
 
@@ -202,7 +202,7 @@ class MarkdownDocument {
     return writeFile.promise(path, frontmatter + this._contents).then(() => {
       LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
     }).catch((e) => {
-      LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`);
+      LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
     });
   }
 }
