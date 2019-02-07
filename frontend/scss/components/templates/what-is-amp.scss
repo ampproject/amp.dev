@@ -213,7 +213,7 @@
 
   .#{utility('stage')} {
     .#{organism('stage')} {
-      @media screen and (max-width: 767px) {
+      @media (max-width: 767px) {
         margin-bottom: 50px;
 
         &-content {
