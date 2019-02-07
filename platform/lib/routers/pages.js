@@ -88,10 +88,6 @@ if (config.environment === 'development') {
     next();
   });
 
-  // On production (Google App Engine) these files will be served
-  // by what is defined inside app.yaml
-  pages.use('/static/', express.static('static'));
-
   // During development all requests should be proxied over
   // to Grow and be handled there, therfore create one
   const proxy = new HttpProxy();
@@ -109,7 +105,7 @@ if (config.environment === 'development') {
           response.setHeader('content-length', filteredPage.content.length.toString());
           return filteredPage.content;
         } catch(e) {
-          log.warn(`Requested page is not available in format ${activeFormat}`);
+          log.warn(`Could not filter request`, e.message);
           return body;
         }
       });
