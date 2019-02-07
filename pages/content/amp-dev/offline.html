@@ -1,7 +1,22 @@
 ---
-$title: Offline
+$title: 404
+$view: /views/custom.j2
 ---
+{% do doc.styles.addCssFile('css/components/templates/error.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
 
-<main class="ap--main ap-t-home">
-  <h1>You're offline</h1>
+<main class="ap--main ap-t-error">
+  <section class="ap--container">
+
+    <div class="ap-m-jumbo">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
+      </div>
+      <h1 class="ap-m-biggy-headline">offline</h1>
+      <h2 class="ap-m-jumbo-subline">{{ _('Something cut the line.') }}</h2>
+      <p class="ap-m-jumbo-copy">{{ _('You're currently not connected to the internet.') }}</p>
+    </div>
+  </section>
 </main>

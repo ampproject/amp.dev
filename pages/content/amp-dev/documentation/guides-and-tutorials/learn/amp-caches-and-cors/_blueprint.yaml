@@ -3,6 +3,12 @@ $path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}.html
 $title@: AMP Caches & CORS
+$title@zh: AMP 网页是如何缓存的
+$title@pt: Como as páginas AMP são armazenadas em cache
+$title@ko: AMP 페이지가 캐시되는 방법
+$title@ja: AMP ページのキャッシュの仕組み
+$title@id: Cara halaman AMP disimpan dalam cache
+$title@es: Almacenar páginas AMP en caché
 $order: 6
 
 formats:

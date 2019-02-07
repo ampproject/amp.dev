@@ -3,6 +3,17 @@ $path: /documentation/guides-and-tutorials/develop/style_and_layout/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/{base}.html
 $title@: Style & Layout
+$title@ar: إنشاء صفحات AMP تفاعلية
+$title@es: Estilo y Layout
+$title@fr: Créer des pages AMP responsives
+$title@id: Gaya & Tata Letak
+$title@it: Creare pagine AMP reattive
+$title@ja: スタイルとレイアウト
+$title@ko: Style & Layout
+$title@zh: 样式和布局
+$title@tr: Duyarlı AMP Sayfaları Oluşturma
+$title@pt: Estilo e layout
+$title@ru: Как создать адаптивные AMP-страницы
 $order: 0
 
 formats:

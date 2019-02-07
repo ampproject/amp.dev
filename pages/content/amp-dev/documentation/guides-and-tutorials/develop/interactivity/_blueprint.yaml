@@ -3,6 +3,12 @@ $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/interactivity/{base}.html
 $title@: Create interactive AMP pages
+$title@zh: 创建互动式 AMP 网页
+$title@pt: Criação de páginas AMP interativas
+$title@ko: 양방향 AMP 페이지 만들기
+$title@ja: インタラクティブな AMP ページを作成する
+$title@id: Membuat halaman AMP interaktif
+$title@es: Crear páginas AMP interactivas
 $order: 100
 
 formats:
