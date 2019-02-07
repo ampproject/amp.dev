@@ -35,7 +35,7 @@
     scrolled to the top – whichever is smaller. This example might not work depending on your screen
     width. In that case it will only show a loading indicator.
   -->
-  <amp-iframe width="500" 
+  <amp-iframe width="500"
               height="281"
               title="Netflix House of Cards branding: The Stack"
               layout="responsive"
@@ -47,7 +47,7 @@
 
   <!-- ## Placeholder -->
   <!-- The 600px away from the top constraint can be avoided by adding a placeholder image. -->
-  <amp-iframe width="500" 
+  <amp-iframe width="500"
               height="281"
               title="Netflix House of Cards branding: The Stack"
               layout="responsive"
@@ -60,7 +60,7 @@
 
   <!-- ## Giphy -->
   <!-- Here is another iframe sample embedding an animated GIF from [Giphy](https://giphy.com). -->
-  <amp-iframe width="600" 
+  <amp-iframe width="600"
               height="400"
               title="Animated dancing GIF from Giphy"
               layout="responsive"
@@ -74,7 +74,7 @@
     Embedding Google Maps is possible via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide) and requires
     an [API Key](https://developers.google.com/maps/documentation/embed/guide#api_key). Make sure your API key allows requests from the ampproject.org domain.
   -->
-  <amp-iframe width="600" 
+  <amp-iframe width="600"
               height="400"
               title="Google map pin on Googleplex, Mountain View CA"
               layout="responsive"
@@ -86,12 +86,12 @@
   <!-- ## Resizable iframe -->
   <!--
     One important feature of `amp-iframe` is the ability to resize the iframe  at runtime. For this to work:
-
-    * The `amp-iframe` must set the `allow-same-origin` sandbox attribute.
-    * The `amp-iframe` must be defined with the `resizable` attribute.
-    * The `amp-iframe` must have an `overflow` child element.
-    * The iframe document must send an `embed-size` request:
-
+  <ul>
+    <li>The `amp-iframe` must set the `allow-same-origin` sandbox attribute.</li>
+    <li>The `amp-iframe` must be defined with the `resizable` attribute.</li>
+    <li>The `amp-iframe` must have an `overflow` child element.</li>
+    <li>The iframe document must send an `embed-size` request:</li>
+  </ul>
 
     ```html
     window.parent.postMessage({
@@ -114,7 +114,7 @@
               sandbox="allow-scripts allow-same-origin"
               resizable
               frameborder="0"
-              src="<% api.host %>/iframe/resizable-iframe.html">
+              src="/static/samples/files/resizable-iframe.html">
               <div overflow tabindex="0" role="button" aria-label="Show more">Click to show more</div>
   </amp-iframe>
 

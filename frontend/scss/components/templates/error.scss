@@ -1,0 +1,60 @@
+/*
+
+#####################
+### TEMPLATE: 404 ###
+#####################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+.#{template('error')} {
+  padding-top: 3em;
+  padding-bottom: 9em;
+
+  .#{utility('container')} {
+    @include container;
+  }
+
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+
+  .#{molecule('copy-center')} {
+    grid-column: 8 / 18;
+    
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .#{atom('ico')} {
+    margin-bottom: 1rem;
+  }
+
+  .#{molecule('biggy-headline')} {
+    margin-bottom: -2.4rem;
+  }
+
+  .#{molecule('jumbo')} {
+    &-subline {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    
+    &-copy {
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+  }
+}

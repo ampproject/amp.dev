@@ -29,9 +29,4 @@
     @include gradient-e-mails;
     color: color('ultramarine');
   }
-
-  &-overview {
-    @include gradient-overview;
-    color: color('blue-ribbon');
-  }
 }

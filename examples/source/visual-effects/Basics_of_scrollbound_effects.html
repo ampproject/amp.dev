@@ -29,9 +29,9 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
     functional component that monitors the position of an element within the viewport as a user scrolls,
     and dispatches `enter`, `exit` and `scroll:<Position In Viewport As a Percentage>` events.
 
-    These events in return can be used to `play`, `pause` or `seek` animation timelines
+    <p>These events in return can be used to `play`, `pause` or `seek` animation timelines
     defined by [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation)
-    to create scrollbound and visibility-based effects.
+    to create scrollbound and visibility-based effects.</p>
   -->
   <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
 
@@ -111,36 +111,38 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
   <!--
   ## Scrollbound animations
 
-  Let's create a fidget spinner that rotates as user scrolls the page.
+  <p>Let's create a fidget spinner that rotates as user scrolls the page.</p>
 
-  This sample showcases the core concept behind combining
+  <p>This sample showcases the core concept behind combining
   `amp-position-observer` and `amp-animation`: The ability to progress
-  through a keyframe animation timeline as an element progresses through the viewport via scrolling.
+  through a keyframe animation timeline as an element progresses through the viewport via scrolling.</p>
 
-  Our fidget spinner scene is a `div` with an `image`. We add an
+  <p>Our fidget spinner scene is a `div` with an `image`. We add an
   `amp-position-observer` element as child of the scene to monitor its progress
-  through the viewport. Let's take a look at the details:
+  through the viewport. Let's take a look at the details:</p>
 
-  - **`on:scroll`**: This event is triggered by position observer as the position of the
-  scene is changed when user scrolls. The event provides a percentage value
-  (decimal between 0 and 1) representing how far the scene is between the start and
-  end of its progress through the viewport.
-  - **`spinAnimation.seekTo(percent=event.percent)`**: We will define an `amp-animation`
-  that will do the spinning in the next step, here we are coupling `amp-position-observer` and
-  `amp-animation` by triggering a `seekTo` action on the animation as `scroll` events occurs.
-  This is how we specify that we like to progress through the animation
-  timeline as the scene progresses through the viewport via scrolling.
-  - **`intersection-ratios`**: Defines how much of the scene should be
-  visible in the viewport before `amp-position-observer` triggers any of its events.
-  Here, we like the spinning to happen only when fidget spinner is fully visible so
-  we set it to `1`.
+  <ul>
+    <li>**`on:scroll`**: This event is triggered by position observer as the position of the
+    scene is changed when user scrolls. The event provides a percentage value
+    (decimal between 0 and 1) representing how far the scene is between the start and
+    end of its progress through the viewport.</li>
+    <li>**`spinAnimation.seekTo(percent=event.percent)`**: We will define an `amp-animation`
+    that will do the spinning in the next step, here we are coupling `amp-position-observer` and
+    `amp-animation` by triggering a `seekTo` action on the animation as `scroll` events occurs.
+    This is how we specify that we like to progress through the animation
+    timeline as the scene progresses through the viewport via scrolling.</li>
+    <li>**`intersection-ratios`**: Defines how much of the scene should be
+    visible in the viewport before `amp-position-observer` triggers any of its events.
+    Here, we like the spinning to happen only when fidget spinner is fully visible so
+    we set it to `1`.</li>
+  </ul>
   -->
   <div class="fidget-spinner-scene">
 
     <amp-position-observer on="scroll:spinAnimation.seekTo(percent=event.percent)" intersection-ratios="1" layout="nodisplay">
     </amp-position-observer>
 
-    <amp-img id="fidgetSpinnerImage" width="1024" height="1114" layout="responsive" src="/img/fidget.png" alt="Picture of a fidget spinner"></amp-img>
+    <amp-img id="fidgetSpinnerImage" width="1024" height="1114" layout="responsive" src="/static/samples/img/fidget.png" alt="Picture of a fidget spinner"></amp-img>
   </div>
 
   <!--
@@ -149,18 +151,18 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
    Fairly straightforward in this case, we want `fidgetSpinnerImage` to rotate
    360 degrees, so we just define a `"transform": "rotate(360deg)"` as the last (and only)
    keyframe. Let's take a look at the details:
-
-   * **`id="spinAnimation"`**: We need to give the animation an Id so we can reference it from postion observer.
-   * **`"duration": "1"`**: The value of `duration` is irrelevant in this case since we progress through
+  <ul>
+   <li>**`id="spinAnimation"`**: We need to give the animation an Id so we can reference it from postion observer.</li>
+   <li>**`"duration": "1"`**: The value of `duration` is irrelevant in this case since we progress through</li>
    the timeline via scrolling so we just set it to `1`
-   * **`"direction": "reverse"`**: This is needed due an iOS bug with Web Animations.
-   * **`"animations"`**: Here we can define one or more keyframe-based animations. In our case, we only need one.
-   * **`"selector"`**: `"#fidgetSpinnerImage"` is the selector that targets the fidget spinner for the animation.
-   * **`"keyframes":`** We define a `"transform": "rotate(360deg)"` as the last (and only)
-   keyframe. Note that `amp-animation` automatically fills the first keyframe if not provided.
-
-   `amp-animation` has plenty of other features, please see
-   [the API reference](https://www.ampproject.org/docs/reference/components/amp-animation) to learn more about `amp-animations`.
+   <li>**`"direction": "reverse"`**: This is needed due an iOS bug with Web Animations.</li>
+   <li>**`"animations"`**: Here we can define one or more keyframe-based animations. In our case, we only need one.</li>
+   <li>**`"selector"`**: `"#fidgetSpinnerImage"` is the selector that targets the fidget spinner for the animation.</li>
+   <li>**`"keyframes":`** We define a `"transform": "rotate(360deg)"` as the last (and only)
+   keyframe. Note that `amp-animation` automatically fills the first keyframe if not provided.</li>
+  </ul>
+  <p>`amp-animation` has plenty of other features, please see
+   [the API reference](https://www.ampproject.org/docs/reference/components/amp-animation) to learn more about `amp-animations`.</p>
   -->
   <amp-animation id="spinAnimation" layout="nodisplay">
     <script type="application/json">
@@ -183,22 +185,24 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
   <!--
   ## Fade & Slide Transitions
 
-  Now that we have learned the basic core concepts behind `amp-position-observer`
+  <p>Now that we have learned the basic core concepts behind `amp-position-observer`
   and `amp-animation`, let's dive into more creative ways they can be combined to
-  create interesting transitions.
+  create interesting transitions.</p>
 
-  In this sample, we will combine timebound and scrollbound transitions together
+  <p>In this sample, we will combine timebound and scrollbound transitions together
   to create an effect where the opacity of the card is tied to how much of it
   is visible in the viewport (scrollbound) and the title of the card animates in/out
-  (timebound) as the card enters and exits the viewport.
+  (timebound) as the card enters and exits the viewport.</p>
 
-  Our card scene is simply composed of an image and an overlayed title.
-  Here we define two position observers with different `intersection-ratios` values:
+  <p>Our card scene is simply composed of an image and an overlayed title.
+  Here we define two position observers with different `intersection-ratios` values:</p>
 
-  * The first one will control the opacity of the image as user scrolls.
-  * The second one will run a timebound slide animation for the title when the
-  scene becomes mostly visible (80%) and runs it again "in reverse" when scene
-  exits the viewport a bit (20%).
+  <ul>
+    <li>The first one will control the opacity of the image as user scrolls.</li>
+    <li>The second one will run a timebound slide animation for the title when the
+    scene becomes mostly visible (80%) and runs it again "in reverse" when scene
+    exits the viewport a bit (20%).</li>
+  </ul>
   -->
   <div class="card ampstart-card">
 
@@ -215,19 +219,19 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
       </div>
     </amp-fit-text>
 
-    <amp-img id="cardImage" width="1280" height="898" layout="responsive" src="/img/food.jpg" alt="Picture of food table."></amp-img>
+    <amp-img id="cardImage" width="1280" height="898" layout="responsive" src="/static/samples/img/food.jpg" alt="Picture of food table."></amp-img>
   </div>
 
   <!--
-  Let's define the keyframes for the scrollbound fade in/out transition.
+  <p>Let's define the keyframes for the scrollbound fade in/out transition.</p>
 
-  We target the `#cardImage` and define keyframes in a way that image gains
+  <p>We target the `#cardImage` and define keyframes in a way that image gains
   full opacity within the first 40% of the timeline and starts fading out in the
-  last 40% of the timeline.
+  last 40% of the timeline.</p>
 
-  Note that since the position observer controlling this animation has
+  <p>Note that since the position observer controlling this animation has
   `intersection-ratios` set to `0`, we go through the full timeline when user
-  scrolls `ViewportHeight + 2 * SceneHeight` amount of pixels.
+  scrolls `ViewportHeight + 2 * SceneHeight` amount of pixels.</p>
   -->
   <amp-animation id="fadeTransition" layout="nodisplay">
     <script type="application/json">
@@ -293,7 +297,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
     <amp-position-observer on="scroll:parallaxTransition.seekTo(percent=event.percent)" intersection-ratios="0" layout="nodisplay">
     </amp-position-observer>
 
-    <amp-img id="parallaxImage" width="1280" height="873" layout="responsive" src="/img/elephant.jpg" alt="Picture of an elephant"></amp-img>
+    <amp-img id="parallaxImage" width="1280" height="873" layout="responsive" src="/static/samples/img/elephant.jpg" alt="Picture of an elephant"></amp-img>
   </div>
 
   <!--

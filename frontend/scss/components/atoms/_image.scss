@@ -33,7 +33,7 @@ shadow-static
 @mixin img-pull-edge {
 	margin-right: -30px;
 
-	@media screen and (min-width: 768px) {
+	@media (min-width: 768px) {
 		margin-right: 0;
 	}
 }

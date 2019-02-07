@@ -1,4 +1,15 @@
 $title@: Validation Workflow
+$title@zh: 验证 AMP 网页
+$title@tr: AMP Sayfalarını Doğrulama
+$title@ru: О проверке AMP-страниц
+$title@pt: Validar páginas AMP
+$title@ko: AMP 페이지 유효성 검사
+$title@ja: AMP ページを検証する
+$title@it: Convalidare le pagine AMP
+$title@id: Memvalidasi halaman AMP
+$title@fr: Valider les pages AMP
+$title@es: Validar páginas AMP
+$title@ar: التحقق من صحة صفحات AMP
 $view: /views/detail/docs-detail.j2
 $path: /documentation/guides-and-tutorials/learn/validation-workflow/{base}.html
 $localization:

@@ -28,7 +28,7 @@
   background-size: 100% auto;
   background-position: top right;
   background-attachment: fixed;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   .#{utility('container')} {
     @include container;
@@ -210,6 +210,14 @@
           font-size: inherit;
         }
 
+        &-copy {
+          .#{atom('ico')} {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
         &-block {
           margin-bottom: 40px;
         }
@@ -221,9 +229,9 @@
 
       &-twocolumns {
         margin: 40px 0;
-        flex: 0 0 calc(50% - 40px);
+        flex: 0 0 calc(50% - 25px);
         &:first-child {
-          margin-right: 80px;
+          margin-right: 50px;
         }
         
         p {

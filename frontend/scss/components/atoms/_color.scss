@@ -36,9 +36,7 @@ It has multiple size modifiers (more could be added below).
 @mixin fill-overview { fill: color('mine-shaft'); }
 
 @mixin gradient-default { background: linear-gradient(45deg, color('blue-ribbon'), color('robins-egg')); }
-@mixin gradient-websites { background: linear-gradient(45deg, color('blue-ribbon'), color('robins-egg')); }
-@mixin gradient-stories { background: linear-gradient(45deg,  color('pizazz'), color('school-bus')); }
-@mixin gradient-ads { background: linear-gradient(45deg,  color('electric-violet'), color('lavender-magenta')); }
-@mixin gradient-e-mails { background: linear-gradient(45deg, color('forest-green'), color('confetti')); }
-@mixin gradient-e-mails-alt { background: linear-gradient(45deg, color('forest-green'), color('manz')); }
-@mixin gradient-overview { background: color('white'); }
+@mixin gradient-websites { background: linear-gradient(225deg, color('robins-egg') 0%, color('blue-ribbon') 75%); }
+@mixin gradient-stories { background: linear-gradient(225deg, color('pizazz') 0%, color('school-bus') 75%); }
+@mixin gradient-ads { background: linear-gradient(225deg, color('lavender-magenta') 0%, color('electric-violet') 75%); }
+@mixin gradient-e-mails { background: linear-gradient(225deg, color('apple') 0%, color('confetti') 75%); }

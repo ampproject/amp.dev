@@ -470,9 +470,11 @@ We update the `currentPage` variable to progress forward in the dialog. In this 
   `currentStep` variable to keep track of the currently active step. We additionally define a step title button which is always visible
   and shows the status of the current step. The title needs to reflect three different states (active, complete, disabled). To avoid too complex amp-bind expressions, the three states are split into three different bindings:
 
-  * The title class gets updated if the current step is active.
-  * The title gets a `disabled` attribute if the **previous** step has not yet been completed
-  * The nested icon's class gets set to `step-complete` or `step-incomplete` based on whether the step has finished.
+<ul>
+  <li>The title class gets updated if the current step is active.</li>
+  <li>The title gets a `disabled` attribute if the **previous** step has not yet been completed</li>
+  <li>The nested icon's class gets set to `step-complete` or `step-incomplete` based on whether the step has finished.</li>
+</ul>
 
 Clicking on the title will go to the corresponding step (if already possible):
 

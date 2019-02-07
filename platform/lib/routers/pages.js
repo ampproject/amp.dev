@@ -104,8 +104,8 @@ if (config.environment === 'development') {
           const filteredPage = new FilteredPage(activeFormat, body);
           response.setHeader('content-length', filteredPage.content.length.toString());
           return filteredPage.content;
-        } catch (e) {
-          log.warn(`Requested page is not available in format ${activeFormat}`);
+        } catch(e) {
+          log.warn(`Could not filter request`, e.message);
           return body;
         }
       });

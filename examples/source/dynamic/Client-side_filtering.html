@@ -54,7 +54,7 @@ This is a sample showing how to implement client-side filtering.
     The alternative to this approach is using server-side filtering which we explain in the [product sample](https://ampbyexample.com/samples_templates/product_browse_page/).
   -->
   <div>
-    <amp-state id="allProducts" src="/json/related_products.json"></amp-state>
+    <amp-state id="allProducts" src="/static/samples/json/related_products.json"></amp-state>
     <select on="change:AMP.setState({
         filteredProducts: allProducts.items.filter(a => event.value == 'all' ? true : a.color == event.value)
       })">
@@ -64,7 +64,7 @@ This is a sample showing how to implement client-side filtering.
       <option value="yellow">yellow</option>
       <option value="orange">orange</option>
     </select>
-    <amp-list height="282" [height]="(40 + 24) * filteredProducts.length" layout="fixed-height" src="/json/related_products.json" [src]="filteredProducts" binding="no">
+    <amp-list height="282" [height]="(40 + 24) * filteredProducts.length" layout="fixed-height" src="/static/samples/json/related_products.json" [src]="filteredProducts" binding="no">
       <template type="amp-mustache">
         <amp-img src="{{img}}" layout="fixed" width="60" height="40" alt="{{name}}"></amp-img>
         {{name}}

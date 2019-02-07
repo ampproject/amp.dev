@@ -40,7 +40,7 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
   <!-- You can implement a show more button by using `amp-list` and `amp-bind`, where
   `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `productsState`
   which uses the same json `src` as the `amp-list` so that will initially contain the same list of items ... -->
-  <amp-state id="productsState" src="/json/related_products.json">
+  <amp-state id="productsState" src="/static/samples/json/related_products.json">
   </amp-state>
 
   <!-- ... while the `amp-state` with id `product` is just used to implement the show-more logic where we are allowing the user to click 3 times. -->
@@ -57,7 +57,7 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
   <!-- We bind the `src` attribute of the `amp-list` to the `amp-state` object containing the products
       from that component as a `src`. We also dynamically change the height of the amp-list based on
       the number of items (each item has a height of `24px`). -->
-  <amp-list src="/json/related_products.json"
+  <amp-list src="/static/samples/json/related_products.json"
             [src]="productsState.items"
             width="320"
             height="144"

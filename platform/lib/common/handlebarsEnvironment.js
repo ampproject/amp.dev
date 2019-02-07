@@ -22,7 +22,7 @@ const {Signale} = require('signale');
 const utils = require('../utils');
 
 CSS_BASE_PATH = utils.project.absolute('pages/css/');
-ICONS_BASE_PATH = utils.project.absolute('pages/icons/');
+ICONS_BASE_PATH = utils.project.absolute('frontend/icons/');
 PARTIALS_BASE_PATH = utils.project.absolute('frontend/hbs/partials/');
 
 /**
