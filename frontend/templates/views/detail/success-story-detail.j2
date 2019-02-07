@@ -229,8 +229,8 @@
                 {% do doc.icons.useIcon('icons/quote.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
               </div>
-                <div class="ap-a-img ap-a-img-static" layout="container">
-                  <amp-img class="ap--media" src="{{content.image_src}}" layout="responsive" height="{{ content.height }}" width="{{ content.width }}" alt="placeholder" />
+                <div class="ap-a-img ap-a-img-static fixed-container">
+                  <amp-img class="ap--media contain" src="{{content.image_src}}" layout="fill" alt="placeholder" />
                 </div>
             </div>
             <div class="ap-m-quote-quote">

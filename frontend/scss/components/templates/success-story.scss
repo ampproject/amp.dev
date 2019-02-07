@@ -168,16 +168,4 @@ body {
       }
     }
   }
-  .#{molecule('quote')}{
-
-    &-source {
-
-      .#{atom('img')}  {
-        width: 100%;
-        max-width: 150px;
-        position: relative;
-        margin-bottom: 10px;
-      }
-    }
-  }
 }
