@@ -92,6 +92,5 @@ The ghost frame mobile wraps an element with a mobile-like frame.
   /* TODO(matthiasrohmer): Make all occurences use the actual class */
   amp-img, amp-video, amp-vimeo, &-content {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    overflow: hidden;
   }
 }
