@@ -105,7 +105,7 @@ if (config.environment === 'development') {
           response.setHeader('content-length', filteredPage.content.length.toString());
           return filteredPage.content;
         } catch(e) {
-          log.warn(`Requested page is not available in format ${activeFormat}`);
+          log.warn(`Could not filter request`, e.message);
           return body;
         }
       });
