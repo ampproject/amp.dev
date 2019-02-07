@@ -1,4 +1,6 @@
 $title@: Contribute
+$title@fr: Participer
+
 $path: /documentation/guides-and-tutorials/contribute/{base}.html
 $view: /views/detail/docs-detail.j2
 
