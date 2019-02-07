@@ -95,12 +95,13 @@
     }
 
     &-list {
-      display: grid;
+      display: block;
       grid-template-columns: 1fr;
       grid-gap: 30px;
       margin: 0 40px;
 
       @media (min-width: 768px) {
+        display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-auto-flow: dense;
         margin: 0;
@@ -110,10 +111,15 @@
         grid-column: 1;
         grid-row: auto;
         margin: 0;
+        max-width: 100%;
 
         @media (min-width: 768px) {
-          grid-column: span 4;
+          grid-column: span 6;
           grid-row: span 6;
+        }
+
+        @media (min-width: 1024px) {
+          grid-column: span 4;
         }
 
         &-square {
