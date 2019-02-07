@@ -62,7 +62,7 @@
       {% for second_level_path in second_level %}
       {% set second_level_doc = g.doc(second_level_path, locale=doc.locale) %}
       <a class="ap-o-header-second-level-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
-        {{ second_level_doc.titles('header') }}
+        {{ _(second_level_doc.titles('header')) }}
       </a>
       {% endfor %}
     </nav>
