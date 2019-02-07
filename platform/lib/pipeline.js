@@ -126,7 +126,7 @@ class Pipeline {
 
       stream.on('error', (error) => {
         log.fatal('There was an error transpiling the pages SCSS.', error);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {
@@ -151,9 +151,9 @@ class Pipeline {
       const stream = gulp.src(src)
           .pipe(gulp.dest(dest));
 
-      stream.on('error', () => {
+      stream.on('error', (error) => {
         log.error(`There was an error moving ${entity}`);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {

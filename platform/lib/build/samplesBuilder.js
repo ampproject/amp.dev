@@ -138,7 +138,7 @@ class SamplesBuilder {
 
       stream.on('error', (error) => {
         this._log.fatal('There was an error building the samples', error);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {
