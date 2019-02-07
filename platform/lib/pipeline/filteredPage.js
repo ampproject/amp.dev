@@ -75,7 +75,7 @@ class FilteredPage {
    */
   _isAvailable() {
     const body = this._dom('body');
-    return body.attr('data-available-formats').includes(this._format);
+    return (body.attr('data-available-formats') || '').includes(this._format);
   }
 
   /**
