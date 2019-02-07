@@ -114,13 +114,14 @@ class FilteredPage {
 
     // Find possibly empty lists and remove them for ...
     // a) component and default sidebar
-    this._dom('.nav-list .level-2', '.ap-o-sidebar, .ap-o-component-sidebar').each((index, navList) => {
-      navList = this._dom(navList);
+    this._dom('.nav-list .level-2', '.ap-o-sidebar, .ap-o-component-sidebar')
+        .each((index, navList) => {
+          navList = this._dom(navList);
 
-      if (navList.children().length == 0) {
-        navList.parent().remove();
-      }
-    });
+          if (navList.children().length == 0) {
+            navList.parent().remove();
+          }
+        });
   }
 
   /**

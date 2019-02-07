@@ -148,7 +148,7 @@ class SamplesBuilder {
       });
 
       stream.on('end', () => {
-        this._log.success(`Built samples.`);
+        this._log.success('Built samples.');
         resolve();
       });
     });
@@ -382,7 +382,7 @@ class SamplesBuilder {
       const embed = sample.clone();
       embed.isEmbed = true;
       embed.contents = Buffer.from(handlebars.render(
-        template, Object.assign({'isEmbed': true}, parsedSample)));
+          template, Object.assign({'isEmbed': true}, parsedSample)));
 
       return [embed];
     }
