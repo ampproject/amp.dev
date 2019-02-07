@@ -3,6 +3,12 @@ $path: /documentation/guides-and-tutorials/develop/monetization/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/monetization/{base}.html
 $title@: Monetize your AMP page with ads
+$title@zh: 在您的 AMP 网页中利用广告获利
+$title@pt: Monetização de páginas AMP com anúncios
+$title@ko: AMP 페이지에서 광고로 수익 창출하기
+$title@ja: 広告で AMP ページを収益化する
+$title@id: Memonetisasi halaman AMP dengan iklan
+$title@es: Monetizar tu página AMP con anuncios
 $order: 11
 
 formats:

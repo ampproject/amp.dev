@@ -4,6 +4,12 @@ $order: 5
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/add_advanced/{base}.html
 $title@: Add advanced AMP features
+$title@es: Añadir funciones avanzadas de AMP
+$title@id: Menambahkan fitur AMP lanjutan
+$title@ja: 高度な AMP 機能を追加する
+$title@ko: 고급 AMP 기능 추가
+$title@pt: Adicionar recursos de AMP avançados
+$title@zh: 添加高级 AMP 功能
 chaptered: true
 tutorial: true
 
