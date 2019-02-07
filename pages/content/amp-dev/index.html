@@ -73,7 +73,7 @@ success_stories:
         </div>
       </div>
     </div>
-    
+
     {% with %}
     {% set case_band_images = [
       {"src": "/static/img/case-band-image-2.jpg", "width": "519", "height": "931"},
@@ -274,13 +274,13 @@ success_stories:
           {% do doc.icons.useIcon('icons/logo.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </div>
-        <h2>AMP by Example</h2>
+        <h2>AMP in action</h2>
       </div>
     </div>
 
     <div class="ap--container-fluid">
       <div class="ap-m-copy">
-        <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. At their core, AMP pages are just web pages that you own and control. AMP is supported by many different platforms, and is compatible across browsers. AMP also powers specific web formats such as stories, ads and dynamic emails.</p>
+        <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. Can't believe it? Try it out for yourself in the playground below:</p>
       </div>
 
       <div class="ap-o-sampler">
@@ -299,7 +299,7 @@ success_stories:
         {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
-            height="600px"
+            height="450px"
             layout="fixed-height"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
             resizable

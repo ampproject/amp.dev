@@ -17,6 +17,7 @@
 
 .#{organism('text-media-block')} {
   position: relative;
+  align-items: center;
 
   .#{molecule('text-media')} {
     h2 {

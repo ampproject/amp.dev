@@ -134,5 +134,7 @@
 
     {% include 'views/partials/analytics.j2' %}
     {% include 'views/partials/consent.j2' %}
+
+    <amp-install-serviceworker src="/serviceworker.js" data-iframe-src="{{ podspec.base_urls.platform }}" layout="nodisplay"></amp-install-serviceworker>
   </body>
 </html>

@@ -5,7 +5,7 @@ import re
 
 VIDEO_TRIGGER = '[video'
 VIDEO_TAG_PATTERN = re.compile(r'\[video .*\]', re.MULTILINE)
-ATTRIBUTE_PATTERN = re.compile(r'(\w+)=\"(.*?)\"')
+ATTRIBUTE_PATTERN = re.compile(r'(\w+)=(?:\"|\')(.*?)(?:\"|\')')
 
 PARTIAL_PATH = '/views/partials/video.j2'
 
@@ -48,8 +48,8 @@ def _get_attributes(match):
     attributes = {
         'type': None,
         'src': '',
-        'width': 0,
-        'height': 0,
+        'width': 16,
+        'height': 9,
         'poster': None,
         'autoplay': False,
         'loop': False,
