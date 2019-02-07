@@ -16,7 +16,7 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
   <!--
-    Import the `amp-mustache` tag.  
+    Import the `amp-mustache` tag.
   -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <!--
@@ -66,7 +66,7 @@
   <!--
     Variables are interpolated when the variable name is surrounded in double curly brackets (`{{varname}}`)
   -->
-  <amp-list src="<%host%>/json/cart.json" layout="fixed-height" height="56">
+  <amp-list src="/static/samples/json/cart.json" layout="fixed-height" height="56">
     <template type="amp-mustache">
       Hi {{fullname}}!
     </template>
@@ -76,7 +76,7 @@
   <!--
     Conditionals are called using the same syntax, but with an octothorpe (`#`) prepended.
   -->
-  <amp-list src="<%host%>/json/cart.json" layout="fixed-height" height="56">
+  <amp-list src="/static/samples/json/cart.json" layout="fixed-height" height="56">
     <template type="amp-mustache">
       {{#phonenumber}}
         The registered phone number is {{phonenumber}}
@@ -88,7 +88,7 @@
   <!--
     For negative conditionals instead, insert a caret (`^`) before the variable name.
   -->
-  <amp-list src="<%host%>/json/cart.json" layout="fixed-height" height="56">
+  <amp-list src="/static/samples/json/cart.json" layout="fixed-height" height="56">
     <template type="amp-mustache">
       {{^twitter}}
         There is no registered twitter account for this profile
@@ -100,7 +100,7 @@
   <!--
     Loops use the same syntax as conditionals, but work when <i>lists</i> are provided instead of scalar variables such as strings, integers, and dictionaries.
   -->
-  <amp-list src="<%host%>/json/cart.json" layout="fixed-height" height="80">
+  <amp-list src="/static/samples/json/cart.json" layout="fixed-height" height="80">
     <template type="amp-mustache">
       <div id="cart">
         {{#cart_items}}

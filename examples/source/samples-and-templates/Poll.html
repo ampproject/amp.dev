@@ -76,19 +76,19 @@ already voted. We use a cookie called `POLL_USER_ID` to identify the user. Given
 to block third-party cookies from sites that have not been previously visited, this approach may not work if the page
 is visited via the AMP Cache. In this case we fallback to checking for duplicate entries via the `CLIENT_ID`.
 
-The `CLIENT_ID` is a unique identifier for the user when accessing a specific origin, for example the original page or
+<p>The `CLIENT_ID` is a unique identifier for the user when accessing a specific origin, for example the original page or
 the cached version of it. This means that the same user will generate two different values when accessing different origins.
-That's why we use a custom cookie to track cross origin access to the poll page.
+That's why we use a custom cookie to track cross origin access to the poll page.</p>
 
-The `CLIENT_ID` variable can be passed via an amp-form by declaring a hidden input value with
+<p>The `CLIENT_ID` variable can be passed via an amp-form by declaring a hidden input value with
 `default-value="CLIENT_ID(POLL_USER_ID)`. In our implementation, [the backend](https://github.com/ampproject/amp-by-example/blob/master/backend/poll.go) sets `POLL_USER_ID` to the value of `CLIENT_ID`,
-but the value of this cookie is not relevant and you could re-use your own session id.
+but the value of this cookie is not relevant and you could re-use your own session id.</p>
 
-Read more about [variable substitution](https://www.ampproject.org/docs/reference/components/amp-form#variable-substitutions).
-Currently, HTML tables are not supported in form responses, so we'll use CSS to layout the result data.
+<p>Read more about [variable substitution](https://www.ampproject.org/docs/reference/components/amp-form#variable-substitutions).
+Currently, HTML tables are not supported in form responses, so we'll use CSS to layout the result data.</p>
 
-In order to submit the form as soon as the user picks an option, we will add an
-[`on` attribute](https://www.ampproject.org/docs/reference/spec#on) to each `<input>`, that will submit the poll on change.
+<p>In order to submit the form as soon as the user picks an option, we will add an
+[`on` attribute](https://www.ampproject.org/docs/reference/spec#on) to each `<input>`, that will submit the poll on change.</p>
 -->
 <form method="post" action-xhr="/samples_templates/poll/submit" target="_blank"
       id="poll1"

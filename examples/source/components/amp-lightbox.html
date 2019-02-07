@@ -1,9 +1,7 @@
 <!--
   ## Introduction
 
-  The [`amp-lightbox`](https://www.ampproject.org/docs/reference/components/amp-lightbox) 
-  component allows for a “lightbox” or similar experience - where upon user
-  interaction a component expands to fill the viewport, until it is closed again by the user.
+  The [`amp-lightbox`](https://www.ampproject.org/docs/reference/components/amp-lightbox) component allows for a “lightbox” or similar experience - where upon user interaction a component expands to fill the viewport, until it is closed again by the user.
 -->
 <!-- -->
 <!doctype html>
@@ -38,12 +36,10 @@
 <body>
   <!-- ## Basic usage -->
   <!--
-    The `amp-lightbox` component defines the child elements that will be displayed in a full-viewport overlay. 
-    To close the lightbox via click or tap use the `on` attribute on one or more elements
-    inside the lightbox. In this example the user can click anywhere in the lightbox to close it.
+    The `amp-lightbox` component defines the child elements that will be displayed in a full-viewport overlay.
+    To close the lightbox via click or tap use the `on` attribute on one or more elements inside the lightbox. In this example the user can click anywhere in the lightbox to close it.
 
-    The lighbox is shown when the user taps or clicks on an element with `on` attribute that targets
-    the id of an `amp-lightbox` element.
+    The lighbox is shown when the user taps or clicks on an element with `on` attribute that targets the id of an `amp-lightbox` element.
   -->
   <div>
     <amp-lightbox id="my-lightbox" layout="nodisplay">
@@ -57,17 +53,15 @@
   </div>
 
   <!--
-    For showing images in a lightbox, AMP also features the
-    [amp-image-lightbox](/components/amp-image-lightbox/) component, which doesn't need the image to
-    specified twice.
+    For showing images in a lightbox, AMP also features the [amp-image-lightbox](/components/amp-image-lightbox/) component, which doesn't need the image to specified twice.
   -->
 
   <!-- ## Combination with amp-bind -->
   <!-- `amp-lightbox` can be opened as a result of `amp-bind` evaluations by binding a boolean value to the `open` attribute. -->
   <div>
     <amp-lightbox id="my-bindable-lightbox" [open]="showLightbox" layout="nodisplay">
-      <div class="lightbox" 
-           role="button" 
+      <div class="lightbox"
+           role="button"
            tabindex="0"
            on="tap:AMP.setState({showLightbox: false})">
         <h1>Hello World!</h1>

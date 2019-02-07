@@ -1,9 +1,7 @@
 <!doctype html>
 <html ⚡>
   <head>
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    {{> 'head.hbs' }}
 
     <style amp-custom>
       {{{css 'base.css' }}}
@@ -22,7 +20,9 @@
     </style>
 
     {{{ document.head }}}
+  </head>
   {{{ document.body }}}
+    {{{document.elementsAfterBody}}}
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       {{{icon 'logo.svg' }}}
       {{{icon 'angle-down-solid.svg' }}}

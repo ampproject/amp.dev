@@ -79,19 +79,24 @@ The `amp-app-banner` can be fully customized by the developer as long as the hei
   <!--
   The custom app banner shows up in AMP Viewers. The banner action opens the document's canonical URL as deep-link inside the app:
 
+  ```html
   <amp-video width="1920" height="1080"
     src="/video/amp-app-banner-android-app-installed.mp4"
              layout="responsive"
              controls>
   </amp-video>
+  ```
 
   ...and if the app is not installed, the banner action shows the app in the Play Store / App Store:
 
+  ```html
   <amp-video width="1920" height="1080"
     src="/video/amp-app-banner-android-app-not-installed.mp4"
              layout="responsive"
              controls>
   </amp-video>
+  ```
+
   -->
 
   <!-- ## Testing -->
@@ -99,9 +104,7 @@ The `amp-app-banner` can be fully customized by the developer as long as the hei
     The `amp-app-banner` will only show in browsers that don't provide their own app install banner. This means Chrome on Android or Safari on iOS will not show the `amp-app-banner,` but the native install banner. For testing `amp-app-banner` you can open this page:
 
   * **On a mobile device:** in browser without native install banner, e.g. [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en_GB) on Android or [Chrome](https://itunes.apple.com/gb/app/chrome-web-browser-by-google/id535886823?mt=8) on iOS.
-  * **On Desktop:** in [mobile device emulation mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/) append `#webview=1` to the [page URL](<%host%>/components/amp-app-banner/#webview=1). The other option is to use a custom user agent in mobile emulation mode, for example:
-
-  <pre>Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) CriOS/51.000.21 Mobile/13B143 Safari/601.1</pre>
+  * **On Desktop:** in [mobile device emulation mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/) append `#webview=1` to the [page URL](<%host%>/components/amp-app-banner/#webview=1). The other option is to use a custom user agent in mobile emulation mode, for example: `Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) CriOS/51.000.21 Mobile/13B143 Safari/601.1`
   -->
 
 </body>

@@ -166,8 +166,8 @@ layout: responsive
     There are two types of scrollbound animations that occur in this sample:
     **scaling** of the video container and **parallax** movement of the background image.
 
-    The animations are implemented using [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation)
-    which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/)
+    <p>The animations are implemented using [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation)
+    which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/)</p>
   -->
   <amp-animation layout="nodisplay" id="videoAnim">
     <script type="application/json">
@@ -200,15 +200,15 @@ layout: responsive
     it slowly starts to scale down and move to the corner reaching its target
     size when the ad is in the middle of the view port.
 
-    To achieve that, we define 4 keyframes. Between 0 and 10% of viewport,
+    <p>To achieve that, we define 4 keyframes. Between 0 and 10% of viewport,
     video is fullsize, between 10% and 50%, it starts scaling down until it
     settles at half its size when in the middle of the viewport and stays the
-    same size all the way to the last keyframe.
+    same size all the way to the last keyframe.</p>
 
-    **Parallax background image**:
+    <p>**Parallax background image**:
     The background image of this ad has a subtle parallax effect.
     To achieve that, we use scrollbound animation and specify a `60px` offset
-    at the last keyframe.
+    at the last keyframe.</p>
   -->
 
   <!-- ## Scrollbound Animations -->
@@ -239,10 +239,10 @@ layout: responsive
       <div id="clickToPlayOverlay" class="fill">
         <div class="play-icon" role="button" tabindex="0" on="tap:clickToPlayOverlay.hide, video.play"></div>
 
-        <amp-img class="poster-image" layout="fill" src="<%host%>/img/car-video-poster.png"></amp-img>
+        <amp-img class="poster-image" layout="fill" src="/static/samples/img/car-video-poster.png"></amp-img>
       </div>
 
-      <amp-video id="video" controls layout="fill" src="<%host%>/video/car-video-360p.mp4"></amp-video>
+      <amp-video id="video" controls layout="fill" src="/static/samples/video/car-video-360p.mp4"></amp-video>
     </div>
     <!-- ## Content Layer -->
     <!--
@@ -252,11 +252,11 @@ layout: responsive
     -->
     <div class="content-container fill">
       <div class="background">
-        <amp-img id="backgroundImg" layout="fill" src="<%host%>/img/car-bg.jpg"></amp-img>
+        <amp-img id="backgroundImg" layout="fill" src="/static/samples/img/car-bg.jpg"></amp-img>
       </div>
       <div class="title">
         <div>
-          <amp-img layout="fixed" width="72" height="32" src="<%host%>/img/car-logo.png"></amp-img>
+          <amp-img layout="fixed" width="72" height="32" src="/static/samples/img/car-logo.png"></amp-img>
         </div>
         <div>THE ALL NEW</div>
         <div>WS-X LUX</div>

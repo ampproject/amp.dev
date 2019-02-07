@@ -24,6 +24,7 @@ const utils = require('@lib/utils');
 const SAMPLE_MANUALS_ROUTE = '/documentation/examples';
 const SOURCES_DEST = utils.project.absolute('/dist/examples/sources');
 const PREVIEWS_DEST = utils.project.absolute('/dist/examples/previews');
+const EMBEDS_DEST = utils.project.absolute('/dist/examples/embeds');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -39,10 +40,16 @@ examples.use(`${SAMPLE_MANUALS_ROUTE}/*/source(/)?:sectionId?`, (request, respon
   next();
 }, express.static(SOURCES_DEST));
 
-examples.use(`${SAMPLE_MANUALS_ROUTE}/*/preview`, (request, response, next) => {
+examples.use(`${SAMPLE_MANUALS_ROUTE}/*/preview(/)?`, (request, response, next) => {
   // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
   request.url = `//${request.params[0]}`;
   next();
 }, express.static(PREVIEWS_DEST));
+
+examples.use(`${SAMPLE_MANUALS_ROUTE}/*/embed(/)?`, (request, response, next) => {
+  // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
+  request.url = `//${request.params[0]}`;
+  next();
+}, express.static(EMBEDS_DEST));
 
 module.exports = examples;
