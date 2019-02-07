@@ -48,7 +48,7 @@ Se recomienda que la imagen de póster tenga las siguientes dimensiones: 720p (7
 
 ### Diferencias entre `<source>` y `src` 
 
-Al indicar la fuente de un componente [amp-video](/es/docs/reference/components/amp-video.html), utiliza los elementos secundarios `<source>` en lugar del atributo `src`, ya que con `<source>` puedes especificar el tipo de vídeo y añadir más fuentes. En los elementos `<source>`, el tipo de MIME se define con `type`. Si se trata de vídeos HLS, debes indicar los tipos MIME `application/x-mpegurl` o `application/vnd.apple.mpegurl`. En el resto, incluye el prefijo `video/` seguido del formato (p. ej., `video/mp4`).
+Al indicar la fuente de un componente [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}).
 
 *Ejemplo: Especificar varias fuentes*
 

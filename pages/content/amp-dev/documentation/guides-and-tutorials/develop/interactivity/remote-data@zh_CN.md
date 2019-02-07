@@ -38,7 +38,7 @@ $title: 使用远程数据
 
 ### 指明不可用的尺寸
 
-接下来，我们将为所选 SKU 清晰地标明不可用的尺寸。`"unavailable"` CSS 类会在相应元素上划一条对角线 - 我们可将它添加到 `amp-selector[name="size"]` 内与不可用尺寸对应的元素中：
+接下来，我们将为所选 SKU 清晰地标明不可用的尺寸。`"unavailable"` CSS 类会在相应元素上划一条对角线 - 我们可将它添加到 `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 内与不可用尺寸对应的元素中：
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ $title: 使用远程数据
 
 ### 指定初始状态
 
-但有个小问题 - 该如何对待黑色（默认选择的颜色）衬衫呢？我们需要将黑色衬衫的尺寸和价格数据添加到 `amp-state#shirts` 中，因为 `<amp-bind>` 只会为响应明确的用户操作而运行：
+但有个小问题 - 该如何对待黑色（默认选择的颜色）衬衫呢？我们需要将黑色衬衫的尺寸和价格数据添加到 `amp-state#shirts` 中，因为 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 只会为响应明确的用户操作而运行：
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ $title: 使用远程数据
 </amp-selector>
 ```
 
-注意: `<amp-bind>` 不会在网页加载时运行 - 它只会为响应明确的用户操作而运行。这可确保所有网页都能以非常快的速度完成初始网页加载，无论相应网页是否使用了 `<amp-bind>`。
+注意: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 不会在网页加载时运行 - 它只会为响应明确的用户操作而运行。这可确保所有网页都能以非常快的速度完成初始网页加载，无论相应网页是否使用了 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})。
 
 ## 多变的衬衫价格
 
 鉴于我们已能正确显示可用的尺寸，下面我们将确保也能显示正确的价格。
 
-我们的 AMPPAREL 商店的独特之处在于，衬衫价格同时取决于颜色和尺寸。这意味着，我们需要使用一个新的变量来跟踪用户所选的尺寸。为此，我们将在我们的尺寸 `<amp-selector>` 元素中添加一项新操作：
+我们的 AMPPAREL 商店的独特之处在于，衬衫价格同时取决于颜色和尺寸。这意味着，我们需要使用一个新的变量来跟踪用户所选的尺寸。为此，我们将在我们的尺寸 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 元素中添加一项新操作：
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

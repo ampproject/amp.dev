@@ -48,7 +48,7 @@ Dimensi yang direkomendasikan untuk gambar poster adalah: 720 px (lebar 720 px x
 
 ### Menentukan `<source>` vs `src` 
 
-Saat menentukan sumber untuk [amp-video](/id/docs/reference/components/amp-video.html), gunakan elemen turunan `<source>` dan bukan atribut `src`. Dengan menggunakan elemen `<source>`, Anda dapat menentukan jenis video, serta menambahkan lebih banyak sumber video. Dalam elemen `<source>`, tentukan jenis MIME melalui atribut `"type"`. Untuk video HLS, Anda harus menentukan salah satu dari jenis MIME berikut: `application/x-mpegurl` atau `application/vnd.apple.mpegurl`. Untuk semua video lainnya, tentukan awalan MIME `video/` dan format video (misalnya, "`video/mp4`").
+Saat menentukan sumber untuk [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}).
 
 *Contoh: Menentukan beberapa file sumber*
 

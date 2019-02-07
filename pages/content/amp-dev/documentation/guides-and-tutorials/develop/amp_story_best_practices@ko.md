@@ -48,7 +48,7 @@ AMP 스토리는 보다 시각적인 경험을 제공하는 것이 목적이므�
 
 ### `<source>` 지정하기 vs `src` 
 
-[amp-video](/ko/docs/reference/components/amp-video.html)의 출처를 지정할 때 `src` 속성 대신 `<source>` 하위 요소를 사용하세요. `<source>` 요소를 사용하면 동영상 유형을 지정하고 더 많은 동영상 출처를 추가할 수 있습니다. `<source>` 요소에는 `"type"` 속성을 통해 MIME 유형을 지정하세요. HLS 동영상의 경우 `application/x-mpegurl` 또는 `application/vnd.apple.mpegurl` MIME 유형 중 하나를 지정해야 합니다. 다른 모든 동영상은 `video/` MIME 접두어와 동영상 형식(예: "`video/mp4`")을 지정하세요.
+[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})을 지정하세요.
 
 *예: 여러 소스 파일 지정하기*
 

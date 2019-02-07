@@ -38,7 +38,7 @@ Sekarang, mari kita terapkan hal ini ke contoh e-commerce. Pertama-tama, ambil d
 
 ### Menunjukkan ukuran yang tidak tersedia
 
-Selanjutnya, mari tandai dengan jelas ukuran yang tidak tersedia untuk SKU tertentu. Kelas CSS `"unavailable"` menambahkan garis diagonal pada elemen -- kita dapat menambahkannya ke elemen dalam `amp-selector[name="size"]` yang terkait dengan ukuran yang tidak tersedia:
+Selanjutnya, mari tandai dengan jelas ukuran yang tidak tersedia untuk SKU tertentu. Kelas CSS `"unavailable"` menambahkan garis diagonal pada elemen -- kita dapat menambahkannya ke elemen dalam `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` yang terkait dengan ukuran yang tidak tersedia:
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ Sekarang, muat ulang halaman dan cobalah. Memilih SKU baru (warna kemeja) akan m
 
 ### Menentukan status awal
 
-Namun ada sedikit masalah -- bagaimana dengan kemeja hitam, yaitu warna default yang dipilih?  Kita perlu menambahkan data ukuran dan harga kemeja hitam ke `amp-state#shirts` karena `<amp-bind>` hanya akan berjalan sebagai tanggapan terhadap tindakan pengguna yang eksplisit:
+Namun ada sedikit masalah -- bagaimana dengan kemeja hitam, yaitu warna default yang dipilih?  Kita perlu menambahkan data ukuran dan harga kemeja hitam ke `amp-state#shirts` karena [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) hanya akan berjalan sebagai tanggapan terhadap tindakan pengguna yang eksplisit:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ Selain itu, kita perlu mengupdate status default elemen yang relevan:
 </amp-selector>
 ```
 
-Catatan: `<amp-bind>` tidak berjalan saat pemuatan halaman, melainkan hanya sebagai tanggapan terhadap tindakan pengguna yang eksplisit. Hal ini memastikan pemuatan halaman awal tetap cepat pada semua halaman, terlepas dari penggunaan `<amp-bind>`.
+Catatan: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) tidak berjalan saat pemuatan halaman, melainkan hanya sebagai tanggapan terhadap tindakan pengguna yang eksplisit. Hal ini memastikan pemuatan halaman awal tetap cepat pada semua halaman, terlepas dari penggunaan [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 ## Harga kemeja variabel
 
 Setelah kita menampilkan ukuran yang tersedia dengan benar, pastikan harga yang benar juga ditampilkan.
 
-Toko AMPPAREL kita tidak biasa karena harga kemeja berbeda berdasarkan warna maupun ukuran. Artinya kita perlu variabel baru untuk melacak ukuran yang dipilih pengguna. Tambahkan tindakan baru ke elemen `<amp-selector>` ukuran:
+Toko AMPPAREL kita tidak biasa karena harga kemeja berbeda berdasarkan warna maupun ukuran. Artinya kita perlu variabel baru untuk melacak ukuran yang dipilih pengguna. Tambahkan tindakan baru ke elemen [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) ukuran:
 
 ```html
 <!-- Jika elemen dipilih, setel variabel `selectedSize` ke

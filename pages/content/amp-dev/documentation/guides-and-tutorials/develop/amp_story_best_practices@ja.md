@@ -48,7 +48,7 @@ AMP ストーリーは、より視覚的なエクスペリエンスの提供を�
 
 ### `src` ではなく `<source>` を指定する
 
-[amp-video](/ja/docs/reference/components/amp-video.html) のソースを指定する際は、`src` ではなく子要素の `<source>` を使用します。`<source>` 要素を使用することで、動画の種類を指定したり、複数の動画のソースを追加したりできるようになります。`<source>` 要素内で、`"type"` 属性を使用して MIME タイプを指定します。HLS 動画の場合は、MIME タイプに `application/x-mpegurl` か `application/vnd.apple.mpegurl` のいずれかを指定する必要があります。他の動画の場合は、`video/` という MIME プレフィックスの後に動画フォーマットを指定します（例: "`video/mp4`"）。
+[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) のソースを指定する際は、`src` ではなく子要素の `<source>` を使用します。`<source>` 要素を使用することで、動画の種類を指定したり、複数の動画のソースを追加したりできるようになります。`<source>` 要素内で、`"type"` 属性を使用して MIME タイプを指定します。HLS 動画の場合は、MIME タイプに `application/x-mpegurl` か `application/vnd.apple.mpegurl` のいずれかを指定する必要があります。他の動画の場合は、`video/` という MIME プレフィックスの後に動画フォーマットを指定します（例: "`video/mp4`"）。
 
 例: 複数のソースファイルの指定
 

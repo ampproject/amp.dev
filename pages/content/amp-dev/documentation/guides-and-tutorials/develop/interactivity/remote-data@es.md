@@ -38,7 +38,7 @@ Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos
 
 ### Indicar tamaños no disponibles
 
-A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector `amp-selector[name="size"]`  correspondientes a tamaños no disponibles:
+A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]`  correspondientes a tamaños no disponibles:
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ Ahora, vuelva a cargar la página y pruébela. Si selecciona un nuevo SKU (color
 
 ### Especificar estados iniciales
 
-Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque `<amp-bind>` sólo se ejecuta en respuesta a una acción explícita del usuario:
+Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) sólo se ejecuta en respuesta a una acción explícita del usuario:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ Y, debemos actualizar el estado predeterminado de los elementos relevantes:
 </amp-selector>
 ```
 
-Nota: `<amp-bind>` no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de `<amp-bind>`.
+Nota: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 ## Precios variables
 
 Ahora que mostramos correctamente los tamaños disponibles, nos aseguramos de que el precio correcto también se muestre.
 
-Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento `<amp-selector>`:
+Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}):
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

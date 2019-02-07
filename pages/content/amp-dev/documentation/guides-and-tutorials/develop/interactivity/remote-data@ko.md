@@ -38,7 +38,7 @@ $title: 원격 데이터 사용하기
 
 ### 주문할 수 없는 사이즈 표시
 
-다음으로, 주어진 SKU에서 주문할 수 없는 사이즈를 명확하게 표시해 보겠습니다. `"unavailable"` CSS 클래스는 요소를 관통하는 대각선을 추가합니다. 이 클래스를 주문할 수 없는 사이즈인 `amp-selector[name="size"]` 내의 요소에 추가할 수 있습니다.
+다음으로, 주어진 SKU에서 주문할 수 없는 사이즈를 명확하게 표시해 보겠습니다. `"unavailable"` CSS 클래스는 요소를 관통하는 대각선을 추가합니다. 이 클래스를 주문할 수 없는 사이즈인 `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 내의 요소에 추가할 수 있습니다.
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ $title: 원격 데이터 사용하기
 
 ### 초기 상태 지정
 
-여기서 사소한 문제가 생깁니다. 기본으로 선택되는 색상인 검은색 셔츠는 어떻게 해야 할까요?  `<amp-bind>`는 명시적인 사용자 작업의 응답으로만 실행되므로 검은색 셔츠의 사이즈 및 가격 데이터를 `amp-state#shirts`에 추가해야 합니다.
+여기서 사소한 문제가 생깁니다. 기본으로 선택되는 색상인 검은색 셔츠는 어떻게 해야 할까요?  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})는 명시적인 사용자 작업의 응답으로만 실행되므로 검은색 셔츠의 사이즈 및 가격 데이터를 `amp-state#shirts`에 추가해야 합니다.
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ $title: 원격 데이터 사용하기
 </amp-selector>
 ```
 
-참고: `<amp-bind>`는 페이지 로드 시 실행되지 않으며 명시적인 사용자 작업의 응답으로만 실행됩니다. 따라서 `<amp-bind>`가 쓰이는지에 관계없이 모든 페이지에서 일관되게 초기 페이지 로드가 빨라집니다.
+참고: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})는 페이지 로드 시 실행되지 않으며 명시적인 사용자 작업의 응답으로만 실행됩니다. 따라서 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})가 쓰이는지에 관계없이 모든 페이지에서 일관되게 초기 페이지 로드가 빨라집니다.
 
 ## 가변적인 셔츠 가격
 
 주문할 수 있는 사이즈는 올바르게 표시했으니 이제 올바른 가격도 표시해 보겠습니다.
 
-AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격이 달라집니다. 따라서 사용자가 선택한 사이즈를 추적하기 위해서는 새 변수가 필요합니다. 다음과 같이 사이즈 `<amp-selector>` 요소에 새로운 작업을 추가합니다.
+AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격이 달라집니다. 따라서 사용자가 선택한 사이즈를 추적하기 위해서는 새 변수가 필요합니다. 다음과 같이 사이즈 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 요소에 새로운 작업을 추가합니다.
 
 ```html
 <!-- 요소가 선택되면 `selectedSize` 변수를 선택한 요소의

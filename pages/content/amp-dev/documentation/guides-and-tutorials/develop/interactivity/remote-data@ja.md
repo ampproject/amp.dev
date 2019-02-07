@@ -38,7 +38,7 @@ $title: リモートデータの使用
 
 ### 購入できないサイズを示す
 
-次に、特定の SKU について購入できないサイズを明示しましょう。`"unavailable"` CSS クラスは、要素に斜線を追加します。これは、購入できないサイズに対応する `amp-selector[name="size"]` 内の要素に追加することが可能です。
+次に、特定の SKU について購入できないサイズを明示しましょう。`"unavailable"` CSS クラスは、要素に斜線を追加します。これは、購入できないサイズに対応する `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 内の要素に追加することが可能です。
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ $title: リモートデータの使用
 
 ### 初期状態を指定する
 
-しかし、小さな問題が 1 つあります。たとえば、黒のシャツを、デフォルトで選択された色とする場合はどうでしょうか。黒のシャツのサイズと価格のデータを `amp-state#shirts` に追加することが必要となります。これは、明示的なユーザー操作に対してのみ `<amp-bind>` が実行されるためです。
+しかし、小さな問題が 1 つあります。たとえば、黒のシャツを、デフォルトで選択された色とする場合はどうでしょうか。黒のシャツのサイズと価格のデータを `amp-state#shirts` に追加することが必要となります。これは、明示的なユーザー操作に対してのみ [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) が実行されるためです。
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ $title: リモートデータの使用
 </amp-selector>
 ```
 
-メモ: `<amp-bind>` は、明示的なユーザー操作に対してのみ実行され、ページの読み込み時には実行されません。そのため、`<amp-bind>` の使用に関係なく、最初のページの読み込みを常に速くすることができます。
+メモ: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) は、明示的なユーザー操作に対してのみ実行され、ページの読み込み時には実行されません。そのため、[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) の使用に関係なく、最初のページの読み込みを常に速くすることができます。
 
 ## 変化するシャツの価格
 
 購入可能なサイズが正しく表示されるようになったので、価格も正確に表示できるようにしましょう。
 
-この AMPPAREL ストアでは、シャツの価格は、色およびサイズの両方によって異なっています。つまり、ユーザーの選んだサイズを追跡するための新しい変数が必要です。新しいアクションをサイズの `<amp-selector>` 要素に追加します。
+この AMPPAREL ストアでは、シャツの価格は、色およびサイズの両方によって異なっています。つまり、ユーザーの選んだサイズを追跡するための新しい変数が必要です。新しいアクションをサイズの [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 要素に追加します。
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

@@ -10,7 +10,7 @@ This guide provides  instructions and best practices for displaying ads on your 
 
 ## Adding ads to your page
 
-In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`<amp-ad>`](/docs/reference/components/amp-ad.html) component to your AMP page.
+In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) component to your AMP page.
 
 [tip type="tip"]
 **TIP –** See [AMP By Example for a live demo](https://ampbyexample.com/components/amp-ad/) that demonstrates adding an amp-ad tag to an AMP page.
@@ -92,7 +92,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serving direct-sold AMPHTML ads
 
-The [`amp-ad`](/docs/reference/components/amp-ad.html) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+The [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Augmenting targeting data on ad requests
 
@@ -129,7 +129,7 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 *   **Avoid heavy creatives** per [IAB guidelines](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
 *   **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
-*   **Place ads in your video content** via [supported players](/docs/reference/components.html#media) or [amp-iframe](https://ampbyexample.com/components/amp-iframe/) to enable revenue on all types of content.
+*   **Place ads in your video content** via [supported players](/docs/reference/components.html#media) or [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) to enable revenue on all types of content.
 *   **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
 
 ### Innovation: Offer the most engaging ad products
@@ -145,4 +145,4 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 ## Additional resources
 
 *   [AMPHTML ad templates](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
-*   [Demo: Shows how to add amp-ad to your AMP page](https://ampbyexample.com/components/amp-ad/)
+*   [Demo: Shows how to add `amp-ad` to your AMP page]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
