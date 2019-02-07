@@ -11,28 +11,160 @@ $hidden: true
 ---
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
 <h1>Introduction to AMP Stories</h1>
+
 <p class="limit">AMP Stories are interactive web experience that immerses readers in full-screen content. Use them to break longform articles into bite-sized chunks, a tappable list, or a Sponsored Story.</p>
 
-<h2>Daily Resources</h2>
-<p>Use our resources to make your day to day work with AMP easy and productive:</p>
-<div class="ap-o-teaser-grid">
-  <div class="ap-o-teaser-grid-list">
-    {% with %}
-    {% set teaser_doc = g.doc('/content/amp-dev/documentation/components/index.html') %}
-    {% include '/views/partials/teaser.j2' %}
-    {% endwith %}
+{% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
+<div class="ap--benefits--list">
+  {% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
+  <div class="ap-m-benefit">
+    <div class="ap-m-benefit-text">
+      <div class="ap-m-benefit-icon">
+        {% do doc.icons.useIcon('/icons/compass.svg') %}
+        <svg class="ap-m-benefit-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compass"></use>
+        </svg>
+      </div>
+      <h4 class="ap-m-benefit-text-headline">Get introduced</h4>
+    </div>
 
-    {% with %}
-    {% set teaser_doc = g.doc('/content/amp-dev/documentation/examples/index.html') %}
-    {% include '/views/partials/teaser.j2' %}
-    {% endwith %}
+    <div class="ap-m-benefit-text-block">
+      <p class="ap-m-benefit-text-copy">Familiarize the fundamentals</p>
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">AMP Development Intro Video</span>
+      </a>
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">AMP HTML Specification</span>
+      </a>
+    </div>
 
-    {% with %}
-    {% set teaser_doc = g.doc('/content/amp-dev/documentation/templates/index.html') %}
-    {% include '/views/partials/teaser.j2' %}
-    {% endwith %}
+    <div class="ap-m-benefit-text-block">
+      <p class="ap-m-benefit-text-copy">Start developing</p>
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">Create your first AMP Page</span>
+      </a>
+    </div>
+
+    <div class="ap-m-benefit-text-block">
+      <p class="ap-m-benefit-text-copy">Set up for Success</p>
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">Create interactive AMP pages</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="ap-m-benefit">
+    <div class="ap-m-benefit-text">
+    <div class="ap-m-benefit-icon">
+      {% do doc.icons.useIcon('/icons/documents.svg') %}
+      <svg class="ap-m-benefit-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#documents"></use>
+      </svg>
+    </div>
+      <h4 class="ap-m-benefit-text-headline">See Stories in Action</h4>
+    </div>
+
+    {% do doc.icons.useIcon('/icons/logo.svg') %}
+    <div class="ap-m-benefit-text-block">
+      <p class="ap-m-benefit-text-copy">Experience AMP Stories on the following platforms and products:</p>
+      <p class="ap-m-benefit-text-copy"><b>Google Search;</b><br>Mobile only, search for newsworthy topics to trigger and look for the <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> symbol.</p>
+      <p class="ap-m-benefit-text-copy"><b>Google Discover</b><br>Available via the Google App on iOS or by swiping left on the Android home screen.</p>
+    </div>
+
+    <div class="ap-m-benefit-text-block">
+      <p class="ap-m-benefit-text-copy">Experience AMP Stories on the following platforms and products:</p>
+
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">The missions still exploring our solar system</span>
+      </a>
+
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">The essential guide to Black Panther</span>
+      </a>
+
+      <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">The art of an organized refrigerator</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="ap-m-benefit">
+    <div class="ap-m-benefit-text">
+    <div class="ap-m-benefit-icon">
+      {% do doc.icons.useIcon('icons/content-modules.svg') %}
+      <svg class="ap-m-benefit-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#content-modules"></use>
+      </svg>
+    </div>
+      <h4 class="ap-m-benefit-text-headline">Tool Box</h4>
+    </div>
+
+    <div class="ap-m-benefit-text-block">
+      <p class="ap-m-benefit-text-copy">Use the AMP Test Site to see if your story is valid.</p>
+    </div>
+
   </div>
 </div>
 
+<hr>
+
+<div class="ap--benefits--list">
+  <div class="ap-m-benefit-twocolumns">
+      <div class="ap-m-benefit-daily">
+
+          <h5>Daily resource</h5>
+          <p>Use our resources to make your day to day work with AMP easy and productive:</p>
+          
+          <ul>
+            <li>Get familiar with what makes a Story valid AMP.</li>
+            <li>Check out our Demos and Examples to see AMP Stories in action.</li>
+            <li>Follow the step-by-step tutorials to learn to learn to create AMP Stories.</li>
+            <li>Stay up to date with all things new in AMP</li>
+            <li>Get in touch if you need any help</li>
+          </ul>
+        
+      </div>
+  </div>
+
+  <div class="ap-m-benefit-twocolumns">
+      
+  </div>
+</div>
+
+<div class="ap-o-teaser-grid-featured">
+
+  <h2>Featured Documents</h2>
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
+      {% with %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% include '/views/partials/teaser.j2' %}
+      {% endwith %}
+
+      {% with %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% include '/views/partials/teaser.j2' %}
+      {% endwith %}
+
+      {% with %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% include '/views/partials/teaser.j2' %}
+      {% endwith %}
+    </div>
+  </div>
+
+</div>
+
 <h2>Get Involved</h2>
-<p>AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less.</p>
+<p class="limit">
+  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less. 
+</p>
