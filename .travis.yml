@@ -6,8 +6,8 @@ git:
   depth: 3
 
 cache:
-  pip: true
-  npm: true
+  - pip
+  - npm
 
 install:
   - pip install grow==0.6.5 --user

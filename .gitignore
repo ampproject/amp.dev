@@ -31,8 +31,6 @@ pages/content/amp-dev/documentation/components/reference/*.md
 # Ignore files created during build process
 platform/pages*
 platform/static
-package-lock.json
-yarn.lock
 
 # Ignore pipeline cache
 .cache/**/*
