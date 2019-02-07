@@ -52,6 +52,10 @@
         @media (min-width: 1280px) {
           grid-column: 5 / 21;
         }
+        
+        @media (min-width: 1920px) {
+          margin-bottom: 28em;
+        }
 
         &-headline {
           @include hl-stage;
