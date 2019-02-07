@@ -22,7 +22,7 @@
     "start:playground": "cd playground && webpack-dev-server --mode development",
     "start": "cd platform && NODE_ENV=staging node serve.js",
     "test": "npm-run-all test:* --aggregate-output --parallel",
-    "test:playground": "cd playground && babel-node spec/run.js"
+    "test:playground": "babel-node playground/spec/run.js"
   },
   "keywords": [
     "amphtml",
