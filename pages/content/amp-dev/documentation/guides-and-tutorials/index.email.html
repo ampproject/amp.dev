@@ -100,7 +100,7 @@ $hidden: true
   </div>
 
   <div class="ap-m-benefit-twocolumns">
-      
+
   </div>
 </div>
 
@@ -110,17 +110,17 @@ $hidden: true
   <div class="ap-o-teaser-grid">
     <div class="ap-o-teaser-grid-list">
       {% with %}
-      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-amphtml-email.md', locale=doc.locale) %}
       {% include '/views/partials/teaser.j2' %}
       {% endwith %}
 
       {% with %}
-      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-format.md', locale=doc.locale) %}
       {% include '/views/partials/teaser.j2' %}
       {% endwith %}
 
       {% with %}
-      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/supported_integrations.md', locale=doc.locale) %}
       {% include '/views/partials/teaser.j2' %}
       {% endwith %}
     </div>
@@ -130,5 +130,5 @@ $hidden: true
 
 <h2>Get Involved</h2>
 <p class="limit">
-  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less. 
+  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less.
 </p>
