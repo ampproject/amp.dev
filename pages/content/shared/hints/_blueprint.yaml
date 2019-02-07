@@ -1,5 +1,0 @@
-path: /shared/hints/{base}.html
-view: /views/default.j2
-
-localization:
-  path: /{locale}/shared/hints/{base}.html

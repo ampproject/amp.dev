@@ -28,7 +28,7 @@ body {
     height: 145px;
     margin-top: -145px;
 
-    @media screen and (min-width: 1024px) {
+    @media (min-width: 1024px) {
       height: 180px;
       margin-top: -180px;
     }
