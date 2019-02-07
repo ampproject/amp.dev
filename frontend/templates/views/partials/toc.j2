@@ -2,7 +2,6 @@
 
 {% if not empty_toc and (doc.toc or doc.content.find('[TOC]')) %}
 {% do doc.icons.useIcon('icons/contentmenu.svg') %}
-{% do doc.icons.useIcon('icons/close.svg') %}
 <section class="ap--toc">
   {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
   {% do doc.styles.addCssFile('/css/components/organisms/toc.css') %}
