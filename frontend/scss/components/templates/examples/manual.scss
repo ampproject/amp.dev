@@ -32,7 +32,7 @@
       display: flex;
       flex-wrap: wrap;
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: 768px) {
         flex-wrap: nowrap;
       }
 
@@ -41,7 +41,7 @@
         margin-right: 10px;
         margin-bottom: 10px;
 
-        @media screen and (min-width: 768px) {
+        @media (min-width: 768px) {
           flex: 1 0 50%;
           max-width: 50%;
         }
@@ -49,7 +49,7 @@
     }
 
   .#{utility('playground-link')} {
-    @media screen and (max-width: 767px) {
+    @media (max-width: 767px) {
       display: none;
     }
   }
