@@ -17,16 +17,17 @@
 'use strict';
 
 const express = require('express');
-const path = require('path');
 const {setNoCache} = require('../utils/cacheHelpers.js');
 
 // eslint-disable-next-line new-cap
 const staticRouter = express.Router();
 
+staticRouter.use('/static', express.static('static'));
+
 staticRouter.get('/serviceworker.js', (request, response) => {
   setNoCache(response);
   response.status(200)
-      .sendFile(path.join(__dirname, '../../../pages/static/serviceworker.js'));
+      .sendFile('serviceworker.js', {root: 'static'});
 });
 
 module.exports = staticRouter;

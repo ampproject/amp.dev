@@ -51,10 +51,10 @@ body {
   }
 
   .#{utility('stage')} {
-    padding-bottom: 70vw;
+    padding: 0 0 3em;
 
-    @media (min-width: 768px) {
-      padding-bottom: 5vw;
+    @media (min-width: 768px ){
+      padding-bottom: 10vw;
     }
 
     .stage-logo {
@@ -64,21 +64,73 @@ body {
 
     .#{organism('stage-content')} {
       grid-column: 4 / 13;
+      
+      @media (max-width: 767px) {
+        margin-top: 20em;
+        margin-bottom: 4em;
+      }
+      
+      @media (min-width: 768px) {
+        margin: 7vw 1em 11vw 3em;
+      }
 
       h1 {
         @include hl;
         @include hl-h2;
         color: color('white');
       }
+    }
+  }
+  
+  .#{organism('teaser-grid')} {
+    grid-column: 4 / 22;
+    width: 100%;
+    margin-bottom: 7em;
+
+    @media (min-width: 768px) {
+      margin-bottom: calc(12.5em + 7em);
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: calc(12.5em + 8vw);
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 60px 30px;
+      margin: 0 40px;
 
       @media (min-width: 768px) {
-        margin: 7vw 1em 11vw 3em;
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+      }
+
+      .#{molecule('teaser')}{
+        grid-column: 1;
+        margin: 0;
+
+        @media (min-width: 768px) {
+          grid-column: span 4;
+        }
       }
     }
+  }
+  
+  .#{organism('filter-bubbles-list')}{
+    padding: 30px 0 60px 0;
   }
 
   .#{organism('text-media-block')} {
     padding-bottom: 5rem;
+    
+    h2 {
+      margin-top: 1rem;
+    }
+    
+    p {
+      margin-top: 0;
+    }
 
     .text {
       display: flex;
@@ -152,18 +204,6 @@ body {
         + .media {
           order: 1;
         }
-      }
-    }
-  }
-  .#{molecule('quote')}{
-
-    &-source {
-
-      .#{atom('img')}  {
-        width: 100%;
-        max-width: 150px;
-        position: relative;
-        margin-bottom: 10px;
       }
     }
   }

@@ -29,8 +29,14 @@
     }
 
     .#{atom('img')} {
-      width: 100%;
-      max-width: 150px;
+      position: relative;
+      width: 150px;
+      height: 30px;
+      
+      amp-img.contain img {
+        object-fit: contain;
+        object-position: right top;
+      }
     }
 
     .#{atom('ico')} {
