@@ -7,11 +7,11 @@
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 {% endif %}
 
-{# If not used by the sample add amp-analytics and amp-geo for tracking #}
-{% if 'custom-element="amp-analytics"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
+{# If neither amp-geo nor amp-consent is used for the sample include it #}
+{% if 'custom-element="amp-consent"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
 <script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 {% endif %}
 
 {# Include amp-install-serviceworker #}
@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 {% block analytics %}
 {# Do not render amp-analytics or amp-consent if used in the sample #}
-{% if 'custom-element="amp-analytics"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
+{% if 'custom-element="amp-consent"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
 {% include 'views/partials/analytics.j2' %}
 {% include 'views/partials/consent.j2' %}
 {% endif %}
