@@ -30,7 +30,7 @@ $view: /views/overview/what-is-amp.j2
     <div class="ap-m-copy ap-m-copy-left-small" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
       <h1>AMP<br> Email</h1>
       <h5>A whole new world of possibilities for content engagement</h5>
-      
+
       {% do doc.styles.addCssFile('/css/components/atoms/video.css') %}
       <figure class="ap-a-video">
         <amp-youtube id="myLiveChannel" data-videoid="R_YQB6rLo_M" width="358" height="204" layout="responsive"></amp-youtube>
@@ -64,9 +64,6 @@ $view: /views/overview/what-is-amp.j2
         {% do doc.icons.useIcon('icons/quote.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
      </div>
-      <div class="ap-a-img ap-a-img-static">
-        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" height="96" width="630" alt="placeholder" />
-      </div>
     </div>
     <div class="ap-m-quote-quote">
       <blockquote>
@@ -74,7 +71,7 @@ $view: /views/overview/what-is-amp.j2
       </blockquote>
       <p>Antony Malone, Senior Product Owner Direct Marketing at Booking.com</p>
 
-      <a href="#" class="ap-m-lnk">
+      <a href="{{ g.doc('/content/amp-dev/about/success-stories/index.html').url.path }}" class="ap-m-lnk">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
