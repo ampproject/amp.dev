@@ -7,11 +7,20 @@ $view: /views/custom.j2
 {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
 
 <main class="ap--main ap-t-404">
-  <div class="ap--container">
-    <div class="ap-m-copy ap-m-copy-center">
+  {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+  <section class="ap--container">
+
+    <div class="ap-m-jumbo">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
+      </div>
       <h1 class="ap-m-biggy-headline">404</h1>
-      <h3>Uh oh! That's an error.</h3>
-      <p>The page you've requested can't be found. Why don't you browse around, or while you're here, play a game of tic-tac-toe made with AMP?</p>
+      <h2 class="ap-m-jumbo-subline">Uh oh! That's an error.</h2>
+      <p class="ap-m-jumbo-copy">The page you've requested can't be found. Why don't you browse around?</p>
+
+      {% do doc.styles.addCssFile('/css/components/atoms/button.css', -1) %}
+      <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ap-a-btn">Back to home</a>
     </div>
-  </div>
+  </section>
 </main>
