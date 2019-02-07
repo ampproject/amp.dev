@@ -1,17 +1,18 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
 git:
   depth: 3
 cache:
-- pip
-- npm
+  - pip
+  - npm
 install:
-- pip install grow==0.6.5 --user
-- grow --version
-- npm ci
-before_deploy:
-- npm run build:staging
+  - pip install grow==0.6.5 --user
+  - grow --version
+  - npm ci
+script:
+  - npm test
+  - npm run build:staging
 deploy:
   provider: gae
   keyfile: ".staging.key.json"
