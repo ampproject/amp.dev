@@ -8,11 +8,11 @@ msgstr ""
 
 #: /content/includes/home.yaml
 msgid "A collaborative effort"
-msgstr "Un effort collaboratif"
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid "A faster way to grow your business"
-msgstr "Un moyen plus rapide pour developer votre société"
+msgstr ""
 
 #: /content/learn/who/ad-tech-platforms.yaml
 msgid ""
@@ -22,15 +22,10 @@ msgid ""
 "business is positioned for the future. Integrate your technology with AMP "
 "today."
 msgstr ""
-"Des éditeurs et publicitaires de plus en plus nombreux adoptent AMP pour "
-"livrer du contenu plus rapide et plus engageant à leurs utilisateurs. Quand "
-"vos clients découvreront la vitesse de AMP et de plus en plus d'utilisateurs "
-"consommeront votre contenu sur des pages AMP, soyez sûrs que votre société "
-"est orientée vers le futur.Intégrez votre technologie avec AMP aujoud'hui."
 
 #: /content/includes/home.yaml
 msgid "A path to success"
-msgstr "Un chemin vers le succès"
+msgstr ""
 
 #: /content/includes/stories.yaml
 msgid "A visual storytelling format for the open web"
@@ -297,7 +292,7 @@ msgstr ""
 
 #: /content/docs/ads.md /content/docs/ads/_blueprint.yaml
 msgid "Advertising"
-msgstr "La publicité"
+msgstr "Pеклама"
 
 #: /content/learn/who/amp-ads.yaml
 msgid ""
@@ -584,7 +579,7 @@ msgstr ""
 
 #: /content/docs/_blueprint.yaml /content/docs/build.md /content/includes/menu.yaml
 msgid "Docs"
-msgstr "Documents"
+msgstr "Справка"
 
 #: /content/includes/events.yaml
 msgid "Don't miss AMP Events"
@@ -884,7 +879,7 @@ msgstr ""
 
 #: /content/learn/who/advertisers.yaml /views/partials/grid-card.html:28
 msgid "Learn More"
-msgstr "En savoir plus"
+msgstr "Подробнее..."
 
 #: /content/includes/home.yaml
 msgid "Learn about AMP"
@@ -1060,7 +1055,7 @@ msgstr ""
 
 #: /content/learn/case-studies/category/publishers.md
 msgid "Publishers"
-msgstr "Éditeurs"
+msgstr "Издатели"
 
 #: /content/includes/home.yaml
 msgid ""
@@ -1101,7 +1096,7 @@ msgstr ""
 #: /content/includes/menu.yaml /content/reference/_blueprint.yaml
 #: /content/reference/reference.md
 msgid "Reference"
-msgstr "Référence"
+msgstr "Дополнительные материалы"
 
 #: /views/amp-ads.html:223
 msgid "Regular Ad"
@@ -1270,7 +1265,7 @@ msgstr ""
 #: /content/includes/menu.yaml /content/support/_blueprint.yaml
 #: /content/support/support.md
 msgid "Support"
-msgstr "Assistance"
+msgstr "Поддержка"
 
 #: /content/support/faqs/supported-browsers.md
 #: /content/support/faqs/supported-browsers@es.md
@@ -1519,11 +1514,11 @@ msgstr ""
 #: /content/learn/overview@pt_BR.yaml /content/learn/overview@ru.yaml
 #: /content/learn/overview@tr.yaml /content/learn/overview@zh_CN.yaml
 msgid "What is AMP"
-msgstr "Qu'est-ce qu'AMP"
+msgstr "Что такое AMP"
 
 #: /content/includes/menu.yaml
 msgid "What is AMP?"
-msgstr "Qu'est-ce qu'AMP ?"
+msgstr "Что такое AMP?"
 
 #: /content/includes/menu.yaml
 msgid "What's New"
