@@ -198,7 +198,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
       <div class="ap-m-benefit-daily">
         <h5>Daily resource</h5>
         <p>Use our resources to make your day to day work with AMP easy and productive:</p>
-        
+
         <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           <span class="ap-m-lnk-text">AMP Development Intro Video</span>
@@ -223,7 +223,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           <span class="ap-m-lnk-text">AMP HTML Specification</span>
         </a>
-        
+
       </div>
   </div>
 </div>
@@ -234,17 +234,17 @@ cms: !g.yaml /content/shared/data/cms.yaml
   <div class="ap-o-teaser-grid">
     <div class="ap-o-teaser-grid-list">
       {% with %}
-      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale) %}
       {% include '/views/partials/teaser.j2' %}
       {% endwith %}
 
       {% with %}
-      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale) %}
       {% include '/views/partials/teaser.j2' %}
       {% endwith %}
 
       {% with %}
-      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md') %}
+      {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale) %}
       {% include '/views/partials/teaser.j2' %}
       {% endwith %}
     </div>
@@ -254,5 +254,5 @@ cms: !g.yaml /content/shared/data/cms.yaml
 
 <h2>Get Involved</h2>
 <p class="limit">
-  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less. 
+  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to make the web suck less.
 </p>
