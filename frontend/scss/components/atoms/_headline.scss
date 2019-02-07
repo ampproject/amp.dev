@@ -46,7 +46,7 @@ stories-home
 }
 
 @mixin hl-xlrg {
-  font-size: 2.125rem;
+  font-size: 1.65rem;
 
   @media (min-width: 768px) {
     font-size: 2.125rem;
@@ -58,7 +58,7 @@ stories-home
 }
 
 @mixin hl-stage {
-  font-size: 2.25rem;
+  font-size: 1.65rem;
 
   @media (min-width: 768px) {
     font-size: 3.25rem;
@@ -108,6 +108,7 @@ stories-home
 
 @mixin hl-h5 {
   font-size: 1.125rem;
+  line-height: 1.3;
 }
 
 @mixin hl-h6 {

@@ -22,6 +22,13 @@
 @import 'components/molecules/_teaser.scss';
 
 .#{template('docs-guides-overview')} {
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top right;
+  background-attachment: fixed;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   .#{utility('container')} {
     @include container;
@@ -164,4 +171,90 @@
       }
     }
   }
+
+  .#{utility('benefits--list')} {
+    margin-top: 50px;
+    @media (min-width: 1024px){
+      display: flex;
+    }
+
+    .#{molecule('benefit')} {
+      margin: 20px 0;
+      display: block;
+
+      @media (min-width: 768px){
+        margin-right: 40px;
+      }
+
+      .#{molecule('lnk')} {
+        padding: 0;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+
+        &-centered {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 30px;
+        }
+
+        h4 {
+          margin: 10px 0 0 0;
+        }
+
+        b {
+          font-size: inherit;
+        }
+
+        &-block {
+          margin-bottom: 40px;
+        }
+
+        &-headline {
+          font-family: 'Poppins';
+        }
+      }
+
+      &-twocolumns {
+        margin: 40px 0;
+        flex: 0 0 calc(50% - 40px);
+        &:first-child {
+          margin-right: 80px;
+        }
+        
+        p {
+          margin-bottom: 0;
+        }
+
+        h2 {
+          margin-bottom: 30px;
+        }
+
+      }
+
+      &-daily {
+        padding: 30px;
+        background: color('white');
+        box-shadow: 0 30px 30px -15px rgba(0, 0, 0, 0.25);
+        a {
+          padding-bottom: 0;
+        }
+        P {
+          @include txt-2;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .#{organism('teaser-grid-featured')} {
+    background: color('white');
+    padding: 30px 30px 0;
+    margin: 0 -30px;
+  }
+    
 }

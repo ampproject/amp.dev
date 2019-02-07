@@ -26,11 +26,10 @@ stage:
       alt: Carved
       url: carved
 ---
-{% do doc.styles.addCssFile('css/components/templates/template.css') %}
+{% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
 
 {% block main %}
-<main class="ap--main ap-t-template">
-{% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
+<main class="ap--main ap-t-success-story">
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
   <div class="ap-o-stage ap-o-stage-websites {{doc.stage.layout}}">

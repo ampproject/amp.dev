@@ -68,7 +68,7 @@ success_stories:
     <div class="ap-o-stage ap-o-stage-websites">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
-            <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create user-first {% include 'views/partials/rolling-formats.j2' %}</h1>
+            <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create <span style="white-space: nowrap;">user-first</span> {% include 'views/partials/rolling-formats.j2' %}</h1>
             <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ap-o-stage-content-button ap-a-btn">Get started</a>
         </div>
       </div>
@@ -299,7 +299,7 @@ success_stories:
         {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
-            height="600px"
+            height="450px"
             layout="fixed-height"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
             resizable
@@ -465,6 +465,15 @@ success_stories:
   </section>
 
   {% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
+
+  <amp-state id="activeFilter">
+    <script type="application/json">
+      {
+        "chosenFilter": "none"
+      }
+    </script>
+  </amp-state>
+
   <section class="ap--teaser-grid ap--container">
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
