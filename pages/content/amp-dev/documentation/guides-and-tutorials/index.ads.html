@@ -31,7 +31,7 @@ $hidden: true
     <div class="ap-m-benefit-text-block">
       <p class="ap-m-benefit-text-copy">Familiarize the fundamentals</p>
 
-      <a href="/documentation/guides-and-tutorials/start/index.html" rel="noopener" class="ap-m-lnk">
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
         <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         <span class="ap-m-lnk-text">Create an AMPHTML Ad</span>
       </a>
@@ -40,7 +40,7 @@ $hidden: true
 
     <div class="ap-m-benefit-text-block">
       <p class="ap-m-benefit-text-copy">Start developing</p>
-      <a href="/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.html" rel="noopener" class="ap-m-lnk">
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
         <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         <span class="ap-m-lnk-text">Introduction to Ads </span>
       </a>
@@ -60,7 +60,7 @@ $hidden: true
     </div>
 
     <div class="ap-m-benefit-text-block">
-      <a href="/documentation/guides-and-tutorials/develop/story_ads_best_practices.html" rel="noopener" class="ap-m-lnk">
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
         <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         <span class="ap-m-lnk-text">Create Ads for the AMP Story Platform </span>
       </a>
@@ -99,36 +99,36 @@ $hidden: true
   </div>
 
   <div class="ap-m-benefit-twocolumns">
-      <div class="ap-m-benefit-daily">
-        <h5>Daily resource</h5>
-        <p>Use our resources to make your day to day work with AMP easy and productive:</p>
+    <div class="ap-m-benefit-daily">
+      <h5>Daily resource</h5>
+      <p>Use our resources to make your day to day work with AMP easy and productive:</p>
+      
+      <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">AMP Components</span>
+      </a>
 
-        <a href="/documentation/components.html" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">AMP Components</span>
-        </a>
+      <a href="{{ g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">Demos & Examples</span>
+      </a>
 
-        <a href="/documentation/examples.html" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Demos & Examples</span>
-        </a>
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">Tutorials</span>
+      </a>
 
-        <a href="/documentation/guides-and-tutorials.html" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Tutorials</span>
-        </a>
+      <a href="{{ g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">Templates</span>
+      </a>
 
-        <a href="/documentation/templates.html" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Templates</span>
-        </a>
-
-        <a href="https://blog.amp.dev/" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">News</span>
-        </a>
-
-      </div>
+      <a href="https://blog.amp.dev/" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">News</span>
+      </a>
+      
+    </div>
   </div>
 </div>
 
