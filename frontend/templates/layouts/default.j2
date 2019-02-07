@@ -1,3 +1,10 @@
+{% macro tip(title, type='note') -%}
+{% with %}
+{% set text = caller() %}
+{% include '/views/partials/tip.j2' %}
+{% endwith %}
+{%- endmacro %}
+
 {% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
 <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
   <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
@@ -15,31 +22,31 @@
 <html amp lang="{{ doc.locale }}">
 <head>
     {% block head %}
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{ doc.title }}</title>
     {% if podspec.env.name == 'development' %}
-    <link rel="shortcut icon" href="/static/img/favicon-local.png">
+    <link rel="shortcut icon" href="/static/img/favicon-local.png"/>
     {% else %}
-    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
-    <link rel="canonical" href="{{ doc.url }}">
-    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}">
+    <link rel="canonical" href="{{ doc.url }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
     {% for locale in doc.locales if not locale == doc.locale  %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
-    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}">
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}"/>
     {% endif %}
     {% endfor %}
 
     {# Do not index untranslated content #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
-    <meta name="robots" content="noindex,follow">
+    <meta name="robots" content="noindex,follow"/>
     {% endif %}
 
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
@@ -66,7 +73,8 @@
   {# The body tag needs an empty class attribute in order to add the filter class.
   It is a block solely for the purpose to be overridable by the samples. #}
   {% block body %}
-  <body class="">
+  {% set formats = doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email'] %}
+  <body data-available-formats="{{ ' '.join(formats) }}">
   {% endblock %}
     {% block icons %}
 	  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -84,7 +92,7 @@
     {% if doc.pod.env.dev %}
     {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
     <aside class="ap-a-grid-toggle">
-        <input type="checkbox">
+        <input type="checkbox"/>
         <div class="toggle"><div class="dot"></div></div>
         <div class="grid"></div>
     </aside>
@@ -113,19 +121,20 @@
     </aside>
     {% endif %}
 
-    <amp-analytics type="gtag" data-credentials="include">
-    <script type="application/json">
-    {
-      "vars" : {
-        "gtag_id": "{{ podspec.gaTrackingId }}",
-        "config" : {
-          "{{ podspec.gaTrackingId }}": {
-            "groups": "default"
-          }
-        }
-      }
-    }
-    </script>
-    </amp-analytics>
+    {% if podspec.env.name == 'staging' or podspec.env.name == 'development' %}
+    {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
+    <div class="ap-m-banner" style="position: fixed; bottom: 0; z-index: 999; width: 100%; background: #C8114D;">
+      That's the {{ podspec.env.name|upper }} version of
+      <a href="http://www.amp.dev" class="ap-m-banner-link">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        www.amp.dev
+      </a>
+    </div>
+    {% endif %}
+
+    {% include 'views/partials/analytics.j2' %}
+    {% include 'views/partials/consent.j2' %}
+
+    <amp-install-serviceworker src="/serviceworker.js" data-iframe-src="{{ podspec.base_urls.platform }}" layout="nodisplay"></amp-install-serviceworker>
   </body>
 </html>

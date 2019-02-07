@@ -1,9 +1,6 @@
 ---
 $title: 커버 페이지 만들기
-toc: true
 ---
-
-
 
 AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩니다. [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 내에 스토리의 각 화면을 담고 있는 `<amp-story-page>` 구성요소를 하나 이상 둘 수 있습니다. 문서 순서에서 가장 먼저 지정하는 페이지가 스토리에서 표시되는 첫 번째 페이지입니다.
 
@@ -36,7 +33,7 @@ AMP 스토리 내의 페이지는 `<amp-story-page>` 구성요소로 표현됩�
 
 커버 페이지에 첫 번째 레이어를 추가하겠습니다. 이 레이어에는 화면을 채우는 이미지가 들어 있습니다.
 
-`<amp-story-grid-layer>` 요소를 `<amp-story-page>`의 하위 요소로 추가하여 레이어를 만듭니다. 이미지가 화면을 채워야 하니 `amp-story-grid-layer`에 `template="fill"` 속성을 지정합니다. 레이어 안에서 `cover.jpg` 파일에 [`amp-image`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image.md', locale=doc.locale).url.path}}) 요소를 추가하고 이미지 크기가 720x1280px인 반응형(즉, `layout="responsive"`)인지 확인합니다.  다음은 만들어진 레이어의 모습입니다.
+`<amp-story-grid-layer>` 요소를 `<amp-story-page>`의 하위 요소로 추가하여 레이어를 만듭니다. 이미지가 화면을 채워야 하니 `amp-story-grid-layer`에 `template="fill"` 속성을 지정합니다. 레이어 안에서 `cover.jpg` 파일에 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소를 추가하고 이미지 크기가 720x1280px인 반응형(즉, `layout="responsive"`)인지 확인합니다.  다음은 만들어진 레이어의 모습입니다.
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">

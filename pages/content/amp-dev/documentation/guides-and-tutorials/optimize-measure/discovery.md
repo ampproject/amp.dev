@@ -7,15 +7,11 @@ $titles:
   teaser: Make your pages discoverable
 $order: 3
 
-toc: true
-
 teaser:
   icon: discover
   text: Learn how search engines find out that there is an AMP version of your site.
   label: Learn more
 ---
-
-
 
 In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
 

@@ -1,6 +1,9 @@
 ---
 $title: Preview and validate
-$order: 6
+$order: 5
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ## Preview

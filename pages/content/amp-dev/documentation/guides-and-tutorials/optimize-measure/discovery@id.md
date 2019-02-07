@@ -1,9 +1,6 @@
 ---
 $title: Membuat halaman Anda mudah ditemukan
-toc: true
 ---
-
-
 
 Dalam beberapa kasus, Anda mungkin ingin memiliki versi AMP dan non-AMP dari halaman yang sama, misalnya, artikel berita. Coba pikirkan hal ini: Jika Google Penelusuran menemukan versi non-AMP dari halaman tersebut, bagaimana Google tahu bahwa ada versi AMP-nya?
 

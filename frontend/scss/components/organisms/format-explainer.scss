@@ -8,8 +8,6 @@
 @import '../atoms/_icon.scss';
 @import '../atoms/_color.scss';
 
-@import '../molecules/_copy.scss';
-
 .#{utility('format-explainer')} {
   overflow: hidden;
   padding-left: 20px;
@@ -26,6 +24,17 @@
 .#{organism('format-explainer')} {
 
   .swift {
+    & > div {
+      transform: translateX(7.5%);
+
+      &.active {
+        transform: translateX(0);
+        transition-delay: 0.4s;
+      }
+    }
+  }
+
+  &-group {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -34,13 +43,12 @@
       grid-column: 1 / -1;
       grid-row: 1 / -1;
       opacity: 0;
-      transform: translateX(7.5%);
-      transition: opacity 0.4s cubic-bezier(.55,0,.1,1), transform 0.4s cubic-bezier(.55,0,.1,1);
-
+      visibility: hidden;
+      transition: opacity 0.4s cubic-bezier(.55,0,.1,1), visibility 0.4s cubic-bezier(.55,0,.1,1), transform 0.4s cubic-bezier(.55,0,.1,1);
+      
       &.active {
         opacity: 1;
-        transform: translateX(0);
-        transition-delay: 0.4s;
+        visibility: visible;
       }
     }
   }

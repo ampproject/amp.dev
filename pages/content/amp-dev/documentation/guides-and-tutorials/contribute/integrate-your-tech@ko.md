@@ -8,7 +8,6 @@ $title: 자체 기술을 AMP와 통합하기
 
 AMP를 통합하는 방법으로는 크게 다음과 같은 4가지가 있습니다.
 
-
 ## 1. amp-analytics 확장 프로그램 지원
 AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 서버로 돌려보낼 수 있습니다. AMP 통합을 시작하려면 [애널리틱스 통합 가이드]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})를 확인하세요.
 
@@ -16,10 +15,9 @@ AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 �
 
 20곳 이상의 분석 서비스 제공업체에서 amp-analytics를 지원합니다. 다음은 분석 서비스 제공업체 [Parse.ly](https://www.parsely.com/help/integration/google-amp/)의 [샘플 참여 요청](https://github.com/ampproject/amphtml/pull/1595)입니다.
 
-
 ## 2. amp-ad 확장 프로그램 사용
 
-amp-ad 확장 프로그램은 AMP 페이지에 디스플레이 광고를 게재하기 위한 것입니다. 90곳 이상의 광고 기술 제공업체에서 AMP를 지원합니다.  amp-ad 확장 프로그램을 사용하려면 [개발 개요](https://github.com/ampproject/amphtml/tree/master/ads#overview)를 읽어 보거나 amp-ad 확장 프로그램 지원과 관련된 [개발자 안내](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)를 확인하세요. 여러분의 회사에서 제공하는 광고 기술에 따라 다음의 [통합 안내]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/integration-guide.md', locale=doc.locale).url.path}})를 유용하게 참고할 수도 있습니다.
+amp-ad 확장 프로그램은 AMP 페이지에 디스플레이 광고를 게재하기 위한 것입니다. 90곳 이상의 광고 기술 제공업체에서 AMP를 지원합니다.  amp-ad 확장 프로그램을 사용하려면 [개발 개요](https://github.com/ampproject/amphtml/tree/master/ads#overview)를 읽어 보거나 amp-ad 확장 프로그램 지원과 관련된 [개발자 안내](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)를 확인하세요. 여러분의 회사에서 제공하는 광고 기술에 따라 다음의 [통합 안내]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/ad-integration-guide.md', locale=doc.locale).url.path}})를 유용하게 참고할 수도 있습니다.
 
 90곳 이상의 광고 제공업체에서 amp-ad와 같은 광고 관련 기능을 지원합니다. 다음은 광고 네트워크 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md)의 샘플 [참여 요청](https://github.com/ampproject/amphtml/pull/2299)입니다.
 

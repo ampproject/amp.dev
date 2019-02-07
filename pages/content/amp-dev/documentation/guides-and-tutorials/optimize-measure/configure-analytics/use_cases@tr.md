@@ -1,9 +1,6 @@
 ---
 $title: Kullanım Durumları
-toc: true
 ---
-
-
 
 Bu kılavuzda kullanıcı katılımını izlemek için bir dizi yaygın kullanım durumu verilmiştir:
 
@@ -173,7 +170,6 @@ kaydırıldığında da uyarı verir:
 ```
 
 ## Sosyal medya etkileşimlerini izleme
-
 
 [Amp-analitik](/tr/docs/reference/components/amp-analytics.html) kullanarak,
 etkinlik verilerini

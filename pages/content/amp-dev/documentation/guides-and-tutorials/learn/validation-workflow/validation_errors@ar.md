@@ -1,6 +1,5 @@
 ---
 $title: أخطاء التحقق من صحة AMP
-toc: true
 ---
 
 <!---
@@ -25,8 +24,6 @@ limitations under the License.
 [التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
-
-
 
 ## أخطاء علامات وسمات HTML لصفحات AMP
 

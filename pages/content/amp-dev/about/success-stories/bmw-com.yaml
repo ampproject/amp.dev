@@ -1,0 +1,93 @@
+$title: BMW.com
+$category: e-commerce
+$date: 2018-03-12
+
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/bmw_jvm/teaser_bmw.jpg'
+    width: 1
+    height: 1
+    alt: BMW.com
+  logo:
+    src: '/static/img/success-stories/bmw_jvm/bmw_logo.png'
+    width: 231
+    height: 80
+    alt: BMW.com
+  text: The story of the all-new BMW.com
+
+stage:
+  headline: Carmaker quickly, smoothly shares stories via AMP on BMW.com
+  subline: MAR 12, 2018
+  layout: all
+  logo:
+    image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
+    width: 1
+    height: 1
+    alt: BMW
+  devices:
+
+    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-desktop.jpg'
+      width: 8
+      height: 5
+      type: desktop
+      alt: BMW and Jung von Matt
+
+    - image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: BMW and Jung von Matt
+
+    - video_src: '/static/img/success-stories/bmw_jvm/BMW-Stage_small.mp4'
+      width: 375
+      height: 667
+      type: mobile
+      alt: BMW and Jung von Matt
+
+kpis:
+  - value: 3-4X
+    text: Faster load times
+
+  - value: 30%
+    text: Higher clickthrough to national websites
+
+  - value: 26%
+    text: More mobile users
+
+contents:
+  - layout: text
+    text: BMW is one of the world’s largest automotive companies, known for the style and performance of their cars. With millions of satisfied customers already around the globe, they also wanted to reach and excite new car enthusiasts and those generally interested in mobility and technology.
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/bmw_jvm/amp_bmw-tablet3.jpg'
+    width: 3
+    height: 4
+    type: tablet
+    alt: BMW and Jung von Matt
+    headline: Solution
+    text: "BMW set out to create a high-performance, mobile-first approach that offered entertaining stories, videos, and images to the target audience. Christian Liedgens, BMW digital marketer, says the company’s goals for the site were: “Speed, speed, speed, and highly engaging content based on data insights.” To create a new “main stage” for their brand, BMW turned to Hamburg-based digital agency Jung von Matt. The site incorporates a Progressive Web App (PWA) shell, which loads custom-built, all-AMP content to deliver a fast page experience for first and all following page visits. BMW and Jung von Matt are such strong believers in AMP that they used all across the completely relaunched BWM.com."
+    direction: right-flat
+
+  - layout: quote
+    quote: We built the new mobile BMW.com from scratch with AMP.
+    image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
+    width: 856
+    height: 944
+    alt: BMW
+    author: Christian Liedgens, BMW digital marketer
+    story_url: https://google.com
+
+  - layout: text-button
+    image_src: '/static/img/success-stories/bmw_jvm/amp-bmw-mobile2.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: BMW and Jung von Matt
+    headline: Results
+    text: "Development took about six months and dramatically increased performance. Once the new site launched in fall 2017, visitors began browsing colorful, informative, fast-loading article pages. The broad range of topics includes Automotive Life, Design, Innovation, Performance, and Models. “Inspiring articles and entertaining videos capture the users’ attention, answer questions about mobility, and let them feel the beauty of our brand,” BMW says. Plus, nearly one-third of visitors continue on to access information about models, products, and services in their countries with a single tap.<br><br>BMW’s goal was to have “the world’s fastest automotive content marketing website.” What most excites the company about the AMP pages, Liedgens says, is “the tremendous improvement in user experience due to the speed it provides.” The new website loads three to four times faster than before relaunch. The proportion of visitors clicking through from BMW.com to a national sales company (NSC) website has soared from 8 percent to 30 percent. The number of mobile users has climbed to 50 percent, up from 40 percent previously. Search engine optimization (SEO) delivers 49 percent more site visits than before. Overall, the company says, BMW.com now gives car lovers “a high-performance experience they’d only expect from a native app.”"
+    download_url: '/static/files/case-studies/BMW.pdf'
+    direction: left
+    background: gradient

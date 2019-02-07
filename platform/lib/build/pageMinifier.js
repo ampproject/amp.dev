@@ -24,6 +24,25 @@ const through = require('through2');
 const path = require('path');
 const CleanCSS = require('clean-css');
 const crypto = require('crypto');
+const rcs = require('rcs-core');
+const utils = require('@lib/utils');
+const config = require('@lib/config');
+
+// List of selectors that can be safely minified
+const SELECTOR_REWRITE_SAFE = [
+  'ap-o-header',
+  'ap-m-nav-link',
+  'ap-m-language-selector',
+  'ap-o-stage',
+  'ap-o-case-band',
+  'ap-o-teaser-grid',
+  'ap-m-teaser',
+  'ap-o-benefits',
+  'ap-o-consent',
+  'ap-o-footer',
+];
+
+const SELECTOR_REWRITE_EXCLUDED_PATHS = /\/documentation\/examples.*/;
 
 class PageMinifier {
   constructor() {
@@ -31,6 +50,11 @@ class PageMinifier {
       'interactive': true,
       'scope': 'Page minifier',
     });
+
+    // Set excludes for CSS selector rewriting
+    rcs.selectorLibrary.setExclude(
+      new RegExp('^(?!' + SELECTOR_REWRITE_SAFE.join('|') + ').*$')
+    );
 
     // An instance of CleanCSS
     this._cleanCss = new CleanCSS({
@@ -40,6 +64,7 @@ class PageMinifier {
         'restructureRules': true,
       },
     });
+
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
   }
@@ -59,7 +84,7 @@ class PageMinifier {
 
           let html = page.contents.toString();
           html = scope.minifyPage(html, page.path);
-          page.contents = Buffer.fromString(html);
+          page.contents = Buffer.from(html);
 
           this.push(page);
 
@@ -75,15 +100,49 @@ class PageMinifier {
    * @return {String} The minified or the unmodified markup in case of error
    */
   minifyPage(html, path) {
+    html = this._cleanHtml(html);
+
     try {
-      html = this._cleanHtml(html);
       html = this._minifyHtml(html);
     } catch (e) {
       this._log.error(`Could not minify ${path}`);
       console.error(e);
     }
 
+    if (!path.match(SELECTOR_REWRITE_EXCLUDED_PATHS)) {
+      try {
+        html = this._rewriteSelectors(html);
+      } catch(e) {
+        this._log.warn(`Could not rewrite selectors for ${path}`);
+        console.error(e);
+      }
+    } else {
+      this._log.info(`Skipping ${path} from selector rewriting!`);
+    }
+
     return html;
+  }
+
+  /**
+   * Minifies the used CSS selectors to hashes
+   * @param  {String} html
+   * @return {String}
+   */
+  _rewriteSelectors(html) {
+      const AMP_CUSTOM_STYLE_PATTERN = /<style amp-custom>.*?<\/style>/ms;
+      let css = html.match(AMP_CUSTOM_STYLE_PATTERN);
+
+      if (css) {
+        css = css[0].replace(/<style amp-custom>|<\/style>/g, '');
+
+        rcs.fillLibraries(css, {
+          'prefix': 'ap',
+        });
+        return rcs.replace.html(html);
+      }
+
+
+      return html;
   }
 
   _cleanHtml(html) {
@@ -106,6 +165,7 @@ class PageMinifier {
       'collapseWhitespace': true,
       'removeEmptyElements': false,
       'removeRedundantAttributes': true,
+      'collapseBooleanAttributes': true,
       'ignoreCustomFragments': [/<use.*<\/use>/],
       'processScripts': ['application/json']
     });
@@ -117,6 +177,11 @@ class PageMinifier {
     // Leave alone inline styles and the AMP boilerplate
     if (type == 'inline' || css.includes('body{-webkit-')) {
       return css;
+    }
+
+    // Do not cache styles during development
+    if (config.environment == 'development') {
+      return this._cleanCss.minify(css).styles;
     }
 
     // Hash it to check if that bundle has already been minified

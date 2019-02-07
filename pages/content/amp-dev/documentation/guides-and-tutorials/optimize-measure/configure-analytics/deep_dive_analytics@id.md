@@ -1,8 +1,6 @@
 ---
 $title: Mendalami analisis AMP
-toc: true
 ---
-
 
 Panduan ini menjelaskan lebih jauh tentang
 [komponen amp-analytics](/id/docs/reference/components/amp-analytics.html),
@@ -136,7 +134,6 @@ ke nilai akun pada URL jarak jauh (`"account": "UA-XXXXX-Y"`):
   "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
-
 
 [tip type="important"]
 

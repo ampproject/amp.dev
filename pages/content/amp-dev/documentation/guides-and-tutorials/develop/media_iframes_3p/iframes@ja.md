@@ -1,8 +1,6 @@
 ---
 $title: iframe の追加
-toc: true
 ---
-
 
 ここでは、ページにメディア コンテンツを含めたり、iframe を使用して AMP の制限を受けずに高度なコンテンツを表示したりする方法について解説します。
 
@@ -37,24 +35,15 @@ iframe は、メインページのコンテキストでサポートされてい�
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## プレースホルダの使用
 
 `placeholder` 属性を指定した要素（[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素など）を [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) に追加して、iframe が表示できる状態になるまでプレースホルダとしてレンダリングされるようにすると、[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) をドキュメントの一番上に表示することが可能です。
 
 参照: プレースホルダについて詳しくは、[プレースホルダを含む iframe](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) をご覧ください。
-
 
 プレースホルダを使用した例:
 

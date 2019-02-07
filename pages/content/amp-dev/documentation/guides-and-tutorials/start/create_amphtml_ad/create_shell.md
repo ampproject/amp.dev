@@ -3,7 +3,7 @@ $title: Create the shell for the ad
 $order: 0
 ---
 
-The [HTML required for an AMPHTML ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) is a variant of the [required AMPHTML for an AMP page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}). Let's get familiar with the required code by creating the shell of our AMPHTML ad.
+The [HTML required for an AMPHTML ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) is a variant of the [required AMPHTML for an AMP page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}). Let's get familiar with the required code by creating the shell of our AMPHTML ad.
 
 Using your favorite text editor, create an HTML file named **`my-amphtml-ad.html`**. Copy the following HTML markup into that file:
 
@@ -25,7 +25,6 @@ This markup is for a basic, valid, HTML file.  Notice that we included the `meta
 Now, let's modify the HTML to make it an AMPHTML ad.
 
 In the `<html> `tag,  add the  `⚡4ads` attribute, which identifies the document as an AMPHTML ad.  Alternatively, you could specify the `amp4ads` attribute, which is also valid.
-
 
 ```html hl_lines="2"
 <!doctype html>

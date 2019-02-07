@@ -1,11 +1,8 @@
 ---
 $title: 앱과 AMP 통합
-toc: true
 ---
 
 이 가이드는 AMP 페이지를 통합하고 연결하려는 모바일 및 웹 앱 개발자를 위해 작성되었습니다. AMP 버전의 공유 URL을 로드하여 더 빠른 사용자 환경을 제공하는 모바일 채팅 앱을 예로 들어 보겠습니다.
-
-
 
 ## 링크를 AMP로 변환
 
@@ -36,10 +33,8 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 ```
 
 [tip type="success"]
-
 앱의 환경설정을 통해 AMP 버전 대신 비 AMP 버전을 볼 수 있는
 옵션을 제공하는 것도 고려해 보세요.
-
 [/tip]
 
 ### 링크 변환 방법
@@ -65,12 +60,10 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
     URL 변환을 실행해야 합니다.
 
 [tip type="important"]
-
 사용자 상호작용의 결과로 Google AMP API를 통해 AMP URL을
 요청하지 마세요. 그러면 네트워크에 추가적인 요청이 발생하므로
 앱 성능이 저하됩니다. 대신에 위에서 설명한 세 가지 접근법 중 하나를
 사용하세요.
-
 [/tip]
 
 #### Google AMP URL API
@@ -113,11 +106,9 @@ Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 ```
 
 [tip type="note"]
-
 Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API를 통해
 가져올 수 없습니다. 하지만 반환되는 AMP URL(ampURL)에서 캐시된 URL을
 쉽게 추출할 수 있습니다.
-
 [/tip]
 
 ## AMP 캐시 사용
@@ -155,11 +146,9 @@ AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
     항상 캐시와 동일한 AMP 파일이 사용자에게 표시됩니다.
 
 [tip type="important"]
-
 AMP 캐시를 통해 AMP 페이지를 게재하는 경우에는 AMP의 원본을 명시하여
 사용자가 표준 URL을 공유할 수 있는 뷰어 환경을
 제공하세요. 자세한 내용은 다음 두 섹션을 참조하시기 바랍니다.
-
 [/tip]
 
 ## AMP 뷰어 구현
@@ -195,4 +184,3 @@ AMP 프로젝트의 철학입니다. 따라서
 다른 플랫폼과 공유할 때는 AMP 버전이 아닌 표준 버전을
 공유한 다음 대상 플랫폼에서 적절한 형식을 선택하게 하는 것이
 가장 좋습니다.
-

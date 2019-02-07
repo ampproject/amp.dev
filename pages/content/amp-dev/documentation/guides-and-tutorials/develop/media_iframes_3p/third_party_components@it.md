@@ -1,11 +1,8 @@
 ---
 $title: Includere contenuti di terze parti
-toc: true
 ---
 
 Scopri come includere componenti di terze parti nelle tue pagine.
-
-
 
 ## Incorporare un tweet
 
@@ -31,7 +28,6 @@ Regola manualmente la larghezza e l'altezza fornite oppure utilizza l'attributo 
   <div placeholder></div> 
 </amp-iframe>
 </div>
-
 
 ## Incorporare una foto di Instagram
 
@@ -99,7 +95,6 @@ Preview:
     data-embed-as="video"
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
-
 
 ## Includere un video di YouTube
 

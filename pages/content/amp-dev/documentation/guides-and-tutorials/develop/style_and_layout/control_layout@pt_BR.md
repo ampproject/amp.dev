@@ -1,9 +1,6 @@
 ---
 $title: Consultas de mídia e layout
-toc: true
 ---
-
-
 
 A tecnologia AMP é compatível com **consultas de mídia** e **consultas de elemento**, além de ter um recurso integrado e eficiente para controlar o **layout** de elementos individuais. O atributo `layout` facilita muito o uso e a criação de design completamente responsivo em comparação com a aplicação somente de CSS.
 
@@ -105,7 +102,6 @@ Estes valores podem ser usados no atributo `layout`:
 Acesse a página [Demonstração de layouts AMP](/pt_br/docs/design/amp-html-layout/layouts_demonstrated.html) para ver como diferentes layouts respondem ao redimensionamento de tela. Você também encontra mais informações no site [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
 
 [/tip]
-
 
 ### O que acontece se a largura e a altura não estiverem definidas?
 

@@ -82,11 +82,9 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 </script>
 ```
 
-
 [tip type="note"]
 2 つのコンテンツは常に同じである必要があります。ニュース記事の場合は、「NewsArticle」タイプを指定します。headline は、記事のタイトルと一致している必要があります。画像オブジェクトには、記事のヒーロー画像を指定します。
 [/tip]
-
 
 ブラウザでページを**再読み込み**し、AMP 検証エラーが発生していないことを確認します。
 
@@ -109,11 +107,7 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 構造化データに問題がなければ、「**エラーなし**」、「**警告なし**」と表示されます。
 
 [tip type="read-on"]
-<<<<<<< HEAD
 ページを検出可能にする方法について詳しくは、[ページを検出可能にする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})をご覧ください。
-=======
-ページを検出可能にする方法について詳しくは、[ページを検出可能にする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})をご覧ください。
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 [/tip]
 
 おつかれさまでした。これで AMP のニュース記事は完成です。

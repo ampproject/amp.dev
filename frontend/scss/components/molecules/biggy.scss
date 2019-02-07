@@ -17,36 +17,62 @@
 .#{molecule('biggy')} {
   grid-column: 2 / 24;
   width: 100%;
+  margin-bottom: 7em;
+
+  @media (min-width: 768px) {
+    margin-bottom: 8vw;
+  }
 
   &-aside {
     grid-column: 1 / 12;
     min-width: 100%;
-    min-height: 100%;
   }
 
   &-main {
     grid-column: 13 / -1;
   }
 
-    &-text {
-      @include txt;
-    }
+  &-text {
+    @include txt;
+  }
 
+  &-background {
+    * {
+      position: relative;
+    }
     &-headline {
-      @include hl;
-      font-size: 26vw;
-      line-height: 1em;
-      margin: 0 0 40px;
-      color: color('athens-gray');
-
-      @media (min-width: 768px) {
-        font-size: 13vw;
-        line-height: 0.85;
-      }
-
-      @media (min-width: 1280px) {
+      &.ap-m-biggy-headline {
+        position: absolute;
+        margin-top: -48px;
+        margin-left: -40px;
         font-size: 140px;
+        @media (min-width: 768px) {
+          margin-top: -25px;
+          margin-left: -150px;
+        }
       }
-
     }
+  }
+
+  &-headline {
+    @include hl;
+    font-size: 26vw;
+    line-height: 1em;
+    margin: 0 0 40px;
+    color: color('athens-gray');
+
+    @media (min-width: 768px) {
+      font-size: 13vw;
+      line-height: 0.85;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 140px;
+    }
+  }
+  
+  .#{molecule('code-snippet')} {
+    padding: 3em 0;
+    margin-bottom: 0;
+  }
 }

@@ -1,8 +1,8 @@
 /*
 
-#############################################
-### TEMPLATE: overview benefits ###
-#############################################
+################################
+### TEMPLATE: custom content ###
+################################
 
 ### INFO:
 
@@ -16,22 +16,18 @@
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 
-@import '../molecules/benefit';
-@import '../molecules/copy';
-@import '../molecules/headline-icon.scss';
-@import '../molecules/quote';
-@import '../molecules/table.scss';
-
-@import '../organisms/benefits-overview.scss';
-@import '../organisms/case-band.scss';
-@import '../organisms/case-grid.scss';
-@import '../organisms/component-visual.scss';
-@import '../organisms/kpi-list.scss';
+@import '../molecules/_teaser.scss';
 
 @import '../templates/_default.scss';
 
 .#{template('custom-content')} {
-  background: color('whisper');
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top right;
+  background-attachment: fixed;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
 
   section {
     margin-bottom: 50px;
@@ -51,44 +47,6 @@
 
   .#{utility('content')} {
     @include content;
-  }
-
-  .#{organism('platformandvendor')} {
-    grid-column: 2 / 24;
-    width: 100%;
-
-    &-accordion-header {
-      background: none;
-      background-color: color('white');
-      border: 1px solid color('whisper');
-      border-left: none;
-      border-right: none;
-      border-radius: 4px;
-      padding: 0;
-      box-shadow: 0 10px 25px 0px rgba(0, 0, 0, 0.07);
-      transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      margin-bottom: 1em;
-      h4 {
-        margin: 30px;
-      }
-    }
-
-    &-item-container {
-      list-style: none;
-      columns: 2;
-      padding-left: 30px;
-      @media (min-width: 768px) {
-        columns: 3;
-      }
-      @media (min-width: 1024px) {
-        columns: 4;
-      }
-      li {
-         margin-bottom: 10px;
-         @include txt;
-         @include txt-2;
-      }
-    }
   }
 
   .#{utility('content')} {
@@ -150,6 +108,99 @@
       h1 {
         @include hl-xxlrg;
       }
+    }
+  }
+
+  .#{molecule('teaser')} {
+    @include teaser;
+    @include teaser-linking;
+    height: 100%;
+
+    & > a {
+      @include teaser-linking;
+    }
+
+    &-tags {
+      font-size: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    &-card {
+      @include teaser-card;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    &-content {
+      @include teaser-content;
+    }
+
+    &-headline {
+      @include teaser-headline;
+      margin-bottom: 0.65em;
+    }
+
+    &-copy {
+      @include teaser-copy;
+    }
+
+    &-image, &-icon {
+      + .#{molecule('teaser-card')} {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+
+        .#{molecule('teaser-content')} {
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 25px;
+        }
+      }
+    }
+
+    &-image {
+      @include teaser-image;
+      @include box-shadow;
+
+      &:before {
+        height: 100%;
+      }
+
+      &.no-shadow {
+        box-shadow: none;
+      }
+    }
+
+    &-icon {
+      @include box-shadow;
+
+      align-items: center;
+      background: color('ebony-clay');
+      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+      display: flex;
+      justify-content: center;
+      left: 0;
+      min-height: 100px;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      .#{atom('ico')} {
+        @include ico-10;
+        fill: #fff;
+
+        svg {
+          padding: 1.75rem 0;
+        }
+      }
+    }
+  }
+  .#{organism('teaser-grid-list')} {
+    @media (max-width: 767px) {
+      padding: 1.25rem
     }
   }
 }

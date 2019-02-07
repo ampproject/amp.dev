@@ -1,18 +1,13 @@
 ---
 $title: "Analtik: Dasar-Dasar"
-toc: true
 ---
 
 Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
 
-
-
 ## Menggunakan amp-pixel atau amp-analytics?
-
 
 AMP menyediakan 2 komponen untuk memenuhi kebutuhan analitik dan pengukuran Anda: [amp-pixel](/id/docs/reference/components/amp-pixel.html)
 dan [amp-analytics](/id/docs/reference/components/amp-analytics.html). Kedua opsi akan mengirim data analitik ke titik akhir yang telah ditentukan.
-
 
 Jika Anda mencari perilaku seperti [piksel pelacakan sederhana](https://en.wikipedia.org/wiki/Web_beacon#Implementation), komponen `amp-pixel` memberikan pelacakan tampilan halaman dasar; data tampilan halaman akan dikirim ke URL yang telah ditentukan. Sebagian integrasi dengan vendor mungkin memerlukan komponen ini, yang mana integrasi tersebut akan menetapkan titik akhir URL yang tepat.
 

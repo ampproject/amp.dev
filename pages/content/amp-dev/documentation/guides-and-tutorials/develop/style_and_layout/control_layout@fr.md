@@ -1,11 +1,8 @@
 ---
 $title: Mises en page compatibles
-toc: true
 ---
 
 Dans le cas d'éléments, il suffit d'inclure le code `layout=responsive`.
-
-
 
 ## Valeurs autorisées pour l'attribut de mise en page
 

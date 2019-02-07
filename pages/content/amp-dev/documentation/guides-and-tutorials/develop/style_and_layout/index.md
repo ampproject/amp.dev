@@ -8,9 +8,10 @@ $path: /documentation/guides-and-tutorials/develop/style_and_layout/style_and_la
 $title: Style & layout
 $order: 0
 $hidden: true
-toc: true
+author: pbakaus
+contributors:
+  - Meggin
 ---
-
 
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.

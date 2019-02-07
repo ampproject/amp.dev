@@ -1,7 +1,7 @@
 {# Success story teaser #}
 {% if teaser_doc.view == '/views/detail/success-story-detail.j2' %}
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story">
+<div class="ap-m-teaser ap-m-teaser-success-story" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   <a href="{{ teaser_doc.url.path }}">
 
     {% if teaser_doc.formats %}
@@ -33,9 +33,8 @@
 
       <div class="ap-m-teaser-content">
         {% if teaser.logo %}
-        {% set landscape = (teaser.logo.width / teaser.logo.height < 1) %}
-          <div class="ap-a-img ap-m-teaser-logo ap-m-teaser-logo-{{ 'landscape' if landscape else 'portrait' }}">
-            <amp-img src="{{ teaser.logo.src }}" layout="responsive" width="{{ teaser.logo.width }}" height="{{ teaser.logo.height }}" alt="{{ teaser.logo.alt }}"></amp-img>
+          <div class="ap-a-img ap-m-teaser-logo fixed-container">
+            <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
           </div>
         {% endif %}
 
@@ -69,7 +68,7 @@
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
-<div class="ap-m-teaser ap-m-teaser-component">
+<div class="ap-m-teaser ap-m-teaser-component" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
   <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% if teaser_doc.formats %}
@@ -127,7 +126,7 @@
   </div>
   {% endif %}
 
-  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url|relative }}">
+  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% set teaser = teaser_doc.teaser or {} %}
 
@@ -147,9 +146,9 @@
         <amp-img
           src="{{ teaser.image.src }}"
           layout="fill"
-          width="3"
-          height="1"
-          alt="Dummy.">
+          width="22"
+          height="9"
+          alt="{{ teaser_doc.title }}">
         </amp-img>
         {% elif teaser.icon %}
         <div class="ap-m-teaser-icon">

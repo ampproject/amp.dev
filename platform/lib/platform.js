@@ -18,14 +18,16 @@
 
 const signale = require('signale');
 const express = require('express');
+const compression = require('compression');
 const ampCors = require('amp-toolbox-cors');
-const HttpProxy = require('http-proxy');
+const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 
 const config = require('./config.js');
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
   'examples': require('./routers/examples.js'),
+  'static': require('./routers/static.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
 };
@@ -38,6 +40,8 @@ class Platform {
     this.server = express();
 
     if (config.environment == 'development') {
+      const HttpProxy = require('http-proxy');
+
       // When in development fire up a second server as a simple proxy
       // to simulate CORS requests for stuff like playground
       this.proxy = express();
@@ -53,12 +57,14 @@ class Platform {
       });
     }
 
+    this.server.use(compression());
+    this.server.use(defaultCachingStrategy);
     this._enableCors();
 
     this._check();
     this._registerRouters();
 
-    this.server.listen(config.hosts.platform.port, () => {
+    this.server.listen(config.hosts.platform.port || 8080, () => {
       signale.success(`amp.dev available on ${host}!`);
     });
   }
@@ -88,8 +94,9 @@ class Platform {
   _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.examples);
-    this.server.use('/playground',  routers.playground);
-    this.server.use('/boilerplate',  routers.boilerplate);
+    this.server.use(routers.static);
+    this.server.use('/playground', routers.playground);
+    this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }

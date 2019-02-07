@@ -1,0 +1,42 @@
+grow_version: ">=0.6.5"
+home: /content/amp-dev/index.html
+
+localization:
+  root_path: /{locale}/
+  default_locale: en
+  locales:
+  - en
+  - fr
+  # - ar
+  # - es
+  # - it
+  # - id
+  # - ja
+  # - ko
+  # - pt_BR
+  # - ru
+  # - tr
+  # - zh_CN
+
+sitemap:
+  enabled: yes
+  path: "/sitemap.xml"
+
+markdown:
+  extensions:
+  - kind: sourcecode
+    classes: True
+    class_name: ap-m-code-snippet
+  - kind: markdown.extensions.codehilite
+    classes: True
+    class_name: ap-m-code-snippet
+
+ext:
+- extensions.inline_text_assets.InlineTextAssetsExtension:
+    bundles:
+        - name: 'styles'
+          method: 'addCssFile'
+        - name: 'icons'
+          method: 'useIcon'
+- extensions.amp_dev.AmpDevExtension
+- extensions.amp_dependency_injector.AmpDependencyInjectorExtension

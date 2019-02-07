@@ -22,14 +22,12 @@ Les erreurs sont présentées de la façon suivante dans la Developer Console 
 
 <amp-img src="/static/img/docs/validator_errors.png" width="713" height="243" layout="responsive" alt="Capture d&#39;écran des erreurs du validateur AMP dans la Developer Console Chrome"></amp-img>
 
-
 ### Interface Web
 
 Le validateur AMP peut être utilisé comme interface Web sur [validator.ampproject.org](https://validator.ampproject.org/). Cette interface affiche les erreurs à côté du code source HTML de la page.
 L'interface est un éditeur interactif : les modifications apportées au code HTML source entraînent une nouvelle validation interactive.
 
 <amp-img src="/static/img/docs/validator_web_ui.png" width="660" height="507" layout="responsive" alt="Capture d&#39;écran de validator.ampproject.org avec des exemples d&#39;erreurs."></amp-img>
-
 
 ### Extension du navigateur
 

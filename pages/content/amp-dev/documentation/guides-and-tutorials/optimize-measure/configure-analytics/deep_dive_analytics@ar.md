@@ -1,8 +1,6 @@
 ---
 $title: نظرة عميقة على AMP Analytics
-toc: true
 ---
-
 
 يقدم هذا الدليل رؤية متعمقة على
 [مكون <span dir="ltr" class="nowrap">amp-analytics</span>](/docs/reference/components/amp-analytics.html)،

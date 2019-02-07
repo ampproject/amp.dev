@@ -1,6 +1,5 @@
 ---
 $title: AMP 유효성 검사 오류
-toc: true
 ---
 
 <!---
@@ -25,8 +24,6 @@ limitations under the License.
 해결할 수 있도록 도움을 드리는 것입니다.
 유효성 검사 오류에 관한 전체 내용을 대략적으로 살펴보려면
 [AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)을 확인하시기 바랍니다.
-
-
 
 ## AMP HTML 태그와 속성 오류
 

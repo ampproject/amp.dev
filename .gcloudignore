@@ -15,6 +15,7 @@
 .git
 .gitignore
 .github
+.cache
 
 node_modules/
 yarn.lock
@@ -29,3 +30,13 @@ frontend/
 pages/
 !platform/pages
 /examples
+
+# playground: ignore everything except the dist folder
+playground/*
+!playground/backend
+!playground/dist
+
+# boilerplate: ignore everything except the dist folder
+boilerplate/*
+!boilerplate/backend
+!boilerplate/dist

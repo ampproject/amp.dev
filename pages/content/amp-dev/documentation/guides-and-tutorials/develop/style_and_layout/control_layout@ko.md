@@ -1,9 +1,6 @@
 ---
 $title: 레이아웃 및 미디어 쿼리
-toc: true
 ---
-
-
 
 AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별 요소의 **레이아웃**을 효과적으로 제어할 수 있는 기능이 기본적으로 내장되어 있습니다. `layout` 속성을 사용하면 CSS만 사용할 때보다 훨씬 간편하게 완전한 반응형 디자인을 만들어 작업할 수 있습니다.
 
@@ -105,7 +102,6 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 [AMP 레이아웃 시연](/ko/docs/design/amp-html-layout/layouts_demonstrated.html) 페이지를 방문하여 다양한 레이아웃이 화면 크기 조절에 어떻게 반응하는지 알아보세요. [AMP By Example](https://ampbyexample.com/advanced/layout_system/)에서도 자세히 알아볼 수 있습니다.
 
 [/tip]
-
 
 ### 너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?
 

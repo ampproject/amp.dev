@@ -1,8 +1,6 @@
 ---
 $title: 借助 srcset、sizes 和 heights 属性制作自适应图片
-toc: true
 ---
-
 
 ## srcset
 
@@ -43,7 +41,6 @@ toc: true
   <div placeholder></div>
 </amp-iframe>
 </div>
-
 
 `sizes` 属性进行了以下定义：当视口的宽度为 650px 或以上时，元素的宽度将为视口尺寸的 50%。例如，如果视口宽度为 800px，则元素的宽度设为 400px。然后，浏览器会在假定设备的像素宽高比为 1 的前提下选择接近 400px 的 `srcset` 资源（在本例中为 `narrow.jpg` (320px)）。
 

@@ -1,0 +1,61 @@
+---
+$title: Vision and Mission
+$order: 1
+$view: /views/overview/custom-content.j2
+---
+{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+
+
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+
+<div class="ap--container">
+
+  <div class="ap-m-copy ap-m-copy-center-small ap-m-biggy-background">
+    <h1>Vision & Mission</h1>
+    <p>Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it.</p>
+  </div>
+
+  {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
+  <div class="ap-m-copy ap-m-copy-left-small ap-m-biggy-background">
+    <h2 class="ap-m-biggy-headline ap-m-biggy-background-headline">
+      Vision
+    </h2>
+    <h3>Vision</h3>
+    <p>
+      A strong, user-first open web forever.
+    </p>
+
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-right-small ap-m-biggy-background">
+    <h2 class="ap-m-biggy-headline ap-m-biggy-background-headline">
+      &amp;&nbsp;Mission
+    </h2>
+    <h3>Mission</h3>
+    <p>Provide a user-first format for web content, supporting the long-term success of every web publisher, merchant, and advertiser.</p>
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-center-medium">
+    <h2>Get Started with Tutorials</h2>
+    <div class="ap-o-teaser-grid">
+      <div class="ap-o-teaser-grid-list">
+        {% with %}
+        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md') %}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+
+        {% with %}
+        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md') %}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+
+        {% with %}
+        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md') %}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,6 +1,5 @@
 ---
 $title: Errori di convalida AMP
-toc: true
 ---
 
 <!---
@@ -22,8 +21,6 @@ limitations under the License.
 I documenti AMP validi non devono contenere errori di convalida.
 Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
 Per una panoramica completa degli errori di convalida, leggi la [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
-
-
 
 ## Errori negli attributi e nei tag HTML AMP
 
@@ -55,7 +52,6 @@ I tag che seguono devono essere presenti in tutti i documenti AMP:
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
-
 
 Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
 
@@ -209,7 +205,6 @@ I messaggi dettagliati relativi a questo errore possono essere i seguenti:
 * "Regola @page non consentita in CSS"
 * "Regola @viewport non consentita in CSS"
 
-
 ### Testo non consentito all'interno del tag
 
 <table>
@@ -239,7 +234,6 @@ Di seguito è riportato l'elenco di dati CSS inseriti nella blacklist (vedi anch
 * `"@document"`
 * `"@page"`
 * `"@viewport"`
-
 
 ### Proprietà non consentita all'interno dell'attributo del tag
 
@@ -384,12 +378,10 @@ Attualmente questo errore si verifica se mancano le seguenti proprietà obbligat
 * `content="...width=..."`
 * `content="...minimum-scale=..."`
 
-
 Si riferiscono ai tag previsti:
 
 * `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
 * `<meta name=viewport content="width=device-width;minimum-scale=1">`
-
 
 ### Attributi che si escludono a vicenda
 
@@ -416,7 +408,6 @@ Ad esempio, è consentito un solo tag tra i seguenti:
 * [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
 * [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
 
-
 ### Attributo obbligatorio mancante tra quelli dell'elenco
 
 <table>
@@ -441,7 +432,6 @@ Ad esempio, i seguenti tag richiedono uno dei due attributi possibili:
 * [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
 * [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
 * [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
-
 
 ### Tag principale errato
 
@@ -474,7 +464,6 @@ Di seguito è elencato il tag principale richiesto per tag specifici (tag, princ
 * `noscript` richiede il tag principale `head`.
 * `script` richiede il tag principale `head`.
 * `source` richiede un tag multimediale ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) e così via).
-
 
 ### Predecessore del tag non consentito
 
@@ -522,7 +511,6 @@ Questo errore si verifica quando manca `mandatory_ancestor` (tag, predecessore) 
 * `audio` deve essere un discendente di `noscript`.
 * `noscript` deve essere un discendente di `body`.
 
-
 ### Predecessore del tag obbligatorio con suggerimento
 
 <table>
@@ -546,7 +534,6 @@ Questo errore si verifica quando nel documento AMP viene trovato uno dei seguent
 * `video` non si trova all'interno del tag principale `noscript`.
 * `audio` non si trova all'interno del tag principale `noscript`.
 * `noscript` non si trova all'interno del tag principale `body`.
-
 
 ### Tag univoco duplicato
 
@@ -580,7 +567,6 @@ L'elenco completo di tag univoci è noto ed è riportato di seguito:
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
-
 
 ## Errori di stile e layout
 

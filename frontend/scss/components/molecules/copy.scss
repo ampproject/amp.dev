@@ -1,0 +1,68 @@
+/*
+
+######################
+### MOLECULE: copy ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('copy')} {
+  margin-bottom: 3em;
+
+  p {
+    @include txt;
+  }
+
+  &-large p {
+    @include txt-1;
+  }
+
+  &-left {
+    grid-column: 3 / 17;
+
+    &-small {
+      grid-column: 4 / 13;
+    }
+
+    &-link {
+      grid-column: 3 / 12;
+      margin-top: 3em;
+    }
+  }
+
+  &-right {
+    grid-column: 10 / 24;
+
+    &-small {
+      grid-column: 11 / 20;
+    }
+
+    &-link {
+      grid-column: 10 / 19;
+      margin-top: 3em;
+    }
+  }
+
+  &-center {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    &-small {
+      grid-column: 6 / 19;
+      text-align: left;
+    }
+
+    &-medium {
+      grid-column: 4 / 22;
+      text-align: left;
+      max-width: 100%;
+    }
+  }
+}

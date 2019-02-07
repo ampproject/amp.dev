@@ -1,6 +1,7 @@
 ---
 $title: Congratulations!
 $order: 9
+author: bpaduch
 ---
 
 You have successfully completed your first AMP story!

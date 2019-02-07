@@ -1,11 +1,8 @@
 ---
 $title: サードパーティ コンテンツを追加する
-toc: true
 ---
 
 ページにサードパーティ コンテンツを追加する方法について説明します。
-
-
 
 ## ツイートを埋め込む
 
@@ -83,7 +80,6 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
-
 
 ##### 例 - 動画を埋め込む
 

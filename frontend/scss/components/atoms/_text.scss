@@ -29,7 +29,7 @@ TODO: mono (inline, block)
 
 @mixin txt {
 	font-family: 'Noto Sans';
-	line-height: 1.6em;
+	line-height: 1.6rem;
 	font-weight: normal;
 	color: color('river-bed');
 }
@@ -73,15 +73,14 @@ TODO: mono (inline, block)
 
 @mixin txt-mono {
 	font-family: 'Inconsolata', monospace;
-	letter-spacing: 0.06em;
+	letter-spacing: 0.03px;
 }
 
 @mixin txt-mono-inline {
 	display: inline;
 	padding: 2px 4px;
-	font-weight: bold;
-	font-family: 'Inconsolata', monospace;
-	word-break: break-word;
+  @include txt-mono;
+	word-break: normal;
 	color: color('black');
 	background-color: #eee;
 }

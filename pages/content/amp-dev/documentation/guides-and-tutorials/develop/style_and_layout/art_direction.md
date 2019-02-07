@@ -1,7 +1,6 @@
 ---
 $title: Responsive images with srcset, sizes & heights
 $order: 4
-toc: true
 formats:
   - websites
   - email
@@ -9,8 +8,10 @@ formats:
   - stories
 components:
   - iframe
+author: pbakaus
+contributors:
+  - bpaduch
 ---
-
 
 ## srcset
 

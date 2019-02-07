@@ -5,10 +5,11 @@ formats:
     - websites
 components:
   - iframe
-toc: true
+author: pbakaus
+contributors:
+  - Meggin
+  - bpaduch
 ---
-
-
 
 Learn how to display include media content in your pages, and how to use iframes
 to display advanced content outside of AMP's limitations.
@@ -49,17 +50,9 @@ In the following example, we created a responsive [`amp-iframe`]({{g.doc('/conte
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-
-Renders as:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## Using placeholders
 
@@ -89,7 +82,6 @@ Renders as:
   <amp-img placeholder layout="fill"
       src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
 </amp-iframe>
-
 
 ## Examples
 

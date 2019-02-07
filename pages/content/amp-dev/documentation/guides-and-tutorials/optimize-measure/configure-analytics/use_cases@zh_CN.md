@@ -1,8 +1,6 @@
 ---
 $title: 使用情形
-toc: true
 ---
-
 
 本指南提供了一系列跟踪用户互动的常见使用情形：
 
@@ -13,7 +11,6 @@ toc: true
 了解如何使用 `amp-pixel` 和 `amp-analytics` 跟踪网页浏览量。
 
 ### 使用 amp-pixel
-
 
 使用 [amp-pixel 将网页浏览量数据发送到指定网址](/zh_cn/docs/reference/components/amp-pixel.html)：
 

@@ -1,8 +1,6 @@
 ---
 $title: Imágenes adaptativas con srcset, sizes & heights
-toc: true
 ---
-
 
 ## srcset
 

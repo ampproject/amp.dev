@@ -1,11 +1,8 @@
 ---
 $title: Desteklenen Düzenler
-toc: true
 ---
 
 Kullandığınız öğeleri duyarlı yapın; `layout=responsive` kodunu ekleyin.
-
-
 
 ## Düzen özniteliği için desteklenen değerler
 

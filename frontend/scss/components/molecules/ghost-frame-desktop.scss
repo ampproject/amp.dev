@@ -31,14 +31,6 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   }
 
   &.left-flat {
-    -webkit-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
@@ -51,14 +43,6 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   }
 
   &.left {
-    -webkit-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset 25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       -40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset 25px -25px 10px -25px rgba(255, 255, 255, 0.8),
@@ -68,14 +52,6 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   }
 
   &.right-flat {
-    -webkit-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
@@ -88,21 +64,12 @@ The ghost frame desktop wraps an element with a desktop-like frame.
   }
 
   &.right {
-    -webkit-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow:
-      40px 40px 100px -35px rgba(0, 0, 0, 0.7),
-      inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
-      inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     box-shadow:
       40px 40px 100px -35px rgba(0, 0, 0, 0.7),
       inset -25px -25px 10px -25px rgba(255, 255, 255, 0.8),
       inset -25px -25px 20px -30px rgba(0, 0, 0, 0.7);
     transform-origin: center;
     transform: rotateY(-30deg);
-    transform-origin: center;
   }
 
   // ui

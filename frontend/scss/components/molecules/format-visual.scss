@@ -24,6 +24,27 @@ There are specific files for each format, to keep css rendering low.
 
 @import '../atoms/component-frame.scss';
 
+.#{utility('stage')} {
+  .#{molecule('format-visual')} {
+    grid-column: 11 / -1;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -30%;
+
+    @media (min-width: 768px) {
+      position: static;
+      margin-top: -50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 1024px) {
+      margin-top: -40%;
+    }
+  }
+}
+
 .#{molecule('format-visual')} {
   width: 100%;
   max-width: 16em;
@@ -37,9 +58,6 @@ There are specific files for each format, to keep css rendering low.
     max-width: 100%;
     position: relative;
     padding: 0;
-  }
-
-  @media (min-width: 1024px) {
     margin-bottom: 5em;
   }
 

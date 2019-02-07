@@ -1,8 +1,6 @@
 ---
 $title: Validar páginas AMP
-toc: true
 ---
-
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Assista nosso vídeo sobre as diversas opções de validação.']
 
@@ -14,11 +12,7 @@ Há várias formas de validar um documento AMP. Todas elas
 terão o mesmo resultado. Por isso, use a opção mais adequada ao
 seu estilo de desenvolvimento.
 
-<<<<<<< HEAD
 Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
-=======
-Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
->>>>>>> 3aeec0a67c667957f9f54faf118da91faf46313f
 
 ### Console do navegador para desenvolvedores
 
@@ -98,7 +92,6 @@ Extensão do validador de AMP para
 ### Pacotes de NPM para CI
 
 Você pode integrar a validação de AMP aos seus canais de desenvolvimento e testes usando os pacotes da NPM: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) ou o plug-in Gulp [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (páginas em inglês).  Por exemplo, você pode usar o pacote de validador de AMP da NPM em testes de integração ou em uma tarefa programada para verificar as páginas AMP de produção.
-
 
 ##### Exemplo: como validar um arquivo HTML para AMP
 
@@ -255,7 +248,6 @@ Ela gera este erro de validação de AMP, visto em diferentes ferramentas:
 </amp-img>
 
 Cada ferramenta fornece várias informações:
-
 
   1. A mensagem indica a localização (linha e coluna) no documento HTML onde ocorreu o erro.
      Em algumas interfaces, é possível clicar no texto para destacar esse local. Nesse

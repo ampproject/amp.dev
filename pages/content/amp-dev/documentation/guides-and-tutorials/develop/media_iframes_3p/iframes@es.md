@@ -1,8 +1,6 @@
 ---
 $title: Incluir iframes
-toc: true
 ---
-
 
 Descubre cómo incluir contenido multimedia en tus páginas y cómo usar iframes para mostrar contenido avanzado saltándose las limitaciones de AMP.
 
@@ -39,24 +37,15 @@ Un ejemplo de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/
 <amp-iframe width="200" height="100"
     sandbox="allow-scripts allow-same-origin"
     layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
+    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
 </amp-iframe>
 ```
-
-Preview:
-
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=europe">
-</amp-iframe>
 
 ## Usar elementos placeholder
 
 Puedes mostrar un [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) como, (por ejemplo, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
 
 Leer más: Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder](/es/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
-
 
 Este ejemplo de un elemento placeholder:
 

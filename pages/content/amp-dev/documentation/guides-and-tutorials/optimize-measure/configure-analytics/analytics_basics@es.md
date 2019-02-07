@@ -1,11 +1,8 @@
 ---
 $title: "Analytics: aspectos básicos"
-toc: true
 ---
 
 Con este artículo conocerás los aspectos básicos de Analytics en las páginas AMP.
-
-
 
 ## ¿Se debe utilizar amp-pixel o amp-analytics?
 
@@ -22,7 +19,6 @@ Como parte de la integración en la plataforma AMP, los proveedores han ofrecido
 En lo que respecta a tus páginas, puedes utilizar tanto `amp-pixel` como `amp-analytics` en ellas: `amp-pixel` para realizar un seguimiento sencillo de páginas vistas y `amp-analytics` para todo lo demás. También puedes añadir varias veces la misma etiqueta. Si estás trabajando con varios proveedores de Analytics, necesitarás una etiqueta por cada solución. Ten en cuenta que los usuarios prefieren páginas AMP más sencillas, así que no utilices etiquetas adicionales si no son necesarias.
 
 ## Crear una configuración de análisis sencilla
-
 
 Aprende a crear una configuración de [amp-pixel](/es/docs/reference/components/amp-pixel.html)
 y [amp-analytics](/es/docs/reference/components/amp-analytics.html) sencilla.

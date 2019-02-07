@@ -1,15 +1,16 @@
 ---
 $title: Include third-party content
 $order: 9
-toc: true
 formats:
     - websites
 components:
   - iframe
   - facebook
+author: Meggin
+contributors:
+  - pbakaus
+  - bpaduch
 ---
-
-
 
 Learn how to include third-party components in your pages.
 

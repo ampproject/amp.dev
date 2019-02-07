@@ -18,12 +18,8 @@
 
 const express = require('express');
 const config = require('../config');
-const HttpProxy = require('http-proxy');
-const modifyResponse = require('http-proxy-response-rewrite');
 const {Signale} = require('signale');
-const {FilteredPage} = require('../pipeline/filteredPage');
-const got = require('got');
-const {pageMinifier} = require('@lib/build/pageMinifier');
+
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -48,23 +44,16 @@ function getFilteredFormat(request) {
   return activeFormat;
 }
 
-async function hasManualFormatVariant(request, format) {
-  const path = request.originalUrl.replace('.html', `.${format}.html`);
-
-  const page = await got(`${growHost}${path}`).catch(() => {
-    return {};
-  });
-
-  if (!page.error && page.body) {
-    return true;
-  }
-
-  return false;
-}
-
 
 // Setup a proxy over to Grow during development
 if (config.environment === 'development') {
+  // Only import the stuff needed for proxying during development
+  const HttpProxy = require('http-proxy');
+  const modifyResponse = require('http-proxy-response-rewrite');
+  const {FilteredPage} = require('../pipeline/filteredPage');
+  const got = require('got');
+  const {pageMinifier} = require('@lib/build/pageMinifier');
+
   // Also create a logger during development since you want to know
   // what's going on
   const log = new Signale({
@@ -72,15 +61,32 @@ if (config.environment === 'development') {
     'scope': 'Grow (Proxy)',
   });
 
+  /**
+   * Queries Grow for a manually filtered page variant to eventually rewrite
+   * request to this one
+   * @param  {Request}  request The original request
+   * @param  {String}  format  The format to test for
+   * @return {Boolean}
+   */
+  async function hasManualFormatVariant(request, format) {
+    const path = request.originalUrl.replace('.html', `.${format}.html`);
+
+    const page = await got(`${growHost}${path}`).catch(() => {
+      return {};
+    });
+
+    if (!page.error && page.body) {
+      return true;
+    }
+
+    return false;
+  }
+
   // Grow has problems delivering the index.html on a root request
   pages.get('/', (request, response, next) => {
     response.redirect('/index.html');
     next();
   });
-
-  // On production (Google App Engine) these files will be served
-  // by what is defined inside app.yaml
-  pages.use('/static/', express.static('static'));
 
   // During development all requests should be proxied over
   // to Grow and be handled there, therfore create one
@@ -94,9 +100,14 @@ if (config.environment === 'development') {
     if (activeFormat) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        const filteredPage = new FilteredPage(activeFormat, body);
-        response.setHeader('content-length', filteredPage.content.length.toString());
-        return filteredPage.content;
+        try {
+          const filteredPage = new FilteredPage(activeFormat, body);
+          response.setHeader('content-length', filteredPage.content.length.toString());
+          return filteredPage.content;
+        } catch(e) {
+          log.warn(`Requested page is not available in format ${activeFormat}`);
+          return body;
+        }
       });
     }
 

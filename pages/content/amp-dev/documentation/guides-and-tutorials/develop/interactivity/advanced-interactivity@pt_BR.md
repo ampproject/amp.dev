@@ -1,9 +1,6 @@
 ---
 $title: Aprimoramento da interatividade
-toc: true
 ---
-
-
 
 O código inicial oferece uma experiência do usuário bastante crua. Há algumas maneiras de aprimorá-lo:
 
@@ -107,7 +104,6 @@ Tente adicionar uma funcionalidade para que, quando o usuário tocar no ponto in
 ## Mudar as imagens no carrossel
 
 É bom ver imagens de camisas de cores diferentes quando mudamos a cor selecionada. Com o amp-bind, podemos fazer isso vinculando `[src]` aos elementos `<amp-img>` em `<amp-carousel>`.
-
 
 ### Inicializar o estado do SKU
 

@@ -1,8 +1,6 @@
 ---
 $title: لغة CSS المعتمدة
-toc: true
 ---
-
 
 مثل كل صفحات الويب، يتم تحديد أنماط صحفات AMP باستخدام لغة CSS،
 ولكن لا يمكنك الإشارة إلى أوراق الأنماط الخارجية
@@ -23,7 +21,6 @@ toc: true
 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
 [/tip]
-
 
 ## استخدام معالجات CSS التمهيدية
 

@@ -1,9 +1,6 @@
 ---
 $title: Navegando por su sitio
-toc: true
 ---
-
-
 
 La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tomar muchas formas diferentes. En este tutorial, probaremos los siguientes ejemplos para presentar la navegación en las páginas de AMP:
 

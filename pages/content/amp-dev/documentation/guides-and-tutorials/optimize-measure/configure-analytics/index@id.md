@@ -45,7 +45,6 @@ Titik data utama yang perlu dipertimbangkan:
 perangkat, atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/analytics_basics.html#penggantian-variabel))?
 * Bagaimana cara Anda mengidentifikasi pengguna (lihat juga [Identifikasi pengguna](/id/docs/analytics/analytics_basics.html#user-identification))?
 
-
 [tip type="read-on"]
 
 Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).

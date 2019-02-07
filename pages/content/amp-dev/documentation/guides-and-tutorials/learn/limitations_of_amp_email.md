@@ -1,6 +1,6 @@
 ---
 $title: Limitations of AMPHTML Email (TBD)
-$order: 1
+$order: 2
 formats:
   - email
 ---

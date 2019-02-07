@@ -1,9 +1,6 @@
 ---
 $title: Apresentação do código inicial
-toc: true
 ---
-
-
 
 ## Texto informativo sobre as AMP
 As AMP são páginas HTML com algumas restrições que proporcionam um desempenho estável. As páginas AMP têm algumas marcações especiais que as identificam como AMP.
@@ -48,6 +45,5 @@ O código inicial oferece alguns elementos de interatividade básica:
 
 - O carrossel de imagens (`<amp-carousel>`) exibe várias visualizações do produto.
 - O produto será adicionado ao carrinho do usuário (por `<amp-form>`) quando ele clicar no botão "Adicionar ao carrinho" na parte inferior da página.
-
 
 **Faça um teste**: deslize o carrossel de imagens e toque no botão "Adicionar ao carrinho".

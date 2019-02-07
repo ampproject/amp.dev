@@ -1,11 +1,8 @@
 ---
 $title: Inclure du contenu tiers
-toc: true
 ---
 
 Découvrez comment inclure des composants tiers dans vos pages.
-
-
 
 ## Intégrer un tweet
 

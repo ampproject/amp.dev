@@ -11,7 +11,6 @@ $title: 通常の HTML ページを作成する
 AMP ファイルの名前は、必ずしも `.amp.html` とする必要はありません。AMP ファイルには任意の拡張子を設定できます。AMP ページを正規バージョンと区別する方法としては、URL にパラメータを追加するのが一般的です。たとえば、`http://publisher.com/article.html?amp` のようにします。
 [/tip]
 
-
 `article.amp.html` ファイルは、次のような内容になっているはずです。
 
 ```html

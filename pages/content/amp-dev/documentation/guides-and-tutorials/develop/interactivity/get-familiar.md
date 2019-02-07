@@ -1,10 +1,7 @@
 ---
 $title: Getting familiar with the starter code
 $order: 1
-toc: true
 ---
-
-
 
 ## AMP boilerplate
 An AMP page is an HTML page with some restrictions for reliable performance. AMP pages have a bit of special markup that identifies it as an AMP page.
@@ -49,6 +46,5 @@ The starter code offers some basic interactivity:
 
 - The image carousel (an `<amp-carousel>`) displays multiple views of the product.
 - The product can be added to the user's cart (via `<amp-form>`) by tapping the "Add to cart" button on the bottom of the page.
-
 
 **Try it out**: Swipe the image carousel and tap the "Add to cart" button.

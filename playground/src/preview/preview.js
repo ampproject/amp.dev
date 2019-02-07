@@ -235,7 +235,7 @@ class Preview {
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
       const oldIframes = [].slice.call(this.previewContainer.querySelectorAll('iframe'))
-        .filter((e) => e !== this.previewIframe);
+          .filter((e) => e !== this.previewIframe);
       oldIframes.forEach((e) => {
         e.classList.add('fadeout');
       });

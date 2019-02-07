@@ -1,8 +1,6 @@
 ---
 $title: Desteklenen CSS
-toc: true
 ---
-
 
 Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#özel-yazı-tipleri-istisnası) haricinde) harici stil sayfalarını referans alamazsınız.
 Ayrıca, performans üzerindeki etkilerinden dolayı belirli stillere izin verilmez; satır içi stil özniteliklerine izin verilmemektedir.
@@ -12,8 +10,6 @@ Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak i�
 
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
 Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) içinde tanımlanır.
-
-
 
 ## CSS ön işlemcilerini kullanma
 

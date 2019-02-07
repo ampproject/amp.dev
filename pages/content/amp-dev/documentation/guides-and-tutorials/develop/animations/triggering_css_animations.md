@@ -1,7 +1,6 @@
 ---
 $title: Triggering CSS animations & transitions 
 $order: 1
-toc: true
 formats:
   - websites
   - ads
@@ -9,12 +8,9 @@ formats:
 
 Triggering CSS animations on pages [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](docs/interaction_dynamic/amp-actions-and-events#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages. 
 
-
 ## Defining CSS and Keyframes 
 
 You can define CSS several ways in AMP:
-
-
 
 *   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit. 
 *   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties. 
@@ -58,7 +54,6 @@ elementName.ToggleClass(class="className")
 ```
 
 You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu. 
-
 
 ```
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">

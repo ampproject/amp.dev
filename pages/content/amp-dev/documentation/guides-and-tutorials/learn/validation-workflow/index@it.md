@@ -22,14 +22,12 @@ Gli errori della Console per sviluppatori saranno simili al seguente:
 
 <amp-img src="/static/img/docs/validator_errors.png" width="713" height="243" alt="Screenshot degli errori di convalida AMP nella console per sviluppatori di Chrome" layout="responsive"></amp-img>
 
-
 ### Interfaccia web
 
 Lo strumento di convalida AMP può essere utilizzato come un'interfaccia web all'indirizzo [validator.ampproject.org](https://validator.ampproject.org/). In questa interfaccia gli errori vengono mostrati all'interno del codice sorgente HTML della pagina.
 L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgente HTML comportano una riconvalida interattiva.
 
 <amp-img src="/static/img/docs/validator_web_ui.png" width="660" height="507" alt="Screenshot di validator.ampproject.org con esempi di errori." layout="responsive"></amp-img>
-
 
 ### Estensione del browser
 

@@ -1,9 +1,6 @@
 ---
 $title: Mempelajari kode pembuka
-toc: true
 ---
-
-
 
 ## Boilerplate AMP
 Halaman AMP adalah halaman HTML yang memiliki beberapa batasan untuk memberikan performa yang andal. Halaman AMP memiliki markup khusus yang menandainya sebagai halaman AMP.
@@ -48,6 +45,5 @@ Kode pembuka menawarkan beberapa interaktivitas dasar:
 
 - Carousel gambar (`<amp-carousel>`) menampilkan beberapa tampilan produk.
 - Produk dapat ditambahkan ke keranjang pengguna (melalui `<amp-form>`) dengan menge-tap tombol "Tambahkan ke keranjang" di bagian bawah halaman.
-
 
 **Cobalah**: Geser carousel gambar lalu tap tombol "Tambahkan ke keranjang".

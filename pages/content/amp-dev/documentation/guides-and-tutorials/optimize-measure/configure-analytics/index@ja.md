@@ -45,7 +45,6 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 どのようなデータを収集するか（[変数置換](/ja/docs/analytics/analytics_basics.html#置換変数)についての説明もご確認ください）。
 * ユーザーをどのように識別するか（[ユーザーの識別](/ja/docs/analytics/analytics_basics.html#ユーザー認証)についての説明もご確認ください）。
 
-
 [tip type="read-on"]
 
 アナリティクスのさらに詳しい内容については、[アナリティクス: 基本]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})をご覧ください。

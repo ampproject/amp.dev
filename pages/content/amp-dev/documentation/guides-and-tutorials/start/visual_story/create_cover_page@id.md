@@ -1,9 +1,6 @@
 ---
 $title: Membuat halaman sampul
-toc: true
 ---
-
-
 
 Halaman dalam artikel AMP diwakili oleh komponen `<amp-story-page>`. Dalam [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}), Anda bisa memiliki satu atau beberapa komponen `<amp-story-page>`, yang masing-masing berisi layar individual dari sebuah artikel. Halaman pertama yang Anda tetapkan dalam urutan dokumen akan menjadi halaman pertama yang ditampilkan dalam artikel tersebut.
 
@@ -36,7 +33,7 @@ Halaman sampul kita ini terdiri dari dua lapisan:
 
 Mari kita tambahkan lapisan pertama ke halaman sampul. Lapisan ini berisi gambar yang akan mengisi layar.
 
-Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai turunan dari `<amp-story-page>`. Karena kita ingin gambar mengisi layar, tetapkan atribut `template="fill"` untuk `amp-story-grid-layer`. Di dalam lapisan ini, tambahkan elemen [`amp-image`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image.md', locale=doc.locale).url.path}}) untuk file `cover.jpg`, dan pastikan responsif (artinya, `layout="responsive"`) dengan gambar berukuran 720 x 1280 piksel.  Beginilah tampilan lapisan kita:
+Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai turunan dari `<amp-story-page>`. Karena kita ingin gambar mengisi layar, tetapkan atribut `template="fill"` untuk `amp-story-grid-layer`. Di dalam lapisan ini, tambahkan elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) untuk file `cover.jpg`, dan pastikan responsif (artinya, `layout="responsive"`) dengan gambar berukuran 720 x 1280 piksel.  Beginilah tampilan lapisan kita:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">

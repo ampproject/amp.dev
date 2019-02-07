@@ -1,8 +1,6 @@
 ---
 $title: Style & Layout
-toc: true
 ---
-
 
 AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매우 유사합니다. 두 가지 경우 모두 CSS 를 사용합니다.
 
@@ -70,7 +68,6 @@ AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매�
 플레이스홀더 및 폴백이 내장되어 지원되므로 사용자에게 빈 화면이 표시되지 않습니다.
 
 읽어보기:  자리표시자 및 대체 [자세히 알아보기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
-
 
 ## 이미지 아트 디렉션
 

@@ -55,7 +55,6 @@ Dalam contoh di bawah ini, nilai untuk parameter `return` ditambahkan ke permint
 
 <amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
 
-
 Setelah server AMPByExample menerima permintaan POST dari halaman login dan login serta sandi benar, server mengalihkan permintaan ke `returnURL` yang telah disebutkan di atas, dan menambahkan parameter `#success=true`. Waktu proses AMP kini dapat mengotorisasi halaman dan akhirnya mengizinkan Anda menambahkan komentar.
 
 Sangat penting untuk memahami yang dilakukan oleh waktu proses AMP dan yang harus dilakukan oleh server, karena implementasi server merupakan tanggung jawab dari penayang halaman.

@@ -1,11 +1,8 @@
 ---
 $title: Layout supportati
-toc: true
 ---
 
 Rendi reattivi i tuoi elementi utilizzando `layout=responsive`.
-
-
 
 ## Valori supportati per l'attributo layout
 

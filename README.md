@@ -49,6 +49,15 @@ If you have checked out a local copy of the `amphtml` repository you can also im
 $ npm run develop -- --import --local-amphtml-repository='</Users/...>'
 ```
 
+### Maintenance
+
+#### Documents
+
+Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
+
+#### Samples
+Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development only changed samples are rebuilt. To freshly build *all* samples you can run `npm run develop -- --clean-samples`.
+
 ### Run a test build
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run

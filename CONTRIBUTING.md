@@ -26,7 +26,6 @@ accept your pull requests.
 1. Fork the desired repo, develop and test your changes. See instructions for ["How to Build site"](README.md#how-to-build-the-site) so that you can test your changes.
 1. Submit a pull request.
 
-
 ### Adding an embedded sample to a document
 
 If you want to improve the documentation by adding an embedded sample, see [How to: Include embedded samples in AMP docs](contributing/adding-embedded-samples-in-docs.md).
