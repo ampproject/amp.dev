@@ -61,7 +61,6 @@ class FilteredPage {
       throw new Error(`This page is not available for format ${this._format}`);
     } else {
       this._removeHiddenElements();
-      this._removeFilteredTeasers();
       this._rewriteUrls();
       this._setActiveFormatToggle();
       this._removeStaleFilterClass();
@@ -114,38 +113,12 @@ class FilteredPage {
     });
 
     // Find possibly empty lists and remove them for ...
-    // a) component sidebar and normal sidebar
-    this._dom('.nav-list .level-2', '.ap-o-component-sidebar').each((index, navList) => {
+    // a) component and default sidebar
+    this._dom('.nav-list .level-2', '.ap-o-sidebar, .ap-o-component-sidebar').each((index, navList) => {
       navList = this._dom(navList);
 
       if (navList.children().length == 0) {
         navList.parent().remove();
-      }
-    });
-
-    // b) normal sidebar
-    // a) component sidebar and normal sidebar
-    this._dom('.nav-list .level-2', '.ap-o-sidebar').each((index, navList) => {
-      navList = this._dom(navList);
-
-      if (navList.children().length == 0) {
-        navList.parent().remove();
-      }
-    });
-  }
-
-  /**
-   * Checks for teasers that don't match the current format - especially valid
-   * for overview pages: components and examples
-   */
-  _removeFilteredTeasers() {
-    this._dom('.ap-m-teaser-component, .ap-m-teaser-example').each((index, teaser) => {
-      teaser = this._dom(teaser);
-
-      teaser.children(`.ap-m-tag-${this._format}`).attr('style', 'border: 1px solid red;');
-      // Check if there is a tag for the current format if not delete it
-      if (teaser.children(`.ap-m-tag-${this._format}`).length == 0) {
-        teaser.closest('.ap-m-teaser').remove();
       }
     });
   }
