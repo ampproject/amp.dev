@@ -131,7 +131,7 @@ tags are specific for amp.dev #}
       </div>
 
       {% for section in doc.example.document.sections %}
-      {{ section.doc_.strip()|markdown|safe }}
+      {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
 
       {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}
