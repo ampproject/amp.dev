@@ -69,6 +69,7 @@ class ComponentReferenceLinker {
 
   _check(doc) {
     let content = doc.contents.toString();
+    /* eslint-disable max-len */
     const codeExamples = content.match(/(<(amp-[^\s]+)(?:\s[^>]*)?>(.*?)<\/\2>|```html(.*?)*?```|Preview:(.*?)*?<\/amp-\w*(-\w*)*\>|\[sourcecode:html](.*?)*?\[\/sourcecode])/gsm);
 
     if (codeExamples !== null) {
@@ -97,16 +98,20 @@ class ComponentReferenceLinker {
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
       for (let j = 0; j < results.length; j++) {
-        let result = results[j];
-        if (result.slice(-1) === '/' || result.slice(-1) === '.') {
-          continue
+        const result = results[j];
+        if (result.slice(-1) === '/' || result.slice(-1) === '.') {
+          continue;
         } else {
           const component = result.match(/amp-\w*(-\w*)*/g)[0];
-          const linkDescription = result.match(/(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g)
-          let description = ((linkDescription !== null) ? linkDescription[0].replace(component, `\`${component}\``) : `\`${component}\``)
+          const linkDescription = result.match(/(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g);
+          const description = ((linkDescription !== null) ?
+            linkDescription[0].replace(component, `\`${component}\``) :
+            `\`${component}\``);
           if (this._componentExist(component) === true) {
             while (content.includes(result)) {
-              let placeholder = ((i === cases.length-1) ? this._createPlaceholder(component, description) + ' ' : this._createPlaceholder(component, description));
+              const placeholder = ((i === cases.length-1) ?
+                this._createPlaceholder(component, description) + ' ' :
+                this._createPlaceholder(component, description));
               content = content.replace(result, placeholder);
             }
           }

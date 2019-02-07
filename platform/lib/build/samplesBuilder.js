@@ -52,9 +52,9 @@ const CACHE_DEST = path.join(__dirname, '../../../.cache/examples.json');
 // Path the all source files are written to, to vend them via express
 const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
 // Where to store the sample preview files with header
-const PREVIEW_DEST = path.join(__dirname, `../../../dist/examples/previews`);
+const PREVIEW_DEST = path.join(__dirname, '../../../dist/examples/previews');
 // Where to store the embeds for Grow
-const EMBED_DEST = path.join(__dirname, `../../../dist/examples/embeds`);
+const EMBED_DEST = path.join(__dirname, '../../../dist/examples/embeds');
 
 class SamplesBuilder {
   constructor() {
@@ -66,7 +66,7 @@ class SamplesBuilder {
     // Preload preview templates
     this._templates = {};
     /* eslint-disable guard-for-in */
-    for (let format of Object.keys(PREVIEW_TEMPLATES)) {
+    for (const format of Object.keys(PREVIEW_TEMPLATES)) {
       this._templates[format] = fs.readFileSync(PREVIEW_TEMPLATES[format], 'utf-8');
     }
   }
@@ -144,7 +144,7 @@ class SamplesBuilder {
 
       stream.on('error', (error) => {
         this._log.fatal('There was an error building the samples', error);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {
