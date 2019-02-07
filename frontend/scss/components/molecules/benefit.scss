@@ -93,7 +93,7 @@ section.#{utility('content')}.benefits {
   }
 
   &-card {
-    @include gradient-overview;
+    @include gradient-websites;
 
     &-left {
       @include benefit-card-left-shadow;
