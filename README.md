@@ -74,7 +74,7 @@ To build and deploy to the staging environment on [Google App Engine](https://cl
 ```sh
 $ cd platform
 $ npm run build:staging
-$ npm run deploy
+$ npm run deploy:staging
 ```
 
 - - -
