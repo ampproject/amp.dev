@@ -87,7 +87,7 @@
             {# If the document is part of a tutorial render progress #}
             {% if document.collection.tutorial %}
             {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
-            <div class="ap-m-tutorial-progress {% if doc.order > document.order %}ap-m-tutorial-progress-finished{% endif %}"></div>
+            <div class="ap-m-tutorial-progress {% if doc.order > document.order and doc.collection == document.collection %}ap-m-tutorial-progress-finished{% endif %}"></div>
             {% endif %}
 
             <a class="nav-link" href="{{ document.url.path }}">
