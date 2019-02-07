@@ -106,7 +106,7 @@ class Grow {
     const args = [
       'run', '--port', `${config.hosts.pages.port}`, '--no-preprocess',
     ];
-    const options = {
+    constoptions = {
       'stdio': 'pipe',
       'cwd': GROW_POD_PATH,
     };
@@ -123,6 +123,7 @@ class Grow {
     const options = {
       'stdio': 'pipe',
       'cwd': GROW_POD_PATH,
+      'env': {...process.env},
     };
 
     this._spawn(this._command, args, options);
