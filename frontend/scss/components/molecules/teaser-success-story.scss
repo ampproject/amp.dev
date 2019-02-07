@@ -43,11 +43,15 @@
 			.#{molecule('teaser')} {
 
 				&-logo {
-					width: 100%;
-					max-width: 120px;
 					position: relative;
-					margin-bottom: 10px;
-
+		      width: 110px;
+		      height: 30px;
+					margin-bottom: 1em;
+		      
+		      amp-img.contain img {
+		        object-fit: contain;
+		        object-position: left center;
+		      }
 				}
 			}
 		}
