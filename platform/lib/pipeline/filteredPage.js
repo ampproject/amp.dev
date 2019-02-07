@@ -46,7 +46,6 @@ function isFilterableRoute(route) {
 }
 
 class FilteredPage {
-
   /**
    * [constructor description]
    * @param {String} format  One of FORMATS
@@ -74,7 +73,7 @@ class FilteredPage {
    * @return {Boolean}
    */
   _isAvailable() {
-    let body = this._dom('body');
+    const body = this._dom('body');
     return body.attr('data-available-formats').includes(this._format);
   }
 

@@ -104,7 +104,7 @@ if (config.environment === 'development') {
           const filteredPage = new FilteredPage(activeFormat, body);
           response.setHeader('content-length', filteredPage.content.length.toString());
           return filteredPage.content;
-        } catch(e) {
+        } catch (e) {
           log.warn(`Requested page is not available in format ${activeFormat}`);
           return body;
         }
@@ -113,7 +113,7 @@ if (config.environment === 'development') {
 
     // Check if the request should be minified on the fly
     if (request.query['minify']) {
-      log.await(`Minifying request ...`);
+      log.await('Minifying request ...');
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         const minifiedPage = pageMinifier.minifyPage(body, request.url);
         response.setHeader('content-length', minifiedPage.length.toString());

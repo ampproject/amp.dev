@@ -18,7 +18,6 @@
 
 const signale = require('signale');
 const fs = require('fs');
-const path = require('path');
 const mri = require('mri');
 const yaml = require('js-yaml');
 const utils = require('@lib/utils');
@@ -34,7 +33,7 @@ class Config {
     this.environment = env.name;
     this.hosts = env.hosts;
 
-    this.shared = require(utils.project.absolute(`platform/config/shared.json`));
+    this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
     // Globally initialize command line arguments for use across all modules
     this.options = mri(process.argv.slice(2));
@@ -89,12 +88,12 @@ class Config {
     podspec['env'] = {
       'name': this.environment,
       'host': this.hosts.pages.host,
-      'scheme': this.hosts.pages.scheme
+      'scheme': this.hosts.pages.scheme,
     };
 
     // Only add port if there really is one, otherwise Grow fails on an empty field
     if (this.hosts.pages.port) {
-      podspec.env.port = this.hosts.pages.port
+      podspec.env.port = this.hosts.pages.port;
     }
 
     // Add Google Analytics Tracking ID for use in templates
@@ -105,7 +104,7 @@ class Config {
       'playground': this.shared.baseUrls.playground,
       'platform': this._buildUrl(this.hosts.platform),
       'api': this._buildUrl(this.hosts.api),
-    }
+    };
 
     // Deployment specific
     podspec['deployments'] = {
@@ -113,8 +112,8 @@ class Config {
         'name': 'default',
         'destination': 'local',
         'out_dir': GROW_OUT_DIR,
-        'env': podspec['env']
-      }
+        'env': podspec['env'],
+      },
     };
 
     fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podspec, {'noRefs': true}));
