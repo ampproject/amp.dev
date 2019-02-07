@@ -18,7 +18,7 @@
 
 @import '../templates/_default.scss';
 
-.#{template('404')} {
+.#{template('error')} {
   padding-top: 3em;
   padding-bottom: 9em;
 
