@@ -21,13 +21,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 AMP is a technology commonly known for developing super fast web pages on mobile clients. AMP is in fact a set of HTML tags backed by JavaScript that allow all kinds of functionality with a focus on performance and security.
 
 There are [AMP components](https://www.ampproject.org/docs/reference/components) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMP components that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email message.
 
-<div class="noshowtoc">
 
 **Contents**
 
@@ -49,7 +46,6 @@ There are [AMP components](https://www.ampproject.org/docs/reference/components)
 * [FAQ](#faq)
 * [Feedback & Support](#feedback--support)
 
-</div>
 
 ## The AMPHTML Email Format
 

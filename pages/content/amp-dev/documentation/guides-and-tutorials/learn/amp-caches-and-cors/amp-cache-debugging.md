@@ -1,15 +1,13 @@
 ---
 $title: Debug AMP Cache issues
+toc: true
 $order: 8
-toc: false
 formats:
   - websites
   - email
   - stories
   - ads
 ---
-
-
 
 ## Why is my doc broken on an AMP cache?
 

@@ -12,9 +12,9 @@ Gunakan markup metadata [LiveBlogPosting](http://schema.org/LiveBlogPosting) aga
 
 [/tip]
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
-## Ringkasan tentang [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
+## Ringkasan tentang `amp-live-list`
 
 Komponen [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] (https://ampbyexample.com/samples_templates/live_blog/#metadata) pada halaman.
 
@@ -68,7 +68,7 @@ Dengan paginasi, kode sederhana yang kami gunakan sebelumnya menjadi:
 </amp-live-list>
 ```
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
 Anda bertanggung jawab untuk mengisi item navigasi dengan benar, dengan memperbarui halaman yang dihosting. Misalnya, dalam [contoh blog langsung](https://www.ampbyexample.com/samples_templates/live_blog/), kami merender halaman melalui template sisi server dan menggunakan parameter kueri untuk menetapkan item blog pertama apa yang seharusnya ditampilkan pada halaman. Kami membatasi ukuran halaman menjadi 5 item, jadi jika server telah membuat lebih dari 5 item, elemen "Berikutnya" akan muncul di area navigasi saat pengguna membuka halaman utama. Lihat [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) untuk mengetahui detailnya.
 
@@ -89,6 +89,3 @@ Pelajari lebih lanjut dari referensi berikut:
 - Dokumentasi referensi [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [Contoh blog langsung di AMP By Example](https://www.ampbyexample.com/samples_templates/live_blog/)
- 
- 
- 

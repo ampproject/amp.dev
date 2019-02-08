@@ -8,9 +8,9 @@ $title: ライブブログを作成する
 
 ヒント: [LiveBlogPosting](http://schema.org/LiveBlogPosting) メタデータ マークアップを使用して、ブログをサードパーティ プラットフォームの機能と統合することができます。
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
-## [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) の概要
+## `amp-live-list` の概要
 
 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントは、ホスト ドキュメントを定期的にポーリングして新しいコンテンツがないか確認し、新しい項目が利用できるようになったらユーザーのブラウザを更新します。つまり、新しいブログ投稿を追加するたびに、CMS でホスト ドキュメントを更新し、ページの本文と[メタデータ](https://ampbyexample.com/samples_templates/live_blog/#metadata) セクションの両方に更新を含める必要があるということです。
 
@@ -64,7 +64,7 @@ $title: ライブブログを作成する
 </amp-live-list>
 ```
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
 ナビゲーション項目は、ホストされるページを更新して正しく設定する必要があります。たとえば[ライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/) では、サーバー側のテンプレートを使用してページをレンダリングしています。また、クエリ パラメータを使用して、ページの最初に表示するブログ項目を指定しています。ページの最大項目数を 5 つに制限しているため、サーバーが生成した項目数が 5 つを超えると、ユーザーがメインページを開いたときに、ナビゲーション領域に [次へ] 要素が表示されます。詳しくは、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) をご覧ください。
 
@@ -85,6 +85,3 @@ AMP by Example の[ライブブログのサンプル](https://www.ampbyexample.c
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) に関する関連ドキュメント
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [AMP by Example のライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/)
- 
- 
- 

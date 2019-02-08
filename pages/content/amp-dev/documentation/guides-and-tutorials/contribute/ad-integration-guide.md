@@ -5,8 +5,6 @@ formats:
   - ads
 ---
 
-
-
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
 To ensure minimum latency and quality, please follow the instructions listed [here](../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to the AMP project, please see [here](../CONTRIBUTING.md).
 
@@ -16,7 +14,7 @@ To ensure minimum latency and quality, please follow the instructions listed [he
 
 As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher’s website.
 
-Because AMP doesn’t allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the `amp-ad` tag to request ads from your ad server.
+Because AMP doesn’t allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) tag to request ads from your ad server.
 
 For example : Amazon A9 server can be invoked by using following syntax:
 
@@ -37,7 +35,7 @@ For details on how to integrate your ad network with AMP, see [Integrating ad ne
 
 *Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange*
 
-If you are a sell-side platform that wants to get called directly from a publisher’s webpage, you will need to follow the same directions as listed above for integrating with an Ad Server. Adding your own `type` value to the amp-ad tag allows you to distribute your tag directly to the publisher, so they can insert your tags directly into their AMP pages.
+If you are a sell-side platform that wants to get called directly from a publisher’s webpage, you will need to follow the same directions as listed above for integrating with an Ad Server. Adding your own `type` value to the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) tag allows you to distribute your tag directly to the publisher, so they can insert your tags directly into their AMP pages.
 
 More commonly, SSPs work with the publisher to traffick the SSP’s ad tags in their ad server. In this case, ensure that all assets being loaded by your script in the ad server’s creative are being made over HTTPS. There are some restrictions around some ad formats like expandables, so we recommend that you test out the most commonly delivered creative formats with your publishers.
 
@@ -54,7 +52,7 @@ Some ad formats are not fully supported at the moment and we recommend testing t
 *Examples : Brightcove, Ooyala*
 
 A video player that works in regular HTML pages will not work in AMP and therefore a specific tag must be created that allows the AMP Runtime to load your player.
-Brightcove has created a custom [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) tag that allows media and ads to be played in AMP pages.
+Brightcove has created a custom [`amp-brightcove`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-brightcove.md', locale=doc.locale).url.path}}) tag that allows media and ads to be played in AMP pages.
 
 A Brightcove player can be invoked by the following:
 
@@ -98,4 +96,4 @@ Also, see the approach to using the [intersection observer pattern](https://gith
 
 *Examples : Taboola, Outbrain*
 
-Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://www.ampproject.org/docs/reference/components/amp-ad) to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.
+Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://www.ampproject.org/docs/reference/components/[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.

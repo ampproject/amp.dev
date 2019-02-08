@@ -1,7 +1,7 @@
 ---
-$title: Manage non-authenticated user state with AMP
+$title: Managing non-authenticated user state with AMP
+toc: true
 $order: 2
-toc: false
 formats:
   - websites
 ---
@@ -21,8 +21,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 **Table of contents**
 
@@ -133,7 +131,6 @@ After laying the foundation, we then visit a topic with a narrower range of use 
 
 **Chunk #2: Using Client ID in linking and form submission:** In Task 5, you'll learn to  advantage of link traversal and/or form submission to pass AMP Client ID information across contextual boundaries where the user is traversing from one page directly to another.
 
-
 > **CAUTION:**
 >
 > The following implementation guide advises usage of and working with cookies. Be sure to consult the [Strongly recommended practices](#strongly-recommended-practices) section for important suggestions to keep in mind.
@@ -147,7 +144,6 @@ In walking through the technical guidance below, let's  assume that you’ll be 
     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" />
   </noscript>
 </amp-img>
-
 
 For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
 
@@ -472,7 +468,6 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 We recommend validating the authenticity of query parameter values by using the steps outlined in the [Parameter validation](#parameter-validation) section below.
 
 *Updates to non-AMP page:* Similarly, on a non-AMP page served from your publisher origin, extract and transmit `ref_id` value contained within the URL. Validate the authenticity of the value by following the steps outlined in the [Parameter validation](#parameter-validation) section below. Then, construct analytics pings that will include both an `orig_user_id` derived from `ref_id` and a `user_id` based on the value of the first-party cookie identifier.
-
 
 <blockquote>
 <p><strong>IMPORTANT:</strong></p>

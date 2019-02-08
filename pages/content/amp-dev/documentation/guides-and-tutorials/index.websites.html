@@ -1,5 +1,5 @@
 ---
-$title: AMP Websites Documentation
+$title: Learn AMP with Guides and tutorials
 $titles:
   header: Guides & Tutorials
 $view: /views/overview/guides.j2
@@ -11,9 +11,9 @@ $hidden: true
 cms: !g.yaml /content/shared/data/cms.yaml
 ---
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-<h1>AMP Websites</h1>
+<h1>Introduction to AMP Websites</h1>
 
-<p class="limit">AMP Websites are lightning fast, user first, immersive websites. By building on web development best practices, AMP makes it easy to build beautiful and functional sites that just work. AMP is cross browser compatible and supported by many different platforms.</p>
+<p class="limit">The AMP project is a web components framework to create lightning fast, user first, immersive websites. By building on web development best practices, AMP makes it easy to build beautiful and functional sites that just work. AMP is cross browser compatible and supported by many different platforms.</p>
 
 {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
 <div class="ap--benefits--list">
@@ -120,14 +120,10 @@ cms: !g.yaml /content/shared/data/cms.yaml
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           <span class="ap-m-lnk-text">Tumblr</span>
         </a>
-        <a href="https://amp-wp.org/" rel="noopener" class="ap-m-lnk">
+        <a href="https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/" rel="noopener" class="ap-m-lnk">
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           <span class="ap-m-lnk-text">WordPress</span>
         </a>
-
-        {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-        <br>
-        <a href="{{ g.doc('/content/amp-dev/community/platform-and-vendor-partners.html', locale=doc.locale).url.path }}" class="ap-a-btn">See more</a>
     </div>
 
   </div>

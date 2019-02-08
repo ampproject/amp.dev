@@ -40,7 +40,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 Se o arquivo AMP incluir recursos experimentais, será reprovado na
-[validação de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md', locale=doc.locale).url.path}}).
+[validação de AMP]({{g.doc('/content/docs/fundamentals/validate.md', locale=doc.locale).url.path}}).
 Remova os componentes experimentais de documentos AMP prontos para produção.
 
 ## Ativar um experimento para um documento específico

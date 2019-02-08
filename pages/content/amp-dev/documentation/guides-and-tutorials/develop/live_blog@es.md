@@ -12,9 +12,9 @@ Usa la etiqueta de metadatos [LiveBlogPosting](http://schema.org/LiveBlogPosting
 
 [/tip]
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }} 
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
-## Descripción general de [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
+## Descripción general de `amp-live-list`
 
 El componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata](https://ampbyexample.com/samples_templates/live_blog/#metadata) de la página.
 
@@ -68,7 +68,7 @@ Con la paginación, el código de antes se convierte en lo siguiente:
 </amp-live-list>
 ```
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}  
+{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
 Eres tú quien tiene que rellenar los elementos de navegación correctamente actualizando la página alojada. Por ejemplo, en el [blog en directo de ejemplo](https://www.ampbyexample.com/samples_templates/live_blog/) nosotros procesamos la página mediante una plantilla de servidor y usamos un parámetro de consulta para especificar cuál debe ser el primer elemento del blog en la página. Limitamos el tamaño de la página a 5 elementos. Así, si el servidor genera más de 5 elementos cuando un usuario llega a la primera página, la página muestra el elemento "Next" (Siguiente) en el área de navegación. Para obtener más información, consulta [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
@@ -89,6 +89,3 @@ Consulta los siguientes recursos para obtener más información:
 - Documentación de referencia de [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [Ejemplo de blog en directo de AMP By Example](https://www.ampbyexample.com/samples_templates/live_blog/)
- 
- 
- 
