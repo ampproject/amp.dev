@@ -28,7 +28,7 @@ const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
 const LOCAL_AMPHTML_REPOSITORY = config.options['local-amphtml-repository'] || false;
 
 const log = new Signale({
-  'interactive': true,
+  'interactive': false,
   'scope': 'GitHub Importer',
 });
 

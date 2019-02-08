@@ -32,7 +32,7 @@ const GROW_DEFAULT_PATH = path.join(os.homedir(), './bin/grow');
 class Grow {
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Grow',
       'types': {
         // Just for goodliness, add custom logger as .watch is a bit off
