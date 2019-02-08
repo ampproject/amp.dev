@@ -108,6 +108,12 @@ class SamplesBuilder {
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
         await this._parseSample(sample.path, sample.relative).then((parsedSample) => {
+          // Skip samples that have draft: true set
+          if (parsedSample.document.metadata.draft) {
+            callback();
+            return;
+          }
+
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
           const files = [

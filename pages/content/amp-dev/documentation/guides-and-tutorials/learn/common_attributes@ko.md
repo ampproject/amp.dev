@@ -20,7 +20,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
 
 
 ## heights
@@ -42,7 +42,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## layout
 
@@ -59,7 +59,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하세요.
 
 ## media
 
@@ -120,7 +120,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-자세한 내용은 [AMP 작업 및 이벤트]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [AMP 작업 및 이벤트]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## placeholder
 
@@ -136,7 +136,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
 
 
 ## sizes
@@ -153,7 +153,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## width 및 height
 
@@ -169,4 +169,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하세요.

@@ -45,7 +45,7 @@ const SELECTOR_REWRITE_EXCLUDED_PATHS = /\/documentation\/examples.*/;
 class PageMinifier {
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Page minifier',
     });
 

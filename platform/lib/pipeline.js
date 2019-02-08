@@ -209,21 +209,13 @@ class Pipeline {
    * path or starts a Grow development server
    * @return {Promise}
    */
-  generatePages() {
+  async generatePages() {
     const grow = new Grow();
     if (config.environment === 'development') {
       // During development start Grow's dev server
-      return grow.run().when('Server ready.');
+      return grow.run();
     } else {
-      return grow.deploy().when('Deploying:').then(() => {
-        // There is no "easy" way to determine when
-        // Grow has finished putting the files in place
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve();
-          }, 2500);
-        });
-      });
+      return grow.deploy().when('Deploying:');
     }
   }
 

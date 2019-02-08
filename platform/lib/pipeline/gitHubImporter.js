@@ -23,12 +23,12 @@ const config = require('../config.js');
 const Document = require('./markdownDocument');
 
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
-const CLIENT_SECRET = process.argv[2] || process.env.AMP_DOC_SECRET;
-const CLIENT_ID = process.argv[3] || process.env.AMP_DOC_ID;
+const CLIENT_SECRET = process.env.AMP_DOC_SECRET;
+const CLIENT_ID = process.env.AMP_DOC_ID;
 const LOCAL_AMPHTML_REPOSITORY = config.options['local-amphtml-repository'] || false;
 
 const log = new Signale({
-  'interactive': true,
+  'interactive': false,
   'scope': 'GitHub Importer',
 });
 

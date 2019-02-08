@@ -24,6 +24,7 @@ const path = require('path');
 const GROW_POD_PATH = '../pages';
 
 const GROW_DEFAULT_PATH = path.join(os.homedir(), './bin/grow');
+const GROW_TRAVIS_PATH = '/home/travis/.local/bin/grow';
 
 /**
  * A wrapper class to simplify interactions with a Grow process
@@ -32,7 +33,7 @@ const GROW_DEFAULT_PATH = path.join(os.homedir(), './bin/grow');
 class Grow {
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Grow',
       'types': {
         // Just for goodliness, add custom logger as .watch is a bit off
@@ -56,6 +57,9 @@ class Grow {
     if (fs.existsSync(GROW_DEFAULT_PATH)) {
       this._log.info(`Using Grow installation from ${GROW_DEFAULT_PATH}`);
       return GROW_DEFAULT_PATH;
+    } else if (fs.existsSync(GROW_TRAVIS_PATH)) {
+      this._log.info(`Using Grow installation from ${GROW_TRAVIS_PATH}`);
+      return GROW_TRAVIS_PATH;
     } else {
       this._log.info('Using global Grow if present.');
       return 'grow';
@@ -84,21 +88,29 @@ class Grow {
 
   when(message) {
     const process = this._process;
+    let done = false;
     return new Promise((resolve, reject) => {
       // Listen for the specified message in the output streams
       function listen(data) {
         data = data.toString();
-
         if (data.indexOf(message) !== -1) {
+          done = true;
+        }
+      }
+      function close() {
+        process.stdout.removeListener('data', listen);
+        process.stderr.removeListener('data', listen);
+        process.removeListener('close', close);
+        if (done) {
           resolve();
-          // If the message occured stop listening to the stream
-          process.stdout.removeListener('data', listen);
-          process.stderr.removeListener('data', listen);
+        } else {
+          reject(new Error('Grow terminated unexpectedly'));
         }
       }
 
       process.stdout.on('data', listen);
       process.stderr.on('data', listen);
+      process.on('close', close);
     });
   }
 
@@ -123,7 +135,6 @@ class Grow {
     const options = {
       'stdio': 'pipe',
       'cwd': GROW_POD_PATH,
-      'env': {...process.env},
     };
 
     this._spawn(this._command, args, options);

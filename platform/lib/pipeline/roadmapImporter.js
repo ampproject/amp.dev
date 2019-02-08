@@ -9,7 +9,7 @@ const gitHubImporter = require('./gitHubImporter');
 const DESTINATION_JSON = __dirname + '/../../../pages/content/amp-dev/community/roadmap.json';
 
 const log = new Signale({
-  'interactive': true,
+  'interactive': false,
   'scope': 'Roadmap Importer',
 });
 

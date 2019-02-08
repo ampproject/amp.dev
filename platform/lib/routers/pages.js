@@ -57,7 +57,7 @@ if (config.environment === 'development') {
   // Also create a logger during development since you want to know
   // what's going on
   const log = new Signale({
-    'interactive': true,
+    'interactive': false,
     'scope': 'Grow (Proxy)',
   });
 
