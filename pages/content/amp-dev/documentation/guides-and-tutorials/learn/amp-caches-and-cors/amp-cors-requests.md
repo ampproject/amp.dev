@@ -24,6 +24,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+
+
 Many AMP components and extensions take advantage of remote endpoints by using
 Cross-Origin Resource Sharing (CORS) requests.  This document explains the key
 aspects of using CORS in AMP.  To learn about CORS itself, see the
@@ -91,6 +93,7 @@ cross-origin requests, you need to handle CORS, otherwise, the request fails.
 2.  Follow the instructions in this document for handling CORS requests and
     responses.
 
+
 ## Utilizing cookies for CORS requests
 
 Most AMP components that use CORS requests either automatically set the
@@ -142,6 +145,7 @@ When your endpoint receives a CORS request:
 2.  [If there isn't an Origin header, check that the request is from the same origin (via `AMP-Same-Origin`)](#allow-same-origin-requests). 
 3.  [If the request is a state change (e.g., POST), check that the origin is from the source origin (via `__amp_source_origin`)](#restrict-requests-to-source-origins).
 
+
 #### 1) Allow requests for specific CORS origins
 <span id="verify-cors-header"></span>
 
@@ -154,6 +158,7 @@ Endpoints should restrict requests to allow only the following origins:
       *  Cloudflare AMP Cache: `https://<publisher's domain>.amp.cloudflare.com`
 *  From the publisher’s own origins
 
+
 [tip type="read-on"]
 
 For information on AMP Cache URL formats, see these resources:
@@ -161,6 +166,7 @@ For information on AMP Cache URL formats, see these resources:
 - [Cloudflare AMP Cache](https://amp.cloudflare.com/)
 
 [/tip]
+
 
 #### 2) Allow same-origin requests
 <span id="allow-same-origin-requests"></span>
@@ -197,6 +203,7 @@ This header is a <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> requirem
 
 Although the W3 CORS spec allows the value of <code>*</code> to be returned in the response, for improved security, you should:
 
+
 * If the `Origin` header is present, validate and echo the value of the <code>`Origin`</code> header.
 * If the `Origin` header isn't present, validate and echo the value of the <code>"__amp_source_origin"</code>.
 
@@ -211,9 +218,12 @@ This header simply allows the CORS response to contain the <code>AMP-Access-Cont
 ### Processing state changing requests
 
 [tip type="important"]
+
 Perform these validation checks *before* you process the request. This validation helps to provide protection against CSRF attacks, and avoids processing untrusted sources requests.
+
 [/tip]
 
+ 
 Before processing requests that could change the state of your system (for
 example, a user subscribes to or unsubscribes from a mailing list), check the
 following:
@@ -313,6 +323,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
      "https://cdn.ampproject.org" ];
   var allowedSourceOrigin = "https://example.com";  //publisher's origin
   var sourceOrigin = req.query.__amp_source_origin;
+
 
   // If same origin
   if (req.headers['amp-same-origin'] == 'true') {

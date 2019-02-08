@@ -19,6 +19,50 @@
     margin-left: 12px;
   }
 
+  &-notification {
+
+    bottom: auto;
+    top: 10rem;
+    left: 22vw;
+    right: auto;
+    width: auto;
+    z-index: 1000;
+    background: transparent;
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.6));
+    cursor: pointer;
+
+    &-inner {
+
+      padding: 1em;
+      margin-left: 26px;
+      @include gradient-websites; color: color('white');
+    
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 0;
+        top: 0;
+        left: 0;
+        border-top: 1em solid transparent;
+        border-bottom: 1em solid transparent; 
+        border-right: 1em solid #005AF0;
+        font-size: 26px;
+      }
+
+      button {
+        background: rgba(0,0,0,0.18);
+        color: #fff;
+        border: 0;
+        padding: 0.3em 0.6em;
+      }
+
+    }
+
+
+
+  }
+
   &-format {
     flex: 1 50%;
     max-width: 50%;
