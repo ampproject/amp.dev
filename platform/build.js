@@ -76,9 +76,14 @@ pipeline.clean();
   }
 
   signale.timeEnd('Pipeline');
-})().then(() => {
-  // For development we also want to directly serve the current build
-  if (config.environment == 'development') {
-    new Platform().start();
-  }
-});
+})()
+    .then(() => {
+      // For development we also want to directly serve the current build
+      if (config.environment == 'development') {
+        new Platform().start();
+      }
+    })
+    .catch(() => {
+      process.exit(1);
+    });
+
