@@ -7,7 +7,7 @@
   "scripts": {
     "develop": "cd platform && node build.js",
     "lint": "npm-run-all lint:* --aggregate-output --parallel",
-    "lint:grow": "cd platform && node lib/pipeline/growReferenceChecker.js",
+    "lint-disabled:grow": "cd platform && node lib/pipeline/growReferenceChecker.js",
     "lint:node": "eslint \"**/*.js\" --ignore-path ./.gitignore",
     "fix:node": "eslint \"**/*.js\" --fix --ignore-path ./.gitignore",
     "build:boilerplate": "cd boilerplate && node build.js",

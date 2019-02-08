@@ -9,6 +9,7 @@ cache:
 install:
   - pip install grow==0.6.5 --user
   - grow --version
+  - which grow 
   - npm ci
 before_deploy: 
   - npm run build:staging
