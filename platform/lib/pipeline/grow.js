@@ -88,21 +88,29 @@ class Grow {
 
   when(message) {
     const process = this._process;
+    let done = false;
     return new Promise((resolve, reject) => {
       // Listen for the specified message in the output streams
       function listen(data) {
         data = data.toString();
-
         if (data.indexOf(message) !== -1) {
+          done = true;
+        }
+      }
+      function close() {
+        process.stdout.removeListener('data', listen);
+        process.stderr.removeListener('data', listen);
+        process.removeListener('close', close);
+        if (done) {
           resolve();
-          // If the message occured stop listening to the stream
-          process.stdout.removeListener('data', listen);
-          process.stderr.removeListener('data', listen);
+        } else {
+          reject(new Error('Grow terminated unexpectedly'));
         }
       }
 
       process.stdout.on('data', listen);
       process.stderr.on('data', listen);
+      process.on('close', close);
     });
   }
 
@@ -127,7 +135,6 @@ class Grow {
     const options = {
       'stdio': 'pipe',
       'cwd': GROW_POD_PATH,
-      'env': {...process.env},
     };
 
     this._spawn(this._command, args, options);
