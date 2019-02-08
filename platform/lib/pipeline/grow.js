@@ -73,7 +73,7 @@ class Grow {
    */
   _handleProcessOutput(data) {
     data = data.toString();
-    this._log(data);
+    this._log.running(data);
   }
 
   _spawn(command, args, options) {
