@@ -20,7 +20,7 @@ const signale = require('signale');
 const express = require('express');
 const compression = require('compression');
 const ampCors = require('amp-toolbox-cors');
-// const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
+const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 
@@ -59,6 +59,15 @@ class Platform {
       });
     }
 
+    this.server.use(defaultCachingStrategy);
+    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
+    this.server.use((request, response, next) => {
+      if (request.path.endsWith('/source/')) {
+        next();
+        return;
+      }
+      ampOptimizer(request, response, next);
+    });
     this.server.use((req, res, next) => {
       if (req.hostname === 'localhost') {
         return next();
@@ -72,8 +81,6 @@ class Platform {
       res.redirect('https://' + req.hostname + req.path);
     });
     this.server.use(compression());
-    this.server.use(defaultCachingStrategy);
-    // this.server.use(AmpOptimizerMiddleware.create({versionedRuntime: true}));
     this._enableCors();
 
     this._check();
