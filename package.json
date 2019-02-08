@@ -4,6 +4,9 @@
   "description": "The successor of the former ampproject.org: the all-new amp.dev",
   "repository": "git@github.com:ampproject/docs.git",
   "main": "serve.js",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "develop": "cd platform && node build.js",
     "lint": "npm-run-all lint:* --aggregate-output --parallel",
@@ -15,12 +18,14 @@
     "build:playground": "cd playground && webpack --config webpack.config.js --mode production --optimize-minimize --progress",
     "build:site": "cd platform && node build.js --import --clean-samples",
     "build:staging": "NODE_ENV=staging npm-run-all build:site build:boilerplate build:playground --aggregate-output --parallel",
+    "build:prod": "NODE_ENV=production npm-run-all build:site build:boilerplate build:playground --aggregate-output --parallel",
     "deploy:staging": "gcloud app deploy --project=amp-dev-staging --quiet",
+    "deploy:prod": "gcloud app deploy --project=amp-dev-230314 --quiet",
     "log:staging": "gcloud app logs tail -s default --project amp-dev-staging",
     "posttest": "npm run lint",
     "start:local": "cd platform && NODE_ENV=local node serve.js",
     "start:playground": "cd playground && webpack-dev-server --mode development",
-    "start": "cd platform && NODE_ENV=staging node serve.js",
+    "start": "cd platform && NODE_ENV=production node serve.js",
     "test": "npm-run-all test:* --aggregate-output --parallel",
     "test:playground": "babel-node playground/spec/run.js"
   },
@@ -60,6 +65,7 @@
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.5",
     "amp-toolbox-optimizer": "0.4.6",
+    "amp-toolbox-optimizer-express": "0.5.0",
     "amp-toolbox-runtime-version": "0.2.3",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",

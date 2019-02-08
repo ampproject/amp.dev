@@ -17,7 +17,7 @@
 'use strict';
 
 const express = require('express');
-const {setNoCache} = require('../utils/cacheHelpers.js');
+const {setNoCache, setMaxAge} = require('../utils/cacheHelpers.js');
 
 // eslint-disable-next-line new-cap
 const staticRouter = express.Router();
@@ -28,6 +28,12 @@ staticRouter.get('/serviceworker.js', (request, response) => {
   setNoCache(response);
   response.status(200)
       .sendFile('serviceworker.js', {root: 'static'});
+});
+
+staticRouter.get('/robots.txt', (request, response) => {
+  setMaxAge(response, 60);
+  response.status(200)
+      .sendFile('robots.txt', {root: 'static'});
 });
 
 module.exports = staticRouter;
