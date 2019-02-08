@@ -179,4 +179,4 @@ $title: تضمين المحتوى من جهات خارجية
 </amp-iframe>
 </div>
 
-يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة](/docs/reference/components/amp-ad.html#supported-ad-networks).
+يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

@@ -34,7 +34,7 @@ para selecionar a proporção com base na largura da tela.
 </amp-iframe>
 </div>
 
-Dica: Veja mais exemplos de [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) na página [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+Dica: Veja mais exemplos de [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) na página [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}).
 
 ## Incorporar uma imagem do Instagram
 
@@ -66,7 +66,7 @@ de modo que os valores de largura e altura são universais.
 </amp-iframe>
 </div>
 
-Dica: Veja mais exemplos de [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) na página [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+Dica: Veja mais exemplos de [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) na página [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}).
 
 ## Exibir postagem ou vídeo do Facebook
 
@@ -111,7 +111,7 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-Dica: Veja mais exemplos de [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) na página [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+Dica: Veja mais exemplos de [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) na página [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}).
 
 ## Incluir um vídeo do YouTube
 
@@ -142,7 +142,7 @@ Use `layout="responsive"` para gerar layouts de forma correta para vídeos com p
 </amp-iframe>
 </div>
 
-Dica: Veja mais exemplos de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) na página [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+Dica: Veja mais exemplos de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) na página [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}).
 
 ## Exibir um anúncio
 
@@ -187,6 +187,6 @@ para ser mostrado quando nenhum anúncio estiver disponível:
 </amp-iframe>
 </div>
 
-A AMP é compatível com uma ampla gama de redes de anúncios. Consulte as [referências para ver a lista completa](/pt_br/docs/reference/components/amp-ad.html#supported-ad-networks).
+A AMP é compatível com uma ampla gama de redes de anúncios. Consulte as [referências para ver a lista completa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
 
 Leia Mais: Saiba mais sobre anúncios no guia [Como veicular anúncios em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}).

@@ -45,7 +45,7 @@ Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, siz
 
 ## layout
 
-AMP menyediakan kumpulan [tata letak](/id/docs/design/responsive/control_layout.html#the-layout-attribute) yang menentukan perilaku komponen AMP dalam tata letak dokumen. Anda dapat menentukan tata letak komponen dengan menambahkan atribut `layout` menggunakan salah satu nilai tata letak yang didukung untuk elemen tersebut (lihat dokumentasi elemen untuk mengetahui nilai apa saja yang didukung).
+AMP menyediakan kumpulan [tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) yang menentukan perilaku komponen AMP dalam tata letak dokumen. Anda dapat menentukan tata letak komponen dengan menambahkan atribut `layout` menggunakan salah satu nilai tata letak yang didukung untuk elemen tersebut (lihat dokumentasi elemen untuk mengetahui nilai apa saja yang didukung).
 
 Contoh:
 
@@ -79,7 +79,7 @@ Contoh:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html#element-media-queries).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
 
 ## noloading
 
@@ -155,7 +155,7 @@ Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, siz
 
 ## width dan height
 
-Untuk sebagian [tata letak](/id/docs/design/responsive/control_layout.html#the-layout-attribute), komponen AMP harus memiliki atribut `width` dan `height` yang berisi nilai piksel bilangan bulat.
+Untuk sebagian [tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), komponen AMP harus memiliki atribut `width` dan `height` yang berisi nilai piksel bilangan bulat.
 
 Contoh:
 

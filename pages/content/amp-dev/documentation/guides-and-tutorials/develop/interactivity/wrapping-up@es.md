@@ -6,7 +6,7 @@ $title: Terminando
 
 Has aprendido a:
 
-- Use [`<amp-state>`](/es/docs/reference/components/amp-bind.html#state) para obtener la información del producto (color, tamaño, disponibilidad).
+- Use [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) para obtener la información del producto (color, tamaño, disponibilidad).
 - Use [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) para crear interacciones entre elementos.
 - ¡Crea una experiencia de usuario rápida y rica con AMP!
 

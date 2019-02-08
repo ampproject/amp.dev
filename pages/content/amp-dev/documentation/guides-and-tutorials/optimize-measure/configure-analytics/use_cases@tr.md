@@ -12,19 +12,19 @@ bkz. [Katkı Sağlama](/tr/contribute/).
 
 ## Sayfa görünümlerini izleme
 
-`amp-pixel` ve `amp-analytics` kullanarak sayfa görünümlerini nasıl izleyeceğinizi öğrenin.
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) ve [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak sayfa görünümlerini nasıl izleyeceğinizi öğrenin.
 
-### Amp-piksel kullanma
+### Amp-pixel kullanma
 
-[amp-piksel](/tr/docs/reference/components/amp-pixel.html) kullanarak belli bir URL›ye sayfa görüntüleme verilerini gönderin:
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) kullanarak belli bir URL›ye sayfa görüntüleme verilerini gönderin:
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
 ```
 
-### Amp-analitik kullanma - satıcısız
+### Amp-analytics kullanma - satıcısız
 
-[amp-analitik](/tr/docs/reference/components/amp-analytics.html)kullanarak belli bir URL›ye sayfa görüntüleme verilerini gönderin:
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak belli bir URL›ye sayfa görüntüleme verilerini gönderin:
 
 ```html
 <amp-analytics>
@@ -72,7 +72,7 @@ Sayfa görüntüleme verilerini Google Analytics›e gönderin
 
 ## Sayfa tıklamalarını izleme
 
-[amp-analitik](/tr/docs/reference/components/amp-analytics.html) kullanarak,
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak,
 etkinlik verilerini
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/) ya da bir URL›ye göndererek sayfa tıklamalarını nasıl izleyeceğinizi öğrenin.
 
@@ -139,7 +139,7 @@ Aşağıdaki örnekte, özel bir ögeye tıklandığında Google Analytics›e b
 
 ## Kaydırmayı izleme
 
-[Amp-analitik](/tr/docs/reference/components/amp-analytics.html) kullanarak sayfa kaydırmayı izleyin.
+[Amp-analitik]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak sayfa kaydırmayı izleyin.
 Aşağıdaki örnekte, sayfa %25, %50 ve %90 oranında dikey olarak kaydırıldığında, belirlenen URL›ye bir `scroll` etkinliği
  göndermek için `scrollspec` özelliği kullanılmıştır:
 Etkinlik aynı zamanda sayfa, `scroll` genişliğinin %90 oranında yatay olarak
@@ -171,7 +171,7 @@ kaydırıldığında da uyarı verir:
 
 ## Sosyal medya etkileşimlerini izleme
 
-[Amp-analitik](/tr/docs/reference/components/amp-analytics.html) kullanarak,
+[Amp-analitik]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak,
 etkinlik verilerini
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/) ya da bir URL›ye göndererek sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin.
 

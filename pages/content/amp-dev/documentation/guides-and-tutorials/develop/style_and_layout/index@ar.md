@@ -119,7 +119,7 @@ $title: إنشاء صفحات AMP تفاعلية
 تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 50000 بايت،
 وتتحقق من الأنماط الغير مسموح بها، كما تتأكد من توافق
 تنسيق الصفحة وصحته.
-راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](/ar/docs/troubleshooting/validation_errors.html#أخطاء-الأنماط-والتنسيقات).
+راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 
 نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 50000 بايت:
 

@@ -4,7 +4,7 @@ $title: Marcadores de posición y respaldos
 
 En cuanto al rendimiento percibido y la mejora progresiva, en AMP se recomienda incluir marcadores de posición y respaldos donde sea posible.
 
-Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en ['<amp-iframe>'](/es/docs/reference/components/amp-iframe.html#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
+Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en ['<amp-iframe>']({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
 
 ## Marcadores de posición
 

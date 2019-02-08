@@ -38,7 +38,7 @@ $title: インタラクティブ性の向上
 </amp-state>
 ```
 
-`<amp-state>` 要素内のデータには、要素に関連付けられている ID を使ってアクセスできます。たとえば、次の式フラグメントを使ってこの変数を参照できます。
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素内のデータには、要素に関連付けられている ID を使ってアクセスできます。たとえば、次の式フラグメントを使ってこの変数を参照できます。
 
 ```javascript
 selected.slide // Evaluates to 0.

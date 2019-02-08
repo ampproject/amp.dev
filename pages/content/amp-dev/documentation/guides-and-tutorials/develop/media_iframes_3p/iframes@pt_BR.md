@@ -45,7 +45,7 @@ Um [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/a
 
 É possível exibir um [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) na parte superior de um documento desde que o [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) inclua um elemento com o atributo `placeholder` (por exemplo, um elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})) para ser renderizado como marcador até que o iframe esteja pronto para exibição.
 
-Leia mais: Saiba mais sobre marcadores no artigo sobre [iframes com marcadores](/pt_br/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
+Leia mais: Saiba mais sobre marcadores no artigo sobre [iframes com marcadores]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
 
 Exemplo com marcador:
 
@@ -70,4 +70,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## Exemplos
 
-Veja mais exemplos avançados em nossa [página de demonstração avançada](https://ampbyexample.com/components/amp-iframe/).
+Veja mais exemplos avançados em nossa [página de demonstração avançada]({{g.doc('/content/amp-dev/documentation/examples/components/amp-iframe.html', locale=doc.locale).url.path}}).

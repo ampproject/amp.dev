@@ -6,9 +6,9 @@ Bagaimana jika data Anda yang dapat diikat terlalu besar atau kompleks untuk dia
 
 [tip type="success"]
 
-`<amp-state>` mendukung pengambilan data jarak jauh melalui atribut [`src`](/id/docs/reference/components/amp-bind.html#attributes) miliknya, yang mengambil JSON dari titik akhir CORS. Pengambilan ini dilakukan sekali saat pemuatan halaman, dan berguna untuk memastikan baru tidaknya data (khususnya jika ditayangkan dari cache).
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) mendukung pengambilan data jarak jauh melalui atribut [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes)miliknya, yang mengambil JSON dari titik akhir CORS. Pengambilan ini dilakukan sekali saat pemuatan halaman, dan berguna untuk memastikan baru tidaknya data (khususnya jika ditayangkan dari cache).
 
-Anda juga dapat mengikat atribut `src` untuk elemen `<amp-state>`. Hal ini berarti tindakan pengguna dapat memicu pengambilan data JSON jarak jauh ke status halaman yang dapat diikat.
+Anda juga dapat mengikat atribut `src` untuk elemen [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state). Hal ini berarti tindakan pengguna dapat memicu pengambilan data JSON jarak jauh ke status halaman yang dapat diikat.
 
 [/tip]
 
@@ -20,7 +20,7 @@ Mari kita manfaatkan kemampuan pengambilan data jarak jauh untuk mencari harga S
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-Serupa dengan data JSON dalam elemen `<amp-state>`, data jarak jauh yang ditampilkan dari pengambilan ini digabungkan dan tersedia di atribut `id` elemen. Misalnya, data yang ditampilkan dari contoh respons di atas dapat diakses di ekspresi:
+Serupa dengan data JSON dalam elemen [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), data jarak jauh yang ditampilkan dari pengambilan ini digabungkan dan tersedia di atribut `id` elemen. Misalnya, data yang ditampilkan dari contoh respons di atas dapat diakses di ekspresi:
 
 |  Ekspresi                  |  Hasil |
 |------------------------------|---------|

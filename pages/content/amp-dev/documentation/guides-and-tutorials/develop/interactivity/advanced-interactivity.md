@@ -39,7 +39,7 @@ Let's initialize a state variable to keep track of the index of the currently di
 </amp-state>
 ```
 
-The data within `<amp-state>` elements are accessible by their associated ID. For example, we can refer to this variable by the following expression fragment:
+The data within [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) elements are accessible by their associated ID. For example, we can refer to this variable by the following expression fragment:
 
 ```javascript
 selected.slide // Evaluates to 0.
@@ -110,7 +110,7 @@ It would be nice if we could see images of different shirt colors when we change
 
 ### Initialize the SKU state
 
-First, we need to initialize the state data with the image source URLs of each color shirt. Let's do this with a new `<amp-state>` element:
+First, we need to initialize the state data with the image source URLs of each color shirt. Let's do this with a new [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) element:
 
 ```html
 <!-- Available shirts. Maps unique string identifier to color and image URL string. -->

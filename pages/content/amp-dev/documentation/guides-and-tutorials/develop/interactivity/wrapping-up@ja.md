@@ -6,7 +6,7 @@ $title: まとめ
 
 このチュートリアルでは、以下の内容について学習しました。
 
-- [`<amp-state>`](/ja/docs/reference/components/amp-bind.html#state) を使用して、色、サイズ、在庫などの商品情報を取得する。
+- [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) を使用して、色、サイズ、在庫などの商品情報を取得する。
 - [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) を使用して、要素間のインタラクティブ性を追加する。
 - AMP を使用して、高速でリッチなユーザー エクスペリエンスを実現する。
 

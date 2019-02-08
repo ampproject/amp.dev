@@ -3,8 +3,8 @@ $title: 深入了解 AMP 分析
 ---
 
 本指南深入介绍了
-[amp-analytics 组件](/zh_cn/docs/reference/components/amp-analytics.html)，
-将一个 `amp-analytics` 配置样例拆分成下面这些关键组成要素逐个讲解：
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})，
+将一个 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置样例拆分成下面这些关键组成要素逐个讲解：
 
 本指南的其余部分会使用此配置样例
 来跟踪网页浏览量和用户点击链接的次数
@@ -64,7 +64,7 @@ AMP 支持两种常见的数据收集模式：
 [Chartbeat](http://support.chartbeat.com/docs/) 和 [Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/amp-analytics/)）的网页，由供应商拥有的端点获取。
 
 要将分析数据发送到分析服务提供商，
-请在 `amp-analytics` 标记中添加 `type` 属性，并将其值设为
+请在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 标记中添加 `type` 属性，并将其值设为
 相应的供应商，如
 [分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表中所定义。
 
@@ -76,7 +76,7 @@ AMP 支持两种常见的数据收集模式：
 对于每项[请求](/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)，系统都会将分析数据发送到请求中指定的端点。
 
 借助分析服务供应商的配置，
-您可以快速开始使用 `amp-analytics`。
+您可以快速开始使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})。
 您应查阅供应商的文档及
 帮助资源，以获取进一步的指导。
 如前所述，
@@ -91,7 +91,7 @@ AMP 支持两种常见的数据收集模式：
 ## 加载远程配置：config 属性
 
 您不必将所有的
-`amp-analytics` 配置全都添加到 AMP 网页中。
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置全都添加到 AMP 网页中。
 您可以改为针对所有配置或部分配置
 调用远程网址。
 
@@ -102,7 +102,7 @@ AMP 支持两种常见的数据收集模式：
 来构建配置数据。
 
 加载远程配置的第一步是
-向 `amp-analytics` 标记添加 config 属性：
+向 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 标记添加 config 属性：
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -123,7 +123,7 @@ JSON 对象中包含的配置仅仅是分析工具帐号的变量值。
 ```
 
 最后一步是确保将远程文件中的内容
-提取到 `amp-analytics` 配置中的相应位置。
+提取到 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置中的相应位置。
 在此处的 `pageview` 和 `event` 请求中，
 `account` 变量值都自动设为
 远程网址中的帐号值 (`"account": "UA-XXXXX-Y"`)：
@@ -157,7 +157,7 @@ AMP 不会验证同一变量的多种用法。
 
 请继续往下读，以详细了解这些配置。
 （您也可
-在 [amp-analytics 参考信息](/zh_cn/docs/reference/components/amp-analytics.html)中了解这些配置。）
+在 [`amp-analytics` 参考信息]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})中了解这些配置。）
 
 ### 发送哪些数据：requests 属性
 
@@ -184,10 +184,10 @@ AMP 不会验证同一变量的多种用法。
 
 #### 附加请求网址：extraUrlParams
 
-[extraUrlParams](/zh_cn/docs/reference/components/amp-analytics.html#extra-url-params)
+[extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 属性会通过常见的“&foo=baz”惯例指定要向请求网址的查询字符串附加的额外参数。
 
-本指南所用的 `amp-analytics` 示例向请求添加了
+本指南所用的 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 示例向请求添加了
 额外参数 `cd1` 并将参数值设为“AMP”：
 
 ```js
@@ -204,7 +204,7 @@ AMP 不会验证同一变量的多种用法。
 (a-zA-Z0-9) 组成的任何字符串。
 
 例如，
-下面这个 `amp-analytics` 元素被配置为
+下面这个 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 元素被配置为
 在首次加载文档时以及每次点击 `a` 标记时
 向 `https://example.com/analytics` 发送请求：
 
@@ -227,7 +227,7 @@ AMP 不会验证同一变量的多种用法。
 ```
 
 [tip type="important"]
- 我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 amp-analytics 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。
+ 我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。
 [/tip]
 
 AMP 支持以下触发器配置：
@@ -332,7 +332,7 @@ AMP 会按照优先顺序使用相应值来填充变量：
 
 1. 远程配置（通过 `config`）。
 2. 嵌套在 `triggers` 中某个触发器内的 `vars`。
-3. 嵌套在 `amp-analytics` 中的顶层 `vars`。
+3. 嵌套在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 中的顶层 `vars`。
 4. 平台提供的值。
 
 在下面的示例中，既有远程配置，
@@ -399,4 +399,3 @@ AMP 会按照优先顺序使用相应值来填充变量：
     </tr>
   </tbody>
 </table>
- 

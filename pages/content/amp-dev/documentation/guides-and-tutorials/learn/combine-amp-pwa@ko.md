@@ -28,7 +28,7 @@ AMP만의 차별화된 장점은 **거의 즉각적인 전송**입니다. 이 �
 
 따라서 AMP 페이지를 사이트의 진입점으로 만든 다음, 향후 사용자 여정을 위해 보이지 않는 곳에서 PWA를 준비시킨 후 전환하는 것이 좋습니다.
 
-계속 읽어 보기: 'amp-install-serviceworker'를 통해 [AMP를 PWA에 연결]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}})하는 방법을 자세히 알아보세요.
+계속 읽어 보기: '[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) 를 통해 [AMP를 PWA에 연결]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}})하는 방법을 자세히 알아보세요.
 
 ## PWA의 데이터 소스로 AMP 사용
 

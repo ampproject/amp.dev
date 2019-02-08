@@ -6,9 +6,9 @@ $title: Trabajar con datos remotos
 
 [tip type="success"]
 
-`<amp-state>` admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
 
-También puede vincular el atributo `src` para el elemento `<amp-state>`. Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
+También puede vincular el atributo `src` para el elemento [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state). Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
 
 [/tip]
 
@@ -20,7 +20,7 @@ Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-De forma similar a los datos JSON dentro de los elementos `<amp-state>`, los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
+De forma similar a los datos JSON dentro de los elementos [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
 
 |  Expresión                   | Resultado |
 |------------------------------|-----------|

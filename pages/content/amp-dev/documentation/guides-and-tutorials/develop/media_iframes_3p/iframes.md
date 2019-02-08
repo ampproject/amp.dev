@@ -59,7 +59,7 @@ In the following example, we created a responsive [`amp-iframe`]({{g.doc('/conte
 You can display an [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) at the top of a document, provided the [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) contains an element with the `placeholder` attribute, (for example, an [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element) which would be rendered as a placeholder until the iframe is ready to be displayed.
 
 [tip type="read-on"]
-**READ ON –**: Learn more about placeholders in [Iframe with placeholder](/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
+**READ ON –**: Learn more about placeholders in [Iframe with placeholder]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
 [/tip]
 
 Example with placeholder:
@@ -85,4 +85,4 @@ Renders as:
 
 ## Examples
 
-You can find more advanced [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) examples in [AMP By Example](https://ampbyexample.com/components/amp-iframe/).
+You can find more advanced [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) examples in [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-iframe.html', locale=doc.locale).url.path}}).

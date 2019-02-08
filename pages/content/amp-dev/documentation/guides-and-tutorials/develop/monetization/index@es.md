@@ -10,7 +10,7 @@ En las páginas que no son AMP (HTML tradicional), si quieres mostrar anuncios, 
 
 [tip type="success"]
 
-Consulta la página [AMP By Example para ver una demostración en directo](https://ampbyexample.com/components/amp-ad/) de cómo añadir una etiqueta "amp-ad" a una página AMP.
+Consulta la página [AMP By Example para ver una demostración en directo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) de cómo añadir una etiqueta "amp-ad" a una página AMP.
 
 [/tip]
 
@@ -127,20 +127,20 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 *   **Evita las creatividades pesadas,** de acuerdo con las [directrices de IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Evita los intersticiales** u otros formatos de anuncio que provoquen que se reinicie el flujo del contenido al cargar los anuncios.
 *   **Optimiza la visibilidad** configurando la estrategia de carga de datos para que se priorice la visibilidad sobre las visualizaciones.
-*   **Incluye anuncios en el contenido de vídeo** a través de [reproductores compatibles](/es/docs/reference/components.html#media) o [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para poder obtener ingresos con todos los tipos de contenido.
+*   **Incluye anuncios en el contenido de vídeo** a través de [reproductores compatibles]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) o [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para poder obtener ingresos con todos los tipos de contenido.
 *   **Implementa anuncios nativos** para competir con los anuncios de display que utilizan solicitudes de anuncio de varios tamaños. De esta forma, aumentarás la demanda y, al mismo tiempo, proporcionarás a los lectores una experiencia de usuario óptima.
 
 ### Innovación: ofrece los productos publicitarios que generan más interacción
 
 *   **Implementa anuncios en páginas AMP complementarias** para generar ingresos incrementales:
-    *   [Anuncios en un carrusel](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [Anuncios en un lightbox](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   [Anuncios avanzados](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [Anuncios en un carrusel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Anuncios en un lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [Anuncios avanzados]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Utiliza formatos nuevos con los anuncios de venta directa** para proporcionar al equipo de ventas productos publicitarios innovadores y de elevado impacto:
-    *   [Anuncios fijos](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Alfombra voladora](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [Anuncios fijos]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Alfombra voladora]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Recursos adicionales
 
-*   [Plantillas de anuncios AMP HTML](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+*   [Plantillas de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [Demostración: cómo añadir el componente `amp-ad` a tu página AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

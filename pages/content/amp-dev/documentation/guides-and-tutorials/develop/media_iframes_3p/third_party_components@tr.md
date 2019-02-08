@@ -160,4 +160,4 @@ Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında 
 </amp-iframe>
 </div>
 
-AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](/docs/reference/components/amp-ad.html#supported-ad-networks) bakın.
+AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks) bakın.

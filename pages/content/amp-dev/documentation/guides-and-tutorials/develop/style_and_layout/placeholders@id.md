@@ -4,7 +4,7 @@ $title: Placeholder & fallback
 
 Dalam upaya meningkatkan performa dan progressive enhancement yang dirasakan, salah satu praktik terbaik dalam AMP adalah menyediakan placeholder dan fallback di mana pun dimungkinkan.
 
-Beberapa elemen bahkan akan memberikan reward berupa kelonggaran pembatasan jika Anda menyediakan placeholder dan fallback - misalnya, jika Anda menyediakan placeholder untuk [`<amp-iframe>`](/id/docs/reference/components/amp-iframe.html#iframe-with-placeholder), elemen tersebut dapat digunakan di dekat bagian atas halaman (yang tidak akan berfungsi tanpa placeholder).
+Beberapa elemen bahkan akan memberikan reward berupa kelonggaran pembatasan jika Anda menyediakan placeholder dan fallback - misalnya, jika Anda menyediakan placeholder untuk [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), elemen tersebut dapat digunakan di dekat bagian atas halaman (yang tidak akan berfungsi tanpa placeholder)
 
 ## Placeholder
 

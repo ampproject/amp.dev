@@ -2,7 +2,7 @@
 $title: Prácticas recomendadas para crear historias de AMP
 ---
 
-En esta guía se indican algunas prácticas recomendadas que deberías seguir al crear [historias de AMP](/es/docs/reference/components/amp-story.html).
+En esta guía se indican algunas prácticas recomendadas que deberías seguir al crear [historias de AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 ## Color de fondo  
 

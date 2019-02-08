@@ -7,7 +7,7 @@ AMP mendukung **kueri media** &amp; **kueri elemen**, juga disertai cara bawaan 
 ## Membuat gambar responsif dengan mudah
 
 Buat gambar responsif dengan menetapkan atribut `width` dan `height`, menyetel tata letak ke `responsive`,
-dan menunjukkan dengan [`srcset`](/id/docs/design/responsive/art_direction.html)
+dan menunjukkan dengan [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
 aset gambar mana yang akan digunakan berdasarkan ukuran layar yang berbeda-beda:
 
 [sourcecode:html]
@@ -31,7 +31,7 @@ yang ditetapkan oleh atribut width dan height yang ditentukan. Cobalah dengan me
 
 [tip type="success"]
 
-Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example](https://ampbyexample.com/components/amp-img/).
+Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -99,7 +99,7 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
 
 [tip type="success"]
 
-Kunjungi halaman [Mendemonstrasikan tata letak AMP](/id/docs/design/amp-html-layout/layouts_demonstrated.html) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar. Anda juga dapat menemukan lebih banyak informasi di [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+Kunjungi halaman [Mendemonstrasikan tata letak AMP](/id/docs/design/amp-html-layout/layouts_demonstrated.html) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar. Anda juga dapat menemukan lebih banyak informasi di [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -189,4 +189,3 @@ Tergantung lebar layarnya, salah satu gambar akan diambil dan dirender.
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

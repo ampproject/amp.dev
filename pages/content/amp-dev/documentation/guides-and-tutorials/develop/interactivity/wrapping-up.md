@@ -7,7 +7,7 @@ Congratulations! You just created an interactive e-commerce product detail page 
 
 You learned how to:
 
-- Use [`<amp-state>`](/docs/reference/components/amp-bind.html#state) to fetch product information (color, size, availability).
+- Use [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) to fetch product information (color, size, availability).
 - Use [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to create cross-element interactions.
 - Create a fast and rich user experience with AMP!
 

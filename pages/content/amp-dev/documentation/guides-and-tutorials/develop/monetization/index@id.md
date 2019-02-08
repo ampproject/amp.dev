@@ -10,7 +10,7 @@ Di halaman non-AMP (HTML biasa), jika ingin menampilkan iklan di halaman, Anda p
 
 [tip type="success"]
 
-Lihat [AMP By Example untuk demo langsung](https://ampbyexample.com/components/amp-ad/) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
+Lihat [AMP By Example untuk demo langsung]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
 
 [/tip]
 
@@ -127,20 +127,20 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 *   **Hindari materi iklan yang berat** sesuai [panduan IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Hindari iklan interstisial** atau format iklan lain yang menyebabkan konten diulang saat iklan dimuat.
 *   **Optimalkan visibilitas** dengan mengatur strategi pemuatan data agar lebih mengutamakan visibilitas daripada penayangan.
-*   **Tempatkan iklan dalam konten video** melalui [pemutar yang didukung](/id/docs/reference/components.html#media) atau [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) untuk mengaktifkan pendapatan pada semua jenis konten.
+*   **Tempatkan iklan dalam konten video** melalui [pemutar yang didukung]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) atau [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) untuk mengaktifkan pendapatan pada semua jenis konten.
 * **Terapkan iklan native** untuk bersaing dengan iklan display menggunakan permintaan iklan multi-ukuran, yang akan meningkatkan tekanan permintaan sekaligus memberikan pengalaman pengguna premium kepada pembaca Anda.
 
 ### Inovasi: Tawarkan produk iklan yang paling menarik
 
 * **Terapkan iklan pada halaman AMP tambahan** untuk menghasilkan pendapatan tambahan:
-    *   [Iklan di carousel](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [Iklan di lightbox](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   ... dan [lain-lain](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [Iklan di carousel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Iklan di lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   ... dan [lain-lain]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 * **Terapkan format baru untuk iklan yang dijual langsung** untuk membekali tim penjualan Anda dengan produk iklan inovatif yang berdampak tinggi:
-    *   [Iklan Melekat](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Flying Carpet](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [Iklan Melekat]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Referensi tambahan
 
-*   [Template iklan AMPHTML](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+*   [Template iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [Demo: Memperlihatkan cara menambah `amp-ad` ke halaman AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

@@ -33,7 +33,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 5. 使用 amp-iframe
 
-等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})  标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处](/zh_cn/docs/reference/components/[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) )），这样做会带来不少弊端。
+等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})  标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}))），这样做会带来不少弊端。
 
 ## 总结
 

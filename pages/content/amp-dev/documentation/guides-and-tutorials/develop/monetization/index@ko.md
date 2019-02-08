@@ -127,20 +127,20 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 *   [IAB 가이드라인](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)에 따라 **용량이 큰 광고 소재를 사용하지 마세요**.
 *   광고 로드 시 콘텐츠 리플로우를 유발하는 **전면 광고**나 기타 광고 형식을 **사용하지 마세요**.
 *   data-loading-strategy를 prefer-viewability-over-views로 설정하여 **조회가능성을 최적화**하세요.
-*   [지원되는 플레이어](/ko/docs/reference/components.html#media) 또는 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})을 사용해 **동영상 콘텐츠에 광고를 게재**하여 모든 유형의 콘텐츠에서 수익을 창출하세요.
+*   [지원되는 플레이어]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) 또는 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})을 사용해 **동영상 콘텐츠에 광고를 게재**하여 모든 유형의 콘텐츠에서 수익을 창출하세요.
 *   크기가 여러 개인 광고 요청을 사용하여 디스플레이 광고와 경쟁할 **네이티브 광고를 구현**함으로써 수요 압력을 늘리면서 독자에게 우수한 사용자 환경을 제공하세요.
 
 ### 혁신: 가장 좋은 성과를 내는 광고 제품 제공
 
 *   **부속 AMP 페이지에 광고를 구현**하여 수익을 늘리세요.
-    *   [캐러셀 광고](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [라이트박스 광고](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   ... 외 [더보기](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [캐러셀 광고]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [라이트박스 광고]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   ... 외 [더보기]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **직접 판매 광고를 위한 새로운 형식을 구현**하여 영업팀에서 효과적이고 혁신적인 광고 제품을 활용할 수 있도록 하세요.
-    *   [고정 광고](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Flying Carpet](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [고정 광고]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## 추가 리소스
 
-*   [AMPHTML 광고 템플릿](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+*   [AMPHTML 광고 템플릿]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [데모: AMP 페이지에 `amp-ad`를 추가하는 방법 보기]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

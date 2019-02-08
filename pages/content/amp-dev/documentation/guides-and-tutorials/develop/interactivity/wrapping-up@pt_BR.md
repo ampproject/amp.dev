@@ -6,7 +6,7 @@ Parabéns! Você acaba de criar uma página interativa de detalhes do produto pa
 
 Agora você já sabe:
 
-- usar [`<amp-state>`](/pt_br/docs/reference/components/amp-bind.html#state) para buscar informações sobre um produto (cor, tamanho, disponibilidade);
+- usar [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) para buscar informações sobre um produto (cor, tamanho, disponibilidade);
 - usar [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) para criar interações entre diferentes elementos;
 - criar uma experiência do usuário rápida e satisfatória com uma página AMP.
 

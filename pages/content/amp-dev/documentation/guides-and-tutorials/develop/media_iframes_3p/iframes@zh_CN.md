@@ -67,4 +67,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## 示例
 
-您可以在我们的高级演示页面[找到更多高级示例，](https://ampbyexample.com/components/amp-iframe/).
+您可以在我们的高级演示页面[找到更多高级示例，]({{g.doc('/content/amp-dev/documentation/examples/components/amp-iframe.html', locale=doc.locale).url.path}}).

@@ -45,7 +45,7 @@ Para saber mais, consulte [Imagens responsivas com os atributos "srcset", "sizes
 
 ## layout
 
-A tecnologia AMP oferece um conjunto de [layouts](/pt_br/docs/design/responsive/control_layout.html#the-layout-attribute) que descreve o comportamento de um componente AMP no layout do documento. É possível especificar um layout para um componente adicionando o atributo `layout` com um dos valores de layout compatíveis com o elemento. Consulte a documentação do elemento para ver os valores compatíveis.
+A tecnologia AMP oferece um conjunto de [layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) que descreve o comportamento de um componente AMP no layout do documento. É possível especificar um layout para um componente adicionando o atributo `layout` com um dos valores de layout compatíveis com o elemento. Consulte a documentação do elemento para ver os valores compatíveis.
 
 Por exemplo:
 
@@ -79,7 +79,7 @@ Por exemplo:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Para saber mais, consulte [Consultas de layout e mídia](/pt_br/docs/design/responsive/control_layout.html#element-media-queries).
+Para saber mais, consulte [Consultas de layout e mídia]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
 
 ## noloading
 
@@ -155,7 +155,7 @@ Para saber mais, consulte [Imagens responsivas com os atributos "srcset", "sizes
 
 ## largura e altura
 
-Em alguns [layouts](/pt_br/docs/design/responsive/control_layout.html#the-layout-attribute), os componentes AMP precisam ter um atributo `width` e `height` que contenha um valor inteiro de pixel.
+Em alguns [layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), os componentes AMP precisam ter um atributo `width` e `height` que contenha um valor inteiro de pixel.
 
 Por exemplo:
 

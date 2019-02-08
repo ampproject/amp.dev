@@ -35,7 +35,7 @@ untuk memilih rasio aspek berdasarkan lebar layar.
 </div>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-twitter/).
+**TIP –** Lihat lebih banyak contoh [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Menyematkan Instagram
@@ -69,7 +69,7 @@ sehingga nilai lebar dan tinggi harus universal
 </div>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-instagram/).
+**TIP –** Lihat lebih banyak contoh [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Menampilkan pos atau video Facebook
@@ -116,7 +116,7 @@ Pratinjau:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-facebook/).
+**TIP –** Lihat lebih banyak contoh [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Menyertakan video youtube
@@ -149,7 +149,7 @@ Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk vide
 </div>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh](https://ampbyexample.com/components/amp-youtube/).
+**TIP –** Lihat lebih banyak contoh [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Menampilkan iklan
@@ -195,6 +195,6 @@ untuk ditampilkan jika tidak ada iklan yang tersedia:
 </amp-iframe>
 </div>
 
-AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](/id/docs/reference/components/amp-ad.html#supported-ad-networks).
+AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
 
 Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.

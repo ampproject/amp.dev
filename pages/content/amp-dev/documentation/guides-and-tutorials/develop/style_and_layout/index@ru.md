@@ -26,7 +26,7 @@ $title: Как создать адаптивные AMP-страницы
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-[Подробнее...](https://ampbyexample.com/components/amp-img/)
+[Подробнее...]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}})
 
 ## Как добавить стили на страницу
 
@@ -95,7 +95,7 @@ AMP разделяет процессы обработки макета доку
 Для проверки значений CSS и макета страницы используется инструмент AMP Validator.
 
 Он определяет, не превышает ли объем стилей CSS 50 тыс. байтов, выявляет запрещенные стили и проверяет, правильно ли отформатирован макет страницы.
-Ознакомьтесь с [полным списком ошибок в стилях и макетах](/ru/docs/troubleshooting/validation_errors.html#ошибки-стиля-и-дизайна).
+Ознакомьтесь с [полным списком ошибок в стилях и макетах]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 
 Ниже представлен пример ошибки, возникшей из-за того, что объем стиля CSS страницы превышает 50 тыс. байтов:
 

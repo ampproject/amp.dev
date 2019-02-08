@@ -2,24 +2,24 @@
 $title: Vendor analisis
 ---
 
-Dokumen ini mencantumkan daftar vendor analisis yang menyediakan konfigurasi terpasang untuk digunakan dengan komponen [`amp-analytics`](/id/docs/reference/components/amp-analytics.html).
+Dokumen ini mencantumkan daftar vendor analisis yang menyediakan konfigurasi terpasang untuk digunakan dengan komponen [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 Untuk mengirim data analisis ke vendor pihak ketiga:
 
-1. Pada tag [`<amp-analytics> `](/id/docs/reference/components/amp-analytics.html), tambahkan atribut `type` dan setel nilainya sesuai vendor yang ditentukan, seperti dijelaskan pada bagian [*Vendor*](#vendor) di bawah.
+1. Pada tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), tambahkan atribut `type` dan setel nilainya sesuai vendor yang ditentukan, seperti dijelaskan pada bagian [*Vendor*](#vendor) di bawah.
 2. Tentukan data yang ingin Anda ambil dan pantau, dan tetapkan detail tersebut dalam data konfigurasi. Lihat dokumentasi vendor untuk mengetahui cara mengambil data analisis.
 
-Pada contoh berikut, kita akan mengirim data pageview ke [Google Analytics](#google-analytics), sebuah penyedia analisis pihak ketiga yang memiliki konfigurasi terpasang untuk amp-analytics:
+Pada contoh berikut, kita akan mengirim data pageview ke [Google Analytics](#google-analytics), sebuah penyedia analisis pihak ketiga yang memiliki konfigurasi terpasang untuk [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
 <script type="application/json">
 {
   "vars": {
-    "account": "UA-XXXXX-Y" 
+    "account": "UA-XXXXX-Y"
   },
   "triggers": {
-    "trackPageview": { 
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -37,7 +37,7 @@ Jika Anda sudah terbiasa mengutak-atik kode, Anda dapat mempelajari konfigurasi 
 
 [tip type="note"]
 
-Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`](/id/docs/reference/components/amp-analytics.html) sebaiknya mempelajari detail dalam [Mengintegrasikan fitur analisis dengan AMP](/id/docs/analytics/integrating-analytics.html).
+Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) sebaiknya mempelajari detail dalam [Mengintegrasikan fitur analisis dengan AMP](/id/docs/analytics/integrating-analytics.html).
 
 [/tip]
 
@@ -127,7 +127,7 @@ Menambahkan dukungan untuk Eulerian Technologies Analytics. *Var* `analyticsHost
 
 Nilai atribut type: `facebookpixel`
 
-Menambahkan dukungan untuk [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Pada konfigurasi amp-analytics, Anda harus menetapkan Pixel ID sebagai `pixelId: YOUR-PIXEL-ID`. Peristiwa yang didukung dan nilai peristiwa terkait yang dapat ditetapkan dijelaskan dalam [dokumentasi developer Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Menambahkan dukungan untuk [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Pada konfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), Anda harus menetapkan Pixel ID sebagai `pixelId: YOUR-PIXEL-ID`. Peristiwa yang didukung dan nilai peristiwa terkait yang dapat ditetapkan dijelaskan dalam [dokumentasi developer Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius
 
@@ -317,4 +317,3 @@ Menambahkan dukungan untuk Webtrekk. Detail konfigurasi dapat dilihat di [suppor
 Nilai atribut type: `metrika`
 
 Menambahkan dukungan untuk Yandex Metrica. Detail konfigurasi dapat dilihat di [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
- 

@@ -33,7 +33,7 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
 </div>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-twitter/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Insertar una foto de Instagram
@@ -63,7 +63,7 @@ Además, Instagram utiliza una relación de aspecto fija para los diseños adapt
 </div>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-instagram/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Mostrar entradas o vídeos de Facebook
@@ -109,7 +109,7 @@ Avance:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-facebook/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Insertar un vídeo de YouTube
@@ -141,7 +141,7 @@ Utiliza `layout="responsive"` para producir diseños correctos para los vídeos 
 </div>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-youtube/).
+**TIP –** Puedes encontrar más ejemplos de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Mostrar un anuncio
@@ -183,6 +183,6 @@ Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre s
 </amp-iframe>
 </div>
 
-AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](/es/docs/reference/components/amp-ad.html#supported-ad-networks).
+AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
 
 Leer más: Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}).

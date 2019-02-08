@@ -4,7 +4,7 @@ $title: 占位符和后备行为
 
 为了提高用户感知的性能并实现渐进增强效果，AMP 中的最佳做法是尽可能提供占位符和后备行为。
 
-一些元素甚至通过放宽限制来鼓励您这样做。例如，如果您为 [`<amp-iframe>`](/zh_cn/docs/reference/components/amp-iframe.html#iframe-with-placeholder) 提供占位符，则可以将该组件用在网页顶部附近（如果不使用占位符，网页将无法正常运行）。
+一些元素甚至通过放宽限制来鼓励您这样做。例如，如果您为 [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder) 提供占位符，则可以将该组件用在网页顶部附近（如果不使用占位符，网页将无法正常运行）。
 
 ## 占位符
 

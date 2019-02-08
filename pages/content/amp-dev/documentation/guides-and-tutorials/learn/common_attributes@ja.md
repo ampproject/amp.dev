@@ -45,7 +45,7 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 
 ## layout
 
-AMP では、一連の [レイアウト](/ja/docs/design/responsive/control_layout.html#the-layout-attribute) を使って、AMP コンポーネントがドキュメントのレイアウトでどのように動作するかを指定できます。特定のコンポーネントのレイアウトを指定するには、`layout` 属性と、その要素で使用可能なレイアウト値をいずれか 1 つ追加します（使用できる値については、該当要素のドキュメントをご覧ください）。
+AMP では、一連の [レイアウト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) を使って、AMP コンポーネントがドキュメントのレイアウトでどのように動作するかを指定できます。特定のコンポーネントのレイアウトを指定するには、`layout` 属性と、その要素で使用可能なレイアウト値をいずれか 1 つ追加します（使用できる値については、該当要素のドキュメントをご覧ください）。
 
 例:
 
@@ -79,7 +79,7 @@ AMP では、一連の [レイアウト](/ja/docs/design/responsive/control_layo
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#element-media-queries) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries) をご覧ください。
 
 ## noloading
 
@@ -155,7 +155,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 ## width と height
 
-一部の [レイアウト](/ja/docs/design/responsive/control_layout.html#the-layout-attribute) では、AMP コンポーネントに、整数のピクセル値を含む `width` と `height` の属性を指定する必要があります。
+一部の [レイアウト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) では、AMP コンポーネントに、整数のピクセル値を含む `width` と `height` の属性を指定する必要があります。
 
 例:
 

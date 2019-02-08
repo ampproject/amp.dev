@@ -10,9 +10,9 @@ What if your bindable data is too large or complex to retrieve at page load? Or 
 
 [tip type="success"]
 
-`<amp-state>` supports fetching remote data via its [`src`](/docs/reference/components/amp-bind.html#attributes) attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) supports fetching remote data via its [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes)attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
 
-You can also bind the `src` attribute for the `<amp-state>` element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
+You can also bind the `src` attribute for the [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
 
 [/tip]
 
@@ -24,7 +24,7 @@ Let's make use of the ability to fetch remote data to look up prices of SKUs in 
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-Similar to the JSON data within `<amp-state>` elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
+Similar to the JSON data within [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
 
 
 |  Expression                  |  Result |

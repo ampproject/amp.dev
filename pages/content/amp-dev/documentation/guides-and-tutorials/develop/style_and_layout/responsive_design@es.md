@@ -16,7 +16,7 @@ En esta guía, le mostraremos cómo puede implementar fácilmente estos fundamen
 
 Para optimizar su página web para que el contenido sea escalable y se ajuste a la ventana del navegador para cualquier dispositivo, debe especificar un `viewport` (elemento de vista gráfica) `meta`. El elemento viewport indica al navegador cómo escalar y dimensionar el área visible (viewport) de la página web.
 
-Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](/es/docs/fundamentals/spec.html#required-markup) para páginas AMP, se debe especificar el  siguiente viewport:
+Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) para páginas AMP, se debe especificar el  siguiente viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -48,7 +48,7 @@ Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, conf
 </style>
 ```
 
-Leer más: Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](/es/docs/design/responsive/control_layout.html#el-atributo-layout).
+Leer más: Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#el-atributo-layout).
 
  <a id="fn1"></a>
 [tip type="note"]
@@ -113,7 +113,7 @@ En el ejemplo siguiente, tenemos 3 imágenes recortadas diferentes de un gato qu
 - 470 - 669 px, muestra cat-medium.jpg (450 x 340 px)
 - 469 px o menos, muestra cat-small.jpg (226 x 340 px)
 
-Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-width-y-height-no-están-definidos?).
+Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
 

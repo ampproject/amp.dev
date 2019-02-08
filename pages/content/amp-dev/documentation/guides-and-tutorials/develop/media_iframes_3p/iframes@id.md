@@ -11,7 +11,7 @@ Menampilkan iframe di halaman menggunakan elemen [`amp-iframe`]({{g.doc('/conten
 Iframe sangat bermanfaat di AMP untuk menampilkan konten yang tidak didukung di konteks halaman menu,
 seperti konten yang memerlukan JavaScript yang ditulis oleh pengguna.
 
-### [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) persyaratan
+### `amp-iframe` persyaratan
 
 * Harus setidaknya **600 piksel** atau **75%** viewport pertama yang jauh dari bagian atas.
 * Hanya dapat meminta referensi melalui HTTPS, dan tidak boleh memiliki asal yang sama dengan penampung, kecuali permintaan tidak menentukan izinkan-asal-yang-sama.
@@ -44,7 +44,7 @@ Contoh [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/referen
 
 Anda dapat menampilkan [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) di bagian atas dokumen, [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) yang diberikan berisi elemen dengan atribut `placeholder`, (misalnya, elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
 
-Baca Lebih Lanjut: Pelajari lebih lanjut tentang placeholder di [Iframe dengan placeholder](/id/docs/reference/components/amp-iframe.html#iframe-with-placeholder).
+Baca Lebih Lanjut: Pelajari lebih lanjut tentang placeholder di [Iframe dengan placeholder]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
 
 Contoh dengan placeholder:
 
@@ -69,4 +69,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## Contoh
 
-Contoh tingkat lanjut lainnya dapat ditemukan di [halaman demo tingkat lanjut](https://ampbyexample.com/components/amp-iframe/).
+Contoh tingkat lanjut lainnya dapat ditemukan di [halaman demo tingkat lanjut]({{g.doc('/content/amp-dev/documentation/examples/components/amp-iframe.html', locale=doc.locale).url.path}}).

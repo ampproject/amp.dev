@@ -9,4 +9,4 @@ $order: 3
 
 - [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 - [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
-- ["评论部分"示例](https://ampbyexample.com/samples_templates/comment_section/)
+- ["评论部分"示例]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Comment_Section.html', locale=doc.locale).url.path}})

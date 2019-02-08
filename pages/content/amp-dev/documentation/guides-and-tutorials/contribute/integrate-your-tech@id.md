@@ -33,7 +33,7 @@ Jika kasus penggunaan Anda tidak dapat diselesaikan menggunakan [`amp-analytics`
 
 ## 5. Menggunakan `amp-iframe`
 
-Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})  agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](/docs/reference/components/[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) ).
+Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})  agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Ringkasan
 

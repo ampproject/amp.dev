@@ -50,8 +50,8 @@ Dokumen HTML AMP HARUS:
 | Berisi tag `<head>` dan `<body>`. | Opsional pada HTML tetapi tidak pada AMP.
 | Berisi tag `<meta charset="utf-8">` sebagai turunan pertama dari tag `<head>`. | Mengidentifikasi encoding untuk halaman. |
 | Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` sebagai turunan kedua dari tag `<head>`. | Menyertakan dan memuat library JS AMP. |
-| Berisi tag `<link rel="canonical" href="$SOME_URL">` di dalam `<head>`. | Mengarah ke versi HTML reguler dari dokumen HTML AMP, atau ke dokumen HTML AMP itu sendiri jika tidak ada versi HTML seperti itu. Pelajari lebih lanjut di [Membuat Halaman Anda Mudah Ditemukan](/id/docs/fundamentals/discovery.html).
-| Berisi tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` di dalam tag `<head>`. Juga direkomendasikan untuk memasukkan `initial-scale=1`. | Menentukan viewport yang responsif. Pelajari lebih lanjut di [Membuat Halaman AMP Responsif](/id/docs/design/responsive/responsive_design.html). |
+| Berisi tag `<link rel="canonical" href="$SOME_URL">` di dalam `<head>`. | Mengarah ke versi HTML reguler dari dokumen HTML AMP, atau ke dokumen HTML AMP itu sendiri jika tidak ada versi HTML seperti itu. Pelajari lebih lanjut di [Membuat Halaman Anda Mudah Ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}).
+| Berisi tag `<meta name="viewport" content="width=device-width,minimum-scale=1">` di dalam tag `<head>`. Juga direkomendasikan untuk memasukkan `initial-scale=1`. | Menentukan viewport yang responsif. Pelajari lebih lanjut di [Membuat Halaman AMP Responsif]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}). |
 | Berisi [Kode boilerplate AMP](/id/docs/fundamentals/spec/amp-boilerplate.html) di tag `<head>`.  | Boilerplate CSS untuk mula-mula menyembunyikan konten hingga JS AMP dimuat. |
 
 ## Metadata opsional

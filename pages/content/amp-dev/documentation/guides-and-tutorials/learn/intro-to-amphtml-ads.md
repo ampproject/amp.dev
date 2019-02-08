@@ -24,7 +24,7 @@ Why are AMPHTML ads better than traditional ads?
 
 ### Formats
 
-AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few. Get started by leveraging the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads).
+AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few. Get started by leveraging the open-source AMPHTML ad templates on [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -69,7 +69,7 @@ To deliver AMPHTML ads through your indirect channels (e.g., exchange, SSP, etc.
 
 ### Creative agencies
 
-If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Alternatively, use one of the following tools to create AMPHTML ads:
+If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Alternatively, use one of the following tools to create AMPHTML ads:
 
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -77,7 +77,7 @@ If you are a creative agency, you must create the ads in accordance with  the [A
 
 ### Ad networks/servers
 
-To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](/docs/ads/adnetwork_integration.html) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creating AMPHTML ads
 

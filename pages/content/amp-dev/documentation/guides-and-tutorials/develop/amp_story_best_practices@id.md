@@ -2,7 +2,7 @@
 $title: Praktik terbaik untuk membuat artikel AMP
 ---
 
-Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP](/id/docs/reference/components/amp-story.html).
+Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 ## Warna background  
 

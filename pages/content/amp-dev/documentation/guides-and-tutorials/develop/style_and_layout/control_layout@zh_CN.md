@@ -7,7 +7,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 ## 轻松创建自适应图片
 
 您可通过以下方法创建自适应图片：指定 `width` 和 `height`，将布局设为 `responsive`，
-然后利用 [`srcset`](/zh_cn/docs/design/responsive/art_direction.html)
+然后利用 [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
 指明在不同尺寸的屏幕上应使用的图片资源：
 
 [sourcecode:html]
@@ -99,7 +99,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 
 [tip type="success"]
 
-请访问[演示 AMP 布局](/zh_cn/docs/design/amp-html-layout/layouts_demonstrated.html)页面，了解各种布局如何随屏幕尺寸的调整而变化。此外，您还可访问 [AMP By Example](https://ampbyexample.com/advanced/layout_system/) 以了解更多详情。
+请访问[演示 AMP 布局],[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}) 以了解更多详情。
 
 [/tip]
 
@@ -189,4 +189,3 @@ AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

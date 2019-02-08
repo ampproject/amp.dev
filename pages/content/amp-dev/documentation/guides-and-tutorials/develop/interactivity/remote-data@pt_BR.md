@@ -6,9 +6,9 @@ E se os dados vinculáveis forem muito grandes ou complexos de recuperar no carr
 
 [tip type="success"]
 
-`<amp-state>` oferece suporte à busca de dados remotos por meio do atributo [`src`](/pt_br/docs/reference/components/amp-bind.html#attributes), que busca JSON em um ponto de extremidade CORS. Essa busca é executada uma vez no carregamento de página e é útil para garantir dados atualizados (especialmente quando exibidos de um cache).
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) oferece suporte à busca de dados remotos por meio do atributo [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes)
 
-Também é possível vincular o atributo `src` do elemento `<amp-state>`. Assim, uma ação do usuário poderá acionar uma busca dos dados remotos JSON no estado vinculável da página.
+Também é possível vincular o atributo `src` do elemento [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state). Assim, uma ação do usuário poderá acionar uma busca dos dados remotos JSON no estado vinculável da página.
 
 [/tip]
 
@@ -20,7 +20,7 @@ Vamos fazer uso da capacidade de busca de dados remotos para pesquisar os preço
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-Assim como os dados JSON nos elementos `<amp-state>`, os dados remotos retornados por essas buscas são mesclados e disponibilizados no atributo `id` do elemento. Por exemplo, os dados retornados do exemplo de resposta acima podem ser acessados em uma expressão:
+Assim como os dados JSON nos elementos [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), os dados remotos retornados por essas buscas são mesclados e disponibilizados no atributo `id` do elemento. Por exemplo, os dados retornados do exemplo de resposta acima podem ser acessados em uma expressão:
 
 |  Expressão                  |  Resultado |
 |------------------------------|---------|

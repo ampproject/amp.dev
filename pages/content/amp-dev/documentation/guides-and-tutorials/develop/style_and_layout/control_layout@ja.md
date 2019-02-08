@@ -7,7 +7,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 ## レスポンシブな画像を簡単に作成
 
 レスポンシブな画像を作成するには、`width` と `height` を指定し、layout を `responsive` に設定します。
-また、[`srcset`](/ja/docs/design/responsive/art_direction.html) を使って、
+また、[`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) を使って、
 さまざまな画面サイズに基づいて使用される画像アセットを指定します。
 
 [sourcecode:html]
@@ -31,7 +31,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [tip type="success"]
 
-[AMP By Example のライブデモ](https://ampbyexample.com/components/amp-img/)で、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) の動作を比較したライブデモをご覧ください。
+[AMP By Example のライブデモ],[`amp-img`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).url.path}}) の動作を比較したライブデモをご覧ください。
 
 [/tip]
 
@@ -99,7 +99,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [tip type="success"]
 
-[AMP レイアウトのデモ](/ja/docs/design/amp-html-layout/layouts_demonstrated.html)で、各種のレイアウトが画面のサイズ変更に応じてどのように変化するかをご覧ください。[AMP By Example](https://ampbyexample.com/advanced/layout_system/) でも詳細をご確認いただけます。
+[AMP レイアウトのデモ],[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}) でも詳細をご確認いただけます。
 
 [/tip]
 
@@ -189,4 +189,3 @@ AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

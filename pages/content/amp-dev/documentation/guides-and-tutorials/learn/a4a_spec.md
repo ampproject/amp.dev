@@ -80,7 +80,7 @@ In addition, creatives must obey the following rules:
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre></td>
 </tr>
 <tr>
-<td><code>&lt;amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
+<td><a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}"><code>amp-analytics</code></a> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
 <td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br>
 <p>Example:</p>
 <pre>
@@ -122,7 +122,7 @@ eventually displayed regardless.  In AMPHTML ads, however, if Javascript is enti
 disabled, AMPHTML ads won't run and no ad will ever be shown, so there is no need for
 the `<noscript>` section.  In the absence of the AMP runtime, most of the
 machinery that AMPHTML ads rely on (e.g., analytics for visibility
-tracking or `amp-img` for content display) won't be available, so it's better to
+tracking or [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) for content display) won't be available, so it's better to
 display no ad than a malfunctioning one.
 
 Finally, the AMPHTML ad boilerplate uses `amp-a4a-boilerplate` rather than
@@ -249,50 +249,50 @@ transition: background-color 2s;
 The following are _allowed_ AMP extension modules and AMP built-in tags in an
 AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohibited.
 
-* [amp-accordion](https://www.ampproject.org/docs/reference/components/amp-accordion)
-* [amp-ad-exit](https://www.ampproject.org/docs/reference/components/amp-ad-exit)
-* [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics)
-* [amp-anim](https://www.ampproject.org/docs/reference/components/amp-anim)
-* [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation)
-* [amp-audio](https://www.ampproject.org/docs/reference/components/amp-audio)
-* [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind)
-* [amp-carousel](https://www.ampproject.org/docs/reference/components/amp-carousel)
-* [amp-fit-text](https://www.ampproject.org/docs/reference/components/amp-fit-text)
-* [amp-font](https://www.ampproject.org/docs/reference/components/amp-font)
-* [amp-form](https://www.ampproject.org/docs/reference/components/amp-form)
-* [amp-img](https://www.ampproject.org/docs/reference/components/amp-img)
-* [amp-layout](https://www.ampproject.org/docs/reference/components/amp-layout)
-* [amp-lightbox](https://www.ampproject.org/docs/reference/components/amp-lightbox)
-* [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache)
-* [amp-pixel](https://www.ampproject.org/docs/reference/components/amp-pixel)
-* [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer)
-* [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share)
-* [amp-video](https://www.ampproject.org/docs/reference/components/amp-video)
-* [amp-youtube](https://www.ampproject.org/docs/reference/components/amp-youtube)
+* [`amp-accordion`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}})
+* [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}})
+* [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+* [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}})
+* [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}})
+* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})
+* [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})
+* [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
+* [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})
+* [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}})
+* [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
+* [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+* [`amp-layout`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}})
+* [`amp-lightbox`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}})
+* [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})
+* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+* [`amp-position-observer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-position-observer.md', locale=doc.locale).url.path}})
+* [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}})
+* [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})
+* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})
 
 Most of the omissions are either for performance or to make AMPHTML ads
 simpler to analyze.
 
-_Example:_ `<amp-ad>` is omitted from this list.  It is explicitly disallowed
-because allowing an `<amp-ad>` inside an `<amp-ad>` could potentially lead to
+_Example:_ [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) is omitted from this list.  It is explicitly disallowed
+because allowing an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) inside an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) could potentially lead to
 unbounded waterfalls of ad loading, which does not meet AMPHTML ads performance goals.
 
-_Example:_ `<amp-iframe>` is omitted from this list.  It is disallowed
+_Example:_ [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) is omitted from this list.  It is disallowed
 because ads could use it to execute arbitrary Javascript and load arbitrary
 content. Ads wanting to use such capabilities should return `false` from
 their
 [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40)
 entry and use the existing '3p iframe' ad rendering mechanism.
 
-_Example:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, and
-`<amp-youtube>` are all omitted for the same reason as `<amp-iframe>`: They
+_Example:_ [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}), [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}), [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), and
+[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) are all omitted for the same reason as [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): They
 all create iframes and can potentially consume unbounded resources in them.
 
 _Example:_ `<amp-ad-network-*-impl>` are omitted from this list.  The
-`<amp-ad>` tag handles delegation to these implementation tags; creatives
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) tag handles delegation to these implementation tags; creatives
 should not attempt to include them directly.
 
-_Example:_ `<amp-lightbox>` is not yet included because even some AMPHTML ads creatives
+_Example:_ [`amp-lightbox`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}) is not yet included because even some AMPHTML ads creatives
 may be rendered in an iframe and there is currently no mechanism for an ad to
 expand beyond an iframe.  Support may be added for this in the future, if there
 is demonstrated desire for it.
@@ -390,8 +390,8 @@ HTML5 compatible.
 4.6.1 `<ins>`
 4.6.2 `<del>`
 #### 4.7 Embedded Content
-- Embedded content is supported only via AMP tags, such as `<amp-img>` or
-`<amp-video>`.
+- Embedded content is supported only via AMP tags, such as [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) or
+[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}).
 
 #### 4.7.4 `<source>`
 

@@ -6,7 +6,7 @@ $title: 总结
 
 您已学习了:
 
-- 如何使用 [`<amp-state>`](/zh_cn/docs/reference/components/amp-bind.html#state) 提取商品信息(颜色、尺寸、库存状况)。
+- 如何使用 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 提取商品信息(颜色、尺寸、库存状况)。
 - 如何使用 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 创建跨元素互动性。
 - 如何使用 AMP 组件提供畅快且丰富的用户体验!
 

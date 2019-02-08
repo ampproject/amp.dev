@@ -10,7 +10,7 @@ Quando você quer exibir anúncios em páginas não AMP (HTML tradicional), bast
 
 [tip type="success"]
 
-Consulte o site [AMP By Example para ver uma demonstração ao vivo](https://ampbyexample.com/components/amp-ad/) de como adicionar uma tag de anúncio AMP a uma página AMP.
+Consulte o site [AMP By Example para ver uma demonstração ao vivo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) de como adicionar uma tag de anúncio AMP a uma página AMP.
 
 [/tip]
 
@@ -127,20 +127,20 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
 *   **Evite criativos pesados**, de acordo com as [diretrizes do IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf (em inglês).
 *   **Evite intersticiais** ou outros formatos de anúncio que causem reflow de conteúdo ao carregar o anúncio.
 *   **Otimize a visibilidade** definindo data-loading-strategy como prefer-viewability-over-views.
-*   **Coloque anúncios no seu conteúdo de vídeo** usando [players compatíveis](/pt_br/docs/reference/components.html#media) ou [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para ativar a receita em todos os tipos de conteúdo.
+*   **Coloque anúncios no seu conteúdo de vídeo** usando [players compatíveis]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) ou [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para ativar a receita em todos os tipos de conteúdo.
 *   **Implemente anúncios nativos** para competir com os de display usando solicitações de anúncios de vários tamanhos. Isso aumenta a pressão de demanda e oferece aos leitores uma experiência do usuário premium.
 
 ### Inovação: ofereça os produtos de anúncios mais interessantes
 
 *   **Implemente anúncios em páginas AMP auxiliares** para gerar receita incremental:
-    *   [anúncios em um carrossel](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [anúncios em um lightbox](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   e [muito mais](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [anúncios em um carrossel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [anúncios em um lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   e [muito mais]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Implemente novos formatos de anúncios de venda direta** para que sua equipe de vendas ofereça produtos de anúncios inovadores e de alto impacto:
-    *   [anúncios fixos](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Flying Carpet](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [anúncios fixos]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Outros recursos
 
-*   [modelos de anúncios HTML para AMP](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+*   [modelos de anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [demonstração: como adicionar `amp-ad` à página AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

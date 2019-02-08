@@ -4,7 +4,7 @@ $title: 자리표시자 및 대체 콘텐츠
 
 성능 인지와 점진적 개선이라는 관점에서 AMP에 가능한 한 자리표시자와 대체 콘텐츠를 제공하는 것이 좋습니다.
 
-일부 요소는 제한을 완화하여 효과를 얻을 수 있습니다. 예를 들어 [`<amp-iframe>`](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)을 제공하는 경우 페이지 상단 근처에서 사용할 수 있습니다(없으면 작동하지 않음).
+일부 요소는 제한을 완화하여 효과를 얻을 수 있습니다. 예를 들어 [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)을 제공하는 경우 페이지 상단 근처에서 사용할 수 있습니다(없으면 작동하지 않음)
 
 ## 자리표시자
 

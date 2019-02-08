@@ -6,9 +6,9 @@ $title: 使用远程数据
 
 [tip type="success"]
 
-`<amp-state>` 支持通过其 [`src`](/zh_cn/docs/reference/components/amp-bind.html#attributes) 属性提取远程数据，该属性会从 CORS 端点提取 JSON。此项提取操作会在网页加载时执行 1 次，因此有助于确保数据的新鲜度（尤其是当数据由缓存提供时）。
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 支持通过其 [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes) 属性提取远程数据，该属性会从 CORS 端点提取 JSON。此项提取操作会在网页加载时执行 1 次，因此有助于确保数据的新鲜度（尤其是当数据由缓存提供时）。
 
-您也可为 `<amp-state>` 元素绑定 `src` 属性。这意味着，用户操作会触发系统提取远程 JSON 数据，以将这些数据纳入相应网页的可绑定状态。
+您也可为 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 元素绑定 `src` 属性。这意味着，用户操作会触发系统提取远程 JSON 数据，以将这些数据纳入相应网页的可绑定状态。
 
 [/tip]
 
@@ -20,7 +20,7 @@ $title: 使用远程数据
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-与 `<amp-state>` 元素中的 JSON 数据类似，这些提取操作所返回的远程数据会被合并到相应元素的 `id` 属性中，且会显示在该属性下。例如，若要访问上文中的示例响应所返回的数据，您可以使用如下表达式：
+与 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 元素中的 JSON 数据类似，这些提取操作所返回的远程数据会被合并到相应元素的 `id` 属性中，且会显示在该属性下。例如，若要访问上文中的示例响应所返回的数据，您可以使用如下表达式：
 
 |  Expression                  |  Result |
 |------------------------------|---------|

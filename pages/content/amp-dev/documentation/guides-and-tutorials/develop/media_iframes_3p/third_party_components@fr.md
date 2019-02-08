@@ -156,4 +156,4 @@ Si le réseau publicitaire le permet, incluez un `placeholder` à afficher si au
 </amp-iframe>
 </div>
 
-AMP accepte un large éventail de réseaux publicitaires. [Consultez la liste complète.](/docs/reference/components/amp-ad.html#supported-ad-networks)
+AMP accepte un large éventail de réseaux publicitaires. [Consultez la liste complète]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

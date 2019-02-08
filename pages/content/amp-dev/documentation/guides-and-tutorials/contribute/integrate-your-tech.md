@@ -29,7 +29,7 @@ There are 90+ ad providers who have added support for advertising related featur
 
 If you provide call tracking measurement services, your use case may be supported with the new [`amp-call-tracking`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}) extension. This extension dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see an [AMP By Example](https://ampbyexample.com/components/amp-call-tracking/) or read about the [documentation](/docs/reference/components/amp-call-tracking.html).
+To learn more about how this extension might work for you, please see an [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-call-tracking.html', locale=doc.locale).url.path}}) or read about the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}).
 
 ## 4. Adding a new extension/embed
 
@@ -37,7 +37,7 @@ If your use case cannot be accommodated by using [`amp-analytics`]({{g.doc('/con
 
 ## 5. Using `amp-iframe`
 
-Hold on – a 5th way?! There is indeed, but only as a last resort. If none of the above suit your needs, you could use the generic [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})  tag to allow publishers to embed your content, but this approach comes with a number of downsides, due to a few pitfalls related to performance and user experience that you can read about [here](/docs/reference/components/[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) ).
+Hold on – a 5th way?! There is indeed, but only as a last resort. If none of the above suit your needs, you could use the generic [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) tag to allow publishers to embed your content, but this approach comes with a number of downsides, due to a few pitfalls related to performance and user experience that you can read about [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
 
 ## Summary
 

@@ -161,4 +161,4 @@ Includi un attributo `placeholder` (se supportato dalla rete pubblicitaria) da m
 </amp-iframe>
 </div>
 
-AMP supporta una vasta gamma di reti pubblicitarie. Consulta [un elenco completo](/docs/reference/components/amp-ad.html#supported-ad-networks).
+AMP supporta una vasta gamma di reti pubblicitarie. Consulta [un elenco completo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

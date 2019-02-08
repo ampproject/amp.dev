@@ -6,7 +6,7 @@ $title: 마무리
 
 지금까지 다음 방법을 배웠습니다.
 
-- [`<amp-state>`](/ko/docs/reference/components/amp-bind.html#state)를 사용하여 제품 정보(색상, 크기, 재고 상황) 가져오기
+- [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state)를 사용하여 제품 정보(색상, 크기, 재고 상황) 가져오기
 - [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})를 사용하여 교차 요소 상호작용 만들기
 - AMP를 활용하여 빠르고 풍부한 사용자 경험 구축하기
 

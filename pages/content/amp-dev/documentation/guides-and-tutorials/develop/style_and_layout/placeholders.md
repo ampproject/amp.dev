@@ -15,7 +15,7 @@ contributors:
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`<amp-iframe>`](/docs/reference/components/amp-iframe.html#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
 
 ## Placeholders
 

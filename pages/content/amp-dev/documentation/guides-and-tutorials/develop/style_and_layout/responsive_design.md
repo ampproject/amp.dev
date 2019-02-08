@@ -30,7 +30,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup](/docs/fundamentals/spec.html#required-markup) for AMP pages, you need to specify the following viewport:
+But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -63,7 +63,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 ```
 
 [tip type="read-on"]
-**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/design/responsive/control_layout.html#the-layout-attribute) guide.
+**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) guide.
 [/tip]
 
  <a id="fn1"></a>
@@ -88,7 +88,7 @@ In the following example, we want to display an embedded YouTube video that resp
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
 
-There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](/docs/reference/components.html#media).
+There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media).
 
 ### Displaying responsive images
 
@@ -136,7 +136,7 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
 [tip type="note"]
-**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?).
 [/tip]
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>

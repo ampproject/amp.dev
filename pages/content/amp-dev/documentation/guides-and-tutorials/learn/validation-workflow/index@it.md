@@ -8,7 +8,7 @@ Il punto di forza di AMP non sta semplicemente nel fatto che velocizza le pagine
 
 Per convalidare un documento AMP esistono diversi modi che consentono di ottenere lo stesso risultato, quindi puoi utilizzare il metodo più adatto al tuo stile di sviluppo.
 
-Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile](/it/docs/fundamentals/discovery.html) per le piattaforme di terze parti.
+Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) per le piattaforme di terze parti.
 
 ### Console per sviluppatori del browser
 
@@ -155,5 +155,5 @@ Ogni strumento fornisce diverse informazioni:
 
 Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
-Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP](/it/docs/troubleshooting/validation_errors.html).
+Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Se dopo un'attenta valutazione hai ancora difficoltà, [pubblica una domanda](http://stackoverflow.com/questions/tagged/amp-html) e cercheremo di aiutarti.

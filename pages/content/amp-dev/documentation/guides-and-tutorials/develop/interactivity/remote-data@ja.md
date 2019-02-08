@@ -6,9 +6,9 @@ $title: リモートデータの使用
 
 [tip type="success"]
 
-`<amp-state>` では、その [`src`](/ja/docs/reference/components/amp-bind.html#attributes) 属性によってリモートデータを取得できます。この属性は CORS エンドポイントから JSON を取得します。こうした取得は、ページの読み込み時に一度行われるもので、（特にキャッシュから配信されるときに）データの鮮度を確保するのに役立ちます。
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) では、その [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes)属性によってリモートデータを取得できます。この属性は CORS エンドポイントから JSON を取得します。こうした取得は、ページの読み込み時に一度行われるもので、（特にキャッシュから配信されるときに）データの鮮度を確保するのに役立ちます。
 
-また、`<amp-state>` 要素については、`src` 属性をバインドすることも可能です。つまり、ユーザーの操作により、リモート JSON データが取得されるようにして、該当のページをバインド可能な状態に変えることができます。
+また、[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素については、`src` 属性をバインドすることも可能です。つまり、ユーザーの操作により、リモート JSON データが取得されるようにして、該当のページをバインド可能な状態に変えることができます。
 
 [/tip]
 
@@ -20,7 +20,7 @@ $title: リモートデータの使用
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-`<amp-state>` 要素内の JSON データと同様に、こうした取得から返されるリモートデータは、その要素の `id` 属性の下に統合されて利用可能となります。たとえば、上記の例の応答から返されたデータは、次のような式でアクセスできます。
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素内の JSON データと同様に、こうした取得から返されるリモートデータは、その要素の `id` 属性の下に統合されて利用可能となります。たとえば、上記の例の応答から返されたデータは、次のような式でアクセスできます。
 
 |  式                  |  結果 |
 |------------------------------|---------|

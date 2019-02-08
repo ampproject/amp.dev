@@ -78,7 +78,7 @@ If you are a video ad network, please work with your publisher to ensure that:
 ## Data Management Platform (DMP)
 *Examples : KRUX, Bluekai*
 
-See [how to enhance custom ad configuration](https://www.ampproject.org/docs/reference/components/amp-ad#enhance-incoming-ad-configuration).
+See [how to enhance custom ad configuration]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#enhance-incoming-ad-configuration).
 
 You can use a similar approach to enrich the ad call by passing in audience segments that you get from the user cookie into the ad call.
 

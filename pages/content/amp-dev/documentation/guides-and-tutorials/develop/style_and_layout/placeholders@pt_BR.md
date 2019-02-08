@@ -4,7 +4,7 @@ $title: Marcadores e substitutos
 
 Uma prática recomendada para melhorar o desempenho e fazer aprimoramento progressivo do seu material é usar marcadores e substitutos nas AMP sempre que possível.
 
-Se você fizer isso, alguns elementos até reduzirão as restrições. Por exemplo, se você usar um marcador para [`<amp-iframe>`](/pt_br/docs/reference/components/amp-iframe.html#iframe-with-placeholder), ele poderá ser usado na parte superior da página. Isso não seria possível sem o marcador.
+Se você fizer isso, alguns elementos até reduzirão as restrições. Por exemplo, se você usar um marcador para [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), ele poderá ser usado na parte superior da página. Isso não seria possível sem o marcador.
 
 ## Marcadores
 

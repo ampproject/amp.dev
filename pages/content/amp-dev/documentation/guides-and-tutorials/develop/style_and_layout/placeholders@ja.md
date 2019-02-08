@@ -4,7 +4,7 @@ $title: プレースホルダとフォールバック
 
 知覚パフォーマンスとプログレッシブ エンハンスメントの観点から、AMP ではできる限りプレースホルダとフォールバックを設定することをおすすめします。
 
-要素によっては、制限を緩和できるようにするだけでも設定する価値があります。たとえば、[`<amp-iframe>`](/ja/docs/reference/components/amp-iframe.html#iframe-with-placeholder) のプレースホルダを設定すれば、iframe をページの上部に表示させることができます。このプレースホルダがないと動作しません。
+要素によっては、制限を緩和できるようにするだけでも設定する価値があります。たとえば、[`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder) のプレースホルダを設定すれば、iframe をページの上部に表示させることができます。このプレースホルダがないと動作しません。
 
 ## プレースホルダ
 

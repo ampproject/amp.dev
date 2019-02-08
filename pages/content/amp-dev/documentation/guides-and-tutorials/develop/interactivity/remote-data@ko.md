@@ -6,9 +6,9 @@ $title: 원격 데이터 사용하기
 
 [tip type="success"]
 
-`<amp-state>`는 [`src`](/ko/docs/reference/components/amp-bind.html) 속성을 통한 원격 데이터 가져오기를 지원하며, CORS 엔드포인트에서 JSON을 가져옵니다. 페이지 로드 시 한 번만 가져오며 데이터를 최신 상태로 유지하는 데 유용합니다(특히 캐시에서 제공되는 경우).
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state)는 [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})속성을 통한 원격 데이터 가져오기를 지원하며, CORS 엔드포인트에서 JSON을 가져옵니다. 페이지 로드 시 한 번만 가져오며 데이터를 최신 상태로 유지하는 데 유용합니다(특히 캐시에서 제공되는 경우).
 
-`<amp-state>` 요소의 `src` 속성을 바인딩할 수도 있습니다. 즉 사용자의 동작이 원격 JSON 데이터 가져오기를 트리거할 수 있으며 이렇게 가져온 데이터는 페이지에 바인딩할 수 있는 상태가 됩니다.
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 요소의 `src` 속성을 바인딩할 수도 있습니다. 즉 사용자의 동작이 원격 JSON 데이터 가져오기를 트리거할 수 있으며 이렇게 가져온 데이터는 페이지에 바인딩할 수 있는 상태가 됩니다.
 
 [/tip]
 
@@ -20,7 +20,7 @@ $title: 원격 데이터 사용하기
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-`<amp-state>` 요소 내의 JSON 데이터와 유사하게, 이 가져오기에서 반환되는 원격 데이터는 요소의 `id` 속성 아래에 병합되어 사용할 수 있습니다. 예를 들어 위의 예제 응답에서 반환되는 데이터는 다음과 같은 표현식에서 액세스할 수 있습니다.
+[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 요소 내의 JSON 데이터와 유사하게, 이 가져오기에서 반환되는 원격 데이터는 요소의 `id` 속성 아래에 병합되어 사용할 수 있습니다. 예를 들어 위의 예제 응답에서 반환되는 데이터는 다음과 같은 표현식에서 액세스할 수 있습니다.
 
 |  표현식                  |  결과 |
 |------------------------------|---------|

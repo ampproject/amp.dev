@@ -160,4 +160,4 @@ Preview:
 </amp-iframe>
 </div>
 
-Технология AMP поддерживает множество рекламных сетей. Ознакомьтесь с их [полным списком](/docs/reference/components/amp-ad.html#supported-ad-networks).
+Технология AMP поддерживает множество рекламных сетей. Ознакомьтесь с их [полным списком]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

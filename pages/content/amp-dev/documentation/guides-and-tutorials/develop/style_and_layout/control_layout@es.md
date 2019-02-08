@@ -7,7 +7,7 @@ AMP admite **media queries** y **media queries de elementos** y tiene un potente
 ## Crea imágenes adaptables fácilmente
 
 Para crear imágenes adaptables, solo tienes que proporcionar valores de `width` (anchura) y `width` (altura), asignar el valor `responsive` al atributo "layout",
-e indicar con [`srcset`](/es/docs/design/responsive/art_direction.html)
+e indicar con [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
 qué recurso de imagen se debe usar en función de cada tamaño de pantalla:
 
 [sourcecode:html]
@@ -31,7 +31,7 @@ determinada por la anchura y la altura especificadas. Puedes probarlo cambiando 
 
 [tip type="success"]
 
-Puedes ver demostraciones comparativas en directo de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) en [AMP By Example](https://ampbyexample.com/components/amp-img/).
+Puedes ver demostraciones comparativas en directo de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -99,7 +99,7 @@ Se pueden asignar los siguientes valores al atributo `layout`:
 
 [tip type="success"]
 
-Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP](/es/docs/design/amp-html-layout/layouts_demonstrated.html). También encontrarás más información en [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP](/es/docs/design/amp-html-layout/layouts_demonstrated.html). También encontrarás más información en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -189,4 +189,3 @@ En función de la anchura de la pantalla, se obtendrá y renderizará una de ell
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

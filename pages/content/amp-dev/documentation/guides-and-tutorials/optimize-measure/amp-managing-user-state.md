@@ -214,17 +214,17 @@ user_id=$publisher_origin_identifier
 The use of “`user_id`” here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
 
 <a id="task2"></a>
-### Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings
+### Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) pings
 
 Turning now to AMP pages, let's look at how you can establish and transmit an identifier for analytics. This will be applicable regardless of the context the AMP page is presented in, so this covers any AMP page on the publisher origin, served via an AMP cache, or displayed in AMP viewer.
 
-Through usage of features that require Client ID, AMP will do the “under the hood” work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
+Through usage of features that require Client ID, AMP will do the “under the hood” work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), which happens to be exactly what we’ll need to implement our analytics use case example.
 
-On AMP pages, construct an amp-analytics ping containing the Client ID:
+On AMP pages, construct an [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) ping containing the Client ID:
 
 <table>
   <tr>
-    <td width="40%"><strong>amp-analytics configuration looks like:</strong></td>
+    <td width="40%"><strong>[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration looks like:</strong></td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&amp;user_id=${clientId(uid)}</code></td>
   </tr>
   <tr>
@@ -235,7 +235,7 @@ On AMP pages, construct an amp-analytics ping containing the Client ID:
 
 Take note of the fact that the parameter passed into the Client ID substitution, `${clientId(uid)`, is `uid`. This was a deliberate choice that matches the same cookie name used on the publisher origin as described in [Task 1](#task1). For the most seamless integration, you should apply the same technique.
 
-Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://www.ampproject.org/docs/analytics/analytics_amp) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Concerning the rest of the amp-analytics implementation, see the documentation for [`amp-analytics` configuration]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 > **Good to know:**
 >
@@ -308,7 +308,7 @@ Our mapping table will associate AMP Client ID values that are seen in the analy
   </tr>
 </table>
 
-Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming amp-analytics request to get the Client ID value. For example, from this request:
+Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) request to get the Client ID value. For example, from this request:
 
 [sourcecode:text]
 https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
@@ -440,7 +440,7 @@ To process on the landing page, the approach will vary depending on whether that
   </noscript>
 </amp-img>
 
-*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the “key” of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
+*Updates to AMP page:* Use the Query Parameter substitution feature in your [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the “key” of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
 [sourcecode:text]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
