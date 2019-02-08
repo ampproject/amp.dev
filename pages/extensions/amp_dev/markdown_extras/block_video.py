@@ -30,9 +30,10 @@ def _transform(content):
         # Add in other variables
         for name, value in attributes.iteritems():
             if isinstance(value, basestring):
-              replacement += '{% set ' + name + ' = \'' + str(value) + '\' %}\n'
+                replacement += '{% set ' + name + ' = \'' + value + '\' %}\n'
             else:
-              replacement += '{% set ' + name + ' = ' + str(value) + ' %}\n'
+                value = str(value)
+                replacement += '{% set ' + name + ' = ' + value + ' %}\n'
         replacement += '{% include \'' + PARTIAL_PATH + '\' %}\n'
         replacement += '{% endwith %}\n'
 
