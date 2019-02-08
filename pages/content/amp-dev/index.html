@@ -90,7 +90,7 @@ success_stories:
 
     <div class="ap-o-news">
       <div class="ap-o-news-list">
-        {% for news in doc.news %}
+        {% for news in doc.news.entries %}
         <a class="ap-o-news-item" href="{{ news.url }}">
           <div class="ap-o-news-card">
             <div class="ap-o-news-title">{{ news.title }}</div>
