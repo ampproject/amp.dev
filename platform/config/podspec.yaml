@@ -7,16 +7,16 @@ localization:
   locales:
   - en
   - fr
-  # - ar
-  # - es
-  # - it
-  # - id
-  # - ja
-  # - ko
-  # - pt_BR
-  # - ru
-  # - tr
-  # - zh_CN
+  - ar
+  - es
+  - it
+  - id
+  - ja
+  - ko
+  - pt_BR
+  - ru
+  - tr
+  - zh_CN
 
 sitemap:
   enabled: yes
