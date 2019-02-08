@@ -11,7 +11,7 @@ install:
   - grow --version
   - npm ci
 before_deploy: 
-  - npm run build:staging -- --import
+  - npm run build:staging
 deploy:
   provider: gae
   keyfile: ".staging.key.json"
