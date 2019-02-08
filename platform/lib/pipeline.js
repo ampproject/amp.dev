@@ -215,12 +215,12 @@ class Pipeline {
       // During development start Grow's dev server
       return grow.run().when('Server ready.');
     } else {
-      let deployment = grow.deploy();
+      const deployment = grow.deploy();
 
       deployment.when('Error rendering').then(() => {
         signale.fatal('There were errors rendering the pages.');
         process.exit(1);
-      })
+      });
 
       return deployment.when('Deploying:').then(() => {
         // There is no "easy" way to determine when
