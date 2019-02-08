@@ -20,7 +20,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ## heights
 
@@ -41,7 +41,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 
 ## layout
 
@@ -58,7 +58,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ## media
 
@@ -119,7 +119,7 @@ Contoh:
 </amp-lightbox>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 ## placeholder
 
@@ -135,7 +135,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/docs/design/responsive_amp/placeholders.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ## sizes
 
@@ -151,7 +151,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 
 ## width dan height
 
@@ -167,4 +167,4 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
