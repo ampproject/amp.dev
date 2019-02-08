@@ -91,20 +91,47 @@ kpis:
 </section>
 
 <section class="ap--benefits-overview">
-
-  <div class="ap-o-benefits-overview ap--container">
-
-    <div class="ap-o-benefits-overview-header">
-      <div class="ap-m-headline-icon">
-        <div class="ap-m-headline-icon-icon">
-          {% do doc.icons.useIcon('icons/exclamation.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exclamation"></use></svg>
-        </div>
-        <h1 class="ap-m-headline-icon-hl">Why Should I use AMP?</h1>
-      </div>
-    </div>
+  <div class="ap-o-benefits ap--container">
 
     <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-developers">
+
+      <div class="ap-m-benefit">
+        <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/ux-improvement.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ux-improvement"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Web page speed improves the user experience and core business metrics</span>
+          <span class="ap-m-benefit-text-copy">AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms.</span>
+        </div>
+      </div>
+
+      <div class="ap-m-benefit">
+        <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/star.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Building AMP pages is easy and reduces developer overhead</span>
+          <span class="ap-m-benefit-text-copy">You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal.</span>
+        </div>
+      </div>
+
+      <div class="ap-m-benefit">
+        <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/interaction.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">AMP can be applied across various web touch points</span>
+          <span class="ap-m-benefit-text-copy">Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
+
       <div class="ap-m-benefit">
         <div class="ap-m-benefit-icon">
           {% do doc.icons.useIcon('icons/content-modules.svg') %}
@@ -118,69 +145,34 @@ kpis:
 
       <div class="ap-m-benefit">
         <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/secure-code.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secure-code"></use></svg>
+          {% do doc.icons.useIcon('icons/components.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#components"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Building blocks that ensure performance</span>
+          <span class="ap-m-benefit-text-copy">It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.</span>
+        </div>
+      </div>
+
+      <div class="ap-m-benefit">
+        <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/fast-loading.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fast-loading"></use></svg>
         </div>
         <div class="ap-m-benefit-text">
           <span class="ap-m-benefit-text-headline">Build for a sustainable future in the open web for everyone</span>
           <span class="ap-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster more user-friendly    experience.</span>
         </div>
       </div>
-
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/help-documentation.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#help-documentation"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Less effort, more performance and built and controlled by you</span>
-          <span class="ap-m-benefit-text-copy">It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/time-measurement.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time-measurement"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">AMP can be applied across various web touch points</span>
-          <span class="ap-m-benefit-text-copy">Whether used by publishers, ad tech companies or email providers, AMP enables the easy creation of great experiences on the web.</span>
-        </div>
-      </div>
-
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/speedometer.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speedometer"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Web page speed improves the user experience and core business metrics</span>
-          <span class="ap-m-benefit-text-copy">AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms.</span>
-        </div>
-      </div>
-
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/distribution.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#distribution"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Building AMP pages is simple and straightforward.</span>
-          <span class="ap-m-benefit-text-copy">You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal.</span>
-        </div>
-      </div>
     </div>
 
     <div class="ap-o-benefits-overview-link">
-      <a href="{{ g.doc('/content/amp-dev/about/how-amp-works.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
+      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">Read on how AMP works</span>
+        <span class="ap-m-lnk-text">Get started with AMP</span>
       </a>
     </div>
 
