@@ -213,7 +213,7 @@ class Pipeline {
     const grow = new Grow();
     if (config.environment === 'development') {
       // During development start Grow's dev server
-      return grow.run().when('Server ready.');
+      return grow.run();
     } else {
       return grow.deploy().when('Deploying:');
     }
