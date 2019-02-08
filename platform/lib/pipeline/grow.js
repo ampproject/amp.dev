@@ -123,6 +123,7 @@ class Grow {
     const options = {
       'stdio': 'pipe',
       'cwd': GROW_POD_PATH,
+      'env': {...process.env},
     };
 
     this._spawn(this._command, args, options);

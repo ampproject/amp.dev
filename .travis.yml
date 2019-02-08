@@ -10,9 +10,8 @@ install:
   - pip install grow==0.6.5 --user
   - grow --version
   - npm ci
-script:
-  - npm test
-  - npm run build:staging
+before_deploy: 
+  - npm run build:staging -- --import
 deploy:
   provider: gae
   keyfile: ".staging.key.json"
