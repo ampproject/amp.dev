@@ -1,5 +1,5 @@
 ---
-$title: Experimental features
+$title: Enable experimental features
 $order: 5
 ---
 

@@ -1,12 +1,12 @@
 ---
-$title: Common attributes
+$title: Common element attributes
 $order: 2
 toc: true
 ---
 
-[TOC]
-
 AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the common attributes.
+
+[TOC]
 
 ## fallback
 
