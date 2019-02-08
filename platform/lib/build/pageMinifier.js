@@ -104,7 +104,7 @@ class PageMinifier {
       html = this._minifyHtml(html);
     } catch (e) {
       this._log.error(`Could not minify ${path}`);
-      console.error(e);
+      // TODO(matthiasrohmer): Reenable console.error(e) somehow for development
     }
 
     if (!path.match(SELECTOR_REWRITE_EXCLUDED_PATHS)) {
