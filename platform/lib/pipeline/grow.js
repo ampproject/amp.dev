@@ -33,7 +33,7 @@ const GROW_TRAVIS_PATH = '/home/travis/.local/bin/grow';
 class Grow {
   constructor() {
     this._log = new Signale({
-      'interactive': true,
+      'interactive': false,
       'scope': 'Grow',
       'types': {
         // Just for goodliness, add custom logger as .watch is a bit off
@@ -73,7 +73,7 @@ class Grow {
    */
   _handleProcessOutput(data) {
     data = data.toString();
-    console.log(data);
+    this._log(data);
   }
 
   _spawn(command, args, options) {
