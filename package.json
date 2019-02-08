@@ -13,7 +13,7 @@
     "build:boilerplate": "cd boilerplate && node build.js",
     "build:local": "NODE_ENV=local npm run build:site",
     "build:playground": "cd playground && webpack --config webpack.config.js --mode production --optimize-minimize --progress",
-    "build:site": "cd platform && node build.js -- --import",
+    "build:site": "cd platform && node build.js --import --clean-samples",
     "build:staging": "NODE_ENV=staging npm-run-all build:site build:boilerplate build:playground --aggregate-output --parallel",
     "deploy:staging": "gcloud app deploy --project=amp-dev-staging --quiet",
     "log:staging": "gcloud app logs tail -s default --project amp-dev-staging",

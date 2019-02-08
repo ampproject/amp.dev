@@ -215,7 +215,14 @@ class Pipeline {
       // During development start Grow's dev server
       return grow.run().when('Server ready.');
     } else {
-      return grow.deploy().when('Deploying:').then(() => {
+      const deployment = grow.deploy();
+
+      deployment.when('Error rendering').then(() => {
+        signale.fatal('There were errors rendering the pages.');
+        process.exit(1);
+      });
+
+      return deployment.when('Deploying:').then(() => {
         // There is no "easy" way to determine when
         // Grow has finished putting the files in place
         return new Promise((resolve, reject) => {
