@@ -4,6 +4,7 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/interactivity_data/{base}.html
 $title@: Add interactivity & dynamic data (TBD)
 $order: 3
+draft: true
 
 formats:
   - websites

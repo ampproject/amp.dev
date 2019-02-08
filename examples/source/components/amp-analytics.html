@@ -59,17 +59,17 @@ This sample demonstrates which events can be measured and how they can be config
 </head>
 <body>
     <!-- &nbsp; -->
-    <amp-iframe class="fixed-dashboard" 
-        width="180"	
-        height="180" layout="fixed"	
-        sandbox="allow-scripts allow-same-origin"	
-        frameborder="0"	
-        src="https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/embed?user=[[.]]&account=ampbyexample">	
-      <amp-img src="/img/pixel-white.png"	
-          layout="fixed-height"	
-          height="350"	
-          width="auto"	
-          placeholder></amp-img>	
+    <amp-iframe class="fixed-dashboard"
+        width="180"
+        height="180" layout="fixed"
+        sandbox="allow-scripts allow-same-origin"
+        frameborder="0"
+        src="https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/embed?user=[[.]]&account=ampbyexample">
+      <amp-img src="/static/samples/img/pixel-white.png"
+          layout="fixed-height"
+          height="350"
+          width="auto"
+          placeholder></amp-img>
   </amp-iframe>
   <!--
     ## Pageview
@@ -99,7 +99,7 @@ This sample demonstrates which events can be measured and how they can be config
   </amp-analytics>
   <!-- ## UI elements appearance tracking -->
   <!--
-    This is a more sophisticated view tracking. This sample fires an analytics request when a specific element becomes visible. The element is specified via `id` and must be an AMP element (amp-img, amp-iframe, amp-ad,...). 
+    This is a more sophisticated view tracking. This sample fires an analytics request when a specific element becomes visible. The element is specified via `id` and must be an AMP element (amp-img, amp-iframe, amp-ad,...).
   -->
   <amp-analytics>
   <script type="application/json">
@@ -129,16 +129,16 @@ This sample demonstrates which events can be measured and how they can be config
   <!--
     This image will trigger an analytics request, if at least 20% of it are visible for 500ms with a minimum time of 200ms continuous visibility.
   -->
-  <amp-img id="cat-image-id" src="/img/cat-looking-up-300x200.jpg" width="300" height="200" attribution="visualhunt" alt="a cat" layout="responsive"></amp-img>
+  <amp-img id="cat-image-id" src="/static/samples/img/cat-looking-up-300x200.jpg" width="300" height="200" attribution="visualhunt" alt="a cat" layout="responsive"></amp-img>
 
   <!--
-    This sample fires an analytics request when the image becomes visible as a result of an action. 
+    This sample fires an analytics request when the image becomes visible as a result of an action.
       -->
       <div>
           <button on="tap:an-image.toggleVisibility">
              Toggle image
           </button>
-          <amp-img hidden id="an-image" src="/img/amp.jpg" width="1080" height="610" layout="responsive" alt="AMP">
+          <amp-img hidden id="an-image" src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive" alt="AMP">
           </amp-img>
       </div>
       <!--
@@ -305,7 +305,7 @@ The `amp-carousel-change` event is issued when there is any change in the slide 
     </script>
   </amp-analytics>
   <!--
-The `amp-carousel-next` event is issued when there is a traversal to the next slide: 
+The `amp-carousel-next` event is issued when there is a traversal to the next slide:
   -->
   <amp-analytics>
     <script type="application/json">
@@ -385,7 +385,7 @@ The `amp-carousel-prev` event is issued when there is a traversal to the previou
     </amp-analytics>
     <p>Try to insert any name as a name input in the form to see the <code>amp-form-submit-success</code> event.</p>
     <p>Try to insert the word "error" as a name input in the form to see the <code>amp-form-submit-error</code> event.</p>
-    <form 
+    <form
         id="testForm"
         method="post"
         action-xhr="/components/amp-form/submit-form-input-text-xhr"

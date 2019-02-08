@@ -1,5 +1,7 @@
 # amp.dev
 
+[![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=future)](https://travis-ci.org/ampproject/docs)
+
 This repository is meant to work towards the relaunch of the official website
 of [ampproject.org](https://www.ampproject.org/) until we reach a progress
 that makes a merge over to the original repository beneficial.
@@ -74,7 +76,7 @@ To build and deploy to the staging environment on [Google App Engine](https://cl
 ```sh
 $ cd platform
 $ npm run build:staging
-$ npm run deploy
+$ npm run deploy:staging
 ```
 
 - - -

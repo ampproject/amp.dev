@@ -17,15 +17,11 @@
 /* eslint-disable no-invalid-this */
 'use strict';
 
-const {Signale} = require('signale');
 const signale = require('signale');
-const fs = require('fs');
-const path = require('path');
 const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const stripCssComments = require('gulp-strip-css-comments');
-const through = require('through2');
 
 const config = require('./config');
 const utils = require('@lib/utils');
@@ -130,7 +126,7 @@ class Pipeline {
 
       stream.on('error', (error) => {
         log.fatal('There was an error transpiling the pages SCSS.', error);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {
@@ -155,9 +151,9 @@ class Pipeline {
       const stream = gulp.src(src)
           .pipe(gulp.dest(dest));
 
-      stream.on('error', () => {
+      stream.on('error', (error) => {
         log.error(`There was an error moving ${entity}`);
-        reject();
+        reject(error);
       });
 
       stream.on('end', () => {
@@ -219,7 +215,14 @@ class Pipeline {
       // During development start Grow's dev server
       return grow.run().when('Server ready.');
     } else {
-      return grow.deploy().when('Deploying:').then(() => {
+      const deployment = grow.deploy();
+
+      deployment.when('Error rendering').then(() => {
+        signale.fatal('There were errors rendering the pages.');
+        process.exit(1);
+      });
+
+      return deployment.when('Deploying:').then(() => {
         // There is no "easy" way to determine when
         // Grow has finished putting the files in place
         return new Promise((resolve, reject) => {

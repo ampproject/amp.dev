@@ -9,7 +9,7 @@ const gitHubImporter = require('./gitHubImporter');
 const DESTINATION_JSON = __dirname + '/../../../pages/content/amp-dev/community/roadmap.json';
 
 const log = new Signale({
-  'interactive': true,
+  'interactive': false,
   'scope': 'Roadmap Importer',
 });
 
@@ -19,8 +19,8 @@ async function importRoadmap() {
     'previews': [
       'symmetra-preview',
       'inertia-preview',
-    ]
-  })
+    ],
+  });
 
   gitHubImporter.checkCredentials();
   octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {

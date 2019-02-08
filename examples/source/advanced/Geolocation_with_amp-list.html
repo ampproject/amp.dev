@@ -67,13 +67,13 @@ category: 'personalization'
       margin: 0;
     }
     .geolist-preview ul.results amp-img {
-      background-image: url(/img/geolocation_map_skeleton.png);
+      background-image: url(/static/samples/img/geolocation_map_skeleton.png);
       background-size: 150px 100px;
       float: left;
       margin-right: var(--space-1);
     }
     .geolist-preview div[placeholder] ul.results li {
-      background: url(/img/geolocation_map_skeleton.png), /* Image */
+      background: url(/static/samples/img/geolocation_map_skeleton.png), /* Image */
         linear-gradient(var(--color-bg-dark) 100%, transparent 0), /* Image Placeholder */
         linear-gradient(var(--color-bg-dark) 100%, transparent 0), /* City */
         linear-gradient(var(--color-bg-dark) 100%, transparent 0), /* State */
@@ -113,13 +113,13 @@ category: 'personalization'
   Since we need to have an initial fixed-size for amp-list we manually calculate
   that each card is 100 + 15px margin and the title is 16px + 20px margin:
 
-  > `16px + 20px + (5 * (100 + 15px)) = 611px`
+  > `16px + 20px + (5 * (100 + 15px)) = 611px`</blockquote>
 
-  The placeholder list items largely use CSS to draw the skeleton elements as
+  <p>The placeholder list items largely use CSS to draw the skeleton elements as
   described in [CSS-Tricks](https://css-tricks.com/building-skeleton-screens-css-custom-properties/).
   The skeleton includes a tiny blurred map to add to the realism, and that map
   is also used while `<amp-img>` loads the actual images to prevent a
-  flash when the placeholder is removed.
+  flash when the placeholder is removed.</p>
   -->
   <amp-list class="geolist-preview" width="auto" height="640" layout="fixed-height"
             noloading

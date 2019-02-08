@@ -3,6 +3,17 @@ $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/optimize-measure/configure-analytics/{base}.html
 $title@: Track engagement with analytics
+$title@zh: 配置分析工具
+$title@tr: Analytics›i Yapılandırın
+$title@ru: Настройка Analytics
+$title@pt: Configurar Analytics
+$title@ko: 분석 설정
+$title@ja: アナリティクスを設定する
+$title@it: Configurazione di Analytics
+$title@id: Mengonfigurasi analisis
+$title@fr: Configuration d'Analytics
+$title@es: Configurar analíticas
+$title@ar: تهيئة Analytics
 $order: 1
 
 formats:

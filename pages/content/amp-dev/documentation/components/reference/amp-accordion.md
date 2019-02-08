@@ -1,6 +1,6 @@
 ---
 $title: amp-accordion
-toc: true
+toc: false
 teaser:
   text: >-
     The amp-accordion` component allows you to display collapsible and

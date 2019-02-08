@@ -5,6 +5,16 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/create/{base}.html
 $title@: Create Your First AMP Page
 $title@fr: Créer votre page AMP HTML
+$title@ar: إنشاء صفحتك الأولى في AMP
+$title@es: Crea tu primera página AMP
+$title@id: Membuat Halaman AMP Pertama Anda
+$title@it: Crea la tua prima pagina AMP
+$title@ja: 初めての AMP ページを作成する
+$title@ko: 첫 번째 AMP 페이지 만들기
+$title@pt: Criar sua primeira página AMP
+$title@ru: Создание первой страницы AMP
+$title@tr: İlk AMP›nizi oluşturun
+$title@zh: 创建您的第一个 AMP 页面
 
 chaptered: true
 tutorial: true

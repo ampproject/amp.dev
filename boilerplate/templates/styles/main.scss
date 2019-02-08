@@ -14,7 +14,7 @@
 .#{organism('header')} {
   &-home {
       &-title, &-sub-title {
-        @media screen and (max-width: 1023px) {
+        @media (max-width: 1023px) {
           @include txt-1;
         }
       }
@@ -183,7 +183,7 @@ section {
     @include color-blue-ribbon;
     text-decoration: none;
   }
-  @media screen and (min-width: 1024px) {
+  @media (min-width: 1024px) {
     margin: 0;
     margin-left: 14px;
     background-color: color('white');

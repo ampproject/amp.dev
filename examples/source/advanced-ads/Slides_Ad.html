@@ -31,7 +31,7 @@ layout: responsive
       .root-container {
         font-family: 'Roboto', sans-serif;
         font-size: 12px;
-        background: #151717 url(<%host%>/img/car-mesh.jpg) center center;
+        background: #151717 url(/static/samples/img/car-mesh.jpg) center center;
         background-size: cover;
         color: #fff;
         width: 100%;
@@ -107,11 +107,11 @@ layout: responsive
         <!--
         We use the `amp-carousel` component to display multiple slides.
 
-        All elements with the `carousel-item` class-name have essentially the same markup.
+        <p>All elements with the `carousel-item` class-name have essentially the same markup.</p>
 
-        AMP has a system in place for [events and actions](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md). It uses a domain-specific language to describe how actions are triggered. In this example, we use the actions system in combination with `amp-bind` to keep a state variable of the current selected slide.
+        <p>AMP has a system in place for [events and actions](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md). It uses a domain-specific language to describe how actions are triggered. In this example, we use the actions system in combination with `amp-bind` to keep a state variable of the current selected slide.</p>
 
-        This is only used for transitions that are activated when the selected item slides into view. If the transition is not desired, `amp-bind` is no longer a requisite for this example.
+        <p>This is only used for transitions that are activated when the selected item slides into view. If the transition is not desired, `amp-bind` is no longer a requisite for this example.</p>
         -->
         <amp-carousel
             height="132"
@@ -120,21 +120,21 @@ layout: responsive
             class="carousel"
             controls>
           <div class="carousel-item">
-            <amp-img src="<%host%>/img/car-sideview2.jpg"
+            <amp-img src="/static/samples/img/car-sideview2.jpg"
                 width="216"
                 height="117"
                 layout="fixed"
                 class="carousel-img"></amp-img>
           </div>
           <div class="carousel-item">
-            <amp-img src="<%host%>/img/car-gauges.jpg"
+            <amp-img src="/static/samples/img/car-gauges.jpg"
                 width="216"
                 height="117"
                 layout="fixed"
                 class="carousel-img"></amp-img>
           </div>
           <div class="carousel-item">
-            <amp-img src="<%host%>/img/car-sideview1.jpg"
+            <amp-img src="/static/samples/img/car-sideview1.jpg"
                 width="216"
                 height="117"
                 layout="fixed"
@@ -149,7 +149,7 @@ layout: responsive
       -->
       <div class="footer">
         <div class="stretch">
-          <amp-img src="<%host%>/img/car-logo.png"
+          <amp-img src="/static/samples/img/car-logo.png"
               width="72"
               height="32"
               layout="fixed"

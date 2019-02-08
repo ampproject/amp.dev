@@ -11,8 +11,9 @@ const config = require('../platform/config/shared.json');
 
 module.exports = (env, argv) => {
   const devMode = argv.mode !== 'production';
+  const template = path.join(__dirname, 'src/index.hbs');
   return {
-    entry: './src/app.js',
+    entry: path.join(__dirname, 'src/app.js'),
     output: {
       filename: '[name].[hash].js',
       chunkFilename: '[name].[chunkhash].bundle.js',
@@ -43,20 +44,20 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new CopyWebpackPlugin([
-        {from: 'static/'},
+        {from: path.join(__dirname, 'static/')},
       ]),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css',
         chunkFilename: devMode ? '[id].css' : '[name].[contenthash].css',
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.hbs',
+        template,
         filename: './index.html',
         inlineSource: 'critical\..+$',
         gaTrackingId: config.gaTrackingId,
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.hbs',
+        template,
         filename: './embed.html',
         inlineSource: 'critical\..+$',
         gaTrackingId: config.gaTrackingId,
@@ -67,16 +68,16 @@ module.exports = (env, argv) => {
         rel: 'preload',
         include: ['main'],
       }),
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin([path.join(__dirname, 'dist')]),
     ],
     module: {
       rules: [
         {
           test: /\.js$/,
-          exclude: [/node_modules/],
-          use: [{
+          exclude: /node_modules/,
+          use: {
             loader: 'babel-loader',
-          }],
+          },
         },
         {
           test: /\.hbs$/,

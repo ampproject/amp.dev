@@ -57,7 +57,7 @@ if (config.environment === 'development') {
   // Also create a logger during development since you want to know
   // what's going on
   const log = new Signale({
-    'interactive': true,
+    'interactive': false,
     'scope': 'Grow (Proxy)',
   });
 
@@ -104,8 +104,8 @@ if (config.environment === 'development') {
           const filteredPage = new FilteredPage(activeFormat, body);
           response.setHeader('content-length', filteredPage.content.length.toString());
           return filteredPage.content;
-        } catch(e) {
-          log.warn(`Requested page is not available in format ${activeFormat}`);
+        } catch (e) {
+          log.warn('Could not filter request', e.message);
           return body;
         }
       });
@@ -113,7 +113,7 @@ if (config.environment === 'development') {
 
     // Check if the request should be minified on the fly
     if (request.query['minify']) {
-      log.await(`Minifying request ...`);
+      log.await('Minifying request ...');
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         const minifiedPage = pageMinifier.minifyPage(body, request.url);
         response.setHeader('content-length', minifiedPage.length.toString());

@@ -13,8 +13,9 @@
 // limitations under the License.
 
 import Jasmine from 'jasmine';
+import path from 'path';
 
 const jasmine = new Jasmine();
 // modify this line to point to your jasmine.json
-jasmine.loadConfigFile('./spec/support/jasmine.json');
+jasmine.loadConfigFile(path.join(__dirname, 'support/jasmine.json'));
 jasmine.execute();

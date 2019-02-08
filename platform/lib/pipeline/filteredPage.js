@@ -46,7 +46,6 @@ function isFilterableRoute(route) {
 }
 
 class FilteredPage {
-
   /**
    * [constructor description]
    * @param {String} format  One of FORMATS
@@ -74,8 +73,8 @@ class FilteredPage {
    * @return {Boolean}
    */
   _isAvailable() {
-    let body = this._dom('body');
-    return body.attr('data-available-formats').includes(this._format);
+    const body = this._dom('body');
+    return (body.attr('data-available-formats') || '').includes(this._format);
   }
 
   /**
@@ -114,24 +113,15 @@ class FilteredPage {
     });
 
     // Find possibly empty lists and remove them for ...
-    // a) component sidebar and normal sidebar
-    this._dom('.nav-list .level-2', '.ap-o-component-sidebar').each((index, navList) => {
-      navList = this._dom(navList);
+    // a) component and default sidebar
+    this._dom('.nav-list .level-2', '.ap-o-sidebar, .ap-o-component-sidebar')
+        .each((index, navList) => {
+          navList = this._dom(navList);
 
-      if (navList.children().length == 0) {
-        navList.parent().remove();
-      }
-    });
-
-    // b) normal sidebar
-    // a) component sidebar and normal sidebar
-    this._dom('.nav-list .level-2', '.ap-o-sidebar').each((index, navList) => {
-      navList = this._dom(navList);
-
-      if (navList.children().length == 0) {
-        navList.parent().remove();
-      }
-    });
+          if (navList.children().length == 0) {
+            navList.parent().remove();
+          }
+        });
   }
 
   /**

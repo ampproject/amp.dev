@@ -87,4 +87,4 @@ cmsUsers:
       src: '/static/img/docs/guides/cms_logos/wordpress.jpg'
       alt: Wordpress logo
     label: Wordpress.org
-    url: https://wordpress.org/plugins/amp/
+    url: https://amp-wp.org/
