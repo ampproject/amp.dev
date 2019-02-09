@@ -49,7 +49,7 @@ import './request-idle-callback/base.js';
 analytics.init();
 
 // create editing/preview panels
-const editor = Editor.createEditor(document.getElementById('source'));
+const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 

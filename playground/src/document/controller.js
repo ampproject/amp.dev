@@ -32,7 +32,9 @@ export default class DocumentController {
     this.container = container;
     this.editor = editor;
     this.srcDoc = PlaygroundDocument.createDocument();
-    this._setupDocument(runtime);
+    this._setupDocument(runtime).then(() => {
+      this.editor.setCursorAndFocus(params.get('line', 0), 1);
+    });
     this._configureStatemachine();
     events.subscribe(
         EVENT_INPUT_CHANGE,
@@ -69,7 +71,7 @@ export default class DocumentController {
     } else {
       promise = Promise.resolve(runtime.template);
     }
-    promise.then((content) => this.editor.setSource(content))
+    return promise.then((content) => this.editor.setSource(content))
         .catch((err) => {
           console.error(err);
           snackbar.show('Could not fetch document.');
