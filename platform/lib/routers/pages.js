@@ -16,10 +16,14 @@
 
 'use strict';
 
+const {promisify} = require('util');
 const express = require('express');
-const config = require('../config');
+const config = require('@lib/config');
 const {Signale} = require('signale');
-
+const utils = require('@lib/utils');
+const {FilteredPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -50,7 +54,6 @@ if (config.environment === 'development') {
   // Only import the stuff needed for proxying during development
   const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
-  const {FilteredPage} = require('../pipeline/filteredPage');
   const got = require('got');
   const {pageMinifier} = require('@lib/build/pageMinifier');
 
@@ -144,16 +147,36 @@ if (config.environment === 'development') {
 }
 
 if (config.environment !== 'development') {
-  pages.use('/', (request, response, next) => {
-    // Check if this request should be filtered
-    const activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
-      // And if it should be filtered rewrite to the correct file
-      request.url = request.url.replace('.html', `.${activeFormat}.html`);
-    }
+  const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
+  const staticMiddleware = express.static(STATIC_PAGES_PATH);
 
-    next();
-  }, express.static('pages'));
+  pages.use('/', async (request, response, next) => {
+    let requestPath = request.path;
+    const activeFormat = getFilteredFormat(request);
+
+    // Only handle filtered requests on our own ...
+    // eslint-disable-next-line max-len
+    if (activeFormat && isFilterableRoute(requestPath) && fs.existsSync(utils.project.pagePath(requestPath))) {
+      // Match root requests to a possible index.html
+      if (requestPath.endsWith('/')) {
+        requestPath = requestPath + 'index.html';
+      }
+
+      // Read the file to a variable to modify it
+      const page = await readFileAsync(utils.project.pagePath(requestPath))
+          .catch((e) => {
+            throw e;
+          });
+
+      // And then filter the page and send it
+      const filteredPage = new FilteredPage(activeFormat, page, true);
+      response.send(filteredPage.content);
+      next();
+    } else {
+      // ... otherwise pass on to the static middleware
+      staticMiddleware(request, response, next);
+    }
+  });
 }
 
 module.exports = pages;

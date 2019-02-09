@@ -47,7 +47,6 @@ function isFilterableRoute(route) {
 
 class FilteredPage {
   /**
-   * [constructor description]
    * @param {String} format  One of FORMATS
    * @param {String} content A valid HTML document string
    * @param {Boolean} force  Flag if format should be validated
