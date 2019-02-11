@@ -31,9 +31,15 @@ staticRouter.get('/serviceworker.js', (request, response) => {
 });
 
 staticRouter.get('/robots.txt', (request, response) => {
-  setMaxAge(response, 60);
+  setMaxAge(response, 60 * 60);
   response.status(200)
       .sendFile('robots.txt', {root: 'static'});
+});
+
+staticRouter.get('/manifest.json', (request, response) => {
+  setMaxAge(response, 60 * 60 * 24);
+  response.status(200)
+      .sendFile('manifest.json', {root: 'static'});
 });
 
 module.exports = staticRouter;
