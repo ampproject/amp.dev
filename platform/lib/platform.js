@@ -18,7 +18,7 @@
 
 const signale = require('signale');
 const express = require('express');
-const compression = require('compression');
+const shrinkRay = require('shrink-ray-current');
 const ampCors = require('amp-toolbox-cors');
 const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
@@ -58,7 +58,7 @@ class Platform {
         }, next);
       });
     }
-
+    this.server.use(shrinkRay());
     this.server.use(defaultCachingStrategy);
     const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
     this.server.use((request, response, next) => {
@@ -80,7 +80,6 @@ class Platform {
       }
       res.redirect('https://' + req.hostname + req.path);
     });
-    this.server.use(compression());
     this._enableCors();
 
     this._check();
