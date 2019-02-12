@@ -23,8 +23,9 @@ const ampCors = require('amp-toolbox-cors');
 const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
-
 const config = require('./config.js');
+
+const WWW_PREFIX = 'www.';
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
@@ -67,6 +68,13 @@ class Platform {
         return;
       }
       ampOptimizer(request, response, next);
+    });
+    this.server.use((req, res, next) => {
+      if (req.hostname.startsWith(WWW_PREFIX)) {
+        res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
+      } else {
+        next();
+      }
     });
     this.server.use((req, res, next) => {
       if (req.hostname === 'localhost') {
