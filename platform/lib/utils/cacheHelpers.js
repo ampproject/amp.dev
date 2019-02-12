@@ -21,7 +21,7 @@ function setNoCache(response) {
 function setMaxAge(response, maxAge) {
   response.setHeader(
       'Cache-Control',
-      `public, max-age=${maxAge}, stale-while-revalidate=${Math.floor(maxAge / 2)}`,
+      `public, max-age=${maxAge}, stale-while-revalidate=${Math.floor(maxAge * 2)}`,
   );
 }
 

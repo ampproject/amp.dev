@@ -60,7 +60,6 @@ class Platform {
       });
     }
     this.server.use(shrinkRay());
-    this.server.use(defaultCachingStrategy);
     const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
     this.server.use((request, response, next) => {
       if (request.path.endsWith('/source/')) {
@@ -89,6 +88,7 @@ class Platform {
       res.redirect('https://' + req.hostname + req.path);
     });
     this._enableCors();
+    this.server.use(defaultCachingStrategy);
 
     this._check();
     this._registerRouters();
