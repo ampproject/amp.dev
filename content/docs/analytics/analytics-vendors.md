@@ -64,6 +64,12 @@ Type attribute value: `alexametrics`
 
 Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
 
+### Amplitude Analytics
+
+Type attribute value: `amplitude`
+
+Adds support for Amplitude Analytics. More details for adding Amplitude Analytics Support can be found at [amplitude.com](https://amplitude.zendesk.com/hc/en-us/articles/360023153831#logging-events).
+
 ### AT Internet
 
 Type attribute value: `atinternet`
