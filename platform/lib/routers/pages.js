@@ -150,32 +150,47 @@ if (config.environment !== 'development') {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
   const staticMiddleware = express.static(STATIC_PAGES_PATH);
 
+  /**
+   * Checks preconditions that need to be met to filter the ongoing request
+   * @param  {Request}  request The ongoing request
+   * @param  {String}  requestPath  A possibly rewritten request path
+   * @return {Boolean}
+   */
+  function shouldApplyFormatFilter(request, requestPath) {
+    if (!getFilteredFormat(request) || !isFilterableRoute(requestPath)) {
+      return false;
+    }
+
+    // TODO(matthiasrohmer): Use fs.stat/fs.access over fs.existsSync
+    if (!fs.existsSync(utils.project.pagePath(requestPath))) {
+      return false;
+    }
+
+    return true;
+  }
+
   pages.use('/', async (request, response, next) => {
     let requestPath = request.path;
-    const activeFormat = getFilteredFormat(request);
 
-    // Only handle filtered requests on our own ...
-    // eslint-disable-next-line max-len
-    if (activeFormat && isFilterableRoute(requestPath) && fs.existsSync(utils.project.pagePath(requestPath))) {
-      // Match root requests to a possible index.html
-      if (requestPath.endsWith('/')) {
-        requestPath = requestPath + 'index.html';
-      }
-
-      // Read the file to a variable to modify it
-      const page = await readFileAsync(utils.project.pagePath(requestPath))
-          .catch((e) => {
-            throw e;
-          });
-
-      // And then filter the page and send it
-      const filteredPage = new FilteredPage(activeFormat, page, true);
-      response.send(filteredPage.content);
-      next();
-    } else {
-      // ... otherwise pass on to the static middleware
-      staticMiddleware(request, response, next);
+    // Match root requests to a possible index.html
+    if (requestPath.endsWith('/')) {
+      requestPath = requestPath + 'index.html';
     }
+
+    // Let the built-in middleware deal with unfiltered requests
+    if (!shouldApplyFormatFilter(request, requestPath)) {
+      return staticMiddleware(request, response, next);
+    }
+
+    try {
+      const page = await readFileAsync(utils.project.pagePath(requestPath));
+      const filteredPage = new FilteredPage(getFilteredFormat(request), page, true);
+      response.send(filteredPage.content);
+    } catch (e) {
+      throw e;
+    }
+
+    next();
   });
 }
 
