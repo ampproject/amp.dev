@@ -186,11 +186,10 @@ if (config.environment !== 'development') {
       const page = await readFileAsync(utils.project.pagePath(requestPath));
       const filteredPage = new FilteredPage(getFilteredFormat(request), page, true);
       response.send(filteredPage.content);
+      return next();
     } catch (e) {
-      throw e;
+      return next(e);
     }
-
-    next();
   });
 }
 
