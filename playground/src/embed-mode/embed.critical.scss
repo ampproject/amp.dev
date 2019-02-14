@@ -20,9 +20,13 @@
   }
   #preview-container {
     height: 100vh !important;
+    top: 0;
   }
   #previewIframe {
     border: none;
+  }
+  #preview .panel-header {
+    display: none;
   }
   #source {
     margin-left: 0;
