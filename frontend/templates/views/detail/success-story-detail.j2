@@ -238,7 +238,13 @@
                 <p class="ap-a-txt">{{content.quote|safe}}</p>
               </blockquote>
               <p>{{content.author|safe}}</p>
-
+                <a href="{{story_url}}" class="ap-m-lnk">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% do doc.icons.useIcon('icons/internal.svg') %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                  </div>
+                  <span class="ap-m-lnk-text">Read success story</a></span>
+                </a>
               </div>
             </div>
           </section>
