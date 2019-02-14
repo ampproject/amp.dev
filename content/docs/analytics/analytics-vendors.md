@@ -68,7 +68,7 @@ Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` vari
 
 Type attribute value: `amplitude`
 
-Adds support for Amplitude Analytics. More details for adding Amplitude Analytics Support can be found at [amplitude.com](https://amplitude.zendesk.com/hc/en-us/articles/360023153831#logging-events).
+Adds support for Amplitude Analytics. More information can be found at [amplitude.com](https://amplitude.zendesk.com/hc/en-us/articles/360023153831).
 
 ### AT Internet
 
