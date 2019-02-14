@@ -1,12 +1,12 @@
 {
   "name": "amp-dev",
   "version": "1.0.2",
-  "description": "The successor of the former ampproject.org: the all-new amp.dev",
+  "description": "The Amp project website.",
   "repository": "git@github.com:ampproject/docs.git",
-  "main": "serve.js",
   "engines": {
     "node": "10.x"
   },
+  "private": true,
   "scripts": {
     "develop": "cd platform && node build.js",
     "lint": "npm-run-all lint:* --aggregate-output --parallel",
@@ -35,7 +35,7 @@
     "documentation"
   ],
   "author": "The AMP HTML Authors",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "signale": {
     "displayTimestamp": true
   },
