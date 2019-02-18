@@ -15,7 +15,8 @@
 @import 'components/atoms/_button.scss';
 
 .#{organism('consent')} {
-  left: 20px;
+  right: 20px;
+  left: auto;
   bottom: 20px;
   width: calc(100% - 40px);
   padding: 15px;
@@ -40,7 +41,7 @@
       height: 10px;
     }
   }
-  
+
   button {
     cursor: pointer;
   }
