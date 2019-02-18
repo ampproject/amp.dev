@@ -145,11 +145,105 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
   AMP-style boilerplate is the following snippet:
 
   [sourcecode:html]
-  {% raw %}<!DOCTYPE html>
+  {% raw %}
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
 {% endraw %}[/sourcecode]
+
+[tip type="note"]
+
+**Note**: The AMP boilerplate code must be copied and pasted as-is. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/appendix.md', locale=doc.locale).url.path}}).
+
+[/tip]
+
+## CSS and AMP
+
+CSS customizes the look of your websites. You will almost always add custom styles to your AMP pages. Still, be aware that AMP places some restrictions on the use of CSS:
+
+- Styles may only live in the head of the document inside a `<style amp-custom>` tag, or as inline `style` attributes where needed. This limitation prevents loading an external stylesheet, but it also saves a network request, enables caching, and improves performance.
+
+- An AMP page may only have one`<style amp-custom>` tag (decorated `style` tag).
+
+- The page can include no more than 50K of CSS.
+
+- The `!important` rule is restricted.
+
+- For more disallowed or restricted CSS rules, check the documentation [here](https://www.ampproject.org/docs/design/responsive/style_pages).
+
+To practice adding custom styles to your AMP page, add the following `<style amp-custom>` tag to your page in the `<head>` and see what happens. Once you’re finished, you can remove the styles from your page.
+
+[sourcecode:html]
+{% raw %}
+
+<style amp-custom>
+    body {
+        font-family: sans-serif;
+        line-height: 1.5rem;
+        padding: 20px;
+    }
+    p, h2 {
+        border: 1px dotted red;
+    }
+</style>
+
+{% endraw %}[/sourcecode]
+
+{{ image('/static/img/courses/beginner/image10.png', 738, 1290, caption='Custom CSS affecting our page.') }}
+
+## Exercise 2: Converting the rest of our HTML Page
+
+Now it’s time to correct the validation errors on our site that we discovered in the previous exercise. To do this, we have to add the missing parts of the AMP boilerplate template to our basic HTML site.
+
+For this and all future exercises, we’re going to apply what we’ve learned to implement real code changes to our site in Glitch. We’ll give you some hints along the way. At the end of each exercise, we’ll provide the full solution. Try to complete the exercises yourself, but if you’re stuck or need hints, feel free to copy code from the solution sections.
+
+Additionally, at the start and end of each of these courses, we’ll provide a Glitch template that includes all of the code we’ve completed to that point. If you ever lose your current Glitch page or want to start from our solutions, you can copy code from those Glitch examples, or simply remix those examples and move forward from there.
+
+Using the [documentation](https://www.ampproject.org/docs/getting_started/create/basic_markup) for the AMP boilerplate and the comments above, update your Glitch project so that only the img tag validation error persists. Additionally, to help us build Chico’s Cheese Bikes site, we’ve provided some CSS to use throughout the trainings. If you open [this](https://pastebin.com/vNws2bA1) page, the `<style amp-custom>` tag is there with the styles you need. You should copy these styles to the project you’ve been working with.
+
+### Solution
+
+The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch example. The portion of the page containing the changes should look like this:
+
+[sourcecode:html]
+{% raw %}
+
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Chico's Cheese Bicycles</title>
+  <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
+  <meta name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1">
+  <link rel="canonical" href="https://hungry-modem.glitch.me/">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    ... styles elided due to length ...
+  </style>
+</head>
+{% endraw %}[/sourcecode]
+
+## A Valid AMP Page...Almost
+
+If you completed all the exercises above, congratulations! Your page is almost a valid AMP page. If you open your page and the Chrome DevTools (`Command+Option+I` on Mac or `Control+Shift+I` on Windows/Linux) and select the Console tab, you should see this message in the console, indicating that the AMP library was successfully loaded:
+
+```
+Powered by AMP ⚡ HTML
+```
+
+Next, if you open the AMP Validator extension, it shows that we’re down to the last error:
+
+```
+The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
+```
+
+This is an important error to understand. Some HTML tags are not allowed in AMP documents. In some cases, AMP requires you to use an alternative. We call these custom, non-standard HTML tags “components,” and we’ll discuss them at greater length later in the next section of this training.
+
+[tip type="note"]
+
+**Note**: You can start your future AMP pages using the HTML here as a starting point. This HTML includes the AMP boilerplate from above. It contains all the required tags and elements we’ve covered so far. Alternatively, you can customize your starting point with additional features using the boilerplate generation tool here.
+
+[/tip]
 
 <div class="prev-next-buttons">
   <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/course-introduction.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
