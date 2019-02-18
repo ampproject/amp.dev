@@ -4,7 +4,7 @@ $order: 1
 toc: true
 ---
 
-[TOC]
+<!-- [TOC] -->
 
 ## Who is this course for?
 
@@ -26,15 +26,15 @@ To complete the code examples included in these courses, we will be using [Glitc
 
 The Glitch code editor environment looks like this:
 
-{{ image('/static/img/courses/beginner/image13.png', 1024, 768, caption='Glitch environment') }}
+{{ image('/static/img/courses/beginner/image13.png', 533, 344, caption='Glitch environment') }}
 
 The red box above indicates the online editor where you will be typing HTML and CSS. The green box indicates the button that will take you to the live version of the page you are creating. The yellow box is the button that lets you create a copy of this project and edit it. The blue box indicates the files that you have available. In the assets folder, you can find your images.
 
 Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the “copy” button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
 
-{{ image('/static/img/courses/beginner/image8.png', 1024, 768, caption='The assets view in Glitch') }}
+{{ image('/static/img/courses/beginner/image8.png', 1686, 936, caption='The assets view in Glitch') }}
 
-{{ image('/static/img/courses/beginner/image12.png', 1024, 768, caption='The details pop-up (including URL) for an image in the assets collection') }}
+{{ image('/static/img/courses/beginner/image12.png', 1484, 1416, caption='The details pop-up (including URL) for an image in the assets collection') }}
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an index.html file with a title and a single image.
 
@@ -68,14 +68,16 @@ For example, your URL
 
 ## What we'll build
 
-Throughout this and the following two courses, you will build a website for Chico’s Cheese Bicycles Shop. Chico has developed a revolutionary bicycle made entirely out of cheese! Demand for the new bicycles is so high that Chico needs to get a website up as quickly as possible to handle orders and market their new products! When we’re finished with these courses, Chico’s site will look very much like this:
+Throughout our three courses, you will build a website for Chico’s Cheese Bicycles Shop. Chico’s has developed a revolutionary bicycle made entirely out of cheese. Demand for the new bicycles is so high that Chico’s needs to get a website up as quickly as possible. When we’re finished with these courses, Chico’s site will look like this:
 
-{{ image('/static/img/courses/beginner/image12.png', 311, 550, caption='Completed AMP page for this tutorial') }}
+{{ image('/static/img/courses/beginner/image14.png', 311, 550, caption='How the site looks at the end of the Advanced Course') }}
 
-You can click on [this link](https://nice-consonant.glitch.me/) to see a live preview. Play around with the site. We have videos, embedded tweets, a login form, an image carousel, and ways to share our site on social media! Open the navigation menu by clicking on the icon made of three lines in the upper-left corner (also called a ‘hamburger menu icon’). Once the menu expands, click on the link to view the list of products. Notice how the list of products can be both sorted by price and filtered by category. Click on any of the products. Notice how more details about that product pop up on the screen?
+You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner.
 
-This site is a collection of features we see on many sites online today. This site was built entirely using AMP, and over the course of these lessons, you’re going to build this site yourself as well.
+Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category. Click on any of the products. Notice how more details about that product pop up on the screen.
+
+We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
 
 <div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/our-first-amp-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Let’s dive in!</span></a>
+<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/our-first-amp-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Our First AMP Page</span></a>
 </div>

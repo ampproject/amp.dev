@@ -5,7 +5,7 @@ $path: /documentation/guides-and-tutorials/courses/beginner-course/index.html
 toc: true
 ---
 
-[TOC]
+<!-- [TOC] -->
 
 ## Why AMP?
 
