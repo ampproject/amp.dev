@@ -3,25 +3,26 @@ $title: Course Introduction
 $order: 1
 toc: true
 ---
+
 [TOC]
 
 ## Who is this course for?
 
-This course is designed for current developers who are struggling to build performant websites and for aspiring developers who are looking to build their first website. Additionally, this course is well-suited for anyone who is maintaining or working on an existing AMP site.
+This course is designed for aspiring first-time web developers and current developers looking to build performant websites. Throughout this and the following courses, you will:
 
-Throughout this and the following courses you will:
+- Be introduced to the ways AMP pages differ from traditional “vanilla” websites.
 
-* Be introduced to the ways AMP pages differ from traditional “vanilla” websites
-* Incrementally build a sample project using real AMP components and best practices
-* Learn strategies for building modern websites (such as component-based development and reactive programming)
+- Incrementally build a sample project using real AMP components and best practices.
 
-## Course Prerequisites
+- Learn strategies for building modern websites.
 
-To get the most from these courses, you should have a basic understanding of HTML and CSS. It is enough to be able to recognize HTML and CSS and to be able to make minor additions and alterations to existing HTML and CSS as instructed to in the lessons. As you might already know, [HyperText Markup Language](https://html.spec.whatwg.org/multipage/) (HTML) is a document description language that lets us create content for the web. Teaching HTML is beyond the scope of this course. There are many great resources on the web if want to learn more about HTML, though. You could try taking a look at [this tutorial](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/) by freeCodeCamp, or you can try [this free course](https://www.udacity.com/course/intro-to-html-and-css--ud001) on Udacity!
+## Prerequisites
+
+To get the most from these courses, you should have a basic understanding of HTML and CSS. It is enough to be able to recognize HTML and CSS code, and to be able to make minor additions and alterations as instructed through the exercises. Please note that teaching these concepts is beyond the scope of this course. If necessary, you can find a refresher on HTML [here](https://developer.mozilla.org/en-US/docs/Web/HTML) and on CSS [here](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
 ## Follow the Code With Glitch
 
-To complete the code examples included in these courses, we will be using [Glitch](https://glitch.com/). Glitch is an online code editor that lets you create and view web sites and server APIs without needing to install anything on your computer.
+To complete the code examples included in these courses, we will be using [Glitch](https://glitch.com/). Glitch is an online code editor that allows you to create and view websites without the need to install anything on your computer. It also allows you to create a server, all within the Glitch interface.
 
 The Glitch code editor environment looks like this:
 
@@ -39,8 +40,8 @@ It’s not necessary to use Glitch to complete these trainings, but some of the 
 
 The AMP validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting the full performance benefits from using AMP. The validator can be accessed in two ways: via a Chrome extension, or by adding a hash parameter to our URL, so that our AMP page uses the built-in validator. For the purposes of this course, we suggest you use the Chrome extension, because it’s easier to use and more easily accessible while you build out your site.
 
-* To install the Chrome extension, visit [this link](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
-* To enable the built-in AMP validator add `#development=1` at the end of your AMP page URL and open the developer console in your browser to see the results.
+- To install the Chrome extension, visit [this link](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
+- To enable the built-in AMP validator add `#development=1` at the end of your AMP page URL and open the developer console in your browser to see the results.
 
 [tip type="note"]
 Note: In this course we are using Glitch. To see the validator working you have to open your page in a new window to see it live. To do that, click the “Show Live” button on the top left. When the page is open, you’ll see the icon for the AMP validator light up, indicating that it thinks your page is trying to be an AMP page.
@@ -49,9 +50,9 @@ If you’re using the Chrome extension, look at the top right of your browser, j
 
 If you want to use the built-in validator, add the hash to your URL like this:
 
-For example, your URL 
+For example, your URL
 
-`https://YOUR_PROJECT.glitch.me/` will become 
+`https://YOUR_PROJECT.glitch.me/` will become
 
 `https://YOUR_PROJECT.glitch.me/#development=1`
 [/tip]
