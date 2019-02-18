@@ -26,27 +26,35 @@ To complete the code examples included in these courses, we will be using [Glitc
 
 The Glitch code editor environment looks like this:
 
-{{ image('/static/img/courses/beginner/image3.png', 1024, 768, caption='Glitch environment') }}
+{{ image('/static/img/courses/beginner/image13.png', 1024, 768, caption='Glitch environment') }}
 
-The **red** box above indicates the online editor where you will be actually typing all your HTML and CSS. The **green** box indicates the button that will take you to the live version of the page you are creating. The **yellow** box is a button that lets you create a copy of this project and edit it. The blue box indicates all the files that you have available. In the assets folder, you can find all of your images.
+The red box above indicates the online editor where you will be typing HTML and CSS. The green box indicates the button that will take you to the live version of the page you are creating. The yellow box is the button that lets you create a copy of this project and edit it. The blue box indicates the files that you have available. In the assets folder, you can find your images.
 
-Let's start with a basic HTML page now. We have created an empty project on Glitch, containing a few images and some server code that you’ll need later, and an index file with a title and a single image.
+Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the “copy” button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
 
-Open [this](https://glitch.com/edit/#!/nosy-leech) project. Click the “Remix This” button on the top right. This will create a new project that you can now edit! This new project will be your own personal copy, and if you log into Glitch, it will be on your profile for you to edit however you want! You can continue to use this same editor for this and future trainings. Don’t worry though, each future training will also give you the opportunity to start with a reference version of the solution to that point.
+{{ image('/static/img/courses/beginner/image8.png', 1024, 768, caption='The assets view in Glitch') }}
 
-It’s not necessary to use Glitch to complete these trainings, but some of the code required to complete the exercises is not discussed in these trainings but is contained in the Glitch samples. If you’d like to use another editor, you may still need to go into the Glitch samples to copy the CSS and server code into your local solution.
+{{ image('/static/img/courses/beginner/image12.png', 1024, 768, caption='The details pop-up (including URL) for an image in the assets collection') }}
+
+In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an index.html file with a title and a single image.
+
+Open [this](https://glitch.com/edit/#!/nosy-leech) project to begin. Click the “Remix This” button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
+
+You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 
 ## Setting Up The AMP Validator
 
-The AMP validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting the full performance benefits from using AMP. The validator can be accessed in two ways: via a Chrome extension, or by adding a hash parameter to our URL, so that our AMP page uses the built-in validator. For the purposes of this course, we suggest you use the Chrome extension, because it’s easier to use and more easily accessible while you build out your site.
+To detect errors in our AMP pages, we have a valuable tool at our fingertips: the AMP Validator. Writing valid AMP pages is key to accessing the framework’s full benefits. The AMP Validator can be accessed in two ways: via a Chrome extension, or by adding a parameter to our URL so that our AMP page uses the built-in validator. For the purposes of this course, we suggest you use the Chrome extension, as it’s easier to use and access while you build your site.
 
-- To install the Chrome extension, visit [this link](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
-- To enable the built-in AMP validator add `#development=1` at the end of your AMP page URL and open the developer console in your browser to see the results.
+- To install the Chrome extension, visit the link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
+
+- To instead use the built-in AMP Validator, add `#development=1` at the end of your AMP page URL, and open the developer console in your browser to see the results. You don’t need to add this parameter if you’re using the Chrome extension.
 
 [tip type="note"]
-Note: In this course we are using Glitch. To see the validator working you have to open your page in a new window to see it live. To do that, click the “Show Live” button on the top left. When the page is open, you’ll see the icon for the AMP validator light up, indicating that it thinks your page is trying to be an AMP page.
 
-If you’re using the Chrome extension, look at the top right of your browser, just right of the address bar. You should see the AMP sign there. Click it!
+Note on using Glitch: To witness the validator in action, open your page in a new window to see it live by clicking the “Show Live” button on the top left. When the page is open, the icon for the AMP Validator will light up, indicating that it recognizes the page as AMP.
+
+If you’re using the Chrome extension, look at the top right of your browser just to the right of the address bar. You should see the AMP sign there. Click it.
 
 If you want to use the built-in validator, add the hash to your URL like this:
 
@@ -55,6 +63,7 @@ For example, your URL
 `https://YOUR_PROJECT.glitch.me/` will become
 
 `https://YOUR_PROJECT.glitch.me/#development=1`
+
 [/tip]
 
 ## What we'll build
