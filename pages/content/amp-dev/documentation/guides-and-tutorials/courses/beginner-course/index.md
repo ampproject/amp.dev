@@ -9,34 +9,42 @@ toc: true
 
 ## Why AMP?
 
-On the Internet, performance matters. Especially now that the majority of users browse using a mobile device. The users of sites that load faster tend to have longer browsing sessions and higher engagement. Conversely, over half of mobile users give up on websites if they do not load within three seconds.
+In many ways, the Internet is the central hub for the world. Every day, more people from all over the world access information online. But many don’t use the Internet on lightning-fast connections or high-powered devices. When websites are developed only for the fastest connections and devices, the experience of many users suffers.
 
-So, if performance is so important, then why are so many modern website loading and running so slowly for mobile users? The truth is, it’s often complicated to build fast websites that are also full of features, look good on all device sizes, and are intuitive to use. We believe that developers want to make fast sites, but many libraries and frameworks make it too easy to do the wrong things. Therefore, AMP was created to make it easy for developers to do the right things, so those developers can focus on building better features without customers having a poor user experience!
+To give site visitors a better experience, the development community has found ways to improve website performance. Along the way, developers have improved accessibility for users of assistive technologies, reliability for fickle connections, and website design for a wide range of devices.
+
+It can be overwhelming at times to keep track of all the new advancements in web technology. We believe that developers want to make fast sites, but it’s too easy to make mistakes along the way.
+That’s where AMP comes in. AMP was created to make it easy for developers to focus on building better features without giving customers a poor user experience.
 
 ## How AMP helps
 
-AMP (Accelerated Mobile Pages) is a set of best practices and an accompanying library that make it easy to do the right things when developing a website. Using AMP is a great way to learn web development, because AMP sites are:
+AMP is a web components library that enforces best practices for the Web. AMP addresses common development obstacles to allow for the design of performant, accessible, and responsive websites.
 
-* Built using standard HTML, CSS, and JavaScript
-* Compatible with all modern browsers
-* Not dependent on special build tools or servers in order to get a site up and running
+In short, AMP tries to make it easy to do the right thing. This frees developers up to focus on features that bring value to their users.
 
-AMP helps developers create fast web experiences that are easy to maintain. AMP introduces a set of requirements (and a validation tool that helps enforce those requirements) that, when followed, help pages load quickly, consume fewer system resources, reflect best practices for accessibility and performance, and help other typical features like ads run smoothly.
+AMP works to improve web performance by:
 
-In exchange for these performance gains, AMP places some restrictions on developers, such as limiting the ways that custom JavaScript can be executed and restricting which HTML tags may be used on your sites. However, these restrictions allow for powerful and automatic performance optimizations and caching that help your pages load fast and help you avoid many of the biggest and most harmful user experience and performance pitfalls. Pages delivered from such caches get downloaded in the background on sites like Google and can be loaded in less than half a second from when the site is requested.
+- Extending HTML by adding tags for common website features. HTML was developed to create basic content pages, but hasn’t evolved to keep up with modern websites. Some relevant modern website features include slide-out navigation menus, video players, and image carousels. The extra tags added for these features are also called “web components.”
 
-## A*M*P is not just for *M*obile
+- Reducing the amount of JavaScript. AMP requires JavaScript to run, but AMP places restrictions on where and how JavaScript can be used elsewhere on your pages. This restriction can dramatically improve performance on mobile devices. AMP components provide much of the functionality that developers used JavaScript for in the first place.
 
-AMP is not just for building static content pages, and despite the name, nor is it just for mobile websites. The AMP format is useful for building performant desktop web experiences as well. Despite limitations on the usage of JavaScript on AMP pages, AMP components can be combined together to build feature-rich websites that respond in real time to user input and display dynamic content from remote servers.
+- Detecting problems early and often during the course of website development. As we’ve stated, there’s a lot to keep track of in modern web development. AMP helps manage this by providing a validator that looks for issues in your site that could affect performance or accessibility. It also helps you learn how to fix the issues it finds!
 
-AMP provides tools to handle many of the challenges of building modern websites, such as component-based design, state management and dynamic content generation, in a way that prevents the type of code bloat that negatively affects performance. If some of these concepts of building websites don’t sound familiar to you, don’t worry! Throughout this and future trainings, you will learn about many of these concepts. You don’t need to know all of these concepts in order to start building great AMP experiences for your users.
-
+The benefits of AMP don’t end once your page is deployed. Companies like Google and Microsoft have created caches which store AMP pages that have no validation errors. These caches can apply powerful performance optimizations to your site’s content without affecting the way your users experience it. Cached AMP pages are also integrated with search engines so that your site can be reached from search results within seconds - or even less!
 
 ## Learning AMP to learn web development
 
-The skills acquired and patterns learned while building AMP pages can be transferred to building websites in any other format or framework. Like most modern frameworks, AMP is a component-based approach to designing and building websites. There is a large library of existing AMP components that help developers rapidly build performant web experiences without having to write a lot of custom code. Developers will learn to develop websites with recognized best practices for using HTML and CSS, start thinking in components, and will learn to avoid bad habits - skills that will be effective when building sites in any other framework.
+Learning AMP is a great way to learn web development because AMP sites are:
 
-So, what are you waiting for? 
+- built using standard HTML, CSS, and JavaScript.
+
+- compatible with all modern browsers.
+
+- not dependent on special tools or software to build or deploy online.
+
+You’ll acquire skills while building AMP pages that can be transferred to building websites in other formats or frameworks. Like many popular frameworks, AMP is a component-based approach to designing and building websites. You will learn to build websites with recognized best practices, start thinking in components, and avoid bad habits that harm user experience. These universal skills can be applied across the web.
+
+AMP addresses performance, accessibility, and responsive design so that you can focus on the features. However, if you want to hone your skills, learning AMP can also help you discover exactly how AMP addresses these concerns. You will continue to learn and mature as a developer, even while your users enjoy the experiences that AMP helped you to build.
 
 <div class="prev-next-buttons">
 <a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/course-introduction.md', locale=doc.locale).url.path}}"><span class="arrow-next">Let’s get started!</span></a>
