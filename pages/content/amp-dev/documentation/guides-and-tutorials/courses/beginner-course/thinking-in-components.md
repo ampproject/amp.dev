@@ -116,7 +116,7 @@ Recommended style guidelines:
 
 - Set the element `width` to `480` and the `height` to `270`.
 
-[tip type="important"]
+[tip type="read-on"]
 **Hint**: The documentation contains examples of how to use the `<amp-youtube>`component. For this exercise, it’s sufficient to copy one of those examples and adapt it to the requirements above.[/tip]
 
 After you have made the changes, look at your page. You should now see the YouTube video:

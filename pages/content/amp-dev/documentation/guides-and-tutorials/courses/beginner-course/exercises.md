@@ -2,6 +2,7 @@
 $title: Beginner Course Exercises
 $order: 8
 toc: true
+menu: false
 ---
 
 [TOC]

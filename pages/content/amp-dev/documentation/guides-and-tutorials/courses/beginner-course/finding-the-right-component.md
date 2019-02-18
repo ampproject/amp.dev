@@ -77,7 +77,7 @@ In the documentation for `<amp-carousel>`, we see that the component can have a 
 
 This means that if you don’t specify a type, the default will be "carousel."
 
-[tip type="important"]
+[tip type="read-on"]
 **Tip**: Some attributes do not require a value at all. These are called [boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes). In these cases, the attribute has a default value of false and a value of true when attached to an element or component.
 [/tip]
 
