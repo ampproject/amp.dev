@@ -131,9 +131,9 @@ After you have made the changes, look at your page. You should now see the YouTu
 
 Remember to include the `<amp-youtube>` script in the `<head>`:
 
-[sourcecode:html]
-{% raw %}<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-{% endraw %}[/sourcecode]
+```
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+```
 
 [tip type="note"]
 **Note**: AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.[/tip]
