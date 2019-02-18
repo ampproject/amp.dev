@@ -62,7 +62,8 @@ class Platform {
     this.server.use(shrinkRay());
     const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
     this.server.use((request, response, next) => {
-      if (request.path.endsWith('/source/')) {
+      // don't optimize sample source or preview
+      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.path)) {
         next();
         return;
       }
