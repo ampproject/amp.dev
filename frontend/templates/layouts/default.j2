@@ -122,14 +122,13 @@
     </aside>
     {% endif %}
 
-    {% if podspec.env.name == 'staging' or podspec.env.name == 'development' or podspec.env.name == 'production' %}
+    {% if podspec.env.name == 'staging' or podspec.env.name == 'development' %}
     {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
     <div class="ap-m-banner" style="position: fixed; bottom: 0; z-index: 999; width: 100%; background: #C8114D;">
-      That's a staging version ({{ podspec.env.name|upper }}) of
-      <a href="http://www.amp.dev" class="ap-m-banner-link">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        www.amp.dev
-      </a>
+      This is a staging version of 
+      <a href="http://amp.dev" class="ap-m-banner-link">
+        https://amp.dev
+      </a> [{{ podspec.env.name|upper }}].
     </div>
     {% endif %}
 
