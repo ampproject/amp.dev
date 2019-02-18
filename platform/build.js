@@ -67,11 +67,6 @@ pipeline.clean();
   // and tested to ensure it is working
   if (config.environment !== 'development') {
     await pipeline.optimizeBuild();
-
-    // Only create filtered pages after optimizing build as the filtered ones
-    // do not need to be optimized individually (again)
-    await pipeline.createFilteredPages();
-
     await pipeline.testBuild();
   }
 
@@ -86,4 +81,3 @@ pipeline.clean();
     .catch(() => {
       process.exit(1);
     });
-
