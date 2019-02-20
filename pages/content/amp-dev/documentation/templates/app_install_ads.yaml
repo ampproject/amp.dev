@@ -1,0 +1,15 @@
+$title: App Install Story Ad
+$view: /views/detail/template-detail.j2
+$category: Story Ads
+$order: 5
+formats:
+  - ads
+
+teaser:
+  image:
+    src: '/static/img/templates/app_install.jpg'
+    width: 9
+    height: 16
+    alt: App Install Story Ad
+
+  download_url: '/static/files/templates/app_install_ads.zip'
