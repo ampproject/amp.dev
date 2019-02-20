@@ -126,16 +126,4 @@
       width: calc(100% + 15px);
     }
   }
-
-  .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media (max-width: 767px) {
-      transform: translateX(-100%);
-    }
-  }
-
-  .#{atom('sidebar-toggle-input')}:checked + & {
-    @media (max-width: 767px) {
-      transform: translateX(0);
-    }
-  }
 }

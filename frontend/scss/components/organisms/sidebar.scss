@@ -8,6 +8,23 @@
 
 @import 'components/organisms/_sidebar.scss';
 
+.#{utility('sidebar')} {
+  nav {
+    position: sticky;
+    top: 120px;
+    border: 1ps solid #000;
+  }
+}
+
+.#{utility('ampsidebar')} {
+  max-width: 100vw;
+  @media (max-width: 767px) {
+    nav {
+      width: 100vw;
+    }
+  }
+}
+
 .#{organism('sidebar')} {
   @include sidebar;
 
@@ -107,18 +124,6 @@
 
     span.nav-link + .nav-trigger {
       width: calc(100% + 15px);
-    }
-  }
-
-  .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media (max-width: 767px) {
-      transform: translateX(-100%);
-    }
-  }
-
-  .#{atom('sidebar-toggle-input')}:checked + & {
-    @media (max-width: 767px) {
-      transform: translateX(0);
     }
   }
 }
