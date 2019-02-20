@@ -31,7 +31,8 @@
                 <ul class="nav-list level-2">
                   {% endif %}
                   {% set formats = component.formats or [] %}
-                  <li class="nav-item level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
+                  {% set activeDocument = true if component.url == doc.url %}
+                  <li {% if activeDocument %}autoscroll {% endif %} class="nav-item {% if activeDocument %}active {% endif %} level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
                     <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
                   </li>
                   {% endfor %}
