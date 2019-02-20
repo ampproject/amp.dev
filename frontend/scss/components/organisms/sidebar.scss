@@ -8,11 +8,28 @@
 
 @import 'components/organisms/_sidebar.scss';
 
-.#{utility('sidebar')} {
-  nav {
+nav[toolbar] {
+  top: 120px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 768px){
+    height: 100vh;
     position: sticky;
-    top: 120px;
-    border: 1ps solid #000;
+    overflow: auto;
+    max-height: calc(100vh - 168px);
+  }
+  
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset -1px 0 rgba(color('black'), 0.10);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color('oslo-gray');
   }
 }
 
