@@ -1,7 +1,7 @@
 {
   "name": "amp-dev",
   "version": "1.0.2",
-  "description": "The Amp project website.",
+  "description": "The AMP Project website.",
   "repository": "git@github.com:ampproject/docs.git",
   "engines": {
     "node": "10.x"
