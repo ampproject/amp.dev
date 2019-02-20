@@ -49,19 +49,17 @@ If you're here, you're building pages with AMP. The AMP team cares immensely abo
 
 Install the AMP Service Worker with minimal steps:
 
-1.  Import the AMP Service Worker code into your service worker file. 
+  - Import the AMP Service Worker code into your service worker file. 
+    [sourcecode:js]
+      importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+    [/sourcecode]
 
-[sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
-[/sourcecode]
+  - Install the service worker with the following code.
+    [sourcecode:js]
+      AMP_SW.init();
+    [/sourcecode]
 
-2. Install the service worker with the following code.
-
-[sourcecode:js]
-AMP_SW.init();
-[/sourcecode]
-
-3. Done.
+  - Done.
 
 ### Automated Caching
 
