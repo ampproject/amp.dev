@@ -10,9 +10,10 @@
 {% endblock %}
 
 {% block main %}
+{% include 'views/partials/component-sidebar.j2' %}
 <main class="ap--main ap-t-component-detail">
   <div class="ap--container">
-    {% include 'views/partials/component-sidebar.j2' %}
+      {% include 'views/partials/sidebar-toggle.j2' %}
     {% include 'views/partials/content.j2' %}
 
     {% do doc.styles.addCssFile('css/components/organisms/help.css') %}

@@ -1,116 +1,117 @@
-<section class="ap--sidebar">
-  {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  {% do doc.icons.useIcon('icons/categorymenu.svg') %}
-  {% do doc.icons.useIcon('icons/close.svg') %}
-  <label class="ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar contentmenuopen' :'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#categorymenu"></use></svg>
-      <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-  </label>
-  <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar" autocomplete="off">
+<amp-sidebar id="sidebar-left"
+  class="ap--ampsidebar"
+  layout="nodisplay"
+  side="left">
+  <nav toolbar="(min-width: 768px)"
+    toolbar-target="ap--sidebar-content">
+    <ul>
+      <section>
+        {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+        <div class="ap-o-sidebar">
+          {% include '/views/partials/format-toggle.j2' %}
 
-  {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
-  <div class="ap-o-sidebar">
-    {% include '/views/partials/format-toggle.j2' %}
+          <div class="nav">
+            {% macro nav_tree(root, iteration=1, depth=None) -%}
+            {% if not depth or iteration <= depth %}
+            <ul class="nav-list level-{{ iteration }}">
+                {% set collections = root.collections() %}
+                {% set documents = root.list_docs(locale=doc.locale)|list %}
 
-    <div class="nav">
-      {% macro nav_tree(root, iteration=1, depth=None) -%}
-      {% if not depth or iteration <= depth %}
-      <ul class="nav-list level-{{ iteration }}">
-          {% set collections = root.collections() %}
-          {% set documents = root.list_docs(locale=doc.locale)|list %}
+                {% set items = (collections + documents)|sort(attribute='order') %}
 
-          {% set items = (collections + documents)|sort(attribute='order') %}
+                {% for item in items %}
 
-          {% for item in items %}
+                {% if loop.previtem and item.tutorial and not loop.previtem.tutorial %}
+                <li class="nav-item-tutorial-divider"></li>
+                {% endif %}
 
-          {% if loop.previtem and item.tutorial and not loop.previtem.tutorial %}
-          <li class="nav-item-tutorial-divider"></li>
-          {% endif %}
+                {% if not item.draft or doc.pod.env.dev %}
+                {# Check if the item is a) collection ... #}
+                {% if '<Collection' in item|pprint %}
+                {% set collection = item %}
+                {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
+                {% set allCollectionPaths = collection.collection_path.split('/') %}
+                {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
-          {% if not item.draft or doc.pod.env.dev %}
-          {# Check if the item is a) collection ... #}
-          {% if '<Collection' in item|pprint %}
-          {% set collection = item %}
-          {% set currentCollectionPaths = doc.collection.collection_path.split('/') %}
-          {% set allCollectionPaths = collection.collection_path.split('/') %}
-          {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
+                {% set formats = collection.formats or [] %}
+                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                  {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
+                  {% if doc.pod.file_exists(collection_index) %}
+                  {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
+                  <a class="nav-link" href="{{ collection_index.url.path }}">
+                    {# Get translated collection title #}
+                    {% set collection_title = collection.tagged_fields.get('$title@' + doc.locale.language, collection.title) %}
 
-          {% set formats = collection.formats or [] %}
-          <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
-            {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
-            {% if doc.pod.file_exists(collection_index) %}
-            {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
-            <a class="nav-link" href="{{ collection_index.url.path }}">
-              {# Get translated collection title #}
-              {% set collection_title = collection.tagged_fields.get('$title@' + doc.locale.language, collection.title) %}
+                    {% if collection.tutorial %}
 
-              {% if collection.tutorial %}
+                    {% set tutorial_title = collection_title.split(' ') %}
+                    {% set tutorial_first_part = ' '.join(tutorial_title[0:-1]) %}
+                    {% set tutorial_last_word = tutorial_title[-1] %}
 
-              {% set tutorial_title = collection_title.split(' ') %}
-              {% set tutorial_first_part = ' '.join(tutorial_title[0:-1]) %}
-              {% set tutorial_last_word = tutorial_title[-1] %}
+                    {% do doc.icons.useIcon('icons/tutorial.svg') %}
+                    <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
 
-              {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
+                    {% else %}
+                      <span>{{ collection_title }}</span>
+                    {% endif %}
+                  </a>
+                  {% else %}
+                  <span class="nav-link">
+                    <span>{{ _(collection.title) }}</span>
+                    {% if collection.tutorial %}
+                    {% do doc.icons.useIcon('icons/tutorial.svg') %}
+                    <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+                    {% endif %}
+                  </span>
+                  {% endif %}
+                  <input class="nav-trigger" {% if activeCollection or (iteration == 1 and doc.view == "/views/overview/guides.j2") %}checked {% endif %} type="checkbox"/>
+                  <div class="nav-icon">
+                    {% if iteration==1 %}
+                    {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+                    <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                    {% else %}
+                    {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
+                    <svg class="ap-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
+                    {% endif %}
+                  </div>
+                  {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
+                </li>
+                {# Check if the item is b) document #}
+                {% elif '<Document' in item|pprint %}
+                {% set document = item %}
+                {% if not document.hidden %}
+                {% set formats = document.formats or document.collection.formats or [] %}
+                {% set activeDocument = true if document.url == doc.url %}
+                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                  {# If the document is part of a tutorial render progress #}
+                  {% if document.collection.tutorial %}
+                  {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
+                  <div class="ap-m-tutorial-progress {% if doc.order > document.order and doc.collection == document.collection %}ap-m-tutorial-progress-finished{% endif %}"></div>
+                  {% endif %}
 
-              {% else %}
-                <span>{{ collection_title }}</span>
-              {% endif %}
-            </a>
-            {% else %}
-            <span class="nav-link">
-              <span>{{ _(collection.title) }}</span>
-              {% if collection.tutorial %}
-              {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
-              {% endif %}
-            </span>
+                  <a class="nav-link" href="{{ document.url.path }}">
+                    {{ document.title }}
+                    {% if document.tutorial %}
+                    {% do doc.icons.useIcon('icons/tutorial.svg') %}
+                    <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endif %}
+                {% endif %}
+                {% endif %}
+
+                {% endfor %}
+            </ul>
             {% endif %}
-            <input class="nav-trigger" {% if activeCollection or (iteration == 1 and doc.view == "/views/overview/guides.j2") %}checked {% endif %} type="checkbox"/>
-            <div class="nav-icon">
-              {% if iteration==1 %}
-              {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-              <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-              {% else %}
-              {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
-              <svg class="ap-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
-              {% endif %}
-            </div>
-            {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
-          </li>
-          {# Check if the item is b) document #}
-          {% elif '<Document' in item|pprint %}
-          {% set document = item %}
-          {% if not document.hidden %}
-          {% set formats = document.formats or document.collection.formats or [] %}
-          {% set activeDocument = true if document.url == doc.url %}
-          <li class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
-            {# If the document is part of a tutorial render progress #}
-            {% if document.collection.tutorial %}
-            {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
-            <div class="ap-m-tutorial-progress {% if doc.order > document.order and doc.collection == document.collection %}ap-m-tutorial-progress-finished{% endif %}"></div>
-            {% endif %}
+            {%- endmacro %}
 
-            <a class="nav-link" href="{{ document.url.path }}">
-              {{ document.title }}
-              {% if document.tutorial %}
-              {% do doc.icons.useIcon('icons/tutorial.svg') %}
-              <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
-              {% endif %}
-            </a>
-          </li>
-          {% endif %}
-          {% endif %}
-          {% endif %}
-
-          {% endfor %}
-      </ul>
-      {% endif %}
-      {%- endmacro %}
-
-      {% set split_path = doc.collection.collection_path.split('/') %}
-      {% set current_path = '/'.join(split_path[:3]) %}
-      {{ nav_tree(root=g.collection(current_path)) }}
-    </div>
-  </div>
-</section>
+            {% set split_path = doc.collection.collection_path.split('/') %}
+            {% set current_path = '/'.join(split_path[:3]) %}
+            {{ nav_tree(root=g.collection(current_path)) }}
+          </div>
+        </div>
+      </section>
+    </ul>
+  </nav>
+</amp-sidebar>

@@ -17,9 +17,10 @@ teaser:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
+{% include 'views/partials/component-sidebar.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
-    {% include 'views/partials/component-sidebar.j2' %}
+    {% include 'views/partials/sidebar-toggle.j2' %}
     <section class="ap--content">
       <h1>The AMP component catalogue</h1>
 

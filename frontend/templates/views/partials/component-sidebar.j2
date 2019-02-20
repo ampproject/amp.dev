@@ -1,44 +1,46 @@
 {% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
 
-<section class="ap--sidebar">
-  {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-  {% do doc.icons.useIcon('icons/categorymenu.svg') %}
-  {% do doc.icons.useIcon('icons/close.svg') %}
-  <label class="ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar" [class]="categorymenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar categorymenuopen' : 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar' && contentmenuopen ? 'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar contentmenuopen' :'ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar'" for="sidebar" on="tap:AMP.setState({categorymenuopen: !categorymenuopen})" role="categoriemenutrigger" tabindex="0">
-    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#categorymenu"></use></svg>
-    <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-  </label>
-  <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar">
+<amp-sidebar id="sidebar-left"
+  class="ap--ampsidebar"
+  layout="nodisplay"
+  side="left">
+  <nav toolbar="(min-width: 768px)"
+    toolbar-target="ap--sidebar-content">
+    <ul>
 
-  <div class="ap-o-component-sidebar">
-    {% include '/views/partials/format-toggle.j2' %}
+      <section>
+        <div class="ap-o-component-sidebar">
+          {% include '/views/partials/format-toggle.j2' %}
 
-    <div class="nav">
-      {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
-      {% set scope = namespace(initial=components[0].title[4]) %}
-      <ul class="nav-list level-1">
-        <li class="nav-item level-1 ">
-          <span class="nav-link">{{ scope.initial|upper }}</span>
-          <ul class="nav-list level-2">
-            {% for component in components %}
-            {% set initial = component.title[4] %}
-            {% if scope.initial != initial %}
-            {% set scope.initial = initial %}
-          </ul>
-        </li>
-        <li class="nav-item level-1 ">
-          <span class="nav-link">{{ scope.initial|upper }}</span>
-          <ul class="nav-list level-2">
-            {% endif %}
-            {% set formats = component.formats or [] %}
-            <li class="nav-item level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
-              <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+          <div class="nav">
+            {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
+            {% set scope = namespace(initial=components[0].title[4]) %}
+            <ul class="nav-list level-1">
+              <li class="nav-item level-1 ">
+                <span class="nav-link">{{ scope.initial|upper }}</span>
+                <ul class="nav-list level-2">
+                  {% for component in components %}
+                  {% set initial = component.title[4] %}
+                  {% if scope.initial != initial %}
+                  {% set scope.initial = initial %}
+                </ul>
+              </li>
+              <li class="nav-item level-1 ">
+                <span class="nav-link">{{ scope.initial|upper }}</span>
+                <ul class="nav-list level-2">
+                  {% endif %}
+                  {% set formats = component.formats or [] %}
+                  <li class="nav-item level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
+                    <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </ul>
+  </nav>
+</amp-sidebar>
