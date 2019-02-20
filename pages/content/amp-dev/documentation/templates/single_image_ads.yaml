@@ -1,4 +1,4 @@
-$title: Single Image Story Ads
+$title: Single Image Story Ad
 $view: /views/detail/template-detail.j2
 $category: Story Ads
 $order: 5
@@ -10,6 +10,6 @@ teaser:
     src: '/static/img/templates/single-image-template.gif'
     width: 9
     height: 16
-    alt: Single Image Story Ads
+    alt: Single Image Story Ad
 
   download_url: '/static/files/templates/single-image-ads.zip'
