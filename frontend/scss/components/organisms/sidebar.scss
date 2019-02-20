@@ -31,6 +31,11 @@ nav[toolbar] {
   &::-webkit-scrollbar-thumb {
     background-color: color('oslo-gray');
   }
+
+  & > ul {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .#{utility('ampsidebar')} {
