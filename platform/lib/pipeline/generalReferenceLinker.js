@@ -53,8 +53,18 @@ class ComponentReferenceLinker {
 
       stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
+        // Write missing references in file
+
+        let referenceText = 'Missing references: ' + this._missingReferences.length;
+        for (const reference of this._missingReferences) {
+          referenceText = referenceText + '\n\n' + reference.document + '\n-> ' + reference.result + '\n-> Type: ' + reference.link.type + ' - Name: ' + reference.link.name;
+        }
+        fs.writeFile(POD_BASE_PATH + 'content/missing.txt', referenceText, (err) => {
+          if (err) throw err;
+        });
+
         this._log.complete('Linked all component references!');
-        this._log.complete('Missing: ', this._missingReferences.length);
+        this._log.complete('Saved ', this._missingReferences.length, ' missing references in content/missing.txt');
         resolve();
       });
     });

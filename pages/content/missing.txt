@@ -1,0 +1,312 @@
+Missing references: 77
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-amphtml-email.md
+-> [AMP CORS](/docs/fundamentals/amp-cors-requests.html)
+-> Type: component - Name: amp-cors-requests
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa@es.md
+-> [Descubre cómo se hace](/es/docs/integration/amp-in-pwa.html)
+-> Type: component - Name: amp-in-pwa
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa@id.md
+-> [Berikut caranya](/id/docs/integration/amp-in-pwa.html)
+-> Type: component - Name: amp-in-pwa
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa@pt_BR.md
+-> [Saiba como fazer isso](/pt_br/docs/integration/amp-in-pwa.html)
+-> Type: component - Name: amp-in-pwa
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md
+-> [AMP cache](/docs/fundamentals/how_cached.html)
+-> Type: tutorial - Name: how_cached
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md
+-> [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html)
+-> Type: component - Name: amp-boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md
+-> [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html)
+-> Type: component - Name: amp-boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md
+-> [AMP-in-PWA](/docs/integration/pwa-amp/amp-in-pwa.html))
+-> Type: component - Name: amp-in-pwa
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md
+-> [AMP runtime](/docs/fundamentals/spec.html#amp-runtime)
+-> Type: component - Name: amp-runtime
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
+-> [AMP runtime](/docs/fundamentals/spec.html#amp-runtime)
+-> Type: component - Name: amp-runtime
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
+-> [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
+-> [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@es.md
+-> [tiempo de ejecución de AMP](/docs/fundamentals/spec.html#amp-runtime)
+-> Type: component - Name: amp-runtime
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@es.md
+-> [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/es/advanced_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@es.md
+-> [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@es.md
+-> [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@id.md
+-> [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@id.md
+-> [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@ja.md
+-> [AMP HTML 広告仕様](/ja/docs/ads/a4a_spec.html)に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@ja.md
+-> [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@pt_BR.md
+-> [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@pt_BR.md
+-> [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@zh_CN.md
+-> [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)制作广告。要寻求灵感并查看示例，请参阅 [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale)
+-> Type: component - Name: amp-dev
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@zh_CN.md
+-> [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@zh_CN.md
+-> [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads)
+-> Type: component - Name: amp-ads
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md
+-> [dynamic AMP components](/docs/reference/components.html#dynamic-content)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up@es.md
+-> [componentes AMP dinámicos](/es/docs/reference/components.html#conteido-dinámico)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up@id.md
+-> [`<amp-state>`](/id/docs/reference/components/amp-bind.html#state)
+-> Type: component - Name: amp-state
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up@id.md
+-> [komponen AMP dinamis](/id/docs/reference/components.html#dynamic-content)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up@pt_BR.md
+-> [componentes AMP dinâmicos](/pt_br/docs/reference/components.html#dynamic-content)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md
+-> [page](https://ampbyexample.com/samples_templates/comment_section/preview/)
+-> Type: example - Name: preview
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout@es.md
+-> [demostraciones de diseños de AMP](/es/docs/design/amp-html-layout/layouts_demonstrated.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout@id.md
+-> [Mendemonstrasikan tata letak AMP](/id/docs/design/amp-html-layout/layouts_demonstrated.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout@ko.md
+-> [AMP 레이아웃 시연](/ko/docs/design/amp-html-layout/layouts_demonstrated.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout@pt_BR.md
+-> [Demonstração de layouts AMP](/pt_br/docs/design/amp-html-layout/layouts_demonstrated.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design@es.md
+-> [media components](/es/docs/reference/components.html#contenido-multimedia)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md
+-> [Add styles to a page](/docs/design/responsive_amp.html#add-styles-to-a-page))
+-> Type: tutorial - Name: responsive_amp
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages@es.md
+-> [Agregar estilos a una página](/es/docs/design/responsive_amp.html#add-styles-to-a-page))
+-> Type: tutorial - Name: responsive_amp
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages@id.md
+-> [Tambahkan gaya ke halaman](/id/docs/design/responsive_amp.html#add-styles-to-a-page))
+-> Type: tutorial - Name: responsive_amp
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages@ja.md
+-> [ページへのスタイルの追加に関する記事](/ja/docs/design/responsive_amp.html#add-styles-to-a-page)
+-> Type: tutorial - Name: responsive_amp
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages@ko.md
+-> [페이지에 스타일 추가](/ko/docs/design/responsive_amp.html#add-styles-to-a-page)
+-> Type: tutorial - Name: responsive_amp
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages@pt_BR.md
+-> [Adicionar estilos a uma página](/pt_br/docs/design/responsive_amp.html#add-styles-to-a-page))
+-> Type: tutorial - Name: responsive_amp
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad.md
+-> [AMPHTML ad spec](/docs/ads/a4a_spec.html#allowed-amp-extensions-and-builtins)
+-> Type: component - Name: amp-extensions-and-builtins
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up@id.md
+-> ["Mengonversi HTML menjadi AMP"](/id/docs/fundamentals/converting.html))
+-> Type: tutorial - Name: converting
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
+-> [AMP Boilerplate Generator](https://ampbyexample.com/boilerplate/)
+-> Type: example - Name: boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
+-> [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html)
+-> Type: component - Name: amp-boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup@es.md
+-> [código de plantilla de AMP](/es/docs/fundamentals/spec/amp-boilerplate.html)
+-> Type: component - Name: amp-boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup@id.md
+-> [Kode boilerplate AMP](/id/docs/fundamentals/spec/amp-boilerplate.html)
+-> Type: component - Name: amp-boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup@pt_BR.md
+-> [código de modelo AMP](/pt_br/docs/fundamentals/spec/amp-boilerplate.html)
+-> Type: component - Name: amp-boilerplate
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
+-> [HTML Tags in the specification](/docs/fundamentals/spec.html#html-tags))
+-> Type: tutorial - Name: spec
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors@es.md
+-> [Integrar tus herramientas de analíticas con AMP](/es/docs/analytics/integrating-analytics.html)
+-> Type: tutorial - Name: integrating-analytics
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors@id.md
+-> [Mengintegrasikan fitur analisis dengan AMP](/id/docs/analytics/integrating-analytics.html)
+-> Type: tutorial - Name: integrating-analytics
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors@ko.md
+-> [애널리틱스 도구를 AMP와 통합](/ko/docs/analytics/integrating-analytics.html)
+-> Type: tutorial - Name: integrating-analytics
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors@pt_BR.md
+-> [integrar ferramentas de análise às AMP](/pt_br/docs/analytics/integrating-analytics.html)
+-> Type: tutorial - Name: integrating-analytics
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics@ja.md
+-> [AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID](/ja/docs/analytics/analytics_basics.html#user-identification)
+-> Type: component - Name: amp-var-substitutions
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics@tr.md
+-> [amp-analitik bileşen](/tr/docs/reference/components/amp-analytics.html)
+-> Type: component - Name: amp-analitik
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics@tr.md
+-> [amp-analitik referansı](/tr/docs/reference/components/amp-analytics.html)
+-> Type: component - Name: amp-analitik
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index@tr.md
+-> [amp-analitik spesifikasyonu](/tr/docs/reference/components/amp-analytics.html)
+-> Type: component - Name: amp-analitik
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
+-> [AMP
+components](/docs/reference/components.html)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
+-> [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@ar.md
+-> [مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@es.md
+-> [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@fr.md
+-> [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@fr.md
+-> [spécification du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@id.md
+-> [spesifikasi AMP](/id/docs/fundamentals/spec.html)
+-> Type: tutorial - Name: spec
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@id.md
+-> [komponen
+AMP](/id/docs/reference/components.html)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@id.md
+-> [spesifikasi AMP](/id/docs/fundamentals/spec.html))
+-> Type: tutorial - Name: spec
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@id.md
+-> [spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@it.md
+-> [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@pt_BR.md
+-> [especificações das AMP](/pt_br/docs/fundamentals/spec.html)
+-> Type: tutorial - Name: spec
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@pt_BR.md
+-> [componentes
+AMP](/pt_br/docs/reference/components.html)
+-> Type: tutorial - Name: components
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@pt_BR.md
+-> [especificações das AMP](/pt_br/docs/fundamentals/spec.html))
+-> Type: tutorial - Name: spec
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@pt_BR.md
+-> [Especificações do sistema de layout de HTML para AMP](/pt_br/docs/design/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@pt_BR.md
+-> [Especificações do sistema de layout do HTML para AMP](/pt_br/docs/design/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@ru.md
+-> [спецификации](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@tr.md
+-> [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
+
+../pages/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@tr.md
+-> [AMP HTML düzeni sistem spesifikasyonunda](/docs/reference/spec/amp-html-layout.html)
+-> Type: component - Name: amp-html-layout
