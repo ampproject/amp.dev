@@ -45,6 +45,10 @@ If the user navigates to your AMP pages on your origin (as opposed to the first 
 
 If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
 
+[tip type="default"]
+**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.html).
+[/tip]
+
 ### Installing the AMP Service Worker
 
 Install the AMP Service Worker with minimal steps:
@@ -94,7 +98,7 @@ AMP_SW.init(
 
 You are able to customize the caching strategy and define a deny list.
 
- Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
+Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
 
 [sourcecode:html]
 <a href=`....` data-rel=`prefetch` />
