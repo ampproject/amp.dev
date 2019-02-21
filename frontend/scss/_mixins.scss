@@ -40,6 +40,10 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.12);
 }
 
+@mixin  slider-button-shadow {
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
+}
+
 @mixin turbo-pizazz {
 	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
 }
