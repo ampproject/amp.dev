@@ -1,6 +1,6 @@
 ---
 $title: Advertise in AMP Stories
-$order: 13
+$order: 3
 formats:
   - stories
 author: CrystalOnScript
