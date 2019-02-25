@@ -73,7 +73,7 @@ separate from a web page, that extends the browsers features by caching requests
 Building a service worker from scratch is possible but time consuming. 
 Libraries like Workbox help, but AMP goes one step further by offering the [AMP Service Worker](https://github.com/ampproject/amp-sw), 
 in which AMP automates a lot of steps directly, including the caching of AMP Scripts, assets and documents
-and implements common best practices such as [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
+as well as implementing common best practices such as [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
 The AMP Service Worker automatically [caches AMP scripts](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) 
 and [documents](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) as user requests them, after installing it. 
