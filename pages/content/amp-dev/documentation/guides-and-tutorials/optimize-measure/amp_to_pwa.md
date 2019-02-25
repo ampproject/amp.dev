@@ -71,8 +71,9 @@ Add a file titled `manifest.json` to your repository with the following code:
 A service worker is a script that your browser runs in the background, 
 separate from a web page, that extends the browsers features by caching requests to improve performance and providing offline functionality. 
 Building a service worker from scratch is possible but time consuming. 
-Libraries like Workbox help, but AMP goes one step further by offering the [AMP Service Worke](https://github.com/ampproject/amp-sw)r, 
-in which AMP automates a lot of steps directly, including the caching of AMP Scripts, assets and documents.
+Libraries like Workbox help, but AMP goes one step further by offering the [AMP Service Worker](https://github.com/ampproject/amp-sw), 
+in which AMP automates a lot of steps directly, including the caching of AMP Scripts, assets and documents
+and implements common best practices such as [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
 The AMP Service Worker automatically [caches AMP scripts](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) 
 and [documents](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) as user requests them, after installing it. 
@@ -101,15 +102,17 @@ Place the required script tag in the head of `index.html` and the `<amp-install-
 …
 <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 …
-</head>
-<body>
+...
    <amp-install-serviceworker src="/sw.js"
            data-iframe-src="install-sw.html"
            layout="nodisplay">
    </amp-install-serviceworker>
-...
+</body>
 [/sourcecode]
 
+[tip type="important"]
+ **Important –** The service worker must be served from the root directory (`/serviceworker.js`) to be able to cache all the content of your site.
+ [/tip]
 
 The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file. 
 Create the `install-sw.html` file and add the following code:
@@ -188,6 +191,22 @@ AMP_SW.init({
      }
 });
 [/sourcecode]
+
+# Test your PWA
+
+You can test that your AMP Service Worker is caching necessary assets and providing an ideal offline solution through [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps).
+
+We'll test Lyrical Lyghtning by opening the DevTools panel by hitting `Ctrl + Shift + I` on Windows or `Cmd + Opt + I` on Mac. You can also right click the page and select `inspect` from the menu. Then select `Application` to view your service worker registration.
+
+{{ image('	../../../../../static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghting PWA' ) }}
+
+Click the `offline` box to switch into offline mode. Click the `see full lineup` link and navigate to `offline.html` to check if they were properly cached and prefetched. 
+
+
+[tip type="default"]
+ **Tip –** For a thorough analysis of a Progressive Web App's features, run [Google's Lighhouse tool](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) to generate a report. 
+ [/tip]
+
 
 # Congratulations! 
 
