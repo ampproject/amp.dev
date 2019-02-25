@@ -15,7 +15,7 @@ This tutorial will teach you how to turn an AMP site into an installable PWA wit
 
 # Download and run the starter code 
 
-Download the [starter code here](../../../../../static/files/tutorials/amptopwa.zip).
+Download the [starter code here](/static/files/tutorials/amptopwa.zip).
 
 Use a local web server to preview the website.
 
@@ -26,7 +26,7 @@ Use a local web server to preview the website.
 You should be able to view the landing page for Lyrical Lightning, the Mobile Music Magic festival. 
 It has one link on the homepage to view the schedule and which stage the bands are on. 
 
-{{ image('	../../../../../static/img/docs/tutorials/tut-lyricallyghtning.png', 582, 557, alt='Image of PWA' ) }}
+{{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
 Users of our site may have spotty network connectivity at the event when they'll likely want to access the schedule. 
 This makes a great candidate to turn it into a PWA that can be installed to our user's home screen, and provides all critical functionality even when offline. 
@@ -176,7 +176,7 @@ This enables users to view pages offline even if they haven't visited them yet. 
 To deal with unexpected cases or clicks on links to pages that we didn't prefetch, 
 we'll add an offline page to offer a consistent user experience that is "on brand", 
 as opposed to showing the generic browser offline page. 
-Download [`offline.html` here](../../../../../static/files/tutorials/offline.zip) and update `sw.js` to the following code:
+Download [`offline.html` here](/static/files/tutorials/offline.zip) and update `sw.js` to the following code:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
@@ -198,7 +198,7 @@ You can test that your AMP Service Worker is caching necessary assets and provid
 
 We'll test Lyrical Lyghtning by opening the DevTools panel by hitting `Ctrl + Shift + I` on Windows or `Cmd + Opt + I` on Mac. You can also right click the page and select `inspect` from the menu. Then select `Application` to view your service worker registration.
 
-{{ image('	../../../../../static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghting PWA' ) }}
+{{ image('/static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghtning PWA' ) }}
 
 Click the `offline` box to switch into offline mode. Click the `see full lineup` link and navigate to `offline.html` to check if they were properly cached and prefetched. 
 
