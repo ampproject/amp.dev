@@ -30,7 +30,7 @@
     z-index: 3;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
+    @include slider-button-shadow;
     transition: 400ms;
     overflow: hidden;
     background: #F3F3F3;
