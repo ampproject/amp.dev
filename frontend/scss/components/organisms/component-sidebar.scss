@@ -38,6 +38,15 @@ nav[toolbar] {
   }
 }
 
+.#{utility('ampsidebar')} {
+  max-width: 100vw;
+  @media (max-width: 767px) {
+    nav {
+      width: 100vw;
+    }
+  }
+}
+
 .#{organism('component-sidebar')} {
   @include sidebar;
 
