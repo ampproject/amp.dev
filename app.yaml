@@ -1,7 +1,9 @@
-runtime: nodejs8
+runtime: nodejs
+env: flex
 
-handlers:
-- url: /.*
-  secure: always
-  redirect_http_response_code: 301
-  script: auto
+instance_class: B4_1G
+manual_scaling:
+  instances: 2
+
+network:
+  instance_tag: default-service

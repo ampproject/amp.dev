@@ -21,7 +21,7 @@ class SplitPane {
     this.container = container;
     const children = container.children;
     if (children.length !== 3) {
-      console.error('webui-splitpane must have three children: left, handle, right');
+      console.error('splitpane must have three children: left, handle, right');
       return;
     }
     // init panes & drag handle

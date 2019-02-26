@@ -1,6 +1,9 @@
 ---
 $title: AMP Stories
 $view: /views/overview/what-is-amp.j2
+
+benefits: !g.yaml /content/shared/data/benefits.yaml
+
 stories:
   - image: /static/img/stories/story-cnn.jpg
     immage_alt@: The Missions Still Exploring Our Solar System
@@ -150,75 +153,39 @@ stories:
 
     <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-developers">
 
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/code-architecture.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code-architecture"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Create beautiful and engaging content easily</span>
-          <span class="ap-m-benefit-text-copy">AMP stories make the production of stories as easy as possible from a technical perspective.</span>
-        </div>
-      </div>
+      {% for benefit in doc.benefits.stories.developer %}
 
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/components.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#components"></use></svg>
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('icons/'+ benefit.icon + '.svg') %}
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
+          </div>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
+            <span class="ap-m-benefit-text-copy"> {{ benefit.text }} </span>
+          </div>
         </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Creative flexibility for editorial freedom and branding</span>
-          <span class="ap-m-benefit-text-copy">The AMP stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content.</span>
-        </div>
-      </div>
 
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/share.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Sharable and linkable on the open web</span>
-          <span class="ap-m-benefit-text-copy">AMP stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem.</span>
-        </div>
-      </div>
-
+    {% endfor %}
     </div>
 
     <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
 
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/storytelling.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#storytelling"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Track and measure</span>
-          <span class="ap-m-benefit-text-copy">Supports analytics and bookend capabilities for viral sharing and monetization.</span>
-        </div>
-      </div>
 
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/speedometer.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speedometer"></use></svg>
-        </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Fast loading times</span>
-          <span class="ap-m-benefit-text-copy">AMP stories are lightening fast so that your audience stays engaged and entertained.</span>
-        </div>
-      </div>
+      {% for benefit in doc.benefits.stories.business %}
 
-      <div class="ap-m-benefit">
-        <div class="ap-m-benefit-icon">
-          {% do doc.icons.useIcon('icons/pie-chart-money.svg') %}
-          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pie-chart-money"></use></svg>
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('icons/'+ benefit.icon + '.svg') %}
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
+          </div>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
+            <span class="ap-m-benefit-text-copy"> {{ benefit.text }} </span>
+          </div>
         </div>
-        <div class="ap-m-benefit-text">
-          <span class="ap-m-benefit-text-headline">Immersive storytelling</span>
-          <span class="ap-m-benefit-text-copy">AMP stories is a new and modern way to reach existing readers.</span>
-        </div>
-      </div>
+
+      {% endfor %}
 
     </div>
 

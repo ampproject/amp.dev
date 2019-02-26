@@ -42,6 +42,7 @@ import detectRuntime from './runtime/detector.js';
 import addSplitPaneBehavior from './split-pane/base.js';
 import formatter from './formatter/';
 import analytics from './analytics';
+import embedMode from './embed-mode/';
 
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
@@ -49,7 +50,7 @@ import './request-idle-callback/base.js';
 analytics.init();
 
 // create editing/preview panels
-const editor = Editor.createEditor(document.getElementById('source'));
+const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
@@ -152,13 +153,23 @@ const previewPanel = document.getElementById('preview');
 const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
   params.push('preview', true);
   previewPanel.classList.add('show');
+  if (embedMode.isActive) {
+    hidePreviewFab.show();
+  }
 });
-const closeButton = document.getElementById('preview-header-close');
-closeButton.addEventListener('click', () => {
+
+const closePreview = () => {
   params.push('preview', false);
   previewPanel.classList.remove('show');
   showPreview.show();
-});
+  if (embedMode.isActive) {
+    hidePreviewFab.hide();
+  }
+};
+const hidePreviewFab = new Fab(document.body, '✕&#xFE0E;', closePreview);
+const hidePreviewButton = document.getElementById('preview-header-close');
+hidePreviewButton.addEventListener('click', closePreview);
+
 // load template dialog
 const loadTemplateButton = Button.from(
     document.getElementById('document-title'),

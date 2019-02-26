@@ -18,11 +18,14 @@
 
 const signale = require('signale');
 const express = require('express');
-const compression = require('compression');
+const shrinkRay = require('shrink-ray-current');
 const ampCors = require('amp-toolbox-cors');
+const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
-
+const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
+
+const WWW_PREFIX = 'www.';
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
@@ -56,10 +59,37 @@ class Platform {
         }, next);
       });
     }
-
-    this.server.use(compression());
-    this.server.use(defaultCachingStrategy);
+    this.server.use(shrinkRay());
+    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
+    this.server.use((request, response, next) => {
+      // don't optimize sample source or preview
+      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.path)) {
+        next();
+        return;
+      }
+      ampOptimizer(request, response, next);
+    });
+    this.server.use((req, res, next) => {
+      if (req.hostname.startsWith(WWW_PREFIX)) {
+        res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
+      } else {
+        next();
+      }
+    });
+    this.server.use((req, res, next) => {
+      if (req.hostname === 'localhost') {
+        return next();
+      }
+      setNoSniff(res);
+      setHsts(res);
+      setXssProtection(res);
+      if (req.headers['x-forwarded-proto'] === 'https') {
+        return next();
+      }
+      res.redirect('https://' + req.hostname + req.path);
+    });
     this._enableCors();
+    this.server.use(defaultCachingStrategy);
 
     this._check();
     this._registerRouters();
