@@ -19,15 +19,18 @@ const gulp = require('gulp');
 const through = require('through2');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 
 // Which documents to check for broken references
+/* eslint-disable max-len */
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
 const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components';
 const TUTORIAL_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
 const EXAMPLE_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/examples';
+/* eslint-enable max-len */
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -54,17 +57,26 @@ class ComponentReferenceLinker {
       stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
         // Write missing references in file
-
         let referenceText = 'Missing references: ' + this._missingReferences.length;
         for (const reference of this._missingReferences) {
-          referenceText = referenceText + '\n\n' + reference.document + '\n-> ' + reference.result + '\n-> Type: ' + reference.link.type + ' - Name: ' + reference.link.name;
+          referenceText = referenceText.concat(
+              '\n\n',
+              reference.document,
+              '\n-> ',
+              reference.result,
+              '\n-> Type: ',
+              reference.link.type,
+              ' - Name: ',
+              reference.link.name
+          );
         }
         fs.writeFile(POD_BASE_PATH + 'content/missing.txt', referenceText, (err) => {
           if (err) throw err;
         });
 
         this._log.complete('Linked all component references!');
-        this._log.complete('Saved ', this._missingReferences.length, ' missing references in content/missing.txt');
+        this._log.complete('Saved ', this._missingReferences.length,
+            ' missing references in content/missing.txt');
         resolve();
       });
     });
@@ -125,7 +137,9 @@ class ComponentReferenceLinker {
       return {};
     }
 
+    /* eslint-disable max-len */
     const exampleMatch = result.match(/ampbyexample\.com\/((?:[^\/]+\/)*)([^\/]+)\/\)/m);
+    // eslint-disable-next-line no-unused-vars
     const [example, path, exampleName] = exampleMatch || [];
     if (exampleName) {
       return {'type': 'example', 'name': exampleName, 'text': linkText.text, 'id': linkText.id};
@@ -146,8 +160,10 @@ class ComponentReferenceLinker {
     if (tutorialName) {
       return {'type': 'tutorial', 'name': tutorialName[0], 'text': linkText.text, 'id': linkText.id};
     }
+    /* eslint-enable max-len */
     return {};
   }
+
   _linkText(result) {
     const section = result.match(/#\w*(-.*)?(?=\))/gm);
     const sectionId = ((section !== null) ? section[0].replace(/\s/g, '') : '');
@@ -173,9 +189,11 @@ class ComponentReferenceLinker {
   }
 
   _hash(str) {
-    const hash = str.split('').reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
-    return hash;
+    const hash = crypto.createHash('sha1');
+    hash.update(str);
+    return hash.digest('base64');
   }
+
   _createPlaceholder(result, newReference) {
     const placeholder =`<!--${this._hash(result)}-->`;
     if (!this._placeholders[placeholder]) {
@@ -187,8 +205,8 @@ class ComponentReferenceLinker {
   _getFiles(dir, files_) {
     files_ = files_ || [];
     const files = fs.readdirSync(dir);
-    for (const i in files) {
-      const name = dir + '/' + files[i];
+    for (const file of files) {
+      const name = dir + '/' + file;
       if (fs.statSync(name).isDirectory()) {
         this._getFiles(name, files_);
       } else {
@@ -197,11 +215,14 @@ class ComponentReferenceLinker {
     }
     return files_;
   }
+
   _fileExistsAtPath(link, src) {
     let path = undefined;
     const existingFiles = this._getFiles(src);
     for (const filePath of existingFiles) {
+      // eslint-disable-next-line max-len
       if (filePath.toLowerCase().includes(`/${link.name}.html`) || filePath.toLowerCase().includes(`/${link.name}.md`)) {
+        // eslint-disable-next-line max-len
         path = filePath.replace(POD_BASE_PATH + 'content/amp-dev/documentation/', '');
       }
     }
@@ -209,6 +230,7 @@ class ComponentReferenceLinker {
   }
 
   _getReferencePath(link, basePath) {
+    // eslint-disable-next-line max-len
     return `${link.text}({{g.doc('/content/amp-dev/documentation/${basePath}', locale=doc.locale).url.path}}${link.id})`;
   }
 }

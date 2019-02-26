@@ -19,11 +19,13 @@ const gulp = require('gulp');
 const through = require('through2');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 
 // Which documents to check for broken references
+// eslint-disable-next-line max-len
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md';
 const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components/';
 
@@ -62,13 +64,10 @@ class ComponentReferenceLinker {
   }
 
   _link(doc) {
-    return this._check(doc);
-  }
-
-  _check(doc) {
     let content = doc.contents.toString();
 
     // Cut out code Examples to avoid errors in replacement process
+    // eslint-disable-next-line max-len
     const codeExamples = content.match(/(<(amp-[^\s]+)(?:\s[^>]*)?>([^`]*)?<\/\2>|```html(.*?)*?```|```css(.*?)*?```|Preview:(.*?)*?<\/amp-\w*(-\w*)*\>|<script(.*?)><\/script>|<!--([^<]*)?-->|\[sourcecode:\w*](.*?)*?\[\/sourcecode]|<pre>(.*?)\/pre>)/gms);
     if (codeExamples !== null) {
       for (let i = 0; i < codeExamples.length; i++) {
@@ -80,7 +79,7 @@ class ComponentReferenceLinker {
     // Check html tables for amp-component names and replace with html placeholder
     const tableExamples = [
       content.match(/\<a href=".*?\/amp-\w*?(-\w*?)*.*?">.*?amp-\w*?(-\w*?)*?.*?<\/a>/gm),
-      content.match(/\<code>.*?amp-\w*?(-\w*)*.*?\/code>/gm)
+      content.match(/\<code>.*?amp-\w*?(-\w*)*.*?\/code>/gm),
     ];
     for (let i = 0; i < tableExamples.length; i++) {
       const results = Array.from(new Set(tableExamples[i]));
@@ -89,7 +88,7 @@ class ComponentReferenceLinker {
         const component = result.match(/amp-\w*(-\w*)*/g)[0];
         if (this._componentExist(component) === true) {
           while (content.includes(result)) {
-            let placeholder = this._createTablePlaceholder(component);
+            const placeholder = this._createTablePlaceholder(component);
             content = content.replace(result, placeholder);
           }
         }
@@ -97,6 +96,7 @@ class ComponentReferenceLinker {
     };
 
     // Check document for amp-components and replace with md placeholder
+    /* eslint-disable max-len */
     const cases = [
       content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
       content.match(/\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
@@ -108,25 +108,29 @@ class ComponentReferenceLinker {
       content.match(/\[(.*)?amp-\w*(-\w*)*.*]\(.*\)/gm),
       content.match(/\`<amp-\w*(-\w*)*>`/gm),
       content.match(/\`amp-\w*(-\w*)*`/gm),
-      content.match(/amp-\w*(-\w*)*./gm)
+      content.match(/amp-\w*(-\w*)*./gm),
     ];
+    /* eslint-enable max-len */
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
       console.log({results});
 
       for (let j = 0; j < results.length; j++) {
-        let result = results[j];
+        const result = results[j];
 
         // Continue when component name is found in existing path
-        if (result.slice(-1) === '/' || result.slice(-1) === '.' || result.slice(-1) === '>') {
-          continue
+        // eslint-disable-next-line max-len
+        if (result.slice(-1) === '/' || result.slice(-1) === '.' || result.slice(-1) === '>') {
+          continue;
         } else {
           const component = result.match(/amp-\w*(-\w*)*/g)[0];
-          const linkDescription = result.match(/(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g)
-          let description = ((linkDescription !== null) ? linkDescription[0].replace(component, `\`${component}\``) : `\`${component}\``)
+          const linkDescription = result.match(/(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g);
+          // eslint-disable-next-line max-len
+          const description = ((linkDescription !== null) ? linkDescription[0].replace(component, `\`${component}\``) : `\`${component}\``);
           if (this._componentExist(component) === true) {
             while (content.includes(result)) {
-              let placeholder = ((i === cases.length-1) ? this._createPlaceholder(component, description) + ' ' : this._createPlaceholder(component, description));
+              // eslint-disable-next-line max-len
+              const placeholder = ((i === cases.length-1) ? this._createPlaceholder(component, description) + ' ' : this._createPlaceholder(component, description));
               content = content.replace(result, placeholder);
             }
           }
@@ -155,10 +159,10 @@ class ComponentReferenceLinker {
     return doc;
   }
 
-
   _hash(str) {
-    const hash = str.split('').reduce((prevHash, currVal) => (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
-    return hash;
+    const hash = crypto.createHash('sha1');
+    hash.update(str);
+    return hash.digest('base64');
   }
 
   _createPlaceholder(component, description) {
@@ -186,17 +190,15 @@ class ComponentReferenceLinker {
   }
 
   _componentPath(component) {
-    /* eslint-disable max-len */
+    // eslint-disable-next-line
     const path = `({{g.doc('/content/amp-dev/documentation/components/reference/${component}.md', locale=doc.locale).url.path}})`;
     return `[\`${component}\`]${path}`;
-    /* eslint-enable max-len */
   }
 
   _tableComponentPath(component) {
-    /* eslint-disable max-len */
+    // eslint-disable-next-line
     const path = `{{g.doc('/content/amp-dev/documentation/components/reference/${component}.md', locale=doc.locale).url.path}}`;
     return `<a href="${path}"><code>${component}</code></a>`;
-    /* eslint-enable max-len */
   }
 
   _componentExist(component) {
