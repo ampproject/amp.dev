@@ -10,23 +10,23 @@
     {% endif %}
 
     <div class="ap-m-teaser-card">
-      {% set teaser = teaser_doc.teaser or {} %}
+      {% set teaser = teaser or teaser_doc.teaser or {} %}
       {% if teaser.image %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-img class="ap--media" src="{{ teaser.image.src }}" layout="responsive" width="1" height="1" alt="{{ teaser.image.alt }}"></amp-img>
       </div>
-      {% elif teaser.kpi %}
+      {% elif teaser.figure %}
       {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-      <div class="ap-m-kpi ap-m-kpi-{{ teaser_doc.destination }} ap-m-teaser-kpi ap-m-teaser-kpi-{{ teaser_doc.destination }}">
-          <div class="ap-m-kpi-content ap-m-kpi-{{ teaser_doc.formats[0] }}">
-          {% if teaser.kpi.icon %}
-          {% do doc.icons.useIcon('icons/' + teaser.kpi.icon + '.svg') %}
+      <div class="ap-m-kpi ap-m-kpi-{{ teaser_doc.formats[0] }}">
+        <div class="ap-m-kpi-content">
+          {% if teaser.icon %}
+          {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
           <div class="ap-a-ico ap-m-kpi-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.kpi.icon }}"></use></svg>
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
           </div>
           {% endif %}
-          <span class="ap-m-kpi-number">{{ teaser.kpi.title }}</span>
-          <span class="ap-m-kpi-text">{{ teaser.kpi.text }}</span>
+          <span class="ap-m-kpi-number">{{ teaser.figure }}</span>
+          <span class="ap-m-kpi-text">{{ teaser.description }}</span>
         </div>
       </div>
       {% endif %}
