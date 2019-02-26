@@ -18,8 +18,12 @@
 
 @import '../templates/_default.scss';
 
+body {
+  background-color: color('whisper');
+}
+
 .#{template('component-detail')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
