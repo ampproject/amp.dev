@@ -7,7 +7,7 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/templates/single-video.gif'
+    src: '/static/img/templates/single_video.gif'
     width: 9
     height: 16
     alt: Video
