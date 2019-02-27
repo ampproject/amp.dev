@@ -15,7 +15,7 @@ Text atom could be used almost everywhere.
 It has multiple size modifiers (more could be added below).
 
 */
-@mixin bg-docs { background: color('whisper'); }
+@mixin bg-docs { background-color: color('whisper'); }
 
 @mixin color-black { color: color('black'); }
 @mixin color-blue-ribbon { color: color('blue-ribbon'); }

@@ -18,25 +18,29 @@
 
 @import '../templates/_default.scss';
 
+body {
+  background-color: color('whisper');
+}
+
 .#{template('component-detail')} {
-  @include bg-docs;
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
   }
-  
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
-  
+
   .#{utility('toc')} {
     @include toc;
   }
-  
+
   .#{utility('sidebar')} + .#{utility('content')},
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
