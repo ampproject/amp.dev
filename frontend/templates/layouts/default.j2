@@ -24,7 +24,12 @@
     {% block head %}
     <meta charset="utf-8"/>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>{{ doc.title }}</title>
+    {# If there is a special title use that one without a postfix #}
+    {% if doc.titles('title') != doc.title %}
+    <title>{{ doc.titles('title') }}</title>
+    {% else %}
+    <title>{{ doc.title }} - AMP</title>
+    {% endif %}
     {% if podspec.env.name == 'development' %}
     <link rel="shortcut icon" href="/static/img/favicon-local.png"/>
     {% else %}
@@ -125,7 +130,7 @@
     {% if podspec.env.name == 'staging' or podspec.env.name == 'development' %}
     {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
     <div class="ap-m-banner" style="position: fixed; bottom: 0; z-index: 999; width: 100%; background: #C8114D;">
-      This is a staging version of 
+      This is a staging version of
       <a href="http://amp.dev" class="ap-m-banner-link">
         https://amp.dev
       </a> [{{ podspec.env.name|upper }}].
