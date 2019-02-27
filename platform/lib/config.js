@@ -24,7 +24,7 @@ const utils = require('@lib/utils');
 
 const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
-const GROW_OUT_DIR = '../platform/pages';
+const GROW_OUT_DIR = utils.project.absolute('../platform/pages');
 
 class Config {
   constructor(environment = 'development') {
@@ -39,9 +39,10 @@ class Config {
     this.options = mri(process.argv.slice(2));
 
     // Synchronously write podspec for Grow to run flawlessly later in pipeline.
-    // Check if running inside GAE as writes are not permitted there
-    if (!process.env.GAE_SERVICE) {
+    try {
       this._configureGrow();
+    } catch (err) {
+      // writes are not permitted on GAE or in a container
     }
   }
 

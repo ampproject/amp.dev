@@ -1,9 +1,0 @@
-runtime: nodejs
-env: flex
-
-instance_class: B4_1G
-manual_scaling:
-  instances: 2
-
-network:
-  instance_tag: default-service

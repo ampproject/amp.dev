@@ -1,0 +1,36 @@
+node_modules
+npm-debug.log
+
+.gcloudignore
+
+# If you would like to upload your .git directory, .gitignore file or files
+# from your .gitignore file, remove the corresponding line
+# below:
+.git
+.gitignore
+.github
+.cache
+
+node_modules/
+yarn.lock
+package-lock.json
+LICENSE
+MAINTENANCE.md
+README.md
+CONTRIBUTING.md
+
+# The complete frontend, pages and examples packages aren't needed on App Engine
+frontend/
+pages/
+!platform/pages
+/examples
+
+# playground: ignore everything except the dist folder
+playground/*
+!playground/backend
+!playground/dist
+
+# boilerplate: ignore everything except the dist folder
+boilerplate/*
+!boilerplate/backend
+!boilerplate/dist
