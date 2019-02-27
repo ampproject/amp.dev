@@ -17,7 +17,7 @@ contributors:
 
 Use the `srcset` attribute to control an element’s assets
 based on varying media expressions.
-In particular, use it for all [`amp-img`](/docs/reference/components/amp-img.html) tags
+In particular, use it for all [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tags
 to specify which image assets to use based on varying screen sizes.
 
 In this simple example,

@@ -74,7 +74,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 のサイトでは [Sass](http://sass-lang.com/) を使用しています（[Grow](http://grow.io/) を使用して、 [ampproject.org](https://www.ampproject.org/) サイトを構成する静的な AMP ページを作成しています）。
 
 プリプロセッサを使用する場合は、追加する対象に特に注意を払い、ページで使用するものだけを読み込むようにしてください。たとえば、[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-には、必要なすべての AMP マークアップと、`*.scss` ソースファイルからのインラインの CSS を含めます。また、サイトの多くのページで埋め込みの YouTube 動画を使用できるように、[`amp-youtube`](/ja/docs/reference/components/amp-youtube.html) のカスタム要素のスクリプトも指定します。
+には、必要なすべての AMP マークアップと、`*.scss` ソースファイルからのインラインの CSS を含めます。また、サイトの多くのページで埋め込みの YouTube 動画を使用できるように、[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) のカスタム要素のスクリプトも指定します。
 
 [sourcecode:html]{% raw %}
 <head>

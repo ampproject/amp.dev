@@ -21,13 +21,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 AMP is a technology commonly known for developing super fast web pages on mobile clients. AMP is in fact a set of HTML tags backed by JavaScript that allow all kinds of functionality with a focus on performance and security.
 
 There are [AMP components](https://www.ampproject.org/docs/reference/components) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMP components that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email message.
 
-<div class="noshowtoc">
 
 **Contents**
 
@@ -49,7 +46,6 @@ There are [AMP components](https://www.ampproject.org/docs/reference/components)
 * [FAQ](#faq)
 * [Feedback & Support](#feedback--support)
 
-</div>
 
 ## The AMPHTML Email Format
 
@@ -93,30 +89,30 @@ The following is a proposed list of AMP components that are supported in AMP ema
 
 | Element | Description |
 | ------- | ----------- |
-| [`<amp-form>`](https://www.ampproject.org/docs/reference/components/amp-form) | Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with `<template type="amp-mustache">` to render a response. |
-| [`<amp-selector>`](https://www.ampproject.org/docs/reference/components/amp-selector) | A multi-select widget for use within a form. |
-| [`<amp-bind>` and `<amp-state>`](https://www.ampproject.org/docs/reference/components/amp-bind) | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.<br><br>`<amp-state>` is used to remotely fetch the initial state machine values.<br><br>**Note:** It is prohibited to bind to `[href]` or `[src]`. It is also prohibited to use the `AMP.print`, `AMP.navigateTo` and `AMP.goBack` actions. |
-| [`<amp-list>`](https://www.ampproject.org/docs/reference/components/amp-list) | Remotely fetches JSON data that will be rendered by an [`<amp-mustache>`](https://www.ampproject.org/docs/reference/components/amp-mustache).<br><br>**Note:** Binding to the `[src]` attribute is not allowed. Including user credentials with `credentials="include"` is also prohibited. |
-| [`<template type="amp-mustache">`](https://www.ampproject.org/docs/reference/components/amp-mustache) | A Mustache template markup to render the results of an `amp-list` call. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}"><code>amp-form</code></a>  | Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with `<template type="amp-mustache">` to render a response. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}"><code>amp-selector</code></a>  | A multi-select widget for use within a form. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state"><code>amp-bind</code></a>  and <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state"><code>&lt;amp-state&gt;</code></a>  | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.<br><br><a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state"><code>&lt;amp-state&gt;</code></a> is used to remotely fetch the initial state machine values.<br><br>**Note:** It is prohibited to bind to `[href]` or `[src]`. It is also prohibited to use the `AMP.print`, `AMP.navigateTo` and `AMP.goBack` actions. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}"><code>amp-list</code></a>  | Remotely fetches JSON data that will be rendered by an <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}"><code>amp-mustache</code></a> .<br><br>**Note:** Binding to the `[src]` attribute is not allowed. Including user credentials with `credentials="include"` is also prohibited. |
+| [`<template type="amp-mustache">`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) | A Mustache template markup to render the results of an <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}"><code>amp-list</code></a> call. |
 
 ### Layout
 
 | Element | Description |
 | ------- | ----------- |
-| [`<amp-accordion>`](https://www.ampproject.org/docs/reference/components/amp-accordion)| A UI element that facilitates showing/hiding different sections. |
-| [`<amp-carousel>`](https://www.ampproject.org/docs/reference/components/amp-carousel) | A carousel UI component. |
-| [`<amp-sidebar>`](https://www.ampproject.org/docs/reference/components/amp-sidebar) | A sidebar for navigational purposes. |
-| [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) | A lightbox for containing images. |
-| [`<amp-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-lightbox) | A lightbox for containing content. |
-| [`<amp-fit-text>`](https://www.ampproject.org/docs/reference/components/amp-fit-text) | A helper component for fitting text within a certain area. |
-| [`<amp-timeago>`](https://www.ampproject.org/docs/reference/components/amp-timeago) | Provides a convenient way of rendering timestamps. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}}"><code>amp-accordion</code></a> | A UI element that facilitates showing/hiding different sections. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>  | A carousel UI component. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}"><code>amp-sidebar</code></a>  | A sidebar for navigational purposes. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}"><code>amp-image-lightbox</code></a>  | A lightbox for containing images. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>  | A lightbox for containing content. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}"><code>amp-fit-text</code></a>  | A helper component for fitting text within a certain area. |
+| <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-timeago.md', locale=doc.locale).url.path}}"><code>amp-timeago</code></a>  | Provides a convenient way of rendering timestamps. |
 
 ### Media
 
 | Element | Description |
 | ------- | ----------- |
-| [`<amp-img>`](https://www.ampproject.org/docs/reference/components/amp-img) | An AMP component that replaces `<img>`.<br><br>**Note:** Binding to `[src]` is not allowed. |
-| [`<amp-anim>`](https://www.ampproject.org/docs/reference/components/amp-anim) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed. |
+| [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) | An AMP component that replaces `<img>`.<br><br>**Note:** Binding to `[src]` is not allowed. |
+| [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed. |
 
 ## CSS requirements
 
@@ -192,9 +188,9 @@ amp_email.html
 
 This section provides some AMPHTML Email code examples.
 
-### Basic usage of `<amp-list>`
+### Basic usage of `amp-list`
 
-The following is a fictional email that includes an updated list of featured products retrieved from an endpoint. This example shows the basic usage of [`<amp-list>`](https://www.ampproject.org/docs/reference/components/amp-list).
+The following is a fictional email that includes an updated list of featured products retrieved from an endpoint. This example shows the basic usage of [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}).
 
 [sourcecode:html]
 {% raw %}<!doctype html>
@@ -228,9 +224,9 @@ The following is a fictional email that includes an updated list of featured pro
 </html>
 {% endraw %}[/sourcecode]
 
-### Basic usage of `<amp-bind>`
+### Basic usage of `amp-bind`
 
-The following is a fictional email that shows interactivity features by using [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind).
+The following is a fictional email that shows interactivity features by using [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 [sourcecode:html]
 <!doctype html>
@@ -259,6 +255,7 @@ The following is a fictional email that shows interactivity features by using [`
 </body>
 </html>
 [/sourcecode]
+
 ## Adding AMP to existing emails
 
 Email is structured as a [MIME tree](https://en.wikipedia.org/wiki/MIME). This MIME tree contains the message body and any attachments to the email.
@@ -404,7 +401,7 @@ No.
 
 ##### Will [AMP Variable Substitution](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) be supported?
 
-No. They are mainly used in `amp-analytics` and `amp-pixel`, that are not supported in AMPHTML Email. In addition, page URLs used for variable substitution do not apply to emails.
+No. They are mainly used in [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) and [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}), that are not supported in AMPHTML Email. In addition, page URLs used for variable substitution do not apply to emails.
 
 ##### Will `AMP.navigateTo(url=STRING)` be supported?
 

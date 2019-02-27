@@ -52,7 +52,7 @@ $title: レスポンシブな AMP ページを作成する
 
 <a id="fn1"></a>
 [tip type="note"]
-*** "width=100%" スタイルを使って要素を簡単にサイズ変更できるのに、要素をサイズ変更して画面にフィットさせる処理が複雑である理由: **  レスポンシブな要素を、パフォーマンス指標やユーザーの利便性に悪影響を与えずにページに表示する処理が、複雑な部分になります。"width=100%" を指定すれば簡単に画像を画面にフィットさせることができますが、パフォーマンスへの影響が生じます。ブラウザは、まず画像をダウンロードして画像のサイズを取得し、次に画面サイズに合わせて画像をサイズ変更したうえで、ページをリフローおよび再描画する必要があります。AMP ではレンダリング パスが最適化されており、まずページのレイアウトが行われ、その際に amp-img で指定されたサイズに基づいて画像のプレースホルダが確保され（その値を使用してアスペクト比を算出）、次にリソースがダウンロードされて、ページが描画されます。リフローは不要となっています。
+*** "width=100%" スタイルを使って要素を簡単にサイズ変更できるのに、要素をサイズ変更して画面にフィットさせる処理が複雑である理由: **  レスポンシブな要素を、パフォーマンス指標やユーザーの利便性に悪影響を与えずにページに表示する処理が、複雑な部分になります。"width=100%" を指定すれば簡単に画像を画面にフィットさせることができますが、パフォーマンスへの影響が生じます。ブラウザは、まず画像をダウンロードして画像のサイズを取得し、次に画面サイズに合わせて画像をサイズ変更したうえで、ページをリフローおよび再描画する必要があります。AMP ではレンダリング パスが最適化されており、まずページのレイアウトが行われ、その際に [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) で指定されたサイズに基づいて画像のプレースホルダが確保され（その値を使用してアスペクト比を算出）、次にリソースがダウンロードされて、ページが描画されます。リフローは不要となっています。
 [/tip]
 
 ## ページに合わせたメディアの拡大縮小
@@ -65,7 +65,7 @@ $title: レスポンシブな AMP ページを作成する
 
 ##### 例: YouTube 動画を埋め込む
 
-以下の例では、埋め込んだ YouTube 動画を、端末の画面のサイズと向きに合わせて表示します。`amp-youtube` 要素に `"layout=responsive"` を追加することで、動画はウィンドウに収まるようにサイズ変更され、指定された `width` と `height` に沿ってアスペクト比が保たれます。
+以下の例では、埋め込んだ YouTube 動画を、端末の画面のサイズと向きに合わせて表示します。[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 要素に `"layout=responsive"` を追加することで、動画はウィンドウに収まるようにサイズ変更され、指定された `width` と `height` に沿ってアスペクト比が保たれます。
 
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div> <div placeholder></div> </amp-iframe></div>

@@ -6,11 +6,9 @@ formats:
   - stories
 ---
 
-
-
 ## Overview
 
-If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`. This will enable your customers to view traffic patterns for their AMP HTML pages.
+If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). This will enable your customers to view traffic patterns for their AMP HTML pages.
 
 ## Before you begin
 
@@ -20,11 +18,11 @@ Before you can add your analytics service to AMP HTML runtime, you may need to:
 * Identify the triggers that result in analytics requests being sent from a page that would be relevant for your service.
 * Consider if and how you will [track users across](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) first-party and third-party AMP contexts.
 * Determine how your analytics dashboard handles AMP traffic.
-* Identify any missing functionality in `amp-analytics`, and [file requests](https://github.com/ampproject/amphtml/issues/new) for needed features.
+* Identify any missing functionality in [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), and [file requests](https://github.com/ampproject/amphtml/issues/new) for needed features.
 * AMP Analytics sends its variables to a preconfigured endpoint.  If you do not already have an existing endpoint, review [this sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) for an overview on how to build one.
   * For all transport types except `iframe`, variables are sent as query string parameters in a HTTPS request.
   * For the `iframe` transport type, an iframe is created and variables are sent to it via `window.postMessage`. In this case, the message need not be a URL. This option is available only to MRC-accredited vendors.
-* Consider how integration with `amp-analytics` may impact any policies (particularly your privacy policy) or agreements you may have.
+* Consider how integration with [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) may impact any policies (particularly your privacy policy) or agreements you may have.
 
 ## Adding your configuration to the AMP HTML runtime
 
@@ -47,16 +45,14 @@ reference.
 1. Update your service's usage documentation and inform your customers.
 1. It's highly recommended to maintain [an integration test outside AMP repo](../../3p/README.md#adding-proper-integration-tests).
 
-
-
 ## Tag Managers
 
 Tag management services have two options for integrating with AMP Analytics:
 
-* **Endpoint approach:** Acting as the an additional endpoint for `amp-analytics`, and conducting marketing management in the backend.
+* **Endpoint approach:** Acting as the an additional endpoint for [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), and conducting marketing management in the backend.
 * **Config approach:** Conducting tag management via a dynamically generated JSON config file unique to each publisher.
 
-The endpoint approach is the same as the standard approach detailed in the previous section.  The config approach consists of creating a unique configuration for amp-analytics that is specific to each publisher and includes all of their compatible analytics packages.  A publisher would include the configuration using a syntax similar to this:
+The endpoint approach is the same as the standard approach detailed in the previous section.  The config approach consists of creating a unique configuration for [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) that is specific to each publisher and includes all of their compatible analytics packages.  A publisher would include the configuration using a syntax similar to this:
 
 [sourcecode:html]
   <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json">
@@ -73,5 +69,5 @@ To take this approach, review the documentation for publishers' integration with
  * [comScore](https://github.com/ampproject/amphtml/pull/1608)
  * [Parsely](https://github.com/ampproject/amphtml/pull/1595)
 * [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
-* [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics) reference documentation
-* [amp-analytics variables](analytics-vars.md) reference documentation
+* [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) reference documentation
+* [`amp-analytics` variables]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) reference documentation

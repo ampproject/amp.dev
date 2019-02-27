@@ -12,7 +12,7 @@ $title: حالات الاستخدام
 
 ## تتبع مشاهدات الصفحة
 
-تعرّف على كيفية تتبع مشاهدات الصفحة باستخدام <span dir="ltr" class="nowrap">`amp-pixel`</span> و<span dir="ltr" class="nowrap">`amp-analytics`</span>.
+تعرّف على كيفية تتبع مشاهدات الصفحة باستخدام <span dir="ltr" class="nowrap">[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})</span> و<span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span>.
 
 ### باستخدام <span dir="ltr" class="nowrap">amp-pixel</span>
 
@@ -26,7 +26,7 @@ $title: حالات الاستخدام
 ### باستخدام <span dir="ltr" class="nowrap">amp-analytics</span> - لا مورّد
 
 أرسل بيانات مشاهدة الصفحة إلى عنوان URL محدّد باستخدام
-[<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html):
+[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -75,7 +75,7 @@ $title: حالات الاستخدام
 ## تتبع النقرات على الصفحة
 
 تعرّف على كيفية تتبع النقرات على الصفحة باستخدام
-[<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html)،
+[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})،
 وإرسال بيانات الحدث إلى عنوان URL محدّد، وإلى
 [<span dir="ltr" class="nowrap">Google Analytics</span>](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -142,7 +142,7 @@ $title: حالات الاستخدام
 
 ## تتبع التمرير
 
-تتبع التمرير عبر الصفحة باستخدام [<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html).
+تتبع التمرير عبر الصفحة باستخدام [<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 يستخدم النموذج التالي السمة `scrollspec` لإرسال حدث `scroll`
 إلى عنوان URL المحدّد عند التمرير عبر الصفحة رأسيًا بنسبة 25%، و50%، و90%.
 يتم تنشيط الحدث كذلك عند التمرير عبر الصفحة أفقيًا

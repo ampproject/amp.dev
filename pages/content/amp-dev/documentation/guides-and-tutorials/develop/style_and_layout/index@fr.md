@@ -22,11 +22,11 @@ Créez des images responsives en indiquant leur largeur et leur hauteur, en déf
 </amp-img>
 [/sourcecode]
 
-Cet élément `amp-img` s'adapte automatiquement à la largeur de son élément conteneur, et sa hauteur est définie automatiquement sur le format déterminé par la largeur et la hauteur données :
+Cet élément [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) s'adapte automatiquement à la largeur de son élément conteneur, et sa hauteur est définie automatiquement sur le format déterminé par la largeur et la hauteur données :
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857"></amp-img>
 
-Voir aussi [amp-img sur AMP by Example](https://ampbyexample.com/components/amp-img/).
+Voir aussi [`amp-img` sur AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ## Ajouter des styles à une page
 
@@ -95,7 +95,7 @@ Renseignez-vous sur les [mises en page compatibles avec les pages AMP]({{g.doc('
 Utilisez le validateur AMP pour tester les valeurs du CSS et de la mise en page de votre page.
 
 Le validateur confirme que le CSS de votre page n'excède pas la limite de 50 000 octets, vérifie qu'il ne contient pas de styles interdits et s'assure de la compatibilité de la mise en page de votre page ainsi que de son bon formatage.
-Consultez aussi la liste complète des [erreurs de style et de mise en page](/fr/docs/troubleshooting/validation_errors.html#erreurs-de-style-et-de-mise-en-page).
+Consultez aussi la liste complète des [erreurs de style et de mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#erreurs-de-style-et-de-mise-en-page).
 
 Exemple d'erreur dans la console pour une page avec un CSS qui dépasse la limite de 50 000 octets :
 

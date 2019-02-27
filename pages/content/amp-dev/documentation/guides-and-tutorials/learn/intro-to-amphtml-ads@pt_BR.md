@@ -21,7 +21,7 @@ Por que os anúncios HTML para AMP são melhores que os anúncios tradicionais?
 
 ### Formatos
 
-Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos formatos de criativos, como carrossel, paralaxe e lightbox, entre outros. Para começar, aproveite os modelos de anúncio HTML para AMP de código aberto no site [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads).
+Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos formatos de criativos, como carrossel, paralaxe e lightbox, entre outros. Para começar, aproveite os modelos de anúncio HTML para AMP de código aberto no site [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -46,7 +46,7 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Veiculação de anúncios HTML para AMP em páginas AMP', caption='Veiculação de anúncios HTML para AMP em páginas AMP', align='' ) }}
 
-1.  Os editores inserem um espaço de anúncio na página AMP por meio da tag [`<amp-ad>`](/pt_br/docs/reference/components/amp-ad.html), especificando a rede de publicidade que querem usar.
+1.  Os editores inserem um espaço de anúncio na página AMP por meio da tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), especificando a rede de publicidade que querem usar.
 1.  O ambiente de tempo de execução de AMP envia uma solicitação de anúncio à rede de publicidade especificada para recuperar o anúncio. As redes de publicidade que veiculam anúncios HTML para AMP oferecem uma [implementação do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) que valida e assina o criativo. 
 1.  A rede de publicidade responde com o anúncio HTML para AMP e o ambiente de tempo de execução de AMP renderiza o anúncio na página AMP.
 
@@ -66,7 +66,7 @@ Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, e
 
 ### Agências de criação
 
-As agências de criação precisam criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP](/pt_br/docs/ads/a4a_spec.html). Para ver exemplos e se inspirar, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Como alternativa, use uma das seguintes ferramentas para criar os anúncios HTML para AMP:
+As agências de criação precisam criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para ver exemplos e se inspirar, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Como alternativa, use uma das seguintes ferramentas para criar os anúncios HTML para AMP:
 
 *  [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -74,7 +74,7 @@ As agências de criação precisam criar os anúncios de acordo com as [Especifi
 
 ### Redes e servidores de anúncios
 
-Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma extensão `amp-ad` para sua rede que use a [implementação de solicitação de anúncio Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) se você ainda não tiver uma.  Consulte o artigo sobre [integração com AMP para veicular anúncios gráficos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}) para ver mais detalhes.  Tenha em mente que não é necessário fazer uma integração especial para veicular HTML para AMP em páginas não AMP.
+Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma extensão [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) para sua rede que use a [implementação de solicitação de anúncio Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) se você ainda não tiver uma.  Consulte o artigo sobre [integração com AMP para veicular anúncios gráficos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}) para ver mais detalhes.  Tenha em mente que não é necessário fazer uma integração especial para veicular HTML para AMP em páginas não AMP.
 
 ## Criar anúncios HTML para AMP
 
@@ -112,15 +112,15 @@ Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no s
 
 #### Os anúncios HTML para AMP são compatíveis com verificação e detecção de visibilidade de terceiros?
 
-Sim, há compatibilidade nativa para verificação e detecção de visibilidade usando [`amp-analytics`](/pt_br/docs/reference/components/amp-analytics.html). Por exemplo, o ActiveView do Google integra-se dessa maneira. Há também outros fornecedores, como a MOAT, que vêm implementando ativamente essa compatibilidade.
+Sim, há compatibilidade nativa para verificação e detecção de visibilidade usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Por exemplo, o ActiveView do Google integra-se dessa maneira. Há também outros fornecedores, como a MOAT, que vêm implementando ativamente essa compatibilidade.
 
 #### Os anúncios HTML para AMP são compatíveis com animação baseada em linha do tempo?
 
-Sim. Consulte [`amp-animation`](/pt_br/docs/reference/components/amp-animation.html).
+Sim. Consulte [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}).
 
 #### A maioria dos anúncios tem regiões-alvo ativadas por toque e saídas de anúncio configuráveis. Os anúncios HTML para AMP têm um mecanismo semelhante?
 
-Sim. Consulte [`amp-ad-exit`](/pt_br/docs/reference/components/amp-ad-exit.html).
+Sim. Consulte [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}).
 
 #### Não encontro o que preciso. Onde posso tirar dúvidas?
 

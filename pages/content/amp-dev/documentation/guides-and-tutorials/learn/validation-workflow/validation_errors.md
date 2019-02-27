@@ -87,7 +87,7 @@ The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
 but doesn't find its equivalent `<script>`.
 
-[Extended components](/docs/reference/components.html)
+[Extended components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 must be explicitly included in the AMP document as custom elements.
 To fix these errors, navigate to the extended component's reference page,
 copy its required script, and paste it into the AMP document `<head>`.
@@ -866,7 +866,7 @@ Disallowed attributes for layout types are described in the
 This error occurs when the attribute value is invalid for the specified layout.
 To understand what triggers this error,
 you need to familiarize yourself with
-the [different behaviors of layouts](/docs/design/responsive/control_layout.html#size-and-position-elements).
+the [different behaviors of layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements).
 
 Let's say you set the layout to be `fixed-height` and
 you include numeric values for both `height` and `width`.
@@ -910,7 +910,7 @@ designed to include templates, for example,
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates
 (see also
-[Use CSS preprocessors](/docs/design/responsive/style_pages.html#use-css-preprocessors)).
+[Use CSS preprocessors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)).
 
 ### Attribute contains template syntax
 

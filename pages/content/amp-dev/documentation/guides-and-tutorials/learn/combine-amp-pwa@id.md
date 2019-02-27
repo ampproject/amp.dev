@@ -28,7 +28,7 @@ Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang me
 
 Strategi yang bagus adalah membuat pintu masuk ke situs sebagai halaman AMP, lalu menyiapkan PWA di belakang layar dan beralih untuk perjalanan selanjutnya.
 
-Baca lebih lanjut: Pelajari cara [menghubungkan AMP ke PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) melalui `amp-install-serviceworker`.
+Baca lebih lanjut: Pelajari cara [menghubungkan AMP ke PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) melalui [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}).
 
 ## AMP sebagai sumber data untuk PWA
 

@@ -754,7 +754,7 @@ CSS 내 @ 규칙을 말합니다.
 
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
-[레이아웃 제어 방법](/ko/docs/design/responsive/control_layout.html) 및
+[레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
 [AMP HTML 레이아웃 시스템 사양](/ko/docs/design/amp-html-layout.html)을 참조하시기 바랍니다.
 
 **참고:** 레이아웃을 지정하지 않고
@@ -812,7 +812,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
-[레이아웃 제어 방법](/ko/docs/design/responsive/control_layout.html) 및
+[레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
 [AMP HTML 레이아웃 시스템 사양](/ko/docs/design/amp-html-layout.html)을 참조하시기 바랍니다.
 
 ### 지정된 레이아웃에서 허용되지 않는 속성
@@ -902,7 +902,7 @@ AMP 페이지는 템플릿 구문을 포함할 수 없습니다.
 소스 파일에서 생성된 결과에
 템플릿이 포함되어 있지 않다면
 소스 파일에 템플릿을 포함해도 괜찮습니다.
-[CSS 프리프로세서 사용](/ko/docs/design/responsive/style_pages.html#use-css-preprocessors) 방법을 참조하세요.
+[CSS 프리프로세서 사용]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors) 방법을 참조하세요.
 
 ### 속성에 템플릿 구문 포함
 

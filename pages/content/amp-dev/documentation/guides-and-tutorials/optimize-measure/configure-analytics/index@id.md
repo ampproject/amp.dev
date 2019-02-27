@@ -50,4 +50,3 @@ perangkat, atau browser (lihat juga [Penggantian variabel](/id/docs/analytics/an
 Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
 
 [/tip]
-

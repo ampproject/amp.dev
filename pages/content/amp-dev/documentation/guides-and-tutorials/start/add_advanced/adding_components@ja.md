@@ -10,7 +10,7 @@ $title: 拡張 AMP コンポーネントを追加する
 
 - **試験運用コンポーネント**: リリースされているが、まだ一般公開する前の段階にあるコンポーネント。デベロッパーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。詳しくは、[試験運用機能](/ja/docs/reference/experimental.html)をご覧ください。
 
-「[HTML を AMP に変換する](/ja/docs/fundamentals/converting.html)」チュートリアルのサンプルでは、組み込みコンポーネントの [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) を使用し、このコンポーネントと AMP レイアウト システムの関係について解説しました。ここでは、一般に広く使用されているいくつかの**拡張** AMP コンポーネントを新しい記事に追加してみます。
+「[HTML を AMP に変換する],[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).url.path}}) を使用し、このコンポーネントと AMP レイアウト システムの関係について解説しました。ここでは、一般に広く使用されているいくつかの**拡張** AMP コンポーネントを新しい記事に追加してみます。
 
 ## 広告で収益化する
 
@@ -123,7 +123,7 @@ AMP ページに広告を掲載するには、[`amp-ad`]({{g.doc('/content/amp-d
 
 YouTube 動画の埋め込みについて詳しくは、[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})をご覧ください。
 
-ヒント: コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](/ja/docs/design/responsive/placeholders.html#fallbacks) 属性を使用します。
+ヒント: コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) 属性を使用します。
 
 ## ツイートを表示する
 Twitter に投稿されたツイートをそのまま埋め込む機能も、ニュース記事で広く使用されています。[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) コンポーネントを使用すると、この機能を簡単に実現できます。

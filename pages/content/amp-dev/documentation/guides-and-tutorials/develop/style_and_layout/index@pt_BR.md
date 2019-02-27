@@ -6,7 +6,7 @@ O estilo e o layout nas páginas AMP em HTML são muito semelhantes aos de pági
 
 No entanto, as AMP limitam o uso de CSS por motivos de desempenho e usabilidade ao mesmo tempo em que ampliam os recursos do design responsivo com recursos como [marcadores e substitutos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}), [direção artística avançada por meio de srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) e o [atributo de layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) para controlar melhor a forma que os elementos são exibidos.
 
-Dica: É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas](/pt_br/docs/design/responsive/responsive_design.html).
+Dica: É muito fácil tornar os elementos responsivos nas AMP. Simplesmente coloque `layout="responsive"` neles. Para saber mais sobre o design responsivo nas AMP, acesse [Criar páginas AMP responsivas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Veja o que a equipe da UpperQuad tem a dizer sobre a reforma do site AMPproject e os desafios de usar AMP pela primeira vez.']
 
@@ -81,7 +81,7 @@ Leia mais: Saiba mais sobre [a direção artística com srcset e tamanhos]({{g.d
 
 Use o validador de AMP para testar o CSS e os valores de layout da sua página.
 
-O validador confirma se o CSS da sua página não ultrapassa o limite de 50 mil bytes, verifica os estilos desativados e garante que o layout da página seja compatível e formatado corretamente. Veja também esta lista completa de [erros de estilo e layout](/pt_br/docs/troubleshooting/validation_errors.html#style-and-layout-errors).
+O validador confirma se o CSS da sua página não ultrapassa o limite de 50 mil bytes, verifica os estilos desativados e garante que o layout da página seja compatível e formatado corretamente. Veja também esta lista completa de [erros de estilo e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#style-and-layout-errors).
 
 Exemplo de erro no console de uma página com CSS que ultrapassa o limite de 50 mil bytes:
 

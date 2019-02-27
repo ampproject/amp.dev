@@ -4,21 +4,21 @@ $title: "Analytics: Temel Bilgiler"
 
 AMP analitik hakkında temel bilgileri öğrenmek için buraya tıklayın.
 
-## Amp-piksel veya amp-analitik kullanıyor musunuz?
+## `amp-pixel` veya `amp-analytics` kullanıyor musunuz?
 
 AMP analitik ve ölçüm ihtiyaçlarınızı karşılamak için iki bileşen kullanır:
-[amp-piksel](/docs/reference/components/amp-pixel.html) ve
-[amp-analitik](/docs/reference/components/amp-analytics.html).
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) ve
+[amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Her iki seçenek de tanımlı bir son noktaya analitik verileri gönderir.
 
 [Piksel izleme](https://en.wikipedia.org/wiki/Web_beacon#Implementation) gibi basit bir davranış arıyorsanız,
-`amp-pixel` bileşeni temel sayfa görünümü izlemesi sağlar;
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) bileşeni temel sayfa görünümü izlemesi sağlar;
 sayfa görünümü verileri tanımlı bir URL›ye gönderilir.
 Satıcıyla bazı entegrasyonlar bu bileşeni çağırabilir,
 bu durumda URL son noktası tam olarak belirlenir.
 
-En fazla analitik çözüm için, `amp-analytics` kullanın.
-`amp-analytics`‹de sayfa görünümü izleme de çalışır.
+En fazla analitik çözüm için, [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanın.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})‹de sayfa görünümü izleme de çalışır.
 Ancak,
 bağlantılara ve düğmelere tıklama dahil, kullanıcı katılımını herhangi bir sayfa içeriği türüyle izleyebilirsiniz.
 Ayrıca, kullanıcının sayfayı ne kadar kaydırdığını,
@@ -28,13 +28,13 @@ sosyal medyayla etkileşim kurup kurmadığını ve daha birçok özelliği öl�
 
 AMP platformu entegrasyonunun bir parçası olarak,
 sağlayıcılar
-verilerin toplanmasını ve izleme araçlarına gönderilmesini kolaylaştırmak amacıyla ön tanımlı `amp-analytics` yapılandırmaları sunmuştur.
+verilerin toplanmasını ve izleme araçlarına gönderilmesini kolaylaştırmak amacıyla ön tanımlı [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmaları sunmuştur.
 
-[Amp-analitik spesifikasyonu](/docs/reference/components/amp-analytics.html) bölümünden satıcı belgelerine erişebilirsiniz.
+[`amp-analytics` spesifikasyonu]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) bölümünden satıcı belgelerine erişebilirsiniz.
 
-Sayfalarınızda hem `amp-pixel` hem de`amp-analytics` kullanabilirsiniz:
-Basit sayfa görünümüz izleme için `amp-pixel`
-ve diğer her şey için `amp-analytics`.
+Sayfalarınızda hem [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) hem de[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanabilirsiniz:
+Basit sayfa görünümüz izleme için [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+ve diğer her şey için [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Aynı zamanda, her etiket için birden çok ekleyebilirsiniz.
 Birden çok analitik sağlayıcı ile çalışıyorsanız,
 her çözüm için bir etiket gerekir.
@@ -44,12 +44,12 @@ diğer bir deyişle, ekstra etiketlere ihtiyacınız yoksa kullanmayın.
 ## Basit bir analitik yapılandırması oluşturun
 
 Basit bir
-[amp-piksel](/docs/reference/components/amp-pixel.html) ve
-[amp-analitik](/docs/reference/components/amp-analytics.html) yapılandırmasının nasıl oluşturulacağını öğrenin.
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) ve
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmasının nasıl oluşturulacağını öğrenin.
 
 ### Basit bir amp-piksel yapılandırması
 
-Basit bir `amp-pixel` yapılandırması oluşturmak için,
+Basit bir [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) yapılandırması oluşturmak için,
 AMP sayfanızın gövdesine aşağıdakine benzer bir şey ekleyin:
 
 ```html
@@ -61,20 +61,20 @@ sayfa görünümü verileri rastgele bir sayıyla birlikte tanımlanan URL›ye 
 `RANDOM` değişkeni,
 [AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) bir tanesidir.
 
-[Değişken değiştirme](/tr/docs/analytics/analytics_basics.html#değişken-değiştirme) hakkında buradan daha fazla bilgi edinebilirsiniz.
+[Değişken değiştirme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}) hakkında buradan daha fazla bilgi edinebilirsiniz.
 
-[Amp-piksel](/docs/reference/components/amp-pixel.html) bileşeni yerleşiktir,
-böylece `amp-analytics` de dahil AMP›nin uzantılı bileşenlerinde olduğu gibi bir ekleme bildirimi gerekli değildir.
-`amp-pixel` etiketini
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) bileşeni yerleşiktir,
+böylece [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) de dahil AMP›nin uzantılı bileşenlerinde olduğu gibi bir ekleme bildirimi gerekli değildir.
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) etiketini
 `<body>` başına mümkün olduğunca yakın yerleştirmeniz gerekmektedir.
 İzleme pikseli yalnızca etiket kendini görüntülediğinde uyarı verecektir.
-`amp-pixel` sayfanın altına doğru yerleştirildiyse,
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) sayfanın altına doğru yerleştirildiyse,
 uyarı vermeyebilir.
 
 ### Basit amp-analitik yapılandırması
 
 Basit bir
-[amp-analytics](/docs/reference/components/amp-analytics.html) yapılandırması oluşturmak için,
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırması oluşturmak için,
 ilk önce bu `custom-element` bildirimini
 `<head>` AMP belgesine eklemeniz gerekir (ayrıca bkz.
 [Bileşen ekleme bildirimi](/docs/reference/components.html)):
@@ -83,7 +83,7 @@ ilk önce bu `custom-element` bildirimini
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Aşağıdaki örnek [`amp-pixel` örneği](/tr/docs/analytics/analytics_basics.html#basit-bir-amp-piksel-yapılandırması) ile benzerdir.
+Aşağıdaki örnek [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) ile benzerdir.
 Bir sayfa her görünür olduğunda,
 tetikleme etkinliği uyarı verir ve
 sayfa görüntüleme verilerini rastgele bir ID ile birlikte tanımlı URL›ye gönderir:
@@ -112,36 +112,36 @@ Sayfa görünür olduğunda
 (`visible` tetikleme anahtar kelimesinin kullanımıyla belirtildiği gibi),
 bir etkinlik tetiklenir ve `pageview` isteği gönderilir.
 Tetikleme sayfa görüntüleme isteği uyarısının ne zaman çıkacağını belirler.
-[İstekler ve tetikleme](/tr/docs/analytics/deep_dive_analytics.html#istek,-tetikleme-ve-taşıma) hakkında daha fazla öğrenin.
+[İstekler ve tetikleme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) hakkında daha fazla öğrenin.
 
 ## Değişken değiştirme
 
-Hem [amp-piksel](/docs/reference/components/amp-pixel.html) hem de
-[amp-analitik](/docs/reference/components/amp-analytics.html) bileşenleri
+Hem [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) hem de
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) bileşenleri
 standart URL değişken değiştirmelerin tamamına izin verir (bkz.
 [AMP HTML Değişken Değiştirme](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
 Aşağıdaki örnekte,
 sayfa görünümü isteği
 mevcut AMP belgelerinin standart URL›si, başlığı ve bir
-[istemci kimliği](/tr/docs/analytics/analytics_basics.html#kullanıcı-tanımlama) ile birlikte URL›ye gönderilir:
+[istemci kimliği]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}) ile birlikte URL›ye gönderilir:
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
-Basitliği nedeniyle, `amp-pixel` etiketi yalnızca platform tarafından tanımlanan veya AMP çalışma zamanının AMP sayfasından ayrıştırabileceği değişkenleri içerebilir. Yukarıdaki örnekte, platform hem
+Basitliği nedeniyle, [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) etiketi yalnızca platform tarafından tanımlanan veya AMP çalışma zamanının AMP sayfasından ayrıştırabileceği değişkenleri içerebilir. Yukarıdaki örnekte, platform hem
 `canonicalURL` hem de `clientId(site-user-id)` için değerler üretir.
-`amp-analytics` etiketi `amp-pixel` ile aynı değerleri,
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) etiketi [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) ile aynı değerleri,
 aynı zamanda etiket yapılandırması içerisinde özel olarak tanımlanan değişkenleri içerebilir.
 
 `${varName}` formatını bir sayfa
  ya da platform tanımlı değişken için bir istek dizesi içinde kullanın.
-`amp-analytics` etiketi, şablonu
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) etiketi, şablonu
 analitik isteğinin oluşturulduğu zamandaki gerçek değeri ile değiştirecektir (ayrıca bkz.
 [Amp-analitik içinde desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
 
-Aşağıdaki `amp-analytics` örneğinde,
-sayfa görünümü isteği, `amp-analytics` yapılandırması içerisinde
+Aşağıdaki [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) örneğinde,
+sayfa görünümü isteği, [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırması içerisinde
 bir kısmı platformdan
 bir kısmı da tanımlanan satır içinden gelen değişken değiştirmelerden çıkartılan
 ek verilerle birlikte
@@ -173,14 +173,14 @@ URL›ye gönderilir:
 
 Yukarıdaki örnekte,
 değişkenler `account` ve`title`
-`amp-analytics` yapılandırmasında tanımlanmıştır.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmasında tanımlanmıştır.
 `canonicalUrl` ve `clientId` değişkenleri yapılandırmada tanımlı değildir,
 bu nedenle değerleri platform tarafından değiştirilir.
 
 **Önemli:** Değişken değiştirme esnekliğe sahiptir;
 aynı değişken farklı lokasyonlarda tanımlanmış olabilir
 ve AMP çalışma zamanı öncelik sırasına bu değerleri ayrıştıracaktır
-(bkz. [Değişken değiştirme sıralaması](/tr/docs/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması)).
+(bkz. [Değişken değiştirme sıralaması]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 ## Kullanıcı tanımlama
 
