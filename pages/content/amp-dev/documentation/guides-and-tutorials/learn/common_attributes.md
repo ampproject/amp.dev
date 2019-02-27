@@ -6,8 +6,6 @@ toc: true
 
 AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the common attributes.
 
-[TOC]
-
 ## fallback
 
 A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element or that loading the underlying resource failed. The `fallback` attribute can be placed on any HTML element that is a direct child of an AMP element that supports fallbacks. The exact behavior with respect to the fallback is up to the element's implementation but typically the fallback element would be shown in place of the regular element.
@@ -43,7 +41,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
+For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 
 ## layout
 
@@ -60,7 +58,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Layout & Media queries]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
+For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
 
 ## media
 
@@ -153,7 +151,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/docs/design/responsive_amp/art_direction.md', locale=doc.locale).url.path}}).
+For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 
 ## width and height
 
@@ -169,6 +167,4 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Layout & Media queries]({{g.doc('/content/docs/design/responsive_amp/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).
-
-
+For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/docs/design/amp-html-layout.md', locale=doc.locale).url.path}}).

@@ -101,8 +101,8 @@ pour créer les données de configuration.
 Pour charger les configurations distantes, la première étape consiste à
 inclure l'attribut config dans la balise [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) :
 
-```js
-<[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) config="https://example.com/analytics.account.config.json">
+```html
+<amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
 L'étape suivante consiste à créer le contenu JSON qui réside dans l'URL distante.
