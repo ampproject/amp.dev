@@ -120,7 +120,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-자세한 내용은 [AMP 작업 및 이벤트]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [AMP 작업 및 이벤트]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})를 참조하세요.
 
 ## placeholder
 

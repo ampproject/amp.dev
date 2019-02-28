@@ -119,7 +119,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-詳しくは、[AMP のアクションとイベントについてのページ]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[AMP のアクションとイベントについてのページ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## placeholder
 
