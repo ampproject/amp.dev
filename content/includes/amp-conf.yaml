@@ -119,11 +119,6 @@ speakers:
     company: Instapage
     pic: /static/img/amp-conf/speakers/piotr.jpg
     bio: Piotr Dolistowski is a Senior Director of Engineering at Instapage where he leads the Front-end development team. A Full-Stack Developer with 11 years of experience, Pior implemented the UI-Kit based on Material Design using Sass and Angular. His team optimized the Instapage website and successfully implemented AMP on the blog. He is now using his learnings to implement AMP within the Instapage landing page platform.
-  sebastianbenz:
-    name: Sebastian Benz
-    company: Google
-    pic: /static/img/amp-conf/speakers/sebastian.jpg
-    bio:
   anandmariappan:
     name: Anand Mariappan
     company: Reddit
@@ -245,6 +240,101 @@ speakers:
     company: Marfeel
     bio:
     pic:
+  tomoyukisaito:
+    name: Tomoyuki Saito
+    company: Sunday Systems
+    bio:
+    pic:
+  melissadepuydt:
+    name: Melissa DePuydt
+    company: WaPo
+    bio:
+    pic:
+  andrewwatterson:
+    name: Andrew Watterson
+    company: Google
+    bio:
+    pic:
+  perrylally:
+    name: Perry Lally
+    company: Google
+    bio:
+    pic:
+  weihong:
+    name: Wei Hong
+    company: Google
+    bio:
+    pic:
+  kyunghokang: 
+    name: Kyungho Kang
+    company: Cafe24
+    bio:
+    pic:
+  jinhyoungkil:
+    name: Jinhyoung Kil
+    company: Cafe24
+    bio:
+    pic:
+  leviclancy:
+    name: Levi Clancy
+    company: YouGov
+    bio:
+    pic:
+  ballakhadang:
+    name: Balla Khadang
+    company: YouGov
+    bio:
+    pic:
+  jeffreyj:
+    name: Jeffrey Jose
+    company: Google
+    bio:
+    pic:
+  crystallambert: 
+    name: Crystal Lambert
+    company: Google
+    bio:
+    pic:
+  yusukeutsunomiya:
+    name: Yusuke Utsunomiya
+    company: Google
+    bio:
+    pic:
+  nainaraisinghani:
+    name: Naina Raisinghani
+    company: Google
+    bio:
+    pic:
+  andrearosalrebolledo:
+    name: Andrea Rosal Rebolledo
+    company: InEventos.com
+    bio:
+    pic:
+  hirohitokomada:
+    name: Hirohito Komada, Shigeki Otsu
+    company: Yahoo Japan
+    bio:
+    pic:
+  shigekiotsu:
+    name: Shigeki Otsu
+    company: Yahoo Japan
+    bio:
+    pic:
+  cristianronzio:
+    name: Cristian Ronzio
+    company: Musement Spa
+    bio:
+    pic:
+  hanspauwels:
+    name: Hans Pauwels
+    company: Tappable
+    bio:
+    pic:
+  benkim:
+    name: Ben Kim
+    company: iPrice Group
+    bio:
+    pic:
 
 
 agenda:
@@ -255,224 +345,147 @@ agenda:
       time: "0900"
       type: session
       speakers:
-        - paulbakaus
-        - bpalser
+        - crystallambert
+        - yusukeutsunomiya
     - title: Keynote
       time: "0915"
       type: keynote
-      speakers:
-        - davidbesbris
-        - malteubl
-        - lisawang
-        - aakashsahney
-      description: Tune in to see Dave, Malte and Lisa open our second AMP Conf with a highlight reel packed with exciting announcements and developments happening in the AMP ecosystem and AMP itself.
-    - title: Telling Stories with AMP
+      speaker: malteubl
+      description: Tune in to see Malte open our third AMP Conf with a highlight reel packed with exciting announcements and developments happening in the AMP ecosystem and AMP itself.
+    - title: "The glory of amp-script: Unleashing the kraken"
       time: "1000"
       type: session
-      speakers:
-        - jonnewmuis
-        - elitetruong
+      speaker: kbax
     - title: Coffee Break
       time: "1030"
-    - title: Parallax done...right?! – The story of bringing complex animations to AMP
-      time: "1100"
+    - title: "TBD"
+      description: "How EC-CUBE developed their AMP plugin and optimized it from merchant feedback: How they convereted their existing Twig component to AMP components, the strategy behind having AMP First mode and paried AMP mode and lessons learnt from actual adaption to live merchants."
+      time: "1110"
       type: session
-      speaker: alighassemi
-    - title: The Many Faces of AMP
-      description: Not just a content producer and publisher, The Washington Post has been rapidly adapting to changes in technology and the media industry. Arc Publishing -- our inhouse software-as-a-service business has been attracting bigger and bigger media players as clients. Because of Arc's rapid growth combined with industry focus on mobile speed and performance, our engineers have had the chance to implement Accelerated Mobile Pages for several publishers. This talk will highlight several different approaches to building AMP experiences on our platform, as well as, challenges of integrating AMP into our ecosystem of products and services.
+      speaker: tomoyukisaito
+    - title: "Growing Up AMP First: Everything I Know I Learned From AMP"
+      description: "Too often, engineers view AMP as just one more thing to implement. In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages. So, what happens when teams begin to think AMP first? Engineers are able to move beyond mere AMP validation and have a seat at the table in conversations about UX, performance, and even new feature development.  Does that sound crazy? It's not just a pipe dream. In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making.  I will draw on real-life experience and examples from my team's work with top publishers—including LA Times, El Pais, RTL.de, and a recent re-platforming effort at The Washington Post—and reveal how AMP can help teams align on goals and make better decisions at every level."
       time: "1130"
       type: session
-      speaker: kseniacoulter
-    - title: "Using AMP as a library to build user friendly sites"
-      description: Contrary to popular opinion, it's not only possible to build a whole site with AMP, it's rewarding as well! Learn how your development process will change when going all in on AMP, what tools are available and how to design responsively, from top to bottom.
+      speaker: melissadepuydt
+    - title: "The Life of a Component: Making AMP a Better Web for Everyone (including Developers!)"
+      description: AMP is here to improve the quality of web users’ daily experience - but how do we make that happen? A designer from the AMP team talks about how we go from feature requests to shipping components with great documentation. We draw up many versions of a feature to match the many ways AMP is used. We sit in cafes and ask people to talk to us about how they use the web, then we make changes we hope will better serve your users. And since you are *our* users, we want to talk to you about how you work and how future AMP components can make your sites even better.
       time: "1200"
       type: session
-      speakers:
-        - abbybeck
-        - andrebarrara
-        - jessanastasio
-    - title: "Q&A and Panel: Amazing Stories, told through AMP"
-      description: Ask the speakers of the previous talks any questions you have about storytelling, AMP Websites, animations and more in this special Q&A panel wrapping up this half-day theme.
-      time: "1230"
-      type: panel
-      moderator: paulbakaus
-      speakers:
-        - malteubl
-        - alighassemi
-        - kseniacoulter
-        - abbybeck
-        - andrebarrara
-        - jonnewmuis
+      speaker: andrewwatterson
     - title: Lunch
-      time: "1300"
-    - title: A new frontier for AMP
+      time: "1230"
+    - title: "amp.dev live!"
       time: "1400"
       type: session
-      description: |
-        AMP has drastically improved how people consume and interact with content on the mobile web. But there are many other places where users consume content. What if you could improve those experiences too?
-
-        Today, Google is announcing a new frontier for AMP -- one in which developers can use AMP to create more expressive and engaging experiences in one of the most important places to reach users. Join us to learn more and see what developers at three companies have built.
-      speakers:
-        - aakashsahney
-        - sethweisfeld
-        - matthiassuter
-        - michaelwuergler
-        - antonymalone
-    - title: "Fast by default: AMP powering WordPress"
-      time: "1445"
+      description: 
+      speaker: sebastianbenz
+    - title: "The Journey of a Retailer: Highs and Lows"
+      time: "1430"
       type: session
-      description: The WordPress AMP plugin, pioneered by Automattic, has enabled AMP for millions of sites, but there is still a lot of room for expanding its capabilities. To help the WordPress ecosystem push forward into a bright, fast, user-friendly future, Automattic, XWP, the AMP team and Google have formed a unique collaboration to bolster the plugin capabilities and enable full AMP experiences by default for WordPress sites. See the first results of our work here at AMP Conf!
-      speakers:
-        - albertomedina
-        - thierrymuller
-    - title: Chrome + AMP in 2018
+      description: Share an overarching George.com case study. From the upfront engineering and launch to measuring analytics (which can be difficult), I could sketch out a 30-min overview that encompasses what we learned and the outcomes we measured. This would be a good opportunity to make the connection that AMP and e-commerce works well – and without having to give up too much. George is a prominent brand that adopted AMP and our story would reinforce the industry-wide call to place the user’s experience at the heart of any digital strategy. I’d be willing to flesh this out, as needed. Walk through specific solutions that married AMP and e-commerce. We used a handful of components and techniques, including APIs, to ensure real-time pricing and inventory, as well as cart integration. I’d be able to discuss in more granularity how we addressed some of the common concerns – or misconceptions – about what’s achievable with AMP, with an e-commerce bent.
+      speaker: perrylally
+    - title: "AMP Stories: The Story so far"
       description: The Chrome and AMP teams have big, collaborative plans for this year. Come see our plans to improve developers’ lives and workflows, how we’re going to make AMP more straightforward for publishers, and how users will benefit from our work. We’ll show demos, describe how we’re going to deliver, and leave you with a clear picture of AMP on the Open Web in 2018.
-      time: "1515"
+      time: "1500"
       type: session
       speakers:
-        - bengalbraith
-        - somogyi
+        - jonnewmuis
+        - weihong
     - title: Coffee Break
-      time: "1545"
-    - title: "Progressive Web AMPs: The story so far (feat. the new BMW.com by JvM, and WompMobile)"
-      description: In this hour long special, Eric, PM on the AMP team, will walk through the latest progress with the AMP+PWA combinations patterns and the industry trends we're seeing. Afterwards the BMW.com team at famous creative agency Jung von Matt will enter the stage to show you in detail how they've build a magical new experience for BMW with the power of AMP and PWA. Finally, Madison of WompMobile will venture into the nitty gritty and talk numbers with some of the client sites he's built.
+      time: "1530"
+    - title: "Providing AMP service to tens of thousands of ecommerce sites"
+      description: Ask the speakers of the previous talks any questions you have about WordPress, Chrome, PWAs and more in this special Q&A panel wrapping up this half-day theme.
       time: "1615"
       type: session
       speakers:
-        - ericlindley
-        - thomasfeldhaus
-        - peerweidner
-        - matthiasrohmer
-        - madisonminer
-    - title: "Q&A & Panel: Advancing the web, for platforms and publishers"
-      description: Ask the speakers of the previous talks any questions you have about WordPress, Chrome, PWAs and more in this special Q&A panel wrapping up this half-day theme.
-      time: "1715"
-      type: panel
-      moderator: bpalser
+        - kyunghokang
+        - jinhyoungkil
+    - title: "No power, no internet, no government: How AMP helps in Iraq and war-impacted regions"
+      description: Living in Erbil, one of my focuses with AMP is deploying web applications that can thrive in war-impacted regions. By combining AMP with Progressive Web Apps, I have found some best practices (such as creative use of AMP lists and AMP forms) for making products that bring important content and excellent experiences to the most unstable regions with unreliable connections, where sometimes the most important messages cannot reach people on social media because of poor/no signal, blocking of social media, trolls that systematically take down progressive Facebook pages, and the threat of jail time just for what might show up on your feed if you have Facebook on your phone. Hosting content and using AMP to deliver content efficiently circumvents many of these obstacles.
+      time: "1630"
+      type: session
       speakers:
-        - albertomedina
-        - thierrymuller
-        - somogyi
-        - bengalbraith
-        - ericlindley
-        - thomasfeldhaus
-        - madisonminer
-        - aakashsahney
-        - xavibeumala
-    - title: "What's next in AMP"
-      time: "1745"
-      type: keynote
-      speakers:
-        - malteubl
-        - rudygalfi
+        - leviclancy
+        - ballakhadang
+    - title: "Measuring success: What's new in AMP analytics & experiments"
+      time: "1700"
+      type: session
+      speaker: jeffreyj
     - title: Party!
       time: "1815"
   day_2:
     - title: Registration
       time: "0800"
-    - title: "The Definitive Guide to Building an AMP e-commerce Experience"
+    - title: "Opening"
       time: "0900"
       type: session
       speakers:
-        - lisawang
-        - paulli
-        - ralfohlenbostel
-        - michaelyeung
-      description: In this hour long special, Lisa, PM on the AMP team with focus on e-commerce, will walk through the latest advancements in AMP that benefit e-commerce and how to get started. To then get real, a few companies whose names you know will talk you through the nitty gritty.
-    - title: "AMPing Airbnb: A Magic Carpet Ride"
-      description: The Airbnb AMP team will walk you through their strategy around AMP, their development process, and experimentation. They will provide you insights on technical challenges, what's worked, and the gains seen on both page speed and organic traffic.
+        - crystallambert
+        - yusukeutsunomiya
+      description: Welcome back to day two!
+    - title: "Keynote"
+      description: Day Two Keynote.
+      time: "0915"
+      type: session
+      speaker: TBA
+      time: "1030"
+    - title: "AMP as a service: Auto-upgraded, accelerated developer workflows"
       time: "1000"
       type: session
-      speakers:
-        - gilbirman
-        - brianta
-    - title: Coffee Break
-      time: "1030"
-    - title: "How AMP is helping the open web stay sustainable "
-      time: "1100"
-      type: session
-      speakers:
-        - vamseejasti
-        - adamleslie
-        - jamesavery
-        - hdouglass
-        - mattjacobson
+      speaker: nainaraisinghani
       description:
-    - title: "How to Balance AMP Limitations with Optimization Features - The Instapage Journey"
-      description: Instapage is a landing page platform that offers advanced conversion optimization features like A/B testing, Heatmaps, conversion tracking, analytics, and attribution. With the majority of our visitors coming from mobile devices, Instapage saw the necessity to support AMP. But many of our advanced features require technology that has limited or no support within the AMP framework. Join us to discuss the challenges in supporting advanced optimization within the AMP framework, and how we’re working with the AMP development team to make AMP a reality for conversion-focused landing pages at scale.
+    - title: "How we migrated our entire site to AMP without the user noticing"
+      description: 
+      time: "1115"
+      type: session
+      speaker: andrearosalrebolledo
+    - title: "TBA"
+      description: 
+      time: "1130"
+      type: session
+      speaker:
+    - title: "TBA"
+      description: 
       time: "1200"
       type: session
-      speakers:
-        - oliverarmstrong
-        - piotrdolistowski
-    - title: "Q&A and Panel: Making money on the web"
-      description: Ask the speakers of the previous talks any questions you have about monetization, retail & e-commerce in this special Q&A panel wrapping up this half-day theme.
-      time: "1230"
-      type: panel
-      moderator: paulbakaus
-      speakers:
-        - vamseejasti
-        - adamleslie
-        - jamesavery
-        - hdouglass
-        - gilbirman
-        - brianta
-        - lisawang
+      speaker:
     - title: Lunch
-      time: "1300"
-    - title: "AMP by Example Live"
+      time: "1230"
+    - title: "TBA"
+      description: 
       time: "1400"
       type: session
-      speakers:
-        - sebastianbenz
-        - chiarachiappini
-    - title: "Reddit &AMP; Mobile Web"
-      description: Reddit has a large number of initiatives in 2018. From leveraging AMP for Growth, to the upcoming Redesign, this presentation will walk listeners through the technology, features, and relationships that are an integral part of Reddit 2018.
+      speaker:
+    - title: "Signed Exchange - How we fixed our AMP pages"
+      description: "How Y! Search implemented Singed Exchange in their SERP. Stories around the performance improvements on prefetching SXG and preloading AMP runtime, and how Travel and Ikyu made their existing AMP pages support SXG format and enabled a richer experience."
       time: "1430"
       type: session
-      speaker: anandmariappan
-    - title: "AMP Optimization & SEO: Do's & Dont's"
-      time: "1500"
+      speakers: 
+        - hirohitokomada
+        - shigekiotsu
+    - title: "Generating AMP Pages with JavaScript and Vue.js"
+      time: "1530"
       type: session
-      speaker: aleydasolis
+      speaker: cristianronzio
     - title: Break
       time: "1530"
-    - title: Analytics and AMP - How to Track ALL THE THINGS
-      description: "Shifting to AMP requires careful analytics consideration. This talk will review how to setup a  analytics and development plan to ensure your KPI’s are correctly tracked when migrating to AMP: 1) Review of the ClientID API to ensure your users are being tracked correctly when coming from Google Search and other sources, 2) Setting up your conversion metrics such as clicks, calls, and custom variables, and 3) Conversion and tracking testing and deployment."
-      time: "1600"
+    - title: "Using AMP Stories in Kenya: how we did it and how it can be replicated in other emerging markets."
+      description: "How do you reach out to young digital natives in Kenya? How do you get your content read by users who spend their online life on their smartphones? How do you teach young adults to make responsible financial decisions. How do you compete against far more entertaining content? Not by sending them 800 word blogposts. Not by sending them 150 word infographics. But by sending them AMP Stories. With open rates 6x higher, session time going up from 20 seconds to over 3 minutes, and completion rates of over 85%, we believe that AMP Stories are THE communication format for emerging markets. In most emerging markets, smartphone penetration is high. WhatsApp and Facebook Messenger are the communication channels of choice. Social media Stories are omnipresent. All ingredients are in place for AMP Stories to take the market by storm. We'd like to share our story of how we used AMP Stories to communicate with our customers in Kenya. We'd like to share our belief that this can be replicated in other emerging markets. We'd also like to share how it lead us to developing an AMP storybuilder that we are planning to release by the time of the AMP conference in Tokyo."
+      time: "1615"
       type: session
-      speaker: chrisluke
-    - title: Start Contributing to AMP, feat. LaterPay
-      description: It's now time to learn how to give back and join us in creating a user first web for everyone. Cathy will walk through all the ways you can contribute to AMP, and Tiago will talk about his experience in contributing to the AMP open source project while developing AMP Access LaterPay, from the initial process of understanding how LaterPay and AMP could be better integrated, to understanding the developer tooling, codebase and collaboration with the AMP team in getting the component shipped.
+      speaker: hanspauwels
+    - title: "Scaling UX & Experiments in a Canonical AMP Product"
+      description: "For modern UX Teams, it seems nowadays are defined by the tools we use: Optimizely, HotJar, Intercom, etc. So how can a UX Team in a Canonical AMP product scale their efforts when most, if not all, of modern UX tools are inaccessible? In this talk, Ben Kim, Head of UX at iPrice Group, will share some of the challenges that UX teams will face when transitioning into a Canonical AMP environment and how UXers at iPrice have adapted in delivering the best user experience as possible for an audience of 16 million visitors a month from 7 different countries through qualitative UX research and site-wide AMP experiments." 
       time: "1630"
       type: session
-      speakers:
-        - cathyzhu
-        - tiagorodrigues
-    - title: "Q&A and Panel: AMP in Production"
-      description: Ask the speakers of the previous talks any questions you have about how to actually produce production-ready AMP sites in this special Q&A panel wrapping up this half-day theme.
+      speaker: benkim
+    - title: "What's next in AMP"
+      description: 
       time: "1700"
-      type: panel
-      moderator: bpalser
-      speakers:
-        - cathyzhu
-        - tiagorodrigues
-        - chrisluke
-        - aleydasolis
-        - sebastianbenz
-        - anandmariappan
-    - title: Q&A with the AMP leadership
-      time: "1730"
-      type: keynote
-      moderator: paulbakaus
-      speakers:
-        - malteubl
-        - rudygalfi
-        - ericlindley
-        - lisawang
-        - vamseejasti
-        - davidbesbris
-      description: What does the future for AMP look like? Malte Ubl, engineering lead of AMP, and Rudy Galfi, PM on the AMP team, are here to tell you all about it.
+      type: session
+      moderator:
+      speaker:
     - title: Wrap-up
       time: "1800"
 
