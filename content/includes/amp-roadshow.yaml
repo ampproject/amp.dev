@@ -3,11 +3,23 @@ nextstop:
   link: https://events.withgoogle.com/amp-roadshow-bangalore/
 
 cities:
+  - title: Johannesburg
+    date: 2019-03-12
+    link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
+  - title: Cape Town
+    date: 2019-03-15
+    link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
+  - title: Lagos
+    date: 2019-03-19
+    link: https://events.withgoogle.com/amp-roadshow-nigeria
+  - title: Nairobi
+    date: 2019-03-22
+    link: https://events.withgoogle.com/amp-roadshow-kenya
+
+past:
   - title: Ho Chi Minh
     date: 2018-12-14
     link: https://events.withgoogle.com/amp-roadshow-hcm/
-
-past:
   - title: Toronto
     date: 2017-08-30
     link: https://events.withgoogle.com/amp-roadshow-toronto/
