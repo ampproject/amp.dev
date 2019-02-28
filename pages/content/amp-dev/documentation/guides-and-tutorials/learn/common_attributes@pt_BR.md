@@ -119,7 +119,7 @@ Por exemplo:
 </amp-lightbox>
 [/sourcecode]
 
-Para saber mais, consulte [Ações e eventos em AMP]({{g.doc('/content/docs/interaction_dynamic/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+Para saber mais, consulte [Ações e eventos em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 ## marcador
 
