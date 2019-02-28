@@ -126,6 +126,9 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   // replace mustache-style code elements
   content = content.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
 
+  // remove front matter (only relevant for this legacy importer)
+  content = content.replace(/---[^!]+---/gm, '');
+
   // horizontal rules like --- will break front matter
   content = content.replace(/\n---\n/gm, '\n- - -\n');
 
