@@ -335,7 +335,11 @@ speakers:
     company: iPrice Group
     bio:
     pic:
-
+  jeannyhaliman:
+    name: Jeanny Haliman
+    company: Google
+    bio:
+    pic:
 
 agenda:
   day_1:
@@ -353,6 +357,7 @@ agenda:
       speaker: malteubl
       description: Tune in to see Malte open our third AMP Conf with a highlight reel packed with exciting announcements and developments happening in the AMP ecosystem and AMP itself.
     - title: "The glory of amp-script: Unleashing the kraken"
+      description: "AMP Documents have traditionally not allowed for custom JavaScript, relying on the well built large corpus of Web Components designed and validated to work within AMP.  Today, we release the Kraken. We’ll introduce `amp-script`, allowing your custom JavaScript to operate within AMP Documents with reasonable limits. Now your custom logic can be expressed with the world’s most popular programming language."
       time: "1000"
       type: session
       speaker: kbax
@@ -445,8 +450,8 @@ agenda:
       time: "1130"
       type: session
       speaker:
-    - title: "TBA"
-      description: 
+    - title: "AMP Experiences in WordPress, the WordPress Way"
+      description: "Enabling first-class AMP experiences on WordPress is one of the ways the AMP Project aims to bring a user-first experience to websites and content on the web. The Official AMP Plugin for WordPress integrates AMP content creation seamlessly with standard WordPress content creation workflows. In this talk we describe in detail how the AMP plugin for WordPress works, how to take advantage of it, and showcase some salient success stories of WordPress sites using the plugin in the wild."
       time: "1200"
       type: session
       speaker:
@@ -456,7 +461,9 @@ agenda:
       description: 
       time: "1400"
       type: session
-      speaker:
+      speakers:
+        - jeannyhaliman
+        - albertomedina
     - title: "Signed Exchange - How we fixed our AMP pages"
       description: "How Y! Search implemented Singed Exchange in their SERP. Stories around the performance improvements on prefetching SXG and preloading AMP runtime, and how Travel and Ikyu made their existing AMP pages support SXG format and enabled a richer experience."
       time: "1430"
