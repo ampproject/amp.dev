@@ -32,7 +32,7 @@ $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-b
 $gradient-anglemed: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue);
 $gradient-anglebuild: linear-gradient($gradient-angle, $color-buildblue, $color-brightblue);
 $gradient-anglelight: linear-gradient($gradient-angle, $color-lightblue 40%, $color-brightblue);
-$gradient-pink: linear-gradient($color-lightestpink, $color-lightpink 40%, $color-pink);
+$gradient-pink: linear-gradient(to right, #ee9ca7, #ffdde1);
 // $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);
 
 $header-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.10);

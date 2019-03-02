@@ -18,7 +18,7 @@ speakers:
     name: Malte Ubl
     company: Google
     pic: /static/img/amp-conf/speakers/malte.jpg
-    bio: Malte Ubl is the tech lead of the AMP Project. He previously spent 5 years at Google making JavaScript based apps go fast and in his free time, he is one of the co-organizers of JSConf EU.
+    bio: Malte is a Principal Engineer at Google working on JavaScript infrastructure, a member of the AMP Project Technical Steering Committee, and helps curate JSConf EU in Berlin.
   rudygalfi:
     name: Rudy Galfi
     company: Google
@@ -249,22 +249,22 @@ speakers:
     name: Melissa DePuydt
     company: WaPo
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/melissa.jpg
   andrewwatterson:
     name: Andrew Watterson
     company: Google
-    bio:
-    pic:
+    bio: "Andrew is a designer who codes working on the AMP Project. Previously he worked at Pivotal Labs bringing user-centered, agile software development to large companies, and as an early designer at startups like Meebo and Asana. He has a degree in Digital Media Design from the University of Pennsylvania."
+    pic: /static/img/amp-conf/speakers/andreww.png
   perrylally:
     name: Perry Lally
     company: Google
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/perry.jpeg
   weihong:
     name: Wei Hong
     company: Google
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/hong.jpeg
   kyunghokang: 
     name: Kyungho Kang
     company: Cafe24
@@ -279,7 +279,7 @@ speakers:
     name: Levi Clancy
     company: YouGov
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/levi.jpg
   ballakhadang:
     name: Balla Khadang
     company: YouGov
@@ -289,27 +289,27 @@ speakers:
     name: Jeffrey Jose
     company: Google
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/jeffreyj.jpg
   crystallambert: 
     name: Crystal Lambert
     company: Google
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/lambert.jpg
   yusukeutsunomiya:
     name: Yusuke Utsunomiya
     company: Google
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/yusuke.jpg
   nainaraisinghani:
     name: Naina Raisinghani
     company: Google
-    bio:
-    pic:
+    bio: Naina Raisinghani is a Product Manager on the AMP Project. She focuses on helping AMP engineers build great components that are delightful and easy to use. She previously spent 2 years as a Software Engineer on the Chrome team working on making the rendering engine pixel perfect. 
+    pic: /static/img/amp-conf/speakers/naina.jpg
   andrearosalrebolledo:
     name: Andrea Rosal Rebolledo
     company: InEventos.com
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/andrea.png
   hirohitokomada:
     name: Hirohito Komada, Shigeki Otsu
     company: Yahoo Japan
@@ -324,17 +324,17 @@ speakers:
     name: Cristian Ronzio
     company: Musement Spa
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/cristain.jpg
   hanspauwels:
     name: Hans Pauwels
     company: Tappable
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/hands.png
   benkim:
     name: Ben Kim
     company: iPrice Group
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/benkim.jpeg
   jeannyhaliman:
     name: Jeanny Haliman
     company: Google
@@ -348,6 +348,7 @@ agenda:
     - title: Opening Notes
       time: "0900"
       type: session
+      description: Welcome to AMP Conf 2019!
       speakers:
         - crystallambert
         - yusukeutsunomiya
@@ -355,7 +356,7 @@ agenda:
       time: "0915"
       type: keynote
       speaker: malteubl
-      description: Tune in to see Malte open our third AMP Conf with a highlight reel packed with exciting announcements and developments happening in the AMP ecosystem and AMP itself.
+      description: OMG
     - title: "The glory of amp-script: Unleashing the kraken"
       description: "AMP Documents have traditionally not allowed for custom JavaScript, relying on the well built large corpus of Web Components designed and validated to work within AMP.  Today, we release the Kraken. We’ll introduce `amp-script`, allowing your custom JavaScript to operate within AMP Documents with reasonable limits. Now your custom logic can be expressed with the world’s most popular programming language."
       time: "1000"
@@ -374,7 +375,7 @@ agenda:
       type: session
       speaker: melissadepuydt
     - title: "The Life of a Component: Making AMP a Better Web for Everyone (including Developers!)"
-      description: AMP is here to improve the quality of web users’ daily experience - but how do we make that happen? A designer from the AMP team talks about how we go from feature requests to shipping components with great documentation. We draw up many versions of a feature to match the many ways AMP is used. We sit in cafes and ask people to talk to us about how they use the web, then we make changes we hope will better serve your users. And since you are *our* users, we want to talk to you about how you work and how future AMP components can make your sites even better.
+      description: "A designer from the AMP team talks about how we go from feature requests to shipping components with great documentation. We draw up many versions of a feature to match the many ways AMP is used. We sit in cafes and talk to your users about how they use the web, and make changes based on their feedback. And since you are *our* users, we want to talk to you about how you work and how future AMP components can make your sites even better."
       time: "1200"
       type: session
       speaker: andrewwatterson
@@ -439,7 +440,7 @@ agenda:
       time: "1000"
       type: session
       speaker: nainaraisinghani
-      description:
+      description: "As the number of frameworks increase, AMP stays the well lit path that allows engineering teams to make the best decisions for their users. Much like SaaS, by using AMP CTOs ensure their engineering teams are able to be more agile in creating forward looking experiences while being backward compatible."
     - title: "How we migrated our entire site to AMP without the user noticing"
       description: 
       time: "1115"
