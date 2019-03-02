@@ -24,189 +24,16 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/rudy.jpg
     bio: Rudy Galfi is the product management lead for the AMP Project since August 2015. He previously spent four years at Google building personalized content recommendation experiences for various Google products and was product manager for Google News. Prior to Google, Rudy was a software engineer at Microsoft.
-  ericlindley:
-    name: Eric Lindley
-    company: Google
-    pic: /static/img/amp-conf/speakers/eric.jpg
-    bio: As a product manager for AMP, Eric is focused on making the web a faster, better experience for users, developers, site owners, and web merchants. Before joining the AMP team, Eric worked on Google Photos. Prior to joining Google in 2014, Eric has worked in various development and management roles at the intersection of technology, science, and the arts.
   sebastianbenz:
     name: Sebastian Benz
     company: Google
     pic: /static/img/amp-conf/speakers/sebastian.jpg
     bio: Sebastian Benz is a Developer Advocate at Google. He created ampbyexample.com and helps partners be more successful on the web and on Android. Sebastian has a PhD in Computer Science from TU Muenchen.
-  alighassemi:
-    name: Ali Ghassemi
-    company: Google
-    pic: /static/img/amp-conf/speakers/ali.jpg
-    bio: Ali Ghassemi is a Software Engineer on the AMP Team, focused on format and components. He is passionate about the Web and started his career in 2005 finding workarounds for IE6 quirks. Ali studied and worked in Waterloo, Ontario prior to joining Google.
-  aleydasolis:
-    name: Aleyda Solis
-    company: Orainti
-    pic: https://www.aleydasolis.com/images/aleyda-solis.jpg
-    bio: Aleyda Solis is an International SEO Consultant, service that she provides with her boutique consultancy, Orainti; a blogger (Search Engine Land, State of Digital and Moz), speaker (with more than 100 conferences in 20 countries in English and Spanish) & author (of "SEO, Las Claves Esenciales").
-  kseniacoulter:
-    name: Ksenia Coulter
-    company: Washington Post
-    pic: /static/img/amp-conf/speakers/ksenia.jpg
-    bio: Neuroscientist turned web developer, I am a Washington Post engineer solving problems of publishers in the digital age. In my spare time I over-analyze TV, help organize Women Who Code DC and DC Tech Meetup, as well as mentor women in technology. Having had three careers and lived in three countries, I have a passion for making the tech community more inclusive and open to all.
-  gilbirman:
-    name: Gil Birman
-    company: Airbnb
-    pic: /static/img/amp-conf/speakers/gil.jpg
-    bio: Gil Birman is a software engineer who has worked at airbnb since 2015. During most of that time, he worked on the SEO team developing new products to increase airbnb.com's search engine presence.
-  brianta:
-    name: Brian Ta
-    company: Airbnb
-    pic: /static/img/amp-conf/speakers/brian.jpg
-    bio: Brian Ta is currently the SEO project manager at Airbnb, where he is working on a plethora of high impact projects including AMP, our new landing page system and countless experiments.
-  lisawang:
-    name: Lisa Wang
-    company: Google
-    pic: /static/img/amp-conf/speakers/lisa.jpg
-    bio: Lisa is a product manager on the AMP team, focusing on e-commerce. Her mission is to empower business owners in building fast, user-friendly e-commerce experiences. Lisa earned a bachelor’s degree in Math and Computer Science from Harvard College.
-  andrebarrara:
-    name: André Bandarra
-    company: Google
-    pic: /static/img/amp-conf/speakers/andre.jpg
-    bio: André Bandarra is a Developer Advocate at Google, and helps partners to be more successful on the web and on Android. He has been working with partners to build great AMP pages since the early days of the technology.
   albertomedina:
     name: Alberto Medina
     company: Google
     pic: /static/img/amp-conf/speakers/alberto.jpg
     bio: Alberto Medina is a Developer Advocate currently working towards making the AMP experience for Content Management Systems awesome. Before AMP he worked helping companies and developers build progressive web applications using modern web technologies.
-  somogyi:
-    name: Stephan Somogyi
-    company: Google
-    pic: /static/img/amp-conf/speakers/stephan.jpg
-    bio: Stephan Somogyi works in security and privacy product management at Google. He's currently on the Chrome team, developing new approaches to make computing safer and more privacy-preserving. Previously, Stephan led the expansion of Safe Browsing, Google’s system that protects over three billion devices worldwide from malware and phishing. He also built and led Motorola's Privacy Engineering team after the acquisition through the launch of the first Moto X; worked on End-To-End, a project to make strong encryption more usable; as well as a variety of other security and privacy efforts. He’s also an advisor to both GV—Alphabet's venture capital arm—and CapitalG—Alphabet's growth equity investment fund.
-  bengalbraith:
-    name: Ben Galbraith
-    company: Google
-    pic: /static/img/amp-conf/speakers/ben.jpg
-    bio: Ben Galbraith is currently the director of the Chrome Web Platform. Prior to Google, Ben has alternated between entrepreneurial and executive roles across companies in many industries, such as Mozilla, Palm / HP, and Walmart. He lives in Palo Alto with his wife and eight children.
-  adamleslie:
-    name: Adam Leslie
-    company: Metro.co.uk
-    pic: /static/img/amp-conf/speakers/adam.jpg
-    bio: Computational Mathematician who went into ad tech. Interested in advanced concepts within online advertising and product development especially within the programmatic advertising space.
-  tiagorodrigues:
-    name: Tiago Rodrigues
-    company: LaterPay
-    pic: /static/img/amp-conf/speakers/tiago.jpg
-    bio: Tiago is a frontend developer at LaterPay, a payment infrastructure provider which allows conversion of users into paying customers for digital content without upfront registration or payment. At LaterPay, Tiago works on merchant focused tools and he's also the developer and maintainer of AMP Access LaterPay.
-  chrisluke:
-    name: Chris Luke
-    company: The Johnson Group
-    pic: /static/img/amp-conf/speakers/chris.jpg
-    bio: Chris spends most of his day thinking about how to maximize his clients marketing campaigns online. Managing millions in digital ad spend and landing page creation, he uses AMP to ensure his clients landing pages are rendered almost instantaneously, increasing conversion rates. Coming from Goldman Sachs, Chris leads the technology efforts of The Johnson Group through a financial effectiveness lens. Every cent matters today, Chris’s use of AMP saved one of his clients $1M in projected savings. In order to do that he must first track all the things, which is what he’s excited to speak about!
-  chiarachiappini:
-    name: Chiara Chiappini
-    company: Google
-    pic: /static/img/amp-conf/speakers/chiara.jpg
-    bio: Chiara is a Developer Advocate at Google in the Developer Relations Team. For the last 2 years, she has been helping partners to build AMP pages. At Google, she helps partners be more successful on the web, on Android and iOS.
-  madisonminer:
-    name: Madison Miner
-    company: WompMobile
-    pic: /static/img/amp-conf/speakers/madison.jpg
-    bio: Madison Miner is CEO of WompMobile, a digital agency that helps brands realize big results on small screens. WompMobile creates Accelerated Mobile Pages and Progressive Web Apps that enable companies to deliver mobile experiences that rival the desktop. Madison, a software engineer, is relentless about finding creative ways to combine rich functionality with performant architecture to achieve faster, more elegant mobile websites.
-  oliverarmstrong:
-    name: Oliver Armstrong
-    company: Instapage
-    pic: /static/img/amp-conf/speakers/oliver.jpg
-    bio: Oliver Armstrong is the Vice President of Product at Instapage. He drives the Instapage product strategy and roadmap with the mission of bringing scale to post-click optimization. Oliver has founded two companies and loves working in fast-paced startup environments, building the right things, for the right customers, in the right way.
-  piotrdolistowski:
-    name: Piotr Dolistowski
-    company: Instapage
-    pic: /static/img/amp-conf/speakers/piotr.jpg
-    bio: Piotr Dolistowski is a Senior Director of Engineering at Instapage where he leads the Front-end development team. A Full-Stack Developer with 11 years of experience, Pior implemented the UI-Kit based on Material Design using Sass and Angular. His team optimized the Instapage website and successfully implemented AMP on the blog. He is now using his learnings to implement AMP within the Instapage landing page platform.
-  anandmariappan:
-    name: Anand Mariappan
-    company: Reddit
-    pic: /static/img/amp-conf/speakers/anand.jpg
-    bio: |
-      Anand Mariappan is the Senior Director of Engineering for the Experiences team at Reddit, the 4th most visited site in the US. In his role, Anand is leading the redesign of the Reddit desktop experience. He is also responsible for overseeing the native video platform and the subreddit experiences for consumers, creators, and moderators across mobile and web. Prior to Reddit, Anand spent eight years at Microsoft in various engineering leadership roles working on compilers, data analysis tools, mobile apps and business applications. Anand's most notable role was as Engineering Manager for the PowerBI app experiences and cloud services team, in which he helped to drive the product as it scaled from 0 to 5 Million subscribers.
-
-      Anand was recognized by the Seattle Times for his work done in Africa to evangelize PowerBI and train local businesses and startups to integrate BI Analytics into their data analysis solutions. He holds an MS degree from Purdue University and is passionate about mentoring students and rising leaders alike.
-  hdouglass:
-    name: Heather Douglass
-    company: Google
-    pic: /static/img/amp-conf/speakers/heather.jpg
-    bio: Heather is a software engineer at Google where she works on Google Web Designer.  She has contributed to many features in Google Web Designer including leading development efforts for the animation timeline, improving the UI and workspace layout and most recently adding support for creating AMPHTML ads.
-  abbybeck:
-    name: Abby Beck
-    company: Google
-    pic: /static/img/amp-conf/speakers/abby.jpg
-    bio: Leads UX on AMP and loves solving complex design and human computer interaction problems.
-  thierrymuller:
-    name: Thierry Muller
-    company: XWP
-    pic: /static/img/amp-conf/speakers/thierry.jpg
-    bio:
-  sethweisfeld:
-    name: Seth Weisfeld
-    company: Pinterest
-    pic: /static/img/amp-conf/speakers/seth.jpg
-    bio: Seth Weisfeld is a product manager at Pinterest. Seth's teams focus on user engagement and revisitation using email, push notifications, seo, and paid advertising. Seth studied computer engineering at the University of Texas, Austin and co-founded ADRevolution, a pioneer in email marketing and customer conversion.
-  matthiassuter:
-    name: Matthias Suter
-    company: Doodle
-    pic: /static/img/amp-conf/speakers/matthias.jpg
-    bio: After his studies in computer science, Matthias worked for several years in the financial sector before he led the product at a startup to build a marketplace for services. Since 2015 he works at Doodle and is responsible for Doodle web (www.doodle.com) and the Android and iOS apps with over 24m monthly active users.
-  michaelwuergler:
-    name: Michael Wuergler
-    company: Doodle
-    pic: /static/img/amp-conf/speakers/michaelw.jpg
-    bio: Michael is a Web & Mobile Developer, Interface Designer and Open-Source enthusiast obsessed with automation, testing and beautiful code. Michael currently works for Doodle.com, helping bring people together without calendar conflicts.
-  antonymalone:
-    name: Antony Malone
-    company: Booking.com
-    pic: /static/img/amp-conf/speakers/antony.jpg
-    bio: Antony has been working within the email marketing industry for nearly 14 years. In that time, he's worked with such companies as T-Mobile, RentalCars.com and Frankie & Benny's to name a few, advising on and implementing successful strategies. He's currently a member of Customer Advisory Boards for ESP's (Email Service Providers) and Deliverability Services alongside his main role as Senior Product Owner of Direct Marketing at Booking.com. In this role he's driving the innovation of Booking.com's messaging programme and platform.
-  bpalser:
-    name: Barb Palser
-    company: Google
-    pic: /static/img/amp-conf/speakers/barb.jpg
-    bio: Barb Palser works on Google’s Global Product Partnerships team, collaborating with external partners to deploy and optimize new web technologies such as AMP.  Barb co-founded Relay Media, Inc., an AMP conversion platform which was acquired by Google in 2017. Barb’s background is in local digital media and CMS.
-  paulli:
-    name: Paul Li
-    company: Oath
-    pic: /static/img/amp-conf/speakers/paulli.jpg
-    bio: Paul is the lead programmer of the AMP project at Yahoo Taiwan, and is always eager for modern web technologies. He is also a frontend engineer at Yahoo Taiwan focusing on user experience and bringing a vivid and smooth flow for users. Paul surveyed the AMP project during Q4 of last year and adopted it for an e-commerce service - Auction in Yahoo Taiwan. To make gains in both better mobile UX and organic traffic, AMP adoption will be his major focus in 2018.
-  ralfohlenbostel:
-    name: Ralf Ohlenbostel
-    company: Zalando
-    pic: /static/img/amp-conf/speakers/ralf.jpg
-    bio: Ralf Ohlenbostel leads the technical content marketing at Zalando SE. He ensures that the technical setup of a complex platform is optimized for aquiring traffic. In this role he focuses on mobile site performance, mobile technologies and multilanguage shop setups. As former software engineer he connects tech with marketing and builds synergies between both worlds.
-  michaelyeung:
-    name: Michael Yeung
-    company: Google
-    pic: /static/img/amp-conf/speakers/michael.jpg
-    bio: Michael is a Partner Developer Advocate at Google. He works with top developers in the Asia-Pacific region like Alibaba, Tencent, and Sina Weibo to build awesome experiences on the mobile web.
-  jamesavery:
-    name: James Avery
-    company: AdZerk
-    pic: /static/img/amp-conf/speakers/james.jpg
-    bio: James Avery is the founder and CEO of Adzerk, an API focused ad serving company. Adzerk works with top tier publishers and e-commerce companies to help them build innovative ad solutions that break the mold of traditional banners. James comes from an engineering background and has written books for O'Reilly and Microsoft Press and has been published in MSDN and Dr. Dobbs.
-  cathyzhu:
-    name: Cathy Zhu
-    company: Google
-    pic: /static/img/amp-conf/speakers/cathy.jpg
-    bio: Cathy Zhu is a software engineer at Google working on enabling delightful user experiences with AMP. Prior to Google, she was a software engineer at Palantir.
-  thomasfeldhaus:
-    name: Thomas Feldhaus
-    company: Jung von Matt
-    pic: /static/img/amp-conf/speakers/thomas.jpg
-    bio: Thomas Feldhaus has been developing digital products and platforms for over 18 years. He has been working for JvM since 2009, where he is responsible for the interface between technology and modern data-driven marketing. In addition to topics such as web performance and SEO, in his spare time he enjoys riding singlespeed bikes and racing bikes.
-  peerweidner:
-    name: Peer Weidner
-    company: Jung von Matt
-    pic: /static/img/amp-conf/speakers/peer.jpg
-    bio: Peer Weidner is working on web projects in agency environments since 2012 and helped shape the process and architecture that led to the new BMW.com. His goal is to close the gap between an existing technology stack and the desired target audiences with the fitting means of technology. He enjoys prototyping, electric mobility and wakeboarding.
-  matthiasrohmer:
-    name: Matthias Rohmer
-    company: Jung von Matt
-    pic: /static/img/amp-conf/speakers/matthiasr.jpg
-    bio: In the context of the BMW.com project Matthias reached to bridge the gap between the AMP framework in the frontend and the Adobe Experience Manager backend. When not in the office he pursues his passion for movie theatres by supporting the small arthouse cinema www.lamm-lichtspiele.de in his hometown Erlangen.
   jonnewmuis:
     name: Jon Newmuis
     company: Google
@@ -217,29 +44,6 @@ speakers:
     company: Google
     pic: /static/img/amp-conf/speakers/aakash.jpg
     bio: Aakash is a Product Manager at Google on the G Suite team. His team builds platform and extensibility features that enable rich integrations with G Suite.
-  elitetruong:
-    name: Elite Truong
-    company: Vox Media
-    pic: /static/img/amp-conf/speakers/elite.jpg
-    bio: |
-      Elite Truong is a product manager at Vox Media, where she leads off-platform distribution products company known for its standout technology, high-fidelity advertising, and editorial brands that go deeper into the topics passionate people care about most. She was previously the product lead on the brave new world of partner platforms, including AMP, Apple News, Instant Articles, and newsletters.
-
-      She serves as a board member at Online News Association, where she represents technologists in the digital news industry, and previously wrote a column on technology, product and design's role in the newsroom for Poynter. Prior to her current role, she worked at the intersection of product and editorial at Food Network Digital, Chicago Tribune, and Time Out Chicago. She lives in DC and, in her free time, she writes about food and travels as much as she can.
-  mattjacobson:
-    name: Matt Jacobson
-    company: AppNexus
-    pic:
-    bio:
-  jessanastasio:
-    name: Jess Anastasio
-    company: BuzzFeed
-    bio: Jess Anastasio is a software engineer at BuzzFeed, the leading independent digital media and tech company delivering news and entertainment content to a global audience.
-    pic: /static/img/amp-conf/speakers/jess.jpg
-  xavibeumala:
-    name: Xavi Beumala
-    company: Marfeel
-    bio:
-    pic:
   tomoyukisaito:
     name: Tomoyuki Saito
     company: Sunday Systems
@@ -325,6 +129,11 @@ speakers:
     company: Musement Spa
     bio:
     pic: /static/img/amp-conf/speakers/cristain.jpg
+  fabiozecchini:
+    name: Fabio Zecchini
+    company: Musement Spa
+    bio:
+    pic:
   hanspauwels:
     name: Hans Pauwels
     company: Tappable
@@ -358,17 +167,18 @@ agenda:
       speaker: malteubl
       description: OMG
     - title: "The glory of amp-script: Unleashing the kraken"
-      description: "AMP Documents have traditionally not allowed for custom JavaScript, relying on the well built large corpus of Web Components designed and validated to work within AMP.  Today, we release the Kraken. We’ll introduce `amp-script`, allowing your custom JavaScript to operate within AMP Documents with reasonable limits. Now your custom logic can be expressed with the world’s most popular programming language."
+      description: |
+        AMP Documents have traditionally not allowed for custom JavaScript, relying on the well built large corpus of Web Components designed and validated to work within AMP.
+        
+        Today, we release the Kraken. We’ll introduce `amp-script`, allowing your custom JavaScript to operate within AMP Documents with reasonable limits. Now your custom logic can be expressed with the world’s most popular programming language.
       time: "1000"
       type: session
       speaker: kbax
     - title: Coffee Break
       time: "1030"
-    - title: "TBD"
-      description: "How EC-CUBE developed their AMP plugin and optimized it from merchant feedback: How they convereted their existing Twig component to AMP components, the strategy behind having AMP First mode and paried AMP mode and lessons learnt from actual adaption to live merchants."
-      time: "1110"
+    - title: "(Session to be announced)"
+      time: "1115"
       type: session
-      speaker: tomoyukisaito
     - title: "Growing Up AMP First: Everything I Know I Learned From AMP"
       description: "Too often, engineers view AMP as just one more thing to implement. In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages. So, what happens when teams begin to think AMP first? Engineers are able to move beyond mere AMP validation and have a seat at the table in conversations about UX, performance, and even new feature development.  Does that sound crazy? It's not just a pipe dream. In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making.  I will draw on real-life experience and examples from my team's work with top publishers—including LA Times, El Pais, RTL.de, and a recent re-platforming effort at The Washington Post—and reveal how AMP can help teams align on goals and make better decisions at every level."
       time: "1130"
@@ -386,13 +196,11 @@ agenda:
       type: session
       description: 
       speaker: sebastianbenz
-    - title: "The Journey of a Retailer: Highs and Lows"
+    - title: (Session to be announced)
       time: "1430"
       type: session
-      description: Share an overarching George.com case study. From the upfront engineering and launch to measuring analytics (which can be difficult), I could sketch out a 30-min overview that encompasses what we learned and the outcomes we measured. This would be a good opportunity to make the connection that AMP and e-commerce works well – and without having to give up too much. George is a prominent brand that adopted AMP and our story would reinforce the industry-wide call to place the user’s experience at the heart of any digital strategy. I’d be willing to flesh this out, as needed. Walk through specific solutions that married AMP and e-commerce. We used a handful of components and techniques, including APIs, to ensure real-time pricing and inventory, as well as cart integration. I’d be able to discuss in more granularity how we addressed some of the common concerns – or misconceptions – about what’s achievable with AMP, with an e-commerce bent.
-      speaker: perrylally
     - title: "AMP Stories: The Story so far"
-      description: The Chrome and AMP teams have big, collaborative plans for this year. Come see our plans to improve developers’ lives and workflows, how we’re going to make AMP more straightforward for publishers, and how users will benefit from our work. We’ll show demos, describe how we’re going to deliver, and leave you with a clear picture of AMP on the Open Web in 2018.
+      description: Join us for a whirlwind tour through everything new in AMP Stories. More details coming soon.
       time: "1500"
       type: session
       speakers:
@@ -400,24 +208,21 @@ agenda:
         - weihong
     - title: Coffee Break
       time: "1530"
-    - title: "Providing AMP service to tens of thousands of ecommerce sites"
-      description: Ask the speakers of the previous talks any questions you have about WordPress, Chrome, PWAs and more in this special Q&A panel wrapping up this half-day theme.
+    - title: "(Session to be announced)"
+      description: 
       time: "1615"
       type: session
-      speakers:
-        - kyunghokang
-        - jinhyoungkil
-    - title: "No power, no internet, no government: How AMP helps in Iraq and war-impacted regions"
-      description: Living in Erbil, one of my focuses with AMP is deploying web applications that can thrive in war-impacted regions. By combining AMP with Progressive Web Apps, I have found some best practices (such as creative use of AMP lists and AMP forms) for making products that bring important content and excellent experiences to the most unstable regions with unreliable connections, where sometimes the most important messages cannot reach people on social media because of poor/no signal, blocking of social media, trolls that systematically take down progressive Facebook pages, and the threat of jail time just for what might show up on your feed if you have Facebook on your phone. Hosting content and using AMP to deliver content efficiently circumvents many of these obstacles.
+    - title: "(Session to be announced)"
+      description: Description coming soon.
       time: "1630"
       type: session
-      speakers:
-        - leviclancy
-        - ballakhadang
     - title: "Measuring success: What's new in AMP analytics & experiments"
       time: "1700"
       type: session
       speaker: jeffreyj
+    - title: "(Panel to be announced)"
+      time: "1730"
+      type: panel
     - title: Party!
       time: "1815"
   day_2:
@@ -433,53 +238,46 @@ agenda:
     - title: "Keynote"
       description: Day Two Keynote.
       time: "0915"
-      type: session
-      speaker: TBA
+      type: keynote
       time: "1030"
     - title: "AMP as a service: Auto-upgraded, accelerated developer workflows"
       time: "1000"
       type: session
       speaker: nainaraisinghani
       description: "As the number of frameworks increase, AMP stays the well lit path that allows engineering teams to make the best decisions for their users. Much like SaaS, by using AMP CTOs ensure their engineering teams are able to be more agile in creating forward looking experiences while being backward compatible."
-    - title: "How we migrated our entire site to AMP without the user noticing"
-      description: 
+    - title: "(Session to be announced)"
       time: "1115"
       type: session
-      speaker: andrearosalrebolledo
-    - title: "TBA"
+    - title: "(Session to be announced)"
       description: 
       time: "1130"
       type: session
-      speaker:
     - title: "AMP Experiences in WordPress, the WordPress Way"
       description: "Enabling first-class AMP experiences on WordPress is one of the ways the AMP Project aims to bring a user-first experience to websites and content on the web. The Official AMP Plugin for WordPress integrates AMP content creation seamlessly with standard WordPress content creation workflows. In this talk we describe in detail how the AMP plugin for WordPress works, how to take advantage of it, and showcase some salient success stories of WordPress sites using the plugin in the wild."
       time: "1200"
       type: session
-      speaker:
-    - title: Lunch
-      time: "1230"
-    - title: "TBA"
-      description: 
-      time: "1400"
-      type: session
       speakers:
         - jeannyhaliman
         - albertomedina
-    - title: "Signed Exchange - How we fixed our AMP pages"
-      description: "How Y! Search implemented Singed Exchange in their SERP. Stories around the performance improvements on prefetching SXG and preloading AMP runtime, and how Travel and Ikyu made their existing AMP pages support SXG format and enabled a richer experience."
+    - title: Lunch
+      time: "1230"
+    - title: "(Session to be announced)"
+      description: 
+      time: "1400"
+      type: session
+    - title: "(Session to be announced)"
       time: "1430"
       type: session
-      speakers: 
-        - hirohitokomada
-        - shigekiotsu
     - title: "Generating AMP Pages with JavaScript and Vue.js"
       time: "1530"
       type: session
-      speaker: cristianronzio
+      speakers:
+        - cristianronzio
+        - fabiozecchini
     - title: Break
       time: "1530"
     - title: "Using AMP Stories in Kenya: how we did it and how it can be replicated in other emerging markets."
-      description: "How do you reach out to young digital natives in Kenya? How do you get your content read by users who spend their online life on their smartphones? How do you teach young adults to make responsible financial decisions. How do you compete against far more entertaining content? Not by sending them 800 word blogposts. Not by sending them 150 word infographics. But by sending them AMP Stories. With open rates 6x higher, session time going up from 20 seconds to over 3 minutes, and completion rates of over 85%, we believe that AMP Stories are THE communication format for emerging markets. In most emerging markets, smartphone penetration is high. WhatsApp and Facebook Messenger are the communication channels of choice. Social media Stories are omnipresent. All ingredients are in place for AMP Stories to take the market by storm. We'd like to share our story of how we used AMP Stories to communicate with our customers in Kenya. We'd like to share our belief that this can be replicated in other emerging markets. We'd also like to share how it lead us to developing an AMP storybuilder that we are planning to release by the time of the AMP conference in Tokyo."
+      description: Description coming soon.
       time: "1615"
       type: session
       speaker: hanspauwels
@@ -488,12 +286,9 @@ agenda:
       time: "1630"
       type: session
       speaker: benkim
-    - title: "What's next in AMP"
-      description: 
+    - title: "(Panel to be announced)"
       time: "1700"
-      type: session
-      moderator:
-      speaker:
+      type: panel
     - title: Wrap-up
       time: "1800"
 
