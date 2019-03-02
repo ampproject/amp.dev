@@ -1,6 +1,39 @@
 blogs:
 
 - type: Blog
+  title: "What’s new in AMP, Q1 2019: Improvements to consent, videos, forms and lists"
+  id: whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists
+  author: Naina Raisinghani
+  role:  Product Manager, AMP Project&nbsp;at&nbsp;Google
+  origin: "https://amphtml.wordpress.com/2019/02/27/whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists/amp/"
+  excerpt: "Video improvements We have all experienced a situation where we want to watch a video and the related notes simultaneously. Good examples are a video of a recipe along with the instructions, or a video along with its transcript. The dock attribute on &#60;amp-video&#62; now supports minimizing the video to the corner of the viewport [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-02-27T13:32:11-08:00
+  date: "February 27, 2019"
+
+- type: Blog
+  title: "Using AMP to make display ads safer, faster and better for users"
+  id: using-amp-to-make-display-ads-safer-faster-and-better-for-users
+  author: Vamsee Jasti
+  role:  AMP Product Manager at Google
+  origin: "https://amphtml.wordpress.com/2019/02/20/using-amp-to-make-display-ads-safer-faster-and-better-for-users/amp/"
+  excerpt: "Editor&#8217;s note: The following post was originally published on the Google Ads Blog by Vamsee Jasti, AMP Product Manager at Google. The performance benefits and security guarantees offered by AMPHTML ads, which are display ads created using the AMP framework, translate to better advertiser ROI, publisher revenue and overall better user experience. Because of this, Google has expanded [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-02-20T11:24:50-08:00
+  date: "February 20, 2019"
+
+- type: Blog
+  title: "Volkswagen and EL PAÍS increase conversions by 76% with the first end-to-end AMP campaign"
+  id: volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign
+  author: Pilar Sanchez
+  role:  Mobile Specialist, Google
+  origin: "https://amphtml.wordpress.com/2019/02/11/volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign/amp/"
+  excerpt: "Volkswagen, one of the world&#8217;s largest automotive companies, sought to improve the user experience of potential customers for their 2019 Tiguan TDI 150 R Line. Given their business goals and desire to test the state-of-the-art in speed and performance, they decided to test AMP technology for both their landing page, and the ad  creatives that [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-02-11T13:22:06-08:00
+  date: "February 11, 2019"
+
+- type: Blog
   title: "AMP Conf 2019 が東京で開催されます"
   id: amp-conf-2019-jp
   author: amphtml
@@ -32,36 +65,3 @@ blogs:
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
   datedata: 2019-01-08T13:26:23-08:00
   date: "January 8, 2019"
-
-- type: Blog
-  title: "LaterPay, Lessons Learned"
-  id: laterpay-lessons-learned
-  author: Cosmin-Gabriel Ene
-  role:  CEO, LaterPay
-  origin: "https://amphtml.wordpress.com/2018/12/19/laterpay-lessons-learned/amp/"
-  excerpt: "Posted by Cosmin-Gabriel Ene, CEO, LaterPay At LaterPay, our mission is to turn casual users into paying customers for digital content or services such as journalism, videos, and software. Our technology enables payments and micropayments without upfront registration and payment, facilitating the “use now, pay later” approach. This allows users to consume paid content and [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-19T08:12:01-08:00
-  date: "December 19, 2018"
-
-- type: Blog
-  title: "Why AddThis chose to integrate with AMP"
-  id: why-addthis-chose-to-integrate-with-amp
-  author: Mike Brooks
-  role:  Product Lead, AddThis
-  origin: "https://amphtml.wordpress.com/2018/12/13/why-addthis-chose-to-integrate-with-amp/amp/"
-  excerpt: "Posted by Mike Brooks, Product Lead, AddThis Over the past year we&#8217;ve been extremely excited to share that AddThis released Share Buttons available as an AMP component. Our team has been tracking the AMP project since its announcement in 2016. As the web becomes increasingly mobile, it’s important for publishers to transform into this mobile era. [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-13T10:35:29-08:00
-  date: "December 13, 2018"
-
-- type: Blog
-  title: "Ads on AMP pages became safer and more user-friendly in 2018"
-  id: ads-on-amp-pages-became-safer-and-more-user-friendly-in-2018
-  author: Vamsee Jasti
-  role:  Product Manager at Google, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/12/11/ads-on-amp-pages-became-safer-and-more-user-friendly-in-2018/amp/"
-  excerpt: "In the past year, the AMP team took advantage of the latest browser features to keep users safe &#38; deliver a jank-free browsing experience. Because AMP powers billions of ads and pages on the web, these updates required no work from content creators or ad networks, making all AMP pages safer and faster for all [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-11T13:36:15-08:00
-  date: "December 11, 2018"

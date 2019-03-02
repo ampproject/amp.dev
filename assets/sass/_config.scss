@@ -18,6 +18,9 @@ $color-grey-ltmd: #b3b3b3;
 $color-grey-lt: #ededed;
 $color-bluegrey: #acbac1;
 $color-lightgrey: #f9f9f9;
+$color-lightestpink: #fbf7fd;
+$color-lightpink: #f8dcce;
+$color-pink: #e78b7c;
 
 // gradients
 $gradient-angle: 36deg;
@@ -29,6 +32,7 @@ $gradient-anglebold: linear-gradient($gradient-angle, $color-lightblue, $color-b
 $gradient-anglemed: linear-gradient($gradient-angle, $color-lightblue, $color-brightblue);
 $gradient-anglebuild: linear-gradient($gradient-angle, $color-buildblue, $color-brightblue);
 $gradient-anglelight: linear-gradient($gradient-angle, $color-lightblue 40%, $color-brightblue);
+$gradient-pink: linear-gradient(to right, #ee9ca7, #ffdde1);
 // $gradient-anglelight: linear-gradient($gradient-angle, $color-ampblue, $color-brightblue, $color-lightblue);
 
 $header-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.10);
