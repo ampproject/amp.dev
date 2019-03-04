@@ -136,8 +136,12 @@ class Editor {
     return this.codeMirror.getValue();
   }
 
+  scrollToLine(line) {
+    this.codeMirror.setCursor(line - 1, 1);
+  }
+
   setCursorAndFocus(line, col) {
-    this.codeMirror.setCursor(line - 1, col, {'scroll': true});
+    this.codeMirror.setCursor(line - 1, col);
     this.codeMirror.focus();
   }
 
