@@ -32,10 +32,10 @@ nav[toolbar] {
     background-color: color('oslo-gray');
   }
 
-  & > ul {
-    margin: 0;
-    padding: 0;
-  }
+  // & > ul {
+  //   margin: 0;
+  //   padding: 0;
+  // }
 }
 
 .#{utility('ampsidebar')} {
@@ -101,8 +101,13 @@ nav[toolbar] {
       }
 
       &.level-3 {
+        margin-left: 15px;
         .nav-link {
           @include sidebar-nav-link-level-3;
+        }
+        &.active {
+          background: color('alto');
+          border-radius: 6px 0 0 6px;
         }
       }
 

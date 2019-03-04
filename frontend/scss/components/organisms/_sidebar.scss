@@ -19,7 +19,7 @@
     padding-bottom: 0;
     width: auto;
     margin-right: 0;
-    margin-left: -15px;
+    margin-left: -10px;
     background: none;
     box-shadow: none;
   }
@@ -30,7 +30,7 @@
 }
 
 @mixin sidebar-nav {
-  margin: 34px 0 0;
+  margin: 15px 0 0;
   padding-bottom: 15px;
 
   
@@ -46,7 +46,7 @@
 }
 
 @mixin sidebar-nav-list-level-1 {
-  margin: 0 15px;
+  margin: 0 0 0 15px;
 }
 
 @mixin sidebar-nav-list-sublevels {
@@ -87,22 +87,24 @@
 }
 
 @mixin sidebar-nav-link-level-1 {
-  padding: 10px 25px 10px 0;
-  @include txt-1;
+  padding: 10px 25px 10px 20px;
+  text-transform: uppercase;
+  @include txt-lrg;
   @include txt-strong;
   @include txt-font-accent;
   @include color-black;
 }
 
 @mixin sidebar-nav-link-level-2 {
-  padding: 7px 25px 8px 0;
+  padding: 7px 25px 8px 20px;
+  text-transform: unset;
   @include txt;
   @include txt-2;
   line-height: 1.4em;
 }
 
 @mixin sidebar-nav-link-level-3 {
-  padding: 7px 25px 8px 25px;
+  padding: 7px 25px 8px 20px;
   @include txt-3;
 }
 
@@ -117,7 +119,6 @@
 
 @mixin sidebar-nav-trigger {
   position: absolute;
-  right: -15px;
   top: 0;
   width: 40px;
   padding: 0;
@@ -152,7 +153,6 @@
 @mixin sidebar-nav-icon {
   width: 12px;
   height: 12px;
-  margin: 0 auto;
   transform: rotate(-90deg);
 }
 
@@ -165,7 +165,7 @@
 }
 
 @mixin sidebar-nav-icon-level-1 {
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 @mixin sidebar-nav-icon-level-2 {
