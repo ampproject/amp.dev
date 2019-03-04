@@ -23,6 +23,7 @@ const through = require('through2');
 const del = require('del');
 const path = require('path');
 const fs = require('fs');
+const yaml = require('js-yaml');
 const crypto = require('crypto');
 
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
@@ -234,7 +235,7 @@ class SamplesBuilder {
         'None'),
       'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
       // ... and some additional information that is used by the example teaser
-      ...this._getTeaserData(parsedSample),
+      this._getTeaserData(parsedSample),
       '---',
     ].join('\n'));
     manual.extname = '.html';
@@ -256,19 +257,17 @@ class SamplesBuilder {
    * @return {String}
    */
   _getTeaserData(parsedSample) {
-    const teaserData = [];
-    teaserData.push('formats:');
-    teaserData.push(`  - ${this._getSampleFormat(parsedSample)}`);
-
-
-    teaserData.push('used_components:');
-    teaserData.push(...this._getUsedComponents(parsedSample));
+    const teaserData = {};
+    teaserData.formats = [this._getSampleFormat(parsedSample)];
+    teaserData.used_components = this._getUsedComponents(parsedSample);
 
     if (parsedSample.document.metadata.teaserImage) {
-      teaserData.push(`teaser:\n  image:\n    src: ${parsedSample.document.metadata.teaserImage}`);
+      teaserData.teaser = {'image': {
+        'src': parsedSample.document.metadata.teaserImage
+      }};
     }
 
-    return teaserData;
+    return yaml.safeDump(teaserData);
   }
 
   /**
