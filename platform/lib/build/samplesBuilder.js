@@ -298,19 +298,13 @@ class SamplesBuilder {
    */
   _getUsedComponents(parsedSample) {
     // Dirty RegEx to quickly parse component names from head
-    const COMPONENT_PATTERN = /custom-element="amp-.*?"/g;
-    const matches = parsedSample.document.head.match(COMPONENT_PATTERN) || [];
+    const COMPONENT_PATTERN = /<script.*?custom-.*?="(?<name>.*?)".*?<\/script>/g;
+    const match = COMPONENT_PATTERN.exec(parsedSample.document.head);
 
-    const usedComponents = [];
-    /* eslint-disable guard-for-in */
-    for (let match of matches) {
-      // Strip custom-element= from match, while doing so directly
-      // pad the components to render them as YAML list
-      match = match.replace('custom-element="', '  - ');
-      match = match.replace('"', '');
-
-      usedComponents.push(match);
-    }
+    const usedComponents = {};
+    parsedSample.document.head.replace(COMPONENT_PATTERN, (script, name) => {
+      usedComponents[name] = script.replace(/\"/g, '\"');
+    });
 
     return usedComponents;
   }
