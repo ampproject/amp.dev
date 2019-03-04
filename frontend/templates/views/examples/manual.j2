@@ -1,25 +1,26 @@
 {% extends '/layouts/default.j2' %}
+{% set inline_preview = not doc.example.document.metadata.hidePreview %}
 
 {% block head %}
-{{ doc.example.document.head|safe }}
+{{ super() }}
+
 {# Always include amp-bind for the header and TOC if the sample doesn't include it #}
-{% if 'custom-element="amp-bind"' not in doc.example.document.head %}
+{% if 'amp-bind' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 {% endif %}
 
-{# If neither amp-geo nor amp-consent is used for the sample include it #}
-{% if 'custom-element="amp-consent"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
+{% if ('amp-consent' not in doc.used_components and 'amp-geo' not in doc.used_components) or not inline_preview %}
 <script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
 <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 {% endif %}
 
 {# Include amp-install-serviceworker #}
-{% if 'custom-element="amp-install-serviceworker"' not in doc.example.document.head %}
+{% if 'amp-serviceworker' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 {% endif %}
 
-{# Include amp-iframe for story previews if its a story preview #}
+{# Include amp-iframe for story previews #}
 {% if doc.example.document.isAmpStory %}
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 {% endif %}
@@ -27,30 +28,12 @@
 {# Always include amp-font #}
 <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
 
-{# The samples head already includes a lot of the required tags, the following
-tags are specific for amp.dev #}
-{% if podspec.env.name == 'development' %}
-<link rel="shortcut icon" href="/static/img/favicon-local.png">
-{% else %}
-<link rel="shortcut icon" href="/static/img/favicon.png">
-{% endif %}
-
-<link rel="canonical" href="{{ doc.url }}">
-<link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}">
-{% for locale in doc.locales if not locale == doc.locale  %}
-{% set localized_doc = doc.localize(locale) %}
-{# If the document really is localized cross-reference it #}
-{% if '@' in localized_doc.pod_path %}
-<link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}">
-{% endif %}
+{# Include other AMP dependencies if needed for preview #}
+{% if inline_preview %}
+{% for used_component in doc.used_components %}
+{{ doc.used_components[used_component]|safe }}
 {% endfor %}
-
-{# Do not index untranslated content #}
-{% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
-<meta name="robots" content="noindex,follow">
 {% endif %}
-
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Poppins:700|Inconsolata" rel="stylesheet">
 {% endblock %}
 
 {% block styles %}
@@ -60,8 +43,10 @@ tags are specific for amp.dev #}
 
 {% do doc.styles.addCssFile('css/components/templates/examples/manual.css') %}
 
-{# Add eventual specific sample styles to page #}
+{# Add eventual specific sample styles to page if preview enabled #}
+{% if not doc.example.document.metadata.hidePreview %}
 {{ doc.example.document.styles|safe }}
+{% endif %}
 {% endblock %}
 
 {% block body %}
@@ -116,14 +101,13 @@ tags are specific for amp.dev #}
 
       <div class="ap--ctas">
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
-        {% set preview_enabled = doc.example.document.metadata.preview %}
 
         {% set playground_url = podspec.base_urls.playground + doc.url.path + '/source/' %}
         {% if not playground_disabled %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
         <a href="{{ playground_url }}" class="ap-a-btn ap--playground-link">{{ _('Open in playground') }}</a>
         {% endif %}
-        {% if preview_enabled %}
+        {% if doc.example.document.metadata.preview %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
         {% set preview_url = doc.url.path + '/preview' %}
         <a href="{{ preview_url }}" class="ap-a-btn">{{ _('View demo') }}</a>
@@ -154,7 +138,7 @@ tags are specific for amp.dev #}
       {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
       <div class="ap-o-code-preview">
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
-        {% set show_preview = section.preview and section.inBody and not doc.example.document.hidePreview %}
+        {% set show_preview = section.preview and section.inBody and not doc.example.document.metadata.hidePreview %}
         {% if story_preview %}
         {% set story_preview_embed = podspec.base_urls.api + doc.url.path + '/embed?id=' + section.storyPageId %}
         {# Storys should be repeatable, therefore render reload icon #}
