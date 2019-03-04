@@ -11,14 +11,21 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 10px;
-  padding: 15px 0 0 0;
+  padding: 15px 0 15px 0;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.25);
 
   @media (min-width: 768px) {
-    padding: 0;
-    margin: 0;
-    margin-left: 12px;
+    padding: 0 0 20px 0;
+    margin: 0 15px;
   }
 
+  &-hl {
+    margin-bottom: 15px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 0.875rem
+  }
+  
   &-notification {
 
     bottom: auto;
@@ -74,13 +81,13 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 8px;
+    padding: 16px 8px;
     @include txt;
     @include txt-font-accent;
     line-height: 1.2em;
     font-size: 1em;
     text-overflow: ellipsis;
-    border-radius: 4px;
+    border-radius: 12px;
     color: color('black');
     background: color('athens-gray');
     transition: opacity 0.2s ease;
