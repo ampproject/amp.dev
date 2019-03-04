@@ -1,5 +1,6 @@
 ---
 $title: Actions and events
+toc: false
 $order: 7
 formats:
   - websites
@@ -23,6 +24,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+
+
+
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
@@ -48,7 +53,7 @@ See the table below for descriptions of each part of the syntax.
   <tr>
     <td><code>targetId</code></td>
     <td>yes</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a> target, <code>photo-slides</code>.
+    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.
     <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
 &lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
     </td>
@@ -79,11 +84,13 @@ You can listen to multiple events on an element by separating the events with a 
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
+
 ## Multiple actions for one event
 
 You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
 
 Example: `on="tap:target1.actionA,target2.actionB"`
+
 
 ## Globally-defined events and actions
 
@@ -172,7 +179,7 @@ event.value</pre>
   </tr>
 </table>
 
-### `amp-carousel`
+### amp-carousel[type="slides"]
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -192,7 +199,7 @@ event.index</pre></td>
   </tr>
 </table>
 
-### `amp-lightbox`
+### amp-lightbox
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -211,7 +218,7 @@ event.index</pre></td>
   </tr>
 </table>
 
-### `amp-selector`
+### amp-selector
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -229,7 +236,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### `amp-sidebar`
+### amp-sidebar
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -248,7 +255,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### `amp-video` `amp-youtube`
+### amp-video, amp-youtube
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -257,12 +264,12 @@ event.selectedOptions</pre></td>
   </tr>
   <tr>
     <td><code>firstPlay</code>(low-trust)</td>
-    <td>Fired the first time the video is played by the user. On autoplay videos, this is fired as soon as the user interacts with the video. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}"><code>amp-animation</code></a> actions can be run.</td>
+    <td>Fired the first time the video is played by the user. On autoplay videos, this is fired as soon as the user interacts with the video. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
     <td></td>
   </tr>
   <tr>
     <td><code>timeUpdate</code>(low-trust)</td>
-    <td>Fired when the playing position of a video has changed. Frequency of the event is controlled by AMP and is currently set at 1 second intervals. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}"><code>amp-animation</code></a> actions can be run.</td>
+    <td>Fired when the playing position of a video has changed. Frequency of the event is controlled by AMP and is currently set at 1 second intervals. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
     <td><code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
   </tr>
 </table>
@@ -302,6 +309,7 @@ event.response</pre></td>
     <td></td>
   </tr>
 </table>
+
 
 ## Element-specific actions
 
@@ -349,7 +357,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-audio`
+### amp-audio
 <table>
   <tr>
     <th width="20%">Action</th>
@@ -357,15 +365,15 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a> element is a descendant of <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}"><code>amp-story</code></a>.</td>
+    <td>Plays the audio. Is a no-op if the <code>&lt;amp-audio></code> element is a descendant of <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a> element is a descendant of <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}"><code>amp-story</code></a>.</td>
+    <td>Pauses the audio. Is a no-op if the <code>&lt;amp-audio></code> element is a descendant of <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 
-### `amp-bodymovin-animation`
+### amp-bodymovin-animation
 <table>
   <tr>
     <th>Action</th>
@@ -393,7 +401,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-carousel`
+### amp-carousel[type="slides"]
 <table>
   <tr>
     <th>Action</th>
@@ -405,7 +413,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-image-lightbox`
+### amp-image-lightbox
 <table>
   <tr>
     <th width="40%">Action</th>
@@ -417,7 +425,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-lightbox`
+### amp-lightbox
 <table>
   <tr>
     <th>Action</th>
@@ -433,7 +441,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-list`
+### amp-list
 <table>
   <tr>
     <th>Action</th>
@@ -445,7 +453,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-live-list`
+### amp-live-list
 <table>
   <tr>
     <th>Action</th>
@@ -457,7 +465,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-selector`
+### amp-selector
 <table>
   <tr>
     <th>Action</th>
@@ -477,7 +485,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-sidebar`
+### amp-sidebar
 <table>
   <tr>
     <th>Action</th>
@@ -509,7 +517,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### `amp-user-notification`
+### amp-user-notification
 <table>
   <tr>
     <th>Action</th>
@@ -523,7 +531,7 @@ event.response</pre></td>
 
 ### Video elements
 
-The actions below are supported in the following AMP video elements: [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), [`amp-3q-player`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-3q-player.md', locale=doc.locale).url.path}}), [`amp-brid-player`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-brid-player.md', locale=doc.locale).url.path}}), [`amp-dailymotion`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-dailymotion.md', locale=doc.locale).url.path}}), [`amp-delight-player`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-delight-player.md', locale=doc.locale).url.path}}), [`amp-ima-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}).
+The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
 <table>
   <tr>
@@ -609,7 +617,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>setState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}"><code>amp-bind</code></a>.</p>
+      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state.</p>
       <p></p>
     </td>
@@ -617,20 +625,20 @@ actions that apply to the whole document.
   <tr>
     <td><code>pushState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}"><code>amp-bind</code></a>.</p>
+      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </td>
   </tr>
 </table>
 
 <sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
 
-### Target: [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
+### Target: amp-access
 
-The [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) target is provided by the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) component.
+The `amp-access` target is provided by the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access.html) component.
 
-The [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) target is special for these reasons:
+The `amp-access` target is special for these reasons:
 
-1.  You can't give an arbitrary ID to this target. The target is always [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
-2. The actions for [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) are dynamic depending on the structure of the [AMP Access Configuration]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#configuration).
+1.  You can't give an arbitrary ID to this target. The target is always `amp-access`.
+2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://www.ampproject.org/docs/reference/components/amp-access#configuration).
 
-See [details]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-link) about using the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) target.
+See [details](https://www.ampproject.org/docs/reference/components/amp-access#login-link) about using the `amp-access` target.
