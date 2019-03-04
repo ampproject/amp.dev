@@ -66,7 +66,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告代理机构
 
-如果您是广告代理机构，则必须按照 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)制作广告。要寻求灵感并查看示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
+如果您是广告代理机构，则必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})制作广告。要寻求灵感并查看示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
 
 *  [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -127,4 +127,3 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 *   建议您在 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) 上查找 AMP 相关问题的解答；由于 AMP 项目社区成员会定期查看 Stack Overflow，因此通过 Stack Overflow 提问时可以最快得到解答。
 *   要获取解决方案和解答，请加入 [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 渠道。
 *   如果您遇到 AMP 方面的错误或有与 AMP 相关的功能请求，请参阅[报告 AMP 问题](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)，了解如何提交问题。
- 
