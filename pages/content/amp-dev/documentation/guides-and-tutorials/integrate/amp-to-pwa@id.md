@@ -14,7 +14,7 @@ Baca terus untuk mengetahui alasan dan cara menggunakan pola pengembangan ini.
 
 ### AMP untuk akuisisi pengguna awal
 
-AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, halaman konten yang ditemukan pengguna Anda secara organik melalui mesin telusur, link yang dibagikan oleh teman, atau melalui link di situs lain. Karena [prarender khusus](/id/learn/about-how/) AMP, halaman dapat dimuat sangat cepat, sehingga jumlah pengguna yang berpaling menjadi lebih sedikit ([studi DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) terbaru menunjukkan bahwa **lebih dari 53% dari semua pengguna akan berpaling setelah 3 detik**).
+AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, halaman konten yang ditemukan pengguna Anda secara organik melalui mesin telusur, link yang dibagikan oleh teman, atau melalui link di situs lain. Karena [prarender khusus]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) AMP, halaman dapat dimuat sangat cepat, sehingga jumlah pengguna yang berpaling menjadi lebih sedikit ([studi DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) terbaru menunjukkan bahwa **lebih dari 53% dari semua pengguna akan berpaling setelah 3 detik**).
 
 ### PWA untuk engagement dan interaktivitas yang kaya
 

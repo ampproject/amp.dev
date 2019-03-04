@@ -14,7 +14,7 @@ Sigue leyendo para saber por qué y cómo usar este patrón de desarrollo.
 
 ### Utilizar páginas AMP en la adquisición de usuarios inicial
 
-AMP es una solución ideal en el caso de las denominadas **páginas de producto**: páginas de contenido que tus usuarios descubren de forma natural mediante un motor de búsqueda, a través de un enlace compartido por un amigo o por un enlace de otro sitio web. La tecnología AMP tiene un [renderizado especializado previo](/es/learn/about-how/) que posibilita una carga extremadamente rápida de las páginas AMP, lo que reduce mucho el porcentaje de abandono (el último [estudio de DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) muestra que **más del 53 % de los usuarios abandonan después de tres segundos**).
+AMP es una solución ideal en el caso de las denominadas **páginas de producto**: páginas de contenido que tus usuarios descubren de forma natural mediante un motor de búsqueda, a través de un enlace compartido por un amigo o por un enlace de otro sitio web. La tecnología AMP tiene un [renderizado especializado previo]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) que posibilita una carga extremadamente rápida de las páginas AMP, lo que reduce mucho el porcentaje de abandono (el último [estudio de DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) muestra que **más del 53 % de los usuarios abandonan después de tres segundos**).
 
 ### Mejorar la interactividad y la interacción con PWA
 

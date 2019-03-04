@@ -14,7 +14,7 @@ $title: AMP 페이지에서 프로그레시브 웹 앱 미리 로드하기
 
 ### 초기 사용자 획득을 위한 AMP
 
-AMP는 사용자가 검색 엔진, 친구에게 받은 공유 링크 또는 다른 사이트의 링크를 통해 자연스럽게 발견하는 콘텐츠 페이지인 **리프 페이지**에 이상적인 솔루션입니다. AMP 페이지는 AMP의 [전문 사전 렌더링](/ko/learn/about-how/)을 사용하여 아주 빠르게 로드되며, 따라서 이탈률이 훨씬 낮습니다. 최신 [Doubleclick 연구](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)에 따르면 **전체 사용자 중 53% 이상이 3초 안에 페이지가 로드되지 않으면 이탈**한다고 합니다.
+AMP는 사용자가 검색 엔진, 친구에게 받은 공유 링크 또는 다른 사이트의 링크를 통해 자연스럽게 발견하는 콘텐츠 페이지인 **리프 페이지**에 이상적인 솔루션입니다. AMP 페이지는 AMP의 [전문 사전 렌더링]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}})을 사용하여 아주 빠르게 로드되며, 따라서 이탈률이 훨씬 낮습니다. 최신 [Doubleclick 연구](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)에 따르면 **전체 사용자 중 53% 이상이 3초 안에 페이지가 로드되지 않으면 이탈**한다고 합니다.
 
 ### 활발한 상호작용 및 참여를 위한 PWA
 
