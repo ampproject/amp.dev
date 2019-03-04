@@ -56,6 +56,8 @@ const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
 const PREVIEW_DEST = path.join(__dirname, '../../../dist/examples/previews');
 // Where to store the embeds for Grow
 const EMBED_DEST = path.join(__dirname, '../../../dist/examples/embeds');
+// The API host used by samples depending on one
+const API_HOST = 'https://amp-by-example-api.appspot.com';
 
 class SamplesBuilder {
   constructor() {
@@ -167,7 +169,9 @@ class SamplesBuilder {
    * @return {Promise}
    */
   async _parseSample(samplePath, sampleRelativePath) {
-    return await abe.parseSample(samplePath).then((parsedSample) => {
+    return await abe.parseSample(samplePath, {
+      'api': {'host': API_HOST}
+    }).then((parsedSample) => {
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
