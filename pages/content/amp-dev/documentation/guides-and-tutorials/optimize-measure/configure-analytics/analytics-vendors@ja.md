@@ -220,7 +220,7 @@ type 属性の値: `nielsen-marketing-cloud`
 
 type 属性の値: `oewa`
 
-この値を指定すると、[OEWA](https://www.oewa.at) を使用できるようになります。使用する AMP ファイルとは別のサブドメインに [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) のコピーが必要です（[理由](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)）。このファイルは HTTPS 経由で配信する必要があります。たとえば、AMP ファイルが `www.example.com` でホストされている場合、`amp-analytics-oewa.html` は別のサブドメイン（`oewa-amp.example.com` など）になければなりません。OEWA の利用を有効にする方法について詳しくは、[こちら](http://www.oewa.at/basic/implementierung)をご覧ください。
+この値を指定すると、[OEWA](https://www.oewa.at) を使用できるようになります。使用する AMP ファイルとは別のサブドメインに [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) のコピーが必要です（[理由](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)）。このファイルは HTTPS 経由で配信する必要があります。たとえば、AMP ファイルが `www.example.com` でホストされている場合、`amp-analytics-oewa.html` は別のサブドメイン（`oewa-amp.example.com` など）になければなりません。OEWA の利用を有効にする方法について詳しくは、[こちら](http://www.oewa.at/Implementierung)をご覧ください。
 
 さらに、次の変数も指定する必要があります。
 

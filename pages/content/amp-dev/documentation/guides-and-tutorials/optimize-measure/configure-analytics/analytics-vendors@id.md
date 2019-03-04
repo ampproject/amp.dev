@@ -220,7 +220,7 @@ Menambahkan dukungan untuk Nielsen Marketing Cloud. Detail selengkapnya dapat di
 
 Nilai atribut type: `oewa`
 
-Menambahkan dukungan untuk [OEWA](https://www.oewa.at). Memerlukan salinan [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) di subdomain yang berbeda dengan file AMP yang mencakupnya ([mengapa?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). File harus ditayangkan melalui HTTPS. Sebagai contoh, jika file AMP Anda dihosting di `www.example.com`, maka `amp-analytics-oewa.html` harus berada di subdomain lain, misalnya `oewa-amp.example.com`. Detail selengkapnya tentang menambahkan dukungan OEWA dapat dilihat [di sini](http://www.oewa.at/basic/implementierung).
+Menambahkan dukungan untuk [OEWA](https://www.oewa.at). Memerlukan salinan [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) di subdomain yang berbeda dengan file AMP yang mencakupnya ([mengapa?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). File harus ditayangkan melalui HTTPS. Sebagai contoh, jika file AMP Anda dihosting di `www.example.com`, maka `amp-analytics-oewa.html` harus berada di subdomain lain, misalnya `oewa-amp.example.com`. Detail selengkapnya tentang menambahkan dukungan OEWA dapat dilihat [di sini](http://www.oewa.at/Implementierung).
 
 Selain itu, variabel berikut harus ditetapkan:
 

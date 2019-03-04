@@ -220,7 +220,7 @@ Permite añadir compatibilidad con Nielsen Marketing Cloud. Puedes encontrar má
 
 Escribe el valor de atributo: `oewa`
 
-Permite añadir compatibilidad con [OEWA](https://www.oewa.at). Requiere una copia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) en un subdominio diferente del que incluye el archivo AMP [¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md). El archivo se debe servir a través de HTTPS. Por ejemplo, si tus archivos AMP están alojados en `www.example.com`, entonces `amp-analytics-oewa.html` debe estar en otro subdominio, como `oewa-amp.example.com`. Puedes encontrar más información sobre cómo añadir compatibilidad con OEWA [aquí](http://www.oewa.at/basic/implementierung).
+Permite añadir compatibilidad con [OEWA](https://www.oewa.at). Requiere una copia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) en un subdominio diferente del que incluye el archivo AMP [¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md). El archivo se debe servir a través de HTTPS. Por ejemplo, si tus archivos AMP están alojados en `www.example.com`, entonces `amp-analytics-oewa.html` debe estar en otro subdominio, como `oewa-amp.example.com`. Puedes encontrar más información sobre cómo añadir compatibilidad con OEWA [aquí](http://www.oewa.at/Implementierung).
 
 Además, debes definir estas variables:
 
