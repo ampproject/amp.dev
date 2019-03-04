@@ -16,7 +16,7 @@ $title: 提高用户互动度
 
 - **提供互动体验**（在 AMP 网页上）。使用 [`amp-carousel`](/zh_cn/docs/reference/components/amp-carousel.html) 等组件制作丰富的图片轮换展示内容，并使用 [`amp-iframe`](/zh_cn/docs/reference/components/amp-iframe.html)整合 AMP 未以原生方式支持的互动元素。
 
-- **打造个性化的用户行为历程。** 提供登录按钮；如果您的内容位于付费墙背后，则使用 [`amp-access`](/zh_cn/docs/reference/components/amp-access.html) 实施您的规则和产品/服务。
+- **打造个性化的用户行为历程。** 提供登录按钮；如果您的内容位于付费墙背后，则使用 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 实施您的规则和产品/服务。
 
 - **延伸用户的行为历程。** 链接到相关或推荐文章以及您网站的其他相关部分。
 
@@ -42,4 +42,3 @@ $title: 提高用户互动度
 在 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)上贡献源代码，提交错误或提供反馈。 要分享您对 AMP 的想法，请访问 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)。
 
 - **了解**如何使用 AMP 组件：[AMP by Example](https://ampbyexample.com/)。
-

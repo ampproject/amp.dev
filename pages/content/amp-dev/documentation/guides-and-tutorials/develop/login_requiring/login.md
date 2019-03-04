@@ -69,5 +69,5 @@ As a quick recap:
 - The server should orchestrate the response once the user clicks on the login button
 
 [tip type="tip"]
-**TIP –** A more detailed explanation about this flow can also be found in the [amp-access documentation](/docs/reference/components/amp-access.html#login-flow).
+**TIP –** A more detailed explanation about this flow can also be found in the [amp-access documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-flow).
 [/tip]

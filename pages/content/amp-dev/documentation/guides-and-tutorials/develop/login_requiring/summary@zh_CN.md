@@ -7,6 +7,6 @@ $order: 3
 
 要了解详情，请访问以下资源：
 
-- [amp-access](/zh_cn/docs/reference/components/amp-access.html)
-- [amp-form](/zh_cn/docs/reference/components/amp-form.html)
+- [amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
+- [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
 - ["评论部分"示例](https://ampbyexample.com/samples_templates/comment_section/)

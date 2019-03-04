@@ -21,7 +21,7 @@ Here are some quick tips to improve user engagement with AMP.
 incorporate interactive elements that AMP does not natively support.
 
 - **Create personalized user journeys.** Offer a login button, and if your content
-lives behind a paywall, implement your rules and offers using [`amp-access`](/docs/reference/components/amp-access.html).
+lives behind a paywall, implement your rules and offers using [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 - **Extend onward journeys.** Link to related or suggested articles and other
 relevant sections of your site.

@@ -15,7 +15,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **双方向のエクスペリエンスを提供する。**  AMP ページで、たとえば [`amp-carousel`](/ja/docs/reference/components/amp-carousel.html)  コンポーネントを使って魅力的な画像カルーセルを作成します。また、AMP ではネイティブにサポートされていない双方向性を、[`amp-iframe`](/ja/docs/reference/components/amp-iframe.html) を使って組み込みます。
 
-- **ユーザーの行動経路をカスタマイズする。**  ログインボタンを追加します。有料コンテンツがある場合は [`amp-access`](/ja/docs/reference/components/amp-access.html) を使ってルールや特典を実装します。
+- **ユーザーの行動経路をカスタマイズする。**  ログインボタンを追加します。有料コンテンツがある場合は [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) を使ってルールや特典を実装します。
 
 - **ユーザーの行動経路を拡げる。** 関連記事や推奨記事など、サイト内の関連コンテンツへのリンクを設定します。
 
@@ -41,4 +41,3 @@ $title: ユーザー エンゲージメントを向上させる
 - **参加する。**  ソースコードの提供、バグ報告、フィードバックは [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) からお願いします。AMP に関する意見交換は [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) で行っています。
 
 - **AMP について学ぶ。**  AMP コンポーネントの使用方法は [AMP サンプル](https://ampbyexample.com/)を参考にしてください。
-

@@ -6,6 +6,6 @@ $title: 概要
 
 詳しくは以下のページをご覧ください。
 
-- [amp-access](/ja/docs/reference/components/amp-access.html)
-- [amp-form](/ja/docs/reference/components/amp-form.html)
+- [amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
+- [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
 - [コメント セクションの例](https://ampbyexample.com/samples_templates/comment_section/)

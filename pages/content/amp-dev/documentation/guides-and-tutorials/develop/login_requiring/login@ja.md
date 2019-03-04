@@ -65,4 +65,4 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - AMP ランタイムはログインページを閉じて、return URL パラメータで指定されたページにリダイレクトします
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
-ヒント: このフローの詳細については、[amp-access ドキュメント](/ja/docs/reference/components/amp-access.html#login-flow)をご覧ください。
+ヒント: このフローの詳細については、[amp-access ドキュメント]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-flow)をご覧ください。

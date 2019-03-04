@@ -15,7 +15,7 @@ Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario co
 
 - **Proporcione experiencias interactivas** en sus páginas AMP. Utilice componentes como [`amp-carousel`](/es/docs/reference/components/amp-carousel.html) para crear ricos carruseles de imágenes y [`amp-iframe`](/es/docs/reference/components/amp-iframe.html) para incorporar elementos interactivos que AMP no soporte nativamente.
 
-- **Crear viajes de usuario personalizados.** Ofrezca un botón de inicio de sesión, y si tienes contenido para usuarios con membresía paga, implemente sus reglas y ofertas usando [`amp-access`](/es/docs/reference/components/amp-access.html).
+- **Crear viajes de usuario personalizados.** Ofrezca un botón de inicio de sesión, y si tienes contenido para usuarios con membresía paga, implemente sus reglas y ofertas usando [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 - **Extienda los viajes hacia adelante.** Enlace a artículos relacionados o sugeridos y otras secciones relevantes de su sitio.
 

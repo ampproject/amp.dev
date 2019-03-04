@@ -22,7 +22,7 @@ dan [`amp-iframe`](/id/docs/reference/components/amp-iframe.html) untuk menyatuk
 elemen interaktif yang tidak didukung AMP.
 
 - **Buat alur menjelajah yang dipersonalisasikan untuk pengguna.** Tawarkan tombol login, dan jika konten
-dilapis oleh paywall, implementasikan peraturan dan tawaran menggunakan[`amp-access`](/id/docs/reference/components/amp-access.html).
+dilapis oleh paywall, implementasikan peraturan dan tawaran menggunakan[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 - **Perpanjang alur menjelajah.** Tautkan artikel terkait atau artikel yang disarankan, dan tautkan juga ke
 bagian situs lainnya yang relevan.
@@ -55,4 +55,3 @@ Ikuti praktik terbaik [monetisasi iklan]({{g.doc('/content/amp-dev/documentation
 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Pelajari** cara menggunakan komponen AMP dengan [AMP by Example](https://ampbyexample.com/).
-

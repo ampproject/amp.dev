@@ -634,11 +634,11 @@ actions that apply to the whole document.
 
 ### Target: amp-access
 
-The `amp-access` target is provided by the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access.html) component.
+The `amp-access` target is provided by the [amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) component.
 
 The `amp-access` target is special for these reasons:
 
 1.  You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://www.ampproject.org/docs/reference/components/amp-access#configuration).
+2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#configuration).
 
-See [details](https://www.ampproject.org/docs/reference/components/amp-access#login-link) about using the `amp-access` target.
+See [details]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-link) about using the `amp-access` target.

@@ -66,5 +66,5 @@ Sebagai rangkuman singkat:
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
 [tip type="tip"]
-**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation](/id/docs/reference/components/amp-access.html#login-flow).
+**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [amp-access documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-flow).
 [/tip]

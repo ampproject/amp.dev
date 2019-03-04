@@ -16,7 +16,7 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 
 - **Ofereça experiências interativas** nas suas páginas AMP. Use componentes como [`amp-carousel`](/pt_br/docs/reference/components/amp-carousel.html) para criar carrosséis avançados de imagens e [`amp-iframe`](/pt_br/docs/reference/components/amp-iframe.html) para incorporar elementos interativos sem compatibilidade nativa com AMP.
 
-- **Crie jornadas personalizadas para os usuários.** Ofereça um botão de login e, no conteúdo pago, implemente suas regras e ofertas com [`amp-access`](/pt_br/docs/reference/components/amp-access.html).
+- **Crie jornadas personalizadas para os usuários.** Ofereça um botão de login e, no conteúdo pago, implemente suas regras e ofertas com [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 - **Aumente a permanência dos usuários.** Crie links para artigos relacionados ou sugeridos e outras seções relevantes do site.
 
@@ -42,4 +42,3 @@ Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-
 - **Envolva-se.** Contribua com código-fonte, comunique bugs ou faça comentários no [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Compartilhe sua opinião sobre as AMP no [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Saiba** como usar os componentes de AMP com o [AMP by Example](https://ampbyexample.com/).
-
