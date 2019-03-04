@@ -203,7 +203,7 @@ class SamplesBuilder {
 
         // Replace new lines with following space or multiple new lines
         // by just a new line
-        markdown = markdown.replace(/(\n +|\n{2,})/gm, '\n');
+        markdown = markdown.replace(/(\n +|\n{2,})/gm, '\n\n');
 
         // Restore codeblocks
         /* eslint-disable guard-for-in */
