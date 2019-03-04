@@ -643,7 +643,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout.html) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout.html) y la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.
@@ -666,7 +666,7 @@ Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añ
 </table>
 
 Este error se produce cuando no se especifica ningún diseño para la etiqueta de AMP y el diseño implícito contiene un atributo no permitido.
-Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### La etiqueta de AMP no admite el diseño especificado
 
@@ -689,7 +689,7 @@ Este error se produce cuando no se admite el diseño especificado para la etique
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout) y la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Atributo no permitido por el diseño especificado
 
@@ -709,7 +709,7 @@ Para obtener más información sobre cómo funciona el diseño, consulta [Cómo 
 </table>
 
 Este error se produce cuando se especifica un diseño para la etiqueta de AMP y ese diseño contiene un atributo no permitido.
-Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### El atributo requerido por el diseño tiene un valor no válido
 

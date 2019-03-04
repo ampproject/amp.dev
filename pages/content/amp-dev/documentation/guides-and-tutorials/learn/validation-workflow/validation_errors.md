@@ -761,7 +761,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
 see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
-the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
 **NOTE –**  If you don't specify the layout,
@@ -794,7 +794,7 @@ or add a `width` and/or `height` value and the error goes away.
 This error occurs when you don't specify a layout for the AMP tag,
 and the implied layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+[AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Specified layout isn't supported by AMP tag
 
@@ -821,7 +821,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
 see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
-the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Attribute not allowed by specified layout
 
@@ -844,7 +844,7 @@ the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.
 This error occurs when you specify a layout for the AMP tag,
 and the layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+[AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Invalid value for attribute required by layout
 
