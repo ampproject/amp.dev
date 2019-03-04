@@ -27,11 +27,20 @@ body {
 
   .#{utility('container')} {
     @include container;
+    @include container-nogap;
   }
 
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
+    background: color('white');
+    @media (min-width: 768px) {
+      grid-column: 9 / 25;
+    }
+  
+    @media (min-width: 1024px) {
+      grid-column: 6 / 24;
+    }
   }
 
   .#{utility('sidebar')} {
@@ -39,7 +48,7 @@ body {
   }
 
   .#{utility('toc')} {
-    @include toc;
+    @include toc-white-bg;
   }
 
   .#{utility('sidebar')} + .#{utility('content')},

@@ -22,11 +22,13 @@
   @include bg-docs;
   .#{utility('container')} {
     @include container;
+    @include container-nogap;
   }
   
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
+    @include content-white-bg;
   }
   
   .#{utility('sidebar')} {
@@ -34,7 +36,7 @@
   }
   
   .#{utility('toc')} {
-    @include toc;
+    @include toc-white-bg;
   }
   
   .#{utility('sidebar')} + .#{utility('content')},
