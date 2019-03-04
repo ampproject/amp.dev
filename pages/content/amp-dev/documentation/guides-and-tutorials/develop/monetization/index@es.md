@@ -28,7 +28,7 @@ El componente `<amp-ad>` es una extensión de anuncio personalizada de la biblio
 
 Hay más de 100 [servidores de anuncios y redes publicitarias]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) que ofrecen integraciones con AMP integradas.  Para añadir un anuncio de una red publicitaria concreta, utiliza la etiqueta `<amp-ad>` y especifica la red con el atributo `type`.
 
-En este ejemplo, vamos a añadir un espacio publicitario para servir anuncios de la red a9: 
+En este ejemplo, vamos a añadir un espacio publicitario para servir anuncios de la red a9:
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ En este ejemplo, vamos a añadir un espacio publicitario para servir anuncios de
 
 ### Paso 3: Especifica el tamaño del bloque de anuncios
 
-Añade los atributos `width` y `height` a la etiqueta `<amp-ad>`  para especificar el tamaño del anuncio en la página AMP: 
+Añade los atributos `width` y `height` a la etiqueta `<amp-ad>`  para especificar el tamaño del anuncio en la página AMP:
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -58,7 +58,7 @@ Cada red utiliza atributos de datos específicos que requieren para servir anunc
 </amp-ad>
 ```
 
-### Paso 5 (opcional): Utiliza un marcador de posición 
+### Paso 5 (opcional): Utiliza un marcador de posición
 
 En función de la red publicitaria, puedes optar por mostrar un marcador de posición hasta que el anuncio esté disponible para publicarse. Este marcador evita que se muestren espacios en blanco, por lo que mejora la experiencia de usuario.  Para especificar un marcador de posición, añade un elemento secundario con el atributo `placeholder`. [Más información sobre marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 
@@ -72,7 +72,7 @@ En función de la red publicitaria, puedes optar por mostrar un marcador de posi
 </amp-ad>
 ```
 
-### Paso 6 (opcional): Utiliza un respaldo 
+### Paso 6 (opcional): Utiliza un respaldo
 
 En función de la red publicitaria, puedes optar por mostrar un elemento de respaldo en caso de que no haya ningún anuncio disponible. Para especificar un respaldo, añade un elemento secundario con el atributo `fallback`. [Más información sobre marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 
@@ -90,7 +90,7 @@ En función de la red publicitaria, puedes optar por mostrar un elemento de resp
 
 ## Servir anuncios AMP HTML de venta directa
 
-El componente [`amp-ad`](/es/docs/reference/components/amp-ad.html) sirve anuncios de la red que especifiques.  Estos anuncios pueden ser HTML estándar o AMP HTML, siempre que la red publicitaria admita anuncios AMP HTML. Para publicar anuncios de venta directa como anuncios AMP HTML, crea el anuncio en AMP HTML de acuerdo con las [especificaciones de anuncios AMP HTML](/es/docs/ads/a4a_spec.html) y utiliza [un servidor de anuncios que sirva este formato](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+El componente [`amp-ad`](/es/docs/reference/components/amp-ad.html) sirve anuncios de la red que especifiques.  Estos anuncios pueden ser HTML estándar o AMP HTML, siempre que la red publicitaria admita anuncios AMP HTML. Para publicar anuncios de venta directa como anuncios AMP HTML, crea el anuncio en AMP HTML de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) y utiliza [un servidor de anuncios que sirva este formato](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Aumentar los datos de segmentación en las solicitudes de anuncio
 
@@ -144,4 +144,3 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 
 *   [Plantillas de anuncios AMP HTML](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
 *   [Demostración: cómo añadir el componente "amp-ad" a tu página AMP](https://ampbyexample.com/components/amp-ad/)
- 

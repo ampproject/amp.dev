@@ -28,7 +28,7 @@ Komponen `<amp-ad>` adalah ekstensi iklan kustom untuk library AMP. Di bawah `<a
 
 Lebih dari 100 [server dan jaringan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) menyediakan integrasi bawaan dengan AMP.  Untuk menambahkan iklan pada jaringan iklan tertentu, tambahkan tag `<amp-ad>`, dan tentukan jaringannya dalam atribut `type`.
 
-Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari jaringan a9: 
+Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari jaringan a9:
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari j
 
 ### Langkah 3: Tentukan ukuran unit iklannya
 
-Tambahkan atribut `width` dan `height` ke tag `<amp-ad>`.  Atribut ini menentukan ukuran iklan di halaman AMP Anda: 
+Tambahkan atribut `width` dan `height` ke tag `<amp-ad>`.  Atribut ini menentukan ukuran iklan di halaman AMP Anda:
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -58,7 +58,7 @@ Setiap jaringan memiliki atribut data spesifik yang dibutuhkan untuk menayangkan
 </amp-ad>
 ```
 
-### Langkah 5: (Opsional) Tentukan placeholder 
+### Langkah 5: (Opsional) Tentukan placeholder
 
 Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placeholder sampai iklan tersedia untuk ditayangkan. Hal ini memberikan pengalaman pengguna yang lebih baik dengan mencegah ruang kosong.  Untuk menentukan placeholder, tambahkan elemen turunan dengan atribut `placeholder`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
@@ -72,7 +72,7 @@ Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placehol
 </amp-ad>
 ```
 
-### Langkah 6: (Opsional) Tentukan fallback 
+### Langkah 6: (Opsional) Tentukan fallback
 
 Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan elemen fallback jika tidak ada iklan yang tersedia untuk ditayangkan. Untuk menentukan fallback, tambahkan elemen turunan dengan atribut `fallback`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
@@ -90,7 +90,7 @@ Selamat! Sekarang Anda siap menayangkan iklan di halaman AMP!
 
 ## Menayangkan iklan AMPHTML yang dijual langsung
 
-Komponen [`amp-ad`](/id/docs/reference/components/amp-ad.html) menayangkan iklan dari jaringan yang Anda tentukan.  Iklan tersebut dapat berupa iklan HTML standar atau iklan AMPHTML, asalkan jaringan iklannya mendukung iklan AMPHTML. Untuk menayangkan iklan yang dijual langsung sebagai iklan AMPHTML, buatlah iklan di AMP HTML sesuai dengan persyaratan [spesifikasi iklan AMPHTML](/id/docs/ads/a4a_spec.html) dan gunakan [server iklan yang menayangkan iklan AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Komponen [`amp-ad`](/id/docs/reference/components/amp-ad.html) menayangkan iklan dari jaringan yang Anda tentukan.  Iklan tersebut dapat berupa iklan HTML standar atau iklan AMPHTML, asalkan jaringan iklannya mendukung iklan AMPHTML. Untuk menayangkan iklan yang dijual langsung sebagai iklan AMPHTML, buatlah iklan di AMP HTML sesuai dengan persyaratan [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) dan gunakan [server iklan yang menayangkan iklan AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Meningkatkan data penargetan pada permintaan iklan
 
@@ -144,4 +144,3 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 
 *   [Template iklan AMPHTML](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
 *   [Demo: Memperlihatkan cara menambah amp-ad ke halaman AMP](https://ampbyexample.com/components/amp-ad/)
- 

@@ -90,7 +90,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ## 直接販売の AMP HTML 広告を配信する
 
-[`amp-ad`](/ja/docs/reference/components/amp-ad.html) コンポーネントは、指定されたネットワークの広告を配信します。標準の HTML 広告を配信できるほか、広告ネットワークが AMP HTML 広告に対応していれば AMP HTML 広告も配信できます。直接販売の広告を AMP HTML 広告として配信するには、[AMP HTML 広告仕様](/ja/docs/ads/a4a_spec.html)の要件に沿って AMP HTML で広告を作成し、[AMP HTML 広告を配信する広告サーバー](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)を使用します。
+[`amp-ad`](/ja/docs/reference/components/amp-ad.html) コンポーネントは、指定されたネットワークの広告を配信します。標準の HTML 広告を配信できるほか、広告ネットワークが AMP HTML 広告に対応していれば AMP HTML 広告も配信できます。直接販売の広告を AMP HTML 広告として配信するには、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})の要件に沿って AMP HTML で広告を作成し、[AMP HTML 広告を配信する広告サーバー](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)を使用します。
 
 ## 広告リクエストにターゲティング データを追加する
 
@@ -144,4 +144,3 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 
 *   [AMP HTML 広告テンプレート](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
 *   [デモ: AMP ページでの amp-ad の追加方法](https://ampbyexample.com/components/amp-ad/)
- 

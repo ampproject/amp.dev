@@ -28,7 +28,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 100개가 넘는 [광고 서버와 네트워크]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})에서는 AMP와의 통합을 기본으로 제공합니다.  광고 네트워크의 광고를 추가하려면 `<amp-ad>` 태그를 추가하고 `type` 속성에 네트워크를 지정하세요.
 
-이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다. 
+이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다.
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ### 3단계: 광고 단위 크기 지정
 
-`<amp-ad>` 태그에 `width` 및 `height` 속성을 추가합니다.  이 속성은 AMP 페이지의 광고 크기를 지정합니다. 
+`<amp-ad>` 태그에 `width` 및 `height` 속성을 추가합니다.  이 속성은 AMP 페이지의 광고 크기를 지정합니다.
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -58,7 +58,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 </amp-ad>
 ```
 
-### 5단계: (선택사항) 자리표시자 지정 
+### 5단계: (선택사항) 자리표시자 지정
 
 광고 네트워크에 따라 광고가 없는 경우 자리표시자를 표시하도록 선택할 수 있습니다. 이렇게 하면 공백을 방지함으로써 사용자 환경이 개선됩니다.  자리표시자를 지정하려면 `placeholder` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
@@ -72,7 +72,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 </amp-ad>
 ```
 
-### 6단계: (선택사항) 대체 동작 지정 
+### 6단계: (선택사항) 대체 동작 지정
 
 광고 네트워크에 따라서는 게재할 수 있는 광고가 없는 경우 대체 요소를 표시하도록 선택할 수 있습니다. 대체 동작을 지정하려면 `fallback` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
@@ -90,7 +90,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ## 직접 판매 AMPHTML 광고 게재
 
-[`amp-ad`](/ko/docs/reference/components/amp-ad.html) 구성요소는 지정한 네트워크의 광고를 게재합니다.  광고 네트워크에서 AMPHTML 광고를 지원하는지에 따라 표준 HTML 광고 또는 AMPHTML 광고가 게재될 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양](/ko/docs/ads/a4a_spec.html) 요구사항에 따라 AMP HTML로 광고를 만들고 [AMPHTML 광고를 게재하는 광고 서버](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용하세요.
+[`amp-ad`](/ko/docs/reference/components/amp-ad.html) 구성요소는 지정한 네트워크의 광고를 게재합니다.  광고 네트워크에서 AMPHTML 광고를 지원하는지에 따라 표준 HTML 광고 또는 AMPHTML 광고가 게재될 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) 요구사항에 따라 AMP HTML로 광고를 만들고 [AMPHTML 광고를 게재하는 광고 서버](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용하세요.
 
 ## 광고 요청의 타겟팅 데이터 보강
 
@@ -144,4 +144,3 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 
 *   [AMPHTML 광고 템플릿](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
 *   [데모: AMP 페이지에 amp-ad를 추가하는 방법 보기](https://ampbyexample.com/components/amp-ad/)
- 

@@ -90,7 +90,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ## 投放直销型 AMPHTML 广告
 
-[`amp-ad`](/zh_cn/docs/reference/components/amp-ad.html) 组件用于投放您所指定网络中的广告。这些广告可以是标准 HTML 广告或 AMPHTML 广告，前提是相应广告网络支持 AMPHTML 广告。要将直销型广告作为 AMPHTML 广告投放，请按照 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)的要求制作 AMP HTML 格式的广告，并使用[支持 AMPHTML 广告投放的广告服务商](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)。
+[`amp-ad`](/zh_cn/docs/reference/components/amp-ad.html) 组件用于投放您所指定网络中的广告。这些广告可以是标准 HTML 广告或 AMPHTML 广告，前提是相应广告网络支持 AMPHTML 广告。要将直销型广告作为 AMPHTML 广告投放，请按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})的要求制作 AMP HTML 格式的广告，并使用[支持 AMPHTML 广告投放的广告服务商](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)。
 
 ## 利用定位数据增强广告请求
 
@@ -144,4 +144,3 @@ $title: 在您的 AMP 网页中利用广告获利
 
 *   [AMPHTML 广告模板](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
 *   [演示：如何将 amp-ad 添加到 AMP 网页中](https://ampbyexample.com/components/amp-ad/)
- 
