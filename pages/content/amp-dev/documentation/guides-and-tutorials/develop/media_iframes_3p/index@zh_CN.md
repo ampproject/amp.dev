@@ -9,8 +9,8 @@ $title: 添加图片和视频
 
  AMP 不支持用于显示媒体内容的默认 HTML 组件，如 `<img>`。我们出于以下原因提供了相似的组件：
 
-*  我们需要在素材资源加载之前了解网页布局，这对 [为第一视口预加载提供支持来说至关重要](/zh_cn/learn/about-how/#size-all-resources-statically)
-*  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序](/zh_cn/learn/about-how/#prioritize-resource-loading)
+*  我们需要在素材资源加载之前了解网页布局，这对 [为第一视口预加载提供支持来说至关重要]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
+*  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 注意: 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
 如果您的网页上显示了 HTML 组件，您将无法享受 AMP 提供的所有优势。
