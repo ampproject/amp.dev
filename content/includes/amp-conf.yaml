@@ -132,12 +132,16 @@ speakers:
   fabiozecchini:
     name: Fabio Zecchini
     company: Musement Spa
-    bio:
-    pic:
+    bio: "With a strong focus on technology, Fabio graduated in Computer Science Engineering with a dissertation on Robot Automation and Artificial Intelligence. 
+          He has been working in multinational consultancy firm PricewaterhouseCoopers within its Technology & Data Services Division. He decided to deep on Big Data space moving first to ShinyStat  as their lead Product Marketing Manager.
+          Such experience on data science led him to then decide to finally join media agency worldwide leader Dentsu Aegis Network as Chief Data & Analytics Officer with the primary goal to create the (intra agency) European data scientists team.
+
+          In the end of 2012 he co-founded Musement - acquired by tour operating giant  TUI Group in 2018 - where he’s now still involved as Chief Technology and Data Officer."
+    pic: /static/img/amp-conf/speakers/fabio.jpg
   hanspauwels:
     name: Hans Pauwels
     company: Tappable
-    bio:
+    bio: "Hans is founder and CEO of Tappable. He has over 30 years of experience in founding, managing and scaling up companies internationally. Tappable is the 8th venture he's moving into and the most special because he teams up with his 2 sons in this unique startup."
     pic: /static/img/amp-conf/speakers/hands.png
   benkim:
     name: Ben Kim
@@ -147,8 +151,13 @@ speakers:
   jeannyhaliman:
     name: Jeanny Haliman
     company: Google
-    bio:
-    pic:
+    bio: "Jeanny works as South East Asia Web Lead and Indonesia Market Manager in Online Partnership Group at Google. Her team helps over 100,000+ publishers on monetization strategy and beyond - to accelerate publishers' growth sustainably."
+    pic: /static/img/amp-conf/speakers/jeanny.jpg
+  kbax: 
+    name: Kristofer Baxter
+    company: Google
+    bio: "Kristofer is a Software Engineer at Google focused on making the Web as fast as possible for users. Prior to working with AMP teams, Kristofer managed teams at LinkedIn and Netflix improving their software architecture and products."
+    pic: /static/img/amp-conf/speakers/kristofer.jpg
 
 agenda:
   day_1:
@@ -184,7 +193,7 @@ agenda:
       time: "1130"
       type: session
       speaker: melissadepuydt
-    - title: "The Life of a Component: Making AMP a Better Web for Everyone (including Developers!)"
+    - title: "How We Make AMP Components a Great Experience for Everyone (Including Developers!)"
       description: "A designer from the AMP team talks about how we go from feature requests to shipping components with great documentation. We draw up many versions of a feature to match the many ways AMP is used. We sit in cafes and talk to your users about how they use the web, and make changes based on their feedback. And since you are *our* users, we want to talk to you about how you work and how future AMP components can make your sites even better."
       time: "1200"
       type: session
@@ -276,8 +285,8 @@ agenda:
         - fabiozecchini
     - title: Break
       time: "1530"
-    - title: "Using AMP Stories in Kenya: how we did it and how it can be replicated in other emerging markets."
-      description: Description coming soon.
+    - title: "Boring Content - Excited Users: The Power Of AMP Stories In Emerging Markets."
+      description: A smartphone is the default device to access the internet for people in emerging markets. Some developing economies are already leading the world in terms of social media use, mobile video consumption or online sales. Through our fintech activities in Kenya, we have first hand knowledge of user preferences and the difficulties of getting content read. We found the solution in Stories and we explain in detail why AMP Stories are ideal format to distribute content in emerging markets.
       time: "1615"
       type: session
       speaker: hanspauwels
