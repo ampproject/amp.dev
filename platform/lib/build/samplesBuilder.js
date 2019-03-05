@@ -184,6 +184,7 @@ class SamplesBuilder {
         // Replace GitHub sourcecode syntax by python-markdown
         let markdown = parsedSample.document.sections[index].doc_;
         markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
+        markdown = MarkdownDocument.ecsapeMustacheTags(markdown);
 
         // Splice out sourcecode blocks to preserve whitespace
         const codeBlocks = {};
