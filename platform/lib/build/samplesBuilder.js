@@ -58,6 +58,9 @@ const PREVIEW_DEST = path.join(__dirname, '../../../dist/examples/previews');
 const EMBED_DEST = path.join(__dirname, '../../../dist/examples/embeds');
 // The API host used by samples depending on one
 const API_HOST = 'https://amp-by-example-api.appspot.com';
+// The host used for samples depending on a backend
+const BACKEND_HOST = 'https://ampbyexample.com';
+
 
 class SamplesBuilder {
   constructor() {
@@ -170,7 +173,11 @@ class SamplesBuilder {
    */
   async _parseSample(samplePath, sampleRelativePath) {
     return await abe.parseSample(samplePath, {
-      'api': {'host': API_HOST}
+      'hosts': {
+        'platform': config.getHost(config.hosts.platform),
+        'api': API_HOST,
+        'backend': BACKEND_HOST,
+      }
     }).then((parsedSample) => {
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
