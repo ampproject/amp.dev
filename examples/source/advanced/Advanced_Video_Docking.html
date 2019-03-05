@@ -12,16 +12,9 @@ preview: default
 <!--
   ## Introduction
 
-  With [`amp-video`](https://www.ampproject.org/docs/reference/components/amp-video)
-  you can have rich user interface features, such as docking (minimize-to-corner).
+  With [`amp-video`](https://www.ampproject.org/docs/reference/components/amp-video) you can have rich user interface features, such as docking (minimize-to-corner).
 
-  You can simply enable this feature on your `<amp-video>` by using the `dock`
-  attribute. This example goes further by specifying a "docking slot" (a DOM
-  element that represents the area where the video should be minimized) and
-  layout synchronization using [events and actions](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events),
-  and the `amp-animation` extension.
-
-  You can see the sample in action [here](preview).
+  You can simply enable this feature on your `<amp-video>` by using the `dock` attribute. This example goes further by specifying a "docking slot" (a DOM element that represents the area where the video should be minimized) and layout synchronization using [events and actions](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events), and the `amp-animation` extension.
 -->
 <!-- -->
 <!doctype html>
@@ -38,7 +31,7 @@ preview: default
   extension to animate the `<aside>` element on `dock` and `undock`.  -->
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <title>Advanced video docking</title>
-  <link rel="canonical" href="<%host%>/advanced/advanced_video_docking/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/advanced_video_docking.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <!-- ## Include styling -->
@@ -166,8 +159,7 @@ preview: default
 
 <body>
   <!-- ## Define animations -->
-  <!-- To slide down the content below the docking slot, the vertical offset is
-  changed into a `20px` positive offset to create padding below the slot. -->
+  <!-- To slide down the content below the docking slot, the vertical offset is changed into a `20px` positive offset to create padding below the slot. -->
   <amp-animation layout="nodisplay" id="slideDown">
     <script type="application/json">
       {
@@ -187,8 +179,7 @@ preview: default
       }
     </script>
   </amp-animation>
-  <!-- To slide up the content once the video is no longer docked, the animation
-  reverts the aside content's offset to `-16.85vw`. -->
+  <!-- To slide up the content once the video is no longer docked, the animation reverts the aside content's offset to `-16.85vw`. -->
   <amp-animation layout="nodisplay" id="slideUp">
     <script type="application/json">
       {
@@ -212,10 +203,7 @@ preview: default
   <main>
     <div class="content">
       <!-- ## Include your video -->
-      <!-- In your [`<amp-video>`](https://www.ampproject.org/docs/reference/components/amp-video)
-      tag, you should include the `dock` attribute to specify that the video should be minimized to
-      corner on scroll. By setting a value on the attribute, we're specifying
-      which docking slot we're using via a CSS selector.-->
+      <!-- In your [`<amp-video>`](https://www.ampproject.org/docs/reference/components/amp-video) tag, you should include the `dock` attribute to specify that the video should be minimized to corner on scroll. By setting a value on the attribute, we're specifying which docking slot we're using via a CSS selector.-->
       <amp-video
         src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         poster="https://peach.blender.org/wp-content/uploads/bbb-splash.png"
@@ -263,17 +251,11 @@ preview: default
     </div>
     <aside>
       <!-- ## Include the docking slot. -->
-      <!-- Set width and height to `16:9`. Since its layout is
-      `responsive`, the slot will expand to fill the aside's width while
-      preserving aspect ratio.
+      <!-- Set width and height to `16:9`. Since its layout is `responsive`, the slot will expand to fill the aside's width while preserving aspect ratio.
 
-      You should also set the `on` attribute to specify the actions that get executed on docking events.
-      In this case, we'll start the `slideDown` animation on `dock` and the `slideUp`
-      animation on `undock`.
+      You should also set the `on` attribute to specify the actions that get executed on docking events. In this case, we'll start the `slideDown` animation on `dock` and the `slideUp` animation on `undock`.
 
-      Note that we're seeting the action on the slot element. If we were to set
-      it in the video itself, it would be triggered for `minimize-to-corner` rather
-      than `minimize-to-slot`. -->
+      Note that we're seeting the action on the slot element. If we were to set it in the video itself, it would be triggered for `minimize-to-corner` rather than `minimize-to-slot`. -->
       <amp-layout
           layout="responsive"
           width="16"
@@ -282,9 +264,7 @@ preview: default
           id="dock-slot">
       </amp-layout>
       <!-- ## Define the content under the slot -->
-      <!-- This container is negatively offset on the vertical axis to cover
-      the docking slot. Our `slideDown` animation will take care of translating
-      this content to make room for the docking slot. -->
+      <!-- This container is negatively offset on the vertical axis to cover the docking slot. Our `slideDown` animation will take care of translating this content to make room for the docking slot. -->
       <div class="more-content">
         <h3>More Content</h3>
         <ul>

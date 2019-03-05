@@ -8,18 +8,14 @@ teaserImage: '/static/samples/img/teaser/paged_list.jpg'
 <!--
   ## Introduction
 
-  Often, users requests data that could fill multiple pages of content, so
-  web applications must provide a way for users to navigate across pages of
-  data. This pattern appears in search results, product browse pages, and more.
-  Here we implement paged navigation using the `amp-bind` and `amp-list`
-  components.
+  Often, users requests data that could fill multiple pages of content, so web applications must provide a way for users to navigate across pages of data. This pattern appears in search results, product browse pages, and more. Here we implement paged navigation using the `amp-bind` and `amp-list` components.
 -->
 <!-- -->
 <!doctype html>
 <html ⚡>
 <head>
   <title>Paged List</title>
-  <link rel="canonical" href="<%host%>/advanced/paged_list/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/paged_list.html">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -151,8 +147,8 @@ teaserImage: '/static/samples/img/teaser/paged_list.jpg'
   <amp-list class="paged-amp-list"
             layout="fixed-height"
             height="720"
-            src="/advanced/paged_list/search"
-            [src]="'/advanced/paged_list/search?page=' + pageNumber"
+            src="<% hosts.backend %>/advanced/paged_list/search"
+            [src]="'<% hosts.backend %>/advanced/paged_list/search?page=' + pageNumber"
             binding="no"
             reset-on-refresh
             single-item>

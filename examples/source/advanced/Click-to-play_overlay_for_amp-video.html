@@ -9,11 +9,9 @@ teaserImage: '/static/samples/img/teaser/click-to-play_overlay_for_amp-video.jpg
 
   Click-to-play is a common UX feature for video players on the web.
 
-  Initially displayed on top of the video, the overlay contains details about
-  the video such as title, duration, poster image, links and a play icon.
+  Initially displayed on top of the video, the overlay contains details about the video such as title, duration, poster image, links and a play icon.
 
-  `amp-video` supports the standard `play` AMP action, allowing you to
-  implement click-to-play easily.
+  `amp-video` supports the standard `play` AMP action, allowing you to implement click-to-play easily.
 -->
 <!-- -->
 <!doctype html>
@@ -27,7 +25,7 @@ teaserImage: '/static/samples/img/teaser/click-to-play_overlay_for_amp-video.jpg
   -->
   <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link rel="canonical" href="<%host%>/advanced/click-to-play_overlay_for_amp-video/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/click-to-play_overlay_for_amp-video.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <!-- ## Styling -->
@@ -82,7 +80,7 @@ teaserImage: '/static/samples/img/teaser/click-to-play_overlay_for_amp-video.jpg
       width: 100px;
       height: 100px;
 
-      background-image: url(<%host%>/static/samples/img/play-icon.png);
+      background-image: url(<% hosts.platform %>/static/samples/img/play-icon.png);
       background-repeat: no-repeat;
       background-size: 100% 100%;
 
@@ -104,12 +102,9 @@ teaserImage: '/static/samples/img/teaser/click-to-play_overlay_for_amp-video.jpg
 
   <!-- ## Markup -->
   <!--
-    The overlay is an absolutely positioned `div` that sits on top of the
-    `amp-video` element and fills the parent player container. It
-    hosts the poster image, video title and a play icon.
+    The overlay is an absolutely positioned `div` that sits on top of the `amp-video` element and fills the parent player container. It hosts the poster image, video title and a play icon.
 
-    Play icon uses `play` and `hide` AMP actions to hide the overlay and
-    play the video when it is tapped.
+    Play icon uses `play` and `hide` AMP actions to hide the overlay and play the video when it is tapped.
   -->
     <div class="video-player">
 

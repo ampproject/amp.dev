@@ -8,18 +8,14 @@ category: 'personalization'
 <!--
   ## Introduction
 
-  If you need more fine-grained geolocation support than provided by the [amp-geo extension](/components/amp-geo/),
-  you can implement geo-based features with geolocation logic on your backend and
-  [amp-list](https://www.ampproject.org/docs/reference/components/amp-list).
-  This adds an additional XHR request but you can mitigate the negative UX
-  effects with a skeleton layout in the placeholder attribute.
+  If you need more fine-grained geolocation support than provided by the [amp-geo extension](/components/amp-geo/), you can implement geo-based features with geolocation logic on your backend and [amp-list](https://www.ampproject.org/docs/reference/components/amp-list). This adds an additional XHR request but you can mitigate the negative UX effects with a skeleton layout in the placeholder attribute.
 -->
 <!-- -->
 <!doctype html>
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="<%host%>/advanced/geolocation_with_amp-list/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/geolocation_with_amp-list.html">
   <title>Geo location with amp-list</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -103,23 +99,15 @@ category: 'personalization'
 <body>
 
   <!-- ## Geo-based search results -->
-  <!-- `amp-list` makes a request to a server backend which does IP-based
-  geolocation and returns relevant search results. For this demo, it calls an
-  API to get nearby cities. The backend returns JSON results which `amp-list`
-  renders with `amp-mustache`. The backend makes two remote API calls (and also
-  adds 500ms of simulated delay); to mitigate the UX effects of this delay we
-  use `amp-list`'s `placeholder` to lay out a skeleton.
+  <!-- `amp-list` makes a request to a server backend which does IP-based geolocation and returns relevant search results. For this demo, it calls an API to get nearby cities. The backend returns JSON results which `amp-list` renders with `amp-mustache`. The backend makes two remote API calls (and also adds 500ms of simulated delay); to mitigate the UX effects of this delay we use `amp-list`'s `placeholder` to lay out a skeleton.
 
-  Since we need to have an initial fixed-size for amp-list we manually calculate
-  that each card is 100 + 15px margin and the title is 16px + 20px margin:
+  Since we need to have an initial fixed-size for amp-list we manually calculate that each card is 100 + 15px margin and the title is 16px + 20px margin:
 
-  > `16px + 20px + (5 * (100 + 15px)) = 611px`</blockquote>
+  ```
+  16px + 20px + (5 * (100 + 15px)) = 611px
+  ```
 
-  <p>The placeholder list items largely use CSS to draw the skeleton elements as
-  described in [CSS-Tricks](https://css-tricks.com/building-skeleton-screens-css-custom-properties/).
-  The skeleton includes a tiny blurred map to add to the realism, and that map
-  is also used while `<amp-img>` loads the actual images to prevent a
-  flash when the placeholder is removed.</p>
+  The placeholder list items largely use CSS to draw the skeleton elements as described in [CSS-Tricks](https://css-tricks.com/building-skeleton-screens-css-custom-properties/). The skeleton includes a tiny blurred map to add to the realism, and that map is also used while `<amp-img>` loads the actual images to prevent a flash when the placeholder is removed.
   -->
   <amp-list class="geolist-preview" width="auto" height="640" layout="fixed-height"
             noloading

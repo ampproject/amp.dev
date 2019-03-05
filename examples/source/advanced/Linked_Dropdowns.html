@@ -9,17 +9,14 @@ teaserImage: '/static/samples/img/teaser/linked_dropdowns.jpg'
 <!--
   ## Introduction
 
-  These linked dropdowns are implemented using AMP components.
-  This pattern is useful when the values in the second dropdown
-  depend on the value the user selects in the first dropdown.
-  Here we select cities in a chosen country.
+  These linked dropdowns are implemented using AMP components. This pattern is useful when the values in the second dropdown depend on the value the user selects in the first dropdown. Here we select cities in a chosen country.
 -->
 <!-- -->
 <!doctype html>
 <html ⚡>
 <head>
   <title>Linked Dropdowns</title>
-  <link rel="canonical" href="<%host%>/advanced/linked_dropdowns/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/linked_dropdowns.html">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -59,14 +56,9 @@ teaserImage: '/static/samples/img/teaser/linked_dropdowns.jpg'
 <body>
   <!-- ## Implementation -->
   <!--
-    We use two `<amp-list>` elements to render the options within each `<select>`.
-    The first dropdown triggers a request, which is batched with the request
-    triggered by the other `<amp-list>` and the `<amp-state>` element, so only
-    one request is sent.
+    We use two `<amp-list>` elements to render the options within each `<select>`. The first dropdown triggers a request, which is batched with the request triggered by the other `<amp-list>` and the `<amp-state>` element, so only one request is sent.
 
-    When the user selects a value in the first dropdown, `amp-bind` updates the
-    `cities` state value. This updates second `<amp-list>`'s `[src]` binding,
-    and it renders its template using the data in the `cities` array.
+    When the user selects a value in the first dropdown, `amp-bind` updates the `cities` state value. This updates second `<amp-list>`'s `[src]` binding, and it renders its template using the data in the `cities` array.
   -->
   <div class="linked-dropdown">
     <amp-list layout="fixed-height"

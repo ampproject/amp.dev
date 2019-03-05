@@ -21,7 +21,7 @@ teaserImage: '/static/samples/img/teaser/star_rating.jpg'
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="<%host%>/advanced/star_rating/">
+  <link rel="canonical" href="<% hosts.platform %>/advanced/star_rating.html" >
   <title>Star Rating</title>
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -128,7 +128,7 @@ teaserImage: '/static/samples/img/teaser/star_rating.jpg'
   We want the form to submit as soon as the user makes a selection, without a Submit button. To do that, we'll set the [`on` attribute](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md#on) of the `input`s to submit the form on [`change`](https://www.ampproject.org/docs/reference/components/amp-form#input-events).
 
   The initial rating is determined by which radio button has the `checked` attribute set. This is optional. -->
-  <form id="rating" class="p2" method="post" action-xhr="/samples_templates/rating/set" target="_blank">
+  <form id="rating" class="p2" method="post" action-xhr="<% hosts.backend %>/samples_templates/rating/set" target="_blank">
     <fieldset class="rating">
       <input name="rating" type="radio" id="rating5" value="5" on="change:rating.submit"/>
       <label for="rating5" title="5 stars">☆</label>

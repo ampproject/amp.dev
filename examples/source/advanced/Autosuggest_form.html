@@ -34,7 +34,7 @@ product listings with images. You can see the full demo [here](./preview);
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <!-- Finally we include `amp-bind` to track and update the page's state after user interactions.-->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-  <link rel="canonical" href="<%host%>/advanced/autosuggest_form/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/autosuggest_form.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <!--
@@ -185,15 +185,9 @@ The remaining rules set the style and layout of the form fields.
   <h2 class="title">Autosuggest</h2>
 
   <!--
-  Autosuggest combines multiple AMP extensions: `amp-form`, `amp-list`,
-  `amp-selector`, and `amp-bind`. `amp-form` handles submitting the form and
-  renders the success and error states. `amp-list` displays the autosuggest
-  results in an `amp-selector` for accessibility. Finally, `amp-bind` glues
-  all the components together to enable interactivity.
+  Autosuggest combines multiple AMP extensions: `amp-form`, `amp-list`, `amp-selector`, and `amp-bind`. `amp-form` handles submitting the form and renders the success and error states. `amp-list` displays the autosuggest results in an `amp-selector` for accessibility. Finally, `amp-bind` glues all the components together to enable interactivity.
 
-  Try entering a city name. In this sample form, only US state capitals
-  are returned in the typeahead. In a real-world product, more cities would be
-  suggested.
+  Try entering a city name. In this sample form, only US state capitals are returned in the typeahead. In a real-world product, more cities would be suggested.
   -->
   <div
     class="wrapper"
@@ -204,7 +198,7 @@ The remaining rules set the style and layout of the form fields.
   >
     <form
       method="post"
-      action-xhr="<%host%>/advanced/autosuggest/address"
+      action-xhr="<% hosts.backend %>/advanced/autosuggest/address"
       target="_blank"
       id="search-form"
       on="

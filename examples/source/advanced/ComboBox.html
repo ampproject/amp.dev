@@ -16,7 +16,7 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
 <head>
   <title>ComboBox</title>
   <meta charset="utf-8">
-  <link rel="canonical" href="<%host%>/advanced/combobox/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/combobox.html">
 
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -192,9 +192,7 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
         <!--
           ## The text input
 
-          The implementation of the combobox is based on the [Autosuggest Sample](/advanced/autosuggest/). It takes an input field with auto suggestion and adds an additional button to expand and collapse the suggestions.  We listen to the [`input-debounced`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#input-elements) event
-          for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. We also bind the input value
-          to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
+          The implementation of the combobox is based on the [Autosuggest Sample](<% hosts.platform %>/documentation/examples/advanced/autosuggest_form.html). It takes an input field with auto suggestion and adds an additional button to expand and collapse the suggestions. We listen to the [`input-debounced`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#input-elements) event for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. We also bind the input value to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
         -->
           <input id="input-city"
                class="combo-input"
@@ -218,11 +216,9 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
         <!--
           ## Suggestion box
 
-          We use `amp-selector` to make the suggestions selectable. When the user clicks on a suggestions, the `select` event will be fired and the selected city
-          will be written to the `city` variable: `city: event.targetOption`. The `filteredCities` will be cleared, which also results in the suggestion box being hidden.
+          We use `amp-selector` to make the suggestions selectable. When the user clicks on a suggestions, the `select` event will be fired and the selected city will be written to the `city` variable: `city: event.targetOption`. The `filteredCities` will be cleared, which also results in the suggestion box being hidden.
 
-          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the  height in pixels of a single
-          suggestion.
+          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the  height in pixels of a single suggestion.
         -->
         <amp-selector on="select:AMP.setState({
                             city: event.targetOption,
