@@ -14,4 +14,4 @@ Se você ainda tiver dúvidas, consulte o arquivo [`static/final.html`](https://
 
 ## Próximas etapas
 
-Saiba mais sobre a eficiência e a flexibilidade da criação de páginas AMP interativas na documentação do componente [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) e de outros [componentes AMP dinâmicos]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
+Saiba mais sobre a eficiência e a flexibilidade da criação de páginas AMP interativas na documentação do componente [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) e de outros [componentes AMP dinâmicos]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).

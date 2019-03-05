@@ -153,7 +153,7 @@ Atribut `data-tweetid` adalah contoh lain dari atribut khusus yang diperlukan ol
 
 Untuk mempelajari lebih lanjut tentang menyematkan Tweet dari Twitter, baca dokumentasi komponen [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
-Tips: AMP memberikan lebih banyak komponen untuk menyematkan konten dari jaringan sosial. Lihat [komponen AMP sosial]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) terbaru.
+Tips: AMP memberikan lebih banyak komponen untuk menyematkan konten dari jaringan sosial. Lihat [komponen AMP sosial]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) terbaru.
 
 ## Menandai kutipan artikel
 

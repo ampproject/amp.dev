@@ -154,7 +154,7 @@ This effectively rules out the use of all user-generated/third-party JavaScript 
 The only exceptions to the restriction on user-generated/third-party scripts are:
 
 1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute  `application/ld+json` or `application/json`.
-2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}). We will explore our first AMP component in the next section.
+2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). We will explore our first AMP component in the next section.
 [/tip]
 
 Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:

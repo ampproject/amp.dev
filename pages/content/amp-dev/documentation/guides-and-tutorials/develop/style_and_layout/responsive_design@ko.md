@@ -70,7 +70,7 @@ $title: 반응형 AMP 페이지 만들기
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div> <div placeholder></div> </amp-iframe></div>
 
-다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media) 목록을 참조하세요.
+다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) 목록을 참조하세요.
 
 ### 반응형 이미지 표시하기
 

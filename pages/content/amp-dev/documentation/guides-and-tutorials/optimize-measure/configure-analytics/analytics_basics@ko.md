@@ -42,7 +42,7 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 ### 단순한 amp-analytics 구성
 
 단순한 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 구성을 작성하려면 우선 `custom-element` 선언을 AMP 문서의 `<head>`
-에 포함시켜야 합니다 ([구성요소 포함 선언]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) 참고).
+에 포함시켜야 합니다 ([구성요소 포함 선언]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) 참고).
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

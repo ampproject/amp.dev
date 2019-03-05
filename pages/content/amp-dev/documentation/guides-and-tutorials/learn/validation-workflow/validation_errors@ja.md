@@ -81,7 +81,7 @@ limitations under the License.
 AMP ドキュメント内に拡張コンポーネントが見つかったものの、
 それに相当する `<script>` が見つからない場合です。
 
-[拡張コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})は、
+[拡張コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})は、
 カスタム要素として明示的に AMP ドキュメントに含める必要があります。
 このエラーを修正するには、拡張コンポーネントのリファレンス ページに移動して、
 必要なスクリプトをコピーし、AMP ドキュメントの `<head>` に貼り付けます。
@@ -127,7 +127,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 AMP 形式では、AMP プロジェクトが提供している JavaScript ファイルを除いて、ページにカスタムの JavaScript を
 追加することはできません。JavaScript の一般的な用法の多くは、
 AMP HTML ライブラリに対応する実装があります。AMP HTML ページの
-拡張に使用できるコンポーネントについては、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
+拡張に使用できるコンポーネントについては、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 をご覧ください。
 
 ご自分の使用例が取り上げられていない場合は、AMP プロジェクトに

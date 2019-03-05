@@ -70,7 +70,7 @@ $title: レスポンシブな AMP ページを作成する
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div> <div placeholder></div> </amp-iframe></div>
 
-AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})の一覧をご覧ください。
+AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})の一覧をご覧ください。
 
 ### レスポンシブな画像を表示する
 

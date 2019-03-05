@@ -153,7 +153,7 @@ The tag 'script' is disallowed except in specific forms.
 ユーザーが作成したスクリプトやサードパーティのスクリプトに対する制限には、次のような例外があります。
 
 1. ページにメタデータを追加するスクリプトや、AMP コンポーネントを設定するスクリプト。これらには、type 属性 `application/ld+json` または `application/json` を指定します。
-2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
+2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
 [/tip]
 
 外部の [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) ファイルを開いてみましょう。どのようになっていますか。このファイルでは JavaScript コードは空になっていて、次のような情報のコメントのみが含まれているはずです。

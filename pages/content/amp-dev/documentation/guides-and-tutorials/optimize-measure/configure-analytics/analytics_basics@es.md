@@ -38,7 +38,7 @@ El componente [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/r
 ### Configuración de amp-analytics sencilla
 
 Para crear una configuración de [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})  sencilla, antes debes incluir en el documento AMP la declaración `custom-element` que se indica a continuación `<head>`
-(consulta la sección sobre [cómo incluir componentes]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
+(consulta la sección sobre [cómo incluir componentes]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

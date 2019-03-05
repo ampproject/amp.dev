@@ -70,7 +70,7 @@ $title: 制作自适应 AMP 网页
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div> <div placeholder></div> </amp-iframe></div>
 
-您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})列表。
+您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})列表。
 
 ### 显示自适应图片
 

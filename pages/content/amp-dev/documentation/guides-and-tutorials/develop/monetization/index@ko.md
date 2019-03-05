@@ -127,7 +127,7 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 *   [IAB 가이드라인](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)에 따라 **용량이 큰 광고 소재를 사용하지 마세요**.
 *   광고 로드 시 콘텐츠 리플로우를 유발하는 **전면 광고**나 기타 광고 형식을 **사용하지 마세요**.
 *   data-loading-strategy를 prefer-viewability-over-views로 설정하여 **조회가능성을 최적화**하세요.
-*   [지원되는 플레이어]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media) 또는 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})을 사용해 **동영상 콘텐츠에 광고를 게재**하여 모든 유형의 콘텐츠에서 수익을 창출하세요.
+*   [지원되는 플레이어]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) 또는 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})을 사용해 **동영상 콘텐츠에 광고를 게재**하여 모든 유형의 콘텐츠에서 수익을 창출하세요.
 *   크기가 여러 개인 광고 요청을 사용하여 디스플레이 광고와 경쟁할 **네이티브 광고를 구현**함으로써 수요 압력을 늘리면서 독자에게 우수한 사용자 환경을 제공하세요.
 
 ### 혁신: 가장 좋은 성과를 내는 광고 제품 제공

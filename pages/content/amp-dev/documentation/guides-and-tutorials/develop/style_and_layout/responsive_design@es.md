@@ -70,7 +70,7 @@ En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que re
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
 
-Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) -en inglés.
+Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) -en inglés.
 
 ### Mostrando imágenes responsivas
 

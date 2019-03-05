@@ -81,7 +81,7 @@ Validator menampilkan error `TAG_REQUIRED_BY_MISSING`
 ketika menemukan komponen yang diperpanjang dalam dokumen AMP,
 tapi tidak menemukan `<script>` yang setara.
 
-[Komponen yang diperpanjang]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
+[Komponen yang diperpanjang]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 harus disertakan secara eksplisit dalam dokumen AMP sebagai elemen kustom.
 Untuk memperbaiki error ini, buka halaman referensi komponen yang diperpanjang,
 salin skrip yang diperlukan, lalu tempel ke `<head>` dokumen AMP.
@@ -127,7 +127,7 @@ secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 Format AMP tidak mengizinkan penambahan JavaScript kustom ke halaman, kecuali untuk file JavaScript
 yang disediakan oleh Project AMP itu sendiri. Kebanyakan penggunaan umum JavaScript memiliki
 implementasi setara library HTML AMP. Lihat [komponen
-AMP]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) untuk mengetahui kumpulan komponen yang dapat
+AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) untuk mengetahui kumpulan komponen yang dapat
 digunakan untuk menyempurnakan halaman HTML AMP.
 
 Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen

@@ -58,7 +58,7 @@ Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especifi
 
 El validador emite el error `TAG_REQUIRED_BY_MISSING` cuando encuentra un componente ampliado en el documento de AMP, pero no encuentra su `<script>` equivalente.
 
-Los [componentes ampliados]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
+Los [componentes ampliados]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
 Para corregir estos errores, ve a la página de referencia del componente ampliado, copia su secuencia de comandos requerida y pégala en el documento `<head>` de AMP.
 
 ### Etiqueta no permitida

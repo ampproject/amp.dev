@@ -127,7 +127,7 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
 *   **Evite criativos pesados**, de acordo com as [diretrizes do IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf (em inglês).
 *   **Evite intersticiais** ou outros formatos de anúncio que causem reflow de conteúdo ao carregar o anúncio.
 *   **Otimize a visibilidade** definindo data-loading-strategy como prefer-viewability-over-views.
-*   **Coloque anúncios no seu conteúdo de vídeo** usando [players compatíveis]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media) ou [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para ativar a receita em todos os tipos de conteúdo.
+*   **Coloque anúncios no seu conteúdo de vídeo** usando [players compatíveis]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) ou [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para ativar a receita em todos os tipos de conteúdo.
 *   **Implemente anúncios nativos** para competir com os de display usando solicitações de anúncios de vários tamanhos. Isso aumenta a pressão de demanda e oferece aos leitores uma experiência do usuário premium.
 
 ### Inovação: ofereça os produtos de anúncios mais interessantes

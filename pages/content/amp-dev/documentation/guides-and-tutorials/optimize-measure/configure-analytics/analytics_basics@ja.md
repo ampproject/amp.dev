@@ -36,7 +36,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 ### シンプルな amp-analytics 設定
 
-シンプルに [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})もご覧ください）。
+シンプルに [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})もご覧ください）。
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

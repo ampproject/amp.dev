@@ -15,4 +15,4 @@ If you got stuck, see the [`static/final.html`](https://github.com/googlecodelab
 
 ## Next steps
 
-Learn more about the power and flexibility of building interactive AMP pages in the  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) documentation and from other [dynamic AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
+Learn more about the power and flexibility of building interactive AMP pages in the  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) documentation and from other [dynamic AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).

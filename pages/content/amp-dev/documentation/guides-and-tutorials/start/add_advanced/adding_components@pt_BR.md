@@ -153,7 +153,7 @@ O atributo `data-tweetid` é outro exemplo de atributo do cliente exigido por um
 
 Para saber mais sobre como incorporar tweets do Twitter, leia a documentação do componente [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
-Dica: A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
+Dica: A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).
 
 ## Destacar uma citação do artigo
 

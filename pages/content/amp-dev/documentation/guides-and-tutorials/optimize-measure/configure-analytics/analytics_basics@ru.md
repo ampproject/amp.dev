@@ -80,7 +80,7 @@ AMP предоставляет два компонента для удовлет
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 необходимо сначала включить следующую декларацию `custom-element`
 в раздел `<head>` документа AMP (см. также
-[Объявление включения компонента]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
+[Объявление включения компонента]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

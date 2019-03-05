@@ -24,4 +24,4 @@ AMP에 관한 전문 지식을 더욱 발전시키려면 다음 리소스를 확
 - [AMP Start](https://www.ampstart.com/): 미리 스타일이 지정된 템플릿과 구성요소를 사용하여 페이지에 스타일 지정하기
 - [AMP By Example](https://ampbyexample.com/): 실시간 샘플 및 데모를 통해 배우기
 - [YouTube의 AMP 채널](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): AMP 관련 동영상을 통해 배우기
-- [AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}): 모든 AMP 구성요소 자세히 알아보기
+- [AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): 모든 AMP 구성요소 자세히 알아보기

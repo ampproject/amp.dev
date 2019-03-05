@@ -81,7 +81,7 @@ O validador informa o erro `TAG_REQUIRED_BY_MISSING`
 quando encontra um componente estendido no documento AMP,
 mas não o `<script>` equivalente.
 
-Os [componentes estendidos]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
+Os [componentes estendidos]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 precisam ser explicitamente incluídos no documento AMP como elementos personalizados.
 Para corrigir esses erros, acesse a página de referência do componente estendido,
 copie e cole o script necessário na tag `<head>` do documento AMP.
@@ -127,7 +127,7 @@ definem amplamente o conjunto de tags não permitidas.
 O formato AMP não permite que JavaScript personalizado seja adicionado às páginas, exceto os arquivos JavaScript
 fornecidos pelo próprio Projeto AMP. Muitos usos comuns de JavaScript têm
 implementações equivalentes na biblioteca de HTML para AMP. Consulte os [componentes
-AMP]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) para conhecer o conjunto de componentes que podem ser
+AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) para conhecer o conjunto de componentes que podem ser
 usados para aprimorar as páginas HTML para AMP.
 
 Nos casos de uso que não estão previstos aqui, também é possível contribuir com novos

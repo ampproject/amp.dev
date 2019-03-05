@@ -24,4 +24,4 @@ Untuk lebih meningkatkan keahlian Anda terkait AMP, lihat resource berikut:
 - [AMP Start](https://www.ampstart.com/): Sesuaikan halaman Anda menggunakan komponen dan template yang telah diberi gaya sebelumnya
 - [AMP By Example](https://ampbyexample.com/): Pelajari dari contoh dan demo langsung
 - [Channel AMP di YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Pelajari dengan menonton video khusus AMP
-- [Komponen AMP]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}): Pelajari detail tentang semua komponen AMP
+- [Komponen AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): Pelajari detail tentang semua komponen AMP

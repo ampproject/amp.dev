@@ -77,7 +77,7 @@ Basit bir
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırması oluşturmak için,
 ilk önce bu `custom-element` bildirimini
 `<head>` AMP belgesine eklemeniz gerekir (ayrıca bkz.
-[Bileşen ekleme bildirimi]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
+[Bileşen ekleme bildirimi]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

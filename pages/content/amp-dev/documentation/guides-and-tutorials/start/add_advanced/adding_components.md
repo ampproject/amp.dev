@@ -142,7 +142,7 @@ Remember, not all components are included in the core AMP library JavaScript fil
 
 As with the other elements on the page, we specified the `width` and `height` of the video so that the AMP layout system can calculate the aspect ratio. Also, we set the `layout` to `responsive`, so the video fills the width of its parent element.
 
-To learn more about embedding YouTube videos, read the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) component documentation. For even more video and media components, check out the [list of media AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media).
+To learn more about embedding YouTube videos, read the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) component documentation. For even more video and media components, check out the [list of media AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media).
 
 [tip type="tip"]
 **TIP –**  Use the [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
@@ -177,7 +177,7 @@ The `data-tweetid` attribute is another example of a custom attribute required b
 To learn more about embedding Twitter Tweets, read the [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) component documentation.
 
 [tip type="tip"]
-**TIP –** AMP provides even more components for embedding content from social networks. See the latest [social AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#social).
+**TIP –** AMP provides even more components for embedding content from social networks. See the latest [social AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#social).
 [/tip]
 
 ## Highlight an article quote

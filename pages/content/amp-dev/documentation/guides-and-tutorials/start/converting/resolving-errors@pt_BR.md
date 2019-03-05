@@ -149,7 +149,7 @@ Isso exclui efetivamente o uso de todo JavaScript gerado por usuários/terceiros
 As únicas exceções à restrição a scripts gerados por usuários/terceiros são:
 
 1.  Scripts que adicionam metadados à página ou configuram componentes AMP: terão o atributo de tipo `application/ld+json` ou `application/json`.
-2.  Scripts incluídos em iframes:  só inclua JavaScript em um iframe em último caso. Sempre que possível, substitua os recursos JavaScript usando os [Componentes AMP]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}). Veremos nosso primeiro componente AMP na próxima seção.
+2.  Scripts incluídos em iframes:  só inclua JavaScript em um iframe em último caso. Sempre que possível, substitua os recursos JavaScript usando os [Componentes AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). Veremos nosso primeiro componente AMP na próxima seção.
 [/tip]
 
 Tente abrir o arquivo externo [`base.js`] (https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js). O que você vê? O arquivo deverá estar vazio, sem qualquer código JavaScript, e incluir apenas um comentário com informações como esta:

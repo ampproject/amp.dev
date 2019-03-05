@@ -127,7 +127,7 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 *   **Evita las creatividades pesadas,** de acuerdo con las [directrices de IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Evita los intersticiales** u otros formatos de anuncio que provoquen que se reinicie el flujo del contenido al cargar los anuncios.
 *   **Optimiza la visibilidad** configurando la estrategia de carga de datos para que se priorice la visibilidad sobre las visualizaciones.
-*   **Incluye anuncios en el contenido de vídeo** a través de [reproductores compatibles]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) o [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para poder obtener ingresos con todos los tipos de contenido.
+*   **Incluye anuncios en el contenido de vídeo** a través de [reproductores compatibles]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) o [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para poder obtener ingresos con todos los tipos de contenido.
 *   **Implementa anuncios nativos** para competir con los anuncios de display que utilizan solicitudes de anuncio de varios tamaños. De esta forma, aumentarás la demanda y, al mismo tiempo, proporcionarás a los lectores una experiencia de usuario óptima.
 
 ### Innovación: ofrece los productos publicitarios que generan más interacción

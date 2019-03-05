@@ -80,7 +80,7 @@ limitations under the License.
 عند عثورها على مكوّن موسّع في مستند AMP،
 وعدم عثورها على المكوّن `<script>` المكافئ له.
 
-يجب تضمين [المكوّنات الموسّعة]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
+يجب تضمين [المكوّنات الموسّعة]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 بشكل صريح في مستند AMP باعتبارها عناصر مخصصة.
 ولإصلاح هذه الأخطاء، انتقل إلى الصفحة المرجعية للمكوّن الموسّع،
 وانسخ النص البرمجي المطلوب بها، ثم الصقه في مستند AMP `<head>`.

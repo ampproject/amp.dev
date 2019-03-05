@@ -81,7 +81,7 @@ limitations under the License.
 이에 상응하는 `<script>`를 찾을 수 없을 때
 `TAG_REQUIRED_BY_MISSING` 오류를 표시합니다.
 
-[확장 구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})는
+[확장 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})는
 맞춤 요소로서 AMP 문서에 명시적으로 포함되어야 합니다.
 이 오류를 해결하려면 확장 구성요소의 참조 페이지로 이동한 다음
 필요한 스크립트를 복사하여 AMP 문서 `<head>`에 붙여넣으세요.
@@ -127,7 +127,7 @@ limitations under the License.
 AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립트 파일이 아닌
 맞춤 자바스크립트를 페이지에 추가할 수 없습니다. 일반적으로 필요한 자바스크립트는
 대부분 HTML 라이브러리에서 상응하는 구현 방식을 찾을 수 있습니다. [AMP
-구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})에서 AMP HTML 페이지를
+구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})에서 AMP HTML 페이지를
 향상하는 데 사용할 수 있는 구성요소를 확인하세요.
 
 필요한 자바스크립트 사용 사례를 찾을 수 없다면 AMP 프로젝트에

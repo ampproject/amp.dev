@@ -153,7 +153,7 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
 
 ツイートの埋め込みについて詳しくは、[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) コンポーネントのドキュメントをご覧ください。
 
-ヒント: AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})の最新リストをご覧ください。
+ヒント: AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})の最新リストをご覧ください。
 
 ## 記事の引用をハイライト表示する
 
