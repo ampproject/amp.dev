@@ -49,7 +49,7 @@ class Config {
    * Builds a URL from a host object containing scheme, host and port
    * @return {String} The full URL
    */
-  _buildUrl(host) {
+  getHost(host) {
     let url = `${host.scheme}://${host.host}`;
     if (host.port) {
       url = url + `:${host.port}`;
@@ -102,8 +102,8 @@ class Config {
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
       'playground': this.shared.baseUrls.playground,
-      'platform': this._buildUrl(this.hosts.platform),
-      'api': this._buildUrl(this.hosts.api),
+      'platform': this.getHost(this.hosts.platform),
+      'api': this.getHost(this.hosts.api),
     };
 
     // Deployment specific
