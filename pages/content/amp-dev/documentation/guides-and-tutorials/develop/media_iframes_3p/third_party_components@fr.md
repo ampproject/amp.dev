@@ -27,13 +27,13 @@ Exemple d'élément `amp-twitter` tiré de [twitter.amp](https://github.com/ampp
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## Intégrer une publication Instagram
 
-Intégrez une publication Instagram dans votre page à l'aide de l'élément [`amp-instagram`](/docs/reference/components/amp-instagram.html).
+Intégrez une publication Instagram dans votre page à l'aide de l'élément [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
 
 Pour inclure une publication Instagram, incluez d'abord le script suivant dans la section `<head>` :
 
@@ -52,7 +52,7 @@ De plus, Instagram utilise un format fixe pour les mises en page responsives. Ai
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -62,7 +62,7 @@ Affichez un post ou une vidéo Facebook dans votre page à l'aide de l'élément
 
 Vous devez inclure le script suivant dans la section `<head>` :
 
-Source: 
+Source:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -77,7 +77,7 @@ Avant-première:
 
 ##### Exemple d'intégration d'une vidéo
 
-Source: 
+Source:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -85,7 +85,7 @@ Source:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Avant-première: 
+Avant-première:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
@@ -114,7 +114,7 @@ Utilisez `layout="responsive"` pour obtenir une mise en page correcte des vidéo
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -138,7 +138,7 @@ Des types d'annonces différents nécessitent des attributs `data-*` différents
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -152,7 +152,7 @@ Si le réseau publicitaire le permet, incluez un `placeholder` à afficher si au
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

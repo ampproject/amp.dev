@@ -32,7 +32,7 @@ $title: サードパーティ コンテンツを追加する
 
 ## Instagram を埋め込む
 
-ページに Instagram を埋め込むには、[`amp-instagram`](/ja/docs/reference/components/amp-instagram.html) 要素を使用します。
+ページに Instagram を埋め込むには、[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 要素を使用します。
 
 Instagram を埋め込むには、最初に次のスクリプトを `<head>` に追加します。
 

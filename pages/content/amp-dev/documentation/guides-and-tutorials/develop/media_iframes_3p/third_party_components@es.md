@@ -38,7 +38,7 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
 
 ## Insertar una foto de Instagram
 
-Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`](/es/docs/reference/components/amp-instagram.html).
+Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
 
 Para incluir una foto de Instagram, en primer lugar incluye la siguiente secuencia de comandos en `<head>`:
 

@@ -32,7 +32,7 @@ $title: 包含第三方内容
 
 ## 嵌入 Instagram
 
-您可以使用 [`amp-instagram`](/zh_cn/docs/reference/components/amp-instagram.html) 元素在您的网页中嵌入 Instagram。
+您可以使用 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 元素在您的网页中嵌入 Instagram。
 
 要包含 Instagram，请先在 `<head>` 中添加以下脚本：
 

@@ -41,7 +41,7 @@ untuk memilih rasio aspek berdasarkan lebar layar.
 ## Menyematkan Instagram
 
 Sematkan Instagram di laman
-menggunakan elemen [`amp-instagram`](/id/docs/reference/components/amp-instagram.html)
+menggunakan elemen [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}})
 
 Untuk menyertakan Instagram,
 sertakan dahulu skrip berikut di `<head>`:

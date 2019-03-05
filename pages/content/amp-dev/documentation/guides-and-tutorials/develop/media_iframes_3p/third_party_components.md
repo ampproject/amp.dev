@@ -52,7 +52,7 @@ to select the aspect ratio based on screen width.
 ## Embed an Instagram
 
 Embed an Instagram in your page by
-using the [`amp-instagram`](/docs/reference/components/amp-instagram.html) element.
+using the [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) element.
 
 To embed an Instagram,
 first include the following script in the `<head>`:

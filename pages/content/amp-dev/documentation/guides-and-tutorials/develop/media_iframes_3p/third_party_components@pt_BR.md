@@ -39,7 +39,7 @@ Dica: Veja mais exemplos de `amp-twitter` na página [AMP By Example](https://am
 ## Incorporar uma imagem do Instagram
 
 Incorpore uma imagem do Instagram em sua página
-usando o elemento [`amp-instagram`](/pt_br/docs/reference/components/amp-instagram.html).
+usando o elemento [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
 
 Para incluir uma imagem do Instagram,
 em primeiro lugar inclua o seguinte script no `<head>`:

@@ -39,7 +39,7 @@ $title: 써드 파티 콘텐츠 가져오기
 ## 인스타그램 가져오기
 
 페이지에 인스타그램을 가져올 때
-[`amp-instagram`](/ko/docs/reference/components/amp-instagram.html) 요소를 사용합니다.
+[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
 인스타그램을 페이지에 추가하고자 할 때,
 `<head>` 요소 안에 아래 스크립트를 먼저 가져와야 합니다.

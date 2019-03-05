@@ -30,14 +30,14 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## تضمين Instagram
 
 يمكنك تضمين Instagram في صفحتك
-باستخدام العنصر <a href="/docs/reference/components/amp-instagram.html">`amp-instagram`</a>.
+باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}">`amp-instagram`</a>.
 
 لتضمين Instagram،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -60,7 +60,7 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -132,7 +132,7 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -159,7 +159,7 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -175,7 +175,7 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
