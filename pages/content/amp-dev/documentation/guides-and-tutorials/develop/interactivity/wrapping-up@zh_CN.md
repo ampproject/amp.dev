@@ -14,4 +14,4 @@ $title: 总结
 
 ## 后续步骤
 
-查看 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 文档和其他[动态 AMP 组件](/zh_cn/docs/reference/components.html#动态内容)，详细了解创建互动式 AMP 网页可带来的卓越性能和超凡灵活度。
+查看 [`<amp-bind>`](/zh_cn/docs/reference/components/amp-bind.html) 文档和其他[动态 AMP 组件]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})，详细了解创建互动式 AMP 网页可带来的卓越性能和超凡灵活度。

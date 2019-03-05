@@ -14,5 +14,4 @@ $title: まとめ
 
 ## 次のステップ
 
-インタラクティブな AMP ページは効果的かつ柔軟に作成することができます。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントや、他の [動的な AMP コンポーネント](/ja/docs/reference/components.html#動的コンテンツ)についての説明をご覧ください。
- 
+インタラクティブな AMP ページは効果的かつ柔軟に作成することができます。詳しくは、[`<amp-bind>`](/ja/docs/reference/components/amp-bind.html) のドキュメントや、他の [動的な AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})についての説明をご覧ください。

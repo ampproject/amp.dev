@@ -16,7 +16,7 @@ $title: 制作自适应 AMP 网页
 
 要想优化网页以便内容能够自动缩放并适应任何设备的浏览器窗口，您需要指定 `meta` 视口元素。视口元素会指示浏览器如何缩放网页的可见区域（视口）以及如何调整其大小。
 
-不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记](/zh_cn/docs/fundamentals/spec.html#required-markup)的一部分：
+不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup)的一部分：
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -70,7 +70,7 @@ $title: 制作自适应 AMP 网页
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div> <div placeholder></div> </amp-iframe></div>
 
-您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件](/zh_cn/docs/reference/components.html#media)列表。
+您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})列表。
 
 ### 显示自适应图片
 

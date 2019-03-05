@@ -14,5 +14,4 @@ $title: 마무리
 
 ## 다음 단계
 
-[`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 설명서 및 기타 [동적 AMP 구성요소](/ko/docs/reference/components.html#dynamic-content)에서 양방향 AMP 페이지를 구축하여 얻을 수 있는 강력한 기능과 유연성에 관해 자세히 알아보세요.
- 
+[`<amp-bind>`](/ko/docs/reference/components/amp-bind.html) 설명서 및 기타 [동적 AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})에서 양방향 AMP 페이지를 구축하여 얻을 수 있는 강력한 기능과 유연성에 관해 자세히 알아보세요.

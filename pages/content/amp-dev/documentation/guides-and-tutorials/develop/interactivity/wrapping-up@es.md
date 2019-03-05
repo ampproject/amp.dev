@@ -14,4 +14,4 @@ Si te quedaste atascado, mira el archivo [`static/final.html`](https://github.co
 
 ## Próximos pasos
 
-Obtenga más información sobre el poder y la flexibilidad de crear páginas de AMP interactivas con la documentación de [`<amp-bind>`](/es/docs/reference/components/amp-bind.html) y con otros [componentes AMP dinámicos](/es/docs/reference/components.html#conteido-dinámico).
+Obtenga más información sobre el poder y la flexibilidad de crear páginas de AMP interactivas con la documentación de [`<amp-bind>`](/es/docs/reference/components/amp-bind.html) y con otros [componentes AMP dinámicos]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
