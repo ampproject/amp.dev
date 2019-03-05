@@ -39,7 +39,7 @@ $title: التنسيقات المعتمدة
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>الارتفاع مثبّت</code></td>
       <td class="col-twenty" data-th="Description">الارتفاع فقط</td>
-      <td data-th="Behavior">يحتل العنصر المساحة المتاحة له ولكنه يحتفظ بالارتفاع دون تغيير. ويعمل هذا التنسيق بشكل جيد مع عناصر، مثل <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> الذي يتضمن المحتوى الموضوع بشكل أفقي. ويجب ألا تكون السمة <code>width</code> موجودة أو يجب أن تكون مساوية لـ <code>auto</code>.</td>
+      <td data-th="Behavior">يحتل العنصر المساحة المتاحة له ولكنه يحتفظ بالارتفاع دون تغيير. ويعمل هذا التنسيق بشكل جيد مع عناصر، مثل <a href="/{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> الذي يتضمن المحتوى الموضوع بشكل أفقي. ويجب ألا تكون السمة <code>width</code> موجودة أو يجب أن تكون مساوية لـ <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>ملء</code></td>

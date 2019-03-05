@@ -72,7 +72,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">높이만</td>
-      <td data-th="Behavior">요소는 사용 가능한 공간에 위치하지만 높이는 변하지 않습니다. 이 레이아웃은 수평으로 위치한 콘텐츠가 있는 <a href="/ko/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>과 같은 요소에 적합합니다. <code>width</code> 속성은 존재하지 않거나 <code>auto</code>와 동일해야 합니다.</td>
+      <td data-th="Behavior">요소는 사용 가능한 공간에 위치하지만 높이는 변하지 않습니다. 이 레이아웃은 수평으로 위치한 콘텐츠가 있는 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>과 같은 요소에 적합합니다. <code>width</code> 속성은 존재하지 않거나 <code>auto</code>와 동일해야 합니다.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -189,4 +189,3 @@ AMP에서 사용할 수 있는 또 다른 반응형 디자인 기능은 `media` 
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

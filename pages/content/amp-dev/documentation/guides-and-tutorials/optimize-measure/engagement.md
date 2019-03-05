@@ -17,7 +17,7 @@ Here are some quick tips to improve user engagement with AMP.
 
 ### Optimize for user engagement and retention
 
-- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`](/docs/reference/components/amp-carousel.html) to create rich image carousels and [`amp-iframe`](/docs/reference/components/amp-iframe.html) to
+- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) to create rich image carousels and [`amp-iframe`](/docs/reference/components/amp-iframe.html) to
 incorporate interactive elements that AMP does not natively support.
 
 - **Create personalized user journeys.** Offer a login button, and if your content

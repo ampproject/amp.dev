@@ -37,7 +37,7 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Yalnızca yükseklik</td>
-      <td data-th="Behavior">Öğe, kendi kullanımına sunulan alanı kaplar ancak yüksekliğini değiştirmez. Bu düzen, yatay olarak konumlandırılmış içerik barındıran <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> gibi öğeler için iyi bir şekilde çalışır. <code>width</code> özniteliği mevcut olmamalı veya <code>auto</code> değerine ayarlanmış olmalıdır.</td>
+      <td data-th="Behavior">Öğe, kendi kullanımına sunulan alanı kaplar ancak yüksekliğini değiştirmez. Bu düzen, yatay olarak konumlandırılmış içerik barındıran <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> gibi öğeler için iyi bir şekilde çalışır. <code>width</code> özniteliği mevcut olmamalı veya <code>auto</code> değerine ayarlanmış olmalıdır.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>

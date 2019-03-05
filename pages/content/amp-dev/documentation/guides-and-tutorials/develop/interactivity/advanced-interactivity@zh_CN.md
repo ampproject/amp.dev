@@ -46,7 +46,7 @@ selected.slide // Evaluates to 0.
 
 ### 更新幻灯片状态
 
-接下来，为了能够在用户更改轮换展示内容中的幻灯片时更新该变量，我们将为现有 [`<amp-carousel>`](/zh_cn/docs/reference/components/amp-carousel.html) 元素添加以下 `"on"` 操作：
+接下来，为了能够在用户更改轮换展示内容中的幻灯片时更新该变量，我们将为现有 [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 元素添加以下 `"on"` 操作：
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -97,7 +97,7 @@ selected.slide // Evaluates to 0.
 
 [tip type="success"]
 
-您不妨尝试添加相关功能，以便当用户点按幻灯片指示器中的某个点时，系统会使用所选商品更新图片轮换展示内容。提示一下：您可以针对 [`<amp-carousel>`](/zh_cn/docs/reference/components/amp-carousel.html) 使用 `tap` 事件和 `[slide]` 绑定关系。
+您不妨尝试添加相关功能，以便当用户点按幻灯片指示器中的某个点时，系统会使用所选商品更新图片轮换展示内容。提示一下：您可以针对 [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 使用 `tap` 事件和 `[slide]` 绑定关系。
 
 [/tip]
 

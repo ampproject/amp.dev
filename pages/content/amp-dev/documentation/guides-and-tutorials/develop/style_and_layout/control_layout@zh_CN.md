@@ -72,7 +72,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">仅高度</td>
-      <td data-th="Behavior">元素会占用为其提供的空间，但高度保持不变。这种布局非常适合 <a href="/zh_cn/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> 等涉及水平放置内容的元素。<code>width</code> 属性要么不指定，要么必须设为 <code>auto</code>。</td>
+      <td data-th="Behavior">元素会占用为其提供的空间，但高度保持不变。这种布局非常适合 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> 等涉及水平放置内容的元素。<code>width</code> 属性要么不指定，要么必须设为 <code>auto</code>。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -189,4 +189,3 @@ AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

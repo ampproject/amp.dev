@@ -72,7 +72,7 @@ Se pueden asignar los siguientes valores al atributo `layout`:
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">Solo altura</td>
-      <td data-th="Behavior">El elemento ocupa el espacio disponible, pero la altura no cambia. Este diseño funciona bien en elementos como <a href="/es/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> que implican que el contenido se muestren en posición horizontal. El atributo <code>width</code> no debe estar presente o debe ser <code>auto</code>.</td>
+      <td data-th="Behavior">El elemento ocupa el espacio disponible, pero la altura no cambia. Este diseño funciona bien en elementos como <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> que implican que el contenido se muestren en posición horizontal. El atributo <code>width</code> no debe estar presente o debe ser <code>auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -189,4 +189,3 @@ En función de la anchura de la pantalla, se obtendrá y renderizará una de ell
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

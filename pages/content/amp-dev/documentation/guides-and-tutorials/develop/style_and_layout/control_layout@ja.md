@@ -72,7 +72,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">高さのみ必要</td>
-      <td data-th="Behavior">要素は使用できるスペースを占有しますが、高さはそのまま変更されません。このレイアウトは、水平に配置されるコンテンツを含む要素（<a href="/ja/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> など）に適しています。<code>width</code> 属性については、指定しないか、または <code>auto</code> に設定する必要があります。</td>
+      <td data-th="Behavior">要素は使用できるスペースを占有しますが、高さはそのまま変更されません。このレイアウトは、水平に配置されるコンテンツを含む要素（<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> など）に適しています。<code>width</code> 属性については、指定しないか、または <code>auto</code> に設定する必要があります。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -189,4 +189,3 @@ AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

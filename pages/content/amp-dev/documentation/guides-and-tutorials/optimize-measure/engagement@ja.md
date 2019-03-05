@@ -13,7 +13,7 @@ $title: ユーザー エンゲージメントを向上させる
 
 ### ユーザー エンゲージメントと定着率を最適化する
 
-- **双方向のエクスペリエンスを提供する。**  AMP ページで、たとえば [`amp-carousel`](/ja/docs/reference/components/amp-carousel.html)  コンポーネントを使って魅力的な画像カルーセルを作成します。また、AMP ではネイティブにサポートされていない双方向性を、[`amp-iframe`](/ja/docs/reference/components/amp-iframe.html) を使って組み込みます。
+- **双方向のエクスペリエンスを提供する。**  AMP ページで、たとえば [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})  コンポーネントを使って魅力的な画像カルーセルを作成します。また、AMP ではネイティブにサポートされていない双方向性を、[`amp-iframe`](/ja/docs/reference/components/amp-iframe.html) を使って組み込みます。
 
 - **ユーザーの行動経路をカスタマイズする。**  ログインボタンを追加します。有料コンテンツがある場合は [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) を使ってルールや特典を実装します。
 

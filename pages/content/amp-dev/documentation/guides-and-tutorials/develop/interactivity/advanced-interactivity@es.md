@@ -47,7 +47,7 @@ selected.slide // Evaluates to 0.
 
 ### Actualizar el estado de diapositiva
 
-A continuación, actualizamos esta variable cuando el usuario cambia las diapositivas en el carrusel añadiendo la siguiente acción `"on"` al elemento existente de [`<amp-carousel>`](/docs/reference/components/amp-carousel.html):
+A continuación, actualizamos esta variable cuando el usuario cambia las diapositivas en el carrusel añadiendo la siguiente acción `"on"` al elemento existente de [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -99,7 +99,7 @@ Cambiando la diapositiva del carrusel:
 
 [tip type="success"]
 
-Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
+Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -173,7 +173,7 @@ Si añadimos otra variable de estado que rastrea la SKU seleccionada, podemos vi
 
 ### Actualizar el estado SKU
 
-Agregue una acción "on" al [`<amp-selector>`](/docs/reference/components/amp-selector.html) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
+Agregue una acción "on" al [`<amp-selector>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
 
 ```html
 <amp-selector name="color"

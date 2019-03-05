@@ -46,7 +46,7 @@ selected.slide // 0으로 평가합니다.
 
 ### 슬라이드 상태 업데이트
 
-다음으로 사용자가 캐러셀의 슬라이드를 변경하는 경우에 기존 [`<amp-carousel>`](/ko/docs/reference/components/amp-carousel.html) 요소에 다음의 `"on"` 작업을 추가하여 이 변수를 업데이트해 보겠습니다.
+다음으로 사용자가 캐러셀의 슬라이드를 변경하는 경우에 기존 [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 요소에 다음의 `"on"` 작업을 추가하여 이 변수를 업데이트해 보겠습니다.
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -97,7 +97,7 @@ selected.slide // 0으로 평가합니다.
 
 [tip type="success"]
 
-기능을 추가하여 사용자가 슬라이드의 표시기 점을 탭하면 선택된 항목으로 이미지 캐러셀을 업데이트할 수 있는지 확인합니다. 참고로 [`<amp-carousel>`](/ko/docs/reference/components/amp-carousel.html)에서 `tap` 이벤트와 `[slide]` 바인딩을 사용합니다.
+기능을 추가하여 사용자가 슬라이드의 표시기 점을 탭하면 선택된 항목으로 이미지 캐러셀을 업데이트할 수 있는지 확인합니다. 참고로 [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})에서 `tap` 이벤트와 `[slide]` 바인딩을 사용합니다.
 
 [/tip]
 

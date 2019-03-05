@@ -46,7 +46,7 @@ selected.slide // Avalia para 0.
 
 ### Atualizar o estado do slide
 
-Em seguida, vamos atualizar essa variável quando o usuário mudar os slides no carrossel. Para isso, adicionamos a seguinte ação `"on"` ao elemento [`<amp-carousel>`](/pt_br/docs/reference/components/amp-carousel.html) existente:
+Em seguida, vamos atualizar essa variável quando o usuário mudar os slides no carrossel. Para isso, adicionamos a seguinte ação `"on"` ao elemento [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) existente:
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -97,7 +97,7 @@ Muito bem! Agora o indicador de slides já está funcionando.
 
 [tip type="success"]
 
-Tente adicionar uma funcionalidade para que, quando o usuário tocar no ponto indicador de slide, o carrossel de imagens seja atualizado com o item selecionado. Uma dica: use o evento `tap` e a vinculação `[slide]` em [`<amp-carousel>`](/pt_br/docs/reference/components/amp-carousel.html).
+Tente adicionar uma funcionalidade para que, quando o usuário tocar no ponto indicador de slide, o carrossel de imagens seja atualizado com o item selecionado. Uma dica: use o evento `tap` e a vinculação `[slide]` em [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
 
 [/tip]
 

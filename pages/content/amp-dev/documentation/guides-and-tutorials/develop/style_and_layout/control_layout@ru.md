@@ -37,7 +37,7 @@ $title: Поддерживаемые макеты
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Только высота</td>
-      <td data-th="Behavior">Элемент занимает доступное ему пространство, однако его высота не меняется. Этот макет подходит для элементов с горизонтальным содержанием, например <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>. Атрибут <code>width</code> должен отсутствовать или иметь значение <code>auto</code>.</td>
+      <td data-th="Behavior">Элемент занимает доступное ему пространство, однако его высота не меняется. Этот макет подходит для элементов с горизонтальным содержанием, например <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>. Атрибут <code>width</code> должен отсутствовать или иметь значение <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>

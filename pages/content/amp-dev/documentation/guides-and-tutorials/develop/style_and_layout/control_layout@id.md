@@ -72,7 +72,7 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">Hanya tinggi</td>
-      <td data-th="Behavior">Elemen menempati ruang yang disediakan, tapi tingginya tidak diubah. Tata letak ini berfungsi dengan baik untuk elemen seperti <a href="/id/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> yang menggunakan konten yang diposisikan secara horizontal. Atribut <code>width</code> harus tidak ada atau sama dengan <code>auto</code>.</td>
+      <td data-th="Behavior">Elemen menempati ruang yang disediakan, tapi tingginya tidak diubah. Tata letak ini berfungsi dengan baik untuk elemen seperti <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> yang menggunakan konten yang diposisikan secara horizontal. Atribut <code>width</code> harus tidak ada atau sama dengan <code>auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -189,4 +189,3 @@ Tergantung lebar layarnya, salah satu gambar akan diambil dan dirender.
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

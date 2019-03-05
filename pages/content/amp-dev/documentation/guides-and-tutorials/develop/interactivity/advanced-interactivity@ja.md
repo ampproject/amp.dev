@@ -46,7 +46,7 @@ selected.slide // Evaluates to 0.
 
 ### スライドのステータスを更新する
 
-次に、ユーザーがカルーセルのスライドを変更したときにこの変数を更新しましょう。これを行うには、既存の [`<amp-carousel>`](/ja/docs/reference/components/amp-carousel.html) 要素に下記の `"on"` アクションを追加します。
+次に、ユーザーがカルーセルのスライドを変更したときにこの変数を更新しましょう。これを行うには、既存の [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 要素に下記の `"on"` アクションを追加します。
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -97,7 +97,7 @@ selected.slide // Evaluates to 0.
 
 [tip type="success"]
 
-ユーザーがスライドのインジケーターのドットをタップしたときに、選択された項目で画像カルーセルを更新する、という機能を追加できるかどうか考えてみましょう。ヒントとしては、[`<amp-carousel>`](/ja/docs/reference/components/amp-carousel.html) で `tap` イベントと `[slide]` バインドを使用します。
+ユーザーがスライドのインジケーターのドットをタップしたときに、選択された項目で画像カルーセルを更新する、という機能を追加できるかどうか考えてみましょう。ヒントとしては、[`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) で `tap` イベントと `[slide]` バインドを使用します。
 
 [/tip]
 

@@ -37,7 +37,7 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Solo l'altezza</td>
-      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
+      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>

@@ -37,7 +37,7 @@ Voici la liste complète des valeurs autorisées pour l'attribut de mise en page
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Hauteur seulement</td>
-      <td data-th="Behavior">L'élément prend l'espace qui lui est offert, mais sa hauteur reste inchangée. Cette mise en page fonctionne bien pour les éléments tels qu'<a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a>, impliquant un contenu positionné horizontalement. L'attribut <code>width</code> ne doit pas être présent ou doit être égal à <code>auto</code>.</td>
+      <td data-th="Behavior">L'élément prend l'espace qui lui est offert, mais sa hauteur reste inchangée. Cette mise en page fonctionne bien pour les éléments tels qu'<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>, impliquant un contenu positionné horizontalement. L'attribut <code>width</code> ne doit pas être présent ou doit être égal à <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>

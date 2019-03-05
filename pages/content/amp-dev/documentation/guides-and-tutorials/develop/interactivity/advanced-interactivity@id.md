@@ -46,7 +46,7 @@ selected.slide // Dievaluasi ke 0.
 
 ### Mengupdate status slide
 
-Berikutnya, update variabel ini jika pengguna mengubah slide di carousel, dengan menambahkan tindakan `"on"` berikut pada elemen [`<amp-carousel>`](/id/docs/reference/components/amp-carousel.html) yang sudah ada:
+Berikutnya, update variabel ini jika pengguna mengubah slide di carousel, dengan menambahkan tindakan `"on"` berikut pada elemen [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) yang sudah ada:
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -99,7 +99,7 @@ Bagus. Sekarang kita memiliki indikator slide yang dapat dijalankan.
 
 [tip type="success"]
 
-Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titik indikator slide, titik tersebut akan mengudate carousel gambar dengan item yang dipilih. Sebagai petunjuk, gunakan peristiwa `tap` dan pengikatan `[slide]` di [`<amp-carousel>`](/id/docs/reference/components/amp-carousel.html).
+Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titik indikator slide, titik tersebut akan mengudate carousel gambar dengan item yang dipilih. Sebagai petunjuk, gunakan peristiwa `tap` dan pengikatan `[slide]` di [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
 
 [/tip]
 

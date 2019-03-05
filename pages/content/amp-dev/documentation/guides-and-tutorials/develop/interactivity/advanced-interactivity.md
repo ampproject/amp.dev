@@ -47,7 +47,7 @@ selected.slide // Evaluates to 0.
 
 ### Update the slide state
 
-Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing [`<amp-carousel>`](/docs/reference/components/amp-carousel.html) element:
+Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) element:
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -100,7 +100,7 @@ Nice! Now we have a working slide indicator.
 
 [tip type="success"]
 
-See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on [`<amp-carousel>`](/docs/reference/components/amp-carousel.html).
+See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -175,7 +175,7 @@ If we add another state variable that tracks the selected SKU, we can bind an ex
 
 ### Update the SKU state
 
-Add an "on" action to the [`<amp-selector>`](/docs/reference/components/amp-selector.html) that updates the `selected.sku` variable whenever a new color is selected:
+Add an "on" action to the [`<amp-selector>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) that updates the `selected.sku` variable whenever a new color is selected:
 
 ```html
 <amp-selector name="color"
@@ -188,7 +188,7 @@ Add an "on" action to the [`<amp-selector>`](/docs/reference/components/amp-sele
 
 ### Bind the image elements
 
-Then, add bindings to the [`<amp-img>`](/docs/reference/components/amp-img.html) elements inside the `<amp-carousel>` (look for `<!-- TODO: "Changing images in amp-carousel-->"`):
+Then, add bindings to the [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements inside the `<amp-carousel>` (look for `<!-- TODO: "Changing images in amp-carousel-->"`):
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
