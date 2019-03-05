@@ -127,7 +127,7 @@ $title: 在您的 AMP 网页中利用广告获利
 *   **遵循 [IAB 指南](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)，避免使用尺寸很大的广告文件**。
 *   **避免使用插页式广告**或其他会导致内容在广告加载时重排的广告格式。
 *   **进行优化以提高可见度**：将 data-loading-strategy 设置为 prefer-viewability-over-views。
-*   **通过[支持的播放器](/zh_cn/docs/reference/components.html#media)或 [amp-iframe](https://ampbyexample.com/components/amp-iframe/) 在视频内容中展示广告**，以通过各种类型的内容创收。
+*   **通过[支持的播放器]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})或 [amp-iframe](https://ampbyexample.com/components/amp-iframe/) 在视频内容中展示广告**，以通过各种类型的内容创收。
 *   **使用多尺寸广告请求实现原生广告**，以与展示广告展开竞争，从而在提供优质用户体验的同时增加需求压力。
 
 ### 创新：提供最具吸引力的广告产品

@@ -129,7 +129,7 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 *   **Avoid heavy creatives** per [IAB guidelines](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
 *   **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
-*   **Place ads in your video content** via [supported players](/docs/reference/components.html#media) or [amp-iframe](https://ampbyexample.com/components/amp-iframe/) to enable revenue on all types of content.
+*   **Place ads in your video content** via [supported players]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) or [amp-iframe](https://ampbyexample.com/components/amp-iframe/) to enable revenue on all types of content.
 *   **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
 
 ### Innovation: Offer the most engaging ad products

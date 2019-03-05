@@ -127,7 +127,7 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 *   **Hindari materi iklan yang berat** sesuai [panduan IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Hindari iklan interstisial** atau format iklan lain yang menyebabkan konten diulang saat iklan dimuat.
 *   **Optimalkan visibilitas** dengan mengatur strategi pemuatan data agar lebih mengutamakan visibilitas daripada penayangan.
-*   **Tempatkan iklan dalam konten video** melalui [pemutar yang didukung](/id/docs/reference/components.html#media) atau [amp-iframe](https://ampbyexample.com/components/amp-iframe/) untuk mengaktifkan pendapatan pada semua jenis konten.
+*   **Tempatkan iklan dalam konten video** melalui [pemutar yang didukung]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) atau [amp-iframe](https://ampbyexample.com/components/amp-iframe/) untuk mengaktifkan pendapatan pada semua jenis konten.
 * **Terapkan iklan native** untuk bersaing dengan iklan display menggunakan permintaan iklan multi-ukuran, yang akan meningkatkan tekanan permintaan sekaligus memberikan pengalaman pengguna premium kepada pembaca Anda.
 
 ### Inovasi: Tawarkan produk iklan yang paling menarik

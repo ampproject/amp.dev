@@ -127,7 +127,7 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 *   [IAB のガイドライン](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)に沿って、**負荷の大きいクリエイティブは避けます**。
 *   広告の読み込み時にコンテンツのリフローが発生する、**インタースティシャルなどの広告フォーマットの使用は避けます**。
 *   data-loading-strategy を prefer-viewability-over-views に設定して、**視認性を最適化します**。
-*   [サポートされているプレーヤー](/ja/docs/reference/components.html#media)や [amp-iframe](https://ampbyexample.com/components/amp-iframe/) を利用して**動画コンテンツ内に広告を配置**して、さまざまな種類のコンテンツを収益化します。
+*   [サポートされているプレーヤー]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})や [amp-iframe](https://ampbyexample.com/components/amp-iframe/) を利用して**動画コンテンツ内に広告を配置**して、さまざまな種類のコンテンツを収益化します。
 *   **ネイティブ広告を取り入れて**、マルチサイズ広告リクエストを使用してディスプレイ広告と競合させることにより、読者に高い利便性を提供するとともに、需要圧力を高めます。
 
 ### イノベーション: 高い魅力を持った広告プロダクトを提供する
