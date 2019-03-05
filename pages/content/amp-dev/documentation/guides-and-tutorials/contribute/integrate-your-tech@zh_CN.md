@@ -48,6 +48,4 @@ amp-ad 扩展组件专用于在 AMP 网页上投放展示广告。目前已有�
 - [AMP 项目网站](https://www.ampproject.org/)
 - [AMP GitHub 项目](https://github.com/ampproject/amphtml)
 - [AMP 博客](/zh_cn/latest/blog)
-- [AMP 项目蓝图](/roadmap/)
- 
- 
+- [AMP 项目蓝图]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

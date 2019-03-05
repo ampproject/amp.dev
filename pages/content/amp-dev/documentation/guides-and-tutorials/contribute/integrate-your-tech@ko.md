@@ -48,6 +48,4 @@ amp-analytics, amp-pixel 또는 amp-ad를 사용하여 사용 사례를 지원�
 - [AMP 프로젝트 사이트](https://www.ampproject.org/ko/)
 - [AMP GitHub 프로젝트](https://github.com/ampproject/amphtml)
 - [AMP 블로그](https://amphtml.wordpress.com/)
-- [AMP 프로젝트 로드맵](/roadmap/)
- 
- 
+- [AMP 프로젝트 로드맵]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})
