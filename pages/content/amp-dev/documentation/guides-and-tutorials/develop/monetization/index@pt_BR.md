@@ -142,5 +142,5 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
 
 ## Outros recursos
 
-*   [modelos de anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}})
+*   [modelos de anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [demonstração: como adicionar `amp-ad` à página AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

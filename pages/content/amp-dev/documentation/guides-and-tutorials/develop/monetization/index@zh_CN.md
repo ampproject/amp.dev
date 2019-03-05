@@ -142,5 +142,5 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ## 其他资源
 
-*   [AMPHTML 广告模板]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}})
+*   [AMPHTML 广告模板]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [演示：如何将 `amp-ad` 添加到 AMP 网页中]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

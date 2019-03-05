@@ -142,5 +142,5 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 
 ## Recursos adicionales
 
-*   [Plantillas de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}})
+*   [Plantillas de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [Demostración: cómo añadir el componente `amp-ad` a tu página AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

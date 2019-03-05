@@ -142,5 +142,5 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 
 ## その他のリソース
 
-*   [AMP HTML 広告テンプレート]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}})
+*   [AMP HTML 広告テンプレート]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [デモ: AMP ページでの `amp-ad` の追加方法]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

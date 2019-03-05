@@ -66,7 +66,7 @@ Para publicar anuncios AMP HTML a través de canales indirectos (por ejemplo, in
 
 ### Agencias de creatividades
 
-Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para consultar ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}}). También puedes utilizar una de las siguientes herramientas para crear anuncios AMP HTML:
+Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para consultar ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). También puedes utilizar una de las siguientes herramientas para crear anuncios AMP HTML:
 
 *  [Creador de anuncios de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)

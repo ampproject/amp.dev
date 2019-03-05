@@ -142,5 +142,5 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 
 ## Referensi tambahan
 
-*   [Template iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}})
+*   [Template iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   [Demo: Memperlihatkan cara menambah `amp-ad` ke halaman AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
