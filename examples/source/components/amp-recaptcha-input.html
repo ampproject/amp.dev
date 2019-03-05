@@ -1,0 +1,121 @@
+<!--
+  ## Introduction
+
+  The [`amp-recaptcha-input`](https://amp.dev/documentation/components/reference/amp-recaptcha-input.html) component appends a [reCAPTCHA v3](https://developers.google.com/recaptcha/docs/v3) token to AMP form submissions. `amp-recaptcha-input` does this by creating an iframe to load the reCAPTCHA v3 api script using the provided site key, and calling `grecaptcha.execute` with the provided site key and action.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>amp-recaptcha-input</title>
+  <link rel="canonical" href="<%host%>/components/amp-recaptcha-input/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+    <!-- Import the amp-recaptcha-input component, on an AMP Page using [AMP Form](https://amp.dev/documentation/components/reference/amp-form.html) -->
+  <script async custom-element="amp-recaptcha-input" src="https://cdn.ampproject.org/v0/amp-recaptcha-input-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom>
+  form {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+  }
+
+  form.amp-form-submit-success [submit-success],
+  form.amp-form-submit-error [submit-error]{
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  form.amp-form-submit-success [submit-success] {
+    color: green;
+  }
+
+  form.amp-form-submit-success [submit-success] div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    word-break: break-all;
+  }
+
+  form.amp-form-submit-error [submit-error] {
+    color: red;
+  }
+
+  fieldset {
+    margin-top: 10px;
+  }
+
+  @keyframes donut-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .donut {
+    display: inline-block;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #7983ff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: donut-spin 1.2s linear infinite;
+  }
+
+  .loading-spinner {
+    display: none;
+    text-align: center;
+    margin: 5px;
+  }
+
+  form.amp-form-submitting > .loading-spinner {
+    display: block;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- ## Basic usage -->
+    <!-- POST Form request, that responds with the resolved recaptcha items. See the [reference documentation](https://amp.dev/documentation/components/reference/amp-recaptcha-input.html) for a walkthrough on the corresponding `grecaptcha` calls. -->
+  <form method="POST" action-xhr="https://torch2424-amp-glitch-express.glitch.me/api/recaptcha" target="_top">
+    <fieldset>
+      <label>
+        <span>Search for</span>
+        <input type="search" name="term" required>
+      </label>
+      <input name="submit-button" type="submit" value="Search">
+      <amp-recaptcha-input layout="nodisplay" name="recaptcha_token" data-sitekey="6LebBGoUAAAAAHbj1oeZMBU_rze_CutlbyzpH8VE" data-action="recaptcha_example">
+      </amp-recaptcha-input>
+    </fieldset>
+
+    <div class="loading-spinner">
+      <div class="donut">
+      </div>
+    </div>
+
+    <div submit-success>
+      <template type="amp-mustache">
+        <h1>You searched for: {{term}}</h1>
+        <div><b>Score:</b> {{score}}</div>
+        <div><b>Recaptcha token:</b> {{recaptcha_token}}</div>
+        <div><b>Action:</b> {{action}}</div>
+      </template>
+    </div>
+
+    <div submit-error>
+      <template type="amp-mustache">
+        <h1>Error! Please check the JS Console in your dev tools.</h1>
+        <p>{{message}}</p>
+      </template>
+    </div>
+  </form>
+
+</body>
+</html>
