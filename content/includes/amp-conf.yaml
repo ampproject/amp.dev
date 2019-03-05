@@ -142,12 +142,12 @@ speakers:
     name: Hans Pauwels
     company: Tappable
     bio: "Hans is founder and CEO of Tappable. He has over 30 years of experience in founding, managing and scaling up companies internationally. Tappable is the 8th venture he's moving into and the most special because he teams up with his 2 sons in this unique startup."
-    pic: /static/img/amp-conf/speakers/hands.png
+    pic: /static/img/amp-conf/speakers/hands.jpg
   benkim:
     name: Ben Kim
     company: iPrice Group
     bio:
-    pic: /static/img/amp-conf/speakers/benkim.jpeg
+    pic: /static/img/amp-conf/speakers/benkim.jpg
   jeannyhaliman:
     name: Jeanny Haliman
     company: Google
