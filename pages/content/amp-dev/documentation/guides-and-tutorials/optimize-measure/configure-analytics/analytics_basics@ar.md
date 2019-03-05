@@ -80,7 +80,7 @@ $title: "Analytics: الأساسيات"
 [<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html) بسيطة،
 يجب عليك تضمين هذا التصريح بشأن <span dir="ltr" class="nowrap">`custom-element`</span>
 في `<head>` لمستند AMP (انظر أيضًا
-[تصريح بشأن تضمين مكون](/ar/docs/reference/components.html)):
+[تصريح بشأن تضمين مكون]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

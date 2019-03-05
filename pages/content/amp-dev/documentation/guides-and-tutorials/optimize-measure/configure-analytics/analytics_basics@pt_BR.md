@@ -41,7 +41,7 @@ O componente [amp-pixel](/pt_br/docs/reference/components/amp-pixel.html) é int
 ### Configuração simples de amp-analytics
 
 Para criar uma configuração simples de [amp-analytics](/pt_br/docs/reference/components/amp-analytics.html), primeiro é necessário incluir esta declaração `custom-element` no `<head>`
-documento de AMP (consulte também [Declaração de inclusão de componente](/pt_br/docs/reference/components.html)):
+documento de AMP (consulte também [Declaração de inclusão de componente]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -134,4 +134,3 @@ Se a AMP descobrir que o cookie está definido, a substituição do código de c
 Saiba mais sobre a substituição do código de cliente, incluindo como adicionar um código de notificação de usuário opcional em [Variáveis ​​permitidas na análise de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
 Saiba mais: Continue seu aprendizado sobre análises em [Informações detalhadas sobre o AMP Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) e [Casos de uso]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
-

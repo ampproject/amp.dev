@@ -42,7 +42,7 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 `amp
 ### 단순한 amp-analytics 구성
 
 단순한 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 구성을 작성하려면 우선 `custom-element` 선언을 AMP 문서의 `<head>`
-에 포함시켜야 합니다 ([구성요소 포함 선언](/ko/docs/reference/components.html) 참고).
+에 포함시켜야 합니다 ([구성요소 포함 선언]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) 참고).
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -138,4 +138,3 @@ AMP 에서 이 쿠키가 설정되었다는 사실이 확인된 경우 클라이
 사용자 알림 ID 추가 (선택사항) 등 클라이언트 ID 치환에 관해 자세히 알아보려면 [AMP 애널리틱스에서 지원되는 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 를 확인하세요.
 
 자세히 알아보기: 애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})  및 [사용 사례]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}) 를 확인하세요.
-

@@ -24,4 +24,4 @@ $title: 恭喜！
 - [AMP Start](https://www.ampstart.com/)：使用已预设样式的模板和组件来设置网页样式
 - [AMP By Example](https://ampbyexample.com/)：从实例和在线演示中学习相关知识
 - [YouTube 上的 AMP 频道](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)：通过观看与 AMP 相关的视频学习相关知识
-- [AMP 组件](/zh_cn/docs/reference/components.html)：详细了解所有 AMP 组件
+- [AMP 组件]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})：详细了解所有 AMP 组件

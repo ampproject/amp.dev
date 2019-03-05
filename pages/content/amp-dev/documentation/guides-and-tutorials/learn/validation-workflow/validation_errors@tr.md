@@ -58,7 +58,7 @@ Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com
 
 Doğrulayıcı, AMP dokümanında genişletilmiş bir bileşen bulduğunda `TAG_REQUIRED_BY_MISSING` hatasını bildirir, ancak `<script>` eşdeğerini bulmaz.
 
-[Genişletilmiş bileşenlerin](/docs/reference/components.html), AMP dokümanına açık bir şekilde özel öğe olarak eklenmeleri gerekir.
+[Genişletilmiş bileşenlerin]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}), AMP dokümanına açık bir şekilde özel öğe olarak eklenmeleri gerekir.
 Bu hataları düzeltmek için genişletilmiş bileşenin referans sayfasına gidin, gerekli komut dosyasını kopyalayın ve AMP dokümanı `<head>` etiketine yapıştırın.
 
 ### İzin verilmeyen etiket

@@ -80,7 +80,7 @@ Pour créer une configuration simple de la balise
 [amp-analytics](/docs/reference/components/amp-analytics.html),
 vous devez d'abord inclure la déclaration `custom-element`
 après la balise `<head>` du document AMP (voir également
-[Déclaration d'inclusion de composant](/docs/reference/components.html)) :
+[Déclaration d'inclusion de composant]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})) :
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

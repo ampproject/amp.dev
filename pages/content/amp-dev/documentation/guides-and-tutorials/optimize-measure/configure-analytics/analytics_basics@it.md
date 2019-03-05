@@ -78,7 +78,7 @@ Per cerare una configurazione
 [amp-analytics](/it/docs/reference/components/amp-analytics.html) semplice,
 devi prima includere questa dichiarazione `custom-element`
 nell’`<head>` del documento AMP (vedi anche
-[Dichiarazione di inclusione del componente](/it/docs/reference/components.html)):
+[Dichiarazione di inclusione del componente]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

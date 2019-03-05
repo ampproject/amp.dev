@@ -87,7 +87,7 @@ The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
 but doesn't find its equivalent `<script>`.
 
-[Extended components](/docs/reference/components.html)
+[Extended components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
 must be explicitly included in the AMP document as custom elements.
 To fix these errors, navigate to the extended component's reference page,
 copy its required script, and paste it into the AMP document `<head>`.
@@ -133,7 +133,7 @@ broadly defines the set of disallowed tags.
 The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
 provided by the AMP Project itself. Many common uses of JavaScript have AMP
 HTML library equivalent implementations. See [AMP
-components](/docs/reference/components.html) for the set of components that can be
+components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) for the set of components that can be
 used to enhance AMP HTML pages.
 
 If your use case is not covered, you may also consider contributing new

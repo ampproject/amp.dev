@@ -153,7 +153,7 @@ The tag 'script' is disallowed except in specific forms.
 关于由用户生成的脚本/第三方脚本的限制只存在以下例外情况：
 
 1.  将元数据添加到网页或配置 AMP 组件的脚本。这些脚本将具有类型属性 `application/ld+json` 或 `application/json`。
-2.  iframe 中包含的脚本。在 iframe 中包含 JavaScript 应该是在万不得已时才使用的措施。应尽可能地将 JavaScript 功能替换为使用 [AMP 组件](/zh_cn/docs/reference/components.html)。在下一部分中，我们将探索我们的第一个 AMP 组件。
+2.  iframe 中包含的脚本。在 iframe 中包含 JavaScript 应该是在万不得已时才使用的措施。应尽可能地将 JavaScript 功能替换为使用 [AMP 组件]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})。在下一部分中，我们将探索我们的第一个 AMP 组件。
 [/tip]
 
 尝试打开外部 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 文件。发现了什么？此文件应该不含任何 JavaScript 代码，并且只包含如下所示的信息注释：

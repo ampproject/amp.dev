@@ -74,7 +74,7 @@ Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spéci
 
 Le validateur génère l'erreur `TAG_REQUIRED_BY_MISSING` lorsqu'il trouve un composant étendu dans le document AMP, mais ne trouve pas le `<script>` équivalent.
 
-Les [composants étendus](/docs/reference/components.html) doivent être inclus explicitement dans le document AMP en tant qu'éléments personnalisés.
+Les [composants étendus]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) doivent être inclus explicitement dans le document AMP en tant qu'éléments personnalisés.
 Pour corriger ces erreurs, accédez à la page de référence du composant étendu, copiez le script nécessaire et collez-le dans la section `<head>` du document AMP.
 
 ### Balise non autorisée

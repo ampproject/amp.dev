@@ -40,7 +40,7 @@ Komponen [amp-pixel](/id/docs/reference/components/amp-pixel.html) bersifat defa
 
 ### Konfigurasi amp-analytics sederhana
 
-Untuk membuat konfigurasi[ amp-analytics,](/id/docs/reference/components/amp-analytics.html)  sederhana, Anda harus menyertakan deklarasi `custom-element` terlebih dahulu pada `<head>` dokumen AMP (lihat juga [Deklarasi inklusi komponen](/id/docs/reference/components.html)):
+Untuk membuat konfigurasi[ amp-analytics,](/id/docs/reference/components/amp-analytics.html)  sederhana, Anda harus menyertakan deklarasi `custom-element` terlebih dahulu pada `<head>` dokumen AMP (lihat juga [Deklarasi inklusi komponen]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -141,4 +141,3 @@ Jika AMP menemukan bahwa cookie tersebut ditetapkan, penggantian ID klien akan m
 Pelajari lebih lanjut tentang penggantian ID klien, termasuk cara menambahkan ID pemberitahuan pengguna opsional, di [Variabel yang didukung dalam analitik AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
 Pelajari lebih lanjut: Lanjutkan untuk mempelajari tentang analitik dengan [Mendalami Analitik AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) dan [Kasus Penggunaan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
-

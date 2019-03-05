@@ -166,7 +166,7 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 要想详细了解如何嵌入 Twitter 微博，请参阅 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 组件文档。
 
 [tip]
-AMP 还提供了更多用于嵌入社交网络内容的组件。请参阅最新的 [AMP 社交组件](/zh_cn/docs/reference/components.html#social)。
+AMP 还提供了更多用于嵌入社交网络内容的组件。请参阅最新的 [AMP 社交组件]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})。
 [/tip]
 
 ## 突出显示报道中的精彩语段

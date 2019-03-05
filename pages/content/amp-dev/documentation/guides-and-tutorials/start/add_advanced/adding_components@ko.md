@@ -168,7 +168,7 @@ YouTube 동영상 삽입에 관해 자세히 알아보려면 [`amp-youtube`]({{g
 트위터에서 트윗을 삽입하는 방법에 관해 자세히 알아보려면 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 구성요소 문서를 읽어보세요.
 
 [tip]
-AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소](/ko/docs/reference/components.html#social)를 참조하세요.
+AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})를 참조하세요.
 [/tip]
 
 ## 기사 인용문 강조표시하기

@@ -25,4 +25,4 @@ To further advance your AMP expertise, check out these resources:
 - [AMP Start](https://www.ampstart.com/): Style your pages with pre-styled templates and components
 - [AMP By Example](https://ampbyexample.com/): Learn from live samples and demos
 - [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Learn by watching AMP-specific videos
-- [AMP components](/docs/reference/components.html): Get details on all of the AMP components
+- [AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}): Get details on all of the AMP components

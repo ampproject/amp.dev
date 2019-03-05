@@ -36,7 +36,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[amp-pi
 
 ### amp-analytics 的简单配置
 
-要创建简单的 [amp-analytics](/zh_cn/docs/reference/components/amp-analytics.html) 配置，您必须首先将以下 `custom-element` 声明包含在 AMP 文档的 `<head>` 中（另请参阅[组件包含声明](/zh_cn/docs/reference/components.html)）：
+要创建简单的 [amp-analytics](/zh_cn/docs/reference/components/amp-analytics.html) 配置，您必须首先将以下 `custom-element` 声明包含在 AMP 文档的 `<head>` 中（另请参阅[组件包含声明]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})）：
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>

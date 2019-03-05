@@ -74,7 +74,7 @@ Questi tag obbligatori includono un campo `mandatory: true` nella [specifica del
 
 Lo strumento di convalida genera l'errore `TAG_REQUIRED_BY_MISSING` quando trova un componente esteso nel documento AMP, ma non trova il relativo equivalente `<script>`.
 
-I [componenti estesi](/docs/reference/components.html) devono essere inclusi esplicitamente nel documento AMP sotto forma di elementi personalizzati.
+I [componenti estesi]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) devono essere inclusi esplicitamente nel documento AMP sotto forma di elementi personalizzati.
 Per correggere questi errori visita la pagina di riferimento del componente esteso, copia lo script obbligatorio e incollalo nell'elemento `<head>` del documento AMP.
 
 ### Tag non consentito

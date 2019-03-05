@@ -77,7 +77,7 @@ Basit bir
 [amp-analytics](/docs/reference/components/amp-analytics.html) yapılandırması oluşturmak için,
 ilk önce bu `custom-element` bildirimini
 `<head>` AMP belgesine eklemeniz gerekir (ayrıca bkz.
-[Bileşen ekleme bildirimi](/docs/reference/components.html)):
+[Bileşen ekleme bildirimi]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
