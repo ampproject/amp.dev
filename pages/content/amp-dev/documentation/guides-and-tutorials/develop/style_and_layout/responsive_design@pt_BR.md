@@ -16,7 +16,7 @@ Neste guia, você verá como implementar facilmente estes princípios básicos e
 
 Para otimizar sua página da Web e fazer com que o conteúdo seja dimensionado e se ajuste ao tamanho da janela do navegador em qualquer dispositivo, é preciso especificar o elemento `meta` da janela de visualização. Esse elemento indica ao navegador como dimensionar e ajustar a área visível (a janela de visualização) da página da Web.
 
-Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória](/pt_br/docs/fundamentals/spec.html#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
+Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -70,7 +70,7 @@ No exemplo a seguir, mostraremos um vídeo incorporado do YouTube que responde a
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Mostrar mais">Mostrar código completo</div> <div placeholder></div> </amp-iframe></div>
 
-Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP.  Para mais detalhes, consulte a lista de [componentes de mídia](/pt_br/docs/reference/components.html#media) disponíveis.
+Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP.  Para mais detalhes, consulte a lista de [componentes de mídia]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) disponíveis.
 
 ### Como exibir imagens responsivas
 

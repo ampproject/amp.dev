@@ -57,7 +57,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="body"></a>`<body>`
 
 Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
-tag tersebut juga dirujuk dalam [spesifikasi AMP](/id/docs/fundamentals/spec.html).
+tag tersebut juga dirujuk dalam [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
@@ -81,7 +81,7 @@ Validator menampilkan error `TAG_REQUIRED_BY_MISSING`
 ketika menemukan komponen yang diperpanjang dalam dokumen AMP,
 tapi tidak menemukan `<script>` yang setara.
 
-[Komponen yang diperpanjang](/id/docs/reference/components.html)
+[Komponen yang diperpanjang]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
 harus disertakan secara eksplisit dalam dokumen AMP sebagai elemen kustom.
 Untuk memperbaiki error ini, buka halaman referensi komponen yang diperpanjang,
 salin skrip yang diperlukan, lalu tempel ke `<head>` dokumen AMP.
@@ -104,7 +104,7 @@ salin skrip yang diperlukan, lalu tempel ke `<head>` dokumen AMP.
 </table>
 
 Tag disertakan dalam daftar yang disetujui, sehingga tidak ada daftar definitif semua tag yang tidak diizinkan;
-namun, [spesifikasi AMP](/id/docs/fundamentals/spec.html)
+namun, [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})
 secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 
 ### JavaScript kustom tidak diizinkan
@@ -127,7 +127,7 @@ secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 Format AMP tidak mengizinkan penambahan JavaScript kustom ke halaman, kecuali untuk file JavaScript
 yang disediakan oleh Project AMP itu sendiri. Kebanyakan penggunaan umum JavaScript memiliki
 implementasi setara library HTML AMP. Lihat [komponen
-AMP](/id/docs/reference/components.html) untuk mengetahui kumpulan komponen yang dapat
+AMP]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) untuk mengetahui kumpulan komponen yang dapat
 digunakan untuk menyempurnakan halaman HTML AMP.
 
 Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen
@@ -724,7 +724,7 @@ lewat validator CSS online, misalnya,
 
 Error ini mengacu pada @-rules dalam CSS,
 untuk AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP](/id/docs/fundamentals/spec.html)).
+(lihat juga [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})).
 Misalnya, <code>@import</code> tidak diizinkan.
 Error validasi secara spesifik
 memberi tahu Anda aturan yang tidak valid,

@@ -16,7 +16,7 @@ $title: レスポンシブな AMP ページを作成する
 
 ウェブページを最適化して、拡大縮小によってコンテンツがあらゆる端末のブラウザ ウィンドウに収まるようにするには、`meta` ビューポート要素を指定する必要があります。このビューポート要素は、ブラウザでウェブページの表示エリア（ビューポート）をどのように拡大縮小およびサイズ設定するかを指定します。
 
-この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ](/ja/docs/fundamentals/spec.html#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
+この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -70,7 +70,7 @@ $title: レスポンシブな AMP ページを作成する
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div> <div placeholder></div> </amp-iframe></div>
 
-AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント](/ja/docs/reference/components.html#メディア)の一覧をご覧ください。
+AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})の一覧をご覧ください。
 
 ### レスポンシブな画像を表示する
 

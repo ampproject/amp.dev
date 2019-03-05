@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
-이러한 태그는 [AMP 사양](/ko/docs/fundamentals/spec.html)에서도 언급됩니다.
+이러한 태그는 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})에서도 언급됩니다.
 
 ### 다른 태그에 필요한 태그 누락
 
@@ -81,7 +81,7 @@ limitations under the License.
 이에 상응하는 `<script>`를 찾을 수 없을 때
 `TAG_REQUIRED_BY_MISSING` 오류를 표시합니다.
 
-[확장 구성요소](/ko/docs/reference/components.html)는
+[확장 구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})는
 맞춤 요소로서 AMP 문서에 명시적으로 포함되어야 합니다.
 이 오류를 해결하려면 확장 구성요소의 참조 페이지로 이동한 다음
 필요한 스크립트를 복사하여 AMP 문서 `<head>`에 붙여넣으세요.
@@ -104,7 +104,7 @@ limitations under the License.
 </table>
 
 태그는 허용된 것만 사용할 수 있기 때문에 허용되지 않는 모든 태그를
-나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양](/ko/docs/fundamentals/spec.html)에서
+나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})에서
 허용되지 않는 태그의 광범위한 목록을 확인할 수 있습니다.
 
 ### 맞춤 자바스크립트는 허용되지 않음
@@ -127,7 +127,7 @@ limitations under the License.
 AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립트 파일이 아닌
 맞춤 자바스크립트를 페이지에 추가할 수 없습니다. 일반적으로 필요한 자바스크립트는
 대부분 HTML 라이브러리에서 상응하는 구현 방식을 찾을 수 있습니다. [AMP
-구성요소](/ko/docs/reference/components.html)에서 AMP HTML 페이지를
+구성요소]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})에서 AMP HTML 페이지를
 향상하는 데 사용할 수 있는 구성요소를 확인하세요.
 
 필요한 자바스크립트 사용 사례를 찾을 수 없다면 AMP 프로젝트에
@@ -724,7 +724,7 @@ CSS를 실행해 보시기 바랍니다.
 
 이 오류는 AMP에서 몇 가지 규칙만이 허용되는
 CSS 내 @ 규칙을 말합니다.
-[AMP 사양](/ko/docs/fundamentals/spec.html)도 참조하세요.
+[AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})도 참조하세요.
 예를 들어 <code>@import</code>는 허용되지 않습니다.
 이 유효성 오류는
 잘못된 규칙이 무엇인지 구체적으로 알려 주기 때문에

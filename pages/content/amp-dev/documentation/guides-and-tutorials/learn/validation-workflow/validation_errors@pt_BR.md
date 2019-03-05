@@ -57,7 +57,7 @@ As seguintes tags precisam estar presentes em todos os documentos AMP:
 * <a name="body"></a>`<body>`
 
 Essas tags obrigatórias incluem um campo `mandatory: true` nas <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">especificações do validador de AMP</a> (em inglês).
-Elas também são mencionadas nas [especificações das AMP](/pt_br/docs/fundamentals/spec.html).
+Elas também são mencionadas nas [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}).
 
 ### A tag exigida por outra tag está ausente
 
@@ -81,7 +81,7 @@ O validador informa o erro `TAG_REQUIRED_BY_MISSING`
 quando encontra um componente estendido no documento AMP,
 mas não o `<script>` equivalente.
 
-Os [componentes estendidos](/pt_br/docs/reference/components.html)
+Os [componentes estendidos]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
 precisam ser explicitamente incluídos no documento AMP como elementos personalizados.
 Para corrigir esses erros, acesse a página de referência do componente estendido,
 copie e cole o script necessário na tag `<head>` do documento AMP.
@@ -104,7 +104,7 @@ copie e cole o script necessário na tag `<head>` do documento AMP.
 </table>
 
 As tags são colocadas na lista de permissões. Por isso, não há uma lista definitiva de todas as tags não permitidas.
-No entanto, as [especificações das AMP](/pt_br/docs/fundamentals/spec.html)
+No entanto, as [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})
 definem amplamente o conjunto de tags não permitidas.
 
 ### Não é permitido usar JavaScript personalizado
@@ -127,7 +127,7 @@ definem amplamente o conjunto de tags não permitidas.
 O formato AMP não permite que JavaScript personalizado seja adicionado às páginas, exceto os arquivos JavaScript
 fornecidos pelo próprio Projeto AMP. Muitos usos comuns de JavaScript têm
 implementações equivalentes na biblioteca de HTML para AMP. Consulte os [componentes
-AMP](/pt_br/docs/reference/components.html) para conhecer o conjunto de componentes que podem ser
+AMP]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) para conhecer o conjunto de componentes que podem ser
 usados para aprimorar as páginas HTML para AMP.
 
 Nos casos de uso que não estão previstos aqui, também é possível contribuir com novos
@@ -724,7 +724,7 @@ por meio de um validador on-line desse formato, como o
 
 Esse erro se refere às regras "@" no CSS.
 A tecnologia AMP permite somente algumas regras desse tipo
-(consulte também as [especificações das AMP](/pt_br/docs/fundamentals/spec.html)).
+(consulte também as [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})).
 Por exemplo, <code>@import</code> não é permitido.
 O erro de validação diz especificamente
 que a regra é inválida,

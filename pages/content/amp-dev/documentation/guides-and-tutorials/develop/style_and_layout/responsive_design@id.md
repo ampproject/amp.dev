@@ -16,7 +16,7 @@ Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen re
 
 Guna mengoptimalkan halaman sehingga konten diubah skalanya dan menyesuaikan jendela browser untuk semua perangkat, Anda harus menentukan elemen viewport `meta`. Elemen viewport memberikan petunjuk ke browser tentang cara mengubah skala dan menyesuaikan ukuran area yang terlihat (viewport) dari halaman.
 
-Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan](/id/docs/fundamentals/spec.html#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
+Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -70,7 +70,7 @@ Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat di
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Tampilkan kode lengkap</div> <div placeholder></div> </amp-iframe></div>
 
-Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media](/id/docs/reference/components.html#media) yang tersedia.
+Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) yang tersedia.
 
 ### Menampilkan gambar responsif
 

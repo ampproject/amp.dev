@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
-また、[AMP 仕様](/ja/docs/fundamentals/spec.html)にも必須タグについての説明があります。
+また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
 
@@ -81,7 +81,7 @@ limitations under the License.
 AMP ドキュメント内に拡張コンポーネントが見つかったものの、
 それに相当する `<script>` が見つからない場合です。
 
-[拡張コンポーネント](/ja/docs/reference/components.html)は、
+[拡張コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})は、
 カスタム要素として明示的に AMP ドキュメントに含める必要があります。
 このエラーを修正するには、拡張コンポーネントのリファレンス ページに移動して、
 必要なスクリプトをコピーし、AMP ドキュメントの `<head>` に貼り付けます。
@@ -104,7 +104,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 </table>
 
 タグはホワイトリストに登録されているため、許可されていないタグを網羅したリストはありません。
-ただし、[AMP 仕様](/ja/docs/fundamentals/spec.html)では
+ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})では
 許可されていないタグを大まかに定義しています。
 
 ### カスタム JavaScript が使用されている
@@ -127,7 +127,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 AMP 形式では、AMP プロジェクトが提供している JavaScript ファイルを除いて、ページにカスタムの JavaScript を
 追加することはできません。JavaScript の一般的な用法の多くは、
 AMP HTML ライブラリに対応する実装があります。AMP HTML ページの
-拡張に使用できるコンポーネントについては、[AMP コンポーネント](/ja/docs/reference/components.html)
+拡張に使用できるコンポーネントについては、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})
 をご覧ください。
 
 ご自分の使用例が取り上げられていない場合は、AMP プロジェクトに
@@ -724,7 +724,7 @@ CSS を実行してみてください。
 
 このエラーは、CSS 内のアットルールに関するものです。
 AMP で使用できるアットルールはごくわずかです
-（[AMP 仕様](/ja/docs/fundamentals/spec.html)もご覧ください）。
+（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})もご覧ください）。
 たとえば、<code>@import</code> は許可されていません。
 検証エラーでは無効なルールが
 具体的に示されるため、
