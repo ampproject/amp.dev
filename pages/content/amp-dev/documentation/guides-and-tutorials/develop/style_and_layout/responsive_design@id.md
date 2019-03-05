@@ -16,7 +16,7 @@ Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen re
 
 Guna mengoptimalkan halaman sehingga konten diubah skalanya dan menyesuaikan jendela browser untuk semua perangkat, Anda harus menentukan elemen viewport `meta`. Elemen viewport memberikan petunjuk ke browser tentang cara mengubah skala dan menyesuaikan ukuran area yang terlihat (viewport) dari halaman.
 
-Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
+Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -48,11 +48,11 @@ Namun, kami ingin gambar tersebut tidak berukuran melebihi batas yang ditentukan
 </style>
 ```
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](/id/docs/design/responsive/control_layout.html#atribut-tata-letak).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#atribut-tata-letak).
 
 <a id="fn1"></a>
 [tip type="note"]
-***Mengapa mengubah ukuran elemen agar sesuai dengan ukuran layar dikatakan rumit, padahal saya dapat melakukannya dengan mudah menggunakan gaya "width=100%"?**  Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna.  Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah menggunakan "width=100%", namun akan ada penurunan performa.  Browser harus mendownload gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman.  Di AMP,  jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping placeholder berdasarkan dimensi yang diberikan oleh amp-img (angka tersebut digunakan untuk menetapkan rasio tinggi lebar), kemudian resource didownload, dan halaman disesuaikan tampilannya (repaint).  Tidak perlu menyesuaikan tata letak (reflow).
+***Mengapa mengubah ukuran elemen agar sesuai dengan ukuran layar dikatakan rumit, padahal saya dapat melakukannya dengan mudah menggunakan gaya "width=100%"?**  Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna.  Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah menggunakan "width=100%", namun akan ada penurunan performa.  Browser harus mendownload gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman.  Di AMP,  jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping placeholder berdasarkan dimensi yang diberikan oleh [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (angka tersebut digunakan untuk menetapkan rasio tinggi lebar), kemudian resource didownload, dan halaman disesuaikan tampilannya (repaint).  Tidak perlu menyesuaikan tata letak (reflow).
 [/tip]
 
 ## Mengubah skala media untuk halaman
@@ -65,12 +65,12 @@ Saat menyertakan video di halaman, Anda ingin memastikan bahwa pengguna dapat me
 
 ##### Contoh: Menyematkan video YouTube
 
-Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat disesuaikan dengan ukuran dan orientasi layar perangkat. Dengan menambahkan `"layout=responsive"` ke elemen `amp-youtube`, ukuran video akan berubah agar sesuai dengan ukuran layar perangkat, dan rasio tinggi lebar video akan disesuaikan dengan `width` dan `height` yang ditentukan.
+Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat disesuaikan dengan ukuran dan orientasi layar perangkat. Dengan menambahkan `"layout=responsive"` ke elemen [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), ukuran video akan berubah agar sesuai dengan ukuran layar perangkat, dan rasio tinggi lebar video akan disesuaikan dengan `width` dan `height` yang ditentukan.
 
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Tampilkan kode lengkap</div> <div placeholder></div> </amp-iframe></div>
 
-Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}) yang tersedia.
+Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media) yang tersedia.
 
 ### Menampilkan gambar responsif
 
@@ -113,7 +113,7 @@ Pada contoh berikut, kami memiliki 3 gambar kucing yang di-crop berbeda, yang in
 - 470-669 piksel,  tampilkan `cat-medium.jpg`  (450x340 piksel)
 - 469 piksel atau lebih kecil, tampilkan `cat-small.jpg` (226x340 piksel)
 
-Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](/id/docs/design/responsive/control_layout.html#bagaimana-jika-atributlayout-tidak-ditetapkan?).
+Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#bagaimana-jika-atributlayout-tidak-ditetapkan?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode penuh</div><div placeholder></div></amp-iframe></div>
 

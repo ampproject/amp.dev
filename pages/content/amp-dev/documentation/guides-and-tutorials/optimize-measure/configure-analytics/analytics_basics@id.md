@@ -6,47 +6,47 @@ Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
 
 ## Menggunakan amp-pixel atau amp-analytics?
 
-AMP menyediakan 2 komponen untuk memenuhi kebutuhan analitik dan pengukuran Anda: [amp-pixel](/id/docs/reference/components/amp-pixel.html)
-dan [amp-analytics](/id/docs/reference/components/amp-analytics.html). Kedua opsi akan mengirim data analitik ke titik akhir yang telah ditentukan.
+AMP menyediakan 2 komponen untuk memenuhi kebutuhan analitik dan pengukuran Anda: [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+dan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Kedua opsi akan mengirim data analitik ke titik akhir yang telah ditentukan.
 
-Jika Anda mencari perilaku seperti [piksel pelacakan sederhana](https://en.wikipedia.org/wiki/Web_beacon#Implementation), komponen `amp-pixel` memberikan pelacakan tampilan halaman dasar; data tampilan halaman akan dikirim ke URL yang telah ditentukan. Sebagian integrasi dengan vendor mungkin memerlukan komponen ini, yang mana integrasi tersebut akan menetapkan titik akhir URL yang tepat.
+Jika Anda mencari perilaku seperti [piksel pelacakan sederhana](https://en.wikipedia.org/wiki/Web_beacon#Implementation), komponen [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) memberikan pelacakan tampilan halaman dasar; data tampilan halaman akan dikirim ke URL yang telah ditentukan. Sebagian integrasi dengan vendor mungkin memerlukan komponen ini, yang mana integrasi tersebut akan menetapkan titik akhir URL yang tepat.
 
-Untuk sebagian besar solusi analitik, gunakan `amp-analytics`. Pelacakan tampilan halaman juga dapat berfungsi di `amp-analytics`. Namun, Anda juga dapat melacak interaksi pengguna dengan jenis konten halaman apa pun, termasuk klik pada link dan tombol. Selain itu, Anda dapat mengukur seberapa jauh halaman yang di-scroll oleh pengguna, apakah pengguna berinteraksi dengan media sosial atau tidak, dan aktivitas lainnya.
+Untuk sebagian besar solusi analitik, gunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Pelacakan tampilan halaman juga dapat berfungsi di [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Namun, Anda juga dapat melacak interaksi pengguna dengan jenis konten halaman apa pun, termasuk klik pada link dan tombol. Selain itu, Anda dapat mengukur seberapa jauh halaman yang di-scroll oleh pengguna, apakah pengguna berinteraksi dengan media sosial atau tidak, dan aktivitas lainnya.
 
 Pelajari lebih lanjut: Lihat [Mendalami Analitik AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
-Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi `amp-analytics`
+Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke fitur pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
-Anda dapat menggunakan `amp-pixel` dan `amp-analytics`
-di halaman Anda: `amp-pixel` untuk pelacakan tampilan halaman sederhana, dan `amp-analytics` untuk pelacakan lainnya. Anda juga dapat menambahkan beberapa konfigurasi untuk setiap tag. Jika bekerja sama dengan beberapa penyedia analitik, Anda memerlukan 1 tag untuk setiap solusi. Perlu diperhatikan bahwa halaman AMP yang lebih sederhana lebih disarankan untuk pengguna, sehingga apabila Anda tidak memerlukan tag tambahan, jangan gunakan tag tersebut.
+Anda dapat menggunakan [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) dan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+di halaman Anda: [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) untuk pelacakan tampilan halaman sederhana, dan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) untuk pelacakan lainnya. Anda juga dapat menambahkan beberapa konfigurasi untuk setiap tag. Jika bekerja sama dengan beberapa penyedia analitik, Anda memerlukan 1 tag untuk setiap solusi. Perlu diperhatikan bahwa halaman AMP yang lebih sederhana lebih disarankan untuk pengguna, sehingga apabila Anda tidak memerlukan tag tambahan, jangan gunakan tag tersebut.
 
 ## Membuat konfigurasi analitik sederhana
 
-Pelajari cara membuat konfigurasi [amp-pixel](/id/docs/reference/components/amp-pixel.html) dan [amp-analytics](/id/docs/reference/components/amp-analytics.html) sederhana.
+Pelajari cara membuat konfigurasi [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) dan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) sederhana.
 
 ### Konfigurasi amp-pixel sederhana
 
-Untuk membuat konfigurasi `amp-pixel` sederhana, masukkan URL seperti contoh berikut ke dalam isi halaman AMP Anda:
+Untuk membuat konfigurasi [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) sederhana, masukkan URL seperti contoh berikut ke dalam isi halaman AMP Anda:
 
 ```html
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
 Pada contoh tersebut, data tampilan halaman dikirim ke URL yang ditentukan, bersama dengan nomor acak: Variabel `RANDOM`
-adalah salah satu dari banyak [variabel pengganti di platform AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Pelajari lebih lanjut tentang [Penggantian variabel](/id/docs/analytics/analytics_basics.html#variable-substitution) di sini.
+adalah salah satu dari banyak [variabel pengganti di platform AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Pelajari lebih lanjut tentang [Penggantian variabel]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#variable-substitution) di sini.
 
-Komponen [amp-pixel](/id/docs/reference/components/amp-pixel.html) bersifat default, sehingga Anda tidak memerlukan deklarasi inklusi seperti saat membuat komponen AMP yang diluaskan, termasuk `amp-analytics`. Namun, Anda harus menempatkan tag `amp-pixel` sedekat mungkin dengan permulaan isi `<body>` halaman AMP Anda. Piksel pelacakan hanya akan diproses jika tag terlihat dengan sendirinya. Jika `amp-pixel` terletak di dekat bagian bawah halaman, tag tersebut tidak akan diproses.
+Komponen [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) bersifat default, sehingga Anda tidak memerlukan deklarasi inklusi seperti saat membuat komponen AMP yang diluaskan, termasuk [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Namun, Anda harus menempatkan tag [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) sedekat mungkin dengan permulaan isi `<body>` halaman AMP Anda. Piksel pelacakan hanya akan diproses jika tag terlihat dengan sendirinya. Jika [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) terletak di dekat bagian bawah halaman, tag tersebut tidak akan diproses.
 
 ### Konfigurasi amp-analytics sederhana
 
-Untuk membuat konfigurasi[ amp-analytics,](/id/docs/reference/components/amp-analytics.html)  sederhana, Anda harus menyertakan deklarasi `custom-element` terlebih dahulu pada `<head>` dokumen AMP (lihat juga [Deklarasi inklusi komponen]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
+Untuk membuat konfigurasi[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Contoh berikut mirip dengan contoh [`amp-pixel`](/id/docs/analytics/analytics_basics.html#simple-amp-pixel-configuration). Setiap kali halaman terlihat, peristiwa pemicu akan diproses, dan mengirim data pageview ke URL yang telah ditentukan bersama dengan ID acak:
+Contoh berikut mirip dengan contoh [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}). Setiap kali halaman terlihat, peristiwa pemicu akan diproses, dan mengirim data pageview ke URL yang telah ditentukan bersama dengan ID acak:
 
 ```html
 <amp-analytics>
@@ -69,12 +69,12 @@ Contoh berikut mirip dengan contoh [`amp-pixel`](/id/docs/analytics/analytics_ba
 
 Pada contoh di atas, kita telah menentukan permintaan yang dinamakan pageview sebagai `https://foo.com/pixel?RANDOM`. Seperti yang telah dijelaskan di awal, RANDOM diganti dengan nomor acak, sehingga permintaan akan benar-benar terlihat seperti `https://foo.com/pixel?0.23479283687235653498734`.
 
-Saat halaman terlihat (seperti yang telah ditetapkan oleh penggunaan kata kunci pemicu `visible`), peristiwa akan dipicu dan `permintaan` pageview akan dikirim. Atribut pemicu menentukan waktu permintaan pageview akan diproses. Pelajari lebih lanjut tentang [permintaan dan pemicu](/id/docs/analytics/deep_dive_analytics.html#requests-triggers--transports).
+Saat halaman terlihat (seperti yang telah ditetapkan oleh penggunaan kata kunci pemicu `visible`), peristiwa akan dipicu dan `permintaan` pageview akan dikirim. Atribut pemicu menentukan waktu permintaan pageview akan diproses. Pelajari lebih lanjut tentang [permintaan dan pemicu]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#requests-triggers--transports).
 
 ## Penggantian variabel
 
-Kedua komponen [amp-pixel](/id/docs/reference/components/amp-pixel.html)
-dan [amp-analytics](/id/docs/reference/components/amp-analytics.html)
+Kedua komponen [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+dan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 mengizinkan semua penggantian variabel URL standar (lihat [Penggantian Variabel HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
 ). Pada contoh berikut, permintaan tampilan halaman dikirim ke URL, bersama dengan URL kanonis dokumen AMP yang digunakan, title-nya, dan [ID klien](/id/docs/analytics/analytics_basics.html#user-identification):
 
@@ -82,13 +82,13 @@ mengizinkan semua penggantian variabel URL standar (lihat [Penggantian Variabel 
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
-Karena sifatnya yang sederhana, tag `amp-pixel`
-hanya dapat menyertakan variabel yang ditentukan oleh platform atau jika waktu proses AMP dapat diuraikan dari halaman AMP. Pada contoh di atas, platform mengisi nilai untuk `canonicalURL` dan `clientId(site-user-id)`. Tag `amp-analytics` dapat menyertakan variabel yang sama sebagai `amp-pixel`, serta variabel unik yang telah ditentukan di dalam konfigurasi tag tersebut.
+Karena sifatnya yang sederhana, tag [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+hanya dapat menyertakan variabel yang ditentukan oleh platform atau jika waktu proses AMP dapat diuraikan dari halaman AMP. Pada contoh di atas, platform mengisi nilai untuk `canonicalURL` dan `clientId(site-user-id)`. Tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) dapat menyertakan variabel yang sama sebagai [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}), serta variabel unik yang telah ditentukan di dalam konfigurasi tag tersebut.
 
-Gunakan format `${varName}` dalam string permintaan untuk variabel yang ditentukan oleh platform atau halaman. Tag `amp-analytics`
-akan menggantikan template dengan nilai yang sebenarnya saat konstruksi permintaan analitik dilakukan (lihat juga [Variabel yang didukung dalam amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
+Gunakan format `${varName}` dalam string permintaan untuk variabel yang ditentukan oleh platform atau halaman. Tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+akan menggantikan template dengan nilai yang sebenarnya saat konstruksi permintaan analitik dilakukan (lihat juga [Variabel yang didukung dalam `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
-Pada contoh `amp-analytics` berikut, permintaan tampilan halaman dikirim ke URL, dengan data tambahan yang diekstrak dari penggantian variabel, sebagian diberikan oleh platform, sebagian ditetapkan inline, dalam konfigurasi `amp-analytics`:
+Pada contoh [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) berikut, permintaan tampilan halaman dikirim ke URL, dengan data tambahan yang diekstrak dari penggantian variabel, sebagian diberikan oleh platform, sebagian ditetapkan inline, dalam konfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -114,9 +114,9 @@ Pada contoh `amp-analytics` berikut, permintaan tampilan halaman dikirim ke URL,
 </amp-analytics>
 ```
 
-Pada contoh di atas, variabel, `account` dan `title` ditentukan dalam konfigurasi `amp-analytics`. Variabel `canonicalUrl` dan `clientId` tidak ditentukan dalam konfigurasi, jadi nilai variabel tersebut akan diganti oleh platform.
+Pada contoh di atas, variabel, `account` dan `title` ditentukan dalam konfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Variabel `canonicalUrl` dan `clientId` tidak ditentukan dalam konfigurasi, jadi nilai variabel tersebut akan diganti oleh platform.
 
-Penting: Penggantian variabel bersifat fleksibel; Anda dapat memiliki variabel yang sama yang ditentukan di lokasi yang berbeda, dan waktu proses AMP akan menguraikan nilai sesuai dengan urutan yang lebih tinggi (lihat [Urutan penggantian variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+Penting: Penggantian variabel bersifat fleksibel; Anda dapat memiliki variabel yang sama yang ditentukan di lokasi yang berbeda, dan waktu proses AMP akan menguraikan nilai sesuai dengan urutan yang lebih tinggi (lihat [Urutan penggantian variabel]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
 
 ## Identifikasi pengguna
 

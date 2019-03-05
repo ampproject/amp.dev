@@ -29,14 +29,14 @@ $title: إنشاء صفحات AMP تفاعلية
 </amp-img>
 [/sourcecode]
 
-يتلاءم هذا العنصر `amp-img` بشكل تلقائي مع عرض
+يتلاءم هذا العنصر [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) بشكل تلقائي مع عرض
 عنصر الحاوية المتعلق به،
 ويتم ضبط ارتفاعه تلقائيًا على نسبة العرض إلى الارتفاع
 المُحددة من خلال العرض والارتفاع المحددين:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857"></amp-img>
 
-راجع أيضًا [AMP بحسب علامة amp-img للنموذج](https://ampbyexample.com/components/amp-img/).
+راجع أيضًا [AMP بحسب علامة `amp-img` للنموذج]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ## إضافة أنماط إلى إحدى الصفحات
 
@@ -119,7 +119,7 @@ $title: إنشاء صفحات AMP تفاعلية
 تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 50000 بايت،
 وتتحقق من الأنماط الغير مسموح بها، كما تتأكد من توافق
 تنسيق الصفحة وصحته.
-راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](/ar/docs/troubleshooting/validation_errors.html#أخطاء-الأنماط-والتنسيقات).
+راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 
 نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 50000 بايت:
 

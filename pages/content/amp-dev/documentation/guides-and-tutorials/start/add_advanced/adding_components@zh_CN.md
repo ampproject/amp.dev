@@ -134,7 +134,7 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 要想详细了解如何嵌入 YouTube 视频，请参阅 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})。
 
 [tip]
-如果某个组件无法正常加载或在浏览器中不受支持，请使用 [`fallback`](/zh_cn/docs/design/responsive/placeholders.html#fallbacks) 属性通知用户。
+如果某个组件无法正常加载或在浏览器中不受支持，请使用 [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) 属性通知用户。
 [/tip]
 
 ## 显示 Twitter 微博

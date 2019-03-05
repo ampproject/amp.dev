@@ -21,7 +21,7 @@ limitations under the License.
 Tidak boleh ada error validasi apa pun dalam dokumen AMP yang valid.
 Tujuan dokumen ini adalah untuk membantu Anda memahami dengan lebih baik
 dan memperbaiki error validasi apa pun yang dihadapi
-saat Anda [memvalidasi halaman AMP](/id/docs/fundamentals/validate.html).
+saat Anda [memvalidasi halaman AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md', locale=doc.locale).url.path}}).
 Untuk ringkasan lengkap mengenai error validasi,
 lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -639,8 +639,8 @@ Daftar lengkap tag unik yang diketahui:
 
 Sebelum mendalami error gaya dan tata letak,
 penting untuk memahami cara kerja
-[pengaturan gaya](/id/docs/design/responsive/style_pages.html) dan
-[tata letak](/id/docs/design/responsive/control_layout.html) di AMP.
+[pengaturan gaya]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) dan
+[tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) di AMP.
 Karena halaman AMP adalah halaman HTML, pengaturan gaya kurang lebih sama seperti pada halaman HTML.
 Tetapi ada beberapa pembatasan untuk memastikan halaman dimuat dengan cepat,
 dan validator AMP memberlakukan pembatasan ini.
@@ -754,7 +754,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui selengkapnya tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
+lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan
 [spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
 
 **Catatan:** Jika Anda tidak menentukan tata letak,
@@ -812,7 +812,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui selengkapnya tentang cara kerja tata letak,
-lihat [Cara Mengontrol Tata Letak](/id/docs/design/responsive/control_layout.html) dan
+lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan
 [spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
 
 ### Atribut tidak diizinkan oleh tata letak tertentu
@@ -858,7 +858,7 @@ Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
 Error ini terjadi jika nilai atribut tata letak tertentu tidak valid.
 Untuk memahami hal yang memicu error ini,
 Anda perlu memahami
-[perilaku tata letak yang berbeda](/id/docs/design/responsive/control_layout.html#size-and-position-elements).
+[perilaku tata letak yang berbeda]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements).
 
 Anggap saja tata letak ditetapkan ke `fixed-height` dan
 Anda menyertakan nilai numerik untuk `height` dan `width`.
@@ -902,7 +902,7 @@ dirancang khusus untuk menyertakan template, misalnya,
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
 (lihat juga
-[Menggunakan prapemrosesan CSS](/id/docs/design/responsive/style_pages.html#use-css-preprocessors)).
+[Menggunakan prapemrosesan CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)).
 
 ### Atribut berisi sintaks template
 

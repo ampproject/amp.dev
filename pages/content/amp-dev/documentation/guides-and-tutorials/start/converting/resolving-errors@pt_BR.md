@@ -329,5 +329,5 @@ AMP validation successful.
 ### Perguntas frequentes
 
 - [O que é o reflow DOM?](http://stackoverflow.com/a/27637245)
-- [O que acontece se o atributo layout não estiver especificado?](/pt_br/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [O que acontece se largura e a altura não estiverem definidas?](/pt_br/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [O que acontece se o atributo layout não estiver especificado?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
+- [O que acontece se largura e a altura não estiverem definidas?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)

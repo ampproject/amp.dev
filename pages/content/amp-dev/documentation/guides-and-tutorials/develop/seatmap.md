@@ -12,7 +12,7 @@ contributors:
 Seatmaps are important parts of ticketers' web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by using a combination of available AMP components.
 
 [tip]
-A live sample implementing the practices described below is available [here](https://ampbyexample.com/advanced/seatmap/preview/).
+A live sample implementing the practices described below is available [here]({{g.doc('/content/amp-dev/documentation/examples/advanced/SeatMap.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## AMP Components needed
@@ -45,7 +45,7 @@ rect[selected].seat {
 
 ## Drawing the seatmap
 
-The seatmap is rendered via `amp-list` and `amp-mustache`. After receiving the data from the `amp-list` call, you can use said data to iterate through the seats:
+The seatmap is rendered via [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) and [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). After receiving the data from the [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) call, you can use said data to iterate through the seats:
 
 [sourcecode:html]
 {% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
@@ -70,14 +70,14 @@ An alternative, more verbose approach is to repeat the tags as following:
 
 ## Sizing your seatmap
 
-Unless your seatmap's size is fixed, it's difficult to size the `amp-list` containing the seatmap. `amp-list` needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
+Unless your seatmap's size is fixed, it's difficult to size the [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) containing the seatmap. [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
 
-1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the `amp-list`.
+1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}).
 2. Use a flex layout when knowing the height of the page layout.
 
-## Styling `amp-pan-zoom`
+## Styling amp-pan-zoom
 
-If using the approach described in the previous section, `amp-pan-zoom` needs to use `layout="fill"` as well.
+If using the approach described in the previous section, [`amp-pan-zoom`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pan-zoom.md', locale=doc.locale).url.path}}) needs to use `layout="fill"` as well.
 
 [tip type="tip"]
 **TIP –** To keep some white space around the seatmap and still make it part of the pinch and zooming area:
@@ -92,12 +92,12 @@ If you don’t have a wrapping div and add margin to the SVG instead, it won't m
 
 When users click on different seats, it’s possible to keep track of the selected seat `id`s in a variable by using `amp-state`, either by:
 
-- Adding an `amp-bind` expression for every seat to add the selected seat to a list
-- Or using `amp-selector` with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
+- Adding an [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) expression for every seat to add the selected seat to a list
+- Or using [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
 
-While the first approach doesn’t require the additional component `amp-selector`, it can make the seatmap very slow because every `amp-bind` expression will be evaluated at every seat selection/deselection.
+While the first approach doesn’t require the additional component [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}), it can make the seatmap very slow because every [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) expression will be evaluated at every seat selection/deselection.
 
-The second approach also allows you to reduce the duplication of the `amp-bind` expression for every seat that will be rendered by the template.
+The second approach also allows you to reduce the duplication of the [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) expression for every seat that will be rendered by the template.
 
 ## Final HTML structure
 

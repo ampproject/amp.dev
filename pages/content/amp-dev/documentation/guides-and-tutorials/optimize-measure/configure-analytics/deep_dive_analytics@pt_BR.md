@@ -3,8 +3,8 @@ $title: Informações detalhadas sobre o AMP Analytics
 ---
 
 Neste guia, você verá os detalhes do
-[componente amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
-Para isso, dividiremos um exemplo de configuração `amp-analytics` nos principais elementos básicos:
+[componente `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Para isso, dividiremos um exemplo de configuração [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) nos principais elementos básicos:
 
 O restante do guia usa este exemplo de configuração,
 que rastreia as exibições de página e os cliques de usuários em links
@@ -52,7 +52,7 @@ o [Google Analytics](https://developers.google.com/analytics/devguides/collectio
 
 [tip type="note"]
 
-O código de exemplo acima serve para mostrar como funciona o processo, mas não é uma amostra realista. Se você estiver trabalhando com provedores de análise, talvez essa amostra não faça sentido, já que as configurações do provedor são menos complexas. Consulte a [documentação do provedor de análise](/pt_br/docs/analytics/analytics-vendors.html) para saber mais sobre as configurações de exemplo.
+O código de exemplo acima serve para mostrar como funciona o processo, mas não é uma amostra realista. Se você estiver trabalhando com provedores de análise, talvez essa amostra não faça sentido, já que as configurações do provedor são menos complexas. Consulte a [documentação do provedor de análise]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) para saber mais sobre as configurações de exemplo.
 [/tip]
 
 ## Para onde devo enviar os dados de análise: atributo "type"
@@ -64,25 +64,25 @@ A tecnologia AMP é compatível com dois padrões comuns de coleta de dados:
 como o [Adobe Analytics](https://helpx.adobe.com/br/support/analytics.html), o [Chartbeat](http://support.chartbeat.com/docs/) (em inglês) e o [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
 
 Para enviar dados a um provedor de análise,
-inclua o atributo `type` na tag `amp-analytics` e defina o valor dele de acordo com
+inclua o atributo `type` na tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) e defina o valor dele de acordo com
 o fornecedor, conforme a lista de
-[fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html).
+[fornecedores de análise]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Por exemplo: `<amp-analytics type="googleanalytics">` envia dados
 ao Google Analytics, provedor de análise de terceiros.
 Para enviar dados a um ponto de extremidade do editor,
 basta não incluir o atributo `type`.
 Os dados de análise serão enviados aos pontos de extremidade definidos para
-[cada solicitação](/pt_br/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[cada solicitação]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute).
 
 As configurações do fornecedor de análise são uma maneira rápida
-de dar os primeiros passos com a tag `amp-analytics`.
+de dar os primeiros passos com a tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Consulte a documentação
 e os recursos de ajuda do seu fornecedor para mais informações.
 Como mencionamos antes,
 os nomes dos fornecedores que têm integração com a tecnologia AMP e os links
 para a documentação específica a cada um deles estão na lista de
-[fornecedores de análise](/pt_br/docs/analytics/analytics-vendors.html).
+[fornecedores de análise]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Se você for um fornecedor de análise,
 saiba mais sobre
@@ -91,7 +91,7 @@ saiba mais sobre
 ## Como carregar uma configuração remota: atributo "config"
 
 Não é preciso incluir todas as configurações
-de `amp-analytics` na sua página AMP.
+de [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) na sua página AMP.
 Você pode chamar um URL remoto
 para usar essas configurações ou uma parte delas.
 
@@ -102,7 +102,7 @@ poderá fazer todo o processamento de servidor necessário
 para definir os dados de configuração.
 
 Para carregar as configurações remotas, primeiro
-inclua o atributo "config" na tag `amp-analytics`:
+inclua o atributo "config" na tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -123,7 +123,7 @@ Veja o conteúdo de exemplo em `https://example.com/analytics.account.config.jso
 ```
 
 Por fim, verifique se o conteúdo do arquivo remoto é inserido
-no local adequado na configuração de `amp-analytics`.
+no local adequado na configuração de [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Nas solicitações `pageview` e `event`,
 o valor da variável `account` é definido automaticamente
 como o valor da conta no URL remoto (`"account": "UA-XXXXX-Y"`):
@@ -139,7 +139,7 @@ como o valor da conta no URL remoto (`"account": "UA-XXXXX-Y"`):
 
 A AMP não valida diversos usos da mesma variável.
 Os valores são preenchidos seguindo uma ordem de preferência da substituição de variáveis,
-e os valores nos URLs remotos têm prioridade. Consulte [Ordem da substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+e os valores nos URLs remotos têm prioridade. Consulte [Ordem da substituição de variáveis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
 
 [/tip]
 
@@ -157,7 +157,7 @@ ou seja, define o protocolo.
 
 Continue lendo para saber mais sobre essas configurações.
 Veja outras informações na
-[referência de amp-analytics](/pt_br/docs/reference/components/amp-analytics.html).
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 ### Quais dados são enviados: atributo "requests"
 
@@ -184,10 +184,10 @@ se é necessário configurar `requests` e como fazer isso.
 
 #### Como anexar um URL de solicitação: parâmetros de URL adicionais
 
-O atributo [extraUrlParams](/pt_br/docs/reference/components/amp-analytics.html#extra-url-params)
+O atributo [extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 especifica parâmetros adicionais para anexar à string de consulta do URL da solicitação com uma convenção "&foo=baz" comum.
 
-O exemplo de `amp-analytics` adiciona outro parâmetro, `cd1`,
+O exemplo de [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) adiciona outro parâmetro, `cd1`,
 à solicitação e define o valor do parâmetro como "AMP":
 
 ```js
@@ -204,7 +204,7 @@ O nome do acionador pode ser qualquer string de
 caracteres alfanuméricos (a-z A-Z 0-9).
 
 Por exemplo:
-o elemento `amp-analytics` a seguir é configurado para enviar uma solicitação a
+o elemento [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) a seguir é configurado para enviar uma solicitação a
 `https://example.com/analytics` quando o documento é carregado pela primeira vez
 e cada vez que uma tag `a` recebe um clique:
 
@@ -227,7 +227,7 @@ e cada vez que uma tag `a` recebe um clique:
 ```
 
 [tip type="important"]
- A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas. 
+ A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas.
 [/tip]
 
 A tecnologia AMP é compatível com as seguintes configurações de acionador:
@@ -269,7 +269,7 @@ A tecnologia AMP é compatível com as seguintes configurações de acionador:
 
 [tip type="important"]
 
-Os acionadores de uma configuração com menor precedência serão substituídos por outros de mesmo nome que venham de uma configuração com maior precedência. Consulte [Ordem da substituição de variáveis](/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering).
+Os acionadores de uma configuração com menor precedência serão substituídos por outros de mesmo nome que venham de uma configuração com maior precedência. Consulte [Ordem da substituição de variáveis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering).
 
 [/tip]
 
@@ -332,7 +332,7 @@ A tecnologia AMP preenche variáveis com valores em uma ordem de precedência:
 
 1. configurações remotas (via `config`)
 2. `vars` aninhado em um acionador em `triggers`
-3. `vars` no nível superior aninhado em `amp-analytics`
+3. `vars` no nível superior aninhado em [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 4. valores fornecidos pela plataforma
 
 Neste exemplo, há uma configuração remota
@@ -399,4 +399,3 @@ os valores de diversos "vars" serão os seguintes:
     </tr>
   </tbody>
 </table>
- 

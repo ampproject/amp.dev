@@ -13,11 +13,11 @@ Here are some quick tips to improve user engagement with AMP.
 
 - **Feature your most engaging content** when converting your pages. Include key page elements like images, videos, embeds, structured data, comments and social media. Learn how to [include 3rd-party content]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md', locale=doc.locale).url.path}}).
 
-- **Keep AMP pages current.** Dynamically update live blogs with [`amp-live-list`](/docs/reference/components/amp-live-list.html).
+- **Keep AMP pages current.** Dynamically update live blogs with [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
 ### Optimize for user engagement and retention
 
-- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) to create rich image carousels and [`amp-iframe`](/docs/reference/components/amp-iframe.html) to
+- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) to create rich image carousels and [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) to
 incorporate interactive elements that AMP does not natively support.
 
 - **Create personalized user journeys.** Offer a login button, and if your content
@@ -42,7 +42,7 @@ formats such as [`amp-sticky-ad`]({{g.doc('/content/amp-dev/documentation/compon
 monetization [best practices]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}).
 
 - **Drive app downloads.** Include an app install link in a banner with
-[`amp-app-banner`](/docs/reference/components/amp-app-banner.html).
+[`amp-app-banner`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-app-banner.md', locale=doc.locale).url.path}}).
 
 - **Ensure a fast transition** to your non-AMP Progressive Web App (PWA) site for
 readers. Use [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) to populate your cache.

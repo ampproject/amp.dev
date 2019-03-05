@@ -3,8 +3,8 @@ $title: Mendalami analisis AMP
 ---
 
 Panduan ini menjelaskan lebih jauh tentang
-[komponen amp-analytics](/id/docs/reference/components/amp-analytics.html),
-dengan memecah sampel konfigurasi `amp-analytics` ke dalam elemen-elemen penyusun berikut:
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
+dengan memecah sampel konfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) ke dalam elemen-elemen penyusun berikut:
 
 Bagian lain dalam panduan ini menggunakan sampel konfigurasi ini,
 yang melacak jumlah kunjungan halaman dan klik pengguna pada link
@@ -52,7 +52,7 @@ serta mengirim data analisis ke penyedia pihak ketiga,
 
 [tip type="note"]
 
-Contoh kode di atas hanya digunakan untuk membantu Anda belajar, bukan sampel kode sebenarnya. Jika Anda bekerja dengan penyedia analisis, sampel di atas kemungkinan tidak akan digunakan; konfigurasi penyedia menghilangkan kerumitan. Lihat [dokumentasi penyedia analisis](/id/docs/analytics/analytics-vendors.html) untuk mengetahui sampel konfigurasi.
+Contoh kode di atas hanya digunakan untuk membantu Anda belajar, bukan sampel kode sebenarnya. Jika Anda bekerja dengan penyedia analisis, sampel di atas kemungkinan tidak akan digunakan; konfigurasi penyedia menghilangkan kerumitan. Lihat [dokumentasi penyedia analisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) untuk mengetahui sampel konfigurasi.
 [/tip]
 
 ## Ke mana data analisis dikirim: atribut type
@@ -64,25 +64,25 @@ AMP dirancang untuk mendukung dua pola pengumpulan data yang umum:
 (misalnya, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Untuk mengirim data analisis ke penyedia analisis,
-sertakan atribut `type` ke dalam tag `amp-analytics` dan tetapkan nilainya
+sertakan atribut `type` ke dalam tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) dan tetapkan nilainya
 ke vendor yang sesuai, seperti dijelaskan pada
-daftar [Vendor Analisis](/id/docs/analytics/analytics-vendors.html).
+daftar [Vendor Analisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Misalnya: `<amp-analytics type="googleanalytics">` mengirim data analisis
 ke penyedia analisis pihak ketiga, Google Analytics.
 Untuk mengirim data ke endpoint milik penayang,
 jangan sertakan atribut `type`;
 data analisis dikirim ke endpoint yang ditentukan untuk masing-masing
-[permintaan](/id/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[permintaan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute).
 
 Konfigurasi vendor analisis adalah cara cepat
-untuk mulai menggunakan `amp-analytics`.
+untuk mulai menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Sebaiknya Anda pelajari dokumentasi vendor dan
 referensi bantuan untuk mendapatkan panduan lebih lanjut.
 Seperti disebutkan sebelumnya,
 daftar vendor yang telah berintegrasi dengan AMP, serta link
 ke dokumentasi spesifik mereka, dapat ditemukan di
-daftar [Vendor Analisis](/id/docs/analytics/analytics-vendors.html).
+daftar [Vendor Analisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Jika Anda adalah vendor analisis,
 pelajari lebih lanjut cara
@@ -91,7 +91,7 @@ pelajari lebih lanjut cara
 ## Memuat konfigurasi jarak jauh: atribut config
 
 Anda tidak perlu menyertakan semua konfigurasi
-untuk `amp-analytics` seluruhnya di halaman AMP.
+untuk [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) seluruhnya di halaman AMP.
 Sebagai gantinya, Anda dapat memanggil URL jarak jauh
 untuk semua atau sebagian konfigurasi tersebut.
 
@@ -102,7 +102,7 @@ Anda dapat melakukan semua pemrosesan sisi server yang diperlukan
 untuk menyusun konfigurasi data.
 
 Langkah pertama untuk memuat konfigurasi jarak jauh adalah
-dengan menyertakan atribut config ke dalam tag `amp-analytics`:
+dengan menyertakan atribut config ke dalam tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -123,7 +123,7 @@ Contoh konten di `https://example.com/analytics.account.config.json`:
 ```
 
 Langkah terakhir adalah memastikan data apa dalam file jarak jauh yang ditarik
-ke tempat yang sesuai dalam konfigurasi `amp-analytics`.
+ke tempat yang sesuai dalam konfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Dalam kedua permintaan `pageview` dan `event` di sini,
 nilai variabel `account` otomatis ditetapkan
 ke nilai akun pada URL jarak jauh (`"account": "UA-XXXXX-Y"`):
@@ -139,7 +139,7 @@ ke nilai akun pada URL jarak jauh (`"account": "UA-XXXXX-Y"`):
 
 AMP tidak memvalidasi penggunaan ganda dari variabel yang sama.
 Nilai diisikan sesuai urutan preferensi substitusi variabel,
-dan nilai dalam URL jarak jauh menempati urutan teratas (lihat [Pengurutan substitusi variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+dan nilai dalam URL jarak jauh menempati urutan teratas (lihat [Pengurutan substitusi variabel]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
 
 [/tip]
 
@@ -157,7 +157,7 @@ lebih tepatnya, protokol pengirimannya.
 
 Baca terus untuk mempelajari lebih lanjut tentang konfigurasi ini.
 (Anda juga bisa membaca tentang konfigurasi ini di
-[referensi amp-analytics](/id/docs/reference/components/amp-analytics.html).)
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 
 ### Data apa yang dikirim: atribut requests
 
@@ -184,10 +184,10 @@ perlu tidaknya mengonfigurasi atribut `requests` dan cara melakukannya.
 
 #### Menambahkan URL permintaan: Parameter URL Tambahan
 
-Atribut [extraUrlParams](/id/docs/reference/components/amp-analytics.html#extra-url-params)
+Atribut [extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 menentukan parameter tambahan yang akan ditambahkan ke akhir string kueri URL permintaan melalui konvensi "&foo=baz" biasa.
 
-Contoh `amp-analytics` menambahkan parameter tambahan `cd1`
+Contoh [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) menambahkan parameter tambahan `cd1`
 ke permintaan dan menetapkan nilai parameter ke "AMP":
 
 ```js
@@ -204,7 +204,7 @@ Nama pemicu dapat berupa string apa saja yang terdiri
 dari karakter alfanumerik (a-zA-Z0-9).
 
 Misalnya,
-elemen `amp-analytics` berikut dikonfigurasi untuk mengirim permintaan ke
+elemen [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) berikut dikonfigurasi untuk mengirim permintaan ke
 `https://example.com/analytics` saat dokumen pertama kali dimuat,
 dan setiap kali tag `a` diklik:
 
@@ -227,7 +227,7 @@ dan setiap kali tag `a` diklik:
 ```
 
 [tip type="important"]
- Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik. 
+ Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik.
 [/tip]
 
 AMP mendukung konfigurasi pemicu berikut:
@@ -269,7 +269,7 @@ AMP mendukung konfigurasi pemicu berikut:
 
 [tip type="important"]
 
-Pemicu dari konfigurasi yang prioritasnya lebih rendah akan digantikan oleh pemicu dengan nama yang sama dari konfigurasi yang prioritasnya lebih tinggi (lihat [Pengurutan substitusi variabel](/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+Pemicu dari konfigurasi yang prioritasnya lebih rendah akan digantikan oleh pemicu dengan nama yang sama dari konfigurasi yang prioritasnya lebih tinggi (lihat [Pengurutan substitusi variabel]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
 
 [/tip]
 
@@ -332,7 +332,7 @@ AMP mengisi variabel dengan nilai dalam urutan prioritas:
 
 1. Konfigurasi jarak jauh (melalui `config`).
 2. `vars` yang disarangkan di dalam pemicu dalam `triggers`.
-3. `vars` di level teratas yang disarangkan dalam `amp-analytics`.
+3. `vars` di level teratas yang disarangkan dalam [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 4. Nilai yang disediakan platform.
 
 Dalam contoh ini, terdapat konfigurasi jarak jauh,
@@ -399,4 +399,3 @@ maka nilai dari berbagai variabelnya adalah sebagai berikut:
     </tr>
   </tbody>
 </table>
- 

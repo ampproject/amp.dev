@@ -7,19 +7,19 @@ $title: "Analytics: основы"
 ## Что использовать: amp-pixel или amp-analytics?
 
 AMP предоставляет два компонента для удовлетворения потребностей в анализе и измерениях:
-[amp-pixel](/docs/reference/components/amp-pixel.html) и
-[amp-analytics](/docs/reference/components/amp-analytics.html).
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) и
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Оба инструмента отправляют аналитические данные в определенный конечный пункт.
 
 Если вам нужны такие функции, как простое
 [отслеживание пикселя](https://en.wikipedia.org/wiki/Web_beacon#Implementation),
-компонент `amp-pixel` предоставит базовые возможности отслеживания количества просмотров страницы;
+компонент [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) предоставит базовые возможности отслеживания количества просмотров страницы;
 данные о просмотрах страницы будут отправляться на определенный URL-адрес.
 Этот компонент может потребоваться в некоторых интегрированных системах с участием поставщиков услуг.
 В этом случае для него будет указан точный конечный URL-адрес.
 
-В большинстве аналитических решений используется `amp-analytics`.
-В `amp-analytics` есть возможность отслеживать количество просмотров страницы.
+В большинстве аналитических решений используется [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+В [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) есть возможность отслеживать количество просмотров страницы.
 Но вы также сможете отслеживать интерес пользователей к какому-либо виду содержимого страницы,
 включая переходы по ссылкам и кнопкам.
 Вы можете узнать, насколько далеко пользователь выполнил прокрутку страницы,
@@ -28,14 +28,14 @@ AMP предоставляет два компонента для удовлет
 [Погружение в AMP Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})).
 
 В процессе интеграции платформы AMP
-поставщики предлагают предварительно заданные конфигурации `amp-analytics`,
+поставщики предлагают предварительно заданные конфигурации [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 что упрощает получение данных и их передачу в инструменты отслеживания.
 Ознакомьтесь с документацией о поставщиках аналитических данных в
-[спецификации amp-analytics](/docs/reference/components/amp-analytics.html).
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
-Вы можете использовать на своих страницах как компонент`amp-pixel`, так и `amp-analytics`:
-`amp-pixel` для простого отслеживания количества просмотров страницы,
-а `amp-analytics` – для всего остального.
+Вы можете использовать на своих страницах как компонент[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}), так и [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) для простого отслеживания количества просмотров страницы,
+а [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) – для всего остального.
 Вы также можете добавить несколько экземпляров каждого тега.
 Если вы работаете с несколькими поставщиками аналитических данных,
 вам потребуется по одному тегу для каждого решения.
@@ -45,12 +45,12 @@ AMP предоставляет два компонента для удовлет
 ## Создание простой конфигурации аналитики
 
 Узнайте, как создать простую
-конфигурацию [amp-pixel](/docs/reference/components/amp-pixel.html) и
-[amp-analytics](/docs/reference/components/amp-analytics.html).
+конфигурацию [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) и
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
-### Простая конфигурация amp-pixel
+### Простая конфигурация [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
 
-Чтобы создать простую конфигурацию `amp-pixel`,
+Чтобы создать простую конфигурацию [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}),
 вставьте в тело вашей страницы строку AMP, сходную по содержанию со следующей строкой:
 
 ```html
@@ -62,22 +62,22 @@ AMP предоставляет два компонента для удовлет
 Переменная `RANDOM` является одной из многих
 [подстановочных переменных в платформе AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 Вы можете ознакомиться с дополнительной информацией о
-[подстановке переменных](/ru/docs/analytics/analytics_basics.html#подстановка-переменной).
+[подстановке переменных]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
 
-Компонент [amp-pixel](/docs/reference/components/amp-pixel.html)
+Компонент [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
 является встроенным,
 поэтому вам не требуется объявлять включение, как это делается для
-расширенных компонентов AMP, в том числе для `amp-analytics`.
-Однако вы должны вставить тег `amp-pixel` как можно ближе к
+расширенных компонентов AMP, в том числе для [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Однако вы должны вставить тег [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) как можно ближе к
 началу раздела `<body>`.
 Отслеживающий пиксель будет срабатывать только тогда, когда сам тег попадет в область просмотра.
-Если тег `amp-pixel` расположен в нижней части страницы,
+Если тег [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) расположен в нижней части страницы,
 он может не сработать.
 
-### Простая конфигурация amp-analytics
+### Простая конфигурация [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 
 Чтобы создать простую конфигурацию
-[amp-analytics](/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 необходимо сначала включить следующую декларацию `custom-element`
 в раздел `<head>` документа AMP (см. также
 [Объявление включения компонента]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}})):
@@ -86,7 +86,7 @@ AMP предоставляет два компонента для удовлет
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Следующий пример похож на [пример с `amp-pixel`](/ru/docs/analytics/analytics_basics.html#простая-конфигурация-amp-pixel).
+Следующий пример похож на [ример с `amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}).
 При каждом просмотре страницы
 возникает событие триггера и
 данные запроса pageview отправляются на определенный URL-адрес вместе со случайным значением идентификатора:
@@ -115,12 +115,12 @@ AMP предоставляет два компонента для удовлет
 (что указывается использованием в триггере ключевого слова `visible`),
 возникает событие и отправляется запрос `pageview`.
 Атрибут триггера определяет условие отправки запроса pageview.
-Ознакомьтесь с дополнительной информацией о [запросах и триггерах](/ru/docs/analytics/deep_dive_analytics.html#запросы,-триггеры-и-транспорты).
+Ознакомьтесь с дополнительной информацией о [запросах и триггерах]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 ## Подстановка переменной
 
-Оба компонента, [amp-pixel](/docs/reference/components/amp-pixel.html) и
-[amp-analytics](/docs/reference/components/amp-analytics.html),
+Оба компонента, [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) и
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 позволяют использовать все стандартные подстановки переменных в URL-адресе (см.
 [Подстановки переменных в AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
 В следующем примере
@@ -133,26 +133,26 @@ AMP предоставляет два компонента для удовлет
 ```
 
 В силу своей простоты
-тег `amp-pixel` может включать только те переменные, значения которых определяются платформой
+тег [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) может включать только те переменные, значения которых определяются платформой
 или могут быть получены из страницы AMP в процессе ее обработки.
 В вышеприведенном примере
 значения
 `canonicalURL` и `clientId(site-user-id)` заполняются платформой.
-Тег `amp-analytics` может включать те же переменные, что и `amp-pixel`,
+Тег [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) может включать те же переменные, что и [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}),
 а также переменные, однозначно определенные внутри конфигурации тега.
 
 Для переменной, определяемой страницей или платформой, в строке запроса используется формат `${varName}`.
 
-Тег `amp-analytics` заменит шаблон своим фактическим значением
+Тег [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) заменит шаблон своим фактическим значением
 в момент построения аналитического запроса (см. также
 [Переменные, поддерживаемые в amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
 
-В следующем примере `amp-analytics`
+В следующем примере [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 запрос просмотра страницы отправляется на URL-адрес
 вместе с дополнительными данными, полученными из подстановок переменных,
 значения которых либо предоставляются платформой,
 либо определяются внутри
-конфигурации `amp-analytics`:
+конфигурации [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -180,14 +180,14 @@ AMP предоставляет два компонента для удовлет
 
 В примере выше переменные
 `account` и `title` определяются в конфигурации
-`amp-analytics`.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Переменные `canonicalUrl` и `clientId` не определены в конфигурации,
 поэтому их значения подставляются платформой.
 
 **Внимание!** Механизм подстановки переменной весьма гибок.
 Вы можете иметь одни и те же переменные, определенные в разных местах,
 а AMP выполнит синтаксический анализ этих значений по их приоритетности
-(см. [Порядок подстановки переменных](/ru/docs/analytics/deep_dive_analytics.html#порядок-подстановки-переменных)).
+(см. [Порядок подстановки переменных]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 ## Идентификация пользователей
 
@@ -237,4 +237,4 @@ base64.
 
 Для получения дополнительной информации о подстановке идентификатора клиента
 и способах добавления дополнительного идентификатора уведомления пользователя см. в документе
-[Переменные, поддерживаемые amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+[Переменные, поддерживаемые `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).

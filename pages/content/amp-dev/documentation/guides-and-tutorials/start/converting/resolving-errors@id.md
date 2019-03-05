@@ -329,5 +329,5 @@ AMP validation successful.
 ### Pertanyaan Umum (FAQ)
 
 - [Apa yang dimaksud dengan perubahan posisi DOM?](http://stackoverflow.com/a/27637245)
-- [Bagaimana jika atribut tata letak tidak ditentukan?](/id/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [Bagaimana jika lebar dan tinggi tidak ditentukan?](/id/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [Bagaimana jika atribut tata letak tidak ditentukan?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
+- [Bagaimana jika lebar dan tinggi tidak ditentukan?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)

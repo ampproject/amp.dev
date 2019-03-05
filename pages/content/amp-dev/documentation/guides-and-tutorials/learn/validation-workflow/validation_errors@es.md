@@ -550,7 +550,7 @@ La lista completa de etiquetas únicas es la siguiente:
 
 ## Errores de estilo y de diseño
 
-Antes de entrar en los errores de [estilo](/es/docs/design/responsive/style_pages.html) y de [diseño](/es/docs/design/responsive/control_layout.html), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
+Antes de entrar en los errores de [estilo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) y de [diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.
 
 El diseño está más controlado en las páginas de AMP.
@@ -643,7 +643,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](/es/docs/design/responsive/control_layout.html) y la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) y la [especificación del sistema de diseño AMP HTML](/docs/reference/spec/amp-html-layout.html).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.

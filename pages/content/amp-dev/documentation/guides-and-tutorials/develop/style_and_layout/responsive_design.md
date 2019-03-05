@@ -30,7 +30,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup) for AMP pages, you need to specify the following viewport:
+But, what values should you use?  Well, in AMP, that's already spelled out for you.  As part of the [required markup]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -63,14 +63,14 @@ However, we want the image to not stretch beyond its intended size, so we set th
 ```
 
 [tip type="read-on"]
-**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries](/docs/design/responsive/control_layout.html#the-layout-attribute) guide.
+**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) guide.
 [/tip]
 
  <a id="fn1"></a>
 [tip type="note"]
 **Why is it tricky to make elements resize to fit the screen when I can easily do this with the `width=100%` style?**
 
-The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in amp-img (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
+The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
 [/tip]
 
 ## Scaling media for the page
@@ -83,12 +83,12 @@ When you include a video in your web page, you want to ensure that the user can 
 
 ##### Example: Embedding a YouTube video
 
-In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the `amp-youtube` element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
+In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
 
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
 
-There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
+There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media).
 
 ### Displaying responsive images
 
@@ -136,7 +136,7 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
 [tip type="note"]
-**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?).
+**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?).
 [/tip]
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>

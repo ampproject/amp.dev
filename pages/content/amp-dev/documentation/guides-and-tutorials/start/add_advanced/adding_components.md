@@ -9,7 +9,7 @@ AMP’s component system allows you to quickly build efficient and responsive fe
 
 - **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})  ...`).
 
-- **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](/docs/reference/experimental.html).
+- **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}).
 
 Our sample already uses a built-in component, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
 
@@ -142,10 +142,10 @@ Remember, not all components are included in the core AMP library JavaScript fil
 
 As with the other elements on the page, we specified the `width` and `height` of the video so that the AMP layout system can calculate the aspect ratio. Also, we set the `layout` to `responsive`, so the video fills the width of its parent element.
 
-To learn more about embedding YouTube videos, read the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) component documentation. For even more video and media components, check out the [list of media AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
+To learn more about embedding YouTube videos, read the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) component documentation. For even more video and media components, check out the [list of media AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#media).
 
 [tip type="tip"]
-**TIP –**  Use the [`fallback`](/docs/design/responsive/placeholders.html#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
+**TIP –**  Use the [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
 [/tip]
 
 ## Display a Tweet
@@ -177,7 +177,7 @@ The `data-tweetid` attribute is another example of a custom attribute required b
 To learn more about embedding Twitter Tweets, read the [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) component documentation.
 
 [tip type="tip"]
-**TIP –** AMP provides even more components for embedding content from social networks. See the latest [social AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}).
+**TIP –** AMP provides even more components for embedding content from social networks. See the latest [social AMP components]({{g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path}}#social).
 [/tip]
 
 ## Highlight an article quote
@@ -222,4 +222,4 @@ Or, what if the quotation is longer?
 
 As a last experiment with [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}), try creating a short piece of text,  such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
 
-You can learn more about [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) from [AMP by Example's live demo](https://ampbyexample.com/components/amp-fit-text/).
+You can learn more about [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) from [AMP by Example's live demo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}}).

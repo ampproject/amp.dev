@@ -23,7 +23,7 @@ $title: تهيئة Analytics
 تم تصميم تحليلات AMP خصوصًا للقياس مرة واحدة والإبلاغ إلى كثيرين.
 إذا كنت تعمل بالفعل مع مورّد تحليلات واحد أو أكثر،
 فتحقق من
-[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html)
+[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 للتأكّد مما إذا كانوا قد دمجوا حلهم مع AMP أم لا.
 إذا كانوا قد فعلوا ذلك، فقم ببساطة بالربط بمستنداتهم من المواصفة
 وابدأ اتباع التعليمات.

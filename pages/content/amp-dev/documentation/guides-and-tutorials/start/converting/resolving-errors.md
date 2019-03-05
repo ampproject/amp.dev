@@ -239,7 +239,7 @@ In the case of our article, the layout system inferred the layout type for the [
 
 Why was the `container` type inferred? Because we did not specify a `height` attribute for the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements so that AMP can pre-determine the aspect ratio of the element.
 
-**Add** the `width` and `height` to your [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag as follows:
+**Add** the `width` and `height` to your [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag as follows:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -336,5 +336,5 @@ AMP validation successful.
 ### Frequently asked questions
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [What if width and height are undefined?](/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [What if the layout attribute isn’t defined?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
+- [What if width and height are undefined?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)

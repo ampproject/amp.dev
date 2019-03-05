@@ -60,9 +60,9 @@ Service Worker adalah proxy sisi-klien yang berada di antara halaman dan server,
 
 Catatan: Jika konsep Service Worker merupakan hal baru bagi Anda, baca [pendahuluan di WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
-Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html) untuk melakukan hal yang sama.
+Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) untuk melakukan hal yang sama.
 
-Untuk melakukannya, sertakan komponen `<amp-install-serviceworker>` terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
+Untuk melakukannya, sertakan komponen [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"

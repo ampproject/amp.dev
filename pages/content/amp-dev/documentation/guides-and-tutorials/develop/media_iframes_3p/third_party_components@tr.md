@@ -6,7 +6,7 @@ Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin
 
 ## Tweet Yerleştirme
 
-[`amp-twitter`](/docs/reference/components/amp-twitter.html) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
+[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
 
 Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -56,7 +56,7 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
 
 ## Facebook yayını veya videosu gösterme
 
-[`amp-facebook`](/docs/reference/components/amp-facebook.html) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
+[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -98,7 +98,7 @@ Preview:
 
 ## YouTube videosu ekleme
 
-[`amp-youtube`](/docs/reference/components/amp-youtube.html) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
+[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -124,7 +124,7 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
 
 ## Reklam gösterme
 
-[`amp-ad`](/docs/reference/components/amp-ad.html) öğesini kullanarak sayfanızda bir reklam gösterin.
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) öğesini kullanarak sayfanızda bir reklam gösterin.
 Yalnızca HTTPS aracılığıyla sunulan reklamlar desteklenir.
 
 Reklam ağları tarafından sağlanan JavaScript'in AMP dokümanı içinde çalıştırılmasına izin verilmez.
@@ -160,4 +160,4 @@ Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında 
 </amp-iframe>
 </div>
 
-AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](/docs/reference/components/amp-ad.html#supported-ad-networks) bakın.
+AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks) bakın.

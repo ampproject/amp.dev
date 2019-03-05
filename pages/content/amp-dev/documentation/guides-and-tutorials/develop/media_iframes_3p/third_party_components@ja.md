@@ -6,7 +6,7 @@ $title: サードパーティ コンテンツを追加する
 
 ## ツイートを埋め込む
 
-ページに Twitter のツイートを埋め込むには、[`amp-twitter`](/ja/docs/reference/components/amp-twitter.html) 要素を使用します。
+ページに Twitter のツイートを埋め込むには、[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 要素を使用します。
 
 ページにツイートを追加するには、最初に次のスクリプトを `<head>` に追加します。
 
@@ -28,7 +28,7 @@ $title: サードパーティ コンテンツを追加する
 </amp-iframe>
 </div>
 
-ヒント: その他の `amp-twitter` の例については、[AMP By Example](https://ampbyexample.com/components/amp-twitter/) をご覧ください。
+ヒント: その他の [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## Instagram を埋め込む
 
@@ -54,11 +54,11 @@ Instagram の写真 URL にある data-shortcode を指定します。たとえ�
 </amp-iframe>
 </div>
 
-ヒント: その他の `amp-instagram` の例については、[AMP By Example](https://ampbyexample.com/components/amp-instagram/) をご覧ください。
+ヒント: その他の [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## Facebook の投稿や動画を表示する
 
-Facebook の投稿や動画をページに表示するには、[`amp-facebook`](/ja/docs/reference/components/amp-facebook.html) 要素を使用します。
+Facebook の投稿や動画をページに表示するには、[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 要素を使用します。
 
 `<head>` に次のスクリプトを追加する必要があります。
 
@@ -99,11 +99,11 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-ヒント: その他の `amp-facebook` の例については、[AMP By Example](https://ampbyexample.com/components/amp-facebook/) をご覧ください。
+ヒント: その他の [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## YouTube 動画を追加する
 
-YouTube 動画をページに追加するには、[`amp-youtube`](/ja/docs/reference/components/amp-youtube.html) 要素を使用します。
+YouTube 動画をページに追加するには、[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 要素を使用します。
 
 `<head>` に次のスクリプトを追加する必要があります。
 
@@ -127,11 +127,11 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 </amp-iframe>
 </div>
 
-ヒント: その他の `amp-youtube` の例については、[AMP By Example](https://ampbyexample.com/components/amp-youtube/) をご覧ください。
+ヒント: その他の [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## 広告を表示する
 
-ページに広告を表示するには、[`amp-ad`](/ja/docs/reference/components/amp-ad.html) 要素を使用します。HTTPS 経由で配信される広告のみがサポートされています。
+ページに広告を表示するには、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 要素を使用します。HTTPS 経由で配信される広告のみがサポートされています。
 
 広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を読み込んで、広告ネットワークの JS をその iframe サンドボックス内で実行します。
 

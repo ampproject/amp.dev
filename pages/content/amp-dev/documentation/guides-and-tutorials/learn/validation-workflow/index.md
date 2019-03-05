@@ -19,7 +19,7 @@ There are several ways available to validate an AMP document. They will all
 produce the exact same result, so use whichever one suits your development
 style the most.
 
-In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable](/docs/fundamentals/discovery.html) to third-party platforms.
+In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) to third-party platforms.
 
 ### Browser Developer Console
 
@@ -267,7 +267,7 @@ Each tool gives several pieces of information:
 Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
 
 To better understand the complete list of potential errors,
-see the [AMP Validation Errors guide](/docs/troubleshooting/validation_errors.html).
+see the [AMP Validation Errors guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 If you’re still stuck after careful evaluation, [ask a
 question](http://stackoverflow.com/questions/tagged/amp-html) and we'll try to
 help.

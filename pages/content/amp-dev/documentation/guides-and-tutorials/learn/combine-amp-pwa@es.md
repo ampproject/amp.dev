@@ -28,7 +28,7 @@ El punto fuerte de las páginas AMP es la **publicación casi instantánea**, qu
 
 Una buena estrategia sería, por ejemplo, definir que una página AMP fuese el punto de entrada de los usuarios a tu sitio web y después preparar la PWA de tapadillo y dirigirlos a ella durante el resto de la visita.
 
-Más información: Descubre cómo [conectar una página AMP a una PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) con `amp-install-serviceworker`.
+Más información: Descubre cómo [conectar una página AMP a una PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) con [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}).
 
 ## Usar las páginas AMP como fuente de datos de una PWA
 

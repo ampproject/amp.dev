@@ -21,7 +21,7 @@ limitations under the License.
 Os documentos AMP válidos não podem incluir erros de validação.
 O objetivo deste documento é ajudar você a entender melhor
 e corrigir esses erros
-ao [validar suas páginas AMP](/pt_br/docs/fundamentals/validate.html).
+ao [validar suas páginas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md', locale=doc.locale).url.path}}).
 Para ter uma visão geral completa dos erros de validação,
 consulte as [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
 
@@ -639,8 +639,8 @@ A lista completa de tags únicas é conhecida:
 
 Antes de nos aprofundarmos em erros de estilo e layout,
 é importante compreender como os
-[estilos](/pt_br/docs/design/responsive/style_pages.html) e o
-[layout](/pt_br/docs/design/responsive/control_layout.html) funcionam nas AMP.
+[estilos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) e o
+[layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) funcionam nas AMP.
 Como as páginas AMP são HTML, os estilos são muito parecidos com os de qualquer página HTML.
 No entanto, existem algumas restrições para garantir que as páginas sejam carregadas rapidamente,
 e o validador de AMP aplica essas restrições.
@@ -754,7 +754,7 @@ nas [especificações do validador de AMP](https://github.com/ampproject/amphtml
 
 O comportamento real do layout é determinado pelo atributo `layout`.
 Para saber mais sobre como funciona o layout,
-consulte [Como controlar o layout](/pt_br/docs/design/responsive/control_layout.html) e
+consulte [Como controlar o layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e
 as [Especificações do sistema de layout de HTML para AMP](/pt_br/docs/design/amp-html-layout.html).
 
 **Observação:** se você não especificar o layout
@@ -812,7 +812,7 @@ nas [especificações do validador de AMP](https://github.com/ampproject/amphtml
 
 O comportamento real do layout é determinado pelo atributo `layout`.
 Para saber mais sobre como funciona o layout,
-consulte [Como controlar o layout](/pt_br/docs/design/responsive/control_layout.html) e
+consulte [Como controlar o layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e
 as [Especificações do sistema de layout de HTML para AMP](/pt_br/docs/design/amp-html-layout.html).
 
 ### Atributo não permitido pelo layout especificado
@@ -858,7 +858,7 @@ Os atributos não permitidos por tipos de layout são descritos nas
 Esse erro ocorre quando o valor do atributo é inválido para o layout especificado.
 Para entender o que causa esse erro,
 é necessário conhecer
-os [diferentes comportamentos de layouts](/pt_br/docs/design/responsive/control_layout.html#size-and-position-elements).
+os [diferentes comportamentos de layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements).
 
 Vamos supor que você definiu o layout como `fixed-height` e
 incluiu valores numéricos para `height` e `width`.
@@ -902,7 +902,7 @@ projetada especificamente para incluir modelos, como
 É possível incluir modelos nos seus arquivos de origem,
 desde que a saída gerada por esses arquivos não tenha os modelos
 (veja também
-[Como usar pré-processadores CSS](/pt_br/docs/design/responsive/style_pages.html#use-css-preprocessors)).
+[Como usar pré-processadores CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)).
 
 ### O atributo contém sintaxe de modelo
 

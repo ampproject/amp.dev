@@ -8,7 +8,7 @@ La principale force de l'AMP n'est pas seulement d'accélérer le chargement de 
 
 Il existe plusieurs façons de valider un document AMP. Elles produiront toutes le même résultat. Vous pouvez donc utiliser la plus adaptée à votre style de développement.
 
-En plus d'être valide, votre document AMP doit également être [visible](/fr/docs/fundamentals/discovery.html) par les plates-formes tierces.
+En plus d'être valide, votre document AMP doit également être [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) par les plates-formes tierces.
 
 ### Developer Console dans le navigateur
 
@@ -155,5 +155,5 @@ Chaque outil donne plusieurs informations :
 
 En relisant attentivement la spécification, nous réalisons que nous utilisons une balise `<img>` au lieu d'une balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
-Pour mieux comprendre la liste complète des erreurs potentielles, consultez le [guide des erreurs de validation AMP](/fr/docs/troubleshooting/validation_errors.html).
+Pour mieux comprendre la liste complète des erreurs potentielles, consultez le [guide des erreurs de validation AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 Si vous êtes toujours bloqué après un examen minutieux du guide, [posez-nous votre question](http://stackoverflow.com/questions/tagged/amp-html) et nous essaierons de vous aider.

@@ -62,11 +62,11 @@ Para publicar tus formatos de anuncio de venta directa en AMP HTML, debes crear 
 *   Adzerk
 *   Google AdSense
 
-Para publicar anuncios AMP HTML a través de canales indirectos (por ejemplo, intercambios de anuncios o plataformas de oferta, entre otros), utiliza [una red publicitaria o un servidor de anuncios compatibles](/es/docs/ads/ads_vendors.html).
+Para publicar anuncios AMP HTML a través de canales indirectos (por ejemplo, intercambios de anuncios o plataformas de oferta, entre otros), utiliza [una red publicitaria o un servidor de anuncios compatibles]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
 
 ### Agencias de creatividades
 
-Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para consultar ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). También puedes utilizar una de las siguientes herramientas para crear anuncios AMP HTML:
+Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para consultar ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples.html', locale=doc.locale).url.path}}). También puedes utilizar una de las siguientes herramientas para crear anuncios AMP HTML:
 
 *  [Creador de anuncios de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -74,7 +74,7 @@ Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con 
 
 ### Redes publicitarias y servidores de anuncios
 
-Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) para tu red (a menos que ya tengas una), que utiliza la [implementación de solicitud de anuncio de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Para obtener más información, consulta el artículo [Integración de AMP para publicar anuncios de display](/es/docs/ads/adnetwork_integration.html).  Ten en cuenta que no se necesita ninguna integración especial para publicar anuncios AMP HTML en páginas que no sean AMP.
+Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) para tu red (a menos que ya tengas una), que utiliza la [implementación de solicitud de anuncio de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Para obtener más información, consulta el artículo [Integración de AMP para publicar anuncios de display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}).  Ten en cuenta que no se necesita ninguna integración especial para publicar anuncios AMP HTML en páginas que no sean AMP.
 
 ## Crear anuncios AMP HTML
 

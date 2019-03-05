@@ -28,7 +28,7 @@ AMP 的独家卖点是**几乎即时交付**，这一特点使得 AMP 成为实�
 
 推荐采取的策略：将一个 AMP 网页作为您网站的进入点，然后让 PWA 在后台做好准备并切换到 PWA 以便用户继续进行浏览之旅。
 
-继续阅读: 了解如何通过 `amp-install-serviceworker` [将 AMP 关联到 PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}})。
+继续阅读: 了解如何通过 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) [将 AMP 关联到 PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}})。
 
 ## 将 AMP 网页作为 PWA 的数据源
 

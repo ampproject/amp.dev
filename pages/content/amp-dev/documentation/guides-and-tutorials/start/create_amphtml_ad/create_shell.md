@@ -20,7 +20,7 @@ Using your favorite text editor, create an HTML file named **`my-amphtml-ad.html
 </html>
 ```
 
-This markup is for a basic, valid, HTML file.  Notice that we included the `meta` viewport tag so that we have a [responsive viewport](/docs/design/responsive/responsive_design.html#controlling-the-viewport).
+This markup is for a basic, valid, HTML file.  Notice that we included the `meta` viewport tag so that we have a [responsive viewport]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#controlling-the-viewport).
 
 Now, let's modify the HTML to make it an AMPHTML ad.
 

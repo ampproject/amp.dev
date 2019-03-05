@@ -19,7 +19,7 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 
 ## AMP 광고 구현 만들기
 
-광고 서버로서 지원되는 게시자는 제공된 JavaScript 라이브러리를 포함하며, JavaScript 라이브러리를 사용하여 광고를 가져온 다음 게시자의 웹사이트에 렌더링하는 다양한 '광고 스니펫'을 배치합니다. 게시자는 AMP를 사용하여 임의의 JavaScript를 실행할 수 없으므로 AMP 오픈소스 코드를 작성하여 [`AMP 광고`](/ko/docs/reference/components/amp-ad.html) 태그를 통해 광고 서버에서 광고를 요청하도록 허용해야 합니다.
+광고 서버로서 지원되는 게시자는 제공된 JavaScript 라이브러리를 포함하며, JavaScript 라이브러리를 사용하여 광고를 가져온 다음 게시자의 웹사이트에 렌더링하는 다양한 '광고 스니펫'을 배치합니다. 게시자는 AMP를 사용하여 임의의 JavaScript를 실행할 수 없으므로 AMP 오픈소스 코드를 작성하여 [`AMP 광고`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 태그를 통해 광고 서버에서 광고를 요청하도록 허용해야 합니다.
 
 [tip type="note"]
 이 AMP 광고 구현을 사용하여 기본 HTML 광고 **및** AMP HTML 광고를 표시할 수 있습니다.

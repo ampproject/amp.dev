@@ -9,11 +9,11 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **最も魅力的なコンテンツで目を引く。**  AMP ページに変換する際は、画像、動画、埋め込み、構造化データ、コメント、ソーシャル メディアなど、目を引くページ要素を含めます。詳しくは、[サードパーティ コンテンツを含める]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md', locale=doc.locale).url.path}})をご覧ください。
 
-- **AMP ページを常に最新にする。**  ライブブログを、[`amp-live-list`](/ja/docs/reference/components/amp-live-list.html) を使って動的に更新します。
+- **AMP ページを常に最新にする。**  ライブブログを、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) を使って動的に更新します。
 
 ### ユーザー エンゲージメントと定着率を最適化する
 
-- **双方向のエクスペリエンスを提供する。**  AMP ページで、たとえば [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})  コンポーネントを使って魅力的な画像カルーセルを作成します。また、AMP ではネイティブにサポートされていない双方向性を、[`amp-iframe`](/ja/docs/reference/components/amp-iframe.html) を使って組み込みます。
+- **双方向のエクスペリエンスを提供する。**  AMP ページで、たとえば [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})  コンポーネントを使って魅力的な画像カルーセルを作成します。また、AMP ではネイティブにサポートされていない双方向性を、[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) を使って組み込みます。
 
 - **ユーザーの行動経路をカスタマイズする。**  ログインボタンを追加します。有料コンテンツがある場合は [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) を使ってルールや特典を実装します。
 

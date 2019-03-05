@@ -34,16 +34,16 @@ AMP ページは、安定したパフォーマンスのために制限がいく�
 
 AMP コンポーネントでさらに機能や UI コンポーネントが加わることにより、AMP ページのインタラクティビティが向上します。スターター コードでは次のような AMP コンポーネントを使用します。
 
-- [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): 商品を複数のビューで表示する画像カルーセル。
-- [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): amp-form からサーバーの応答をレンダリングするためのテンプレート システム。
-- [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): AMP ページに必要な `<form>` 要素に対し、特別な機能を追加します。
-- [`<amp-selector>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): 要素のグループから 1 つまたは複数の要素を意味に基づき選択できるようにします。amp-form の入力ソースとして使用可能です。
+- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): 商品を複数のビューで表示する画像カルーセル。
+- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) からサーバーの応答をレンダリングするためのテンプレート システム。
+- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): AMP ページに必要な `<form>` 要素に対し、特別な機能を追加します。
+- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): 要素のグループから 1 つまたは複数の要素を意味に基づき選択できるようにします。[`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) の入力ソースとして使用可能です。
 
 ## 基本的なインタラクティビティ
 
 スターター コードにより、次のような基本的なインタラクティビティを実現できます。
 
-- 画像カルーセル（`<amp-carousel>`）で、商品を複数のビューで表示します。
-- ページ下部にある [カートに追加] ボタンをタップすることで、（`<amp-form>` により）商品をユーザーのカートに追加できます。
+- 画像カルーセル（[`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})）で、商品を複数のビューで表示します。
+- ページ下部にある [カートに追加] ボタンをタップすることで、（[`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) により）商品をユーザーのカートに追加できます。
 
 **試してみる**: 画像カルーセルをスワイプして [カートに追加] ボタンをタップします。
