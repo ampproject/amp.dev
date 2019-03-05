@@ -20,16 +20,16 @@ A live sample implementing the practices described below is available [here](htt
 Let's start by reviewing the components needed:
 
 ### amp-pan-zoom
-[`amp-pan-zoom`](/docs/reference/components/amp-pan-zoom.html) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
+[`amp-pan-zoom`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pan-zoom.md', locale=doc.locale).url.path}}) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
 
 ### amp-list
-[`amp-list`](/docs/reference/components/amp-list.html) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
+[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
 
 ### amp-bind
-[`amp-bind`](/docs/reference/components/amp-bind.html) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
+[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
 
 ### amp-selector
-[`amp-selector`](/docs/reference/components/amp-selector.html) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
+[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
 
 ```css
 rect[selected].seat {

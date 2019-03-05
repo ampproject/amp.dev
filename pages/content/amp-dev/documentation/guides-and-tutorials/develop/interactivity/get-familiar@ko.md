@@ -34,10 +34,10 @@ AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사
 
 AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추가적인 기능과 UI 구성요소를 제공합니다. 시작 코드는 다음과 같은 AMP 구성요소를 사용합니다.
 
-- [`<amp-carousel>`](/ko/docs/reference/components/amp-carousel.html): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
-- [`<amp-mustache>`](/ko/docs/reference/components/amp-mustache.html): amp-form의 서버 응답을 렌더링하는 템플릿 시스템입니다.
-- [`<amp-form>`](/ko/docs/reference/components/amp-form.html): AMP 페이지에 필요한 `<form>` 요소에 사용되는 특수한 기능을 추가합니다.
-- [`<amp-selector>`](/ko/docs/reference/components/amp-form.html): 요소 그룹에서 하나 또는 여러 요소를 선택하는 의미론적 방법을 제공합니다. amp-form의 입력 소스로 사용할 수 있습니다.
+- [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
+- [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): amp-form의 서버 응답을 렌더링하는 템플릿 시스템입니다.
+- [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): AMP 페이지에 필요한 `<form>` 요소에 사용되는 특수한 기능을 추가합니다.
+- [`<amp-selector>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): 요소 그룹에서 하나 또는 여러 요소를 선택하는 의미론적 방법을 제공합니다. amp-form의 입력 소스로 사용할 수 있습니다.
 
 ## 기본적인 상호작용
 

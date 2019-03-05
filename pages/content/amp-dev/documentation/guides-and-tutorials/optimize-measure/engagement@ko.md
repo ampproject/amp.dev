@@ -19,20 +19,20 @@ $title: 사용자 참여 향상하기
 
 - **지속되는 사용자 여정으로 확장하십시오.** 관련되거나 추천할만한 글들과 사이트 내의 다른 적절한 섹션들로 링크하세요.
 
-- [`amp-list`](/ko/docs/reference/components/amp-list.html)를 이용해 권고를 포함한 **콘텐츠를 개인화 하십시오.**
+- [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})를 이용해 권고를 포함한 **콘텐츠를 개인화 하십시오.**
 
-- 유저가 사이트의 나머지 부분을 탐색하도록 [`amp-sidebar`](/ko/docs/reference/components/amp-sidebar.html)를 이용해 **메뉴를 구현하십시오.**
+- 유저가 사이트의 나머지 부분을 탐색하도록 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})를 이용해 **메뉴를 구현하십시오.**
 
-- **사용자가 콘텐츠를 쉽게 공유할 수 있도록** [`amp-social-share`](/ko/docs/reference/components/amp-social-share.html)이나 자체 공유버튼을 사용합니다.
+- **사용자가 콘텐츠를 쉽게 공유할 수 있도록** [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}})이나 자체 공유버튼을 사용합니다.
 
-- [`amp-form`](/ko/docs/reference/components/amp-form.html)을 이용하여 리드 생성, 뉴스레터 가입 및 덧글과 같은 **새로운 인터렉션을 구현하십시오.**
+- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})을 이용하여 리드 생성, 뉴스레터 가입 및 덧글과 같은 **새로운 인터렉션을 구현하십시오.**
 
-- **좋은 리더 경험을 제공하는 광고 유형을 찾으십시오.** [`amp-sticky-ad`](/ko/docs/reference/components/amp-sticky-ad.html) 및 [`amp-fx-flying-carpet`](/ko/docs/reference/components/amp-fx-flying-carpet.html) 같은 AMP 광고 포맷을 찾으십시오. 광고 수익창출 [모범 사례]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})를 따르십시오.
+- **좋은 리더 경험을 제공하는 광고 유형을 찾으십시오.** [`amp-sticky-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}}) 및 [`amp-fx-flying-carpet`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}}) 같은 AMP 광고 포맷을 찾으십시오. 광고 수익창출 [모범 사례]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})를 따르십시오.
 
 - **앱 다운로드를 유도합니다.**
-[`amp-app-banner`](/ko/docs/reference/components/amp-app-banner.html)가 있는 배너에 앱 설치 링크를 포함하십시오..
+[`amp-app-banner`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-app-banner.md', locale=doc.locale).url.path}})가 있는 배너에 앱 설치 링크를 포함하십시오..
 
-- 독자를 위해 AMP가 아닌 프로그레시브 웹 앱 (PWA) 사이트로 **빠르게 전환**하십시오.[`amp-install-serviceworker`](/ko/docs/reference/components/amp-install-serviceworker.html)를 사용해 캐시를 채웁니다.
+- 독자를 위해 AMP가 아닌 프로그레시브 웹 앱 (PWA) 사이트로 **빠르게 전환**하십시오.[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}})를 사용해 캐시를 채웁니다.
 
 ### AMP의 발전을 도우려면 AMP 오픈소스 프로젝트에 참여하세요.
 

@@ -26,26 +26,26 @@ lives behind a paywall, implement your rules and offers using [`amp-access`]({{g
 - **Extend onward journeys.** Link to related or suggested articles and other
 relevant sections of your site.
 
-- **Personalize content** by including recommendations through [`amp-list`](/docs/reference/components/amp-list.html).
+- **Personalize content** by including recommendations through [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}).
 
-- **Implement a menu** with [`amp-sidebar`](/docs/reference/components/amp-sidebar.html) to encourage users to browse the rest
+- **Implement a menu** with [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) to encourage users to browse the rest
 of your site.
 
-- **Help readers share your content** with [`amp-social-share`](/docs/reference/components/amp-social-share.html) and your
+- **Help readers share your content** with [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) and your
 own share buttons.
 
 - **Cultivate new interactions** such as lead generation, newsletter signup, and
-comment support with [`amp-form`](/docs/reference/components/amp-form.html).
+comment support with [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}).
 
 - **Aim for ad types that offer a good reader experience.** Explore AMP ad
-formats such as [`amp-sticky-ad`](/docs/reference/components/amp-sticky-ad.html) and [`amp-fx-flying-carpet`](/docs/reference/components/amp-fx-flying-carpet.html). Follow ads
+formats such as [`amp-sticky-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}}) and [`amp-fx-flying-carpet`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}}). Follow ads
 monetization [best practices]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}).
 
 - **Drive app downloads.** Include an app install link in a banner with
 [`amp-app-banner`](/docs/reference/components/amp-app-banner.html).
 
 - **Ensure a fast transition** to your non-AMP Progressive Web App (PWA) site for
-readers. Use [`amp-install-serviceworker`](/docs/reference/components/amp-install-serviceworker.html) to populate your cache.
+readers. Use [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) to populate your cache.
 
 ### Participate in the open-source AMP Project to help shape its development
 

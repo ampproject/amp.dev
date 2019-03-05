@@ -19,20 +19,20 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **ユーザーの行動経路を拡げる。** 関連記事や推奨記事など、サイト内の関連コンテンツへのリンクを設定します。
 
-- **おすすめのコンテンツを紹介する。** [`amp-list`](/ja/docs/reference/components/amp-list.html) を使っておすすめのコンテンツを追加します。
+- **おすすめのコンテンツを紹介する。** [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) を使っておすすめのコンテンツを追加します。
 
-- **メニューを実装する。** [`amp-sidebar`](/ja/docs/reference/components/amp-sidebar.html) を使って、サイト内の他のコンテンツに簡単に移動できるようにします。
+- **メニューを実装する。** [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) を使って、サイト内の他のコンテンツに簡単に移動できるようにします。
 
-- **コンテンツを共有しやすくする。** [`amp-social-share`](/ja/docs/reference/components/amp-social-share.html) で独自の共有ボタンを作成します。
+- **コンテンツを共有しやすくする。** [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) で独自の共有ボタンを作成します。
 
-- **双方向性を追加する。**  見込み顧客の発掘、ニュースレターの登録、コメントのサポートなどを、[`amp-form`](/ja/docs/reference/components/amp-form.html) を使って追加します。
+- **双方向性を追加する。**  見込み顧客の発掘、ニュースレターの登録、コメントのサポートなどを、[`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) を使って追加します。
 
-- **広告タイプを検討してエクスペリエンスを高める。**  AMP 広告フォーマットとして、[`amp-sticky-ad`](/ja/docs/reference/components/amp-sticky-ad.html) や [`amp-fx-flying-carpet`](/ja/docs/reference/components/amp-fx-flying-carpet.html) を使用してエクスペリエンスを高めます。収益化の[ヒント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})を参考にしてください。
+- **広告タイプを検討してエクスペリエンスを高める。**  AMP 広告フォーマットとして、[`amp-sticky-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}}) や [`amp-fx-flying-carpet`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}}) を使用してエクスペリエンスを高めます。収益化の[ヒント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})を参考にしてください。
 
 - **アプリのダウンロードを促進する。**
- [`amp-app-banner`](/ja/docs/reference/components/amp-app-banner.html) を使って、バナーにアプリ インストール リンクを追加します。
+ [`amp-app-banner`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-app-banner.md', locale=doc.locale).url.path}}) を使って、バナーにアプリ インストール リンクを追加します。
 
-- **遷移を高速化する。**  非 AMP プログレッシブ ウェブアプリ（PWA）サイトへの遷移を高速化するため、[`amp-install-serviceworker`](/ja/docs/reference/components/amp-install-serviceworker.html) を使ってキャッシュにデータを書き込みます。
+- **遷移を高速化する。**  非 AMP プログレッシブ ウェブアプリ（PWA）サイトへの遷移を高速化するため、[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) を使ってキャッシュにデータを書き込みます。
 
 ### オープンソース AMP プロジェクトに参加して開発に貢献する
 

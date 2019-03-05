@@ -34,10 +34,10 @@ AMP 网页的基本框架如下所示：
 
 AMP 组件可提供额外的功能和界面组件，为 AMP 网页增添丰富的互动方式。入门代码使用了以下 AMP 组件：
 
-- [`<amp-carousel>`](/zh_cn/docs/reference/components/amp-carousel.html)：用于实现图片轮换展示内容，以展示相应商品的多个视图。
-- [`<amp-mustache>`](/zh_cn/docs/reference/components/amp-mustache.html)：用于实现模板化系统，以呈现来自 amp-form 的服务器响应。
-- [`<amp-form>`](/zh_cn/docs/reference/components/amp-form.html)：用于为 AMP 网页所需的 `<form>` 元素添加特殊功能。
-- [`<amp-selector>`](/zh_cn/docs/reference/components/amp-form.html)：用于提供一种语义方式，以从一组元素中选择一个或多个元素。可用作 amp-form 的输入源。
+- [`<amp-carousel>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})：用于实现图片轮换展示内容，以展示相应商品的多个视图。
+- [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})：用于实现模板化系统，以呈现来自 amp-form 的服务器响应。
+- [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})：用于为 AMP 网页所需的 `<form>` 元素添加特殊功能。
+- [`<amp-selector>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})：用于提供一种语义方式，以从一组元素中选择一个或多个元素。可用作 amp-form 的输入源。
 
 ## 基本的互动方式
 
