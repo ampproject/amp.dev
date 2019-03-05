@@ -22,14 +22,14 @@ skipValidation: 'true'
     Import the `amp-bodymovin-animation` component in the header.
   -->
   <script async custom-element="amp-bodymovin-animation" src="https://cdn.ampproject.org/v0/amp-bodymovin-animation-0.1.js"></script>
-  <link rel="canonical" href="<%host%>/components/amp-bodymovin-animation/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-bodymovin-animation.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
 
   <!-- ## Basic Usage -->
-  <!-- **Example 1: Embed Bodymovin animations via the `src` attribute** -->
+  <!-- Embed Bodymovin animations via the `src` attribute -->
   <amp-bodymovin-animation
     layout="fixed"
     width="200" height="200"
@@ -44,7 +44,7 @@ skipValidation: 'true'
     * noautoplay - By default, an animation autoplays. If this attribute is added the video waits for an action to start playing.
   -->
 
-  <!-- **Example 2: Animation only loops five times.** -->
+  <!-- The following animation only loops five times. -->
   <amp-bodymovin-animation
     layout="responsive"
     width="1920" height="1080"

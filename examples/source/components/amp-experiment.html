@@ -18,7 +18,7 @@ In this sample, we're using Google Analytics to track the experiment. Google Ana
    <!-- We are using `amp-analytics` to measure results of the experiment. -->
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link rel="canonical" href="<%host%>/components/amp-experiment/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-experiment.html">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <!--
     Style different variants of the experiment by using `body[amp-x-name-of-experiment="nameOfVariant"`].
@@ -102,9 +102,9 @@ In this sample, we're using Google Analytics to track the experiment. Google Ana
 <!--
   You can force an experiment to be in a specific variant by adding `amp-x-experiment-name` to the AMP page URL.
   <ul>
-    <li><a href="<%host%>/components/amp-experiment#amp-x-button-color-experiment=0">#amp-x-button-color-experiment=0</a></li>
-    <li><a href="<%host%>/components/amp-experiment#amp-x-button-color-experiment=1">#amp-x-button-color-experiment=1</a></li>
-    <li><a href="<%host%>/components/amp-experiment#amp-x-button-color-experiment=2">#amp-x-button-color-experiment=2</a></li>
+    <li><a href="<% hosts.platform %>/components/amp-experiment#amp-x-button-color-experiment=0">#amp-x-button-color-experiment=0</a></li>
+    <li><a href="<% hosts.platform %>/components/amp-experiment#amp-x-button-color-experiment=1">#amp-x-button-color-experiment=1</a></li>
+    <li><a href="<% hosts.platform %>/components/amp-experiment#amp-x-button-color-experiment=2">#amp-x-button-color-experiment=2</a></li>
   </ul>
 -->
 

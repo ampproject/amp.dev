@@ -1,3 +1,10 @@
+<!---
+
+draft: true
+
+--->
+
+
 <!--
   ## Introduction
 
@@ -9,8 +16,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>amp-web-push example</title>
-    <link rel="canonical" href="<%host%>/components/amp-web-push/">
+    <title>amp-web-push</title>
+    <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-web-push.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript>
         <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
@@ -32,7 +39,7 @@
     <!--
     The `amp-web-push` component requires two additional HTML files as well as an amp-web-push compatible Service Worker. These three files form the configuration described below.
     -->
-    <amp-web-push id="amp-web-push" layout="nodisplay" helper-iframe-url="<%host%>/webpush/amp-web-push-helper-frame.html" permission-dialog-url="<%host%>/webpush/amp-web-push-permission-dialog.html" service-worker-url="<%host%>/sw.js">
+    <amp-web-push id="amp-web-push" layout="nodisplay" helper-iframe-url="<% hosts.backend %>/webpush/amp-web-push-helper-frame.html" permission-dialog-url="<% hosts.backend %>/webpush/amp-web-push-permission-dialog.html" service-worker-url="<% hosts.backend %>/sw.js">
     </amp-web-push>
 
     <!-- Clicking the subscription widget pops up a page prompting the user for notification permissions and signals the service worker (configured below) to subscribe the user to push in the background. On this example, we are intercepting the call to `onMessageReceivedSubscribe`, and storing the subscription object on IndexedDB.
@@ -45,7 +52,7 @@
     -->
     <amp-web-push-widget visibility="subscribed" layout="fixed" width="500" height="180">
         <button on="tap:amp-web-push.unsubscribe">Unsubscribe from Notifications</button>
-        <form method="post" action-xhr="/send-push" target="_top">
+        <form method="post" action-xhr="<% hosts.backend %>/send-push" target="_top">
             <input type="submit" value="Send Web Push">
             <div submitting>
                 Sending Push message...

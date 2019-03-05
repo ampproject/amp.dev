@@ -7,8 +7,8 @@
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <title>amp-geo example</title>
-  <link rel="canonical" href="<%host%>/components/amp-geo/">
+  <title>amp-geo</title>
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-geo.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
@@ -91,10 +91,11 @@
   <!--
    ## Preset country groups
 
-   > GOOGLE AND THE AMP PROJECT ARE PROVIDING THIS INFORMATION AS A COURTESY BUT DO NOT GUARANTEE THE ACCURACY OR COMPLETENESS OF ANY INFORMATION CONTAINED HEREIN. THIS INFORMATION IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. </blockquote>
-  <p> `amp-geo` supports preset country lists for specific regions. For example, there is a preset for the European Economic Area (EEA) `preset-eea` which we assign to an `ISOCountryGroup` named `eea`:</p>
+   Important: GOOGLE AND THE AMP PROJECT ARE PROVIDING THIS INFORMATION AS A COURTESY BUT DO NOT GUARANTEE THE ACCURACY OR COMPLETENESS OF ANY INFORMATION CONTAINED HEREIN. THIS INFORMATION IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
-   ```
+  `amp-geo` supports preset country lists for specific regions. For example, there is a preset for the European Economic Area (EEA) `preset-eea` which we assign to an `ISOCountryGroup` named `eea`:
+
+   ```json
    "ISOCountryGroups": {
       "eea": [ "preset-eea" ],
       ...

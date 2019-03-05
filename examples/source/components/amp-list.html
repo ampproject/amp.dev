@@ -17,7 +17,7 @@
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <!-- Import the `amp-bind` component for dynamically changing the content of an `amp-list`. -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-  <link rel="canonical" href="<%host%>/components/amp-list/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-list.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
@@ -108,7 +108,7 @@
     "items": [
       {
         "title": "amp-carousel",
-        "url": "<%host%>/components/amp-carousel"
+        "url": "<% hosts.backend %>/components/amp-carousel"
       },
       ...
     ]
@@ -170,10 +170,7 @@ The template can also be specified using an ID of an existing `template` element
   <!--
     This sample shows off once of `amp-list`'s most powerful features: being able to directly render objects from `amp-state`, This is possible by binding the results of an `amp-bind` expression to the `src` attribute: `[src]="items"`. To make sure that the `amp-list` resizes accordingly, we dynamically calculate the `height` based on the number of list elements: `[height]="items.length * 24"`. The initial state (an empty list) is defined in an `amp-state` element.
 
-    [tip type="important"]
-    Important: `amp-bind` expressions are **not** evaluated on page load, but only after an user interaction has taken place. Initial
-    `amp-list` content still needs to be fetched from a JSON endpoint.
-    [/tip]
+    Important: `amp-bind` expressions are **not** evaluated on page load, but only after an user interaction has taken place. Initial `amp-list` content still needs to be fetched from a JSON endpoint.
   -->
   <div>
     <amp-state id="items">
@@ -201,7 +198,7 @@ The template can also be specified using an ID of an existing `template` element
   <div>
   <amp-list layout="fixed-height" height="100"
       src="/static/samples/json/examples-empty.json"
-      [src]="emptyListSampleSrc || '/json/examples-empty.json'"
+      [src]="emptyListSampleSrc || '/static/samples/json/examples-empty.json'"
       single-item
       items="."
       reset-on-refresh>
@@ -229,7 +226,7 @@ The template can also be specified using an ID of an existing `template` element
             reset-on-refresh
             layout="fixed-height"
             height="654"
-            src="<%host%>/samples_templates/slow-json-with-items/?delay=10000">
+            src="<% hosts.backend %>/samples_templates/slow-json-with-items/?delay=10000">
     <div placeholder>
       <div class="product"></div>
       <div class="product"></div>
@@ -263,7 +260,7 @@ The template can also be specified using an ID of an existing `template` element
             reset-on-refresh
             layout="fixed-height"
             height="600"
-            src="<%host%>/samples_templates/slow-json-with-items/?delay=1000">
+            src="<% hosts.backend %>/samples_templates/slow-json-with-items/?delay=1000">
     <template type="amp-mustache">
         <div class="product">
             <amp-img width="150"

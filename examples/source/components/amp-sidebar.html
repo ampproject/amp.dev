@@ -9,9 +9,7 @@ preview: default
 
   The [`amp-sidebar`](https://www.ampproject.org/docs/reference/components/amp-sidebar) component provides a way to display meta content intended for temporary access (navigation links, buttons, menus, etc.). The sidebar can be revealed by a button tap while the main content remains visually underneath. However, optional attributes that accept media queries can be used to display meta content in other parts of the site. Child `<nav toolbar="(media query)" toolbar-target="elementID">` will create `toolbar` elements that allow for content within the sidebar to be displayed on other parts of the main content.
 
-[tip type="note"]
-  You must be able to resize your browser window in order to notice the effects of** `toolbar` **elements. In this example,** `toolbar` **elements are best viewed by resiving your window from mobile to desktop.
-[/tip]
+  Note: You must be able to resize your browser window in order to notice the effects of** `toolbar` **elements. In this example,** `toolbar` **elements are best viewed by resiving your window from mobile to desktop.
 -->
 
 <!-- -->
@@ -27,7 +25,7 @@ preview: default
   -->
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
-  <link rel="canonical" href="<%host%>/components/amp-sidebar/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-sidebar.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
@@ -64,7 +62,7 @@ preview: default
   <h2 class="previewOnly">Basic usage</h2>
   <!-- ## Basic usage -->
   <!--
-    The `amp-sidebar` should be a direct child of the `<body>`. It must have a layout of `nodisplay`.  `amp-sidebar` supports the following actions: `toggle`, `open` and `close`. 
+    The `amp-sidebar` should be a direct child of the `<body>`. It must have a layout of `nodisplay`.  `amp-sidebar` supports the following actions: `toggle`, `open` and `close`.
   -->
   <div>
     <amp-sidebar id="sidebar" class="sample-sidebar" layout="nodisplay" side="right">
@@ -114,7 +112,7 @@ preview: default
   <!--
     The `toolbar` element within the `<amp-sidebar>` element, will have classes applied to the element depending if the `toolbar-target` element is shown or hidden. This is useful for applying different styles on the `toolbar` element and the `toolbar-target` element. The classes are `amp-sidebar-toolbar-target-shown`, and `amp-sidebar-toolbar-target-hidden`. The class `amp-sidebar-toolbar-target-shown` is applied to the `toolbar` element when the `toolbar-target` element is shown. The class `amp-sidebar-toolbar-target-hidden` is applied to the `toolbar` element when the `toolbar-target` element is hidden.
 
-    ```html
+    ```css
     .amp-sidebar-toolbar-target-shown {
       display: none;
     }

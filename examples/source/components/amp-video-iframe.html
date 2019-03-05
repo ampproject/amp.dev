@@ -24,7 +24,7 @@ You can see the sample in action [here](preview).
 <head>
   <meta charset="utf-8">
   <title>amp-video-iframe</title>
-  <link rel="canonical" href="/components/amp-video-iframe/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-video-iframe.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <!-- ## Setup -->
   <!-- Include the `amp-video-iframe` extension script. -->
@@ -36,10 +36,7 @@ You can see the sample in action [here](preview).
   <!--
   ## Basic usage
 
-  Set the `autoplay` attribute to start automatically as the user scrolls the
-  video into view. The `src` attribute will point to a document including a video player. This
-  URL must be relative or have HTTPS defined. You can read the source for the document referenced
-[here](https://github.com/ampproject/amp-by-example/blob/master/static/amp-video-iframe-videojs.html).
+  Set the `autoplay` attribute to start automatically as the user scrolls the video into view. The `src` attribute will point to a document including a video player. This URL must be relative or have HTTPS defined. You can read the source for the document referenced [here](https://github.com/ampproject/amp-by-example/blob/master/static/amp-video-iframe-videojs.html).
   -->
   <amp-video-iframe
       id="myVideo"
@@ -55,23 +52,13 @@ You can see the sample in action [here](preview).
   <!--
   ## Video iframe integration
 
-  Inside the document in your frame, you must include a library and a simple
-  integration callback in order for the host to comunicate with your frame.
-  Include the `amp-video-iframe` frame integration library in your `<head>`
-  tag.
+  Inside the document in your frame, you must include a library and a simple integration callback in order for the host to comunicate with your frame. Include the `amp-video-iframe` frame integration library in your `<head>` tag.
 
   ```html
   <script async src="https://cdn.ampproject.org/video-iframe-integration-v0.js"></script>
   ```
 
-  Write an [integration script](https://www.ampproject.org/docs/reference/components/amp-video-iframe#integration)
-  to communicate the AMP document with this frame. The integration library
-  natively supports Video.JS (and [JwPlayer](https://www.jwplayer.com/)), so
-  this task is very simple. If you don't use Video.JS or JwPlayer, you can use tools like provided by
-the library which are [described
-here](https://www.ampproject.org/docs/reference/components/amp-video-iframe#integration).
-  For Video.JS, include the following in your `<body>` tag after your video
-  and the Video.JS library script.
+  Write an [integration script](https://www.ampproject.org/docs/reference/components/amp-video-iframe#integration) to communicate the AMP document with this frame. The integration library natively supports Video.JS (and [JwPlayer](https://www.jwplayer.com/)), so this task is very simple. If you don't use Video.JS or JwPlayer, you can use tools like provided by the library which are [described here](https://www.ampproject.org/docs/reference/components/amp-video-iframe#integration). For Video.JS, include the following in your `<body> tag after your video and the Video.JS library script.
 
   ```html
   <script>

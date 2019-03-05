@@ -13,14 +13,14 @@
     <!-- ## Setup -->
     <!-- Import the `amp-reddit` component -->
     <script async custom-element="amp-reddit" src="https://cdn.ampproject.org/v0/amp-reddit-0.1.js"></script>
-  <link rel="canonical" href="<%host%>/components/amp-reddit/">
+    <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-reddit.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
 
-    <!-- 
-      ## Post embed 
+    <!--
+      ## Post embed
 
       Embeds a singe post.
     -->
@@ -32,8 +32,8 @@
       data-src="https://www.reddit.com/r/me_irl/comments/52rmir/me_irl/?ref=share&amp;ref_source=embed">
     </amp-reddit>
 
-    <!-- 
-      ## Comment embed 
+    <!--
+      ## Comment embed
 
       Embeds a single comment.
     -->
@@ -62,7 +62,7 @@
   <!--
     ## Auto update comments
 
-    Updates comments when the original comment is updated by specifying `data-embedlive="true"` 
+    Updates comments when the original comment is updated by specifying `data-embedlive="true"`
   -->
   <amp-reddit
     layout="responsive"

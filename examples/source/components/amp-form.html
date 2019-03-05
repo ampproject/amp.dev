@@ -28,7 +28,7 @@ preview: default
     `amp-mustache` is needed for client-side rendering of form responses.
   -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <link rel="canonical" href="<%host%>/components/amp-form/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/components/amp-form.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
@@ -68,7 +68,7 @@ preview: default
 
     You can find the code for the server endpoint used in this demo at [/backend/amp-form.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-form.go).
   -->
-  <form class="sample-form" method="GET" action="/components/amp-form/submit-form" target="_top">
+  <form class="sample-form" method="GET" action="<% hosts.backend %>/components/amp-form/submit-form" target="_top">
     <input type="search" placeholder="Search..." name="search">
     <input type="submit" value="OK">
   </form>
@@ -76,17 +76,12 @@ preview: default
   <h2 class="sample-heading">Form Submission with Page Update</h2>
   <!-- ## Form submission with client-side rendering -->
   <!--
-    Use the `action-xhr` attribute to submit the form via XMLHttpRequest (XHR). You can use
-    [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache)
-    templates to client side render the POST response. It's possible to show custom success or error messages, using data sent by the server endpoint as JSON. For
-    example, if the server sends `{"foo": "bar"}`, you can use use `{{foo}}` in the template to render `bar`.
+    Use the `action-xhr` attribute to submit the form via XMLHttpRequest (XHR). You can use [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) templates to client side render the POST response. It's possible to show custom success or error messages, using data sent by the server endpoint as JSON. For example, if the server sends `{"foo": "bar"}`, you can use use `{{foo}}` in the template to render `bar`.
 
-    The `amp-form` component displays `submit-success` or `submit-error` elements based on the response and
-    renders the template data inside these two elements. The `submit-success` and `submit-error` elements
-    must be direct children of `form`.
+    The `amp-form` component displays `submit-success` or `submit-error` elements based on the response and renders the template data inside these two elements. The `submit-success` and `submit-error` elements must be direct children of `form`.
   -->
   <form class="sample-form" method="post"
-        action-xhr="/components/amp-form/submit-form-input-text-xhr"
+        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
         target="_top">
     <input type="text"
            name="name"
@@ -117,7 +112,7 @@ preview: default
     Use `show-all-on-submit` strategy to ensure all the validation messages are shown when the user submits the form.
   -->
   <form class="sample-form" method="post"
-        action-xhr="/components/amp-form/submit-form-input-text-xhr"
+        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
         target="_top"
         custom-validation-reporting="show-all-on-submit">
     <input type="text" id="show-all-on-submit-name" name="name" placeholder="Name..." required pattern="\p{L}+\s\p{L}+">
@@ -148,7 +143,7 @@ preview: default
   <h2 class="sample-heading">Form Custom Validation: <code>show-first-on-submit</code></h2>
   <!-- Use `show-first-on-submit` strategy to show the first validation message when the user submit the form. -->
   <form class="sample-form" method="post"
-        action-xhr="/components/amp-form/submit-form-input-text-xhr"
+        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
         target="_top"
         custom-validation-reporting="show-first-on-submit">
     <input type="text" id="show-first-on-submit-name"  name="name" placeholder="Name..." required pattern="\p{L}+\s\p{L}+">
@@ -179,7 +174,7 @@ preview: default
   <h2 class="sample-heading">Form Custom Validation: <code>as-you-go</code></h2>
   <!-- Use `as-you-go` strategy to show validation messages as the user is interacting with the form. -->
   <form class="sample-form" method="post"
-        action-xhr="/components/amp-form/submit-form-input-text-xhr"
+        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
         target="_top"
         custom-validation-reporting="as-you-go">
     <input type="text" id="as-you-go-name" name="name" placeholder="Name..." required pattern="\p{L}+\s\p{L}+">
@@ -215,8 +210,8 @@ preview: default
     In the `submit-error` template, you can choose how to render verification error message using the `verifyErrors` list. These will only display if the user submits the form before the asynchronous verification response completes.
   -->
   <form class="sample-form" method="post"
-        action-xhr="/components/amp-form/verify-form-input-text-xhr"
-        verify-xhr="/components/amp-form/verify-form-input-text-xhr"
+        action-xhr="<% hosts.backend %>/components/amp-form/verify-form-input-text-xhr"
+        verify-xhr="<% hosts.backend %>/components/amp-form/verify-form-input-text-xhr"
         target="_top"
         custom-validation-reporting="as-you-go">
     <input type="text" id="verification-username" name="username" placeholder="Username..." required pattern="\w+">
@@ -246,7 +241,7 @@ preview: default
   <!--
     You can use either an `<input type="reset">` or the `clear` action for clearing input fields.
   -->
-  <form class="sample-form" id="formResetSample" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+  <form class="sample-form" id="formResetSample" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
     <input type="text" placeholder="Some text...">
     <input type="submit" value="OK">
     <input type="reset" value="Reset">
@@ -265,7 +260,7 @@ preview: default
     }
     ```
   -->
-  <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-input-text-xhr" target="_top">
+  <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr" target="_top">
     <input type="text" name="name" placeholder="Name..." required>
     <input type="submit" value="Subscribe">
     <div submit-success>
@@ -280,7 +275,7 @@ preview: default
   <!--
     `amp-form` supports all HTML5 form types with the exception of file and image. It's recommended to use the [`amp-date-picker`](https://www.ampproject.org/docs/reference/components/amp-date-picker) component for input fields that should contain a date.
   -->
-  <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+  <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
     <input name="select-date" type="date" value="2020-12-30">
     <input type="submit" value="OK">
     <div submit-success>
@@ -295,7 +290,7 @@ preview: default
     <!--
       Use `type="month"` for input fields that should contain a month.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input name="select-month" type="month" value="2020-12">
       <input type="submit" value="OK">
       <div submit-success>
@@ -310,7 +305,7 @@ preview: default
     <!--
       Use `type="week"` for input fields that should contain a week.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="week" name="week_year">
       <input type="submit" value="OK">
       <div submit-success>
@@ -325,7 +320,7 @@ preview: default
     <!--
       Use `type="datetime-local"` for input fields that should contain a date and time.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input name="select-datetime" type="datetime-local" value="2020-12-30T12:34:56">
       <input type="submit" value="OK">
       <div submit-success>
@@ -340,7 +335,7 @@ preview: default
     <!--
       Use `type="time"` for input fields that should contain a time.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="time" name="time_now">
       <input type="submit" value="OK">
       <div submit-success>
@@ -355,7 +350,7 @@ preview: default
     <!--
       Use `type="checkbox"` to let the user select ZERO or MORE options of a limited number of choices.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="checkbox" id="animal1" name="animal1" value="Cats" >
       <label for="animal1">I like cats</label>
       <input type="checkbox" id="animal2" name="animal2" value="Dogs">
@@ -373,7 +368,7 @@ preview: default
     <!--
       Use `type="email"` for input fields that should contain an e-mail address.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="email" name="email" placeholder="Email..." >
       <input type="submit" value="OK">
       <div submit-success>
@@ -388,7 +383,7 @@ preview: default
     <!--
       Use `type="hidden"` to define a field not visible to a user.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="hidden" name="city" value="London">
       <input type="submit" value="OK">
       <div submit-success>
@@ -403,7 +398,7 @@ preview: default
     <!--
       Use `type="number"` for input fields that should contain a numeric value.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="number" name="quantity" min="1" max="5">
       <input type="submit" value="OK">
       <div submit-success>
@@ -418,7 +413,7 @@ preview: default
     <!--
       Use `type="radio"` to let a user select ONLY ONE of a limited number of choices.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="radio" id="cat" name="favourite animal" value="cat" checked>
       <label for="cat">Cat</label>
       <input type="radio" id="dog" name="favourite animal" value="dog">
@@ -438,7 +433,7 @@ preview: default
     <!--
       Use `type="range"` for input fields that should contain a value within a range.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="range" name="points" min="0" max="10">
       <input type="submit" value="OK">
       <div submit-success>
@@ -453,7 +448,7 @@ preview: default
     <!--
       Use `type="tel"` for input fields that should contain a telephone number.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="tel" name="my_tel" placeholder="Telephone...">
       <input type="submit" value="OK">
       <div submit-success>
@@ -468,7 +463,7 @@ preview: default
     <!--
       Use `type="url"` for input fields that should contain a URL address.
     -->
-    <form class="sample-form" method="post" action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+    <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="url" placeholder="URL..." name="website">
       <input type="submit" value="OK">
       <div submit-success>
@@ -484,7 +479,7 @@ preview: default
       Use `type="password"` for hidden text inputs inside secure `POST` forms.
     -->
     <form class="sample-form" method="post"
-      action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <input type="password" placeholder="Password..." name="pw">
       <input type="submit" value="OK">
       <div submit-success>
@@ -501,7 +496,7 @@ preview: default
       Use `select` element for dropdowns.
     -->
     <form class="sample-form" method="post"
-      action-xhr="/components/amp-form/submit-form-xhr" target="_top">
+      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-xhr" target="_top">
       <select name="cars" id="cars" >
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
