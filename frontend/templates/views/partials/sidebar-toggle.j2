@@ -1,11 +1,3 @@
-{% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
-{% do doc.icons.useIcon('icons/categorymenu.svg') %}
-{% do doc.icons.useIcon('icons/close.svg') %}
-
-<input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar" autocomplete="off">
-<label class="ap-a-sidebar-toggle-label ap-a-sidebar-toggle-label-sidebar" for="sidebar" on="tap:sidebar-left.toggle" role="categoriemenutrigger" tabindex="0">
-  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#categorymenu"></use></svg>
-  <svg class="closemenu"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-</label>
+<input class="ap-a-sidebar-mobile-toggle-input ap-a-sidebar-mobile-toggle-input-sidebar" type="checkbox" name="sidebar" id="sidebar" autocomplete="off">
 
 <input class="ap-a-sidebar-desktop-toggle-input ap-a-sidebar-desktop-toggle-input-sidebar" type="checkbox" name="sidebar-desktop" id="sidebar-desktop" autocomplete="off">
