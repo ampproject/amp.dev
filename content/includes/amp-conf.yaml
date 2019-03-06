@@ -87,7 +87,7 @@ speakers:
   ballakhadang:
     name: Balla Khadang
     company: YouGov
-    bio:
+    bio: "Balla Khadang Hawezi is a self-taught web developer who is currently working as a Qualitative Research Moderator and Translator at YouGov in Erbil, Kurdistan Region-Iraq."
     pic:
   jeffreyj:
     name: Jeffrey Jose
@@ -158,6 +158,11 @@ speakers:
     company: Google
     bio: "Kristofer is a Software Engineer at Google focused on making the Web as fast as possible for users. Prior to working with AMP teams, Kristofer managed teams at LinkedIn and Netflix improving their software architecture and products."
     pic: /static/img/amp-conf/speakers/kristofer.jpg
+  katharinaalmonte:
+    name: Katharina Familia Almonte
+    company: Google
+    pic:
+    bio: 
 
 agenda:
   day_1:
@@ -244,11 +249,13 @@ agenda:
         - crystallambert
         - yusukeutsunomiya
       description: Welcome back to day two!
-    - title: "Keynote"
-      description: Day Two Keynote.
+    - title: "Keynote: AMP in Advertising"
+      description: "Using AMP for creating display ads began as a hobby but now more than 100,000 ads created in AMP are served on the web every second, every day. We'll give you a roundup of AMPHTML ads, how they have evolved beyond serving just AMP pages and a review of where we are with advertising on AMP pages."
       time: "0915"
       type: keynote
-      time: "1030"
+      speakers: 
+        - vamseejasti
+        - katharinaalmonte
     - title: "AMP as a service: Auto-upgraded, accelerated developer workflows"
       time: "1000"
       type: session
