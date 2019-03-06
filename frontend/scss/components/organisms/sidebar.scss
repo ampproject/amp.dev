@@ -29,7 +29,7 @@ nav[toolbar] {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
+    background-color: rgba(color('black'), 0.10);
   }
 
   // & > ul {
@@ -107,7 +107,7 @@ nav[toolbar] {
         }
         &.active {
           background: color('alto');
-          border-radius: 6px 0 0 6px;
+          border-radius: 6px;
         }
       }
 
