@@ -136,10 +136,9 @@
 }
 
 @mixin toc-white-bg {
-  background: color('white');
+  
   @media (min-width: 768px) {
-    grid-column: 9 / 25;
-    padding-left: 30px;
+    grid-column: 8 / 25;
 
     & ~ .#{utility('content')} {
       padding-top: 0;
@@ -157,6 +156,7 @@
   }
 
   @media (min-width: 1024px) {
+    background: color('white');
     grid-column: 20 / 25;
     grid-row: span 2;
     padding-top: 46px;
