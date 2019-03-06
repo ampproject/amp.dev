@@ -27,7 +27,7 @@ skipValidation: 'true'
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <meta name="viewport"
           content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="canonical" href="/stories/features/media/">
+    <link rel="canonical" href="<% hosts.platform %>/documentation/examples/features/media.html">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
       body {
@@ -52,7 +52,7 @@ skipValidation: 'true'
     <amp-story standalone
     title="Stories in AMP - Media"
     publisher="AMP Project"
-    publisher-logo-src="<%host%>/favicons/coast-228x228.png"
+    publisher-logo-src="<% hosts.platform %>/favicons/coast-228x228.png"
     poster-portrait-src="https://picsum.photos/300/400"
     poster-square-src="https://picsum.photos/300/300"
     poster-landscape-src="https://picsum.photos/400/300">
@@ -80,9 +80,9 @@ skipValidation: 'true'
                               grid-area="middle-third"
                 width="720"
                 height="960"
-                poster="<%host%>/img/story_video_dog_cover.jpg"
+                poster="<% hosts.platform %>/img/story_video_dog_cover.jpg"
                 layout="responsive">
-                <source src="<%host%>/video/story_video_dog.mp4" type="video/mp4">
+                <source src="<% hosts.platform %>/video/story_video_dog.mp4" type="video/mp4">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="thirds">
@@ -122,7 +122,9 @@ skipValidation: 'true'
       </amp-story-page>
 
       <!-- ## amp-google-vrview-image -->
-      <!-- Stories will support 360° Media, consisting of 360° videos and images, soon. Please note that the [amp-google-vrview-image](https://www.ampproject.org/docs/reference/components/amp-google-vrview-image) component is currently experimental. -->
+      <!-- Stories will support 360° Media, consisting of 360° videos and images, soon.
+
+      Note: The [amp-google-vrview-image](https://www.ampproject.org/docs/reference/components/amp-google-vrview-image) component is currently experimental. To experience this sample please enable the needed [experiments](/documentation/guides-and-tutorials/learn/experimental.html). -->
       <amp-story-page id="amp-google-vrview-image">
         <amp-story-grid-layer template="fill">
           <amp-google-vrview-image src="https://storage.googleapis.com/vrview/examples/coral.jpg"
@@ -136,7 +138,7 @@ skipValidation: 'true'
         </amp-story-grid-layer>
       </amp-story-page>
 
-      <amp-story-bookend src="<%host%>/json/bookend.json" layout="nodisplay">
+      <amp-story-bookend src="<% hosts.backend %>/json/bookend.json" layout="nodisplay">
       </amp-story-bookend>
 
     </amp-story>
