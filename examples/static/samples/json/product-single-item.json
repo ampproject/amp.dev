@@ -2,7 +2,7 @@
   "items": [{
     "values": [{
       "id": 1,
-      "img": "/static/samples/img/product1_640x426.jpg",
+      "img": "/img/product1_640x426.jpg",
       "name": "Apple",
       "price": "1.99",
       "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
@@ -11,7 +11,7 @@
       "color": "green"
     }, {
       "id": 2,
-      "img": "/static/samples/img/product2_640x426.jpg",
+      "img": "/img/product2_640x426.jpg",
       "name": "Orange",
       "attribution": "visualhunt",
       "price": "0.99",
@@ -20,7 +20,7 @@
       "color": "orange"
     }, {
       "id": 3,
-      "img": "/static/samples/img/product3_640x426.jpg",
+      "img": "/img/product3_640x426.jpg",
       "name": "Pear",
       "attribution": "visualhunt",
       "price": "1.50",

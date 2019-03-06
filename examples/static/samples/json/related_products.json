@@ -1,7 +1,7 @@
 {
   "items": [{
     "id": 1,
-    "img": "/static/samples/img/product1_640x426.jpg",
+    "img": "/img/product1_640x426.jpg",
     "name": "Apple",
     "price": "1.99",
     "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
@@ -10,7 +10,7 @@
     "color": "green"
   }, {
     "id": 2,
-    "img": "/static/samples/img/product2_640x426.jpg",
+    "img": "/img/product2_640x426.jpg",
     "name": "Orange",
     "attribution": "visualhunt",
     "price": "0.99",
@@ -19,7 +19,7 @@
     "color": "orange"
   }, {
     "id": 3,
-    "img": "/static/samples/img/product3_640x426.jpg",
+    "img": "/img/product3_640x426.jpg",
     "name": "Pear",
     "attribution": "visualhunt",
     "price": "1.50",
@@ -28,7 +28,7 @@
     "color": "green"
   }, {
     "id": 4,
-    "img": "/static/samples/img/product4_640x426.jpg",
+    "img": "/img/product4_640x426.jpg",
     "name": "Banana",
     "attribution": "pixabay",
     "price": "1.50",
@@ -37,7 +37,7 @@
     "color": "yellow"
   }, {
     "id": 5,
-    "img": "/static/samples/img/product5_640x408.jpg",
+    "img": "/img/product5_640x408.jpg",
     "name": "Watermelon",
     "attribution": "pixabay",
     "price": "4.50",
@@ -46,7 +46,7 @@
     "color": "red"
   }, {
     "id": 6,
-    "img": "/static/samples/img/product6_640x424.jpg",
+    "img": "/img/product6_640x424.jpg",
     "name": "Melon",
     "attribution": "pixabay",
     "price": "3.50",

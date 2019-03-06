@@ -1,0 +1,11 @@
+{
+  "templateId": "video-template",
+  "data": {
+    "videoSource": "https://ampbyexample.com/video/ad-google-home.mp4",
+    "poster": "https://ampbyexample.com/img/ad-google-home.jpg"
+  },
+  "vars": {
+    "ctaType": "SHOP",
+    "ctaUrl": "https://ampproject.org"
+  }
+}
