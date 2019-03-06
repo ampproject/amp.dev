@@ -73,7 +73,7 @@ AMP は、一般的なデータ収集方法として次の 2 つをサポート�
 サイト運営者所有のエンドポイントにデータを送信する場合は、
 `type` 属性の指定を省略します。
 このようにすると、アナリティクス データは
-[リクエスト](/ja/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
+[リクエスト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
 
 アナリティクス ベンダーの設定を行うと、手早く
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使い始めることができます。
@@ -139,7 +139,7 @@ JSON オブジェクトには、アナリティクス アカウントの変数�
 
 AMP では、同じ変数が複数使用されていないかどうかの検証は行われません。
 値は、変数置換の優先順位に基づいて設定され、
-リモート URL の値が最優先されます（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)についての説明をご確認ください）。
+リモート URL の値が最優先されます（[変数置換の順序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)についての説明をご確認ください）。
 
 [/tip]
 
@@ -246,11 +246,11 @@ AMP では次のトリガー設定をサポートしています。
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必須）</td>
-      <td data-th="Description">送信するリクエストの名前（<a href="/ja/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a> で指定した名前）です。</td>
+      <td data-th="Description">送信するリクエストの名前（<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">requests</a> で指定した名前）です。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">キーと値のペアを含むオブジェクトで、最上位の設定で指定された <code>vars</code> をオーバーライドするため、またはこのトリガーに固有の <code>vars</code> を指定するために使用します（<a href="/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">変数置換の順序</a>についての説明もご覧ください）。</td>
+      <td data-th="Description">キーと値のペアを含むオブジェクトで、最上位の設定で指定された <code>vars</code> をオーバーライドするため、またはこのトリガーに固有の <code>vars</code> を指定するために使用します（<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">変数置換の順序</a>についての説明もご覧ください）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>（<code>on</code> が <code>click</code> に設定されている場合は必須）</td>
@@ -269,7 +269,7 @@ AMP では次のトリガー設定をサポートしています。
 
 [tip type="important"]
 
-優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご確認ください）。
+優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます（[変数置換の順序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)をご確認ください）。
 
 [/tip]
 

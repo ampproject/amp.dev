@@ -6,7 +6,7 @@ Selamat! Anda baru saja membuat halaman detail produk e-commerce interaktif deng
 
 Anda telah mempelajari cara:
 
-- Menggunakan [`<amp-state>`](/id/docs/reference/components/amp-bind.html#state) untuk mengambil informasi produk (warna, ukuran, ketersediaan).
+- Menggunakan [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) untuk mengambil informasi produk (warna, ukuran, ketersediaan).
 - Menggunakan [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) untuk membuat interaksi lintas elemen.
 - Membuat pengalaman pengguna yang cepat dan kaya menggunakan AMP!
 

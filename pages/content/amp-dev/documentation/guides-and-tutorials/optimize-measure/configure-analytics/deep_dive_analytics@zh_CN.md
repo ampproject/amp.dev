@@ -73,7 +73,7 @@ AMP 支持两种常见的数据收集模式：
 要将数据发送到发布商拥有的端点，
 只需不添加 `type` 属性即可；
 如此一来，
-对于每项[请求](/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)，系统都会将分析数据发送到请求中指定的端点。
+对于每项[请求]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute)，系统都会将分析数据发送到请求中指定的端点。
 
 借助分析服务供应商的配置，
 您可以快速开始使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})。
@@ -139,7 +139,7 @@ JSON 对象中包含的配置仅仅是分析工具帐号的变量值。
 
 AMP 不会验证同一变量的多种用法。
 值的填充会遵循变量替换优先顺序，
-远程网址中的值在该顺序中列在首位（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+远程网址中的值在该顺序中列在首位（请参阅[变量替换顺序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)）。
 
 [/tip]
 
@@ -246,11 +246,11 @@ AMP 支持以下触发器配置：
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必需）</td>
-      <td data-th="Description">要发送的请求的名称（如<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">请求</a>中所指定）。</td>
+      <td data-th="Description">要发送的请求的名称（如<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">请求</a>中所指定）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">一个包含特定键值对（用于替换在顶层配置中定义的 <code>vars</code> 或指定此触发器独有的 <code>vars</code>）的对象（另请参阅<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替换顺序</a>）。</td>
+      <td data-th="Description">一个包含特定键值对（用于替换在顶层配置中定义的 <code>vars</code> 或指定此触发器独有的 <code>vars</code>）的对象（另请参阅<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">变量替换顺序</a>）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>（当 <code>on</code> 设为 <code>click</code> 时的必需配置）</td>
@@ -269,7 +269,7 @@ AMP 支持以下触发器配置：
 
 [tip type="important"]
 
-来自优先级较低的配置的触发器会被来自优先级较高的配置的同名触发器替换（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+来自优先级较低的配置的触发器会被来自优先级较高的配置的同名触发器替换（请参阅[变量替换顺序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)）。
 
 [/tip]
 

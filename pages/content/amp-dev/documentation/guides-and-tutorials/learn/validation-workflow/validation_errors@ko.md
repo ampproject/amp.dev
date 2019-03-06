@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
-이러한 태그는 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})에서도 언급됩니다.
+이러한 태그는 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})에서도 언급됩니다.
 
 ### 다른 태그에 필요한 태그 누락
 
@@ -104,7 +104,7 @@ limitations under the License.
 </table>
 
 태그는 허용된 것만 사용할 수 있기 때문에 허용되지 않는 모든 태그를
-나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})에서
+나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})에서
 허용되지 않는 태그의 광범위한 목록을 확인할 수 있습니다.
 
 ### 맞춤 자바스크립트는 허용되지 않음
@@ -640,7 +640,7 @@ URL이 잘못된 경우에 발생합니다.
 스타일과 레이아웃 오류를 살펴보기 전에
 AMP에서
 [스타일링](/ko/docs/design/responsive/style_pages.html)과
-[레이아웃](/ko/docs/design/responsive/control_layout.html)이 어떻게 작동하는지 알아보는 것이 좋습니다.
+[레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})이 어떻게 작동하는지 알아보는 것이 좋습니다.
 AMP 페이지는 HTML 페이지이기 때문에 HTML 페이지와 스타일링이 거의 유사합니다.
 하지만 페이지가 빨리 로드되게 하기 위해 몇 가지 제한사항이 있으며
 AMP 유효성 검사 도구는 이러한 제한사항을 적용합니다.
@@ -724,7 +724,7 @@ CSS를 실행해 보시기 바랍니다.
 
 이 오류는 AMP에서 몇 가지 규칙만이 허용되는
 CSS 내 @ 규칙을 말합니다.
-[AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})도 참조하세요.
+[AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})도 참조하세요.
 예를 들어 <code>@import</code>는 허용되지 않습니다.
 이 유효성 오류는
 잘못된 규칙이 무엇인지 구체적으로 알려 주기 때문에
@@ -857,7 +857,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 
 이 오류는 속성 값이 지정된 레이아웃에 맞지 않을 때 발생합니다.
 이 오류가 발생하는 이유를 이해하려면
-[레이아웃의 다양한 동작](/ko/docs/design/responsive/control_layout.html#size-and-position-elements)을
+[레이아웃의 다양한 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)을
 숙지해야 합니다.
 
 레이아웃을 `fixed-height`으로 설정하고

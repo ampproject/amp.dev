@@ -57,7 +57,7 @@ As seguintes tags precisam estar presentes em todos os documentos AMP:
 * <a name="body"></a>`<body>`
 
 Essas tags obrigatórias incluem um campo `mandatory: true` nas <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">especificações do validador de AMP</a> (em inglês).
-Elas também são mencionadas nas [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}).
+Elas também são mencionadas nas [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
 
 ### A tag exigida por outra tag está ausente
 
@@ -104,7 +104,7 @@ copie e cole o script necessário na tag `<head>` do documento AMP.
 </table>
 
 As tags são colocadas na lista de permissões. Por isso, não há uma lista definitiva de todas as tags não permitidas.
-No entanto, as [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})
+No entanto, as [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
 definem amplamente o conjunto de tags não permitidas.
 
 ### Não é permitido usar JavaScript personalizado
@@ -724,7 +724,7 @@ por meio de um validador on-line desse formato, como o
 
 Esse erro se refere às regras "@" no CSS.
 A tecnologia AMP permite somente algumas regras desse tipo
-(consulte também as [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})).
+(consulte também as [especificações das AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})).
 Por exemplo, <code>@import</code> não é permitido.
 O erro de validação diz especificamente
 que a regra é inválida,

@@ -57,7 +57,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="body"></a>`<body>`
 
 Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
-tag tersebut juga dirujuk dalam [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}).
+tag tersebut juga dirujuk dalam [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
@@ -104,7 +104,7 @@ salin skrip yang diperlukan, lalu tempel ke `<head>` dokumen AMP.
 </table>
 
 Tag disertakan dalam daftar yang disetujui, sehingga tidak ada daftar definitif semua tag yang tidak diizinkan;
-namun, [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})
+namun, [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
 secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 
 ### JavaScript kustom tidak diizinkan
@@ -724,7 +724,7 @@ lewat validator CSS online, misalnya,
 
 Error ini mengacu pada @-rules dalam CSS,
 untuk AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}})).
+(lihat juga [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})).
 Misalnya, <code>@import</code> tidak diizinkan.
 Error validasi secara spesifik
 memberi tahu Anda aturan yang tidak valid,

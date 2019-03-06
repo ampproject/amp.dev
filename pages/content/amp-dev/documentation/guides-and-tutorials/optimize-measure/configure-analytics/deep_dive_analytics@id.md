@@ -246,11 +246,11 @@ AMP mendukung konfigurasi pemicu berikut:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (wajib)</td>
-      <td data-th="Description">Nama permintaan yang akan dikirim (seperti ditentukan dalam <a href="/id/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">permintaan</a>).</td>
+      <td data-th="Description">Nama permintaan yang akan dikirim (seperti ditentukan dalam <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">permintaan</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objek yang berisi key-value pair yang digunakan untuk menggantikan <code>vars</code> yang ditetapkan dalam konfigurasi level teratas, atau untuk menentukan <code>vars</code> yang unik bagi pemicu ini (lihat juga <a href="/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Pengurutan substitusi variabel</a>).</td>
+      <td data-th="Description">Objek yang berisi key-value pair yang digunakan untuk menggantikan <code>vars</code> yang ditetapkan dalam konfigurasi level teratas, atau untuk menentukan <code>vars</code> yang unik bagi pemicu ini (lihat juga <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Pengurutan substitusi variabel</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (wajib jika <code>on</code> ditetapkan ke <code>click</code>)</td>

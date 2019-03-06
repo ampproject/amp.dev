@@ -246,11 +246,11 @@ AMP admite las siguientes configuraciones de activador:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obligatorio)</td>
-      <td data-th="Description">Nombre de la solicitud para enviar (tal como se especifica en las <a href="/es/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">solicitudes</a>).</td>
+      <td data-th="Description">Nombre de la solicitud para enviar (tal como se especifica en las <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">solicitudes</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Un objeto con pares clave-valor que se usan para anular <code>vars</code> definidos en la configuración de máximo nivel o para especificar <code>vars</code> únicos de este activador (consulta <a href="/es/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Orden de sustitución de variables</a>).</td>
+      <td data-th="Description">Un objeto con pares clave-valor que se usan para anular <code>vars</code> definidos en la configuración de máximo nivel o para especificar <code>vars</code> únicos de este activador (consulta <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Orden de sustitución de variables</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obligatorio si el valor de <code>on</code> es <code>click</code>)</td>

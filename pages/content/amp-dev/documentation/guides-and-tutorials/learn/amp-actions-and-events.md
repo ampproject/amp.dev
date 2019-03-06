@@ -617,7 +617,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>setState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
+      <p>Requires <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-ampsetstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state.</p>
       <p></p>
     </td>
@@ -625,7 +625,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>pushState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
+      <p>Requires <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#modifying-history-with-amppushstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </td>
   </tr>
 </table>

@@ -242,11 +242,11 @@ AMP supports the following trigger configurations:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (required)</td>
-      <td data-th="Description">Name of the request to send (as specified in the <a href="/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a>).</td>
+      <td data-th="Description">Name of the request to send (as specified in the <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">requests</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">An object containing key-value pairs used to override <code>vars</code> defined in the top level config, or to specify <code>vars</code> unique to this trigger (see also <a href="/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Variable substitution ordering</a>).</td>
+      <td data-th="Description">An object containing key-value pairs used to override <code>vars</code> defined in the top level config, or to specify <code>vars</code> unique to this trigger (see also <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Variable substitution ordering</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (required when <code>on</code> set to <code>click</code>)</td>

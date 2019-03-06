@@ -16,7 +16,7 @@ $title: レスポンシブな AMP ページを作成する
 
 ウェブページを最適化して、拡大縮小によってコンテンツがあらゆる端末のブラウザ ウィンドウに収まるようにするには、`meta` ビューポート要素を指定する必要があります。このビューポート要素は、ブラウザでウェブページの表示エリア（ビューポート）をどのように拡大縮小およびサイズ設定するかを指定します。
 
-この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.html', locale=doc.locale).url.path}}#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
+この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -48,7 +48,7 @@ $title: レスポンシブな AMP ページを作成する
 </style>
 ```
 
-詳細情報: AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ](/ja/docs/design/responsive/control_layout.html#layout-属性)をご覧ください。
+詳細情報: AMP のさまざまなレイアウトについて詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性)をご覧ください。
 
 <a id="fn1"></a>
 [tip type="note"]
@@ -113,7 +113,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 - 470～669 px の場合、`cat-medium.jpg`（450 x 340 px）を表示
 - 469 px 以下の場合、`cat-small.jpg`（226 x 340 px）を表示
 
-注: 画像のサイズを固定する（つまり、歪みが生じないようにする）必要があるため、レイアウトの値は指定していません。幅と高さが設定されているため、デフォルトで `layout=fixed` に設定されます。詳しくは、[「layout 属性が指定されていない場合」](/ja/docs/design/responsive/control_layout.html#layout-属性が指定されていない場合)をご覧ください。
+注: 画像のサイズを固定する（つまり、歪みが生じないようにする）必要があるため、レイアウトの値は指定していません。幅と高さが設定されているため、デフォルトで `layout=fixed` に設定されます。詳しくは、[「layout 属性が指定されていない場合」]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性が指定されていない場合)をご覧ください。
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
 

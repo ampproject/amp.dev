@@ -33,7 +33,7 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 ## 5. amp-iframe を使用する
 
-さらに 5 つ目の方法をご紹介しますが、これは最後の手段としてお考えください。上記のどの方法もニーズに適していない場合は、汎用的な [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) タグを使って、サイト運営者が貴社のコンテンツを埋め込むことができるようにします。しかし、この方法には、パフォーマンスやユーザー エクスペリエンスに関する落とし穴に起因するマイナス面がいくつかあります。詳しくは、[こちら](/ja/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe)をご覧ください。
+さらに 5 つ目の方法をご紹介しますが、これは最後の手段としてお考えください。上記のどの方法もニーズに適していない場合は、汎用的な [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) タグを使って、サイト運営者が貴社のコンテンツを埋め込むことができるようにします。しかし、この方法には、パフォーマンスやユーザー エクスペリエンスに関する落とし穴に起因するマイナス面がいくつかあります。詳しくは、[こちら]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#guideline:-prefer-specific-amp-components-to-amp-iframe)をご覧ください。
 
 ## まとめ
 

@@ -63,7 +63,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 在上面的示例中，我们将一个名为 pageview 的请求定义为 `https://foo.com/pixel?RANDOM`. 如前所述，RANDOM 将被替换为一个随机数，因此实际上，最终显示的请求将如下所示：`https://foo.com/pixel?0.23479283687235653498734`.
 
-当用户开始浏览网页（使用触发器关键字 `visible` 指定）时，事件将触发，并发送 `pageview` 请求。触发器属性决定了 pageview 请求何时触发。详细了解[请求和触发器](/zh_cn/docs/analytics/deep_dive_analytics.html#requests-triggers--transports)。
+当用户开始浏览网页（使用触发器关键字 `visible` 指定）时，事件将触发，并发送 `pageview` 请求。触发器属性决定了 pageview 请求何时触发。详细了解[请求和触发器]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#requests-triggers--transports)。
 
 ## 变量替换
 
@@ -107,7 +107,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 在上面的示例中，变量 `account` 和 `title` 是在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置中定义的。变量 `canonicalUrl` 和 `clientId` 不是在配置中定义的，因此它们的值将被平台替换。
 
-重要提示: 变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+重要提示: 变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)）。
 
 ## 用户识别
 

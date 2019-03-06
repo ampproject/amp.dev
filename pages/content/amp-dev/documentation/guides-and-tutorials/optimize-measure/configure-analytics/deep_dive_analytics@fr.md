@@ -236,11 +236,11 @@ AMP prend en charge les configurations suivantes pour le déclencheur :
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obligatoire)</td>
-      <td data-th="Description">Nom de la requête à envoyer (tel que spécifié dans les requêtes <a href="/fr/docs/analytics/deep_dive_analytics.html#quelles-données-sont-envoyées-:-l'attribut-requests"></a>).</td>
+      <td data-th="Description">Nom de la requête à envoyer (tel que spécifié dans les requêtes <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#quelles-données-sont-envoyées-:-l'attribut-requests"></a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objet contenant des paires clé/valeur utilisé pour remplacer la valeur <code>vars</code> dans la configuration de premier niveau ou pour spécifier une valeur <code>vars</code> unique à ce déclencheur (voir également <a href="/fr/docs/analytics/deep_dive_analytics.html#ordonnancement-de-la-substitution-des-variables">Ordonnancement de la substitution des variables</a>).</td>
+      <td data-th="Description">Objet contenant des paires clé/valeur utilisé pour remplacer la valeur <code>vars</code> dans la configuration de premier niveau ou pour spécifier une valeur <code>vars</code> unique à ce déclencheur (voir également <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ordonnancement-de-la-substitution-des-variables">Ordonnancement de la substitution des variables</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obligatoire lorsque <code>on</code> est défini sur <code>click</code>)</td>

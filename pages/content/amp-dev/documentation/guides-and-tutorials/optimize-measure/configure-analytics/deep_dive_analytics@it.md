@@ -236,11 +236,11 @@ AMP supporta le seguenti configurazioni di attivazione:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obbligatorio)</td>
-      <td data-th="Description">Nome della richiesta da inviare (come specificato nelle <a href="/it/docs/analytics/deep_dive_analytics.html#quali-dati-vengono-inviati:-attributo-requests">richieste</a>).</td>
+      <td data-th="Description">Nome della richiesta da inviare (come specificato nelle <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#quali-dati-vengono-inviati:-attributo-requests">richieste</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Un oggetto contenente le coppie chiave-valore usate per eseguire l’override delle <code>vars</code> definite nella configurazione di primo livello o per specificare <code>vars</code> univoche a questo trigger (vedi anche <a href="/it/docs/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili">Ordinamento della sostituzione delle variabili</a>).</td>
+      <td data-th="Description">Un oggetto contenente le coppie chiave-valore usate per eseguire l’override delle <code>vars</code> definite nella configurazione di primo livello o per specificare <code>vars</code> univoche a questo trigger (vedi anche <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ordinamento-della-sostituzione-delle-variabili">Ordinamento della sostituzione delle variabili</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obbligatorio quando <code>on</code> è impostato su <code>click</code>)</td>

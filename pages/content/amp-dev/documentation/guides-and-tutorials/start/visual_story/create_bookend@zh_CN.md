@@ -26,7 +26,7 @@ $title: 创建结束画面
 "bookendVersion": "v1.0",
 ```
 
-借助社交分享按钮，用户可以通过 Twitter、Facebook、Pinterest 等社交平台分享您的内容。您可以在 shareProviders 对象中指定社交分享提供程序，并创建一个数组，在其中包含各社交平台的[类型名称](/zh_cn/docs/reference/components/amp-social-share.html#pre-configured-providers)。
+借助社交分享按钮，用户可以通过 Twitter、Facebook、Pinterest 等社交平台分享您的内容。您可以在 shareProviders 对象中指定社交分享提供程序，并创建一个数组，在其中包含各社交平台的[类型名称]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers)。
 
 对于本教程，我们选择 Facebook、Twitter 和电子邮件作为分享提供程序：
 

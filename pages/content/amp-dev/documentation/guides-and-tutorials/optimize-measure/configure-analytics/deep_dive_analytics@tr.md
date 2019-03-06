@@ -70,7 +70,7 @@ ilgili satıcıya ayarlayın.
 Verileri yayıncıya ait bir son noktaya göndermek için,
 `type` özelliğini eklememeniz yeterlidir;
 analitik veriler her bir
-[istek](/tr/docs/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
+[istek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
 
 Analytics satıcı yapılandırmaları [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})‹e başlamanın
 hızlı bir yoludur.
@@ -236,11 +236,11 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (gerekli)</td>
-      <td data-th="Description">Gönderilecek isteğin adı (<a href="/tr/docs/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
+      <td data-th="Description">Gönderilecek isteğin adı (<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="/tr/docs/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
+      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (<code>on</code>, <code>click</code> olarak ayarlandığında gereklidir)</td>

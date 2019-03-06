@@ -72,7 +72,7 @@ AMP는 데이터 수집의 두 가지 일반적인 패턴을 지원하도록 만
 제3자 분석 제공업체인 Google 애널리틱스로 보냅니다.
 게시자 소유 엔드포인트로 데이터를 보내려면
 `type` 속성을 포함하지 마세요.
-[요청](/ko/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)마다
+[요청]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute)마다
 정의된 엔드포인트로 분석 데이터가 전송됩니다.
 
 분석 공급업체 구성을 사용하면
@@ -246,11 +246,11 @@ AMP는 다음 트리거 구성을 지원합니다.
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>(필수)</td>
-      <td data-th="Description">전송하는 요청의 이름입니다(<a href="/ko/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">요청</a>에 지정되어 있음).</td>
+      <td data-th="Description">전송하는 요청의 이름입니다(<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">요청</a>에 지정되어 있음).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">최상위 구성에 정의된 <code>vars</code>를 재정의하거나 이 트리거에 고유한 <code>vars</code>를 지정하는데 사용되는 키-값 쌍을 포함하는 개체입니다(<a href="/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">변수 대체 순위</a> 참조).</td>
+      <td data-th="Description">최상위 구성에 정의된 <code>vars</code>를 재정의하거나 이 트리거에 고유한 <code>vars</code>를 지정하는데 사용되는 키-값 쌍을 포함하는 개체입니다(<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">변수 대체 순위</a> 참조).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>(<code>on</code>이 <code>click</code>으로 설정된 경우 필수)</td>

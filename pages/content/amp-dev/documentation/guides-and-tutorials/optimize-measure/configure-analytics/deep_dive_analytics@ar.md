@@ -236,11 +236,11 @@ $title: نظرة عميقة على AMP Analytics
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (مطلوب)</td>
-      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="/ar/docs/analytics/deep_dive_analytics.html#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests">الطلبات</a>).</td>
+      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests">الطلبات</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="/ar/docs/analytics/deep_dive_analytics.html#ترتيب-استبدال-المتغير">ترتيب استبدال المتغير</a>).</td>
+      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ترتيب-استبدال-المتغير">ترتيب استبدال المتغير</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (مطلوب عند تعيين <code>on</code> على <code>click</code>)</td>

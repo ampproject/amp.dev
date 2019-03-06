@@ -68,4 +68,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## 例
 
-[デモページ（**上級編**）](https://ampbyexample.com/components/amp-iframe/)では、さらに高度なサンプルをご覧いただけます。
+[デモページ（**上級編**）]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})では、さらに高度なサンプルをご覧いただけます。

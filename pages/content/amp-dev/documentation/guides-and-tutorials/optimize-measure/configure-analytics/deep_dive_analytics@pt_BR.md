@@ -246,11 +246,11 @@ A tecnologia AMP é compatível com as seguintes configurações de acionador:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obrigatório)</td>
-      <td data-th="Description">É o nome da solicitação a ser enviada, conforme <a href="/pt_br/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">especificado nas solicitações</a>.</td>
+      <td data-th="Description">É o nome da solicitação a ser enviada, conforme <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">especificado nas solicitações</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">É um objeto que tem pares de chave-valor usados para modificar <code>vars</code> definidos na configuração de nível superior ou para especificar <code>vars</code> exclusivos a esse acionador. Consulte também <a href="/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Ordem da substituição de variáveis</a>.</td>
+      <td data-th="Description">É um objeto que tem pares de chave-valor usados para modificar <code>vars</code> definidos na configuração de nível superior ou para especificar <code>vars</code> exclusivos a esse acionador. Consulte também <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Ordem da substituição de variáveis</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obrigatório quando <code>on</code> está definido como <code>click</code>)</td>

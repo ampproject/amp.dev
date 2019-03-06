@@ -2,7 +2,7 @@
 $title: 创作 AMP 故事的最佳做法
 ---
 
-本指南介绍了在创作 [AMP 故事](/zh_cn/docs/reference/components/amp-story.html)时应采取的最佳做法。
+本指南介绍了在创作 [AMP 故事]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})时应采取的最佳做法。
 
 ## 背景颜色
 
@@ -174,4 +174,3 @@ AMP 故事视频始终是竖直显示的（即纵向视图），要求宽高比�
 ```
 
 这样做的原因是，视频可能不会恰好在网页显示的同时开始播放，或者指定的时长可能不正确，导致预计时长与实际时长之间存在差异。这种情况可能会导致视频循环播放，进而分散用户的注意力。
- 

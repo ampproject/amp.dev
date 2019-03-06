@@ -33,7 +33,7 @@ AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 �
 
 ## 5. amp-iframe 사용
 
-잠깐, 다섯 번째 방법이 있다고요? 사실 이 방법은 최후의 수단입니다. 위의 방법 중 아무것도 도움이 되지 않는 경우, 일반적인 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) 태그를 사용하여 게시자가 내 콘텐츠를 삽입하게 할 수 있습니다. 하지만 성능 및 사용자 환경과 관련된 몇 가지 함정([여기](/ko/docs/reference/components/amp-iframe.html#guideline:-prefer-specific-amp-components-to-amp-iframe)에서 확인)으로 인해 이 접근방식에는 몇 가지 단점이 있습니다.
+잠깐, 다섯 번째 방법이 있다고요? 사실 이 방법은 최후의 수단입니다. 위의 방법 중 아무것도 도움이 되지 않는 경우, 일반적인 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) 태그를 사용하여 게시자가 내 콘텐츠를 삽입하게 할 수 있습니다. 하지만 성능 및 사용자 환경과 관련된 몇 가지 함정([여기]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#guideline:-prefer-specific-amp-components-to-amp-iframe)에서 확인)으로 인해 이 접근방식에는 몇 가지 단점이 있습니다.
 
 ## 요약
 
