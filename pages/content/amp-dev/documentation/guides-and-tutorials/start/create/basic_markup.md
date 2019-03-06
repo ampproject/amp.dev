@@ -1,7 +1,7 @@
 ---
 $title: Create your AMP HTML page
 $order: 1
-description: 'Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or...'
+description: 'Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or ...'
 author: pbakaus
 contributors:
   - bpaduch

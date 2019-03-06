@@ -1,6 +1,6 @@
 ---
 $title: Supported CSS
-description: Like all web pages, AMP pages are styled with CSS, but you can't reference external stylesheets with the exception of custom fonts. Also certain styles are disallowed...
+description: Like all web pages, AMP pages are styled with CSS, but you can't reference external stylesheets with the exception of custom fonts. Also certain styles are disallowed ...
 formats:
   - websites
   - email

@@ -1,7 +1,7 @@
 ---
 $title: Create the image ad
 $order: 1
-description: "Our ad is a simple image with a hyperlink to the advertised site (a shameless plug for ampproject.org).  We'll display the image using the `amp-img` tag. Here's the code: ..."
+description: "Our ad is a simple image with a hyperlink to the advertised site (a shameless plug for ampproject.org).  We'll display the image using the amp-img tag. Here's the code: ..."
 ---
 
 Inside the `<body>` of your AMPHTML ad document, you can include HTML and AMP tags; however, not all tags are allowed.  Refer to the [AMPHTML ad spec](/docs/ads/a4a_spec.html#allowed-amp-extensions-and-builtins) for a list of allowed tags.

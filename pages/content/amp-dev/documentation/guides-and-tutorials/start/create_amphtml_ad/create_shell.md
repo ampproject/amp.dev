@@ -1,7 +1,7 @@
 ---
 $title: Create the shell for the ad
 $order: 0
-description: 'Using your favorite text editor, create an HTML file named `my-amphtml-ad.html`. Copy the following HTML markup into that file: ...'
+description: 'Using your favorite text editor, create an HTML file named my-amphtml-ad.html. Copy the following HTML markup into that file: ...'
 ---
 
 The [HTML required for an AMPHTML ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) is a variant of the [required AMPHTML for an AMP page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}). Let's get familiar with the required code by creating the shell of our AMPHTML ad.

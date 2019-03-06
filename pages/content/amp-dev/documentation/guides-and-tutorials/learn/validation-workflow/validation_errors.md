@@ -1,7 +1,7 @@
 ---
 $title: AMP validation errors
 $order: 1
-description: 'Valid AMP documents must not include any validation errors. The purpose of this document is to help you better understand and fix any validation errors...'
+description: 'Valid AMP documents must not include any validation errors. The purpose of this document is to help you better understand and fix any validation errors ...'
 formats:
   - websites
   - email

@@ -1,7 +1,7 @@
 ---
 $title: Layout & media queries
 $order: 1
-description: 'AMP supports both media queries &amp; element queries, plus comes with a powerful, built-in way to control the layout of individual elements. The `layout` attribute makes working with...'
+description: 'AMP supports both media queries &amp; element queries, plus comes with a powerful, built-in way to control the layout of individual elements. The layout attribute makes working with ...'
 formats:
   - websites
   - email

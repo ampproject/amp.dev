@@ -1,9 +1,7 @@
 ---
 $title: Congratulations!
 $order: 9
-description: 'You have successfully completed your first AMP story!
-In this tutorial, you learned to:
-- Create a multi-page story by using the `amp-story` component'
+description: 'You have successfully completed your first AMP story! In this tutorial, you learned to: - Create a multi-page story by using the amp-story component'
 author: bpaduch
 ---
 

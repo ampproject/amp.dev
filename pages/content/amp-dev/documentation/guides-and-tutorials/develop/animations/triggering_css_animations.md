@@ -1,7 +1,7 @@
 ---
 $title: Triggering CSS animations & transitions
 $order: 1
-description: 'Triggering CSS animations on pages relies on adding and removing classes, done via JavaScript. You can achieve the same behavior on AMP pages by using the `toggleClass` action...'
+description: 'Triggering CSS animations on pages relies on adding and removing classes, done via JavaScript. You can achieve the same behavior on AMP pages by using the toggleClass action ...'
 formats:
   - websites
   - ads

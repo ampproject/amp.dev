@@ -2,8 +2,7 @@
 $title: Setting up
 $order: 0
 description: 'Set up your development environment
-Step 1. Download the code
-Download the sample code for the tutorial either as a ZIP file or via git'
+Step 1. Download the code. Download the sample code for the tutorial either as a ZIP file or via git ...'
 $parent: /documentation/guides-and-tutorials/start/converting/setting-up.md
 ---
 

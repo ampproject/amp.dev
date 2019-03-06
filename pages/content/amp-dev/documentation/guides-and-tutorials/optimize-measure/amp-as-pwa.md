@@ -1,7 +1,7 @@
 ---
 $title: Easy offline access and improved performance
 $order: 1
-description: 'A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading...'
+description: 'A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...'
 formats:
   - websites
 author: crystalonscript

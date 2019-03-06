@@ -1,7 +1,7 @@
 ---
 $title: Prepare your page for discovery and distribution
 $order: 4
-description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search'
+description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search ...'
 author: pbakaus
 contributors:
   - bpaduch

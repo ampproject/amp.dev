@@ -1,7 +1,7 @@
 ---
 $title: Analytics vendors
 $order: 3
-description: 'This document lists analytics vendors that have built-in configurations for use with the `amp-analytics` component. To send analytics data to a third-party vendor:'
+description: 'This document lists analytics vendors that have built-in configurations for use with the amp-analytics component. To send analytics data to a third-party vendor.'
 formats:
   - websites
 ---

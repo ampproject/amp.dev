@@ -1,7 +1,7 @@
 ---
 $title: Creating the bookend
 $order: 7
-description: Now that you've added all of your pages, let's look at the last screen of the story, the "bookend". This last screen wraps up the story...
+description: Now that you've added all of your pages, let's look at the last screen of the story, the bookend. This last screen wraps up the story ...
 author: bpaduch
 ---
 
