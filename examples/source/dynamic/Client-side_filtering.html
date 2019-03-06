@@ -17,8 +17,7 @@ This is a sample showing how to implement client-side filtering.
 
   <!-- ## Setup -->
   <!--
-    Additionally used AMP components must be imported in the header. We use `amp-bind` to store products
-    locally into a variable.
+    Additionally used AMP components must be imported in the header. We use `amp-bind` to store products locally into a variable.
   -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <!--
@@ -30,7 +29,7 @@ This is a sample showing how to implement client-side filtering.
   -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
-  <link rel="canonical" href="<%host%>/dynamic_amp/client-side_filtering/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/client-side_filtering.html">
   <title>Client-side filtering</title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -44,12 +43,9 @@ This is a sample showing how to implement client-side filtering.
 
     It is possible to implement client-side filtering by using `amp-list`, `amp-state` and `amp-bind`.
 
-    The `amp-state` is initially setup with data from an endpoint which returns a list of available products;
-    the user can choose between different colors and that selection sets the variable `filteredProducts` to the result of a filter expression.
-    The filter expression is an `amp-bind` expression which uses the `Array.filter` function.
+    The `amp-state` is initially setup with data from an endpoint which returns a list of available products; the user can choose between different colors and that selection sets the variable `filteredProducts` to the result of a filter expression. The filter expression is an `amp-bind` expression which uses the `Array.filter` function.
 
-    The `filteredProducts` variable is then used as `src` of `amp-list`. `amp-list` does not resize automatically, but it is possible to calculate its height in the filtered state by using `amp-bind`: here we are binding the
-    `[height]` to the length of the `filteredProducts` array times the height of a single element.
+    The `filteredProducts` variable is then used as `src` of `amp-list`. `amp-list` does not resize automatically, but it is possible to calculate its height in the filtered state by using `amp-bind`: here we are binding the `[height]` to the length of the `filteredProducts` array times the height of a single element.
 
     The alternative to this approach is using server-side filtering which we explain in the [product sample](https://ampbyexample.com/samples_templates/product_browse_page/).
   -->

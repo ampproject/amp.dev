@@ -23,7 +23,7 @@ teaserImage: '/static/samples/img/teaser/mixing_dynamic_and_cached_data.jpg'
   <!-- We use `amp-mustache` as a templating for `amp-list` -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
-  <link rel="canonical" href="<%host%>/dynamic_amp/mixing_dynamic_and_cached_data/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/advanced/mixing_dynamic_and_cached_data.html">
   <title>Dynamic and cached product data details</title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -50,9 +50,10 @@ teaserImage: '/static/samples/img/teaser/mixing_dynamic_and_cached_data.jpg'
      </amp-list>
    </div>
   <!-- if you need to make multiple calls to get all the data, that is not a problem in AMP since if multiple `amp-list` with the same `src` are found in the page, only one network call is actually made by the AMP runtime.
+
   By checking the network tab of the Chrome dev console, you can check that this second `amp-list` does not cause a second network call.
-  Since we are using a [service-worker](https://www.ampproject.org/docs/reference/components/amp-install-serviceworker) you may see
-  two similar calls one after the other to the same endpoint, so to better verify this behaviour, go to Application -> Service workers and click on Unregister.-->
+
+  Since we are using a [service-worker](https://www.ampproject.org/docs/reference/components/amp-install-serviceworker) you may see two similar calls one after the other to the same endpoint, so to better verify this behaviour, go to Application -> Service workers and click on Unregister.-->
   <amp-list height="24"
             layout="fixed-height"
             src="/static/samples/json/product.json"
