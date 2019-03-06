@@ -32,10 +32,10 @@ nav[toolbar] {
     background-color: rgba(color('black'), 0.10);
   }
 
-  // & > ul {
-  //   margin: 0;
-  //   padding: 0;
-  // }
+  & > ul {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .#{utility('ampsidebar')} {
