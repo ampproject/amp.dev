@@ -26,7 +26,7 @@ Cada pantalla del enmarcado requiere una `bookendVersion`, que en este tutorial 
 "bookendVersion": "v1.0",
 ```
 
-Los lectores pueden compartir tu contenido en las redes sociales, como Twitter, Facebook, Pinterest y otros, mediante los botones para compartir. Especifica tus proveedores de redes sociales en el objeto shareProviders y crea una matriz que contenga los [nombres de tipo](/es/docs/reference/components/amp-social-share.html#pre-configured-providers) de cada una de las plataformas sociales.
+Los lectores pueden compartir tu contenido en las redes sociales, como Twitter, Facebook, Pinterest y otros, mediante los botones para compartir. Especifica tus proveedores de redes sociales en el objeto shareProviders y crea una matriz que contenga los [nombres de tipo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers) de cada una de las plataformas sociales.
 
 Para este tutorial, hemos escogido Facebook, Twitter y el correo electrónico como proveedores para compartir contenido:
 

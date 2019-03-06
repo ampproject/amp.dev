@@ -13,39 +13,39 @@ Here are some quick tips to improve user engagement with AMP.
 
 - **Feature your most engaging content** when converting your pages. Include key page elements like images, videos, embeds, structured data, comments and social media. Learn how to [include 3rd-party content]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md', locale=doc.locale).url.path}}).
 
-- **Keep AMP pages current.** Dynamically update live blogs with [`amp-live-list`](/docs/reference/components/amp-live-list.html).
+- **Keep AMP pages current.** Dynamically update live blogs with [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
 ### Optimize for user engagement and retention
 
-- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`](/docs/reference/components/amp-carousel.html) to create rich image carousels and [`amp-iframe`](/docs/reference/components/amp-iframe.html) to
+- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) to create rich image carousels and [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) to
 incorporate interactive elements that AMP does not natively support.
 
 - **Create personalized user journeys.** Offer a login button, and if your content
-lives behind a paywall, implement your rules and offers using [`amp-access`](/docs/reference/components/amp-access.html).
+lives behind a paywall, implement your rules and offers using [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 - **Extend onward journeys.** Link to related or suggested articles and other
 relevant sections of your site.
 
-- **Personalize content** by including recommendations through [`amp-list`](/docs/reference/components/amp-list.html).
+- **Personalize content** by including recommendations through [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}).
 
-- **Implement a menu** with [`amp-sidebar`](/docs/reference/components/amp-sidebar.html) to encourage users to browse the rest
+- **Implement a menu** with [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) to encourage users to browse the rest
 of your site.
 
-- **Help readers share your content** with [`amp-social-share`](/docs/reference/components/amp-social-share.html) and your
+- **Help readers share your content** with [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) and your
 own share buttons.
 
 - **Cultivate new interactions** such as lead generation, newsletter signup, and
-comment support with [`amp-form`](/docs/reference/components/amp-form.html).
+comment support with [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}).
 
 - **Aim for ad types that offer a good reader experience.** Explore AMP ad
-formats such as [`amp-sticky-ad`](/docs/reference/components/amp-sticky-ad.html) and [`amp-fx-flying-carpet`](/docs/reference/components/amp-fx-flying-carpet.html). Follow ads
+formats such as [`amp-sticky-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}}) and [`amp-fx-flying-carpet`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}}). Follow ads
 monetization [best practices]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}).
 
 - **Drive app downloads.** Include an app install link in a banner with
-[`amp-app-banner`](/docs/reference/components/amp-app-banner.html).
+[`amp-app-banner`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-app-banner.md', locale=doc.locale).url.path}}).
 
 - **Ensure a fast transition** to your non-AMP Progressive Web App (PWA) site for
-readers. Use [`amp-install-serviceworker`](/docs/reference/components/amp-install-serviceworker.html) to populate your cache.
+readers. Use [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) to populate your cache.
 
 ### Participate in the open-source AMP Project to help shape its development
 

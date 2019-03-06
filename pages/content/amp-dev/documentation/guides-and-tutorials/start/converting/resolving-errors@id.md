@@ -149,7 +149,7 @@ Ini secara efektif mengesampingkan penggunaan semua JavaScript buatan pengguna/p
 Pembatasan pada skrip buatan pengguna/pihak ketiga tidak berlaku untuk skrip berikut:
 
 1.  Skrip yang menambahkan metadata ke halaman atau yang mengonfigurasi komponen AMP. Skrip ini akan memiliki atribut jenis `application/ld+json` atau `application/json`.
-2.  Skrip yang disertakan dalam iframe.  Menyertakan JavaScript dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti menggunakan [Komponen AMP](/id/docs/reference/components.html). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya.
+2.  Skrip yang disertakan dalam iframe.  Menyertakan JavaScript dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti menggunakan [Komponen AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya.
 [/tip]
 
 Coba buka file [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) eksternal. Apa yang Anda lihat? File tidak boleh berisi kode JavaScript sama sekali dan hanya boleh menyertakan komentar informasi sebagaimana berikut:
@@ -329,5 +329,5 @@ AMP validation successful.
 ### Pertanyaan Umum (FAQ)
 
 - [Apa yang dimaksud dengan perubahan posisi DOM?](http://stackoverflow.com/a/27637245)
-- [Bagaimana jika atribut tata letak tidak ditentukan?](/id/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [Bagaimana jika lebar dan tinggi tidak ditentukan?](/id/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [Bagaimana jika atribut tata letak tidak ditentukan?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
+- [Bagaimana jika lebar dan tinggi tidak ditentukan?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)

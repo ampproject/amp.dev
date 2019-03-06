@@ -8,6 +8,14 @@ $showTime: 2s;
 .#{molecule('rolling-formats')} {
   display: inline-block;
 
+  &-space {
+
+    @media (min-width: 768px) {
+      display: inline-block;
+      width: 10px;
+    }
+  }
+
   &-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -23,6 +31,15 @@ $showTime: 2s;
     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     animation-iteration-count: infinite;
     animation-fill-mode: backwards;
+
+    @media (min-width: 768px) {
+      margin-left: auto;
+    }
+
+    @media (min-width: 1024px) {
+      margin-left: 0;
+    }
+
 
     &:nth-child(2) { animation-delay: $showTime * 4 * 1 / 4; }
     &:nth-child(3) { animation-delay: $showTime * 4 * 1 / 2; }

@@ -127,7 +127,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 AMP 形式では、AMP プロジェクトが提供している JavaScript ファイルを除いて、ページにカスタムの JavaScript を
 追加することはできません。JavaScript の一般的な用法の多くは、
 AMP HTML ライブラリに対応する実装があります。AMP HTML ページの
-拡張に使用できるコンポーネントについては、[AMP コンポーネント](/ja/docs/reference/components.html)
+拡張に使用できるコンポーネントについては、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 をご覧ください。
 
 ご自分の使用例が取り上げられていない場合は、AMP プロジェクトに

@@ -23,7 +23,7 @@ e i dati di coinvolgimento sui social a un altro URL.
 L’analisi AMP è concepita appositamente per eseguire una sola misurazione e generare più tipi di rapporti.
 Se collabori già con uno o più fornitori di soluzioni di analisi,
 verifica la
-[specifica amp-analytics](/it/docs/reference/components/amp-analytics.html)
+[specifica amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 per vedere se hanno integrato AMP nella propria soluzione.
 In tal caso, basta semplicemente creare il link ai relativi documenti dalla specifica
 e iniziare a seguire le istruzioni.

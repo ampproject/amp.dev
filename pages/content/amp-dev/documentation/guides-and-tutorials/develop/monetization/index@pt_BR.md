@@ -6,11 +6,11 @@ Este guia oferece instruções e práticas recomendadas para a exibição de an�
 
 ## Adicionar anúncios à página
 
-Quando você quer exibir anúncios em páginas não AMP (HTML tradicional), basta incluir um snippet de JavaScript para veicular anúncios da rede de publicidade.  Por motivos de segurança e desempenho, não é possível incluir JavaScript de terceiros em páginas AMP.  Portanto, para exibir anúncios nas AMP, é preciso adicionar o componente personalizado [`<amp-ad>`](/pt_br/docs/reference/components/amp-ad.html) à página AMP.
+Quando você quer exibir anúncios em páginas não AMP (HTML tradicional), basta incluir um snippet de JavaScript para veicular anúncios da rede de publicidade.  Por motivos de segurança e desempenho, não é possível incluir JavaScript de terceiros em páginas AMP.  Portanto, para exibir anúncios nas AMP, é preciso adicionar o componente personalizado [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) à página AMP.
 
 [tip type="success"]
 
-Consulte o site [AMP By Example para ver uma demonstração ao vivo](https://ampbyexample.com/components/amp-ad/) de como adicionar uma tag de anúncio AMP a uma página AMP.
+Consulte o site [AMP By Example para ver uma demonstração ao vivo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) de como adicionar uma tag de anúncio AMP a uma página AMP.
 
 [/tip]
 
@@ -28,7 +28,7 @@ O componente `<amp-ad>` é uma extensão de anúncio personalizada para a biblio
 
 Mais de cem [redes de publicidade e servidores de anúncios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) oferecem integrações incorporadas às AMP.  Para adicionar um anúncio de uma determinada rede de publicidade, adicione a tag `<amp-ad>` e especifique a rede no atributo `type`.
 
-Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da rede a9: 
+Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da rede a9:
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da red
 
 ### Etapa 3: especifique o tamanho do bloco de anúncios
 
-Adicione os atributos `width` e `height` à tag `<amp-ad>`.  Isso especificará o tamanho do anúncio na página AMP: 
+Adicione os atributos `width` e `height` à tag `<amp-ad>`.  Isso especificará o tamanho do anúncio na página AMP:
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -58,7 +58,7 @@ Cada rede exige atributos de dados específicos para veicular os anúncios.  Con
 </amp-ad>
 ```
 
-### Etapa 5: (opcional) especifique um marcador 
+### Etapa 5: (opcional) especifique um marcador
 
 Dependendo da rede de publicidade, você pode optar por mostrar um marcador até que o anúncio esteja disponível para visualização. Isso evita espaços em branco, melhorando a experiência do usuário.  Para especificar um marcador, adicione um elemento filho com o atributo `placeholder`. Saiba mais no artigo sobre [marcadores e substitutos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
@@ -72,7 +72,7 @@ Dependendo da rede de publicidade, você pode optar por mostrar um marcador até
 </amp-ad>
 ```
 
-### Etapa 6: (opcional) especifique um substituto 
+### Etapa 6: (opcional) especifique um substituto
 
 Dependendo da rede de publicidade, você pode optar por mostrar um elemento substituto se não houver um anúncio disponível para veiculação. Para especificar um substituto, adicione um elemento filho com o atributo `fallback`. Saiba mais no artigo sobre [marcadores e substitutos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
@@ -90,11 +90,11 @@ Parabéns! Você já está veiculando anúncios na sua página AMP.
 
 ## Veicular anúncios HTML para AMP de venda direta
 
-O componente [`amp-ad`](/pt_br/docs/reference/components/amp-ad.html) veicula anúncios da rede que você especificar.  Esses anúncios podem ser HTML padrão ou HTML para AMP, desde que a rede seja compatível com anúncios HTML para AMP. Para veicular seus anúncios de venda direta em HTML para AMP, crie o anúncio desse tipo de acordo com os requisitos das [especificações de anúncios HTML para AMP](/pt_br/docs/ads/a4a_spec.html) e use um [servidor de anúncios que veicule anúncios HTML para AMP](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers) (em inglês).
+O componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 ## Adicionar dados de segmentação a solicitações de anúncios
 
-Como parte do mecanismo de veiculação Fast Fetch, o recurso de configuração em tempo real (RTC, na sigla em inglês) permite que os editores incrementem as solicitações de anúncios com informações de segmentação próprias e de terceiros que são recuperadas no tempo de execução. O RTC permite até cinco frases de destaque nos servidores de segmentação para cada local de anúncio, e os resultados delas são anexados à solicitação de anúncio.  Para usar RTC nos seus anúncios, é preciso que sua rede de publicidade seja compatível com RTC e Fast Fetch.  
+Como parte do mecanismo de veiculação Fast Fetch, o recurso de configuração em tempo real (RTC, na sigla em inglês) permite que os editores incrementem as solicitações de anúncios com informações de segmentação próprias e de terceiros que são recuperadas no tempo de execução. O RTC permite até cinco frases de destaque nos servidores de segmentação para cada local de anúncio, e os resultados delas são anexados à solicitação de anúncio.  Para usar RTC nos seus anúncios, é preciso que sua rede de publicidade seja compatível com RTC e Fast Fetch.
 
 Saiba mais sobre RTC neste vídeo do YouTube:
 
@@ -127,21 +127,20 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
 *   **Evite criativos pesados**, de acordo com as [diretrizes do IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf (em inglês).
 *   **Evite intersticiais** ou outros formatos de anúncio que causem reflow de conteúdo ao carregar o anúncio.
 *   **Otimize a visibilidade** definindo data-loading-strategy como prefer-viewability-over-views.
-*   **Coloque anúncios no seu conteúdo de vídeo** usando [players compatíveis](/pt_br/docs/reference/components.html#media) ou [amp-iframe](https://ampbyexample.com/components/amp-iframe/) para ativar a receita em todos os tipos de conteúdo.
+*   **Coloque anúncios no seu conteúdo de vídeo** usando [players compatíveis]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) ou [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) para ativar a receita em todos os tipos de conteúdo.
 *   **Implemente anúncios nativos** para competir com os de display usando solicitações de anúncios de vários tamanhos. Isso aumenta a pressão de demanda e oferece aos leitores uma experiência do usuário premium.
 
 ### Inovação: ofereça os produtos de anúncios mais interessantes
 
 *   **Implemente anúncios em páginas AMP auxiliares** para gerar receita incremental:
-    *   [anúncios em um carrossel](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [anúncios em um lightbox](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   e [muito mais](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [anúncios em um carrossel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [anúncios em um lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   e [muito mais]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Implemente novos formatos de anúncios de venda direta** para que sua equipe de vendas ofereça produtos de anúncios inovadores e de alto impacto:
-    *   [anúncios fixos](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Flying Carpet](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [anúncios fixos]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Outros recursos
 
-*   [modelos de anúncios HTML para AMP](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
-*   [demonstração: como adicionar amp-ad à página AMP](https://ampbyexample.com/components/amp-ad/)
- 
+*   [modelos de anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
+*   [demonstração: como adicionar `amp-ad` à página AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

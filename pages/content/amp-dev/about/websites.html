@@ -11,12 +11,12 @@ flyout:
 format_filter: websites
 
 kpis:
-  - figure: 23%
-    description: Increase in returning users from mobile search
-    success_story: !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
   - figure: 6x
     description: More overall traffic
     success_story: !g.doc /content/amp-dev/about/success-stories/indiatoday.yaml
+  - figure: 23%
+    description: Increase in returning users from mobile search
+    success_story: !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
   - figure: 3x
     description: Faster page load time
     success_story: !g.doc /content/amp-dev/about/success-stories/gizmodo.yaml
@@ -70,11 +70,24 @@ kpis:
   </div>
 </section>
 
-{% with %}
-{% set kpis = doc.kpis %}
-{% set format = 'websites' %}
-{% include 'views/partials/kpis.j2' %}
-{% endwith %}
+<section class="ap--teaser-grid ap--container">
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
+      {% for kpi in doc.kpis %}
+        {% with %}
+        {% set teaser_doc = kpi.success_story %}
+        {% set teaser = {
+          "figure": kpi.figure,
+          "description": kpi.description,
+          "logo": teaser_doc.teaser.logo,
+          "text": teaser_doc.teaser.text
+        }%}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 <section class="ap--case-band">
   <div class="ap--container-fluid">

@@ -335,5 +335,5 @@ AMP validation successful.
 ### よくある質問
 
 - [DOM リフローとは](http://stackoverflow.com/a/27637245)
-- [layout 属性が定義されていない場合](/ja/docs/design/responsive/control_layout.html#layout-属性が指定されていない場合)
-- [width と height が定義されていない場合](/ja/docs/design/responsive/control_layout.html#幅と高さが指定されていない場合)
+- [layout 属性が定義されていない場合]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性が指定されていない場合)
+- [width と height が定義されていない場合]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})

@@ -6,11 +6,11 @@ Panduan ini memberikan petunjuk dan praktik terbaik untuk menampilkan iklan di h
 
 ## Menambahkan iklan ke halaman
 
-Di halaman non-AMP (HTML biasa), jika ingin menampilkan iklan di halaman, Anda perlu menyertakan cuplikan JavaScript untuk menayangkan iklan dari jaringan iklan Anda.  Karena alasan performa dan keamanan, Anda tidak dapat menyertakan JavaScript pihak ketiga di halaman AMP.  Oleh karena itu, untuk menampilkan iklan di AMP, Anda perlu menambahkan komponen [`<amp-ad>`](/id/docs/reference/components/amp-ad.html) kustom ke halaman AMP.
+Di halaman non-AMP (HTML biasa), jika ingin menampilkan iklan di halaman, Anda perlu menyertakan cuplikan JavaScript untuk menayangkan iklan dari jaringan iklan Anda.  Karena alasan performa dan keamanan, Anda tidak dapat menyertakan JavaScript pihak ketiga di halaman AMP.  Oleh karena itu, untuk menampilkan iklan di AMP, Anda perlu menambahkan komponen [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) kustom ke halaman AMP.
 
 [tip type="success"]
 
-Lihat [AMP By Example untuk demo langsung](https://ampbyexample.com/components/amp-ad/) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
+Lihat [AMP By Example untuk demo langsung]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
 
 [/tip]
 
@@ -28,7 +28,7 @@ Komponen `<amp-ad>` adalah ekstensi iklan kustom untuk library AMP. Di bawah `<a
 
 Lebih dari 100 [server dan jaringan iklan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}) menyediakan integrasi bawaan dengan AMP.  Untuk menambahkan iklan pada jaringan iklan tertentu, tambahkan tag `<amp-ad>`, dan tentukan jaringannya dalam atribut `type`.
 
-Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari jaringan a9: 
+Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari jaringan a9:
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ Pada contoh ini, kita akan menambahkan slot iklan untuk menayangkan iklan dari j
 
 ### Langkah 3: Tentukan ukuran unit iklannya
 
-Tambahkan atribut `width` dan `height` ke tag `<amp-ad>`.  Atribut ini menentukan ukuran iklan di halaman AMP Anda: 
+Tambahkan atribut `width` dan `height` ke tag `<amp-ad>`.  Atribut ini menentukan ukuran iklan di halaman AMP Anda:
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -58,7 +58,7 @@ Setiap jaringan memiliki atribut data spesifik yang dibutuhkan untuk menayangkan
 </amp-ad>
 ```
 
-### Langkah 5: (Opsional) Tentukan placeholder 
+### Langkah 5: (Opsional) Tentukan placeholder
 
 Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placeholder sampai iklan tersedia untuk ditayangkan. Hal ini memberikan pengalaman pengguna yang lebih baik dengan mencegah ruang kosong.  Untuk menentukan placeholder, tambahkan elemen turunan dengan atribut `placeholder`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
@@ -72,7 +72,7 @@ Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan placehol
 </amp-ad>
 ```
 
-### Langkah 6: (Opsional) Tentukan fallback 
+### Langkah 6: (Opsional) Tentukan fallback
 
 Bergantung pada jaringan iklannya, Anda dapat memilih untuk menampilkan elemen fallback jika tidak ada iklan yang tersedia untuk ditayangkan. Untuk menentukan fallback, tambahkan elemen turunan dengan atribut `fallback`. Pelajari lebih lanjut di [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
@@ -90,11 +90,11 @@ Selamat! Sekarang Anda siap menayangkan iklan di halaman AMP!
 
 ## Menayangkan iklan AMPHTML yang dijual langsung
 
-Komponen [`amp-ad`](/id/docs/reference/components/amp-ad.html) menayangkan iklan dari jaringan yang Anda tentukan.  Iklan tersebut dapat berupa iklan HTML standar atau iklan AMPHTML, asalkan jaringan iklannya mendukung iklan AMPHTML. Untuk menayangkan iklan yang dijual langsung sebagai iklan AMPHTML, buatlah iklan di AMP HTML sesuai dengan persyaratan [spesifikasi iklan AMPHTML](/id/docs/ads/a4a_spec.html) dan gunakan [server iklan yang menayangkan iklan AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Komponen [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 ## Meningkatkan data penargetan pada permintaan iklan
 
-Sebagai bagian dari mekanisme penayangan Fast Fetch, fitur Real-Time Config (RTC) memungkinkan penayang untuk meningkatkan permintaan iklan dengan informasi penargetan pihak pertama dan pihak ketiga yang diambil selama runtime. RTC mendukung hingga 5 pemanggilan ke server penargetan untuk setiap slot iklan individual, yang hasilnya ditambahkan ke akhir permintaan iklan.  Untuk menggunakan RTC pada iklan, jaringan iklan yang Anda gunakan harus mendukung RTC dan Fast Fetch.  
+Sebagai bagian dari mekanisme penayangan Fast Fetch, fitur Real-Time Config (RTC) memungkinkan penayang untuk meningkatkan permintaan iklan dengan informasi penargetan pihak pertama dan pihak ketiga yang diambil selama runtime. RTC mendukung hingga 5 pemanggilan ke server penargetan untuk setiap slot iklan individual, yang hasilnya ditambahkan ke akhir permintaan iklan.  Untuk menggunakan RTC pada iklan, jaringan iklan yang Anda gunakan harus mendukung RTC dan Fast Fetch.
 
 Anda dapat mempelajari lebih lanjut tentang RTC dari video YouTube ini:
 
@@ -127,21 +127,20 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 *   **Hindari materi iklan yang berat** sesuai [panduan IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 *   **Hindari iklan interstisial** atau format iklan lain yang menyebabkan konten diulang saat iklan dimuat.
 *   **Optimalkan visibilitas** dengan mengatur strategi pemuatan data agar lebih mengutamakan visibilitas daripada penayangan.
-*   **Tempatkan iklan dalam konten video** melalui [pemutar yang didukung](/id/docs/reference/components.html#media) atau [amp-iframe](https://ampbyexample.com/components/amp-iframe/) untuk mengaktifkan pendapatan pada semua jenis konten.
+*   **Tempatkan iklan dalam konten video** melalui [pemutar yang didukung]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) atau [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) untuk mengaktifkan pendapatan pada semua jenis konten.
 * **Terapkan iklan native** untuk bersaing dengan iklan display menggunakan permintaan iklan multi-ukuran, yang akan meningkatkan tekanan permintaan sekaligus memberikan pengalaman pengguna premium kepada pembaca Anda.
 
 ### Inovasi: Tawarkan produk iklan yang paling menarik
 
 * **Terapkan iklan pada halaman AMP tambahan** untuk menghasilkan pendapatan tambahan:
-    *   [Iklan di carousel](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [Iklan di lightbox](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   ... dan [lain-lain](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [Iklan di carousel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Iklan di lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   ... dan [lain-lain]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 * **Terapkan format baru untuk iklan yang dijual langsung** untuk membekali tim penjualan Anda dengan produk iklan inovatif yang berdampak tinggi:
-    *   [Iklan Melekat](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Flying Carpet](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [Iklan Melekat]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Referensi tambahan
 
-*   [Template iklan AMPHTML](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
-*   [Demo: Memperlihatkan cara menambah amp-ad ke halaman AMP](https://ampbyexample.com/components/amp-ad/)
- 
+*   [Template iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
+*   [Demo: Memperlihatkan cara menambah `amp-ad` ke halaman AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

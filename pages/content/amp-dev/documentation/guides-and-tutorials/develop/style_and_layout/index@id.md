@@ -7,7 +7,7 @@ Gaya dan tata letak pada halaman HTML AMP sangat mirip dengan halaman HTML norma
 Namun, AMP membatasi beberapa penggunaan CSS untuk alasan performa dan kegunaan, sekaligus memperluas kemampuan desain yang responsif dengan fitur seperti [placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}), [pengarahan seni lanjutan melalui srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) dan [atribut tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) untuk kontrol yang lebih baik terkait tampilan elemen Anda.
 
 [tip type="tip"]
-**TIP –** Membuat elemen responsif di AMP sangatlah mudah. Cukup letakkan `layout="responsive"` pada elemen. Untuk mempelajari lebih lanjut tentang Desain Responsif di AMP, buka [Membuat Halaman AMP Responsif](/id/docs/design/responsive/responsive_design.html).
+**TIP –** Membuat elemen responsif di AMP sangatlah mudah. Cukup letakkan `layout="responsive"` pada elemen. Untuk mempelajari lebih lanjut tentang Desain Responsif di AMP, buka [Membuat Halaman AMP Responsif]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Tonton UpperQuad yang menyampaikan perancangan ulang situs proyek AMP, termasuk tantangan dalam menggunakan AMP untuk pertama kalinya.']
@@ -83,7 +83,7 @@ Baca lebih lanjut: Pelajari lebih lanjut tentang [pengarahan seni dengan srcset 
 
 Gunakan validator AMP untuk menguji CSS dan nilai tata letak halaman.
 
-Validator mengonfirmasi bahwa halaman CSS Anda tidak melebihi batas 50.00 byte, memeriksa gaya yang tidak diizinkan, dan memastikan tata letak halaman didukung dan diformat dengan benar. Lihat juga daftar lengkap [Error gaya dan tata letak](/id/docs/troubleshooting/validation_errors.html#style-and-layout-errors).
+Validator mengonfirmasi bahwa halaman CSS Anda tidak melebihi batas 50.00 byte, memeriksa gaya yang tidak diizinkan, dan memastikan tata letak halaman didukung dan diformat dengan benar. Lihat juga daftar lengkap [Error gaya dan tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#style-and-layout-errors).
 
 Contoh error di konsol halaman dengan CSS yang melebihi batas 50.000 byte:
 
