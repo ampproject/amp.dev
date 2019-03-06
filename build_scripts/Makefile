@@ -68,3 +68,4 @@ update-status:
 
 update-stop:
 	gcloud compute instance-groups managed rolling-action stop-proactive-update ${INSTANCE_GROUP} 
+deploy: docker-upload create-instance-template update
