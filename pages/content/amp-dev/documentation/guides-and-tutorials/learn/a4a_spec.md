@@ -1,6 +1,7 @@
 ---
 $title: AMPHTML ad specification
 $order: 3
+description: 'AMPHTML ads is a mechanism for rendering fast, performant ads in AMP pages. To ensure that AMPHTML ad documents ("AMP creatives") can be rendered quickly and smoothly...'
 formats:
   - ads
 ---

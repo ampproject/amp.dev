@@ -1,6 +1,9 @@
 ---
 $title: Setting up
 $order: 0
+description: "Before starting this tutorial, you'll need the following:
+- A basic knowledge of HTML, CSS, and JavaScript
+- A basic understanding of AMP’s core concepts see ..."
 $parent: /content/docs/fundamentals/add_advanced.md
 ---
 

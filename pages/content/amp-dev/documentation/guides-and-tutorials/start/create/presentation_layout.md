@@ -1,6 +1,7 @@
 ---
 $title: Modify presentation and layout
 $order: 3
+description: 'AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors...'
 author: pbakaus
 contributors:
   - bpaduch

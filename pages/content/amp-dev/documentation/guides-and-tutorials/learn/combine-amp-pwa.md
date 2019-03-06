@@ -1,6 +1,7 @@
 ---
 $title: How AMP and PWA relate to each other
 $order: 1
+description: 'Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to:'
 formats:
   - websites
 components:

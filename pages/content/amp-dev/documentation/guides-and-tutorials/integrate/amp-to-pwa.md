@@ -1,6 +1,7 @@
 ---
 $title: Preload your PWA from your AMP pages
 $order: 1
+description: 'A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to...'
 formats:
   - websites
 author: pbakaus

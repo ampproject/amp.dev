@@ -1,6 +1,7 @@
 ---
 $title: Best practices for creating an AMP story
 $order: 12
+description: 'This guide provides recommended practices that you should implement when creating an AMP story. Watch our video on creating delightful AMP story experiences.'
 $category: Develop
 formats:
     - stories

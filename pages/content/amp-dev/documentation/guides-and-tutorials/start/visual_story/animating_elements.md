@@ -1,6 +1,7 @@
 ---
 $title: Animating elements
 $order: 6
+description: 'You can further enhance an AMP story by applying animation entrances to elements inside a page. For example, you can make your title fly in from...'
 components:
     - anim
 author: bpaduch

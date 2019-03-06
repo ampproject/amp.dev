@@ -2,6 +2,7 @@
 $title: AMPHTML Layout System
 toc: false
 $order: 1
+description: 'The main goal of the layout system is to ensure that AMP elements can express their layout so that the runtime is able to...'
 formats:
   - websites
   - email

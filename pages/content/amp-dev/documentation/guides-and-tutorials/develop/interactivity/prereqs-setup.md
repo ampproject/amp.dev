@@ -1,6 +1,10 @@
 ---
 $title: Setting up
 $order: 0
+description: "Before starting this tutorial, you'll need the following:
+- A basic knowledge of HTML, CSS, and JavaScript
+- A browser of your choice
+- A text editor of your choice"
 $parent: /content/docs/interaction_dynamic/interactivity.md
 ---
 

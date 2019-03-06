@@ -1,6 +1,7 @@
 ---
 $title: Building a regular HTML page
 $order: 1
+description: 'In the project directory, you will find a file named `article.html`. This is the news article that we are creating an AMP-equivalent page for...'
 ---
 
 In the project directory, you will find a file named [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). This is the news article that we are creating an AMP-equivalent page for.

@@ -1,7 +1,7 @@
 ---
 $title: Integrate AMP with your app
 $order: 2
-
+description: 'This guide is intended for mobile and web app developers who want to integrate and link to AMP pages. For example, consider a mobile chat app...'
 formats:
   - websites
 ---

@@ -1,6 +1,7 @@
 ---
 $title: AMPHTML email specification
 $order: 3
+description: 'The AMPHTML Email format provides a subset of AMP components that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components...'
 formats:
   - email
 ---

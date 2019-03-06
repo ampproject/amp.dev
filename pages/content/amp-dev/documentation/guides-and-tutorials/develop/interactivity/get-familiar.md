@@ -1,6 +1,7 @@
 ---
 $title: Getting familiar with the starter code
 $order: 1
+description: 'An AMP page is an HTML page with some restrictions for reliable performance. AMP pages have a bit of special markup that identifies it as an AMP page.'
 ---
 
 ## AMP boilerplate

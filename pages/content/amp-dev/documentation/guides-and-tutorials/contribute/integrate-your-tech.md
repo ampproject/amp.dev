@@ -1,7 +1,7 @@
 ---
 $title: Integrate your technology with AMP
 $order: 1
-
+description: 'If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP so your customers can continue to leverage your technology and...'
 formats:
   - websites
 ---

@@ -1,6 +1,7 @@
 ---
 $title: How to configure basic analytics for your AMP pages
 $order: 100
+description: 'Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.'
 tutorial: true
 formats:
     - websites

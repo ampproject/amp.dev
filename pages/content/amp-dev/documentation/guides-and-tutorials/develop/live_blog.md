@@ -1,6 +1,7 @@
 ---
 $title: Create a live blog
 $order: 102
+description: 'Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using...'
 tutorial: true
 
 formats:

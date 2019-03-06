@@ -1,6 +1,7 @@
 ---
 $title: Create a seatmap
 $order: 104
+description: 'Seatmaps are important parts of ticketers web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by'
 tutorial: true
 formats:
   - websites

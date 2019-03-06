@@ -1,6 +1,7 @@
 ---
 $title: Advertise in AMP Stories
 $order: 3
+description: 'AMP Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free...'
 formats:
   - stories
 author: CrystalOnScript

@@ -1,6 +1,7 @@
 ---
 $title: Integrate your analytics tool with AMP
 $order: 1
+description: 'If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`.'
 formats:
   - websites
   - stories

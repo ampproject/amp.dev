@@ -2,6 +2,7 @@
 $title: Create interactive AMP pages
 $path: /documentation/guides-and-tutorials/develop/interactivity/create-interactive.html
 $order: 0
+description: In this tutorial, you'll learn how to use data binding and expressions to build awesome, interactive AMP pages with amp-bind...
 $hidden: true
 formats:
   - websites

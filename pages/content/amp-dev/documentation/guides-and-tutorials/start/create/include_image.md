@@ -1,6 +1,7 @@
 ---
 $title: Include an image
 $order: 2
+description: 'Most HTML tags can be used directly in AMP HTML, but certain tags, such as the `<img>` tag, are replaced with equivalent or slightly enhanced custom AMP HTML tags'
 author: pbakaus
 contributors:
   - bpaduch

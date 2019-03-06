@@ -1,6 +1,7 @@
 ---
 $title: Adding more pages
 $order: 5
+description: 'Now that you are familiar with adding a page to an AMP story, adding the next pages in our "The Joy of Pets" story is very similar.'
 author: bpaduch
 ---
 

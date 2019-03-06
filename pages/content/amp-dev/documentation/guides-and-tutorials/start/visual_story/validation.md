@@ -1,6 +1,8 @@
 ---
 $title: Validating your AMP HTML
 $order: 8
+description: Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages...
+
 author: bpaduch
 ---
 

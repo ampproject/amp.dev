@@ -1,6 +1,7 @@
 ---
 $title: Introduction to complex animations
 $order: 2
+description: For animations that can't be driven by adding and removing classes, AMP offers several animation specific components. These components apply AMP's principles to animations...
 formats:
   - websites
   - ads

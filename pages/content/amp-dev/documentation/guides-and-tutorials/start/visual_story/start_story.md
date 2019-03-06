@@ -1,6 +1,7 @@
 ---
 $title: Starting our story
 $order: 3
+description: An entire story is represented by the `amp-story` component, which serves as a container for all the pages in a story. The `amp-story` component is also responsible for ...
 author: bpaduch
 ---
 
