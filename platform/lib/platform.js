@@ -84,8 +84,8 @@ class Platform {
       }
       setNoSniff(res);
       setXssProtection(res);
-        console.log('health check?', req.path);
       if (req.path === HEALTH_CHECK) {
+        // it's critical that health checks don't redirect for GCE healthchecks to work correctly
         return next();
       }
       setHsts(res);
