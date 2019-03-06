@@ -95,7 +95,7 @@ class Platform {
     this._check();
     this._registerRouters();
 
-    this.server.listen(config.hosts.platform.port || 8080, () => {
+    this.server.listen(config.hosts.platform.port || 80, () => {
       signale.success(`amp.dev available on ${host}!`);
     });
   }
