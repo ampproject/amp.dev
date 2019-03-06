@@ -24,7 +24,7 @@ const utils = require('@lib/utils');
 
 const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
-const GROW_OUT_DIR = utils.project.absolute('../platform/pages');
+const GROW_OUT_DIR = utils.project.absolute('platform/pages');
 
 class Config {
   constructor(environment = 'development') {
