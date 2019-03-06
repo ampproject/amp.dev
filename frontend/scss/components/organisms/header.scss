@@ -59,6 +59,14 @@
     padding-left: 30px;
   }
 
+  input {
+    display: none;
+
+    &:checked ~ .ap-o-header-flyout {
+       display: block;
+    }
+  }
+
   &-home {
     position: -webkit-sticky;
     position: sticky;
@@ -96,11 +104,10 @@
       display: flex;
     }
 
-    &-item-checkbox {
-      opacity: 0.5;
-    }
-
     &-item {
+      display: flex;
+      align-items: center;
+      margin: 0 18px;
       padding-bottom: 10px;
     }
 
@@ -120,10 +127,7 @@
     }
 
     &-link {
-      display: flex;
-      align-items: center;
       border-radius: 10px;
-      margin: 0 18px;
 
       &-icon {
         font-size: 10px;

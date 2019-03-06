@@ -22,34 +22,31 @@
     <nav class="ap-o-header-main">
       {# Sections #}
       {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
-      <input id="" type="checkbox" />
-      <label >
+      <input id="main-item-radio-{{ section.order }}" type="radio" name="ap-o-header-main-item-radio-btn" role="button" tabindex="0" />
       <div class="ap-o-header-main-item">
         {% if section.index %}
-
         {% set section_index = g.doc(section.index, locale=doc.locale) %}
-        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
-          {{ section.title }}
+          <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
+            {{ section.title }}
+          </a>          
 
           {% if section.sub_navigation %}
             {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
-              <div class="ap-a-ico ap-o-header-main-link-icon">
+            <label class="ap-a-ico ap-o-header-main-link-icon" for="main-item-radio-{{ section.order }}">                
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-              </div>
+            </label>
           {% endif %}
 
-        </a>
         {% elif section.external_index %}
-        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section.external_index }}">
-          {{ section.title }}
-
+          <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section.external_index }}">
+            {{ section.title }}
+          </a>  
           {% if section.sub_navigation %}
             {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
-              <div class="ap-a-ico ap-o-header-main-link-icon">
+              <label class="ap-a-ico ap-o-header-main-link-icon" for="main-item-radio-{{ section.order }}">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-              </div>
+              </label>
           {% endif %}
-        </a>
         {% endif %}
 
         {% if section.sub_navigation %}
