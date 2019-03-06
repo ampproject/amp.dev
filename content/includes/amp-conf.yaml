@@ -68,7 +68,7 @@ speakers:
     name: Wei Hong
     company: Google
     bio:
-    pic: /static/img/amp-conf/speakers/hong.jpeg
+    pic: /static/img/amp-conf/speakers/hong.jpg
   kyunghokang: 
     name: Kyungho Kang
     company: Cafe24
@@ -137,11 +137,7 @@ speakers:
   fabiozecchini:
     name: Fabio Zecchini
     company: Musement Spa
-    bio: "With a strong focus on technology, Fabio graduated in Computer Science Engineering with a dissertation on Robot Automation and Artificial Intelligence. 
-          He has been working in multinational consultancy firm PricewaterhouseCoopers within its Technology & Data Services Division. He decided to deep on Big Data space moving first to ShinyStat  as their lead Product Marketing Manager.
-          Such experience on data science led him to then decide to finally join media agency worldwide leader Dentsu Aegis Network as Chief Data & Analytics Officer with the primary goal to create the (intra agency) European data scientists team.
-
-          In the end of 2012 he co-founded Musement - acquired by tour operating giant  TUI Group in 2018 - where he’s now still involved as Chief Technology and Data Officer."
+    bio: "With a strong focus on technology, Fabio graduated in Computer Science Engineering with a dissertation on Robot Automation and Artificial Intelligence. He has been working in multinational consultancy firm PricewaterhouseCoopers within its Technology & Data Services Division. He decided to deep on Big Data space moving first to ShinyStat  as their lead Product Marketing Manager. Such experience on data science led him to then decide to finally join media agency worldwide leader Dentsu Aegis Network as Chief Data & Analytics Officer with the primary goal to create the (intra agency) European data scientists team. In the end of 2012 he co-founded Musement - acquired by tour operating giant  TUI Group in 2018 - where he’s now still involved as Chief Technology and Data Officer."
     pic: /static/img/amp-conf/speakers/fabio.jpg
   hanspauwels:
     name: Hans Pauwels
