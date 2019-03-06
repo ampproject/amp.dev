@@ -26,6 +26,7 @@ const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js
 const config = require('./config.js');
 
 const WWW_PREFIX = 'www.';
+const HEALTH_CHECK = '/__health-check';
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
@@ -82,8 +83,12 @@ class Platform {
         return next();
       }
       setNoSniff(res);
-      setHsts(res);
       setXssProtection(res);
+        console.log('health check?', req.path);
+      if (req.path === HEALTH_CHECK) {
+        return next();
+      }
+      setHsts(res);
       if (req.headers['x-forwarded-proto'] === 'https') {
         return next();
       }
@@ -124,6 +129,7 @@ class Platform {
   }
 
   _registerRouters() {
+    this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.examples);
     this.server.use(routers.static);
