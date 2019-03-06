@@ -88,7 +88,7 @@ speakers:
     name: Balla Khadang
     company: YouGov
     bio: "Balla Khadang Hawezi is a self-taught web developer who is currently working as a Qualitative Research Moderator and Translator at YouGov in Erbil, Kurdistan Region-Iraq."
-    pic:
+    pic: /static/img/amp-conf/speakers/balla.jpg
   jeffreyj:
     name: Jeffrey Jose
     company: Google
@@ -113,7 +113,12 @@ speakers:
     name: Andrea Rosal Rebolledo
     company: InEventos.com
     bio:
-    pic: /static/img/amp-conf/speakers/andrea.png
+    pic: /static/img/amp-conf/speakers/andrea.jpg
+  hernanmillot:
+    name: Hernan Millot
+    company: InEventos.com
+    bio: Hernan is an entrepreneur that founded InEventos in 2011. He has worked as a developer for 20 years in many renowned companies around the world. 
+    pic: 
   hirohitokomada:
     name: Hirohito Komada, Shigeki Otsu
     company: Yahoo Japan
@@ -226,10 +231,13 @@ agenda:
       description: 
       time: "1615"
       type: session
-    - title: "(Session to be announced)"
-      description: Description coming soon.
+    - title: "No power, no internet, no government: How AMP helps in Iraq and war-impacted regions"
+      description: "At the fringes of conventional considerations, users in war-impacted regions face restrictive app policies, incompatible u.x. assumptions, limited bandwidth, and little or no household electricity. AMP provides a toolkit to implement app-like, mobile-friendly, and quick-loading experiences that connect with users on the far side the “app gap” of access, infrastructure, and design. Gain a practical understanding of this poorly understood but highly impactful facet of design and implementation."
       time: "1630"
       type: session
+      speakers:
+        - leviclancy
+        - ballakhadang
     - title: "Measuring success: What's new in AMP analytics & experiments"
       time: "1700"
       type: session
@@ -261,9 +269,12 @@ agenda:
       type: session
       speaker: nainaraisinghani
       description: "As the number of frameworks increase, AMP stays the well lit path that allows engineering teams to make the best decisions for their users. Much like SaaS, by using AMP CTOs ensure their engineering teams are able to be more agile in creating forward looking experiences while being backward compatible."
-    - title: "(Session to be announced)"
+    - title: "How we migrated our entire site to AMP without the user noticing"
       time: "1115"
       type: session
+      speakers:
+        - andrearosalrebolledo
+        - hernanmillot
     - title: "(Session to be announced)"
       description: 
       time: "1130"
