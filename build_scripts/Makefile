@@ -6,6 +6,7 @@ INSTANCE_NAME       := i-${PREFIX}
 INSTANCE_GROUP_SIZE := 1
 PROJECT_ID          := amp-dev-230314
 WORKING_DIR         := ..
+HEALTH_CHECK        := http-basic-check
 
 REGION						  := us-east1
 ZONE								:= us-east1-c
@@ -26,11 +27,10 @@ init-backend-service:
 	-gcloud compute addresses create lb-ip-cr \
     --ip-version=IPV4 \
     --global
-	-gcloud compute health-checks create http http-basic-check \
-    --port 80
+	-gcloud beta compute health-checks create http --use-serving-port ${HEALTH_CHECK}
 	-gcloud compute backend-services create web-map-backend-service \
     --protocol HTTP \
-    --health-checks http-basic-check \
+    --health-checks ${HEALTH_CHECK} \
     --global
 	-gcloud compute backend-services add-backend web-map-backend-service \
     --balancing-mode UTILIZATION \
