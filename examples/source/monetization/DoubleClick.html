@@ -8,18 +8,15 @@ skipValidation: 'true'
 
 <!--
   ## Introduction
-  In an AMP story, you cannot put an `amp-ad` directly onto the page, instead, all
-  ads are fetched and displayed by the `amp-story-auto-ads` extension.
+  In an AMP story, you cannot put an `amp-ad` directly onto the page, instead, all ads are fetched and displayed by the `amp-story-auto-ads` extension.
 
-  For the complete documentation please see our
-  [documentation](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md)
-  on Github.
+  For the complete documentation please see our [documentation](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md) on GitHub.
 -->
 <!doctype html>
 <html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="https://ampbyexample.com/stories/monetization/doubleclick/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/monetization/doubleclick.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>DoubleClick</title>
@@ -83,7 +80,7 @@ skipValidation: 'true'
       line-height: 30px;
     }
     .icon {
-      background-image: url(<%host%>/img/AMP-Brand-White-Icon.svg);
+      background-image: url('<% hosts.platform %>/static/img/AMP-Brand-White-Icon.svg');
       background-repeat: no-repeat;
       background-size: 50px 50px;
       height: 50px;
@@ -129,18 +126,14 @@ skipValidation: 'true'
     <amp-story standalone
       title="Key Highlights of AMP Conf 2018"
       publisher="The AMP team"
-      publisher-logo-src="<%host%>/img/AMP-Brand-White-Icon.svg"
-      poster-portrait-src="<%host%>/img/overview.jpg">
+      publisher-logo-src="<% hosts.platform %>/static/samples/img/AMP-Brand-White-Icon.svg"
+      poster-portrait-src="<% hosts.platform %>/static/samples/img/overview.jpg">
       <!-- ## Configuration -->
       <!-- Include the `amp-story-auto-ads` tag on your page. -->
-      <!-- It's first child should be a `script` tag with a JSON configuration object
-      that contains details for how ads should be fetched and displayed.
-      `ad-attributes` is a map of key-value pairs, which correspond to the
-      attributes of the amp-ad element to be inserted.
+      <!-- It's first child should be a `script` tag with a JSON configuration object that contains details for how ads should be fetched and displayed. `ad-attributes` is a map of key-value pairs, which correspond to the attributes of the amp-ad element to be inserted.
       -->
-      <!-- For ads served from DoubleClick one should set `"type": "doubleclick"`
-      and  `"data-slot"`  to the full path of the ad unit with the network code
-      and unit code.` -->
+
+      <!-- For ads served from DoubleClick one should set `"type": "doubleclick"` and  `"data-slot"`  to the full path of the ad unit with the network code and unit code.` -->
 
     <amp-story-auto-ads>
       <script type="application/json">
@@ -168,16 +161,16 @@ skipValidation: 'true'
           <amp-video autoplay loop
             width="400"
             height="750"
-            poster="<%host%>/img/poster0.png"
+            poster="<% hosts.platform %>/static/samples/img/poster0.png"
             layout="fill">
-            <source src="<%host%>/video/p1.mp4" type="video/mp4">
+            <source src="<% hosts.platform %>/static/samples/video/p1.mp4" type="video/mp4">
           </amp-video>
         </amp-story-grid-layer>
       </amp-story-page>
 
       <amp-story-page id="page-2">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="<%host%>/img/overview.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/overview.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
           <h2 class="bold">Overview</h2>
@@ -193,9 +186,9 @@ skipValidation: 'true'
           <amp-video autoplay loop
             width="400"
             height="750"
-            poster="<%host%>/img/poster.jpg"
+            poster="<% hosts.platform %>/static/samples/img/poster.jpg"
             layout="fill">
-            <source src="<%host%>/video/stamp-animation.mp4" type="video/mp4">
+            <source src="<% hosts.platform %>/static/samples/video/stamp-animation.mp4" type="video/mp4">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
@@ -208,7 +201,7 @@ skipValidation: 'true'
 
       <amp-story-page id="page-4">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="<%host%>/img/blue-stuff.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/blue-stuff.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
           <h1 class="bold">A visual storytelling format fot the open web</h1>
@@ -224,10 +217,10 @@ skipValidation: 'true'
             id="stamp-vid"
             width="400"
             height="750"
-            poster="<%host%>/img/poster2.jpg"
+            poster="<% hosts.platform %>/static/samples/img/poster2.jpg"
             layout="fill">
-            <source src="<%host%>/video/stamp.mp4" type="video/mp4">
-            <track default src="<%host%>/video/stamp.vtt" srclang="en">
+            <source src="<% hosts.platform %>/static/samples/video/stamp.mp4" type="video/mp4">
+            <track default src="<% hosts.platform %>/static/samples/video/stamp.vtt" srclang="en">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="thirds">
@@ -244,9 +237,9 @@ skipValidation: 'true'
           <amp-video autoplay loop
             width="400"
             height="750"
-            poster="<%host%>/img/poster3.jpg"
+            poster="<% hosts.platform %>/static/samples/img/poster3.jpg"
             layout="fill">
-            <source src="<%host%>/video/gmail-animation.mp4" type="video/mp4">
+            <source src="<% hosts.platform %>/static/samples/video/gmail-animation.mp4" type="video/mp4">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -259,7 +252,7 @@ skipValidation: 'true'
 
       <amp-story-page id="page-7">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="<%host%>/img/blue-gmail.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/blue-gmail.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
           <h1 class="bold">Bringing the power of AMP to Gmail</h1>
@@ -274,10 +267,10 @@ skipValidation: 'true'
             id="gmail-vid"
             width="400"
             height="750"
-            poster="<%host%>/img/poster4.jpg"
+            poster="<% hosts.platform %>/static/samples/img/poster4.jpg"
             layout="fill">
-            <source src="<%host%>/video/gmail.mp4" type="video/mp4">
-            <track default src="<%host%>/video/gmail.vtt" srclang="en">
+            <source src="<% hosts.platform %>/static/samples/video/gmail.mp4" type="video/mp4">
+            <track default src="<% hosts.platform %>/static/samples/video/gmail.vtt" srclang="en">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="thirds">
@@ -291,7 +284,7 @@ skipValidation: 'true'
 
       <amp-story-page id="page-9">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="<%host%>/img/green-phone.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/green-phone.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
           <div class="introducing">
@@ -303,7 +296,7 @@ skipValidation: 'true'
 
       <amp-story-page id="page-10">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="<%host%>/img/green-stuff.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/green-stuff.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
           <h1 class="bold">Improve conversions with fast, user-friendly experiences</h1>
@@ -317,10 +310,10 @@ skipValidation: 'true'
             id="ecomm-vid"
             width="400"
             height="750"
-            poster="<%host%>/img/poster5.jpg"
+            poster="<% hosts.platform %>/static/samples/img/poster5.jpg"
             layout="fill">
-            <source src="<%host%>/video/ecommerce.mp4" type="video/mp4">
-            <track default src="<%host%>/video/ecommerce.vtt" srclang="en">
+            <source src="<% hosts.platform %>/static/samples/video/ecommerce.mp4" type="video/mp4">
+            <track default src="<% hosts.platform %>/static/samples/video/ecommerce.vtt" srclang="en">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="thirds">
@@ -334,7 +327,7 @@ skipValidation: 'true'
 
       <amp-story-page id="page-12">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="<%host%>/img/roadshow.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/roadshow.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="thirds" class="bottom">
           <h1 grid-area="middle-third" class="bold">Join the worldwide AMP Roadshow</h1>
@@ -346,7 +339,7 @@ skipValidation: 'true'
         </amp-story-cta-layer>
       </amp-story-page>
 
-      <amp-story-bookend src="<%host%>/json/bookend.json" layout="nodisplay"></amp-story-bookend>
+      <amp-story-bookend src="<% hosts.platform %>/json/bookend.json" layout="nodisplay"></amp-story-bookend>
     </amp-story>
   </body>
 </html>
