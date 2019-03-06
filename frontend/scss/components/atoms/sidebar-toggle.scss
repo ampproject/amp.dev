@@ -127,12 +127,17 @@
           }
         }
         &~ .ap--toc {
-          grid-column: 2 / 25;
+          @media (max-width: 1023px) {
+            grid-column: 2 / 25;
+          }
         }
         &~ .ap--toc + .ap--content  {
           padding-left: 80px;
           padding-right: 80px;
-          grid-column: 2 / 25;
+          grid-column: 2 / 20;
+          @media (max-width: 1023px) {
+            grid-column: 2 / 25;
+          } 
         }
 
         &~ .ap--content  {
