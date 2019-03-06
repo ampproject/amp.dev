@@ -1,0 +1,42 @@
+{% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+{% do doc.icons.useIcon('icons/sidebar-toggle.svg') %}
+
+
+
+<div class="ap--sidebar-toggle-observer">
+
+<amp-position-observer on="enter:slideTransition.start; exit:slideTransition.start,slideTransition.reverse"
+    intersection-ratios="1"
+    layout="nodisplay">
+  </amp-position-observer>
+
+  <amp-animation id="slideTransition"
+  layout="nodisplay">
+  <script type="application/json">
+    {
+      "duration": "200ms",
+      "fill": "both",
+      "easing": "ease-out",
+      "iterations": "1",
+      "animations": [{
+        "selector": ".label-title",
+        "keyframes": [{
+            "opacity": "0"
+          },
+          {
+            "opacity": "1"
+          }
+        ]
+      }]
+    }
+  </script>
+</amp-animation>
+
+</div>
+
+<label class="ap-a-sidebar-mobile-toggle-label ap-a-sidebar-mobile-toggle-label-sidebar" for="sidebar" on="tap:sidebar-left.toggle" role="categoriemenutrigger" tabindex="0">
+  <span class="label-icon"><svg class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg></span><span class="label-title">Toggle Sidebar</span>
+</label>
+<label class="ap-a-sidebar-desktop-toggle-label ap-a-sidebar-desktop-toggle-label-sidebar" for="sidebar-desktop" role="categoriemenutrigger-desktop" tabindex="0">
+  <span class="label-icon"><svg class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg></span><span class="label-title">Toggle Sidebar</span>
+</label>
