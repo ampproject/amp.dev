@@ -70,34 +70,38 @@
 
                 <li class="ap-o-header-flyout-primary-item {% if third_level_name %} third_level {% endif %}">
                   <a class="ap-o-header-flyout-primary-item-link {{ format }}" href="{{ second_level_doc.url.path }}">
-                  {% for flyout_info in flyout %}
 
+                  {% for flyout_info in flyout %}
                   {% do doc.icons.useIcon('icons/'+ flyout_info.icon +'.svg') %}
                   {% if format %}
                     {% do doc.icons.useIcon('icons/gradient-' + format +'.svg') %}
                   {% endif %}
                   
-
                     <div class="ap-o-header-flyout-primary-item-link-icon {% if format %} {{ format }} {% endif %}">
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout_info.icon }}"></use></svg>
                     </div>
-                    <div class="ap-o-header-flyout-primary-item-link-info">
-                      <div class="ap-o-header-flyout-item-title {% if format %}{{ format }}{% endif %}">{{ second_level_doc.title }}</div>
+                    <div class="ap-o-header-flyout-primary-item-link-info 
+                      {% if format %}ap-o-header-flyout-primary-item-link-info-{{ format }}{% endif %}"
+                    >
+                      <div class="ap-o-header-flyout-item-title">{{ second_level_doc.title }}</div>
                       <div class="ap-o-header-flyout-item-description">{{ flyout_info.description }}</div>
                     </div>
                   {% endfor %}
 
-                    {% if third_level_name %}
-                      {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
-                      <div class="ap-a-ico ap-o-header-main-link-icon right">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-                      </div>
-                      {% endif %}
-                    </a>
+                  {% if third_level_name %}
+                    <input id="flyout-item-radio-{{ second_level_doc.title }}" type="radio"
+                    name="ap-o-header-flyout-item-radio-btn" role="button" tabindex="0" />
+                  
+                    {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+                    <label class="ap-a-ico ap-o-header-main-link-icon right" for="flyout-item-radio-{{ second_level_doc.title }}">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                    </label>
+                  {% endif %}
+                  </a>
 
                   {# get third level flyout #}
                   {% if third_level_name %}
-
+                  
                     <ul class="ap-o-header-flyout ap-o-header-flyout-secondary">
 
                     {# each third level content has a different file structre, conditions are needed #}
@@ -107,7 +111,7 @@
                         {% set first_example = g.docs(collection.collection_path, locale=doc.locale)|first %}
                         {% if first_example %}
                           <li class="ap-o-header-flyout-item-secondary">
-                            <a class="ap-o-header-flyout-item-description" href="{{ first_example.url.path }}">{{ collection.title }}</a>
+                            <a class="ap-o-header-flyout-item-third-level-description" href="{{ first_example.url.path }}">{{ collection.title }}</a>
                           </li>
                         {% endif %}
                         {% endfor %}
@@ -118,7 +122,7 @@
                           {% for category, doc in g.categories(collection.collection_path, locale=doc.locale) %}
                             {% if category %}
                               <li class="ap-o-header-flyout-item-secondary">
-                                <a class="ap-o-header-flyout-item-description" href="{{ doc[0].url.path }}">{{ category }}</a>
+                                <a class="ap-o-header-flyout-item-third-level-description" href="{{ doc[0].url.path }}">{{ category }}</a>
                               </li>
                             {% endif %}
                           {% endfor %}
