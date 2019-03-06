@@ -287,6 +287,7 @@ agenda:
     - title: "Generating AMP Pages with JavaScript and Vue.js"
       time: "1530"
       type: session
+      description: "Decreasing load times on our money pages: How and why we moved our most frequented transactional pages to AMP."
       speakers:
         - cristianronzio
         - fabiozecchini
