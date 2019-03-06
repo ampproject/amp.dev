@@ -35,11 +35,15 @@ body {
     @include content;
     background: color('white');
     @media (min-width: 768px) {
-      grid-column: 9 / 25;
+      grid-column: 8 / 25;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   
     @media (min-width: 1024px) {
       grid-column: 6 / 24;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   }
 
