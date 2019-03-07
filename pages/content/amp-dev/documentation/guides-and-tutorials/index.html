@@ -8,6 +8,10 @@ $localization:
   path: /{locale}/documentation/guides-and-tutorials.html
 $order: 1
 $hidden: true
+
+flyout:
+  - description: Get started with AMP
+    icon: guides-documents
 cms: !g.yaml /content/shared/data/cms.yaml
 ---
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
@@ -192,7 +196,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
       <div class="ap-m-benefit-daily">
         <h5>Daily resource</h5>
         <p>Use our resources to make your day to day work with AMP easy and productive:</p>
-        
+
         <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           <span class="ap-m-lnk-text">AMP Components</span>
@@ -217,7 +221,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           <span class="ap-m-lnk-text">News</span>
         </a>
-        
+
       </div>
   </div>
 </div>
@@ -248,6 +252,6 @@ cms: !g.yaml /content/shared/data/cms.yaml
 
 <h2>Get Involved</h2>
 <p class="limit">
-  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission of providing a user-first format for the web. 
+  AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission of providing a user-first format for the web.
 </p>
 
