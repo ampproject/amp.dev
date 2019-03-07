@@ -25,7 +25,7 @@
       {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
 
       {# hover is not avaiable for larger touch devices, a work around for displaying the nav list is using hidden input fields #}
-      <input id="main-item-radio-{{ section.order }}" type="radio" name="ap-o-header-main-item-radio-btn" role="button" tabindex="0" />
+      <input id="main-item-radio-{{ section.order }}" type="radio" name="main-radio-btn" role="button" tabindex="0" />
       
       <div class="ap-o-header-main-item">
         {% if section.index %}
@@ -58,7 +58,7 @@
           <div class="ap-o-header-flyout-fake-shadow"></div>
           {% for second_level_path in section.sub_navigation %}
             {% set second_level_doc = g.doc(second_level_path, locale=doc.locale) %}
-            {% if second_level_doc.collection.collections() and second_level_doc.collection.title != "Guides & Tutorials" %}
+            {% if second_level_doc.collection.collections() and second_level_doc.collection.index != "/content/amp-dev/documentation/guides-and-tutorials/index.html" %}
                 {% set third_level_name =  second_level_doc.collection.collection_path.split('/')[2] %}
             {% endif %}
 

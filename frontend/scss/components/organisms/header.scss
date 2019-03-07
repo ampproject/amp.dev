@@ -92,6 +92,13 @@
           @include txt-lrg;
         }
       }
+
+    &-sub-title {
+      color: color('black');	
+      white-space: nowrap;	
+      text-overflow: ellipsis;	
+      overflow: hidden;
+    }
   }
 
   &-main {
