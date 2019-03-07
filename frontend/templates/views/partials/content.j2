@@ -4,6 +4,7 @@
 
 <section class="ap--content">
   {% include '/views/partials/sidebar-toggle-button.j2' %}
+  {% include '/views/partials/breadcrumbs.j2' %}
   {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
@@ -17,6 +18,7 @@
 {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
 <section class="ap--content">
   {% include '/views/partials/sidebar-toggle-button.j2' %}
+
   <h1>{{ doc.title }}</h1>
   <div class="ap-m-tip ap-m-tip-default">
     <div class="ap-m-tip-content">
