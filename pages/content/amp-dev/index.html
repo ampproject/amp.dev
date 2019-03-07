@@ -84,7 +84,7 @@ success_stories:
       <a href="https://services.google.com/fb/forms/ampnewsletter/" class="ap-m-lnk ap-m-lnk-square">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          <svg><use xlink:href="#external"></use></svg>
         </div>
         <span class="ap-m-lnk-text">Subscribe</span>
       </a>
@@ -109,7 +109,7 @@ success_stories:
               <div class="ap-o-news-icon">
                 <div class="ap-a-ico">
                   {% do doc.icons.useIcon('icons/news.svg') %}
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
+                  <svg><use xlink:href="#news"></use></svg>
                 </div>
               </div>
               {% endif %}
@@ -206,7 +206,7 @@ success_stories:
           <div class="ap-o-format-explainer-button-icon ap-a-ico {{ 'active' if loop.index == 1 }}"
           [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-button-icon ap-a-ico active' : 'ap-o-format-explainer-button-icon ap-a-ico'">
             {% do doc.icons.useIcon('icons/amp-' + format.name + '.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+            <svg><use xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
           <span class="ap-o-format-explainer-button-text">AMP {{ format.name }}</span>
         </button>
@@ -220,7 +220,7 @@ success_stories:
           <a href="{{ format.url }}" [href]="formats[chosenFormat.activeFormat].url" class="ap-m-lnk ap-m-lnk-square">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              <svg><use xlink:href="#internal"></use></svg>
             </div>
             <span class="ap-m-lnk-text">Learn more about AMP {{ format.name }}</span>
           </a>
@@ -260,7 +260,7 @@ success_stories:
       <div class="ap-m-copy ap-m-copy-center">
         <div class="ap-o-sampler-icon ap-a-ico">
           {% do doc.icons.useIcon('icons/logo.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+          <svg><use xlink:href="#logo"></use></svg>
         </div>
         <h2>AMP in action</h2>
       </div>
@@ -312,7 +312,7 @@ success_stories:
             class="ap-m-lnk">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              <svg><use xlink:href="#internal"></use></svg>
             </div>
             <span class="ap-m-lnk-text">Open in AMP Playground</span>
           </a>
@@ -334,7 +334,7 @@ success_stories:
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/'+ benefit.icon + '.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
             <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
@@ -354,7 +354,7 @@ success_stories:
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
             {% do doc.icons.useIcon('icons/' + benefit.icon + '.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
+            <svg class="ap-m-benefit-icon"><use xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
             <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
@@ -369,7 +369,7 @@ success_stories:
         <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg><use xlink:href="#internal"></use></svg>
           </div>
           <span class="ap-m-lnk-text">Get started with AMP</span>
         </a>
@@ -383,7 +383,7 @@ success_stories:
       <div class="ap-m-quote-source">
        <div class="ap-a-ico">
           {% do doc.icons.useIcon('icons/quote.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+          <svg><use xlink:href="#quote"></use></svg>
        </div>
         <div class="ap-a-img ap-a-img-static">
           <amp-img class="ap--media" src="/static/img/success-stories/washington_post/washington_post_logo.png" layout="responsive" height="197" width="1280" alt="placeholder" />
@@ -398,7 +398,7 @@ success_stories:
         <a href="{{ g.doc('/content/amp-dev/about/success-stories/washingtonpost.yaml').url.path }}" class="ap-m-lnk">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg><use xlink:href="#internal"></use></svg>
           </div>
           <span class="ap-m-lnk-text">Read Success Story</span>
         </a>
@@ -445,7 +445,7 @@ success_stories:
       <a href="{{ g.doc('/content/amp-dev/about/success-stories/index.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          <svg><use xlink:href="#internal"></use></svg>
         </div>
         <span class="ap-m-lnk-text">See all success stories</span>
       </a>

@@ -162,7 +162,7 @@ tags are specific for amp.dev #}
         <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_embed + '&' }}' + random()})">
           <div class="ap-a-ico">
             {% do doc.icons.useIcon('icons/reload.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+              <svg><use xlink:href="#reload"></use></svg>
           </div>
         </button>
         <div class="ap-o-code-preview-preview-story">
@@ -180,7 +180,7 @@ tags are specific for amp.dev #}
       {% if not playground_disabled and show_preview %}
       <a href="{{ playground_url }}/{{ section.id }}" class="ap-m-lnk ap--playground-link">
           <div class="ap-a-ico ap-m-lnk-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg><use xlink:href="#internal"></use></svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('Open this snippet in playground' ) }}</span>
       </a>
@@ -196,14 +196,14 @@ tags are specific for amp.dev #}
         <span class="ap-o-help-hl">{{ _('Need further explanation?') }}</span>
         <p class="ap-o-help-copy">{{ _('If the explanations on this page don\'t cover all of your questions feel free to reach out to other AMP users to discuss your exact use case.')}}</p>
         <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          <svg class="ap-a-ico ap-m-lnk-icon"><use xlink:href="#external"></use></svg>
           <span class="ap-m-lnk-text">{{ _('Go to Stack Overflow') }}</span>
         </a>
         <div class="ap-o-help-divider"></div>
         <span class="ap-o-help-hl">{{ _('An unexplained feature?') }}</span>
         <p class="ap-o-help-copy">{{ _('The AMP project strongly encourages your participation and contributions! We hope you\'ll become an ongoing participant in our open source community but we also welcome one-off contributions for the issues you\'re particularly passionate about.') }}</p>
         <a href="{{ podspec.base_urls.repository + doc.example.filePath }}" rel="noopener" class="ap-m-lnk link-preview-1">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          <svg class="ap-a-ico ap-m-lnk-icon"><use xlink:href="#external"></use></svg>
           <span class="ap-m-lnk-text">{{ _('Edit sample on GitHub') }}</span>
         </a>
         <div class="ap-o-help-divider"></div>

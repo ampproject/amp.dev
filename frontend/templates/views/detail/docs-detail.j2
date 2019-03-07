@@ -37,7 +37,7 @@
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <a href="{{ previous_document.url.path }}" class="ap-m-lnk ap-m-lnk-square ap--previous">
           <div class="ap-a-ico ap-m-lnk-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg><use xlink:href="#internal"></use></svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('Previous chapter') }}</span>
         </a>
@@ -47,7 +47,7 @@
         <a href="{{ next_document.url.path }}" class="ap-m-lnk ap-m-lnk-square ap--next">
           <span class="ap-m-lnk-text">{{ _('Next chapter') }}</span>
           <div class="ap-a-ico ap-m-lnk-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg><use xlink:href="#internal"></use></svg>
           </div>
         </a>
         {% endif %}

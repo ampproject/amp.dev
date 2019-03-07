@@ -12,7 +12,7 @@
           {% endif %}
             {% if kpi.icon %}
             {% do doc.icons.useIcon('icons/' + kpi.icon + '.svg') %}
-            <svg class="ap-m-kpi-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ kpi.icon }}"></use></svg>
+            <svg class="ap-m-kpi-icon"><use xlink:href="#{{ kpi.icon }}"></use></svg>
             {% endif %}
             <span class="ap-m-kpi-number">{{ kpi.figure }}</span>
             <span class="ap-m-kpi-text">{{ kpi.description }}</span>
@@ -37,7 +37,7 @@
         {% endif %}
           {% if kpi.icon %}
           {% do doc.icons.useIcon('icons/' + kpi.icon + '.svg') %}
-          <svg class="ap-m-kpi-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ kpi.icon }}"></use></svg>
+          <svg class="ap-m-kpi-icon"><use xlink:href="#{{ kpi.icon }}"></use></svg>
           {% endif %}
           <span class="ap-m-kpi-number">{{ kpi.figure }}</span>
           <span class="ap-m-kpi-text">{{ kpi.description }}</span>

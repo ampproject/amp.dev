@@ -11,14 +11,14 @@
   <button tabindex="0" role="button" on="tap:AMP.setState({selected: {slide: selected.slide - 1}})" class="ap-o-fragment-slider-prevbtn slide1" [class]='"ap-o-fragment-slider-prevbtn slide" +selected.slide'>
     <div class="ap-a-ico ap-m-lnk-icon">
       {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <svg><use xlink:href="#internal"></use></svg>
     </div>
   </button>
 
   <button tabindex="0" role="button" on="tap:AMP.setState({selected: {slide: selected.slide + 1}})" class="ap-o-fragment-slider-nextbtn" [class]='"ap-o-fragment-slider-nextbtn slide" +selected.slide'>
     <div class="ap-a-ico ap-m-lnk-icon">
       {% do doc.icons.useIcon('icons/internal.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      <svg><use xlink:href="#internal"></use></svg>
     </div>
   </button>
 </div>

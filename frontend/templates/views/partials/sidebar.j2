@@ -50,7 +50,7 @@
                     {% set tutorial_last_word = tutorial_title[-1] %}
 
                     {% do doc.icons.useIcon('icons/tutorial.svg') %}
-                    <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg></span>
+                    <span>{{ tutorial_first_part }}</span> <span class="nav-link-lastword">{{ tutorial_last_word }}<svg class="ap-a-ico nav-type-icon"><use xlink:href="#tutorial"></use></svg></span>
 
                     {% else %}
                       <span>{{ collection_title }}</span>
@@ -61,7 +61,7 @@
                     <span>{{ _(collection.title) }}</span>
                     {% if collection.tutorial %}
                     {% do doc.icons.useIcon('icons/tutorial.svg') %}
-                    <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+                    <svg class="ap-a-ico nav-type-icon"><use xlink:href="#tutorial"></use></svg>
                     {% endif %}
                   </span>
                   {% endif %}
@@ -69,10 +69,10 @@
                   <div class="nav-icon">
                     {% if iteration==1 %}
                     {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-                    <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                    <svg class="ap-a-ico"><use xlink:href="#angle-down-solid"></use></svg>
                     {% else %}
                     {% do doc.icons.useIcon('icons/angle-down-light.svg') %}
-                    <svg class="ap-a-ico light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-light"></use></svg>
+                    <svg class="ap-a-ico light"><use xlink:href="#angle-down-light"></use></svg>
                     {% endif %}
                   </div>
                   {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
@@ -94,7 +94,7 @@
                     {{ document.title }}
                     {% if document.tutorial %}
                     {% do doc.icons.useIcon('icons/tutorial.svg') %}
-                    <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
+                    <svg class="ap-a-ico nav-type-icon"><use xlink:href="#tutorial"></use></svg>
                     {% endif %}
                   </a>
                 </li>

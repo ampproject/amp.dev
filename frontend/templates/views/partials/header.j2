@@ -14,7 +14,7 @@
   <div class="ap-o-header">
     <a class="ap-o-header-home" href="{{ doc.pod.get_home_doc().localize(locale=doc.locale).url.path }}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
-      <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+      <svg class="ap-o-header-home-logo"><use xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span>
     </a>
 
@@ -37,7 +37,7 @@
           {% if section.sub_navigation %}
             {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
             <label class="ap-a-ico ap-o-header-main-link-icon" for="main-item-radio-{{ section.order }}">                
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                <svg><use xlink:href="#angle-down-solid"></use></svg>
             </label>
           {% endif %}
 
@@ -48,7 +48,7 @@
           {% if section.sub_navigation %}
             {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
               <label class="ap-a-ico ap-o-header-main-link-icon" for="main-item-radio-{{ section.order }}">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                <svg><use xlink:href="#angle-down-solid"></use></svg>
               </label>
           {% endif %}
         {% endif %}
@@ -82,7 +82,7 @@
                   {% endif %}
                   
                     <div class="ap-o-header-flyout-primary-item-link-icon {% if format %} {{ format }} {% endif %}">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout_info.icon }}"></use></svg>
+                      <svg><use xlink:href="#{{ flyout_info.icon }}"></use></svg>
                     </div>
 
                     <div class="ap-o-header-flyout-primary-item-link-info 
@@ -95,7 +95,7 @@
                   {% if third_level_name %}                  
                     {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
                     <div class="ap-a-ico ap-o-header-main-link-icon right">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                      <svg><use xlink:href="#angle-down-solid"></use></svg>
                     </div>
                   {% endif %}
                   </a>
@@ -156,7 +156,7 @@
         <span class="ap-m-nav-link">{{ doc.locale.language|upper }}</span>
         {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <div class="ap-a-ico ap-m-language-selector-icon">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+          <svg><use xlink:href="#angle-down-solid"></use></svg>
         </div>
       </a>
       <ul class="ap-m-language-selector-list">

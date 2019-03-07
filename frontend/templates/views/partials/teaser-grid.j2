@@ -44,7 +44,7 @@
             <div class="ap-m-teaser-video-length">
               {% do doc.icons.useIcon('icons/play.svg') %}
               <div class="ap-a-ico ap-m-teaser-video-length-icon">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play"></use></svg>
+                <svg><use xlink:href="#play"></use></svg>
               </div>
               <span class="ap-m-teaser-video-length-text">{{ teaser.video.length }}</span>
             </div>
@@ -130,7 +130,7 @@
         </ul>
         <a class="ap-m-lnk" href="{{ teaser.doc.url.path }}">
           <div class="ap-a-ico ap-m-lnk-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg><use xlink:href="#internal"></use></svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('See example' ) }}</span>
         </a>
@@ -206,7 +206,7 @@
   {% do doc.icons.useIcon('icons/internal.svg') %}
   <a class="ap-m-lnk ap-m-lnk-square" href="{{ cta.doc.url }}">
     <div class="ap-a-ico ap-m-lnk-icon">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      <svg><use xlink:href="#internal"></use></svg>
     </div>
     <span class="ap-m-lnk-text">{{ cta.text }}</span>
   </a>

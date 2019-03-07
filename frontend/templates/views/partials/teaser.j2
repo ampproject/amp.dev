@@ -22,7 +22,7 @@
           {% if teaser.icon %}
           {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
           <div class="ap-a-ico ap-m-kpi-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
+            <svg><use xlink:href="#{{ teaser.icon }}"></use></svg>
           </div>
           {% endif %}
           <span class="ap-m-kpi-number">{{ teaser.figure }}</span>
@@ -118,7 +118,7 @@
     <div class="ap-m-teaser-info-link">
       <a class="ap-m-lnk" href="{{ teaser_doc.url.path }}">
         <div class="ap-a-ico ap-m-lnk-icon">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          <svg><use xlink:href="#internal"></use></svg>
         </div>
         <span class="ap-m-lnk-text">{{ _('See example' ) }}</span>
       </a>
@@ -154,14 +154,14 @@
         <div class="ap-m-teaser-icon">
           {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
           <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
+            <svg><use xlink:href="#{{ teaser.icon }}"></use></svg>
           </div>
         </div>
         {% else %}
         <div class="ap-m-teaser-icon">
           {% do doc.icons.useIcon('icons/example-default.svg') %}
           <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example-default"></use></svg>
+            <svg><use xlink:href="#example-default"></use></svg>
           </div>
         </div>
         {% endif %}
@@ -204,14 +204,14 @@
         <div class="ap-m-teaser-icon">
           {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
           <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
+            <svg><use xlink:href="#{{ teaser.icon }}"></use></svg>
           </div>
         </div>
       {% else %}
         <div class="ap-m-teaser-icon">
           {% do doc.icons.useIcon('icons/example-default.svg') %}
           <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example-default"></use></svg>
+            <svg><use xlink:href="#example-default"></use></svg>
           </div>
         </div>
       {% endif %}
@@ -227,7 +227,7 @@
             <span class="ap-m-lnk">
               <span class="ap-a-ico ap-m-lnk-icon">
                 {% do doc.icons.useIcon('icons/internal.svg') %}
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                <svg><use xlink:href="#internal"></use></svg>
               </span>
               <span class="ap-m-lnk-text">{{ teaser.label }}</span>
             </span>
