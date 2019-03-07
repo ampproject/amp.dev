@@ -3,8 +3,8 @@ $title: AMP 애널리틱스 심층 분석
 ---
 
 이 가이드에서는
-[amp-analytics 구성요소](/ko/docs/reference/components/amp-analytics.html)를 심층 분석하여
-샘플 `amp-analytics` 구성을 다음과 같은 주요 구성 성분으로 나누어 봅니다.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})를 심층 분석하여
+샘플 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 구성을 다음과 같은 주요 구성 성분으로 나누어 봅니다.
 
 가이드의 나머지 부분에서는 이 구성 샘플을 사용하여
 페이지 조회 수와 사용자 링크 클릭 수를 추적하고
@@ -64,8 +64,8 @@ AMP는 데이터 수집의 두 가지 일반적인 패턴을 지원하도록 만
 (예: [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/))
 
 분석 제공업체에 분석 데이터를 보내려면
-`amp-analytics` 태그에 `type` 속성을 포함하고
-[분석 공급업체](/ko/docs/analytics/analytics-vendors.html) 목록에
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 태그에 `type` 속성을 포함하고
+[분석 공급업체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) 목록에
 정의된 적절한 공급업체로 값을 설정하세요.
 
 예를 들어 `<amp-analytics type="googleanalytics">`는 분석 데이터를
@@ -76,13 +76,13 @@ AMP는 데이터 수집의 두 가지 일반적인 패턴을 지원하도록 만
 정의된 엔드포인트로 분석 데이터가 전송됩니다.
 
 분석 공급업체 구성을 사용하면
-`amp-analytics`를 빠르게 시작할 수 있습니다.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})를 빠르게 시작할 수 있습니다.
 자세한 안내는 공급업체의 문서와
 도움말 자료를 참조하세요.
 앞서 언급했듯이
 이미 AMP와 통합한 공급업체 목록 및
 공급업체 관련 문서 링크는
-[분석 공급업체](/ko/docs/analytics/analytics-vendors.html) 목록에서 찾을 수 있습니다.
+[분석 공급업체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) 목록에서 찾을 수 있습니다.
 
 분석 공급업체라면
 [자체 분석 구성을 AMP HTML로 통합](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)하는
@@ -90,7 +90,7 @@ AMP는 데이터 수집의 두 가지 일반적인 패턴을 지원하도록 만
 
 ## 원격 구성 로드: config 속성
 
-AMP 페이지에 `amp-analytics` 구성
+AMP 페이지에 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 구성
 전체를 포함할 필요가 없습니다.
 대신 구성 전체 또는 일부의 원격
 URL을 호출할 수 있습니다.
@@ -102,7 +102,7 @@ URL을 호출할 수 있습니다.
 프로세스를 실행할 수 있습니다.
 
 원격 구성을 로드하는 첫 번째 단계는
-`amp-analytics` 태그에 config 속성을 포함하는 것입니다.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 태그에 config 속성을 포함하는 것입니다.
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -123,7 +123,7 @@ JSON 개체에 포함된 구성은 분석 계정의 변수 값일 뿐입니다.
 ```
 
 마지막으로 원격 파일의 내용을
-`amp-analytics` 구성의 적절한 위치로 가져와야 합니다.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 구성의 적절한 위치로 가져와야 합니다.
 여기에서 `pageview` 및 `event` 요청 모두의
 `account` 변수 값은 원격 URL의 계정 값으로
 자동 설정됩니다(`"account": "UA-XXXXX-Y"`).
@@ -139,7 +139,7 @@ JSON 개체에 포함된 구성은 분석 계정의 변수 값일 뿐입니다.
 
 AMP는 동일한 변수의 여러 가지 용도에 대한 유효성을 검사하지 않습니다.
 값은 선호하는 변수 대체 순위에 따라 채워지며
-원격 URL의 값은 순위의 맨 위에 있습니다([변수 대체 순위](/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
+원격 URL의 값은 순위의 맨 위에 있습니다([변수 대체 순위]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering) 참조).
 
 [/tip]
 
@@ -156,7 +156,7 @@ AMP는 동일한 변수의 여러 가지 용도에 대한 유효성을 검사하
 프로토콜을 전송하는 방법을 지정합니다.
 
 계속 읽어나가며 속성의 구성을 자세히 알아보세요.
-([amp-analytics 참조](/ko/docs/reference/components/amp-analytics.html)에서
+([`amp-analytics` 참조]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})에서
 구성을 자세히 알아볼 수 있습니다.)
 
 ### 전송되는 데이터: requests 속성
@@ -184,10 +184,10 @@ Google 애널리틱스를 포함한 일부 분석 제공업체에서는
 
 #### 요청 URL 추가: Extra URL Params
 
-[extraUrlParams](/ko/docs/reference/components/amp-analytics.html#extra-url-params) 속성은
+[extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params) 속성은
 일반적인 '&foo=baz' 규칙을 통해 요청 URL의 쿼리 문자열에 덧붙일 추가 매개변수를 지정합니다.
 
-`amp-analytics` 예에서는 요청에 추가 매개변수 `cd1`을
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 예에서는 요청에 추가 매개변수 `cd1`을
 덧붙이고 매개변수 값을 'AMP'로 설정합니다.
 
 ```js
@@ -204,7 +204,7 @@ Google 애널리틱스를 포함한 일부 분석 제공업체에서는
 모든 문자열을 사용할 수 있습니다.
 
 예를 들면
-다음 `amp-analytics` 요소는 문서가 처음 로드될 때와
+다음 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 요소는 문서가 처음 로드될 때와
 `a` 태그가 클릭될 때마다 `https://example.com/analytics`로
 요청을 전송하도록 구성됩니다.
 
@@ -227,7 +227,7 @@ Google 애널리틱스를 포함한 일부 분석 제공업체에서는
 ```
 
 [tip type="important"]
- 위의 방법은 AMP 페이지에서만 권장되며 AMP HTML 광고에는 권장되지 않습니다. 페이지의 콘텐츠보다 분석 우선순위가 낮으므로 클릭 손실을 방지하려면 브라우저 리디렉션을 사용하여 클릭을 추적하는 것이 좋습니다. 
+ 위의 방법은 AMP 페이지에서만 권장되며 AMP HTML 광고에는 권장되지 않습니다. 페이지의 콘텐츠보다 분석 우선순위가 낮으므로 클릭 손실을 방지하려면 브라우저 리디렉션을 사용하여 클릭을 추적하는 것이 좋습니다.
 [/tip]
 
 AMP는 다음 트리거 구성을 지원합니다.
@@ -269,7 +269,7 @@ AMP는 다음 트리거 구성을 지원합니다.
 
 [tip type="important"]
 
-우선순위가 낮은 구성의 트리거는 우선순위가 높은 구성의 동일한 이름을 가진 트리거에 의해 재정의됩니다([변수 대체 순위](/ko/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering) 참조).
+우선순위가 낮은 구성의 트리거는 우선순위가 높은 구성의 동일한 이름을 가진 트리거에 의해 재정의됩니다([변수 대체 순위]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering) 참조).
 
 [/tip]
 
@@ -332,7 +332,7 @@ AMP는 우선순위에 따라 변수 값을 게재합니다.
 
 1. 원격 구성(`config`를 통함)
 2. `triggers` 내의 트리거 안에 중첩된 `vars`
-3. `amp-analytics` 내에서 최상위 수준으로 중첩된 `vars`
+3. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 내에서 최상위 수준으로 중첩된 `vars`
 4. 플랫폼 제공 값
 
 이 예에는 원격 구성과
@@ -399,4 +399,3 @@ AMP는 우선순위에 따라 변수 값을 게재합니다.
     </tr>
   </tbody>
 </table>
- 

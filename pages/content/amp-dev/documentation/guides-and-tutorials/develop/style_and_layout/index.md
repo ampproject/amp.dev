@@ -21,7 +21,7 @@ expanding responsive design capabilities with features like [placeholders & fall
 [advanced art direction via srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) and the [layout attribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) for better control over how your elements display.
 
 [tip type="tip"]
-**TIP –** It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](/docs/design/responsive/responsive_design.html).
+**TIP –** It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.']
@@ -125,7 +125,7 @@ your page's CSS and layout values.
 The validator confirms that your page’s CSS doesn’t exceed 50,000 bytes limit,
 checks for disallowed styles, and ensures that the page's layout
 is supported and correctly formatted.
-See also this complete list of [Style and layout errors](/docs/troubleshooting/validation_errors.html#style-and-layout-errors).
+See also this complete list of [Style and layout errors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#style-and-layout-errors).
 
 Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 

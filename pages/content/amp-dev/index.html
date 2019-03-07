@@ -4,6 +4,8 @@ $view: /views/custom.j2
 
 news: !g.yaml /content/shared/data/blog.yaml
 
+benefits: !g.yaml /content/shared/data/benefits.yaml
+
 format_explainer:
   - name: websites
     visual: views/partials/format-visuals/websites.j2
@@ -22,19 +24,19 @@ format_explainer:
     url: /about/ads.html
   - name: email
     visual: views/partials/format-visuals/email.j2
-    headline: Use AMP to send interactive, dynamic emails to your customers.
+    headline: Use AMP to send interactive, dynamic emails.
     description: "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
     url: /about/email.html
 
 sampler:
-  - title: amp-accordion / 6
-    url: /documentation/examples/components/amp-accordion.html/source/6
-  - title: amp-accordion / 9
-    url: /documentation/examples/components/amp-accordion.html/source/9
-  - title: amp-accordion / 12
-    url: /documentation/examples/components/amp-accordion.html/source/12
-  - title: amp-accordion / 15
-    url: /documentation/examples/components/amp-accordion.html/source/18
+  - title: AMP Website
+    url: /static/samples/standalone/amp-website.html
+  - title: AMP Story
+    url: /static/samples/standalone/amp-story.html
+  - title: AMP Email
+    url: /static/samples/standalone/amp-email.html
+  - title: AMP Ad
+    url: /static/samples/standalone/amp-ad.html
 
 success_stories:
   - !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
@@ -230,16 +232,20 @@ success_stories:
 
   <section class="ap--sampler">
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
-    {% set playground_url = podspec.base_urls.api + '/playground' %}
+    {% set playground_url = podspec.base_urls.platform + '/playground' %}
+    {% set playground_embed_url = podspec.base_urls.api + '/playground' %}
 
     {# Can't use |tojson filter here since URLs need to be built #}
     <amp-state id="sampler">
       <script type="application/json">
       [{% for sample in doc.sampler %}
-        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + sample.url %}
+        {% set embed_url = playground_embed_url + '/embed#mode=responsive&url=' + sample.url %}
+        {% set standalone_url = playground_url + '/#url=' + sample.url %}
         {
           "title": "{{ sample.title }}",
-          "url": "{{ embed_url|safe }}"
+          "url": "{{ sample.url|safe }}",
+          "embedUrl": "{{ embed_url|safe }}",
+          "standaloneUrl": "{{ standalone_url|safe }}"
         }{{ "," if not loop.last }}
       {% endfor %}]
       </script>
@@ -278,7 +284,8 @@ success_stories:
 
         </div>
 
-        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
+        {% set embed_url = playground_embed_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
+        {% set standalone_url = playground_url + '/#url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
             height="450px"
@@ -286,9 +293,10 @@ success_stories:
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
             resizable
             noloading
+            allow="fullscreen"
             frameborder="0"
             src="{{ embed_url }}"
-            [src]="sampler[activeSample].url">
+            [src]="sampler[activeSample].embedUrl">
             <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
             <div placeholder>
               <div class="ap-o-sampler-iframe-source"></div>
@@ -299,8 +307,8 @@ success_stories:
         </div>
 
         <div class="ap-o-sampler-link">
-          <a href="{{ doc.sampler[0].url }}"
-            [href]="sampler[activeSample].url"
+          <a href="{{ playground_url }}#url={{ doc.sampler[0].url }}"
+            [href]="sampler[activeSample].standaloneUrl"
             class="ap-m-lnk">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -321,77 +329,40 @@ success_stories:
 
         <h2>Business Benefits</h2>
 
-        <div class="ap-m-benefit">
-          <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/ux-improvement.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ux-improvement"></use></svg>
-          </div>
-          <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">Web page speed improves the user experience and core business metrics</span>
-            <span class="ap-m-benefit-text-copy">AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms.</span>
-          </div>
-        </div>
+        {% for benefit in doc.benefits.home.business %}
 
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/star.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star"></use></svg>
+            {% do doc.icons.useIcon('icons/'+ benefit.icon + '.svg') %}
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">Building AMP pages is easy and reduces developer overhead</span>
-            <span class="ap-m-benefit-text-copy">You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal.</span>
+            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
+            <span class="ap-m-benefit-text-copy">{{ benefit.text }}</span>
           </div>
         </div>
 
-        <div class="ap-m-benefit">
-          <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/interaction.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use></svg>
-          </div>
-          <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">AMP can be applied across various web touch points</span>
-            <span class="ap-m-benefit-text-copy">Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available.</span>
-          </div>
-        </div>
-
+        {% endfor %}
       </div>
 
       <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
 
         <h2>Developer Benefits</h2>
 
-        <div class="ap-m-benefit">
-          <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/content-modules.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#content-modules"></use></svg>
-          </div>
-          <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">Maintain flexibility and control and reduce complexity in your code</span>
-            <span class="ap-m-benefit-text-copy">You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible userexperience     for your customers.</span>
-          </div>
-        </div>
+        {% for benefit in doc.benefits.home.developer %}
 
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/components.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#components"></use></svg>
+            {% do doc.icons.useIcon('icons/' + benefit.icon + '.svg') %}
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">Building blocks that ensure performance</span>
-            <span class="ap-m-benefit-text-copy">It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.</span>
+            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
+            <span class="ap-m-benefit-text-copy">{{ benefit.text }}</span>
           </div>
         </div>
 
-        <div class="ap-m-benefit">
-          <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/fast-loading.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fast-loading"></use></svg>
-          </div>
-          <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">Build for a sustainable future in the open web for everyone</span>
-            <span class="ap-m-benefit-text-copy">The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster more user-friendly    experience.</span>
-          </div>
-        </div>
+        {% endfor %}
       </div>
 
       <div class="ap-o-benefits-overview-link">

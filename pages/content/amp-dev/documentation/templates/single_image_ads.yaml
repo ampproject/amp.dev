@@ -1,0 +1,15 @@
+$title: Single Image
+$view: /views/detail/template-detail.j2
+$category: Story Ads
+$order: 5
+formats:
+  - ads
+
+teaser:
+  image:
+    src: '/static/img/templates/single-image-template.gif'
+    width: 9
+    height: 16
+    alt: Single Image
+
+  download_url: '/static/files/templates/single-image-ads.zip'

@@ -53,7 +53,7 @@ $title: 본격적으로 스토리 시작하기
 ```
 
 위의 필수 속성외에도 다른 속성도 있습니다. 다른 속성에 대해서도 알고 싶으면
-[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 레퍼런스 문서의 [attributes](/ko/docs/reference/components/amp-story.html#attributes)
+[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 레퍼런스 문서의 [attributes]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#attributes)
 섹션을 참고하십시오.
 
 [tip type="note"]

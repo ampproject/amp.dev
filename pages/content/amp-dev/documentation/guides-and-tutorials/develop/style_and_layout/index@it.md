@@ -22,11 +22,11 @@ Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il lay
 </amp-img>
 [/sourcecode]
 
-Questo elemento `amp-img` si adatta automaticamente alla larghezza del relativo elemento contenitore, mentre la sua altezza viene impostata automaticamente in base alle proporzioni stabilite secondo la larghezza e l'altezza indicate:
+Questo elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) si adatta automaticamente alla larghezza del relativo elemento contenitore, mentre la sua altezza viene impostata automaticamente in base alle proporzioni stabilite secondo la larghezza e l'altezza indicate:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-Visita anche la pagina [amp-img del sito AMP by Example](https://ampbyexample.com/components/amp-img/).
+Visita anche la pagina [`amp-img` del sito AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ## Aggiungere stili a una pagina
 
@@ -95,7 +95,7 @@ Leggi ulteriori informazioni sui [layout supportati in AMP]({{g.doc('/content/am
 Utilizza lo strumento di convalida AMP per testare i valori CSS e di layout della tua pagina.
 
 Lo strumento di convalida verifica che gli elementi CSS della pagina non superino il limite di 50.000 byte, controlla se ci sono stili non consentiti e si assicura che il layout della pagina sia supportato e formattato correttamente.
-Consulta anche questo elenco completo di [errori di stile e layout](/it/docs/troubleshooting/validation_errors.html#errori-di-stile-e-layout).
+Consulta anche questo elenco completo di [errori di stile e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#errori-di-stile-e-layout).
 
 Esempio di errore nella console relativo a una pagina i cui elementi CSS superano il limite di 50.000 byte:
 

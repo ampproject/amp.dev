@@ -23,22 +23,19 @@ import 'codemirror/addon/edit/closebrackets.js';
 import 'codemirror/addon/edit/closetag.js';
 
 import 'codemirror/addon/hint/show-hint.js';
-import 'codemirror/addon/hint/xml-hint.js';
 import 'codemirror/addon/hint/html-hint.js';
 import 'codemirror/addon/hint/css-hint.js';
 
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
-import 'codemirror/mode/javascript/javascript.js';
-import 'codemirror/mode/xml/xml.js';
 
 import events from '../events/events.js';
 import {runtimes, EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
 
-require('./editor.scss');
-
 import CodeMirror from 'codemirror';
 import Loader from '../loader/base.js';
+
+require('./editor.scss');
 
 const DEFAULT_DEBOUNCE_RATE = 500;
 const HINT_IGNORE_ENDS = new Set([
@@ -50,7 +47,6 @@ const HINT_IGNORE_ENDS = new Set([
   '[', ']',
 ]);
 const HINTS_URL = 'amphtml-hint.json';
-
 
 export const EVENT_INPUT_CHANGE = 'editor-input-change';
 export const EVENT_INPUT_NEW = 'editor-input-new';
@@ -140,8 +136,12 @@ class Editor {
     return this.codeMirror.getValue();
   }
 
+  scrollToLine(line) {
+    this.codeMirror.setCursor(line - 1, 1);
+  }
+
   setCursorAndFocus(line, col) {
-    this.codeMirror.setCursor(line - 1, col, {'scroll': true});
+    this.codeMirror.setCursor(line - 1, col);
     this.codeMirror.focus();
   }
 

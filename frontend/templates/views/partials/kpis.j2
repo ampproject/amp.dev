@@ -1,27 +1,55 @@
 {% if kpis %}
 <section class="ap--kpi">
   {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-  <div class="ap-o-kpi-list ap--container">
-    {% for kpi in kpis %}
-    <div class="ap-m-kpi ap-m-kpi-{{ format }}">
-      {% if kpi.success_story %}
-      <a class="ap-m-kpi-content" href="{{ kpi.success_story.url.path }}">
-      {% else %}
-      <div class="ap-m-kpi-content">
-      {% endif %}
-        {% if kpi.icon %}
-        {% do doc.icons.useIcon('icons/' + kpi.icon + '.svg') %}
-        <svg class="ap-m-kpi-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ kpi.icon }}"></use></svg>
-        {% endif %}
-        <span class="ap-m-kpi-number">{{ kpi.figure }}</span>
-        <span class="ap-m-kpi-text">{{ kpi.description }}</span>
-      {% if kpi.success_story %}
-      </a>
-      {% else %}
-      </div>
-      {% endif %}
+  <amp-layout media="(min-width: 768px)" layout="container">
+    <div class="ap-o-kpi-list ap--container">
+      {% for kpi in kpis %}
+        <div class="ap-m-kpi ap-m-kpi-{{ format }}">
+          {% if kpi.success_story %}
+          <a class="ap-m-kpi-content" href="{{ kpi.success_story.url.path }}">
+          {% else %}
+          <div class="ap-m-kpi-content">
+          {% endif %}
+            {% if kpi.icon %}
+            {% do doc.icons.useIcon('icons/' + kpi.icon + '.svg') %}
+            <svg class="ap-m-kpi-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ kpi.icon }}"></use></svg>
+            {% endif %}
+            <span class="ap-m-kpi-number">{{ kpi.figure }}</span>
+            <span class="ap-m-kpi-text">{{ kpi.description }}</span>
+          {% if kpi.success_story %}
+          </a>
+          {% else %}
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
+  </amp-layout>
+
+  <amp-layout media="(max-width: 767px)" layout="container">
+    <amp-carousel layout="responsive" height="100" width="100" type="slides" controls>
+      {% for kpi in kpis %}
+      <div class="ap-m-kpi ap-m-kpi-{{ format }}">
+        {% if kpi.success_story %}
+        <a class="ap-m-kpi-content" href="{{ kpi.success_story.url.path }}">
+        {% else %}
+        <div class="ap-m-kpi-content">
+        {% endif %}
+          {% if kpi.icon %}
+          {% do doc.icons.useIcon('icons/' + kpi.icon + '.svg') %}
+          <svg class="ap-m-kpi-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ kpi.icon }}"></use></svg>
+          {% endif %}
+          <span class="ap-m-kpi-number">{{ kpi.figure }}</span>
+          <span class="ap-m-kpi-text">{{ kpi.description }}</span>
+        {% if kpi.success_story %}
+        </a>
+        {% else %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </amp-carousel>
+  </amp-layout>
+
 </section>
 {% endif %}

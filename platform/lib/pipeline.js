@@ -29,7 +29,6 @@ const Grow = require('./pipeline/grow');
 const ComponentReferenceImporter = require('./pipeline/componentReferenceImporter');
 const SpecImporter = require('./pipeline/specImporter');
 const {samplesBuilder} = require('./build/samplesBuilder');
-const {formatFilter} = require('./build/formatFilter');
 const roadmapImporter = require('./pipeline/roadmapImporter');
 const {pageMinifier} = require('./build/pageMinifier');
 
@@ -244,27 +243,6 @@ class Pipeline {
 
       stream.on('end', () => {
         pageMinifier._log.success('Minified page\'s HTML.');
-        resolve();
-      });
-    });
-  }
-
-  /**
-   * Creates a variant of each page for each format if it isn't maintained
-   * manually
-   * @return {Promise}
-   */
-  createFilteredPages() {
-    return new Promise((resolve, reject) => {
-      const stream = formatFilter.start();
-
-      stream.on('error', (error) => {
-        formatFilter._log.fatal('Something went wrong while filtering pages by format.');
-        reject(error);
-      });
-
-      stream.on('end', () => {
-        formatFilter._log.success('Created filtered pages.');
         resolve();
       });
     });

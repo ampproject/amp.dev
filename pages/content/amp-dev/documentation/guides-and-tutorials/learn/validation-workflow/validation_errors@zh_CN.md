@@ -81,7 +81,7 @@ limitations under the License.
 但未发现其对应的 `<script>`，则会显示
 `TAG_REQUIRED_BY_MISSING` 错误。
 
-[扩展组件](/zh_cn/docs/reference/components.html)
+[扩展组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 必须作为自定义元素明确包含在 AMP 文档中。
 要更正这类错误，请转到扩展组件的参考页面，
 然后将其所需的脚本复制并粘贴到 AMP 文档 `<head>` 中。

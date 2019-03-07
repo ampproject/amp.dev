@@ -12,12 +12,12 @@ $title: Примеры использования
 
 ## Отслеживание просмотров страницы
 
-Узнайте, как отслеживать число просмотров страницы с помощью `amp-pixel` и `amp-analytics`.
+Узнайте, как отслеживать число просмотров страницы с помощью [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) и [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 ### Использование amp-pixel
 
 Отправка данных pageview на указанный URL-адрес с помощью
-[amp-pixel](/ru/docs/reference/components/amp-pixel.html):
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -26,7 +26,7 @@ $title: Примеры использования
 ### Использование amp-analytics – без поставщика услуг
 
 Отправка данных pageview на указанный URL-адрес с помощью
-[amp-analytics](/ru/docs/reference/components/amp-analytics.html):
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -75,7 +75,7 @@ $title: Примеры использования
 ## Отслеживание нажатий на странице
 
 Узнайте, как отслеживать нажатия на странице с помощью
-[amp-analytics](/ru/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 отправляя данные событий на указанный URL-адрес и в
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -142,7 +142,7 @@ $title: Примеры использования
 
 ## Отслеживание прокрутки
 
-Вы можете отслеживать прокрутку страницы с помощью [amp-analytics](/ru/docs/reference/components/amp-analytics.html).
+Вы можете отслеживать прокрутку страницы с помощью [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Следующий пример использует атрибут `scrollspec` для отправки события `scroll`
 на указанный URL-адрес, когда страница прокручивается по вертикали на 25%, 50% и 90%.
 Событие также возникает при прокрутке страницы по горизонтали
@@ -175,7 +175,7 @@ $title: Примеры использования
 ## Отслеживание взаимодействий в социальных сетях
 
 Узнайте, как отслеживать взаимодействия в социальных сетях с помощью
-[amp-analytics](/ru/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 отправляя данные событий на указанный URL-адрес и в
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

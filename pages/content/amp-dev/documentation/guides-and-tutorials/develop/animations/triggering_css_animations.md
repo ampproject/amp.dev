@@ -1,22 +1,22 @@
 ---
-$title: Triggering CSS animations & transitions 
+$title: Triggering CSS animations & transitions
 $order: 1
 formats:
   - websites
   - ads
 ---
 
-Triggering CSS animations on pages [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](docs/interaction_dynamic/amp-actions-and-events#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages. 
+Triggering CSS animations on pages [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](docs/interaction_dynamic/amp-actions-and-events#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
 
-## Defining CSS and Keyframes 
+## Defining CSS and Keyframes
 
 You can define CSS several ways in AMP:
 
-*   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit. 
-*   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties. 
-*   Inline styles. 25,000 byte limit. 
+*   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
+*   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+*   Inline styles. 25,000 byte limit.
 
-To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources. 
+To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 
 ```
 ...
@@ -45,36 +45,36 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
 ...
 ```
 
-## Adding, Removing, and Toggling Classes 
+## Adding, Removing, and Toggling Classes
 
-The AMP action, `toggleClass` enables the addition and removal of classes to defined elements. 
+The AMP action, `toggleClass` enables the addition and removal of classes to defined elements.
 
 ```
 elementName.ToggleClass(class="className")
 ```
 
-You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu. 
+You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
 
 ```
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
 
 ```
-The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute. 
+The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute.
 
 ```
 <button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
-    Disappear 
+    Disappear
 </button>
 <button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
-    Reappear 
+    Reappear
 </button>
 ```
 
 If you need to remove a class and disallow reapplication, add the `force` attribute with a value of `false`. IF you need to addd a class and disallow removal, add `force` with a value of `true`.
 
-## Animate with Numerous Classes 
+## Animate with Numerous Classes
 
-The `<amp-bind>` extension works by defining different states as a JSON object inside `<amp-state>`. 
+The [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) extension works by defining different states as a JSON object inside [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state).
 
 You can define a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
 
@@ -91,8 +91,8 @@ You can define a list of CSS classes within the `<style amp-custom>` tag in the 
     }
     .visible {
       opacity: 1;
-      
-    }   
+
+    }
     .invisible {
       opacity: 0;
     }
@@ -102,7 +102,7 @@ You can define a list of CSS classes within the `<style amp-custom>` tag in the 
     .right {
       transform: translatex(-50px)
     }
- 
+
     button {
       margin-top: 120px;
       margin-left: 1rem;
@@ -138,29 +138,28 @@ Then you pair each class with a state:
 Then link the element with the classes:
 
 ```
-... 
+...
   <div class=" " [class]="magicBox[animateBox].className"> </div>
 ...
 ```
 
-The states change from a linked AMP action or event. The following example changes the state from user interaction: 
+The states change from a linked AMP action or event. The following example changes the state from user interaction:
 
 ```
 ...
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear 
+    Disappear
 </button>
 <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear 
+    Reappear
 </button>
 <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left 
+    Move Left
 </button>
 <button on="tap:AMP.setState({animateBox: 'moveRight'})">
-  Move Right 
+  Move Right
 </button>
 ...
 ```
- 
-Using `<amp-bind>` in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes. 
 
+Using [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes.

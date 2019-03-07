@@ -6,6 +6,10 @@ $view: /views/custom.j2
 $path: /documentation/components.html
 $hidden: true
 
+flyout:
+  - description: The complete AMP library
+    icon: components-flyout
+
 teaser:
   image:
     src: 'https://placehold.it/400x400'
@@ -105,8 +109,8 @@ teaser:
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-      
-      
+
+
       <div class="ap-o-teaser-grid">
         {# Hardcode to a length of 9 teasers as there will be at least that much #}
         <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
