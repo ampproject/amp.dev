@@ -1,7 +1,7 @@
 /*
 
 #############################
-### ORGANISM: jumpto-list ########
+### ORGANISM: cities ########
 #############################
 
 */
@@ -16,28 +16,69 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('cities')} {
-  grid-column: 6 / 19;
+
+  @media (min-width: 768px) {
+    grid-column: 6 / 20;
+  }
 
   &-headline {
     @include hl;
     @include hl-h2;
 
-    // grid-column: 6 / span 2;
   }
 
   &-sub-headline {
     @include hl;
     @include hl-h4;
-
-    // grid-column: 6 / span 5;
   }
 
-  &-next-events-list {
-    display: flex;
-    margin-bottom: 60px;
+  &-next-events {
+    text-align: center;
+    padding-bottom: 60px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid color('gallery');
+
+    &-list {
+      display: flex;
+      margin: 20px 0 60px;
+    }
+
+    &-checkback {
+      @include txt;
+      margin: 0 auto;
+    }
   }
 
-  &-checkback {
-    @include txt;
+  &-visited-list {
+    list-style: none;
+    column-count: 5;
+    column-fill: balance;
+    padding-left: 0;
+
+    &-item {
+      margin-bottom: 35px;
+      padding: 0 15px
+
+      &-group {
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+      &-city {
+        @include txt;
+        @include txt-lrg;
+        @include txt-strong;
+        @include txt-font-accent;
+
+        margin: 0;
+        color: fade_out(color('charade'), 0.5);
+      }
+
+      &-date {
+        @include txt;
+        @include txt-2;
+        margin: 0;
+      }
+    }
   }
 }

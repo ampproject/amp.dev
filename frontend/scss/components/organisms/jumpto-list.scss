@@ -17,19 +17,10 @@
   width: 100%;
 
   @media (min-width: 768px) {
-    margin-left: 64px;
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
     position: relative;
   }
 
-  div.#{utility('container-fluid')} {
-    width: 100%;
-
-    @media (min-width: 768px) {
-      padding: 0 2.5em;
-      margin-left: -64px;
-    }
-  }
 }
 
 .#{organism('jumpto')} {
@@ -37,8 +28,8 @@
   position: relative;
 
   @media (min-width: 768px) {
-    grid-column: 1 / -1;
-    margin: 0 0 60px 64px;
+    grid-column: 3 / -1;
+    margin-bottom: 64px;
   }
 
   &-content {
@@ -67,7 +58,7 @@
       @include txt;
       @include txt-1;
       @include txt-font-accent;
-      
+
       padding: 0 30px;
     }
 
@@ -76,7 +67,7 @@
     }
   }
 
- 
+
 
   }
 

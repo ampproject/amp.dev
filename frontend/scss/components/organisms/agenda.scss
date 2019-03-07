@@ -1,0 +1,104 @@
+/*
+
+#############################
+### ORGANISM: agenda ########
+#############################
+
+*/
+
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{organism('agenda')} {
+  @include agenda-list-shadow;
+
+  grid-column: 5 / 21;
+  background: color('white');
+  border-radius: 4px;
+
+  &--container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 30px;
+  }
+
+  &-content {
+    grid-column: 3 / 14;
+    padding: 50px 0;
+
+    &-headline {
+      @include hl;
+      @include hl-h2;
+    }
+
+    &-sub-text {
+      @include txt;
+      @include txt-1;
+
+      & span {
+        @include txt-strong;
+      }
+    }
+
+    &-list {
+      list-style: none;
+      padding-left: 0;
+
+      &-item {
+        @include txt;
+        @include txt-lrg;
+        @include txt-font-accent;
+        display: flex;
+        align-items: center;
+
+        &-divider {
+          height: 15px;
+          width: 15px;
+          margin: 0 5px;
+          border-radius: 50%;
+          border: 1.25px solid color('blue-ribbon');
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 1px;
+            background-color: color('blue-ribbon');
+          }
+
+          &.break {
+            height: 9px;
+            width: 9px;
+            background-color: color('blue-ribbon');
+          }
+        }
+
+        &-time {
+          margin-right: 10px;
+          padding: 5px;
+        }
+
+        &-title {
+          margin-left: 10px;
+          padding: 5px;
+
+          &.break {
+            color: fade_out(color('charade'), 0.5);
+          }
+
+          &.keynote {
+            color: color('blue-ribbon');
+          }
+        }
+      }
+    }
+  }
+
+}

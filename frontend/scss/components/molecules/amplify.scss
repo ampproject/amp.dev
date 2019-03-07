@@ -1,0 +1,41 @@
+/*
+
+#########################
+### MOLECULE: amplify ###
+#########################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+.#{molecule('amplify')} {
+  @include agenda-list-shadow;
+  grid-column: 5 / 22;
+  background: color('blue-ribbon');
+  border-radius: 4px;
+
+  &-content {
+    padding: 25px 150px 25px 50px;
+
+    &-headline {
+      @include hl;
+      @include hl-h2;
+      color: color('white');
+
+    }
+
+    &-subline {
+      @include txt;
+      @include txt-1;
+      color: color('white');
+    }
+  }
+
+}

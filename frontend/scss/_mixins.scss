@@ -48,6 +48,10 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	box-shadow: 0 10px 15px 0 rgba(0,0,0,0.07);
 }
 
+@mixin agenda-list-shadow {
+	box-shadow: 0 25px 25px 0 rgba(0,0,0,0.15);
+}
+
 @mixin turbo-pizazz {
 	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
 }

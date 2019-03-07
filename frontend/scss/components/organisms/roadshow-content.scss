@@ -1,0 +1,40 @@
+/*
+
+#############################
+### ORGANISM: roadshow-content ########
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{organism('roadshow-content')} {
+    grid-column: 3 / -1;
+    margin-top: 50px;
+
+    &-headline {
+      @include hl;
+      @include hl-h2;
+    }
+
+    &-description {
+      @include txt;
+      @include txt-1;
+
+      width: 70%;
+      padding-bottom: 50px;
+
+    }
+
+    &-pillar-list {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+}
