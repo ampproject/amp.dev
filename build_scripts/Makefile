@@ -3,7 +3,7 @@ TAG                 := $(shell git log -1 --pretty=%H)
 INSTANCE_GROUP      := ig-${PREFIX}
 INSTANCE_TEMPLATE   := it-${PREFIX}-${TAG}
 INSTANCE_NAME       := i-${PREFIX}
-INSTANCE_GROUP_SIZE := 1
+INSTANCE_GROUP_SIZE := 2
 PROJECT_ID          := amp-dev-230314
 WORKING_DIR         := ..
 HEALTH_CHECK        := http-basic-check
@@ -60,12 +60,17 @@ create-instance-group:
     --template ${INSTANCE_TEMPLATE}
 
 update:
-	gcloud compute instance-groups managed rolling-action start-update ${INSTANCE_GROUP} \
-	--version template=${INSTANCE_TEMPLATE}
+	gcloud beta compute instance-groups managed rolling-action start-update ${INSTANCE_GROUP} \
+	 --version template=${INSTANCE_TEMPLATE} \
+	 --min-ready 1m \
+	 --max-surge 1 \
+	 --max-unavailable 1
 
 update-status:
-	gcloud beta compute instance-groups managed describe ${INSTANCE_GROUP}
+	gcloud beta compute instance-groups managed describe ${INSTANCE_GROUP} \
+		--zone=${ZONE}
 
 update-stop:
-	gcloud compute instance-groups managed rolling-action stop-proactive-update ${INSTANCE_GROUP} 
+	gcloud compute instance-groups managed rolling-action stop-proactive-update ${INSTANCE_GROUP}
+
 deploy: docker-upload create-instance-template update
