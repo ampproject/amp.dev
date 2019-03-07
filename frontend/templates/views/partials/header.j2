@@ -19,24 +19,137 @@
     </a>
 
     {% do doc.styles.addCssFile('/css/components/molecules/nav-link.css') %}
-    <nav class="ap-o-header-first-level">
+    <nav class="ap-o-header-main">
       {# Sections #}
+
       {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
-      {% if section.index %}
 
-      {% set section_index = g.doc(section.index, locale=doc.locale) %}
-      <a class="ap-o-header-first-level-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
-        {{ section.title }}
-      </a>
-      {% elif section.external_index %}
-      <a class="ap-o-header-first-level-link ap-m-nav-link" href="{{ section.external_index }}">
-        {{ section.title }}
-      </a>
-      {% endif %}
-      {% endfor %}
-    </nav>
+      {# hover is not avaiable for larger touch devices, a work around for displaying the nav list is using hidden input fields #}
+      <input id="main-item-radio-{{ section.order }}" type="radio" name="main-radio-btn" role="button" tabindex="0" />
+      
+      <div class="ap-o-header-main-item">
+        {% if section.index %}
+        {% set section_index = g.doc(section.index, locale=doc.locale) %}
+          <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
+            {{ section.title }}
+          </a>          
 
-    {# Add language selector between first- and second level navigation #}
+          {% if section.sub_navigation %}
+            {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+            <label class="ap-a-ico ap-o-header-main-link-icon" for="main-item-radio-{{ section.order }}">                
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+            </label>
+          {% endif %}
+
+        {% elif section.external_index %}
+          <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section.external_index }}">
+            {{ section.title }}
+          </a>  
+          {% if section.sub_navigation %}
+            {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+              <label class="ap-a-ico ap-o-header-main-link-icon" for="main-item-radio-{{ section.order }}">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+              </label>
+          {% endif %}
+        {% endif %}
+
+        {% if section.sub_navigation %}
+        <ul class="ap-o-header-flyout">
+          <div class="ap-o-header-flyout-fake-shadow"></div>
+          {% for second_level_path in section.sub_navigation %}
+            {% set second_level_doc = g.doc(second_level_path, locale=doc.locale) %}
+            {% if second_level_doc.collection.collections() and second_level_doc.collection.index != "/content/amp-dev/documentation/guides-and-tutorials/index.html" %}
+                {% set third_level_name =  second_level_doc.collection.collection_path.split('/')[2] %}
+            {% endif %}
+
+
+
+            {% if second_level_doc.flyout %}
+              {% set flyout = second_level_doc.flyout %}
+              {% if second_level_doc.format_filter %}
+                {% set format = second_level_doc.format_filter %}
+              {% endif %}
+
+              {# start first level flyout item #}
+
+                <li class="ap-o-header-flyout-primary-item {% if third_level_name %} third-level {% endif %}">
+                  <a class="ap-o-header-flyout-primary-item-link {{ format }}" href="{{ second_level_doc.url.path }}">
+
+                  {% for flyout_info in flyout %}
+                  {% do doc.icons.useIcon('icons/'+ flyout_info.icon +'.svg') %}
+                  {% if format %}
+                    {% do doc.icons.useIcon('icons/gradient-' + format +'.svg') %}
+                  {% endif %}
+                  
+                    <div class="ap-o-header-flyout-primary-item-link-icon {% if format %} {{ format }} {% endif %}">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout_info.icon }}"></use></svg>
+                    </div>
+
+                    <div class="ap-o-header-flyout-primary-item-link-info 
+                    {% if format %}ap-o-header-flyout-primary-item-link-info-{{ format }}{% endif %}">
+                      <div class="ap-o-header-flyout-item-title">{{ second_level_doc.title }}</div>
+                      <div class="ap-o-header-flyout-item-description">{{ flyout_info.description }}</div>
+                    </div>
+                  {% endfor %}
+
+                  {% if third_level_name %}                  
+                    {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+                    <div class="ap-a-ico ap-o-header-main-link-icon right">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+                    </div>
+                  {% endif %}
+                  </a>
+
+                  {% if third_level_name %}
+                  
+                    <ul class="ap-o-header-flyout ap-o-header-flyout-secondary">
+
+                    {# each third level content has a different file structre, conditions are needed #}
+                      {% if third_level_name == 'examples' %}
+
+                        {% for collection in second_level_doc.collection.collections() %}
+                        {% set first_example = g.docs(collection.collection_path, locale=doc.locale)|first %}
+                        {% if first_example %}
+                          <li class="ap-o-header-flyout-item-secondary">
+                            <a class="ap-o-header-flyout-item-third-level-description" href="{{ first_example.url.path }}">{{ collection.title }}</a>
+                          </li>
+                        {% endif %}
+                        {% endfor %}
+
+                      {% elif third_level_name == 'components' %}
+
+                        {% for collection in second_level_doc.collection.collections() %}
+                          {% for category, doc in g.categories(collection.collection_path, locale=doc.locale) %}
+                            {% if category %}
+                              <li class="ap-o-header-flyout-item-secondary">
+                                <a class="ap-o-header-flyout-item-third-level-description" href="{{ doc[0].url.path }}">{{ category }}</a>
+                              </li>
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+
+                      {% else %}
+                      {% endif %}
+                    </ul>
+
+                  {# end third level flyout #}
+                  {% else %}
+                    </a>
+                  {% endif %}
+                </li>
+                {% else %}
+                  <li class="ap-o-header-flyout-item-secondary">
+                    <a class="ap-o-header-flyout-item-title secondary" href="{{ second_level_doc.url.path }}">{{ second_level_doc.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </label>
+    {% endfor %}
+  </nav>
+
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
       <a class="ap-m-language-selector-toggle" href="#">
@@ -56,16 +169,5 @@
       </ul>
     </div>
 
-    {% if second_level %}
-    <nav class="ap-o-header-second-level">
-      {# Get eventual sub-navigations defined per collection #}
-      {% for second_level_path in second_level %}
-      {% set second_level_doc = g.doc(second_level_path, locale=doc.locale) %}
-      <a class="ap-o-header-second-level-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
-        {{ _(second_level_doc.titles('header')) }}
-      </a>
-      {% endfor %}
-    </nav>
-    {% endif %}
   </div>
 </header>
