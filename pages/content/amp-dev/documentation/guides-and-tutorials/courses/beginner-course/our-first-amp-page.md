@@ -169,7 +169,8 @@ CSS customizes the look of your websites. You will almost always add custom styl
 
 - The `!important` rule is restricted.
 
-- For more disallowed or restricted CSS rules, check the documentation [here](https://www.ampproject.org/docs/design/responsive/style_pages).
+- For more disallowed or restricted CSS rules, check the documentation
+  [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 
 To practice adding custom styles to your AMP page, add the following `<style amp-custom>` tag to your page in the `<head>` and see what happens. Once you’re finished, you can remove the styles from your page.
 
@@ -199,7 +200,7 @@ For this and all future exercises, we’re going to apply what we’ve learned t
 
 Additionally, at the start and end of each of these courses, we’ll provide a Glitch template that includes all of the code we’ve completed to that point. If you ever lose your current Glitch page or want to start from our solutions, you can copy code from those Glitch examples, or simply remix those examples and move forward from there.
 
-Using the [documentation](https://www.ampproject.org/docs/getting_started/create/basic_markup) for the AMP boilerplate and the comments above, update your Glitch project so that only the img tag validation error persists. Additionally, to help us build Chico’s Cheese Bikes site, we’ve provided some CSS to use throughout the trainings. If you open [this](https://pastebin.com/vNws2bA1) page, the `<style amp-custom>` tag is there with the styles you need. You should copy these styles to the project you’ve been working with.
+Using the [documentation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}) for the AMP boilerplate and the comments above, update your Glitch project so that only the img tag validation error persists. Additionally, to help us build Chico’s Cheese Bikes site, we’ve provided some CSS to use throughout the trainings. If you open [this](https://pastebin.com/vNws2bA1) page, the `<style amp-custom>` tag is there with the styles you need. You should copy these styles to the project you’ve been working with.
 
 ### Solution
 

@@ -14,6 +14,7 @@ In many ways, the Internet is the central hub for the world. Every day, more peo
 To give site visitors a better experience, the development community has found ways to improve website performance. Along the way, developers have improved accessibility for users of assistive technologies, reliability for fickle connections, and website design for a wide range of devices.
 
 It can be overwhelming at times to keep track of all the new advancements in web technology. We believe that developers want to make fast sites, but it’s too easy to make mistakes along the way.
+
 That’s where AMP comes in. AMP was created to make it easy for developers to focus on building better features without giving customers a poor user experience.
 
 ## How AMP helps

@@ -26,7 +26,7 @@ To complete the code examples included in these courses, we will be using [Glitc
 
 The Glitch code editor environment looks like this:
 
-{{ image('/static/img/courses/beginner/image13.png', 533, 344, caption='Glitch environment') }}
+{{ image('/static/img/courses/beginner/image13.png', 533, 344, caption='The online editor of Glitch') }}
 
 The red box above indicates the online editor where you will be typing HTML and CSS. The green box indicates the button that will take you to the live version of the page you are creating. The yellow box is the button that lets you create a copy of this project and edit it. The blue box indicates the files that you have available. In the assets folder, you can find your images.
 
