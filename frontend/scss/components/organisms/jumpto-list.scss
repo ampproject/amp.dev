@@ -1,0 +1,83 @@
+/*
+
+#############################
+### ORGANISM: jumpto-list ########
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{utility('jumpto')} {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    margin-left: 64px;
+    grid-column: 1 / -1; 
+    position: relative;
+  }
+
+  div.#{utility('container-fluid')} {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 0 2.5em;
+      margin-left: -64px;
+    }
+  }
+}
+
+.#{organism('jumpto')} {
+  width: 100%;
+  position: relative;
+
+  @media (min-width: 768px) {
+    grid-column: 1 / -1;
+    margin: 0 0 60px 64px;
+  }
+
+  &-content {
+    grid-column-start: 3;
+  }
+
+  &-text {
+    @include txt;
+  }
+
+  &-list {
+    @include jumpto-list-shadow;
+    display: flex;
+    background: color('white');
+    border-radius: 4px;
+    grid-column-start: 3;
+    margin: 0;
+    padding: 25px 0;
+
+  &-item {
+    list-style: none;
+    border-right: 1px solid fade_out(color('charade'), 0.70);
+
+
+    &-link {
+      @include txt;
+      @include txt-1;
+      @include txt-font-accent;
+      
+      padding: 0 30px;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+ 
+
+  }
+
+}
