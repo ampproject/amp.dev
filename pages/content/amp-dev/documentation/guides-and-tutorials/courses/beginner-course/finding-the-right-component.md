@@ -47,8 +47,7 @@ Look at the following items in the [documentation]({{g.doc('/content/amp-dev/doc
 These items are listed in the documentation for almost all AMP components. Let’s explore the documentation using one of its examples:
 
 [sourcecode:html]
-{% raw %}
-<amp-carousel id="carousel-with-preview"
+{% raw %}<amp-carousel id="carousel-with-preview"
     width="450"
     height="300"
     layout="responsive"
@@ -110,8 +109,7 @@ After you have made the changes, look at the live page to check your work. Your 
 Here is how the code you added might look in your project:
 
 [sourcecode:html]
-{% raw %}
-<amp-carousel layout="responsive" width="412" height="309" 
+{% raw %}<amp-carousel layout="responsive" width="412" height="309" 
         type="slides" loop>
 <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366" width="412" height="309"
         layout="responsive"></amp-img>
@@ -128,7 +126,7 @@ Remember to include the `<amp-carousel>` script in the `<head>`:
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
-### Discovering New Components
+## Discovering New Components
 
 As we continue to develop our cheese bike site, we won’t always know the name of the AMP component we want to add to implement some desired new feature. The AMP community has produced a large collection of components that handle many different types of functionality: ads and analytics, dynamic content, layout, media, presentation, and social. It’s typical when developing an AMP site to be given a set of requirements for a new feature, and then to search through the lists of AMP components in search of a component that fulfills those requirements.
 
@@ -165,9 +163,7 @@ After you have completed this task, your page should contain buttons for the use
 ### Solution
 
 [sourcecode:html]
-{% raw %}
-
-<div class="social-bar">
+{% raw %}<div class="social-bar">
   <amp-social-share type="email" width="44" height="44"></amp-social-share>
   <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
   <amp-social-share type="twitter" width="44" height="44"></amp-social-share>

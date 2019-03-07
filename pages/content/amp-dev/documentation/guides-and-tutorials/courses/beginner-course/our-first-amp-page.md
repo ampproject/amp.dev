@@ -16,7 +16,6 @@ In your Glitch project, open index.html and verify that the HTML looks like this
 
 [sourcecode:html]
 {% raw %}<!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -108,7 +107,7 @@ For any other validation error entries, click the link labeled “Learn more.”
 
 {{ image('/static/img/courses/beginner/image21.png', 1864, 804, caption='AMP documentation reached via the “Learn more” link in the AMP Validator.') }}
 
-[tip type="note"]
+[tip type="read-on"]
 
 **Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 
@@ -146,7 +145,6 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
 
   [sourcecode:html]
   {% raw %}
-
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
 {% endraw %}[/sourcecode]
@@ -175,9 +173,7 @@ CSS customizes the look of your websites. You will almost always add custom styl
 To practice adding custom styles to your AMP page, add the following `<style amp-custom>` tag to your page in the `<head>` and see what happens. Once you’re finished, you can remove the styles from your page.
 
 [sourcecode:html]
-{% raw %}
-
-<style amp-custom>
+{% raw %}<style amp-custom>
     body {
         font-family: sans-serif;
         line-height: 1.5rem;
@@ -207,9 +203,7 @@ Using the [documentation]({{g.doc('/content/amp-dev/documentation/guides-and-tut
 The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
-{% raw %}
-
-<head>
+{% raw %}<head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
