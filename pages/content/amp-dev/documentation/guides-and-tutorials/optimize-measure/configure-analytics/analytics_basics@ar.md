@@ -126,7 +126,7 @@ $title: "Analytics: الأساسيات"
 في النموذج التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
 مع عنوان URL المتعارف عليه لمستند AMP الحالي، وعنوانه، فضلاً عن
-[رقم تعريف العميل](/ar/docs/analytics/analytics_basics.html#هوية-المستخدم):
+[رقم تعريف العميل]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#هوية-المستخدم):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

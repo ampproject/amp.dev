@@ -30,7 +30,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-在此示例中，网页浏览数据将与一个随机数一起发送到定义的网址。`RANDOM` 变量是 [AMP 平台中诸多替换变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) 的一个。点击此处详细了解[变量替换](/zh_cn/docs/analytics/analytics_basics.html#variable-substitution)。
+在此示例中，网页浏览数据将与一个随机数一起发送到定义的网址。`RANDOM` 变量是 [AMP 平台中诸多替换变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) 的一个。点击此处详细了解[变量替换]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})。
 
 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 组件是内置组件，因此您无需像处理 AMP 扩展组件（包括 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 一样为其指明包含声明。但您应将 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 标记放在尽可能靠近 `<body>` 开头的位置。只有当标记本身进入视线范围内时，像素跟踪功能才会触发。如果将 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 放在靠近网页底部的位置，则可能不会触发该功能。
 

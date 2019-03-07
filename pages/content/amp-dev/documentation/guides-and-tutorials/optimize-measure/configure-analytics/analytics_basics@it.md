@@ -122,7 +122,7 @@ consentono tutte le sostituzioni di variabili URL standard (vedi
 [Sostituzioni di variabili HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
 Nel seguente esempio,
 la richiesta di visualizzazione di pagina viene inviata all’URL,
-unitamente all’attuale URL canonico del documento AMP, al relativo titolo e a un [ID client](/it/docs/analytics/analytics_basics.html#identificazione-dell’utente):
+unitamente all’attuale URL canonico del documento AMP, al relativo titolo e a un [ID client]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#identificazione-dell’utente):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

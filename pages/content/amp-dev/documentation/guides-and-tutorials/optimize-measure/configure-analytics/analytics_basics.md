@@ -127,7 +127,7 @@ allow all standard URL variable substitutions (see
 In the following example,
 the page view request is sent to the URL,
 along with the current AMP document’s canonical URL, its title, and a
-[client ID](/docs/analytics/analytics_basics.html#user-identification):
+[client ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

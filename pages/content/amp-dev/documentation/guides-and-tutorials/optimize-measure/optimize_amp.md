@@ -65,7 +65,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 Let's go through it step-by-step:
 
 1.  The first tag should be the `meta charset` tag, followed by any remaining `meta` tags.
-1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
+1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
          width="1230" height="1068" layout="responsive"
          alt="Priority level changes when preload is applied">
 </amp-img>
@@ -80,7 +80,7 @@ Let's go through it step-by-step:
 1.  Specify the `<script>` tags for remaining extensions (e.g., [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})  ...). These extensions are not render-delaying and therefore should not be preloaded as they might take away important bandwidth for the initial render.
 1.  Specify any custom styles by using the `<style amp-custom>` tag.
 1.  Add any other tags allowed in the  `<head>` section. In particular, any external fonts should go last since they block rendering.
-1.  Finally, specify the [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
+1.  Finally, specify the [AMP boilerplate code]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
 
 [tip]
 The AMP Cache performs all these optimizations automatically (and a few more). You can use the AMP Optimizer tool to automatically perform these optimizations on your own origin.

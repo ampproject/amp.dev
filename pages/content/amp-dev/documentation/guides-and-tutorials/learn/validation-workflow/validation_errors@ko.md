@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 유효한 AMP 문서에는 유효성 검사 오류가 있어서는 안 됩니다.
-이 문서의 목적은 [AMP 페이지의 유효성을 검사](/ko/docs/fundamentals/validate.html)할 때
+이 문서의 목적은 [AMP 페이지의 유효성을 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}})할 때
 발견할 수 있는 모든 유효성 검사 오류를 더 잘 이해하고
 해결할 수 있도록 도움을 드리는 것입니다.
 유효성 검사 오류에 관한 전체 내용을 대략적으로 살펴보려면
@@ -639,7 +639,7 @@ URL이 잘못된 경우에 발생합니다.
 
 스타일과 레이아웃 오류를 살펴보기 전에
 AMP에서
-[스타일링](/ko/docs/design/responsive/style_pages.html)과
+[스타일링]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})과
 [레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})이 어떻게 작동하는지 알아보는 것이 좋습니다.
 AMP 페이지는 HTML 페이지이기 때문에 HTML 페이지와 스타일링이 거의 유사합니다.
 하지만 페이지가 빨리 로드되게 하기 위해 몇 가지 제한사항이 있으며
@@ -755,7 +755,7 @@ CSS 내 @ 규칙을 말합니다.
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
 [레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양](/ko/docs/design/amp-html-layout.html)을 참조하시기 바랍니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
 
 **참고:** 레이아웃을 지정하지 않고
 `width` 및 `height` 값을 포함하지 않으면
@@ -786,7 +786,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정하지 않았을 때
 암시적 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양](/ko/docs/design/amp-html-layout.html)에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
 
 ### AMP 태그가 지정된 레이아웃을 지원하지 않음
 
@@ -813,7 +813,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
 [레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양](/ko/docs/design/amp-html-layout.html)을 참조하시기 바랍니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
 
 ### 지정된 레이아웃에서 허용되지 않는 속성
 
@@ -836,7 +836,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정했는데
 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양](/ko/docs/design/amp-html-layout.html)에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
 
 ### 레이아웃에서 필요로 하는 속성 값이 잘못됨
 

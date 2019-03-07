@@ -32,7 +32,7 @@ Se il fornitore della soluzione di analisi non ha integrato il formato AMP,
 contattalo per richiedere assistenza.
 Ti invitiamo anche a [segnalare un problema relativo al progetto AMP](https://github.com/ampproject/amphtml/issues/new)
 richiedendo l’aggiunta del fornitore.
-Vedi anche la sezione 
+Vedi anche la sezione
 [Integrazione degli strumenti di analisi in HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
 ### Di quali dati hai bisogno?
@@ -43,7 +43,7 @@ Devi identificare questi dati prima di poterli configurare.
 Fattori importanti relativi ai dati da prendere in considerazione:
 
 * Eseguirai solamente il monitoraggio delle visualizzazioni di pagina o anche di altri modelli di coinvolgimento dell’utente
-(vedi anche [amp-pixel o amp-analytics](/it/docs/analytics/analytics_basics.html#è-meglio-utilizzare-amp-pixel-o-amp-analytics?))?
+(vedi anche [amp-pixel o amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#è-meglio-utilizzare-amp-pixel-o-amp-analytics?))?
 * Quali tipi di dati acquisirai relativamente ai tuoi utenti, ai tuoi contenuti,
-a dispositivi o browser (vedi anche [Sostituzione delle variabili](/it/docs/analytics/analytics_basics.html#sostituzione-delle-variabili))?
-* Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente](/it/docs/analytics/analytics_basics.html#identificazione-dell’utente))?
+a dispositivi o browser (vedi anche [Sostituzione delle variabili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#sostituzione-delle-variabili))?
+* Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#identificazione-dell’utente))?

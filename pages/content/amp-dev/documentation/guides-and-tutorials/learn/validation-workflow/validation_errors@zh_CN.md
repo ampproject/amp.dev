@@ -785,7 +785,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 如果您没有为 AMP 标记指定布局，
 并且隐式布局包含不允许使用的属性，就会出现这种错误。
-[AMP HTML 布局系统规范](/zh_cn/docs/design/amp-html-layout.html)中
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
 说明了各种布局类型不允许使用的属性。
 
 ### AMP 标记不支持指定的布局
@@ -835,7 +835,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当您为 AMP 标记指定的布局中包含不允许使用的属性时，
 就会出现这种错误。
-[AMP HTML 布局系统规范](/zh_cn/docs/design/amp-html-layout.html)中
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
 说明了各种布局类型不允许使用的属性。
 
 ### 布局所需属性的值无效
