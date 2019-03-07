@@ -1,10 +1,11 @@
 {% do doc.styles.addCssFile('css/components/organisms/footer.css') %}
 {% do doc.icons.useIcon('icons/internal.svg') %}
 
+{% macro footer() -%}
 <footer class="ap--footer" role="content-info">
   <div class="ap-o-footer">
     <div class="ap-o-footer-line-top">
-      <div class="ap-o-footer-hint">{{_('Of course, this site is made with AMP!')}}</div>
+      <div class="ap-o-footer-hint">{{_('Of course, this site is made with AMP!')}} asd</div>
 
       <div class="ap-o-footer-follow">
         <h5 class="ap-o-footer-follow-title">{{_('Follow us')}}</h5>
@@ -66,3 +67,10 @@
     </div>
   </div>
 </footer>
+{%- endmacro %}
+
+{% if not doc.pod.amp_dev.template_cache.get('footer') %}
+{% do doc.pod.amp_dev.template_cache.add('footer', footer()) %}
+{% else %}
+{{ doc.pod.amp_dev.template_cache.get('footer')|safe }}
+{% endif %}
