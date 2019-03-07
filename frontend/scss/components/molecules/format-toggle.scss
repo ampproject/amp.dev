@@ -11,14 +11,24 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 10px;
-  padding: 15px 0 0 0;
+  padding: 15px 0 15px 0;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.25);
+  max-width: 85%;
 
   @media (min-width: 768px) {
-    padding: 0;
-    margin: 0;
-    margin-left: 12px;
+    padding: 0 0 20px 0;
+    margin: 0 15px;
+    max-width: 100%;
   }
 
+  &-hl {
+    margin-bottom: 15px;
+    @include txt-font-accent;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
   &-notification {
 
     bottom: auto;
@@ -74,13 +84,13 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 6px;
+    padding: 16px 8px;
     @include txt;
     @include txt-font-accent;
     line-height: 1.2em;
     font-size: 1em;
     text-overflow: ellipsis;
-    border-radius: 4px;
+    border-radius: 6px;
     color: color('black');
     background: color('athens-gray');
     transition: opacity 0.2s ease;
@@ -88,6 +98,10 @@
 
     @media (min-width: 768px) {
       font-size: 0.70em;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 1rem;
     }
 
     &.active {
@@ -101,15 +115,9 @@
       fill: color('black');
 
       @media (min-width: 768px) {
-        width: 18px;
-        height: 18px;
-        margin-right: 8px;
-      }
-
-      @media (min-width: 1024px) {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
+        width: 0;
+        height: 0;
+        margin-right: 0;
       }
 
       @media (min-width: 1200px) {

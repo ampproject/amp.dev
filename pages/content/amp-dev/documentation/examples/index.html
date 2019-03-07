@@ -22,11 +22,14 @@ teaser:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
+{% include 'views/partials/sidebar.j2' %}
+{% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
-    {% include 'views/partials/sidebar.j2' %}
+    {% include 'views/partials/sidebar-toggle.j2' %}
+    <span id="ap--sidebar-content" class="ap--sidebar"></span>
     <section class="ap--content">
-
+      {% include '/views/partials/sidebar-toggle-button.j2' %}
       <h1>Learn AMP by example</h1>
 
       <amp-state id="activeFilter">

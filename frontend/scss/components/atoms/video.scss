@@ -16,11 +16,11 @@
 @import '_text.scss';
 
 .#{atom('video')} {
-  margin: 0 -20px 32px 0;
-  max-width: 100%;
+  margin: 0 -15px 32px 0;
 
   @media (min-width: 768px) {
     margin-right: -30px;
+    max-width: 100%;
   }
 
   @media (min-width: 1024px) {
