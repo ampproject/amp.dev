@@ -1,0 +1,116 @@
+/*
+
+#######################
+### MOLECULE: event ###
+#######################
+
+### INFO:
+
+The event molecule is a combination of icon, headline and text atoms. The event molecule also creates a list for the event details (location, registration).
+Positioning of the atoms (eg. padding, margin) are defined in this style sheet.
+The size of the icon should be 1 (xsmall) and text should be 2 (small).
+
+### MODIFIERS:
+
+none
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_icon.scss';
+
+
+
+.#{molecule('event')} {
+  @include box-shadow;
+  display: flex;
+	padding: 30px;
+  margin-bottom: 2.750em;
+  margin: 0 10px;
+	background-color: color('white');
+
+	&-date {
+		flex-grow: 0;
+		text-align: right;
+
+		span:last-child {
+			display: block;
+			line-height: 1.4em;
+		}
+	}
+
+	&-content {
+    flex-grow: 1;
+    text-align: left;
+
+    &-date {
+      margin-right: 1.4em;
+      display: flex;
+      flex-direction: column;
+
+      &-month-day {
+        margin-top: auto;
+
+        & p {
+          margin: 0;
+        }
+      }
+
+      & > * {
+        @include txt;
+        @include txt-font-accent;
+        @include txt-lrg;
+        @include txt-strong;
+        @include color-black;
+        @include txt-uppercase;
+      }
+
+      &-year {
+        color: fade_out(color('black'), 0.8);
+      }
+
+    }
+
+    &-city {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-lrg;
+      @include txt-strong;
+      @include txt-uppercase;
+      @include txt-hl;
+      @include color-blue-ribbon;
+      white-space: nowrap;
+
+      margin-bottom: 0.5em;
+    }
+
+    &-details {
+      @include txt;
+      @include txt-3;
+
+      &-time {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      &-location {
+        display: inline-flex;
+        white-space: nowrap;
+        align-items: center;
+      }
+
+      &-icon {
+        @include ico;
+        @include ico-1;
+
+        margin-right: 5px;
+      }
+    }
+	}
+}

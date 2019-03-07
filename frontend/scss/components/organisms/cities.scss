@@ -13,13 +13,31 @@
 @import '_variables.scss';
 
 @import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
 
 .#{organism('cities')} {
+  grid-column: 6 / 19;
 
   &-headline {
     @include hl;
     @include hl-h2;
 
-    grid-column-start: 6;
+    // grid-column: 6 / span 2;
+  }
+
+  &-sub-headline {
+    @include hl;
+    @include hl-h4;
+
+    // grid-column: 6 / span 5;
+  }
+
+  &-next-events-list {
+    display: flex;
+    margin-bottom: 60px;
+  }
+
+  &-checkback {
+    @include txt;
   }
 }

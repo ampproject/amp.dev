@@ -42,14 +42,4 @@
   &-copy {
     @include txt;
   }
-
-  &-cities {
-    grid-column: 5 / 22;
-
-    .ap-a-ico {
-      height: 100%;
-      width: 100%;
-      fill: url(#gradient-map) color('white');
-    }
-  }
 }
