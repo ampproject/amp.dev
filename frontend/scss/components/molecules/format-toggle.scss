@@ -109,15 +109,9 @@
       fill: color('black');
 
       @media (min-width: 768px) {
-        width: 22px;
-        height: 22px;
-        margin-right: 8px;
-      }
-
-      @media (min-width: 1024px) {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
+        width: 0;
+        height: 0;
+        margin-right: 0;
       }
 
       @media (min-width: 1200px) {
