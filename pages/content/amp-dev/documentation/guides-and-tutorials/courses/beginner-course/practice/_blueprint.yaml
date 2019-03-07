@@ -1,6 +1,0 @@
-$path: /documentation/guides-and-tutorials/courses/beginner-course/practice/{base}.html
-$view: /views/detail/docs-detail.j2
-$localization:
-  path: /{locale}/documentation/guides-and-tutorials/courses/beginner-course/practice/{base}.html
-$title@: Practice
-$order: 9
