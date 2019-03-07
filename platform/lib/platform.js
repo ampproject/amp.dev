@@ -63,7 +63,8 @@ class Platform {
     const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
     this.server.use((request, response, next) => {
       // don't optimize sample source or preview
-      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url)) {
+      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
+             request.headers['x-requested-by'] === 'playground') {
         next();
         return;
       }
