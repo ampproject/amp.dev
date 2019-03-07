@@ -111,7 +111,7 @@
     {% block fonts %}
     <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
     <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
-    <amp-font layout="nodisplay" font-family="Inconsolata" timeout="3000"></amp-font>
+    <amp-font layout="nodisplay" font-family="Fira Mono" timeout="3000"></amp-font>
     {% endblock %}
 
     {# For untranslated content add hint that we might use help to translate it #}
@@ -125,7 +125,7 @@
     {% if podspec.env.name == 'staging' or podspec.env.name == 'development' %}
     {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
     <div class="ap-m-banner" style="position: fixed; bottom: 0; z-index: 999; width: 100%; background: #C8114D;">
-      This is a staging version of 
+      This is a staging version of
       <a href="http://amp.dev" class="ap-m-banner-link">
         https://amp.dev
       </a> [{{ podspec.env.name|upper }}].
