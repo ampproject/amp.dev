@@ -31,7 +31,7 @@ which image asset to use based on varying screen sizes:
 </amp-img>
 [/sourcecode]
 
-This `amp-img` element automatically fits the width
+This [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element automatically fits the width
 of its container element,
 and its height is automatically set to the aspect ratio
 determined by the given width and height. Try it out by resizing this browser window:
@@ -39,7 +39,7 @@ determined by the given width and height. Try it out by resizing this browser wi
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
 [tip type="tip"]
-**TIP –** See our side-by-side live demos of `amp-img`: [Live Demos on AMP By Example](https://ampbyexample.com/components/amp-img/).
+**TIP –** See our side-by-side live demos of [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Live Demos on AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## The layout attribute
@@ -64,22 +64,22 @@ The following values can be used in the `layout` attribute:
     <tr>
       <td data-th="Layout type"><code>nodisplay</code></td>
       <td data-th="Description">No</td>
-      <td data-th="Behavior">Element not displayed. This layout can be applied to every AMP element. The component takes up zero space on the screen as if its display style was none. It’s assumed that the element can display itself on user action, for example, <a href="/docs/reference/components/amp-lightbox.html"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">Element not displayed. This layout can be applied to every AMP element. The component takes up zero space on the screen as if its display style was none. It’s assumed that the element can display itself on user action, for example, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed</code></td>
       <td data-th="Description">Yes</td>
-      <td data-th="Behavior">Element has a fixed width and height with no responsiveness supported. The only exceptions are <a href="/docs/reference/components/amp-pixel.html"><code>amp-pixel</code></a> and <a href="/docs/reference/components/amp-audio.html"><code>amp-audio</code></a> elements.</td>
+      <td data-th="Behavior">Element has a fixed width and height with no responsiveness supported. The only exceptions are <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> and <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a> elements.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
       <td data-th="Description">Yes</td>
-      <td data-th="Behavior">Element sized to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes. This layout works very well for most of AMP elements, including <a href="/docs/reference/components/amp-img.html"><code>amp-img</code></a>, <a href="/docs/reference/components/amp-video.html"><code>amp-video</code></a>. Available space depends on the parent element and can also be customized using <code>max-width</code> CSS.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p></td>
+      <td data-th="Behavior">Element sized to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes. This layout works very well for most of AMP elements, including <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>. Available space depends on the parent element and can also be customized using <code>max-width</code> CSS.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p></td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">Height only</td>
-      <td data-th="Behavior">Element takes the space available to it but keeps the height unchanged. This layout works well for elements such as <a href="/docs/reference/components/amp-carousel.html"><code>amp-carousel</code></a> that involves content positioned horizontally. The <code>width</code> attribute must not be present or must be equal to <code>auto</code>.</td>
+      <td data-th="Behavior">Element takes the space available to it but keeps the height unchanged. This layout works well for elements such as <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> that involves content positioned horizontally. The <code>width</code> attribute must not be present or must be equal to <code>auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -99,13 +99,13 @@ The following values can be used in the `layout` attribute:
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
       <td data-th="Description">Yes</td>
-      <td data-th="Behavior">The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint (e.g., max-width). The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint. </td>
+      <td data-th="Behavior">The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint (e.g., max-width). The width and height attributes must be present. This layout works very well for most AMP elements, including <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint. </td>
     </tr>
   </tbody>
 </table>
 
 [tip type="tip"]
-**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example](https://ampbyexample.com/advanced/layout_system/).
+**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ### What if width and height are undefined?
@@ -113,8 +113,8 @@ The following values can be used in the `layout` attribute:
 In a few cases if `width` or `height` are not specified,
 the AMP runtime can default these values as the following:
 
-* [`amp-pixel`](/docs/reference/components/amp-pixel.html): Both width and height are defaulted to 0.
-* [`amp-audio`](/docs/reference/components/amp-audio.html): The default width and height are inferred from browser.
+* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): Both width and height are defaulted to 0.
+* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): The default width and height are inferred from browser.
 
 ### What if the <code>layout</code> attribute isn’t specified?
 

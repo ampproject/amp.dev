@@ -140,7 +140,7 @@ En AMP, los scripts generados por el usuario no están permitidos. Los scripts e
 
 Esto descarta efectivamente el uso de todos los JavaScript de terceros; Sin embargo, hay una excepción: JavaScript de terceros se puede utilizar en iframes.
 
-Importante: Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](/es/docs/reference/components.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
+Importante: Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). Exploraremos nuestro primer componente de AMP en la siguiente sección.
 
 Intente abrir el archivo [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) externo. ¿Que ves? El archivo debe estar vacío de cualquier código JavaScript y sólo incluir un comentario de información como este:
 
@@ -315,5 +315,5 @@ AMP validation successful.
 ### Preguntas frecuentes
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [¿Qué ocurre si el atributo layout no está definido?](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
-- [¿Qué ocurre si width y height no están definidos?](/es/docs/design/responsive/control_layout.html#¿qué-ocurre-si-width-y-height-no-están-definidos?)
+- [¿Qué ocurre si el atributo layout no está definido?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
+- [¿Qué ocurre si width y height no están definidos?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#¿qué-ocurre-si-width-y-height-no-están-definidos?)

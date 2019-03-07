@@ -3,12 +3,12 @@ $title: AMP アナリティクスについて詳しく知る
 ---
 
 このガイドでは、
-[amp-analytics コンポーネント](/ja/docs/reference/components/amp-analytics.html)
-について詳しく説明するため、`amp-analytics` の設定サンプルをパートごとに分けて解説します。
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+について詳しく説明するため、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の設定サンプルをパートごとに分けて解説します。
 
 このガイドで使用するのは、以下の設定サンプルです。
 このサンプルは、ページビューとユーザーによるリンククリックをトラッキングして、
-サードパーティのプロバイダである 
+サードパーティのプロバイダである
 [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)にアナリティクス データを送信します。
 
 ```html
@@ -64,7 +64,7 @@ AMP は、一般的なデータ収集方法として次の 2 つをサポート�
 [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、[Chartbeat](http://support.chartbeat.com/docs/)、[Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)などのベンダー ソリューションと相互運用する場合）
 
 アナリティクス データをアナリティクス プロバイダに送信するには、
-`amp-analytics` タグに `type` 属性を指定します。
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) タグに `type` 属性を指定します。
 値は、
 [アナリティクス ベンダー](/ja/docs/analytics/analytics-vendors.html)の一覧に記載されている各ベンダーの値を指定します。
 
@@ -75,8 +75,8 @@ AMP は、一般的なデータ収集方法として次の 2 つをサポート�
 このようにすると、アナリティクス データは
 [リクエスト](/ja/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
 
-アナリティクス ベンダーの設定を行うと、手早く 
-`amp-analytics` を使い始めることができます。
+アナリティクス ベンダーの設定を行うと、手早く
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使い始めることができます。
 詳細については、ご利用のベンダーのドキュメントや
 ヘルプリソースをご確認ください。
 AMP を統合済みのベンダーの一覧と、
@@ -90,7 +90,7 @@ AMP を統合済みのベンダーの一覧と、
 
 ## リモート設定を読み込む: config 属性
 
-`amp-analytics` のすべての設定を 
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のすべての設定を
 AMP ページに記述する必要はありません。
 代わりに、設定の一部またはすべてを記述した
 リモート URL を呼び出すこともできます。
@@ -102,14 +102,14 @@ AMP ページに記述する必要はありません。
 サーバー側処理を実施できます。
 
 リモート設定を読み込むには、まず、
-`amp-analytics` タグに config 属性を指定します。
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) タグに config 属性を指定します。
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
 次に、リモート URL に設置する JSON コンテンツを作成します。
-この簡潔なサンプルで使用している 
+この簡潔なサンプルで使用している
 JSON オブジェクトには、アナリティクス アカウントの変数値だけが含まれています。
 
 サンプルで使用している `https://example.com/analytics.account.config.json` の中身は次のようになっています。
@@ -122,9 +122,9 @@ JSON オブジェクトには、アナリティクス アカウントの変数�
 }
 ```
 
-最後に、リモート ファイルの内容が 
-`amp-analytics` 設定の適切な場所に読み込まれるようにします。
-以下では、`pageview` リクエストと `event` リクエストの 
+最後に、リモート ファイルの内容が
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 設定の適切な場所に読み込まれるようにします。
+以下では、`pageview` リクエストと `event` リクエストの
 `account` 変数の値が、自動的にリモート URL の
 アカウント値（`"account": "UA-XXXXX-Y"`）に設定されます。
 
@@ -157,7 +157,7 @@ AMP では、同じ変数が複数使用されていないかどうかの検証�
 
 これらの設定の詳細については後述します
 （あわせて、
-[amp-analytics リファレンス](/ja/docs/reference/components/amp-analytics.html)の該当する項目をご確認ください）。
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})の該当する項目をご確認ください）。
 
 ### 送信するデータ: requests 属性
 
@@ -184,10 +184,10 @@ Google アナリティクスなど一部のアナリティクス プロバイダ
 
 #### リクエスト URL への追記: extraUrlParams
 
-[extraUrlParams](/ja/docs/reference/components/amp-analytics.html#extra-url-params) 
+[extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 属性では、リクエスト URL のクエリ文字列に追記する追加のパラメータを指定できます。指定したパラメータは、一般的な「&foo=baz」の表記規則に基づいて追記されます。
 
-この `amp-analytics` のサンプルでは、追加パラメータ `cd1` を
+この [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のサンプルでは、追加パラメータ `cd1` を
 リクエストに追記し、値を「AMP」に設定しています。
 
 ```js
@@ -204,7 +204,7 @@ Google アナリティクスなど一部のアナリティクス プロバイダ
 任意の文字列を使用できます。
 
 たとえば、
-次の `amp-analytics` の抜粋では、ドキュメントが最初に読み込まれたときと、
+次の [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の抜粋では、ドキュメントが最初に読み込まれたときと、
 `a` タグがクリックされるたびに、リクエストを `https://example.com/analytics` に
 送信するよう設定しています。
 
@@ -332,7 +332,7 @@ AMP では、次の優先順位に沿って変数に値が設定されます。
 
 1. リモート設定（`config` で指定）
 2. `triggers` のトリガー内にネストされた `vars`
-3. `amp-analytics` の最上位にネストされた `vars`
+3. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の最上位にネストされた `vars`
 4. プラットフォームが提供する値
 
 次の例には、リモート設定、
@@ -399,4 +399,3 @@ AMP では、次の優先順位に沿って変数に値が設定されます。
     </tr>
   </tbody>
 </table>
- 

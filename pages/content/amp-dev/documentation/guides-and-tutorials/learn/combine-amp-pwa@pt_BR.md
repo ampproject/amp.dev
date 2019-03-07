@@ -26,7 +26,7 @@ Uma vantagem exclusiva das AMP é a **exibição quase instantânea**, uma carac
 
 Uma boa estratégia é fazer com que o ponto de entrada do seu site seja uma página AMP, carregar o PWA em segundo plano e mudar para ele durante a navegação.
 
-Leia mais: Saiba como [conectar AMP a um PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) usando `amp-install-serviceworker`.
+Leia mais: Saiba como [conectar AMP a um PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) usando [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}).
 
 ## AMP como fonte de dados para seu PWA
 

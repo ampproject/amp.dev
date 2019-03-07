@@ -41,7 +41,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 Any AMP file that includes experimental features will fail
-[AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md', locale=doc.locale).url.path}}).
+[AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
 Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document

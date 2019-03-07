@@ -101,7 +101,7 @@ For example, the
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
 It also includes the custom element script for
-[`amp-youtube`](/docs/reference/components/amp-youtube.html), among others,
+[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), among others,
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html]{% raw %}

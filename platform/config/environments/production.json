@@ -1,0 +1,20 @@
+{
+	"name": "production",
+	"hosts": {
+		"pages": {
+			"scheme": "https",
+			"host": "amp.dev",
+			"port": ""
+		},
+		"api": {
+			"scheme": "https",
+			"host": "amp-dev-230314.appspot.com",
+			"port": ""
+		},
+		"platform": {
+			"scheme": "https",
+			"host": "amp.dev",
+			"port": ""
+		}
+	}
+}

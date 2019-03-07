@@ -2,24 +2,24 @@
 $title: アナリティクス ベンダー
 ---
 
-このドキュメントでは、[`amp-analytics`](/ja/docs/reference/components/amp-analytics.html) コンポーネントで使用するための組み込み設定を提供するアナリティクス ベンダーを一覧表示しています。
+このドキュメントでは、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) コンポーネントで使用するための組み込み設定を提供するアナリティクス ベンダーを一覧表示しています。
 
 アナリティクス データを第三者のベンダーに送信する方法は以下のとおりです。
 
-1. [`<amp-analytics>`](/ja/docs/reference/components/amp-analytics.html) タグに `type` 属性を追加し、その属性の値として下記の[ベンダー](#vendors)セクションに記載されている該当するベンダーの値を設定します。
+1. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) タグに `type` 属性を追加し、その属性の値として下記の[ベンダー](#vendors)セクションに記載されている該当するベンダーの値を設定します。
 2. どのデータを収集してトラッキングするかを決め、設定データにその詳細を指定します。アナリティクス データの収集方法については、ベンダーのドキュメントをご覧ください。
 
-以下の例では、amp-analytics 用の組み込み設定を提供している第三者アナリティクス プロバイダである [Google アナリティクス](#google-analytics)にページビュー データを送信します。
+以下の例では、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 用の組み込み設定を提供している第三者アナリティクス プロバイダである [Google アナリティクス](#google-analytics)にページビュー データを送信します。
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
 <script type="application/json">
 {
   "vars": {
-    "account": "UA-XXXXX-Y" 
+    "account": "UA-XXXXX-Y"
   },
   "triggers": {
-    "trackPageview": { 
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -37,7 +37,7 @@ $title: アナリティクス ベンダー
 
 [tip type="note"]
 
-自社の提供するサービスへの [`<amp-analytics>`](/ja/docs/reference/components/amp-analytics.html) の統合を検討しているベンダーの方は、[アナリティクス ツールに AMP を統合する](/ja/docs/analytics/integrating-analytics.html)で詳細をご参照ください。
+自社の提供するサービスへの [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})で詳細をご参照ください。
 
 [/tip]
 
@@ -127,7 +127,8 @@ type 属性の値: `euleriananalytics`
 
 type 属性の値: `facebookpixel`
 
-この値を指定すると、[Facebook ピクセル](https://www.facebook.com/business/a/facebook-pixel)を利用できるようになります。amp-analytics の設定内で、ピクセル ID を `pixelId: YOUR-PIXEL-ID` の形で指定する必要があります。サポートされているイベントや、対応する指定可能なイベント値について詳しくは、[Facebook ピクセルのデベロッパー向けドキュメント](https://developers.facebook.com/docs/ads-for-websites/pixel-events)をご覧ください。
+この値を指定すると、[Facebook ピクセル](https://www.facebook.com/business/a/facebook-pixel)を利用できるようになります。[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の設定内で、ピクセル ID を `pixelId: YOUR-PIXEL-ID` の形で指定する必要があります。サポートされているイベントや、対応する指定可能なイベント値について詳しくは、[Facebook ピクセルのデベロッパー向けドキュメント](https://developers.facebook.com/docs/ads-for-websites/pixel-events)をご覧ください。
+
 
 ### Gemius
 
@@ -317,4 +318,3 @@ type 属性の値: `treasuredata`
 type 属性の値: `metrika`
 
 この値を指定すると、Yandex Metrica を利用できるようになります。設定の詳細については、[Yandex のサポート](https://yandex.com/support/metrica/code/install-counter-amp.xml)をご覧ください。
- 

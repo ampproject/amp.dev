@@ -154,7 +154,7 @@ This effectively rules out the use of all user-generated/third-party JavaScript 
 The only exceptions to the restriction on user-generated/third-party scripts are:
 
 1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute  `application/ld+json` or `application/json`.
-2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](/docs/reference/components.html). We will explore our first AMP component in the next section.
+2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). We will explore our first AMP component in the next section.
 [/tip]
 
 Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:
@@ -239,7 +239,7 @@ In the case of our article, the layout system inferred the layout type for the [
 
 Why was the `container` type inferred? Because we did not specify a `height` attribute for the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements so that AMP can pre-determine the aspect ratio of the element.
 
-**Add** the `width` and `height` to your [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag as follows:
+**Add** the `width` and `height` to your [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag as follows:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -336,5 +336,5 @@ AMP validation successful.
 ### Frequently asked questions
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [What if width and height are undefined?](/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [What if the layout attribute isn’t defined?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
+- [What if width and height are undefined?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)

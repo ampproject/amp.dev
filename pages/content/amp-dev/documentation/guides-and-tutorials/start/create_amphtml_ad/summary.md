@@ -13,5 +13,5 @@ In this tutorial, you learned to:
 
 ## Next steps
 
-You just learned how to create a basic image ad, but there are many more formats that you can use for AMPHTML ads. Visit [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads), which provides advanced AMPHTML ad templates, like lightbox ads, carousel ads, video ads, slide ads, and more.
+You just learned how to create a basic image ad, but there are many more formats that you can use for AMPHTML ads. Visit [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}), which provides advanced AMPHTML ad templates, like lightbox ads, carousel ads, video ads, slide ads, and more.
 

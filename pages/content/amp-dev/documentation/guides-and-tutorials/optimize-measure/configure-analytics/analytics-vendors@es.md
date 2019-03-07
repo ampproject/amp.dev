@@ -2,24 +2,24 @@
 $title: Proveedores de Analytics
 ---
 
-En este documento se enumeran los proveedores de analíticas que cuentan con configuraciones integradas que se pueden usar con el componente [`amp-analytics`](/es/docs/reference/components/amp-analytics.html).
+En este documento se enumeran los proveedores de analíticas que cuentan con configuraciones integradas que se pueden usar con el componente [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 Para enviar datos de analíticas a un proveedor tercero, sigue estos pasos:
 
-1. En la etiqueta [`<amp-analytics> `](/es/docs/reference/components/amp-analytics.html), añade el atributo `type` y establece su valor en el proveedor especificado tal y como se describe en la sección [*Proveedores*](#vendors) a continuación.
+1. En la etiqueta [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), añade el atributo `type` y establece su valor en el proveedor especificado tal y como se describe en la sección [*Proveedores*](#vendors) a continuación.
 2. Define qué datos quieres registrar y supervisar, y especifica estos detalles en los datos de configuración. Consulta la documentación del proveedor para obtener instrucciones sobre cómo registrar datos de analíticas.
 
-En el ejemplo siguiente, enviamos datos de páginas vistas a [Google Analytics](#google-analytics), un proveedor de analíticas tercero con una configuración integrada para amp-analytics:
+En el ejemplo siguiente, enviamos datos de páginas vistas a [Google Analytics](#google-analytics), un proveedor de analíticas tercero con una configuración integrada para [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
 <script type="application/json">
 {
   "vars": {
-    "account": "UA-XXXXX-Y" 
+    "account": "UA-XXXXX-Y"
   },
   "triggers": {
-    "trackPageview": { 
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -37,7 +37,7 @@ Si se te da bien leer código, puedes consultar las configuraciones sin procesar
 
 [tip type="note"]
 
-Los proveedores que quieran integrar su servicio con [`<amp-analytics>`](/es/docs/reference/components/amp-analytics.html) deben consultar los detalles en [Integrar tus herramientas de analíticas con AMP](/es/docs/analytics/integrating-analytics.html).
+Los proveedores que quieran integrar su servicio con [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) deben consultar los detalles en [Integrar tus herramientas de analíticas con AMP](/es/docs/analytics/integrating-analytics.html).
 
 [/tip]
 
@@ -127,7 +127,7 @@ Permite añadir compatibilidad con Eulerian Technologies Analytics. Requiere la 
 
 Escribe el valor de atributo: `facebookpixel`
 
-Permite añadir compatibilidad con [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Debes definir tu ID de Pixel como `pixelId: TU-PIXEL-ID` en tu configuración de amp-analytics. Puedes encontrar los eventos compatibles junto con los valores de evento correspondientes que se pueden especificar en la [documentación del desarrollador de Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Permite añadir compatibilidad con [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Debes definir tu ID de Pixel como `pixelId: TU-PIXEL-ID` en tu configuración de [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Puedes encontrar los eventos compatibles junto con los valores de evento correspondientes que se pueden especificar en la [documentación del desarrollador de Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius
 
@@ -317,4 +317,3 @@ Permite añadir compatibilidad con Webtrekk. Puedes encontrar información sobre
 Escribe el valor de atributo: `metrika`
 
 Permite añadir compatibilidad con Yandex.Metrica.  Puedes encontrar información sobre la configuración en la [página de asistencia de Yandex](https://yandex.com/support/metrica/code/install-counter-amp.xml).
- 

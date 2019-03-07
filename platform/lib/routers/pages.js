@@ -16,10 +16,14 @@
 
 'use strict';
 
+const {promisify} = require('util');
 const express = require('express');
-const config = require('../config');
+const config = require('@lib/config');
 const {Signale} = require('signale');
-
+const utils = require('@lib/utils');
+const {FilteredPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -50,7 +54,6 @@ if (config.environment === 'development') {
   // Only import the stuff needed for proxying during development
   const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
-  const {FilteredPage} = require('../pipeline/filteredPage');
   const got = require('got');
   const {pageMinifier} = require('@lib/build/pageMinifier');
 
@@ -144,16 +147,50 @@ if (config.environment === 'development') {
 }
 
 if (config.environment !== 'development') {
-  pages.use('/', (request, response, next) => {
-    // Check if this request should be filtered
-    const activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
-      // And if it should be filtered rewrite to the correct file
-      request.url = request.url.replace('.html', `.${activeFormat}.html`);
+  const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
+  const staticMiddleware = express.static(STATIC_PAGES_PATH);
+
+  /**
+   * Checks preconditions that need to be met to filter the ongoing request
+   * @param  {Request}  request The ongoing request
+   * @param  {String}  requestPath  A possibly rewritten request path
+   * @return {Boolean}
+   */
+  function shouldApplyFormatFilter(request, requestPath) {
+    if (!getFilteredFormat(request) || !isFilterableRoute(requestPath)) {
+      return false;
     }
 
-    next();
-  }, express.static('pages'));
+    // TODO(matthiasrohmer): Use fs.stat/fs.access over fs.existsSync
+    if (!fs.existsSync(utils.project.pagePath(requestPath))) {
+      return false;
+    }
+
+    return true;
+  }
+
+  pages.use('/', async (request, response, next) => {
+    let requestPath = request.path;
+
+    // Match root requests to a possible index.html
+    if (requestPath.endsWith('/')) {
+      requestPath = requestPath + 'index.html';
+    }
+
+    // Let the built-in middleware deal with unfiltered requests
+    if (!shouldApplyFormatFilter(request, requestPath)) {
+      return staticMiddleware(request, response, next);
+    }
+
+    try {
+      const page = await readFileAsync(utils.project.pagePath(requestPath));
+      const filteredPage = new FilteredPage(getFilteredFormat(request), page, true);
+      response.send(filteredPage.content);
+      return next();
+    } catch (e) {
+      return next(e);
+    }
+  });
 }
 
 module.exports = pages;

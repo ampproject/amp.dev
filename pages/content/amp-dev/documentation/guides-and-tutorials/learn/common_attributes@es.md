@@ -45,7 +45,7 @@ Para obtener más información, consulta [Controlar los diseños con los atribut
 
 ## layout
 
-AMP proporciona un conjunto de [diseños](/es/docs/design/responsive/control_layout.html#the-layout-attribute) que especifican cómo se comporta un componente AMP dentro del diseño del documento. Se puede especificar el diseño del componente añadiendo el atributo `layout` con un valor de diseño válido para el elemento (para saber qué valores se admiten, consulta la documentación del elemento).
+AMP proporciona un conjunto de [diseños]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) que especifican cómo se comporta un componente AMP dentro del diseño del documento. Se puede especificar el diseño del componente añadiendo el atributo `layout` con un valor de diseño válido para el elemento (para saber qué valores se admiten, consulta la documentación del elemento).
 
 Ejemplo:
 
@@ -79,7 +79,7 @@ Ejemplo:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries](/es/docs/design/responsive/control_layout.html#element-media-queries).
+Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
 
 ## noloading
 
@@ -155,7 +155,7 @@ Para obtener más información, consulta [Controlar los diseños con los atribut
 
 ## width y height
 
-En el caso de algunos [diseños](/es/docs/design/responsive/control_layout.html#the-layout-attribute), los componentes AMP deben tener un atributo `width` y otro atributo `height` con valores de píxeles en números enteros.
+En el caso de algunos [diseños]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), los componentes AMP deben tener un atributo `width` y otro atributo `height` con valores de píxeles en números enteros.
 
 Ejemplo:
 

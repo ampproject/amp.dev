@@ -3,8 +3,8 @@ $title: Immersione nel mondo di AMP Analytics
 ---
 
 Questa guida si addentra nella sfera del
-[componente amp-analytics](/it/docs/reference/components/amp-analytics.html),
-scomponendo una configurazione campione di `amp-analytics` in questi blocchi predefiniti:
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
+scomponendo una configurazione campione di [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) in questi blocchi predefiniti:
 
 Il resto di questa guida usa il campione di configurazione,
 che consente di monitorare le visualizzazioni di pagina e i clic dell’utente sui link
@@ -61,25 +61,25 @@ AMP è progettato per supportare due modelli diffusi di raccolta dati:
 (ad esempio, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Per inviare i dati dell’analisi a un fornitore di strumenti di analisi,
-includi l’attributo `type` nel tag `amp-analytics` e imposta il suo valore
+includi l’attributo `type` nel tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) e imposta il suo valore
 per il fornitore pertinente, come definito nella
-[specifica amp-analytics](/it/docs/reference/components/amp-analytics.html).
+[specifica amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 Ad esempio: `<amp-analytics type="googleanalytics">` invia i dati di analisi
 al fornitore di strumenti di analisi di terze parti, Google Analytics.
 Per inviare i dati a un endpoint di proprietà di un publisher
 è sufficiente non includere l’attributo `type`,
 i dati di analisi vengono quindi inviati agli endpoint definiti per ciascuna
-[richiesta](/it/docs/analytics/deep_dive_analytics.html#quali-dati-vengono-inviati:-attributo-requests).
+[richiesta]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#quali-dati-vengono-inviati:-attributo-requests).
 
 Le configurazioni del fornitore di strumenti di analisi costituiscono un sistema rapido
-per iniziare a lavorare con `amp-analytics`.
+per iniziare a lavorare con [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Per ulteriori informazioni è opportuno consultare la documentazione
 e le risorse di riferimento rese disponibili dal fornitore.
 Come precedentemente indicato,
 l’elenco di fornitori che hanno già incluso l’integrazione con AMP, nonché i link
 alla rispettiva documentazione specifica sono reperibili nella
-[specifica amp-analytics](/it/docs/reference/components/amp-analytics.html).
+[specifica `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 Se sei un fornitore di strumenti di analisi,
 ottieni ulteriori informazioni sull’
@@ -88,7 +88,7 @@ ottieni ulteriori informazioni sull’
 ## Caricamento della configurazione remota: attributo config
 
 Non hai bisogno di includere tutta la
-configurazione per `amp-analytics` nella tua pagina AMP.
+configurazione per [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) nella tua pagina AMP.
 Al contrario, puoi richiamare un URL remoto
 per la totalità o per parte delle configurazioni.
 
@@ -99,7 +99,7 @@ puoi eseguire qualsiasi operazione di elaborazione necessaria sul lato server
 per costruire i dati di configurazione.
 
 Il primo passo per caricare le configurazioni remote
-è quello di includere l’attributo config nel tag `amp-analytics`:
+è quello di includere l’attributo config nel tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```js
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -120,7 +120,7 @@ Contenuto di esempio in `https://example.com/analytics.account.config.json`:
 ```
 
 Il passo finale è quello di verificare che il contenuto del file remoto sia
-inserito nel punto corretto nella configurazione `amp-analytics`.
+inserito nel punto corretto nella configurazione [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Qui, in entrambe le richieste `pageview` e `event`,
 il valore della variabile `account` è automaticamente impostato
 sul valore dell’account nell’URL remoto (`"account": "UA-XXXXX-Y"`):
@@ -135,7 +135,7 @@ sul valore dell’account nell’URL remoto (`"account": "UA-XXXXX-Y"`):
 **Importante.** AMP non consente la convalida rispetto a più usi della stessa variabile.
 I valori vengono inseriti seguendo un ordine di preferenza di sostituzione delle variabili
 e i valori negli URL remoti sono all’inizio di tale ordine
-(vedi [Ordinamento della sostituzione delle variabili](/it/docs/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili)).
+(vedi [Ordinamento della sostituzione delle variabili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ordinamento-della-sostituzione-delle-variabili)).
 
 ## Richieste, attivazioni e trasferimenti
 
@@ -151,7 +151,7 @@ più in particolare, il protocollo.
 
 Più avanti puoi ottenere ulteriori informazioni su queste configurazioni
 (puoi anche approfondire queste configurazioni nel
-[riferimento amp-analytics](/it/docs/reference/components/amp-analytics.html)).
+[riferimento amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 ### Quali dati vengono inviati: attributo requests
 
@@ -181,7 +181,7 @@ sapere se occorre configurare l’attributo `requests` ed eventualmente come con
 L’attributo [extraUrlParams]/it/docs/reference/components/amp-analytics.html#extra-url-params)
 specifica i parametri supplementari da aggiungere alla stringa di query dell’URL di richiesta tramite la solita convenzione "&foo=baz".
 
-L’esempio `amp-analytics` aggiunge un ulteriore parametro <code>cd1</code>
+L’esempio [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) aggiunge un ulteriore parametro <code>cd1</code>
 alla richiesta e imposta il valore del parametro su "AMP":
 
 ```js
@@ -198,7 +198,7 @@ Il nome trigger può essere qualsiasi stringa costituita da
 caratteri alfanumerici (a-zA-Z0-9).
 
 Ad esempio,
-il seguente elemento `amp-analytics` è configurato per inviare una richiesta a
+il seguente elemento [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) è configurato per inviare una richiesta a
 `https://example.com/analytics` quando il documento viene caricato per la prima volta
 e ogni volta che viene fatto clic su un tag `a`:
 
@@ -259,7 +259,7 @@ AMP supporta le seguenti configurazioni di attivazione:
 
 **Importante:** i trigger di una configurazione con precedenza più bassa vengono ignorati
 dai trigger con lo stesso nome di una configurazione con una precedenza più alta
-(vedi [Ordinamento della sostituzione delle variabili](/it/docs/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili)).
+(vedi [Ordinamento della sostituzione delle variabili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ordinamento-della-sostituzione-delle-variabili)).
 
 ### Come vengono inviati i dati: attributo transport
 
@@ -320,7 +320,7 @@ AMP inserisce le variabili con i valori in ordine di precedenza:
 
 1. Configurazioni remote (tramite `config`).
 2. `vars` nidificate all’interno di un trigger in `triggers`.
-3. `vars` al primo livello nidificate in `amp-analytics`.
+3. `vars` al primo livello nidificate in [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 4. Valori forniti dalla piattaforma.
 
 In questo esempio sono presenti una configurazione remota,

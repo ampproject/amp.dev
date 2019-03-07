@@ -1,74 +1,29 @@
 ---
-$title: Make installable and add offline access
+$title: Easy offline access and improved performance
 $order: 1
 formats:
   - websites
-author: pbakaus
+author: crystalonscript
+contributors:
+  - pbakaus
 ---
 
-{{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample triggering the "Add to Home Screen" prompt.') }}
-
-Many websites won’t ever need things beyond the boundaries of AMP. [AMPbyExample](http://ampbyexample.com/), for instance, is both an AMP and a Progressive Web App:
-
-1. It has a [Web App Manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), prompting the “Add to Homescreen” banner.
-1. It has a [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and, therefore, allows offline access, among other things.
-
-When a user visits [AMPbyExample](http://ampbyexample.com/) from a AMP-supporting platform and then clicks continues the onward journey onto the same site, they navigate away from the AMP Cache to the origin. The website still uses the AMP library, of course, but because it now lives on the origin, it can use a service worker, can prompt to install and so on.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) enable rich offline experiences and consistent user experiences across varying network strengths. By caching resources within the browser, a web app is able to provide data, assets, and offline pages to the user to keep them engaged and informed. 
 
 Remember: The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.
 
-## Add a Web App Manifest
 
-Adding a [Web App Manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) to your AMP pages ensures that users can install your site to their devices' homescreen. There's nothing special about Web App manifests in AMP.
+## Install a Service Worker
 
-First, create the manifest:
-
-[sourcecode:json]
-{
-  "short_name": "ABE",
-  "name": "AMPByExample",
-  "icons": [
-    {
-      "src": "launcher-icon-1x.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "launcher-icon-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "index.html?launcher=true"
-}
-[/sourcecode]
-
-Then link to it from the `<head>` of your AMP page:
-
-[sourcecode:html]
-<link rel="manifest" href="/manifest.json">
-[/sourcecode]
-
-[tip type="tip"]
-**TIP –** Learn more about the [Web App Manifest at WebFundamentals](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/).
-[/tip]
-
-## Install a Service Worker to enable offline access
-
-A Service Worker is a client-side proxy that sits between your page and your server, and can be used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
+A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
 
 [tip type="note"]
 **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 [/tip]
 
-Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`<amp-install-serviceworker>`](/docs/reference/components/amp-install-serviceworker.html) component to achieve the same.
+Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component to achieve the same.
 
-For that, first include the `<amp-install-serviceworker>` component via its script in the `<head>` of your page:
+For that, first include the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -86,7 +41,87 @@ Then add the following somewhere within your `<body>` (modify to point to your a
 
 If the user navigates to your AMP pages on your origin (as opposed to the first click, which is usually served from an AMP Cache), the Service Worker will take over and can do a [myriad of cool things](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
-## Extend your AMP Pages via Service Worker
+##The AMP Service Worker  
+
+If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
+
+[tip type="default"]
+**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.html).
+[/tip]
+
+### Installing the AMP Service Worker
+
+Install the AMP Service Worker with minimal steps:
+
+  - Import the AMP Service Worker code into your service worker file. 
+    [sourcecode:js]
+      importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+    [/sourcecode]
+
+  - Install the service worker with the following code.
+    [sourcecode:js]
+      AMP_SW.init();
+    [/sourcecode]
+
+  - Done.
+
+### Automated Caching
+
+The AMP Service Worker automatically caches AMP script files and AMP documents. By caching AMP script files, they are instantly available to the users browser allowing for offline functionality and speedier pages on flaky networks. 
+
+If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. 
+
+[sourcecode:js]
+AMP_SW.init(
+     documentCachingOptions: {
+           denyList?: Array<RegExp>;
+    }
+);
+[/sourcecode]
+
+Read more about customizing document caching here.
+
+### Optimizing the AMP Service Worker 
+
+To use the AMP Service Worker to its full capabilities, the optional fields should be configured to cache necessary assets and prefetch links. 
+
+Assets that drive the user's visit to a page, such as a video, important images, or a downloadable PDF, should be cached so that they can be accessed again if the user is offline.
+
+[sourcecode:js]
+AMP_SW.init(
+   assetCachingOptions: [{
+        regexp: /\.(png|jpg)/,
+        cachingStrategy: 'CACHE_FIRST'
+    }],
+);
+[/sourcecode]
+
+You are able to customize the caching strategy and define a deny list.
+
+Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
+
+[sourcecode:html]
+<a href=`....` data-rel=`prefetch` />
+[/sourcecode]
+
+### Offline Experience 
+
+Communicate to user's that they have gone offline, and should try reloading the site when back online, by including an offline page. The AMP Service Worker can cache both the page and its assets. 
+
+[sourcecode:js]
+AMP_SW.init({
+  offlinePageOptions: {
+      url: '/offline.html';
+      assets: ['/images/offline-header.jpg'];
+  }
+})
+[/sourcecode]
+
+
+A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
+
+
+## Write a Custom Service Worker
 
 You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return any response you want:
 

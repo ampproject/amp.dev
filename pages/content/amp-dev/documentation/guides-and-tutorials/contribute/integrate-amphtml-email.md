@@ -7,7 +7,7 @@ formats:
 
 AMP is an open source initiative that enables the creation of consistently fast, beautiful, and high-performing web experiences across devices and distribution platforms. The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.
 
-There are [AMP components](/docs/reference/components.html) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message.
+There are [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMPHTML emails to interact dynamically with content directly in the message.
 
 This guide is a high-level overview of implementing support for the AMPHTML email format, aimed at  Email Providers. For further technical details, please see [the spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md).
 
@@ -36,7 +36,7 @@ While AMPHTML Emails provides certain level of security, a few more measures mus
 While the AMP Validator will only allow [whitelisted components](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md#amp-components) through, a spam checker should analyze and sanitize an AMPHTML Email much like it would analyze a regular HTML email. The system should also ensure the email passes at minimum DKIM, DMARC, and SPF checks. Furthermore, a sender whitelist is also a strong way to mitigate risks.
 
 ##Include a Proxy Server
-A proxy server is fundamental and should be responsible for handling XHR requests that originate from the AMPHTML Emails (e.g. from [amp-list](/docs/reference/components/amp-list.html), [amp-form](/docs/reference/components/amp-form.html), etc) and perform spam checks and sanitization on the content fetched by these requests.
+A proxy server is fundamental and should be responsible for handling XHR requests that originate from the AMPHTML Emails (e.g. from [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}), etc) and perform spam checks and sanitization on the content fetched by these requests.
 
 Some dynamic elements in AMPHTML Emails may rely on remote content. Additional steps should be taken to prevent user data, such as IP address, cookies, and type of device, from being leaked to third party endpoints and giving rewrite access to parts of the AMPHTML Email.
 

@@ -36,16 +36,16 @@
       padding: 1em;
       margin-left: 26px;
       @include gradient-websites; color: color('white');
-    
+
       &::before {
         content: '';
         position: absolute;
-        width: 0; 
+        width: 0;
         height: 0;
         top: 0;
         left: 0;
         border-top: 1em solid transparent;
-        border-bottom: 1em solid transparent; 
+        border-bottom: 1em solid transparent;
         border-right: 1em solid #005AF0;
         font-size: 26px;
       }
@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding: 8px;
+    padding: 6px;
     @include txt;
     @include txt-font-accent;
     line-height: 1.2em;
@@ -87,7 +87,7 @@
     cursor: pointer;
 
     @media (min-width: 768px) {
-      font-size: 0.75em;
+      font-size: 0.70em;
     }
 
     &.active {
@@ -101,8 +101,8 @@
       fill: color('black');
 
       @media (min-width: 768px) {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
         margin-right: 8px;
       }
 

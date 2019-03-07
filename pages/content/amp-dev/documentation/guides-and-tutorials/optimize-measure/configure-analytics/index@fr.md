@@ -23,7 +23,7 @@ et les données d'engagement social à une autre.
 Les analyses AMP sont spécialement conçues pour mesurer une seule fois et transmettre ces mesures à autant de destinataires que nécessaire.
 Si vous travaillez déjà avec un ou plusieurs fournisseurs de solutions d'analyse,
 consultez la
-[spécification du composant amp-analytics](/fr/docs/reference/components/amp-analytics.html)
+[spécification du composant `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 pour savoir s'ils ont intégré leur solution avec AMP.
 Le cas échéant, il suffit de créer un lien vers leurs documents depuis la spécification
 et de commencer à suivre les instructions.
@@ -43,7 +43,7 @@ Vous devez en effet identifier ces données avant de pouvoir les configurer.
 Points clés à prendre en compte concernant les données :
 
 * Allez-vous suivre uniquement les vues de page ou d'autres tendances sur l'engagement des utilisateurs
-(voir également [amp-pixel ou amp-analytics](/fr/docs/analytics/analytics_basics.html#utiliser-amp-pixel-ou-amp-analytics-?)) ?
+(voir également [amp-pixel ou amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}#utiliser-amp-pixel-ou-amp-analytics-?)) ?
 * Quels types de données allez-vous capturer sur vos utilisateurs, votre contenu,
-le périphérique ou le navigateur (voir également [Substitution de variables](/fr/docs/analytics/analytics_basics.html#substitution-de-variables)) ?
-* Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs](/fr/docs/analytics/analytics_basics.html#identification-des-utilisateurs)) ?
+le périphérique ou le navigateur (voir également [Substitution de variables]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#substitution-de-variables)) ?
+* Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#identification-des-utilisateurs)) ?
