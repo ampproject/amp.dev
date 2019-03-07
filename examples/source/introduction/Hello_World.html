@@ -25,7 +25,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <!--
     AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
   -->
-  <link rel="canonical" href="<%host%>/introduction/hello_world/">
+  <link rel="canonical" href="<% hosts.platform %>/documentation/examples/introduction/hello_world.html">
   <!--
     AMP HTML files require a viewport declaration. It's recommended to include initial-scale=1.
   -->
@@ -51,18 +51,12 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   -->
   <h1>Hello World!</h1>
   <!--
-    Certain tags, such as the `<img>` tag, are replaced
-    with equivalent or slightly enhanced custom AMP HTML tags (see
-    [HTML Tags in the specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)).
+    Certain tags, such as the `<img>` tag, are replaced with equivalent or slightly enhanced custom AMP HTML tags (see [HTML Tags in the specification](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md)). You can use the [AMP Validator](https://www.ampproject.org/docs/guides/validate.html) to check
+    if your AMP HTML file is valid AMP HTML. Simply add `#development=1` to an AMP URL. Validation errors will be printed in the Javascript console. You can try it with this website which is built with AMP.
 
-    You can use the [ AMP Validator ](https://www.ampproject.org/docs/guides/validate.html) to check
-    if your AMP HTML file is valid AMP HTML. Simply
-    add `#development=1` to an AMP URL. Validation errors will be printed in the Javascript console.
-    You can try it with this website which is built with AMP.
-
-    Check out the [other examples](/) to learn more about AMP.
+    Check out the [other examples](/documentation/examples.html) to learn more about AMP.
   -->
-  <amp-img src="/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+  <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
 
 </body>
 </html>
