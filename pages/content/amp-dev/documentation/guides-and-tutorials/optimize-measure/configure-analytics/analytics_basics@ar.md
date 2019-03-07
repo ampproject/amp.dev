@@ -46,7 +46,7 @@ $title: "Analytics: الأساسيات"
 
 تعرّف على كيفية إنشاء تهيئة تحليلات
 [<span dir="ltr" class="nowrap">amp-pixel</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) و
-[<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html)بسيطة.
+[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})بسيطة.
 
 ### تهيئة amp-pixel بسيطة
 

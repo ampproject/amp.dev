@@ -23,7 +23,7 @@ sosyal katılım verilerini başka bir URL›ye gönderebilirsiniz.
 AMP analitikleri bir kez ölçüm yapacak ve birden fazla yere bildirecek verecek şekilde özel olarak tasarlanmıştır.
 Halihazırda bir ya da daha fazla analitik satıcı ile çalışıyorsanız,
 çözümlerinin AMP ile entegreli olup olmadığını görmek için
-[amp-analitik spesifikasyonu](/tr/docs/reference/components/amp-analytics.html)
+[amp-analitik spesifikasyonu]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 bölümüne göz atın.
 Entegreli ise, spesifikasyon bölümünden belgelerine gidip
 aşağıdaki talimatları takip etmeye başlayabilirsiniz.

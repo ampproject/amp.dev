@@ -7,7 +7,7 @@ AMP HTML 网页的样式和布局与普通的 HTML 网页非常类似，均采�
  不过，出于性能和易用性方面的考虑，AMP 限制在某些情况下使用 CSS，但扩展了一些自适应设计功能（例如 [占位符和备用行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
 、 [通过 srcset 实现的高级艺术指导]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})以及 [layout 属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 等功能），以更好地控制您元素的显示方式。
 
-提示: 在 AMP 中制作自适应元素非常简单：只需在其中添加 `layout="responsive"` 即可。要详细了解 AMP 中的自适应设计，请转到[制作自适应 AMP 网页](/zh_cn/docs/design/responsive/responsive_design.html)。
+提示: 在 AMP 中制作自适应元素非常简单：只需在其中添加 `layout="responsive"` 即可。要详细了解 AMP 中的自适应设计，请转到[制作自适应 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}})。
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='观看 UpperQuad 工作人员介绍 AMP 项目网站重新设计相关内容（包括初次使用 AMP 会遇到的难题）的视频。']
 

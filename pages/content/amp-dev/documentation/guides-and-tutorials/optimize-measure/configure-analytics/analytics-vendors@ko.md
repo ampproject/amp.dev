@@ -37,7 +37,7 @@ $title: 애널리틱스 공급업체
 
 [tip type="note"]
 
-서비스를 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](/ko/docs/analytics/integrating-analytics.html) 세부정보를 참조하세요.
+서비스를 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) 세부정보를 참조하세요.
 
 [/tip]
 

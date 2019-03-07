@@ -4,7 +4,7 @@ $title: Crear un blog en directo
 
 Los blogs en directo son páginas web que se actualizan frecuentemente durante el desarrollo de eventos como competiciones deportivas o días de elecciones. En AMP, puedes implementar un blog en directo usando el componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
-Este tutorial ofrece información general sobre el componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) y se centra en algunos detalles de la implementación para blogs en directo, como la [paginación](#pagination) y los [enlaces profundos](#deeplinking). Usaremos el [blog en directo de ejemplo] de AMP By Example (https://www.ampbyexample.com/samples_templates/live_blog/) para mostrar cómo implementar blogs en AMP.
+Este tutorial ofrece información general sobre el componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) y se centra en algunos detalles de la implementación para blogs en directo, como la [paginación](#pagination) y los [enlaces profundos](#deeplinking). Usaremos el [blog en directo de ejemplo] de AMP By Example ({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}}) para mostrar cómo implementar blogs en AMP.
 
 [tip type="success"]
 
@@ -16,7 +16,7 @@ Usa la etiqueta de metadatos [LiveBlogPosting](http://schema.org/LiveBlogPosting
 
 ## Descripción general de `amp-live-list`
 
-El componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata](https://ampbyexample.com/samples_templates/live_blog/#metadata) de la página.
+El componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}}#metadata) de la página.
 
 El código inicial del blog podría tener el siguiente aspecto:
 

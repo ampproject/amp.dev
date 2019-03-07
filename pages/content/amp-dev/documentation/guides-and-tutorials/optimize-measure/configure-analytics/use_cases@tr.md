@@ -8,7 +8,7 @@ Bir kullanım durumu eklemek istiyor musunuz?
 [Bize bildirin.](https://github.com/ampproject/docs/issues/new)
 
 Kendi kullanım durumlarınızla da katkı da bulunabilirsiniz;
-bkz. [Katkı Sağlama](/tr/contribute/).
+bkz. [Katkı Sağlama]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## Sayfa görünümlerini izleme
 

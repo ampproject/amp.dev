@@ -99,7 +99,7 @@ Estes valores podem ser usados no atributo `layout`:
 
 [tip type="success"]
 
-Acesse a página [Demonstração de layouts AMP](/pt_br/docs/design/amp-html-layout/layouts_demonstrated.html) para ver como diferentes layouts respondem ao redimensionamento de tela. Você também encontra mais informações no site [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
+Acesse a página [Demonstração de layouts AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}#keyframes-stylesheet) para ver como diferentes layouts respondem ao redimensionamento de tela. Você também encontra mais informações no site [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
 
 [/tip]
 

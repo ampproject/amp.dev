@@ -109,4 +109,4 @@ AMP 采用一种名为 [Shell 网址重写]({{g.doc('/content/amp-dev/documentat
 
 待您设置好上述属性后，在相应 AMP 网页上发生的所有后续点击都会跳转到您的 PWA，而无论采用何种 Service Worker。
 
-继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/amp-in-pwa.html)。
+继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})。

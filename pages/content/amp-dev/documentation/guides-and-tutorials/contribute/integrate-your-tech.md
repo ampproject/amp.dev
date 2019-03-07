@@ -51,5 +51,5 @@ If you have questions or suggestions, please don't hesitate to [file an issue](h
 
 - [AMP Project Site](https://www.ampproject.org/)
 - [AMP GitHub Project](https://github.com/ampproject/amphtml)
-- [AMP Blog](/latest/blog)
+- [AMP Blog](https://blog.amp.dev/)
 - [AMP Project Roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

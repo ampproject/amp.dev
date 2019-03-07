@@ -19,7 +19,7 @@ but you can’t reference external stylesheets
 Also certain styles are disallowed due to performance implications.
 
 Styles may live in the head of the document or as inline `style` attributes
-(see [Add styles to a page](/docs/design/responsive_amp.html#add-styles-to-a-page)).
+(see [Add styles to a page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 

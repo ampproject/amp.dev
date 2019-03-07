@@ -52,7 +52,7 @@ $title: AMP 애널리틱스 심층 분석
 
 [tip type="note"]
 
-위의 예제는 이해를 돕기 위한 코드이지만, 현실성 있는 샘플은 아닙니다. 분석 제공업체와 함께 작업하는 경우에는 위의 샘플이 의미가 없을 수도 있습니다. 제공업체 구성에서는 복잡성이 제거됩니다. 샘플 구성과 관련해서는 [분석 제공업체의 문서](/ko/docs/analytics/analytics-vendors.html)를 참조하세요.
+위의 예제는 이해를 돕기 위한 코드이지만, 현실성 있는 샘플은 아닙니다. 분석 제공업체와 함께 작업하는 경우에는 위의 샘플이 의미가 없을 수도 있습니다. 제공업체 구성에서는 복잡성이 제거됩니다. 샘플 구성과 관련해서는 [분석 제공업체의 문서]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})를 참조하세요.
 [/tip]
 
 ## 분석 데이터를 보낼 위치: type 속성
@@ -254,11 +254,11 @@ AMP는 다음 트리거 구성을 지원합니다.
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>(<code>on</code>이 <code>click</code>으로 설정된 경우 필수)</td>
-      <td data-th="Description">추적해야 할 요소를 상세검색하는 데 사용되는 CSS 선택 도구입니다. <code>*</code> 값을 사용하여 모든 요소를 추적합니다. 이 구성은 <code>click</code> 트리거와 함께 사용됩니다. <a href="/ko/docs/analytics/use_cases.html#tracking-page-clicks">페이지 클릭 수 추적</a> 및 <a href="/ko/docs/analytics/use_cases.html#tracking-social-interactions">소셜 상호작용 추적</a>을 위해 선택 도구를 사용하는 방법을 알아보세요.</td>
+      <td data-th="Description">추적해야 할 요소를 상세검색하는 데 사용되는 CSS 선택 도구입니다. <code>*</code> 값을 사용하여 모든 요소를 추적합니다. 이 구성은 <code>click</code> 트리거와 함께 사용됩니다. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">페이지 클릭 수 추적</a> 및 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">소셜 상호작용 추적</a>을 위해 선택 도구를 사용하는 방법을 알아보세요.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code>(<code>on</code>이 <code>scroll</code>로 설정된 경우 필수)</td>
-      <td data-th="Description">페이지가 스크롤될 때 <code>scroll</code> 이벤트가 실행되는 조건을 제어합니다. 이 개체는 <code>verticalBoundaries</code> 및 <code>horizontalBoundaries</code>를 포함합니다. <code>scroll</code> 이벤트가 실행되려면 두 속성 중 적어도 하나가 필요합니다. 두 속성의 값은 스크롤 이벤트가 생성된 경계를 포함하는 숫자 배열이어야 합니다. <a href="/ko/docs/analytics/use_cases.html#tracking-scrolling">스크롤 추적</a>에서 예시를 확인해 보세요.</td>
+      <td data-th="Description">페이지가 스크롤될 때 <code>scroll</code> 이벤트가 실행되는 조건을 제어합니다. 이 개체는 <code>verticalBoundaries</code> 및 <code>horizontalBoundaries</code>를 포함합니다. <code>scroll</code> 이벤트가 실행되려면 두 속성 중 적어도 하나가 필요합니다. 두 속성의 값은 스크롤 이벤트가 생성된 경계를 포함하는 숫자 배열이어야 합니다. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">스크롤 추적</a>에서 예시를 확인해 보세요.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code>(<code>on</code>이 <code>timer</code>로 설정된 경우 필수)</td>

@@ -47,5 +47,5 @@ Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/
 
 - [Site do projeto AMP](https://www.ampproject.org/pt_br/)
 - [Projeto AMP no GitHub](https://github.com/ampproject/amphtml)
-- [Blog das AMP](/pt_br/latest/blog)
+- [Blog das AMP](https://blog.amp.dev/)
 - [Roteiro do projeto AMP]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

@@ -244,11 +244,11 @@ $title: نظرة عميقة على AMP Analytics
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (مطلوب عند تعيين <code>on</code> على <code>click</code>)</td>
-      <td data-th="Description">محدّد CSS الذي يُستخدم لتحسين العناصر التي ينبغي تتبعها. استخدم القيمة <code>*</code> لتتبع كل العناصر. يتم استخدام هذه التهيئة بالتزامن مع المشغل <code>click</code>. تعرّف على كيفية استخدام المحدّد <a href="/ar/docs/analytics/use_cases.html#تتبع-النقرات-على-الصفحة">لتتبع النقرات على الصفحة</a> وكذلك <a href="/ar/docs/analytics/use_cases.html#تتبع-التفاعلات-الاجتماعية">التفاعلات الاجتماعية</a>.</td>
+      <td data-th="Description">محدّد CSS الذي يُستخدم لتحسين العناصر التي ينبغي تتبعها. استخدم القيمة <code>*</code> لتتبع كل العناصر. يتم استخدام هذه التهيئة بالتزامن مع المشغل <code>click</code>. تعرّف على كيفية استخدام المحدّد <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#تتبع-النقرات-على-الصفحة">لتتبع النقرات على الصفحة</a> وكذلك <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#تتبع-التفاعلات-الاجتماعية">التفاعلات الاجتماعية</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (مطلوب عند تعيين <code>on</code> على <code>scroll</code>)</td>
-      <td data-th="Description">عناصر التحكم التي يتم تنشيط الحدث <code>scroll</code> بموجب شروطها عند التمرير عبر الصفحة. يمكن أن يحتوي هذا الكائن على <code>verticalBoundaries</code> و<code>horizontalBoundaries</code>. واحدة من الخصيصتين على الأقل مطلوبة لتنشيط حدث <code>scroll</code>. يجب أن تكون قيم كلّ من الخصيصتين صفائف من الأرقام التي تحتوي على حدود يتم إنشاء حدث تمرير فيها. انظر هذا النموذج في <a href="/ar/docs/analytics/use_cases.html#تتبع-التمرير">تتبع التمرير</a>.</td>
+      <td data-th="Description">عناصر التحكم التي يتم تنشيط الحدث <code>scroll</code> بموجب شروطها عند التمرير عبر الصفحة. يمكن أن يحتوي هذا الكائن على <code>verticalBoundaries</code> و<code>horizontalBoundaries</code>. واحدة من الخصيصتين على الأقل مطلوبة لتنشيط حدث <code>scroll</code>. يجب أن تكون قيم كلّ من الخصيصتين صفائف من الأرقام التي تحتوي على حدود يتم إنشاء حدث تمرير فيها. انظر هذا النموذج في <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#تتبع-التمرير">تتبع التمرير</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (مطلوب عند تعيين <code>on</code> على <code>timer</code>)</td>

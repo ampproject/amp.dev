@@ -37,7 +37,7 @@ Se você tiver experiência em editar código, veja as configurações brutas no
 
 [tip type="note"]
 
-Os fornecedores que quiserem integrar os serviços ao [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) precisam consultar os detalhes no artigo sobre [integrar ferramentas de análise às AMP](/pt_br/docs/analytics/integrating-analytics.html).
+Os fornecedores que quiserem integrar os serviços ao [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) precisam consultar os detalhes no artigo sobre [integrar ferramentas de análise às AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
 
 [/tip]
 

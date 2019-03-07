@@ -37,7 +37,7 @@ Jika Anda sudah terbiasa mengutak-atik kode, Anda dapat mempelajari konfigurasi 
 
 [tip type="note"]
 
-Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) sebaiknya mempelajari detail dalam [Mengintegrasikan fitur analisis dengan AMP](/id/docs/analytics/integrating-analytics.html).
+Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) sebaiknya mempelajari detail dalam [Mengintegrasikan fitur analisis dengan AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
 
 [/tip]
 

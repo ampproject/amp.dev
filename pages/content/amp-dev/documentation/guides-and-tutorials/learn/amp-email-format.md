@@ -392,7 +392,7 @@ Email providers will need to proxy all XHRs and use the responses to render the 
 
 ##### Are there any CSS restrictions?
 
-The AMP4EMAIL validator spec does not contain additional CSS restrictions beyond the [standard AMP CSS restrictions](https://www.ampproject.org/docs/design/responsive/style_pages). However, email clients may have their own CSS restrictions.
+The AMP4EMAIL validator spec does not contain additional CSS restrictions beyond the [standard AMP CSS restrictions]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}). However, email clients may have their own CSS restrictions.
 
 For example, in Gmail, the allowed list of CSS properties and values can be found at [Gmail Supported CSS Properties & Media Queries](https://developers.google.com/gmail/design/reference/supported_css).
 
