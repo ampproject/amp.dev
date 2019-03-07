@@ -21,7 +21,7 @@
 
   &-hl {
     margin-bottom: 15px;
-    font-family: 'Poppins';
+    @include txt-font-accent;
     font-weight: bold;
     font-size: 0.875rem;
     width: 100%;

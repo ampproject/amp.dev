@@ -48,12 +48,13 @@
     margin-top: -52px;
     margin-left: -25px;
     font-size: 12px;
-    font-family: 'Poppins';
+    @include txt-font-accent;
     color: color('white');
     fill: color('white');
     cursor: pointer;
     display: flex;
     align-items: center;
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
   
     @media (min-width: 768px) {
       display: none;
@@ -65,14 +66,13 @@
     .label-icon {
       border-radius: 4px;
       background: color('blue-ribbon');
-      height: 28px;
+      height: 35px;
       width: 32px;
       padding-left: 2px;
       display: flex;
       justify-content: center;
       align-items: center;
       svg {
-        transition: 0.4s;
         height: 14px;
         width: 14px;
         transform: rotate(180deg);
@@ -83,7 +83,9 @@
       margin-left: -5px;
       border-radius: 0 4px 4px 0;
       background: color('blue-ribbon');
-      height: 28px;
+      height: 35px;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -158,12 +160,13 @@
       margin-top: -52px;
       margin-left: -40px;
       font-size: 12px;
-      font-family: 'Poppins';
+      @include txt-font-accent;
       color: color('white');
       fill: color('white');
       cursor: pointer;
       display: flex;
       align-items: center;
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
 
       &:focus {
         outline: none;
@@ -171,7 +174,7 @@
       .label-icon {
         border-radius: 4px;
         background: color('blue-ribbon');
-        height: 28px;
+        height: 35px;
         width: 32px;
         padding-left: 2px;
         display: flex;
@@ -180,7 +183,6 @@
         svg {
           height: 14px;
           width: 14px;
-          transition: 0.4s;
         }
       }
       .label-title {
@@ -188,7 +190,9 @@
         margin-left: -5px;
         border-radius: 0 4px 4px 0;
         background: color('blue-ribbon');
-        height: 28px;
+        height: 35px;
+        display: flex;
+        align-items: center;
       }
     }
   }
