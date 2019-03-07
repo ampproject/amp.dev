@@ -5,20 +5,15 @@
 <footer class="ap--footer" role="content-info">
   <div class="ap-o-footer">
     <div class="ap-o-footer-line-top">
-      <div class="ap-o-footer-hint">{{_('Of course, this site is made with AMP!')}} asd</div>
+      <div class="ap-o-footer-hint">{{_('Of course, this site is made with AMP!')}}</div>
 
       <div class="ap-o-footer-follow">
         <h5 class="ap-o-footer-follow-title">{{_('Follow us')}}</h5>
         <ul class="ap-o-footer-follow-menu">
-          {% do doc.icons.useIcon('icons/twitter.svg') %}
           <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://twitter.com/AMPhtml" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
-          {% do doc.icons.useIcon('icons/youtube.svg') %}
           <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
-          {% do doc.icons.useIcon('icons/wordpress.svg') %}
           <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://amphtml.wordpress.com/" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress"></use></svg></a></li>
-          {% do doc.icons.useIcon('icons/github.svg') %}
           <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://github.com/ampproject"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use></svg></a></li>
-          {% do doc.icons.useIcon('icons/stackoverflow.svg') %}
           <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackoverflow"></use></svg></a></li>
         </ul>
       </div>
@@ -72,5 +67,12 @@
 {% if not doc.pod.amp_dev.template_cache.get('footer') %}
 {% do doc.pod.amp_dev.template_cache.add('footer', footer()) %}
 {% else %}
+{# The icons need to be added outside the cached partial #}
+{% do doc.icons.useIcon('icons/twitter.svg') %}
+{% do doc.icons.useIcon('icons/youtube.svg') %}
+{% do doc.icons.useIcon('icons/wordpress.svg') %}
+{% do doc.icons.useIcon('icons/github.svg') %}
+{% do doc.icons.useIcon('icons/stackoverflow.svg') %}
+
 {{ doc.pod.amp_dev.template_cache.get('footer')|safe }}
 {% endif %}
