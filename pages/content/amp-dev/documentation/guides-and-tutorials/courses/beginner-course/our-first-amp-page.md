@@ -12,7 +12,7 @@ It’s our team’s first day building out our Chico’s Cheese Bike site. So fa
 
 {{ image('/static/img/courses/beginner/image17.png', 824, 790, caption='Our basic HTML website') }}
 
-In [your]() Glitch project, open index.html and verify that the HTML looks like this:
+In your Glitch project, open index.html and verify that the HTML looks like this:
 
 [sourcecode:html]
 {% raw %}<!DOCTYPE html>
@@ -110,7 +110,7 @@ For any other validation error entries, click the link labeled “Learn more.”
 
 [tip type="note"]
 
-**Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here](https://www.ampproject.org/docs/troubleshooting/validation_errors).
+**Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
