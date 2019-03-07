@@ -48,13 +48,20 @@
 .#{organism('sampler')} {
   grid-column: 3 / -1;
   width: 100%;
+  max-width: 1024px;
   padding-left: 20px;
 
   @media (min-width: 1680px) {
-    grid-column: 5 /  -1;
+    grid-column: 5 /  -3;
     padding-left: 0;
   }
-
+  &-header {
+    background: linear-gradient(225deg,#29323c,#485563 75%);
+    @include txt-3;
+    @include txt-font-accent;
+    color: #fff;
+    padding: 1.125em 1.75em;
+  }
   &-tab-bar {
     display: flex;
     flex-wrap: nowrap;
@@ -92,21 +99,13 @@
   &-iframe {
     width: 100%;
     height: auto;
-    background: color('bright-gray');
+    background: linear-gradient(45deg, #48525c, #101923);
     box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.4);
     [placeholder] {
       display: flex;
     }
-    [placeholder] &-source,
-    [placeholder] &-preview {
+    [placeholder] &-source {
       width: calc(50% - 4px);
-    }
-    [placeholder] &-drag {
-      width: 4px;
-    }
-    [placeholder] &-drag,
-    [placeholder] &-preview {
-      background: color('white');
     }
   }
 

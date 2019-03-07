@@ -16,6 +16,7 @@ import dimensions from './dimensions.json';
 import params from '../params/base.js';
 import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
+import embedMode from '../embed-mode/';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -44,6 +45,10 @@ class Preview {
     this.dimensions = dimensions[runtime.preview.mode];
     if (!this.runtime) {
       this.initDimensionFromParamsOrUseDefault(runtime);
+    }
+    if (embedMode.isActive) {
+      this.dimension.width = '100%';
+      this.dimension.height = '100%';
     }
     this.runtime = runtime;
     this.configurePreviewSwitcher();
@@ -220,7 +225,7 @@ class Preview {
     }
     this.previewIframe = this.createIframe();
     this.updateIframeDimensions();
-    this.previewContainer.insertBefore(this.previewIframe, this.previewContainer.firstChild);
+    this.previewContainer.appendChild(this.previewIframe);
     // create the preview
     let childDoc = this.previewIframe.contentDocument;
     const childWindow = this.getIframeWindow(this.previewIframe);
