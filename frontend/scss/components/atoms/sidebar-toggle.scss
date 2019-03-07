@@ -8,11 +8,7 @@
 
 .#{utility('sidebar-toggle-observer')} {
   position: absolute; 
-  top: 0; 
-  margin-top: -90px;
-  @media (min-width: 768px) {
-    margin-top: -120px;
-  }
+  top: 50px; 
 }
 
 .#{atom('sidebar-toggle')} {
@@ -37,7 +33,7 @@
       &~.ap--content {
         .#{atom('sidebar-mobile-toggle-label')} {
           z-index: 2247483647;
-          transform: translateX(90vw);
+          transform: translateX(calc(100vw - 40px));
           svg {
             transform: rotate(0);
           }
