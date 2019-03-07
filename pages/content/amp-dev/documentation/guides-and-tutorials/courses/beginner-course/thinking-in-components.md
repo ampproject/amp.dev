@@ -137,8 +137,3 @@ Remember to include the `<amp-youtube>` script in the `<head>`:
 
 [tip type="note"]
 **Note**: AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.[/tip]
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/our-first-amp-page.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/what-we-ve-learned.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

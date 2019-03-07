@@ -46,6 +46,3 @@ You’ll acquire skills while building AMP pages that can be transferred to buil
 
 AMP addresses performance, accessibility, and responsive design so that you can focus on the features. However, if you want to hone your skills, learning AMP can also help you discover exactly how AMP addresses these concerns. You will continue to learn and mature as a developer, even while your users enjoy the experiences that AMP helped you to build.
 
-<div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/course-introduction.md', locale=doc.locale).url.path}}"><span class="arrow-next">Let’s get started!</span></a>
-</div>

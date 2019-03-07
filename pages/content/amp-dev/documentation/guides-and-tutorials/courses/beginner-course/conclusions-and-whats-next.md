@@ -29,7 +29,3 @@ The following are some additional topics and links to explore:
 - [The AMP CDN](https://www.ampproject.org/docs/get_started/about-amp.html#amp-cdn)
 
 - [List of available AMP Components](https://www.ampproject.org/docs/reference/extended.html)
-
-<div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/appendix.md', locale=doc.locale).url.path}}"><span class="arrow-next">For more, check the appendix.</span></a>
-</div>

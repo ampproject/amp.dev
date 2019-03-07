@@ -179,8 +179,3 @@ Remember to include the `<amp-social-share>` script in the `<head>`:
 ```
 <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 ```
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/thinking-in-components.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/what-comes-next.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>

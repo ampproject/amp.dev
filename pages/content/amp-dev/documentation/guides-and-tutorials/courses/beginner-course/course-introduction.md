@@ -77,7 +77,3 @@ You can click on [this](https://nice-consonant.glitch.me/) link to see a live pr
 Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category. Click on any of the products. Notice how more details about that product pop up on the screen.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
-
-<div class="prev-next-buttons">
-<a class="button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/our-first-amp-page.md', locale=doc.locale).url.path}}"><span class="arrow-next">Our First AMP Page</span></a>
-</div>

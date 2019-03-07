@@ -244,8 +244,3 @@ This is an important error to understand. Some HTML tags are not allowed in AMP 
 **Note**: You can start your future AMP pages using the HTML here as a starting point. This HTML includes the AMP boilerplate from above. It contains all the required tags and elements we’ve covered so far. Alternatively, you can customize your starting point with additional features using the boilerplate generation tool here.
 
 [/tip]
-
-<div class="prev-next-buttons">
-  <a class="button prev-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/course-introduction.md', locale=doc.locale).url.path}}"><span class="arrow-prev">Prev</span></a>
-  <a class="button next-button" href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/thinking-in-components.md', locale=doc.locale).url.path}}"><span class="arrow-next">Next</span></a>
-</div>
