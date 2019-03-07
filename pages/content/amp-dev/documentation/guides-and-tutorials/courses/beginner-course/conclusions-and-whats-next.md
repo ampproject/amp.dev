@@ -22,10 +22,10 @@ The following are some additional topics and links to explore:
 
 - [All about Page Discovery](https://www.ampproject.org/docs/guides/discovery.html)
 
-- [Disallowed HTML Tags](https://www.ampproject.org/docs/reference/spec.html)
+- [Disallowed HTML Tags]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md#html-tags', locale=doc.locale).url.path}})
 
-- [Restricted CSS Rules & Animations](https://www.ampproject.org/docs/guides/responsive/style_pages.html#disallowed-styles)
+- [Restricted CSS Rules & Animations]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})
 
-- [The AMP CDN](https://www.ampproject.org/docs/get_started/about-amp.html#amp-cdn)
+- [The AMP Boilerplate](https://ampbyexample.com/boilerplate/)
 
-- [List of available AMP Components](https://www.ampproject.org/docs/reference/extended.html)
+- [List of available AMP Components]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}})
