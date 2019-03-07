@@ -11,7 +11,7 @@
 <header class="ap--header {% if not second_level %}ap--header-fixed{% endif%}" [class]="mainmenuopen ? 'ap--header {% if not second_level %}ap--header-fixed{% endif%} mainmenuopen' : 'ap--header {% if not second_level %}ap--header-fixed{% endif%}'">
   {% include '/views/partials/banner.j2' %}
 
-  <ul class="ap-o-header">
+  <div class="ap-o-header">
     <a class="ap-o-header-home" href="{{ doc.pod.get_home_doc().localize(locale=doc.locale).url.path }}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
@@ -21,8 +21,12 @@
     {% do doc.styles.addCssFile('/css/components/molecules/nav-link.css') %}
     <nav class="ap-o-header-main">
       {# Sections #}
+
       {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
+
+      {# hover is not avaiable for larger touch devices, a work around for displaying the nav list is using hidden input fields #}
       <input id="main-item-radio-{{ section.order }}" type="radio" name="ap-o-header-main-item-radio-btn" role="button" tabindex="0" />
+      
       <div class="ap-o-header-main-item">
         {% if section.index %}
         {% set section_index = g.doc(section.index, locale=doc.locale) %}
@@ -66,9 +70,9 @@
                 {% set format = second_level_doc.format_filter %}
               {% endif %}
 
-              {# first level flyout items with icon and description #}
+              {# start first level flyout item #}
 
-                <li class="ap-o-header-flyout-primary-item {% if third_level_name %} third_level {% endif %}">
+                <li class="ap-o-header-flyout-primary-item {% if third_level_name %} third-level {% endif %}">
                   <a class="ap-o-header-flyout-primary-item-link {{ format }}" href="{{ second_level_doc.url.path }}">
 
                   {% for flyout_info in flyout %}
@@ -80,26 +84,22 @@
                     <div class="ap-o-header-flyout-primary-item-link-icon {% if format %} {{ format }} {% endif %}">
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout_info.icon }}"></use></svg>
                     </div>
+
                     <div class="ap-o-header-flyout-primary-item-link-info 
-                      {% if format %}ap-o-header-flyout-primary-item-link-info-{{ format }}{% endif %}"
-                    >
+                    {% if format %}ap-o-header-flyout-primary-item-link-info-{{ format }}{% endif %}">
                       <div class="ap-o-header-flyout-item-title">{{ second_level_doc.title }}</div>
                       <div class="ap-o-header-flyout-item-description">{{ flyout_info.description }}</div>
                     </div>
                   {% endfor %}
 
-                  {% if third_level_name %}
-                    <input id="flyout-item-radio-{{ second_level_doc.title }}" type="radio"
-                    name="ap-o-header-flyout-item-radio-btn" role="button" tabindex="0" />
-                  
+                  {% if third_level_name %}                  
                     {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
-                    <label class="ap-a-ico ap-o-header-main-link-icon right" for="flyout-item-radio-{{ second_level_doc.title }}">
+                    <div class="ap-a-ico ap-o-header-main-link-icon right">
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-                    </label>
+                    </div>
                   {% endif %}
                   </a>
 
-                  {# get third level flyout #}
                   {% if third_level_name %}
                   
                     <ul class="ap-o-header-flyout ap-o-header-flyout-secondary">
@@ -150,7 +150,6 @@
     {% endfor %}
   </nav>
 
-    {# Add language selector between first- and second level navigation #}
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
       <a class="ap-m-language-selector-toggle" href="#">

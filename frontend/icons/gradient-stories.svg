@@ -1,8 +1,8 @@
-<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false"> 
-    <defs>
-        <linearGradient x1="81.726943%" y1="-28.3832685%" x2="23.7165981%" y2="119.978062%" id="gradient-stories">
-          <stop stop-color="#FFF300" offset="0%"></stop>
-          <stop stop-color="#FF8F00" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-</svg>
+<symbol aria-hidden="true" style="width:0;height:0;position:absolute">
+  <defs>
+    <linearGradient id="gradient-stories" x1="81.726943%" x2="23.7165981%" y1="-28.3832685%" y2="119.978062%">
+      <stop offset="0%" stop-color="#FFF300"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+  </defs>
+</symbol>

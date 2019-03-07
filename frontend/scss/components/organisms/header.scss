@@ -63,11 +63,7 @@
     display: none;
   }
 
-  input[name=ap-o-header-main-item-radio-btn]:checked ~ .ap-o-header-flyout {
-    display: block;
-  }
-
-  input[name=ap-o-header-flyout-item-radio-btn]:checked ~ .ap-o-header-flyout-secondary {
+  .ap-o-header-main-item-radio-btn:checked ~ .ap-o-header-flyout {
     display: block;
   }
 
@@ -146,22 +142,22 @@
   }
 
   &-flyout {
-    @include flayout-list-shadow;
+    @include flyout;
     pointer-events: none;
     opacity: 0;
     list-style: none;
-    background: #fff;
+    background: color('white');
     position: absolute;
     top: 100%;
     padding: 0 0 10px;
-    margin-left: 0;
+    margin: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &-fake-shadow {
       width: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 0%,#ffffff 100%);
+      background: linear-gradient(to bottom, fade_out(color('black'), 0.93) 0%, color('white') 100%);
       height: 8px;
       margin-bottom: 10px
     }
@@ -185,7 +181,7 @@
         @include txt-strong;
         @include txt-font-accent;
         @include color-black;
-        
+
         line-height: 1.4em;
 
         &.secondary {
@@ -226,7 +222,7 @@
       max-width: 300px;
 
       &:hover &-link {
-        @include flayout-list-shadow;
+        @include flyout;
         background-color: color('blue-ribbon');
 
         &-info > * {
@@ -286,10 +282,10 @@
       &:hover >.ap-o-header-flyout-secondary {
         pointer-events: auto;
         opacity: 1;
-        transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);       
+        transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
       }
 
-      &.third_level:hover &-link {
+      &.third-level:hover &-link {
         width: calc(100% + 5px);
 
         &:after {
