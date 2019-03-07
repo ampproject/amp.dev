@@ -48,7 +48,7 @@
     text-overflow: ellipsis;
     border-radius: 6px;
     color: color('black');
-    background: color('athens-gray');
+    background: fade_out(color('river-bed'), 0.95);
     transition: opacity 0.2s ease;
     cursor: pointer;
 
@@ -112,7 +112,7 @@
     &:not(.active),
     &.inactive {
       color: color('black');
-      background: color('athens-gray');
+      background: fade_out(color('river-bed'), 0.95);
 
       .#{atom('ico')} {
         fill: color('black');
