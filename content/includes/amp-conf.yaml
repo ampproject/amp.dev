@@ -48,7 +48,7 @@ speakers:
     name: Tomoyuki Saito
     company: Sunday Systems
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
   melissadepuydt:
     name: Melissa DePuydt
     company: WaPo
@@ -73,12 +73,12 @@ speakers:
     name: Kyungho Kang
     company: Cafe24
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
   jinhyoungkil:
     name: Jinhyoung Kil
     company: Cafe24
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
   leviclancy:
     name: Levi Clancy
     company: YouGov
@@ -118,17 +118,17 @@ speakers:
     name: Hernan Millot
     company: InEventos.com
     bio: Hernan is an entrepreneur that founded InEventos in 2011. He has worked as a developer for 20 years in many renowned companies around the world. 
-    pic: 
+    pic: /static/img/amp-conf/speakers/amp.png  
   hirohitokomada:
     name: Hirohito Komada, Shigeki Otsu
     company: Yahoo Japan
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
   shigekiotsu:
     name: Shigeki Otsu
     company: Yahoo Japan
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
   cristianronzio:
     name: Cristian Ronzio
     company: Musement Spa
@@ -162,7 +162,7 @@ speakers:
   katharinaalmonte:
     name: Katharina Familia Almonte
     company: Google
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
     bio:
   kiyotakaoku:
     name: Kiyotaka Oku
@@ -173,7 +173,7 @@ speakers:
     name: Mitsuhiro Naganuma
     company: EC-CUBE
     bio:
-    pic:
+    pic: /static/img/amp-conf/speakers/amp.png  
   chrispapazian:
     name: Chris Papazian
     company: Pinterest
