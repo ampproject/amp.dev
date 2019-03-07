@@ -18,20 +18,9 @@
     top: -99px;
   }
 }
-html.i-amphtml-scroll-disabled {
-  
-    .#{atom('sidebar-mobile-toggle-label')} {
-      z-index: 2247483647;
-      transform: translateX(calc(100vw - 35px));
-      svg {
-        transform: rotate(0);
-      }
-    }
-  
-}
 
 .#{atom('sidebar-mobile-toggle')} {
-  
+
   &-input {
     position: fixed;
     top: -99px;
