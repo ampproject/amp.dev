@@ -14,9 +14,7 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
   <!--
   ## Introduction
 
-  This is a sample showing how to implement a hotel page. It features room availability based on date selection
-  and a pet-friendly filter on page data. The room list resizes automatically after filtering and the user
-  is shown a message in case of no results. The user can enlarge photos and swipe rooms by using a gallery.
+  This is a sample showing how to implement a hotel page. It features room availability based on date selection and a pet-friendly filter on page data. The room list resizes automatically after filtering and the user is shown a message in case of no results. The user can enlarge photos and swipe rooms by using a gallery.
 
 -->
 <!-- -->
@@ -55,7 +53,7 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
   We use `amp-fit-text` to fit the hotel name to the available space.
 -->
 <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
-<link rel="canonical" href="<%host%>/samples_templates/hotel/">
+<link rel="canonical" href="<% hosts.platform %>/documentation/examples/samples-and-templates/hotel.html">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -83,11 +81,9 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
   <h2>When do you want to travel?</h2>
   <!-- ## Searching for available rooms -->
   <!--
-  This sample shows how to search for available rooms based on date selection.
-  You can implement an availability search by using the `amp-date-picker` as input of a form.
-  <p>Here we are using `type=range` as we need 2 dates: the arriving and leaving date of an hotel reservation.
-  Upon receiving a `submit-succes` event from the form response, we set the value of a global variable `rooms`
-  to the form response. We are using the variable `rooms` throughout the sample to access the response from other AMP components.</p>
+  This sample shows how to search for available rooms based on date selection. You can implement an availability search by using the `amp-date-picker` as input of a form.
+
+  Here we are using `type=range` as we need 2 dates: the arriving and leaving date of an hotel reservation. Upon receiving a `submit-succes` event from the form response, we set the value of a global variable `rooms` to the form response. We are using the variable `rooms` throughout the sample to access the response from other AMP components.
   -->
   <form method="GET"
         action="https://amp-by-example-live.glitch.me/rooms"
@@ -114,9 +110,7 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
 
     <!-- ## Client-side filtering -->
     <!--
-    We want to make it possible for the user to filter rooms by pet friendliness.
-    The filter shouldn't require an additional network request, instead it should work client-side.
-    We implement a filter by adding a checkbox which sets a new variable, `filterPetFriendly`, whenever the value changes.
+    We want to make it possible for the user to filter rooms by pet friendliness. The filter shouldn't require an additional network request, instead it should work client-side. We implement a filter by adding a checkbox which sets a new variable, `filterPetFriendly`, whenever the value changes.
     -->
     <label >Show only pet friendly rooms:
       <input type="checkbox" on="change:AMP.setState({
@@ -126,9 +120,7 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
 
    <!-- ## Filter implementation -->
     <!--
-    We use `amp-bind-macro` to implement a function which filters the `amp-list` content based on the pet-friendly variable.
-    By using `amp-bind-macro` we avoid duplicating
-    the filter expression across the page.
+    We use `amp-bind-macro` to implement a function which filters the `amp-list` content based on the pet-friendly variable. By using `amp-bind-macro` we avoid duplicating the filter expression across the page.
   -->
   <amp-bind-macro id="filteredRooms"
     expression="rooms.filter(room => showPetFriendlyOnly ? room.petFriendly : true)">
@@ -136,28 +128,21 @@ teaserImage: '/static/samples/img/teaser/hotel.jpg'
 
   <!-- ## Room list initial state -->
   <!--
-    We are using `amp-state` to set the initial value of the variable `rooms` to the list of rooms
-    returned by the server.
+    We are using `amp-state` to set the initial value of the variable `rooms` to the list of rooms returned by the server.
 
-    <p>This is necessary for client-side filtering to work after the initial
-    page load. We are using the variable `rooms` throughout the sample to access this list from other AMP components.</p>
+    This is necessary for client-side filtering to work after the initial page load. We are using the variable `rooms` throughout the sample to access this list from other AMP components.
 
-    <p>Both, `amp-list` and `amp-state`, use the same endpoint.</p>
+    Both, `amp-list` and `amp-state`, use the same endpoint.
   -->
   <amp-state id="rooms" src="https://amp-by-example-live.glitch.me/rooms"></amp-state>
 
   <!-- ## Room list -->
   <!--
-    We are using `amp-list` to show a list of rooms. We bind the value of the `src` variable
-    to the result of the function `filterRooms` so that we can show the available rooms based on the user selection.
+    We are using `amp-list` to show a list of rooms. We bind the value of the `src` variable to the result of the function `filterRooms` so that we can show the available rooms based on the user selection.
 
-    <p>The user can view an enlarged version of each image by clicking on it. This can be implemented using the `amp-lightbox-gallery`
-    by adding the `lightbox` attribute to every `amp-img`; the `alt` parameter content adds also
-    a caption for every image in the lightbox gallery.</p>
+    The user can view an enlarged version of each image by clicking on it. This can be implemented using the `amp-lightbox-gallery` by adding the `lightbox` attribute to every `amp-img`; the `alt` parameter content adds also a caption for every image in the lightbox gallery.</p>
 
-    <p>`amp-list` content takes the entire height on the page from the `height` attribute; after filtering, it could take unused space:
-    we are resizing by binding the `height` attribute to the result of the height of the image plus the margins multiplied by
-    the length of the list.</p>
+    `amp-list` content takes the entire height on the page from the `height` attribute; after filtering, it could take unused space: we are resizing by binding the `height` attribute to the result of the height of the image plus the margins multiplied by the length of the list.
   -->
   <amp-list class="rooms"
   layout="fixed-height" height="800"

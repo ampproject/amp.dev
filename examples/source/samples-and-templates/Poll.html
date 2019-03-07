@@ -28,7 +28,7 @@ Import the additional AMP components. This sample uses `amp-form` to accept poll
 This sample uses mustache templates to format poll results
 -->
 <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-<link rel="canonical" href="<%host%>/samples_templates/poll/">
+<link rel="canonical" href="<% hosts.platform %>/documentation/examples/samples-and-templates/poll.html">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -71,26 +71,19 @@ This sample uses mustache templates to format poll results
 <h2>Flightless bird poll</h2>
 <!-- ## Poll -->
 <!--
-We use `amp-form` to implement a poll. To avoid multiple votes by the same user, we need to identify which users have
-already voted. We use a cookie called `POLL_USER_ID` to identify the user. Given that in Safari the default behavior is
-to block third-party cookies from sites that have not been previously visited, this approach may not work if the page
-is visited via the AMP Cache. In this case we fallback to checking for duplicate entries via the `CLIENT_ID`.
+We use `amp-form` to implement a poll. To avoid multiple votes by the same user, we need to identify which users have already voted. We use a cookie called `POLL_USER_ID` to identify the user. Given that in Safari the default behavior is to block third-party cookies from sites that have not been previously visited, this approach may not work if the page is visited via the AMP Cache. In this case we fallback to checking for duplicate entries via the `CLIENT_ID`.
 
-<p>The `CLIENT_ID` is a unique identifier for the user when accessing a specific origin, for example the original page or
-the cached version of it. This means that the same user will generate two different values when accessing different origins.
-That's why we use a custom cookie to track cross origin access to the poll page.</p>
+The `CLIENT_ID` is a unique identifier for the user when accessing a specific origin, for example the original page or the cached version of it. This means that the same user will generate two different values when accessing different origins. That's why we use a custom cookie to track cross origin access to the poll page.
 
-<p>The `CLIENT_ID` variable can be passed via an amp-form by declaring a hidden input value with
-`default-value="CLIENT_ID(POLL_USER_ID)`. In our implementation, [the backend](https://github.com/ampproject/amp-by-example/blob/master/backend/poll.go) sets `POLL_USER_ID` to the value of `CLIENT_ID`,
-but the value of this cookie is not relevant and you could re-use your own session id.</p>
+The `CLIENT_ID` variable can be passed via an amp-form by declaring a hidden input value with
+`default-value="CLIENT_ID(POLL_USER_ID)`. In our implementation, [the backend](https://github.com/ampproject/amp-by-example/blob/master/backend/poll.go) sets `POLL_USER_ID` to the value of `CLIENT_ID`, but the value of this cookie is not relevant and you could re-use your own session id.</p>
 
-<p>Read more about [variable substitution](https://www.ampproject.org/docs/reference/components/amp-form#variable-substitutions).
-Currently, HTML tables are not supported in form responses, so we'll use CSS to layout the result data.</p>
+Read more about [variable substitution](https://www.ampproject.org/docs/reference/components/amp-form#variable-substitutions). Currently, HTML tables are not supported in form responses, so we'll use CSS to layout the result data.
 
-<p>In order to submit the form as soon as the user picks an option, we will add an
-[`on` attribute](https://www.ampproject.org/docs/reference/spec#on) to each `<input>`, that will submit the poll on change.</p>
+In order to submit the form as soon as the user picks an option, we will add an
+[`on` attribute](https://www.ampproject.org/docs/reference/spec#on) to each `<input>`, that will submit the poll on change.
 -->
-<form method="post" action-xhr="/samples_templates/poll/submit" target="_blank"
+<form method="post" action-xhr="<% hosts.backend %>/samples_templates/poll/submit" target="_blank"
       id="poll1"
       custom-validation-reporting="as-you-go">
     <input name="clientId" type="hidden" value="CLIENT_ID(POLL_USER_ID)" data-amp-replace="CLIENT_ID">

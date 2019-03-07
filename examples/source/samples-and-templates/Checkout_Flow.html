@@ -23,7 +23,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
     <head>
       <meta charset="utf-8">
       <title>Checkout flow</title>
-      <link rel="canonical" href="<%host%>/../samples_templates/checkout_flow/">
+      <link rel="canonical" href="<% hosts.platform %>/documentation/examples/samples-and-templates/checkout_flow.html">
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
       <script async src="https://cdn.ampproject.org/v0.js"></script>
 
@@ -47,14 +47,15 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
       <!-- ## Sign-in Support -->
 
         <!-- We use `amp-access` to integrate login and to show and hide a login button depending on whether the user is logged in. [amp-access](/components/amp-access) requires the definition of 3 endpoints as documented [here](https://www.ampproject.org/docs/reference/components/amp-access).
-          This sample allows an user to login and logout using either email/password or [Google sign in](https://developers.google.com/identity/sign-in/web/). Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here](https://www.ampproject.org/docs/reference/components/amp-access#login-page).  -->
+
+        This sample allows an user to login and logout using either email/password or [Google sign in](https://developers.google.com/identity/sign-in/web/). Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here](https://www.ampproject.org/docs/reference/components/amp-access#login-page).  -->
           <script id="amp-access" type="application/json">
             {
-                "authorization": "<%host%>/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+                "authorization": "<% hosts.backend %>/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
                 "noPingback": "true",
                 "login": {
-                  "sign-in": "<%host%>/samples_templates/comment_section/login?rid=READER_ID",
-                  "sign-out": "<%host%>/samples_templates/comment_section/logout?rid=READER_ID"
+                  "sign-in": "<% hosts.backend %>/samples_templates/comment_section/login?rid=READER_ID",
+                  "sign-out": "<% hosts.backend %>/samples_templates/comment_section/logout?rid=READER_ID"
                 },
                 "authorizationFallbackResponse": {
                     "error": true,
@@ -177,7 +178,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
                   single-item
                   layout="fixed-height"
                   credentials="include"
-                  src="/checkout/shopping-cart?clientId=CLIENT_ID(cart)"
+                  src="<% hosts.backend %>/checkout/shopping-cart?clientId=CLIENT_ID(cart)"
                   [src]="shoppingCart.src">
           <template type="amp-mustache">
             <div class="shopping-cart">
@@ -218,7 +219,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
         <section [class]="checkoutSuccess ? 'hide' : 'checkout-section'" class="checkout-section">
           <h3> Add a promotional code </h3>
           <form  method="post"
-                 action-xhr="/checkout/apply-code"
+                 action-xhr="<% hosts.backend %>/checkout/apply-code"
                  on="submit-success:AMP.setState({shoppingCart: {src: '/checkout/shopping-cart?clientId=CLIENT_ID(cart)&' + random()}})"
                  target="_top">
             <input name="clientId"
@@ -237,7 +238,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
           <form  id="checkout-form"
                  method="post"
                  [hidden]="checkoutSuccess"
-                 action-xhr="/checkout/apply-code"
+                 action-xhr="<% hosts.backend %>/checkout/apply-code"
                  on="submit-success:AMP.setState({checkoutSuccess: true})"
                  target="_top">
 
@@ -264,7 +265,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
                         items="."
                         single-item
                         credentials="include"
-                        src="/json/addresses.json">
+                        src="/static/samples/json/addresses.json">
                 <template type="amp-mustache">
                   <ul class="list-reset">
                     {{#addresses}}
@@ -366,7 +367,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
                           items="."
                           single-item
                           credentials="include"
-                          src="/json/credit-cards.json">
+                          src="/static/samples/json/credit-cards.json">
                   <template type="amp-mustache">
                     <ul class="list-reset">
                       {{#cards}}
@@ -437,9 +438,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
           </section>
 
           <!--
-            [tip type="note"]
-            Note: this sample does not include any form validation. However, this can be easily added using AMP's support for [custom form validation](https://ampbyexample.com/components/amp-form/#form-custom-validation).
-            [/tip]
+            Note: This sample does not include any form validation. However, this can be easily added using AMP's support for [custom form validation](https://ampbyexample.com/components/amp-form/#form-custom-validation).
           -->
           <!-- -->
       </div>

@@ -33,7 +33,7 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <!-- `amp-mustache` for client-side rendering. -->
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <link rel="canonical" href="<%host%>/samples_templates/comment_section/">
+    <link rel="canonical" href="<% hosts.platform %>/documentation/examples/samples-and-templates/comment_section.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
     :root {
@@ -132,14 +132,15 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <!-- ## Sign-in -->
     <!-- [amp-access](/components/amp-access) requires the definition of 3 endpoints as documented [here](https://www.ampproject.org/docs/reference/components/amp-access).
-          This sample allows an user to login and logout using an email and a password. Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here](https://www.ampproject.org/docs/reference/components/amp-access#login-page).  -->
+
+    This sample allows an user to login and logout using an email and a password. Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here](https://www.ampproject.org/docs/reference/components/amp-access#login-page).  -->
     <script id="amp-access" type="application/json">
     {
-        "authorization": "<%host%>/components/amp-access/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+        "authorization": "<% hosts.backend %>/components/amp-access/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
         "noPingback": "true",
         "login": {
-          "sign-in": "<%host%>/components/amp-access/login?rid=READER_ID",
-          "sign-out": "<%host%>/components/amp-access/logout?rid=READER_ID"
+          "sign-in": "<% hosts.backend %>/components/amp-access/login?rid=READER_ID",
+          "sign-out": "<% hosts.backend %>/components/amp-access/logout?rid=READER_ID"
         },
         "authorizationFallbackResponse": {
             "error": true,
@@ -151,9 +152,7 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
     <body>
       <div class="comment-sample">
 
-      <!-- In order to add comments users need to be logged in. We use `amp-access` to integrate login and to show and hide the login button depending on whether the user is logged in. `on="tap:amp-access.login-sign-in"` specifies which
-        action should be taken when clicking on the login button: `login` defines the property inside the `amp-access` json configuration, while `sign-in` defines
-        the endpoint. -->
+      <!-- In order to add comments users need to be logged in. We use `amp-access` to integrate login and to show and hide the login button depending on whether the user is logged in. `on="tap:amp-access.login-sign-in"` specifies which action should be taken when clicking on the login button: `login` defines the property inside the `amp-access` json configuration, while `sign-in` defines the endpoint. -->
         <button amp-access="NOT loggedIn" amp-access-hide on="tap:amp-access.login-sign-in">Login to comment</button>
 
         <!-- We specify the logout via a login endpoint to be able to use the `return URL` environment variable. -->
@@ -163,12 +162,11 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
         <!--
           ## Listing all comments
 
-          We use an `amp-list` to render existing comments to make sure that the latest comments appear if the page is loaded via the AMP Cache. As we don't know the number of comments in avance,
-          we add an `overflow` button.
+          We use an `amp-list` to render existing comments to make sure that the latest comments appear if the page is loaded via the AMP Cache. As we don't know the number of comments in avance, we add an `overflow` button.
         -->
         <amp-list id="comments"
                   class="comments"
-                  src="/samples_templates/comment_section/comments"
+                  src="<% hosts.backend %>/samples_templates/comment_section/comments"
                   layout="fixed-height"
                   height="200"
                   items="."
@@ -195,23 +193,20 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
             </div>
           </div>
         </amp-list>
-        <!-- It's easy to implement a button to refresh the comments using the `amp-list`'s refresh action. We combine it
-          with the `changeLayoutToContainer` action to resize the `amp-list` to fit the updated content. -->
+        <!-- It's easy to implement a button to refresh the comments using the `amp-list`'s refresh action. We combine it with the `changeLayoutToContainer` action to resize the `amp-list` to fit the updated content. -->
         <button on="tap: comments.changeToLayoutContainer, comments.refresh">Refresh comments</button>
 
         <!-- ## Writing a comment -->
 
         <!--
-          Use `amp-form` for submitting a new comment. When the `submit-success` event is fired, we trigger a refresh
-          of the comments list via the `refresh` action and resize the list via `changeToContainerLayout`. We also clear
-          all form fields using the `clear` action.
+          Use `amp-form` for submitting a new comment. When the `submit-success` event is fired, we trigger a refresh of the comments list via the `refresh` action and resize the list via `changeToContainerLayout`. We also clear all form fields using the `clear` action.
         -->
         <form id="comment"
               class="comment-form"
               amp-access="loggedIn"
               amp-access-hide
               method="post"
-              action-xhr="/samples_templates/comment_section/comments/new"
+              action-xhr="<% hosts.backend %>/samples_templates/comment_section/comments/new"
               target="_top"
               on="submit-success:
                     comments.changeToLayoutContainer,
