@@ -7,8 +7,8 @@
 @import 'components/atoms/_text.scss';
 
 .#{utility('sidebar-toggle-observer')} {
-  position: absolute; 
-  top: 50px; 
+  position: absolute;
+  top: 50px;
 }
 
 .#{atom('sidebar-toggle')} {
@@ -29,7 +29,7 @@
         transition: 0.2s;
       }
     }
-    
+
   }
 
   &-label {
@@ -44,7 +44,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-  
+
     @media (min-width: 768px) {
       display: none;
     }
@@ -126,7 +126,7 @@
           grid-column: 2 / 20;
           @media (max-width: 1023px) {
             grid-column: 2 / 25;
-          } 
+          }
         }
 
         &~ .ap--content  {
@@ -147,7 +147,7 @@
 
     &-label {
       position: fixed;
-      z-index: 21;
+      z-index: 16;
       margin-top: -52px;
       margin-left: -40px;
       font-size: 12px;
