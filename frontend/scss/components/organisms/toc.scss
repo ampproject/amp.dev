@@ -13,6 +13,7 @@
   @media (min-width: 1024px) {
     background: none;
     box-shadow: none;
+    padding-right: 10px;
   }
 }
 
@@ -35,7 +36,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
+    background-color: rgba(color('black'), 0.10);
   }
 
   @media (min-width: 768px) {
