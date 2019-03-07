@@ -33,7 +33,7 @@ body {
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
-    background: color('white');
+    background: color('whisper');
     @media (min-width: 768px) {
       grid-column: 8 / 25;
       padding-left: 30px;

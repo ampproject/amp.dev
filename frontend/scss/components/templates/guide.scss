@@ -27,7 +27,7 @@
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
-    background: color('white');
+    background: color('whisper');
   }
   
   .#{utility('sidebar')} {
