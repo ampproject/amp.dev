@@ -17,7 +17,7 @@
 
 .#{organism('cities')} {
   position: relative;
-  max-width: 100%;
+  width: 100%;
 
   @media (min-width: 768px) {
     grid-column: 5 / 21;
@@ -78,9 +78,17 @@
 
   &-visited-list {
     list-style: none;
-    column-count: 5;
     column-fill: balance;
     padding-left: 0;
+    column-count: 2;
+
+    @media (min-width: 480px) {
+      column-count: 3;
+    }
+
+    @media (min-width: 1200px) {
+      column-count: 5;
+    }
 
     &-item {
       margin-bottom: 35px;
