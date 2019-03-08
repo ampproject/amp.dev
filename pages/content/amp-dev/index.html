@@ -275,17 +275,8 @@ success_stories:
       </div>
 
       <div class="ap-o-sampler">
-        <div class="ap-o-sampler-tab-bar">
 
-          {% for tab in doc.sampler %}
-          <div tabindex="0" role="button" class="ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
-            [class]="activeSample == '{{ loop.index-1 }}' ? 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} active' : 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }}'"
-            on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
-            <span class="ap-o-sampler-tab-title">{{ tab.title }}</span>
-          </div>
-          {% endfor %}
-
-        </div>
+        <div class="ap-o-sampler-header">AMPHTML Playground</div>
 
         {% set embed_url = playground_embed_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
         {% set standalone_url = playground_url + '/#url=' + doc.sampler[0].url %}
@@ -303,10 +294,20 @@ success_stories:
             <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
             <div placeholder>
               <div class="ap-o-sampler-iframe-source"></div>
-              <div class="ap-o-sampler-iframe-drag"></div>
-              <div class="ap-o-sampler-iframe-preview"></div>
             </div>
           </amp-iframe>
+        </div>
+
+        <div class="ap-o-sampler-tab-bar">
+
+          {% for tab in doc.sampler %}
+          <div tabindex="0" role="button" class="ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
+            [class]="activeSample == '{{ loop.index-1 }}' ? 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} active' : 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }}'"
+            on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
+            <span class="ap-o-sampler-tab-title">{{ tab.title }}</span>
+          </div>
+          {% endfor %}
+
         </div>
 
         <div class="ap-o-sampler-link">
