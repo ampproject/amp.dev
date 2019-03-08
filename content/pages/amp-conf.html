@@ -132,12 +132,37 @@ components:
 </section>
 
 <section class="speakers amp-conf-section">
-    <div class="wrapper">
-      <h3 id="speakers">Speakers</h3>
+  <div class="wrapper">
+    <h3 id="speakers">Speakers</h3>
 
-      <p>The speakers will be announced soon.</p>
+    <ul class="speakers">
+        {% set sortedSpeakers = conf.speakers|sort %}
+        {% for speaker in sortedSpeakers if conf.speakers[speaker].pic %}
+        <li class="card" on="tap:lightbox-{{ speaker }}" role="button" tabindex="0">
+            <span class="image" data-name="{{ conf.speakers[speaker].name }}">{% if conf.speakers[speaker].pic %}<amp-img src="{{ conf.speakers[speaker].pic }}" width="400" height="400" layout="responsive"></amp-img>{% endif %}</span>
+            <div>
+                <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
+                {{ conf.speakers[speaker].bio|markdown|safe }}
+            </div>
+        </li>
+        <amp-lightbox id="lightbox-{{ speaker }}" layout="nodisplay">
+          <div class="lightbox" on="tap:lightbox-{{ speaker }}.close" role="button" tabindex="0">
+            <div class="inner-lightbox">
+              <h4 id="{{ speaker }}">{{ conf.speakers[speaker].name }}<small>{{ conf.speakers[speaker].company }}</small></h4>
+              {{ conf.speakers[speaker].bio|markdown|safe }}
+            </div>
+          </div>
+        </amp-lightbox>
+        {% endfor %}
+        <li class="card" role="button" tabindex="0">
+          <span class="image"></span>
+          <div>
+              <h4>More speakers to be announced!</h4>
+          </div>
+      </li>
+    </ul>
 
-  </div>
+</div>
 </section>
 
 <section class="location amp-conf-section">
