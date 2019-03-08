@@ -34,7 +34,7 @@ const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 // Where to import the samples from
 const SAMPLE_SRC = path.join(__dirname, '../../../examples/source/**/*.html');
 // The pod path inside
-const POD_PATH = 'content/amp-dev/documentation/examples';
+const POD_PATH = 'content/amp-dev/documentation/examples/documentation';
 // Where to store the samples inside the Grow pod in
 const MANUAL_DEST = path.join(__dirname, `../../../pages/${POD_PATH}`);
 // What Grow template to use to render the sample's manual
@@ -47,7 +47,7 @@ const PREVIEW_TEMPLATES = {
   'email': utils.project.absolute('frontend/hbs/preview-email.hbs'),
 };
 // Base to define the request path for Grow
-const PATH_BASE = '/documentation/examples/';
+const PATH_BASE = '/documentation/examples';
 // Path to store the cache in
 const CACHE_DEST = path.join(__dirname, '../../../.cache/examples.json');
 // Path the all source files are written to, to vend them via express
@@ -85,7 +85,6 @@ class SamplesBuilder {
       del.sync([
         `${MANUAL_DEST}/**/*.json`,
         `${MANUAL_DEST}/**/*.html`,
-        `!${MANUAL_DEST}/index.html`,
         `${SOURCE_DEST}`,
         `${PREVIEW_DEST}`,
         `${EMBED_DEST}`,
@@ -113,17 +112,20 @@ class SamplesBuilder {
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
-        await this._parseSample(sample.path, sample.relative).then((parsedSample) => {
-          // Skip samples that have draft: true set
-          if (parsedSample.document.metadata.draft) {
+        await this._parseSample(sample).then((parsedSample) => {
+          // Skip samples that are drafts for alle envs except development
+          if (parsedSample.document.metadata.draft && config.environment !== 'development') {
             callback();
             return;
           }
 
+          // Remove double name from path to flatten structure for Grow
+          sample.path = sample.path.replace(`${sample.stem}/`, '/');
+
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
           const files = [
-            ...this._createManual(sample, parsedSample),
+            ...this._createDocumentation(sample, parsedSample),
             ...this._buildRawSources(sample, parsedSample),
             ...this._createPreview(sample, parsedSample),
             ...this._renderEmbed(sample, parsedSample),
@@ -171,8 +173,8 @@ class SamplesBuilder {
    * ampbyexample.com package and while doing so updates some fields
    * @return {Promise}
    */
-  async _parseSample(samplePath, sampleRelativePath) {
-    return await abe.parseSample(samplePath, {
+  async _parseSample(sample) {
+    return await abe.parseSample(sample.path, {
       'hosts': {
         'platform': config.getHost(config.hosts.platform),
         'api': API_HOST,
@@ -184,7 +186,7 @@ class SamplesBuilder {
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
 
       // Add the delivery path of the manual for preview rendering
-      parsedSample.route = PATH_BASE + sampleRelativePath.toLowerCase();
+      parsedSample.route = this._getDocumentationRoute(sample, parsedSample);
 
       // Rewrite some markdown to be consumable by Grow
       for (const index in parsedSample.document.sections) {
@@ -227,24 +229,40 @@ class SamplesBuilder {
   }
 
   /**
+   * Takes the path of the sample vinyl and creates a server relative URL
+   * to use for routing and source canonical
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @return {String}       The route
+   */
+  _getDocumentationRoute(sample, parsedSample) {
+    return `${PATH_BASE}/${parsedSample.document.metadata.category}/${sample.stem.toLowerCase()}`;
+  }
+
+  /**
    * Creates a markdown document referencing the JSON that is going to be
    * created by _createDataSource
    * @param  {Vinyl} sample The sample from the gulp stream
    * @return {Vinyl}
    */
-  _createManual(sample, parsedSample) {
+  _createDocumentation(sample, parsedSample) {
     // Create the actual page that is rendered by Grow and add needed
     // frontmatter that is required ...
     const manual = sample.clone();
+
+    // Build actual file needed for Grow to render the documentation
     manual.contents = Buffer.from([
       '---',
-      '$$injectAmpDependencies: false',
-      '$title: ' + parsedSample.document.title,
-      '$view: ' + MANUAL_TEMPLATE,
-      '$path: ' + parsedSample.route,
-      '$category: ' + (parsedSample.document.metadata.category ?
-        parsedSample.document.metadata.category :
-        'None'),
+      yaml.safeDump({
+        '$$injectAmpDependencies': false,
+        '$title': parsedSample.document.title,
+        '$view': MANUAL_TEMPLATE,
+        '$category': parsedSample.document.metadata.category || null,
+        '$path': this._getDocumentationRoute(sample, parsedSample),
+        '$localization': {
+          '$path': `/{locale}/${this._getDocumentationRoute(sample, parsedSample)}`
+        }
+      }, {'lineWidth': 500}),
+      // Add example manually as constructors may not be quoted
       'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
       // ... and some additional information that is used by the example teaser
       this._getTeaserData(parsedSample),
@@ -253,10 +271,8 @@ class SamplesBuilder {
     manual.extname = '.html';
 
     // ... and the parsed sample as data source to render the manual
-    const data = sample.clone();
-    data.contents = Buffer.from([
-      JSON.stringify(parsedSample),
-    ].join('\n'));
+    const data = manual.clone();
+    data.contents = Buffer.from(JSON.stringify(parsedSample));
     data.extname = '.json';
 
     return [manual, data];
@@ -279,7 +295,7 @@ class SamplesBuilder {
       }};
     }
 
-    return yaml.safeDump(teaserData);
+    return yaml.safeDump(teaserData, {'lineWidth': 500});
   }
 
   /**
@@ -336,7 +352,7 @@ class SamplesBuilder {
 
     sources.push(fullSource);
 
-    // Only build snippet sources if they can run standalone
+    // ... and only build snippet sources if they can run standalone
     if (!parsedSample.document.metadata.standaloneSnippets) {
       return sources;
     }
@@ -387,8 +403,6 @@ class SamplesBuilder {
     // Also render embed file for stories
     if (parsedSample.document.isAmpStory) {
       const template = this._templates[this._getSampleFormat(parsedSample)];
-
-      console.log(this._getSampleFormat(parsedSample));
 
       const embed = sample.clone();
       embed.isEmbed = true;
