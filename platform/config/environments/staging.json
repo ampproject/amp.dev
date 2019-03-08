@@ -14,7 +14,7 @@
 		"platform": {
 			"scheme": "https",
 			"host": "amp-dev-staging.appspot.com",
-			"port": ""
+			"port": "8080"
 		}
 	}
 }
