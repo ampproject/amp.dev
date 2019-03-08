@@ -1,7 +1,6 @@
 ---
 $title: AMP Boilerplate Code
 $order: 3
-description: AMP HTML documents must contain the following boilerplate in their head tag. Validation is currently done with regular expressions, so it's important to keep mutations as ...
 toc: false
 formats:
   - websites

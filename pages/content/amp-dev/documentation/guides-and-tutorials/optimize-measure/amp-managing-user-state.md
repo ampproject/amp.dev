@@ -1,7 +1,6 @@
 ---
 $title: Manage non-authenticated user state with AMP
 $order: 2
-description: 'User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:'
 toc: false
 formats:
   - websites

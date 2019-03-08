@@ -1,9 +1,6 @@
 ---
 $title: CORS in AMP
 $order: 12
-description: 'Many AMP components and extensions take advantage of remote endpoints by using
-Cross-Origin Resource Sharing (CORS) requests. This document explains the key
-aspects of using CORS in AMP.'
 formats:
   - websites
   - email

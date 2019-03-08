@@ -1,7 +1,5 @@
 ---
-$title: Getting Support
-$titles:
-  navigation: Support
+$title: Support
 $order: 1
 toc: false
 formats:
