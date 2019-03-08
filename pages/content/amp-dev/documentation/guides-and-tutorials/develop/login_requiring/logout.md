@@ -1,6 +1,7 @@
 ---
 $title: Logout
 $order: 3
+description: 'Similar to the login button, the presence of the logout button is conditionally dependent on the state of the amp-access component ...'
 ---
 
 Similar to the login button, the presence of the logout button is conditionally dependent on the state of the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) component:

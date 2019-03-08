@@ -1,6 +1,7 @@
 ---
 $title: Turn your AMP site into a PWA
 $order: 99
+description: 'By caching resources within the browser, a PWA is able to provide data, assets, and offline pages to the user to keep them engaged and informed.'
 tutorial: true
 formats:
   - websites

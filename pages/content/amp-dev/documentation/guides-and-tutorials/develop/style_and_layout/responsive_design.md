@@ -1,6 +1,7 @@
 ---
 $title: Create responsive AMP pages
 $order: 5
+description: Responsive web design is about building fluid web pages that respond to your user's needs—pages that fit their device's screen size and orientation. You can achieve ...
 formats:
   - websites
   - email

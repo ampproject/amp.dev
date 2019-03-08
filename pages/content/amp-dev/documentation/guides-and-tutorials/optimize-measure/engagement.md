@@ -1,6 +1,7 @@
 ---
 $title: Improve user engagement
 $order: 2
+description: 'Here are some quick tips to improve user engagement with AMP. Help readers identify you with consistent branding and rich content across AMP and non-AMP pages'
 
 formats:
   - websites

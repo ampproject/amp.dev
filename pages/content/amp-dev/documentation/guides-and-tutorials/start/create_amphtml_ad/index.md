@@ -1,6 +1,7 @@
 ---
 $path: /documentation/guides-and-tutorials/start/index.html
 $title: Create an AMPHTML ad
+description: In this tutorial, you'll learn how to create an AMPHTML ad from scratch that can be served to AMP and non-AMP pages.
 formats:
   - ads
 ---

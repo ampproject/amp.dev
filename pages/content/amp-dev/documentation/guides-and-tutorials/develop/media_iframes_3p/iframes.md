@@ -1,6 +1,7 @@
 ---
 $title: Include iframes
 $order: 10
+description: Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
 formats:
     - websites
 components:

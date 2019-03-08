@@ -1,6 +1,7 @@
 ---
 $title: Include images & video
 $order: 8
+description: "Like on a normal HTML page, AMP allows you to embed images, video and audio content. Learn what's different about the AMP equivalents and learn how to..."
 $path: /documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html
 formats:
   - websites

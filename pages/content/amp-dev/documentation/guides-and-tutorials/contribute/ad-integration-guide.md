@@ -1,6 +1,7 @@
 ---
 $title: Integrate your ad technologies into AMP
 $order: 3
+description: 'Work with your publisher to ensure that the creatives you develop are AMP-compliant. Since all creatives are served into iframes whose size is determined when ...'
 formats:
   - ads
 ---
