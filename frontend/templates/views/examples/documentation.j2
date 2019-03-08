@@ -245,12 +245,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
       location.reload();
     }
 
+    function disableExperiments() {
+      {% for experiment in experiments %}
+      if (AMP.isExperimentOn('{{ experiment }}')) {
+        AMP.toggleExperiment('{{ experiment }}');
+      }
+      {% endfor %}
+
+      location.reload();
+    }
+
     // enable active experiment button
     var experimentToggle = document.getElementById('experiments-toggle');
     if (!areAllExperimentsEnabled()) {
       experimentToggle.addEventListener('click', enableExperiments);
     } else {
       experimentToggle.checked = true;
+      experimentToggle.addEventListener('click', disableExperiments);
     }
 
     // Set appropriate state on channel indicator
