@@ -32,7 +32,6 @@ const SELECTOR_REWRITE_SAFE = [
   'ap--quote',
   'ap-m-banner',
   'ap-m-breadcrumbs',
-  'ap-m-format-toggle',
   'ap-m-language-selector',
   'ap-m-rolling-formats',
   'ap-m-lnk',
