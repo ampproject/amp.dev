@@ -38,7 +38,7 @@ const POD_PATH = 'content/amp-dev/documentation/examples';
 // Where to store the samples inside the Grow pod in
 const MANUAL_DEST = path.join(__dirname, `../../../pages/${POD_PATH}`);
 // What Grow template to use to render the sample's manual
-const MANUAL_TEMPLATE = '/views/examples/manual.j2';
+const MANUAL_TEMPLATE = '/views/examples/documentation.j2';
 // What template to use to render the preview
 const PREVIEW_TEMPLATES = {
   'websites': utils.project.absolute('frontend/hbs/preview-websites.hbs'),
