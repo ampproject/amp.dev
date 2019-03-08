@@ -140,7 +140,7 @@ class MarkdownDocument {
    * @param  {String} contents
    * @return {String}          The rewritten input
    */
-  static ecsapeMustacheTags(contents) {
+  static escapeMustacheTags(contents) {
     return contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
   }
 
