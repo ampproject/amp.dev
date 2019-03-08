@@ -50,7 +50,7 @@
     {% endif %}
 
     {# Add SEO tags if needed information is available #}
-    {% if doc.description or doc.teaser.text %}
+    {% if doc.description or (doc.teaser and doc.teaser.text) %}
     <meta name="description" content="{{ doc.description or doc.teaser.text }}">
     <script type="application/ld+json">
     {
