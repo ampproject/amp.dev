@@ -227,7 +227,7 @@ speakers:
   filipstanis:
     name: Filip Stanis 
     company: Google
-    bio: 
+    bio: "As a developer advocate, Filip works with Google's large partners to help them make the most out of the latest web technologies such as AMP. He's passionate about UX design and the open web, and contributes to other open source projects in his spare time. He holds a BCompSc from Union University in Serbia."
     pic: /static/img/amp-conf/speakers/filip.jpg
   TBA:
     name: To Be Announced
