@@ -28,16 +28,18 @@ none
 
 
 .#{molecule('event')} {
-  @include box-shadow;
+  @include roadshow-event-shadow;
   display: flex;
   background-color: color('white');
-  margin: 20px;
-  margin-left: 0;
+  margin: 10px 0;
   padding: 20px 30px;
+  min-width: 100%;
 
   @media (min-width: 768px) {
     max-width: 100%;
     min-width: 350px;
+    margin: 20px;
+    margin-left: 0;
   }
 
 	&-date {

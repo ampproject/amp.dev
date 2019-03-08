@@ -20,10 +20,18 @@
   grid-column: 5 / 22;
   background: color('blue-ribbon');
   border-radius: 4px;
-  margin: 50px 0;
+  margin: 25px 0;
+
+  @media (min-width: 768px) {
+    margin: 50px 0;
+  }
 
   &-content {
-    padding: 25px 100px 30px 50px;
+    padding: 40px 100px 60px 50px;
+
+    @media (min-width: 768px) {
+      padding: 25px 100px 30px 50px;
+    }
 
     &-headline {
       @include hl;

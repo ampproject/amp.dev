@@ -13,23 +13,20 @@
   }
 }
 
-.#{molecule('stage-video')} {
+.#{molecule('roadshow-video')} {
   grid-column: 1 / -1;
   position: absolute;
-  left: 60px;
-  width: 80%;
+  right: 0;
+  width: 83%;
   max-width: 360px;
 
   @media (min-width: 768px) {
     grid-column: 12 / 24;
-    margin-top: -100%;
+    margin-top: -60%;
     position: relative;
     left: 0;
     width: 100%;
     max-width: 100%;;
-  }
-  @media (min-width: 1024px) {
-    margin-top: -60%;
   }
 
   &-block {

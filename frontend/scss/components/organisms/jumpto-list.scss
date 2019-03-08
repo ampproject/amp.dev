@@ -33,7 +33,12 @@
   }
 
   &-content {
-    grid-column-start: 3;
+    width: 100%;
+    position: relative;
+
+    @media (min-width: 768px) {
+      grid-column-start: 3;
+    }
   }
 
   &-text {
@@ -43,23 +48,35 @@
   &-list {
     @include jumpto-list-shadow;
     display: flex;
+    flex-wrap: wrap;
     background: color('white');
     border-radius: 4px;
-    grid-column-start: 3;
     margin: 0;
-    padding: 25px 0;
+    margin-right: 50px;
+    padding: 15px 0;
+
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
+    }
 
   &-item {
     list-style: none;
     border-right: 1px solid fade_out(color('charade'), 0.70);
+    margin: 10px 0;
 
 
     &-link {
       @include txt;
-      @include txt-1;
       @include txt-font-accent;
+      font-size: 0.75em;
 
-      padding: 0 30px;
+      padding: 5px 15px;
+
+      @media (min-width: 768px) {
+        @include txt-1;
+        padding: 0 30px;
+      }
+
     }
 
     &:last-child {

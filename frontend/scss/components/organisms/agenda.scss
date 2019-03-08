@@ -24,15 +24,22 @@
   margin: 50px 0;
 
   &-block {
-    display: grid;
     width: 100%;
-    grid-template-columns: repeat(16, 1fr);
-    grid-gap: 30px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(16, 1fr);
+      display: grid;
+      grid-gap: 30px;
+    }
   }
 
   &-content {
-    grid-column: 3 / 14;
-    padding: 50px 0;
+    padding: 50px 20px;
+
+    @media (min-width: 768px) {
+      grid-column: 3 / 14;
+      padding: 50px 0px;
+    }
 
     &-headline {
       @include hl;

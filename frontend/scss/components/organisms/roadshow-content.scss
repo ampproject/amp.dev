@@ -27,8 +27,11 @@
       @include txt;
       @include txt-1;
 
-      width: 70%;
       padding-bottom: 50px;
+
+      @media (min-width: 768px) {
+        width: 70%;
+      }
 
     }
 
