@@ -49,7 +49,9 @@ teaser:
       <div class="ap-o-teaser-grid">
         {# Hardcode to a length of 9 teasers as there will be at least that much #}
         <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-
+          {% for teaser_doc in g.collection('/content/amp-dev/documentation/examples/documentation').list_docs(locale=doc.locale, order_by='title') %}
+            {% include '/views/partials/teaser.j2' %}
+          {% endfor %}
         </div>
       </div>
     </section>
