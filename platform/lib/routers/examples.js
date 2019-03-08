@@ -30,7 +30,7 @@ const examples = express.Router();
 
 examples.use(`${SAMPLE_MANUALS_ROUTE}/*/source(/)?:sectionId?`, (request, response, next) => {
   // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
-  request.url = `//${request.params[0]}`;
+  request.url = `//${request.params[0]}.html`;
   // If a specific section is requested rewrite the URL to that document
   if (request.params.sectionId) {
     request.url = request.url.replace('.html', `-${request.params.sectionId}.html`);
@@ -41,13 +41,13 @@ examples.use(`${SAMPLE_MANUALS_ROUTE}/*/source(/)?:sectionId?`, (request, respon
 
 examples.use(`${SAMPLE_MANUALS_ROUTE}/*/preview(/)?`, (request, response, next) => {
   // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
-  request.url = `//${request.params[0]}`;
+  request.url = `//${request.params[0]}.html`;
   next();
 }, express.static(PREVIEWS_DEST));
 
 examples.use(`${SAMPLE_MANUALS_ROUTE}/*/embed(/)?`, (request, response, next) => {
   // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE
-  request.url = `//${request.params[0]}`;
+  request.url = `//${request.params[0]}.html`;
   next();
 }, express.static(EMBEDS_DEST));
 

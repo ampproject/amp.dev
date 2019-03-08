@@ -348,6 +348,7 @@ class SamplesBuilder {
 
     // Keep the full sample for the big playground
     const fullSource = sample.clone();
+    fullSource.dirname = `${fullSource.dirname}/${parsedSample.document.metadata.category}`;
     fullSource.isSourceFile = true;
 
     sources.push(fullSource);
@@ -382,7 +383,7 @@ class SamplesBuilder {
       let contents = barebone.replace(SECTION_PLACEHOLDER, section.preview);
       contents = contents.replace(TITLE_PLACEHOLDER, section.id);
 
-      const sectionSource = sample.clone();
+      const sectionSource = fullSource.clone();
       sectionSource.isSourceFile = true;
       sectionSource.contents = Buffer.from(contents);
       sectionSource.extname = `-${section.id}.html`;
@@ -405,6 +406,7 @@ class SamplesBuilder {
       const template = this._templates[this._getSampleFormat(parsedSample)];
 
       const embed = sample.clone();
+      embed.dirname = `${embed.dirname}/${parsedSample.document.metadata.category}`;
       embed.isEmbed = true;
       embed.contents = Buffer.from(handlebars.render(
           template, Object.assign({'isEmbed': true}, parsedSample)));
@@ -430,6 +432,7 @@ class SamplesBuilder {
     // Determine the template needed for that specific sample
     const template = this._templates[this._getSampleFormat(parsedSample)];
     const preview = sample.clone();
+    preview.dirname = `${preview.dirname}/${parsedSample.document.metadata.category}`;
 
     // Set flag to determine correct output location
     preview.isPreview = true;
