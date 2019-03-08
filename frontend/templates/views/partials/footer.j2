@@ -64,8 +64,9 @@
 </footer>
 {%- endmacro %}
 
-{% if not doc.pod.amp_dev.template_cache.get('footer') %}
-{% do doc.pod.amp_dev.template_cache.add('footer', footer()) %}
+{% set cache_key = 'footer' + doc.locale.get_language_name() %}
+{% if not doc.pod.amp_dev.template_cache.get(cache_key) %}
+{% do doc.pod.amp_dev.template_cache.add(cache_key, footer()) %}
 {% else %}
 {# The icons need to be added outside the cached partial #}
 {% do doc.icons.useIcon('icons/twitter.svg') %}
@@ -74,5 +75,5 @@
 {% do doc.icons.useIcon('icons/github.svg') %}
 {% do doc.icons.useIcon('icons/stackoverflow.svg') %}
 
-{{ doc.pod.amp_dev.template_cache.get('footer')|safe }}
+{{ doc.pod.amp_dev.template_cache.get(cache_key)|safe }}
 {% endif %}
