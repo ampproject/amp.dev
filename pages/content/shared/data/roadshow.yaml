@@ -90,42 +90,42 @@ past:
 
 agenda:
   - title: Intro + Keynote
-    time: "0930"
+    time: "09:30"
     type: keynote
   - title: "AMP: A library for beautiful, responsive sites"
-    time: "0945"
+    time: "09:45"
     type: session
   - title: Advanced interactivity with AMP
-    time: "1015"
+    time: "10:15"
     type: session
   - title: Coffee Break
-    time: "1045"
+    time: "10:45"
     type: break
   - title: AMP in Production
-    time: "1100"
+    time: "11:00"
     type: session
   - title: Monetizing AMP pages
-    time: "1130"
+    time: "11:30"
     type: session
   - title: Progressive Web AMPs
-    time: "1200"
+    time: "12:00"
     type: session
   - title: Lunch
-    time: "1230"
+    time: "12:30"
     type: break
   - title: Mystery talk
-    time: "1330"
+    time: "13:30"
     type: keynote
   - title: What's next in AMP
-    time: "1415"
+    time: "14:15"
     type: keynote
   - title: Q&A with speakers
-    time: "1430"
+    time: "14:30"
   - title: Amplify live!
-    time: "1500"
+    time: "15:00"
     type: panel
   - title: Happy hour
-    time: "1700"
+    time: "17:00"
     type: break
 
 pillars:

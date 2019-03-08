@@ -31,8 +31,12 @@ none
   @include box-shadow;
   display: flex;
   background-color: color('white');
-  margin: 20px 0;
+  margin: 20px;
   padding: 20px 30px;
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
 
 	&-date {
 		text-align: right;
@@ -45,6 +49,8 @@ none
 
 	&-content {
     text-align: left;
+    display: flex;
+    flex-direction: column;
 
     &-date {
       padding-right: 30px;

@@ -22,7 +22,7 @@
   background: color('white');
   border-radius: 4px;
 
-  &--container {
+  &-block {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(16, 1fr);
@@ -57,40 +57,43 @@
         @include txt-font-accent;
         display: flex;
         align-items: center;
-
-        &-divider {
-          height: 15px;
-          width: 15px;
-          margin: 0 5px;
-          border-radius: 50%;
-          border: 1.25px solid color('blue-ribbon');
-
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 1px;
-            background-color: color('blue-ribbon');
-          }
-
-          &.break {
-            height: 9px;
-            width: 9px;
-            background-color: color('blue-ribbon');
-          }
-        }
+        text-align: left;
 
         &-time {
-          margin-right: 10px;
-          padding: 5px;
+          width: 50px;
+          margin-right: 15px;
+          padding-right: 15px;
         }
 
         &-title {
-          margin-left: 10px;
-          padding: 5px;
+          width: 80%;
+          margin-right: auto;
+          padding: 7px 0 7px 15px;
+          border-left: 1px solid color('blue-ribbon');
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            left: -9px;
+            background: color('white');
+            height: 15px;
+            width: 15px;
+            border: 1px solid color('blue-ribbon');
+          }
 
           &.break {
             color: fade_out(color('charade'), 0.5);
+
+            &:before {
+              height: 8px;
+              width: 8px;
+              left: -5px;
+              background: color('blue-ribbon');
+            }
           }
 
           &.keynote {
