@@ -21,6 +21,7 @@
   grid-column: 5 / 21;
   background: color('white');
   border-radius: 4px;
+  margin: 50px 0;
 
   &-block {
     display: grid;
@@ -41,6 +42,7 @@
     &-sub-text {
       @include txt;
       @include txt-1;
+      padding-bottom: 25px;
 
       & span {
         @include txt-strong;
@@ -61,28 +63,31 @@
 
         &-time {
           width: 50px;
-          margin-right: 15px;
+          margin-right: 25px;
           padding-right: 15px;
+          color: color('charade');
         }
 
         &-title {
           width: 80%;
           margin-right: auto;
-          padding: 7px 0 7px 15px;
-          border-left: 1px solid color('blue-ribbon');
+          padding: 7px 0 7px 25px;
+          border-left: 2px solid color('blue-ribbon');
           position: relative;
           display: flex;
           align-items: center;
+          color: color('charade');
+
 
           &:before {
             content: '';
             position: absolute;
             border-radius: 50%;
-            left: -9px;
+            left: -10px;
             background: color('white');
-            height: 15px;
-            width: 15px;
-            border: 1px solid color('blue-ribbon');
+            height: 14px;
+            width: 14px;
+            border: 2px solid color('blue-ribbon');
           }
 
           &.break {
@@ -91,7 +96,7 @@
             &:before {
               height: 8px;
               width: 8px;
-              left: -5px;
+              left: -7px;
               background: color('blue-ribbon');
             }
           }

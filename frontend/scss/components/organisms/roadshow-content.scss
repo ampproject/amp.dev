@@ -15,8 +15,8 @@
 @import 'components/atoms/_headline.scss';
 
 .#{organism('roadshow-content')} {
-    grid-column: 3 / -1;
-    margin-top: 50px;
+    grid-column: 5 / 22;
+    margin: 50px 0;
 
     &-headline {
       @include hl;
@@ -34,7 +34,7 @@
 
     &-pillar-list {
       display: flex;
-      flex-wrap: wrap; 
+      flex-wrap: wrap;
       width: 100%;
       justify-content: space-evenly;
       .#{molecule('roadshow-pillar')} {

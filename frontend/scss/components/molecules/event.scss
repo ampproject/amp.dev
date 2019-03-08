@@ -32,10 +32,12 @@ none
   display: flex;
   background-color: color('white');
   margin: 20px;
+  margin-left: 0;
   padding: 20px 30px;
 
   @media (min-width: 768px) {
     max-width: 100%;
+    min-width: 350px;
   }
 
 	&-date {
@@ -91,18 +93,23 @@ none
     }
 
     &-details {
-      @include txt;
-      @include txt-3;
 
       &-time {
+        @include txt;
+        @include txt-3;
+
         display: inline-flex;
         align-items: center;
-        padding-bottom: 10px;
+        line-height: 1.4rem;
       }
 
       &-location {
+        @include txt;
+        @include txt-3;
+
         display: inline-flex;
         align-items: center;
+        line-height: 1.4rem;
       }
 
       &-icon {

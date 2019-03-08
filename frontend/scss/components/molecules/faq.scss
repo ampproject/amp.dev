@@ -17,10 +17,13 @@
 
 .#{molecule('faq')} {
   grid-column: 7 / 19;
+  margin: 50px 0 100px;
 
   &-headline {
     @include hl;
     @include hl-h2;
+
+    padding-bottom: 50px;
   }
 
   &-content {
@@ -29,7 +32,7 @@
     &-question {
       @include txt-font-accent;
       @include txt-lrg;
-      padding-bottom: 15px;
+      padding-bottom: 10px;
     }
 
     &-answer {

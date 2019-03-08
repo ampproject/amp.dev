@@ -20,9 +20,10 @@
   grid-column: 5 / 22;
   background: color('blue-ribbon');
   border-radius: 4px;
+  margin: 50px 0;
 
   &-content {
-    padding: 25px 150px 25px 50px;
+    padding: 25px 100px 30px 50px;
 
     &-headline {
       @include hl;
@@ -33,7 +34,7 @@
 
     &-subline {
       @include txt;
-      @include txt-1;
+      @include txt-2;
       color: color('white');
     }
   }

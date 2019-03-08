@@ -49,6 +49,10 @@
     @include content;
   }
 
+  .#{utility('stage-roadshow')} {
+    margin-bottom: 0;
+  }
+
   .#{utility('content')} {
     @include default-section-padding;
     margin-bottom: 7em;
@@ -98,6 +102,13 @@
           margin: 7vw 0 11vw;
         }
       }
+
+      &-content-roadshow {
+        @media (min-width: 768px) {
+          margin: 5vw 0 5vw;
+        }
+      }
+
     }
 
     & + .#{utility('content')} {

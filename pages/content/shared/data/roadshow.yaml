@@ -6,13 +6,6 @@ nextstops:
     month: mar
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
-  - title: cape town, sa
-    location: Crystal Towers
-    time: 09:00–18:00
-    day: 15
-    month: mar
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
   - title: lagos, ni
     location: Zone Tech Park
     time:  09:00–18:00
@@ -20,6 +13,13 @@ nextstops:
     month: mar
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-nigeria/
+  - title: cape town, sa
+    location: Crystal Towers
+    time: 09:00–18:00
+    day: 15
+    month: mar
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
   - title: nairobi, ky
     location: Mövenpick Hotel
     time:  09:00–18:00

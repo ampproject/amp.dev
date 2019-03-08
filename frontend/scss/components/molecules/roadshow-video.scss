@@ -21,7 +21,7 @@
   max-width: 360px;
 
   @media (min-width: 768px) {
-    grid-column: 13 / 24;
+    grid-column: 12 / 24;
     margin-top: -100%;
     position: relative;
     left: 0;
@@ -29,7 +29,7 @@
     max-width: 100%;;
   }
   @media (min-width: 1024px) {
-    margin-top: -70%;
+    margin-top: -60%;
   }
 
   &-block {

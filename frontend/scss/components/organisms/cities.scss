@@ -44,7 +44,6 @@
   &-headline {
     @include hl;
     @include hl-h2;
-    margin-left: 30px;
 
   }
 
@@ -77,6 +76,7 @@
     column-fill: balance;
     padding-left: 0;
     column-count: 2;
+    margin-top: 50px;
 
     @media (min-width: 480px) {
       column-count: 3;
@@ -102,13 +102,17 @@
         @include txt-font-accent;
 
         margin: 0;
+        line-height: 1.2rem;
         color: fade_out(color('charade'), 0.5);
       }
 
       &-date {
         @include txt;
         @include txt-2;
+
         margin: 0;
+        line-height: 1.2rem;
+        color: fade_out(color('black'), 0.5);
       }
     }
   }
