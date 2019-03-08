@@ -81,19 +81,19 @@ section_links:
             </div>
             <div class="ap-m-event-content">
               <a href="{{nextstop.link}}" class="ap-m-event-content-city">{{nextstop.title}}</a>
-              <div class="ap-m-event-content-details">
-                <div class="ap-m-event-content-details-time">
-                  <div class="ap-m-event-content-details-icon">
-                    {% do doc.icons.useIcon('/icons/time.svg') %}
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use></svg>
-                  </div>
-                  {{ nextstop.time }}</div>
-                <div class="ap-m-event-content-details-location">
-                  <div class="ap-m-event-content-details-icon">
-                    {% do doc.icons.useIcon('/icons/map.svg') %}
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
-                  </div>
-                  {{ nextstop.location }}</div>
+              <div class="ap-m-event-content-details-time">
+                <div class="ap-m-event-content-details-icon">
+                  {% do doc.icons.useIcon('/icons/time.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use></svg>
+                </div>
+                {{ nextstop.time }}
+              </div>
+              <div class="ap-m-event-content-details-location">
+                <div class="ap-m-event-content-details-icon">
+                  {% do doc.icons.useIcon('/icons/map.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
+                </div>
+                {{ nextstop.location }}
               </div>
             </div>
           </div>

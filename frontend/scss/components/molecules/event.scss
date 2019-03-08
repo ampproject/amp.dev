@@ -30,13 +30,11 @@ none
 .#{molecule('event')} {
   @include box-shadow;
   display: flex;
-	padding: 30px;
-  margin-bottom: 2.750em;
-  margin: 0 10px;
-	background-color: color('white');
+  background-color: color('white');
+  margin: 20px 0;
+  padding: 20px 30px;
 
 	&-date {
-		flex-grow: 0;
 		text-align: right;
 
 		span:last-child {
@@ -46,13 +44,10 @@ none
 	}
 
 	&-content {
-    flex-grow: 1;
     text-align: left;
 
     &-date {
-      margin-right: 1.4em;
-      display: flex;
-      flex-direction: column;
+      padding-right: 30px;
 
       &-month-day {
         margin-top: auto;
@@ -85,7 +80,6 @@ none
       @include txt-uppercase;
       @include txt-hl;
       @include color-blue-ribbon;
-      white-space: nowrap;
 
       margin-bottom: 0.5em;
     }
@@ -97,11 +91,11 @@ none
       &-time {
         display: inline-flex;
         align-items: center;
+        padding-bottom: 10px;
       }
 
       &-location {
         display: inline-flex;
-        white-space: nowrap;
         align-items: center;
       }
 

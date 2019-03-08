@@ -16,6 +16,8 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('cities')} {
+  position: relative;
+  width: 100%;
 
   @media (min-width: 768px) {
     grid-column: 6 / 20;
@@ -39,12 +41,18 @@
     border-bottom: 1px solid color('gallery');
 
     &-list {
-      display: flex;
-      margin: 20px 0 60px;
+
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+        grid-gap: 10px;
+        margin: 20px 0 60px;
+      }
     }
 
     &-checkback {
       @include txt;
+      grid-column: 1 / -1;
       margin: 0 auto;
     }
   }
