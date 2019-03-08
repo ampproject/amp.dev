@@ -123,7 +123,7 @@ section_links:
 <section id="agenda" class="ap--container">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
   <div class="ap-o-agenda">
-    <div class="ap-o-agenda--container">
+    <div class="ap-o-agenda-block">
       <div class="ap-o-agenda-content">
         <span class="ap-o-agenda-content-headline">Agenda</span>
         <p class="ap-o-agenda-content-sub-text">The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages.
@@ -134,7 +134,6 @@ section_links:
           {% for agenda_item in doc.roadshow.agenda %}
             <li class="ap-o-agenda-content-list-item">
               <div class="ap-o-agenda-content-list-item-time">{{ agenda_item.time }}</div>
-              <div class="ap-o-agenda-content-list-item-divider{% if agenda_item.type == "break" %} break{% endif %}"></div>
               <div class="ap-o-agenda-content-list-item-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
             </li>
           {% endfor %}
