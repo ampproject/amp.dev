@@ -112,6 +112,32 @@
       {% include '/views/partials/breadcrumbs.j2' %}
       <h1 class="ap--title" id="{{ doc.example.document.title|slug }}">{{ doc.example.document.title }}</h1>
 
+      {# Render widget to toggle experiments if there are any #}
+      {% set experiments = doc.example.document.metadata.experiments %}
+      {% if experiments %}
+      {% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
+      <section class="ap-m-experiments">
+        <h3>Experimental</h3>
+        <p>{{ _('This example uses the following experimental feature:') }} {% for experiment in experiments %}<code>{{ experiment }}</code>{% endfor %}. {{ _('Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
+
+        <ul class="ap-m-experiments-controls">
+          <li class="ap-m-experiments-control">
+            <label class="ap-m-experiments-label" for="experiments-toggle">Enable Experiment</label>
+            <input class="ap-m-experiments-toggle" id="experiments-toggle" type="checkbox">
+            <aside class="ap-m-experiments-indicator"></aside>
+          </li>
+
+          <li class="ap-m-experiments-control">
+            <div class="ap-m-experiments-label">AMP Version</div>
+            <a class="ap-m-experiments-channel" target="_blank" href="https://cdn.ampproject.org/experiments.html">
+              <span class="ap-m-experiments-channel-name" id="prod-channel">PROD</span>
+              <span class="ap-m-experiments-channel-name" id="dev-channel">DEV</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      {% endif %}
+
       <div class="ap--ctas">
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
 
@@ -126,22 +152,6 @@
         <a href="{{ preview_url }}" class="ap-a-btn">{{ _('View demo') }}</a>
         {% endif %}
       </div>
-
-      {# Render widget to toggle experiments if there are any #}
-      {% set experiments = doc.example.document.metadata.experiments %}
-      {% if experiments %}
-      {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-      <div class="ap-m-tip ap-m-tip-default">
-        <p>{{ _('This example uses the following experimental feature:') }} {% for experiment in experiments %}<code>{{ experiment }}</code>{% endfor %}. {{ _('Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale) }}">experimental features</a> here.</p>
-
-        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-        <div class="ap--ctas">
-          <button id="experimenttoggle" class="ap-a-btn" disabled>Enable Experiment</button>
-
-          <a id="canarytoggle" class="ap-a-btn" href="https://cdn.ampproject.org/experiments.html" target="_blank"><span class="caps inline-block white text-decoration-none">Enable Dev Channel</span></a>
-        </div>
-      </div>
-      {% endif %}
 
       {% for section in doc.example.document.sections %}
       {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
@@ -214,15 +224,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   (window.AMP = window.AMP || []).push(function(AMP) {
 
-    function enableButton(elementId) {
-      const element = document.getElementById(elementId);
-      if (element.nodeName.toLowerCase() === 'button') {
-        element.removeAttribute('disabled');
-      } else {
-        element.classList.remove('disabled');
-      }
-    }
-
     function areAllExperimentsEnabled() {
       {% for experiment in experiments %}
       console.log('isExperimentOn {{ experiment }}:' + AMP.isExperimentOn('{{ experiment }}'));
@@ -245,18 +246,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     // enable active experiment button
+    var experimentToggle = document.getElementById('experiments-toggle');
     if (!areAllExperimentsEnabled()) {
-      var experimentToggle = document.getElementById('experimenttoggle');
       experimentToggle.addEventListener('click', enableExperiments);
-      enableButton('experimenttoggle');
+    } else {
+      experimentToggle.checked = true;
     }
 
-    // enable active dev channel button
+    // Set appropriate state on channel indicator
     if (!window.AMP_CONFIG.canary) {
-      enableButton('canarytoggle');
+      document.getElementById('prod-channel').classList.add('active');
+    } else {
+      document.getElementById('dev-channel').classList.add('active');
     }
 
-    // show invalid AMP message in dev mode
+    // Inform inspecting user that this intenioally invalid AMP
     if (window.location.hash.includes('development=1')) {
       console.log('This sample is intentionally not valid AMP.');
     }
