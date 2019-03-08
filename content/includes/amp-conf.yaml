@@ -120,12 +120,17 @@ speakers:
     bio: Hernan is an entrepreneur that founded InEventos in 2011. He has worked as a developer for 20 years in many renowned companies around the world. 
     pic: /static/img/amp-conf/speakers/amp.png  
   hirohitokomada:
-    name: Hirohito Komada, Shigeki Otsu
+    name: Hirohito Komada
     company: Yahoo Japan
     bio:
     pic: /static/img/amp-conf/speakers/amp.png  
   shigekiotsu:
     name: Shigeki Otsu
+    company: Yahoo Japan
+    bio:
+    pic: /static/img/amp-conf/speakers/amp.png  
+  ryomunakata:
+    name: Ryo Munakata
     company: Yahoo Japan
     bio:
     pic: /static/img/amp-conf/speakers/amp.png  
@@ -383,13 +388,14 @@ agenda:
       speakers:
         - aakashsahney
         - filipstanis
-    - title: "Signed Exchange - How we fixed our AMP"
+    - title: "Maximize Yahoo Japan’s UX with AMP and Signed Exchange"
       time: "1430"
-      description: "How Y! Search implemented Singed Exchange in their SERP. Stories around the performance improvements on prefetching SXG and preloading AMP runtime and how Travel and Ikyu made their existing AMP pages support SXG format and enabled a richer experience: Using AMP Packager in their environment, WASMing the transformer and using it in NodeJs."
+      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed Exchange both as a platform and a publisher. The session will walk through the technical details on how Yahoo Japan integrated the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
       type: session
       speakers:
         - hirohitokomada
         - shigekiotsu
+        - ryomunakata
     - title: "Generating AMP Pages with JavaScript and Vue.js"
       time: "1500"
       type: session
