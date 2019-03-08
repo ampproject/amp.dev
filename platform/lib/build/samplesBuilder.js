@@ -259,7 +259,7 @@ class SamplesBuilder {
         '$category': parsedSample.document.metadata.category || null,
         '$path': this._getDocumentationRoute(sample, parsedSample),
         '$localization': {
-          '$path': `/{locale}/${this._getDocumentationRoute(sample, parsedSample)}`
+          '$path': `/{locale}${this._getDocumentationRoute(sample, parsedSample)}`
         }
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
