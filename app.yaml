@@ -1,2 +1,4 @@
 runtime: custom
 env: flex
+env_variables:
+  APP_PORT: '8080'

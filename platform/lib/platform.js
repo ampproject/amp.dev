@@ -100,7 +100,7 @@ class Platform {
     this._check();
     this._registerRouters();
 
-    const port = config.hosts.platform.port || 80;
+    const port = config.hosts.platform.port || process.env.APP_PORT || 80;
     this.server.listen(port, () => {
       signale.success(`server listening on ${port}!`);
     });
