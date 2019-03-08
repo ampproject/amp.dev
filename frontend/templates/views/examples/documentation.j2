@@ -138,20 +138,23 @@
       </section>
       {% endif %}
 
+      {# Check if the sample has a demo button as then this is the primary CTA #}
+      {% set has_demo = doc.example.document.metadata.preview %}
+      {% set has_playground = not doc.example.document.metadata.disablePlayground %}
+      {% if has_demo or has_playground %}
+      {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
       <div class="ap--ctas">
-        {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
-
-        {% set playground_url = podspec.base_urls.playground + doc.url.path + '/source/' %}
-        {% if not playground_disabled %}
-        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-        <a href="{{ playground_url }}" class="ap-a-btn ap--playground-link">{{ _('Open in playground') }}</a>
-        {% endif %}
-        {% if doc.example.document.metadata.preview %}
-        {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+        {% if has_demo %}
         {% set preview_url = doc.url.path + '/preview' %}
-        <a href="{{ preview_url }}" class="ap-a-btn">{{ _('View demo') }}</a>
+        <a class="ap-a-btn" href="{{ preview_url }}">{{ _('View demo') }}</a>
+        {% endif %}
+
+        {% if has_playground %}
+        {% set playground_url = podspec.base_urls.playground + doc.url.path + '/source/' %}
+        <a class="ap-a-btn ap--playground-link {% if has_demo %}ap--playground-link-hollow{% endif %}" href="{{ playground_url }}">{{ _('Open in playground') }}</a>
         {% endif %}
       </div>
+      {% endif %}
 
       {% for section in doc.example.document.sections %}
       {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
