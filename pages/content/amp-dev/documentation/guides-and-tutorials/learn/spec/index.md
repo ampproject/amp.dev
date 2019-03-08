@@ -2,7 +2,6 @@
 $title: AMP HTML Specification
 toc: false
 $order: 3
-description: 'AMP HTML is a subset of HTML for authoring content pages such as news articles in a way that guarantees certain baseline performance characteristics.'
 formats:
   - websites
 ---
