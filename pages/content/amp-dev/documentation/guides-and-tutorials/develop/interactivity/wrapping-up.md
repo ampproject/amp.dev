@@ -1,6 +1,7 @@
 ---
 $title: Wrapping up
 $order: 4
+description: 'Congratulations! You just created an interactive e-commerce product detail page with variable sizes and prices for each SKU, fetched on-demand from a remote JSON endpoint.'
 ---
 
 Congratulations! You just created an interactive e-commerce product detail page with variable sizes and prices for each SKU, fetched on-demand from a remote JSON endpoint.

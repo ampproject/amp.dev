@@ -1,6 +1,7 @@
 ---
 $title: AMPHTML Email for Email Providers
 $order: 4
+desccription: 'The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.'
 formats:
   - email
 ---

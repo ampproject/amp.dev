@@ -1,6 +1,7 @@
 ---
 $title: "Analytics: the basics"
 $order: 0
+description: 'AMP provides two components to meet your analytics and measurement needs: amp-pixel and amp-analytics. Both options send analytics data to a defined endpoint.'
 formats:
   - websites
 ---

@@ -1,6 +1,8 @@
 ---
 $title: Debug AMP Cache issues
 $order: 8
+description: 'Valid AMP documents typically appear and behave the same on AMP Caches as they
+do on the origin. However, there are some components and server ...'
 toc: false
 formats:
   - websites

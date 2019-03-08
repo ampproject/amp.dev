@@ -1,6 +1,7 @@
 ---
 $title: Integrating with AMP to serve display ads
 $order: 5
+description: 'This guide is for ad networks that want to integrate with AMP to serve display ads to AMP pages.'
 formats:
   - ads
 ---

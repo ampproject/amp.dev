@@ -1,6 +1,7 @@
 $title: Tokopedia
 $category: e-commerce
 $date: 2018-09-30
+description: Offline UX was an important part of the PWA experience, given the network infrastructure and customers predominantly low-end smartphones. Tokopedia emphasized good caching, ...
 
 formats:
   - websites

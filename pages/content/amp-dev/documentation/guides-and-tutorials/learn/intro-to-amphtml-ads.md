@@ -1,6 +1,7 @@
 ---
 $title: Intro to AMPHTML ads
 $order: 1
+description: 'AMPHTML ads are a faster, lighter and more secure way to advertise on the web. Although AMP pages support traditional HTML ads, these ads can be slow to load.'
 formats:
   - ads
 ---
