@@ -14,6 +14,18 @@ and the current page title #}
 
   <a class="ap-m-breadcrumbs-crumb" href="{{ guides_and_tutorials.url.path }}">{{ guides_and_tutorials.titles('navigation') }}</a>
 </nav>
+{% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples') %}
+<nav class="ap-m-breadcrumbs">
+  {% set guides_and_tutorials = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale) %}
+  <a class="ap-m-breadcrumbs-crumb" href="{{ guides_and_tutorials.url.path }}">{{ _('Documentation') }}</a>
+
+  <span class="ap-m-breadcrumbs-divider">
+    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+  </span>
+
+  {% set examples = g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale) %}
+  <a class="ap-m-breadcrumbs-crumb" href="{{ examples.url.path }}">{{ examples.titles('navigation') }}</a>
+</nav>
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/components/reference') %}
 <nav class="ap-m-breadcrumbs">
   {% set guides_and_tutorials = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale) %}
