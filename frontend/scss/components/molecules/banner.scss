@@ -26,10 +26,19 @@
     color: color('white');
 
     svg {
+      width: 0.9em;
+      height: 0.9em;
       margin-right: 5px;
-      width: 10px;
-      height: 10px;
+      vertical-align: middle;
       fill: color('white');
     }
+  }
+
+  &-beta {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background: color('apple');
   }
 }
