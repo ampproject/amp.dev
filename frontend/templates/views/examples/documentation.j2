@@ -57,9 +57,10 @@
 {% endblock %}
 
 {% block main %}
+
 <main class="ap--main ap-t-examples-manual">
   <div class="ap--container">
-    {% include 'views/partials/sidebar.j2' %}
+    {% include 'views/partials/sidebar-toggle.j2' %}
 
     <section class="ap--toc">
       {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}

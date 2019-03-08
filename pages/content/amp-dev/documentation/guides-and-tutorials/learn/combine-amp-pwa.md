@@ -1,6 +1,7 @@
 ---
 $title: How AMP and PWA relate to each other
 $order: 1
+description: 'Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to ...'
 formats:
   - websites
 components:
@@ -37,7 +38,7 @@ AMP's unique selling point is the **almost-instant delivery**, a characteristic 
 A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to it for the onward journey.
 
 [tip type="read-on"]
-**READ ON –** Learn how to [connect AMP to a PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) through `amp-install-serviceworker`.
+**READ ON –** Learn how to [connect AMP to a PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) through [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## AMP as data source for your PWA

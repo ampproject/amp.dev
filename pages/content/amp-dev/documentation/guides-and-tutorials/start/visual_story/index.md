@@ -1,6 +1,7 @@
 ---
 $title: Create your first AMP Story
 $order: 0
+description: In this tutorial, we'll introduce you to the amp-story component, which you can use to create visually engaging stories in AMP. By the end of this tutorial, you'll ...
 $path: /documentation/guides-and-tutorials/start/first-story.html
 $hidden: true
 formats:

@@ -1,6 +1,7 @@
 ---
 $title: Add advanced AMP features
 $order: 0
+description: "In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more."
 $path: /documentation/guides-and-tutorials/start/add_advanced/add_advanced.html
 $hidden: true
 formats:

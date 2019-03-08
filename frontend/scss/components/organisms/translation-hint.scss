@@ -6,14 +6,13 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
-@import '../atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
 
 .#{organism('translation-hint')} {
   position: fixed;
@@ -25,11 +24,19 @@
   &-wrapper {
     @include txt;
     @include txt-2;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 1em 30px;
     background-color: color('white');
     border-top: 5px solid color('turbo');
     box-shadow: 0 -2px 10px 0 rgba(0,0,0,0.07);
+  }
+
+    &-link {
+      display: inline-block;
+    }
+
+  .#{molecule('banner')} + & {
+      bottom: 25px;
   }
 }

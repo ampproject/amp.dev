@@ -72,8 +72,8 @@ TODO: mono (inline, block)
 }
 
 @mixin txt-mono {
-	font-family: 'Inconsolata', monospace;
-	letter-spacing: 0.03px;
+	font-family: 'Fira Mono', monospace;
+  font-weight: 500;
 }
 
 @mixin txt-mono-inline {
@@ -87,7 +87,7 @@ TODO: mono (inline, block)
 
 @mixin txt-mono-block {
 	display: block;
-	font-family: 'Inconsolata', monospace;
+  @include txt-mono;
 	background-color: color('whisper');
 }
 

@@ -6,7 +6,7 @@ $title: AMP 페이지에서 광고로 수익 창출하기
 
 ## 페이지에 광고 추가하기
 
-AMP가 아닌 페이지(기존 HTML 페이지)에 광고를 게재하려면 자바스크립트 스니펫을 포함하여 광고 네트워크에서 광고가 게재되도록 해야 합니다.  성능 및 보안상의 이유로 AMP 페이지에는 타사 자바스크립트를 포함할 수 없습니다.  따라서 AMP에 광고를 게재하려면 AMP 페이지에 맞춤 [`<amp-ad>`](/ko/docs/reference/components/amp-ad.html) 구성요소를 추가해야 합니다.
+AMP가 아닌 페이지(기존 HTML 페이지)에 광고를 게재하려면 자바스크립트 스니펫을 포함하여 광고 네트워크에서 광고가 게재되도록 해야 합니다.  성능 및 보안상의 이유로 AMP 페이지에는 타사 자바스크립트를 포함할 수 없습니다.  따라서 AMP에 광고를 게재하려면 AMP 페이지에 맞춤 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 구성요소를 추가해야 합니다.
 
 [tip type="success"]
 
@@ -28,7 +28,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 100개가 넘는 [광고 서버와 네트워크]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})에서는 AMP와의 통합을 기본으로 제공합니다.  광고 네트워크의 광고를 추가하려면 `<amp-ad>` 태그를 추가하고 `type` 속성에 네트워크를 지정하세요.
 
-이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다. 
+이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다.
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ### 3단계: 광고 단위 크기 지정
 
-`<amp-ad>` 태그에 `width` 및 `height` 속성을 추가합니다.  이 속성은 AMP 페이지의 광고 크기를 지정합니다. 
+`<amp-ad>` 태그에 `width` 및 `height` 속성을 추가합니다.  이 속성은 AMP 페이지의 광고 크기를 지정합니다.
 
 ```html hl_lines="2"
 <amp-ad type="a9">
@@ -58,7 +58,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 </amp-ad>
 ```
 
-### 5단계: (선택사항) 자리표시자 지정 
+### 5단계: (선택사항) 자리표시자 지정
 
 광고 네트워크에 따라 광고가 없는 경우 자리표시자를 표시하도록 선택할 수 있습니다. 이렇게 하면 공백을 방지함으로써 사용자 환경이 개선됩니다.  자리표시자를 지정하려면 `placeholder` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
@@ -72,7 +72,7 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 </amp-ad>
 ```
 
-### 6단계: (선택사항) 대체 동작 지정 
+### 6단계: (선택사항) 대체 동작 지정
 
 광고 네트워크에 따라서는 게재할 수 있는 광고가 없는 경우 대체 요소를 표시하도록 선택할 수 있습니다. 대체 동작을 지정하려면 `fallback` 속성으로 하위 요소를 추가하세요. [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
@@ -90,11 +90,11 @@ AMP 페이지에 광고를 게재하기 위해 구성요소를 추가하는 단�
 
 ## 직접 판매 AMPHTML 광고 게재
 
-[`amp-ad`](/ko/docs/reference/components/amp-ad.html) 구성요소는 지정한 네트워크의 광고를 게재합니다.  광고 네트워크에서 AMPHTML 광고를 지원하는지에 따라 표준 HTML 광고 또는 AMPHTML 광고가 게재될 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양](/ko/docs/ads/a4a_spec.html) 요구사항에 따라 AMP HTML로 광고를 만들고 [AMPHTML 광고를 게재하는 광고 서버](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용하세요.
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})를 사용하세요.
 
 ## 광고 요청의 타겟팅 데이터 보강
 
-빠른 가져오기 게재 메커니즘의 일부로서 RTC(Real-Time Config) 기능을 사용하면 게시자가 런타임 시 가져온 자사 및 타사 타겟팅 정보로 광고 요청을 보강할 수 있습니다. RTC를 사용하면 개별 광고 슬롯의 타겟팅 서버에 최대 5개의 콜아웃이 허용되며, 그 결과는 광고 요청에 추가됩니다.  광고에서 RTC를 사용하려면 사용하는 광고 네트워크에서 RTC와 빠른 가져오기를 지원해야 합니다.  
+빠른 가져오기 게재 메커니즘의 일부로서 RTC(Real-Time Config) 기능을 사용하면 게시자가 런타임 시 가져온 자사 및 타사 타겟팅 정보로 광고 요청을 보강할 수 있습니다. RTC를 사용하면 개별 광고 슬롯의 타겟팅 서버에 최대 5개의 콜아웃이 허용되며, 그 결과는 광고 요청에 추가됩니다.  광고에서 RTC를 사용하려면 사용하는 광고 네트워크에서 RTC와 빠른 가져오기를 지원해야 합니다.
 
 다음 YouTube 동영상에서 RTC를 자세히 알아볼 수 있습니다.
 
@@ -127,21 +127,20 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 *   [IAB 가이드라인](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)에 따라 **용량이 큰 광고 소재를 사용하지 마세요**.
 *   광고 로드 시 콘텐츠 리플로우를 유발하는 **전면 광고**나 기타 광고 형식을 **사용하지 마세요**.
 *   data-loading-strategy를 prefer-viewability-over-views로 설정하여 **조회가능성을 최적화**하세요.
-*   [지원되는 플레이어](/ko/docs/reference/components.html#media) 또는 [amp-iframe](https://ampbyexample.com/components/amp-iframe/)을 사용해 **동영상 콘텐츠에 광고를 게재**하여 모든 유형의 콘텐츠에서 수익을 창출하세요.
+*   [지원되는 플레이어]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) 또는 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})을 사용해 **동영상 콘텐츠에 광고를 게재**하여 모든 유형의 콘텐츠에서 수익을 창출하세요.
 *   크기가 여러 개인 광고 요청을 사용하여 디스플레이 광고와 경쟁할 **네이티브 광고를 구현**함으로써 수요 압력을 늘리면서 독자에게 우수한 사용자 환경을 제공하세요.
 
 ### 혁신: 가장 좋은 성과를 내는 광고 제품 제공
 
 *   **부속 AMP 페이지에 광고를 구현**하여 수익을 늘리세요.
-    *   [캐러셀 광고](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [라이트박스 광고](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   ... 외 [더보기](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [캐러셀 광고]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [라이트박스 광고]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   ... 외 [더보기]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **직접 판매 광고를 위한 새로운 형식을 구현**하여 영업팀에서 효과적이고 혁신적인 광고 제품을 활용할 수 있도록 하세요.
-    *   [고정 광고](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [Flying Carpet](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [고정 광고]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## 추가 리소스
 
-*   [AMPHTML 광고 템플릿](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
-*   [데모: AMP 페이지에 amp-ad를 추가하는 방법 보기](https://ampbyexample.com/components/amp-ad/)
- 
+*   [AMPHTML 광고 템플릿]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
+*   [데모: AMP 페이지에 `amp-ad`를 추가하는 방법 보기]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

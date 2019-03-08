@@ -12,12 +12,12 @@ voir [Comment contribuer](/fr/contribute/).
 
 ## Suivi des vues de page
 
-Découvrez comment suivre les vues de page avec `amp-pixel` et `amp-analytics`.
+Découvrez comment suivre les vues de page avec [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) et [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
-### Utilisation du composant amp-pixel
+### Utilisation du composant [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
 
 Envoyez des données sur les vues de page à une URL spécifiée
-en utilisant [amp-pixel](/fr/docs/reference/components/amp-pixel.html) :
+en utilisant [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) :
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -26,7 +26,7 @@ en utilisant [amp-pixel](/fr/docs/reference/components/amp-pixel.html) :
 ### Utilisation du composant amp-analytics (pas de fournisseur)
 
 Envoyez des données sur les vues de page à une URL spécifiée
-en utilisant [amp-analytics](/fr/docs/reference/components/amp-analytics.html):
+en utilisant [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -75,7 +75,7 @@ Envoyez des données sur les vues de page à Google Analytics
 ## Suivi des clics sur une page
 
 Découvrez comment suivre les clics sur une page à l'aide de
-[amp-analytics](/fr/docs/reference/components/amp-analytics.html)
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 en envoyant les données d'événement à une URL spécifiée et à
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -142,7 +142,7 @@ pour envoyer un événement `click` à Google Analytics lorsque l'on clique sur 
 
 ## Suivi du défilement
 
-Suivez le défilement des pages avec [amp-analytics](/fr/docs/reference/components/amp-analytics.html).
+Suivez le défilement des pages avec [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 L'exemple suivant utilise l'attribut `scrollspec` pour envoyer un événement `scroll`
 à l'URL spécifiée à chaque fois qu'un utilisateur fait défiler verticalement la page de 25, 50 et 90 %.
 Cet événement se déclenche également lorsque l'on fait défiler
@@ -175,7 +175,7 @@ horizontalement la page sur 90 % de sa largeur `scroll` :
 ## Suivi des interactions sociales
 
 Découvrez comment suivre les interactions sociales à l'aide de
-[amp-analytics](/fr/docs/reference/components/amp-analytics.html)
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 en envoyant les données d'événement à une URL spécifiée et à
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

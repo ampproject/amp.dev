@@ -22,11 +22,11 @@ Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzen
 </amp-img>
 [/sourcecode]
 
-Bu `amp-img` öğesi, kapsayıcı öğesinin genişliğine otomatik olarak sığar ve yüksekliği, belirtilen genişlik ve yüksekliğe göre belirlenen en boy oranına otomatik olarak ayarlanır:
+Bu [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) öğesi, kapsayıcı öğesinin genişliğine otomatik olarak sığar ve yüksekliği, belirtilen genişlik ve yüksekliğe göre belirlenen en boy oranına otomatik olarak ayarlanır:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-Ayrıca [Örneklerle AMP amp-img](https://ampbyexample.com/components/amp-img/) konusuna bakabilirsiniz.
+Ayrıca [Örneklerle AMP `amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) konusuna bakabilirsiniz.
 
 ## Sayfaya stil ekleme
 
@@ -95,7 +95,7 @@ Bu seçim, öğenin boyutunu kapsayıcı öğesinin genişliğine ayarlar ve yü
 Sayfanızın CSS ve düzen değerlerini test etmek için AMP doğrulayıcıyı kullanın.
 
 Doğrulayıcı, sayfanızın CSS'sinin 50.000 bayt sınırını aşmadığını doğrular, izin verilmeyen stilleri kontrol eder ve sayfa düzeninin desteklenip doğru bir şekilde biçimlendirildiğinden emin olur.
-Ayrıca buradaki [Stil ve düzen hatalarının](/tr/docs/troubleshooting/validation_errors.html#stil-ve-düzen-hataları) tam listesine de bakabilirsiniz.
+Ayrıca buradaki [Stil ve düzen hatalarının]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#stil-ve-düzen-hataları) tam listesine de bakabilirsiniz.
 
 50.000 bayt sınırını aşan CSS'ye sahip sayfa için konsolda gösterilen hata örneği:
 

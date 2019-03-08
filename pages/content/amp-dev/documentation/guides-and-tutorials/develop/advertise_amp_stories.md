@@ -1,6 +1,7 @@
 ---
 $title: Advertise in AMP Stories
 $order: 3
+description: 'AMP Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free ...'
 formats:
   - stories
 author: CrystalOnScript
@@ -9,13 +10,13 @@ author: CrystalOnScript
 AMP Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free integration into the user’s journey, keeping them engaged and delighted by the platform.
 
 ##Ad Placement
-Unlike AMP web pages, where the amount and location of ads is designated by the placement of multiple [`amp-ad`](/docs/reference/components/amp-ad.html) components, AMP Stories rely on a single  [`amp-story-auto-ads`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-auto-ads.md) component to dictate ad quantity and placement.
+Unlike AMP web pages, where the amount and location of ads is designated by the placement of multiple [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) components, AMP Stories rely on a single  [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component to dictate ad quantity and placement.
 
-The `amp-story-auto-ads` extension is a wrapper around the `amp-ad` component that dynamically inserts one or multiple ads while the user consumes the story content. To ensure the best user experience:
+The [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) extension is a wrapper around the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) component that dynamically inserts one or multiple ads while the user consumes the story content. To ensure the best user experience:
 
 1. Ads are pre-rendered by the AMP Stories runtime, then inserted. This guarantees that the users will never be shown a blank or unloaded ad.
 
-2. Ad density is optimised with content ratio to prevent oversaturation. The `amp-story-auto-ads` extension decides when and where to insert ads as the user progresses.
+2. Ad density is optimised with content ratio to prevent oversaturation. The [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) extension decides when and where to insert ads as the user progresses.
 
 The AMP runtime makes the ad call as early as possible and places the first one sometime after the first two pages, and never as the last page.
 
@@ -43,7 +44,7 @@ Users can interact directly with the ad by tapping the system rendered [call to 
 {{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
 ##Configure
-AMP Stories cannot support an `amp-ad` directly on the page. Instead, all ads are fetched and displayed by the `amp-story-auto-ads` extension. The `amp-story-auto-ads` component must be placed as a direct child element of `amp-story`.
+AMP Stories cannot support an [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) directly on the page. Instead, all ads are fetched and displayed by the [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) extension. The [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component must be placed as a direct child element of [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 [sourcecode:html]
 <amp-story>
@@ -61,7 +62,7 @@ AMP Stories cannot support an `amp-ad` directly on the page. Instead, all ads ar
 </amp-story>
 [/sourcecode]
 
-Unlike a normal `amp-ad`, no `<fallback>` or `<placeholder>` is required, as AMP Story ads will only be displayed once fully rendered.
+Unlike a normal [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), no `<fallback>` or `<placeholder>` is required, as AMP Story ads will only be displayed once fully rendered.
 
 ##Integrate Ad Server Support
 The easiest way to include ads in your AMP Story is by serving ads from a supported ad server.
@@ -75,9 +76,9 @@ If you are an ad server interested in serving story ads please contact us by fil
 Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 ##Google Ad Manager
-Ad server information is designated within the `amp-story-auto-ads` component at the start of the AMP story.
+Ad server information is designated within the [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component at the start of the AMP story.
 
-You must specify a JSON configuration object within the `amp-story-auto-ads` component that specifies how ads should be fetched and displayed.The following fields are required to serve and ad with Google Ad Manager:
+You must specify a JSON configuration object within the [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component that specifies how ads should be fetched and displayed.The following fields are required to serve and ad with Google Ad Manager:
 
 * `"type"`  must be specified as `"doubleclick"`
 * `"data-slot"` must be paired with your ad unit
@@ -99,7 +100,7 @@ You must specify a JSON configuration object within the `amp-story-auto-ads` com
 </amp-story>
 [/sourcecode]
 
-These key value pairs are copied over to the `amp-ad` element generated for the Story. Additional information needed for the element can be added in place of `additional_data`, such as `targeting`.
+These key value pairs are copied over to the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) element generated for the Story. Additional information needed for the element can be added in place of `additional_data`, such as `targeting`.
 
 [sourcecode:html]
 <amp-story>

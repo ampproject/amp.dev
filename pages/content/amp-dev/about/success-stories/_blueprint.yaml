@@ -7,7 +7,7 @@ $order: 1
 
 index: /content/amp-dev/success-stories/index.html
 
-sub_navigation:
+flyout:
     - /content/amp-dev/about/websites.html
     - /content/amp-dev/about/stories.html
     - /content/amp-dev/about/ads.html

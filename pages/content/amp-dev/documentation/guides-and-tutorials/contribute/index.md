@@ -1,9 +1,10 @@
 ---
 $title: How to contribute
 $titles:
-  header: Contribute
+  navigation: Contribute
 $path: /documentation/guides-and-tutorials/contribute/index.html
 $order: 0
+description: 'The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.'
 
 formats:
   - websites
@@ -35,9 +36,9 @@ Documentation is important for the entire AMP community, and we would appreciate
 
 [ampproject.org](https://ampproject.org) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!)
 
-[ampbyexample.com](https://ampbyexample.com) provides examples of how to use AMP.  You can improve it at the [amp-by-example GitHub project](https://github.com/ampproject/amp-by-example/).
+[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) provides examples of how to use AMP.  You can improve it at the [amp-by-example GitHub project](https://github.com/ampproject/amp-by-example/).
 
 You can also help make things better for other contributors to the AMP Project by improving our documentation in the [amphtml GitHub project](https://github.com/ampproject/amphtml).
 
 #### Helping with translations
-AMP strives to make the world wide web a better experience for everyone. To enable everyone in the world to use AMP, we need translation contributors for guides, tutorials, blogs and all things written for AMP. To get involved with localizing AMP documentation for your community, check out the [AMP Translation Initiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).  
+AMP strives to make the world wide web a better experience for everyone. To enable everyone in the world to use AMP, we need translation contributors for guides, tutorials, blogs and all things written for AMP. To get involved with localizing AMP documentation for your community, check out the [AMP Translation Initiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).

@@ -26,7 +26,7 @@ Toda tela de bookend exige um `bookendVersion`, que é `v1.0` neste tutorial:
 "bookendVersion": "v1.0",
 ```
 
-Os botões de compartilhamento social permitem que os leitores compartilhem seu conteúdo por meio de plataformas sociais, como Twitter, Facebook, Pinterest e outros. Você especifica os provedores de compartilhamento social em um objeto shareProviders e cria uma matriz com os [nomes dos tipos](/pt_br/docs/reference/components/amp-social-share.html#pre-configured-providers) de cada plataforma social.
+Os botões de compartilhamento social permitem que os leitores compartilhem seu conteúdo por meio de plataformas sociais, como Twitter, Facebook, Pinterest e outros. Você especifica os provedores de compartilhamento social em um objeto shareProviders e cria uma matriz com os [nomes dos tipos]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers) de cada plataforma social.
 
 Para este tutorial, escolhemos Facebook, Twitter e e-mail como nossos provedores de compartilhamento:
 

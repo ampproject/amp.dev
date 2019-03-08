@@ -58,9 +58,9 @@ Service Worker は、ページとサーバーの間に存在するクライア�
 
 メモ: Service Worker をご存知ない場合は、[Web Fundamentals の概要説明](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) をご覧ください。
 
-Service Worker は、ブラウザで見つけて実行できるように、特定のページに登録する必要があります。デフォルトでは、こうした登録は [少しの JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) を利用して行います。AMP ページの場合、[`<amp-install-serviceworker>`](/ja/docs/reference/components/amp-install-serviceworker.html) コンポーネントを使って同じことができます。
+Service Worker は、ブラウザで見つけて実行できるように、特定のページに登録する必要があります。デフォルトでは、こうした登録は [少しの JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) を利用して行います。AMP ページの場合、[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) コンポーネントを使って同じことができます。
 
-登録するには、まず `<amp-install-serviceworker>` コンポーネントを、そのスクリプトを使ってページの `<head>` に含めます。
+登録するには、まず [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) コンポーネントを、そのスクリプトを使ってページの `<head>` に含めます。
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"

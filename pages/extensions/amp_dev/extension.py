@@ -38,6 +38,10 @@ class AmpDevExtension(extensions.BaseExtension):
 
     def __init__(self, pod, config):
         super(AmpDevExtension, self).__init__(pod, config)
+
+        # Initialize an object cache for template partials
+        self.template_cache = pod.podcache.get_object_cache('amp_dev_template');
+
         # Expose extension direclty on pod for use in templates
         setattr(pod, 'amp_dev', self)
 

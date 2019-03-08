@@ -28,7 +28,7 @@ AMP の独自のセールス ポイントは、**ほとんど瞬時の配信**�
 
 サイトへのエントリ ポイントとして AMP ページを使用し、背後で PWA を準備しておいて、進行中に PWA に切り替えるのが、効果的な戦略です。
 
-詳細情報: `amp-install-serviceworker` を使って [AMP を PWA に接続する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}})についてご覧ください。
+詳細情報: [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) を使って [AMP を PWA に接続する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}})についてご覧ください。
 
 ## PWA のデータソースとしての AMP
 

@@ -4,7 +4,7 @@ $title: スタイルとレイアウト
 
 AMP HTML のスタイルとレイアウトには、通常の HTML と同じように CSS を使用します。
 
-ただし AMP の場合は、パフォーマンスと操作性の関係で、一部の CSS が制限されています。一方、レスポンシブ デザイン機能は、 [プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})、[srcset による高度な画像読み込み](/ja/docs/design/responsive/art_direction.html)、[レイアウト属性](/ja/docs/design/responsive/control_layout.html) などの機能で拡張されているため、要素の表示方法を細かく制御できます。
+ただし AMP の場合は、パフォーマンスと操作性の関係で、一部の CSS が制限されています。一方、レスポンシブ デザイン機能は、 [プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})、[`srcset` による高度な画像読み込み]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})、[レイアウト属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) などの機能で拡張されているため、要素の表示方法を細かく制御できます。
 
 ヒント: AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する](/ja/docs/design/responsive/responsive_design.html)をご覧ください。
 

@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
         rel: 'preload',
         include: ['main'],
       }),
-      new CleanWebpackPlugin([path.join(__dirname, 'dist')]),
+      new CleanWebpackPlugin(),
     ],
     module: {
       rules: [

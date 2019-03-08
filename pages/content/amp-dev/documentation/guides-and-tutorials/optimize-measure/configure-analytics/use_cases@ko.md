@@ -8,11 +8,11 @@ $title: 사용 사례
 
 ## 페이지 조회수 추적하기
 
-`amp-pixel` 및 `amp-analytics` 를 사용하여 페이지 조회수를 추적하는 방법을 알아보세요.
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 및 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지 조회수를 추적하는 방법을 알아보세요.
 
 ### amp-pixel 사용
 
-다음과 같이 [amp-pixel](/ko/docs/reference/components/amp-pixel.html) 을 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
+다음과 같이 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 을 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -20,7 +20,7 @@ $title: 사용 사례
 
 ### amp-analytics 사용 - 공급업체 없음
 
-다음과 같이 [amp-analytics](/ko/docs/reference/components/amp-analytics.html) 를 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
+다음과 같이 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
 
 ```html
 <amp-analytics>
@@ -67,7 +67,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 
 ## 페이지 클릭수 추적하기
 
-[amp-analytics](/ko/docs/reference/components/amp-analytics.html) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
 ### 지정된 URL 로 데이터 전송하기
 
@@ -129,7 +129,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 
 ## 스크롤 추적하기
 
-[amp-analytics](/ko/docs/reference/components/amp-analytics.html) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
 
 ```html
 <amp-analytics>
@@ -157,7 +157,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 
 ## 소셜 상호작용 추적하기
 
-[amp-analytics](/ko/docs/reference/components/amp-analytics.html) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
 ### 지정된 URL 로 데이터 전송하기
 

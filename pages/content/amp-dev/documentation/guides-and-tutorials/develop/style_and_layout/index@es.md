@@ -7,7 +7,7 @@ Dar diseño y mejorar el layout de las páginas AMP HTML es muy similar al HTML 
 Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, mientras expande algunas capacidades de diseño responsivo con caracteristicas como [placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}), [uso avanzado vía srcset]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) y los [atributos del layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) para un mejor control sobre cómo se muestran los elementos en la página.
 
 [tip type="tip"]
-**TIP –** Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables](/es/docs/design/responsive/responsive_design.html)
+**TIP –** Es super fácil hacer los elementos responsivos en AMP. Solo pon layout="responsive". Para aprender más sobre el diseño responsivo en AMP, dale una leída a [Crear páginas AMP adaptables]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}})
 [/tip]
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Vea a UpperQuad hablar sobre el rediseño del sitio de AMPproject, incluyendo los retos de usar AMP por primera vez.']
@@ -92,7 +92,7 @@ los valores de diseño y CCS de tu página.
 
 El validador confirma que el CSS de la página no exceda el límite de 50.000 bytes,
 comprueba que no haya estilos no permitidos y garantiza que el diseño de la página sea compatible y el formato sea correcto.
-Consulta también esta lista completa de [errores de estilo y diseño](/es/docs/troubleshooting/validation_errors.html#errores-de-estilo-y-de-diseno).
+Consulta también esta lista completa de [errores de estilo y diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#errores-de-estilo-y-de-diseno).
 
 Ejemplo de error en la consola de una página con CSS que excede el límite de 50.000 bytes:
 

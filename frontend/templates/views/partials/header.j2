@@ -3,40 +3,91 @@
 {% set second_level = g.collection('/content/amp-dev/' + doc.pod_path.split('/')[3]).sub_navigation %}
 {% endif %}
 
+{# Tests if one of the top level navigation items needs to be active #}
 {% macro active_class(tested_doc, depth=3) -%}
 {% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ap-m-nav-link-active{% endif %}
 {%- endmacro %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
-<header class="ap--header {% if not second_level %}ap--header-fixed{% endif%}" [class]="mainmenuopen ? 'ap--header {% if not second_level %}ap--header-fixed{% endif%} mainmenuopen' : 'ap--header {% if not second_level %}ap--header-fixed{% endif%}'">
+<header class="ap--header">
   {% include '/views/partials/banner.j2' %}
 
   <div class="ap-o-header">
-    <a class="ap-o-header-home" href="{{ doc.pod.get_home_doc().localize(locale=doc.locale).url.path }}">
+    <a class="ap-o-header-home" href="{{ doc.pod.podspec.base_urls.platform }}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span>
     </a>
 
     {% do doc.styles.addCssFile('/css/components/molecules/nav-link.css') %}
-    <nav class="ap-o-header-first-level">
-      {# Sections #}
-      {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
-      {% if section.index %}
+    <nav class="ap-o-header-main">
+      {# Top level sections, defined by their top collection and landing page #}
+      {% set sections = [
+        (g.collection('/content/amp-dev/about/'), g.doc('/content/amp-dev/about/websites.html', locale=doc.locale)),
+        (g.collection('/content/amp-dev/documentation/'), g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale)),
+        (g.collection('/content/amp-dev/community/'), g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale)),
+        (g.collection('/content/amp-dev/events/'), g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale)),
+        ('external', ('Blog', 'https://blog.amp.dev')),
+        (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
+      ] %}
 
-      {% set section_index = g.doc(section.index, locale=doc.locale) %}
-      <a class="ap-o-header-first-level-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
-        {{ section.title }}
-      </a>
-      {% elif section.external_index %}
-      <a class="ap-o-header-first-level-link ap-m-nav-link" href="{{ section.external_index }}">
-        {{ section.title }}
-      </a>
+      {% for section, section_index in sections %}
+      {% if section.flyout %}
+      {# Only render flyout-touch-inputs for sections with flyout #}
+      <input id="main-item-radio-{{ loop.index }}" type="radio" name="main-radio-btn" role="button" tabindex="0">
+      {% endif %}
+
+      {# Special case for the blog #}
+      {% if section == 'external' %}
+      <div class="ap-o-header-main-item">
+        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section_index[1] }}">{{ section_index[0] }}</a>
+      </div>
+      {% else %}
+      <div class="ap-o-header-main-item">
+        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">{{ section.title or section_index.titles('navigation') }}</a>
+
+        {% if section.flyout %}
+        {# Only render flyout-touch-inputs for sections with flyout #}
+        {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+        <label class="ap-o-header-flyout-label" for="main-item-radio-{{ loop.index }}">
+          <div class="ap-a-ico ap-o-header-main-link-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+          </div>
+        </label>
+
+        <ul class="ap-o-header-flyout">
+          {% for path in section.flyout %}
+          {% set flyout_doc = g.doc(path, locale=doc.locale) %}
+          {% set flyout = flyout_doc.flyout or {} %}
+
+          {# If the flyout has an icon and a description its a primary item #}
+          {% if flyout.icon and flyout.description %}
+          <li class="ap-o-header-flyout-primary-item">
+            <a class="ap-o-header-flyout-primary-item-link {{ flyout.format }}" href="{{ flyout_doc.url.path }}">
+            {% do doc.icons.useIcon('/icons/' + flyout.icon + '.svg') %}
+              <div class="ap-o-header-flyout-primary-item-link-icon {{ flyout.format }}">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout.icon }}"></use></svg>
+              </div>
+
+              <div class="ap-o-header-flyout-primary-item-link-info{% if flyout.format %} ap-o-header-flyout-primary-item-link-info-{{ flyout.format }}{% endif %}">
+                <div class="ap-o-header-flyout-item-title">{{ flyout_doc.titles('navigation') }}</div>
+                <div class="ap-o-header-flyout-item-description">{{ flyout.description }}</div>
+              </div>
+            </a>
+          </li>
+          {% else %}
+          <li class="ap-o-header-flyout-item-secondary">
+            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{ flyout_doc.titles('navigation') }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
       {% endif %}
       {% endfor %}
     </nav>
 
-    {# Add language selector between first- and second level navigation #}
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
       <a class="ap-m-language-selector-toggle" href="#">
@@ -55,17 +106,5 @@
         {% endfor %}
       </ul>
     </div>
-
-    {% if second_level %}
-    <nav class="ap-o-header-second-level">
-      {# Get eventual sub-navigations defined per collection #}
-      {% for second_level_path in second_level %}
-      {% set second_level_doc = g.doc(second_level_path, locale=doc.locale) %}
-      <a class="ap-o-header-second-level-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
-        {{ _(second_level_doc.titles('header')) }}
-      </a>
-      {% endfor %}
-    </nav>
-    {% endif %}
   </div>
 </header>

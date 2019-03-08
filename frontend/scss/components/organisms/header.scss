@@ -12,6 +12,9 @@
 @import '_variables.scss';
 
 @import 'components/atoms/_text.scss';
+@import 'components/atoms/_icon.scss';
+@import 'components/atoms/_color.scss';
+
 
 .#{utility('header')} {
   width: 100%;
@@ -31,14 +34,6 @@
   @media (min-width: 1024px) {
     top: -35px;
   }
-
-  &-fixed {
-    top: 0;
-
-    @media (min-width: 1024px) {
-      top: -35px;
-    }
-  }
 }
 
 .#{organism('header')} {
@@ -46,14 +41,21 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 1300px;
-  padding-top: 14px;
-  padding-left: 20px;
+  max-width: 1460px;
+  padding: 14px 0 0 20px;
   margin: 0 auto;
 
   @media (min-width: 1024px) {
     display: flex;
     padding-left: 30px;
+  }
+
+  input {
+    display: none;
+  }
+
+  .ap-o-header-main-item-radio-btn:checked ~ .ap-o-header-flyout {
+    display: block;
   }
 
   &-home {
@@ -82,52 +84,253 @@
         }
       }
 
-      &-sub-title {
-        color: color('black');
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
+    &-sub-title {
+      color: color('black');
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 
-  &-first-level {
+  &-main {
     display: none;
     flex: 1 1 auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
+    padding: 0 30px;
 
     @media (min-width: 1024px) {
       display: flex;
     }
 
-    &-link {
-      margin: 0 20px;
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0 18px -5px;
+      padding-bottom: 14px;
+    }
 
-      &:last-child {
-        margin-left: auto;
+    &-item:hover {
+
+      & > .ap-o-header-flyout {
+          opacity: 1;
+          pointer-events: all;
+          transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+          &-secondary {
+            z-index: -1;
+          }
+      }
+    }
+
+    &-link {
+      border-radius: 10px;
+
+      &-icon {
+        font-size: 8px;
+        margin-left: 5px;
+        transform: rotate(0deg);
+        transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
+
+        &.right {
+          transform: rotate(-90deg);
+          margin-left: auto;
+          font-size: 10px;
+        }
       }
     }
   }
 
-  &-second-level {
-    display: none;
-    flex: 1 1 100%;
-    padding-top: 8px;
-    /* Pull out to have a 100% width border */
-    margin-left: -30px;
-    padding-left: 146px;
-    padding-bottom: 8px;
-    border-top: 1px solid color('wild-sand');
+  &-flyout {
+    @include flyout;
+    pointer-events: none;
+    opacity: 0;
+    list-style: none;
+    background: color('white');
+    position: absolute;
+    top: 95%;
+    padding: 0 0 10px;
+    margin: 0;
+    border-radius: 0 0 4px 4px;
+    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-    @media (min-width: 1024px) {
+    /* Add a fake shadow to simulate that the flyouts are under the header */
+    &:before {
+      content: "";
       display: block;
+      background: linear-gradient(to bottom, fade_out(color('black'), 0.93) 0%, color('white') 100%);
+      height: 8px;
+      margin-bottom: 10px;
     }
 
-    &-link {
-      margin: 2px 15px;
-      display: inline-block;
-      white-space: nowrap;
+    &-label {
+      /* Expand the label over the link in case the device can't hover */
+      @media (hover: none) {
+        position: absolute;
+        display: flex;
+        width: calc(100% + 14px);
+        height: 100%;
+        justify-content: flex-end;
+        align-items: center;
+      }
     }
+
+    &-item {
+
+      &-secondary {
+        margin: 20px 0;
+        white-space: nowrap;
+        min-width: 200px;
+
+        &:hover > a {
+          color: color('blue-ribbon');
+        }
+      }
+
+
+      &-title {
+        @include txt;
+        @include txt-2;
+        @include txt-strong;
+        @include txt-font-accent;
+        @include color-black;
+
+        line-height: 1.4em;
+
+        &.secondary {
+          padding: 0 15px;
+        }
+      }
+
+      &-description {
+        @include txt;
+        @include txt-3;
+        opacity: 0.75;
+
+        line-height: 1.25em;
+      }
+    }
+
+    &-secondary {
+      left: 100%;
+      top: 15%;
+      padding: 5px 30px;
+      z-index: -1;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &-primary-item {
+      position: relative;
+      width: 300px;
+
+      &:hover &-link {
+        @include flyout;
+        background-color: color('blue-ribbon');
+
+        &-info > * {
+          @include color-white;
+        }
+
+        &-info-stories {
+          .ap-o-header-flyout-item-title {
+            @include color-stories;
+          }
+
+          .ap-o-header-flyout-item-description {
+            @include color-stories;
+          }
+        }
+
+        &-info-email {
+          .ap-o-header-flyout-item-title {
+            @include color-e-mails;
+          }
+
+          .ap-o-header-flyout-item-description {
+            @include color-e-mails;
+          }
+        }
+
+        &-icon {
+          @include fill-websites;
+
+          &.stories {
+            @include fill-stories;
+          }
+
+          &.email {
+            @include fill-e-mails;
+          }
+        }
+
+        &.websites {
+          @include gradient-websites;
+        }
+
+        &.stories {
+          @include gradient-stories;
+        }
+
+        &.ads {
+          @include gradient-ads;
+        }
+
+        &.email {
+          @include gradient-e-mails;
+        }
+      }
+
+
+      &:hover > .ap-o-header-flyout-secondary {
+        pointer-events: auto;
+        opacity: 1;
+        transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+      }
+
+      &:hover .ap-o-header-main-link-icon {
+        &.right {
+          display: none;
+        }
+      }
+
+      &:hover .ap-o-header-flyout-secondary {
+        display: block;
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 0 5px;
+
+        &-info {
+          margin: 0 20px 0 15px;
+        }
+
+        &-icon {
+          @include ico;
+          width: 2em;
+          height: 2em;
+
+          &.websites {
+            fill: url(#gradient-websites) #000;
+          }
+          &.stories {
+            fill: url(#gradient-stories) #000;
+          }
+          &.ads {
+            fill: url(#gradient-ads) #000;
+          }
+          &.email {
+            fill: url(#gradient-email) #000;
+          }
+        }
+      }
+    }
+
   }
+
 }

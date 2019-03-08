@@ -8,6 +8,45 @@
 
 @import 'components/organisms/_sidebar.scss';
 
+amp-sidebar {
+  background: color('whisper');
+}
+
+nav[toolbar] {
+  top: 120px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 768px){
+    height: 100vh;
+    position: sticky;
+    overflow: auto;
+    max-height: calc(100vh - 168px);
+  }
+  
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(color('black'), 0.10);
+  }
+
+  & > ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.#{utility('ampsidebar')} {
+  max-width: 90vw;
+  @media (max-width: 767px) {
+    nav {
+      width: 100vw;
+    }
+  }
+}
+
 .#{organism('sidebar')} {
   @include sidebar;
 
@@ -62,8 +101,13 @@
       }
 
       &.level-3 {
+        margin-left: 24px;
         .nav-link {
           @include sidebar-nav-link-level-3;
+        }
+        &.active {
+          background: rgba(51,61,71,0.1);
+          border-radius: 4px;
         }
       }
 
@@ -107,18 +151,6 @@
 
     span.nav-link + .nav-trigger {
       width: calc(100% + 15px);
-    }
-  }
-
-  .#{atom('sidebar-toggle-input')}:not(:checked) + & {
-    @media (max-width: 767px) {
-      transform: translateX(-100%);
-    }
-  }
-
-  .#{atom('sidebar-toggle-input')}:checked + & {
-    @media (max-width: 767px) {
-      transform: translateX(0);
     }
   }
 }

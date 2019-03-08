@@ -2,6 +2,7 @@
 $path: /documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html
 $title: Configure analytics
 $order: 0
+description: 'If you’re using Google Analytics as your analytics provider, learn how to set up basic Google Analytics for AMP and how to link AMP and non-AMP content using Client ID'
 $hidden: true
 formats:
   - websites
@@ -49,7 +50,7 @@ You must identify this data before you can configure it.
 Key data points to consider:
 
 * Will you track only page views, or additional user engagement patterns
-(see also [amp-pixel or amp-analytics](/docs/analytics/analytics_basics.html#use-amp-pixel-or-amp-analytics?))?
+(see also [amp-pixel or amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#use-amp-pixel-or-amp-analytics?))?
 * What kinds of data will you capture about your users, your content,
 the device or browser (see also [Variable substitution](/docs/analytics/analytics_basics.html#variable-substitution))?
 * How will you identify your users (see also [User identification](/docs/analytics/analytics_basics.html#user-identification))?

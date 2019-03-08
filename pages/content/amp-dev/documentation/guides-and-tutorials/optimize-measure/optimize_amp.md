@@ -1,6 +1,7 @@
 ---
 $title: Optimize your hosted AMP pages
 $order: 2
+description: 'The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...'
 
 formats:
   - websites
@@ -76,8 +77,8 @@ Let's go through it step-by-step:
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
 1.  Use [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) to speedup the connection to other origin where the full resource URL is not known ahead of time, for example, when using Google Fonts: [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 1.  Load the AMP runtime: [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
-1.  Specify the `<script>` tags for [render-delaying extensions](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (e.g., amp-experiment, amp-dynamic-css-classes, and amp-story)
-1.  Specify the `<script>` tags for remaining extensions (e.g., amp-bind, ...). These extensions are not render-delaying and therefore should not be preloaded as they might take away important bandwidth for the initial render.
+1.  Specify the `<script>` tags for [render-delaying extensions](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (e.g., [`amp-experiment`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-experiment.md', locale=doc.locale).url.path}})  [`amp-dynamic-css-classes`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-dynamic-css-classes.md', locale=doc.locale).url.path}})  and [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})
+1.  Specify the `<script>` tags for remaining extensions (e.g., [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})  ...). These extensions are not render-delaying and therefore should not be preloaded as they might take away important bandwidth for the initial render.
 1.  Specify any custom styles by using the `<style amp-custom>` tag.
 1.  Add any other tags allowed in the  `<head>` section. In particular, any external fonts should go last since they block rendering.
 1.  Finally, specify the [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
@@ -88,7 +89,7 @@ The AMP Cache performs all these optimizations automatically (and a few more). Y
 
 ### Preload hero images
 
-[AMP HTML uses its own image element: amp-img](/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [amp-img](/docs/reference/components/amp-img.html) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
+[AMP HTML uses its own image element: `amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
 
 [sourcecode:html]
 <head>
@@ -128,7 +129,7 @@ The good thing is that `link rel=preload` also supports media queries. So we can
     media="(min-width: 416px)">
 [/sourcecode]
 
-By the way, the same approach works for `[amp-video](/docs/reference/components/amp-video.html)` poster images:
+By the way, the same approach works for `[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})` poster images:
 
 [sourcecode:html]
 <link rel="preload" href="/images/poster.jpg" as="image">
@@ -167,7 +168,7 @@ However, if you want your website to be [installable from the home screen](https
 
 If your AMP website uses a service worker, here are some best practices:
 
-*   Pre-cache the [AMP runtime](/docs/fundamentals/spec.html#amp-runtime) and extensions (e.g. [amp-carousel](/docs/reference/components/amp-carousel.html)).
+*   Pre-cache the [AMP runtime](/docs/fundamentals/spec.html#amp-runtime) and extensions (e.g. [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})).
 *   Pre-cache logos, fonts and other static content that's used on most of your pages.
 *   Serve logos, fonts and images by using a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network).
 *   Serve the AMP runtime and extensions by using a [stale-while-revalidate](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate) strategy.
@@ -193,7 +194,7 @@ In Safari, there is a key difference to how service workers are implemented -- i
 
 With AMP there are a few things that you can do to optimize your font loading ([most of them are actually not specific to AMP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)):
 
-*   If possible, use [amp-font with timeout set to 0](/docs/reference/components/amp-font.html#timeout) (this will only use the font if it's already in the cache). Fall back to the system font if your custom font has not been loaded yet. This is a similar behavior to [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+*   If possible, use [`amp-font` with timeout set to 0]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}#timeout) (this will only use the font if it's already in the cache). Fall back to the system font if your custom font has not been loaded yet. This is a similar behavior to [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
 *   Optimize your web fonts (for example, serve custom fonts using WOFF2).
 *   Preload custom fonts: [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]

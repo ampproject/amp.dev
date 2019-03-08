@@ -1,18 +1,19 @@
 ---
 $title: Analytics vendors
 $order: 3
+description: 'This document lists analytics vendors that have built-in configurations for use with the amp-analytics component. To send analytics data to a third-party vendor.'
 formats:
   - websites
 ---
 
-This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](/docs/reference/components/amp-analytics.html) component.
+This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) component.
 
 To send analytics data to a third-party vendor:
 
-1. In the [`<amp-analytics> `](/docs/reference/components/amp-analytics.html) tag, add the `type` attribute and set its value to the specified vendor as described in the [*Vendors*](#vendors) section below.
+1. In the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) tag, add the `type` attribute and set its value to the specified vendor as described in the [*Vendors*](#vendors) section below.
 2. Determine what data you want to capture and track, and specify those details in the configuration data. See the vendor's documentation for instructions on how to capture analytics data.
 
-In the following example, we send pageview data to [Google Analytics](#google-analytics), a third-party analytics provider with a built-in configuration for amp-analytics:
+In the following example, we send pageview data to [Google Analytics](#google-analytics), a third-party analytics provider with a built-in configuration for [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -37,7 +38,7 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 [/tip]
 
 [tip type="note"]
-**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`](/docs/reference/components/amp-analytics.html) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
+**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
 [/tip]
 
 <hr>
@@ -133,7 +134,7 @@ Adds support for Eulerian Technologies Analytics. Requires defining *var* `analy
 
 Type attribute value: `facebookpixel`
 
-Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your amp-analytics configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius
 

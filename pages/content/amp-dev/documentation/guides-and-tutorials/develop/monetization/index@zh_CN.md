@@ -6,7 +6,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ## 向网页中添加广告
 
-在非 AMP 网页（传统 HTML）中，若要展示广告，需要添加一段 JavaScript 代码，才能投放来自广告网络的广告。出于性能和安全原因，您不能在 AMP 网页中添加第三方 JavaScript。因此，要在 AMP 中展示广告，您需要将自定义 [`<amp-ad>`](/zh_cn/docs/reference/components/amp-ad.html) 组件添加到 AMP 网页中。
+在非 AMP 网页（传统 HTML）中，若要展示广告，需要添加一段 JavaScript 代码，才能投放来自广告网络的广告。出于性能和安全原因，您不能在 AMP 网页中添加第三方 JavaScript。因此，要在 AMP 中展示广告，您需要将自定义 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 组件添加到 AMP 网页中。
 
 [tip type="success"]
 
@@ -90,7 +90,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ## 投放直销型 AMPHTML 广告
 
-[`amp-ad`](/zh_cn/docs/reference/components/amp-ad.html) 组件用于投放您所指定网络中的广告。这些广告可以是标准 HTML 广告或 AMPHTML 广告，前提是相应广告网络支持 AMPHTML 广告。要将直销型广告作为 AMPHTML 广告投放，请按照 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)的要求制作 AMP HTML 格式的广告，并使用[支持 AMPHTML 广告投放的广告服务商](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)。
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})。
 
 ## 利用定位数据增强广告请求
 
@@ -127,21 +127,20 @@ $title: 在您的 AMP 网页中利用广告获利
 *   **遵循 [IAB 指南](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)，避免使用尺寸很大的广告文件**。
 *   **避免使用插页式广告**或其他会导致内容在广告加载时重排的广告格式。
 *   **进行优化以提高可见度**：将 data-loading-strategy 设置为 prefer-viewability-over-views。
-*   **通过[支持的播放器](/zh_cn/docs/reference/components.html#media)或 [amp-iframe](https://ampbyexample.com/components/amp-iframe/) 在视频内容中展示广告**，以通过各种类型的内容创收。
+*   **通过[支持的播放器]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#media).url.path}}) 在视频内容中展示广告**，以通过各种类型的内容创收。
 *   **使用多尺寸广告请求实现原生广告**，以与展示广告展开竞争，从而在提供优质用户体验的同时增加需求压力。
 
 ### 创新：提供最具吸引力的广告产品
 
 *   **在辅助 AMP 网页上投放广告**，以获得增量收入：
-    *   [轮播广告](https://ampbyexample.com/amp-ads/advanced_ads/carousel_ad/)
-    *   [灯箱广告](https://ampbyexample.com/amp-ads/experimental_ads/lightbox_ad/)
-    *   以及[更多类型](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
+    *   [轮播广告]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [灯箱广告]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   以及[更多类型]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **使直销型广告采用新格式**，以便为您的销售团队提供效果显著的创新广告产品：
-    *   [粘性广告](https://ampbyexample.com/components/amp-sticky-ad/)
-    *   [飞毯](https://ampbyexample.com/components/amp-fx-flying-carpet/)
+    *   [粘性广告]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [飞毯]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## 其他资源
 
-*   [AMPHTML 广告模板](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads)
-*   [演示：如何将 amp-ad 添加到 AMP 网页中](https://ampbyexample.com/components/amp-ad/)
- 
+*   [AMPHTML 广告模板]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
+*   [演示：如何将 `amp-ad` 添加到 AMP 网页中]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})

@@ -21,7 +21,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### フォーマット
 
-柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
+柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### 広告会社
 
-広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
+広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
 
 *  [Celtra の AdCreator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)

@@ -31,6 +31,9 @@
     <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
+    <link rel="manifest" href="/static/manifest.json"/>
+    <meta name="theme-color" content="#005af0"/>
+
     <link rel="canonical" href="{{ doc.url }}"/>
     <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
     {% for locale in doc.locales if not locale == doc.locale  %}
@@ -44,6 +47,41 @@
     {# Do not index untranslated content #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     <meta name="robots" content="noindex,follow"/>
+    {% endif %}
+
+    {# Add SEO tags if needed information is available #}
+    {% if doc.description or (doc.teaser and doc.teaser.text) %}
+    <meta name="description" content="{{ doc.description or doc.teaser.text }}">
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Webpage",
+      "url": "{{ doc.pod.podspec.base_urls.platform }}{{ doc.url.path }}",
+      "name": "amp.dev",
+      "headline":"{{ doc.title }}",
+      "description":"{{ doc.description or doc.teaser.text }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ doc.pod.podspec.base_urls.platform }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AMP Project",
+        "logo": {
+            "url": "{{ doc.pod.podspec.base_urls.platform }}/static/img/icons/icon-512x512.png",
+            "width": 512,
+            "height": 512,
+            "@type": "ImageObject"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ampproject.org/static/img/logo-og-image.jpg",
+        "width": 1200,
+        "height": 630
+      }
+    }
+    </script>
     {% endif %}
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
@@ -111,25 +149,24 @@
     {% block fonts %}
     <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
     <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
-    <amp-font layout="nodisplay" font-family="Inconsolata" timeout="3000"></amp-font>
+    <amp-font layout="nodisplay" font-family="Fira Mono" timeout="3000"></amp-font>
     {% endblock %}
+
+    {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
+    <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
+      Hi, this is the public beta of amp.dev. Got feedback?
+      <a href="https://github.com/ampproject/docs/issues" class="ap-m-banner-link">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        {{ _('Let us know!') }}
+      </a>
+    </div>
 
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
     <aside class="ap-o-translation-hint">
-      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t yet translated, but we could use some help doing so: you maybe want to lend a hand?')}}</p>
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. If you want to lend a hand ...?')}}</p>
     </aside>
-    {% endif %}
-
-    {% if podspec.env.name == 'staging' or podspec.env.name == 'development' %}
-    {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
-    <div class="ap-m-banner" style="position: fixed; bottom: 0; z-index: 999; width: 100%; background: #C8114D;">
-      This is a staging version of 
-      <a href="http://amp.dev" class="ap-m-banner-link">
-        https://amp.dev
-      </a> [{{ podspec.env.name|upper }}].
-    </div>
     {% endif %}
 
     {% include 'views/partials/analytics.j2' %}

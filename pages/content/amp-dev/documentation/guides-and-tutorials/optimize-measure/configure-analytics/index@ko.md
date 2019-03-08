@@ -40,14 +40,13 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 고려해야 할 주요 데이터 요소:
 
 * 페이지 조회수만 추적할 것인가, 아니면 추가 사용자 참여도 패턴도 추적할 것인가?
-([amp-pixel 또는 amp-analytics](/ko/docs/analytics/analytics_basics.html#amp-pixel과-amp-analytics-중-무엇을-사용해야-할까요)도 참조)
+([amp-pixel 또는 amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}#amp-pixel과-amp-analytics-중-무엇을-사용해야-할까요)도 참조)
 * 사용자, 콘텐츠, 기기 또는 브라우저에 관한
-어떤 유형의 데이터를 확보할 것인가?([Variable substitution](/ko/docs/analytics/analytics_basics.html#변수-치환)도 참조)
-* 어떤 방법으로 사용자를 파악할 것인가?([사용자 파악](/ko/docs/analytics/analytics_basics.html#사용자-식별)도 참조)
+어떤 유형의 데이터를 확보할 것인가? ([Variable substitution]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#변수-치환)도 참조)
+* 어떤 방법으로 사용자를 파악할 것인가?([사용자 파악]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#변수-치환)도 참조)
 
 [tip type="read-on"]
 
 [애널리틱스: 기본사항]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})에서 애널리틱스에 대해 계속해서 자세히 알아보세요.
 
 [/tip]
-

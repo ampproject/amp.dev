@@ -26,7 +26,7 @@ Setiap layar bookend memerlukan `bookendVersion`, yakni `v1.0` untuk tutorial in
 "bookendVersion": "v1.0",
 ```
 
-Tombol berbagi sosial memungkinkan pembaca untuk membagikan konten Anda melalui platform media sosial, seperti Twitter, Facebook, Pinterest, dan lain-lain. Anda dapat menentukan penyedia berbagi sosial dalam objek shareProviders, dan membuat array yang berisi [nama jenis](/id/docs/reference/components/amp-social-share.html#pre-configured-providers) untuk setiap platform media sosial.
+Tombol berbagi sosial memungkinkan pembaca untuk membagikan konten Anda melalui platform media sosial, seperti Twitter, Facebook, Pinterest, dan lain-lain. Anda dapat menentukan penyedia berbagi sosial dalam objek shareProviders, dan membuat array yang berisi [nama jenis]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers) untuk setiap platform media sosial.
 
 Untuk tutorial ini, kita memilih Facebook, Twitter, dan email sebagai penyedia berbagi:
 

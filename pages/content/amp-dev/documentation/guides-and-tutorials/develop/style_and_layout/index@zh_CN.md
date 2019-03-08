@@ -81,7 +81,7 @@ AMP 支持 `srcset` 和 `sizes` 属性，以便您能够更加精确地控制要
 
 使用 AMP 验证工具测试您网页的 CSS 和布局值。
 
- 验证工具将确认您网页的 CSS 是否超过 50000 字节的限制，检查网页是否使用了禁止的样式，并检查网页是否采用了受支持的布局且格式是否正确无误。另请参阅完整的[样式和布局错误](/zh_cn/docs/troubleshooting/validation_errors.html#style-and-layout-errors) 列表。
+ 验证工具将确认您网页的 CSS 是否超过 50000 字节的限制，检查网页是否使用了禁止的样式，并检查网页是否采用了受支持的布局且格式是否正确无误。另请参阅完整的[样式和布局错误]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#style-and-layout-errors) 列表。
 
 下方是 Search Console 中的一个错误示例，网页的 CSS 超出 50000 字节的限制：
 

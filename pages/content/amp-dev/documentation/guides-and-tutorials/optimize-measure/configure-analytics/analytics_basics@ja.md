@@ -6,25 +6,25 @@ $title: "アナリティクス: 基本"
 
 ## amp-pixel または amp-analytics を使う
 
-AMP にはアナリティクスや測定に役立つ 2 つのコンポーネント、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) と [amp-analytics](/ja/docs/reference/components/amp-analytics.html)があります。どちらを使用してもアナリティクスのデータは指定したエンドポイントに送信されます。
+AMP にはアナリティクスや測定に役立つ 2 つのコンポーネント、[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})があります。どちらを使用してもアナリティクスのデータは指定したエンドポイントに送信されます。
 
-シンプルな [トラッキング ピクセル](https://en.wikipedia.org/wiki/Web_beacon#Implementation)のような動作が好みであれば、`amp-pixel` コンポーネントの基本的なページビュー トラッキングがおすすめです。ページビュー データは指定の URL に送信されます。統合するベンダーによっては、このコンポーネントが必要になることがあり、その場合はベンダーが正確なエンドポイント URL を指定します。
+シンプルな [トラッキング ピクセル](https://en.wikipedia.org/wiki/Web_beacon#Implementation)のような動作が好みであれば、[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) コンポーネントの基本的なページビュー トラッキングがおすすめです。ページビュー データは指定の URL に送信されます。統合するベンダーによっては、このコンポーネントが必要になることがあり、その場合はベンダーが正確なエンドポイント URL を指定します。
 
-ほとんどのアナリティクス ソリューションでは、 `amp-analytics` を使用します。ページビュー トラッキングも `amp-analytics` で動作します。リンクやボタンのクリックなど、あらゆるページ コンテンツに対するユーザー エンゲージメントもトラッキングできます。ユーザーがページをどのくらいスクロールしたか、ソーシャル メディアを使用しているかなどもわかります。
+ほとんどのアナリティクス ソリューションでは、 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使用します。ページビュー トラッキングも [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) で動作します。リンクやボタンのクリックなど、あらゆるページ コンテンツに対するユーザー エンゲージメントもトラッキングできます。ユーザーがページをどのくらいスクロールしたか、ソーシャル メディアを使用しているかなどもわかります。
 
 詳細: 詳しくは、[AMP アナリティクスについて深く学ぶ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}})をご覧ください。
 
-AMP プラットフォームを統合するにあたり、データの取得やトラッキング ツールへの転送が簡単に行えるよう、プロバイダーはあらかじめ定義した `amp-analytics` 設定を提示しています。ベンダーのドキュメントは、[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) リストからアクセスできます。
+AMP プラットフォームを統合するにあたり、データの取得やトラッキング ツールへの転送が簡単に行えるよう、プロバイダーはあらかじめ定義した [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 設定を提示しています。ベンダーのドキュメントは、[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) リストからアクセスできます。
 
-ページで `amp-pixel` と `amp-analytics` を両方使うことも可能です。`amp-pixel` はシンプルなページビュー トラッキング用で、`amp-analytics` はそれ以外の全機能に対応しています。各タグを複数追加することもできます。アナリティクス プロバイダーを複数使っている場合は、ソリューションごとに 1 つのタグが必要です。ユーザーにとって AMP ページはシンプルであるほど良いので、余分なタグは使わないようにしましょう。
+ページで [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を両方使うことも可能です。[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) はシンプルなページビュー トラッキング用で、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) はそれ以外の全機能に対応しています。各タグを複数追加することもできます。アナリティクス プロバイダーを複数使っている場合は、ソリューションごとに 1 つのタグが必要です。ユーザーにとって AMP ページはシンプルであるほど良いので、余分なタグは使わないようにしましょう。
 
 ## シンプルなアナリティクス設定にする
 
-次に、[amp-pixel](/ja/docs/reference/components/amp-pixel.html) と [amp-analytics](/ja/docs/reference/components/amp-analytics.html) のシンプルな設定方法を説明します。
+次に、[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のシンプルな設定方法を説明します。
 
 ### シンプルな amp-pixel 設定
 
-シンプルに `amp-pixel` を設定するには、以下のような記載を AMP ページのボディ部に挿入します。
+シンプルに [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) を設定するには、以下のような記載を AMP ページのボディ部に挿入します。
 
 ```html
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
@@ -32,17 +32,17 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 この例では、ページビュー データは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの置換変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)のうちの 1 つです。[置換変数](/ja/docs/analytics/analytics_basics.html#variable-substitution)について詳しくは、こちらをご覧ください。
 
-[amp-pixel](/ja/docs/reference/components/amp-pixel.html) は組み込みのコンポーネントなので、`amp-analytics` のような AMP 拡張コンポーネントと違って、宣言を追加する必要はありません。ただし `amp-pixel` タグは、極力 `<body>` の先頭付近に配置してください。トラッキング ピクセルはタグが表示されてから呼び出されるので、`amp-pixel` がページ上のボタンの近くにあると、トラッキング ピクセルが呼び出されない可能性があります。
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) は組み込みのコンポーネントなので、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のような AMP 拡張コンポーネントと違って、宣言を追加する必要はありません。ただし [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) タグは、極力 `<body>` の先頭付近に配置してください。トラッキング ピクセルはタグが表示されてから呼び出されるので、[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) がページ上のボタンの近くにあると、トラッキング ピクセルが呼び出されない可能性があります。
 
 ### シンプルな amp-analytics 設定
 
-シンプルに [amp-analytics](/docs/reference/components/amp-analytics.html) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言](/docs/reference/components.html)もご覧ください）。
+シンプルに [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言](/docs/reference/components.html)もご覧ください）。
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-以下の例は [amp-pixel の例](/ja/docs/analytics/analytics_basics.html#simple-amp-pixel-configuration)と似ています。ページが表示されるたびにイベントが発生して、ページビュー データがランダム ID とともに指定の URL に送信されます。
+以下の例は [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})と似ています。ページが表示されるたびにイベントが発生して、ページビュー データがランダム ID とともに指定の URL に送信されます。
 
 ```html
 <amp-analytics>
@@ -69,18 +69,18 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 ## 置換変数
 
-[amp-pixel](/ja/docs/reference/components/amp-pixel.html) と [amp-analytics](/ja/docs/reference/components/amp-analytics.html) コンポーネントは、どちらも標準的な URL の変数置換をすべて許可します（[AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID](/ja/docs/analytics/analytics_basics.html#user-identification) とともに URL に送信します。
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) コンポーネントは、どちらも標準的な URL の変数置換をすべて許可します（[AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID](/ja/docs/analytics/analytics_basics.html#user-identification) とともに URL に送信します。
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
-`amp-pixel` タグはシンプルなので、プラットフォームで定義された変数か、AMP ランタイムで AMP ページから解析できる変数のみを含めることができます。上の例では、`canonicalURL` と `clientId(site-user-id)` の値はプラットフォームで設定されます。`amp-analytics` タグには、`amp-pixel` と同じ変数も、タグ設定内で一意に定義された変数も含めることができます。
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) タグはシンプルなので、プラットフォームで定義された変数か、AMP ランタイムで AMP ページから解析できる変数のみを含めることができます。上の例では、`canonicalURL` と `clientId(site-user-id)` の値はプラットフォームで設定されます。[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) タグには、[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と同じ変数も、タグ設定内で一意に定義された変数も含めることができます。
 
-ページのリクエスト文字列やプラットフォームで定義された変数には、`${varName}` フォーマットを使います。`amp-analytics`
+ページのリクエスト文字列やプラットフォームで定義された変数には、`${varName}` フォーマットを使います。[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 タグは、アナリティクス リクエストの作成時に、テンプレートを実際の値に置き換えます（[amp-analytics でサポートされる変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)もご覧ください）。
 
-以下の `amp-analytics` の例では、ページビュー リクエストが、変数置換で抽出された追加データやプラットフォームから提供されたデータ、`amp-analytics` 設定内でインライン定義されたデータとともに URL に送信されます。
+以下の [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の例では、ページビュー リクエストが、変数置換で抽出された追加データやプラットフォームから提供されたデータ、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 設定内でインライン定義されたデータとともに URL に送信されます。
 
 ```html
 <amp-analytics>
@@ -106,7 +106,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 </amp-analytics>
 ```
 
-上の例では、変数 `account` と `title` は `amp-analytics` 設定内で定義されています。変数 `canonicalUrl` と `clientId` は定義されていないので、プラットフォーム側で置換されます。
+上の例では、変数 `account` と `title` は [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 設定内で定義されています。変数 `canonicalUrl` と `clientId` は定義されていないので、プラットフォーム側で置換されます。
 
 重要: 変数置換は柔軟性が高いため、同じ変数を別の場所で使用できます。この場合、AMP ランタイムは先行順に値を解析します（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
 

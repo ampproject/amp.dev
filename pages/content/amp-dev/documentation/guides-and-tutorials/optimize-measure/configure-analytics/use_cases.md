@@ -1,6 +1,7 @@
 ---
 $title: Use cases
 $order: 2
+description: 'This guide provides a set of common use cases for tracking user engagement: NOTE – Want to add a use case? Let us know.'
 formats:
   - websites
 ---
@@ -13,12 +14,12 @@ This guide provides a set of common use cases for tracking user engagement:
 
 ## Tracking page views
 
-Learn how to track page views using `amp-pixel` and `amp-analytics`.
+Learn how to track page views using [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) and [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
-### Using amp-pixel
+### Using `amp-pixel`
 
 Send pageview data to a specified URL using
-[amp-pixel](/docs/reference/components/amp-pixel.html):
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -27,7 +28,7 @@ Send pageview data to a specified URL using
 ### Using amp-analytics - no vendor
 
 Send pageview data to a specified URL using
-[amp-analytics](/docs/reference/components/amp-analytics.html):
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -76,7 +77,7 @@ Send pageview data to Google Analytics
 ## Tracking page clicks
 
 Learn how to track page clicks using
-[amp-analytics](/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 sending event data to a specified URL, and to
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -143,7 +144,7 @@ to send a `click` event to Google Analytics when a particular element is clicked
 
 ## Tracking scrolling
 
-Track page scrolling using [amp-analytics](/docs/reference/components/amp-analytics.html).
+Track page scrolling using [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 The following example uses the `scrollspec` attribute to send a `scroll` event
 to the specified URL when page is scrolled vertically by 25%, 50% and 90%.
 The event also fires when the page is horizontally scrolled
@@ -176,7 +177,7 @@ to 90% of `scroll` width:
 ## Tracking social interactions
 
 Learn how to track social interactions using
-[amp-analytics](/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 sending event data to a specified URL, and to
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
