@@ -10,21 +10,11 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
 <!--
   ## Introduction
 
-  Users today want additional control over their online experience. Additionally, publishers are
-  faced with a variety of different demands on how they provide notice and choice to their
-  users –  from vendor policies to evolving legal requirements. The open source AMP Project is working
-  to give publishers and tech vendors tools to implement their preferred user controls and to support their varied
-  individual compliance requirements on their AMP pages.
+  Users today want additional control over their online experience. Additionally, publishers are faced with a variety of different demands on how they provide notice and choice to their users - from vendor policies to evolving legal requirements. The open source AMP Project is working to give publishers and tech vendors tools to implement their preferred user controls and to support their varied individual compliance requirements on their AMP pages.
 
-  <p>This page demonstrates how a basic blocking consent flow can be built, which would just show a
-  simple blocking popup with an accept and reject button. On reject some content in the page will be blocked.</p>
+  This page demonstrates how a basic blocking consent flow can be built, which would just show a simple blocking popup with an accept and reject button. On reject some content in the page will be blocked.
 
-  [tip type="important"]
-    Important! The consent is saved to localstorage - after accepting/rejecting it once you will
-    only get the popup dialog again after deleting the localstorage content for this host,
-    for example via <a href="https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage">
-    Chrome Dev Tools</a>.
-  [/tip]
+  Important: The consent is saved to localstorage - after accepting/rejecting it once you will only get the popup dialog again after deleting the localstorage content for this host, for example via [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage).
 -->
 <!-- -->
 <!doctype html>
@@ -90,10 +80,7 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
   <!--
   ## Basic usage
 
-  The `amp-consent` component allows to specify the required user consent for this page.
-  A CORS endpoints can be specified via the `checkConsentHref`
-  attribute. The `amp-consent` component will check via a POST request if the
-  consent UI needs to be shown. The response should look like this:
+  The `amp-consent` component allows to specify the required user consent for this page. A CORS endpoints can be specified via the `checkConsentHref` attribute. The `amp-consent` component will check via a POST request if the consent UI needs to be shown. The response should look like this:
 
   ```json
   {
@@ -101,15 +88,13 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
   }
   ```
 
-  It is possible, to re-trigger the consent dialog using the `myConsent.prompt()` action. One use case for this is giving users the option
-  to change their settings after consent dialog has been dismissed. For this to work, the post consent UI needs to be specified in the
-  `amp-consent` JSON config: `"promptUI": "consentDialog"`.
+  It is possible, to re-trigger the consent dialog using the `myConsent.prompt()` action. One use case for this is giving users the option to change their settings after consent dialog has been dismissed. For this to work, the post consent UI needs to be specified in the `amp-consent` JSON config: `"promptUI": "consentDialog"`.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
       "consents": {
             "consent1": {
-              "checkConsentHref": "<% hosts.platform %>/samples_templates/consent/getConsent",
+              "checkConsentHref": "<% hosts.backend %>/samples_templates/consent/getConsent",
               "promptUI": "consentDialog"
             }
           },
@@ -123,7 +108,7 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
         <p>This is some more information about this choice. Here's a list of items related to this choice.</p>
         <amp-list height="132"
                   layout="fixed-height"
-                  src="/json/consent-items.json">
+                  src="/static/samples/json/consent-items.json">
           <template type="amp-mustache">
             <li>{{.}}</li>
           </template>
@@ -143,7 +128,7 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
 
     Here is an image which is blocked until consent is given:
   -->
-  <amp-img data-block-on-consent src="/img/landscape_lake_300x201.jpg" width="300" height="201">
+  <amp-img data-block-on-consent src="/static/samples/img/landscape_lake_300x201.jpg" width="300" height="201">
   </amp-img>
 
   <!--

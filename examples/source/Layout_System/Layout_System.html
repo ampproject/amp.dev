@@ -6,7 +6,7 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
 --->
 
 <!--
-  #### Introduction
+  ## Introduction
 
   There are a number of tools in AMP and CSS to make responsive documents.
 
@@ -103,7 +103,7 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
       <button on="tap:AMP.setState({sizeClass: 'double'})">Double size</button>
     </div>
   </div>
-    <!-- #### fill
+    <!-- ## fill
     The layout="fill" attribute value indicates that the element should fill the space within the parent that it can, based on the space provided by the parent, and the space allocated to siblings. Width and height are not used with fill layouts. For an element to fill its parent container, ensure the parent container specifies `position:relative` or `position:absolute`.
   -->
   <div>
@@ -114,7 +114,7 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
     </div>
   </div>
 
-  <!-- #### responsive
+  <!-- ## responsive
     AMP HTML has a number of different layout types.  The most common of these is the responsive layout attribute value.
 
     When an element is given a height, width, and the layout="responsive" attribute value, it will use the height and width to calculate an aspect ratio, and responsively scale the element's box to match the width of the parent element.
@@ -134,13 +134,13 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
   <div>
     <div class="square" [class]="['square', deviceClass, sizeClass].join(' ')"><amp-img width="300" height="200" layout="responsive" src="/static/samples/img/amp.jpg"></amp-img></div>
   </div>
-  <!-- #### nodisplay
+  <!-- ## nodisplay
    Some elements, such as amp-font and amp-install-serviceworker, only support the nodisplay type.  These elements do not require space to be allocated on the page for their rendering.
   -->
   <div>
     <div class="square" [class]="['square', deviceClass, sizeClass].join(' ')"><amp-install-serviceworker src="/sw.js" data-iframe-src="https://ampbyexample.com/sw.html" layout="nodisplay"></amp-install-serviceworker></div>
   </div>
-  <!-- #### fixed
+  <!-- ## fixed
     The layout="fixed" attribute value indicates that the element should fit to the size its given (300x200).
   -->
   <div>
@@ -160,7 +160,7 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
   <div>
     <div class="square" [class]="['square', deviceClass, sizeClass].join(' ')"><amp-img width="500" height="200" layout="fixed" src="/static/samples/img/amp.jpg"></amp-img></div>
   </div>
-  <!-- #### fixed-height
+  <!-- ## fixed-height
     The layout="fixed-height" attribute value indicates that the element should fill to the width that it's given, but remain at a fixed height.
     As the width is disregarded in fixed-height, it can only be set to "auto" (or not set at all).
   -->
@@ -186,7 +186,7 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
   <div>
     <div class="square" [class]="['square', deviceClass, sizeClass].join(' ')"><amp-img height="500" layout="fixed-height" src="/static/samples/img/amp.jpg"></amp-img></div>
   </div>
-  <!-- #### flex-item
+  <!-- ## flex-item
     The layout="flex-item" attribute value is similar to the layout="fill" attribute value, except that it is used in a flexbox model.
     For these examples, I've created a parent flex box container inside of the fixed-size square.  The children in that container will expand in a row (horizontally) and will wrap if the size exceeds the width given.
   -->
@@ -195,7 +195,7 @@ teaserImage: '/static/samples/img/teaser/layout_system.jpg'
     <amp-img layout="flex-item" src="/static/samples/img/amp.jpg"></amp-img>
     </div></div>
   </div>
-  <!-- #### container
+  <!-- ## container
     The layout="container" attribute value indicates that the element has no intrisic space needs of its own, and that it's size should be determined by the needs of its children.  This is functionally equivalent to the default behavior of the "div" tag in HTML5.
     Use cases include amp-accordion, amp-live-list, and other tags whose content is determined by its children.
   -->
