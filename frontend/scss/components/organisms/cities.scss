@@ -60,13 +60,9 @@
     border-bottom: 1px solid color('gallery');
 
     &-list {
-
-      @media (min-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
-        grid-gap: 10px;
-        margin: 20px 0 60px;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0 60px;
     }
 
     &-checkback {
