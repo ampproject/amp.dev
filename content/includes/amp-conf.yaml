@@ -388,9 +388,9 @@ agenda:
       speakers:
         - aakashsahney
         - filipstanis
-    - title: "Maximize Yahoo Japan’s UX with AMP and Signed Exchange"
+    - title: "Maximize Yahoo Japan’s UX with AMP and Signed HTTP Exchanges"
       time: "1430"
-      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed Exchange both as a platform and a publisher. The session will walk through the technical details on how Yahoo Japan integrated the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
+      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platform and a publisher. The session will walk through the technical details on how Yahoo Japan integrated the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
       type: session
       speakers:
         - hirohitokomada
