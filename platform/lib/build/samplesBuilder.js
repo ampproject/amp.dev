@@ -85,12 +85,21 @@ class SamplesBuilder {
       del.sync([
         `${MANUAL_DEST}/**/*.json`,
         `${MANUAL_DEST}/**/*.html`,
+
+        // Also clean old structure
+        utils.project.absolute(`/pages/${POD_PATH}/../**/*`),
+        '!' + utils.project.absolute(`/pages/${POD_PATH}/../`),
+        '!' + utils.project.absolute(`/pages/${POD_PATH}/../_blueprint.yaml`),
+        '!' + utils.project.absolute(`/pages/${POD_PATH}/../index.html`),
+        '!' + utils.project.absolute(`/pages/${POD_PATH}`),
+        '!' + utils.project.absolute(`/pages/${POD_PATH}/_blueprint.yaml`),
+
         `${SOURCE_DEST}`,
         `${PREVIEW_DEST}`,
         `${EMBED_DEST}`,
         CACHE_DEST,
       ], {
-        'force': true,
+        'force': true
       });
     }
 
