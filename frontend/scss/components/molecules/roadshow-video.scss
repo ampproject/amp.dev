@@ -1,0 +1,41 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+
+.#{utility('stage')} {
+  .#{organism('stage')} {
+
+    &-content {
+      grid-column: 3 / 12;
+    }
+  }
+}
+
+.#{molecule('stage-video')} {
+  grid-column: 1 / -1;
+  position: absolute;
+  left: 60px;
+  width: 80%;
+  max-width: 360px;
+
+  @media (min-width: 768px) {
+    grid-column: 13 / 24;
+    margin-top: -100%;
+    position: relative;
+    left: 0;
+    width: 100%;
+    max-width: 100%;;
+  }
+  @media (min-width: 1024px) {
+    margin-top: -70%;
+  }
+
+  &-block {
+    @include roadshow-video-shadow;
+    margin: 50px 0;
+    width: 100%;
+  }
+
+}

@@ -52,6 +52,10 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	box-shadow: 0 25px 25px 0 rgba(0,0,0,0.15);
 }
 
+@mixin  roadshow-video-shadow {
+  box-shadow: 0 15px 50px 0 rgba(0,0,0,0.50);
+}
+
 @mixin turbo-pizazz {
 	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
 }
