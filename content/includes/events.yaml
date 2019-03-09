@@ -13,33 +13,51 @@ past:
   cta@: More Past Events
 
 upcoming_events:
-  - type: Event
-    title: AMP Roadshow Bangalore
-    href: https://events.withgoogle.com/amp-roadshow-bangalore/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: October 24, 2018
-    event_time: 20180911/20180912
-    event_time_text: Oct 24
-    location: Bangalore, India
-    participant: Developers
-  - type: Event
-    title: AMP Roadshow Mumbai
-    href: https://events.withgoogle.com/amp-roadshow-mumbai/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: October 27, 2018
-    event_time: 20180911/20180912
-    event_time_text: Oct 27
-    location: Mumbai, India
-    participant: Developers
-  - type: Event
-    title: AMP Roadshow Gurgaon
-    href: https://events.withgoogle.com/amp-roadshow-gurgaon/
-    excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
-    date: October 30, 2018
-    event_time: 20180911/20180912
-    event_time_text: Oct 30
-    location: Gurgaon, India
-    participant: Developers
+- type: Event
+  title: AMP Roadshow Johannesburg
+  href: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
+  excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+  date: March 11, 2019
+  event_time: 20190311/20190312
+  event_time_text: March 11th
+  location: Johannesburg, South Africa
+  participant: Developers
+- type: Event
+  title: AMP Roadshow Cape Town
+  href: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
+  excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+  date: March 14, 2019
+  event_time: 20190314/20190315
+  event_time_text: March 14th
+  location: Cape Town, South Africa
+  participant: Developers
+- type: Event
+  title: AMP Roadshow Lagos
+  href: https://events.withgoogle.com/amp-roadshow-nigeria/
+  excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+  date: March 19, 2019
+  event_time: 20190319/20190320
+  event_time_text: March 19th
+  location: Lagos, Nigeria
+  participant: Developers
+- type: Event
+  title: AMP Roadshow Nairobi
+  href: https://events.withgoogle.com/amp-roadshow-kenya/
+  excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+  date: March 11, 2019
+  event_time: 20190322/20190323
+  event_time_text: March 22nd
+  location: Nairobi, Kenya
+  participant: Developers
+- type: Event
+  title: AMP Conf 2019
+  href: https://www.ampproject.org/amp-conf/
+  excerpt: "The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers! We can't wait to meet you!"
+  date: April 17th & 18th, 2019
+  event_time: 20190417/20190418
+  event_time_text: April 17th
+  location: Tokyo, Japan 
+  participant: Everyone
 
 # past_events:
 #   - type: Event
@@ -141,3 +159,30 @@ upcoming_events:
 #     event_time_text: Jun.4 at 8:00PM
 #     location: San Francisco
 #     participant: Developers
+# - type: Event
+#   title: AMP Roadshow Bangalore
+#   href: https://events.withgoogle.com/amp-roadshow-bangalore/
+#   excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+#   date: October 24, 2018
+#   event_time: 20180911/20180912
+#   event_time_text: Oct 24
+#   location: Bangalore, India
+#   participant: Developers
+# - type: Event
+#   title: AMP Roadshow Mumbai
+#   href: https://events.withgoogle.com/amp-roadshow-mumbai/
+#   excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+#   date: October 27, 2018
+#   event_time: 20180911/20180912
+#   event_time_text: Oct 27
+#   location: Mumbai, India
+#   participant: Developers
+# - type: Event
+#   title: AMP Roadshow Gurgaon
+#   href: https://events.withgoogle.com/amp-roadshow-gurgaon/
+#   excerpt: "Come join the AMP team for a free, inclusive, full-day dev workshop with a packed agenda. Learn more about the AMP Roadshow <a href='/amp-roadshow'>here</a>."
+#   date: October 30, 2018
+#   event_time: 20180911/20180912
+#   event_time_text: Oct 30
+#   location: Gurgaon, India
+#   participant: Developers
