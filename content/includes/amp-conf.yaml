@@ -306,7 +306,7 @@ agenda:
       speakers:
         - tommykang
         - jinhyoungkil
-    - title: "No power, no internet, no government: How AMP helps in Iraq and war-impacted regions"
+    - title: "No power, no internet, no support: How AMP helps in Iraq and war-impacted regions"
       description: "At the fringes of conventional considerations, users in war-impacted regions face restrictive app policies, incompatible u.x. assumptions, limited bandwidth, and little or no household electricity. AMP provides a toolkit to implement app-like, mobile-friendly, and quick-loading experiences that connect with users on the far side the “app gap” of access, infrastructure, and design. Gain a practical understanding of this poorly understood but highly impactful facet of design and implementation."
       time: "1630"
       type: session
