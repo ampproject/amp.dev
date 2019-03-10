@@ -1,66 +1,61 @@
 {% do doc.styles.addCssFile('css/components/organisms/case-grid.css') %}
 
+{% set cases = [
+  {
+    'index': 1,
+    'headline': _('Too much choice'),
+    'url': 'https://amp-article.herokuapp.com/',
+    'img': {
+      'src': '/static/img/case-grid-choices.jpg', 'width': 744, 'height': 818
+    }
+  },
+  {
+    'index': 3,
+    'headline': _('Parallax Storytelling in AMP'),
+    'url': 'https://amp-article.herokuapp.com/',
+    'img': {
+      'src': '/static/img/case-grid-data.jpg', 'width': 936, 'height': 686
+    }
+  },
+  {
+    'index': 2,
+    'headline': _('Editorial AMP Article'),
+    'url': 'https://amp-article.herokuapp.com/',
+    'img': {
+      'src': '/static/img/case-grid-education.jpg', 'width': 1004, 'height': 662
+    }
+  },
+  {
+    'index': 4,
+    'headline': _('Band Page in AMP'),
+    'url': 'https://amp-concert.herokuapp.com/',
+    'img': {
+      'src': '/static/img/case-grid-band.jpg', 'width': 1072, 'height': 920
+    }
+  }
+] %}
+
+{% do doc.icons.useIcon('icons/external.svg') %}
+
 <div class="ap-o-case-grid">
-  <div class="ap-o-case-grid-image ap-o-case-grid-image-4">
-    <a target="_blank" rel="noopener" href="https://amp-article.herokuapp.com/">
+  {% for case in cases %}
+  <div class="ap-o-case-grid-image ap-o-case-grid-image-{{ case.index }}">
+    <a target="_blank" rel="noopener" href="{{ case.url }}">
       <div class="ap-o-case-grid-image-info">
-        <h4>Too Much Choice</h4>
+        <h4>{{ case.headline }}</h4>
         <span class="ap-m-lnk">
           <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Open Use Case</span>
+          <span class="ap-m-lnk-text">{{ _('Open Use Case') }}</span>
         </span>
       </div>
-      <amp-img class="ap--media" src="/static/img/case-grid-choices.jpg" layout="responsive" width="744" height="818"></amp-img>
+      <amp-img class="ap--media" src="{{ case.img.src }}.webp" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
+        <amp-img fallback class="ap--media" src="{{ case.img.src }}" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
+      </amp-img>
     </a>
   </div>
-  <div class="ap-o-case-grid-image ap-o-case-grid-image-3">
-    <a target="_blank" rel="noopener" href="https://amp-article.herokuapp.com/">
-      <div class="ap-o-case-grid-image-info">
-        <h4>Parallax Storytelling in AMP</h4>
-        <span class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">Open Use Case</span>
-        </span>
-      </div>
-      <amp-img class="ap--media" src="/static/img/case-grid-data.jpg" layout="responsive" width="936" height="686"></amp-img>
-    </a>
-  </div>
-  <div class="ap-o-case-grid-image ap-o-case-grid-image-2">
-    <a target="_blank" rel="noopener" href="https://amp-article.herokuapp.com/">
-      <div class="ap-o-case-grid-image-info">
-        <h4>Editorial AMP Article</h4>
-        <span class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">Open Use Case</span>
-        </span>
-      </div>
-      <amp-img class="ap--media" src="/static/img/case-grid-education.jpg" layout="responsive" width="1004" height="662"></amp-img>
-    </a>
-  </div>
-  <div class="ap-o-case-grid-image ap-o-case-grid-image-1">
-    <a target="_blank" rel="noopener" href="https://amp-concert.herokuapp.com/">
-      <div class="ap-o-case-grid-image-info">
-        <h4>Band Page in AMP</h4>
-        <span class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">Open Use Case</span>
-        </span>
-      </div>
-      <amp-img class="ap--media" src="/static/img/case-grid-band.jpg" layout="responsive" width="1072" height="920"></amp-img>
-    </a>
-  </div>
+  {% endfor %}
 
   <div class="ap-o-case-grid-link">
     <a href="{{ g.doc('/content/amp-dev/about/use-cases.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
@@ -68,7 +63,7 @@
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">See all use cases</span>
+      <span class="ap-m-lnk-text">{{ _('See all use cases') }}</span>
     </a>
   </div>
 </div>
