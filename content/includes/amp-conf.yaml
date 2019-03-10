@@ -324,8 +324,8 @@ agenda:
         - crystallambert
         - yusukeutsunomiya
       description: Welcome back to day two!
-    - title: "Keynote: AMP in Advertising"
-      description: "Using AMP for creating display ads began as a hobby but now more than 100,000 ads created in AMP are served on the web every second, every day. We'll give you a roundup of AMPHTML ads, how they have evolved beyond serving just AMP pages and a review of where we are with advertising on AMP pages."
+    - title: "Advertising & AMP: Driving ROI with speed"
+      description: "AMP was developed first for web pages but we've found a number of those principles apply well for the advertising ecosystem. In this session, we'll talk about all the various ways AMP is being used for advertising, driving better return on investment (ROI)."
       time: "0915"
       type: keynote
       speakers: 
