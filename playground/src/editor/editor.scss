@@ -18,7 +18,6 @@
   background: linear-gradient(45deg, #48525c, #101923);
   pre {
     @include txt-mono;
-    font-weight: 700;
     line-height: 1.25em;
     font-size: 1.25em;
   }
@@ -94,7 +93,7 @@ li.CodeMirror-hint-active {
   display: none;
 }
 
-.gutter-error:hover > span, 
+.gutter-error:hover > span,
 .gutter-warning:hover > span {
   @include txt;
   border-radius: 8px;
