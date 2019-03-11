@@ -31,19 +31,26 @@ section_links:
         </div>
       </div>
     </div>
-    {% include 'views/partials/roadshow-video.j2' %}
+    {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
+    <div class="ap-m-roadshow-video">
+      <div class="ap-m-roadshow-video-block">
+        <amp-youtube data-videoid="5OnSrGU5TsE" layout="responsive" height="9" width="16"></amp-youtube>
+      </div>
+    </div>
 </section>
 
 <section class="ap--container">
   {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
+
   <div class="ap-o-jumpto">
     <div class="ap--container">
       <div class="ap-o-jumpto-content">
         <p class="ap-o-jumpto-text">Jump To:</p>
         <ul class="ap-o-jumpto-list">
           {% for link in doc.section_links %}
-            <li class="ap-o-jumpto-list-item">
-              <a href="#{{ link }}"class="ap-o-jumpto-list-item-link">{{ link }}</a>
+            <li class="ap-m-jumpto-item">
+              <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -70,7 +77,7 @@ section_links:
       <div class="ap-o-cities-next-events">
         <div class="ap-o-cities-next-events-list">
 
-        {% for nextstop in doc.roadshow.nextstops %}
+        {% for nextstop in doc.roadshow.nextstop %}
           <div class="ap-m-event">
             <div class="ap-m-event-content ap-m-event-content-date">
               <div class="ap-m-event-content-date-year">{{nextstop.year}}</div>
