@@ -32,11 +32,11 @@ const config = require('@lib/config.js');
 const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 
 // Where to import the samples from
-const SAMPLE_SRC = path.join(__dirname, '../../../examples/source/**/*.html');
+const SAMPLE_SRC = utils.project.absolute('examples/source');
 // The pod path inside
 const POD_PATH = 'content/amp-dev/documentation/examples/documentation';
 // Where to store the samples inside the Grow pod in
-const MANUAL_DEST = path.join(__dirname, `../../../pages/${POD_PATH}`);
+const MANUAL_DEST = utils.project.absolute(`pages/${POD_PATH}`);
 // What Grow template to use to render the sample's manual
 const MANUAL_TEMPLATE = '/views/examples/documentation.j2';
 // What template to use to render the preview
@@ -49,13 +49,13 @@ const PREVIEW_TEMPLATES = {
 // Base to define the request path for Grow
 const PATH_BASE = '/documentation/examples';
 // Path to store the cache in
-const CACHE_DEST = path.join(__dirname, '../../../.cache/examples.json');
+const CACHE_DEST = utils.project.absolute('.cache/examples.json');
 // Path the all source files are written to, to vend them via express
-const SOURCE_DEST = path.join(__dirname, '../../../dist/examples/sources');
+const SOURCE_DEST = utils.project.absolute('dist/examples/sources');
 // Where to store the sample preview files with header
-const PREVIEW_DEST = path.join(__dirname, '../../../dist/examples/previews');
+const PREVIEW_DEST = utils.project.absolute('dist/examples/previews');
 // Where to store the embeds for Grow
-const EMBED_DEST = path.join(__dirname, '../../../dist/examples/embeds');
+const EMBED_DEST = utils.project.absolute('dist/examples/embeds');
 // The API host used by samples depending on one
 const API_HOST = 'https://amp-by-example-api.appspot.com';
 // The host used for samples depending on a backend
@@ -110,7 +110,7 @@ class SamplesBuilder {
     this._log.start('Starting to build samples ...');
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(SAMPLE_SRC, {'read': true});
+      let stream = gulp.src(`${SAMPLE_SRC}/**/*.html`, {'read': true});
 
       // Only build samples changed since last run and if it's not a fresh build
       if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
@@ -127,9 +127,6 @@ class SamplesBuilder {
             callback();
             return;
           }
-
-          // Remove double name from path to flatten structure for Grow
-          sample.path = sample.path.replace(`${sample.stem}/`, '/');
 
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
@@ -154,6 +151,9 @@ class SamplesBuilder {
       }));
 
       stream.pipe(gulp.dest((file) => {
+        // Remove double name from path to flatten structure for Grow
+        file.dirname = `${SAMPLE_SRC}`;
+
         if (file.isSourceFile) {
           return SOURCE_DEST;
         } else if (file.isPreview) {
@@ -183,9 +183,11 @@ class SamplesBuilder {
    * @return {Promise}
    */
   async _parseSample(sample) {
+    let platformHost = config.getHost(config.hosts.platform);
     return await abe.parseSample(sample.path, {
+      'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'hosts': {
-        'platform': config.getHost(config.hosts.platform),
+        'platform': platformHost,
         'api': API_HOST,
         'backend': BACKEND_HOST,
       }
@@ -195,7 +197,7 @@ class SamplesBuilder {
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
 
       // Add the delivery path of the manual for preview rendering
-      parsedSample.route = this._getDocumentationRoute(sample, parsedSample);
+      parsedSample.route = this._getDocumentationRoute(sample);
 
       // Rewrite some markdown to be consumable by Grow
       for (const index in parsedSample.document.sections) {
@@ -238,13 +240,25 @@ class SamplesBuilder {
   }
 
   /**
+   * Parses the category from a sample path which is the first level
+   * directory name after the base path
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @return {String}       The category
+   */
+  _getCategory(sample) {
+    let category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
+    category = category.split('/')[0];
+    return category;
+  }
+
+  /**
    * Takes the path of the sample vinyl and creates a server relative URL
    * to use for routing and source canonical
    * @param  {Vinyl} sample The sample from the gulp stream
    * @return {String}       The route
    */
-  _getDocumentationRoute(sample, parsedSample) {
-    return `${PATH_BASE}/${parsedSample.document.metadata.category}/${sample.stem.toLowerCase()}`;
+  _getDocumentationRoute(sample) {
+    return `${PATH_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
   }
 
   /**
@@ -265,14 +279,14 @@ class SamplesBuilder {
         '$$injectAmpDependencies': false,
         '$title': parsedSample.document.title,
         '$view': MANUAL_TEMPLATE,
-        '$category': parsedSample.document.metadata.category || null,
-        '$path': this._getDocumentationRoute(sample, parsedSample),
+        '$category': this._getCategory(sample) || null,
+        '$path': this._getDocumentationRoute(sample),
         '$localization': {
-          '$path': `/{locale}${this._getDocumentationRoute(sample, parsedSample)}`
+          '$path': `/{locale}${this._getDocumentationRoute(sample)}`
         }
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
-      'example: !g.json /' + POD_PATH + '/' + manual.relative.replace('.html', '.json'),
+      `example: !g.json /${POD_PATH}/${manual.stem}.json`,
       // ... and some additional information that is used by the example teaser
       this._getTeaserData(parsedSample),
       '---',
@@ -357,7 +371,8 @@ class SamplesBuilder {
 
     // Keep the full sample for the big playground
     const fullSource = sample.clone();
-    fullSource.dirname = `${fullSource.dirname}/${parsedSample.document.metadata.category}`;
+    fullSource.contents = Buffer.from(parsedSample.source);
+    fullSource.dirname = `${fullSource.dirname}/${this._getCategory(sample)}`;
     fullSource.isSourceFile = true;
 
     sources.push(fullSource);
@@ -415,7 +430,7 @@ class SamplesBuilder {
       const template = this._templates[this._getSampleFormat(parsedSample)];
 
       const embed = sample.clone();
-      embed.dirname = `${embed.dirname}/${parsedSample.document.metadata.category}`;
+      embed.dirname = `${embed.dirname}/${this._getCategory(sample)}`;
       embed.isEmbed = true;
       embed.contents = Buffer.from(handlebars.render(
           template, Object.assign({'isEmbed': true}, parsedSample)));
@@ -441,7 +456,7 @@ class SamplesBuilder {
     // Determine the template needed for that specific sample
     const template = this._templates[this._getSampleFormat(parsedSample)];
     const preview = sample.clone();
-    preview.dirname = `${preview.dirname}/${parsedSample.document.metadata.category}`;
+    preview.dirname = `${preview.dirname}/${this._getCategory(sample)}`;
 
     // Set flag to determine correct output location
     preview.isPreview = true;
