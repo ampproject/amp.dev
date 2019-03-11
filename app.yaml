@@ -1,9 +1,4 @@
-runtime: nodejs
+runtime: custom
 env: flex
-
-instance_class: B4_1G
-manual_scaling:
-  instances: 2
-
-network:
-  instance_tag: default-service
+env_variables:
+  APP_PORT: '8080'

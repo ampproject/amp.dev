@@ -29,7 +29,7 @@ limitations under the License.
 Many AMP components and extensions take advantage of remote endpoints by using
 Cross-Origin Resource Sharing (CORS) requests.  This document explains the key
 aspects of using CORS in AMP.  To learn about CORS itself, see the
-[W3 CORS Spec](https://www.w3.org/TR/cors/).
+[W3 CORS Spec](https://www.w3.org/TR/cors/). 
 
 <div class="noshowtoc">
 
@@ -54,22 +54,22 @@ aspects of using CORS in AMP.  To learn about CORS itself, see the
 
 You might be confused as to why you'd need CORS for requests to your own origin,
 let's dig into that.
-
+ 
 AMP components that fetch dynamic data (e.g., amp-form, amp-list, etc.) make
 CORS requests to remote endpoints to retrieve the data.  If your AMP page
 includes such components, you'll need to handle CORS so that those requests do
 not fail.
-
+ 
 Let's illustrate this with an example:
-
+ 
 Let's say you have an AMP page that lists products with prices. To update the
 prices on the page, the user clicks a button, which retrieves the latest prices
 from a JSON endpoint (done via the amp-list component). The JSON is on your
 domain.
-
+ 
 Okay, so the page is *on my domain* and the JSON is *on my domain*.  I see no
 problem!
-
+ 
 Ah, but how did your user get to your AMP page?  Is it a cached page they
 access? It's quite likely that your user did not access your AMP page directly,
 but instead they discovered your page through another platform. For example,
@@ -87,7 +87,7 @@ cross-origin requests, you need to handle CORS, otherwise, the request fails.
 </amp-img>
 
 **Okay, what should I do?**
-
+ 
 1.  For AMP pages that fetch dynamic data, make sure you test the cached version
     of those pages; *don't just test on your own domain*. (See [Testing CORS in AMP](#testing-cors-in-amp) section below)
 2.  Follow the instructions in this document for handling CORS requests and
@@ -99,14 +99,14 @@ cross-origin requests, you need to handle CORS, otherwise, the request fails.
 Most AMP components that use CORS requests either automatically set the
 [credentials mode](https://fetch.spec.whatwg.org/#concept-request-credentials-mode)
 or allow the author to optionally enable it. For example, the
-[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})
+[`amp-list`](https://www.ampproject.org/docs/reference/components/amp-list)
 component fetches dynamic content from a CORS JSON endpoint, and allows the
 author to set the credential mode through the `credentials` attribute.
 
 *Example: Including personalized content in an amp-list via cookies*
 
 [sourcecode:html]
-{% raw %}<amp-list credentials="include"
+{% raw %}<amp-list credentials="include" 
     src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
   <template type="amp-mustache">
     Your personal offer: ${{price}}
@@ -140,9 +140,9 @@ If you're using Node in your backend, you can use the [AMP CORS middleware](http
 ### Verify CORS requests
 
 When your endpoint receives a CORS request:
-
+ 
 1. [Verify that the CORS <code>Origin</code> header is an allowed origin (publisher's origin + AMP caches)](#verify-cors-header).
-2.  [If there isn't an Origin header, check that the request is from the same origin (via `AMP-Same-Origin`)](#allow-same-origin-requests).
+2.  [If there isn't an Origin header, check that the request is from the same origin (via `AMP-Same-Origin`)](#allow-same-origin-requests). 
 3.  [If the request is a state change (e.g., POST), check that the origin is from the source origin (via `__amp_source_origin`)](#restrict-requests-to-source-origins).
 
 
@@ -172,7 +172,7 @@ For information on AMP Cache URL formats, see these resources:
 <span id="allow-same-origin-requests"></span>
 
 For same-origin requests where the `Origin` header is missing, AMP sets the
-following custom header:
+following custom header: 
 
 [sourcecode:text]
 AMP-Same-Origin: true
@@ -187,16 +187,16 @@ that contain the `AMP-Same-Origin:true` header.
 
 In all fetch requests, the AMP Runtime passes the `"__amp_source_origin"` query
 parameter, which contains the value of the source origin (for example,
-`"https://publisher1.com"`).
-
+`"https://publisher1.com"`). 
+ 
 To restrict requests to only source origins, check that the value of the
 `"__amp_source_origin"` parameter is within a set of the Publisher's own
-origins.
+origins. 
 
 ### Send CORS response headers
 
 After verifying the CORS request, the resulting HTTP response must contain the following headers:
-
+ 
 ##### Access-Control-Allow-Origin: &lt;origin&gt;
 
 This header is a <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> requirement, where <code>origin</code> refers to the requesting origin that was allowed via the CORS <code>Origin</code> request header (for example, <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
@@ -223,27 +223,27 @@ Perform these validation checks *before* you process the request. This validatio
 
 [/tip]
 
-
+ 
 Before processing requests that could change the state of your system (for
 example, a user subscribes to or unsubscribes from a mailing list), check the
 following:
 
 **If the `Origin` header is set**:
-
+ 
 1.  If the origin does not match one of the following values, stop and return an error
     response:
     - `*.ampproject.org`
     - `*.amp.cloudflare.com`
     - the publisher's origin (aka yours)
-
+    
     where `*` represents a wildcard match, and not an actual asterisk ( * ).
-
+    
 2.  If the value of the `__amp_source_origin` query parameter is not the
     publisher's origin, stop and return an error response.
-3.  If the two checks above pass, process the request.
+3.  If the two checks above pass, process the request. 
 
 **If the `Origin` header is NOT set**:
-
+ 
 1.  Verify that the request contains the `AMP-Same-Origin: true` header. If the
     request does not contain this header, stop and return an error response.
 2.  Otherwise, process the request.
@@ -416,7 +416,7 @@ When you are testing your AMP pages, make sure to include tests from the cached 
 
 To ensure your cached AMP page renders and functions correctly:
 
-1.  From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_Google_AMP_Cache.html', locale=doc.locale).url.path}}).
+1.  From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on AMP By Example](https://ampbyexample.com/advanced/using_the_google_amp_cache/).
 
     For example:
     * URL: `https://www.ampproject.org/docs/tutorials/create.html`
