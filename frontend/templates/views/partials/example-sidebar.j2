@@ -20,7 +20,7 @@
                 <div class="nav-link">
                   <span>{{ category }}</span>
                 </div>
-                <input class="nav-trigger" type="checkbox" checked>
+                <input class="nav-trigger" type="checkbox" {% if doc.category == category %}checked{% endif %}>
                 <div class="nav-icon">
                   <svg class="ap-a-ico">
                     <use xlink="http://www.w3.org/1999/xlink" href="#angle-down-solid"></use>
