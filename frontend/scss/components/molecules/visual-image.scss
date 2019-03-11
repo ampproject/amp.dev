@@ -53,7 +53,7 @@ include the amp-img components.
   &-code-small {
     grid-column: 4 / 6;
     grid-row: 5 / 8;
-    
+
     .#{molecule('code-snippet')} {
       @include txt-3;
     }

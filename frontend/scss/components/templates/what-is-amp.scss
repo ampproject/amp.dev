@@ -7,11 +7,6 @@
 ### INFO:
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
@@ -29,6 +24,11 @@
 @import '../organisms/kpi-list.scss';
 
 @import '../templates/_default.scss';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
 
 .#{template('what-is-amp')} {
 

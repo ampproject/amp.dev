@@ -20,10 +20,10 @@ parallax
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 .#{molecule('float-image')} {
 	display: grid;

@@ -7,10 +7,10 @@
 ### INFO:
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
@@ -19,25 +19,25 @@
 @import '../templates/_default.scss';
 
 .#{template('guide')} {
-  
+
   .#{utility('container')} {
     @include container;
   }
-  
+
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
     background: color('whisper');
   }
-  
+
   .#{utility('sidebar')} {
     @include sidebar;
   }
-  
+
   .#{utility('toc')} {
     @include toc;
   }
-  
+
   .#{utility('sidebar')} + .#{utility('content')},
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;

@@ -1,11 +1,11 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
 
 @import '../atoms/_headline';
 @import '../atoms/_text';
 @import '../atoms/_icon';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 .#{utility('news')} {
   background: linear-gradient(30deg, #fff 30%, color('athens-gray') 100%);

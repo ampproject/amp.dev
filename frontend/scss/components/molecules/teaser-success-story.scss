@@ -8,10 +8,10 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import 'teaser';
 
@@ -54,7 +54,7 @@
 		      width: 110px;
 		      height: 30px;
 					margin-bottom: 1em;
-		      
+
 		      amp-img.contain img {
 		        object-fit: contain;
 		        object-position: left center;

@@ -1,12 +1,12 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
 @import '../atoms/_color.scss';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
 
 .#{utility('sampler')} {
   margin-bottom: 7em;

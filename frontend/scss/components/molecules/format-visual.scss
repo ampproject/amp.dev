@@ -17,10 +17,10 @@ There are specific files for each format, to keep css rendering low.
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/component-frame.scss';
 
@@ -127,7 +127,7 @@ There are specific files for each format, to keep css rendering low.
       font-size: 1.25vw;
       transform: translate(50%, -75px);
     }
-    
+
     .#{molecule('code-snippet')} {
       margin: 0;
       box-shadow: 15px 30px 45px -5px rgba(0, 0, 0, 0.25);

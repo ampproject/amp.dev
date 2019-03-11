@@ -1,10 +1,10 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
-@import './_text';
-@import './_color';
+@import '_text';
+@import '_color';
 
 a {
 	font-weight: bold;

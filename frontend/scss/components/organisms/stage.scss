@@ -1,7 +1,7 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_color.scss';
 @import '../atoms/_icon.scss';
@@ -93,7 +93,7 @@
       @include hl-xlrg;
       @include color-white;
       margin: 0;
-      
+
       br {
         @media (min-width: 768px) {
           display: none;

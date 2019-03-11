@@ -12,10 +12,10 @@ The filter-bubble molecule is a simple button used to filter content based on th
   currently no modifiers.
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 @import '../atoms/_text';
 
 .#{molecule('filter-bubble')} {

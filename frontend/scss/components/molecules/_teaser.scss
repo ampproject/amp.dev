@@ -11,15 +11,15 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-
 @import '../atoms/_color.scss';
 @import '../atoms/_headline.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
 
 @mixin teaser {
 	position: relative;

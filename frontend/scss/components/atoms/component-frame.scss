@@ -12,10 +12,10 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import 'components/atoms/_text.scss';
 @import 'components/atoms/_color.scss';

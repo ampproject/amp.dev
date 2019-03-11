@@ -25,10 +25,10 @@ read-on
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_text.scss';
 @import '../atoms/_icon.scss';
@@ -51,7 +51,7 @@ $borderSize: 5px;
   margin-bottom: 50px;
   background-color: color('white');
   filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
-  
+
   code {
     white-space: normal;
   }

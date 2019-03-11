@@ -20,12 +20,12 @@ example markup:
 
 */
 
-@import '../../extends';
-@import '../../mixins';
-@import '../../functions';
-@import '../../variables';
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
+@import 'extends';
+@import 'mixins';
+@import 'functions';
+@import 'variables';
 
 table {
   position: relative;

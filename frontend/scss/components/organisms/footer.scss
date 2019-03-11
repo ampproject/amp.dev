@@ -6,15 +6,15 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
-@import '../atoms/_headline.scss';
-@import '../atoms/_icon.scss';
+@import '_color.scss';
+@import '_text.scss';
+@import '_headline.scss';
+@import '_icon.scss';
 
 .#{utility('footer')} {
   padding: 3em 0 2em;
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     margin-left: auto;
-    
+
     @media (min-width: 1024px) {
       flex-direction: row;
     }
@@ -51,7 +51,7 @@
     &-title {
       margin: 3em 2em 1em 0;
       @include color-white;
-      
+
       @media (min-width: 768px) {
         margin: auto 2em auto 1em;
       }
@@ -137,7 +137,7 @@
   &-line-bottom {
     display: flex;
     padding-top: 4em;
-    
+
     @media (max-width: 767px) {
       flex-direction: column;
     }
@@ -166,7 +166,7 @@
     display: block;
     @include txt-2;
     @include txt-strong;
-    
+
     @media (min-width: 768px) {
       padding: 0 2em;
     }

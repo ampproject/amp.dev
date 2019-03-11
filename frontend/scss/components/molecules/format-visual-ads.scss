@@ -6,17 +6,17 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/component-frame.scss';
 
 .#{molecule('format-visual-ads')} {
   grid-template-columns: 12% auto 12%;
   grid-template-rows: 16fr auto 9fr;
-  
+
   .#{molecule('format-visual')} {
     &-top-image {
       @include component-frame-ads;

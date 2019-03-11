@@ -1,7 +1,7 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_headline.scss';
 
@@ -52,7 +52,7 @@
     amp-img {
       transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
-    
+
     &-info {
       width: 100%;
       padding: 0 2em;
@@ -65,7 +65,7 @@
       pointer-events: none;
       transform: translateY(10px);
       transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-      
+
       @media (max-width: 1023px) {
         display: none;
       }
@@ -77,7 +77,7 @@
 
       amp-img {
         box-shadow: 0 6.6vw 7vw 0 rgba(0, 0, 0, 0.5);
-        
+
         &:hover {
           box-shadow: 0 7.6vw 8vw 0 rgba(0, 0, 0, 0.4);
         }
@@ -90,7 +90,7 @@
 
       amp-img {
         box-shadow: 0 2.3vw 4.2vw -0.7vw rgba(0, 0, 0, 0.33);
-        
+
         &:hover {
           box-shadow: 0 3.3vw 5.2vw -0.7vw rgba(0, 0, 0, 0.23);
         }
@@ -108,7 +108,7 @@
 
       amp-img {
         box-shadow: 0 1.4vw 2.8vw 1.4vw rgba(0, 0, 0, 0.2);
-        
+
         &:hover {
           box-shadow: 0 2.4vw 3.8vw 1.4vw rgba(0, 0, 0, 0.1);
         }
@@ -121,7 +121,7 @@
 
       amp-img {
         box-shadow: 0 0.3vw 1vw 0 rgba(0, 0, 0, 0.2);
-        
+
         &:hover {
           box-shadow: 0 1.3vw 2vw 0 rgba(0, 0, 0, 0.1);
         }

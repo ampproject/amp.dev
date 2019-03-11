@@ -7,10 +7,10 @@
 ### INFO:
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
@@ -32,7 +32,7 @@
 
   .#{molecule('copy-center')} {
     grid-column: 8 / 18;
-    
+
     h3 {
       margin-top: 0;
     }
@@ -51,7 +51,7 @@
       margin-top: 0;
       margin-bottom: 0.5rem;
     }
-    
+
     &-copy {
       margin-top: 0;
       margin-bottom: 2em;

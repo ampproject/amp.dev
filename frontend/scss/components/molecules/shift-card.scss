@@ -1,7 +1,7 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_headline';
 @import '../atoms/_text';
@@ -16,7 +16,7 @@
   &-grid {
     grid-template-rows: 10px auto 100px;
   }
-  
+
   &-link {
     grid-column: 3 / 12;
 
@@ -38,7 +38,7 @@
   @media (min-width: 768px) {
     margin: 0;
   }
-  
+
   &-shadow {
     box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
   }
@@ -51,7 +51,7 @@
       box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
     }
   }
-  
+
   .#{molecule('ghost-frame-mobile')} {
     width: 100%;
     margin: auto;

@@ -7,14 +7,15 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
 
 @import '../atoms/_color.scss';
 @import '../atoms/_text.scss';
 @import '../atoms/_button.scss';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
 
 .#{organism('code-preview')} {
   position: relative;

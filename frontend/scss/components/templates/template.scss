@@ -7,10 +7,10 @@
 ### INFO:
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/_text.scss';
 @import '../atoms/_color.scss';
@@ -56,15 +56,15 @@
     @media (max-width: 767px) {
       margin-bottom: 50px;
     }
-    
+
     &-content {
       grid-column: 3 / 13;
-      
+
       @media (max-width: 767px) {
         margin-top: 18em;
         margin-bottom: 4em;
       }
-      
+
       @media (min-width: 1024px ){
         grid-column: 3 / 12;
       }

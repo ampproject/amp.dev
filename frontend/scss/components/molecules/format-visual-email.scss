@@ -6,17 +6,17 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/component-frame.scss';
 
 .#{molecule('format-visual-email')} {
   grid-template-columns: 5% auto 5%;
   grid-template-rows: 50fr auto 15fr;
-  
+
   .#{molecule('format-visual')} {
     &-top-image {
       @include component-frame-email;

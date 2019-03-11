@@ -6,21 +6,21 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import '../atoms/component-frame.scss';
 
 .#{molecule('format-visual-stories')} {
   grid-template-columns: 5% auto 5%;
   grid-template-rows: 17fr auto 7fr;
-  
+
   .#{molecule('format-visual')} {
     &-bottom-image {
       max-width: 11em;
-      
+
       @media (min-width: 768px) {
         max-width: 100%;
       }
@@ -30,7 +30,7 @@
       max-width: 12em;
       @include component-frame-stories;
       box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.05);
-      
+
       @media (min-width: 768px) {
         max-width: 100%;
       }

@@ -22,8 +22,8 @@ bevel-right
 @import '../../mixins';
 @import '../../variables';
 
-@import './_bevel.scss';
-@import './_color.scss';
+@import '_bevel.scss';
+@import '_color.scss';
 
 .#{atom('bevel')} {
   @include bevel;

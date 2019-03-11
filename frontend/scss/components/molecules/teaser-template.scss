@@ -8,10 +8,10 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
 @import 'teaser';
 
@@ -21,7 +21,7 @@
 
 		& > a {
 			@include teaser-linking;
-			
+
 			&:hover {
 				@include teaser-linking-hover;
 

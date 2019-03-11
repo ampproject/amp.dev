@@ -19,10 +19,10 @@
 @import '../molecules/quote';
 @import '../molecules/benefit';
 
-@import '../organisms/benefits-overview.scss';
-@import '../organisms/format-explainer.scss';
+@import 'benefits-overview.scss';
+@import 'format-explainer.scss';
 
-@import '../templates/_default.scss';
+@import '_default.scss';
 
 .#{template('home')} {
 
@@ -52,7 +52,7 @@
         @media (min-width: 1280px) {
           grid-column: 5 / 21;
         }
-        
+
         @media (min-width: 1920px) {
           margin-bottom: 28em;
         }
@@ -136,7 +136,7 @@
 
   .#{utility('shift-cards')} {
     background: color('whisper');
-    
+
     &-grid {
       grid-template-rows: 100px auto 100px;
     }
