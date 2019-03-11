@@ -1,0 +1,125 @@
+/*
+
+#######################
+### MOLECULE: event ###
+#######################
+
+### INFO:
+
+The event molecule is a combination of icon, headline and text atoms. The event molecule also creates a list for the event details (location, registration).
+Positioning of the atoms (eg. padding, margin) are defined in this style sheet.
+The size of the icon should be 1 (xsmall) and text should be 2 (small).
+
+### MODIFIERS:
+
+none
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_icon.scss';
+
+
+
+.#{molecule('event')} {
+  @include roadshow-event-shadow;
+  display: flex;
+  background-color: color('white');
+  margin: 10px 0;
+  padding: 20px 30px;
+  min-width: 100%;
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+    min-width: 350px;
+    margin: 20px;
+    margin-left: 0;
+  }
+
+	&-date {
+		text-align: right;
+
+		span:last-child {
+			display: block;
+			line-height: 1.4em;
+		}
+	}
+
+	&-content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    &-date {
+      padding-right: 30px;
+
+      &-month-day {
+        margin-top: auto;
+
+        & p {
+          margin: 0;
+        }
+      }
+
+      & > * {
+        @include txt;
+        @include txt-font-accent;
+        @include txt-lrg;
+        @include txt-strong;
+        @include color-black;
+        @include txt-uppercase;
+      }
+
+      &-year {
+        color: fade_out(color('black'), 0.8);
+      }
+
+    }
+
+    &-city {
+      @include txt;
+      @include txt-font-accent;
+      @include txt-lrg;
+      @include txt-strong;
+      @include txt-uppercase;
+      @include txt-hl;
+      @include color-blue-ribbon;
+
+      margin-bottom: 0.5em;
+    }
+
+    &-details {
+
+      &-time {
+        @include txt;
+        @include txt-3;
+
+        display: inline-flex;
+        align-items: center;
+        line-height: 1.4rem;
+      }
+
+      &-location {
+        @include txt;
+        @include txt-3;
+
+        display: inline-flex;
+        align-items: center;
+        line-height: 1.4rem;
+      }
+
+      &-icon {
+        @include ico;
+        @include ico-1;
+
+        margin-right: 5px;
+      }
+    }
+	}
+}
