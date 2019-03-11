@@ -62,9 +62,10 @@ section_links:
 <section id="Cities" class="ap--container">
   {% do doc.styles.addCssFile('css/components/organisms/cities.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/event.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/visited-city.css') %}
 
   <div class="ap-o-cities">
-    <span class="ap-o-cities-headline">Cities</span>
+    <h3 class="ap-o-cities-headline">Cities</h3>
     <div class="ap-m-jumbo ap-m-jumbo-cities">
       <div class="ap-a-ico">
         {% do doc.icons.useIcon('/icons/cities-map.svg') %}
@@ -110,14 +111,14 @@ section_links:
         <span class="ap-o-cities-next-events-checkback">Your city not on the list? Check back soon for additional dates and cities.</span>
       </div>
 
-      <span class="ap-o-cities-sub-headline">Where we've been</span>
+      <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
       <ul class="ap-o-cities-visited-list">
 
         {% for visited in doc.roadshow.past %}
-          <li class="ap-o-cities-visited-list-item">
-            <div class="ap-o-cities-visited-list-item-group">
-              <div class="ap-o-cities-visited-list-item-city">{{ visited.title }}</div>
-              <div class="ap-o-cities-visited-list-item-date">{{ visited.date }}</div>
+          <li class="ap-m-visited-city">
+            <div class="ap-m-visited-city-group">
+              <div class="ap-m-visited-city-title">{{ visited.title }}</div>
+              <div class="ap-m-visited-city-date">{{ visited.date }}</div>
             </div>
           </li>
         {% endfor %}
@@ -129,21 +130,25 @@ section_links:
 
 <section id="Agenda" class="ap--container ap--container-agenda">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
+
   <div class="ap-o-agenda">
     <div class="ap-o-agenda-block">
       <div class="ap-o-agenda-content">
-        <span class="ap-o-agenda-content-headline">Agenda</span>
+        <h3 class="ap-o-agenda-content-headline">Agenda</h3>
         <p class="ap-o-agenda-content-sub-text">The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages.
         <span>This is a sample agenda – schedule varies based on the city.</span>
         <p>
 
         <ul class="ap-o-agenda-content-list">
+
           {% for agenda_item in doc.roadshow.agenda %}
-            <li class="ap-o-agenda-content-list-item">
-              <div class="ap-o-agenda-content-list-item-time">{{ agenda_item.time }}</div>
-              <div class="ap-o-agenda-content-list-item-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+            <li class="ap-m-agenda-item">
+              <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+              <div class="ap-m-agenda-item-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
             </li>
           {% endfor %}
+
         </ul>
       </div>
     </div>
@@ -153,10 +158,12 @@ section_links:
 <section id="Content" class="ap--container">
   {% do doc.styles.addCssFile('css/components/organisms/roadshow-content.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/roadshow-pillar.css') %}
+
   <div class="ap-o-roadshow-content">
     <div class="ap-o-roadshow-content-headline">Content</div>
     <div class="ap-o-roadshow-content-description">We'll cover a lot of ground in the few hours we have together. To enable you to build full-fledged AMP sites, the roadshow will deep dive into four big pillars:</div>
     <div class="ap-o-roadshow-content-pillar-list">
+
       {% for pillar in doc.roadshow.pillars %}
         <div class="ap-m-roadshow-pillar">
           <div class="ap-m-roadshow-pillar-headline">
@@ -169,6 +176,7 @@ section_links:
           {% endfor %}
         </div>
       {% endfor %}
+
     </div>
   </div>
 </section>
@@ -178,7 +186,7 @@ section_links:
 
   <div class="ap-m-amplify">
     <div class="ap-m-amplify-content">
-      <div class="ap-m-amplify-content-headline">Amplify Live!</div>
+      <h3 class="ap-m-amplify-content-headline">Amplify Live!</h3>
       <div class="ap-m-amplify-content-subline">During "Amplify live!", we'll be on stage exploring the most interesting AMP challenges, allowing you to either follow along or do your own thing, like one of the many AMP codelabs. Bring your laptop!</div>
     </div>
   </div>
@@ -188,7 +196,7 @@ section_links:
 <section id="FAQ" class="ap--container">
   {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
   <div class="ap-m-faq">
-    <div class="ap-m-faq-headline">Frequently Asked Questions</div>
+    <h3 class="ap-m-faq-headline">Frequently Asked Questions</h3>
     <div class="ap-m-faq-content">
       <div class="ap-m-faq-content-question">Does it cost anything?</div>
       <div class="ap-m-faq-content-answer">No - tickets are free of charge.</div>
