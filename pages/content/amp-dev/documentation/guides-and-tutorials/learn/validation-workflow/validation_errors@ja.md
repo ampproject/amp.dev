@@ -20,7 +20,7 @@ limitations under the License.
 
 有効な AMP ドキュメントを作成するには、検証エラーが 1 つもない状態にする必要があります。
 このドキュメントの目的は、
-[AMP ページを検証する](/ja/docs/fundamentals/validate.html)ときに見つかった検証エラーを
+[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}})ときに見つかった検証エラーを
 正しく理解して修正できるようにすることです。
 検証エラーの概要については、
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
-また、[AMP 仕様](/ja/docs/fundamentals/spec.html)にも必須タグについての説明があります。
+また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
 
@@ -81,7 +81,7 @@ limitations under the License.
 AMP ドキュメント内に拡張コンポーネントが見つかったものの、
 それに相当する `<script>` が見つからない場合です。
 
-[拡張コンポーネント](/ja/docs/reference/components.html)は、
+[拡張コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})は、
 カスタム要素として明示的に AMP ドキュメントに含める必要があります。
 このエラーを修正するには、拡張コンポーネントのリファレンス ページに移動して、
 必要なスクリプトをコピーし、AMP ドキュメントの `<head>` に貼り付けます。
@@ -104,7 +104,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 </table>
 
 タグはホワイトリストに登録されているため、許可されていないタグを網羅したリストはありません。
-ただし、[AMP 仕様](/ja/docs/fundamentals/spec.html)では
+ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})では
 許可されていないタグを大まかに定義しています。
 
 ### カスタム JavaScript が使用されている
@@ -639,8 +639,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 
 スタイルとレイアウトのエラーの説明に移る前に、
 AMP での
-[スタイル](/ja/docs/design/responsive/style_pages.html)と
-[レイアウト](/ja/docs/design/responsive/control_layout.html)の仕組みを理解しておくことをおすすめします。
+[スタイル]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})と
+[レイアウト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})の仕組みを理解しておくことをおすすめします。
 AMP ページは HTML ページであるため、スタイルも HTML ページと非常によく似ています。
 ただし、ページの読み込みを高速化するためのいくつかの制限があり、
 AMP 検証ツールではそれらの制限が守られているかどうかをチェックします。
@@ -724,7 +724,7 @@ CSS を実行してみてください。
 
 このエラーは、CSS 内のアットルールに関するものです。
 AMP で使用できるアットルールはごくわずかです
-（[AMP 仕様](/ja/docs/fundamentals/spec.html)もご覧ください）。
+（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})もご覧ください）。
 たとえば、<code>@import</code> は許可されていません。
 検証エラーでは無効なルールが
 具体的に示されるため、
@@ -754,8 +754,8 @@ AMP で使用できるアットルールはごくわずかです
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
-[レイアウトを設定する方法](/ja/docs/design/responsive/control_layout.html)についての説明や
-[AMP HTML レイアウト システムの仕様](/ja/docs/design/amp-html-layout.html)のページをご覧ください。
+[レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
 
 **注:** レイアウトを指定せず、
 `width` 値と `height` 値も指定しない場合、
@@ -785,7 +785,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されておらず、
 許可されていない属性が暗黙的レイアウトに含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様](/ja/docs/design/amp-html-layout.html)に、
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### 指定されたレイアウトが AMP タグでサポートされていない
@@ -812,8 +812,8 @@ AMP タグで CONTAINER がサポートされていないと、
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
-[レイアウトを設定する方法](/ja/docs/design/responsive/control_layout.html)についての説明や
-[AMP HTML レイアウト システムの仕様](/ja/docs/design/amp-html-layout.html)のページをご覧ください。
+[レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
 
 ### 指定されたレイアウトで属性が許可されていない
 
@@ -835,7 +835,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されていて、
 そのレイアウトに許可されていない属性が含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様](/ja/docs/design/amp-html-layout.html)に、
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### レイアウトで必要な属性の値が無効
@@ -857,7 +857,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、指定されたレイアウトの属性値が無効である場合に発生します。
 このエラーの原因を把握するには、
-[各レイアウトの動作](/ja/docs/design/responsive/control_layout.html#size-and-position-elements)を
+[各レイアウトの動作]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)を
 よく理解する必要があります。
 
 たとえば、レイアウトを `fixed-height` に設定し、
@@ -902,7 +902,7 @@ AMP ページにテンプレートの構文を含めることはできません�
 ソースファイルから生成された出力にテンプレートが含まれなければ、
 ソースファイルにテンプレートを追加してもかまいません
 （
-[CSS プリプロセッサの使用](/ja/docs/design/responsive/style_pages.html#use-css-preprocessors)についての説明もご覧ください）。
+[CSS プリプロセッサの使用]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)についての説明もご覧ください）。
 
 ### テンプレートの構文が属性に含まれている
 

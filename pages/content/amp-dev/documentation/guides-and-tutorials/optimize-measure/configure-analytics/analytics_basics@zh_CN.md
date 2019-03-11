@@ -30,13 +30,13 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-在此示例中，网页浏览数据将与一个随机数一起发送到定义的网址。`RANDOM` 变量是 [AMP 平台中诸多替换变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) 的一个。点击此处详细了解[变量替换](/zh_cn/docs/analytics/analytics_basics.html#variable-substitution)。
+在此示例中，网页浏览数据将与一个随机数一起发送到定义的网址。`RANDOM` 变量是 [AMP 平台中诸多替换变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) 的一个。点击此处详细了解[变量替换]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})。
 
 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 组件是内置组件，因此您无需像处理 AMP 扩展组件（包括 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 一样为其指明包含声明。但您应将 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 标记放在尽可能靠近 `<body>` 开头的位置。只有当标记本身进入视线范围内时，像素跟踪功能才会触发。如果将 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 放在靠近网页底部的位置，则可能不会触发该功能。
 
 ### amp-analytics 的简单配置
 
-要创建简单的 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置，您必须首先将以下 `custom-element` 声明包含在 AMP 文档的 `<head>` 中（另请参阅[组件包含声明](/zh_cn/docs/reference/components.html)）：
+要创建简单的 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置，您必须首先将以下 `custom-element` 声明包含在 AMP 文档的 `<head>` 中（另请参阅[组件包含声明]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})）：
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -63,11 +63,11 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 在上面的示例中，我们将一个名为 pageview 的请求定义为 `https://foo.com/pixel?RANDOM`. 如前所述，RANDOM 将被替换为一个随机数，因此实际上，最终显示的请求将如下所示：`https://foo.com/pixel?0.23479283687235653498734`.
 
-当用户开始浏览网页（使用触发器关键字 `visible` 指定）时，事件将触发，并发送 `pageview` 请求。触发器属性决定了 pageview 请求何时触发。详细了解[请求和触发器](/zh_cn/docs/analytics/deep_dive_analytics.html#requests-triggers--transports)。
+当用户开始浏览网页（使用触发器关键字 `visible` 指定）时，事件将触发，并发送 `pageview` 请求。触发器属性决定了 pageview 请求何时触发。详细了解[请求和触发器]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#requests-triggers--transports)。
 
 ## 变量替换
 
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 和 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换] (https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID](/zh_cn/docs/analytics/analytics_basics.html#user-identification)一起发送到相应网址：
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 和 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换] (https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.html', locale=doc.locale).url.path}}#user-identification)一起发送到相应网址：
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -107,7 +107,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 在上面的示例中，变量 `account` 和 `title` 是在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置中定义的。变量 `canonicalUrl` 和 `clientId` 不是在配置中定义的，因此它们的值将被平台替换。
 
-重要提示: 变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+重要提示: 变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)）。
 
 ## 用户识别
 

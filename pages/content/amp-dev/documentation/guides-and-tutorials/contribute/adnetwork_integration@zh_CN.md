@@ -42,7 +42,7 @@ $title: 与 AMP 集成以投放展示广告
 
 ## 进行快速获取集成
 
-[快速获取](/zh_cn/latest/blog/even-faster-loading-ads-in-amp/)是一种 AMP 机制，可将广告请求与广告响应分隔开来，从而在网页生命周期早期发出广告请求，且仅在用户有可能查看广告时呈现广告。与传统 HTML 广告相比，快速获取会优先处理经过验证的 AMPHTML 广告。在快速获取过程中，如果某个广告验证失败，则该广告会被封装在一个跨网域 iframe 中，以与 AMP 文档的剩余部分分隔开。反之，通过验证的 AMPHTML 广告会被直接写入网页中。快速获取会处理 AMP 广告和非 AMP 广告；无需针对验证失败的广告发出额外的广告请求。
+[快速获取](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)是一种 AMP 机制，可将广告请求与广告响应分隔开来，从而在网页生命周期早期发出广告请求，且仅在用户有可能查看广告时呈现广告。与传统 HTML 广告相比，快速获取会优先处理经过验证的 AMPHTML 广告。在快速获取过程中，如果某个广告验证失败，则该广告会被封装在一个跨网域 iframe 中，以与 AMP 文档的剩余部分分隔开。反之，通过验证的 AMPHTML 广告会被直接写入网页中。快速获取会处理 AMP 广告和非 AMP 广告；无需针对验证失败的广告发出额外的广告请求。
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='快速获取集成流程', caption='快速获取集成流程' ) }}
 
@@ -58,4 +58,4 @@ $title: 与 AMP 集成以投放展示广告
 
 *   [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 *   [受支持的广告供应商列表]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
-*   [关于推出快速获取功能的博客文章](/zh_cn/latest/blog/even-faster-loading-ads-in-amp/)
+*   [关于推出快速获取功能的博客文章](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

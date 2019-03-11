@@ -10,7 +10,7 @@ AMP の主な長所は、単にページの読み込み時間を短縮するだ�
 
 AMP ドキュメントを検証するにはいくつかの方法があります。どの方法でも結果は同じになるため、自分の開発スタイルに最適なものを使用してください。
 
-AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能](/ja/docs/fundamentals/discovery.html)かどうかを確認することもおすすめします。
+AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.md', locale=doc.locale).url.path}})かどうかを確認することもおすすめします。
 
 ### ブラウザの Developer Console
 
@@ -234,4 +234,4 @@ AMP 検証サービスでページに問題があることが検出されると�
 
 [仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) をよく確認したところ、`<img>` タグが使用されているところで、本来は [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグを使用すべきであることがわかりました。
 
-表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド](/ja/docs/troubleshooting/validation_errors.html)で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。
+表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}})で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。

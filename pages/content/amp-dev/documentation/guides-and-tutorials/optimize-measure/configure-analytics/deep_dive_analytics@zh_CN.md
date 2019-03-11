@@ -52,7 +52,7 @@ $title: 深入了解 AMP 分析
 
 [tip type="note"]
 
-上面的示例代码纯粹是为了帮助您学习，绝不是真实的样例。如果您正在与分析服务提供商合作，上面的样例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档](/zh_cn/docs/analytics/analytics-vendors.html)，了解其配置样例。
+上面的示例代码纯粹是为了帮助您学习，绝不是真实的样例。如果您正在与分析服务提供商合作，上面的样例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})，了解其配置样例。
 [/tip]
 
 ## 将分析数据发送到何处：type 属性
@@ -66,14 +66,14 @@ AMP 支持两种常见的数据收集模式：
 要将分析数据发送到分析服务提供商，
 请在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 标记中添加 `type` 属性，并将其值设为
 相应的供应商，如
-[分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表中所定义。
+[分析服务供应商]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表中所定义。
 
 例如：`<amp-analytics type="googleanalytics">` 这一标记会将分析数据
 发送到第三方分析服务提供商“Google Analytics（分析）”。
 要将数据发送到发布商拥有的端点，
 只需不添加 `type` 属性即可；
 如此一来，
-对于每项[请求](/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute)，系统都会将分析数据发送到请求中指定的端点。
+对于每项[请求]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute)，系统都会将分析数据发送到请求中指定的端点。
 
 借助分析服务供应商的配置，
 您可以快速开始使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})。
@@ -82,7 +82,7 @@ AMP 支持两种常见的数据收集模式：
 如前所述，
 倘若您想了解哪些供应商已与 AMP 集成
 并获取指向他们各自的文档的链接，
-请查看[分析服务供应商](/zh_cn/docs/analytics/analytics-vendors.html)列表。
+请查看[分析服务供应商]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表。
 
 如果您是分析服务供应商，
 请详细了解
@@ -139,7 +139,7 @@ JSON 对象中包含的配置仅仅是分析工具帐号的变量值。
 
 AMP 不会验证同一变量的多种用法。
 值的填充会遵循变量替换优先顺序，
-远程网址中的值在该顺序中列在首位（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+远程网址中的值在该顺序中列在首位（请参阅[变量替换顺序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)）。
 
 [/tip]
 
@@ -246,19 +246,19 @@ AMP 支持以下触发器配置：
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必需）</td>
-      <td data-th="Description">要发送的请求的名称（如<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">请求</a>中所指定）。</td>
+      <td data-th="Description">要发送的请求的名称（如<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">请求</a>中所指定）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">一个包含特定键值对（用于替换在顶层配置中定义的 <code>vars</code> 或指定此触发器独有的 <code>vars</code>）的对象（另请参阅<a href="/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">变量替换顺序</a>）。</td>
+      <td data-th="Description">一个包含特定键值对（用于替换在顶层配置中定义的 <code>vars</code> 或指定此触发器独有的 <code>vars</code>）的对象（另请参阅<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">变量替换顺序</a>）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>（当 <code>on</code> 设为 <code>click</code> 时的必需配置）</td>
-      <td data-th="Description">一种 CSS 选择器，用于优化应跟踪哪些元素。使用值 <code>*</code> 可跟踪所有元素。此配置需与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="/zh_cn/docs/analytics/use_cases.html#tracking-page-clicks">跟踪网页点击次数</a>和<a href="/zh_cn/docs/analytics/use_cases.html#tracking-social-interactions">社交互动</a>。</td>
+      <td data-th="Description">一种 CSS 选择器，用于优化应跟踪哪些元素。使用值 <code>*</code> 可跟踪所有元素。此配置需与 <code>click</code> 触发器结合使用。了解如何使用选择器来<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">跟踪网页点击次数</a>和<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">社交互动</a>。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code>（当 <code>on</code> 设为 <code>scroll</code> 时的必需配置）</td>
-      <td data-th="Description">控制在哪些条件下滚动网页时会触发 <code>scroll</code> 事件。此对象可以包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>，而且必须至少包含其一才能触发 <code>scroll</code> 事件。这两个属性的值都应是包含边界的数字数组（据此才能生成滚动事件）。请参阅此<a href="/zh_cn/docs/analytics/use_cases.html#tracking-scrolling">跟踪滚动操作</a>的示例。</td>
+      <td data-th="Description">控制在哪些条件下滚动网页时会触发 <code>scroll</code> 事件。此对象可以包含 <code>verticalBoundaries</code> 和 <code>horizontalBoundaries</code>，而且必须至少包含其一才能触发 <code>scroll</code> 事件。这两个属性的值都应是包含边界的数字数组（据此才能生成滚动事件）。请参阅此<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">跟踪滚动操作</a>的示例。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code>（当 <code>on</code> 设为 <code>timer</code> 时的必需配置）</td>
@@ -269,7 +269,7 @@ AMP 支持以下触发器配置：
 
 [tip type="important"]
 
-来自优先级较低的配置的触发器会被来自优先级较高的配置的同名触发器替换（请参阅[变量替换顺序](/zh_cn/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)）。
+来自优先级较低的配置的触发器会被来自优先级较高的配置的同名触发器替换（请参阅[变量替换顺序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)）。
 
 [/tip]
 

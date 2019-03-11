@@ -8,7 +8,7 @@ Vous aimeriez ajouter un cas d'utilisation ?
 [Dites-le nous.](https://github.com/ampproject/docs/issues/new)
 
 Vous pouvez également partager vos propres cas d'utilisation ;
-voir [Comment contribuer](/fr/contribute/).
+voir [Comment contribuer]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## Suivi des vues de page
 

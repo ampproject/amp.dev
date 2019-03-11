@@ -10,13 +10,13 @@ Los anuncios AMP HTML se escriben en lenguaje AMP HTML, de acuerdo con las [espe
 
 ### Ventajas
 
-¿Por qué los anuncios AMP HTML son mejores que los tradicionales? 
+¿Por qué los anuncios AMP HTML son mejores que los tradicionales?
 
 1.  **Mayor velocidad:** los anuncios AMP HTML son más rápidos porque el proceso de renderizado de la página los solicita antes, y se muestran inmediatamente, justo en el momento previo a que el usuario vaya a ver el anuncio. El tamaño reducido del archivo de los anuncios AMP HTML también incrementa la velocidad.
 1.  **Menor tamaño:** los paquetes de anuncios AMP HTML agrupan funciones habituales de anuncios, lo que reduce el tamaño del archivo del anuncio. Una vez en la página, estos anuncios también consumen menos recursos. Por ejemplo, mientras que en los anuncios tradicionales se utilizan 10 registradores para solicitar su propia información, los anuncios AMP HTML recopilan todos los datos una vez y los distribuyen a todos los registradores interesados.
-1.  **Coordinación:** en las páginas AMP, el [tiempo de ejecución de AMP](/docs/fundamentals/spec.html#amp-runtime) puede coordinar los recursos limitados de un teléfono móvil con el componente adecuado en el momento oportuno para ofrecer la mejor experiencia de usuario. Por ejemplo, los anuncios AMP HTML con animaciones se pausan cuando los anuncios no se muestran en la ventana gráfica actual.
+1.  **Coordinación:** en las páginas AMP, el [tiempo de ejecución de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime) puede coordinar los recursos limitados de un teléfono móvil con el componente adecuado en el momento oportuno para ofrecer la mejor experiencia de usuario. Por ejemplo, los anuncios AMP HTML con animaciones se pausan cuando los anuncios no se muestran en la ventana gráfica actual.
 1.  **Mayor interacción:** los usuarios no pueden interactuar con los anuncios que no ven. Unos anuncios más rápidos generan una mayor visibilidad y, por lo tanto, unos porcentajes de clics más altos y un mejor rendimiento de los anuncios.
-1.  **Protección frente a software malicioso:** es imposible que el software malicioso afecte a los anuncios AMP HTML, porque se verifican antes de servirse. Gracias a esto, los anunciantes pueden garantizar una experiencia de usuario segura y una percepción positiva de su marca. 
+1.  **Protección frente a software malicioso:** es imposible que el software malicioso afecte a los anuncios AMP HTML, porque se verifican antes de servirse. Gracias a esto, los anunciantes pueden garantizar una experiencia de usuario segura y una percepción positiva de su marca.
 1.  **Mayor flexibilidad:** los anuncios AMP HTML se pueden utilizar en páginas web AMP y de otro tipo, así como en cualquier dispositivo.
 
 ### Formatos
@@ -47,7 +47,7 @@ Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar div
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Servir anuncios AMP HTML en páginas AMP', caption='Servir anuncios AMP HTML en páginas AMP', align='' ) }}
 
 1.  Los editores insertan un espacio publicitario en su página AMP mediante la etiqueta [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) para especificar la red publicitaria que quieren utilizar.
-1.  El tiempo de ejecución de AMP envía una solicitud de anuncio a la red publicitaria especificada para recuperar el anuncio. Las redes publicitarias que admiten el servicio de anuncios AMP HTML proporcionan una [implementación de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) que valida y firma la creatividad. 
+1.  El tiempo de ejecución de AMP envía una solicitud de anuncio a la red publicitaria especificada para recuperar el anuncio. Las redes publicitarias que admiten el servicio de anuncios AMP HTML proporcionan una [implementación de Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) que valida y firma la creatividad.
 1.  La red publicitaria responde con el anuncio AMP HTML y el tiempo de ejecución de AMP publica el anuncio en la página AMP.
 
 ## Servir anuncios AMP HTML
@@ -127,4 +127,3 @@ Sí. Consulta [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components
 *   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) es la herramienta que recomendamos para encontrar respuestas a preguntas sobre AMP. Como los miembros de la comunidad del proyecto AMP supervisan Stack Overflow con regularidad, probablemente esta sea la forma más rápida de solucionar tus dudas.
 *   Únete al canal [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) para encontrar soluciones y respuestas.
 *   Si encuentras un error en AMP o tienes una solicitud de funciones para AMP, consulta la sección sobre [cómo notificar problemas con AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) para obtener más información.
- 

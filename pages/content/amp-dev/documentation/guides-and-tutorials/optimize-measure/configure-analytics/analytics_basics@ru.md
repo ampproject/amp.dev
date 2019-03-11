@@ -80,7 +80,7 @@ AMP предоставляет два компонента для удовлет
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 необходимо сначала включить следующую декларацию `custom-element`
 в раздел `<head>` документа AMP (см. также
-[Объявление включения компонента](/docs/reference/components.html)):
+[Объявление включения компонента]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -126,7 +126,7 @@ AMP предоставляет два компонента для удовлет
 В следующем примере
 запрос просмотра страницы отправляется на URL-адрес
 вместе с каноническим URL-адресом текущего документа AMP, его названием и
-[идентификатором клиента](/ru/docs/analytics/analytics_basics.html#идентификация-пользователей):
+[идентификатором клиента]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#идентификация-пользователей):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

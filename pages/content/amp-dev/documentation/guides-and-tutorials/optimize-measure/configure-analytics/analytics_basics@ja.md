@@ -30,13 +30,13 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-この例では、ページビュー データは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの置換変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)のうちの 1 つです。[置換変数](/ja/docs/analytics/analytics_basics.html#variable-substitution)について詳しくは、こちらをご覧ください。
+この例では、ページビュー データは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの置換変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)のうちの 1 つです。[置換変数]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})について詳しくは、こちらをご覧ください。
 
 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) は組み込みのコンポーネントなので、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のような AMP 拡張コンポーネントと違って、宣言を追加する必要はありません。ただし [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) タグは、極力 `<body>` の先頭付近に配置してください。トラッキング ピクセルはタグが表示されてから呼び出されるので、[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) がページ上のボタンの近くにあると、トラッキング ピクセルが呼び出されない可能性があります。
 
 ### シンプルな amp-analytics 設定
 
-シンプルに [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言](/docs/reference/components.html)もご覧ください）。
+シンプルに [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})もご覧ください）。
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -65,11 +65,11 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 上の例では、pageview というリクエストを `https://foo.com/pixel?RANDOM` と定義しています。 は乱数に置換されます。そのため、最終的なリクエストは次のようになります。`https://foo.com/pixel?0.23479283687235653498734`
 
-(トリガー キーワード `visible` を使って指定したとおり）ページが表示されると、イベントが発生して `pageview` リクエストが送信されます。ページビュー リクエストが送信されるタイミングは、トリガー属性で定義します。詳しくは、[リクエストとトリガー](/ja/docs/analytics/deep_dive_analytics.html#requests-triggers--transports)をご覧ください。
+(トリガー キーワード `visible` を使って指定したとおり）ページが表示されると、イベントが発生して `pageview` リクエストが送信されます。ページビュー リクエストが送信されるタイミングは、トリガー属性で定義します。詳しくは、[リクエストとトリガー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#requests-triggers--transports)をご覧ください。
 
 ## 置換変数
 
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) コンポーネントは、どちらも標準的な URL の変数置換をすべて許可します（[AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID](/ja/docs/analytics/analytics_basics.html#user-identification) とともに URL に送信します。
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) コンポーネントは、どちらも標準的な URL の変数置換をすべて許可します（[AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.html', locale=doc.locale).url.path}}#user-identification) とともに URL に送信します。
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -108,7 +108,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 上の例では、変数 `account` と `title` は [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 設定内で定義されています。変数 `canonicalUrl` と `clientId` は定義されていないので、プラットフォーム側で置換されます。
 
-重要: 変数置換は柔軟性が高いため、同じ変数を別の場所で使用できます。この場合、AMP ランタイムは先行順に値を解析します（[変数置換の順序](/ja/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)をご覧ください）。
+重要: 変数置換は柔軟性が高いため、同じ変数を別の場所で使用できます。この場合、AMP ランタイムは先行順に値を解析します（[変数置換の順序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)をご覧ください）。
 
 ## ユーザー認証
 

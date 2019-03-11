@@ -3,7 +3,7 @@ $title: AMP Analytics Derinlemesine Giriş
 ---
 
 Bu kılavuz
-[amp-analitik bileşen](/tr/docs/reference/components/amp-analytics.html) içerisine derinlemesine girerek, bir örnek
+[amp-analitik bileşen]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) içerisine derinlemesine girerek, bir örnek
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmasını temel yapıtaşlarına ayırır:
 
 Kılavuzun kalan kısmında bu yapılandırma örneği kullanılarak,
@@ -70,7 +70,7 @@ ilgili satıcıya ayarlayın.
 Verileri yayıncıya ait bir son noktaya göndermek için,
 `type` özelliğini eklememeniz yeterlidir;
 analitik veriler her bir
-[istek](/tr/docs/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
+[istek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
 
 Analytics satıcı yapılandırmaları [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})‹e başlamanın
 hızlı bir yoludur.
@@ -151,7 +151,7 @@ daha spesifik olarak protokolün nasıl gönderileceğini belirler.
 
 Bu yapılandırmalar hakkında daha fazla bilgi için okumaya devam edin.
 (Bu yapılandırmalar hakkında bilgi için
-[amp-analitik referansı](/tr/docs/reference/components/amp-analytics.html) bölümünü de okuyabilirsiniz.)
+[amp-analitik referansı]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) bölümünü de okuyabilirsiniz.)
 
 ### Hangi veriler gönderilir: istek özelliği
 
@@ -236,19 +236,19 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (gerekli)</td>
-      <td data-th="Description">Gönderilecek isteğin adı (<a href="/tr/docs/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
+      <td data-th="Description">Gönderilecek isteğin adı (<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="/tr/docs/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
+      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (<code>on</code>, <code>click</code> olarak ayarlandığında gereklidir)</td>
-      <td data-th="Description">Hangi ögelerin seçilmesi gerektiğini işlemek için kullanılan bir CSS selektörü. Tüm ögeleri izlemek için <code>*</code> değerini kullanın. Bu yapılandırma <code>click</code> tetikleme ile birlikte kullanılır. Selektörü kullanarak <a href="/tr/docs/analytics/use_cases.html#sayfa-tıklamalarını-izleme">sayfa tıklamalarını </a> ve<a href="/tr/docs/analytics/use_cases.html#sosyal-medya-etkileşimlerini-izleme"> sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin</a>.</td>
+      <td data-th="Description">Hangi ögelerin seçilmesi gerektiğini işlemek için kullanılan bir CSS selektörü. Tüm ögeleri izlemek için <code>*</code> değerini kullanın. Bu yapılandırma <code>click</code> tetikleme ile birlikte kullanılır. Selektörü kullanarak <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#sayfa-tıklamalarını-izleme">sayfa tıklamalarını </a> ve<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#sosyal-medya-etkileşimlerini-izleme"> sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (<code>on</code>, <code>scroll</code> olarak ayarlandığında gereklidir)</td>
-      <td data-th="Description">Hangi koşullar altında sayfa kaydırıldığında <code>scroll</code> etkinliğinin uyarı verdiğini kontrol eder. Bu nesne <code>verticalBoundaries</code> ve<code>horizontalBoundaries</code> içerebilir. Bir <code>scroll</code> etkinliğinin uyarı vermesi için iki özellikten en az biri gereklidir. Her iki özelliğin değerleri bir kaydırma etkinliğinin oluşturulduğu sınırları içeren sayılar dizini olmalıdır. <a href="/tr/docs/analytics/use_cases.html#kaydırmayı-izleme">kaydırma izleme</a> ile ilgili örneğe bakın.</td>
+      <td data-th="Description">Hangi koşullar altında sayfa kaydırıldığında <code>scroll</code> etkinliğinin uyarı verdiğini kontrol eder. Bu nesne <code>verticalBoundaries</code> ve<code>horizontalBoundaries</code> içerebilir. Bir <code>scroll</code> etkinliğinin uyarı vermesi için iki özellikten en az biri gereklidir. Her iki özelliğin değerleri bir kaydırma etkinliğinin oluşturulduğu sınırları içeren sayılar dizini olmalıdır. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#kaydırmayı-izleme">kaydırma izleme</a> ile ilgili örneğe bakın.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (<code>on</code>, <code>timer</code> olarak ayarlandığında gereklidir)</td>

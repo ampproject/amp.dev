@@ -8,7 +8,7 @@ $title: حالات الاستخدام
 [أحطنا علمًا.](https://github.com/ampproject/docs/issues/new)
 
 يمكنك أيضًا المساهمة بحالات الاستخدام الخاصة بك،
-انظر [كيفية المساهمة](/ar/contribute/).
+انظر [كيفية المساهمة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## تتبع مشاهدات الصفحة
 
@@ -17,7 +17,7 @@ $title: حالات الاستخدام
 ### باستخدام <span dir="ltr" class="nowrap">amp-pixel</span>
 
 أرسل بيانات مشاهدة الصفحة إلى عنوان URL محدّد باستخدام
-[<span dir="ltr" class="nowrap">amp-pixel</span>](/ar/docs/reference/components/amp-pixel.html):
+[<span dir="ltr" class="nowrap">amp-pixel</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -175,7 +175,7 @@ $title: حالات الاستخدام
 ## تتبع التفاعلات الاجتماعية
 
 تعرّف على كيفية تتبع التفاعلات الاجتماعية باستخدام
-[<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html)،
+[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})،
 وإرسال بيانات الحدث إلى عنوان URL محدّد، وإلى
 [<span dir="ltr" class="nowrap">Google Analytics</span>](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

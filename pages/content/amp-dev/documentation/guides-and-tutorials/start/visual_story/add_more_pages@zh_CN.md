@@ -98,9 +98,9 @@ $order: 4
       <ul>
       <li>包含 3 个图层：
       <ul>
-        <li><b>第 1 个图层</b>：实施 <code>fill</code> 模板，并包含一个自适应 <a href="/zh_cn/docs/reference/components/amp-video.html">amp-video</a> (<code class="filename">rabbit.mp4</code>)。
+        <li><b>第 1 个图层</b>：实施 <code>fill</code> 模板，并包含一个自适应 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}">amp-video</a> (<code class="filename">rabbit.mp4</code>)。
           <ul>
-            <li>请务必在 <code><head></code> 部分为 <a href="/zh_cn/docs/reference/components/amp-video.html">amp-video</a> 组件添加<strong>必需脚本</strong>，以便视频可以正常显示。</li>
+            <li>请务必在 <code><head></code> 部分为 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}">amp-video</a> 组件添加<strong>必需脚本</strong>，以便视频可以正常显示。</li>
             <li>指定 <code>poster</code> 图片 (<code class="filename">rabbit.jpg</code>)。这是有效 AMP 故事的<strong>必需</strong>属性。</li>
             <li>使用 <code>autoplay</code> 属性将视频设置为自动播放。这是有效 AMP 故事的<strong>必需</strong>属性。</li>
             <li>使用 <code>loop</code> 属性将视频设置为自动循环播放。</li>

@@ -26,7 +26,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 "bookendVersion": "v1.0",
 ```
 
-독자들이 여러분의 콘텐츠를 소셜 공유 버튼을 사용하여 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트워크 플랫폼에 공유할 수 있습니다. shareProviders 객체에서 소셜 공유 제공업체를 지정하고, 각 소셜 플랫폼에 대한 [타입명](/ko/docs/reference/components/amp-social-share.html#pre-configured-providers)을 포함하는 배열을 만듭니다.
+독자들이 여러분의 콘텐츠를 소셜 공유 버튼을 사용하여 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트워크 플랫폼에 공유할 수 있습니다. shareProviders 객체에서 소셜 공유 제공업체를 지정하고, 각 소셜 플랫폼에 대한 [타입명]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers)을 포함하는 배열을 만듭니다.
 
 이 가이드에서는 Facebook, Twitter 및 공유 제공업체의 이메일을 선택했습니다.
 

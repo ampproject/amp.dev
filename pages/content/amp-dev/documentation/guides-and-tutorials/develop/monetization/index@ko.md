@@ -10,7 +10,7 @@ AMP가 아닌 페이지(기존 HTML 페이지)에 광고를 게재하려면 자�
 
 [tip type="success"]
 
-[AMP By Example 라이브 데모](https://ampbyexample.com/components/amp-ad/)에서 AMP 페이지에 amp-ad 태그를 추가하는 방법을 알아보세요.
+[AMP By Example 라이브 데모]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})에서 AMP 페이지에 amp-ad 태그를 추가하는 방법을 알아보세요.
 
 [/tip]
 

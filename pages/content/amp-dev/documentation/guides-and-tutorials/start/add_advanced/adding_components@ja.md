@@ -8,7 +8,7 @@ $title: 拡張 AMP コンポーネントを追加する
 
 - **拡張コンポーネント**: 基本ライブラリを拡張するもので、カスタム要素としてドキュメントに明示的に含める必要のあるコンポーネント。カスタム要素を使用するには、特定のスクリプトを `<head>` セクションに追加する必要があります（たとえば、`<script async custom-element="amp-video" ...` のようにします）。
 
-- **試験運用コンポーネント**: リリースされているが、まだ一般公開する前の段階にあるコンポーネント。デベロッパーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。詳しくは、[試験運用機能](/ja/docs/reference/experimental.html)をご覧ください。
+- **試験運用コンポーネント**: リリースされているが、まだ一般公開する前の段階にあるコンポーネント。デベロッパーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。詳しくは、[試験運用機能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}})をご覧ください。
 
 「[HTML を AMP に変換する],[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).url.path}}) を使用し、このコンポーネントと AMP レイアウト システムの関係について解説しました。ここでは、一般に広く使用されているいくつかの**拡張** AMP コンポーネントを新しい記事に追加してみます。
 
@@ -153,7 +153,7 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
 
 ツイートの埋め込みについて詳しくは、[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) コンポーネントのドキュメントをご覧ください。
 
-ヒント: AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント](/ja/docs/reference/components.html#social)の最新リストをご覧ください。
+ヒント: AMP には、ソーシャル ネットワークのコンテンツを埋め込むためのコンポーネントが他にも用意されています。詳しくは、[ソーシャル AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})の最新リストをご覧ください。
 
 ## 記事の引用をハイライト表示する
 
@@ -197,4 +197,4 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) を使った最後の実験として、max-font-size 属性の値は 42 のまま、height に 400 などの大きな値を設定し、「こんにちは」などの短いテキストを指定してみましょう。 テキストはページ上でどのように表示されるでしょうか。垂直方向の中央揃えで表示されるでしょうか。それとも、最大フォントサイズに合わせて、[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) タグの高さが縮小されるでしょうか。AMP のレイアウト システムについてこれまでに学んだ知識を踏まえ、実際にコードを試す前に答えを考えてみてください。
 
-[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) について詳しくは、[AMP by Example のライブデモ](https://ampbyexample.com/components/amp-fit-text/)をご覧ください。
+[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) について詳しくは、[AMP by Example のライブデモ]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}})をご覧ください。

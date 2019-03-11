@@ -43,7 +43,7 @@ $title: Настройка Analytics
 Рассмотрите следующие основные вопросы:
 
 * Будете ли вы отслеживать только просмотры страниц или учитывать также дополнительные модели заинтересованности пользователей
-(см. также [amp-pixel или amp-analytics](/ru/docs/analytics/analytics_basics.html#что-использовать:-amp-pixel-или-amp-analytics?))?
+(см. также [amp-pixel или amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#что-использовать:-amp-pixel-или-amp-analytics?))?
 * Какого рода данные вы собираетесь отслеживать о своих пользователях, своем контенте, устройстве или браузере
-(см. также [Подстановка переменных](/ru/docs/analytics/analytics_basics.html#подстановка-переменной))?
-* Как вы будете идентифицировать своих пользователей (см. также [Идентификация пользователей](/ru/docs/analytics/analytics_basics.html#идентификация-пользователей))?
+(см. также [Подстановка переменных]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#подстановка-переменной))?
+* Как вы будете идентифицировать своих пользователей (см. также [Идентификация пользователей]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#идентификация-пользователей))?

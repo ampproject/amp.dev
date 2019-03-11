@@ -14,7 +14,7 @@ $title: AMP ページからプログレッシブ ウェブアプリを事前に�
 
 ### 最初のユーザー獲得に適した AMP
 
-AMP は、検索エンジンによるオーガニック検索、友だちから送られた共有リンク、別のサイトに設置されているリンクなどを通じてユーザーが見つけるコンテンツ ページ（いわゆる「末端ページ」）に適したソリューションです。AMP では [特殊な事前レンダリング](/ja/learn/about-how/)が実行されるため、AMP ページは極めて高速に読み込まれ、結果として離脱率を大幅に下げることにもつながります（最近行われた [DoubleClick の調査](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)では、**ページの読み込みに 3 秒かかると全ユーザーの 53% 以上が離脱する**ことがわかっています）。
+AMP は、検索エンジンによるオーガニック検索、友だちから送られた共有リンク、別のサイトに設置されているリンクなどを通じてユーザーが見つけるコンテンツ ページ（いわゆる「末端ページ」）に適したソリューションです。AMP では [特殊な事前レンダリング]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}})が実行されるため、AMP ページは極めて高速に読み込まれ、結果として離脱率を大幅に下げることにもつながります（最近行われた [DoubleClick の調査](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)では、**ページの読み込みに 3 秒かかると全ユーザーの 53% 以上が離脱する**ことがわかっています）。
 
 ### インタラクティブ性が高くエンゲージメントに効果的な PWA
 
@@ -109,4 +109,4 @@ AMP では、[シェル URL の書き換え],[`amp-install-serviceworker`]({{g.d
 
 これらの属性を指定することで、Service Worker 対応かどうかにかかわらず、AMP ページで発生する初回以降のすべてのクリックで PWA に移動できるようになります。
 
-詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](/ja/docs/integration/amp-in-pwa.html)。
+詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})。
