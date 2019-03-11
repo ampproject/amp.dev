@@ -1,12 +1,17 @@
-## Objective
+## Description of the issue found on ampproject.org
 
-(Shortly describe what this issue should achieve)
+Please provide:
 
-## Background
+- Page link: <insert the URL link to the ampproject.org page(s) that you found the issue on>
+- Description of the documentation issue:
 
-(Carefully describe why this task should be done)
+## How do we reproduce the issue?
 
+Please provide the steps to reproduce the issue:
 
-## Tasks
-- [ ] List tasks that need to be
-- [ ] completed to finish this task
+1. Step 1 to reproduce
+2. Step 2 to reproduce
+3. …
+
+What browser are you using?
+What O/S are you using?
