@@ -151,9 +151,7 @@ class SamplesBuilder {
       }));
 
       stream.pipe(gulp.dest((file) => {
-        // Remove double name from path to flatten structure for Grow
-        file.dirname = `${SAMPLE_SRC}`;
-
+        file.dirname = `${SAMPLE_SRC}/${this._getCategory(file)}`;
         if (file.isSourceFile) {
           return SOURCE_DEST;
         } else if (file.isPreview) {
@@ -161,6 +159,8 @@ class SamplesBuilder {
         } else if (file.isEmbed) {
           return EMBED_DEST;
         } else {
+          // Remove double name from path to flatten structure for Grow
+          file.dirname = `${SAMPLE_SRC}`;
           return MANUAL_DEST;
         }
       }));
@@ -456,7 +456,6 @@ class SamplesBuilder {
     // Determine the template needed for that specific sample
     const template = this._templates[this._getSampleFormat(parsedSample)];
     const preview = sample.clone();
-    preview.dirname = `${preview.dirname}/${this._getCategory(sample)}`;
 
     // Set flag to determine correct output location
     preview.isPreview = true;
