@@ -61,6 +61,7 @@ class Platform {
       });
     }
     this.server.use(shrinkRay());
+    /*
     const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
     this.server.use((request, response, next) => {
       // don't optimize sample source or preview
@@ -71,6 +72,7 @@ class Platform {
       }
       ampOptimizer(request, response, next);
     });
+    */
     this.server.use((req, res, next) => {
       if (req.hostname.startsWith(WWW_PREFIX)) {
         res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
