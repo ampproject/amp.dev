@@ -34,7 +34,7 @@ class Subdomain {
    * Creates a subdomain middleware matching subdomain
    * requests to the router
    */
-  from(subdomain, router) {
+  map(subdomain, router) {
     if (!subdomain) {
       throw new Error(`Invalid subdomain: '${subdomain}'`);
     }
@@ -45,9 +45,7 @@ class Subdomain {
     } else {
       // return subdomain specific middleware
       return (request, response, next) => {
-        console.log('checking subdomain', subdomain, request.subdomains);
-        if (this.arrayIsSame_(subdomain, request.subdomains)) {
-          console.log('match forwarding requests for', subdomain);
+        if (request.subdomains.includes(subdomain)) {
           return router(request, response, next);
         }
         return next();
@@ -65,18 +63,6 @@ class Subdomain {
       }
     }
     next();
-  }
-
-  arrayIsSame_(array1, array2) {
-    if (array1.length !== array2.length) {
-      return false;
-    }
-    for (const i = 0; i < array1.length; i++) {
-      if (array1[i] !== array2[i]) {
-        return false;
-      }
-    }
-    return true;
   }
 }
 

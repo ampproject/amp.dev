@@ -131,6 +131,6 @@ class Config {
   }
 }
 
-const config = new Config(process.env.APP_VERSION || process.env.NODE_ENV);
+const config = new Config(process.env.APP_ENV || process.env.NODE_ENV);
 
 module.exports = config;
