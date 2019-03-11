@@ -64,9 +64,7 @@ class Platform {
     this.server.use((request, response, next) => {
       // don't optimize sample source or preview
       if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
-             request.headers['x-requested-by'] === 'playground' ||
-             // TODO: See ampproject/docs/#1500 for reference
-             /\/documentation\/examples\.html/mi.test(request.url)) {
+             request.headers['x-requested-by'] === 'playground') {
         next();
         return;
       }
