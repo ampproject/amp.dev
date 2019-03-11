@@ -4,8 +4,7 @@
   "theme_color": "#b60845",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/playground/",
-  "start_url": "/playground/",
+  "start_url": ".",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

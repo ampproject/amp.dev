@@ -24,6 +24,7 @@ const ampCors = require('amp-toolbox-cors');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
+const subdomain = require('./middleware/subdomain.js');
 
 const WWW_PREFIX = 'www.';
 const HEALTH_CHECK = '/__health-check';
@@ -53,6 +54,7 @@ class Platform {
         signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
       });
 
+      subdomain.router(this.proxy);
       const proxy = new HttpProxy();
       this.proxy.get('/*', (request, response, next) => {
         proxy.web(request, response, {
@@ -132,10 +134,10 @@ class Platform {
 
   _registerRouters() {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
+    this.server.use(subdomain.map(config.hosts.playground.subdomain, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.examples);
     this.server.use(routers.static);
-    this.server.use('/playground', routers.playground);
     this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);

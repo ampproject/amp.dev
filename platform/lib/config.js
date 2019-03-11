@@ -47,13 +47,22 @@ class Config {
   }
 
   /**
-   * Builds a URL from a host object containing scheme, host and port
+   * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
    * @return {String} The full URL
    */
   _buildUrl(host) {
-    let url = `${host.scheme}://${host.host}`;
+    let url = `${host.scheme}://`;
+    const isLocalhost = (host.host === 'localhost');
+    if (isLocalhost || !host.subdomain) {
+      url += host.host;
+    } else {
+      url += `${host.subdomain}.${host.host}`;
+    }
     if (host.port) {
-      url = url + `:${host.port}`;
+      url += `:${host.port}`;
+    }
+    if (isLocalhost && host.subdomain) {
+      url += '/' + host.subdomain;
     }
 
     return url;
@@ -102,7 +111,7 @@ class Config {
 
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
-      'playground': this.shared.baseUrls.playground,
+      'playground': this._buildUrl(this.hosts.playground),
       'platform': this._buildUrl(this.hosts.platform),
       'api': this._buildUrl(this.hosts.api),
     };
@@ -122,6 +131,6 @@ class Config {
   }
 }
 
-const config = new Config(process.env.NODE_ENV);
+const config = new Config(process.env.APP_ENV || process.env.NODE_ENV);
 
 module.exports = config;
