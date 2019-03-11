@@ -6,14 +6,14 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends';
+@import '_functions';
+@import '_mixins';
+@import '_variables';
 
-@import '../atoms/_text.scss';
-@import '../atoms/_color.scss';
-@import '../atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
 
 .#{molecule('faq')} {
   grid-column: 7 / 19;
