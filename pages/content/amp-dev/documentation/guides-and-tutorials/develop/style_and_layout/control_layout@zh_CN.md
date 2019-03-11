@@ -172,8 +172,8 @@ AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +184,8 @@ AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]

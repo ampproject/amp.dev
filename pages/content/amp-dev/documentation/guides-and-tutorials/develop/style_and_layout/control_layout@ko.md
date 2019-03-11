@@ -172,8 +172,8 @@ AMP에서 사용할 수 있는 또 다른 반응형 디자인 기능은 `media` 
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +184,8 @@ AMP에서 사용할 수 있는 또 다른 반응형 디자인 기능은 `media` 
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]
