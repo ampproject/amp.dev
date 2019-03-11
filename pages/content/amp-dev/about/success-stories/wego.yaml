@@ -1,6 +1,7 @@
 $title: Wego
 $category: e-commerce
 $date: 2017-05-11
+description: Implementing AMP delivered significant speed improvements to Wego’s mobile web experience. Page-load speeds decreased from more than 11 seconds to less than one second with AMP.
 
 formats:
   - websites

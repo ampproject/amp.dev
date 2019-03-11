@@ -6,6 +6,6 @@ $localization:
 $order: 4
 
 index: /content/amp-dev/events/amp-conf-2019.html
-sub_navigation:
+flyout:
     - /content/amp-dev/events/amp-conf-2019.html
     - /content/amp-dev/events/amp-roadshow.html

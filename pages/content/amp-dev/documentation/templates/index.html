@@ -7,6 +7,18 @@ $path: /documentation/templates.html
 $hidden: true
 $localization:
   path: /{locale}/documentation/templates.html
+flyout:
+  description: Ready to use
+  icon: template
+
+teaser:
+  image:
+    src: 'https://placehold.it/400x400'
+    width: 1
+    height: 1
+    alt: lorem ipsum
+  text: AMP Start provides templates and components to create styled AMP sites.
+
 stage:
   layout: all
   devices:
@@ -27,14 +39,6 @@ stage:
       height: 5
       type: mobile
       alt: image
-
-teaser:
-  image:
-    src: 'https://placehold.it/400x400'
-    width: 1
-    height: 1
-    alt: lorem ipsum
-  text: AMP Start provides templates and components to create styled AMP sites.
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
 

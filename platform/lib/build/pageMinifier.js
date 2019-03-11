@@ -28,16 +28,28 @@ const config = require('@lib/config');
 
 // List of selectors that can be safely minified
 const SELECTOR_REWRITE_SAFE = [
-  'ap-o-header',
-  'ap-m-nav-link',
+  'ap--container',
+  'ap--quote',
+  'ap-m-banner',
+  'ap-m-breadcrumbs',
   'ap-m-language-selector',
-  'ap-o-stage',
-  'ap-o-case-band',
-  'ap-o-teaser-grid',
+  'ap-m-rolling-formats',
+  'ap-m-lnk',
+  'ap-m-nav-link',
+  'ap-m-shift-card',
   'ap-m-teaser',
+  'ap-m-quote',
+  'ap-m-benefit',
+  'ap-m-code-snippet',
+  'ap-o-news-item',
   'ap-o-benefits',
+  'ap-o-case-band',
+  'ap-o-case-grid',
   'ap-o-consent',
   'ap-o-footer',
+  'ap-o-header',
+  'ap-o-stage',
+  'ap-o-teaser-grid',
 ];
 
 const SELECTOR_REWRITE_EXCLUDED_PATHS = /\/documentation\/examples.*/;
@@ -134,7 +146,7 @@ class PageMinifier {
       css = css[0].replace(/<style amp-custom>|<\/style>/g, '');
 
       rcs.fillLibraries(css, {
-        'prefix': 'ap',
+        'prefix': '-',
       });
       return rcs.replace.html(html);
     }

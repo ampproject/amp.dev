@@ -50,7 +50,7 @@
 		"formats": ["websites","email","stories", "ads"]
     },
     {
-        "title": "Getting Support",
+        "title": "Support",
         "order": 1,
         "from": "SUPPORT.md",
         "to": "support/index.md",

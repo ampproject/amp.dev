@@ -27,11 +27,24 @@ body {
 
   .#{utility('container')} {
     @include container;
+    @include container-nogap;
   }
 
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
+    background: color('whisper');
+    @media (min-width: 768px) {
+      grid-column: 8 / 25;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  
+    @media (min-width: 1024px) {
+      grid-column: 6 / 24;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   .#{utility('sidebar')} {
@@ -39,7 +52,7 @@ body {
   }
 
   .#{utility('toc')} {
-    @include toc;
+    @include toc-white-bg;
   }
 
   .#{utility('sidebar')} + .#{utility('content')},

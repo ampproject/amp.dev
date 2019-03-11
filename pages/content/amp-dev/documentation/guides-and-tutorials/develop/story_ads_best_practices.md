@@ -1,6 +1,7 @@
 ---
 $title: Best practices for creating an AMP Story ad
 $order: 16
+description: 'AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX.'
 
 formats:
     - ads

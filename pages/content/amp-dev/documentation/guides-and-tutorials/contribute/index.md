@@ -1,9 +1,10 @@
 ---
 $title: How to contribute
 $titles:
-  header: Contribute
+  navigation: Contribute
 $path: /documentation/guides-and-tutorials/contribute/index.html
 $order: 0
+description: 'The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.'
 
 formats:
   - websites

@@ -13,23 +13,13 @@
 {% endif %}
 
 <ul class="ap-m-format-toggle">
+  <span class="ap-m-format-toggle-hl">Select your AMP format</span>
   {% for format in formats %}
   {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
   <li class="ap-m-format-toggle-format">
     <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="{{ landing_page.url.path }}?format={{ format }}"><div class="ap-a-ico">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
-      </div>AMP<br/>{{ format|capitalize }}</a>
+      </div>{{ format }}</a>
   </li>
   {% endfor %}
 </ul>
-
-<!--
-<amp-user-notification id="format-notification"
-  class="ap-m-format-toggle-notification"
-  layout="nodisplay">
-  <div class="ap-m-format-toggle-notification-inner" on="tap:format-notification.dismiss">
-    Tip: Filter your journey for a more streamlined experience.
-    <button>Dismiss</button>
-  </div>
-</amp-user-notification>
--->

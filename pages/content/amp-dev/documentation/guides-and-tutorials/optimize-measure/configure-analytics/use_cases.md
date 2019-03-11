@@ -1,6 +1,7 @@
 ---
 $title: Use cases
 $order: 2
+description: 'This guide provides a set of common use cases for tracking user engagement: NOTE – Want to add a use case? Let us know.'
 formats:
   - websites
 ---

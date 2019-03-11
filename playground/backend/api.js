@@ -17,8 +17,8 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const URL = require('url').URL;
-const config = require('../../platform/lib/config.js');
-const {setMaxAge} = require('../../platform/lib/utils/cacheHelpers.js');
+const config = require('@lib/config.js');
+const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
 // eslint-disable-next-line new-cap
 const api = express.Router();
 

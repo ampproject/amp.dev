@@ -6,6 +6,10 @@ $view: /views/custom.j2
 $path: /documentation/components.html
 $hidden: true
 
+flyout:
+  description: The complete AMP library
+  icon: components-flyout
+
 teaser:
   image:
     src: 'https://placehold.it/400x400'
@@ -17,12 +21,16 @@ teaser:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
+{% include 'views/partials/component-sidebar.j2' %}
+{% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
-    {% include 'views/partials/component-sidebar.j2' %}
+    {% include 'views/partials/sidebar-toggle.j2' %}
+    <span id="ap--sidebar-content" class="ap--sidebar"></span>
     <section class="ap--content">
+      {% include '/views/partials/sidebar-toggle-button.j2' %}
       <h1>The AMP component catalogue</h1>
-
+      
       <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
 
       {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
@@ -101,8 +109,8 @@ teaser:
       </div>
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-      
-      
+
+
       <div class="ap-o-teaser-grid">
         {# Hardcode to a length of 9 teasers as there will be at least that much #}
         <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
