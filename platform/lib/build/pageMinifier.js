@@ -95,7 +95,7 @@ class PageMinifier {
           let html = canonicalPage.contents.toString();
           html = scope.minifyPage(html, canonicalPage.path);
 
-          scope._log.info('Optimizing ${canonicalPage.relative}');
+          scope._log.info(`Optimizing ${canonicalPage.relative}`);
           const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
           const optimizedHtml = await scope.optimize(html, ampPath);
 
