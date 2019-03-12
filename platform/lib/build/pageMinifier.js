@@ -90,21 +90,12 @@ class PageMinifier {
   start(path) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-    scope._log.info('Start minifying pages');
-    let count = 0;
-
     return gulp.src(`${path}/**/*.html`, {'base': './'})
         .pipe(through.obj(async function(canonicalPage, encoding, callback) {
-          if (count % 100 === 0) {
-            scope._log.info(`minifying ${count}/?`);
-          }
-          count++;
-
           let html = canonicalPage.contents.toString();
           html = scope.minifyPage(html, canonicalPage.path);
 
-
-          scope._log.info(`minifying ${canonicalPage.path} - ${canonicalPage.relative}`);
+          scope._log.info('Optimizing ${canonicalPage.relative}');
           const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
           const optimizedHtml = await scope.optimize(html, ampPath);
 
