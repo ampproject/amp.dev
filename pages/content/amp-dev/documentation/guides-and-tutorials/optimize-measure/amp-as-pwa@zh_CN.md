@@ -58,9 +58,9 @@ Service Worker 是您的网页与服务器之间的客户端代理，可用于�
 
 注意: 如果您不熟悉 Service Worker 这一概念，请[在“网页基础知识”网站上阅读相关简介](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)。
 
-您需要在一个给定的网页上注册 Service Worker，否则浏览器将无法找到或运行该文件。默认情况下，注册过程是借助[少量 JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) 完成的。在 AMP 网页上，您可以使用 [`<amp-install-serviceworker>`](/zh_cn/docs/reference/components/amp-install-serviceworker.html) 组件实现同样的目的。
+您需要在一个给定的网页上注册 Service Worker，否则浏览器将无法找到或运行该文件。默认情况下，注册过程是借助[少量 JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) 完成的。在 AMP 网页上，您可以使用 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) 组件实现同样的目的。
 
-为此，请先通过 `<amp-install-serviceworker>` 组件的脚本在您网页的 `<head>`中添加该组件：
+为此，请先通过 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) 组件的脚本在您网页的 `<head>`中添加该组件：
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"

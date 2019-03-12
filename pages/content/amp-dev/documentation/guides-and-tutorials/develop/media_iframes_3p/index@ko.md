@@ -8,14 +8,14 @@ $title: 이미지 및 동영상 삽입
 
  AMP 는 `<img>` 와 같이 미디어를 표시하는 기본 HTML 요소를 지원하지 않습니다. 대신 이러한 요소에 해당하는 구성요소를 제공하는데, 그 이유는 다음과 같습니다.
 
-*  애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.](/ko/learn/about-how/#size-all-resources-statically)
-*  네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.](/ko/learn/about-how/#prioritize-resource-loading)
+*  애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
+*  네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 주의:  지원되지 않는 &lt;img&gt;, &lt;video&gt;, &lt;audio&gt; 도 렌더링이 됩니다. 하지만 AMP 에서 [페이지를 확인하지]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
 
 ## 이미지
 
- 다음과 같이 [`amp-img`](/ko/docs/reference/components/amp-img.html) 요소를 사용하여 페이지에 이미지를 삽입합니다.
+ 다음과 같이 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소를 사용하여 페이지에 이미지를 삽입합니다.
 
 <!--embedded example - fixed size image -->
 <div>
@@ -74,7 +74,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 ## 애니메이션 이미지
 
- The [`amp-anim`](/ko/docs/reference/components/amp-anim.html) 요소는 `amp-img` 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
+ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 요소는 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -92,7 +92,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 ## 동영상
 
- 페이지에 동영상을 삽입하려면 [`amp-video`](/ko/docs/reference/components/amp-video.html) 요소를 사용합니다.
+ 페이지에 동영상을 삽입하려면 [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
  직접 HTML5 동영상 파일 삽입에만 이 요소를 사용하세요. 이 요소는 `src` 속성으로 지정한 비디오 리소스를 AMP 가 결정한 시간에 레이지 로드합니다.
 
@@ -112,7 +112,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 ## 오디오
 
- 페이지에 오디오 리소스를 삽입하려면 [`amp-audio`](/ko/docs/reference/components/amp-audio.html) 요소를 사용합니다.
+ 페이지에 오디오 리소스를 삽입하려면 [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) 요소를 사용합니다.
 
  직접 HTML5 오디오 파일 삽입에만 이 요소를 사용하세요. AMP 페이지에 삽입되는 모든 외부 리소스와 같이, 이 요소는 `src` 속성으로 지정한 오디오 리소스를 AMP가 결정한 시간에 레이지 로드합니다.
 

@@ -9,15 +9,15 @@ $title: 添加图片和视频
 
  AMP 不支持用于显示媒体内容的默认 HTML 组件，如 `<img>`。我们出于以下原因提供了相似的组件：
 
-*  我们需要在素材资源加载之前了解网页布局，这对 [为第一视口预加载提供支持来说至关重要](/zh_cn/learn/about-how/#size-all-resources-statically)
-*  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序](/zh_cn/learn/about-how/#prioritize-resource-loading)
+*  我们需要在素材资源加载之前了解网页布局，这对 [为第一视口预加载提供支持来说至关重要]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
+*  我们需要控制网络请求，以 [延迟加载并高效排定资源的优先顺序]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 注意: 尽管默认的 HTML 组件不受支持，但仍*会*  呈现在网页上，不过 AMP 不会 [验证您的网页，]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
 如果您的网页上显示了 HTML 组件，您将无法享受 AMP 提供的所有优势。
 
 ## 图片
 
- 使用 [`amp-img`](/zh_cn/docs/reference/components/amp-img.html) 元素向您的网页中添加图片，如下所示：
+ 使用 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素向您的网页中添加图片，如下所示：
 
 <!--embedded example - fixed size image -->
 <div>
@@ -75,7 +75,7 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 ## 动画图片
 
- The [`amp-anim`](/zh_cn/docs/reference/components/amp-anim.html) 元素与 `amp-img` 元素非常相似，且前者提供额外功能，可以管理 GIF 等动画图片的加载和播放。
+ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 元素与 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素非常相似，且前者提供额外功能，可以管理 GIF 等动画图片的加载和播放。
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -93,7 +93,7 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 ## 视频
 
- 使用 [`amp-video`](/zh_cn/docs/reference/components/amp-video.html) 元素向您的网页中添加视频。
+ 使用 [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 元素向您的网页中添加视频。
 
  仅针对直接 HTML5 视频文件嵌入使用此元素。此元素能以 AMP 确定的时间延迟加载由
 `src` 属性所指定的视频资源。
@@ -114,7 +114,7 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 ## 音频
 
- 使用 [`amp-audio`](/zh_cn/docs/reference/components/amp-audio.html) 元素向您的网页中添加音频资源。
+ 使用 [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) 元素向您的网页中添加音频资源。
 
  仅针对直接 HTML5 音频文件嵌入使用此元素。像 AMP 网页中所有嵌入的外部资源一样，此元素能以 AMP 确定的时间延迟加载由
 `src` 属性所指定的音频资源。

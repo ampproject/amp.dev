@@ -74,7 +74,7 @@ Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spéci
 
 Le validateur génère l'erreur `TAG_REQUIRED_BY_MISSING` lorsqu'il trouve un composant étendu dans le document AMP, mais ne trouve pas le `<script>` équivalent.
 
-Les [composants étendus](/docs/reference/components.html) doivent être inclus explicitement dans le document AMP en tant qu'éléments personnalisés.
+Les [composants étendus]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) doivent être inclus explicitement dans le document AMP en tant qu'éléments personnalisés.
 Pour corriger ces erreurs, accédez à la page de référence du composant étendu, copiez le script nécessaire et collez-le dans la section `<head>` du document AMP.
 
 ### Balise non autorisée
@@ -662,7 +662,7 @@ Cette erreur se produit lorsque vous ne spécifiez pas de mise en page pour la b
 Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
-Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 **Remarque** : Si vous ne spécifiez pas de mise en page et si vous n'incluez pas les valeurs `width` et `height`, la mise en page par défaut est de type CONTAINER. Le validateur génère une erreur, car le format CONTAINER n'est compatible avec aucune balise AMP.
 Spécifiez une mise en page autre que CONTAINER, ou ajoutez une valeur `width` ou `height` pour corriger l'erreur.
@@ -685,7 +685,7 @@ Spécifiez une mise en page autre que CONTAINER, ou ajoutez une valeur `width` o
 </table>
 
 Cette erreur se produit lorsque vous ne spécifiez pas de mise en page pour la balise AMP et que la mise en page implicite contient un attribut non autorisé.
-Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### La mise en page spécifiée n'est pas compatible avec la balise AMP
 
@@ -708,7 +708,7 @@ Cette erreur se produit lorsque la mise en page spécifiée pour la balise n'est
 Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
-Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Attribut non autorisé par la mise en page spécifiée
 
@@ -728,7 +728,7 @@ Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [c
 </table>
 
 Cette erreur se produit lorsque vous spécifiez une mise en page pour la balise AMP et que la mise en page contient un attribut non autorisé.
-Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML](/docs/reference/spec/amp-html-layout.html).
+Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Valeur incorrecte pour l'attribut requis par la mise en page
 

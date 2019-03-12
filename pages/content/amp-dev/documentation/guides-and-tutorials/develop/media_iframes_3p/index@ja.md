@@ -8,14 +8,14 @@ $title: 画像や動画を含める
 
 AMP は、メディアの表示に使用されるデフォルトの HTML タグ（`<img>`など）には対応していません。次の理由で、同等のコンポーネントが用意されています。
 
-*  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](/ja/learn/about-how/#size-all-resources-statically) するために不可欠）
-*  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](/ja/learn/about-how/#prioritize-resource-loading) しなければならない
+*  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically) するために不可欠）
+*  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading) しなければならない
 
 注: こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) が行われないので、AMP のメリットをすべて利用することはできなくなります。
 
 ## 画像
 
-画像をページに追加するには [amp-img](/ja/docs/reference/components/amp-img.html) 要素を使用します。たとえば次のようになります。
+画像をページに追加するには [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素を使用します。たとえば次のようになります。
 
 <!--embedded example - fixed size image -->
 <div>
@@ -73,7 +73,7 @@ AMP HTML のランタイムでは、画像のリソースを効果的に管理�
 
 ## アニメーション画像
 
-The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` 要素とよく似ています。この要素では、アニメーション画像（GIF など）の読み込みや再生を管理する機能を追加できます。
+The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 要素は[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素とよく似ています。この要素では、アニメーション画像（GIF など）の読み込みや再生を管理する機能を追加できます。
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -91,7 +91,7 @@ The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` �
 
 ## 動画
 
-動画をページに追加するには [amp-video](/ja/docs/reference/components/amp-video.html) 要素を使用します。
+動画をページに追加するには [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 要素を使用します。
 
 この要素は、HTML5 の動画ファイルを直接埋め込む場合にのみ使用します。この要素により、`src` 属性で指定された動画のリソースが、AMP で決められたタイミングで、遅れて読み込まれます。
 
@@ -111,7 +111,7 @@ The [amp-anim](/ja/docs/reference/components/amp-anim.html) 要素は`amp-img` �
 
 ## 音声
 
-音声のリソースをページに追加するには [amp-audio](/ja/docs/reference/components/amp-audio.html) 要素を使用します。
+音声のリソースをページに追加するには [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) 要素を使用します。
 
 この要素は、HTML5 の音声ファイルを直接埋め込む場合にのみ使用します。AMP ページに埋め込まれるすべての外部リソースと同様に、この要素により、`src` 属性で指定された音声のリソースが、AMP で決められたタイミングで、遅れて読み込まれます。
 

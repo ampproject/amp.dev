@@ -1,16 +1,22 @@
 ---
 $title: AMP Websites
 $view: /views/overview/what-is-amp.j2
+description: AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across ...
 
 benefits: !g.yaml /content/shared/data/benefits.yaml
 
+flyout:
+  format: websites
+  description: Create flawless web experiences
+  icon: amp-websites
+
 kpis:
-  - figure: 23%
-    description: Increase in returning users from mobile search
-    success_story: !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
   - figure: 6x
     description: More overall traffic
     success_story: !g.doc /content/amp-dev/about/success-stories/indiatoday.yaml
+  - figure: 23%
+    description: Increase in returning users from mobile search
+    success_story: !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
   - figure: 3x
     description: Faster page load time
     success_story: !g.doc /content/amp-dev/about/success-stories/gizmodo.yaml
@@ -64,11 +70,24 @@ kpis:
   </div>
 </section>
 
-{% with %}
-{% set kpis = doc.kpis %}
-{% set format = 'websites' %}
-{% include 'views/partials/kpis.j2' %}
-{% endwith %}
+<section class="ap--teaser-grid ap--container">
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
+      {% for kpi in doc.kpis %}
+        {% with %}
+        {% set teaser_doc = kpi.success_story %}
+        {% set teaser = {
+          "figure": kpi.figure,
+          "description": kpi.description,
+          "logo": teaser_doc.teaser.logo,
+          "text": teaser_doc.teaser.text
+        }%}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 <section class="ap--case-band">
   <div class="ap--container-fluid">
@@ -79,13 +98,13 @@ kpis:
 
     {% with %}
     {% set case_band_images = [
-      {"src": "/static/img/case-band-post-mobile.png", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-vox-mobile.png", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-iene-desktop.png", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-bmw-mobile.png", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-magebit-desktop.png", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-renovationbrands-desktop.png", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-tasty-mobile.png", "width": "750", "height": "1334"}
+      {"src": "/static/img/case-band-post-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-vox-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-iene-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-bmw-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-magebit-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-renovationbrands-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-tasty-mobile.jpg", "width": "750", "height": "1334"}
       ]
     %}
     {% include 'views/partials/case-band.j2' %}

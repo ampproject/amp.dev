@@ -13,7 +13,7 @@ h5 {
 	@include hl;
 	margin-top: 2em;
 
-	&:first-child {
+	&:first-of-type {
 		section.#{utility('content')} & {
 			margin-top: 0;
 		}

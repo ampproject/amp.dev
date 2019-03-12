@@ -2,7 +2,7 @@
 $title: 创作 AMP 故事的最佳做法
 ---
 
-本指南介绍了在创作 [AMP 故事](/zh_cn/docs/reference/components/amp-story.html)时应采取的最佳做法。
+本指南介绍了在创作 [AMP 故事]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})时应采取的最佳做法。
 
 ## 背景颜色
 
@@ -48,7 +48,7 @@ $title: 创作 AMP 故事的最佳做法
 
 ### 指定 `<source>` 和 `src`
 
-指定 [amp-video](/zh_cn/docs/reference/components/amp-video.html) 的来源时，请使用 `<source>` 子元素（而非 `src` 属性）。借助 `<source>` 元素，您可以指定视频类型并添加更多视频来源。在 `<source>` 元素中，请通过 `"type"` 属性指定 MIME 类型。对于 HLS 视频，您必须指定以下 MIME 类型之一：`application/x-mpegurl` 或 `application/vnd.apple.mpegurl`。对于所有其他视频，请指定 `video/` MIME 前缀及视频格式（例如“`video/mp4`”）。
+指定 [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 的来源时，请使用 `<source>` 子元素（而非 `src` 属性）。借助 `<source>` 元素，您可以指定视频类型并添加更多视频来源。在 `<source>` 元素中，请通过 `"type"` 属性指定 MIME 类型。对于 HLS 视频，您必须指定以下 MIME 类型之一：`application/x-mpegurl` 或 `application/vnd.apple.mpegurl`。对于所有其他视频，请指定 `video/` MIME 前缀及视频格式（例如“`video/mp4`”）。
 
 示例：指定多个来源文件
 
@@ -174,4 +174,3 @@ AMP 故事视频始终是竖直显示的（即纵向视图），要求宽高比�
 ```
 
 这样做的原因是，视频可能不会恰好在网页显示的同时开始播放，或者指定的时长可能不正确，导致预计时长与实际时长之间存在差异。这种情况可能会导致视频循环播放，进而分散用户的注意力。
- 

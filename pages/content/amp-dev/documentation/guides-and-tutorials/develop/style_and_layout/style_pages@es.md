@@ -4,7 +4,7 @@ $title: Formato CSS admitido
 
 Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de un elemento CSS, pero en ellas no se puede hacer referencia a hojas de estilo externas (salvo en el caso de las [fuentes personalizadas](#the-custom-fonts-exception)). Además, algunos estilos no están permitidos porque afectan al rendimiento. Por ejemplo, los atributos de estilo insertados no se admiten.
 
-Todos los estilos deben encontrarse en el encabezado del documento (consulta [Agregar estilos a una página](/es/docs/design/responsive_amp.html#add-styles-to-a-page)). Pero puedes utilizar preprocesadores CSS y plantillas para crear páginas estáticas y así mejorar la gestión del contenido.
+Todos los estilos deben encontrarse en el encabezado del documento (consulta [Agregar estilos a una página]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)). Pero puedes utilizar preprocesadores CSS y plantillas para crear páginas estáticas y así mejorar la gestión del contenido.
 
 Nota: Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
@@ -74,7 +74,7 @@ El resultado generado de los preprocesadores funciona tan bien en AMP como en cu
 emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [ampproject.org](https://www.ampproject.org/).
 
 Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](/es/docs/reference/components/amp-youtube.html), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
+incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
 
 [sourcecode:html]{% raw %}
 <head>
@@ -104,4 +104,3 @@ incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archi
 {% endraw %}[/sourcecode]
 
 Para ver cómo este código se convierte en código AMP HTML con formato, observa el código de cualquier página de [ampproject.org](https://www.ampproject.org/). (En Chrome, haz clic con el botón derecho y selecciona `View Page Source`.)
-

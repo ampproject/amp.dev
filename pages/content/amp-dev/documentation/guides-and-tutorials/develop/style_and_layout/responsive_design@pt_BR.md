@@ -16,7 +16,7 @@ Neste guia, você verá como implementar facilmente estes princípios básicos e
 
 Para otimizar sua página da Web e fazer com que o conteúdo seja dimensionado e se ajuste ao tamanho da janela do navegador em qualquer dispositivo, é preciso especificar o elemento `meta` da janela de visualização. Esse elemento indica ao navegador como dimensionar e ajustar a área visível (a janela de visualização) da página da Web.
 
-Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória](/pt_br/docs/fundamentals/spec.html#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
+Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -48,11 +48,11 @@ No entanto, queremos que a imagem não se expanda além do tamanho pretendido. P
 </style>
 ```
 
-Leia mais: Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](/pt_br/docs/design/responsive/control_layout.html##atributo-de-layout).
+Leia mais: Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#atributo-de-layout).
 
 <a id="fn1"></a>
 [tip type="note"]
-***Por que é difícil redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo "width=100%"?** A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário.  Sim, é fácil ajustar imagens à tela com "width=100%", mas isso afetará o desempenho.  Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente.  Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com marcadores de imagens. Essa marcação é feita com base nas dimensões fornecidas no "amp-img", a partir dos números usados para definir a proporção. Depois, os recursos são transferidos por download, e a página é preenchida.  O reflow não é obrigatório.
+***Por que é difícil redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo "width=100%"?** A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário.  Sim, é fácil ajustar imagens à tela com "width=100%", mas isso afetará o desempenho.  Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente.  Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com marcadores de imagens. Essa marcação é feita com base nas dimensões fornecidas no "[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), a partir dos números usados para definir a proporção. Depois, os recursos são transferidos por download, e a página é preenchida.  O reflow não é obrigatório.
 [/tip]
 
 ## Como dimensionar mídias na página
@@ -65,12 +65,12 @@ Ao incluir um vídeo na sua página da Web, verifique se o usuário consegue ver
 
 ##### Exemplo: como incorporar um vídeo do YouTube
 
-No exemplo a seguir, mostraremos um vídeo incorporado do YouTube que responde ao tamanho e à orientação da tela do dispositivo. Ao adicionar `"layout=responsive"` ao elemento `amp-youtube`, o vídeo é redimensionado para se ajustar à janela. A proporção dele é mantida de acordo com as especificações de `width` e `height`.
+No exemplo a seguir, mostraremos um vídeo incorporado do YouTube que responde ao tamanho e à orientação da tela do dispositivo. Ao adicionar `"layout=responsive"` ao elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), o vídeo é redimensionado para se ajustar à janela. A proporção dele é mantida de acordo com as especificações de `width` e `height`.
 
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Mostrar mais">Mostrar código completo</div> <div placeholder></div> </amp-iframe></div>
 
-Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP.  Para mais detalhes, consulte a lista de [componentes de mídia](/pt_br/docs/reference/components.html#media) disponíveis.
+Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP.  Para mais detalhes, consulte a lista de [componentes de mídia]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) disponíveis.
 
 ### Como exibir imagens responsivas
 
@@ -113,7 +113,7 @@ No exemplo a seguir, você verá três diferentes imagens de um gato cortadas qu
 - 470 a 669 pixels, será exibida `cat-medium.jpg` (450 x 340 pixels);
 - 469 pixels ou menos, será exibida `cat-small.jpg` (226 x 340 pixels).
 
-Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](/pt_br/docs/design/responsive/control_layout.html##o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
+Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar mais">Mostrar código completo</div><div placeholder></div></amp-iframe></div>
 

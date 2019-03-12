@@ -1,0 +1,65 @@
+/*
+
+#############################
+### ORGANISM: agenda ########
+#############################
+
+*/
+
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{organism('agenda')} {
+  @include agenda-list-shadow;
+
+  grid-column: 5 / 21;
+  background: color('white');
+  border-radius: 4px;
+  margin: 50px 0;
+
+  &-block {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(16, 1fr);
+      display: grid;
+      grid-gap: 30px;
+    }
+  }
+
+  &-content {
+    padding: 50px 20px;
+
+    @media (min-width: 768px) {
+      grid-column: 3 / 14;
+      padding: 50px 0px;
+    }
+
+    &-headline {
+      @include hl;
+      @include hl-h2;
+    }
+
+    &-sub-text {
+      @include txt;
+      @include txt-1;
+      padding-bottom: 25px;
+
+      & span {
+        @include txt-strong;
+      }
+    }
+
+    &-list {
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+
+}

@@ -1,6 +1,7 @@
 ---
 $title: Include images & video
 $order: 8
+description: "Like on a normal HTML page, AMP allows you to embed images, video and audio content. Learn what's different about the AMP equivalents and learn how to..."
 $path: /documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html
 formats:
   - websites
@@ -25,16 +26,16 @@ AMP doesn't support the default HTML counterparts to displaying media, like `<im
 We provide equivalent components for the following reasons:
 
 * We need to understand layout of the page before assets load, crucial
-  to [support first-viewport preloading](/learn/about-how/#size-all-resources-statically)
+  to [support first-viewport preloading]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
 * We need to control network requests to [lazy load and prioritize resources
-effectively](/learn/about-how/#prioritize-resource-loading)
+effectively]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 Caution: While they're not supported, they *will* render, but AMP won't [validate your pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) and you won't get all the benefits AMP provides.
 
 ## Images
 
 Include an image in your page
-using the [`amp-img`](/docs/reference/components/amp-img.html) element, like so:
+using the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element, like so:
 
 <!--embedded example - fixed size image -->
 <div>
@@ -53,7 +54,7 @@ height and width. At minimum, an explicit width and height needs to be set.
 
 #### Displaying images when JavaScript is disabled
 
-As `<amp-img>` relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
+As [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
 
 <!--embedded example - img with noscript -->
 <div>
@@ -100,7 +101,7 @@ based on the viewport position, system resources, connection bandwidth, or other
 
 ## Animated images
 
-The [`amp-anim`](/docs/reference/components/amp-anim.html) element is very similar to the `amp-img` element,
+The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) element is very similar to the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element,
 and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
 <!--embedded amp-anim basic example -->
@@ -122,7 +123,7 @@ and provides additional functionality to manage loading and playing of animated 
 ## Video
 
 Include a video in your page
-using the [`amp-video`](/docs/reference/components/amp-video.html) element.
+using the [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) element.
 
 Only use this element for direct HTML5 video file embeds.
 The element loads the video resource specified by the `src` attribute lazily,
@@ -146,7 +147,7 @@ if the browser doesn't support HTML5 video, for example:
 ## Audio
 
 Include an audio resource in your page,
-using the [`amp-audio`](/docs/reference/components/amp-audio.html) element.
+using the [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) element.
 
 Only use this element for direct HTML5 audio file embeds.
 Like all embedded external resources in an AMP page,

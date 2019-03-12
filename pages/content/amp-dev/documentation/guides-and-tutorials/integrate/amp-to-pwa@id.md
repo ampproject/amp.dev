@@ -5,7 +5,7 @@ $title: Memuat Progressive Web App di awal dari halaman AMP
 Strategi yang baik adalah membuat **pintu masuk ke situs sebagai halaman AMP**, kemudian **menyiapkan PWA di belakang layar** dan beralih ke PWA untuk perjalanan selanjutnya:
 
 * Semua konten halaman “rincian” (yang memiliki konten spesifik, bukan halaman ringkasan) dipublikasikan sebagai AMP untuk mendapatkan pengalaman pemuatan yang hampir instan.
-* AMP ini menggunakan elemen khusus AMP [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html) untuk menyiapkan cache dan shell PWA saat pengguna sedang membuka konten.
+* AMP ini menggunakan elemen khusus AMP [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) untuk menyiapkan cache dan shell PWA saat pengguna sedang membuka konten.
 * Saat pengguna mengklik link lain di situs Anda (misalnya, pesan ajakan (CTA) di bagian bawah untuk pengalaman yang lebih mirip aplikasi), Service Worker akan mencegat permintaan, mengambil alih halaman, dan memuat shell PWA.
 
 Baca terus untuk mengetahui alasan dan cara menggunakan pola pengembangan ini.
@@ -14,7 +14,7 @@ Baca terus untuk mengetahui alasan dan cara menggunakan pola pengembangan ini.
 
 ### AMP untuk akuisisi pengguna awal
 
-AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, halaman konten yang ditemukan pengguna Anda secara organik melalui mesin telusur, link yang dibagikan oleh teman, atau melalui link di situs lain. Karena [prarender khusus](/id/learn/about-how/) AMP, halaman dapat dimuat sangat cepat, sehingga jumlah pengguna yang berpaling menjadi lebih sedikit ([studi DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) terbaru menunjukkan bahwa **lebih dari 53% dari semua pengguna akan berpaling setelah 3 detik**).
+AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, halaman konten yang ditemukan pengguna Anda secara organik melalui mesin telusur, link yang dibagikan oleh teman, atau melalui link di situs lain. Karena [prarender khusus]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) AMP, halaman dapat dimuat sangat cepat, sehingga jumlah pengguna yang berpaling menjadi lebih sedikit ([studi DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) terbaru menunjukkan bahwa **lebih dari 53% dari semua pengguna akan berpaling setelah 3 detik**).
 
 ### PWA untuk engagement dan interaktivitas yang kaya
 
@@ -30,7 +30,7 @@ AMP memiliki kemampuan untuk menginstal Service Worker Progressive Web App Anda 
 **TIP –** Jika Anda belum terbiasa dengan Service Worker, sebaiknya buka [kursus Udacity](https://www.udacity.com/course/offline-web-applications--ud899) yang disampaikan oleh Jake Archibald.
 [/tip]
 
-Pertama-tama, instal Service Worker di semua Halaman AMP Anda menggunakan [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html), dengan terlebih dahulu menyertakan komponen melalui skripnya di `<head>` halaman Anda:
+Pertama-tama, instal Service Worker di semua Halaman AMP Anda menggunakan [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}), dengan terlebih dahulu menyertakan komponen melalui skripnya di `<head>` halaman Anda:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -100,7 +100,7 @@ self.addEventListener('fetch', event => {
 
 Yang menarik dari teknik ini adalah Anda kini menggunakan progressive enhancement untuk beralih dari AMP ke PWA. Namun, ini juga berarti bahwa browser yang belum mendukung Service Worker tetap akan beralih dari AMP ke AMP dan tidak akan pernah mengarah ke PWA.
 
-AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shell](/id/docs/reference/components/amp-install-serviceworker.html#shell-url-rewrite). Dengan menambahkan pola URL fallback ke tag [`<amp-install-serviceworker>`](/id/docs/reference/components/amp-install-serviceworker.html), Anda memerintahkan AMP untuk menulis ulang semua link yang cocok pada halaman tertentu untuk membuka URL shell lain yang lama, jika tidak ada dukungan Service Worker yang terdeteksi:
+AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shell]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}#shell-url-rewrite). Dengan menambahkan pola URL fallback ke tag [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}), Anda memerintahkan AMP untuk menulis ulang semua link yang cocok pada halaman tertentu untuk membuka URL shell lain yang lama, jika tidak ada dukungan Service Worker yang terdeteksi:
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -113,4 +113,4 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shel
 
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari Service Worker apa pun.
 
-Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/integration/amp-in-pwa.html).
+Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).

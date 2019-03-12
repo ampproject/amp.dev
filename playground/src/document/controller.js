@@ -33,7 +33,10 @@ export default class DocumentController {
     this.editor = editor;
     this.srcDoc = PlaygroundDocument.createDocument();
     this._setupDocument(runtime).then(() => {
-      this.editor.setCursorAndFocus(params.get('line', 0), 1);
+      const line = params.get('line', 0);
+      if (line > 0) {
+        this.editor.scrollToLine(line, 1);
+      }
     });
     this._configureStatemachine();
     events.subscribe(

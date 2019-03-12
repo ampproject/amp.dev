@@ -10,14 +10,14 @@ include them in your pages.
 
  As AMP não são compatíveis com os correspondentes padrão em HTML para exibir mídia, como `<img>`. Fornecemos componentes equivalentes pelos seguintes motivos:
 
-*  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.](/pt_br/learn/about-how/#size-all-resources-statically)
-*  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.](/pt_br/learn/about-how/#prioritize-resource-loading)
+*  Precisamos entender o layout da página antes de carregar os recursos, algo crucial para [oferecer suporte ao pré-carregamento da janela de visualização primária.]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
+*  Precisamos controlar as solicitações de rede para [carregamento lento e priorizar os recursos de maneira efetiva.]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 Cuidado: Embora não sejam compatíveis, eles*serão*  renderizados, mas as AMP não [validarão suas páginas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) e não será possível aproveitar todos os benefícios que as AMP oferecem.
 
 ## Imagens
 
- Inclua uma imagem na página usando o elemento [`amp-img`](/pt_br/docs/reference/components/amp-img.html) como em:
+ Inclua uma imagem na página usando o elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) como em:
 
 <!--embedded example - fixed size image -->
 <div>
@@ -75,7 +75,7 @@ Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens
 
 ## Imagens animadas
 
- O elemento [`amp-anim`](/pt_br/docs/reference/components/amp-anim.html) é muito similar ao elemento `amp-img` e fornece funcionalidades adicionais para gerenciar o carregamento e a reprodução de imagens animadas, como GIFs.
+ O elemento [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) é muito similar ao elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) e fornece funcionalidades adicionais para gerenciar o carregamento e a reprodução de imagens animadas, como GIFs.
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -93,7 +93,7 @@ Observação: Para usar esse componente, inclua `<script async custom-element="a
 
 ## Vídeo
 
- Inclua um vídeo na página usando o elemento [`amp-video`](/pt_br/docs/reference/components/amp-video.html).
+ Inclua um vídeo na página usando o elemento [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}).
 
  Somente use esse elemento para incorporar diretamente arquivos de vídeo HTML5. O elemento carrega o recurso de vídeo especificado pelo atributo `src` com lazy loading, em um momento determinado pelas AMP.
 
@@ -113,7 +113,7 @@ Inclua um marcador de posição antes do começo do vídeo e um fallback, caso o
 
 ## Áudio
 
- Inclua um recurso de áudio na página usando o elemento [`amp-audio`](/pt_br/docs/reference/components/amp-audio.html).
+ Inclua um recurso de áudio na página usando o elemento [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}).
 
  Use esse elemento somente para incorporar diretamente arquivos de áudio HTML5. Como todos os recursos externos incorporados em AMP, o elemento carrega o recurso de áudio especificado pelo atributo `src` com lazy loading, em um momento determinado pelas AMP.
 

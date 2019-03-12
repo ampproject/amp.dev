@@ -1,0 +1,43 @@
+/*
+
+#########################
+### MOLECULE: faq ###
+#########################
+
+*/
+
+@import '_extends';
+@import '_functions';
+@import '_mixins';
+@import '_variables';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('faq')} {
+  grid-column: 7 / 19;
+  margin: 50px 0 100px;
+
+  &-headline {
+    @include hl;
+    @include hl-h2;
+
+    padding-bottom: 50px;
+  }
+
+  &-content {
+    @include txt;
+
+    &-question {
+      @include txt-font-accent;
+      @include txt-lrg;
+      padding-bottom: 10px;
+    }
+
+    &-answer {
+      @include txt-2;
+      padding-bottom: 40px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 ---
 $title: Integrating with AMP to serve display ads
 $order: 5
+description: 'This guide is for ad networks that want to integrate with AMP to serve display ads to AMP pages.'
 formats:
   - ads
 ---
@@ -45,7 +46,7 @@ For instructions on creating an [`amp-ad`]({{g.doc('/content/amp-dev/documentati
 
 ## Creating a Fast Fetch integration
 
-[Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/) is an AMP mechanism that separates the ad request from the ad response, allowing ad requests to occur earlier in the page lifecycle, and rendering ads only when they are likely to be viewed by users. Fast Fetch provides preferential treatment to verified AMPHTML ads over traditional HTML ads. Within Fast Fetch, if an ad fails validation, that ad is wrapped in a cross-domain iframe to sandbox it from the rest of the AMP document. Conversely, an AMPHTML ad passing validation is written directly into the page. Fast Fetch handles both AMP and non-AMP ads; no additional ad requests are required for ads that fail validation.
+[Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) is an AMP mechanism that separates the ad request from the ad response, allowing ad requests to occur earlier in the page lifecycle, and rendering ads only when they are likely to be viewed by users. Fast Fetch provides preferential treatment to verified AMPHTML ads over traditional HTML ads. Within Fast Fetch, if an ad fails validation, that ad is wrapped in a cross-domain iframe to sandbox it from the rest of the AMP document. Conversely, an AMPHTML ad passing validation is written directly into the page. Fast Fetch handles both AMP and non-AMP ads; no additional ad requests are required for ads that fail validation.
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Fast Fetch Integration flow', caption='Fast Fetch Integration flow' ) }}
 
@@ -61,4 +62,4 @@ For instructions on creating a Fast Fetch integration, see the [Fast Fetch Netwo
 
 *   [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 *   [List of supported ad vendors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
-*   [Blog entry describing launch of Fast Fetch](/latest/blog/even-faster-loading-ads-in-amp/)
+*   [Blog entry describing launch of Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

@@ -7,7 +7,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## تضمين تغريدة
 
 يمكنك تضمين إحدى تغريدات Twitter في صفحتك
-باستخدام العنصر [`amp-twitter`](/docs/reference/components/amp-twitter.html).
+باستخدام العنصر [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
 لتضمين تغريدة في صفحتك،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -30,14 +30,14 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## تضمين Instagram
 
 يمكنك تضمين Instagram في صفحتك
-باستخدام العنصر <a href="/docs/reference/components/amp-instagram.html">`amp-instagram`</a>.
+باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}"><code>amp-instagram</code></a>.
 
 لتضمين Instagram،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -60,14 +60,14 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## عرض مشاركة أو فيديو Facebook
 
 يمكنك عرض مشاركة أو فيديو Facebook في صفحتك
-باستخدام العنصر [`amp-facebook`](/docs/reference/components/amp-facebook.html).
+باستخدام العنصر [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
 
 يجب تضمين النص البرمجي التالي في `<head>`:
 
@@ -110,7 +110,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## تضمين فيديو youtube
 
 يمكنك تضمين فيديو youtube في صفحتك
-باستخدام العنصر <a href="/docs/reference/components/amp-youtube.html">`amp-youtube`</a>.
+باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}"><code>amp-youtube</code></a>.
 
 يجب تضمين النص البرمجي التالي في `<head>`:
 
@@ -132,14 +132,14 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## عرض أحد الإعلانات
 
 يمكنك عرض إعلان في صفحتك
-باستخدام العنصر <a href="/docs/reference/components/amp-ad.html">`amp-ad`</a>.
+باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}"><code>amp-ad</code></a>.
 والإعلانات المعروضة من خلال HTTPS هي وحدها المعتمدة.
 
 غير مسموح بتشغيل جافا سكريبت مقدمة من شبكة إعلانية داخل مستند AMP.
@@ -159,7 +159,7 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -175,8 +175,8 @@ $title: تضمين المحتوى من جهات خارجية
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة](/docs/reference/components/amp-ad.html#supported-ad-networks).
+يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

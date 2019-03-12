@@ -1,9 +1,14 @@
 ---
 $title: AMP Email
 $view: /views/overview/what-is-amp.j2
+description: AMP for email allows senders to include AMP components inside rich engaging emails, making modern app functionality available within email. The AMP email format provides ...
+
+flyout:
+  format: email
+  description: Next gen email
+  icon: amp-email
 
 benefits: !g.yaml /content/shared/data/benefits.yaml
-
 ---
 
 <section class="ap--stage ap--container-fluid">
@@ -54,11 +59,25 @@ benefits: !g.yaml /content/shared/data/benefits.yaml
   </div>
 </section>
 
-{% with %}
-{% set kpis = doc.kpis %}
-{% set format = 'email' %}
-{% include 'views/partials/kpis.j2' %}
-{% endwith %}
+<section class="ap--teaser-grid ap--container">
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
+      {% for kpi in doc.kpis %}
+        {% with %}
+        {% set teaser_doc = kpi.success_story %}
+        {% set teaser = {
+          "figure": kpi.figure,
+          "description": kpi.description,
+          "logo": teaser_doc.teaser.logo,
+          "text": teaser_doc.teaser.text
+        }%}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 
 <section class="ap--quote ap--container">
   <div class="ap-m-quote">
@@ -74,7 +93,7 @@ benefits: !g.yaml /content/shared/data/benefits.yaml
       </blockquote>
       <p>Antony Malone, Senior Product Owner Direct Marketing at Booking.com</p>
 
-      
+
     </div>
   </div>
 </section>

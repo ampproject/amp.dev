@@ -1,8 +1,14 @@
 ---
 $title: AMP Stories
 $view: /views/overview/what-is-amp.j2
+description: AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions.
 
 benefits: !g.yaml /content/shared/data/benefits.yaml
+
+flyout:
+  format: stories
+  description: Snackable formats for everyone
+  icon: amp-stories
 
 stories:
   - image: /static/img/stories/story-cnn.jpg
@@ -30,11 +36,6 @@ stories:
     logo: /static/img/stories/logo-mic.png
     logo_alt@: Mic
     url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
-  - image: /static/img/stories/story-vox.jpg
-    image_alt@: How College Football Playoff Rankings Actually Work
-    logo: /static/img/stories/logo-vox.png
-    logo_alt@: Vox
-    url: https://www.sbnation.com/2018/2/12/16719476/college-football-playoff-rankings-explained
   - image: /static/img/stories/story-wapo.jpg
     immage_alt@: The Evolution of Trump's Wall
     logo: /static/img/stories/logo-wapo.png
@@ -89,11 +90,25 @@ stories:
   </div>
 </section>
 
-{% with %}
-{% set kpis = doc.kpis %}
-{% set format = 'stories' %}
-{% include 'views/partials/kpis.j2' %}
-{% endwith %}
+<section class="ap--teaser-grid ap--container">
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
+      {% for kpi in doc.kpis %}
+        {% with %}
+        {% set teaser_doc = kpi.success_story %}
+        {% set teaser = {
+          "figure": kpi.figure,
+          "description": kpi.description,
+          "logo": teaser_doc.teaser.logo,
+          "text": teaser_doc.teaser.text
+        }%}
+        {% include '/views/partials/teaser.j2' %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 
 <section class="ap--quote ap--container">
   <div class="ap-m-quote">

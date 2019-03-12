@@ -1,6 +1,7 @@
 ---
 $title: AMP validation errors
 $order: 1
+description: 'Valid AMP documents must not include any validation errors. The purpose of this document is to help you better understand and fix any validation errors ...'
 formats:
   - websites
   - email
@@ -87,7 +88,7 @@ The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
 but doesn't find its equivalent `<script>`.
 
-[Extended components](/docs/reference/components.html)
+[Extended components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 must be explicitly included in the AMP document as custom elements.
 To fix these errors, navigate to the extended component's reference page,
 copy its required script, and paste it into the AMP document `<head>`.
@@ -133,7 +134,7 @@ broadly defines the set of disallowed tags.
 The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
 provided by the AMP Project itself. Many common uses of JavaScript have AMP
 HTML library equivalent implementations. See [AMP
-components](/docs/reference/components.html) for the set of components that can be
+components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) for the set of components that can be
 used to enhance AMP HTML pages.
 
 If your use case is not covered, you may also consider contributing new
@@ -761,7 +762,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
 see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
-the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
 **NOTE –**  If you don't specify the layout,
@@ -794,7 +795,7 @@ or add a `width` and/or `height` value and the error goes away.
 This error occurs when you don't specify a layout for the AMP tag,
 and the implied layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+[AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Specified layout isn't supported by AMP tag
 
@@ -821,7 +822,7 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
 see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
-the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Attribute not allowed by specified layout
 
@@ -844,7 +845,7 @@ the [AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.
 This error occurs when you specify a layout for the AMP tag,
 and the layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification](/docs/reference/spec/amp-html-layout.html).
+[AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Invalid value for attribute required by layout
 
@@ -866,7 +867,7 @@ Disallowed attributes for layout types are described in the
 This error occurs when the attribute value is invalid for the specified layout.
 To understand what triggers this error,
 you need to familiarize yourself with
-the [different behaviors of layouts](/docs/design/responsive/control_layout.html#size-and-position-elements).
+the [different behaviors of layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements).
 
 Let's say you set the layout to be `fixed-height` and
 you include numeric values for both `height` and `width`.
@@ -910,7 +911,7 @@ designed to include templates, for example,
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates
 (see also
-[Use CSS preprocessors](/docs/design/responsive/style_pages.html#use-css-preprocessors)).
+[Use CSS preprocessors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)).
 
 ### Attribute contains template syntax
 

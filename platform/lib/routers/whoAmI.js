@@ -28,7 +28,7 @@ whoAmI.get('/', (request, response) => {
   };
 
   response.setHeader('Content-Type', 'application/json');
-  response.status(200).send(JSON.stringify(whoAmI)).end();
+  response.status(200).send(JSON.stringify(whoAmI));
 });
 
 module.exports = whoAmI;

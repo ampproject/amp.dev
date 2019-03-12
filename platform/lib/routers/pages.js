@@ -39,10 +39,10 @@ function getFilteredFormat(request) {
   const QUERY_PARAMETER_NAME = 'format';
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
 
-  const activeFormat = request.query[QUERY_PARAMETER_NAME] || '';
+  const activeFormat = request.query[QUERY_PARAMETER_NAME] || 'websites';
   if (ALLOWED_FORMATS.indexOf(activeFormat.toLowerCase()) == -1) {
-    // If the format that should be filtered by isn't valid go on
-    return;
+    // If the format to filter by is invalid or none use websites
+    return 'websites';
   }
 
   return activeFormat;

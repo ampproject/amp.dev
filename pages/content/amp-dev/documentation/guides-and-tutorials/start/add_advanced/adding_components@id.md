@@ -8,7 +8,7 @@ Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif k
 
 - **diperpanjang**: Ini adalah ekstensi koleksi dasar yang harus disertakan secara eksplisit di dalam dokumen sebagai elemen khusus.  Elemen khusus memerlukan skrip tertentu yang ditambahkan ke bagian `<head>` (misalnya, `<script async custom-element="amp-video" ...`).
 
-- **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Developer dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya.  Pelajari lebih lanjut di [Fitur eksperimental](/id/docs/reference/experimental.html).
+- **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Developer dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya.  Pelajari lebih lanjut di [Fitur eksperimental]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}).
 
 Sampel kami sudah menggunakan komponen bawaan, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).  Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
 
@@ -123,7 +123,7 @@ Seperti elemen lainnya di halaman, kami menentukan `lebar` dan `tinggi` video, s
 
 Untuk mempelajari lebih lanjut tentang menyematkan video YouTube, baca dokumentasi komponen [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
 
-Tips: Gunakan atribut [`fallback`](/id/docs/design/responsive/placeholders.html#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
+Tips: Gunakan atribut [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
 
 ## Menampilkan Tweet
 Menyematkan tweet yang telah diformat sebelummnya dari Twitter merupakan fitur umum dalam artikel berita. Komponen [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) dapat memberikan fungsi ini dengan mudah.
@@ -153,7 +153,7 @@ Atribut `data-tweetid` adalah contoh lain dari atribut khusus yang diperlukan ol
 
 Untuk mempelajari lebih lanjut tentang menyematkan Tweet dari Twitter, baca dokumentasi komponen [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
-Tips: AMP memberikan lebih banyak komponen untuk menyematkan konten dari jaringan sosial. Lihat [komponen AMP sosial](/id/docs/reference/components.html#social) terbaru.
+Tips: AMP memberikan lebih banyak komponen untuk menyematkan konten dari jaringan sosial. Lihat [komponen AMP sosial]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) terbaru.
 
 ## Menandai kutipan artikel
 
@@ -197,4 +197,4 @@ Atau, apa yang terjadi jika kutipannya lebih panjang?
 
 Sebagai eksperimen terakhir dengan [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}), coba buat teks pendek,  seperti "Halo" yang jauh lebih tinggi (misalnya, sebesar 400), dan pertahankan nilai atribut max-font-size sebesar 42. Seperti apa tampilan halaman yang dihasilkan? Apakah teks sudah berada di tengah secara vertikal? Atau, apakah tinggi tag [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) menyusut agar sesuai dengan ukuran font maks? Berbekal informasi yang sudah Anda ketahui tentang sistem tata letak AMP, coba cari tahu jawaban dari pertanyaan di atas sebelum mengutak-atik kode.
 
-Anda dapat mempelajari lebih lanjut tentang [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) dari [Demo langsung AMP by Example](https://ampbyexample.com/components/amp-fit-text/).
+Anda dapat mempelajari lebih lanjut tentang [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) dari [Demo langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}}).

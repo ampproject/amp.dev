@@ -8,7 +8,7 @@ Com o sistema de componentes AMP, é fácil e rápido criar recursos eficientes 
 
 - **Estendidos**: são as extensões da biblioteca de base que precisam ser incluídas explicitamente no documento como elementos personalizados.  Os elementos personalizados exigem a inclusão de scripts específicos na seção `<head>`, por exemplo, `<script async custom-element="amp-video" ...`).
 
-- **Experimentais**: são componentes que foram lançados, mas não estão prontos para uso geral. Os desenvolvedores podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.  Saiba mais em [Recursos experimentais](/pt_br/docs/reference/experimental.html).
+- **Experimentais**: são componentes que foram lançados, mas não estão prontos para uso geral. Os desenvolvedores podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.  Saiba mais em [Recursos experimentais]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}).
 
 Nosso exemplo já usa um componente incorporado, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).  Agora, adicione alguns componentes AMP **estendidos** de uso comum ao artigo de notícias.
 
@@ -123,7 +123,7 @@ Assim como os outros elementos da página, os elementos `width` e `height` do v�
 
 Para saber mais sobre a incorporação de vídeos do YouTube, leia a documentação do componente [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
 
-Dica: Use o atributo [`fallback`](/pt_br/docs/design/responsive/placeholders.html#fallbacks) para informar os usuários caso haja uma falha no carregamento do componente ou ele não seja compatível com o navegador.
+Dica: Use o atributo [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) para informar os usuários caso haja uma falha no carregamento do componente ou ele não seja compatível com o navegador.
 
 ## Mostrar um tweet
 Incorporar tweets pré-formatados do Twitter é um recurso comum em artigos de notícias. O componente [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) é uma maneira fácil de incluir esse conteúdo.
@@ -153,7 +153,7 @@ O atributo `data-tweetid` é outro exemplo de atributo do cliente exigido por um
 
 Para saber mais sobre como incorporar tweets do Twitter, leia a documentação do componente [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
-Dica: A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes](/pt_br/docs/reference/components.html#social).
+Dica: A AMP oferece ainda mais componentes para incorporar conteúdo de redes sociais. Confira os [componentes AMP de redes sociais mais recentes]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).
 
 ## Destacar uma citação do artigo
 
@@ -197,4 +197,4 @@ E se a citação for mais longa?
 
 Como um último experimento com o [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}), crie um texto curto, como "Olá", com uma altura muito maior (por exemplo, um valor de 400), mantendo o valor de 42 no atributo max-font-size. Como a página ficaria? O texto está centralizado verticalmente? Ou a altura da tag [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) é reduzida para se ajustar ao tamanho máximo da fonte? Pense no que você já sabe sobre o sistema de layout AMP e tente responder a essas perguntas antes de usar o código.
 
-Saiba mais sobre o [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) com a [demonstração ao vivo da AMP](https://ampbyexample.com/components/amp-fit-text/).
+Saiba mais sobre o [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) com a [demonstração ao vivo da AMP]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}}).

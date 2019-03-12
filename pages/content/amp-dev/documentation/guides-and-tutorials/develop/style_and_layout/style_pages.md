@@ -1,5 +1,6 @@
 ---
 $title: Supported CSS
+description: Like all web pages, AMP pages are styled with CSS, but you can't reference external stylesheets with the exception of custom fonts. Also certain styles are disallowed ...
 formats:
   - websites
   - email
@@ -19,7 +20,7 @@ but you can’t reference external stylesheets
 Also certain styles are disallowed due to performance implications.
 
 Styles may live in the head of the document or as inline `style` attributes
-(see [Add styles to a page](/docs/design/responsive_amp.html#add-styles-to-a-page)).
+(see [Add styles to a page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
@@ -101,7 +102,7 @@ For example, the
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
 It also includes the custom element script for
-[`amp-youtube`](/docs/reference/components/amp-youtube.html), among others,
+[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), among others,
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html]{% raw %}

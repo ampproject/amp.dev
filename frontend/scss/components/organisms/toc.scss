@@ -13,6 +13,7 @@
   @media (min-width: 1024px) {
     background: none;
     box-shadow: none;
+    padding-right: 10px;
   }
 }
 
@@ -21,20 +22,25 @@
   z-index: 1;
   top: 0;
   right: 0;
-  width: 100%;
+  width: calc(100% - 20px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
   border-radius: 8px;
-  padding: 15px 15px 15px 15px;
+  padding: 15px;
+  margin-bottom: 10px;
 
   &::-webkit-scrollbar {
     width: 2px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
+    background-color: rgba(color('black'), 0.10);
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
   }
 
   @media (min-width: 1024px) {
@@ -80,10 +86,11 @@
 
     a {
       display: block;
-      padding-bottom: 7px;
+      padding-bottom: 20px;
       @include txt;
       @include txt-3;
       @include txt-strong;
+      line-height: 1rem;
     }
   }
 

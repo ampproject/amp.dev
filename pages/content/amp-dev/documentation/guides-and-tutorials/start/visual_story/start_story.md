@@ -1,6 +1,7 @@
 ---
 $title: Starting our story
 $order: 3
+description: An entire story is represented by the amp-story component, which serves as a container for all the pages in a story. The amp-story component is also responsible for ...
 author: bpaduch
 ---
 
@@ -47,10 +48,10 @@ Let's add these attributes to our [`amp-story`]({{g.doc('/content/amp-dev/docume
     poster-portrait-src="assets/cover.jpg">
 ```
 
-In addition to these required attributes, there are other attributes you can apply. To learn more, see the [attributes](/docs/reference/components/amp-story.html#attributes) section of the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) reference documentation.
+In addition to these required attributes, there are other attributes you can apply. To learn more, see the [attributes]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#attributes) section of the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) reference documentation.
 
 [tip type="note"]
-**NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your AMP pages are discovered across all platforms, you should add [Structured Data](/docs/fundamentals/discovery.html#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
+**NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your AMP pages are discovered across all platforms, you should add [Structured Data]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
 [/tip]
 
 At this point, we have a shell of a story without any content. Let's create that page.

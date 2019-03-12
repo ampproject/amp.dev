@@ -58,7 +58,7 @@ $title: Ошибки на AMP-страницах
 
 Валидатор выводит ошибку `TAG_REQUIRED_BY_MISSING`, когда обнаруживает в AMP-документе расширенный компонент без соответствующего тега `<script>`.
 
-[Расширенные компоненты](/docs/reference/components.html) должны быть включены в AMP-документ как специальные элементы.
+[Расширенные компоненты]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) должны быть включены в AMP-документ как специальные элементы.
 Чтобы исправить эту ошибку, перейдите на справочную страницу расширенного компонента, скопируйте нужный скрипт и вставьте его в тег `<head>` AMP-документа.
 
 ### Недопустимый тег
@@ -647,7 +647,7 @@ CDATA – это контент между открывающим и закры
 Допустимые значения атрибута `supported_layout` для тегов приведены в [спецификации для валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Поведение макета определяется атрибутом `layout`.
-Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
+Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 **Примечание.** Если макет не указан или в нем отсутствуют значения `width` и `height`, по умолчанию используется вариант CONTAINER. Валидатор выдает ошибку, поскольку этот вариант не поддерживается тегами AMP.
 Чтобы устранить ошибку, укажите другой макет либо значение атрибутов `width` и/или `height`.
@@ -670,7 +670,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка возникает, если для тега AMP не указан макет либо же указанный макет содержит недопустимый атрибут.
-Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
+Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Указанный макет не подходит для тега AMP
 
@@ -693,7 +693,7 @@ CDATA – это контент между открывающим и закры
 Допустимые значения атрибута `supported_layout` для тегов приведены в [спецификации для валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Поведение макета определяется атрибутом `layout`.
-Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
+Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Указанный макет не поддерживает атрибут
 
@@ -713,7 +713,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка возникает, если для тега AMP указан макет, но он содержит недопустимый атрибут.
-Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации](/docs/reference/spec/amp-html-layout.html).
+Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Недопустимое значение обязательного атрибута
 

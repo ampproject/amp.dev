@@ -46,7 +46,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 
 ## layout
 
-AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지정하는 [레이아웃](/ko/docs/design/responsive/control_layout.html#the-layout-attribute) 집합을 제공합니다. 요소에 지원되는 레이아웃 값 중 하나와 함께 `layout` 속성을 추가하여 구성요소의 레이아웃을 지정할 수 있습니다. 해당하는 요소에 관한 도움말에서 어떤 값이 지원되는지 확인하세요.
+AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지정하는 [레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) 집합을 제공합니다. 요소에 지원되는 레이아웃 값 중 하나와 함께 `layout` 속성을 추가하여 구성요소의 레이아웃을 지정할 수 있습니다. 해당하는 요소에 관한 도움말에서 어떤 값이 지원되는지 확인하세요.
 
 예:
 
@@ -80,7 +80,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리](/ko/docs/design/responsive/control_layout.html#element-media-queries)를 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries)를 참조하세요.
 
 ## noloading
 
@@ -157,7 +157,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 ## width 및 height
 
-일부 [레이아웃](/ko/docs/design/responsive/control_layout.html#the-layout-attribute)의 경우 AMP 구성요소에 정수 픽셀 값이 포함된 `width` 및 `height` 속성이 있어야 합니다.
+일부 [레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)의 경우 AMP 구성요소에 정수 픽셀 값이 포함된 `width` 및 `height` 속성이 있어야 합니다.
 
 예:
 

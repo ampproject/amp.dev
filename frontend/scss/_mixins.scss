@@ -40,8 +40,28 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.12);
 }
 
-@mixin  slider-button-shadow {
+@mixin slider-button-shadow {
   box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
+}
+
+@mixin jumpto-list-shadow {
+	box-shadow: 0 10px 15px 0 rgba(0,0,0,0.07);
+}
+
+@mixin agenda-list-shadow {
+	box-shadow: 0 25px 25px 0 rgba(0,0,0,0.15);
+}
+
+@mixin roadshow-video-shadow {
+  box-shadow: 0 15px 50px 0 rgba(0,0,0,0.50);
+}
+
+@mixin  roadshow-event-shadow {
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+@mixin flyout {
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
 }
 
 @mixin turbo-pizazz {

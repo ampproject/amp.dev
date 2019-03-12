@@ -8,7 +8,7 @@ AMP의 구성요소 시스템을 이용하면 최소한의 노력으로 기사�
 
 - **확장**: 기본 라이브러리의 확장이며, 맞춤 요소로 문서에 명시적으로 포함되어야 합니다.  맞춤 요소의 경우 특정 스크립트를 `<head>` 섹션에 추가해야 합니다(예: `<script async custom-element="amp-video" ...`).
 
-- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험 기능](/ko/docs/reference/experimental.html)에서 자세히 알아보세요.
+- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험 기능]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
 Google의 샘플에서는 이미 기본 제공 구성요소인 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 가이드에서는 이 구성요소가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다.  이제 자주 사용되는 **확장** AMP 구성요소를 뉴스 기사에 추가해 보겠습니다.
 
@@ -136,7 +136,7 @@ AMP 광고는 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/refe
 YouTube 동영상 삽입에 관해 자세히 알아보려면 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})에서 확인하세요.
 
 [tip]
-구성요소가 로드되지 않거나 브라우저에서 구성요소가 지원되지 않으면 [`fallback`](/ko/docs/design/responsive/placeholders.html#fallbacks) 속성을 사용하여 사용자에게 알리세요.
+구성요소가 로드되지 않거나 브라우저에서 구성요소가 지원되지 않으면 [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) 속성을 사용하여 사용자에게 알리세요.
 [/tip]
 
 ## 트윗 표시하기
@@ -168,7 +168,7 @@ YouTube 동영상 삽입에 관해 자세히 알아보려면 [`amp-youtube`]({{g
 트위터에서 트윗을 삽입하는 방법에 관해 자세히 알아보려면 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 구성요소 문서를 읽어보세요.
 
 [tip]
-AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소](/ko/docs/reference/components.html#social)를 참조하세요.
+AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})를 참조하세요.
 [/tip]
 
 ## 기사 인용문 강조표시하기
@@ -213,4 +213,4 @@ AMP에서는 이러한 상황을 위해 특별히 만들어진 [`amp-fit-text`](
 
 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})를 이용한 마지막 실험에서는 '안녕하세요'와 같이 짧은 텍스트의 높이를 훨씬 높은 값으로(예: 400) 설정하고 max-font-size 속성값은 42로 유지해 보겠습니다. 결과 페이지가 어떻게 표시될까요? 텍스트가 세로로 가운데 정렬되나요? 아니면 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 태그의 높이가 최대 글꼴 크기에 맞게 축소되나요? 직접 코드를 수정하여 확인하기 전에 AMP의 레이아웃 시스템에 관해 이미 알고 있는 지식을 활용하여 질문에 답변해 보세요.
 
-[AMP by Example의 라이브 데모](https://ampbyexample.com/components/amp-fit-text/)에서 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})에 관해 자세히 알아보세요.
+[AMP by Example의 라이브 데모],[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}}).url.path}})에 관해 자세히 알아보세요.

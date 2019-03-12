@@ -6,7 +6,7 @@ $title: 包含第三方内容
 
 ## 嵌入 Twitter 微博
 
-您可以使用 [`amp-twitter`](/zh_cn/docs/reference/components/amp-twitter.html) 元素在您的网页中嵌入 Twitter 微博。
+您可以使用 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 元素在您的网页中嵌入 Twitter 微博。
 
 要在网页中包含 Twitter 微博，请先在 `<head>` 中添加以下脚本：
 
@@ -28,11 +28,11 @@ $title: 包含第三方内容
 </amp-iframe>
 </div>
 
-提示: 要查看更多 `amp-twitter` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-twitter/)。
+提示: 要查看更多 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}})。
 
 ## 嵌入 Instagram
 
-您可以使用 [`amp-instagram`](/zh_cn/docs/reference/components/amp-instagram.html) 元素在您的网页中嵌入 Instagram。
+您可以使用 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 元素在您的网页中嵌入 Instagram。
 
 要包含 Instagram，请先在 `<head>` 中添加以下脚本：
 
@@ -54,11 +54,11 @@ $title: 包含第三方内容
 </amp-iframe>
 </div>
 
-提示: 要查看更多 `amp-instagram` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-instagram/)。
+提示: 要查看更多 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/amp-instagram.html', locale=doc.locale).url.path}})。
 
 ## 显示 Facebook 帖子或视频
 
-您可以使用 [`amp-facebook`](/zh_cn/docs/reference/components/amp-facebook.html) 元素在您的网页中显示 Facebook 帖子或视频。
+您可以使用 [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 元素在您的网页中显示 Facebook 帖子或视频。
 
 您必须在 `<head>` 中添加以下脚本：
 
@@ -98,11 +98,11 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-提示: 要查看更多 `amp-facebook` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-facebook/)。
+提示: 要查看更多 [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}})。
 
 ## 包含 YouTube 视频
 
-您可以使用 [`amp-youtube`](/zh_cn/docs/reference/components/amp-youtube.html) 元素在您的网页中添加 YouTube 视频。
+您可以使用 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 元素在您的网页中添加 YouTube 视频。
 
 您必须在 `<head>` 中添加以下脚本：
 
@@ -126,11 +126,11 @@ Preview:
 </amp-iframe>
 </div>
 
-提示: 要查看更多 `amp-youtube` 的示例，请访问 [AMP By Example](https://ampbyexample.com/components/amp-youtube/)。
+提示: 要查看更多 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}})。
 
 ## 显示广告
 
-您可以使用 [`amp-ad`](/zh_cn/docs/reference/components/amp-ad.html) 元素在您的网页中显示广告。仅支持通过 HTTPS 投放的广告。
+您可以使用 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 元素在您的网页中显示广告。仅支持通过 HTTPS 投放的广告。
 
 AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时会加载来自其他来源的 iframe（通过 iframe 沙盒），并在该 iframe 沙盒内执行广告网络的 JS。
 
@@ -162,6 +162,6 @@ AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时�
 </amp-iframe>
 </div>
 
-AMP 支持众多广告网络。请参阅[完整列表参考](/zh_cn/docs/reference/components/amp-ad.html#supported-ad-networks)。
+AMP 支持众多广告网络。请参阅[完整列表参考]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks)。
 
 阅读: 要详细了解广告，请参阅[在 AMP 网页上投放广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}})指南。

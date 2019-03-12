@@ -1,6 +1,9 @@
 ---
-$title: Start
+$title: AMP - a web component framework to easily create user-first web experiences
+$titles:
+  navigation: Start
 $view: /views/custom.j2
+description: 'Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build websites, stories, ads and emails.'
 
 news: !g.yaml /content/shared/data/blog.yaml
 
@@ -29,14 +32,14 @@ format_explainer:
     url: /about/email.html
 
 sampler:
-  - title: amp-accordion / 6
-    url: /documentation/examples/components/amp-accordion.html/source/6
-  - title: amp-accordion / 9
-    url: /documentation/examples/components/amp-accordion.html/source/9
-  - title: amp-accordion / 12
-    url: /documentation/examples/components/amp-accordion.html/source/12
-  - title: amp-accordion / 15
-    url: /documentation/examples/components/amp-accordion.html/source/18
+  - title: AMP Website
+    url: /static/samples/standalone/amp-website.html
+  - title: AMP Story
+    url: /static/samples/standalone/amp-story.html
+  - title: AMP Email
+    url: /static/samples/standalone/amp-email.html
+  - title: AMP Ad
+    url: /static/samples/standalone/amp-ad.html
 
 success_stories:
   - !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
@@ -232,16 +235,19 @@ success_stories:
 
   <section class="ap--sampler">
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
-    {% set playground_url = podspec.base_urls.api + '/playground' %}
+    {% set playground_url = doc.pod.podspec.base_urls.playground %}
 
     {# Can't use |tojson filter here since URLs need to be built #}
     <amp-state id="sampler">
       <script type="application/json">
       [{% for sample in doc.sampler %}
         {% set embed_url = playground_url + '/embed#mode=responsive&url=' + sample.url %}
+        {% set standalone_url = playground_url + '/#url=' + sample.url %}
         {
           "title": "{{ sample.title }}",
-          "url": "{{ embed_url|safe }}"
+          "url": "{{ sample.url|safe }}",
+          "embedUrl": "{{ embed_url|safe }}",
+          "standaloneUrl": "{{ standalone_url|safe }}"
         }{{ "," if not loop.last }}
       {% endfor %}]
       </script>
@@ -268,6 +274,29 @@ success_stories:
       </div>
 
       <div class="ap-o-sampler">
+
+        <div class="ap-o-sampler-header">AMPHTML Playground</div>
+
+        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
+        {% set standalone_url = playground_url + '/#url=' + doc.sampler[0].url %}
+        <div class="ap-o-sampler-iframe">
+          <amp-iframe
+            height="450px"
+            layout="fixed-height"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+            resizable
+            noloading
+            allow="fullscreen"
+            frameborder="0"
+            src="{{ embed_url }}"
+            [src]="sampler[activeSample].embedUrl">
+            <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
+            <div placeholder>
+              <div class="ap-o-sampler-iframe-source"></div>
+            </div>
+          </amp-iframe>
+        </div>
+
         <div class="ap-o-sampler-tab-bar">
 
           {% for tab in doc.sampler %}
@@ -280,30 +309,9 @@ success_stories:
 
         </div>
 
-        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
-        <div class="ap-o-sampler-iframe">
-          <amp-iframe
-            height="450px"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
-            resizable
-            noloading
-            allow="fullscreen"
-            frameborder="0"
-            src="{{ embed_url }}"
-            [src]="sampler[activeSample].url">
-            <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
-            <div placeholder>
-              <div class="ap-o-sampler-iframe-source"></div>
-              <div class="ap-o-sampler-iframe-drag"></div>
-              <div class="ap-o-sampler-iframe-preview"></div>
-            </div>
-          </amp-iframe>
-        </div>
-
         <div class="ap-o-sampler-link">
-          <a href="{{ doc.sampler[0].url }}"
-            [href]="sampler[activeSample].url"
+          <a href="{{ playground_url }}#url={{ doc.sampler[0].url }}"
+            [href]="sampler[activeSample].standaloneUrl"
             class="ap-m-lnk">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}

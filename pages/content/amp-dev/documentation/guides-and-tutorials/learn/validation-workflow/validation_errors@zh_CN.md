@@ -81,7 +81,7 @@ limitations under the License.
 但未发现其对应的 `<script>`，则会显示
 `TAG_REQUIRED_BY_MISSING` 错误。
 
-[扩展组件](/zh_cn/docs/reference/components.html)
+[扩展组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 必须作为自定义元素明确包含在 AMP 文档中。
 要更正这类错误，请转到扩展组件的参考页面，
 然后将其所需的脚本复制并粘贴到 AMP 文档 `<head>` 中。
@@ -128,7 +128,7 @@ AMP 格式不允许向网页添加自定义 JavaScript，但由 AMP 项目本身
 提供的 JavaScript 文件除外。JavaScript 的许多常见用法都能在 AMP
 HTML 库中找到等效实现。要查看
 可用于增强 AMP HTML 网页的一套组件，
-请参阅 [AMP 组件](/zh_cn/docs/reference/components.html)。
+请参阅 [AMP 组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})。
 
 如果其中未涵盖您的用例，您也可以考虑向 AMP 项目
 中贡献新的组件。有关详情，
@@ -785,7 +785,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 如果您没有为 AMP 标记指定布局，
 并且隐式布局包含不允许使用的属性，就会出现这种错误。
-[AMP HTML 布局系统规范](/zh_cn/docs/design/amp-html-layout.html)中
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
 说明了各种布局类型不允许使用的属性。
 
 ### AMP 标记不支持指定的布局
@@ -835,7 +835,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当您为 AMP 标记指定的布局中包含不允许使用的属性时，
 就会出现这种错误。
-[AMP HTML 布局系统规范](/zh_cn/docs/design/amp-html-layout.html)中
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
 说明了各种布局类型不允许使用的属性。
 
 ### 布局所需属性的值无效

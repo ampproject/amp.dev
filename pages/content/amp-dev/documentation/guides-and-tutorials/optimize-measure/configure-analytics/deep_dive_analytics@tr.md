@@ -3,8 +3,8 @@ $title: AMP Analytics Derinlemesine Giriş
 ---
 
 Bu kılavuz
-[amp-analitik bileşen](/tr/docs/reference/components/amp-analytics.html) içerisine derinlemesine girerek, bir örnek
-`amp-analytics` yapılandırmasını temel yapıtaşlarına ayırır:
+[amp-analitik bileşen]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) içerisine derinlemesine girerek, bir örnek
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmasını temel yapıtaşlarına ayırır:
 
 Kılavuzun kalan kısmında bu yapılandırma örneği kullanılarak,
 sayfa görünümeleri ve kullanıcının bağlantı tıklamaları izlenir
@@ -61,8 +61,8 @@ AMP, iki yaygın veri toplama şeklini destekleyecek şekilde tasarlanmıştır:
 (örneğin, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Analitik verileri bir analitik sağlayıcıya göndermek için,
-`amp-analytics` etiketine `type` özelliği ekleyin ve
-[amp-analitik spesifikasyonu](/tr/docs/reference/components/amp-analytics.html) içerisinde belirlenen şekilde değerini
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) etiketine `type` özelliği ekleyin ve
+[`amp-analytics` spesifikasyonu]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) içerisinde belirlenen şekilde değerini
 ilgili satıcıya ayarlayın.
 
 Örneğin: `<amp-analytics type="googleanalytics">` analitik verileri
@@ -70,16 +70,16 @@ ilgili satıcıya ayarlayın.
 Verileri yayıncıya ait bir son noktaya göndermek için,
 `type` özelliğini eklememeniz yeterlidir;
 analitik veriler her bir
-[istek](/tr/docs/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
+[istek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
 
-Analytics satıcı yapılandırmaları `amp-analytics`‹e başlamanın
+Analytics satıcı yapılandırmaları [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})‹e başlamanın
 hızlı bir yoludur.
 Ayrıntılı rehberlik için satıcı belgelerine ve
 yardım kaynaklarına danışmanız gerekir.
 Daha önce bahsedildiği gibi,
 halihazırda AMP ile entegre ettiğiniz satıcıların listesi, aynı zamanda
 spesifik belgelerin bağlantıları
-[amp-analitik spesifikasyonu](/tr/docs/reference/components/amp-analytics.html) içerisinde bulunabilir.
+[`amp-analytics` spesifikasyonu]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) içerisinde bulunabilir.
 
 Bir analitik satıcıysanız,
 
@@ -87,7 +87,7 @@ Bir analitik satıcıysanız,
 
 ## Uzaktan yapılandırma yükle: yapılandırma özelliği
 
-AMP sayfanıza `amp-analytics` yapılandırmasının
+AMP sayfanıza [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmasının
 tamamını eklemeniz gerekli değildir.
 Bunun yerine, yapılandırmaların tamamı ya da bir kısmı için
 uzaktan bir URL talep edebilirsiniz.
@@ -99,7 +99,7 @@ yapılandırma verilerini şekillendirmek için gerekli
 sunucu tarafı işlemlerinin tümünü gerçekleştirebilirsiniz.
 
 Uzaktan yapılandırmaları yüklemenin ilk adımı
-`amp-analytics` etiketine yapılandırma özelliğinin eklenmesidir:
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) etiketine yapılandırma özelliğinin eklenmesidir:
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -120,7 +120,7 @@ JSON nesnesi içerisinde yer alan yapılandırma, analitik hesabının yalnızca
 ```
 
 Son adım, uzaktan dosya içindekilerin
- `amp-analytics` yapılandırmasında uygun yerlere çekilmesidir.
+ [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmasında uygun yerlere çekilmesidir.
 Buradaki hem `pageview` hem de `event` isteklerinde,
 `account` değişken değeri
 uzaktan URL (`"account": "UA-XXXXX-Y"`) içindeki hesap değerine otomatik olarak ayarlanır:
@@ -135,7 +135,7 @@ uzaktan URL (`"account": "UA-XXXXX-Y"`) içindeki hesap değerine otomatik olara
 **Önemli:** AMP aynı değişkenin birden çok kullanımını doğrulamaz.
 Değerler, önceliğe göre değişken değiştirme sırasına göre çoğaltılır
 ve uzaktan URL›lerin içindeki değerler bu sıranın en üzerindedir
-(bkz. [Değişken değiştirme sıralaması](/tr/docs/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması)).
+(bkz. [Değişken değiştirme sıralaması]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 ## İstek, tetikleme ve taşıma
 
@@ -151,7 +151,7 @@ daha spesifik olarak protokolün nasıl gönderileceğini belirler.
 
 Bu yapılandırmalar hakkında daha fazla bilgi için okumaya devam edin.
 (Bu yapılandırmalar hakkında bilgi için
-[amp-analitik referansı](/tr/docs/reference/components/amp-analytics.html) bölümünü de okuyabilirsiniz.)
+[amp-analitik referansı]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) bölümünü de okuyabilirsiniz.)
 
 ### Hangi veriler gönderilir: istek özelliği
 
@@ -178,10 +178,10 @@ Bir analitik sağlayıcı kullanıyorsanız,
 
 #### İstek URL›si ekleme: Ekstra URL Parametreleri
 
-[extraUrlParams](/tr/docs/reference/components/amp-analytics.html#extra-url-params)
+[extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 özelliği normal "&foo=baz" kuralı aracılığıyla istek URL›sinin sorgu dizesine eklenecek ek parametreleri belirler.
 
-`amp-analytics` özelliği isteğe ek bir <code>cd1</code> parametresi
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) özelliği isteğe ek bir <code>cd1</code> parametresi
 ekler ve parametre değerini «AMP» olarak ayarlar:
 
 ```js
@@ -198,7 +198,7 @@ Tetikleme adı alfanümerik karakterlerden (a-zA-Z0-9) oluşan
 herhangi bir dize olabilir.
 
 Örneğin,
-aşağıdaki `amp-analytics` ögesi
+aşağıdaki [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) ögesi
 belge ilk yüklendiğinde
 ve bir `a` etiketine her tıklandığında `https://example.com/analytics`‹e bir istek gönderilecek şekilde yapılandırılmıştır:
 
@@ -236,19 +236,19 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (gerekli)</td>
-      <td data-th="Description">Gönderilecek isteğin adı (<a href="/tr/docs/analytics/deep_dive_analytics.html#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
+      <td data-th="Description">Gönderilecek isteğin adı (<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="/tr/docs/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
+      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (<code>on</code>, <code>click</code> olarak ayarlandığında gereklidir)</td>
-      <td data-th="Description">Hangi ögelerin seçilmesi gerektiğini işlemek için kullanılan bir CSS selektörü. Tüm ögeleri izlemek için <code>*</code> değerini kullanın. Bu yapılandırma <code>click</code> tetikleme ile birlikte kullanılır. Selektörü kullanarak <a href="/tr/docs/analytics/use_cases.html#sayfa-tıklamalarını-izleme">sayfa tıklamalarını </a> ve<a href="/tr/docs/analytics/use_cases.html#sosyal-medya-etkileşimlerini-izleme"> sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin</a>.</td>
+      <td data-th="Description">Hangi ögelerin seçilmesi gerektiğini işlemek için kullanılan bir CSS selektörü. Tüm ögeleri izlemek için <code>*</code> değerini kullanın. Bu yapılandırma <code>click</code> tetikleme ile birlikte kullanılır. Selektörü kullanarak <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#sayfa-tıklamalarını-izleme">sayfa tıklamalarını </a> ve<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#sosyal-medya-etkileşimlerini-izleme"> sosyal medya etkileşimlerini nasıl izleyeceğinizi öğrenin</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (<code>on</code>, <code>scroll</code> olarak ayarlandığında gereklidir)</td>
-      <td data-th="Description">Hangi koşullar altında sayfa kaydırıldığında <code>scroll</code> etkinliğinin uyarı verdiğini kontrol eder. Bu nesne <code>verticalBoundaries</code> ve<code>horizontalBoundaries</code> içerebilir. Bir <code>scroll</code> etkinliğinin uyarı vermesi için iki özellikten en az biri gereklidir. Her iki özelliğin değerleri bir kaydırma etkinliğinin oluşturulduğu sınırları içeren sayılar dizini olmalıdır. <a href="/tr/docs/analytics/use_cases.html#kaydırmayı-izleme">kaydırma izleme</a> ile ilgili örneğe bakın.</td>
+      <td data-th="Description">Hangi koşullar altında sayfa kaydırıldığında <code>scroll</code> etkinliğinin uyarı verdiğini kontrol eder. Bu nesne <code>verticalBoundaries</code> ve<code>horizontalBoundaries</code> içerebilir. Bir <code>scroll</code> etkinliğinin uyarı vermesi için iki özellikten en az biri gereklidir. Her iki özelliğin değerleri bir kaydırma etkinliğinin oluşturulduğu sınırları içeren sayılar dizini olmalıdır. <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#kaydırmayı-izleme">kaydırma izleme</a> ile ilgili örneğe bakın.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (<code>on</code>, <code>timer</code> olarak ayarlandığında gereklidir)</td>
@@ -259,7 +259,7 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
 
 **Önemli:** Düşük öncelikli bir yapılandırmadaki tetiklemeler,
 yüksek öncelikli yapılandırmadaki aynı adlı tetiklemelerle geçersiz kılınır
-(bkz. [Değişken değiştirme sıralaması](/tr/docs/analytics/deep_dive_analytics.html#değişken-değiştirme-sıralaması)).
+(bkz. [Değişken değiştirme sıralaması]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#değişken-değiştirme-sıralaması).
 
 ### Verileri gönderme: aktarma özelliği
 
@@ -320,7 +320,7 @@ AMP bir öncelik sırasına göre değişkenleri değerlerle doldurur:
 
 1. Uzaktan yapılandırmalar (`config` aracılığıyla).
 2. `vars`, `triggers` içerisinde bir tetikleme içinde yuvalanmıştır.
-3. `amp-analytics` içerisinde en üst seviyede yuvalanan `vars`.
+3. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) içerisinde en üst seviyede yuvalanan `vars`.
 4. Platform tarafından sağlanan değerler.
 
 Bu örnekte, uzaktan bir yapılandırma vardır,

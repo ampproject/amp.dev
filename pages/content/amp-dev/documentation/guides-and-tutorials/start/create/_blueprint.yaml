@@ -3,7 +3,7 @@ $view: /views/detail/docs-detail.j2
 $order: 0
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/create/{base}.html
-$title@: Create Your First AMP Page
+$title@: Create your first AMP Page
 $title@fr: Créer votre page AMP HTML
 $title@ar: إنشاء صفحتك الأولى في AMP
 $title@es: Crea tu primera página AMP

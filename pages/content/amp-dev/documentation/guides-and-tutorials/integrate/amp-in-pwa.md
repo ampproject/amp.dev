@@ -1,6 +1,7 @@
 ---
 $title: Use AMP as a data source for your PWA
 $order: 1
+description: If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App.
 formats:
   - websites
 author: pbakaus

@@ -6,7 +6,7 @@ $title: AMP HTML 広告
 
 AMP HTML 広告では、より高速、軽量かつ安全にウェブ広告を配信できます。AMP ページは通常の HTML 広告にも対応していますが、その場合、読み込みに時間がかかることがあります。その点 AMP HTML で広告を作成すると、広告自体を AMP ページの他の部分と同じくらい高速に表示できます。AMP HTML 広告は、配信前に必ず検証されるため、安全で効果的な広告を配信できます。また、AMP ページだけでなくウェブ上のさまざまな場所で配信できます。
 
-AMP HTML 広告は、AMP HTML と CSS で定義された [AMP HTML 広告仕様](/ja/docs/ads/a4a_spec.html)に沿って、AMP HTML 形式で記述します。このため、広告の表示速度が低下する最大の原因とされる、広告での任意の JavaScript の実行が制限されます。その代わり、基盤となる AMP と同様に、広告用 JavaScript の主なユースケースが AMP オープンソース プロジェクトに直接組み込まれています。これらのユースケースにより、広告が適切に動作することが保証されます。
+AMP HTML 広告は、AMP HTML と CSS で定義された [AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って、AMP HTML 形式で記述します。このため、広告の表示速度が低下する最大の原因とされる、広告での任意の JavaScript の実行が制限されます。その代わり、基盤となる AMP と同様に、広告用 JavaScript の主なユースケースが AMP オープンソース プロジェクトに直接組み込まれています。これらのユースケースにより、広告が適切に動作することが保証されます。
 
 ### メリット
 
@@ -21,7 +21,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### フォーマット
 
-柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
+柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### 広告会社
 
-広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
+広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
 
 *  [Celtra の AdCreator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,7 +78,7 @@ AMP HTML 広告を AMP ページに配信するには、[`amp-ad`]({{g.doc('/con
 
 ## AMP HTML 広告を作成する
 
-**ゼロから作成する**: AMP HTML 広告は、[AMP HTML 広告仕様](/ja/docs/ads/a4a_spec.html)に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。
+**ゼロから作成する**: AMP HTML 広告は、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。
 
 **ツールを使用する**: 次のツールを使用して AMP HTML 広告を作成できます。
 
@@ -127,4 +127,3 @@ SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）�
 *   AMP に関する質問の投稿先には、[Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) をおすすめします。AMP プロジェクト コミュニティのメンバーは、定期的にこのサイトをチェックしているため、短時間で質問への回答を得られる可能性があります。
 *   [Slack の #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) チャネルに参加すると、質問を投稿して問題の解決策や回答を得られます。
 *   AMP のバグを見つけた場合や、AMP の機能をリクエストしたい場合は、[AMP に関する問題を報告](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)する方法についての説明をご覧ください。
- 

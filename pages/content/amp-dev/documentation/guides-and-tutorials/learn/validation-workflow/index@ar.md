@@ -10,7 +10,7 @@ $title: التحقق من صحة صفحات AMP
 إلى النتيجة ذاتها، فيمكنك استخدام أي طريقة تناسب
 نمط التطوير لديك بشكل أكبر.
 
-بالإضافة إلى صلاحية AMP، قد تحتاج أيضًا إلى التأكد من أن مستند AMP [قابل للاكتشاف](/ar/docs/fundamentals/discovery.html) لدى الأنظمة الأساسية التابعة لجهات خارجية.
+بالإضافة إلى صلاحية AMP، قد تحتاج أيضًا إلى التأكد من أن مستند AMP [قابل للاكتشاف]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) لدى الأنظمة الأساسية التابعة لجهات خارجية.
 
 ### وحدة تحكم Developer Console بالمتصفّح.
 
@@ -176,6 +176,6 @@ $ amphtml-validator --help
 بعد إعادة قراءة المواصفات بعناية، تبيّن لنا أننا نستخدم علامة `<img>`، في حين كان يجب استخدم علامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 لفهم القائمة الكاملة للأخطاء المحتملة بشكل أفضل،
-راجع [دليل أخطاء التحقق من صحة صفحات AMP](/ar/docs/troubleshooting/validation_errors.html).
+راجع [دليل أخطاء التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
 إذا كنت لا تزال تعاني من مشكلات بعد التقييم بعناية، يمكنك <a href="http://stackoverflow.com/questions/tagged/amp-html">طرح
 سؤال</a> وسنحاول المساعدة.

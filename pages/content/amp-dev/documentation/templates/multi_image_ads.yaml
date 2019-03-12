@@ -1,4 +1,4 @@
-$title: Multiple Image Story Ad
+$title: Multiple Image
 $view: /views/detail/template-detail.j2
 $category: Story Ads
 $order: 5
@@ -7,9 +7,13 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/templates/multiple-image-template.gif'
+    src: '/static/img/templates/multiple-image-template.jpg'
     width: 9
     height: 16
-    alt: Multiple Image Story Ad
+    alt: Multiple Image
+  video:
+    src: '/static/img/templates/multiple-image-template.mp4'
+    width: 9
+    height: 16
 
-  download_url: '/static/files/templates/multi-image-ads.zip'
+download_url: '/static/files/templates/multi-image-ads.zip'

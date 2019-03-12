@@ -72,9 +72,10 @@ tags are specific for amp.dev #}
 {% endblock %}
 
 {% block main %}
+
 <main class="ap--main ap-t-examples-manual">
   <div class="ap--container">
-    {% include 'views/partials/sidebar.j2' %}
+    {% include 'views/partials/sidebar-toggle.j2' %}
 
     <section class="ap--toc">
       {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
@@ -118,7 +119,7 @@ tags are specific for amp.dev #}
         {% set playground_disabled = doc.example.document.metadata.disablePlayground %}
         {% set preview_enabled = doc.example.document.metadata.preview %}
 
-        {% set playground_url = podspec.base_urls.playground + doc.url.path + '/source/' %}
+        {% set playground_url = podspec.base_urls.playground + '#url=' + doc.url.path + '/source/' %}
         {% if not playground_disabled %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
         <a href="{{ playground_url }}" class="ap-a-btn ap--playground-link">{{ _('Open in playground') }}</a>

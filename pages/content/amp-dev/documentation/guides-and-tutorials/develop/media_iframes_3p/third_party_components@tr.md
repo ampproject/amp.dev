@@ -6,7 +6,7 @@ Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin
 
 ## Tweet Yerleştirme
 
-[`amp-twitter`](/docs/reference/components/amp-twitter.html) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
+[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
 
 Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -25,13 +25,13 @@ Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## Instagram Fotoğrafı Yerleştirme
 
-[`amp-instagram`](/docs/reference/components/amp-instagram.html) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
+[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
 
 Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -50,13 +50,13 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## Facebook yayını veya videosu gösterme
 
-[`amp-facebook`](/docs/reference/components/amp-facebook.html) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
+[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -66,14 +66,14 @@ Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
 ##### Örnek - Yayın yerleştirme
 
-Source: 
+Source:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -81,7 +81,7 @@ Preview:
 
 ##### Örnek - Video yerleştirme
 
-Source: 
+Source:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -89,7 +89,7 @@ Source:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
@@ -98,7 +98,7 @@ Preview:
 
 ## YouTube videosu ekleme
 
-[`amp-youtube`](/docs/reference/components/amp-youtube.html) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
+[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -118,13 +118,13 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
 ## Reklam gösterme
 
-[`amp-ad`](/docs/reference/components/amp-ad.html) öğesini kullanarak sayfanızda bir reklam gösterin.
+[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) öğesini kullanarak sayfanızda bir reklam gösterin.
 Yalnızca HTTPS aracılığıyla sunulan reklamlar desteklenir.
 
 Reklam ağları tarafından sağlanan JavaScript'in AMP dokümanı içinde çalıştırılmasına izin verilmez.
@@ -142,7 +142,7 @@ Farklı reklam türleri, farklı `data-*` öznitelikleri gerektirir.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -156,8 +156,8 @@ Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
-AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](/docs/reference/components/amp-ad.html#supported-ad-networks) bakın.
+AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks) bakın.

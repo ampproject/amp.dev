@@ -9,14 +9,14 @@ Isi. Pelajari perbedaan mengenai fitur yang setara dengan AMP dan pelajari cara 
 
  AMP tidak mendukung pasangan HTML default untuk menampilkan media, seperti `<img>`. Kami memberikan komponen dengan nilai yang sama karena alasan berikut:
 
-*  Kami perlu memahami tata letak halaman sebelum aset dimuat, karena ini penting untuk [mendukung prapemuatan viewport pertama](/id/learn/about-how/#size-all-resources-statically)
-*  Kami perlu mengontrol permintaan jaringan agar [konten diprioritaskan dan dimuat secara perlahan dan efektif](/id/learn/about-how/#prioritize-resource-loading)
+*  Kami perlu memahami tata letak halaman sebelum aset dimuat, karena ini penting untuk [mendukung prapemuatan viewport pertama]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
+*  Kami perlu mengontrol permintaan jaringan agar [konten diprioritaskan dan dimuat secara perlahan dan efektif]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 Perhatian: Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi AMP tidak akan [memvalidasi halaman Anda]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) dan Anda tidak akan mendapatkan semua manfaat dari yang diberikan AMP.
 
 ## Gambar
 
- Sertakan gambar pada halaman Anda menggunakan elemen [`amp-img`](/id/docs/reference/components/amp-img.html) seperti berikut:
+ Sertakan gambar pada halaman Anda menggunakan elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) seperti berikut:
 
 <!--embedded example - fixed size image -->
 <div>
@@ -74,7 +74,7 @@ Baca juga: Pelajari cara [memberikan penggantian dan placeholder untuk gambar]({
 
 ## Gambar animasi
 
- Elemen [`amp-anim`](/id/docs/reference/components/amp-anim.html) sangat mirip dengan elemen `amp-img`, kedua elemen ini memberikan fungsi tambahan untuk mengelola pemuatan dan pemutaran gambar animasi seperti GIF.
+ Elemen [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) sangat mirip dengan elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), kedua elemen ini memberikan fungsi tambahan untuk mengelola pemuatan dan pemutaran gambar animasi seperti GIF.
 
 <!--embedded amp-anim basic example -->
 <div>
@@ -92,7 +92,7 @@ Catatan: Sertakan `<script async custom-element="amp-anim" src="https://cdn.ampp
 
 ## Video
 
- Sertakan video di halaman Anda menggunakan elemen [`amp-video`](/id/docs/reference/components/amp-video.html) .
+ Sertakan video di halaman Anda menggunakan elemen [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) .
 
  Hanya gunakan elemen ini untuk file video HTML5 langsung yang disematkan. Elemen akan memuat konten video yang ditetapkan oleh atribut `src` secara perlahan, pada waktu yang telah ditentukan oleh AMP.
 
@@ -112,7 +112,7 @@ Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak 
 
 ## Audio
 
- Sertakan konten audio pada halaman Anda, menggunakan elemen [`amp-audio`](/id/docs/reference/components/amp-audio.html) .
+ Sertakan konten audio pada halaman Anda, menggunakan elemen [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) .
 
  Hanya gunakan elemen ini untuk file audio HTML5 langsung yang disematkan. Seperti halnya semua konten eksternal yang disematkan pada halaman AMP, elemen tersebut akan memuat konten audio yang telah ditetapkan oleh atribut `src` secara perlahan, pada waktu yang telah ditentukan oleh AMP.
 

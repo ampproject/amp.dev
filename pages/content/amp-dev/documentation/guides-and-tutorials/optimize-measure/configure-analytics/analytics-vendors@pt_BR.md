@@ -2,11 +2,11 @@
 $title: Fornecedores de análise
 ---
 
-Este documento lista os fornecedores de análise que têm configurações integradas para usar com o componente [`amp-analytics`](/pt_br/docs/reference/components/amp-analytics.html).
+Este documento lista os fornecedores de análise que têm configurações integradas para usar com o componente [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 Para enviar dados de análise a um fornecedor terceirizado:
 
-1. Na tag [`<amp-analytics> `](/pt_br/docs/reference/components/amp-analytics.html), adicione o atributo `type` e defina o valor do fornecedor especificado conforme descrito na seção [*Fornecedores*](#vendors) abaixo.
+1. Na tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), adicione o atributo `type` e defina o valor do fornecedor especificado conforme descrito na seção [*Fornecedores*](#vendors) abaixo.
 2. Determine quais dados você quer coletar e rastrear e especifique esses detalhes nos dados de configuração. Consulte a documentação do fornecedor para ver instruções sobre como coletar os dados de análise.
 
 No exemplo a seguir, enviamos dados de page view para o [Google Analytics](#google-analytics), um fornecedor de análise terceirizado com uma configuração integrada para análise de AMP:
@@ -16,10 +16,10 @@ No exemplo a seguir, enviamos dados de page view para o [Google Analytics](#goog
 <script type="application/json">
 {
   "vars": {
-    "account": "UA-XXXXX-Y" 
+    "account": "UA-XXXXX-Y"
   },
   "triggers": {
-    "trackPageview": { 
+    "trackPageview": {
       "on": "visible",
       "request": "pageview"
     }
@@ -37,7 +37,7 @@ Se você tiver experiência em editar código, veja as configurações brutas no
 
 [tip type="note"]
 
-Os fornecedores que quiserem integrar os serviços ao [`<amp-analytics>`](/pt_br/docs/reference/components/amp-analytics.html) precisam consultar os detalhes no artigo sobre [integrar ferramentas de análise às AMP](/pt_br/docs/analytics/integrating-analytics.html).
+Os fornecedores que quiserem integrar os serviços ao [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) precisam consultar os detalhes no artigo sobre [integrar ferramentas de análise às AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -220,7 +220,7 @@ Adiciona compatibilidade com o Nielsen Marketing Cloud. Veja mais detalhes em [N
 
 Valor do atributo de tipo: `oewa`
 
-Adiciona compatibilidade com [OEWA](https://www.oewa.at) (indisponível em português). Exige uma cópia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) em um subdomínio diferente daquele que inclui os arquivos AMP ([saiba mais nesta postagem em inglês](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). O arquivo precisa ser disponibilizado por HTTPS. Por exemplo, se os arquivos AMP estiverem hospedados em `www.example.com`, `amp-analytics-oewa.html` precisará estar em outro subdomínio, como `oewa-amp.example.com`. Veja mais detalhes sobre [como adicionar compatibilidade com o OEWA](http://www.oewa.at/basic/implementierung) (indisponível em português).
+Adiciona compatibilidade com [OEWA](https://www.oewa.at) (indisponível em português). Exige uma cópia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) em um subdomínio diferente daquele que inclui os arquivos AMP ([saiba mais nesta postagem em inglês](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). O arquivo precisa ser disponibilizado por HTTPS. Por exemplo, se os arquivos AMP estiverem hospedados em `www.example.com`, `amp-analytics-oewa.html` precisará estar em outro subdomínio, como `oewa-amp.example.com`. Veja mais detalhes sobre [como adicionar compatibilidade com o OEWA](http://www.oewa.at/Implementierung) (indisponível em português).
 
 Além disso, as seguintes variáveis precisam ser definidas:
 
@@ -317,4 +317,3 @@ Adiciona compatibilidade com o Webtrekk. Veja mais detalhes sobre a configuraç�
 Valor do atributo de tipo: `metrika`
 
 Adiciona compatibilidade com a Yandex Metrica.  Veja mais detalhes sobre a configuração no [suporte da Yandex](https://yandex.com/support/metrica/code/install-counter-amp.xml) (em inglês).
- 

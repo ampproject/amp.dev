@@ -153,7 +153,7 @@ The tag 'script' is disallowed except in specific forms.
 사용자 생성/타사 스크립트 사용 제한의 유일한 예외는 다음과 같습니다.
 
 1.  스크립트가 페이지에 메타데이터를 추가하거나 AMP 구성요소를 구성합니다. 이러한 스크립트에는 `application/ld+json` 또는 `application/json` 유형 속성이 포함됩니다.
-2.  스크립트가 iframes에 포함되어 있습니다.  iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소](/ko/docs/reference/components.html)를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다.
+2.  스크립트가 iframes에 포함되어 있습니다.  iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다.
 [/tip]
 
 외부 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 파일을 열어 보세요. 무엇이 표시되나요? 이 파일에는 자바스크립트 코드가 없어야 하며 다음과 같은 정보의 주석만 포함되어 있어야 합니다.
@@ -335,5 +335,5 @@ AMP validation successful.
 ### 자주 묻는 질문(FAQ)
 
 - [DOM 리플로우란 무엇인가요?](http://stackoverflow.com/a/27637245)
-- [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](/ko/docs/design/responsive/control_layout.html#what-if-the-layout-attribute-isn’t-specified?)
-- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](/ko/docs/design/responsive/control_layout.html#what-if-width-and-height-are-undefined?)
+- [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
+- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)

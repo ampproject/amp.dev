@@ -1,13 +1,14 @@
 ---
 $title: Deep dive into AMP analytics
 $order: 1
+description: 'This guide dives deep into the amp-analytics component, breaking up a sample amp-analytics configuration into these key building blocks.'
 formats:
   - websites
 ---
 
 This guide dives deep into the
-[amp-analytics component](/docs/reference/components/amp-analytics.html),
-breaking up a sample `amp-analytics` configuration into these key building blocks:
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) component,
+breaking up a sample [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})configuration into these key building blocks:
 
 The remainder of this guide uses this configuration sample,
 which tracks the page views and user clicks on links
@@ -64,7 +65,7 @@ AMP is designed to support two common patterns of data collection:
 (for example, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 To send analytics data to an analytics provider,
-include the `type` attribute in the `amp-analytics` tag and set its value
+include the `type` attribute in the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) tag and set its value
 to the appropriate vendor, as defind in the
 [Analytics Vendors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) list.
 
@@ -73,10 +74,10 @@ to the third-party analytics provider, Google Analytics.
 To send data to a publisher-owned endpoint,
 simply don’t include the `type` attribute;
 the analytics data is sent to the defined endpoints for each
-[request](/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute).
+[request]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
 
 Analytics vendor configurations are a quick way
-to get started with `amp-analytics`.
+to get started with [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 You should consult your vendor’s documentation and
 help resources for further guidance.
 As previously mentioned,
@@ -91,7 +92,7 @@ learn more about
 ## Load remote configuration: config attribute
 
 You don't have to include all of the configuration
-for `amp-analytics` entirely on your AMP page.
+for [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) entirely on your AMP page.
 Instead, you can can call out to a remote URL
 for all or part of the configurations.
 
@@ -102,7 +103,7 @@ you can do any server-side processing necessary
 to construct the configuration data.
 
 The first step to loading remote configurations is
-to include the config attribute in the `amp-analytics` tag:
+to include the config attribute in the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) tag:
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -123,7 +124,7 @@ Example content in `https://example.com/analytics.account.config.json`:
 ```
 
 The final step is to make sure what’s in the remote file is pulled
-into the appropriate place in the the `amp-analytics` configuration.
+into the appropriate place in the the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration.
 In both the `pageview` and `event` requests here,
 the `account` variable value is automatically set
 to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
@@ -136,7 +137,7 @@ to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
 ```
 
 [tip type="important"]
-**IMPORTANT –** AMP doesn’t validate against multiple uses of the same variable. Values get populated following a variable substitution order of preference, and values in remote URLs are top of that order (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+**IMPORTANT –** AMP doesn’t validate against multiple uses of the same variable. Values get populated following a variable substitution order of preference, and values in remote URLs are top of that order (see [Variable substitution ordering]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
 [/tip]
 
 ## Requests, triggers & transports
@@ -153,7 +154,7 @@ more specifically, the protocol.
 
 Read on to find out more about these configurations.
 (You can also read about these configurations in the
-[amp-analytics reference](/docs/reference/components/amp-analytics.html).)
+[`amp-analytics` reference]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
 
 ### What data gets sent: requests attribute
 
@@ -180,10 +181,10 @@ if `requests` need to be configured, and how.
 
 #### Appending request URL: Extra URL Params
 
-The [extraUrlParams](/docs/reference/components/amp-analytics.html#extra-url-params)
+The [extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 attribute specifies additional parameters to append to the query string of the request URL via the usual "&foo=baz" convention.
 
-The `amp-analytics` example adds an additional parameter `cd1`
+The [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) example adds an additional parameter `cd1`
 to the request and sets the parameter value to "AMP":
 
 ```js
@@ -200,7 +201,7 @@ The trigger name can be any string comprised
 of alphanumeric characters (a-zA-Z0-9).
 
 For example,
-the following `amp-analytics` element is configured to send a request to
+the following [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) element is configured to send a request to
 `https://example.com/analytics` when the document is first loaded,
 and each time an `a` tag is clicked:
 
@@ -242,19 +243,19 @@ AMP supports the following trigger configurations:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (required)</td>
-      <td data-th="Description">Name of the request to send (as specified in the <a href="/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a>).</td>
+      <td data-th="Description">Name of the request to send (as specified in the <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">requests</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">An object containing key-value pairs used to override <code>vars</code> defined in the top level config, or to specify <code>vars</code> unique to this trigger (see also <a href="/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Variable substitution ordering</a>).</td>
+      <td data-th="Description">An object containing key-value pairs used to override <code>vars</code> defined in the top level config, or to specify <code>vars</code> unique to this trigger (see also <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Variable substitution ordering</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (required when <code>on</code> set to <code>click</code>)</td>
-      <td data-th="Description">A CSS selector used to refine which elements should be tracked. Use value <code>*</code> to track all elements. This configuration is used on conjunction with the <code>click</code> trigger. Learn how to use selector to <a href="/docs/analytics/use_cases.html#tracking-page-clicks">track page clicks</a> and <a href="/docs/analytics/use_cases.html#tracking-social-interactions">social interactions</a>.</td>
+      <td data-th="Description">A CSS selector used to refine which elements should be tracked. Use value <code>*</code> to track all elements. This configuration is used on conjunction with the <code>click</code> trigger. Learn how to use selector to <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">track page clicks</a> and <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">social interactions</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (required when <code>on</code> set to <code>scroll</code>)</td>
-      <td data-th="Description">Controls under which conditions when the page is scrolled the <code>scroll</code> event is fired. This object can contain <code>verticalBoundaries</code> and <code>horizontalBoundaries</code>. At least one of the two properties is required for a <code>scroll</code> event to fire. The values for both of the properties should be arrays of numbers containing the boundaries on which a scroll event is generated. See this example on <a href="/docs/analytics/use_cases.html#tracking-scrolling">tracking scrolling</a>.</td>
+      <td data-th="Description">Controls under which conditions when the page is scrolled the <code>scroll</code> event is fired. This object can contain <code>verticalBoundaries</code> and <code>horizontalBoundaries</code>. At least one of the two properties is required for a <code>scroll</code> event to fire. The values for both of the properties should be arrays of numbers containing the boundaries on which a scroll event is generated. See this example on <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">tracking scrolling</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (required when <code>on</code> is set to <code>timer</code>)</td>
@@ -264,7 +265,7 @@ AMP supports the following trigger configurations:
 </table>
 
 [tip type="important"]
-**IMPORTANT –** Triggers from a configuration with lower precedence are overridden by triggers with the same names from a configuration with higher precedence (see [Variable substitution ordering](/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering)).
+**IMPORTANT –** Triggers from a configuration with lower precedence are overridden by triggers with the same names from a configuration with higher precedence (see [Variable substitution ordering]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
 [/tip]
 
 ### How data gets sent: transport attribute
@@ -326,7 +327,7 @@ AMP populates variables with values in an order of precendence:
 
 1. Remote configurations (via `config`).
 2. `vars` nested inside of a trigger within `triggers`.
-3. `vars` at the top-level nested within `amp-analytics`.
+3. `vars` at the top-level nested within [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 4. Platform-provided values.
 
 In this example, there’s a remote configuration,

@@ -2,14 +2,14 @@
 $title: 分析工具供应商
 ---
 
-本文档列出了具有可与 [`amp-analytics`](/zh_cn/docs/reference/components/amp-analytics.html) 组件配合使用的内置配置的分析工具供应商。
+本文档列出了具有可与 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 组件配合使用的内置配置的分析工具供应商。
 
 要向第三方供应商发送分析数据，请执行以下操作：
 
-1. 在 [`<amp-analytics> `](/zh_cn/docs/reference/components/amp-analytics.html) 标记中，添加 `type` 属性并将其值设为指定的供应商，如下方[供应商](#vendors)部分所述。
+1. 在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 标记中，添加 `type` 属性并将其值设为指定的供应商，如下方[供应商](#vendors)部分所述。
 2. 确定要捕获和跟踪哪些数据，并在配置数据中指定这些详细信息。有关如何捕获分析数据的说明，请参阅供应商的文档。
 
-在下面的示例中，我们将网页浏览数据发送到 [Google Analytics（分析）](#google-analytics)（一个内置了 amp-analytics 相关配置的第三方分析提供商）：
+在下面的示例中，我们将网页浏览数据发送到 [Google Analytics（分析）](#google-analytics)（一个内置了 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 相关配置的第三方分析提供商）：
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -37,7 +37,7 @@ $title: 分析工具供应商
 
 [tip type="note"]
 
-对于希望将其服务与 [`<amp-analytics>`](/zh_cn/docs/reference/components/amp-analytics.html) 集成的供应商，请参阅[将分析工具与 AMP 集成](/zh_cn/docs/analytics/integrating-analytics.html)一文中的详细信息。
+对于希望将其服务与 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})一文中的详细信息。
 
 [/tip]
 
@@ -127,7 +127,7 @@ type 属性值：`euleriananalytics`
 
 type 属性值：`facebookpixel`
 
-添加对 [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) 的支持。在您的 amp-analytics 配置中，您必须将 Pixel ID 设定为 `pixelId: YOUR-PIXEL-ID`。要详细了解受支持的事件以及可以指定的相应事件值，请参阅 [Facebook Pixel 开发者文档](https://developers.facebook.com/docs/ads-for-websites/pixel-events)。
+添加对 [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) 的支持。在您的 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置中，您必须将 Pixel ID 设定为 `pixelId: YOUR-PIXEL-ID`。要详细了解受支持的事件以及可以指定的相应事件值，请参阅 [Facebook Pixel 开发者文档](https://developers.facebook.com/docs/ads-for-websites/pixel-events)。
 
 ### Gemius
 
@@ -220,7 +220,7 @@ type 属性值：`nielsen-marketing-cloud`
 
 type 属性值：`oewa`
 
-添加对 [OEWA](https://www.oewa.at) 的支持。需要一个 [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) 副本，且该副本必须位于不同于 AMP 文件所在网域的子网域上（[为什么？](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)）。该文件必须通过 HTTPS 提供。例如，如果您的 AMP 文件托管在 `www.example.com` 上，则 `amp-analytics-oewa.html` 必须位于其他子网域（例如 `oewa-amp.example.com`）上。要详细了解如何添加 OEWA 支持，请点击[此处](http://www.oewa.at/basic/implementierung)。
+添加对 [OEWA](https://www.oewa.at) 的支持。需要一个 [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) 副本，且该副本必须位于不同于 AMP 文件所在网域的子网域上（[为什么？](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)）。该文件必须通过 HTTPS 提供。例如，如果您的 AMP 文件托管在 `www.example.com` 上，则 `amp-analytics-oewa.html` 必须位于其他子网域（例如 `oewa-amp.example.com`）上。要详细了解如何添加 OEWA 支持，请点击[此处](http://www.oewa.at/Implementierung)。
 
 此外，还必须定义以下变量：
 
@@ -323,4 +323,3 @@ type 属性值：`treasuredata`
 type 属性值：`metrika`
 
 添加对 Yandex Metrica 的支持。有关配置详情，请参阅 [Yandex 支持](https://yandex.com/support/metrica/code/install-counter-amp.xml)。
-

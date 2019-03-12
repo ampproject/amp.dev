@@ -8,16 +8,16 @@ Vuoi aggiungere una tipologia di utilizzo?
 [Comunicacelo.](https://github.com/ampproject/docs/issues/new)
 
 Puoi anche contribuire condividendo la tua casistica personale,
-scopri [Come dare il tuo contributo](/it/contribute/).
+scopri [Come dare il tuo contributo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## Come monitorare le visualizzazioni di pagina
 
-Scopri come monitorare le visualizzazioni di pagina tramite `amp-pixel` e `amp-analytics`.
+Scopri come monitorare le visualizzazioni di pagina tramite [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) e [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 
 ### Uso di amp-pixel
 
 Invia i dati sulla visualizzazione di pagina a un URL specifico utilizzando
-[amp-pixel](/it/docs/reference/components/amp-pixel.html):
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -26,7 +26,7 @@ Invia i dati sulla visualizzazione di pagina a un URL specifico utilizzando
 ### Uso di amp-analytics - no vendor
 
 Invia i dati sulla visualizzazione di pagina a un URL specifico utilizzando
-[amp-analytics](/it/docs/reference/components/amp-analytics.html):
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-analytics>
@@ -75,7 +75,7 @@ Invia i dati sulla visualizzazione di pagina a Google Analytics
 ## Come monitorare i clic sulla pagina
 
 Scopri come monitorare i clic sulla pagina tramite
-[amp-analytics](/it/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 inviando dati eventi a un URL specifico e a
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -142,7 +142,7 @@ per inviare un evento `click` a Google Analytics quando si fa clic su un determi
 
 ## Come monitorare lo scorrimento delle pagine
 
-Puoi eseguire il monitoraggio dello scorrimento delle pagine utilizzando [amp-analytics](/it/docs/reference/components/amp-analytics.html).
+Puoi eseguire il monitoraggio dello scorrimento delle pagine utilizzando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
 Il seguente esempio utilizza l’attributo `scrollspec` per inviare un evento `scroll`
 all’URL specifico quando l’utente scorre la pagina in verticale del 25%, 50% e 90%.
 L’evento si attiva anche quando viene eseguito lo scorrimento in orizzontale
@@ -175,7 +175,7 @@ per il 90% della larghezza di `scroll`:
 ## Come monitorare le interazioni con i social network
 
 Scopri come monitorare le interazioni con i social network utilizzando
-[amp-analytics](/it/docs/reference/components/amp-analytics.html),
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
 inviando dati eventi a un URL specifico e a
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

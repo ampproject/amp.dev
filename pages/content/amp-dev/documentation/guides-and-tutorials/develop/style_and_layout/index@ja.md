@@ -4,9 +4,9 @@ $title: スタイルとレイアウト
 
 AMP HTML のスタイルとレイアウトには、通常の HTML と同じように CSS を使用します。
 
-ただし AMP の場合は、パフォーマンスと操作性の関係で、一部の CSS が制限されています。一方、レスポンシブ デザイン機能は、 [プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})、[srcset による高度な画像読み込み](/ja/docs/design/responsive/art_direction.html)、[レイアウト属性](/ja/docs/design/responsive/control_layout.html) などの機能で拡張されているため、要素の表示方法を細かく制御できます。
+ただし AMP の場合は、パフォーマンスと操作性の関係で、一部の CSS が制限されています。一方、レスポンシブ デザイン機能は、 [プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})、[`srcset` による高度な画像読み込み]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})、[レイアウト属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) などの機能で拡張されているため、要素の表示方法を細かく制御できます。
 
-ヒント: AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する](/ja/docs/design/responsive/responsive_design.html)をご覧ください。
+ヒント: AMP で要素をレスポンシブにするのはとても簡単で、`layout="responsive"` を追加するだけです。AMP でのレスポンシブ デザインについて詳しくは、[レスポンシブな AMP ページを作成する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}})をご覧ください。
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='初めて AMP を利用するにあたっての課題など、UpperQuad における AMP プロジェクトでのサイト再設計に関する話をご覧になれます。']
 
@@ -80,7 +80,7 @@ AMP では、`srcset` 属性と `sizes` 属性の両方がサポートされて�
 
 AMP 検証ツールを使用すると、ページの CSS やレイアウトの値をテストできます。
 
-AMP 検証ツールは、ページの CSS が上限の 50,000 バイトを超えていないか、許可されていないスタイルはないか、ページのレイアウトがサポートされているか、形式は正しいか、などを検証します。チェックできるエラーの一覧については、[スタイルとレイアウトのエラー](/ja/docs/troubleshooting/validation_errors.html#style-and-layout-errors)をご覧ください。
+AMP 検証ツールは、ページの CSS が上限の 50,000 バイトを超えていないか、許可されていないスタイルはないか、ページのレイアウトがサポートされているか、形式は正しいか、などを検証します。チェックできるエラーの一覧については、[スタイルとレイアウトのエラー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#style-and-layout-errors)をご覧ください。
 
 CSS が上限の 50,000 バイトを超えた場合、コンソールには次のように表示されます。
 

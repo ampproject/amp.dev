@@ -20,7 +20,7 @@ $title: ページを追加する
       <ul>
         <li>次の 1 つのレイヤを含めます。
       <ul>
-        <li><a href="/ja/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> テンプレートを実装します。</li>
+        <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> テンプレートを実装します。</li>
         <li>次の 3 つの要素を含めます。
           <ul>
             <li><code>&lt;h1></code> 要素に「Cats」というタイトルを含めます。</li>
@@ -44,11 +44,11 @@ $title: ページを追加する
       <ul>
         <li>次の 2 つのレイヤを含めます。
       <ul>
-        <li><b>レイヤ 1</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">dog.jpg</code>、720 x 1280 px）を指定します。</li>
-        <li><b>レイヤ 2</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>thirds</code></a> テンプレートを実装し、次の 2 つの要素を含めます。
+        <li><b>レイヤ 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">dog.jpg</code>、720 x 1280 px）を指定します。</li>
+        <li><b>レイヤ 2</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> テンプレートを実装し、次の 2 つの要素を含めます。
           <ul>
             <li><code>&lt;h1></code> 要素に「Dogs」というタイトルを含めます。</li>
-            <li><code>&lt;p></code> 要素で、<a href="/ja/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>grid-area</code></a>を<a href="/ja/docs/getting_started/visual_story/create_cover_page.html#thirds"><code>lower-third</code></a>に指定してコンテンツを表示するエリアを設定します。またこの要素に、表示するコンテンツ<em>「Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf」というテキストを含めます。</em></li>
+            <li><code>&lt;p></code> 要素で、<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a>を<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a>に指定してコンテンツを表示するエリアを設定します。またこの要素に、表示するコンテンツ<em>「Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf」というテキストを含めます。</em></li>
           </ul>
         </li>
       </ul></li></ul>
@@ -67,13 +67,13 @@ $title: ページを追加する
       <ul>
       <li>次の 3 つのレイヤを含めます。
       <ul>
-        <li><b>レイヤ 1</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">bird.jpg</code>、720 x 1280 px）を指定します。</li>
-        <li><b>レイヤ 2</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> テンプレートを実装し、次の 1 つの要素を含めます。
+        <li><b>レイヤ 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> テンプレートを実装し、レスポンシブな <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>（<code class="filename">bird.jpg</code>、720 x 1280 px）を指定します。</li>
+        <li><b>レイヤ 2</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> テンプレートを実装し、次の 1 つの要素を含めます。
           <ul>
             <li><code>&lt;h1></code> 要素に「Birds」というタイトルを含めます。</li>
           </ul>
         </li>
-        <li><b>レイヤ 3</b>: <a href="/ja/docs/getting_started/visual_story/create_cover_page.html#vertical"><code>vertical</code></a> テンプレートを実装し、次の 1 つの要素を含めます。
+        <li><b>レイヤ 3</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> テンプレートを実装し、次の 1 つの要素を含めます。
           <ul>
             <li><code>&lt;q></code> 要素に<em>「A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert」という引用文を含めます。</em></li>
             <li>この第 3 のレイヤで、<code>class="bottom"</code> を指定して、子要素を画面の下部に配置します。</li>

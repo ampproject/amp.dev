@@ -34,16 +34,16 @@ Kode pembuka tutorial ([`static/index.html`](https://github.com/googlecodelabs/a
 
 Komponen AMP menawarkan komponen UI dan fungsi tambahan yang menambahkan interaktivitas yang kaya ke halaman AMP. Kode pembuka menggunakan komponen AMP berikut:
 
-- [`<amp-carousel>`](/id/docs/reference/components/amp-carousel.html): Carousel gambar yang menampilkan beberapa tampilan produk.
-- [`<amp-mustache>`](/id/docs/reference/components/amp-mustache.html): Sistem pemberian template untuk merender respons server dari amp-form.
-- [`<amp-form>`](/id/docs/reference/components/amp-form.html): Menambahkan fungsi khusus untuk elemen `<form>` yang penting bagi halaman AMP.
-- [`<amp-selector>`](/id/docs/reference/components/amp-form.html): Menawarkan cara semantik untuk memilih 1 atau banyak elemen dari grup elemen. Dapat digunakan sebagai sumber masukan untuk amp-form.
+- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): Carousel gambar yang menampilkan beberapa tampilan produk.
+- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): Sistem pemberian template untuk merender respons server dari amp-form.
+- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): Menambahkan fungsi khusus untuk elemen `<form>` yang penting bagi halaman AMP.
+- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): Menawarkan cara semantik untuk memilih 1 atau banyak elemen dari grup elemen. Dapat digunakan sebagai sumber masukan untuk amp-form.
 
 ## Interaktivitas dasar
 
 Kode pembuka menawarkan beberapa interaktivitas dasar:
 
-- Carousel gambar (`<amp-carousel>`) menampilkan beberapa tampilan produk.
-- Produk dapat ditambahkan ke keranjang pengguna (melalui `<amp-form>`) dengan menge-tap tombol "Tambahkan ke keranjang" di bagian bawah halaman.
+- Carousel gambar ([`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})) menampilkan beberapa tampilan produk.
+- Produk dapat ditambahkan ke keranjang pengguna (melalui [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})) dengan menge-tap tombol "Tambahkan ke keranjang" di bagian bawah halaman.
 
 **Cobalah**: Geser carousel gambar lalu tap tombol "Tambahkan ke keranjang".

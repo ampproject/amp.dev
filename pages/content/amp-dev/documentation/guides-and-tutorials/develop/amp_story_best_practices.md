@@ -1,6 +1,7 @@
 ---
 $title: Best practices for creating an AMP story
 $order: 12
+description: 'This guide provides recommended practices that you should implement when creating an AMP story. Watch our video on creating delightful AMP story experiences.'
 $category: Develop
 formats:
     - stories
@@ -8,7 +9,7 @@ components:
     - youtube
 ---
 
-This guide provides recommended practices that you should implement when creating an [AMP story](/docs/reference/components/amp-story.html).
+This guide provides recommended practices that you should implement when creating an [AMP story]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
 
 [video src="https://www.youtube.com/watch?v=2WjFBnCj2ew" width="480" height="270" caption="Watch our video on creating delightful AMP story experiences."]
 
@@ -56,7 +57,7 @@ The recommended dimensions for a poster image are: 720p (720w x 1280h) .
 
 ### Specify `<source>` vs `src`
 
-When specifying the source for an [amp-video](/docs/reference/components/amp-video.html), use `<source>` child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, as well as add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., "`video/mp4`").
+When specifying the source for an [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), use `<source>` child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, as well as add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., "`video/mp4`").
 
 *Example: Specifying multiple source files*
 

@@ -1,12 +1,11 @@
 ---
 $title: Common element attributes
 $order: 2
+description: 'AMP provides a set of common attributes that are extended to many AMP components (and HTML elements). This document describes each of the common attributes.'
 toc: true
 ---
 
 AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the common attributes.
-
-[TOC]
 
 ## fallback
 
@@ -22,7 +21,7 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#the-layout-attribute).
 
 ## heights
 
@@ -47,7 +46,7 @@ For more information, see [Art direction with srcset, sizes & heights]({{g.doc('
 
 ## layout
 
-AMP provides a set of [layouts](/docs/design/responsive/control_layout.html#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
+AMP provides a set of [layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
 
 Example:
 
@@ -81,7 +80,7 @@ Example:
     height="193" layout="responsive"></amp-img>
 ```
 
-For more information, see [Layout & Media queries](/docs/design/responsive/control_layout.html#element-media-queries).
+For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
 
 ## noloading
 
@@ -137,7 +136,7 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#the-layout-attribute).
 
 ## sizes
 
@@ -157,7 +156,7 @@ For more information, see [Art direction with srcset, sizes & heights]({{g.doc('
 
 ## width and height
 
-For some [layouts](/docs/design/responsive/control_layout.html#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
+For some [layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
 
 Example:
 
@@ -170,5 +169,3 @@ Example:
 ```
 
 For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
-
-

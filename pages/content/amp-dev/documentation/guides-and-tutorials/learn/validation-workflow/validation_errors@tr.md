@@ -58,7 +58,7 @@ Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com
 
 Doğrulayıcı, AMP dokümanında genişletilmiş bir bileşen bulduğunda `TAG_REQUIRED_BY_MISSING` hatasını bildirir, ancak `<script>` eşdeğerini bulmaz.
 
-[Genişletilmiş bileşenlerin](/docs/reference/components.html), AMP dokümanına açık bir şekilde özel öğe olarak eklenmeleri gerekir.
+[Genişletilmiş bileşenlerin]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}), AMP dokümanına açık bir şekilde özel öğe olarak eklenmeleri gerekir.
 Bu hataları düzeltmek için genişletilmiş bileşenin referans sayfasına gidin, gerekli komut dosyasını kopyalayın ve AMP dokümanı `<head>` etiketine yapıştırın.
 
 ### İzin verilmeyen etiket
@@ -647,7 +647,7 @@ Bu hata, AMP etiketi için bir düzen belirtmediğinizde ve işaret edilen düze
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
-Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html) bakın.
+Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}) bakın.
 
 **Not:** Düzeni belirtmezseniz ve `width` ile `height` değerlerini dahil etmezseniz düzen, varsayılan olarak CONTAINER değerine ayarlanır. CONTAINER hiçbir AMP etiketinde desteklenmediğinden doğrulayıcı bir hata bildirir.
 CONTAINER dışında bir düzen belirtir veya bir `width` ve/veya `height` değeri bildirirseniz hata kaybolur.
@@ -670,7 +670,7 @@ CONTAINER dışında bir düzen belirtir veya bir `width` ve/veya `height` değe
 </table>
 
 Bu hata, AMP etiketi için bir düzen belirtmediğinizde ve işaret edilen düzen izin verilmeyen bir öznitelik içerdiğinde ortaya çıkar.
-Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spesifikasyonunda](/docs/reference/spec/amp-html-layout.html) açıklanmıştır.
+Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spesifikasyonunda]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}) açıklanmıştır.
 
 ### Belirtilen düzen AMP etiketi tarafından desteklenmiyor
 
@@ -693,7 +693,7 @@ Bu hata, etiket için belirtilen düzen desteklenmediğinde ortaya çıkar.
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
-Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](/docs/reference/spec/amp-html-layout.html) bakın.
+Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}) bakın.
 
 ### Belirtilen düzen, özniteliğe izin vermiyor
 
@@ -713,7 +713,7 @@ Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl 
 </table>
 
 Bu hata, AMP etiketi için bir düzen belirttiğinizde ve düzen izin verilmeyen bir öznitelik içerdiğinde ortaya çıkar.
-Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spesifikasyonunda](/docs/reference/spec/amp-html-layout.html) açıklanmıştır.
+Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spesifikasyonunda]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}) açıklanmıştır.
 
 ### Düzenin gerektirdiği öznitelik için geçersiz değer
 

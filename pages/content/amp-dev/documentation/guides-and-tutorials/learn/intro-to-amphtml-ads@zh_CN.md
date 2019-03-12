@@ -21,7 +21,7 @@ AMPHTML 广告比传统广告更好的原因何在？
 
 ### 格式
 
-AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如轮播、视差和灯箱等。要开始使用，您可以利用 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) 中的开放源代码 AMPHTML 广告模板。
+AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如轮播、视差和灯箱等。要开始使用，您可以利用 [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。
 
 <table class="nocolor">
   <tr>
@@ -46,7 +46,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='向 AMP 网页投放 AMPHTML 广告', caption='向 AMP 网页投放 AMPHTML 广告', align='' ) }}
 
-1. 发布商通过 [`<amp-ad>`](/zh_cn/docs/reference/components/amp-ad.html) 标记在 AMP 网页上插入广告位，并指定想要使用的广告网络。
+1. 发布商通过 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 标记在 AMP 网页上插入广告位，并指定想要使用的广告网络。
 1. AMP Runtime 向指定的广告网络发送广告请求以获取广告。能够投放 AMPHTML 广告的广告网络会提供[快速获取实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)，以验证广告并进行签名。
 1. 广告网络以 AMPHTML 广告作出响应，并由 AMP Runtime 在 AMP 网页上呈现该广告。
 
@@ -66,7 +66,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告代理机构
 
-如果您是广告代理机构，则必须按照 [AMPHTML 广告规范](/zh_cn/docs/ads/a4a_spec.html)制作广告。要寻求灵感并查看示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
+如果您是广告代理机构，则必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})制作广告。要寻求灵感并查看示例，请参阅 [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
 
 *  [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -74,7 +74,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告网络/广告服务器
 
-要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 `amp-ad` 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
+要向 AMP 网页投放 AMPHTML 广告，您必须为您的广告网络创建使用[快速获取广告请求实现](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)的 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 扩展组件（除非您已拥有此扩展组件）。有关详情，请参阅[与 AMP 集成以投放展示广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}})。请注意，您无需进行任何特殊的集成即可向非 AMP 网页投放 AMPHTML 广告。
 
 ## 制作 AMPHTML 广告
 
@@ -112,19 +112,18 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 #### AMPHTML 广告支持第三方验证和可见度检测吗？
 
-支持，使用 [`amp-analytics`](/zh_cn/docs/reference/components/amp-analytics.html) 即可实现对验证和可见度检测的原生支持（例如，Google 的 ActiveView 集成了这种方式）。MOAT 等其他供应商也在积极实现相关支持。
+支持，使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 即可实现对验证和可见度检测的原生支持（例如，Google 的 ActiveView 集成了这种方式）。MOAT 等其他供应商也在积极实现相关支持。
 
 #### AMPHTML 广告支持基于时间轴的动画吗？
 
-支持。请参阅 [`amp-animation`](/zh_cn/docs/reference/components/amp-animation.html)。
+支持。请参阅 [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}})。
 
 #### 大多数广告都拥有可点按的目标和可配置的广告退出事件。AMPHTML 广告拥有类似的机制吗？
 
-有。请参阅 [`amp-ad-exit`](/zh_cn/docs/reference/components/amp-ad-exit.html)。
+有。请参阅 [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}})。
 
 #### 我找不到我需要的东西，可以在哪里提问？
 
 *   建议您在 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) 上查找 AMP 相关问题的解答；由于 AMP 项目社区成员会定期查看 Stack Overflow，因此通过 Stack Overflow 提问时可以最快得到解答。
 *   要获取解决方案和解答，请加入 [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 渠道。
 *   如果您遇到 AMP 方面的错误或有与 AMP 相关的功能请求，请参阅[报告 AMP 问题](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)，了解如何提交问题。
- 
