@@ -175,3 +175,10 @@ nav[toolbar] {
     }
   }
 }
+
+.#{organism('sidebar')} {
+
+  &-section {
+    max-width: 100%;
+  }
+}

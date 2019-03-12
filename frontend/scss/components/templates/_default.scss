@@ -12,6 +12,7 @@
   padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
+
   @media (max-width: 767px) {
     padding: 0 0 0 15px;
   }
@@ -134,7 +135,7 @@
 
   @media (min-width: 1024px) {
     grid-column: 20 / 25;
-    grid-row: span 2;
+    grid-row: span 3;
     padding-top: 46px;
 
     & ~ .#{utility('content')} {
@@ -174,8 +175,9 @@
   @media (min-width: 1024px) {
     background: color('whisper');
     grid-column: 20 / 25;
-    grid-row: span 2;
+    grid-row: span 3;
     padding-top: 46px;
+    padding-bottom: 60px;
 
     & ~ .#{utility('content')} {
       padding-top: 62px;

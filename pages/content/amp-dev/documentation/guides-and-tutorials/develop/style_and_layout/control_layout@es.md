@@ -172,8 +172,8 @@ Por ejemplo, a continuación se muestran dos imágenes con media queries que se 
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +184,8 @@ En función de la anchura de la pantalla, se obtendrá y renderizará una de ell
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]
