@@ -19,11 +19,12 @@
 const {spawn} = require('child_process');
 const {series} = require('gulp');
 const {join} = require('path');
+const mri = require('mri');
 
 const PREFIX = 'amp-dev';
 
 // Parse commandline arguments
-const argv = require('minimist')(process.argv.slice(2));
+const argv = mri(process.argv.slice(2));
 
 // We tag docker images by the current git commit SHA,
 // this makes it easy to identify and reproduce builds.
