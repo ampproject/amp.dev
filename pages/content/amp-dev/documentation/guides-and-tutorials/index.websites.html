@@ -11,129 +11,21 @@ $hidden: true
 cms: !g.yaml /content/shared/data/cms.yaml
 ---
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-<h1>Introduction to AMP Websites</h1>
+<h1>Get started with AMP</h1>
 
-<p class="limit">The AMP project is a web components framework to create lightning fast, user first, immersive websites. By building on web development best practices, AMP makes it easy to build beautiful and functional sites that just work. AMP is cross browser compatible and supported by many different platforms.</p>
+<p class="limit">
+  AMP is a web components framework to create lightning fast, user first, immersive websites. By building on web development best practices, AMP makes it easy to build beautiful and functional sites. AMP is cross browser compatible and supported by many different platforms.
+</p>
+
+<p class="limit">
+  To get started, follow our tutorial on how to <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}">Create your first AMP Page</a> and learn <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md', locale=doc.locale).url.path }}">How to Convert HTML to AMP</a>, then familiarize yourself with the rest of the guides &amp; tutorials, organized into stages of development:
+</p>
 
 {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
-<div class="ap--benefits--list">
-  {% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
-  <div class="ap-m-benefit">
-    <div class="ap-m-benefit-text">
-      <div class="ap-m-benefit-icon">
-        {% do doc.icons.useIcon('/icons/compass.svg') %}
-        <svg class="ap-m-benefit-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compass"></use>
-        </svg>
-      </div>
-      <h4 class="ap-m-benefit-text-headline">Get introduced</h4>
-    </div>
-
-    <div class="ap-m-benefit-text-block">
-      <p class="ap-m-benefit-text-copy">Familiarize the fundamentals</p>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">AMP Development Intro Video</span>
-      </a>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">AMP HTML Specification</span>
-      </a>
-    </div>
-
-    <div class="ap-m-benefit-text-block">
-      <p class="ap-m-benefit-text-copy">Start developing</p>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">Create your first AMP Page</span>
-      </a>
-    </div>
-
-    <div class="ap-m-benefit-text-block">
-      <p class="ap-m-benefit-text-copy">Set up for Success</p>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">Create interactive AMP pages</span>
-      </a>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">Validate AMP pages</span>
-      </a>
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">Make your page discoverable</span>
-      </a>
-    </div>
-
-  </div>
-
-  <div class="ap-m-benefit">
-    <div class="ap-m-benefit-text">
-    <div class="ap-m-benefit-icon">
-      {% do doc.icons.useIcon('/icons/documents.svg') %}
-      <svg class="ap-m-benefit-icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#documents"></use>
-      </svg>
-    </div>
-      <h4 class="ap-m-benefit-text-headline">Convert existing content</h4>
-    </div>
-
-    <div class="ap-m-benefit-text-block">
-        <p class="ap-m-benefit-text-copy">Have content you’d like to convert to AMP?</p>
-        <p class="ap-m-benefit-text-copy"><b>For manual conversion;</b><br>Checkout our tutorial on how to <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path }}">Convert HTML to AMP</a> or watch the video.</p>
-        <p class="ap-m-benefit-text-copy"><b>For automatic conversion:</b><br>Explore the various converters for both PHP and JS.</p>
-    </div>
-
-  </div>
-
-  <div class="ap-m-benefit">
-    <div class="ap-m-benefit-text">
-    <div class="ap-m-benefit-icon">
-      {% do doc.icons.useIcon('icons/content-modules.svg') %}
-      <svg class="ap-m-benefit-icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#content-modules"></use>
-      </svg>
-    </div>
-      <h4 class="ap-m-benefit-text-headline">Use a CMS</h4>
-    </div>
-
-    <div class="ap-m-benefit-text-block">
-        <p class="ap-m-benefit-text-copy">AMP integrates with many publishing platforms and content management systems!</p>
-        <p class="ap-m-benefit-text-copy">Popular CMS’es with AMP support:</p>
-        <a href="https://www.drupal.org/project/amp" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Drupal</span>
-        </a>
-        <a href="https://www.fastcommerce.com.br/accelerated-mobile-pages-amp" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Fastcommerce</span>
-        </a>
-        <a href="http://help.hatenablog.com/entry/amp" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Hatena</span>
-        </a>
-        <a href="https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Squarespace</span>
-        </a>
-        <a href="https://www.tumblr.com/about" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">Tumblr</span>
-        </a>
-        <a href="https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/" rel="noopener" class="ap-m-lnk">
-          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          <span class="ap-m-lnk-text">WordPress</span>
-        </a>
-    </div>
-
-  </div>
-</div>
-
-<hr>
+{% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
 
 <div class="ap--benefits--list">
   <div class="ap-m-benefit-twocolumns">
-    <h2>AMP’s development workflow</h2>
     <div class="ap-m-benefit-text-centered">
       <div class="ap-m-benefit-icon">
         {% do doc.icons.useIcon('/icons/start.svg') %}
@@ -187,9 +79,15 @@ cms: !g.yaml /content/shared/data/cms.yaml
 
   <div class="ap-m-benefit-twocolumns">
     <div class="ap-m-benefit-daily">
-      <h5>Daily resource</h5>
+
+      <h5>More to explore</h5>
       <p>Use our resources to make your day to day work with AMP easy and productive:</p>
-      
+
+      <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw " rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">AMP Channel on YouTube</span>
+      </a>
+
       <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
         <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         <span class="ap-m-lnk-text">AMP Components</span>
@@ -200,14 +98,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
         <span class="ap-m-lnk-text">Demos & Examples</span>
       </a>
 
-      <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
-        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        <span class="ap-m-lnk-text">Tutorials</span>
-      </a>
-
       <a href="{{ g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
         <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         <span class="ap-m-lnk-text">Templates</span>
+      </a>
+
+      <a href="{{ g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path }}" rel="noopener" class="ap-m-lnk">
+        <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        <span class="ap-m-lnk-text">Tools</span>
       </a>
 
       <a href="https://blog.amp.dev/" rel="noopener" class="ap-m-lnk">
