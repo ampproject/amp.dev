@@ -119,6 +119,7 @@ class PageMinifier {
     return ampOptimizer.transformHtml(html, {
       ampUrl: path.replace(/^pages/, ''),
       ampRuntimeVersion: ampRuntimeVersion,
+      blurredPlaceholders: true,
       maxBlurredPlaceholders: 7, // number of images in homepage stage
     });
   }
