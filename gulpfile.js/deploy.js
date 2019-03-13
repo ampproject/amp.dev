@@ -110,6 +110,7 @@ function updateStart() {
       `gcloud beta compute instance-groups managed rolling-action \
                  start-update ${config.instance.group} \
                  --version template=${config.instance.template} \
+                 --zone=${config.gcloud.zone} \
                  --min-ready 1m \
                  --max-surge 1 \
                  --max-unavailable 1`,
