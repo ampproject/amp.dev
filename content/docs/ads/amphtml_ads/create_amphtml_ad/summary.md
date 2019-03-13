@@ -7,7 +7,7 @@ You've successfully created an AMPHTML ad that can be served on AMP and non-AMP 
 
 In this tutorial, you learned to:
 
-* Create a valid AMPHTML ad according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/a4a_spec.md', locale=doc.locale).url.path}})
+* Create a valid AMPHTML ad according to the [AMPHTML ad spec]({{g.doc('/content/docs/ads/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}})
 * Track ad views by using the [`amp-pixel`](/docs/reference/components/amp-pixel.html) component
 * Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
 

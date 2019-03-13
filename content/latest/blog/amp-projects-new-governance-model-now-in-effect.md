@@ -8,7 +8,7 @@ role:  Member of the AMP Project Technical Steering Committee
 origin: "https://amphtml.wordpress.com/2018/11/30/amp-projects-new-governance-model-now-in-effect/amp/"
 excerpt: "In September I announced a proposal for a new governance model for AMP that more explicitly gives a voice to all constituents of the community.  Since that announcement we have worked with the community to improve the proposal through a wide variety of channels including comments on the proposal pull request on GitHub, issues in [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-11-30T09:04:08-06:00
+date_data: 2018-11-30T07:04:08-08:00
 $date: November 30, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/

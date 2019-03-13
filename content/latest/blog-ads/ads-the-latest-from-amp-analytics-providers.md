@@ -8,8 +8,8 @@ role:  Product Manager, AMP, at Google
 origin: "https://amphtml.wordpress.com/2018/10/25/the-latest-from-amp-analytics-providers/amp/"
 excerpt: "As AMP turns three, we can&#8217;t help but look back with nostalgia on how far along we’ve come along in our mission &#8211; Build the best open web technology that lets publishers create fast and secure pages without compromising on user-experience. That is why we built the analytics infrastructure in AMP that allows for “collect [&#8230;]"
 avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-date_data: 2018-10-25T16:06:47-05:00
-$date: October 25, 2018
+date_data: 2018-10-26T06:06:47+09:00
+$date: October 26, 2018
 $parent: /content/latest/list-blog.html
 $path: /latest/blog/{base}/
 $localization:

@@ -64,6 +64,12 @@ Type attribute value: `alexametrics`
 
 Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
 
+### Amplitude Analytics
+
+Type attribute value: `amplitude`
+
+Adds support for Amplitude Analytics. More information can be found at [amplitude.com](https://amplitude.zendesk.com/hc/en-us/articles/360023153831).
+
 ### AT Internet
 
 Type attribute value: `atinternet`
@@ -273,11 +279,28 @@ Type attribute value: `parsely`
 
 Adds support for Parsely. Configuration details can be found at [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
+### Permutive
+
+Type attribute value: `permutive`
+
+Adds support for Permutive event collection. Additionally, the following `vars` must be defined:
+
+* `namespace`: your Permutive AMP namespace
+* `key`: your Permutive public API key
+
+Use `extraUrlParams` to add additional event properties. Full configuration details can be found at [support.permutive.com](http://support.permutive.com).
+
 ### Piano
 
 Type attribute value: `piano`
 
 Adds support for Piano.  Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+
+### Pinpoll
+
+Type attribute value: `pinpoll`
+
+Adds support for Pinpoll.  Configuration details can be found at [pinpoll.com](https://pinpoll.com/).
 
 ### Pressboard
 
@@ -290,6 +313,13 @@ Adds support for Pressboard. Configuration details can be found at [help.pressbo
 Type attribute value: `quantcast`
 
 Adds support for Quantcast Measurement. More details for adding Quantcast Measurement can be found at [quantcast.com](https://www.quantcast.com/help/guides/)
+
+### Retargetly
+
+Type attribute value: `retargetly`
+
+Adds support for Retargetly pageviews and custom data.
+To access the implementation docs as well as all variables that can be sent, please visit [Retargetly Docs](https://retargetlydmp.zendesk.com/hc/es-419/articles/360012932034-Implementacion-del-tag-contenedor-AMP-Pages-).
 
 ### Segment
 

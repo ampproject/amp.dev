@@ -1,67 +1,67 @@
 blogs:
 
 - type: Blog
-  title: "Contributing to WebKit for a more predictable web platform"
-  id: ads-contributing-to-webkit-for-a-more-predictable-web-platform
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/12/06/contributing-to-webkit-for-a-more-predictable-web-platform/amp/"
-  excerpt: "Over the past two years, the AMP Project has been working with Igalia to identify bugs and missing features within iOS WebKit and then fix them. We create repro cases, write web platform tests, perform debugging and analysis, and, of course, write patches to actually fix things. We think this is particular rewarding work, because [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-06T10:41:19-06:00
-  date: "December 6, 2018"
-
-- type: Blog
-  title: "Use AMPHTML ads for better ad performance, page usability and user safety"
-  id: ads-use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/12/04/use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety/amp/"
-  excerpt: "This is part of a larger AMP monetization series on Medium that includes the below topics: Ensure Ad Density is equal on AMP &#38; non-AMP pages Optimize your AMP pages for high ad viewability or views Take advantage of more ad competition with multi-size ads &#38; fluid Better than header bidding → AMP RTC Take [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-12-04T09:58:54-06:00
-  date: "December 4, 2018"
-
-- type: Blog
-  title: "Progressively AMPlify EC-CUBE"
-  id: ads-progressively-amplify-ec-cube
-  author: Yusuke Utsunomiya
-  role:  Mobile Solutions Consultant and Monisha Varadan, Global Product Partnerships at Google
-  origin: "https://amphtml.wordpress.com/2018/11/20/progressively-amplify-ec-cube/amp/"
-  excerpt: "EC-CUBE, one of the largest open source ecommerce CMSes in Japan, has released a beta plugin to use AMP for their ecommerce stores. The plugin was built by EC-CUBE’s well known partner SUNDAY SYSTEMS, Inc. in collaboration with Mobile Solutions Consultants from Google, in just one month 😲. For websites who use EC-CUBE, you can [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-20T09:45:09-06:00
-  date: "November 20, 2018"
-
-- type: Blog
-  title: "Launching Ad Monetization for AMP stories"
-  id: ads-launching-ad-monetization-for-amp-stories
-  author: Vamsee Jasti
-  role:  Product Manager, AMP Project
-  origin: "https://amphtml.wordpress.com/2018/11/14/launching-ad-monetization-for-amp-stories/amp/"
-  excerpt: "We’ve seen steady growth over the past year in AMP Stories and we are delighted to see the various ways content creators have taken advantage of the rich, immersive canvas for storytelling. We’ve been testing this with a handful for pilot partners and today, we are excited to give all content creators an opportunity to [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-14T13:41:40-06:00
-  date: "November 14, 2018"
-
-- type: Blog
-  title: "So your AMP test doesn’t perform — now what?"
-  id: ads-so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what
-  author: amphtml
-  role: 
-  origin: "https://amphtml.wordpress.com/2018/11/08/so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what/amp/"
-  excerpt: "Editor&#8217;s note: The following was posted on Medium by Martin Schierle, Mobile Solutions Consultant at Google.  Accelerated Mobile Pages (AMP) are a great and easy way to build very fast pages, and as we know speed is key — for every second delay in mobile page load, conversions can fall by up to 20%. So obviously the first thing people [&#8230;]"
-  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-08T15:46:36-06:00
-  date: "November 8, 2018"
-
-- type: Blog
-  title: "Streaming in the Shadow Reader"
-  id: ads-streaming-in-the-shadow-reader
+  title: "Welcome to the AMP Roadshow 2019. First stop: Africa!"
+  id: ads-welcome-to-the-amp-roadshow-2019-first-stop-africa
   author: Ben Morss
-  role:  Developer Advocate for AMP, at Google
-  origin: "https://amphtml.wordpress.com/2018/11/05/streaming-in-the-shadow-reader/amp/"
-  excerpt: "What did we do? We made The Shadow Reader faster again! We created The Shadow Reader (https://amp.cards) to demonstrate how AMP pages can be used within a Progressive Web App (PWA) (read our announcement post for more context). The site folds real articles from The Guardian into an immersive news reader experience. It&#8217;s a demo, but [&#8230;]"
+  role:  Developer Advocate at Google
+  origin: "https://amphtml.wordpress.com/2019/03/05/welcome-to-the-amp-roadshow-2019-first-stop-africa/amp/"
+  excerpt: "Posted by Ben Morss, Developer Advocate at Google In 2017, we started the AMP Roadshow to educate and meet developers around the world. The Roadshow is a free one-day hands-on conference and workshop for new developers and seasoned AMP wizards alike, brought to your city. In 2018, the AMP team visited 21 cities in 10 [&#8230;]"
   avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
-  datedata: 2018-11-05T15:42:20-06:00
-  date: "November 5, 2018"
+  datedata: 2019-03-05T05:22:21-08:00
+  date: "March 5, 2019"
+
+- type: Blog
+  title: "What’s new in AMP, Q1 2019: Improvements to consent, videos, forms and lists"
+  id: ads-whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists
+  author: Naina Raisinghani
+  role:  Product Manager, AMP Project&nbsp;at&nbsp;Google
+  origin: "https://amphtml.wordpress.com/2019/02/27/whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists/amp/"
+  excerpt: "Video improvements We have all experienced a situation where we want to watch a video and the related notes simultaneously. Good examples are a video of a recipe along with the instructions, or a video along with its transcript. The dock attribute on &#60;amp-video&#62; now supports minimizing the video to the corner of the viewport [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-02-27T13:32:11-08:00
+  date: "February 27, 2019"
+
+- type: Blog
+  title: "Using AMP to make display ads safer, faster and better for users"
+  id: ads-using-amp-to-make-display-ads-safer-faster-and-better-for-users
+  author: Vamsee Jasti
+  role:  AMP Product Manager at Google
+  origin: "https://amphtml.wordpress.com/2019/02/20/using-amp-to-make-display-ads-safer-faster-and-better-for-users/amp/"
+  excerpt: "Editor&#8217;s note: The following post was originally published on the Google Ads Blog by Vamsee Jasti, AMP Product Manager at Google. The performance benefits and security guarantees offered by AMPHTML ads, which are display ads created using the AMP framework, translate to better advertiser ROI, publisher revenue and overall better user experience. Because of this, Google has expanded [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-02-20T11:24:50-08:00
+  date: "February 20, 2019"
+
+- type: Blog
+  title: "Volkswagen and EL PAÍS increase conversions by 76% with the first end-to-end AMP campaign"
+  id: ads-volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign
+  author: Pilar Sanchez
+  role:  Mobile Specialist, Google
+  origin: "https://amphtml.wordpress.com/2019/02/11/volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign/amp/"
+  excerpt: "Volkswagen, one of the world&#8217;s largest automotive companies, sought to improve the user experience of potential customers for their 2019 Tiguan TDI 150 R Line. Given their business goals and desire to test the state-of-the-art in speed and performance, they decided to test AMP technology for both their landing page, and the ad  creatives that [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-02-11T13:22:06-08:00
+  date: "February 11, 2019"
+
+- type: Blog
+  title: "AMP Conf 2019 が東京で開催されます"
+  id: ads-amp-conf-2019-jp
+  author: amphtml
+  role: 
+  origin: "https://amphtml.wordpress.com/2019/01/11/amp-conf-2019-jp/amp/"
+  excerpt: "この記事は AMP プロジェクト マーケティング リード、Matt Ludwig による Accelerated Mobile Pages Project の記事 &#8220;Announcing AMP Conf 2019: Tokyo&#8221; を元に翻訳・加筆したものです。詳しくは元記事をご覧ください。 昨年 2 月アムステルダムにて AMP というオープンソースプロジェクトの最新情報や学びを共有すべく AMP Conf 2018 が開催され、400 名もの方々が集まりました。この AMP というフレームワークはそれ以降も進化のスピードを止めることはなく、新たなガバナンスモデルを導入し、多くのパブリッシャーや E コマースのウェブサイトに採用され続けています。その中でも注目すべきははアジア・パシフィックでの普及です。たとえば最近の事例では、インドのパブリッシャーである&#160;Times of India&#160;やオーストラリアの自動車保険の&#160;Greenslips.co.au&#160;そして日本の CMS の&#160;EC-CUBE&#160;など、この地域での盛り上がりには目を見張るものがあります。 このような盛り上がりを受けて、2019 年の AMP Conf は 4 月 17 日、18 日に東京で開催することが決定されました。AMP のコアデベロッパーやコントリビューター、AMP を利用してサイト制作をしているエンジニアやデザイナー、そして新たなガバナンスモデルを形成しているコミッティーのメンバーと一緒に、AMP の最新情報や事例を見ていきましょう。コアな AMPHTML のトピックだけでなく、AMP stories、AMP for email、AMPHTML ads [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-01-11T12:11:51-08:00
+  date: "January 11, 2019"
+
+- type: Blog
+  title: "Announcing AMP Conf 2019: Tokyo"
+  id: ads-announcing-amp-conf-2019-tokyo
+  author: Matt Ludwig
+  role:  AMP Project marketing lead at Google
+  origin: "https://amphtml.wordpress.com/2019/01/08/announcing-amp-conf-2019-tokyo/amp/"
+  excerpt: "Last year 400 of us gathered in AMPsterdam to share the latest AMP news, and learn from the hundreds of developers engaged with the open source project. The framework has continued to evolve since our time in the Netherlands, including a new governance model and many new publishers and e-commerce websites building with AMP. In [&#8230;]"
+  avatar: https://1.gravatar.com/avatar/42ecb1ea497ca9d0ffe1e406cae70e27?s=96&d=identicon&r=G
+  datedata: 2019-01-08T13:26:23-08:00
+  date: "January 8, 2019"
