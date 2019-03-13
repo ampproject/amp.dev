@@ -47,7 +47,7 @@
   "dependencies": {
     "amp-toolbox-cors": "0.2.3",
     "amp-toolbox-optimizer": "0.4.8",
-    "amp-toolbox-optimizer-express": "0.5.1",
+    "amp-toolbox-optimizer-express": "0.6.0",
     "amp-toolbox-runtime-version": "0.2.5",
     "cheerio": "1.0.0-rc.2",
     "express": "4.16.4",
