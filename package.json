@@ -56,7 +56,7 @@
     "signale": "1.4.0"
   },
   "devDependencies": {
-    "amp-toolbox-optimizer": "0.4.8",
+    "amp-toolbox-optimizer": "0.5.0",
     "amp-toolbox-runtime-version": "0.2.5",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
