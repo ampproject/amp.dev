@@ -16,7 +16,7 @@
     "build:boilerplate": "cd boilerplate && node build.js",
     "build:local": "NODE_ENV=local npm run build:site",
     "build:playground": "cd playground && webpack --config webpack.config.js --mode production --optimize-minimize --progress",
-    "build:pages": "cd platform && node build.js --clean-samples",
+    "build:pages": "cd platform && node build.js --import --clean-samples",
     "build:site": "npm-run-all build:pages build:boilerplate build:playground --aggregate-output --parallel",
     "build:staging": "NODE_ENV=staging npm run build:site",
     "build:prod": "NODE_ENV=production npm run build:site",

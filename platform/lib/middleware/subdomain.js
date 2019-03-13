@@ -57,7 +57,7 @@ class Subdomain {
     for (const [subdomain, router] of this.subdomains_) {
       const subdomainPath = '/' + subdomain;
       if (req.url.startsWith(subdomainPath)) {
-        req.url = req.url.substring(subdomainPath.length);
+        req.url = '/' + req.url.substring(subdomainPath.length);
         router(req, res, next);
         return;
       }
