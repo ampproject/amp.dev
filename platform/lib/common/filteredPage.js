@@ -146,7 +146,7 @@ class FilteredPage {
 
     // Rewrite the active state (which is websites per default) to
     // the current active format
-    let activeFormat = this._dom(`button.ap-m-format-toggle-link`);
+    let activeFormat = this._dom(`.ap-m-format-toggle-selected`);
     activeFormat.html(activeFormat.html().replace(/websites/g, this._format));
     activeFormat.removeClass('ap-m-format-toggle-link-websites');
     activeFormat.addClass(`ap-m-format-toggle-link-${this._format}`);

@@ -19,6 +19,8 @@
   }
 
   &-selected {
+    border: 0;
+
     &:focus, &:hover {
       &:after {
         position: absolute;
@@ -32,7 +34,7 @@
     }
   }
 
-  &-link {
+  &-link, &-selected {
     position: relative;
     z-index: 3;
     display: flex;
@@ -50,7 +52,6 @@
     background: color('athens-gray');
     transition: opacity 0.2s ease;
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
-    border: 0;
 
     .#{atom('ico')} {
       width: 14px;
@@ -59,40 +60,33 @@
       fill: color('black');
     }
 
-    &-websites:not(.inactive),
-    &-websites.active {
+    &-websites {
       @include gradient-websites; color: color('white');
       .#{atom('ico')} { fill: color('white'); }
     }
 
-    &-stories:not(.inactive),
-    &-stories.active {
+    &-stories {
       @include gradient-stories; color: color('pigment-indigo');
       .#{atom('ico')} { fill: color('pigment-indigo'); }
     }
 
-    &-ads:not(.inactive),
-    &-ads.active {
+    &-ads {
       @include gradient-ads; color: color('white');
       .#{atom('ico')} { fill: color('white'); }
     }
 
-    &-email:not(.inactive),
-    &-email.active {
+    &-email {
       @include gradient-e-mails; color: color('ultramarine');
       .#{atom('ico')} { fill: color('ultramarine'); }
     }
   }
 
   &:hover &-link {
-    &:not(.active),
-    &.inactive {
-      color: color('black');
-      background: color('athens-gray');
+    color: color('black');
+    background: color('athens-gray');
 
-      .#{atom('ico')} {
-        fill: color('black');
-      }
+    .#{atom('ico')} {
+      fill: color('black');
     }
 
     &-websites:hover {
