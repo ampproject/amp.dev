@@ -21,7 +21,7 @@
       </div>
       {% elif teaser.figure %}
       {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-      <div class="ap-m-kpi ap-m-kpi-{{ teaser_doc.formats[0] }}">
+      <div class="ap-m-kpi ap-m-kpi-teaser ap-m-kpi-{{ teaser_doc.formats[0] }}">
         <div class="ap-m-kpi-content">
           {% if teaser.icon %}
           {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}

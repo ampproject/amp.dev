@@ -42,6 +42,10 @@
     }
   }
 
+  &-teaser {
+    margin: 0;
+  }
+
   &-content {
     @include kpi-content;
   }
