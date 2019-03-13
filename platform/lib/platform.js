@@ -20,7 +20,6 @@ const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const ampCors = require('amp-toolbox-cors');
-// const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
@@ -63,18 +62,6 @@ class Platform {
       });
     }
     this.server.use(shrinkRay());
-    /*
-    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
-    this.server.use((request, response, next) => {
-      // don't optimize sample source or preview
-      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
-             request.headers['x-requested-by'] === 'playground') {
-        next();
-        return;
-      }
-      ampOptimizer(request, response, next);
-    });
-    */
     this.server.use((req, res, next) => {
       if (req.hostname.startsWith(WWW_PREFIX)) {
         res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
