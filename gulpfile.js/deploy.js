@@ -106,12 +106,17 @@ function instanceTemplateCreate() {
  * that there's always at least 1 active instance running during the update.
  */
 function updateStart() {
-  return sh(`gcloud beta compute instance-groups managed rolling-action \
+  return sh(
+      `gcloud beta compute instance-groups managed rolling-action \
                  start-update ${config.instance.group} \
                  --version template=${config.instance.template} \
                  --min-ready 1m \
                  --max-surge 1 \
-                 --max-unavailable 1`);
+                 --max-unavailable 1`,
+      'Rolling update started, this can take a few minutes...\n\n' +
+      'Run `gulp updateStatus` to check the current status. `isStable => true` once ' +
+      'when the upate has been finished.'
+  );
 }
 
 /**
@@ -119,13 +124,8 @@ function updateStart() {
  * all VMs have been updated to the latest version and the update is stable.
  */
 function updateStatus() {
-  return sh(
-      `gcloud beta compute instance-groups managed describe ${config.instance.group} \
-           --zone=${config.gcloud.zone}`,
-      'Rolling update started, this can take a few minutes...\n\n' +
-      'Run `gulp updateStatus` to check the current status. `isStable => true` once ' +
-      'the upate has been finished.'
-  );
+  return sh(`gcloud beta compute instance-groups managed describe ${config.instance.group} \
+           --zone=${config.gcloud.zone}`);
 }
 
 /**
