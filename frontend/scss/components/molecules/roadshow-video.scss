@@ -17,22 +17,25 @@
   grid-column: 1 / -1;
   position: absolute;
   right: 0;
+  top: 5%;
   width: 83%;
   max-width: 360px;
 
   @media (min-width: 768px) {
-    grid-column: 12 / 24;
-    margin-top: -60%;
-    position: relative;
+    grid-column: 14 / 24;
     left: 0;
+    top: 0;
     width: 100%;
-    max-width: 100%;;
+    max-width: 100%;
   }
 
   &-block {
     @include roadshow-video-shadow;
-    margin: 50px 0;
     width: 100%;
+
+    @media  (min-width: 768px) {
+      margin-top: 75px;
+    }
   }
 
 }
