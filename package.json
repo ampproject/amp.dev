@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "amp-toolbox-optimizer": "0.4.8",
-    "amp-toolbox-runtime-version": "0.2.5",
+    "amp-toolbox-runtime-version": "0.2.6",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
     "@babel/node": "7.2.2",
