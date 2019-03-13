@@ -94,7 +94,7 @@
     "html-loader": "0.5.5",
     "html-minifier": "3.5.21",
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
-    "html-webpack-plugin": "4.0.0-beta.4",
+    "html-webpack-plugin": "4.0.0-beta.5",
     "http-proxy": "1.17.0",
     "http-proxy-response-rewrite": "0.0.1",
     "jasmine": "3.3.1",
