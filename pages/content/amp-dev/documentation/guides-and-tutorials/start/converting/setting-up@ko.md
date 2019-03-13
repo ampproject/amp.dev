@@ -1,7 +1,7 @@
 ---
 $title: 설정
 $order: 0
-$parent: /content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md
+$parent: /documentation/guides-and-tutorials/start/converting/setting-up.md
 ---
 
 ## 기본 요건

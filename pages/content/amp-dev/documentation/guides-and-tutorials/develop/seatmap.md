@@ -13,7 +13,7 @@ contributors:
 Seatmaps are important parts of ticketers' web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by using a combination of available AMP components.
 
 [tip]
-A live sample implementing the practices described below is available [here]({{g.doc('/content/amp-dev/documentation/examples/advanced/SeatMap.html', locale=doc.locale).url.path}}).
+A live sample implementing the practices described below is available [here]({{g.doc('/content/amp-dev/documentation/examples/documentation/SeatMap.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## AMP Components needed

@@ -28,7 +28,7 @@ $title: サードパーティ コンテンツを追加する
 </amp-iframe>
 </div>
 
-ヒント: その他の [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}) をご覧ください。
+ヒント: その他の [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-twitter.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## Instagram を埋め込む
 
@@ -54,7 +54,7 @@ Instagram の写真 URL にある data-shortcode を指定します。たとえ�
 </amp-iframe>
 </div>
 
-ヒント: その他の [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}) をご覧ください。
+ヒント: その他の [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-instagram.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## Facebook の投稿や動画を表示する
 
@@ -99,7 +99,7 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-ヒント: その他の [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}) をご覧ください。
+ヒント: その他の [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-facebook.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## YouTube 動画を追加する
 
@@ -127,7 +127,7 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 </amp-iframe>
 </div>
 
-ヒント: その他の [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}) をご覧ください。
+ヒント: その他の [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) の例については、[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-youtube.html', locale=doc.locale).url.path}}) をご覧ください。
 
 ## 広告を表示する
 

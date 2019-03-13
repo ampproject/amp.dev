@@ -69,7 +69,7 @@ Google の AMP API を介した AMP URL のリクエストを
 
 Google では、AMP URL API を提供して、リストに指定された URL
 （[公式ドキュメント](https://developers.google.com/amp/cache/use-amp-url) /
-[デモ]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）と一致する AMP HTML URL を取得します。URL は
+[デモ]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）と一致する AMP HTML URL を取得します。URL は
 正規バージョンである必要はありません。AMP バージョンが存在する場合、レスポンスには
 元の AMP URL と Google AMP キャッシュ上にキャッシュされている AMP ページの
 URL が含まれます。
