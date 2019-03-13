@@ -107,7 +107,11 @@ class GrowReferenceChecker {
           }
         }
 
-        resolve();
+        if (this._unfindableDocuments.length > 0) {
+          reject(new Error(`${this._unfindableDocuments.length} documents with broken links`));
+        } else {
+          resolve();
+        }
       });
     });
   }
@@ -189,8 +193,14 @@ class GrowReferenceChecker {
 
 // If not required, run directly
 if (!module.parent) {
-  const referenceChecker = new GrowReferenceChecker();
-  referenceChecker.start();
+  (async () => {
+    const referenceChecker = new GrowReferenceChecker();
+    try {
+      await referenceChecker.start();
+    } catch (err) {
+      process.exit(1);
+    }
+  })();
 }
 
 module.exports = GrowReferenceChecker;
