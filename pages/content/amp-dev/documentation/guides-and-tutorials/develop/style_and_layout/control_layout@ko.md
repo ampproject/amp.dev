@@ -99,7 +99,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 [tip type="success"]
 
-[AMP 레이아웃 시연]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) 페이지를 방문하여 다양한 레이아웃이 화면 크기 조절에 어떻게 반응하는지 알아보세요. [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/layout_system.html', locale=doc.locale).url.path}})에서도 자세히 알아볼 수 있습니다.
+[AMP 레이아웃 시연]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) 페이지를 방문하여 다양한 레이아웃이 화면 크기 조절에 어떻게 반응하는지 알아보세요. [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}})에서도 자세히 알아볼 수 있습니다.
 
 [/tip]
 

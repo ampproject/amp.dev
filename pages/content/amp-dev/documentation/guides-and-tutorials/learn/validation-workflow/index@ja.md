@@ -10,7 +10,7 @@ AMP の主な長所は、単にページの読み込み時間を短縮するだ�
 
 AMP ドキュメントを検証するにはいくつかの方法があります。どの方法でも結果は同じになるため、自分の開発スタイルに最適なものを使用してください。
 
-AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.md', locale=doc.locale).url.path}})かどうかを確認することもおすすめします。
+AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})かどうかを確認することもおすすめします。
 
 ### ブラウザの Developer Console
 
