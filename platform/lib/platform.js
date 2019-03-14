@@ -29,7 +29,8 @@ const WWW_PREFIX = 'www.';
 const routers = {
   'whoAmI': require('./routers/whoAmI.js'),
   'pages': require('./routers/pages.js'),
-  'examples': require('./routers/examples.js'),
+  'exampleSources': require('@lib/routers/exampleSources.js'),
+  'exampleEmbeds': require('@lib/routers/exampleEmbeds.js'),
   'static': require('./routers/static.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
@@ -124,7 +125,8 @@ class Platform {
 
   _registerRouters() {
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(routers.examples);
+    this.server.use(routers.exampleEmbeds);
+    this.server.use(routers.exampleSources);
     this.server.use(routers.static);
     this.server.use('/playground', routers.playground);
     this.server.use('/boilerplate', routers.boilerplate);
