@@ -1,6 +1,7 @@
 ---
 $title: Preload your PWA from your AMP pages
 $order: 1
+description: 'A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to ...'
 formats:
   - websites
 author: pbakaus
@@ -18,7 +19,7 @@ Read on to learn why, and how to use this development pattern.
 
 ### AMP for initial user acquisition
 
-AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering](/learn/about-how/), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
+AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
 
 ### PWA for rich interactivity and engagement
 

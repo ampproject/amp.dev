@@ -1,11 +1,12 @@
 ---
 $title: Navigating your site
 $order: 5
+description: Most mobile websites include a site navigation menu. These menus can take many different forms. In this tutorial, we'll try out the following examples for ...
 ---
 
 Most mobile websites include a site navigation menu. These menus can take many different forms. In this tutorial, we'll try out the following examples for presenting navigation in AMP pages:
 
-- A link back to your home page -- the simplest option.
+- A link back to your home page - the simplest option.
 - A side navigation bar by using the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) component.
 
 ## Link back home

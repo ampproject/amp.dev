@@ -1,6 +1,7 @@
 ---
 $title: Creating the cover page
 $order: 4
+description: "To create a page, add the <amp-story-page> element as a child of amp-story. Assign a unique id to the page. For our first page, which is the cover page, let's assign a unique id of cover: ..."
 author: bpaduch
 ---
 
@@ -69,7 +70,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <tr>
     <td width="65%">The <strong>fill</strong> template fills the screen with the first child element in the layer. Any other children in this layer aren't shown.
 
-    <p>The fill template works well for backgrounds, including images and videos.</p>
+    The fill template works well for backgrounds, including images and videos.
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
       width="720" height="1280"
@@ -87,7 +88,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <tr>
     <td width="65%">The <strong>vertical</strong> template lays the children elements along the y-axis. The elements are aligned to the top of the screen, and take up the entire screen along the x-axis.
 
-    <p>The vertical template works well when you want to vertically stack elements one right after the other.</p>
+    The vertical template works well when you want to vertically stack elements one right after the other.
 
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">
   &lt;p>element 1&lt;/p>
@@ -104,7 +105,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <tr>
     <td width="65%">The <strong>horizontal</strong> template lays the children elements along the x-axis.  The elements are aligned to the start of the screen, and take up the entire screen along the y-axis.
 
-    <p>The horizontal template works well when you want to horizontally stack elements one right after the other.</p>
+    The horizontal template works well when you want to horizontally stack elements one right after the other.
 
     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">
   &lt;p>element 1&lt;/p>
@@ -123,7 +124,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 <td width="65%">
 The <strong>thirds</strong> template divides the screen into three equally-sized rows, and allows you to slot content into each area.
 
-<p>You can also specify a named <code>grid-area</code> to indicate which third you want your content to be in&mdash;the <code>upper-third</code>, <code>middle-third</code>, or <code>lower-third</code>. Named grid areas are useful for changing the default behavior of where elements appear.  For example, if you have two elements in the layer, you can specify the first element to be in <code>grid-area="upper-third"</code> and the second element to be in the <code>grid-area="lower-third"</code>.</p>
+You can also specify a named <code>grid-area</code> to indicate which third you want your content to be in&mdash;the <code>upper-third</code>, <code>middle-third</code>, or <code>lower-third</code>. Named grid areas are useful for changing the default behavior of where elements appear.  For example, if you have two elements in the layer, you can specify the first element to be in <code>grid-area="upper-third"</code> and the second element to be in the <code>grid-area="lower-third"</code>.
 
 <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">
   &lt;h1 grid-area="upper-third">element 1&lt;/h1>

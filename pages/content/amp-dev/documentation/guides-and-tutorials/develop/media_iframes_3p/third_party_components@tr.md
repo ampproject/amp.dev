@@ -25,7 +25,7 @@ Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -50,7 +50,7 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -66,14 +66,14 @@ Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
 ##### Örnek - Yayın yerleştirme
 
-Source: 
+Source:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -81,7 +81,7 @@ Preview:
 
 ##### Örnek - Video yerleştirme
 
-Source: 
+Source:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -89,7 +89,7 @@ Source:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
@@ -118,7 +118,7 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -142,7 +142,7 @@ Farklı reklam türleri, farklı `data-*` öznitelikleri gerektirir.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -156,7 +156,7 @@ Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

@@ -729,7 +729,7 @@ limitations under the License.
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
 راجع [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) و
-[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
+[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 **ملاحظة:** إذا لم تحدد التنسيق،
 ولم تضمّن القيمتين `width` و`height`،
@@ -760,7 +760,7 @@ limitations under the License.
 يحدث هذا الخطأ عند عدم تحديد تنسيق لعلامة AMP،
 واحتواء التنسيق الضمني على سمة غير مسموح بها.
 يتم وصف السمات الغير مسموح بها لأنواع التنسيق في
-[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
+[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### التنسيق المحدد غير متوافق مع علامة AMP
 
@@ -787,7 +787,7 @@ limitations under the License.
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
 راجع [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) و
-[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
+[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### السمة غير مسموح بها من تنسيق محدد
 
@@ -810,7 +810,7 @@ limitations under the License.
 يحدث هذا الخطأ عند تحديد تنسيق لعلامة AMP،
 واحتواء التنسيق على سمة غير مسموح بها.
 يتم وصف السمات الغير مسموح بها لأنواع التنسيق في
-[مواصفات نظام تنسيق AMP HTML](/docs/reference/spec/amp-html-layout.html).
+[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### قيمة غير صالحة للسمة التي يتطلبها التنسيق
 

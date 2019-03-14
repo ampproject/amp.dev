@@ -43,7 +43,7 @@ $title: تهيئة Analytics
 نقاط مهمة بخصوص البيانات يجب وضعها في الحسبان:
 
 * هل ستتبّع فقط مشاهدات الصفحة، أم أنماط تفاعل المستخدم الإضافية
-(انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/analytics/analytics_basics.html#هل-تستخدم-amp-pixel-أو-amp-analytics؟))؟
+(انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#هل-تستخدم-amp-pixel-أو-amp-analytics؟))؟
 * ما أنواع البيانات التي ستقوم بجمعها بشأن مستخدميك، أو محتواك،
-أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير](/ar/docs/analytics/analytics_basics.html#استبدال-المتغير))؟
-* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](/ar/docs/analytics/analytics_basics.html#هوية-المستخدم))؟
+أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#استبدال-المتغير))؟
+* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#هوية-المستخدم))؟

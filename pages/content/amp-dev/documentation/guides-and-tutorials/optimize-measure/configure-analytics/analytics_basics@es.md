@@ -38,7 +38,7 @@ El componente [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/r
 ### Configuración de amp-analytics sencilla
 
 Para crear una configuración de [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})  sencilla, antes debes incluir en el documento AMP la declaración `custom-element` que se indica a continuación `<head>`
-(consulta la sección sobre [cómo incluir componentes](/es/docs/reference/components.html)):
+(consulta la sección sobre [cómo incluir componentes]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -73,7 +73,7 @@ Al visualizarse la página (según lo especificado por el uso de la palabra clav
 
 Los componentes [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
 y [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
-permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente](/es/docs/analytics/analytics_basics.html#user-identification):
+permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

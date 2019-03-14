@@ -113,7 +113,7 @@ class FilteredPage {
 
     // Find possibly empty lists and remove them for ...
     // a) component and default sidebar
-    this._dom('.nav-list .level-2', '.ap-o-sidebar, .ap-o-component-sidebar')
+    this._dom('.nav-list.level-2')
         .each((index, navList) => {
           navList = this._dom(navList);
 
@@ -170,7 +170,16 @@ class FilteredPage {
   }
 
   get content() {
-    return this._dom.html();
+    let content = this._dom.html();
+
+    // As cheerio has problems with XML syntax in HTML documents the
+    // markup for the icons needs to be restored
+    content = content.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
+        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+    content = content.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
+        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
+
+    return content;
   }
 }
 

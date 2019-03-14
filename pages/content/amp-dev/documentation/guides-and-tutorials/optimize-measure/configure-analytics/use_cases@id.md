@@ -4,7 +4,7 @@ $title: Kasus Penggunaan
 
 Panduan ini memberikan rangkaian kasus penggunaan umum untuk melacak keterlibatan pengguna:
 
-Catatan: Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi](/id/contribute/).
+Catatan: Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## Melacak jumlah kunjungan halaman
 

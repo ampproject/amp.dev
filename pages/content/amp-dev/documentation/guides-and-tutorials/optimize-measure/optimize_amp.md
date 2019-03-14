@@ -1,6 +1,7 @@
 ---
 $title: Optimize your hosted AMP pages
 $order: 2
+description: 'The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...'
 
 formats:
   - websites
@@ -11,7 +12,7 @@ This guide provides tips and guidance for webmasters on how to optimize their ho
 
 ### Isn't AMP fast by default?
 
-The AMP runtime is [optimized for speed](/learn/about-how/) and if your AMP pages are served by an [AMP cache](/docs/fundamentals/how_cached.html), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+The AMP runtime is [optimized for speed]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) and if your AMP pages are served by an [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
 
 However, AMP pages are not always served from an AMP cache. A website may decide to show AMP pages from their own servers for other traffic sources. The most frequent use case are sites built completely in AMP, such as [tasty.co](https://tasty.co), where users go straight to the site. Another traffic source is Twitter, which [started linking to AMP pages](https://searchengineland.com/twitter-ramps-amp-278300) instead of delivering the standard mobile version. This means that if a user clicks a link in one of Twitter's mobile apps, the link goes to the AMP version of your page on your own origin (if one is available).
 
@@ -65,7 +66,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 Let's go through it step-by-step:
 
 1.  The first tag should be the `meta charset` tag, followed by any remaining `meta` tags.
-1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](/docs/fundamentals/spec/amp-boilerplate.html) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
+1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
          width="1230" height="1068" layout="responsive"
          alt="Priority level changes when preload is applied">
 </amp-img>
@@ -80,7 +81,7 @@ Let's go through it step-by-step:
 1.  Specify the `<script>` tags for remaining extensions (e.g., [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})  ...). These extensions are not render-delaying and therefore should not be preloaded as they might take away important bandwidth for the initial render.
 1.  Specify any custom styles by using the `<style amp-custom>` tag.
 1.  Add any other tags allowed in the  `<head>` section. In particular, any external fonts should go last since they block rendering.
-1.  Finally, specify the [AMP boilerplate code](/docs/fundamentals/spec/amp-boilerplate.html). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
+1.  Finally, specify the [AMP boilerplate code]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
 
 [tip]
 The AMP Cache performs all these optimizations automatically (and a few more). You can use the AMP Optimizer tool to automatically perform these optimizations on your own origin.
@@ -158,7 +159,7 @@ Now that all [major browsers support service workers](https://caniuse.com/#feat=
 
 There are two different architectural patterns that we know will work for reliably fast navigations:
 
-*   For single-page applications: the App Shell model (in the AMP context referred to as [AMP-in-PWA](/docs/integration/pwa-amp/amp-in-pwa.html)). This pattern requires a service worker to upgrade an AMP document to the app-shell-based PWA experience.
+*   For single-page applications: the App Shell model (in the AMP context referred to as [AMP-in-PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})). This pattern requires a service worker to upgrade an AMP document to the app-shell-based PWA experience.
 *   For multi-page-applications: [streaming composite resources](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#streaming_composite_responses). A service worker caches the static header and footer and uses streaming to instantly return a cached, partial response while loading the content.
 
 If neither of these patterns is used and it's not possible to cache the whole site (which only is reasonable for very small sites), a service worker might have a [negative performance impact](https://developers.google.com/web/updates/2017/02/navigation-preload). The best thing in this case is to **not** use a service worker.
@@ -167,7 +168,7 @@ However, if you want your website to be [installable from the home screen](https
 
 If your AMP website uses a service worker, here are some best practices:
 
-*   Pre-cache the [AMP runtime](/docs/fundamentals/spec.html#amp-runtime) and extensions (e.g. [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})).
+*   Pre-cache the [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime) and extensions (e.g. [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})).
 *   Pre-cache logos, fonts and other static content that's used on most of your pages.
 *   Serve logos, fonts and images by using a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network).
 *   Serve the AMP runtime and extensions by using a [stale-while-revalidate](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate) strategy.

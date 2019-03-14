@@ -1,6 +1,7 @@
 ---
 $title: Create a live blog
 $order: 102
+description: 'Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...'
 tutorial: true
 
 formats:
@@ -23,7 +24,7 @@ This tutorial provides a short overview of the [`amp-live-list`]({{g.doc('/conte
 
 ## Overview of `amp-live-list`
 
-The [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata](https://ampbyexample.com/samples_templates/live_blog/#metadata) section of the page.
+The [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}#metadata) section of the page.
 
 This is what the initial code for the blog could look like:
 

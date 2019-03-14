@@ -7,18 +7,8 @@
 @import 'components/atoms/_text.scss';
 
 @mixin sidebar {
-  position: fixed;
-  z-index: 20;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  padding-bottom: 160px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  background-color: color('white');
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+
 
   @media (min-width: 768px) {
     position: -webkit-sticky;
@@ -29,7 +19,7 @@
     padding-bottom: 0;
     width: auto;
     margin-right: 0;
-    margin-left: -15px;
+    margin-left: -10px;
     background: none;
     box-shadow: none;
   }
@@ -40,30 +30,12 @@
 }
 
 @mixin sidebar-nav {
-  margin: 34px 0 0;
+  margin: 15px 0 0;
   padding-bottom: 15px;
 
-  @media (min-width: 768px){
-    overflow-y: scroll;
-    max-height: calc(100vh - 248px);
-  }
+  
 
-  @media (min-width: 1024px){
-    overflow-y: scroll;
-    max-height: calc(100vh - 250px);
-  }
-
-  &::-webkit-scrollbar {
-    width: 2px;
-  }
-
-  &::-webkit-scrollbar-track {
-    box-shadow: inset -1px 0 rgba(color('black'), 0.10);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
-  }
+  
 }
 
 @mixin sidebar-nav-list {
@@ -115,22 +87,24 @@
 }
 
 @mixin sidebar-nav-link-level-1 {
-  padding: 10px 25px 10px 0;
-  @include txt-1;
+  padding: 10px 25px 10px 20px;
+  text-transform: uppercase;
+  @include txt-lrg;
   @include txt-strong;
   @include txt-font-accent;
   @include color-black;
 }
 
 @mixin sidebar-nav-link-level-2 {
-  padding: 7px 25px 8px 0;
+  padding: 7px 25px 8px 20px;
+  text-transform: unset;
   @include txt;
   @include txt-2;
   line-height: 1.4em;
 }
 
 @mixin sidebar-nav-link-level-3 {
-  padding: 7px 25px 8px 25px;
+  padding: 7px 25px 8px 20px;
   @include txt-3;
 }
 
@@ -145,7 +119,6 @@
 
 @mixin sidebar-nav-trigger {
   position: absolute;
-  right: -15px;
   top: 0;
   width: 40px;
   padding: 0;
@@ -180,7 +153,6 @@
 @mixin sidebar-nav-icon {
   width: 12px;
   height: 12px;
-  margin: 0 auto;
   transform: rotate(-90deg);
 }
 
@@ -193,7 +165,7 @@
 }
 
 @mixin sidebar-nav-icon-level-1 {
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 @mixin sidebar-nav-icon-level-2 {

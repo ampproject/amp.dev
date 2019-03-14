@@ -7,7 +7,6 @@
 
 .#{molecule('kpi')} {
   @include kpi;
-
   display: block;
   flex: 1 0 20em;
   margin: 0 1.875rem 2.125em 0;

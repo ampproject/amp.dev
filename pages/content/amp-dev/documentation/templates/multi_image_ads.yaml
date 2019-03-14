@@ -7,9 +7,13 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/templates/multiple-image-template.gif'
+    src: '/static/img/templates/multiple-image-template.jpg'
     width: 9
     height: 16
     alt: Multiple Image
+  video:
+    src: '/static/img/templates/multiple-image-template.mp4'
+    width: 9
+    height: 16
 
-  download_url: '/static/files/templates/multi-image-ads.zip'
+download_url: '/static/files/templates/multi-image-ads.zip'

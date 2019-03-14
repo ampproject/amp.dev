@@ -99,7 +99,7 @@ Se pueden asignar los siguientes valores al atributo `layout`:
 
 [tip type="success"]
 
-Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP](/es/docs/design/amp-html-layout/layouts_demonstrated.html). También encontrarás más información en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
+Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}). También encontrarás más información en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -172,8 +172,8 @@ Por ejemplo, a continuación se muestran dos imágenes con media queries que se 
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +184,8 @@ En función de la anchura de la pantalla, se obtendrá y renderizará una de ell
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]

@@ -1,6 +1,9 @@
 ---
-$title: Start
+$title: AMP - a web component framework to easily create user-first web experiences
+$titles:
+  navigation: Start
 $view: /views/custom.j2
+description: 'Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build websites, stories, ads and emails.'
 
 news: !g.yaml /content/shared/data/blog.yaml
 
@@ -232,14 +235,13 @@ success_stories:
 
   <section class="ap--sampler">
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
-    {% set playground_url = podspec.base_urls.platform + '/playground' %}
-    {% set playground_embed_url = podspec.base_urls.api + '/playground' %}
+    {% set playground_url = doc.pod.podspec.base_urls.playground %}
 
     {# Can't use |tojson filter here since URLs need to be built #}
     <amp-state id="sampler">
       <script type="application/json">
       [{% for sample in doc.sampler %}
-        {% set embed_url = playground_embed_url + '/embed#mode=responsive&url=' + sample.url %}
+        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + sample.url %}
         {% set standalone_url = playground_url + '/#url=' + sample.url %}
         {
           "title": "{{ sample.title }}",
@@ -272,19 +274,10 @@ success_stories:
       </div>
 
       <div class="ap-o-sampler">
-        <div class="ap-o-sampler-tab-bar">
 
-          {% for tab in doc.sampler %}
-          <div tabindex="0" role="button" class="ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
-            [class]="activeSample == '{{ loop.index-1 }}' ? 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} active' : 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }}'"
-            on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
-            <span class="ap-o-sampler-tab-title">{{ tab.title }}</span>
-          </div>
-          {% endfor %}
+        <div class="ap-o-sampler-header">AMPHTML Playground</div>
 
-        </div>
-
-        {% set embed_url = playground_embed_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
+        {% set embed_url = playground_url + '/embed#mode=responsive&url=' + doc.sampler[0].url %}
         {% set standalone_url = playground_url + '/#url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
@@ -300,10 +293,20 @@ success_stories:
             <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
             <div placeholder>
               <div class="ap-o-sampler-iframe-source"></div>
-              <div class="ap-o-sampler-iframe-drag"></div>
-              <div class="ap-o-sampler-iframe-preview"></div>
             </div>
           </amp-iframe>
+        </div>
+
+        <div class="ap-o-sampler-tab-bar">
+
+          {% for tab in doc.sampler %}
+          <div tabindex="0" role="button" class="ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} {{ "active" if loop.first }}"
+            [class]="activeSample == '{{ loop.index-1 }}' ? 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }} active' : 'ap-o-sampler-tab ap-o-sampler-tab-{{ loop.index-1 }}'"
+            on="tap:AMP.setState({activeSample: '{{ loop.index-1 }}'})">
+            <span class="ap-o-sampler-tab-title">{{ tab.title }}</span>
+          </div>
+          {% endfor %}
+
         </div>
 
         <div class="ap-o-sampler-link">

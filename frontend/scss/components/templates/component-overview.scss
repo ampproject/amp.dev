@@ -36,11 +36,13 @@ body {
 
   .#{utility('container')} {
     @include container;
+    @include container-nogap;
   }
 
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
+    @include content-white-bg;
   }
 
   .#{utility('sidebar')} {
@@ -73,10 +75,7 @@ body {
   section {
     &.#{utility('content')},
     &.#{utility('teaser-grid')} {
-      @media (min-width: 1024px){
-        grid-column-start: 7;
-        grid-column-end: 25;
-      }
+      
     }
   }
 

@@ -1,0 +1,70 @@
+/*
+
+######################
+### MOLECULE: agenda-item ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+
+.#{molecule('agenda-item')} {
+
+  @include txt;
+  @include txt-lrg;
+  @include txt-font-accent;
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  &-time {
+    width: 50px;
+    margin-right: 25px;
+    padding-right: 15px;
+    color: color('charade');
+  }
+
+  &-title {
+    width: 80%;
+    margin-right: auto;
+    padding: 7px 0 7px 25px;
+    border-left: 2px solid color('blue-ribbon');
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: color('charade');
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      left: -10px;
+      background: color('white');
+      height: 14px;
+      width: 14px;
+      border: 2px solid color('blue-ribbon');
+    }
+
+    &.break {
+      color: fade_out(color('charade'), 0.5);
+
+      &:before {
+        height: 8px;
+        width: 8px;
+        left: -7px;
+        background: color('blue-ribbon');
+      }
+    }
+
+    &.keynote {
+      color: color('blue-ribbon');
+    }
+  }
+}

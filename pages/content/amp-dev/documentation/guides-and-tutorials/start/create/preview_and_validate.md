@@ -1,6 +1,7 @@
 ---
 $title: Preview and validate
 $order: 5
+description: 'Preview the AMP page just as you would preview any other static HTML site. There’s no build step or preprocessing required. You can choose to: ...'
 author: pbakaus
 contributors:
   - bpaduch

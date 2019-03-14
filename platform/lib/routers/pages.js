@@ -39,10 +39,10 @@ function getFilteredFormat(request) {
   const QUERY_PARAMETER_NAME = 'format';
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
 
-  const activeFormat = request.query[QUERY_PARAMETER_NAME] || '';
+  const activeFormat = request.query[QUERY_PARAMETER_NAME] || 'websites';
   if (ALLOWED_FORMATS.indexOf(activeFormat.toLowerCase()) == -1) {
-    // If the format that should be filtered by isn't valid go on
-    return;
+    // If the format to filter by is invalid or none use websites
+    return 'websites';
   }
 
   return activeFormat;
@@ -100,7 +100,7 @@ if (config.environment === 'development') {
   proxy.on('proxyRes', async (proxyResponse, request, response) => {
     // Check if this response should be filtered
     const activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
+    if (activeFormat && isFilterableRoute(request.path)) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {

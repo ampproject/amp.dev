@@ -1,6 +1,7 @@
 ---
 $title: Wrapping up
 $order: 4
+description: 'Congratulations! You just created an interactive e-commerce product detail page with variable sizes and prices for each SKU, fetched on-demand from a remote JSON endpoint.'
 ---
 
 Congratulations! You just created an interactive e-commerce product detail page with variable sizes and prices for each SKU, fetched on-demand from a remote JSON endpoint.
@@ -15,4 +16,4 @@ If you got stuck, see the [`static/final.html`](https://github.com/googlecodelab
 
 ## Next steps
 
-Learn more about the power and flexibility of building interactive AMP pages in the  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) documentation and from other [dynamic AMP components](/docs/reference/components.html#dynamic-content).
+Learn more about the power and flexibility of building interactive AMP pages in the  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) documentation and from other [dynamic AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).

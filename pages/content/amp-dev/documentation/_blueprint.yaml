@@ -6,7 +6,7 @@ $localization:
 $order: 2
 index: /content/amp-dev/documentation/guides-and-tutorials/index.html
 
-sub_navigation:
+flyout:
     - /content/amp-dev/documentation/guides-and-tutorials/index.html
     - /content/amp-dev/documentation/components/index.html
     - /content/amp-dev/documentation/examples/index.html

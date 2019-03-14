@@ -662,7 +662,7 @@ Questo errore si verifica quando non specifichi un layout per il tag AMP e il la
 Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
-Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e la [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e la [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 **Nota.** Se non specifichi il layout e non includi i valori `width` e `height`, il valore predefinito per il layout sarà CONTAINER. Lo strumento di convalida genera un errore perché il layout CONTAINER non è supportato nei tag AMP.
 Specifica un layout diverso da CONTAINER oppure aggiungi un valore `width` e/o `height` per eliminare l'errore.
@@ -685,7 +685,7 @@ Specifica un layout diverso da CONTAINER oppure aggiungi un valore `width` e/o `
 </table>
 
 Questo errore si verifica quando non specifichi un layout per il tag AMP e il layout implicito contiene un attributo non consentito.
-Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Layout specificato non supportato dal tag AMP
 
@@ -708,7 +708,7 @@ Questo errore si verifica quando il layout specificato per il tag non è support
 Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
-Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e la [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e la [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Attributo non consentito per il layout specificato
 
@@ -728,7 +728,7 @@ Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativ
 </table>
 
 Questo errore si verifica quando specifichi per il tag AMP un layout contenente un attributo non consentito.
-Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](/docs/reference/spec/amp-html-layout.html).
+Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
 
 ### Valore non valido per l'attributo richiesto dal layout
 

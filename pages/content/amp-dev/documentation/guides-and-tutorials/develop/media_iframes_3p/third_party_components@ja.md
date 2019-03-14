@@ -163,6 +163,6 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 </amp-iframe>
 </div>
 
-AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス](/ja/docs/reference/components/amp-ad.html#supported-ad-networks)をご覧ください。
+AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks)をご覧ください。
 
 参照: 広告について詳しくは、[AMP での広告の掲載]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) に関するガイドをご覧ください。

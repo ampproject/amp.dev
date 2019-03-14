@@ -1,6 +1,7 @@
 ---
 $title: Include images & video
 $order: 8
+description: "Like on a normal HTML page, AMP allows you to embed images, video and audio content. Learn what's different about the AMP equivalents and learn how to..."
 $path: /documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html
 formats:
   - websites
@@ -25,9 +26,9 @@ AMP doesn't support the default HTML counterparts to displaying media, like `<im
 We provide equivalent components for the following reasons:
 
 * We need to understand layout of the page before assets load, crucial
-  to [support first-viewport preloading](/learn/about-how/#size-all-resources-statically)
+  to [support first-viewport preloading]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
 * We need to control network requests to [lazy load and prioritize resources
-effectively](/learn/about-how/#prioritize-resource-loading)
+effectively]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
 
 Caution: While they're not supported, they *will* render, but AMP won't [validate your pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) and you won't get all the benefits AMP provides.
 

@@ -1,6 +1,7 @@
 ---
 $title: Use cases
 $order: 2
+description: 'This guide provides a set of common use cases for tracking user engagement: NOTE – Want to add a use case? Let us know.'
 formats:
   - websites
 ---
@@ -8,7 +9,7 @@ formats:
 This guide provides a set of common use cases for tracking user engagement:
 
 [tip type="note"]
-**NOTE –**  Want to add a use case? [Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute](/docs/contribute/).
+**NOTE –**  Want to add a use case? [Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Tracking page views

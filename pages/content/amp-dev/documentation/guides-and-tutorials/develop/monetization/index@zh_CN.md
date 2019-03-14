@@ -10,7 +10,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 [tip type="success"]
 
-请参阅 [AMP By Example 在线演示](https://ampbyexample.com/components/amp-ad/)，了解如何将 amp-ad 标记添加到 AMP 网页中。
+请参阅 [AMP By Example 在线演示]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})，了解如何将 amp-ad 标记添加到 AMP 网页中。
 
 [/tip]
 

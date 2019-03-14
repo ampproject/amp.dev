@@ -4,7 +4,7 @@ $title: サポートされる CSS
 
  他のウェブページと同様に、AMP ページは CSS でスタイル設定されますが、外部のスタイルシートを参照することはできません（[カスタム フォント](#the-custom-fonts-exception)を除く）。また、パフォーマンス上の理由から特定のスタイルが許可されていません。たとえば、インラインのスタイル属性は使用できません。
 
- すべてのスタイルはドキュメントの先頭で指定する必要があります（[ページへのスタイルの追加に関する記事](/ja/docs/design/responsive_amp.html#add-styles-to-a-page) をご覧ください）。ただし、CSS プリプロセッサとテンプレートを使用して静的なページを作成し、コンテンツを管理しやすくすることができます。
+ すべてのスタイルはドキュメントの先頭で指定する必要があります（[ページへのスタイルの追加に関する記事]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}l#add-styles-to-a-page) をご覧ください）。ただし、CSS プリプロセッサとテンプレートを使用して静的なページを作成し、コンテンツを管理しやすくすることができます。
 
 注: AMP コンポーネントには、レスポンシブなページを簡単に作成できるように、デフォルトのスタイルが用意されています。これらのスタイルは [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) で定義されています。
 
@@ -103,4 +103,3 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 {% endraw %}[/sourcecode]
 
  上記のコードがフォーマットされた AMP HTML にどのように変換されるか確認するには、[ampproject.org](https://www.ampproject.org/) で任意のページのソースを表示してください（Chrome では、右クリックして `View Page Source` をクリックします）。
-

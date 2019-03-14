@@ -1,0 +1,29 @@
+/*
+
+#############################
+### MOLECULE: breadcrumbs ###
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('breadcrumbs')} {
+  display: flex;
+  align-items: center;
+  @include txt-font-accent;
+  @include txt-3;
+
+  &-angle {
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+    transform: rotate(-90deg);
+  }
+}

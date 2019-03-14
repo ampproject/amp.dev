@@ -1,6 +1,7 @@
 ---
 $title: Validate AMP pages
 $order: 0
+description: 'Watch our video about the various validation options. The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages ...'
 $path: /documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.html
 formats:
   - websites

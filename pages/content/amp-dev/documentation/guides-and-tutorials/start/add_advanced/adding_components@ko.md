@@ -8,7 +8,7 @@ AMP의 구성요소 시스템을 이용하면 최소한의 노력으로 기사�
 
 - **확장**: 기본 라이브러리의 확장이며, 맞춤 요소로 문서에 명시적으로 포함되어야 합니다.  맞춤 요소의 경우 특정 스크립트를 `<head>` 섹션에 추가해야 합니다(예: `<script async custom-element="amp-video" ...`).
 
-- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험 기능](/ko/docs/reference/experimental.html)에서 자세히 알아보세요.
+- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험 기능]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
 Google의 샘플에서는 이미 기본 제공 구성요소인 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 가이드에서는 이 구성요소가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다.  이제 자주 사용되는 **확장** AMP 구성요소를 뉴스 기사에 추가해 보겠습니다.
 
@@ -168,7 +168,7 @@ YouTube 동영상 삽입에 관해 자세히 알아보려면 [`amp-youtube`]({{g
 트위터에서 트윗을 삽입하는 방법에 관해 자세히 알아보려면 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 구성요소 문서를 읽어보세요.
 
 [tip]
-AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소](/ko/docs/reference/components.html#social)를 참조하세요.
+AMP에서는 소셜 네트워크의 콘텐츠를 삽입하는 데 필요한 더 많은 구성요소를 제공합니다. 최신 [소셜 AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})를 참조하세요.
 [/tip]
 
 ## 기사 인용문 강조표시하기

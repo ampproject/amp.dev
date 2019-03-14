@@ -1,6 +1,7 @@
 ---
 $title: AMPHTML Email for Email Providers
 $order: 4
+desccription: 'The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.'
 formats:
   - email
 ---
@@ -41,7 +42,7 @@ A proxy server is fundamental and should be responsible for handling XHR request
 Some dynamic elements in AMPHTML Emails may rely on remote content. Additional steps should be taken to prevent user data, such as IP address, cookies, and type of device, from being leaked to third party endpoints and giving rewrite access to parts of the AMPHTML Email.
 
 ##Update CORS Headers
-Since the requests go through a proxy server, the AMPHTML Email CORS requirements are slightly different than the existing [AMP CORS](/docs/fundamentals/amp-cors-requests.html) requirements.
+Since the requests go through a proxy server, the AMPHTML Email CORS requirements are slightly different than the existing [AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) requirements.
 
 The following describes what headers to expect in a request from each source and the headers that should be included in the response by the server.
 
