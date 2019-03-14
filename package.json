@@ -42,6 +42,7 @@
     "displayTimestamp": true
   },
   "_moduleAliases": {
+    "@examples": "examples",
     "@lib": "platform/lib"
   },
   "dependencies": {
