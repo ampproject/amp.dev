@@ -50,7 +50,7 @@ class Config {
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
    * @return {String} The full URL
    */
-  _buildUrl(host) {
+  getHost(host) {
     let url = `${host.scheme}://`;
     const isLocalhost = (host.host === 'localhost');
     if (isLocalhost || !host.subdomain) {
@@ -111,9 +111,10 @@ class Config {
 
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
-      'playground': this._buildUrl(this.hosts.playground),
-      'platform': this._buildUrl(this.hosts.platform),
-      'api': this._buildUrl(this.hosts.api),
+      'playground': this.getHost(this.hosts.playground),
+      'preview': this.getHost(this.hosts.preview),
+      'platform': this.getHost(this.hosts.platform),
+      'api': this.getHost(this.hosts.api),
     };
 
     // Deployment specific

@@ -288,7 +288,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getSourceRoute(sample) {
-    return `/examples/${this._getCategory(sample)}/${sample.stem}`;
+    return `/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
   }
 
   /**
@@ -314,6 +314,7 @@ class SamplesBuilder {
         '$localization': {
           '$path': `/{locale}${this._getDocumentationRoute(sample)}`,
         },
+        'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,

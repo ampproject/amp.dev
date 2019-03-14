@@ -21,6 +21,12 @@
       "subdomain": "playground",
       "host": "amp.dev",
       "port": ""
+    },
+    "preview": {
+      "scheme": "http",
+      "subdomain": "preview",
+      "host": "amp.dev",
+      "port": ""
     }
 	}
 }
