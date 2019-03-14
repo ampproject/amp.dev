@@ -3,23 +3,28 @@ $title: AMP Conf 2019
 $order: 1
 $view: /views/overview/custom-content.j2
 ---
-{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+{% do doc.styles.addCssFile('css/components/templates/events.css') %}
 
-{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
-<section class="ap--container">
-  <div class="ap-m-jumbo">
-    <div class="ap-a-ico">
-      {% do doc.icons.useIcon('/icons/japan.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#japan"></use></svg>
+<section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
+
+    <div class="ap-o-stage ap-o-stage-amp-conf all">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content ap-o-stage-content-roadshow">
+
+            <h1 class="ap-o-stage-content-headline">AMP Conf 2019</h1>
+            <h2 class="ap-o-stage-content-subline">ようこそ from Tokyo, Japan</h2>
+
+            {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+            <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ap-o-stage-content-button ap-a-btn">
+              Request an invitation
+            </a>
+        </div>
+      </div>
     </div>
-    <h1 class="ap-m-jumbo-headline">AMP Conf 2019 in<br> Tokyo, Japan</h1>
-    <h2 class="ap-m-jumbo-subline">April 17 & 18, 2019</h2>
-    <p class="ap-m-jumbo-copy">The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.</p>
 
-    {% do doc.styles.addCssFile('/css/components/atoms/button.css', -1) %}
-    <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ap-a-btn">Request an invitation</a>
-  </div>
 </section>
+
 
 {% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
 <section class="ap--container ap-m-biggy">
