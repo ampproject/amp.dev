@@ -59,26 +59,6 @@ benefits: !g.yaml /content/shared/data/benefits.yaml
   </div>
 </section>
 
-<section class="ap--teaser-grid ap--container">
-  <div class="ap-o-teaser-grid">
-    <div class="ap-o-teaser-grid-list">
-      {% for kpi in doc.kpis %}
-        {% with %}
-        {% set teaser_doc = kpi.success_story %}
-        {% set teaser = {
-          "figure": kpi.figure,
-          "description": kpi.description,
-          "logo": teaser_doc.teaser.logo,
-          "text": teaser_doc.teaser.text
-        }%}
-        {% include '/views/partials/teaser.j2' %}
-        {% endwith %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-
 <section class="ap--quote ap--container">
   <div class="ap-m-quote">
     <div class="ap-m-quote-source">
@@ -92,7 +72,6 @@ benefits: !g.yaml /content/shared/data/benefits.yaml
         <p class="ap-a-txt">It’s the biggest thing happening to email since the creation of email.<p>
       </blockquote>
       <p>Antony Malone, Senior Product Owner Direct Marketing at Booking.com</p>
-
 
     </div>
   </div>
