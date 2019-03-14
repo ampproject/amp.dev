@@ -12,6 +12,19 @@
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span> <span class="ap-o-header-home-sub-title">Example Preview: {{ doc.title }}</span>
     </a>
+
+    {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
+    <div class="ap-m-device-toggle">
+      {% for device in ['mobile', 'tablet', 'desktop'] %}
+      {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
+      <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+
     <a class="ap-m-homepage-link" href="{{ doc.pod.podspec.base_urls.platform }}">AMP.DEV
       {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
       <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
@@ -23,12 +36,20 @@
 {% block main %}
 {% do doc.styles.addCssFile('/css/components/organisms/preview-pane.css') %}
 <main class="ap--preview-pane">
-  <article class="ap-o-preview-pane ap-o-preview-pane-mobile">
+  <article class="ap-o-preview-pane ap-o-preview-pane-mobile" [class]="'ap-o-preview-pane ap-o-preview-pane-' + device.selected">
     <amp-iframe layout="fill" sandbox="allow-same-origin allow-scripts allow-popups" allowfullscreen frameborder="0" src="{{ doc.pod.podspec.base_urls.api }}{{ doc.source }}{% if doc.formats[0] == 'stories' %}/embed{% endif %}">
       <div placeholder="">
     </amp-iframe>
   </article>
 </main>
+
+<amp-state id="device">
+  <script type="application/json">
+    {
+      "selected": "mobile"
+    }
+  </script>
+</amp-state>
 {% endblock %}
 
 {% block footer %}
