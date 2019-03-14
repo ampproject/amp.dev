@@ -46,7 +46,6 @@ class Config {
     } catch (err) {
       // writes are not permitted on GAE or in a container
     }
-    console.log('isDevmode', this.isDevMode());
   }
 
   isDevMode() {
