@@ -1,133 +1,69 @@
 ---
-$path: /documentation/guides-and-tutorials/courses/intermediate-course/index.html
-$title: Intermediate Course
+$title: Course Introduction
 $order: 0
+$path: /documentation/guides-and-tutorials/courses/intermediate-course/index.html
 toc: true
 ---
 
-[TOC]
+<!-- [TOC] -->
 
-## What's an AMPHTML ad?
+## Welcome Back
 
-AMPHTML ads are a faster, lighter and more secure way to advertise on the web. Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML. AMPHTML ads are only delivered after being validated, ensuring that the ads are secure and performant. Most of all, these ads can be delivered anywhere on the web, _not just on AMP pages_.
+In the previous course, we learned how to create a basic AMP site by starting a website for our fictional Chico’s Cheese Bike shop. We also learned how to add static content to our site using AMP components. We added a carousel of images, social media posts, a video, and other essential elements.
 
-AMPHTML ads are written in AMP HTML according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) (a variant of AMP HTML + CSS). This means that ads no longer have the ability to run arbitrary JavaScript, which is traditionally the number one cause of poor ad performance. Therefore, just like core AMP, the core ads JavaScript use-cases are built right into the AMP Open Source project which guarantees good behavior from ads.
+What’s next? Now, we want to add some more pizzazz to our site. We want to give users new ways to interact with our site. We want to be able to collect information from our site's visitors and to confirm that we received that information successfully.
 
-### Benefits
+What kind of features should we add to our site to accomplish these goals? Our product manager has some ideas. For example:
 
-Why are AMPHTML ads better than traditional ads?
+- As our site grows, we're going to need a way for users to navigate between the pages. A common way to accomplish this is with a slide-out menu. We will press a button to open the menu and then press another button to close it.
 
-1.  **Faster**: AMPHTML ads are faster because the ads are requested earlier in the page rendering process, and immediately displayed just before the user is about to view the ad. The reduced file size of AMPHTML ads also increases speed.
-1.  **Lighter**: AMPHTML ads combine commonly used ad functionality, which reduces the ad's file size. Once on the page, AMPHTML ads also consume less resources. For example, instead of 10 trackers requesting their own information in regular ads, AMPHTML ads collect all the data once and distribute it to any number of interested trackers.
-1.  **Coordinated**: On AMP pages, the [AMP runtime](/docs/fundamentals/spec.html#amp-runtime) can coordinate a mobile phone's limited resources to the right component at the right time to give the best user experience. For example, AMPHTML ads with animations are paused when the ads are not in the current viewport.
-1.  **More Engaging**: Users can't engage with ads they can't see. Faster ads lead to higher viewability and therefore higher click-through rates, which ultimately leads to better ad performance.
-1.  **Safe from Malware**: It's impossible to spread malware with AMPHTML ads because the ads are verified before being served. Because of this, advertisers can ensure a safe user experience and positive brand perception.
-1.  **More Flexible**: AMPHTML ads are designed to work on both AMP and non-AMP web pages, as well as across any device.
+- To collect information about our users for our marketing team, we might decide to add a newsletter subscription form.
 
+- When users fill out their information, we'll store their data on our server and display a confirmation message that says we registered them for our newsletter successfully.
 
-### Formats
+Now we know what new features to create. How are we going to build them?
 
-AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few. Get started by leveraging the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads).
+In the beginner training, we learned that, to add a feature, we just find and add the right component. But the problem is, there’s no "amp-newsletter-subscription-form" component. you might think the objective is to find a component such as "amp-newsletter-subscription-form." If there was a different AMP component for every feature developers want to build, the number of components would be limitless!
 
-<table class="nocolor">
-  <tr>
-    <td class="col-thirty"><amp-anim width="410" height="731" layout="responsive"
-    src="/static/img/docs/ads/amp-ad-01-carousel.gif">
-    </amp-anim></td>
-    <td class="col-thirty"><amp-anim width="410" height="731" layout="responsive"
-    src="/static/img/docs/ads/amp-ad-02-video-parallax.gif">
-    </amp-anim></td>
-    <td class="col-thirty"><amp-anim width="410" height="731" layout="responsive"
-    src="/static/img/docs/ads/amp-ad-03-lightbox.gif">
-    </amp-anim></td>
-  </tr>
-  <tr>
-    <td>Carousel</td>
-    <td>Video Parallax</td>
-    <td>Lightbox</td>
-  </tr>
-</table>
+Instead, we can build up our features by combining components and having them work together. This type of approach is called "component composition."
 
+Composing components isn't hard, but it does take some practice. First, we’ll identify the requirements of the feature we want to build. Second, we’ll look for basic HTML elements and AMP components that satisfy our requirements. Lastly, we’ll connect the components together by either placing one component inside of another, or by configuring them so that interacting with one of our components causes a change in another component.
 
-## How AMPHTML ads work
+Along the way, we’ll also:
 
-{{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
+- Learn how AMP handles user interaction with event handlers and actions.
 
-1.  Publishers insert an ad slot on their AMP page via the [`<amp-ad>`](/docs/reference/components/amp-ad.html) tag, specifying the ad network they wish to use.
-1.  The AMP Runtime sends an ad request to the specified ad network to retrieve the ad. Ad networks capable of serving AMPHTML ads provide a [Fast Fetch implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) that validates and signs the creative.
-1.  The ad network responds with the AMPHTML ad and the AMP Runtime renders the ad on the AMP page.
+- Discuss how to collect user information using `<amp-form>`.
 
-## Serving AMPHTML ads
+- Explain how to format server data using AMP mustache templates.
+- Explore how to enhance a feature with added components and interactions.
 
-### Publishers
+## Course Prerequisites
 
-To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}) and deliver them using an ad server that supports AMPHTML ad serving.  Currently, the following ad servers support AMPHTML ads:
+This course is designed for current developers who want to build more performant websites and for aspiring developers looking to build their first websites. Additionally, this course is well-suited for anyone who is maintaining or working on an existing AMP site.
 
-*   DoubleClick for Publishers
-*   TripleLift
-*   Dianomi
-*   Adzerk
-*   Google AdSense
+To get the most from these courses, you should have a basic understanding of HTML and CSS. It is enough to be able to recognize and to be able to make minor additions and alterations to existing HTML and CSS. In addition, this course will introduce a JavaScript-like syntax in the form of AMP event handlers. Understanding how function calls are made in JavaScript or a similar language should be sufficient to complete the requirements of this course.
 
-To deliver AMPHTML ads through your indirect channels (e.g., exchange, SSP, etc.), use a supporting ad network/ad server on the [following list]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
+This course is intended to be a continuation of the beginning course. As such, it assumes an understanding of the concepts covered by that training. Those concepts include:
 
-### Creative agencies
+- AMP page structure
 
-If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/advanced_ads). Alternatively, use one of the following tools to create AMPHTML ads:
+- AMP boilerplate
 
-*  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*coming soon*)
+- the AMP Validator
 
-### Ad networks/servers
+- how to use the AMP component documentation
 
-To deliver AMPHTML ads to AMP pages, you need to create an `amp-ad` extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](/docs/ads/adnetwork_integration.html) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+- the AMP cache
 
-## Creating AMPHTML ads
+If any of these topics are unfamiliar to you, we suggest reviewing the material from the beginning course [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/index.md', locale=doc.locale).url.path}}).
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amphtml_ads/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+## Getting Set Up
 
-**Using tools**: You can use any of the following tools to build AMPHTML creatives:
+In this course, we will continue using [Glitch](https://glitch.com). If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~aquamarine-baritone) one, which has all of the code already implemented.
 
-*  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*coming soon*)
+Want to learn more about Glitch? You can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/appendix.md', locale=doc.locale).url.path}}).
 
+This course also requires the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. The Chrome extension provides one convenient way to access the validator. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 
-### Validate AMPHTML ad syntax
-
-After creating your AMPHTML ad, you should make sure that the ad is using the correct AMPHTML syntax. Depending on your development environment, there are a few options for you to validate your AMPHTML ads:
-
-*   Use the [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) module to integrate validation into your build CI.
-*   Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
-*   Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
-
-Note: To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly.
-
-## Supporting AMPHTML ads in RTB
-
-For SSPs and ad exchanges that want to support AMPHTML ads in a Real-Time Bidding (RTB) environment, refer to the [Implementation Guide for RTB Ad Exchanges](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) for details.
-
-## FAQs
-
-#### Are there any AMPHTML ad samples?
-
-Yes. A number of great looking AMPHTML ad templates can be found on [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads). These samples use advanced components in AMP.
-
-#### Do AMPHTML ads support 3rd party verification and viewability detection?
-
-Yes, there is native support for verification and viewability detection using [`amp-analytics`](/docs/reference/components/amp-analytics.html) (e.g., Google's ActiveView integrates this way). There are also other vendors like MOAT that are actively implementing support for it.
-
-#### Do AMPHTML ads support timeline-based animation?
-
-Yes. See [`amp-animation`](/docs/reference/components/amp-animation.html).
-
-#### Most ads have tappable targets and configurable ad exits. Do AMPHTML ads have a similar mechanism?
-
-Yes. See [`amp-ad-exit`](/docs/reference/components/amp-ad-exit.html).
-
-#### I can't find what I need, where can I ask questions?
-
-*   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
-*   Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
-*   If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.
+Ready? Let’s get started!
