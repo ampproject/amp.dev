@@ -1,0 +1,13 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/events.css') %}
+{% endblock %}
+
+{% block main %}
+<main class="ap--main ap-t-events">
+  {{ doc.html|render|safe }}
+</main>
+{% endblock %}
