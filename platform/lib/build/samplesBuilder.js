@@ -31,7 +31,6 @@ const readFileAsync = promisify(fs.readFile);
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const utils = require('@lib/utils');
 const config = require('@lib/config.js');
-const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 
 // Where to import the samples from
 const SAMPLE_SRC = utils.project.absolute('examples/source');
