@@ -31,7 +31,6 @@
     <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
-    <link rel="manifest" href="/static/manifest.json"/>
     <meta name="theme-color" content="#005af0"/>
 
     <link rel="canonical" href="{{ doc.url }}"/>
@@ -106,8 +105,8 @@
       {% endblock %}
 
       {{ doc.styles.emit() }}
-      <link rel="manifest" href="/manifest.json">
     </style>
+    <link rel="manifest" href="/manifest.json">
   </head>
   {# The body tag needs an empty class attribute in order to add the filter class.
   It is a block solely for the purpose to be overridable by the samples. #}

@@ -26,7 +26,7 @@ $title: ブックエンドを作成する
 "bookendVersion": "v1.0",
 ```
 
-ソーシャル共有ボタンを設置すると、Twitter や Facebook、Pinterest などのソーシャル プラットフォームでコンテンツを共有してもらうことができます。shareProviders オブジェクトでソーシャル共有プロバイダを指定し、各ソーシャル プラットフォームの[タイプ名](/ja/docs/reference/components/amp-social-share.html#pre-configured-providers)を含む配列を作成します。
+ソーシャル共有ボタンを設置すると、Twitter や Facebook、Pinterest などのソーシャル プラットフォームでコンテンツを共有してもらうことができます。shareProviders オブジェクトでソーシャル共有プロバイダを指定し、各ソーシャル プラットフォームの[タイプ名]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers)を含む配列を作成します。
 
 このチュートリアルでは、共有プロバイダとして Facebook、Twitter、メールを指定します。
 

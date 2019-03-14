@@ -1,0 +1,34 @@
+/*
+
+#############################
+### MOLECULES: roadshow-content #####
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+
+.#{molecule('roadshow-pillar')} {
+
+  &-headline {
+    @include txt;
+    @include txt-lrg;
+    @include txt-font-accent;
+    @include txt-strong;
+
+    padding-bottom: 5px;
+  }
+
+  &-points {
+    @include txt;
+    @include txt-2;
+
+    padding: 5px 0;
+  }
+}

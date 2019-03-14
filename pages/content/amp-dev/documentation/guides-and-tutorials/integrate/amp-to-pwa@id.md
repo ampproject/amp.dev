@@ -14,7 +14,7 @@ Baca terus untuk mengetahui alasan dan cara menggunakan pola pengembangan ini.
 
 ### AMP untuk akuisisi pengguna awal
 
-AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, halaman konten yang ditemukan pengguna Anda secara organik melalui mesin telusur, link yang dibagikan oleh teman, atau melalui link di situs lain. Karena [prarender khusus](/id/learn/about-how/) AMP, halaman dapat dimuat sangat cepat, sehingga jumlah pengguna yang berpaling menjadi lebih sedikit ([studi DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) terbaru menunjukkan bahwa **lebih dari 53% dari semua pengguna akan berpaling setelah 3 detik**).
+AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, halaman konten yang ditemukan pengguna Anda secara organik melalui mesin telusur, link yang dibagikan oleh teman, atau melalui link di situs lain. Karena [prarender khusus]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) AMP, halaman dapat dimuat sangat cepat, sehingga jumlah pengguna yang berpaling menjadi lebih sedikit ([studi DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) terbaru menunjukkan bahwa **lebih dari 53% dari semua pengguna akan berpaling setelah 3 detik**).
 
 ### PWA untuk engagement dan interaktivitas yang kaya
 
@@ -113,4 +113,4 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL shel
 
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari Service Worker apa pun.
 
-Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya](/id/docs/integration/amp-in-pwa.html).
+Baca lebih lanjut: Anda sudah sampai sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Berikut caranya]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).

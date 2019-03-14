@@ -1,0 +1,38 @@
+@import '_extends';
+@import '_functions';
+@import '_mixins';
+@import '_variables';
+
+
+.#{utility('stage')} {
+  .#{organism('stage')} {
+
+    &-content {
+      grid-column: 3 / 12;
+    }
+  }
+}
+
+.#{molecule('roadshow-video')} {
+  grid-column: 1 / -1;
+  position: absolute;
+  right: 0;
+  width: 83%;
+  max-width: 360px;
+
+  @media (min-width: 768px) {
+    grid-column: 12 / 24;
+    margin-top: -60%;
+    position: relative;
+    left: 0;
+    width: 100%;
+    max-width: 100%;;
+  }
+
+  &-block {
+    @include roadshow-video-shadow;
+    margin: 50px 0;
+    width: 100%;
+  }
+
+}

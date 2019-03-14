@@ -4,7 +4,7 @@ $title: 사용 사례
 
 이 가이드에서는 사용자 참여를 추적하기 위한 일반적인 사용 사례를 확인할 수 있습니다.
 
-참고: 사용 사례를 추가하고 싶으신가요? [Google에 알려 주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법](/ko/contribute/) 에서 별도의 사용 사례를 제공하는 방법을 확인할 수 있습니다.
+참고: 사용 사례를 추가하고 싶으신가요? [Google에 알려 주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}) 에서 별도의 사용 사례를 제공하는 방법을 확인할 수 있습니다.
 
 ## 페이지 조회수 추적하기
 

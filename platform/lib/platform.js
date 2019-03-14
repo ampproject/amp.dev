@@ -20,12 +20,13 @@ const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const ampCors = require('amp-toolbox-cors');
-const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
+const subdomain = require('./middleware/subdomain.js');
 
 const WWW_PREFIX = 'www.';
+const HEALTH_CHECK = '/__health-check';
 const routers = {
   'whoAmI': require('@lib/routers/whoAmI.js'),
   'pages': require('@lib/routers/pages.js'),
@@ -55,6 +56,7 @@ class Platform {
         signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
       });
 
+      subdomain.router(this.proxy);
       const proxy = new HttpProxy();
       this.proxy.get('/*', (request, response, next) => {
         proxy.web(request, response, {
@@ -63,16 +65,6 @@ class Platform {
       });
     }
     this.server.use(shrinkRay());
-    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
-    this.server.use((request, response, next) => {
-      // don't optimize sample source or preview
-      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
-             request.headers['x-requested-by'] === 'playground') {
-        next();
-        return;
-      }
-      ampOptimizer(request, response, next);
-    });
     this.server.use((req, res, next) => {
       if (req.hostname.startsWith(WWW_PREFIX)) {
         res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
@@ -85,8 +77,12 @@ class Platform {
         return next();
       }
       setNoSniff(res);
-      setHsts(res);
       setXssProtection(res);
+      if (req.path === HEALTH_CHECK) {
+        // it's critical that health checks don't redirect for GCE healthchecks to work correctly
+        return next();
+      }
+      setHsts(res);
       if (req.headers['x-forwarded-proto'] === 'https') {
         return next();
       }
@@ -98,8 +94,9 @@ class Platform {
     this._check();
     this._registerRouters();
 
-    this.server.listen(config.hosts.platform.port || 8080, () => {
-      signale.success(`amp.dev available on ${host}!`);
+    const port = config.hosts.platform.port || process.env.APP_PORT || 80;
+    this.server.listen(port, () => {
+      signale.success(`server listening on ${port}!`);
     });
   }
 
@@ -126,11 +123,12 @@ class Platform {
   }
 
   _registerRouters() {
+    this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
+    this.server.use(subdomain.map(config.hosts.playground.subdomain, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.example.embeds);
     this.server.use(routers.example.sources);
     this.server.use(routers.static);
-    this.server.use('/playground', routers.playground);
     this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);

@@ -1,0 +1,211 @@
+---
+$title: AMP Roadshow
+$order: 2
+$view: /views/overview/custom-content.j2
+
+roadshow: !g.yaml /content/shared/data/roadshow.yaml
+
+section_links:
+  - Cities
+  - Agenda
+  - Content
+  - Amplify
+  - FAQ
+---
+{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+
+
+<section class="ap--stage ap--stage-roadshow ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+    <div class="ap-o-stage ap-o-stage-websites all">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content ap-o-stage-content-roadshow">
+
+            <h1 class="ap-o-stage-content-headline">AMP Roadshow</h1>
+            <h2 class="ap-o-stage-content-subline">Come join us in your city for a free, inclusive dev workshop with the AMP team.</h2>
+
+            {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+            <a href="#Cities" class="ap-o-stage-content-button ap-a-btn">Sign Up</a>
+
+        </div>
+      </div>
+    </div>
+    {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
+    <div class="ap-m-roadshow-video">
+      <div class="ap-m-roadshow-video-block">
+        <amp-youtube data-videoid="5OnSrGU5TsE" layout="responsive" height="9" width="16"></amp-youtube>
+      </div>
+    </div>
+</section>
+
+<section class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
+
+  <div class="ap-o-jumpto">
+    <div class="ap--container">
+      <div class="ap-o-jumpto-content">
+        <p class="ap-o-jumpto-text">Jump To:</p>
+        <ul class="ap-o-jumpto-list">
+          {% for link in doc.section_links %}
+            <li class="ap-m-jumpto-item">
+              <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Cities" class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/cities.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/event.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/visited-city.css') %}
+
+  <div class="ap-o-cities">
+    <h3 class="ap-o-cities-headline">Cities</h3>
+    <div class="ap-m-jumbo ap-m-jumbo-cities">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/cities-map.svg') %}
+        {% do doc.icons.useIcon('/icons/gradient-map.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cities-map"></use></svg>
+      </div>
+    </div>
+    <span class="ap-o-cities-sub-headline">Where we're going next</span>
+
+      <div class="ap-o-cities-next-events">
+        <div class="ap-o-cities-next-events-list">
+
+        {% for nextstop in doc.roadshow.nextstop %}
+          <div class="ap-m-event">
+            <div class="ap-m-event-content ap-m-event-content-date">
+              <div class="ap-m-event-content-date-year">{{nextstop.year}}</div>
+              <div class="ap-m-event-content-date-month-day">
+                <p>{{nextstop.month}}</p>
+                <p>{{nextstop.day}}</p>
+              </div>
+            </div>
+            <div class="ap-m-event-content">
+              <a href="{{nextstop.link}}" class="ap-m-event-content-city">{{nextstop.title}}</a>
+              <div class="ap-m-event-content-details-time">
+                <div class="ap-m-event-content-details-icon">
+                  {% do doc.icons.useIcon('/icons/time.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use></svg>
+                </div>
+                {{ nextstop.time }}
+              </div>
+              <div class="ap-m-event-content-details-location">
+                <div class="ap-m-event-content-details-icon">
+                  {% do doc.icons.useIcon('/icons/map.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
+                </div>
+                {{ nextstop.location }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        </div>
+        <span class="ap-o-cities-next-events-checkback">Your city not on the list? Check back soon for additional dates and cities.</span>
+      </div>
+
+      <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
+      <ul class="ap-o-cities-visited-list">
+
+        {% for visited in doc.roadshow.past %}
+          <li class="ap-m-visited-city">
+            <div class="ap-m-visited-city-group">
+              <div class="ap-m-visited-city-title">{{ visited.title }}</div>
+              <div class="ap-m-visited-city-date">{{ visited.date }}</div>
+            </div>
+          </li>
+        {% endfor %}
+
+      </ul>
+
+    </div>
+</section>
+
+<section id="Agenda" class="ap--container ap--container-agenda">
+  {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
+
+  <div class="ap-o-agenda">
+    <div class="ap-o-agenda-block">
+      <div class="ap-o-agenda-content">
+        <h3 class="ap-o-agenda-content-headline">Agenda</h3>
+        <p class="ap-o-agenda-content-sub-text">The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages.
+        <span>This is a sample agenda – schedule varies based on the city.</span>
+        <p>
+
+        <ul class="ap-o-agenda-content-list">
+
+          {% for agenda_item in doc.roadshow.agenda %}
+            <li class="ap-m-agenda-item">
+              <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+              <div class="ap-m-agenda-item-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+            </li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Content" class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/roadshow-content.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/roadshow-pillar.css') %}
+
+  <div class="ap-o-roadshow-content">
+    <div class="ap-o-roadshow-content-headline">Content</div>
+    <div class="ap-o-roadshow-content-description">We'll cover a lot of ground in the few hours we have together. To enable you to build full-fledged AMP sites, the roadshow will deep dive into four big pillars:</div>
+    <div class="ap-o-roadshow-content-pillar-list">
+
+      {% for pillar in doc.roadshow.pillars %}
+        <div class="ap-m-roadshow-pillar">
+          <div class="ap-m-roadshow-pillar-headline">
+            {{ pillar.pillar }}
+          </div>
+          {% for content in pillar.contents %}
+          <div class="ap-m-roadshow-pillar-points">
+            {{ content }}
+          </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<section id="Amplify" class="ap--container">
+  {% do doc.styles.addCssFile('css/components/molecules/amplify.css') %}
+
+  <div class="ap-m-amplify">
+    <div class="ap-m-amplify-content">
+      <h3 class="ap-m-amplify-content-headline">Amplify Live!</h3>
+      <div class="ap-m-amplify-content-subline">During "Amplify live!", we'll be on stage exploring the most interesting AMP challenges, allowing you to either follow along or do your own thing, like one of the many AMP codelabs. Bring your laptop!</div>
+    </div>
+  </div>
+
+</section>
+
+<section id="FAQ" class="ap--container">
+  {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
+  <div class="ap-m-faq">
+    <h3 class="ap-m-faq-headline">Frequently Asked Questions</h3>
+    <div class="ap-m-faq-content">
+      <div class="ap-m-faq-content-question">Does it cost anything?</div>
+      <div class="ap-m-faq-content-answer">No - tickets are free of charge.</div>
+       <div class="ap-m-faq-content-question">Who is the event for?</div>
+      <div class="ap-m-faq-content-answer">Web developers and designers with an interest in AMP--whether you've had experience using AMP and want to create better experiences, you're curious about how you can use AMP to improve your site, or you want to contribute to AMP to make it better for everyone.</div>
+       <div class="ap-m-faq-content-question">Am I all set after registering?</div>
+      <div class="ap-m-faq-content-answer">We expect that in some cities more people will be interested in attending than we can accommodate, so we will be confirming attendees on a case-by-case basis.</div>
+    </div>
+  </div>
+</section>
+
+

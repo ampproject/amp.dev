@@ -24,4 +24,4 @@ AMP に関する知識をさらに深めるためには、次のリソースを�
 - [AMP Start](https://www.ampstart.com/): あらかじめスタイルが設定されたテンプレートとコンポーネントを使用して、ページにスタイルを適用します
 - [AMP By Example](https://ampbyexample.com/): 実際の例とデモから AMP を学ぶことができます
 - [YouTube の AMP Channel](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): AMP に特化した動画を見て学ぶことができます
-- [AMP コンポーネント](/ja/docs/reference/components.html): あらゆる AMP コンポーネントの詳細を確認できます
+- [AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): あらゆる AMP コンポーネントの詳細を確認できます

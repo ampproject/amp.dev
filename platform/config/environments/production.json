@@ -8,13 +8,19 @@
 		},
 		"api": {
 			"scheme": "https",
-			"host": "amp-dev-230314.appspot.com",
+			"host": "amp-dev-staging.appspot.com",
 			"port": ""
 		},
 		"platform": {
 			"scheme": "https",
 			"host": "amp.dev",
 			"port": ""
-		}
+    },
+    "playground": {
+      "scheme": "https",
+      "subdomain": "playground",
+      "host": "amp.dev",
+      "port": ""
+    }
 	}
 }

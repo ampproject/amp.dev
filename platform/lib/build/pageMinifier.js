@@ -24,6 +24,9 @@ const through = require('through2');
 const CleanCSS = require('clean-css');
 const crypto = require('crypto');
 const rcs = require('rcs-core');
+const ampOptimizer = require('amp-toolbox-optimizer');
+const runtimeVersionPromise = require('amp-toolbox-runtime-version').currentVersion();
+
 const config = require('@lib/config');
 
 // List of selectors that can be safely minified
@@ -87,20 +90,38 @@ class PageMinifier {
   start(path) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-
     return gulp.src(`${path}/**/*.html`, {'base': './'})
-        .pipe(through.obj(function(page, encoding, callback) {
-          scope._log.await(`Minifying ${page.relative} ...`);
+        .pipe(through.obj(async function(canonicalPage, encoding, callback) {
+          let html = canonicalPage.contents.toString();
+          html = scope.minifyPage(html, canonicalPage.path);
 
-          let html = page.contents.toString();
-          html = scope.minifyPage(html, page.path);
-          page.contents = Buffer.from(html);
+          scope._log.info(`Optimizing ${canonicalPage.relative}`);
+          const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
+          const optimizedHtml = await scope.optimize(html, ampPath);
 
-          this.push(page);
+          const ampPage = canonicalPage.clone();
+          ampPage.path = ampPath;
+
+          canonicalPage.contents = Buffer.from(optimizedHtml);
+          ampPage.contents = Buffer.from(html);
+
+          this.push(canonicalPage);
+          this.push(ampPage);
 
           callback();
         }))
         .pipe(gulp.dest('./'));
+  }
+
+
+  async optimize(html, path) {
+    const ampRuntimeVersion = await runtimeVersionPromise;
+    return ampOptimizer.transformHtml(html, {
+      ampUrl: path.replace(/^pages/, ''),
+      ampRuntimeVersion: ampRuntimeVersion,
+      blurredPlaceholders: true,
+      maxBlurredPlaceholders: 7, // number of images in homepage stage
+    });
   }
 
   /**
@@ -217,5 +238,5 @@ if (!module.parent) {
 }
 
 module.exports = {
-  'pageMinifier': new PageMinifier(),
+  pageMinifier: new PageMinifier(),
 };

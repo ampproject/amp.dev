@@ -57,7 +57,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="body"></a>`<body>`
 
 Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
-tag tersebut juga dirujuk dalam [spesifikasi AMP](/id/docs/fundamentals/spec.html).
+tag tersebut juga dirujuk dalam [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
 
@@ -104,7 +104,7 @@ salin skrip yang diperlukan, lalu tempel ke `<head>` dokumen AMP.
 </table>
 
 Tag disertakan dalam daftar yang disetujui, sehingga tidak ada daftar definitif semua tag yang tidak diizinkan;
-namun, [spesifikasi AMP](/id/docs/fundamentals/spec.html)
+namun, [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
 secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 
 ### JavaScript kustom tidak diizinkan
@@ -127,7 +127,7 @@ secara luas mendefinisikan kumpulan tag yang tidak diizinkan.
 Format AMP tidak mengizinkan penambahan JavaScript kustom ke halaman, kecuali untuk file JavaScript
 yang disediakan oleh Project AMP itu sendiri. Kebanyakan penggunaan umum JavaScript memiliki
 implementasi setara library HTML AMP. Lihat [komponen
-AMP](/id/docs/reference/components.html) untuk mengetahui kumpulan komponen yang dapat
+AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) untuk mengetahui kumpulan komponen yang dapat
 digunakan untuk menyempurnakan halaman HTML AMP.
 
 Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen
@@ -724,7 +724,7 @@ lewat validator CSS online, misalnya,
 
 Error ini mengacu pada @-rules dalam CSS,
 untuk AMP yang hanya mengizinkan beberapa aturan.
-(lihat juga [spesifikasi AMP](/id/docs/fundamentals/spec.html)).
+(lihat juga [spesifikasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})).
 Misalnya, <code>@import</code> tidak diizinkan.
 Error validasi secara spesifik
 memberi tahu Anda aturan yang tidak valid,
@@ -755,7 +755,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui selengkapnya tentang cara kerja tata letak,
 lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan
-[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
+[spesifikasi sistem tata letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 **Catatan:** Jika Anda tidak menentukan tata letak,
 serta tidak menyertakan nilai `width` dan `height`,
@@ -786,7 +786,7 @@ atau tambahkan nilai `width` dan/atau `height`, maka error akan hilang.
 Error ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
 dan tata letak tersirat berisi atribut yang tidak diizinkan.
 Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
-[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
+[spesifikasi sistem tata letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ### Tata letak yang ditentukan tidak didukung oleh tag AMP
 
@@ -813,7 +813,7 @@ di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui selengkapnya tentang cara kerja tata letak,
 lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan
-[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
+[spesifikasi sistem tata letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ### Atribut tidak diizinkan oleh tata letak tertentu
 
@@ -836,7 +836,7 @@ lihat [Cara Mengontrol Tata Letak]({{g.doc('/content/amp-dev/documentation/guide
 Error ini terjadi jika Anda menentukan tata letak untuk tag AMP,
 dan tata letak tersebut berisi atribut yang tidak diizinkan.
 Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
-[spesifikasi sistem tata letak HTML AMP](/id/docs/design/amp-html-layout.html).
+[spesifikasi sistem tata letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ### Nilai untuk atribut yang dibutuhkan tata letak tidak valid
 

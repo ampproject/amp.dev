@@ -16,7 +16,7 @@ $title: 制作自适应 AMP 网页
 
 要想优化网页以便内容能够自动缩放并适应任何设备的浏览器窗口，您需要指定 `meta` 视口元素。视口元素会指示浏览器如何缩放网页的可见区域（视口）以及如何调整其大小。
 
-不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记](/zh_cn/docs/fundamentals/spec.html#required-markup)的一部分：
+不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#required-markup)的一部分：
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -48,7 +48,7 @@ $title: 制作自适应 AMP 网页
 </style>
 ```
 
-继续阅读: 要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询](/zh_cn/docs/design/responsive/control_layout.html#layout-属性)指南。
+继续阅读: 要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性)指南。
 
 <a id="fn1"></a>
 [tip type="note"]
@@ -70,7 +70,7 @@ $title: 制作自适应 AMP 网页
 <div>
 <amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div> <div placeholder></div> </amp-iframe></div>
 
-您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件](/zh_cn/docs/reference/components.html#media)列表。
+您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})列表。
 
 ### 显示自适应图片
 
@@ -113,7 +113,7 @@ $title: 制作自适应 AMP 网页
 - 如果视口宽度为 470-669 像素，则显示 `cat-medium.jpg`（450 x 340 像素）
 - 如果视口宽度为 469 像素或以下，则显示 `cat-small.jpg`（226 x 340 像素）
 
-注意: 由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”](/zh_cn/docs/design/responsive/control_layout.html#如果未定义宽度和高度，会怎样？)。
+注意: 由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#如果未定义宽度和高度，会怎样？)。
 
 <div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
 

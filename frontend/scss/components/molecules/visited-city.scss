@@ -1,0 +1,44 @@
+/*
+
+######################
+### MOLECULE: visited-city ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('visited-city')} {
+  margin-bottom: 35px;
+  padding: 0 15px;
+
+  &-group {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  &-title {
+    @include txt;
+    @include txt-lrg;
+    @include txt-strong;
+    @include txt-font-accent;
+
+    margin: 0;
+    line-height: 1.2rem;
+    color: fade_out(color('charade'), 0.5);
+  }
+
+  &-date {
+    @include txt;
+    @include txt-2;
+
+    margin: 0;
+    line-height: 1.2rem;
+    color: fade_out(color('black'), 0.5);
+  }
+}

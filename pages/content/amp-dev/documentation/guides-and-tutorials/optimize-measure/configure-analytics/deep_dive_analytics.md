@@ -243,19 +243,19 @@ AMP supports the following trigger configurations:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (required)</td>
-      <td data-th="Description">Name of the request to send (as specified in the <a href="/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">requests</a>).</td>
+      <td data-th="Description">Name of the request to send (as specified in the <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">requests</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">An object containing key-value pairs used to override <code>vars</code> defined in the top level config, or to specify <code>vars</code> unique to this trigger (see also <a href="/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Variable substitution ordering</a>).</td>
+      <td data-th="Description">An object containing key-value pairs used to override <code>vars</code> defined in the top level config, or to specify <code>vars</code> unique to this trigger (see also <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Variable substitution ordering</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (required when <code>on</code> set to <code>click</code>)</td>
-      <td data-th="Description">A CSS selector used to refine which elements should be tracked. Use value <code>*</code> to track all elements. This configuration is used on conjunction with the <code>click</code> trigger. Learn how to use selector to <a href="/docs/analytics/use_cases.html#tracking-page-clicks">track page clicks</a> and <a href="/docs/analytics/use_cases.html#tracking-social-interactions">social interactions</a>.</td>
+      <td data-th="Description">A CSS selector used to refine which elements should be tracked. Use value <code>*</code> to track all elements. This configuration is used on conjunction with the <code>click</code> trigger. Learn how to use selector to <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">track page clicks</a> and <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">social interactions</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (required when <code>on</code> set to <code>scroll</code>)</td>
-      <td data-th="Description">Controls under which conditions when the page is scrolled the <code>scroll</code> event is fired. This object can contain <code>verticalBoundaries</code> and <code>horizontalBoundaries</code>. At least one of the two properties is required for a <code>scroll</code> event to fire. The values for both of the properties should be arrays of numbers containing the boundaries on which a scroll event is generated. See this example on <a href="/docs/analytics/use_cases.html#tracking-scrolling">tracking scrolling</a>.</td>
+      <td data-th="Description">Controls under which conditions when the page is scrolled the <code>scroll</code> event is fired. This object can contain <code>verticalBoundaries</code> and <code>horizontalBoundaries</code>. At least one of the two properties is required for a <code>scroll</code> event to fire. The values for both of the properties should be arrays of numbers containing the boundaries on which a scroll event is generated. See this example on <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">tracking scrolling</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (required when <code>on</code> is set to <code>timer</code>)</td>

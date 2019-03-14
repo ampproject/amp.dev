@@ -42,7 +42,7 @@ iframe 在 AMP 中特别有用，可显示主网页中不支持的内容，例�
 
 您可以在文档顶部展示 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) ，前提是 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) 包含具有 `placeholder` 属性的元素（例如 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素）。在 iframe 准备就绪，可以进行展示之前，该元素会以占位符的形式呈现。
 
-阅读: 要详细了解占位符，请参阅[包含占位符的 Iframe](/zh_cn/docs/reference/components/amp-iframe.html#iframe-with-placeholder)。
+阅读: 要详细了解占位符，请参阅[包含占位符的 Iframe]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)。
 
 包含占位符的示例：
 

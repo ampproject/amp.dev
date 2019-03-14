@@ -158,7 +158,7 @@ El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerid
 Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
 
 [tip type="tip"]
-**TIP –** AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#social).
+**TIP –** AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Resaltar una cita de artículo

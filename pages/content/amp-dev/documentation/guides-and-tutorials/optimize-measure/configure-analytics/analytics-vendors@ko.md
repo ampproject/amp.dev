@@ -37,7 +37,7 @@ $title: 애널리틱스 공급업체
 
 [tip type="note"]
 
-서비스를 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](/ko/docs/analytics/integrating-analytics.html) 세부정보를 참조하세요.
+서비스를 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) 세부정보를 참조하세요.
 
 [/tip]
 
@@ -220,7 +220,7 @@ Nielsen Marketing Cloud 지원을 추가합니다. 자세한 내용은 [Nielsen 
 
 타입 속성값: `oewa`
 
-[OEWA](https://www.oewa.at) 지원을 추가합니다. [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html)의 사본이 포함된 AMP 파일과 다른 하위 도메인에 있어야 합니다([이유?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). 파일은 HTTPS를 통해 제공해야 합니다. 예를 들어, AMP 파일이 `www.example.com`에 호스팅된 경우, `amp-analytics-oewa.html`은 `oewa-amp.example.com` 등 다른 하위 도메인에 있어야 합니다. OEWA 지원 추가에 관한 자세한 내용은 [여기](http://www.oewa.at/basic/implementierung)를 참고하세요.
+[OEWA](https://www.oewa.at) 지원을 추가합니다. [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html)의 사본이 포함된 AMP 파일과 다른 하위 도메인에 있어야 합니다([이유?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). 파일은 HTTPS를 통해 제공해야 합니다. 예를 들어, AMP 파일이 `www.example.com`에 호스팅된 경우, `amp-analytics-oewa.html`은 `oewa-amp.example.com` 등 다른 하위 도메인에 있어야 합니다. OEWA 지원 추가에 관한 자세한 내용은 [여기](http://www.oewa.at/Implementierung)를 참고하세요.
 
 다음 변수도 정의되어야 합니다.
 

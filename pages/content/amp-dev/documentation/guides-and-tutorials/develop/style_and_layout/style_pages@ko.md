@@ -4,7 +4,7 @@ $title: 지원되는 CSS
 
 모든 웹페이지와 마찬가지로 AMP 페이지는 CSS로 스타일이 지정되지만 [맞춤 글꼴](#the-custom-fonts-exception) 외 외부 스타일시트는 참조할 수 없습니다. 또한 특정 스타일은 성능상의 이유로 허용되지 않습니다. 인라인 스타일 속성도 허용되지 않습니다.
 
-모든 스타일은 문서 헤드에 배치되어야 합니다 ([페이지에 스타일 추가](/ko/docs/design/responsive_amp.html#add-styles-to-a-page) 참조). 하지만 CSS 전처리기 및 템플릿을 사용하여 정적 페이지를 만들 수 있으며, 이를 통해 콘텐츠를 더 효과적으로 관리할 수 있습니다.
+모든 스타일은 문서 헤드에 배치되어야 합니다 ([페이지에 스타일 추가]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page) 참조). 하지만 CSS 전처리기 및 템플릿을 사용하여 정적 페이지를 만들 수 있으며, 이를 통해 콘텐츠를 더 효과적으로 관리할 수 있습니다.
 
 참고: AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지를 비교적 간편하게 제작할 수 있습니다. 이러한 스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 에 정의되어 있습니다.
 

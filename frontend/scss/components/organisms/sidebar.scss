@@ -153,4 +153,8 @@ nav[toolbar] {
       width: calc(100% + 15px);
     }
   }
+  
+  &-section {
+    max-width: 100%;
+  }
 }

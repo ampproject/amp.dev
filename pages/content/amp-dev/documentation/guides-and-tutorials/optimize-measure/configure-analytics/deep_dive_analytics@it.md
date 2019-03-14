@@ -178,7 +178,7 @@ sapere se occorre configurare l’attributo `requests` ed eventualmente come con
 
 #### Aggiunta di URL di richiesta: Extra URL Params
 
-L’attributo [extraUrlParams]/it/docs/reference/components/amp-analytics.html#extra-url-params)
+L’attributo [extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
 specifica i parametri supplementari da aggiungere alla stringa di query dell’URL di richiesta tramite la solita convenzione "&foo=baz".
 
 L’esempio [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) aggiunge un ulteriore parametro <code>cd1</code>
@@ -236,19 +236,19 @@ AMP supporta le seguenti configurazioni di attivazione:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obbligatorio)</td>
-      <td data-th="Description">Nome della richiesta da inviare (come specificato nelle <a href="/it/docs/analytics/deep_dive_analytics.html#quali-dati-vengono-inviati:-attributo-requests">richieste</a>).</td>
+      <td data-th="Description">Nome della richiesta da inviare (come specificato nelle <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#quali-dati-vengono-inviati:-attributo-requests">richieste</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Un oggetto contenente le coppie chiave-valore usate per eseguire l’override delle <code>vars</code> definite nella configurazione di primo livello o per specificare <code>vars</code> univoche a questo trigger (vedi anche <a href="/it/docs/analytics/deep_dive_analytics.html#ordinamento-della-sostituzione-delle-variabili">Ordinamento della sostituzione delle variabili</a>).</td>
+      <td data-th="Description">Un oggetto contenente le coppie chiave-valore usate per eseguire l’override delle <code>vars</code> definite nella configurazione di primo livello o per specificare <code>vars</code> univoche a questo trigger (vedi anche <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ordinamento-della-sostituzione-delle-variabili">Ordinamento della sostituzione delle variabili</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obbligatorio quando <code>on</code> è impostato su <code>click</code>)</td>
-      <td data-th="Description">Un selettore CSS utilizzato per definire meglio quali elementi devono essere monitorati. Usa il valore <code>*</code> per monitorare tutti gli elementi. Questa configurazione viene utilizzata insieme al trigger <code>click</code>. Scopri come usare il selettore per <a href="/it/docs/analytics/use_cases.html#come-monitorare-i-clic-sulla-pagina">monitorare i clic di pagina</a> e per le <a href="/it/docs/analytics/use_cases.html#come-monitorare-le-interazioni-con-i-social-network">interazioni sui social</a>.</td>
+      <td data-th="Description">Un selettore CSS utilizzato per definire meglio quali elementi devono essere monitorati. Usa il valore <code>*</code> per monitorare tutti gli elementi. Questa configurazione viene utilizzata insieme al trigger <code>click</code>. Scopri come usare il selettore per <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#come-monitorare-i-clic-sulla-pagina">monitorare i clic di pagina</a> e per le <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#come-monitorare-le-interazioni-con-i-social-network">interazioni sui social</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obbligatorio quando <code>on</code> è impostato su <code>scroll</code>)</td>
-      <td data-th="Description">Controlla in base a quali condizioni viene attivato l’evento <code>scroll</code> quando l’utente scorre la pagina. Questo oggetto può contenere <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Per l’attivazione di un evento <code>scroll</code> è necessaria almeno una delle due proprietà. I valori per entrambe le proprietà devono essere serie di numeri contenenti i limiti entro i quali viene generato un evento di scorrimento. Vedi questo esempio sul <a href="/it/docs/analytics/use_cases.html#come-monitorare-lo-scorrimento-delle-pagine">monitoraggio dello scorrimento</a>.</td>
+      <td data-th="Description">Controlla in base a quali condizioni viene attivato l’evento <code>scroll</code> quando l’utente scorre la pagina. Questo oggetto può contenere <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Per l’attivazione di un evento <code>scroll</code> è necessaria almeno una delle due proprietà. I valori per entrambe le proprietà devono essere serie di numeri contenenti i limiti entro i quali viene generato un evento di scorrimento. Vedi questo esempio sul <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#come-monitorare-lo-scorrimento-delle-pagine">monitoraggio dello scorrimento</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obbligatorio quando <code>on</code> è impostato su <code>timer</code>)</td>
