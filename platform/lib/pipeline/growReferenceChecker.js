@@ -160,7 +160,8 @@ class GrowReferenceChecker {
 
     const basename = path.basename(documentPath);
     this._log.info(`Trying to find new destination by basename ${basename}`);
-    const results = search.recursiveSearchSync(basename, PAGES_BASE_PATH);
+    const results = search.recursiveSearchSync(
+          new RegExp(basename, 'i'), PAGES_BASE_PATH);
 
     // If there is more than one match store all matches for the user to
     // do the manual fixing
