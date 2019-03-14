@@ -15,6 +15,7 @@
  */
 require('module-alias/register');
 
+const {promisify} = require('util');
 const {Signale} = require('signale');
 const gulp = require('gulp');
 const once = require('gulp-once');
@@ -25,6 +26,7 @@ const path = require('path');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const crypto = require('crypto');
+const readFileAsync = promisify(fs.readFile);
 
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const utils = require('@lib/utils');
@@ -33,29 +35,28 @@ const {handlebars} = require('@lib/common/handlebarsEnvironment.js');
 
 // Where to import the samples from
 const SAMPLE_SRC = utils.project.absolute('examples/source');
-// The pod path inside
-const POD_PATH = 'content/amp-dev/documentation/examples/documentation';
+// The pod path for the documentation pages
+const DOCUMENTATION_POD_PATH = 'content/amp-dev/documentation/examples/documentation';
 // Where to store the samples inside the Grow pod in
-const MANUAL_DEST = utils.project.absolute(`pages/${POD_PATH}`);
+const DOCUMENTATION_DEST = utils.project.absolute(`pages/${DOCUMENTATION_POD_PATH}`);
 // What Grow template to use to render the sample's manual
-const MANUAL_TEMPLATE = '/views/examples/documentation.j2';
+const DOCUMENTATION_TEMPLATE = '/views/examples/documentation.j2';
+// The pod path for the previews
+const PREVIEW_POD_PATH = 'content/amp-dev/documentation/examples/previews';
+// Where to store the sample preview files with header
+const PREVIEW_DEST = utils.project.absolute(`pages/${PREVIEW_POD_PATH}`);
 // What template to use to render the preview
-const PREVIEW_TEMPLATES = {
-  'websites': utils.project.absolute('frontend/hbs/preview-websites.hbs'),
-  'stories': utils.project.absolute('frontend/hbs/preview-stories.hbs'),
-  'ads': utils.project.absolute('frontend/hbs/preview-ads.hbs'),
-  'email': utils.project.absolute('frontend/hbs/preview-email.hbs'),
-};
+const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
+// Path to the story embed snippet
+const STORY_EMBED_SNIPPET = utils.project.absolute('frontend/js/story-progress.js');
+// Where to store the embeds for Grow
+const EMBED_DEST = utils.project.absolute('dist/examples/embeds');
 // Base to define the request path for Grow
-const PATH_BASE = '/documentation/examples';
+const ROUTE_BASE = '/documentation/examples';
 // Path to store the cache in
 const CACHE_DEST = utils.project.absolute('.cache/examples.json');
 // Path the all source files are written to, to vend them via express
 const SOURCE_DEST = utils.project.absolute('dist/examples/sources');
-// Where to store the sample preview files with header
-const PREVIEW_DEST = utils.project.absolute('dist/examples/previews');
-// Where to store the embeds for Grow
-const EMBED_DEST = utils.project.absolute('dist/examples/embeds');
 // The API host used by samples depending on one
 const API_HOST = 'https://amp-by-example-api.appspot.com';
 // The host used for samples depending on a backend
@@ -69,12 +70,10 @@ class SamplesBuilder {
       'scope': 'Samples builder',
     });
 
-    // Preload preview templates
-    this._templates = {};
-    /* eslint-disable guard-for-in */
-    for (const format of Object.keys(PREVIEW_TEMPLATES)) {
-      this._templates[format] = fs.readFileSync(PREVIEW_TEMPLATES[format], 'utf-8');
-    }
+    // Used to cache various properties to save computing time
+    this._cache = {
+      'categories': {}
+    };
   }
 
   async build(watch) {
@@ -83,19 +82,21 @@ class SamplesBuilder {
     if (!watch && config.options['clean-samples'] === true) {
       this._log.info('Cleaning sample destinations for rebuild ...');
       del.sync([
-        `${MANUAL_DEST}/**/*.json`,
-        `${MANUAL_DEST}/**/*.html`,
+        // Clean old structure with multiple collections
+        utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../**/*`),
+        '!' + utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../`),
+        '!' + utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../_blueprint.yaml`),
+        '!' + utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../index.html`),
 
-        // Also clean old structure
-        utils.project.absolute(`/pages/${POD_PATH}/../**/*`),
-        '!' + utils.project.absolute(`/pages/${POD_PATH}/../`),
-        '!' + utils.project.absolute(`/pages/${POD_PATH}/../_blueprint.yaml`),
-        '!' + utils.project.absolute(`/pages/${POD_PATH}/../index.html`),
-        '!' + utils.project.absolute(`/pages/${POD_PATH}`),
-        '!' + utils.project.absolute(`/pages/${POD_PATH}/_blueprint.yaml`),
+        `${DOCUMENTATION_DEST}/**/*`,
+        `!${DOCUMENTATION_DEST}`,
+        `!${DOCUMENTATION_DEST}/_blueprint.yaml`,
+
+        `${PREVIEW_DEST}/**/*`,
+        `!${PREVIEW_DEST}`,
+        `!${PREVIEW_DEST}/_blueprint.yaml`,
 
         `${SOURCE_DEST}`,
-        `${PREVIEW_DEST}`,
         `${EMBED_DEST}`,
         CACHE_DEST,
       ], {
@@ -121,7 +122,7 @@ class SamplesBuilder {
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
-        await this._parseSample(sample).then((parsedSample) => {
+        await this._parseSample(sample).then(async (parsedSample) => {
           // Skip samples that are drafts for alle envs except development
           if (parsedSample.document.metadata.draft && config.environment !== 'development') {
             callback();
@@ -134,7 +135,7 @@ class SamplesBuilder {
             ...this._createDocumentation(sample, parsedSample),
             ...this._buildRawSources(sample, parsedSample),
             ...this._createPreview(sample, parsedSample),
-            ...this._renderEmbed(sample, parsedSample),
+            ...(await this._renderEmbed(sample, parsedSample)),
           ];
 
           // Since stream.push doesn't allow to push multiple files at once
@@ -155,13 +156,15 @@ class SamplesBuilder {
         if (file.isSourceFile) {
           return SOURCE_DEST;
         } else if (file.isPreview) {
+          // Remove double name from path to flatten structure for Grow
+          file.dirname = `${SAMPLE_SRC}`;
           return PREVIEW_DEST;
         } else if (file.isEmbed) {
           return EMBED_DEST;
         } else {
           // Remove double name from path to flatten structure for Grow
           file.dirname = `${SAMPLE_SRC}`;
-          return MANUAL_DEST;
+          return DOCUMENTATION_DEST;
         }
       }));
 
@@ -246,9 +249,15 @@ class SamplesBuilder {
    * @return {String}       The category
    */
   _getCategory(sample) {
-    let category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
-    category = category.split('/')[0];
-    return category;
+    // Check if the category has already been computed
+    if (!this._cache.categories[sample.path]) {
+      let category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
+      category = category.split('/')[0];
+
+      this._cache.categories[sample.path] = category;
+    }
+
+    return this._cache.categories[sample.path];
   }
 
   /**
@@ -258,7 +267,27 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getDocumentationRoute(sample) {
-    return `${PATH_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+  }
+
+  /**
+   * Takes the path of the sample vinyl and creates a server relative URL
+   * to use for the previews
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @return {String}       The route
+   */
+  _getPreviewRoute(sample) {
+    return `${this._getDocumentationRoute(sample)}/preview`;
+  }
+
+  /**
+   * Takes the path of the sample vinyl and creates a server relative URL
+   * to use for the source files
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @return {String}       The route
+   */
+  _getSourceRoute(sample) {
+    return `/examples/${this._getCategory(sample)}/${sample.stem}`;
   }
 
   /**
@@ -278,15 +307,15 @@ class SamplesBuilder {
       yaml.safeDump({
         '$$injectAmpDependencies': false,
         '$title': parsedSample.document.title,
-        '$view': MANUAL_TEMPLATE,
-        '$category': this._getCategory(sample) || null,
+        '$view': DOCUMENTATION_TEMPLATE,
+        '$category': this._getCategory(sample),
         '$path': this._getDocumentationRoute(sample),
         '$localization': {
           '$path': `/{locale}${this._getDocumentationRoute(sample)}`
         }
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
-      `example: !g.json /${POD_PATH}/${manual.stem}.json`,
+      `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
       // ... and some additional information that is used by the example teaser
       this._getTeaserData(parsedSample),
       '---',
@@ -419,21 +448,29 @@ class SamplesBuilder {
   }
 
   /**
-   * Renders embedabble preview versions
+   * Renders embedabble preview versions - only valid for AMP story samples
+   * that need a JS snippet attached
    * @param  {Vinyl} sample
    * @param  {Object} parsedSample
    * @return {Array}
    */
-  _renderEmbed(sample, parsedSample) {
+  async _renderEmbed(sample, parsedSample) {
     // Also render embed file for stories
     if (parsedSample.document.isAmpStory) {
-      const template = this._templates[this._getSampleFormat(parsedSample)];
+      // Load JS snippet
+      if (!this._cache[STORY_EMBED_SNIPPET]) {
+        this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
+      }
+
+      const js = this._cache[STORY_EMBED_SNIPPET];
 
       const embed = sample.clone();
       embed.dirname = `${embed.dirname}/${this._getCategory(sample)}`;
+      embed.basename = embed.basename.toLowerCase();
       embed.isEmbed = true;
-      embed.contents = Buffer.from(handlebars.render(
-          template, Object.assign({'isEmbed': true}, parsedSample)));
+      embed.contents = Buffer.from(
+          parsedSample.source.replace('</body>', `<script>${js}</script></body>`)
+      );
 
       return [embed];
     }
@@ -442,7 +479,7 @@ class SamplesBuilder {
   }
 
   /**
-   * Creates a html document that holds the initial sample source
+   * Creates another document in the Grow pod used to show the preview
    * @param  {Vinyl} sample The sample from the gulp stream
    * @param  {Object} parsedSample The sample parsed by abe.com
    * @return {Vinyl}
@@ -453,13 +490,25 @@ class SamplesBuilder {
       return [];
     }
 
-    // Determine the template needed for that specific sample
-    const template = this._templates[this._getSampleFormat(parsedSample)];
     const preview = sample.clone();
 
     // Set flag to determine correct output location
     preview.isPreview = true;
-    preview.contents = Buffer.from(handlebars.render(template, parsedSample));
+    preview.contents = Buffer.from([
+      '---',
+      yaml.safeDump({
+        '$title': parsedSample.document.title,
+        '$view': PREVIEW_TEMPLATE,
+        '$category': this._getCategory(sample),
+        '$path': this._getPreviewRoute(sample),
+        '$localization': {
+          '$path': `/{locale}${this._getPreviewRoute(sample)}`
+        },
+        'formats': [this._getSampleFormat(parsedSample)],
+        'source': this._getSourceRoute(sample)
+      }, {'lineWidth': 500}),
+      '---',
+    ].join('\n'));
 
     return [preview];
   }
