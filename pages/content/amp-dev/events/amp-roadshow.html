@@ -1,7 +1,7 @@
 ---
 $title: AMP Roadshow
 $order: 2
-$view: /views/overview/custom-content.j2
+$view: /views/overview/events.j2
 
 roadshow: !g.yaml /content/shared/data/roadshow.yaml
 
@@ -12,11 +12,11 @@ section_links:
   - Amplify
   - FAQ
 ---
-{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+{% do doc.styles.addCssFile('css/components/templates/events.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
 
 
-<section class="ap--stage ap--stage-roadshow ap--container-fluid">
+<section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
     <div class="ap-o-stage ap-o-stage-websites all">
       <div class="ap--container-fluid">
