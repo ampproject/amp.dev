@@ -70,12 +70,14 @@ class SamplesBuilder {
     });
 
     // Used to cache various properties to save computing time
-    this._cache = {
-      'categories': {}
-    };
+    this._cache = {};
   }
 
   async build(watch) {
+    // Configure cache
+    this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
+    this._cache.categories = {};
+
     // If samples should be rebuild (due to architectural changes for example)
     // then you should be able to clean the sample build destinations
     if (!watch && config.options['clean-samples'] === true) {
@@ -99,7 +101,7 @@ class SamplesBuilder {
         `${EMBED_DEST}`,
         CACHE_DEST,
       ], {
-        'force': true
+        'force': true,
       });
     }
 
@@ -121,7 +123,7 @@ class SamplesBuilder {
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         this._log.await(`Building sample ${sample.relative} ...`);
-        await this._parseSample(sample).then(async (parsedSample) => {
+        await this._parseSample(sample).then((parsedSample) => {
           // Skip samples that are drafts for alle envs except development
           if (parsedSample.document.metadata.draft && config.environment !== 'development') {
             callback();
@@ -134,7 +136,7 @@ class SamplesBuilder {
             ...this._createDocumentation(sample, parsedSample),
             ...this._buildRawSources(sample, parsedSample),
             ...this._createPreview(sample, parsedSample),
-            ...(await this._renderEmbed(sample, parsedSample)),
+            ...this._renderEmbed(sample, parsedSample),
           ];
 
           // Since stream.push doesn't allow to push multiple files at once
@@ -185,14 +187,14 @@ class SamplesBuilder {
    * @return {Promise}
    */
   async _parseSample(sample) {
-    let platformHost = config.getHost(config.hosts.platform);
+    const platformHost = config.getHost(config.hosts.platform);
     return await abe.parseSample(sample.path, {
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'hosts': {
         'platform': platformHost,
         'api': API_HOST,
         'backend': BACKEND_HOST,
-      }
+      },
     }).then((parsedSample) => {
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
@@ -310,8 +312,8 @@ class SamplesBuilder {
         '$category': this._getCategory(sample),
         '$path': this._getDocumentationRoute(sample),
         '$localization': {
-          '$path': `/{locale}${this._getDocumentationRoute(sample)}`
-        }
+          '$path': `/{locale}${this._getDocumentationRoute(sample)}`,
+        },
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
@@ -342,7 +344,7 @@ class SamplesBuilder {
 
     if (parsedSample.document.metadata.teaserImage) {
       teaserData.teaser = {'image': {
-        'src': parsedSample.document.metadata.teaserImage
+        'src': parsedSample.document.metadata.teaserImage,
       }};
     }
 
@@ -377,7 +379,6 @@ class SamplesBuilder {
   _getUsedComponents(parsedSample) {
     // Dirty RegEx to quickly parse component names from head
     const COMPONENT_PATTERN = /<script.*?custom-.*?="(?<name>.*?)".*?<\/script>/g;
-    const match = COMPONENT_PATTERN.exec(parsedSample.document.head);
 
     const usedComponents = {};
     parsedSample.document.head.replace(COMPONENT_PATTERN, (script, name) => {
@@ -453,22 +454,16 @@ class SamplesBuilder {
    * @param  {Object} parsedSample
    * @return {Array}
    */
-  async _renderEmbed(sample, parsedSample) {
+  _renderEmbed(sample, parsedSample) {
     // Also render embed file for stories
     if (parsedSample.document.isAmpStory) {
-      // Load JS snippet
-      if (!this._cache[STORY_EMBED_SNIPPET]) {
-        this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
-      }
-
-      const js = this._cache[STORY_EMBED_SNIPPET];
-
       const embed = sample.clone();
       embed.dirname = `${embed.dirname}/${this._getCategory(sample)}`;
       embed.basename = embed.basename.toLowerCase();
       embed.isEmbed = true;
       embed.contents = Buffer.from(
-          parsedSample.source.replace('</body>', `<script>${js}</script></body>`)
+          parsedSample.source.replace('</body>',
+              `<script>${this._cache[STORY_EMBED_SNIPPET]}</script></body>`)
       );
 
       return [embed];
@@ -501,10 +496,10 @@ class SamplesBuilder {
         '$category': this._getCategory(sample),
         '$path': this._getPreviewRoute(sample),
         '$localization': {
-          '$path': `/{locale}${this._getPreviewRoute(sample)}`
+          '$path': `/{locale}${this._getPreviewRoute(sample)}`,
         },
         'formats': [this._getSampleFormat(parsedSample)],
-        'source': this._getSourceRoute(sample)
+        'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
       '---',
     ].join('\n'));
