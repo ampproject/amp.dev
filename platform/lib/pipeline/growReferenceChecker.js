@@ -71,7 +71,6 @@ class GrowReferenceChecker {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
 
       stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        this._log.await(`Checking ${doc.relative} ...`);
         stream.push(this._check(doc, callback));
         callback();
       }));
@@ -139,46 +138,42 @@ class GrowReferenceChecker {
    * @return {String}      The either untouched or adjusted path
    */
   _verifyReference(documentPath) {
-    this._log.await(`Checking if ${documentPath} exists ...`);
-
     if (fs.existsSync(POD_BASE_PATH + documentPath)) {
-      this._log.success(`Document ${documentPath} exists.`);
       return documentPath;
     }
 
     this._brokenReferencesCount++;
 
-    this._log.warn(`No document found for ${documentPath}`);
-    this._log.info('Trying to resolve new location from lookup table ...');
+    // Fail early if the path is already known to be broken
+    if (this._unfindableDocuments.includes(documentPath)) {
+      return documentPath;
+    }
 
     // Check if there is a manual match for the path in the lookup table
     const lookedUpPath = LOOKUP_TABLE[documentPath.replace(POD_BASE_PATH, '/')];
     if (lookedUpPath) {
-      this._log.success(`Found new path in lookup table: ${lookedUpPath}`);
       return lookedUpPath;
     }
 
     const basename = path.basename(documentPath);
-    this._log.info(`Trying to find new destination by basename ${basename}`);
     const results = search.recursiveSearchSync(
           new RegExp(basename, 'i'), PAGES_BASE_PATH);
 
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error('More than one possible match. Needs manual fixing.');
+      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`);
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
       // If the reference was pointing to an HTML document look if there is
       // a matching markdown document
       if (basename.indexOf('.html') !== -1) {
-        this._log.warn(`No match for HTML document ${basename}, looking for markdown.`);
         documentPath = documentPath.replace(path.extname(documentPath), '.md');
         return this._verifyReference(documentPath);
       }
 
-      this._log.error('No matching document found. Needs manual fixing.');
+      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`);
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }
@@ -186,7 +181,6 @@ class GrowReferenceChecker {
     }
 
     const newPath = results[0].replace(POD_BASE_PATH, '/');
-    this._log.success(`Found new location of document: ${newPath}`);
 
     return newPath;
   }
