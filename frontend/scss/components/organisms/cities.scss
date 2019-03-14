@@ -31,13 +31,16 @@
     padding-top: 48%;
     position: relative;
     margin-top: 20px;
+
     .#{atom('ico')} {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+
       svg {
+        filter: drop-shadow(5px 12px 10px rgba(0,0,0,0.19));
         width: 100%;
       }
     }
