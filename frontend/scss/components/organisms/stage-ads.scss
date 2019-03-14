@@ -13,7 +13,7 @@
 }
 
 .#{organism('stage')} {
-  @include gradient-websites;
+  @include gradient-ads;
   grid-column: 1 / -1;
   position: relative;
   width: 100%;
@@ -58,9 +58,9 @@
     }
 
     &-icon {
-      @include fill-websites;
       @include ico;
       @include ico-2;
+      @include fill-websites;
       position: absolute;
       left: 0;
       bottom: calc(100% + 1em);
@@ -114,10 +114,9 @@
     }
 
     &-button {
-      color: color('blue-ribbon');
+      color: color('electric-violet');
       background-color: color('white');
       margin-top: 20px;
     }
   }
-
 }

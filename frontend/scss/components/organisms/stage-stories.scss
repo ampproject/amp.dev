@@ -13,7 +13,7 @@
 }
 
 .#{organism('stage')} {
-  @include gradient-websites;
+  @include gradient-stories;
   grid-column: 1 / -1;
   position: relative;
   width: 100%;
@@ -58,14 +58,14 @@
     }
 
     &-icon {
-      @include fill-websites;
       @include ico;
       @include ico-2;
+      @include fill-stories;
       position: absolute;
       left: 0;
       bottom: calc(100% + 1em);
       padding: 0.5em;
-      border: 1px solid color('white');
+      border: 1px solid color('ultramarine');
       border-radius: 50%;
 
       @media (min-width: 768px) {
@@ -88,7 +88,7 @@
     &-headline {
       @include hl;
       @include hl-xlrg;
-      @include color-websites;
+      @include color-stories;
       margin: 0;
 
       br {
@@ -101,7 +101,7 @@
     &-subline {
       @include txt;
       @include txt-1;
-      @include color-websites;
+      @include color-stories;
       margin-top: 0;
 
       @media (min-width: 768px) {
@@ -114,8 +114,7 @@
     }
 
     &-button {
-      color: color('blue-ribbon');
-      background-color: color('white');
+      background-color: color('ultramarine');
       margin-top: 20px;
     }
   }

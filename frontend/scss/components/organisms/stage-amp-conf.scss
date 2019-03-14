@@ -13,7 +13,6 @@
 }
 
 .#{organism('stage')} {
-  @include gradient-websites;
   grid-column: 1 / -1;
   position: relative;
   width: 100%;
@@ -21,6 +20,7 @@
   border-bottom-left-radius: 4em;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
+  background-color: color('carnation');
 
   @media (min-width: 768px) {
     margin-left: 64px;
@@ -58,7 +58,6 @@
     }
 
     &-icon {
-      @include fill-websites;
       @include ico;
       @include ico-2;
       position: absolute;
@@ -88,7 +87,7 @@
     &-headline {
       @include hl;
       @include hl-xlrg;
-      @include color-websites;
+      @include color-white;
       margin: 0;
 
       br {
@@ -101,7 +100,7 @@
     &-subline {
       @include txt;
       @include txt-1;
-      @include color-websites;
+      @include color-white;
       margin-top: 0;
 
       @media (min-width: 768px) {
@@ -114,10 +113,11 @@
     }
 
     &-button {
-      color: color('blue-ribbon');
-      background-color: color('white');
+      background: color('white');
+      color: color('carnation');
       margin-top: 20px;
     }
   }
+
 
 }
