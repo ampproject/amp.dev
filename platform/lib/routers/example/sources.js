@@ -25,7 +25,7 @@ const SOURCES_DEST = utils.project.absolute('/dist/examples/sources/');
 const exampleSources = express.Router();
 const staticSources = express.static(SOURCES_DEST);
 
-exampleSources.use(`/examples/:category/:name/:snippetId?`, (request, response, next) => {
+exampleSources.use('/examples/:category/:name/:snippetId?', (request, response, next) => {
   request.url = `/${request.params.category}/${request.params.name}`;
   if (request.params.snippetId) {
     request.url += `-${request.params.snippetId}`;
