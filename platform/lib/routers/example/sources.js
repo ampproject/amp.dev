@@ -23,7 +23,7 @@ const SOURCES_DEST = utils.project.absolute('/dist/examples/sources/');
 
 // eslint-disable-next-line new-cap
 const exampleSources = express.Router();
-const sources = express.static(SOURCES_DEST);
+const staticSources = express.static(SOURCES_DEST);
 
 exampleSources.use(`/examples/:category/:name/:snippetId?`, (request, response, next) => {
   request.url = `/${request.params.category}/${request.params.name}`;
@@ -32,7 +32,7 @@ exampleSources.use(`/examples/:category/:name/:snippetId?`, (request, response, 
   }
 
   request.url += '.html';
-  sources(request, response, next);
+  staticSources(request, response, next);
 });
 
 module.exports = exampleSources;

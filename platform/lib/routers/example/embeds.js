@@ -23,11 +23,11 @@ const EMBEDS_DEST = utils.project.absolute('/dist/examples/embeds/');
 
 // eslint-disable-next-line new-cap
 const exampleEmbeds = express.Router();
-const embeds = express.static(EMBEDS_DEST);
+const staticEmbeds = express.static(EMBEDS_DEST);
 
 exampleEmbeds.use(`/examples/:category/:name/embed`, (request, response, next) => {
   request.url = `/${request.params.category}/${request.params.name}.html`;
-  embeds(request, response, next);
+  staticEmbeds(request, response, next);
 });
 
 module.exports = exampleEmbeds;
