@@ -211,7 +211,7 @@ class PageMinifier {
     }
 
     // Do not cache styles during development
-    if (config.environment == 'development') {
+    if (config.isDevMode()) {
       return this._cleanCss.minify(css).styles;
     }
 

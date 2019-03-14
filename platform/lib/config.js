@@ -26,8 +26,10 @@ const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspe
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const GROW_OUT_DIR = utils.project.absolute('platform/pages');
 
+const ENV_DEV = 'development';
+
 class Config {
-  constructor(environment = 'development') {
+  constructor(environment = ENV_DEV) {
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
@@ -44,6 +46,11 @@ class Config {
     } catch (err) {
       // writes are not permitted on GAE or in a container
     }
+    console.log('isDevmode', this.isDevMode());
+  }
+
+  isDevMode() {
+    return this.environment === ENV_DEV;
   }
 
   /**
@@ -61,10 +68,6 @@ class Config {
     if (host.port) {
       url += `:${host.port}`;
     }
-    if (isLocalhost && host.subdomain) {
-      url += '/' + host.subdomain;
-    }
-
     return url;
   }
 
@@ -77,7 +80,7 @@ class Config {
     podspec = yaml.safeLoad(podspec);
 
     // Force-enable all languages during development
-    if (this.environment == 'development') {
+    if (this.isDevMode()) {
       podspec.localization.locales = [
         'en',
         'fr',

@@ -16,53 +16,42 @@
 
 'use strict';
 
+const config = require('@lib/config.js');
+const express = require('express');
+const signale = require('signale');
+
 class Subdomain {
   /**
-   * Sets a base router for local dev.
-   *
-   * @param Router - an express application
-   */
-  router(baseRouter) {
-    if (!this.devMode) {
-      this.subdomains_ = new Map();
-      this.devMode = true;
-    }
-    baseRouter.use(this.middleware_.bind(this));
-  }
-
-  /**
    * Creates a subdomain middleware matching subdomain
-   * requests to the router
+   * requests to the router.
    */
-  map(subdomain, router) {
-    if (!subdomain) {
-      throw new Error(`Invalid subdomain: '${subdomain}'`);
+  map(hostConfig, router) {
+    if (!hostConfig.subdomain) {
+      throw new Error('host does not specify a subdomain');
     }
-    if (this.devMode) {
-      this.subdomains_.set(subdomain, router);
-      // return a dummy middleware
-      return (request, response, next) => next();
-    } else {
-      // return subdomain specific middleware
-      return (request, response, next) => {
-        if (request.subdomains.includes(subdomain)) {
-          return router(request, response, next);
-        }
-        return next();
-      };
+    if (config.isDevMode()) {
+      return this.startDevServer_(hostConfig, router);
     }
+    return this.createSubdomainMiddleware_(hostConfig.subdomain, router);
   }
 
-  middleware_(req, res, next) {
-    for (const [subdomain, router] of this.subdomains_) {
-      const subdomainPath = '/' + subdomain;
-      if (req.url.startsWith(subdomainPath)) {
-        req.url = '/' + req.url.substring(subdomainPath.length);
-        router(req, res, next);
-        return;
+  startDevServer_(hostConfig, router) {
+    const subdomainApp = express();
+    subdomainApp.use(router);
+    subdomainApp.listen(hostConfig.port, () => {
+      signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+    });
+    // return a dummy middleware
+    return (request, response, next) => next();
+  }
+
+  createSubdomainMiddleware_(subdomain, router) {
+    return (request, response, next) => {
+      if (request.subdomains.includes(subdomain)) {
+        return router(request, response, next);
       }
-    }
-    next();
+      return next();
+    };
   }
 }
 
