@@ -34,6 +34,7 @@ class Config {
 
     this.environment = env.name;
     this.hosts = env.hosts;
+    Object.values(this.hosts).forEach((host) => host.base = this._buildUrl(host));
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
@@ -48,6 +49,9 @@ class Config {
     }
   }
 
+  /**
+   * Returns true if development mode is active.
+   */
   isDevMode() {
     return this.environment === ENV_DEV;
   }
@@ -113,9 +117,9 @@ class Config {
 
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
-      'playground': this._buildUrl(this.hosts.playground),
-      'platform': this._buildUrl(this.hosts.platform),
-      'api': this._buildUrl(this.hosts.api),
+      'playground': this.hosts.playground.base,
+      'platform': this.hosts.platform.base,
+      'api': this.hosts.api.base,
     };
 
     // Deployment specific

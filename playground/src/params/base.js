@@ -20,7 +20,8 @@ class Params {
   }
 
   get(key, alt) {
-    const params = new URLSearchParams(this.win.location.hash.slice(1));
+    const params = new URLSearchParams(this.win.location.search);
+    console.log('params', params);
     let result = params.get(key);
     if (!result) {
       result = alt;
@@ -37,7 +38,7 @@ class Params {
   }
 
   _newLocation(key, value) {
-    const params = new URLSearchParams(this.win.location.hash.slice(1));
+    const params = new URLSearchParams(this.win.location.search);
     if (value) {
       params.set(key, value);
     } else {
