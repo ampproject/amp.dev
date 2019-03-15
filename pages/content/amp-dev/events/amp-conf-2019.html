@@ -117,6 +117,7 @@ section_links:
                   {% if speaker %}
                     <amp-img class="ap-m-agenda-item-image" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                   {% endif %}
+
                   {% if agenda_item.speakers %}
                     {% for speaker in agenda_item.speakers %}
                       <amp-img class="ap-m-agenda-item-image multiple" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
@@ -125,8 +126,16 @@ section_links:
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
                   <div class="ap-m-agenda-item-description {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
                   <div class="ap-m-agenda-item-description-title">{{ agenda_item.title }}</div>
+
                   {% if speaker %}
-                    <div class="ap-m-agenda-item-description-speaker">{{ speaker.name }}</div>
+                    <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                  {% elif agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
+                      </br>
+                    {% endfor %}
+                  {% else %}
                   {% endif %}
 
                   {% if agenda_item.description %}
@@ -142,11 +151,42 @@ section_links:
         <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">Day 2</div>
         <div class="ap-o-agenda">
           <div class="ap--container">
-            <ul class="ap-o-agenda-content-list conf">
-              {% for agenda_item in doc.ampconf.agenda.day_2 %}
+             <ul class="ap-o-agenda-content-list conf">
+              {% for agenda_item in doc.ampconf.agenda.day_1 %}
+
+                {% if agenda_item.speaker %}
+                  {% set speaker = doc.ampconf.speakers[agenda_item.speaker] %}
+                {% endif %}
+
                 <li class="ap-m-agenda-item">
+                  {% if speaker %}
+                    <amp-img class="ap-m-agenda-item-image" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                  {% endif %}
+
+                  {% if agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <amp-img class="ap-m-agenda-item-image multiple" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                    {% endfor %}
+                  {% endif %}
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
-                  <div class="ap-m-agenda-item-title">{{ agenda_item.title }}</div>
+                  <div class="ap-m-agenda-item-description {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title">{{ agenda_item.title }}</div>
+
+                  {% if speaker %}
+                    <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                  {% elif agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
+                      </br>
+                    {% endfor %}
+                  {% else %}
+                  {% endif %}
+
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+                  </div>
                 </li>
               {% endfor %}
             </ul>
