@@ -1,0 +1,40 @@
+/*
+
+#############################
+### ORGANISM: card-grid ########
+#############################
+
+*/
+
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{utility('card-grid')} {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 600px) {
+
+  }
+
+}
+.#{organism('card-grid')} {
+
+  h1 {
+    color: red;
+  }
+
+  .test {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+
+}

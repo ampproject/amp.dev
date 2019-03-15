@@ -15,13 +15,88 @@ flyout:
 cms: !g.yaml /content/shared/data/cms.yaml
 ---
 <h1>Build with AMP websites</h1>
-
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>But you can use AMP to build one of these:</p>
 {% do doc.styles.addCssFile('/css/components/molecules/format-cards.css') %}
-<div class="ap-m-format-cards">
-  <div>
-    <div class="ap-a-ico">
+<section class="ap--format-cards">
+  <div class="ap-m-format-card">
+    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-stories">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
+    </div>
+    <h4 class="ap-m-format-card-headline">AMP Stories</h4>
+    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">View Documentation</span>
+      </a>
     </div>
   </div>
-</div>
+  <div class="ap-m-format-card">
+    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-ads">
+      {% do doc.icons.useIcon('/icons/logo.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads"></use></svg>
+    </div>
+    <h4 class="ap-m-format-card-headline">AMP Ads</h4>
+    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">View Documentation</span>
+      </a>
+    </div>
+  </div>
+  <div class="ap-m-format-card">
+    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-emails">
+      {% do doc.icons.useIcon('/icons/logo.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
+    </div>
+    <h4 class="ap-m-format-card-headline">AMP Emails</h4>
+    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">View Documentation</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<h2>AMP's development workflow</h2>
+{% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
+<section class="ap-o-card-grid">
+  <div class="ap-m-format-card">
+    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-emails">
+      {% do doc.icons.useIcon('/icons/logo.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
+    </div>
+    <h4 class="ap-m-format-card-headline">AMP Emails</h4>
+    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">View Documentation</span>
+      </a>
+    </div>
+    <div class="bottom-line">
+
+    </div>
+  </div>
+</section>

@@ -13,8 +13,73 @@
 
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
+.#{utility('format-cards')} {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-.#{molecule('format-cards')} {
-  @include txt-font-accent;
-  background: red;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+.#{molecule('format-card')} {
+  box-shadow: shadows('regular');
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin: 20px 0;
+  max-width: 100%;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 600px) {
+    max-width: 32%;
+  }
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+  @media (min-width: 1024px) {
+    max-width: 32%;
+  }
+
+  &-icon {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    &-stories {
+      @include gradient-stories;
+    }
+    &-ads {
+      @include gradient-ads;
+      fill: white;
+    }
+    &-emails {
+      @include gradient-e-mails;
+    }
+
+    svg {
+      width: 50%;
+    }
+  }
+  &-headline {
+    @include txt-font-accent;
+    margin: auto auto 35px 40px;
+  }
+  .ap-m-lnk {
+    padding: 0;
+    margin-left: -5px;
+  }
 }
