@@ -75,7 +75,7 @@ Optional style guidelines (puts the form inside a card; see screenshot below):
 
 Once you have finished, your page should look like this:
 
-{{ image('/static/img/courses/beginner/image3.png', 309, 551, caption='The subscription form') }}
+{{ image('/static/img/courses/intermediate/image3.png', 309, 551, caption='The subscription form') }}
 
 ### Solution
 
@@ -102,8 +102,7 @@ Once you have finished, your page should look like this:
 Remember to include the `<amp-form>` script in the `<head>`:
 
 [sourcecode:html]
-{% raw %}
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+{% raw %}<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Using Templates To Give Feedback
@@ -114,24 +113,24 @@ At this point, our subscription form submits the user’s name and email, but th
 
 The contents of elements tagged with submit-success and `submit-error` are treated differently by AMP than the contents of other components we’ve seen and used so far. That is because these elements contain templates. Templates are a way to convert dynamic data (usually generated from a server) into pieces of HTML that get inserted into the page.
 
-The most common type of template used in AMP pages is  [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). This is based on the Mustache.js syntax. You can think of mustache templates as "Mad Libs" for websites. Mad Libs are stories in which certain words are missing and have to be supplied by the reader. For example, given the phrase "there are many {{adjective}} ways to pick a {{noun}} to read," a reader could choose the words "useful" and "magazine" and turn the phrase into "there are many useful ways to pick a magazine to read." (Usually, the results are a lot goofier, but we’ll try to keep it professional here.)
+The most common type of template used in AMP pages is [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). This is based on the Mustache.js syntax. You can think of mustache templates as "Mad Libs" for websites. Mad Libs are stories in which certain words are missing and have to be supplied by the reader. For example, given the phrase "there are many `{{adjective}}` ways to pick a `{{noun}}` to read," a reader could choose the words "useful" and "magazine" and turn the phrase into "there are many useful ways to pick a magazine to read." (Usually, the results are a lot goofier, but we’ll try to keep it professional here.)
 
-Similarly, mustache templates describe HTML content in which sections are missing and need to be filled in with information from a server. The templates are written in HTML, and the missing sections are identified by {{}} mustache braces. When data arrives from the server and the template is evaluated by AMP, the mustache variables are replaced with information from the server. The resultant HTML is displayed on the screen in the place where the template was defined.
+Similarly, mustache templates describe HTML content in which sections are missing and need to be filled in with information from a server. The templates are written in HTML, and the missing sections are identified by `{ { } }` mustache braces. When data arrives from the server and the template is evaluated by AMP, the mustache variables are replaced with information from the server. The resultant HTML is displayed on the screen in the place where the template was defined.
 
 For example, when given the following data:
 
-[sourcecode:html]
-{% raw %}{
-  "name": "Bob",
-  "job": "builder"
+[sourcecode:json]
+{
+    "name": "Bob",
+    "job": "builder"
 }
-{% endraw %}[/sourcecode]
+[/sourcecode]
 
 And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-    <p>{{name}} is an excellent {{job}}!</p>
+<p>{{name}} is an excellent {{job}}!</p>
 </template>
 {% endraw %}[/sourcecode]
 
@@ -143,25 +142,25 @@ The following HTML is generated:
 
 Mustache variables can replace more than just text. You can use mustache variables in the values of attributes as well. This is useful in defining the URL of an image. For example, when given the following data:
 
-[sourcecode:html]
-{% raw %}{
-  "description": "Picture of a tiger",
-  "url": "tiger.jpg",
-  "width": 200,
-  "height": 200
+[sourcecode:json]
+{
+    "description": "Picture of a tiger",
+    "url": "tiger.jpg",
+    "width": 200,
+    "height": 200
 }
-{% endraw %}[/sourcecode]
+[/sourcecode]
 
 And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-    <amp-img alt="{{description}}"
+<amp-img alt="{{description}}"
         src="images/{{url}}"
         width="{{width}}"
         height="{{height}}"
         layout="responsive">
-    </amp-img>
+</amp-img>
 </template>
 {% endraw %}[/sourcecode]
 
