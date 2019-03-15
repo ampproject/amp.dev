@@ -180,4 +180,57 @@ The results will look like this:
 
 ## Exercise 4: Confirming Newsletter Subscriptions
 
+Now it’s time to add success and error handling to our subscription form as well. Use the [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) and [Success/Error Response Rendering]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) documentation to add success and error messages to your subscription form that meet the following requirements:
+
+* The success message should thank the user by name for subscribing. HINT: The property from the server response to use in the template is {{name}}.
+
+* The error message should simply tell the user there was an error submitting their response
+
+Recommended style guidelines:
+
+* Wrap both messages in a paragraph element with the class form-submit-response
+
+Once you have finished, the result should look like this:
+
+{{ image('/static/img/courses/intermediate/image8.png', 310, 549, caption='Successful subscription message') }}
+
 ### Solution
+
+[sourcecode:html]
+{% raw %}<div class="subscribe-card-container">
+    <div class="subscribe-card">
+        <form method="post" class="main-form" action-xhr="/submit-form"
+            target="_top">
+            <div class="input">
+                <input type="text" name="name" id="form-name" required>
+                <label for="form-name">Name:</label>
+            </div>  
+            <div class="input">
+                 <input type="email" name="email" id="form-email" required>
+                  <label for="form-email">Email:</label>  
+            </div>
+            <input type="submit" value="Subscribe" class="btn">
+            <div submit-success>
+                <template type="amp-mustache">
+                    <p class="form-submit-response">
+                        Success! Thanks {{name}} for subscribing!                          
+                    </p>
+                </template>
+            </div>
+            <div submit-error>
+                <template type="amp-mustache">
+                    <p class="form-submit-response">
+                      Oops! Sorry, there was an error.
+                    </p>
+                </template>
+            </div>
+        </form>   
+    </div>
+</div>
+{% endraw %}[/sourcecode]
+
+Remember to include the amp-mustache library in the `<head>`:
+
+[sourcecode:html]
+{% raw %}<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+{% endraw %}[/sourcecode]
