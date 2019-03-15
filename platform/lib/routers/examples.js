@@ -18,7 +18,7 @@
 
 const express = require('express');
 
-const examplesBackend = require('@examples/backend');
+const examplesApi = require('@examples/api');
 const utils = require('@lib/utils');
 
 const SAMPLE_MANUALS_ROUTE = '/documentation/examples';
@@ -29,7 +29,7 @@ const EMBEDS_DEST = utils.project.absolute('/dist/examples/embeds');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.use(`${SAMPLE_MANUALS_ROUTE}/api`, examplesBackend);
+examples.use(`${SAMPLE_MANUALS_ROUTE}/api`, examplesApi);
 
 examples.use(`${SAMPLE_MANUALS_ROUTE}/*/source(/)?:sectionId?`, (request, response, next) => {
   // request.params[0] contains the sample path without SAMPLE_MANUALS_ROUTE

@@ -17,11 +17,13 @@
 'use strict';
 
 const express = require('express');
+const {setNoCache} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
 examples.get('/time', (request, response) => {
+  setNoCache(response);
   response.json({
     time: new Date().toLocaleTimeString(),
   });

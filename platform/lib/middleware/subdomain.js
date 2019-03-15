@@ -19,7 +19,6 @@
 const express = require('express');
 const signale = require('signale');
 const fetch = require('node-fetch');
-const cors = require('cors');
 const ampCors = require('amp-toolbox-cors');
 
 const config = require('@lib/config.js');
