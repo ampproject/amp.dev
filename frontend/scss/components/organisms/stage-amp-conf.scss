@@ -22,6 +22,8 @@
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   background-color: color('carnation');
   background-image: url("/static/img/amp-conf/sakura.png");
+  background-repeat: no-repeat;
+  background-position: right;
 
   @media (min-width: 768px) {
     margin-left: 64px;
