@@ -150,7 +150,7 @@
         {% endif %}
 
         {% if has_playground %}
-        {% set playground_url = podspec.base_urls.playground + doc.source %}
+        {% set playground_url = podspec.base_urls.playground + '/#url=' + podspec.base_urls.preview + doc.source %}
         <a class="ap-a-btn ap--playground-link {% if has_demo %}ap--playground-link-hollow{% endif %}" href="{{ playground_url }}">{{ _('Open in playground') }}</a>
         {% endif %}
       </div>
