@@ -68,7 +68,7 @@
     "@babel/plugin-transform-runtime": "7.3.4",
     "@babel/preset-env": "7.3.4",
     "@babel/runtime": "7.3.4",
-    "@octokit/rest": "16.18.1",
+    "@octokit/rest": "16.19.0",
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.5",
     "babel-eslint": "10.0.1",
