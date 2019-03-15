@@ -21,7 +21,6 @@ class Params {
 
   get(key, alt) {
     const params = new URLSearchParams(this.win.location.search);
-    console.log('params', params);
     let result = params.get(key);
     if (!result) {
       result = alt;
