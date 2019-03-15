@@ -125,8 +125,8 @@ class Platform {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(subdomain.map(config.hosts.preview.subdomain, routers.example.embeds));
-    this.server.use(subdomain.map(config.hosts.preview.subdomain, routers.example.sources));
+    this.server.use(subdomain.map(config.hosts.preview, routers.example.embeds));
+    this.server.use(subdomain.map(config.hosts.preview, routers.example.sources));
     this.server.use(routers.static);
     this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all

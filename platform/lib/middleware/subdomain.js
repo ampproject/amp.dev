@@ -21,6 +21,13 @@ const express = require('express');
 const signale = require('signale');
 
 class Subdomain {
+
+  constructor() {
+    // Stores subdomain apps started during development to be able
+    // to register multiple routers to them
+    this.subdomainApps_ = {};
+  }
+
   /**
    * Creates a subdomain middleware matching subdomain
    * requests to the router.
@@ -36,11 +43,18 @@ class Subdomain {
   }
 
   startDevServer_(hostConfig, router) {
-    const subdomainApp = express();
+    let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
+    if (!subdomainApp) {
+      subdomainApp = express();
+      subdomainApp.listen(hostConfig.port, () => {
+        signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+      });
+
+      this.subdomainApps_[hostConfig.subdomain] = subdomainApp;
+    }
+
     subdomainApp.use(router);
-    subdomainApp.listen(hostConfig.port, () => {
-      signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
-    });
+
     // return a dummy middleware
     return (request, response, next) => next();
   }
