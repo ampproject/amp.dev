@@ -1,0 +1,47 @@
+/*
+
+######################
+### MOLECULE: ampconf-location ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_color.scss';
+
+.#{molecule('conf-event')} {
+  margin: 15px;
+  width: 100%;
+  min-width: 250px;
+
+  @media (min-width: 768px) {
+    width: calc(33% - 30px);
+  }
+
+  &-detail {
+    @include ampconf-events-shadow;
+    background: color('white');
+    padding: 20px;
+
+    &-info {
+      @include hl;
+      line-height: 33px;
+      margin-bottom: 0;
+
+      &.link {
+        color: color('blue-ribbon');
+      }
+
+      &.secondary {
+        color: fade_out(color('black'), 0.7);
+      }
+    }
+
+  }
+
+}
