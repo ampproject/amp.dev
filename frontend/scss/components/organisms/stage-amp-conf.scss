@@ -21,6 +21,7 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   background-color: color('carnation');
+  background-image: url("/static/img/amp-conf/sakura.png");
 
   @media (min-width: 768px) {
     margin-left: 64px;
@@ -42,6 +43,7 @@
 	&-content {
     position: relative;
     margin: 10vw 0 22vw;
+
 
     @media (min-width: 768px) {
       grid-column: 3 / 13;

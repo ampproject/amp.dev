@@ -1,0 +1,46 @@
+/*
+
+######################
+### MOLECULE: ampconf-location ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+
+.#{molecule('conf-speaker')} {
+  max-width: 150px;
+  margin: 20px 10px;
+
+  @media (min-width: 768px) {
+    margin: 45px;
+  }
+
+  &-image {
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &-name {
+    @include txt;
+    @include txt-font-accent;
+    @include txt-lrg;
+  }
+
+  &-company {
+    @include txt;
+  }
+
+}
