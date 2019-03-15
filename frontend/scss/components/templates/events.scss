@@ -56,6 +56,10 @@
         @include txt;
         @include txt-lrg;
         grid-column: 6 / 18;
+
+        &-disclaimer {
+          @include txt-1;
+        }
       }
 
       &-wide {
@@ -69,6 +73,10 @@
         }
       }
 
+      &-x-wide {
+        grid-column: 4 / 22;
+      }
+
   }
 
   .#{utility('stage')} {
@@ -76,12 +84,17 @@
   }
 
   .#{utility('container-agenda')} {
-    padding: 0;
+    padding-top: 50px;
     padding-left: 20px;
 
     @media (min-width: 768px) {
-      padding: 0 20px;
+      padding: 50px 20px 0;
     }
+  }
+
+  .#{utility('scheudle-selector')} {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .#{utility('stage')} {
