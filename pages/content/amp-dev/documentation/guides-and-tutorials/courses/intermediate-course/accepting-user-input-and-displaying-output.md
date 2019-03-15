@@ -16,7 +16,7 @@ Studies show that every dollar spent on email marketing corresponds to several d
 
 - If the form submission succeeds, a welcome message with the user’s name should be displayed.
 
-In a non-AMP page, we might reach for a basic HTML form element to collect our users’ information. AMP provides an [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) component, but this component actually uses the element name “form” as well. So, what’s the difference?
+In a non-AMP page, we might reach for a basic HTML form element to collect our users’ information. AMP provides an [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) component, but this component actually uses the element name "form" as well. So, what’s the difference?
 
 In this section, we’ll explore what a traditional website form is, how AMP forms differ from traditional forms, and how to handle the response from the server when submitting AMP forms.
 
@@ -102,7 +102,8 @@ Once you have finished, your page should look like this:
 Remember to include the `<amp-form>` script in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+{% raw %}
+<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Using Templates To Give Feedback
@@ -113,7 +114,7 @@ At this point, our subscription form submits the user’s name and email, but th
 
 The contents of elements tagged with submit-success and `submit-error` are treated differently by AMP than the contents of other components we’ve seen and used so far. That is because these elements contain templates. Templates are a way to convert dynamic data (usually generated from a server) into pieces of HTML that get inserted into the page.
 
-The most common type of template used in AMP pages is  [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). This is based on the Mustache.js syntax. You can think of mustache templates as “Mad Libs” for websites. Mad Libs are stories in which certain words are missing and have to be supplied by the reader. For example, given the phrase “there are many {{adjective}} ways to pick a {{noun}} to read,” a reader could choose the words “useful” and “magazine” and turn the phrase into “there are many useful ways to pick a magazine to read.” (Usually, the results are a lot goofier, but we’ll try to keep it professional here.)
+The most common type of template used in AMP pages is  [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). This is based on the Mustache.js syntax. You can think of mustache templates as "Mad Libs" for websites. Mad Libs are stories in which certain words are missing and have to be supplied by the reader. For example, given the phrase "there are many {{adjective}} ways to pick a {{noun}} to read," a reader could choose the words "useful" and "magazine" and turn the phrase into "there are many useful ways to pick a magazine to read." (Usually, the results are a lot goofier, but we’ll try to keep it professional here.)
 
 Similarly, mustache templates describe HTML content in which sections are missing and need to be filled in with information from a server. The templates are written in HTML, and the missing sections are identified by {{}} mustache braces. When data arrives from the server and the template is evaluated by AMP, the mustache variables are replaced with information from the server. The resultant HTML is displayed on the screen in the place where the template was defined.
 
@@ -121,8 +122,8 @@ For example, when given the following data:
 
 [sourcecode:html]
 {% raw %}{
-  “name”: “Bob”,
-  “job”: “builder”
+  "name": "Bob",
+  "job": "builder"
 }
 {% endraw %}[/sourcecode]
 
@@ -144,10 +145,10 @@ Mustache variables can replace more than just text. You can use mustache variabl
 
 [sourcecode:html]
 {% raw %}{
-  “description”: “Picture of a tiger”,
-  “url”: “tiger.jpg”,
-  “width”: 200,
-  “height”: 200
+  "description": "Picture of a tiger",
+  "url": "tiger.jpg",
+  "width": 200,
+  "height": 200
 }
 {% endraw %}[/sourcecode]
 
