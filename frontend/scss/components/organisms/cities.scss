@@ -16,12 +16,9 @@
 @import 'components/atoms/_text.scss';
 
 .#{organism('cities')} {
-  position: relative;
-  width: 100%;
   margin-top: 30px;
 
   @media (min-width: 768px) {
-    grid-column: 5 / 21;
     margin-top: 0px;
   }
 

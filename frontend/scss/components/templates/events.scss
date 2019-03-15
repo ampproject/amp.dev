@@ -35,6 +35,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    .copy {
+      grid-column: 7 / 18;
+    }
   }
 
   .#{utility('container')} {
@@ -46,7 +50,25 @@
   }
 
   .#{utility('content')} {
-    @include content;
+    @include default-section-padding;
+
+      &-default {
+        @include txt;
+        @include txt-lrg;
+        grid-column: 6 / 18;
+      }
+
+      &-wide {
+        grid-column: 5 / 21;
+        position: relative;
+        width: 100%;
+
+        &.row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
   }
 
   .#{utility('stage')} {
