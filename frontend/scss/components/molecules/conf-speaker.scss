@@ -15,11 +15,19 @@
 @import 'components/atoms/_color.scss';
 
 .#{molecule('conf-speaker')} {
-  max-width: 150px;
-  margin: 20px 10px;
+  max-width: 175px;
+  margin: 20px 5px;
+  padding: 20px 5px;
+
+  &:hover {
+    @include ampconf-speaker-shadow;
+    background: color('white');
+  }
 
   @media (min-width: 768px) {
-    margin: 45px;
+    max-width: 225px;
+    padding: 20px 30px;
+    margin: 15px;
   }
 
   &-image {

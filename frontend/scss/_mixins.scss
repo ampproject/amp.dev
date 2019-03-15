@@ -64,6 +64,10 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   box-shadow: 0 15px 25px -10px rgba(0,0,0,0.15);
 }
 
+@mixin ampconf-speaker-shadow {
+  box-shadow: 0 15px 25px 0 rgba(0,0,0,0.15);
+}
+
 @mixin flyout {
   box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
 }
