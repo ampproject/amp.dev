@@ -105,7 +105,7 @@ class SamplesBuilder {
       });
     }
 
-    if (!watch && config.environment == 'development' && module.parent) {
+    if (!watch && config.isDevMode() && module.parent) {
       this._watch();
     }
 

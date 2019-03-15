@@ -65,7 +65,7 @@ pipeline.clean();
 
   // In all other environments than development the build should be optimized
   // and tested to ensure it is working
-  if (config.environment !== 'development') {
+  if (!config.isDevMode()) {
     await pipeline.optimizeBuild();
     await pipeline.testBuild();
   }
@@ -74,7 +74,7 @@ pipeline.clean();
 })()
     .then(() => {
       // For development we also want to directly serve the current build
-      if (config.environment == 'development') {
+      if (config.isDevMode()) {
         new Platform().start();
       }
     })
