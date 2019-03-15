@@ -23,7 +23,7 @@
       "port": ""
     },
     "preview": {
-      "scheme": "http",
+      "scheme": "https",
       "subdomain": "preview-dot-amp-dev-staging",
       "host": "appspot.com",
       "port": ""
