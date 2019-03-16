@@ -203,14 +203,27 @@ section_links:
   </div>
   <div class="ap--content-x-wide ap--scheudle-selector">
       {% do doc.styles.addCssFile('css/components/molecules/conf-speaker.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/lightbox.css') %}
+
       {% for speaker in doc.ampconf.speakers %}
         {% if doc.ampconf.speakers[speaker] %}
-          {% set speaker = doc.ampconf.speakers[speaker] %}
-          <div class="ap-m-conf-speaker">
-            <amp-img class="ap-m-conf-speaker-image" src="{{ speaker.pic }}" layout="fixed" height="150" width="150"></amp-img>
+          {% set speaker_info = doc.ampconf.speakers[speaker] %}
+          <div class="ap-m-conf-speaker" on="tap:lightbox-{{ speaker }}" role="button" tabindex="0">
+            <amp-lightbox id="lightbox-{{ speaker }}" layout="nodisplay">
+              <div class="ap-m-lightbox" role="button" on="tap:lightbox-{{ speaker }}.close" tabindex="0">
+                <div class="ap-m-lightbox-content">
+                  <h4 class="ap-m-lightbox-headline">{{ speaker_info.name }}</h4>
+                  <h4 class="ap-m-lightbox-headline">{{ speaker_info.company }}</h4>
+                  {% if speaker_info.bio %}
+                    <p class="ap-m-lightbox-bio">{{ speaker_info.bio }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </amp-lightbox>
+            <amp-img class="ap-m-conf-speaker-image" src="{{ speaker_info.pic }}" layout="fixed" height="150" width="150"></amp-img>
             <div class="ap-m-conf-speaker-info">
-              <span class="ap-m-conf-speaker-name">{{ speaker.name }}</span>
-              <span class="ap-m-conf-speaker-company">{{ speaker.company }}</span>
+              <span class="ap-m-conf-speaker-name">{{ speaker_info.name }}</span>
+              <span class="ap-m-conf-speaker-company">{{ speaker_info.company }}</span>
             </div>
           </div>
         {% endif %}
