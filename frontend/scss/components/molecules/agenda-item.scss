@@ -33,11 +33,40 @@
     }
 
     &.multiple {
+      position: absolute;
+
       &:nth-child(1) {
-        position: absolute;
-        margin-left: -80px;
-        margin-top: -45px;
+        margin-top: -35px;
       }
+
+      &:nth-child(odd) {
+        margin-left: -90px;
+      }
+
+      &:nth-child(even) {
+        margin-left: -55px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 35px;
+      }
+
+      &:nth-child(4) {
+        margin-top: 70px;
+      }
+
+      &:nth-child(5) {
+        margin-top: 105px;
+      }
+
+      &:nth-child(6) {
+        margin-top: 140px;
+      }
+
+      &:nth-child(7) {
+        margin-top: 175px;
+      }
+
     }
 
   }
@@ -62,24 +91,26 @@
       content: '';
       position: absolute;
       border-radius: 50%;
-      left: -10px;
-      background: color('white');
-      height: 14px;
-      width: 14px;
-      border: 2px solid color('blue-ribbon');
-      margin-top: 3px;
+      margin-top: 8px;
+      height: 8px;
+      width: 8px;
+      left: -5px;
+      background: color('blue-ribbon');
     }
 
+    &.session, &.keynote, &.panel {
+
+      &:before {
+        left: -10px;
+        background: color('white');
+        height: 14px;
+        width: 14px;
+        border: 2px solid color('blue-ribbon');
+      }
+    }
 
     &.break {
       color: fade_out(color('charade'), 0.5);
-
-      &:before {
-        height: 8px;
-        width: 8px;
-        left: -7px;
-        background: color('blue-ribbon');
-      }
     }
 
     &.keynote {
