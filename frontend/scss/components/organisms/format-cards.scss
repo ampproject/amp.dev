@@ -13,6 +13,7 @@
 
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
+
 .#{utility('format-cards')} {
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
   }
 
   &-card {
-    box-shadow: shadows('regular');
+    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.07);
     border-radius: 10px;
     padding: 15px 25px;
     margin: 20px 0;

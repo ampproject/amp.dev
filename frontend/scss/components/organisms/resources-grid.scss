@@ -45,7 +45,12 @@
     border-radius: 10px;
     padding: 25px 20px;
     background-color: color('white');
-    box-shadow: shadows('regular');
+    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.07);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
 
     @media (min-width: 600px) {
       max-width: 32%;
