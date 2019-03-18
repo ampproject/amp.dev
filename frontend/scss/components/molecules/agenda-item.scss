@@ -85,7 +85,7 @@
     position: relative;
     width: 80%;
     border-left: 2px solid color('blue-ribbon');
-    padding: 7px 0 7px 25px;
+    padding: 13.5px 0 13.5px 25px;
 
     &:before {
       content: '';
@@ -109,10 +109,6 @@
       }
     }
 
-    &.break {
-      color: fade_out(color('charade'), 0.5);
-    }
-
     &.keynote {
       color: color('blue-ribbon');
     }
@@ -122,6 +118,10 @@
       @include txt-lrg;
       @include txt-font-accent;
       color: color('charade');
+
+      &.break {
+        color: fade_out(color('charade'), 0.5);
+      }
     }
 
     &-text {

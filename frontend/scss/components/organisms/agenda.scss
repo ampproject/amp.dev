@@ -15,6 +15,7 @@
 @import 'components/atoms/_headline.scss';
 @import 'components/atoms/_text.scss';
 
+
 .#{organism('agenda')} {
   @include agenda-list-shadow;
 
@@ -41,16 +42,20 @@
       margin-bottom: 0;
       flex-grow: 1;
       outline: none;
+      color: fade_out(color('limed-spruce'), 0.57);
+      background: color('athens-gray');
 
       &+.#{organism('agenda')} {
         display: none;
       }
 
       &[option][selected] {
+        @include agenda-button-shadow;
         outline: none;
         border: none;
         color: color('white');
         background: color('carnation');
+        border-radius: 4px 4px 0 0;
 
         &+.#{organism('agenda')} {
           display: block;

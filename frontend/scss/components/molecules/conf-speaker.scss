@@ -45,10 +45,13 @@
     @include txt;
     @include txt-font-accent;
     @include txt-lrg;
+    margin: 8px 0 0;
   }
 
   &-company {
     @include txt;
+    margin: 0;
+    line-height: 20px;
   }
 
 }

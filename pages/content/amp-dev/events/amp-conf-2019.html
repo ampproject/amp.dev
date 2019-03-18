@@ -66,7 +66,7 @@ section_links:
     {% do doc.styles.addCssFile('css/components/molecules/conf-event.css') %}
 
       <div class="ap-m-conf-event">
-        <h4>When</h4>
+        <h3>When</h3>
         <div class="ap-m-conf-event-detail">
           <p class="ap-m-conf-event-detail-info">April 17 & 18</p>
           <p class="ap-m-conf-event-detail-info secondary">2019</p>
@@ -74,7 +74,7 @@ section_links:
       </div>
 
       <div class="ap-m-conf-event">
-        <h4>Where</h4>
+        <h3>Where</h3>
         <div class="ap-m-conf-event-detail">
           <a href="http://forum.academyhills.com/roppongi/en/" class="ap-m-conf-event-detail-info link">Roppongir Academy Hills</a>
           <p class="ap-m-conf-event-detail-info">Tokyo</p>
@@ -82,7 +82,7 @@ section_links:
       </div>
 
       <div class="ap-m-conf-event">
-        <h4>For</h4>
+        <h3>For</h3>
         <div class="ap-m-conf-event-detail">
           <p class="ap-m-conf-event-detail-info">Developers & </br> Designers</p>
         </div>
@@ -115,17 +115,17 @@ section_links:
 
                 <li class="ap-m-agenda-item">
                   {% if speaker %}
-                    <amp-img class="ap-m-agenda-item-image" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                    <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                   {% endif %}
 
                   {% if agenda_item.speakers %}
                     {% for speaker in agenda_item.speakers %}
-                      <amp-img class="ap-m-agenda-item-image multiple" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                     {% endfor %}
                   {% endif %}
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
-                  <div class="ap-m-agenda-item-description {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
-                  <div class="ap-m-agenda-item-description-title">{{ agenda_item.title }}</div>
+                  <div class="ap-m-agenda-item-description">
+                  <div class="ap-m-agenda-item-description-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
 
                   {% if speaker %}
                     <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
@@ -160,17 +160,17 @@ section_links:
 
                 <li class="ap-m-agenda-item">
                   {% if speaker %}
-                    <amp-img class="ap-m-agenda-item-image" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                    <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                   {% endif %}
 
                   {% if agenda_item.speakers %}
                     {% for speaker in agenda_item.speakers %}
-                      <amp-img class="ap-m-agenda-item-image multiple" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                     {% endfor %}
                   {% endif %}
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
-                  <div class="ap-m-agenda-item-description {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
-                  <div class="ap-m-agenda-item-description-title">{{ agenda_item.title }}</div>
+                  <div class="ap-m-agenda-item-description">
+                  <div class="ap-m-agenda-item-description-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
 
                   {% if speaker %}
                     <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
@@ -220,7 +220,7 @@ section_links:
                 </div>
               </div>
             </amp-lightbox>
-            <amp-img class="ap-m-conf-speaker-image" src="{{ speaker_info.pic }}" layout="fixed" height="150" width="150"></amp-img>
+            <amp-img class="ap-m-conf-speaker-image" alt="Profile pciture for {{ speaker_info.name }}" src="{{ speaker_info.pic }}" layout="fixed" height="150" width="150"></amp-img>
             <div class="ap-m-conf-speaker-info">
               <h4 id="{{ speaker }}" class="ap-m-conf-speaker-name">{{ speaker_info.name }}</h4>
               <p class="ap-m-conf-speaker-company">{{ speaker_info.company }}</p>
@@ -276,3 +276,16 @@ section_links:
     </div>
   </div>
 </section>
+
+<section class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/ampconf-footer.css') %}
+    <ul class="ap-o-ampconf-footer row">
+      <li class="ap-o-ampconf-footer-item">
+      <a href="{{g.doc('/content/amp-dev/events/amp-conf/code-of-conduct.html', locale=doc.locale).url.path}}">Code of Conduct</li>
+      <li class="ap-o-ampconf-footer-item">
+      <a href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</li>
+      <li class="ap-o-ampconf-footer-item">
+      <a href="mailto:amp-conf@google.com">Contact</li>
+    </ul>
+</section>
+

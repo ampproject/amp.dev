@@ -17,10 +17,10 @@
 .#{molecule('conf-event')} {
   margin: 15px;
   width: 100%;
-  min-width: 250px;
+  min-width: 210px;
 
   @media (min-width: 768px) {
-    width: calc(33% - 30px);
+    width: auto;
   }
 
   &-detail {
@@ -30,6 +30,7 @@
 
     &-info {
       @include hl;
+      @include hl-h4;
       line-height: 33px;
       margin-bottom: 0;
 
