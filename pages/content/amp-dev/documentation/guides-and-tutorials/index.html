@@ -14,18 +14,20 @@ flyout:
   icon: guides-documents
 cms: !g.yaml /content/shared/data/cms.yaml
 ---
-<h1>Build with AMP websites</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<p>But you can use AMP to build one of these:</p>
-{% do doc.styles.addCssFile('/css/components/molecules/format-cards.css') %}
+
+
+{% do doc.styles.addCssFile('/css/components/organisms/format-cards.css') %}
 <section class="ap--format-cards">
-  <div class="ap-m-format-card">
-    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-stories">
+  <h1 class="ap-o-format-cards-text">Build with AMP websites</h1>
+  <p class="ap-o-format-cards-text">Here you can find everything you need to build AMP experiences. The sidebar on the left shows you all resources for building <strong>AMP websites.</strong></p>
+  <p class="ap-o-format-cards-text">But you can also use AMP to build one of these:</p>
+  <div class="ap-o-format-cards-card">
+    <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-stories">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
     </div>
-    <h4 class="ap-m-format-card-headline">AMP Stories</h4>
-    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <h4 class="ap-o-format-cards-card-headline">AMP Stories</h4>
+    <p class="ap-o-format-cards-card-copy">Create snackable, immersive and immediate stories on your website</p>
     <div class="ap-o-sampler-link">
       <a href=""[href]="sampler[activeSample].standaloneUrl"
         class="ap-m-lnk">
@@ -37,13 +39,13 @@ cms: !g.yaml /content/shared/data/cms.yaml
       </a>
     </div>
   </div>
-  <div class="ap-m-format-card">
-    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-ads">
+  <div class="ap-o-format-cards-card">
+    <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-ads">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads"></use></svg>
     </div>
-    <h4 class="ap-m-format-card-headline">AMP Ads</h4>
-    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <h4 class="ap-o-format-cards-card-headline">AMP Ads</h4>
+    <p class="ap-o-format-cards-card-copy">Create snackable, immersive and immediate stories on your website</p>
     <div class="ap-o-sampler-link">
       <a href=""[href]="sampler[activeSample].standaloneUrl"
         class="ap-m-lnk">
@@ -55,8 +57,8 @@ cms: !g.yaml /content/shared/data/cms.yaml
       </a>
     </div>
   </div>
-  <div class="ap-m-format-card">
-    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-emails">
+  <div class="ap-o-format-cards-card">
+    <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-emails">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
     </div>
@@ -75,16 +77,16 @@ cms: !g.yaml /content/shared/data/cms.yaml
   </div>
 </section>
 
-<h2>AMP's development workflow</h2>
 {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
-<section class="ap-o-card-grid">
-  <div class="ap-m-format-card">
-    <div class="ap-a-ico ap-m-format-card-icon ap-m-format-card-icon-emails">
-      {% do doc.icons.useIcon('/icons/logo.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
+<section class="ap--card-grid">
+  <h2 class="ap-o-card-grid-text">AMP's development workflow</h2>
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/start.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#start"></use></svg>
     </div>
-    <h4 class="ap-m-format-card-headline">AMP Emails</h4>
-    <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
+    <h4 class="ap-o-card-grid-card-headline">Start</h4>
+    <p class="ap-o-card-grid-card-copy">Building a 'Hallo World' page and try adding your first interactive feature to an AMP page.</p>
     <div class="ap-o-sampler-link">
       <a href=""[href]="sampler[activeSample].standaloneUrl"
         class="ap-m-lnk">
@@ -92,11 +94,118 @@ cms: !g.yaml /content/shared/data/cms.yaml
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">View Documentation</span>
+        <span class="ap-m-lnk-text">Go</span>
       </a>
     </div>
-    <div class="bottom-line">
-
+  </div>
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/integration.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#integration"></use></svg>
     </div>
+    <h4 class="ap-o-card-grid-card-headline">Integrate</h4>
+    <p class="ap-o-card-grid-card-copy">Combine your pages with non-AMP pages, a PWA, native apps and more.</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Go</span>
+      </a>
+    </div>
+  </div>
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/learn.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#learn"></use></svg>
+    </div>
+    <h4 class="ap-o-card-grid-card-headline">Learn</h4>
+    <p class="ap-o-card-grid-card-copy">Get to know how AMP is different and acquire the fundamentals for how AMP works.</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Go</span>
+      </a>
+    </div>
+  </div>
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon ap-o-card-grid-card-icon-emails">
+      {% do doc.icons.useIcon('/icons/optimize.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#optimize"></use></svg>
+    </div>
+    <h4 class="ap-o-card-grid-card-headline">Optimize & Measure</h4>
+    <p class="ap-o-card-grid-card-copy">Make more out of your AMP pages through analytics, optimal delivery and caching.</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Go</span>
+      </a>
+    </div>
+  </div>
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/develop.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#develop"></use></svg>
+    </div>
+    <h4 class="ap-o-card-grid-card-headline">Develop</h4>
+    <p class="ap-o-card-grid-card-copy">Create every content, layout, and feature your website needs.</p>
+    <div class="ap-o-sampler-link">
+      <a href=""[href]="sampler[activeSample].standaloneUrl"
+        class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Go</span>
+      </a>
+    </div>
+  </div>
+  {% do doc.styles.addCssFile('/css/components/molecules/tip.css') %}
+  <div class="ap-o-card-grid-card ap-o-card-grid-card-tip">
+    <div class="ap-m-tip ap-m-tip-default">
+      <div class="ap-m-tip-content">
+        <h4>Using a CMS?</h4>
+        <p>AMP integrates with many publishing platforms and content management systems! Find the full list under <a href="">Platform and Vendor Partners.<a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/resources-grid.css') %}
+<section class="ap--resources-grid">
+  <h2 class="ap-o-resources-grid-text">Useful resources</h2>
+  <div class="ap-o-resources-grid-card">
+    <div class="ap-a-ico ap-o-resources-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/code.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+    </div>
+    <h4 class="ap-o-resources-grid-card-headline">Components</h4>
+    <p class="ap-o-resources-grid-card-copy">The complete documented AMP library and its referencees.</p>
+  </div>
+  <div class="ap-o-resources-grid-card">
+    <div class="ap-a-ico ap-o-resources-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/examples-flyout.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#examples-flyout"></use></svg>
+    </div>
+    <h4 class="ap-o-resources-grid-card-headline">Examples</h4>
+    <p class="ap-o-resources-grid-card-copy">The fastes way to learn is to peak over the tangible examples.</p>
+  </div>
+  <div class="ap-o-resources-grid-card">
+    <div class="ap-a-ico ap-o-resources-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/templates.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
+    </div>
+    <h4 class="ap-o-resources-grid-card-headline">Templates</h4>
+    <p class="ap-o-resources-grid-card-copy">Don't want to start from scratch? Start with a ready-made design.</p>
   </div>
 </section>

@@ -1,7 +1,7 @@
 /*
 
 #############################
-### ORGANISM: card-grid ########
+### ORGANISM: code-grid ########
 #############################
 
 */
@@ -15,14 +15,13 @@
 @import 'components/atoms/_headline.scss';
 @import 'components/atoms/_text.scss';
 
-.#{utility('card-grid')} {
+.#{utility('resources-grid')} {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 -30px;
   padding: 70px 90px;
-  background-color: color('white');
 
   @media (min-width: 600px) {
     flex-direction: row;
@@ -34,7 +33,7 @@
     flex-direction: row;
   }
 }
-.#{organism('card-grid')} {
+.#{organism('resources-grid')} {
   &-text {
     width: 100%;
   }
@@ -43,44 +42,34 @@
     margin: 20px 0;
     position: relative;
     width: 100%;
-    border-bottom: 1px solid color('alto');
+    border-radius: 10px;
+    padding: 25px 20px;
+    background-color: color('white');
+    box-shadow: shadows('regular');
 
     @media (min-width: 600px) {
-      max-width: 48%;
+      max-width: 32%;
     }
     @media (min-width: 768px) {
       max-width: 100%;
     }
     @media (min-width: 1024px) {
-      max-width: 47%;
+      max-width: 32%;
     }
 
     &-icon {
-      position: absolute;
-      height: 35px;
-      width: 35px;
-      fill: color('blue-ribbon');
+      height: 65px;
+      width: 65px;
+      margin: 25px 0px 35px 0;
     }
 
     &-headline {
       @include txt-font-accent;
-      margin: 30px 0 20px 50px;
+      // margin: 30px 0 20px 50px;
+      color: color('blue-ribbon');
     }
 
-    .ap-m-lnk {
-      padding: 0 0 10px 0;
-      width: 100%;
-    }
 
-    &-tip {
-      margin: 0 0 0 5%;
-      border: none;
-
-      .ap-m-tip {
-        margin-top: 0;
-        margin: 25px 0 0 0;
-      }
-    }
   }
 
 
