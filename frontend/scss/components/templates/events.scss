@@ -70,6 +70,10 @@
         &.row {
           display: flex;
           flex-wrap: wrap;
+
+          @media (min-width:768px) {
+            flex-wrap: nowrap;
+          }
         }
 
       }
