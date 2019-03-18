@@ -222,8 +222,8 @@ section_links:
             </amp-lightbox>
             <amp-img class="ap-m-conf-speaker-image" src="{{ speaker_info.pic }}" layout="fixed" height="150" width="150"></amp-img>
             <div class="ap-m-conf-speaker-info">
-              <span class="ap-m-conf-speaker-name">{{ speaker_info.name }}</span>
-              <span class="ap-m-conf-speaker-company">{{ speaker_info.company }}</span>
+              <h4 id="{{ speaker }}" class="ap-m-conf-speaker-name">{{ speaker_info.name }}</h4>
+              <p class="ap-m-conf-speaker-company">{{ speaker_info.company }}</p>
             </div>
           </div>
         {% endif %}
