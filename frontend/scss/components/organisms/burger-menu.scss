@@ -72,6 +72,10 @@
       &.mainmenuopen {
         z-index: 1003;
       }
+
+      & ~ .ap--main, ~ .ap--footer {
+        display: none;
+      }
     }
   }
 
