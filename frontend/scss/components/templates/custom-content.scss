@@ -50,7 +50,8 @@
   }
 
   .#{utility('stage-roadshow')} {
-    margin-bottom: 0;
+    overflow: visible;
+    padding-bottom: 10vw;
   }
 
   .#{utility('container-agenda')} {
