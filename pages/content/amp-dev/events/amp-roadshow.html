@@ -153,8 +153,8 @@ section_links:
                     {% endfor %}
                   {% endif %}
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
-                  <div class="ap-m-agenda-item-description">
-                  <div class="ap-m-agenda-item-description-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+                  <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
                   {% if speaker %}
                     <div class="ap-m-agenda-item-description-speaker">{{ speaker.name }}</div>
                   {% endif %}
