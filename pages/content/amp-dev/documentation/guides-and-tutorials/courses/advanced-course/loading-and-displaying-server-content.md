@@ -299,8 +299,8 @@ The following example shows how to combine `amp-list` with property bindings and
 <amp-state id="productSettings>
   <script type="application/json">
     {
-      “category": “bikes",
-      “sort": “price-asc"
+      "category": "bikes",
+      "sort": "price-asc"
     }
   </script>
 </amp-state>
@@ -320,7 +320,7 @@ The first time the page loads, it will call the server to get all of the product
 
 Now it's time to add the products page to our Chico's Cheese Bikes example! If you're using any of the Chico's Cheese Bikes Glitch examples that we've linked throughout previous courses, you already have the server code necessary to complete this exercise. All you need to do is to make sure you've followed the README instructions to set the address in your environment variables. If you haven't done this yet, then the site we build won't be able to download information from the server.
 
-The first thing we need to do is make our products page accessible from our homepage. We're going to add a link in the slide-out menu. In the navigation on index.html, below “Our Story,” add the following code:
+The first thing we need to do is make our products page accessible from our homepage. We're going to add a link in the slide-out menu. In the navigation on index.html, below "Our Story," add the following code:
 
 [sourcecode:html]
 {% raw %}<li class="nav-item">
@@ -364,9 +364,9 @@ The `id` and `type` fields are only really used by the server, so you can ignore
 
 Using the documentation for [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), and all of the descriptions above, create a product listing page that fulfills the following requirements:
 
-* When the Product Type select input is updated, it should store its new selected value into the “category” state variable in the `amp-state` component with ID `products`.
+* When the Product Type select input is updated, it should store its new selected value into the "category" state variable in the `amp-state` component with ID `products`.
 
-* When the Sort By select input is updated, it should store its new selected value into the “sort” state variable.
+* When the Sort By select input is updated, it should store its new selected value into the "sort" state variable.
 
 * Whenever the category or sort state variables are updated, the amp-list component should retrieve an updated list of products from the server. **Note**: The query parameters that should be sent to the server have the same name as the state variables (category and sort).
 
@@ -374,11 +374,11 @@ Using the documentation for [amp-bind]({{g.doc('/content/amp-dev/documentation/c
 
 Recommended style guidelines:
 
-* The contents of the template should be wrapped in a div with assigned class “product-card”.
+* The contents of the template should be wrapped in a div with assigned class "product-card".
 
 * Each product image should be 200 by 150 pixels in size.
 
-* The text details about the product should be wrapped in a div with assigned class “product-details”.
+* The text details about the product should be wrapped in a div with assigned class "product-details".
 
 * The product name, rating, and price can be placed in p tags with assigned classes `product-name`, `star-rank`, and `product-price`, respectively.
 
