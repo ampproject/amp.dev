@@ -21,6 +21,7 @@
 
   &:hover {
     @include ampconf-speaker-shadow;
+    cursor: pointer;
     background: color('white');
   }
 
