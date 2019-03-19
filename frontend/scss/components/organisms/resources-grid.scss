@@ -20,14 +20,16 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -30px;
-  padding: 70px 90px;
+  margin: 40px 0;
 
   @media (min-width: 600px) {
     flex-direction: row;
   }
   @media (min-width: 768px) {
     flex-direction: column;
+  }
+  @media (min-width: 930px) {
+    margin: 60px 60px 30px 60px;
   }
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -36,14 +38,13 @@
 .#{organism('resources-grid')} {
   &-text {
     width: 100%;
+    padding-bottom: 20px;
   }
 
   &-card {
-    margin: 20px 0;
-    position: relative;
-    width: 100%;
+    margin: 10px 0;
+    padding: 10px 20px;
     border-radius: 10px;
-    padding: 25px 20px;
     background-color: color('white');
     box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.07);
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);

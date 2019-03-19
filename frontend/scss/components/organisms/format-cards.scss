@@ -19,14 +19,16 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -30px;
-  padding: 70px 90px;
+  padding: 0;
 
   @media (min-width: 600px) {
     flex-direction: row;
   }
   @media (min-width: 768px) {
     flex-direction: column;
+  }
+  @media (min-width: 930px) {
+    padding: 0 60px 75px 60px;
   }
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -38,26 +40,26 @@
   }
 
   &-card {
-    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.07);
+    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.1);
     border-radius: 10px;
     padding: 15px 25px;
     margin: 20px 0;
     position: relative;
-    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     background-color: color('white');
 
     &:hover {
-      transform: translateY(-2px);
+      box-shadow: 12px 18px 80px 10px rgba(0,0,0,0.05);
     }
 
     @media (min-width: 600px) {
-      max-width: 32%;
+      max-width: 31%;
     }
     @media (min-width: 768px) {
       max-width: 100%;
     }
     @media (min-width: 1024px) {
-      max-width: 32%;
+      max-width: 31%;
     }
 
     &-text {
@@ -74,13 +76,15 @@
 
       &-stories {
         @include gradient-stories;
+        fill: color('ultramarine');
       }
       &-ads {
         @include gradient-ads;
-        fill: white;
+        fill: color('white');
       }
       &-emails {
         @include gradient-e-mails;
+        fill: color('ultramarine');
       }
       svg {
         width: 50%;

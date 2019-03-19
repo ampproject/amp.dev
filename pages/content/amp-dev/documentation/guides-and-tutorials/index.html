@@ -18,7 +18,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
 
 {% do doc.styles.addCssFile('/css/components/organisms/format-cards.css') %}
 <section class="ap--format-cards">
-  <h1 class="ap-o-format-cards-text">Build with AMP websites</h1>
+  <h1 class="ap-o-format-cards-text">Build with AMP!</h1>
   <p class="ap-o-format-cards-text">Here you can find everything you need to build AMP experiences. The sidebar on the left shows you all resources for building <strong>AMP websites.</strong></p>
   <p class="ap-o-format-cards-text">But you can also use AMP to build one of these:</p>
   <div class="ap-o-format-cards-card">
@@ -28,16 +28,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-format-cards-card-headline">AMP Stories</h4>
     <p class="ap-o-format-cards-card-copy">Create snackable, immersive and immediate stories on your website</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">View Documentation</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path}}?format=stories"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">View Documentation</span>
+    </a>
   </div>
   <div class="ap-o-format-cards-card">
     <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-ads">
@@ -46,34 +44,30 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-format-cards-card-headline">AMP Ads</h4>
     <p class="ap-o-format-cards-card-copy">Create snackable, immersive and immediate stories on your website</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">View Documentation</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path}}?format=ads"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">View Documentation</span>
+    </a>
   </div>
   <div class="ap-o-format-cards-card">
     <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-emails">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
     </div>
-    <h4 class="ap-m-format-card-headline">AMP Emails</h4>
+    <h4 class="ap-o-format-cards-card-headline">AMP Emails</h4>
     <p class="ap-m-format-card-copy">Create snackable, immersive and immediate stories on your website</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">View Documentation</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path}}?format=email"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">View Documentation</span>
+    </a>
   </div>
 </section>
 
@@ -87,16 +81,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-card-grid-card-headline">Start</h4>
     <p class="ap-o-card-grid-card-copy">Building a 'Hallo World' page and try adding your first interactive feature to an AMP page.</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">Go</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Create your AMP HTML page</span>
+    </a>
   </div>
   <div class="ap-o-card-grid-card">
     <div class="ap-a-ico ap-o-card-grid-card-icon">
@@ -105,16 +97,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-card-grid-card-headline">Integrate</h4>
     <p class="ap-o-card-grid-card-copy">Combine your pages with non-AMP pages, a PWA, native apps and more.</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">Go</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Integrate AMP with your app</span>
+    </a>
   </div>
   <div class="ap-o-card-grid-card">
     <div class="ap-a-ico ap-o-card-grid-card-icon">
@@ -123,16 +113,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-card-grid-card-headline">Learn</h4>
     <p class="ap-o-card-grid-card-copy">Get to know how AMP is different and acquire the fundamentals for how AMP works.</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">Go</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">AMP HTML Specification</span>
+    </a>
   </div>
   <div class="ap-o-card-grid-card">
     <div class="ap-a-ico ap-o-card-grid-card-icon ap-o-card-grid-card-icon-emails">
@@ -141,16 +129,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-card-grid-card-headline">Optimize & Measure</h4>
     <p class="ap-o-card-grid-card-copy">Make more out of your AMP pages through analytics, optimal delivery and caching.</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">Go</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Configure analytics</span>
+    </a>
   </div>
   <div class="ap-o-card-grid-card">
     <div class="ap-a-ico ap-o-card-grid-card-icon">
@@ -159,16 +145,14 @@ cms: !g.yaml /content/shared/data/cms.yaml
     </div>
     <h4 class="ap-o-card-grid-card-headline">Develop</h4>
     <p class="ap-o-card-grid-card-copy">Create every content, layout, and feature your website needs.</p>
-    <div class="ap-o-sampler-link">
-      <a href=""[href]="sampler[activeSample].standaloneUrl"
-        class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">Go</span>
-      </a>
-    </div>
+    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Style & layout</span>
+    </a>
   </div>
   {% do doc.styles.addCssFile('/css/components/molecules/tip.css') %}
   <div class="ap-o-card-grid-card ap-o-card-grid-card-tip">
@@ -184,7 +168,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
 {% do doc.styles.addCssFile('/css/components/organisms/resources-grid.css') %}
 <section class="ap--resources-grid">
   <h2 class="ap-o-resources-grid-text">Useful resources</h2>
-  <a href="#" class="ap-o-resources-grid-card">
+  <a href="{{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
     <div class="ap-a-ico ap-o-resources-grid-card-icon">
       {% do doc.icons.useIcon('/icons/code.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
@@ -192,7 +176,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
     <h4 class="ap-o-resources-grid-card-headline">Components</h4>
     <p class="ap-o-resources-grid-card-copy">The complete documented AMP library and its referencees.</p>
   </a>
-  <a href="#" class="ap-o-resources-grid-card">
+  <a href="{{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
     <div class="ap-a-ico ap-o-resources-grid-card-icon">
       {% do doc.icons.useIcon('/icons/examples-flyout.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#examples-flyout"></use></svg>
@@ -200,7 +184,7 @@ cms: !g.yaml /content/shared/data/cms.yaml
     <h4 class="ap-o-resources-grid-card-headline">Examples</h4>
     <p class="ap-o-resources-grid-card-copy">The fastes way to learn is to peak over the tangible examples.</p>
   </a>
-  <a href="#" class="ap-o-resources-grid-card">
+  <a href="{{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
     <div class="ap-a-ico ap-o-resources-grid-card-icon">
       {% do doc.icons.useIcon('/icons/templates.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
@@ -215,45 +199,51 @@ cms: !g.yaml /content/shared/data/cms.yaml
   <h2 class="ap-o-video-slider-text">Featured Videos</h2>
   <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
   <amp-carousel class="ap-o-video-slider-carousel"
-  height="220"
-  layout="fixed-height"
-  controls=0
-  type="carousel">
-  <amp-youtube
-      id="myLiveChannel"
-      data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
-      width="391"
-      height="220"
-      layout="fixed">
-    <amp-img
-      src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
-      placeholder
-      layout="fill"
-      />
-  </amp-youtube>
-  <amp-youtube
-      id="myLiveChannel"
-      data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
-      width="391"
-      height="220"
-      layout="fixed">
-    <amp-img
-      src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
-      placeholder
-      layout="fill"
-      />
-  </amp-youtube>
-  <amp-youtube
-      id="myLiveChannel"
-      data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
-      width="391"
-      height="220"
-      layout="fixed">
-    <amp-img
-      src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
-      placeholder
-      layout="fill"
-      />
-  </amp-youtube>
-</amp-carousel>
+    height="220"
+    layout="fixed-height"
+    controls=0
+    type="carousel">
+    <amp-youtube
+        id="myLiveChannel"
+        data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
+        width="391"
+        height="220"
+        layout="fixed">
+      <amp-img
+        src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
+        placeholder
+        layout="fill"
+        />
+    </amp-youtube>
+    <amp-youtube
+        id="myLiveChannel"
+        data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
+        width="391"
+        height="220"
+        layout="fixed">
+      <amp-img
+        src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
+        placeholder
+        layout="fill"
+        />
+    </amp-youtube>
+    <amp-youtube
+        id="myLiveChannel"
+        data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
+        width="391"
+        height="220"
+        layout="fixed">
+      <amp-img
+        src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
+        placeholder
+        layout="fill"
+        />
+    </amp-youtube>
+  </amp-carousel>
+</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/banner.css') %}
+<section class="ap--banner">
+  <h2 class="ap-o-banner-headline">Get Involved</h2>
+  <p class="ap-o-banner-copy">AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentatiion and translation contributions! Check out our community section to join our mission to make the web suck less.</p>
 </section>
