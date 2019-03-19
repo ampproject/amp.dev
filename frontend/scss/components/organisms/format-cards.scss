@@ -74,6 +74,10 @@
       width: 60px;
       border-radius: 50%;
 
+      &-websites {
+        @include gradient-websites;
+        fill: color('white');
+      }
       &-stories {
         @include gradient-stories;
         fill: color('ultramarine');
