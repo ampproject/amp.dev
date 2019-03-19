@@ -43,6 +43,17 @@
 
   .#{utility('container')} {
     @include container;
+
+    &.ampconf-agenda {
+
+      @media (min-width: 768px) {
+        grid-gap: 0;
+      }
+
+      @media (min-width: 1024px) {
+        grid-gap: 30px;
+      }
+    }
   }
 
   .#{utility('container-fluid')} {
@@ -88,7 +99,7 @@
     margin-bottom: 0;
   }
 
-  .#{utility('container-agenda')} {
+  .#{utility('container-float-right')} {
     padding-top: 50px;
     padding-left: 20px;
 

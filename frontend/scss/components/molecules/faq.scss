@@ -17,7 +17,11 @@
 
 .#{molecule('faq')} {
   grid-column: 7 / 19;
-  margin: 50px 0 100px;
+  margin: 50px 20px 100px 5px;
+
+  @media (min-width: 768px) {
+    margin: 50px 0 100px;
+  }
 
   &-headline {
     @include hl;

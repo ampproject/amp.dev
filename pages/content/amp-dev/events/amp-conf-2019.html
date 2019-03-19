@@ -104,8 +104,9 @@ section_links:
     <amp-selector role="tablist" layout="container" class="ap--scheudle-selector">
 
         <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1</div>
+
         <div class="ap-o-agenda">
-          <div class="ap--container">
+          <div class="ap--container ampconf-agenda">
             <ul class="ap-o-agenda-content-list conf">
               {% for agenda_item in doc.ampconf.agenda.day_1 %}
 
@@ -149,8 +150,9 @@ section_links:
         </div>
 
         <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">Day 2</div>
+
         <div class="ap-o-agenda">
-          <div class="ap--container">
+          <div class="ap--container ampconf-agenda">
              <ul class="ap-o-agenda-content-list conf">
               {% for agenda_item in doc.ampconf.agenda.day_2 %}
 
@@ -281,11 +283,14 @@ section_links:
   {% do doc.styles.addCssFile('css/components/organisms/ampconf-footer.css') %}
     <ul class="ap-o-ampconf-footer row">
       <li class="ap-o-ampconf-footer-item">
-      <a href="{{g.doc('/content/amp-dev/events/amp-conf/code-of-conduct.html', locale=doc.locale).url.path}}">Code of Conduct</a></li>
+        <a href="{{g.doc('/content/amp-dev/events/amp-conf/code-of-conduct.html', locale=doc.locale).url.path}}">Code of Conduct</a>
+      </li>
       <li class="ap-o-ampconf-footer-item">
-      <a href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</a></li>
+        <a href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</a>
+      </li>
       <li class="ap-o-ampconf-footer-item">
-      <a href="mailto:amp-conf@google.com">Contact</a></li>
+        <a href="mailto:amp-conf@google.com">Contact</a>
+      </li>
     </ul>
 </section>
 

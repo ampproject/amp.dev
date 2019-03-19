@@ -59,10 +59,7 @@
 
         &+.#{organism('agenda')} {
           display: block;
-
-          @media (min-width: 768px) {
-            order: 1;
-          }
+          order: 1;
         }
 
       }
@@ -97,7 +94,7 @@
       padding-left: 0;
 
       &.conf {
-        grid-column: 3 / 22;
+        grid-column: 5 / 22;
         padding: 50px 0 100px;
       }
     }
