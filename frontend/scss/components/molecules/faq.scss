@@ -23,6 +23,10 @@
     margin: 50px 0 100px;
   }
 
+  &.ampconf {
+    grid-column: 6 / 19;
+  }
+
   &-headline {
     @include hl;
     @include hl-h2;
