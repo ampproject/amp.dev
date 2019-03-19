@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
 
-  &-map {
+  &-visual {
     grid-column: 6 / 14;
     width: 100%;
     padding: 40px;
@@ -29,6 +29,10 @@
     @media (min-width: 768px) {
       padding: 40px 0px 100px;
     }
+  }
+
+  &-map {
+    @include ampconf-speaker-shadow;
   }
 
   &-content {
