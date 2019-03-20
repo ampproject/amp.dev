@@ -40,6 +40,15 @@
   &-right {
     grid-column: 10 / 24;
 
+    &-bottom {
+      grid-column: 16 / 21;
+      margin-bottom: 1em;
+
+      @media (min-width: 768px) {
+        margin-top: 100%;
+      }
+    }
+
     &-small {
       grid-column: 11 / 20;
     }

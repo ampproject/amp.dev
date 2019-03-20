@@ -19,6 +19,10 @@
   grid-column: 1 / -1;
   width: 100%;
 
+  &.monetize {
+    grid-column: 1 / 16;
+  }
+
   .amp-carousel-button {
     width: 3em;
     height: 3em;

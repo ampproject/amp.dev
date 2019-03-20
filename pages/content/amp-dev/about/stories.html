@@ -46,6 +46,16 @@ stories:
     logo: /static/img/stories/logo-wired.png
     logo_alt@: Wired
     url: https://www.wired.com/amp-stories/space-photos-of-the-week-111817/
+
+templates:
+  - image: /static/img/templates/single_video.gif
+    immage_alt@: Video
+  - image: /static/img/templates/single-image-template.gif
+    immage_alt@: Single Image
+  - image: /static/img/templates/multiple-image-template.jpg
+    immage_alt@: Multiple Image
+  - image: /static/img/templates/app_install.jpg
+    immage_alt@: App Install
 ---
 
 <section class="ap--stage ap--container-fluid">
@@ -289,3 +299,83 @@ stories:
     </amp-carousel>
   </div>
 </section>
+
+<section class="ap--stories-monetize ap--container-fluid" id="monetization">
+  <div class="ap-m-copy ap-m-copy-left-small">
+    <h1>AMP Stories <br />Monetization Options</h1>
+    <h4>Single Page Story Ad</h4>
+    <p>Story Ads are full screen, single page ads that appear within AMP Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.
+    Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!</p>
+  </div>
+</section>
+
+<section class="ap--monetize-carousel ap--container-fluid">
+
+  <div class="ap-o-story-carousel monetize">
+    <amp-carousel
+      layout="fixed-height"
+      media="(min-width: 1024px)"
+      height="555"
+      type="carousel">
+      {% for template in doc.templates %}
+        <div class="ap-o-story-carousel-slide">
+          <div class="ap-o-story-carousel-slide-image">
+            <amp-img
+              src="{{template.image}}"
+              width="282"
+              height="470"
+              alt="{{ template.image_alt }}">
+            </amp-img>
+          </div>
+      </div>
+      {% endfor %}
+    </amp-carousel>
+
+    <amp-carousel
+      layout="fixed-height"
+      media="(max-width: 1023px)"
+      height="370"
+      type="carousel">
+      {% for template in doc.templates %}
+      <div class="ap-o-story-carousel-slide">
+        <div class="ap-o-story-carousel-slide-image">
+          <amp-img
+            src="{{template.image}}"
+            width="171"
+            height="285"
+            alt="{{ template.image_alt }}">
+          </amp-img>
+        </div>
+      </div>
+      {% endfor %}
+    </amp-carousel>
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-right-bottom">
+    <h4>Get Started with our Story Ads Templates</h4>
+    <div class="ap-o-component-visual-link">
+      <a href="{{ g.doc('/content/amp-dev/documentation/templates/index.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Discover All Templates</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-left-small">
+    <h4>Affliate Links</h4>
+    <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md').url.path }}" class="ap-m-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Read Best Practices Guide</span>
+    </a>
+  </div>
+
+
+
+</section>
+
