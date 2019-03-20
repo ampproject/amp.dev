@@ -50,7 +50,7 @@ function getFilteredFormat(request) {
 
 
 // Setup a proxy over to Grow during development
-if (config.environment === 'development') {
+if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
   const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
@@ -146,7 +146,7 @@ if (config.environment === 'development') {
   });
 }
 
-if (config.environment !== 'development') {
+if (!config.isDevMode()) {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
   const staticMiddleware = express.static(STATIC_PAGES_PATH);
 

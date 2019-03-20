@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 유효한 AMP 문서에는 유효성 검사 오류가 있어서는 안 됩니다.
-이 문서의 목적은 [AMP 페이지의 유효성을 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}})할 때
+이 문서의 목적은 [AMP 페이지의 유효성을 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})할 때
 발견할 수 있는 모든 유효성 검사 오류를 더 잘 이해하고
 해결할 수 있도록 도움을 드리는 것입니다.
 유효성 검사 오류에 관한 전체 내용을 대략적으로 살펴보려면

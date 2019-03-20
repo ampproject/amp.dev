@@ -4,7 +4,7 @@ $title: Membuat blog langsung
 
 Blog langsung adalah halaman yang sering diperbarui sepanjang acara yang sedang berlangsung, seperti acara olahraga atau pemilu. Di AMP, Anda dapat menerapkan blog langsung menggunakan komponen [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
-Tutorial ini memberikan gambaran singkat tentang komponen [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) dan berfokus pada beberapa detail implementasi untuk blog langsung, seperti [paginasi] (#pagination) dan [deep linking] (#deeplinking). Kami akan menggunakan [contoh blog langsung] ({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}}) AMP By Example untuk mengilustrasikan implementasi blog langsung di AMP.
+Tutorial ini memberikan gambaran singkat tentang komponen [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) dan berfokus pada beberapa detail implementasi untuk blog langsung, seperti [paginasi] (#pagination) dan [deep linking] (#deeplinking). Kami akan menggunakan [contoh blog langsung] ({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) AMP By Example untuk mengilustrasikan implementasi blog langsung di AMP.
 
 [tip type="success"]
 
@@ -16,7 +16,7 @@ Gunakan markup metadata [LiveBlogPosting](http://schema.org/LiveBlogPosting) aga
 
 ## Ringkasan tentang `amp-live-list`
 
-Komponen [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] ({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}}#metadata) pada halaman.
+Komponen [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] ({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}#metadata) pada halaman.
 
 Kode awal untuk blog dapat terlihat seperti berikut:
 

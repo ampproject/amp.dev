@@ -1,84 +1,308 @@
 ---
 $title: AMP Conf 2019
 $order: 1
-$view: /views/overview/custom-content.j2
+$view: /views/overview/events.j2
+
+ampconf: !g.yaml /content/shared/data/amp-conf.yaml
+
+
+section_links:
+  - Schedule
+  - Speakers
+  - Location
+  - FAQ
 ---
-{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
-
+{% do doc.styles.addCssFile('css/components/templates/events.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
-<section class="ap--container">
-  <div class="ap-m-jumbo">
-    <div class="ap-a-ico">
-      {% do doc.icons.useIcon('/icons/japan.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#japan"></use></svg>
-    </div>
-    <h1 class="ap-m-jumbo-headline">AMP Conf 2019 in<br> Tokyo, Japan</h1>
-    <h2 class="ap-m-jumbo-subline">April 17 & 18, 2019</h2>
-    <p class="ap-m-jumbo-copy">The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.</p>
 
-    {% do doc.styles.addCssFile('/css/components/atoms/button.css', -1) %}
-    <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ap-a-btn">Request an invitation</a>
-  </div>
-</section>
 
-{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
-<section class="ap--container ap-m-biggy">
-  <div class="ap-m-biggy-aside">
-    <amp-iframe width="300" height="300" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12966.682416981088!2d139.7288467!3d35.6604864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x374cd67b22a9c8a5!2sAcademy+Hills+Roppongi+forum!5e0!3m2!1sen!2sus!4v1545397494682"></amp-iframe>
-  </div>
-  <div class="ap-m-biggy-main">
-    <h2 class="ap-m-biggy-headline">Hello<br>Tokyo!</h2>
-    <p class="ap-m-biggy-text">
-      This year we are really happy and excited to host the AMP Conf not in North America nor in Europe but in beautiful Japan. The exact venue is:
-      <br>
-      <br>
-      Roppongi Academy Hills, Tokyo<br>
-      〒106-6149 Tōkyō-to, Minato-ku, Roppongi<br>
-      6 Chome−6−10-1 六本木ヒルズ森タワー49階<br>
-      Japan
-    </p>
-</section>
+<section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
 
-{% do doc.styles.addCssFile('css/components/molecules/shift-card.css') %}
-<section class="ap--shift-cards">
-  <div class="ap--container">
-    <div class="ap-m-shift-card ap-m-shift-card-shadow ap-m-shift-card-hover ap-m-shift-card-1">
-      <h2 class="ap-m-shift-card-headline">Schedule</h2>
-      <div class="ap-m-shift-card-copy">
-        <p>The schedule will be announced in February/March. The CfP has just opened and will run until Feb 14. We encourage everyone who has something great to share about AMP, regardless of speaking experience, to apply and submit a talk!</p>
+    <div class="ap-o-stage ap-o-stage-amp-conf all">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content ap-o-stage-content-roadshow">
+
+            <h1 class="ap-o-stage-content-headline">AMP Conf 2019</h1>
+            <h2 class="ap-o-stage-content-subline">ようこそ from Tokyo, Japan</h2>
+
+            {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+            <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ap-o-stage-content-button ap-a-btn">
+              Request an invitation
+            </a>
+        </div>
       </div>
     </div>
+</section>
 
-    <div class="ap-m-shift-card ap-m-shift-card-shadow ap-m-shift-card-hover ap-m-shift-card-2">
-      <h2 class="ap-m-shift-card-headline">Speakers</h2>
-      <p class="ap-m-shift-card-copy">After the evaluation of the currently running Call for Papers you'll be able to find a list of speakers here.</p>
-      <a class="ap-a-btn" href="https://goo.gl/forms/bWdzWs28nUrC6Fq13">Submit a talk proposal</a>
+<section class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
+
+  <div class="ap-o-jumpto">
+    <div class="ap--container">
+      <div class="ap-o-jumpto-content">
+        <p class="ap-o-jumpto-text">Jump To:</p>
+        <ul class="ap-o-jumpto-list">
+          {% for link in doc.section_links %}
+            <li class="ap-m-jumpto-item">
+              <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="ap--content">
-  <div class="ap--container-fluid">
-    {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
-    <div class="ap-m-copy ap-m-copy-left-small">
-    <div class="ap--content">
-      <h3 id="faq">FAQ</h3>
-      <p><b>Does it cost anything?</b><br>
-      No - tickets are free of charge.</p>
-      <p><b>What language will the talks be in?</b><br>
-      All talks are being simultaneously presented and streamed in English and Japanese.</p>
-      <p><b>Do I have to register for the live-stream?</b><br>
-      No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on April 17th for a link and embed of the live-stream.</p>
-      <p><b>Who is the event for?</b><br>
-      Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</p>
-      <p><b>Does registering mean I am all set to attend?</b><br>
-      Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</p>
-      <p><b>When will I hear back if I have a spot?</b><br>
-      We'll try to confirm you within less than a week!</p>
-      <p><b>What determines if I have a spot?</b><br>
-      The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</p>
-      <p><b>When will the schedule be announced?</b><br>
-      We'll announce a detailed schedule in February.</p>
+<section class="ap--container">
+  <p class="ap--content-default">
+    The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
+  </p>
+</section>
+
+<section class="ap--container">
+  <div class="ap--content-wide row">
+    {% do doc.styles.addCssFile('css/components/molecules/conf-event.css') %}
+
+      <div class="ap-m-conf-event">
+        <h3>When</h3>
+        <div class="ap-m-conf-event-detail">
+          <p class="ap-m-conf-event-detail-info">April 17 & 18</p>
+          <p class="ap-m-conf-event-detail-info secondary">2019</p>
+        </div>
+      </div>
+
+      <div class="ap-m-conf-event">
+        <h3>Where</h3>
+        <div class="ap-m-conf-event-detail">
+          <a href="http://forum.academyhills.com/roppongi/en/" class="ap-m-conf-event-detail-info link">Roppongir Academy Hills</a>
+          <p class="ap-m-conf-event-detail-info">Tokyo</p>
+        </div>
+      </div>
+
+      <div class="ap-m-conf-event">
+        <h3>For</h3>
+        <div class="ap-m-conf-event-detail">
+          <p class="ap-m-conf-event-detail-info">Developers & </br> Designers</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="ap--container" id="Schedule">
+  {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
+
+
+  <div class="ap--content-default">
+    <h1>Schedule</h1>
+    <p class="ap--content-default-disclaimer">Note: This is a rough first cut of the agenda. More talks will be added in the upcoming days, and times are subject to change.</p>
+  </div>
+
+  <div class="ap--content-x-wide">
+    <amp-selector role="tablist" layout="container" class="ap--scheudle-selector">
+
+        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1</div>
+
+        <div class="ap-o-agenda">
+          <div class="ap--container ampconf-agenda">
+            <ul class="ap-o-agenda-content-list conf">
+              {% for agenda_item in doc.ampconf.agenda.day_1 %}
+
+                {% if agenda_item.speaker %}
+                  {% set speaker = doc.ampconf.speakers[agenda_item.speaker] %}
+                {% endif %}
+
+                <li class="ap-m-agenda-item">
+                  <div class="ap-m-agenda-item-speakers">
+
+                    {% if speaker %}
+                      <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+
+                    {%  elif agenda_item.speakers %}
+
+                      {% for speaker in agenda_item.speakers %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endfor %}
+
+                    {% endif %}
+                  </div>
+                  <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+                  <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+
+                  {% if speaker %}
+
+                    <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                  {% elif agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
+                      </br>
+                    {% endfor %}
+                  {% else %}
+                  {% endif %}
+
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">Day 2</div>
+
+        <div class="ap-o-agenda">
+          <div class="ap--container ampconf-agenda">
+            <ul class="ap-o-agenda-content-list conf">
+              {% for agenda_item in doc.ampconf.agenda.day_2 %}
+
+                {% if agenda_item.speaker %}
+                  {% set speaker = doc.ampconf.speakers[agenda_item.speaker] %}
+                {% endif %}
+
+                <li class="ap-m-agenda-item">
+                  <div class="ap-m-agenda-item-speakers">
+
+                    {% if speaker %}
+                      <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+
+                    {%  elif agenda_item.speakers %}
+
+                      {% for speaker in agenda_item.speakers %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endfor %}
+
+                    {% endif %}
+                  </div>
+                  <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+                  <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+
+                  {% if speaker %}
+
+                    <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                  {% elif agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
+                      </br>
+                    {% endfor %}
+                  {% else %}
+                  {% endif %}
+
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+    </amp-selector>
+  </div>
+</section>
+
+<section id="Speakers" class="ap--container">
+  <div class="ap--content-default">
+    <h1>Speakers</h1>
+  </div>
+  <div class="ap--content-x-wide ap--scheudle-selector">
+      {% do doc.styles.addCssFile('css/components/molecules/conf-speaker.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/lightbox.css') %}
+
+      {% for speaker in doc.ampconf.speakers %}
+        {% if doc.ampconf.speakers[speaker] %}
+          {% set speaker_info = doc.ampconf.speakers[speaker] %}
+          <div class="ap-m-conf-speaker" on="tap:lightbox-{{ speaker }}" role="button" tabindex="0">
+            <amp-lightbox id="lightbox-{{ speaker }}" layout="nodisplay">
+              <div class="ap-m-lightbox" role="button" on="tap:lightbox-{{ speaker }}.close" tabindex="0">
+                <div class="ap-m-lightbox-content">
+                  <h4 class="ap-m-lightbox-headline">{{ speaker_info.name }}</h4>
+                  <h4 class="ap-m-lightbox-headline">{{ speaker_info.company }}</h4>
+                  {% if speaker_info.bio %}
+                    <p class="ap-m-lightbox-bio">{{ speaker_info.bio }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </amp-lightbox>
+            <amp-img class="ap-m-conf-speaker-image" alt="Profile pciture for {{ speaker_info.name }}" src="{{ speaker_info.pic }}" layout="fixed" height="150" width="150"></amp-img>
+            <div class="ap-m-conf-speaker-info">
+              <h4 id="{{ speaker }}" class="ap-m-conf-speaker-name">{{ speaker_info.name }}</h4>
+              <p class="ap-m-conf-speaker-company">{{ speaker_info.company }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+  </div>
+</section>
+
+<section class="ap--container-fluid" id="Location">
+  {% do doc.styles.addCssFile('css/components/molecules/conf-location.css') %}
+  <div class="ap-m-conf-location">
+    <div class="ap--container">
+      <div class="ap-m-conf-location-visual">
+        <h3 class="ap-m-conf-location-headline">Location</h3>
+        <div class="ap-m-conf-location-map">
+          <amp-iframe width="330" height="330" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12966.682416981088!2d139.7288467!3d35.6604864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x374cd67b22a9c8a5!2sAcademy+Hills+Roppongi+forum!5e0!3m2!1sen!2sus!4v1545397494682"></amp-iframe>
+        </div>
+      </div>
+      <div class="ap-m-conf-location-content">
+        <a class="ap-m-conf-location-content-link" href="http://forum.academyhills.com/roppongi/en/"> Roppongi Academy Hills, Tokyo</a>
+        <p class="ap-m-conf-location-content-text">
+          〒106-6149 Tōkyō-to, Minato-ku, Roppongi
+          6 Chome−6−10-1 六本木ヒルズ森タワー49階 Japan
+        </p>
+        <p class="ap-m-conf-location-content-text">..and live-streamed around the world.</p>
+      </div>
     </div>
   </div>
 </section>
+
+<section class="ap--container" id="FAQ">
+  {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
+    <div class="ap-m-faq ampconf">
+      <h2>Frequently Asked Questions</h2>
+      <div class="ap-m-faq-content">
+        <p class="ap-m-faq-content-question">Does it cost anything?</p>
+        <p class="ap-m-faq-content-answer">No - tickets are free of charge.</p>
+        <p class="ap-m-faq-content-question">What language will the talks be in?</p>
+        <p class="ap-m-faq-content-answer"> All talks are being simultaneously presented and streamed in English and Japanese.</p>
+        <p class="ap-m-faq-content-question">Do I have to register for the live-stream?</p>
+        <p class="ap-m-faq-content-answer"> No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on April 17th for a link and embed of the live-stream.</p>
+        <p class="ap-m-faq-content-question">Who is the event for?</p>
+        <p class="ap-m-faq-content-answer"> Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</p>
+        <p class="ap-m-faq-content-question">Does registering mean I am all set to attend?</p>
+        <p class="ap-m-faq-content-answer">Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</p>
+        <p class="ap-m-faq-content-question">When will I hear back if I have a spot?</p>
+        <p class="ap-m-faq-content-answer">We'll try to confirm you within less than a week!</p>
+        <p class="ap-m-faq-content-question">What determines if I have a spot?</p>
+        <p class="ap-m-faq-content-answer">The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</p>
+        <p class="ap-m-faq-content-question">When will the schedule be announced?</p>
+        <p class="ap-m-faq-content-answer">We'll announce a detailed schedule in February.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/ampconf-footer.css') %}
+    <ul class="ap-o-ampconf-footer row">
+      <li class="ap-o-ampconf-footer-item">
+        <a href="{{g.doc('/content/amp-dev/events/amp-conf/code-of-conduct.html', locale=doc.locale).url.path}}">Code of Conduct</a>
+      </li>
+      <li class="ap-o-ampconf-footer-item">
+        <a href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</a>
+      </li>
+      <li class="ap-o-ampconf-footer-item">
+        <a href="mailto:amp-conf@google.com">Contact</a>
+      </li>
+    </ul>
+</section>
+

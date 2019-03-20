@@ -119,6 +119,7 @@ class PageMinifier {
     return ampOptimizer.transformHtml(html, {
       ampUrl: path.replace(/^pages/, ''),
       ampRuntimeVersion: ampRuntimeVersion,
+      blurredPlaceholders: true,
       maxBlurredPlaceholders: 7, // number of images in homepage stage
     });
   }
@@ -210,7 +211,7 @@ class PageMinifier {
     }
 
     // Do not cache styles during development
-    if (config.environment == 'development') {
+    if (config.isDevMode()) {
       return this._cleanCss.minify(css).styles;
     }
 

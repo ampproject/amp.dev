@@ -96,7 +96,7 @@
         <div class="ap-o-kpi-list ap--container">
           {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
           {% for kpi in doc.kpis %}
-            <div class="ap-m-kpi ap-m-kpi-websites ap-m-teaser-kpi ap-m-teaser-kpi-websites">
+            <div class="ap-m-kpi ap-m-kpi-websites">
               <div class="ap-m-kpi-content">
                 {% if kpi.value %}
                   <span class="ap-m-kpi-number">{{kpi.value|safe}}</span>

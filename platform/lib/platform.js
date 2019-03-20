@@ -43,7 +43,7 @@ class Platform {
     signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
     this.server = express();
 
-    if (config.environment == 'development') {
+    if (config.isDevMode()) {
       const HttpProxy = require('http-proxy');
 
       // When in development fire up a second server as a simple proxy
@@ -53,7 +53,6 @@ class Platform {
         signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
       });
 
-      subdomain.router(this.proxy);
       const proxy = new HttpProxy();
       this.proxy.get('/*', (request, response, next) => {
         proxy.web(request, response, {
@@ -121,7 +120,7 @@ class Platform {
 
   _registerRouters() {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
-    this.server.use(subdomain.map(config.hosts.playground.subdomain, routers.playground));
+    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.examples);
     this.server.use(routers.static);
