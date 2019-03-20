@@ -141,14 +141,15 @@ class FilteredPage {
   }
 
   _setActiveFormatToggle() {
-    // Set states for all the format toggles
-    this._dom('.ap-m-format-toggle-link').addClass('inactive');
+    // Remove the current format from list of available ones
+    this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
 
-    // The current active format should make it possible to go back to unfiltered
-    const activeToggle = this._dom(`.ap-m-format-toggle-link-${this._format}`);
-    activeToggle.removeClass('inactive');
-    activeToggle.addClass('active');
-    activeToggle.attr('href', '?');
+    // Rewrite the active state (which is websites per default) to
+    // the current active format
+    let activeFormat = this._dom(`.ap-m-format-toggle-selected`);
+    activeFormat.html(activeFormat.html().replace(/websites/g, this._format));
+    activeFormat.removeClass('ap-m-format-toggle-link-websites');
+    activeFormat.addClass(`ap-m-format-toggle-link-${this._format}`);
   }
 
   /**
