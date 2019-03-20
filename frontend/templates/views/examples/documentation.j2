@@ -150,7 +150,7 @@
         {% endif %}
 
         {% if has_playground %}
-        {% set playground_url = podspec.base_urls.playground + doc.url.path + '/source/' %}
+        {% set playground_url = podspec.base_urls.playground + '/#url=' + podspec.base_urls.preview + doc.source %}
         <a class="ap-a-btn ap--playground-link {% if has_demo %}ap--playground-link-hollow{% endif %}" href="{{ playground_url }}">{{ _('Open in playground') }}</a>
         {% endif %}
       </div>
@@ -166,7 +166,7 @@
         {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
         {% set show_preview = section.preview and section.inBody and not doc.example.document.metadata.hidePreview %}
         {% if story_preview %}
-        {% set story_preview_embed = podspec.base_urls.api + doc.url.path + '/embed?id=' + section.storyPageId %}
+        {% set story_preview_embed = podspec.base_urls.preview + doc.source + '/embed?id=' + section.storyPageId %}
         {# Storys should be repeatable, therefore render reload icon #}
         <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_embed + '&' }}' + random()})">
           <div class="ap-a-ico">

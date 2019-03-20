@@ -24,4 +24,4 @@ Para ampliar seu conhecimento de AMP, veja estes recursos:
 - [AMP Start](https://www.ampstart.com/): crie páginas usando modelos e componentes com estilos predefinidos.
 - [AMP By Example](https://ampbyexample.com/): veja demonstrações e amostras ativas.
 - [The AMP Channel no YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): aprenda com vídeos específicos sobre AMP.
-- [Componentes / tags](/pt_br/docs/reference/components.html): saiba mais sobre todos os componentes AMP.
+- [Componentes / tags]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): saiba mais sobre todos os componentes AMP.

@@ -246,19 +246,19 @@ A tecnologia AMP é compatível com as seguintes configurações de acionador:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obrigatório)</td>
-      <td data-th="Description">É o nome da solicitação a ser enviada, conforme <a href="/pt_br/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">especificado nas solicitações</a>.</td>
+      <td data-th="Description">É o nome da solicitação a ser enviada, conforme <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">especificado nas solicitações</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">É um objeto que tem pares de chave-valor usados para modificar <code>vars</code> definidos na configuração de nível superior ou para especificar <code>vars</code> exclusivos a esse acionador. Consulte também <a href="/pt_br/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Ordem da substituição de variáveis</a>.</td>
+      <td data-th="Description">É um objeto que tem pares de chave-valor usados para modificar <code>vars</code> definidos na configuração de nível superior ou para especificar <code>vars</code> exclusivos a esse acionador. Consulte também <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Ordem da substituição de variáveis</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obrigatório quando <code>on</code> está definido como <code>click</code>)</td>
-      <td data-th="Description">É um seletor de CSS usado para definir quais elementos serão rastreados. Use o valor <code>*</code> para rastrear todos os elementos. Essa configuração é usada junto com o acionador <code>click</ code>. Saiba como usar o seletor para <a href="/pt_br/docs/analytics/use_cases.html#tracking-page-clicks">rastrear cliques na página</a> e <a href="/pt_br/docs/analytics/use_cases.html#tracking-social-interactions">interações sociais</a>.</td>
+      <td data-th="Description">É um seletor de CSS usado para definir quais elementos serão rastreados. Use o valor <code>*</code> para rastrear todos os elementos. Essa configuração é usada junto com o acionador <code>click</ code>. Saiba como usar o seletor para <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">rastrear cliques na página</a> e <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">interações sociais</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obrigatório quando <code>on</code> é definido como <code>scroll</code>)</td>
-      <td data-th="Description">Controla as condições de acionamento do evento <code>scroll</code> na rolagem da página. Esse objeto pode conter <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Pelo menos uma das duas propriedades é necessária para que um evento <code>scroll</code> seja acionado. Os valores das duas propriedades precisam ser matrizes de números com os limites para a geração de eventos de rolagem. Veja este exemplo sobre <a href="/pt_br/docs/analytics/use_cases.html#tracking-scrolling">como rastrear a rolagem</a>.</td>
+      <td data-th="Description">Controla as condições de acionamento do evento <code>scroll</code> na rolagem da página. Esse objeto pode conter <code>verticalBoundaries</code> e <code>horizontalBoundaries</code>. Pelo menos uma das duas propriedades é necessária para que um evento <code>scroll</code> seja acionado. Os valores das duas propriedades precisam ser matrizes de números com os limites para a geração de eventos de rolagem. Veja este exemplo sobre <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">como rastrear a rolagem</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obrigatório quando <code>on</code> é definido como <code>timer</code>)</td>

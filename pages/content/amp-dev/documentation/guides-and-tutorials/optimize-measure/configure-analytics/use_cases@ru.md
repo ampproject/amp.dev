@@ -8,7 +8,7 @@ $title: Примеры использования
 [Сообщите нам.](https://github.com/ampproject/docs/issues/new)
 
 Вы также можете предложить свои примеры использования;
-см. [Как помочь проекту](/ru/contribute/).
+см. [Как помочь проекту]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## Отслеживание просмотров страницы
 

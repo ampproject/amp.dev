@@ -176,8 +176,8 @@ For example, here we have 2 images with mutually exclusive media queries.
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -188,8 +188,8 @@ Depending on the screen width, one or the other will be fetched and rendered.
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]

@@ -246,19 +246,19 @@ AMP mendukung konfigurasi pemicu berikut:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (wajib)</td>
-      <td data-th="Description">Nama permintaan yang akan dikirim (seperti ditentukan dalam <a href="/id/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">permintaan</a>).</td>
+      <td data-th="Description">Nama permintaan yang akan dikirim (seperti ditentukan dalam <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">permintaan</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objek yang berisi key-value pair yang digunakan untuk menggantikan <code>vars</code> yang ditetapkan dalam konfigurasi level teratas, atau untuk menentukan <code>vars</code> yang unik bagi pemicu ini (lihat juga <a href="/id/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Pengurutan substitusi variabel</a>).</td>
+      <td data-th="Description">Objek yang berisi key-value pair yang digunakan untuk menggantikan <code>vars</code> yang ditetapkan dalam konfigurasi level teratas, atau untuk menentukan <code>vars</code> yang unik bagi pemicu ini (lihat juga <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Pengurutan substitusi variabel</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (wajib jika <code>on</code> ditetapkan ke <code>click</code>)</td>
-      <td data-th="Description">Selektor CSS yang digunakan untuk menyaring elemen mana yang harus dilacak. Gunakan nilai <code>*</code> untuk melacak semua elemen. Konfigurasi ini digunakan bersamaan dengan pemicu <code>click</code>. Pelajari cara menggunakan selektor untuk <a href="/id/docs/analytics/use_cases.html#tracking-page-clicks">melacak klik halaman</a> dan <a href="/id/docs/analytics/use_cases.html#tracking-social-interactions">interaksi sosial</a>.</td>
+      <td data-th="Description">Selektor CSS yang digunakan untuk menyaring elemen mana yang harus dilacak. Gunakan nilai <code>*</code> untuk melacak semua elemen. Konfigurasi ini digunakan bersamaan dengan pemicu <code>click</code>. Pelajari cara menggunakan selektor untuk <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">melacak klik halaman</a> dan <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">interaksi sosial</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (wajib jika <code>on</code> ditetapkan ke <code>scroll</code>)</td>
-      <td data-th="Description">Mengontrol dalam kondisi apa peristiwa <code>scroll</code> akan diaktifkan saat halaman di-scroll. Objek ini dapat berisi <code>verticalBoundaries</code> dan <code>horizontalBoundaries</code>. Setidaknya satu dari dua properti tersebut diperlukan untuk mengaktifkan peristiwa <code>scroll</code>. Nilai untuk kedua properti harus berupa array angka yang berisi batasan kapan peristiwa scroll akan dibuat. Lihat contoh ini di <a href="/id/docs/analytics/use_cases.html#tracking-scrolling">melacak scroll</a>.</td>
+      <td data-th="Description">Mengontrol dalam kondisi apa peristiwa <code>scroll</code> akan diaktifkan saat halaman di-scroll. Objek ini dapat berisi <code>verticalBoundaries</code> dan <code>horizontalBoundaries</code>. Setidaknya satu dari dua properti tersebut diperlukan untuk mengaktifkan peristiwa <code>scroll</code>. Nilai untuk kedua properti harus berupa array angka yang berisi batasan kapan peristiwa scroll akan dibuat. Lihat contoh ini di <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">melacak scroll</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (wajib jika <code>on</code> ditetapkan ke <code>timer</code>)</td>

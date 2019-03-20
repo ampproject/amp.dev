@@ -25,7 +25,7 @@ Regola manualmente la larghezza e l'altezza fornite oppure utilizza l'attributo 
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -50,7 +50,7 @@ Inoltre, Instagram utilizza proporzioni fisse per i layout reattivi, quindi il v
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -66,14 +66,14 @@ Devi includere lo script seguente nella sezione `<head>`:
 
 ##### Esempio: Incorporamento di un post
 
-Source: 
+Source:
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
@@ -81,7 +81,7 @@ Preview:
 
 ##### Esempio: Incorporamento di un video
 
-Source: 
+Source:
 ```html
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -89,7 +89,7 @@ Source:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-Preview: 
+Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
     data-embed-as="video"
@@ -119,7 +119,7 @@ Utilizza `layout="responsive"` per ottenere i layout corretti per video con prop
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -143,7 +143,7 @@ Tipi di annunci diversi richiedono attributi `data-*` differenti.
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 
@@ -157,7 +157,7 @@ Includi un attributo `placeholder` (se supportato dalla rete pubblicitaria) da m
             resizable
             src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
   <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div> 
+  <div placeholder></div>
 </amp-iframe>
 </div>
 

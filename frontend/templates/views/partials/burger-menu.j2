@@ -19,7 +19,7 @@
     {% set section_index = g.doc(section.index, locale=doc.locale) %}
     <li class="ap-o-burger-menu-item">
       {# If the section has only one child it shouldn't be collapsable #}
-      {% if not section.sub_navigation %}
+      {% if not section.flyout %}
       <a class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
         {{ section.title }}
       </a>
@@ -35,11 +35,11 @@
       </span>
       {# Section's sub level navigation if that's the current section #}
       <ul class="ap-o-burger-menu-items">
-      {% for path in section.sub_navigation %}
+      {% for path in section.flyout %}
       <li class="ap-o-burger-menu-item">
         {% set second_level_doc = g.doc(path, locale=doc.locale) %}
         <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
-          {{ second_level_doc.titles('header') }}
+          {{ second_level_doc.titles('navigation') }}
         </a>
       </li>
       {% endfor %}

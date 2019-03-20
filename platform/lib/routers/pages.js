@@ -50,7 +50,7 @@ function getFilteredFormat(request) {
 
 
 // Setup a proxy over to Grow during development
-if (config.environment === 'development') {
+if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
   const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
@@ -100,7 +100,7 @@ if (config.environment === 'development') {
   proxy.on('proxyRes', async (proxyResponse, request, response) => {
     // Check if this response should be filtered
     const activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
+    if (activeFormat && isFilterableRoute(request.path)) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
@@ -146,7 +146,7 @@ if (config.environment === 'development') {
   });
 }
 
-if (config.environment !== 'development') {
+if (!config.isDevMode()) {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
   const staticMiddleware = express.static(STATIC_PAGES_PATH);
 

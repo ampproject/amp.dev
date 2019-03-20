@@ -37,7 +37,7 @@ Si se te da bien leer código, puedes consultar las configuraciones sin procesar
 
 [tip type="note"]
 
-Los proveedores que quieran integrar su servicio con [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) deben consultar los detalles en [Integrar tus herramientas de analíticas con AMP](/es/docs/analytics/integrating-analytics.html).
+Los proveedores que quieran integrar su servicio con [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) deben consultar los detalles en [Integrar tus herramientas de analíticas con AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -220,7 +220,7 @@ Permite añadir compatibilidad con Nielsen Marketing Cloud. Puedes encontrar má
 
 Escribe el valor de atributo: `oewa`
 
-Permite añadir compatibilidad con [OEWA](https://www.oewa.at). Requiere una copia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) en un subdominio diferente del que incluye el archivo AMP [¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md). El archivo se debe servir a través de HTTPS. Por ejemplo, si tus archivos AMP están alojados en `www.example.com`, entonces `amp-analytics-oewa.html` debe estar en otro subdominio, como `oewa-amp.example.com`. Puedes encontrar más información sobre cómo añadir compatibilidad con OEWA [aquí](http://www.oewa.at/basic/implementierung).
+Permite añadir compatibilidad con [OEWA](https://www.oewa.at). Requiere una copia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) en un subdominio diferente del que incluye el archivo AMP [¿por qué?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md). El archivo se debe servir a través de HTTPS. Por ejemplo, si tus archivos AMP están alojados en `www.example.com`, entonces `amp-analytics-oewa.html` debe estar en otro subdominio, como `oewa-amp.example.com`. Puedes encontrar más información sobre cómo añadir compatibilidad con OEWA [aquí](http://www.oewa.at/Implementierung).
 
 Además, debes definir estas variables:
 

@@ -14,7 +14,7 @@ $title: 通过 AMP 网页预加载渐进式网页应用
 
 ### 使用 AMP 进行初始用户获取
 
-AMP 是所谓的**叶级页**的理想解决方案；叶级页是指用户通过某个搜索引擎、朋友提供的某个共享链接或另一网站上的某个链接而自然发现的内容页。由于 AMP 具有[专门的预呈现功能](/zh_cn/learn/about-how/)，因此 AMP 网页的加载速度极快，这便意味着流失率会大幅降低（最新的 [DoubleClick 研究](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)表明，**在所有用户中，有超过 53% 的用户会在 3 秒钟后流失）**。
+AMP 是所谓的**叶级页**的理想解决方案；叶级页是指用户通过某个搜索引擎、朋友提供的某个共享链接或另一网站上的某个链接而自然发现的内容页。由于 AMP 具有[专门的预呈现功能]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}，因此 AMP 网页的加载速度极快，这便意味着流失率会大幅降低（最新的 [DoubleClick 研究](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)表明，**在所有用户中，有超过 53% 的用户会在 3 秒钟后流失）**。
 
 ### 使用 PWA 提升互动性和参与度
 
@@ -109,4 +109,4 @@ AMP 采用一种名为 [Shell 网址重写]({{g.doc('/content/amp-dev/documentat
 
 待您设置好上述属性后，在相应 AMP 网页上发生的所有后续点击都会跳转到您的 PWA，而无论采用何种 Service Worker。
 
-继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作](/zh_cn/docs/integration/amp-in-pwa.html)。
+继续阅读: 您已经掌握不少相关知识和技巧了，为什么不重复使用您的现有 AMP 网页来构建 PWA 呢？[如何操作]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})。

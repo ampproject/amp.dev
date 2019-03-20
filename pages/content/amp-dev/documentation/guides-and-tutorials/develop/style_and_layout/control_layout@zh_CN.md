@@ -31,7 +31,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 
 [tip type="success"]
 
-查看并排显示的 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 在线演示：[AMP By Example 上的在线演示](https://ampbyexample.com/components/amp-img/)。
+查看并排显示的 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 在线演示：[AMP By Example 上的在线演示]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}})。
 
 [/tip]
 
@@ -172,8 +172,8 @@ AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +184,8 @@ AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]

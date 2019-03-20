@@ -10,7 +10,7 @@ $title: 広告で AMP ページを収益化する
 
 [tip type="success"]
 
-[AMP By Example のライブデモ](https://ampbyexample.com/components/amp-ad/)で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
+[AMP By Example のライブデモ]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
 
 [/tip]
 

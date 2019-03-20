@@ -42,7 +42,7 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 
 '[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) 에 속성이 'placeholder'인 요소(예: '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  요소)가 포함되어 있는 경우, 문서 상단에 '[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) 을 표시할 수 있습니다. 이러한 요소는 iframe을 표시할 준비가 될 때까지 플레이스홀더로 렌더링됩니다.
 
-읽어보기: [플레이스홀더가 포함된 iframe](/ko/docs/reference/components/amp-iframe.html#iframe-with-placeholder)에서 플레이스홀더에 대해 자세히 알아보세요.
+읽어보기: [플레이스홀더가 포함된 iframe]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)에서 플레이스홀더에 대해 자세히 알아보세요.
 
 플레이스홀더 사용 예:
 

@@ -38,12 +38,13 @@ body {
       grid-column: 8 / 25;
       padding-left: 30px;
       padding-right: 30px;
+      padding-bottom: 60px;
     }
-  
+
     @media (min-width: 1024px) {
       grid-column: 6 / 24;
       padding-left: 30px;
-      padding-right: 30px;
+      padding-bottom: 60px;
     }
   }
 
@@ -72,7 +73,7 @@ body {
 
     figure {
       &.alignment-wrapper {
-        margin: 0;
+        margin-bottom: 40px;
       }
 
       &.half {

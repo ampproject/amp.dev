@@ -31,7 +31,6 @@
     <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
-    <link rel="manifest" href="/static/manifest.json"/>
     <meta name="theme-color" content="#005af0"/>
 
     <link rel="canonical" href="{{ doc.url }}"/>
@@ -106,8 +105,8 @@
       {% endblock %}
 
       {{ doc.styles.emit() }}
-      <link rel="manifest" href="/manifest.json">
     </style>
+    <link rel="manifest" href="/manifest.json">
   </head>
   {# The body tag needs an empty class attribute in order to add the filter class.
   It is a block solely for the purpose to be overridable by the samples. #}
@@ -156,6 +155,7 @@
     <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
       Hi, this is the public beta of amp.dev. Got feedback?
       <a href="https://github.com/ampproject/docs/issues" class="ap-m-banner-link">
+        {% do doc.icons.useIcon('/icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         {{ _('Let us know!') }}
       </a>

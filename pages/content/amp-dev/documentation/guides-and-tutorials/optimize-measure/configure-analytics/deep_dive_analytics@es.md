@@ -246,19 +246,19 @@ AMP admite las siguientes configuraciones de activador:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obligatorio)</td>
-      <td data-th="Description">Nombre de la solicitud para enviar (tal como se especifica en las <a href="/es/docs/analytics/deep_dive_analytics.html#what-data-gets-sent-requests-attribute">solicitudes</a>).</td>
+      <td data-th="Description">Nombre de la solicitud para enviar (tal como se especifica en las <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">solicitudes</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Un objeto con pares clave-valor que se usan para anular <code>vars</code> definidos en la configuración de máximo nivel o para especificar <code>vars</code> únicos de este activador (consulta <a href="/es/docs/analytics/deep_dive_analytics.html#variable-substitution-ordering">Orden de sustitución de variables</a>).</td>
+      <td data-th="Description">Un objeto con pares clave-valor que se usan para anular <code>vars</code> definidos en la configuración de máximo nivel o para especificar <code>vars</code> únicos de este activador (consulta <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">Orden de sustitución de variables</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obligatorio si el valor de <code>on</code> es <code>click</code>)</td>
-      <td data-th="Description">Un selector CSS usado para filtrar los elementos incluidos en el seguimiento. Usa el valor <code>*</code> para hacer un seguimiento de todos los elementos. Esta configuración se usa junto con el activador <code>click</code>. Aprende a usar el selector para <a href="/es/docs/analytics/use_cases.html#tracking-page-clicks">hacer un seguimiento de clics de páginas</a> e <a href="/es/docs/analytics/use_cases.html#tracking-social-interactions">interacciones sociales</a>.</td>
+      <td data-th="Description">Un selector CSS usado para filtrar los elementos incluidos en el seguimiento. Usa el valor <code>*</code> para hacer un seguimiento de todos los elementos. Esta configuración se usa junto con el activador <code>click</code>. Aprende a usar el selector para <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">hacer un seguimiento de clics de páginas</a> e <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">interacciones sociales</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (obligatorio si el valor de <code>on</code> es <code>scroll</code>)</td>
-      <td data-th="Description">Controla en qué condiciones se activará el evento <code>scroll</code> cuando el usuario se desplace por la página. Este objeto puede contener <code>verticalBoundaries</code> y <code>horizontalBoundaries</code>. Se necesita al menos una de las dos propiedades para activar el evento <code>scroll</code>. Los valores de las dos propiedades deben ser matrices de números que contengan los límites en los que se genera un evento de desplazamiento. Consulta este ejemplo de <a href="/es/docs/analytics/use_cases.html#tracking-scrolling">hacer un seguimiento de los desplazamientos</a>.</td>
+      <td data-th="Description">Controla en qué condiciones se activará el evento <code>scroll</code> cuando el usuario se desplace por la página. Este objeto puede contener <code>verticalBoundaries</code> y <code>horizontalBoundaries</code>. Se necesita al menos una de las dos propiedades para activar el evento <code>scroll</code>. Los valores de las dos propiedades deben ser matrices de números que contengan los límites en los que se genera un evento de desplazamiento. Consulta este ejemplo de <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">hacer un seguimiento de los desplazamientos</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (obligatorio si el valor de <code>on</code> es <code>timer</code>)</td>

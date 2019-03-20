@@ -8,7 +8,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 `width`와 `height`를 지정하고 레이아웃을 `responsive`로 설정한 다음
 이미지 애셋이 다양한 화면 크기에 맞게 사용될 수 있도록
-[`srcset`](/ko/docs/design/responsive/art_direction.html)로 지정하여 반응형 이미지를 만듭니다.
+[`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})로 지정하여 반응형 이미지를 만듭니다.
 
 [sourcecode:html]
 <amp-img
@@ -99,7 +99,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 [tip type="success"]
 
-[AMP 레이아웃 시연](/ko/docs/design/amp-html-layout/layouts_demonstrated.html) 페이지를 방문하여 다양한 레이아웃이 화면 크기 조절에 어떻게 반응하는지 알아보세요. [AMP By Example](https://ampbyexample.com/advanced/layout_system/)에서도 자세히 알아볼 수 있습니다.
+[AMP 레이아웃 시연]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) 페이지를 방문하여 다양한 레이아웃이 화면 크기 조절에 어떻게 반응하는지 알아보세요. [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}})에서도 자세히 알아볼 수 있습니다.
 
 [/tip]
 
@@ -172,8 +172,8 @@ AMP에서 사용할 수 있는 또 다른 반응형 디자인 기능은 `media` 
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,9 +184,8 @@ AMP에서 사용할 수 있는 또 다른 반응형 디자인 기능은 `media` 
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

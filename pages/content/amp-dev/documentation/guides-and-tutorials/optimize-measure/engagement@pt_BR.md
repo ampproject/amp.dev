@@ -37,7 +37,7 @@ Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-
 
 ### Participe do projeto AMP de código aberto e ajude no desenvolvimento
 
-- **Acompanhe o roteiro de AMP** para ver os recursos e as atualizações em [ampproject.org/roadmap/](/roadmap/).
+- **Acompanhe o roteiro de AMP** para ver os recursos e as atualizações em [ampproject.org/roadmap/]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}).
 
 - **Envolva-se.** Contribua com código-fonte, comunique bugs ou faça comentários no [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Compartilhe sua opinião sobre as AMP no [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
