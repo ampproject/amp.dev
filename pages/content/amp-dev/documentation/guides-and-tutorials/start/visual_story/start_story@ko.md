@@ -62,7 +62,7 @@ $title: 본격적으로 스토리 시작하기
 JSON-LD)를 대체하는 것은 아닙니다. [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})  들어가는 title, publisher 등이
 페이지에 이미 있는 Structured Data와 중복된다고 Structured Data를 없애면
 안된다는 뜻입니다.
-참고로, [Structured Data]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/discovery.md', locale=doc.locale).url.path}}#integrate-with-third-party-platforms-through-additional-metadata)는
+참고로, [Structured Data]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}#integrate-with-third-party-platforms-through-additional-metadata)는
 AMP 문서(AMP 스토리를 포함하여)를 여러 플랫폼이나 서비스에서 문서가 잘 보여줄 수
 있게하는 메타데이터 포맷입니다.
 

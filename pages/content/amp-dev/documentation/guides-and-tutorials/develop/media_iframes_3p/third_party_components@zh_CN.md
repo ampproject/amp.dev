@@ -54,7 +54,7 @@ $title: 包含第三方内容
 </amp-iframe>
 </div>
 
-提示: 要查看更多 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/amp-instagram.html', locale=doc.locale).url.path}})。
+提示: 要查看更多 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}})。
 
 ## 显示 Facebook 帖子或视频
 

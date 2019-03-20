@@ -20,7 +20,6 @@ const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const ampCors = require('amp-toolbox-cors');
-// const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
@@ -44,7 +43,7 @@ class Platform {
     signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
     this.server = express();
 
-    if (config.environment == 'development') {
+    if (config.isDevMode()) {
       const HttpProxy = require('http-proxy');
 
       // When in development fire up a second server as a simple proxy
@@ -54,7 +53,6 @@ class Platform {
         signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
       });
 
-      subdomain.router(this.proxy);
       const proxy = new HttpProxy();
       this.proxy.get('/*', (request, response, next) => {
         proxy.web(request, response, {
@@ -63,18 +61,6 @@ class Platform {
       });
     }
     this.server.use(shrinkRay());
-    /*
-    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
-    this.server.use((request, response, next) => {
-      // don't optimize sample source or preview
-      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
-             request.headers['x-requested-by'] === 'playground') {
-        next();
-        return;
-      }
-      ampOptimizer(request, response, next);
-    });
-    */
     this.server.use((req, res, next) => {
       if (req.hostname.startsWith(WWW_PREFIX)) {
         res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
@@ -134,7 +120,7 @@ class Platform {
 
   _registerRouters() {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
-    this.server.use(subdomain.map(config.hosts.playground.subdomain, routers.playground));
+    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(routers.examples);
     this.server.use(routers.static);

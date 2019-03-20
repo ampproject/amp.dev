@@ -12,7 +12,7 @@ $title: ライブブログを作成する
 
 ## `amp-live-list` の概要
 
-[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントは、ホスト ドキュメントを定期的にポーリングして新しいコンテンツがないか確認し、新しい項目が利用できるようになったらユーザーのブラウザを更新します。つまり、新しいブログ投稿を追加するたびに、CMS でホスト ドキュメントを更新し、ページの本文と[メタデータ]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}}) セクションの両方に更新を含める必要があるということです。
+[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントは、ホスト ドキュメントを定期的にポーリングして新しいコンテンツがないか確認し、新しい項目が利用できるようになったらユーザーのブラウザを更新します。つまり、新しいブログ投稿を追加するたびに、CMS でホスト ドキュメントを更新し、ページの本文と[メタデータ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) セクションの両方に更新を含める必要があるということです。
 
 たとえば、次のようなシンプルなブログのコードがあるとします。
 

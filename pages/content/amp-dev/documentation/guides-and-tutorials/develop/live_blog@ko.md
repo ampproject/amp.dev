@@ -4,7 +4,7 @@ $title: 라이브 블로그 만들기
 
 라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소를 사용하여 라이브 블로그를 구현할 수 있습니다.
 
-이 가이드에서는 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}})을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
+이 가이드에서는 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
 
 [tip type="success"]
 

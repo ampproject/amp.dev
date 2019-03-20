@@ -175,6 +175,7 @@ body {
 
     &-center {
       grid-column: 1;
+      flex-direction: column;
       position: relative;
 
       @media (min-width: 768px){
