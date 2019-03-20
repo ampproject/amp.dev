@@ -44,8 +44,6 @@
 
   &-list {
     grid-column: 1 / -1;
-    scroll-snap-type: x mandatory;
-    overflow-y: hidden;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     width: auto;

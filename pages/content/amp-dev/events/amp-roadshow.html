@@ -1,7 +1,7 @@
 ---
 $title: AMP Roadshow
 $order: 2
-$view: /views/overview/custom-content.j2
+$view: /views/overview/events.j2
 
 roadshow: !g.yaml /content/shared/data/roadshow.yaml
 
@@ -12,22 +12,19 @@ section_links:
   - Amplify
   - FAQ
 ---
-{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+{% do doc.styles.addCssFile('css/components/templates/events.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
 
 
-<section class="ap--stage ap--stage-roadshow ap--container-fluid">
+<section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
     <div class="ap-o-stage ap-o-stage-websites all">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content ap-o-stage-content-roadshow">
-
-            <h1 class="ap-o-stage-content-headline">AMP Roadshow</h1>
-            <h2 class="ap-o-stage-content-subline">Come join us in your city for a free, inclusive dev workshop with the AMP team.</h2>
-
-            {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-            <a href="#Cities" class="ap-o-stage-content-button ap-a-btn">Sign Up</a>
-
+          <h1 class="ap-o-stage-content-headline">AMP Roadshow</h1>
+          <h2 class="ap-o-stage-content-subline">Come join us in your city for a free, inclusive dev workshop with the AMP team.</h2>
+          {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
+          <a href="#Cities" class="ap-o-stage-content-button ap-a-btn">Sign Up</a>
         </div>
       </div>
     </div>
@@ -64,7 +61,7 @@ section_links:
   {% do doc.styles.addCssFile('css/components/molecules/event.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/visited-city.css') %}
 
-  <div class="ap-o-cities">
+  <div class="ap-o-cities ap--content-wide">
     <h3 class="ap-o-cities-headline">Cities</h3>
     <div class="ap-m-jumbo ap-m-jumbo-cities">
       <div class="ap-a-ico">
@@ -128,7 +125,7 @@ section_links:
     </div>
 </section>
 
-<section id="Agenda" class="ap--container ap--container-agenda">
+<section id="Agenda" class="ap--container ap--container-float-right">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
 
@@ -143,10 +140,27 @@ section_links:
         <ul class="ap-o-agenda-content-list">
 
           {% for agenda_item in doc.roadshow.agenda %}
-            <li class="ap-m-agenda-item">
-              <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
-              <div class="ap-m-agenda-item-title {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
-            </li>
+             <li class="ap-m-agenda-item">
+                  {% if speaker %}
+                    <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                  {% endif %}
+                  {% if agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}"  src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                    {% endfor %}
+                  {% endif %}
+                  <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+                  <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+                  {% if speaker %}
+                    <div class="ap-m-agenda-item-description-speaker">{{ speaker.name }}</div>
+                  {% endif %}
+
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+                  </div>
+                </li>
           {% endfor %}
 
         </ul>

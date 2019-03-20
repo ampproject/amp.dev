@@ -49,8 +49,8 @@ stories:
 ---
 
 <section class="ap--stage ap--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <div class="ap-o-stage ap-o-stage-stories">
+  {% do doc.styles.addCssFile('css/components/organisms/stage-stories.css') %}
+  <div class="ap-o-stage">
     <div class="ap--container-fluid">
       <div class="ap-o-stage-content">
           <div class="ap-o-stage-content-icon ap-a-ico">
@@ -86,25 +86,6 @@ stories:
           <span class="ap-m-lnk-text">Get Started</span>
         </a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="ap--teaser-grid ap--container">
-  <div class="ap-o-teaser-grid">
-    <div class="ap-o-teaser-grid-list">
-      {% for kpi in doc.kpis %}
-        {% with %}
-        {% set teaser_doc = kpi.success_story %}
-        {% set teaser = {
-          "figure": kpi.figure,
-          "description": kpi.description,
-          "logo": teaser_doc.teaser.logo,
-          "text": teaser_doc.teaser.text
-        }%}
-        {% include '/views/partials/teaser.j2' %}
-        {% endwith %}
-      {% endfor %}
     </div>
   </div>
 </section>

@@ -25,7 +25,6 @@ Please refer to mixins.scss to see gradients.
 
 @mixin kpi {
   position: relative;
-  padding-bottom: 100%;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
 }
 
@@ -37,7 +36,6 @@ Please refer to mixins.scss to see gradients.
   width: 100%;
   height: auto;
   min-height: 100%;
-  position: absolute;
   left: 0;
   top: 0;
   padding: 0 1.5em 1em;
