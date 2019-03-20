@@ -18,8 +18,16 @@
   @include txt;
   @include txt-lrg;
   display: flex;
-  align-items: center;
   text-align: left;
+  padding-left: 10px;
+
+  &-speakers {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: -75px;
+    min-width: 65px;
+  }
 
   &-image {
     display: none;
@@ -27,46 +35,14 @@
     @media (min-width: 768px) {
       display: block;
       border-radius: 50%;
-      align-self: flex-start;
-      margin-right: 10px;
-      margin-left: -60px;
-    }
 
-    &.multiple {
-      position: absolute;
-
-      &:nth-child(1) {
-        margin-top: -35px;
+      &:nth-child(even) {
+        margin-left: 15px;
       }
 
       &:nth-child(odd) {
-        margin-left: -90px;
+        margin-left: -15px;
       }
-
-      &:nth-child(even) {
-        margin-left: -55px;
-      }
-
-      &:nth-child(3) {
-        margin-top: 35px;
-      }
-
-      &:nth-child(4) {
-        margin-top: 70px;
-      }
-
-      &:nth-child(5) {
-        margin-top: 105px;
-      }
-
-      &:nth-child(6) {
-        margin-top: 140px;
-      }
-
-      &:nth-child(7) {
-        margin-top: 175px;
-      }
-
     }
 
   }
@@ -75,9 +51,8 @@
     @include txt-font-accent;
     width: 50px;
     margin-right: 25px;
-    padding: 7px 15px 0 0;
+    padding-right: 15px;
     color: color('charade');
-    align-self: flex-start;
   }
 
 
@@ -85,7 +60,7 @@
     position: relative;
     width: 80%;
     border-left: 2px solid color('blue-ribbon');
-    padding: 13.5px 0 13.5px 25px;
+    padding: 0 0 25px 25px;
 
     &:before {
       content: '';
@@ -105,6 +80,7 @@
         background: color('white');
         height: 14px;
         width: 14px;
+        margin-top: 4px;
         border: 2px solid color('blue-ribbon');
       }
     }
