@@ -2,7 +2,7 @@ $path: /documentation/guides-and-tutorials/courses/beginner-course/{base}.html
 $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/courses/beginner-course/{base}.html
-$title@: Beginner Course
+$title@: Web Development with AMP - Beginner Course
 $order: 0
 
 chaptered: true

@@ -2,7 +2,7 @@ $path: /documentation/guides-and-tutorials/courses/intermediate-course/{base}.ht
 $view: /views/detail/docs-detail.j2
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/courses/intermediate-course/{base}.html
-$title@: Intermediate Course
+$title@: Web Development with AMP - Intermediate Course
 $order: 2
 
 chaptered: true
