@@ -48,6 +48,12 @@
     h1, h2 {
       margin-bottom: .5em;
     }
+
+    @media (min-width: 930px) {
+      .ap-m-breadcrumbs {
+        margin-left: 60px;
+      }
+    }
   }
   .#{utility('section')} {
     @media (min-width: 930px) {
