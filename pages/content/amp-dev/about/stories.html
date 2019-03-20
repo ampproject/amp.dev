@@ -48,9 +48,11 @@ stories:
     url: https://www.wired.com/amp-stories/space-photos-of-the-week-111817/
 
 templates:
-  - image: /static/img/templates/single_video.jpg
+  - video: /static/img/templates/single_video.mp4
+    poster: /static/img/templates/single_video.jpg
     immage_alt@: Single video
-  - image: /static/img/templates/single-image-template.jpg
+  - video: /static/img/templates/single-image-template.mp4
+    poster: /static/img/templates/single-image-template.jpg
     immage_alt@: Single Image
   - image: /static/img/templates/multiple-image-template.jpg
     immage_alt@: Multiple Image
@@ -318,6 +320,7 @@ templates:
       height="555"
       type="carousel">
       {% for template in doc.templates %}
+        {% if template.image %}
         <div class="ap-o-story-carousel-slide">
           <div class="ap-o-story-carousel-slide-image">
             <amp-img
@@ -327,7 +330,21 @@ templates:
               alt="{{ template.image_alt }}">
             </amp-img>
           </div>
-      </div>
+        </div>
+        {% elif template.video %}
+        <div class="ap-o-story-carousel-slide">
+          <div class="ap-o-story-carousel-slide-image">
+            <amp-video
+              width="282"
+              height="470"
+              poster="{{ template.poster }}"
+              src="{{ template.video }}"
+              autoplay muted loop>
+            </amp-video>
+          </div>
+        </div>
+        {% else %}
+        {% endif %}
       {% endfor %}
     </amp-carousel>
 
@@ -337,16 +354,31 @@ templates:
       height="370"
       type="carousel">
       {% for template in doc.templates %}
-      <div class="ap-o-story-carousel-slide">
-        <div class="ap-o-story-carousel-slide-image">
-          <amp-img
-            src="{{template.image}}"
-            width="171"
-            height="285"
-            alt="{{ template.image_alt }}">
-          </amp-img>
+        {% if template.image %}
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image">
+              <amp-img
+                src="{{template.image}}"
+                width="171"
+                height="285"
+                alt="{{ template.image_alt }}">
+              </amp-img>
+            </div>
+          </div>
+        {% elif template.video %}
+          <div class="ap-o-story-carousel-slide">
+          <div class="ap-o-story-carousel-slide-image">
+            <amp-video
+              src="{{ template.video }}"
+              width="171"
+              height="285"
+              poster="{{ template.poster }}"
+              autoplay muted loop>
+            </amp-video>
+          </div>
         </div>
-      </div>
+        {% else %}
+        {% endif %}
       {% endfor %}
     </amp-carousel>
   </div>
