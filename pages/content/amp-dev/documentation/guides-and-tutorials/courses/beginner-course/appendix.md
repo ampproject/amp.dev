@@ -3,7 +3,6 @@ $title: Appendix
 $order: 7
 toc: true
 ---
-<!-- [TOC] -->
 
 ## Explaining the boilerplate AMP HTML
 
@@ -37,15 +36,15 @@ All AMP HTML pages must also contain some default styles within the `<head>` tag
 
 AMP works on mobile and desktop devices alike. Since a user may experience your webpage on either, it's best to check your webpage on both devices while developing. To simulate a mobile device experience in Chrome DevTools, click the mobile phone device icon here:
 
-{{ image('/static/img/courses/beginner/image5.png', 409, 244, caption='Mobile preview in DevTools') }}
+{{ image('/static/img/courses/beginner/image5.png', 409, 244, align='center half', caption='Mobile preview in DevTools') }}
 
 Now select a mobile device (for example a "Nexus 5X") from this menu:
 
-{{ image('/static/img/courses/beginner/image1.png', 862, 73, caption='Select a mobile device') }}
+{{ image('/static/img/courses/beginner/image1.png', 193,341, align='center third', caption='Select a mobile device') }}
 
 You should see a simulation of how the page would look for the selected device in your browser such as this:
 
-{{ image('/static/img/courses/beginner/image11.png', 445, 816, caption='A simulation of how the page looks on mobile') }}
+{{ image('/static/img/courses/beginner/image11.png', 445, 816,  align='center third', caption='A simulation of how the page looks on mobile') }}
 
 Notice the content doesn't fit well on the mobile device's screen. The “viewport” meta tag takes care of that. This tag scales our page to create the best view in the given screen size.
 Since we want our AMP pages to be optimized for mobile devices, and also be responsive, it goes without saying that this tag is required by the AMP validator.
@@ -58,7 +57,7 @@ So, the following tag must be placed within the `<head>` tag of our AMP page. Ad
 
 If you refresh your page, it should now look a bit better in small screens, like this:
 
-{{ image('/static/img/courses/beginner/image20.png', 414, 733, caption='Mobile optimized page') }}
+{{ image('/static/img/courses/beginner/image20.png', 414, 733,  align='center third', caption='Mobile optimized page') }}
 
 You will not notice much of a difference now, apart from the title, but you can try it as we move further along to understand how the scaling works.
 

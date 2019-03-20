@@ -4,8 +4,6 @@ $order: 2
 toc: true
 ---
 
-<!-- [TOC] -->
-
 ## Starting Our Journey
 
 It’s our team’s first day building out our Chico’s Cheese Bike site. So far, the site is a basic HTML page, with a header containing the title of our site, an image of one of our bikes, and some marketing text.

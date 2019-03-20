@@ -4,8 +4,6 @@ $order: 3
 toc: true
 ---
 
-<!-- [TOC] -->
-
 ## Adding Features To Our Site
 
 So far, we’ve converted our basic HTML site into a basic AMP site. There is only one validation error remaining in our site, and we’ll fix it by using an `<amp-img>` component instead of an `<img>` tag. As we fix this last validation error, we’ll learn what AMP components are, why some HTML tags are replaced or disallowed in AMP, and how to add components to our site.
@@ -73,7 +71,7 @@ The portion of the page containing the image should look like this:
 
 The next problem we need to troubleshoot has to do with how our page looks. You won’t notice it on a large desktop monitor, but it’s easy to see what’s wrong when we look at the site on a mobile device.
 
-{{ image('/static/img/courses/beginner/image23.png', 311, 550, caption='The image of the bicycle runs off the edge of the screen') }}
+{{ image('/static/img/courses/beginner/image23.png', 311, 550,  align='center third', caption='The image of the bicycle runs off the edge of the screen') }}
 
 The image we added to the page doesn’t shrink to fit smaller screens; it just spills over the side. If we don’t specify a strategy for laying out the image and resizing it, it’s going to default to a fixed width and height as we specified in our code. Luckily, we can fix this issue using AMP's layout system.
 
@@ -87,7 +85,7 @@ Add the `layout` attribute to our image. If done correctly, it will looks someth
 
 After you have made the change, take a look at your page. The image has the correct aspect ratio and responsively fills the width of the screen. Problem solved.
 
-{{ image('/static/img/courses/beginner/image26.png', 311, 550, caption='Image of bicycle with correct aspect ratio') }}
+{{ image('/static/img/courses/beginner/image26.png', 311, 550,  align='center third', caption='Image of bicycle with correct aspect ratio') }}
 
 There are other layout types beyond responsive (at least 8 in total, in fact).
 For example, the `“fixed”` layout indicates that the component should never be resized from the height and width that are assigned to it. The `“intrinsic”` layout is similar to the responsive layout, except that it has the concept of an intrinsic height and width that cannot be exceeded by the component. Some layouts can only be applied to certain components. The documentation for each component will specify which layouts are valid for that component. You can read about the rest of the layout types [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}).
@@ -98,7 +96,7 @@ If you want to become a successful AMP developer, learning how to use the layout
 [tip type="tip"]
 **Tip**: Try selecting different mobile devices from the dropdown menu (see screenshot below) to see how the image adapts to different screen sizes. It’s good practice to test your site on different screen sizes. Browsers on actual mobile devices may behave differently, so when possible, test your webpage on real devices too.
 
-{{ image('/static/img/courses/beginner/image4.png', 297, 380, caption='Dropdown list of devices in Chrome') }}
+{{ image('/static/img/courses/beginner/image4.png', 297, 380,  align='center half', caption='Dropdown list of devices in Chrome') }}
 [/tip]
 
 ## Exercise 4: Embedding Video
@@ -122,7 +120,7 @@ Recommended style guidelines:
 
 After you have made the changes, look at your page. You should now see the YouTube video:
 
-{{ image('/static/img/courses/beginner/image18.png', 311, 550, caption='Image of the YouTube video in the page') }}
+{{ image('/static/img/courses/beginner/image18.png', 311, 550,  align='center third', caption='Image of the YouTube video in the page') }}
 
 ### Solution
 

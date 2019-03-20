@@ -4,8 +4,6 @@ $order: 4
 toc: true
 ---
 
-<!-- [TOC] -->
-
 ## Navigating the AMP Component Documentation
 
 So far, the components we’ve used have been fairly straightforward. For `<amp-img>` and `<amp-youtube>`, it was sufficient to visit the documentation, look at an example, and copy that to our site. For more advanced features of these components, or for more complicated components, we will need to read and absorb more information from the documentation.
@@ -102,7 +100,7 @@ Recommended style guidelines:
 
 After you have made the changes, look at the live page to check your work. Your page should look something like this:
 
-{{ image('/static/img/courses/beginner/image9.png', 312, 552, caption='The carousel in our page.') }}
+{{ image('/static/img/courses/beginner/image9.png', 312, 552,  align='center third', caption='The carousel in our page.') }}
 
 ### Solution
 
@@ -130,7 +128,7 @@ Remember to include the `<amp-carousel>` script in the `<head>`:
 
 As we continue to develop our cheese bike site, we won’t always know the name of the AMP component we want to add to implement some desired new feature. The AMP community has produced a large collection of components that handle many different types of functionality: ads and analytics, dynamic content, layout, media, presentation, and social. It’s typical when developing an AMP site to be given a set of requirements for a new feature, and then to search through the lists of AMP components in search of a component that fulfills those requirements.
 
-The first way to discover new AMP components is to use your favorite search engine or the search functionality on the AMP project [site](https://amp.dev/). This is an effective way to go directly to the documentation for a component that you already know by name. Additionally, you can search for descriptions of components you’re interested in to find results. Searching “YouTube videos,” for example, will bring up <amp-youtube> as the first result. Similarly, searching “collapsible content” will bring up the <amp-accordion> component as the first result.
+The first way to discover new AMP components is to use your favorite search engine or the search functionality on the AMP project [site](https://amp.dev/). This is an effective way to go directly to the documentation for a component that you already know by name. Additionally, you can search for descriptions of components you’re interested in to find results. Searching “YouTube videos,” for example, will bring up `<amp-youtube>` as the first result. Similarly, searching “collapsible content” will bring up the `<amp-accordion>` component as the first result.
 
 Another way to find components is to use the [AMP Components Reference]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) page. It contains a list of the components supported by AMP. Each component entry includes the name of the component and a short description of what functionality the component provides. We can access the documentation for a component by clicking on its name. As we learned earlier, the documentation will go even deeper into the behavior of the component. Based on these bits of information, we should be able to determine whether the component will fulfill our needs or whether we need to search for a different component. In a future training, we will discuss what to do if no single component meets all of our requirements.
 
@@ -158,7 +156,7 @@ Recommended style guidelines:
 
 After you have completed this task, your page should contain buttons for the user to share your site:
 
-{{ image('/static/img/courses/beginner/image19.png', 310, 548, caption='Social media buttons embedded in the page.') }}
+{{ image('/static/img/courses/beginner/image19.png', 310, 548,  align='center third', caption='Social media buttons embedded in the page.') }}
 
 ### Solution
 
