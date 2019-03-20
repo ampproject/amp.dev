@@ -16,7 +16,6 @@
 @import 'components/atoms/_text.scss';
 
 .#{utility('video-slider')} {
-  // padding: 0;
   @media (min-width: 930px) {
     padding: 40px 60px 80px 60px;
   }
@@ -52,7 +51,6 @@
         box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
         background-color: #FFFFFF;
       }
-
     }
   }
 }

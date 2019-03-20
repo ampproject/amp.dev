@@ -9,21 +9,18 @@ $localization:
 $order: 1
 $hidden: true
 
-flyout:
-  description: Get started with AMP
-  icon: guides-documents
-cms: !g.yaml /content/shared/data/cms.yaml
 ---
 
+<section class="ap--section">
+  <h1>Build websites with AMP!</h1>
+  <p>Here you can find everything you need to build AMP experiences. The sidebar on the left shows you all resources for building <strong>AMP websites.</strong></p>
+  <p>But you can also use AMP to build one of these:</p>
+</section>
 
 {% do doc.styles.addCssFile('/css/components/organisms/format-cards.css') %}
 <section class="ap--format-cards">
-  <h1 class="ap-o-format-cards-text">Build websites with AMP!</h1>
-  <p class="ap-o-format-cards-text">Here you can find everything you need to build AMP experiences. The sidebar on the left shows you all resources for building <strong>AMP websites.</strong></p>
-  <p class="ap-o-format-cards-text">But you can also use AMP to build one of these:</p>
   <div class="ap-o-format-cards-card">
     <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-stories">
-      {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories"></use></svg>
     </div>
     <h4 class="ap-o-format-cards-card-headline">AMP Stories</h4>
@@ -39,7 +36,6 @@ cms: !g.yaml /content/shared/data/cms.yaml
   </div>
   <div class="ap-o-format-cards-card">
     <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-ads">
-      {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads"></use></svg>
     </div>
     <h4 class="ap-o-format-cards-card-headline">AMP Ads</h4>
@@ -55,7 +51,6 @@ cms: !g.yaml /content/shared/data/cms.yaml
   </div>
   <div class="ap-o-format-cards-card">
     <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-emails">
-      {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email"></use></svg>
     </div>
     <h4 class="ap-o-format-cards-card-headline">AMP Emails</h4>
@@ -198,30 +193,15 @@ cms: !g.yaml /content/shared/data/cms.yaml
 <section class="ap--video-slider">
   <h2 class="ap-o-video-slider-text">Featured Videos</h2>
   <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
-  <amp-carousel class="ap-o-video-slider-carousel"
-    height="220"
-    layout="fixed-height"
-    controls=0
-    type="carousel">
-    <amp-youtube
-        data-videoid="4f9KU5VJpOU"
-        width="391"
-        height="220"
-        layout="fixed">
-    </amp-youtube>
-    <amp-youtube
-        data-videoid="axwrgJGkrNU"
-        width="391"
-        height="220"
-        layout="fixed">
-    </amp-youtube>
-    <amp-youtube
-        data-videoid="NySyeCLrnSA"
-        width="391"
-        height="220"
-        layout="fixed">
-    </amp-youtube>
-  </amp-carousel>
+  {% with %}
+  {% set youtube_video_ids = [
+    '4f9KU5VJpOU',
+    'axwrgJGkrNU',
+    'NySyeCLrnSA'
+    ]
+  %}
+  {% include '/views/partials/video-carousel.j2' %}
+  {% endwith %}
 </section>
 
 {% do doc.styles.addCssFile('/css/components/organisms/banner.css') %}
