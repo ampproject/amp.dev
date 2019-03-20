@@ -75,7 +75,7 @@ Optional style guidelines (puts the form inside a card; see screenshot below):
 
 Once you have finished, your page should look like this:
 
-{{ image('/static/img/courses/intermediate/image3.png', 309, 551, caption='The subscription form') }}
+{{ image('/static/img/courses/intermediate/image3.png', 309, 551, align='center third', caption='The subscription form') }}
 
 ### Solution
 
@@ -192,7 +192,7 @@ Recommended style guidelines:
 
 Once you have finished, the result should look like this:
 
-{{ image('/static/img/courses/intermediate/image8.png', 310, 549, caption='Successful subscription message') }}
+{{ image('/static/img/courses/intermediate/image8.png', 310, 549, align='center third', caption='Successful subscription message') }}
 
 ### Solution
 

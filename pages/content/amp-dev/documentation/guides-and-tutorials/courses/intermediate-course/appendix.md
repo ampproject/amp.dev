@@ -30,4 +30,4 @@ We know that we can render server responses by accessing the properties of the J
 
 In case you ever need to check a server response, you can do so using the developer tools in your browser. If you open Chrome DevTools and go to the Network tab, you will find your request there. It’s the “submit-form” request. If you click on it, you can see all the relevant information.
 
-{{ image('/static/img/courses/intermediate/image1.png', 434, 289, caption='The server response') }}
+{{ image('/static/img/courses/intermediate/image1.png', 434, 289,align='center', caption='The server response') }}

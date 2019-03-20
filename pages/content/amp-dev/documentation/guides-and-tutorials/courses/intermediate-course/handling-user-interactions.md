@@ -111,9 +111,9 @@ Recommended CSS guidelines:
 
 Once you are done, your page should look like this before and after the menu slides out:
 
-{{ image('/static/img/courses/intermediate/image5.png', 309, 550, caption='The toggle button on the header.') }}
+{{ image('/static/img/courses/intermediate/image5.png', 309, 550, align='center third', caption='The toggle button on the header.') }}
 
-{{ image('/static/img/courses/intermediate/image13.png', 309, 550, caption='The side menu.') }}
+{{ image('/static/img/courses/intermediate/image13.png', 309, 550, align='center third', caption='The side menu.') }}
 
 [tip type="read-on"]
 **Note**: Keep in mind that the above styling recommendations are just that: recommendations! We have already added the custom CSS for you so that you can just use the relevant classes and style your content to end up with the same result as the screenshots above. If you want to add your own styling to your page, you can write your own CSS.
@@ -162,7 +162,7 @@ Also, remember to include the `amp-sidebar` JavaScript in the `<head>`:
 
 Did you check the AMP validator while you were making your sidebar? While you were working, you might have gotten error messages like these:
 
-{{ image('/static/img/courses/intermediate/image6.png', 544, 197, caption='Validation errors') }}
+{{ image('/static/img/courses/intermediate/image6.png', 544, 197, align='center', caption='Validation errors') }}
 
 Two different errors appear here, duplicated for each of the clickable elements to which we attached an "`on`" attribute. But why?
 
@@ -221,7 +221,7 @@ Recommended style guidelines:
 
 Once you have finished, your expanded side menu should look like this:
 
-{{ image('/static/img/courses/intermediate/image2.png', 309, 550, caption='The expanded menu.') }}
+{{ image('/static/img/courses/intermediate/image2.png', 309, 550, align='center third', caption='The expanded menu.') }}
 
 ### Solution
 

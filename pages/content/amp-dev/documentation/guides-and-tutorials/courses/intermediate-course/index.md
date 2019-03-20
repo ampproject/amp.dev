@@ -5,8 +5,6 @@ $path: /documentation/guides-and-tutorials/courses/intermediate-course/index.htm
 toc: true
 ---
 
-<!-- [TOC] -->
-
 ## Welcome Back
 
 In the previous course, we learned how to create a basic AMP site by starting a website for our fictional Chico’s Cheese Bike shop. We also learned how to add static content to our site using AMP components. We added a carousel of images, social media posts, a video, and other essential elements.

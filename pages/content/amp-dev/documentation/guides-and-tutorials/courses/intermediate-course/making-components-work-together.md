@@ -76,7 +76,7 @@ Recommended style guidelines:
 
 Once you are done, your page should look like this:
 
-{{ image('/static/img/courses/intermediate/image7.png', 310, 552, caption='The carousel with the image thumbnails') }}
+{{ image('/static/img/courses/intermediate/image7.png', 310, 552, align='center third', caption='The carousel with the image thumbnails') }}
 
 ### Solution
 
@@ -121,7 +121,7 @@ Recommended style guidelines:
 
 Once you have finished, the result should look like this:
 
-{{ image('/static/img/courses/intermediate/image11.png', 312, 553, caption='Image of the styled thumbnail carousel') }}
+{{ image('/static/img/courses/intermediate/image11.png', 312, 553, align='center third', caption='Image of the styled thumbnail carousel') }}
 
 ### Solution
 
