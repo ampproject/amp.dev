@@ -51,7 +51,7 @@
     "amp-toolbox-runtime-version": "0.2.6",
     "cheerio": "1.0.0-rc.2",
     "express": "4.16.4",
-    "js-yaml": "3.12.2",
+    "js-yaml": "3.13.0",
     "module-alias": "2.2.0",
     "mri": "1.1.4",
     "node-fetch": "2.3.0",
