@@ -1,0 +1,17 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main %}
+{% do doc.styles.addCssFile('css/components/templates/policies.css') %}
+<main class="ap--main ap-t-policies">
+  <section class="ap--container">
+    <div class="ap--content-wide">
+      {{ doc.html|render|safe }}
+    </div>
+  </section>
+</main>
+{% endblock %}
