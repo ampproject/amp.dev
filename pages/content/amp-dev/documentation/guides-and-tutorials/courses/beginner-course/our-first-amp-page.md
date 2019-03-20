@@ -10,7 +10,7 @@ toc: true
 
 It’s our team’s first day building out our Chico’s Cheese Bike site. So far, the site is a basic HTML page, with a header containing the title of our site, an image of one of our bikes, and some marketing text.
 
-{{ image('/static/img/courses/beginner/image17.png', 824, 790, caption='Our basic HTML website') }}
+{{ image('/static/img/courses/beginner/image17.png', 824, 790,  align='center half', caption='Our basic HTML website') }}
 
 In your Glitch project, open index.html and verify that the HTML looks like this:
 
@@ -88,11 +88,11 @@ As you build websites with AMP and work through the exercises in these trainings
 
 After you have installed the AMP Validator Chrome extension, the validator will automatically run on any open page that has the AMP symbol (⚡) in its html tag, like ours does now. Open your Glitch project and look at the icon for the AMP Validator extension. It should look similar to the red one below with the badge indicating that there are 7 validation errors.
 
-{{ image('/static/img/courses/beginner/image6.png', 58, 58, caption='The AMP Validator Chrome extension showing AMP issues.') }}
+{{ image('/static/img/courses/beginner/image6.png', 58, 58,  align='center third', caption='The AMP Validator Chrome extension showing AMP issues.') }}
 
 Clicking on the icon for the AMP Validator opens a pop-up that lists the validation errors for the current page and gives some possible solutions to our issues.
 
-{{ image('/static/img/courses/beginner/image22.png', 1548, 1170, caption='The issues displayed in the AMP Validator Chrome Extension.') }}
+{{ image('/static/img/courses/beginner/image22.png', 1548, 1170, align='center', caption='The issues displayed in the AMP Validator Chrome Extension.') }}
 
 For the entry about the `<img>` tag:
 
@@ -101,16 +101,14 @@ For the entry about the `<img>` tag:
 Click the “Debug” link at the end of the entry. The Debug link takes you directly to the line of code on your page that contains the listed error. This helps you find the errors that occur in your files, and helps provide the context necessary to understand how to fix the errors.  
 And don’t worry: This message might seem unclear now, but it’s an easy fix. We need to use the AMP component `<amp-img>` instead of the HTML tag `<img>`. In the [Thinking in Components]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/thinking-in-components.md', locale=doc.locale).url.path}}) section of this course, we will explore why this error appears, what `<amp-img>` is, and how to fix it.
 
-{{ image('/static/img/courses/beginner/image16.png', 1999, 798, caption='AMP debugger showing an error inline.') }}
+{{ image('/static/img/courses/beginner/image16.png', 1999, 798, align='center', caption='AMP debugger showing an error inline.') }}
 
 For any other validation error entries, click the link labeled “Learn more.” This link takes you directly from the error description to the corresponding AMP documentation that will assist you in fixing the issue.
 
-{{ image('/static/img/courses/beginner/image21.png', 1864, 804, caption='AMP documentation reached via the “Learn more” link in the AMP Validator.') }}
+{{ image('/static/img/courses/beginner/image21.png', 1864, 804, align='center', caption='AMP documentation reached via the “Learn more” link in the AMP Validator.') }}
 
 [tip type="read-on"]
-
 **Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
-
 [/tip]
 
 The next step is to fix these validation errors. To do that, we need to learn a little more about the required elements of an AMP page. We need to do more than add a thunderbolt to our HTML to create a valid AMP page.
@@ -143,16 +141,13 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
 - Contain the AMP-style boilerplate code in their `<head>` tag. This CSS hides the content on the page until the AMP library has finished loading. The
   AMP-style boilerplate is the following snippet:
 
-  [sourcecode:html]
-  {% raw %}
+[sourcecode:html]
+{% raw %}
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-
 {% endraw %}[/sourcecode]
 
 [tip type="note"]
-
 **Note**: The AMP boilerplate code must be copied and pasted as-is. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/appendix.md', locale=doc.locale).url.path}}).
-
 [/tip]
 
 ## CSS and AMP
@@ -186,7 +181,7 @@ To practice adding custom styles to your AMP page, add the following `<style amp
 
 {% endraw %}[/sourcecode]
 
-{{ image('/static/img/courses/beginner/image10.png', 738, 1290, caption='Custom CSS affecting our page.') }}
+{{ image('/static/img/courses/beginner/image10.png', 738, 1290, align='center third', caption='Custom CSS affecting our page.') }}
 
 ## Exercise 2: Converting the rest of our HTML Page
 

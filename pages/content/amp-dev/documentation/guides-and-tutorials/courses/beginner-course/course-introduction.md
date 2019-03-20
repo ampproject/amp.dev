@@ -4,8 +4,6 @@ $order: 1
 toc: true
 ---
 
-<!-- [TOC] -->
-
 ## Who is this course for?
 
 This course is designed for aspiring first-time web developers and current developers looking to build performant websites. Throughout this and the following courses, you will:
@@ -26,15 +24,15 @@ To complete the code examples included in these courses, we will be using [Glitc
 
 The Glitch code editor environment looks like this:
 
-{{ image('/static/img/courses/beginner/image13.png', 533, 344, caption='The online editor of Glitch') }}
+{{ image('/static/img/courses/beginner/image13.png', 926, 517,  align='center', caption='The online editor of Glitch') }}
 
 The red box above indicates the online editor where you will be typing HTML and CSS. The green box indicates the button that will take you to the live version of the page you are creating. The yellow box is the button that lets you create a copy of this project and edit it. The blue box indicates the files that you have available. In the assets folder, you can find your images.
 
 Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the “copy” button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
 
-{{ image('/static/img/courses/beginner/image8.png', 1686, 936, caption='The assets view in Glitch') }}
+{{ image('/static/img/courses/beginner/image8.png', 1686, 936,  align='center', caption='The assets view in Glitch') }}
 
-{{ image('/static/img/courses/beginner/image12.png', 1484, 1416, caption='The details pop-up (including URL) for an image in the assets collection') }}
+{{ image('/static/img/courses/beginner/image12.png', 1484, 1416,  align='center', caption='The details pop-up (including URL) for an image in the assets collection') }}
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an index.html file with a title and a single image.
 
@@ -70,7 +68,7 @@ For example, your URL
 
 Throughout our three courses, you will build a website for Chico’s Cheese Bicycles Shop. Chico’s has developed a revolutionary bicycle made entirely out of cheese. Demand for the new bicycles is so high that Chico’s needs to get a website up as quickly as possible. When we’re finished with these courses, Chico’s site will look like this:
 
-{{ image('/static/img/courses/beginner/image14.png', 311, 550, caption='How the site looks at the end of the Advanced Course') }}
+{{ image('/static/img/courses/beginner/image14.png', 311, 550, align='center third', caption='How the site looks at the end of the Advanced Course') }}
 
 You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner.
 

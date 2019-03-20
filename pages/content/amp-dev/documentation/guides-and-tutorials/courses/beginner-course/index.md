@@ -5,8 +5,6 @@ $path: /documentation/guides-and-tutorials/courses/beginner-course/index.html
 toc: true
 ---
 
-<!-- [TOC] -->
-
 ## Why AMP?
 
 In many ways, the Internet is the central hub for the world. Every day, more people from all over the world access information online. But many don’t use the Internet on lightning-fast connections or high-powered devices. When websites are developed only for the fastest connections and devices, the experience of many users suffers.
