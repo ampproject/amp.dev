@@ -41,6 +41,7 @@
     grid-column: 10 / 24;
 
     &-centered {
+      width: 100%;
       grid-column: 16 / 21;
       margin: auto 0;
     }
