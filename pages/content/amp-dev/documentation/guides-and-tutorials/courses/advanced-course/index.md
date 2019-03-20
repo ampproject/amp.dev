@@ -27,9 +27,9 @@ In the final course in this series, we’re going to learn how to change the app
 
 * Dynamically change the content on screen (i.e., filtering and sorting data).
 
-{{ image('/static/img/courses/intermediate/image2.png', 744, 1328, caption='Our Chico’s Cheese Bikes Site So Far') }}
+{{ image('/static/img/courses/advanced/image2.png', 744, 1328, align='center third', caption='Our Chico’s Cheese Bikes Site So Far') }}
 
-{{ image('/static/img/courses/intermediate/image10.png', 738, 1324, caption='Site With Menu Opened') }}
+{{ image('/static/img/courses/advanced/image10.png', 738, 1324, align='center third', caption='Site With Menu Opened') }}
 
 To accomplish these goals and keep developing our cheese bike website, we will continue to refine our image carousel. In the beginner course, we learned how to create the carousel using AMP components. In the intermediate lesson, we expanded the functionality of the carousel by adding an additional thumbnail carousel. When the user changed slides in either carousel, the active slide was updated in both carousels. We accomplished this using AMP events and actions. 
 

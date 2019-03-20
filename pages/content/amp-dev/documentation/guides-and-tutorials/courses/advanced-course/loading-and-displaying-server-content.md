@@ -87,11 +87,11 @@ Because dynamically loading and displaying data is so important to modern web de
 
 To get a better understanding of how to build sites with dynamic content from the server, let's consider a video site. Every visitor to a video site sees the same layout, but nearly all of the videos that fill in that layout are unique to the user. So, for example, all users might see the recommended video section, but the videos in that section are different for each user, provided by a server. 
 
-{{ image('/static/img/courses/intermediate/image8.png', 624, 425, caption='A video site layout example') }}
+{{ image('/static/img/courses/advanced/image8.png', 624, 425, caption='A video site layout example') }}
 
 A video site is generally made up of groups of videos that match a particular theme. One group is usually for an assortment of recommended videos, while other groups might be videos related to a trending topic or released by a particular content creator. Each of these groups contains a fixed number of videos. The group has a title, possibly an icon, and maybe a call to action (like a subscribe button or closing button). Each video shows a thumbnail, video length, title, creator, number of views, and date of publishing. Whichever videos we get from the server, the same data is displayed about those videos. This is the template of the data.
 
-{{ image('/static/img/courses/intermediate/image9.png', 962, 864, caption='Skeleton loading on a video site') }}
+{{ image('/static/img/courses/advanced/image9.png', 962, 864, caption='Skeleton loading on a video site') }}
 
 We can see the template more clearly when the video site first loads. Notice that all of the rows of videos are missing titles. Note, too, that all of the videos have empty thumbnails and solid boxes instead of titles, creator names, or any other information.
 
@@ -158,7 +158,7 @@ Recommended style guidelines:
 
 Once you've finished, your page should look like this:
 
-{{ image('/static/img/courses/intermediate/image3.png', 691, 611, caption='The result') }}
+{{ image('/static/img/courses/advanced/image3.png', 691, 611, caption='The result') }}
 
 ### Solution
 
@@ -384,7 +384,7 @@ Recommended style guidelines:
 
 Once you’ve finished, your page should look like this:
 
-{{ image('/static/img/courses/intermediate/image7.png', 1512, 1162, caption='The result') }}
+{{ image('/static/img/courses/advanced/image7.png', 1512, 1162, caption='The result') }}
 
 ### Solution
 

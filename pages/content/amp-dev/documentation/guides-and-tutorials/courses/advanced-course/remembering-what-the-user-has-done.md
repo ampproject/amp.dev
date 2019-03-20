@@ -133,7 +133,7 @@ Using the [documentation]({{g.doc('/content/amp-dev/documentation/components/ref
 
 Once you have finished, the result should look like this:
 
-{{ image('/static/img/courses/intermediate/image4.png', 752, 1336, caption='Image of the styled thumbnail carousel') }}
+{{ image('/static/img/courses/advanced/image4.png', 752, 1336, align='center third', caption='Image of the styled thumbnail carousel') }}
 
 ### Solution
 
@@ -186,7 +186,7 @@ Remember to include the amp-bind library in the `<head>`:
 
 Binding and state management are important to e-commerce pages. Imagine going to a shopping site looking to buy a new t-shirt. You search through the lists of options before settling on a style and brand that you really like. Navigating to the product page, you see lists of additional options. You might be able to select among fits, sizes, or colors.
 
-{{ image('/static/img/courses/intermediate/image12.png', 1999, 1001, caption='Online shopping product page example') }}
+{{ image('/static/img/courses/advanced/image12.png', 1999, 1001, align='center', caption='Online shopping product page example') }}
 
 Often, as we select these options, the page changes to match our selection. The picture might update to a green women’s shirt or to a red men’s shirt. The price might change as we pick a different t-shirt fit or size. Other options might be sold out entirely, causing an error message to appear!
 
@@ -200,7 +200,7 @@ With what we have learned about state variables and bindings, we now start to se
 
 Our next goal is to recreate a basic online product page such as the one we discussed in our case study. Our product is going to be a t-shirt that comes in various options: men’s or women’s; small, medium, or large; and red, blue, or green. The product’s base price will change based on the user’s selections. Finally, the image of the t-shirt product will update when the user selects a different color.
 
-{{ image('/static/img/courses/intermediate/image5.png', 1180, 942, caption='The example product page we’re building') }}
+{{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we’re building') }}
 
 We’re not going to build this product page inside of our Chico’s Cheese Bikes shop project. Instead, you can use [this](https://glitch.com/~rustic-musician) Glitch as a starting point for this exercise. **Note**: Don’t forget to remix it so you can edit! The Glitch contains:
 
