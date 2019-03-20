@@ -34,7 +34,7 @@
       {% for section, section_index in sections %}
       {% if section.flyout %}
       {# Only render flyout-touch-inputs for sections with flyout #}
-      <input id="main-item-radio-{{ loop.index }}" type="radio" name="main-radio-btn" role="button" tabindex="0">
+      <input id="main-item-radio-{{ loop.index }}" type="radio" name="main-radio-btn" tabindex="0" role="button" aria-label="{{ section.title or section_index.titles('navigation') }}">
       {% endif %}
 
       {# Special case for the blog #}

@@ -23,14 +23,14 @@
   background: color('blue-ribbon');
 
   &-link {
-    color: color('white');
+    color: currentColor;
 
     svg {
       width: 0.9em;
       height: 0.9em;
       margin-right: 5px;
       vertical-align: middle;
-      fill: color('white');
+      fill: currentColor;
     }
   }
 
@@ -39,6 +39,7 @@
     bottom: 0;
     z-index: 999;
     width: 100%;
-    background: color('apple');
+    color: color('black');
+    background: color('turbo');
   }
 }
