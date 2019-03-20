@@ -16,7 +16,7 @@ Use a [marcação de metadados LiveBlogPosting](http://schema.org/LiveBlogPostin
 
 ## Visão geral do amp-live-list
 
-O componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) normalmente busca conteúdo atualizado no documento do host e atualiza o navegador do usuário à medida que novos itens se tornam disponíveis Assim, sempre que for preciso adicionar uma nova postagem no blog, o documento do host será atualizado pelo CMS para incluir a atualização no corpo e na [seção de metadados]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/live_blog.html', locale=doc.locale).url.path}}) da página.
+O componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) normalmente busca conteúdo atualizado no documento do host e atualiza o navegador do usuário à medida que novos itens se tornam disponíveis Assim, sempre que for preciso adicionar uma nova postagem no blog, o documento do host será atualizado pelo CMS para incluir a atualização no corpo e na [seção de metadados]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) da página.
 
 Este é um exemplo do código inicial do blog:
 

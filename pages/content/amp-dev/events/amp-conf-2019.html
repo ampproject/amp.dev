@@ -115,15 +115,19 @@ section_links:
                 {% endif %}
 
                 <li class="ap-m-agenda-item">
-                  {% if speaker %}
-                    <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
-                  {% endif %}
+                  <div class="ap-m-agenda-item-speakers">
 
-                  {% if agenda_item.speakers %}
-                    {% for speaker in agenda_item.speakers %}
-                      <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
-                    {% endfor %}
-                  {% endif %}
+                    {% if speaker %}
+                      <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+
+                    {%  elif agenda_item.speakers %}
+
+                      {% for speaker in agenda_item.speakers %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endfor %}
+
+                    {% endif %}
+                  </div>
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
                   <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
                   <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
@@ -154,7 +158,7 @@ section_links:
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
-             <ul class="ap-o-agenda-content-list conf">
+            <ul class="ap-o-agenda-content-list conf">
               {% for agenda_item in doc.ampconf.agenda.day_2 %}
 
                 {% if agenda_item.speaker %}
@@ -162,21 +166,26 @@ section_links:
                 {% endif %}
 
                 <li class="ap-m-agenda-item">
-                  {% if speaker %}
-                    <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
-                  {% endif %}
+                  <div class="ap-m-agenda-item-speakers">
 
-                  {% if agenda_item.speakers %}
-                    {% for speaker in agenda_item.speakers %}
-                      <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
-                    {% endfor %}
-                  {% endif %}
+                    {% if speaker %}
+                      <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+
+                    {%  elif agenda_item.speakers %}
+
+                      {% for speaker in agenda_item.speakers %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endfor %}
+
+                    {% endif %}
+                  </div>
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
                   <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
                   <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
 
                   {% if speaker %}
-                    <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                    <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
 
                   {% elif agenda_item.speakers %}
                     {% for speaker in agenda_item.speakers %}

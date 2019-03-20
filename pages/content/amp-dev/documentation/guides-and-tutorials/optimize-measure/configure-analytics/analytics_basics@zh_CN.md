@@ -67,7 +67,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 ## 变量替换
 
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 和 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换] (https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.html', locale=doc.locale).url.path}}#user-identification)一起发送到相应网址：
+[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 和 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换] (https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#user-identification)一起发送到相应网址：
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

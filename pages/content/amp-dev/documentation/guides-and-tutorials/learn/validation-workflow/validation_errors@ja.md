@@ -20,7 +20,7 @@ limitations under the License.
 
 有効な AMP ドキュメントを作成するには、検証エラーが 1 つもない状態にする必要があります。
 このドキュメントの目的は、
-[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate-amp.md', locale=doc.locale).url.path}})ときに見つかった検証エラーを
+[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})ときに見つかった検証エラーを
 正しく理解して修正できるようにすることです。
 検証エラーの概要については、
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
