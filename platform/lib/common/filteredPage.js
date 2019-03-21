@@ -141,15 +141,18 @@ class FilteredPage {
   }
 
   _setActiveFormatToggle() {
-    // Remove the current format from list of available ones
-    this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
-
     // Rewrite the active state (which is websites per default) to
     // the current active format
     const activeFormat = this._dom('.ap-m-format-toggle-selected');
+    if (!activeFormat.html()) {
+      console.error('doc did not specify an active format');
+      return;
+    }
     activeFormat.html(activeFormat.html().replace(/websites/g, this._format));
     activeFormat.removeClass('ap-m-format-toggle-link-websites');
     activeFormat.addClass(`ap-m-format-toggle-link-${this._format}`);
+    // Remove the current format from list of available ones
+    this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
   }
 
   /**
