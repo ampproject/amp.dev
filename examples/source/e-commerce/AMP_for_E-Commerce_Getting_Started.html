@@ -79,20 +79,20 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
 
     ## Product pages
 
-    It's possible with AMP to create beautiful and interactive product pages. [This sample](/samples_templates/product_page/preview/) demonstrates how to build a complex product page with dynamic product configuration and an add-to-cart flow. With the introduction of [amp-bind](/components/amp-bind/) it's now possible to create truly interactive AMP pages: it can be used to coordinate page state based on user interaction to show and hide arbitrary `div`s.
+    It's possible with AMP to create beautiful and interactive product pages. [This sample](/samples_templates/product_page/preview/) demonstrates how to build a complex product page with dynamic product configuration and an add-to-cart flow. With the introduction of [amp-bind](/documentation/components/reference/amp-bind.html) it's now possible to create truly interactive AMP pages: it can be used to coordinate page state based on user interaction to show and hide arbitrary `div`s.
 
     <div class="ap-o-code-preview-preview-iframe">
       <amp-iframe class="ap-o-code-preview-iframe" media="(min-width: 650px)" src="<% hosts.preview %>/examples/e-commerce/product_page" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
     </div>
 
     These samples help you get started with building a product landing page with AMP:
-    - **Product gallery:** with [amp-carousel](/components/amp-carousel/) and [amp-bind](/components/amp-bind) it is easy to create sophisticated image galleries. [Here](/advanced/image_galleries_with_amp-carousel/) are some samples how to implement image galleries with captions and thumbnails in AMPHTML.
-    - **Product configuration:** use [amp-selector](/components/amp-selector) and [amp-bind](/components/ampbind) for advanced product configuration. For an advanced version see the [sample product page](/samples_templates/product_page/preview/).
+    - **Product gallery:** with [amp-carousel](/documentation/components/reference/amp-carousel/) and [amp-bind](/components/amp-bind) it is easy to create sophisticated image galleries. [Here](/advanced/image_galleries_with_amp-carousel.html) are some samples how to implement image galleries with captions and thumbnails in AMPHTML.
+    - **Product configuration:** use [amp-selector](/documentation/components/reference/amp-selector) and [amp-bind](/components/ampbind) for advanced product configuration. For an advanced version see the [sample product page](/samples_templates/product_page/preview.html).
     - **Add to Cart:** the [product sample](/samples_templates/product_page/preview/) demonstrates a fully functional add-to-cart flow which works across different origins.
-    - **Tabs:** can be easily implemented by combining [amp-selector](/components/amp-selector/) with a flex layout. [Here](/advanced/tab_panels_with_amp-selector/) is a sample.
+    - **Tabs:** can be easily implemented by combining [amp-selector](/documentation/components/reference/amp-selector/) with a flex layout. [Here](/advanced/tab_panels_with_amp-selector.html) is a sample.
     - **Star ratings:** [here](/advanced/star_rating/) is a sample demonstrating how to implement a star rating system in AMP.
     - **Call tracking:** use [amp-call-tracking](/components/amp-call-tracking) to track calls initiated from your AMPs.
-    - **Comments / reviews:** comment or review submission can be implemented using [amp-form](/components/amp-form). Combine with [amp-access](/components/amp-access/) if a user login is required. [Here](/samples_templates/comment_section/preview/) is a sample combining both.
+    - **Comments / reviews:** comment or review submission can be implemented using [amp-form](/documentation/components/reference/amp-form). Combine with [amp-access](/components/amp-access/) if a user login is required. [Here](/samples_templates/comment_section/preview.html) is a sample combining both.
 
     ## Product Category Page
 
@@ -104,7 +104,7 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
 
     Creating category pages with AMP is possible:
 
-    - **Product search:** use [amp-form](/components/amp-form/) to implement a search form. You can serve search results either on a different page (which may not be AMP) or, even better, render search results directly inside the current page. See an example of [autosuggest](/advanced/autosuggest/).
+    - **Product search:** use [amp-form](/documentation/components/reference/amp-form/) to implement a search form. You can serve search results either on a different page (which may not be AMP) or, even better, render search results directly inside the current page. See an example of [autosuggest](/advanced/autosuggest.html).
     - **Product filtering and sorting:** see an example of [client-side filtering](/dynamic_amp/products_filter/).
 
     ## Dynamic Content
@@ -148,7 +148,7 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
     **Best Practice:** use multiple `amp-list` instances with a single shared JSON endpoint to benefit from the AMP runtimes request caching and avoid multiple requests to this JSON endpoints.
 
 
-    Another approach is to use [amp-bind](/components/amp-bind/) with a JSON endpoint, This works well if up-to-date data needs to be available after an user interaction, for example, a hotel page displays room availability when the user selects specific dates.
+    Another approach is to use [amp-bind](/documentation/components/reference/amp-bind.html) with a JSON endpoint, This works well if up-to-date data needs to be available after an user interaction, for example, a hotel page displays room availability when the user selects specific dates.
   -->
   <div class="p1">
     <amp-state id="products" src="/static/samples/json/products.json"></amp-state>
@@ -177,7 +177,7 @@ teaserImage: '/static/samples/img/teaser/amp_e-commerce_getting_started.jpg'
 
     **Best Practice:** make sure to configure the [AMP CORS headers](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md) when using `amp-list` for personalization.
 
-    If you rely on logged-in users, you can use the [amp-access](/components/amp-access/) component to log users into your website directly from an AMP page. Check out [this sample](/samples_templates/comment_section/) for how to implement a login flow in AMP.
+    If you rely on logged-in users, you can use the [amp-access](/documentation/components/reference/amp-access/) component to log users into your website directly from an AMP page. Check out [this sample](/samples_templates/comment_section.html) for how to implement a login flow in AMP.
 
     Tip: `amp-access` works on your origin and on AMP Caches.
 

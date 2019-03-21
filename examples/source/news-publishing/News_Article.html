@@ -148,7 +148,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
 
       <!-- ## Social sharing  -->
 
-      <!-- The Social Share extension provides a common interface for share buttons.  Learn more about `amp-social-share` [here](/components/amp-social-share/).  -->
+      <!-- The Social Share extension provides a common interface for share buttons.  Learn more about `amp-social-share` [here](/documentation/components/reference/amp-social-share.html).  -->
       <p class="heading">
       <amp-social-share type="twitter" width="45" height="33"></amp-social-share>
       <amp-social-share type="facebook" width="45" height="33" data-attribution="254325784911610"></amp-social-share>
@@ -174,7 +174,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       <p>Lorem ipsum dolor sit amet, voluptua oporteat cum cu, eu vix interesset scribentur. Et iudico efficiendi duo, vim an odio iusto reformidans. At maluisset scripserit duo, cum in sumo delenit. Quot erant maiestatis usu ut. Ne mea maiorum vivendum argumentum, tale utinam postea mei in, eam in odio dicta patrioque.</p>
 
       <!-- ## Ad support -->
-      <!-- There are no limitations regarding the number or placement of ads in an AMP. Learn more about `amp-ad` [here](/components/amp-ad/).  -->
+      <!-- There are no limitations regarding the number or placement of ads in an AMP. Learn more about `amp-ad` [here](/documentation/components/reference/amp-ad.html).  -->
       <div class="amp-ad-container">
         <amp-ad width="300" height="250"
                             type="a9"
@@ -222,7 +222,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       </p>
 
       <!-- ## Interactive content -->
-      <!-- To achieve its performance, AMP HTML doesn't allow custom Javascript. This doesn't mean that you can't created visually rich and interactive websites with AMP. Embed interactive content via `amp-iframe`. Learn more about `amp-iframe` [here](/components/amp-iframe/).  -->
+      <!-- To achieve its performance, AMP HTML doesn't allow custom Javascript. This doesn't mean that you can't created visually rich and interactive websites with AMP. Embed interactive content via `amp-iframe`. Learn more about `amp-iframe` [here](/documentation/components/reference/amp-iframe.html).  -->
       <figure class="figure">
         <amp-iframe src="https://www.google.us/trends/embed/US_cu_82I1CVMBAACV6M_en/horserace_chart_3c6cdb21-e1eb-4412-9c28-707c3638ea35?hl=en&template=fe"
                     title="Interactive chart displaying 2016 Oscar Best Picture search interest by date"
@@ -252,7 +252,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       <!-- -->
       <h2>Related Articles</h2>
       <p>These articles might be interesting for you as well:</p>
-      <!-- It's a good idea to recommend related content to your readers. With `amp-list` it is possible to dynamically include personalized content into your AMPs. It's a good idea to link to the AMP version of related content in order to keep the user in the fast AMP world. Learn more about `amp-list` [here](/components/amp-list/) -->
+      <!-- It's a good idea to recommend related content to your readers. With `amp-list` it is possible to dynamically include personalized content into your AMPs. It's a good idea to link to the AMP version of related content in order to keep the user in the fast AMP world. Learn more about `amp-list` [here](/documentation/components/reference/amp-list.html) -->
       <amp-list width="300" height="75" layout="responsive" src="/static/samples/json/related_articles.json">
         <template type="amp-mustache">
           <a class="related" href="{{url}}"><amp-img width="101" height="75" src="<% hosts.backend %>{{thumbnail}}"></amp-img><span>{{title}}</span></a>
@@ -261,7 +261,7 @@ teaserImage: '/samples/img/teaser/news_article.jpg'
       </main>
 
       <!-- ## Cookie consent -->
-      <!-- Use `amp-user-notification` to implement a cookie consent form (if needed). By default, the AMP runtime doesn't use cookies. Some analytics vendors might use require cookies though. Learn more about `amp-user-notification` [here](/components/amp-user-notification/) -->
+      <!-- Use `amp-user-notification` to implement a cookie consent form (if needed). By default, the AMP runtime doesn't use cookies. Some analytics vendors might use require cookies though. Learn more about `amp-user-notification` [here](/documentation/components/reference/amp-user-notification.html) -->
       <amp-user-notification class="cookie-disclaimer" layout="nodisplay" id="amp-user-notification1">
         This page might use cookies if your analytics vendor requires them.
         <button on="tap:amp-user-notification1.dismiss">Accept</button>

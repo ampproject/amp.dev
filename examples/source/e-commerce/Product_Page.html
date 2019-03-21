@@ -334,7 +334,7 @@ This sample showcases how to build a product page in AMP HTML.
     <body>
 
       <!-- ## Navigation -->
-      <!-- Use the [amp-sidebar](/components/amp-sidebar/) component to give customers the chance to quickly jump to any of your product categories.-->
+      <!-- Use the [amp-sidebar](/documentation/components/reference/amp-sidebar.html) component to give customers the chance to quickly jump to any of your product categories.-->
       <amp-sidebar id="drawermenu" layout="nodisplay">
         <a href="/" class="caps text-decoration-none block p1">Products</a>
         <hr/>
@@ -361,7 +361,7 @@ This sample showcases how to build a product page in AMP HTML.
       <h2 class="m1">Apple</h2>
 
       <!-- ## Social Sharing -->
-      <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/components/amp-social-share/). -->
+      <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/documentation/components/reference/amp-social-share.html). -->
       <div class="m1">
         <amp-social-share type="twitter"
                           width="30"
@@ -384,7 +384,7 @@ This sample showcases how to build a product page in AMP HTML.
       <p id="product-description" class="m1">Lorem ipsum dolor sit amet, ut sed non vel mattis. Et nulla suscipit ante ligula nisl in. Ut venenatis et mauris, mauris porta vulputate tellus mauris integer facilisis.</p>
       <!-- ## Video -->
       <!-- AMP supports a wide range of video platforms. Here we are using `amp-youtube` to show a product video. You can find an overview of all supported video platforms [here](/advanced/integrating_videos_in_amp_an_overview/).-->
-      <!-- In this sample we don't embed the video directly into the page, but instead show it in a lightbox using the `amp-lightbox` component. Learn more about `amp-lightbox` [here](/components/amp-lightbox/).-->
+      <!-- In this sample we don't embed the video directly into the page, but instead show it in a lightbox using the `amp-lightbox` component. Learn more about `amp-lightbox` [here](/documentation/components/reference/amp-lightbox.html).-->
 
       <button class="ampstart-btn caps m1 mb3" on="tap:watch-video-lightbox" >
         Show Video
@@ -533,7 +533,7 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- ## Full screen image -->
     <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
     By clicking on each image from the product gallery, the user can see the product image by using the full screen.
-    Learn more [here](/components/amp-image-lightbox/) -->
+    Learn more [here](/documentation/components/reference/amp-image-lightbox.html) -->
     <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
       <div on="tap:gallery-lightbox.close" role="button"
           tabindex="0">
@@ -605,7 +605,7 @@ This sample showcases how to build a product page in AMP HTML.
     </p>
 
     <!-- ## Product page -->
-    <!-- The add-to-cart action action is implemented using  [amp-form](/components/amp-form/). In our sample we use the [amp-selector](/components/amp-selector/) for selecting different product properties.
+    <!-- The add-to-cart action action is implemented using  [amp-form](/documentation/components/reference/amp-form/). In our sample we use the [amp-selector](/components/amp-selector.html) for selecting different product properties.
     Pressing the `ADD TO CART` button adds the product to a shopping cart page using the properties you have selected. Notice that the button URL contains the query `clientId={{ClientId}}`.
     If an item is successfully added to the shopping cart, we redirect the user to the shopping cart page.
     <p>The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):</p>
@@ -738,7 +738,7 @@ This sample showcases how to build a product page in AMP HTML.
     </div>
     <!--
     With AMP, you can easily pull in different latest offers or highlights without changing the page. To do so, just use `amp-list` to fire a CORS request to a JSON endpoint which supplies the list of related products. These are populated into an amp-mustache template on the client.
-    Learn more about `amp-list` [here](/components/amp-list/).
+    Learn more about `amp-list` [here](/documentation/components/reference/amp-list.html).
     -->
     <amp-list class="items m1"
               width="auto"
