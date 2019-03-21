@@ -57,6 +57,7 @@
     "module-alias": "2.2.0",
     "mri": "1.1.4",
     "node-fetch": "2.3.0",
+    "sharp": "^0.22.0",
     "shrink-ray-current": "3.0.2",
     "signale": "1.4.0"
   },
