@@ -47,7 +47,7 @@ speakers:
   melissadepuydt:
     name: Melissa DePuydt
     company: WaPo
-    bio:
+    bio: "Melissa DePuydt is a technical architect at the Washington Post, where she works on the Arc Publishing team. Prior to working at the Post, she worked as a digital marketer, content editor, and journalist—sometimes all at once."
     pic: /static/img/amp-conf/speakers/melissa.jpg
   andrewwatterson:
     name: Andrew Watterson
@@ -56,9 +56,9 @@ speakers:
     pic: /static/img/amp-conf/speakers/andreww.jpg
   perrylally:
     name: Perry Lally
-    company: Google
+    company: George.com
     bio: "Perry is currently one of the Senior Product Managers for George @ Asda currently based in the United Kingdom. Prior to his 6 year spell at the retail giant, he was a brick layer which was quite the career change. Perry was the Product Manager for the first major retailer in the U.K launching AMP."
-    pic: /static/img/amp-conf/speakers/perry.jpeg
+    pic: /static/img/amp-conf/speakers/perry.jpg
   weihong:
     name: Wei Hong
     company: Google
@@ -251,7 +251,8 @@ agenda:
         - kiyotakaoku
         - mitsuhironaganuma
     - title: "Growing Up AMP First: Everything I Know I Learned From AMP"
-      description: "Too often, engineers view AMP as just one more thing to implement. In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages. So, what happens when teams begin to think AMP first? Engineers are able to move beyond mere AMP validation and have a seat at the table in conversations about UX, performance, and even new feature development.  Does that sound crazy? It's not just a pipe dream. In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making.  I will draw on real-life experience and examples from my team's work with top publishers—including LA Times, El Pais, RTL.de, and a recent re-platforming effort at The Washington Post—and reveal how AMP can help teams align on goals and make better decisions at every level."
+      description: Too often, engineers view AMP as "just one more thing to implement." In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages. 
+                   So, what would happen if teams began to think "AMP first"? In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making, in order to help teams align on goals and make better decisions at every level. 
       time: "1130"
       type: session
       speaker: melissadepuydt
