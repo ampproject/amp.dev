@@ -321,29 +321,31 @@ templates:
       type="carousel">
       {% for template in doc.templates %}
         {% if template.image %}
-        <div class="ap-o-story-carousel-slide">
-          <div class="ap-o-story-carousel-slide-image">
-            <amp-img
-              src="{{template.image}}"
-              width="282"
-              height="470"
-              alt="{{ template.image_alt }}">
-            </amp-img>
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <amp-img
+                src="{{template.image}}"
+                width="282"
+                height="470"
+                alt="{{ template.image_alt }}">
+              </amp-img>
+            </div>
           </div>
-        </div>
         {% elif template.video %}
-        <div class="ap-o-story-carousel-slide">
-          <div class="ap-o-story-carousel-slide-image">
-            <amp-video
-              width="282"
-              height="470"
-              poster="{{ template.poster }}"
-              src="{{ template.video }}"
-              autoplay muted loop>
-            </amp-video>
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <div class="ap-o-story-carousel-slide-image-wrapper">
+                <amp-video
+                  layout="responsive"
+                  height="16"
+                  width="9"
+                  poster="{{ template.poster }}"
+                  src="{{ template.video }}"
+                  autoplay muted loop>
+                </amp-video>
+              </div>
+            </div>
           </div>
-        </div>
-        {% else %}
         {% endif %}
       {% endfor %}
     </amp-carousel>
@@ -356,7 +358,7 @@ templates:
       {% for template in doc.templates %}
         {% if template.image %}
           <div class="ap-o-story-carousel-slide">
-            <div class="ap-o-story-carousel-slide-image">
+            <div class="ap-o-story-carousel-slide-image no-logo">
               <amp-img
                 src="{{template.image}}"
                 width="171"
@@ -367,17 +369,19 @@ templates:
           </div>
         {% elif template.video %}
           <div class="ap-o-story-carousel-slide">
-          <div class="ap-o-story-carousel-slide-image">
-            <amp-video
-              src="{{ template.video }}"
-              width="171"
-              height="285"
-              poster="{{ template.poster }}"
-              autoplay muted loop>
-            </amp-video>
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <div class="ap-o-story-carousel-slide-image-wrapper">
+                <amp-video
+                  layout="responsive"
+                  height="16"
+                  width="9"
+                  src="{{ template.video }}"
+                  poster="{{ template.poster }}"
+                  autoplay muted loop>
+                </amp-video>
+              </div>
+            </div>
           </div>
-        </div>
-        {% else %}
         {% endif %}
       {% endfor %}
     </amp-carousel>

@@ -77,6 +77,21 @@
       amp-img {
         display: block;
       }
+
+      &.no-logo {
+        margin-bottom: 35px;
+      }
+
+      &-wrapper {
+        height: 285px;
+        width: 161px;
+        position: relative;
+
+        @media (min-width: 1024px) {
+          width: 263px;
+          height: 467px;
+        }
+      }
     }
 
     &-logo {
