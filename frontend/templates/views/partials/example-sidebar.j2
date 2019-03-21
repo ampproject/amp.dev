@@ -18,8 +18,8 @@
             <ul class="nav-list level-1">
               <li class="nav-item level-1 {% if doc.category == category %}active{% endif %}">
                 <div class="nav-link">
-                  {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
-                  <span>{{ _(category) }}</span>
+                  {% set categoryName = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+                  <span>{{ _(categoryName) }}</span>
                 </div>
                 <input class="nav-trigger" type="checkbox" {% if doc.category == category %}checked{% endif %}>
                 <div class="nav-icon">
