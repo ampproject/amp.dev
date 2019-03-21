@@ -248,18 +248,25 @@ class SamplesBuilder {
    * Parses the category from a sample path which is the first level
    * directory name after the base path
    * @param  {Vinyl} sample The sample from the gulp stream
+   * @param  {Boolean} ordered Flag if the ordinal number should be included
    * @return {String}       The category
    */
-  _getCategory(sample) {
+  _getCategory(sample, ordered = false) {
     // Check if the category has already been computed
-    if (!this._cache.categories[sample.path]) {
-      let category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
+    let category = this._cache.categories[sample.path];
+    if (!category) {
+      category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
       category = category.split('/')[0];
 
       this._cache.categories[sample.path] = category;
     }
 
-    return this._cache.categories[sample.path];
+    // Check if the category should contain ordinal
+    if (!ordered) {
+      return category.replace(/^\d+./, '');
+    }
+
+    return category;
   }
 
   /**
@@ -310,7 +317,7 @@ class SamplesBuilder {
         '$$injectAmpDependencies': false,
         '$title': parsedSample.document.title,
         '$view': DOCUMENTATION_TEMPLATE,
-        '$category': this._getCategory(sample),
+        '$category': this._getCategory(sample, true),
         '$path': this._getDocumentationRoute(sample),
         '$localization': {
           '$path': `/{locale}${this._getDocumentationRoute(sample)}`,
