@@ -214,7 +214,7 @@ class SamplesBuilder {
         // Splice out sourcecode blocks to preserve whitespace
         const codeBlocks = {};
         const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms;
-        markdown.replace(CODE_BLOCK_PATTERN, (match) => {
+        markdown = markdown.replace(CODE_BLOCK_PATTERN, (match) => {
           // Hash and save the code block for later restore
           let hash = crypto.createHash('sha1');
           hash.update(match);
@@ -233,7 +233,7 @@ class SamplesBuilder {
 
         // Restore codeblocks
         /* eslint-disable guard-for-in */
-        for (const hash in Object.keys(codeBlocks)) {
+        for (const hash of Object.keys(codeBlocks)) {
           markdown = markdown.replace(hash, codeBlocks[hash]);
         }
 
