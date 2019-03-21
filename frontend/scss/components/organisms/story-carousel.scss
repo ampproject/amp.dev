@@ -19,6 +19,10 @@
   grid-column: 1 / -1;
   width: 100%;
 
+  &.monetize {
+    grid-column: 1 / 16;
+  }
+
   .amp-carousel-button {
     width: 3em;
     height: 3em;
@@ -72,6 +76,21 @@
 
       amp-img {
         display: block;
+      }
+
+      &.no-logo {
+        margin-bottom: 35px;
+      }
+
+      &-wrapper {
+        height: 285px;
+        width: 161px;
+        position: relative;
+
+        @media (min-width: 1024px) {
+          width: 263px;
+          height: 467px;
+        }
       }
     }
 

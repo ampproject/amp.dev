@@ -51,6 +51,9 @@ stories:
     - headline: Immersive storytelling
       text: AMP stories is a new and modern way to reach existing readers.
       icon: pie-chart-money
+    - headline: Robust Advertising Support
+      text: AMP Stories enables monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience.
+      icon: circle-arrows-money
   developer:
     - headline: Create beautiful and engaging content easily
       text: AMP stories make the production of stories as easy as possible from a technical perspective.
