@@ -56,7 +56,7 @@ success_stories:
 <main class="ap--main ap-t-home">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
   <section class="ap--stage ap--container-fluid">
-    <div class="ap-o-stage ap-o-stage-websites">
+    <div class="ap-o-stage">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
             <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create <span style="white-space: nowrap;">user-first</span><br> {% include 'views/partials/rolling-formats.j2' %}</h1>
@@ -110,7 +110,8 @@ success_stories:
                 src="{{ news.image }}"
                 layout="responsive"
                 width="16"
-                height="9">
+                height="9"
+                alt="{{ news.title }}">
               </amp-img>
               {% else %}
               <div class="ap-o-news-icon">
