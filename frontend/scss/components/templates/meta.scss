@@ -19,7 +19,7 @@
 @import '../templates/_default.scss';
 
 
-.#{template('policies')} {
+.#{template('meta')} {
 
   .#{utility('container')} {
     @include container;
