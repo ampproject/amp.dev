@@ -38,7 +38,7 @@ class Subdomain {
     } else {
       middleware = this.createSubdomainMiddleware_(hostConfig.subdomain, router);
     }
-    router.get('*', this.redirectToReferrerOn404_.bind(this));
+    router.get('*', this.redirectOn404_.bind(this));
     return middleware;
   }
 
@@ -64,12 +64,17 @@ class Subdomain {
     };
   }
 
-  async redirectToReferrerOn404_(request, response) {
-    const referrer = request.get('Referrer');
-    if (!referrer) {
-      response.sendStatus(404);
-      return;
-    }
+  /**
+   * Redirects unhandled requests to the referrer. This allows us to resolve
+   * playground document or preview assets.
+   *
+   * The referrer is calculated using the following strategy:
+   * - use the playground URL parameter if present
+   * - use the 'Referrer' header if present
+   * - use amp.dev as default Referrer.
+   */
+  async redirectOn404_(request, response) {
+    const referrer = request.get('Referrer') || config.hosts.platform.base;
     // assume request was initiated by a document-relative path
     let destination = this.resolveUrl_(request.url.substring(1), referrer);
     // perform a head request to check if destination exists
