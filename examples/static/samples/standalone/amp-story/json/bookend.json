@@ -1,0 +1,50 @@
+{
+    "bookendVersion": "v1.0",
+    "shareProviders": [
+        {
+            "provider": "facebook",
+            "app_id": "12345678910"
+        },
+        {
+            "provider": "twitter",
+            "text": "The Mars Cruise -- Get ready for the trip of your life!"
+        },
+        "email"
+    ],
+    "components": [
+        {
+            "type": "portrait",
+            "title": "Fly to Venus",
+            "url": "https://www.google.com",
+            "image": "./img/07/portrait.jpg"
+        },
+        {
+            "type": "landscape",
+            "title": "A romantic getaway to Earth’s Moon",
+            "category": "Perfect Honeymoon",
+            "url": "https://www.google.com",
+            "image": "./img/07/perfect-honeymoon.jpg"
+        },
+        {
+            "type": "small",
+            "title": "A beautiful view from near space",
+            "category": "The Epic Sunset",
+            "url": "https://www.google.com",
+            "image": "./img/07/epic-sunset.jpg"
+        },
+        {
+            "type": "small",
+            "title": "Catch a morning tour in retrograde",
+            "category": "Mercury Rising",
+            "url": "https://www.google.com",
+            "image": "./img/07/mercury.jpg"
+        },
+        {
+            "type": "small",
+            "title": "Enjoy a slumber party in the sky",
+            "category": "ISS Sleepover",
+            "url": "https://www.google.com",
+            "image": "./img/07/iss.jpg"
+        }
+    ]
+}

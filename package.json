@@ -50,6 +50,7 @@
     "amp-toolbox-optimizer": "0.5.0",
     "amp-toolbox-runtime-version": "0.2.6",
     "cheerio": "1.0.0-rc.2",
+    "cors": "^2.8.5",
     "express": "4.16.4",
     "js-yaml": "3.13.0",
     "module-alias": "2.2.0",
