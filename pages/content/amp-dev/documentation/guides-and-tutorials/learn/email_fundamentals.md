@@ -183,9 +183,7 @@ In Gmail, AMP email supports attributes and pseudo-classes disallowed in other e
 
 ## Media query features
 
-
-
-*   pointer
+*   [pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 
 
 # Allowed AMP Components
