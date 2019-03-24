@@ -19,6 +19,7 @@
 const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
+const cors = require('cors');
 const ampCors = require('amp-toolbox-cors');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
@@ -100,17 +101,7 @@ class Platform {
   }
 
   _enableCors() {
-    this.server.use((request, response, next) => {
-      response.header('Access-Control-Allow-Origin', '*');
-      response.header('Access-Control-Allow-Credentials', 'true');
-      response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-      response.header(
-          'Access-Control-Allow-Headers',
-          'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, X-Requested-By, ' +
-        'Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-      next();
-    });
-
+    this.server.options('*', cors());
     this.server.use(ampCors({
       'verifyOrigin': false,
     }));

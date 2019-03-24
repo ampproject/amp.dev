@@ -12,40 +12,32 @@ flyout:
 
 stories:
   - image: /static/img/stories/story-cnn.jpg
-    immage_alt@: The Missions Still Exploring Our Solar System
+    immage_alt@: Protecting the Antarctic - A journey to a continent in distress
     logo: /static/img/stories/logo-cnn.png
     logo_alt@: CNN
-    url: https://www.cnn.com/ampstories/us/still-missing-cassini-heres-what-else-is-out-there
-  - image: /static/img/stories/story-hearst.jpg
-    immage_alt@: Apple Cider Vinegar is the Magic Potion You Need in Your Life
-    logo: /static/img/stories/logo-hearst.png
-    logo_alt@: Hearst
-    url: http://www.cosmopolitan.com/stamp/apple-cider-vinegar/
-  - image: /static/img/stories/story-mashable.jpg
-    immage_alt@: Black Panther
-    logo: /static/img/stories/logo-mashable.png
-    logo_alt@: Mashable
-    url: https://mashable.com/2017/10/24/reels-guide-to-black-panther.amp
-  - image: /static/img/stories/story-time.jpg
-    immage_alt@: Harry & Meghan A to Z
-    logo: /static/img/stories/logo-meredith.png
-    logo_alt@: Meredith
-    url: https://people.com/amp-stories/royal-a-to-z/
+    url: https://edition.cnn.com/ampstories/world/protecting-the-antarctic-a-journey-to-a-continent-in-distress
   - image: /static/img/stories/story-mic.jpg
-    immage_alt@: The Art of an Organized Refrigerator
+    immage_alt@: Did you know these fun facts about Stan Lee?
     logo: /static/img/stories/logo-mic.png
     logo_alt@: Mic
-    url: https://mic.com/stories/262/the-art-of-an-organized-refrigerator
-  - image: /static/img/stories/story-wapo.jpg
-    immage_alt@: The Evolution of Trump's Wall
-    logo: /static/img/stories/logo-wapo.png
-    logo_alt@: Washington Post
-    url: https://www.washingtonpost.com/graphics/2018/national/amp-stories/border-wall/
+    url: https://mic.com/stories/500/did-you-know-these-fun-facts-about-stan-lee
   - image: /static/img/stories/story-wired.jpg
-    immage_alt@: Space Photos of the Week
+    immage_alt@: The Ice Cream Factory and the Rise of the Made-for-Instagram Museum | WIRED
     logo: /static/img/stories/logo-wired.png
     logo_alt@: Wired
     url: https://www.wired.com/amp-stories/space-photos-of-the-week-111817/
+
+templates:
+  - video: /static/img/templates/single_video.mp4
+    poster: /static/img/templates/single_video.jpg
+    immage_alt@: Single video
+  - video: /static/img/templates/single-image-template.mp4
+    poster: /static/img/templates/single-image-template.jpg
+    immage_alt@: Single Image
+  - image: /static/img/templates/multiple-image-template.jpg
+    immage_alt@: Multiple Image
+  - image: /static/img/templates/app_install.jpg
+    immage_alt@: App Install
 ---
 
 <section class="ap--stage ap--container-fluid">
@@ -76,17 +68,30 @@ stories:
       <h1>AMP<br> Stories</h1>
       <h5>visual storytelling for the open web</h5>
       <p>AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The AMP story format is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform.</p>
-      <p>AMP stories provides content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. AMP stories offer design flexibility, are easy to build and are specifically designed for mobile consumption. Worry less about tech, and have more time to make fast and captivating user-first stories that will go viral.</p>
+      <p>AMP stories provides content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. AMP Stories offers a robust set of advertising opportunities for advertisers and publishers to reach a unique audience on the web with immersive experiences.</p>
+    </div>
+
+    <div class="ap--component-visual-container">
       <div class="ap-o-component-visual-link">
         <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md').url.path }}" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Get Started</span>
+          <span class="ap-m-lnk-text">Build your first story</span>
+        </a>
+      </div>
+       <div class="ap-o-component-visual-link">
+        <a href="#monetization" class="ap-m-lnk ap-m-lnk-square">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">Learn about story ads</span>
         </a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -274,5 +279,116 @@ stories:
       </a>
       {% endfor %}
     </amp-carousel>
+  </div>
+</section>
+
+<section class="ap--stories-monetize ap--container-fluid" id="monetization">
+  <div class="ap-m-copy ap-m-copy-left-small">
+    <h1>AMP Stories <br />Monetization Options</h1>
+    <h4>Single Page Story Ad</h4>
+    <p>Story Ads are full screen, single page ads that appear within AMP Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.
+    Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!</p>
+  </div>
+</section>
+
+<section class="ap--monetize-carousel ap--container-fluid">
+
+  <div class="ap-o-story-carousel monetize">
+    <amp-carousel
+      layout="fixed-height"
+      media="(min-width: 1024px)"
+      height="555"
+      type="carousel">
+      {% for template in doc.templates %}
+        {% if template.image %}
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <amp-img
+                src="{{template.image}}"
+                width="282"
+                height="470"
+                alt="{{ template.image_alt }}">
+              </amp-img>
+            </div>
+          </div>
+        {% elif template.video %}
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <div class="ap-o-story-carousel-slide-image-wrapper">
+                <amp-video
+                  layout="responsive"
+                  height="16"
+                  width="9"
+                  poster="{{ template.poster }}"
+                  src="{{ template.video }}"
+                  autoplay muted loop>
+                </amp-video>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </amp-carousel>
+
+    <amp-carousel
+      layout="fixed-height"
+      media="(max-width: 1023px)"
+      height="370"
+      type="carousel">
+      {% for template in doc.templates %}
+        {% if template.image %}
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <amp-img
+                src="{{template.image}}"
+                width="171"
+                height="285"
+                alt="{{ template.image_alt }}">
+              </amp-img>
+            </div>
+          </div>
+        {% elif template.video %}
+          <div class="ap-o-story-carousel-slide">
+            <div class="ap-o-story-carousel-slide-image no-logo">
+              <div class="ap-o-story-carousel-slide-image-wrapper">
+                <amp-video
+                  layout="responsive"
+                  height="16"
+                  width="9"
+                  src="{{ template.video }}"
+                  poster="{{ template.poster }}"
+                  autoplay muted loop>
+                </amp-video>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </amp-carousel>
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-right-centered">
+    <h4>Get Started with our Story Ads Templates</h4>
+    <div class="ap-o-component-visual-link">
+      <a href="{{ g.doc('/content/amp-dev/documentation/templates/index.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Discover All Templates</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="ap-m-copy ap-m-copy-left-small">
+    <h4>Affliate Links</h4>
+    <p>Publishers can use affiliate links as a form of monetization by placing outlinks in organic story pages.</p>
+    <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md').url.path }}" class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Read Best Practices Guide</span>
+    </a>
   </div>
 </section>

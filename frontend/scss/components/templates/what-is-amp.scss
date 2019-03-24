@@ -63,7 +63,19 @@
 
   .#{utility('component-visual')} {
     overflow: visible;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      grid-column: 6 / 15;
+    }
+
     .#{organism('component-visual')} {
+
+      &-link {
+        margin-right: 15px;
+      }
+
       &-copy {
         @include default-section-padding;
       }
