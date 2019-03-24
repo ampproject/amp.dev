@@ -1,0 +1,88 @@
+{
+  "bookendVersion": "v1.0",
+  "shareProviders": [
+    "email",
+    "twitter",
+    "tumblr",
+    {
+      "provider": "facebook",
+      "app_id": "254325784911610"
+    }
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "Introduction"
+    },
+    {
+      "type": "small",
+      "title": "AMP Story Hello World",
+      "url": "/stories/introduction/amp_story_hello_world/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "Features"
+    },
+    {
+      "type": "small",
+      "title": "Animations",
+      "url": "/stories/features/animations/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Layouts",
+      "url": "/stories/features/layouts/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Media",
+      "url": "/stories/features/media/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Supporting desktop and landscape mode",
+      "url": "/stories/features/supporting_desktop_and_landscape_mode/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "Monetization"
+    },
+    {
+      "type": "small",
+      "title": "DoubleClick",
+      "url": "/stories/monetization/doubleclick/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Publisher Served",
+      "url": "/stories/monetization/publisher_served/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "Visual Effects"
+    },
+    {
+      "type": "small",
+      "title": "Ken Burns",
+      "url": "/stories/visual_effects/ken_burns/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "User Consent"
+    },
+    {
+      "type": "small",
+      "title": "Story User Consent",
+      "url": "/stories/user_consent/story_user_consent/",
+      "image": "/favicons/android-chrome-256x256.png"
+    }
+  ]
+}
