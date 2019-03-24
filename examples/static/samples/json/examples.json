@@ -2,19 +2,19 @@
  "items": [
    {
      "title": "amp-carousel",
-     "url": "/documentation/components/reference/amp-carousel.html"
+     "url": "/components/amp-carousel/"
    },
    {
      "title": "amp-img",
-     "url": "/documentation/components/reference/amp-img.html"
+     "url": "/components/amp-img/"
    },
    {
      "title": "amp-ad",
-     "url": "/documentation/components/reference/amp-ad.html"
+     "url": "/components/amp-ad/"
    },
    {
      "title": "amp-accordion",
-     "url": "/documentation/components/reference/amp-accordion.html"
+     "url": "/components/amp-accordion/"
    }
  ]
 }
