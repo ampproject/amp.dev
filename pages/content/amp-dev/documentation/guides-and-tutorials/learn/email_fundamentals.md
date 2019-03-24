@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-If you're familiar with AMP, great news! AMP for Emails is just a sub-sect of the AMP HTML library. If you're unfamiliar with AMP, also great news! This guide will give you everything you need to know to get started writing valid AMP Emails! 
+If you're familiar with AMP, great news! AMP for Emails is just a subset of the AMP HTML library. If you're unfamiliar with AMP, also great news! This guide will give you everything you need to know to get started writing valid AMP Emails! 
 
 
 # Required Markup
@@ -52,7 +52,7 @@ Email providers who support AMP Emails have set up security checks to ensure use
 
 ## AMP Specific Tag Replacements 
 
-Since the AMP for Email library is a sub-sect of the AMP HTML library, many of the same rules apply; AMP specific tags replace resource heavy HTML tags and require a defined width and height. This allows the AMP boilerplate to hide content until it has an idea of how it looks on the user's device. 
+Since the AMP for Email library is a subset of the AMP HTML library, many of the same rules apply; AMP specific tags replace resource heavy HTML tags and require a defined width and height. This allows the AMP boilerplate to hide content until it has an idea of how it looks on the user's device. 
 
 
 ### Images
@@ -183,9 +183,7 @@ In Gmail, AMP email supports attributes and pseudo-classes disallowed in other e
 
 ## Media query features
 
-
-
-*   pointer
+*   [pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 
 
 # Allowed AMP Components
