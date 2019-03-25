@@ -111,8 +111,7 @@ class FilteredPage {
       filteredElement.remove();
     });
 
-    // Find possibly empty lists and remove them for ...
-    // a) component and default sidebar
+    // Find possibly empty lists and remove them from sidebars
     this._dom('.nav-list.level-2')
         .each((index, navList) => {
           navList = this._dom(navList);
@@ -122,9 +121,22 @@ class FilteredPage {
           }
         });
 
+    // Remove empty top level categories from sidebar
+    this._dom('.nav-item.level-1')
+        .each((index, navItem) => {
+          navItem = this._dom(navItem);
+
+          // ... consider a category empty if there are no links in it
+          if (!navItem.has('a').length) {
+            navItem.remove();
+          }
+        });
+
     // Remove eventually unnecessary tutorial dividers left by the
     // previous transformation
-    this._dom('.nav-item-tutorial-divider:last-child').remove();
+    /* eslint-disable max-len */
+    this._dom('.nav-item-tutorial-divider:last-child, .nav-item-tutorial-divider:first-child').remove();
+    /* eslint-enable max-len */
   }
 
   /**
@@ -148,13 +160,15 @@ class FilteredPage {
     // Rewrite the active state (which is websites per default) to
     // the current active format
     const activeFormat = this._dom('.ap-m-format-toggle-selected');
-    if (!activeFormat.html()) {
-      console.error('doc did not specify an active format');
+    if (activeFormat.length == 0) {
+      throw new Error('Page has no active format.');
       return;
     }
+
     activeFormat.html(activeFormat.html().replace(/websites/g, this._format));
     activeFormat.removeClass('ap-m-format-toggle-link-websites');
     activeFormat.addClass(`ap-m-format-toggle-link-${this._format}`);
+
     // Remove the current format from list of available ones
     this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
   }
