@@ -7,14 +7,14 @@ formats:
 author: CrystalOnScript
 ---
 
-AMP for Email lets email senders use AMP in their email messages to support a whole host of new features. Emails written with AMP can contain interactive elements, like image carousels or accordions, content stays up-to-date in the message, and the ability for recipients to take action like responding to a form all without leaving their inbox. 
+AMP for Email lets email senders use AMP in their email messages to support a whole host of new features. Emails written with AMP can contain interactive elements, like image carousels or accordions, content stays up-to-date in the message, and the ability for recipients to take action like responding to a form all without leaving their inbox.
 
 AMP for Email is compatible with existing emails. The AMP version of the message is embedded into the email as a new MIME part, in addition to the HTML and plaintext, ensuring compatibility across all mail clients.
 
 Follow this tutorial to build and send your first dynamic email powered by AMP. You can view the finished code [here](https://gist.github.com/CrystalOnScript/988c3f0a2eb406da27e9d9bf13a8bf73).
 
 
-# Start with the AMP email boilerplate 
+# Start with the AMP email boilerplate
 
 The AMP for Email team has created a Gmail playground where you can develop, test, and send yourself AMP Emails. Open the [AMP for Email Playground](https://amp.gmail.dev/playground/), login using a Gmail account, and check that the playground has `Hello, AMP4Email world` opened. You should see the following code:
 
@@ -37,7 +37,7 @@ It contains all the required markup and the minimum code to be a valid AMP email
 
 Let's take a moment to call out some notable differences from classic HTML emails:
 
-*   AMP emails must identify themselves as such by including `⚡4email`, or `amp4email`, in the html tag. 
+*   AMP emails must identify themselves as such by including `⚡4email`, or `amp4email`, in the html tag.
 *   The `<head>` tag must also contain a `<script>` tag that loads the AMP runtime.
 `<script async src="https://cdn.ampproject.org/v0.js"></script>`
 *   A CSS boilerplate to initially hide the content until AMP is loaded.
@@ -46,67 +46,66 @@ Let's take a moment to call out some notable differences from classic HTML email
 If you have worked with emails before, the idea of placing a script into an email may set off alarm bells in your head! Rest assured, email providers who support AMP emails enforce fierce security checks that only allow vetted AMP scripts to run in their clients. This enables dynamic and interactive features to run directly in the recipients mailboxes with no security vulnerabilities! Read more about the required markup for AMP Emails here.
 
 [tip type="important"]
-Only AMP scripts for allowed components can be included in AMP Emails. 
+Only AMP scripts for allowed components can be included in AMP Emails.
 [/tip]
 
 # Include an image
 
-Most HTML tags that are used in emails can be used in AMP emails. However, some tags, such as the `<img>` tag are replaced with an AMP equivalent, [`<amp-img>`](https://amp.dev/documentation/components/reference/amp-img.html). 
+Most HTML tags that are used in emails can be used in AMP emails. However, some tags, such as the `<img>` tag are replaced with an AMP equivalent, [`<amp-img>`](https://amp.dev/documentation/components/reference/amp-img.html).
 
 The `<amp-img>` tag requires the width and height of an image is defined and unlike `<img>`, `<amp-img>` has to be explicitly closed via `</amp-img>`.
 
 ```html
-<amp-img 
-    src="https://link/to/img.jpg"
-    alt="photo description" 
-    width="100" 
-    height="100">
+<amp-img src="https://link/to/img.jpg"
+         alt="photo description"
+         width="100"
+         height="100">
 </amp-img>
 ```
 
-Additionally, GIF files are supported through [`<amp-anim>`](https://amp.dev/documentation/components/reference/amp-anim.html).  
+Additionally, GIF files are supported through [`<amp-anim>`](https://amp.dev/documentation/components/reference/amp-anim.html).
 
-Since emails are not hosted on your server, URLs must use absolute paths in AMP emails and must be HTTPS. 
+Since emails are not hosted on your server, URLs must use absolute paths in AMP emails and must be HTTPS.
 
-[Placekitten](https://placekitten.com/) is a website that uses images of kittens as place holders. They allow you to choose the size of an image directly in the URL! 
+[Placekitten](https://placekitten.com/) is a website that uses images of kittens as place holders. They allow you to choose the size of an image directly in the URL!
 
 We can include an image in our first email by adding the code below.
 
 
 ```html
 <body>
-    <amp-img src="https://placekitten.com/800/400" 
-             alt="Welcome" 
-             width="800" 
-             height="400">
-    </amp-img>
+  <amp-img src="https://placekitten.com/800/400"
+           alt="Welcome"
+           width="800"
+           height="400">
+  </amp-img>
 </body>
 ```
 
 
 
-## Make it responsive 
+## Make it responsive
 
 Emails are viewed across a variety of devices and screen sizes, and AMP comes with a built-in layout system! With the [`amp-layout`](https://www.ampproject.org/docs/reference/components/amp-layout) system and media queries, implementing responsive emails is easy. To size our placed kitten image to the appropriate screens, add the `layout="responsive"` attribute to your `<amp-image>`.
 
 [tip type="read-on"]
-[Read more about how AMP works with layout and media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.html). 
+[Read more about how AMP works with layout and media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.html).
 [/tip]
 
 ```
 <amp-img layout="responsive" src="https://placekitten.com/800/400" alt="Welcome" height="400" width="800"></amp-img>
 ```
 
-Grow and shrink the browser window to watch the image resize! View the[ AMP email list supported of layout specific components here](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#layout). 
+Grow and shrink the browser window to watch the image resize! View the[ AMP email list supported of layout specific components here](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#layout).
 
 
 # Modify presentation and layout
 
-One image is fine, but what if we want to display more? AMP for Email supports layout elements, such as accordions and sidebars. 
+One image is fine, but what if we want to display more? AMP for Email supports layout elements, such as accordions and sidebars.
 <!-- TODO: Set up link -->
 <!-- [Read here for full list of supported layout elements](). -->
 
-For this tutorial, we're going to use [`<amp-carousel>`](https://www.ampproject.org/docs/reference/components/amp-carousel) to display photos of cats up for adoption. 
+For this tutorial, we're going to use [`<amp-carousel>`](https://www.ampproject.org/docs/reference/components/amp-carousel) to display photos of cats up for adoption.
 
 Add the `amp-carousel` script to the head of your email.
 
@@ -117,18 +116,16 @@ Add the `amp-carousel` script to the head of your email.
 Then wrap our first image in the `<amp-carousel>` tags.
 
 ```html
-<amp-carousel
-    layout="responsive"
-    width="800"
-    height="400"
-    type="slides">
+<amp-carousel layout="responsive"
+              width="800"
+              height="400"
+              type="slides">
         <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
 </amp-carousel>
-
 ```
 
 
-You might notice that nothing has changed, and that's a good thing! Our carousel has been given the attribute `type=slides`, which means it will show one photo at a time. Since we've only placed one photo within the tags it doesn't give the user slider arrows. 
+You might notice that nothing has changed, and that's a good thing! Our carousel has been given the attribute `type=slides`, which means it will show one photo at a time. Since we've only placed one photo within the tags it doesn't give the user slider arrows.
 
 Next, replace the place kitten image with our AMP cats up for adoption inside your `<amp-carousel>`.
 
@@ -145,7 +142,6 @@ Next, replace the place kitten image with our AMP cats up for adoption inside yo
   <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
   <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
  </amp-carousel>
-
 ```
 
 
@@ -154,7 +150,7 @@ You should now be able to change photos by clicking the navigation arrows on the
 
 ## Send with style
 
-AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](https://docs.google.com/document/d/1fnZsHu89Xdirs001bP-Ai9cPwd3SohpeolLNsDh69_E/edit#bookmark=id.bywxv7p5x0vj). 
+AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](https://docs.google.com/document/d/1fnZsHu89Xdirs001bP-Ai9cPwd3SohpeolLNsDh69_E/edit#bookmark=id.bywxv7p5x0vj).
 
 Let's update `Hello, AMP4EMAIL world` to a real title.
 
@@ -169,7 +165,7 @@ And then add some styling into the head.
 
 ```html
 <head>
-  ... 
+  ...
   <style amp-custom>
     h1 {
       font-family: arial;
@@ -180,14 +176,14 @@ And then add some styling into the head.
     }
     .carousel-preview {
       margin-top: 10px;
-    } 
+    }
   </style>
 </head>
 ```
 
 
 
-# Add Dynamic Capabilities 
+# Add Dynamic Capabilities
 
 Classically, emails only allow for static content. Through AMP, emails are opened to an entire new world of possibilities! Users can now respond to [forms](https://www.ampproject.org/docs/reference/components/amp-form), get [content updated dynamically list](https://www.ampproject.org/docs/reference/components/amp-list), and interact with content.
 
@@ -206,8 +202,8 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an `[
 <body>
 <amp-state id="myState">
   <script type="application/json">
-    {"cats": 
-       [
+    {
+      "cats": [
          {
           "name": "Aakash",
           "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
@@ -231,29 +227,28 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an `[
 ```
 
 
-[AMP actions and event](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events)s trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#amp-carousel[type=%22slides%22]) event, on which we will update the `currentCat` variable using `AMP.setState`.  
+[AMP actions and event](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events)s trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#amp-carousel[type=%22slides%22]) event, on which we will update the `currentCat` variable using `AMP.setState`.
 
 
 ```html
- <h1>Adorable Adoptable Animals</h1>
-    <amp-carousel
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({ currentCat: event.index} )">
-  ….
+<h1>Adorable Adoptable Animals</h1>
+<amp-carousel width="800"
+              height="400"
+              layout="responsive"
+              type="slides"
+              on="slideChange:AMP.setState({ currentCat: event.index} )">
+  ...
 </amp-carousel>
 ```
 
 
-This code set the state of `currentCat` to match the cat photo at the carousel index. So if we are at slide `event.index=2`, the state will map to the item in index 2 of the array. 
+This code set the state of `currentCat` to match the cat photo at the carousel index. So if we are at slide `event.index=2`, the state will map to the item in index 2 of the array.
 
 The only thing left is to display our cat's name and descriptions. Add the following code under the closing `amp-carousel` tag.
 
 
 ```html
- </amp-carousel>  
+</amp-carousel>
 <div class="center">
   <h1>
     <span [text]="myState.cats[currentCat].name">Aakash</span>  is available for adoption!
@@ -262,7 +257,7 @@ The only thing left is to display our cat's name and descriptions. Add the follo
 ```
 
 
-The `amp-bind` extension uses[ expressions ](https://www.ampproject.org/docs/reference/components/amp-bind#expressions)and [bindings](https://www.ampproject.org/docs/reference/components/amp-bind#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"myState.cats[currentCat].name"` expression. 
+The `amp-bind` extension uses[ expressions ](https://www.ampproject.org/docs/reference/components/amp-bind#expressions)and [bindings](https://www.ampproject.org/docs/reference/components/amp-bind#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"myState.cats[currentCat].name"` expression.
 
 [tip type="note"]
 For performance and to avoid the risk of unexpected content jumping, amp-bind does not evaluate expressions on page load. This means that the visual elements should be given a default state and not rely amp-bind for initial render.
@@ -284,10 +279,10 @@ Now, when you change the cat photo in the carousel, their name and description s
 
 # Send your AMP email
 
-The AMP4Email playground tool has a built-in validator. If your email markup is valid AMP, it will allow you to send yourself an email by clicking `send`. 
+The AMP4Email playground tool has a built-in validator. If your email markup is valid AMP, it will allow you to send yourself an email by clicking `send`.
 
 <!-- TODO: Add Screen Shot. Emails sent from tool are not currently displaying. Only receiving information on how to enable AMP emails, but then getting blank messages. -->
 
-Congratulations! You've sent your first AMP email! 
+Congratulations! You've sent your first AMP email!
 <!-- TODO: Set UP Link -->
 <!-- For next steps, [read more about AMP for Email fundamentals](). -->
