@@ -1,6 +1,6 @@
 $title@: Support
 $path: /support/{base}.html
-$view: /views/default.j2
+$view: /views/meta.j2
 $localization:
   path: /{locale}/support/{base}.html
 $order: 999
