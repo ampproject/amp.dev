@@ -7,7 +7,6 @@ formats:
     - websites
     - stories
     - ads
-    - email
 ---
 
 Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
