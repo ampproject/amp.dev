@@ -206,7 +206,7 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an `[
 <body>
 <amp-state id="myState">
   <script type="application/json">
-    "cats": {
+    {"cats": 
        [
          {
           "name": "Aakash",
