@@ -121,6 +121,10 @@ class FilteredPage {
             navList.parent().remove();
           }
         });
+
+    // Remove eventually unnecessary tutorial dividers left by the
+    // previous transformation
+    this._dom('.nav-item-tutorial-divider:last-child').remove();
   }
 
   /**
