@@ -160,8 +160,8 @@ Let's update `Hello, AMP4EMAIL world` to a real title.
 
 ```html
 <body>
-    <h1>Adorable Adoptable Animals</h1>
-...
+  <h1>Adorable Adoptable Animals</h1>
+  ...
 </body>
 ```
 
@@ -195,38 +195,39 @@ In this tutorial, we'll use [`<amp-bind>`](https://www.ampproject.org/docs/refer
 
 
 ```html
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+ <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 ```
 
 
-Next, we'll declare an AMP bind variable "cats" as a JSON string inside an `[<amp-state>](https://www.ampproject.org/docs/reference/components/amp-bind#state)` tag. Since we have four cat photos, we'll include state for all four.
+Next, we'll declare an AMP bind variable "myState" as a JSON string inside an `[<amp-state>](https://www.ampproject.org/docs/reference/components/amp-bind#state)` tag. Since we have four cat photos, we'll include state for all four.
 
 
 ```html
 <body>
-<amp-state id="cats">
-    <script type="application/json">
-         [
-           {
-            "name": "Aakash",
-            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-          },
-          {
-            "name": "Filip",
-            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-          },
-          {
-          	"name": "Julian",
-            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-          },
-          {
-          	"name": "John",
-            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-          }
-        ]
-    </script>
-  </amp-state>
-
+<amp-state id="myState">
+  <script type="application/json">
+    "cats": {
+       [
+         {
+          "name": "Aakash",
+          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+        },
+        {
+          "name": "Filip",
+          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+        },
+        {
+          "name": "Julian",
+          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+        },
+        {
+          "name": "John",
+          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+        }
+      ]
+    }
+  </script>
+</amp-state>
 ```
 
 
@@ -254,14 +255,14 @@ The only thing left is to display our cat's name and descriptions. Add the follo
 ```html
  </amp-carousel>  
 <div class="center">
-    <h1>
-    	<span [text]="cats[currentCat].name">Aakash</span>  is available for adoption!
-    </h1>
-  </div>
+  <h1>
+    <span [text]="myState.cats[currentCat].name">Aakash</span>  is available for adoption!
+  </h1>
+</div>
 ```
 
 
-The `amp-bind` extension uses[ expressions ](https://www.ampproject.org/docs/reference/components/amp-bind#expressions)and [bindings](https://www.ampproject.org/docs/reference/components/amp-bind#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"state[currentCat].name"` expression. 
+The `amp-bind` extension uses[ expressions ](https://www.ampproject.org/docs/reference/components/amp-bind#expressions)and [bindings](https://www.ampproject.org/docs/reference/components/amp-bind#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"myState.cats[currentCat].name"` expression. 
 
 [tip type="note"]
 For performance and to avoid the risk of unexpected content jumping, amp-bind does not evaluate expressions on page load. This means that the visual elements should be given a default state and not rely amp-bind for initial render.
@@ -272,8 +273,8 @@ Don't forget to add our cat descriptions after the `</div>` tag!
 
 ```html
   </div>
-  <p class="center">About <span [text]="cats[currentCat].name"> Aakash</span></p>
-  <p class="center" [text]="cats[currentCat].description">Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug.</p>
+  <p class="center">About <span [text]="myState.cats[currentCat].name"> Aakash</span></p>
+  <p class="center" [text]="myState.cats[currentCat].description">Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug.</p>
 </body>
 ```
 
