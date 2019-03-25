@@ -1,7 +1,7 @@
 {
   "templateId": "image-template",
   "data": {
-    "imgSrc": "https://www.amp.dev/static/samples/img/ad-google-home.jpg"
+    "imgSrc": "https://amp.dev/static/samples/img/ad-google-home.jpg"
   },
   "vars": {
     "ctaType": "SHOP",
