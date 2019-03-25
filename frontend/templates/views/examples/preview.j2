@@ -38,7 +38,7 @@
 {% do doc.styles.addCssFile('/css/components/organisms/preview-pane.css') %}
 <main class="ap--preview-pane">
   <article class="ap-o-preview-pane ap-o-preview-pane-mobile" [class]="'ap-o-preview-pane ap-o-preview-pane-' + device.selected">
-    <amp-iframe layout="fill" sandbox="allow-same-origin allow-scripts allow-popups" allowfullscreen frameborder="0" src="{{ doc.pod.podspec.base_urls.preview }}{{ doc.source }}">
+    <amp-iframe layout="fill" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="{{ doc.pod.podspec.base_urls.preview }}{{ doc.source }}">
       <div placeholder="">
     </amp-iframe>
   </article>
