@@ -16,6 +16,7 @@
 
 /* eslint-disable no-invalid-this */
 'use strict';
+require('module-alias/register');
 
 const {Signale} = require('signale');
 const gulp = require('gulp');
@@ -80,6 +81,10 @@ class PageMinifier {
 
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
+
+    ampOptimizer.setConfig({
+      blurredPlaceholdersCacheSize: 0, // cache all placeholders
+    });
   }
 
   /**
@@ -233,7 +238,7 @@ class PageMinifier {
 if (!module.parent) {
   (async () => {
     const pageMinifier = new PageMinifier();
-    pageMinifier.start();
+    pageMinifier.start(__dirname + '/../../pages');
   })();
 }
 
