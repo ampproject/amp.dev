@@ -34,7 +34,7 @@ class Config {
 
     this.environment = env.name;
     this.hosts = env.hosts;
-    Object.values(this.hosts).forEach((host) => host.base = this._buildUrl(host));
+    Object.values(this.hosts).forEach((host) => host.base = this.getHost(host));
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
