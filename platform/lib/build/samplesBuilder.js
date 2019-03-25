@@ -512,6 +512,7 @@ class SamplesBuilder {
         'formats': [this._getSampleFormat(parsedSample)],
         'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
+      `example: !g.json /${DOCUMENTATION_POD_PATH}/${preview.stem}.json`,
       '---',
     ].join('\n'));
 
