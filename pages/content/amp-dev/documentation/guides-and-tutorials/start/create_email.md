@@ -121,7 +121,7 @@ Then wrap our first image in the `<amp-carousel>` tags.
     layout="responsive"
     width="800"
     height="400"
-    type="slides"">
+    type="slides">
         <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
 </amp-carousel>
 
@@ -133,7 +133,7 @@ You might notice that nothing has changed, and that's a good thing! Our carousel
 Next, replace the place kitten image with our AMP cats up for adoption inside your `<amp-carousel>`.
 
 
-```
+```html
 <amp-carousel id="carousel-with-preview"
     width="800"
     height="400"
@@ -169,18 +169,18 @@ And then add some styling into the head.
 
 ```html
 <head>
-... 
-<style amp-custom>
+  ... 
+  <style amp-custom>
     h1 {
-    	font-family: arial;
-      	margin: 10px;
-     }
+      font-family: arial;
+      margin: 10px;
+    }
     .center {
-		text-align: center;
-     }
+      text-align: center;
+    }
     .carousel-preview {
       margin-top: 10px;
-     } 
+    } 
   </style>
 </head>
 ```
