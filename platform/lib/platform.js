@@ -26,6 +26,7 @@ const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js
 const config = require('./config.js');
 const subdomain = require('./middleware/subdomain.js');
 
+
 const WWW_PREFIX = 'www.';
 const HEALTH_CHECK = '/__health-check';
 const routers = {
@@ -34,6 +35,7 @@ const routers = {
   'example': {
     'sources': require('@lib/routers/example/sources.js'),
     'embeds': require('@lib/routers/example/embeds.js'),
+    'api': require('@examples/api'),
   },
   'static': require('@lib/routers/static.js'),
   'playground': require('../../playground/backend/'),
@@ -118,6 +120,7 @@ class Platform {
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(subdomain.map(config.hosts.preview, routers.example.embeds));
     this.server.use(subdomain.map(config.hosts.preview, routers.example.sources));
+    this.server.use('/documentation/examples/api', routers.example.api);
     this.server.use(routers.static);
     this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all
