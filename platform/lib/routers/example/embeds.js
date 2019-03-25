@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,17 @@
 'use strict';
 
 const express = require('express');
+const utils = require('@lib/utils');
 
-const examplesApi = require('@examples/api');
+const EMBEDS_DEST = utils.project.absolute('/dist/examples/embeds/');
 
 // eslint-disable-next-line new-cap
-const examples = express.Router();
+const exampleEmbeds = express.Router();
+const staticEmbeds = express.static(EMBEDS_DEST);
 
-examples.use(`${SAMPLE_MANUALS_ROUTE}/api`, examplesApi);
+exampleEmbeds.use('/examples/:category/:name/embed', (request, response, next) => {
+  request.url = `/${request.params.category}/${request.params.name}.html`;
+  staticEmbeds(request, response, next);
+});
 
-module.exports = examples;
+module.exports = exampleEmbeds;

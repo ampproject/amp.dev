@@ -21,29 +21,43 @@
 
   .#{utility('container')} {
     @include container;
+    @include container-nogap;
   }
 
   .#{utility('content')},
   .#{utility('help')} {
     @include content;
+    background: color('whisper');
+    @media (min-width: 768px) {
+      grid-column: 8 / 25;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 6 / 24;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
     .#{utility('ctas')} {
       display: flex;
       flex-wrap: wrap;
+      margin-bottom: 60px;
 
       @media (min-width: 768px) {
         flex-wrap: nowrap;
       }
 
       .#{atom('btn')} {
-        flex: 1 0 100%;
+        flex: 1 0 auto;
         margin-right: 10px;
         margin-bottom: 10px;
 
         @media (min-width: 768px) {
           flex: 1 0 50%;
-          max-width: 50%;
+          max-width: 250px;
         }
       }
     }
@@ -52,6 +66,12 @@
     @media (max-width: 767px) {
       display: none;
     }
+
+    &-hollow {
+      color: color('blue-ribbon');
+      box-shadow: none;
+      background: transparent;
+    }
   }
 
   .#{utility('sidebar')} {
@@ -59,7 +79,7 @@
   }
 
   .#{utility('toc')} {
-    @include toc;
+    @include toc-white-bg;
   }
 
   .#{utility('sidebar')} + .#{utility('content')},

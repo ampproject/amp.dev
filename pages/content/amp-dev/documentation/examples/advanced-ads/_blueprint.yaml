@@ -1,6 +1,0 @@
-$title: Advanced Ads
-$view: /views/detail/example-detail.j2
-$path: /documentation/examples/advanced-ads/{base}.html
-$localization:
-  path: /{locale}/documentation/examples/advanced-ads/{base}.html
-$order: 6

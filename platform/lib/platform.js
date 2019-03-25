@@ -29,10 +29,13 @@ const subdomain = require('./middleware/subdomain.js');
 const WWW_PREFIX = 'www.';
 const HEALTH_CHECK = '/__health-check';
 const routers = {
-  'whoAmI': require('./routers/whoAmI.js'),
-  'pages': require('./routers/pages.js'),
-  'examples': require('./routers/examples.js'),
-  'static': require('./routers/static.js'),
+  'whoAmI': require('@lib/routers/whoAmI.js'),
+  'pages': require('@lib/routers/pages.js'),
+  'example': {
+    'sources': require('@lib/routers/example/sources.js'),
+    'embeds': require('@lib/routers/example/embeds.js'),
+  },
+  'static': require('@lib/routers/static.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
 };
@@ -113,7 +116,8 @@ class Platform {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(routers.examples);
+    this.server.use(subdomain.map(config.hosts.preview, routers.example.embeds));
+    this.server.use(subdomain.map(config.hosts.preview, routers.example.sources));
     this.server.use(routers.static);
     this.server.use('/boilerplate', routers.boilerplate);
     // Register the following router at last as it works as a catch-all
