@@ -19,7 +19,7 @@
 @import '../templates/_default.scss';
 
 
-.#{template('code-of-conduct')} {
+.#{template('meta')} {
 
   .#{utility('container')} {
     @include container;
