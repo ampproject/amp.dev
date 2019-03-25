@@ -134,9 +134,8 @@ class FilteredPage {
 
     // Remove eventually unnecessary tutorial dividers left by the
     // previous transformation
-    /* eslint-disable max-len */
-    this._dom('.nav-item-tutorial-divider:last-child, .nav-item-tutorial-divider:first-child').remove();
-    /* eslint-enable max-len */
+    this._dom('.nav-item-tutorial-divider:last-child,' +
+        '.nav-item-tutorial-divider:first-child').remove();
   }
 
   /**
@@ -161,7 +160,7 @@ class FilteredPage {
     // the current active format
     const activeFormat = this._dom('.ap-m-format-toggle-selected');
     if (activeFormat.length == 0) {
-      throw new Error('Page has no active format.');
+      console.error('Page has no active format.');
       return;
     }
 
