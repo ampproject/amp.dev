@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "amp-toolbox-cors": "0.2.4",
-    "amp-toolbox-optimizer": "0.5.0",
+    "amp-toolbox-optimizer": "0.5.1",
     "amp-toolbox-runtime-version": "0.2.6",
     "cheerio": "1.0.0-rc.2",
     "cors": "^2.8.5",
@@ -60,7 +60,7 @@
     "signale": "1.4.0"
   },
   "devDependencies": {
-    "amp-toolbox-optimizer": "0.5.0",
+    "amp-toolbox-optimizer": "0.5.1",
     "amp-toolbox-runtime-version": "0.2.6",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
