@@ -1,36 +1,24 @@
 <!---
 
-category: 'user-consent'
 teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
 
 --->
+
 <!--
   ## Introduction
 
-  Users today want additional control over their online experience. Additionally, publishers are
-  faced with a variety of different demands on how they provide notice and choice to their
-  users –  from vendor policies to evolving legal requirements. The open source AMP Project is working
-  to give publishers and tech vendors tools to implement their preferred user controls and to support their varied
-  individual compliance requirements on their AMP pages.
+  Users today want additional control over their online experience. Additionally, publishers are faced with a variety of different demands on how they provide notice and choice to their users - from vendor policies to evolving legal requirements. The open source AMP Project is working to give publishers and tech vendors tools to implement their preferred user controls and to support their varied individual compliance requirements on their AMP pages.
 
-  <p>This page demonstrates how a more advanced blocking consent flow can be built.
-  It will show accept and reject buttons, which on click will reveal more information,
-  like a list of used 3rd parties on user acceptance, or a general data usage notice
-  on user rejection.</p>
+  This page demonstrates how a more advanced blocking consent flow can be built. It will show accept and reject buttons, which on click will reveal more information, like a list of used 3rd parties on user acceptance, or a general data usage notice on user rejection.
 
-  [tip type="important"]
-    Important! The consent is saved to localstorage - after accepting/rejecting it once you will
-    only get the popup dialog again after deleting the localstorage content for this host,
-    for example via <a href="https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage">
-    Chrome Dev Tools</a>.
-  [/tip]
+  Important: The consent is saved to localstorage - after accepting/rejecting it once you will only get the popup dialog again after deleting the localstorage content for this host, for example via [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage#local-storage).
 -->
 <!-- -->
 <!doctype html>
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="/user_consent/advanced_user_consent_flow/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Advanced User Consent Flow</title>
@@ -93,23 +81,21 @@ teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
 
   <!-- ## Basic usage -->
   <!--
-  The `amp-consent` component allows to specify the required user consent for this page.
-  A CORS endpoints can be specified via the `checkConsentHref`
-  attribute. This endpoint will be queried via a POST request to determine if the
-  consent UI specified for it needs to be shown. The response should look like this:
+  The `amp-consent` component allows to specify the required user consent for this page. A CORS endpoints can be specified via the `checkConsentHref` attribute. This endpoint will be queried via a POST request to determine if the consent UI specified for it needs to be shown. The response should look like this:
+
   ```json
   {
     "promptIfUnknown": boolean (true/false)
   }
   ```
-  The response will indicate if the consent needs to be shown or not.
-  If it needs to be shown, the element with the id given in `promptUI` will be displayed.
+
+  The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
   -->
   <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">{
           "consents": {
             "consent1": {
-              "checkConsentHref": "<%host%>/samples_templates/consent/getConsent",
+              "checkConsentHref": "<% hosts.backend %>/samples_templates/consent/getConsent",
               "promptUI": "consentDialog"
             }
           },
@@ -148,8 +134,7 @@ teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
   </amp-consent>
 
   <!--
-  Use `data-block-on-consent` attribute to block AMP components until consent is given.
-  Individual AMP components can override  blocking behavior and implement blocking logic themselves.
+  Use `data-block-on-consent` attribute to block AMP components until consent is given. Individual AMP components can override  blocking behavior and implement blocking logic themselves.
 
   Here is an image which is blocked until consent is given:
   -->
@@ -157,9 +142,8 @@ teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
   </amp-img>
 
   <!--
-  Ads can also be blocked until consent is given, but ad networks can implement own behavior
-  (e.g. default to non-personalized ads without consent, as seen <a href="https://support.google.com/dfp_premium/answer/7678538#amp-pages" target="_blank">
-  documented here</a> for Doubleclick). Note that you may see the same ad when accepting or rejecting consent for this specific example and that's because the example doesn't use personalized information even when accepting consent.<br/>
+  Ads can also be blocked until consent is given, but ad networks can implement own behavior (e.g. default to non-personalized ads without consent, as seen [documented here](https://support.google.com/dfp_premium/answer/7678538#amp-pages) for Doubleclick). Note that you may see the same ad when accepting or rejecting consent for this specific example and that's because the example doesn't use personalized information even when accepting consent.
+
   Here is an example of `amp-ad` depending on `amp-consent`:
  -->
   <amp-ad data-block-on-consent data-slot="/30497360/a4a/a4a_native"

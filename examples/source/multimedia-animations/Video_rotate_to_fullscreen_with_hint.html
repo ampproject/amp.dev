@@ -1,0 +1,123 @@
+<!---
+
+preview: default
+teaserImage: '/static/samples/img/teaser/video_rotate_to_fullscreen_with_hint.jpg'
+
+--->
+
+<!--
+## Introduction
+
+This is a sample template for implementing rotate-to-fullscreen with a user hint in AMP.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Video rotate to fullscreen with hint</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- ## Setup -->
+    <!--
+    All scripts for our AMP components must be imported in the header. We will be using two components:
+
+    - `amp-video` to render the video itself.
+    -->
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <!--
+    - `amp-animation` to describe the animation to be triggered.
+    -->
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <link rel="canonical" href="<% canonical %>">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- ## Style -->
+    <!--
+      Set some styling to position the hint and define how it looks.
+    -->
+    <style amp-custom>
+    .video-container {
+      height: 100%;
+      width: 100vw;
+      max-width: 700px;
+      /* Absolute-positioned children will be positioned relative to this container: */
+      position: relative;
+      /* Cut off all elements based on container's rectangle: */
+      overflow: hidden;
+    }
+    #video-hint {
+      /* Position relative to its container: */
+      position: absolute;
+      right: 0;
+      bottom: 25%;
+      /* Typography: */
+      line-height: 1;
+      font-size: 13px;
+      /* Borders, colors and sizing */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      border-radius: 16px 0 0 16px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 16px;
+      /* Position on top of the video: */
+      z-index: 100;
+      /* Translate-x by 100% to displace out of view: */
+      transform: translateX(100%);
+      pointer-events: none;
+      display: none;
+    }
+    /* Display hint only on touch devices */
+    .amp-mode-touch #video-hint {
+      display: block;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- ## Add the video and hint -->
+    <!--
+    Set `rotate-to-fullscreen` on the video element to actually enter fullscreen when the user rotates their device into landscape mode.
+
+    `amp-video` will trigger the animation as described in its `on` attribute when the `firstPlay` event occurs. This event is fired as soon as the user starts playing the video. In the case of an autoplay video like this one, the event will be fired as soon as the user taps on the video.
+    -->
+    <div class="video-container">
+      <div id="video-hint">Rotate for fullscreen</div>
+      <amp-video
+          width="480"
+          height="270"
+          src="/static/samples/video/tokyo.mp4"
+          poster="/static/samples/img/tokyo.jpg"
+          layout="responsive"
+          controls
+          on="firstPlay:hint-animation.start"
+          rotate-to-fullscreen
+          autoplay>
+        <div fallback>
+          <p>Your browser doesn't support HTML5 video.</p>
+        </div>
+        <source type="video/webm" src="/static/samples/video/tokyo.webm">
+      </amp-video>
+    </div>
+    <!-- ## Define the animation -->
+    <!--
+    Describe an animation that will slide the user hint into view, and then slide it out.
+
+    It's important that the animation element has the `hint-animation` id, as that's the name which the video component uses to start the animation.
+    -->
+    <amp-animation layout="nodisplay" id="hint-animation">
+      <script type="application/json">
+      {
+        "selector": "#video-hint",
+        "duration": "4.5s",
+        "delay": "300ms",
+        "fill": "both",
+        "keyframes": [
+          {"offset": 0, "transform": "translateX(100%)"},
+          {"offset": 0.15, "transform": "translateX(0)"},
+          {"offset": 0.8, "transform": "translateX(0)"},
+          {"offset": 1, "transform": "translateX(100%)"}
+        ]
+      }
+      </script>
+    </amp-animation>
+  </body>
+</html>
