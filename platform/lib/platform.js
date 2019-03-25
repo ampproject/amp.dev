@@ -116,13 +116,14 @@ class Platform {
 
   _registerRouters() {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
-    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(subdomain.map(config.hosts.preview, routers.example.embeds));
-    this.server.use(subdomain.map(config.hosts.preview, routers.example.sources));
+    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
+    this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
+      routers.example.sources, routers.example.embeds
+    ])));
     this.server.use('/documentation/examples/api', routers.example.api);
-    this.server.use(routers.static);
     this.server.use('/boilerplate', routers.boilerplate);
+    this.server.use(routers.static);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }
