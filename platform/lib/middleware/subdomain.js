@@ -24,7 +24,6 @@ const ampCors = require('amp-toolbox-cors');
 const config = require('@lib/config.js');
 
 class Subdomain {
-
   constructor() {
     // Stores subdomain apps started during development to be able
     // to register multiple routers to them

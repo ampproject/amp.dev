@@ -19,7 +19,6 @@
 const express = require('express');
 
 const examplesApi = require('@examples/api');
-const utils = require('@lib/utils');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
