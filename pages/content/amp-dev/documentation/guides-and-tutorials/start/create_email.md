@@ -11,7 +11,7 @@ AMP for Email lets email senders use AMP in their email messages to support a wh
 
 AMP for Email is compatible with existing emails. The AMP version of the message is embedded into the email as a new MIME part, in addition to the HTML and plaintext, ensuring compatibility across all mail clients.
 
-Follow this tutorial to build and send your first dynamic email powered by AMP.
+Follow this tutorial to build and send your first dynamic email powered by AMP. You can view the finished code [here](https://gist.github.com/CrystalOnScript/988c3f0a2eb406da27e9d9bf13a8bf73).
 
 
 # Start with the AMP email boilerplate 
