@@ -24,6 +24,12 @@ const ampCors = require('amp-toolbox-cors');
 const config = require('@lib/config.js');
 
 class Subdomain {
+  constructor() {
+    // Stores subdomain apps started during development to be able
+    // to register multiple routers to them
+    this.subdomainApps_ = {};
+  }
+
   /**
    * Creates a subdomain middleware matching subdomain
    * requests to the router.
@@ -43,14 +49,20 @@ class Subdomain {
   }
 
   startDevServer_(hostConfig, router) {
-    const subdomainApp = express();
-    subdomainApp.use(ampCors({
-      'verifyOrigin': false,
-    }));
+    let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
+    if (!subdomainApp) {
+      subdomainApp = express();
+      subdomainApp.use(ampCors({
+        'verifyOrigin': false,
+      }));
+      subdomainApp.listen(hostConfig.port, () => {
+        signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+      });
+
+      this.subdomainApps_[hostConfig.subdomain] = subdomainApp;
+    }
     subdomainApp.use(router);
-    subdomainApp.listen(hostConfig.port, () => {
-      signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
-    });
+
     // return a dummy middleware
     return (request, response, next) => next();
   }

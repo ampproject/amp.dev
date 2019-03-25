@@ -35,7 +35,6 @@
   }
 
   &-link, &-selected {
-    position: relative;
     z-index: 3;
     display: flex;
     align-items: center;
@@ -59,56 +58,46 @@
       margin-right: 8px;
       fill: color('black');
     }
-
-    &-websites {
-      @include gradient-websites; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
-    }
-
-    &-stories {
-      @include gradient-stories; color: color('pigment-indigo');
-      .#{atom('ico')} { fill: color('pigment-indigo'); }
-    }
-
-    &-ads {
-      @include gradient-ads; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
-    }
-
-    &-email {
-      @include gradient-e-mails; color: color('ultramarine');
-      .#{atom('ico')} { fill: color('ultramarine'); }
-    }
   }
 
-  &:hover &-link {
+  &-link {
     color: color('black');
     background: color('athens-gray');
 
     .#{atom('ico')} {
       fill: color('black');
     }
-
-    &-websites:hover {
-      @include gradient-websites; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
-    }
-
-    &-stories:hover {
-      @include gradient-stories; color: color('pigment-indigo');
-      .#{atom('ico')} { fill: color('pigment-indigo'); }
-    }
-
-    &-ads:hover {
-      @include gradient-ads; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
-    }
-
-    &-email:hover {
-      @include gradient-e-mails; color: color('ultramarine');
-      .#{atom('ico')} { fill: color('ultramarine'); }
-    }
   }
+
+    &-link-websites {
+
+      &:hover, &.#{molecule('format-toggle')}-selected  {
+        @include gradient-websites; color: color('white');
+        .#{atom('ico')} { fill: color('white'); }
+      }
+    }
+
+    &-link-stories {
+      &:hover, &.#{molecule('format-toggle')}-selected {
+        @include gradient-stories; color: color('pigment-indigo');
+        .#{atom('ico')} { fill: color('pigment-indigo'); }
+      }
+    }
+
+    &-link-ads {
+      &:hover, &.#{molecule('format-toggle')}-selected {
+        @include gradient-ads; color: color('white');
+        .#{atom('ico')} { fill: color('white'); }
+      }
+    }
+
+    &-link-email {
+
+      &:hover, &.#{molecule('format-toggle')}-selected {
+        @include gradient-e-mails; color: color('ultramarine');
+        .#{atom('ico')} { fill: color('ultramarine'); }
+      }
+    }
 
   &-angle {
     margin-right: 0;
@@ -123,6 +112,7 @@
     opacity: 0;
     transform: translateY(-20px);
     transition: all 0.2s ease;
+    transition-delay: 0.05s;
 
     .#{molecule('format-toggle')}-selected:focus + &,
     .#{molecule('format-toggle')}-selected:hover + &,

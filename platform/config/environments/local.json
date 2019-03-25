@@ -21,6 +21,12 @@
       "subdomain": "playground",
       "host": "localhost",
       "port": "8082"
+    },
+    "preview": {
+      "scheme": "http",
+      "subdomain": "preview",
+      "host": "localhost",
+      "port": "8082"
     }
   }
 }

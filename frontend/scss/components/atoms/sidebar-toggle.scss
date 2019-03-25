@@ -70,6 +70,7 @@
     }
     .label-title {
       padding: 5px 10px 5px 5px;
+      opacity: 0;
       margin-left: -5px;
       border-radius: 0 4px 4px 0;
       background: color('blue-ribbon');
@@ -179,6 +180,7 @@
       }
       .label-title {
         padding: 5px 10px 5px 5px;
+        opacity: 0;
         margin-left: -5px;
         border-radius: 0 4px 4px 0;
         background: color('blue-ribbon');

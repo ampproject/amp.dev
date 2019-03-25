@@ -1,0 +1,13 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% endblock %}
+
+{% block main %}
+{% do doc.styles.addCssFile('css/components/templates/meta.css') %}
+<main class="ap--main ap-t-meta">
+  {% include 'views/partials/meta.j2' %}
+</main>
+{% endblock %}

@@ -34,7 +34,7 @@ class Config {
 
     this.environment = env.name;
     this.hosts = env.hosts;
-    Object.values(this.hosts).forEach((host) => host.base = this._buildUrl(host));
+    Object.values(this.hosts).forEach((host) => host.base = this.getHost(host));
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
@@ -60,16 +60,16 @@ class Config {
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
    * @return {String} The full URL
    */
-  _buildUrl(host) {
-    let url = `${host.scheme}://`;
-    const isLocalhost = (host.host === 'localhost');
-    if (isLocalhost || !host.subdomain) {
-      url += host.host;
+  getHost(hostConfig) {
+    let url = `${hostConfig.scheme}://`;
+    const isLocalhost = (hostConfig.host === 'localhost');
+    if (isLocalhost || !hostConfig.subdomain) {
+      url += hostConfig.host;
     } else {
-      url += `${host.subdomain}.${host.host}`;
+      url += `${hostConfig.subdomain}.${hostConfig.host}`;
     }
-    if (host.port) {
-      url += `:${host.port}`;
+    if (hostConfig.port) {
+      url += `:${hostConfig.port}`;
     }
     return url;
   }
@@ -120,6 +120,7 @@ class Config {
       'playground': this.hosts.playground.base,
       'platform': this.hosts.platform.base,
       'api': this.hosts.api.base,
+      'preview': this.hosts.preview.base,
     };
 
     // Deployment specific

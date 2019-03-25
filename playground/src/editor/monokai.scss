@@ -1,0 +1,123 @@
+.cm-s-monokai {
+	&.CodeMirror {
+		background: #272822;
+		color: #f8f8f0;
+	}
+	.CodeMirror-line::selection {
+		background: rgba(73, 72, 62, .99);
+	}
+	.CodeMirror-line {
+		> span::selection {
+			background: rgba(73, 72, 62, .99);
+		}
+		> span {
+			> span::selection {
+				background: rgba(73, 72, 62, .99);
+			}
+			> span::-moz-selection {
+				background: rgba(73, 72, 62, .99);
+			}
+		}
+		> span::-moz-selection {
+			background: rgba(73, 72, 62, .99);
+		}
+	}
+	.CodeMirror-line::-moz-selection {
+		background: rgba(73, 72, 62, .99);
+	}
+	.CodeMirror-gutters {
+		background: #272822;
+		border-right: 0;
+	}
+	.CodeMirror-guttermarker {
+		color: #fff;
+	}
+	.CodeMirror-guttermarker-subtle {
+		color: #d0d0d0;
+	}
+	.CodeMirror-linenumber {
+		color: #d0d0d0;
+	}
+	.CodeMirror-cursor {
+		border-left: 1px solid #f8f8f0;
+	}
+	span {
+		&.cm-comment {
+			color: #75715e;
+			&.cm-attribute {
+				color: #97b757;
+			}
+			&.cm-def {
+				color: #bc9262;
+			}
+			&.cm-tag {
+				color: #bc6283;
+			}
+			&.cm-type {
+				color: #5998a6;
+			}
+		}
+		&.cm-atom {
+			color: #ae81ff;
+		}
+		&.cm-number {
+			color: #ae81ff;
+		}
+		&.cm-property {
+			color: #a6e22e;
+		}
+		&.cm-attribute {
+			color: #a6e22e;
+		}
+		&.cm-keyword {
+			color: #f15a5a;
+		}
+		&.cm-builtin {
+			color: #66d9ef;
+		}
+		&.cm-string {
+			color: #e6db74;
+		}
+		&.cm-variable {
+			color: #f8f8f0;
+		}
+		&.cm-variable-2 {
+			color: #9effff;
+		}
+		&.cm-variable-3 {
+			color: #66d9ef;
+		}
+		&.cm-type {
+			color: #66d9ef;
+		}
+		&.cm-def {
+			color: #fd971f;
+		}
+		&.cm-bracket {
+			color: #f8f8f0;
+		}
+		&.cm-tag {
+			color: #f15a5a;
+		}
+		&.cm-header {
+			color: #ae81ff;
+		}
+		&.cm-link {
+			color: #ae81ff;
+		}
+		&.cm-error {
+			background: #f15a5a;
+			color: #f8f8f0;
+		}
+	}
+	.CodeMirror-activeline-background {
+		background: #373831;
+	}
+	.CodeMirror-matchingbracket {
+		text-decoration: underline;
+		color: #fff !important;
+	}
+	div.CodeMirror-selected {
+		background: #49483e;
+	}
+}

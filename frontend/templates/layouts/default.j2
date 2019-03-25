@@ -154,7 +154,9 @@
     {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
     <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
       Hi, this is the public beta of amp.dev. Got feedback?
-      <a href="https://github.com/ampproject/docs/issues" class="ap-m-banner-link">
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf36pLNLBR3LVj_v1cuNbDMwXHKxrhpgdIxNcmIUJNvEOAUnQ/viewform" class="ap-m-banner-link">
+        {% do doc.icons.useIcon('/icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         {{ _('Let us know!') }}
       </a>
