@@ -17,7 +17,7 @@
     {
       "type": "small",
       "title": "AMP Story Hello World",
-      "url": "/stories/introduction/amp_story_hello_world/",
+      "url": "/documentation/examples/introduction/stories_in_amp",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
@@ -27,13 +27,13 @@
     {
       "type": "small",
       "title": "Animations",
-      "url": "/stories/features/animations/",
+      "url": "/documentation/examples/visual-effects/amp_story_animations",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
       "type": "small",
       "title": "Layouts",
-      "url": "/stories/features/layouts/",
+      "url": "/documentation/examples/style-layout/amp_story_layouts",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
@@ -45,7 +45,7 @@
     {
       "type": "small",
       "title": "Supporting desktop and landscape mode",
-      "url": "/stories/features/supporting_desktop_and_landscape_mode/",
+      "url": "/documentation/examples/style-layout/desktop_and_landscape_mode_support",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
@@ -55,13 +55,13 @@
     {
       "type": "small",
       "title": "DoubleClick",
-      "url": "/stories/monetization/doubleclick/",
+      "url": "/documentation/examples/advertising-analytics/doubleclick_amp_story_ads",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
       "type": "small",
       "title": "Publisher Served",
-      "url": "/stories/monetization/publisher_served/",
+      "url": "/documentation/examples/advertising-analytics/publisher_served_amp_story_ads",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
@@ -71,7 +71,7 @@
     {
       "type": "small",
       "title": "Ken Burns",
-      "url": "/stories/visual_effects/ken_burns/",
+      "url": "/documentation/examples/visual-effects/ken_burns",
       "image": "/favicons/android-chrome-256x256.png"
     },
     {
@@ -81,7 +81,7 @@
     {
       "type": "small",
       "title": "Story User Consent",
-      "url": "/stories/user_consent/story_user_consent/",
+      "url": "/documentation/examples/user-consent/story_user_consent",
       "image": "/favicons/android-chrome-256x256.png"
     }
   ]
