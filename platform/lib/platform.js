@@ -118,8 +118,10 @@ class Platform {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
+    // eslint-disable-next-line new-cap
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
-      routers.example.sources, routers.example.embeds
+      routers.example.sources,
+      routers.example.embeds,
     ])));
     this.server.use('/documentation/examples/api', routers.example.api);
     this.server.use('/boilerplate', routers.boilerplate);
