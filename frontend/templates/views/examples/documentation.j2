@@ -177,7 +177,7 @@
         <div class="ap-o-code-preview-preview-iframe">
           <amp-iframe class="ap-o-code-preview-iframe" media="(min-width: 650px)" src="{{ story_preview_embed }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
         </div>
-        {% elif show_preview %}
+        {% elif not doc.example.document.isAmpStory and show_preview %}
         <div class="ap-o-code-preview-preview">
           {{ section.preview|safe }}
         </div>
