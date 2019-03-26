@@ -13,7 +13,7 @@ amp-sidebar {
 }
 
 nav[toolbar] {
-  top: 120px;
+  top: 36px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 
@@ -23,7 +23,7 @@ nav[toolbar] {
     overflow: auto;
     max-height: calc(100vh - 168px);
   }
-  
+
   &::-webkit-scrollbar {
     width: 2px;
   }
@@ -153,7 +153,7 @@ nav[toolbar] {
       width: calc(100% + 15px);
     }
   }
-  
+
   &-section {
     max-width: 100%;
   }

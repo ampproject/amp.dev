@@ -410,6 +410,7 @@ class SamplesBuilder {
     // Keep the full sample for the big playground
     const fullSource = sample.clone();
     fullSource.contents = Buffer.from(parsedSample.source);
+    fullSource.basename = fullSource.basename.toLowerCase();
     fullSource.dirname = `${fullSource.dirname}/${this._getCategory(sample)}`;
     fullSource.isSourceFile = true;
 
@@ -447,6 +448,7 @@ class SamplesBuilder {
 
       const sectionSource = fullSource.clone();
       sectionSource.isSourceFile = true;
+      sectionSource.basename = sectionSource.basename.toLowerCase();
       sectionSource.contents = Buffer.from(contents);
       sectionSource.extname = `-${section.id}.html`;
 
@@ -510,6 +512,7 @@ class SamplesBuilder {
         'formats': [this._getSampleFormat(parsedSample)],
         'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
+      `example: !g.json /${DOCUMENTATION_POD_PATH}/${preview.stem}.json`,
       '---',
     ].join('\n'));
 
