@@ -63,6 +63,7 @@ class FilteredPage {
       this._rewriteUrls();
       this._setActiveFormatToggle();
       this._removeStaleFilterClass();
+      this._removeEmptyFilterBubbles();
       this._addClassToBody();
     }
   }
@@ -187,6 +188,21 @@ class FilteredPage {
       filteredElement = this._dom(filteredElement);
 
       filteredElement.removeClass(filterClasses);
+    });
+  }
+
+  /**
+   * Checks if there are filter bubbles on the page and checks for possible
+   * matches for their filter, then removes them if there are none
+   * @return {undefined}
+   */
+  _removeEmptyFilterBubbles() {
+    this._dom('.ap-m-filter-bubble').each((index, filterBubble) => {
+      filterBubble = this._dom(filterBubble);
+      const category = filterBubble.data('category');
+      if (!this._dom(`.ap-m-teaser[data-category="${category}"]`).length) {
+        filterBubble.remove();
+      }
     });
   }
 
