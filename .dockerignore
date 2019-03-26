@@ -23,8 +23,6 @@ frontend/
 pages/
 !platform/pages
 examples/*
-!dist/examples
-!pages/**/examples
 !examples/api
 
 # playground: ignore everything except the dist folder
