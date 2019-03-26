@@ -9,7 +9,7 @@ class: case-study post-detail
 components:
   - social-share
 
-headline: Times of India reports 1.5X more revenue yields, 3.6X faster load time with AMP
+headline: Advance Create accelerates business by optimizing its mobile website with AMP
 results:
     - stat: +28.9%
       description: mobile CVR
