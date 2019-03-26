@@ -33,15 +33,17 @@ const utils = require('@lib/utils');
 
 /* Source paths of files that should be collected */
 const STATICS_SRC = [
-  utils.project.absolute('pages/static-test/**/*'),
+  utils.project.absolute('pages/static/**/*'),
   // utils.project.absolute('examples/static/**/*'),
 ];
 /* Path where all collected static files should be written to */
-const STATIC_DEST = utils.project.absolute('platform/static-test');
+const STATIC_DEST = utils.project.absolute('platform/static');
 /* Path of the file containing all available renditions */
 const STATICS_INVENTORY = utils.project.absolute('platform/static.json');
 /* All image types that should get renditions */
 const IMAGE_TYPES = ['image/png', 'image/jpeg'];
+/* The zip mime type to compare against */
+const ZIP_TYPE = 'application/zip';
 /* Defines sizes in which to create image renditions */
 const SRCSET_SIZES = [1920, 1366, 768];
 
@@ -70,24 +72,24 @@ class StaticsCollector {
     const scope = this;
     const stream = gulp.src(STATICS_SRC)
         .pipe(through.obj(async function(file, encoding, callback) {
+          // Determine file type to pass file to correct handler
+          const type = !file.stat.isDirectory() ? fileType(file.contents) : null;
+
           // Check if the file should actually be part of zip file
-          if (file.path.includes('.zip')) {
+          if (type !== ZIP_TYPE && file.path.includes('.zip')) {
             scope._zip(file, callback);
             return;
           }
           // Otherwise determine file type to fish out images and create
           // appropriate renditions for them, therefore skip folders
-          if (!file.stat.isDirectory()) {
-            const type = fileType(file.contents);
-            if (IMAGE_TYPES.includes(type.mime)) {
-                const renditions = await scope._image(file);
-                for (const rendition of renditions) {
-                  this.push(rendition);
-                }
-
-                callback();
-                return;
+          if (type && IMAGE_TYPES.includes(type.mime)) {
+            const renditions = await scope._image(file);
+            for (const rendition of renditions) {
+              this.push(rendition);
             }
+
+            callback();
+            return;
           }
 
           // Just forward everything that hasn't been catched by one
@@ -117,8 +119,8 @@ class StaticsCollector {
     });
 
     // Only append real files, directories will be created automatically
-    if (!file.stat.isDirectory()) {
-      const filePath = file.relative.replace(relativePath, '');
+    const filePath = file.relative.replace(relativePath, '');
+    if (!file.stat.isDirectory() && filePath) {
       archive.append(file.contents, {'name': filePath});
     }
 
