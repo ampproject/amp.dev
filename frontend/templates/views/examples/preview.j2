@@ -10,25 +10,11 @@
     <a class="ap-o-header-home" href="/index.html">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-      <span class="ap-o-header-home-title">AMP</span> <span class="ap-o-header-home-sub-title">Example Preview: {{ doc.title }}</span>
+      <span class="ap-o-header-home-title">AMP</span> <span class="ap-o-header-home-sub-title">Example Preview</span>
     </a>
 
-    {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
-    <div class="ap-m-device-toggle">
-      {% set devices = ['mobile', 'tablet', 'desktop'] %}
-      {% if doc.example.document.isAmpEmail %}
-      {% set devices = ['mobile', 'tablet'] %}
-      {% endif %}
-
-      {% for device in devices %}
-      {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
-      <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
-        <svg class="ap-a-ico ap-m-device-toggle-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
-        </svg>
-      </button>
-      {% endfor %}
-    </div>
+    {% do doc.styles.addCssFile('/css/components/atoms/sample-preview-title.css') %}
+    <h1 class="ap-a-sample-preview-title">{{ doc.title }}</h1>
 
     <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview', '') }}">
       <span>{{ _('Back to sample') }}</span>
@@ -37,6 +23,23 @@
     </a>
   </div>
 </header>
+
+{% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
+<div class="ap-m-device-toggle">
+  {% set devices = ['mobile', 'tablet', 'desktop'] %}
+  {% if doc.example.document.isAmpEmail %}
+  {% set devices = ['mobile', 'tablet'] %}
+  {% endif %}
+
+  {% for device in devices %}
+  {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
+  <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
+    <svg class="ap-a-ico ap-m-device-toggle-icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
+    </svg>
+  </button>
+  {% endfor %}
+</div>
 {% endblock %}
 
 {% block main %}
