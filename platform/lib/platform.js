@@ -103,7 +103,7 @@ class Platform {
   }
 
   _enableCors() {
-    this.server.options('*', cors());
+    this.server.use(cors());
     this.server.use(ampCors({
       'verifyOrigin': false,
     }));
