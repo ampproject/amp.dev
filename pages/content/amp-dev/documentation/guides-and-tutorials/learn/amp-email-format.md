@@ -1,5 +1,5 @@
 ---
-$title: AMPHTML email specification
+$title: AMP for Email specification
 $order: 3
 formats:
   - email
@@ -25,10 +25,10 @@ limitations under the License.
 
 AMP is a technology known for developing super fast web pages on mobile clients. AMP is a set of HTML tags backed by JavaScript that easily enables functionality with an added focus on performance and security. There are [AMP components](https://www.ampproject.org/docs/reference/components) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. 
 
-The AMPHTML Email format provides a subset of AMP components that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email.
+The AMP for Email format provides a subset of AMP components that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email.
 
 
-## The AMPHTML Email Format
+## The AMP for Email Format
 
 ### Required markup
 
@@ -59,7 +59,7 @@ An AMP email message MUST
 
 ## AMP Components
 
-The following is the list of [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) that are currently supported in AMP email messages. The components are grouped into the following categories:
+The following is the list of [AMP components](https://www.ampproject.org/docs/reference/components) that are currently supported in AMP email messages. The components are grouped into the following categories:
 
 * [Dynamic Content](#dynamic-content)
 * [Layout](#layout)
@@ -139,17 +139,17 @@ For example, in Gmail, the allowed list of CSS properties and values can be foun
 
 ## Validation tools
 
-To ensure your email messages meet the strict criteria for the AMPHTML Email format, validate your content with one of the following tools:
+To ensure your email messages meet the strict criteria for the AMP for Email format, validate your content with one of the following tools:
 
 ### Web-based validator
 
 A web-based validator is available at [https://validator.ampproject.org/](https://validator.ampproject.org/)
 
-Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
+Simply paste in the AMP HTML to ensure the document meets all the AMP for Email restrictions. This tool shows you the validation errors directly inline.
 
 ### Command-line validator
 
-A command-line validation tool is also available for validating your AMPHTML Email document.
+A command-line validation tool is also available for validating your AMP email message.
 
 **Installation**
 
@@ -174,7 +174,7 @@ amp_email.html
 ## Privacy and Security
 
 ### Tracking email opens and interaction
-AMPHTML allows tracking email opens with pixel tracking techniques, same as regular emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
+AMPHTML allows tracking email opens with pixel tracking techniques, same as regular HTML emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
 
 
 ### AMP-specific analytics
@@ -197,7 +197,7 @@ Requests for images in the [`<amp-carousel>`](https://www.ampproject.org/docs/re
 
 ## Examples
 
-This section provides some AMPHTML Email code examples.
+This section provides some AMP for Email code examples.
 
 ### Basic usage of `<amp-list>`
 
@@ -272,12 +272,12 @@ Email is structured as a [MIME tree](https://en.wikipedia.org/wiki/MIME). This M
 
 Embedding AMP within an email is simple, add a new MIME part with a content type of `text/x-amp-html` as a descendant of `multipart/alternative`. It should live alongside the existing `text/html` or `text/plain` parts. This ensures that the email message works on all clients.
 
-<amp-img alt="AMPHTML Email MIME Parts Diagram"
+<amp-img alt="AMP for Email MIME Parts Diagram"
     layout="responsive"
     width="752" height="246"
     src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png">
   <noscript>
-    <img alt="AMPHTML Email MIME Parts Diagram" src="img/amp-email-mime-parts.png" />
+    <img alt="AMP for Email MIME Parts Diagram" src="img/amp-email-mime-parts.png" />
   </noscript>
 </amp-img>
 
@@ -323,4 +323,4 @@ Content-Type: text/html; charset="UTF-8"
 
 ## Feedback & Support
 
-For support and feedback on AMPHTML Email, please use the following channel: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+For support and feedback on AMP for Email, please use the following channel: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
