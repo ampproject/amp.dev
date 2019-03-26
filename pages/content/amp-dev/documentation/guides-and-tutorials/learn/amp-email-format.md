@@ -48,19 +48,18 @@ Hello, world.
 </html>
 [/sourcecode]
 
-An AMP email message must:
+An AMP email message MUST
 
-| Rule | Description |
-| ---- | ----------- |
-| Start with the `<!doctype html>` doctype. | Standard for HTML. |
-| Contain a top-level `<html ⚡4email>` tag.<br>(`<html amp4email>` is accepted as well) | Identifies the document as AMPHTML Email. |
-| Contain `<head>` and `<body>` tags. | Optional in HTML but not in AMPHTML Email. |
-| Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifies the encoding for the page. |
-| Contain the amp4email boilerplate in the `<head>` :<br>`<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>` | CSS boilerplate to initially hide the content until AMP JS is loaded. |
+- <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
+- <a name="ampd"></a>contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well). [🔗](#ampd)
+- <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
+- <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
+- <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
+- <a name="boilerplate"></a>contain amp4email boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) inside their head tag to initially hide the content until AMP JS is loaded. [🔗](#boilerplate)
 
 ## AMP Components
 
-The following is a proposed list of AMP components that are supported in AMP email messages. The components are grouped into the following categories:
+The following is the list of [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) that are currently supported in AMP email messages. The components are grouped into the following categories:
 
 * [Dynamic Content](#dynamic-content)
 * [Layout](#layout)
