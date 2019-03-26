@@ -283,8 +283,10 @@ Embedding AMP within an email is simple, add a new MIME part with a content type
 </amp-img>
 
 Important things to note:
+
 - The `text/x-amp-html` part must be nested under a `multipart/alternative` node, it will not be recognized by the email client otherwise.
-- Some email clients will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
+
+- Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
 
 See the following example:
 
