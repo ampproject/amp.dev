@@ -17,6 +17,8 @@
 'use strict';
 
 const cheerio = require('cheerio');
+const URL = require('url').URL;
+const config = require('@lib/config.js');
 
 const FORMATS = ['websites', 'stories', 'ads', 'email'];
 
@@ -147,11 +149,13 @@ class FilteredPage {
   _rewriteUrls() {
     this._dom('a').each((index, a) => {
       a = this._dom(a);
-      const href = a.attr('href') || '';
+      const url = new URL(a.attr('href') || '', config.hosts.platform.base);
+
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
-      if (!href.includes('?') && isFilterableRoute(href)) {
-        a.attr('href', `${href}?format=${this._format}`);
+      if (!url.searchParams.get('format') && isFilterableRoute(url.pathname)) {
+        url.searchParams.set('format', this._format);
+        a.attr('href', url.toString());
       }
     });
   }
