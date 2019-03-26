@@ -204,7 +204,7 @@ class FilteredPage {
     this._dom('.ap-m-filter-bubble').each((index, filterBubble) => {
       filterBubble = this._dom(filterBubble);
       const category = filterBubble.data('category');
-      if (!this._dom(`.ap-m-teaser[data-category="${category}"]`).length) {
+      if (!this._dom(`.ap-m-teaser[data-category="${category}"]`).length && category) {
         filterBubble.remove();
       }
     });
