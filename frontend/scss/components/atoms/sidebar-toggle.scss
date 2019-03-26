@@ -99,7 +99,7 @@
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1440px) {
 
   display: inline-block;
 
@@ -130,7 +130,7 @@
           }
         }
 
-        &~ .ap--content  {
+        &~ .ap--content, &~ .ap--help  {
           grid-column-start: 2;
           padding-left: 80px;
           padding-right: 80px;
@@ -191,4 +191,5 @@
       }
     }
   }
+
 }
