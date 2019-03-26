@@ -120,8 +120,8 @@ class Platform {
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     // eslint-disable-next-line new-cap
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
-      routers.example.sources,
       routers.example.embeds,
+      routers.example.sources,
     ])));
     this.server.use('/documentation/examples/api', routers.example.api);
     this.server.use('/boilerplate', routers.boilerplate);
