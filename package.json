@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "amp-toolbox-cors": "0.2.4",
-    "amp-toolbox-optimizer": "0.5.1",
     "amp-toolbox-runtime-version": "0.2.6",
     "cheerio": "1.0.0-rc.2",
     "cors": "^2.8.5",
@@ -61,8 +60,6 @@
     "signale": "1.4.0"
   },
   "devDependencies": {
-    "amp-toolbox-optimizer": "0.5.1",
-    "amp-toolbox-runtime-version": "0.2.6",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
     "@babel/node": "7.2.2",
@@ -73,6 +70,8 @@
     "@octokit/rest": "16.20.0",
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.5",
+    "amp-toolbox-optimizer": "^0.5.2-beta.0",
+    "amp-toolbox-runtime-version": "0.2.6",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "clean-css": "4.2.1",
