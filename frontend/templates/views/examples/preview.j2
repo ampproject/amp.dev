@@ -31,8 +31,9 @@
     </div>
 
     <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview', '') }}">
-      {% do doc.icons.useIcon('/icons/close.svg') %}
-      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      <span>{{ _('Back to sample') }}</span>
+      {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
     </a>
   </div>
 </header>
