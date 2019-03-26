@@ -31,7 +31,6 @@
   box-shadow: 0 30px 30px -15px fade_out(color('black'), 0.9);
   border: 1px fade_out(color('black'), 0.9) solid;
   background: color('white');
-  transform-origin: 50% 50px;
 
   @media (max-height: 896px) {
     transform: scale(0.9);
