@@ -60,7 +60,7 @@ An AMP email message MUST
 
 ## AMP Components
 
-The following is the list of [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) that are currently supported in AMP email messages. The components are grouped into the following categories:
+The following is the list of [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}?format=email) that are currently supported in AMP email messages. The components are grouped into the following categories:
 
 * [Dynamic Content](#dynamic-content)
 * [Layout](#layout)
@@ -170,7 +170,7 @@ Requests for images in the [`<amp-carousel>`]({{g.doc('/content/amp-dev/document
 
 ## Examples
 
-This section provides some [AMP for Email code examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
+This section provides some [AMP for Email code examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}?format=email).
 
 ### Basic usage of `<amp-list>`
 
