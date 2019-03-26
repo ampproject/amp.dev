@@ -57,7 +57,7 @@ Since the AMP for Email library is a subset of the AMP HTML library, many of the
 
 ### Images
 
-To paint the page effectively, all `<img>` tags are replaced with `[<amp-img>](https://www.ampproject.org/docs/reference/components/amp-img)`. The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system](https://www.ampproject.org/docs/design/amp-html-layout).
+To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](https://www.ampproject.org/docs/reference/components/amp-img). The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system](https://www.ampproject.org/docs/design/amp-html-layout).
 
 
 ```
@@ -76,7 +76,7 @@ The `<amp-img>` tag comes with powerful, built-in ways to control responsive des
 
 ### GIFs
 
-AMP has created `[<amp-anim>](https://www.ampproject.org/docs/reference/components/amp-anim)`, a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
+AMP has created [`<amp-anim>`](https://www.ampproject.org/docs/reference/components/amp-anim), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
 
 
 ```

@@ -195,7 +195,7 @@ In this tutorial, we'll use [`<amp-bind>`](https://www.ampproject.org/docs/refer
 ```
 
 
-Next, we'll declare an AMP bind variable "myState" as a JSON string inside an `[<amp-state>](https://www.ampproject.org/docs/reference/components/amp-bind#state)` tag. Since we have four cat photos, we'll include state for all four.
+Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`<amp-state>`](https://www.ampproject.org/docs/reference/components/amp-bind#state) tag. Since we have four cat photos, we'll include state for all four.
 
 
 ```html
