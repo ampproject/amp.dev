@@ -28,7 +28,7 @@ $title: 包含第三方内容
 </amp-iframe>
 </div>
 
-提示: 要查看更多 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}})。
+提示: 要查看更多 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-twitter.html', locale=doc.locale).url.path}})。
 
 ## 嵌入 Instagram
 
@@ -54,7 +54,7 @@ $title: 包含第三方内容
 </amp-iframe>
 </div>
 
-提示: 要查看更多 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}})。
+提示: 要查看更多 [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-instagram.html', locale=doc.locale).url.path}})。
 
 ## 显示 Facebook 帖子或视频
 
@@ -98,7 +98,7 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-提示: 要查看更多 [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}})。
+提示: 要查看更多 [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-facebook.html', locale=doc.locale).url.path}})。
 
 ## 包含 YouTube 视频
 
@@ -126,7 +126,7 @@ Preview:
 </amp-iframe>
 </div>
 
-提示: 要查看更多 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}})。
+提示: 要查看更多 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 的示例，请访问 [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-youtube.html', locale=doc.locale).url.path}})。
 
 ## 显示广告
 

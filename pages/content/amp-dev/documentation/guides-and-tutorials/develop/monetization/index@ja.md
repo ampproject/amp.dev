@@ -10,7 +10,7 @@ $title: 広告で AMP ページを収益化する
 
 [tip type="success"]
 
-[AMP By Example のライブデモ]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
+[AMP By Example のライブデモ]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
 
 [/tip]
 
@@ -133,12 +133,12 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 ### イノベーション: 高い魅力を持った広告プロダクトを提供する
 
 *   **付随的な AMP ページで広告を実装**することで増収を図ります。
-    *   [カルーセル内の広告]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [ライトボックス内の広告]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [カルーセル内の広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [ライトボックス内の広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   [その他]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **直接販売の広告に新しいフォーマットを導入**し、セールスチームが影響力の強い革新的な広告プロダクトを販売できるようにします。
-    *   [追尾広告]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [フライングカーペット]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [追尾広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [フライングカーペット]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## その他のリソース
 

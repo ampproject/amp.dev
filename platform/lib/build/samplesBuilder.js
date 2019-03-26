@@ -276,7 +276,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getDocumentationRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/index.html`;
   }
 
   /**
@@ -286,7 +286,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getPreviewRoute(sample) {
-    return `${this._getDocumentationRoute(sample)}/preview`;
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/preview/index.html`;
   }
 
   /**
@@ -320,7 +320,7 @@ class SamplesBuilder {
         '$category': this._getCategory(sample, true),
         '$path': this._getDocumentationRoute(sample),
         '$localization': {
-          '$path': `/{locale}${this._getDocumentationRoute(sample)}`,
+          'path': `/{locale}${this._getDocumentationRoute(sample)}`,
         },
         'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
@@ -508,7 +508,7 @@ class SamplesBuilder {
         '$category': this._getCategory(sample),
         '$path': this._getPreviewRoute(sample),
         '$localization': {
-          '$path': `/{locale}${this._getPreviewRoute(sample)}`,
+          'path': `/{locale}${this._getPreviewRoute(sample)}`,
         },
         'formats': [this._getSampleFormat(parsedSample)],
         'source': this._getSourceRoute(sample),

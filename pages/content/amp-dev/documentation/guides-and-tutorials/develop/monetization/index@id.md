@@ -10,7 +10,7 @@ Di halaman non-AMP (HTML biasa), jika ingin menampilkan iklan di halaman, Anda p
 
 [tip type="success"]
 
-Lihat [AMP By Example untuk demo langsung]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
+Lihat [AMP By Example untuk demo langsung]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) yang menunjukkan cara menambahkan tag amp-ad ke halaman AMP.
 
 [/tip]
 
@@ -133,12 +133,12 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 ### Inovasi: Tawarkan produk iklan yang paling menarik
 
 * **Terapkan iklan pada halaman AMP tambahan** untuk menghasilkan pendapatan tambahan:
-    *   [Iklan di carousel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [Iklan di lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [Iklan di carousel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Iklan di lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   ... dan [lain-lain]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 * **Terapkan format baru untuk iklan yang dijual langsung** untuk membekali tim penjualan Anda dengan produk iklan inovatif yang berdampak tinggi:
-    *   [Iklan Melekat]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [Iklan Melekat]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Referensi tambahan
 

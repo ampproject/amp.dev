@@ -4,7 +4,7 @@ $title: 制作实时博客
 
 实时博客是在整个持续性事件（如体育赛事或选举）中频繁更新的网页。在 AMP 中，您可以使用 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 组件实现实时博客。
 
-本教程简要概述了 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 组件，并重点介绍了实时博客的一些实现细节，例如[分页](#pagination)和[深层链接](#deeplinking)。我们将使用 AMP By Example 的[实时博客示例]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})来说明如何在 AMP 中实现实时博客。
+本教程简要概述了 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 组件，并重点介绍了实时博客的一些实现细节，例如[分页](#pagination)和[深层链接](#deeplinking)。我们将使用 AMP By Example 的[实时博客示例]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})来说明如何在 AMP 中实现实时博客。
 
 [tip type="success"]
 
@@ -70,7 +70,7 @@ $title: 制作实时博客
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-您需要通过更新托管的网页来正确地填充导航项。例如，在[实时博客示例]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})中，我们通过服务器端模板呈现网页，并使用查询参数指定网页的第一个博客条目应该是什么。我们将网页大小限制为 5 个条目，因此如果服务器生成了 5 个以上的条目，那么在用户进入到主网页时，系统就会在导航区域中显示“下一页”元素。有关详情，请参阅 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})。
+您需要通过更新托管的网页来正确地填充导航项。例如，在[实时博客示例]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})中，我们通过服务器端模板呈现网页，并使用查询参数指定网页的第一个博客条目应该是什么。我们将网页大小限制为 5 个条目，因此如果服务器生成了 5 个以上的条目，那么在用户进入到主网页时，系统就会在导航区域中显示“下一页”元素。有关详情，请参阅 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})。
 
 在博文大小超出 `data-max-items-per-page` 指定的条目数量上限后，更早的博客条目就会显示在“下一页”（如第 2 页）。由于 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 每隔一段时间就会轮询一次服务器，查看条目是否有变化，因此，如果用户不在第一页上，则无需轮询服务器。
 
@@ -80,7 +80,7 @@ $title: 制作实时博客
 
 在您发布博文时，务必要能够深层链接到该博文，以便启用分享等功能。借助 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})，您只需使用博客条目的 `id` 即可实现深层链接。例如，点击 [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) 可以直接转到 ID 为 `post3` 的博文。
 
-AMP By Example 在[实时博客示例]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})中使用 Cookie 生成新内容，因此如果您是首次进入到该网页，则可能无法访问 ID 为“post3”的博文；在这种情况下，系统会将您重定向到第一篇博文。
+AMP By Example 在[实时博客示例]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})中使用 Cookie 生成新内容，因此如果您是首次进入到该网页，则可能无法访问 ID 为“post3”的博文；在这种情况下，系统会将您重定向到第一篇博文。
 
 ## 资源
 
@@ -88,4 +88,4 @@ AMP By Example 在[实时博客示例]({{g.doc('/content/amp-dev/documentation/e
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 参考文档
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [AMP BY Example 的实时博客示例]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [AMP BY Example 的实时博客示例]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

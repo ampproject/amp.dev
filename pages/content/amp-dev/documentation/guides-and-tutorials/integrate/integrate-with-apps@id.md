@@ -69,7 +69,7 @@ dijelaskan di atas.
 
 Google menyediakan AMP URL API untuk mengambil URL HTML AMP yang cocok untuk
 daftar URL tertentu ([dokumentasi resmi](https://developers.google.com/amp/cache/use-amp-url) /
-[demo]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). URL ini
+[demo]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). URL ini
 tidak harus merupakan versi kanonis. Jika ada versi AMP, maka responsnya
 akan mencakup URL AMP asli dan URL untuk halaman AMP yang tersimpan di
 Cache AMP Google.

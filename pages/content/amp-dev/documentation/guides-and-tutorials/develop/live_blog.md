@@ -14,7 +14,7 @@ contributors:
 
 Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using the [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) component.
 
-This tutorial provides a short overview of the [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) component and focuses on some implementation details for live blogs, like [pagination](#pagination) and [deep linking](#deeplinking). We'll use AMP By Example's [live blog sample]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) to illustrate implementing live blogs in AMP.
+This tutorial provides a short overview of the [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) component and focuses on some implementation details for live blogs, like [pagination](#pagination) and [deep linking](#deeplinking). We'll use AMP By Example's [live blog sample]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) to illustrate implementing live blogs in AMP.
 
 [tip type="tip"]
 **TIP –** Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features.
@@ -78,7 +78,7 @@ With pagination, the simple code we used earlier becomes:
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, a user landing on the main page will see the "Next" element in the navigation area. Refer to [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) for details.
+It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, a user landing on the main page will see the "Next" element in the navigation area. Refer to [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) for details.
 
 After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
 
@@ -88,7 +88,7 @@ You can add the disabled attribute to  the hosted page to prevent the polling me
 
 When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), deep linking is possible by simply using the `id` of the blog item. For example, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) allows you to navigate directly to the blog post with the `post3` id.
 
-AMP By Example uses a cookie to in the [live blog sample]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) to generate fresh content, so if it’s the first time you are landing on the page, the post with id “post3” might not be available, in that case, you are redirected to the first post.
+AMP By Example uses a cookie to in the [live blog sample]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) to generate fresh content, so if it’s the first time you are landing on the page, the post with id “post3” might not be available, in that case, you are redirected to the first post.
 
 ## Resources
 
@@ -96,4 +96,4 @@ Learn more from these resources:
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) reference documentation
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [AMP BY Example's Live blog sample]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [AMP BY Example's Live blog sample]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

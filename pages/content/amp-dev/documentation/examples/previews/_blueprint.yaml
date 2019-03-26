@@ -1,4 +1,4 @@
-$title: Examples previews
+$title: Example previews
 $view: /views/examples/preview.j2
 $path: /documentation/examples/{base}/preview
 $localization:

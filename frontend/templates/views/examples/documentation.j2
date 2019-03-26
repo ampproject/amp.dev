@@ -145,7 +145,7 @@
       {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
       <div class="ap--ctas">
         {% if has_demo %}
-        {% set preview_url = doc.url.path + '/preview' %}
+        {% set preview_url = doc.url.path + '/../preview/index.html' %}
         <a class="ap-a-btn" href="{{ preview_url }}">{{ _('View demo') }}</a>
         {% endif %}
 
