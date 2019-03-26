@@ -286,7 +286,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getPreviewRoute(sample) {
-    return `${this._getDocumentationRoute(sample)}/preview/index.html`;
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/preview/index.html`;
   }
 
   /**
