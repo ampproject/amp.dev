@@ -491,7 +491,8 @@ class SamplesBuilder {
    */
   _createPreview(sample, parsedSample) {
     // Check if the sample should have a preview at all
-    if (!parsedSample.document.metadata.hidePreview && !parsedSample.document.metadata.preview) {
+    if (!(parsedSample.document.metadata.preview ||
+          parsedSample.document.isAmpStory)) {
       return [];
     }
 

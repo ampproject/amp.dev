@@ -139,7 +139,7 @@
       {% endif %}
 
       {# Check if the sample has a demo button as then this is the primary CTA #}
-      {% set has_demo = doc.example.document.metadata.preview %}
+      {% set has_demo = doc.example.document.metadata.preview or doc.example.document.isAmpStory %}
       {% set has_playground = not doc.example.document.metadata.disablePlayground %}
       {% if has_demo or has_playground %}
       {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
