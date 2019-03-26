@@ -13,6 +13,5 @@ $order: 6
 
 formats:
   - websites
-  - email
   - stories
   - ads
