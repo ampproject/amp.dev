@@ -15,21 +15,25 @@
 
     {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
     <div class="ap-m-device-toggle">
-      {% for device in ['mobile', 'tablet', 'desktop'] %}
-      {% if not device == 'desktop' and not doc.example.document.isAmpEmail %}
+      {% set devices = ['mobile', 'tablet', 'desktop'] %}
+      {% if doc.example.document.isAmpEmail %}
+      {% set devices = ['mobile', 'tablet'] %}
+      {% endif %}
+
+      {% for device in devices %}
       {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
       <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
         <svg class="ap-a-ico ap-m-device-toggle-icon">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
         </svg>
       </button>
-      {% endif %}
       {% endfor %}
     </div>
 
     <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview', '') }}">
-      {% do doc.icons.useIcon('/icons/close.svg') %}
-      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      <span>{{ _('Back to sample') }}</span>
+      {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
     </a>
   </div>
 </header>
