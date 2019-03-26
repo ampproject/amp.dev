@@ -101,7 +101,7 @@
     "http-proxy": "1.17.0",
     "http-proxy-response-rewrite": "0.0.1",
     "jasmine": "3.3.1",
-    "js-beautify": "1.9.0",
+    "js-beautify": "1.9.1",
     "keymaster": "1.6.2",
     "mini-css-extract-plugin": "0.5.0",
     "node-sass": "4.11.0",
