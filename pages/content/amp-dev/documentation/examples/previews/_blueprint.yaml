@@ -1,5 +1,0 @@
-$title: Examples previews
-$view: /views/examples/preview.j2
-$path: /documentation/examples/{base}/preview
-$localization:
-  path: /{locale}/documentation/examples/{base}/preview

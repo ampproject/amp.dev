@@ -213,4 +213,4 @@ AMP에서는 이러한 상황을 위해 특별히 만들어진 [`amp-fit-text`](
 
 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})를 이용한 마지막 실험에서는 '안녕하세요'와 같이 짧은 텍스트의 높이를 훨씬 높은 값으로(예: 400) 설정하고 max-font-size 속성값은 42로 유지해 보겠습니다. 결과 페이지가 어떻게 표시될까요? 텍스트가 세로로 가운데 정렬되나요? 아니면 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 태그의 높이가 최대 글꼴 크기에 맞게 축소되나요? 직접 코드를 수정하여 확인하기 전에 AMP의 레이아웃 시스템에 관해 이미 알고 있는 지식을 활용하여 질문에 답변해 보세요.
 
-[AMP by Example의 라이브 데모],[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}}).url.path}})에 관해 자세히 알아보세요.
+[AMP by Example의 라이브 데모],[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fit-text.html', locale=doc.locale).url.path}}).url.path}})에 관해 자세히 알아보세요.

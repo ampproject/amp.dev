@@ -8,4 +8,4 @@ $title: 概要
 
 - [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 - [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
-- [コメント セクションの例]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Comment_Section.html', locale=doc.locale).url.path}})
+- [コメント セクションの例]({{g.doc('/content/amp-dev/documentation/examples/documentation/Comment_Section.html', locale=doc.locale).url.path}})

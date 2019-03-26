@@ -86,4 +86,4 @@ Renders as:
 
 ## Examples
 
-You can find more advanced [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) examples in [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-iframe.html', locale=doc.locale).url.path}}).
+You can find more advanced [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) examples in [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-iframe.html', locale=doc.locale).url.path}}).

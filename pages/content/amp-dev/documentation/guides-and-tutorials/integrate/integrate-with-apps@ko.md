@@ -70,7 +70,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 Google에서 제공하는 AMP URL API를 사용하면
 주어진 URL 목록([공식 문서](https://developers.google.com/amp/cache/use-amp-url)/
-[데모]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
+[데모]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
 표준 버전이 아니어도 됩니다. AMP 버전이 있는 경우 원래 AMP URL과
 Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 포함됩니다.
