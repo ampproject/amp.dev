@@ -188,10 +188,8 @@ class Pipeline {
    * Imports spec docs defeind in platform/imports/spec.json
    * @return {Promise}
    */
-  async importSpec() {
+  importSpec() {
     const importer = new SpecImporter();
-    await importer.initialize();
-
     return importer.import();
   }
 
