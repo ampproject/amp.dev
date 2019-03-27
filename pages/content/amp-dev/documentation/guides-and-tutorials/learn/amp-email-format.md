@@ -1,5 +1,5 @@
 ---
-$title: AMPHTML email specification
+$title: AMP for Email specification
 author: fstanis
 $order: 3
 formats:
