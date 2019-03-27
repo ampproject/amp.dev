@@ -1,0 +1,30 @@
+<div class="ap--sidebar-toggle-visibility-observer">
+
+<amp-position-observer
+    on="enter:fadeTransition.start; exit:fadeTransition.start,fadeTransition.reverse"
+    intersection-ratios="0"
+    layout="nodisplay">
+  </amp-position-observer>
+
+  <amp-animation id="fadeTransition"
+    layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "200ms",
+        "fill": "both",
+        "easing": "ease-out",
+        "iterations": "1",
+        "animations": [{
+          "selector": ".ap-a-sidebar-toggle-label",
+          "keyframes": [{
+              "opacity": "1"
+            },
+            {
+              "opacity": "0"
+            }
+          ]
+        }]
+      }
+    </script>
+  </amp-animation>
+</div>
