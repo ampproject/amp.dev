@@ -150,7 +150,7 @@ You should now be able to change photos by clicking the navigation arrows on the
 
 ## Send with style
 
-AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](https://docs.google.com/document/d/1fnZsHu89Xdirs001bP-Ai9cPwd3SohpeolLNsDh69_E/edit#bookmark=id.bywxv7p5x0vj).
+AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](https://amp.dev/documentation/guides-and-tutorials/learn/email_fundamentals.html?format=email#allowed-amp-components).
 
 Let's update `Hello, AMP4EMAIL world` to a real title.
 
