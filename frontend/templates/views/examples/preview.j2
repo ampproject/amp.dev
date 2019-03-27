@@ -46,7 +46,10 @@
 {% do doc.styles.addCssFile('/css/components/organisms/preview-pane.css') %}
 <main class="ap--preview-pane">
   <article class="ap-o-preview-pane ap-o-preview-pane-mobile" [class]="'ap-o-preview-pane ap-o-preview-pane-' + device.selected">
-    <amp-iframe layout="fill" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="{{ doc.pod.podspec.base_urls.preview }}{{ doc.source }}">
+    {% if doc.example.document.isAmpEmail %}
+    <svg class="ap-o-preview-pane-mail-header" viewBox="0 0 260 45" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M0 0h260v45H0z"/><path fill="#D6D8DA" d="M0 44h260v1H0z"/><circle fill="#D6D8DA" cx="25" cy="22" r="15"/><path d="M33 17.477c0-.83-.64-1.477-1.463-1.477H18.463C17.64 16 17 16.646 17 17.477v9.046c0 .83.64 1.477 1.463 1.477h13.074C32.36 28 33 27.354 33 26.523v-9.046zm-14.537-.739h13.211l-6.126 6.416a.753.753 0 0 1-.548.23.84.84 0 0 1-.549-.23l-6.08-6.416h.092zm-.732.739c0-.093 0-.185.046-.277l3.84 4.061-3.886 4.847v-8.631zm13.806 9.785H18.463a.84.84 0 0 1-.549-.231l4.206-5.216 1.783 1.893c.274.277.64.461 1.051.461a1.48 1.48 0 0 0 1.052-.461l1.646-1.754 4.342 5.077a.56.56 0 0 1-.457.23zm.731-1.154l-4.022-4.754 3.977-4.2c.046.092.046.184.046.277v8.677z" fill="#FAFAFC" fill-rule="nonzero"/><path fill="#D6D8DA" d="M49 14h71v6H49zM49 24h39v6H49z"/><path d="M247.161 28.584c-1.576-4.273-8.172-4.766-10.59-4.802v2.293a.57.57 0 0 1-.935.434l-6.04-5.056a.566.566 0 0 1-.001-.867l6.04-5.057a.569.569 0 0 1 .934.433v2.27c2.718.063 10.592 1.041 10.592 10.352z" fill="#D6D8DA" fill-rule="nonzero"/></g></svg>
+    {% endif %}
+    <amp-iframe layout="flex-item" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="{{ doc.pod.podspec.base_urls.preview }}{{ doc.source }}">
       <div placeholder="">
     </amp-iframe>
   </article>

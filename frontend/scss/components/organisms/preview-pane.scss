@@ -25,6 +25,9 @@
 }
 
 .#{organism('preview-pane')} {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
   width: 411px;
   height: 731px;
@@ -73,5 +76,9 @@
   &-desktop {
     width: 90vw;
     height: 90vh;
+  }
+
+  &-mail-header {
+    width: 100%;
   }
 }
