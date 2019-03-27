@@ -5,16 +5,16 @@
 {% block header %}
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/homepage-link.css') %}
-<header class="ap--header ap--header-fixed">
+<header class="ap--header">
   <div class="ap-o-header">
     <a class="ap-o-header-home" href="/index.html">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
-      <span class="ap-o-header-home-title">AMP</span> <span class="ap-o-header-home-sub-title">Example Preview</span>
+      <span class="ap-o-header-home-title">AMP</span>
     </a>
 
     {% do doc.styles.addCssFile('/css/components/atoms/sample-preview-title.css') %}
-    <h1 class="ap-a-sample-preview-title">{{ doc.title }}</h1>
+    <h1 class="ap-a-sample-preview-title">{{ _('Preview') }}: {{ doc.title }}</h1>
 
     <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview', '') }}">
       <span>{{ _('Back to sample') }}</span>
