@@ -177,10 +177,8 @@ class Pipeline {
    * to the documentation/components collection
    * @return {Promise}
    */
-  async importReference() {
+  importReference() {
     const importer = new ComponentReferenceImporter();
-    await importer.initialize();
-
     return importer.import();
   }
 

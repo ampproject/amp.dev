@@ -1,9 +1,9 @@
 {
   "labels": [
-    "Presentation",
     "Dynamic/Personalized Content",
-    "Runtime",
+    "Presentation",
     "User Input",
+    "Runtime",
     "Ads",
     "AMP Story",
     "Audio&Video",
@@ -18,16 +18,85 @@
     {
       "cards": [
         {
-          "createdAt": "2019-01-17T22:48:08Z",
-          "updatedAt": "2019-01-17T22:48:08Z",
+          "createdAt": "2019-01-22T16:03:20Z",
+          "updatedAt": "2019-01-22T16:03:20Z",
           "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/20226",
-            "title": "Launch 'amp-date-display'",
-            "description": "This feature allows you to display a time that is local to the user (shown in their timezone) as opposed to a constant timezone as set by the author.",
+            "url": "https://github.com/ampproject/amphtml/issues/9785",
+            "title": "[MASTER FEATURE] Dedicated autocomplete component",
+            "description": "Dedicated component for an autocomplete field using AMP. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
+                "name": "Dynamic/Personalized Content",
+                "color": "1d76db"
+              },
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2019-01-22T15:58:26Z",
+          "updatedAt": "2019-01-22T15:58:26Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/19513",
+            "title": "[MASTER FEATURE] <amp-img> sizes=\"auto\" for srcset",
+            "description": "I find making Responsive Images in amp-html actually harder than normal HTML (which should not be the case).",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
                 "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2019-01-22T15:57:01Z",
+          "updatedAt": "2019-01-22T15:57:02Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/13714",
+            "title": "[MASTER FEATURE] Explore AnimationWorklet and co. in AMP's scrollbound animations.",
+            "description": "Explore using ScrollTimeline and AnimationWorklet (Chrome Origin Trial feature) in AMP's scrollbound animations.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2019-01-22T15:54:53Z",
+          "updatedAt": "2019-01-22T15:54:54Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/20236",
+            "title": "[MASTER FEATURE] auto lightbox <amp-img>",
+            "description": "Currently developers can mark an `<amp-img>` to be lightboxed by adding the `lightbox` attribute to it. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20User%20Input",
+                "name": "User Input",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2019-01-22T15:49:06Z",
+          "updatedAt": "2019-01-22T15:49:07Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/20456",
+            "title": "[MASTER FEATURE] Enable use of AMP Components outside of AMP pages",
+            "description": "Explore the idea of using AMP components in non AMP pages. ",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Runtime",
+                "name": "Runtime",
                 "color": "1d76db"
               }
             ]
@@ -172,22 +241,6 @@
           }
         },
         {
-          "createdAt": "2018-07-02T23:04:55Z",
-          "updatedAt": "2018-07-02T23:04:55Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/15955",
-            "title": "Make stories respect responsive units",
-            "description": "The fact that the amp-story desktop UI shows up to three `amp-story-page` elements in view at once can be problematic for designing responsively, because the size of the amp-story-page differs from the size of the viewport, so common responsive practices that are based on the viewport dimensions won't work (e.g. media queries, and the viewport units `vw`/`vh`/`vmin`/`vmax`).",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T22:58:39Z",
           "updatedAt": "2018-07-02T22:58:40Z",
           "issue": {
@@ -231,22 +284,6 @@
             "url": "https://github.com/ampproject/amphtml/issues/12180",
             "title": "Support paywalls in amp-story",
             "description": "Stories should support paywalls, similar to how standard AMP documents support paywalls through the usage of the `amp-access` component.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-07-02T22:42:55Z",
-          "updatedAt": "2018-07-02T22:42:55Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16532",
-            "title": "Allow custom sidebar content in stories",
-            "description": "We should allow publishers to specify arbitrary custom content to be shown in a sidebar.  The API and documentation should make it clear that every platform has the ability to display or not display this content.  The sidebar can contain both runtime-specified content (configurable by viewer) and publisher-specified content.",
             "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
@@ -347,6 +384,38 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2019-01-22T15:55:47Z",
+          "updatedAt": "2019-01-22T15:55:51Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/20237",
+            "title": "[MASTER FEATURE] New default loaders for AMP",
+            "description": "New loaders that indicate an image or embedded feature is loading will be utilized in AMP and are in the process of being built. A current 3-dot loader exists. This issue also encompasses the research  necessary to determine whether redesigns will be received favorably by comparison.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2019-01-17T22:48:08Z",
+          "updatedAt": "2019-01-22T15:49:21Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/20226",
+            "title": "Launch `amp-date-display`",
+            "description": "This feature allows you to display a time that is local to the user (shown in their timezone) as opposed to a constant timezone as set by the author.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-04-02T19:56:47Z",
           "updatedAt": "2018-08-16T20:22:57Z",
@@ -587,22 +656,6 @@
           }
         },
         {
-          "createdAt": "2018-03-16T18:45:00Z",
-          "updatedAt": "2018-03-16T18:48:06Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14060",
-            "title": "Element-level infinite scroll",
-            "description": "Support element-level infinite scroll, such that when the user reaches the end of a list of items (search results, product cards, etc), a call can be made to an arbitrary endpoint to populate the list with more items. For the best user experience, users should never see a loading spinner, but instead should either be presented with already-loaded results, or a button to tap to load more.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
-                "name": "Dynamic/Personalized Content",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-03-16T18:45:37Z",
           "updatedAt": "2018-03-16T18:47:50Z",
           "issue": {
@@ -720,6 +773,54 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2018-03-16T18:45:00Z",
+          "updatedAt": "2019-03-27T00:23:02Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/14060",
+            "title": "Element-level infinite scroll",
+            "description": "Support element-level infinite scroll, such that when the user reaches the end of a list of items (search results, product cards, etc), a call can be made to an arbitrary endpoint to populate the list with more items. For the best user experience, users should never see a loading spinner, but instead should either be presented with already-loaded results, or a button to tap to load more.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
+                "name": "Dynamic/Personalized Content",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-02T23:04:55Z",
+          "updatedAt": "2019-02-25T03:32:39Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/15955",
+            "title": "Make stories respect responsive units",
+            "description": "The fact that the amp-story desktop UI shows up to three `amp-story-page` elements in view at once can be problematic for designing responsively, because the size of the amp-story-page differs from the size of the viewport, so common responsive practices that are based on the viewport dimensions won't work (e.g. media queries, and the viewport units `vw`/`vh`/`vmin`/`vmax`).",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
+                "name": "AMP Story",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
+          "createdAt": "2018-07-02T22:42:55Z",
+          "updatedAt": "2019-02-13T15:04:54Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16532",
+            "title": "Allow custom sidebar content in stories",
+            "description": "We should allow publishers to specify arbitrary custom content to be shown in a sidebar.  The API and documentation should make it clear that every platform has the ability to display or not display this content.  The sidebar can contain both runtime-specified content (configurable by viewer) and publisher-specified content.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
+                "name": "AMP Story",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-07-16T21:37:04Z",
           "updatedAt": "2019-01-17T18:08:51Z",
@@ -1170,36 +1271,6 @@
             "url": "https://github.com/ampproject/amphtml/issues/14057",
             "title": "amp-lightbox-gallery",
             "description": "Currently it's possible to link together amp-image-lightbox or amp-lightbox with amp-carousel, to create a seamless immersive experience for viewing media. However, it's labor-intensive to get that right, and there are a number of barriers to really optimizing that experience for users. This feature is to create a trivial-to-implement, full featured immersive experience for viewing media like images and videos. For example, users can tap on an inline image in the page image (or button to trigger the same experience)—the image expands to full screen with a black scrim behind it, and overlayed affordances to exit the view, to view a related caption, to trigger a grid view to access other media in a given group/carousel in the same immersive view, or to hide the overlays to just view the complete media item.",
-            "labels": []
-          }
-        },
-        {
-          "createdAt": "2018-03-16T18:52:10Z",
-          "updatedAt": "2018-05-16T18:30:36Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14067",
-            "title": "Easy fade-in-on-scroll",
-            "description": "amp-position-observer makes it possible to create complex scroll-bound & scroll-triggered animations. However, we want to make some of the most common animations trivially simple to implement. This feature covers the case where arbitrary HTML elements fade in as the user scrolls them into view—both the scroll-bound case and scroll-triggered, time-based case. Developers will be able to configure aspects of the animation like trigger points, timing, and animation curve.",
-            "labels": []
-          }
-        },
-        {
-          "createdAt": "2018-04-19T17:43:41Z",
-          "updatedAt": "2018-04-19T18:35:18Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14737",
-            "title": "Geo-variation",
-            "description": "Developers often want to vary content with a small geo-dependent variation, like a sale promotion for a particular locale. This is sometimes possible with components that make a server-side call, like amp-list, but it can be somewhat complex, and doesn't cover all related use-cases well. This feature, amp-geo, will make it easy to vary small sections of web content for users based on an approximation of the users’ country-level location, similar to the level of an ISO Country Code. ",
-            "labels": []
-          }
-        },
-        {
-          "createdAt": "2018-03-16T18:51:18Z",
-          "updatedAt": "2018-04-19T17:02:55Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14066",
-            "title": "Easy parallax",
-            "description": "amp-position-observer makes it possible to create complex scroll-bound & scroll-triggered animations. However, we want to make some of the most common animations trivially simple to implement. This feature covers the case where arbitrary HTML elements move vertically on the page as the user scrolls at a different speed than the rate of scrolling. ",
             "labels": []
           }
         }
