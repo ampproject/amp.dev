@@ -11,6 +11,12 @@
   top: 50px;
 }
 
+.#{utility('sidebar-toggle-visibility-observer')} {
+  position: absolute;
+  top: 85%;
+  height: 15%;
+}
+
 .#{atom('sidebar-toggle')} {
 
   &-input {
