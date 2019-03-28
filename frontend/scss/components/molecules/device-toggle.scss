@@ -14,9 +14,6 @@
 @import 'components/atoms/_button.scss';
 
 .#{molecule('device-toggle')} {
-  position: fixed;
-  z-index: 1;
-  top: 54px;
   width: 100%;
   display: flex;
   justify-content: center;
