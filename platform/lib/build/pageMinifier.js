@@ -59,7 +59,8 @@ const SELECTOR_REWRITE_SAFE = [
 // Do not rewrite all example pages as users might need correct source code
 // for reference, ignore componets overview specifically as it relies on the
 // ap-m-teaser selector for filtering.
-const SELECTOR_REWRITE_EXCLUDED_PATHS = /\/documentation\/examples.*|\/documentation\/components\.html/;
+const SELECTOR_REWRITE_EXCLUDED_PATHS =
+  /\/documentation\/examples.*|\/documentation\/components\.html/;
 
 class PageMinifier {
   constructor() {

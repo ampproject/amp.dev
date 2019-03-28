@@ -171,7 +171,7 @@ class ComponentReferenceImporter {
 // If not required, run directly
 if (!module.parent) {
   const importer = new ComponentReferenceImporter();
-  importer.import().catch((err) => console.log(err)); 
+  importer.import().catch((err) => console.log(err));
 }
 
 module.exports = ComponentReferenceImporter;
