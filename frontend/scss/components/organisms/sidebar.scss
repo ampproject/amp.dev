@@ -14,14 +14,12 @@ amp-sidebar {
 
 nav[toolbar] {
   top: 36px;
-  overflow: auto;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
   @media (min-width: 768px){
-    height: 100vh;
-    position: sticky;
-    overflow: auto;
-    max-height: calc(100vh - 168px);
+    height: auto;
+    overflow-y: auto;
   }
 
   &::-webkit-scrollbar {

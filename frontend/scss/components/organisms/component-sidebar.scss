@@ -27,12 +27,10 @@ nav[toolbar] {
   -webkit-overflow-scrolling: touch;
 
   @media (min-width: 768px){
-    height: 100vh;
-    position: sticky;
+    height: auto;
     overflow: auto;
-    max-height: calc(100vh - 168px);
   }
-  
+
   &::-webkit-scrollbar {
     width: 2px;
   }
