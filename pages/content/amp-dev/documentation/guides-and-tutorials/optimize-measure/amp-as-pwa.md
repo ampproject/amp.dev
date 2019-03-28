@@ -121,6 +121,9 @@ AMP_SW.init({
 
 A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
 
+### Force Update
+
+The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
 
 ## Write a Custom Service Worker
 
