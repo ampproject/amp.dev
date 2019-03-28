@@ -69,7 +69,7 @@
     "@babel/runtime": "7.4.2",
     "@octokit/rest": "16.21.0",
     "absolutify": "0.1.0",
-    "amp-by-example": "0.2.5",
+    "amp-by-example": "0.2.6",
     "amp-toolbox-optimizer": "^0.5.2-beta.0",
     "amp-toolbox-runtime-version": "0.2.6",
     "babel-eslint": "10.0.1",
