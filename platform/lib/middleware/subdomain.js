@@ -87,13 +87,16 @@ class Subdomain {
    */
   async redirectOn404_(request, response) {
     const referrer = request.get('Referrer') || config.hosts.platform.base;
+    console.log('redirect referrer', referrer);
     // assume request was initiated by a document-relative path
     let destination = this.resolveUrl_(request.url.substring(1), referrer);
+    console.log('redirect to destination', destination);
     // perform a head request to check if destination exists
     if (!await this.exists_(destination)) {
       // assume a root-relative path
       destination = this.resolveUrl_(request.url, referrer);
     }
+    console.log('retry destination', destination);
     // remove AMP CORS query param which is not needed
     response.redirect(301, destination.toString());
   }
@@ -105,7 +108,16 @@ class Subdomain {
       return new URL(requestPath, config.hosts.platform.base);
     }
     const documentUrl = new URL(playgroundDoc, config.hosts.platform.base);
-    return new URL(requestPath, documentUrl.toString());
+    const url = new URL(requestPath, documentUrl.toString());
+    // All subdomains redirect unknown requests. We have to make sure to
+    // always redirect to the platform to avoid redirect loops
+    console.log('destination host', url.host);
+    if (config.hostNames.has(url.hostname)) {
+      url.hostname = config.hosts.platform.host;
+      url.port = config.hosts.platform.port;
+      console.log('rewriting host to avoid redirect loop', url.host);
+    }
+    return url;
   }
 
   async exists_(url) {

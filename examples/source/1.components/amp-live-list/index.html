@@ -1,9 +1,6 @@
 <!---
-
-draft: true
-
+preview: default
 --->
-
 <!--
   ## Introduction
 
@@ -30,7 +27,8 @@ draft: true
 
   <style amp-custom>
     :root {
-      --space-1: .5rem;  /* 8px */
+      --space-2: 1rem;  /* 8px */
+			--color-primary: #005AF0;
     }
     amp-live-list [items] {
       display: flex;
@@ -40,27 +38,22 @@ draft: true
     }
     .blog-item {
       width: 300px;
-      margin-bottom: var(--space-1);
+      margin-bottom: var(--space-2);
     }
     .blog-item > div {
-      padding: var(--space-1);
+      padding: var(--space-2);
     }
-    .score {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .time {
+      font-size: var(--space-2);
+      margin: var(--space-2);
     }
-    .score > div {
-      font-size: 2rem;
-      padding: var(--space-1);
-    }
-    .score > amp-img {
-      padding: var(--space-1) 0;
+    time {
+      font-weight: 700;
+      color: var(--color-primary);   
     }
   </style>
 </head>
 <body>
-
   <!-- ## Update after user interaction: live blog -->
 
   <!--
@@ -86,33 +79,31 @@ draft: true
       id="amp-live-list-insert-blog">
     <button update on="tap:amp-live-list-insert-blog.update">You have updates</button>
     <div items>
-      [[range .BlogItems]]
-          <div id="[[.ID]]" data-sort-time="[[.Timestamp]]" class="blog-item">
-              <amp-img src="[[.Image]]"
+      [% for item in  blogItems %]
+          <div id="[[ item.id ]]" data-sort-time="[[ item.timestamp ]]" class="blog-item">
+              <amp-img src="[[ item.img ]]"
                   layout="responsive" width="1280" height="853">
               </amp-img>
-              <div>[[.Text]]</div>
+              <div>[[ item.text ]]</div>
           </div>
-        [[end]]
+        [% endfor %]
     </div>
   </amp-live-list>
 
-  <!-- ## Automatic update: live score -->
+  <!-- ## Automatic update -->
   <!--
     If you want to update existing list items without user interaction, you need to specify via the `data-update-time` attribute when the update has been performed.
-    The following example will display a soccer match score whose content is changed every time the `amp-live-list` polls the page on the server.
+    The following example will display and automatically update the current time. This approach is great for displaying live scores or live market values.
   -->
     <amp-live-list
         layout="container"
         data-poll-interval="15000"
-        data-max-items-per-page="5"
+      data-max-items-per-page="1"
         id="amp-live-list-update">
       <button update on="tap:amp-live-list-insert-blog.update">You have updates</button>
       <div items>
-        <div id="it-eng-score" data-sort-time="1234567" data-update-time="[[.FootballScore.Timestamp]]" class="score">
-          <amp-img src="/static/samples/img/italy-flag.png" layout="fixed" height="50" width="100" noloading></amp-img>
-          <div>[[.FootballScore.ScoreTeam1]] - [[.FootballScore.ScoreTeam2]]</div>
-          <amp-img src="/static/samples/img/england-flag.png" layout="fixed" height="50" width="100" noloading></amp-img>
+        <div id="time" data-sort-time="1234567" data-update-time="[[ timestamp ]]" class="time">
+          The time is: <time>[[ time ]]</time>
         </div>
       </div>
   </amp-live-list>

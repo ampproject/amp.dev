@@ -30,6 +30,7 @@ pages/
 !platform/pages
 /examples/*
 !/examples/api
+!/examples/source/**/*.js
 
 # playground: ignore everything except the dist folder
 /playground/*

@@ -13,35 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 'use strict';
 
 const express = require('express');
-const multer = require('multer');
-const upload = multer();
 const {setNoCache} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.get('/time', (request, response) => {
-  setNoCache(response);
-  response.json({
-    time: new Date().toLocaleTimeString(),
-  });
-});
-
-examples.get('/echo', (request, response) => {
-  setNoCache(response);
-  response.json(request.query);
-});
-
-examples.post('/echo', upload.none(), (request, response) => {
-  setNoCache(response);
-  response.json(request.body);
-});
-
 examples.get('/photo-stream', (req, res) => {
+  setNoCache(res);
   const {query} = req;
   const items = [];
   const numberOfItems = req.query.items || 10;
@@ -86,5 +67,3 @@ examples.get('/photo-stream', (req, res) => {
 });
 
 module.exports = examples;
-
-
