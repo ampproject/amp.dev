@@ -36,6 +36,7 @@
   &-device {
     position: relative;
     display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
   }
 
@@ -84,7 +85,7 @@
 
   &-desktop {
     width: 90vw;
-    height: 90vh;
+    height: calc(90vh - 200px);
   }
 
   &-email {
@@ -115,6 +116,23 @@
       &-desktop {
         width: 800px;
         height: 600px;
+      }
+    }
+  }
+
+  &-ads {
+
+    &.#{organism('preview-pane')} {
+      margin-top: 20px;
+      margin-bottom: 50px;
+
+      amp-ad {
+        margin-bottom: 10px;
+      }
+
+      &-mobile {
+        height: auto;
+        transform: scale(1);
       }
     }
   }
