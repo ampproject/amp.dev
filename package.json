@@ -67,7 +67,7 @@
     "@babel/plugin-transform-runtime": "7.4.0",
     "@babel/preset-env": "7.4.2",
     "@babel/runtime": "7.4.2",
-    "@octokit/rest": "16.21.0",
+    "@octokit/rest": "16.21.1",
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.6",
     "amp-toolbox-optimizer": "^0.5.2-beta.0",
