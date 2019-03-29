@@ -57,7 +57,7 @@ Since the AMP for Email library is a subset of the AMP HTML library, many of the
 
 ### Images
 
-To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](https://www.ampproject.org/docs/reference/components/amp-img). The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system](https://www.ampproject.org/docs/design/amp-html-layout).
+To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](https://amp.dev/documentation/components/reference/amp-img.html?format=email). The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.html?format=email).
 
 
 ```
@@ -71,12 +71,12 @@ To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](
 The `<amp-img>` tag comes with powerful, built-in ways to control responsive design and set fallbacks.
 
 [tip type="note"]
-    Read more about using the AMP [layout and media queries](https://www.ampproject.org/docs/design/responsive/control_layout) and how to set [image fallbacks](https://www.ampproject.org/docs/design/responsive/placeholders). 
+    Read more about using the AMP [layout and media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.html?format=email) and how to set [image fallbacks](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.html?format=email). 
 [/tip]
 
 ### GIFs
 
-AMP has created [`<amp-anim>`](https://www.ampproject.org/docs/reference/components/amp-anim), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
+AMP has created [`<amp-anim>`](https://amp.dev/documentation/components/reference/amp-anim.html?format=email), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
 
 
 ```
@@ -203,20 +203,20 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
   </tr>
   <tr>
    <td>
-    <a href="https://www.ampproject.org/docs/reference/components/amp-form"><code>amp-form</code></a>
+    <a href="https://amp.dev/documentation/components/reference/amp-form.html?format=email"><code>amp-form</code></a>
    </td>
-   <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <a href="https://www.ampproject.org/docs/reference/components/amp-mustache"><code>&lt;template type="amp-mustache"&gt;</code></a> to render a response.
+   <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <a href="https://amp.dev/documentation/components/reference/amp-mustache.html?format=email"><code>&lt;template type="amp-mustache"&gt;</code></a> to render a response.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-selector"><code>amp-selector</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-selector.html?format=email"><code>amp-selector</code></a>
    </td>
    <td>Represents a control that presents a menu of options and lets the user choose from it.
    </td>
   </tr>
   <tr>
    <td>
-    <a href="https://www.ampproject.org/docs/reference/components/amp-bind"><code>amp-bind</code> and <code>amp-state</code></a>
+    <a href="https://amp.dev/documentation/components/reference/amp-bind.html?format=email"><code>amp-bind</code> and <code>amp-state</code></a>
    </td>
    <td>
     Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.
@@ -225,16 +225,16 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-list"><code>amp-list</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-list.html?format=email"><code>amp-list</code></a>
    </td>
    <td>
-    Remotely fetches JSON data that will be rendered by an <a href="https://www.ampproject.org/docs/reference/components/amp-mustache"><code>&lt;amp-mustache&gt;</code></a>.
+    Remotely fetches JSON data that will be rendered by an <a href="https://amp.dev/documentation/components/reference/amp-mustache.html?format=email"><code>&lt;amp-mustache&gt;</code></a>.
     <strong>Note:</strong> Binding to the <code>[src]</code> attribute is not allowed. Including user credentials with <code>credentials="include"</code> is also prohibited.
    </td>
   </tr>
   <tr>
    <td>
-    <a href="https://www.ampproject.org/docs/reference/components/amp-mustache"><code>&lt;template type="amp-mustache"&gt;</code></a>
+    <a href="https://amp.dev/documentation/components/reference/amp-mustache.html?format=email"><code>&lt;template type="amp-mustache"&gt;</code></a>
    </td>
    <td>A Mustache template markup to render the results of an <code>amp-list</code> call and the <code>&lt;div submit-success&gt;</code> and <code>&lt;div submit-error&gt;</code> of <code>amp-form</code>.
    </td>
@@ -254,43 +254,43 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-accordion"><code>amp-accordion</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-accordion.html?format=email"><code>amp-accordion</code></a>
    </td>
    <td>A UI element that facilitates showing/hiding different sections.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-carousel"><code>amp-carousel</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-carousel.html?format=email"><code>amp-carousel</code></a>
    </td>
    <td>A carousel UI component.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-sidebar"><code>amp-sidebar</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-sidebar.html?format=email"><code>amp-sidebar</code></a>
    </td>
    <td>A sidebar for navigational purposes.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-image-lightbox"><code>amp-image-lightbox</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-image-lightbox.html?format=email"><code>amp-image-lightbox</code></a>
    </td>
    <td>A lightbox for containing images.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-lightbox"><code>amp-lightbox</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-lightbox.html?format=email"><code>amp-lightbox</code></a>
    </td>
    <td>A lightbox for containing content.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-fit-text"><code>amp-fit-text</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-fit-text.html?format=email"><code>amp-fit-text</code></a>
    </td>
    <td>A helper component for fitting text within a certain area.
    </td>
   </tr>
   <tr>
-   <td><a href="https://www.ampproject.org/docs/reference/components/amp-timeago"><code>amp-timeago</code></a>
+   <td><a href="https://amp.dev/documentation/components/reference/amp-timeago.html?format=email"><code>amp-timeago</code></a>
    </td>
    <td>Provides a convenient way of rendering timestamps.
    </td>

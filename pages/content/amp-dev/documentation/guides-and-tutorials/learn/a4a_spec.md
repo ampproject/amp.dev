@@ -1,5 +1,5 @@
 ---
-$title: AMPHTML ad specification
+$title: AMP for Ads specification
 $order: 3
 formats:
   - ads

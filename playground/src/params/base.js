@@ -45,7 +45,7 @@ class Params {
     }
     let paramsString = params.toString();
     if (paramsString) {
-      paramsString = '#' + params.toString();
+      paramsString = '?' + params.toString();
     }
     return this.win.location.pathname + paramsString;
   }

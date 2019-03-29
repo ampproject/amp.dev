@@ -1,7 +1,7 @@
 ---
 $title: Create your first AMP Email
 $order: 0
-tutorial: false
+tutorial: true
 formats:
   - email
 author: CrystalOnScript
@@ -86,7 +86,7 @@ We can include an image in our first email by adding the code below.
 
 ## Make it responsive
 
-Emails are viewed across a variety of devices and screen sizes, and AMP comes with a built-in layout system! With the [`amp-layout`](https://www.ampproject.org/docs/reference/components/amp-layout) system and media queries, implementing responsive emails is easy. To size our placed kitten image to the appropriate screens, add the `layout="responsive"` attribute to your `<amp-image>`.
+Emails are viewed across a variety of devices and screen sizes, and AMP comes with a built-in layout system! With the [`amp-layout`](https://amp.dev/documentation/components/reference/amp-layout.html?format=websites) system and media queries, implementing responsive emails is easy. To size our placed kitten image to the appropriate screens, add the `layout="responsive"` attribute to your `<amp-image>`.
 
 [tip type="read-on"]
 [Read more about how AMP works with layout and media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.html).
@@ -96,7 +96,7 @@ Emails are viewed across a variety of devices and screen sizes, and AMP comes wi
 <amp-img layout="responsive" src="https://placekitten.com/800/400" alt="Welcome" height="400" width="800"></amp-img>
 ```
 
-Grow and shrink the browser window to watch the image resize! View the[ AMP email list supported of layout specific components here](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#layout).
+Grow and shrink the browser window to watch the image resize! View the [list of supported layout specific components here](https://amp.dev/documentation/guides-and-tutorials/learn/email_fundamentals.html?format=email#layout-elements).
 
 
 # Modify presentation and layout
@@ -105,7 +105,7 @@ One image is fine, but what if we want to display more? AMP for Email supports l
 <!-- TODO: Set up link -->
 <!-- [Read here for full list of supported layout elements](). -->
 
-For this tutorial, we're going to use [`<amp-carousel>`](https://www.ampproject.org/docs/reference/components/amp-carousel) to display photos of cats up for adoption.
+For this tutorial, we're going to use [`<amp-carousel>`](https://amp.dev/documentation/components/reference/amp-carousel.html?format=email) to display photos of cats up for adoption.
 
 Add the `amp-carousel` script to the head of your email.
 
@@ -150,7 +150,7 @@ You should now be able to change photos by clicking the navigation arrows on the
 
 ## Send with style
 
-AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](https://docs.google.com/document/d/1fnZsHu89Xdirs001bP-Ai9cPwd3SohpeolLNsDh69_E/edit#bookmark=id.bywxv7p5x0vj).
+AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](https://amp.dev/documentation/guides-and-tutorials/learn/email_fundamentals.html?format=email#emails,-with-style).
 
 Let's update `Hello, AMP4EMAIL world` to a real title.
 
@@ -185,9 +185,9 @@ And then add some styling into the head.
 
 # Add Dynamic Capabilities
 
-Classically, emails only allow for static content. Through AMP, emails are opened to an entire new world of possibilities! Users can now respond to [forms](https://www.ampproject.org/docs/reference/components/amp-form), get [content updated dynamically list](https://www.ampproject.org/docs/reference/components/amp-list), and interact with content.
+Classically, emails only allow for static content. Through AMP, emails are opened to an entire new world of possibilities! Users can now respond to [forms](https://amp.dev/documentation/components/reference/amp-form.html?format=email), get [content updated dynamically list](https://amp.dev/documentation/components/reference/amp-list.html?format=email), and interact with content.
 
-In this tutorial, we'll use [`<amp-bind>`](https://www.ampproject.org/docs/reference/components/amp-bind) to display our adoptable cat's name and a description when the user is on that cat's slide. Start by including the `amp-bind` script in the head of your email.
+In this tutorial, we'll use [`<amp-bind>`](https://amp.dev/documentation/components/reference/amp-bind.html?format=email) to display our adoptable cat's name and a description when the user is on that cat's slide. Start by including the `amp-bind` script in the head of your email.
 
 
 ```html
@@ -195,7 +195,7 @@ In this tutorial, we'll use [`<amp-bind>`](https://www.ampproject.org/docs/refer
 ```
 
 
-Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`<amp-state>`](https://www.ampproject.org/docs/reference/components/amp-bind#state) tag. Since we have four cat photos, we'll include state for all four.
+Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`<amp-state>`](https://amp.dev/documentation/components/reference/amp-bind.html?format=email#state) tag. Since we have four cat photos, we'll include state for all four.
 
 
 ```html
@@ -227,7 +227,7 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`
 ```
 
 
-[AMP actions and event](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events)s trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#amp-carousel[type=%22slides%22]) event, on which we will update the `currentCat` variable using `AMP.setState`.
+[AMP actions and events](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.html?format=email) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.html?format=email#amp-carousel[type=%22slides%22]) event, on which we will update the `currentCat` variable using `AMP.setState`.
 
 
 ```html
@@ -257,7 +257,7 @@ The only thing left is to display our cat's name and descriptions. Add the follo
 ```
 
 
-The `amp-bind` extension uses[ expressions ](https://www.ampproject.org/docs/reference/components/amp-bind#expressions)and [bindings](https://www.ampproject.org/docs/reference/components/amp-bind#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"myState.cats[currentCat].name"` expression.
+The `amp-bind` extension uses [expressions](https://amp.dev/documentation/components/reference/amp-bind.html?format=email#expressions) and [bindings](https://amp.dev/documentation/components/reference/amp-bind.html?format=email#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"myState.cats[currentCat].name"` expression.
 
 [tip type="note"]
 For performance and to avoid the risk of unexpected content jumping, amp-bind does not evaluate expressions on page load. This means that the visual elements should be given a default state and not rely amp-bind for initial render.
@@ -284,5 +284,5 @@ The AMP4Email playground tool has a built-in validator. If your email markup is 
 <!-- TODO: Add Screen Shot. Emails sent from tool are not currently displaying. Only receiving information on how to enable AMP emails, but then getting blank messages. -->
 
 Congratulations! You've sent your first AMP email!
-<!-- TODO: Set UP Link -->
-<!-- For next steps, [read more about AMP for Email fundamentals](). -->
+
+For next steps, [read more about AMP for Email fundamentals](https://amp.dev/documentation/guides-and-tutorials/learn/email_fundamentals.html?format=email).

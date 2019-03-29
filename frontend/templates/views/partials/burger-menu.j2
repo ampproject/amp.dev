@@ -14,14 +14,22 @@
 <nav class="ap-o-burger-menu" [class]="mainmenuopen ? 'ap-o-burger-menu mainmenuopen' : 'ap-o-burger-menu'">
   <ul class="ap-o-burger-menu-items">
     {# Sections #}
-    {% for section in g.collection('amp-dev').collections()|sort(attribute='order') %}
-    {% if section.index %}
-    {% set section_index = g.doc(section.index, locale=doc.locale) %}
+    {# Top level sections, defined by their top collection and landing page #}
+    {% set sections = [
+      (g.collection('/content/amp-dev/about/'), g.doc('/content/amp-dev/about/websites.html', locale=doc.locale)),
+      (g.collection('/content/amp-dev/documentation/'), g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale)),
+      (g.collection('/content/amp-dev/community/'), g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale)),
+      (g.collection('/content/amp-dev/events/'), g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale)),
+      ('external', ('Blog', 'https://blog.amp.dev')),
+      (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
+    ] %}
+
+    {% for section, section_index in sections %}
     <li class="ap-o-burger-menu-item">
       {# If the section has only one child it shouldn't be collapsable #}
-      {% if not section.flyout %}
-      <a class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">
-        {{ section.title }}
+      {% if not section or not section.flyout or section == 'external' %}
+      <a class="ap-o-burger-menu-link ap-m-nav-link {{ '' if section == 'external' else active_class(section_index) }}" href="{{ section_index[1] if section == 'external' else section_index.url.path }}">
+        {{ section_index[0] if section == 'external' else section.title or section_index.title }}
       </a>
       {% else %}
       <label class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section_index) }}">
@@ -35,17 +43,16 @@
       </span>
       {# Section's sub level navigation if that's the current section #}
       <ul class="ap-o-burger-menu-items">
-      {% for path in section.flyout %}
-      <li class="ap-o-burger-menu-item">
-        {% set second_level_doc = g.doc(path, locale=doc.locale) %}
-        <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
-          {{ second_level_doc.titles('navigation') }}
-        </a>
-      </li>
-      {% endfor %}
+        {% for path in section.flyout %}
+        <li class="ap-o-burger-menu-item">
+          {% set second_level_doc = g.doc(path, locale=doc.locale) %}
+          <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
+            {{ second_level_doc.titles('navigation') }}
+          </a>
+        </li>
+        {% endfor %}
       </ul>
       {% endif %}
-    {% endif %}
     </li>
     {% endfor %}
   </ul>
