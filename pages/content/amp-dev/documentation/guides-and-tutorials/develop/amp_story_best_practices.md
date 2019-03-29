@@ -37,6 +37,7 @@ This [AMP story](https://mic.com/stories/500/did-you-know-these-fun-facts-about-
 Keep reading for additional tips on making the most of your AMP stories. 
 
 <!-- TODO: Add assets -->
+[video src="/static/img/docs/guides/storiesbp/do-background.mp4" loop caption="Completed AMP story."]
 
 This story uses full-bleed images, video, and animations to create an engaging reading experience. It tells a complete story, and it includes branding and a publication date. 
 
