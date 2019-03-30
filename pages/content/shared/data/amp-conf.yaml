@@ -204,6 +204,16 @@ speakers:
     company: Google
     bio: "As a developer advocate, Filip works with Google's large partners to help them make the most out of the latest web technologies such as AMP. He's passionate about UX design and the open web, and contributes to other open source projects in his spare time. He holds a BCompSc from Union University in Serbia."
     pic: /static/img/amp-conf/speakers/filip.jpg
+  ajayshukla:
+    name: Ajay Shukla
+    company: Adobe
+    bio: Ajay is the Product Manager for Adobe Animate.  He is passionate about all things related to animation.  
+    pic: /static/img/amp-conf/speakers/ajay.jpg 
+  takahiroyasuda:
+    name: Takahiro Yasuda
+    company: So-net Media Networks
+    bio: Takahiro Yasuda designed and built DSP "Logicad" from scratch and grew the DSP business for 8 years in So-net Media Networks.
+    pic: /static/img/amp-conf/speakers/yasuda.jpg 
   TBA:
     name: To Be Announced
     company: AMP Conf
@@ -325,6 +335,8 @@ agenda:
       speakers: 
         - vamseejasti
         - katharinaalmonte
+        - ajayshukla
+        - takahiroyasuda
     - title: "AMP as a service: Auto-upgraded, accelerated developer workflows"
       time: "1000"
       type: session
