@@ -56,11 +56,11 @@
     <div class="ap-o-preview-pane-device">
       {% if doc.example.document.isAmpAds and doc.example.document.metadata.width and doc.example.document.metadata.height %}
       <div class="ap--content">
-          {{ lipsum(n=2) }}
+          {{ lipsum(n=3) }}
       </div>
       <amp-ad layout="responsive" width="{{ doc.example.document.metadata.width }}" height="{{ doc.example.document.metadata.height }}" type="fake" id="i-amphtml-demo-fake" a4a-conversion="true" disable3pfallback="false" src="{{ doc.pod.podspec.base_urls.preview }}{{ doc.source }}"></amp-ad>
       <div class="ap--content">
-          {{ lipsum(n=2) }}
+          {{ lipsum(n=4) }}
       </div>
       {% else %}
       <amp-iframe layout="fill" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="{{ doc.pod.podspec.base_urls.preview }}{{ doc.source }}">
