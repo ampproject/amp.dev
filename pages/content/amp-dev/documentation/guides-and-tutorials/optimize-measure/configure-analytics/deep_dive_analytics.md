@@ -323,7 +323,7 @@ then it will be used; otherwise, no request gets sent.
 
 ## Variable substitution ordering
 
-AMP populates variables with values in an order of precendence:
+AMP populates variables with values in an order of precedence:
 
 1. Remote configurations (via `config`).
 2. `vars` nested inside of a trigger within `triggers`.
@@ -359,7 +359,7 @@ variables defined at the top-level, in triggers, and at the platform level:
 ```
 
 When the same `var` is defined in multiple locations,
-the variable order of precendence sets its value once.
+the variable order of precedence sets its value once.
 Thus, if the remote configuration defined `account` as UA-XXXXX-Y in the example above,
 the values of various vars will be as follows:
 
