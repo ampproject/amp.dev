@@ -39,4 +39,3 @@ ext:
         - name: 'icons'
           method: 'useIcon'
 - extensions.amp_dev.AmpDevExtension
-- extensions.amp_dependency_injector.AmpDependencyInjectorExtension
