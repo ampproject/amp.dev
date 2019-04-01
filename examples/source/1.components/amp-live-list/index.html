@@ -66,10 +66,6 @@ preview: default
 
     An `amp-live-list` must contain a list of items below `<div items>`. Each item has a specific id and the `amp-live-list` will look for items with new id.
 
-    This sample shows an implementation with a server rendering a series of 5 elements. `amp-live-list` will poll the page every 15 seconds until 5 elements are added to the page. Every time `amp-live-list` polls the page, the server adds a new item to the page. Refer to [server.go](https://github.com/ampproject/amp-by-example/blob/master/server.go) and [amp-live-list.go](https://github.com/ampproject/amp-by-example/blob/master/backend/amp-live-list.go) for implementation details.
-
-    This sample stops after ten updates. If you want to start over, delete cookies from ampbyexample.com or open this page again in an incognito/private tab.
-
     Important: By clicking on the button "You have updates", new content is displayed on the demo column (the one on the right if the demo is accessed by desktop). The code column (the one in the center if the demo is accessed by desktop) does not update itself, but if you want to see all the items on the page, reload the page.
     -->
   <amp-live-list
@@ -89,9 +85,11 @@ preview: default
         [% endfor %]
     </div>
   </amp-live-list>
-
-  <!-- ## Automatic update -->
   <!--
+    Note: the contents of the `amp-live-list` are generated randomly (for easier and repeatable testing).
+
+    ## Automatic update 
+
     If you want to update existing list items without user interaction, you need to specify via the `data-update-time` attribute when the update has been performed.
     The following example will display and automatically update the current time. This approach is great for displaying live scores or live market values.
   -->
