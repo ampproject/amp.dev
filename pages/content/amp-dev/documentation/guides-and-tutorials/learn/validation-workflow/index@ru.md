@@ -71,8 +71,8 @@ AMP-документ можно проверить несколькими спо
 Ниже указано, как проверить AMP-страницу в формате HTML.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Как мы видим, HTML-код этой страницы соответствует требованиям AMP. Давайте проверим страницу [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html), на которой есть ошибки. Чтобы выполнить команду `amphtml-validator`, следует указать URL страницы или имя файла на компьютере. Загрузите и сохраните [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) в файл, а затем выполните следующую команду:

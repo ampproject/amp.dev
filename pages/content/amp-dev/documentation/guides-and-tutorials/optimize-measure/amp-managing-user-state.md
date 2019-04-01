@@ -73,7 +73,7 @@ You can think of AMP as a portable content format that enables content to be loa
     <td>AMP cache</td>
     <td>No</td>
     <td>Yes</td>
-    <td><code>https://example-com.cdn.ampproject.org/s/example.com/article.amp.html</code></td>
+    <td><code>https://example-com.__CDN_URL__/s/example.com/article.amp.html</code></td>
   </tr>
    <tr>
     <td>AMP viewer</td>
@@ -97,7 +97,7 @@ Publishers can choose to publish exclusively in AMP, or to publish two versions 
 
 By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content (by publishing to their origin as detailed above), but platforms can cache or mirror the content for optimal delivery speed to users.
 
-Traditionally, content served in this way originates from a different domain. For example, the [Google AMP Cache](https://developers.google.com/amp/cache/overview) uses `https://cdn.ampproject.org` to deliver content, e.g. `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
+Traditionally, content served in this way originates from a different domain. For example, the [Google AMP Cache](https://developers.google.com/amp/cache/overview) uses `https://__CDN_URL__` to deliver content, e.g. `https://example-com.__CDN_URL__/s/example.com/article.amp.html`.
 
 **Context #3: an AMP viewer.** The AMP format is built to support embedding within third-party AMP viewers. This enables a high degree of cooperation between the AMP file and the viewer experience, benefits of which include: smart and secure preloading and pre-rendering of content and innovative affordances like swiping between full AMP pages.
 

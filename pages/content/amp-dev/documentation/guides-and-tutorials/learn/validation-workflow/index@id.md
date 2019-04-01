@@ -153,8 +153,8 @@ Memulai:
 Sekarang, mari kita validasi halaman HTML AMP yang sebenarnya:
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Ternyata halaman ini adalah HTML AMP yang valid. Mari kita coba halaman yang tidak valid:
@@ -164,7 +164,7 @@ Ternyata halaman ini adalah HTML AMP yang valid. Mari kita coba halaman yang tid
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/id/docs/reference/components/amp-img.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
 several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/id/docs/reference/components/amp-ad.html)
 ...
 [/sourcecode]

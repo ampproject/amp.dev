@@ -152,8 +152,8 @@ gulp.task('default', ['amphtml:validate'], function () {
 이제 실제 AMP HTML 페이지의 유효성 검사를 해보겠습니다.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 당연히 이 페이지는 유효한 AMP HTML입니다. 그러므로 유효하지 않은 페이지에서 실행해 보겠습니다.

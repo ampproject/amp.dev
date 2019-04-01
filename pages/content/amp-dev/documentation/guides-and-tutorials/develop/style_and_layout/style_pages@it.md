@@ -14,7 +14,7 @@ Questi stili sono definiti nell'elemento [`amp.css`](https://github.com/ampproje
 ## Utilizzare i preprocessori CSS
 
 L'output generato dai preprocessori funziona bene nelle pagine AMP così come in qualsiasi altra pagina web.
-Ad esempio, il sito [ampproject.org](https://www.ampproject.org/) utilizza il linguaggio [Sass](http://sass-lang.com/) (noi utilizziamo [Grow](http://grow.io/) per creare le pagine AMP statiche del sito [ampproject.org](https://www.ampproject.org/)).
+Ad esempio, il sito [amp.dev](https://amp.dev/) utilizza il linguaggio [Sass](http://sass-lang.com/) (noi utilizziamo [Grow](http://grow.io/) per creare le pagine AMP statiche del sito [amp.dev](https://amp.dev/)).
 
 Se utilizzi i preprocessori, presta particolare attenzione a ciò che includi; carica soltanto gli elementi utilizzati nelle pagine.
 Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) sono inclusi tutti gli elementi di markup AMP e gli stili CSS in linea necessari recuperati dai file sorgente `*.scss`.
@@ -29,7 +29,7 @@ Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/ma
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -46,7 +46,7 @@ Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/ma
 </head>
 {% endraw %} [/sourcecode]
 
-Per sapere in che modo il codice precedente viene convertito in pagine HTML AMP formattate, visualizza il codice sorgente di qualsiasi pagina sul sito [ampproject.org](https://www.ampproject.org/).
+Per sapere in che modo il codice precedente viene convertito in pagine HTML AMP formattate, visualizza il codice sorgente di qualsiasi pagina sul sito [amp.dev](https://amp.dev/).
 In Chrome, fai clic con il pulsante destro del mouse e seleziona `Visualizza sorgente pagina`.
 
 ## Stili non consentiti

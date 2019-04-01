@@ -36,7 +36,7 @@ $title: 사용자 참여 향상하기
 
 ### AMP의 발전을 도우려면 AMP 오픈소스 프로젝트에 참여하세요.
 
-- [ampproject.org/roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})에서 업데이트 및 기능에 대한 **AMP 로드맵을 살펴보세요.**
+- [amp.dev/community/roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})에서 업데이트 및 기능에 대한 **AMP 로드맵을 살펴보세요.**
 
 - **참여하세요.** 소스 코드에 기여하거나, 버그를 신고하거나, [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)에 피드백을 주세요. [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)에서 AMP에 대한 의견을 공유해주세요.
 

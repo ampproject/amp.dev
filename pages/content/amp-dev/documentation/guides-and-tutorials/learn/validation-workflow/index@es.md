@@ -153,8 +153,8 @@ Cómo empezar:
 A continuación, vamos a validar una página AMP HTML real:
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Como era de esperar, esta página AMP HTML es válida. Vamos a intentarlo con una que no lo sea:

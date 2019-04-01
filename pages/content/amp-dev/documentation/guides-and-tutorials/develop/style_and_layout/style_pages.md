@@ -91,10 +91,10 @@ AMP pages can’t include external stylesheets, with the exception of custom fon
 ## Using CSS preprocessors
 
 The generated output of preprocessors works just as well in AMP as any other web page.
-For example, the [ampproject.org](https://www.ampproject.org/) site uses
+For example, the [amp.dev](https://amp.dev/) site uses
 [Sass](http://sass-lang.com/).
 (We use [Grow](http://grow.io/) to build the static AMP pages
-that make up the [ampproject.org](https://www.ampproject.org/) site.)
+that make up the [amp.dev](https://amp.dev/) site.)
 
 When using preprocessors,
 pay special attention to what you include; load only what your pages use.
@@ -114,7 +114,7 @@ so that many pages across the site can include embedded youtube videos.
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -132,5 +132,5 @@ so that many pages across the site can include embedded youtube videos.
 {% endraw %}[/sourcecode]
 
 To see how the above translates into formatted AMP HTML,
-view the source for any page in [ampproject.org](https://www.ampproject.org/).
+view the source for any page in [amp.dev](https://amp.dev/).
 (In Chrome, right-click and `View Page Source`.)

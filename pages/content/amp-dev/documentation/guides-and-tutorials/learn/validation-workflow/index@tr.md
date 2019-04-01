@@ -71,8 +71,8 @@ Bir önkoşul olarak, [sisteminize `npm` paket yöneticisiyle birlikte Node.js d
 Şimdi gerçek bir AMP HTML sayfasını doğrulayalım.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Bu sayfanın geçerli bir AMP HTML sayfası olması şaşırtıcı değildir. Şimdi geçerli olmayan bir sayfayı deneyelim:

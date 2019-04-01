@@ -70,8 +70,8 @@ Más artículos: Consulta más información [sobre las fuentes personalizadas en
 
 ## Usar preprocesadores CSS
 
-El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [ampproject.org](https://www.ampproject.org/)
-emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [ampproject.org](https://www.ampproject.org/).
+El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [amp.dev](https://amp.dev/)
+emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [amp.dev](https://amp.dev/).
 
 Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
@@ -86,7 +86,7 @@ incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archi
 
   <title>El proyecto Accelerated Mobile Pages</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -103,4 +103,4 @@ incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archi
 </head>
 {% endraw %}[/sourcecode]
 
-Para ver cómo este código se convierte en código AMP HTML con formato, observa el código de cualquier página de [ampproject.org](https://www.ampproject.org/). (En Chrome, haz clic con el botón derecho y selecciona `View Page Source`.)
+Para ver cómo este código se convierte en código AMP HTML con formato, observa el código de cualquier página de [amp.dev](https://amp.dev/). (En Chrome, haz clic con el botón derecho y selecciona `View Page Source`.)

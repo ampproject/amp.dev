@@ -85,8 +85,8 @@ $title: التحقق من صحة صفحات AMP
 والآن، هيّا نتحقق من صحة صفحة AMP HTML حقيقية.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 لا غرابة في صحة صفحة AMP HTML هذه. هيّا نجرّب صفحة غير صالحة:
