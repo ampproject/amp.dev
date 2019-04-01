@@ -36,9 +36,11 @@ const blogItems = [
   newPost('A ship sailing the sea at sunset.', 'landscape_ship_1280x853.jpg', 10),
 ];
 
-SampleRenderer.register(router, (request, response, template) => {
+SampleRenderer.use(router, (request, response, template) => {
+  // set max-age to 15 s - the minimum refresh time for an amp-live-list
   setMaxAge(response, 15);
   response.send(template.render({
+    // render the current time
     time: new Date().toLocaleTimeString(),
     timestamp: Number(new Date()),
     // send a random list of blog items to make it also work on the cache

@@ -90,6 +90,9 @@ class Platform {
       }
       res.redirect('https://' + req.hostname + req.path);
     });
+
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
     this._enableCors();
     this.server.use(defaultCachingStrategy);
 

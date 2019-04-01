@@ -17,9 +17,7 @@ CONTRIBUTING.md
 /frontend/
 pages/
 !platform/pages
-/examples/*
-!/examples/api
-!/examples/source/**/*.js
+/examples/source/**/*.html
 
 # playground: ignore everything except the dist folder
 /playground/*
@@ -30,3 +28,4 @@ pages/
 /boilerplate/*
 !/boilerplate/backend
 !/boilerplate/dist
+!/boilerplate/lib

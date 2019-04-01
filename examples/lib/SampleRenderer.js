@@ -30,19 +30,51 @@ const PREFIX_EXAMPLES = '/documentation/examples';
 const DIR_SOURCES = utils.project.absolute('/dist/examples/sources/');
 const DIR_DOCS = utils.project.absolute('/platform/pages/');
 
+/**
+ * Enables server-side-rendering of samples. It'll automatically render
+ * the source, preview and documentation page of a sample.
+ */
 class SampleRenderer {
-  static register(router, handler) {
+  /**
+   * Creates a new SampleRendered and registers the sample handler for
+   * the given router.
+   * @param {Router} router - the express router serving the sample
+   * @param {Function} handler - a callback rendering the sample
+   * @return {SampleRenderer} - a SampleRenderer
+   * @static
+   */
+  static use(router, handler) {
     const renderer = new SampleRenderer();
     renderer.register(router, handler);
-  }
-  constructor() {
-    this.cache_ = new Map();
+    return renderer;
   }
 
+  constructor() {
+    this.cache_ = new Map();
+    this.nunjucksEnv_ = new nunjucks.Environment(null, {
+      tags: {
+        blockStart: '[%',
+        blockEnd: '%]',
+        variableStart: '[[',
+        variableEnd: ']]',
+        commentStart: '[#',
+        commentEnd: '#]',
+      }});
+  }
+
+  /**
+   * Register a sample handler for the given router.
+   * @param {Router} router - the express router serving the sample
+   * @param {Function} handler - a callback rendering the sample
+   * @static
+   */
   register(router, handler) {
     router.get(['/', '/index.html'], this.renderSample_(handler).bind(this));
   }
 
+  /**
+   * @private
+   */
   renderSample_(handler) {
     return async (request, response, next) => {
       try {
@@ -55,28 +87,26 @@ class SampleRenderer {
     };
   }
 
+  /**
+   * @private
+   */
   async fetchTemplate_(key, fn) {
     let compiledTemplate = this.cache_.get(key);
     if (config.isDevMode() || !compiledTemplate) {
       const template = await fn();
-      const env = new nunjucks.Environment(null, {
-        tags: {
-          blockStart: '[%',
-          blockEnd: '%]',
-          variableStart: '[[',
-          variableEnd: ']]',
-          commentStart: '[#',
-          commentEnd: '#]',
-        }});
-      compiledTemplate = nunjucks.compile(template, env);
+      compiledTemplate = nunjucks.compile(template, this.nunjucksEnv_);
       this.cache_.set(key, compiledTemplate);
     }
     return compiledTemplate;
   }
 
+  /**
+   * @private
+   */
   async getTemplate_(request) {
     const samplePath = this.removeQuery_(request.originalUrl.substring(PREFIX_EXAMPLES.length));
     console.log('sample path', samplePath);
+    console.log('is preview?', request.protocol + '://' + request.get('host'), config.hosts.preview.base);
     if (request.protocol + '://' + request.get('host') === config.hosts.preview.base) {
       const sourcePath = join(DIR_SOURCES, samplePath.replace('/index.html', '.html'));
       console.log('loading source file', sourcePath);
@@ -86,13 +116,19 @@ class SampleRenderer {
       if (config.isDevMode()) {
         return this.fetchSampleDoc_(samplePath);
       } else {
-        const docFilePath = join(DIR_DOCS, samplePath);
+        if (!samplePath.endsWith('/index.html')) {
+          samplePath = join(samplePath, 'index.html');
+        }
+        const docFilePath = join(DIR_DOCS, PREFIX_EXAMPLES, samplePath);
         console.log('fetching sample doc from', docFilePath);
         return readFileAsync(docFilePath, 'utf-8');
       }
     });
   }
 
+  /**
+   * @private
+   */
   async fetchSampleDoc_(samplePath) {
     let sampleUrl = config.hosts.pages.base + PREFIX_EXAMPLES + samplePath;
     if (!sampleUrl.endsWith('/index.html')) {
@@ -103,6 +139,9 @@ class SampleRenderer {
     return await fetchResponse.text();
   }
 
+  /**
+   * @private
+   */
   removeQuery_(string) {
     const index = string.indexOf('?');
     if (index === -1) {
