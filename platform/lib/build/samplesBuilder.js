@@ -129,9 +129,6 @@ class SamplesBuilder {
             callback();
             return;
           }
-          if (sample.path.endsWith('/index.html')) {
-            sample.path = path.dirname(sample.path) + '.html';
-          }
 
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
@@ -190,8 +187,13 @@ class SamplesBuilder {
    * @return {Promise}
    */
   async _parseSample(sample) {
+    const samplePath = sample.path;
+    // normalize sample path in case it's defined in a directory
+    if (sample.path.endsWith('/index.html')) {
+      sample.path = path.dirname(sample.path) + '.html';
+    }
     const platformHost = config.getHost(config.hosts.platform);
-    return await abe.parseSample(sample.path, {
+    return await abe.parseSample(samplePath, {
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'hosts': {
         'platform': platformHost,

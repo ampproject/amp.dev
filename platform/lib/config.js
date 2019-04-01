@@ -43,7 +43,6 @@ class Config {
       }
       this.hostNames.add(hostName);
     });
-    console.log('hostnames', this.hostNames);
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
