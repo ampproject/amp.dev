@@ -7,6 +7,7 @@ formats:
     - stories
 components:
     - youtube
+    - video
 ---
 
 This guide provides recommended practices that you should implement when creating an [AMP story]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
@@ -36,12 +37,13 @@ This [AMP story](https://mic.com/stories/500/did-you-know-these-fun-facts-about-
 
 Keep reading for additional tips on making the most of your AMP stories. 
 
-<!-- TODO: Add assets -->
-[video src="/static/img/docs/guides/storiesbp/do-background.mp4" loop caption="Completed AMP story."]
+
+<amp-video src="/static/img/docs/guides/storiesbp/do-background.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
+</amp-video>
 
 This story uses full-bleed images, video, and animations to create an engaging reading experience. It tells a complete story, and it includes branding and a publication date. 
 
-<!-- TODO: Add assets -->
+{{ image('/static/img/docs/guides/storiesbp/dont-background.jpg', 1440, 630, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
 
 Landscape images and lack of motion make this story less immersive and less interesting. The big links to the full article on every page compete with other elements on the page and distract from the story.
 
@@ -58,14 +60,16 @@ Keep your audience engaged by avoiding large blocks of text. AMP stories is a vi
     <th>DO NOT</th>
   </tr>
   <tr>
-    <td>{{ image('/static/img/docs/guides/storiesbp/text-clear-do.jpg', 250, 500, layout='intrinsic', alt='Image showing good amount of text in an AMP story', caption='Try to keep text to just the essentials. Varying type size and style to break up blocks of text can increase scannability.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/text-density-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing too much text in an AMP story', caption='A big wall of text like this can be hard to read and may discourage engagement with your story. ', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/text-clear-do.jpg', 250, 500, layout='intrinsic', alt='Image showing good amount of text in an AMP story', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/text-density-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing too much text in an AMP story', align='center' ) }}</td>
+  </tr>
+  <tr>
+    <td>Try to keep text to just the essentials. Varying type size and style to break up blocks of text can increase scannability.</td>
+    <td>A big wall of text like this can be hard to read and may discourage engagement with your story. </td>
   </tr>
 </table>
 
 ### Make sure it’s legible
-
-Make text easy to read by ensuring enough contrast and separation between your text and your images.  
 
 <table>
   <tr>
@@ -73,12 +77,20 @@ Make text easy to read by ensuring enough contrast and separation between your t
     <th>DO NOT</th>
   </tr>
   <tr>
-    <td>{{ image('/static/img/docs/guides/storiesbp/readability1-do.jpg', 250, 500, layout='intrinsic', alt='Image showing good use of text contrast in an AMP story', caption='A high contrast makes the words easy to see.', align='' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/readability1-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing poor use of text contrast in an AMP story', caption='With poor contrast, your words and images may blend, making the words hard to read and the story harder to follow.', align='' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/readability1-do.jpg', 250, 500, layout='intrinsic', alt='Image showing good use of text contrast in an AMP story', align='' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/readability1-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing poor use of text contrast in an AMP story', align='' ) }}</td>
   </tr>
   <tr>
-    <td>{{ image('/static/img/docs/guides/storiesbp/readability2-do.jpg', 250, 500, layout='intrinsic', alt='Image showing good use of text highlight in an AMP story', caption='Highlighting the text can make the words stand out and help keep your readers focused on your story.  ', align='' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/readability2-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing poor use of text highlight in an AMP story', caption='Using light-colored text over a busy image makes the words hard to read. ', align='' ) }}</td>
+    <td>A high contrast makes the words easy to see.</td>
+    <td>With poor contrast, your words and images may blend, making the words hard to read and the story harder to follow.</td>
+  </tr>
+  <tr>
+    <td>{{ image('/static/img/docs/guides/storiesbp/readability2-do.jpg', 250, 500, layout='intrinsic', alt='Image showing good use of text highlight in an AMP story', align='' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/readability2-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing poor use of text highlight in an AMP story', align='' ) }}</td>
+  </tr>
+    <tr>
+      <td>Highlighting the text can make the words stand out and help keep your readers focused on your story.</td>
+      <td>Using light-colored text over a busy image makes the words hard to read. </td>
   </tr>
 </table>
 
@@ -94,8 +106,12 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
     <th>DO NOT</th>
   </tr>
   <tr>
-    <td>{{ image('/static/img/docs/guides/storiesbp/full-bleed-image-do.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating the immersive experience full bleed images create', caption='This full bleed image creates an immersive experience.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/full-bleed-image-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating poor landscape image fit on mobile screens', caption='Landscape images don’t fit mobile screens well. They provide a less powerful experience and may even distract the reader.', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/full-bleed-image-do.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating the immersive experience full bleed images create', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/full-bleed-image-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating poor landscape image fit on mobile screens', align='center' ) }}</td>
+  </tr>
+    <tr>
+    <td>This full bleed image creates an immersive experience.</td>
+    <td>Landscape images don’t fit mobile screens well. They provide a less powerful experience and may even distract the reader.</td>
   </tr>
 </table>
 
@@ -110,8 +126,12 @@ Keep the focus on what’s important. Crop out unnecessary or distracting elemen
     <th>DO NOT</th>
   </tr>
   <tr>
-    <td>{{ image('/static/img/docs/guides/storiesbp/crop-images-do.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating mindful image cropping', caption='This image is cropped to align with page content and supports the main idea.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/crop-images-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating poor image cropping', caption='With this crop, it’s unclear where the reader’s  focus should be and what idea the image intends to convey.', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/crop-images-do.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating mindful image cropping', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/crop-images-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating poor image cropping', align='center' ) }}</td>
+  </tr>
+    <tr>
+    <td>This image is cropped to align with page content and supports the main idea.</td>
+    <td>With this crop, it’s unclear where the reader’s focus should be and what idea the image intends to convey.</td>
   </tr>
 </table>
 
@@ -125,8 +145,12 @@ Make stories more dynamic by adding motion to static images. For example, you ca
   </tr>
   <tr>
   <!-- TODO: Swap gif with mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Image demonstrating a dynamic element', caption='The motion in this example helps support the main idea and adds a dynamic element to the page.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating a dull story page', caption='This static page is functional, but it may be missing an opportunity to be more engaging to readers.', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Image demonstrating a dynamic element', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating a dull story page', align='center' ) }}</td>
+  </tr>
+    <tr>
+    <td>The motion in this example helps support the main idea and adds a dynamic element to the page.</td>
+    <td>This static page is functional, but it may be missing an opportunity to be more engaging to readers.</td>
   </tr>
 </table>
 
@@ -142,8 +166,14 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
   </tr>
   <tr>
   <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Demonstration of an immersive full bleed video', caption='This full bleed video helps readers focus on a single key subject.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Demonstration of lack of immersive feeling in landscape videos in AMP stories', caption='This landscape video lacks the immersive feeling and may distract readers.', align='center' ) }}</td>
+    <td><amp-video src="/static/img/docs/guides/storiesbp/video-bleed-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/video-bleed-do-poster.jpg" width="360" height="720" loop autoplay noaudio>
+        </amp-video></td>
+    <td><amp-video src="/static/img/docs/guides/storiesbp/video-bleed-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/video-bleed-dont.jpg" width="360" height="720" loop autoplay noaudio>
+        </amp-video></td>
+  </tr>
+  <tr>
+    <td>This full bleed video helps readers focus on a single key subject.</td>
+    <td>This landscape video lacks the immersive feeling and may distract readers.</td>
   </tr>
 </table>
 
@@ -157,8 +187,18 @@ Enable users to experience your stories anywhere.  In some settings, listening t
   </tr>
   <tr>
   <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Video demonstrating use of caption in an AMP story', caption='Captions help keep your audience engaged, even when they can’t listen to the audio. ', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='A video without sound or captions', caption='Without captions, your audience needs to be able to listen to audio to follow your story.  This may limit who engages with your content and when they are able to do so. ', align='center' ) }}</td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/captions-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/captions-do.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/captions-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/captions-dont.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+  </tr>
+  <tr>
+    <td>Captions help keep your audience engaged, even when they can’t listen to the audio. </td>
+    <td>Without captions, your audience needs to be able to listen to audio to follow your story.  This may limit who engages with your content and when they are able to do so.</td>
   </tr>
 </table>
 
@@ -176,9 +216,18 @@ Animation can enhance stories when it’s visually appealing, easy to understand
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Demonstration of good use of Ken Burns effect', caption='This Ken Burns effect on the background image is subtle and makes the experience more immersive. It creates a right balance with the text overlay together.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Demonstration of Ken Burns effect moving too quickly', caption='Here, the Ken Burns effect is too fast. The motion is distracting and makes it hard to focus on the headline.', align='center' ) }}</td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/duration-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/duration-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+  </tr>
+  <tr>
+    <td>This Ken Burns effect on the background image is subtle and makes the experience more immersive. It creates a right balance with the text overlay together.</td>
+    <td>Here, the Ken Burns effect is too fast. The motion is distracting and makes it hard to focus on the headline.</td>
   </tr>
 </table>
 
@@ -192,9 +241,18 @@ Pick an animation style that matches your story’s aesthetic.  AMP story offers
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Demonstration of good text visuals', caption='Sliding the title up and fading in the subtitle guides the reader to follow the content of the page in the right order.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Demonstration of distracting text visuals', caption='This rotation animation doesn’t add value to the story. Instead, it creates visual noise and may be distracting to readers.', align='center' ) }}</td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/style-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/style-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+  </tr>
+  <tr>
+    <td>Sliding the title up and fading in the subtitle guides the reader to follow the content of the page in the right order.</td>
+    <td>This rotation animation doesn’t add value to the story. Instead, it creates visual noise and may be distracting to readers.</td>
   </tr>
 </table>
 
@@ -207,9 +265,18 @@ One way to be creative with motion is to animate multiple objects into a sequenc
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Objects fly in at different times on an AMP story page', caption='Animating these objects separately makes this visual more interesting and enjoyable. It also helps each item stand out more distinctly.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='All objects fly in at the same time on an AMP story page', caption='Adding rapid motion to one big block like this doesn’t add to understanding, and it can be distracting.', align='center' ) }}</td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/sequence-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/sequence-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+  </tr>
+  <tr>
+    <td>Animating these objects separately makes this visual more interesting and enjoyable. It also helps each item stand out more distinctly.</td>
+    <td>Adding rapid motion to one big block like this doesn’t add to understanding, and it can be distracting.</td>
   </tr>
 </table>
 
@@ -225,25 +292,52 @@ Embeds can provide an added dimension to your story when used sparingly and pres
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/embed-do.jpg', 250, 500, layout='intrinsic', alt='Example of well used embed on AMP story page', caption='The embed on this page integrates well with the rest of the layout. The headline, date, and background graphics help enhance the visual.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/embed-dont.jpg', 250, 500, layout='intrinsic', alt='AMP story page with no background or header, but a single embed looks unfinished', caption='Putting the  embed alone on the page looks unfinished and does not integrate with the full story well.', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/embed-do.jpg', 250, 500, layout='intrinsic', alt='Example of well used embed on AMP story page', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/embed-dont.jpg', 250, 500, layout='intrinsic', alt='AMP story page with no background or header, but a single embed looks unfinished', align='center' ) }}</td>
+  </tr>
+  <tr>
+    <td>The embed on this page integrates well with the rest of the layout. The headline, date, and background graphics help enhance the visual.</td>
+    <td>Putting the embed alone on the page looks unfinished and does not integrate with the full story well.</td>
   </tr>
 </table>
 
 ### Add Additional Content with Attachments 
 
 Keep your AMP story streamlined by putting related content in attachments. This way, readers can easily dig deeper if they want to learn more about your story. You might use attachments for long blocks of text that don’t fit in the main story, or, if your story contains a highlight video, you might make the full video available as an attachment. Help readers navigate your content by designing the attachment to align with the rest of your story. 
-  <!-- TODO: Swap assets with correct mp4 - update captions and alt-->
+
 <table>
   <tr>
     <th>DO</th>
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/embed-do.jpg', 250, 500, layout='intrinsic', alt='Example of well used embed on AMP story page', caption='The embed on this page integrates well with the rest of the layout. The headline, date, and background graphics help enhance the visual.', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/embed-dont.jpg', 250, 500, layout='intrinsic', alt='AMP story page with no background or header, but a single embed looks unfinished', caption='Putting the  embed alone on the page looks unfinished and does not integrate with the full story well.', align='center' ) }}</td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/attachment-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/attachment-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+  </tr>
+  <tr>
+    <td>The embed on this page integrates well with the rest of the layout. The headline, date, and background graphics help enhance the visual.</td>
+    <td>Putting the embed alone on the page looks unfinished and does not integrate with the full story well.</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>DO</th>
+  </tr>
+  <tr>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/attachment-do2.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still2.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
+  </tr>
+  <tr>
+    <td>A highlight video can be a useful element in an AMP story. You can include the full-length video as an attachment, giving readers the option to dive deeper into your content.</td>
   </tr>
 </table>
 
@@ -257,10 +351,13 @@ With AMP stories, you can add links anywhere on a page. When a link is tapped, a
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap assets with correct mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/links-do.jpg', 250, 500, layout='intrinsic', alt='Example of well used links on AMP story page', caption='The links on this page are clearly marked and surrounded by related content. They don’t interfere with story navigation.   ', align='center' ) }}</td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/links-dont.jpg', 250, 500, layout='intrinsic', alt='AMP story page with links that interfere with navigation', caption='The links on this page completely block the navigation. Readers will not be able to easily go to the previous or the next page.', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/links-do.jpg', 250, 500, layout='intrinsic', alt='Example of well used links on AMP story page', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/links-dont.jpg', 250, 500, layout='intrinsic', alt='AMP story page with links that interfere with navigation', align='center' ) }}</td>
   </tr>
+  <tr>
+    <td>The links on this page are clearly marked and surrounded by related content. They don’t interfere with story navigation.</td>
+    <td>The links on this page completely block the navigation. Readers will not be able to easily go to the previous or the next page.</td>
+  </tr>  
 </table>
 
 ## Desktop experience
