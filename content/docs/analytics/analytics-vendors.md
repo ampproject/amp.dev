@@ -187,6 +187,12 @@ Adds support for Keen. Additionally, the following `vars` must be defined:
 
 Use `extraUrlParams` to add more data. Configuration details can be found at [keen.io/docs/api](https://keen.io/docs/api/).
 
+### Kenshoo
+
+Type attribute value: `kenshoo`
+
+Adds support for Kenshoo. More information and configuration details can be found at [helpcenter.kenshoo.com](https://helpcenter.kenshoo.com/hc/en-us/articles/360025260592).
+
 ### Krux
 
 Type attribute value: `krux`
