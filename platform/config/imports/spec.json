@@ -10,7 +10,7 @@
         "title": "AMP HTML Specification",
         "order": 3,
         "from": "spec/amp-html-format.md",
-        "to": "documentation/guides-and-tutorials/learn/spec/index.md",
+        "to": "documentation/guides-and-tutorials/learn/spec/amp-html.md",
 		"formats": ["websites"]
     },
     {

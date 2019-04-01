@@ -5,7 +5,7 @@ $title: Stili CSS supportati
 Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#l'eccezione-dei-tipi-di-carattere-personalizzati)).
 Inoltre, alcuni stili non sono consentiti a causa delle implicazioni legate al rendimento; gli attributi di stili in linea non sono consentiti.
 
-Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
+Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})).
 Puoi però utilizzare i preprocessori e i modelli CSS per creare pagine statiche e poter così gestire meglio i tuoi contenuti.
 
 **Nota.** Nei componenti AMP ci sono stili predefiniti integrati che facilitano la creazione di pagine reattive.

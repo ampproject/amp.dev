@@ -113,7 +113,7 @@ Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API
 
 ## AMP 캐시 사용
 
-[AMP 캐시]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})는
+[AMP 캐시]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_cached.md', locale=doc.locale).url.path}})는
 유효한 AMP 문서를 전송하기 위한 프록시 기반의 콘텐츠 전송 네트워크(CDN)입니다.
 AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 

@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Pour être valides, les documents AMP ne doivent comprendre aucune erreur de validation.
-Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
+Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
 Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 ## Erreurs de balise HTML et d'attributs AMP

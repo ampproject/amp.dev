@@ -12,7 +12,7 @@ This guide provides tips and guidance for webmasters on how to optimize their ho
 
 ### Isn't AMP fast by default?
 
-The AMP runtime is [optimized for speed]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) and if your AMP pages are served by an [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+The AMP runtime is [optimized for speed]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) and if your AMP pages are served by an [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_cached.md', locale=doc.locale).url.path}}), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
 
 However, AMP pages are not always served from an AMP cache. A website may decide to show AMP pages from their own servers for other traffic sources. The most frequent use case are sites built completely in AMP, such as [tasty.co](https://tasty.co), where users go straight to the site. Another traffic source is Twitter, which [started linking to AMP pages](https://searchengineland.com/twitter-ramps-amp-278300) instead of delivering the standard mobile version. This means that if a user clicks a link in one of Twitter's mobile apps, the link goes to the AMP version of your page on your own origin (if one is available).
 

@@ -87,4 +87,4 @@ AMP 支持 `srcset` 和 `sizes` 属性，以便您能够更加精确地控制要
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-阅读: 详细了解如何[验证 AMP 网页并解决存在的问题]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
+阅读: 详细了解如何[验证 AMP 网页并解决存在的问题]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})

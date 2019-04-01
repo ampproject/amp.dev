@@ -2,7 +2,6 @@
 $title: How AMP pages are cached
 $order: 0
 description: In this document, you'll learn about the role of the AMP Cache in the AMP ecosystem, and how your AMP page gets cached.
-$path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/how-cached.html
 formats:
   - websites
   - email
