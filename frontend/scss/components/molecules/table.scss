@@ -76,6 +76,7 @@ tbody {
   td {
     padding: 20px;
     text-align: left;
+    vertical-align: top;
 
     @media (orientation: portrait) and (max-width: 575px) {
       min-width: 40vw;
