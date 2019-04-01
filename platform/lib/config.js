@@ -27,6 +27,7 @@ const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const GROW_OUT_DIR = utils.project.absolute('platform/pages');
 
 const ENV_DEV = 'development';
+const ENV_PROD = 'production';
 
 class Config {
   constructor(environment = ENV_DEV) {
@@ -62,6 +63,13 @@ class Config {
    */
   isDevMode() {
     return this.environment === ENV_DEV;
+  }
+
+  /**
+   * Returns true if production mode is active.
+   */
+  isProdMode() {
+    return this.environment === ENV_PROD;
   }
 
   /**
