@@ -73,6 +73,9 @@ class SampleRenderer {
   }
 
   /**
+   * Creates a middleware loading the sample template and passing it
+   * to the sample handler.
+   *
    * @private
    */
   renderSample_(handler) {
@@ -88,6 +91,36 @@ class SampleRenderer {
   }
 
   /**
+   * Loads a sample template for the given request (this might be
+   * doc or preview).
+   *
+   * @private
+   */
+  async getTemplate_(request) {
+    const samplePath = this.removeQuery_(request.originalUrl.substring(PREFIX_EXAMPLES.length));
+    // If it's a preview request, load the source template
+    if (request.protocol + '://' + request.get('host') === config.hosts.preview.base) {
+      const sourcePath = join(DIR_SOURCES, samplePath.replace('/index.html', '.html'));
+      return this.fetchTemplate_('source', () => readFileAsync(sourcePath, 'utf-8'));
+    }
+    // else load the documentation template
+    return this.fetchTemplate_('documentation', () => {
+      if (config.isDevMode()) {
+        // fetch doc from proxy
+        return this.fetchSampleDoc_(samplePath);
+      } else {
+        // fetch comiled doc page from filesystem
+        const docFilePath = join(DIR_DOCS, PREFIX_EXAMPLES, this.appendIndexHtml_(samplePath));
+        return readFileAsync(docFilePath, 'utf-8');
+      }
+    });
+  }
+
+  /**
+   * Loads a template from cache (if not in dev mode). If the template
+   * is not cached, it will use the provided callback to retrieve the
+   * template string.
+   *
    * @private
    */
   async fetchTemplate_(key, fn) {
@@ -103,43 +136,27 @@ class SampleRenderer {
   /**
    * @private
    */
-  async getTemplate_(request) {
-    const samplePath = this.removeQuery_(request.originalUrl.substring(PREFIX_EXAMPLES.length));
-    console.log('sample path', samplePath);
-    console.log('is preview?', request.protocol + '://' + request.get('host'), config.hosts.preview.base);
-    if (request.protocol + '://' + request.get('host') === config.hosts.preview.base) {
-      const sourcePath = join(DIR_SOURCES, samplePath.replace('/index.html', '.html'));
-      console.log('loading source file', sourcePath);
-      return this.fetchTemplate_('source', () => readFileAsync(sourcePath, 'utf-8'));
-    }
-    return this.fetchTemplate_('documentation', () => {
-      if (config.isDevMode()) {
-        return this.fetchSampleDoc_(samplePath);
-      } else {
-        if (!samplePath.endsWith('/index.html')) {
-          samplePath = join(samplePath, 'index.html');
-        }
-        const docFilePath = join(DIR_DOCS, PREFIX_EXAMPLES, samplePath);
-        console.log('fetching sample doc from', docFilePath);
-        return readFileAsync(docFilePath, 'utf-8');
-      }
-    });
-  }
-
-  /**
-   * @private
-   */
   async fetchSampleDoc_(samplePath) {
-    let sampleUrl = config.hosts.pages.base + PREFIX_EXAMPLES + samplePath;
-    if (!sampleUrl.endsWith('/index.html')) {
-      sampleUrl += 'index.html';
-    }
-    console.log('fetching sample doc from', sampleUrl);
-    const fetchResponse = await fetch(sampleUrl);
+    const sampleUrl = config.hosts.pages.base + PREFIX_EXAMPLES + samplePath;
+    const fetchResponse = await fetch(this.appendIndexHtml_(sampleUrl));
     return await fetchResponse.text();
   }
 
   /**
+   * Ensures the path ends with /index.html.
+   *
+   * @private
+   */
+  appendIndexHtml_(string) {
+    if (!string.endsWith('/index.html')) {
+      string = join(string, 'index.html');
+    }
+    return string;
+  }
+
+  /**
+   * Removes a query string from a path.
+   *
    * @private
    */
   removeQuery_(string) {
