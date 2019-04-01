@@ -21,7 +21,7 @@ Por que os anúncios HTML para AMP são melhores que os anúncios tradicionais?
 
 ### Formatos
 
-Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos formatos de criativos, como carrossel, paralaxe e lightbox, entre outros. Para começar, aproveite os modelos de anúncio HTML para AMP de código aberto no site [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
+Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos formatos de criativos, como carrossel, paralaxe e lightbox, entre outros. Para começar, aproveite os modelos de anúncio HTML para AMP de código aberto no site [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, e
 
 ### Agências de criação
 
-As agências de criação precisam criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para ver exemplos e se inspirar, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Como alternativa, use uma das seguintes ferramentas para criar os anúncios HTML para AMP:
+As agências de criação precisam criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para ver exemplos e se inspirar, confira os modelos de anúncios HTML para AMP de código aberto no site [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Como alternativa, use uma das seguintes ferramentas para criar os anúncios HTML para AMP:
 
 *  [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,7 +78,7 @@ Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma ext
 
 ## Criar anúncios HTML para AMP
 
-**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
 
 **Usando ferramentas**: use qualquer uma das seguintes ferramentas se você quiser gerar criativos HTML para AMP:
 
@@ -108,7 +108,7 @@ Se você quiser que Ad Exchanges e SSPs sejam compatíveis com anúncios HTML pa
 
 #### Há alguma amostra de anúncio HTML para AMP?
 
-Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no site [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads). Essas amostras usam componentes avançados em AMP.
+Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no site [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). Essas amostras usam componentes avançados em AMP.
 
 #### Os anúncios HTML para AMP são compatíveis com verificação e detecção de visibilidade de terceiros?
 

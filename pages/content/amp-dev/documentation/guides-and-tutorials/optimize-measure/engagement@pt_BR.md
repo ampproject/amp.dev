@@ -41,4 +41,4 @@ Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-
 
 - **Envolva-se.** Contribua com código-fonte, comunique bugs ou faça comentários no [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Compartilhe sua opinião sobre as AMP no [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Saiba** como usar os componentes de AMP com o [AMP by Example](https://ampbyexample.com/).
+- **Saiba** como usar os componentes de AMP com o [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).

@@ -4,12 +4,12 @@ $title: Habilitar las funciones de las aplicaciones web progresivas en páginas 
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample activa el mensaje "Añadir a la pantalla de inicio".') }}
 
-Muchos sitios web no necesitan más de lo que ya les ofrece AMP. [AMPbyExample](http://ampbyexample.com/), por ejemplo, es al mismo tiempo una página AMP y una aplicación web progresiva (PWA):
+Muchos sitios web no necesitan más de lo que ya les ofrece AMP. [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}), por ejemplo, es al mismo tiempo una página AMP y una aplicación web progresiva (PWA):
 
 1. Dispone de un [archivo de manifiesto de aplicación web](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), que genera el mensaje "Añadir a la pantalla de inicio".
 2. Cuenta con un [componente service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) y, por tanto, permite que se acceda a ella sin conexión, entre otras cosas.
 
-Cuando un usuario visita [AMPbyExample](http://ampbyexample.com/) desde una plataforma compatible con AMP y después sigue desplazándose por el sitio web, sale de la caché de AMP y pasa al origen. El sitio web sigue usando la biblioteca de AMP, pero al encontrarse en el origen, puede usar un componente service worker, pedir instalaciones, etc.
+Cuando un usuario visita [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) desde una plataforma compatible con AMP y después sigue desplazándose por el sitio web, sale de la caché de AMP y pasa al origen. El sitio web sigue usando la biblioteca de AMP, pero al encontrarse en el origen, puede usar un componente service worker, pedir instalaciones, etc.
 
 Nota: Service worker no puede interactuar con la versión de tu página almacenada en la caché de AMP. Úsalo en el resto del recorrido hasta el origen.
 

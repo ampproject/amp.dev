@@ -21,7 +21,7 @@ Los anuncios AMP HTML se escriben en lenguaje AMP HTML, de acuerdo con las [espe
 
 ### Formatos
 
-Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar diversos formatos de creatividad, como carrusel, paralaje y lightbox, entre otros. Para empezar a utilizar los anuncios AMP HTML, puedes usar las plantillas de software libre de [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads/es/advanced_ads).
+Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar diversos formatos de creatividad, como carrusel, paralaje y lightbox, entre otros. Para empezar a utilizar los anuncios AMP HTML, puedes usar las plantillas de software libre de [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ Para publicar anuncios AMP HTML a través de canales indirectos (por ejemplo, in
 
 ### Agencias de creatividades
 
-Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para consultar ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). También puedes utilizar una de las siguientes herramientas para crear anuncios AMP HTML:
+Si tienes una agencia de creatividades, debes crear los anuncios de acuerdo con las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Para consultar ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). También puedes utilizar una de las siguientes herramientas para crear anuncios AMP HTML:
 
 *  [Creador de anuncios de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,7 +78,7 @@ Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión [`am
 
 ## Crear anuncios AMP HTML
 
-**Desde cero:** estos anuncios deben seguir las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Para consultar demostraciones y ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**Desde cero:** estos anuncios deben seguir las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Para consultar demostraciones y ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
 
 **Con herramientas:** puedes utilizar cualquiera de las herramientas que se incluyen a continuación para desarrollar creatividades AMP HTML.
 
@@ -108,7 +108,7 @@ En el caso de las plataformas de oferta y los canales de intercambio de anuncios
 
 #### ¿Hay algún ejemplo de anuncios AMP HTML?
 
-Sí. Puedes consultar una serie de magníficas plantillas de anuncios AMP HTML en [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads). Estos ejemplos utilizan componentes avanzados de AMP.
+Sí. Puedes consultar una serie de magníficas plantillas de anuncios AMP HTML en [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). Estos ejemplos utilizan componentes avanzados de AMP.
 
 #### ¿Los anuncios AMP HTML admiten la verificación de terceros y la detección de visibilidad?
 

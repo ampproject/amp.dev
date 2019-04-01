@@ -40,4 +40,4 @@ $title: 사용자 참여 향상하기
 
 - **참여하세요.** 소스 코드에 기여하거나, 버그를 신고하거나, [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)에 피드백을 주세요. [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)에서 AMP에 대한 의견을 공유해주세요.
 
-- [예제로 보는 AMP](https://ampbyexample.com/)에서 AMP 컴포넌트를 어떻게 사용하는 지 **익히십시오.**
+- [예제로 보는 AMP]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})에서 AMP 컴포넌트를 어떻게 사용하는 지 **익히십시오.**

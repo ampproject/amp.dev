@@ -54,4 +54,4 @@ Ikuti praktik terbaik [monetisasi iklan]({{g.doc('/content/amp-dev/documentation
 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Bagikan masukan tentang AMP di
 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Pelajari** cara menggunakan komponen AMP dengan [AMP by Example](https://ampbyexample.com/).
+- **Pelajari** cara menggunakan komponen AMP dengan [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).

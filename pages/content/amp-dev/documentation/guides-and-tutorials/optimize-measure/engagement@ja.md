@@ -40,4 +40,4 @@ $title: ユーザー エンゲージメントを向上させる
 
 - **参加する。**  ソースコードの提供、バグ報告、フィードバックは [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) からお願いします。AMP に関する意見交換は [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) で行っています。
 
-- **AMP について学ぶ。**  AMP コンポーネントの使用方法は [AMP サンプル](https://ampbyexample.com/)を参考にしてください。
+- **AMP について学ぶ。**  AMP コンポーネントの使用方法は [AMP サンプル]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})を参考にしてください。

@@ -55,4 +55,4 @@ readers. Use [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentati
 - **Get involved.** Contribute source code, file bugs, or offer feedback
 on [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Share your input about AMP at [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Learn** how to use AMP components with [AMP by Example](https://ampbyexample.com/).
+- **Learn** how to use AMP components with [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).

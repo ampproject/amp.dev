@@ -28,7 +28,7 @@ For example, by applying the following optimization techniques:
 
 the ["The Scenic" AMPStart template](https://www.ampstart.com/templates) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
 
-If you want to skip the details, check out the [AMP Boilerplate generator](https://ampbyexample.com/boilerplate), which you can use to generate custom optimized AMP pages.
+If you want to skip the details, check out the [AMP Boilerplate generator](https://amp.dev/boilerplate), which you can use to generate custom optimized AMP pages.
 
 ### Optimize the AMP Runtime loading
 

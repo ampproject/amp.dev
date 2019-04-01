@@ -150,6 +150,6 @@ Berikut beberapa contoh yang dapat Anda gunakan sebagai inspirasi untuk membuat 
 
 #### Dibuat oleh AMP
 
-- [AMP by Example:  Contoh & Template](https://ampbyexample.com/#samples_templates)
+- [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 - [Template AMP Start](https://www.ampstart.com/)
 - [Workshop Konferensi AMP Codelab: Membuat AMP yang menarik](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

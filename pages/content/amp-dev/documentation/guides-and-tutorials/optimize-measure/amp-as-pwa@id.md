@@ -4,12 +4,12 @@ $title: Mengaktifkan fitur Progressive Web App untuk halaman AMP
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample memicu permintaan "Tambahkan ke Layar Utama".') }}
 
-Banyak situs yang tidak akan memerlukan apa pun di luar batas AMP. [AMPbyExample](http://ampbyexample.com/), misalnya, yang merupakan AMP sekaligus Progressive Web App:
+Banyak situs yang tidak akan memerlukan apa pun di luar batas AMP. [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}), misalnya, yang merupakan AMP sekaligus Progressive Web App:
 
 1. AMPbyExample memiliki [Manifes Aplikasi Web](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), yang meminta banner “Tambahkan ke Layar Utama”.
 1. AMPbyExample memiliki [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers), sehingga memungkinkan akses offline dan lain sebagainya.
 
-Ketika pengguna membuka [AMPbyExample](http://ampbyexample.com/) dari platform yang mendukung AMP lalu lanjut mengklik ke situs yang sama, mereka keluar dari Cache AMP ke halaman asli. Tentunya situs masih menggunakan koleksi AMP, namun karena saat ini ditayangkan di halaman asli, situs dapat menggunakan service worker, meminta penginstalan, dan lain-lain.
+Ketika pengguna membuka [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) dari platform yang mendukung AMP lalu lanjut mengklik ke situs yang sama, mereka keluar dari Cache AMP ke halaman asli. Tentunya situs masih menggunakan koleksi AMP, namun karena saat ini ditayangkan di halaman asli, situs dapat menggunakan service worker, meminta penginstalan, dan lain-lain.
 
 Ingat: Service Worker tidak akan dapat berinteraksi dengan versi halaman yang tersimpan dalam cache AMP. Gunakan untuk melanjutkan perjalanan berikutnya ke halaman asli.
 
