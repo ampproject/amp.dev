@@ -57,15 +57,15 @@ To keep experiences on AMP pages consistent, limitations exist on `<amp-script>`
 JavaScript inside the Web Worker allows minimal change to the DOM on load. Changes allowed during this phase are:
 
 
-*   Registering event handlers
-*   Splitting a TextNode into multiple TextNodes, assuming the text doesn't change
+*   Registering event handlers.
+*   Splitting a TextNode into multiple TextNodes to allow for styling liberties, assuming the actual text doesn't change.
 
 The DOM inside `<amp-script>` tags should be almost identical before and after initialization. 
 
 
 ## Interaction
 
-DOM manipulations inside `<amp-script>` must happen quickly. If the DOM is mutated after a one second window of a user interaction with an AMP page, such as clicking, the Web Worker will be terminated. A terminated `<amp-script>` component will not run again. 
+To ensure a responsive UX, DOM manipulations in response to a user interaction must happen in **less than one second**.  If a script mutates the DOM in response to a user interactions after one second, the `amp-script` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
 
 
 ## Script Size 
@@ -74,7 +74,7 @@ AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This li
 
 ## Scope
 
-Any DOM elements the custom JavaScript files wishes to interact with must be wrapped inside the `<amp-script>` component tags. The `<amp-script>` component considers `document.body` to be the amp-script element and not the document's `<body>` element.
+Any DOM elements the custom JavaScript files wishes to interact with must be wrapped inside the `<amp-script>` component tags, this includes other AMP components. The `<amp-script>` component considers `document.body` to be the `amp-script` element and not the document's `<body>` element.
 
 If you were to call `document.body.appendChild(document.createElement('span'))` within the `<amp-script>`file in the following document: 
 
@@ -118,14 +118,14 @@ JavaScript inserted using `<amp-script>` can listen for the following events:
 
 ## Latency Concerns
 
-Web Workers and the main thread communicate through `[postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)`. This can cause a bad user experience with latency, such as use of the `[<canvas>` tag](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage). All canvas draw functions would need to be communicated through `postMessage()` to the actual DOM, unintentionally slowing down the page. However, `<amp-script>` supports the use of [basic SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes). 
+Web Workers and the main thread communicate through post [message](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). This can cause a bad user experience with latency, such as use of the `[<canvas>` tag](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage). All canvas draw functions would need to be communicated through `postMessage()` to the actual DOM, unintentionally slowing down the page. However, `<amp-script>` supports the use of [basic SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes). 
 
 TIP: View the[ allowed listed API's here](https://github.com/ampproject/worker-dom/blob/5ef03379c154034545b55f29a2e249f035ee4c8f/src/worker-thread/index.safe.ts#L50-L127).
 
 
 ## API Restrictions 
 
-Additionally, some synchronous methods are disallowed in `<amp-script>`, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect). Because the Web Worker can't calculate the size and position of an element precisely, it needs to use `postMessage()` to run this inside the main thread. This means the result of the method is not immediately available, since it requires a corresponding `postMessage()` response from the main thread. `<amp-script>` has an async method called `Element.getBoundingClientRectAsync() that returns a Promise instead of synchronously returning the result.
+Additionally, some synchronous methods are disallowed in `<amp-script>`, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect). Because the Web Worker can't calculate the size and position of an element precisely, it needs to use `postMessage()` to run this inside the main thread. This means the result of the method is not immediately available, since it requires a corresponding `postMessage()` response from the main thread. `<amp-script>` has an async method called `Element.getBoundingClientRectAsync()` that returns a Promise instead of synchronously returning the result.
 
 View [this chart](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md) to see what API are implemented in WorkerDOM. 
 
