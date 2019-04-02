@@ -1,0 +1,294 @@
+{% extends '/layouts/default.j2' %}
+{% set inline_preview = not doc.example.document.metadata.hidePreview %}
+
+{% block head %}
+{{ super() }}
+
+{# Always include amp-bind for the header and TOC if the sample doesn't include it #}
+{% if 'amp-bind' not in doc.used_components or not inline_preview %}
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+{% endif %}
+
+{# Include all components needed for sidebar #}
+{% if 'amp-sidebar' not in doc.used_components or not inline_preview %}
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+<script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+{% endif %}
+
+{% if ('amp-consent' not in doc.used_components and 'amp-geo' not in doc.used_components) or not inline_preview %}
+<script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
+<script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+{% endif %}
+
+{# Include amp-install-serviceworker #}
+{% if 'amp-serviceworker' not in doc.used_components or not inline_preview %}
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+{% endif %}
+
+{# Include amp-iframe for story previews #}
+{% if doc.example.document.isAmpStory %}
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+{% endif %}
+
+{# Always include amp-font #}
+<script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+
+{# Include other AMP dependencies if needed for preview #}
+{% if inline_preview %}
+{% for used_component in doc.used_components %}
+{{ doc.used_components[used_component]|safe }}
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+
+{% do doc.styles.addCssFile('css/components/templates/examples/manual.css') %}
+
+{# Add eventual specific sample styles to page if preview enabled #}
+{% if not doc.example.document.metadata.hidePreview %}
+{{ doc.example.document.styles|safe }}
+{% endif %}
+{% endblock %}
+
+{% block body %}
+{% set body_tag = doc.example.document.body %}
+{% set available_formats = ' '.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
+{{ (body_tag.replace('>', ' data-available-formats="' + available_formats + '">'))|safe }}
+{{ doc.example.document.elementsAfterBody|safe }}
+{% endblock %}
+
+{% block main %}
+{% include 'views/partials/example-sidebar.j2' %}
+{% include 'views/partials/sidebar-toggle-observer.j2' %}
+<main class="ap--main ap-t-examples-manual">
+  <div class="ap--container">
+    {% include 'views/partials/sidebar-toggle.j2' %}
+    <span id="ap--sidebar-content" class="ap--sidebar"></span>
+
+    <section class="ap--toc">
+      {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+      {% do doc.styles.addCssFile('/css/components/organisms/toc.css') %}
+
+      <div class="ap-o-toc" [class]="contentmenuopen ? 'ap-o-toc contentmenuopen' : 'ap-o-toc'">
+        <label class="ap-o-toc-toggle" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
+          <p class="ap-o-toc-hl">{{ _('Table of contents') }}</p>
+        </label>
+        <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
+        <ul>
+          <li>
+            <a href="#{{ doc.example.document.title|slug }}">{{ doc.example.document.title }}</a>
+            <ul>
+              <li>
+                {% for section in doc.example.document.sections %}
+                {% for heading in section.headings %}
+                <a href="#{{ heading.id }}">{{ heading.name }}</a>
+                {% endfor %}
+                {% endfor %}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    {# The examples manual template does not make use of the main partial
+    as it's content is rendered from the JSON loaded in doc.example #}
+    <section class="ap--content">
+      {% include '/views/partials/sidebar-toggle-button.j2' %}
+
+      <ul class="ap--format-tags">
+        {% do doc.styles.addCssFile('/css/components/atoms/format-tags.css') %}
+        {% for format in doc.formats %}
+        <li class="ap--format-tag ap-a-format-tag ap-a-format-tag-{{ format }}">{{ format }}</li>
+        {% endfor %}
+      </ul>
+
+      {% include '/views/partials/breadcrumbs.j2' %}
+      <h1 class="ap--title" id="{{ doc.example.document.title|slug }}">{{ doc.example.document.title }}</h1>
+
+      {# Render widget to toggle experiments if there are any #}
+      {% set experiments = doc.example.document.metadata.experiments %}
+      {% if experiments %}
+      {% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
+      <section class="ap-m-experiments">
+        <h3>Experimental</h3>
+        <p>{{ _('This example uses the following experimental feature:') }} {% for experiment in experiments %}<code>{{ experiment }}</code>{% endfor %}. {{ _('Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
+
+        <ul class="ap-m-experiments-controls">
+          <li class="ap-m-experiments-control">
+            <label class="ap-m-experiments-label" for="experiments-toggle">Enable Experiment</label>
+            <input class="ap-m-experiments-toggle" id="experiments-toggle" type="checkbox">
+            <aside class="ap-m-experiments-indicator"></aside>
+          </li>
+
+          <li class="ap-m-experiments-control">
+            <div class="ap-m-experiments-label">AMP Version</div>
+            <a class="ap-m-experiments-channel" target="_blank" href="https://cdn.ampproject.org/experiments.html">
+              <span class="ap-m-experiments-channel-name" id="prod-channel">PROD</span>
+              <span class="ap-m-experiments-channel-name" id="dev-channel">DEV</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      {% endif %}
+
+      {# Check if the sample has a demo button as then this is the primary CTA #}
+      {% set has_demo = doc.example.document.metadata.preview or doc.example.document.isAmpStory %}
+      {% set has_playground = not doc.example.document.metadata.disablePlayground %}
+      {% if has_demo or has_playground %}
+      {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+      <div class="ap--ctas">
+        {% if has_demo %}
+        {% set preview_url = doc.url.path + '/../preview/index.html' %}
+        <a class="ap-a-btn" href="{{ preview_url }}">{{ _('View demo') }}</a>
+        {% endif %}
+
+        {% if has_playground %}
+        {% set playground_url = podspec.base_urls.playground + '/?url=' + podspec.base_urls.preview + doc.source %}
+        <a class="ap-a-btn ap--playground-link {% if has_demo %}ap--playground-link-hollow{% endif %}" href="{{ playground_url }}">{{ _('Open in playground') }}</a>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% for section in doc.example.document.sections %}
+      {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
+
+      {% set render_code = section.doc_.strip() and section.code.strip() %}
+      {% if render_code %}
+      {% do doc.styles.addCssFile('/css/components/organisms/code-preview.css') %}
+      <div class="ap-o-code-preview">
+        {% set story_preview = doc.example.document.isAmpStory and section.storyPageId %}
+        {% set show_preview = section.preview and section.inBody and not doc.example.document.metadata.hidePreview %}
+        {% if story_preview %}
+        {% set story_preview_embed = podspec.base_urls.preview + doc.source + '/embed?id=' + section.storyPageId %}
+        {# Storys should be repeatable, therefore render reload icon #}
+        <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_embed + '&' }}' + random()})">
+          <div class="ap-a-ico">
+            {% do doc.icons.useIcon('icons/reload.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+          </div>
+        </button>
+        <div class="ap-o-code-preview-preview-iframe">
+          <amp-iframe class="ap-o-code-preview-iframe" media="(min-width: 650px)" src="{{ story_preview_embed }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
+        </div>
+        {% elif not doc.example.document.isAmpStory and show_preview %}
+        <div class="ap-o-code-preview-preview">
+          {{ section.preview|safe }}
+        </div>
+        {% endif %}
+        {% set markdown = doc.pod.markdown %}
+        {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
+      </div>
+
+      {% if not playground_disabled and doc.example.document.metadata.standaloneSnippets %}
+      <a href="{{ playground_url }}{{ section.id }}" class="ap-m-lnk ap--playground-link">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Open this snippet in playground' ) }}</span>
+      </a>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </section>
+
+    {% do doc.styles.addCssFile('/css/components/organisms/help.css') %}
+    {% do doc.icons.useIcon('icons/external.svg') %}
+    <section class="ap--content">
+      <div class="ap-o-help">
+        <span class="ap-o-help-hl">{{ _('Need further explanation?') }}</span>
+        <p class="ap-o-help-copy">{{ _('If the explanations on this page don\'t cover all of your questions feel free to reach out to other AMP users to discuss your exact use case.')}}</p>
+        <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
+          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          <span class="ap-m-lnk-text">{{ _('Go to Stack Overflow') }}</span>
+        </a>
+        <div class="ap-o-help-divider"></div>
+        <span class="ap-o-help-hl">{{ _('An unexplained feature?') }}</span>
+        <p class="ap-o-help-copy">{{ _('The AMP project strongly encourages your participation and contributions! We hope you\'ll become an ongoing participant in our open source community but we also welcome one-off contributions for the issues you\'re particularly passionate about.') }}</p>
+        <a href="{{ podspec.base_urls.repository + doc.example.filePath }}" rel="noopener" class="ap-m-lnk link-preview-1">
+          <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+          <span class="ap-m-lnk-text">{{ _('Edit sample on GitHub') }}</span>
+        </a>
+        <div class="ap-o-help-divider"></div>
+      </div>
+    </section>
+  </div>
+{% include 'views/partials/sidebar-toggle-visibility-observer.j2' %}
+</main>
+
+{% if doc.example.document.metadata.experiments %}
+{% set experiments = doc.example.document.metadata.experiments %}
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  (window.AMP = window.AMP || []).push(function(AMP) {
+
+    function areAllExperimentsEnabled() {
+      {% for experiment in experiments %}
+      console.log('isExperimentOn {{ experiment }}:' + AMP.isExperimentOn('{{ experiment }}'));
+      if (!AMP.isExperimentOn('{{ experiment }}')) {
+        return false;
+      }
+      {% endfor %}
+
+      return true;
+    }
+
+    function enableExperiments() {
+      {% for experiment in experiments %}
+      if (!AMP.isExperimentOn('{{ experiment }}')) {
+        AMP.toggleExperiment('{{ experiment }}');
+      }
+      {% endfor %}
+
+      location.reload();
+    }
+
+    function disableExperiments() {
+      {% for experiment in experiments %}
+      if (AMP.isExperimentOn('{{ experiment }}')) {
+        AMP.toggleExperiment('{{ experiment }}');
+      }
+      {% endfor %}
+
+      location.reload();
+    }
+
+    // enable active experiment button
+    var experimentToggle = document.getElementById('experiments-toggle');
+    if (!areAllExperimentsEnabled()) {
+      experimentToggle.addEventListener('click', enableExperiments);
+    } else {
+      experimentToggle.checked = true;
+      experimentToggle.addEventListener('click', disableExperiments);
+    }
+
+    // Set appropriate state on channel indicator
+    if (!window.AMP_CONFIG.canary) {
+      document.getElementById('prod-channel').classList.add('active');
+    } else {
+      document.getElementById('dev-channel').classList.add('active');
+    }
+
+    // Inform inspecting user that this intenioally invalid AMP
+    if (window.location.hash.includes('development=1')) {
+      console.log('This sample is intentionally not valid AMP.');
+    }
+  });
+});
+</script>
+{% endif %}
+{% endblock %}
+
+{% block analytics %}
+{# Do not render amp-analytics or amp-consent if used in the sample #}
+{% if 'custom-element="amp-consent"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
+{% include 'views/partials/analytics.j2' %}
+{% include 'views/partials/consent.j2' %}
+{% endif %}
+{% endblock %}

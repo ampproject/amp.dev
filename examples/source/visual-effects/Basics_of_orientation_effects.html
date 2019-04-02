@@ -1,7 +1,6 @@
 <!---
 
 preview: default
-category: 'visual-effects'
 teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
 
 --->
@@ -9,9 +8,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
 <!--
   ## Introduction
 
-  [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer)
-  combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is
-  a powerful building block that can handle various uses-cases that are dependent on the orientation of the device.
+  [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer) combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a powerful building block that can handle various uses-cases that are dependent on the orientation of the device.
 
   In this tutorial, we will go through some of these use-cases in detail.
 
@@ -23,28 +20,22 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
 
 <head>
   <meta charset="utf-8">
+  <title>Basics of orientation effects</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup
 
-    [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer) is a
-    functional component that monitors the orientation of the device as it moves,
-    and dispatches `alpha`, `beta` and `gamma` events dependant on what axis the device has moved in.
-    For more details on DeviceOrientationEvents read this [article on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation).
+    [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer) is a functional component that monitors the orientation of the device as it moves, and dispatches `alpha`, `beta` and `gamma` events dependant on what axis the device has moved in. For more details on DeviceOrientationEvents read this [article on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation).
 
-    These events in return can be used to `seek` animation timelines
-    defined by [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation)
-    to create orientation based effects.
+    These events in return can be used to `seek` animation timelines defined by [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) to create orientation based effects.
   -->
   <script async custom-element="amp-orientation-observer" src="https://cdn.ampproject.org/v0/amp-orientation-observer-0.1.js"></script>
 
   <!--
-  [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a UI component
-  that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and
-  run keyframe animations in AMP documents.
+  [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a UI component that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and run keyframe animations in AMP documents.
  -->
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
 
-  <link rel="canonical" href="<%host%>/visual_effects/basics_of_orientation_effects/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -53,8 +44,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
 
       The CSS used for these samples are included here for reference.
 
-      These rules are simply needed to make the samples work but are not fundamental
-      to the concepts covered here.
+      These rules are simply needed to make the samples work but are not fundamental to the concepts covered here.
     -->
     <style amp-custom>
     #scrollText {
@@ -97,32 +87,14 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   <!--
     ## Tilt based scroll animations
 
-    <p>Let's create a tilt based scroll animation where you can scroll up
-    and down on a page as you tilt a device along the y axis.</p>
+    Let's create a tilt based scroll animation where you can scroll up and down on a page as you tilt a device along the y axis.
 
-    <p>This sample showcases the core concept behind combining
-    `amp-orientation-observer` and `amp-animation`: The ability to progress
-    through a keyframe animation timeline as the device is tilted.</p>
+    This sample showcases the core concept behind combining `amp-orientation-observer` and `amp-animation`: The ability to progress through a keyframe animation timeline as the device is tilted.
 
-    <p>Our scroll scene is a `div` with some Lorem Ipsum text in it. We add an
-    `amp-orientation-observer` element as child of the scene to monitor the device's position.
-    Let's take a look at the details:</p>
-    <ul>
-      <li>**`on:beta`**: This event is triggered by orientation observer as deivce orientation
-      along the `beta` axis changes. The event provides a percentage value
-      (decimal between 0 and 1) representing how far the device is within the `beta` axis.</li>
-      <li>**`anim.seekTo(percent=event.percent)`**: We will define an `amp-animation`
-      that will do the spinning in the next step, here we are coupling `amp-orientation-observer` and
-      `amp-animation` by triggering a `seekTo` action on the animation as `beta` events occurs.
-      This is how we specify that we like to progress through the animation
-      timeline as the device moves along the `beta` axis.</li>
-      <li>**`beta-range`**: Each axis has a range of degrees it tracks.
-      For the `beta` axis the default range is -180 to 180 degrees.
-      If you want to set the range to something custom as we do in this
-      case you can specify it using the `beta-range` attribute here.
-      In this sample we set the `beta-range` to "0 180" to make sure that
-      the text doesn't scroll beyond it's first paragraph.</li>
-    </ul>
+    Our scroll scene is a `div` with some Lorem Ipsum text in it. We add an `amp-orientation-observer` element as child of the scene to monitor the device's position. Let's take a look at the details:
+    - **`on:beta`**: This event is triggered by orientation observer as deivce orientation along the `beta` axis changes. The event provides a percentage value (decimal between 0 and 1) representing how far the device is within the `beta` axis.
+    - **`anim.seekTo(percent=event.percent)`**: We will define an `amp-animation` that will do the spinning in the next step, here we are coupling `amp-orientation-observer` and `amp-animation` by triggering a `seekTo` action on the animation as `beta` events occurs. This is how we specify that we like to progress through the animation timeline as the device moves along the `beta` axis.
+    - **`beta-range`**: Each axis has a range of degrees it tracks. For the `beta` axis the default range is -180 to 180 degrees. If you want to set the range to something custom as we do in this case you can specify it using the `beta-range` attribute here. In this sample we set the `beta-range` to "0 180" to make sure that the text doesn't scroll beyond it's first paragraph.
   -->
   <div id="scrollText">
     <amp-orientation-observer
@@ -174,9 +146,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   <!--
     ## Tilt based translation animations
 
-    Let's create a tilt based animation where the clock's hand moves
-    as you tilt the device along a specific axis. The first animation
-    is along the `beta` axis, to see this in action rotate your phone along the y axis.
+    Let's create a tilt based animation where the clock's hand moves as you tilt the device along a specific axis. The first animation is along the `beta` axis, to see this in action rotate your phone along the y axis.
   -->
 
   <div id="clock-scene-1" class="clock-scene">
@@ -191,9 +161,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   </div>
 
   <!--
-    The animation in this case is a rotation of the clock hand from
-    -180 degrees to 180 degrees to allow the hand to start and end at
-    the 12 o' clock position.
+    The animation in this case is a rotation of the clock hand from -180 degrees to 180 degrees to allow the hand to start and end at the 12 o' clock position.
   -->
 
   <amp-animation id="clockAnim1" layout="nodisplay">
@@ -230,10 +198,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   </div>
 
   <!--
-    The animation in this case is a rotation of the clock hand from
-    -270 degrees to 90 degrees to allow the hand to start and end at
-    the 12 o' clock position. The motion here is limited from the
-    9 o' clock position to the 3 o' clock position.
+    The animation in this case is a rotation of the clock hand from -270 degrees to 90 degrees to allow the hand to start and end at the 12 o' clock position. The motion here is limited from the 9 o' clock position to the 3 o' clock position.
   -->
 
   <amp-animation id="clockAnim2" layout="nodisplay">
@@ -271,9 +236,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   </div>
 
   <!--
-    The animation in this case is a rotation of the clock hand from
-    90 degrees to -270 degrees to allow the hand to start and end at
-    the 12 o' clock position.
+    The animation in this case is a rotation of the clock hand from 90 degrees to -270 degrees to allow the hand to start and end at the 12 o' clock position.
   -->
 
   <amp-animation id="clockAnim3" layout="nodisplay">

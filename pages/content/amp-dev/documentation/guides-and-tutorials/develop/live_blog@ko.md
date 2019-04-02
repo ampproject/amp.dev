@@ -70,7 +70,7 @@ $title: 라이브 블로그 만들기
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플],[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}).url.path}})을 참조하세요.
+호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플],[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}).url.path}})을 참조하세요.
 
 블로그 게시물의 크기가 `data-max-items-per-page`로 지정한 최대 항목 수를 초과했다면 오래된 블로그 항목은 2페이지와 같이 '다음' 페이지에 표시됩니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})가 주기적으로 서버를 폴링하여 항목이 변경되지 않았는지 확인하므로 사용자가 첫 번째 페이지에 있지 않으면 서버를 폴링하지 않아도 됩니다.
 
@@ -88,4 +88,4 @@ AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.co
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 참조 문서
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [AMP By Example의 라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [AMP By Example의 라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

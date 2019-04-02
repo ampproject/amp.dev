@@ -177,10 +177,8 @@ class Pipeline {
    * to the documentation/components collection
    * @return {Promise}
    */
-  async importReference() {
+  importReference() {
     const importer = new ComponentReferenceImporter();
-    await importer.initialize();
-
     return importer.import();
   }
 
@@ -188,10 +186,8 @@ class Pipeline {
    * Imports spec docs defeind in platform/imports/spec.json
    * @return {Promise}
    */
-  async importSpec() {
+  importSpec() {
     const importer = new SpecImporter();
-    await importer.initialize();
-
     return importer.import();
   }
 

@@ -14,7 +14,7 @@ This guide provides instructions and best practices for displaying ads on your A
 In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) component to your AMP page.
 
 [tip type="tip"]
-**TIP –** See [AMP By Example for a live demo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) that demonstrates adding an amp-ad tag to an AMP page.
+**TIP –** See [AMP By Example for a live demo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) that demonstrates adding an amp-ad tag to an AMP page.
 [/tip]
 
 Let's walk through the steps of adding the component so you can display ads on your AMP page.
@@ -136,12 +136,12 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 ### Innovation: Offer the most engaging ad products
 
 *   **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    *   [Ads in a carousel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [Ads in a lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [Ads in a carousel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Ads in a lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   ... and [more]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    *   [Sticky Ads]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [Sticky Ads]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Additional resources
 

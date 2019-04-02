@@ -15,7 +15,9 @@
  */
 
 const octonode = require('octonode');
+const {promisify} = require('util');
 const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
 const path = require('path');
 const {Signale} = require('signale');
 const config = require('../config.js');
@@ -46,25 +48,64 @@ class GitHubImporter {
   constructor() {
     this._log = log;
     checkCredentials();
-  }
-
-  async initialize() {
-    this._log.start('Instantiating GitHub client ...');
-
     this._github = octonode.client(CLIENT_TOKEN || {
       'id': CLIENT_ID,
       'secret': CLIENT_SECRET,
     });
-
     this._repository =
       this._github.repo(config.options['remote-amphtml-repository'] || 'ampproject/amphtml');
-    this._latestReleaseTag = await this._fetchLatestReleaseTag();
+  }
+  /**
+   * Downloads a path/document from GitHub and returns its contents
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {Object} A object containing all information
+   */
+  async fetchJson(filePath, master=false) {
+    return this.fetchContents_(filePath, master);
+  }
+  /**
+   * Downloads a path/document from GitHub and returns its contents
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {Document} A document object containing all information
+   */
+  async fetchDocument(filePath, master=false) {
+    const data = await this.fetchContents_(filePath, master);
+    if (data && data.content !== undefined && !data.content.length) {
+      this._log.info(`${filePath} is empty. Skipping ...`);
+      return '';
+    }
+
+    const buf = Buffer.from(data[0].content || data, 'base64').toString();
+    return new Document(filePath, buf);
+  }
+
+  async fetchContents_(filePath, master=false) {
+    if (!filePath) {
+      return Promise.reject(new Error('Can not download from undefined path.'));
+    }
+    if (LOCAL_AMPHTML_REPOSITORY && path.extname(filePath)) {
+      this._log.await(`Reading ${filePath} from local disk ...`);
+      return readFileAsync(path.resolve(LOCAL_AMPHTML_REPOSITORY, filePath), 'utf-8');
+    }
+
+    if (master) {
+      this._log.await(`Downloading ${filePath} from remote master...`);
+      return this._repository.contentsAsync(filePath);
+    }
+    const branch = await this._fetchLatestReleaseTag();
+    this._log.await(`Downloading ${filePath} from remote [${branch}]...`);
+    return this._repository.contentsAsync(filePath, branch);
   }
 
   _fetchLatestReleaseTag() {
+    if (this.latestReleaseTag_) {
+      return this.latestReleaseTag_;
+    }
     this._log.await('Fetching latest release tag ...');
 
-    return new Promise((resolve, reject) => {
+    this.latestReleaseTag_ = new Promise((resolve, reject) => {
       this._github.get('/repos/ampproject/amphtml/releases/latest', {}, (err, status, body) => {
         if (body.tag_name) {
           resolve(body.tag_name);
@@ -80,48 +121,7 @@ class GitHubImporter {
       this._log.fatal(err);
       return null;
     });
-  }
-
-  /**
-   * Downloads a path/document from GitHub and returns its contents
-   * @param  {String} path Path to the file
-   * @param  {Boolean} stripTitle Whether to remove the first markdown heading to avoid double titles
-   * @return {Document}    A document object containing all information
-   */
-  _fetchDocument(filePath) {
-    if (!filePath) {
-      this._log.warn('Can not download from undefined path.');
-      return new Promise((resolve) => {
-        resolve(null);
-      });
-    }
-
-    return new Promise((resolve) => {
-      const process = (function(err, data) {
-        if (err) {
-          this._log.fatal(`Error while downloading ${filePath}`, err);
-          throw err;
-        }
-
-        if (data && data.content !== undefined && !data.content.length) {
-          this._log.info(`${filePath} is empty. Skipping ...`);
-          return;
-        }
-
-        let contents = new Buffer(data.content || data, 'base64');
-        contents = contents.toString();
-
-        resolve(new Document(filePath, contents));
-      }).bind(this);
-
-      if (LOCAL_AMPHTML_REPOSITORY) {
-        this._log.await(`Reading ${filePath} from local disk ...`);
-        fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, filePath), process);
-      } else {
-        this._log.await(`Downloading ${filePath} from remote ...`);
-        this._repository.contents(filePath, this._latestReleaseTag, process);
-      }
-    });
+    return this.latestReleaseTag_;
   }
 }
 

@@ -31,7 +31,7 @@ yang ditetapkan oleh atribut width dan height yang ditentukan. Cobalah dengan me
 
 [tip type="success"]
 
-Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
+Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -99,7 +99,7 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
 
 [tip type="success"]
 
-Kunjungi halaman [Mendemonstrasikan tata letak AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar. Anda juga dapat menemukan lebih banyak informasi di [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
+Kunjungi halaman [Mendemonstrasikan tata letak AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar.
 
 [/tip]
 

@@ -1,25 +1,23 @@
 <!---
 
-category: 'user-consent'
 teaserImage: '/static/samples/img/teaser/external_user_consentflow.jpg'
 
 --->
+
 <!--
   ## Introduction
 
-  Sometimes publishers want to collect user consent using external prompt UI flow with iframes. This sample demonstrates
-  how you can use `amp-consent` together with `amp-iframe` to achieve this. In this sample we'll build a
-  consent dialog from an iframe.
+  Sometimes publishers want to collect user consent using external prompt UI flow with iframes. This sample demonstrates how you can use `amp-consent` together with `amp-iframe` to achieve this. In this sample we'll build a consent dialog from an iframe.
 -->
 <!-- -->
 <!doctype html>
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="/user_consent/external_user_consent_flow/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <title>External Consent Prompt Dialog</title>
+  <title>External User Consent Flow</title>
   <!-- ## Setup -->
   <!--
   We need to import both, the `amp-consent` ...
@@ -65,14 +63,13 @@ teaserImage: '/static/samples/img/teaser/external_user_consentflow.jpg'
 <body>
   <!-- ## Defining the Consent Flow -->
   <!--
-    We define a basic consent flow, similar to [this sample](/user_consent/basic_user_consent_flow/).
-    The consent dialog is from a CORS iframe loaded with the `amp-iframe` component
+    We define a basic consent flow, similar to [this sample](/user_consent/basic_user_consent_flow/). The consent dialog is from a CORS iframe loaded with the `amp-iframe` component
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
       "consents": {
           "consent1": {
-            "checkConsentHref": "/samples_templates/consent/getConsent",
+            "checkConsentHref": "<% hosts.backend %>/samples_templates/consent/getConsent",
             "promptUI": "myConsentFlow"
           }
       },
@@ -83,7 +80,7 @@ teaserImage: '/static/samples/img/teaser/external_user_consentflow.jpg'
         <amp-iframe
           layout="fill"
           sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-            src="<% api.host %>/iframe/external-consent-iframe.html">
+            src="<% hosts.api %>/iframe/external-consent-iframe.html">
             <div placeholder>Loading</div>
         </amp-iframe>
       </div>
@@ -96,12 +93,14 @@ teaserImage: '/static/samples/img/teaser/external_user_consentflow.jpg'
   <!-- ## Consent Dialog Iframe -->
   <!--
     The consent dialog iframe can inform  the `amp-consent` component user's choice through postMessages.
-    ```html
+
+    ```js
     window.parent.postMessage({
       type: 'consent-response',
       action: 'accept'
     }, '*');
     ```
+
     Here action can be either `'accept'`, `'reject'` or `'dismiss'`.
   -->
 
@@ -113,6 +112,5 @@ teaserImage: '/static/samples/img/teaser/external_user_consentflow.jpg'
   -->
   <amp-img data-block-on-consent src="/static/samples/img/landscape_lake_300x201.jpg" width="300" height="201">
   </amp-img>
-
 </body>
 </html>

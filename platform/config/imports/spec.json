@@ -66,7 +66,7 @@
 		"formats": ["ads"]
     },
     {
-        "title": "AMPHTML ad specification",
+        "title": "AMP for Ads specification",
         "order": 3,
         "from": "extensions/amp-a4a/amp-a4a-format.md",
         "to": "documentation/guides-and-tutorials/learn/a4a_spec.md",
@@ -89,7 +89,7 @@
 		"formats": ["websites"]
     },
     {
-        "title": "AMPHTML email specification",
+        "title": "AMP for Email specification",
         "order": 3,
         "from": "spec/amp-email-format.md",
         "to": "documentation/guides-and-tutorials/learn/amp-email-format.md",

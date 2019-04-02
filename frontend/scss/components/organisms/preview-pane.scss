@@ -1,0 +1,77 @@
+/*
+
+###################################
+### ORGANISM: preview-pane ########
+###################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_icon.scss';
+@import 'components/atoms/_color.scss';
+
+
+.#{utility('preview-pane')} {
+  display: flex;
+  width: 100vw;
+  min-height: calc(100vh - 55px);
+  align-items: center;
+  justify-content: center;
+}
+
+.#{organism('preview-pane')} {
+  position: relative;
+  width: 411px;
+  height: 731px;
+  box-shadow: 0 30px 30px -15px fade_out(color('black'), 0.9);
+  border: 1px fade_out(color('black'), 0.9) solid;
+  background: color('white');
+
+  @media (max-height: 896px) {
+    transform: scale(0.9);
+  }
+
+  @media (max-height: 810px) {
+    transform: scale(0.85);
+  }
+
+  @media (max-height: 786px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-height: 719px) {
+    transform: scale(0.65);
+  }
+
+  &-tablet {
+    width: 768px;
+    height: 1026px;
+    transform: scale(0.8);
+
+    @media (max-height: 896px) {
+      transform: scale(0.7);
+    }
+
+    @media (max-height: 810px) {
+      transform: scale(0.6);
+    }
+
+    @media (max-height: 786px) {
+      transform: scale(0.5);
+    }
+
+    @media (max-height: 719px) {
+      transform: scale(0.4);
+    }
+  }
+
+  &-desktop {
+    width: 90vw;
+    height: 90vh;
+  }
+}

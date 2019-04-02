@@ -4,7 +4,7 @@ $title: Criar um blog ao vivo
 
 Os blogs ao vivo são páginas da Web atualizadas com frequência durante eventos em andamento, como competições esportivas ou eleições. É possível implementar um blog ao vivo nas AMP por meio do componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
-Este tutorial oferece uma visão geral sobre o componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) e se concentra em alguns detalhes de implementação dos blogs ao vivo, como a [paginação](#pagination) e os [links diretos](#deeplinking). A [amostra de blog ao vivo]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) do AMP By Example será usada para ilustrar a implementação de blogs ao vivo nas AMP.
+Este tutorial oferece uma visão geral sobre o componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) e se concentra em alguns detalhes de implementação dos blogs ao vivo, como a [paginação](#pagination) e os [links diretos](#deeplinking). A [amostra de blog ao vivo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) do AMP By Example será usada para ilustrar a implementação de blogs ao vivo nas AMP.
 
 [tip type="success"]
 
@@ -70,7 +70,7 @@ Com a paginação, o código simples que usamos antes ficará assim:
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-Você precisa atualizar a página hospedada para preencher os itens de navegação corretamente. Por exemplo, na [amostra de blog ao vivo]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}), renderizamos a página por meio de um modelo no servidor e usamos um parâmetro de consulta para especificar o primeiro item do blog que deverá ser exibido na página. Limitamos o tamanho da página a 5 itens. Portanto, se o servidor tiver gerado mais de 5 itens, quando um usuário for para a página principal, ela mostrará o elemento "Próxima" na área de navegação. Consulte [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) para saber mais.
+Você precisa atualizar a página hospedada para preencher os itens de navegação corretamente. Por exemplo, na [amostra de blog ao vivo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}), renderizamos a página por meio de um modelo no servidor e usamos um parâmetro de consulta para especificar o primeiro item do blog que deverá ser exibido na página. Limitamos o tamanho da página a 5 itens. Portanto, se o servidor tiver gerado mais de 5 itens, quando um usuário for para a página principal, ela mostrará o elemento "Próxima" na área de navegação. Consulte [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) para saber mais.
 
 Quando o tamanho das postagens do blog ultrapassar o número máximo de itens especificado por `data-max-items-per-page`, os itens mais antigos serão exibidos nas páginas seguintes (por exemplo, na página 2). Como [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) pesquisa o servidor regularmente para ver se há alguma alteração nos itens, não será preciso fazer essa pesquisa se o usuário não estiver na primeira página.
 
@@ -80,7 +80,7 @@ Quando o tamanho das postagens do blog ultrapassar o número máximo de itens es
 
 Ao publicar uma postagem do blog, é importante poder criar links diretos para a postagem, porque isso permite o uso de recursos como o compartilhamento. Com o [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), basta usar o `id` do item do blog para criar um link direto. Por exemplo, na amostra [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3), é possível navegar diretamente para a postagem do blog com o código `post3`.
 
-O AMP By Example usa um cookie na [amostra de blog ao vivo]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) para gerar conteúdo novo. Assim, se for a primeira vez que você acessa a página, talvez a postagem com código "post3" não esteja disponível, mas você será redirecionado para a primeira postagem.
+O AMP By Example usa um cookie na [amostra de blog ao vivo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) para gerar conteúdo novo. Assim, se for a primeira vez que você acessa a página, talvez a postagem com código "post3" não esteja disponível, mas você será redirecionado para a primeira postagem.
 
 ## Recursos
 
@@ -88,4 +88,4 @@ Saiba mais com estes recursos:
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [amostra de blog ao vivo no AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [amostra de blog ao vivo no AMP By Example]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

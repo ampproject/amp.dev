@@ -211,4 +211,4 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`]({
 
 作为对 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 的最后一次试用，请尝试创建一小段文字，例如很高（假设高度值为 400）的“Hello”，并将 max-font-size 属性值保留为 42。最终网页会是什么样子？文字会垂直居中吗？或者，[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 标记的高度会缩小以适应最大字号吗？根据您已了解的 AMP 布局系统相关知识，请先试着回答上述问题，然后再试用代码！
 
-要想详细了解 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})，请参阅 [AMP by Example 在线演示]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fit-text.html', locale=doc.locale).url.path}})。
+要想详细了解 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})，请参阅 [AMP by Example 在线演示]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fit-text.html', locale=doc.locale).url.path}})。

@@ -10,4 +10,4 @@ To learn more, visit the following resources:
 
 - [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 - [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
-- ["Comment Section" Example]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Comment_Section.html', locale=doc.locale).url.path}})
+- ["Comment Section" Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/Comment_Section.html', locale=doc.locale).url.path}})

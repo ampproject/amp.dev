@@ -70,7 +70,7 @@ Con la paginación, el código de antes se convierte en lo siguiente:
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-Eres tú quien tiene que rellenar los elementos de navegación correctamente actualizando la página alojada. Por ejemplo, en el [blog en directo de ejemplo]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) nosotros procesamos la página mediante una plantilla de servidor y usamos un parámetro de consulta para especificar cuál debe ser el primer elemento del blog en la página. Limitamos el tamaño de la página a 5 elementos. Así, si el servidor genera más de 5 elementos cuando un usuario llega a la primera página, la página muestra el elemento "Next" (Siguiente) en el área de navegación. Para obtener más información, consulta [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
+Eres tú quien tiene que rellenar los elementos de navegación correctamente actualizando la página alojada. Por ejemplo, en el [blog en directo de ejemplo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) nosotros procesamos la página mediante una plantilla de servidor y usamos un parámetro de consulta para especificar cuál debe ser el primer elemento del blog en la página. Limitamos el tamaño de la página a 5 elementos. Así, si el servidor genera más de 5 elementos cuando un usuario llega a la primera página, la página muestra el elemento "Next" (Siguiente) en el área de navegación. Para obtener más información, consulta [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}).
 
 Cuando la cantidad de entradas del blog sea superior al número máximo de elementos establecidos en `data-max-items-per-page`, los elementos más antiguos del blog se mostrarán en las páginas siguientes; por ejemplo, en la página 2. El componente [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) busca en el servidor a intervalos para ver si hay algún cambio en los elementos, pero no es necesario buscar en el servidor si el usuario no está en la primera página.
 
@@ -80,7 +80,7 @@ Puedes añadir a la página el atributo inhabilitado para desactivar el mecanism
 
 Cuando publicas una entrada en el blog, es importante poder enlazarla de forma profunda para habilitar funciones (por ejemplo, para poder compartirla). Con [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), solo hay que usar el atributo `id` del elemento del blog para realizar enlaces profundos. Por ejemplo, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) te permite navegar directamente a la entrada del blog con el ID `post3`.
 
-AMP By Example usa una cookie en el [blog en directo de ejemplo]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) para generar contenido actualizado, así que si es la primera vez que llegas a la página, la entrada con el ID `post3` quizá no esté disponible. En ese caso, serás redirigido a la primera entrada.
+AMP By Example usa una cookie en el [blog en directo de ejemplo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) para generar contenido actualizado, así que si es la primera vez que llegas a la página, la entrada con el ID `post3` quizá no esté disponible. En ese caso, serás redirigido a la primera entrada.
 
 ## Recursos
 
@@ -88,4 +88,4 @@ Consulta los siguientes recursos para obtener más información:
 
 - Documentación de referencia de [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [Ejemplo de blog en directo de AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [Ejemplo de blog en directo de AMP By Example]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

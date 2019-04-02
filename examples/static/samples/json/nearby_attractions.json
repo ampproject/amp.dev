@@ -1,0 +1,19 @@
+{
+    "items": [{
+        "attraction": "Hyde Park",
+        "type": "park",
+        "url": "/documentation/examples/e-commerce/hotel"
+    }, {
+        "attraction": "The National Galley",
+        "type": "gallery",
+        "url": "/documentation/examples/e-commerce/hotel"
+    }, {
+        "attraction": "Victoria and Albert Museum",
+        "type": "fancy",
+        "url": "/documentation/examples/e-commerce/hotel"
+    }, {
+        "attraction": "Royal Academy of Arts",
+        "type": "theatre",
+        "url": "/documentation/examples/e-commerce/hotel"
+    }]
+}

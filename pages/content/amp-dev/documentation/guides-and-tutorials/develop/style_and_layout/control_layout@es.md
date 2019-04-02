@@ -31,7 +31,7 @@ determinada por la anchura y la altura especificadas. Puedes probarlo cambiando 
 
 [tip type="success"]
 
-Puedes ver demostraciones comparativas en directo de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
+Puedes ver demostraciones comparativas en directo de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -99,7 +99,7 @@ Se pueden asignar los siguientes valores al atributo `layout`:
 
 [tip type="success"]
 
-Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}). También encontrarás más información en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
+Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}).
 
 [/tip]
 

@@ -183,8 +183,16 @@ if (!config.isDevMode()) {
     }
 
     try {
+      // Check if there's a manually filtered variant ...
+      const format = getFilteredFormat(request);
+      const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+      if (fs.existsSync(utils.project.pagePath(manualRequestPath))) {
+        // ... and if there is one vend this
+        requestPath = manualRequestPath;
+      }
+
       const page = await readFileAsync(utils.project.pagePath(requestPath));
-      const filteredPage = new FilteredPage(getFilteredFormat(request), page, true);
+      const filteredPage = new FilteredPage(format, page, true);
       response.send(filteredPage.content);
       return next();
     } catch (e) {

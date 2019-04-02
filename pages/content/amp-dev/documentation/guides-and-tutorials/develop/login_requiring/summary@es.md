@@ -7,4 +7,4 @@ Para obtener más información, consulta los siguientes recursos:
 
 - [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 - [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
-- [Ejemplo "Sección de comentarios"]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Comment_Section.html', locale=doc.locale).url.path}})
+- [Ejemplo "Sección de comentarios"]({{g.doc('/content/amp-dev/documentation/examples/documentation/Comment_Section.html', locale=doc.locale).url.path}})

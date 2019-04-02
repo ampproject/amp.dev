@@ -78,7 +78,7 @@
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
-<div class="ap-m-teaser ap-m-teaser-component" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
+<div class="ap-m-teaser ap-m-teaser-component" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% if teaser_doc.formats %}
@@ -102,10 +102,10 @@
     </div>
   </a>
 </div>
-{% elif teaser_doc.view == '/views/examples/manual.j2' %}
+{% elif teaser_doc.view == '/views/examples/documentation.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
-<div class="ap-m-teaser ap-m-teaser-example" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.collection.title|slug }}'">
+<div class="ap-m-teaser ap-m-teaser-example ap--{{ teaser_doc.formats[0] }}" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ap-m-teaser-info-trigger">
     <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used

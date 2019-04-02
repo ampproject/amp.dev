@@ -13,10 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+require('module-alias/register');
 
 const {GitHubImporter} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
+
+const {Signale} = require('signale');
+
+const log = new Signale({
+  'interactive': false,
+  'scope': 'GitHub Importer',
+});
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
@@ -26,10 +34,14 @@ const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
 // ... this path
 const BUILT_IN_PATH = 'builtins';
 
-class ComponentReferenceImporter extends GitHubImporter {
-  async import() {
-    this._log.start('Beginning to import extension docs ...');
-    await this._importExtensionsDocs();
+class ComponentReferenceImporter {
+  constructor(githubImporter=new GitHubImporter()) {
+    this.githubImporter_ = githubImporter;
+  }
+
+  import() {
+    log.start('Beginning to import extension docs ...');
+    return this._importExtensionsDocs();
   }
 
   /**
@@ -39,7 +51,7 @@ class ComponentReferenceImporter extends GitHubImporter {
    */
   async _importExtensionsDocs() {
     // Gives the contents of ampproject/amphtml/extensions
-    let extensions = await this._repository.contentsAsync('extensions', this._latestReleaseTag);
+    let extensions = await this.githubImporter_.fetchJson('extensions');
 
     // As inside /extensions each component has its own folder filter
     // down by directory
@@ -56,7 +68,7 @@ class ComponentReferenceImporter extends GitHubImporter {
       const document = await this._findExtensionDoc(extension);
 
       if (!document) {
-        this._log.warn(`No matching document for component: ${extension.name}`);
+        log.warn(`No matching document for component: ${extension.name}`);
       } else {
         this._setMetadata(extension.name, document);
         savedDocuments.push(this._saveDocument(extension.name, document));
@@ -135,7 +147,7 @@ class ComponentReferenceImporter extends GitHubImporter {
    * @return {Promise} [description]
    */
   async _findExtensionDoc(extension) {
-    let files = await this._repository.contentsAsync(extension.path, this._latestReleaseTag);
+    let files = await this.githubImporter_.fetchJson(extension.path);
     files = files[0];
 
     // Find the Markdown document that is named like the extension
@@ -148,22 +160,18 @@ class ComponentReferenceImporter extends GitHubImporter {
     }
 
     if (!documentPath) {
-      this._log.warn(`No matching document for component: ${extension.name}`);
+      log.warn(`No matching document for component: ${extension.name}`);
       return;
     }
 
-    return this._fetchDocument(documentPath);
+    return this.githubImporter_.fetchDocument(documentPath);
   }
 }
 
 // If not required, run directly
 if (!module.parent) {
   const importer = new ComponentReferenceImporter();
-
-  (async () => {
-    await importer.initialize();
-    await importer.import();
-  })();
+  importer.import().catch((err) => console.log(err));
 }
 
 module.exports = ComponentReferenceImporter;

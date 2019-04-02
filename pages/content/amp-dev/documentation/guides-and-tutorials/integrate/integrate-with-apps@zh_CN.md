@@ -69,7 +69,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 借助 Google 的 AMP URL API，
 您可以检索与给定网址列表匹配的 AMP HTML 网址（[官方文档](https://developers.google.com/amp/cache/use-amp-url)/
-[演示]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）。这些网址
+[演示]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）。这些网址
 无需是规范版本。如果存在 AMP 版本，响应中将包含
 原始 AMP 网址和 Google AMP Cache 中缓存的 AMP 网页对应的
 网址。

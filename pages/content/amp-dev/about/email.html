@@ -25,7 +25,7 @@ benefits: !g.yaml /content/shared/data/benefits.yaml
           <h1 class="ap-o-stage-content-headline">Use AMP to send interactive, dynamic emails.</h1>
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email/index.md', locale=doc.locale).url.path }}" class="ap-o-stage-content-button ap-a-btn">Get started</a>
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email.md', locale=doc.locale).url.path }}?format=email" class="ap-o-stage-content-button ap-a-btn">Get started</a>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ benefits: !g.yaml /content/shared/data/benefits.yaml
       <p>AMP for email allows senders to include AMP components inside rich engaging emails, making modern app functionality available within email. The AMP email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMP emails to interact dynamically with content directly in the message.</p>
       <p>More than 270 billion emails are sent every day, it is the pillar of many consumer and enterprise workflows. However the content that is sent in an email message is still limited – messages are static, can become out of date, and are not actionable without opening a browser. AMP email seeks to enhance and modernize the email experience through added support for dynamic content and interactivity while keeping users safe.</p>
       <div class="ap-o-component-visual-link">
-        <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email/index.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
+        <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>

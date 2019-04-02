@@ -33,16 +33,16 @@ format_explainer:
 
 sampler:
   - title: AMP Website
-    url: /static/samples/standalone/amp-website.html
+    url: /static/samples/standalone/amp-website/
     line: "56"
   - title: AMP Story
-    url: /static/samples/standalone/amp-story.html
-    line: "0"
+    url: /static/samples/standalone/amp-story/
+    line: "487"
   - title: AMP Email
-    url: /static/samples/standalone/amp-email.html
-    line: "0"
+    url: /static/samples/standalone/amp-email/
+    line: "90"
   - title: AMP Ad
-    url: /static/samples/standalone/amp-ad.html
+    url: /static/samples/standalone/amp-ad/
     line: "0"
 
 success_stories:
@@ -246,8 +246,8 @@ success_stories:
     <amp-state id="sampler">
       <script type="application/json">
       [{% for sample in doc.sampler %}
-        {% set embed_url = playground_url + '/embed#mode=responsive&line=' + sample.line + '&url=' + sample.url %}
-        {% set standalone_url = playground_url + '/#url=' + sample.url %}
+        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + sample.line + '&url=' + sample.url %}
+        {% set standalone_url = playground_url + '/?url=' + sample.url %}
         {
           "title": "{{ sample.title }}",
           "url": "{{ sample.url|safe }}",
@@ -282,8 +282,8 @@ success_stories:
 
         <div class="ap-o-sampler-header">AMPHTML Playground</div>
 
-        {% set embed_url = playground_url + '/embed#mode=responsive&line=' + doc.sampler[0].line + '&url=' + doc.sampler[0].url %}
-        {% set standalone_url = playground_url + '/#url=' + doc.sampler[0].url %}
+        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + doc.sampler[0].line + '&url=' + doc.sampler[0].url %}
+        {% set standalone_url = playground_url + '/?url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
             height="450px"
@@ -315,7 +315,7 @@ success_stories:
         </div>
 
         <div class="ap-o-sampler-link">
-          <a href="{{ playground_url }}#url={{ doc.sampler[0].url }}"
+          <a href="{{ playground_url }}?url={{ doc.sampler[0].url }}"
             [href]="sampler[activeSample].standaloneUrl"
             class="ap-m-lnk">
             <div class="ap-a-ico ap-m-lnk-icon">

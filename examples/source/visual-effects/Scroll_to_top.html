@@ -1,17 +1,14 @@
 <!---
 
 preview: default
-category: 'visual-effects'
 teaserImage: '/static/samples/img/teaser/scroll_to_top.jpg'
 
 --->
+
 <!--
   ## Introduction
 
-  [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer)
-  combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) can be used to
-  implement a scroll to top button. This pattern is often used in e-commerce pages where the user has to scroll
-  through a long list of items.
+  [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer) combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) can be used to implement a scroll to top button. This pattern is often used in e-commerce pages where the user has to scroll through a long list of items.
 
 -->
 
@@ -21,6 +18,7 @@ teaserImage: '/static/samples/img/teaser/scroll_to_top.jpg'
 
 <head>
   <meta charset="utf-8">
+  <title>Scroll to top</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
   <!--  Import amp-position-observer extension -->
@@ -29,7 +27,7 @@ teaserImage: '/static/samples/img/teaser/scroll_to_top.jpg'
   <!--  Import amp-animation extension -->
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
 
-  <link rel="canonical" href="<%host%>/visual_effects/scroll_to_top/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -38,8 +36,7 @@ teaserImage: '/static/samples/img/teaser/scroll_to_top.jpg'
 
     The CSS used for these samples are included here for reference.
 
-    These rules are simply needed to make the samples work but are not fundamental
-    to the concepts covered here.
+    These rules are simply needed to make the samples work but are not fundamental to the concepts covered here.
   -->
   <style amp-custom>
     :root {
@@ -90,8 +87,7 @@ teaserImage: '/static/samples/img/teaser/scroll_to_top.jpg'
 
   <!-- ## Position observer and animation
 
-    We add an element with id `top-page` that we can reference later for scrolling. We use `amp-position-observer` to start the animation when the user starts to scroll and the element
-    at the top is no longer visible.
+    We add an element with id `top-page` that we can reference later for scrolling. We use `amp-position-observer` to start the animation when the user starts to scroll and the element at the top is no longer visible.
 
   -->
   <h3 class="target">
@@ -104,8 +100,7 @@ teaserImage: '/static/samples/img/teaser/scroll_to_top.jpg'
   </h3>
 
   <!--
-    We use 2 `amp-animation` elements to trigger the visibility of the button.
-    The first one is for making the button visible...
+    We use 2 `amp-animation` elements to trigger the visibility of the button. The first one is for making the button visible...
   -->
   <amp-animation id="showAnim" layout="nodisplay">
     <script type="application/json">

@@ -10,7 +10,7 @@ En las páginas que no son AMP (HTML tradicional), si quieres mostrar anuncios, 
 
 [tip type="success"]
 
-Consulta la página [AMP By Example para ver una demostración en directo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) de cómo añadir una etiqueta "amp-ad" a una página AMP.
+Consulta la página [AMP By Example para ver una demostración en directo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) de cómo añadir una etiqueta "amp-ad" a una página AMP.
 
 [/tip]
 
@@ -133,12 +133,12 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 ### Innovación: ofrece los productos publicitarios que generan más interacción
 
 *   **Implementa anuncios en páginas AMP complementarias** para generar ingresos incrementales:
-    *   [Anuncios en un carrusel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [Anuncios en un lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [Anuncios en un carrusel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Anuncios en un lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   [Anuncios avanzados]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Utiliza formatos nuevos con los anuncios de venta directa** para proporcionar al equipo de ventas productos publicitarios innovadores y de elevado impacto:
-    *   [Anuncios fijos]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [Alfombra voladora]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [Anuncios fijos]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Alfombra voladora]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Recursos adicionales
 

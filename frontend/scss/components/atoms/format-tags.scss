@@ -8,7 +8,8 @@
 
 .#{atom('format-tag')} {
   display: inline-block;
-  padding: 0 4px;
+  padding: 0 12px;
+  border-radius: 14px;
   @include txt-font-accent;
   color: color('white');
 

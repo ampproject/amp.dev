@@ -70,7 +70,7 @@ Dengan paginasi, kode sederhana yang kami gunakan sebelumnya menjadi:
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-Anda bertanggung jawab untuk mengisi item navigasi dengan benar, dengan memperbarui halaman yang dihosting. Misalnya, dalam [contoh blog langsung]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}), kami merender halaman melalui template sisi server dan menggunakan parameter kueri untuk menetapkan item blog pertama apa yang seharusnya ditampilkan pada halaman. Kami membatasi ukuran halaman menjadi 5 item, jadi jika server telah membuat lebih dari 5 item, elemen "Berikutnya" akan muncul di area navigasi saat pengguna membuka halaman utama. Lihat [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) untuk mengetahui detailnya.
+Anda bertanggung jawab untuk mengisi item navigasi dengan benar, dengan memperbarui halaman yang dihosting. Misalnya, dalam [contoh blog langsung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}), kami merender halaman melalui template sisi server dan menggunakan parameter kueri untuk menetapkan item blog pertama apa yang seharusnya ditampilkan pada halaman. Kami membatasi ukuran halaman menjadi 5 item, jadi jika server telah membuat lebih dari 5 item, elemen "Berikutnya" akan muncul di area navigasi saat pengguna membuka halaman utama. Lihat [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) untuk mengetahui detailnya.
 
 Setelah ukuran postingan blog melampaui jumlah maksimum item yang ditetapkan oleh `data-max-items-per-page`, item blog yang lebih lama akan ditampilkan di halaman "Berikutnya", misalnya di halaman 2. Mengingat bahwa [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) memeriksa server pada interval waktu tertentu untuk melihat apakah ada perubahan pada item, pemeriksaan server tidak perlu dilakukan jika pengguna tidak membuka halaman pertama.
 
@@ -80,7 +80,7 @@ Anda dapat menambahkan atribut yang dinonaktifkan ke halaman yang dihosting untu
 
 Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
 
-AMP By Example menggunakan cookie di [contoh blog langsung]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) untuk membuat konten terkini. Karena itu, jika ini pertama kalinya Anda membuka halaman, postingan dengan ID “post3” mungkin tidak tersedia, dan Anda akan diarahkan ke postingan pertama.
+AMP By Example menggunakan cookie di [contoh blog langsung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) untuk membuat konten terkini. Karena itu, jika ini pertama kalinya Anda membuka halaman, postingan dengan ID “post3” mungkin tidak tersedia, dan Anda akan diarahkan ke postingan pertama.
 
 ## Referensi
 
@@ -88,4 +88,4 @@ Pelajari lebih lanjut dari referensi berikut:
 
 - Dokumentasi referensi [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [Contoh blog langsung di AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [Contoh blog langsung di AMP By Example]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

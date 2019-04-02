@@ -40,7 +40,7 @@ determined by the given width and height. Try it out by resizing this browser wi
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
 [tip type="tip"]
-**TIP –** See our side-by-side live demos of [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Live Demos on AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
+**TIP –** See our side-by-side live demos of [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Live Demos on AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
 [/tip]
 
 ## The layout attribute
@@ -106,7 +106,7 @@ The following values can be used in the `layout` attribute:
 </table>
 
 [tip type="tip"]
-**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing. You can also find more in [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
+**TIP –** Visit the [Demonstrating AMP layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) page to see how the various layouts respond to screen resizing.
 [/tip]
 
 ### What if width and height are undefined?

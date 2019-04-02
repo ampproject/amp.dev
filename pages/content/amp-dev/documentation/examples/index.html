@@ -22,7 +22,7 @@ teaser:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-{% include 'views/partials/sidebar.j2' %}
+{% include 'views/partials/example-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
@@ -42,37 +42,20 @@ teaser:
 
       <p>A hands-on introduction to Accelerated Mobile Pages (AMP) focusing on code and live samples. Learn how to create AMP pages and see examples for all AMP components.</p>
 
-      <hr>
-      {% set collections = g.collection('/content/amp-dev/documentation/examples').collections() %}
-
-      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-      <div class="ap-o-filter-bubbles-list">
-        <button class="ap-m-filter-bubble filtered"
-          [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-          on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
-          All
-        </button>
-        {% for collection in collections %}
-        <button class="ap-m-filter-bubble"
-          [class]="activeFilter.chosenFilter == '{{ collection.title|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ collection.title|slug }}' } })">
-          {{ collection.title }}
-        </button>
-        {% endfor %}
-      </div>
+      {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
+      {% include '/views/partials/category-filter.j2' %}
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
       <div class="ap-o-teaser-grid">
         {# Hardcode to a length of 9 teasers as there will be at least that much #}
         <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-          {% for collection in collections %}
-          {% for teaser_doc in collection.list_docs(locale=doc.locale) %}
-          {% include '/views/partials/teaser.j2' %}
-          {% endfor %}
+          {% for teaser_doc in g.collection('/content/amp-dev/documentation/examples/documentation').list_docs(locale=doc.locale, order_by='title') %}
+            {% include '/views/partials/teaser.j2' %}
           {% endfor %}
         </div>
       </div>
     </section>
   </div>
+  {% include 'views/partials/sidebar-toggle-visibility-observer.j2' %}
 </main>
 {% endblock %}

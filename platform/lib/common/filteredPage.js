@@ -17,6 +17,8 @@
 'use strict';
 
 const cheerio = require('cheerio');
+const URL = require('url').URL;
+const config = require('@lib/config.js');
 
 const FORMATS = ['websites', 'stories', 'ads', 'email'];
 
@@ -63,6 +65,7 @@ class FilteredPage {
       this._rewriteUrls();
       this._setActiveFormatToggle();
       this._removeStaleFilterClass();
+      this._removeEmptyFilterBubbles();
       this._addClassToBody();
     }
   }
@@ -111,8 +114,7 @@ class FilteredPage {
       filteredElement.remove();
     });
 
-    // Find possibly empty lists and remove them for ...
-    // a) component and default sidebar
+    // Find possibly empty lists and remove them from sidebars
     this._dom('.nav-list.level-2')
         .each((index, navList) => {
           navList = this._dom(navList);
@@ -121,6 +123,22 @@ class FilteredPage {
             navList.parent().remove();
           }
         });
+
+    // Remove empty top level categories from sidebar
+    this._dom('.nav-item.level-1')
+        .each((index, navItem) => {
+          navItem = this._dom(navItem);
+
+          // ... consider a category empty if there are no links in it
+          if (!navItem.has('a').length) {
+            navItem.remove();
+          }
+        });
+
+    // Remove eventually unnecessary tutorial dividers left by the
+    // previous transformation
+    this._dom('.nav-item-tutorial-divider:last-child,' +
+        '.nav-item-tutorial-divider:first-child').remove();
   }
 
   /**
@@ -131,25 +149,32 @@ class FilteredPage {
   _rewriteUrls() {
     this._dom('a').each((index, a) => {
       a = this._dom(a);
-      const href = a.attr('href') || '';
+      const url = new URL(a.attr('href') || '', config.hosts.platform.base);
+
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
-      if (!href.includes('?') && isFilterableRoute(href)) {
-        a.attr('href', `${href}?format=${this._format}`);
+      if (!url.searchParams.get('format') && isFilterableRoute(url.pathname)) {
+        url.searchParams.set('format', this._format);
+        a.attr('href', url.toString());
       }
     });
   }
 
   _setActiveFormatToggle() {
-    // Remove the current format from list of available ones
-    this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
-
     // Rewrite the active state (which is websites per default) to
     // the current active format
     const activeFormat = this._dom('.ap-m-format-toggle-selected');
+    if (activeFormat.length == 0) {
+      console.error('Page has no active format.');
+      return;
+    }
+
     activeFormat.html(activeFormat.html().replace(/websites/g, this._format));
     activeFormat.removeClass('ap-m-format-toggle-link-websites');
     activeFormat.addClass(`ap-m-format-toggle-link-${this._format}`);
+
+    // Remove the current format from list of available ones
+    this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
   }
 
   /**
@@ -167,6 +192,21 @@ class FilteredPage {
       filteredElement = this._dom(filteredElement);
 
       filteredElement.removeClass(filterClasses);
+    });
+  }
+
+  /**
+   * Checks if there are filter bubbles on the page and checks for possible
+   * matches for their filter, then removes them if there are none
+   * @return {undefined}
+   */
+  _removeEmptyFilterBubbles() {
+    this._dom('.ap-m-filter-bubble').each((index, filterBubble) => {
+      filterBubble = this._dom(filterBubble);
+      const category = filterBubble.data('category');
+      if (!this._dom(`.ap-m-teaser[data-category="${category}"]`).length && category) {
+        filterBubble.remove();
+      }
     });
   }
 

@@ -30,7 +30,7 @@ teaser:
     <section class="ap--content">
       {% include '/views/partials/sidebar-toggle-button.j2' %}
       <h1>The AMP component catalogue</h1>
-      
+
       <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
 
       {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
@@ -81,36 +81,9 @@ teaser:
       <hr>
 
       {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
-
-      <amp-state id="activeFilter">
-        <script type="application/json">
-          {
-            "chosenFilter": "none"
-          }
-        </script>
-      </amp-state>
-
-      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-      <div class="ap-o-filter-bubbles-list">
-        <button class="ap-m-filter-bubble filtered"
-          [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-          on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
-          name="all">
-          All
-        </button>
-        {% for category, components in categories %}
-        <button class="ap-m-filter-bubble"
-          [class]="activeFilter.chosenFilter == '{{ category|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
-          name="{{ category }}">
-          {{ category }}
-        </button>
-        {% endfor %}
-      </div>
+      {% include '/views/partials/category-filter.j2' %}
 
       {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-
-
       <div class="ap-o-teaser-grid">
         {# Hardcode to a length of 9 teasers as there will be at least that much #}
         <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
@@ -121,5 +94,6 @@ teaser:
       </div>
     </section>
   </div>
+  {% include 'views/partials/sidebar-toggle-visibility-observer.j2' %}
 </main>
 {% endblock %}

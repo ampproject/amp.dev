@@ -11,6 +11,12 @@
   top: 50px;
 }
 
+.#{utility('sidebar-toggle-visibility-observer')} {
+  position: absolute;
+  top: 85%;
+  height: 15%;
+}
+
 .#{atom('sidebar-toggle')} {
 
   &-input {
@@ -70,6 +76,7 @@
     }
     .label-title {
       padding: 5px 10px 5px 5px;
+      opacity: 0;
       margin-left: -5px;
       border-radius: 0 4px 4px 0;
       background: color('blue-ribbon');
@@ -98,7 +105,7 @@
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1440px) {
 
   display: inline-block;
 
@@ -129,7 +136,7 @@
           }
         }
 
-        &~ .ap--content  {
+        &~ .ap--content, &~ .ap--help  {
           grid-column-start: 2;
           padding-left: 80px;
           padding-right: 80px;
@@ -179,6 +186,7 @@
       }
       .label-title {
         padding: 5px 10px 5px 5px;
+        opacity: 0;
         margin-left: -5px;
         border-radius: 0 4px 4px 0;
         background: color('blue-ribbon');
@@ -189,4 +197,5 @@
       }
     }
   }
+
 }
