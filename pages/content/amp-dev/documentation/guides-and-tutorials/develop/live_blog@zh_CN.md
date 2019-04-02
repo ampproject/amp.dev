@@ -77,7 +77,7 @@ $title: 制作实时博客
 
 ### 深层链接
 
-在您发布博文时，务必要能够深层链接到该博文，以便启用分享等功能。借助 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})，您只需使用博客条目的 `id` 即可实现深层链接。例如，点击 [https://amp.dev/documentation/examples/news-publishing/live_blog/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/documentation/Live_Blog.html', locale=doc.locale).url.path}}#post3)({{g.doc('/content/amp-dev/documentation/examples/documentation/Live_Blog.html', locale=doc.locale).url.path}}#post3) 可以直接转到 ID 为 `post3` 的博文。
+在您发布博文时，务必要能够深层链接到该博文，以便启用分享等功能。借助 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})，您只需使用博客条目的 `id` 即可实现深层链接。例如，点击 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3) 可以直接转到 ID 为 `post3` 的博文。
 
 AMP By Example 在[实时博客示例]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})中使用 Cookie 生成新内容，因此如果您是首次进入到该网页，则可能无法访问 ID 为“post3”的博文；在这种情况下，系统会将您重定向到第一篇博文。
 

@@ -78,7 +78,7 @@ $title: 라이브 블로그 만들기
 
 ### 딥 링크
 
-블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://amp.dev/documentation/examples/news-publishing/live_blog/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/documentation/Live_Blog.html', locale=doc.locale).url.path}}#post3)({{g.doc('/content/amp-dev/documentation/examples/documentation/Live_Blog.html', locale=doc.locale).url.path}}#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
+블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
 
 AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)에서 쿠키를 사용하여 새 콘텐츠를 생성하므로 페이지에 처음 방문한 경우 ID가 'post3'인 게시물은 사용하지 못할 수 있으며, 이 경우 첫 번째 게시물로 리디렉션됩니다.
 
