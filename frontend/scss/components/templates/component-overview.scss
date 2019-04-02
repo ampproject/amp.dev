@@ -24,6 +24,10 @@ body {
 
 .#{template('component-overview')} {
 
+  @media (min-width: 768px){
+    height: 100vh;
+  }
+
   :target::before {
     height: 145px;
     margin-top: -145px;
@@ -72,12 +76,6 @@ body {
     }
   }
 
-  section {
-    &.#{utility('content')},
-    &.#{utility('teaser-grid')} {
-      
-    }
-  }
 
   &-anchor-list {
     position: sticky;

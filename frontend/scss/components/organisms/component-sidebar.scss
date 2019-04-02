@@ -27,8 +27,10 @@ nav[toolbar] {
   -webkit-overflow-scrolling: touch;
 
   @media (min-width: 768px){
-    height: auto;
-    overflow: auto;
+    height: 100vh;
+    position: sticky;
+    padding-top: 10px;
+    top: 0;
   }
 
   &::-webkit-scrollbar {
@@ -55,14 +57,13 @@ nav[toolbar] {
 }
 
 .#{organism('component-sidebar')} {
-  @include sidebar;
 
   &:before {
     z-index: 2;
   }
 
   .nav {
-    @include sidebar-nav;
+    // @include sidebar-nav;
 
     &-list {
       @include sidebar-nav-list;
@@ -179,4 +180,8 @@ nav[toolbar] {
   &-section {
     max-width: 100%;
   }
+}
+
+.#{utility('sidebar')} {
+  @include sidebar;
 }

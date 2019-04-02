@@ -82,7 +82,6 @@
   padding-left: 30px;
   padding-right: 30px;
   background: color('whisper');
-  box-shadow: 0 25px 40px 0 rgba(0,0,0,0.05);
 
   @media (min-width: 768px) {
     grid-column: 8 / 25;
@@ -115,6 +114,10 @@
     grid-column: 1 / 8;
     grid-row: span 6;
     margin-right: 20px;
+    height: 100vh;
+    position: sticky;
+    grid-row: 1;
+    top: 26px;
   }
 
   @media (min-width: 1024px) {

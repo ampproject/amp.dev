@@ -24,6 +24,9 @@ body {
 }
 
 .#{template('docs-detail')} {
+  @media (min-width: 768px){
+    height: 100vh;
+  }
 
   .#{utility('container')} {
     @include container;

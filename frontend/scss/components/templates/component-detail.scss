@@ -24,6 +24,10 @@ body {
 
 .#{template('component-detail')} {
 
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
+
   .#{utility('container')} {
     @include container;
     @include container-nogap;
@@ -33,6 +37,16 @@ body {
   .#{utility('help')} {
     @include content;
     @include content-white-bg;
+  }
+
+  .#{utility('help')} {
+      @media (min-width: 768px) {
+        grid-column: 8 / 20;
+      }
+
+      @media (min-width: 1024px) {
+        grid-column: 6 / 20;
+      }
   }
 
   .#{utility('sidebar')} {
