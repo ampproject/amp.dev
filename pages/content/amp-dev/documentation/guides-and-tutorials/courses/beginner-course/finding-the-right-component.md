@@ -1,7 +1,6 @@
 ---
 $title: Finding the Right Component
 $order: 4
-toc: true
 ---
 
 ## Navigating the AMP Component Documentation

@@ -1,7 +1,6 @@
 ---
 $title: Accepting User Input and Displaying Output
 $order: 2
-toc: true
 ---
 
 ## Building a Newsletter Subscription Form
