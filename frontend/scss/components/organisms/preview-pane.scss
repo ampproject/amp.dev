@@ -21,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
 }
 
 .#{organism('preview-pane')} {
@@ -127,4 +127,11 @@
       margin-top: 20px;
     }
   }
+
+  @media (max-width: 767px) {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 150px);
+    transform: none;
+  }
+
 }
