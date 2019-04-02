@@ -13,29 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 'use strict';
 
 const express = require('express');
-const utils = require('@lib/utils');
-const exampleBackend = require('@examples');
-
-const SOURCES_DEST = utils.project.absolute('/dist/examples/sources/');
+const {setNoCache} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
-const exampleSources = express.Router();
-const staticSources = express.static(SOURCES_DEST);
+const examples = express.Router();
 
-exampleSources.use('/documentation/examples/', exampleBackend);
-
-exampleSources.use('/documentation/examples/:category/:name/:snippetId?', (req, res, next) => {
-  req.url = `/${req.params.category}/${req.params.name}`;
-  if (req.params.snippetId && req.params.snippetId !== 'index.html') {
-    req.url += `-${req.params.snippetId}`;
-  }
-
-  req.url += '.html';
-  staticSources(req, res, next);
+examples.get('/time', (request, response) => {
+  setNoCache(response);
+  response.json({
+    time: new Date().toLocaleTimeString(),
+  });
 });
 
-module.exports = exampleSources;
+module.exports = examples;
