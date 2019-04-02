@@ -125,21 +125,6 @@
 
     &.#{organism('preview-pane')} {
       margin-top: 20px;
-      margin-bottom: 50px;
-
-      amp-ad {
-        margin-bottom: 10px;
-      }
-
-      &-mobile {
-        height: auto;
-        transform: scale(1);
-      }
     }
-  }
-
-  @media (max-width: 767px) {
-    width: 100vw;
-    transform: none;
   }
 }

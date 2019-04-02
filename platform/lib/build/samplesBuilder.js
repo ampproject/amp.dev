@@ -321,6 +321,16 @@ class SamplesBuilder {
   }
 
   /**
+   * Takes the path of the sample vinyl and creates a server relative URL
+   * to use for the source files
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @return {String}       The route
+   */
+  _getEmbedRoute(sample) {
+    return `/documentation/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/embed`;
+  }
+
+  /**
    * Creates a markdown document referencing the JSON that is going to be
    * created by _createDataSource
    * @param  {Vinyl} sample The sample from the gulp stream
@@ -503,9 +513,13 @@ class SamplesBuilder {
       }
 
       if (parsedSample.document.isAmpAds) {
-        embed.contents = Buffer.from(
-            nunjucks.renderString(this._cache[ADS_EMBED_TEMPLATE], parsedSample)
-        );
+        const adsEmbed = nunjucks.renderString(this._cache[ADS_EMBED_TEMPLATE], {
+          'metadata': parsedSample.document.metadata,
+          'canonical': `${config.getHost(config.hosts.platform)}${this._getDocumentationRoute(sample)}`,
+          'source': this._getSourceRoute(sample),
+          'title': parsedSample.document.metadata
+        });
+        embed.contents = Buffer.from(adsEmbed);
       }
 
       return [embed];
@@ -543,6 +557,7 @@ class SamplesBuilder {
         },
         'formats': [this._getSampleFormat(parsedSample)],
         'source': this._getSourceRoute(sample),
+        'embed': this._getEmbedRoute(sample),
       }, {'lineWidth': 500}),
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${preview.stem}.json`,
       '---',
