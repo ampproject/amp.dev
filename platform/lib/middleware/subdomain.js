@@ -105,7 +105,14 @@ class Subdomain {
       return new URL(requestPath, config.hosts.platform.base);
     }
     const documentUrl = new URL(playgroundDoc, config.hosts.platform.base);
-    return new URL(requestPath, documentUrl.toString());
+    const url = new URL(requestPath, documentUrl.toString());
+    // All subdomains redirect unknown requests. We have to make sure to
+    // always redirect to the platform to avoid redirect loops
+    if (config.hostNames.has(url.hostname)) {
+      url.hostname = config.hosts.platform.host;
+      url.port = config.hosts.platform.port;
+    }
+    return url;
   }
 
   async exists_(url) {

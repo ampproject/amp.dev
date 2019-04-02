@@ -27,6 +27,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const crypto = require('crypto');
 const readFileAsync = promisify(fs.readFile);
+const nunjucks = require('nunjucks');
 
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const utils = require('@lib/utils');
@@ -48,6 +49,8 @@ const PREVIEW_DEST = utils.project.absolute(`pages/${PREVIEW_POD_PATH}`);
 const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
 // Path to the story embed snippet
 const STORY_EMBED_SNIPPET = utils.project.absolute('frontend/js/story-progress.js');
+// Path to the ads embed template
+const ADS_EMBED_TEMPLATE = utils.project.absolute('frontend/templates/views/examples/embed-ads.j2');
 // Where to store the embeds for Grow
 const EMBED_DEST = utils.project.absolute('dist/examples/embeds');
 // Base to define the request path for Grow
@@ -71,11 +74,15 @@ class SamplesBuilder {
 
     // Used to cache various properties to save computing time
     this._cache = {};
+
+    // Nunjucks environment to render ads preview
+
   }
 
   async build(watch) {
     // Configure cache
     this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
+    this._cache[ADS_EMBED_TEMPLATE] = (await readFileAsync(ADS_EMBED_TEMPLATE)).toString();
     this._cache.categories = {};
 
     // If samples should be rebuild (due to architectural changes for example)
@@ -187,8 +194,13 @@ class SamplesBuilder {
    * @return {Promise}
    */
   async _parseSample(sample) {
+    const samplePath = sample.path;
+    // normalize sample path in case it's defined in a directory
+    if (sample.path.endsWith('/index.html')) {
+      sample.path = path.dirname(sample.path) + '.html';
+    }
     const platformHost = config.getHost(config.hosts.platform);
-    return await abe.parseSample(sample.path, {
+    return await abe.parseSample(samplePath, {
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'hosts': {
         'platform': platformHost,
@@ -276,7 +288,11 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getDocumentationRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/index.html`;
+    let base = `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    if (!base.endsWith('/index.html')) {
+      base += '/index.html';
+    }
+    return base;
   }
 
   /**
@@ -286,7 +302,8 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getPreviewRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/preview/index.html`;
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}` +
+      '/preview/index.html';
   }
 
   /**
@@ -296,7 +313,11 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getSourceRoute(sample) {
-    return `/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    let route = `/documentation/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    if (!route.endsWith('/index.html')) {
+      route += '/index.html'; // sample defines it's own directory
+    }
+    return route;
   }
 
   /**
@@ -466,16 +487,26 @@ class SamplesBuilder {
    * @return {Array}
    */
   _renderEmbed(sample, parsedSample) {
-    // Also render embed file for stories
-    if (parsedSample.document.isAmpStory) {
+    // Render embed file for stories enabling to jump to a stories page given
+    // via GET parameter, for ads to show in the preview
+    if (parsedSample.document.isAmpStory || parsedSample.document.isAmpAds) {
       const embed = sample.clone();
       embed.dirname = `${embed.dirname}/${this._getCategory(sample)}`;
       embed.basename = embed.basename.toLowerCase();
       embed.isEmbed = true;
-      embed.contents = Buffer.from(
-          parsedSample.source.replace('</body>',
-              `<script>${this._cache[STORY_EMBED_SNIPPET]}</script></body>`)
-      );
+
+      if (parsedSample.document.isAmpStory) {
+        embed.contents = Buffer.from(
+            parsedSample.source.replace('</body>',
+                `<script>${this._cache[STORY_EMBED_SNIPPET]}</script></body>`)
+        );
+      }
+
+      if (parsedSample.document.isAmpAds) {
+        embed.contents = Buffer.from(
+            nunjucks.renderString(this._cache[ADS_EMBED_TEMPLATE], parsedSample)
+        );
+      }
 
       return [embed];
     }

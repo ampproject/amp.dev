@@ -35,7 +35,7 @@ const routers = {
   'example': {
     'sources': require('@lib/routers/example/sources.js'),
     'embeds': require('@lib/routers/example/embeds.js'),
-    'api': require('@examples/api'),
+    'api': require('@examples'),
   },
   'static': require('@lib/routers/static.js'),
   'playground': require('../../playground/backend/'),
@@ -90,6 +90,9 @@ class Platform {
       }
       res.redirect('https://' + req.hostname + req.path);
     });
+
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
     this._enableCors();
     this.server.use(defaultCachingStrategy);
 
@@ -122,8 +125,9 @@ class Platform {
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
       routers.example.embeds,
       routers.example.sources,
+      routers.example.api,
     ])));
-    this.server.use('/documentation/examples/api', routers.example.api);
+    this.server.use('/documentation/examples', routers.example.api);
     this.server.use('/boilerplate', routers.boilerplate);
     this.server.use(routers.static);
     // Register the following router at last as it works as a catch-all
