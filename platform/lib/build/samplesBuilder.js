@@ -195,6 +195,7 @@ class SamplesBuilder {
     const platformHost = config.getHost(config.hosts.platform);
     return await abe.parseSample(samplePath, {
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
+      'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
       'hosts': {
         'platform': platformHost,
         'api': API_HOST,
