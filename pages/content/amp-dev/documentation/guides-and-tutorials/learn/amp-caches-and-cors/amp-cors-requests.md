@@ -3,7 +3,6 @@ $title: CORS in AMP
 $order: 12
 formats:
   - websites
-  - email
   - stories
   - ads
 ---

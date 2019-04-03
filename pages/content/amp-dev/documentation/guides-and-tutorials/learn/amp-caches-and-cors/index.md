@@ -24,10 +24,11 @@ Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Cache
 [video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Watch this video to learn why AMP Caches exist.']
 
 ## What AMP Caches are available?
-Currently, there are two AMP Cache providers:
+Currently, there are three AMP Cache providers:
 
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 AMP is an open ecosystem and the AMP Project actively encourages the development of more AMP Caches.  To learn about creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 

@@ -4,7 +4,6 @@ $order: 8
 toc: false
 formats:
   - websites
-  - email
   - stories
   - ads
 ---
