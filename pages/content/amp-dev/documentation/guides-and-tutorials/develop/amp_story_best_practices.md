@@ -301,7 +301,7 @@ Embeds can provide an added dimension to your story when used sparingly and pres
   </tr>
 </table>
 
-### Add Additional Content with Attachments 
+### Add additional content with attachments 
 
 Keep your AMP story streamlined by putting related content in attachments. This way, readers can easily dig deeper if they want to learn more about your story. You might use attachments for long blocks of text that don’t fit in the main story, or, if your story contains a highlight video, you might make the full video available as an attachment. Help readers navigate your content by designing the attachment to align with the rest of your story. 
 
