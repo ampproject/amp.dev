@@ -25,6 +25,7 @@ const examples = express.Router();
 examples.get('/query', (request, response) => {
   setImmutable(response);
   const queryString = JSON.stringify(request.query, null, 2);
+  /* eslint-disable max-len */
   response.send(`<!doctype html>
 <html ⚡ lang="en">
   <head>
@@ -42,6 +43,7 @@ examples.get('/query', (request, response) => {
   </body>
 </html>
 `);
+  /* eslint-enable max-len */
 });
 
 examples.get('/invalid-amp', (request, response) => {
