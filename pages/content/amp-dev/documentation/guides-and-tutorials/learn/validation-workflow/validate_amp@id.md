@@ -258,7 +258,7 @@ Setiap fitur memberikan beberapa informasi:
      dokumentasi untuk tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Tidak semua error menghasilkan
      link dokumentasi.
 
-Dengan membaca ulang [spek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Dengan membaca ulang [spek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 Untuk memahami daftar lengkap potensi error dengan lebih baik,
 baca [panduan Error Validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).

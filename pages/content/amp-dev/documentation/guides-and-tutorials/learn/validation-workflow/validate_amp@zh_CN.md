@@ -258,7 +258,7 @@ AMP 验证工具不仅能在开发过程中为您提供便利，还可供将您�
      是指 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 标记的文档。并非所有错误都会生成
      文档链接。
 
-再次仔细阅读[规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})之后，我们意识到我们在本该使用 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 标记的位置使用了 `<img>` 标记。
+再次仔细阅读[规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})之后，我们意识到我们在本该使用 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 标记的位置使用了 `<img>` 标记。
 
 要详细了解可能出现的错误的完整列表，
 请参阅 [AMP 验证错误指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}})。

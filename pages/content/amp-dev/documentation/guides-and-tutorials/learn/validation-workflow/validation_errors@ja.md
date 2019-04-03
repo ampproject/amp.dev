@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
-また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})にも必須タグについての説明があります。
+また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
 
@@ -104,7 +104,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 </table>
 
 タグはホワイトリストに登録されているため、許可されていないタグを網羅したリストはありません。
-ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})では
+ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})では
 許可されていないタグを大まかに定義しています。
 
 ### カスタム JavaScript が使用されている
@@ -724,7 +724,7 @@ CSS を実行してみてください。
 
 このエラーは、CSS 内のアットルールに関するものです。
 AMP で使用できるアットルールはごくわずかです
-（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})もご覧ください）。
+（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})もご覧ください）。
 たとえば、<code>@import</code> は許可されていません。
 検証エラーでは無効なルールが
 具体的に示されるため、

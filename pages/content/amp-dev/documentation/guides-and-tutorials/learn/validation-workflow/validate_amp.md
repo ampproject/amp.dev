@@ -265,7 +265,7 @@ Each tool gives several pieces of information:
      documentation for the [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
+Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
 
 To better understand the complete list of potential errors,
 see the [AMP Validation Errors guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).

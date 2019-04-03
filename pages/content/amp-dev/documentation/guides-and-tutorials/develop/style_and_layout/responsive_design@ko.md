@@ -16,7 +16,7 @@ $title: 반응형 AMP 페이지 만들기
 
 콘텐츠가 모든 기기의 브라우저 창에 맞게 조정될 수 있도록 웹페이지를 최적화하려면 `meta` 표시 영역 요소를 지정해야 합니다. 표시 영역 요소는 웹페이지의 표시 영역 비율과 크기를 조정하는 방법을 브라우저에 알려줍니다.
 
-그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
+그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">

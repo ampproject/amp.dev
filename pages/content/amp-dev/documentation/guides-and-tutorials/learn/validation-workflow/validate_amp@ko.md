@@ -257,7 +257,7 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
      [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그에 대한 문서입니다. 일부 오류는 문서 링크를
      생성하지 않습니다.
 
-[spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})을 신중히 다시 읽으면 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
+[spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})을 신중히 다시 읽으면 [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
 
 발생할 수 있는 오류의 전체 목록에 대해 자세히 알아보려면
 [AMP 유효성 오류 가이드]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}})를 참조하세요.
