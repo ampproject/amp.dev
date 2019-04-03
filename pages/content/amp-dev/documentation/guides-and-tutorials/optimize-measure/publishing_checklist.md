@@ -39,21 +39,11 @@ Learn more about accessing server data:
 *   [AMP CORS Library](https://www.npmjs.com/package/amp-toolbox-cors)
 
 
-#Test pages in the Google AMP Cache
-The Google AMP Cache stores valid AMP pages and provides consistently fast access to them. The [Google Top Stories Carousel with AMP](https://developers.google.com/search/docs/guides/mark-up-content#use-amp-html), for example, uses the Google AMP Cache to display articles. The cache stores images and fonts in addition to documents. This makes it important to test that your AMPs work correctly when loaded via the Google AMP Cache.
+# Test cached pages
+AMP Cache stores valid AMP pages and provides consistently fast access to them. Cache stores images and fonts in addition to documents. This makes it important to test that your AMPs work correctly when loaded via an AMP Cache.
 
-{{ image('/static/img/docs/amp_error.png', 385, 386, layout='intrinsic', alt='Image showing an error from the Google AMP Cache') }}
 
-Loading your AMP pages via the Google AMP Cache is easy. The Google AMP Cache URL is composed based on whether the source URL is available via HTTP or HTTPS:
-
-* HTTP: `https://cdn.ampproject.org/c/AMP_URL_WITHOUT_SCHEME`
-* HTTPS: `https://cdn.ampproject.org/c/s/AMP_URL_WITHOUT_SCHEME`
-
-Where `AMP_URL_WITHOUT_SCHEME` is the location of your AMP file minus `http(s)://`. For example, the AMP Cache URL for https://amp.dev is:
-
-`https://cdn.ampproject.org/c/s/amp.dev`
-
-When loading your AMP pages via the Google AMP Cache, check via your [browser’s developer tools](https://developers.google.com/web/tools/chrome-devtools/) if all external resources can be loaded successfully, including all of the following:
+When loading your AMP pages in an AMP Cache, check via your [browser’s developer tools](https://developers.google.com/web/tools/chrome-devtools/) if all external resources can be loaded successfully, including all of the following:
 
 * images
 * videos
@@ -62,12 +52,12 @@ When loading your AMP pages via the Google AMP Cache, check via your [browser’
 * custom fonts
 * iframes
 
-A common cause for missing assets are [protocol relative URLs](https://en.wikipedia.org/wiki/Wikipedia:Protocol-relative_URL). These are currently not supported by the Google AMP Cache. Instead link to all assets via HTTPS (if available). 
-
-Learn more about the Google AMP Cache:
+Learn more about AMP caches:
 
 *   [Using the Google AMP Cache]({{g.doc('/content/amp-dev/documentation/examples/guides/using_the_google_amp_cache/index.html', locale=doc.locale).url.path}}?format=websites)
-* [AMP on Google, Google AMP Cache](https://developers.google.com/amp/cache/overview)
+*   [AMP on Google, Google AMP Cache](https://developers.google.com/amp/cache/overview)]
+*   [Debug AMP Cache issues]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.html', locale=doc.locale).url.path}}?format=websites)
+*   [AMP Cache URL Format and Request Handling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.html', locale=doc.locale).url.path}}?format=websites)
 
 # Set up discoverable canonicals 
 
