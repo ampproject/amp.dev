@@ -32,13 +32,13 @@ performant ads in AMP pages.  To ensure that AMPHTML ad documents ("AMP
 creatives") can be rendered quickly and smoothly in the browser and do
 not degrade user experience, AMP creatives must obey a set of validation
 rules.  Similar in spirit to the
-[AMP format rules](https://www.ampproject.org/docs/fundamentals/spec.html), AMPHTML ads have
+[AMP format rules]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), AMPHTML ads have
 access to a limited set of allowed tags, capabilities, and extensions.
 
 ## AMPHTML ad format rules
 
 Unless otherwise specified below, the creative must obey all rules given by the
-[AMP format rules](https://www.ampproject.org/docs/fundamentals/spec.html),
+[AMP format rules]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}),
 included here by reference.  For example, the AMPHTML ad [Boilerplate](#boilerplate) deviates from the AMP standard boilerplate.
 
 In addition, creatives must obey the following rules:
@@ -243,28 +243,26 @@ transition: background-color 2s;
 The following are _allowed_ AMP extension modules and AMP built-in tags in an
 AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohibited.
 
-* [amp-accordion](https://www.ampproject.org/docs/reference/components/amp-accordion)
-* [amp-ad-exit](https://www.ampproject.org/docs/reference/components/amp-ad-exit)
-* [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics)
-* [amp-anim](https://www.ampproject.org/docs/reference/components/amp-anim)
-* [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation)
-* [amp-audio](https://www.ampproject.org/docs/reference/components/amp-audio)
-* [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind)
-* [amp-carousel](https://www.ampproject.org/docs/reference/components/amp-carousel)
-* [amp-fit-text](https://www.ampproject.org/docs/reference/components/amp-fit-text)
-* [amp-font](https://www.ampproject.org/docs/reference/components/amp-font)
-* [amp-form](https://www.ampproject.org/docs/reference/components/amp-form)
-* [amp-img](https://www.ampproject.org/docs/reference/components/amp-img)
-* [amp-layout](https://www.ampproject.org/docs/reference/components/amp-layout)
-* [amp-lightbox](https://www.ampproject.org/docs/reference/components/amp-lightbox)
-* [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache)
-* [amp-pixel](https://www.ampproject.org/docs/reference/components/amp-pixel)
-* [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer)
-* [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share)
-* [amp-video](https://www.ampproject.org/docs/reference/components/amp-video)
-* [amp-youtube](https://www.ampproject.org/docs/reference/components/amp-youtube)
-
-
+* [amp-accordion]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}})
+* [amp-ad-exit]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}})
+* [amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+* [amp-anim]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}})
+* [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}})
+* [amp-audio]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})
+* [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})
+* [amp-carousel]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
+* [amp-fit-text]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})
+* [amp-font]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}})
+* [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
+* [amp-img]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+* [amp-layout]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}})
+* [amp-lightbox]({{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}})
+* [amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})
+* [amp-pixel]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+* [amp-position-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-position-observer.md', locale=doc.locale).url.path}})
+* [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}})
+* [amp-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})
+* [amp-youtube]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})
 
 Most of the omissions are either for performance or to make AMPHTML ads
 simpler to analyze.

@@ -16,6 +16,7 @@
 
 .#{molecule('jumpto-item')} {
     border-right: 1px solid fade_out(color('charade'), 0.70);
+    white-space: nowrap;
 
   &-link {
     @include txt;

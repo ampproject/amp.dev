@@ -57,7 +57,7 @@ While CSS allows you to morph from one state to another via transitions, you mus
 
 ### Trigger
 
-The trigger starts the animation sequence. The [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events).
+The trigger starts the animation sequence. The [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})
 
 Triggering on visibility of `<body>` is useful when the animation should run as soon as the page loads because it appears "above the fold", or within the first viewport of the page. Animations trigger through visibility by adding `trigger="visibility"` as an attribute to the component.
 

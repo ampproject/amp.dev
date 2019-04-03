@@ -1,6 +1,6 @@
 ---
 $title: Validate AMP Emails
-$order: 1
+$order: 2
 author: CrystalOnScript
 formats:
   - email

@@ -14,8 +14,8 @@ Ces styles sont définis dans l'[`amp.css`](https://github.com/ampproject/amphtm
 ## Utiliser les préprocesseurs CSS
 
 La sortie générée par des préprocesseurs fonctionne aussi bien avec les pages AMP qu'avec les autres pages Web.
-Par exemple, le site [ampproject.org](https://www.ampproject.org/) utilise [Sass](http://sass-lang.com/).
-Nous utilisons [Grow](http://grow.io/) pour créer les pages AMP statiques qui composent le site [ampproject.org](https://www.ampproject.org/).
+Par exemple, le site [amp.dev](https://amp.dev/) utilise [Sass](http://sass-lang.com/).
+Nous utilisons [Grow](http://grow.io/) pour créer les pages AMP statiques qui composent le site [amp.dev](https://amp.dev/).
 
 Lorsque vous utilisez des préprocesseurs, accordez une attention particulière à ce que vous incluez ; chargez seulement ce que vos pages utilisent.
 Par exemple, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclut tout le balisage AMP requis et le CSS intégré à partir des fichiers sources `*.scss`.
@@ -30,7 +30,7 @@ Il comprend également, entre autres, le script d'élément personnalisé pour [
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -47,7 +47,7 @@ Il comprend également, entre autres, le script d'élément personnalisé pour [
 </head>
 {% endraw %} [/sourcecode]
 
-Pour voir comment ce qui précède se traduit en langage AMP HTML formaté, affichez la source de toute page dans [ampproject.org](https://www.ampproject.org/).
+Pour voir comment ce qui précède se traduit en langage AMP HTML formaté, affichez la source de toute page dans [amp.dev](https://amp.dev/).
 (Dans Chrome, faites un clic droit, puis sélectionnez `Afficher la source de la page`.)
 
 ## Styles interdits

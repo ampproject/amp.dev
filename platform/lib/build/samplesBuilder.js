@@ -187,9 +187,15 @@ class SamplesBuilder {
    * @return {Promise}
    */
   async _parseSample(sample) {
+    const samplePath = sample.path;
+    // normalize sample path in case it's defined in a directory
+    if (sample.path.endsWith('/index.html')) {
+      sample.path = path.dirname(sample.path) + '.html';
+    }
     const platformHost = config.getHost(config.hosts.platform);
-    return await abe.parseSample(sample.path, {
+    return await abe.parseSample(samplePath, {
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
+      'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
       'hosts': {
         'platform': platformHost,
         'api': API_HOST,
@@ -276,7 +282,11 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getDocumentationRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/index.html`;
+    let base = `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    if (!base.endsWith('/index.html')) {
+      base += '/index.html';
+    }
+    return base;
   }
 
   /**
@@ -297,7 +307,11 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getSourceRoute(sample) {
-    return `/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    let route = `/documentation/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    if (!route.endsWith('/index.html')) {
+      route += '/index.html'; // sample defines it's own directory
+    }
+    return route;
   }
 
   /**

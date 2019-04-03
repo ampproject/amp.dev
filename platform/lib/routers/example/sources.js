@@ -18,6 +18,7 @@
 
 const express = require('express');
 const utils = require('@lib/utils');
+const exampleBackend = require('@examples');
 
 const SOURCES_DEST = utils.project.absolute('/dist/examples/sources/');
 
@@ -25,14 +26,16 @@ const SOURCES_DEST = utils.project.absolute('/dist/examples/sources/');
 const exampleSources = express.Router();
 const staticSources = express.static(SOURCES_DEST);
 
-exampleSources.use('/examples/:category/:name/:snippetId?', (request, response, next) => {
-  request.url = `/${request.params.category}/${request.params.name}`;
-  if (request.params.snippetId) {
-    request.url += `-${request.params.snippetId}`;
+exampleSources.use('/documentation/examples/', exampleBackend);
+
+exampleSources.use('/documentation/examples/:category/:name/:snippetId?', (req, res, next) => {
+  req.url = `/${req.params.category}/${req.params.name}`;
+  if (req.params.snippetId && req.params.snippetId !== 'index.html') {
+    req.url += `-${req.params.snippetId}`;
   }
 
-  request.url += '.html';
-  staticSources(request, response, next);
+  req.url += '.html';
+  staticSources(req, res, next);
 });
 
 module.exports = exampleSources;

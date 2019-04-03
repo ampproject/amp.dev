@@ -4,7 +4,7 @@ $order: 1
 description: 'A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...'
 formats:
   - websites
-author: crystalonscript
+author: CrystalOnScript
 contributors:
   - pbakaus
 ---
@@ -70,7 +70,7 @@ Install the AMP Service Worker with minimal steps:
 
 The AMP Service Worker automatically caches AMP script files and AMP documents. By caching AMP script files, they are instantly available to the users browser allowing for offline functionality and speedier pages on flaky networks. 
 
-If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. 
+If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. In the following example, replace `Array<RegExp>` with an array of regular expressions representing documents you want to avoid caching. 
 
 [sourcecode:js]
 AMP_SW.init(
@@ -80,7 +80,7 @@ AMP_SW.init(
 );
 [/sourcecode]
 
-Read more about customizing document caching here.
+Read more about [customizing document caching here](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
 
 ### Optimizing the AMP Service Worker 
 
@@ -102,7 +102,7 @@ You are able to customize the caching strategy and define a deny list.
 Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
 
 [sourcecode:html]
-<a href=`....` data-rel=`prefetch` />
+<a href='....' data-rel='prefetch' />
 [/sourcecode]
 
 ### Offline Experience 
@@ -121,6 +121,24 @@ AMP_SW.init({
 
 A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
 
+### Force Update
+
+The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
+
+To effectively manage a server worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+
+```js
+self.addEventListener('install', () => {
+  // Skip over the "waiting" lifecycle state, to ensure that our
+  // new service worker is activated immediately, even if there's
+  // another tab open controlled by our older service worker code.
+  self.skipWaiting();
+});
+```
+
+[tip type="read-on"]
+  [Read more](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) about managing deployed service workers. 
+[/tip]
 
 ## Write a Custom Service Worker
 

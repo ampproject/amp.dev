@@ -153,12 +153,12 @@ speakers:
     name: Mitsuhiro Naganuma
     company: EC-CUBE
     bio: "株式会社ロックオンに入社後、EC-CUBEの次期バージョン開発をリードする。2018年10月にスピンアウトした株式会社イーシーキューブではCTOを務める。"
-    pic: /static/img/amp-conf/speakers/mitsuhiro.jpg  
+    pic: /static/img/amp-conf/speakers/mitsuhiro.jpg
   chrispapazian:
     name: Chris Papazian
     company: Pinterest
     bio:
-    pic: /static/img/amp-conf/speakers/chrisp.jpg 
+    pic: /static/img/amp-conf/speakers/chrisp.jpg
   davidstrauss:
     name: David Strauss
     company: Pantheon
@@ -213,7 +213,12 @@ speakers:
     name: Takahiro Yasuda
     company: So-net Media Networks
     bio: Takahiro Yasuda designed and built DSP "Logicad" from scratch and grew the DSP business for 8 years in So-net Media Networks.
-    pic: /static/img/amp-conf/speakers/yasuda.jpg 
+    pic: /static/img/amp-conf/speakers/yasuda.jpg
+  monishavaradan:
+    name: Monisha Varadan
+    company: Google
+    bio:
+    pic: /static/img/amp-conf/speakers/amp.png
   TBA:
     name: To Be Announced
     company: AMP Conf
@@ -307,7 +312,7 @@ agenda:
     - title: "Technical Steering Committee"
       type: panel
       time: "1730"
-      moderator: paulbakaus
+      moderator: crystallambert
       speakers:
         - chrispapazian
         - davidstrauss
@@ -317,7 +322,7 @@ agenda:
         - rudygalfi
         - saulosantos
     - title: Party!
-      time: "1815"
+      time: "1800"
   day_2:
     - title: Registration
       time: "0800"
@@ -364,7 +369,7 @@ agenda:
     - title: "Google Panel"
       time: "1200"
       type: panel
-      moderator: paulbakaus
+      moderator: monishavaradan
       speakers:
         - davidbesbris
         - TBA

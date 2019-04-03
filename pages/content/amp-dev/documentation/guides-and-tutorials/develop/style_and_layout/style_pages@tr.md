@@ -14,8 +14,8 @@ Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/am
 ## CSS ön işlemcilerini kullanma
 
 Ön işlemcilerin oluşturduğu çıktı, diğer web sayfalarında olduğu gibi AMP'de sorunsuz bir şekilde çalışır.
-Örneğin, [ampproject.org](https://www.ampproject.org/) sitesi [Sass](http://sass-lang.com/)'ı kullanır.
-([ampproject.org](https://www.ampproject.org/) sitesini meydana getiren statik AMP sayfalarını oluşturmak için biz <a href="http://grow.io/"><span class="notranslate">Grow</span></a> kullanıyoruz.)
+Örneğin, [amp.dev](https://amp.dev/) sitesi [Sass](http://sass-lang.com/)'ı kullanır.
+([amp.dev](https://amp.dev/) sitesini meydana getiren statik AMP sayfalarını oluşturmak için biz <a href="http://grow.io/"><span class="notranslate">Grow</span></a> kullanıyoruz.)
 
 Ön işlemcileri kullanırken neleri eklediğinize ayrıca dikkat etmeniz gerekir; yalnızca sayfalarınızın kullandığı öğeleri ekleyin.
 Örneğin, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) kodu gerekli tüm AMP biçimlendirmesini ve `*.scss` kaynak dosyalarındaki satır içi CSS'yi içerir.
@@ -30,7 +30,7 @@ Diğerlerinin yanı sıra [`amp-youtube`]({{g.doc('/content/amp-dev/documentatio
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -47,7 +47,7 @@ Diğerlerinin yanı sıra [`amp-youtube`]({{g.doc('/content/amp-dev/documentatio
 </head>
 {% endraw %} [/sourcecode]
 
-Yukarıdaki kodun biçimlendirilmiş AMP HTML'sine nasıl çevrildiğini görmek için [ampproject.org](https://www.ampproject.org/)'daki herhangi bir sayfanın kaynağını görüntüleyin.
+Yukarıdaki kodun biçimlendirilmiş AMP HTML'sine nasıl çevrildiğini görmek için [amp.dev](https://amp.dev/)'daki herhangi bir sayfanın kaynağını görüntüleyin.
 (Chrome'da sağ tıklayın ve `Sayfa Kaynağını Görüntüle`'yi seçin.)
 
 ## İzin verilmeyen stiller
