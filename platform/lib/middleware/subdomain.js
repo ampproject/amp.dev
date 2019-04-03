@@ -88,23 +88,18 @@ class Subdomain {
   async redirectOn404_(request, response) {
     const referrer = request.get('Referrer') || config.hosts.platform.base;
     // assume request was initiated by a document-relative path
-    console.log('referrer', referrer);
-    console.log('request url', request.originalUrl);
     let destination = this.resolveUrl_(request.originalUrl.substring(1), referrer);
-    console.log('dest 1', destination.toString());
     // perform a head request to check if destination exists
     if (!await this.exists_(destination)) {
       // assume a root-relative path
       destination = this.resolveUrl_(request.originalUrl, referrer);
     }
-    console.log('dest 2', destination.toString());
     // remove AMP CORS query param which is not needed
     response.redirect(301, destination.toString());
   }
 
   resolveUrl_(requestPath, referrerString) {
     const referrer = new URL(referrerString);
-    console.log('request path', requestPath);
     const playgroundDoc = referrer.searchParams.get('url');
     if (!playgroundDoc) {
       return new URL(requestPath, config.hosts.platform.base);
