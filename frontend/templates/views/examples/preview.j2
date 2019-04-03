@@ -7,14 +7,21 @@
 {% do doc.styles.addCssFile('/css/components/molecules/homepage-link.css') %}
 <header class="ap--header">
   <div class="ap-o-header">
-    <a class="ap-o-header-home" href="/index.html">
+    <a class="ap-o-header-home" href="/">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span>
     </a>
 
     {% do doc.styles.addCssFile('/css/components/atoms/sample-preview-title.css') %}
-    <h1 class="ap-a-sample-preview-title"><span class="ap-a-sample-preview-title-prefix">{{ _('Preview') }}:&nbsp;</span><span class="ap-a-sample-preview-title-title">{{ doc.title }}</span></h1>
+    <h1 class="ap-a-sample-preview-title">
+      <span class="ap-a-sample-preview-title-prefix">{{ _('Preview') }}:&nbsp;</span>
+      <span class="ap-a-sample-preview-title-title">{{ doc.title }}</span>
+      <a class="ap-a-sample-preview-title-close" href="{{ doc.url.path.replace('/preview', '') }}">
+        {% do doc.icons.useIcon('/icons/close.svg') %}
+        <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </a>
+    </h1>
 
     <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview', '') }}">
       <span>{{ _('Back to sample') }}</span>
