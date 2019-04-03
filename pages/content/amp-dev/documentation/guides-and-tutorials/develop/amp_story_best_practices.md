@@ -144,8 +144,10 @@ Make stories more dynamic by adding motion to static images. For example, you ca
     <th>DO NOT</th>
   </tr>
   <tr>
-  <!-- TODO: Swap gif with mp4 -->
-    <td>{{ image('/static/img/docs/guides/storiesbp/animation-example.gif', 250, 500, layout='intrinsic', alt='Image demonstrating a dynamic element', align='center' ) }}</td>
+    <td>
+      <amp-video src="/static/img/docs/guides/storiesbp/images-life-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg" width="360" height="720" loop autoplay noaudio>
+      </amp-video>
+    </td>
     <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating a dull story page', align='center' ) }}</td>
   </tr>
     <tr>
