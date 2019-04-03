@@ -24,6 +24,7 @@ const ampCors = require('amp-toolbox-cors');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
+const {pagePath} = require('@lib/utils/project');
 const subdomain = require('./middleware/subdomain.js');
 
 
@@ -132,6 +133,16 @@ class Platform {
     this.server.use(routers.static);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
+
+    // handle errors
+    this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+      console.error(err.stack);
+      res.status(500).sendFile('500.html', {root: pagePath()});
+    });
+    // handle 404s
+    this.server.use((req, res, next) => { // eslint-disable-line no-unused-vars
+      res.status(404).sendFile('404.html', {root: pagePath()});
+    });
   }
 };
 
