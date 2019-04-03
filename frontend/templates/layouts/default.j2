@@ -171,9 +171,13 @@
     </aside>
     {% endif %}
 
+    {% block analytics %}
     {% include 'views/partials/analytics.j2' %}
     {% include 'views/partials/consent.j2' %}
+    {% endblock %}
 
-    <amp-install-serviceworker src="/serviceworker.js" data-iframe-src="{{ podspec.base_urls.platform }}" layout="nodisplay"></amp-install-serviceworker>
+    {% block serviceWorker %}
+    {% include 'views/partials/service-worker.j2' %}
+    {% endblock %}
   </body>
 </html>
