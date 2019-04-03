@@ -14,7 +14,7 @@
     </a>
 
     {% do doc.styles.addCssFile('/css/components/atoms/sample-preview-title.css') %}
-    <h1 class="ap-a-sample-preview-title"><span class="ap-a-sample-preview-title-prefix">{{ _('Preview') }}:</span><span class="ap-a-sample-preview-title-title">{{ doc.title }}</span></h1>
+    <h1 class="ap-a-sample-preview-title"><span class="ap-a-sample-preview-title-prefix">{{ _('Preview') }}:&nbsp;</span><span class="ap-a-sample-preview-title-title">{{ doc.title }}</span></h1>
 
     <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview', '') }}">
       <span>{{ _('Back to sample') }}</span>
