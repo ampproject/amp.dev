@@ -6,6 +6,7 @@ formats:
   - websites
   - stories
   - ads
+author: sebastianbenz
 ---
 
 In this document, you'll learn about the AMP Cache URL format and how it handles requests. 
