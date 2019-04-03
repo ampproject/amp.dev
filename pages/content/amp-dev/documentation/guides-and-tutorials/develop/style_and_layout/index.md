@@ -4,7 +4,9 @@ formats:
   - email
   - ads
   - stories
-$path: /documentation/guides-and-tutorials/develop/style_and_layout/style_and_layout.html
+$path: /documentation/guides-and-tutorials/develop/style_and_layout/index.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html
 $title: Style & layout
 $order: 0
 description: "Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
