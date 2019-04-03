@@ -16,7 +16,7 @@ Follow this tutorial to build and send your first dynamic email powered by AMP. 
 
 # Start with the AMP email boilerplate
 
-The AMP for Email team has created a Gmail playground where you can develop, test, and send yourself AMP Emails. Open the [AMP for Email Playground](https://amp.gmail.dev/playground/), login using a Gmail account, and check that the playground has `Hello, AMP4Email world` opened. You should see the following code:
+The AMP for Email team has created a playground where you can develop, test, and send yourself AMP Emails. Open the [AMP for Email Playground](https://amp.gmail.dev/playground/), login using a Gmail account, and check that the playground has `Hello, AMP4Email world` opened. You should see the following code:
 
 
 ```html
