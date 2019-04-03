@@ -66,7 +66,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 
 ## CSS 전처리기 사용하기
 
-전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [ampproject.org](https://www.ampproject.org/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [ampproject.org](https://www.ampproject.org/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
+전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [amp.dev](https://amp.dev/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [amp.dev](https://amp.dev/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
 
 전처리기를 사용할 때는 포함하는 항목에 특히 주의해야 합니다. 페이지에서 사용하는 항목만 로드하세요. 예를 들어, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 에는 모든 필수 AMP 마크업과 `*.scss` 소스 파일의 인라인 CSS가 포함됩니다. 또한 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 등의 커스텀 엘리먼트용 스크립트를 포함하여 YouTube 동영상 등을 사이트의 여러 페이지에 넣을 수 있도록 했습니다.
 
@@ -79,7 +79,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -96,4 +96,4 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 </head>
 {% endraw %}[/sourcecode]
 
-위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [ampproject.org](https://www.ampproject.org/) 에서 아무 페이지나 소스를 확인해보세요. (Chrome에서는 마우스 오른쪽 버튼 클릭 후 `페이지 소스 보기`).
+위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [amp.dev](https://amp.dev/) 에서 아무 페이지나 소스를 확인해보세요. (Chrome에서는 마우스 오른쪽 버튼 클릭 후 `페이지 소스 보기`).

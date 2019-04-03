@@ -71,8 +71,8 @@ Digita `npm install -g amphtml-validator` per installare lo [strumento della rig
 Ora convalidiamo una pagina HTML AMP esistente.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Come prevedibile, questa è una pagina HTML AMP valida. Ora proviamo con una pagina non valida: [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Per eseguire il comando `amphtml-validator` puoi indicare l'URL della pagina o un nome di file locale. Scarica e salva [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) in un file, dopodiché esegui il comando seguente:
@@ -81,8 +81,8 @@ Come prevedibile, questa è una pagina HTML AMP valida. Ora proviamo con una pag
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 

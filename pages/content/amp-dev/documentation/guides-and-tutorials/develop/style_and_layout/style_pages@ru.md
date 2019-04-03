@@ -14,8 +14,8 @@ $title: Поддерживаемые элементы CSS
 ## Использование препроцессоров CSS
 
 Контент, созданный с помощью препроцессоров, отображается как на страницах AMP, так и на любых других веб-страницах.
-Например, на сайте [ampproject.org](https://www.ampproject.org/) используется язык [Sass](http://sass-lang.com/).
-Для создания статических страниц AMP, составляющих сайт [ampproject.org](https://www.ampproject.org/), применяется генератор <a href="http://grow.io/"><span class="notranslate">Grow</span></a>.
+Например, на сайте [amp.dev](https://amp.dev/) используется язык [Sass](http://sass-lang.com/).
+Для создания статических страниц AMP, составляющих сайт [amp.dev](https://amp.dev/), применяется генератор <a href="http://grow.io/"><span class="notranslate">Grow</span></a>.
 
 Если вы используете препроцессоры, загружайте только те элементы, которые применяются на ваших страницах.
 Например, файл [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) будет содержать всю необходимую разметку AMP и встроенные стили CSS из исходных файлов `*.scss`,
@@ -30,7 +30,7 @@ $title: Поддерживаемые элементы CSS
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -47,7 +47,7 @@ $title: Поддерживаемые элементы CSS
 </head>
 {% endraw %} [/sourcecode]
 
-Чтобы узнать, как указанный выше код преобразуется в формат HTML для AMP-страниц, просмотрите исходный код любой страницы на сайте [ampproject.org](https://www.ampproject.org/).
+Чтобы узнать, как указанный выше код преобразуется в формат HTML для AMP-страниц, просмотрите исходный код любой страницы на сайте [amp.dev](https://amp.dev/).
 Для этого в браузере Chrome нажмите правую кнопку мыши и выберите `Просмотр кода страницы`.
 
 ## Запрещенные стили

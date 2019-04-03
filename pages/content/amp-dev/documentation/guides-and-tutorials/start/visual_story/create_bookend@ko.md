@@ -127,7 +127,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
   "links": [
     {
       "text": "Learn more",
-      "url": "https://www.ampproject.org/stories/"
+      "url": "https://amp.dev/about/stories.html"
     }
   ]
 }

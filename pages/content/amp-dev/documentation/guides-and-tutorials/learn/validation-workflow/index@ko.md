@@ -152,8 +152,8 @@ gulp.task('default', ['amphtml:validate'], function () {
 이제 실제 AMP HTML 페이지의 유효성 검사를 해보겠습니다.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 당연히 이 페이지는 유효한 AMP HTML입니다. 그러므로 유효하지 않은 페이지에서 실행해 보겠습니다.
@@ -163,8 +163,8 @@ https://www.ampproject.org/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (https://www.ampproject.org/ko/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (https://www.ampproject.org/ko/docs/reference/components/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. ({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. ({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 

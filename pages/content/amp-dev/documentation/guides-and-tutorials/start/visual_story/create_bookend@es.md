@@ -127,7 +127,7 @@ Hay varios componentes que se pueden usar para mostrar contenidos y enlaces rela
   "links": [
     {
       "text": "Más información",
-      "url": "https://www.ampproject.org/stories/"
+      "url": "https://amp.dev/about/stories.html"
     }
   ]
 }

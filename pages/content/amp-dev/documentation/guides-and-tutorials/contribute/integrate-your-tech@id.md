@@ -45,7 +45,7 @@ Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk [mengajukannya](http
 
 ## Referensi tambahan
 
-- [Situs AMP Project](https://www.ampproject.org/id/)
+- [Situs AMP Project](https://amp.dev/id/)
 - [GitHub AMP Project](https://github.com/ampproject/amphtml)
 - [Blog AMP](https://blog.amp.dev/)
 - [Panduan AMP Project]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

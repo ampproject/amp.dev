@@ -70,8 +70,8 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 
 ## 使用 CSS 预处理器
 
-预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[ampproject.org](https://www.ampproject.org/)
-网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [ampproject.org](https://www.ampproject.org/) 网站的静态 AMP 网页。）
+预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[amp.dev](https://amp.dev/)
+网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [amp.dev](https://amp.dev/) 网站的静态 AMP 网页。）
 
 在使用预处理器时，请特别注意您所包含的内容；请仅加载您的网页会使用的内容。 例如，[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。
@@ -85,7 +85,7 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -102,4 +102,4 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 </head>
 {% endraw %}[/sourcecode]
 
-要查看上述代码如何转变成带有格式的 AMP HTML，请在 [ampproject.org](https://www.ampproject.org/) 中查看任何网页的源代码。 （在 Chrome 中，点击右键并选择 `View Page Source`。）
+要查看上述代码如何转变成带有格式的 AMP HTML，请在 [amp.dev](https://amp.dev/) 中查看任何网页的源代码。 （在 Chrome 中，点击右键并选择 `View Page Source`。）

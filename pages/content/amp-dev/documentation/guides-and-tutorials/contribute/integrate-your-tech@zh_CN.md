@@ -45,7 +45,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 其他资源
 
-- [AMP 项目网站](https://www.ampproject.org/)
+- [AMP 项目网站](https://amp.dev/)
 - [AMP GitHub 项目](https://github.com/ampproject/amphtml)
 - [AMP 博客](https://blog.amp.dev/)
 - [AMP 项目蓝图]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})
