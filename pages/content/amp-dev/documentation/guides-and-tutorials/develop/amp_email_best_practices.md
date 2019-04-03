@@ -22,6 +22,6 @@ When working AMP for Email, keep in mind the following tips and tricks:
 
 *   The AMP for Email playground doesn't proxy XHRs, but some email providers do.
 *   The AMP MIME part should appear before the HTML MIME part in your email to ensure maximum compatibility across email clients.
-*   The src attribute of amp-list, action-xhr of amp-form, the src for amp-img, or the href attribute of an `<a>` tag cannot be mutated by amp-bind.
+*   The `src` attribute of [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.html', locale=doc.locale).url.path}}?format=email), [`action-xhr`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.html', locale=doc.locale).url.path}}?format=email#action-xhr) of [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.html', locale=doc.locale).url.path}}?format=email), the `src` for [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.html', locale=doc.locale).url.path}}?format=email), or the href attribute of an `<a>` tag cannot be mutated by [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.html', locale=doc.locale).url.path}}?format=email).
 *   Your messages should include a static HTML version in the event that a user is taken to the HTML version of the message, or if that user forwards the message.
 *   Be careful with overflowing margin in CSS: they may not get rendered due to [an AMP layout limitation](https://github.com/ampproject/amphtml/issues/13343#issuecomment-447380241).
