@@ -38,7 +38,7 @@
                   {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
                   {% if doc.pod.file_exists(collection_index) %}
                   {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
-                  <a class="nav-link" href="{{ collection_index.url.path }}">
+                  <a class="nav-link" href="{{ collection_index.public_path }}">
                     {# Get translated collection title #}
                     {% set collection_title = collection.tagged_fields.get('$title@' + doc.locale.language, collection.title) %}
 
@@ -89,7 +89,7 @@
                   <div class="ap-m-tutorial-progress {% if doc.order > document.order and doc.collection == document.collection %}ap-m-tutorial-progress-finished{% endif %}"></div>
                   {% endif %}
 
-                  <a class="nav-link" href="{{ document.url.path }}">
+                  <a class="nav-link" href="{{ document.public_path }}">
                     {{ document.title }}
                     {% if document.tutorial %}
                     {% do doc.icons.useIcon('icons/tutorial.svg') %}
