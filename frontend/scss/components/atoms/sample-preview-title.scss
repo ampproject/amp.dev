@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   display: flex;
-  padding: 14px 0 10px 130px;
+  padding: 14px 10px 10px 130px;
   white-space: nowrap;
   align-items: center;
   justify-content: flex-start;
@@ -21,12 +21,23 @@
   @include txt-font-accent;
   font-size: 1.5em;
 
+  @media (min-width: 768px) {
+    padding: 14px 0 10px;
+    justify-content: center;
+  }
+
   @media (min-width: 1024px) {
     @include txt-lrg;
   }
 
-  @media (min-width: 768px) {
-    padding: 14px 0 10px;
-    justify-content: center;
+  &-prefix {
+    @media (max-width: 767px) {
+      display: none
+    }
+  }
+
+  &-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
