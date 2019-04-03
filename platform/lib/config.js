@@ -34,7 +34,15 @@ class Config {
 
     this.environment = env.name;
     this.hosts = env.hosts;
-    Object.values(this.hosts).forEach((host) => host.base = this.getHost(host));
+    this.hostNames = new Set();
+    Object.values(this.hosts).forEach((host) => {
+      host.base = this.getHost(host);
+      let hostName = host.host;
+      if (host.subdomain) {
+        hostName = host.subdomain + '.' + hostName;
+      }
+      this.hostNames.add(hostName);
+    });
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
