@@ -1,9 +1,3 @@
-<!---
-
-disablePlayground: true
-
---->
-
 <!doctype html>
 <html ⚡>
 <head>
@@ -86,7 +80,7 @@ disablePlayground: true
 
     <!-- ## Delete Items Form -->
     <!--
-    As said, we use [amp-form](https://www.ampproject.org/docs/reference/components/amp-form) to send an `XHR POST` request to `/delete-cart-item`:
+    As said, we use [amp-form](/documentation/components/reference/amp-form.html) to send an `XHR POST` request to `/delete-cart-item`:
 
     1. The form contains two hidden input fields, bound to the `cartItem` object's variables. When the remove button is clicked, this object gets updated with the details of the item to remove from cart, so the form can send them on the call to the server.
     2. The form updates the `cartItemsList` with the response from the server, so that  `amp-list` can be refreshed with the contents of the updated cart.
