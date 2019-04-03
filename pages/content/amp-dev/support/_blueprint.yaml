@@ -2,7 +2,7 @@ $title@: Support
 $path: /support/{base}.html
 $view: /views/meta.j2
 $localization:
-  path: /{locale}/support/{base}.html
+  path: /{locale}/support/{base}
 $order: 999
 
 index: /content/amp-dev/support/index.md

@@ -1,7 +1,7 @@
 $view: /views/detail/docs-detail.j2
-$path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}.html
+$path: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}/
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/learn/amp-caches-and-cors/{base}/
 $title@: AMP Caches & CORS
 $title@zh: AMP 网页是如何缓存的
 $title@pt: Como as páginas AMP são armazenadas em cache

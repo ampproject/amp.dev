@@ -1,7 +1,7 @@
-$path: /documentation/guides-and-tutorials/develop/interactive_widget/{base}.html
+$path: /documentation/guides-and-tutorials/develop/interactive_widget/{base}/
 $view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/interactive_widget/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/develop/interactive_widget/{base}/
 $title@: Create a custom interactive widget with amp-script
 $order: 102
 

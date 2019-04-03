@@ -1,6 +1,9 @@
 ---
 $title: Support
 $order: 1
+$path: /support
+$localization:
+  path: /{locale}/support
 toc: false
 formats:
   - websites

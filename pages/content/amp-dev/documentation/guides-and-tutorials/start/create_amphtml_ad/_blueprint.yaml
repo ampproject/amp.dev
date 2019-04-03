@@ -1,8 +1,8 @@
-$path: /documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
+$path: /documentation/guides-and-tutorials/start/create_amphtml_ad/{base}/
 $view: /views/detail/docs-detail.j2
 $order: 3
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/start/create_amphtml_ad/{base}/
 $title@: Create your first AMPHTML ad
 formats:
   - ads

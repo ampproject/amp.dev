@@ -1,7 +1,7 @@
-$path: /documentation/guides-and-tutorials/develop/interactivity/{base}.html
+$path: /documentation/guides-and-tutorials/develop/interactivity/{base}/
 $view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/interactivity/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/develop/interactivity/{base}/
 $title@: Create interactive AMP pages
 $title@zh: 创建互动式 AMP 网页
 $title@pt: Criação de páginas AMP interativas

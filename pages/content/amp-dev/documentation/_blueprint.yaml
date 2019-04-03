@@ -1,10 +1,9 @@
-$path: /documentation/{base}.html
+$path: /documentation/{base}/
 $view: /views/default.j2
 $title@: Documentation
 $localization:
-  path: /{locale}/documentation/{base}.html
+  path: /{locale}/documentation/{base}/
 $order: 2
-index: /content/amp-dev/documentation/guides-and-tutorials/index.html
 
 flyout:
     - /content/amp-dev/documentation/guides-and-tutorials/index.html

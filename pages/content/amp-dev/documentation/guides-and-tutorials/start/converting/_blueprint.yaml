@@ -1,8 +1,8 @@
-$path: /documentation/guides-and-tutorials/start/converting/{base}.html
+$path: /documentation/guides-and-tutorials/start/converting/{base}/
 $view: /views/detail/docs-detail.j2
 $order: 4
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/start/converting/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/start/converting/{base}/
 $title@: Convert HTML to AMP
 $title@es: Convertir HTML en AMP
 $title@id: Mengonversi HTML menjadi AMPHTML
