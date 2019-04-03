@@ -1,8 +1,11 @@
 ---
 $title: Configure analytics
 $order: 0
-description: 'If you’re using Google Analytics as your analytics provider, learn how to set up basic Google Analytics for AMP and how to link AMP and non-AMP content using Client ID'
+$path: /documentation/guides-and-tutorials/optimize-measure/configure-analytics/
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/optimize-measure/configure-analytics/
 $hidden: true
+description: 'If you’re using Google Analytics as your analytics provider, learn how to set up basic Google Analytics for AMP and how to link AMP and non-AMP content using Client ID'
 formats:
   - websites
 ---
