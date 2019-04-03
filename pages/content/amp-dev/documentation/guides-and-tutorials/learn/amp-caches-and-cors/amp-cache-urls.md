@@ -54,7 +54,7 @@ Then the AMP Cache will return the content of the resolved redirect for the orig
 
 Example: [https://amp-dev.cdn.ampproject.org/amp.dev/documentation/examples/api/redirect?url=https://amp.dev/index.amp.html](https://amp-dev.cdn.ampproject.org/amp.dev/documentation/examples/api/redirect?url=https://amp.dev/index.amp.html).
 
-Important: If you move the location of the AMP Files on your server, make sure to set up a redirect from the old location to the new one.
+Important: If you move the location of the AMP files on your server, make sure to set up a redirect from the old location to the new one.
 
 **Not Found**
 
