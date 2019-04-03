@@ -68,5 +68,5 @@ def get_doc(self, pod_path, locale=None):
     doc = self.amp_dev_get_doc(pod_path, locale=None)
     # Monkey patch doc and add property public_path, do not do this during
     # development as otherwise Grows dev routing will fail
-    doc.public_path = doc.url.path.replace('/index.html', '/')
+    setattr(doc, 'public_path', doc.url.path.replace('/index.html', '/'))
     return doc

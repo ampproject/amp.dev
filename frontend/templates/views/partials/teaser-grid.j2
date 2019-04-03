@@ -124,11 +124,11 @@
         <ul class="ap-m-teaser-content-hover-list">
           {% for used_component in teaser.doc.used_components %}
           <li class="ap-m-teaser-content-hover-list-item">
-            <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + used_component + '.md', locale=doc.locale).public_path }}" class="ap-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
+            <a href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + used_component + '.md', locale=doc.locale).url.path }}" class="ap-m-teaser-content-hover-list-item-link">{{ used_component }}</a>
           </li>
           {% endfor %}
         </ul>
-        <a class="ap-m-lnk" href="{{ teaser.doc.public_path }}">
+        <a class="ap-m-lnk" href="{{ teaser.doc.url.path }}">
           <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>

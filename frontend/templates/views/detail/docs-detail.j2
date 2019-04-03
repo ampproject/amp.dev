@@ -29,13 +29,13 @@
 
         {% if not previous_document and next_document %}
         {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
-        <a href="{{ next_document.public_path }}" class="ap-a-btn">
+        <a href="{{ next_document.url.path }}" class="ap-a-btn">
           {{ _('Get started') }}
         </a>
         {% else %}
         {% if previous_document %}
         {% do doc.icons.useIcon('icons/internal.svg') %}
-        <a href="{{ previous_document.public_path }}" class="ap-m-lnk ap-m-lnk-square ap--previous">
+        <a href="{{ previous_document.url.path }}" class="ap-m-lnk ap-m-lnk-square ap--previous">
           <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
@@ -44,7 +44,7 @@
         {% endif %}
         {% if next_document %}
         {% do doc.icons.useIcon('icons/internal.svg') %}
-        <a href="{{ next_document.public_path }}" class="ap-m-lnk ap-m-lnk-square ap--next">
+        <a href="{{ next_document.url.path }}" class="ap-m-lnk ap-m-lnk-square ap--next">
           <span class="ap-m-lnk-text">{{ _('Next chapter') }}</span>
           <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>

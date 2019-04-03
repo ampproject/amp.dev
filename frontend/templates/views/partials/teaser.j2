@@ -2,7 +2,7 @@
 {% if teaser_doc.view == '/views/detail/success-story-detail.j2' %}
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
 <div class="ap-m-teaser ap-m-teaser-success-story" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
-  <a href="{{ teaser_doc.public_path }}">
+  <a href="{{ teaser_doc.url.path }}">
 
     {% if teaser_doc.formats %}
     {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
@@ -79,7 +79,7 @@
 {# Component teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
 <div class="ap-m-teaser ap-m-teaser-component {% for format in teaser_doc.formats %}ap--{{ format }} {% endfor %}" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
-  <a href="{{ teaser_doc.public_path }}">
+  <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% if teaser_doc.formats %}
       {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
@@ -118,15 +118,15 @@
       <li class="ap-m-teaser-info-list-item">
         {% set component_path = '/content/amp-dev/documentation/components/reference/' + used_component + '.md' %}
         {% if doc.pod.file_exists(component_path) %}
-        <a href="{{ g.doc(component_path, locale=doc.locale).public_path }}" class="ap-m-teaser-info-list-item-link">{{ used_component }}</a>
+        <a href="{{ g.doc(component_path, locale=doc.locale).url.path }}" class="ap-m-teaser-info-list-item-link">{{ used_component }}</a>
         {% else %}
-        <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).public_path }}" class="ap-m-teaser-info-list-item-link">{{ used_component }}</a>
+        <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}" class="ap-m-teaser-info-list-item-link">{{ used_component }}</a>
         {% endif %}
       </li>
       {% endfor %}
     </ul>
     <div class="ap-m-teaser-info-link">
-      <a class="ap-m-lnk" href="{{ teaser_doc.public_path }}">
+      <a class="ap-m-lnk" href="{{ teaser_doc.url.path }}">
         <div class="ap-a-ico ap-m-lnk-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
@@ -136,7 +136,7 @@
   </div>
   {% endif %}
 
-  <a class="ap-m-teaser-linking" href="{{ teaser_doc.public_path }}">
+  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% set teaser = teaser_doc.teaser or {} %}
 
@@ -193,7 +193,7 @@
 %}
   {% set teaser = teaser_doc.teaser or {} %}
   <div class="ap-m-teaser ap-m-teaser-guide-tutorial">
-    <a href="{{ teaser_doc.public_path }}">
+    <a href="{{ teaser_doc.url.path }}">
 
       {# tags #}
       {% if teaser_doc.formats %}
