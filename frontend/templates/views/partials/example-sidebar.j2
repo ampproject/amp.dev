@@ -1,0 +1,47 @@
+{% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+
+<amp-sidebar id="sidebar-left"
+  class="ap--ampsidebar"
+  layout="nodisplay"
+  side="left">
+  <nav toolbar="(min-width: 768px)"
+    toolbar-target="ap--sidebar-content">
+    <ul>
+      <section>
+        <div class="ap-o-sidebar">
+          {% include '/views/partials/format-toggle.j2' %}
+
+          <div class="nav">
+            {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
+            {% for category, examples in categories %}
+            <ul class="nav-list level-1">
+              <li class="nav-item level-1 {% if doc.category == category %}active{% endif %}">
+                <span class="nav-link">
+                  {% set categoryName = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+                  <span>{{ _(categoryName) }}</span>
+                </span>
+                <input class="nav-trigger" type="checkbox" {% if doc.category == category %}checked{% endif %}>
+                <div class="nav-icon">
+                  <svg class="ap-a-ico">
+                    <use xlink="http://www.w3.org/1999/xlink" href="#angle-down-solid"></use>
+                  </svg>
+                </div>
+                <ul class="nav-list level-2">
+                  {% for example in examples %}
+                  {% set active = true if example == doc %}
+                  <li class="nav-item level-2 {% if active %}active{% endif %} {% for format in example.formats %}ap--{{ format }} {% endfor %}" {% if active %}autoscroll{% endif %}>
+                    <a class="nav-link" href="{{ example.url.path }}">{{ example.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+            {% endfor %}
+          </div>
+
+        </div>
+      </section>
+    </ul>
+  </nav>
+</amp-sidebar>

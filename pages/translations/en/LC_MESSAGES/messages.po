@@ -1,0 +1,56 @@
+msgid "introduction"
+msgstr "Introduction"
+
+msgid "components"
+msgstr "Components"
+
+msgid "guides"
+msgstr "Guides"
+
+msgid "advertising-analytics"
+msgstr "Advertising & Analytics"
+
+msgid "ads-analytics"
+msgstr "Advertising & Analytics"
+
+msgid "e-commerce"
+msgstr "E-Commerce"
+
+msgid "interactivity-dynamic-content"
+msgstr "Interactivity & Dynamic Content"
+
+msgid "dynamic-content"
+msgstr "Dynamic Content"
+
+msgid "multimedia-animations"
+msgstr "Multimedia & Animations"
+
+msgid "media"
+msgstr "Multimedia"
+
+msgid "presentation"
+msgstr "Presentation"
+
+msgid "news-publishing"
+msgstr "News & Publishing"
+
+msgid "personalization"
+msgstr "Personalization"
+
+msgid "style-layout"
+msgstr "Style & Layout"
+
+msgid "layout"
+msgstr "Layout"
+
+msgid "user-consent"
+msgstr "User Consent"
+
+msgid "social"
+msgstr "Social & Sharing"
+
+msgid "visual-effects"
+msgstr "Visual & Effects"
+
+msgid "misc"
+msgstr "Misc"

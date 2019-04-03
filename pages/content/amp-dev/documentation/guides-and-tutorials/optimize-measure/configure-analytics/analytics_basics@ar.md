@@ -46,7 +46,7 @@ $title: "Analytics: الأساسيات"
 
 تعرّف على كيفية إنشاء تهيئة تحليلات
 [<span dir="ltr" class="nowrap">amp-pixel</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) و
-[<span dir="ltr" class="nowrap">amp-analytics</span>](/ar/docs/reference/components/amp-analytics.html)بسيطة.
+[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})بسيطة.
 
 ### تهيئة amp-pixel بسيطة
 
@@ -80,7 +80,7 @@ $title: "Analytics: الأساسيات"
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) بسيطة،
 يجب عليك تضمين هذا التصريح بشأن <span dir="ltr" class="nowrap">`custom-element`</span>
 في `<head>` لمستند AMP (انظر أيضًا
-[تصريح بشأن تضمين مكون](/ar/docs/reference/components.html)):
+[تصريح بشأن تضمين مكون]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -126,7 +126,7 @@ $title: "Analytics: الأساسيات"
 في النموذج التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
 مع عنوان URL المتعارف عليه لمستند AMP الحالي، وعنوانه، فضلاً عن
-[رقم تعريف العميل](/ar/docs/analytics/analytics_basics.html#هوية-المستخدم):
+[رقم تعريف العميل]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#هوية-المستخدم):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

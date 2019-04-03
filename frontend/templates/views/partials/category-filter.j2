@@ -1,0 +1,27 @@
+{% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+<amp-state id="activeFilter">
+  <script type="application/json">
+    {
+      "chosenFilter": "none"
+    }
+  </script>
+</amp-state>
+
+<div class="ap-o-filter-bubbles-list">
+  <button class="ap-m-filter-bubble filtered"
+    [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+    on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+    name="all">
+    All
+  </button>
+  {% for category, components in categories %}
+  {% if category %}
+  <button class="ap-m-filter-bubble" data-category="{{ category|slug }}"
+    [class]="activeFilter.chosenFilter == '{{ category|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+    on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
+    {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+    {{ _(category) }}
+  </button>
+  {% endif %}
+  {% endfor %}
+</div>

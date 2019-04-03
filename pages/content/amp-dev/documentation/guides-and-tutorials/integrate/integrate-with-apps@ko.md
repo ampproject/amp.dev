@@ -70,7 +70,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 Google에서 제공하는 AMP URL API를 사용하면
 주어진 URL 목록([공식 문서](https://developers.google.com/amp/cache/use-amp-url)/
-[데모](https://ampbyexample.com/advanced/using_the_amp_url_api/))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
+[데모]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
 표준 버전이 아니어도 됩니다. AMP 버전이 있는 경우 원래 AMP URL과
 Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 포함됩니다.
@@ -168,7 +168,7 @@ AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방�
 
 *   AMP 캐시에서 AMP 페이지 게재(1초 미만의 빠른 로드 시간)
 *   기사의 게시자 원본 표시(예: 접을 수 있는 헤더에 표시)
-*   공유 작업 제공(아래 '[AMP 콘텐츠 공유](/ko/docs/integration/integrate-with-apps.html#sharing-amp-content)'
+*   공유 작업 제공(아래 '[AMP 콘텐츠 공유]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)'
     섹션 참조)
 *   WebView 기반 뷰어에서 타사 쿠키 활성화
 *   플랫폼/앱에 대한 리퍼러 설정

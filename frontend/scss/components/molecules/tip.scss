@@ -51,12 +51,12 @@ $borderSize: 5px;
   margin-bottom: 50px;
   background-color: color('white');
   filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
-  
+
   code {
     white-space: normal;
   }
 
-  .#{molecule('tip')}-content {
+  &-content {
     h4 {
       @include txt-1;
       margin: 0 0 0.75em;
@@ -64,7 +64,7 @@ $borderSize: 5px;
 
     p {
       margin-bottom: 0;
-      @include txt-3;
+      @include txt-2;
     }
 
     ul {

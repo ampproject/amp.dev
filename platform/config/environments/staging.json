@@ -15,6 +15,18 @@
 			"scheme": "https",
 			"host": "amp-dev-staging.appspot.com",
 			"port": ""
-		}
+    },
+    "playground": {
+      "scheme": "https",
+      "subdomain": "playground-dot-amp-dev-staging",
+      "host": "appspot.com",
+      "port": ""
+    },
+    "preview": {
+      "scheme": "https",
+      "subdomain": "preview-dot-amp-dev-staging",
+      "host": "appspot.com",
+      "port": ""
+    }
 	}
 }

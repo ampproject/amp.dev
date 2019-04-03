@@ -82,7 +82,7 @@ To create a simple
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration,
 you must first include this `custom-element` declaration
 in the `<head>` of the AMP document (see also
-[Component inclusion declaration](/docs/reference/components.html)):
+[Component inclusion declaration]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -128,7 +128,7 @@ allow all standard URL variable substitutions (see
 In the following example,
 the page view request is sent to the URL,
 along with the current AMP document’s canonical URL, its title, and a
-[client ID](/docs/analytics/analytics_basics.html#user-identification):
+[client ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>

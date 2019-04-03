@@ -2,9 +2,9 @@
 
 preview: default
 skipValidation: 'true'
-category: 'user-consent'
 
 --->
+
 <!--
   ## Introduction
 
@@ -16,7 +16,7 @@ category: 'user-consent'
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="/stories/user_consent/story_user_consent/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>User Consent</title>
@@ -91,8 +91,8 @@ category: 'user-consent'
     <amp-story standalone
                title="Story With User Consent"
                publisher="Google"
-               poster-portrait-src="<%host%>/img/story_video_dog_cover.jpg"
-               publisher-logo-src="<%host%>/img/amp_logo_pink.svg">
+               poster-portrait-src="<% hosts.platform %>/img/story_video_dog_cover.jpg"
+               publisher-logo-src="<% hosts.platform %>/img/amp_logo_pink.svg">
 
       <!--
       The `amp-consent` component supports specifying a CORS endpoint via the `checkConsentHref` attribute, which the component queries via a POST request to determine if the consent UI specified for it needs to be shown. The response should look like this:
@@ -155,7 +155,7 @@ category: 'user-consent'
         </amp-story-grid-layer>
       </amp-story-page>
 
-      <amp-story-bookend src="<%host%>/json/bookend.json" layout="nodisplay">
+      <amp-story-bookend src="<% hosts.platform %>/json/bookend.json" layout="nodisplay">
       </amp-story-bookend>
 
     </amp-story>

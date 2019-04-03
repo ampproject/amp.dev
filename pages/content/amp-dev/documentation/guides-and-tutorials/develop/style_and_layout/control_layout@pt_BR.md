@@ -31,7 +31,7 @@ determinada pela largura e pela altura fornecidas. Faça um teste redimensionand
 
 [tip type="success"]
 
-Veja demonstrações ao vivo lado a lado de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demonstrações ao vivo no site AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).
+Veja demonstrações ao vivo lado a lado de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demonstrações ao vivo no site AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -99,7 +99,7 @@ Estes valores podem ser usados no atributo `layout`:
 
 [tip type="success"]
 
-Acesse a página [Demonstração de layouts AMP](/pt_br/docs/design/amp-html-layout/layouts_demonstrated.html) para ver como diferentes layouts respondem ao redimensionamento de tela. Você também encontra mais informações no site [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}).
+Acesse a página [Demonstração de layouts AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}#keyframes-stylesheet) para ver como diferentes layouts respondem ao redimensionamento de tela.
 
 [/tip]
 
@@ -172,8 +172,8 @@ Por exemplo, aqui temos duas imagens com consultas de mídia que se excluem mutu
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,9 +184,8 @@ Dependendo da largura da tela, uma ou outra será buscada e processada.
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]
- 

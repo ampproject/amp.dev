@@ -50,7 +50,7 @@ function getFilteredFormat(request) {
 
 
 // Setup a proxy over to Grow during development
-if (config.environment === 'development') {
+if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
   const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
@@ -129,7 +129,7 @@ if (config.environment === 'development') {
     // Check if there is a manually filtered variant of the requested page
     // and if so rewrite the request to this URL
     const activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
+    if (activeFormat && isFilterableRoute(request.path)) {
       log.info('Checking for manual variant of requested page ...');
       if (await hasManualFormatVariant(request, activeFormat)) {
         const url = request.url.replace('.html', `.${activeFormat}.html`);
@@ -146,7 +146,7 @@ if (config.environment === 'development') {
   });
 }
 
-if (config.environment !== 'development') {
+if (!config.isDevMode()) {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
   const staticMiddleware = express.static(STATIC_PAGES_PATH);
 
@@ -183,8 +183,16 @@ if (config.environment !== 'development') {
     }
 
     try {
+      // Check if there's a manually filtered variant ...
+      const format = getFilteredFormat(request);
+      const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+      if (fs.existsSync(utils.project.pagePath(manualRequestPath))) {
+        // ... and if there is one vend this
+        requestPath = manualRequestPath;
+      }
+
       const page = await readFileAsync(utils.project.pagePath(requestPath));
-      const filteredPage = new FilteredPage(getFilteredFormat(request), page, true);
+      const filteredPage = new FilteredPage(format, page, true);
       response.send(filteredPage.content);
       return next();
     } catch (e) {

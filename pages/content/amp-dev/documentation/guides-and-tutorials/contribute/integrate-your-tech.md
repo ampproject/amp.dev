@@ -29,7 +29,7 @@ There are 90+ ad providers who have added support for advertising related featur
 
 If you provide call tracking measurement services, your use case may be supported with the new [`amp-call-tracking`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}) extension. This extension dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see an [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-call-tracking.html', locale=doc.locale).url.path}}) or read about the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}).
+To learn more about how this extension might work for you, please see an [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-call-tracking.html', locale=doc.locale).url.path}}) or read about the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}).
 
 ## 4. Adding a new extension/embed
 
@@ -51,5 +51,5 @@ If you have questions or suggestions, please don't hesitate to [file an issue](h
 
 - [AMP Project Site](https://www.ampproject.org/)
 - [AMP GitHub Project](https://github.com/ampproject/amphtml)
-- [AMP Blog](/latest/blog)
-- [AMP Project Roadmap](/roadmap/)
+- [AMP Blog](https://blog.amp.dev/)
+- [AMP Project Roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

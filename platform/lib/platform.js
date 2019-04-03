@@ -19,18 +19,25 @@
 const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
+const cors = require('cors');
 const ampCors = require('amp-toolbox-cors');
-const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
+const subdomain = require('./middleware/subdomain.js');
+
 
 const WWW_PREFIX = 'www.';
+const HEALTH_CHECK = '/__health-check';
 const routers = {
-  'whoAmI': require('./routers/whoAmI.js'),
-  'pages': require('./routers/pages.js'),
-  'examples': require('./routers/examples.js'),
-  'static': require('./routers/static.js'),
+  'whoAmI': require('@lib/routers/whoAmI.js'),
+  'pages': require('@lib/routers/pages.js'),
+  'example': {
+    'sources': require('@lib/routers/example/sources.js'),
+    'embeds': require('@lib/routers/example/embeds.js'),
+    'api': require('@examples'),
+  },
+  'static': require('@lib/routers/static.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
 };
@@ -42,7 +49,7 @@ class Platform {
     signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
     this.server = express();
 
-    if (config.environment == 'development') {
+    if (config.isDevMode()) {
       const HttpProxy = require('http-proxy');
 
       // When in development fire up a second server as a simple proxy
@@ -60,16 +67,6 @@ class Platform {
       });
     }
     this.server.use(shrinkRay());
-    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
-    this.server.use((request, response, next) => {
-      // don't optimize sample source or preview
-      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
-             request.headers['x-requested-by'] === 'playground') {
-        next();
-        return;
-      }
-      ampOptimizer(request, response, next);
-    });
     this.server.use((req, res, next) => {
       if (req.hostname.startsWith(WWW_PREFIX)) {
         res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
@@ -82,36 +79,34 @@ class Platform {
         return next();
       }
       setNoSniff(res);
-      setHsts(res);
       setXssProtection(res);
+      if (req.path === HEALTH_CHECK) {
+        // it's critical that health checks don't redirect for GCE healthchecks to work correctly
+        return next();
+      }
+      setHsts(res);
       if (req.headers['x-forwarded-proto'] === 'https') {
         return next();
       }
       res.redirect('https://' + req.hostname + req.path);
     });
+
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
     this._enableCors();
     this.server.use(defaultCachingStrategy);
 
     this._check();
     this._registerRouters();
 
-    this.server.listen(config.hosts.platform.port || 8080, () => {
-      signale.success(`amp.dev available on ${host}!`);
+    const port = config.hosts.platform.port || process.env.APP_PORT || 80;
+    this.server.listen(port, () => {
+      signale.success(`server listening on ${port}!`);
     });
   }
 
   _enableCors() {
-    this.server.use((request, response, next) => {
-      response.header('Access-Control-Allow-Origin', '*');
-      response.header('Access-Control-Allow-Credentials', 'true');
-      response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-      response.header(
-          'Access-Control-Allow-Headers',
-          'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, X-Requested-By, ' +
-        'Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-      next();
-    });
-
+    this.server.use(cors());
     this.server.use(ampCors({
       'verifyOrigin': false,
     }));
@@ -123,11 +118,18 @@ class Platform {
   }
 
   _registerRouters() {
+    this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(routers.examples);
-    this.server.use(routers.static);
-    this.server.use('/playground', routers.playground);
+    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
+    // eslint-disable-next-line new-cap
+    this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
+      routers.example.embeds,
+      routers.example.sources,
+      routers.example.api,
+    ])));
+    this.server.use('/documentation/examples', routers.example.api);
     this.server.use('/boilerplate', routers.boilerplate);
+    this.server.use(routers.static);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }

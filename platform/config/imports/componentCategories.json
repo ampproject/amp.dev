@@ -3,9 +3,11 @@
     "amp-ad-exit": "ads-analytics",
     "amp-analytics": "ads-analytics",
     "amp-call-tracking": "ads-analytics",
-    "amp-experiment": "ads-analytics",
+		"amp-experiment": "ads-analytics",
+		"amp-mraid": "ads-analytics",
     "amp-pixel": "ads-analytics",
-    "amp-auto-ads": "ads-analytics",
+		"amp-auto-ads": "ads-analytics",
+		"amp-smartlinks": "ads-analytics",
     "amp-sticky-ad": "ads-analytics",
     "amp-share-tracking": "ads-analytics",
 
@@ -28,7 +30,8 @@
     "amp-subscriptions": "dynamic-content",
     "amp-subscriptions-google": "dynamic-content",
     "amp-user-notification": "dynamic-content",
-    "amp-sortable-table": "dynamic-content",
+		"amp-sortable-table": "dynamic-content",
+		"amp-viewer-assistance": "dynamic-content",
     "amp-web-push": "dynamic-content",
 
     "amp-accordion": "layout",
@@ -79,7 +82,9 @@
     "amp-viqeo-player": "media",
     "amp-wistia-player": "media",
     "amp-yotpo": "media",
-    "amp-youtube": "media",
+		"amp-youtube": "media",
+
+		"amp-autocomplete": "misc",
 
     "amp-animation": "presentation",
     "amp-date-countdown": "presentation",

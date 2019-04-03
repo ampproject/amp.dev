@@ -69,7 +69,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 借助 Google 的 AMP URL API，
 您可以检索与给定网址列表匹配的 AMP HTML 网址（[官方文档](https://developers.google.com/amp/cache/use-amp-url)/
-[演示](https://ampbyexample.com/advanced/using_the_amp_url_api/)）。这些网址
+[演示]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）。这些网址
 无需是规范版本。如果存在 AMP 版本，响应中将包含
 原始 AMP 网址和 Google AMP Cache 中缓存的 AMP 网页对应的
 网址。
@@ -167,7 +167,7 @@ AMP runtime 提供了一个 Viewer API，后者提供了
 
 *   从 AMP 缓存提供 AMP 网页（加载时间缩短 1 秒以上）。
 *   显示文章的发布商来源（例如，在可收起标头中）。
-*   提供分享操作（另请参阅下方的“[分享 AMP 内容](/zh_cn/docs/integration/integrate-with-apps.html#sharing-amp-content)”
+*   提供分享操作（另请参阅下方的“[分享 AMP 内容]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)”
     一节）。
 *   在基于 WebView 的查看工具中，启用第三方 Cookie。
 *   为您的平台/应用设置引荐来源网址。

@@ -31,7 +31,6 @@
     <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
-    <link rel="manifest" href="/static/manifest.json"/>
     <meta name="theme-color" content="#005af0"/>
 
     <link rel="canonical" href="{{ doc.url }}"/>
@@ -89,6 +88,7 @@
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -106,8 +106,8 @@
       {% endblock %}
 
       {{ doc.styles.emit() }}
-      <link rel="manifest" href="/manifest.json">
     </style>
+    <link rel="manifest" href="/manifest.json">
   </head>
   {# The body tag needs an empty class attribute in order to add the filter class.
   It is a block solely for the purpose to be overridable by the samples. #}
@@ -155,7 +155,9 @@
     {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
     <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
       Hi, this is the public beta of amp.dev. Got feedback?
-      <a href="https://github.com/ampproject/docs/issues" class="ap-m-banner-link">
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf36pLNLBR3LVj_v1cuNbDMwXHKxrhpgdIxNcmIUJNvEOAUnQ/viewform" class="ap-m-banner-link">
+        {% do doc.icons.useIcon('/icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         {{ _('Let us know!') }}
       </a>

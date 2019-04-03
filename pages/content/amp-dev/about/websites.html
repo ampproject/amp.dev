@@ -23,7 +23,7 @@ kpis:
 ---
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-  <div class="ap-o-stage ap-o-stage-websites">
+  <div class="ap-o-stage">
     <div class="ap--container-fluid">
       <div class="ap-o-stage-content">
           <div class="ap-o-stage-content-icon ap-a-ico">
@@ -35,7 +35,7 @@ kpis:
           <h1 class="ap-o-stage-content-headline">Easily create user first websites with AMP.</h1>
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}" class="ap-o-stage-content-button ap-a-btn">Get started</a>
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}?format=websites" class="ap-o-stage-content-button ap-a-btn">Get started</a>
       </div>
     </div>
   </div>
@@ -98,13 +98,13 @@ kpis:
 
     {% with %}
     {% set case_band_images = [
-      {"src": "/static/img/case-band-post-mobile.png", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-vox-mobile.png", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-iene-desktop.png", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-bmw-mobile.png", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-magebit-desktop.png", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-renovationbrands-desktop.png", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-tasty-mobile.png", "width": "750", "height": "1334"}
+      {"src": "/static/img/case-band-post-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-vox-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-iene-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-bmw-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-magebit-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-renovationbrands-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-tasty-mobile.jpg", "width": "750", "height": "1334"}
       ]
     %}
     {% include 'views/partials/case-band.j2' %}

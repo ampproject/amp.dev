@@ -69,7 +69,7 @@ descritas acima.
 
 O Google fornece a AMP URL API para recuperar os URLs de HTML para AMP correspondentes para uma
 determinada lista de URLs ([documentação oficial](https://developers.google.com/amp/cache/use-amp-url) /
-[demonstração]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Os URLs não
+[demonstração]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Os URLs não
 precisam ser versões canônicas. Se houver uma versão AMP, a resposta
 incluirá o URL de AMP original e o URL da página AMP armazenada no cache
 de AMP do Google.
@@ -167,7 +167,7 @@ Veja algumas práticas recomendadas gerais para implementar um visualizador de A
 
 *   Disponibilize a página AMP a partir de um cache de AMP. Isso diminui o tempo de carregamento em mais de 1s.
 *   Exiba a origem do editor do artigo (por exemplo, em um cabeçalho que pode ser recolhido).
-*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP](/pt_br/docs/integration/integrate-with-apps.html#sharing-amp-content)"
+*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)"
     abaixo).
 *   Nos visualizadores baseados em WebView, permita cookies de terceiros.
 *   Defina um referenciador para sua plataforma ou seu aplicativo.

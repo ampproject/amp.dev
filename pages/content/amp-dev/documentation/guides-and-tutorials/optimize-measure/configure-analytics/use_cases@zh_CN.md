@@ -4,7 +4,7 @@ $title: 使用情形
 
 本指南提供了一系列跟踪用户互动的常见使用情形：
 
-备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量](/zh_cn/contribute/)
+备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}})
 
 ## 跟踪网页浏览量
 

@@ -4,7 +4,7 @@ $title: 라이브 블로그 만들기
 
 라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소를 사용하여 라이브 블로그를 구현할 수 있습니다.
 
-이 가이드에서는 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
+이 가이드에서는 [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
 
 [tip type="success"]
 
@@ -70,7 +70,7 @@ $title: 라이브 블로그 만들기
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플],[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}).url.path}})을 참조하세요.
+호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플],[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}).url.path}})을 참조하세요.
 
 블로그 게시물의 크기가 `data-max-items-per-page`로 지정한 최대 항목 수를 초과했다면 오래된 블로그 항목은 2페이지와 같이 '다음' 페이지에 표시됩니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})가 주기적으로 서버를 폴링하여 항목이 변경되지 않았는지 확인하므로 사용자가 첫 번째 페이지에 있지 않으면 서버를 폴링하지 않아도 됩니다.
 
@@ -88,4 +88,4 @@ AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.co
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 참조 문서
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [AMP By Example의 라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [AMP By Example의 라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

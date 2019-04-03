@@ -24,14 +24,25 @@ const utils = require('@lib/utils');
 
 const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
-const GROW_OUT_DIR = '../platform/pages';
+const GROW_OUT_DIR = utils.project.absolute('platform/pages');
+
+const ENV_DEV = 'development';
 
 class Config {
-  constructor(environment = 'development') {
+  constructor(environment = ENV_DEV) {
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
     this.hosts = env.hosts;
+    this.hostNames = new Set();
+    Object.values(this.hosts).forEach((host) => {
+      host.base = this.getHost(host);
+      let hostName = host.host;
+      if (host.subdomain) {
+        hostName = host.subdomain + '.' + hostName;
+      }
+      this.hostNames.add(hostName);
+    });
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
@@ -39,22 +50,35 @@ class Config {
     this.options = mri(process.argv.slice(2));
 
     // Synchronously write podspec for Grow to run flawlessly later in pipeline.
-    // Check if running inside GAE as writes are not permitted there
-    if (!process.env.GAE_SERVICE) {
+    try {
       this._configureGrow();
+    } catch (err) {
+      // writes are not permitted on GAE or in a container
     }
   }
 
   /**
-   * Builds a URL from a host object containing scheme, host and port
+   * Returns true if development mode is active.
+   */
+  isDevMode() {
+    return this.environment === ENV_DEV;
+  }
+
+  /**
+   * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
    * @return {String} The full URL
    */
-  _buildUrl(host) {
-    let url = `${host.scheme}://${host.host}`;
-    if (host.port) {
-      url = url + `:${host.port}`;
+  getHost(hostConfig) {
+    let url = `${hostConfig.scheme}://`;
+    const isLocalhost = (hostConfig.host === 'localhost');
+    if (isLocalhost || !hostConfig.subdomain) {
+      url += hostConfig.host;
+    } else {
+      url += `${hostConfig.subdomain}.${hostConfig.host}`;
     }
-
+    if (hostConfig.port) {
+      url += `:${hostConfig.port}`;
+    }
     return url;
   }
 
@@ -67,7 +91,7 @@ class Config {
     podspec = yaml.safeLoad(podspec);
 
     // Force-enable all languages during development
-    if (this.environment == 'development') {
+    if (this.isDevMode()) {
       podspec.localization.locales = [
         'en',
         'fr',
@@ -101,9 +125,10 @@ class Config {
 
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
-      'playground': this.shared.baseUrls.playground,
-      'platform': this._buildUrl(this.hosts.platform),
-      'api': this._buildUrl(this.hosts.api),
+      'playground': this.hosts.playground.base,
+      'platform': this.hosts.platform.base,
+      'api': this.hosts.api.base,
+      'preview': this.hosts.preview.base,
     };
 
     // Deployment specific
@@ -121,6 +146,6 @@ class Config {
   }
 }
 
-const config = new Config(process.env.NODE_ENV);
+const config = new Config(process.env.APP_ENV || process.env.NODE_ENV);
 
 module.exports = config;

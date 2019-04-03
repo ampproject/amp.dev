@@ -17,6 +17,8 @@
 'use strict';
 
 const cheerio = require('cheerio');
+const URL = require('url').URL;
+const config = require('@lib/config.js');
 
 const FORMATS = ['websites', 'stories', 'ads', 'email'];
 
@@ -63,6 +65,7 @@ class FilteredPage {
       this._rewriteUrls();
       this._setActiveFormatToggle();
       this._removeStaleFilterClass();
+      this._removeEmptyFilterBubbles();
       this._addClassToBody();
     }
   }
@@ -111,8 +114,7 @@ class FilteredPage {
       filteredElement.remove();
     });
 
-    // Find possibly empty lists and remove them for ...
-    // a) component and default sidebar
+    // Find possibly empty lists and remove them from sidebars
     this._dom('.nav-list.level-2')
         .each((index, navList) => {
           navList = this._dom(navList);
@@ -121,6 +123,22 @@ class FilteredPage {
             navList.parent().remove();
           }
         });
+
+    // Remove empty top level categories from sidebar
+    this._dom('.nav-item.level-1')
+        .each((index, navItem) => {
+          navItem = this._dom(navItem);
+
+          // ... consider a category empty if there are no links in it
+          if (!navItem.has('a').length) {
+            navItem.remove();
+          }
+        });
+
+    // Remove eventually unnecessary tutorial dividers left by the
+    // previous transformation
+    this._dom('.nav-item-tutorial-divider:last-child,' +
+        '.nav-item-tutorial-divider:first-child').remove();
   }
 
   /**
@@ -131,24 +149,32 @@ class FilteredPage {
   _rewriteUrls() {
     this._dom('a').each((index, a) => {
       a = this._dom(a);
-      const href = a.attr('href') || '';
+      const url = new URL(a.attr('href') || '', config.hosts.platform.base);
+
       // Check if the link is pointing to a filtered route
       // and if the link already has a query parameter
-      if (!href.includes('?') && isFilterableRoute(href)) {
-        a.attr('href', `${href}?format=${this._format}`);
+      if (!url.searchParams.get('format') && isFilterableRoute(url.pathname)) {
+        url.searchParams.set('format', this._format);
+        a.attr('href', url.toString());
       }
     });
   }
 
   _setActiveFormatToggle() {
-    // Set states for all the format toggles
-    this._dom('.ap-m-format-toggle-link').addClass('inactive');
+    // Rewrite the active state (which is websites per default) to
+    // the current active format
+    const activeFormat = this._dom('.ap-m-format-toggle-selected');
+    if (activeFormat.length == 0) {
+      console.error('Page has no active format.');
+      return;
+    }
 
-    // The current active format should make it possible to go back to unfiltered
-    const activeToggle = this._dom(`.ap-m-format-toggle-link-${this._format}`);
-    activeToggle.removeClass('inactive');
-    activeToggle.addClass('active');
-    activeToggle.attr('href', '?');
+    activeFormat.html(activeFormat.html().replace(/websites/g, this._format));
+    activeFormat.removeClass('ap-m-format-toggle-link-websites');
+    activeFormat.addClass(`ap-m-format-toggle-link-${this._format}`);
+
+    // Remove the current format from list of available ones
+    this._dom(`a.ap-m-format-toggle-link-${this._format}`).remove();
   }
 
   /**
@@ -169,8 +195,32 @@ class FilteredPage {
     });
   }
 
+  /**
+   * Checks if there are filter bubbles on the page and checks for possible
+   * matches for their filter, then removes them if there are none
+   * @return {undefined}
+   */
+  _removeEmptyFilterBubbles() {
+    this._dom('.ap-m-filter-bubble').each((index, filterBubble) => {
+      filterBubble = this._dom(filterBubble);
+      const category = filterBubble.data('category');
+      if (!this._dom(`.ap-m-teaser[data-category="${category}"]`).length && category) {
+        filterBubble.remove();
+      }
+    });
+  }
+
   get content() {
-    return this._dom.html();
+    let content = this._dom.html();
+
+    // As cheerio has problems with XML syntax in HTML documents the
+    // markup for the icons needs to be restored
+    content = content.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
+        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+    content = content.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
+        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
+
+    return content;
   }
 }
 

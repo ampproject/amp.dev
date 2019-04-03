@@ -1,6 +1,0 @@
-$title: Features
-$view: /views/detail/example-detail.j2
-$path: '/documentation/examples/features/{base}.html'
-$localization:
-  path: '/{locale}/documentation/examples/features/{base}.html'
-$order: 0

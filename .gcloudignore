@@ -19,24 +19,24 @@
 
 node_modules/
 yarn.lock
-package-lock.json
 LICENSE
 MAINTENANCE.md
 README.md
 CONTRIBUTING.md
 
 # The complete frontend, pages and examples packages aren't needed on App Engine
-frontend/
+/frontend/
 pages/
 !platform/pages
-/examples
+/examples/source/**/*.html
 
 # playground: ignore everything except the dist folder
-playground/*
-!playground/backend
-!playground/dist
+/playground/*
+!/playground/backend
+!/playground/dist
 
 # boilerplate: ignore everything except the dist folder
-boilerplate/*
-!boilerplate/backend
-!boilerplate/dist
+/boilerplate/*
+!/boilerplate/backend
+!/boilerplate/dist
+!/boilerplate/lib

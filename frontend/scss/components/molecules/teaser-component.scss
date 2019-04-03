@@ -22,7 +22,7 @@
 		& > a {
 			@include teaser-linking;
 			height: 100%;
-			
+
 			&:hover {
 				@include teaser-linking-hover;
 
@@ -54,6 +54,7 @@
 
 			&-title {
 				@include teaser-header-title;
+        font-weight: bold;
 			}
 		}
 

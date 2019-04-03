@@ -31,7 +31,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [tip type="success"]
 
-[AMP By Example のライブデモ],[`amp-img`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).url.path}}) の動作を比較したライブデモをご覧ください。
+[AMP By Example のライブデモ],[`amp-img`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).url.path}}) の動作を比較したライブデモをご覧ください。
 
 [/tip]
 
@@ -96,12 +96,6 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
     </tr>
   </tbody>
 </table>
-
-[tip type="success"]
-
-[AMP レイアウトのデモ],[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}) でも詳細をご確認いただけます。
-
-[/tip]
 
 ### width や height が定義されていない場合
 
@@ -172,8 +166,8 @@ AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +178,8 @@ AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]

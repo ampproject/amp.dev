@@ -10,13 +10,13 @@ Os anúncios HTML para AMP são escritos em HTML para AMP, de acordo com as [Esp
 
 ### Vantagens
 
-Por que os anúncios HTML para AMP são melhores que os anúncios tradicionais? 
+Por que os anúncios HTML para AMP são melhores que os anúncios tradicionais?
 
 1.  **Mais rápidos**: os anúncios HTML para AMP são mais rápidos porque são solicitados antecipadamente no processo de renderização da página e são exibidos imediatamente, pouco antes de o usuário visualizar o anúncio. O tamanho reduzido dos anúncios HTML para AMP também melhora a velocidade.
 1.  **Mais leves**: os anúncios HTML para AMP agregam recursos de uso comum, o que reduz o tamanho dos arquivos. Depois que estão na página, os anúncios HTML para AMP também consomem menos recursos. Por exemplo, em vez de 10 rastreadores solicitando informações de anúncios convencionais, os anúncios HTML para AMP coletam todos os dados de uma vez e os distribuem a todos os rastreadores interessados.
 1.  **Coordenados**: nas páginas AMP, o [ambiente de tempo de execução de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime) pode coordenar os recursos limitados de um celular no componente certo no momento certo para oferecer a melhor experiência do usuário. Por exemplo, os anúncios HTML para AMP com animações são pausados quando não estão na janela de visualização atual.
 1.  **Mais interessantes**: os usuários não interagem com anúncios que não conseguem ver. Anúncios mais rápidos levam a maior visibilidade e, consequentemente, a taxas de cliques mais elevadas, o que, por sua vez, leva a um melhor desempenho do anúncio.
-1.  **Protegidos contra malware**: com anúncios HTML para AMP, é impossível propagar malware, porque eles são verificados antes da veiculação. Devido a isso, os anunciantes podem garantir uma experiência do usuário segura e uma percepção positiva da marca. 
+1.  **Protegidos contra malware**: com anúncios HTML para AMP, é impossível propagar malware, porque eles são verificados antes da veiculação. Devido a isso, os anunciantes podem garantir uma experiência do usuário segura e uma percepção positiva da marca.
 1.  **Mais flexíveis**: os anúncios HTML para AMP foram concebidos para funcionar em páginas da Web AMP e não AMP, bem como em qualquer dispositivo.
 
 ### Formatos
@@ -47,7 +47,7 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Veiculação de anúncios HTML para AMP em páginas AMP', caption='Veiculação de anúncios HTML para AMP em páginas AMP', align='' ) }}
 
 1.  Os editores inserem um espaço de anúncio na página AMP por meio da tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), especificando a rede de publicidade que querem usar.
-1.  O ambiente de tempo de execução de AMP envia uma solicitação de anúncio à rede de publicidade especificada para recuperar o anúncio. As redes de publicidade que veiculam anúncios HTML para AMP oferecem uma [implementação do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) que valida e assina o criativo. 
+1.  O ambiente de tempo de execução de AMP envia uma solicitação de anúncio à rede de publicidade especificada para recuperar o anúncio. As redes de publicidade que veiculam anúncios HTML para AMP oferecem uma [implementação do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) que valida e assina o criativo.
 1.  A rede de publicidade responde com o anúncio HTML para AMP e o ambiente de tempo de execução de AMP renderiza o anúncio na página AMP.
 
 ## Veicular anúncios HTML para AMP
@@ -127,4 +127,3 @@ Sim. Consulte [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components
 *   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) é a maneira recomendada de encontrar as respostas para suas dúvidas sobre AMP. Como os membros da comunidade do Projeto AMP monitoram regularmente o Stack Overflow, é provável que por meio dele você receba as respostas mais rápidas para suas perguntas.
 *   Participe do canal [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) para conhecer soluções e encontrar respostas.
 *   Se você encontrar um bug na AMP ou tiver uma solicitação de recurso, consulte o artigo sobre [relatar problemas com a AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) (em inglês) para ver mais informações sobre como comunicar um problema.
- 

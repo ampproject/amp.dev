@@ -45,7 +45,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 
 ## layout
 
-AMP 提供了一系列[布局](/zh_cn/docs/design/responsive/control_layout.html#the-layout-attribute)，以用于指定某个 AMP 组件在文档布局中的行为方式。您可通过下述方法为某个组件指定一种布局：为该元素添加 `layout` 属性，并指定一个受支持的布局值（请参阅该元素的文档以了解哪些值受支持）。
+AMP 提供了一系列[布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)，以用于指定某个 AMP 组件在文档布局中的行为方式。您可通过下述方法为某个组件指定一种布局：为该元素添加 `layout` 属性，并指定一个受支持的布局值（请参阅该元素的文档以了解哪些值受支持）。
 
 示例：
 
@@ -79,7 +79,7 @@ AMP 提供了一系列[布局](/zh_cn/docs/design/responsive/control_layout.html
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询](/zh_cn/docs/design/responsive/control_layout.html#element-media-queries)。
+有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries)。
 
 ## noloading
 
@@ -155,7 +155,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 ## width 和 height
 
-对于某些[布局](/zh_cn/docs/design/responsive/control_layout.html#the-layout-attribute)，AMP 组件必须具有包含整数像素值的 `width` 和 `height` 属性。
+对于某些[布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)，AMP 组件必须具有包含整数像素值的 `width` 和 `height` 属性。
 
 示例：
 
@@ -168,7 +168,3 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 [/sourcecode]
 
 有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
-
-
-
-

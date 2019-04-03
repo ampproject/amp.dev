@@ -34,7 +34,7 @@ $title: 써드 파티 콘텐츠 가져오기
 </amp-iframe>
 </div>
 
-도움말: [AMP By Example],[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-twitter.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 인스타그램 가져오기
 
@@ -67,7 +67,7 @@ width와 height 값은 전역으로 사용해야합니다.
 </amp-iframe>
 </div>
 
-도움말: [AMP By Example],[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-instagram.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 페이스북 포스트나 비디오 보여주기
 
@@ -113,7 +113,7 @@ width와 height 값은 전역으로 사용해야합니다.
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-도움말: [AMP By Example],[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-facebook.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 유튜브 비디오 가져오기
 
@@ -145,7 +145,7 @@ Z1q71gFeRqM가 video id입니다.
 </amp-iframe>
 </div>
 
-도움말: [AMP By Example],[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-youtube.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 광고 보여주기
 
@@ -189,6 +189,6 @@ AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 �
 </div>
 
 AMP는 광범위한 광고 네트워크를 지원합니다.
-[reference for a full list](/ko/docs/reference/components/amp-ad.html#supported-ad-networks)를 참고하시길 바랍니다.
+[reference for a full list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks)를 참고하시길 바랍니다.
 
 읽어보기: [AMP에 광고 게재]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) 가이드에서 광고에 관해 자세히 알아보세요.

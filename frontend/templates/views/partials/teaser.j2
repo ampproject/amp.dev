@@ -11,13 +11,17 @@
 
     <div class="ap-m-teaser-card">
       {% set teaser = teaser or teaser_doc.teaser or {} %}
-      {% if teaser.image %}
+      {% if teaser.video %}
+      <div class="ap-a-img ap-m-teaser-image">
+        <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="1" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
+      </div>
+      {% elif teaser.image %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-img class="ap--media" src="{{ teaser.image.src }}" layout="responsive" width="1" height="1" alt="{{ teaser.image.alt }}"></amp-img>
       </div>
       {% elif teaser.figure %}
       {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
-      <div class="ap-m-kpi ap-m-kpi-{{ teaser_doc.formats[0] }}">
+      <div class="ap-m-kpi ap-m-kpi-teaser ap-m-kpi-{{ teaser_doc.formats[0] }}">
         <div class="ap-m-kpi-content">
           {% if teaser.icon %}
           {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
@@ -56,9 +60,15 @@
     {% endif %}
 
     <div class="ap-m-teaser-card">
+      {% if teaser.video %}
+      <div class="ap-a-img ap-m-teaser-image">
+        <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="{{ teaser.video.width }}" height="{{ teaser.video.height }}" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
+      </div>
+      {% else %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-img class="ap--media" src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
       </div>
+      {% endif %}
     </div>
     <div class="ap-m-teaser-content">
       <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
@@ -68,7 +78,7 @@
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
-<div class="ap-m-teaser ap-m-teaser-component" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
+<div class="ap-m-teaser ap-m-teaser-component {% for format in teaser_doc.formats %}ap--{{ format }} {% endfor %}" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% if teaser_doc.formats %}
@@ -92,10 +102,10 @@
     </div>
   </a>
 </div>
-{% elif teaser_doc.view == '/views/examples/manual.j2' %}
+{% elif teaser_doc.view == '/views/examples/documentation.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
-<div class="ap-m-teaser ap-m-teaser-example" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.collection.title|slug }}'">
+<div class="ap-m-teaser ap-m-teaser-example ap--{{ teaser_doc.formats[0] }}" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ap-m-teaser-info-trigger">
     <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used

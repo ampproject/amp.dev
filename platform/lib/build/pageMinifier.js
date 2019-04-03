@@ -16,6 +16,7 @@
 
 /* eslint-disable no-invalid-this */
 'use strict';
+require('module-alias/register');
 
 const {Signale} = require('signale');
 const gulp = require('gulp');
@@ -24,6 +25,9 @@ const through = require('through2');
 const CleanCSS = require('clean-css');
 const crypto = require('crypto');
 const rcs = require('rcs-core');
+const ampOptimizer = require('amp-toolbox-optimizer');
+const runtimeVersionPromise = require('amp-toolbox-runtime-version').currentVersion();
+
 const config = require('@lib/config');
 
 // List of selectors that can be safely minified
@@ -52,7 +56,11 @@ const SELECTOR_REWRITE_SAFE = [
   'ap-o-teaser-grid',
 ];
 
-const SELECTOR_REWRITE_EXCLUDED_PATHS = /\/documentation\/examples.*/;
+// Do not rewrite all example pages as users might need correct source code
+// for reference, ignore componets overview specifically as it relies on the
+// ap-m-teaser selector for filtering.
+const SELECTOR_REWRITE_EXCLUDED_PATHS =
+  /\/documentation\/examples.*|\/documentation\/components\.html/;
 
 class PageMinifier {
   constructor() {
@@ -77,6 +85,10 @@ class PageMinifier {
 
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
+
+    ampOptimizer.setConfig({
+      blurredPlaceholdersCacheSize: 0, // cache all placeholders
+    });
   }
 
   /**
@@ -87,20 +99,37 @@ class PageMinifier {
   start(path) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-
     return gulp.src(`${path}/**/*.html`, {'base': './'})
-        .pipe(through.obj(function(page, encoding, callback) {
-          scope._log.await(`Minifying ${page.relative} ...`);
+        .pipe(through.obj(async function(canonicalPage, encoding, callback) {
+          let html = canonicalPage.contents.toString();
+          html = scope.minifyPage(html, canonicalPage.path);
 
-          let html = page.contents.toString();
-          html = scope.minifyPage(html, page.path);
-          page.contents = Buffer.from(html);
+          const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
+          const optimizedHtml = await scope.optimize(html, ampPath);
 
-          this.push(page);
+          const ampPage = canonicalPage.clone();
+          ampPage.path = ampPath;
+
+          canonicalPage.contents = Buffer.from(optimizedHtml);
+          ampPage.contents = Buffer.from(html);
+
+          this.push(canonicalPage);
+          this.push(ampPage);
 
           callback();
         }))
         .pipe(gulp.dest('./'));
+  }
+
+
+  async optimize(html, path) {
+    const ampRuntimeVersion = await runtimeVersionPromise;
+    return ampOptimizer.transformHtml(html, {
+      ampUrl: path.replace(/^pages/, ''),
+      ampRuntimeVersion: ampRuntimeVersion,
+      blurredPlaceholders: true,
+      maxBlurredPlaceholders: 7, // number of images in homepage stage
+    });
   }
 
   /**
@@ -190,7 +219,7 @@ class PageMinifier {
     }
 
     // Do not cache styles during development
-    if (config.environment == 'development') {
+    if (config.isDevMode()) {
       return this._cleanCss.minify(css).styles;
     }
 
@@ -212,10 +241,10 @@ class PageMinifier {
 if (!module.parent) {
   (async () => {
     const pageMinifier = new PageMinifier();
-    pageMinifier.start();
+    pageMinifier.start(__dirname + '/../../pages');
   })();
 }
 
 module.exports = {
-  'pageMinifier': new PageMinifier(),
+  pageMinifier: new PageMinifier(),
 };

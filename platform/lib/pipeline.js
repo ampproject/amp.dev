@@ -95,7 +95,7 @@ class Pipeline {
     this._collectTemplates();
     this._collectIcons();
 
-    if (config.environment === 'development') {
+    if (config.isDevMode()) {
       this._watchFrontendChanges();
       signale.watch('Watching frontend source and static files for changes ...');
     }
@@ -113,7 +113,7 @@ class Pipeline {
     log.start(`Transpiling SCSS from ${TRANSPILE_SCSS_SRC} ...`);
 
     const options = {
-      'outputStyle': 'compact' ? config.environment === 'development' : 'compressed',
+      'outputStyle': config.isDevMode() ? 'compact' : 'compressed',
       'includePaths': '../frontend/scss/',
     };
 
@@ -177,10 +177,8 @@ class Pipeline {
    * to the documentation/components collection
    * @return {Promise}
    */
-  async importReference() {
+  importReference() {
     const importer = new ComponentReferenceImporter();
-    await importer.initialize();
-
     return importer.import();
   }
 
@@ -188,10 +186,8 @@ class Pipeline {
    * Imports spec docs defeind in platform/imports/spec.json
    * @return {Promise}
    */
-  async importSpec() {
+  importSpec() {
     const importer = new SpecImporter();
-    await importer.initialize();
-
     return importer.import();
   }
 
@@ -210,7 +206,7 @@ class Pipeline {
    */
   async generatePages() {
     const grow = new Grow();
-    if (config.environment === 'development') {
+    if (config.isDevMode()) {
       // During development start Grow's dev server
       return grow.run();
     } else {

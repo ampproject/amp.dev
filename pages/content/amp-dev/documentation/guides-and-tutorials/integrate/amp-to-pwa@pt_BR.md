@@ -14,7 +14,7 @@ Leia mais para saber como e por que usar esse padrão de desenvolvimento.
 
 ### AMP para aquisição inicial de usuários
 
-As AMP são a solução ideal para as chamadas **páginas de detalhes**, com conteúdo que os usuários descobrem organicamente por meio de mecanismos de pesquisa, links compartilhados por amigos ou links em outros sites. Com a [pré-renderização especializada das AMP](/pt_br/learn/about-how/), o carregamento é extremamente rápido, e isso leva a uma taxa de desistência muito menor. O [estudo mais recente da DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) mostrou que **mais de 53% dos usuários desistem após três segundos**.
+As AMP são a solução ideal para as chamadas **páginas de detalhes**, com conteúdo que os usuários descobrem organicamente por meio de mecanismos de pesquisa, links compartilhados por amigos ou links em outros sites. Com a [pré-renderização especializada das AMP]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}), o carregamento é extremamente rápido, e isso leva a uma taxa de desistência muito menor. O [estudo mais recente da DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) mostrou que **mais de 53% dos usuários desistem após três segundos**.
 
 ### PWA para mais interatividade e engajamento
 
@@ -109,4 +109,4 @@ As AMP resolvem isso com um recurso chamado [reescrita do URL do shell]({{g.doc(
 
 Com esses atributos, todos os cliques subsequentes em uma AMP direcionarão para o PWA, independentemente de qualquer service worker.
 
-Leia mais: Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso](/pt_br/docs/integration/amp-in-pwa.html).
+Leia mais: Se você já chegou até aqui, que tal reutilizar as páginas AMP existentes para criar seu PWA? [Saiba como fazer isso]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).

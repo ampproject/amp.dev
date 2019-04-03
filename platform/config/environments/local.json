@@ -15,6 +15,18 @@
       "scheme": "http",
       "host": "localhost",
       "port": "8080"
+    },
+    "playground": {
+      "scheme": "http",
+      "subdomain": "playground",
+      "host": "localhost",
+      "port": "8082"
+    },
+    "preview": {
+      "scheme": "http",
+      "subdomain": "preview",
+      "host": "localhost",
+      "port": "8082"
     }
   }
 }

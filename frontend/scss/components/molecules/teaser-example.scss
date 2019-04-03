@@ -27,8 +27,6 @@
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: flex-end;
-		scroll-snap-align: start;
-		scroll-snap-type: x mandatory;
 		box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
 		transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
@@ -222,7 +220,6 @@
 					@include txt;
 					@include txt-2;
 					@include txt-mono;
-					@include txt-strong;
 					display: inline;
 					letter-spacing: 0.03em;
 			    padding: 2px 4px;

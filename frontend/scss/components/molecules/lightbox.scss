@@ -1,0 +1,43 @@
+/*
+
+######################################
+### MOLECULES: lightbox #####
+######################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{molecule('lightbox')} {
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  &-content {
+    background: color('white');
+    padding: 20px;
+    margin: 0 40px;
+    width: 80%;
+  }
+
+  &-headline {
+    @include txt;
+    @include txt-font-accent;
+    @include txt-lrg;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &-bio {
+    @include txt;
+  }
+}

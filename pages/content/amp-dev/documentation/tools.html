@@ -1,7 +1,9 @@
 ---
 $title: Tools
 $view: /views/custom.j2
-
+flyout:
+  description: Begin building
+  icon: wrench
 ---
 {% do doc.styles.addCssFile('css/components/templates/tools.css') %}
 
@@ -90,7 +92,7 @@ $view: /views/custom.j2
           If you want to play around with the sample code: all samples can now be opened in an interactive playground. At the moment it’s limited to only editing existing samples, but we plan to make this even more useful by making it possible to share samples with others.
         </p>
         <!-- link -->
-        <a href="/playground" class="ap-m-lnk ap-m-lnk-square">
+        <a href="{{ doc.pod.podspec.base_urls.playground }}" class="ap-m-lnk ap-m-lnk-square">
           <!-- icon -->
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -198,7 +200,7 @@ $view: /views/custom.j2
   <div class="ap-o-tool-block -alternate" id="vscode">
     <div class="ap--container">
       <!-- window frame -->
-      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Validator">
+      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="VSCode Extension">
         <amp-img
           alt="window frame"
           height="1849"

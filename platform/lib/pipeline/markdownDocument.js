@@ -36,14 +36,9 @@ class MarkdownDocument {
   }
 
   set toc(active) {
-    // Remove markers from document to have them in a defined spot
+    // Remove markers from document as inline TOCs are not supported
     this._contents = this._contents.replace(TOC_MARKER, '');
-
-    // And if TOC should not be rendered mark it in the frontmatter
-    if (!active) {
-      this._frontmatter['toc'] = false;
-    }
-
+    this._frontmatter['toc'] = active;
     this._toc = active;
   }
 
@@ -129,13 +124,19 @@ class MarkdownDocument {
   _convertSyntax() {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
-
-    // Rewrite mustache style parts
-    this._contents =
-      this._contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
+    this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
 
     // Replace dividers (---) as they will break front matter
     this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
+  }
+
+  /**
+   * Escapes mustache style tags to not interfer with Jinja2
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  static escapeMustacheTags(contents) {
+    return contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
   }
 
   /**
@@ -167,7 +168,7 @@ class MarkdownDocument {
    * @return {String}          The rewritten content
    */
   static rewriteCodeBlocks(contents) {
-    // replace code blocks
+    // Rewrite code blocks in fence syntax
     contents =
       contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
       // Fence curly braces to not mess with Grow/jinja2

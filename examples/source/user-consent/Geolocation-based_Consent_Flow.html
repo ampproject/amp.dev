@@ -1,9 +1,9 @@
 <!---
 
-category: 'user-consent'
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
 
 --->
+
 <!--
   ## Introduction
 
@@ -16,7 +16,7 @@ teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="/user_consent/geolocation-based_consent_flow/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Geolocation-based Consent Flow</title>
@@ -74,7 +74,7 @@ teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/components/amp-geo/) extension. We'll use the present `eea` which includes all countries of the European Economic Area. -->
+  <!-- First we need to setup the [`amp-geo`](/documentation/components/reference/amp-geo.html) extension. We'll use the present `eea` which includes all countries of the European Economic Area. -->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
@@ -116,10 +116,9 @@ teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
   <!-- ## Testing -->
   <!--
   You can test different behaviors by appending custom country codes to the URL and enabling the `dev-channel` [here](https://cdn.ampproject.org/experiments.html), for example:
-  <ul>
-    <li>EU: [https://ampbyexample.com/user_consent/geolocation-based_consent_flow/#amp-geo=de](/user_consent/geolocation-based_consent_flow/#amp-geo=de)</li>
-    <li>non-EU: [https://ampbyexample.com/user_consent/geolocation-based_consent_flow/#amp-geo=us](/user_consent/geolocation-based_consent_flow/#amp-geo=us)</li>
-  </ul>
+
+  - EU: [https://ampbyexample.com/user_consent/geolocation-based_consent_flow/#amp-geo=de](/user_consent/geolocation-based_consent_flow/#amp-geo=de)
+  -  non-EU: [https://ampbyexample.com/user_consent/geolocation-based_consent_flow/#amp-geo=us](/user_consent/geolocation-based_consent_flow/#amp-geo=us)
   -->
 
 </body>

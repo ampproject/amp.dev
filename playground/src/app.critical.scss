@@ -158,6 +158,10 @@
 
       * {
         color: #fff;
+        background-color: #29323c;
+      }
+      #runtime-select, select {
+        background-color: #48525c;
       }
       & > *:first-child {
         border-right: 1px solid color('silver');

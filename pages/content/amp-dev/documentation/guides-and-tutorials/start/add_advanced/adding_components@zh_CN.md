@@ -8,7 +8,7 @@ $title: 添加 AMP 扩展组件
 
 - **扩展**：此类组件是指相对于基础库而言的扩展功能，必须作为自定义元素明确包含在文档中。自定义元素需被包含在向 `<head>` 部分添加的具体脚本中（例如 `<script async custom-element="amp-video" ...`）。
 
-- **实验**：此类组件是指已发布但尚不可广泛使用的组件。开发者可以选择使用这些尚未全面发布的功能。有关详情，请参阅[实验性功能](/zh_cn/docs/reference/experimental.html)。
+- **实验**：此类组件是指已发布但尚不可广泛使用的组件。开发者可以选择使用这些尚未全面发布的功能。有关详情，请参阅[实验性功能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}})。
 
 我们已在示例中使用了内置组件 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})教程中探讨了该组件与 AMP 布局系统之间的关系。现在，我们将向新闻报道中添加一些常用的 AMP **扩展**组件。
 
@@ -166,7 +166,7 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 要想详细了解如何嵌入 Twitter 微博，请参阅 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) 组件文档。
 
 [tip]
-AMP 还提供了更多用于嵌入社交网络内容的组件。请参阅最新的 [AMP 社交组件](/zh_cn/docs/reference/components.html#social)。
+AMP 还提供了更多用于嵌入社交网络内容的组件。请参阅最新的 [AMP 社交组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})。
 [/tip]
 
 ## 突出显示报道中的精彩语段
@@ -211,4 +211,4 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`]({
 
 作为对 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 的最后一次试用，请尝试创建一小段文字，例如很高（假设高度值为 400）的“Hello”，并将 max-font-size 属性值保留为 42。最终网页会是什么样子？文字会垂直居中吗？或者，[`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) 标记的高度会缩小以适应最大字号吗？根据您已了解的 AMP 布局系统相关知识，请先试着回答上述问题，然后再试用代码！
 
-要想详细了解 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})，请参阅 [AMP by Example 在线演示](https://ampbyexample.com/components/amp-fit-text/)。
+要想详细了解 [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})，请参阅 [AMP by Example 在线演示]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fit-text.html', locale=doc.locale).url.path}})。

@@ -1,3 +1,12 @@
+/*
+
+############################
+### Organism: component-sidebar #####
+############################
+
+*/
+
+
 @import '../../extends';
 @import '../../functions';
 @import '../../mixins';
@@ -164,5 +173,12 @@ nav[toolbar] {
     span.nav-link + .nav-trigger {
       width: calc(100% + 15px);
     }
+  }
+}
+
+.#{organism('sidebar')} {
+
+  &-section {
+    max-width: 100%;
   }
 }

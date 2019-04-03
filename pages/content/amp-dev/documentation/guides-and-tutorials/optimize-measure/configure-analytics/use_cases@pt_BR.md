@@ -5,7 +5,7 @@ $order: 2
 
 Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário:
 
-Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](/pt_br/contribute/).
+Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
 
 ## Rastrear visualizações de página
 
@@ -219,4 +219,3 @@ O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento 
 </script>
 </amp-analytics>
 ```
-

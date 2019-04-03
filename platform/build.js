@@ -49,11 +49,14 @@ pipeline.clean();
   if (config.options['import'] === true) {
     const referenceImport = pipeline.importReference();
     const specImport = pipeline.importSpec();
+    const roadmapImport = pipeline.importRoadmap();
 
-    await referenceImport;
-    await specImport;
-
-    // await pipeline.importRoadmap();
+    try {
+      await Promise.all([referenceImport, specImport, roadmapImport]);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
   }
 
   // // Create sample sources which get used while generating the pages
@@ -65,7 +68,7 @@ pipeline.clean();
 
   // In all other environments than development the build should be optimized
   // and tested to ensure it is working
-  if (config.environment !== 'development') {
+  if (!config.isDevMode()) {
     await pipeline.optimizeBuild();
     await pipeline.testBuild();
   }
@@ -74,7 +77,7 @@ pipeline.clean();
 })()
     .then(() => {
       // For development we also want to directly serve the current build
-      if (config.environment == 'development') {
+      if (config.isDevMode()) {
         new Platform().start();
       }
     })
