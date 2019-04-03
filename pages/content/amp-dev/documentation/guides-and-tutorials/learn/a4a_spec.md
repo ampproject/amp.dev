@@ -264,7 +264,6 @@ AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohib
 * [amp-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})
 * [amp-youtube]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})
 
-
 Most of the omissions are either for performance or to make AMPHTML ads
 simpler to analyze.
 

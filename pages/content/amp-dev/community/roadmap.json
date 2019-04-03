@@ -262,22 +262,6 @@
           }
         },
         {
-          "createdAt": "2018-07-02T22:54:28Z",
-          "updatedAt": "2018-07-02T22:54:29Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16533",
-            "title": "Design/test a new desktop experience for stories",
-            "description": "- [x] Create a prototype of a new desktop experience\r\n- [x] Test the prototype\r\n- [x] Integrate feedback\r\n- [x] Design a launch/rollout plan\r\n- [x] Roll out the new desktop experience",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
-                "name": "AMP Story",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-07-02T22:49:29Z",
           "updatedAt": "2018-07-02T22:49:30Z",
           "issue": {
@@ -774,6 +758,22 @@
     {
       "cards": [
         {
+          "createdAt": "2018-07-02T22:54:28Z",
+          "updatedAt": "2019-03-29T02:56:12Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16533",
+            "title": "Design/test a new desktop experience for stories",
+            "description": "- [x] Create a prototype of a new desktop experience\r\n- [x] Test the prototype\r\n- [x] Integrate feedback\r\n- [x] Design a launch/rollout plan\r\n- [x] Roll out the new desktop experience",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20AMP%20Story",
+                "name": "AMP Story",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
           "createdAt": "2018-03-16T18:45:00Z",
           "updatedAt": "2019-03-27T00:23:02Z",
           "issue": {
@@ -1262,16 +1262,6 @@
                 "color": "1d76db"
               }
             ]
-          }
-        },
-        {
-          "createdAt": "2018-03-16T18:42:49Z",
-          "updatedAt": "2018-05-25T19:30:43Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14057",
-            "title": "amp-lightbox-gallery",
-            "description": "Currently it's possible to link together amp-image-lightbox or amp-lightbox with amp-carousel, to create a seamless immersive experience for viewing media. However, it's labor-intensive to get that right, and there are a number of barriers to really optimizing that experience for users. This feature is to create a trivial-to-implement, full featured immersive experience for viewing media like images and videos. For example, users can tap on an inline image in the page image (or button to trigger the same experience)—the image expands to full screen with a black scrim behind it, and overlayed affordances to exit the view, to view a related caption, to trigger a grid view to access other media in a given group/carousel in the same immersive view, or to hide the overlays to just view the complete media item.",
-            "labels": []
           }
         }
       ],
