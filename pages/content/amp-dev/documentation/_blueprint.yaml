@@ -1,8 +1,8 @@
-$path: /documentation/{base}/
+$path: /documentation/{base}
 $view: /views/default.j2
 $title@: Documentation
 $localization:
-  path: /{locale}/documentation/{base}/
+  path: /{locale}/documentation/{base}
 $order: 2
 
 flyout:

@@ -112,7 +112,7 @@ AMP URL API. Namun, Anda dapat mengambil URL tersimpan dari URL AMP
 
 ## Menggunakan Cache AMP
 
-[Cache AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_cached.md', locale=doc.locale).url.path}}) adalah
+[Cache AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) adalah
 jaringan penayangan konten (CDN) berbasis proxy untuk menayangkan dokumen AMP yang valid.
 Cache AMP didesain untuk:
 

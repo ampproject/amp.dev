@@ -112,7 +112,7 @@ retornado (ampURL).
 
 ## Usar caches de AMP
 
-Um [cache de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_cached.md', locale=doc.locale).url.path}}) é uma
+Um [cache de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) é uma
 rede de fornecimento de conteúdo (CDN, na sigla em inglês) baseada em proxy que tem a função de exibir documentos AMP válidos.
 Os caches de AMP servem para:
 

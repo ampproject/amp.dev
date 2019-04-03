@@ -1,8 +1,8 @@
-$path: /documentation/guides-and-tutorials/start/visual_story/{base}/
 $view: /views/detail/docs-detail.j2
 $order: 1
+$path: /documentation/guides-and-tutorials/start/visual_story/{base}
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/start/visual_story/{base}/
+  path: /{locale}/documentation/guides-and-tutorials/start/visual_story/{base}
 $title@: Create your first AMP Story
 $title@es: Crear una historia AMP visual
 $title@id: Membuat artikel AMP visual

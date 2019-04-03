@@ -1,5 +1,5 @@
-$path: /documentation/templates/{base}/
+$path: /documentation/templates/{base}
 $view: /views/default.j2
 $title: Templates
 $localization:
-  path: /{locale}/documentation/templates/{base}/
+  path: /{locale}/documentation/templates/{base}

@@ -1,6 +1,6 @@
 $title@: Components
 $view: /views/overview/components-detail.j2
-$path: /documentation/components/{base}/
+$path: /documentation/components/{base}
 $localization:
-  path: /{locale}/documentation/components/{base}/
+  path: /{locale}/documentation/components/{base}
 $order: 2

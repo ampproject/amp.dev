@@ -1,7 +1,7 @@
-$path: /documentation/guides-and-tutorials/develop/{base}/
+$path: /documentation/guides-and-tutorials/develop/{base}
 $view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/{base}/
+  path: /{locale}/documentation/guides-and-tutorials/develop/{base}
 $title@: Include media, iframes & third-party content
 $order: 2
 

@@ -1,6 +1,6 @@
-$path: /events/{base}.html
 $view: /views/default.j2
 $title@: Events
+$path: /events/{base}
 $localization:
   path: /{locale}/events/{base}
 $order: 4

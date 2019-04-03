@@ -1,7 +1,7 @@
-$path: /documentation/guides-and-tutorials/develop/animations/{base}/
 $view: /views/detail/docs-detail.j2
+$path: /documentation/guides-and-tutorials/develop/animations/{base}
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/animations/{base}/
+  path: /{locale}/documentation/guides-and-tutorials/develop/animations/{base}
 $title@: Animate & Transition
 $order: 1
 

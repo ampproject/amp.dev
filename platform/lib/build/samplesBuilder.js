@@ -276,7 +276,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getDocumentationRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/`;
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/index.html`;
   }
 
   /**
@@ -287,7 +287,7 @@ class SamplesBuilder {
    */
   _getPreviewRoute(sample) {
     return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}` +
-      '/preview/';
+      '/preview/index.html';
   }
 
   /**

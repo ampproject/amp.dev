@@ -1,8 +1,8 @@
 $title@: About
-$path: /about/{base}/
+$path: /about/{base}
 $view: /views/default.j2
 $localization:
-  path: /{locale}/about/{base}/
+  path: /{locale}/about/{base}
 $order: 1
 
 flyout:
