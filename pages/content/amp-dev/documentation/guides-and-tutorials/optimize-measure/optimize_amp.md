@@ -12,7 +12,7 @@ This guide provides tips and guidance for webmasters on how to optimize their ho
 
 ### Isn't AMP fast by default?
 
-The AMP runtime is [optimized for speed]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) and if your AMP pages are served by an [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+The AMP runtime is [optimized for speed]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) and if your AMP pages are served by an [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
 
 However, AMP pages are not always served from an AMP cache. A website may decide to show AMP pages from their own servers for other traffic sources. The most frequent use case are sites built completely in AMP, such as [tasty.co](https://tasty.co), where users go straight to the site. Another traffic source is Twitter, which [started linking to AMP pages](https://searchengineland.com/twitter-ramps-amp-278300) instead of delivering the standard mobile version. This means that if a user clicks a link in one of Twitter's mobile apps, the link goes to the AMP version of your page on your own origin (if one is available).
 
@@ -168,7 +168,7 @@ However, if you want your website to be [installable from the home screen](https
 
 If your AMP website uses a service worker, here are some best practices:
 
-*   Pre-cache the [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime) and extensions (e.g. [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})).
+*   Pre-cache the [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime) and extensions (e.g. [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})).
 *   Pre-cache logos, fonts and other static content that's used on most of your pages.
 *   Serve logos, fonts and images by using a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network).
 *   Serve the AMP runtime and extensions by using a [stale-while-revalidate](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate) strategy.

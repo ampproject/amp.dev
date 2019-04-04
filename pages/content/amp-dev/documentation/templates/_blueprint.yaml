@@ -1,7 +1,5 @@
-$path: /documentation/templates/{base}.html
+$path: /documentation/templates/{base}
 $view: /views/default.j2
 $title: Templates
 $localization:
-  path: /{locale}/documentation/templates/{base}.html
-
-index: /content/amp-dev/documentation/templates/overview.md
+  path: /{locale}/documentation/templates/{base}

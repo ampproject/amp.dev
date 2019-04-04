@@ -258,7 +258,7 @@ Cada ferramenta fornece várias informações:
      leva à documentação da tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Nem todos os erros geram
      links de documentação.
 
-Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 Para entender melhor a lista completa de possíveis erros,
 consulte o [guia sobre erros de validação de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).

@@ -126,7 +126,8 @@
       {% endfor %}
     </ul>
     <div class="ap-m-teaser-info-link">
-      <a class="ap-m-lnk" href="{{ teaser_doc.url.path }}">
+      {# Manually replacing '/index.html' as doc.public_path is not available here #}
+      <a class="ap-m-lnk" href="{{ teaser_doc.url.path.replace('/index.html', '/') }}">
         <div class="ap-a-ico ap-m-lnk-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
@@ -136,7 +137,8 @@
   </div>
   {% endif %}
 
-  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url.path }}">
+  {# Manually replacing '/index.html' as doc.public_path is not available here #}
+  <a class="ap-m-teaser-linking" href="{{ teaser_doc.url.path.replace('/index.html', '/') }}">
     <div class="ap-m-teaser-card">
       {% set teaser = teaser_doc.teaser or {} %}
 

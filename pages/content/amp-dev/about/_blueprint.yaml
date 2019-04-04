@@ -1,11 +1,9 @@
 $title@: About
-$path: /about/{base}.html
+$path: /about/{base}
 $view: /views/default.j2
 $localization:
-  path: /{locale}/about/{base}.html
+  path: /{locale}/about/{base}
 $order: 1
-
-index: /content/amp-dev/about/websites.html
 
 flyout:
     - /content/amp-dev/about/websites.html

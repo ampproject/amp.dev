@@ -86,8 +86,11 @@ if (config.isDevMode()) {
   }
 
   // Grow has problems delivering the index.html on a root request
-  pages.get('/', (request, response, next) => {
-    response.redirect('/index.html');
+  pages.use((request, response, next) => {
+    if (request.path.endsWith('/')) {
+      request.url = `${request.path}index.html`;
+    }
+
     next();
   });
 

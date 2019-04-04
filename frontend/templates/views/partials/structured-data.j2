@@ -5,7 +5,7 @@
 {% set description = doc.description or doc.teaser.text %}
 {% set title = doc.title %}
 {% set base_url = doc.pod.podspec.base_urls.platform %}
-{% set canonical = doc.pod.podspec.base_urls.platform + doc.url.path %}
+{% set canonical = doc.pod.podspec.base_urls.platform + doc.public_path %}
 
 {# Alter sharing image based on template and/or maintained data #}
 {% if doc.sharing_images %}
@@ -77,4 +77,5 @@
 <meta property="og:image" content="{{ base_url }}{{ sharing_images.square }}">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="600">
+
 {% endif %}

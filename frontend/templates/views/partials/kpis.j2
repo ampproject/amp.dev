@@ -6,7 +6,7 @@
       {% for kpi in kpis %}
         <div class="ap-m-kpi ap-m-kpi-{{ format }}">
           {% if kpi.success_story %}
-          <a class="ap-m-kpi-content" href="{{ kpi.success_story.url.path }}">
+          <a class="ap-m-kpi-content" href="{{ kpi.success_story.public_path }}">
           {% else %}
           <div class="ap-m-kpi-content">
           {% endif %}
@@ -31,7 +31,7 @@
       {% for kpi in kpis %}
       <div class="ap-m-kpi ap-m-kpi-{{ format }}">
         {% if kpi.success_story %}
-        <a class="ap-m-kpi-content" href="{{ kpi.success_story.url.path }}">
+        <a class="ap-m-kpi-content" href="{{ kpi.success_story.public_path }}">
         {% else %}
         <div class="ap-m-kpi-content">
         {% endif %}
