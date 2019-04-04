@@ -1,6 +1,6 @@
-$title@: Support
-$path: /support/faq/{base}.html
+$title@: FAQ
+$path: /support/faq/{base}
 $view: /views/meta.j2
 $localization:
-  path: /{locale}/support/{base}.html
+  path: /{locale}/support/faq/{base}
 $order: 999
