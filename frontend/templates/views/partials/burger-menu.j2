@@ -28,7 +28,7 @@
     <li class="ap-o-burger-menu-item">
       {# If the section has only one child it shouldn't be collapsable #}
       {% if not section or not section.flyout or section == 'external' %}
-      <a class="ap-o-burger-menu-link ap-m-nav-link {{ '' if section == 'external' else active_class(section_index) }}" href="{{ section_index[1] if section == 'external' else section_index.url.path }}">
+      <a class="ap-o-burger-menu-link ap-m-nav-link {{ '' if section == 'external' else active_class(section_index) }}" href="{{ section_index[1] if section == 'external' else section_index.public_path }}">
         {{ section_index[0] if section == 'external' else section.title or section_index.title }}
       </a>
       {% else %}
@@ -46,7 +46,7 @@
         {% for path in section.flyout %}
         <li class="ap-o-burger-menu-item">
           {% set second_level_doc = g.doc(path, locale=doc.locale) %}
-          <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
+          <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.public_path }}">
             {{ second_level_doc.titles('navigation') }}
           </a>
         </li>
