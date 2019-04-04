@@ -48,40 +48,8 @@
     <meta name="robots" content="noindex,follow"/>
     {% endif %}
 
-    {# Add SEO tags if needed information is available #}
-    {% if doc.description or (doc.teaser and doc.teaser.text) %}
-    <meta name="description" content="{{ doc.description or doc.teaser.text }}">
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Webpage",
-      "url": "{{ doc.pod.podspec.base_urls.platform }}{{ doc.public_path }}",
-      "name": "amp.dev",
-      "headline":"{{ doc.title }}",
-      "description":"{{ doc.description or doc.teaser.text }}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ doc.pod.podspec.base_urls.platform }}"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AMP Project",
-        "logo": {
-            "url": "{{ doc.pod.podspec.base_urls.platform }}/static/img/icons/icon-512x512.png",
-            "width": 512,
-            "height": 512,
-            "@type": "ImageObject"
-        }
-      },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.ampproject.org/static/img/logo-og-image.jpg",
-        "width": 1200,
-        "height": 630
-      }
-    }
-    </script>
-    {% endif %}
+    {# Add SEO and sharing tags #}
+    {% include 'views/partials/structured-data.j2' %}
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
