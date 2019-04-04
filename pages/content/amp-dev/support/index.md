@@ -9,7 +9,7 @@ formats:
   - ads
 ---
 
-
+# Support
 
 There are many ways to get help for questions and issues related to AMP:
 
@@ -17,12 +17,12 @@ There are many ways to get help for questions and issues related to AMP:
 
 If you are looking for help to get started using AMP on your site or you are having issues using AMP, consult these resources:
 
-*   [ampproject.org](https://www.ampproject.org/docs) provides guides and tutorials to help you learn about AMP.
 *   [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) provides hands-on samples and demos for using AMP components.
 *   [AMP Start](https://ampstart.com/) provides pre-styled templates and components that you can use to create styled AMP sites from scratch.
 *   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
 *   For AMP on Google Search questions or issues, please use [Google's AMP forum](https://goo.gl/utQ1KZ).
 *   To check the status of AMP serving and its related services, see the [AMP Status](https://status.ampproject.org/) page.
+*   To find out which browsers are supported by AMP, see [AMP browser support]({{g.doc('/content/amp-dev/support/faq/supported-browsers.md', locale=doc.locale).url.path}}).
 
 **Found a bug? Suggest a feature?**
 

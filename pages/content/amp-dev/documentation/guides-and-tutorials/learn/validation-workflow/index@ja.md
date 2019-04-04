@@ -138,8 +138,8 @@ AMP HTML ファイルの検証は、[AMP HTML 検証ツールのコマンドラ�
 実際の AMP HTML ページを検証してみましょう。
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 当然ですが、このページは有効な AMP HTML です。有効でないページ [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) を試してみましょう。`amphtml-validator` コマンドを実行するには、ページの URL またはローカル ファイル名を指定します。 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) をダウンロードしてファイルとして保存してから、実行します。

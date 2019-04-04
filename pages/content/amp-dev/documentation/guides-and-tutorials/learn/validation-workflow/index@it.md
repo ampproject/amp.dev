@@ -71,8 +71,8 @@ Digita `npm install -g amphtml-validator` per installare lo [strumento della rig
 Ora convalidiamo una pagina HTML AMP esistente.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Come prevedibile, questa è una pagina HTML AMP valida. Ora proviamo con una pagina non valida: [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Per eseguire il comando `amphtml-validator` puoi indicare l'URL della pagina o un nome di file locale. Scarica e salva [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) in un file, dopodiché esegui il comando seguente:

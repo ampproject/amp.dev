@@ -3,7 +3,6 @@ $title: CORS in AMP
 $order: 12
 formats:
   - websites
-  - email
   - stories
   - ads
 ---
@@ -80,9 +79,9 @@ cached AMP page sends a request to your origin domain to get the prices, which
 is a mismatch between origins (cache -> origin domain). To allow for such
 cross-origin requests, you need to handle CORS, otherwise, the request fails.
 
-<amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
+<amp-img alt="CORS and Cache" layout="responsive" src="{{g.doc('/static/img/docs/CORS_with_Cache.png', locale=doc.locale).url.path}}" width="809" height="391">
   <noscript>
-    <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" />
+    <img alt="CORS and Cache" src="{{g.doc('/static/img/docs/CORS_with_Cache.png', locale=doc.locale).url.path}}"/>
   </noscript>
 </amp-img>
 
@@ -99,7 +98,7 @@ cross-origin requests, you need to handle CORS, otherwise, the request fails.
 Most AMP components that use CORS requests either automatically set the
 [credentials mode](https://fetch.spec.whatwg.org/#concept-request-credentials-mode)
 or allow the author to optionally enable it. For example, the
-[`amp-list`](https://www.ampproject.org/docs/reference/components/amp-list)
+[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})
 component fetches dynamic content from a CORS JSON endpoint, and allows the
 author to set the credential mode through the `credentials` attribute.
 
@@ -257,9 +256,9 @@ There are two scenarios to account for in CORS requests to your endpoint:
 
 Let's walk though these scenarios with an example. In our example, we manage the `example.com` site that hosts an AMP page named `article-amp.html.`The AMP page contains an `amp-list` to retrieve dynamic data from a `data.json` file that is also hosted on `example.com`.  We want to process requests to our `data.json` file that come from our AMP page.  These requests could be from the AMP page on the same origin (non-cached) or from the AMP page on a different origin (cached).
 
-<amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
+<amp-img alt="CORS example" layout="fixed" src="{{g.doc('/static/img/docs/cors_example_walkthrough.png', locale=doc.locale).url.path}}" width="629" height="433">
   <noscript>
-    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" />
+    <img alt="CORS example" src="{{g.doc('/static/img/docs/cors_example_walkthrough.png', locale=doc.locale).url.path}}"/>
   </noscript>
 </amp-img>
 
@@ -354,9 +353,9 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
 In the following scenario, the `article-amp.html` page requests the `data.json` file; the origins are the same.
 
-<amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
+<amp-img alt="CORS example - scenario 1" layout="fixed" src="{{g.doc('/static/img/docs/cors_example_walkthrough_ex1.png', locale=doc.locale).url.path}}" width="657" height="155">
   <noscript>
-    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" />
+    <img alt="CORS example" src="{{g.doc('/static/img/docs/cors_example_walkthrough_ex1.png', locale=doc.locale).url.path}}"/>
   </noscript>
 </amp-img>
 
@@ -383,9 +382,9 @@ AMP-Access-Control-Allow-Source-Origin: https://example.com
 
 In the following scenario, the `article-amp.html` page cached on the Google AMP Cache requests the `data.json` file; the origins differ.
 
-<amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
+<amp-img alt="CORS example - scenario 2" layout="fixed" src="{{g.doc('/static/img/docs/cors_example_walkthrough_ex2.png', locale=doc.locale).url.path}}" width="657" height="155">
   <noscript>
-    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" />
+    <img alt="CORS example" src="{{g.doc('/static/img/docs/cors_example_walkthrough_ex2.png', locale=doc.locale).url.path}}"/>
   </noscript>
 </amp-img>
 
@@ -419,7 +418,7 @@ To ensure your cached AMP page renders and functions correctly:
 1.  From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.html', locale=doc.locale).url.path}}).
 
     For example:
-    * URL: `https://www.ampproject.org/docs/tutorials/create.html`
+    * URL: `{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}`
     * AMP Cache URL format: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
 1.  Open your browser's development tools and verify that there are no errors and that all resources loaded correctly.

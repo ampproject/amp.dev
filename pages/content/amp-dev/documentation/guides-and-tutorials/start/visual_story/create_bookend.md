@@ -133,7 +133,7 @@ There are various components that you can use to display related content and lin
     "links": [
       {
         "text": "Learn more",
-        "url": "https://www.ampproject.org/stories/"
+        "url": "https://amp.dev/about/stories.html"
       }
     ]
   }

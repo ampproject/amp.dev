@@ -1,0 +1,35 @@
+@import '_extends.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+/*
+
+#############################
+### ORGANISM: browsers ######
+#############################
+
+*/
+
+.#{organism('browsers')} {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+
+  @media only screen and (max-width: 956px) {
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .browser {
+    flex: 0 1 75px;
+    margin: 10px;
+
+    .browser-title {
+      @include txt;
+      color: color('oslo-gray');
+      text-transform: uppercase;
+    }
+  }
+}

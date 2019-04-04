@@ -71,8 +71,8 @@ Pour installer l'[outil de ligne de commande du validateur AMP HTML](https://www
 Validons à présent une véritable page AMP HTML.
 
 [sourcecode:console]
-$ amphtml-validator https://www.ampproject.org/
-https://www.ampproject.org/: PASS
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
 [/sourcecode]
 
 Cette page AMP HTML est valide. Rien de surprenant à cela. Intéressons-nous à présent à une page incorrecte : [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Pour exécuter la commande `amphtml-validator`, vous pouvez fournir l'URL de la page ou un nom de fichier local. Téléchargez et enregistrez [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) dans un fichier, puis exécutez :

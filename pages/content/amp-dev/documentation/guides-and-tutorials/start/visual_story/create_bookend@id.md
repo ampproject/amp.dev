@@ -127,7 +127,7 @@ Ada berbagai komponen yang dapat Anda gunakan untuk menampilkan link dan konten 
   "links": [
     {
       "text": "Learn more",
-      "url": "https://www.ampproject.org/stories/"
+      "url": "https://amp.dev/about/stories.html"
     }
   ]
 }

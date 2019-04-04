@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style>
+      :root {
+        --color-primary: #005AF0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+      pre {
+        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+        font-size: 16px;
+        overflow: auto;
+        margin: 0;
+        padding: 0.5rem;
+        background-color: #ECEFF1;
+        overflow-x: auto;
+        min-height: 32px;
+        margin-bottom: 1rem;
+      }
+      -webkit-scrollbar, pre::-webkit-scrollbar {
+        height: 8px;
+        width: 4px;
+      }
+      pre::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,.26);
+      }
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .error {
+        color: red;
+      }
+      input {
+        width: calc(100% - 1px);
+        font-size: 16px;
+        padding: 0.5rem;;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="url" value="" name="input" id="input" placeholder="Enter an URL">
+      <pre id="result"></pre>
+    </main>
+    <script src="https://cdn.ampproject.org/viewer/google/amp_url.js"></script>
+    <script src="./amp_url_converter.js"></script>
+  </body>
+</html>

@@ -12,7 +12,7 @@ $title: AMP HTML 페이지 만들기
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>안녕하세요. AMP입니다.</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <link rel="canonical" href="{{doc.url}}">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {

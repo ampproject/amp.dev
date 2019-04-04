@@ -45,7 +45,7 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 ## その他のリソース
 
-- [AMP プロジェクト サイト](https://www.ampproject.org/)
+- [AMP プロジェクト サイト](https://amp.dev/)
 - [AMP GitHub プロジェクト](https://github.com/ampproject/amphtml)
 - [AMP ブログ](https://blog.amp.dev/)
 - [AMP プロジェクトのロードマップ]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

@@ -70,8 +70,8 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 
 ## CSS プリプロセッサを使用する
 
- プリプロセッサで生成される出力は、他のウェブページと同様に AMP でも機能します。たとえば、[ampproject.org](https://www.ampproject.org/)
-のサイトでは [Sass](http://sass-lang.com/) を使用しています（[Grow](http://grow.io/) を使用して、 [ampproject.org](https://www.ampproject.org/) サイトを構成する静的な AMP ページを作成しています）。
+ プリプロセッサで生成される出力は、他のウェブページと同様に AMP でも機能します。たとえば、[amp.dev](https://amp.dev/)
+のサイトでは [Sass](http://sass-lang.com/) を使用しています（[Grow](http://grow.io/) を使用して、 [amp.dev](https://amp.dev/) サイトを構成する静的な AMP ページを作成しています）。
 
 プリプロセッサを使用する場合は、追加する対象に特に注意を払い、ページで使用するものだけを読み込むようにしてください。たとえば、[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 には、必要なすべての AMP マークアップと、`*.scss` ソースファイルからのインラインの CSS を含めます。また、サイトの多くのページで埋め込みの YouTube 動画を使用できるように、[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) のカスタム要素のスクリプトも指定します。
@@ -85,7 +85,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -102,4 +102,4 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 </head>
 {% endraw %}[/sourcecode]
 
- 上記のコードがフォーマットされた AMP HTML にどのように変換されるか確認するには、[ampproject.org](https://www.ampproject.org/) で任意のページのソースを表示してください（Chrome では、右クリックして `View Page Source` をクリックします）。
+ 上記のコードがフォーマットされた AMP HTML にどのように変換されるか確認するには、[amp.dev](https://amp.dev/) で任意のページのソースを表示してください（Chrome では、右クリックして `View Page Source` をクリックします）。

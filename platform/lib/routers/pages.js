@@ -194,7 +194,6 @@ if (!config.isDevMode()) {
       const page = await readFileAsync(utils.project.pagePath(requestPath));
       const filteredPage = new FilteredPage(format, page, true);
       response.send(filteredPage.content);
-      return next();
     } catch (e) {
       return next(e);
     }
