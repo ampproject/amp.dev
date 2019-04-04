@@ -65,7 +65,7 @@ class AmpDevExtension(extensions.BaseExtension):
 
 # Monkey patch for grow.pods.pods.Pod.get_doc
 def get_doc(self, pod_path, locale=None):
-    doc = self.amp_dev_get_doc(pod_path, locale=None)
+    doc = self.amp_dev_get_doc(pod_path, locale=locale)
     # Monkey patch doc and add property public_path, do not do this during
     # development as otherwise Grows dev routing will fail
     setattr(doc, 'public_path', doc.url.path.replace('/index.html', '/'))
