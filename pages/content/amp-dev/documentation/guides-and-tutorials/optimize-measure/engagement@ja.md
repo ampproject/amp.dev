@@ -36,8 +36,8 @@ $title: ユーザー エンゲージメントを向上させる
 
 ### オープンソース AMP プロジェクトに参加して開発に貢献する
 
-- **AMP のロードマップを確認する。**  更新や機能に関するロードマップは [ampproject.org/roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}) で確認できます。
+- **AMP のロードマップを確認する。**  更新や機能に関するロードマップは [roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}) で確認できます。
 
 - **参加する。**  ソースコードの提供、バグ報告、フィードバックは [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) からお願いします。AMP に関する意見交換は [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) で行っています。
 
-- **AMP について学ぶ。**  AMP コンポーネントの使用方法は [AMP サンプル](https://ampbyexample.com/)を参考にしてください。
+- **AMP について学ぶ。**  AMP コンポーネントの使用方法は [AMP サンプル]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})を参考にしてください。

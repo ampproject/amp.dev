@@ -85,4 +85,4 @@ AMP 검사기를 사용하여 페이지의 CSS 와 레이아웃 값을 테스트
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-읽어보기: [AMP 페이지 확인 및 오류 수정 ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) 방법 자세히 알아보기
+읽어보기: [AMP 페이지 확인 및 오류 수정 ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) 방법 자세히 알아보기

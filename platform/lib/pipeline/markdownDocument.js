@@ -36,14 +36,9 @@ class MarkdownDocument {
   }
 
   set toc(active) {
-    // Remove markers from document to have them in a defined spot
+    // Remove markers from document as inline TOCs are not supported
     this._contents = this._contents.replace(TOC_MARKER, '');
-
-    // And if TOC should not be rendered mark it in the frontmatter
-    if (!active) {
-      this._frontmatter['toc'] = false;
-    }
-
+    this._frontmatter['toc'] = active;
     this._toc = active;
   }
 

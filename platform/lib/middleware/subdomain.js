@@ -88,11 +88,11 @@ class Subdomain {
   async redirectOn404_(request, response) {
     const referrer = request.get('Referrer') || config.hosts.platform.base;
     // assume request was initiated by a document-relative path
-    let destination = this.resolveUrl_(request.url.substring(1), referrer);
+    let destination = this.resolveUrl_(request.originalUrl.substring(1), referrer);
     // perform a head request to check if destination exists
     if (!await this.exists_(destination)) {
       // assume a root-relative path
-      destination = this.resolveUrl_(request.url, referrer);
+      destination = this.resolveUrl_(request.originalUrl, referrer);
     }
     // remove AMP CORS query param which is not needed
     response.redirect(301, destination.toString());

@@ -1,6 +1,5 @@
 ---
 $title: AMPHTML Layout System
-toc: false
 $order: 1
 formats:
   - websites

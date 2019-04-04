@@ -5,7 +5,7 @@ $title: Stili CSS supportati
 Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#l'eccezione-dei-tipi-di-carattere-personalizzati)).
 Inoltre, alcuni stili non sono consentiti a causa delle implicazioni legate al rendimento; gli attributi di stili in linea non sono consentiti.
 
-Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
+Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})).
 Puoi però utilizzare i preprocessori e i modelli CSS per creare pagine statiche e poter così gestire meglio i tuoi contenuti.
 
 **Nota.** Nei componenti AMP ci sono stili predefiniti integrati che facilitano la creazione di pagine reattive.
@@ -14,7 +14,7 @@ Questi stili sono definiti nell'elemento [`amp.css`](https://github.com/ampproje
 ## Utilizzare i preprocessori CSS
 
 L'output generato dai preprocessori funziona bene nelle pagine AMP così come in qualsiasi altra pagina web.
-Ad esempio, il sito [ampproject.org](https://www.ampproject.org/) utilizza il linguaggio [Sass](http://sass-lang.com/) (noi utilizziamo [Grow](http://grow.io/) per creare le pagine AMP statiche del sito [ampproject.org](https://www.ampproject.org/)).
+Ad esempio, il sito [amp.dev](https://amp.dev/) utilizza il linguaggio [Sass](http://sass-lang.com/) (noi utilizziamo [Grow](http://grow.io/) per creare le pagine AMP statiche del sito [amp.dev](https://amp.dev/)).
 
 Se utilizzi i preprocessori, presta particolare attenzione a ciò che includi; carica soltanto gli elementi utilizzati nelle pagine.
 Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) sono inclusi tutti gli elementi di markup AMP e gli stili CSS in linea necessari recuperati dai file sorgente `*.scss`.
@@ -29,7 +29,7 @@ Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/ma
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -46,7 +46,7 @@ Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/ma
 </head>
 {% endraw %} [/sourcecode]
 
-Per sapere in che modo il codice precedente viene convertito in pagine HTML AMP formattate, visualizza il codice sorgente di qualsiasi pagina sul sito [ampproject.org](https://www.ampproject.org/).
+Per sapere in che modo il codice precedente viene convertito in pagine HTML AMP formattate, visualizza il codice sorgente di qualsiasi pagina sul sito [amp.dev](https://amp.dev/).
 In Chrome, fai clic con il pulsante destro del mouse e seleziona `Visualizza sorgente pagina`.
 
 ## Stili non consentiti

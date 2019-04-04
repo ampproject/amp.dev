@@ -28,7 +28,7 @@ limitations under the License.
 Valid AMP documents must not include any validation errors.
 The purpose of this document is to help you better understand
 and fix any validation errors you encounter
-when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
+when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -64,7 +64,7 @@ The following tags must be present in all AMP docs:
 * <a name="body"></a>`<body>`
 
 These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator spec</a>;
-they are also referenced in the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
+they are also referenced in the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}).
 
 ### Tag required by another tag is missing
 
@@ -111,7 +111,7 @@ copy its required script, and paste it into the AMP document `<head>`.
 </table>
 
 Tags are whitelisted, so there is no definitive list of all disallowed tags;
-however, the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
+however, the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})
 broadly defines the set of disallowed tags.
 
 ### Custom JavaScript is not allowed
@@ -731,7 +731,7 @@ through an online CSS validator, for example,
 
 This error refers to the @-rules within CSS,
 for which AMP only allows a handful of rules.
-(see also the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})).
+(see also the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})).
 For example, <code>@import</code> isn't allowed.
 The validation error specifically
 tells you the rule that's invalid,

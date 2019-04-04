@@ -35,6 +35,9 @@ function relative(base, relativePath) {
  * @return {String}
  */
 function pagePath(relativePath) {
+  if (!relativePath) {
+    return paths.GROW_BUILD_DEST;
+  }
   return path.join(paths.GROW_BUILD_DEST, relativePath);
 }
 
@@ -43,14 +46,14 @@ function pagePath(relativePath) {
  * @type {Object}
  */
 const paths = {
-  'ROOT': absolute('.'),
-  'CSS': absolute('pages/css'),
-  'GROW_BUILD_DEST': absolute('platform/pages'),
+  ROOT: absolute('.'),
+  CSS: absolute('pages/css'),
+  GROW_BUILD_DEST: absolute('platform/pages'),
 };
 
 module.exports = {
-  'absolute': absolute,
-  'relative': relative,
-  'pagePath': pagePath,
-  'paths': paths,
+  absolute,
+  relative,
+  pagePath,
+  paths,
 };

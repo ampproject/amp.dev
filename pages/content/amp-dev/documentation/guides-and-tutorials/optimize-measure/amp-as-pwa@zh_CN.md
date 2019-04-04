@@ -4,12 +4,12 @@ $title: 为 AMP 网页启用渐进式网页应用功能
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample 触发了“添加到主屏幕”提示。') }}
 
-很多网站根本不需要 AMP 范畴之外的功能。例如，[AMPbyExample](http://ampbyexample.com/) 既是一个 AMP 网站，又是一款渐进式网页应用。
+很多网站根本不需要 AMP 范畴之外的功能。例如，[Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 既是一个 AMP 网站，又是一款渐进式网页应用。
 
 1. 它具有[网络应用清单](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)，因此会向用户显示“添加到主屏幕”这一横幅提示。
 1. 它具有 [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)，因此可实现诸多功能（其中包括允许离线访问）。
 
-如果某位用户通过某个支持 AMP 的平台访问 [AMPbyExample](http://ampbyexample.com/)，然后通过执行点击操作进入该网站以继续进行浏览之旅，该用户就会从 AMP 缓存转到源网域。当然，该网站仍会使用 AMP 库，但由于该网站现在位于源网域，它就可以使用 Service Worker、可以提示用户进行安装，等等。
+如果某位用户通过某个支持 AMP 的平台访问 [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})，然后通过执行点击操作进入该网站以继续进行浏览之旅，该用户就会从 AMP 缓存转到源网域。当然，该网站仍会使用 AMP 库，但由于该网站现在位于源网域，它就可以使用 Service Worker、可以提示用户进行安装，等等。
 
 Service Worker 无法与网页的 AMP 缓存版本互动。请在用户进入您的源网域以继续进行浏览之旅时使用 Service Worker。
 
@@ -103,7 +103,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 通过这种方法，您可以修改您的 AMP 网页以及相关的各种附加功能
-（如果不修改，则会无法顺利通过 [AMP 验证]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})），例如：
+（如果不修改，则会无法顺利通过 [AMP 验证]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})），例如：
 
 * 需要使用自定义 JS 的动态功能。
 * 专为您的网站定制/仅与您的网站相关的组件。
