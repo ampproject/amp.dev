@@ -39,4 +39,4 @@ Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario co
 
 - **Involúcrese**. Contribuya con el código fuente, errores de archivos o comentarios en [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Comparta su opinión sobre AMP en [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Aprenda** cómo usar los componentes AMP con [AMP by Example](https://ampbyexample.com/).
+- **Aprenda** cómo usar los componentes AMP con [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).

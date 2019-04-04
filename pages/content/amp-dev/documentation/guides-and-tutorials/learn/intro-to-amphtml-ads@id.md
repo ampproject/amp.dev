@@ -21,7 +21,7 @@ Mengapa iklan AMPHTML lebih baik daripada iklan tradisional?
 
 ### Format
 
-Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak format kreatif, beberapa di antaranya seperti carousel, paralaks, dan lightbox. Mulai dengan memanfaatkan template iklan AMPHTML open source di [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
+Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak format kreatif, beberapa di antaranya seperti carousel, paralaks, dan lightbox. Mulai dengan memanfaatkan template iklan AMPHTML open source di [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, 
 
 ### Agensi kreatif
 
-Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
+Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
 
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,7 +78,7 @@ Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`am
 
 ## Membuat iklan AMPHTML
 
-**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
 
 **Menggunakan fitur**: Anda dapat menggunakan salah satu fitur berikut untuk membuat materi iklan AMPHTML:
 
@@ -108,7 +108,7 @@ Untuk SSP dan Ad Exchange yang ingin mendukung iklan AMPHTML di lingkungan Biddi
 
 #### Apakah ada contoh iklan AMPHTML?
 
-Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat di [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads). Contoh ini menggunakan komponen lanjutan di AMP.
+Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat di [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). Contoh ini menggunakan komponen lanjutan di AMP.
 
 #### Apakah iklan AMPHTML mendukung deteksi visibilitas dan verifikasi pihak ketiga?
 

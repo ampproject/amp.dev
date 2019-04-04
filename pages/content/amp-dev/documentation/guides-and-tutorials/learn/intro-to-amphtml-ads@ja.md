@@ -21,7 +21,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### フォーマット
 
-柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
+柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### 広告会社
 
-広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
+広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
 
 *  [Celtra の AdCreator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,7 +78,7 @@ AMP HTML 広告を AMP ページに配信するには、[`amp-ad`]({{g.doc('/con
 
 ## AMP HTML 広告を作成する
 
-**ゼロから作成する**: AMP HTML 広告は、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。
+**ゼロから作成する**: AMP HTML 広告は、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。
 
 **ツールを使用する**: 次のツールを使用して AMP HTML 広告を作成できます。
 
@@ -108,7 +108,7 @@ SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）�
 
 #### AMP HTML 広告のサンプルは公開されていますか？
 
-はい、公開されています。デザイン性に優れた AMP HTML 広告テンプレートが [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads) で数多く公開されています。公開されているサンプルは、AMP の高度なコンポーネントを使用しています。
+はい、公開されています。デザイン性に優れた AMP HTML 広告テンプレートが [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}) で数多く公開されています。公開されているサンプルは、AMP の高度なコンポーネントを使用しています。
 
 #### AMP HTML 広告は、サードパーティによる検証や視認性検出に対応していますか？
 

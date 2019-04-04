@@ -21,7 +21,7 @@ AMPHTML 广告比传统广告更好的原因何在？
 
 ### 格式
 
-AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如轮播、视差和灯箱等。要开始使用，您可以利用 [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。
+AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如轮播、视差和灯箱等。要开始使用，您可以利用 [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。
 
 <table class="nocolor">
   <tr>
@@ -66,7 +66,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ### 广告代理机构
 
-如果您是广告代理机构，则必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})制作广告。要寻求灵感并查看示例，请参阅 [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
+如果您是广告代理机构，则必须按照 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})制作广告。要寻求灵感并查看示例，请参阅 [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
 
 *  [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -78,7 +78,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ## 制作 AMPHTML 广告
 
-**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) 中的开放源代码 AMPHTML 广告模板。
+**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})的要求。要查看演示和示例，请参阅 [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}) 中的开放源代码 AMPHTML 广告模板。
 
 **使用工具**：您可以使用以下任一工具制作 AMPHTML 广告：
 
@@ -108,7 +108,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 #### 有 AMPHTML 广告示例吗？
 
-有。您可以在 [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads) 中找到许多精美的 AMPHTML 广告模板。这些示例使用了 AMP 中的高级组件。
+有。您可以在 [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}) 中找到许多精美的 AMPHTML 广告模板。这些示例使用了 AMP 中的高级组件。
 
 #### AMPHTML 广告支持第三方验证和可见度检测吗？
 
