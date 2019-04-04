@@ -101,7 +101,8 @@
         {% for locale in doc.locales if not locale == doc.locale  %}
         {% set localized_doc = doc.localize(locale) %}
         <li class="ap-m-language-selector-list-item">
-          <a class="ap-m-nav-link" href="{{ localized_doc.public_path }}">{{ locale.get_language_name()|capitalize }}</a>
+          {# Need to manually replace as doc.public_path is not available #}
+          <a class="ap-m-nav-link" href="{{ localized_doc.url.path.replace('/index.html', '/') }}">{{ locale.get_language_name()|capitalize }}</a>
         </li>
         {% endfor %}
       </ul>
