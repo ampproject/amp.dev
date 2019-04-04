@@ -102,18 +102,18 @@ speakers:
   hirohitokomada:
     name: Hirohito Komada
     company: Yahoo Japan
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
-  shigekiotsu:
-    name: Shigeki Otsu
+    bio: Hirohito is the Senior Manager of Yahoo! Travel.
+    pic: /static/img/amp-conf/speakers/komada.jpg 
+  shigekiohtsu:
+    name: Shigeki Ohtsu
     company: Yahoo Japan
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
+    bio: Shigeki Ohtsu is a software developer at Yahoo Japan. He is working on CDN team and has an expertise in the network security. 
+    pic: /static/img/amp-conf/speakers/ohtsu.jpg
   ryomunakata:
     name: Ryo Munakata
     company: Yahoo Japan
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
+    bio: Ryo Munakata is a lead engineer at Yahoo Japan on the Search frontend team.
+    pic: /static/img/amp-conf/speakers/ryo.jpg  
   cristianronzio:
     name: Cristian Ronzio
     company: Musement Spa
@@ -374,7 +374,7 @@ agenda:
       type: session
       speakers:
         - hirohitokomada
-        - shigekiotsu
+        - shigekiohtsu
         - ryomunakata
     - title: "Generating AMP Pages with JavaScript and Vue.js"
       time: "1530"
