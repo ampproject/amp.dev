@@ -129,8 +129,8 @@
   }
 
   @media (max-width: 767px) {
-    width: calc(100vw - 20px);
-    height: calc(100vh - 150px);
+    width: calc(100vw);
+    height: calc(100vh - 60px);
     transform: none;
   }
 
