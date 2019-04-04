@@ -1,7 +1,7 @@
 $view: /views/detail/docs-detail.j2
-$path: /documentation/guides-and-tutorials/develop/monetization/{base}
+$path: /documentation/guides-and-tutorials/develop/monetization/{base}.html
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/monetization/{base}
+  path: /{locale}/documentation/guides-and-tutorials/develop/monetization/{base}.html
 $title@: Monetize your AMP page with ads
 $title@zh: 在您的 AMP 网页中利用广告获利
 $title@pt: Monetização de páginas AMP com anúncios

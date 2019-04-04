@@ -151,7 +151,9 @@ if (config.isDevMode()) {
 
 if (!config.isDevMode()) {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
-  const staticMiddleware = express.static(STATIC_PAGES_PATH);
+  const staticMiddleware = express.static(STATIC_PAGES_PATH, {
+    'extensions': ['html']
+  });
 
   /**
    * Checks preconditions that need to be met to filter the ongoing request
