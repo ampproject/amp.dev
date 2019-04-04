@@ -63,8 +63,11 @@ $borderSize: 5px;
     }
 
     p {
-      margin-bottom: 0;
       @include txt-2;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     ul {
