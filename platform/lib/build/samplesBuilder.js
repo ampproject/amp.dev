@@ -76,7 +76,6 @@ class SamplesBuilder {
     this._cache = {};
 
     // Nunjucks environment to render ads preview
-
   }
 
   async build(watch) {
@@ -327,7 +326,8 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getEmbedRoute(sample) {
-    return `/documentation/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}/embed`;
+    return `/documentation/examples/${this._getCategory(sample)}/` +
+        `${sample.stem.toLowerCase()}/embed`;
   }
 
   /**
@@ -515,9 +515,10 @@ class SamplesBuilder {
       if (parsedSample.document.isAmpAds) {
         const adsEmbed = nunjucks.renderString(this._cache[ADS_EMBED_TEMPLATE], {
           'metadata': parsedSample.document.metadata,
-          'canonical': `${config.getHost(config.hosts.platform)}${this._getDocumentationRoute(sample)}`,
+          'canonical': `${config.getHost(config.hosts.platform)}` +
+              `${this._getDocumentationRoute(sample)}`,
           'source': this._getSourceRoute(sample),
-          'title': parsedSample.document.metadata
+          'title': parsedSample.document.metadata,
         });
         embed.contents = Buffer.from(adsEmbed);
       }
