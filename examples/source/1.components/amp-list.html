@@ -1,7 +1,7 @@
 <!--
   ## Introduction
 
-  The [`amp-list`](https://www.ampproject.org/docs/reference/components/amp-list) enables client-side rendering in AMP. Content can either be fetched from a JSON endpoint or locally from `amp-state`.
+  The [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) enables client-side rendering in AMP. Content can either be fetched from a JSON endpoint or locally from `amp-state`.
 -->
 <!-- -->
 <!doctype html>
@@ -114,7 +114,7 @@
     ]
   }
   ```
-  The list content is rendered via an [amp-mustache template](https://www.ampproject.org/docs/reference/components/amp-mustache). The template can be specified either by id, or by using a nested element.
+  The list content is rendered via an [amp-mustache template]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). The template can be specified either by id, or by using a nested element.
   -->
   <amp-list layout="fixed-height" height="100"
       src="/static/samples/json/examples.json">
@@ -194,7 +194,7 @@ The template can also be specified using an ID of an existing `template` element
 
   <!-- ## Empty list content -->
   <!-- If the list contains an empty array, you can use  [mustache inverted sections](https://github.com/janl/mustache.js) to print a message.
-  For this to work, we have to use the [`single-item` attribute](https://www.ampproject.org/docs/reference/components/amp-list#single-item-(optional)) and [`items` attribute](https://www.ampproject.org/docs/reference/components/amp-list#items-(optional)) to be able to access the root `items` array inside the template. -->
+  For this to work, we have to use the [`single-item` attribute]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}#single-item-(optional)) and [`items` attribute]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}#items-(optional)) to be able to access the root `items` array inside the template. -->
   <div>
   <amp-list layout="fixed-height" height="100"
       src="/static/samples/json/examples-empty.json"

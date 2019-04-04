@@ -37,7 +37,7 @@
     <!--
       ## Basic usage
 
-      With `amp-bind`, you can update element attributes and values via bindings. Here we update the [`hidden`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#globally-defined-events-and-actions) attribute based on a state variable called `hideGreeting`. On button press, we use the [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate()) action to update the state.
+      With `amp-bind`, you can update element attributes and values via bindings. Here we update the [`hidden`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#globally-defined-events-and-actions) attribute based on a state variable called `hideGreeting`. On button press, we use the [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) action to update the state.
     -->
     <div>
       <div hidden [hidden]="hideGreeting">Hello World</div>
@@ -173,7 +173,7 @@
         <!--
          ## amp-bind-macro
 
-         [`amp-bind-macro`](https://www.ampproject.org/docs/reference/components/amp-bind#defining-macros-with-amp-bind-macro) makes it possible to reuse expressions across different actions. -->
+         [`amp-bind-macro`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#defining-macros-with-amp-bind-macro) makes it possible to reuse expressions across different actions. -->
           <div>
             <amp-bind-macro id="circleArea" arguments="radius" expression="3.14 * radius * radius" />
               <input type="number"
