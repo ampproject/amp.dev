@@ -152,7 +152,7 @@ if (config.isDevMode()) {
 if (!config.isDevMode()) {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
   const staticMiddleware = express.static(STATIC_PAGES_PATH, {
-    'extensions': ['html']
+    'extensions': ['html'],
   });
 
   /**
