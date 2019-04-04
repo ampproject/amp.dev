@@ -1,6 +1,5 @@
 ---
 $title: Actions and events
-toc: false
 $order: 7
 formats:
   - websites
@@ -218,6 +217,20 @@ event.index</pre></td>
   </tr>
 </table>
 
+### amp-list
+<table>
+  <tr>
+    <th width="25%">Event</th>
+    <th width="35%">Description</th>
+    <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>fetch-error</code>(low-trust)</td>
+    <td>Fired when fetching data fails.</td>
+    <td>None</td>
+  </tr>
+</table>
+
 ### amp-selector
 <table>
   <tr>
@@ -251,6 +264,20 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>sidebarClose</code></td>
     <td>Fired when sidebar is fully closed after transition has ended.</td>
+    <td>None</td>
+  </tr>
+</table>
+
+### amp-state
+<table>
+  <tr>
+    <th width="25%">Event</th>
+    <th width="35%">Description</th>
+    <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>fetch-error</code>(low-trust)</td>
+    <td>Fired when fetching data fails.</td>
     <td>None</td>
   </tr>
 </table>
@@ -618,7 +645,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>setState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-ampsetstate">amp-bind</a>.</p>
+      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state.</p>
       <p></p>
     </td>
@@ -626,7 +653,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>pushState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}">amp-bind</a>.</p>
+      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </td>
   </tr>
 </table>
@@ -635,12 +662,11 @@ actions that apply to the whole document.
 
 ### Target: amp-access
 
-The `amp-access` target is provided by the [amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) component.
+The `amp-access` target is provided by the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access.html) component.
 
 The `amp-access` target is special for these reasons:
 
 1.  You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#configuration).
+2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://www.ampproject.org/docs/reference/components/amp-access#configuration).
 
-
-See [details]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-link) about using the `amp-access` target.
+See [details](https://www.ampproject.org/docs/reference/components/amp-access#login-link) about using the `amp-access` target.

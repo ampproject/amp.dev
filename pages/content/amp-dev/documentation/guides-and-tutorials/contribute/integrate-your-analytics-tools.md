@@ -1,5 +1,6 @@
 ---
 $title: Integrate your analytics tool with AMP
+toc: true
 $order: 1
 formats:
   - websites
@@ -73,5 +74,5 @@ To take this approach, review the documentation for publishers' integration with
  * [comScore](https://github.com/ampproject/amphtml/pull/1608)
  * [Parsely](https://github.com/ampproject/amphtml/pull/1595)
 * [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
-* [amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) reference documentation
+* [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics) reference documentation
 * [amp-analytics variables](analytics-vars.md) reference documentation

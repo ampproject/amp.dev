@@ -1,7 +1,6 @@
 ---
 $title: Debug AMP Cache issues
 $order: 8
-toc: false
 formats:
   - websites
   - stories
@@ -41,7 +40,7 @@ If you still have a problem after following these steps, check the table below.
     <tr>
       <td>Web fonts do not appear (fallback fonts are used)</td>
       <td>The AMP Cache is not white listed by the font provider.</td>
-      <td>Contact the font provider and ask them to whitelist <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">all caches</a>.</td>
+      <td>Contact the font provider and ask them to whitelist <a href="https://www.ampproject.org/docs/guides/amp-cors-requests.html#cors-security-in-amp">all caches</a>.</td>
     </tr>
     <tr>
       <td>Assets (e.g., fonts and images) do not appear (<strong>HTTP origins only</strong>)</td>
@@ -60,7 +59,7 @@ If you still have a problem after following these steps, check the table below.
     <tr>
       <td>Dynamic elements such as <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, do not behave as expected.</td>
       <td>Broken or missing CORS headers.</td>
-      <td>These components make cross-origin requests from the AMP Cache to your origin. By default, browsers block these requests. To allow these requests, emit <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS headers</a> that whitelist <a href="({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})">all caches</a>.</td>
+      <td>These components make cross-origin requests from the AMP Cache to your origin. By default, browsers block these requests. To allow these requests, emit <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS headers</a> that whitelist <a href="https://www.ampproject.org/docs/guides/amp-cors-requests.html">all caches</a>.</td>
     </tr>
     <tr>
       <td>Content is being served that must be removed due to a legal takedown notice.</td>

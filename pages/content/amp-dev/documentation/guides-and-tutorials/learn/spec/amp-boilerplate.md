@@ -1,9 +1,9 @@
 ---
 $title: AMP Boilerplate Code
 $order: 3
-toc: false
 formats:
   - websites
+  - stories
 ---
 
 <!---
