@@ -1,6 +1,6 @@
 $title@: Success Stories
-$path: /success-stories/{base}
 $view: /views/detail/success-story-detail.j2
+$path: /success-stories/{base}.html
 $localization:
-  path: /{locale}/success-stories/{base}
+  path: /{locale}/success-stories/{base}.html
 $order: 1

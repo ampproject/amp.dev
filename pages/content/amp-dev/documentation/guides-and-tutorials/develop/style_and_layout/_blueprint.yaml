@@ -1,7 +1,7 @@
 $view: /views/detail/docs-detail.j2
-$path: /documentation/guides-and-tutorials/develop/style_and_layout/{base}
+$path: /documentation/guides-and-tutorials/develop/style_and_layout/{base}.html
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/{base}
+  path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/{base}.html
 $title@: Style & Layout
 $title@ar: إنشاء صفحات AMP تفاعلية
 $title@es: Estilo y Layout

@@ -1,8 +1,8 @@
 $view: /views/default.j2
 $title@: Events
-$path: /events/{base}
+$path: /events/{base}.html
 $localization:
-  path: /{locale}/events/{base}
+  path: /{locale}/events/{base}.html
 $order: 4
 
 index: /content/amp-dev/events/amp-conf-2019.html

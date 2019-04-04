@@ -1,8 +1,8 @@
 $view: /views/default.j2
 $title@: Community
-$path: /community/{base}
+$path: /community/{base}.html
 $localization:
-  path: /{locale}/community/{base}
+  path: /{locale}/community/{base}.html
 $order: 3
 
 flyout:
