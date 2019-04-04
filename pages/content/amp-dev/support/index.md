@@ -1,7 +1,6 @@
 ---
 $title: Support
 $order: 1
-toc: false
 formats:
   - websites
   - email

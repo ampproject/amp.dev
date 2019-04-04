@@ -1,7 +1,6 @@
 ---
 $title: Debug AMP Cache issues
 $order: 8
-toc: false
 formats:
   - websites
   - email
