@@ -20,7 +20,7 @@ Learn more about the tools you can use to validate your AMP pages:
 
 
 
-*   [Validate AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.html', locale=doc.locale).url.path}}?format=websites)
+*   [Validate AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}?format=websites)
 *   [The AMP Validator ](https://validator.ampproject.org/)
 *   [Google AMP Tester](https://search.google.com/test/amp)
 *   [AMP Tools]({{g.doc('/content/amp-dev/documentation/documentation/tools.html', locale=doc.locale).url.path}}?format=websites) 
