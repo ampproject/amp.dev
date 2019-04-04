@@ -99,7 +99,7 @@ class PageMinifier {
   start(path) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-    return gulp.src(`${path}/**/*`, {'base': './'})
+    return gulp.src(`${path}/**/*.html`, {'base': './'})
         .pipe(through.obj(async function(canonicalPage, encoding, callback) {
           let html = canonicalPage.contents.toString();
           html = scope.minifyPage(html, canonicalPage.path);

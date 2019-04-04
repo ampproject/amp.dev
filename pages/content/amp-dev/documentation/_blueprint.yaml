@@ -1,4 +1,4 @@
-$path: /documentation/{base}
+$path: /documentation/{base}.html
 $view: /views/default.j2
 $title@: Documentation
 $localization:
