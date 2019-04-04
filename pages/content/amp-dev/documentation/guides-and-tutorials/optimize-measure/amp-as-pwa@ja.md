@@ -4,12 +4,12 @@ $title: AMP ページでプログレッシブ ウェブアプリ機能を有効�
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample で表示される「ホーム画面に追加」のプロンプト') }}
 
-多くのウェブサイトでは、AMP を使えば必要なことがすべてできるようになります。たとえば [AMPbyExample](http://ampbyexample.com/) は、AMP でもありプログレッシブ ウェブアプリでもあります。
+多くのウェブサイトでは、AMP を使えば必要なことがすべてできるようになります。たとえば [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) は、AMP でもありプログレッシブ ウェブアプリでもあります。
 
 1. [ウェブアプリ マニフェスト](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) が設定されていて、これにより「ホーム画面に追加」のバナーが表示される
 1. [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) を使用しているので、特にオフライン アクセスなどが可能になる
 
-ユーザーが AMP 対応プラットフォームから [AMPbyExample](http://ampbyexample.com/) にアクセスした後、クリックで引き続き同じサイトへ進む場合、AMP キャッシュから離れて配信元に移動することになります。このような場合も当然、ウェブサイトは AMP ライブラリを使用しますが、この時点で配信元に存在しているので、Service Worker を利用したり、インストールを求めるメッセージを表示したりすることなどが可能です。
+ユーザーが AMP 対応プラットフォームから [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) にアクセスした後、クリックで引き続き同じサイトへ進む場合、AMP キャッシュから離れて配信元に移動することになります。このような場合も当然、ウェブサイトは AMP ライブラリを使用しますが、この時点で配信元に存在しているので、Service Worker を利用したり、インストールを求めるメッセージを表示したりすることなどが可能です。
 
 Service Worker は、ページの AMP キャッシュ バージョンには対応できません。配信元へ進む際に使用してください。
 

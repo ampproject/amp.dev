@@ -415,7 +415,7 @@ When you are testing your AMP pages, make sure to include tests from the cached 
 
 To ensure your cached AMP page renders and functions correctly:
 
-1.  From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on AMP By Example](https://ampbyexample.com/advanced/using_the_google_amp_cache/).
+1.  From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.html', locale=doc.locale).url.path}}).
 
     For example:
     * URL: `{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path}}`

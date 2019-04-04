@@ -4,12 +4,12 @@ $title: Ativar os recursos de Progressive Web App nas suas páginas AMP
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample acionando a solicitação "Adicione à tela inicial".') }}
 
-Muitos sites não precisam de recursos além dos oferecidos pelas AMP. [AMPbyExample](http://ampbyexample.com/), por exemplo, é uma página AMP e um Progressive Web App:
+Muitos sites não precisam de recursos além dos oferecidos pelas AMP. [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}), por exemplo, é uma página AMP e um Progressive Web App:
 
 1. Ela tem um [manifesto de app da Web](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) e solicita o banner "Adicione à tela inicial".
 2. Ela tem um [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) que possibilita acesso off-line, entre outras coisas.
 
-Quando o usuário visita [AMPbyExample](http://ampbyexample.com/) de uma plataforma compatível com AMP e clica para navegar no site, ele sai do cache de AMP e acessa a origem. O site ainda usa a biblioteca AMP, mas, como ele fica na origem, é possível usar um service worker, solicitar instalações e assim por diante.
+Quando o usuário visita [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) de uma plataforma compatível com AMP e clica para navegar no site, ele sai do cache de AMP e acessa a origem. O site ainda usa a biblioteca AMP, mas, como ele fica na origem, é possível usar um service worker, solicitar instalações e assim por diante.
 
 Lembre-se: O service worker não poderá interagir com a versão AMP em cache da sua página. Use o recurso para caminhos direcionados à sua origem.
 

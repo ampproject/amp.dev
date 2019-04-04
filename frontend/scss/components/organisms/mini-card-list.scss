@@ -25,7 +25,7 @@ ul.#{organism('mini-card-list')} {
 
 .#{organism('mini-card-list-item')} {
   margin-bottom: 1.25rem;
-  padding-left: 0 !important;
+  padding-left: 0;
   transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   &:hover {
