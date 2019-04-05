@@ -19,7 +19,7 @@ The following are some additional topics and links to explore:
 
 - [All about Page Discovery](https://www.ampproject.org/docs/guides/discovery.html)
 
-- [Disallowed HTML Tags]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md#html-tags', locale=doc.locale).url.path}})
+- [Disallowed HTML Tags]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#html-tags)
 
 - [Restricted CSS Rules & Animations]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})
 
