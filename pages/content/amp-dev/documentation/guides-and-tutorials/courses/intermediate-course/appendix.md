@@ -1,6 +1,6 @@
 ---
 $title: Appendix
-$order: 5
+$order: 6
 ---
 
 ## What is Glitch?

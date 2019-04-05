@@ -1,6 +1,6 @@
 ---
 $title: Making Components Work Together
-$order: 3
+$order: 4
 ---
 
 ## Adding Interactions To The Image Carousel

@@ -1,6 +1,6 @@
 ---
 $title: Handling User Interactions
-$order: 1
+$order: 2
 ---
 
 ## Building A Menu
