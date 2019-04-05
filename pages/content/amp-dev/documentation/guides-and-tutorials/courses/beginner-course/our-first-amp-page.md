@@ -1,6 +1,6 @@
 ---
 $title: Our First AMP Page
-$order: 2
+$order: 3
 ---
 
 ## Starting Our Journey

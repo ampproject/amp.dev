@@ -1,6 +1,6 @@
 ---
 $title: Finding the Right Component
-$order: 4
+$order: 5
 ---
 
 ## Navigating the AMP Component Documentation

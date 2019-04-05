@@ -1,6 +1,6 @@
 ---
 $title: Course Introduction
-$order: 1
+$order: 2
 ---
 
 ## Who is this course for?
