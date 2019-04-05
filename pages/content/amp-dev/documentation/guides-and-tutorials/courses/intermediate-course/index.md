@@ -9,8 +9,37 @@ Interactive website are critical to serve our customers and drive engagement. Us
 
 ## About the Course
 
+### Course Objective:
+
+The goals of this course are to:
+
+- Teach modern website development patterns and how to implement them in AMP
+
+- Introduce the AMP approach to building engaging, performant web experiences
+
+### Prerequisites:
+
+- basic JavaScript expressions and JSON
+
+### Requirements:
+
+- Internet connection
+
+- Chrome browser, ideally, so that the AMP Validator extension can be used
+
+- We use the online editor Glitch. No IDE or local web server is required!
+
 ### Course materials
 
-### Prerequisites
+The course consists of a series of hands-on codelabs, most of which step you through the process of creating an AMP page for an imaginary shop. You can complete the codelabs in any order, but the more advanced codelabs build on the fundamentals covered in the earlier codelabs.
 
-## What does the course cover?
+You can download course and decks as PDF from here:
+
+<a href="#" class="ap-a-btn">{{ _('Download') }}</a>
+
+Also, you can find the starting Glitch repository [here](https://glitch.com/~grateful-block).
+
+### Ideal Students:
+
+New web developers and experienced developers alike. This course is for those who want to create websites as well as for those looking to use AMP to build more performant sites.
+
