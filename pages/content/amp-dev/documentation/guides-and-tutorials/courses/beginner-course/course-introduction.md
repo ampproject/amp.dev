@@ -1,7 +1,6 @@
 ---
 $title: Course Introduction
 $order: 1
-toc: true
 ---
 
 ## Who is this course for?

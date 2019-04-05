@@ -1,7 +1,6 @@
 ---
 $title: Appendix
 $order: 7
-toc: true
 ---
 
 ## Explaining the boilerplate AMP HTML

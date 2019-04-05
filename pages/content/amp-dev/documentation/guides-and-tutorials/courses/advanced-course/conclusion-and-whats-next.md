@@ -1,7 +1,6 @@
 ---
 $title: Conclusion and What’s Next
 $order: 3
-toc: true
 ---
 
 Congratulations! You’ve completed our series of introduction to AMP courses! You’ve built a feature-rich cheese bike shop site, an imitation video site, and a basic e-commerce page. You’ve learned how to build AMP pages, look for and use AMP components, handle user interactions with events and actions, build web forms, bind components to state variables, and dynamically display content from the server.

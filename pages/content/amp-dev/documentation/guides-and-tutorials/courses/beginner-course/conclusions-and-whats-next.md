@@ -1,10 +1,7 @@
 ---
 $title: Conclusion and What’s Next
 $order: 5
-toc: true
 ---
-
-<!-- [TOC] -->
 
 Congratulations! You’ve finished the introduction to AMP beginners’ course and have successfully created your first AMP page.
 
