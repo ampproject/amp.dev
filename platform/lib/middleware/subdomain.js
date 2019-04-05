@@ -16,11 +16,20 @@
 
 'use strict';
 
-const config = require('@lib/config.js');
 const express = require('express');
 const signale = require('signale');
+const fetch = require('node-fetch');
+const ampCors = require('amp-toolbox-cors');
+
+const config = require('@lib/config.js');
 
 class Subdomain {
+  constructor() {
+    // Stores subdomain apps started during development to be able
+    // to register multiple routers to them
+    this.subdomainApps_ = {};
+  }
+
   /**
    * Creates a subdomain middleware matching subdomain
    * requests to the router.
@@ -29,18 +38,31 @@ class Subdomain {
     if (!hostConfig.subdomain) {
       throw new Error('host does not specify a subdomain');
     }
+    let middleware;
     if (config.isDevMode()) {
-      return this.startDevServer_(hostConfig, router);
+      middleware = this.startDevServer_(hostConfig, router);
+    } else {
+      middleware = this.createSubdomainMiddleware_(hostConfig.subdomain, router);
     }
-    return this.createSubdomainMiddleware_(hostConfig.subdomain, router);
+    router.get('*', this.redirectOn404_.bind(this));
+    return middleware;
   }
 
   startDevServer_(hostConfig, router) {
-    const subdomainApp = express();
+    let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
+    if (!subdomainApp) {
+      subdomainApp = express();
+      subdomainApp.use(ampCors({
+        'verifyOrigin': false,
+      }));
+      subdomainApp.listen(hostConfig.port, () => {
+        signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+      });
+
+      this.subdomainApps_[hostConfig.subdomain] = subdomainApp;
+    }
     subdomainApp.use(router);
-    subdomainApp.listen(hostConfig.port, () => {
-      signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
-    });
+
     // return a dummy middleware
     return (request, response, next) => next();
   }
@@ -52,6 +74,56 @@ class Subdomain {
       }
       return next();
     };
+  }
+
+  /**
+   * Redirects unhandled requests to the referrer. This allows us to resolve
+   * playground document or preview assets.
+   *
+   * The referrer is calculated using the following strategy:
+   * - use the playground URL parameter if present
+   * - use the 'Referrer' header if present
+   * - use amp.dev as default Referrer.
+   */
+  async redirectOn404_(request, response) {
+    const referrer = request.get('Referrer') || config.hosts.platform.base;
+    // assume request was initiated by a document-relative path
+    let destination = this.resolveUrl_(request.originalUrl.substring(1), referrer);
+    // perform a head request to check if destination exists
+    if (!await this.exists_(destination)) {
+      // assume a root-relative path
+      destination = this.resolveUrl_(request.originalUrl, referrer);
+    }
+    // remove AMP CORS query param which is not needed
+    response.redirect(301, destination.toString());
+  }
+
+  resolveUrl_(requestPath, referrerString) {
+    const referrer = new URL(referrerString);
+    const playgroundDoc = referrer.searchParams.get('url');
+    if (!playgroundDoc) {
+      return new URL(requestPath, config.hosts.platform.base);
+    }
+    const documentUrl = new URL(playgroundDoc, config.hosts.platform.base);
+    const url = new URL(requestPath, documentUrl.toString());
+    // All subdomains redirect unknown requests. We have to make sure to
+    // always redirect to the platform to avoid redirect loops
+    if (config.hostNames.has(url.hostname)) {
+      url.hostname = config.hosts.platform.host;
+      url.port = config.hosts.platform.port;
+    }
+    return url;
+  }
+
+  async exists_(url) {
+    try {
+      const response = await fetch(url, {
+        method: 'HEAD',
+      });
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
   }
 }
 

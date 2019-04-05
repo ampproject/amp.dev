@@ -16,7 +16,7 @@ $title: 라이브 블로그 만들기
 
 ## amp-live-list 개요
 
-[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소는 새 콘텐츠의 호스트 문서를 주기적으로 폴링하고, 새 항목을 사용할 수 있게 되면 사용자의 브라우저를 업데이트합니다. 즉, 새 블로그 게시물을 추가해야 할 때마다 CMS로 호스트 문서를 업데이트하여 페이지 본문과 [메타데이터](https://ampbyexample.com/samples_templates/live_blog/#metadata) 섹션에 업데이트를 포함해야 합니다.
+[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 구성요소는 새 콘텐츠의 호스트 문서를 주기적으로 폴링하고, 새 항목을 사용할 수 있게 되면 사용자의 브라우저를 업데이트합니다. 즉, 새 블로그 게시물을 추가해야 할 때마다 CMS로 호스트 문서를 업데이트하여 페이지 본문과 [메타데이터]({{g.doc('/content/amp-dev/documentation/examples/documentation/Live_Blog.html', locale=doc.locale).url.path}}#metadata) 섹션에 업데이트를 포함해야 합니다.
 
 블로그의 초기 코드는 다음과 같습니다.
 
@@ -70,7 +70,7 @@ $title: 라이브 블로그 만들기
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플],[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}).url.path}})을 참조하세요.
+호스팅된 페이지를 업데이트하여 탐색 항목을 올바르게 게재해야 합니다. 예를 들어 [라이브 블로그 샘플],[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}).url.path}})을 참조하세요.
 
 블로그 게시물의 크기가 `data-max-items-per-page`로 지정한 최대 항목 수를 초과했다면 오래된 블로그 항목은 2페이지와 같이 '다음' 페이지에 표시됩니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})가 주기적으로 서버를 폴링하여 항목이 변경되지 않았는지 확인하므로 사용자가 첫 번째 페이지에 있지 않으면 서버를 폴링하지 않아도 됩니다.
 
@@ -78,7 +78,7 @@ $title: 라이브 블로그 만들기
 
 ### 딥 링크
 
-블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
+블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
 
 AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.com/samples_templates/live_blog/)에서 쿠키를 사용하여 새 콘텐츠를 생성하므로 페이지에 처음 방문한 경우 ID가 'post3'인 게시물은 사용하지 못할 수 있으며, 이 경우 첫 번째 게시물로 리디렉션됩니다.
 
@@ -88,4 +88,4 @@ AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.co
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) 참조 문서
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [AMP By Example의 라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [AMP By Example의 라이브 블로그 샘플]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

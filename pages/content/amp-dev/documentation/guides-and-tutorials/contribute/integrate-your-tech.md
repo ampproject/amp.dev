@@ -13,7 +13,7 @@ If you are a technology provider for publishers or advertisers on the web, we in
 There are 4 primary ways you can integrate with AMP:
 
 ## 1. Add your support to the `amp-analytics` extension
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) to get you started.
+AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/configure_analytics.md', locale=doc.locale).url.path}}) to get you started.
 
 If you simply need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 
@@ -29,7 +29,7 @@ There are 90+ ad providers who have added support for advertising related featur
 
 If you provide call tracking measurement services, your use case may be supported with the new [`amp-call-tracking`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}) extension. This extension dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see an [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-call-tracking.html', locale=doc.locale).url.path}}) or read about the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}).
+To learn more about how this extension might work for you, please see an [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-call-tracking.html', locale=doc.locale).url.path}}) or read about the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}).
 
 ## 4. Adding a new extension/embed
 
@@ -49,7 +49,7 @@ If you have questions or suggestions, please don't hesitate to [file an issue](h
 
 ## Additional resources
 
-- [AMP Project Site](https://www.ampproject.org/)
+- [AMP Project Site](https://amp.dev/)
 - [AMP GitHub Project](https://github.com/ampproject/amphtml)
 - [AMP Blog](https://blog.amp.dev/)
 - [AMP Project Roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})

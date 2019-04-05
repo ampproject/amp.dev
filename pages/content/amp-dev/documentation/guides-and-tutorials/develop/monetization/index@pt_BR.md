@@ -10,7 +10,7 @@ Quando você quer exibir anúncios em páginas não AMP (HTML tradicional), bast
 
 [tip type="success"]
 
-Consulte o site [AMP By Example para ver uma demonstração ao vivo]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}}) de como adicionar uma tag de anúncio AMP a uma página AMP.
+Consulte o site [AMP By Example para ver uma demonstração ao vivo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) de como adicionar uma tag de anúncio AMP a uma página AMP.
 
 [/tip]
 
@@ -133,12 +133,12 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
 ### Inovação: ofereça os produtos de anúncios mais interessantes
 
 *   **Implemente anúncios em páginas AMP auxiliares** para gerar receita incremental:
-    *   [anúncios em um carrossel]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [anúncios em um lightbox]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [anúncios em um carrossel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [anúncios em um lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   e [muito mais]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Implemente novos formatos de anúncios de venda direta** para que sua equipe de vendas ofereça produtos de anúncios inovadores e de alto impacto:
-    *   [anúncios fixos]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [anúncios fixos]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Outros recursos
 

@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 유효한 AMP 문서에는 유효성 검사 오류가 있어서는 안 됩니다.
-이 문서의 목적은 [AMP 페이지의 유효성을 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})할 때
+이 문서의 목적은 [AMP 페이지의 유효성을 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})할 때
 발견할 수 있는 모든 유효성 검사 오류를 더 잘 이해하고
 해결할 수 있도록 도움을 드리는 것입니다.
 유효성 검사 오류에 관한 전체 내용을 대략적으로 살펴보려면
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
-이러한 태그는 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})에서도 언급됩니다.
+이러한 태그는 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})에서도 언급됩니다.
 
 ### 다른 태그에 필요한 태그 누락
 
@@ -104,7 +104,7 @@ limitations under the License.
 </table>
 
 태그는 허용된 것만 사용할 수 있기 때문에 허용되지 않는 모든 태그를
-나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})에서
+나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})에서
 허용되지 않는 태그의 광범위한 목록을 확인할 수 있습니다.
 
 ### 맞춤 자바스크립트는 허용되지 않음
@@ -724,7 +724,7 @@ CSS를 실행해 보시기 바랍니다.
 
 이 오류는 AMP에서 몇 가지 규칙만이 허용되는
 CSS 내 @ 규칙을 말합니다.
-[AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})도 참조하세요.
+[AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})도 참조하세요.
 예를 들어 <code>@import</code>는 허용되지 않습니다.
 이 유효성 오류는
 잘못된 규칙이 무엇인지 구체적으로 알려 주기 때문에
@@ -755,7 +755,7 @@ CSS 내 @ 규칙을 말합니다.
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
 [레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
 
 **참고:** 레이아웃을 지정하지 않고
 `width` 및 `height` 값을 포함하지 않으면
@@ -786,7 +786,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정하지 않았을 때
 암시적 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
 
 ### AMP 태그가 지정된 레이아웃을 지원하지 않음
 
@@ -813,7 +813,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
 [레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
 
 ### 지정된 레이아웃에서 허용되지 않는 속성
 
@@ -836,7 +836,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정했는데
 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
 
 ### 레이아웃에서 필요로 하는 속성 값이 잘못됨
 

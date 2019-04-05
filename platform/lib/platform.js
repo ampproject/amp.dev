@@ -19,19 +19,26 @@
 const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
+const cors = require('cors');
 const ampCors = require('amp-toolbox-cors');
 const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
 const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
+const {pagePath} = require('@lib/utils/project');
 const subdomain = require('./middleware/subdomain.js');
+
 
 const WWW_PREFIX = 'www.';
 const HEALTH_CHECK = '/__health-check';
 const routers = {
-  'whoAmI': require('./routers/whoAmI.js'),
-  'pages': require('./routers/pages.js'),
-  'examples': require('./routers/examples.js'),
-  'static': require('./routers/static.js'),
+  'whoAmI': require('@lib/routers/whoAmI.js'),
+  'pages': require('@lib/routers/pages.js'),
+  'example': {
+    'sources': require('@lib/routers/example/sources.js'),
+    'embeds': require('@lib/routers/example/embeds.js'),
+    'api': require('@examples'),
+  },
+  'static': require('@lib/routers/static.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
 };
@@ -84,6 +91,9 @@ class Platform {
       }
       res.redirect('https://' + req.hostname + req.path);
     });
+
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
     this._enableCors();
     this.server.use(defaultCachingStrategy);
 
@@ -97,17 +107,7 @@ class Platform {
   }
 
   _enableCors() {
-    this.server.use((request, response, next) => {
-      response.header('Access-Control-Allow-Origin', '*');
-      response.header('Access-Control-Allow-Credentials', 'true');
-      response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-      response.header(
-          'Access-Control-Allow-Headers',
-          'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, X-Requested-By, ' +
-        'Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
-      next();
-    });
-
+    this.server.use(cors());
     this.server.use(ampCors({
       'verifyOrigin': false,
     }));
@@ -120,13 +120,31 @@ class Platform {
 
   _registerRouters() {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
-    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(routers.examples);
-    this.server.use(routers.static);
+    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
+    // eslint-disable-next-line new-cap
+    this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
+      routers.example.embeds,
+      routers.example.sources,
+      routers.example.api,
+    ])));
+    this.server.use('/documentation/examples', routers.example.api);
     this.server.use('/boilerplate', routers.boilerplate);
+    this.server.use(routers.static);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
+
+    // handle errors
+    this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+      if (err) {
+        console.error(err.stack);
+        res.status(500).sendFile('500.html', {root: pagePath()});
+      }
+    });
+    // handle 404s
+    this.server.use((req, res, next) => { // eslint-disable-line no-unused-vars
+      res.status(404).sendFile('404.html', {root: pagePath()});
+    });
   }
 };
 

@@ -69,7 +69,7 @@ descritas acima.
 
 O Google fornece a AMP URL API para recuperar os URLs de HTML para AMP correspondentes para uma
 determinada lista de URLs ([documentação oficial](https://developers.google.com/amp/cache/use-amp-url) /
-[demonstração]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Os URLs não
+[demonstração]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Os URLs não
 precisam ser versões canônicas. Se houver uma versão AMP, a resposta
 incluirá o URL de AMP original e o URL da página AMP armazenada no cache
 de AMP do Google.
@@ -112,7 +112,7 @@ retornado (ampURL).
 
 ## Usar caches de AMP
 
-Um [cache de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) é uma
+Um [cache de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) é uma
 rede de fornecimento de conteúdo (CDN, na sigla em inglês) baseada em proxy que tem a função de exibir documentos AMP válidos.
 Os caches de AMP servem para:
 

@@ -48,10 +48,10 @@ Ikuti praktik terbaik [monetisasi iklan]({{g.doc('/content/amp-dev/documentation
 
 ### Berpartisipasi di Project AMP open source untuk membantu dalam membentuk pengembangannya
 
-- **Tonton panduan AMP** untuk update dan fitur di [ampproject.org/roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}).
+- **Tonton panduan AMP** untuk update dan fitur di [roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}).
 
 - **Libatkan diri Anda.**  Berikan kontribusi berupa kode sumber, bug file, atau tawarkan masukan di
 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Bagikan masukan tentang AMP di
 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Pelajari** cara menggunakan komponen AMP dengan [AMP by Example](https://ampbyexample.com/).
+- **Pelajari** cara menggunakan komponen AMP dengan [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).

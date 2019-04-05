@@ -5,8 +5,6 @@ $localization:
   path: /{locale}/about/{base}.html
 $order: 1
 
-index: /content/amp-dev/about/websites.html
-
 flyout:
     - /content/amp-dev/about/websites.html
     - /content/amp-dev/about/stories.html

@@ -1,8 +1,3 @@
-node_modules
-npm-debug.log
-
-.gcloudignore
-
 # If you would like to upload your .git directory, .gitignore file or files
 # from your .gitignore file, remove the corresponding line
 # below:
@@ -19,17 +14,18 @@ README.md
 CONTRIBUTING.md
 
 # The complete frontend, pages and examples packages aren't needed on App Engine
-frontend/
+/frontend/
 pages/
 !platform/pages
-/examples
+/examples/source/**/*.html
 
 # playground: ignore everything except the dist folder
-playground/*
-!playground/backend
-!playground/dist
+/playground/*
+!/playground/backend
+!/playground/dist
 
 # boilerplate: ignore everything except the dist folder
-boilerplate/*
-!boilerplate/backend
-!boilerplate/dist
+/boilerplate/*
+!/boilerplate/backend
+!/boilerplate/dist
+!/boilerplate/lib

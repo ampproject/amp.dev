@@ -101,4 +101,4 @@ Ayrıca buradaki [Stil ve düzen hatalarının]({{g.doc('/content/amp-dev/docume
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) konusunda daha fazla bilgi edinin.
+Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) konusunda daha fazla bilgi edinin.

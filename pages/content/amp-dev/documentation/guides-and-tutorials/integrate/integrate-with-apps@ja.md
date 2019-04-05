@@ -69,7 +69,7 @@ Google の AMP API を介した AMP URL のリクエストを
 
 Google では、AMP URL API を提供して、リストに指定された URL
 （[公式ドキュメント](https://developers.google.com/amp/cache/use-amp-url) /
-[デモ]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）と一致する AMP HTML URL を取得します。URL は
+[デモ]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）と一致する AMP HTML URL を取得します。URL は
 正規バージョンである必要はありません。AMP バージョンが存在する場合、レスポンスには
 元の AMP URL と Google AMP キャッシュ上にキャッシュされている AMP ページの
 URL が含まれます。
@@ -112,7 +112,7 @@ AMP URL API で取得できません。ただし、返された AMP URL（ampURL
 
 ## AMP キャッシュの使用
 
-[AMP キャッシュ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})は、
+[AMP キャッシュ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}})は、
 有効な AMP ドキュメントを配信するための、プロキシベースのコンテンツ配信ネットワーク（CDN）です。
 AMP キャッシュは次のような目的で設計されています。
 

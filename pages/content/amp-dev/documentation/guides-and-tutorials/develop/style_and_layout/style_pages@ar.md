@@ -9,7 +9,7 @@ $title: لغة CSS المعتمدة
 فسمات الأنماط المضمّنة غير مسموح بها.
 
 يجب أن تبقى جميع الأنماط في رأس المستند
-(راجع [إضافة أنماط إلى إحدى الصفحات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
+(راجع [إضافة أنماط إلى إحدى الصفحات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})).
 ولكن يمكنك استخدام المعالجات التمهيدية والنماذج في CSS لإنشاء صفحات ثابتة
 لإدارة المحتوى التابع لك على نحو أفضل.
 
@@ -25,10 +25,10 @@ $title: لغة CSS المعتمدة
 ## استخدام معالجات CSS التمهيدية
 
 يعمل الناتج الناشئ عن المعالجات التمهيدية في AMP تمامًا مثل أي صفحة ويب أخرى.
-على سبيل المثال، يستخدم الموقع [ampproject.org](https://www.ampproject.org/) لغة
+على سبيل المثال، يستخدم الموقع [amp.dev](https://amp.dev/) لغة
 [Sass](http://sass-lang.com/).
 (ونحن نستخدم [Grow](http://grow.io/) لإنشاء صفحات AMP الثابتة
-التي يتكوّن منها موقع [ampproject.org](https://www.ampproject.org/).)
+التي يتكوّن منها موقع [amp.dev](https://amp.dev/).)
 
 عند استخدام المعالجات التمهيدية،
 عليك بالانتباه بشكل خاص إلى العناصر التي يتم تضمينها؛ فلا تحمّل سوى العناصر التي تستخدمها صفحاتك.
@@ -48,7 +48,7 @@ $title: لغة CSS المعتمدة
 
   <title>Accelerated Mobile Pages Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -66,7 +66,7 @@ $title: لغة CSS المعتمدة
 {% endraw %} [/sourcecode]
 
 للاطلاع على كيفية تحويل ما سبق إلى AMP HTML منسّق،
-اعرض مصدر أي صفحة في [ampproject.org](https://www.ampproject.org/).
+اعرض مصدر أي صفحة في [amp.dev](https://amp.dev/).
 (في Chrome، انقر بزر الماوس الأيمن و`اعرض مصدر الصفحة`.)
 
 ## أنماط غير مسموح بها

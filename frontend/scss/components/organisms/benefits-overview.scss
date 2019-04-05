@@ -40,6 +40,10 @@
       &-icon {
         margin-right: 15px;
       }
+
+      &.principles {
+        margin: 50px 20px 100px 0;
+      }
     }
 
     &-developers {
@@ -57,6 +61,13 @@
 
       @media (min-width: 1024px) {
         grid-column: 14 / 22;
+      }
+    }
+
+    &-left {
+
+      @media (min-width: 1024px) {
+        grid-column: 3 / 10;
       }
     }
   }

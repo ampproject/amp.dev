@@ -3,7 +3,7 @@ $title: AMP Doğrulama Hataları
 ---
 
 Geçerli AMP dokümanları hiçbir doğrulama hatası içermemelidir.
-Bu dokümanın amacı, [AMP sayfalarınızı doğrularken]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
+Bu dokümanın amacı, [AMP sayfalarınızı doğrularken]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
 Doğrulama hatalarıyla ilgili eksiksiz bir genel bakış için [AMP doğrulayıcı spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
 
 ## AMP HTML etiketi ve öznitelik hataları
@@ -37,7 +37,7 @@ Tüm AMP dokümanlarında aşağıdaki etiketler bulunmalıdır:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bir `mandatory: true` alanı olur; bunlara [AMP spesifikasyonunda]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) da başvuruda bulunulur.
+Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bir `mandatory: true` alanı olur; bunlara [AMP spesifikasyonunda]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) da başvuruda bulunulur.
 
 ### Başka bir etiketin gerektirdiği etiket eksik
 
@@ -78,7 +78,7 @@ Bu hataları düzeltmek için genişletilmiş bileşenin referans sayfasına gid
   </tr>
 </table>
 
-Etiketler beyaz listede yer alır, bu yüzden izin verilmeyen tüm etiketlerin tanımlandığı bir liste yoktur; ancak, izin verilmeyen etiketler grubu [AMP spesifikasyonunda]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) geniş bir şekilde tanımlanmaktadır.
+Etiketler beyaz listede yer alır, bu yüzden izin verilmeyen tüm etiketlerin tanımlandığı bir liste yoktur; ancak, izin verilmeyen etiketler grubu [AMP spesifikasyonunda]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) geniş bir şekilde tanımlanmaktadır.
 
 ### Zorunlu öznitelik eksik
 
@@ -622,7 +622,7 @@ Hataya neyin neden olduğundan emin değilseniz, örneğin [csslint](http://cssl
 </table>
 
 Bu hata, CSS içindeki @ kurallarına gönderme yapar. AMP, bunlar için yalnızca bir avuç kurala izin vermektedir.
-(ayrıca [AMP spesifikasyonuna]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}) da bakın).
+(ayrıca [AMP spesifikasyonuna]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) da bakın).
 Örneğin, `@import` kuralına izin verilmez.
 Doğrulama hatası özel olarak geçersiz olan kuralı size bildirerek söz konusu kuralın düzeltilmesini kolaylaştırır.
 

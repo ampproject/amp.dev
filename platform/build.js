@@ -49,11 +49,14 @@ pipeline.clean();
   if (config.options['import'] === true) {
     const referenceImport = pipeline.importReference();
     const specImport = pipeline.importSpec();
+    const roadmapImport = pipeline.importRoadmap();
 
-    await referenceImport;
-    await specImport;
-
-    // await pipeline.importRoadmap();
+    try {
+      await Promise.all([referenceImport, specImport, roadmapImport]);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
   }
 
   // // Create sample sources which get used while generating the pages

@@ -4,7 +4,7 @@ $title: ライブブログを作成する
 
 ライブブログは、スポーツ イベントや選挙などのイベント開催中に頻繁に更新されるウェブページです。AMP では、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントを使用してライブブログを実装できます。
 
-このチュートリアルでは、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントの概要を簡単に紹介し、[ページ指定],[ディープリンク],[ライブブログのサンプル]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}#pagination) を使用します。
+このチュートリアルでは、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントの概要を簡単に紹介し、[ページ指定],[ディープリンク],[ライブブログのサンプル]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}#pagination) を使用します。
 
 ヒント: [LiveBlogPosting](http://schema.org/LiveBlogPosting) メタデータ マークアップを使用して、ブログをサードパーティ プラットフォームの機能と統合することができます。
 
@@ -66,7 +66,7 @@ $title: ライブブログを作成する
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-ナビゲーション項目は、ホストされるページを更新して正しく設定する必要があります。たとえば[ライブブログのサンプル]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}}) では、サーバー側のテンプレートを使用してページをレンダリングしています。また、クエリ パラメータを使用して、ページの最初に表示するブログ項目を指定しています。ページの最大項目数を 5 つに制限しているため、サーバーが生成した項目数が 5 つを超えると、ユーザーがメインページを開いたときに、ナビゲーション領域に [次へ] 要素が表示されます。詳しくは、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) をご覧ください。
+ナビゲーション項目は、ホストされるページを更新して正しく設定する必要があります。たとえば[ライブブログのサンプル]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) では、サーバー側のテンプレートを使用してページをレンダリングしています。また、クエリ パラメータを使用して、ページの最初に表示するブログ項目を指定しています。ページの最大項目数を 5 つに制限しているため、サーバーが生成した項目数が 5 つを超えると、ユーザーがメインページを開いたときに、ナビゲーション領域に [次へ] 要素が表示されます。詳しくは、[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ブログ投稿の項目数が `data-max-items-per-page` で指定した最大項目数を超えると、古いブログ項目は [次へ] ページ（ページ 2 など）に表示されます。[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) コンポーネントでサーバーを一定間隔でポーリングし、項目が変更されていないか確認する動作は、ユーザーが最初のページにいないときには必要ありません。
 
@@ -74,7 +74,7 @@ $title: ライブブログを作成する
 
 ### ディープリンク
 
-ブログ投稿を公開する際は、共有などの機能を利用できるようにするため、投稿へのディープリンクをできるようにすることが重要です。[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) では、ブログ項目の `id` を使うだけでディープリンクできます。たとえば、[https://ampbyexample.com/samples_templates/live_blog/preview/#post3](https://ampbyexample.com/samples_templates/live_blog/preview/#post3) とすると、ID が `post3` のブログ投稿に直接移動できます。
+ブログ投稿を公開する際は、共有などの機能を利用できるようにするため、投稿へのディープリンクをできるようにすることが重要です。[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) では、ブログ項目の `id` を使うだけでディープリンクできます。たとえば、[https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3) とすると、ID が `post3` のブログ投稿に直接移動できます。
 
 AMP by Example の[ライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/)では、Cookie を使用して新しいコンテンツを生成しているため、初めてページを表示したときには、ID “post3” の投稿にアクセスできない可能性があります。その場合は、最初の投稿にリダイレクトされます。
 
@@ -84,4 +84,4 @@ AMP by Example の[ライブブログのサンプル](https://www.ampbyexample.c
 
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) に関する関連ドキュメント
 - [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}})
-- [AMP by Example のライブブログのサンプル]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/Live_Blog.html', locale=doc.locale).url.path}})
+- [AMP by Example のライブブログのサンプル]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}})

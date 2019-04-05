@@ -26,7 +26,7 @@ $title: Как создать адаптивные AMP-страницы
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-[Подробнее...]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}})
+[Подробнее...]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}})
 
 ## Как добавить стили на страницу
 
@@ -101,4 +101,4 @@ AMP разделяет процессы обработки макета доку
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Подробнее [о проверке AMP-страниц, в том числе о выявлении и устранении ошибок в стилях]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})...
+Подробнее [о проверке AMP-страниц, в том числе о выявлении и устранении ошибок в стилях]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})...

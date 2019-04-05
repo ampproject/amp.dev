@@ -1,7 +1,6 @@
 ---
 $title: Governance
 $order: 2
-toc: false
 formats:
   - websites
   - email

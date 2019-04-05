@@ -39,6 +39,7 @@ const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md':
   '/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md',
 };
 /* eslint-enable max-len */
 

@@ -34,6 +34,15 @@ class Config {
 
     this.environment = env.name;
     this.hosts = env.hosts;
+    this.hostNames = new Set();
+    Object.values(this.hosts).forEach((host) => {
+      host.base = this.getHost(host);
+      let hostName = host.host;
+      if (host.subdomain) {
+        hostName = host.subdomain + '.' + hostName;
+      }
+      this.hostNames.add(hostName);
+    });
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
@@ -48,6 +57,9 @@ class Config {
     }
   }
 
+  /**
+   * Returns true if development mode is active.
+   */
   isDevMode() {
     return this.environment === ENV_DEV;
   }
@@ -56,16 +68,16 @@ class Config {
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
    * @return {String} The full URL
    */
-  _buildUrl(host) {
-    let url = `${host.scheme}://`;
-    const isLocalhost = (host.host === 'localhost');
-    if (isLocalhost || !host.subdomain) {
-      url += host.host;
+  getHost(hostConfig) {
+    let url = `${hostConfig.scheme}://`;
+    const isLocalhost = (hostConfig.host === 'localhost');
+    if (isLocalhost || !hostConfig.subdomain) {
+      url += hostConfig.host;
     } else {
-      url += `${host.subdomain}.${host.host}`;
+      url += `${hostConfig.subdomain}.${hostConfig.host}`;
     }
-    if (host.port) {
-      url += `:${host.port}`;
+    if (hostConfig.port) {
+      url += `:${hostConfig.port}`;
     }
     return url;
   }
@@ -113,9 +125,10 @@ class Config {
 
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
-      'playground': this._buildUrl(this.hosts.playground),
-      'platform': this._buildUrl(this.hosts.platform),
-      'api': this._buildUrl(this.hosts.api),
+      'playground': this.hosts.playground.base,
+      'platform': this.hosts.platform.base,
+      'api': this.hosts.api.base,
+      'preview': this.hosts.preview.base,
     };
 
     // Deployment specific

@@ -3,6 +3,11 @@
   padding-bottom: 3rem;
 }
 
+.#{utility('main')} {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 @mixin container {
   position: relative;
   display: flex;

@@ -13,7 +13,7 @@
   {% include '/views/partials/banner.j2' %}
 
   <div class="ap-o-header">
-    <a class="ap-o-header-home" href="{{ doc.pod.podspec.base_urls.platform }}">
+    <a class="ap-o-header-home" href="{{g.doc('/content/amp-dev/index.html', locale=doc.locale).public_path}}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span>
@@ -44,7 +44,7 @@
       </div>
       {% else %}
       <div class="ap-o-header-main-item">
-        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">{{ section.title or section_index.titles('navigation') }}</a>
+        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.public_path }}">{{ section.title or section_index.titles('navigation') }}</a>
 
         {% if section.flyout %}
         {# Only render flyout-touch-inputs for sections with flyout #}
@@ -63,7 +63,7 @@
           {# If the flyout has an icon and a description its a primary item #}
           {% if flyout.icon and flyout.description %}
           <li class="ap-o-header-flyout-primary-item">
-            <a class="ap-o-header-flyout-primary-item-link {{ flyout.format }}" href="{{ flyout_doc.url.path }}">
+            <a class="ap-o-header-flyout-primary-item-link {{ flyout.format }}" href="{{ flyout_doc.public_path }}">
             {% do doc.icons.useIcon('/icons/' + flyout.icon + '.svg') %}
               <div class="ap-o-header-flyout-primary-item-link-icon {{ flyout.format }}">
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout.icon }}"></use></svg>
@@ -77,7 +77,7 @@
           </li>
           {% else %}
           <li class="ap-o-header-flyout-item-secondary">
-            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{ flyout_doc.titles('navigation') }}</a>
+            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.public_path }}">{{ flyout_doc.titles('navigation') }}</a>
           </li>
           {% endif %}
           {% endfor %}
@@ -101,7 +101,8 @@
         {% for locale in doc.locales if not locale == doc.locale  %}
         {% set localized_doc = doc.localize(locale) %}
         <li class="ap-m-language-selector-list-item">
-          <a class="ap-m-nav-link" href="{{ localized_doc.url.path }}">{{ locale.get_language_name()|capitalize }}</a>
+          {# Need to manually replace as doc.public_path is not available #}
+          <a class="ap-m-nav-link" href="{{ localized_doc.url.path.replace('/index.html', '/') }}">{{ locale.get_language_name()|capitalize }}</a>
         </li>
         {% endfor %}
       </ul>

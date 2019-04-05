@@ -2,6 +2,10 @@
 $title: Enable experimental features
 $order: 5
 description: 'AMP experimental components are released features not yet ready for wide use, so they are protected by an experimental status.'
+formats:
+  - websites
+  - stories
+  - ads
 ---
 
 [AMP experimental components](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
@@ -42,7 +46,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 Any AMP file that includes experimental features will fail
-[AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
+[AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
 Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document

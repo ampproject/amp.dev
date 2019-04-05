@@ -10,7 +10,7 @@ AMP가 아닌 페이지(기존 HTML 페이지)에 광고를 게재하려면 자�
 
 [tip type="success"]
 
-[AMP By Example 라이브 데모]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})에서 AMP 페이지에 amp-ad 태그를 추가하는 방법을 알아보세요.
+[AMP By Example 라이브 데모]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})에서 AMP 페이지에 amp-ad 태그를 추가하는 방법을 알아보세요.
 
 [/tip]
 
@@ -133,12 +133,12 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 ### 혁신: 가장 좋은 성과를 내는 광고 제품 제공
 
 *   **부속 AMP 페이지에 광고를 구현**하여 수익을 늘리세요.
-    *   [캐러셀 광고]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [라이트박스 광고]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [캐러셀 광고]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [라이트박스 광고]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   ... 외 [더보기]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **직접 판매 광고를 위한 새로운 형식을 구현**하여 영업팀에서 효과적이고 혁신적인 광고 제품을 활용할 수 있도록 하세요.
-    *   [고정 광고]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [고정 광고]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## 추가 리소스
 

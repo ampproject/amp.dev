@@ -70,7 +70,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 Google에서 제공하는 AMP URL API를 사용하면
 주어진 URL 목록([공식 문서](https://developers.google.com/amp/cache/use-amp-url)/
-[데모]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
+[데모]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}))과 일치하는 AMP HTML URL을 가져올 수 있습니다. 여기서 URL은
 표준 버전이 아니어도 됩니다. AMP 버전이 있는 경우 원래 AMP URL과
 Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 포함됩니다.
@@ -113,7 +113,7 @@ Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API
 
 ## AMP 캐시 사용
 
-[AMP 캐시]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})는
+[AMP 캐시]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}})는
 유효한 AMP 문서를 전송하기 위한 프록시 기반의 콘텐츠 전송 네트워크(CDN)입니다.
 AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 

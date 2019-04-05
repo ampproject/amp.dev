@@ -1,0 +1,103 @@
+/*
+
+########################
+### MOLECULE: banner ###
+########################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('experiments')} {
+  background: color('white');
+  margin: 0 0 32px -30px;
+  padding: 20px 30px 20px 30px;
+
+  & &-controls {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0 0 0;
+    margin: 0 -15px;
+    list-style: none;
+  }
+
+    & &-control {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex: 1 0 auto;
+      padding: 15px 10px;
+      margin: 0 15px;
+      background-color: color('wild-sand');
+    }
+
+      &-label {
+        flex: 1 0 auto;
+        @include txt-font-accent;
+        color: color('black');
+      }
+
+        &-channel {
+          margin-left: auto;
+          margin-right: 6px;
+          @include txt-font-accent;
+
+          &-name {
+            color: color('alto');
+
+            &.active {
+              color: color('blue-ribbon');
+            }
+          }
+        }
+
+        &-toggle {
+          position: absolute;
+          z-index: 1;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 80px;
+          opacity: 0;
+          cursor: pointer;
+
+          &:checked {
+
+            & + .#{molecule('experiments')}-indicator {
+              background: color('blue-ribbon');
+
+              &:before {
+                transform: translateX(100%);
+              }
+            }
+
+          }
+        }
+
+          &-indicator {
+            position: relative;
+            height: 100%;
+            width: 50px;
+            border-radius: 2px;
+            padding: 2px;
+            background: color('alto');
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:before {
+              content: " ";
+              display: block;
+              width: 50%;
+              height: 100%;
+              box-shadow: 0 1px 3px 0 fade_out(color('black') ,0.6);
+              background: color('white');
+              transition: transform 0.2s ease;
+            }
+          }
+}

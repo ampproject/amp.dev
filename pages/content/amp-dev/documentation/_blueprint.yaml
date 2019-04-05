@@ -4,7 +4,6 @@ $title@: Documentation
 $localization:
   path: /{locale}/documentation/{base}.html
 $order: 2
-index: /content/amp-dev/documentation/guides-and-tutorials/index.html
 
 flyout:
     - /content/amp-dev/documentation/guides-and-tutorials/index.html

@@ -18,14 +18,14 @@ Why are AMPHTML ads better than traditional ads?
 
 1.  **Faster**: AMPHTML ads are faster because the ads are requested earlier in the page rendering process, and immediately displayed just before the user is about to view the ad. The reduced file size of AMPHTML ads also increases speed.
 1.  **Lighter**: AMPHTML ads combine commonly used ad functionality, which reduces the ad's file size. Once on the page, AMPHTML ads also consume less resources. For example, instead of 10 trackers requesting their own information in regular ads, AMPHTML ads collect all the data once and distribute it to any number of interested trackers.
-1.  **Coordinated**: On AMP pages, the [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime) can coordinate a mobile phone's limited resources to the right component at the right time to give the best user experience. For example, AMPHTML ads with animations are paused when the ads are not in the current viewport.
+1.  **Coordinated**: On AMP pages, the [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime) can coordinate a mobile phone's limited resources to the right component at the right time to give the best user experience. For example, AMPHTML ads with animations are paused when the ads are not in the current viewport.
 1.  **More Engaging**: Users can't engage with ads they can't see. Faster ads lead to higher viewability and therefore higher click-through rates, which ultimately leads to better ad performance.
 1.  **Safe from Malware**: It's impossible to spread malware with AMPHTML ads because the ads are verified before being served. Because of this, advertisers can ensure a safe user experience and positive brand perception.
 1.  **More Flexible**: AMPHTML ads are designed to work on both AMP and non-AMP web pages, as well as across any device.
 
 ### Formats
 
-AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few. Get started by leveraging the open-source AMPHTML ad templates on [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
+AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few. Get started by leveraging the open-source AMPHTML ad templates on [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -70,7 +70,7 @@ To deliver AMPHTML ads through your indirect channels (e.g., exchange, SSP, etc.
 
 ### Creative agencies
 
-If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Alternatively, use one of the following tools to create AMPHTML ads:
+If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). For inspiration and examples, see the open-source AMPHTML ad templates on [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Alternatively, use one of the following tools to create AMPHTML ads:
 
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -82,7 +82,7 @@ To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`]({{g.doc('/
 
 ## Creating AMPHTML ads
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads).
+**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
 
 **Using tools**: You can use any of the following tools to build AMPHTML creatives:
 
@@ -110,7 +110,7 @@ For SSPs and ad exchanges that want to support AMPHTML ads in a Real-Time Biddin
 
 #### Are there any AMPHTML ad samples?
 
-Yes. A number of great looking AMPHTML ad templates can be found on [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads). These samples use advanced components in AMP.
+Yes. A number of great looking AMPHTML ad templates can be found on [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). These samples use advanced components in AMP.
 
 #### Do AMPHTML ads support 3rd party verification and viewability detection?
 

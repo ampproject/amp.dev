@@ -29,6 +29,14 @@ const readFileAsync = promisify(fs.readFile);
 const pages = express.Router();
 const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
 
+function fileExistsAsync(path) {
+  return new Promise((resolve) => {
+    fs.access(path, fs.F_OK, (err) => {
+      resolve(!(err instanceof Error));
+    });
+  });
+}
+
 /**
  * Inspects a incoming request (either proxied or not) for its GET args
  * and URL and checks if its valid to filter and if so has a valid filter
@@ -86,8 +94,11 @@ if (config.isDevMode()) {
   }
 
   // Grow has problems delivering the index.html on a root request
-  pages.get('/', (request, response, next) => {
-    response.redirect('/index.html');
+  pages.use((request, response, next) => {
+    if (request.path.endsWith('/')) {
+      request.url = `${request.path}index.html`;
+    }
+
     next();
   });
 
@@ -148,7 +159,9 @@ if (config.isDevMode()) {
 
 if (!config.isDevMode()) {
   const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
-  const staticMiddleware = express.static(STATIC_PAGES_PATH);
+  const staticMiddleware = express.static(STATIC_PAGES_PATH, {
+    'extensions': ['html'],
+  });
 
   /**
    * Checks preconditions that need to be met to filter the ongoing request
@@ -156,13 +169,12 @@ if (!config.isDevMode()) {
    * @param  {String}  requestPath  A possibly rewritten request path
    * @return {Boolean}
    */
-  function shouldApplyFormatFilter(request, requestPath) {
+  async function shouldApplyFormatFilter(request, requestPath) {
     if (!getFilteredFormat(request) || !isFilterableRoute(requestPath)) {
       return false;
     }
 
-    // TODO(matthiasrohmer): Use fs.stat/fs.access over fs.existsSync
-    if (!fs.existsSync(utils.project.pagePath(requestPath))) {
+    if (!await fileExistsAsync(utils.project.pagePath(requestPath))) {
       return false;
     }
 
@@ -178,16 +190,28 @@ if (!config.isDevMode()) {
     }
 
     // Let the built-in middleware deal with unfiltered requests
-    if (!shouldApplyFormatFilter(request, requestPath)) {
+    if (!await shouldApplyFormatFilter(request, requestPath)) {
       return staticMiddleware(request, response, next);
     }
 
     try {
+      // Check if there's a manually filtered variant ...
+      const format = getFilteredFormat(request);
+      const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+      if (await fileExistsAsync(utils.project.pagePath(manualRequestPath))) {
+        // ... and if there is one vend this
+        requestPath = manualRequestPath;
+      }
+
       const page = await readFileAsync(utils.project.pagePath(requestPath));
-      const filteredPage = new FilteredPage(getFilteredFormat(request), page, true);
+      const filteredPage = new FilteredPage(format, page, true);
       response.send(filteredPage.content);
-      return next();
     } catch (e) {
+      if (e.code === 'EISDIR') {
+        // show a 404 instead
+        next();
+        return;
+      }
       return next(e);
     }
   });

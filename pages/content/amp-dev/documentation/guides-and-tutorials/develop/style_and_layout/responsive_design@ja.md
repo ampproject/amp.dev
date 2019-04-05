@@ -16,7 +16,7 @@ $title: レスポンシブな AMP ページを作成する
 
 ウェブページを最適化して、拡大縮小によってコンテンツがあらゆる端末のブラウザ ウィンドウに収まるようにするには、`meta` ビューポート要素を指定する必要があります。このビューポート要素は、ブラウザでウェブページの表示エリア（ビューポート）をどのように拡大縮小およびサイズ設定するかを指定します。
 
-この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
+この要素にどの値を使用するかが問題になりますが、AMP では指定する値がすでに決まっています。AMP ページ用の[必須のマークアップ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)の一環として、下記のようにビューポートを指定する必要があります。
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -150,6 +150,6 @@ HTML では `picture` タグを使うことで、異なる画像形式を配信�
 
 #### AMP によるページ作成の参考情報
 
-- [AMP by Example:  サンプルとテンプレート](https://ampbyexample.com/#samples_templates)
+- [Examples:  サンプルとテンプレート]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 - [AMP Start のテンプレート](https://www.ampstart.com/)
 - [AMP Conf ワークショップ コードラボ: 美しい AMP の作成](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
