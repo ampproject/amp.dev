@@ -1,7 +1,6 @@
 ---
 $title: Thinking in Components
 $order: 3
-toc: true
 ---
 
 ## Adding Features To Our Site

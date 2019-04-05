@@ -1,7 +1,6 @@
 ---
 $title: Making Components Work Together
 $order: 3
-toc: true
 ---
 
 ## Adding Interactions To The Image Carousel

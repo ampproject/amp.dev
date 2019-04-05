@@ -1,7 +1,6 @@
 ---
 $title: Handling User Interactions
 $order: 1
-toc: true
 ---
 
 ## Building A Menu

@@ -1,7 +1,6 @@
 ---
 $title: Remembering What The User Has Done
 $order: 1
-toc: true
 ---
 
 ## Rethinking The Carousel

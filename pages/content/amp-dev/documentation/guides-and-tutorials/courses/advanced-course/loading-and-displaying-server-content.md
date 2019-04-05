@@ -1,7 +1,6 @@
 ---
 $title: Loading and Displaying Server Content
 $order: 2
-toc: true
 ---
 
 ## Adding Products To Our Site
