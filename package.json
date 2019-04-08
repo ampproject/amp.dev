@@ -49,7 +49,7 @@
   "dependencies": {
     "amp-toolbox-cors": "0.2.4",
     "amp-toolbox-runtime-version": "0.2.6",
-    "cheerio": "1.0.0-rc.2",
+    "cheerio": "1.0.0-rc.3",
     "cors": "^2.8.5",
     "express": "4.16.4",
     "js-yaml": "3.13.0",
