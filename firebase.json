@@ -63,6 +63,17 @@
       },
 
       {
+        "source": "/docs/community/governance/",
+        "destination": "https://amp.dev/community/governance/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/community/governance/",
+        "destination": "https://amp.dev/:lang/community/governance/",
+        "type": 301
+      },
+
+      {
         "source": "/docs/contribute/governance/",
         "destination": "https://amp.dev/community/governance/",
         "type": 301
