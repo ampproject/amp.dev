@@ -30,6 +30,12 @@ staticRouter.get('/serviceworker.js', (request, response) => {
       .sendFile('serviceworker.js', {root: 'static'});
 });
 
+staticRouter.get('/serviceworker.html', (request, response) => {
+  setMaxAge(response, 60 * 60 * 24);
+  response.status(200)
+      .sendFile('serviceworker.html', {root: 'static'});
+});
+
 staticRouter.get('/robots.txt', (request, response) => {
   setMaxAge(response, 60 * 60);
   response.status(200)
