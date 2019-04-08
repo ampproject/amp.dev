@@ -117,7 +117,6 @@ async function importRoadmap() {
       .reduce((acc, val) => acc.concat(val), [])
       .filter((value, index, self) => self.indexOf(value) === index);
 
-  console.log(labels);
   // Write finalized JSON to config file that gets imported by the roadmap template
   fs.writeFileSync(
       DESTINATION_JSON,
