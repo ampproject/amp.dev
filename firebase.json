@@ -131,16 +131,6 @@
         "type": 301
       },
       {
-        "source": "/:lang/case-studies/:name",
-        "destination": "https://amp.dev/:lang/success-stories/?referrer=ampproject.org",
-        "type": 301
-      },
-      {
-        "source": "/:lang/case-studies/:name",
-        "destination": "https://amp.dev/:lang/success-stories/:name",
-        "type": 301
-      },
-      {
         "source": "/:lang/contribute",
         "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/?referrer=ampproject.org",
         "type": 301
@@ -766,16 +756,378 @@
         "destination": "https://amp.dev/events/code-of-conduct?referrer=ampproject.org",
         "type": 301
       },
+
       {
-        "source": "/case-studies/:name",
-        "destination": "https://amp.dev/success-stories/?referrer=ampproject.org",
+        "source": "/case-studies/eski_mobi",
+        "destination": "https://amp.dev/success-stories/eski_mobi?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/case-studies/:name",
-        "destination": "https://amp.dev/success-stories/:name",
+        "source": "/:lang/case-studies/eski_mobi",
+        "destination": "https://amp.dev/:lang/success-stories/eski_mobi?referrer=ampproject.org",
         "type": 301
       },
+      {
+        "source": "/case-studies/indiatoday",
+        "destination": "https://amp.dev/success-stories/indiatoday?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/indiatoday",
+        "destination": "https://amp.dev/:lang/success-stories/indiatoday?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/readwhere",
+        "destination": "https://amp.dev/success-stories/readwhere?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/readwhere",
+        "destination": "https://amp.dev/:lang/success-stories/readwhere?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/transunion",
+        "destination": "https://amp.dev/success-stories/transunion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/transunion",
+        "destination": "https://amp.dev/:lang/success-stories/transunion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/advance_create",
+        "destination": "https://amp.dev/success-stories/advance_create?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/advance_create",
+        "destination": "https://amp.dev/:lang/success-stories/advance_create?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/event_ticket_center",
+        "destination": "https://amp.dev/success-stories/event_ticket_center?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/event_ticket_center",
+        "destination": "https://amp.dev/:lang/success-stories/event_ticket_center?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/innkeepers",
+        "destination": "https://amp.dev/success-stories/innkeepers?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/innkeepers",
+        "destination": "https://amp.dev/:lang/success-stories/innkeepers?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/relay_media",
+        "destination": "https://amp.dev/success-stories/relay_media?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/relay_media",
+        "destination": "https://amp.dev/:lang/success-stories/relay_media?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/triplelift",
+        "destination": "https://amp.dev/success-stories/triplelift?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/triplelift",
+        "destination": "https://amp.dev/:lang/success-stories/triplelift?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/bmw",
+        "destination": "https://amp.dev/success-stories/bmw-com?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/bmw",
+        "destination": "https://amp.dev/:lang/success-stories/bmw-com?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/fastcommerce",
+        "destination": "https://amp.dev/success-stories/fastcommerce?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/fastcommerce",
+        "destination": "https://amp.dev/:lang/success-stories/fastcommerce?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/jagran",
+        "destination": "https://amp.dev/success-stories/jagran?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/jagran",
+        "destination": "https://amp.dev/:lang/success-stories/jagran?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/renovation_brands",
+        "destination": "https://amp.dev/success-stories/renovation_brands?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/renovation_brands",
+        "destination": "https://amp.dev/:lang/success-stories/renovation_brands?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/us_xpress",
+        "destination": "https://amp.dev/success-stories/us_xpress?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/us_xpress",
+        "destination": "https://amp.dev/:lang/success-stories/us_xpress?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/carved",
+        "destination": "https://amp.dev/success-stories/carved?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/carved",
+        "destination": "https://amp.dev/:lang/success-stories/carved?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/gizmodo",
+        "destination": "https://amp.dev/success-stories/gizmodo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/gizmodo",
+        "destination": "https://amp.dev/:lang/success-stories/gizmodo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/merchology",
+        "destination": "https://amp.dev/success-stories/merchology?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/merchology",
+        "destination": "https://amp.dev/:lang/success-stories/merchology?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/slate",
+        "destination": "https://amp.dev/success-stories/slate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/slate",
+        "destination": "https://amp.dev/:lang/success-stories/slate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/washingtonpost",
+        "destination": "https://amp.dev/success-stories/washingtonpost?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/washingtonpost",
+        "destination": "https://amp.dev/:lang/success-stories/washingtonpost?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/greenslips",
+        "destination": "https://amp.dev/success-stories/greenslips?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/greenslips",
+        "destination": "https://amp.dev/:lang/success-stories/greenslips?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/metromile",
+        "destination": "https://amp.dev/success-stories/metromile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/metromile",
+        "destination": "https://amp.dev/:lang/success-stories/metromile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/teads",
+        "destination": "https://amp.dev/success-stories/teads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/teads",
+        "destination": "https://amp.dev/:lang/success-stories/teads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/wego",
+        "destination": "https://amp.dev/success-stories/wego?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/wego",
+        "destination": "https://amp.dev/:lang/success-stories/wego?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/cnbc",
+        "destination": "https://amp.dev/success-stories/cnbc?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/cnbc",
+        "destination": "https://amp.dev/:lang/success-stories/cnbc?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/greenweez",
+        "destination": "https://amp.dev/success-stories/greenweez?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/greenweez",
+        "destination": "https://amp.dev/:lang/success-stories/greenweez?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/milestone",
+        "destination": "https://amp.dev/success-stories/milestone?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/milestone",
+        "destination": "https://amp.dev/:lang/success-stories/milestone?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/terra",
+        "destination": "https://amp.dev/success-stories/terra?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/terra",
+        "destination": "https://amp.dev/:lang/success-stories/terra?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/wired",
+        "destination": "https://amp.dev/success-stories/wired?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/wired",
+        "destination": "https://amp.dev/:lang/success-stories/wired?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/consumers_advocate",
+        "destination": "https://amp.dev/success-stories/consumers_advocate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/consumers_advocate",
+        "destination": "https://amp.dev/:lang/success-stories/consumers_advocate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/grupo",
+        "destination": "https://amp.dev/success-stories/grupo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/grupo",
+        "destination": "https://amp.dev/:lang/success-stories/grupo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/nobroker",
+        "destination": "https://amp.dev/success-stories/nobroker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/nobroker",
+        "destination": "https://amp.dev/:lang/success-stories/nobroker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/times_of_india",
+        "destination": "https://amp.dev/success-stories/times_of_india?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/times_of_india",
+        "destination": "https://amp.dev/:lang/success-stories/times_of_india?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/wompmobile",
+        "destination": "https://amp.dev/success-stories/wompmobile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/wompmobile",
+        "destination": "https://amp.dev/:lang/success-stories/wompmobile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/discover_car_hire",
+        "destination": "https://amp.dev/success-stories/discover_car_hire?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/discover_car_hire",
+        "destination": "https://amp.dev/:lang/success-stories/discover_car_hire?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/hearst",
+        "destination": "https://amp.dev/success-stories/hearst?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/hearst",
+        "destination": "https://amp.dev/:lang/success-stories/hearst?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/plista",
+        "destination": "https://amp.dev/success-stories/plista?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/plista",
+        "destination": "https://amp.dev/:lang/success-stories/plista?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/tokopedia",
+        "destination": "https://amp.dev/success-stories/tokopedia?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/tokopedia",
+        "destination": "https://amp.dev/:lang/success-stories/tokopedia?referrer=ampproject.org",
+        "type": 301
+      },
+
       {
         "source": "/docs/ads",
         "destination": "https://amp.dev/documentation/guides-and-tutorials/?format=ads&referrer=ampproject.org",
