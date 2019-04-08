@@ -1,5 +1,5 @@
 $title: Examples documentation
 $view: /views/examples/documentation.j2
-$path: /documentation/examples/{base}
+$path: /documentation/examples/{base}.html
 $localization:
-  path: /{locale}/documentation/examples/{base}
+  path: /{locale}/documentation/examples/{base}.html

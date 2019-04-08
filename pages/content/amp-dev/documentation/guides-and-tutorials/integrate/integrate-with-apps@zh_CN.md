@@ -112,7 +112,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 ## 使用 AMP 缓存
 
-[AMP 缓存]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})是一种
+[AMP 缓存]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}})是一种
 基于代理的内容分发网络 (CDN)，用于分发有效的 AMP 文档。
 AMP 缓存旨在：
 

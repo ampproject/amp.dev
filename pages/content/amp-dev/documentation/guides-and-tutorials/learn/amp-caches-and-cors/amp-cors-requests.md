@@ -1,5 +1,6 @@
 ---
 $title: CORS in AMP
+toc: true
 $order: 12
 formats:
   - websites

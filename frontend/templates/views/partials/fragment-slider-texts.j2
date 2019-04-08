@@ -12,7 +12,7 @@
 
       <div class="ap-o-fragment-slider-component-list">
       {% for component in ['amp-mustache', 'amp-date-picker', 'amp-sidebar', 'amp-access', 'amp-analytics', 'amp-selector', 'amp-3d-gltf', 'amp-live-list', 'amp-geo', 'amp-timeago', 'amp-form', 'amp-position-observer', 'amp-animation', 'amp-pan-zoom'] %}
-        <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).url.path }}"><code>{{ component }}</code></a>
+        <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).public_path }}"><code>{{ component }}</code></a>
         {% endfor %}
       </div>
     </div>
@@ -39,7 +39,7 @@
 
       <div class="ap-o-fragment-slider-component-list">
       {% for component in ['amp-mustache', 'amp-sidebar', 'amp-access', 'amp-analytics', 'amp-selector', 'amp-live-list', 'amp-fit-text', 'amp-social-share', 'amp-position-observer', 'amp-animation', 'amp-youtube', 'amp-orientation-observer', 'amp-carousel', 'amp-accordion', 'amp-twitter', 'amp-instagram', 'amp-lightbox', 'amp-video'] %}
-        <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).url.path }}"><code>{{ component }}</code></a>
+        <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).public_path }}"><code>{{ component }}</code></a>
         {% endfor %}
       </div>
     </div>

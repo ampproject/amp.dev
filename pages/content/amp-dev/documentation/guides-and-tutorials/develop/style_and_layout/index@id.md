@@ -89,4 +89,4 @@ Contoh error di konsol halaman dengan CSS yang melebihi batas 50.000 byte:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [memvalidasi dan memperbaiki halaman AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
+Baca lebih lanjut: Pelajari lebih lanjut tentang [memvalidasi dan memperbaiki halaman AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})

@@ -1,8 +1,6 @@
 $title: Guides & Tutorials
-$path: /documentation/guides-and-tutorials/{base}.html
+$path: /documentation/guides-and-tutorials/{base}
 $view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/{base}
 $order: 1
-
-index: /content/amp-dev/documentation/guides-and-tutorials/index.html

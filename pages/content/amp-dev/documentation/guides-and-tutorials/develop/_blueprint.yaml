@@ -1,7 +1,6 @@
 $title@: Develop
-$path: /documentation/guides-and-tutorials/develop/{base}.html
 $view: /views/detail/docs-detail.j2
-
+$path: /documentation/guides-and-tutorials/develop/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/{base}.html
 
@@ -11,4 +10,3 @@ formats:
   - stories
   - ads
   - email
-  

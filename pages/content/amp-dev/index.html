@@ -294,7 +294,8 @@ success_stories:
             allow="fullscreen"
             frameborder="0"
             src="{{ embed_url }}"
-            [src]="sampler[activeSample].embedUrl">
+            [src]="sampler[activeSample].embedUrl"
+            title="AMP Playground">
             <div overflow tabindex="0" role="button" aria-label="{{ _('Show everything') }}">{{ _('Show everything') }}</div>
             <div placeholder>
               <div class="ap-o-sampler-iframe-source"></div>
@@ -330,7 +331,7 @@ success_stories:
     </div>
   </section>
 
-  <section class="ap--benefits-overview">
+  <section class="ap--benefits-overview" id="benefits">
     <div class="ap-o-benefits ap--container">
 
       <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-developers">

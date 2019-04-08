@@ -4,7 +4,9 @@ formats:
   - email
   - ads
   - stories
-$path: /documentation/guides-and-tutorials/develop/style_and_layout/style_and_layout.html
+$path: /documentation/guides-and-tutorials/develop/style_and_layout/index.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html
 $title: Style & layout
 $order: 0
 description: "Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
@@ -134,5 +136,5 @@ Example error in console for page with CSS that exceeds the 50,000 bytes limit:
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
 [tip type="read-on"]
-**READ ON –** Learn more about how to [validate and fix your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})
+**READ ON –** Learn more about how to [validate and fix your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})
 [/tip]

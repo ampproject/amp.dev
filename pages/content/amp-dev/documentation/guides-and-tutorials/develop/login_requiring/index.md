@@ -1,6 +1,5 @@
 ---
 $title: Create a login-requiring AMP page
-$path: /documentation/guides-and-tutorials/develop/login_requiring/create-login.html
 $order: 0
 description: 'Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow ...'
 numbered: 1

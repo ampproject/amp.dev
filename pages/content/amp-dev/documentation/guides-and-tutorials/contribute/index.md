@@ -3,6 +3,8 @@ $title: How to contribute
 $titles:
   navigation: Contribute
 $path: /documentation/guides-and-tutorials/contribute/index.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/contribute/index.html
 $order: 0
 description: 'The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.'
 
@@ -18,7 +20,7 @@ whether you are a developer, content creator or provider of services relevant to
 There are many ways for you to contribute.
 
 ### Reporting issues with AMP
-If you have feedback or are experiencing technical issues with AMP, please file it using the [issue tracker](https://github.com/ampproject/amphtml/issues).  If you're having issues with [ampproject.org](https://ampproject.org), please use the [docs issue tracker](https://github.com/ampproject/docs/issues) instead.
+If you have feedback or are experiencing technical issues with AMP, please file it using the [issue tracker](https://github.com/ampproject/amphtml/issues).  If you're having issues with [amp.dev](https://amp.dev), please use the [docs issue tracker](https://github.com/ampproject/docs/issues) instead.
 
 ### Providing technical contributions to AMP
 
@@ -34,7 +36,7 @@ To get started with contributing code to the AMP Project read through [the CONTR
 
 Documentation is important for the entire AMP community, and we would appreciate your help in making our documentation better!  We've got all sorts of documentation--examples for users of AMP, docs to help AMP Project contributors, etc.
 
-[ampproject.org](https://ampproject.org) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!)
+[amp.dev](https://amp.dev) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!)
 
 [ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) provides examples of how to use AMP.  You can improve it at the [amp-by-example GitHub project](https://github.com/ampproject/amp-by-example/).
 

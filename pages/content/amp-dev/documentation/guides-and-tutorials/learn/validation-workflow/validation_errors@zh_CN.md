@@ -21,7 +21,7 @@ limitations under the License.
 有效的 AMP 文档不得包含任何验证错误。
 本文档旨在帮助您更好地了解
 并更正在[验证 AMP 网页]
-({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
+({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
 有关验证错误的完整概述，
 请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 在 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
-[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})中也提到了这些标记。
+[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})中也提到了这些标记。
 
 ### 缺少其他标记所需的标记
 
@@ -104,7 +104,7 @@ limitations under the License.
 </table>
 
 可用的标记都已列入白名单，因此目前还没有列表将所有不允许使用的标记明确列出；
-不过，[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
+不过，[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})
 粗略地定义了一组不允许使用的标记。
 
 ### 不允许使用自定义 JavaScript
@@ -724,7 +724,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 此错误指的是 CSS 中的 @-rules。
 对于 CSS 中的 @-rules，AMP 仅允许少量规则
-（另请参阅 [AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})）。
+（另请参阅 [AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})）。
 例如，不允许使用 <code>@import</code>。
 验证错误消息会明确
 告诉您哪个规则无效，
@@ -755,7 +755,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
 请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})。
 
 **注意**：如果您没有指定布局，
 并且没有添加 `width` 和 `height` 值，
@@ -785,7 +785,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 如果您没有为 AMP 标记指定布局，
 并且隐式布局包含不允许使用的属性，就会出现这种错误。
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})中
 说明了各种布局类型不允许使用的属性。
 
 ### AMP 标记不支持指定的布局
@@ -813,7 +813,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
 请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})。
 
 ### 指定的布局不允许的属性
 
@@ -835,7 +835,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当您为 AMP 标记指定的布局中包含不允许使用的属性时，
 就会出现这种错误。
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
+[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})中
 说明了各种布局类型不允许使用的属性。
 
 ### 布局所需属性的值无效

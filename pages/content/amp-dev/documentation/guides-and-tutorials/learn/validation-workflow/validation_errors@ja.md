@@ -20,7 +20,7 @@ limitations under the License.
 
 有効な AMP ドキュメントを作成するには、検証エラーが 1 つもない状態にする必要があります。
 このドキュメントの目的は、
-[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})ときに見つかった検証エラーを
+[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})ときに見つかった検証エラーを
 正しく理解して修正できるようにすることです。
 検証エラーの概要については、
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
-また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})にも必須タグについての説明があります。
+また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
 
@@ -104,7 +104,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 </table>
 
 タグはホワイトリストに登録されているため、許可されていないタグを網羅したリストはありません。
-ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})では
+ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})では
 許可されていないタグを大まかに定義しています。
 
 ### カスタム JavaScript が使用されている
@@ -724,7 +724,7 @@ CSS を実行してみてください。
 
 このエラーは、CSS 内のアットルールに関するものです。
 AMP で使用できるアットルールはごくわずかです
-（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})もご覧ください）。
+（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})もご覧ください）。
 たとえば、<code>@import</code> は許可されていません。
 検証エラーでは無効なルールが
 具体的に示されるため、
@@ -755,7 +755,7 @@ AMP で使用できるアットルールはごくわずかです
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
 [レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})のページをご覧ください。
 
 **注:** レイアウトを指定せず、
 `width` 値と `height` 値も指定しない場合、
@@ -785,7 +785,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されておらず、
 許可されていない属性が暗黙的レイアウトに含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### 指定されたレイアウトが AMP タグでサポートされていない
@@ -813,7 +813,7 @@ AMP タグで CONTAINER がサポートされていないと、
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
 [レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})のページをご覧ください。
 
 ### 指定されたレイアウトで属性が許可されていない
 
@@ -835,7 +835,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されていて、
 そのレイアウトに許可されていない属性が含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### レイアウトで必要な属性の値が無効

@@ -4,6 +4,7 @@ author: fstanis
 $order: 3
 formats:
   - email
+toc: true
 ---
 
 

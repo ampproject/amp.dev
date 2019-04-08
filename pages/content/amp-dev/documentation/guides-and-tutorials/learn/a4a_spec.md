@@ -1,5 +1,6 @@
 ---
 $title: AMP for Ads specification
+toc: true
 $order: 3
 formats:
   - ads

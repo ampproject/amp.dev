@@ -70,7 +70,7 @@ Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP]({{g.doc('/conte
 
 ## Como usar pré-processadores de CSS
 
-O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [ampproject.org](https://www.ampproject.org/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [ampproject.org](https://www.ampproject.org/).
+O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [amp.dev](https://amp.dev/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [amp.dev](https://amp.dev/).
 
 Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
 
@@ -83,7 +83,7 @@ Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue some
 
   <title>Projeto de Accelerated Mobile Pages</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -100,4 +100,4 @@ Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue some
 </head>
 {% endraw %}[/sourcecode]
 
-Para ver como o conteúdo acima se traduz em uma AMP em HTML formatada, veja a fonte de qualquer página em [ampproject.org](https://www.ampproject.org/). (No Chrome, clique com o botão direito e `View Page Source`).
+Para ver como o conteúdo acima se traduz em uma AMP em HTML formatada, veja a fonte de qualquer página em [amp.dev](https://amp.dev/). (No Chrome, clique com o botão direito e `View Page Source`).

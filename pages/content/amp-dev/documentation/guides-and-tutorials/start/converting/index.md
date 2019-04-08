@@ -6,7 +6,6 @@ $titles:
   teaser: Convert HTML to AMP
 $order: 0
 description: 'In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial'
-$path: /documentation/guides-and-tutorials/start/converting/converting.html
 $hidden: true
 
 teaser:
