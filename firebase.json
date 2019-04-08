@@ -660,18 +660,13 @@
         "type": 301
       },
       {
-        "source": "/:lang/docs/media",
-        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
-        "type": 301
-      },
-      {
         "source": "/:lang/docs",
         "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/:lang/docs/media",
-        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/media_iframes_3p",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/media_iframes_3p/?referrer=ampproject.org",
         "type": 301
       },
       {
@@ -681,12 +676,12 @@
       },
       {
         "source": "/:lang/docs/media/iframes",
-        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/iframes?referrer=ampproject.org",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/media_iframes_3p/iframes?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/:lang/docs/media/iframes",
-        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/iframes?referrer=ampproject.org",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/media_iframes_3p/iframes?referrer=ampproject.org",
         "type": 301
       },
       {
@@ -1685,7 +1680,7 @@
       },
       {
         "source": "/docs/media",
-        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p/?referrer=ampproject.org",
         "type": 301
       },
       {
@@ -1695,12 +1690,12 @@
       },
       {
         "source": "/docs/media/iframes",
-        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/iframes?referrer=ampproject.org",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p/iframes?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/docs/media/iframes",
-        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/iframes?referrer=ampproject.org",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p/iframes?referrer=ampproject.org",
         "type": 301
       },
       {
