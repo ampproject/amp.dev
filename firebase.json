@@ -2,1632 +2,1633 @@
   "hosting": {
     "public": "build",
     "cleanUrls": true,
-    "headers": [
-      {
+    "trailingSlash": true,
+    "headers": [{
         "source": "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
-          }
-        ]
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=604800"
+        }]
       },
       {
         "source": "service-worker.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }]
       }
     ],
     "redirects": [
       {
-        "source": "/docs/guides/",
-        "destination": "/docs/",
+        "source": "/amp-conf",
+        "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides",
-        "destination": "/:lang/docs/",
+        "source": "/amp-conf-2018",
+        "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/",
-        "destination": "/docs/",
+        "source": "/amp-conf-2017",
+        "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/:lang/docs/tutorials",
-        "destination": "/:lang/docs/",
-        "type": 301
-      },
-      {
-        "source": "/docs/ads",
-        "destination": "/docs/ads/introduction_ads",
-        "type": 301
-      },
-      {
-        "source": "/:lang/docs/ads",
-        "destination": "/:lang/docs/ads/introduction_ads",
-        "type": 301
-      },
-      {
-        "source": "/:lang/docs/get_started/create",
-        "destination": "/:lang/docs/getting_started/create.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/",
-        "destination": "/docs/reference/components.html",
-        "type": 301
-      },
-      {
-        "source": "/:lang/docs/reference/",
-        "destination": "/:lang/docs/reference/components.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/contribute/",
-        "destination": "/contribute/",
-        "type": 301
-      },
-      {
-        "source": "/:lang/docs/contribute/",
-        "destination": "/:lang/contribute/",
-        "type": 301
-      },
-      {
-        "source": "/ads",
-        "destination": "/learn/who-uses-amp/amp-ads/",
-        "type": 301
-      },
-      {
-        "source": "/ecommerce",
-        "destination": "/learn/who-uses-amp/ecommerce/",
-        "type": 301
-      },
-      {
-        "source": "/showcase",
-        "destination": "/learn/showcases/",
-        "type": 301
-      },
-      {
-        "source": "/who",
-        "destination": "/learn/who/",
-        "type": 301
-      },
-      {
-        "source": "/docs/get_started/technical_overview.html",
-        "destination": "/learn/about-how/",
-        "type": 301
-      },
-      {
-        "source": "/docs/get_started/about-amp.html",
-        "destination": "/learn/overview/",
-        "type": 301
-      },
-
-      {
-        "source": "/docs/guides/author-develop/responsive_amp?(.html)",
-        "destination": "/docs/design/responsive_amp.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/responsive/style_pages?(.html)",
-        "destination": "/docs/design/responsive/style_pages.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/responsive/control_layout?(.html)",
-        "destination": "/docs/design/responsive/control_layout.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/responsive/placeholders?(.html)",
-        "destination": "/docs/design/responsive/placeholders.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/responsive/art_direction?(.html)",
-        "destination": "/docs/design/responsive/art_direction.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/responsive/custom_fonts?(.html)",
-        "destination": "/docs/design/responsive/custom_fonts.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/amp_replacements?(.html)",
-        "destination": "/docs/media/amp_replacements.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/iframes?(.html)",
-        "destination": "/docs/media/iframes.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/third_party_components?(.html)",
-        "destination": "/docs/fundamentals/third_party_components.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/ads_on_amp?(.html)",
-        "destination": "/docs/ads/monetization.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/ads_analytics/ads_on_amp?(.html)",
-        "destination": "/docs/ads/monetization.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/ads/ads_on_amp?(.html)",
-        "destination": "/docs/ads/monetization.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/pwa-amp?(.html)",
-        "destination": "/docs/integration/pwa-amp.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/pwa-amp/amp-as-pwa?(.html)",
-        "destination": "/docs/integration/pwa-amp/amp-as-pwa.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/pwa-amp/amp-to-pwa?(.html)",
-        "destination": "/docs/integration/pwa-amp/amp-to-pwa.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/author-develop/pwa-amp/amp-in-pwa?(.html)",
-        "destination": "/docs/integration/pwa-amp/amp-in-pwa.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/debug/validate?(.html)",
-        "destination": "/docs/fundamentals/validate.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/deploy/analytics_amp?(.html)",
-        "destination": "/docs/ads_analytics/analytics_amp.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/deploy/discovery?(.html)",
-        "destination": "/docs/fundamentals/discovery.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/deploy/engagement?(.html)",
-        "destination": "/docs/fundamentals/engagement.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/guides/login-paywalls",
-        "destination": "/docs/interaction_dynamic/login_requiring.html",
-        "type": 301
-      },
-
-      {
-        "source": "/docs/reference/components/ads/amp-pixel?(.html)",
-        "destination": "/docs/reference/components/amp-pixel.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/ads/amp-ad?(.html)",
-        "destination": "/docs/reference/components/amp-ad.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/ads/amp-analytics?(.html)",
-        "destination": "/docs/reference/components/amp-analytics.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/ads/amp-auto-ads?(.html)",
-        "destination": "/docs/reference/components/amp-auto-ads.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/ads/amp-call-tracking?(.html)",
-        "destination": "/docs/reference/components/amp-call-tracking.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/ads/amp-experiment?(.html)",
-        "destination": "/docs/reference/components/amp-experiment.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/ads/amp-sticky-ad?(.html)",
-        "destination": "/docs/reference/components/amp-sticky-ad.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-access-laterpay?(.html)",
-        "destination": "/docs/reference/components/amp-access-laterpay.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-access?(.html)",
-        "destination": "/docs/reference/components/amp-access.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-bind?(.html)",
-        "destination": "/docs/reference/components/amp-bind.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-form?(.html)",
-        "destination": "/docs/reference/components/amp-form.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-install-serviceworker?(.html)",
-        "destination": "/docs/reference/components/amp-install-serviceworker.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-list?(.html)",
-        "destination": "/docs/reference/components/amp-list.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-live-list?(.html)",
-        "destination": "/docs/reference/components/amp-live-list.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-mustache?(.html)",
-        "destination": "/docs/reference/components/amp-mustache.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-selector?(.html)",
-        "destination": "/docs/reference/components/amp-selector.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/dynamic/amp-user-notification?(.html)",
-        "destination": "/docs/reference/components/amp-user-notification.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-accordion?(.html)",
-        "destination": "/docs/reference/components/amp-accordion.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-app-banner?(.html)",
-        "destination": "/docs/reference/components/amp-app-banner.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-carousel?(.html)",
-        "destination": "/docs/reference/components/amp-carousel.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-fx-flying-carpet?(.html)",
-        "destination": "/docs/reference/components/amp-fx-flying-carpet.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-fx-parallax?(.html)",
-        "destination": "/docs/reference/components/amp-fx-parallax.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-iframe?(.html)",
-        "destination": "/docs/reference/components/amp-iframe.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-lightbox?(.html)",
-        "destination": "/docs/reference/components/amp-lightbox.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/layout/amp-sidebar?(.html)",
-        "destination": "/docs/reference/components/amp-sidebar.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-img?(.html)",
-        "destination": "/docs/reference/components/amp-img.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-anim?(.html)",
-        "destination": "/docs/reference/components/amp-anim.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-apester-media?(.html)",
-        "destination": "/docs/reference/components/amp-apester-media.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-audio?(.html)",
-        "destination": "/docs/reference/components/amp-audio.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-brid-player?(.html)",
-        "destination": "/docs/reference/components/amp-brid-player.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-brightcove?(.html)",
-        "destination": "/docs/reference/components/amp-brightcove.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-dailymotion?(.html)",
-        "destination": "/docs/reference/components/amp-dailymotion.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-google-vrview-image?(.html)",
-        "destination": "/docs/reference/components/amp-google-vrview-image.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-hulu?(.html)",
-        "destination": "/docs/reference/components/amp-hulu.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-image-lightbox?(.html)",
-        "destination": "/docs/reference/components/amp-image-lightbox.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-izlesene?(.html)",
-        "destination": "/docs/reference/components/amp-izlesene.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-jwplayer?(.html)",
-        "destination": "/docs/reference/components/amp-jwplayer.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-kaltura-player?(.html)",
-        "destination": "/docs/reference/components/amp-kaltura-player.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-o2-player?(.html)",
-        "destination": "/docs/reference/components/amp-o2-player.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-ooyala-player?(.html)",
-        "destination": "/docs/reference/components/amp-ooyala-player.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-playbuzz?(.html)",
-        "destination": "/docs/reference/components/amp-playbuzz.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-reach-player?(.html)",
-        "destination": "/docs/reference/components/amp-reach-player.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-soundcloud?(.html)",
-        "destination": "/docs/reference/components/amp-soundcloud.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-springboard-player?(.html)",
-        "destination": "/docs/reference/components/amp-springboard-player.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-video?(.html)",
-        "destination": "/docs/reference/components/amp-video.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-vimeo?(.html)",
-        "destination": "/docs/reference/components/amp-vimeo.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/media/amp-youtube?(.html)",
-        "destination": "/docs/reference/components/amp-youtube.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/presentation/amp-animation?(.html)",
-        "destination": "/docs/reference/components/amp-animation.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/presentation/amp-dynamic-css-classes?(.html)",
-        "destination": "/docs/reference/components/amp-dynamic-css-classes.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/presentation/amp-fit-text?(.html)",
-        "destination": "/docs/reference/components/amp-fit-text.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/presentation/amp-font?(.html)",
-        "destination": "/docs/reference/components/amp-font.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/presentation/amp-viz-vega?(.html)",
-        "destination": "/docs/reference/components/amp-viz-vega.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-facebook?(.html)",
-        "destination": "/docs/reference/components/amp-facebook.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-gfycat?(.html)",
-        "destination": "/docs/reference/components/amp-gfycat.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-instagram?(.html)",
-        "destination": "/docs/reference/components/amp-instagram.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-pinterest?(.html)",
-        "destination": "/docs/reference/components/amp-pinterest.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-reddit?(.html)",
-        "destination": "/docs/reference/components/amp-reddit.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-share-tracking?(.html)",
-        "destination": "/docs/reference/components/amp-share-tracking.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-social-share?(.html)",
-        "destination": "/docs/reference/components/amp-social-share.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-twitter?(.html)",
-        "destination": "/docs/reference/components/amp-twitter.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/reference/components/social/amp-vine?(.html)",
-        "destination": "/docs/reference/components/amp-vine.html",
+        "source": "/amp-roadshow",
+        "destination": "https://amp.dev/events/amp-roadshow?referrer=ampproject.org",
         "type": 301
       },
 
       {
         "source": "/contribute/governance/",
-        "destination": "/docs/contribute/governance/",
+        "destination": "https://amp.dev/community/governance/",
         "type": 301
       },
       {
-        "source": "/learn/about-amp/",
-        "destination": "/learn/overview/",
+        "source": "/:lang/contribute/governance/",
+        "destination": "https://amp.dev/:lang/community/governance/",
         "type": 301
       },
+
       {
-        "source": "/learn/how-amp-works/",
-        "destination": "/learn/about-how/",
+        "source": "/docs/contribute/governance/",
+        "destination": "https://amp.dev/community/governance/",
         "type": 301
       },
       {
-        "source": "/learn/design-principles/",
-        "destination": "/about/amp-design-principles/",
+        "source": "/:lang/docs/contribute/governance/",
+        "destination": "https://amp.dev/:lang/community/governance/",
         "type": 301
       },
+
       {
-        "source": "/learn/amp-design-principles/",
-        "destination": "/about/amp-design-principles/",
+        "source": "/static/:path*",
+        "destination": "https://amp.dev/static/:path",
         "type": 301
       },
+
       {
-        "source": "/learn/@(browsers|who)/",
-        "destination": "/support/faqs/supported-platforms.html",
+        "source": "/case-studies",
+        "destination": "https://amp.dev/success-stories/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/support/contribute.html",
-        "destination": "/contribute/",
+        "source": "/learn/showcases",
+        "destination": "https://amp.dev/about/use-cases?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/support/faqs.html",
-        "destination": "/support/faqs/",
+        "source": "/stories",
+        "destination": "https://amp.dev/about/stories?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/amp-ad.html",
-        "destination": "/docs/reference/extended/amp-ad.html",
+        "source": "/docs",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/faq",
-        "destination": "/support/faqs/",
+        "source": "/latest",
+        "destination": "https://blog.amp.dev",
         "type": 301
       },
       {
-        "source": "/faq/",
-        "destination": "/support/faqs/",
+        "source": "/roadmap{,/**}",
+        "destination": "https://amp.dev/community/roadmap?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/faq/index.html",
-        "destination": "/support/faqs/",
+        "source": "/reference",
+        "destination": "https://amp.dev/documentation/components/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/get_started/create_page.html",
-        "destination": "/docs/getting_started/create.html",
+        "source": "/contribute",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/?referrer=ampproject.org",
         "type": 301
       },
+
       {
-        "source": "docs/get_started/create?(.html)",
-        "destination": "/docs/getting_started/create.html",
+        "source": "/",
+        "destination": "https://amp.dev/",
         "type": 301
       },
       {
-        "source": "docs/get_started/create/basic_markup?(.html)",
-        "destination": "/docs/getting_started/create/basic_markup.html",
+        "source": "/:lang/",
+        "destination": "https://amp.dev/:lang/?referrer=ampproject.org",
         "type": 301
       },
+
       {
-        "source": "docs/get_started/create/include_image?(.html)",
-        "destination": "/docs/getting_started/create/include_image.html",
+        "source": "/:lang/roadmap{,/**}",
+        "destination": "https://amp.dev/:lang/community/roadmap?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/create/presentation_layout?(.html)",
-        "destination": "/docs/getting_started/create/presentation_layout.html",
+        "source": "/:lang/latest",
+        "destination": "https://blog.amp.dev/",
         "type": 301
       },
       {
-        "source": "docs/get_started/create/preview_and_validate?(.html)",
-        "destination": "/docs/getting_started/create/preview_and_validate.html",
+        "source": "/:lang/reference",
+        "destination": "https://amp.dev/:lang/documentation/components/?referrer=ampproject.org",
         "type": 301
       },
+
+
       {
-        "source": "docs/get_started/create/prepare_for_discovery?(.html)",
-        "destination": "/docs/getting_started/create/prepare_for_discovery.html",
+        "source": "/:lang/about/benefits",
+        "destination": "https://amp.dev/:lang/?referrer=ampproject.org#benefits",
         "type": 301
       },
       {
-        "source": "docs/get_started/create/publish?(.html)",
-        "destination": "/docs/getting_started/create/publish.html",
+        "source": "/:lang/about/mission",
+        "destination": "https://amp.dev/:lang/about/mission-and-vision?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/login_requiring?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring.html",
+        "source": "/:lang/amp-conf/accessibility/",
+        "destination": "https://amp.dev/:lang/events/accessibility?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/login_requiring/login?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/login.html",
+        "source": "/:lang/amp-conf/code-of-conduct/",
+        "destination": "https://amp.dev/:lang/events/code-of-conduct?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/login_requiring/add_comment?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/add_comment.html",
+        "source": "/:lang/case-studies",
+        "destination": "https://amp.dev/:lang/success-stories/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/login_requiring/logout?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/logout.html",
+        "source": "/:lang/contribute",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/login_requiring/summary?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/summary.html",
+        "source": "/:lang/docs/ads",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?format=ads&referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "docs/get_started/live_blog?(.html)",
-        "destination": "/docs/interaction_dynamic/live_blog.html",
+        "source": "/:lang/docs/ads/adnetwork_integration",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/adnetwork_integration?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/io",
-        "destination": "https://www.ampproject.org/latest/blog/google-io-2018/",
+        "source": "/:lang/docs/ads/ads_vendors",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/monetization/ads_vendors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/IO",
-        "destination": "https://www.ampproject.org/latest/blog/google-io-2018/",
+        "source": "/:lang/docs/ads/advertise_amp_stories",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/advertise_amp_stories?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/contact",
-        "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "source": "/:lang/docs/ads/amphtml_ads",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/contact/",
-        "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "source": "/:lang/docs/ads/amphtml_ads/create_shell",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create_amphtml_ad/create_shell?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/contact/",
-        "destination": "https://github.com/ampproject/amphtml/issues/new",
+        "source": "/:lang/docs/ads/amphtml_ads/image_ad",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/extended.html",
-        "destination": "/docs/reference/components.html",
+        "source": "/:lang/docs/ads/amphtml_ads/summary",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create_amphtml_ad/summary?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/amp-img.html",
-        "destination": "/docs/reference/components/amp-img.html",
+        "source": "/:lang/docs/ads/amphtml_ads/track_views",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create_amphtml_ad/track_views?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/amp-pixel.html",
-        "destination": "/docs/reference/components/amp-pixel.html",
+        "source": "/:lang/docs/ads/amphtml_ads/validate",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create_amphtml_ad/validate?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/amp-ad.html",
-        "destination": "/docs/reference/components/amp-ad.html",
+        "source": "/:lang/docs/ads/create_amphtml_ad",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create_amphtml_ad/",
         "type": 301
       },
       {
-        "source": "/docs/reference/amp-video.html",
-        "destination": "/docs/reference/components/amp-video.html",
+        "source": "/:lang/docs/ads/introduction_ads",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.html?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/amp-conf-2017/code-of-conduct/",
-        "destination": "/amp-conf/code-of-conduct/",
+        "source": "/:lang/docs/ads/monetization",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/monetization/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/extended/:post*",
-        "destination": "/docs/reference/components/:post*",
+        "source": "/:lang/docs/ads/story_ads_best_practices",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/story_ads_best_practices?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/contribute/integrate-your-tech/",
-        "destination": "/docs/integration/integrate-your-tech.html",
+        "source": "/:lang/docs/analytics/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/getting-started/",
-        "destination": "/docs/getting_started/quickstart.html",
+        "source": "/:lang/docs/analytics/analytics-vendors",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/ads_on_amp?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/analytics/analytics_amp",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-measure/configure-analytics/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/ads_on_amp?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/analytics/analytics_basics",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/ads/ads_getting_started?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/analytics/deep_dive_analytics",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/ads_getting_started?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/analytics/use_cases",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads/ads_getting_started?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/contribute/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/ads/ads_tips?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/design/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/ddocs/ads_analytics/ads_tips?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/design/amp-html-layout/layouts_demonstrated",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/ddocs/ads/ads_tips?(.html)",
-        "destination": "/docs/ads/monetization.html",
+        "source": "/:lang/docs/design/responsive/art_direction",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/art_direction?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/amp_replacements?(.html)",
-        "destination": "/docs/media/amp_replacements.html",
+        "source": "/:lang/docs/design/responsive/control_layout",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/control_layout?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/amp_story_best_practices?(.html)",
-        "destination": "/docs/fundamentals/amp_story_best_practices.html",
+        "source": "/:lang/docs/design/responsive/custom_fonts",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/amp_story_best_practices?(.html)",
-        "destination": "/docs/fundamentals/amp_story_best_practices.html",
+        "source": "/:lang/docs/design/responsive/placeholders",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/amp-cache-debugging?(.html)",
-        "destination": "/docs/troubleshooting/amp-cache-debugging.html",
+        "source": "/:lang/docs/design/responsive/responsive_design",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/amp-cors-requests?(.html)",
-        "destination": "/docs/fundamentals/amp-cors-requests.html",
+        "source": "/:lang/docs/design/responsive/style_pages",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/style_pages?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/analytics_amp?(.html)",
-        "destination": "/docs/analytics/analytics_amp.html",
+        "source": "/:lang/docs/design/responsive_amp",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/style_and_layout/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/analytics_amp?(.html)",
-        "destination": "/docs/analytics/analytics_amp.html",
+        "source": "/:lang/docs/fundamentals/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/analytics/analytics_basics?(.html)",
-        "destination": "/docs/analytics/analytics_basics.html",
+        "source": "/:lang/docs/fundamentals/add_advanced",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/analytics_basics?(.html)",
-        "destination": "/docs/analytics/analytics_basics.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/adding_carousels",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/adding_carousels?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/analytics/analytics-vendors?(.html)",
-        "destination": "/docs/analytics/analytics-vendors.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/adding_components",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/adding_components?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/ads-vendors?(.html)",
-        "destination": "/docs/ads/ads-vendors.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/congratulations",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/congratulations?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/integration-guide?(.html)",
-        "destination": "/docs/ads/integration-guide.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/fonts",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/fonts?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/analytics-vendors?(.html)",
-        "destination": "/docs/analytics/analytics-vendors.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/navigating",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/navigating?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/analytics/deep_dive_analytics?(.html)",
-        "destination": "/docs/analytics/deep_dive_analytics.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/review_code",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/review_code?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/deep_dive_analytics?(.html)",
-        "destination": "/docs/analytics/deep_dive_analytics.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/setting_up",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/setting_up?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/analytics/use_cases?(.html)",
-        "destination": "/docs/analytics/use_cases.html",
+        "source": "/:lang/docs/fundamentals/add_advanced/tracking_data",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/add_advanced/tracking_data?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/ads_analytics/use_cases?(.html)",
-        "destination": "/docs/analytics/use_cases.html",
+        "source": "/:lang/docs/fundamentals/amp_story_best_practices",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/amp_story_best_practices?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/discovery?(.html)",
-        "destination": "/docs/fundamentals/discovery.html",
+        "source": "/:lang/docs/fundamentals/converting",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/converting/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/engagement?(.html)",
-        "destination": "/docs/fundamentals/engagement.html",
+        "source": "/:lang/docs/fundamentals/converting/building-page",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/converting/building-page?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/how_cached?(.html)",
-        "destination": "/docs/fundamentals/how_cached.html",
+        "source": "/:lang/docs/fundamentals/converting/congratulations",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/converting/congratulations?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/iframes?(.html)",
-        "destination": "/docs/media/iframes.html",
+        "source": "/:lang/docs/fundamentals/converting/discoverable",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/converting/discoverable?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/integrate-with-apps?(.html)",
-        "destination": "/docs/integration/integrate-with-apps.html",
+        "source": "/:lang/docs/fundamentals/converting/resolving-errors",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/converting/resolving-errors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/pwa-amp?(.html)",
-        "destination": "/docs/integration/pwa-amp.html",
+        "source": "/:lang/docs/fundamentals/converting/setting-up",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/converting/setting-up?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/pwa-amp/amp-as-pwa?(.html)",
-        "destination": "/docs/integration/pwa-amp/amp-as-pwa.html",
+        "source": "/:lang/docs/fundamentals/discovery",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-and-measure/discovery?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/pwa-amp/amp-in-pwa?(.html)",
-        "destination": "/docs/integration/pwa-amp/amp-in-pwa.html",
+        "source": "/:lang/docs/fundamentals/engagement",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-and-measure/engagement?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/pwa-amp/amp-to-pwa?(.html)",
-        "destination": "/docs/integration/pwa-amp/amp-to-pwa.html",
+        "source": "/:lang/docs/fundamentals/how_cached",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached?referrer=ampproject.org",
         "type": 301
-      },      {
-        "source": "/docs/guides/responsive_amp?(.html)",
-        "destination": "/docs/design/responsive_amp.html",
+      },
+      {
+        "source": "/:lang/docs/fundamentals/optimize_amp",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/fundamentals/third_party_components",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/third_party_components?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/fundamentals/validate",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create/basic_markup",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/basic_markup?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create/include_image",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/include_image?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create/prepare_for_discovery",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/prepare_for_discovery?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create/presentation_layout",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/presentation_layout?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create/preview_and_validate",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/preview_and_validate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/create/publish",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/publish?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/quickstart",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/create/?format=websites",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/add_more_pages",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/add_more_pages?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/animating_elements",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/animating_elements?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/congratulations",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/congratulations?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/create_bookend",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/create_bookend?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/create_cover_page",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/create_cover_page?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/parts_of_story",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/parts_of_story?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/setting_up",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/setting_up?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/start_story",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/start_story?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/getting_started/visual_story/validation",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/validation?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/integrate-amphtml-email",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/integrate-amphtml-email?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/integrate-with-apps",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/integrate/integrate-with-apps?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/integrate-your-tech",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/integrate-your-tech?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/pwa-amp",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/combine-amp-pwa",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/pwa-amp/amp-as-pwa",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/pwa-amp/amp-in-pwa",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/integrate/amp-in-pwa?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/pwa-amp/amp-to-pwa",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/integrate/amp-to-pwa?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/integration/supported_integrations",
+        "destination": "https://amp.dev/:lang/community/platform-and-vendor-partners.html?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/interactivity",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/interactivity/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/interactivity/advanced-interactivity",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/interactivity/get-familiar",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/interactivity/get-familiar?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/interactivity/prereqs-setup",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/interactivity/remote-data",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/interactivity/remote-data?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/interactivity/wrapping-up",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/interactivity/wrapping-up?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/live_blog",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/live_blog?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/login_requiring",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/login_requiring/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/login_requiring/add_comment",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/login_requiring/add_comment?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/login_requiring/login",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/login_requiring/login?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/login_requiring/logout",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/login_requiring/logout?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/login_requiring/summary",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/login_requiring/summary?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/media",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/media",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/media_iframes_3p",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/media/amp_replacements",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/media_iframes_3p/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/media/iframes",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/iframes?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/art_direction?(.html)",
-        "destination": "/docs/design/responsive/art_direction.html",
+        "source": "/:lang/docs/media/iframes",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/develop/iframes?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/control_layout?(.html)",
-        "destination": "/docs/design/responsive/control_layout.html",
+        "source": "/:lang/docs/reference/common_attributes",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/common_attributes?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/custom_fonts?(.html)",
-        "destination": "/docs/design/responsive/custom_fonts.html",
+        "source": "/:lang/docs/reference/components",
+        "destination": "https://amp.dev/:lang/documentation/components/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/placeholders?(.html)",
-        "destination": "/docs/design/responsive/placeholders.html",
+        "source": "/:lang/docs/reference/experimental",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/experimental?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/responsive_design?(.html)",
-        "destination": "/docs/design/responsive/responsive_design.html",
+        "source": "/:lang/docs/troubleshooting",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached",
         "type": 301
       },
       {
-        "source": "/docs/guides/responsive/style_pages?(.html)",
-        "destination": "/docs/design/responsive/style_pages.html",
+        "source": "/:lang/docs/troubleshooting/validation_errors",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/style_pages?(.html)",
-        "destination": "/docs/design/responsive/style_pages.html",
+        "source": "/:lang/latest/blog",
+        "destination": "https://blog.amp.dev/",
         "type": 301
       },
       {
-        "source": "/docs/guides/third_party_components?(.html)",
-        "destination": "/docs/fundamentals/third_party_components.html",
+        "source": "/:lang/latest/blog/:path*",
+        "destination": "https://blog.amp.dev/",
         "type": 301
       },
       {
-        "source": "/docs/guides/validate?(.html)",
-        "destination": "/docs/fundamentals/validate.html",
+        "source": "/:lang/latest/event",
+        "destination": "https://amp.dev/:lang/events/amp-conf-2019?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/amp-actions-and-events?(.html)",
-        "destination": "/docs/interaction_dynamic/amp-actions-and-events.html",
+        "source": "/:lang/learn/about-how/",
+        "destination": "https://amp.dev/:lang/about/how-amp-works?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/spec?(.html)",
-        "destination": "/docs/fundamentals/spec.html",
+        "source": "/:lang/learn/overview/",
+        "destination": "https://amp.dev/:lang/about/how-amp-works?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/spec/amp-boilerplate?(.html)",
-        "destination": "/docs/fundamentals/spec/amp-boilerplate.html",
+        "source": "/:lang/about/amp-design-principles",
+        "destination": "https://amp.dev/about/how-amp-works?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/spec/amp-html-layout?(.html)",
-        "destination": "/docs/design/amp-html-layout.html",
+        "source": "/:lang/learn/showcases/",
+        "destination": "https://amp.dev/:lang/about/use-cases?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/reference/validation_errors?(.html)",
-        "destination": "/docs/troubleshooting/validation_errors.html",
+        "source": "/:lang/learn/who-uses-amp{,/**}",
+        "destination": "https://amp.dev/:lang/community/platform-and-vendor-partners?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced?(.html)",
-        "destination": "/docs/fundamentals/add_advanced.html",
+        "source": "/:lang/showcases{,/**}",
+        "destination": "https://amp.dev/:lang/about/use-cases?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/adding_carousels?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/adding_carousels.html",
+        "source": "/:lang/stories",
+        "destination": "https://amp.dev/:lang/about/stories?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/adding_components?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/adding_components.html",
+        "source": "/:lang/support",
+        "destination": "https://amp.dev/:lang/support/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/congratulations?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/congratulations.html",
+        "source": "/:lang/support/faqs/supported-platforms",
+        "destination": "https://amp.dev/:lang/community/platform-and-vendor-partners?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/fonts?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/fonts.html",
+        "source": "/:lang/support/faqs/supported-browsers",
+        "destination": "https://amp.dev/:lang/support/faq/supported-browsers",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/navigating?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/navigating.html",
+        "source": "/support/developer",
+        "destination": "https://amp.dev/support/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/review_code?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/review_code.html",
+        "source": "/:lang/amp-roadshow",
+        "destination": "https://amp.dev/:lang/events/amp-roadshow?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/add_advanced/setting_up?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/setting_up.html",
+        "source": "/:lang/amp-conf",
+        "destination": "https://amp.dev/:lang/events/amp-conf-2019?referrer=ampproject.org",
         "type": 301
       },
+
       {
-        "source": "/docs/tutorials/add_advanced/tracking_data?(.html)",
-        "destination": "/docs/fundamentals/add_advanced/tracking_data.html",
+        "source": "/about/benefits",
+        "destination": "https://amp.dev/?referrer=ampproject.org#benefits",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/converting?(.html)",
-        "destination": "/docs/fundamentals/converting.html",
+        "source": "/about/mission",
+        "destination": "https://amp.dev/about/mission-and-vision?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/converting/building-page?(.html)",
-        "destination": "/docs/fundamentals/converting/building-page.html",
+        "source": "/amp-conf/accessibility/",
+        "destination": "https://amp.dev/events/accessibility?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/converting/congratulations?(.html)",
-        "destination": "/docs/fundamentals/converting/congratulations.html",
+        "source": "/amp-conf/code-of-conduct/",
+        "destination": "https://amp.dev/events/code-of-conduct?referrer=ampproject.org",
         "type": 301
       },
-       {
-        "source": "/docs/tutorials/converting/discoverable?(.html)",
-        "destination": "/docs/fundamentals/converting/discoverable.html",
+
+      {
+        "source": "/case-studies/eski_mobi",
+        "destination": "https://amp.dev/success-stories/eski_mobi?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/eski_mobi",
+        "destination": "https://amp.dev/:lang/success-stories/eski_mobi?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/indiatoday",
+        "destination": "https://amp.dev/success-stories/indiatoday?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/indiatoday",
+        "destination": "https://amp.dev/:lang/success-stories/indiatoday?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/readwhere",
+        "destination": "https://amp.dev/success-stories/readwhere?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/readwhere",
+        "destination": "https://amp.dev/:lang/success-stories/readwhere?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/transunion",
+        "destination": "https://amp.dev/success-stories/transunion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/transunion",
+        "destination": "https://amp.dev/:lang/success-stories/transunion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/advance_create",
+        "destination": "https://amp.dev/success-stories/advance_create?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/advance_create",
+        "destination": "https://amp.dev/:lang/success-stories/advance_create?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/event_ticket_center",
+        "destination": "https://amp.dev/success-stories/event_ticket_center?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/event_ticket_center",
+        "destination": "https://amp.dev/:lang/success-stories/event_ticket_center?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/innkeepers",
+        "destination": "https://amp.dev/success-stories/innkeepers?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/innkeepers",
+        "destination": "https://amp.dev/:lang/success-stories/innkeepers?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/relay_media",
+        "destination": "https://amp.dev/success-stories/relay_media?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/relay_media",
+        "destination": "https://amp.dev/:lang/success-stories/relay_media?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/triplelift",
+        "destination": "https://amp.dev/success-stories/triplelift?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/triplelift",
+        "destination": "https://amp.dev/:lang/success-stories/triplelift?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/bmw",
+        "destination": "https://amp.dev/success-stories/bmw-com?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/bmw",
+        "destination": "https://amp.dev/:lang/success-stories/bmw-com?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/fastcommerce",
+        "destination": "https://amp.dev/success-stories/fastcommerce?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/fastcommerce",
+        "destination": "https://amp.dev/:lang/success-stories/fastcommerce?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/jagran",
+        "destination": "https://amp.dev/success-stories/jagran?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/jagran",
+        "destination": "https://amp.dev/:lang/success-stories/jagran?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/renovation_brands",
+        "destination": "https://amp.dev/success-stories/renovation_brands?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/converting/resolving-errors?(.html)",
-        "destination": "/docs/fundamentals/converting/resolving-errors.html",
+        "source": "/:lang/case-studies/renovation_brands",
+        "destination": "https://amp.dev/:lang/success-stories/renovation_brands?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/converting/setting-up?(.html)",
-        "destination": "/docs/fundamentals/converting/setting-up.html",
+        "source": "/case-studies/us_xpress",
+        "destination": "https://amp.dev/success-stories/us_xpress?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/create?(.html)",
-        "destination": "/docs/getting_started/create.html",
+        "source": "/:lang/case-studies/us_xpress",
+        "destination": "https://amp.dev/:lang/success-stories/us_xpress?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/create/basic_markup?(.html)",
-        "destination": "/docs/getting_started/create/basic_markup.html",
+        "source": "/case-studies/carved",
+        "destination": "https://amp.dev/success-stories/carved?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/create/include_image?(.html)",
-        "destination": "/docs/getting_started/create/include_image.html",
+        "source": "/:lang/case-studies/carved",
+        "destination": "https://amp.dev/:lang/success-stories/carved?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/create/prepare_for_discovery?(.html)",
-        "destination": "/docs/getting_started/create/prepare_for_discovery.html",
+        "source": "/case-studies/gizmodo",
+        "destination": "https://amp.dev/success-stories/gizmodo?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/create/presentation_layout?(.html)",
-        "destination": "/docs/getting_started/create/presentation_layout.html",
+        "source": "/:lang/case-studies/gizmodo",
+        "destination": "https://amp.dev/:lang/success-stories/gizmodo?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/create/preview_and_validate?(.html)",
-        "destination": "/docs/getting_started/create/preview_and_validate.html",
+        "source": "/case-studies/merchology",
+        "destination": "https://amp.dev/success-stories/merchology?referrer=ampproject.org",
         "type": 301
       },
-       {
-        "source": "/docs/tutorials/create/publish?(.html)",
-        "destination": "/docs/getting_started/create/publish.html",
+      {
+        "source": "/:lang/case-studies/merchology",
+        "destination": "https://amp.dev/:lang/success-stories/merchology?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/slate",
+        "destination": "https://amp.dev/success-stories/slate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/slate",
+        "destination": "https://amp.dev/:lang/success-stories/slate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/washingtonpost",
+        "destination": "https://amp.dev/success-stories/washingtonpost?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/washingtonpost",
+        "destination": "https://amp.dev/:lang/success-stories/washingtonpost?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/greenslips",
+        "destination": "https://amp.dev/success-stories/greenslips?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/greenslips",
+        "destination": "https://amp.dev/:lang/success-stories/greenslips?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/metromile",
+        "destination": "https://amp.dev/success-stories/metromile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/metromile",
+        "destination": "https://amp.dev/:lang/success-stories/metromile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/teads",
+        "destination": "https://amp.dev/success-stories/teads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/teads",
+        "destination": "https://amp.dev/:lang/success-stories/teads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/wego",
+        "destination": "https://amp.dev/success-stories/wego?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/wego",
+        "destination": "https://amp.dev/:lang/success-stories/wego?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/interactivity?(.html)",
-        "destination": "/docs/interaction_dynamic/interactivity.html",
+        "source": "/case-studies/cnbc",
+        "destination": "https://amp.dev/success-stories/cnbc?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/interactivity/advanced-interactivity?(.html)",
-        "destination": "/docs/interaction_dynamic/interactivity/advanced-interactivity.html",
+        "source": "/:lang/case-studies/cnbc",
+        "destination": "https://amp.dev/:lang/success-stories/cnbc?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/interactivity/get-familiar?(.html)",
-        "destination": "/docs/interaction_dynamic/interactivity/get-familiar.html",
+        "source": "/case-studies/greenweez",
+        "destination": "https://amp.dev/success-stories/greenweez?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/interactivity/prereqs-setup?(.html)",
-        "destination": "/docs/interaction_dynamic/interactivity/prereqs-setup.html",
+        "source": "/:lang/case-studies/greenweez",
+        "destination": "https://amp.dev/:lang/success-stories/greenweez?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/interactivity/remote-data?(.html)",
-        "destination": "/docs/interaction_dynamic/interactivity/remote-data.html",
+        "source": "/case-studies/milestone",
+        "destination": "https://amp.dev/success-stories/milestone?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/interactivity/wrapping-up?(.html)",
-        "destination": "/docs/interaction_dynamic/interactivity/wrapping-up.html",
+        "source": "/:lang/case-studies/milestone",
+        "destination": "https://amp.dev/:lang/success-stories/milestone?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/live_blog?(.html)",
-        "destination": "/docs/interaction_dynamic/live_blog.html",
+        "source": "/case-studies/terra",
+        "destination": "https://amp.dev/success-stories/terra?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/login_requiring?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring.html",
+        "source": "/:lang/case-studies/terra",
+        "destination": "https://amp.dev/:lang/success-stories/terra?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/login_requiring/add_comment?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/add_comment.html",
+        "source": "/case-studies/wired",
+        "destination": "https://amp.dev/success-stories/wired?referrer=ampproject.org",
         "type": 301
       },
-       {
-        "source": "/docs/tutorials/login_requiring/login?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/login.html",
+      {
+        "source": "/:lang/case-studies/wired",
+        "destination": "https://amp.dev/:lang/success-stories/wired?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/consumers_advocate",
+        "destination": "https://amp.dev/success-stories/consumers_advocate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/consumers_advocate",
+        "destination": "https://amp.dev/:lang/success-stories/consumers_advocate?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/grupo",
+        "destination": "https://amp.dev/success-stories/grupo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/grupo",
+        "destination": "https://amp.dev/:lang/success-stories/grupo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/nobroker",
+        "destination": "https://amp.dev/success-stories/nobroker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/nobroker",
+        "destination": "https://amp.dev/:lang/success-stories/nobroker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/times_of_india",
+        "destination": "https://amp.dev/success-stories/times_of_india?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/times_of_india",
+        "destination": "https://amp.dev/:lang/success-stories/times_of_india?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/wompmobile",
+        "destination": "https://amp.dev/success-stories/wompmobile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/wompmobile",
+        "destination": "https://amp.dev/:lang/success-stories/wompmobile?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/case-studies/discover_car_hire",
+        "destination": "https://amp.dev/success-stories/discover_car_hire?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/login_requiring/logout?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/logout.html",
+        "source": "/:lang/case-studies/discover_car_hire",
+        "destination": "https://amp.dev/:lang/success-stories/discover_car_hire?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/login_requiring/summary?(.html)",
-        "destination": "/docs/interaction_dynamic/login_requiring/summary.html",
+        "source": "/case-studies/hearst",
+        "destination": "https://amp.dev/success-stories/hearst?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story?(.html)",
-        "destination": "/docs/getting_started/visual_story.html",
+        "source": "/:lang/case-studies/hearst",
+        "destination": "https://amp.dev/:lang/success-stories/hearst?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story?(.html)",
-        "destination": "/docs/getting_started/visual_story.html",
+        "source": "/case-studies/plista",
+        "destination": "https://amp.dev/success-stories/plista?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/add_more_pages?(.html)",
-        "destination": "/docs/getting_started/visual_story/add_more_pages.html",
+        "source": "/:lang/case-studies/plista",
+        "destination": "https://amp.dev/:lang/success-stories/plista?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story/add_more_pages?(.html)",
-        "destination": "/docs/getting_started/visual_story/add_more_pages.html",
+        "source": "/case-studies/tokopedia",
+        "destination": "https://amp.dev/success-stories/tokopedia?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/animating_elements?(.html)",
-        "destination": "/docs/getting_started/visual_story/animating_elements.html",
+        "source": "/:lang/case-studies/tokopedia",
+        "destination": "https://amp.dev/:lang/success-stories/tokopedia?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story/animating_elements?(.html)",
-        "destination": "/docs/getting_started/visual_story/animating_elements.html",
+        "source": "/case-studies/:path*",
+        "destination": "https://amp.dev/success-stories/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/congratulations?(.html)",
-        "destination": "/docs/getting_started/visual_story/congratulations.html",
+        "source": "/:lang/case-studies/:path*",
+        "destination": "https://amp.dev/:lang/success-stories/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story/congratulations?(.html)",
-        "destination": "/docs/getting_started/visual_story/congratulations.html",
+        "source": "/learn/case-studies",
+        "destination": "https://amp.dev/success-stories/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/create_bookend?(.html)",
-        "destination": "/docs/getting_started/visual_story/create_bookend.html",
+        "source": "/:lang/learn/case-studies",
+        "destination": "https://amp.dev/:lang/success-stories/?referrer=ampproject.org",
         "type": 301
       },
+
+
       {
-        "source": "/docs/design/visual_story/create_bookend?(.html)",
-        "destination": "/docs/getting_started/visual_story/create_bookend.html",
+        "source": "/docs/ads",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?format=ads&referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/create_cover_page?(.html)",
-        "destination": "/docs/getting_started/visual_story/create_cover_page.html",
+        "source": "/docs/ads/adnetwork_integration",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/adnetwork_integration?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story/create_cover_page?(.html)",
-        "destination": "/docs/getting_started/visual_story/create_cover_page.html",
+        "source": "/docs/ads/ads_vendors",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/parts_of_story?(.html)",
-        "destination": "/docs/getting_started/visual_story/parts_of_story.html",
+        "source": "/docs/ads/advertise_amp_stories",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/advertise_amp_stories?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story/parts_of_story?(.html)",
-        "destination": "/docs/getting_started/visual_story/parts_of_story.html",
+        "source": "/docs/ads/amphtml_ads",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads?referrer=ampproject.org",
         "type": 301
       },
-       {
-        "source": "/docs/tutorials/visual_story/setting_up?(.html)",
-        "destination": "/docs/getting_started/visual_story/setting_up.html",
+      {
+        "source": "/docs/ads/amphtml_ads/create_shell",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create_amphtml_ad/create_shell?referrer=ampproject.org",
         "type": 301
       },
-       {
-        "source": "/docs/design/visual_story/setting_up?(.html)",
-        "destination": "/docs/getting_started/visual_story/setting_up.html",
+      {
+        "source": "/docs/ads/amphtml_ads/image_ad",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/tutorials/visual_story/validation?(.html)",
-        "destination": "/docs/getting_started/visual_story/validation.html",
+        "source": "/docs/ads/amphtml_ads/summary",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create_amphtml_ad/summary?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/docs/design/visual_story/validation?(.html)",
-        "destination": "/docs/getting_started/visual_story/validation.html",
+        "source": "/docs/ads/amphtml_ads/track_views",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create_amphtml_ad/track_views?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/debug/validate",
-        "destination": "/:lang/docs/fundamentals/validate.html",
+        "source": "/docs/ads/amphtml_ads/validate",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/",
-        "destination": "/:lang/docs/",
+        "source": "/docs/ads/create_amphtml_ad",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create_amphtml_ad/",
         "type": 301
       },
       {
-        "source": "/:lang/docs/getting-started/",
-        "destination": "/:lang/docs/getting_started/quickstart.html",
+        "source": "/docs/ads/introduction_ads",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.html?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/ads_on_amp",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/ads/monetization",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/monetization/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/ads_on_amp",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/ads/story_ads_best_practices",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/story_ads_best_practices?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads/ads_on_amp",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/analytics/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/ads/ads_getting_started",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/analytics/analytics-vendors",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/ads_getting_started",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/analytics/analytics_amp",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads/ads_getting_started",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/analytics/analytics_basics",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/ads/ads_tips",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/analytics/deep_dive_analytics",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/ads_tips",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/analytics/use_cases",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads/ads_tips",
-        "destination": "/:lang/docs/ads/monetization.html",
+        "source": "/docs/contribute/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/amp_replacements",
-        "destination": "/:lang/docs/media/amp_replacements.html",
+        "source": "/docs/design/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics_amp",
-        "destination": "/:lang/docs/analytics/analytics_amp.html",
+        "source": "/docs/design/amp-html-layout/layouts_demonstrated",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/analytics_amp",
-        "destination": "/:lang/docs/analytics/analytics_amp.html",
+        "source": "/docs/design/responsive/art_direction",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/analytics_basics",
-        "destination": "/:lang/docs/analytics/analytics_basics.html",
+        "source": "/docs/design/responsive/control_layout",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/analytics_basics",
-        "destination": "/:lang/docs/analytics/analytics_basics.html",
+        "source": "/docs/design/responsive/custom_fonts",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/analytics-vendors",
-        "destination": "/:lang/docs/analytics/analytics-vendors.html",
+        "source": "/docs/design/responsive/placeholders",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/analytics-vendors",
-        "destination": "/:lang/docs/analytics/analytics-vendors.html",
+        "source": "/docs/design/responsive/responsive_design",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/ads-vendors",
-        "destination": "/:lang/docs/ads/ads-vendors.html",
+        "source": "/docs/design/responsive/style_pages",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/integration-guide",
-        "destination": "/:lang/docs/ads/integration-guide.html",
+        "source": "/docs/design/responsive_amp",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/deep_dive_analytics",
-        "destination": "/:lang/docs/analytics/deep_dive_analytics.html",
+        "source": "/docs/fundamentals/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/deep_dive_analytics",
-        "destination": "/:lang/docs/analytics/deep_dive_analytics.html",
+        "source": "/docs/fundamentals/add_advanced",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/analytics/use_cases",
-        "destination": "/:lang/docs/analytics/use_cases.html",
+        "source": "/docs/fundamentals/add_advanced/adding_carousels",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/ads_analytics/use_cases",
-        "destination": "/:lang/docs/analytics/use_cases.html",
+        "source": "/docs/fundamentals/add_advanced/adding_components",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/adding_components?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/discovery",
-        "destination": "/:lang/docs/fundamentals/discovery.html",
+        "source": "/docs/fundamentals/add_advanced/congratulations",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/congratulations?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/engagement",
-        "destination": "/:lang/docs/fundamentals/engagement.html",
+        "source": "/docs/fundamentals/add_advanced/fonts",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/fonts?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/how_cached",
-        "destination": "/:lang/docs/fundamentals/how_cached.html",
+        "source": "/docs/fundamentals/add_advanced/navigating",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/navigating?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp",
-        "destination": "/:lang/docs/integration/pwa-amp.html",
+        "source": "/docs/fundamentals/add_advanced/review_code",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/review_code?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp/amp-as-pwa",
-        "destination": "/:lang/docs/integration/pwa-amp/amp-as-pwa.html",
+        "source": "/docs/fundamentals/add_advanced/setting_up",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/setting_up?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/pwa-amp/amp-in-pwa",
-        "destination": "/:lang/docs/integration/pwa-amp/amp-in-pwa.html",
+        "source": "/docs/fundamentals/add_advanced/tracking_data",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data?referrer=ampproject.org",
         "type": 301
       },
-        {
-        "source": "/:lang/docs/guides/pwa-amp/amp-to-pwa",
-        "destination": "/:lang/docs/integration/pwa-amp/amp-to-pwa.html",
+      {
+        "source": "/docs/fundamentals/amp_story_best_practices",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/amp_story_best_practices?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive_amp",
-        "destination": "/:lang/docs/design/responsive_amp.html",
+        "source": "/docs/fundamentals/converting",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/converting/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/art_direction",
-        "destination": "/:lang/docs/design/responsive/art_direction.html",
+        "source": "/docs/fundamentals/converting/building-page",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/converting/building-page?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/control_layout",
-        "destination": "/:lang/docs/design/responsive/control_layout.html",
+        "source": "/docs/fundamentals/converting/congratulations",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/converting/congratulations?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/custom_fonts",
-        "destination": "/:lang/docs/design/responsive/custom_fonts.html",
+        "source": "/docs/fundamentals/converting/discoverable",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/converting/discoverable?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/placeholders",
-        "destination": "/:lang/docs/design/responsive/placeholders.html",
+        "source": "/docs/fundamentals/converting/resolving-errors",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/converting/resolving-errors?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/responsive_design",
-        "destination": "/:lang/docs/design/responsive/responsive_design.html",
+        "source": "/docs/fundamentals/converting/setting-up",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/converting/setting-up?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/responsive/style_pages",
-        "destination": "/:lang/docs/design/responsive/style_pages.html",
+        "source": "/docs/fundamentals/discovery",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/third_party_components",
-        "destination": "/:lang/docs/fundamentals/third_party_components.html",
+        "source": "/docs/fundamentals/engagement",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/engagement?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/validate",
-        "destination": "/:lang/docs/fundamentals/validate.html",
+        "source": "/docs/fundamentals/how_cached",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/spec",
-        "destination": "/:lang/docs/fundamentals/spec.html",
+        "source": "/docs/fundamentals/optimize_amp",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/spec/amp-boilerplate",
-        "destination": "/:lang/docs/fundamentals/spec/amp-boilerplate.html",
+        "source": "/docs/fundamentals/third_party_components",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/third_party_components?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/spec/amp-html-layout",
-        "destination": "/:lang/docs/design/amp-html-layout.html",
+        "source": "/docs/fundamentals/validate",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/validation_errors",
-        "destination": "/:lang/docs/troubleshooting/validation_errors.html",
+        "source": "/docs/getting_started/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced",
-        "destination": "/:lang/docs/fundamentals/add_advanced.html",
+        "source": "/docs/getting_started/create",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/adding_carousels",
-        "destination": "/:lang/docs/fundamentals/add_advanced/adding_carousels.html",
+        "source": "/docs/getting_started/create/basic_markup",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/adding_components",
-        "destination": "/:lang/docs/fundamentals/add_advanced/adding_components.html",
+        "source": "/docs/getting_started/create/include_image",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/include_image?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/congratulations",
-        "destination": "/:lang/docs/fundamentals/add_advanced/congratulations.html",
+        "source": "/docs/getting_started/create/prepare_for_discovery",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/fonts",
-        "destination": "/:lang/docs/fundamentals/add_advanced/fonts.html",
+        "source": "/docs/getting_started/create/presentation_layout",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/presentation_layout?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/navigating",
-        "destination": "/:lang/docs/fundamentals/add_advanced/navigating.html",
+        "source": "/docs/getting_started/create/preview_and_validate",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/preview_and_validate?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/review_code",
-        "destination": "/:lang/docs/fundamentals/add_advanced/review_code.html",
+        "source": "/docs/getting_started/create/publish",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/publish?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/setting_up",
-        "destination": "/:lang/docs/fundamentals/add_advanced/setting_up.html",
+        "source": "/docs/getting_started/quickstart",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/create/?format=websites",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/add_advanced/tracking_data",
-        "destination": "/:lang/docs/fundamentals/add_advanced/tracking_data.html",
+        "source": "/docs/getting_started/visual_story",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting",
-        "destination": "/:lang/docs/fundamentals/converting.html",
+        "source": "/docs/getting_started/visual_story/add_more_pages",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/building-page",
-        "destination": "/:lang/docs/fundamentals/converting/building-page.html",
+        "source": "/docs/getting_started/visual_story/animating_elements",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/animating_elements?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/congratulations",
-        "destination": "/:lang/docs/fundamentals/converting/congratulations.html",
+        "source": "/docs/getting_started/visual_story/congratulations",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/congratulations?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/discoverable",
-        "destination": "/:lang/docs/fundamentals/converting/discoverable.html",
+        "source": "/docs/getting_started/visual_story/create_bookend",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/create_bookend?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/resolving-errors",
-        "destination": "/:lang/docs/fundamentals/converting/resolving-errors.html",
+        "source": "/docs/getting_started/visual_story/create_cover_page",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/converting/setting-up",
-        "destination": "/:lang/docs/fundamentals/converting/setting-up.html",
+        "source": "/docs/getting_started/visual_story/parts_of_story",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create",
-        "destination": "/:lang/docs/getting_started/create.html",
+        "source": "/docs/getting_started/visual_story/setting_up",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/setting_up?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/basic_markup",
-        "destination": "/:lang/docs/getting_started/create/basic_markup.html",
+        "source": "/docs/getting_started/visual_story/start_story",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/start_story?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/include_image",
-        "destination": "/:lang/docs/getting_started/create/include_image.html",
+        "source": "/docs/getting_started/visual_story/validation",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/validation?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/prepare_for_discovery",
-        "destination": "/:lang/docs/getting_started/create/prepare_for_discovery.html",
+        "source": "/docs/integration/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/presentation_layout",
-        "destination": "/:lang/docs/getting_started/create/presentation_layout.html",
+        "source": "/docs/integration/integrate-amphtml-email",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-amphtml-email?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/preview_and_validate",
-        "destination": "/:lang/docs/getting_started/create/preview_and_validate.html",
+        "source": "/docs/integration/integrate-with-apps",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/integrate/integrate-with-apps?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/create/publish",
-        "destination": "/:lang/docs/getting_started/create/publish.html",
+        "source": "/docs/integration/integrate-your-tech",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-tech?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity",
-        "destination": "/:lang/docs/interaction_dynamic/interactivity.html",
+        "source": "/docs/integration/pwa-amp",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/combine-amp-pwa",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/advanced-interactivity",
-        "destination": "/:lang/docs/interaction_dynamic/interactivity/advanced-interactivity.html",
+        "source": "/docs/integration/pwa-amp/amp-as-pwa",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/get-familiar",
-        "destination": "/:lang/docs/interaction_dynamic/interactivity/get-familiar.html",
+        "source": "/docs/integration/pwa-amp/amp-in-pwa",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/integrate/amp-in-pwa?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/prereqs-setup",
-        "destination": "/:lang/docs/interaction_dynamic/interactivity/prereqs-setup.html",
+        "source": "/docs/integration/pwa-amp/amp-to-pwa",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/integrate/amp-to-pwa?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/remote-data",
-        "destination": "/:lang/docs/interaction_dynamic/interactivity/remote-data.html",
+        "source": "/docs/integration/supported_integrations",
+        "destination": "https://amp.dev/community/platform-and-vendor-partners.html?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/interactivity/wrapping-up",
-        "destination": "/:lang/docs/interaction_dynamic/interactivity/wrapping-up.html",
+        "source": "/docs/interaction_dynamic/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/live_blog",
-        "destination": "/:lang/docs/interaction_dynamic/live_blog.html",
+        "source": "/docs/interaction_dynamic/interactivity",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring",
-        "destination": "/:lang/docs/interaction_dynamic/login_requiring.html",
+        "source": "/docs/interaction_dynamic/interactivity/advanced-interactivity",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/add_comment",
-        "destination": "/:lang/docs/interaction_dynamic/login_requiring/add_comment.html",
+        "source": "/docs/interaction_dynamic/interactivity/get-familiar",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/login",
-        "destination": "/:lang/docs/interaction_dynamic/login_requiring/login.html",
+        "source": "/docs/interaction_dynamic/interactivity/prereqs-setup",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/logout",
-        "destination": "/:lang/docs/interaction_dynamic/login_requiring/logout.html",
+        "source": "/docs/interaction_dynamic/interactivity/remote-data",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/remote-data?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/tutorials/login_requiring/summary",
-        "destination": "/:lang/docs/interaction_dynamic/login_requiring/summary.html",
+        "source": "/docs/interaction_dynamic/interactivity/wrapping-up",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up?referrer=ampproject.org",
         "type": 301
       },
       {
-        "source": "/:lang/docs/guides/debug/validate.html",
-        "destination": "/:lang/docs/guides/validate.html",
+        "source": "/docs/interaction_dynamic/live_blog",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/develop/live_blog?referrer=ampproject.org",
         "type": 301
       }
     ],
