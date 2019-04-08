@@ -48,7 +48,7 @@ class SpecImporter {
     const importedDocs = [];
     for (const importDoc of importDocs) {
       try {
-        const doc = await this.githubImporter_.fetchDocument(importDoc.from, /* master */ true);
+        const doc = await this.githubImporter_.fetchDocument(importDoc.from, importDoc.repo, true);
         doc.path = path.join(DESTINATION_BASE_PATH, importDoc.to);
         doc.title = importDoc.title;
         doc.order = importDoc.order;
