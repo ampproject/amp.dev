@@ -354,6 +354,7 @@ class SamplesBuilder {
         '$localization': {
           'path': `/{locale}${this._getDocumentationRoute(sample)}`,
         },
+        'description': parsedSample.document.description(),
         'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
