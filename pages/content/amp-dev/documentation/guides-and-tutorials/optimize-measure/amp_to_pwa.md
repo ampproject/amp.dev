@@ -112,7 +112,7 @@ Place the required script tag in the head of `index.html` and the `<amp-install-
 [/sourcecode]
 
 [tip type="important"]
- **Important –** The service worker must be served from the root directory (`/serviceworker.js`) to be able to cache all the content of your site.
+ **Important –** The service worker should be served from the root directory (`/sw.js`) to be able to cache all the content of your site.
  [/tip]
 
 The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file.

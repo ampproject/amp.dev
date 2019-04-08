@@ -12,13 +12,21 @@
 {# Include all components needed for sidebar #}
 {% if 'amp-sidebar' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+{% endif %}
+{% if 'amp-animation' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+{% endif %}
+{% if 'amp-position-observer' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
 {% endif %}
 
-{% if ('amp-consent' not in doc.used_components and 'amp-geo' not in doc.used_components) or not inline_preview %}
-<script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
+{% if 'amp-consent' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+{% if 'amp-geo' not in doc.used_components or not inline_preview %}
+<script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
+{% endif %}
+{% endif %}
+{% if 'amp-analytics' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 {% endif %}
 
@@ -32,8 +40,10 @@
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 {% endif %}
 
-{# Always include amp-font #}
+{# Include amp-font #}
+{% if 'amp-font' not in doc.used_components or not inline_preview %}
 <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+{% endif %}
 
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
@@ -145,7 +155,7 @@
       {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
       <div class="ap--ctas">
         {% if has_demo %}
-        {% set preview_url = doc.url.path + '/../preview/index.html' %}
+        {% set preview_url = doc.url.path + '/../preview/' %}
         <a class="ap-a-btn" href="{{ preview_url }}">{{ _('View demo') }}</a>
         {% endif %}
 
@@ -285,10 +295,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 {% endif %}
 {% endblock %}
 
+{% block serviceWorker %}
+{# Do not render amp-install-serviceworker if used in the sample #}
+{% if 'amp-install-serviceworker' not in doc.used_components or not inline_preview %}
+{% include 'views/partials/service-worker.j2' %}
+{% endif %}
+{% endblock %}
+
 {% block analytics %}
-{# Do not render amp-analytics or amp-consent if used in the sample #}
-{% if 'custom-element="amp-consent"' not in doc.example.document.head and 'custom-element="amp-geo"' not in doc.example.document.head %}
-{% include 'views/partials/analytics.j2' %}
+{# Do not render amp-consent if used in the sample #}
+{% if 'amp-consent' not in doc.used_components or not inline_preview %}
 {% include 'views/partials/consent.j2' %}
 {% endif %}
+{% include 'views/partials/analytics.j2' %}
 {% endblock %}

@@ -10,7 +10,7 @@ AMP Project는 여러분이 AMP와 관련된 서비스의 제공자거나 콘텐
 
 ### AMP의 이슈를 제보합니다.
 만약 피드백이나 AMP에 관한 기술적 이슈를 경험하였다면, 그걸 [이슈 트래커](https://github.com/ampproject/amphtml/issues)에서 찾아보시길 바랍니다.
-만약 [ampproject.org](https://ampproject.org)에 관한 이슈가 있다면,
+만약 [amp.dev](https://amp.dev)에 관한 이슈가 있다면,
 [docs 이슈 트래커](https://github.com/ampproject/docs/issues)를 대신 사용하시길 바랍니다.
 
 ### AMP에 기술적으로 기여해주세요.
@@ -28,11 +28,11 @@ AMP 프로젝트는 기술적 기여를 강하게 장려합니다.
 문서화 작업은 전체 AMP 커뮤니티에서 중요하며, 여러분들이 우리의 문서를 더 좋게 만들어주길 기대하고 있습니다.
 우리는 AMP 유저를 위한 예제, AMP 프로젝트 컨트리뷰터를 돕는 문서 등 모든 종류의 문서를 갖고 있습니다.
 
-[ampproject.org](https://ampproject.org)은 대부분의 사람들이 AMP에 익숙해지는 곳입니다.
+[amp.dev](https://amp.dev)은 대부분의 사람들이 AMP에 익숙해지는 곳입니다.
 [ampproject 문서 GitHub 프로젝트](https://github.com/ampproject/docs)에서 문서에 기여할 수 있습니다. (심지어 [여러분이 지금 읽고있는 페이지](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)를 더 좋게 할 수도 있습니다)
 
-[ampbyexample.com](https://ampbyexample.com)은 어떻게 AMP를 사용하는 지 예제를 제공합니다.
+[Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})은 어떻게 AMP를 사용하는 지 예제를 제공합니다.
 [amp-by-example GitHub 프로젝트](https://github.com/ampproject/amp-by-example/)에서 개선할 수 있습니다.
 
-[amphtml GitHub 프로젝트](https://github.com/ampproject/amphtml)의 
+[amphtml GitHub 프로젝트](https://github.com/ampproject/amphtml)의
 문서를 개선하여 AMP 프로젝트의 다른 컨트리뷰터가 더 나은 일을 할 수 있게 도울 수 있습니다.

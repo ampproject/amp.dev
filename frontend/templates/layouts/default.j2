@@ -33,13 +33,13 @@
 
     <meta name="theme-color" content="#005af0"/>
 
-    <link rel="canonical" href="{{ doc.url }}"/>
-    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
+    <link rel="canonical" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.public_path }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.localize(podspec.default_locale).public_path }}"/>
     {% for locale in doc.locales if not locale == doc.locale  %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
-    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}"/>
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ doc.pod.podspec.base_urls.platform }}{{ localized_doc.public_path }}"/>
     {% endif %}
     {% endfor %}
 
@@ -48,46 +48,15 @@
     <meta name="robots" content="noindex,follow"/>
     {% endif %}
 
-    {# Add SEO tags if needed information is available #}
-    {% if doc.description or (doc.teaser and doc.teaser.text) %}
-    <meta name="description" content="{{ doc.description or doc.teaser.text }}">
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Webpage",
-      "url": "{{ doc.pod.podspec.base_urls.platform }}{{ doc.url.path }}",
-      "name": "amp.dev",
-      "headline":"{{ doc.title }}",
-      "description":"{{ doc.description or doc.teaser.text }}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ doc.pod.podspec.base_urls.platform }}"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AMP Project",
-        "logo": {
-            "url": "{{ doc.pod.podspec.base_urls.platform }}/static/img/icons/icon-512x512.png",
-            "width": 512,
-            "height": 512,
-            "@type": "ImageObject"
-        }
-      },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.ampproject.org/static/img/logo-og-image.jpg",
-        "width": 1200,
-        "height": 630
-      }
-    }
-    </script>
-    {% endif %}
+    {# Add SEO and sharing tags #}
+    {% include 'views/partials/structured-data.j2' %}
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -170,9 +139,13 @@
     </aside>
     {% endif %}
 
+    {% block analytics %}
     {% include 'views/partials/analytics.j2' %}
     {% include 'views/partials/consent.j2' %}
+    {% endblock %}
 
-    <amp-install-serviceworker src="/serviceworker.js" data-iframe-src="{{ podspec.base_urls.platform }}" layout="nodisplay"></amp-install-serviceworker>
+    {% block serviceWorker %}
+    {% include 'views/partials/service-worker.j2' %}
+    {% endblock %}
   </body>
 </html>

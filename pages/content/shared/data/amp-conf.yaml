@@ -102,18 +102,18 @@ speakers:
   hirohitokomada:
     name: Hirohito Komada
     company: Yahoo Japan
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
-  shigekiotsu:
-    name: Shigeki Otsu
+    bio: Hirohito is the Senior Manager of Yahoo! Travel.
+    pic: /static/img/amp-conf/speakers/komada.jpg  
+  shigekiohtsu:
+    name: Shigeki Ohtsu
     company: Yahoo Japan
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
+    bio: Shigeki Ohtsu is a software developer at Yahoo Japan. He is working on CDN team and has an expertise in the network security.
+    pic: /static/img/amp-conf/speakers/ohtsu.jpg
   ryomunakata:
     name: Ryo Munakata
     company: Yahoo Japan
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
+    bio: Ryo Munakata is a lead engineer at Yahoo Japan on the Search frontend team.
+    pic: /static/img/amp-conf/speakers/ryo.jpg  
   cristianronzio:
     name: Cristian Ronzio
     company: Musement Spa
@@ -151,14 +151,14 @@ speakers:
     pic: /static/img/amp-conf/speakers/kiyotaka.jpg 
   mitsuhironaganuma:
     name: Mitsuhiro Naganuma
-    company: EC-CUBE
+    company: SUNDAY SYSTEMS, Inc.
     bio: "株式会社ロックオンに入社後、EC-CUBEの次期バージョン開発をリードする。2018年10月にスピンアウトした株式会社イーシーキューブではCTOを務める。"
-    pic: /static/img/amp-conf/speakers/mitsuhiro.jpg  
+    pic: /static/img/amp-conf/speakers/mitsuhiro.jpg
   chrispapazian:
     name: Chris Papazian
     company: Pinterest
     bio:
-    pic: /static/img/amp-conf/speakers/chrisp.jpg 
+    pic: /static/img/amp-conf/speakers/chrisp.jpg
   davidstrauss:
     name: David Strauss
     company: Pantheon
@@ -213,7 +213,12 @@ speakers:
     name: Takahiro Yasuda
     company: So-net Media Networks
     bio: Takahiro Yasuda designed and built DSP "Logicad" from scratch and grew the DSP business for 8 years in So-net Media Networks.
-    pic: /static/img/amp-conf/speakers/yasuda.jpg 
+    pic: /static/img/amp-conf/speakers/yasuda.jpg
+  monishavaradan:
+    name: Monisha Varadan
+    company: Google
+    bio:
+    pic: /static/img/amp-conf/speakers/amp.png
   TBA:
     name: To Be Announced
     company: AMP Conf
@@ -307,7 +312,7 @@ agenda:
     - title: "Technical Steering Committee"
       type: panel
       time: "1730"
-      moderator: paulbakaus
+      moderator: crystallambert
       speakers:
         - chrispapazian
         - davidstrauss
@@ -317,7 +322,7 @@ agenda:
         - rudygalfi
         - saulosantos
     - title: Party!
-      time: "1815"
+      time: "1800"
   day_2:
     - title: Registration
       time: "0800"
@@ -364,7 +369,7 @@ agenda:
     - title: "Google Panel"
       time: "1200"
       type: panel
-      moderator: paulbakaus
+      moderator: monishavaradan
       speakers:
         - davidbesbris
         - TBA
@@ -382,11 +387,11 @@ agenda:
         - filipstanis
     - title: "Maximize Yahoo Japan’s UX with AMP and Signed HTTP Exchanges"
       time: "1500"
-      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platform and a publisher. The session will walk through the technical details on how Yahoo Japan integrated the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
+      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platformer and a publisher. The session will walk through the technical details on how Yahoo Japan deployed the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
       type: session
       speakers:
         - hirohitokomada
-        - shigekiotsu
+        - shigekiohtsu
         - ryomunakata
     - title: "Generating AMP Pages with JavaScript and Vue.js"
       time: "1530"

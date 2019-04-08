@@ -35,8 +35,8 @@ Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario co
 
 ### Participe en el proyecto AMP de código abierto para ayudar a dar forma a su desarrollo
 
-- **Mira el AMP roadmap** para actualizaciones y características en [ampproject.org/roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}).
+- **Mira el AMP roadmap** para actualizaciones y características en [roadmap]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}}).
 
 - **Involúcrese**. Contribuya con el código fuente, errores de archivos o comentarios en [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Comparta su opinión sobre AMP en [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Aprenda** cómo usar los componentes AMP con [AMP by Example](https://ampbyexample.com/).
+- **Aprenda** cómo usar los componentes AMP con [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).

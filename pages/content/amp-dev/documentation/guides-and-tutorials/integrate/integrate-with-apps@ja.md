@@ -112,7 +112,7 @@ AMP URL API で取得できません。ただし、返された AMP URL（ampURL
 
 ## AMP キャッシュの使用
 
-[AMP キャッシュ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})は、
+[AMP キャッシュ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}})は、
 有効な AMP ドキュメントを配信するための、プロキシベースのコンテンツ配信ネットワーク（CDN）です。
 AMP キャッシュは次のような目的で設計されています。
 

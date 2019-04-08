@@ -1,18 +1,6 @@
 $title@: Success Stories
-$path: /success-stories/{base}.html
 $view: /views/detail/success-story-detail.j2
+$path: /success-stories/{base}.html
 $localization:
   path: /{locale}/success-stories/{base}.html
 $order: 1
-
-index: /content/amp-dev/success-stories/index.html
-
-flyout:
-    - /content/amp-dev/about/websites.html
-    - /content/amp-dev/about/stories.html
-    - /content/amp-dev/about/ads.html
-    - /content/amp-dev/about/email.html
-    - /content/amp-dev/about/how-amp-works.html
-    - /content/amp-dev/about/mission-and-vision.html
-    - /content/amp-dev/about/use-cases.html
-    - /content/amp-dev/about/success-stories/index.html

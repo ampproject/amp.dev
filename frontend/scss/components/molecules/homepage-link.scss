@@ -23,6 +23,7 @@
   @media (min-width: 1024px) {
     margin-right: 0;
     padding-right: 30px;
+    @include txt-lrg;
   }
 
   @media (max-width: 1023px) {

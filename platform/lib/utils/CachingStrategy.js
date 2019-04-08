@@ -22,9 +22,11 @@ const IMMUTABLE = 'immutable';
 
 const maxAgePerMimeType = [
   [/text\/.+$/i, maxAge('1h')],
-  [/image\/.+$/i, maxAge('1d')],
+  [/image\/.+$/i, maxAge('1w')],
   [/video\/.+$/i, maxAge('1w')],
   [/application\/json$/i, maxAge('1h')],
+  [/application\/zip$/i, maxAge('1d')],
+  [/application\/pdf$/i, maxAge('1d')],
   [/application\/javascript$/i, maxAge('1h')],
   [/font\/.+$/i, IMMUTABLE],
 ];

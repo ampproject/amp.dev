@@ -39,6 +39,11 @@
 
   .#{utility('container')} {
     @include container;
+
+    &.mission {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
   }
 
   .#{utility('container-fluid')} {
@@ -47,6 +52,23 @@
 
   .#{utility('content')} {
     @include content;
+  }
+
+  .#{utility('divider')} {
+    width: 100%;
+    margin: 25px 0 50px;
+    border-bottom: 1px solid color('silver');
+
+    @media (min-width: 768px) {
+      grid-column: 6 / 19;
+      margin: 0;
+    }
+  }
+
+  .#{utility('video')} {
+    width: 100%;
+    margin-bottom: 5em;
+    @include agenda-list-shadow;
   }
 
   .#{utility('content')} {
@@ -199,9 +221,11 @@
       }
     }
   }
+
   .#{organism('teaser-grid-list')} {
     @media (max-width: 767px) {
       padding: 1.25rem
     }
   }
+
 }
