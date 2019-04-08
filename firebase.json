@@ -2991,25 +2991,36 @@
         "type": 301
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|mp4)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
-          }
-        ]
+        "source": "/learn/who-uses-amp{,/**}",
+        "destination": "https://amp.dev/community/platform-and-vendor-partners?referrer=ampproject.org",
+        "type": 301
       },
       {
-        "source": "service-worker.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
-      }
-    ],
-    "redirects": [
+        "source": "/showcases{,/**}",
+        "destination": "https://amp.dev/about/use-cases?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/support",
+        "destination": "https://amp.dev/support/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/support/faqs/supported-platforms",
+        "destination": "https://amp.dev/community/platform-and-vendor-partners?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/support/faqs/supported-browsers",
+        "destination": "https://amp.dev/support/faq/supported-browsers",
+        "type": 301
+      },
+      {
+        "source": "/support/developer",
+        "destination": "https://amp.dev/support/?referrer=ampproject.org",
+        "type": 301
+      },
+
       {
         "source": "/docs/guides/",
         "destination": "/docs/",
@@ -3100,7 +3111,6 @@
         "destination": "/learn/overview/",
         "type": 301
       },
-
       {
         "source": "/docs/guides/author-develop/responsive_amp?(.html)",
         "destination": "/docs/design/responsive_amp.html",
@@ -3514,11 +3524,6 @@
       },
 
       {
-        "source": "/contribute/governance/",
-        "destination": "/docs/contribute/governance/",
-        "type": 301
-      },
-      {
         "source": "/learn/about-amp/",
         "destination": "/learn/overview/",
         "type": 301
@@ -3710,7 +3715,7 @@
       },
       {
         "source": "/docs/getting-started/",
-        "destination": "/docs/getting_started/quickstart.html",
+        "destination": "/docs/getting_started/quickstart",
         "type": 301
       },
       {
@@ -3882,7 +3887,7 @@
         "source": "/docs/guides/pwa-amp/amp-to-pwa?(.html)",
         "destination": "/docs/integration/pwa-amp/amp-to-pwa.html",
         "type": 301
-      },      {
+      }, {
         "source": "/docs/guides/responsive_amp?(.html)",
         "destination": "/docs/design/responsive_amp.html",
         "type": 301
@@ -4017,7 +4022,7 @@
         "destination": "/docs/fundamentals/converting/congratulations.html",
         "type": 301
       },
-       {
+      {
         "source": "/docs/tutorials/converting/discoverable?(.html)",
         "destination": "/docs/fundamentals/converting/discoverable.html",
         "type": 301
@@ -4062,7 +4067,7 @@
         "destination": "/docs/getting_started/create/preview_and_validate.html",
         "type": 301
       },
-       {
+      {
         "source": "/docs/tutorials/create/publish?(.html)",
         "destination": "/docs/getting_started/create/publish.html",
         "type": 301
@@ -4112,7 +4117,7 @@
         "destination": "/docs/interaction_dynamic/login_requiring/add_comment.html",
         "type": 301
       },
-       {
+      {
         "source": "/docs/tutorials/login_requiring/login?(.html)",
         "destination": "/docs/interaction_dynamic/login_requiring/login.html",
         "type": 301
@@ -4197,12 +4202,12 @@
         "destination": "/docs/getting_started/visual_story/parts_of_story.html",
         "type": 301
       },
-       {
+      {
         "source": "/docs/tutorials/visual_story/setting_up?(.html)",
         "destination": "/docs/getting_started/visual_story/setting_up.html",
         "type": 301
       },
-       {
+      {
         "source": "/docs/design/visual_story/setting_up?(.html)",
         "destination": "/docs/getting_started/visual_story/setting_up.html",
         "type": 301
@@ -4229,7 +4234,7 @@
       },
       {
         "source": "/:lang/docs/getting-started/",
-        "destination": "/:lang/docs/getting_started/quickstart.html",
+        "destination": "/:lang/docs/getting_started/quickstart",
         "type": 301
       },
       {
@@ -4372,7 +4377,7 @@
         "destination": "/:lang/docs/integration/pwa-amp/amp-in-pwa.html",
         "type": 301
       },
-        {
+      {
         "source": "/:lang/docs/guides/pwa-amp/amp-to-pwa",
         "destination": "/:lang/docs/integration/pwa-amp/amp-to-pwa.html",
         "type": 301
