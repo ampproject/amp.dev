@@ -16,18 +16,17 @@
 
 .#{utility('banner')} {
   margin: 0 -30px;
-  padding: 30px 30px;
+  padding: 60px 30px;
   background-color: color('blue-ribbon');
 
   @media (min-width: 930px) {
-    padding: 70px 90px 70px 90px;
+    padding: 90px;
   }
 }
 
 .#{organism('banner')} {
-
-  &-headline, &-copy {
-    color: color('white');
+  &-headline,  p {
     max-width: 720px;
+    color: color('white');
   }
 }
