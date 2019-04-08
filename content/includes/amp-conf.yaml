@@ -151,8 +151,8 @@ speakers:
     pic: /static/img/amp-conf/speakers/kiyotaka.jpg 
   mitsuhironaganuma:
     name: Mitsuhiro Naganuma
-    company: SUNDAY SYSTEMS, Inc.
-    bio: "フリーランスとしてWEB制作業務を行う傍ら、2017年に株式会社サンデイシステムズに入社。EC-CUBEを用いた受託案件にフロントエンドエンジニアとして従事。"
+    company: SUNDAY SYSTEMS
+    bio: "Developer of EC-CUBE. Built the AMP plugin."
     pic: /static/img/amp-conf/speakers/mitsuhiro.jpg  
   chrispapazian:
     name: Chris Papazian
@@ -370,7 +370,7 @@ agenda:
         - filipstanis
     - title: "Maximize Yahoo Japan’s UX with AMP and Signed HTTP Exchanges"
       time: "1430"
-      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platformer and a publisher. The session will walk through the technical details on how Yahoo Japan deployed the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
+      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platform and a publisher. The session will walk through the technical details on how Yahoo Japan integrated the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
       type: session
       speakers:
         - hirohitokomada
