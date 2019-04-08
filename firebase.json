@@ -25,8 +25,40 @@
         "type": 301
       },
       {
+        "source": "/amp-conf-2018",
+        "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/amp-conf-2017",
+        "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
+        "type": 301
+      },
+      {
         "source": "/amp-roadshow",
         "destination": "https://amp.dev/events/amp-roadshow?referrer=ampproject.org",
+        "type": 301
+      },
+
+      {
+        "source": "/contribute/governance/",
+        "destination": "https://amp.dev/community/governance/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/contribute/governance/",
+        "destination": "https://amp.dev/:lang/community/governance/",
+        "type": 301
+      },
+
+      {
+        "source": "/docs/contribute/governance/",
+        "destination": "https://amp.dev/community/governance/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/contribute/governance/",
+        "destination": "https://amp.dev/:lang/community/governance/",
         "type": 301
       },
 
@@ -726,6 +758,11 @@
         "type": 301
       },
       {
+        "source": "/support/developer",
+        "destination": "https://amp.dev/support/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
         "source": "/:lang/amp-roadshow",
         "destination": "https://amp.dev/:lang/events/amp-roadshow?referrer=ampproject.org",
         "type": 301
@@ -1127,6 +1164,27 @@
         "destination": "https://amp.dev/:lang/success-stories/tokopedia?referrer=ampproject.org",
         "type": 301
       },
+      {
+        "source": "/case-studies/:path*",
+        "destination": "https://amp.dev/success-stories/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/case-studies/:path*",
+        "destination": "https://amp.dev/:lang/success-stories/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/learn/case-studies",
+        "destination": "https://amp.dev/success-stories/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/learn/case-studies",
+        "destination": "https://amp.dev/:lang/success-stories/?referrer=ampproject.org",
+        "type": 301
+      },
+
 
       {
         "source": "/docs/ads",
@@ -2865,6 +2923,11 @@
         "destination": "https://amp.dev/support/faq/supported-browsers",
         "type": 301
       },
+      {
+        "source": "/support/developer",
+        "destination": "https://amp.dev/support/?referrer=ampproject.org",
+        "type": 301
+      },
 
       {
         "source": "/docs/guides/",
@@ -3368,11 +3431,6 @@
         "type": 301
       },
 
-      {
-        "source": "/contribute/governance/",
-        "destination": "/docs/contribute/governance/",
-        "type": 301
-      },
       {
         "source": "/learn/about-amp/",
         "destination": "/learn/overview/",
