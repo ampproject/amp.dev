@@ -203,6 +203,10 @@ if (!config.isDevMode()) {
     if (requestPath.endsWith('/')) {
       requestPath = requestPath + 'index.html';
     }
+    // Match to a file
+    if (!requestPath.endsWith('.html')) {
+      requestPath = requestPath + '.html';
+    }
 
     // Let the built-in middleware deal with unfiltered requests
     if (!await shouldApplyFormatFilter(request, requestPath) &&
