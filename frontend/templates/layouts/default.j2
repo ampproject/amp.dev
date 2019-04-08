@@ -120,17 +120,6 @@
     <amp-font layout="nodisplay" font-family="Fira Mono" timeout="3000"></amp-font>
     {% endblock %}
 
-    {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
-    <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
-      Hi, this is the public beta of amp.dev. Got feedback?
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf36pLNLBR3LVj_v1cuNbDMwXHKxrhpgdIxNcmIUJNvEOAUnQ/viewform" class="ap-m-banner-link">
-        {% do doc.icons.useIcon('/icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        {{ _('Let us know!') }}
-      </a>
-    </div>
-
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}

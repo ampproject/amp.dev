@@ -21,7 +21,10 @@ const express = require('express');
 const config = require('@lib/config');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+const cheerio = require('cheerio');
 const {FilteredPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const {shouldAddReferrerNotification, addReferrerNotification} =
+  require('@lib/common/referrerNotification');
 const fs = require('fs');
 const readFileAsync = promisify(fs.readFile);
 
@@ -54,6 +57,16 @@ function getFilteredFormat(request) {
   }
 
   return activeFormat;
+}
+
+function fixCheerio(page) {
+  // As cheerio has problems with XML syntax in HTML documents the
+  // markup for the icons needs to be restored
+  page = page.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
+      'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+  page = page.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
+      'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
+  return page;
 }
 
 
@@ -115,9 +128,11 @@ if (config.isDevMode()) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const filteredPage = new FilteredPage(activeFormat, body);
-          response.setHeader('content-length', filteredPage.content.length.toString());
-          return filteredPage.content;
+          const dom = cheerio.load(body);
+          new FilteredPage(activeFormat, dom);
+          const html = dom.html();
+          response.setHeader('content-length', html.length.toString());
+          return fixCheerio(dom);
         } catch (e) {
           log.warn('Could not filter request', e.message);
           return body;
@@ -190,22 +205,33 @@ if (!config.isDevMode()) {
     }
 
     // Let the built-in middleware deal with unfiltered requests
-    if (!await shouldApplyFormatFilter(request, requestPath)) {
+    if (!await shouldApplyFormatFilter(request, requestPath) &&
+        !shouldAddReferrerNotification(request)) {
       return staticMiddleware(request, response, next);
     }
 
     try {
-      // Check if there's a manually filtered variant ...
       const format = getFilteredFormat(request);
-      const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
-      if (await fileExistsAsync(utils.project.pagePath(manualRequestPath))) {
-        // ... and if there is one vend this
-        requestPath = manualRequestPath;
+
+      if (shouldApplyFormatFilter(request, requestPath)) {
+        // Check if there's a manually filtered variant ...
+        const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+        if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
+          // ... and if there is one vend this
+          requestPath = manualRequestPath;
+        }
       }
 
-      const page = await readFileAsync(utils.project.pagePath(requestPath));
-      const filteredPage = new FilteredPage(format, page, true);
-      response.send(filteredPage.content);
+      let page = await readFileAsync(utils.project.pagePath(requestPath));
+      const dom = cheerio.load(page);
+      if (shouldApplyFormatFilter(request, requestPath)) {
+        new FilteredPage(format, dom, true);
+      }
+      if (shouldAddReferrerNotification(request)) {
+        addReferrerNotification(request.query.referrer, dom);
+      }
+      page = fixCheerio(dom.html());
+      response.send(page);
     } catch (e) {
       if (e.code === 'EISDIR') {
         // show a 404 instead
