@@ -656,11 +656,6 @@
         "type": 301
       },
       {
-        "source": "/:lang/docs/reference/components/:component",
-        "destination": "https://amp.dev/:lang/documentation/components/:component",
-        "type": 301
-      },
-      {
         "source": "/:lang/docs/reference/experimental",
         "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/experimental?referrer=ampproject.org",
         "type": 301
@@ -1286,11 +1281,1168 @@
         "destination": "https://amp.dev/documentation/components/?referrer=ampproject.org",
         "type": 301
       },
+
       {
-        "source": "/docs/reference/components/:component",
-        "destination": "https://amp.dev/documentation/components/:component",
+        "source": "/docs/reference/components/amp-brightcove",
+        "destination": "https://amp.dev/documentation/components/amp-brightcove?referrer=ampproject.org",
         "type": 301
       },
+      {
+        "source": "/:lang/docs/reference/components/amp-brightcove",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-brightcove?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-gist",
+        "destination": "https://amp.dev/documentation/components/amp-gist?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-gist",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-gist?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-next-page",
+        "destination": "https://amp.dev/documentation/components/amp-next-page?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-next-page",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-next-page?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-sticky-ad",
+        "destination": "https://amp.dev/documentation/components/amp-sticky-ad?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-sticky-ad",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-sticky-ad?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-3d-gltf",
+        "destination": "https://amp.dev/documentation/components/amp-3d-gltf?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-3d-gltf",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-3d-gltf?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-byside-content",
+        "destination": "https://amp.dev/documentation/components/amp-byside-content?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-byside-content",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-byside-content?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-google-document-embed",
+        "destination": "https://amp.dev/documentation/components/amp-google-document-embed?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-google-document-embed",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-google-document-embed?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-nexxtv-player",
+        "destination": "https://amp.dev/documentation/components/amp-nexxtv-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-nexxtv-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-nexxtv-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-story-auto-ads",
+        "destination": "https://amp.dev/documentation/components/amp-story-auto-ads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-story-auto-ads",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-story-auto-ads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-3q-player",
+        "destination": "https://amp.dev/documentation/components/amp-3q-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-3q-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-3q-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-call-tracking",
+        "destination": "https://amp.dev/documentation/components/amp-call-tracking?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-call-tracking",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-call-tracking?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-google-vrview-image",
+        "destination": "https://amp.dev/documentation/components/amp-google-vrview-image?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-google-vrview-image",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-google-vrview-image?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-o2-player",
+        "destination": "https://amp.dev/documentation/components/amp-o2-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-o2-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-o2-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-story",
+        "destination": "https://amp.dev/documentation/components/amp-story?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-story",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-story?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-access-laterpay",
+        "destination": "https://amp.dev/documentation/components/amp-access-laterpay?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-access-laterpay",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-access-laterpay?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-carousel",
+        "destination": "https://amp.dev/documentation/components/amp-carousel?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-carousel",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-carousel?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-hulu",
+        "destination": "https://amp.dev/documentation/components/amp-hulu?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-hulu",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-hulu?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-ooyala-player",
+        "destination": "https://amp.dev/documentation/components/amp-ooyala-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-ooyala-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-ooyala-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-subscriptions-google",
+        "destination": "https://amp.dev/documentation/components/amp-subscriptions-google?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-subscriptions-google",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-subscriptions-google?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-access-poool",
+        "destination": "https://amp.dev/documentation/components/amp-access-poool?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-access-poool",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-access-poool?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-consent",
+        "destination": "https://amp.dev/documentation/components/amp-consent?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-consent",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-consent?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-iframe",
+        "destination": "https://amp.dev/documentation/components/amp-iframe?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-iframe",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-iframe?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-orientation-observer",
+        "destination": "https://amp.dev/documentation/components/amp-orientation-observer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-orientation-observer",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-orientation-observer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-subscriptions",
+        "destination": "https://amp.dev/documentation/components/amp-subscriptions?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-subscriptions",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-subscriptions?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-access",
+        "destination": "https://amp.dev/documentation/components/amp-access?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-access",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-access?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-dailymotion",
+        "destination": "https://amp.dev/documentation/components/amp-dailymotion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-dailymotion",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-dailymotion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-ima-video",
+        "destination": "https://amp.dev/documentation/components/amp-ima-video?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-ima-video",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-ima-video?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-pan-zoom",
+        "destination": "https://amp.dev/documentation/components/amp-pan-zoom?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-pan-zoom",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-pan-zoom?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-timeago",
+        "destination": "https://amp.dev/documentation/components/amp-timeago?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-timeago",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-timeago?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-accordion",
+        "destination": "https://amp.dev/documentation/components/amp-accordion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-accordion",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-accordion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-date-countdown",
+        "destination": "https://amp.dev/documentation/components/amp-date-countdown?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-date-countdown",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-date-countdown?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-image-lightbox",
+        "destination": "https://amp.dev/documentation/components/amp-image-lightbox?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-image-lightbox",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-image-lightbox?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-pinterest",
+        "destination": "https://amp.dev/documentation/components/amp-pinterest?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-pinterest",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-pinterest?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-twitter",
+        "destination": "https://amp.dev/documentation/components/amp-twitter?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-twitter",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-twitter?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-action-macro",
+        "destination": "https://amp.dev/documentation/components/amp-action-macro?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-action-macro",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-action-macro?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-date-display",
+        "destination": "https://amp.dev/documentation/components/amp-date-display?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-date-display",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-date-display?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-image-slider",
+        "destination": "https://amp.dev/documentation/components/amp-image-slider?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-image-slider",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-image-slider?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-pixel",
+        "destination": "https://amp.dev/documentation/components/amp-pixel?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-pixel",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-pixel?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-user-notification",
+        "destination": "https://amp.dev/documentation/components/amp-user-notification?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-user-notification",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-user-notification?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-ad-exit",
+        "destination": "https://amp.dev/documentation/components/amp-ad-exit?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-ad-exit",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-ad-exit?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-date-picker",
+        "destination": "https://amp.dev/documentation/components/amp-date-picker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-date-picker",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-date-picker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-img",
+        "destination": "https://amp.dev/documentation/components/amp-img?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-img",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-img?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-playbuzz",
+        "destination": "https://amp.dev/documentation/components/amp-playbuzz?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-playbuzz",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-playbuzz?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-video-docking",
+        "destination": "https://amp.dev/documentation/components/amp-video-docking?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-video-docking",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-video-docking?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-ad",
+        "destination": "https://amp.dev/documentation/components/amp-ad?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-ad",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-ad?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-delight-player",
+        "destination": "https://amp.dev/documentation/components/amp-delight-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-delight-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-delight-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-imgur",
+        "destination": "https://amp.dev/documentation/components/amp-imgur?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-imgur",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-imgur?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-position-observer",
+        "destination": "https://amp.dev/documentation/components/amp-position-observer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-position-observer",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-position-observer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-video-iframe",
+        "destination": "https://amp.dev/documentation/components/amp-video-iframe?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-video-iframe",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-video-iframe?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-addthis",
+        "destination": "https://amp.dev/documentation/components/amp-addthis?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-addthis",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-addthis?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-dynamic-css-classes",
+        "destination": "https://amp.dev/documentation/components/amp-dynamic-css-classes?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-dynamic-css-classes",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-dynamic-css-classes?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-instagram",
+        "destination": "https://amp.dev/documentation/components/amp-instagram?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-instagram",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-instagram?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-powr-player",
+        "destination": "https://amp.dev/documentation/components/amp-powr-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-powr-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-powr-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-video",
+        "destination": "https://amp.dev/documentation/components/amp-video?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-video",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-video?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-analytics",
+        "destination": "https://amp.dev/documentation/components/amp-analytics?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-analytics",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-analytics?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-embedly-card",
+        "destination": "https://amp.dev/documentation/components/amp-embedly-card?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-embedly-card",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-embedly-card?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-install-serviceworker",
+        "destination": "https://amp.dev/documentation/components/amp-install-serviceworker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-install-serviceworker",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-install-serviceworker?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-reach-player",
+        "destination": "https://amp.dev/documentation/components/amp-reach-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-reach-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-reach-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-viewer-assistance",
+        "destination": "https://amp.dev/documentation/components/amp-viewer-assistance?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-viewer-assistance",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-viewer-assistance?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-anim",
+        "destination": "https://amp.dev/documentation/components/amp-anim?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-anim",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-anim?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-experiment",
+        "destination": "https://amp.dev/documentation/components/amp-experiment?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-experiment",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-experiment?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-izlesene",
+        "destination": "https://amp.dev/documentation/components/amp-izlesene?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-izlesene",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-izlesene?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-recaptcha-input",
+        "destination": "https://amp.dev/documentation/components/amp-recaptcha-input?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-recaptcha-input",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-recaptcha-input?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-vimeo",
+        "destination": "https://amp.dev/documentation/components/amp-vimeo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-vimeo",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-vimeo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-animation",
+        "destination": "https://amp.dev/documentation/components/amp-animation?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-animation",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-animation?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-facebook-comments",
+        "destination": "https://amp.dev/documentation/components/amp-facebook-comments?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-facebook-comments",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-facebook-comments?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-jwplayer",
+        "destination": "https://amp.dev/documentation/components/amp-jwplayer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-jwplayer",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-jwplayer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-reddit",
+        "destination": "https://amp.dev/documentation/components/amp-reddit?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-reddit",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-reddit?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-vine",
+        "destination": "https://amp.dev/documentation/components/amp-vine?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-vine",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-vine?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-apester-media",
+        "destination": "https://amp.dev/documentation/components/amp-apester-media?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-apester-media",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-apester-media?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-facebook-like",
+        "destination": "https://amp.dev/documentation/components/amp-facebook-like?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-facebook-like",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-facebook-like?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-kaltura-player",
+        "destination": "https://amp.dev/documentation/components/amp-kaltura-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-kaltura-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-kaltura-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-riddle-quiz",
+        "destination": "https://amp.dev/documentation/components/amp-riddle-quiz?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-riddle-quiz",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-riddle-quiz?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-viqeo-player",
+        "destination": "https://amp.dev/documentation/components/amp-viqeo-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-viqeo-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-viqeo-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-app-banner",
+        "destination": "https://amp.dev/documentation/components/amp-app-banner?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-app-banner",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-app-banner?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-facebook-page",
+        "destination": "https://amp.dev/documentation/components/amp-facebook-page?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-facebook-page",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-facebook-page?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-layout",
+        "destination": "https://amp.dev/documentation/components/amp-layout?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-layout",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-layout?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-script",
+        "destination": "https://amp.dev/documentation/components/amp-script?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-script",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-script?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-viz-vega",
+        "destination": "https://amp.dev/documentation/components/amp-viz-vega?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-viz-vega",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-viz-vega?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-audio",
+        "destination": "https://amp.dev/documentation/components/amp-audio?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-audio",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-audio?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-facebook",
+        "destination": "https://amp.dev/documentation/components/amp-facebook?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-facebook",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-facebook?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-lightbox-gallery",
+        "destination": "https://amp.dev/documentation/components/amp-lightbox-gallery?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-lightbox-gallery",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-lightbox-gallery?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-selector",
+        "destination": "https://amp.dev/documentation/components/amp-selector?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-selector",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-selector?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-vk",
+        "destination": "https://amp.dev/documentation/components/amp-vk?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-vk",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-vk?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-auto-ads",
+        "destination": "https://amp.dev/documentation/components/amp-auto-ads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-auto-ads",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-auto-ads?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-fit-text",
+        "destination": "https://amp.dev/documentation/components/amp-fit-text?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-fit-text",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-fit-text?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-lightbox",
+        "destination": "https://amp.dev/documentation/components/amp-lightbox?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-lightbox",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-lightbox?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-share-tracking",
+        "destination": "https://amp.dev/documentation/components/amp-share-tracking?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-share-tracking",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-share-tracking?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-web-push",
+        "destination": "https://amp.dev/documentation/components/amp-web-push?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-web-push",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-web-push?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-autocomplete",
+        "destination": "https://amp.dev/documentation/components/amp-autocomplete?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-autocomplete",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-autocomplete?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-font",
+        "destination": "https://amp.dev/documentation/components/amp-font?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-font",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-font?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-list",
+        "destination": "https://amp.dev/documentation/components/amp-list?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-list",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-list?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-sidebar",
+        "destination": "https://amp.dev/documentation/components/amp-sidebar?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-sidebar",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-sidebar?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-wistia-player",
+        "destination": "https://amp.dev/documentation/components/amp-wistia-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-wistia-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-wistia-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-base-carousel",
+        "destination": "https://amp.dev/documentation/components/amp-base-carousel?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-base-carousel",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-base-carousel?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-form",
+        "destination": "https://amp.dev/documentation/components/amp-form?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-form",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-form?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-live-list",
+        "destination": "https://amp.dev/documentation/components/amp-live-list?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-live-list",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-live-list?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-skimlinks",
+        "destination": "https://amp.dev/documentation/components/amp-skimlinks?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-skimlinks",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-skimlinks?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-yotpo",
+        "destination": "https://amp.dev/documentation/components/amp-yotpo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-yotpo",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-yotpo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-beopinion",
+        "destination": "https://amp.dev/documentation/components/amp-beopinion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-beopinion",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-beopinion?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-fx-collection",
+        "destination": "https://amp.dev/documentation/components/amp-fx-collection?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-fx-collection",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-fx-collection?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-mathml",
+        "destination": "https://amp.dev/documentation/components/amp-mathml?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-mathml",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-mathml?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-smartlinks",
+        "destination": "https://amp.dev/documentation/components/amp-smartlinks?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-smartlinks",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-smartlinks?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-youtube",
+        "destination": "https://amp.dev/documentation/components/amp-youtube?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-youtube",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-youtube?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-bind",
+        "destination": "https://amp.dev/documentation/components/amp-bind?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-bind",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-bind?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-fx-flying-carpet",
+        "destination": "https://amp.dev/documentation/components/amp-fx-flying-carpet?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-fx-flying-carpet",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-fx-flying-carpet?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-mowplayer",
+        "destination": "https://amp.dev/documentation/components/amp-mowplayer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-mowplayer",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-mowplayer?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-social-share",
+        "destination": "https://amp.dev/documentation/components/amp-social-share?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-social-share",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-social-share?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-bodymovin-animation",
+        "destination": "https://amp.dev/documentation/components/amp-bodymovin-animation?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-bodymovin-animation",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-bodymovin-animation?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-geo",
+        "destination": "https://amp.dev/documentation/components/amp-geo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-geo",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-geo?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-mraid",
+        "destination": "https://amp.dev/documentation/components/amp-mraid?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-mraid",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-mraid?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-soundcloud",
+        "destination": "https://amp.dev/documentation/components/amp-soundcloud?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-soundcloud",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-soundcloud?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-brid-player",
+        "destination": "https://amp.dev/documentation/components/amp-brid-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-brid-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-brid-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-gfycat",
+        "destination": "https://amp.dev/documentation/components/amp-gfycat?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-gfycat",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-gfycat?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-mustache",
+        "destination": "https://amp.dev/documentation/components/amp-mustache?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-mustache",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-mustache?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/reference/components/amp-springboard-player",
+        "destination": "https://amp.dev/documentation/components/amp-springboard-player?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/reference/components/amp-springboard-player",
+        "destination": "https://amp.dev/:lang/documentation/components/amp-springboard-player?referrer=ampproject.org",
+        "type": 301
+      }
+
       {
         "source": "/docs/reference/experimental",
         "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/experimental?referrer=ampproject.org",
