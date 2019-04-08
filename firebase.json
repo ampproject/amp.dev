@@ -41,6 +41,22 @@
       },
 
       {
+        "source": "/docs/contribute/governance/",
+        "destination": "https://amp.dev/community/governance",
+        "type": 301
+      },
+      {
+        "source": "/latest/blog/governance/",
+        "destination": "https://amp.dev/community/governance",
+        "type": 301
+      },
+      {
+        "source": "/latest/blog/amp-projects-new-governance-model-now-in-effect/",
+        "destination": "https://amp.dev/community/governance",
+        "type": 301
+      },
+
+      {
         "source": "/contribute/governance/",
         "destination": "https://amp.dev/community/governance",
         "type": 301
@@ -62,22 +78,6 @@
         "type": 301
       },
 
-      {
-        "source": "/docs/community/governance/",
-        "destination": "https://amp.dev/community/governance",
-        "type": 301
-      },
-      {
-        "source": "/:lang/docs/community/governance/",
-        "destination": "https://amp.dev/:lang/community/governance",
-        "type": 301
-      },
-
-      {
-        "source": "/docs/contribute/governance/",
-        "destination": "https://amp.dev/community/governance",
-        "type": 301
-      },
       {
         "source": "/:lang/docs/contribute/governance/",
         "destination": "https://amp.dev/:lang/community/governance",
