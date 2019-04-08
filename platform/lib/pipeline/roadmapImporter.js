@@ -32,23 +32,24 @@ const log = new Signale({
 
 async function importRoadmap() {
   log.start('Starting import of roadmap ...');
-  const octokit = new Octokit({
+  const options = {
     'previews': [
       'symmetra-preview',
       'inertia-preview',
     ],
-  });
+  };
 
   gitHubImporter.checkCredentials();
-  octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
-    type: 'token',
-    token: gitHubImporter.CLIENT_TOKEN,
-  } : {
-    type: 'oauth',
-    key: gitHubImporter.CLIENT_ID,
-    secret: gitHubImporter.CLIENT_SECRET,
-  });
+  if (gitHubImporter.CLIENT_TOKEN) {
+    options['auth'] = gitHubImporter.CLIENT_TOKEN;
+  } else {
+    options['auth'] = {
+      'clientId': gitHubImporter.CLIENT_ID,
+      'clientSecret': gitHubImporter.CLIENT_SECRET,
+    };
+  }
 
+  const octokit = new Octokit(options);
   const result = await octokit.projects.listColumns({project_id: '1344133'});
 
   log.await('Fetching cards per column ...');
@@ -116,6 +117,7 @@ async function importRoadmap() {
       .reduce((acc, val) => acc.concat(val), [])
       .filter((value, index, self) => self.indexOf(value) === index);
 
+  console.log(labels);
   // Write finalized JSON to config file that gets imported by the roadmap template
   fs.writeFileSync(
       DESTINATION_JSON,
