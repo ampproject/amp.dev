@@ -25,8 +25,7 @@
 }
 
 .#{organism('banner')} {
-  &-headline,  &-copy {
-    display: block;
+  &-headline,  p {
     max-width: 720px;
     color: color('white');
   }
