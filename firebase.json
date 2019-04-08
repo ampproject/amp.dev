@@ -40,47 +40,59 @@
         "type": 301
       },
 
+
+      {
+        "source": "/docs/interaction_dynamic/amp-actions-and-events",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/interaction_dynamic/amp-actions-and-events",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-actions-and-events?referrer=ampproject.org",
+        "type": 301
+      },
+
       {
         "source": "/docs/contribute/governance/",
-        "destination": "https://amp.dev/community/governance",
+        "destination": "https://amp.dev/community/governance?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/latest/blog/governance/",
-        "destination": "https://amp.dev/community/governance",
+        "destination": "https://amp.dev/community/governance?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/latest/blog/amp-projects-new-governance-model-now-in-effect/",
-        "destination": "https://amp.dev/community/governance",
+        "destination": "https://amp.dev/community/governance?referrer=ampproject.org",
         "type": 301
       },
 
       {
         "source": "/contribute/governance/",
-        "destination": "https://amp.dev/community/governance",
+        "destination": "https://amp.dev/community/governance?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/:lang/contribute/governance/",
-        "destination": "https://amp.dev/:lang/community/governance",
+        "destination": "https://amp.dev/:lang/community/governance?referrer=ampproject.org",
         "type": 301
       },
 
       {
         "source": "/docs/community/governance/",
-        "destination": "https://amp.dev/community/governance",
+        "destination": "https://amp.dev/community/governance?referrer=ampproject.org",
         "type": 301
       },
       {
         "source": "/:lang/docs/community/governance/",
-        "destination": "https://amp.dev/:lang/community/governance",
+        "destination": "https://amp.dev/:lang/community/governance?referrer=ampproject.org",
         "type": 301
       },
 
       {
         "source": "/:lang/docs/contribute/governance/",
-        "destination": "https://amp.dev/:lang/community/governance",
+        "destination": "https://amp.dev/:lang/community/governance?referrer=ampproject.org",
         "type": 301
       },
 
