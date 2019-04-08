@@ -130,6 +130,71 @@
         "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/?referrer=ampproject.org",
         "type": 301
       },
+      {
+        "source": "/docs/fundamentals/spec",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/fundamentals/amp-cors-requests/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/fundamentals/amp-cors-requests/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/design/amp-html-layout/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/design/amp-html-layout/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-html-layout/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/analytics/integrating-analytics/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/analytics/integrating-analytics/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/analytics/amp-managing-user-state/",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-managing-user-state?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/analytics/amp-managing-user-state/",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/optimize-and-measure/amp-managing-user-state?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads/integration-guide",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/contribute/ad-integration-guide?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/integration-guide",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/contribute/ad-integration-guide?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/docs/ads/a4a_spec",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/a4a_spec?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/ads/a4a_spec",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/a4a_spec?referrer=ampproject.org",
+        "type": 301
+      },
 
       {
         "source": "/",
@@ -342,6 +407,11 @@
       {
         "source": "/:lang/docs/fundamentals/",
         "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/fundamentals/spec",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/spec/amphtml?referrer=ampproject.org",
         "type": 301
       },
       {
@@ -777,6 +847,11 @@
       {
         "source": "/support/developer",
         "destination": "https://amp.dev/support/?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/support/developer",
+        "destination": "https://amp.dev/:lang/support/?referrer=ampproject.org",
         "type": 301
       },
       {
