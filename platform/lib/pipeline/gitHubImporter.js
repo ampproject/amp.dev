@@ -15,8 +15,6 @@
  */
 
 const octonode = require('octonode');
-const {promisify} = require('util');
-const fs = require('fs');
 const {Signale} = require('signale');
 
 const Document = require('./markdownDocument');

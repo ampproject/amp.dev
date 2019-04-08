@@ -119,7 +119,7 @@ class SamplesBuilder {
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src([
-          `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`], {'read': true});
+        `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`], {'read': true});
 
       // Only build samples changed since last run and if it's not a fresh build
       if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
