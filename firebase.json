@@ -2793,7 +2793,7 @@
         "source": "/:lang/docs/reference/components/amp-springboard-player",
         "destination": "https://amp.dev/:lang/documentation/components/amp-springboard-player?referrer=ampproject.org",
         "type": 301
-      }
+      },
 
       {
         "source": "/docs/reference/experimental",
