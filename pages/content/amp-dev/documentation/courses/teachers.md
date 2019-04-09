@@ -1,7 +1,8 @@
 ---
-$title: Course Introduction
-$path: /documentation/guides-and-tutorials/web-development-with-amp/index.html
+$title: Teachers
+$path: /documentation/guides-and-tutorials/web-development-with-amp/teachers/index.html
 $order: 0
+toc: true
 ---
 
 Whether on video sites, e-commerce pages, or online email clients, often websites look different depending on who is accessing the site and when. These types of websites dynamically generate the content on screen by combining templates with data from a server. In the final course in this series, we’ll explore how to retrieve data from a server and display that information on screen. We’ll also explore the concept of application state variables and bindings, and how to use these concepts with AMP. We will complete our cheese bikes site by refactoring our components to use state and bingins, and we will add a sortable, filterable product page! In addition, we will look at examples of popular genres of dynamic websites, and we’ll attempt to recreate simple versions of these sites using AMP.
