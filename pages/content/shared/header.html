@@ -1,0 +1,21 @@
+$view: /layouts/blank.j2
+---
+<style amp-custom>
+  {% do doc.styles.addCssFile('css/base.css', -5) %}
+  {% do doc.styles.addCssFile('css/components/atoms/text.css', -3) %}
+  {% do doc.styles.addCssFile('css/components/atoms/anchor.css', -2) %}
+  {% do doc.styles.addCssFile('css/components/atoms/icon.css', -1) %}
+
+  {{ doc.styles.emit() }}
+</style>
+
+{% block icons %}
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    {{ doc.icons.emit() }}
+  </defs>
+</svg>
+{% endblock %}
+
+{% include 'views/partials/header.j2' %}
+{% include 'views/partials/burger-menu.j2' %}
