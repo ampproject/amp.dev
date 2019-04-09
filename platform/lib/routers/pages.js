@@ -112,6 +112,10 @@ if (config.isDevMode()) {
       request.url = `${request.path}index.html`;
     }
 
+    if (!request.path.endsWith('.html')) {
+      request.url = `${request.path}.html`;
+    }
+
     next();
   });
 
