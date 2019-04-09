@@ -1,0 +1,8 @@
+$path: /documentation/guides-and-tutorials/web-development-with-amp/teachers/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/web-development-with-amp/teachers/{base}.html
+$title@: Teacher's Resources
+$order: 1
+
+chaptered: true

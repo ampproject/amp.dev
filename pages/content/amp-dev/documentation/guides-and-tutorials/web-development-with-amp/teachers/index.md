@@ -1,11 +1,11 @@
 ---
-$title: Web Development with AMP - Intermediate Course
+$title: Teacher's Resources
+$path: /documentation/guides-and-tutorials/web-development-with-amp/teachers/index.html
 $order: 0
-$path: /documentation/guides-and-tutorials/courses/intermediate-course/index.html
 toc: true
 ---
 
-Interactive website are critical to serve our customers and drive engagement. Users might use keyboards, mice, or touch to interact with our site. They might interact directly with components or provide information using forms. In this course, we introduce how to watch for and respond to user interaction with AMP. We cover the basics of events, event handlers, and actions. Along the way, we also discuss the topics of accessibility and how to build forms with AMP. Finally, we discuss how to combine components to build more comprehensive features. We will practice these skills by continuing to build our cheese bike website. We’ll add a slide out navigation menu, a newsletter subscription form, and a more complex interactive image carousel.
+Whether on video sites, e-commerce pages, or online email clients, often websites look different depending on who is accessing the site and when. These types of websites dynamically generate the content on screen by combining templates with data from a server. In the final course in this series, we’ll explore how to retrieve data from a server and display that information on screen. We’ll also explore the concept of application state variables and bindings, and how to use these concepts with AMP. We will complete our cheese bikes site by refactoring our components to use state and bingins, and we will add a sortable, filterable product page! In addition, we will look at examples of popular genres of dynamic websites, and we’ll attempt to recreate simple versions of these sites using AMP.
 
 ## About the Course
 
@@ -37,9 +37,8 @@ You can download course and decks as PDF from here:
 
 <a href="#" class="ap-a-btn">{{ _('Download') }}</a>
 
-Also, you can find the starting Glitch repository [here](https://glitch.com/~grateful-block).
+Also, you can find the starting Glitch repository [here](https://glitch.com/~enshrined-eyebrow).
 
 ### Ideal Students:
 
 New web developers and experienced developers alike. This course is for those who want to create websites as well as for those looking to use AMP to build more performant sites.
-

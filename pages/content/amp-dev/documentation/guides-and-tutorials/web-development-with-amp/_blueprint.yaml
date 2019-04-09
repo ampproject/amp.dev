@@ -1,0 +1,8 @@
+$title@: Web Development With AMP
+$path: /documentation/guides-and-tutorials/web-development-with-amp/{base}.html
+$view: /views/detail/docs-detail.j2
+
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/web-development-with-amp/{base}.html
+
+$order: 4

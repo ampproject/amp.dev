@@ -1,0 +1,9 @@
+$path: /documentation/guides-and-tutorials/web-development-with-amp/advanced-course/{base}.html
+$view: /views/detail/docs-detail.j2
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/web-development-with-amp/advanced-course/{base}.html
+$title@: Advanced Course
+$order: 4
+
+chaptered: true
+tutorial: true

@@ -1,9 +1,0 @@
-$path: /documentation/guides-and-tutorials/courses/advanced-course/{base}.html
-$view: /views/detail/docs-detail.j2
-$localization:
-  path: /{locale}/documentation/guides-and-tutorials/courses/advanced-course/{base}.html
-$title@: Web Development with AMP - Advanced Course
-$order: 2
-
-chaptered: true
-tutorial: true

@@ -1,11 +1,10 @@
 ---
-$title: Web Development with AMP - Beginner Course
+$title: Course Introduction
+$path: /documentation/guides-and-tutorials/web-development-with-amp/index.html
 $order: 0
-$path: /documentation/guides-and-tutorials/courses/beginner-course/index.html
-toc: true
 ---
 
-The web is wonderful, but it is difficult to build performance, accessible, and responsive web experiences that work well on all devices. AMP is here to help. In this course, we explore what AMP is, the architecture of AMP, and how to convert a simple HTML page into a valid AMP page. We also introduce the concept of components and the benefits they provide. Finally, we practice using AMP by building a sample site with images, videos, a carousel, and more!
+Whether on video sites, e-commerce pages, or online email clients, often websites look different depending on who is accessing the site and when. These types of websites dynamically generate the content on screen by combining templates with data from a server. In the final course in this series, we’ll explore how to retrieve data from a server and display that information on screen. We’ll also explore the concept of application state variables and bindings, and how to use these concepts with AMP. We will complete our cheese bikes site by refactoring our components to use state and bingins, and we will add a sortable, filterable product page! In addition, we will look at examples of popular genres of dynamic websites, and we’ll attempt to recreate simple versions of these sites using AMP.
 
 ## About the Course
 
@@ -19,7 +18,7 @@ The goals of this course are to:
 
 ### Prerequisites:
 
-- basic understanding of HTML and CSS
+- basic JavaScript expressions and JSON
 
 ### Requirements:
 
@@ -37,7 +36,7 @@ You can download course and decks as PDF from here:
 
 <a href="#" class="ap-a-btn">{{ _('Download') }}</a>
 
-Also, you can find the starting Glitch repository [here](https://glitch.com/~nosy-leech).
+Also, you can find the starting Glitch repository [here](https://glitch.com/~enshrined-eyebrow).
 
 ### Ideal Students:
 
