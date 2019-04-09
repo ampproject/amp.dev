@@ -27,6 +27,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const crypto = require('crypto');
 const readFileAsync = promisify(fs.readFile);
+const writeFileAsync = promisify(fs.writeFile);
 const nunjucks = require('nunjucks');
 
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
@@ -63,6 +64,8 @@ const SOURCE_DEST = utils.project.absolute('dist/examples/sources');
 const API_HOST = 'https://amp-by-example-api.appspot.com';
 // The host used for samples depending on a backend
 const BACKEND_HOST = 'https://ampbyexample.com';
+// The path where the playground's example sitemap is written
+const SITEMAP_DEST = utils.project.absolute('examples/static/samples/samples.json');
 
 
 class SamplesBuilder {
@@ -74,8 +77,8 @@ class SamplesBuilder {
 
     // Used to cache various properties to save computing time
     this._cache = {};
-
-    // Nunjucks environment to render ads preview
+    // Holds all relevant sample informations after samplew have been parsed
+    this._sitemap = {};
   }
 
   async build(watch) {
@@ -137,6 +140,8 @@ class SamplesBuilder {
             return;
           }
 
+          this._addToSitemap(sample, parsedSample);
+
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
           const files = [
@@ -181,8 +186,12 @@ class SamplesBuilder {
         reject(error);
       });
 
-      stream.on('end', () => {
+      stream.on('end', async () => {
         this._log.success('Built samples.');
+        // Only write samples sitemap if it has been a full samples build
+        if (!watch && config.options['clean-samples'] === true) {
+          await this._generateSitemap();
+        }
         resolve();
       });
     });
@@ -259,6 +268,55 @@ class SamplesBuilder {
   }
 
   /**
+   * Adds a sample to the sitemap object for the playground to then render
+   * a list of available samples
+   * @param {Vinyl} sample       The file from which the sample is parsed
+   * @param {Object} parsedSample The parsed sample
+   */
+  _addToSitemap(sample, parsedSample) {
+    const format = this._getSampleFormat(parsedSample);
+    const formatCategories = this._sitemap[format] || {};
+
+    const category = this._getCategory(sample);
+    const categorySamples = formatCategories[category] || {'examples': []};
+    categorySamples.examples.push({
+      'title': parsedSample.document.title,
+      'url': `${config.getHost(config.hosts.preview)}` +
+          this._getSourceRoute(sample),
+    });
+
+    formatCategories[category] = categorySamples;
+    this._sitemap[format] = formatCategories;
+  }
+
+  /**
+   * Takes what has been saved to this._sitemap and adds a sitemap.json to
+   * the gulp stream that is usable by the playground
+   * @type {Vinyl}
+   */
+  async _generateSitemap() {
+    const sitemap = [];
+    for (const format of Object.keys(this._sitemap)) {
+      const categories = Object.keys(this._sitemap[format]).map((category) => {
+        return {
+          'name': category,
+          'examples': this._sitemap[format][category].examples
+        }
+      });
+
+      sitemap.push({
+        'title': '',
+        'name': format,
+        'categories': categories,
+      });
+    }
+
+    await writeFileAsync(SITEMAP_DEST, JSON.stringify(sitemap));
+    this._log.success('Wrote sample sitemap.');
+  }
+
+
+  /**
    * Parses the category from a sample path which is the first level
    * directory name after the base path
    * @param  {Vinyl} sample The sample from the gulp stream
@@ -325,11 +383,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getSourceRoute(sample) {
-    let route = this._getBaseRoute(sample);
-    if (!route.endsWith('/index.html')) {
-      route += '/index.html'; // sample defines it's own directory
-    }
-    return route;
+    return `${this._getBaseRoute(sample)}`;
   }
 
   /**
@@ -339,8 +393,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getEmbedRoute(sample) {
-    return `/documentation/examples/${this._getCategory(sample)}/` +
-        `${sample.stem.toLowerCase()}/embed`;
+    return `${this._getBaseRoute(sample)}/embed`;
   }
 
   /**
