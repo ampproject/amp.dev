@@ -73,7 +73,11 @@
         z-index: 1003;
       }
 
-      & ~ .ap--main, ~ .ap--footer {
+      & ~ .ap--main {
+        max-height: 100vh;
+      }
+
+      & ~ .ap--footer {
         display: none;
       }
     }
