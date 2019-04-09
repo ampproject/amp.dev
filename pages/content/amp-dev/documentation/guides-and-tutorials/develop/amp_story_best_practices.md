@@ -146,8 +146,8 @@ Make stories more dynamic by adding motion to static images. For example, you ca
   </tr>
   <tr>
     <td>
-    <figure>
-      <amp-video src="/static/img/docs/guides/storiesbp/images-life-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg" width="360" height="720" loop autoplay noaudio>
+    <figure style="max-width: 360px">
+      <amp-video src="/static/img/docs/guides/storiesbp/images-life-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg" width="360" height="720" loop autoplay noaudio>
       </amp-video>
     </figure>
     </td>
@@ -171,10 +171,16 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
   </tr>
   <tr>
   <!-- TODO: Swap assets with correct mp4 -->
-    <td><amp-video src="/static/img/docs/guides/storiesbp/video-bleed-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/video-bleed-do-poster.jpg" width="360" height="720" loop autoplay noaudio>
-        </amp-video></td>
-    <td><amp-video src="/static/img/docs/guides/storiesbp/video-bleed-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/video-bleed-dont.jpg" width="360" height="720" loop autoplay noaudio>
-        </amp-video></td>
+    <td>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/video-bleed-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/video-bleed-do-poster.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
+    </td>
+    <td>
+    <div style="max-width: 360px">
+      <amp-video src="/static/img/docs/guides/storiesbp/video-bleed-dont.mp4" layout="responsive"       poster="/static/img/docs/guides/storiesbp/video-bleed-dont.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+    </div>
+    </td>
   </tr>
   <tr>
     <td>This full bleed video helps readers focus on a single key subject.</td>
@@ -193,12 +199,14 @@ Enable users to experience your stories anywhere.  In some settings, listening t
   <tr>
   <!-- TODO: Swap assets with correct mp4 -->
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/captions-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/captions-do.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/captions-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/captions-do.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/captions-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/captions-dont.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/captions-dont.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/captions-dont.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -222,12 +230,14 @@ Animation can enhance stories when it’s visually appealing, easy to understand
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/duration-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/duration-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/duration-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/duration-dont.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -247,12 +257,14 @@ Pick an animation style that matches your story’s aesthetic.  AMP story offers
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/style-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/style-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/style-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/style-dont.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -271,12 +283,14 @@ One way to be creative with motion is to animate multiple objects into a sequenc
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/sequence-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/sequence-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/sequence-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/sequence-dont.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -317,12 +331,14 @@ Keep your AMP story streamlined by putting related content in attachments. This 
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/attachment-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/attachment-do.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/attachment-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/attachment-dont.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -337,8 +353,9 @@ Keep your AMP story streamlined by putting related content in attachments. This 
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/attachment-do2.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still2.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video src="/static/img/docs/guides/storiesbp/attachment-do2.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/attachment-still2.jpg" width="360" height="720" loop autoplay noaudio></amp-video>
+      </div>
     </td>
   </tr>
   <tr>
