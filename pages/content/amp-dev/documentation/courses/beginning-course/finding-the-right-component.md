@@ -25,7 +25,7 @@ When we look at the [documentation]({{g.doc('/content/amp-dev/documentation/comp
 
 - What layouts does this component support?
 
-{{ image('/static/img/courses/beginner/image25.png', 1999, 1169, caption='AMP documentation reached via the "The documentation page for `<amp-carousel>`.') }}
+{{ image('/static/img/courses/beginner/image25.webp', 1024, 771, caption='AMP documentation page for `<amp-carousel>`.') }}
 
 Look at the following items in the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) of `<amp-carousel>`:
 
@@ -37,7 +37,7 @@ Look at the following items in the [documentation]({{g.doc('/content/amp-dev/doc
 
 - **The styling section** - This section explains how to use CSS to change the appearance of this component. Beyond styling by tag name or ID, many components provide additional CSS classes that can be used to change the appearance of the component in certain states. For example, `<amp-carousel>` provides the class `.amp-carousel-button`, which allows developers to restyle the buttons that change the carousel slide.
 
-- **The required script tag** - Located at the top of the documentation, this tag t needs to be added to the head of our site to make the component work. Most components require these additional scripts in order to work.
+- **The required script tag** - Located at the top of the documentation, this tag needs to be added to the `<head>` of our site to make the component work. Most components require these additional scripts in order to work.
 
 - **The supported layouts** - We discussed the [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.md', locale=doc.locale).url.path}}) attribute in a previous section. It controls the way the element is rendered on the screen. This section explains which layouts are valid for this component.
 
@@ -67,14 +67,14 @@ These items are listed in the documentation for almost all AMP components. Let�
 </amp-carousel>
 {% endraw %}[/sourcecode]
 
-This carousel contains three images for users to slide through. The attributes of this carousel component instance (id, width, height, layout, and type) are split into three groups: [attributes common to all HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) (`id`), [attributes common to all AMP components]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) (`width`, `height`, and `layout`), and attributes unique to the carousel component (`type`).
+This carousel contains three images for users to slide through. The attributes of this carousel component instance (`id`, `width`, `height`, `layout`, and `type`) are split into three groups: [attributes common to all HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) (`id`), [attributes common to all AMP components]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) (`width`, `height`, and `layout`), and attributes unique to the carousel component (`type`).
 
-In the documentation for `<amp-carousel>`, we see that the component can have a "type" attribute. It shows that the valid inputs for type include "slides" and "carousel."
+In the documentation for `<amp-carousel>`, we see that the component can have a `type` attribute. It shows that the valid inputs for `type` include `slides` and `carousel`.
 
-This means that if you don’t specify a type, the default will be "carousel."
+This means that if you don’t specify a `type`, the default will be `carousel`.
 
 [tip type="read-on"]
-**Tip**: Some attributes do not require a value at all. These are called [boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes). In these cases, the attribute has a default value of false and a value of true when attached to an element or component.
+**Tip**: Some attributes do not require a value at all. These are called [boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes). In these cases, the attribute has a default value of `false` and a value of `true` when attached to an element or component.
 [/tip]
 
 Many other custom attributes can be used with the `<amp-carousel>` component. When using an AMP component for the first time, look through the documentation to get a feel for all the ways that you can customize the appearance or behavior of the component through attributes.
@@ -83,9 +83,9 @@ Many other custom attributes can be used with the `<amp-carousel>` component. Wh
 
 Let’s practice using the documentation to add an `<amp-carousel>` to our project. Add a carousel under the `<p class="main-text">` element with the following settings:
 
-- Give the carousel a responsive layout.
+- Give the carousel a `responsive` layout.
 
-- Give the carousel a type of slides.
+- Give the carousel a `type` of `slides`.
 
 - Add three images to the carousel: `assets/cheddar-chaser.jpg`, `assets/cheese.jpg`, and `assets/mouse.jpg`.
 
@@ -106,14 +106,13 @@ After you have made the changes, look at the live page to check your work. Your 
 Here is how the code you added might look in your project:
 
 [sourcecode:html]
-{% raw %}<amp-carousel layout="responsive" width="412" height="309" 
-        type="slides" loop>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366" width="412" height="309"
-        layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785" width="412" height="309"
-        layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963" width="412" height="309"
-        layout="responsive"></amp-img>
+{% raw %}<amp-carousel layout="responsive" width="412" height="309" type="slides" loop>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+             width="412" height="309" layout="responsive"></amp-img>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+             width="412" height="309" layout="responsive"></amp-img>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+             width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
 
@@ -129,23 +128,23 @@ As we continue to develop our cheese bike site, we won’t always know the name 
 
 The first way to discover new AMP components is to use your favorite search engine or the search functionality on the AMP project [site](https://amp.dev/). This is an effective way to go directly to the documentation for a component that you already know by name. Additionally, you can search for descriptions of components you’re interested in to find results. Searching “YouTube videos,” for example, will bring up `<amp-youtube>` as the first result. Similarly, searching “collapsible content” will bring up the `<amp-accordion>` component as the first result.
 
-Another way to find components is to use the [AMP Components Reference]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) page. It contains a list of the components supported by AMP. Each component entry includes the name of the component and a short description of what functionality the component provides. We can access the documentation for a component by clicking on its name. As we learned earlier, the documentation will go even deeper into the behavior of the component. Based on these bits of information, we should be able to determine whether the component will fulfill our needs or whether we need to search for a different component. In a future training, we will discuss what to do if no single component meets all of our requirements.
+Another way to find components is to use the [AMP Components Reference]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}) page. It contains a list of the components supported by AMP. Each component entry includes the name of the component and a short description of what functionality the component provides. We can access the documentation for a component by clicking on its name. As we learned earlier, the documentation will go even deeper into the behavior of the component. Based on these bits of information, we should be able to determine whether the component will fulfill our needs or whether we need to search for a different component. In a future training, we will discuss what to do if no single component meets all of our requirements.
 
-{{ image('/static/img/courses/beginner/image3.png', 1778, 1178, caption='The AMP Component Reference page.') }}
+{{ image('/static/img/courses/beginner/image3.webp', 1024, 541, caption='The AMP Component Reference page.') }}
 
-Finally, we might still have questions about how the component would act on our site, or we may be unclear about how to use the component in more complex ways. The [AMP By Example](https://ampbyexample.com/components/) site has pages showcasing many AMP components, showing a variety of ways to configure those components to meet common use cases in modern websites. Usually, you can get to the corresponding AMP By Example site for a component directly from its documentation.
+Finally, we might still have questions about how the component would act on our site, or we may be unclear about how to use the component in more complex ways. The [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) section on amp.dev has pages showcasing many AMP components, showing a variety of ways to configure those components to meet common use cases in modern websites. Usually, you can get to the corresponding AMP By Example page for a component directly from its documentation.
 
-{{ image('/static/img/courses/beginner/image7.png', 1448, 1296, caption='AMP By Example page for the `<amp-carousel>` component.') }}
+{{ image('/static/img/courses/beginner/image7.webp', 1024, 699, caption='AMP By Example page for the `<amp-carousel>` component.') }}
 
 ## Exercise 6: Adding Social Sharing Links
 
 Social media links are common in modern web pages. AMP provides us with ready-made link buttons that allow users to share your page on their social media with a single click, thereby helping you grow your user engagement.
 
-Using the AMP documentation, add buttons below the `<amp-youtube>` component that let the user **share** our page with a single click. However, you will need to navigate and search within the [AMP Components Reference]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) to find the relevant AMP component. (**Hint**: The title of this section should help you find what you’re looking for.)
+Using the AMP documentation, add buttons below the `<amp-youtube>` component that let the user **share** our page with a single click. However, you will need to navigate and search within the [AMP Components Reference]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}) to find the relevant AMP component. (**Hint**: The title of this section should help you find what you’re looking for.)
 
 Once you have located the correct component, click the name of the component to access its documentation. Use that documentation to add components that:
 
-- Gives the user the option to share your page on the following platforms: Email, Google Plus, and Twitter.
+- Gives the user the option to share your page on the following platforms: Email, LinkedIn, Tumblr, and Twitter.
 
 Recommended style guidelines:
 
@@ -155,14 +154,15 @@ Recommended style guidelines:
 
 After you have completed this task, your page should contain buttons for the user to share your site:
 
-{{ image('/static/img/courses/beginner/image19.png', 310, 548,  align='center third', caption='Social media buttons embedded in the page.') }}
+{{ image('/static/img/courses/beginner/image19.webp', 375, 668,  align='center third', caption='Social media buttons embedded in the page.') }}
 
 ### Solution
 
 [sourcecode:html]
 {% raw %}<div class="social-bar">
   <amp-social-share type="email" width="44" height="44"></amp-social-share>
-  <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+  <amp-social-share type="linkedin" width="44" height="44"></amp-social-share>
+  <amp-social-share type="tumblr" width="44" height="44"></amp-social-share>
   <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
 </div>
 {% endraw %}[/sourcecode]

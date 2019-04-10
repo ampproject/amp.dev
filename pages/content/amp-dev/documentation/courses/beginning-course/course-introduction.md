@@ -47,30 +47,12 @@ To detect errors in our AMP pages, we have a valuable tool at our fingertips: th
 
 - To instead use the built-in AMP Validator, add `#development=1` at the end of your AMP page URL, and open the developer console in your browser to see the results. You don’t need to add this parameter if you’re using the Chrome extension.
 
-[tip type="note"]
-
-Note on using Glitch: To witness the validator in action, open your page in a new window to see it live by clicking the “Show Live” button on the top left. When the page is open, the icon for the AMP Validator will light up, indicating that it recognizes the page as AMP.
-
-If you’re using the Chrome extension, look at the top right of your browser just to the right of the address bar. You should see the AMP sign there. Click it.
-
-If you want to use the built-in validator, add the hash to your URL like this:
-
-For example, your URL
-
-`https://YOUR_PROJECT.glitch.me/` will become
-
-`https://YOUR_PROJECT.glitch.me/#development=1`
-
-[/tip]
-
-## What we'll build
+## What We'll Build
 
 Throughout our three courses, you will build a website for Chico’s Cheese Bicycles Shop. Chico’s has developed a revolutionary bicycle made entirely out of cheese. Demand for the new bicycles is so high that Chico’s needs to get a website up as quickly as possible. When we’re finished with these courses, Chico’s site will look like this:
 
 {{ image('/static/img/courses/beginner/image14.png', 311, 550, align='center third', caption='How the site looks at the end of the Advanced Course') }}
 
-You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner.
-
-Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category. Click on any of the products. Notice how more details about that product pop up on the screen.
+You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner. Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
