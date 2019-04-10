@@ -16,7 +16,6 @@
 
 'use strict';
 
-const cheerio = require('cheerio');
 const URL = require('url').URL;
 const config = require('@lib/config.js');
 
@@ -53,11 +52,10 @@ class FilteredPage {
    * @param {String} content A valid HTML document string
    * @param {Boolean} force  Flag if format should be validated
    */
-  constructor(format, content, force) {
+  constructor(format, dom, force) {
     this._format = format;
-    this._content = content;
 
-    this._dom = cheerio.load(this._content);
+    this._dom = dom;
     if (!this._isAvailable() && !force) {
       throw new Error(`This page is not available for format ${this._format}`);
     } else {
@@ -208,19 +206,6 @@ class FilteredPage {
         filterBubble.remove();
       }
     });
-  }
-
-  get content() {
-    let content = this._dom.html();
-
-    // As cheerio has problems with XML syntax in HTML documents the
-    // markup for the icons needs to be restored
-    content = content.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-    content = content.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-
-    return content;
   }
 }
 

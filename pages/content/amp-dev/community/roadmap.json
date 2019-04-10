@@ -704,22 +704,6 @@
           }
         },
         {
-          "createdAt": "2018-07-03T20:25:09Z",
-          "updatedAt": "2018-10-15T02:36:05Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/16552",
-            "title": "Public Documentation of AMP for Email",
-            "description": "This a feature to capture the documentation work necessary to onboard different participants of the email ecosystem.",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Email",
-                "name": "Email",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2018-03-16T18:46:42Z",
           "updatedAt": "2018-03-16T18:57:10Z",
           "issue": {
@@ -757,6 +741,22 @@
     },
     {
       "cards": [
+        {
+          "createdAt": "2018-07-03T20:25:09Z",
+          "updatedAt": "2019-04-05T15:47:26Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/16552",
+            "title": "Public Documentation of AMP for Email",
+            "description": "This a feature to capture the documentation work necessary to onboard different participants of the email ecosystem.",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Email",
+                "name": "Email",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
         {
           "createdAt": "2018-07-02T22:54:28Z",
           "updatedAt": "2019-03-29T02:56:12Z",
@@ -1225,37 +1225,6 @@
             "title": "Easy fly-in-on-scroll",
             "description": "amp-position-observer makes it possible to create complex scroll-bound & scroll-triggered animations. However, we want to make some of the most common animations trivially simple to implement. This feature covers the case where arbitrary HTML elements translate slightly across the page in as the user scrolls them into view—both the scroll-bound case and scroll-triggered, time-based case. Developers will be able to configure aspects of the animation like trigger points, timing, and animation curve.",
             "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
-                "name": "Presentation",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-04-19T16:53:46Z",
-          "updatedAt": "2018-05-29T23:20:02Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/13716",
-            "title": "Enable user choice using <amp-consent> component ",
-            "description": "#### Overview ####\r\nA new `<amp-consent>` component that enables publisher to get consents from readers and manage their consents. ",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Ads",
-                "name": "Ads",
-                "color": "1d76db"
-              },
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Analytics",
-                "name": "Analytics",
-                "color": "1d76db"
-              },
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Dynamic/Personalized%20Content",
-                "name": "Dynamic/Personalized Content",
-                "color": "1d76db"
-              },
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
                 "name": "Presentation",

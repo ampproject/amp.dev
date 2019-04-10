@@ -118,7 +118,8 @@ class SamplesBuilder {
     this._log.start('Starting to build samples ...');
 
     return new Promise((resolve, reject) => {
-      let stream = gulp.src(`${SAMPLE_SRC}/**/*.html`, {'read': true});
+      let stream = gulp.src([
+        `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`], {'read': true});
 
       // Only build samples changed since last run and if it's not a fresh build
       if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
@@ -200,6 +201,7 @@ class SamplesBuilder {
     }
     const platformHost = config.getHost(config.hosts.platform);
     return await abe.parseSample(samplePath, {
+      'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
       'hosts': {
@@ -283,12 +285,22 @@ class SamplesBuilder {
 
   /**
    * Takes the path of the sample vinyl and creates a server relative URL
+   * to use for routing and build other URLs
+   * @param  {Vinyl} sample The sample from the gulp stream
+   * @return {String}       The route
+   */
+  _getBaseRoute(sample) {
+    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+  }
+
+  /**
+   * Takes the path of the sample vinyl and creates a server relative URL
    * to use for routing and source canonical
    * @param  {Vinyl} sample The sample from the gulp stream
    * @return {String}       The route
    */
   _getDocumentationRoute(sample) {
-    let base = `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    let base = this._getBaseRoute(sample);
     if (!base.endsWith('/index.html')) {
       base += '/index.html';
     }
@@ -302,7 +314,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getPreviewRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}` +
+    return this._getBaseRoute(sample) +
       '/preview/index.html';
   }
 
@@ -313,7 +325,7 @@ class SamplesBuilder {
    * @return {String}       The route
    */
   _getSourceRoute(sample) {
-    let route = `/documentation/examples/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    let route = this._getBaseRoute(sample);
     if (!route.endsWith('/index.html')) {
       route += '/index.html'; // sample defines it's own directory
     }
@@ -354,6 +366,7 @@ class SamplesBuilder {
         '$localization': {
           'path': `/{locale}${this._getDocumentationRoute(sample)}`,
         },
+        'description': parsedSample.document.description(),
         'source': this._getSourceRoute(sample),
       }, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted

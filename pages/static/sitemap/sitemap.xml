@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://amp.dev/sitemap_grow.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://amp.dev/sitemap_manual.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://amp.dev/sitemap_ampbyexample.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://amp.dev/sitemap_ampstart.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://amp.dev/sitemap_ampproject.xml</loc>
+  </sitemap>
+</sitemapindex>

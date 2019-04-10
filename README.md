@@ -45,12 +45,6 @@ $ export AMP_DOC_TOKEN="c59f6..."
 $ npm run develop -- --import
 ```
 
-If you have checked out a local copy of the `amphtml` repository you can also import from there by running the following command. An exported GitHub token is required nevertheless.
-
-```sh
-$ npm run develop -- --import --local-amphtml-repository='</Users/...>'
-```
-
 ### Maintenance
 
 #### Documents
