@@ -19,6 +19,7 @@ const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
 
+// Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
 // It doesn't make sense to give every MarkdownDocument their own logger instance
 // therefore have one shared one
@@ -179,6 +180,16 @@ class MarkdownDocument {
       });
 
     return contents;
+  }
+
+  /**
+   * Rewrite relative links and append the given base path to them
+   * @param  {String} contents
+   * @return {String}          The rewritten content
+   */
+  rewriteRelativePaths(base) {
+    this._contents = this._contents.replace(/\[([^\]]+)\]\((?!http|#)([^\)]+)\)/g,
+        `[$1](${base}/$2)`);
   }
 
   /**
