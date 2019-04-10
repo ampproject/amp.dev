@@ -5,6 +5,7 @@
 		"repo": "ampproject/meta",
 		"from": "GOVERNANCE.md",
     "to": "community/governance.md",
+    "toc": true,
     "formats": ["websites","email","stories", "ads"]
   },
   {

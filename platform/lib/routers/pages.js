@@ -69,6 +69,24 @@ function fixCheerio(page) {
   return page;
 }
 
+/**
+ * Checks if a path ends on a directory and appends index.html if that's
+ * the case, otherwise appends .html extension
+ * @param  {String} path
+ * @return {String}
+ */
+function ensureFileExtension(path) {
+  if (path.endsWith('/')) {
+    return path += 'index.html';
+  }
+
+  if (!path.endsWith('.html')) {
+    return path += '.html';
+  }
+
+  return path;
+}
+
 
 // Setup a proxy over to Grow during development
 if (config.isDevMode()) {
@@ -93,7 +111,7 @@ if (config.isDevMode()) {
    * @return {Boolean}
    */
   async function hasManualFormatVariant(request, format) {
-    const path = request.originalUrl.replace('.html', `.${format}.html`);
+    const path = request.url.replace('.html', `.${format}.html`);
 
     const page = await got(`${growHost}${path}`).catch(() => {
       return {};
@@ -105,19 +123,6 @@ if (config.isDevMode()) {
 
     return false;
   }
-
-  // Grow has problems delivering the index.html on a root request
-  pages.use((request, response, next) => {
-    if (request.path.endsWith('/')) {
-      request.url = `${request.path}index.html`;
-    }
-
-    if (!request.path.endsWith('.html')) {
-      request.url = `${request.path}.html`;
-    }
-
-    next();
-  });
 
   // During development all requests should be proxied over
   // to Grow and be handled there, therfore create one
@@ -134,11 +139,11 @@ if (config.isDevMode()) {
         try {
           const dom = cheerio.load(body);
           new FilteredPage(activeFormat, dom);
-          const html = dom.html();
+          const html = fixCheerio(dom.html());
           response.setHeader('content-length', html.length.toString());
-          return fixCheerio(dom);
+          return html;
         } catch (e) {
-          log.warn('Could not filter request', e.message);
+          log.warn('Could not filter request', e);
           return body;
         }
       });
@@ -156,6 +161,8 @@ if (config.isDevMode()) {
   });
 
   pages.get('/*', async (request, response, next) => {
+    request.url = ensureFileExtension(request.path);
+
     // Check if there is a manually filtered variant of the requested page
     // and if so rewrite the request to this URL
     const activeFormat = getFilteredFormat(request);
@@ -201,27 +208,20 @@ if (!config.isDevMode()) {
   }
 
   pages.use('/', async (request, response, next) => {
-    let requestPath = request.path;
+    let requestPath = ensureFileExtension(request.path);
 
-    // Match root requests to a possible index.html
-    if (requestPath.endsWith('/')) {
-      requestPath = requestPath + 'index.html';
-    }
-    // Match to a file
-    if (!requestPath.endsWith('.html')) {
-      requestPath = requestPath + '.html';
-    }
+    const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
+    const hasReferrerNotification = shouldAddReferrerNotification(request);
 
     // Let the built-in middleware deal with unfiltered requests
-    if (!await shouldApplyFormatFilter(request, requestPath) &&
-        !shouldAddReferrerNotification(request)) {
+    if (!hasFormatFilter && !hasReferrerNotification) {
       return staticMiddleware(request, response, next);
     }
 
+    // Apply format and referrer transformations
     try {
       const format = getFilteredFormat(request);
-
-      if (shouldApplyFormatFilter(request, requestPath)) {
+      if (hasFormatFilter) {
         // Check if there's a manually filtered variant ...
         const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
         if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
@@ -232,10 +232,10 @@ if (!config.isDevMode()) {
 
       let page = await readFileAsync(utils.project.pagePath(requestPath));
       const dom = cheerio.load(page);
-      if (shouldApplyFormatFilter(request, requestPath)) {
+      if (hasFormatFilter) {
         new FilteredPage(format, dom, true);
       }
-      if (shouldAddReferrerNotification(request)) {
+      if (hasReferrerNotification) {
         addReferrerNotification(request.query.referrer, dom);
       }
       page = fixCheerio(dom.html());

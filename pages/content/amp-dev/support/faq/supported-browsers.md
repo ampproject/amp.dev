@@ -6,7 +6,7 @@ formats:
   - websites
   - stories
   - ads
-browsers: !g.yaml /content/shared/data/supported-browsers.yaml
+browsers: !g.yaml /shared/data/supported-browsers.yaml
 ---
 
 # AMP Supported Browsers
