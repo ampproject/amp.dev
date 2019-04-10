@@ -20,13 +20,14 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 .#{molecule('code-snippet')} {
 
   overflow-x: auto;
-  margin: 0 -15px 1em 0;
+  margin: 1.1rem -15px 0 0;
   padding: 0 1em;
   color: color('white');
   line-height: 1.3em;
   background: rgb(41,50,60);
   background: linear-gradient(225deg, rgb(41, 50, 60) 0%, color('ebony-clay') 75%);
   scrollbar-width: thin;
+  font-size: 0.9em;
 
   &::-webkit-scrollbar {
     width: 2px;
@@ -49,6 +50,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   pre {
     @include txt-mono;
     white-space: pre;
+    font-size: 0.9rem;
   }
 
   .hll { background-color: #49483e }
