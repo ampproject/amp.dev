@@ -17,6 +17,9 @@
 
 const express = require('express');
 const {setNoCache} = require('@lib/utils/cacheHelpers');
+const {LoremIpsum} = require('lorem-ipsum');
+
+const lorem = new LoremIpsum();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -38,7 +41,8 @@ examples.get('/photo-stream', (req, res) => {
         Math.floor(Math.random() * Math.floor(50));
     const r = {
       'title': 'Item ' + i,
-      imageUrl,
+      description: lorem.generateParagraphs(1),
+      imageUrl
     };
     items.push(r);
   }
