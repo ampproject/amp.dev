@@ -208,16 +208,18 @@ if (!config.isDevMode()) {
       requestPath = requestPath + '.html';
     }
 
+    const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
+    const hasReferrerNotification = shouldAddReferrerNotification(request);
+
     // Let the built-in middleware deal with unfiltered requests
-    if (!await shouldApplyFormatFilter(request, requestPath) &&
-        !shouldAddReferrerNotification(request)) {
+    if (!hasFormatFilter && !hasReferrerNotification) {
       return staticMiddleware(request, response, next);
     }
 
+    // Apply format and referrer transformations
     try {
       const format = getFilteredFormat(request);
-
-      if (shouldApplyFormatFilter(request, requestPath)) {
+      if (hasFormatFilter) {
         // Check if there's a manually filtered variant ...
         const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
         if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
@@ -228,10 +230,10 @@ if (!config.isDevMode()) {
 
       let page = await readFileAsync(utils.project.pagePath(requestPath));
       const dom = cheerio.load(page);
-      if (shouldApplyFormatFilter(request, requestPath)) {
+      if (hasFormatFilter) {
         new FilteredPage(format, dom, true);
       }
-      if (shouldAddReferrerNotification(request)) {
+      if (hasReferrerNotification) {
         addReferrerNotification(request.query.referrer, dom);
       }
       page = fixCheerio(dom.html());
