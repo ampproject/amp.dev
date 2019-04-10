@@ -75,28 +75,28 @@ stories-home
 }
 
 @mixin hl-h1 {
-  font-size: 3rem;
+  font-size: 2.2rem;
     line-height: 3.5rem;
   margin-top: 3rem;
 }
 
 @mixin hl-h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 3rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 @mixin hl-h3 {
   font-size: 1.414rem;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
 }
 
 @mixin hl-h4 {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 @mixin hl-h5 {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 @mixin hl-h6 {
