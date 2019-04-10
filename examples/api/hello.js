@@ -28,11 +28,11 @@ examples.get('/hello', (request, response) => {
   const name = request.query.name;
   if (!name || name.length > 10) {
     response.status(400);
-    response.json({ error: 'Invalid input' });
+    response.json({error: 'Invalid input'});
     return;
   }
   response.json({
-    message: `Hello, ${name}!`
+    message: `Hello, ${name}!`,
   });
 });
 
@@ -41,11 +41,11 @@ examples.post('/hello', upload.none(), (request, response) => {
   const name = request.body ? request.body.name : '';
   if (!name || name.length > 10) {
     response.status(400);
-    response.json({ error: 'Invalid input' });
+    response.json({error: 'Invalid input'});
     return;
   }
   response.json({
-    message: `Hello, ${name}!`
+    message: `Hello, ${name}!`,
   });
 });
 
