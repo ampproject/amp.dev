@@ -71,11 +71,24 @@ class ComponentReferenceImporter {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
         this._setMetadata(extension.name, document);
+        this._rewriteRelativePaths(extension.path, document);
+
         savedDocuments.push(this._saveDocument(extension.name, document));
       }
     }
 
     return Promise.all(savedDocuments);
+  }
+
+  /**
+   * Rewrites possible relatively linked documents to a fully specified
+   * GitHub URL
+   * @param {MarkdownDocument} document
+   */
+  _rewriteRelativePaths(extensionPath, document) {
+    const relativeBase = 'https://github.com/ampproject/amphtml' +
+        `/blob/master/${extensionPath}`;
+    document.rewriteRelativePaths(relativeBase);
   }
 
   /**

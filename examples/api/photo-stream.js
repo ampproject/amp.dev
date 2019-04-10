@@ -17,9 +17,7 @@
 
 const express = require('express');
 const {setNoCache} = require('@lib/utils/cacheHelpers');
-const {LoremIpsum} = require('lorem-ipsum');
-
-const lorem = new LoremIpsum();
+const casual = require('casual');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -28,21 +26,24 @@ examples.get('/photo-stream', (req, res) => {
   setNoCache(res);
   const {query} = req;
   const items = [];
-  const numberOfItems = req.query.items || 10;
-  const pagesLeft = req.query.left || 1;
-  const latency = query.latency || 0;
+  const numberOfItems = Number(query.items) || 10;
+  const pagesLeft = Number(query.left) || 1;
+  const latency = Number(query.latency) || 0;
+  const width = Number(query.width) || 200;
+  const height = Number(query.height) || width;
+  const dimensions = width === height ? String(width) : `${width}/${height}`;
 
   if (pagesLeft == 0) {
     res.json({items: []});
   }
 
   for (let i = 0; i < numberOfItems; i++) {
-    const imageUrl = 'http://picsum.photos/200?' +
-        Math.floor(Math.random() * Math.floor(50));
+    const imageId = Math.floor(Math.random() * Math.floor(50));
+    const imageUrl = `https://picsum.photos/${dimensions}?${imageId}`;
     const r = {
-      'title': 'Item ' + i,
-      description: lorem.generateParagraphs(1),
-      imageUrl
+      title: casual.title,
+      description: casual.description,
+      imageUrl,
     };
     items.push(r);
   }
