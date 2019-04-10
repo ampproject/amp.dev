@@ -12,6 +12,7 @@ LICENSE
 MAINTENANCE.md
 README.md
 CONTRIBUTING.md
+packager/
 
 # The complete frontend, pages and examples packages aren't needed on App Engine
 /frontend/

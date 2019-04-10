@@ -33,6 +33,11 @@
       "subdomain": "go-dot-amp-dev-staging",
       "host": "appspot.com",
       "port": ""
+    },
+    "packager": {
+      "scheme": "https",
+      "host": "amp-dev-sxg.appspot.com",
+      "port": ""
     }
 	}
 }
