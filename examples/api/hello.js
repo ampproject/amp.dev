@@ -32,7 +32,7 @@ examples.get('/hello', (request, response) => {
     return;
   }
   response.json({
-    message: `Hello, ${name}`
+    message: `Hello, ${name}!`
   });
 });
 
@@ -45,7 +45,7 @@ examples.post('/hello', upload.none(), (request, response) => {
     return;
   }
   response.json({
-    message: `Hello, ${name}`
+    message: `Hello, ${name}!`
   });
 });
 
