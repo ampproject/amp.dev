@@ -251,9 +251,9 @@ agenda:
       speaker: kbax
     - title: Coffee Break
       time: "1100"
-    - title: "Growing Up AMP First: Everything I Know I Learned From AMP"
+    - title: "Everything I Know I Learned from AMP: Adopting an AMP Core Mindset"
       description: Too often, engineers view AMP as "just one more thing to implement." In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages. 
-                   So, what would happen if teams began to think "AMP first"? In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making, in order to help teams align on goals and make better decisions at every level. 
+                   So, what would happen if teams began to think with an AMP Core Mindset? In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making, in order to help teams align on goals and make better decisions at every level. 
       time: "1130"
       type: session
       speaker: melissadepuydt
