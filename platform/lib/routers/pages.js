@@ -69,6 +69,24 @@ function fixCheerio(page) {
   return page;
 }
 
+/**
+ * Checks if a path ends on a directory and appends index.html if that's
+ * the case, otherwise appends .html extension
+ * @param  {String} path
+ * @return {String}
+ */
+function ensureFileExtension(path) {
+  if (path.endsWith('/')) {
+    return path += 'index.html';
+  }
+
+  if (!path.endsWith('.html')) {
+    return path += '.html';
+  }
+
+  return path;
+}
+
 
 // Setup a proxy over to Grow during development
 if (config.isDevMode()) {
@@ -143,14 +161,7 @@ if (config.isDevMode()) {
   });
 
   pages.get('/*', async (request, response, next) => {
-    // Grow has problems delivering the index.html on a root request
-    if (request.path.endsWith('/')) {
-      request.url = `${request.path}index.html`;
-    }
-
-    if (!request.path.endsWith('.html')) {
-      request.url = `${request.path}.html`;
-    }
+    request.url = ensureFileExtension(request.path);
 
     // Check if there is a manually filtered variant of the requested page
     // and if so rewrite the request to this URL
@@ -197,16 +208,7 @@ if (!config.isDevMode()) {
   }
 
   pages.use('/', async (request, response, next) => {
-    let requestPath = request.path;
-
-    // Match root requests to a possible index.html
-    if (requestPath.endsWith('/')) {
-      requestPath = requestPath + 'index.html';
-    }
-    // Match to a file
-    if (!requestPath.endsWith('.html')) {
-      requestPath = requestPath + '.html';
-    }
+    let requestPath = ensureFileExtension(request.path);
 
     // Let the built-in middleware deal with unfiltered requests
     if (!await shouldApplyFormatFilter(request, requestPath) &&
