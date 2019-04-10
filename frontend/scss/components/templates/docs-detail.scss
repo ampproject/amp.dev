@@ -67,6 +67,10 @@ body {
       @include box-shadow;
     }
 
+    amp-iframe {
+      margin-top: 1.1rem;
+    }
+
     figure {
 
       @media screen and (max-width: 575px) {
