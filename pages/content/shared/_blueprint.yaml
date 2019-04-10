@@ -1,5 +1,0 @@
-$path: /shared/{base}.html
-$view: /views/default.j2
-
-$localization:
-  path: /{locale}/shared/{base}.html

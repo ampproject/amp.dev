@@ -45,6 +45,8 @@ const SELECTOR_REWRITE_SAFE = [
   'ap-m-quote',
   'ap-m-benefit',
   'ap-m-code-snippet',
+  'ap-m-code-snippet',
+  'ap-o-component-visual',
   'ap-o-news-item',
   'ap-o-benefits',
   'ap-o-case-band',
@@ -54,6 +56,7 @@ const SELECTOR_REWRITE_SAFE = [
   'ap-o-header',
   'ap-o-stage',
   'ap-o-teaser-grid',
+  'ap-t-what-is-amp',
 ];
 
 // Do not rewrite all example pages as users might need correct source code
