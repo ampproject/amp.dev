@@ -43,7 +43,7 @@ examples.get('/photo-stream', (req, res) => {
     const r = {
       title: casual.title,
       description: casual.description,
-      imageUrl
+      imageUrl,
     };
     items.push(r);
   }
