@@ -11,7 +11,7 @@
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="/components/amp-autocomplete/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>amp-autocomplete</title>
@@ -83,7 +83,7 @@
     A **datasource** must be a JSON object containing an array property `items`, and can be specified inline with a child `script type="application/json"` tag, or a server endpoint specified with a `src` attribute.
   -->
   <form>
-    <amp-autocomplete filter="substring">
+    <amp-autocomplete filter="substring" min-characters="0">
       <input type="text">
       <script type="application/json">
         {
@@ -96,9 +96,41 @@
   <!-- 
     Alternatively, a datasource can also be provided as remote data through the `src` attribute.
   -->
-  <amp-autocomplete filter="substring" src="<%host%>/json/amp-autocomplete-cities.example.json">
-    <input type="text">
-  </amp-autocomplete>
+  <form>
+    <amp-autocomplete filter="substring" min-characters="0" src="/static/samples/json/amp-autocomplete-cities.json">
+      <input type="text">
+    </amp-autocomplete>
+</form>
+
+  <!-- 
+    ## Dynamic `src`
+
+    The content of an `amp-autocomplete` can be changed dynamically by modifying its `src` value using `amp-bind`.
+  -->
+  <div>
+    <div class="suggest-data">
+      <button on="tap:AMP.setState({ srcUrl: '/static/samples/json/amp-autocomplete-countries.json' })">Suggest countries</button>
+      <button on="tap:AMP.setState({ srcUrl: '/static/samples/json/amp-autocomplete-cities.json' })">Suggest US cities</button>
+    </div>
+    <form class="sample-form"
+      method="post"
+      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+      target="_top">
+      <div class="input-field">
+        <amp-autocomplete filter="substring" min-characters="0"
+            src="/static/samples/json/amp-autocomplete-cities.json"
+            [src]="srcUrl">
+            <input type="text" name="location" required>
+        </amp-autocomplete>
+        <input class="submit-button" name="submit-button" type="submit" value="Submit"><br>      
+      </div>
+      <div submit-success>
+        <template type="amp-mustache">
+          Success! Mailing a postcard to {{location}}.
+        </template>
+      </div>
+    </form>
+  </div>
 
   <!-- 
     ## Suggesting rich content
@@ -122,49 +154,67 @@
     By default, `amp-autocomplete` will suggest items by matching on the "value" property of each JsonObject, but for more specified data, an attribute `filter-value` can be provided to signify the appropriate property to search on. 
     In the above example, we will want to search on the property `name`, because that is what the user will most likely search for.
   -->
-  <amp-autocomplete src="<%host%>/json/amp-autocomplete-fruit.json" filter="substring"
-    filter-value="name">
-    <input type="text">
-    <template type="amp-mustache">
-      <div class="fruit-autocomplete" value="name">
-        <amp-img width="150"
-          height="100"
-          alt="{{name}}"
-          src="{{img}}"></amp-img>
-        <div></div>
-          <div>{{name}}</div>
-          <div>${{price}}</div>
-        </div>
-      </div>
-    </template>
-  </amp-autocomplete>
+  <form class="sample-form"
+    method="post"
+    action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+    target="_top">
+    <label>
+        <span>Search for</span>
+        <amp-autocomplete filter="token-prefix" filter-value="city" min-characters="0">
+          <input type="text" name="term">
+            <script type="application/json">
+                { "items" : [
+                    {
+                        "city" : "Albany",
+                        "state" : "New York", 
+                        "areaCode" : 518,
+                        "population" : 98251
+                    }, {
+                        "city" : "Annapolis",
+                        "state" : "Maryland",
+                        "areaCode" : 410,
+                        "population" : 39321
+                    }, {
+                        "city" : "Trenton",
+                        "state" : "New Jersey",
+                        "areaCode" : 609,
+                        "population" : 84964
+                    }
+                ] }
+            </script>
+            <template type="amp-mustache" id="amp-template-custom">
+                <div class="city-item" value="{{city}}, {{state}}">
+                    <div>{{city}}, {{state}}</div>
+                    <div class="custom-population">Population: {{population}}</div>        
+                </div>
+            </template>
+        </amp-autocomplete>
+    </label>
+    <input type="submit" value="Search">
+    <div submit-success>
+      Success!
+    </div>
+    <div submit-error>
+      Error!
+    </div>
+</form>
 
   <!-- 
-    ## Dynamic `src`
+    ## Default state
 
-    The content of an `amp-autocomplete` can be changed dynamically by modifying its `src` value using `amp-bind`.
+    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating. 
   -->
   <div>
-    <div class="suggest-data">
-      <button on="tap:AMP.setState({ srcUrl: '<%host%>/json/amp-autocomplete-countries.example.json' })">Suggest countries</button>
-      <button on="tap:AMP.setState({ srcUrl: '<%host%>/json/amp-autocomplete-cities.example.json' })">Suggest US cities</button>
-    </div>
-    <form method="post"
-      action-xhr="/form/echo-json/post"
-      target="_blank">
-      <div class="input-field">
-        <amp-autocomplete filter="substring" min-characters="0"
-            src="<%host%>/json/amp-autocomplete-cities.example.json"
-            [src]="srcUrl">
-            <input type="text" name="location" required>
-        </amp-autocomplete>
-        <input class="submit-button" name="submit-button" type="submit" value="Submit"><br>      
-      </div>
-      <div submit-success>
-          <template type="amp-mustache">
-              Success! Mailing a postcard to {{location}}.
-          </template>
-      </div>
+    <form class="sample-form"
+      method="post"
+      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+      target="_top">
+      <amp-autocomplete filter="substring" min-characters="0"
+          src="/static/samples/json/amp-autocomplete-cities.json"
+          [src]="srcUrl">
+          <input type="text">
+      </amp-autocomplete>
+      <input class="submit-button" name="submit-button" type="submit" value="Search"><br>
     </form>
   </div>
 
