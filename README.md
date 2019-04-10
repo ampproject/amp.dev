@@ -18,14 +18,8 @@ that makes a merge over to the original repository beneficial.
     $ curl https://install.grow.io | bash
     ```
 
-1.  Install the stable version of [Yarn](https://yarnpkg.com/). (Mac and Linux: [here](https://yarnpkg.com/en/docs/install#alternatives-stable), Windows: [here](https://yarnpkg.com/lang/en/docs/install/#windows-stable))
-    ```sh
-    $ curl -o- -L https://yarnpkg.com/install.sh | bash
-    ```
-
 1.  Install the dependencies for the project:
     ```sh
-    $ cd platform
     $ npm install
     ```
 
