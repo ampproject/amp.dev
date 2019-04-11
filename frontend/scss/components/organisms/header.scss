@@ -50,14 +50,6 @@
     padding-left: 30px;
   }
 
-  input {
-    display: none;
-  }
-
-  .ap-o-header-main-item-radio-btn:checked ~ .ap-o-header-flyout {
-    display: block;
-  }
-
   &-home {
     position: -webkit-sticky;
     position: sticky;
@@ -84,12 +76,12 @@
         }
       }
 
-    &-sub-title {
-      color: color('black');
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
+      &-sub-title {
+        color: color('black');
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
   }
 
   &-main {
@@ -106,51 +98,44 @@
       display: flex;
       align-items: center;
       margin: 0 18px -5px;
-      padding-bottom: 14px;
-    }
-
-    &-item:hover {
-
-      & > .ap-o-header-flyout {
-          opacity: 1;
-          pointer-events: all;
-          transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-          &-secondary {
-            z-index: -1;
-          }
-      }
     }
 
     &-link {
-      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0 0 14px 0;
+      border: 0;
+      background: none;
 
       &-icon {
         font-size: 8px;
         margin-left: 5px;
         transform: rotate(0deg);
         transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
-
-        &.right {
-          transform: rotate(-90deg);
-          margin-left: auto;
-          font-size: 10px;
-        }
       }
     }
   }
 
+  &-main-link:hover ~ &-flyout,
+  &-main-link:focus ~ &-flyout,
+  &-flyout:hover,
+  &-flyout:focus-within {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
   &-flyout {
     @include flyout;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    margin: 0;
+    padding: 0 0 10px;
     pointer-events: none;
     opacity: 0;
     list-style: none;
     background: color('white');
-    position: absolute;
-    left: 0;
-    top: 95%;
-    padding: 0 0 10px;
-    margin: 0;
     border-radius: 0 0 4px 4px;
     transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
@@ -163,18 +148,6 @@
       margin-bottom: 10px;
     }
 
-    &-label {
-      /* Expand the label over the link in case the device can't hover */
-      @media (hover: none) {
-        position: absolute;
-        display: flex;
-        width: calc(100% + 14px);
-        height: 100%;
-        justify-content: flex-end;
-        align-items: center;
-      }
-    }
-
     &-item {
 
       &-secondary {
@@ -182,7 +155,7 @@
         white-space: nowrap;
         min-width: 200px;
 
-        &:hover > a {
+        a:hover {
           color: color('blue-ribbon');
         }
       }
@@ -211,17 +184,6 @@
       }
     }
 
-    &-secondary {
-      left: 100%;
-      top: 15%;
-      padding: 5px 30px;
-      z-index: -1;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-
     &-primary-item {
       position: relative;
       width: 300px;
@@ -235,21 +197,21 @@
         }
 
         &-info-stories {
-          .ap-o-header-flyout-item-title {
+          .#{organism('header')}-flyout-item-title {
             @include color-stories;
           }
 
-          .ap-o-header-flyout-item-description {
+          .#{organism('header')}-flyout-item-description {
             @include color-stories;
           }
         }
 
         &-info-email {
-          .ap-o-header-flyout-item-title {
+          .#{organism('header')}-flyout-item-title {
             @include color-e-mails;
           }
 
-          .ap-o-header-flyout-item-description {
+          .#{organism('header')}-flyout-item-description {
             @include color-e-mails;
           }
         }
@@ -281,23 +243,6 @@
         &.email {
           @include gradient-e-mails;
         }
-      }
-
-
-      &:hover > .ap-o-header-flyout-secondary {
-        pointer-events: auto;
-        opacity: 1;
-        transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-      }
-
-      &:hover .ap-o-header-main-link-icon {
-        &.right {
-          display: none;
-        }
-      }
-
-      &:hover .ap-o-header-flyout-secondary {
-        display: block;
       }
 
       &-link {
