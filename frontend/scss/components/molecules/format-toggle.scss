@@ -116,6 +116,7 @@
 
     .#{molecule('format-toggle')}-selected:focus + &,
     .#{molecule('format-toggle')}-selected:hover + &,
+    &:focus-within,
     &:hover {
       pointer-events: auto;
       opacity: 1;
