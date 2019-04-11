@@ -8,10 +8,12 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_icon.scss';
 
 @import 'teaser';
 
@@ -22,13 +24,9 @@
 		& > a {
 			@include teaser-linking;
 			height: 100%;
-			
+
 			&:hover {
 				@include teaser-linking-hover;
-
-				.#{molecule('teaser')}-card {
-					@include teaser-card-hover;
-				}
 			}
 		}
 	}
@@ -52,7 +50,7 @@
 			@include teaser-content;
 			padding-top: 39px;
 		}
-		
+
 		&-video-length {
 			@include video-length;
 		}
@@ -69,5 +67,28 @@
 		&-copy {
 			@include teaser-copy;
 		}
+
+    &-icon {
+      @include box-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      top: 0;
+      min-height: 100px;
+      width: 100%;
+      z-index: 2;
+      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+
+      .#{atom('ico')} {
+        @include ico-10;
+        fill: color('white');
+
+        svg {
+          padding: 1.75rem 0;
+        }
+      }
+    }
+
 	}
 }
