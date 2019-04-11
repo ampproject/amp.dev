@@ -200,13 +200,13 @@ You can also test in Chrome with the help of the [ModHeader extension](https://c
 
 
 
-{{ image('/static/img/docs/guides/sxg/sxg1.png', 1900, 666, layout='responsive', alt='Testing Chrome with the help of the ModHeader extension', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg1.jpg', 1900, 666, layout='responsive', alt='Testing Chrome with the help of the ModHeader extension', caption=' ', align='' ) }}
 
 
 After requesting `https://example.com/` your server will deliver a Signed Exchange, but it should look and behave the same as before. You will need to check that a Signed Exchange is correctly being returned via the[ DevTools console](https://developers.google.com/web/tools/chrome-devtools/).
 
 
-{{ image('/static/img/docs/guides/sxg/sxg2.png', 3058, 1204, layout='responsive', alt='Signed exchange header displayed in the DevTools console', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg2.jpg', 3058, 1204, layout='responsive', alt='Signed exchange header displayed in the DevTools console', caption=' ', align='' ) }}
 
 Under the `Network` tab, click on your domain name and check that `Signed HTTP exchange` appears under `Preview`. 
 
@@ -228,7 +228,7 @@ If your AMP pages were successfully distributed with Signed Exchanges, their sea
 Within the DevTools console, under the `network` tab, you will be able to see `signed-exchange` under the `type` column.  
 
 
-{{ image('/static/img/docs/guides/sxg/sxg3.png', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
 
 [tip type="read-on"]
 The ["Add SXG support to ABE"](https://github.com/ampproject/amp-by-example/pull/1592) Pull Request to `amp-by-example` demonstrates the changes necessary to support Signed Exchanges on `https://ampbyexample.com`. 
