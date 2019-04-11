@@ -1,6 +1,11 @@
 ---
 $title: Welcome to the AMP community!
 $order: 1
+$titles:
+  teaser: Beginning Course
+teaser:
+  label: Start now
+description: 'Learn about AMP and how it helps. Create your first AMP page!'
 ---
 
 ## Why AMP?
@@ -42,4 +47,3 @@ Learning AMP is a great way to learn web development because AMP sites are:
 You’ll acquire skills while building AMP pages that can be transferred to building websites in other formats or frameworks. Like many popular frameworks, AMP is a component-based approach to designing and building websites. You will learn to build websites with recognized best practices, start thinking in components, and avoid bad habits that harm user experience. These universal skills can be applied across the web.
 
 AMP addresses performance, accessibility, and responsive design so that you can focus on the features. However, if you want to hone your skills, learning AMP can also help you discover exactly how AMP addresses these concerns. You will continue to learn and mature as a developer, even while your users enjoy the experiences that AMP helped you to build.
-

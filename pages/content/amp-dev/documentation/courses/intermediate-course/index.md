@@ -1,6 +1,11 @@
 ---
 $title: Course Introduction
 $order: 1
+$titles:
+  teaser: Intermediate Course
+teaser:
+  label: Start now
+description: 'Learn to combine components and create simple user interactions.'
 ---
 
 ## Welcome Back
