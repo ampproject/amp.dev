@@ -39,8 +39,10 @@ const routers = {
     'api': require('@examples'),
   },
   'static': require('@lib/routers/static.js'),
+  'go': require('@lib/routers/go.js'),
   'playground': require('../../playground/backend/'),
   'boilerplate': require('../../boilerplate/backend/'),
+  'notFound': require('@lib/routers/notFound.js'),
 };
 
 class Platform {
@@ -122,6 +124,7 @@ class Platform {
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
+    this.server.use(subdomain.map(config.hosts.go, routers.go));
     // eslint-disable-next-line new-cap
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
       routers.example.embeds,
@@ -142,9 +145,7 @@ class Platform {
       }
     });
     // handle 404s
-    this.server.use((req, res, next) => { // eslint-disable-line no-unused-vars
-      res.status(404).sendFile('404.html', {root: pagePath()});
-    });
+    this.server.use(routers.notFound);
   }
 };
 
