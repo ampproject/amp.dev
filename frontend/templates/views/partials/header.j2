@@ -85,22 +85,20 @@
 
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
-      <a class="ap-m-language-selector-toggle" href="#">
+      <button class="ap-m-language-selector-toggle" aria-label="{{ _('Select a language') }}">
         <span class="ap-m-nav-link">{{ doc.locale.language|upper }}</span>
         {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <div class="ap-a-ico ap-m-language-selector-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
         </div>
-      </a>
-      <ul class="ap-m-language-selector-list">
+      </button>
+      <div class="ap-m-language-selector-list" role="list">
         {% for locale in doc.locales if not locale == doc.locale  %}
         {% set localized_doc = doc.localize(locale) %}
-        <li class="ap-m-language-selector-list-item">
-          {# Need to manually replace as doc.public_path is not available #}
-          <a class="ap-m-nav-link" href="{{ localized_doc.url.path.replace('/index.html', '/') }}">{{ locale.get_language_name()|capitalize }}</a>
-        </li>
+        {# Need to manually replace as doc.public_path is not available #}
+        <a class="ap-m-nav-link" href="{{ localized_doc.url.path.replace('/index.html', '/') }}" role="listitem">{{ locale.get_language_name()|capitalize }}</a>
         {% endfor %}
-      </ul>
+      </div>
     </div>
   </div>
 </header>

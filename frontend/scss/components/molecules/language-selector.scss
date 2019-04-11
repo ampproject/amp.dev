@@ -29,7 +29,8 @@
   &-toggle {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    border: none;
+    background: none;
   }
 
     &-icon {
@@ -50,7 +51,9 @@
   }
 
   /* For when the selector is active */
-  &-toggle:focus ~ &-list, &-toggle:hover ~ &-list, &-list:hover {
+  &-toggle:focus ~ &-list,
+  &-toggle:hover ~ &-list,
+  &-list:hover {
       display: block;
   }
 
