@@ -62,17 +62,16 @@ $borderSize: 5px;
       margin: 0 0 0.75em;
     }
 
-    p {
+    p,
+    ul,
+    ol {
       @include txt-2;
 
-      &:last-child {
-        margin-bottom: 0;
+      &:first-child {
+        margin-top: 0;
       }
     }
 
-    ul {
-      margin-bottom: 1.5em;
-    }
   }
 
   &-icon {

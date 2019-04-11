@@ -48,11 +48,15 @@
     @include txt;
     @include txt-p;
     padding-left: 2em;
-    margin: 1.5em 0 2.5em;
+    margin: 1.5em 0 1.5em;
+
+    ul,
+    ol {
+      margin: 0;
+    }
 
     li {
       padding-left: 0.5em;
-      margin-bottom: 0.5em;
 
       p {
         font-size: 1em;

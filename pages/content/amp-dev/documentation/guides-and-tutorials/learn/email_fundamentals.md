@@ -8,11 +8,9 @@ formats:
 
 If you're familiar with AMP, great news! AMP for Emails is just a subset of the AMP HTML library. If you're unfamiliar with AMP, also great news! This guide will give you everything you need to know to get started writing valid AMP Emails! 
 
-
-# Required Markup
+## Required Markup
 
 AMP Emails look like classic HTML emails, but with a few differences. Below is the minimum amount of markup required to make an email a valid AMP email.
-
 
 ```html
 <!doctype html>
@@ -28,10 +26,7 @@ AMP Emails look like classic HTML emails, but with a few differences. Below is t
 </html>
 ```
 
-
 Email providers who support AMP Emails have set up security checks to ensure users get a delightful and safe experience. An email build with AMP must meet all requirements:
-
-
 
 *   Start with the `<!doctype html>` doctype. This is also standard for HTML.
 *   Contain a top-level a `<html amp4email>` tag, or an `<html ⚡4email>` tag if your email is extra cool. This identifies the document as an AMP Email so it can be treated as such.
@@ -47,15 +42,12 @@ Email providers who support AMP Emails have set up security checks to ensure use
 </head>
 ```
 
-
-
-
-## AMP Specific Tag Replacements 
+### AMP Specific Tag Replacements 
 
 Since the AMP for Email library is a subset of the AMP HTML library, many of the same rules apply; AMP specific tags replace resource heavy HTML tags and require a defined width and height. This allows the AMP boilerplate to hide content until it has an idea of how it looks on the user's device. 
 
 
-### Images
+#### Images
 
 To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](https://amp.dev/documentation/components/reference/amp-img.html?format=email). The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.html?format=email).
 
@@ -74,10 +66,9 @@ The `<amp-img>` tag comes with powerful, built-in ways to control responsive des
     Read more about using the AMP [layout and media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.html?format=email) and how to set [image fallbacks](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.html?format=email). 
 [/tip]
 
-### GIFs
+#### GIFs
 
 AMP has created [`<amp-anim>`](https://amp.dev/documentation/components/reference/amp-anim.html?format=email), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
-
 
 ```
 <amp-anim 
@@ -87,9 +78,7 @@ AMP has created [`<amp-anim>`](https://amp.dev/documentation/components/referenc
 </amp-anim>
 ```
 
-
 Additionally, it supports an optional `placeholder` child to display while the `src` file is loading, and supports the AMP layout system. 
-
 
 ```
 <amp-anim width=400 height=300 src="my-gif.gif" layout="responsive">
@@ -98,12 +87,9 @@ Additionally, it supports an optional `placeholder` child to display while the `
 </amp-anim>
 ```
 
-
-
-# Emails, with style 
+## Emails, with style 
 
 Like all email clients, AMP allows for inline `style` attributes, but also supports CSS within the `<style amp-custom>` tag inside the head of the email.
-
 
 ```html
 ...
@@ -125,10 +111,7 @@ Like all email clients, AMP allows for inline `style` attributes, but also suppo
 
 In Gmail, AMP email supports attributes and pseudo-classes disallowed in other email MIME types. 
 
-
-## Additional CSS Attributes
-
-
+### Additional CSS Attributes
 
 *   align-items
 *   box-shadow
@@ -148,9 +131,7 @@ In Gmail, AMP email supports attributes and pseudo-classes disallowed in other e
     *   only values from -100-100 are allowed
 
 
-## CSS Pseudo-classes
-
-
+### CSS Pseudo-classes
 
 *   active
 *   checked
@@ -180,19 +161,15 @@ In Gmail, AMP email supports attributes and pseudo-classes disallowed in other e
 *   required
 *   valid
 
-
-## Media query features
+### Media query features
 
 *   [pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 
-
-# Allowed AMP Components
+## Allowed AMP Components
 
 The dynamic, visual, and interactivity features of AMP components is what takes AMP Emails into the future of email. The AMP Email components sub-sect is divided into dynamic content and layout elements. 
 
-
-## Dynamic Content
-
+### Dynamic Content
 
 <table>
   <tr>
@@ -241,10 +218,7 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
   </tr>
 </table>
 
-
-
-## Layout Elements
-
+### Layout Elements
 
 <table>
   <tr>

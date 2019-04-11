@@ -61,15 +61,14 @@ TODO: mono (inline, block)
 
 @mixin txt-hl {
 	display: block;
-	margin-top: 0;
-	margin-bottom: 0.75em;
+	margin-top: 1em;
 	line-height: 1.25em;
 }
 
 @mixin txt-p {
 	display: block;
-	margin-top: 0;
-	margin-bottom: 0.75em;
+	margin-top: 1.1em;
+	margin-bottom: 0;
 }
 
 @mixin txt-mono {
@@ -84,6 +83,7 @@ TODO: mono (inline, block)
 	word-break: normal;
 	color: color('black');
 	background-color: #eee;
+	font-size: 0.9em;
 }
 
 @mixin txt-mono-block {
