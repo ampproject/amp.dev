@@ -264,34 +264,22 @@
                 <span class="ap-m-lnk-text">Download PDF</span>
               </a>
             </div>
-            {% if content.background %}
-              <div class="ap-m-text-media media bg-{{content.background}}">
-            {% else %}
-              <div class="ap-m-text-media media">
-            {% endif %}
+
+            <div class="ap-m-text-media media{% if content.background %} bg-{{content.background}}{% endif %}">
               {% if content.type %}
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
                 <amp-img
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
+                  class="ap--media"
                   layout="responsive"
-                  src="{{content.image_src}}"
+                  height="{{content.height}}"
                   width="{{content.width}}"
-                  class="ap--media">
+                  src="{{content.image_src}}"
+                  alt="{{content.alt}}">
                 </amp-img>
               </div>
-              {% else %}
-              <amp-img
-                alt="{{content.alt}}"
-                height="{{content.height}}"
-                layout="responsive"
-                src="{{content.image_src}}"
-                width="{{content.width}}"
-                class="ap--media">
-              </amp-img>
               {% endif %}
             </div>
           </div>

@@ -49,6 +49,7 @@
   "dependencies": {
     "amp-toolbox-cors": "0.2.4",
     "amp-toolbox-runtime-version": "0.2.6",
+    "casual": "1.6.0",
     "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
     "express": "4.16.4",
@@ -69,7 +70,7 @@
     "@babel/plugin-transform-runtime": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "@babel/runtime": "7.4.3",
-    "@octokit/rest": "16.23.2",
+    "@octokit/rest": "16.23.4",
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.6",
     "amp-toolbox-optimizer": "0.5.2-beta.6",

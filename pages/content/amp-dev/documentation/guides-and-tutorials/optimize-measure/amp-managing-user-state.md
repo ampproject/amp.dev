@@ -378,7 +378,7 @@ In this task, we’ll cover an additional optimization that helps when the user 
 
 ##### Using substitution features
 
-Our approach will take advantage of two types of [AMP variable substitutions](./amp-var-substitutions.md).
+Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
 
 **To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` (“referrer ID”), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 

@@ -9,7 +9,7 @@ formats:
 
 
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
-To ensure minimum latency and quality, please follow the instructions listed [here](../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to the AMP project, please see [here](../CONTRIBUTING.md).
+To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to the AMP project, please see [here](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
 
 ## Ad Server
 
@@ -30,7 +30,7 @@ For example : Amazon A9 server can be invoked by using following syntax:
 </amp-ad>
 [/sourcecode]
 
-Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
+Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
 
 For details on how to integrate your ad network with AMP, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
