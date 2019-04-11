@@ -3,7 +3,7 @@ $title: Learn AMP!
 $titles:
   navigation: Courses
   teaser: Courses
-$view: /views/overview/guides.j2
+$view: /views/overview/courses.j2
 $path: /documentation/courses/index.html
 $localization:
   path: /{locale}/documentation/courses/index.html
@@ -20,52 +20,19 @@ flyout:
   <p>These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!</p>
 </section>
 
-{% do doc.styles.addCssFile('/css/components/organisms/format-cards.css') %}
-<section class="ap--format-cards">
-  <div class="ap-o-format-cards-card">
-    <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-stories">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#learn"></use></svg>
+{% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
+<section class="ap--section">
+  {% set courses = [
+    g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale),
+    g.doc('/content/amp-dev/documentation/courses/intermediate-course/index.md', locale=doc.locale),
+    g.doc('/content/amp-dev/documentation/courses/advanced-course/index.md', locale=doc.locale),
+    ] %}
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
+      {% for teaser_doc in courses %}
+      {% include '/views/partials/teaser.j2' %}
+      {% endfor %}
     </div>
-    <h4 class="ap-o-format-cards-card-headline">Beginning Course</h4>
-    <p class="ap-o-format-cards-card-copy">Learn about AMP and how it helps. Create your first AMP page!</p>
-    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path}}?format=stories"
-      class="ap-m-lnk">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">Start course now</span>
-    </a>
-  </div>
-  <div class="ap-o-format-cards-card">
-    <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-ads">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
-    </div>
-    <h4 class="ap-o-format-cards-card-headline">Intermed&shy;iate Course</h4>
-    <p class="ap-o-format-cards-card-copy">Learn to combine components and create simple user interactions.</p>
-    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path}}?format=ads"
-      class="ap-m-lnk">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">Start course now</span>
-    </a>
-  </div>
-  <div class="ap-o-format-cards-card">
-    <div class="ap-a-ico ap-o-format-cards-card-icon ap-o-format-cards-card-icon-emails">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
-    </div>
-    <h4 class="ap-o-format-cards-card-headline">Advanced Course</h4>
-    <p class="ap-m-format-card-copy">Learn to create advanced user interactions and use server content.</p>
-    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale).url.path}}?format=email"
-      class="ap-m-lnk">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">Start course now</span>
-    </a>
   </div>
 </section>
 
