@@ -27,6 +27,12 @@
       "subdomain": "preview",
       "host": "amp.dev",
       "port": ""
+    },
+    "go": {
+      "scheme": "https",
+      "subdomain": "go",
+      "host": "amp.dev",
+      "port": ""
     }
 	}
 }

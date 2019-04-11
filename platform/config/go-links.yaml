@@ -1,0 +1,7 @@
+# Use via: go.amp.dev/samples
+/samples: /documentation/examples/
+/docs: /documentation/
+/websites: /about/websites
+/stories: /about/stories
+/ads: /about/ads
+/email: /about/email
