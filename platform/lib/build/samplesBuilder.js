@@ -140,7 +140,9 @@ class SamplesBuilder {
             return;
           }
 
-          this._addToSitemap(sample, parsedSample);
+          if (!parsedSample.document.metadata.disablePlayground) {
+            this._addToSitemap(sample, parsedSample);
+          }
 
           // Build various documents and sources that are needed for Grow
           // to successfully render the example and for the playground
