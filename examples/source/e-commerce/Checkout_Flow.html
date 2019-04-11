@@ -45,7 +45,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
 
       <!-- ## Sign-in Support -->
 
-        <!-- We use `amp-access` to integrate login and to show and hide a login button depending on whether the user is logged in. [amp-access](/components/amp-access) requires the definition of 3 endpoints as documented [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+        <!-- We use `amp-access` to integrate login and to show and hide a login button depending on whether the user is logged in. [amp-access](/documentation/examples/components/amp-access/) requires the definition of 3 endpoints as documented [here](/documentation/components/amp-access).
 
         This sample allows an user to login and logout using either email/password or [Google sign in](https://developers.google.com/identity/sign-in/web/). Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-page).  -->
           <script id="amp-access" type="application/json">
@@ -254,7 +254,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
             <!-- ## Shipping & Billing Address -->
             <!-- Logged in users (`amp-access="loggedIn"`) can select an existing address which are pulled in using another amp-list. This section is initially hidden via the `amp-access-hide` attribute.
 
-              <p>We provide a third option for users to enter a new address. The radio button's [change action]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) triggers the visibilityof the address form `on="change:manualShippingAddress.toggleVisibility"`.</p>
+              <p>We provide a third option for users to enter a new address. The radio button's [change action](/documentation/guides-and-tutorials/learn/amp-actions-and-events) triggers the visibilityof the address form `on="change:manualShippingAddress.toggleVisibility"`.</p>
             -->
             <section class="checkout-section" amp-access="loggedIn" amp-access-hide>
               <h3>Select Shipping Address</h3>
@@ -437,7 +437,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
           </section>
 
           <!--
-            Note: This sample does not include any form validation. However, this can be easily added using AMP's support for [custom form validation](https://ampbyexample.com/components/amp-form/#form-custom-validation).
+            Note: This sample does not include any form validation. However, this can be easily added using AMP's support for [custom form validation](https://amp.dev/documentation/examples/components/amp-form/#form-custom-validation).
           -->
           <!-- -->
       </div>

@@ -302,7 +302,7 @@ This sample showcases how to build a product page in AMP HTML.
         "@context": "http://schema.org/",
         "@type": "Product",
         "name": "Apple",
-        "image": "http://www.ampbyexample.com/img/golden_apple1_1024x682.jpg",
+        "image": "https://amp.dev/static/samples/img/golden_apple1_1024x682.jpg",
         "description": "Lorem ipsum",
         "mpn": "925872",
         "brand": {
@@ -334,7 +334,7 @@ This sample showcases how to build a product page in AMP HTML.
     <body>
 
       <!-- ## Navigation -->
-      <!-- Use the [amp-sidebar](/documentation/components/reference/amp-sidebar.html) component to give customers the chance to quickly jump to any of your product categories.-->
+      <!-- Use the [amp-sidebar](/documentation/components/amp-sidebar) component to give customers the chance to quickly jump to any of your product categories.-->
       <amp-sidebar id="drawermenu" layout="nodisplay">
         <a href="/" class="caps text-decoration-none block p1">Products</a>
         <hr/>
@@ -361,7 +361,7 @@ This sample showcases how to build a product page in AMP HTML.
       <h2 class="m1">Apple</h2>
 
       <!-- ## Social Sharing -->
-      <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/documentation/components/reference/amp-social-share.html). -->
+      <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/documentation/components/amp-social-share). -->
       <div class="m1">
         <amp-social-share type="twitter"
                           width="30"
@@ -500,7 +500,7 @@ This sample showcases how to build a product page in AMP HTML.
             hidden
             class="fadeIn"
             [hidden]="product.selectedColor != 'golden'">
-        <amp-img src="/static/samples/img/golden_apple1_1024x682.jpg"
+        <amp-img src=" <% hosts.platform %>/static/samples/img/golden_apple1_1024x682.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
@@ -738,7 +738,7 @@ This sample showcases how to build a product page in AMP HTML.
     </div>
     <!--
     With AMP, you can easily pull in different latest offers or highlights without changing the page. To do so, just use `amp-list` to fire a CORS request to a JSON endpoint which supplies the list of related products. These are populated into an amp-mustache template on the client.
-    Learn more about `amp-list` [here](/documentation/components/reference/amp-list.html).
+    Learn more about `amp-list` [here](/documentation/components/amp-list).
     -->
     <amp-list class="items m1"
               width="auto"

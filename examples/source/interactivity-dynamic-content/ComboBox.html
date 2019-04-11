@@ -192,7 +192,7 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
         <!--
           ## The text input
 
-          The implementation of the combobox is based on the [Autosuggest Sample](<% hosts.platform %>/documentation/examples/advanced/autosuggest_form.html). It takes an input field with auto suggestion and adds an additional button to expand and collapse the suggestions. We listen to the [`input-debounced`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#input-elements) event for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. We also bind the input value to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
+          The implementation of the combobox is based on the [Autosuggest Sample](<% hosts.platform %>/documentation/examples/advanced/autosuggest_form.html). It takes an input field with auto suggestion and adds an additional button to expand and collapse the suggestions. We listen to the [`input-debounced`](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements) event for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. We also bind the input value to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
         -->
           <input id="input-city"
                class="combo-input"

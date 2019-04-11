@@ -52,7 +52,7 @@
 
   <!-- ## Basic usage -->
   <!--
-    Embed the [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) widget choosing a share type from the [supported types]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#types).
+    Embed the [`amp-social-share`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) widget choosing a share type from the [supported types](/documentation/components/amp-social-share#pre-configured-providers).
 
     `amp-social-share` with `type="facebook"` requires to specify the [facebook app id](https://developers.facebook.com/apps) via `data-attribution`.
   -->
@@ -61,7 +61,7 @@
     <amp-social-share type="facebook" data-param-app_id="254325784911610"></amp-social-share>
     <amp-social-share type="gplus"></amp-social-share>
     <amp-social-share type="linkedin"></amp-social-share>
-    <amp-social-share type="pinterest" data-param-media="https://ampbyexample.com/img/amp.jpg"></amp-social-share>
+    <amp-social-share type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
     <amp-social-share type="tumblr"></amp-social-share>
     <amp-social-share type="twitter"></amp-social-share>
     <amp-social-share type="whatsapp"></amp-social-share>
@@ -70,7 +70,7 @@
 
   <!-- ## Configuration -->
   <!--
-    Embed the `amp-social-share` widget [choosing a type]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#types), then configure the actions.
+    Embed the `amp-social-share` widget [choosing a type](/documentation/components/amp-social-share#pre-configured-providers), then configure the actions.
 
     * `width`, default 60px.
     * `height`, default 44px.
@@ -84,13 +84,13 @@
     width="40"
     height="40"
     data-param-text="Check out these AMP Examples!"
-    data-param-url="https://ampbyexample.com/"
+    data-param-url="https://amp.dev/documentation/examples/"
     data-param-attribution="AMPhtml">
   </amp-social-share>
 
   <!-- ## Custom style -->
   <!--
-    Whenever you want to provide your own style, use CSS properties within the `<style amp-custom>` element ([Modify the presentation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md', locale=doc.locale).url.path}})). This will make sure the image stays responsive and centered, and the default styling is overwritten.
+    Whenever you want to provide your own style, use CSS properties within the `<style amp-custom>` element ([Modify the presentation](/documentation/guides-and-tutorials/start/create/presentation_layout)). This will make sure the image stays responsive and centered, and the default styling is overwritten.
 
     * `background-color`, if you want the element to be a different color.
     * `background-image`, provide another image if you want to change the icon.
@@ -109,7 +109,7 @@
     <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="48" height="48"></amp-social-share>
     <amp-social-share class="rounded" type="gplus" width="48" height="48"></amp-social-share>
     <amp-social-share class="rounded" type="linkedin" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="pinterest" data-param-media="https://ampbyexample.com/img/amp.jpg" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg" width="48" height="48"></amp-social-share>
     <amp-social-share class="rounded" type="tumblr" width="48" height="48"></amp-social-share>
     <amp-social-share class="rounded" type="twitter" width="48" height="48"></amp-social-share>
     <amp-social-share class="rounded" type="whatsapp" width="48" height="48"></amp-social-share>
@@ -119,7 +119,7 @@
 
   <!-- ## Sharing media via Pinterest -->
   <!-- Use `data-param-media` to share media via Pinterest. -->
-  <amp-social-share type="pinterest" data-param-media="https://ampbyexample.com/img/amp.jpg"></amp-social-share>
+  <amp-social-share type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
 
   <!-- ## Native share dialog (Chrome on Android) -->
   <!--

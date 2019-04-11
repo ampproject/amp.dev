@@ -44,7 +44,7 @@ function sendWebPushHandler() {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Origin': 'https://ampbyexample.com',
+          'Origin': 'https://amp.dev',
         },
         body: subscriptionJSON.data,
       };
