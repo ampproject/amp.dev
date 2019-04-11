@@ -12,7 +12,7 @@ A [Signed Exchange](https://developers.google.com/web/updates/2018/11/signed-exc
 
 Signed Exchange AMP content is delivered _in addition to_ (rather than instead of) regular AMP content.
 
-{{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URLs after signed exchange', caption=' ', align='' ) }}
 
 [tip type="note"]
     This feature is currently supported on Chrome, but implementation is planned for additional browsers. 
@@ -50,6 +50,85 @@ $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
+
+### Additional certificates 
+The [`amppackager`](https://github.com/ampproject/amppackager) needs two files for encryption: a **CertFile** and a **KeyFile**. These are specified in the `amppkg.toml` config file. 
+
+The **KeyFile** is the private key. This may have been generated via an openssl command such as:
+
+
+```html
+openssl ecparam -out ampdev-packager.key -name prime256v1 -genkey
+```
+
+
+The private key is used to _generate_ the CSR which is sent to the certificate authority, but is otherwise kept private.
+
+If it is generated via the openssl command above, it will be in `PEM` format. It should look something like the following:
+
+
+```html
+-----BEGIN EC PARAMETERS-----
+BggqhkjOPQMBBw==
+-----END EC PARAMETERS-----
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEINDgf1gprbdD6hM1ttmRC9+tOqJ+lNRtHwZahJIXfLADoAoGCCqGSM49
+AwEHoUQDQgAEuVN1uONEEx/6OhyYu5PDsVGKdN3chhqVKtL9lQilW1r08qYeJlxp
+4j1NY29jVmAMQYrBYb+6heiv6ok+8c/zJQ==
+-----END EC PRIVATE KEY-----
+
+```
+
+
+The **CertFile** is the public certificate. This is created by concatenating origin-specific certificate provided by DigiCert and the `DigiCertCA.crt` file to create something like the following:
+
+
+```html
+-----BEGIN CERTIFICATE-----
+MIIE0zCCBFmgAwIBAgIQCkEgeFknZluZtdcJnvdFCjAKBggqhkjOPQQDAjBMMQsw
+CQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMSYwJAYDVQQDEx1EaWdp
+Q2VydCBFQ0MgU2VjdXJlIFNlcnZlciBDQTAeFw0xODEwMzAwMDAwMDBaFw0xOTEx
+MDYxMjAwMDBaMGIxCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJjYTEWMBQGA1UEBxMN
+TW91bnRhaW4gVmlldzETMBEGA1UEChMKR29vZ2xlIExMQzEZMBcGA1UEAxMQYW1w
+YnlleGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABAGu0CjzWa6i
+…
+PXLGRK8i0lr7Jv6ZKPY8tfaB/c5yK404QU4HNggmAiEAlnNjIerjJOLHb8CvVaUQ
+nhhn0a35nHp1yvE651W14fMwCgYIKoZIzj0EAwIDaAAwZQIwI4/7dpqJQxkQwpP3
+DAjVOFdjC6PDcUIRPll3bF0srrTUXSyZ8xkM4q/RhB51A0hVAjEAsUGNYBje9RIO
+wf9qyV2iHB+9cBwgKfC0KvEcBugbgHShypM8hPhV9UMC3qTpdKPx
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDrDCCApSgAwIBAgIQCssoukZe5TkIdnRw883GEjANBgkqhkiG9w0BAQwFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+QTAeFw0xMzAzMDgxMjAwMDBaFw0yMzAzMDgxMjAwMDBaMEwxCzAJBgNVBAYTAlVT
+…
+loB5hWp2Jp2VDCADjT7ueihlZGak2YPqmXTNbk19HOuNssWvFhtOyPNV6og4ETQd
+Ea8/B6hPatJ0ES8q/HO3X8IVQwVs1n3aAr0im0/T+Xc=
+-----END CERTIFICATE-----
+```
+
+
+If needed, can encrypt the `cert.pem` and `privkey.pem` as follows:
+
+
+```html
+openssl aes-256-cbc -md md5 -e -k $PASSWORD -in cert.pem -out cert.pem.enc
+openssl aes-256-cbc -md md5 -e -k $PASSWORD -in privkey.pem -out privkey.pem.enc
+```
+
+
+And decrypt:
+
+
+```html
+openssl aes-256-cbc -md md5 -d -k $PASSWORD -in cert.pem.enc -out cert.pem
+openssl aes-256-cbc -md md5 -d -k $PASSWORD -in privkey.pem.enc -out privkey.pem
+```
+
+
+`uuencode` or similar can be used to convert the files to text so they can be stashed in Valentine.
+
 
 ## Determine which URLs will be signed 
 
@@ -121,13 +200,13 @@ You can also test in Chrome with the help of the [ModHeader extension](https://c
 
 
 
-{{ image('/static/img/docs/guides/sxg/sxg1.png', 1900, 666, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg1.png', 1900, 666, layout='responsive', alt='Testing Chrome with the help of the ModHeader extension', caption=' ', align='' ) }}
 
 
 After requesting `https://example.com/` your server will deliver a Signed Exchange, but it should look and behave the same as before. You will need to check that a Signed Exchange is correctly being returned via the[ DevTools console](https://developers.google.com/web/tools/chrome-devtools/).
 
 
-{{ image('/static/img/docs/guides/sxg/sxg2.png', 3058, 1204, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg2.png', 3058, 1204, layout='responsive', alt='Signed exchange header displayed in the DevTools console', caption=' ', align='' ) }}
 
 Under the `Network` tab, click on your domain name and check that `Signed HTTP exchange` appears under `Preview`. 
 
@@ -149,7 +228,7 @@ If your AMP pages were successfully distributed with Signed Exchanges, their sea
 Within the DevTools console, under the `network` tab, you will be able to see `signed-exchange` under the `type` column.  
 
 
-{{ image('/static/img/docs/guides/sxg/sxg3.png', 1366, 841, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg3.png', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
 
 [tip type="read-on"]
 The ["Add SXG support to ABE"](https://github.com/ampproject/amp-by-example/pull/1592) Pull Request to `amp-by-example` demonstrates the changes necessary to support Signed Exchanges on `https://ampbyexample.com`. 
