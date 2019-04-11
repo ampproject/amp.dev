@@ -19,7 +19,7 @@ What kind of features should we add to our site to accomplish these goals? Our p
 
 Now we know what new features to create. How are we going to build them?
 
-In the beginner training, we learned that, to add a feature, we just find and add the right component. But the problem is, there’s no "amp-newsletter-subscription-form" component. you might think the objective is to find a component such as "amp-newsletter-subscription-form." If there was a different AMP component for every feature developers want to build, the number of components would be limitless!
+In the beginner training, we learned that, to add a feature, we just find and add the right component. But the problem is, there’s no "amp-newsletter-subscription-form" component. You might think the objective is to find a component such as "amp-newsletter-subscription-form." If there was a different AMP component for every feature developers want to build, the number of components would be limitless!
 
 Instead, we can build up our features by combining components and having them work together. This type of approach is called "component composition."
 
@@ -32,6 +32,7 @@ Along the way, we’ll also:
 - Discuss how to collect user information using `<amp-form>`.
 
 - Explain how to format server data using AMP mustache templates.
+
 - Explore how to enhance a feature with added components and interactions.
 
 ## Course Prerequisites
@@ -52,13 +53,13 @@ This course is intended to be a continuation of the beginning course. As such, i
 
 - the AMP cache
 
-If any of these topics are unfamiliar to you, we suggest reviewing the material from the beginning course [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/index.md', locale=doc.locale).url.path}}).
+If any of these topics are unfamiliar to you, we suggest reviewing the material from the beginning course [here]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale).url.path}}).
 
 ## Getting Set Up
 
 In this course, we will continue using [Glitch](https://glitch.com). If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~aquamarine-baritone) one, which has all of the code already implemented.
 
-Want to learn more about Glitch? You can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/appendix.md', locale=doc.locale).url.path}}).
+Want to learn more about Glitch? You can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
 
 This course also requires the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. The Chrome extension provides one convenient way to access the validator. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 
