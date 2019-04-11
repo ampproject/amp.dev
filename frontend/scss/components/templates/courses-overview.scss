@@ -1,0 +1,78 @@
+/*
+
+######################################
+### TEMPLATE: courses overview ###
+######################################
+
+### INFO:
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
+
+@import 'components/templates/_default.scss';
+
+.#{template('courses-overview')} {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top right;
+  background-attachment: fixed;
+
+  .#{utility('container')} {
+    @include container;
+    @include container-nogap;
+  }
+
+  .#{utility('content')} {
+    @include content;
+    @include content-white-bg;
+  }
+
+  .#{utility('content')} {
+    p.limit {
+      margin-bottom: 1.75em;
+    }
+
+    h1, h2 {
+      margin-bottom: .5em;
+    }
+
+    @media (min-width: 930px) {
+      .ap-m-breadcrumbs {
+        margin-left: 60px;
+      }
+    }
+  }
+
+  .#{utility('section')} {
+    @media (min-width: 930px) {
+      margin: 0 60px;
+    }
+  }
+
+  .#{utility('sidebar')} {
+    @include sidebar;
+  }
+
+  .#{utility('toc')} {
+    @include toc-white-bg;
+  }
+
+  .#{utility('sidebar')} + .#{utility('content')},
+  .#{utility('toc')} + .#{utility('content')} {
+    @include content-with-sidebar;
+  }
+
+  section {
+    &.#{utility('content')} {
+      @include content-white-bg;
+    }
+  }
+}
