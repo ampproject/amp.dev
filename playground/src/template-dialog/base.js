@@ -141,12 +141,19 @@ class TemplateDialog {
   }
 
   selectTemplatesForRuntime(sitemap) {
+    let templates = null;
     if (this.runtime.id === 'amphtml') {
-      return sitemap[0];
+      templates = sitemap['websites'];
     } else if (this.runtime.id === 'amp4ads') {
-      return sitemap[1];
-    } else if (this.runtime.id === 'amp4stories' && sitemap.length > 2) {
-      return sitemap[2];
+      templates = sitemap['ads'];
+    } else if (this.runtime.id === 'amp4stories') {
+      templates = sitemap['stories'];
+    } else if (this.runtime.id === 'amp4email') {
+      templates = sitemap['email'];
+    }
+
+    if (templates && templates.categories && templates.categories.length) {
+      return templates;
     } else {
       return {
         categories: [{

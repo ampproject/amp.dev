@@ -295,7 +295,6 @@ class SamplesBuilder {
    * @type {Vinyl}
    */
   async _generateSitemap() {
-    const sitemap = [];
     for (const format of Object.keys(this._sitemap)) {
       const categories = Object.keys(this._sitemap[format]).map((category) => {
         return {
@@ -304,14 +303,14 @@ class SamplesBuilder {
         }
       });
 
-      sitemap.push({
+      this._sitemap[format] = {
         'title': '',
         'name': format,
         'categories': categories,
-      });
+      };
     }
 
-    await writeFileAsync(SITEMAP_DEST, JSON.stringify(sitemap));
+    await writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap));
     this._log.success('Wrote sample sitemap.');
   }
 
