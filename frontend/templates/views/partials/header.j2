@@ -32,11 +32,6 @@
       ] %}
 
       {% for section, section_index in sections %}
-      {% if section.flyout %}
-      {# Only render flyout-touch-inputs for sections with flyout #}
-      <input id="main-item-radio-{{ loop.index }}" type="radio" name="main-radio-btn" tabindex="0" role="button" aria-label="{{ section.title or section_index.titles('navigation') }}">
-      {% endif %}
-
       {# Special case for the blog #}
       {% if section == 'external' %}
       <div class="ap-o-header-main-item">
@@ -44,17 +39,17 @@
       </div>
       {% else %}
       <div class="ap-o-header-main-item">
-        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.public_path }}">{{ section.title or section_index.titles('navigation') }}</a>
-
-        {% if section.flyout %}
-        {# Only render flyout-touch-inputs for sections with flyout #}
-        {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
-        <label class="ap-o-header-flyout-label" for="main-item-radio-{{ loop.index }}">
+        {% if not section.flyout %}
+        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section_index.public_path }}">{{ section.title or section_index.titles('navigation') }}</a>
+        {% else %}
+        <button class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}">
+          {{ section.title or section_index.titles('navigation') }}
           <div class="ap-a-ico ap-o-header-main-link-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
-        </label>
+        </button>
 
+        {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <ul class="ap-o-header-flyout">
           {% for path in section.flyout %}
           {% set flyout_doc = g.doc(path, locale=doc.locale) %}
