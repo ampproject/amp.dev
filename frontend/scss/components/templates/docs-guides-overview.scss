@@ -34,8 +34,7 @@
     @include container-nogap;
   }
 
-  .#{utility('content')},
-  .#{utility('help')} {
+  .#{utility('content')} {
     @include content;
     @include content-white-bg;
   }
@@ -55,6 +54,7 @@
       }
     }
   }
+
   .#{utility('section')} {
     @media (min-width: 930px) {
       margin: 0 60px;
@@ -75,203 +75,8 @@
   }
 
   section {
-    &.#{utility('content')},
-    &.#{utility('teaser-grid')} {
+    &.#{utility('content')} {
       @include content-white-bg;
     }
   }
-
-  .#{organism('teaser-grid')} {
-    display: block;
-  }
-
-  .#{organism('teaser-grid-list')} {
-    padding-left: 1.25rem;
-
-    @media (min-width: 575px) {
-      padding-left: 0;
-    }
-  }
-
-  .#{molecule('teaser')} {
-    @include teaser;
-    @include teaser-linking;
-    height: 100%;
-
-    & > a {
-      @include teaser-linking;
-    }
-
-    &-tags {
-      font-size: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 1;
-    }
-
-    &-card {
-      @include teaser-card;
-      height: 100%;
-      border-radius: 0;
-    }
-
-    &-content {
-      @include teaser-content;
-    }
-
-    &-headline {
-      @include teaser-headline;
-      margin-bottom: 0.65em;
-    }
-
-    &-copy {
-      @include teaser-copy;
-    }
-
-    &-image, &-icon {
-      + .#{molecule('teaser-card')} {
-        background-color: transparent;
-        box-shadow: none;
-        padding: 0;
-
-        .#{molecule('teaser-content')} {
-          padding-left: 0;
-          padding-right: 0;
-          padding-top: 25px;
-        }
-      }
-    }
-
-    &-image {
-      @include teaser-image;
-      @include box-shadow;
-
-      &:before {
-        height: 100%;
-      }
-
-      &.no-shadow {
-        box-shadow: none;
-      }
-    }
-
-    &-icon {
-      @include box-shadow;
-
-      align-items: center;
-      background: color('ebony-clay');
-      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
-      display: flex;
-      justify-content: center;
-      left: 0;
-      min-height: 100px;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-
-      .#{atom('ico')} {
-        @include ico-10;
-        fill: #fff;
-
-        svg {
-          padding: 1.75rem 0;
-        }
-      }
-    }
-  }
-
-  .#{utility('benefits--list')} {
-    margin-top: 50px;
-    @media (min-width: 1024px){
-      display: flex;
-    }
-
-    .#{molecule('benefit')} {
-      margin: 20px 0;
-      display: block;
-
-      @media (min-width: 768px){
-        margin-right: 40px;
-      }
-
-      .#{molecule('lnk')} {
-        padding: 0;
-      }
-
-      &-text {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
-
-        &-centered {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-bottom: 30px;
-        }
-
-        h4 {
-          margin: 10px 0 0 0;
-        }
-
-        b {
-          font-size: inherit;
-        }
-
-        &-copy {
-          .#{atom('ico')} {
-            display: inline-block;
-            margin: 0;
-            padding: 0;
-          }
-        }
-
-        &-block {
-          margin-bottom: 40px;
-        }
-
-        &-headline {
-          font-family: 'Poppins';
-        }
-      }
-
-      &-twocolumns {
-        margin: 40px 0;
-        flex: 0 0 calc(50% - 25px);
-        &:first-child {
-          margin-right: 50px;
-        }
-
-        p {
-          margin-bottom: 0;
-        }
-
-        h2 {
-          margin-bottom: 30px;
-        }
-
-      }
-
-      &-daily {
-        padding: 30px;
-        background: color('white');
-        box-shadow: 0 30px 30px -15px rgba(0, 0, 0, 0.25);
-        a {
-          padding-bottom: 0;
-        }
-        P {
-          @include txt-2;
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-
-  .#{organism('teaser-grid-featured')} {
-    background: color('white');
-    padding: 30px 30px 0;
-    margin: 0 -30px;
-  }
-
 }
