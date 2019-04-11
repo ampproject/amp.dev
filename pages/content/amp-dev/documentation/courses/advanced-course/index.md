@@ -5,7 +5,7 @@ $order: 1
 
 ## Welcome Back Again
 
-In the previous two courses, we learned how to create a basic AMP site. We learned how to use components to add features to our site and handle user interaction. 
+In the previous two courses, we learned how to create a basic AMP site. We learned how to use components to add features to our site and handle user interaction.
 
 Together, we built a site from scratch for the fictional Chico’s Cheese Bicycles shop. We added content such as videos and images, a newsletter subscription form, a slide-out menu, and a more elaborate image carousel.
 
@@ -29,7 +29,7 @@ In the final course in this series, we’re going to learn how to change the app
 
 {{ image('/static/img/courses/advanced/image10.png', 738, 1324, align='center third', caption='Site With Menu Opened') }}
 
-To accomplish these goals and keep developing our cheese bike website, we will continue to refine our image carousel. In the beginner course, we learned how to create the carousel using AMP components. In the intermediate lesson, we expanded the functionality of the carousel by adding an additional thumbnail carousel. When the user changed slides in either carousel, the active slide was updated in both carousels. We accomplished this using AMP events and actions. 
+To accomplish these goals and keep developing our cheese bike website, we will continue to refine our image carousel. In the beginner course, we learned how to create the carousel using AMP components. In the intermediate lesson, we expanded the functionality of the carousel by adding an additional thumbnail carousel. When the user changed slides in either carousel, the active slide was updated in both carousels. We accomplished this using AMP events and actions.
 
 In this advanced course, we’re going to change the carousels to run off application state instead. We will store the current slide in a state variable and use bindings to update each carousel whenever the slide value is changed. Then, we’ll discover how easy it is to add a third component that also observes the selected slide value and updates when it changes.
 
@@ -45,7 +45,7 @@ To get the most from these courses, you should have a basic understanding of HTM
 
 In the advanced course, the data we retrieve from the server in several examples is in JSON format. The server is already configured to return the correct information, and examples of the JSON data are included with each exercise. For the purposes of this course, it’s important to know how to read data in a JSON object, to reference particular pieces of data in a JSON object using JavaScript, and to be able to make basic JavaScript function calls. If you are unfamiliar with JSON or would like a refresher, you can read [this](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) training material.
 
-This course is intended to be a continuation of the beginner and intermediate courses. As such, it assumes an understanding of the concepts we’ve already covered. Those concepts include: 
+This course is intended to be a continuation of the beginner and intermediate courses. As such, it assumes an understanding of the concepts we’ve already covered. Those concepts include:
 
 * AMP page structure and boilerplate
 
@@ -59,12 +59,12 @@ This course is intended to be a continuation of the beginner and intermediate co
 
 * Handling user inputs using events and actions
 
-If any of these topics are unfamiliar, we suggest reviewing the material from the beginner course found [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/beginner-course/index.md', locale=doc.locale).url.path}}) and/or the intermediate course found [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/intermediate-course/index.md', locale=doc.locale).url.path}}).
+If any of these topics are unfamiliar, we suggest reviewing the material from the beginner course found [here]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale).url.path}}) and/or the intermediate course found [here]({{g.doc('/content/amp-dev/documentation/courses/intermediate-course/index.md', locale=doc.locale).url.path}}).
 
 ## Getting Set Up
 
-In this course, we will continue using [Glitch](https://glitch.com/) to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~enshrined-eyebrow) one, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/courses/advanced-course/appendix.md', locale=doc.locale).url.path}}).
+In this course, we will continue using [Glitch](https://glitch.com/) to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~enshrined-eyebrow) one, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/advanced-course/appendix.md', locale=doc.locale).url.path}}).
 
-This course will also require the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting AMP’s full performance benefits.. The validator is primarily accessed via a Chrome extension. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
+This course will also require the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting AMP’s full performance benefits. The validator is primarily accessed via a Chrome extension. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 
-Let’s get started! 
+Let’s get started!

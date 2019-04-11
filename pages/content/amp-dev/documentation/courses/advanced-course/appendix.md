@@ -5,13 +5,14 @@ $order: 4
 
 ## What is JSON?
 
-amp-list, amp-bind and amp-state can read JSON data. [JSON](https://www.json.org/) is short for JavaScript Object Notation. It is a "lightweight data-interchange format."  Even though it is based on a subset of JavaScript, it is language independent, which means that all languages can read and understand it. JSON data are represented, usually, in two ways: either as a collection of key (name) and value pairs, or as an ordered list of values (what we know as a list or array). The JSON syntax looks usually like this:
+`<amp-list>`, `<amp-bind>` and `<amp-state>` can read JSON data. JSON is short for JavaScript Object Notation. It is a "lightweight data-interchange format."  Even though it is based on a subset of JavaScript, it is language independent, which means that all languages can read and understand it. JSON data are represented, usually, in two ways: either as a collection of key (name) and value pairs, or as an ordered list of values (what we know as a list or array). The JSON syntax looks usually like this:
 
 [sourcecode:json]
 {
-  "people": {
-    "number": 2,
-    "names": ["Alice", "Bob"]
+    "people": {
+        "number": 2,
+        "names": ["Alice", "Bob"]
+    }
 }
 [/sourcecode]
 
@@ -19,7 +20,7 @@ If you want a full specification, you can look at the [official documentation](h
 
 ## What is Deep Merge?
 
-We explained that when `AMP.setState()` is called, amp-bind will "deep-merge the provided object literal with the current state." The deep-merge functionality will not overwrite anything, but will rather merge the two objects. In the example on the amp-bind documentation, we see that providing only an age for the employee will just update the value of the age of the employee in the state.
+We explained that when `AMP.setState()` is called, `<amp-bind>` will "deep-merge the provided object literal with the current state." The deep-merge functionality will not overwrite anything, but will rather merge the two objects. [In the example]({{g.doc('/content/amp-dev/documentation/components/amp-bind.html', locale=doc.locale).url.path}}#deep-merge-with-ampsetstate) on the `<amp-bind>` documentation, we see that providing only an age for the employee will just update the value of the age of the employee in the state.
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"...></button>
@@ -30,11 +31,11 @@ The result after the second button is pressed updates the age:
 
 [sourcecode:json]
 {
-  employee: {
-    name: 'John Smith',
-    age: 64,
-    vehicle: 'Car',
-  }
+    employee: {
+        name: 'John Smith',
+        age: 64,
+        vehicle: 'Car',
+    }
 }
 [/sourcecode]
 
@@ -42,21 +43,13 @@ If amp-bind was applying a shallow merge, the result after the second button was
 
 [sourcecode:json]
 {
-  employee: {
-    age: 64,
-  }
+    employee: {
+        age: 64,
+    }
 }
 [/sourcecode]
 
 A shallow copy would just update the whole structure. Deep merge takes care to add to the state new elements merging existing entries, rather than updating them completely.
-
-## Amp Bind Macros
-
-`amp-bind-macros` give us compact ways to translate application state to a different format that is more suitable for the attributes to which that state is bound.amp-bind-macros are "expression fragments," which means they behave like functions that can be reused. 
-
-For example, an amp-bind-macro could check a given value of the application state for whether or not the value means that the event is sold out. The result of the macro could be bound to the `[hidden]` attribute that displays a "sold out" message and hides the "buy" buttons on the page.
-
-That way, you can create filters and more complicated expressions that can be reused across your page.
 
 ## What is Glitch?
 
@@ -74,6 +67,6 @@ Throughout these courses, you will need various images to complete the exercises
 
 {{ image('/static/img/courses/intermediate/image9.png', 1484, 1416, caption='The details pop-up -including URL- for an image in the assets collection') }}
 
-Open [this](https://glitch.com/edit/#!/aquamarine-baritone) project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
+Open [this](https://glitch.com/edit/#!/enshrined-eyebrow) project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
 
 It’s not necessary to use Glitch to complete these trainings. However, some of the code required to complete the exercises is not discussed in these courses, but is contained in the Glitch samples. If you’d like to use another editor, you may still need to go into the Glitch samples to copy the CSS and server code into your local solution.
