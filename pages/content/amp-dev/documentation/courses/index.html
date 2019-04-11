@@ -17,7 +17,7 @@ flyout:
 ---
 <section class="ap--section">
   <h1>Learn Web Development with AMP</h1>
-  <p>These three free courses are in use in schools and training programs around the world. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!</p>
+  <p>These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!</p>
 </section>
 
 {% do doc.styles.addCssFile('/css/components/organisms/format-cards.css') %}
@@ -69,25 +69,44 @@ flyout:
   </div>
 </section>
 
-{% include '/views/partials/resources-grid.j2' %}
+{% do doc.styles.addCssFile('css/components/templates/tools.css') %}
+
+  <!-- course -->
+  <div class="ap-o-tool-block -alternate" id="course">
+    <div class="ap--container">
+      <!-- window frame -->
+      <amp-img
+        alt="window frame"
+        height="368"
+        layout="responsive"
+        src="/static/img/courses/intermediate/image7.png"
+        width="207"
+      ></amp-img>
+      <!-- copy -->
+      <div class="ap-o-tool-block-copy ap-m-copy">
+        <!-- headline -->
+        <h2>About the courses</h2>
+        <!-- copy -->
+        <p>Beginning web developers will learn to create modern websites with AMP. Experienced developers will discover how to use AMP to create beautiful, interactive sites while writing less JavaScript. During the course, students build a lovely site for Chico's Cheese Bicycles.</p>
+      </div>
+    </div>
+  </div>
 
 {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
 <section class="ap--card-grid">
-  <h2 class="ap-o-card-grid-text">AMP's development workflow</h2>
   <div class="ap-o-card-grid-card">
     <div class="ap-a-ico ap-o-card-grid-card-icon">
       {% do doc.icons.useIcon('/icons/start.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#start"></use></svg>
     </div>
-    <h4 class="ap-o-card-grid-card-headline">Start</h4>
-    <p class="ap-o-card-grid-card-copy">Building a 'Hello World' page and try adding your first interactive feature to an AMP page.</p>
+    <h4 class="ap-o-card-grid-card-headline">Students</h4>
     <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}"
       class="ap-m-lnk">
       <div class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">Create your AMP HTML page</span>
+      <span class="ap-m-lnk-text">Start coursework now</span>
     </a>
   </div>
   <div class="ap-o-card-grid-card">
@@ -95,80 +114,36 @@ flyout:
       {% do doc.icons.useIcon('/icons/integration.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#integration"></use></svg>
     </div>
-    <h4 class="ap-o-card-grid-card-headline">Integrate</h4>
-    <p class="ap-o-card-grid-card-copy">Combine your pages with non-AMP pages, a PWA, native apps and more.</p>
+    <h4 class="ap-o-card-grid-card-headline">Teachers</h4>
     <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}"
       class="ap-m-lnk">
       <div class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">Integrate AMP with your app</span>
+      <span class="ap-m-lnk-text">Download resources for your classroom</span>
     </a>
   </div>
-  <div class="ap-o-card-grid-card">
-    <div class="ap-a-ico ap-o-card-grid-card-icon">
-      {% do doc.icons.useIcon('/icons/learn.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#learn"></use></svg>
-    </div>
-    <h4 class="ap-o-card-grid-card-headline">Learn</h4>
-    <p class="ap-o-card-grid-card-copy">Get to know how AMP is different and acquire the fundamentals for how AMP works.</p>
-    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}"
-      class="ap-m-lnk">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">AMP HTML Specification</span>
-    </a>
-  </div>
-  <div class="ap-o-card-grid-card">
-    <div class="ap-a-ico ap-o-card-grid-card-icon ap-o-card-grid-card-icon-emails">
-      {% do doc.icons.useIcon('/icons/optimize.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#optimize"></use></svg>
-    </div>
-    <h4 class="ap-o-card-grid-card-headline">Optimize & Measure</h4>
-    <p class="ap-o-card-grid-card-copy">Make more out of your AMP pages through analytics, optimal delivery and caching.</p>
-    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/configure_analytics.md', locale=doc.locale).url.path}}"
-      class="ap-m-lnk">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">Configure analytics</span>
-    </a>
-  </div>
-  <div class="ap-o-card-grid-card">
-    <div class="ap-a-ico ap-o-card-grid-card-icon">
-      {% do doc.icons.useIcon('/icons/develop.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#develop"></use></svg>
-    </div>
-    <h4 class="ap-o-card-grid-card-headline">Develop</h4>
-    <p class="ap-o-card-grid-card-copy">Create every content, layout, and feature your website needs.</p>
-    <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}"
-      class="ap-m-lnk">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">Style & layout</span>
-    </a>
-  </div>
-  {% do doc.styles.addCssFile('/css/components/molecules/tip.css') %}
-  <div class="ap-o-card-grid-card ap-o-card-grid-card-tip">
-    <div class="ap-m-tip ap-m-tip-default">
-      <div class="ap-m-tip-content">
-        <h4>Using a CMS?</h4>
-        <p>AMP integrates with many publishing platforms and content management systems! Find the full list under <a href="">Platform and Vendor Partners.</a></p>
-      </div>
-    </div>
-  </div>
+</section>
+
+<section class="ap--section">
+  <b>Prerequisites:</b>
+  <ul>
+    <li>basic knowledge of HTML and CSS</li>
+    <li>for the advanced course, JavaScript expressions and simple JSON</li>
+  </ul>
+  <b>Requirements:</b>
+  <ul>
+    <li>Internet connection</li>
+    <li>Chrome browser, ideally, to use the AMP Validator extension</li>
+    <li>We use the online editor Glitch. No IDE or local web server needed!</li>
+  </ul>
 </section>
 
 {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--video-slider">
-  <h2 class="ap-o-video-slider-text">Featured Videos</h2>
-  <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
+  <h2 class="ap-o-video-slider-text">Take the Video Course</h2>
+  <p class="ap-o-video-slider-text">The Beginning Course can now be taken on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
   {% with %}
   {% set youtube_video_ids = [
     '4f9KU5VJpOU',
