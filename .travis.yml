@@ -7,11 +7,11 @@ cache:
   - pip
   - npm
 install:
-  - pip install grow==0.6.5 --user
+  - pip install grow==0.7.4 --user
   - grow --version
-  - which grow 
+  - which grow
   - npm ci
-before_deploy: 
+before_deploy:
   - npm run build:staging
 deploy:
   provider: gae
