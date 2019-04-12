@@ -223,8 +223,6 @@ class SamplesBuilder {
         'preview': config.getHost(config.hosts.preview),
       },
     }).then((parsedSample) => {
-      // Bootstrap category
-      parsedSample.category();
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
@@ -282,9 +280,9 @@ class SamplesBuilder {
     const format = this._getSampleFormat(parsedSample);
     const formatCategories = this._sitemap[format] || {};
 
-    const category = this._getCategory(sample);
+    const category = parsedSample.category().publicName;
     const categorySamples = formatCategories[category] || {
-      'name': parsedSample.category().publicName,
+      'name': category,
       'examples': []
     };
     categorySamples.examples.push({
@@ -303,19 +301,19 @@ class SamplesBuilder {
    * @type {Vinyl}
    */
   _generateSitemap() {
-    for (const format of Object.keys(this._sitemap)) {
-      const categories = Object.keys(this._sitemap[format]).map((category) => {
-        return {
-          'name': this._sitemap[format][category].name,
-          'examples': this._sitemap[format][category].examples,
-        };
-      });
-
+    for (const [format, categories] of Object.entries(this._sitemap)) {
       this._sitemap[format] = {
-        'title': '',
+        'title': format,
         'name': format,
-        'categories': categories,
+        'categories': [],
       };
+
+      for (const [name, category] of Object.entries(categories)) {
+        this._sitemap[format].categories.push({
+          'name': name,
+          'examples': category.examples,
+        });
+      }
     }
 
     writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap)).then(() => {
