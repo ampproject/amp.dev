@@ -137,7 +137,7 @@ take a look at [this sample](/advanced/autosuggest_form/).
         <!--
           ## Text input
 
-          Next we define the input field. We listen to the [`input-debounced`](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events#input-elements) event for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. If the input text is empty, we don't want to show suggestions, which we avoid by return an empty array if the input text is empty: `event.value.length == 0 ?  []: ...`. We also bind the input value to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
+          Next we define the input field. We listen to the [`input-debounced`](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements) event for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. If the input text is empty, we don't want to show suggestions, which we avoid by return an empty array if the input text is empty: `event.value.length == 0 ?  []: ...`. We also bind the input value to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
         -->
         <label>
           Enter city:

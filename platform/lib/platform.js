@@ -31,18 +31,19 @@ const subdomain = require('./middleware/subdomain.js');
 const WWW_PREFIX = 'www.';
 const HEALTH_CHECK = '/__health-check';
 const routers = {
-  'whoAmI': require('@lib/routers/whoAmI.js'),
-  'pages': require('@lib/routers/pages.js'),
-  'example': {
-    'sources': require('@lib/routers/example/sources.js'),
-    'embeds': require('@lib/routers/example/embeds.js'),
-    'api': require('@examples'),
+  whoAmI: require('@lib/routers/whoAmI.js'),
+  pages: require('@lib/routers/pages.js'),
+  packager: require('@lib/routers/packager.js'),
+  example: {
+    sources: require('@lib/routers/example/sources.js'),
+    embeds: require('@lib/routers/example/embeds.js'),
+    api: require('@examples'),
   },
-  'static': require('@lib/routers/static.js'),
-  'go': require('@lib/routers/go.js'),
-  'playground': require('../../playground/backend/'),
-  'boilerplate': require('../../boilerplate/backend/'),
-  'notFound': require('@lib/routers/notFound.js'),
+  go: require('@lib/routers/go.js'),
+  notFound: require('@lib/routers/notFound.js'),
+  static: require('@lib/routers/static.js'),
+  playground: require('../../playground/backend/'),
+  boilerplate: require('../../boilerplate/backend/'),
 };
 
 class Platform {
@@ -121,6 +122,7 @@ class Platform {
   }
 
   _registerRouters() {
+    this.server.use(routers.packager);
     this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
