@@ -223,6 +223,8 @@ class SamplesBuilder {
         'preview': config.getHost(config.hosts.preview),
       },
     }).then((parsedSample) => {
+      // Bootstrap category
+      parsedSample.category();
       // parsedSample.filePath is absolute but needs to be relative in order
       // to use it to build a URL to GitHub
       parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
@@ -281,7 +283,10 @@ class SamplesBuilder {
     const formatCategories = this._sitemap[format] || {};
 
     const category = this._getCategory(sample);
-    const categorySamples = formatCategories[category] || {'examples': []};
+    const categorySamples = formatCategories[category] || {
+      'name': parsedSample.category().publicName,
+      'examples': []
+    };
     categorySamples.examples.push({
       'title': parsedSample.document.title,
       'url': `${config.getHost(config.hosts.preview)}` +
@@ -301,7 +306,7 @@ class SamplesBuilder {
     for (const format of Object.keys(this._sitemap)) {
       const categories = Object.keys(this._sitemap[format]).map((category) => {
         return {
-          'name': category,
+          'name': this._sitemap[format][category].name,
           'examples': this._sitemap[format][category].examples,
         };
       });
