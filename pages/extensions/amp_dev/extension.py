@@ -9,8 +9,7 @@ class AmpDevUrl(urls._Url):
 
     def __init__(self, path, host=None, port=None, scheme=None):
         super(AmpDevUrl, self).__init__(path, host=None, port=None, scheme=None)
-        if not 'localhost' in host:
-            self.path = self.path.replace('/index.html', '').replace('.html', '')
+        self.path = self.path.replace('/index.html', '/').replace('.html', '')
 
 urls.Url = AmpDevUrl
 
