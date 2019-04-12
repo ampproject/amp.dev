@@ -22,8 +22,7 @@ const config = require('@lib/config');
 const proxy = HttpProxy.createProxyServer();
 
 const proxyOptions = {
-  //target: config.hosts.packager.base,
-  target: 'https://doesnotexistsfornasdfasfsdfasfas.com',
+  target: config.hosts.packager.base,
   changeOrigin: true,
 };
 
