@@ -22,7 +22,8 @@ const config = require('@lib/config');
 const proxy = HttpProxy.createProxyServer();
 
 const proxyOptions = {
-  target: config.hosts.packager.base,
+  //target: config.hosts.packager.base,
+  target: 'https://doesnotexistsfornasdfasfsdfasfas.com',
   changeOrigin: true,
 };
 
@@ -39,7 +40,7 @@ const proxyOptions = {
 const packager = (request, response, next) => {
   // Redirect all packager requests
   if (request.path.startsWith('/amppkg/')) {
-    sxgProxy(request, response, request.url);
+    sxgProxy(request, response, request.url, next);
     return;
   }
   // Don't package non valid AMP pages
@@ -59,13 +60,17 @@ const packager = (request, response, next) => {
   }).toString();
   const url = `/priv/doc?${searchParams}`;
   // Serve webpackage via packager
-  sxgProxy(request, response, url);
+  sxgProxy(request, response, url, next);
 };
 
-function sxgProxy(request, response, url) {
+function sxgProxy(request, response, url, next) {
   console.log('[packager] proxy', url);
   request.url = url;
-  proxy.web(request, response, proxyOptions);
+  proxy.web(request, response, proxyOptions, (error) => {
+    console.error(error);
+    // let the normal request handler deal with it (serve a page or a 404)
+    next();
+  });
 }
 
 module.exports = packager;
