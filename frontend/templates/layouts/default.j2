@@ -1,3 +1,14 @@
+{% macro filter(formats='websites, ads, stories, email') -%}
+{% if not formats.strip() %}
+{{ caller() }}
+{% else %}
+{% set formats = formats.split(',') %}
+<p class="{% for format in formats %}ap--{{ format.strip() }} {% endfor %}">
+{{ caller() }}
+</p>
+{% endif %}
+{%- endmacro %}
+
 {% macro tip(title, type='note') -%}
 {% with %}
 {% set text = caller() %}
