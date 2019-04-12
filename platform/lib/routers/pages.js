@@ -22,7 +22,7 @@ const config = require('@lib/config');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
 const cheerio = require('cheerio');
-const {FilteredPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const {filterPage, isFilterableRoute} = require('@lib/common/filteredPage');
 const {shouldAddReferrerNotification, addReferrerNotification} =
   require('@lib/common/referrerNotification');
 const fs = require('fs');
@@ -138,7 +138,7 @@ if (config.isDevMode()) {
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
           const dom = cheerio.load(body);
-          new FilteredPage(activeFormat, dom);
+          filterPage(activeFormat, dom);
           const html = fixCheerio(dom.html());
           response.setHeader('content-length', html.length.toString());
           return html;
@@ -233,7 +233,7 @@ if (!config.isDevMode()) {
       let page = await readFileAsync(utils.project.pagePath(requestPath));
       const dom = cheerio.load(page);
       if (hasFormatFilter) {
-        new FilteredPage(format, dom, true);
+        filterPage(format, dom, true);
       }
       if (hasReferrerNotification) {
         addReferrerNotification(request.query.referrer, dom);
