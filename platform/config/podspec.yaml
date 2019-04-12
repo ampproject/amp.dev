@@ -20,7 +20,8 @@ localization:
 
 sitemap:
   enabled: yes
-  path: "/sitemap_grow.xml"
+  path: '/sitemap_grow.xml'
+  template: '/layouts/sitemap.xml'
 
 markdown:
   extensions:
