@@ -6,7 +6,7 @@ sharing_images:
   square: /static/img/sharing/about-websites-1x1.png
   wide: /static/img/sharing/about-websites-600x314.png
 
-benefits: !g.yaml /content/shared/data/benefits.yaml
+benefits: !g.yaml /shared/data/benefits.yaml
 
 flyout:
   format: websites
@@ -205,7 +205,7 @@ kpis:
 <section class="ap--container-fluid ap-m-biggy">
   <div class="ap-m-biggy-aside">
       {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-      {% set code_snippet = g.doc('/content/shared/data/hello-world.html').content %}
+      {% set code_snippet = g.doc('/shared/data/hello-world.html').content %}
       {% set markdown = doc.pod.markdown %}
       {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
     </div>

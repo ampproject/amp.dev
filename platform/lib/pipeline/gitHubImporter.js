@@ -120,6 +120,7 @@ module.exports = {
   'CLIENT_TOKEN': CLIENT_TOKEN,
   'CLIENT_SECRET': CLIENT_SECRET,
   'CLIENT_ID': CLIENT_ID,
+  'log': log,
   'checkCredentials': checkCredentials,
   'GitHubImporter': GitHubImporter,
 };

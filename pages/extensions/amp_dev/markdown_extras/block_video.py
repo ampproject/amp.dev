@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import re
 
 VIDEO_TRIGGER = '[video'
-VIDEO_TAG_PATTERN = re.compile(r'\[video .*\]', re.MULTILINE)
+VIDEO_TAG_PATTERN = re.compile(r'\[video .*\](?!\()', re.MULTILINE)
 ATTRIBUTE_PATTERN = re.compile(r'(\w+)=(?:\"|\')(.*?)(?:\"|\')')
 
 PARTIAL_PATH = '/views/partials/video.j2'

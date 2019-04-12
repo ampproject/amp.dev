@@ -27,6 +27,12 @@
       "subdomain": "preview",
       "host": "localhost",
       "port": "8082"
+    },
+    "go": {
+      "scheme": "http",
+      "subdomain": "go",
+      "host": "localhost",
+      "port": "8082"
     }
   }
 }

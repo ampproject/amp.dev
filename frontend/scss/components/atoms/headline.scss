@@ -11,17 +11,17 @@ h3,
 h4,
 h5 {
 	@include hl;
-	margin-top: 2em;
-
-	&:first-of-type {
-		section.#{utility('content')} & {
-			margin-top: 0;
-		}
-	}
 }
 
 h1 {
 	@include hl-h1;
+
+	&:first-of-type {
+		section.#{utility('content')} & {
+			margin-top: 0;
+			margin-bottom: 2rem;
+		}
+	}
 }
 
 h2 {

@@ -1,9 +1,9 @@
 <!--
   ## Introduction
 
-  Use [amp-iframe](https://www.ampproject.org/docs/reference/components/layout/amp-iframe) for embedding content into AMP files via iframe. Useful for displaying content otherwise not (yet) supported by AMP.
+  Use [amp-iframe]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) for embedding content into AMP files via iframe. Useful for displaying content otherwise not (yet) supported by AMP.
 
-  Note: We're using [Vimeo](https://vimeo.com/) embeds here for an example, but any kind of content works. If you're interested in embedding Vimeo in AMP, it's recommended that you use the provided [`amp-vimeo` component](https://www.ampproject.org/docs/reference/components/amp-vimeo) instead.
+  Note: We're using [Vimeo](https://vimeo.com/) embeds here for an example, but any kind of content works. If you're interested in embedding Vimeo in AMP, it's recommended that you use the provided [`amp-vimeo` component]({{g.doc('/content/amp-dev/documentation/components/reference/amp-vimeo.md', locale=doc.locale).url.path}}) instead.
 -->
 <!-- -->
 <!doctype html>
@@ -32,7 +32,7 @@
   <!-- ## First viewport -->
   <!--
     Iframes must be either 600px away from the top or not within the first 75% of the viewport when
-    scrolled to the top – whichever is smaller. This example might not work depending on your screen
+    scrolled to the top - whichever is smaller. This example might not work depending on your screen
     width. In that case it will only show a loading indicator.
   -->
   <amp-iframe width="500"
@@ -71,8 +71,7 @@
 
   <!-- ## Google Maps -->
   <!--
-    Embedding Google Maps is possible via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide) and requires
-    an [API Key](https://developers.google.com/maps/documentation/embed/guide#api_key). Make sure your API key allows requests from the ampproject.org domain.
+    Embedding Google Maps is possible via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide) and requires an [API Key](https://developers.google.com/maps/documentation/embed/guide#api_key). Make sure your API key allows requests from the ampproject.org domain.
   -->
   <amp-iframe width="600"
               height="400"

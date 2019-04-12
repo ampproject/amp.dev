@@ -23,6 +23,10 @@
   padding-top: 20px;
   background: color('whisper');
 
+  h1 {
+    font-size: 2.625rem;
+  }
+
   .#{utility('container')} {
     @include container;
     max-width: 100vw;

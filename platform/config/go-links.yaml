@@ -1,0 +1,9 @@
+# Use via: go.amp.dev/samples
+/samples: /documentation/examples/
+/docs: /documentation/
+/websites: /about/websites
+/stories: /about/stories
+/stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices
+/ads: /about/ads
+/email: /about/email
+/vision-mission: /about/mission-and-vision
