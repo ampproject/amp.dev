@@ -192,7 +192,7 @@ class SamplesBuilder {
         this._log.success('Built samples.');
         // Only write samples sitemap if it has been a full samples build
         if (!watch && config.options['clean-samples'] === true) {
-          await this._generateSitemap();
+          this._generateSitemap();
         }
         resolve();
       });
