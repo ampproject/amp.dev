@@ -101,18 +101,18 @@ speakers:
     pic: /static/img/amp-conf/speakers/andrea.jpg
   hirohitokomada:
     name: Hirohito Komada
-    company: Yahoo Japan
+    company: Yahoo! JAPAN
     bio: Hirohito is the Senior Manager of Yahoo! Travel.
     pic: /static/img/amp-conf/speakers/komada.jpg  
   shigekiohtsu:
     name: Shigeki Ohtsu
-    company: Yahoo Japan
-    bio: Shigeki Ohtsu is a software developer at Yahoo Japan. He is working on CDN team and has an expertise in the network security.
+    company: Yahoo! JAPAN
+    bio: Shigeki Ohtsu is a software developer at Yahoo! JAPAN. He is working on CDN team and has an expertise in the network security.
     pic: /static/img/amp-conf/speakers/ohtsu.jpg
   ryomunakata:
     name: Ryo Munakata
-    company: Yahoo Japan
-    bio: Ryo Munakata is a lead engineer at Yahoo Japan on the Search frontend team.
+    company: Yahoo! JAPAN
+    bio: Ryo Munakata is a lead engineer at Yahoo! JAPAN on the Search frontend team.
     pic: /static/img/amp-conf/speakers/ryo.jpg  
   cristianronzio:
     name: Cristian Ronzio
@@ -152,7 +152,7 @@ speakers:
   mitsuhironaganuma:
     name: Mitsuhiro Naganuma
     company: SUNDAY SYSTEMS, Inc.
-    bio: "株式会社ロックオンに入社後、EC-CUBEの次期バージョン開発をリードする。2018年10月にスピンアウトした株式会社イーシーキューブではCTOを務める。"
+    bio: "フリーランスとしてWEB制作業務を行う傍ら、2017年に株式会社サンデイシステムズに入社。EC-CUBEを用いた受託案件にフロントエンドエンジニアとして従事。"
     pic: /static/img/amp-conf/speakers/mitsuhiro.jpg
   chrispapazian:
     name: Chris Papazian
@@ -385,9 +385,9 @@ agenda:
       speakers:
         - aakashsahney
         - filipstanis
-    - title: "Maximize Yahoo Japan’s UX with AMP and Signed HTTP Exchanges"
+    - title: "Maximize Yahoo! JAPAN’s UX with AMP and Signed HTTP Exchanges"
       time: "1500"
-      description: "Yahoo Japan, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platformer and a publisher. The session will walk through the technical details on how Yahoo Japan deployed the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
+      description: "Yahoo! JAPAN, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platformer and a publisher. The session will walk through the technical details on how Yahoo! JAPAN deployed the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
       type: session
       speakers:
         - hirohitokomada
