@@ -50,8 +50,6 @@ KeyFile = '/amppkg/privkey.pem'
 # file, it should support shared/exclusive locking.
 OCSPCache = '/tmp/ocsp'
 
-Docroot = '/www'
-
 # Project Id of the Google Cloud Project from which requests will be made. This
 # will probably be the project corresponding to NEW_ADDRESS in request.go.
 ProjectId = 'amp-dev-230314'

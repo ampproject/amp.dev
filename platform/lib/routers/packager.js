@@ -37,33 +37,32 @@ const proxyOptions = {
  * See https://github.com/ampproject/amppackager#productionizing
  */
 const packager = (request, response, next) => {
-  try {
-    // Redirect all packager requests
-    if (request.path.startsWith('/amppkg/')) {
-      sxgProxy(request, response, request.url);
-      return;
-    }
-    // Don't package non valid AMP pages
-    if (!request.path.endsWith('.amp.html')) {
-      next();
-      return;
-    }
-    // Tell browsers that we support SXG
-    response.set('vary', 'Accept, AMP-Cache-Transform');
-    if (!request.header('amp-cache-transform')) {
-      next();
-      return;
-    }
-    // Hard-code amp.dev as it has to match the cert
-    const url = `/priv/doc?sign=https://amp.dev${request.url}`;
-    // Serve webpackage via packager
-    sxgProxy(request, response, url);
-  } catch (error) {
-    next(error);
+  // Redirect all packager requests
+  if (request.path.startsWith('/amppkg/')) {
+    sxgProxy(request, response, request.url);
+    return;
   }
+  // Don't package non valid AMP pages
+  if (!request.path.endsWith('.amp.html')) {
+    next();
+    return;
+  }
+  // Tell browsers that we support SXG
+  response.set('vary', 'Accept, AMP-Cache-Transform');
+  if (!request.header('amp-cache-transform')) {
+    next();
+    return;
+  }
+  // Hard-code amp.dev as it has to match the cert
+  const searchParams = new URLSearchParams({
+    sign: 'https://amp.dev' + request.url,
+  }).toString();
+  const url = `/priv/doc?${searchParams}`;
+  // Serve webpackage via packager
+  sxgProxy(request, response, url);
 };
 
-async function sxgProxy(request, response, url) {
+function sxgProxy(request, response, url) {
   console.log('[packager] proxy', url);
   request.url = url;
   proxy.web(request, response, proxyOptions);
