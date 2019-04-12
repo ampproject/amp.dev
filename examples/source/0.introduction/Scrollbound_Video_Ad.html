@@ -26,7 +26,7 @@ layout: responsive
 
   <!-- ## Summary-->
   <!--
-    Sample AMPHTML ad using [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation), [amp-video](https://www.ampproject.org/docs/reference/components/amp-video) [amp-img](https://www.ampproject.org/docs/reference/components/amp-img) and [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer) to create an ad that animates based on scrolling.
+    Sample AMPHTML ad using [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}), [amp-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), [amp-img]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) and [amp-position-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-position-observer.md', locale=doc.locale).url.path}}) to create an ad that animates based on scrolling.
 
 
     ![Demo of this example](https://cloud.githubusercontent.com/assets/2099009/26071260/4cfddfa2-395c-11e7-86d0-bb22fe0581eb.gif)
@@ -78,7 +78,7 @@ layout: responsive
       z-index: 3;
       width: 100px;
       height: 100px;
-      background-image: url(https://ampbyexample.com/img/play-icon.png);
+      background-image: url( <% hosts.platform %>/static/samples/img/play-icon.png);
       background-repeat: no-repeat;
       background-size: 100% 100%;
       /* Align to the middle */
@@ -160,7 +160,7 @@ layout: responsive
   <!--
     There are two types of scrollbound animations that occur in this sample: **scaling** of the video container and **parallax** movement of the background image.
 
-    The animations are implemented using [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/)
+    The animations are implemented using [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/)
   -->
   <amp-animation layout="nodisplay" id="videoAnim">
     <script type="application/json">
@@ -197,7 +197,7 @@ layout: responsive
 
   <!-- ## Scrollbound Animations -->
   <!--
-  The scrollbound animations are implemented using [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer) which is an AMP component that Monitors the position of an element within the viewport as a user scrolls, and dispatches enter, exit and scroll events that can be used with other components
+  The scrollbound animations are implemented using [amp-position-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-position-observer.md', locale=doc.locale).url.path}}) which is an AMP component that Monitors the position of an element within the viewport as a user scrolls, and dispatches enter, exit and scroll events that can be used with other components
   -->
   <amp-position-observer
     intersection-ratios="1"
