@@ -20,7 +20,3 @@ In this tutorial, we'll introduce you to the [`amp-story`]({{g.doc('/content/amp
 - Add audio that plays while a page is viewed
 - Animate elements on a page
 - Keep readers engaged with your content by adding related links to the end of the story
-
-[tip type="note"]
-**NOTE –**  The [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) component is **experimental**.
-[/tip]
