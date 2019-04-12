@@ -17,7 +17,6 @@
 'use strict';
 
 const express = require('express');
-const ampCors = require('amp-toolbox-cors');
 const utils = require('@lib/utils');
 const exampleBackend = require('@examples');
 
