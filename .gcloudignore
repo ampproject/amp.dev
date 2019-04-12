@@ -29,7 +29,6 @@ packager/
 /frontend/
 pages/
 !platform/pages
-/examples/source/**/*.html
 
 # playground: ignore everything except the dist folder
 /playground/*
