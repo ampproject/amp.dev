@@ -33,6 +33,11 @@
       "subdomain": "go",
       "host": "localhost",
       "port": "8086"
+		},
+		"packager": {
+      "scheme": "https",
+      "host": "amp-dev-sxg.appspot.com",
+      "port": ""
     }
   }
 }
