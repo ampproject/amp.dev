@@ -20,6 +20,7 @@ const express = require('express');
 const signale = require('signale');
 const fetch = require('node-fetch');
 const ampCors = require('amp-toolbox-cors');
+const cors = require('cors');
 
 const config = require('@lib/config.js');
 
@@ -52,6 +53,7 @@ class Subdomain {
     let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
     if (!subdomainApp) {
       subdomainApp = express();
+      subdomainApp.use(cors());
       subdomainApp.use(ampCors({
         'verifyOrigin': false,
       }));
