@@ -219,6 +219,21 @@ speakers:
     company: Google
     bio:
     pic: /static/img/amp-conf/speakers/amp.png
+  greggrothaus:
+      name: Greg Grothaus
+      company: Google
+      bio: 
+      pic: /static/img/amp-conf/speakers/greg.jpg
+  ryoichiimaizumi:
+      name: Ryoichi Imaizumi
+      company: Google
+      bio:
+      pic: /static/img/amp-conf/speakers/amp.png
+  dionalmaer:
+      name: Dion Almaer
+      company: Google
+      bio:
+      pic: /static/img/amp-conf/speakers/amp.png
   TBA:
     name: To Be Announced
     company: AMP Conf
@@ -372,10 +387,9 @@ agenda:
       moderator: monishavaradan
       speakers:
         - davidbesbris
-        - TBA
-        - TBA
-        - TBA
-        - TBA
+        - ryoichiimaizumi
+        - dionalmaer
+        - malteubl
     - title: Lunch
       time: "1230"
     - title: "AMP for Email: pushing the boundaries of email with AMP"
@@ -385,32 +399,38 @@ agenda:
       speakers:
         - aakashsahney
         - filipstanis
+    - title: "Signed exchanges for better AMP URLs and easier analytics"
+      description: "Come for better URLs and stay for easier analytics and dynamic data handling! Get a primer on Signed exchanges and how to use them in Google Search."
+      time: "1515"
+      type: session
+      speakers:
+        - greggrothaus
     - title: "Maximize Yahoo! JAPAN’s UX with AMP and Signed HTTP Exchanges"
-      time: "1500"
+      time: "1530"
       description: "Yahoo! JAPAN, owning multiple high traffic services such as the search platform and various commerce sites, worked on adapting Signed HTTP Exchanges both as a platformer and a publisher. The session will walk through the technical details on how Yahoo! JAPAN deployed the AMP packager and serving Signed AMP to SERP. The next-gen way of using AMP is here."
       type: session
       speakers:
         - hirohitokomada
         - shigekiohtsu
         - ryomunakata
+    - title: Coffee Break
+      time: "1600"
     - title: "Generating AMP Pages with JavaScript and Vue.js"
-      time: "1530"
+      time: "1630"
       type: session
       description: "Decreasing load times on our money pages: How and why we moved our most frequented transactional pages to AMP."
       speakers:
         - cristianronzio
         - fabiozecchini
-    - title: Coffee Break
-      time: "1600"
     - title: "AMP Experiences in WordPress, the WordPress Way"
       description: "Enabling first-class AMP experiences on WordPress is one of the ways the AMP Project aims to bring a user-first experience to websites and content on the web. The Official AMP Plugin for WordPress integrates AMP content creation seamlessly with standard WordPress content creation workflows. In this talk we describe in detail how the AMP plugin for WordPress works, how to take advantage of it, and showcase some salient success stories of WordPress sites using the plugin in the wild."
-      time: "1630"
+      time: "1700"
       type: session
       speakers:
         - jeannyhaliman
         - albertomedina
     - title: "Measuring success: What's new in AMP analytics & experiments"
-      time: "1700"
+      time: "1730"
       type: session
       speaker: jeffreyj
       description: "Hear about the new developments in analytics and experimentation, without compromising performance or speed."
