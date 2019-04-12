@@ -1,25 +1,32 @@
 ---
 $title: Teachers
-$path: /documentation/guides-and-tutorials/web-development-with-amp/teachers/index.html
+$path: /documentation/courses/teachers.html
 $order: 0
-toc: true
+toc: false
 ---
 
-Whether on video sites, e-commerce pages, or online email clients, often websites look different depending on who is accessing the site and when. These types of websites dynamically generate the content on screen by combining templates with data from a server. In the final course in this series, we’ll explore how to retrieve data from a server and display that information on screen. We’ll also explore the concept of application state variables and bindings, and how to use these concepts with AMP. We will complete our cheese bikes site by refactoring our components to use state and bingins, and we will add a sortable, filterable product page! In addition, we will look at examples of popular genres of dynamic websites, and we’ll attempt to recreate simple versions of these sites using AMP.
 
-## About the Course
 
-### Course Objective:
+### Objective:
 
-The goals of this course are to:
+A student with a basic understanding of HTML and CSS can use AMP to create full-featured, interactive websites. Thus these materials fit nicely in a curriculum after HTML and CSS, but before JavaScript.
 
-- Teach modern website development patterns and how to implement them in AMP
+These courses provide an excellent way to teach modern website development patterns. They're suitable both for beginners and for experienced web developers who wish to create more performant websites.
 
-- Introduce the AMP approach to building engaging, performant web experiences
+The course syllabus and texts are available as Google Docs. It also comes with a complete slide deck, available as Google Slides. All materials can also be downloaded as PDFs.
+ 
+<a href="https://drive.google.com/drive/folders/1QE_C-RmOjG8Sa_DGKQNzcOytXnEE5qoA" target="_blank" style="margin: 1.5em" class="ap-a-btn">{{ _('Get the courses') }}</a>
+
+You can find the starting Glitch repository [here](https://glitch.com/~enshrined-eyebrow).
+
+### Course materials
+
+The course consists of a series of hands-on projects, most of which step you through the process of creating an AMP webpage for an imaginary shop. The more advanced codelabs build on the fundamentals covered in the earlier codelabs. But more experienced students may wish to skip the first course.
 
 ### Prerequisites:
 
-- basic JavaScript expressions and JSON
+- basic knowledge of HTML and CSS
+- for the advanced course, JavaScript expressions and simple JSON
 
 ### Requirements:
 
@@ -27,18 +34,7 @@ The goals of this course are to:
 
 - Chrome browser, ideally, so that the AMP Validator extension can be used
 
-- We use the online editor Glitch. No IDE or local web server is required!
+- The course uses the online editor Glitch. No IDE or local web server is required!
 
-### Course materials
-
-The course consists of a series of hands-on codelabs, most of which step you through the process of creating an AMP page for an imaginary shop. You can complete the codelabs in any order, but the more advanced codelabs build on the fundamentals covered in the earlier codelabs.
-
-You can download course and decks as PDF from here:
-
-<a href="#" class="ap-a-btn">{{ _('Download') }}</a>
-
-Also, you can find the starting Glitch repository [here](https://glitch.com/~enshrined-eyebrow).
-
-### Ideal Students:
-
-New web developers and experienced developers alike. This course is for those who want to create websites as well as for those looking to use AMP to build more performant sites.
+### Certification
+If you are interested in our certification program, please <a href="mailto:morsssss@ampproject.org">get in touch.</a>

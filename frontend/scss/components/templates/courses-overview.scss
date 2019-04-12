@@ -70,6 +70,24 @@
     @include content-with-sidebar;
   }
 
+  .#{organism('tool-block')} {
+    padding-bottom: 3rem;
+  }  
+
+  .#{utility('card-grid')} {
+    margin-bottom: 40px;
+
+    @media (min-width: 930px) {
+      padding-bottom: 40px;
+    }    
+  }
+
+  .#{organism('card-grid')} {
+    &-card {
+      margin: 18px 0 36px;
+    }
+  }
+
   section {
     &.#{utility('content')} {
       @include content-white-bg;
