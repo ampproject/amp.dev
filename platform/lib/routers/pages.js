@@ -91,7 +91,6 @@ function ensureFileExtension(path) {
 // Setup a proxy over to Grow during development
 if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
-  const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
   const got = require('got');
   const {pageMinifier} = require('@lib/build/pageMinifier');
@@ -126,6 +125,7 @@ if (config.isDevMode()) {
 
   // During development all requests should be proxied over
   // to Grow and be handled there, therfore create one
+  const HttpProxy = require('http-proxy');
   const proxy = new HttpProxy();
 
   // As the filtering will happen on content from the proxy (which will end
