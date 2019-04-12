@@ -302,7 +302,7 @@ class SamplesBuilder {
    * the gulp stream that is usable by the playground
    * @type {Vinyl}
    */
-  async _generateSitemap() {
+  _generateSitemap() {
     for (const format of Object.keys(this._sitemap)) {
       const categories = Object.keys(this._sitemap[format]).map((category) => {
         return {
@@ -318,8 +318,9 @@ class SamplesBuilder {
       };
     }
 
-    await writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap));
-    this._log.success('Wrote sample sitemap.');
+    writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap)).then(() => {
+      this._log.success('Wrote sample sitemap.');
+    });
   }
 
 
