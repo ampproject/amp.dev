@@ -140,7 +140,8 @@ class SamplesBuilder {
             return;
           }
 
-          if (!parsedSample.document.metadata.disablePlayground) {
+          if (!parsedSample.document.metadata.disablePlayground &&
+          !parsedSample.document.metadata.drafts) {
             this._addToSitemap(sample, parsedSample);
           }
 
@@ -301,8 +302,8 @@ class SamplesBuilder {
       const categories = Object.keys(this._sitemap[format]).map((category) => {
         return {
           'name': category,
-          'examples': this._sitemap[format][category].examples
-        }
+          'examples': this._sitemap[format][category].examples,
+        };
       });
 
       this._sitemap[format] = {
