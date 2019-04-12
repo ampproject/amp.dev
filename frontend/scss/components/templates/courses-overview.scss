@@ -75,8 +75,6 @@
   }  
 
   .#{utility('card-grid')} {
-    margin-bottom: 40px;
-
     @media (min-width: 930px) {
       padding-bottom: 40px;
     }    
@@ -85,6 +83,18 @@
   .#{organism('card-grid')} {
     &-card {
       margin: 18px 0 36px;
+    }
+  }
+
+  .#{organism('tool-block')} {
+    amp-img {
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      amp-img {
+        margin: 4rem auto 3rem;
+      }
     }
   }
 
