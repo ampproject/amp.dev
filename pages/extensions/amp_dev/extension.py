@@ -22,6 +22,7 @@ from grow import extensions
 from grow.documents import document, document_format, static_document
 from grow.extensions import hooks
 
+from .markdown_extras import block_filter as BlockFilter
 from .markdown_extras import block_tip as BlockTip
 from .markdown_extras import block_video as BlockVideo
 from .markdown_extras import inline_tip as InlineTip
@@ -64,6 +65,7 @@ class AmpDevExtension(extensions.BaseExtension):
         content = InlineTip.trigger(original_body, content)
         content = BlockTip.trigger(original_body, content)
         content = BlockVideo.trigger(original_body, content)
+        content = BlockFilter.trigger(original_body, content)
         return content
 
     @property
