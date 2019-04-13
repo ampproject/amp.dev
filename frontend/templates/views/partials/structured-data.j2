@@ -5,7 +5,7 @@
 {% set description = doc.description or doc.teaser.text %}
 {% set title = doc.title %}
 {% set base_url = doc.pod.podspec.base_urls.platform %}
-{% set canonical = doc.pod.podspec.base_urls.platform + doc.public_path %}
+{% set canonical = doc.pod.podspec.base_urls.platform + doc.url.path %}
 
 {# Alter sharing image based on template and/or maintained data #}
 {% if doc.sharing_images %}
