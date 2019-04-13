@@ -16,9 +16,8 @@
 
 'use strict';
 
-const {spawn} = require('child_process');
 const {series} = require('gulp');
-const {join} = require('path');
+const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
 
 const PREFIX = 'amp-dev';
@@ -58,7 +57,6 @@ const config = {
     name: `gcr.io/${PROJECT_ID}/${PREFIX}`,
     current: `gcr.io/${PROJECT_ID}/${PREFIX}:${TAG}`,
   },
-  workingDir: join(__dirname, '..'),
 };
 
 /**
@@ -139,40 +137,6 @@ function updateStatus() {
 function updateStop() {
   return sh(`gcloud compute instance-groups managed rolling-action \
     stop-proactive-update ${config.instance.group}`);
-}
-
-/**
- * Executes a shell command.
- *
- * @param {string} the command string
- * @param {string=''} an optional message being displayed after the command has
- * terminated succesfully.
- */
-function sh(string, message='') {
-  string = string.replace(/\\(\r?\n)+/gm, ' ').trim();
-  const fragments = string.split(/ +/gm);
-  const command = fragments[0];
-  const args = fragments.splice(1);
-  console.log(`$ ${command} ${args.join(' ')}`);
-  return new Promise((resolve, reject) => {
-    const process = spawn(command, args, {cwd: config.workingDir});
-
-    process.stdout.on('data', (data) => {
-      console.log(`${data.toString()}`);
-    });
-
-    process.stderr.on('data', (data) => {
-      console.log(`${data}`);
-    });
-
-    process.on('close', (code) => {
-      if (code !== 0) {
-        reject(new Error(`${command} process exited with code ${code}`));
-        return;
-      }
-      resolve();
-    });
-  }).then(() => console.log(message));
 }
 
 exports.gcloudSetup = gcloudSetup;
