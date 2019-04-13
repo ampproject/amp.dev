@@ -15,6 +15,8 @@
 @import 'components/atoms/_color.scss';
 
 .#{molecule('conf-speaker')} {
+  display: flex;
+  flex-direction: column;
   max-width: 175px;
   margin: 20px 5px;
   padding: 20px 5px;
