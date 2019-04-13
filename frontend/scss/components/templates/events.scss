@@ -109,9 +109,10 @@
     }
   }
 
-  .#{utility('scheudle-selector')} {
+  .#{utility('flex-container')} {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .#{utility('stage')} {
