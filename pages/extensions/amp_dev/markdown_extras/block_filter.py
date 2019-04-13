@@ -19,7 +19,7 @@ def trigger(original_body, content):
 def _transform(content):
   for match in FILTER_START_TAG_PATTERN.findall(content):
     formats = match[2] or DEFAULT_FORMATS
-    content = content.replace(match[0], '{% call filter(formats=\'' + match[2] + '\') %}')
+    content = content.replace(match[0], '{% call filter(formats=\'' + match[2] + '\') %}\n')
   # Then also replace end tags
-  content = content.replace(FILTER_END_TAG_PATTERN, '{% endcall %}')
+  content = content.replace(FILTER_END_TAG_PATTERN, '\n{% endcall %}')
   return content

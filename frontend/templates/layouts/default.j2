@@ -3,9 +3,9 @@
 {{ caller() }}
 {% else %}
 {% set formats = formats.split(',') %}
-<p class="{% for format in formats %}ap--{{ format.strip() }} {% endfor %}">
+<div class="{% for format in formats %}ap--{{ format.strip() }} {% endfor %}">
 {{ caller() }}
-</p>
+</div>
 {% endif %}
 {%- endmacro %}
 
