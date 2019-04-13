@@ -95,7 +95,7 @@ async function importRoadmap() {
     const issue = issueMap[card.issueUrl];
     card.issue = {
       url: issue.data.html_url,
-      title: issue.data.title.replace(/\[Master [fF]eature\] /, ''),
+      title: issue.data.title.replace(/\[master feature\] /i, ''),
       description: issue.data.body
           .replace('Feature description:\r\n\r\n', '')
           .replace(/\[ \]/g, '')

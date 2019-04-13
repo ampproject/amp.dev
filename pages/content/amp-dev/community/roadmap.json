@@ -22,7 +22,7 @@
           "updatedAt": "2019-01-22T16:03:20Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/9785",
-            "title": "[MASTER FEATURE] Dedicated autocomplete component",
+            "title": "Dedicated autocomplete component",
             "description": "Dedicated component for an autocomplete field using AMP. ",
             "labels": [
               {
@@ -43,7 +43,7 @@
           "updatedAt": "2019-01-22T15:58:26Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/19513",
-            "title": "[MASTER FEATURE] <amp-img> sizes=\"auto\" for srcset",
+            "title": "<amp-img> sizes=\"auto\" for srcset",
             "description": "I find making Responsive Images in amp-html actually harder than normal HTML (which should not be the case).",
             "labels": [
               {
@@ -59,7 +59,7 @@
           "updatedAt": "2019-01-22T15:57:02Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/13714",
-            "title": "[MASTER FEATURE] Explore AnimationWorklet and co. in AMP's scrollbound animations.",
+            "title": "Explore AnimationWorklet and co. in AMP's scrollbound animations.",
             "description": "Explore using ScrollTimeline and AnimationWorklet (Chrome Origin Trial feature) in AMP's scrollbound animations.",
             "labels": [
               {
@@ -75,7 +75,7 @@
           "updatedAt": "2019-01-22T15:54:54Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/20236",
-            "title": "[MASTER FEATURE] auto lightbox <amp-img>",
+            "title": "auto lightbox <amp-img>",
             "description": "Currently developers can mark an `<amp-img>` to be lightboxed by adding the `lightbox` attribute to it. ",
             "labels": [
               {
@@ -91,7 +91,7 @@
           "updatedAt": "2019-01-22T15:49:07Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/20456",
-            "title": "[MASTER FEATURE] Enable use of AMP Components outside of AMP pages",
+            "title": "Enable use of AMP Components outside of AMP pages",
             "description": "Explore the idea of using AMP components in non AMP pages. ",
             "labels": [
               {
@@ -373,7 +373,7 @@
           "updatedAt": "2019-01-22T15:55:51Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/20237",
-            "title": "[MASTER FEATURE] New default loaders for AMP",
+            "title": "New default loaders for AMP",
             "description": "New loaders that indicate an image or embedded feature is loading will be utilized in AMP and are in the process of being built. A current 3-dot loader exists. This issue also encompasses the research  necessary to determine whether redesigns will be received favorably by comparison.",
             "labels": [
               {

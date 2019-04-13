@@ -1,4 +1,18 @@
 # -*- coding: utf-8 -*-
+
+# Monkey patch grow.url before doing anything else
+from grow.common import urls
+
+urls._Url = urls.Url
+
+class AmpDevUrl(urls._Url):
+
+    def __init__(self, path, host=None, port=None, scheme=None):
+        super(AmpDevUrl, self).__init__(path, host=None, port=None, scheme=None)
+        self.path = self.path.replace('/index.html', '/').replace('.html', '')
+
+urls.Url = AmpDevUrl
+
 import os
 import pkgutil
 import sys
@@ -46,11 +60,6 @@ class AmpDevExtension(extensions.BaseExtension):
         # Expose extension direclty on pod for use in templates
         setattr(pod, 'amp_dev', self)
 
-        # Monkey-patch getting a doc in the templates to overload URL parsing
-        # behaviour
-        pod.amp_dev_get_doc = pod.get_doc
-        pod.get_doc = types.MethodType(get_doc, pod)
-
     def transform_markdown(self, original_body, content):
         content = InlineTip.trigger(original_body, content)
         content = BlockTip.trigger(original_body, content)
@@ -62,12 +71,3 @@ class AmpDevExtension(extensions.BaseExtension):
         return [
             AmpDevPreRenderHook,
         ]
-
-# Monkey patch for grow.pods.pods.Pod.get_doc
-def get_doc(self, pod_path, locale=None):
-    doc = self.amp_dev_get_doc(pod_path, locale=locale)
-    # Monkey patch doc and add property public_path, do not do this during
-    # development as otherwise Grows dev routing will fail
-    public_path = doc.url.path.replace('/index.html', '/').replace('.html', '')
-    setattr(doc, 'public_path', public_path)
-    return doc

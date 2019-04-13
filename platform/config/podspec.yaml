@@ -1,4 +1,4 @@
-grow_version: ">=0.6.5"
+grow_version: ">=0.7.4"
 home: /content/amp-dev/index.html
 
 localization:
@@ -20,7 +20,8 @@ localization:
 
 sitemap:
   enabled: yes
-  path: "/sitemap_grow.xml"
+  path: '/sitemap_grow.xml'
+  template: '/layouts/sitemap.xml'
 
 markdown:
   extensions:
