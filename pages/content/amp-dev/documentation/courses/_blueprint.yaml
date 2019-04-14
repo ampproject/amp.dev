@@ -4,3 +4,4 @@ $path: /documentation/courses/{base}.html
 $localization:
   path: /{locale}/documentation/courses/{base}.html
 $order: 4
+bucket: true

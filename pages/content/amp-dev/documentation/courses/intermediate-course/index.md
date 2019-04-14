@@ -4,6 +4,7 @@ $order: 1
 $titles:
   teaser: Intermediate Course
 teaser:
+  icon: paperplane
   label: Start now
 description: 'Learn to combine components and create simple user interactions.'
 ---

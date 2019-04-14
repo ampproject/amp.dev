@@ -4,6 +4,7 @@ $order: 1
 $titles:
   teaser: Beginning Course
 teaser:
+  icon: airplane
   label: Start now
 description: 'Learn about AMP and how it helps. Create your first AMP page!'
 ---
