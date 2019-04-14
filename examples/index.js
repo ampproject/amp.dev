@@ -33,7 +33,7 @@ function loadRouters(root, prefix='') {
   const routers = [];
   const rootDir = resolve(join(__dirname, root));
   listFiles(rootDir, routers, true);
-  routers.filter((path) => path.endsWith('.js'))
+  routers.filter((path) => path.endsWith('.js') && !path.includes('/static/'))
       .forEach((path) => {
         const route = join(prefix, getRoute(rootDir, path));
         examples.use(route, require(path));
@@ -52,4 +52,3 @@ function removeOrdinals(path) {
 }
 
 module.exports = examples;
-

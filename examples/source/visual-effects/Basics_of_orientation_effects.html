@@ -8,7 +8,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
 <!--
   ## Introduction
 
-  [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer) combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a powerful building block that can handle various uses-cases that are dependent on the orientation of the device.
+  [amp-orientation-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-orientation-observer.md', locale=doc.locale).url.path}}) combined with [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) is a powerful building block that can handle various uses-cases that are dependent on the orientation of the device.
 
   In this tutorial, we will go through some of these use-cases in detail.
 
@@ -24,14 +24,14 @@ teaserImage: '/static/samples/img/teaser/basics_of_orientation_effects.jpg'
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup
 
-    [amp-orientation-observer](https://www.ampproject.org/docs/reference/components/amp-orientation-observer) is a functional component that monitors the orientation of the device as it moves, and dispatches `alpha`, `beta` and `gamma` events dependant on what axis the device has moved in. For more details on DeviceOrientationEvents read this [article on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation).
+    [amp-orientation-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-orientation-observer.md', locale=doc.locale).url.path}}) is a functional component that monitors the orientation of the device as it moves, and dispatches `alpha`, `beta` and `gamma` events dependant on what axis the device has moved in. For more details on DeviceOrientationEvents read this [article on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation).
 
-    These events in return can be used to `seek` animation timelines defined by [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) to create orientation based effects.
+    These events in return can be used to `seek` animation timelines defined by [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) to create orientation based effects.
   -->
   <script async custom-element="amp-orientation-observer" src="https://cdn.ampproject.org/v0/amp-orientation-observer-0.1.js"></script>
 
   <!--
-  [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a UI component that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and run keyframe animations in AMP documents.
+  [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) is a UI component that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and run keyframe animations in AMP documents.
  -->
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
 

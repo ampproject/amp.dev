@@ -7,7 +7,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
 <!--
   ## Introduction
 
-  [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer) combined with [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a powerful building block that can handle various uses-cases such as **scrollbound animations**, **parallax effects** and **transitions** as elements enter and exit the viewport.
+  [amp-position-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-position-observer.md', locale=doc.locale).url.path}}) combined with [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) is a powerful building block that can handle various uses-cases such as **scrollbound animations**, **parallax effects** and **transitions** as elements enter and exit the viewport.
 
   In this tutorial, we will go through some of these use-cases in detail.
 -->
@@ -23,14 +23,14 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
   <!--
     ## Setup
 
-    [amp-position-observer](https://www.ampproject.org/docs/reference/components/amp-position-observer) is a functional component that monitors the position of an element within the viewport as a user scrolls, and dispatches `enter`, `exit` and `scroll:<Position In Viewport As a Percentage>` events.
+    [amp-position-observer]({{g.doc('/content/amp-dev/documentation/components/reference/amp-position-observer.md', locale=doc.locale).url.path}}) is a functional component that monitors the position of an element within the viewport as a user scrolls, and dispatches `enter`, `exit` and `scroll:<Position In Viewport As a Percentage>` events.
 
-    These events in return can be used to `play`, `pause` or `seek` animation timelines defined by [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) to create scrollbound and visibility-based effects.
+    These events in return can be used to `play`, `pause` or `seek` animation timelines defined by [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) to create scrollbound and visibility-based effects.
   -->
   <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
 
   <!--
-    [amp-animation](https://www.ampproject.org/docs/reference/components/amp-animation) is a UI component that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and run keyframe animations in AMP documents.
+    [amp-animation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) is a UI component that relies on [Web Animations API](https://www.w3.org/TR/web-animations/) to define and run keyframe animations in AMP documents.
   -->
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
 
@@ -132,7 +132,7 @@ teaserImage: '/static/samples/img/teaser/basics_of_scrollbound_effects.jpg'
    - **`"selector"`**: `"#fidgetSpinnerImage"` is the selector that targets the fidget spinner for the animation.
    - **`"keyframes":`** We define a `"transform": "rotate(360deg)"` as the last (and only) keyframe. Note that `amp-animation` automatically fills the first keyframe if not provided.
 
-   `amp-animation` has plenty of other features, please see [the API reference](https://www.ampproject.org/docs/reference/components/amp-animation) to learn more about `amp-animations`.
+   `amp-animation` has plenty of other features, please see [the API reference](/documentation/components/amp-animation) to learn more about `amp-animations`.
   -->
   <amp-animation id="spinAnimation" layout="nodisplay">
     <script type="application/json">

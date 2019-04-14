@@ -157,8 +157,9 @@
   box-shadow: 20px 25px 40px 0 rgba(0,0,0,0.05);
 
   & ~ .#{utility('content')} {
-    box-shadow: -20px 25px 40px 0 rgba(0,0,0,0.05);
+    box-shadow: -30px -5px 30px -20px rgba(0,0,0,0.05);
   }
+
   @media (min-width: 768px) {
     grid-column: 8 / 25;
 

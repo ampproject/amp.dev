@@ -16,7 +16,6 @@
 
 'use strict';
 
-const cheerio = require('cheerio');
 const URL = require('url').URL;
 const config = require('@lib/config.js');
 
@@ -35,6 +34,21 @@ const FILTERED_ROUTES = [
   /\/documentation\/examples.*/,
 ];
 
+/**
+ * Applies the format filter to the dom
+ *
+ * @param {String} - format  One of FORMATS
+ * @param {Object} - the DOM
+ * @param {Boolean} - force  Flag if format should be validated
+ */
+function filterPage(format, dom, force) {
+  if (!isAvailable(format, dom) && !force) {
+    return;
+  }
+  const filter = new Filter(format, dom);
+  filter.apply();
+}
+
 function isFilterableRoute(route) {
   let filterableRoute = false;
   for (const expression of FILTERED_ROUTES) {
@@ -47,36 +61,35 @@ function isFilterableRoute(route) {
   return filterableRoute;
 }
 
-class FilteredPage {
+/**
+ * Checks if the constructed one is a actually valid format variant
+ * @return {Boolean}
+ */
+function isAvailable(format, dom) {
+  const body = dom('body');
+  return (body.attr('data-available-formats') || '').includes(format);
+}
+
+class Filter {
   /**
    * @param {String} format  One of FORMATS
    * @param {String} content A valid HTML document string
-   * @param {Boolean} force  Flag if format should be validated
    */
-  constructor(format, content, force) {
+  constructor(format, dom) {
     this._format = format;
-    this._content = content;
-
-    this._dom = cheerio.load(this._content);
-    if (!this._isAvailable() && !force) {
-      throw new Error(`This page is not available for format ${this._format}`);
-    } else {
-      this._removeHiddenElements();
-      this._rewriteUrls();
-      this._setActiveFormatToggle();
-      this._removeStaleFilterClass();
-      this._removeEmptyFilterBubbles();
-      this._addClassToBody();
-    }
+    this._dom = dom;
   }
 
   /**
-   * Checks if the constructed one is a actually valid format variant
-   * @return {Boolean}
+   * Applies the filter
    */
-  _isAvailable() {
-    const body = this._dom('body');
-    return (body.attr('data-available-formats') || '').includes(this._format);
+  apply() {
+    this._removeHiddenElements();
+    this._rewriteUrls();
+    this._setActiveFormatToggle();
+    this._removeStaleFilterClass();
+    this._removeEmptyFilterBubbles();
+    this._addClassToBody();
   }
 
   /**
@@ -138,7 +151,7 @@ class FilteredPage {
     // Remove eventually unnecessary tutorial dividers left by the
     // previous transformation
     this._dom('.nav-item-tutorial-divider:last-child,' +
-        '.nav-item-tutorial-divider:first-child').remove();
+      '.nav-item-tutorial-divider:first-child').remove();
   }
 
   /**
@@ -209,21 +222,8 @@ class FilteredPage {
       }
     });
   }
-
-  get content() {
-    let content = this._dom.html();
-
-    // As cheerio has problems with XML syntax in HTML documents the
-    // markup for the icons needs to be restored
-    content = content.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-    content = content.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-
-    return content;
-  }
 }
 
-module.exports.FilteredPage = FilteredPage;
+module.exports.filterPage = filterPage;
 module.exports.isFilterableRoute = isFilterableRoute;
 module.exports.FORMATS = FORMATS;

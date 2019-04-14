@@ -5,22 +5,22 @@
 {% set description = doc.description or doc.teaser.text %}
 {% set title = doc.title %}
 {% set base_url = doc.pod.podspec.base_urls.platform %}
-{% set canonical = doc.pod.podspec.base_urls.platform + doc.public_path %}
+{% set canonical = doc.pod.podspec.base_urls.platform + doc.url.path %}
 
 {# Alter sharing image based on template and/or maintained data #}
 {% if doc.sharing_images %}
 {% set sharing_images = doc.sharing_images %}
-{% elif '/components/' in doc.path %}
+{% elif '/components/' in doc.pod_path %}
 {% set sharing_images = {
   'square': '/static/img/sharing/docs-component-1x1.png',
   'wide': '/static/img/sharing/docs-component-600x314.png',
 } %}
-{% elif '/examples/' in doc.path %}
+{% elif '/examples/' in doc.pod_path %}
 {% set sharing_images = {
   'square': '/static/img/sharing/docs-example-1x1.png',
   'wide': '/static/img/sharing/docs-example-600x314.png',
 } %}
-{% elif '/guides-and-tutorials/' in doc.path %}
+{% elif '/guides-and-tutorials/' in doc.pod_path %}
 {% set sharing_images = {
   'square': '/static/img/sharing/docs-guide-1x1.png',
   'wide': '/static/img/sharing/docs-guide-600x314.png',
@@ -73,8 +73,8 @@
 
 <meta property="og:title" content="{{ title }}">
 <meta property="og:url" content="{{ canonical }}">
-<meta property="og:image" content="{{ base_url }}{{ sharing_images.square }}">
+<meta property="og:image" content="{{ base_url }}{{ sharing_images.wide }}">
 <meta property="og:image:width" content="600">
-<meta property="og:image:height" content="600">
+<meta property="og:image:height" content="314">
 
 {% endif %}

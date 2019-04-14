@@ -2,7 +2,6 @@
 $title: Monetizing your AMP page with ads
 $order: 0
 description: 'This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...'
-$path: /documentation/guides-and-tutorials/develop/monetization/monetization.html
 formats:
   - websites
 ---

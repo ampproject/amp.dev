@@ -18,14 +18,8 @@ that makes a merge over to the original repository beneficial.
     $ curl https://install.grow.io | bash
     ```
 
-1.  Install the stable version of [Yarn](https://yarnpkg.com/). (Mac and Linux: [here](https://yarnpkg.com/en/docs/install#alternatives-stable), Windows: [here](https://yarnpkg.com/lang/en/docs/install/#windows-stable))
-    ```sh
-    $ curl -o- -L https://yarnpkg.com/install.sh | bash
-    ```
-
 1.  Install the dependencies for the project:
     ```sh
-    $ cd platform
     $ npm install
     ```
 
@@ -33,7 +27,6 @@ that makes a merge over to the original repository beneficial.
 To start developing start a pipeline that takes care of building the frontend, collecting all needed files and start Grow when finished. The pipeline then watches the sources files for changes and rebuilds them if needed.
 
 ```sh
-$ cd platform
 $ npm run develop
 ```
 
@@ -43,12 +36,6 @@ If you additionally want to import the needed documents and data from GitHub pas
 ```sh
 $ export AMP_DOC_TOKEN="c59f6..."
 $ npm run develop -- --import
-```
-
-If you have checked out a local copy of the `amphtml` repository you can also import from there by running the following command. An exported GitHub token is required nevertheless.
-
-```sh
-$ npm run develop -- --import --local-amphtml-repository='</Users/...>'
 ```
 
 ### Maintenance
@@ -65,7 +52,6 @@ To run a local test build that does all the minifying and vends the static pages
 proxying them through to Grow you can run
 
 ```sh
-$ cd platform
 $ npm run build:local
 $ npm run start:local
 ```
@@ -74,7 +60,6 @@ $ npm run start:local
 To build and deploy to the staging environment on [Google App Engine](https://cloud.google.com/appengine/) run the following
 
 ```sh
-$ cd platform
 $ npm run build:staging
 $ npm run deploy:staging
 ```

@@ -95,7 +95,7 @@ teaserImage: '/static/samples/img/teaser/image_galleries_with_amp-carousel.jpg'
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       box-sizing: border-box;
     }
-    /* see https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions/ */
+    /* see https://amp.dev/documentation/examples/style-layout/how_to_support_images_with_unknown_dimensions/ */
     .collapsible-captions .fixed-height-container {
       position: relative;
       width: 100%;
@@ -166,7 +166,7 @@ teaserImage: '/static/samples/img/teaser/image_galleries_with_amp-carousel.jpg'
 
   <!-- ## Captions with dynamic text size -->
   <!--
-    The first image gallery uses [amp-fit-text](https://www.ampproject.org/docs/reference/extended/amp-fit-text.html) to fit the text to the available space. This works well if captions vary not too much in length.
+    The first image gallery uses [amp-fit-text]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) to fit the text to the available space. This works well if captions vary not too much in length.
   -->
   <amp-carousel class="carousel1" layout="responsive" height="450" width="500" type="slides">
     <div class="slide">
@@ -225,7 +225,7 @@ teaserImage: '/static/samples/img/teaser/image_galleries_with_amp-carousel.jpg'
 
     Here is another workaround for image captions: expandable captions. The idea is to first show only the first line of a caption (using `text-overflow: ellipsis;`). When the user clicks on the caption, the caption is expanded to show the full text. This works by using `amp-bind` to toggle a CSS class `expanded` when the caption is clicked.
 
-    This sample uses the trick described [here](/advanced/how_to_support_images_with_unknown_dimensions/) to ensure that images never overlap the caption. A positive side-effect is that image dimensions don't need to be known in advance either. This makes it a very flexible approach for an image carousel with images and captions of unknown size/length.
+    This sample uses the trick described [here](/documentation/examples/style-layout/how_to_support_images_with_unknown_dimensions/) to ensure that images never overlap the caption. A positive side-effect is that image dimensions don't need to be known in advance either. This makes it a very flexible approach for an image carousel with images and captions of unknown size/length.
   -->
   <amp-carousel class="collapsible-captions" height="332" layout="fixed-height" type="slides">
     <figure>
@@ -257,7 +257,7 @@ teaserImage: '/static/samples/img/teaser/image_galleries_with_amp-carousel.jpg'
 
     With [`amp-bind`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/amp-bind.md) it's possible to link carousel state across multiple `amp-carousels`. Whenever the carousel slide changes, it updates `selectedSlide`. This causes the `text` attribute in the `<p>` tag above the carousel to update as well.
 
-    Only [whitelisted functions](https://www.ampproject.org/es/docs/reference/components/amp-bind) are allowed when using `amp-bind`. We use the unary plus operator before `selectedSlide` to cast it into an integer.
+    Only [whitelisted functions](/documentation/components/amp-bind#white-listed-functions) are allowed when using `amp-bind`. We use the unary plus operator before `selectedSlide` to cast it into an integer.
   -->
   <div>
     <p>Selected slide: <span [text]="+selectedSlide + 1">1</span>/3</p>
@@ -355,7 +355,7 @@ teaserImage: '/static/samples/img/teaser/image_galleries_with_amp-carousel.jpg'
   <!--
     ## Image gallery with lightbox
 
-    You can link an image gallery to a lightbox using [amp-lightbox-gallery](https://www.ampproject.org/docs/reference/components/amp-lightbox-gallery) so that:
+    You can link an image gallery to a lightbox using [amp-lightbox-gallery]({{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox-gallery.md', locale=doc.locale).url.path}}) so that:
 
     - when user taps on image N, he enters a lightbox mode
     - user can swipe inside of lightbox mode between images

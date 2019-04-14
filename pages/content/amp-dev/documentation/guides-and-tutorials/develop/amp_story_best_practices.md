@@ -20,28 +20,31 @@ AMP stories are a great way to reach your audience with visual, immersive storyt
 
 ### Make your AMP story complete and self-contained
 
-Keep your reader engaged with your story. Don’t require them to click links to other websites to get essential information. 
+Keep your reader engaged with your story. Don’t require them to click links to other websites to get essential information.
 
 This [AMP story](https://mic.com/stories/327/what-happens-in-your-brain-when-you-listen-to-music) from Mic.com is a good example of using minimal text and full screen portrait images and video to give the reader a good understanding of the topic.
 
 ### Use video and animation
 
-Bring your stories to life with motion. Video and animation can help keep readers’ attention and increase understanding.  Don’t be afraid to use video frequently, and then balance it out with static content. 
+Bring your stories to life with motion. Video and animation can help keep readers’ attention and increase understanding.  Don’t be afraid to use video frequently, and then balance it out with static content.
 
 USA Today’s [AMP story](https://www.usatoday.com/amp-stories/beyonce-rule-the-world/) about Beyonce uses a good combination of animation and video.
 
-### Include branding and a date in your stories 
+### Include branding and a date in your stories
 Help users understand who created the story and when it was published. Including brand attribution and a publication date on the cover page can help foster trust.
 
-This [AMP story](https://mic.com/stories/500/did-you-know-these-fun-facts-about-stan-lee) from Mic.com about Stan Lee makes it easy to see at-a-glance who published the story and how recent it is.  
+This [AMP story](https://mic.com/stories/500/did-you-know-these-fun-facts-about-stan-lee) from Mic.com about Stan Lee makes it easy to see at-a-glance who published the story and how recent it is.
 
-Keep reading for additional tips on making the most of your AMP stories. 
+Keep reading for additional tips on making the most of your AMP stories.
 
+<figure class="alignment-wrapper margin-">
+  <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
+    <source src="/static/img/docs/guides/storiesbp/do-background.webm" type="video/webm" />
+    <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4" />
+  </amp-video>
+</figure>
 
-<amp-video src="/static/img/docs/guides/storiesbp/do-background.mp4" layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
-</amp-video>
-
-This story uses full-bleed images, video, and animations to create an engaging reading experience. It tells a complete story, and it includes branding and a publication date. 
+This story uses full-bleed images, video, and animations to create an engaging reading experience. It tells a complete story, and it includes branding and a publication date.
 
 {{ image('/static/img/docs/guides/storiesbp/dont-background.jpg', 1440, 630, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
 
@@ -94,11 +97,11 @@ Keep your audience engaged by avoiding large blocks of text. AMP stories is a vi
   </tr>
 </table>
 
-## Images 
+## Images
 
 ### Use portrait, full bleed images
 
-Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio) images, which take full advantage of the mobile screen. 
+Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio) images, which take full advantage of the mobile screen.
 
 <table>
   <tr>
@@ -115,9 +118,9 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
   </tr>
 </table>
 
-### Crop images mindfully 
+### Crop images mindfully
 
-Keep the focus on what’s important. Crop out unnecessary or distracting elements, and make sure the key subject of the photo is in focus and complete. 
+Keep the focus on what’s important. Crop out unnecessary or distracting elements, and make sure the key subject of the photo is in focus and complete.
 
 
 <table>
@@ -135,7 +138,7 @@ Keep the focus on what’s important. Crop out unnecessary or distracting elemen
   </tr>
 </table>
 
-### Bring still images to life 
+### Bring still images to life
 Make stories more dynamic by adding motion to static images. For example, you can animate photos with fly-in, rotation, or fade-in effects, as long as the animation supports the style of your story and does not distract from your content.
 
 <table>
@@ -145,10 +148,14 @@ Make stories more dynamic by adding motion to static images. For example, you ca
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/images-life-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg" width="360" height="720" loop autoplay noaudio>
+    <figure style="max-width: 360px">
+      <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg" width="360" height="720" loop autoplay noaudio>
+        <source src="/static/img/docs/guides/storiesbp/images-life-do.webm" type="video/webm" />
+        <source src="/static/img/docs/guides/storiesbp/images-life-do.mp4" type="video/mp4" />
       </amp-video>
+    </figure>
     </td>
-    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating a dull story page', align='center' ) }}</td>
+    <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 360, 720, layout='intrinsic', alt='Image demonstrating a dull story page', align='center' ) }}</td>
   </tr>
     <tr>
     <td>The motion in this example helps support the main idea and adds a dynamic element to the page.</td>
@@ -159,7 +166,7 @@ Make stories more dynamic by adding motion to static images. For example, you ca
 ## Video
 
 ### Use Portrait, Full Bleed Assets
-Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio) images, which take full advantage of the mobile experience.  
+Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio) images, which take full advantage of the mobile experience.
 
 <table>
   <tr>
@@ -168,10 +175,22 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
   </tr>
   <tr>
   <!-- TODO: Swap assets with correct mp4 -->
-    <td><amp-video src="/static/img/docs/guides/storiesbp/video-bleed-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/video-bleed-do-poster.jpg" width="360" height="720" loop autoplay noaudio>
-        </amp-video></td>
-    <td><amp-video src="/static/img/docs/guides/storiesbp/video-bleed-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/video-bleed-dont.jpg" width="360" height="720" loop autoplay noaudio>
-        </amp-video></td>
+    <td>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/video-bleed-do-poster.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/video-bleed-do.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/video-bleed-do.mp4" type="video/mp4" />        
+        </amp-video>
+      </div>
+    </td>
+    <td>
+    <div style="max-width: 360px">
+      <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/video-bleed-dont.jpg" width="360" height="720" loop autoplay noaudio>
+        <source src="/static/img/docs/guides/storiesbp/video-bleed-dont.webm" type="video/webm" />
+        <source src="/static/img/docs/guides/storiesbp/video-bleed-dont.mp4" type="video/mp4" />  
+      </amp-video>
+    </div>
+    </td>
   </tr>
   <tr>
     <td>This full bleed video helps readers focus on a single key subject.</td>
@@ -179,8 +198,8 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
   </tr>
 </table>
 
-### Use captions 
-Enable users to experience your stories anywhere.  In some settings, listening to audio is not an option. So while sound can enhance your story, listening should not be required. Use captions to keep readers engaged even when the volume is turned off. 
+### Use captions
+Enable users to experience your stories anywhere.  In some settings, listening to audio is not an option. So while sound can enhance your story, listening should not be required. Use captions to keep readers engaged even when the volume is turned off.
 
 <table>
   <tr>
@@ -190,12 +209,20 @@ Enable users to experience your stories anywhere.  In some settings, listening t
   <tr>
   <!-- TODO: Swap assets with correct mp4 -->
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/captions-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/captions-do.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/captions-do.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/captions-do.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/captions-do.mp4" type="video/mp4" />  
+        </amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/captions-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/captions-dont.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/captions-dont.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/captions-dont.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/captions-dont.mp4" type="video/mp4" />        
+        </amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -208,7 +235,7 @@ For more technical video guidelines see [this section](https://amp.dev/documenta
 
 ## Animation
 
-### Pay attention to timing 
+### Pay attention to timing
 
 Animation can enhance stories when it’s visually appealing, easy to understand, and the timing is right. It’s important to deliver the right combination of style and duration. For example, simple animations should take less than 500 milliseconds, but panning on a background image should last longer.
 
@@ -219,12 +246,20 @@ Animation can enhance stories when it’s visually appealing, easy to understand
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/duration-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/duration-do.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/duration-do.mp4" type="video/mp4" />          
+        </amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/duration-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/duration-do.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/duration-dont.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/duration-dont.mp4" type="video/mp4" />          
+        </amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -244,12 +279,20 @@ Pick an animation style that matches your story’s aesthetic.  AMP story offers
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/style-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/style-do.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/style-do.mp4" type="video/mp4" />          
+        </amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/style-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/style-still.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/style-dont.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/style-dont.mp4" type="video/mp4" />  
+        </amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -259,7 +302,7 @@ Pick an animation style that matches your story’s aesthetic.  AMP story offers
 </table>
 
 ### Build animation sequences with multiple objects
-One way to be creative with motion is to animate multiple objects into a sequence, rather than having them all move together with one effect. Elements can have different effects and durations, but should all work together to deliver one message. 
+One way to be creative with motion is to animate multiple objects into a sequence, rather than having them all move together with one effect. Elements can have different effects and durations, but should all work together to deliver one message.
 
 <table>
   <tr>
@@ -268,12 +311,20 @@ One way to be creative with motion is to animate multiple objects into a sequenc
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/sequence-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/sequence-do.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/sequence-do.mp4" type="video/mp4" />          
+        </amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/sequence-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/sequence-still.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/sequence-dont.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/sequence-dont.mp4" type="video/mp4" />         
+        </amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -282,9 +333,9 @@ One way to be creative with motion is to animate multiple objects into a sequenc
   </tr>
 </table>
 
-## Other story  components 
+## Other story  components
 
-### Use embeds strategically 
+### Use embeds strategically
 
 Embeds can provide an added dimension to your story when used sparingly and presented in the right way. Include relevant content alongside the embed so that it’s an integrated piece of the story.  You may need to enable interactivity for your embed.
 
@@ -303,9 +354,9 @@ Embeds can provide an added dimension to your story when used sparingly and pres
   </tr>
 </table>
 
-### Add additional content with attachments 
+### Add additional content with attachments
 
-Keep your AMP story streamlined by putting related content in attachments. This way, readers can easily dig deeper if they want to learn more about your story. You might use attachments for long blocks of text that don’t fit in the main story, or, if your story contains a highlight video, you might make the full video available as an attachment. Help readers navigate your content by designing the attachment to align with the rest of your story. 
+Keep your AMP story streamlined by putting related content in attachments. This way, readers can easily dig deeper if they want to learn more about your story. You might use attachments for long blocks of text that don’t fit in the main story, or, if your story contains a highlight video, you might make the full video available as an attachment. Help readers navigate your content by designing the attachment to align with the rest of your story.
 
 <table>
   <tr>
@@ -314,12 +365,20 @@ Keep your AMP story streamlined by putting related content in attachments. This 
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/attachment-do.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/attachment-do.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/attachment-do.mp4" type="video/mp4" />         
+        </amp-video>
+      </div>
     </td>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/attachment-dont.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/attachment-still.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/attachment-dont.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/attachment-dont.mp4" type="video/mp4" />          
+        </amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -334,8 +393,12 @@ Keep your AMP story streamlined by putting related content in attachments. This 
   </tr>
   <tr>
     <td>
-      <amp-video src="/static/img/docs/guides/storiesbp/attachment-do2.mp4" layout="intrinsic" poster="/static/img/docs/guides/storiesbp/attachment-still2.jpg" width="360" height="720" loop autoplay noaudio>
-      </amp-video>
+      <div style="max-width: 360px">
+        <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/attachment-still2.jpg" width="360" height="720" loop autoplay noaudio>
+          <source src="/static/img/docs/guides/storiesbp/attachment-do2.webm" type="video/webm" />
+          <source src="/static/img/docs/guides/storiesbp/attachment-do2.mp4" type="video/mp4" />         
+        </amp-video>
+      </div>
     </td>
   </tr>
   <tr>
@@ -345,7 +408,7 @@ Keep your AMP story streamlined by putting related content in attachments. This 
 
 ### Be thoughtful with links
 
-With AMP stories, you can add links anywhere on a page. When a link is tapped, a tooltip appears, letting the user know where the link goes, and allowing the user to confirm the action before leaving the story. It’s important to think strategically about the size and location of your links, as well as the frequency. Adding too many tappable elements to your pages can complicate story navigation and potentially frustrate readers. 
+With AMP stories, you can add links anywhere on a page. When a link is tapped, a tooltip appears, letting the user know where the link goes, and allowing the user to confirm the action before leaving the story. It’s important to think strategically about the size and location of your links, as well as the frequency. Adding too many tappable elements to your pages can complicate story navigation and potentially frustrate readers.
 
 <table>
   <tr>
@@ -359,12 +422,12 @@ With AMP stories, you can add links anywhere on a page. When a link is tapped, a
   <tr>
     <td>The links on this page are clearly marked and surrounded by related content. They don’t interfere with story navigation.</td>
     <td>The links on this page completely block the navigation. Readers will not be able to easily go to the previous or the next page.</td>
-  </tr>  
+  </tr>
 </table>
 
 ## Desktop experience
 
-Improve the desktop experience of your AMP stories by [including landscape images](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). While AMP stories are primarily designed for mobile devices, some people do view them on desktop.  By including both portrait and landscape styles, you can ensure that people see images in the format that’s right for the device they’re using. 
+Improve the desktop experience of your AMP stories by [including landscape images](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). While AMP stories are primarily designed for mobile devices, some people do view them on desktop.  By including both portrait and landscape styles, you can ensure that people see images in the format that’s right for the device they’re using.
 
 ## Ads and sponsored content
 
@@ -372,7 +435,7 @@ Improve the desktop experience of your AMP stories by [including landscape image
 
 Sponsored content should be clearly labeled, and any paid or affiliate links should use the [`nofollow`](https://support.google.com/webmasters/answer/96569?hl=en) attribute.
 
-## Technical Considerations 
+## Technical Considerations
 
 ### Background color
 

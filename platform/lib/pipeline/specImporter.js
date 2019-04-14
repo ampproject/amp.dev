@@ -17,16 +17,12 @@
 require('module-alias/register');
 
 const path = require('path');
+const project = require('@lib/utils/project');
 
-const {GitHubImporter} = require('./gitHubImporter');
-const {Signale} = require('signale');
+const {GitHubImporter, log} = require('./gitHubImporter');
 
-const log = new Signale({
-  'interactive': false,
-  'scope': 'GitHub Importer',
-});
 // Where to save the documents to
-const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/';
+const DESTINATION_BASE_PATH = project.absolute('pages/content/amp-dev');
 
 class SpecImporter {
   constructor(githubImporter = new GitHubImporter()) {
@@ -48,15 +44,19 @@ class SpecImporter {
     const importedDocs = [];
     for (const importDoc of importDocs) {
       try {
-        const doc = await this.githubImporter_.fetchDocument(importDoc.from, /* master */ true);
+        const doc = await this.githubImporter_.fetchDocument(importDoc.from, importDoc.repo, true);
         doc.path = path.join(DESTINATION_BASE_PATH, importDoc.to);
         doc.title = importDoc.title;
         doc.order = importDoc.order;
         doc.toc = importDoc.toc;
         doc.formats = importDoc.formats;
 
-        // Remove the double heading
+        // Remove the double heading and rewrite relative links
         doc.stripInlineTitle();
+
+        const relativeBase = 'https://github.com/' +
+            `${importDoc.repo}/blob/master/${path.dirname(importDoc.from)}`;
+        doc.rewriteRelativePaths(relativeBase);
 
         importedDocs.push(doc.save());
       } catch (err) {

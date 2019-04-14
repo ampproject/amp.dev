@@ -21,7 +21,10 @@ const express = require('express');
 const config = require('@lib/config');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
-const {FilteredPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const cheerio = require('cheerio');
+const {filterPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const {shouldAddReferrerNotification, addReferrerNotification} =
+  require('@lib/common/referrerNotification');
 const fs = require('fs');
 const readFileAsync = promisify(fs.readFile);
 
@@ -56,11 +59,38 @@ function getFilteredFormat(request) {
   return activeFormat;
 }
 
+function fixCheerio(page) {
+  // As cheerio has problems with XML syntax in HTML documents the
+  // markup for the icons needs to be restored
+  page = page.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
+      'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+  page = page.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
+      'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
+  return page;
+}
+
+/**
+ * Checks if a path ends on a directory and appends index.html if that's
+ * the case, otherwise appends .html extension
+ * @param  {String} path
+ * @return {String}
+ */
+function ensureFileExtension(path) {
+  if (path.endsWith('/')) {
+    return path += 'index.html';
+  }
+
+  if (!path.endsWith('.html')) {
+    return path += '.html';
+  }
+
+  return path;
+}
+
 
 // Setup a proxy over to Grow during development
 if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
-  const HttpProxy = require('http-proxy');
   const modifyResponse = require('http-proxy-response-rewrite');
   const got = require('got');
   const {pageMinifier} = require('@lib/build/pageMinifier');
@@ -80,7 +110,7 @@ if (config.isDevMode()) {
    * @return {Boolean}
    */
   async function hasManualFormatVariant(request, format) {
-    const path = request.originalUrl.replace('.html', `.${format}.html`);
+    const path = request.url.replace('.html', `.${format}.html`);
 
     const page = await got(`${growHost}${path}`).catch(() => {
       return {};
@@ -93,17 +123,9 @@ if (config.isDevMode()) {
     return false;
   }
 
-  // Grow has problems delivering the index.html on a root request
-  pages.use((request, response, next) => {
-    if (request.path.endsWith('/')) {
-      request.url = `${request.path}index.html`;
-    }
-
-    next();
-  });
-
   // During development all requests should be proxied over
   // to Grow and be handled there, therfore create one
+  const HttpProxy = require('http-proxy');
   const proxy = new HttpProxy();
 
   // As the filtering will happen on content from the proxy (which will end
@@ -115,11 +137,13 @@ if (config.isDevMode()) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const filteredPage = new FilteredPage(activeFormat, body);
-          response.setHeader('content-length', filteredPage.content.length.toString());
-          return filteredPage.content;
+          const dom = cheerio.load(body);
+          filterPage(activeFormat, dom);
+          const html = fixCheerio(dom.html());
+          response.setHeader('content-length', html.length.toString());
+          return html;
         } catch (e) {
-          log.warn('Could not filter request', e.message);
+          log.warn('Could not filter request', e);
           return body;
         }
       });
@@ -137,6 +161,8 @@ if (config.isDevMode()) {
   });
 
   pages.get('/*', async (request, response, next) => {
+    request.url = ensureFileExtension(request.path);
+
     // Check if there is a manually filtered variant of the requested page
     // and if so rewrite the request to this URL
     const activeFormat = getFilteredFormat(request);
@@ -182,30 +208,38 @@ if (!config.isDevMode()) {
   }
 
   pages.use('/', async (request, response, next) => {
-    let requestPath = request.path;
+    let requestPath = ensureFileExtension(request.path);
 
-    // Match root requests to a possible index.html
-    if (requestPath.endsWith('/')) {
-      requestPath = requestPath + 'index.html';
-    }
+    const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
+    const hasReferrerNotification = shouldAddReferrerNotification(request);
 
     // Let the built-in middleware deal with unfiltered requests
-    if (!await shouldApplyFormatFilter(request, requestPath)) {
+    if (!hasFormatFilter && !hasReferrerNotification) {
       return staticMiddleware(request, response, next);
     }
 
+    // Apply format and referrer transformations
     try {
-      // Check if there's a manually filtered variant ...
       const format = getFilteredFormat(request);
-      const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
-      if (await fileExistsAsync(utils.project.pagePath(manualRequestPath))) {
-        // ... and if there is one vend this
-        requestPath = manualRequestPath;
+      if (hasFormatFilter) {
+        // Check if there's a manually filtered variant ...
+        const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+        if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
+          // ... and if there is one vend this
+          requestPath = manualRequestPath;
+        }
       }
 
-      const page = await readFileAsync(utils.project.pagePath(requestPath));
-      const filteredPage = new FilteredPage(format, page, true);
-      response.send(filteredPage.content);
+      let page = await readFileAsync(utils.project.pagePath(requestPath));
+      const dom = cheerio.load(page);
+      if (hasFormatFilter) {
+        filterPage(format, dom, true);
+      }
+      if (hasReferrerNotification) {
+        addReferrerNotification(request.query.referrer, dom);
+      }
+      page = fixCheerio(dom.html());
+      response.send(page);
     } catch (e) {
       if (e.code === 'EISDIR') {
         // show a 404 instead

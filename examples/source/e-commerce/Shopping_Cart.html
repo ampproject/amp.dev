@@ -45,7 +45,7 @@
 </head>
 <body>
     <div class="shopping-cart">
-        <!-- We use [amp-list](/documentation/components/reference/amp-list.html), to show a dynamic list of items in the cart.
+        <!-- We use [amp-list](/documentation/components/amp-list), to show a dynamic list of items in the cart.
 
         `amp-list` needs to send the session cookie on the header of the request, so that the server can retrieve the contents of the cart on the session. For this reason, we use  [credentails="include"](/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.html), as an additional attribute.
 
@@ -80,7 +80,7 @@
 
     <!-- ## Delete Items Form -->
     <!--
-    As said, we use [amp-form](/documentation/components/reference/amp-form.html) to send an `XHR POST` request to `/delete-cart-item`:
+    As said, we use [amp-form](/documentation/components/amp-form) to send an `XHR POST` request to `/delete-cart-item`:
 
     1. The form contains two hidden input fields, bound to the `cartItem` object's variables. When the remove button is clicked, this object gets updated with the details of the item to remove from cart, so the form can send them on the call to the server.
     2. The form updates the `cartItemsList` with the response from the server, so that  `amp-list` can be refreshed with the contents of the updated cart.

@@ -18,11 +18,16 @@
 
 const express = require('express');
 const {setNoCache, setMaxAge} = require('../utils/cacheHelpers.js');
+const config = require('../config.js');
 
 // eslint-disable-next-line new-cap
 const staticRouter = express.Router();
 
 staticRouter.use('/static', express.static('static'));
+
+if (config.isProdMode()) {
+  staticRouter.use('/', express.static('static/sitemap'));
+}
 
 staticRouter.get('/serviceworker.js', (request, response) => {
   setNoCache(response);
@@ -30,10 +35,17 @@ staticRouter.get('/serviceworker.js', (request, response) => {
       .sendFile('serviceworker.js', {root: 'static'});
 });
 
+staticRouter.get('/serviceworker.html', (request, response) => {
+  setMaxAge(response, 60 * 60 * 24);
+  response.status(200)
+      .sendFile('serviceworker.html', {root: 'static'});
+});
+
 staticRouter.get('/robots.txt', (request, response) => {
   setMaxAge(response, 60 * 60);
+  const robotsFile = config.isProdMode() ? 'robots/prod.txt' : 'robots/staging.txt';
   response.status(200)
-      .sendFile('robots.txt', {root: 'static'});
+      .sendFile(robotsFile, {root: 'static'});
 });
 
 staticRouter.get('/manifest.json', (request, response) => {

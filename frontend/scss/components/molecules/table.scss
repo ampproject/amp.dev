@@ -35,7 +35,7 @@ table {
   padding: 0 0 0 20px;
   margin: 1.5em -20px 2em -20px;
   display: block;
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   @include txt;
   @include txt-2;

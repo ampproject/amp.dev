@@ -1,3 +1,14 @@
+{% macro filter(formats='websites, ads, stories, email') -%}
+{% if not formats.strip() %}
+{{ caller() }}
+{% else %}
+{% set formats = formats.split(',') %}
+<div class="{% for format in formats %}ap--{{ format.strip() }} {% endfor %}">
+{{ caller() }}
+</div>
+{% endif %}
+{%- endmacro %}
+
 {% macro tip(title, type='note') -%}
 {% with %}
 {% set text = caller() %}
@@ -33,13 +44,13 @@
 
     <meta name="theme-color" content="#005af0"/>
 
-    <link rel="canonical" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.public_path }}"/>
-    <link rel="alternate" hreflang="x-default" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.localize(podspec.default_locale).public_path }}"/>
+    <link rel="canonical" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.url.path }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.localize(podspec.default_locale).url.path }}"/>
     {% for locale in doc.locales if not locale == doc.locale  %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
-    <link rel="alternate" hreflang="{{ locale }}" href="{{ doc.pod.podspec.base_urls.platform }}{{ localized_doc.public_path }}"/>
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ doc.pod.podspec.base_urls.platform }}{{ localized_doc.url.path }}"/>
     {% endif %}
     {% endfor %}
 
@@ -119,17 +130,6 @@
     <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
     <amp-font layout="nodisplay" font-family="Fira Mono" timeout="3000"></amp-font>
     {% endblock %}
-
-    {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
-    <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
-      Hi, this is the public beta of amp.dev. Got feedback?
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf36pLNLBR3LVj_v1cuNbDMwXHKxrhpgdIxNcmIUJNvEOAUnQ/viewform" class="ap-m-banner-link">
-        {% do doc.icons.useIcon('/icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        {{ _('Let us know!') }}
-      </a>
-    </div>
 
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}

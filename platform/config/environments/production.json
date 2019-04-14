@@ -27,6 +27,17 @@
       "subdomain": "preview",
       "host": "amp.dev",
       "port": ""
+    },
+    "go": {
+      "scheme": "https",
+      "subdomain": "go",
+      "host": "amp.dev",
+      "port": ""
+    },
+    "packager": {
+      "scheme": "https",
+      "host": "amp-dev-sxg.appspot.com",
+      "port": ""
     }
 	}
 }

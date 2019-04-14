@@ -309,7 +309,7 @@ msgstr ""
 
 #: /views/detail/component-detail.j2:24
 msgid ""
-"You've red this document a dozen times but it doesn't really cover all of "
+"You've read this document a dozen times but it doesn't really cover all of "
 "your questions? Maybe other people felt the same: reach out to them on Stack "
 "Overflow."
 msgstr ""

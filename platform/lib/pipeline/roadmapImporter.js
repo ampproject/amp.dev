@@ -32,23 +32,24 @@ const log = new Signale({
 
 async function importRoadmap() {
   log.start('Starting import of roadmap ...');
-  const octokit = new Octokit({
+  const options = {
     'previews': [
       'symmetra-preview',
       'inertia-preview',
     ],
-  });
+  };
 
   gitHubImporter.checkCredentials();
-  octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
-    type: 'token',
-    token: gitHubImporter.CLIENT_TOKEN,
-  } : {
-    type: 'oauth',
-    key: gitHubImporter.CLIENT_ID,
-    secret: gitHubImporter.CLIENT_SECRET,
-  });
+  if (gitHubImporter.CLIENT_TOKEN) {
+    options['auth'] = gitHubImporter.CLIENT_TOKEN;
+  } else {
+    options['auth'] = {
+      'clientId': gitHubImporter.CLIENT_ID,
+      'clientSecret': gitHubImporter.CLIENT_SECRET,
+    };
+  }
 
+  const octokit = new Octokit(options);
   const result = await octokit.projects.listColumns({project_id: '1344133'});
 
   log.await('Fetching cards per column ...');
@@ -94,7 +95,7 @@ async function importRoadmap() {
     const issue = issueMap[card.issueUrl];
     card.issue = {
       url: issue.data.html_url,
-      title: issue.data.title.replace(/\[Master [fF]eature\] /, ''),
+      title: issue.data.title.replace(/\[master feature\] /i, ''),
       description: issue.data.body
           .replace('Feature description:\r\n\r\n', '')
           .replace(/\[ \]/g, '')

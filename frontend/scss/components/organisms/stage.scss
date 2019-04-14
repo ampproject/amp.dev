@@ -103,6 +103,7 @@
       @include txt-1;
       @include color-websites;
       margin-top: 0;
+      margin-bottom: .75em;
 
       @media (min-width: 768px) {
         @include txt-2;
