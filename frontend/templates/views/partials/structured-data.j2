@@ -1,13 +1,10 @@
-{# Structured data can't be printed without a description #}
-{% if doc.description or (doc.teaser and doc.teaser.text) %}
-
 {# Set needed data for all meta tags #}
-{% set description = doc.description or doc.teaser.text %}
+{% set description = doc.description or (doc.teaser.text if doc.teaser else None) %}
 {% set title = doc.title %}
 {% set base_url = doc.pod.podspec.base_urls.platform %}
 {% set canonical = doc.pod.podspec.base_urls.platform + doc.url.path %}
 
-{# Alter sharing image based on template and/or maintained data #}
+{# Alter sharing image and title prefix based on template and/or maintained data #}
 {% if doc.sharing_images %}
 {% set sharing_images = doc.sharing_images %}
 {% elif '/components/' in doc.pod_path %}
@@ -32,7 +29,24 @@
 } %}
 {% endif %}
 
+{# Prefix title with section #}
+{% set title_prefix = '' %}
+{% if doc.pod_path.startswith('/content/amp-dev/documentation/examples/documentation/') %}
+{% set title_prefix = _('Example: ') %}
+{% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples/previews/') %}
+{% set title_prefix = _('Example preview: ') %}
+{% elif doc.pod_path.startswith('/content/amp-dev/documentation/components/reference/') %}
+{% set title_prefix = _('Component: ') %}
+{% elif doc.pod_path.startswith('/content/amp-dev/about/success-stories/') and not 'index.html' in doc.pod_path %}
+{% set title_prefix = _('Success Story: ') %}
+{% endif %}
+
+<title>{{ title_prefix }}{{ doc.title }} - amp.dev</title>
+
+{% if description %}
 <meta name="description" content="{{ description }}">
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -40,7 +54,9 @@
   "url": "{{ canonical}} ",
   "name": "amp.dev",
   "headline":"{{ title }}",
+  {% if description %}
   "description":"{{ description }}",
+  {% endif %}
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ base_url }}"
@@ -65,7 +81,9 @@
 </script>
 
 <meta name="twitter:card" content="summary_large_image">
+{% if description %}
 <meta name="twitter:description" content="{{ description }}">
+{% endif %}
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:creator" content="@ampproject">
 <meta name="twitter:site" content="@ampproject">
@@ -76,5 +94,3 @@
 <meta property="og:image" content="{{ base_url }}{{ sharing_images.wide }}">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="314">
-
-{% endif %}
