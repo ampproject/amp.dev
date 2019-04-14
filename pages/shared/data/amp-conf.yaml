@@ -234,6 +234,16 @@ speakers:
       company: Google
       bio:
       pic: /static/img/amp-conf/speakers/amp.png
+  michaelwuergler:
+      name: Michael Wuergler
+      company: Doodle
+      bio: Michael is a designer turned Software Engineer with a passion for web/mobile technologies, automation and open source. He is lucky enough to spend his day doing what he loves: building time-saving applications, automations and prototypes for Doodle.
+      pic: /static/img/amp-conf/speakers/michaelwuergler.jpg
+  anirudhkhanna:
+      name: Anirudh Khanna
+      company: OYO Rooms
+      bio: Anirudh is a software developer at OYO, mostly found working on exciting web projects like AMP and Progressive Web App. He started his dev career at OYO itself two years ago. He has keen interest in front-end development, and also loves to write and paint in spare time.
+      pic: /static/img/amp-conf/speakers/anirudhkhanna.jpg
   TBA:
     name: To Be Announced
     company: AMP Conf
@@ -399,6 +409,8 @@ agenda:
       speakers:
         - aakashsahney
         - filipstanis
+        - michaelwuergler
+        - anirudhkhanna
     - title: "Signed exchanges for better AMP URLs and easier analytics"
       description: "Come for better URLs and stay for easier analytics and dynamic data handling! Get a primer on Signed exchanges and how to use them in Google Search."
       time: "1515"
