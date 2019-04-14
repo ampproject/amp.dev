@@ -334,8 +334,10 @@ agenda:
       time: "1715"
       type: session
       speaker: rudygalfi
-    - title: "Technical Steering Committee"
+    - title: "TSC Panel"
+      description: Ask the new Technical Steering Committee of AMP any questions you have about the past, present and future of AMP.
       type: panel
+      dory: https://app2.sli.do/event/nulvdxp3
       time: "1730"
       moderator: crystallambert
       speakers:
@@ -391,9 +393,11 @@ agenda:
       speakers:
         - kenjibaheux
         - kinukoyasuda
-    - title: "Google Panel"
+    - title: "Google Leadership Panel"
+      description: Meet Google leadership from Google Search and Google Chrome to discuss AMP and the future of content experiences on the web and at Google.
       time: "1200"
       type: panel
+      dory: https://app2.sli.do/event/nulvdxp3
       moderator: monishavaradan
       speakers:
         - davidbesbris
