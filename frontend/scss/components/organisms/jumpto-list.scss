@@ -25,7 +25,6 @@
 
 .#{organism('jumpto')} {
   width: 100%;
-  position: relative;
 
   @media (min-width: 768px) {
     grid-column: 2 / -1;
@@ -43,11 +42,14 @@
 
   &-text {
     @include txt;
+    margin-bottom: 0.5em;
   }
 
   &-list {
     @include jumpto-list-shadow;
+    position: relative;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     background: color('white');
     border-radius: 4px;

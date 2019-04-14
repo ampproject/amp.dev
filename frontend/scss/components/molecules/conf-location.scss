@@ -52,7 +52,6 @@
     &-link {
       @include hl;
       @include hl-h4;
-      text-decoration: underline;
       color: color('white');
     }
   }

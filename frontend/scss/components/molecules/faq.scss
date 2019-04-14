@@ -16,15 +16,11 @@
 @import 'components/atoms/_headline.scss';
 
 .#{molecule('faq')} {
-  grid-column: 7 / 19;
-  margin: 50px 20px 100px 5px;
+  grid-column: 6 / 19;
+  margin: 50px 20px 0 5px;
 
   @media (min-width: 768px) {
-    margin: 50px 0 100px;
-  }
-
-  &.ampconf {
-    grid-column: 6 / 19;
+    margin: 50px 0 0;
   }
 
   &-headline {
@@ -35,17 +31,16 @@
   }
 
   &-content {
-    @include txt;
     padding-top: 24px;
 
     &-question {
       @include txt-font-accent;
       @include txt-lrg;
-      margin: 15px 0;
+      margin: 0 0 5px 0;
     }
 
     &-answer {
-      @include txt-2;
+      @include txt;
       margin: 0;
       padding-bottom: 25px;
     }

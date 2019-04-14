@@ -32,12 +32,71 @@
   section {
     margin-bottom: 50px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
     .copy {
       grid-column: 7 / 18;
+    }
+  }
+}
+
+  .#{utility('stage')} {
+    .#{organism('stage')} {
+      margin-bottom: 50px;
+
+      &-content {
+        margin: 20em 0 4em;
+
+        @media (min-width: 768px) {
+          margin: 7vw 0 11vw;
+        }
+      }
+
+      &-content-roadshow {
+        margin: 16em 0 2em;
+
+        @media (min-width: 768px) {
+          margin: 5vw 0 5vw;
+        }
+      }
+
+    }
+
+    & + .#{utility('content')} {
+      @media (min-width: 768px) {
+        margin-top: -15%;
+      }
+
+      h1 {
+        @include hl-xxlrg;
+      }
+    }
+
+  }
+
+  .#{utility('slido')} {
+    background: color('carnation');
+    padding: 3em;
+    border-radius: 0.5em;
+
+    h1, h4 {
+      margin-top: 0;
+      color: color('white');
+    }
+
+    p {
+      color: color('white');
+    }
+
+    &-link {
+      color: color('white');
+      text-decoration: underline;
+    }
+
+    &-code {
+      background: color('white');
+      padding: 0.4em;
+      border-radius: 0.2em;
+      color: color('charade');
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
     }
   }
 
@@ -79,6 +138,7 @@
         width: 100%;
 
         &.row {
+          grid-column: 4 / 22;
           display: flex;
           flex-wrap: wrap;
 
@@ -109,42 +169,16 @@
     }
   }
 
-  .#{utility('scheudle-selector')} {
+  .#{utility('flex-container')} {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
 
-  .#{utility('stage')} {
-    .#{organism('stage')} {
-      margin-bottom: 50px;
+  .#{utility('inline-footer')} {
+    grid-column: 3 / 22;
 
-      &-content {
-        margin: 20em 0 4em;
-
-        @media (min-width: 768px) {
-          margin: 7vw 0 11vw;
-        }
-      }
-
-      &-content-roadshow {
-        margin: 16em 0 2em;
-
-        @media (min-width: 768px) {
-          margin: 5vw 0 5vw;
-        }
-      }
-
+    @media (max-width: 767px) {
+      flex-wrap: nowrap;
     }
-
-    & + .#{utility('content')} {
-      @media (min-width: 768px) {
-        margin-top: -15%;
-      }
-
-      h1 {
-        @include hl-xxlrg;
-      }
-    }
-
   }
-}
