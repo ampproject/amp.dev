@@ -7,6 +7,7 @@ $localization:
 
 $order: 6
 
+bucket: true
 formats:
   - websites
   - stories

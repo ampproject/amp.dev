@@ -1,8 +1,8 @@
 $title@: Learn
-$path: /documentation/guides-and-tutorials/learn/{base}.html
 $view: /views/detail/docs-detail.j2
-
+$path: /documentation/guides-and-tutorials/learn/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/learn/{base}.html
-
 $order: 1
+
+bucket: true

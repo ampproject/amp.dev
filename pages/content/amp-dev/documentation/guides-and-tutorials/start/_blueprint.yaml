@@ -3,5 +3,6 @@ $view: /views/detail/docs-detail.j2
 $path: /documentation/guides-and-tutorials/start/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/{base}.html
-
 $order: 0
+
+bucket: true
