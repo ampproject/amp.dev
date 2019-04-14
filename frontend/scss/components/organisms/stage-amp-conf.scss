@@ -21,7 +21,7 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
   background-color: color('carnation');
-  background-image: url("/static/img/amp-conf/sakura.png");
+  background-image: url('/static/img/amp-conf/sakura.png');
   background-repeat: no-repeat;
   background-position: right;
 
@@ -118,7 +118,7 @@
 
     &-button {
       background: color('white');
-      color: color('carnation');
+      color: color('river-bed');
       margin-top: 20px;
     }
   }
