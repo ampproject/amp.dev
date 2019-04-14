@@ -217,8 +217,8 @@ speakers:
   monishavaradan:
     name: Monisha Varadan
     company: Google
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png
+    bio: Monisha Varadan represents the Product Partnerships team at Google and is currently responsible for building external partnerships that enable the roll out of modern web technologies in APAC like AMP and PWA. Monisha joined Google six years ago and has since been navigating the cross over between Product and Partnerships supporting teams like Search, Assistant, Chrome and Web to build and launch magical yet relevant products for Asia.
+    pic: /static/img/amp-conf/speakers/monisha.jpg
   greggrothaus:
       name: Greg Grothaus
       company: Google
