@@ -44,7 +44,7 @@
 		&-placeholder {
 			width: 100%;
 			position: absolute;
-			padding-bottom: 33.33333333%;
+			padding-bottom: 41%;
 			z-index: 4;
 			transform: translate3d(0, 0, 0);
 			transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -114,7 +114,7 @@
 
 		&-image {
 			@include teaser-image;
-			padding-bottom: 33.33333333%;
+			padding-bottom: 41%;
 
 			&:before {
 				height: 100%;
