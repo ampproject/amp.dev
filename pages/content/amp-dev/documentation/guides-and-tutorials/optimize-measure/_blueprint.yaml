@@ -1,12 +1,11 @@
 $title@: Optimize & Measure
 $path: /documentation/guides-and-tutorials/optimize-and-measure/{base}.html
 $view: /views/detail/docs-detail.j2
-
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/optimize-and-measure/{base}.html
-
 $order: 4
 
+bucket: true
 formats:
   - websites
   - email

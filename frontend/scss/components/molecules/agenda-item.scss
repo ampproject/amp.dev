@@ -55,6 +55,15 @@
     color: color('charade');
   }
 
+  &-dory {
+    background: color('carnation');
+    padding: 0.4em;
+    border-radius: 0.2em;
+    color: color('white');
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
+    display: inline-block;
+  }
 
   &-description {
     position: relative;

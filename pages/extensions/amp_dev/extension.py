@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from grow import extensions
 
 # Monkey patch grow.url before doing anything else
 from grow.common import urls
@@ -12,11 +13,6 @@ class AmpDevUrl(urls._Url):
         self.path = self.path.replace('/index.html', '/').replace('.html', '')
 
 urls.Url = AmpDevUrl
-
-import os
-import pkgutil
-import sys
-import types
 
 from grow import extensions
 from grow.documents import document, document_format, static_document

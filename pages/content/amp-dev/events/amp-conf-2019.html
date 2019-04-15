@@ -13,8 +13,6 @@ section_links:
   - FAQ
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
-{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
-
 
 <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
@@ -23,6 +21,7 @@ section_links:
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content ap-o-stage-content-roadshow">
 
+            <h2 class="ap-o-stage-content-subline">April 17 - 18</h2>
             <h1 class="ap-o-stage-content-headline">AMP Conf 2019</h1>
             <h2 class="ap-o-stage-content-subline">ようこそ from Tokyo, Japan</h2>
 
@@ -31,6 +30,13 @@ section_links:
               Get livestream updates
             </a>
         </div>
+      </div>
+    </div>
+
+    {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
+    <div class="ap-m-roadshow-video">
+      <div class="ap-m-roadshow-video-block">
+        <amp-youtube data-videoid="nu0PiE7j8Mw" layout="responsive" height="9" width="16"></amp-youtube>
       </div>
     </div>
 </section>
@@ -42,7 +48,7 @@ section_links:
   <div class="ap-o-jumpto">
     <div class="ap--container">
       <div class="ap-o-jumpto-content">
-        <p class="ap-o-jumpto-text">Jump To:</p>
+        <p class="ap-o-jumpto-text">Learn more about</p>
         <ul class="ap-o-jumpto-list">
           {% for link in doc.section_links %}
             <li class="ap-m-jumpto-item">
@@ -62,31 +68,12 @@ section_links:
 </section>
 
 <section class="ap--container">
-  <div class="ap--content-wide row">
-    {% do doc.styles.addCssFile('css/components/molecules/conf-event.css') %}
-
-      <div class="ap-m-conf-event">
-        <h3>When</h3>
-        <div class="ap-m-conf-event-detail">
-          <p class="ap-m-conf-event-detail-info">April 17 & 18</p>
-          <p class="ap-m-conf-event-detail-info secondary">2019</p>
-        </div>
-      </div>
-
-      <div class="ap-m-conf-event">
-        <h3>Where</h3>
-        <div class="ap-m-conf-event-detail">
-          <a href="http://forum.academyhills.com/roppongi/en/" class="ap-m-conf-event-detail-info link">Roppongi Academy Hills</a>
-          <p class="ap-m-conf-event-detail-info">Tokyo</p>
-        </div>
-      </div>
-
-      <div class="ap-m-conf-event">
-        <h3>For</h3>
-        <div class="ap-m-conf-event-detail">
-          <p class="ap-m-conf-event-detail-info">Developers & </br> Designers</p>
-        </div>
-      </div>
+  <div class="ap--content-wide ap--slido">
+    <div class="ap--content-default">
+      <h1>Join the conversation!</h1>
+      <p>Take part in the discussion and get your questions answered by the people on stage.</p>
+      <h4>Submit your questions on <a class="ap--slido-link" href="https://app2.sli.do/event/nulvdxp3" rel="noopener" target="_blank">sli.do</a> with <a href="https://app2.sli.do/event/nulvdxp3" class="ap--slido-code">#nulvdxp3</a></h4>
+    </div>
   </div>
 </section>
 
@@ -100,7 +87,7 @@ section_links:
   </div>
 
   <div class="ap--content-x-wide">
-    <amp-selector role="tablist" layout="container" class="ap--scheudle-selector">
+    <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
         <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1</div>
 
@@ -121,6 +108,10 @@ section_links:
 
                     {%  elif agenda_item.speakers %}
 
+                      {% if agenda_item.moderator %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[agenda_item.moderator].name }}" src="{{ doc.ampconf.speakers[agenda_item.moderator].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endif %}
+
                       {% for speaker in agenda_item.speakers %}
                         <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                       {% endfor %}
@@ -136,9 +127,13 @@ section_links:
                     <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
 
                   {% elif agenda_item.speakers %}
+                    {% if agenda_item.moderator %}
+                      <a href="#{{ agenda_item.moderator }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[agenda_item.moderator].name }}, {{ doc.ampconf.speakers[agenda_item.moderator].company }}</a> (Moderator)
+                      <br>                     
+                    {% endif %}
                     {% for speaker in agenda_item.speakers %}
                       <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
-                      </br>
+                      <br>
                     {% endfor %}
                   {% else %}
                   {% endif %}
@@ -146,6 +141,8 @@ section_links:
                   {% if agenda_item.description %}
                     <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
                   {% endif %}
+
+                  {% if agenda_item.dory %}<a class="ap-m-agenda-item-dory" href="{{ agenda_item.dory  }}">Submit questions</a>{% endif %}
                   </div>
                 </li>
               {% endfor %}
@@ -172,6 +169,10 @@ section_links:
 
                     {%  elif agenda_item.speakers %}
 
+                      {% if agenda_item.moderator %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[agenda_item.moderator].name }}" src="{{ doc.ampconf.speakers[agenda_item.moderator].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endif %}
+
                       {% for speaker in agenda_item.speakers %}
                         <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
                       {% endfor %}
@@ -187,9 +188,13 @@ section_links:
                     <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
 
                   {% elif agenda_item.speakers %}
+                    {% if agenda_item.moderator %}
+                      <a href="#{{ agenda_item.moderator }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[agenda_item.moderator].name }}, {{ doc.ampconf.speakers[agenda_item.moderator].company }}</a> (Moderator)
+                      <br>                     
+                    {% endif %}
                     {% for speaker in agenda_item.speakers %}
                       <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
-                      </br>
+                      <br>
                     {% endfor %}
                   {% else %}
                   {% endif %}
@@ -197,6 +202,8 @@ section_links:
                   {% if agenda_item.description %}
                     <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
                   {% endif %}
+
+                  {% if agenda_item.dory %}<a class="ap-m-agenda-item-dory" href="{{ agenda_item.dory  }}">Submit questions</a>{% endif %}
                   </div>
                 </li>
               {% endfor %}
@@ -212,7 +219,7 @@ section_links:
   <div class="ap--content-default">
     <h1>Speakers</h1>
   </div>
-  <div class="ap--content-x-wide ap--scheudle-selector">
+  <div class="ap--content-x-wide ap--flex-container">
       {% do doc.styles.addCssFile('css/components/molecules/conf-speaker.css') %}
       {% do doc.styles.addCssFile('css/components/molecules/lightbox.css') %}
 
@@ -283,24 +290,27 @@ section_links:
         <p class="ap-m-faq-content-answer">We'll try to confirm you within less than a week!</p>
         <p class="ap-m-faq-content-question">What determines if I have a spot?</p>
         <p class="ap-m-faq-content-answer">The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</p>
-        <p></p>
       </div>
     </div>
-  </div>
 </section>
 
 <section class="ap--container">
-  {% do doc.styles.addCssFile('css/components/organisms/ampconf-footer.css') %}
-    <ul class="ap-o-ampconf-footer row">
-      <li class="ap-o-ampconf-footer-item">
-        <a href="{{g.doc('/content/amp-dev/events/amp-conf/code-of-conduct.html', locale=doc.locale).url.path}}">Code of Conduct</a>
-      </li>
-      <li class="ap-o-ampconf-footer-item">
-        <a href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</a>
-      </li>
-      <li class="ap-o-ampconf-footer-item">
-        <a href="mailto:amp-conf@google.com">Contact</a>
-      </li>
-    </ul>
-</section>
+  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
 
+  <div class="ap-o-jumpto ap--container">
+    <div class="ap-o-jumpto-content ap--inline-footer">
+      <ul class="ap-o-jumpto-list">
+        <li class="ap-m-jumpto-item">
+          <a class="ap-m-jumpto-item-link" href="{{g.doc('/content/amp-dev/events/amp-conf/code-of-conduct.html', locale=doc.locale).url.path}}">Code of Conduct</a>
+        </li>
+        <li class="ap-m-jumpto-item">
+          <a class="ap-m-jumpto-item-link" href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</a>
+        </li>
+        <li class="ap-m-jumpto-item">
+          <a class="ap-m-jumpto-item-link" href="mailto:amp-conf@google.com">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

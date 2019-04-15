@@ -63,7 +63,7 @@ speakers:
     name: Wei Hong
     company: Google
     bio: "Hong Wei currently leads the interaction design work for the AMP stories format and the visual design work to showcase AMP stories across Google platforms. The AMP stories format is aiming to allow publishers to create visually compelling stories easily and accessible to all users through the open web."
-    pic: /static/img/amp-conf/speakers/hong.jpg 
+    pic: /static/img/amp-conf/speakers/hong.jpg
   leviclancy:
     name: Levi Clancy
     company: Re:Coded
@@ -79,7 +79,7 @@ speakers:
     company: Google
     bio: "Jeffrey is a Product Manager on AMP leading analytics efforts. Prior to joining Google, Jeffrey was a Lead Technical Director at DreamWorks Animation where he worked on movies such as How To Train Your Dragon 2, Madagascar 3 and several others."
     pic: /static/img/amp-conf/speakers/jeffreyj.jpg
-  crystallambert: 
+  crystallambert:
     name: Crystal Lambert
     company: Google
     bio:
@@ -92,7 +92,7 @@ speakers:
   nainaraisinghani:
     name: Naina Raisinghani
     company: Google
-    bio: Naina Raisinghani is a Product Manager on the AMP Project. She focuses on helping AMP engineers build great components that are delightful and easy to use. She previously spent 2 years as a Software Engineer on the Chrome team working on making the rendering engine pixel perfect. 
+    bio: Naina Raisinghani is a Product Manager on the AMP Project. She focuses on helping AMP engineers build great components that are delightful and easy to use. She previously spent 2 years as a Software Engineer on the Chrome team working on making the rendering engine pixel perfect.
     pic: /static/img/amp-conf/speakers/naina.jpg
   andrearosalrebolledo:
     name: Andrea Rosal Rebolledo
@@ -103,7 +103,7 @@ speakers:
     name: Hirohito Komada
     company: Yahoo! JAPAN
     bio: Hirohito is the Senior Manager of Yahoo! Travel.
-    pic: /static/img/amp-conf/speakers/komada.jpg  
+    pic: /static/img/amp-conf/speakers/komada.jpg
   shigekiohtsu:
     name: Shigeki Ohtsu
     company: Yahoo! JAPAN
@@ -113,7 +113,7 @@ speakers:
     name: Ryo Munakata
     company: Yahoo! JAPAN
     bio: Ryo Munakata is a lead engineer at Yahoo! JAPAN on the Search frontend team.
-    pic: /static/img/amp-conf/speakers/ryo.jpg  
+    pic: /static/img/amp-conf/speakers/ryo.jpg
   cristianronzio:
     name: Cristian Ronzio
     company: Musement Spa
@@ -134,7 +134,7 @@ speakers:
     company: Google
     bio: "Jeanny works as South East Asia Web Lead and Indonesia Market Manager in Online Partnership Group at Google. Her team helps over 100,000+ publishers on monetization strategy and beyond - to accelerate publishers' growth sustainably."
     pic: /static/img/amp-conf/speakers/jeanny.jpg
-  kbax: 
+  kbax:
     name: Kristofer Baxter
     company: Google
     bio: "Kristofer is a Software Engineer at Google focused on making the Web as fast as possible for users. Prior to working with AMP teams, Kristofer managed teams at LinkedIn and Netflix improving their software architecture and products."
@@ -142,13 +142,13 @@ speakers:
   katharinaalmonte:
     name: Katharina Familia Almonte
     company: Google
-    pic: /static/img/amp-conf/speakers/kalmonte.jpg  
+    pic: /static/img/amp-conf/speakers/kalmonte.jpg
     bio: "Katharina has been leading strategy and commercialization for advertising on AMP and AMPHTML ads since AMP's inception, after 5 years of working on Google's various publisher solutions. She was born and raised in Germany where she also went to college, and lived in Brazil, France and Ireland before moving to New York City."
   kiyotakaoku:
     name: Kiyotaka Oku
     company: EC-CUBE
     bio: "株式会社ロックオンに入社後、EC-CUBEの次期バージョン開発をリードする。2018年10月にスピンアウトした株式会社イーシーキューブではCTOを務める。"
-    pic: /static/img/amp-conf/speakers/kiyotaka.jpg 
+    pic: /static/img/amp-conf/speakers/kiyotaka.jpg
   mitsuhironaganuma:
     name: Mitsuhiro Naganuma
     company: SUNDAY SYSTEMS, Inc.
@@ -163,22 +163,22 @@ speakers:
     name: David Strauss
     company: Pantheon
     bio:
-    pic: /static/img/amp-conf/speakers/davidstrauss.jpg 
+    pic: /static/img/amp-conf/speakers/davidstrauss.jpg
   dimavoytenko:
     name: Dima Voytenko
     company: Google
     bio:
-    pic: /static/img/amp-conf/speakers/dima.jpg 
+    pic: /static/img/amp-conf/speakers/dima.jpg
   paularmstrong:
     name: Paul Armstrong
     company: Twitter
     bio:
-    pic: /static/img/amp-conf/speakers/paularmstrong.jpg 
+    pic: /static/img/amp-conf/speakers/paularmstrong.jpg
   saulosantos:
     name: Saulo Santos
     company: Microsoft
     bio:
-    pic: /static/img/amp-conf/speakers/saulo.jpg 
+    pic: /static/img/amp-conf/speakers/saulo.jpg
   tommykang:
     name: Tommy Kang
     company: Cafe24
@@ -200,15 +200,15 @@ speakers:
     bio: "Kinuko is a software engineer at Google working on Chrome. She is a tech-lead of Chrome loading for web platform, like Service Workers, Web Packaging, and various loading improvements."
     pic: /static/img/amp-conf/speakers/kinuko.jpg
   filipstanis:
-    name: Filip Stanis 
+    name: Filip Stanis
     company: Google
     bio: "As a developer advocate, Filip works with Google's large partners to help them make the most out of the latest web technologies such as AMP. He's passionate about UX design and the open web, and contributes to other open source projects in his spare time. He holds a BCompSc from Union University in Serbia."
     pic: /static/img/amp-conf/speakers/filip.jpg
   ajayshukla:
     name: Ajay Shukla
     company: Adobe
-    bio: Ajay is the Product Manager for Adobe Animate.  He is passionate about all things related to animation.  
-    pic: /static/img/amp-conf/speakers/ajay.jpg 
+    bio: Ajay is the Product Manager for Adobe Animate.  He is passionate about all things related to animation.
+    pic: /static/img/amp-conf/speakers/ajay.jpg
   takahiroyasuda:
     name: Takahiro Yasuda
     company: So-net Media Networks
@@ -217,12 +217,12 @@ speakers:
   monishavaradan:
     name: Monisha Varadan
     company: Google
-    bio:
-    pic: /static/img/amp-conf/speakers/amp.png
+    bio: Monisha Varadan represents the Product Partnerships team at Google and is currently responsible for building external partnerships that enable the roll out of modern web technologies in APAC like AMP and PWA. Monisha joined Google six years ago and has since been navigating the cross over between Product and Partnerships supporting teams like Search, Assistant, Chrome and Web to build and launch magical yet relevant products for Asia.
+    pic: /static/img/amp-conf/speakers/monisha.jpg
   greggrothaus:
       name: Greg Grothaus
       company: Google
-      bio: 
+      bio:
       pic: /static/img/amp-conf/speakers/greg.jpg
   ryoichiimaizumi:
       name: Ryoichi Imaizumi
@@ -234,11 +234,21 @@ speakers:
       company: Google
       bio:
       pic: /static/img/amp-conf/speakers/amp.png
+  michaelwuergler:
+      name: Michael Wuergler
+      company: Doodle
+      bio: "Michael is a designer turned Software Engineer with a passion for web/mobile technologies, automation and open source. He is lucky enough to spend his day doing what he loves: building time-saving applications, automations and prototypes for Doodle."
+      pic: /static/img/amp-conf/speakers/michaelwuergler.jpg
+  anirudhkhanna:
+      name: Anirudh Khanna
+      company: OYO Rooms
+      bio: Anirudh is a software developer at OYO, mostly found working on exciting web projects like AMP and Progressive Web App. He started his dev career at OYO itself two years ago. He has keen interest in front-end development, and also loves to write and paint in spare time.
+      pic: /static/img/amp-conf/speakers/anirudhkhanna.jpg
   TBA:
     name: To Be Announced
     company: AMP Conf
     bio:
-    pic: /static/img/amp-conf/speakers/amp.png  
+    pic: /static/img/amp-conf/speakers/amp.png
 
 agenda:
   day_1:
@@ -259,7 +269,7 @@ agenda:
     - title: "The glory of amp-script: Unleashing the kraken"
       description:
         AMP Documents have traditionally not allowed for custom JavaScript, relying on the well built large corpus of Web Components designed and validated to work within AMP.
-        
+
         Today, we release the Kraken. We’ll introduce `amp-script`, allowing your custom JavaScript to operate within AMP Documents with reasonable limits. Now your custom logic can be expressed with the world’s most popular programming language.
       time: "1030"
       type: session
@@ -267,8 +277,8 @@ agenda:
     - title: Coffee Break
       time: "1100"
     - title: "Everything I Know I Learned from AMP: Adopting an AMP Core Mindset"
-      description: Too often, engineers view AMP as "just one more thing to implement." In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages. 
-                   So, what would happen if teams began to think with an AMP Core Mindset? In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making, in order to help teams align on goals and make better decisions at every level. 
+      description: Too often, engineers view AMP as "just one more thing to implement." In reality, AMP provides engineers with a series of guiding principles that can help them deliver more performant websites—even when it comes to non-AMP pages.
+                   So, what would happen if teams began to think with an AMP Core Mindset? In this talk, we will explore AMP's core design principles and unpack how businesses can (and should!) incorporate these principles into all aspects of their decision making, in order to help teams align on goals and make better decisions at every level.
       time: "1130"
       type: session
       speaker: melissadepuydt
@@ -324,8 +334,10 @@ agenda:
       time: "1715"
       type: session
       speaker: rudygalfi
-    - title: "Technical Steering Committee"
+    - title: "TSC Panel"
+      description: Ask the new Technical Steering Committee of AMP any questions you have about the past, present and future of AMP.
       type: panel
+      dory: https://app2.sli.do/event/nulvdxp3
       time: "1730"
       moderator: crystallambert
       speakers:
@@ -352,7 +364,7 @@ agenda:
       description: "AMP was developed first for web pages but we've found a number of those principles apply well for the advertising ecosystem. In this session, we'll talk about all the various ways AMP is being used for advertising, driving better return on investment (ROI)."
       time: "0915"
       type: keynote
-      speakers: 
+      speakers:
         - vamseejasti
         - katharinaalmonte
         - ajayshukla
@@ -378,12 +390,14 @@ agenda:
       description: "At AMP conf 2018, we announced the beginnings of a collaborative effort between Chrome and AMP to enable instant and seamless user experiences on the web and make AMP more straightforward for publishers. Come see the progress we have made, hear about new projects we are working on to help developers  be more successful, and how our work benefits AMP, the web and users."
       time: "1130"
       type: session
-      speakers: 
+      speakers:
         - kenjibaheux
         - kinukoyasuda
-    - title: "Google Panel"
+    - title: "Google Leadership Panel"
+      description: Meet Google leadership from Google Search and Google Chrome to discuss AMP and the future of content experiences on the web and at Google.
       time: "1200"
       type: panel
+      dory: https://app2.sli.do/event/nulvdxp3
       moderator: monishavaradan
       speakers:
         - davidbesbris
@@ -399,6 +413,8 @@ agenda:
       speakers:
         - aakashsahney
         - filipstanis
+        - michaelwuergler
+        - anirudhkhanna
     - title: "Signed exchanges for better AMP URLs and easier analytics"
       description: "Come for better URLs and stay for easier analytics and dynamic data handling! Get a primer on Signed exchanges and how to use them in Google Search."
       time: "1515"
@@ -435,5 +451,4 @@ agenda:
       speaker: jeffreyj
       description: "Hear about the new developments in analytics and experimentation, without compromising performance or speed."
     - title: Wrap-up
-      time: "1730"
-
+      time: "1800"

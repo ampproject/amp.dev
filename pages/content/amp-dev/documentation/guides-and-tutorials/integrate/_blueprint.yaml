@@ -1,8 +1,8 @@
 $title@: Integrate
-$path: /documentation/guides-and-tutorials/integrate/{base}.html
 $view: /views/detail/docs-detail.j2
-
+$path: /documentation/guides-and-tutorials/integrate/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/integrate/{base}.html
-
 $order: 3
+
+bucket: true

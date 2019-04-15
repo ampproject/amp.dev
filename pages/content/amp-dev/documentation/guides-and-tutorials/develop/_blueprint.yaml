@@ -3,8 +3,9 @@ $view: /views/detail/docs-detail.j2
 $path: /documentation/guides-and-tutorials/develop/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/{base}.html
-
 $order: 2
+
+bucket: true
 formats:
   - websites
   - stories
