@@ -112,6 +112,12 @@
       }
     }
 
+    .#{utility('section')} {
+      @media (min-width: 930px) and (max-width: 1023px) {
+        margin: 0 20px;
+      }
+    }
+
     @media (min-width: 1024px) {
       grid-template-columns: 2fr 3fr;
     }
