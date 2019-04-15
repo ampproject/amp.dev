@@ -228,5 +228,5 @@ Within the DevTools console, under the `network` tab, you will be able to see `s
 {{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
 
 [tip type="read-on"]
-The ["Add SXG support to ABE"](https://github.com/ampproject/amp-by-example/pull/1592) Pull Request to `amp-by-example` demonstrates the changes necessary to support Signed Exchanges on `https://ampbyexample.com`. 
+The [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) file for `amp.dev` demonstrates Signed Exchange support setup.
 [/tip]
