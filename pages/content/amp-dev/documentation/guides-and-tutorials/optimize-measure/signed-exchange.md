@@ -6,7 +6,7 @@ formats:
 author: CrystalOnScript
 ---
 
-AMP provides speed benefits above and beyond the format through techniques like caching and preloading. However, these benefits come with [downsides](https://blog.amp.dev/2017/02/06/whats-in-an-amp-url/) like extra URLs being displayed and extra screen real estate being taken up when all the user wishes to do is navigate to a new page. By serving AMP content using Signed Exchanges, you can use a new web platform feature to overcome all of these.
+AMP provides speed benefits above and beyond the format through techniques like caching and preloading. These benefits can have [downsides](https://blog.amp.dev/2017/02/06/whats-in-an-amp-url/) like extra URLs being displayed when embeded inside an [AMP Viewer](https://developers.google.com/search/docs/guides/about-amp). By serving AMP content using Signed Exchanges, you can use a new web platform feature to overcome all of these.
 
 A [Signed Exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges) response is made up of a valid AMP document and the original URL of the content. This information is protected by digital signatures that securely tie the document to its claimed URL. This enables browsers to safely display the original URL in the URL bar instead of the hostname of the machine that delivered the bytes to the browser. 
 
@@ -140,6 +140,10 @@ You should set Signed Exchanges up on a staging server first, to verify a correc
 
 Follow instructions [here to set up `amppackager` for your site](https://github.com/ampproject/amppackager/blob/master/README.md). 
 
+[tip type="read-on"]
+The [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) file for `amp.dev` demonstrates Signed Exchange support setup.
+[/tip]
+
 NOTE: Alternatively, you can use the command-line clients [`transform`](https://github.com/ampproject/amppackager/blob/master/transformer/README.md) and [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/master/go/signedexchange), and handle version negotiation and certificate management tasks by hand. This should only be implemented if `amppackager` does not fit for your production environment. You will need to serve with the appropriate content-types (`application/signed-exchange;v=b3` and `application/cert-chain+cbor`). 
 
 Test that your staging site returns the content with the added MIME type `application/signed-exchange` when provided with the correct request headers. In the below example, replace `staging.example.com` with your staging server.
@@ -226,7 +230,3 @@ Within the DevTools console, under the `network` tab, you will be able to see `s
 
 
 {{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
-
-[tip type="read-on"]
-The [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) file for `amp.dev` demonstrates Signed Exchange support setup.
-[/tip]
