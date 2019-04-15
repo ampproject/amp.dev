@@ -1,5 +1,5 @@
 $view: /views/detail/docs-detail.j2
-$path: /documentation/guides-and-tutorials/web-development-with-amp/intermediate-course/{base}.html
+$path: /documentation/courses/intermediate-course/{base}.html
 $localization:
   path: /{locale}/documentation/courses/intermediate-course/{base}.html
 $title@: Intermediate Course
