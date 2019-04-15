@@ -127,9 +127,6 @@ openssl aes-256-cbc -md md5 -d -k $PASSWORD -in privkey.pem.enc -out privkey.pem
 ```
 
 
-`uuencode` or similar can be used to convert the files to text so they can be stashed in Valentine.
-
-
 ## Determine which URLs will be signed 
 
 You will need to create a URL pattern that defines which documents should be signed. It is critical that private content, such as personalized information should not be signed, to avoid sending misleading or incorrect content.
@@ -215,7 +212,7 @@ Under the `Network` tab, click on your domain name and check that `Signed HTTP e
 
 Confirm that the signed exchanges are compatible with the Google AMP cache. This related to their discoverability on search engines such as Google Search. 
 
-To test signed echanges in the Google AMP cache, open DevTools, enable `Preserve log`, and visit a URL such as `https://example-com.cdn.ampproject.org/wp/s/example.com/`.
+To test signed echanges in the Google AMP cache, open the network tab in DevTools, enable `Preserve log`, and visit a URL such as `https://example-com.cdn.ampproject.org/wp/s/example.com/`.
 
 DevTools will show a `200` with a `signed-exchange` row, and a `from signed-exchange` row, if the request was successful. 
 
