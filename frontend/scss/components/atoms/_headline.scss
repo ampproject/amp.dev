@@ -26,7 +26,7 @@ stories-home
 @mixin hl {
   margin-top: 1.5rem;
   margin-bottom: .75em;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.2em;
   color: color('charade');
