@@ -1,0 +1,9 @@
+$view: /views/detail/docs-detail.j2
+$path: /documentation/courses/intermediate-course/{base}.html
+$localization:
+  path: /{locale}/documentation/courses/intermediate-course/{base}.html
+$title@: Intermediate Course
+$order: 3
+
+chaptered: true
+tutorial: true

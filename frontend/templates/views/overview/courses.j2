@@ -1,0 +1,20 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/courses-overview.css') %}
+{% endblock %}
+
+{% block main %}
+{% include 'views/partials/sidebar.j2' %}
+{% include 'views/partials/sidebar-toggle-observer.j2' %}
+<main class="ap--main ap-t-courses-overview">
+  <div class="ap--container">
+    {% include 'views/partials/sidebar-toggle.j2' %}
+    <span id="ap--sidebar-content" class="ap--sidebar"></span>
+    {% include 'views/partials/content.j2' %}
+  </div>
+{% include 'views/partials/sidebar-toggle-visibility-observer.j2' %}
+</main>
+{% endblock %}

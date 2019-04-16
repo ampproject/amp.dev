@@ -3,6 +3,7 @@ and the current page title #}
 {% do doc.styles.addCssFile('css/components/molecules/breadcrumbs.css') %}
 {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
 
+{% if not doc.breadcrumbs == False %}
 {% if doc.pod_path.startswith('/content/amp-dev/documentation/guides-and-tutorials') %}
 <nav class="ap-m-breadcrumbs">
   {% set guides_and_tutorials = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale) %}
@@ -46,4 +47,25 @@ and the current page title #}
   {% set components = g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale) %}
   <a class="ap-m-breadcrumbs-crumb" href="{{ components.url.path }}">{{ components.titles('navigation') }}</a>
 </nav>
+{% elif doc.pod_path.startswith('/content/amp-dev/documentation/courses') %}
+<nav class="ap-m-breadcrumbs">
+  {% set guides_and_tutorials = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale) %}
+  <a class="ap-m-breadcrumbs-crumb" href="{{ guides_and_tutorials.url.path }}">{{ _('Documentation') }}</a>
+
+  <span class="ap-m-breadcrumbs-divider">
+    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+  </span>
+
+  {% set courses = g.doc('/content/amp-dev/documentation/courses/index.html', locale=doc.locale) %}
+  <a class="ap-m-breadcrumbs-crumb" href="{{ courses.url.path }}">{{ courses.titles('navigation') }}</a>
+
+  {% if not doc.collection.bucket %}
+  <span class="ap-m-breadcrumbs-divider">
+    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+  </span>
+
+  <div class="ap-m-breadcrumbs-crumb">{{ doc.collection.title }}</a>
+  {% endif %}
+</nav>
+{% endif %}
 {% endif %}

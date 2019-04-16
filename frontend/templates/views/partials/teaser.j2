@@ -191,6 +191,7 @@
   teaser_doc.view == '/views/detail/docs-detail.j2' or
   teaser_doc.view == '/views/custom.j2'
 %}
+  {% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}
   {% set teaser = teaser_doc.teaser or {} %}
   <div class="ap-m-teaser ap-m-teaser-guide-tutorial">
     <a href="{{ teaser_doc.url.path }}">
@@ -230,8 +231,8 @@
       <div class="ap-m-teaser-card">
         <div class="ap-m-teaser-content">
           <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
-          {% if teaser.text %}
-            <p class="ap-m-teaser-copy">{{ teaser.text }}</p>
+          {% if teaser.text or teaser_doc.description %}
+            <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
           {% endif %}
           {% if teaser.label %}
             <span class="ap-m-lnk">

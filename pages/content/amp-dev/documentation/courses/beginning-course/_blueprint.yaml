@@ -1,0 +1,9 @@
+$view: /views/detail/docs-detail.j2
+$path: /documentation/courses/beginning-course/{base}.html
+$localization:
+  path: /{locale}/documentation/courses/beginning-course/{base}.html
+$title@: Beginning Course
+$order: 2
+
+chaptered: true
+tutorial: true

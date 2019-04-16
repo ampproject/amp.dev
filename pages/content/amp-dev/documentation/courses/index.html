@@ -1,0 +1,114 @@
+---
+$title: Learn AMP with free courses
+$titles:
+  navigation: Courses
+  teaser: Courses
+$view: /views/overview/courses.j2
+$path: /documentation/courses/index.html
+$localization:
+  path: /{locale}/documentation/courses/index.html
+$order: 1
+
+description: "Learn AMP by taking these courses. Or, if you're an instructor, use these free resources to run your own class!"
+flyout:
+  description: Learn AMP with free courses
+  icon: learn
+---
+{% do doc.styles.addCssFile('css/components/templates/courses-overview.css') %}
+
+<section class="ap--section ap--intro">
+  <h1>Learn Web Development with AMP</h1>
+  <p>These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!</p>
+</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
+<section class="ap--teaser-grid ap--section">
+  <div class="ap-o-teaser-grid">
+    <div class="ap-o-teaser-grid-list">
+      {% for teaser_doc in [
+        g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale),
+        g.doc('/content/amp-dev/documentation/courses/intermediate-course/index.md', locale=doc.locale),
+        g.doc('/content/amp-dev/documentation/courses/advanced-course/index.md', locale=doc.locale),
+        ] %}
+      {% include '/views/partials/teaser.j2' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="ap--result">
+  <div class="ap--section">
+    <amp-img
+      alt="Part of what is built"
+      height="368"
+      layout="responsive"
+      src="/static/img/courses/site/image7-small.png"
+      width="207"
+    ></amp-img>
+  </div>
+  <div class="ap--section">
+    <h2>About the courses</h2>
+    <p>Beginning web developers will learn to create modern websites with AMP. Experienced developers will discover how to use AMP to create beautiful, interactive sites while writing less JavaScript. During the course, students build a lovely site for Chico's Cheese Bicycles.</p>
+  </div>
+</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
+<section class="ap--card-grid">
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/students.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#students"></use></svg>
+    </div>
+    <h4 class="ap-o-card-grid-card-headline">Students</h4>
+    <a href="{{g.doc('/content/amp-dev/documentation/courses/beginning-course/index.html', locale=doc.locale).url.path}}?format=websites"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Start coursework now</span>
+    </a>
+  </div>
+  <div class="ap-o-card-grid-card">
+    <div class="ap-a-ico ap-o-card-grid-card-icon">
+      {% do doc.icons.useIcon('/icons/teachers.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#teachers"></use></svg>
+    </div>
+    <h5 class="ap-o-card-grid-card-headline">Teachers</h5>
+    <a href="{{g.doc('/content/amp-dev/documentation/courses/teachers.md', locale=doc.locale).url.path}}"
+      class="ap-m-lnk">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Download resources for your classroom</span>
+    </a>
+  </div>
+</section>
+
+<section class="ap--requirements">
+  <div class="ap--section">
+    <h4>Requirements</h4>
+    <ul>
+      <li>Internet connection</li>
+      <li><a href="https://www.google.com/chrome/" target="_blank">Chrome browser</a>, ideally, to use the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank">AMP Validator extension</a></li>
+      <li>We use the online editor <a href="https://glitch.com/" target="_blank">Glitch</a>. No IDE or local web server needed!</li>
+    </ul>
+  </div>
+
+  <div class="ap--section">
+    <h4>Prerequisites</h4>
+    <ul>
+      <li>basic knowledge of HTML and CSS</li>
+      <li>for the advanced course, JavaScript expressions and simple JSON</li>
+    </ul>
+  </div>
+</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/banner.css') %}
+<section class="ap--banner">
+  <div class="ap-o-banner">
+    <h2 class="ap-o-banner-headline">Take the Video Course</h2>
+    <p class="ap-o-banner-copy">Reading is not your favorite learn method? We feel you. And that's why we're currently working on an AMP video course that will be available soon!</p>
+  </div>
+</section>
