@@ -29,6 +29,17 @@
     max-width: 100%;
   }
 
+  &-notice {
+    text-align: center;
+    a {
+      display: inline-block;
+      background: #ffffff6e;
+      border-radius: 0.5rem;
+      padding: 0.2rem 0.5rem;
+      margin-top: 1rem;
+    }
+  }
+
   &-block {
     @include roadshow-video-shadow;
     width: 100%;
