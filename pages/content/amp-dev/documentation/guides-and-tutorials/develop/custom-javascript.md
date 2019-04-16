@@ -10,13 +10,11 @@ contributors:
 
 AMP strives to provide a consistently good experience to all users across the web by encouraging the use of high-functioning and seamless components that are ready to go out of the box. 
 
-Some web experiences require a high amount of customization that go beyond the state binding capabilities of [`amp-bind`](https://amp.dev/documentation/components/reference/amp-bind.html?format=websites) and the dynamic data retrieval and templating functionality of [`amp-list`](https://amp.dev/documentation/components/reference/amp-list.html?format=websites) and [`amp-mustache`](https://amp.dev/documentation/components/reference/amp-mustache.html?format=websites). For those one-of-a-kind cases, AMP has created [`<amp-script>`](https://amp.dev/documentation/components/reference/amp-script.html?format=websites), a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
-
+Some web experiences require a high amount of customization that go beyond the state binding capabilities of [`amp-bind`](https://amp.dev/documentation/components/reference/amp-bind.html?format=websites) and the dynamic data retrieval and templating functionality of [`amp-list`](https://amp.dev/documentation/components/reference/amp-list.html?format=websites) and [`amp-mustache`](https://amp.dev/documentation/components/reference/amp-mustache.html?format=websites). For those one-off cases, AMP has created [`<amp-script>`](https://amp.dev/documentation/components/reference/amp-script.html?format=websites), a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
 
 # Inserting custom JavaScript 
 
 AMP pages support custom JavaScript through the `<amp-script>` component. 
-
 
 ```html
 <!doctype html>
@@ -32,9 +30,7 @@ AMP pages support custom JavaScript through the `<amp-script>` component.
   ...
 </body>
 </html>
-
 ```
-
 
 The `<amp-script>` component registers a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) to run on a separate thread than the main page. The Web Worker is given its own copy of the DOM through `amp-script` use of [Worker DOM](https://github.com/ampproject/worker-dom). This allows the Web Worker to use JavaScript libraries, such as [React](https://reactjs.org/) and [jQuery](https://jquery.com/), without modification. 
 
@@ -57,7 +53,6 @@ To keep experiences on AMP pages consistent, limitations exist on `<amp-script>`
 ## Initialization
 
 JavaScript inside the Web Worker allows minimal change to the DOM on load. Changes allowed during this phase are:
-
 
 *   Registering event handlers.
 *   Splitting a TextNode into multiple TextNodes, to allow for frameworks that require it.
@@ -100,7 +95,6 @@ Any DOM elements the custom JavaScript files wishes to interact with must be wra
 
 If you were to call `document.body.appendChild(document.createElement('span'))` within the `<amp-script>`file in the following document: 
 
-
 ```html
 <body>  
   <p>Hello!</p>
@@ -111,9 +105,7 @@ If you were to call `document.body.appendChild(document.createElement('span'))` 
 </body>
 ```
 
-
 It will result in this:
-
 
 ```html
 <body>  
@@ -126,8 +118,6 @@ It will result in this:
 </body>
 ```
 
-
-
 ## Event triggers 
 
 As of April 2019, all event triggers are allowed. This may change in the future as `<amp-script>` is still an experimental component. 
@@ -136,4 +126,4 @@ As of April 2019, all event triggers are allowed. This may change in the future 
 
  Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
 
-View [this chart](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md) to see WorkedDOM supported APIs.
+View [this chart](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md) to see WorkerDOM supported APIs.
