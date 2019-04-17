@@ -3,8 +3,6 @@
 @import '../../mixins';
 @import '../../variables';
 
-$showTime: 2s;
-
 .#{molecule('rolling-formats')} {
   display: inline-block;
 
@@ -27,7 +25,8 @@ $showTime: 2s;
     grid-row: 1 / -1;
     margin-right: auto;
     animation-name: roll;
-    animation-duration: $showTime * 4;
+    animation-duration: 8s;
+    animation-delay: 1s;
     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     animation-iteration-count: infinite;
     animation-fill-mode: backwards;
@@ -40,10 +39,9 @@ $showTime: 2s;
       margin-left: 0;
     }
 
-
-    &:nth-child(2) { animation-delay: $showTime * 4 * 1 / 4; }
-    &:nth-child(3) { animation-delay: $showTime * 4 * 1 / 2; }
-    &:nth-child(4) { animation-delay: $showTime * 4 * 3 / 4; }
+    &:nth-child(2) { animation-delay: 3s; }
+    &:nth-child(3) { animation-delay: 5s; }
+    &:nth-child(4) { animation-delay: 7s; }
   }
 }
 
