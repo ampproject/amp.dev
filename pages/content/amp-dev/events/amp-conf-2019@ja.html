@@ -33,9 +33,10 @@ section_links:
     {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
     <div class="ap-m-roadshow-video">
       <div class="ap-m-roadshow-video-block">
-        <amp-youtube data-videoid="ZNmdl31cMpk" layout="responsive" height="9" width="16"></amp-youtube>
+        <amp-youtube data-videoid="DpEPnOkiVLs" layout="responsive" height="9" width="16"></amp-youtube>
       </div>
       <div class="ap-m-roadshow-video-notice">
+        <a href="https://www.youtube.com/watch?v=ZNmdl31cMpk" target="_blank">1日目を見る</a>
         <a href="/events/amp-conf-2019">Switch to English</a>
       </div>
     </div>
@@ -129,7 +130,7 @@ section_links:
                   {% elif agenda_item.speakers %}
                     {% if agenda_item.moderator %}
                     <a href="#{{ agenda_item.moderator }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[agenda_item.moderator].name }}, {{ doc.ampconf.speakers[agenda_item.moderator].company }}</a> (モデレータ)
-                    <br>                     
+                    <br>
                     {% endif %}
                     {% for speaker in agenda_item.speakers %}
                       <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
