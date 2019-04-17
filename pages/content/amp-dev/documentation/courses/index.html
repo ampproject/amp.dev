@@ -105,10 +105,24 @@ flyout:
   </div>
 </section>
 
-{% do doc.styles.addCssFile('/css/components/organisms/banner.css') %}
-<section class="ap--banner">
-  <div class="ap-o-banner">
-    <h2 class="ap-o-banner-headline">Take the Video Course</h2>
-    <p class="ap-o-banner-copy">Reading is not your favorite learn method? We feel you. And that's why we're currently working on an AMP video course that will be available soon!</p>
-  </div>
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--video-slider">
+  <h2 class="ap-o-video-slider-text">Take the Video Course</h2>
+  <p class="ap-o-video-slider-text">You better learn watching than reading? Than that's for you: check out the Beginning Course's video version.</p>
+  {% with %}
+  {% set youtube_video_ids = [
+    'qWpZbADJlgE',
+    'r17dpxNvmD0',
+    'An8UvqofDpI',
+    'DHyZ9-88f-M',
+    'NOXketij53E',
+    '5lKb-7v8kno',
+    'iPce45363gc',
+    'Q1aJ03sEs6U',
+    '--KQJWkQfzw',
+    'ON_O3vvj1lc',
+    ]
+  %}
+  {% include '/views/partials/video-carousel.j2' %}
+  {% endwith %}
 </section>
