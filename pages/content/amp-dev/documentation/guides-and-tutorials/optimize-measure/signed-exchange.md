@@ -40,7 +40,7 @@ Below is the suggested order of implementation to support Signed Exchanges on yo
 
 ## Acquire a supported TLS certificate
 
-Your site must have a [TLS certificate that supports the `CanSignHttpEchanges` flag](https://www.digicert.com/account/ietf/http-signed-exchange.php). As of April 2019, only [DigiCert](https://www.digicert.com/) provides this extension.
+Your site must have a [TLS certificate that supports the `CanSignHttpExchanges` flag](https://www.digicert.com/account/ietf/http-signed-exchange.php). As of April 2019, only [DigiCert](https://www.digicert.com/) provides this extension.
 
 Below is an example of an [openssl](https://www.openssl.org/) command to generate certificate signed request for `ampbyexample.com`:
 
