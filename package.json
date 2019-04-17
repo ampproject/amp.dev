@@ -1,6 +1,6 @@
 {
   "name": "amp-dev",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The AMP Project website.",
   "repository": "git@github.com:ampproject/docs.git",
   "engines": {
