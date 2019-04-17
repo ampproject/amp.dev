@@ -351,8 +351,6 @@ agenda:
     - title: Party!
       time: "1800"
   day_2:
-    - title: Registration
-      time: "0800"
     - title: "Opening"
       time: "0900"
       type: session
