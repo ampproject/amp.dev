@@ -90,7 +90,7 @@
                   {% endif %}
 
                   <a class="nav-link" href="{{ document.url.path }}">
-                    {{ document.title }}
+                    {{ document.titles('sidebar') }}
                     {% if document.tutorial %}
                     {% do doc.icons.useIcon('icons/tutorial.svg') %}
                     <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
