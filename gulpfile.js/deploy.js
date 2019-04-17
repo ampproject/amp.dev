@@ -28,7 +28,7 @@ const argv = mri(process.argv.slice(2));
 // We tag docker images by the current git commit SHA,
 // this makes it easy to identify and reproduce builds.
 // Pass a specific tag via commandline using `gulp updateStart --tag ABCDE...`
-const TAG = argv.tag || `${require('@lib/build/repo.js').version}-${Date.now()}`;
+const TAG = argv.tag || require('@lib/build/repo.js').version;
 
 // The Google Cloud project id, pass via commandline
 // using `gulp deploy --project my-gcloud-project
@@ -58,6 +58,18 @@ const config = {
     current: `gcr.io/${PROJECT_ID}/${PREFIX}:${TAG}`,
   },
 };
+
+/**
+ * Verifies the commit SHA1 (TAG) hasn't already been built
+ */
+async function verifyTag() {
+  const tags = await sh(`gcloud container images list-tags ${config.image.name}`, {quiet: true});
+  console.log('Verifying build tag', config.tag);
+  if (tags.includes(config.tag)) {
+    throw new Error(`The commit ${config.tag} you are trying to build has ` +
+              'already been built!');
+  }
+}
 
 /**
  * Initialize the Google Cloud project.
@@ -139,8 +151,9 @@ function updateStop() {
     stop-proactive-update ${config.instance.group}`);
 }
 
+exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
-exports.deploy = series(imageUpload, instanceTemplateCreate, updateStart);
+exports.deploy = series(verifyTag, imageUpload, instanceTemplateCreate, updateStart);
 exports.imageList = imageList;
 exports.imageUpload = imageUpload;
 exports.imageBuild = imageBuild;
