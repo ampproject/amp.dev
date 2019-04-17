@@ -2,12 +2,13 @@
 $title: Learn AMP with free courses
 $titles:
   navigation: Courses
+  sidebar: Learn AMP
   teaser: Courses
 $view: /views/overview/courses.j2
 $path: /documentation/courses/index.html
 $localization:
   path: /{locale}/documentation/courses/index.html
-$order: 1
+$order: 0
 
 description: "Learn AMP by taking these courses. Or, if you're an instructor, use these free resources to run your own class!"
 flyout:
@@ -105,10 +106,25 @@ flyout:
   </div>
 </section>
 
-{% do doc.styles.addCssFile('/css/components/organisms/banner.css') %}
-<section class="ap--banner">
-  <div class="ap-o-banner">
-    <h2 class="ap-o-banner-headline">Take the Video Course</h2>
-    <p class="ap-o-banner-copy">Reading is not your favorite learn method? We feel you. And that's why we're currently working on an AMP video course that will be available soon!</p>
-  </div>
+
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--video-slider">
+  <h2 class="ap-o-video-slider-text">Take the Video Course</h2>
+  <p class="ap-o-video-slider-text">The Beginning Course can be now be taken by video on <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_" target="_blank">our YouTube channel!</a></p>
+  {% with %}
+  {% set youtube_video_ids = [
+    'qWpZbADJlgE',
+    'r17dpxNvmD0',
+    'An8UvqofDpI',
+    'DHyZ9-88f-M',
+    'NOXketij53E',
+    '5lKb-7v8kno',
+    'iPce45363gc',
+    'Q1aJ03sEs6U',
+    '--KQJWkQfzw',
+    'ON_O3vvj1lc'
+    ]
+  %}
+  {% include '/views/partials/video-carousel.j2' %}
+  {% endwith %}
 </section>

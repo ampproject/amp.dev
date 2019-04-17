@@ -1,6 +1,6 @@
 ---
 $title: Teachers
-$order: 0
+$order: 1
 toc: false
 breadcrumbs: false
 ---
