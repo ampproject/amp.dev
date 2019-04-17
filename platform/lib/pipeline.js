@@ -120,7 +120,7 @@ class Pipeline {
     return new Promise((resolve, reject) => {
       const stream = gulp.src(TRANSPILE_SCSS_SRC)
           .pipe(sass(options))
-          .on('error', function (e) {
+          .on('error', function(e) {
             log.error(e);
             this.emit('end');
           })
