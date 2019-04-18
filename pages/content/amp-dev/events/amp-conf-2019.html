@@ -24,11 +24,6 @@ section_links:
             <h2 class="ap-o-stage-content-subline">April 17 - 18</h2>
             <h1 class="ap-o-stage-content-headline">AMP Conf 2019</h1>
             <h2 class="ap-o-stage-content-subline">ようこそ from Tokyo, Japan</h2>
-
-            {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScUT9sU_CEa5MXP7eKg8kAr808CexHEnSDuvf0Dr95cq1Gy6g/viewform" class="ap-o-stage-content-button ap-a-btn">
-              Get livestream updates
-            </a>
         </div>
       </div>
     </div>
@@ -36,11 +31,7 @@ section_links:
     {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
     <div class="ap-m-roadshow-video">
       <div class="ap-m-roadshow-video-block">
-        <amp-youtube data-videoid="3j540p3GxvE" layout="responsive" height="9" width="16"></amp-youtube>
-      </div>
-      <div class="ap-m-roadshow-video-notice">
-        <a href="https://youtu.be/W7T5tMgrrFs" target="_blank">Recap Day 1</a>
-        <a href="/ja/events/amp-conf-2019">日本語に切り替える</a>
+        <amp-youtube data-videoid="OpXrSc3Yie0" layout="responsive" height="9" width="16"></amp-youtube>
       </div>
     </div>
 </section>
@@ -67,28 +58,65 @@ section_links:
 
 <section class="ap--container">
   <p class="ap--content-default">
-    The AMP team and community is bringing its yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered. We can't wait to meet you.
+    The AMP team and community brought their yearly gathering to Tokyo for two days full of talks by developers for developers, all crafted to help you create a best-in-class user experience. Whether you're interested in rich animations, dynamic content, DevOps or monetization, we got you covered.
   </p>
 </section>
 
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--container">
-  <div class="ap--content-wide ap--slido">
-    <div class="ap--content-default">
-      <h1>Join the conversation!</h1>
-      <p>Take part in the discussion and get your questions answered by the people on stage.</p>
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">Recap the highlights from Day 1</h2>
+    <p class="ap-o-video-slider-text">You couldn't make it to Tokyo but still want to know about all the exciting things happening around AMP? Checkout the highlights of Day 1 and even witness the AMP team unleashing the kraken!</p>
+    {% with %}
+    {% set youtube_video_ids = [
+      '1vwOFt9FBm4',
+      'sYXkVOiz77I',
+      'rx74ySmQFXs',
+      'i7Br9GmpQWs'
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
 
-      {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-      <a href="https://app2.sli.do/event/nulvdxp3" class="ap-o-stage-content-button ap-a-btn">
-        Ask a question
-      </a>
-    </div>
+    <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">See all of Day 1</span>
+    </a>
   </div>
-</section>
+´</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">Discover all exciting news from Day 2</h2>
+    <p class="ap-o-video-slider-text">The second day of the conference also had a lot of awesome speakers and talks. Don't miss out on the latest news around Advertising & AMP, indepth details on Signed exchanges and many more!</p>
+    {% with %}
+    {% set youtube_video_ids = [
+      '1vwOFt9FBm4',
+      'sYXkVOiz77I',
+      'rx74ySmQFXs',
+      'i7Br9GmpQWs'
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+
+    <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">See all of Day 2</span>
+    </a>
+  </div>
+´</section>
 
 <section class="ap--container" id="Schedule">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
-
 
   <div class="ap--content-default">
     <h1>Schedule</h1>
@@ -97,7 +125,7 @@ section_links:
   <div class="ap--content-x-wide">
     <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
-        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="a">Day 1</div>
+        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1</div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -149,8 +177,6 @@ section_links:
                   {% if agenda_item.description %}
                     <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
                   {% endif %}
-
-                  {% if agenda_item.dory %}<a class="ap-m-agenda-item-dory" href="{{ agenda_item.dory  }}">Submit questions</a>{% endif %}
                   </div>
                 </li>
               {% endfor %}
@@ -158,7 +184,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="b">Day 2</div>
+        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">Day 2</div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">

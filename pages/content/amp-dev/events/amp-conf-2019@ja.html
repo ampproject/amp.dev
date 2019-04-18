@@ -21,11 +21,6 @@ section_links:
             <h2 class="ap-o-stage-content-subline">4月17日、18日</h2>
             <h1 class="ap-o-stage-content-headline">AMP Conf 2019</h1>
             <h2 class="ap-o-stage-content-subline">東京から、ようこそ。</h2>
-
-            {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScUT9sU_CEa5MXP7eKg8kAr808CexHEnSDuvf0Dr95cq1Gy6g/viewform" class="ap-o-stage-content-button ap-a-btn">
-              ライブストリームのアップデートを入手
-            </a>
         </div>
       </div>
     </div>
@@ -33,11 +28,7 @@ section_links:
     {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
     <div class="ap-m-roadshow-video">
       <div class="ap-m-roadshow-video-block">
-        <amp-youtube data-videoid="DpEPnOkiVLs" layout="responsive" height="9" width="16"></amp-youtube>
-      </div>
-      <div class="ap-m-roadshow-video-notice">
-        <a href="https://www.youtube.com/watch?v=ZNmdl31cMpk" target="_blank">1日目を見る</a>
-        <a href="/events/amp-conf-2019">Switch to English</a>
+        <amp-youtube data-videoid="OpXrSc3Yie0" layout="responsive" height="9" width="16"></amp-youtube>
       </div>
     </div>
 </section>
@@ -68,16 +59,6 @@ section_links:
   </p>
 </section>
 
-<section class="ap--container">
-  <div class="ap--content-wide ap--slido">
-    <div class="ap--content-default">
-      <h1>会話に加わります!</h1>
-      <p>議論に参加して、ステージ上の人々からあなたの質問に答えてもらってください。</p>
-      <h4>質問を <a class="ap--slido-link" href="https://app2.sli.do/event/nulvdxp3" rel="noopener" target="_blank">sli.do</a> に送信してください。 コード <a href="https://app2.sli.do/event/nulvdxp3" class="ap--slido-code">#nulvdxp3</a> を使用してください。</h4>
-    </div>
-  </div>
-</section>
-
 <section class="ap--container" id="スケジュール">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
@@ -88,7 +69,7 @@ section_links:
   </div>
 
   <div class="ap--content-x-wide">
-    <amp-selector role="tablist" layout="container" class="ap--flex-container">
+    <amp-selector role="tablist" selected layout="container" class="ap--flex-container">
 
         <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="a">1日目</div>
 
@@ -142,8 +123,6 @@ section_links:
                   {% if agenda_item.description %}
                     <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
                   {% endif %}
-
-                  {% if agenda_item.dory %}<a class="ap-m-agenda-item-dory" href="{{ agenda_item.dory  }}">質問する</a>{% endif %}
                   </div>
                 </li>
               {% endfor %}
@@ -151,7 +130,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="b">2日目</div>
+        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">2日目</div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
