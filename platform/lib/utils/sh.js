@@ -22,6 +22,7 @@ const {ROOT} = require('@lib/utils/project').paths;
 
 const DEFAULT_OPTIONS = {
   workingDir: ROOT,
+  quiet: false,
 };
 
 /**
@@ -30,8 +31,7 @@ const DEFAULT_OPTIONS = {
  * @param {string} the command string
  * @param {string=''} an optional message being displayed after the command has
  * terminated succesfully.
- * @param {Object=DEFAULT_OPTIONS} an optional message being displayed after the command has
- * terminated succesfully.
+ * @param {Object=DEFAULT_OPTIONS} an optional object extending the default options
  */
 function sh(string, ...params) {
   let message = '';
@@ -48,13 +48,18 @@ function sh(string, ...params) {
   console.log(`$ ${command} ${args.join(' ')}`);
   return new Promise((resolve, reject) => {
     const process = spawn(command, args, {cwd: opts.workingDir});
+    let result = '';
 
     process.stdout.on('data', (data) => {
-      console.log(`${data.toString()}`);
+      data = data.toString();
+      result += data;
+      if (!opts.quiet) {
+        console.log(data);
+      }
     });
 
     process.stderr.on('data', (data) => {
-      console.log(`${data}`);
+      console.log(`${data.toString()}`);
     });
 
     process.on('close', (code) => {
@@ -62,19 +67,20 @@ function sh(string, ...params) {
         reject(new Error(`${command} process exited with code ${code}`));
         return;
       }
-      resolve();
+      resolve(result);
     });
-  }).then(() => console.log(message));
+  }).then((result) => {
+    console.log(message);
+    return result;
+  });
 }
 
 function extractOptions(params) {
   if (isString(params[0])) {
-    return params[1] || DEFAULT_OPTIONS;
+    return Object.assign(DEFAULT_OPTIONS, params[1] || {});
   }
-  if (params.length === 0) {
-    return DEFAULT_OPTIONS;
-  }
-  return params[0];
+
+  return Object.assign(DEFAULT_OPTIONS, params[0] || {});
 }
 
 function isString(obj) {

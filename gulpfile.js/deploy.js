@@ -60,6 +60,18 @@ const config = {
 };
 
 /**
+ * Verifies the commit SHA1 (config.tag) hasn't already been deployed
+ */
+async function verifyTag() {
+  const tags = await sh(`gcloud container images list-tags ${config.image.name}`, {quiet: true});
+  console.log('Verifying build tag', config.tag);
+  if (tags.includes(config.tag)) {
+    throw new Error(`The commit ${config.tag} you are trying to build has ` +
+              'already been deployed!');
+  }
+}
+
+/**
  * Initialize the Google Cloud project.
  * Needs to be only run once.
  */
@@ -139,12 +151,12 @@ function updateStop() {
     stop-proactive-update ${config.instance.group}`);
 }
 
+exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
-exports.deploy = series(imageUpload, instanceTemplateCreate, updateStart);
+exports.deploy = series(verifyTag, imageUpload, instanceTemplateCreate, updateStart);
 exports.imageList = imageList;
 exports.imageUpload = imageUpload;
 exports.imageBuild = imageBuild;
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;
-
