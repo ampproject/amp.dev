@@ -59,6 +59,56 @@ section_links:
   </p>
 </section>
 
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">1日目からすべてのエキサイティングなニュースを発見</h2>
+    <p class="ap-o-video-slider-text">東京に行くことはできませんでしたが、それでもAMPの周りで起こっているすべての刺激的なことについて知りたいですか？ 1日目のハイライトをチェックして、AMPチームがクレーケンを解き放つのを見てください。</p>
+    {% with %}
+    {% set youtube_video_ids = [
+      '1vwOFt9FBm4',
+      'sYXkVOiz77I',
+      'BrDBsS1Sko0',
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+
+    <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">See all of Day 1</span>
+    </a>
+  </div>
+´</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">2日目のハイライトをまとめる</h2>
+    <p class="ap-o-video-slider-text">会議の2日目にも素晴らしい講演者と講演がたくさんありました。 Signed交換の詳細など、Advertising＆AMPに関する最新のニュースをお見逃しなく。</p>
+    {% with %}
+    {% set youtube_video_ids = [
+      'Q6BmFx7ivNg',
+      'tlWT_D0XJtE',
+      'Ez_wOEmH1P0',
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+
+    <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">See all of Day 2</span>
+    </a>
+  </div>
+´</section>
+
 <section class="ap--container" id="スケジュール">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
