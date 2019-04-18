@@ -59,7 +59,7 @@ function sh(string, ...params) {
     });
 
     process.stderr.on('data', (data) => {
-      console.log(`${data.toSting()}`);
+      console.log(`${data.toString()}`);
     });
 
     process.on('close', (code) => {

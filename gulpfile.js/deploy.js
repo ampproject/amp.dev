@@ -60,14 +60,14 @@ const config = {
 };
 
 /**
- * Verifies the commit SHA1 (TAG) hasn't already been built
+ * Verifies the commit SHA1 (config.tag) hasn't already been deployed
  */
 async function verifyTag() {
   const tags = await sh(`gcloud container images list-tags ${config.image.name}`, {quiet: true});
   console.log('Verifying build tag', config.tag);
   if (tags.includes(config.tag)) {
     throw new Error(`The commit ${config.tag} you are trying to build has ` +
-              'already been built!');
+              'already been deployed!');
   }
 }
 
