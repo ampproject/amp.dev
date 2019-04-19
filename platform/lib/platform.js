@@ -42,32 +42,56 @@ const routers = {
   whoAmI: require('@lib/routers/whoAmI.js'),
 };
 
+const HOST = config.hosts.platform.base;
 const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
-    this._createServer();
-    console.log('server', Object.keys(this.server));
-    this.server.listen(PORT, () => {
-      signale.success(`server listening on ${PORT}!`);
+    return new Promise(async (resolve, reject) => {
+      try {
+        this._createServer();
+        await this._configureDevMode(HOST);
+        const httpServer = this.server.listen(PORT, () => {
+          signale.success(`server listening on ${PORT}!`);
+          resolve();
+        });
+        // Increase keep alive timeout
+        // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
+        httpServer.keepAliveTimeout = 620 * 1000;
+      } catch (err) {
+        reject(err);
+      }
     });
   }
 
   stop() {
+    return Promise.resolve();
     // TODO
   }
 
   _createServer() {
-    const host = config.hosts.platform.base;
-    signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
+    signale.await(`Starting platform with environment ${config.environment} on ${HOST} ...`);
     this.server = express();
 
-    this._configureDevMode(host);
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
+
+    this._configureDevMode(HOST);
     this._configureMiddlewares();
     this._configureSubdomains();
     this._configureRouters();
     this._configureErrorHandlers();
+  }
 
+  _configureMiddlewares() {
+    this.server.use(shrinkRay());
+    this.server.use(require('./middleware/security.js'));
+    this.server.use(require('./middleware/redirects.js'));
+    this.server.use(require('./middleware/caching.js'));
+    this.server.use(cors());
+    this.server.use(ampCors({
+      'verifyOrigin': false,
+    }));
     // debug computing times
     this.server.use((req, res, next) => {
       const timeStart = process.hrtime();
@@ -82,27 +106,6 @@ class Platform {
 
       next();
     });
-
-    // pass app engine HTTPS status to express app
-    this.server.set('trust proxy', true);
-    const port = config.hosts.platform.port || process.env.APP_PORT || 80;
-    const httpServer = this.server.listen(port, () => {
-      signale.success(`server listening on ${port}!`);
-    });
-    // Increase keep alive timeout
-    // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
-    httpServer.keepAliveTimeout = 620 * 1000;
-  }
-
-  _configureMiddlewares() {
-    this.server.use(shrinkRay());
-    this.server.use(require('./middleware/security.js'));
-    this.server.use(require('./middleware/redirects.js'));
-    this.server.use(require('./middleware/caching.js'));
-    this.server.use(cors());
-    this.server.use(ampCors({
-      'verifyOrigin': false,
-    }));
   }
 
   _configureSubdomains() {
@@ -141,21 +144,24 @@ class Platform {
 
   _configureDevMode() {
     if (!config.isDevMode()) {
-      return;
+      return Promise.resolve();
     }
-    const HttpProxy = require('http-proxy');
-    // When in development fire up a second server as a simple proxy
-    // to simulate CORS requests for stuff like playground
-    this.proxy = express();
-    this.proxy.listen(config.hosts.api.port, () => {
-      signale.success(`Proxy available on ${config.hosts.api.base}`);
-    });
+    return new Promise((resolve) => {
+      const HttpProxy = require('http-proxy');
+      // When in development fire up a second server as a simple proxy
+      // to simulate CORS requests for stuff like playground
+      this.proxy = express();
+      this.proxy.listen(config.hosts.api.port, () => {
+        signale.success(`Proxy available on ${config.hosts.api.base}`);
+        resolve();
+      });
 
-    const proxy = new HttpProxy();
-    this.proxy.get('/*', (request, response, next) => {
-      proxy.web(request, response, {
-        'target': host,
-      }, next);
+      const proxy = new HttpProxy();
+      this.proxy.get('/*', (request, response, next) => {
+        proxy.web(request, response, {
+          'target': HOST,
+        }, next);
+      });
     });
   }
 };

@@ -43,7 +43,7 @@ const VALID_ORIGINS = new Set([
   '0.1.0.1',
 ]);
 
-const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
+const host = config.hosts.platform.base;
 
 api.get('/fetch', async (request, response) => {
   const url = request.query.url;
