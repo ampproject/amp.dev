@@ -20,13 +20,15 @@ const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
 
-// Parse commandline arguments
-const argv = mri(process.argv.slice(2));
-
 const PACKAGER_ROOT = join(__dirname, '../packager');
 const opts = {
   workingDir: PACKAGER_ROOT,
 };
+
+// Parse commandline arguments
+const argv = mri(process.argv.slice(2));
+const host = argv.host || 'https://amp.dev';
+
 
 /**
  * Deploys packager to app engine.
@@ -38,6 +40,9 @@ async function packagerDeploy() {
   });
 };
 
+/**
+ * Runs the packager docker image locally.
+ */
 async function packagerRunLocal() {
   const password = argv.password || process.env.AMP_DEV_CERT_PWD;
   await sh('pwd', opts);
@@ -45,16 +50,33 @@ async function packagerRunLocal() {
   return await sh(`docker run -p 8083:8080 --env PASSWORD=${password} amppkg`, opts);
 }
 
+/**
+ * Runs amp-linter checks. Change the host via `--host=https://example.com`.
+ */
 function packagerTest() {
-  return sh('curl -si --output - -H "amp-cache-transform: google" -H "accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8" "https://amp-dev-staging.appspot.com/index.amp.html"');
+  return sh(`npx amp-toolbox-linter --force sxg "${host}/index.amp.html`);
 }
 
+/**
+ * Prints the OSCP certificate data. Use it to check the cert's expiration date. Change the host
+ * via `--host=https://example.com`. Requires https://github.com/dflemstr/rq to be installed.
+ */
+function packagerTestOSCP() {
+  const host = argv.host || 'https://amp.dev';
+  return sh(`curl -s "${host}/amppkg/cert/lWfYk-0jeC_HkleYD4fj98y6GixIjocIkMpjsB8dToA"` +
+      '| rq -q -c "get \"[1].ocsp\"" | tr -d \" | xxd -r -p ' +
+      '| openssl ocsp -respin /dev/stdin -text -noverify');
+}
+
+/**
+ * Prints the packager logs to the commandline.
+ */
 function packagerLog() {
   return sh('gcloud app logs tail -s default --project amp-dev-sxg');
 }
 
-
 exports.packagerDeploy = packagerDeploy;
 exports.packagerRunLocal = packagerRunLocal;
-exports.packagerTest = packagerTest;
+exports.packager = packagerTestOSCP;
 exports.packagerLog = packagerLog;
+exports.packagerTest = packagerTest;
