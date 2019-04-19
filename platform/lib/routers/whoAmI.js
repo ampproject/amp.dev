@@ -22,7 +22,7 @@ const config = require('../config.js');
 // eslint-disable-next-line new-cap
 const whoAmI = express.Router();
 
-whoAmI.get('/', (request, response) => {
+whoAmI.get('/who-am-i', (request, response) => {
   const whoAmI = {
     'environment': config.environment,
   };

@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +16,13 @@
 
 'use strict';
 
-require('module-alias/register');
+const {setNoSniff, setXssProtection} = require('../utils/cacheHelpers.js');
 
-const Platform = require('./lib/platform');
-
-const platform = new Platform();
-platform.start();
+/**
+ * Add security headers.
+ */
+module.exports = (req, res, next) => {
+  setNoSniff(res);
+  setXssProtection(res);
+  next();
+};

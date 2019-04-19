@@ -36,7 +36,7 @@ function loadRouters(root, prefix='') {
   routers.filter((path) => path.endsWith('.js') && !path.includes('/static/'))
       .forEach((path) => {
         const route = join(prefix, getRoute(rootDir, path));
-        examples.use(route, require(path));
+        examples.use('/documentation/examples' + route, require(path));
       });
 }
 
