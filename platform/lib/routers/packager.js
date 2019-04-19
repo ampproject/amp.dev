@@ -18,10 +18,13 @@
 
 const HttpProxy = require('http-proxy');
 const config = require('@lib/config');
-
 const proxy = HttpProxy.createProxyServer();
 
-const proxyOptions = {
+// The domain serving the web package
+const PACKAGED_DOMAIN = 'https://amp.dev';
+
+// Proxy configuration, `target` is the packager domain
+const PROXY_OPTIONS = {
   target: config.hosts.packager.base,
   changeOrigin: true,
 };
@@ -32,30 +35,37 @@ const proxyOptions = {
  * - If the URL starts with /amppkg/, forward the request unmodified.
  * - If the URL points to an AMP page and the AMP-Cache-Transform request header is present,
  *   rewrite the URL by prepending /priv/doc and forward the request.
- * - Set the vary when serving AMP documents
+ * - Set the vary header when serving AMP documents
  *
  * See https://github.com/ampproject/amppackager#productionizing
  */
 const packager = (request, response, next) => {
-  // Redirect all packager requests
+  // Redirect all requests targeted at the packager
   if (request.path.startsWith('/amppkg/')) {
-    sxgProxy(request, response, request.url, next);
+    // Add a timestamp to bust potential caches (temporary fix for #1921)
+    const requestUrl = new URL(request.url, 'https://example.com');
+    const timestamp = new Date().getTime();
+    requestUrl.searchParams.set(timestamp, '');
+    // Proxy request to packager
+    sxgProxy(request, response, requestUrl.pathname + requestUrl.search, next);
     return;
   }
-  // Don't package non valid AMP pages
+  // Don't package non-valid AMP pages, which is in our case
+  // determined by the `.amp.` postfix
   if (!request.path.endsWith('.amp.html')) {
     next();
     return;
   }
   // Tell browsers that we support SXG
   response.set('vary', 'Accept, AMP-Cache-Transform');
+  // Ignore all non AMP cache requests
   if (!request.header('amp-cache-transform')) {
     next();
     return;
   }
-  // Hard-code amp.dev as it has to match the cert
+  // Construct the packager request URL
   const searchParams = new URLSearchParams({
-    sign: 'https://amp.dev' + request.url,
+    sign: PACKAGED_DOMAIN + request.url,
   }).toString();
   const url = `/priv/doc?${searchParams}`;
   // Serve webpackage via packager
@@ -63,11 +73,12 @@ const packager = (request, response, next) => {
 };
 
 function sxgProxy(request, response, url, next) {
-  console.log('[packager] proxy', url);
+  console.log('[packager] proxy', PROXY_OPTIONS.target + url);
   request.url = url;
-  proxy.web(request, response, proxyOptions, (error) => {
+  proxy.web(request, response, PROXY_OPTIONS, (error) => {
     console.error(error);
-    // let the normal request handler deal with it (serve a page or a 404)
+    // Let the normal request handler handle the request, which either serves
+    // the non-packaged version or a 404
     next();
   });
 }
