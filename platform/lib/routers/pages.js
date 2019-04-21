@@ -212,7 +212,7 @@ if (!config.isDevMode()) {
     return true;
   }
 
-  pages.use('/', async (request, response, next) => {
+  pages.get('/*', async (request, response, next) => {
     let requestPath = ensureFileExtension(request.path);
 
     const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
