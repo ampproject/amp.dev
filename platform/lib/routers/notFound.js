@@ -19,5 +19,9 @@
 const {pagePath} = require('@lib/utils/project');
 
 module.exports = (req, res, next) => { // eslint-disable-line no-unused-vars
-  res.status(404).sendFile('404.html', {root: pagePath()});
+  if (req.headers.accept && req.headers.accept.includes('text/html')) {
+    res.status(404).sendFile('404.html', {root: pagePath()});
+    return;
+  }
+  res.status(404).send('404').end();
 };
