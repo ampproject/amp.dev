@@ -17,8 +17,10 @@
 'use strict';
 
 const {pagePath} = require('@lib/utils/project');
+const {setMaxAge} = require('../utils/cacheHelpers.js');
 
 module.exports = (req, res, next) => { // eslint-disable-line no-unused-vars
+  setMaxAge(res, 60 * 10); // ten minutes
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     res.status(404).sendFile('404.html', {root: pagePath()});
     return;
