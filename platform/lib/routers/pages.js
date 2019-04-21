@@ -222,13 +222,14 @@ if (!config.isDevMode()) {
     if (!hasFormatFilter && !hasReferrerNotification) {
       return staticMiddleware(request, response, next);
     }
-    const page = cache.get(requestPath);
+    const cacheKey = requestPath + '?' +
+      Object.entries(request.query).map(([key, value]) => `${key}=${value}`).join('&');
+    const page = cache.get(cacheKey);
     if (page) {
-      console.log('[CACHE] hit', requestPath);
+      console.log('[CACHE] hit', cacheKey);
       response.send(page);
       return;
     }
-    console.log('[CACHE] miss', requestPath);
 
     // Apply format and referrer transformations
     try {
@@ -252,7 +253,7 @@ if (!config.isDevMode()) {
       }
       page = fixCheerio(dom.html());
       response.send(page);
-      cache.set(requestPath, page);
+      cache.set(cacheKey, page);
       console.log('cache count', cache.itemCount);
     } catch (e) {
       if (e.code === 'EISDIR' || e.code === 'ENOENT') {
