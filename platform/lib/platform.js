@@ -95,6 +95,20 @@ class Platform {
       res.redirect('https://' + req.hostname + req.path);
     });
 
+    // debug computing times
+    this.server.use((req, res, next) => {
+      const timeStart = process.hrtime();
+
+      res.on('finish', () => {
+        const timeElapsed = process.hrtime(timeStart);
+        const ms = timeElapsed[0] * 1000 + timeElapsed[1] / 1e6;
+        console.log(`[TIMING]: ${req.path}`
+          + `[accept-encoding: ${req.headers['accept-encoding']}]: ${ms}ms`);
+      });
+
+      next();
+    });
+
     // pass app engine HTTPS status to express app
     this.server.set('trust proxy', true);
     this._enableCors();
