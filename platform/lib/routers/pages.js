@@ -222,13 +222,13 @@ if (!config.isDevMode()) {
     if (!hasFormatFilter && !hasReferrerNotification) {
       return staticMiddleware(request, response, next);
     }
-    const page = cache.get(requestPath);
+    const page = cache.get(request.url);
     if (page) {
-      console.log('[CACHE] hit', requestPath);
+      console.log('[CACHE] hit', request.url);
       response.send(page);
       return;
     }
-    console.log('[CACHE] miss', requestPath);
+    console.log('[CACHE] miss', request.url);
 
     // Apply format and referrer transformations
     try {
