@@ -255,7 +255,7 @@ if (!config.isDevMode()) {
       cache.set(requestPath, page);
       console.log('cache count', cache.itemCount);
     } catch (e) {
-      if (e.code === 'EISDIR') {
+      if (e.code === 'EISDIR' || e.code === 'ENOENT') {
         // show a 404 instead
         next();
         return;
