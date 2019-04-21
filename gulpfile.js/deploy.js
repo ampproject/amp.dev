@@ -47,6 +47,7 @@ const config = {
     group: `ig-${PREFIX}`,
     template: `it-${PREFIX}-${TAG}`,
     count: 2,
+    machine: 'n1-standard-2',
   },
   gcloud: {
     project: PROJECT_ID,
@@ -108,6 +109,7 @@ function imageList() {
 function instanceTemplateCreate() {
   return sh(`gcloud compute instance-templates create-with-container ${config.instance.template} \
                  --container-image ${config.image.current} \
+                 --machine-type ${config.instance.machine} \
                  --tags http-server,https-server`);
 }
 
