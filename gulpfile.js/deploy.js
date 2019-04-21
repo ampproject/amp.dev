@@ -90,6 +90,13 @@ function imageBuild() {
 }
 
 /**
+ * Builds a local docker image for testing.
+ */
+function imageRunLocal() {
+  return sh(`docker run -d -p 8082:80 ${config.image.current}`);
+}
+
+/**
  * Builds and uploads a docker image to Google Cloud Container Registry.
  */
 function imageUpload() {
@@ -156,9 +163,10 @@ function updateStop() {
 exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
 exports.deploy = series(verifyTag, imageUpload, instanceTemplateCreate, updateStart);
-exports.imageList = imageList;
-exports.imageUpload = imageUpload;
 exports.imageBuild = imageBuild;
+exports.imageList = imageList;
+exports.imageRunLocal = imageRunLocal;
+exports.imageUpload = imageUpload;
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;
