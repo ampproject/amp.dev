@@ -49,17 +49,16 @@
     @include jumpto-list-shadow;
     position: relative;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     background: color('white');
     border-radius: 4px;
     margin: 0;
-    margin-right: 50px;
     padding: 15px 0;
     list-style: none;
+    overflow: auto;
 
     @media (min-width: 768px) {
-      flex-wrap: nowrap;
+      justify-content: center;
+      margin-right: 50px;
     }
 
   }
