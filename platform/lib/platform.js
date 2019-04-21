@@ -104,9 +104,12 @@ class Platform {
     this._registerRouters();
 
     const port = config.hosts.platform.port || process.env.APP_PORT || 80;
-    this.server.listen(port, () => {
+    const httpServer = this.server.listen(port, () => {
       signale.success(`server listening on ${port}!`);
     });
+    // Increase keep alive timeout
+    // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
+    httpServer.keepAliveTimeout = 620 * 1000;
   }
 
   _enableCors() {
