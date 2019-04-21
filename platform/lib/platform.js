@@ -126,7 +126,10 @@ class Platform {
 
   _registerRouters() {
     this.server.use(routers.packager);
-    this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
+    this.server.get(HEALTH_CHECK, (req, res) => {
+      console.log('[HEALTH CHECK] OK');
+      res.status(200).send('OK');
+    });
     this.server.use('/who-am-i', routers.whoAmI);
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use(subdomain.map(config.hosts.go, routers.go));
