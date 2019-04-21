@@ -465,14 +465,14 @@
 
 <body>
   <amp-story standalone title="The Mars Cruise" publisher="The AMP Project"
-    publisher-logo-src="/static/samples/img/publisher-src.png" poster-portrait-src="/static/samples/img/portrait-src.jpg"
-    poster-square-src="/static/samples/img/square-src.jpg" poster-landscape-src="/static/samples/img/landscape-src.jpg"
+    publisher-logo-src="./img/publisher-src.png" poster-portrait-src="./img/portrait-src.jpg"
+    poster-square-src="./img/square-src.jpg" poster-landscape-src="./img/landscape-src.jpg"
     background-audio="./audio/Asche_Spencer-Contemplative_312.mp3">
 
     <!-- The Cover Page -->
     <amp-story-page id="cover">
       <amp-story-grid-layer template="fill">
-        <amp-img class="bkgd" src="/static/samples/img/01/bkgd.jpg" width="720" height="1280" layout="responsive">
+        <amp-img class="bkgd" src="./img/01/bkgd.jpg" width="720" height="1280" layout="responsive">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill" class="gradient"></amp-story-grid-layer>
@@ -491,7 +491,7 @@
     <amp-story-page id="journey">
       <amp-story-grid-layer template="fill">
         <amp-video width="960" height="1280" autoplay noaudio layout="responsive"
-          src="./video/02-bkgd.mp4" poster="/static/samples/img/02/bkgd-poster.jpg"></amp-video>
+          src="./video/02-bkgd.mp4" poster="./img/02/bkgd-poster.jpg"></amp-video>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical" class="copy-layer">
         <h2 animate-in="fly-in-right" animate-in-duration="0.6s" animate-in-delay="0.2s">
@@ -507,35 +507,35 @@
     <!-- What to Bring -->
     <amp-story-page id="what-to-bring">
       <amp-story-grid-layer template="fill">
-        <amp-img src="/static/samples/img/03/bkgd.jpg" width="960" height="1280"></amp-img>
+        <amp-img src="./img/03/bkgd.jpg" width="960" height="1280"></amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical" class="mars-wrapper">
-        <amp-img class="mars" src="/static/samples/img/03/mars.png" width="960" height="450" layout="responsive">
+        <amp-img class="mars" src="./img/03/mars.png" width="960" height="450" layout="responsive">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical" class="suitcase-wrapper">
         <div>
-          <amp-img class="suitcase" src="/static/samples/img/03/suitcase.png"
+          <amp-img class="suitcase" src="./img/03/suitcase.png"
             layout="responsive" width="960"
             height="663" animate-in="fly-in-bottom"
             animate-in-duration="0.85s" animate-in-delay="0.45s">
           </amp-img>
-          <amp-img class="books" src="/static/samples/img/03/books.png"
+          <amp-img class="books" src="./img/03/books.png"
             layout="responsive" width="960"
             height="663" animate-in="fly-in-top"
             animate-in-duration="0.75s" animate-in-delay="0.8s">
           </amp-img>
-          <amp-img class="sextant" src="/static/samples/img/03/sextant.png"
+          <amp-img class="sextant" src="./img/03/sextant.png"
             layout="responsive" width="960"
             height="663" animate-in="fly-in-top"
             animate-in-duration="1.25s" animate-in-delay="1.2s">
           </amp-img>
-          <amp-img class="helmet" src="/static/samples/img/03/helmet.png"
+          <amp-img class="helmet" src="./img/03/helmet.png"
             layout="responsive" width="960"
             height="680" animate-in="fly-in-top"
             animate-in-duration="0.75s" animate-in-delay="1.1s">
           </amp-img>
-          <amp-img class="suitcase-front" src="/static/samples/img/03/suitcase-front.png"
+          <amp-img class="suitcase-front" src="./img/03/suitcase-front.png"
             layout="responsive" width="960"
             height="663" animate-in="fly-in-bottom"
             animate-in-duration="0.85s" animate-in-delay="0.45s">
@@ -558,7 +558,7 @@
     <amp-story-page id="trip-highlights">
       <amp-story-grid-layer template="fill">
         <amp-video noaudio autoplay width="960" height="1280" src="./video/04-bkgd.mp4"
-          layout="responsive" poster="/static/samples/img/04/poster.jpg">
+          layout="responsive" poster="./img/04/poster.jpg">
           <div fallback>
             <p>This browser does not support the video element.</p>
           </div>
@@ -569,7 +569,7 @@
           animate-in-duration="0.55s" animate-in-delay="0.9s">
           <amp-video autoplay noaudio width="960" height="540"
             src="./video/04-trip-movie.mp4" layout="responsive"
-            poster="/static/samples/img/04/trip-movie.jpg">
+            poster="./img/04/trip-movie.jpg">
             <div fallback>
               <p>This browser does not support the video element.</p>
             </div>
@@ -578,15 +578,15 @@
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical" class="icons">
         <div class="pin">
-          <amp-img layout="flex-item" src="/static/samples/img/04/pin.png"></amp-img>
+          <amp-img layout="flex-item" src="./img/04/pin.png"></amp-img>
           <h3><span>valles marineris</span></h3>
         </div>
         <div class="flag">
-          <amp-img layout="flex-item" src="/static/samples/img/04/flag.png"></amp-img>
+          <amp-img layout="flex-item" src="./img/04/flag.png"></amp-img>
           <h3><span>marineris golf course</span></h3>
         </div>
         <div class="resort">
-          <amp-img layout="flex-item" src="/static/samples/img/04/resort.png"></amp-img>
+          <amp-img layout="flex-item" src="./img/04/resort.png"></amp-img>
           <h3><span>rift valley resort</span></h3>
         </div>
       </amp-story-grid-layer>
@@ -605,7 +605,7 @@
     <!-- Rover tours -->
     <amp-story-page id="rover-tours">
       <amp-story-grid-layer template="fill">
-        <amp-img src="/static/samples/img/05/bkgd.jpg" width="960" height="1280" layout="responsive"></amp-img>
+        <amp-img src="./img/05/bkgd.jpg" width="960" height="1280" layout="responsive"></amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical" class="copy-layer">
         <h2 animate-in="fade-in" animate-in-duration="0.75s">
@@ -617,7 +617,7 @@
           Mars from the comfort of our all-terrain Rovers.</p>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="vertical" class="button-container">
-        <amp-img src="/static/samples/img/05/360-btn.png" width="567" height="230" layout="responsive"></amp-img>
+        <amp-img src="./img/05/360-btn.png" width="567" height="230" layout="responsive"></amp-img>
       </amp-story-grid-layer>
     </amp-story-page>
 
@@ -625,7 +625,7 @@
     <amp-story-page id="rover-360" auto-advance-after="rover-video">
       <amp-story-grid-layer template="fill">
         <amp-video id="rover-video" autoplay noaudio width="960" height="1280"
-          src="./video/05B-rover.mp4" layout="responsive" poster="/static/samples/img/05B/rover.jpg">
+          src="./video/05B-rover.mp4" layout="responsive" poster="./img/05B/rover.jpg">
           <div fallback>
             <p>This browser does not support the video element.</p>
           </div>
@@ -636,14 +636,14 @@
     <!-- Can't Wait -->
     <amp-story-page id="last">
       <amp-story-grid-layer template="fill">
-        <amp-img src="/static/samples/img/06/bkgd.jpg" width="960" height="1280" layout="responsive"></amp-img>
+        <amp-img src="./img/06/bkgd.jpg" width="960" height="1280" layout="responsive"></amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
-        <amp-img class="mars" src="/static/samples/img/06/mars.png" width="960" height="1280" layout="responsive">
+        <amp-img class="mars" src="./img/06/mars.png" width="960" height="1280" layout="responsive">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
-        <amp-img class="astronaut" src="/static/samples/img/06/astronaut.png"
+        <amp-img class="astronaut" src="./img/06/astronaut.png"
           width="960" height="1280" layout="responsive">
         </amp-img>
       </amp-story-grid-layer>
