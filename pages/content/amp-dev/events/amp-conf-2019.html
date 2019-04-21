@@ -36,25 +36,23 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
 
-  <div class="ap-o-jumpto">
-    <div class="ap--container">
-      <div class="ap-o-jumpto-content">
-        <p class="ap-o-jumpto-text">Learn more about</p>
-        <ul class="ap-o-jumpto-list">
-          {% for link in doc.section_links %}
-            <li class="ap-m-jumpto-item">
-              <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+<div class="ap-o-jumpto">
+  <div class="ap--container">
+    <div class="ap-o-jumpto-content">
+      <p class="ap-o-jumpto-text">Learn more about</p>
+      <ul class="ap-o-jumpto-list">
+        {% for link in doc.section_links %}
+          <li class="ap-m-jumpto-item">
+            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
-</section>
+</div>
 
 <section class="ap--container">
   <p class="ap--content-default">
