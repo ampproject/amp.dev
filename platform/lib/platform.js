@@ -101,9 +101,10 @@ class Platform {
 
       res.on('finish', () => {
         const timeElapsed = process.hrtime(timeStart);
-        const ms = timeElapsed[0] * 1000 + timeElapsed[1] / 1e6;
-        console.log(`[TIMING]: ${req.path}`
-          + `[accept-encoding: ${req.headers['accept-encoding']}]: ${ms}ms`);
+        let seconds = (timeElapsed[0] * 1000 + timeElapsed[1] / 1e6) / 1000;
+        seconds = seconds.toFixed(3);
+        const prefix = seconds > 1 ? 'CRITICAL TIMING' : 'TIMING';
+        console.log(`[${prefix}]: ${req.path}: ${seconds}s`);
       });
 
       next();
