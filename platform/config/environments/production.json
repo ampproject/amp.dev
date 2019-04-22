@@ -35,9 +35,9 @@
       "port": ""
     },
     "packager": {
-      "scheme": "https",
-      "host": "amp-dev-sxg.appspot.com",
-      "port": ""
+      "scheme": "http",
+      "host": "ig-amp-dev-packager-n37h.c.amp-dev-230314.internal",
+      "port": "8080"
     }
 	}
 }
