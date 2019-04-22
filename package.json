@@ -90,7 +90,7 @@
     "file-loader": "3.0.1",
     "google-closure-compiler": "20190325.0.0",
     "got": "9.6.0",
-    "gulp": "4.0.0",
+    "gulp": "4.0.1",
     "gulp-amphtml-validator": "1.0.2",
     "gulp-once": "2.0.3",
     "gulp-sass": "4.0.2",
