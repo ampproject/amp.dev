@@ -118,7 +118,7 @@ class Platform {
           url += ':' + req.port;
         }
         url += req.url;
-        console.log(`[${prefix}]: ${url}: ${seconds}s`);
+        console.log(`[${prefix}]: ${url}: ${seconds}s [${res.statusCode}]`);
       });
 
       next();
@@ -177,7 +177,7 @@ class Platform {
     // handle errors
     this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
       if (err) {
-        console.error(err.stack);
+        console.log(err);
         res.status(500).sendFile('500.html', {root: pagePath()});
       }
     });
