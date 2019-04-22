@@ -167,6 +167,7 @@ exports.imageBuild = imageBuild;
 exports.imageList = imageList;
 exports.imageRunLocal = imageRunLocal;
 exports.imageUpload = imageUpload;
+exports.instanceTemplateCreate = series(verifyTag, imageUpload, instanceTemplateCreate);
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;
