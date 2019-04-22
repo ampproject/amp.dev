@@ -19,12 +19,12 @@
 const HttpProxy = require('http-proxy');
 const config = require('@lib/config');
 
-const proxy = HttpProxy.createProxyServer();
-
 const proxyOptions = {
   target: config.hosts.packager.base,
   changeOrigin: true,
 };
+
+const proxy = HttpProxy.createProxyServer(proxyOptions);
 
 /**
  * Proxy SXG requests to the AMPPackager:
@@ -62,13 +62,12 @@ const packager = (request, response, next) => {
   sxgProxy(request, response, url, next);
 };
 
-function sxgProxy(request, response, url, next) {
+function sxgProxy(request, response, url) {
   console.log('[packager] proxy', url);
   request.url = url;
   proxy.web(request, response, proxyOptions, (error) => {
-    console.error(error);
-    // let the normal request handler deal with it (serve a page or a 404)
-    next();
+    console.log('[packager] proxy error', error);
+    response.status(502).end();
   });
 }
 
