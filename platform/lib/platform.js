@@ -104,21 +104,7 @@ class Platform {
         let seconds = (timeElapsed[0] * 1000 + timeElapsed[1] / 1e6) / 1000;
         seconds = seconds.toFixed(3);
         const prefix = seconds > 1 ? 'CRITICAL_TIMING' : 'TIMING';
-        let url = '';
-        if (req.headers['x-forwarded-proto'] === 'https') {
-          url = 'https://';
-        } else {
-          url = 'http://';
-        }
-        if (req.subdomains) {
-          url += req.subdomains.join('.');
-        }
-        url += req.get('host');
-        if (req.port) {
-          url += ':' + req.port;
-        }
-        url += req.url;
-        console.log(`[${prefix}]: ${url}: ${seconds}s [${res.statusCode}]`);
+        console.log(`[${prefix}] ${req.get('host')}${req.url} ${seconds}s [${res.statusCode}]`);
       });
 
       next();
