@@ -104,7 +104,21 @@ class Platform {
         let seconds = (timeElapsed[0] * 1000 + timeElapsed[1] / 1e6) / 1000;
         seconds = seconds.toFixed(3);
         const prefix = seconds > 1 ? 'CRITICAL_TIMING' : 'TIMING';
-        console.log(`[${prefix}]: ${req.url}: ${seconds}s`);
+        let url = '';
+        if (req.headers['x-forwarded-proto'] === 'https') {
+          url = 'https://';
+        } else {
+          url = 'http://';
+        }
+        if (req.subdomains) {
+          url += req.subdomains.join('.');
+        }
+        url += req.get('host');
+        if (req.port) {
+          url += ':' + req.port;
+        }
+        url += req.url;
+        console.log(`[${prefix}]: ${url}: ${seconds}s [${res.statusCode}]`);
       });
 
       next();
@@ -163,7 +177,7 @@ class Platform {
     // handle errors
     this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
       if (err) {
-        console.error(err.stack);
+        console.log(err);
         res.status(500).sendFile('500.html', {root: pagePath()});
       }
     });

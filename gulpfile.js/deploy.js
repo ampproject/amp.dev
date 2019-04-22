@@ -44,7 +44,16 @@ const config = {
   prefix: PREFIX,
   tag: TAG,
   instance: {
-    group: `ig-${PREFIX}`,
+    groups: [
+      {
+        name: `ig-${PREFIX}-europe`,
+        zone: 'europe-west2-c',
+      },
+      {
+        name: `ig-${PREFIX}-zone2`,
+        zone: 'us-east1-b',
+      },
+    ],
     template: `it-${PREFIX}-${TAG}`,
     count: 2,
     machine: 'n1-standard-2',
@@ -124,19 +133,21 @@ function instanceTemplateCreate() {
  * Start a rolling update to a new VM instance template. This will ensure
  * that there's always at least 1 active instance running during the update.
  */
-function updateStart() {
-  return sh(
-      `gcloud beta compute instance-groups managed rolling-action \
-                 start-update ${config.instance.group} \
+async function updateStart() {
+  const updates = config.instance.groups.map((group) => {
+    return sh(`gcloud beta compute instance-groups managed rolling-action \
+                 start-update ${group.name} \
                  --version template=${config.instance.template} \
-                 --zone=${config.gcloud.zone} \
+                 --zone=${group.zone} \
                  --min-ready 1m \
                  --max-surge 1 \
-                 --max-unavailable 1`,
-      'Rolling update started, this can take a few minutes...\n\n' +
-      'Run `gulp updateStatus` to check the current status. `isStable => true` once ' +
-      'when the upate has been finished.'
-  );
+                 --max-unavailable 1`);
+  });
+  await Promise.all(updates);
+
+  console.log('Rolling update started, this can take a few minutes...\n\n' +
+    'Run `gulp updateStatus` to check the current status. `isStable => true` once ' +
+    'when the upate has been finished.');
 }
 
 /**
@@ -167,6 +178,7 @@ exports.imageBuild = imageBuild;
 exports.imageList = imageList;
 exports.imageRunLocal = imageRunLocal;
 exports.imageUpload = imageUpload;
+exports.instanceTemplateCreate = series(verifyTag, imageUpload, instanceTemplateCreate);
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;
