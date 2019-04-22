@@ -23,8 +23,6 @@ const {Signale} = require('signale');
 const utils = require('@lib/utils');
 const cheerio = require('cheerio');
 const {filterPage, isFilterableRoute} = require('@lib/common/filteredPage');
-const {shouldAddReferrerNotification, addReferrerNotification} =
-  require('@lib/common/referrerNotification');
 const fs = require('fs');
 const readFileAsync = promisify(fs.readFile);
 const LRU = require('lru-cache');
@@ -64,16 +62,6 @@ function getFilteredFormat(request) {
   return activeFormat;
 }
 
-function fixCheerio(page) {
-  // As cheerio has problems with XML syntax in HTML documents the
-  // markup for the icons needs to be restored
-  page = page.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-      'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-  page = page.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-      'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-  return page;
-}
-
 /**
  * Checks if a path ends on a directory and appends index.html if that's
  * the case, otherwise appends .html extension
@@ -98,7 +86,7 @@ if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
   const modifyResponse = require('http-proxy-response-rewrite');
   const got = require('got');
-  const {pageMinifier} = require('@lib/build/pageMinifier');
+  const {pageTransformer} = require('@lib/build/pageTransformer');
 
   // Also create a logger during development since you want to know
   // what's going on
@@ -142,9 +130,7 @@ if (config.isDevMode()) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const dom = cheerio.load(body);
-          filterPage(activeFormat, dom);
-          const html = fixCheerio(dom.html());
+          const html = filterHtml(body) || body;
           response.setHeader('content-length', html.length.toString());
           return html;
         } catch (e) {
@@ -158,7 +144,7 @@ if (config.isDevMode()) {
     if (request.query['minify']) {
       log.await('Minifying request ...');
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        const minifiedPage = pageMinifier.minifyPage(body, request.url);
+        const minifiedPage = pageTransformer.minifyPage(body, request.url);
         response.setHeader('content-length', minifiedPage.length.toString());
         return minifiedPage;
       });
@@ -216,10 +202,9 @@ if (!config.isDevMode()) {
     let requestPath = ensureFileExtension(request.path);
 
     const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
-    const hasReferrerNotification = shouldAddReferrerNotification(request);
 
     // Let the built-in middleware deal with unfiltered requests
-    if (!hasFormatFilter && !hasReferrerNotification) {
+    if (!hasFormatFilter) {
       return staticMiddleware(request, response, next);
     }
     const cacheKey = requestPath + '?' +
@@ -231,27 +216,26 @@ if (!config.isDevMode()) {
       return;
     }
 
-    // Apply format and referrer transformations
+    // Apply format transformations
     try {
       const format = getFilteredFormat(request);
       if (hasFormatFilter) {
-        // Check if there's a manually filtered variant ...
-        const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+        // Check if there's a manually filtered variant and respect AMP variant
+        if (requestPath.endsWith('.amp.html')) {
+          const manualRequestPath = requestPath.replace('.amp.html', `.${format}.amp.html`);
+        } else {
+          const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
+        }
+
         if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
-          // ... and if there is one vend this
+          // ... and if there is one send this
           requestPath = manualRequestPath;
         }
       }
 
       let page = await readFileAsync(utils.project.pagePath(requestPath));
-      const dom = cheerio.load(page);
-      if (hasFormatFilter) {
-        filterPage(format, dom, true);
-      }
-      if (hasReferrerNotification) {
-        addReferrerNotification(request.query.referrer, dom);
-      }
-      page = fixCheerio(dom.html());
+
+
       response.send(page);
       cache.set(cacheKey, page);
       console.log('cache count', cache.itemCount);

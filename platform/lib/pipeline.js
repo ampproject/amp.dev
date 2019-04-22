@@ -30,7 +30,7 @@ const ComponentReferenceImporter = require('./pipeline/componentReferenceImporte
 const SpecImporter = require('./pipeline/specImporter');
 const {samplesBuilder} = require('./build/samplesBuilder');
 const roadmapImporter = require('./pipeline/roadmapImporter');
-const {pageMinifier} = require('./build/pageMinifier');
+const {pageTransformer} = require('./build/pageTransformer');
 
 const TRANSPILE_SCSS_SRC = '../frontend/scss/**/[^_]*.scss';
 const TRANSPILE_SCSS_WATCH_SRC = '../frontend/scss/**/*.scss';
@@ -234,15 +234,15 @@ class Pipeline {
 
   _minifyPages() {
     return new Promise((resolve, reject) => {
-      const stream = pageMinifier.start(utils.project.absolute('platform/pages'));
+      const stream = pageTransformer.start(utils.project.absolute('platform/pages'));
 
       stream.on('error', (error) => {
-        pageMinifier._log.fatal(`Something went wrong while minifying HTML: ${error}`);
+        pageTransformer._log.fatal(`Something went wrong while transforming HTML: ${error}`);
         reject(error);
       });
 
       stream.on('end', () => {
-        pageMinifier._log.success('Minified page\'s HTML.');
+        pageTransformer._log.success('Transformed pages.');
         resolve();
       });
     });
