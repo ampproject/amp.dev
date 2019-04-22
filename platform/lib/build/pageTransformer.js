@@ -111,7 +111,7 @@ class PageTransformer {
           html = scope.minifyPage(html, canonicalPage.path);
 
           const ampPath = canonicalPage.path.replace('.html', '.amp.html');
-          const optimizedHtml = html;
+          const optimizedHtml = await scope.optimize(html, ampPath);
 
           const ampPage = canonicalPage.clone();
           ampPage.path = ampPath;
@@ -131,7 +131,7 @@ class PageTransformer {
           scope._log.success(`Transformed ${canonicalPage.path}`);
           callback();
         }))
-        .pipe(gulp.dest('./pages-transformed'));
+        .pipe(gulp.dest('./'));
   }
 
 
@@ -141,14 +141,16 @@ class PageTransformer {
    * @param  {Vinyl}
    * @return {undefined}
    */
-  _skipFilter(page, format) {
+  _isManuallyFiltered(page) {
     let path = page.path.replace('.amp.html', '.html');
 
-    // Skip pages that have been manually filtered and therfore have a path like
+    // Skip pages that have been manually filtered and therefore have a path like
     // - guides-and-tutorials/index.websites.html
     // - guides-and-tutorials/index.email.amp.html
-    if (path.match(/\.(websites|stories|ads|email)(\.amp)?\.html/)) {
-      return true;
+    // But still the matching format should be filtered, therefore pass it back
+    const format = path.match(/\.(websites|stories|ads|email)(\.amp)?\.html/);
+    if (format) {
+      return format[1];
     }
 
     // Do not filter pages that have a manually filtered equivalent as they
@@ -171,11 +173,14 @@ class PageTransformer {
     const filteredPages = [];
     for (const page of pages) {
       const html = page.contents.toString();
-      for (const format of FORMATS) {
-        if (this._skipFilter(page, format)) {
-          continue;
-        }
+      const manualFormat = this._isManuallyFiltered(page);
+      if (manualFormat) {
+        const filteredHtml = this.filterHtml(html, manualFormat, true);
+        page.contents = Buffer.from(filteredHtml);
+        continue;
+      }
 
+      for (const format of FORMATS) {
         const filteredHtml = this.filterHtml(html, format);
         if (filteredHtml) {
           const filteredPage = page.clone();
@@ -184,7 +189,7 @@ class PageTransformer {
           // As websites is the default those files can be overwritten and
           // don't need an extra name
           if (format !== 'websites') {
-            filteredPage.stem = `${filteredPage.stem}.${format}`;
+            filteredPage.stem = filteredPage.stem.replace('.', `.${format}.`);
           }
 
           filteredPages.push(filteredPage);
@@ -199,10 +204,10 @@ class PageTransformer {
    * @param  {String} html
    * @return {String}
    */
-  filterHtml(html, format) {
-    const filteredDom = filterPage(format, cheerio.load(html));
-    if (filteredDom) {
-      let filteredHtml = filteredDom.html();
+  filterHtml(html, format, force) {
+    const dom = cheerio.load(html);
+    if (filterPage(format, dom, force)) {
+      let filteredHtml = dom.html();
 
       // As cheerio has problems with XML syntax in HTML documents the
       // markup for the icons needs to be restored
@@ -249,8 +254,6 @@ class PageTransformer {
         this._log.warn(`Could not rewrite selectors for ${path}`);
         console.error(e);
       }
-    } else {
-      this._log.info(`Skipping ${path} from selector rewriting!`);
     }
 
     return html;

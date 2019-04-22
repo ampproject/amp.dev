@@ -22,7 +22,7 @@ const config = require('@lib/config');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
 const cheerio = require('cheerio');
-const {filterPage, isFilterableRoute} = require('@lib/common/filteredPage');
+const {isFilterableRoute} = require('@lib/common/filteredPage');
 const fs = require('fs');
 
 

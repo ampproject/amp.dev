@@ -47,7 +47,7 @@ function filterPage(format, dom, force) {
   }
   const filter = new Filter(format, dom);
   filter.apply();
-  return dom;
+  return true;
 }
 
 function isFilterableRoute(route) {
