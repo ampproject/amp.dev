@@ -24,11 +24,6 @@ const utils = require('@lib/utils');
 const cheerio = require('cheerio');
 const {filterPage, isFilterableRoute} = require('@lib/common/filteredPage');
 const fs = require('fs');
-const readFileAsync = promisify(fs.readFile);
-const LRU = require('lru-cache');
-const cache = new LRU({
-  max: 100,
-});
 
 
 // eslint-disable-next-line new-cap
@@ -180,73 +175,20 @@ if (!config.isDevMode()) {
     'extensions': ['html'],
   });
 
-  /**
-   * Checks preconditions that need to be met to filter the ongoing request
-   * @param  {Request}  request The ongoing request
-   * @param  {String}  requestPath  A possibly rewritten request path
-   * @return {Boolean}
-   */
-  async function shouldApplyFormatFilter(request, requestPath) {
-    if (!getFilteredFormat(request) || !isFilterableRoute(requestPath)) {
-      return false;
-    }
-
-    if (!await fileExistsAsync(utils.project.pagePath(requestPath))) {
-      return false;
-    }
-
-    return true;
-  }
 
   pages.get('/*', async (request, response, next) => {
-    let requestPath = ensureFileExtension(request.path);
+    request.url = ensureFileExtension(request.path);
 
-    const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
-
-    // Let the built-in middleware deal with unfiltered requests
-    if (!hasFormatFilter) {
-      return staticMiddleware(request, response, next);
-    }
-    const cacheKey = requestPath + '?' +
-      Object.entries(request.query).map(([key, value]) => `${key}=${value}`).join('&');
-    const page = cache.get(cacheKey);
-    if (page) {
-      console.log('[CACHE] hit', cacheKey);
-      response.send(page);
-      return;
-    }
-
-    // Apply format transformations
-    try {
-      const format = getFilteredFormat(request);
-      if (hasFormatFilter) {
-        // Check if there's a manually filtered variant and respect AMP variant
-        if (requestPath.endsWith('.amp.html')) {
-          const manualRequestPath = requestPath.replace('.amp.html', `.${format}.amp.html`);
-        } else {
-          const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
-        }
-
-        if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
-          // ... and if there is one send this
-          requestPath = manualRequestPath;
-        }
+    const format = request.query['format'];
+    if (format && format !== 'websites') {
+      if (request.path.endsWith('.amp.html')) {
+        request.url = request.path.replace('.amp.html', `.${format}.amp.html`);
+      } else {
+        request.url = request.path.replace('.html', `.${format}.html`);
       }
-
-      let page = await readFileAsync(utils.project.pagePath(requestPath));
-
-
-      response.send(page);
-      cache.set(cacheKey, page);
-      console.log('cache count', cache.itemCount);
-    } catch (e) {
-      if (e.code === 'EISDIR' || e.code === 'ENOENT') {
-        // show a 404 instead
-        next();
-        return;
-      }
-      return next(e);
     }
+
+    return staticMiddleware(request, response, next);
   });
 }
 
