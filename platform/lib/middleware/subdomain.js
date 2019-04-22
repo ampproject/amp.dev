@@ -92,7 +92,7 @@ class Subdomain {
     // assume request was initiated by a document-relative path
     let destination = this.resolveUrl_(request.originalUrl.substring(1), referrer);
     // perform a head request to check if destination exists
-    if (!destination.pathname.startsWith('/static/') && !await this.exists_(destination)) {
+    if (destination.pathname.startsWith('/static/') || !await this.exists_(destination)) {
       // assume a root-relative path
       destination = this.resolveUrl_(request.originalUrl, referrer);
     }
@@ -104,6 +104,7 @@ class Subdomain {
     const referrer = new URL(referrerString);
     const playgroundDoc = referrer.searchParams.get('url');
     if (!playgroundDoc) {
+      // redirect to amp.dev by default
       return new URL(requestPath, config.hosts.platform.base);
     }
     const documentUrl = new URL(playgroundDoc, config.hosts.platform.base);
