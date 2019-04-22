@@ -30,13 +30,6 @@ const fs = require('fs');
 const pages = express.Router();
 const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
 
-function fileExistsAsync(path) {
-  return new Promise((resolve) => {
-    fs.access(path, fs.F_OK, (err) => {
-      resolve(!(err instanceof Error));
-    });
-  });
-}
 
 /**
  * Inspects a incoming request (either proxied or not) for its GET args
@@ -125,7 +118,7 @@ if (config.isDevMode()) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const html = filterHtml(body) || body;
+          const html = pageTransformer.filterHtml(body) || body;
           response.setHeader('content-length', html.length.toString());
           return html;
         } catch (e) {
@@ -179,7 +172,7 @@ if (!config.isDevMode()) {
   pages.get('/*', async (request, response, next) => {
     request.url = ensureFileExtension(request.path);
 
-    const format = request.query['format'];
+    const format = getFilteredFormat(request);
     if (format && format !== 'websites') {
       if (request.path.endsWith('.amp.html')) {
         request.url = request.path.replace('.amp.html', `.${format}.amp.html`);
