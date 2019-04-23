@@ -30,6 +30,7 @@ const runtimeVersionPromise = require('amp-toolbox-runtime-version').currentVers
 const {filterPage, isFilterableRoute, FORMATS} = require('@lib/common/filteredPage');
 const cheerio = require('cheerio');
 const fs = require('fs');
+const {project} = require('@lib/utils');
 
 const config = require('@lib/config');
 
@@ -105,7 +106,7 @@ class PageTransformer {
   start(path) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-    return gulp.src(`${path}/**/*.html`, {'base': './'})
+    return gulp.src(`${path}/**/*.html`)
         .pipe(through.obj(async function(canonicalPage, encoding, callback) {
           let html = canonicalPage.contents.toString();
           html = scope.minifyPage(html, canonicalPage.path);
@@ -131,7 +132,7 @@ class PageTransformer {
           scope._log.success(`Transformed ${canonicalPage.path}`);
           callback();
         }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest(project.paths.PAGES_DEST));
   }
 
 
@@ -142,19 +143,28 @@ class PageTransformer {
    * @return {undefined}
    */
   _isManuallyFiltered(page) {
-    let path = page.path.replace('.amp.html', '.html');
-
     // Skip pages that have been manually filtered and therefore have a path like
     // - guides-and-tutorials/index.websites.html
     // - guides-and-tutorials/index.email.amp.html
     // But still the matching format should be filtered, therefore pass it back
-    const format = path.match(/\.(websites|stories|ads|email)(\.amp)?\.html/);
+    const format = page.path.match(/\.(websites|stories|ads|email)(\.amp)?\.html/);
     if (format) {
       return format[1];
     }
+  }
 
+  /**
+   * Checks if a filtered variant already for a specific format already exists
+   * on disc
+   *
+   * @param  {Vinyl}
+   * @param  {String}
+   * @return {undefined}
+   */
+  _hasManualFiltered(page, format) {
     // Do not filter pages that have a manually filtered equivalent as they
     // are also somewhere in the stream and shouldn't be overwritten
+    let path = page.path.replace('.amp.html', `.html`);
     path = path.replace('.html', `.${format}.html`);
     if (fs.existsSync(path)) {
       return true;
@@ -181,6 +191,10 @@ class PageTransformer {
       }
 
       for (const format of FORMATS) {
+        if (this._hasManualFiltered(page, format)) {
+          continue;
+        }
+
         const filteredHtml = this.filterHtml(html, format);
         if (filteredHtml) {
           const filteredPage = page.clone();
@@ -189,7 +203,8 @@ class PageTransformer {
           // As websites is the default those files can be overwritten and
           // don't need an extra name
           if (format !== 'websites') {
-            filteredPage.stem = filteredPage.stem.replace('.', `.${format}.`);
+            const suffix = filteredPage.basename.endsWith('.amp.html') ? '.amp.html' : '.html';
+            filteredPage.basename = filteredPage.basename.replace(suffix, `.${format}${suffix}`);
           }
 
           filteredPages.push(filteredPage);

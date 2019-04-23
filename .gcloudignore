@@ -28,7 +28,8 @@ packager/
 # The complete frontend, pages and examples packages aren't needed on App Engine
 /frontend/
 pages/
-!platform/pages
+# The transformed pages from dist/pages are used instead
+platform/pages*
 
 # playground: ignore everything except the dist folder
 /playground/*

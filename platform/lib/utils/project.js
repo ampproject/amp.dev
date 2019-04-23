@@ -49,6 +49,7 @@ const paths = {
   ROOT: absolute('.'),
   CSS: absolute('pages/css'),
   GROW_BUILD_DEST: absolute('platform/pages'),
+  PAGES_DEST: absolute('dist/pages'),
 };
 
 module.exports = {
