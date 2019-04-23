@@ -16,34 +16,17 @@
 
 'use strict';
 
-const {promisify} = require('util');
 const express = require('express');
 const config = require('@lib/config');
 const {Signale} = require('signale');
-const utils = require('@lib/utils');
-const cheerio = require('cheerio');
-const {filterPage, isFilterableRoute} = require('@lib/common/filteredPage');
-const {shouldAddReferrerNotification, addReferrerNotification} =
-  require('@lib/common/referrerNotification');
-const fs = require('fs');
-const readFileAsync = promisify(fs.readFile);
-const LRU = require('lru-cache');
-const cache = new LRU({
-  max: 100,
-});
+const {isFilterableRoute} = require('@lib/common/filteredPage');
+const {project} = require('@lib/utils');
 
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
 const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
 
-function fileExistsAsync(path) {
-  return new Promise((resolve) => {
-    fs.access(path, fs.F_OK, (err) => {
-      resolve(!(err instanceof Error));
-    });
-  });
-}
 
 /**
  * Inspects a incoming request (either proxied or not) for its GET args
@@ -62,16 +45,6 @@ function getFilteredFormat(request) {
   }
 
   return activeFormat;
-}
-
-function fixCheerio(page) {
-  // As cheerio has problems with XML syntax in HTML documents the
-  // markup for the icons needs to be restored
-  page = page.replace('xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-      'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-  page = page.replace(/xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-      'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-  return page;
 }
 
 /**
@@ -98,7 +71,7 @@ if (config.isDevMode()) {
   // Only import the stuff needed for proxying during development
   const modifyResponse = require('http-proxy-response-rewrite');
   const got = require('got');
-  const {pageMinifier} = require('@lib/build/pageMinifier');
+  const {pageTransformer} = require('@lib/build/pageTransformer');
 
   // Also create a logger during development since you want to know
   // what's going on
@@ -142,9 +115,7 @@ if (config.isDevMode()) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const dom = cheerio.load(body);
-          filterPage(activeFormat, dom);
-          const html = fixCheerio(dom.html());
+          const html = pageTransformer.filterHtml(body) || body;
           response.setHeader('content-length', html.length.toString());
           return html;
         } catch (e) {
@@ -158,7 +129,7 @@ if (config.isDevMode()) {
     if (request.query['minify']) {
       log.await('Minifying request ...');
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        const minifiedPage = pageMinifier.minifyPage(body, request.url);
+        const minifiedPage = pageTransformer.minifyPage(body, request.url);
         response.setHeader('content-length', minifiedPage.length.toString());
         return minifiedPage;
       });
@@ -189,80 +160,24 @@ if (config.isDevMode()) {
 }
 
 if (!config.isDevMode()) {
-  const STATIC_PAGES_PATH = utils.project.absolute('platform/pages');
-  const staticMiddleware = express.static(STATIC_PAGES_PATH, {
+  const staticMiddleware = express.static(project.paths.PAGES_DEST, {
     'extensions': ['html'],
   });
 
-  /**
-   * Checks preconditions that need to be met to filter the ongoing request
-   * @param  {Request}  request The ongoing request
-   * @param  {String}  requestPath  A possibly rewritten request path
-   * @return {Boolean}
-   */
-  async function shouldApplyFormatFilter(request, requestPath) {
-    if (!getFilteredFormat(request) || !isFilterableRoute(requestPath)) {
-      return false;
-    }
-
-    if (!await fileExistsAsync(utils.project.pagePath(requestPath))) {
-      return false;
-    }
-
-    return true;
-  }
 
   pages.get('/*', async (request, response, next) => {
-    let requestPath = ensureFileExtension(request.path);
+    request.url = ensureFileExtension(request.path);
 
-    const hasFormatFilter = await shouldApplyFormatFilter(request, requestPath);
-    const hasReferrerNotification = shouldAddReferrerNotification(request);
-
-    // Let the built-in middleware deal with unfiltered requests
-    if (!hasFormatFilter && !hasReferrerNotification) {
-      return staticMiddleware(request, response, next);
-    }
-    const cacheKey = requestPath + '?' +
-      Object.entries(request.query).map(([key, value]) => `${key}=${value}`).join('&');
-    const page = cache.get(cacheKey);
-    if (page) {
-      console.log('[CACHE] hit', cacheKey);
-      response.send(page);
-      return;
+    const format = getFilteredFormat(request);
+    if (format && format !== 'websites') {
+      if (request.path.endsWith('.amp.html')) {
+        request.url = request.path.replace('.amp.html', `.${format}.amp.html`);
+      } else {
+        request.url = request.path.replace('.html', `.${format}.html`);
+      }
     }
 
-    // Apply format and referrer transformations
-    try {
-      const format = getFilteredFormat(request);
-      if (hasFormatFilter) {
-        // Check if there's a manually filtered variant ...
-        const manualRequestPath = requestPath.replace('.html', `.${format}.html`);
-        if (await fs.existsSync(utils.project.pagePath(manualRequestPath))) {
-          // ... and if there is one vend this
-          requestPath = manualRequestPath;
-        }
-      }
-
-      let page = await readFileAsync(utils.project.pagePath(requestPath));
-      const dom = cheerio.load(page);
-      if (hasFormatFilter) {
-        filterPage(format, dom, true);
-      }
-      if (hasReferrerNotification) {
-        addReferrerNotification(request.query.referrer, dom);
-      }
-      page = fixCheerio(dom.html());
-      response.send(page);
-      cache.set(cacheKey, page);
-      console.log('cache count', cache.itemCount);
-    } catch (e) {
-      if (e.code === 'EISDIR' || e.code === 'ENOENT') {
-        // show a 404 instead
-        next();
-        return;
-      }
-      return next(e);
-    }
+    return staticMiddleware(request, response, next);
   });
 }
 

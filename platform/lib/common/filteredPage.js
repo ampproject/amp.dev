@@ -43,10 +43,11 @@ const FILTERED_ROUTES = [
  */
 function filterPage(format, dom, force) {
   if (!isAvailable(format, dom) && !force) {
-    return;
+    return false;
   }
   const filter = new Filter(format, dom);
   filter.apply();
+  return true;
 }
 
 function isFilterableRoute(route) {
@@ -178,7 +179,8 @@ class Filter {
     // the current active format
     const activeFormat = this._dom('.ap-m-format-toggle-selected');
     if (activeFormat.length == 0) {
-      console.error('Page has no active format.');
+      const canonical = this._dom('[rel="canonical"]');
+      console.error(`No active format: ${canonical.attr('href')}`);
       return;
     }
 
