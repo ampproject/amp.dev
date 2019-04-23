@@ -241,7 +241,7 @@ class PageTransformer {
   async optimize(html, path) {
     const ampRuntimeVersion = await runtimeVersionPromise;
     return ampOptimizer.transformHtml(html, {
-      ampUrl: path.replace(/^pages/, ''),
+      ampUrl: path.replace(/^pages/, '/'),
       ampRuntimeVersion: ampRuntimeVersion,
       blurredPlaceholders: true,
       maxBlurredPlaceholders: 7, // number of images in homepage stage
