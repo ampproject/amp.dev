@@ -36,9 +36,9 @@ function relative(base, relativePath) {
  */
 function pagePath(relativePath) {
   if (!relativePath) {
-    return paths.GROW_BUILD_DEST;
+    return paths.PAGES_DEST;
   }
-  return path.join(paths.GROW_BUILD_DEST, relativePath);
+  return path.join(paths.PAGES_DEST, relativePath);
 }
 
 /**
