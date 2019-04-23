@@ -221,19 +221,21 @@ class PageTransformer {
    */
   filterHtml(html, format, force) {
     const dom = cheerio.load(html);
-    if (filterPage(format, dom, force)) {
-      let filteredHtml = dom.html();
-
-      // As cheerio has problems with XML syntax in HTML documents the
-      // markup for the icons needs to be restored
-      filteredHtml = filteredHtml.replace(
-          'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-          'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-      filteredHtml = filteredHtml.replace(
-          /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-          'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-      return filteredHtml;
+    if (!filterPage(format, dom, force)) {
+      return html;
     }
+
+    let filteredHtml = dom.html();
+
+    // As cheerio has problems with XML syntax in HTML documents the
+    // markup for the icons needs to be restored
+    filteredHtml = filteredHtml.replace(
+        'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
+        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+    filteredHtml = filteredHtml.replace(
+        /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
+        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
+    return filteredHtml;
   }
 
   async optimize(html, path) {
