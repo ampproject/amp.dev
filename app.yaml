@@ -3,3 +3,5 @@ env: flex
 env_variables:
   APP_PORT: '8080'
   APP_ENV: 'staging'
+manual_scaling:
+  instances: 1
