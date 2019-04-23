@@ -25,9 +25,9 @@ README.md
 CONTRIBUTING.md
 packager/
 
-# The complete frontend, pages and examples packages aren't needed on App Engine
+# The complete frontend and pages folders aren't needed on App Engine
 /frontend/
-pages/
+/pages
 # The transformed pages from dist/pages are used instead
 platform/pages*
 
