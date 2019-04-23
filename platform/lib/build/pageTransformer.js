@@ -25,6 +25,8 @@ const through = require('through2');
 const CleanCSS = require('clean-css');
 const crypto = require('crypto');
 const rcs = require('rcs-core');
+const t = require('exectimer');
+const Tick = t.Tick;
 const ampOptimizer = require('amp-toolbox-optimizer');
 const runtimeVersionPromise = require('amp-toolbox-runtime-version').currentVersion();
 const {filterPage, isFilterableRoute, FORMATS} = require('@lib/common/filteredPage');
@@ -109,10 +111,17 @@ class PageTransformer {
     return gulp.src(`${path}/**/*.html`)
         .pipe(through.obj(async function(canonicalPage, encoding, callback) {
           let html = canonicalPage.contents.toString();
+
+          let timer = new Tick('minifying');
+          timer.start();
           html = scope.minifyPage(html, canonicalPage.path);
+          timer.stop();
 
           const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
+          timer = new Tick('optimizing');
+          timer.start();
           const optimizedHtml = await scope.optimize(html, ampPath);
+          timer.stop();
 
           const ampPage = canonicalPage.clone();
           ampPage.path = ampPath;
@@ -122,7 +131,10 @@ class PageTransformer {
 
           let filteredPages = [];
           if (isFilterableRoute(canonicalPage.path)) {
+            timer = new Tick('filtering');
+            timer.start();
             filteredPages = scope._filterPages(canonicalPage, ampPage);
+            timer.stop();
           }
 
           for (const page of [canonicalPage, ampPage, ...filteredPages]) {
@@ -135,6 +147,15 @@ class PageTransformer {
         .pipe(gulp.dest(project.paths.PAGES_DEST));
   }
 
+  done() {
+    ['minifying', 'optimizing', 'filtering'].forEach((key) => {
+      const results = t.timers[key];
+      if (!results) {
+        return;
+      }
+      this._log.info(`[PAGE_TRANSFORMER] ${key} mean time: ${results.parse(results.mean())}`);
+    });
+  }
 
   /**
    * Verifies a given page should be filtered
@@ -355,7 +376,11 @@ class PageTransformer {
 if (!module.parent) {
   (async () => {
     const pageTransformer = new PageTransformer();
-    pageTransformer.start(__dirname + '/../../pages');
+    const stream = pageTransformer.start(__dirname + '/../../pages');
+    stream.on('end', () => {
+      pageTransformer._log.success('Transformed pages.');
+      pageTransformer.done();
+    });
   })();
 }
 

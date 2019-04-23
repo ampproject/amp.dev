@@ -243,6 +243,7 @@ class Pipeline {
 
       stream.on('end', () => {
         pageTransformer._log.success('Transformed pages.');
+        pageTransformer.done();
         resolve();
       });
     });
