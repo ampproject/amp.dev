@@ -117,10 +117,12 @@ class PageTransformer {
           html = scope.minifyPage(html, canonicalPage.path);
           timer.stop();
 
-          const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
+          const ampPath = canonicalPage.path.replace('.html', '.amp.html');
+          const ampUrl = '/' + canonicalPage.relative.replace('.html', '.amp.html');
+
           timer = new Tick('optimizing');
           timer.start();
-          const optimizedHtml = await scope.optimize(html, ampPath);
+          const optimizedHtml = await scope.optimize(html, ampUrl);
           timer.stop();
 
           const ampPage = canonicalPage.clone();
@@ -262,7 +264,7 @@ class PageTransformer {
   async optimize(html, path) {
     const ampRuntimeVersion = await runtimeVersionPromise;
     return ampOptimizer.transformHtml(html, {
-      ampUrl: '/' + path,
+      ampUrl: path,
       ampRuntimeVersion: ampRuntimeVersion,
       imageBasePath: 'pages',
       blurredPlaceholders: true,
