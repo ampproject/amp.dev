@@ -111,7 +111,7 @@ class PageTransformer {
           let html = canonicalPage.contents.toString();
           html = scope.minifyPage(html, canonicalPage.path);
 
-          const ampPath = canonicalPage.path.replace('.html', '.amp.html');
+          const ampPath = canonicalPage.relative.replace('.html', '.amp.html');
           const optimizedHtml = await scope.optimize(html, ampPath);
 
           const ampPage = canonicalPage.clone();
