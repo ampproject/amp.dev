@@ -164,7 +164,7 @@ class PageTransformer {
   _hasManualFiltered(page, format) {
     // Do not filter pages that have a manually filtered equivalent as they
     // are also somewhere in the stream and shouldn't be overwritten
-    let path = page.path.replace('.amp.html', `.html`);
+    let path = page.path.replace('.amp.html', '.html');
     path = path.replace('.html', `.${format}.html`);
     if (fs.existsSync(path)) {
       return true;

@@ -19,7 +19,6 @@
 const express = require('express');
 const config = require('@lib/config');
 const {Signale} = require('signale');
-const utils = require('@lib/utils');
 const {isFilterableRoute} = require('@lib/common/filteredPage');
 const {project} = require('@lib/utils');
 
