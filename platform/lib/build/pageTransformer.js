@@ -222,7 +222,7 @@ class PageTransformer {
   filterHtml(html, format, force) {
     const dom = cheerio.load(html);
     if (!filterPage(format, dom, force)) {
-      return html;
+      return;
     }
 
     let filteredHtml = dom.html();
