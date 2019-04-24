@@ -18,13 +18,13 @@
 const express = require('express');
 const multer = require('multer');
 const upload = multer();
-const {setNoCache} = require('@lib/utils/cacheHelpers');
+const {setImmutable, setNoCache} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
 examples.get('/echo', (request, response) => {
-  setNoCache(response);
+  setImmutable(response);
   response.json(request.query);
 });
 

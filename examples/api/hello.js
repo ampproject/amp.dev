@@ -18,13 +18,13 @@
 const express = require('express');
 const multer = require('multer');
 const upload = multer();
-const {setNoCache} = require('@lib/utils/cacheHelpers');
+const {setNoCache, setImmutable} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
 examples.get('/hello', (request, response) => {
-  setNoCache(response);
+  setImmutable(response);
   const name = request.query.name;
   if (!name || name.length > 10) {
     response.status(400);

@@ -16,14 +16,14 @@
 'use strict';
 
 const express = require('express');
-const {setNoCache} = require('@lib/utils/cacheHelpers');
+const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const casual = require('casual');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
 examples.get('/photo-stream', (req, res) => {
-  setNoCache(res);
+  setMaxAge(res, 60 * 60); // 1h
   const {query} = req;
   const items = [];
   const numberOfItems = Number(query.items) || 10;
