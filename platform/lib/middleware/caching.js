@@ -16,7 +16,7 @@
 
 const mime = require('mime-types');
 const ms = require('ms');
-const {setMaxAge, setImmutable} = require('./cacheHelpers.js');
+const {setMaxAge, setImmutable} = require('../utils/cacheHelpers.js');
 
 const IMMUTABLE = 'immutable';
 
@@ -33,7 +33,7 @@ const maxAgePerMimeType = [
 
 const defaultMaxAge = maxAge('1m');
 
-function defaultStrategy(request, response, next) {
+module.exports = (request, response, next) => {
   const mimeType = mime.lookup(request.path) ||
     extractMimeFromAcceptHeader(request.headers.accept);
   if (!mimeType) {
@@ -49,7 +49,7 @@ function defaultStrategy(request, response, next) {
     setMaxAge(response, maxAge);
   }
   next();
-}
+};
 
 function extractMimeFromAcceptHeader(string) {
   if (!string) {
@@ -61,8 +61,3 @@ function extractMimeFromAcceptHeader(string) {
 function maxAge(string) {
   return Math.floor(ms(string) / 1000);
 }
-
-module.exports = {
-  defaultStrategy,
-};
-

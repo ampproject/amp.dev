@@ -21,80 +21,77 @@ const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const cors = require('cors');
 const ampCors = require('amp-toolbox-cors');
-const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
-const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
 const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
 const subdomain = require('./middleware/subdomain.js');
 
-
-const WWW_PREFIX = 'www.';
-const HEALTH_CHECK = '/__health-check';
 const routers = {
-  whoAmI: require('@lib/routers/whoAmI.js'),
-  pages: require('@lib/routers/pages.js'),
-  packager: require('@lib/routers/packager.js'),
+  boilerplate: require('../../boilerplate/backend/'),
   example: {
     sources: require('@lib/routers/example/sources.js'),
     embeds: require('@lib/routers/example/embeds.js'),
     api: require('@examples'),
   },
   go: require('@lib/routers/go.js'),
+  healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
-  static: require('@lib/routers/static.js'),
+  packager: require('@lib/routers/packager.js'),
+  pages: require('@lib/routers/pages.js'),
   playground: require('../../playground/backend/'),
-  boilerplate: require('../../boilerplate/backend/'),
+  static: require('@lib/routers/static.js'),
+  whoAmI: require('@lib/routers/whoAmI.js'),
 };
+
+const HOST = config.hosts.platform.base;
+const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
-    const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
+    return new Promise(async (resolve, reject) => {
+      try {
+        this._createServer();
+        await this._configureDevMode(HOST);
+        const httpServer = this.server.listen(PORT, () => {
+          signale.success(`server listening on ${PORT}!`);
+          resolve();
+        });
+        // Increase keep alive timeout
+        // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
+        httpServer.keepAliveTimeout = 620 * 1000;
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
 
-    signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
+  stop() {
+    return Promise.resolve();
+    // TODO
+  }
+
+  _createServer() {
+    signale.await(`Starting platform with environment ${config.environment} on ${HOST} ...`);
     this.server = express();
 
-    if (config.isDevMode()) {
-      const HttpProxy = require('http-proxy');
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
 
-      // When in development fire up a second server as a simple proxy
-      // to simulate CORS requests for stuff like playground
-      this.proxy = express();
-      this.proxy.listen(config.hosts.api.port, () => {
-        signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
-      });
+    this._configureDevMode(HOST);
+    this._configureMiddlewares();
+    this._configureSubdomains();
+    this._configureRouters();
+    this._configureErrorHandlers();
+  }
 
-      const proxy = new HttpProxy();
-      this.proxy.get('/*', (request, response, next) => {
-        proxy.web(request, response, {
-          'target': host,
-        }, next);
-      });
-    }
+  _configureMiddlewares() {
     this.server.use(shrinkRay());
-    this.server.use((req, res, next) => {
-      if (req.hostname.startsWith(WWW_PREFIX)) {
-        res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
-      } else {
-        next();
-      }
-    });
-    this.server.use((req, res, next) => {
-      if (req.hostname === 'localhost') {
-        return next();
-      }
-      setNoSniff(res);
-      setXssProtection(res);
-      if (req.path === HEALTH_CHECK) {
-        // it's critical that health checks don't redirect for GCE healthchecks to work correctly
-        return next();
-      }
-      setHsts(res);
-      if (req.headers['x-forwarded-proto'] === 'https') {
-        return next();
-      }
-      res.redirect('https://' + req.hostname + req.path);
-    });
-
+    this.server.use(require('./middleware/security.js'));
+    this.server.use(require('./middleware/redirects.js'));
+    this.server.use(require('./middleware/caching.js'));
+    this.server.use(cors());
+    this.server.use(ampCors({
+      'verifyOrigin': false,
+    }));
     // debug computing times
     this.server.use((req, res, next) => {
       const timeStart = process.hrtime();
@@ -109,43 +106,9 @@ class Platform {
 
       next();
     });
-
-    // pass app engine HTTPS status to express app
-    this.server.set('trust proxy', true);
-    this._enableCors();
-    this.server.use(defaultCachingStrategy);
-
-    this._check();
-    this._registerRouters();
-
-    const port = config.hosts.platform.port || process.env.APP_PORT || 80;
-    const httpServer = this.server.listen(port, () => {
-      signale.success(`server listening on ${port}!`);
-    });
-    // Increase keep alive timeout
-    // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
-    httpServer.keepAliveTimeout = 620 * 1000;
   }
 
-  _enableCors() {
-    this.server.use(cors());
-    this.server.use(ampCors({
-      'verifyOrigin': false,
-    }));
-  };
-
-  _check() {
-    // TODO: Check (dependening on environment) if all needed files are
-    // there and otherwise only send a static error page
-  }
-
-  _registerRouters() {
-    this.server.use(routers.packager);
-    this.server.get(HEALTH_CHECK, (req, res) => {
-      console.log('[HEALTH CHECK] OK');
-      res.status(200).send('OK');
-    });
-    this.server.use('/who-am-i', routers.whoAmI);
+  _configureSubdomains() {
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use(subdomain.map(config.hosts.go, routers.go));
     // eslint-disable-next-line new-cap
@@ -154,12 +117,20 @@ class Platform {
       routers.example.sources,
       routers.example.api,
     ])));
-    this.server.use('/documentation/examples', routers.example.api);
-    this.server.use('/boilerplate', routers.boilerplate);
+  }
+
+  _configureRouters() {
+    this.server.use(routers.packager);
+    this.server.use(routers.whoAmI);
+    this.server.use(routers.healthCheck);
+    this.server.use(routers.example.api);
+    this.server.use(routers.boilerplate);
     this.server.use(routers.static);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
+  }
 
+  _configureErrorHandlers() {
     // handle errors
     this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
       if (err) {
@@ -169,6 +140,29 @@ class Platform {
     });
     // handle 404s
     this.server.use(routers.notFound);
+  }
+
+  _configureDevMode() {
+    if (!config.isDevMode()) {
+      return Promise.resolve();
+    }
+    return new Promise((resolve) => {
+      const HttpProxy = require('http-proxy');
+      // When in development fire up a second server as a simple proxy
+      // to simulate CORS requests for stuff like playground
+      this.proxy = express();
+      this.proxy.listen(config.hosts.api.port, () => {
+        signale.success(`Proxy available on ${config.hosts.api.base}`);
+        resolve();
+      });
+
+      const proxy = new HttpProxy();
+      this.proxy.get('/*', (request, response, next) => {
+        proxy.web(request, response, {
+          'target': HOST,
+        }, next);
+      });
+    });
   }
 };
 
