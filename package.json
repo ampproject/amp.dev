@@ -76,7 +76,7 @@
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.6",
     "amp-toolbox-optimizer": "0.5.2-beta.6",
-    "amp-toolbox-runtime-version": "0.2.6",
+    "amp-toolbox-runtime-version": "0.2.7",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "clean-css": "4.2.1",
