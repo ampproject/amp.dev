@@ -48,7 +48,7 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
-    "amp-toolbox-cors": "0.2.4",
+    "amp-toolbox-cors": "0.2.5",
     "casual": "1.6.0",
     "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
