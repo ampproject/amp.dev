@@ -57,7 +57,7 @@ class Platform {
         });
         // Increase keep alive timeout
         // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
-        httpServer.keepAliveTimeout = 620 * 1000;
+        httpServer.keepAliveTimeout = 700 * 1000;
       } catch (err) {
         reject(err);
       }
