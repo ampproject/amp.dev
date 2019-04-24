@@ -101,7 +101,11 @@ class Platform {
         let seconds = (timeElapsed[0] * 1000 + timeElapsed[1] / 1e6) / 1000;
         seconds = seconds.toFixed(3);
         const prefix = seconds > 1 ? 'CRITICAL_TIMING' : 'TIMING';
-        console.log(`[${prefix}] ${req.get('host')}${req.originalUrl} ${seconds}s [${res.statusCode}]`);
+        let postfix = `[${res.statusCode}]`;
+        if (req.header('amp-cache-transform')) {
+          postfix += ' [SXG]';
+        }
+        console.log(`[${prefix}] ${req.get('host')}${req.originalUrl} ${seconds}s ${postfix}`);
       });
 
       next();
