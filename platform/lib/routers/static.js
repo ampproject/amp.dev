@@ -17,7 +17,7 @@
 'use strict';
 
 const express = require('express');
-const {setNoCache, setMaxAge} = require('../utils/cacheHelpers.js');
+const {setMaxAge} = require('../utils/cacheHelpers.js');
 const config = require('../config.js');
 
 // eslint-disable-next-line new-cap
@@ -30,7 +30,7 @@ if (config.isProdMode()) {
 }
 
 staticRouter.get('/serviceworker.js', (request, response) => {
-  setNoCache(response);
+  setMaxAge(response, 0, 60 * 10);
   response.status(200)
       .sendFile('serviceworker.js', {root: 'static'});
 });
