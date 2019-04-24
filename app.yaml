@@ -5,3 +5,5 @@ env_variables:
   APP_ENV: 'staging'
 manual_scaling:
   instances: 1
+readiness_check:
+  app_start_timeout_sec: 500
