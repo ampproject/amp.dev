@@ -36,7 +36,7 @@ module.exports = (req, res, next) => {
     return next();
   }
   // redirect www.amp.dev to amp.dev
-  if (req.hostname.startsWith(WWW_PREFIX)) {
+  if (req.get('host').startsWith(WWW_PREFIX)) {
     res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
     return;
   }
