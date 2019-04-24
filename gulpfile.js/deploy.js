@@ -139,7 +139,7 @@ async function updateStart() {
                  start-update ${group.name} \
                  --version template=${config.instance.template} \
                  --zone=${group.zone} \
-                 --min-ready 1m \
+                 --min-ready 4m \
                  --max-surge 1 \
                  --max-unavailable 1`);
   });
