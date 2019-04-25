@@ -369,3 +369,9 @@ Adds support for Webtrekk. Configuration details can be found at [supportcenter.
 Type attribute value: `metrika`
 
 Adds support for Yandex Metrica.  Configuration details can be found at [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+
+### Vpon Analytics
+
+Type attribute value: `vponanalytics`
+
+Adds support for Vpon Vpon Analytics. Configuration details can be found at [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).
