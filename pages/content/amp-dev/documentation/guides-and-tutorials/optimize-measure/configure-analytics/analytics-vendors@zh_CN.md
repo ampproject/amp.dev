@@ -323,3 +323,9 @@ type 属性值：`treasuredata`
 type 属性值：`metrika`
 
 添加对 Yandex Metrica 的支持。有关配置详情，请参阅 [Yandex 支持](https://yandex.com/support/metrica/code/install-counter-amp.xml)。
+
+### Vpon Analytics
+
+Type attribute value: `vponanalytics`
+
+添加对 Vpon Analytics 的支持。有关配置详情，请参阅 [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).
