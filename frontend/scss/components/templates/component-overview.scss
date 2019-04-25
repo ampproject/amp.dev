@@ -72,13 +72,6 @@ body {
     }
   }
 
-  section {
-    &.#{utility('content')},
-    &.#{utility('teaser-grid')} {
-      
-    }
-  }
-
   &-anchor-list {
     position: sticky;
     z-index: 2;
