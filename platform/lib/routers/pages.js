@@ -25,8 +25,6 @@ const {project} = require('@lib/utils');
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
-const growHost = `${config.hosts.pages.scheme}://${config.hosts.pages.host}:${config.hosts.pages.port}`;
-
 
 /**
  * Inspects a incoming request (either proxied or not) for its GET args
@@ -90,7 +88,7 @@ if (config.isDevMode()) {
   async function hasManualFormatVariant(request, format) {
     const path = request.url.replace('.html', `.${format}.html`);
 
-    const page = await got(`${growHost}${path}`).catch(() => {
+    const page = await got(`${config.hosts.pages.base}${path}`).catch(() => {
       return {};
     });
 
@@ -136,7 +134,7 @@ if (config.isDevMode()) {
     }
   });
 
-  pages.use('/*', async (request, response, next) => {
+  pages.get('/*', async (request, response, next) => {
     request.url = ensureFileExtension(request.path);
 
     // Check if there is a manually filtered variant of the requested page
@@ -154,7 +152,7 @@ if (config.isDevMode()) {
     next();
   }, (request, response, next) => {
     proxy.web(request, response, {
-      'target': growHost,
+      'target': config.hosts.pages.base,
     }, next);
   });
 }

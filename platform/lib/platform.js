@@ -50,7 +50,6 @@ class Platform {
     return new Promise(async (resolve, reject) => {
       try {
         this._createServer();
-        await this._configureDevMode(HOST);
         const httpServer = this.server.listen(PORT, () => {
           signale.success(`server listening on ${PORT}!`);
           resolve();
@@ -76,7 +75,6 @@ class Platform {
     // pass app engine HTTPS status to express app
     this.server.set('trust proxy', true);
 
-    this._configureDevMode();
     this._configureMiddlewares();
     this._configureSubdomains();
     this._configureRouters();
@@ -144,29 +142,6 @@ class Platform {
     });
     // handle 404s
     this.server.use(routers.notFound);
-  }
-
-  _configureDevMode() {
-    if (!config.isDevMode()) {
-      return Promise.resolve();
-    }
-    return new Promise((resolve) => {
-      const HttpProxy = require('http-proxy');
-      // When in development fire up a second server as a simple proxy
-      // to simulate CORS requests for stuff like playground
-      this.proxy = express();
-      this.proxy.listen(config.hosts.api.port, () => {
-        signale.success(`Proxy available on ${config.hosts.api.base}`);
-        resolve();
-      });
-
-      const proxy = new HttpProxy();
-      this.proxy.get('/*', (request, response, next) => {
-        proxy.web(request, response, {
-          'target': HOST,
-        }, next);
-      });
-    });
   }
 };
 
