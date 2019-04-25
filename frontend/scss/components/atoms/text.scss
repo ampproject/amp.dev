@@ -32,8 +32,12 @@
   }
 
   a {
+    position: relative;
+    z-index: 10;
+
     code {
       @include color-blue-ribbon;
+      z-index: -1;
     }
   }
 
