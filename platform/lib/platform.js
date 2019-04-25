@@ -143,7 +143,6 @@ class Platform {
     // handle 404s
     this.server.use(routers.notFound);
   }
-
 };
 
 module.exports = Platform;

@@ -151,7 +151,6 @@ if (config.isDevMode()) {
 
     next();
   }, (request, response, next) => {
-
     proxy.web(request, response, {
       'target': config.hosts.pages.base,
     }, next);
