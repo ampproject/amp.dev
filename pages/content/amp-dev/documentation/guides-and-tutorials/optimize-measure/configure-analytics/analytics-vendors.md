@@ -374,4 +374,4 @@ Adds support for Yandex Metrica.  Configuration details can be found at [Yandex 
 
 Type attribute value: `vponanalytics`
 
-Adds support for Vpon Vpon Analytics.  Configuration details can be found at [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).
+Adds support for Vpon Vpon Analytics. Configuration details can be found at [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).
