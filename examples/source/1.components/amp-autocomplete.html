@@ -183,7 +183,7 @@
                 ] }
             </script>
             <template type="amp-mustache" id="amp-template-custom">
-                <div class="city-item" value="{{city}}, {{state}}">
+                <div class="city-item" data-value="{{city}}, {{state}}">
                     <div>{{city}}, {{state}}</div>
                     <div class="custom-population">Population: {{population}}</div>        
                 </div>
@@ -204,19 +204,45 @@
 
     Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating. 
   -->
-  <div>
-    <form class="sample-form"
-      method="post"
-      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
-      target="_top">
+  <form class="sample-form"
+  method="post"
+  action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+  target="_top">
+  <label>
+      <span>Search for</span>
       <amp-autocomplete filter="substring" min-characters="0"
           src="/static/samples/json/amp-autocomplete-cities.json"
           [src]="srcUrl">
           <input type="text">
+          <template type="amp-mustache">
+            {{#isInitial}}
+              <div class="product">
+                <b>trending locations</b>
+              </div>
+              {{#locations}}
+              <div class="product">
+                <amp-img class="trending" width="24" height="24" src="img/trending.png"></amp-img>
+                <span class="name-and-population">{{name}}, {{population}}</span>
+              </div>
+              {{/locations}}
+            {{/isInitial}}
+            {{^isInitial}}
+              <div class="city-item" data-value="{{city}}, {{state}}">
+                <div>{{city}}, {{state}}</div>
+                <div class="custom-population">Population: {{population}}</div>        
+              </div>
+            {{/isInitial}}
+          </template> 
       </amp-autocomplete>
-      <input class="submit-button" name="submit-button" type="submit" value="Search"><br>
-    </form>
+  </label>
+  <input type="submit" value="Search">
+  <div submit-success>
+    Success!
   </div>
+  <div submit-error>
+    Error!
+  </div>
+</form>
 
 </body>
 </html>
