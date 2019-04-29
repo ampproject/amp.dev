@@ -22,6 +22,11 @@
   'square': '/static/img/sharing/docs-guide-1x1.png',
   'wide': '/static/img/sharing/docs-guide-600x314.png',
 } %}
+{% elif '/courses/' in doc.pod_path %}
+{% set sharing_images = {
+  'square': '/static/img/sharing/docs-courses-1x1.png',
+  'wide': '/static/img/sharing/docs-courses-600x314.png',
+} %}
 {% else %}
 {% set sharing_images = {
   'square': '/static/img/sharing/default-1x1.png',
