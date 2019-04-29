@@ -43,7 +43,7 @@
           "updatedAt": "2019-01-22T15:58:26Z",
           "issue": {
             "url": "https://github.com/ampproject/amphtml/issues/19513",
-            "title": "<amp-img> sizes=\"auto\" for srcset",
+            "title": "<amp-img> autogenerate sizes",
             "description": "I find making Responsive Images in amp-html actually harder than normal HTML (which should not be the case).",
             "labels": [
               {

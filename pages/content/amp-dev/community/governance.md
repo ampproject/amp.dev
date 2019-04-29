@@ -102,3 +102,11 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 * A decision may be revisited if new technical information becomes available.
 
 * The Advisory Committee, TSC and Working Groups may hold calls, video conferences, and face to face meetings. These meetings shall be announced sufficiently in advance with a published agenda. A mechanism by which the community can propose items for the agenda shall be provided.
+
+## Contributor License Agreement
+
+* The AMP Project requires all Owners, Collaborators, and Contributors who open a pull request to either sign an individual Contributor License Agreement (CLA) or be covered by a corporate CLA in order to protect contributors and users in issues of intellectual property.
+
+* TSC members which aren't already covered by an individual or corporate CLA are required to be covered upon joining the TSC.
+
+* AC members aren't formally required to be covered by a CLA, but will be required to be covered should they decide to contribute to the project (for example by contributing code, documentation, specifications, or design documents) in a way where securing IP commitments is important to keep the project open source and royalty free.
