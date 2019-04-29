@@ -8,8 +8,7 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
 <!--
   ## Introduction
 
-  This sample demonstrastes a classic dropdown combo, with a text field which filters the dropdown elements
-  according to the user's input. The options are rendered via `amp-list`.
+  This sample demonstrastes a classic dropdown combo, with a text field which filters the dropdown elements according to the user's input. The options are rendered via `amp-autocomplete`.
 -->
 <!doctype html>
 <html ⚡>
@@ -21,14 +20,8 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
-  <!--The `amp-selector` component is used for the user to select amongst the dropdown list options.-->
-  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
-  <!--The `amp-bind` component is used for the filtering of the dropdown options according to the user's input.-->
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-  <!-- The `amp-list` component is used to generate the dropdown list options.-->
-  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-  <!-- The `amp-mustache` is used to generate the dropdown list options' template.-->
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <!--The `amp-autocomplete` component is used for suggesting according to the user's input.-->
+  <script async custom-element="amp-autocomplete" src="https://cdn.ampproject.org/v0/amp-autocomplete-0.1.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
       <style amp-custom>
@@ -44,37 +37,6 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
           --space-3: 1.5rem;
           --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
         }
-        .combobox {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-        }
-        .combobox > input, .combobox > button {
-          margin: 0:
-          line-height: var(--combo-box-height);
-          height: var(--combo-box-height);
-        }
-        .combobox > input {
-          width: var(--combo-box-width);
-        }
-        /* position the suggestions below the input field */
-        .combobox amp-selector {
-          width: 100%;
-        }
-        /* we need to target the amp-list by ID to be able to change the position to absolute */
-        .combobox #suggestions {
-          position: absolute;
-          width: calc( var(--combo-box-width) + var(--combo-box-height) );
-          height: var(--space-3);
-          overflow-x: hidden;
-          z-index: 100;
-          box-shadow: var(--box-shadow-1);
-          background-color: var(--color-bg-light);
-        }
-        .combobox #suggestions [option] {
-          padding: var(--space-1);
-        }
         .combo-trigger {
           display: inline-flex;
           align-items: center;
@@ -87,10 +49,10 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
           width: var(--space-3);
           height: var(--space-3);
         }
-        .arrow-down {
+        .arrow {
           background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik03LjQxIDcuODRMMTIgMTIuNDJsNC41OS00LjU4TDE4IDkuMjVsLTYgNi02LTZ6Ii8+CiAgICA8cGF0aCBkPSJNMC0uNzVoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KPC9zdmc+");
         }
-        .arrow-up {
+        #input-city:focus + .arrow {
           background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik03LjQxIDE1LjQxTDEyIDEwLjgzbDQuNTkgNC41OEwxOCAxNGwtNi02LTYgNnoiLz4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KPC9zdmc+");
         }
 
@@ -101,27 +63,23 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
           min-width: 320px;
           padding: var(--space-2);
         }
-        .combobox-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .combobox-container label {
-          margin-right: var(--space-1);
-        }
     </style>
 </head>
 <body>
   <div class="preview-container">
-
       <!--
-        ## Data source
+        ## Autocomplete input
 
-        First we need to add a data source. Here we're using an inline `amp-state` declaration defining a list of `cities` in the US.
-        For long lists of suggestions, it's possible to fetch `amp-state` from a remote JSON endpoint using the `src` attribute.
+        First we need to add an `amp-autocomplete` element by giving it an input field and a data source. Here we're using an inline `script` declaration defining a list of cities in the US as `items`.
+        For long lists of suggestions, it's possible to fetch a remote JSON endpoint using the `src` attribute. 
+        
+        We will use `filter="token-prefix"` as our way to match on the user input and set `min-characters="0"` so that the combo box will display options even when the input is empty.
       -->
-      <amp-state id="cities">
-        <script type="application/json">[
+      <amp-autocomplete filter="token-prefix" min-characters="0" max-entries="5" on="select:AMP.setState({
+        city: event})">
+        <input id="input-city" type="text">
+        <script type="application/json">
+          { "items" : [
           "Albany, New York",
           "Annapolis, Maryland",
           "Atlanta, Georgia",
@@ -172,72 +130,16 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
           "Tallahassee, Florida",
           "Topeka, Kansas",
           "Trenton, New Jersey"
-    ]</script></amp-state>
-
-        <!--
-          ## Filtering
-
-          We define a helper function to filter the cities based on a given text input as an `amp-bind-macro`.
-        -->
-        <amp-bind-macro id="filterCities"
-                        arguments="query"
-                        expression="cities.filter( city => city.toLowerCase().indexOf(query.toLowerCase()) >= 0 )">
-        </amp-bind-macro>
-
-        <div class="combobox-container">
-        <label for="input-city">
-          Enter city:
-        </label>
-        <div class="combobox">
-        <!--
-          ## The text input
-
-          The implementation of the combobox is based on the [Autosuggest Sample](<% hosts.platform %>/documentation/examples/advanced/autosuggest_form.html). It takes an input field with auto suggestion and adds an additional button to expand and collapse the suggestions. We listen to the [`input-debounced`](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements) event for text input. Based on the input, we filter the list of cities and write the result to a new `amp-state` variable `filteredCities`. We also bind the input value to a variable called `city`, which we'll use to set the value when the user clicks on a suggestion.
-        -->
-          <input id="input-city"
-               class="combo-input"
-               [value]="city"
-                on="input-debounced: AMP.setState({
-                        input: event.value,
-                        filteredCities: event.value.length > 0 ? filterCities(event.value) : []
-                     });
-                     change: AMP.setState( { state: event.value  })">
+    ]}</script></amp-autocomplete>
         <!--
           ## Combo button
 
-          The button will either show or hide the suggestions. The toggle state is tracked via the `filteredCities` variable.
+          The button will focus the autocomplete input.
         -->
         <button class="combo-trigger"
-                 on="tap:AMP.setState({
-                   filteredCities: filteredCities.length > 0 ? [] : filterCities(input || '')
-                 })">
-          <i class="arrow-down" [class]="filteredCities.length > 0 ? 'arrow-up' : 'arrow-down'"></i>
+                 on="tap:input-city.focus">
+          <i class="arrow"></i>
         </button>
-        <!--
-          ## Suggestion box
-
-          We use `amp-selector` to make the suggestions selectable. When the user clicks on a suggestions, the `select` event will be fired and the selected city will be written to the `city` variable: `city: event.targetOption`. The `filteredCities` will be cleared, which also results in the suggestion box being hidden.
-
-          The list is initially hidden (`height="0"`) and will only be shown when `filteredCities` is not empty (`[height]="filteredCities.length * 34"`), where `34` is the  height in pixels of a single suggestion.
-        -->
-        <amp-selector on="select:AMP.setState({
-                            city: event.targetOption,
-                            filteredCities: []
-                         })"
-                         keyboard-select-mode="focus">
-          <amp-list id="suggestions"
-                    items="."
-                    layout="fixed-height"
-                    height="0"
-                   [src]="filteredCities"
-                   [height]="filteredCities.length * 34">
-            <template type="amp-mustache">
-              <div option="{{.}}">{{.}}</div>
-            </template>
-          </amp-list>
-        </amp-selector>
-        </div>
-
 
     </div>
     </div>
