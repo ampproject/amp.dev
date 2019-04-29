@@ -75,8 +75,7 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
         
         We will use `filter="token-prefix"` as our way to match on the user input and set `min-characters="0"` so that the combo box will display options even when the input is empty.
       -->
-      <amp-autocomplete filter="token-prefix" min-characters="0" max-entries="5" on="select:AMP.setState({
-        city: event})">
+      <amp-autocomplete filter="token-prefix" min-characters="0">
         <input id="input-city" type="text">
         <script type="application/json">
           { "items" : [
