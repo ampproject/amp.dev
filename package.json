@@ -85,7 +85,7 @@
     "codemirror": "5.46.0",
     "copy-webpack-plugin": "5.0.2",
     "css-loader": "2.1.1",
-    "del": "4.1.0",
+    "del": "4.1.1",
     "eslint": "5.16.0",
     "eslint-config-google": "0.12.0",
     "exectimer": "^2.2.1",
