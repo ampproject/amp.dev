@@ -1,5 +1,6 @@
 # Use via: go.amp.dev/samples
 /samples: /documentation/examples/
+/camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /docs: /documentation/
 /websites: /about/websites
 /stories: /about/stories
