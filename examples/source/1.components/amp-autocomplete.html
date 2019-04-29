@@ -191,7 +191,7 @@
                 ] }
             </script>
             <template type="amp-mustache" id="amp-template-custom">
-                <div class="city-item" value="{{city}}, {{state}}">
+                <div class="city-item" data-value="{{city}}, {{state}}">
                     <div>{{city}}, {{state}}</div>
                     <div class="custom-population">Population: {{population}}</div>        
                 </div>
@@ -222,14 +222,14 @@
             initialInventory : { 'items' : [ 'apple', 'orange', 'banana' ]} })">
             <amp-state id="initialInventory">
                 <script type="application/json">
-                  { "items" : [ { "value" : "initial", 
+                  { "items" : [ { "value" : "", 
                             "isInitial": "true", 
                             "produce": [ "apple", "orange", "banana" ] } ] }
                 </script>
             </amp-state>
           <template type="amp-mustache">
             {{#isInitial}}
-              <div value="{{value}}">
+              <div data-value="">
                 <b>Recommended Fruit</b>
               {{#produce}}
               <div class="trending-fruits">
@@ -240,7 +240,7 @@
               </div>
             {{/isInitial}}
             {{^isInitial}}
-              <div value="{{.}}">
+              <div data-value="{{.}}">
                 {{.}}    
               </div>
             {{/isInitial}}
