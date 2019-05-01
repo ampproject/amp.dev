@@ -48,7 +48,7 @@ If the document has a specific path that is not getting inherited from the `_blu
 
 ### Format filtered paragraphs 
 Documents will be relevant to multiple formats on a broad scope, but may contain sections and paragraphs that are not accurate for all formats listed in the frontmatter. You can wrap paragraphs in a filter to hide or show them, depending on what format the user has selected.
-
+ 
 ```
 [filter formats="websites"]
 This is only visible for [websites](?format=websites).
