@@ -1,12 +1,12 @@
 ---
-$title: AMP validation errors
-$order: 1
+$title: AMP Email validation errors
+$order: 2
 description: 'Valid AMP documents must not include any validation errors. The purpose of this document is to help you better understand and fix any validation errors ...'
 formats:
-  - websites
-  - stories
-  - ads
+  - email
 ---
+
+TODO : WRITE FOR EMAIL
 
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -53,13 +53,11 @@ see the [AMP validator specification](https://github.com/ampproject/amphtml/blob
 The following tags must be present in all AMP docs:
 
 * <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> or <html ⚡>`
+* <a name="html"></a>`<html amp4email> or <html ⚡4email>`
 * <a name="head"></a>`<head>`
 * <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
 * <a name="utf"></a>`<meta charset="utf-8">`
-* <a name="viewport"></a>`<meta name="viewport" content="...">`
-* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+* <a name="boilerplate"></a>`<style amp4email-boilerplate>body{visibility:hidden}</style>`
 * <a name="body"></a>`<body>`
 
 These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator spec</a>;
@@ -242,7 +240,7 @@ and is currently evaluated with both whitelists and blacklists.
 Tags with mandatory CDATA include:
 
 [sourcecode:html]
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
 [/sourcecode]
 
 And:
