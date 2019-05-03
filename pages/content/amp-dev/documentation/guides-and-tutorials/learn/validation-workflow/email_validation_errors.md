@@ -6,8 +6,6 @@ formats:
   - email
 ---
 
-TODO : WRITE FOR EMAIL
-
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
