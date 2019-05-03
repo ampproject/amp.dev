@@ -27,6 +27,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Learn about responsive design in AMP from this video.']
 
+[filter formats="websites, ads, stories"]
 ## Controlling the viewport
 
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
@@ -38,6 +39,7 @@ But, what values should you use?  Well, in AMP, that's already spelled out for y
 ```
 
 These are the typical viewport settings that you'd use for a responsive site. Although `initial-scale=1` isn't required for a valid AMP page, it's recommended because it sets the zoom level to 1 when the page is first loaded.
+[/filter]
 
 ## Creating a responsive layout
 
