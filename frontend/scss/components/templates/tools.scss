@@ -24,14 +24,12 @@ The page with all AMP tools.
 
 @import '../templates/_default';
 
-
 .#{utility('stage')} {
   .#{organism('stage')} {
     margin-bottom: 50px;
 
     &-content {
       margin: 20em 0 4em;
-
       @media (min-width: 768px) {
         margin: 7vw 0 11vw;
       }
@@ -39,7 +37,6 @@ The page with all AMP tools.
 
     &-content-roadshow {
       margin: 16em 0 2em;
-
       @media (min-width: 768px) {
         margin: 5vw 0 5vw;
       }
@@ -61,17 +58,6 @@ The page with all AMP tools.
 
 .#{utility('container')} {
   @include container;
-
-  &.ampconf-agenda {
-
-    @media (min-width: 768px) {
-      grid-gap: 0;
-    }
-
-    @media (min-width: 1024px) {
-      grid-gap: 30px;
-    }
-  }
 }
 
 .#{utility('container-fluid')} {
@@ -80,93 +66,70 @@ The page with all AMP tools.
 
 .#{utility('content')} {
   @include default-section-padding;
-
-    &-default {
-      @include txt;
-      @include txt-lrg;
-      grid-column: 6 / 18;
-
-      &-disclaimer {
-        @include txt-1;
-      }
-    }
-
-    &-wide {
-      grid-column: 5 / 21;
-      position: relative;
-      width: 100%;
-
-      &.row {
-        grid-column: 4 / 22;
-        display: flex;
-        flex-wrap: wrap;
-
-        @media (min-width:768px) {
-          flex-wrap: nowrap;
-        }
-      }
-
-    }
-
-    &-x-wide {
-      grid-column: 4 / 22;
-      max-width: 100%;
-    }
-
 }
 
 .#{utility('stage')} {
-  margin-bottom: 0;
   overflow: visible;
 }
 
-.#{utility('container-float-right')} {
-  padding-top: 50px;
-  padding-left: 20px;
-
-  @media (min-width: 768px) {
-    padding: 50px 20px 0;
-  }
-}
-
-.#{utility('flex-container')} {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.#{utility('inline-footer')} {
-  grid-column: 3 / 22;
-
-  @media (max-width: 767px) {
-    flex-wrap: nowrap;
-  }
-}
-
-
-
-
-
-
-
 .#{template('tools')} {
 
-  .#{organism('tool-block')} {
-    padding-bottom: 3rem;
+  .#{organism('tool-section')} {
 
     @media (min-width: 768px) {
-      padding-bottom: 6rem;
+      margin-top: 4em;
+    }
+    margin-bottom: 2em;
+
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top right;
+
+    @media (max-width: 768px) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    h2 {
+      grid-column: 3 / 10;
     }
   }
 
+  .#{organism('tool-format-filter')} {
+    grid-column: 10 / 23;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      button {
+        margin: 5px;
+        padding: 5px 20px;
+        display: inline-block;
+        div {
+          display: inline-flex;
+          width: 1em;
+          height: 1em;
+          margin-right: 0.3em;
+          vertical-align: sub;
+          @media (max-width: 1120px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
   h1 {
     @include hl;
     @include hl-h1;
   }
 
   h2 {
-    @include hl;
-    @include hl-h1;
     margin-top: 0;
 
     &:before {
@@ -180,15 +143,82 @@ The page with all AMP tools.
     }
   }
 
+  .#{organism('teaser-grid')} {
+    grid-column: 3 / 23;
+    width: 100%;
+    margin-bottom: 2em;
 
-  .#{molecule('code-snippet')} {
-    margin-bottom: 0;
-  }
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 60px 30px;
+      margin: 0 40px;
 
-  &-anchor-list {
-    grid-column: 2 / 24;
-    margin-bottom: 4rem;
-    text-align: center;
-  }
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(12, 1fr);
+        /*grid-auto-rows: 1fr;*/ /*looks a little better when multiple rows are present but wastes space */
+        margin: 0;
+      }
+
+      .#{molecule('teaser-card')}{
+        @media (max-width: 768px) {
+          margin-bottom: 0;
+          display: flex;
+        }
+      }
+
+      .#{molecule('teaser-image')}{
+        @media (max-width: 768px) {
+          width: 30%;
+          flex: 1 0 auto;
+        }
+      }
+
+      .#{molecule('teaser-type-essential')}{
+        .#{molecule('teaser-card')}{
+          border: 4px solid #0059f0;
+          
+        }
+      }
+
+      .#{molecule('teaser-type')}{
+        color: #fff;
+        text-align: center;
+        background: #0058f0;
+        text-transform: uppercase;
+        padding: 6px 0;
+      }
+
+      .#{molecule('teaser')}{
+        grid-column: 1;
+        margin: 0;
+        display: flex;
+
+        @media (min-width: 768px) {
+          grid-column: span 4;
+        }
+
+        @media (min-width: 1120px) {
+          grid-column: span 3;
+        }
+
+        amp-img img {
+          object-fit: cover;
+        }
+
+        > a {
+          display: flex;
+        }
+
+        p {
+          color: #20202A;
+          font-weight: normal;
+          margin-bottom: 0;
+        }
+
+      }
+    }
+  }  
+
 }
 

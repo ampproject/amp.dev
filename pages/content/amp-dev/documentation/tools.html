@@ -5,55 +5,38 @@ flyout:
   description: Begin building
   icon: wrench
 
-section_links:
-  - WYSIWIG Editors
-  - CMS integrations
-  - Developer Tools  
+filters:
+  - Websites
+  - Stories
+  - Email
+  - Ads
 
-tools:
-  websites:
-    - name: AMP Validator
-      type: dev
-      description: The validator is a essential component of AMP development and is available in a variety of versions.
-      url: https://validator.ampproject.org/
-      cta: Validate your pages
-      image:
-        src: /static/img/docs/tools/ampvalidator.jpg
-        width: 782
-        height: 578
-    - name: AMP Playground
-      type: dev
-      description: Start prototyping in an interactive online editor with the ability to use templates and load all our examples.
-      url: https://playground.amp.dev/
-      cta: Start prototyping
-      image:
-        src: /static/img/docs/tools/ampplayground.jpg
-        width: 1280
-        height: 711
-    - name: Experiment Configurator
-      type: dev
-      description: Experiments are released features not yet ready for wide use. Developers and users can opt-in to using these features before they are fully released. But they should be used with caution, as they may contain bugs or have unexpected side effects.
-      url: https://cdn.ampproject.org/experiments.html
-      cta: Try a new AMP feature
-      image:
-        src: /static/img/docs/tools/ampexperiments.jpg
-        width: 10
-        height: 7
-    - name: Visual Studio Code Extension
-      type: dev
-      description: This extension makes authoring AMP easy by validating for errors/warnings as you type within the Visual Studio Code editor. The PROBLEMS (View->Problems) panel renders the AMP HTML validation error/warning messages with the row and column number in the document from where error/warning were reported.
-      url: https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator
-      cta: Get the extension
-      image:
-        src: /static/img/docs/tools/visualstudiocode.jpg
-        width: 2670
-        height: 1849
-  stories:
-    - name: Bla
-  emails:
-    - name: Bla
-  ads:
-    - name: Bla
+categories:
+- creation
+- platforms
+- developer
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/docs/tools/ampplayground.jpg'
+      width: 1280
+      height: 711
+      type: desktop
+      alt: AMP Playground
+    - image_src: '/static/img/docs/tools/ampvalidator.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: BMW and Jung von Matt
+    - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
+      width: 3
+      height: 5
+      type: mobile
+      alt: Carved
+
+tools: !g.yaml /shared/data/tools.yaml
+
 ---
 {% do doc.styles.addCssFile('css/components/templates/tools.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/window-frame.css') %}
@@ -64,156 +47,92 @@ tools:
   <div class="ap-o-stage ap-o-stage-amp-conf all">
     <div class="ap--container-fluid">
       <div class="ap-o-stage-content ap-o-stage-content-roadshow">
-          <div class="ap-a-ico">
-              {% do doc.icons.useIcon('/icons/wrench.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wrench"></use></svg>
-            </div>
           <h1 class="ap-o-stage-content-headline">Tools</h1>
           <h2 class="ap-o-stage-content-subline">for creation, design and development</h2>
       </div>
     </div>
   </div>
 
-</section>
-
-{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-<div class="ap-o-jumpto">
-  <div class="ap--container">
-    <div class="ap-o-jumpto-content">
-      <ul class="ap-o-jumpto-list">
-        {% for link in doc.section_links %}
-          <li class="ap-m-jumpto-item">
-            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div>
-
-<main class="ap--main ap-t-tools">
-
-  <section class="ap--container">
-    <div class="ap-t-tools-anchor-list">
-      <a href="#validator">AMP validator</a> |
-      <a href="#playground">AMP playground</a> |
-      <a href="#toolbox">AMP toolbox</a> |
-      <a href="#experiments">{{_('AMP Experiments')}}</a> |
-      <a href="#vscode">Visual Studio Code Extension</a>
-    </div>
-  </section>
-
-
-{% for format in doc.tools %}
-<section class="ap--container">
- <h1>{{ format }}</h1>
-</section>
-
- {% for tool in doc.tools[format] %}
-
-  <!-- amp validator -->
-  <div class="ap-o-tool-block -alternate" id="{{ tool.name }}">
-    <div class="ap--container">
-      <!-- window frame -->
-      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="{{ tool.name }}">
-        {% if tool.image %}
-        <amp-img
-          alt="window frame"
-          height="{{ tool.image.height }}"
-          layout="responsive"
-          src="{{ tool.image.src }}"
-          width="{{ tool.image.width }}"
-        ></amp-img>
+  {# ghost frame block #}
+  {% if doc.stage.devices %}
+  {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
+    <div class="ap-o-ghost-frame-block">
+      {% for device in doc.stage.devices %}
+      {% if device %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+      <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
+        {% if device.url %}
+        <a href="{{ g.doc('/content/amp-dev/about/success-stories/' + device.url + '.yaml', locale=doc.locale).url.path }}">
+        {% endif %}
+          <amp-img class="ap--media" alt="{{device.alt}}" height="{{device.height}}" layout="responsive" src="{{device.image_src}}"
+            width="{{device.width}}">
+          </amp-img>
+        {% if device.url %}
+        </a>
         {% endif %}
       </div>
-
-      <!-- copy -->
-      <div class="ap-o-tool-block-copy ap-m-copy">
-        <!-- headline -->
-        <h2>{{ tool.name }}</h2>
-        <!-- copy -->
-        <p>{{ tool.description }}</p>
-        <!-- link -->
-        <a href="{{ tool.url }}" class="ap-m-lnk ap-m-lnk-square">
-          <!-- icon -->
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <!-- label -->
-          <span class="ap-m-lnk-text">{{ tool.cta }}</span>
-        </a>
-      </div>
+      {% endif %}
+      {% endfor %}
     </div>
-  </div>
+  {% endif %}  
 
+</section>
 
+<main class="ap--main ap-t-tools">
+{% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
 
- {% endfor %}
+  <amp-state id="activeFilter">
+    <script type="application/json">
+      {
+        "chosenFilter": "none"
+      }
+    </script>
+  </amp-state>
 
-{% endfor %}
-
-
-
-
-
-
-
-  <!-- amp toolbox -->
-  <div class="ap-o-tool-block -alternate" id="toolbox">
+{% for category in doc.categories %}
+  <section class="ap-o-tool-section">
     <div class="ap--container">
-      <!-- window frame -->
-      <div class="ap-o-tool-block-media ap-m-window-frame" data-title="AMP Optimizer">
-
-        <div class="ap-m-format-visual-websites-code-snippet">
-          <div class="ap-m-code-snippet">
-  {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-  {% set code_snippet = "
-  const ampOptimizer = require('amp-toolbox-optimizer');
-
-  // Transformer expects a string (streams are not supported)
-  const originalHtml = `
-  <!doctype html>
-  <html ⚡>
-  ...
-  `
-
-  // Additional options can be passed as the second argument
-  ampOptimizer.transformHtml(originalHtml, {
-    ampUrl: 'canonical.amp.html'
-  }).then(optimizedHtml => {
-    console.log(optimizedHtml);
-  });"
-  %}
-  {% set markdown = doc.pod.markdown %}
-  {{ markdown.convert('```javascript\n' + code_snippet + '\n```')|safe }}
-          </div>
-        </div>
-
-      </div>
-
-      <!-- copy -->
-      <div class="ap-o-tool-block-copy ap-m-copy">
-        <!-- headline -->
-        <h2>AMP toolbox</h2>
-        <!-- copy -->
-        <p>
-          A collection of AMP tools making it easier to publish and host AMP pages.
-        </p>
-        <!-- link -->
-        <a href="https://github.com/ampproject/amp-toolbox" class="ap-m-lnk ap-m-lnk-square">
-          <!-- icon -->
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-          </div>
-          <!-- label -->
-          <span class="ap-m-lnk-text">Explore AMP toolbox</span>
-        </a>
+        <h2 id="{{ category }}">
+          {% if category == 'creation' %}
+          Creation &amp; Design
+          {% elif category == 'platforms'  %}
+          CMS &amp; Platforms
+          {% elif category == 'developer' %}
+          Developer Tools
+          {% endif %}
+        </h2>
+        <ul class="ap-o-tool-format-filter">
+            <li>
+              <button name="all" class="ap-m-filter-bubble filtered" [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+              on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
+                All
+              </button>
+            </li>
+            {% for link in doc.filters %}
+              <li>
+                <button name="{{ link|lower }}" class="ap-m-filter-bubble" [class]="activeFilter.chosenFilter == '{{ link|lower }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+                on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ link|lower }}' } })">
+                  <div class="ap-o-header-flyout-primary-item-link-icon {{ link|lower }}">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ link|lower }}"></use></svg>
+                  </div>
+                  {{ link }}
+                </button>
+              </li>
+            {% endfor %}
+          </ul>
+    </div>
+  </section>
+  
+  <section class="ap--teaser-grid ap--container">
+    <div class="ap-o-teaser-grid">
+      <div class="ap-o-teaser-grid-list">
+        {% for tool in doc.tools[category] %}
+        {% include '/views/partials/tools-teaser.j2' %}
+        {% endfor %}
       </div>
     </div>
-  </div>
-
-
+  </section>
+{% endfor %}
 </main>
