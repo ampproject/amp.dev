@@ -1,11 +1,11 @@
 creation:
   - name: MakeStories
-    description: Full WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
+    description: WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
     url: https://makestories.io/
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
+      src: /static/img/tools/makestories.jpg
+      width: 1280
+      height: 720
     formats:
       - stories
   - name: Adobe Animate
@@ -27,7 +27,7 @@ creation:
     formats:
       - stories
   - name: Newsroom AI
-    description: Newsroom Studio helps you create engaging, instant loading mobile experiences that delight audiences and redefine the new mobile web.
+    description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
     url: https://www.nws.studio/the-stories-platform.html
     image:
       src: /static/img/teaser-placeholder-5x3.jpg
@@ -58,17 +58,17 @@ creation:
     url: http://tick.co/
     image:
       src: https://media.tick.co/images/web/create.jpg
-      width: 400
-      height: 866
+      width: 1000
+      height: 581
     formats:
       - stories
 platforms:
   - name: Google Search Console
     type: debugging
-    description: Search Console tools and reports help you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
+    description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
     url: https://search.google.com/search-console/about
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/search_console.png
       width: 5
       height: 3
     formats:
@@ -86,7 +86,7 @@ platforms:
       - stories
   - name: Gmail Playground
     type: testing
-    description: Use Gmail’s AMP for Email Playground to draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
+    description: Draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
     url: https://developers.google.com/gmail/ampemail/testing-dynamic-email
     image:
       src: /static/img/teaser-placeholder-5x3.jpg
@@ -184,7 +184,7 @@ developer:
       - websites    
   - name: AMP Playground
     type: development
-    description: Start prototyping in an interactive online editor with the ability to use templates and load all our examples.
+    description: Start prototyping in an interactive online editor with the ability to use templates and our examples.
     url: https://playground.amp.dev/
     image:
       src: /static/img/docs/tools/ampplayground.jpg
