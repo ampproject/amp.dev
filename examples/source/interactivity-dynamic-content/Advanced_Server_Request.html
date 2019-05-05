@@ -45,6 +45,8 @@ When the form is submitted for the first time, the `amp-list` is hidden and the 
     When the user changes the selection, the change event triggers the form submission and hides the `amp-list`: `on="change:animal-form.submit,animal-list.hide"`.
 
     The `amp-form` renders the server response using the same template as `amp-list`, making the switch from `amp-list` to `amp-form` appear seamless.
+
+    Note: Use a placeholder to make the loading state look the same as the submitting state for the form.
   -->
   <div>
     <form id="animal-form" method="get" action-xhr="<% hosts.backend %>/echo">
@@ -60,9 +62,6 @@ When the form is submitted for the first time, the `amp-list` is hidden and the 
       <div submit-success template="animal-template"></div>
     </form>
     <amp-list id="animal-list" items="." single-item template="animal-template" src="<% hosts.backend %>/echo" layout="fixed-height" height="50">
-      <!--~
-        Use a placeholder to make the loading state look the same as the submitting state for the form.
-      ~-->
       <div placeholder>Loading ...</div>
     </amp-list>
   </div>
