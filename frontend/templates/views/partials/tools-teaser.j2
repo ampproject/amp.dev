@@ -1,5 +1,5 @@
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-type-{{ tool.type }}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type }}" [hidden]="activeFilter{{ category }}.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter{{ category }}.chosenFilter)">
   <a href="{{ tool.url }}">
 
     {% if tool.formats and tool.formats|length == 1 %}
@@ -20,20 +20,23 @@
       </div>
       {% endif %}
 
-      <div class="ap-m-teaser-content">
-        {% if teaser.logo %}
-          <div class="ap-a-img ap-m-teaser-logo fixed-container">
-            <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
+      <div>
+          <div class="ap-m-teaser-content">
+            {% if teaser.logo %}
+              <div class="ap-a-img ap-m-teaser-logo fixed-container">
+                <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
+              </div>
+            {% endif %}
+    
+            <h4 class="ap-m-teaser-headline">{{ teaser.name }}</h4>
+            <p>{{ teaser.description }}</p>
           </div>
-        {% endif %}
-
-        <h4 class="ap-m-teaser-headline">{{ teaser.name }}</h4>
-        <p>{{ teaser.description }}</p>
+    
+          {% if teaser.type %}
+          <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type }}">{{ teaser.type }}</div>
+          {% endif %}
       </div>
 
-      {% if teaser.type %}
-      <div class="ap-m-teaser-type">{{ teaser.type }}</div>
-      {% endif %}
     </div>
   </a>
 </div>

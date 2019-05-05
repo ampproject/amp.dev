@@ -64,6 +64,7 @@ creation:
       - stories
 platforms:
   - name: Google Search Console
+    type: debugging
     description: Search Console tools and reports help you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
     url: https://search.google.com/search-console/about
     image:
@@ -84,6 +85,7 @@ platforms:
       - websites
       - stories
   - name: Gmail Playground
+    type: testing
     description: Use Gmail’s AMP for Email Playground to draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
     url: https://developers.google.com/gmail/ampemail/testing-dynamic-email
     image:
@@ -93,6 +95,7 @@ platforms:
     formats:
       - email
   - name: AMP for WordPress
+    type: cms
     description: AMP-first content creation with the power and flexibility of WordPress.
     url: https://amp-wp.org/
     image:
@@ -105,7 +108,7 @@ platforms:
 developer:
   - name: AMP Validator
     type: essential
-    description: The validator is a essential component of AMP development and is available in a variety of versions.
+    description: Essential component for AMP development and available in a variety of versions.
     url: http://localhost:8080/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
     image:
       src: /static/img/docs/tools/ampvalidator.jpg
@@ -116,16 +119,8 @@ developer:
       - email
       - ads
       - stories
-  - name: AMP Tag Test
-    description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
-    url: https://amptagtest.appspot.com/
-    image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
-    formats:
-      - websites
   - name: Experiment Configurator
+    type: essential
     description: Beta-test new features of AMP before they're available for everyone.
     url: https://cdn.ampproject.org/experiments.html
     image:
@@ -137,7 +132,18 @@ developer:
       - email
       - ads
       - stories
+  - name: AMP Tag Test
+    type: analytics
+    description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
+    url: https://amptagtest.appspot.com/
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites
   - name: AMP Toolbox
+    type: optimization
     description: A collection of AMP tools making it easier to publish and host AMP pages.
     url: https://github.com/ampproject/amp-toolbox
     image:
@@ -147,6 +153,7 @@ developer:
     formats:
       - websites
   - name: AMP Bench
+    type: debugging
     description: Validation tool that offers additional debug information on top of the AMP validator.
     url: https://ampbench.appspot.com
     image:
@@ -156,6 +163,7 @@ developer:
     formats:
       - websites     
   - name: AMP Insights
+    type: debugging
     description: TBD - I don't actually know what this tool does.
     url:
     image:
@@ -164,7 +172,8 @@ developer:
       height: 3
     formats:
       - websites
-  - name: AMP Readiness (Chrome Extension)
+  - name: AMP Readiness
+    type: debugging
     description: Chrome extension that helps you understand the feasibility of converting your site to AMP.
     url: https://chrome.google.com/webstore/detail/amp-readiness-tool/fadclbipdhchagpdkjfcpippejnekimg?hl=en
     image:
@@ -174,6 +183,7 @@ developer:
     formats:
       - websites    
   - name: AMP Playground
+    type: development
     description: Start prototyping in an interactive online editor with the ability to use templates and load all our examples.
     url: https://playground.amp.dev/
     image:
@@ -185,7 +195,8 @@ developer:
       - email
       - ads
       - stories
-  - name: Visual Studio Code Extension
+  - name: VS Code Extension
+    type: development
     description: Makes authoring AMP easy by validating for errors/warnings as you type within VS Code.
     url: https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator
     image:
