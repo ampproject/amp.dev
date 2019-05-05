@@ -113,7 +113,7 @@ if (config.isDevMode()) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const html = pageTransformer.filterHtml(body) || body;
+          const html = pageTransformer.filterHtml(body, activeFormat) || body;
           response.setHeader('content-length', html.length.toString());
           return html;
         } catch (e) {
