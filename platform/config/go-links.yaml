@@ -1,16 +1,18 @@
-# Use via: go.amp.dev/samples
-/samples: /documentation/examples/
-/camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
-/docs: /documentation/
-/learn: /documentation/courses/
-/websites: /about/websites
-/stories: /about/stories
-/stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices
+# Use via: go.amp.dev/ads
+# Add new entries in alphabetical order
 /ads: /about/ads
-/email: /about/email
-/vision-mission: /about/mission-and-vision
-/governance: /community/governance
-/shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
-/publishing-checklist: https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist.html
-/io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
+/camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
+/docs: /documentation/
+/email: /about/email
+/governance: /community/governance
+/io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
+/learn: /documentation/courses/
+/optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
+/publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist
+/samples: /documentation/examples/
+/shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
+/stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices
+/stories: /about/stories
+/vision-mission: /about/mission-and-vision
+/websites: /about/websites
