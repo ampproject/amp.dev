@@ -89,16 +89,15 @@ The page with all AMP tools.
     }
 
     h2 {
-      grid-column: 3 / 10;
+      grid-column: 3 / 23;
     }
   }
 
   .#{organism('tool-format-filter')} {
-    grid-column: 10 / 23;
+    grid-column: 3 / 23;
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     margin: 0;
     padding: 0;
 
@@ -106,6 +105,9 @@ The page with all AMP tools.
       display: inline-block;
       button {
         margin: 5px;
+        &:first-child {
+          margin-left: 0;
+        }
         padding: 5px 20px;
         display: inline-block;
         div {
@@ -114,7 +116,7 @@ The page with all AMP tools.
           height: 1em;
           margin-right: 0.3em;
           vertical-align: sub;
-          @media (max-width: 1120px) {
+          @media (max-width: 600px) {
             display: none;
           }
         }

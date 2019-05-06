@@ -83,15 +83,37 @@ tools: !g.yaml /shared/data/tools.yaml
 <main class="ap--main ap-t-tools">
 {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
 
-{% for category in doc.categories %}
-
-<amp-state id="activeFilter{{ category }}">
+<amp-state id="activeFilter">
   <script type="application/json">
     {
       "chosenFilter": "none"
     }
   </script>
 </amp-state>
+
+<div class="ap--container">
+  <ul class="ap-o-tool-format-filter">
+    <li>
+      <button name="all" class="ap-m-filter-bubble filtered" [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+      on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
+        All
+      </button>
+    </li>
+    {% for link in doc.filters %}
+      <li>
+        <button name="{{ link|lower }}" class="ap-m-filter-bubble" [class]="activeFilter.chosenFilter == '{{ link|lower }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+        on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ link|lower }}' } })">
+          <div class="ap-o-header-flyout-primary-item-link-icon {{ link|lower }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ link|lower }}"></use></svg>
+          </div>
+          {{ link }}
+        </button>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% for category in doc.categories %}
 
   <section class="ap-o-tool-section">
     <div class="ap--container">
@@ -104,25 +126,6 @@ tools: !g.yaml /shared/data/tools.yaml
           Developer Tools
           {% endif %}
         </h2>
-        <ul class="ap-o-tool-format-filter">
-            <li>
-              <button name="all" class="ap-m-filter-bubble filtered" [class]="activeFilter{{ category }}.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-              on="tap:AMP.setState({ activeFilter{{ category }}: {chosenFilter: 'none' } })">
-                All
-              </button>
-            </li>
-            {% for link in doc.filters %}
-              <li>
-                <button name="{{ link|lower }}" class="ap-m-filter-bubble" [class]="activeFilter{{ category }}.chosenFilter == '{{ link|lower }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-                on="tap:AMP.setState({ activeFilter{{ category }}: {chosenFilter: '{{ link|lower }}' } })">
-                  <div class="ap-o-header-flyout-primary-item-link-icon {{ link|lower }}">
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ link|lower }}"></use></svg>
-                  </div>
-                  {{ link }}
-                </button>
-              </li>
-            {% endfor %}
-          </ul>
     </div>
   </section>
   
