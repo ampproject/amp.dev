@@ -140,7 +140,7 @@ For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/d
 
 ## sizes
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the `sizes` attribute is a sizes expression as described in the [sizes attribute on `img` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images.
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the AMP `sizes` attribute is a sizes expression that selects the defined size corresponding to the media query based on the current window size. <strong>Additionally, AMP sets an inline style for `width` on the element</strong>. 
 
 Example:
 
@@ -150,6 +150,15 @@ Example:
     layout="responsive"
     sizes="(min-width: 320px) 320px, 100vw">
 </amp-img>
+```
+
+Will produce the following nested `img ` tag:
+
+```html
+<img decoding="async" 
+    src="amp.png" 
+    sizes="(min-width: 320px) 320px, 100vw" 
+    class="i-amphtml-fill-content i-amphtml-replaced-content">
 ```
 
 For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
