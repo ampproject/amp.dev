@@ -1,4 +1,5 @@
 # Use via: go.amp.dev/ads
+# Add new entries in alphabetical order
 /ads: /about/ads
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
