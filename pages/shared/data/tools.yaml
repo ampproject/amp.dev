@@ -23,7 +23,7 @@ creation:
     description: The AMP for WordPress plugin now comes with a fully integrated story editor.
     url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
     image:
-      src: /static/img/tools/56274742-49765500-613a-11e9-9131-688c0c82b591.png
+      src: /static/img/tools/56274742-49765500-613a-11e9-9131-688c0c82b591.jpg
       width: 700
       height: 402
     formats:
@@ -41,7 +41,7 @@ creation:
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en
     image:
-      src: /static/img/tools/google-web-designer-w700.png
+      src: /static/img/tools/google-web-designer-w700.jpg
       width: 700
       height: 549
     formats:
@@ -70,7 +70,7 @@ platforms:
     description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
     url: https://search.google.com/search-console/about
     image:
-      src: /static/img/tools/search_console.png
+      src: /static/img/tools/search_console.jpg
       width: 700
       height: 407
     formats:
@@ -176,7 +176,7 @@ developer:
     description: Pre-built Google Analytics dashboard template that helps you get to your analytics insights faster.
     url: http://bit.ly/amp-insights
     image:
-      src: /static/img/tools/insights.png
+      src: /static/img/tools/insights.jpg
       width: 700
       height: 386
     formats:
