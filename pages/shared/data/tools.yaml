@@ -192,6 +192,20 @@ developer:
       height: 3
     formats:
       - websites    
+  - name: AMP Boilerplate Generator
+    official: true
+    type: development
+    description: Generate custom templates for your AMP websites, stories, emails or ads.
+    url: https://amp.dev/boilerplate/
+    image:
+      src: /static/img/docs/tools/ampboilerplate.png
+      width: 1280
+      height: 706
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
   - name: AMP Playground
     official: true
     type: development
