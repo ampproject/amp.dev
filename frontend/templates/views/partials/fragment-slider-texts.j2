@@ -2,28 +2,36 @@
 <div [class]='"ap-o-fragment-slider-text slide" +selected.slide' class="ap-o-fragment-slider-text slide1">
 
   <div class="ap-o-fragment-slider-textslide active" [class]="selected.slide == 1 ? 'ap-o-fragment-slider-textslide active' : 'ap-o-fragment-slider-textslide'">
-    <h3 class="ap-o-fragment-slider-preheadline">Band page</h3>
-    <h2 class="ap-o-fragment-slider-headline">Olga and the kings</h2>
+    <h3 class="ap-o-fragment-slider-preheadline">E-Commerce</h3>
+    <h2 class="ap-o-fragment-slider-headline">Campmor</h2>
     <div class="copy copy-right ap--content">
 
-      <p>Always thought that all AMP pages look the same? Checkout this incredible band website featuring various AMP components to create a vivid and enjoyable experience.</p>
+      <p>AMP does not only shine for content pages but is also capable of powering full-blown e-commerce experiences.</p>
 
-      <p>The use of <code>amp-sidebar</code> gives you the same feeling as if you are in a single page app.</p>
+      <p><code>amp-bind</code> is what brings this demo to life with the help of a lot of other AMP components that support dynamic content.</p>
 
       <div class="ap-o-fragment-slider-component-list">
-      {% for component in ['amp-mustache', 'amp-date-picker', 'amp-sidebar', 'amp-access', 'amp-analytics', 'amp-selector', 'amp-3d-gltf', 'amp-live-list', 'amp-geo', 'amp-timeago', 'amp-form', 'amp-position-observer', 'amp-animation', 'amp-pan-zoom'] %}
+      {% for component in ['amp-list', 'amp-mustache', 'amp-bind', 'amp-sidebar', 'amp-selector'] %}
         <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).url.path }}"><code>{{ component }}</code></a>
         {% endfor %}
       </div>
     </div>
 
-    <div class="cta">
-      <a href="https://amp-concert.herokuapp.com/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+    <div class="ap-o-fragment-slider-ctas">
+      <a href="https://camp.samples.amp.dev/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
         <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
         </div>
         <span class="ap-m-lnk-text">Experience Demo</span>
+      </a>
+
+      <a href="https://github.com/ampproject/samples/tree/master/amp-camp" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">See on GitHub</span>
       </a>
     </div>
   </div>
@@ -44,13 +52,56 @@
       </div>
     </div>
 
-    <div class="cta">
-      <a href="https://amp-article.herokuapp.com/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+    <div class="ap-o-fragment-slider-ctas">
+    <a href="https://amp-article.herokuapp.com/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">Experience Demo</span>
+    </a>
+
+      <a href="https://github.com/ampproject/samples/tree/master/amp-article" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
         <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">See on GitHub</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="ap-o-fragment-slider-textslide" [class]="selected.slide == 3 ? 'ap-o-fragment-slider-textslide active' : 'ap-o-fragment-slider-textslide'">
+    <h3 class="ap-o-fragment-slider-preheadline">Band page</h3>
+    <h2 class="ap-o-fragment-slider-headline">Olga and the kings</h2>
+    <div class="copy copy-right ap--content">
+
+      <p>Always thought that all AMP pages look the same? Checkout this incredible band website featuring various AMP components to create a vivid and enjoyable experience.</p>
+
+      <p>The use of <code>amp-sidebar</code> gives you the same feeling as if you are in a single page app.</p>
+
+      <div class="ap-o-fragment-slider-component-list">
+      {% for component in ['amp-mustache', 'amp-date-picker', 'amp-sidebar', 'amp-access', 'amp-analytics', 'amp-selector', 'amp-3d-gltf', 'amp-live-list', 'amp-geo', 'amp-timeago', 'amp-form', 'amp-position-observer', 'amp-animation', 'amp-pan-zoom'] %}
+        <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).url.path }}"><code>{{ component }}</code></a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ap-o-fragment-slider-ctas">
+      <a href="https://amp-concert.herokuapp.com/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
         </div>
         <span class="ap-m-lnk-text">Experience Demo</span>
+      </a>
+
+      <a href="https://github.com/ampproject/samples/tree/master/amp-concert" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">See on GitHub</span>
       </a>
     </div>
   </div>
