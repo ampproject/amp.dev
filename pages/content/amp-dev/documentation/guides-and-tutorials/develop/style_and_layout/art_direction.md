@@ -18,7 +18,7 @@ contributors:
 
 Use the `srcset` attribute to control an element’s assets
 based on varying media expressions.
-In particular, use it for all [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tags to specify which image assets to use based on varying screen sizes.
+In particular, use it for all [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, [that meets the HTML5 definition of `sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
 
 In this simple example,
 `srcset` specifies which image to use based on the screen width.
@@ -46,9 +46,10 @@ in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsiv
 
 ## sizes
 
-You can also use the `sizes` attribute along with `srcset`.
-The `sizes` attribute describes how to calculate the element size
+You can also use the optional AMP `sizes` attribute along with `srcset`.
+The AMP `sizes` attribute describes how to calculate the element size
 based on any media expression.
+<strong>Defining `sizes` on any AMP Element will cause AMP to set an inline style for width on that element according to the matched media query.</strong>
 Based on the element’s calculated size,
 the user agent selects the most relative source supplied by the `srcset` attribute.
 
@@ -78,9 +79,7 @@ which in this instance is `hummingbird-narrow.jpg` (320px).
 **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`.
 [/tip]
 
-Learn more about how `sizes` and `srcset` attributes compare
-to media queries in this
-[Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) blog post.
+Read more about the [AMP `sizes` attribute here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes', locale=doc.locale).url.path}}).
 
 ## heights
 
