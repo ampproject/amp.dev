@@ -249,7 +249,6 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-[filter formats="websites, ads, stories"]
 ### amp-sidebar
 <table>
   <tr>
@@ -268,7 +267,6 @@ event.selectedOptions</pre></td>
     <td>None</td>
   </tr>
 </table>
-[/filter]
 
 ### amp-state
 <table>
@@ -284,7 +282,6 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-[filter formats="websites, ads, stories"]
 ### amp-video, amp-youtube
 <table>
   <tr>
@@ -303,7 +300,6 @@ event.selectedOptions</pre></td>
     <td><code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
   </tr>
 </table>
-[/filter]
 
 ### form
 <table>
@@ -389,7 +385,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-[filter formats="websites, ads, stories"]
 ### amp-audio
 <table>
   <tr>
@@ -433,7 +428,6 @@ event.response</pre></td>
     <td>Uses the given percentage value to determine the currentTime of the animation to the specified value and pauses animation. </td>
   </tr>
 </table>
-[/filter]
 
 ### amp-carousel[type="slides"]
 <table>
@@ -487,7 +481,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-[filter formats="websites, ads, stories"]
 ### amp-live-list
 <table>
   <tr>
@@ -499,7 +492,6 @@ event.response</pre></td>
     <td>Updates the DOM items to show updated content.</td>
   </tr>
 </table>
-[/filter]
 
 ### amp-selector
 <table>
@@ -521,7 +513,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-[filter formats="websites, ads, stories"]
 ### amp-sidebar
 <table>
   <tr>
@@ -541,7 +532,6 @@ event.response</pre></td>
     <td>Toggles the state of the sidebar.</td>
   </tr>
 </table>
-[/filter]
 
 ### amp-state
 <table>
@@ -555,7 +545,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-[filter formats="websites, ads, stories"]
 ### amp-user-notification
 <table>
   <tr>
@@ -598,7 +587,6 @@ The actions below are supported in the following AMP video elements: `amp-video`
     <td>Takes the video to fullscreen.</td>
   </tr>
 </table>
-[/filter]
 
 ### form
 <table>
@@ -647,11 +635,11 @@ actions that apply to the whole document.
     <td>Opens the Print Dialog to print the current page.</td>
   </tr>
   <tr>
-    <td><code>scrollTo(id=STRING, duration=INTEGER, position=STRING)</code></td>
+    <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
     <td>Scrolls to the provided element ID on the current page.</td>
   </tr>
   <tr>
-    <td><code>optoutOfCid</code></td>
+    <td>optoutOfCid</td>
     <td>Opts out of Client ID generation for all scopes.</td>
   </tr>
   <tr>
@@ -672,7 +660,6 @@ actions that apply to the whole document.
 
 <sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
 
-[filter formats="websites, ads, stories"]
 ### Target: amp-access
 
 The `amp-access` target is provided by the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access.html) component.
@@ -683,4 +670,3 @@ The `amp-access` target is special for these reasons:
 2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://www.ampproject.org/docs/reference/components/amp-access#configuration).
 
 See [details](https://www.ampproject.org/docs/reference/components/amp-access#login-link) about using the `amp-access` target.
-[/filter]
