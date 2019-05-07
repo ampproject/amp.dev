@@ -34,10 +34,7 @@ The page with all AMP tools.
     }
 
     &-content-roadshow {
-      margin: 16em 0 2em;
-      @media (min-width: 768px) {
-        margin: 5vw 0 5vw;
-      }
+      margin: 5vw 0 5vw;
     }
 
   }
@@ -93,6 +90,22 @@ The page with all AMP tools.
     }
   }
 
+  .#{organism('tool-format-filter-container')} {
+    margin-top: 0;
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .#{organism('tool-format-filter-caption')} {
+    grid-column: 3 / 23;
+    margin: 0;
+    margin-bottom: -20px;
+    @media (max-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
   .#{organism('tool-format-filter')} {
     grid-column: 3 / 23;
     list-style: none;
@@ -116,7 +129,7 @@ The page with all AMP tools.
           height: 1em;
           margin-right: 0.3em;
           vertical-align: sub;
-          @media (max-width: 600px) {
+          @media (max-width: 645px) {
             display: none;
           }
         }

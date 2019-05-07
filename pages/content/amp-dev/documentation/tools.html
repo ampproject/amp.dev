@@ -39,7 +39,6 @@ tools: !g.yaml /shared/data/tools.yaml
 
 ---
 {% do doc.styles.addCssFile('css/components/templates/tools.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/window-frame.css') %}
 
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage-tools.css') %}
@@ -51,32 +50,7 @@ tools: !g.yaml /shared/data/tools.yaml
           <h2 class="ap-o-stage-content-subline">for creation, design and development</h2>
       </div>
     </div>
-  </div>
-
-  {# ghost frame block #}
-  {% if doc.stage.devices %}
-  {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
-    <div class="ap-o-ghost-frame-block">
-      {% for device in doc.stage.devices %}
-      {% if device %}
-      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
-      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
-      {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
-      <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
-        {% if device.url %}
-        <a href="{{ g.doc('/content/amp-dev/about/success-stories/' + device.url + '.yaml', locale=doc.locale).url.path }}">
-        {% endif %}
-          <amp-img class="ap--media" alt="{{device.alt}}" height="{{device.height}}" layout="responsive" src="{{device.image_src}}"
-            width="{{device.width}}">
-          </amp-img>
-        {% if device.url %}
-        </a>
-        {% endif %}
-      </div>
-      {% endif %}
-      {% endfor %}
-    </div>
-  {% endif %}  
+  </div> 
 
 </section>
 
@@ -91,12 +65,14 @@ tools: !g.yaml /shared/data/tools.yaml
   </script>
 </amp-state>
 
+<section class="ap-o-tool-section ap-o-tool-format-filter-container">
 <div class="ap--container">
+  <p class="ap-o-tool-format-filter-caption">Find the right tools to build</p>
   <ul class="ap-o-tool-format-filter">
     <li>
       <button name="all" class="ap-m-filter-bubble filtered" [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
       on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
-        All
+        Everything
       </button>
     </li>
     {% for link in doc.filters %}
@@ -112,6 +88,7 @@ tools: !g.yaml /shared/data/tools.yaml
     {% endfor %}
   </ul>
 </div>
+</section>
 
 {% for category in doc.categories %}
 
