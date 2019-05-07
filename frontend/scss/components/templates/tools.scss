@@ -20,6 +20,8 @@ The page with all AMP tools.
 
 @import '../molecules/copy';
 
+@import '../organisms/tools-teaser.scss';
+
 @import '../templates/_default';
 
 .#{utility('stage')} {
@@ -155,111 +157,6 @@ The page with all AMP tools.
       border-radius: 100px;
     }
   }
-
-  .#{organism('teaser-grid')} {
-    grid-column: 3 / 23;
-    width: 100%;
-    margin-bottom: 2em;
-
-    &-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 60px 30px;
-      margin: 0 40px;
-
-      @media (min-width: 768px) {
-        grid-template-columns: repeat(12, 1fr);
-        /*grid-auto-rows: 1fr;*/ /*looks a little better when multiple rows are present but wastes space */
-        margin: 0;
-      }
-
-      .#{molecule('teaser-card')}{
-
-        display: flex;
-        flex-direction: column;
-
-        > div:last-child {
-          flex: 1 1 auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-
-        @media (max-width: 768px) {
-          margin-bottom: 0;
-          display: flex;
-        }
-
-      }
-
-      .#{molecule('teaser-logo')}{
-        margin: 0;
-        width: 12px;
-        height: 12px;
-        margin-right: 2px;
-      }
-
-      .#{molecule('teaser-image')}{
-        @media (max-width: 768px) {
-          width: 30%;
-          flex: 1 0 auto;
-        }
-        &:before {
-          display: none;
-        }
-      }
-
-      .#{molecule('teaser-card-essential')}{
-        .#{molecule('teaser-card')}{
-          border: 4px solid #0059f0;
-          
-        }
-      }
-
-      .#{molecule('teaser-type')}{
-        text-align: center;
-        background: #f0f0f0;
-        text-transform: uppercase;
-        padding: 6px 0;
-        border-bottom-right-radius: 6px;
-        border-bottom-left-radius: 6px;
-        &-essential {
-          background: #0058f0;
-          color: #fff;
-        }
-      }
-
-      .#{molecule('teaser')}{
-        grid-column: 1;
-        margin: 0;
-        display: flex;
-
-        @media (min-width: 768px) {
-          grid-column: span 4;
-        }
-
-        @media (min-width: 1120px) {
-          grid-column: span 3;
-        }
-
-        amp-img img {
-          object-fit: cover;
-        }
-
-        > a {
-          display: flex;
-        }
-
-        p {
-          color: #20202A;
-          font-weight: normal;
-          font-size: 0.8em;
-          margin-bottom: 0;
-        }
-
-      }
-    }
-  }  
 
 }
 

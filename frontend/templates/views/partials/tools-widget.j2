@@ -1,0 +1,27 @@
+{% set tools = g.yaml('/shared/data/tools.yaml') %}
+{% do doc.styles.addCssFile('css/components/organisms/tools-teaser.css') %}
+
+
+
+<main class="ap--main ap-t-tools">
+
+<section class="ap--content">
+  <div class="ap--container-fluid">
+    <div class="ap-m-copy ap-m-copy-left-small">
+      <h1>Start telling stories</h1>
+      <h5>Pick one of several editors to start designing stories.</h5>
+    </div>
+  </div>
+</section>
+
+<section class="ap--tools-widget ap--teaser-grid ap--container-fluid">
+    <div class="ap-o-teaser-grid">
+        <div class="ap-o-teaser-grid-list">
+        {% for tool in tools.creation %}
+        {% include '/views/partials/tools-teaser.j2' %}
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+</main>
