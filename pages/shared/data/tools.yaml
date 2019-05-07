@@ -9,6 +9,7 @@ creation:
     formats:
       - stories
   - name: Adobe Animate
+    official: true
     description: The AMPHTML Ad plugin for Adobe Animate allows the creation of rich, eye-catching marketing content with Adobe Animate.
     url: https://www.adobeexchange.com/creativecloud.details.101647.amphtml-ad.html
     image:
@@ -18,6 +19,7 @@ creation:
     formats:
       - ads
   - name: AMP Stories for WordPress (Beta)
+    official: true
     description: The AMP for WordPress plugin now comes with a fully integrated story editor.
     url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
     image:
@@ -95,18 +97,20 @@ platforms:
     formats:
       - email
   - name: AMP for WordPress
+    official: true
     type: cms
     description: AMP-first content creation with the power and flexibility of WordPress.
     url: https://amp-wp.org/
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
+      src: /static/img/tools/amp_for_wordpress.jpg
+      width: 1024
+      height: 730
     formats:
       - websites
       - stories
 developer:
   - name: AMP Validator
+    official: true
     type: essential
     description: Essential component for AMP development and available in a variety of versions.
     url: http://localhost:8080/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
@@ -120,6 +124,7 @@ developer:
       - ads
       - stories
   - name: Experiment Configurator
+    official: true
     type: essential
     description: Beta-test new features of AMP before they're available for everyone.
     url: https://cdn.ampproject.org/experiments.html
@@ -133,6 +138,7 @@ developer:
       - ads
       - stories
   - name: AMP Tag Test
+    official: true
     type: analytics
     description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
     url: https://amptagtest.appspot.com/
@@ -143,6 +149,7 @@ developer:
     formats:
       - websites
   - name: AMP Toolbox
+    official: true
     type: optimization
     description: A collection of AMP tools making it easier to publish and host AMP pages.
     url: https://github.com/ampproject/amp-toolbox
@@ -153,6 +160,7 @@ developer:
     formats:
       - websites
   - name: AMP Bench
+    official: true
     type: debugging
     description: Validation tool that offers additional debug information on top of the AMP validator.
     url: https://ampbench.appspot.com
@@ -163,6 +171,7 @@ developer:
     formats:
       - websites     
   - name: AMP Insights
+    official: true
     type: debugging
     description: Pre-built Google Analytics dashboard template that helps you get to your analytics insights faster.
     url: http://bit.ly/amp-insights
@@ -173,6 +182,7 @@ developer:
     formats:
       - websites
   - name: AMP Readiness
+    official: true
     type: debugging
     description: Chrome extension that helps you understand the feasibility of converting your site to AMP.
     url: https://chrome.google.com/webstore/detail/amp-readiness-tool/fadclbipdhchagpdkjfcpippejnekimg?hl=en
@@ -183,6 +193,7 @@ developer:
     formats:
       - websites    
   - name: AMP Playground
+    official: true
     type: development
     description: Start prototyping in an interactive online editor with the ability to use templates and our examples.
     url: https://playground.amp.dev/
@@ -196,6 +207,7 @@ developer:
       - ads
       - stories
   - name: VS Code Extension
+    official: true
     type: development
     description: Makes authoring AMP easy by validating for errors/warnings as you type within VS Code.
     url: https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator

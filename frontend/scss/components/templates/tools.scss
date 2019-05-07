@@ -192,10 +192,20 @@ The page with all AMP tools.
 
       }
 
+      .#{molecule('teaser-logo')}{
+        margin: 0;
+        width: 12px;
+        height: 12px;
+        margin-right: 2px;
+      }
+
       .#{molecule('teaser-image')}{
         @media (max-width: 768px) {
           width: 30%;
           flex: 1 0 auto;
+        }
+        &:before {
+          display: none;
         }
       }
 
