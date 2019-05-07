@@ -1,0 +1,222 @@
+creation:
+  - name: MakeStories
+    description: WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
+    url: https://makestories.io/
+    image:
+      src: /static/img/tools/makestories.jpg
+      width: 1280
+      height: 720
+    formats:
+      - stories
+  - name: Adobe Animate
+    official: true
+    description: The AMPHTML Ad plugin for Adobe Animate allows the creation of rich, eye-catching marketing content with Adobe Animate.
+    url: https://www.adobeexchange.com/creativecloud.details.101647.amphtml-ad.html
+    image:
+      src: https://www.adobe.com/content/dam/acom/en/products/animate/max2017/images/an-Riverflow-1-720x520.jpg
+      width: 720
+      height: 520
+    formats:
+      - ads
+  - name: AMP Stories for WordPress (Beta)
+    official: true
+    description: The AMP for WordPress plugin now comes with a fully integrated story editor.
+    url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
+    image:
+      src: https://user-images.githubusercontent.com/4063887/56274742-49765500-613a-11e9-9131-688c0c82b591.png
+      width: 1224
+      height: 702
+    formats:
+      - stories
+  - name: Newsroom AI
+    description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
+    url: https://www.nws.studio/the-stories-platform.html
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Google Web Designer
+    description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
+    url: https://support.google.com/webdesigner/answer/7529856?hl=en
+    image:
+      src: https://lh3.googleusercontent.com/Me5Rr4vJ2ldYICzSs6P1P9HTAxe9hFat9sAqTUmz59M9aSfNZsV6Csrs4TofjZYEiKY=w895
+      width: 895
+      height: 702
+    formats:
+      - ads
+  - name: Jumprope
+    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
+    url: https://www.jumprope.com/
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Tick
+    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
+    url: http://tick.co/
+    image:
+      src: https://media.tick.co/images/web/create.jpg
+      width: 1000
+      height: 581
+    formats:
+      - stories
+platforms:
+  - name: Google Search Console
+    type: debugging
+    description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
+    url: https://search.google.com/search-console/about
+    image:
+      src: /static/img/tools/search_console.png
+      width: 5
+      height: 3
+    formats:
+      - websites
+      - stories
+  - name: Google AMP Test
+    description: Test if and how your AMP page appears in Google Search.
+    url: https://search.google.com/test/amp
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites
+      - stories
+  - name: Gmail Playground
+    type: testing
+    description: Draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
+    url: https://developers.google.com/gmail/ampemail/testing-dynamic-email
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - email
+  - name: AMP for WordPress
+    official: true
+    type: cms
+    description: AMP-first content creation with the power and flexibility of WordPress.
+    url: https://amp-wp.org/
+    image:
+      src: /static/img/tools/amp_for_wordpress.jpg
+      width: 1024
+      height: 730
+    formats:
+      - websites
+      - stories
+developer:
+  - name: AMP Validator
+    official: true
+    type: essential
+    description: Essential component for AMP development and available in a variety of versions.
+    url: http://localhost:8080/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
+    image:
+      src: /static/img/docs/tools/ampvalidator.jpg
+      width: 782
+      height: 578
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: Experiment Configurator
+    official: true
+    type: essential
+    description: Beta-test new features of AMP before they're available for everyone.
+    url: https://cdn.ampproject.org/experiments.html
+    image:
+      src: /static/img/docs/tools/ampexperiments.jpg
+      width: 10
+      height: 7
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: AMP Tag Test
+    official: true
+    type: analytics
+    description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
+    url: https://amptagtest.appspot.com/
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites
+  - name: AMP Toolbox
+    official: true
+    type: optimization
+    description: A collection of AMP tools making it easier to publish and host AMP pages.
+    url: https://github.com/ampproject/amp-toolbox
+    image:
+      src: https://user-images.githubusercontent.com/380472/36001450-96cfbce2-0d26-11e8-8b65-4ffc3182d57c.gif
+      width: 904
+      height: 680
+    formats:
+      - websites
+  - name: AMP Bench
+    official: true
+    type: debugging
+    description: Validation tool that offers additional debug information on top of the AMP validator.
+    url: https://ampbench.appspot.com
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites     
+  - name: AMP Insights
+    official: true
+    type: debugging
+    description: Pre-built Google Analytics dashboard template that helps you get to your analytics insights faster.
+    url: http://bit.ly/amp-insights
+    image:
+      src: /static/img/tools/insights.png
+      width: 1000
+      height: 550
+    formats:
+      - websites
+  - name: AMP Readiness
+    official: true
+    type: debugging
+    description: Chrome extension that helps you understand the feasibility of converting your site to AMP.
+    url: https://chrome.google.com/webstore/detail/amp-readiness-tool/fadclbipdhchagpdkjfcpippejnekimg?hl=en
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites    
+  - name: AMP Playground
+    official: true
+    type: development
+    description: Start prototyping in an interactive online editor with the ability to use templates and our examples.
+    url: https://playground.amp.dev/
+    image:
+      src: /static/img/docs/tools/ampplayground.jpg
+      width: 1280
+      height: 711
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: VS Code Extension
+    official: true
+    type: development
+    description: Makes authoring AMP easy by validating for errors/warnings as you type within VS Code.
+    url: https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator
+    image:
+      src: /static/img/docs/tools/visualstudiocode.jpg
+      width: 2670
+      height: 1849
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
