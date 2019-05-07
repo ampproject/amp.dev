@@ -1151,6 +1151,16 @@
         "destination": "https://amp.dev/:lang/community/governance?referrer=ampproject.org",
         "type": 301
       },
+      {
+        "source": "/docs/fundamentals/spec/amp-boilerplate",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/fundamentals/spec/amp-boilerplate",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/spec/amp-boilerplate",
+        "type": 301
+      },
 
       {
         "source": "/docs/community/governance/",
