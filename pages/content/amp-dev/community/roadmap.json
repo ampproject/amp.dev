@@ -39,22 +39,6 @@
           }
         },
         {
-          "createdAt": "2019-01-22T15:58:26Z",
-          "updatedAt": "2019-01-22T15:58:26Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/19513",
-            "title": "<amp-img> autogenerate sizes",
-            "description": "I find making Responsive Images in amp-html actually harder than normal HTML (which should not be the case).",
-            "labels": [
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
-                "name": "Presentation",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
           "createdAt": "2019-01-22T15:57:01Z",
           "updatedAt": "2019-01-22T15:57:02Z",
           "issue": {
@@ -742,6 +726,22 @@
     {
       "cards": [
         {
+          "createdAt": "2019-01-22T15:58:26Z",
+          "updatedAt": "2019-05-02T01:54:46Z",
+          "issue": {
+            "url": "https://github.com/ampproject/amphtml/issues/19513",
+            "title": "<amp-img> autogenerate sizes",
+            "description": "I find making Responsive Images in amp-html actually harder than normal HTML (which should not be the case).",
+            "labels": [
+              {
+                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
+                "name": "Presentation",
+                "color": "1d76db"
+              }
+            ]
+          }
+        },
+        {
           "createdAt": "2018-07-03T20:25:09Z",
           "updatedAt": "2019-04-05T15:47:26Z",
           "issue": {
@@ -1209,22 +1209,6 @@
                 "name": "Dynamic/Personalized Content",
                 "color": "1d76db"
               },
-              {
-                "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
-                "name": "Presentation",
-                "color": "1d76db"
-              }
-            ]
-          }
-        },
-        {
-          "createdAt": "2018-03-16T18:52:50Z",
-          "updatedAt": "2018-06-14T22:31:26Z",
-          "issue": {
-            "url": "https://github.com/ampproject/amphtml/issues/14068",
-            "title": "Easy fly-in-on-scroll",
-            "description": "amp-position-observer makes it possible to create complex scroll-bound & scroll-triggered animations. However, we want to make some of the most common animations trivially simple to implement. This feature covers the case where arbitrary HTML elements translate slightly across the page in as the user scrolls them into view—both the scroll-bound case and scroll-triggered, time-based case. Developers will be able to configure aspects of the animation like trigger points, timing, and animation curve.",
-            "labels": [
               {
                 "url": "https://api.github.com/repos/ampproject/amphtml/labels/Category:%20Presentation",
                 "name": "Presentation",

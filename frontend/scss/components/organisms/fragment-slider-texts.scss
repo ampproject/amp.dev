@@ -95,6 +95,13 @@
     margin: 0;
   }
 
+  &-ctas {
+      display: flex;
+
+      a {
+         padding: 0 1.5em 1.5em 0
+      }
+  }
 
   &-headline {
     @include hl-lrg;

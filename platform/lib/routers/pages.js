@@ -109,11 +109,11 @@ if (config.isDevMode()) {
   proxy.on('proxyRes', async (proxyResponse, request, response) => {
     // Check if this response should be filtered
     const activeFormat = getFilteredFormat(request);
-    if (activeFormat) {
+    if (activeFormat && isFilterableRoute(request.originalUrl)) {
       log.await(`Filtering the ongoing request by format: ${activeFormat}`);
       modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
         try {
-          const html = pageTransformer.filterHtml(body) || body;
+          const html = pageTransformer.filterHtml(body, activeFormat) || body;
           response.setHeader('content-length', html.length.toString());
           return html;
         } catch (e) {

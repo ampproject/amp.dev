@@ -43,6 +43,7 @@ The tools cards on the tools page and in widget form.
       h2 {
         grid-column: 3 / 23;
       }
+  
     }
   
     .#{organism('tool-format-filter-container')} {
@@ -67,7 +68,8 @@ The tools cards on the tools page and in widget form.
       display: flex;
       align-items: center;
       margin: 0;
-      padding: 0;
+      padding: 0 0 20px 0;
+      overflow-y: auto;
   
       li {
         display: inline-block;
@@ -129,9 +131,9 @@ The tools cards on the tools page and in widget form.
         }
   
         .#{molecule('teaser-card')}{
-  
           display: flex;
           flex-direction: column;
+          width: 100%;
   
           > div:last-child {
             flex: 1 1 auto;
@@ -167,7 +169,7 @@ The tools cards on the tools page and in widget form.
         .#{molecule('teaser-card-essential')}{
           .#{molecule('teaser-card')}{
             border: 4px solid #0059f0;
-            
+  
           }
         }
   
@@ -203,6 +205,7 @@ The tools cards on the tools page and in widget form.
   
           > a {
             display: flex;
+            width: 100%;
           }
   
           p {
@@ -214,6 +217,6 @@ The tools cards on the tools page and in widget form.
   
         }
       }
-    }  
+    }
   
-}
+  }

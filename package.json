@@ -1,6 +1,6 @@
 {
   "name": "amp-dev",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The AMP Project website.",
   "repository": "git@github.com:ampproject/docs.git",
   "engines": {
@@ -72,7 +72,7 @@
     "@babel/plugin-transform-runtime": "7.4.4",
     "@babel/preset-env": "7.4.4",
     "@babel/runtime": "7.4.4",
-    "@octokit/rest": "16.25.0",
+    "@octokit/rest": "16.25.2",
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.6",
     "amp-toolbox-optimizer": "0.5.3",
@@ -92,7 +92,7 @@
     "file-loader": "3.0.1",
     "google-closure-compiler": "20190415.0.0",
     "got": "9.6.0",
-    "gulp": "4.0.1",
+    "gulp": "4.0.2",
     "gulp-amphtml-validator": "1.0.2",
     "gulp-once": "2.0.3",
     "gulp-sass": "4.0.2",
