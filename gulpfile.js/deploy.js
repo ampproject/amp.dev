@@ -155,8 +155,12 @@ async function updateStart() {
  * all VMs have been updated to the latest version and the update is stable.
  */
 function updateStatus() {
-  return sh(`gcloud beta compute instance-groups managed describe ${config.instance.group} \
-           --zone=${config.gcloud.zone}`);
+  const updates = config.instance.groups.map((group) => {
+    return sh(`gcloud beta compute instance-groups managed describe ${group.name} \
+             --zone=${group.zone}`);
+  });
+
+  return Promise.all(updates);
 }
 
 /**
