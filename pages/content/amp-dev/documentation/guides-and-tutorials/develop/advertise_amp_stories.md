@@ -76,7 +76,6 @@ If you are an ad server interested in serving story ads please contact us by fil
 Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 ##Google Ad Manager
-For information about uploading your ads to Google Ad Manager, please see [this doc supplied by Ad Manager](https://support.google.com/admanager/answer/9038178).
 
 Ad server information is designated within the [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component at the start of the AMP story.
 
@@ -121,3 +120,7 @@ These key value pairs are copied over to the [`amp-ad`]({{g.doc('/content/amp-de
   ...
 </amp-story>
 [/sourcecode]
+  
+[tip type="note"]
+Read [Traffic custom creatives in AMP Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path}}).
+[/tip]
