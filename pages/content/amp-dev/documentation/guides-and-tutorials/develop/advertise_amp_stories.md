@@ -76,6 +76,8 @@ If you are an ad server interested in serving story ads please contact us by fil
 Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 ##Google Ad Manager
+For information about uploading your ads to Google Ad Manager, please see [this doc supplied by Ad Manager](https://support.google.com/admanager/answer/9038178).
+
 Ad server information is designated within the [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component at the start of the AMP story.
 
 You must specify a JSON configuration object within the [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story-auto-ads.md', locale=doc.locale).url.path}}) component that specifies how ads should be fetched and displayed.The following fields are required to serve and ad with Google Ad Manager:
