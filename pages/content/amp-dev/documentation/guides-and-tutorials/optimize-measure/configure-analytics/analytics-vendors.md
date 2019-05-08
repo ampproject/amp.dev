@@ -346,6 +346,12 @@ Type attribute value: `teaanalytics`
 
 Adds support for TEA Analytics. More details for adding TEA Analytics support can contact with Kimberly (wuqian56@gmail.com).
 
+### Tealium Collect
+
+Type attribute value: `tealiumcollect`
+
+Adds support for Tealium Collect. More details for adding Tealium Collect support can be found at [docs.tealium.com](https://docs.tealium.com/platforms/amp/install/).
+
 ### Top.Mail.Ru
 
 Type attribute value: `topmailru`
