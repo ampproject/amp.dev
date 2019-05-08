@@ -1,16 +1,3 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"X-Generator: Poedit 2.2\n"
-
 #: /views/partials/case-band.j2:6 /views/partials/case-band.j2:7
 msgid "A screenshot of a website using AMP."
 msgstr ""
@@ -183,7 +170,7 @@ msgstr "Documentos"
 #: /views/partials/breadcrumbs.j2:29 /views/partials/breadcrumbs.j2:41
 #: /views/partials/breadcrumbs.j2:53
 msgid "Documentation"
-msgstr "Documentación"
+msgstr "Documentaciï¿½n"
 
 #: /content/amp-dev/documentation/templates/index.html:19
 msgid "Easily build user first websites with our templates"
@@ -346,7 +333,7 @@ msgstr ""
 
 #: /views/partials/footer.j2:40
 msgid "Overview"
-msgstr "Descripción general "
+msgstr "Descripciï¿½n general "
 
 #: /content/amp-dev/about/stories.html
 msgid "PCGamesN"
