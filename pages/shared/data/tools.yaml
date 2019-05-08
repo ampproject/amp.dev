@@ -154,7 +154,7 @@ developer:
     description: A collection of AMP tools making it easier to publish and host AMP pages.
     url: https://github.com/ampproject/amp-toolbox
     image:
-      src: /static/img/tools/36001450-96cfbce2-0d26-11e8-8b65-4ffc3182d57c.gif
+      src: /static/img/tools/amp_toolbox.jpg
       width: 700
       height: 527
     formats:
