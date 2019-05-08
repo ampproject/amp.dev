@@ -13,7 +13,7 @@ creation:
     description: The AMPHTML Ad plugin for Adobe Animate allows the creation of rich, eye-catching marketing content with Adobe Animate.
     url: https://www.adobeexchange.com/creativecloud.details.101647.amphtml-ad.html
     image:
-      src: /static/img/tools/an-Riverflow-1-720x520.jpg
+      src: /static/img/tools/adobe_animate.jpg
       width: 700
       height: 506
     formats:
@@ -23,7 +23,7 @@ creation:
     description: The AMP for WordPress plugin now comes with a fully integrated story editor.
     url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
     image:
-      src: /static/img/tools/56274742-49765500-613a-11e9-9131-688c0c82b591.jpg
+      src: /static/img/tools/amp_stories_for_wordpress.jpg
       width: 700
       height: 402
     formats:
@@ -41,7 +41,7 @@ creation:
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en
     image:
-      src: /static/img/tools/google-web-designer-w700.jpg
+      src: /static/img/tools/google_web_designer.jpg
       width: 700
       height: 549
     formats:
