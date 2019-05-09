@@ -64,6 +64,10 @@
     color: color('black');
     background: color('athens-gray');
 
+    &.active {
+      display: none;
+    }
+
     .#{atom('ico')} {
       fill: color('black');
     }
