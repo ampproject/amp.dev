@@ -39,7 +39,7 @@ function initConfig() {
     formats: require('./data/formats.json'),
     templates: templates.find('./templates/files'),
     highlightTheme:
-      io.readFile(path.join(__dirname, '../node_modules/highlight.js/styles/monokai.css')),
+      io.readFile(path.join(__dirname, './templates/styles/code-snippet.scss')),
   };
   // assign default template
   let defaultTemplate;

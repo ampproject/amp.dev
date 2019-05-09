@@ -28,6 +28,9 @@
   pre {
     max-height: 100%;
   }
+  code {
+    @include txt-mono;
+  }
 }
 
 .#{molecule('format-toggle')} {
