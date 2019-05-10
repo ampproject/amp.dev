@@ -146,6 +146,7 @@ main.#{template('tools')} {
           @media (max-width: 768px) {
             margin-bottom: 0;
             display: flex;
+            flex-direction: row;
           }
   
         }
@@ -238,10 +239,19 @@ main.#{template('tools')} {
                 display: flex;
                 overflow: auto;
                 margin: -40px -20px;
+                margin-left: 0;
+                padding-top: 0;
 
                 .#{molecule('teaser')} {
                     display: flex;
                     margin: 40px 20px;
+
+                    @media (min-width: 768px) {
+                        &:first-child {
+                            margin-left: calc((((100vw - (30px * 23)) / 24) * 3) + (30px * 3));
+                        }
+                      }
+                    
                 }
                 
             }
