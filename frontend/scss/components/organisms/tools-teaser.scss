@@ -22,7 +22,7 @@ The tools cards on the tools page and in widget form.
 
 @import '../templates/_default';
 
-.#{template('tools')} {
+main.#{template('tools')} {
 
     .#{organism('tool-section')} {
   
@@ -123,6 +123,7 @@ The tools cards on the tools page and in widget form.
         grid-template-columns: 1fr;
         grid-gap: 60px 30px;
         margin: 0 40px;
+        align-items: stretch;
   
         @media (min-width: 768px) {
           grid-template-columns: repeat(12, 1fr);
@@ -217,6 +218,38 @@ The tools cards on the tools page and in widget form.
   
         }
       }
+    }
+
+    /* overrides for tools widget (doesn't apply to standalone tools page) */
+    .ap--content {
+        margin-bottom: 2em;
+    }
+
+    .ap--tools-widget {
+
+        margin-bottom: 0;
+
+        .#{organism('teaser-grid')} {
+
+            margin-bottom: 0;
+
+            &-list {
+
+                display: flex;
+                overflow: auto;
+                margin: -40px -20px;
+
+                .#{molecule('teaser')} {
+                    display: flex;
+                    margin: 40px 20px;
+                }
+                
+            }
+        }
+    }
+
+    .#{organism('component-visual-link')} {
+        grid-column: 4 / 25;
     }
   
   }

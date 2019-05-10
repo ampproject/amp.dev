@@ -315,7 +315,7 @@ templates:
   </div>
 </section>
 
-<section class="ap--stories-monetize ap--container-fluid" id="monetization">
+<section class="ap--content ap--stories-monetize ap--container-fluid" id="monetization">
   <div class="ap-m-copy ap-m-copy-left-small">
     <h1>AMP Stories <br />Monetization Options</h1>
     <h4>Single Page Story Ad</h4>
@@ -324,7 +324,7 @@ templates:
   </div>
 </section>
 
-<section class="ap--monetize-carousel ap--container-fluid">
+<section class="ap--content ap--monetize-carousel ap--container-fluid">
 
   <div class="ap-o-story-carousel monetize">
     <amp-carousel
@@ -426,4 +426,6 @@ templates:
   </div>
 </section>
 
+{% with format = 'stories', group = 'creation' %}
 {% include 'views/partials/tools-widget.j2' %}
+{% endwith %}
