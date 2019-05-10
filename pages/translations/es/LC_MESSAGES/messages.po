@@ -170,7 +170,7 @@ msgstr "Documentos"
 #: /views/partials/breadcrumbs.j2:29 /views/partials/breadcrumbs.j2:41
 #: /views/partials/breadcrumbs.j2:53
 msgid "Documentation"
-msgstr "Documentaci�n"
+msgstr "Documentación"
 
 #: /content/amp-dev/documentation/templates/index.html:19
 msgid "Easily build user first websites with our templates"
@@ -333,7 +333,7 @@ msgstr ""
 
 #: /views/partials/footer.j2:40
 msgid "Overview"
-msgstr "Descripci�n general "
+msgstr "Descripción general"
 
 #: /content/amp-dev/about/stories.html
 msgid "PCGamesN"
