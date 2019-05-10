@@ -35,6 +35,12 @@
 
 .#{molecule('format-toggle')} {
   margin-left: 0;
+
+  &-link {
+    &.active {
+      display: none;
+    }
+  }
 }
 
 main {
