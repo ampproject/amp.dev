@@ -3,15 +3,13 @@
 
   <div class="ap-o-fragment-slider-textslide active" [class]="selected.slide == 1 ? 'ap-o-fragment-slider-textslide active' : 'ap-o-fragment-slider-textslide'">
     <h3 class="ap-o-fragment-slider-preheadline">E-Commerce</h3>
-    <h2 class="ap-o-fragment-slider-headline">Campmor</h2>
+    <h2 class="ap-o-fragment-slider-headline">AMP Camp</h2>
     <div class="copy copy-right ap--content">
 
-      <p>AMP does not only shine for content pages but is also capable of powering full-blown e-commerce experiences.</p>
-
-      <p><code>amp-bind</code> is what brings this demo to life with the help of a lot of other AMP components that support dynamic content.</p>
-
+      <p>AMP shines for content pages. But it can also power e-commerce experiences.</p>
+      <p>To learn more, we built a simple yet fully functional e-commerce site of our very own! Check out the site, and look at the code to learn about the best practices we discovered to build a great interactive experience on your domain and on AMP caches alike.</p>
       <div class="ap-o-fragment-slider-component-list">
-      {% for component in ['amp-list', 'amp-mustache', 'amp-bind', 'amp-sidebar', 'amp-selector'] %}
+      {% for component in ['amp-list', 'amp-mustache', 'amp-bind', 'amp-form', 'amp-sidebar', 'amp-selector'] %}
         <a class="ap-o-fragment-slider-component" href="{{ g.doc('/content/amp-dev/documentation/components/reference/' + component + '.md', locale=doc.locale).url.path }}"><code>{{ component }}</code></a>
         {% endfor %}
       </div>

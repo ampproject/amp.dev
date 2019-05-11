@@ -77,10 +77,10 @@ function sh(string, ...params) {
 
 function extractOptions(params) {
   if (isString(params[0])) {
-    return Object.assign(DEFAULT_OPTIONS, params[1] || {});
+    return Object.assign({}, DEFAULT_OPTIONS, params[1] || {});
   }
 
-  return Object.assign(DEFAULT_OPTIONS, params[0] || {});
+  return Object.assign({}, DEFAULT_OPTIONS, params[0] || {});
 }
 
 function isString(obj) {

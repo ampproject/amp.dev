@@ -2,8 +2,6 @@
 $title: 기여하는 법
 $order: 0
 $path: /contribute/
-$localization:
-  path: /{locale}/{base}/
 ---
 
 AMP Project는 여러분이 AMP와 관련된 서비스의 제공자거나 콘텐츠 작성자, 개발자던 상관없이 커뮤니티의 모든 멤버의 도움 없이는 불가능합니다. 여러분이 기여할 수 있는 방법은 다양합니다.

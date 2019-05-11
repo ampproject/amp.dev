@@ -4,8 +4,8 @@ creation:
     url: https://makestories.io/
     image:
       src: /static/img/tools/makestories.jpg
-      width: 1280
-      height: 720
+      width: 701
+      height: 393
     formats:
       - stories
   - name: Adobe Animate
@@ -13,9 +13,9 @@ creation:
     description: The AMPHTML Ad plugin for Adobe Animate allows the creation of rich, eye-catching marketing content with Adobe Animate.
     url: https://www.adobeexchange.com/creativecloud.details.101647.amphtml-ad.html
     image:
-      src: https://www.adobe.com/content/dam/acom/en/products/animate/max2017/images/an-Riverflow-1-720x520.jpg
-      width: 720
-      height: 520
+      src: /static/img/tools/adobe_animate.jpg
+      width: 700
+      height: 506
     formats:
       - ads
   - name: AMP Stories for WordPress (Beta)
@@ -23,9 +23,9 @@ creation:
     description: The AMP for WordPress plugin now comes with a fully integrated story editor.
     url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
     image:
-      src: https://user-images.githubusercontent.com/4063887/56274742-49765500-613a-11e9-9131-688c0c82b591.png
-      width: 1224
-      height: 702
+      src: /static/img/tools/amp_stories_for_wordpress.jpg
+      width: 700
+      height: 402
     formats:
       - stories
   - name: Newsroom AI
@@ -41,9 +41,9 @@ creation:
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en
     image:
-      src: https://lh3.googleusercontent.com/Me5Rr4vJ2ldYICzSs6P1P9HTAxe9hFat9sAqTUmz59M9aSfNZsV6Csrs4TofjZYEiKY=w895
-      width: 895
-      height: 702
+      src: /static/img/tools/google_web_designer.jpg
+      width: 700
+      height: 549
     formats:
       - ads
   - name: Jumprope
@@ -59,9 +59,9 @@ creation:
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
     url: http://tick.co/
     image:
-      src: https://media.tick.co/images/web/create.jpg
-      width: 1000
-      height: 581
+      src: /static/img/tools/amp-story-tick.jpg
+      width: 700
+      height: 407
     formats:
       - stories
 platforms:
@@ -70,9 +70,9 @@ platforms:
     description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
     url: https://search.google.com/search-console/about
     image:
-      src: /static/img/tools/search_console.png
-      width: 5
-      height: 3
+      src: /static/img/tools/search_console.jpg
+      width: 700
+      height: 407
     formats:
       - websites
       - stories
@@ -103,8 +103,8 @@ platforms:
     url: https://amp-wp.org/
     image:
       src: /static/img/tools/amp_for_wordpress.jpg
-      width: 1024
-      height: 730
+      width: 700
+      height: 499
     formats:
       - websites
       - stories
@@ -154,9 +154,9 @@ developer:
     description: A collection of AMP tools making it easier to publish and host AMP pages.
     url: https://github.com/ampproject/amp-toolbox
     image:
-      src: https://user-images.githubusercontent.com/380472/36001450-96cfbce2-0d26-11e8-8b65-4ffc3182d57c.gif
-      width: 904
-      height: 680
+      src: /static/img/tools/amp_toolbox.jpg
+      width: 700
+      height: 527
     formats:
       - websites
   - name: AMP Bench
@@ -176,9 +176,9 @@ developer:
     description: Pre-built Google Analytics dashboard template that helps you get to your analytics insights faster.
     url: http://bit.ly/amp-insights
     image:
-      src: /static/img/tools/insights.png
-      width: 1000
-      height: 550
+      src: /static/img/tools/amp-insights.jpg
+      width: 700
+      height: 386
     formats:
       - websites
   - name: AMP Readiness
