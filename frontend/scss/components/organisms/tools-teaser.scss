@@ -245,6 +245,7 @@ main.#{template('tools')} {
                 .#{molecule('teaser')} {
                     display: flex;
                     margin: 40px 20px;
+                    max-width: 300px;
 
                     @media (min-width: 768px) {
                         &:first-child {

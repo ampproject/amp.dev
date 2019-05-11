@@ -224,6 +224,11 @@
 
   .#{utility('stage')} {
     .#{organism('stage')} {
+
+      &-content-button {
+        margin-right: 0.5em;
+      }
+
       @media (max-width: 767px) {
         margin-bottom: 50px;
 

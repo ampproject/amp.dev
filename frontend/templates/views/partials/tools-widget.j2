@@ -6,7 +6,7 @@
 <section class="ap--content">
   <div class="ap--container-fluid">
     <div class="ap-m-copy ap-m-copy-left-small">
-      <h1>Start creating {{ format }}</h1>
+      <h1 id="tools">{% if format == 'email' %}Start sending AMP Emails{% else %}Start creating {{ format }}{% endif %}</h1>
       <h5>Pick one of several editors to start creating {{ format }} without any coding involved.</h5>
     </div>
   </div>
