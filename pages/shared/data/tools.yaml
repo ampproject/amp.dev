@@ -80,9 +80,9 @@ platforms:
     description: Test if and how your AMP page appears in Google Search.
     url: https://search.google.com/test/amp
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
+      src: /static/img/tools/google_amp_test.jpg
+      width: 925
+      height: 582
     formats:
       - websites
       - stories
@@ -91,9 +91,9 @@ platforms:
     description: Draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
     url: https://developers.google.com/gmail/ampemail/testing-dynamic-email
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
+      src: /static/img/tools/gmail_playground.png
+      width: 1000
+      height: 619
     formats:
       - email
   - name: AMP for WordPress
@@ -113,7 +113,7 @@ developer:
     official: true
     type: essential
     description: Essential component for AMP development and available in a variety of versions.
-    url: http://localhost:8080/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
+    url: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
     image:
       src: /static/img/docs/tools/ampvalidator.jpg
       width: 782
