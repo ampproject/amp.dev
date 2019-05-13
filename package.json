@@ -78,7 +78,7 @@
     "amp-toolbox-optimizer": "0.5.3",
     "amp-toolbox-runtime-version": "0.2.7",
     "babel-eslint": "10.0.1",
-    "babel-loader": "8.0.5",
+    "babel-loader": "8.0.6",
     "clean-css": "4.2.1",
     "clean-webpack-plugin": "2.0.2",
     "closure-webpack-plugin": "2.0.1",
