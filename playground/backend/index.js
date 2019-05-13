@@ -16,7 +16,7 @@
 
 const path = require('path');
 const express = require('express');
-const {setImmutable} = require('../../platform/lib/utils/cacheHelpers.js');
+const {setImmutable} = require('@lib/utils/cacheHelpers.js');
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
@@ -27,7 +27,11 @@ playground.use(express.static(
       setHeaders: setCustomCacheControl,
     },
 ));
+
 playground.use('/api', require('./api.js'));
+
+playground.use( require('./resourceFallbackHandler.js'));
+
 
 function setCustomCacheControl(response, path) {
   // playground assets are versioned
