@@ -1,7 +1,7 @@
 {% do doc.styles.addCssFile('/css/components/organisms/burger-menu.css') %}
 
-{% macro active_class(tested_doc, depth=3) -%}
-{% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ap-m-nav-link-active{% endif %}
+{% macro active_class(search_path) -%}
+{% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}
 {%- endmacro %}
 
 <label class="ap-o-burger-menu-label" on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})" [class]="mainmenuopen ? 'ap-o-burger-menu-label mainmenuopen' : 'ap-o-burger-menu-label'" for="burger-menu" tabindex="0" role="button" aria-label="{{ _('Burger Menu') }}">
@@ -16,23 +16,24 @@
     {# Sections #}
     {# Top level sections, defined by their top collection and landing page #}
     {% set sections = [
-      (g.collection('/content/amp-dev/about/'), g.doc('/content/amp-dev/about/websites.html', locale=doc.locale)),
-      (g.collection('/content/amp-dev/documentation/'), g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale)),
-      (g.collection('/content/amp-dev/community/'), g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale)),
-      (g.collection('/content/amp-dev/events/'), g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale)),
+      (g.collection('/content/amp-dev/about/'), None),
+      (g.collection('/content/amp-dev/documentation/'), None),
+      (g.collection('/content/amp-dev/community/'), None),
+      (g.collection('/content/amp-dev/events/'), None),
       ('external', ('Blog', 'https://blog.amp.dev')),
       (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
     ] %}
 
-    {% for section, section_index in sections %}
+    {% for section, homepage in sections %}
     <li class="ap-o-burger-menu-item">
-      {# If the section has only one child it shouldn't be collapsable #}
-      {% if not section or not section.flyout or section == 'external' %}
-      <a class="ap-o-burger-menu-link ap-m-nav-link {{ '' if section == 'external' else active_class(section_index) }}" href="{{ section_index[1] if section == 'external' else section_index.url.path }}">
-        {{ section_index[0] if section == 'external' else section.title or section_index.title }}
+      {% if section == 'external' %}
+      <a class="ap-o-burger-menu-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
+      {% elif not section and homepage %}
+      <a class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path}}">
+        {{ homepage.titles('navigation') }}
       </a>
       {% else %}
-      <label class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section_index) }}">
+      <label class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section.pod_path) }}">
         {{ section.title }}
       </label>
       <input class="ap-o-burger-menu-item-trigger" type="checkbox" aria-label="{{ section.title }}"/>
@@ -41,12 +42,12 @@
         {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
         <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
       </span>
-      {# Section's sub level navigation if that's the current section #}
+
       <ul class="ap-o-burger-menu-items">
         {% for path in section.flyout %}
         <li class="ap-o-burger-menu-item">
           {% set second_level_doc = g.doc(path, locale=doc.locale) %}
-          <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc, depth=4) }}" href="{{ second_level_doc.url.path }}">
+          <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc.pod_path) }}" href="{{ second_level_doc.url.path }}">
             {{ second_level_doc.titles('navigation') }}
           </a>
         </li>
