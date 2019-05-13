@@ -138,8 +138,8 @@
     <section class="config">
       <h3>Select Format</h3>
       <p>What do you want to build with AMP?</p>
-      <div class="ap-m-format-toggle">
-        <button class="ap-m-format-toggle-selected ap-m-format-toggle-link-websites" [class]="'ap-m-format-toggle-selected ap-m-format-toggle-link-' + config.format">
+      <div class="ap-m-format-toggle" [class]="'ap-m-format-toggle ' + (config.open ? 'open' : '')">
+        <button class="ap-m-format-toggle-selected ap-m-format-toggle-link-websites" [class]="'ap-m-format-toggle-selected ap-m-format-toggle-link-' + config.format" on="tap:AMP.setState({config: {open: !config.open}})">
           <span class="ap-a-ico">
             <svg>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites" [hidden]="config.format != 'websites'"></use>
@@ -160,7 +160,8 @@
             on="tap:AMP.setState({
                 config: {
                   format: '{{id}}',
-                  changed: true
+                  changed: true,
+                  open: false
                 }
               })"
               role="button"
