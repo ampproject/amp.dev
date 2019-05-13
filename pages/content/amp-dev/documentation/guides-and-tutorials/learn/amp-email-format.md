@@ -288,11 +288,11 @@ Content-Type: text/x-amp-html; charset="UTF-8"
 Hello World in AMP!
 </body>
 </html>
---001a114634ac3555ae05525685ae--
+--001a114634ac3555ae05525685ae
 Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
---001a114634ac3555ae05525685ae
+--001a114634ac3555ae05525685ae--
 [/sourcecode]
 
 ## Feedback & Support
