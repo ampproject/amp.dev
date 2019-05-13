@@ -35,6 +35,16 @@
 
 .#{molecule('format-toggle')} {
   margin-left: 0;
+  max-width: 240px;
+
+  .#{molecule('format-toggle')}-angle {
+    transition: all 0.2s ease;
+    transition-delay: 0.05s;
+  }
+
+  &.open .#{molecule('format-toggle')}-angle {
+    transform: rotate(-180deg);
+  }
 
   &-link {
     &.active {
