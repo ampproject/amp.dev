@@ -28,10 +28,52 @@
   pre {
     max-height: 100%;
   }
+  code {
+    @include txt-mono;
+  }
 }
 
 .#{molecule('format-toggle')} {
   margin-left: 0;
+  max-width: 240px;
+
+  .#{molecule('format-toggle')}-angle {
+    transition: all 0.2s ease;
+    transition-delay: 0.05s;
+  }
+
+  &.open .#{molecule('format-toggle')}-angle {
+    transform: rotate(-180deg);
+  }
+
+  &-link {
+    &.active {
+      display: none;
+    }
+  }
+
+  &-link,
+  &-selected {
+    line-height: 2rem;
+    font-size: 16px;
+  }
+
+  &-formats {
+    .#{molecule('format-toggle')}-selected:focus + &,
+    .#{molecule('format-toggle')}-selected:hover + &,
+    &:focus-within,
+    &:hover {
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    .#{molecule('format-toggle')}.open & {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 main {

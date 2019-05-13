@@ -19,6 +19,9 @@
   }
 
   &-selected {
+    .amp-mode-touch & {
+      position: relative;
+    }
     border: 0;
 
     &:focus, &:hover {
