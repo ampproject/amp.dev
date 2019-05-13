@@ -17,6 +17,7 @@
 'use strict';
 
 const nunjucks = require('nunjucks');
+const {resolve} = require('url');
 const {join} = require('path');
 const utils = require('@lib/utils');
 const config = require('@lib/config.js');
@@ -149,7 +150,7 @@ class SampleRenderer {
    */
   appendIndexHtml_(string) {
     if (!string.endsWith('/index.html')) {
-      string = join(string, 'index.html');
+      string = resolve(string, 'index.html');
     }
     return string;
   }
