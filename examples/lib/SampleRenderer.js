@@ -28,7 +28,7 @@ const readFileAsync = promisify(fs.readFile);
 
 const PREFIX_EXAMPLES = '/documentation/examples';
 const DIR_SOURCES = utils.project.absolute('/dist/examples/sources/');
-const DIR_DOCS = utils.project.absolute('/platform/pages/');
+const DIR_DOCS = utils.project.paths.PAGES_DEST;
 
 /**
  * Enables server-side-rendering of samples. It'll automatically render
@@ -148,10 +148,13 @@ class SampleRenderer {
    * @private
    */
   appendIndexHtml_(string) {
-    if (!string.endsWith('/index.html')) {
-      string = join(string, 'index.html');
+    if (string.endsWith('/index.html')) {
+      return string;
     }
-    return string;
+    if (!string.endsWith('/')) {
+      string += '/';
+    }
+    return string + 'index.html';
   }
 
   /**
