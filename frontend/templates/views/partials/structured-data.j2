@@ -1,8 +1,8 @@
 {# Set needed data for all meta tags #}
 {% set description = doc.description or (doc.teaser.text if doc.teaser else None) %}
 {% set title = doc.title %}
-{% set base_url = doc.pod.podspec.base_urls.platform %}
-{% set canonical = doc.pod.podspec.base_urls.platform + doc.url.path %}
+{% set base_url = podspec.base_urls.platform %}
+{% set canonical = doc.url %}
 
 {# Alter sharing image and title prefix based on template and/or maintained data #}
 {% if doc.sharing_images %}
