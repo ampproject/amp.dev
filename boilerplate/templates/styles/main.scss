@@ -42,6 +42,12 @@
     }
   }
 
+  &-link,
+  &-selected {
+    line-height: 2rem;
+    font-size: 16px;
+  }
+
   &-formats {
     .#{molecule('format-toggle')}-selected:focus + &,
     .#{molecule('format-toggle')}-selected:hover + &,
