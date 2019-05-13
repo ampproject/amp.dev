@@ -43,13 +43,13 @@
 
     <meta name="theme-color" content="#005af0"/>
 
-    <link rel="canonical" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.url.path }}"/>
-    <link rel="alternate" hreflang="x-default" href="{{ doc.pod.podspec.base_urls.platform }}{{ doc.localize(podspec.default_locale).url.path }}"/>
+    <link rel="canonical" href="{{ doc.url }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
     {% for locale in doc.locales if not locale == doc.locale  %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
-    <link rel="alternate" hreflang="{{ locale }}" href="{{ doc.pod.podspec.base_urls.platform }}{{ localized_doc.url.path }}"/>
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}"/>
     {% endif %}
     {% endfor %}
 
