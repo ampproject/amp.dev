@@ -224,6 +224,11 @@
 
   .#{utility('stage')} {
     .#{organism('stage')} {
+
+      &-content-button {
+        margin-right: 0.5em;
+      }
+
       @media (max-width: 767px) {
         margin-bottom: 50px;
 
@@ -245,6 +250,10 @@
     }
   }
 
+  /* raise specificity to override some tools widget styles */
+  .ap--tools-widget div.#{organism('teaser-grid')} {
+    grid-column: 4 / 25;
+  }
 
   .#{organism('teaser-grid')} {
     grid-column: 4 / 22;

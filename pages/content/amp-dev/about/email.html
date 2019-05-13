@@ -28,8 +28,9 @@ benefits: !g.yaml /shared/data/benefits.yaml
           <h1 class="ap-o-stage-content-headline">Use AMP to send interactive, dynamic emails.</h1>
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email.md', locale=doc.locale).url.path }}?format=email" class="ap-o-stage-content-button ap-a-btn">Get started</a>
-      </div>
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email.md', locale=doc.locale).url.path }}?format=email" class="ap-o-stage-content-button ap-a-btn">Start developing</a>
+          <a href="#stories" class="ap-o-stage-content-button ap-a-btn">Send emails</a>
+        </div>
     </div>
   </div>
 
@@ -163,3 +164,7 @@ benefits: !g.yaml /shared/data/benefits.yaml
 
   </div>
 </section>
+
+{% with format = 'email', group = 'platforms' %}
+{% include 'views/partials/tools-widget.j2' %}
+{% endwith %}
