@@ -280,9 +280,9 @@ class SamplesBuilder {
     const format = this._getSampleFormat(parsedSample);
     const formatCategories = this._sitemap[format] || {};
 
-    const category = parsedSample.category().publicName;
-    const categorySamples = formatCategories[category] || {
-      'name': category,
+    const category = require(path.join(SAMPLE_SRC, this._getCategory(sample, true), 'index.json'));
+    const categorySamples = formatCategories[category.publicName] || {
+      'name': category.publicName,
       'examples': [],
     };
     categorySamples.examples.push({
