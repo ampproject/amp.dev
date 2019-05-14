@@ -189,7 +189,7 @@ function setupBuild(done) {
       gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll),
       // TODO: Fix working but malformatted references before reenabling
       // test.lintGrow,
-      async () => {
+      async function storeArtifcats() {
         if (!travis.onTravis() ||
             (travis.repo.branch && !BUILDING_BRANCHES.includes(travis.repo.branch))) {
           return;
