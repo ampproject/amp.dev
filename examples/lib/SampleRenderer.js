@@ -87,11 +87,11 @@ class SampleRenderer {
     const samplePath = this.removeQuery_(request.originalUrl.substring(PREFIX_EXAMPLES.length));
     // If it's a preview request, load the source template
     if (request.protocol + '://' + request.get('host') === config.hosts.preview.base) {
-      const sourcePath = join(DIR_SOURCES, samplePath.replace('/index.html', '.html'));
-      return Templates.get('source', () => readFileAsync(sourcePath, 'utf-8'));
+      const sourcePath = join(DIR_SOURCES, samplePath + '.html');
+      return Templates.get(sourcePath, () => readFileAsync(sourcePath, 'utf-8'));
     }
     // else load the documentation template
-    return Templates.get('documentation', () => {
+    return Templates.get(samplePath, () => {
       if (config.isDevMode()) {
         // fetch doc from proxy
         return this.fetchSampleDoc_(samplePath);
