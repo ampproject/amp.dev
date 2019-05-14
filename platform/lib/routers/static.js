@@ -17,13 +17,14 @@
 'use strict';
 
 const express = require('express');
-const {setMaxAge} = require('../utils/cacheHelpers.js');
-const config = require('../config.js');
+const {setMaxAge} = require('@lib/utils/cacheHelpers');
+const config = require('@lib/config');
+const project = require('@lib/utils/project');
 
 // eslint-disable-next-line new-cap
 const staticRouter = express.Router();
 
-staticRouter.use('/static', express.static('static'));
+staticRouter.use('/static', express.static(project.paths.STATICS_DEST));
 
 if (config.isProdMode()) {
   staticRouter.use('/', express.static('static/sitemap'));
@@ -32,26 +33,26 @@ if (config.isProdMode()) {
 staticRouter.get('/serviceworker.js', (request, response) => {
   setMaxAge(response, 0, 60 * 10);
   response.status(200)
-      .sendFile('serviceworker.js', {root: 'static'});
+      .sendFile('serviceworker.js', {root: project.paths.STATICS_DEST});
 });
 
 staticRouter.get('/serviceworker.html', (request, response) => {
   setMaxAge(response, 60 * 60 * 24);
   response.status(200)
-      .sendFile('serviceworker.html', {root: 'static'});
+      .sendFile('serviceworker.html', {root: project.paths.STATICS_DEST});
 });
 
 staticRouter.get('/robots.txt', (request, response) => {
   setMaxAge(response, 60 * 60);
   const robotsFile = config.isProdMode() ? 'robots/prod.txt' : 'robots/staging.txt';
   response.status(200)
-      .sendFile(robotsFile, {root: 'static'});
+      .sendFile(robotsFile, {root: project.paths.STATICS_DEST});
 });
 
 staticRouter.get('/manifest.json', (request, response) => {
   setMaxAge(response, 60 * 60 * 24);
   response.status(200)
-      .sendFile('manifest.json', {root: 'static'});
+      .sendFile('manifest.json', {root: project.paths.STATICS_DEST});
 });
 
 module.exports = staticRouter;

@@ -18,16 +18,29 @@
 
 const signale = require('signale');
 const fs = require('fs');
-const mri = require('mri');
+const options = require('mri')(process.argv.slice(2));
 const yaml = require('js-yaml');
 const utils = require('@lib/utils');
 
 const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
-const GROW_OUT_DIR = utils.project.absolute('platform/pages');
 
 const ENV_DEV = 'development';
 const ENV_PROD = 'production';
+const AVAILABLE_LOCALES = [
+  'en',
+  'fr',
+  'ar',
+  'es',
+  'it',
+  'id',
+  'ja',
+  'ko',
+  'pt_BR',
+  'ru',
+  'tr',
+  'zh_CN',
+];
 
 class Config {
   constructor(environment = ENV_DEV) {
@@ -48,14 +61,7 @@ class Config {
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
     // Globally initialize command line arguments for use across all modules
-    this.options = mri(process.argv.slice(2));
-
-    // Synchronously write podspec for Grow to run flawlessly later in pipeline.
-    try {
-      this._configureGrow();
-    } catch (err) {
-      // writes are not permitted on GAE or in a container
-    }
+    this.options = options;
   }
 
   /**
@@ -94,27 +100,9 @@ class Config {
    * Builds a podspec for the current environment and writes it to the Grow pod
    * @return {undefined}
    */
-  _configureGrow() {
+  configureGrow() {
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
     podspec = yaml.safeLoad(podspec);
-
-    // Force-enable all languages during development
-    if (this.isDevMode()) {
-      podspec.localization.locales = [
-        'en',
-        'fr',
-        'ar',
-        'es',
-        'it',
-        'id',
-        'ja',
-        'ko',
-        'pt_BR',
-        'ru',
-        'tr',
-        'zh_CN',
-      ];
-    }
 
     // Add environment specific information to configuration needed for URLs
     podspec['env'] = {
@@ -144,16 +132,39 @@ class Config {
       'default': {
         'name': 'default',
         'destination': 'local',
-        'out_dir': GROW_OUT_DIR,
+        'out_dir': utils.project.paths.GROW_BUILD_DEST,
         'env': podspec['env'],
       },
     };
 
-    fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podspec, {'noRefs': true}));
-    signale.success('Configured Grow!');
+    podspec.localization.locales = AVAILABLE_LOCALES;
+    // Check if specific languages have been configured to be built
+    if (this.options.locales) {
+      const locales = this.options.locales.split(',');
+      if (!locales.every((locale) => AVAILABLE_LOCALES.includes(locale))) {
+        signale.fatal('Invalid set of locales given:', this.options.locales);
+        signale.info('Available locales are', AVAILABLE_LOCALES.join(', '));
+        process.exit(1);
+      }
+
+      podspec.deployments.default['filters'] = {
+        'type': 'whitelist',
+        'locales': locales,
+      };
+
+      signale.info('Only building locales', this.options.locales);
+    }
+
+    try {
+      fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podspec, {'noRefs': true}));
+      signale.success('Configured Grow!');
+    } catch (err) {
+      signale.fatal('Could not configure Grow', err);
+      process.exit(1);
+    }
   }
 }
 
-const config = new Config(process.env.APP_ENV || process.env.NODE_ENV);
+const config = new Config(options.env || process.env.APP_ENV || process.env.NODE_ENV);
 
 module.exports = config;

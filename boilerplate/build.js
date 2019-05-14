@@ -31,6 +31,7 @@ const generatorTemplate = io.readFile(INPUT_FILE);
 const config = initConfig();
 const generatorPage = templates.render(generatorTemplate, config);
 generateOptimizedAmpFiles(generatorPage);
+console.log('Built boilerplate generator.');
 
 function initConfig() {
   const config = {

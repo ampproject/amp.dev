@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const {execSync} = require('child_process');
 
-const project = require('./project.js');
-const travis = require('./travis.js');
 
-module.exports = {
-  'project': project,
-  'travis': travis,
-};
+module.exports.version = execSync('git log -1 --pretty=%H').toString().trim();
+module.exports.message = execSync('git log -1 --pretty=%B').toString().trim();
+module.exports.user = execSync('git config user.name').toString().trim();

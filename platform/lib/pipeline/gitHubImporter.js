@@ -49,6 +49,7 @@ class GitHubImporter {
       'secret': CLIENT_SECRET,
     });
   }
+
   /**
    * Downloads a path/document from GitHub and returns its contents
    * @param  {String} path Path to the file
@@ -58,6 +59,7 @@ class GitHubImporter {
   async fetchJson(filePath, repo=DEFAULT_REPOSITORY, master=false) {
     return this.fetchContents_(filePath, repo, master);
   }
+
   /**
    * Downloads a path/document from GitHub and returns its contents
    * @param  {String} path Path to the file

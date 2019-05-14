@@ -4,19 +4,6 @@ home: /content/amp-dev/index.html
 localization:
   root_path: /{locale}/
   default_locale: en
-  locales:
-  - en
-  - fr
-  - ar
-  - es
-  - it
-  - id
-  - ja
-  - ko
-  - pt_BR
-  - ru
-  - tr
-  - zh_CN
 
 sitemap:
   enabled: yes
