@@ -163,8 +163,8 @@ https://amp.dev/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. https://amp.dev/documentation/components/reference/amp-img.html
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. https://amp.dev/documentation/components/reference/amp-ad.html
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. https://amp.dev/documentation/components/amp-img.html
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. https://amp.dev/documentation/components/amp-ad.html
 ...
 [/sourcecode]
 

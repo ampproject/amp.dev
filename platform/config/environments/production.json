@@ -34,6 +34,12 @@
       "host": "amp.dev",
       "port": ""
     },
+    "log": {
+      "scheme": "https",
+      "subdomain": "log",
+      "host": "amp.dev",
+      "port": ""
+    },
     "packager": {
       "scheme": "http",
       "host": "ig-amp-dev-packager-n37h.c.amp-dev-230314.internal",

@@ -32,6 +32,7 @@ const routers = {
     embeds: require('@lib/routers/example/embeds.js'),
     api: require('@examples'),
   },
+  log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
   healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
@@ -113,6 +114,7 @@ class Platform {
   _configureSubdomains() {
     this.server.use(subdomain.map(config.hosts.playground, routers.playground));
     this.server.use(subdomain.map(config.hosts.go, routers.go));
+    this.server.use(subdomain.map(config.hosts.log, routers.log));
     // eslint-disable-next-line new-cap
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
       routers.example.embeds,
