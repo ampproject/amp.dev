@@ -21,8 +21,10 @@ const resourceFallbackHandler = require('@lib/routers/resourceFallbackHandler.js
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
+const BASE_DIR = path.join(__dirname, '../dist');
+
 playground.use(express.static(
-    path.join(__dirname, '../dist'),
+    BASE_DIR,
     {
       extensions: ['html'],
       setHeaders: setCustomCacheControl,
@@ -32,7 +34,7 @@ playground.use(express.static(
 playground.use('/api', require('./api.js'));
 
 // The fallback handler has to be last (kick in only if the request was not handled)
-playground.use( resourceFallbackHandler(path.join(__dirname, '../dist')));
+playground.use( resourceFallbackHandler(BASE_DIR));
 
 
 function setCustomCacheControl(response, path) {
