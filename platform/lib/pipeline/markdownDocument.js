@@ -67,6 +67,10 @@ class MarkdownDocument {
     this._frontmatter['$category@'] = category;
   }
 
+  get formats() {
+    return this._frontmatter['formats'] || [];
+  }
+
   set formats(formats) {
     this._frontmatter['formats'] = formats;
   }
