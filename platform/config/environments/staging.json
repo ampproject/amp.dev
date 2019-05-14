@@ -34,6 +34,12 @@
       "host": "appspot.com",
       "port": ""
     },
+    "log": {
+      "scheme": "https",
+      "subdomain": "log-dot-amp-dev-staging",
+      "host": "appspot.com",
+      "port": ""
+    },
     "packager": {
       "scheme": "https",
       "host": "amp-dev-sxg.appspot.com",
