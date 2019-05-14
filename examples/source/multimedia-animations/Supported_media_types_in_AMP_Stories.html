@@ -91,18 +91,13 @@ skipValidation: 'true'
       </amp-story-page>
       <!-- Note that `amp-video` extension has different validation rules when used within an AMP Story—both the `autoplay` and `poster` attributes are required. -->
 
-      <!-- ## amp-audio -->
-      <!-- You can playback audio using the [`amp-audio`](/documentation/components/amp-audio) component. Usually it's better to use instead the [`background-audio`](/documentation/components/amp-story#background-audio-[optional]_1) attribute on the `amp-story-page` element.-->
-      <amp-story-page id="amp-audio">
-        <amp-story-grid-layer template="fill">
-          <amp-audio width="auto"
-                     height="50"
-                     autoplay
-                     src="https://ia801402.us.archive.org/16/items/EDIS-SRP-0197-06/EDIS-SRP-0197-06.mp3">
-          </amp-audio>
-        </amp-story-grid-layer>
+      <!-- ## background-audio -->
+      <!-- You can playback audio for a single `amp-story-page` using the [`background-audio`](/documentation/components/amp-story#background-audio-[optional]_1) attribute on the `amp-story-page` element. This attribute can also be applied to the `amp-story` element to playback audio across an [`amp-story`](/documentation/components/amp-story#background-audio-[optional]).
+      -->
+      <amp-story-page id="background-audio"
+        background-audio="https://ia801402.us.archive.org/16/items/EDIS-SRP-0197-06/EDIS-SRP-0197-06.mp3">
         <amp-story-grid-layer template="thirds">
-          <h1 grid-area="upper-third">amp-audio</h1>
+          <h1 grid-area="upper-third">background-audio</h1>
         </amp-story-grid-layer>
       </amp-story-page>
 
