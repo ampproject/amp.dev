@@ -34,6 +34,12 @@
       "host": "localhost",
       "port": "8082"
     },
+    "log": {
+      "scheme": "http",
+      "subdomain": "go",
+      "host": "localhost",
+      "port": "8087"
+    },
     "packager": {
       "scheme": "https",
       "host": "amp-dev-sxg.appspot.com",
