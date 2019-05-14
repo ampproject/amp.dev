@@ -71,7 +71,8 @@
             width="38"
             height="38"
             class="large"
-            layout="intrinsic">
+            style="max-width: 38px"
+            layout="responsive">
           </amp-img>
           <span><strong>Written by <a href="https://github.com/{{ doc.author }}" rel="nofollow" target="_blank">@{{ doc.author }}</a></strong>{% if doc.contributors %}<br><small>with contributions from {% for contributor in doc.contributors %}{% if loop.last and not loop.first %}and {% endif %}<strong><a href="https://github.com/{{ contributor }}" rel="nofollow" target="_blank">{{ contributor }}</a></strong>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}</small>{% endif %}</span>
         </a>
@@ -84,6 +85,7 @@
             src="https://github.com/{{ doc.translator }}.png?size=38"
             width="38"
             height="38"
+            style="max-width: 38px"
             layout="intrinsic">
           </amp-img>
           <span>Translated by <strong>@{{ doc.translator }}</strong></span>
