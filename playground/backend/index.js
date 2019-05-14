@@ -17,6 +17,7 @@
 const path = require('path');
 const express = require('express');
 const {setImmutable} = require('@lib/utils/cacheHelpers.js');
+const resourceFallbackHandler = require('@lib/routers/resourceFallbackHandler.js');
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
@@ -30,7 +31,8 @@ playground.use(express.static(
 
 playground.use('/api', require('./api.js'));
 
-playground.use( require('./resourceFallbackHandler.js'));
+// The fallback handler has to be last (kick in only if the request was not handled)
+playground.use( resourceFallbackHandler(path.join(__dirname, '../dist')));
 
 
 function setCustomCacheControl(response, path) {
