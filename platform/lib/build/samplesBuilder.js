@@ -291,7 +291,7 @@ class SamplesBuilder {
           this._getSourceRoute(sample),
     });
 
-    formatCategories[category] = categorySamples;
+    formatCategories[category.publicName] = categorySamples;
     this._sitemap[format] = formatCategories;
   }
 
