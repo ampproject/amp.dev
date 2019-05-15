@@ -117,9 +117,9 @@ class Platform {
     this.server.use(subdomain.map(config.hosts.log, routers.log));
     // eslint-disable-next-line new-cap
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
+      routers.example.api,
       routers.example.embeds,
       routers.example.sources,
-      routers.example.api,
     ])));
   }
 
