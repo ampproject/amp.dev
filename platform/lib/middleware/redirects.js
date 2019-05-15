@@ -16,30 +16,53 @@
 
 'use strict';
 
-const {setHsts} = require('../utils/cacheHelpers.js');
-const {HEALTH_CHECK_PATH} = require('../routers/healthCheck.js');
+const {readFileSync} = require('fs');
+const {join} = require('path');
+const yaml = require('js-yaml');
+const config = require('@lib/config.js');
+const {setHsts} = require('@lib/utils/cacheHelpers.js');
+const {HEALTH_CHECK_PATH} = require('@lib/routers/healthCheck.js');
 
 const WWW_PREFIX = 'www.';
+
+const REDIRECT_LINKS_DEFINITION = join(__dirname, '../../config/amp-dev-redirects.yaml');
+const redirectLinks = yaml.safeLoad(readFileSync(REDIRECT_LINKS_DEFINITION));
+
 /**
  * Implements redirects:
  *
  * - http -> https
  * - www.amp.dev to amp.dev
+ * - amp.dev/[shortcut] to deeplink
  */
 module.exports = (req, res, next) => {
-  // don't redirect on localhost
-  if (req.hostname === 'localhost') {
-    return next();
-  }
   if (req.path === HEALTH_CHECK_PATH) {
     // it's critical that health checks don't redirect for GCE healthchecks to work correctly
     return next();
   }
+
+  const redirectTarget = redirectLinks[req.path];
+  if (redirectTarget) {
+    try {
+      const targetUrl = new URL(redirectTarget, config.hosts.platform.base);
+      res.redirect(targetUrl.toString());
+      return;
+    } catch (error) {
+      console.log('Unable to redirect to ' + redirectTarget, error);
+    }
+  }
+
+  // don't perform the other redirects on localhost
+  if (req.hostname === 'localhost') {
+    return next();
+  }
+
   // redirect www.amp.dev to amp.dev
   if (req.get('host').startsWith(WWW_PREFIX)) {
     res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
     return;
   }
+
   // redirect http to https
   setHsts(res);
   if (req.headers['x-forwarded-proto'] === 'https') {

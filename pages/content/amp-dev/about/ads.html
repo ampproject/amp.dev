@@ -39,8 +39,9 @@ kpis:
           <h1 class="ap-o-stage-content-headline">Use AMP to build and serve lightning fast, safe ads to pages and stories.</h1>
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md', locale=doc.locale).url.path }}?format=ads" class="ap-o-stage-content-button ap-a-btn">Get started</a>
-      </div>
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md', locale=doc.locale).url.path }}?format=ads" class="ap-o-stage-content-button ap-a-btn">Start developing</a>
+          <a href="#tools" class="ap-o-stage-content-button ap-a-btn">Explore tools</a>
+       </div>
     </div>
   </div>
 
@@ -260,3 +261,7 @@ kpis:
   </div>
 
 </section>
+
+{% with format = 'ads', group = 'creation' %}
+{% include 'views/partials/tools-widget.j2' %}
+{% endwith %}

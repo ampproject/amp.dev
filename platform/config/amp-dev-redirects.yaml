@@ -1,0 +1,23 @@
+# Redirects for amp.dev
+# External targets are possible
+#
+# The first section contains basic shortcuts
+# (For shortened deep links please use go.amp.dev/shortcut and the file 'go-links.yaml')
+#
+# The second part contains other redirects (e.g. moved pages)
+
+### Shortcuts
+# These shortcuts are intended for basic pages (not deeplinks)
+# Ensure you do not use shortcuts that would shadow real contents
+# Add new entries in alphabetical order
+/ads: /about/ads
+/docs: /documentation/guides-and-tutorials/
+/email: /about/email
+/learn: /documentation/courses/
+/samples: /documentation/examples/
+/stories: /about/stories
+/websites: /about/websites
+
+### Other redirects
+# Put here redirects for pages that have been moved, etc
+# Add new entries in alphabetical order

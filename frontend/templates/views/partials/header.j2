@@ -4,8 +4,8 @@
 {% endif %}
 
 {# Tests if one of the top level navigation items needs to be active #}
-{% macro active_class(tested_doc, depth=3) -%}
-{% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ap-m-nav-link-active{% endif %}
+{% macro active_class(search_path) -%}
+{% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}
 {%- endmacro %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
@@ -23,27 +23,23 @@
     <nav class="ap-o-header-main">
       {# Top level sections, defined by their top collection and landing page #}
       {% set sections = [
-        (g.collection('/content/amp-dev/about/'), g.doc('/content/amp-dev/about/websites.html', locale=doc.locale)),
-        (g.collection('/content/amp-dev/documentation/'), g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale)),
-        (g.collection('/content/amp-dev/community/'), g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale)),
-        (g.collection('/content/amp-dev/events/'), g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale)),
+        (g.collection('/content/amp-dev/about/'), None),
+        (g.collection('/content/amp-dev/documentation/'), None),
+        (g.collection('/content/amp-dev/community/'), None),
+        (g.collection('/content/amp-dev/events/'), None),
         ('external', ('Blog', 'https://blog.amp.dev')),
         (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
       ] %}
 
-      {% for section, section_index in sections %}
-      {# Special case for the blog #}
-      {% if section == 'external' %}
+      {% for section, homepage in sections %}
       <div class="ap-o-header-main-item">
-        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section_index[1] }}">{{ section_index[0] }}</a>
-      </div>
-      {% else %}
-      <div class="ap-o-header-main-item">
-        {% if not section.flyout %}
-        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section_index.url.path }}">{{ section.title or section_index.titles('navigation') }}</a>
+        {% if section == 'external' %}
+        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
+        {% elif not section %}
+        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path }}">{{ homepage.titles('navigation') }}</a>
         {% else %}
-        <button class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}">
-          {{ section.title or section_index.titles('navigation') }}
+        <button class="ap-o-header-main-link ap-m-nav-link {{ active_class(section.pod_path) }}">
+          {{ section.title }}
           <div class="ap-a-ico ap-o-header-main-link-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
@@ -79,7 +75,6 @@
         </ul>
         {% endif %}
       </div>
-      {% endif %}
       {% endfor %}
     </nav>
 

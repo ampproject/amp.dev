@@ -138,28 +138,42 @@
     <section class="config">
       <h3>Select Format</h3>
       <p>What do you want to build with AMP?</p>
-      <ul class="ap-m-format-toggle">
-        {{#formats}}
-        <li class="ap-m-format-toggle-format">
-          <div class="ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}" 
-             [class]="'ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} ' + (config.format == '{{id}}' ? 'active' : 'inactive')"
-          on="tap:AMP.setState({
-              config: {
-                format: '{{id}}',
-                changed: true
-              }
-            })"
-            role="button"
-            tabindex="0">
-            <div class="ap-a-ico">
-              <svg>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{id}}"></use>
-              </svg>
-            </div>AMP
-            <br>{{name}}</div>
-        </li>
-        {{/formats}}
-      </ul>
+      <div class="ap-m-format-toggle" [class]="'ap-m-format-toggle ' + (config.open ? 'open' : '')">
+        <button class="ap-m-format-toggle-selected ap-m-format-toggle-link-websites" [class]="'ap-m-format-toggle-selected ap-m-format-toggle-link-' + config.format" on="tap:AMP.setState({config: {open: !config.open}})">
+          <span class="ap-a-ico">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites" [hidden]="config.format != 'websites'"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-stories" hidden [hidden]="config.format != 'stories'"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-ads" hidden [hidden]="config.format != 'ads'"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-email" hidden [hidden]="config.format != 'email'"></use>
+            </svg>
+          </span>
+          <span [text]="config.format">websites</span>
+          <span class="ap-a-ico ap-m-format-toggle-angle">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+          </span>
+        </button>
+        <div class="ap-m-format-toggle-formats">
+          {{#formats}}
+            <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}" 
+              [class]="'ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} ' + (config.format == '{{id}}' ? 'active' : 'inactive')"
+            on="tap:AMP.setState({
+                config: {
+                  format: '{{id}}',
+                  changed: true,
+                  open: false
+                }
+              })"
+              role="button"
+              tabindex="0">
+              <span class="ap-a-ico">
+                <svg>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{id}}"></use>
+                </svg>
+              </span>{{id}}</a>
+          {{/formats}}
+        </div>
+      </div>
 
       <div [hidden]="config.format == 'email'">
       <h3>Select Features</h3>

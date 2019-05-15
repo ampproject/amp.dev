@@ -87,8 +87,9 @@ templates:
           <h1 class="ap-o-stage-content-headline">Use AMP to create visual stories on the web.</h1>
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path }}?format=stories" class="ap-o-stage-content-button ap-a-btn">Get started</a>
-      </div>
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path }}?format=stories" class="ap-o-stage-content-button ap-a-btn">Start developing</a>
+          <a href="#tools" class="ap-o-stage-content-button ap-a-btn">Tell a story</a>
+        </div>
     </div>
   </div>
 
@@ -315,7 +316,7 @@ templates:
   </div>
 </section>
 
-<section class="ap--stories-monetize ap--container-fluid" id="monetization">
+<section class="ap--content ap--stories-monetize ap--container-fluid" id="monetization">
   <div class="ap-m-copy ap-m-copy-left-small">
     <h1>AMP Stories <br />Monetization Options</h1>
     <h4>Single Page Story Ad</h4>
@@ -324,7 +325,7 @@ templates:
   </div>
 </section>
 
-<section class="ap--monetize-carousel ap--container-fluid">
+<section class="ap--content ap--monetize-carousel ap--container-fluid">
 
   <div class="ap-o-story-carousel monetize">
     <amp-carousel
@@ -425,3 +426,7 @@ templates:
     </a>
   </div>
 </section>
+
+{% with format = 'stories', group = 'creation' %}
+{% include 'views/partials/tools-widget.j2' %}
+{% endwith %}
