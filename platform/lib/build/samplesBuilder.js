@@ -418,7 +418,7 @@ class SamplesBuilder {
       '---',
       yaml.safeDump({
         '$$injectAmpDependencies': false,
-        '$title': parsedSample.document.title,
+        '$title': parsedSample.document.metadata.title || parsedSample.document.title,
         '$view': DOCUMENTATION_TEMPLATE,
         '$category': this._getCategory(sample, true),
         '$path': this._getDocumentationRoute(sample),
