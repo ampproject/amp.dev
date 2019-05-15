@@ -58,7 +58,7 @@
   "@type": "Webpage",
   "url": "{{ canonical}} ",
   "name": "amp.dev",
-  "headline":"{{ title }}",
+  "headline":"{{ title_prefix }}{{ title }}",
   {% if description %}
   "description":"{{ description }}",
   {% endif %}
@@ -89,12 +89,12 @@
 {% if description %}
 <meta name="twitter:description" content="{{ description }}">
 {% endif %}
-<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:title" content="{{ title_prefix }}{{ title }}">
 <meta name="twitter:creator" content="@ampproject">
 <meta name="twitter:site" content="@ampproject">
 <meta name="twitter:image" content="{{ base_url }}{{ sharing_images.wide }}">
 
-<meta property="og:title" content="{{ title }}">
+<meta property="og:title" content="{{ title_prefix }}{{ title }}">
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:image" content="{{ base_url }}{{ sharing_images.wide }}">
 <meta property="og:image:width" content="600">
