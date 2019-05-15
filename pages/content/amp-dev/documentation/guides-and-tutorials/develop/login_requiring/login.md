@@ -6,7 +6,7 @@ description: 'The first time you land on the page, you can see 2 comments and a 
 
 The first time you land on the [page]({{g.doc('/content/amp-dev/documentation/examples/previews/Comment_Section.html', locale=doc.locale).url.path}}), you can see 2 comments and a login button.
 
-<amp-img src="/static/img/login-button.png" alt="Login button" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
 If you look for the login button in the code, you will find:
 
@@ -57,7 +57,7 @@ The login page is a non-AMP page in which we populate the login and password val
 
 In the example below, the value for the `return` parameter is added to the request once you click the login button. You can explore this value by using the Chrome DevTools console and navigating to the Network tab.
 
-<amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
 Once the AMPByExample server receives the POST request from the login page and the login and password are correct, it redirects the request to the `returnURL` that we mentioned above, and appends the `#success=true` parameter. The AMP runtime can now authorize the page and finally allow you to add a comment.
 

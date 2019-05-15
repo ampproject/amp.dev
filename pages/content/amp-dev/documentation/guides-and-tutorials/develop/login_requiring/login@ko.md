@@ -4,7 +4,7 @@ $title: 로그인
 
 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼을 볼 수 있습니다.
 
-<amp-img src="/static/img/login-button.png" alt="Login button" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
 코드에서 로그인 버튼을 보면 아래와 같습니다:
 
@@ -59,7 +59,7 @@ $title: 로그인
 아래 예제에서, 로그인 버튼을 클릭하면 `return` 파라미터 값이 요청에 추가됩니다.
 Chrome DevTools 콘솔의 네트워크 탭을 사용하여 이 값을 탐색할 수 있습니다.
 
-<amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
 AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인 및 비밀번호가 맞으면 위에서 언급 한 returnURL로 요청을 리디렉션하고 `#success = true` 파라미터를 추가합니다.
 이제 AMP 런타임에서 페이지를 인증하고 드디어 댓글을 추가 할 수 있습니다.
