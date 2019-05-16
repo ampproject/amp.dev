@@ -56,7 +56,7 @@ For performance purposes, the packager should only be passed valid AMP documents
 
 ## Deploy packager to a staging server
 
-You should set Signed Exchanges up on a staging server to verify your setup correct before migrating to production.
+You should first set up Signed Exchanges on a staging server to verify your setup is correct before migrating to production.
 
 We recommend using [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md) to generate signed exchanges. However if this is not a good fit for your production environment you can instead use the command-line clients [`transform`](https://github.com/ampproject/amppackager/blob/master/transformer/README.md) and [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/master/go/signedexchange), and handle the content negotiation and certificate management tasks yourself.
 
@@ -66,7 +66,7 @@ The following instructions apply to the deployments using `amppackager`.
 
 [`amppackager`](https://github.com/ampproject/amppackager)'s config file (`amppkg.toml`) calls for a **CertFile** and a **KeyFile**.
 
-The **KeyFile** is the private key (`ampbyexample-packager.key` in the example above). It should look like this:
+The **KeyFile** is the private key (`ampbyexample-packager.key` in the example above), and it should have the following format. (Note: do not share your own private key, and protect it from inadvertent sharing!)
 
 ```txt
 -----BEGIN EC PARAMETERS-----
@@ -74,7 +74,7 @@ BggqhkjOPQMBBw==
 -----END EC PARAMETERS-----
 -----BEGIN EC PRIVATE KEY-----
 MHcCAQEEINDgf1gprbdD6hM1ttmRC9+tOqJ+lNRtHwZahJIXfLADoAoGCCqGSM49
-AwEHoUQDQgAEuVN1uONEEx/6OhyYu5PDsVGKdN3chhqVKtL9lQilW1r08qYeJlxp
+…
 4j1NY29jVmAMQYrBYb+6heiv6ok+8c/zJQ==
 -----END EC PRIVATE KEY-----
 ```
@@ -112,7 +112,7 @@ Ea8/B6hPatJ0ES8q/HO3X8IVQwVs1n3aAr0im0/T+Xc=
 Follow instructions [here to set up `amppackager` for your site](https://github.com/ampproject/amppackager/blob/master/README.md).
 
 [tip type="read-on"]
-See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) (used by `amp.dev`) for an example of the server-side changes you will need to make to route the required requests `amppkg`.
+See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) (used by `amp.dev`) for an example of the server-side changes you will need to make to route the required requests to `amppkg`.
 [/tip]
 
 ### Testing
@@ -120,10 +120,10 @@ See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/
 Verify that your staging site returns the content with the added MIME type `application/signed-exchange` when provided with the correct request headers. In the below example, replace `staging.example.com` with your staging server.
 
 ```sh
-$ curl -si -H 'amp-cache-transform: google' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/
+$ curl -si -H 'amp-cache-transform: google' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
 ```
 
-This command should return the following:
+This command should return this line (amongst others):
 
 ```txt
 content-type: application/signed-exchange;v=b3
@@ -133,12 +133,12 @@ content-type: application/signed-exchange;v=b3
 The `v=b3` version string is the current version. This version will change. 
 [/tip]
 
-The bulk of the response should be your AMP page (in plaintext) together with some binary headers and footers.
+The bulk of the response should be your AMP page (in plaintext). There's a small binary header, and, if the page is >16kb, a few binary bytes sprinkled throughout.
 
-You can also test with the more complicated accept header sent by Chrome:
+You can also test with the more complete accept header sent by Chrome:
 
 ```sh
-$ curl -si -H 'amp-cache-transform: google' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' https://staging.example.com/
+$ curl -si -H 'amp-cache-transform: google' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' https://staging.example.com/ | less
 ```
 
 The [`dump-signedexchange` tool](https://github.com/WICG/webpackage/blob/master/go/signedexchange/README.md#installation) can be used to inspect the response:
@@ -149,15 +149,21 @@ $ dump-signedexchange -i example.sxg
 format version: 1b3
 ```
 
-(Note that `-verify` switch will not work at this point because the required certificates are not on the `https://example.com/` server.)
+(Note that the `-verify` switch will not work at this point because the required certificates are not on the `https://example.com/` server.)
 
 ## Deploy packager to production
 
-### Test with command-line tools
+### Installation
 
-Run through the same tests as above. `dump-signedexchange -verify` should now also successful.
+Adjust the staging deployment steps above as appropriate for your production environment.
 
-### Test with Chrome
+### Testing
+
+#### With command-line tools
+
+Run through the same tests as above. `dump-signedexchange -verify` should now also succeed.
+
+#### With Chrome
 
 You can also test in Chrome with the help of the [ModHeader extension](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en). Install it from the Chrome Webstore and configure the `Request Headers` to `amp-cache-transform` with a `Value` of `google`.
 
@@ -169,7 +175,7 @@ After requesting `https://example.com/` your server will deliver a Signed Exchan
 
 Under the `Network` tab, click on your domain name and check that `Signed HTTP exchange` appears under `Preview`. 
 
-### Test with the Google AMP Cache
+#### With the Google AMP Cache
 
 Confirm that the signed exchanges are compatible with the Google AMP cache. This related to their discoverability on search engines such as Google Search. 
 
@@ -177,7 +183,7 @@ To test signed echanges in the Google AMP cache, open the network tab in DevTool
 
 DevTools will show a `200` with a `signed-exchange` row, and a `from signed-exchange` row, if the request was successful. 
 
-If unsuccessful, the signed-exchange rows will be missing, or they will be highlighted red.
+If unsuccessful, the signed-exchange rows will be missing, or they will be highlighted red. A `warning` header may also be present that provides additional information.
 
 ## Signed Exchanges in Google Search
 
