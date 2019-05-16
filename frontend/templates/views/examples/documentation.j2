@@ -167,7 +167,7 @@
       {% endif %}
 
       {% for section in doc.example.document.sections %}
-      {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
+      {{ doc.pod.amp_dev.transform_markdown(section.doc_, section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
 
       {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}

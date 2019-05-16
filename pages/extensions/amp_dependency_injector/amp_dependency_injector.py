@@ -72,6 +72,13 @@ FALSE_POSITIVES = [
     'amp-story-bookend',
 ]
 
+AMP_BIND_MARKERS_REGEX = re.compile(r"(<amp-state|<amp-bind-macro|\s\[(text|class|hidden|width|height|src|title|alt|srcset|open|selected|controls|loop|poster|preload|disabled|href|type|value)\]=)")
+PRE_CODE_REGEX = re.compile(r"<pre(?:\s[^>]*)?>.+?</pre>|<code(?:\s[^>]*)?>.+?</code>")
+ELEMENT_REGEX = re.compile(r"<(amp-\S*?)(>|\s)")
+COMMENTS_REGEX = re.compile(r"<!--.*?-->", re.DOTALL | re.MULTILINE)
+
+IMPORT_REGEX_TEMPLATE = r'<script(?:\s[^>]*)?\scustom-{type}\s*=\s*"?{dependency}[\s">]'
+
 
 class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     """Handle the post-render hook."""
@@ -121,15 +128,13 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def find_dependencies(self, content):
         """Checks the generated output for possible AMP dependencies."""
         # Remove code snippets from content before searching for deps
-        PRE_CODE_REGEX = r"<pre[^>]*>.+</pre>|<code[^>]*>.+</code>"
-        stripped_content = content
-        for pre_code in re.findall(PRE_CODE_REGEX, content):
-          stripped_content = stripped_content.replace(pre_code, '')
+        stripped_content = re.sub(PRE_CODE_REGEX, '', content)
+        # Remove html comments
+        stripped_content = re.sub(COMMENTS_REGEX, '', stripped_content)
 
         dependencies = []
 
         # Finds all <amp-*> tags that may introduce a dependency to a component
-        ELEMENT_REGEX = r"<(amp-\S*?)(>|\s)"
         for element in re.findall(ELEMENT_REGEX, stripped_content):
             # The first capturing group will be the component name
             component_name = element[0]
@@ -142,7 +147,6 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
         # Checks if document depends on <amp-bind>, also see:
         # https://www.ampproject.org/docs/reference/components/amp-bind#element-specific-attributes
         # TODO: Add remainig bindable values
-        AMP_BIND_MARKERS_REGEX = r"(<amp-state|<amp-bind-macro|\s\[(text|class|hidden|width|height|src|title|alt|srcset|open|selected|controls|loop|poster|preload|disabled|href|type|value)\]=)"
         if re.search(AMP_BIND_MARKERS_REGEX, stripped_content):
             dependencies.append('amp-bind')
 
@@ -180,12 +184,17 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def inject_dependencies(self, dependencies, content):
         script_tags = []
         for dependency in dependencies:
-            # TODO: Handle different versions, URL and type within VALID_DEPENDENCIES
-            src = 'https://cdn.ampproject.org/v0/{}-0.1.js'.format(dependency)
-            type = 'element' if dependency is not 'amp-mustache' else 'template'
+            dep_type = 'element' if dependency != 'amp-mustache' else 'template'
+            existing_pattern = re.compile(IMPORT_REGEX_TEMPLATE.format(type=dep_type, dependency=dependency),
+                                          re.IGNORECASE)
+            if not existing_pattern.search(content):
 
-            tag = '<script custom-{type}="{dependency}" src="{src}" async></script>'.format(type=type, dependency=dependency, src=src)
-            script_tags.append(tag)
+                # TODO: Handle different versions, URL and type within VALID_DEPENDENCIES
+                src = 'https://cdn.ampproject.org/v0/{}-0.1.js'.format(dependency)
+
+                tag = '<script custom-{type}="{dependency}" src="{src}" async></script>'.format(
+                  type=dep_type, dependency=dependency, src=src)
+                script_tags.append(tag)
 
         # Add tags to end of <head>
         script_tags.append('</head>')

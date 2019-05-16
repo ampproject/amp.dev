@@ -8,7 +8,6 @@ from .markdown_extras import block_tip as BlockTip
 from .markdown_extras import block_video as BlockVideo
 from .markdown_extras import inline_tip as InlineTip
 
-
 class AmpDevPreRenderHook(hooks.PreRenderHook):
     """Handle the post-render hook."""
 
@@ -21,13 +20,13 @@ class AmpDevPreRenderHook(hooks.PreRenderHook):
 
         # Only trigger for MarkdownDocuments
         if not isinstance(doc.format, document_format.MarkdownDocumentFormat):
-          return False
+            return False
 
         return True
 
     def trigger(self, previous_result, doc, original_body, *_args, **_kwargs):
         content = previous_result if previous_result else original_body
-        content = self.extension.transform_markdown(original_body, content)
+        content = self.extension.transform_markdown(doc, original_body, content)
         return content
 
 class AmpDevExtension(extensions.BaseExtension):
@@ -42,7 +41,8 @@ class AmpDevExtension(extensions.BaseExtension):
         # Expose extension direclty on pod for use in templates
         setattr(pod, 'amp_dev', self)
 
-    def transform_markdown(self, original_body, content):
+
+    def transform_markdown(self, doc, original_body, content):
         content = InlineTip.trigger(original_body, content)
         content = BlockTip.trigger(original_body, content)
         content = BlockVideo.trigger(original_body, content)

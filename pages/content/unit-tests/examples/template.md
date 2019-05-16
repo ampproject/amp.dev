@@ -1,0 +1,31 @@
+---
+$title: Template dependency
+$order: 6
+---
+
+Start
+
+[example 
+     preview="inline" playground="true"
+     import="amp-date-display"
+     template="amp-mustache"]
+
+```html
+{% raw %}<amp-date-display timestamp-seconds="2147483648" layout="fixed-height" height="20">
+  <template type="amp-mustache">
+      <a href="https://en.wikipedia.org/wiki/Year_2038_problem">Y2K38</a> will be at {{iso}}
+  </template>
+</amp-date-display>{% endraw %}
+```
+
+[/example]
+
+End
+
+
+
+
+
+
+
+
