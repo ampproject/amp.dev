@@ -177,7 +177,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
                   single-item
                   layout="fixed-height"
                   credentials="include"
-                  src="<% hosts.backend %>/checkout/shopping-cart?clientId=CLIENT_ID(cart)"
+                  src="/documentation/examples/api/checkout/shopping-cart?clientId=CLIENT_ID(cart)"
                   [src]="shoppingCart.src">
           <template type="amp-mustache">
             <div class="shopping-cart">
@@ -218,8 +218,8 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
         <section [class]="checkoutSuccess ? 'hide' : 'checkout-section'" class="checkout-section">
           <h3> Add a promotional code </h3>
           <form  method="post"
-                 action-xhr="<% hosts.backend %>/checkout/apply-code"
-                 on="submit-success:AMP.setState({shoppingCart: {src: '/checkout/shopping-cart?clientId=CLIENT_ID(cart)&' + random()}})"
+                 action-xhr="/documentation/examples/api/checkout/apply-code"
+                 on="submit-success:AMP.setState({shoppingCart: {src: '/documentation/examples/api/checkout/shopping-cart?clientId=CLIENT_ID(cart)&' + random()}})"
                  target="_top">
             <input name="clientId"
                    type="hidden"
@@ -237,7 +237,7 @@ teaserImage: '/static/samples/img/teaser/checkout_flow.jpg'
           <form  id="checkout-form"
                  method="post"
                  [hidden]="checkoutSuccess"
-                 action-xhr="<% hosts.backend %>/checkout/apply-code"
+                 action-xhr="/documentation/examples/api/checkout/apply-code"
                  on="submit-success:AMP.setState({checkoutSuccess: true})"
                  target="_top">
 
