@@ -22,9 +22,7 @@ const upload = multer();
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.post('/default', upload.none(), handleRequest);
-examples.post('/postal', upload.none(), handleRequest);
-examples.post('/phone', upload.none(), handleRequest);
+examples.post(['/default', '/postal', '/phone'], upload.none(), handleRequest);
 
 function handleRequest(request, response) {
   const code = request.body ? request.body['code'] : '';
