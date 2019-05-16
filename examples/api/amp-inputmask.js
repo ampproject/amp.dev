@@ -22,43 +22,17 @@ const upload = multer();
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.all('/default', upload.none(), (request, response) => {
-  if (request.method !== 'POST') {
-    response.send('post only');
-    return;
-  }
-  const code = request.body ? request.body.code : '';
-  const codeUnmasked = request.body ? request.body.codeUnmasked : '';
+examples.post('/default', upload.none(), handleRequest);
+examples.post('/postal', upload.none(), handleRequest);
+examples.post('/phone', upload.none(), handleRequest);
+
+function handleRequest(request, response) {
+  const code = request.body ? request.body['code'] : '';
+  const codeUnmasked = request.body ? request.body['code-unmasked'] : '';
   response.json({
     code,
     'code-unmasked': codeUnmasked,
   });
-});
-
-examples.all('/postal', upload.none(), (request, response) => {
-  if (request.method !== 'POST') {
-    response.send('post only');
-    return;
-  }
-  const code = request.body ? request.body['code'] : '';
-  const codeUnmasked = request.body ? request.body['code-unmasked'] : '';
-  response.json({
-    'code': code,
-    'code-unmasked': codeUnmasked,
-  });
-});
-
-examples.all('/phone', upload.none(), (request, response) => {
-  if (request.method !== 'POST') {
-    response.send('post only');
-    return;
-  }
-  const phone = request.body ? request.body['code'] : '';
-  const phoneUnmasked = request.body ? request.body['code-unmasked'] : '';
-  response.json({
-    'code': phone,
-    'code-unmasked': phoneUnmasked,
-  });
-});
+}
 
 module.exports = examples;
