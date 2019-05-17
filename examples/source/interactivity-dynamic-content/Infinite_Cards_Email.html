@@ -1,7 +1,6 @@
 <!---
 
 preview: amp4email
-skipValidation: 'true'
 author: fstanis
 
 --->
@@ -77,9 +76,7 @@ to "refresh" a single item, by making a new server request.
     In this case, we use a single `amp-img`.
   -->
   <template id="item-template" type="amp-mustache">
-    {{#items}}
-    <amp-img src="{{imageUrl}}" layout="fixed" width="160" height="90"></amp-img>
-    {{/items}}
+    <amp-img src="{{items.imageUrl}}" layout="fixed" width="160" height="90"></amp-img>
   </template>
 
   <!--
@@ -94,7 +91,7 @@ to "refresh" a single item, by making a new server request.
   <template id="list-template" type="amp-mustache">
     <div class="card-container">
       {{#items}}
-      <form class="card" method="get" action-xhr="https://amp.dev/documentation/examples/api/photo-stream?items=1&width=160&height=90">
+      <form class="card" method="post" action-xhr="https://amp.dev/documentation/examples/api/photo-stream?single&width=160&height=90">
         <div class="initial-content">
           <amp-img src="{{imageUrl}}" layout="fixed" width="160" height="90"></amp-img>
         </div>

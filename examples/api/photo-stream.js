@@ -22,10 +22,10 @@ const casual = require('casual');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.get('/photo-stream', (req, res) => {
+examples.all('/photo-stream', (req, res) => {
   setMaxAge(res, 60 * 60); // 1h
   const {query} = req;
-  const items = [];
+  let items = [];
   const numberOfItems = Number(query.items) || 10;
   const pagesLeft = Number.isNaN(Number(query.left)) ? 1 : Number(query.left);
   const latency = Number(query.latency) || 0;
@@ -39,8 +39,9 @@ examples.get('/photo-stream', (req, res) => {
 
   for (let i = 0; i < numberOfItems; i++) {
     const imageId = Math.floor(Math.random() * Math.floor(50));
-    const imageUrl = `https://picsum.photos/${dimensions}?${imageId}`;
+    const imageUrl = `https://picsum.photos/id/${imageId}/${dimensions}`;
     const r = {
+      id: `item${imageId}`,
       title: casual.title,
       description: casual.description,
       imageUrl,
@@ -48,7 +49,11 @@ examples.get('/photo-stream', (req, res) => {
     items.push(r);
   }
 
-  const nextUrl = req.baseUrl + '/photo-stream?items=' +
+  if ('single' in query) {
+    items = items[0];
+  }
+
+  const nextUrl = '/photo-stream?items=' +
     numberOfItems + '&left=' + JSON.stringify(pagesLeft - 1);
 
   const randomFalsy = () => {
