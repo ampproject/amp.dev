@@ -45,7 +45,7 @@ function writeShoppingCart(request, response, clientId) {
   const discount = discounts[clientId] || 0;
   const total = SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount;
   const cart = createShoppingCart();
-  cart['total'] = `${total.toFixed(2)}`;
+  cart['total'] = total.toFixed(2);
   if (discount > 0) {
     cart['discount'] = `${discount * 100}%`;
   }
