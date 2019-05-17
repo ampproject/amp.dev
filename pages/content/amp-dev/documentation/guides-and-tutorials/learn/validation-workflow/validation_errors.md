@@ -282,7 +282,9 @@ Detailed messages for this can be one of the following:
 * "Disallowed @supports in CSS"
 * "Disallowed @document in CSS"
 * "Disallowed @page in CSS"
+[filter formats="websites, stories, ads"]
 * "Disallowed @viewport in CSS"
+[/filter]
 
 ### Disallowed text inside tag
 
@@ -314,7 +316,9 @@ The following is the list of blacklisted CSS data
 * `"@namespace"`
 * `"@document"`
 * `"@page"`
+[filter formats="websites, stories, ads"]
 * `"@viewport"`
+[/filter]
 
 ### Disallowed property inside attribute in tag
 
@@ -333,22 +337,29 @@ The following is the list of blacklisted CSS data
   </tr>
 </table>
 
-This error occurs when the property name inside an attribute isn't allowed.
+This error occurs when the property name inside an attribute is not allowed.
 The term property in this context means the structured key/value data inside an attribute.
-For example, in
+
+For example,
+the following would result in an error:
+
+`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
+
+It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
+
+[filter formats="websites, stories, ads"]
+As another example, in
+
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `width` and `minimum-scale` are property names.
 
 The following results in a DISALLOWED_PROPERTY_IN_ATTR_VALUE error:
 
 `<meta name="viewport content="width=device-width;invalidfoo=1">`
+[/filter]
 
-As another example,
-the following would result in an error:
 
-`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
 
-It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 ### Invalid property value
 
@@ -369,6 +380,8 @@ It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 This error occurs when the property value inside an attribute is invalid.
 The term property in this context means the structured key/value data inside an attribute.
+
+[filter formats="websites, stories, ads"]
 For example, in
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `device-width` and `1` are property values.
@@ -378,6 +391,7 @@ The following results in a INVALID_PROPERTY_VALUE_IN_ATTR_VALUE error:
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
 Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.) component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
+[/filter]
 
 ### Missing URL
 
@@ -654,7 +668,9 @@ The full list of unique tags is known:
 * `<link rel=canonical href=...>`
 * `<link rel=amphtml href=...>`
 * `<meta charset="utf-8">`
+[filter formats="websites, stories, ads"]
 * `<meta viewport>`
+[/filter]
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
