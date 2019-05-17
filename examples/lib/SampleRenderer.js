@@ -16,9 +16,9 @@
 
 'use strict';
 
-const nunjucks = require('nunjucks');
 const {join} = require('path');
 const utils = require('@lib/utils');
+const Templates = require('@lib/templates/');
 const config = require('@lib/config.js');
 const fetch = require('node-fetch');
 const {promisify} = require('util');
@@ -47,19 +47,6 @@ class SampleRenderer {
     const renderer = new SampleRenderer();
     renderer.register(router, handler);
     return renderer;
-  }
-
-  constructor() {
-    this.cache_ = new Map();
-    this.nunjucksEnv_ = new nunjucks.Environment(null, {
-      tags: {
-        blockStart: '[%',
-        blockEnd: '%]',
-        variableStart: '[[',
-        variableEnd: ']]',
-        commentStart: '[#',
-        commentEnd: '#]',
-      }});
   }
 
   /**
@@ -100,11 +87,11 @@ class SampleRenderer {
     const samplePath = this.removeQuery_(request.originalUrl.substring(PREFIX_EXAMPLES.length));
     // If it's a preview request, load the source template
     if (request.protocol + '://' + request.get('host') === config.hosts.preview.base) {
-      const sourcePath = join(DIR_SOURCES, samplePath.replace('/index.html', '.html'));
-      return this.fetchTemplate_('source', () => readFileAsync(sourcePath, 'utf-8'));
+      const sourcePath = join(DIR_SOURCES, samplePath + '.html');
+      return Templates.get(sourcePath, () => readFileAsync(sourcePath, 'utf-8'));
     }
     // else load the documentation template
-    return this.fetchTemplate_('documentation', () => {
+    return Templates.get(samplePath, () => {
       if (config.isDevMode()) {
         // fetch doc from proxy
         return this.fetchSampleDoc_(samplePath);
@@ -114,23 +101,6 @@ class SampleRenderer {
         return readFileAsync(docFilePath, 'utf-8');
       }
     });
-  }
-
-  /**
-   * Loads a template from cache (if not in dev mode). If the template
-   * is not cached, it will use the provided callback to retrieve the
-   * template string.
-   *
-   * @private
-   */
-  async fetchTemplate_(key, fn) {
-    let compiledTemplate = this.cache_.get(key);
-    if (config.isDevMode() || !compiledTemplate) {
-      const template = await fn();
-      compiledTemplate = nunjucks.compile(template, this.nunjucksEnv_);
-      this.cache_.set(key, compiledTemplate);
-    }
-    return compiledTemplate;
   }
 
   /**

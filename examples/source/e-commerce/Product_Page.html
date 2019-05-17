@@ -5,6 +5,7 @@ default: preview
 hideCode: true
 skipValidation: true
 teaserImage: '/static/samples/img/teaser/product_page.jpg'
+author: aghassemi
 
 --->
 
@@ -617,7 +618,7 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
 
       <form id="order" method="POST"
-            action-xhr="/samples_templates/product_page/add_to_cart"
+            action-xhr="https://abe-cart-service.glitch.me/add_to_cart"
             target="_top" class="flex flex-wrap m1">
         <div class="items-center flex">
           <label for="color">Color:</label>
