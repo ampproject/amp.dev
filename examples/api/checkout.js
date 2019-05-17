@@ -30,14 +30,14 @@ examples.post('/checkout/apply-code', upload.none(), handleApplyCode);
 
 function handleApplyCode(request, response) {
   setMaxAge(response, 0);
-  const clientId = request.body ? request.body['clientId']: '';
+  const clientId = request.body ? request.body.clientId : '';
   discounts[clientId] = 0.2;
   writeShoppingCart(request, response, clientId);
 }
 
 function handleShoppingCart(request, response) {
   setMaxAge(response, 0);
-  const clientId = request.query ? request.query['clientId'] : '';
+  const clientId = request.query ? request.query.clientId : '';
   writeShoppingCart(request, response, clientId);
 }
 
