@@ -19,11 +19,16 @@ const express = require('express');
 const multer = require('multer');
 const upload = multer();
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
+const LRU = require('lru-cache');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 const SHOPPING_CART_TOTAL = 9.94;
-const discounts = [];
+const config = {
+  maxAge: 1000 * 60 * 10,
+};
+const discounts = new LRU(config);
+const cart = new LRU(config);
 
 examples.get('/checkout/shopping-cart', upload.none(), handleShoppingCart);
 examples.post('/checkout/apply-code', upload.none(), handleApplyCode);
@@ -31,7 +36,7 @@ examples.post('/checkout/apply-code', upload.none(), handleApplyCode);
 function handleApplyCode(request, response) {
   setMaxAge(response, 0);
   const clientId = request.body ? request.body.clientId : '';
-  discounts[clientId] = 0.2;
+  discounts.set(clientId, 0.2);
   writeShoppingCart(request, response, clientId);
 }
 
@@ -42,14 +47,20 @@ function handleShoppingCart(request, response) {
 }
 
 function writeShoppingCart(request, response, clientId) {
-  const discount = discounts[clientId] || 0;
+  const discount = discounts.get(clientId) || 0;
   const total = SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount;
-  const cart = createShoppingCart();
-  cart['total'] = total.toFixed(2);
+  cart.set('items', createShoppingCart());
+  cart.set('total', total.toFixed(2));
   if (discount > 0) {
-    cart['discount'] = `${discount * 100}%`;
+    cart.set('discount', `${discount * 100}%`);
+  } else {
+    cart.del('discount');
   }
-  response.json(cart);
+  response.json({
+    'items': cart.get('items').items,
+    'total': cart.get('total'),
+    'discount': cart.get('discount'),
+  });
 }
 
 function createShoppingCart() {
