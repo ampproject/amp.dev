@@ -85,7 +85,7 @@ function handleSearchRequest(request, response) {
   });
 
   if (results.length > 0) {
-    const visibleResults = min(results.length, 4);
+    const visibleResults = Math.min(results.length, 4);
     response.json({
       'items': [
         {
@@ -118,13 +118,5 @@ function handleAddressRequest(request, response) {
     });
   }
 };
-
-function min(x, y) {
-  if (x < y) {
-    return x;
-  } else {
-    return y;
-  }
-}
 
 module.exports = examples;
