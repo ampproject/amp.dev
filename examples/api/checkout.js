@@ -50,7 +50,7 @@ function handleShoppingCart(request, response) {
 function writeShoppingCart(request, response, clientId) {
   const discount = discounts.get(clientId) || 0;
   const total = SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount;
-  cart.set('items', createShoppingCart());
+  const cartItems = createShoppingCart();
   cart.set('total', total.toFixed(2));
   if (discount > 0) {
     cart.set('discount', `${discount * 100}%`);
@@ -58,7 +58,7 @@ function writeShoppingCart(request, response, clientId) {
     cart.del('discount');
   }
   response.json({
-    'items': cart.get('items').items,
+    cartItems,
     'total': cart.get('total'),
     'discount': cart.get('discount'),
   });
