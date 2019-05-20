@@ -21,6 +21,7 @@ const upload = multer();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
+const MAX_RESULT_SIZE = 4;
 const US_CAPITAL_CITIES = [
   'Montgomery, Alabama',
   'Juneau, Alaska',
@@ -85,7 +86,7 @@ function handleSearchRequest(request, response) {
   });
 
   if (results.length > 0) {
-    const visibleResults = Math.min(results.length, 4);
+    const visibleResults = Math.min(results.length, MAX_RESULT_SIZE);
     response.json({
       'items': [
         {
