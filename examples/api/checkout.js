@@ -24,6 +24,7 @@ const LRU = require('lru-cache');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 const SHOPPING_CART_TOTAL = 9.94;
+// set maxAge to 10 minutes (1000ms * 60 * 10)
 const config = {
   maxAge: 1000 * 60 * 10,
 };
