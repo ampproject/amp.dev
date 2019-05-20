@@ -108,16 +108,17 @@ function handleSearchRequest(request, response) {
 
 function handleAddressRequest(request, response) {
   const city = request.body ? request.body.city : '';
+  let result;
 
   if (US_CAPITAL_CITIES.includes(city)) {
-    response.json({
-      'result': `Success! Your package is on it's way to ${city}.`,
-    });
+    result = `Success! Your package is on it's way to ${city}.`;
   } else {
-    response.json({
-      'result': `Sorry! We don't ship to ${city}.`,
-    });
+    result = `Sorry! We don't ship to ${city}.`;
   }
+
+  response.json({
+    result,
+  });
 };
 
 module.exports = examples;
