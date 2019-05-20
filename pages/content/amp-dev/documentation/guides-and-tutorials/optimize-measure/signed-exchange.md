@@ -22,11 +22,11 @@ Signed Exchange AMP content is delivered _in addition to_ (rather than instead o
 
 To implement Signed Exchanges, you must meet the following requirements:
 
-*   Your site must be hosted on your own HTTPS server and not from a shared host. 
+*   Fairly low-level control over your HTTP server, such as the ability to generate HTTP headers. (Most purely web-based hosting solutions such as Blogger are _not_ be compatible with Signed Exchanges.) 
 *   The ability to generate AMP signed exchanges, such as by running [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), as a [Go binary](https://golang.org/doc/install), or within a [Docker VM](https://docs.docker.com/machine/get-started/). 
-    *   Ability to update the packager every six weeks.
-*   Ability to [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) on `Accept` and `AMP-Cache-Transform` headers on edge HTTP servers, returning different content for the same URL. 
-*   Your system running the `amppackager` needs to be able to make outgoing network requests to:
+    *   The packager needs to be updated every six weeks.
+*   The ability to [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) on `Accept` and `AMP-Cache-Transform` headers on edge HTTP servers, returning different content for the same URL. 
+*   The system running the `amppackager` needs to be able to make outgoing network requests to:
     *   The certificate authority that issues your certificate
     *   The publisher server that hosts the AMP documents to sign
     *   `cdn.ampproject.org` to obtain the current version of AMP
