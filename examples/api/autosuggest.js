@@ -81,29 +81,24 @@ examples.post('/autosuggest/address', upload.none(), handleAddressRequest);
 function handleSearchRequest(request, response) {
   const query = request.query ? request.query.q : '';
 
-  const results = US_CAPITAL_CITIES.filter((key) => {
+  let results = US_CAPITAL_CITIES.filter((key) => {
     return key.toUpperCase().includes(query.toUpperCase());
   });
 
-  if (results.length > 0) {
-    const visibleResults = Math.min(results.length, MAX_RESULT_SIZE);
-    response.json({
-      'items': [
-        {
-          query,
-          'results': results.slice(0, visibleResults),
-        },
-      ],
-    });
-  } else {
-    response.json({
-      'items': [
-        {
-          query,
-        },
-      ],
-    });
+  if (results.length > MAX_RESULT_SIZE) {
+    results = results.slice(0, MAX_RESULT_SIZE);
   }
+
+  const items = ({
+    items: [
+      {
+        query,
+        results,
+      },
+    ],
+  });
+
+  response.json(items);
 };
 
 function handleAddressRequest(request, response) {
