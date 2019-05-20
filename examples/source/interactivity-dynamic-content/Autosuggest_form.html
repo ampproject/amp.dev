@@ -198,7 +198,7 @@ The remaining rules set the style and layout of the form fields.
   >
     <form
       method="post"
-      action-xhr="<% hosts.backend %>/advanced/autosuggest/address"
+      action-xhr="/documentation/examples/api/autosuggest/address"
       target="_blank"
       id="search-form"
       on="
@@ -258,7 +258,7 @@ The remaining rules set the style and layout of the form fields.
               class="autosuggest-box"
               layout="fixed-height"
               height="120"
-              src="/advanced/autosuggest/search_list"
+              src="/documentation/examples/api/autosuggest/search_list"
               [src]="query ?
                 autosuggest.endpoint + query :
                 autosuggest.emptyAndInitialTemplateJson"
@@ -321,7 +321,7 @@ The remaining rules set the style and layout of the form fields.
   <amp-state id="autosuggest">
     <script type="application/json">
     {
-      "endpoint": "/advanced/autosuggest/search_list?q=",
+      "endpoint": "/documentation/examples/api/autosuggest/search_list?q=",
       "emptyAndInitialTemplateJson": [{
         "query": "",
         "results": []
