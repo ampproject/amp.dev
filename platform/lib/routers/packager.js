@@ -43,7 +43,12 @@ const packager = (request, response, next) => {
     return;
   }
   // Don't package non valid AMP pages
-  if (!request.path.endsWith('.amp.html')) {
+  let pagesHost = config.hosts.platform.host;
+  if (config.hosts.platform.port) {
+    pagesHost += `:${config.hosts.platform.port}`;
+  }
+  if (request.get('host') !== pagesHost) {
+    console.log('[packager] not packaging', request.get('host'), pagesHost);
     next();
     return;
   }
