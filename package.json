@@ -47,7 +47,7 @@
     "casual": "1.6.0",
     "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
-    "express": "4.16.4",
+    "express": "4.17.0",
     "http-proxy": "1.17.0",
     "iltorb": "2.4.3",
     "js-yaml": "3.13.1",
