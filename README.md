@@ -62,7 +62,7 @@ $ npm run start:local
 ```
 
 ## Build
-Prior running a build it is recommended to run `gulp clean` to ensure your environment doesn't contain any remainings of previous builds - additionally check your working copy for eventual unintended local changes.
+Caution: starting a build automatically cleans all locations of possible remainings from previous builds. Make sure you don't have anything there that you want to keep - additionally check your working copy for eventual unintended local changes.
 
 To perform a build run the following command with `--env` being one of the following valid environments: `development`, `local`, `staging` or `production`:
 
