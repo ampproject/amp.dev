@@ -184,6 +184,13 @@ function importAll() {
 function buildPrepare(done) {
   gulp.series(
       test.lintNode,
+      // eslint-disable-next-line prefer-arrow-callback
+      async function checkEnvironment() {
+        if (travis.onTravis() &&
+            (travis.repo.branch && !BUILDING_BRANCHES.includes(travis.repo.branch))) {
+          process.exit(0);
+        }
+      },
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
       gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll),
@@ -191,8 +198,7 @@ function buildPrepare(done) {
       // test.lintGrow,
       // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifcats() {
-        if (!travis.onTravis() ||
-            (travis.repo.branch && !BUILDING_BRANCHES.includes(travis.repo.branch))) {
+        if (!travis.onTravis()) {
           return;
         }
 
