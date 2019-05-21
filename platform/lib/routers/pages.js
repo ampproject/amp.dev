@@ -165,16 +165,22 @@ if (!config.isDevMode()) {
 
   pages.get('/*', async (request, response, next) => {
     request.url = ensureFileExtension(request.path);
+    if (request.path.endsWith('.amp.html')) {
+      let redirectUrl;
+      if (request.originalUrl.endsWith('index.amp.html')) {
+        redirectUrl = request.originalUrl.replace('index.amp.html', '');
+      } else {
+        redirectUrl = request.originalUrl.replace('.amp.html', '');
+      }
+      console.log('redirecting valid amp page to', redirectUrl);
+      response.redirect(redirectUrl);
+      return;
+    }
 
     const format = getFilteredFormat(request);
     if (format && format !== 'websites') {
-      if (request.path.endsWith('.amp.html')) {
-        request.url = request.path.replace('.amp.html', `.${format}.amp.html`);
-      } else {
-        request.url = request.path.replace('.html', `.${format}.html`);
-      }
+      request.url = request.path.replace('.html', `.${format}.html`);
     }
-
     return staticMiddleware(request, response, next);
   });
 }

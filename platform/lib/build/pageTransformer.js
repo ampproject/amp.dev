@@ -27,8 +27,7 @@ const crypto = require('crypto');
 const rcs = require('rcs-core');
 const t = require('exectimer');
 const Tick = t.Tick;
-const ampOptimizer = require('amp-toolbox-optimizer');
-const runtimeVersionPromise = require('amp-toolbox-runtime-version').currentVersion();
+const AmpOptimizer = require('amp-toolbox-optimizer');
 const {filterPage, isFilterableRoute, FORMATS} = require('@lib/common/filteredPage');
 const cheerio = require('cheerio');
 const fs = require('fs');
@@ -72,7 +71,7 @@ const SELECTOR_REWRITE_EXCLUDED_PATHS =
   /\/documentation\/examples.*|\/documentation\/components\.html/;
 
 class PageTransformer {
-  constructor() {
+  constructor(optimizer = AmpOptimizer.create()) {
     this._log = new Signale({
       'interactive': false,
       'scope': 'Page minifier',
@@ -95,9 +94,7 @@ class PageTransformer {
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
 
-    ampOptimizer.setConfig({
-      blurredPlaceholdersCacheSize: 0, // cache all placeholders
-    });
+    this._optimizer = optimizer;
   }
 
   /**
@@ -125,29 +122,22 @@ class PageTransformer {
           html = scope.minifyPage(html, canonicalPage.path);
           timer.stop();
 
-          const ampPath = canonicalPage.path.replace('.html', '.amp.html');
-          const ampUrl = '/' + canonicalPage.relative.replace('.html', '.amp.html');
-
           timer = new Tick('optimizing');
           timer.start();
-          const optimizedHtml = await scope.optimize(html, ampUrl);
+          const optimizedHtml = await scope.optimize(html);
           timer.stop();
 
-          const ampPage = canonicalPage.clone();
-          ampPage.path = ampPath;
-
           canonicalPage.contents = Buffer.from(optimizedHtml);
-          ampPage.contents = Buffer.from(html);
 
           let filteredPages = [];
           if (isFilterableRoute(canonicalPage.path)) {
             timer = new Tick('filtering');
             timer.start();
-            filteredPages = scope._filterPages(canonicalPage, ampPage);
+            filteredPages = scope._filterPages(canonicalPage);
             timer.stop();
           }
 
-          for (const page of [canonicalPage, ampPage, ...filteredPages]) {
+          for (const page of [canonicalPage, ...filteredPages]) {
             this.push(page);
           }
 
@@ -269,15 +259,8 @@ class PageTransformer {
     return filteredHtml;
   }
 
-  async optimize(html, path) {
-    const ampRuntimeVersion = await runtimeVersionPromise;
-    return ampOptimizer.transformHtml(html, {
-      ampUrl: path,
-      ampRuntimeVersion: ampRuntimeVersion,
-      imageBasePath: 'pages',
-      blurredPlaceholders: true,
-      maxBlurredPlaceholders: 7, // number of images in homepage stage
-    });
+  async optimize(html) {
+    return this._optimizer.transformHtml(html);
   }
 
   /**
