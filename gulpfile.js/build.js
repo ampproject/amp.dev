@@ -181,7 +181,7 @@ function importAll() {
  *
  * @return {undefined}
  */
-function setupBuild(done) {
+function buildPrepare(done) {
   gulp.series(
       test.lintNode,
       // Build playground and boilerplate that early in the flow as they are
@@ -400,11 +400,11 @@ exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
 exports.buildPages = buildPages;
 
-exports.setupBuild = setupBuild;
+exports.buildPrepare = buildPrepare;
 exports.transformPages = transformPages;
 exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildFinalize = gulp.parallel(fetchArtifacts, collectStatics, persistBuildInfo);
 
-exports.build = gulp.series(clean, gulp.parallel(setupBuild, buildFrontend), buildPages,
+exports.build = gulp.series(clean, buildPrepare, buildPages,
     gulp.parallel(collectStatics, persistBuildInfo));

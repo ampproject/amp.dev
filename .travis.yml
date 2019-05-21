@@ -20,16 +20,16 @@ before_install:
 install:
   - npm ci
 stages:
-  - setup
+  - preparation
   - name: build
     if: branch = future
   - name: deploy
     if: branch = future
 jobs:
   include:
-    - stage: setup
+    - stage: preparation
       name: 'Check code, import documents, build samples, playground & boilerplate'
-      script: unbuffer gulp setupBuild
+      script: unbuffer gulp buildPrepare
     - &build
       stage: build
       install:
