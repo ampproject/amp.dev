@@ -289,7 +289,7 @@ class SamplesBuilder {
           this._getSourceRoute(sample),
     });
 
-    formatCategories[category] = categorySamples;
+    formatCategories[category.publicName] = categorySamples;
     this._sitemap[format] = formatCategories;
   }
 
@@ -411,21 +411,37 @@ class SamplesBuilder {
     // frontmatter that is required ...
     const manual = sample.clone();
 
+    // List of metadata properties to transfer from sample header to
+    // markdown header.
+    const metadataToTransfer = [
+      'author',
+      'translator',
+      'contributors',
+    ];
+
+    const header = {
+      '$$injectAmpDependencies': false,
+      '$title': parsedSample.document.title,
+      '$view': DOCUMENTATION_TEMPLATE,
+      '$category': this._getCategory(sample, true),
+      '$path': this._getDocumentationRoute(sample),
+      '$localization': {
+        'path': `/{locale}${this._getDocumentationRoute(sample)}`,
+      },
+      'description': parsedSample.document.description(),
+      'source': this._getSourceRoute(sample),
+    };
+
+    for (const metadataProperty of metadataToTransfer) {
+      if (parsedSample.document.metadata[metadataProperty]) {
+        header[metadataProperty] = parsedSample.document.metadata[metadataProperty];
+      }
+    }
+
     // Build actual file needed for Grow to render the documentation
     manual.contents = Buffer.from([
       '---',
-      yaml.safeDump({
-        '$$injectAmpDependencies': false,
-        '$title': parsedSample.document.title,
-        '$view': DOCUMENTATION_TEMPLATE,
-        '$category': this._getCategory(sample, true),
-        '$path': this._getDocumentationRoute(sample),
-        '$localization': {
-          'path': `/{locale}${this._getDocumentationRoute(sample)}`,
-        },
-        'description': parsedSample.document.description(),
-        'source': this._getSourceRoute(sample),
-      }, {'lineWidth': 500}),
+      yaml.safeDump(header, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
       // ... and some additional information that is used by the example teaser

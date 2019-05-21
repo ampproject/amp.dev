@@ -55,4 +55,10 @@ staticRouter.get('/manifest.json', (request, response) => {
       .sendFile('manifest.json', {root: project.paths.STATICS_DEST});
 });
 
+staticRouter.get('/googlefc2a7cf70933ae03.html', (request, response) => {
+  setMaxAge(response, 60 * 60 * 24);
+  response.status(200)
+      .sendFile('googlefc2a7cf70933ae03.html', {root: 'static'});
+});
+
 module.exports = staticRouter;

@@ -56,10 +56,9 @@ The following styles aren’t allowed in AMP pages:
   </tbody>
 </table>
 
-## Restricted styles
+## Performance recommendations 
 
-The following styles are allowed, but are restricted in terms of which values
-they support:
+These allowed styles should restrict values to the following for an optimal performance: 
 
 <table>
   <thead>

@@ -4,7 +4,7 @@ $title: Iniciar sesión
 
 Supongamos que la primera vez que accedes a una página ves dos comentarios y un botón para iniciar sesión, tal como se muestra a continuación:
 
-<amp-img src="/static/img/login-button.png" alt="Botón para iniciar sesión" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Botón para iniciar sesión" height="290" width="300"></amp-img>
 
 Si buscas el botón en el código de la página, puedes ver que tiene el siguiente formato:
 
@@ -53,7 +53,7 @@ La página de inicio de sesión es una página que no es AMP y en la que introdu
 
 En el ejemplo que se muestra a continuación, se añade el valor del parámetro `return` a la solicitud cuando se hace clic en el botón para iniciar sesión. Para explorar este valor, accede a la pestaña Network (Red) de la consola DevTools de Chrome.
 
-<amp-img src="/static/img/return-parameter.png" alt="Parámetro return" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Parámetro return" height="150" width="600"></amp-img>
 
 Cuando el servidor AMPByExample recibe la solicitud POST de la página de inicio de sesión, si las credenciales son correctas, se redirige la solicitud a la URL de `returnURL` que hemos comentado anteriormente y se le añade el parámetro `#success=true`. Una vez hecho, el tiempo de ejecución de AMP puede finalmente autorizar la página, por lo que ya se puede añadir un comentario.
 

@@ -1,20 +1,5 @@
 # -*- coding: utf-8 -*-
 from grow import extensions
-
-# Monkey patch grow.url before doing anything else
-from grow.common import urls
-
-urls._Url = urls.Url
-
-class AmpDevUrl(urls._Url):
-
-    def __init__(self, path, host=None, port=None, scheme=None):
-        super(AmpDevUrl, self).__init__(path, host=host, port=port, scheme=scheme)
-        self.path = self.path.replace('/index.html', '/').replace('.html', '')
-
-urls.Url = AmpDevUrl
-
-from grow import extensions
 from grow.documents import document, document_format, static_document
 from grow.extensions import hooks
 

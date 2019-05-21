@@ -1,35 +1,29 @@
 nextstop:
-  - title: johannesburg, sa
-    location: Hyatt Regency, Rosebank
+  - title: berlin, de
+    location: Google Berlin
     time: 09:00–18:00
-    day: 12
-    month: mar
+    day: 7
+    month: jun
     year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
-  - title: lagos, ni
-    location: Zone Tech Park
-    time:  09:00–18:00
-    day: 19
-    month: mar
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-nigeria/
-  - title: cape town, sa
-    location: Crystal Towers
+    link: https://events.withgoogle.com/amp-roadshow-berlin/
+  - title: atlanta, usa
+    location: refactr.tech
     time: 09:00–18:00
-    day: 15
-    month: mar
+    day: 5
+    month: jun
     year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-ssa-south-africa/
-  - title: nairobi, ky
-    location: Mövenpick Hotel
-    time:  09:00–18:00
-    day: 22
-    month: mar
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-kenya/
+    link: https://events.withgoogle.com/amp-roadshow-atlanta/
 
 past:
-  - title: HO CHI MINH
+  - title: NAIROBI
+    date: MAR 22, 2019  
+  - title: LAGOS
+    date: MAR 19, 2019  
+  - title: CAPE TOWN
+    date: MAR 15, 2019  
+  - title: JOHANNESBURG
+    date: MAR 12, 2019  
+  - title: HO CHI MINH CITY
     date: DEC 14, 2018
   - title: TORONTO
     date: AUG 30, 2017

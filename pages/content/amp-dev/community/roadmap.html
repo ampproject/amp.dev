@@ -65,9 +65,9 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
             [class]= "{% if card.issue.labels[0] %}{% for label in card.issue.labels %}roadmapfilter.activefilter == '{{ label.name | slug}}' ||{% endfor %}{% endif %} roadmapfilter.activefilter == 'all' ? 'ap-o-roadmap-tiles-item ap-m-copy active ' : 'ap-o-roadmap-tiles-item ap-m-copy '"
             >
               <a class="ap-o-roadmap-tiles-link" href="{{ card.issue.url }}">
-                <div class="ap-o-roadmap-tiles-title">{{ card.issue.title }}</div>
-                <p class="ap-o-roadmap-tiles-description">{{ card.issue.description }}</p>
+                <div class="ap-o-roadmap-tiles-title">{{ card.issue.title|markdown|safe }}</div>
               </a>
+              <div class="ap-o-roadmap-tiles-description">{{ card.issue.description|markdown|safe }}</div>
               <div class="ap-o-roadmap-tiles-categories">
                 {% if card.issue.labels[0] %}
                   {% for label in card.issue.labels %}

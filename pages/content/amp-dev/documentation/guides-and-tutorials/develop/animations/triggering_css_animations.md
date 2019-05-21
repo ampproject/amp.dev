@@ -7,11 +7,11 @@ formats:
   - ads
 ---
 
-Triggering CSS animations on pages [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](docs/interaction_dynamic/amp-actions-and-events#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
+Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](docs/interaction_dynamic/amp-actions-and-events#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
 
 ## Defining CSS and Keyframes
 
-You can define CSS several ways in AMP:
+You can define CSS in AMP in the follow ways:
 
 *   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
 *   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
@@ -51,7 +51,7 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
 The AMP action, `toggleClass` enables the addition and removal of classes to defined elements.
 
 ```
-elementName.ToggleClass(class="className")
+elementName.toggleClass(class="className")
 ```
 
 You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
@@ -71,7 +71,7 @@ The `toggleClass` action can apply to other elements as well and toggle between 
 </button>
 ```
 
-If you need to remove a class and disallow reapplication, add the `force` attribute with a value of `false`. IF you need to addd a class and disallow removal, add `force` with a value of `true`.
+If you need to remove a class and disallow reapplication, add the `force` attribute with a value of `false`. If you need to addd a class and disallow removal, add `force` with a value of `true`.
 
 ## Animate with Numerous Classes
 
@@ -112,7 +112,7 @@ You can define a list of CSS classes within the `<style amp-custom>` tag in the 
 ...
 ```
 
-Then you pair each class with a state:
+Then pair each class with a state:
 
 ```
 ...
@@ -136,7 +136,7 @@ Then you pair each class with a state:
 </amp-state>
 ...
 ```
-Then link the element with the classes:
+And link the element with the classes:
 
 ```
 ...
