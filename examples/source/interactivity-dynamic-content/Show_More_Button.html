@@ -34,9 +34,54 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
 
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
+  <style amp-custom>
+    .list-item {
+      border-radius: 2px;
+      margin: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .list-item amp-img {
+      flex-shrink: 0;
+    }
+  </style>
 </head>
 <body>
   <!-- ## How to implement a show more button -->
+  <!-- You can implement a show more button by using `amp-list` with additional `load-more` attribute set to option `manual`.
+  The optional `load-more-bookmark` attribute specifies a field name in the returned data that will give the url of the next items to load. If not specified, `amp-list` expects the response object to have the `load-more-src` field set to the next url to load.
+  -->
+  <amp-list
+    width="auto" 
+    height="332" 
+    layout="fixed-height"
+    src="/documentation/examples/api/photo-stream?items=3&left=3"
+    load-more="manual"
+    load-more-bookmark="next">
+    <template type="amp-mustache">
+      <div class="list-item">
+        <amp-img 
+          src={{imageUrl}}
+          width="100" 
+          height="100">
+        </amp-img>
+        <p>{{title}}</p>
+      </div>
+    </template>
+    <div fallback>
+      FALLBACK
+    </div>
+    <div placeholder>
+      PLACEHOLDER
+    </div>
+    <amp-list-load-more load-more-failed>
+      ERROR
+    </amp-list-load-more>
+    <amp-list-load-more load-more-end>
+      END
+    </amp-list-load-more>
+  </amp-list>
+
   <!-- You can implement a show more button by using `amp-list` and `amp-bind`, where
   `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `productsState`
   which uses the same json `src` as the `amp-list` so that will initially contain the same list of items ... -->
