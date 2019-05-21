@@ -16,7 +16,7 @@
 
 'use strict';
 
-const ampOptimizer = require('amp-toolbox-optimizer');
+const AmpOptimizer = require('amp-toolbox-optimizer');
 const runtimeVersion = require('amp-toolbox-runtime-version');
 const path = require('path');
 
@@ -63,7 +63,8 @@ async function generateOptimizedAmpFiles(output) {
 
 async function optimizeAmp(html) {
   const ampRuntimeVersion = await runtimeVersion.currentVersion();
-  return await ampOptimizer.transformHtml(html, {
+  const optimizer = AmpOptimizer.create();
+  return await optimizer.transformHtml(html, {
     ampUrl: './' + AMP_PATH,
     ampRuntimeVersion,
   });
