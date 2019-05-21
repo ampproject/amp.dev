@@ -40,14 +40,14 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
   <!-- You can implement a show more button by using `amp-list` and `amp-bind`, where
   `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `productsState`
   which uses the same json `src` as the `amp-list` so that will initially contain the same list of items ... -->
-  <amp-state id="productsState" src="/static/samples/json/related_products.json">
+  <amp-state id="productsState" src="/documentation/examples/api/photo-stream?items=3&left=3">
   </amp-state>
 
   <!-- ... while the `amp-state` with id `product` is just used to implement the show-more logic where we are allowing the user to click 3 times. -->
   <amp-state id="product">
     <script type="application/json">
     {
-      "moreItemsPageIndex": 0,
+      "moreItemsPageIndex": 2,
       "hasMorePages": true
     }
     </script>
@@ -56,33 +56,41 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
 
   <!-- We bind the `src` attribute of the `amp-list` to the `amp-state` object containing the products
       from that component as a `src`. We also dynamically change the height of the amp-list based on
-      the number of items (each item has a height of `24px`). -->
-  <amp-list src="/static/samples/json/related_products.json"
+      the number of items (each item has a height of `108px`). -->
+  <amp-list src="/documentation/examples/api/photo-stream?items=3&left=3"
             [src]="productsState.items"
-            width="320"
-            height="144"
-            [height]="productsState.items.length * 24">
+            layout="fixed-height"
+            width="auto"
+            height="332"
+            [height]="productsState.items.length * 108 + 8">
     <template type="amp-mustache">
-      {{name}}: ${{price}}
+      <div class="list-item">
+        <amp-img src={{imageUrl}}
+                width="100" 
+                height="100">
+        </amp-img>
+        <p>{{title}}</p>
+      </div>
     </template>
   </amp-list>
 
   <!-- The show more button is implemented via a form which triggers a page update on the `submit-success` event.
       We are then merging the form results into the items already loaded by the `amp-state` using the `concat` function. -->
       <form method="GET"
-            action="/json/more_related_products_page"
-            action-xhr="/json/more_related_products_page"
+            action="/documentation/examples/api/photo-stream"
+            action-xhr="/documentation/examples/api/photo-stream"
             target="_top"
             on="submit-success: AMP.setState({
               productsState: {
                 items: productsState.items.concat(event.response.items)
               },
               product: {
-                moreItemsPageIndex: product.moreItemsPageIndex + 1,
-                hasMorePages: event.response.hasMorePages
+                moreItemsPageIndex: product.moreItemsPageIndex - 1,
+                hasMorePages: !!event.response.next
               }
             });">
-        <input type="hidden" name="moreItemsPageIndex" value="0" [value]="product.moreItemsPageIndex">
+        <input type="hidden" name="items" value="3">
+        <input type="hidden" name="left" value="2" [value]="product.moreItemsPageIndex">
         <input type="submit"
                value="Show more"
                [hidden]="!product.hasMorePages">
