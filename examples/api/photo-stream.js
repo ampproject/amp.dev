@@ -48,7 +48,7 @@ examples.get('/photo-stream', (req, res) => {
     items.push(r);
   }
 
-  const nextUrl = '/photo-stream?items=' +
+  const nextUrl = req.baseUrl + '/photo-stream?items=' +
     numberOfItems + '&left=' + JSON.stringify(pagesLeft - 1);
 
   const randomFalsy = () => {
