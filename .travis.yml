@@ -35,7 +35,7 @@ jobs:
       install:
         - npm ci
         - pip install grow==0.7.4 --user
-      env: NODE_ENV=staging
+      env: APP_ENV=staging
       name: 'Build Pages (EN)'
       script: unbuffer gulp buildPages --locales en
     - <<: *build
@@ -72,7 +72,7 @@ jobs:
       name: 'Build Pages (CN)'
       script: unbuffer gulp buildPages --locales zh_CN
     - stage: deploy
-      env: NODE_ENV=staging
+      env: APP_ENV=staging
       script:
         - unbuffer gulp buildFinalize
         - gcloud app deploy --project=amp-dev-staging --quiet
