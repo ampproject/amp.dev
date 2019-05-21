@@ -189,6 +189,7 @@ function buildPrepare(done) {
       gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll),
       // TODO: Fix working but malformatted references before reenabling
       // test.lintGrow,
+      // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifcats() {
         if (!travis.onTravis() ||
             (travis.repo.branch && !BUILDING_BRANCHES.includes(travis.repo.branch))) {
@@ -236,12 +237,14 @@ async function fetchArtifacts() {
  */
 async function buildPages(done) {
   gulp.series(fetchArtifacts, gulp.parallel(buildSamples, buildFrontend),
+      // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
         config.configureGrow();
         await sh('grow deploy --noconfirm --threaded', {
           workingDir: project.paths.GROW_POD,
         });
       }, transformPages,
+      // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifacts() {
         // ... and again if on Travis store all built files for a later stage to pick up
         if (travis.onTravis()) {
