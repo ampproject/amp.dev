@@ -1,7 +1,8 @@
-number: null
-at: 2019-05-21T17:45:02.124Z
-by: Sebastian Benz
-environment: production
+# This file will be modified during build time if project is built via CI
+# inspect it during runtime by visiting /who-am-i
+at: NOW
+by: USER
+number: TRAVIS_BUILD_NUMBER
 commit:
-  sha: 0e3cee4d9390bb7c8515034f9f86f17343ba7978
-  message: ⚡️ Do not import documents for every push.
+  sha: TRAVIS_COMMIT
+  message: TRAVIS_COMMIT_MESSAGE
