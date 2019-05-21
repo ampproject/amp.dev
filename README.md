@@ -50,14 +50,14 @@ Made changes to a lot of Grow documents at once and not quite sure if all refere
 Also see MAINTENANCE.md for a more detailed explanation of the various frontmatter keys used throughout the project.
 
 #### Samples
-Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development only changed samples are rebuilt. To freshly build *all* samples you can run `npm run develop -- --clean-samples`.
+Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development only changed samples are rebuilt. To freshly build *all* samples you can run `gulp develop --clean-samples`.
 
 ### Run a test build
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run
 
 ```sh
-$ gulp fullBuild --env local
+$ gulp build --env local
 $ npm run start:local
 ```
 
@@ -67,10 +67,10 @@ Prior running a build it is recommended to run `gulp clean` to ensure your envir
 To perform a build run the following command with `--env` being one of the following valid environments: `development`, `local`, `staging` or `production`:
 
 ```sh
-$ gulp fullBuild --env <environment>
+$ gulp build --env <environment>
 ```
 
-This builds all parts of the project and might take a while. Usually all builds on amp-dev-staging.appspot.com and amp.dev are built using [Travis CI](https://travis-ci.org/ampproject/docs). In case you want to reproduce one of those remote builds in your local environment you can fetch the built artifacts by running:
+This builds all parts of the project and might take a while. Usually all builds on amp-dev-staging.appspot.com and amp.dev are built using [Travis CI](https://travis-ci.org/ampproject/docs). In case you want to reproduce one of those remote builds in your local environment you can fetch the build artifacts by running:
 
 ```sh
 $ gulp fetchArtifacts --travis-build <build_number>

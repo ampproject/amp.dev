@@ -37,42 +37,42 @@ jobs:
         - pip install grow==0.7.4 --user
       env: NODE_ENV=staging
       name: 'Build Pages (EN)'
-      script: unbuffer gulp build --locales en
+      script: unbuffer gulp buildPages --locales en
     - <<: *build
       name: 'Build Pages (FR)'
-      script: unbuffer gulp build --locales fr
+      script: unbuffer gulp buildPages --locales fr
     - <<: *build
       name: 'Build Pages (AR)'
-      script: unbuffer gulp build --locales ar
+      script: unbuffer gulp buildPages --locales ar
     - <<: *build
       name: 'Build Pages (ES)'
-      script: unbuffer gulp build --locales es
+      script: unbuffer gulp buildPages --locales es
     - <<: *build
       name: 'Build Pages (IT)'
-      script: unbuffer gulp build --locales it
+      script: unbuffer gulp buildPages --locales it
     - <<: *build
       name: 'Build Pages (ID)'
-      script: unbuffer gulp build --locales id
+      script: unbuffer gulp buildPages --locales id
     - <<: *build
       name: 'Build Pages (JA)'
-      script: unbuffer gulp build --locales ja
+      script: unbuffer gulp buildPages --locales ja
     - <<: *build
       name: 'Build Pages (KO)'
-      script: unbuffer gulp build --locales ko
+      script: unbuffer gulp buildPages --locales ko
     - <<: *build
       name: 'Build Pages (BR)'
-      script: unbuffer gulp build --locales pt_BR
+      script: unbuffer gulp buildPages --locales pt_BR
     - <<: *build
       name: 'Build Pages (RU)'
-      script: unbuffer gulp build --locales ru
+      script: unbuffer gulp buildPages --locales ru
     - <<: *build
       name: 'Build Pages (TR)'
-      script: unbuffer gulp build --locales tr
+      script: unbuffer gulp buildPages --locales tr
     - <<: *build
       name: 'Build Pages (CN)'
-      script: unbuffer gulp build --locales zh_CN
+      script: unbuffer gulp buildPages --locales zh_CN
     - stage: deploy
       env: NODE_ENV=staging
       script:
-        - unbuffer gulp finalizeBuild
+        - unbuffer gulp buildFinalize
         - gcloud app deploy --project=amp-dev-staging --quiet

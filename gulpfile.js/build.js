@@ -234,21 +234,23 @@ async function fetchArtifacts() {
  *
  * @return {Promise}
  */
-async function buildPages() {
-  config.configureGrow();
-  await sh('grow deploy --noconfirm --threaded', {
-    workingDir: project.paths.GROW_POD,
-  });
-
-  await transformPages();
-
-  // ... and again if on Travis store all built files for a later stage to pick up
-  if (travis.onTravis()) {
-    const archive = `build/pages-${travis.build.job}.tar.gz`;
-    await sh(`tar cfj ${archive} ./dist/pages`);
-    await sh(`gsutil cp ${archive} ` +
-      `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
-  }
+async function buildPages(done) {
+  gulp.series(fetchArtifacts, gulp.parallel(buildSamples, buildFrontend),
+      async function buildGrow() {
+        config.configureGrow();
+        await sh('grow deploy --noconfirm --threaded', {
+          workingDir: project.paths.GROW_POD,
+        });
+      }, transformPages,
+      async function storeArtifacts() {
+        // ... and again if on Travis store all built files for a later stage to pick up
+        if (travis.onTravis()) {
+          const archive = `build/pages-${travis.build.job}.tar.gz`;
+          await sh(`tar cfj ${archive} ./dist/pages`);
+          await sh(`gsutil cp ${archive} ` +
+            `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
+        }
+      })(done);
 }
 
 /**
@@ -285,13 +287,12 @@ async function transformPages() {
   const shardId = config.options.shard;
   const startIndex = shardId * shardPathCount;
   const endIndex = shardId == shardCount - 1 ? paths.length : (shardId + 1) * shardPathCount;
-  // As slice omits the edge index include it explicitly
   paths = paths.slice(startIndex, endIndex);
 
   signale.await(`Shard ${shardId} [${startIndex} - ${endIndex}]: \
       processing ${paths.length} files ...`);
   // After the pages have been built by Grow create transformed versions
-  await new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     const stream = pageTransformer.start(paths, {
       'base': `${project.paths.GROW_BUILD_DEST}`,
     });
@@ -402,10 +403,8 @@ exports.buildPages = buildPages;
 exports.setupBuild = setupBuild;
 exports.transformPages = transformPages;
 exports.fetchArtifacts = fetchArtifacts;
-exports.build = gulp.series(fetchArtifacts, gulp.parallel(buildSamples, buildFrontend),
-    buildPages);
 exports.collectStatics = collectStatics;
-exports.finalizeBuild = gulp.parallel(fetchArtifacts, collectStatics, persistBuildInfo);
+exports.buildFinalize = gulp.parallel(fetchArtifacts, collectStatics, persistBuildInfo);
 
-exports.fullBuild = gulp.series(clean, gulp.parallel(setupBuild, buildFrontend), buildPages,
+exports.build = gulp.series(clean, gulp.parallel(setupBuild, buildFrontend), buildPages,
     gulp.parallel(collectStatics, persistBuildInfo));
