@@ -28,7 +28,7 @@ const argv = mri(process.argv.slice(2));
 // We tag docker images by the current git commit SHA,
 // this makes it easy to identify and reproduce builds.
 // Pass a specific tag via commandline using `gulp updateStart --tag ABCDE...`
-const TAG = argv.tag || require('@lib/build/repo.js').version;
+const TAG = argv.tag || require('@lib/utils/git').version;
 
 // The Google Cloud project id, pass via commandline
 // using `gulp deploy --project my-gcloud-project
@@ -99,7 +99,7 @@ function imageBuild() {
 }
 
 /**
- * Builds a local docker image for testing.
+ * Starts a local docker image for testing.
  */
 function imageRunLocal() {
   return sh(`docker run -d -p 8082:80 ${config.image.current}`);

@@ -24,44 +24,56 @@ that makes a merge over to the original repository beneficial.
     ```
 
 ## Develop
-To start developing start a pipeline that takes care of building the frontend, collecting all needed files and start Grow when finished. The pipeline then watches the sources files for changes and rebuilds them if needed.
-
-```sh
-$ npm run develop
-```
-
-### Import data & documents
-If you additionally want to import the needed documents and data from GitHub pass in the `--import` option to the command and export a valid [GitHub access token](https://github.com/settings/tokens) beforehand like with
+If it's your first time working on amp.dev it is recommended to bootstrap your local environment. To do so make sure you have setup a valid [GitHub access token](https://github.com/settings/tokens) in an environment variable named `AMP_DOC_TOKEN` like:
 
 ```sh
 $ export AMP_DOC_TOKEN="c59f6..."
-$ npm run develop -- --import
+```
+
+This enables the import from GitHub to run flawlessly which can be started by the following command which additionally will build the Playground and Boilerplate Generator once:
+
+```sh
+$ gulp bootstrap
+```
+
+You can then start developing in your local environment with the command below. The task will take care of building and copying all files, watching them for changes and rebuild them when needed. Beware that changes to the [express.js](https://expressjs.com/) backend require to restart the task.
+
+```sh
+$ gulp develop
 ```
 
 ### Maintenance
 
 #### Documents
-
 Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
 
+Also see MAINTENANCE.md for a more detailed explanation of the various frontmatter keys used throughout the project.
+
 #### Samples
-Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development only changed samples are rebuilt. To freshly build *all* samples you can run `npm run develop -- --clean-samples`.
+Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development only changed samples are rebuilt. To freshly build *all* samples you can run `gulp develop --clean-samples`.
 
 ### Run a test build
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run
 
 ```sh
-$ npm run build:local
+$ gulp build --env local
 $ npm run start:local
 ```
 
-## Build & Deploy
-To build and deploy to the staging environment on [Google App Engine](https://cloud.google.com/appengine/) run the following
+## Build
+Caution: starting a build automatically cleans all locations of possible remainings from previous builds. Make sure you don't have anything there that you want to keep - additionally check your working copy for eventual unintended local changes.
+
+To perform a build run the following command with `--env` being one of the following valid environments: `development`, `local`, `staging` or `production`:
 
 ```sh
-$ npm run build:staging
-$ npm run deploy:staging
+$ gulp build --env <environment>
+```
+
+This builds all parts of the project and might take a while. Usually all builds on amp-dev-staging.appspot.com and amp.dev are built using [Travis CI](https://travis-ci.org/ampproject/docs). In case you want to reproduce one of those remote builds in your local environment you can fetch the build artifacts by running:
+
+```sh
+$ gulp fetchArtifacts --travis-build <build_number>
 ```
 
 - - -

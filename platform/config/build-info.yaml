@@ -1,0 +1,8 @@
+# This file will be modified during build time if project is built via CI
+# inspect it during runtime by visiting /who-am-i
+at: NOW
+by: USER
+number: TRAVIS_BUILD_NUMBER
+commit:
+  sha: TRAVIS_COMMIT
+  message: TRAVIS_COMMIT_MESSAGE

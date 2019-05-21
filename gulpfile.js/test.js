@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,5 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {execSync} = require('child_process');
-module.exports.version = execSync('git log -1 --pretty=%H').toString().trim();
+
+'use strict';
+
+const gulp = require('gulp');
+const {sh} = require('@lib/utils/sh');
+
+function lintNode() {
+  return sh('npm run lint:node');
+}
+
+function lintGrow() {
+  return sh('npm run lint:grow');
+}
+
+exports.lintNode = lintNode;
+exports.lintGrow = lintGrow;
+exports.lintAll = gulp.parallel(lintNode);

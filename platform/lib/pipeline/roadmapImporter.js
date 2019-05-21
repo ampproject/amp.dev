@@ -80,7 +80,7 @@ async function importRoadmap() {
   // fetch all related issues
   const issues = await Promise.all(cards.map((card) => {
     const issue = card.issueUrl.match(/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
-    return octokit.issues.get({owner: issue[1], repo: issue[2], number: issue[3]})
+    return octokit.issues.get({owner: issue[1], repo: issue[2], issue_number: issue[3]})
         .then((result) => {
           result.url = card.issueUrl;
           return result;

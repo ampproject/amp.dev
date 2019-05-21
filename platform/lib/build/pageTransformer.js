@@ -74,7 +74,7 @@ class PageTransformer {
   constructor(optimizer = AmpOptimizer.create()) {
     this._log = new Signale({
       'interactive': false,
-      'scope': 'Page minifier',
+      'scope': 'Page transformer',
     });
 
     // Set excludes for CSS selector rewriting
@@ -102,10 +102,10 @@ class PageTransformer {
    * @param  {path} path Allows overwriting of default path
    * @return {Stream}
    */
-  start(path) {
+  start(path, options) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-    return gulp.src(`${path}/**/*`)
+    return gulp.src(path, options)
         .pipe(through.obj(async function(canonicalPage, encoding, callback) {
           // The following transformations should only be applied to Grow's
           // HTML output, just forward all other files
@@ -141,7 +141,7 @@ class PageTransformer {
             this.push(page);
           }
 
-          scope._log.success(`Transformed ${canonicalPage.path}`);
+          scope._log.success(`Transformed ${canonicalPage.relative}`);
           callback();
         }))
         .pipe(gulp.dest(project.paths.PAGES_DEST));
@@ -358,8 +358,6 @@ class PageTransformer {
     hash = hash.digest('base64');
 
     if (!this._minifiedCssCache[hash]) {
-      this._log.info(`Caching CSS bundle with ${hash}`);
-
       this._minifiedCssCache[hash] = this._cleanCss.minify(css).styles;
     }
 
