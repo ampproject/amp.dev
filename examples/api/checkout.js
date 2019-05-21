@@ -28,7 +28,6 @@ const config = {
   maxAge: 1000 * 60 * 10, // 10 minutes
 };
 const discounts = new LRU(config);
-const cart = new LRU(config);
 
 examples.get('/checkout/shopping-cart', upload.none(), handleShoppingCart);
 examples.post('/checkout/apply-code', upload.none(), handleApplyCode);
@@ -48,23 +47,8 @@ function handleShoppingCart(request, response) {
 
 function writeShoppingCart(request, response, clientId) {
   const discount = discounts.get(clientId) || 0;
-  const total = SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount;
-  const cartItems = createShoppingCart();
-  cart.set('total', total.toFixed(2));
-  if (discount > 0) {
-    cart.set('discount', `${discount * 100}%`);
-  } else {
-    cart.del('discount');
-  }
-  response.json({
-    cartItems,
-    total: cart.get('total'),
-    discount: cart.get('discount'),
-  });
-}
-
-function createShoppingCart() {
-  return {
+  const total = (SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount).toFixed(2);
+  const cart = {
     items: [
       {
         name: 'Item 1',
@@ -82,7 +66,15 @@ function createShoppingCart() {
         quantity: 3,
       },
     ],
+    total,
+    discount: toPercentString(discount),
   };
+
+  response.json(cart);
+}
+
+function toPercentString(num) {
+  return `${num * 100}%`;
 }
 
 module.exports = examples;
