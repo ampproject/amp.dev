@@ -55,7 +55,7 @@
     "module-alias": "2.2.0",
     "mri": "1.1.4",
     "multer": "1.4.1",
-    "node-fetch": "2.5.0",
+    "node-fetch": "2.6.0",
     "node-zopfli-es": "1.0.3",
     "nunjucks": "3.2.0",
     "shrink-ray-current": "4.0.0",
