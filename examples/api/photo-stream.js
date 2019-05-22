@@ -27,7 +27,7 @@ examples.get('/photo-stream', (req, res) => {
   const {query} = req;
   const items = [];
   const numberOfItems = Number(query.items) || 10;
-  const pagesLeft = Number(query.left) || 1;
+  const pagesLeft = Number.isNaN(Number(query.left)) ? 1 : Number(query.left);
   const latency = Number(query.latency) || 0;
   const width = Number(query.width) || 200;
   const height = Number(query.height) || width;
@@ -48,7 +48,7 @@ examples.get('/photo-stream', (req, res) => {
     items.push(r);
   }
 
-  const nextUrl = '/photo-stream?items=' +
+  const nextUrl = req.baseUrl + '/photo-stream?items=' +
     numberOfItems + '&left=' + JSON.stringify(pagesLeft - 1);
 
   const randomFalsy = () => {
