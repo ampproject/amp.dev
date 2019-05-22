@@ -29,7 +29,10 @@ jobs:
   include:
     - stage: preparation
       name: 'Check code, import documents, build samples, playground & boilerplate'
-      script: unbuffer gulp buildPrepare
+      before_script:
+        - unbuffer gulp lintNode
+      script:
+        - if [ $TRAVIS_BRANCH == "future" ]; then unbuffer gulp buildPrepare; fi
     - &build
       stage: build
       install:
