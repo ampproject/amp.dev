@@ -23,18 +23,20 @@ const config = require('@lib/config');
 const Platform = require('@lib/platform');
 const signale = require('signale');
 const build = require('./build.js');
+const {samplesBuilder} = require('@lib/build/samplesBuilder');
 
-function bootstrap(callback) {
-  gulp.parallel(build.buildBoilerplate, build.buildPlayground, build.importAll)(callback);
+function bootstrap(done) {
+  gulp.parallel(build.buildBoilerplate, build.buildPlayground, build.importAll)(done);
 }
 
-function develop(callback) {
-  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), _run)(callback);
+function develop(done) {
+  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), _run)(done);
 }
 
 function _run() {
   signale.info('Watching icons, templates and styles ...');
 
+  samplesBuilder.build(true);
   gulp.watch(`${project.paths.ICONS}/**/*`, build.icons);
   gulp.watch(`${project.paths.TEMPLATES}/**/*`, build.templates);
   gulp.watch(`${project.paths.SCSS}/**/*`, build.sass);
