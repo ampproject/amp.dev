@@ -185,9 +185,10 @@ function buildPrepare(done) {
   gulp.series(
       test.lintNode,
       // eslint-disable-next-line prefer-arrow-callback
-      async function checkEnvironment() {
+     function checkEnvironment() {
         if (travis.onTravis() &&
             (travis.repo.branch && !BUILDING_BRANCHES.includes(travis.repo.branch))) {
+          done();
           process.exit(0);
         }
       },
