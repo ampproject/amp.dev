@@ -17,10 +17,27 @@
 'use strict';
 
 const gulp = require('gulp');
+const through = require('through2');
+const yaml = require('js-yaml');
 const {sh} = require('@lib/utils/sh');
+const {project} = require('@lib/utils');
+const signale = require('signale');
 
 function lintNode() {
   return sh('npm run lint:node');
+}
+
+function lintYaml() {
+  return gulp.src(`${project.paths.ROOT}/**/*.{yaml,yml}`)
+      .pipe(through.obj(async (file, encoding, callback) => {
+        try {
+          yaml.safeLoad(file.contents);
+          callback();
+        } catch (e) {
+          signale.fatal(`Error parsing YAML: ${file.relative}`, e);
+          callback(e);
+        }
+      }));
 }
 
 function lintGrow() {
@@ -28,5 +45,6 @@ function lintGrow() {
 }
 
 exports.lintNode = lintNode;
+exports.lintYaml = lintYaml;
 exports.lintGrow = lintGrow;
-exports.lintAll = gulp.parallel(lintNode);
+exports.lintAll = gulp.parallel(lintNode, lintYaml);
