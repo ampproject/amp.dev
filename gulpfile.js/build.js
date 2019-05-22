@@ -184,7 +184,7 @@ function buildPrepare(done) {
       test.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
-  gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll),
+      gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll),
       // TODO: Fix working but malformatted references before reenabling
       // test.lintGrow,
       // eslint-disable-next-line prefer-arrow-callback
