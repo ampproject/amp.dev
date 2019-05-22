@@ -275,7 +275,8 @@ async function transformPages() {
 
     while (shards.length < shardCount) {
       const shardId = shards.length;
-      const shard = sh(`gulp transformPages --shard ${shardId}`);
+      const shard = sh(`gulp transformPages --env ${config.environment} \
+          --shard ${shardId}`);
       signale.success(`Started shard ${shardId} ...`);
       shards.push(shard);
     }
