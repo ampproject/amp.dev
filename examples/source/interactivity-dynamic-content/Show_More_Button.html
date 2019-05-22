@@ -84,9 +84,9 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
 
   <!-- ## Show more using amp-list and amp-bind -->
   <!-- You can also implement a show more button manually by using `amp-list` and `amp-bind`, where
-  `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `productsState`
+  `amp-list` `src` data are bind to the value of an `amp-state` element. Here we are using two `amp-state`: `photos`
   which uses the same json `src` as the `amp-list` so that will initially contain the same list of items ... -->
-  <amp-state id="productsState" src="/documentation/examples/api/photo-stream?items=3&left=3">
+  <amp-state id="photos" src="/documentation/examples/api/photo-stream?items=3&left=3">
   </amp-state>
 
   <!-- ... while the `amp-state` with id `product` is just used to implement the show-more logic where we are allowing the user to click 3 times. -->
@@ -104,11 +104,11 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
       from that component as a `src`. We also dynamically change the height of the amp-list based on
       the number of items (each item has a height of `108px`). -->
   <amp-list src="/documentation/examples/api/photo-stream?items=3&left=3"
-            [src]="productsState.items"
+            [src]="photos.items"
             layout="fixed-height"
             width="auto"
             height="332"
-            [height]="productsState.items.length * 108 + 8">
+            [height]="photos.items.length * 108 + 8">
     <template type="amp-mustache">
       <div class="list-item">
         <amp-img src={{imageUrl}}
@@ -127,8 +127,8 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
             action-xhr="/documentation/examples/api/photo-stream"
             target="_top"
             on="submit-success: AMP.setState({
-              productsState: {
-                items: productsState.items.concat(event.response.items)
+              photos: {
+                items: photos.items.concat(event.response.items)
               },
               product: {
                 moreItemsPageIndex: product.moreItemsPageIndex - 1,
