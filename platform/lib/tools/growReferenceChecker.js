@@ -42,6 +42,8 @@ const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md',
 };
 /* eslint-enable max-len */
+// The following paths are skipped when checked for existance
+const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/reference\/.*?/g;
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -147,6 +149,10 @@ class GrowReferenceChecker {
    * @return {String}      The either untouched or adjusted path
    */
   _verifyReference(documentPath) {
+    if (documentPath.match(IGNORED_PATH_PATTERNS)) {
+      return documentPath;
+    }
+
     if (fs.existsSync(POD_BASE_PATH + documentPath)) {
       return documentPath;
     }
@@ -207,4 +213,4 @@ if (!module.parent) {
   })();
 }
 
-module.exports = GrowReferenceChecker;
+module.exports = new GrowReferenceChecker();

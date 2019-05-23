@@ -20,7 +20,7 @@ If you want a full specification, you can look at the [official documentation](h
 
 ## What is Deep Merge?
 
-We explained that when `AMP.setState()` is called, `<amp-bind>` will "deep-merge the provided object literal with the current state." The deep-merge functionality will not overwrite anything, but will rather merge the two objects. [In the example]({{g.doc('/content/amp-dev/documentation/components/amp-bind.html', locale=doc.locale).url.path}}#deep-merge-with-ampsetstate) on the `<amp-bind>` documentation, we see that providing only an age for the employee will just update the value of the age of the employee in the state.
+We explained that when `AMP.setState()` is called, `<amp-bind>` will "deep-merge the provided object literal with the current state." The deep-merge functionality will not overwrite anything, but will rather merge the two objects. [In the example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#deep-merge-with-ampsetstate) on the `<amp-bind>` documentation, we see that providing only an age for the employee will just update the value of the age of the employee in the state.
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"...></button>

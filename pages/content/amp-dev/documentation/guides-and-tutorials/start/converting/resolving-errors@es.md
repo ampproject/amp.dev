@@ -244,7 +244,7 @@ Voila! Nuestra imagen está en la relación de aspecto correcta y responde respo
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
-Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ## ¡Éxito!
 

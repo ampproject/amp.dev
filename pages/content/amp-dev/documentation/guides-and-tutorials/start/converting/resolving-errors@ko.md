@@ -263,7 +263,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption='이미지가 반응합니다!') }}
 
 [tip type="read-on"]
-[AMP 레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
+[AMP 레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
 [/tip]
 
 ## 성공입니다.

@@ -79,7 +79,7 @@ When users request your AMP site, they may be sent the site from an AMP cache se
 
 - Fixing HTML issues that might result in inconsistent rendering in various browsers; i.e., closing all tags, lowercasing attribute names, or escaping text
 
-As you build websites with AMP and work through the exercises in these trainings, check to make sure that your sites are valid. To track validation errors, we’ll use the AMP Validator that we installed in the [course introduction]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/course-introduction.md#setting-up-the-amp-validator', locale=doc.locale).url.path}}).
+As you build websites with AMP and work through the exercises in these trainings, check to make sure that your sites are valid. To track validation errors, we’ll use the AMP Validator that we installed in the [course introduction]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/course-introduction.md', locale=doc.locale).url.path}}#setting-up-the-amp-validator).
 
 ## Exercise 1: Using the AMP Validator
 

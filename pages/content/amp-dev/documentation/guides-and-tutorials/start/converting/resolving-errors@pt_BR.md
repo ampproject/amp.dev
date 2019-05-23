@@ -258,7 +258,7 @@ Pronto! A imagem está na proporção correta e preenche responsivamente a largu
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Agora a imagem é responsiva!") }}
 
-Leia mais: Saiba mais sobre o sistema de layout AMP na [especificação de layout AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+Leia mais: Saiba mais sobre o sistema de layout AMP na [especificação de layout AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ## Pronto!
 

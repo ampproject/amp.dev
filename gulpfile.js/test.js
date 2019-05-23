@@ -22,6 +22,7 @@ const yaml = require('js-yaml');
 const {sh} = require('@lib/utils/sh');
 const {project} = require('@lib/utils');
 const signale = require('signale');
+const growReferenceChecker = require('@lib/tools/growReferenceChecker');
 
 function lintNode() {
   return sh('npm run lint:node');
@@ -41,10 +42,10 @@ function lintYaml() {
 }
 
 function lintGrow() {
-  return sh('npm run lint:grow');
+  return growReferenceChecker.start();
 }
 
 exports.lintNode = lintNode;
 exports.lintYaml = lintYaml;
 exports.lintGrow = lintGrow;
-exports.lintAll = gulp.parallel(lintNode, lintYaml);
+exports.lintAll = gulp.parallel(lintNode, lintYaml, lintGrow);

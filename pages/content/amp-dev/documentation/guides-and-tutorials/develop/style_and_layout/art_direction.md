@@ -79,7 +79,7 @@ which in this instance is `hummingbird-narrow.jpg` (320px).
 **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`.
 [/tip]
 
-Read more about the [AMP `sizes` attribute here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes', locale=doc.locale).url.path}}).
+Read more about the [AMP `sizes` attribute here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}).
 
 ## heights
 

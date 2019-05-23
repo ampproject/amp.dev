@@ -28,17 +28,19 @@ stages:
 jobs:
   include:
     - stage: preparation
+      env: APP_ENV=staging
       name: 'Check code, import documents, build samples, playground & boilerplate'
       before_script:
+        - unbuffer gulp buildSamples
         - unbuffer gulp lintAll
       script:
         - if [ $TRAVIS_BRANCH == "future" ]; then unbuffer gulp buildPrepare; fi
     - &build
       stage: build
+      env: APP_ENV=staging
       install:
         - npm ci
         - pip install grow==0.7.4 --user
-      env: APP_ENV=staging
       name: 'Build Pages (EN)'
       script: unbuffer gulp buildPages --locales en
     - <<: *build
