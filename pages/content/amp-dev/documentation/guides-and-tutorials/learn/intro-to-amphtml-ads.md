@@ -54,6 +54,10 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 1.  The AMP Runtime sends an ad request to the specified ad network to retrieve the ad. Ad networks capable of serving AMPHTML ads provide a [Fast Fetch implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) that validates and signs the creative.
 1.  The ad network responds with the AMPHTML ad and the AMP Runtime renders the ad on the AMP page.
 
+[tip type="note"]
+No special integration is needed to serve AMPHTML to non-AMP pages. Check with your ad network to see if they support AMPHTML ads.
+[/tip]
+
 ## Serving AMPHTML ads
 
 ### Publishers
