@@ -16,8 +16,7 @@
 
 'use strict';
 
-const ampOptimizer = require('amp-toolbox-optimizer');
-const runtimeVersion = require('amp-toolbox-runtime-version');
+const AmpOptimizer = require('amp-toolbox-optimizer');
 const path = require('path');
 
 const io = require('./lib/io');
@@ -31,6 +30,7 @@ const generatorTemplate = io.readFile(INPUT_FILE);
 const config = initConfig();
 const generatorPage = templates.render(generatorTemplate, config);
 generateOptimizedAmpFiles(generatorPage);
+console.log('Built boilerplate generator.');
 
 function initConfig() {
   const config = {
@@ -61,9 +61,6 @@ async function generateOptimizedAmpFiles(output) {
 }
 
 async function optimizeAmp(html) {
-  const ampRuntimeVersion = await runtimeVersion.currentVersion();
-  return await ampOptimizer.transformHtml(html, {
-    ampUrl: './' + AMP_PATH,
-    ampRuntimeVersion,
-  });
+  const optimizer = AmpOptimizer.create();
+  return await optimizer.transformHtml(html);
 }

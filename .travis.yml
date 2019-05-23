@@ -3,23 +3,79 @@ node_js:
   - lts/*
 git:
   depth: 3
+addons:
+  apt:
+    packages:
+      # Needed hack to have colored output, see: travis-ci/travis-ci/#7967
+      # This installs unbuffer which reenables colored output for builds
+      # with secret environment variables
+      - expect-dev
 cache:
   - pip
   - npm
-install:
-  - pip install grow==0.7.4 --user
-  - grow --version
-  - which grow
-  - npm ci
-before_deploy:
-  - npm run build:staging
-deploy:
-  provider: gae
-  keyfile: ".staging.key.json"
-  project: amp-dev-staging
-  skip_cleanup: true
-  on:
-    branch: future
 before_install:
 - openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv
   -in .staging.key.json.enc -out .staging.key.json -d
+- gcloud auth activate-service-account --key-file=.staging.key.json
+install:
+  - npm ci
+stages:
+  - preparation
+  - name: build
+    if: branch = future
+  - name: deploy
+    if: branch = future
+jobs:
+  include:
+    - stage: preparation
+      name: 'Check code, import documents, build samples, playground & boilerplate'
+      before_script:
+        - unbuffer gulp lintAll
+      script:
+        - if [ $TRAVIS_BRANCH == "future" ]; then unbuffer gulp buildPrepare; fi
+    - &build
+      stage: build
+      install:
+        - npm ci
+        - pip install grow==0.7.4 --user
+      env: APP_ENV=staging
+      name: 'Build Pages (EN)'
+      script: unbuffer gulp buildPages --locales en
+    - <<: *build
+      name: 'Build Pages (FR)'
+      script: unbuffer gulp buildPages --locales fr
+    - <<: *build
+      name: 'Build Pages (AR)'
+      script: unbuffer gulp buildPages --locales ar
+    - <<: *build
+      name: 'Build Pages (ES)'
+      script: unbuffer gulp buildPages --locales es
+    - <<: *build
+      name: 'Build Pages (IT)'
+      script: unbuffer gulp buildPages --locales it
+    - <<: *build
+      name: 'Build Pages (ID)'
+      script: unbuffer gulp buildPages --locales id
+    - <<: *build
+      name: 'Build Pages (JA)'
+      script: unbuffer gulp buildPages --locales ja
+    - <<: *build
+      name: 'Build Pages (KO)'
+      script: unbuffer gulp buildPages --locales ko
+    - <<: *build
+      name: 'Build Pages (BR)'
+      script: unbuffer gulp buildPages --locales pt_BR
+    - <<: *build
+      name: 'Build Pages (RU)'
+      script: unbuffer gulp buildPages --locales ru
+    - <<: *build
+      name: 'Build Pages (TR)'
+      script: unbuffer gulp buildPages --locales tr
+    - <<: *build
+      name: 'Build Pages (CN)'
+      script: unbuffer gulp buildPages --locales zh_CN
+    - stage: deploy
+      env: APP_ENV=staging
+      script:
+        - unbuffer gulp buildFinalize
+        - gcloud app deploy --project=amp-dev-staging --quiet

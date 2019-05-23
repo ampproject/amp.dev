@@ -51,7 +51,7 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
 The AMP action, `toggleClass` enables the addition and removal of classes to defined elements.
 
 ```
-elementName.ToggleClass(class="className")
+elementName.toggleClass(class="className")
 ```
 
 You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
