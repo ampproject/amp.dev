@@ -13,7 +13,7 @@ Users need a way to navigate websites with many pages. In many sites and apps yo
 
 - The menu should contain several links that navigate to other pages when clicked.
 
-From the [list]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}) of AMP components, we decide on the following:
+From the [list]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) of AMP components, we decide on the following:
 
 - The menu will be implemented using `<amp-sidebar>`.
 
@@ -188,7 +188,7 @@ The documentation for <`amp-sidebar>` doesn’t explain how to implement a neste
 
 If we go to Google and search for "ui collapsible content," we see several search results about how to build an "accordion." We realize after looking through the results that an accordion is exactly what we need. But does AMP provide something that can work as an accordion?
 
-Looking through the [list]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}) of AMP components, in the layout section we find that there is indeed an [`<amp-accordion>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}}) component that matches our needs.
+Looking through the [list]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) of AMP components, in the layout section we find that there is indeed an [`<amp-accordion>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}}) component that matches our needs.
 
 We can place the `<amp-accordion>` component inside of the `<amp-sidebar>` component just as we put `<ul>`, `<li>`, and `<a>` tags inside of the `<amp-sidebar>` in the previous exercise. When the menu is open, the accordion components will display in their default collapsed condition. Then the accordions can be expanded or closed by interacting with them. When the menu is closed, the accordions will disappear with all of the rest of the content in the menu. With `<amp-sidebar>` and `<amp-accordion>` working together, we can create a slide-out nested navigation menu!
 

@@ -58,7 +58,7 @@ AMP 提供了一系列[布局]({{g.doc('/content/amp-dev/documentation/guides-an
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
 
 ## media
 
@@ -167,4 +167,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。

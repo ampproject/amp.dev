@@ -265,7 +265,7 @@ Voila! Our image is in the correct aspect ratio and responsively fills the width
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Our image is now responsive!") }}
 
 [tip type="read-on"]
-**READ ON –** Learn more about the AMP Layout System in the [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+**READ ON –** Learn more about the AMP Layout System in the [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Success!

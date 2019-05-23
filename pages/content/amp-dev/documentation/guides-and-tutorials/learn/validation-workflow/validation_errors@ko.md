@@ -755,7 +755,7 @@ CSS 내 @ 규칙을 말합니다.
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
 [레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
 
 **참고:** 레이아웃을 지정하지 않고
 `width` 및 `height` 값을 포함하지 않으면
@@ -786,7 +786,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정하지 않았을 때
 암시적 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
 
 ### AMP 태그가 지정된 레이아웃을 지원하지 않음
 
@@ -813,7 +813,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
 [레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
 
 ### 지정된 레이아웃에서 허용되지 않는 속성
 
@@ -836,7 +836,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정했는데
 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
 
 ### 레이아웃에서 필요로 하는 속성 값이 잘못됨
 

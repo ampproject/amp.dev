@@ -25,7 +25,7 @@ Components are building blocks for the web. They represent the combination of st
 
 Optionally, components also have "children." Here, "children" refers to content (such as text, HTML tags, or other components) that is placed between the opening and closing tags of the component. The way these children are displayed on the page is different for each component.
 
-AMP’s component system helps you quickly build efficient and responsive features into your pages with minimal effort. The AMP library provides a comprehensive list of components for you to use. There are components for building forms and carousels, for integrating page analytics, for making XHR requests to servers, and much more. The possibilities are virtually endless. You can see the full list of available components at the the AMP Components reference [here]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}).
+AMP’s component system helps you quickly build efficient and responsive features into your pages with minimal effort. The AMP library provides a comprehensive list of components for you to use. There are components for building forms and carousels, for integrating page analytics, for making XHR requests to servers, and much more. The possibilities are virtually endless. You can see the full list of available components at the the AMP Components reference [here]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).
 
 As an example, here are three AMP components we could use in our site:
 
@@ -52,7 +52,7 @@ For example, in the case of `<amp-img>`, AMP requires us to specify the dimensio
 To use the component and to resolve the `<amp-img>` validation error from earlier, replace the existing img tag in our page with the AMP equivalent.
 Hint: instead of `<img …>`, write `<amp-img …>` and give your image fixed dimensions. Give the image a `width` of `640` and a `height` of `480`.
 
-If necessary, reference the documentation for `<amp-img>` [here]({{g.doc('/content/amp-dev/documentation/components/amp-img.md', locale=doc.locale).url.path}}).
+If necessary, reference the documentation for `<amp-img>` [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
 
 ### Solution
 

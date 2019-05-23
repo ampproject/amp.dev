@@ -263,7 +263,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="我们的图片现在是自适应图片了！") }}
 
 [tip type="read-on"]
-要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})。
+要详细了解 AMP 布局系统，请参阅 [AMP 布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
 [/tip]
 
 ## 成功了！

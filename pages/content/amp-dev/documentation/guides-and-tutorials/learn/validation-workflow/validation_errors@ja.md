@@ -755,7 +755,7 @@ AMP で使用できるアットルールはごくわずかです
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
 [レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})のページをご覧ください。
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
 
 **注:** レイアウトを指定せず、
 `width` 値と `height` 値も指定しない場合、
@@ -785,7 +785,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されておらず、
 許可されていない属性が暗黙的レイアウトに含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})に、
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### 指定されたレイアウトが AMP タグでサポートされていない
@@ -813,7 +813,7 @@ AMP タグで CONTAINER がサポートされていないと、
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
 [レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})のページをご覧ください。
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
 
 ### 指定されたレイアウトで属性が許可されていない
 
@@ -835,7 +835,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されていて、
 そのレイアウトに許可されていない属性が含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})に、
+[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### レイアウトで必要な属性の値が無効

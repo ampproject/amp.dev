@@ -755,7 +755,7 @@ nas [especificações do validador de AMP](https://github.com/ampproject/amphtml
 O comportamento real do layout é determinado pelo atributo `layout`.
 Para saber mais sobre como funciona o layout,
 consulte [Como controlar o layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e
-as [Especificações do sistema de layout de HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+as [Especificações do sistema de layout de HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 **Observação:** se você não especificar o layout
 e não incluir os valores `width` e `height`,
@@ -786,7 +786,7 @@ ou adicione um valor `width` e/ou `height`, e o erro desaparecerá.
 Esse erro ocorre quando você não especifica um layout para a tag AMP,
 e o layout implícito tem um atributo não permitido.
 Os atributos não permitidos por tipos de layout são descritos nas
-[Especificações do sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+[Especificações do sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ### O layout especificado não é compatível com a tag AMP
 
@@ -813,7 +813,7 @@ nas [especificações do validador de AMP](https://github.com/ampproject/amphtml
 O comportamento real do layout é determinado pelo atributo `layout`.
 Para saber mais sobre como funciona o layout,
 consulte [Como controlar o layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e
-as [Especificações do sistema de layout de HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+as [Especificações do sistema de layout de HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ### Atributo não permitido pelo layout especificado
 
@@ -836,7 +836,7 @@ as [Especificações do sistema de layout de HTML para AMP]({{g.doc('/content/am
 Esse erro ocorre quando você especifica um layout para a tag AMP
 e ele tem um atributo não permitido.
 Os atributos não permitidos por tipos de layout são descritos nas
-[Especificações do sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+[Especificações do sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ### Valor inválido para o atributo exigido pelo layout
 
