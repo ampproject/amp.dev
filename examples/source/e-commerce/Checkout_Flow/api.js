@@ -29,8 +29,8 @@ const config = {
 };
 const discounts = new LRU(config);
 
-examples.get('/checkout/shopping-cart', upload.none(), handleShoppingCart);
-examples.post('/checkout/apply-code', upload.none(), handleApplyCode);
+examples.get('/shoppingcart', upload.none(), handleShoppingCart);
+examples.post('/apply-code', upload.none(), handleApplyCode);
 
 function handleApplyCode(request, response) {
   setMaxAge(response, 0);
