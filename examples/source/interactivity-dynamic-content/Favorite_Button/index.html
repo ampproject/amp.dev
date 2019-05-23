@@ -137,7 +137,7 @@ author: sebastianbenz
     -->
     <amp-state id="favorite"
                credentials="include"
-               src="/favorite">
+               src="favorite">
     </amp-state>
 
     <!--
@@ -160,7 +160,7 @@ author: sebastianbenz
     -->
     <form class="favorite-button"
           method="post"
-          action-xhr="/favorite"
+          action-xhr="favorite"
           target="_top"
           on="submit:AMP.setState({
                         favorite: !favorite
@@ -175,7 +175,7 @@ author: sebastianbenz
                 credentials="include"
                 items="."
                 single-item
-                src="/favorite">
+                src="favorite">
         <template type="amp-mustache">
           <input type="submit"
                  class="{{#.}}heart-fill{{/.}}{{^.}}heart-border{{/.}}"
@@ -203,7 +203,7 @@ author: sebastianbenz
     -->
     <amp-state id="favoriteWithCount"
                credentials="include"
-               src="/favorite-with-count">
+               src="favorite-with-count">
     </amp-state>
     <!--
     The implementation is similar to the previous sample, but also updates the count when the button is clicked
@@ -220,7 +220,7 @@ author: sebastianbenz
     -->
     <form class="favorite-button"
           method="post"
-          action-xhr="/favorite-with-count"
+          action-xhr="favorite-with-count"
           target="_top"
           on="submit:AMP.setState({
                    previousFavoriteWithCount: favoriteWithCount,
@@ -241,7 +241,7 @@ author: sebastianbenz
                 items="."
                 single-item
                 noloading
-                src="/favorite-with-count">
+                src="favorite-with-count">
         <template type="amp-mustache">
           <div class="favorite-container">
             <input type="submit"
