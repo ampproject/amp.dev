@@ -51,7 +51,7 @@ Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document
 
-Document can choose to opt in a certain experiments. To do that, simply put a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
+Document can choose to opt in a certain experiments. To do that, place a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
 
 ```html
 <head>
@@ -65,22 +65,29 @@ Document can choose to opt in a certain experiments. To do that, simply put a me
 
 By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
 
-## Enable an Origin Trial
+## Origin trials
 
-Origin trials (inspired by the [Google Chrome team](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md)) are useful when a feature is far enough along that it’s ready to be tested with real users, but some changes are still expected based on developer feedback.
+[Origin trials](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md) enable developers to use an experimental feature in production and provide essential feedback.
 
-Traditionally, a feature at this stage is put into experimental mode, where developers can try it in development, but it won’t work in production yet. This can be useful, but developers won’t necessarily try something out unless they see immediate benefit, so it’s hard for them to justify putting work into something that won’t work in production.
+Traditionally, a feature in experimental mode can be used in development, but cannot be pushed to production. With Origin trials, interested developers can opt-in to a test an experimental feature in production, with the following expectations:
 
-Enter origin trials: interested developers can opt-in to a test where they can use a new feature in production, with the expectations a) that the test is for a limited time, and b) that the feature will likely undergo some changes after origin trials. Since these are only experiments, there is a good chance that some of them will never ship as features on the AMP Project.
+- The test is for a limited time.
+- The feature will likely undergo some changes after origin trials.
 
-Origin trials are a great opportunity to try out a new feature before it’s fully live: you get to benefit immediately from the work you put into a feature (because the feature will be live on your site, rather than still guarded by an experiment), and your feedback can directly influence the direction of the feature.
+[tip type="important"]
+There is a risk that some experiments will never ship as features on the AMP Project.
+[/tip]
 
-### Process to enable an Origin Trial
+Origin trials present an opportunity to impliment and benifit from a new feature before it’s fully live. The feature will live on the develop's site, rather than guarded by an experiment, and feedback can directly influence the direction of the feature.
 
-You need to include a <meta> tag into the <head> tag on each page that uses the origin trial experiment like so: 
+### Enable an origin trial
+
+Include the following `<meta>` tag within the `<head>` tag on each page that uses the origin trial experiment: 
   
 ```html
 <meta name="amp-experiment-token" content="{copy your token here}"> 
 ```
 
-NOTE: “amp-experiment-token” is the literal string, “amp-experiment-token”. Not the token itself (which goes into the content attribute), or the name of the experiment.
+[tip type="note"]
+NOTE: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.
+[/tip]
