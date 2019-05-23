@@ -180,20 +180,20 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
   </tr>
   <tr>
    <td>
-    <a href="https://amp.dev/documentation/components/reference/amp-form.html?format=email"><code>amp-form</code></a>
+    <a href="https://amp.dev/documentation/components/amp-form.html?format=email"><code>amp-form</code></a>
    </td>
    <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <a href="https://amp.dev/documentation/components/reference/amp-mustache.html?format=email"><code>&lt;template type="amp-mustache"&gt;</code></a> to render a response.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-selector.html?format=email"><code>amp-selector</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-selector.html?format=email"><code>amp-selector</code></a>
    </td>
    <td>Represents a control that presents a menu of options and lets the user choose from it.
    </td>
   </tr>
   <tr>
    <td>
-    <a href="https://amp.dev/documentation/components/reference/amp-bind.html?format=email"><code>amp-bind</code> and <code>amp-state</code></a>
+    <a href="https://amp.dev/documentation/components/amp-bind.html?format=email"><code>amp-bind</code> and <code>amp-state</code></a>
    </td>
    <td>
     Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.
@@ -202,7 +202,7 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-list.html?format=email"><code>amp-list</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-list.html?format=email"><code>amp-list</code></a>
    </td>
    <td>
     Remotely fetches JSON data that will be rendered by an <a href="https://amp.dev/documentation/components/reference/amp-mustache.html?format=email"><code>&lt;amp-mustache&gt;</code></a>.
@@ -211,7 +211,7 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
   </tr>
   <tr>
    <td>
-    <a href="https://amp.dev/documentation/components/reference/amp-mustache.html?format=email"><code>&lt;template type="amp-mustache"&gt;</code></a>
+    <a href="https://amp.dev/documentation/components/amp-mustache.html?format=email"><code>&lt;template type="amp-mustache"&gt;</code></a>
    </td>
    <td>A Mustache template markup to render the results of an <code>amp-list</code> call and the <code>&lt;div submit-success&gt;</code> and <code>&lt;div submit-error&gt;</code> of <code>amp-form</code>.
    </td>
@@ -228,43 +228,43 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-accordion.html?format=email"><code>amp-accordion</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-accordion.html?format=email"><code>amp-accordion</code></a>
    </td>
    <td>A UI element that facilitates showing/hiding different sections.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-carousel.html?format=email"><code>amp-carousel</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-carousel.html?format=email"><code>amp-carousel</code></a>
    </td>
    <td>A carousel UI component.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-sidebar.html?format=email"><code>amp-sidebar</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-sidebar.html?format=email"><code>amp-sidebar</code></a>
    </td>
    <td>A sidebar for navigational purposes.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-image-lightbox.html?format=email"><code>amp-image-lightbox</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-image-lightbox.html?format=email"><code>amp-image-lightbox</code></a>
    </td>
    <td>A lightbox for containing images.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-lightbox.html?format=email"><code>amp-lightbox</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-lightbox.html?format=email"><code>amp-lightbox</code></a>
    </td>
    <td>A lightbox for containing content.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-fit-text.html?format=email"><code>amp-fit-text</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-fit-text.html?format=email"><code>amp-fit-text</code></a>
    </td>
    <td>A helper component for fitting text within a certain area.
    </td>
   </tr>
   <tr>
-   <td><a href="https://amp.dev/documentation/components/reference/amp-timeago.html?format=email"><code>amp-timeago</code></a>
+   <td><a href="https://amp.dev/documentation/components/amp-timeago.html?format=email"><code>amp-timeago</code></a>
    </td>
    <td>Provides a convenient way of rendering timestamps.
    </td>
