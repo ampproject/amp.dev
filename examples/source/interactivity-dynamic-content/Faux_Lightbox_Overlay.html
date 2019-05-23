@@ -60,36 +60,24 @@ It provides an alternative to using the [`amp-lightbox`](/documentation/componen
     We use the `overlays` object to hold the state of all overlays on the page. Each overlay has a separate property inside this object it binds to, in this case `overlays.o1`.
 
     Pressing the "Show overlay" button changes the state, displaying both the overlay and the background on the whole page.
-  -->
-  <div class="overlay-container">
-    <p style="padding-top: 100px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non porta metus, eget lobortis metus. Duis vel arcu quis leo auctor vulputate commodo ac magna. Curabitur suscipit sit amet nisl quis pulvinar. Donec at purus non nisl molestie fringilla. Quisque consequat ligula ut ligula pellentesque mollis. Phasellus a rhoncus risus. Curabitur molestie lorem metus, placerat lobortis est molestie finibus. Pellentesque viverra nulla in turpis ultrices, ac placerat dolor semper. Praesent rutrum ullamcorper mi, non suscipit magna finibus ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nulla lectus, lacinia vitae nisi vitae, laoreet cursus magna. Praesent lacus est, vestibulum sed urna non, tristique fermentum felis. Nunc posuere porta nunc non auctor. Praesent fringilla rutrum iaculis. Duis euismod facilisis ligula, vel auctor mi pulvinar vitae.</p>
-    <button on="tap:AMP.setState({ overlays: { o1: true } })">Show overlay</button>
 
-    <div class="overlay-content" hidden [hidden]="!overlays.o1">
-      This is an overlay.
+    Clicking on the background closes all visible overlays by setting the `overlays` state to null.
+  -->
+  <div>
+    <div class="overlay-container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non porta metus, eget lobortis metus. Duis vel arcu quis leo auctor vulputate commodo ac magna. Curabitur suscipit sit amet nisl quis pulvinar. Donec at purus non nisl molestie fringilla. Quisque consequat ligula ut ligula pellentesque mollis. Phasellus a rhoncus risus. Curabitur molestie lorem metus, placerat lobortis est molestie finibus. Pellentesque viverra nulla in turpis ultrices, ac placerat dolor semper. Praesent rutrum ullamcorper mi, non suscipit magna finibus ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed nulla lectus, lacinia vitae nisi vitae, laoreet cursus magna. Praesent lacus est, vestibulum sed urna non, tristique fermentum felis. Nunc posuere porta nunc non auctor. Praesent fringilla rutrum iaculis. Duis euismod facilisis ligula, vel auctor mi pulvinar vitae.</p>
+      <button on="tap:AMP.setState({ overlays: { o1: true } })">Show overlay</button>
+      <button on="tap:AMP.setState({ overlays: { o2: true } })">Show other overlay</button>
+
+      <div class="overlay-content" hidden [hidden]="!overlays.o1">
+        This is an overlay.
+      </div>
+      <div class="overlay-content" hidden [hidden]="!overlays.o2">
+        This is another overlay.
+      </div>
     </div>
-  </div>
-
-  <!--
-    A single page can contain multiple overlays.
-
-    In this case, the state property used by this overlay is different than the one above: `overlays.o2`.
-  -->
-  <div class="overlay-container">
-    <p style="padding-top: 100px">Duis eu aliquam ante. Proin pretium imperdiet augue, ut ultricies sapien mattis ut. Phasellus finibus aliquam auctor. Praesent vel nulla nulla. In non nisl finibus, maximus risus eget, iaculis massa. Nunc a augue nec nisi tristique sollicitudin congue vel dui. Curabitur ultricies ullamcorper efficitur. Phasellus suscipit elementum dui et consectetur. Curabitur libero justo, finibus sed lobortis eget, elementum sed felis. Suspendisse lacus magna, volutpat id sagittis quis, bibendum vel dui. Praesent lorem turpis, semper sit amet dapibus vel, placerat in sapien. Donec vitae commodo ante, non mollis diam. Nam non convallis risus.</p>
-    <button on="tap:AMP.setState({ overlays: { o2: true } })">Show overlay</button>
-
-    <div class="overlay-content" hidden [hidden]="!overlays.o2">
-      This is another overlay.
+    <div id="overlay-background" hidden [hidden]="!overlays" on="tap:AMP.setState({ overlays: null })" role="button" tabindex="-1">
     </div>
-  </div>
-
-  <!--
-    The background overlay is displayed when at least one overlay is visible.
-
-    Clicking on it closes all visible overlays by setting the `overlays` state to null.
-  -->
-  <div id="overlay-background" hidden [hidden]="!overlays" on="tap:AMP.setState({ overlays: null })" role="button" tabindex="-1">
   </div>
 </body>
 </html>
