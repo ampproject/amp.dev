@@ -64,3 +64,23 @@ Document can choose to opt in a certain experiments. To do that, simply put a me
 ```
 
 By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
+
+## Enable an Origin Trial
+
+Origin trials (inspired by the [Google Chrome team](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md)) are useful when a feature is far enough along that it’s ready to be tested with real users, but some changes are still expected based on developer feedback.
+
+Traditionally, a feature at this stage is put into experimental mode, where developers can try it in development, but it won’t work in production yet. This can be useful, but developers won’t necessarily try something out unless they see immediate benefit, so it’s hard for them to justify putting work into something that won’t work in production.
+
+Enter origin trials: interested developers can opt-in to a test where they can use a new feature in production, with the expectations a) that the test is for a limited time, and b) that the feature will likely undergo some changes after origin trials. Since these are only experiments, there is a good chance that some of them will never ship as features on the AMP Project.
+
+Origin trials are a great opportunity to try out a new feature before it’s fully live: you get to benefit immediately from the work you put into a feature (because the feature will be live on your site, rather than still guarded by an experiment), and your feedback can directly influence the direction of the feature.
+
+### Process to enable an Origin Trial
+
+You need to include a <meta> tag into the <head> tag on each page that uses the origin trial experiment like so: 
+  
+```html
+<meta name="amp-experiment-token" content="{copy your token here}"> 
+```
+
+NOTE: “amp-experiment-token” is the literal string, “amp-experiment-token”. Not the token itself (which goes into the content attribute), or the name of the experiment.
