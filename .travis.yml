@@ -1,83 +1,101 @@
 language: node_js
 node_js:
-  - lts/*
+- lts/*
 git:
   depth: 3
 addons:
   apt:
     packages:
-      # Needed hack to have colored output, see: travis-ci/travis-ci/#7967
-      # This installs unbuffer which reenables colored output for builds
-      # with secret environment variables
-      - expect-dev
+    - expect-dev
 cache:
-  - pip
-  - npm
+- pip
+- npm
 before_install:
-- openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv
-  -in .staging.key.json.enc -out .staging.key.json -d
-- gcloud auth activate-service-account --key-file=.staging.key.json
+- openssl aes-256-cbc -K $encrypted_b44033ffb787_key -iv $encrypted_b44033ffb787_iv
+  -in .prod.key.json.enc -out .prod.key.json -d
+- gcloud auth activate-service-account --key-file=.prod.key.json
 install:
-  - npm ci
+- npm ci
 stages:
-  - preparation
-  - name: build
-    if: branch = production-amp-dev
-  - name: deploy
-    if: branch = production-amp-dev
+- preparation
+- name: build
+  if: branch = production-amp-dev
+- name: deploy
+  if: branch = production-amp-dev
 jobs:
   include:
-    - stage: preparation
-      env: APP_ENV=production
-      name: 'Check code, import documents, build samples, playground & boilerplate'
-      before_script:
-        - unbuffer gulp buildSamples
-        - unbuffer gulp lintAll
-      script:
-        - if [ $TRAVIS_BRANCH == "production-amp-dev" ]; then unbuffer gulp buildPrepare; fi
-    - &build
-      stage: build
-      env: APP_ENV=production
-      install:
-        - npm ci
-        - pip install grow==0.7.4 --user
-      name: 'Build Pages (EN)'
-      script: unbuffer gulp buildPages --locales en
-    - <<: *build
-      name: 'Build Pages (FR)'
-      script: unbuffer gulp buildPages --locales fr
-    - <<: *build
-      name: 'Build Pages (AR)'
-      script: unbuffer gulp buildPages --locales ar
-    - <<: *build
-      name: 'Build Pages (ES)'
-      script: unbuffer gulp buildPages --locales es
-    - <<: *build
-      name: 'Build Pages (IT)'
-      script: unbuffer gulp buildPages --locales it
-    - <<: *build
-      name: 'Build Pages (ID)'
-      script: unbuffer gulp buildPages --locales id
-    - <<: *build
-      name: 'Build Pages (JA)'
-      script: unbuffer gulp buildPages --locales ja
-    - <<: *build
-      name: 'Build Pages (KO)'
-      script: unbuffer gulp buildPages --locales ko
-    - <<: *build
-      name: 'Build Pages (BR)'
-      script: unbuffer gulp buildPages --locales pt_BR
-    - <<: *build
-      name: 'Build Pages (RU)'
-      script: unbuffer gulp buildPages --locales ru
-    - <<: *build
-      name: 'Build Pages (TR)'
-      script: unbuffer gulp buildPages --locales tr
-    - <<: *build
-      name: 'Build Pages (CN)'
-      script: unbuffer gulp buildPages --locales zh_CN
-    - stage: deploy
-      env: APP_ENV=production
-      script:
-        - unbuffer gulp buildFinalize
-        # - gcloud app deploy --project=amp-dev-staging --quiet
+  - stage: preparation
+    env: APP_ENV=production
+    name: Check code, import documents, build samples, playground & boilerplate
+    before_script:
+    - unbuffer gulp buildSamples
+    - unbuffer gulp lintAll
+    script:
+    - if [ $TRAVIS_BRANCH == "production-amp-dev" ]; then unbuffer gulp buildPrepare; fi
+  - stage: build
+    env: APP_ENV=production
+    install: &1
+    - npm ci
+    - pip install grow==0.7.4 --user
+    name: Build Pages (EN)
+    script: unbuffer gulp buildPages --locales en
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (FR)
+    script: unbuffer gulp buildPages --locales fr
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (AR)
+    script: unbuffer gulp buildPages --locales ar
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (ES)
+    script: unbuffer gulp buildPages --locales es
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (IT)
+    script: unbuffer gulp buildPages --locales it
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (ID)
+    script: unbuffer gulp buildPages --locales id
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (JA)
+    script: unbuffer gulp buildPages --locales ja
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (KO)
+    script: unbuffer gulp buildPages --locales ko
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (BR)
+    script: unbuffer gulp buildPages --locales pt_BR
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (RU)
+    script: unbuffer gulp buildPages --locales ru
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (TR)
+    script: unbuffer gulp buildPages --locales tr
+  - stage: build
+    env: APP_ENV=production
+    install: *1
+    name: Build Pages (CN)
+    script: unbuffer gulp buildPages --locales zh_CN
+  - stage: deploy
+    env: APP_ENV=production
+    script:
+    - unbuffer gulp buildFinalize
+    - unbuffer gulp deploy
