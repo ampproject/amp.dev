@@ -85,7 +85,7 @@ function extractOptions(params) {
 
 function extractCommandFragments(command) {
   if (typeof command === 'string') {
-    return command.replace(/\\(\r?\n)+/gm, ' ')
+    return command.replace(/\s+/gm, ' ')
         .trim()
         .split(' ');
   }
