@@ -16,8 +16,9 @@
 
 'use strict';
 
-const LogProvider = require('./logProvider.js');
-const format = require('util');
+const {format} = require('util');
+const linkifyHtml = require('linkifyjs/html');
+const LogProvider = require('./LogProvider.js');
 
 /**
  * Formats a AMP runtime log requests.
@@ -32,9 +33,15 @@ class LogFormatter {
    * @param {Object} message The log request object.
    * @returns {string} HTML string
    */
-  formatHtml(message) {
-    const messageString = this.logProvider_.get(message);
-    return format(messageString, ...message.params);
+  apply(logRequest) {
+    const log = this.logProvider_.get(logRequest);
+    let formattedMesssage = format(log.message, ...logRequest.params);
+    formattedMesssage = linkifyHtml(formattedMesssage, {
+      defaultProtocol: 'https',
+      className: null,
+      target: null,
+    });
+    return formattedMesssage;
   }
 }
 

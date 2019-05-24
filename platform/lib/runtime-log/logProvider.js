@@ -21,12 +21,13 @@
  */
 class LogProvider {
   /**
-   * Turns a AMP runtime log requests into an HTML string
-   * @param {Object} message The log request object.
-   * @returns {string} HTML string
+   * Returns a message object.
+   *
+   * @param {Object} logRequest The log request object.
+   * @returns {Object} the log object
    */
-  formatHtml(message) {
-    throw new Error('not yet implemented' + message);
+  get(logRequest) {
+    throw new Error('not yet implemented' + logRequest);
   }
 }
 

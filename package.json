@@ -52,6 +52,7 @@
     "http-proxy": "1.17.0",
     "iltorb": "2.4.3",
     "js-yaml": "3.13.1",
+    "linkifyjs": "2.1.8",
     "lru-cache": "5.1.1",
     "module-alias": "2.2.0",
     "mri": "1.1.4",
