@@ -107,6 +107,10 @@
   &-image {
     width: 100%;
     background-color: color('blue-ribbon');
+
+    img {
+      object-fit: cover;
+    }
   }
 
   &-headline {
