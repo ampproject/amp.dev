@@ -1,13 +1,4 @@
 creation:
-  - name: MakeStories
-    description: WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
-    url: https://makestories.io/
-    image:
-      src: /static/img/tools/makestories.jpg
-      width: 701
-      height: 393
-    formats:
-      - stories
   - name: Adobe Animate
     official: true
     description: The AMPHTML Ad plugin for Adobe Animate allows the creation of rich, eye-catching marketing content with Adobe Animate.
@@ -28,15 +19,6 @@ creation:
       height: 402
     formats:
       - stories
-  - name: Newsroom AI
-    description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
-    url: https://www.nws.studio/the-stories-platform.html
-    image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
-    formats:
-      - stories
   - name: Google Web Designer
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en
@@ -55,6 +37,33 @@ creation:
       height: 3
     formats:
       - stories
+  - name: MakeStories
+    description: WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
+    url: https://makestories.io/
+    image:
+      src: /static/img/tools/makestories.jpg
+      width: 701
+      height: 393
+    formats:
+      - stories
+  - name: Newsroom AI
+    description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
+    url: https://www.nws.studio/the-stories-platform.html
+    image:
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Sparkpost
+    description: SparkPost is the first predictive email intelligence platform and the world's largest sender, delivering 37% of the world's B2C and B2B email.
+    url: https://www.sparkpost.com/
+    image:
+      src: /static/img/tools/sparkpost.png
+      width: 1034
+      height: 269
+    formats:
+      - email
   - name: Tick. Done.
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
     url: http://tick.co/

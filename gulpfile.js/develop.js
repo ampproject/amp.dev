@@ -18,7 +18,7 @@
 
 const gulp = require('gulp');
 const {project} = require('@lib/utils');
-const {sh} = require('@lib/utils/sh');
+const grow = require('@lib/utils/grow');
 const config = require('@lib/config');
 const Platform = require('@lib/platform');
 const signale = require('signale');
@@ -42,9 +42,8 @@ function _run() {
   gulp.watch(`${project.paths.SCSS}/**/*`, build.sass);
 
   config.configureGrow();
-  sh(`grow run --port ${config.hosts.pages.port}`, {
-    workingDir: project.paths.GROW_POD,
-  });
+
+  grow(`run --port ${config.hosts.pages.port}`);
 
   new Platform().start();
 }
