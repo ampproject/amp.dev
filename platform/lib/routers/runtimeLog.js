@@ -16,7 +16,7 @@
 
 'use strict';
 const express = require('express');
-const LogFormatter = require('../runtime-log/formatter.js');
+const LogFormatter = require('../runtime-log/HtmlFormatter.js');
 
 const Templates = require('@lib/templates/');
 

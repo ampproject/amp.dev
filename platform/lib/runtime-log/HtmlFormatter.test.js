@@ -16,7 +16,7 @@
 
 'use strict';
 
-const Formatter = require('./Formatter');
+const HtmlFormatter = require('./HtmlFormatter');
 
 let log;
 
@@ -24,7 +24,7 @@ const logProvider = {
   get: jest.fn(() => log),
 };
 
-const formatter = new Formatter(logProvider);
+const formatter = new HtmlFormatter(logProvider);
 
 test('formats string', () => {
   log = {
