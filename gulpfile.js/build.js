@@ -243,6 +243,13 @@ async function buildPages(done) {
         await grow('deploy --noconfirm --threaded');
       }, transformPages,
       // eslint-disable-next-line prefer-arrow-callback
+      function sharedPages() {
+        // Copy shared pages separated from PageTransformer as they should
+        // not be transformed
+        return gulp.src(`${project.paths.GROW_BUILD_DEST}/shared/*.html`)
+            .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
+      },
+      // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifacts() {
         // ... and again if on Travis store all built files for a later stage to pick up
         if (travis.onTravis()) {
