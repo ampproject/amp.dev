@@ -402,6 +402,9 @@ function persistBuildInfo(done) {
 }
 
 exports.clean = clean;
+exports.sass = sass;
+exports.icons = icons;
+exports.templates = templates;
 exports.importAll = importAll;
 exports.buildPlayground = buildPlayground;
 exports.buildBoilerplate = buildBoilerplate;
