@@ -59,7 +59,8 @@
     "node-zopfli-es": "1.0.3",
     "nunjucks": "3.2.0",
     "shrink-ray-current": "4.0.0",
-    "signale": "1.4.0"
+    "signale": "1.4.0",
+    "feedparser": "^2.2.9"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",

@@ -1,23 +1,31 @@
 entries:
-  - title: News
-    image: /static/img/news/times-of-india.jpg
-    headline: AMP on the Times of India
-    date: April 4, 2019
-    url: 'https://blog.amp.dev/2019/04/04/amp-on-the-times-of-india/'
-  - title: Announcement
-    image: /static/img/news/amp-dev.jpg
-    headline: AMPproject.org moves to amp.dev!
-    date: April 2, 2019
-    url: 'https://blog.amp.dev/2019/04/02/ampproject-org-moves-to-amp-dev/'
-  - title: News
-    headline: "Guest Post: AMP Email"
-    date: April 1, 2019
-    url: 'https://blog.amp.dev/2019/04/01/guest-post-amp-email/'
-  - title: News
-    headline: App like animation experiences in AMP
-    date:  March 28, 2019
-    url: 'https://blog.amp.dev/2019/03/28/app-like-animation-experiences-in-amp/'
-  - title: News
-    headline: Building the future of email with AMP
-    date: March 26, 2019
-    url: 'https://blog.amp.dev/2019/03/26/building-the-future-of-email-with-amp/'
+
+- title: "Video"
+  image: "https://i2.ytimg.com/vi/eHfzqcCH-gE/hqdefault.jpg"
+  headline: "How to make your AMP pages even faster"
+  date: "May 23, 2019"
+  url: "https://www.youtube.com/watch?v=eHfzqcCH-gE"
+
+- title: "Blog"
+  image: ""
+  headline: "Debunking Common AMP Myths"
+  date: "May 23, 2019"
+  url: "https://blog.amp.dev/2019/05/23/debunking-common-amp-myths/"
+
+- title: "Blog"
+  image: ""
+  headline: "Privacy-preserving instant loading for all web content"
+  date: "May 22, 2019"
+  url: "https://blog.amp.dev/2019/05/22/privacy-preserving-instant-loading-for-all-web-content/"
+
+- title: "Blog"
+  image: ""
+  headline: "A year into contributing back lessons learned from AMP to the whole web"
+  date: "May 21, 2019"
+  url: "https://blog.amp.dev/2019/05/21/contributing-back-lessons-learned-part-1/"
+
+- title: "Blog"
+  image: ""
+  headline: "Signed-Exchange: Solving the AMP URLs Display Problem"
+  date: "May 15, 2019"
+  url: "https://blog.amp.dev/2019/05/15/signed-exchange-solving-the-amp-urls-display-problem/"
