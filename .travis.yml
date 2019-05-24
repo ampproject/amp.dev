@@ -96,6 +96,16 @@ jobs:
     script: unbuffer gulp buildPages --locales zh_CN
   - stage: deploy
     env: APP_ENV=production
+    before_script:
+    - rm -rf $HOME/google-cloud-sdk
+    - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+    - curl https://sdk.cloud.google.com | bash > /dev/null
+    - source /home/travis/google-cloud-sdk/path.bash.inc
+    - gcloud version --quiet
+    - gcloud components update --quiet
+    - gcloud components install beta --quiet
+    - gcloud auth activate-service-account --key-file=.prod.key.json
+    - gcloud config set project amp-dev-230314
     script:
     - unbuffer gulp buildFinalize
     - unbuffer gulp deploy
