@@ -69,6 +69,8 @@ function clean() {
     project.absolute('pages/.depcache.json'),
     project.absolute('pages/podspec.yaml'),
 
+    project.absolute('examples/static/samples/samples.json'),
+
     project.paths.GROW_BUILD_DEST,
     project.paths.STATICS_DEST,
     project.absolute('platform/static'),
@@ -233,7 +235,7 @@ async function fetchArtifacts() {
  * @return {Promise}
  */
 async function buildPages(done) {
-  gulp.series(fetchArtifacts, gulp.parallel(buildSamples, buildFrontend),
+  gulp.series(fetchArtifacts, buildFrontend,
       // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
         config.configureGrow();
@@ -405,7 +407,8 @@ exports.buildPrepare = buildPrepare;
 exports.transformPages = transformPages;
 exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
-exports.buildFinalize = gulp.parallel(fetchArtifacts, collectStatics, persistBuildInfo);
+exports.buildFinalize = gulp.series(fetchArtifacts,
+    gulp.parallel(collectStatics, persistBuildInfo));
 
 exports.build = gulp.series(clean, buildPrepare, buildPages,
     gulp.parallel(collectStatics, persistBuildInfo));
