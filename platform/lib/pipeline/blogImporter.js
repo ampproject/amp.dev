@@ -24,6 +24,7 @@ const project = require('@lib/utils/project');
 const moment = require('moment');
 const FeedParser = require('feedparser');
 const request = require('request');
+const util = require('util');
 const LOG = new Signale({'scope': 'Markdown Documents'});
 
 // Where to save the documents to
@@ -75,13 +76,12 @@ class BlogImporter {
 
   /* Converts the provided RSS blog item into a consistent format. */
   onParseBlogPost(item) {
-    LOG.log(item);
     return {
       type: 'Blog',
-      date: item.date,
-      title: item.title,
+      date: moment(item.date),
+      title: item.title.rendered,
       origin: item.link,
-      thumbnail: '',
+      thumbnail: item.jetpack_featured_media_url || '',
     };
   }
 
@@ -89,7 +89,7 @@ class BlogImporter {
   onParseVideo(item) {
     return {
       type: 'Video',
-      date: item.pubdate,
+      date: moment(item.pubdate),
       origin: item.link,
       thumbnail: item['media:group']['media:thumbnail']['@'].url,
       title: item.title.replace(/\"/g, '\\"'),
@@ -102,11 +102,15 @@ class BlogImporter {
    * @return {undefined}
    */
   async _importBlogEntries() {
+    const promisifiedRequest = util.promisify(request);
+
     // grab both RSS feeds from YouTube and the blog
     const all = await Promise.all([
-      this.fetchFeedAsync({
-        url: 'https://amphtml.wordpress.com/feed/',
-        parseFunction: this.onParseBlogPost,
+      promisifiedRequest({
+        url: 'https://blog.amp.dev/wp-json/wp/v2/posts/?embedded=true',
+        json: true,
+      }).then((response) => {
+        return response.body.map((item) => this.onParseBlogPost(item));
       }),
       this.fetchFeedAsync({
         url: 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLXTOW_XMsIDTIRIu4Af-bqfGkUhPSE75A',
@@ -128,7 +132,7 @@ class BlogImporter {
 - title: "${ item.type}"
   image: "${ item.thumbnail }"
   headline: "${ item.title }"
-  date: "${ moment(item.date).format('MMMM D, YYYY') }"
+  date: "${ item.date.format('MMMM D, YYYY') }"
   url: "${ item.origin }"
 `
     );

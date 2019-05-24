@@ -7,7 +7,7 @@ entries:
   url: "https://www.youtube.com/watch?v=eHfzqcCH-gE"
 
 - title: "Blog"
-  image: ""
+  image: "https://blog.amp.dev/wp-content/uploads/2019/05/GettyImages-883707802.jpg"
   headline: "Debunking Common AMP Myths"
   date: "May 23, 2019"
   url: "https://blog.amp.dev/2019/05/23/debunking-common-amp-myths/"
