@@ -18,6 +18,7 @@
 
 const gulp = require('gulp');
 const {sh} = require('@lib/utils/sh');
+const grow = require('@lib/utils/grow');
 const config = require('@lib/config');
 const signale = require('signale');
 const del = require('del');
@@ -239,9 +240,7 @@ async function buildPages(done) {
       // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
         config.configureGrow();
-        await sh('grow deploy --noconfirm --threaded', {
-          workingDir: project.paths.GROW_POD,
-        });
+        await grow('deploy --noconfirm --threaded');
       }, transformPages,
       // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifacts() {

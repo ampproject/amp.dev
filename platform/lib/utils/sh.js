@@ -25,26 +25,26 @@ const DEFAULT_OPTIONS = {
   quiet: false,
 };
 
+
 /**
  * Executes a shell command.
  *
- * @param {string} the command string
+ * @param commandLine the command string, or array of command and argument parts (useful if arguments have spaces).
  * @param {string=''} an optional message being displayed after the command has
  * terminated succesfully.
  * @param {Object=DEFAULT_OPTIONS} an optional object extending the default options
  */
-function sh(string, ...params) {
+function sh(commandLine, ...options) {
   let message = '';
-  let opts = DEFAULT_OPTIONS;
-  if (isString(params[0])) {
-    message = params[0];
+  const opts = extractOptions(options);
+  if (isString(options[0])) {
+    message = options[0];
   }
-  opts = extractOptions(params);
 
-  string = string.replace(/\\(\r?\n)+/gm, ' ').trim();
-  const fragments = string.split(/ +/gm);
+  const fragments = extractCommandFragments(commandLine);
   const command = fragments[0];
   const args = fragments.splice(1);
+
   console.log(`$ ${command} ${args.join(' ')}`);
   return new Promise((resolve, reject) => {
     const process = spawn(command, args, {cwd: opts.workingDir});
@@ -82,6 +82,16 @@ function extractOptions(params) {
 
   return Object.assign({}, DEFAULT_OPTIONS, params[0] || {});
 }
+
+function extractCommandFragments(command) {
+  if (typeof command === 'string') {
+    return command.replace(/\\(\r?\n)+/gm, ' ')
+        .trim()
+        .split(' ');
+  }
+  return command;
+}
+
 
 function isString(obj) {
   return obj && obj.length > 0 && typeof obj[0] === 'string';
