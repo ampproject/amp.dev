@@ -166,7 +166,7 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
         -->
         <amp-list id="comments"
                   class="comments"
-                  src="<% hosts.backend %>/samples_templates/comment_section/comments"
+                  src="comments"
                   layout="fixed-height"
                   height="200"
                   items="."
@@ -177,8 +177,8 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
                   noloading>
           <template type="amp-mustache">
             <div class="comment">
-              <p><span class="user">{{User}}</span> <span class="date">{{Datetime}}</span></p>
-              <p>{{Text}}</p>
+              <p><span class="user">{{user}}</span> <span class="date">{{date}}</span></p>
+              <p>{{text}}</p>
             </div>
           </template>
           <button overflow>Show all comments</button>
@@ -206,7 +206,7 @@ This sample showcases how to build a comment section in AMP HTML using the [amp-
               amp-access="loggedIn"
               amp-access-hide
               method="post"
-              action-xhr="<% hosts.backend %>/samples_templates/comment_section/comments/new"
+              action-xhr="comments/new"
               target="_top"
               on="submit-success:
                     comments.changeToLayoutContainer,
