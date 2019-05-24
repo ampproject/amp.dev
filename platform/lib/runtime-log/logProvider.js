@@ -16,26 +16,18 @@
 
 'use strict';
 
-const LogProvider = require('./logProvider.js');
-const format = require('util');
-
 /**
- * Formats a AMP runtime log requests.
+ * Fetches and caches the runtime log.
  */
-class LogFormatter {
-  constructor(logProvider=new LogProvider()) {
-    this.logProvider_ = logProvider;
-  }
-
+class LogProvider {
   /**
    * Turns a AMP runtime log requests into an HTML string
    * @param {Object} message The log request object.
    * @returns {string} HTML string
    */
   formatHtml(message) {
-    const messageString = this.logProvider_.get(message);
-    return format(messageString, ...message.params);
+    throw new Error('not yet implemented' + message);
   }
 }
 
-module.exports = LogFormatter;
+module.exports = LogProvider;
