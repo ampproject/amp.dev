@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+require('module-alias/register');
 const {Signale} = require('signale');
 const gulp = require('gulp');
 const through = require('through2');

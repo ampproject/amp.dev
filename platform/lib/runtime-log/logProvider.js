@@ -17,11 +17,12 @@
 'use strict';
 
 const {format} = require('util');
+const config = require('../config.js');
 const nodeFetch = require('node-fetch');
 
 // Logs are hosted on cdn.ampproject.org
 // TODO: replace with final URL
-const LOG_HOST = 'https://amp.dev/static/files/log-messages-v%s.json';
+const LOG_HOST = `${config.hosts.platform.base}/static/files/log-messages-v%s.json`;
 
 /**
  * Fetches and caches the runtime log.

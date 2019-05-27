@@ -56,6 +56,7 @@ const paths = {
   GROW_POD: absolute('pages'),
   GROW_BUILD_DEST: absolute('build/pages'),
   PAGES_DEST: absolute('dist/pages'),
+  PAGES_SRC: absolute('pages/content/amp-dev'),
   STATICS_DEST: absolute('dist/static'),
   BUILD_INFO: absolute('platform/config/build-info.yaml'),
 };

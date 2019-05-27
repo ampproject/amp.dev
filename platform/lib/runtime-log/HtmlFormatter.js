@@ -33,8 +33,9 @@ class LogFormatter {
    * @param {Object} message The log request object.
    * @returns {string} HTML string
    */
-  apply(logRequest) {
-    const log = this.logProvider_.get(logRequest);
+  async apply(logRequest) {
+    const log = await this.logProvider_.get(logRequest);
+    console.log('formatting', log);
     let formattedMesssage = format(log.message, ...logRequest.params);
     formattedMesssage = linkifyHtml(formattedMesssage, {
       defaultProtocol: 'https',
