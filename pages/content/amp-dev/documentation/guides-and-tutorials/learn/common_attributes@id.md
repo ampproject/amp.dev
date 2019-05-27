@@ -58,7 +58,7 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ## media
 
@@ -167,4 +167,4 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).

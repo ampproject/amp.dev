@@ -51,7 +51,7 @@ Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document
 
-Document can choose to opt in a certain experiments. To do that, simply put a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
+Document can choose to opt in a certain experiments. To do that, place a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
 
 ```html
 <head>
@@ -63,4 +63,31 @@ Document can choose to opt in a certain experiments. To do that, simply put a me
 </head>
 ```
 
-By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's `prod-config.json` file. Note that document opt-in can be overridden by user opt-out.
+By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
+
+## Origin trials
+
+[Origin trials](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md) enable developers to use an experimental feature in production and provide essential feedback.
+
+Traditionally, a feature in experimental mode can be used in development, but cannot be pushed to production. With Origin trials, interested developers can opt-in to a test an experimental feature in production, with the following expectations:
+
+- The test is for a limited time.
+- The feature will likely undergo some changes after origin trials.
+
+[tip type="important"]
+There is a risk that some experiments will never ship as features on the AMP Project.
+[/tip]
+
+Origin trials present an opportunity to impliment and benifit from a new feature before it’s fully live. The feature will live on the develop's site, rather than guarded by an experiment, and feedback can directly influence the direction of the feature.
+
+### Enable an origin trial
+
+Include the following `<meta>` tag within the `<head>` tag on each page that uses the origin trial experiment: 
+  
+```html
+<meta name="amp-experiment-token" content="{copy your token here}"> 
+```
+
+[tip type="note"]
+NOTE: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.
+[/tip]

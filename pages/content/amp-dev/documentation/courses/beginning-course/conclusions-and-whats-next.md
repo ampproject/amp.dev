@@ -25,4 +25,4 @@ The following are some additional topics and links to explore:
 
 - [The AMP Boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}})
 
-- [List of available AMP Components]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}})
+- [List of available AMP Components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})

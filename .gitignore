@@ -32,6 +32,7 @@ examples/static/samples/samples.json
 # Ignore files created during build process
 platform/pages*
 platform/static
+platform/config/build-info.yaml
 
 # Ignore pipeline cache
 .cache/**/*

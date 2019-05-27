@@ -14,4 +14,8 @@
  * limitations under the License.
  */
 const {execSync} = require('child_process');
+
+
 module.exports.version = execSync('git log -1 --pretty=%H').toString().trim();
+module.exports.message = execSync('git log -1 --pretty=%B').toString().trim();
+module.exports.user = execSync('git config user.name').toString().trim();

@@ -112,7 +112,7 @@ success_stories:
           <div class="ap-o-news-card">
             <div class="ap-o-news-title">{{ news.title }}</div>
             <div class="ap-o-news-image">
-              {% if news.image %}
+              {% if news.image and news.image != '' %}
               <amp-img
                 class="ap--media"
                 src="{{ news.image }}"

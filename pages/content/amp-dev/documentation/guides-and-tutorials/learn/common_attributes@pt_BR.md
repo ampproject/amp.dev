@@ -58,7 +58,7 @@ Por exemplo:
 </amp-img>
 [/sourcecode]
 
-Para saber mais, consulte [Consultas de mídia e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e a [Especificação de layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+Para saber mais, consulte [Consultas de mídia e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e a [Especificação de layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
 
 ## mídia
 
@@ -167,4 +167,4 @@ Por exemplo:
 </amp-anim>
 [/sourcecode]
 
-Para saber mais, consulte [Consultas de mídia e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e a [Especificação de layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}).
+Para saber mais, consulte [Consultas de mídia e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e a [Especificação de layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).

@@ -27,8 +27,7 @@ const crypto = require('crypto');
 const rcs = require('rcs-core');
 const t = require('exectimer');
 const Tick = t.Tick;
-const ampOptimizer = require('amp-toolbox-optimizer');
-const runtimeVersionPromise = require('amp-toolbox-runtime-version').currentVersion();
+const AmpOptimizer = require('amp-toolbox-optimizer');
 const {filterPage, isFilterableRoute, FORMATS} = require('@lib/common/filteredPage');
 const cheerio = require('cheerio');
 const fs = require('fs');
@@ -72,10 +71,10 @@ const SELECTOR_REWRITE_EXCLUDED_PATHS =
   /\/documentation\/examples.*|\/documentation\/components\.html/;
 
 class PageTransformer {
-  constructor() {
+  constructor(optimizer = AmpOptimizer.create()) {
     this._log = new Signale({
       'interactive': false,
-      'scope': 'Page minifier',
+      'scope': 'Page transformer',
     });
 
     // Set excludes for CSS selector rewriting
@@ -95,9 +94,7 @@ class PageTransformer {
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
 
-    ampOptimizer.setConfig({
-      blurredPlaceholdersCacheSize: 0, // cache all placeholders
-    });
+    this._optimizer = optimizer;
   }
 
   /**
@@ -105,10 +102,10 @@ class PageTransformer {
    * @param  {path} path Allows overwriting of default path
    * @return {Stream}
    */
-  start(path) {
+  start(path, options) {
     // Ugly but needed to keep scope for .pipe
     const scope = this;
-    return gulp.src(`${path}/**/*`)
+    return gulp.src(path, options)
         .pipe(through.obj(async function(canonicalPage, encoding, callback) {
           // The following transformations should only be applied to Grow's
           // HTML output, just forward all other files
@@ -125,33 +122,26 @@ class PageTransformer {
           html = scope.minifyPage(html, canonicalPage.path);
           timer.stop();
 
-          const ampPath = canonicalPage.path.replace('.html', '.amp.html');
-          const ampUrl = '/' + canonicalPage.relative.replace('.html', '.amp.html');
-
           timer = new Tick('optimizing');
           timer.start();
-          const optimizedHtml = await scope.optimize(html, ampUrl);
+          const optimizedHtml = await scope.optimize(html);
           timer.stop();
 
-          const ampPage = canonicalPage.clone();
-          ampPage.path = ampPath;
-
           canonicalPage.contents = Buffer.from(optimizedHtml);
-          ampPage.contents = Buffer.from(html);
 
           let filteredPages = [];
           if (isFilterableRoute(canonicalPage.path)) {
             timer = new Tick('filtering');
             timer.start();
-            filteredPages = scope._filterPages(canonicalPage, ampPage);
+            filteredPages = scope._filterPages(canonicalPage);
             timer.stop();
           }
 
-          for (const page of [canonicalPage, ampPage, ...filteredPages]) {
+          for (const page of [canonicalPage, ...filteredPages]) {
             this.push(page);
           }
 
-          scope._log.success(`Transformed ${canonicalPage.path}`);
+          scope._log.success(`Transformed ${canonicalPage.relative}`);
           callback();
         }))
         .pipe(gulp.dest(project.paths.PAGES_DEST));
@@ -269,15 +259,8 @@ class PageTransformer {
     return filteredHtml;
   }
 
-  async optimize(html, path) {
-    const ampRuntimeVersion = await runtimeVersionPromise;
-    return ampOptimizer.transformHtml(html, {
-      ampUrl: path,
-      ampRuntimeVersion: ampRuntimeVersion,
-      imageBasePath: 'pages',
-      blurredPlaceholders: true,
-      maxBlurredPlaceholders: 7, // number of images in homepage stage
-    });
+  async optimize(html) {
+    return this._optimizer.transformHtml(html);
   }
 
   /**
@@ -375,8 +358,6 @@ class PageTransformer {
     hash = hash.digest('base64');
 
     if (!this._minifiedCssCache[hash]) {
-      this._log.info(`Caching CSS bundle with ${hash}`);
-
       this._minifiedCssCache[hash] = this._cleanCss.minify(css).styles;
     }
 

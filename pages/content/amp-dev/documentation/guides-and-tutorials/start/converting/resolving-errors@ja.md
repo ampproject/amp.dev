@@ -263,7 +263,7 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="画像がレスポンシブになった") }}
 
 [tip type="read-on"]
-AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}})をご覧ください。
+AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})をご覧ください。
 [/tip]
 
 ## 完了

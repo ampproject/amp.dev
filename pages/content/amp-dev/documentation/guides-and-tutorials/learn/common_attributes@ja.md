@@ -58,7 +58,7 @@ AMP では、一連の [レイアウト]({{g.doc('/content/amp-dev/documentation
 </amp-img>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) をご覧ください。
 
 ## media
 
@@ -167,4 +167,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/introduction.md', locale=doc.locale).url.path}}) をご覧ください。
+詳しくは、[レイアウトとメディアクエリ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) および [レイアウトの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) をご覧ください。

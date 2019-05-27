@@ -173,7 +173,6 @@ class ComponentReferenceImporter {
     }
 
     if (!documentPath) {
-      log.warn(`No matching document for component: ${extension.name}`);
       return;
     }
 

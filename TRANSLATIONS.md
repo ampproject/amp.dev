@@ -36,9 +36,9 @@ Some volunteer translators have created channels on Slack where a localized docu
 
 ### Creating localized files
 
-The [ampproject.org](https://www.ampproject.org/) website differentiates localized files by suffixing the `@` symbol followed by the appropriate language code to the translated document. For example, `example.md` would become `example@ko.md` if translated to Korean.  
+The [amp.dev](https://amp.dev/) website differentiates localized files by suffixing the `@` symbol followed by the appropriate language code to the translated document. For example, `example.md` would become `example@ko.md` if translated to Korean.  
 
-#### ampproject.org translation file suffixes
+#### amp.dev translation file suffixes
 
 | Language             | Suffix         |
 | -------------        |:-------------: |
