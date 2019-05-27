@@ -129,7 +129,7 @@ author: sebastianbenz
   We want the form to submit as soon as the user makes a selection, without a Submit button. To do that, we'll set the [`on` attribute](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md#on) of the `input`s to submit the form on [`change`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}#input-events).
 
   The initial rating is determined by which radio button has the `checked` attribute set. This is optional. -->
-  <form id="rating" class="p2" method="post" action-xhr="/documentation/examples/api/rating/set" target="_blank">
+  <form id="rating" class="p2" method="post" action-xhr="set" target="_blank">
     <fieldset class="rating">
       <input name="rating" type="radio" id="rating5" value="5" on="change:rating.submit"/>
       <label for="rating5" title="5 stars">☆</label>

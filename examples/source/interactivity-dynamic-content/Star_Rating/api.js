@@ -22,13 +22,11 @@ const upload = multer();
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.post('/rating/set', upload.none(), handleRating);
-
-function handleRating(request, response) {
+examples.post('/set', upload.none(), (request, response) => {
   const rating = request.body ? request.body.rating : '';
   response.json({
     rating,
   });
-}
+});
 
 module.exports = examples;
