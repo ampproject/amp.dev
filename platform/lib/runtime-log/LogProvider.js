@@ -19,10 +19,12 @@
 const {format} = require('util');
 const config = require('../config.js');
 const nodeFetch = require('node-fetch');
+const LRU = require('lru-cache');
 
 // Logs are hosted on cdn.ampproject.org
 // TODO: replace with final URL
 const LOG_HOST = `${config.hosts.platform.base}/static/files/log-messages-v%s.json`;
+const MAX_CACHE_SIZE = 10;
 
 /**
  * Fetches and caches the runtime log.
@@ -30,7 +32,7 @@ const LOG_HOST = `${config.hosts.platform.base}/static/files/log-messages-v%s.js
 class LogProvider {
   constructor(fetch=nodeFetch) {
     this.fetch_ = fetch;
-    this.cache_ = new Map();
+    this.cache_ = new LRU(MAX_CACHE_SIZE);
   }
 
   /**
