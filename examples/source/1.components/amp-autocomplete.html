@@ -92,6 +92,7 @@ preview: default
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
+  <h2>Basic usage</h2>
   <!-- 
     ## Basic usage 
 
@@ -124,6 +125,7 @@ preview: default
     </amp-autocomplete>
   </form>
 
+  <h2>Dynamic <code>src</code></h2>
   <!-- 
     ## Dynamic `src`
 
@@ -154,6 +156,7 @@ preview: default
     </form>
   </div>
 
+  <h2>Suggesting rich content</h2>
   <!-- 
     ## Suggesting rich content
 
@@ -180,7 +183,7 @@ preview: default
     ] }
     ```
 
-    The corresponding display of these data in the amp-autocomplete can be specified through a template.
+    The corresponding display of these data in the `amp-autocomplete` can be specified through a template.
 
     ```html
     <template type="amp-mustache" id="amp-template-custom">
@@ -241,10 +244,13 @@ preview: default
     </div>
 </form>
 
+  <h2>Display default items</h2>
   <!-- 
     ## Displaying default items
 
-    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating, the `min-characters` attribute on `amp-autocomplete`, and the `data-disabled` attribute on "header" items. 
+    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating and the `min-characters` attribute on `amp-autocomplete`.
+
+    Additionally, because the `data-disabled` attribute on a template-rendered item allows it to be displayed but not searched against or selected, it can be useful for constructing a "header" within the results list that can serve to organize selectable items into categories. In the example below, "Popular groceries" acts as an example of the disabled item because it is not an item that you actually want to treat as a product.
   -->
   <div>
     <amp-state id="generalInventory">
@@ -278,8 +284,11 @@ preview: default
         <amp-state id="initialInventory">
             <script type="application/json">
               { "items" : [
-                { "isInitial": "true", "header": "true", "name": "Popular groceries" },
                 { "isInitial": "true", 
+                  "header": 
+                  "true", 
+                  "name": "Popular groceries" 
+                }, { "isInitial": "true", 
                   "name": "apple"
                 }, { "isInitial": "true", 
                   "name": "grapes"
@@ -287,7 +296,8 @@ preview: default
                   "name": "whole milk"
                 }, { "isInitial": "true", 
                   "name": "banana"
-                }] }
+                } ] 
+              }
             </script>
         </amp-state>
         <template type="amp-mustache">
