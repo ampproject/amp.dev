@@ -15,32 +15,44 @@
  */
 
 'use strict';
-const express = require('express');
-const LogFormatter = require('../runtime-log/formatter');
 
-const Templates = require('@lib/templates/');
+const express = require('express');
+const LogFormatter = require('../runtime-log/HtmlFormatter.js');
+
+const Templates = require('../templates/');
 
 // eslint-disable-next-line new-cap
 const runtimeLog = express.Router();
 const logFormatter = new LogFormatter();
 
+const regexIsNumber = /\d+/;
+
 runtimeLog.get('/', async (request, response) => {
   const message = {
     version: request.query.v,
     id: request.query.id,
-    params: request.query.s,
+    params: request.query.s || [],
   };
+  if (!isValidLogRequest(message)) {
+    response.status(400).send('Invalid request');
+    return;
+  }
   const messageTemplate = await Templates.get('message.html');
   try {
-    const html = logFormatter.formatHtml(message);
+    const html = await logFormatter.apply(message);
     response.send(messageTemplate.render({
       title: 'Log',
       text: html,
     }));
   } catch (error) {
-    response.status(400).send('Invalid request');
+    console.error('retrieving runtime log', error);
+    response.status(404).send('Message not found');
   }
 });
+
+function isValidLogRequest(logRequest) {
+  return regexIsNumber.test(logRequest.version) && regexIsNumber.test(logRequest.id);
+}
 
 
 module.exports = runtimeLog;

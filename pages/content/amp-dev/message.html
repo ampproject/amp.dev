@@ -5,7 +5,7 @@ $sitemap:
   enabled: false
 ---
 {% do doc.styles.addCssFile('css/components/templates/error.css') %}
-{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/jumbo.css') %}
 
 <main class="ap--main">
   <section class="ap--container">
@@ -16,7 +16,7 @@ $sitemap:
       </div>
       <h1 class="ap-m-jumbo-headline">[[ title ]]</h1>
       <h2 class="ap-m-jumbo-subline">[[ subTitle ]]</h2>
-      <p class="ap-m-jumbo-copy">[[{ text }]]</p>
+      <p class="ap-m-jumbo-copy">[[ text|safe ]]</p>
     </div>
   </section>
 </main>
