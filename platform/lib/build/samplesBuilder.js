@@ -218,7 +218,7 @@ class SamplesBuilder {
         'platform': platformHost,
         'api': API_HOST,
         'backend': BACKEND_HOST,
-        'preview': config.getHost(config.hosts.preview),
+        'preview': config.hosts.preview.base,
       },
     }).then((parsedSample) => {
       // parsedSample.filePath is absolute but needs to be relative in order

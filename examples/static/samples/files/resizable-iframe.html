@@ -65,7 +65,8 @@
       var message = {
         sentinel: 'amp',
         type: 'embed-size',
-        height: document.body.scrollHeight
+        height: size,
+        width: size,
       };
       console.log('post new embed-height', message);
       window.parent.postMessage(message, '*');
