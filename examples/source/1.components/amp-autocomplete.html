@@ -104,7 +104,7 @@ preview: default
         action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
         target="_top">
     <amp-autocomplete filter="substring">
-      <input type="text">
+      <input>
       <script type="application/json">
         {
           "items": ["apple", "orange", "banana"]
@@ -120,7 +120,7 @@ preview: default
         action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
         target="_top">
     <amp-autocomplete filter="substring" src="/static/samples/json/amp-autocomplete-cities.json">
-      <input type="text">
+      <input>
     </amp-autocomplete>
   </form>
 
@@ -142,7 +142,7 @@ preview: default
         <amp-autocomplete filter="substring" min-characters="0"
             src="/static/samples/json/amp-autocomplete-cities.json"
             [src]="srcUrl">
-            <input type="text" name="name" required>
+            <input name="name" required>
         </amp-autocomplete>
         <input name="submit-button" type="submit" value="Submit"><br>      
       </div>
@@ -183,7 +183,7 @@ preview: default
     <label>
         <span>Search for</span>
         <amp-autocomplete filter="token-prefix" filter-value="city" min-characters="0">
-          <input type="text" name="term">
+          <input name="term">
             <script type="application/json">
                 { "items" : [
                     {
@@ -232,7 +232,7 @@ preview: default
       action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
       target="_top">
       <amp-autocomplete filter="substring" min-characters="0" filter-value="name" [src]="manualFilterData">
-        <input type="text" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
+        <input on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
             initialInventory : { 'items' : [{
               'name': 'apple',
               'emoji': '🍎',
