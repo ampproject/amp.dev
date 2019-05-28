@@ -88,6 +88,5 @@ Include the following `<meta>` tag within the `<head>` tag on each page that use
 <meta name="amp-experiment-token" content="{copy your token here}"> 
 ```
 
-[tip type="note"]
-NOTE: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.
-[/tip]
+Note: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.
+
