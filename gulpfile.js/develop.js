@@ -38,7 +38,7 @@ function run() {
   grow(`run --port ${config.hosts.pages.port}`);
 
   signale.info('Watching icons, templates, styles and samples ...');
-  samplesBuilder.build(true);
+  samplesBuilder.build();
   gulp.watch(`${project.paths.ICONS}/**/*.svg`, build.icons);
   gulp.watch(`${project.paths.TEMPLATES}/**/*.j2`, build.templates);
   gulp.watch(`${project.paths.SCSS}/**/*.scss`, build.sass);
