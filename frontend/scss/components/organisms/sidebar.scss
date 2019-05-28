@@ -39,12 +39,8 @@ nav[toolbar] {
 }
 
 .#{utility('ampsidebar')} {
+  width: 100%;
   max-width: 90vw;
-  @media (max-width: 767px) {
-    nav {
-      width: 100vw;
-    }
-  }
 }
 
 .#{organism('sidebar')} {
