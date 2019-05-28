@@ -160,17 +160,35 @@ preview: default
     More complicated data can be passed into autocompleted with an array of JsonObjects in "items".
 
     ```json
-    {
-      "items": [{
-        "id": 1,
-        "img": "/img/product1_640x426.jpg",
-        "name": "Apple",
-        "price": "1.99",
-        "color": "green"
-      }, 
-      ...
-      }]
-    }
+    { "items" : [
+        {
+            "city" : "Albany",
+            "state" : "New York", 
+            "areaCode" : 518,
+            "population" : 98251
+        }, {
+            "city" : "Annapolis",
+            "state" : "Maryland",
+            "areaCode" : 410,
+            "population" : 39321
+        }, {
+            "city" : "Trenton",
+            "state" : "New Jersey",
+            "areaCode" : 609,
+            "population" : 84964
+        }
+    ] }
+    ```
+
+    The corresponding display of these data in the amp-autocomplete can be specified through a template.
+
+    ```html
+    <template type="amp-mustache" id="amp-template-custom">
+      <div class="city-item" data-value="{{city}}, {{state}}">
+          <div>{{city}}, {{state}}</div>
+          <div class="custom-population">Population: {{population}}</div>        
+      </div>
+    </template>
     ```
 
     By default, `amp-autocomplete` will suggest items by matching on the "value" property of each JsonObject, but for more specified data, an attribute `filter-value` can be provided to signify the appropriate property to search on. 
@@ -183,7 +201,7 @@ preview: default
     <label>
         <span>Search for</span>
         <amp-autocomplete filter="token-prefix" filter-value="city" min-characters="0">
-          <input name="term">
+          <input type="search" name="term">
             <script type="application/json">
                 { "items" : [
                     {
