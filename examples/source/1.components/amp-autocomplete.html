@@ -80,8 +80,12 @@ preview: default
     display: inline-block;
     vertical-align: middle;
   }
-  .trending-fruits {
-    padding-top: 6px;
+  .product {
+    align-items: center;
+    line-height: 36px;
+  }
+  form {
+    padding: 10px;
   }
   </style>
 
@@ -96,8 +100,10 @@ preview: default
 
     A **datasource** must be a JSON object containing an array property `items`, and can be specified inline with a child `script type="application/json"` tag, or a server endpoint specified with a `src` attribute.
   -->
-  <form>
-    <amp-autocomplete filter="substring" min-characters="0">
+  <form class="sample-form" method="post"
+        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+        target="_top">
+    <amp-autocomplete filter="substring">
       <input type="text">
       <script type="application/json">
         {
@@ -110,11 +116,13 @@ preview: default
   <!-- 
     Alternatively, a datasource can also be provided as remote data through the `src` attribute.
   -->
-  <form>
-    <amp-autocomplete filter="substring" min-characters="0" src="/static/samples/json/amp-autocomplete-cities.json">
+  <form class="sample-form" method="post"
+        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+        target="_top">
+    <amp-autocomplete filter="substring" src="/static/samples/json/amp-autocomplete-cities.json">
       <input type="text">
     </amp-autocomplete>
-</form>
+  </form>
 
   <!-- 
     ## Dynamic `src`
@@ -214,40 +222,66 @@ preview: default
 </form>
 
   <!-- 
-    ## Default state
+    ## Displaying default items
 
-    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating. 
+    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating, the `min-characters` attribute on `amp-autocomplete`, and the `data-disabled` attribute on "header" items. 
   -->
   <div>
     <form class="sample-form"
-    method="post"
-    action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
-    target="_top">
-      <amp-autocomplete filter="substring" min-characters="0" [src]="manualFilterData" >
-          <input type="text" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
-            initialInventory : { 'items' : [ 'apple', 'orange', 'banana' ]} })">
-            <amp-state id="initialInventory">
-                <script type="application/json">
-                  { "items" : [ { "value" : "", 
-                            "isInitial": "true", 
-                            "produce": [ "apple", "orange", "banana" ] } ] }
-                </script>
-            </amp-state>
-          <template type="amp-mustache">
+      method="post"
+      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+      target="_top">
+      <amp-autocomplete filter="substring" min-characters="0" filter-value="name" [src]="manualFilterData">
+        <input type="text" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
+            initialInventory : { 'items' : [{
+              'name': 'apple',
+              'emoji': '🍎',
+              'price': '$1'
+            }, {
+              'name': 'grapes',
+              'emoji': '🍇',
+              'price': '$2'
+            }, {
+              'name': 'whole milk',
+              'emoji': '🥛',
+              'price': '$4'
+            }, {
+              'name': 'banana',
+              'emoji': '🍌',
+              'price': '$0.50'
+            }] } })">
+        <amp-state id="initialInventory">
+            <script type="application/json">
+              { "items" : [
+                { "isInitial": "true", "header": "true", "name": "Popular groceries" },
+                { "isInitial": "true", 
+                  "name": "apple"
+                }, { "isInitial": "true", 
+                  "name": "grapes"
+                }, { "isInitial": "true", 
+                  "name": "whole milk"
+                }, { "isInitial": "true", 
+                  "name": "banana"
+                }] }
+            </script>
+        </amp-state>
+        <template type="amp-mustache">
             {{#isInitial}}
-              <div data-value="">
-                <b>Recommended Fruit</b>
-              {{#produce}}
-              <div class="trending-fruits">
-                <amp-img class="trending" width="24" height="24" src="/static/samples/img/trending.png"></amp-img>
-                <span class="trending">{{.}}</span>
-              </div>
-              {{/produce}}
-              </div>
+                {{#header}}
+                <div class="header" data-disabled>{{name}}</div>
+                {{/header}}
+                {{^header}}
+                <div class="product" data-value="{{name}}">
+                  <amp-img class="trending" width="24" height="24" src="/static/samples/img/trending.png"></amp-img>
+                  <span class="name-and-description">{{name}}</span>
+                </div>
+                {{/header}}
             {{/isInitial}}
             {{^isInitial}}
-              <div data-value="{{.}}">
-                {{.}}    
+              <div data-value="{{name}}" class="product">
+                <div class="name-and-description">
+                    <div class="product-name">{{emoji}} <b>{{name}}</b> <i>{{price}}</i></div>
+                </div>
               </div>
             {{/isInitial}}
           </template> 
