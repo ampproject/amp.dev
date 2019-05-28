@@ -1,5 +1,5 @@
 ---
-$title: Add custom JavaScript to AMP pages
+$title: Add custom JavaScript to AMP pages with amp-script
 $order: 101
 formats:
   - websites
@@ -23,8 +23,14 @@ Prerequisites:
 
 # Get started 
 
-Download the [starter code here](https://github.com/CrystalOnScript/vanilla-js-amp-script/tree/master/starter_code). From your command line interface, cd into the folder and run `npm install` to download the dependencies. 
+Use the following commands to download and install the starter code: 
 
+```
+$ git clone git@github.com:CrystalOnScript/vanilla-js-amp-script.git
+$ cd starter-code
+$ npm install
+```
+Or download the [starter code here](https://github.com/CrystalOnScript/vanilla-js-amp-script/tree/master/starter_code). 
 
 ## Test the app
 
@@ -82,18 +88,18 @@ The `src` attribute points to the filepath `http://localhost:8080/js/script.js`.
 
 # Inject custom script
 
-Open the newly created `script.js` file and add `console.log("amp-script here")`. Reload the page an open the [DevTools console](https://developers.google.com/web/tools/chrome-devtools/) to verify it successfully logged "amp-script here". 
+Open the newly created `script.js` file and add `console.log("amp-script here")`. Reload the page and open the [DevTools console](https://developers.google.com/web/tools/chrome-devtools/) to verify it successfully logged "amp-script here". 
 
 Important: amp-script is still in experimental mode. You will need to enable it inside the console by running `AMP.toggleExperiment('amp-script')` and confirming that it returns `true`. Read more about experimental components [here](https://amp.dev/documentation/guides-and-tutorials/learn/experimental?referrer=ampproject.org). 
 
-If custom scripts from `amp-script` are imported correctly through the `amp-script` `src` attribute, their logic can be debugged in the console the same as JavaScript inside non-AMP pages. 
+Imported script logic from the `amp-script` `src` attribute is debugged in the console, same as JavaScript inside non-AMP pages.
 
 
 # Add logic
 
-Now that we’ve confirmed out `script.js` file is being injected correctly, let’s add functionality!
+Now that we’ve confirmed our `script.js` file is being injected correctly, let’s add functionality!
 
-The file referenced by `amp-script` works with JavaScript in the same way as any script file. The only difference is DOM manipulation. HTML elements inside of the `<amp-script>`  component tags are treated as a web documents, allowing developers to write JavaScript the same as non-AMP pages, minus [a few small caveats](https://amp.dev/documentation/guides-and-tutorials/develop/custom-javascript?format=websites#api-restrictions).
+HTML elements inside of the `<amp-script>` component tags are treated as web documents, allowing developers to write JavaScript the same as non-AMP pages, minus [a few small caveats](https://amp.dev/documentation/guides-and-tutorials/develop/custom-javascript?format=websites#api-restrictions).
 
 
 ## Declare elements
@@ -117,7 +123,7 @@ Like non-AMP pages, we can test if they were captured correctly by logging eleme
 
 ## Set checks
 
-The script file will hold all of our password requirement logic. Passwords are checked by running them through a [regular expression](https://en.wikipedia.org/wiki/Regular_expression). We want to communicate to our users when each check has been met, so each requirement has its own RegEx. Declare the checks object by adding the code below to `script.js`:
+The script file will hold all of our password requirement logic by using [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) to check that passwords pass validation requirements. We want to communicate to our users when each check has been met, so each requirement has its own RegEx. Declare the checks object by adding the code below to `script.js`:
 
 
 ```js
@@ -171,8 +177,7 @@ function initCheckPassword(el) {
 };
 ```
 
-
-[Mutations within the `amp-script` component ]({{g.doc('/content/amp-dev/documentation/components/amp-script.md', locale=doc.locale).url.path}}?format=websites#mutations-and-user-actions) are generally triggered by a user action. This allows for `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener). 
+User actions can trigger [mutations within the `amp-script` component ]({{g.doc('/content/amp-dev/documentation/components/amp-script.md', locale=doc.locale).url.path}}?format=websites#mutations-and-user-actions), allowing `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener). 
 
 Our function will listen for two events, [`keyup`](https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event) for when a user types into the input box, and [`change`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) in case our user pastes their password.
 
