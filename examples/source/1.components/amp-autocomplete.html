@@ -101,7 +101,7 @@ preview: default
     A **datasource** must be a JSON object containing an array property `items`, and can be specified inline with a child `script type="application/json"` tag, or a server endpoint specified with a `src` attribute.
   -->
   <form class="sample-form" method="post"
-        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+        action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
         target="_top">
     <amp-autocomplete filter="substring">
       <input>
@@ -117,7 +117,7 @@ preview: default
     Alternatively, a datasource can also be provided as remote data through the `src` attribute.
   -->
   <form class="sample-form" method="post"
-        action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+        action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
         target="_top">
     <amp-autocomplete filter="substring" src="/static/samples/json/amp-autocomplete-cities.json">
       <input>
@@ -136,7 +136,7 @@ preview: default
     </div>
     <form class="sample-form"
       method="post"
-      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+      action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
       target="_top">
       <div class="input-field">
         <amp-autocomplete filter="substring" min-characters="0"
@@ -196,12 +196,12 @@ preview: default
   -->
   <form class="sample-form"
     method="post"
-    action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+    action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
     target="_top">
     <label>
         <span>Search for</span>
         <amp-autocomplete filter="token-prefix" filter-value="city" min-characters="0">
-          <input type="search" name="term">
+          <input type="search" name="city">
             <script type="application/json">
                 { "items" : [
                     {
@@ -232,7 +232,7 @@ preview: default
     </label>
     <input type="submit" value="Search">
     <div submit-success>
-      Success!
+      Successfully submitted {{city}}!
     </div>
     <div submit-error>
       Error!
@@ -247,10 +247,10 @@ preview: default
   <div>
     <form class="sample-form"
       method="post"
-      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+      action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
       target="_top">
       <amp-autocomplete filter="substring" min-characters="0" filter-value="name" [src]="manualFilterData">
-        <input on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
+        <input name="product" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
             initialInventory : { 'items' : [{
               'name': 'apple',
               'emoji': '🍎',
@@ -306,7 +306,7 @@ preview: default
         </amp-autocomplete>
       <input type="submit" value="Search">
       <div submit-success>
-        Success!
+        Success! Added {{product}} to your cart.
       </div>
       <div submit-error>
         Error!
