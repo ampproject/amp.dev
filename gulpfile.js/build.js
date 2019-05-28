@@ -18,6 +18,7 @@
 
 const gulp = require('gulp');
 const {sh} = require('@lib/utils/sh');
+const grow = require('@lib/utils/grow');
 const config = require('@lib/config');
 const signale = require('signale');
 const del = require('del');
@@ -33,6 +34,7 @@ const {project, travis} = require('@lib/utils');
 const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
+const BlogImporter = require('@lib/pipeline/blogImporter');
 // TODO: Fails on Travis with HttpError: Requires authentication
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const {pageTransformer} = require('@lib/build/pageTransformer');
@@ -169,6 +171,7 @@ function importAll() {
   return Promise.all([
     (new ComponentReferenceImporter()).import(),
     (new SpecImporter()).import(),
+    (new BlogImporter()).import(),
     // TODO: Fails on Travis with HttpError: Requires authentication
     // roadmapImporter.importRoadmap(),
   ]);
@@ -239,10 +242,15 @@ async function buildPages(done) {
       // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
         config.configureGrow();
-        await sh('grow deploy --noconfirm --threaded', {
-          workingDir: project.paths.GROW_POD,
-        });
+        await grow('deploy --noconfirm --threaded');
       }, transformPages,
+      // eslint-disable-next-line prefer-arrow-callback
+      function sharedPages() {
+        // Copy shared pages separated from PageTransformer as they should
+        // not be transformed
+        return gulp.src(`${project.paths.GROW_BUILD_DEST}/shared/*.html`)
+            .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
+      },
       // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifacts() {
         // ... and again if on Travis store all built files for a later stage to pick up
@@ -396,6 +404,9 @@ function persistBuildInfo(done) {
 }
 
 exports.clean = clean;
+exports.sass = sass;
+exports.icons = icons;
+exports.templates = templates;
 exports.importAll = importAll;
 exports.buildPlayground = buildPlayground;
 exports.buildBoilerplate = buildBoilerplate;

@@ -139,7 +139,7 @@ the appropriate value:
       <td data-th="Inferred layout"><code>responsive</code></td>
     </tr>
     <tr>
-      <td data-th="Rule"><code>width</code> or <code>height</code> attributes are present</td>
+      <td data-th="Rule">Both <code>width</code> and <code>height</code> attributes are present</td>
       <td data-th="Inferred layout"><code>fixed</code></td>
     </tr>
     <tr>

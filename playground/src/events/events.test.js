@@ -14,9 +14,9 @@
 
 import events from './events.js';
 
-describe(events, () => {
+describe('events', () => {
   it('notifies channel observers', () => {
-    const observer = jasmine.createSpy('observer');
+    const observer = jest.fn();
     const anEvent = 'an event';
     const anotherEvent = 'another event';
     events.subscribe('channel 1', observer);
@@ -28,7 +28,7 @@ describe(events, () => {
   });
 
   it('ignores other observers', () => {
-    const observer = jasmine.createSpy('observer');
+    const observer = jest.fn();
     const anEvent = 'an event';
     events.subscribe('a channel', observer);
     events.publish('another channel', anEvent);
@@ -36,7 +36,7 @@ describe(events, () => {
   });
 
   it('one observer can register for multiple events', () => {
-    const observer = jasmine.createSpy('observer');
+    const observer = jest.fn();
     const anEvent = 'an event';
     const anotherEvent = 'another event';
     events.subscribe(['channel 1', 'channel 2'], observer);

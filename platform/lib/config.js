@@ -20,7 +20,7 @@ const signale = require('signale');
 const fs = require('fs');
 const options = require('mri')(process.argv.slice(2));
 const yaml = require('js-yaml');
-const utils = require('@lib/utils');
+const utils = require('./utils');
 
 const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
@@ -44,6 +44,12 @@ const AVAILABLE_LOCALES = [
 
 class Config {
   constructor(environment = ENV_DEV) {
+    if (environment === 'test') {
+      environment = ENV_DEV;
+      this.test = true;
+    } else {
+      this.test = false;
+    }
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
@@ -62,6 +68,13 @@ class Config {
 
     // Globally initialize command line arguments for use across all modules
     this.options = options;
+  }
+
+  /**
+   * Returns true if test mode is active.
+   */
+  isTestMode() {
+    return this.test;
   }
 
   /**

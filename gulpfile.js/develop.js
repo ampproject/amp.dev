@@ -18,7 +18,7 @@
 
 const gulp = require('gulp');
 const {project} = require('@lib/utils');
-const {sh} = require('@lib/utils/sh');
+const grow = require('@lib/utils/grow');
 const config = require('@lib/config');
 const Platform = require('@lib/platform');
 const signale = require('signale');
@@ -29,22 +29,23 @@ function bootstrap(done) {
   gulp.parallel(build.buildBoilerplate, build.buildPlayground, build.importAll)(done);
 }
 
-function develop(done) {
-  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), _run)(done);
+function develop() {
+  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), run)();
 }
 
-function _run() {
-  signale.info('Watching icons, templates and styles ...');
-
-  samplesBuilder.build(true);
-  gulp.watch(`${project.paths.ICONS}/**/*`, build.icons);
-  gulp.watch(`${project.paths.TEMPLATES}/**/*`, build.templates);
-  gulp.watch(`${project.paths.SCSS}/**/*`, build.sass);
-
+function run() {
   config.configureGrow();
-  sh(`grow run --port ${config.hosts.pages.port}`, {
-    workingDir: project.paths.GROW_POD,
+  grow(`run --port ${config.hosts.pages.port}`).catch(() => {
+    signale.fatal('Grow had an error starting up. There probably is a broken' +
+      'document in the project. See the log above for details.');
+    process.exit(1);
   });
+
+  signale.info('Watching icons, templates, styles and samples ...');
+  samplesBuilder.build(true);
+  gulp.watch(`${project.paths.ICONS}/**/*.svg`, build.icons);
+  gulp.watch(`${project.paths.TEMPLATES}/**/*.j2`, build.templates);
+  gulp.watch(`${project.paths.SCSS}/**/*.scss`, build.sass);
 
   new Platform().start();
 }

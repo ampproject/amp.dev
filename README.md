@@ -42,6 +42,8 @@ You can then start developing in your local environment with the command below. 
 $ gulp develop
 ```
 
+This command prints a lot to the shell and will most probably end on `Server ready. Press ctrl-c to quit.`. This means everything went fine so far but other than stated in the logs the site is then available at [http://localhost:8080/](http://localhost:8080/). The service running on 8081 is only Grow rendering the pages.
+
 ### Maintenance
 
 #### Documents

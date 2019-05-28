@@ -28,9 +28,10 @@ const subdomain = require('./middleware/subdomain.js');
 const routers = {
   boilerplate: require('../../boilerplate/backend/'),
   example: {
-    sources: require('@lib/routers/example/sources.js'),
-    embeds: require('@lib/routers/example/embeds.js'),
     api: require('@examples'),
+    embeds: require('@lib/routers/example/embeds.js'),
+    sources: require('@lib/routers/example/sources.js'),
+    static: require('@lib/routers/example/static.js'),
   },
   log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
@@ -118,6 +119,7 @@ class Platform {
     // eslint-disable-next-line new-cap
     this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
       routers.example.api,
+      routers.example.static,
       routers.example.embeds,
       routers.example.sources,
     ])));
