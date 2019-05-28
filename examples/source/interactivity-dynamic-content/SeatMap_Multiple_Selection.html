@@ -112,7 +112,7 @@ This sample allows to multiple select seats in a seatmap with one click: this is
     -->
      <div class="seatmap-container">
       <h1>Seat map</h1>
-      <amp-list layout="fill" src="<% hosts.platform %>/static/samples/json/seats.json" items="." single-item noloading>
+      <amp-list layout="fill" src="<% hosts.platform %>/static/samples/json/seats.json" binding="refresh" items="." single-item noloading>
         <template type="amp-mustache">
           <amp-pan-zoom layout="fill" class="seatmap">
             <amp-selector on="select:AMP.setState({

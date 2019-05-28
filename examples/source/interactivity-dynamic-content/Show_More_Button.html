@@ -52,17 +52,18 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
   The optional `load-more-bookmark` attribute specifies a field name in the returned data that will give the url of the next items to load. If not specified, `amp-list` expects the response object to have the `load-more-src` field set to the next url to load.
   -->
   <amp-list
-    width="auto" 
-    height="332" 
+    width="auto"
+    height="332"
     layout="fixed-height"
     src="/documentation/examples/api/photo-stream?items=3&left=3"
+    binding="refresh"
     load-more="manual"
     load-more-bookmark="next">
     <template type="amp-mustache">
       <div class="list-item">
-        <amp-img 
+        <amp-img
           src={{imageUrl}}
-          width="100" 
+          width="100"
           height="100">
         </amp-img>
         <p>{{title}}</p>
@@ -105,6 +106,7 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
       the number of items (each item has a height of `108px`). -->
   <amp-list src="/documentation/examples/api/photo-stream?items=3&left=3"
             [src]="photos.items"
+            binding="refresh"
             layout="fixed-height"
             width="auto"
             height="332"
@@ -112,7 +114,7 @@ This is a sample showing how to implement the "show more" design pattern. "Show 
     <template type="amp-mustache">
       <div class="list-item">
         <amp-img src={{imageUrl}}
-                width="100" 
+                width="100"
                 height="100">
         </amp-img>
         <p>{{title}}</p>

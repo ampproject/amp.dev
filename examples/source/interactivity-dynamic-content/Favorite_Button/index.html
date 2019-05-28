@@ -175,7 +175,8 @@ author: sebastianbenz
                 credentials="include"
                 items="."
                 single-item
-                src="favorite">
+                src="favorite"
+                binding="always">
         <template type="amp-mustache">
           <input type="submit"
                  class="{{#.}}heart-fill{{/.}}{{^.}}heart-border{{/.}}"
@@ -241,7 +242,8 @@ author: sebastianbenz
                 items="."
                 single-item
                 noloading
-                src="favorite-with-count">
+                src="favorite-with-count"
+                binding="always">
         <template type="amp-mustache">
           <div class="favorite-container">
             <input type="submit"

@@ -125,7 +125,7 @@
     <header class="ap--header ap--header-fixed">
       <div class="ap-o-header">
         <a class="ap-o-header-home" href="/boilerplate">
-          <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> 
+          <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
           <span class="ap-o-header-home-title">AMP</span> <span class="ap-o-header-home-sub-title">Boilerplate Generator</span>
         </a>
         <a class="ap-m-homepage-link" href="/">amp.dev
@@ -155,7 +155,7 @@
         </button>
         <div class="ap-m-format-toggle-formats">
           {{#formats}}
-            <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}" 
+            <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}"
               [class]="'ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} ' + (config.format == '{{id}}' ? 'active' : 'inactive')"
             on="tap:AMP.setState({
                 config: {
@@ -257,7 +257,8 @@
                 [src]="config"
                 single-item
                 items="config"
-                hidden [hidden]="!config.changed">
+                hidden [hidden]="!config.changed"
+                binding="refresh">
         <template type="amp-mustache">
           {{#formats}}
           <div class="ap-m-code-snippet"><pre hidden [hidden]="config.format != '{{id}}'"><code>{{{template}}}</code></pre></div>
@@ -282,8 +283,8 @@
       </amp-list>
     </section>
     </main>
-    <div id="scrollToBoilerplate" 
-         tabindex="0" 
+    <div id="scrollToBoilerplate"
+         tabindex="0"
          role="button"
          on="tap:boilerplate.scrollTo(duration=200)"
          class="fab">View Code</div>
