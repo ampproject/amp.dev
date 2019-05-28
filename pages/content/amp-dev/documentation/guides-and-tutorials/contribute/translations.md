@@ -1,5 +1,14 @@
-# AMP Translation Initiative
+---
+$title: Add translations
+$order: 2
+description: "AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and heath."
 
+formats:
+  - websites
+  - stories
+  - ads
+  - email
+---
 Welcome to the AMP Translation Initiative!
 
 AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and heath.
@@ -24,13 +33,13 @@ AMP has an ongoing internal translation process for documentation. We are workin
     * Declare into which language you're translating the document.
     * Name which file you wish to translate or update.
     * Give a rough estimation of how much of the file you are translating.
-      * Full File
-      * Partial File
-      * Few Terms
+        - Full File
+        - Partial File
+        - Few Terms
     * Provide a general estimation of how much time it will take to complete the translation task.
     * Add [@CrystalOnScript](https://github.com/CrystalOnScript) so she can triage the localization request and inform you in case there's already somebody working on the same translation:
-      * Yes! Please translate this!
-      * Thanks for your interest, but the internal team or a volunteer is currently working on this document. You will be added as a reviewer before it goes live.
+        - Yes! Please translate this!
+        - Thanks for your interest, but the internal team or a volunteer is currently working on this document. You will be added as a reviewer before it goes live.
 
 Some volunteer translators have created channels on Slack where a localized documentation tracker has been created. We encourage you to join and introduce yourself! Join the [AMP Slack Channel here](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
 
