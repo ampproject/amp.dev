@@ -232,7 +232,9 @@ preview: default
     </label>
     <input type="submit" value="Search">
     <div submit-success>
-      Successfully submitted {{city}}!
+      <template type="amp-mustache">
+        Successfully submitted {{city}}!
+      </template>
     </div>
     <div submit-error>
       Error!
@@ -245,29 +247,34 @@ preview: default
     Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating, the `min-characters` attribute on `amp-autocomplete`, and the `data-disabled` attribute on "header" items. 
   -->
   <div>
+    <amp-state id="generalInventory">
+        <script type="application/json">
+          { "items" : [{
+            "name": "apple",
+            "emoji": "🍎",
+            "price": "$1"
+          }, {
+            "name": "grapes",
+            "emoji": "🍇",
+            "price": "$2"
+          }, {
+            "name": "whole milk",
+            "emoji": "🥛",
+            "price": "$4"
+          }, {
+            "name": "banana",
+            "emoji": "🍌",
+            "price": "$0.50"
+          }] }
+        </script>
+    </amp-state>
     <form class="sample-form"
       method="post"
       action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
       target="_top">
       <amp-autocomplete filter="substring" min-characters="0" filter-value="name" [src]="manualFilterData">
-        <input name="product" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
-            initialInventory : { 'items' : [{
-              'name': 'apple',
-              'emoji': '🍎',
-              'price': '$1'
-            }, {
-              'name': 'grapes',
-              'emoji': '🍇',
-              'price': '$2'
-            }, {
-              'name': 'whole milk',
-              'emoji': '🥛',
-              'price': '$4'
-            }, {
-              'name': 'banana',
-              'emoji': '🍌',
-              'price': '$0.50'
-            }] } })">
+        <input type="search" name="product" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
+            initialInventory : generalInventory })">
         <amp-state id="initialInventory">
             <script type="application/json">
               { "items" : [
@@ -306,7 +313,9 @@ preview: default
         </amp-autocomplete>
       <input type="submit" value="Search">
       <div submit-success>
-        Success! Added {{product}} to your cart.
+        <template type="amp-mustache">
+          Success! Added <strong>{{product}}</strong> to your cart.
+        </template>
       </div>
       <div submit-error>
         Error!
