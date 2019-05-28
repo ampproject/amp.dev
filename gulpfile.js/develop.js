@@ -35,7 +35,7 @@ function develop() {
 
 function run() {
   config.configureGrow();
-  grow(`run --port ${config.hosts.pages.port}`).catch((e) => {
+  grow(`run --port ${config.hosts.pages.port}`).catch(() => {
     signale.fatal('Grow had an error starting up. There probably is a broken' +
       'document in the project. See the log above for details.');
     process.exit(1);
