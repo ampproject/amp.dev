@@ -10,11 +10,11 @@ AMP is an open source initiative that enables the creation of consistently fast,
 
 There are [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMP emails to interact dynamically with content directly in the message.
 
-This guide is a high-level overview of implementing support for the AMP for Email format, aimed at  Email Providers. For further technical details, please see [the spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-format.md', locale=doc.locale).url.path}}).
+This guide is a high-level overview of implementing support for the AMP for Email format, aimed at  Email Providers. For further technical details, please see [the spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md', locale=doc.locale).url.path}}).
 
 ## AMP for Email Specification
 
-The [AMP for Email Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-format.md', locale=doc.locale).url.path}}) has been added to the AMPHTML project. It covers AMP for Email in detail and includes answers to specific questions and provides guidelines for general AMP Email developers.
+The [AMP for Email Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md', locale=doc.locale).url.path}}) has been added to the AMPHTML project. It covers AMP for Email in detail and includes answers to specific questions and provides guidelines for general AMP Email developers.
 
 ## Validate AMP Emails
 It is important to user security and experience that emails sent with AMP HTML are validated as proper AMP documents. The [AMP validator](https://github.com/ampproject/amphtml/tree/master/validator) ensures that AMP Emails are respecting the AMP for Email (`AMP4Email` or `⚡4email`) spec and make proper use of AMP components. Email Providers are highly encouraged to run the validator prior to rendering the message as a sanity check. In case the AMP part of the email is not valid, the HTML version can be used as rendering fallback.
