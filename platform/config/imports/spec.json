@@ -109,5 +109,41 @@
     "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md",
     "toc": true,
     "formats": ["email"]
+  },
+  {
+    "title": "Structure and rendering of AMP emails",
+    "order": 2,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-email-structure.md",
+    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-structure.md",
+    "toc": true,
+    "formats": ["email"]
+  },
+  {
+    "title": "AMP for Email Supported Components",
+    "order": 3,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-email-components.md",
+    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md",
+    "toc": true,
+    "formats": ["email"]
+  },
+  {
+    "title": "AMP for Email Supported HTML",
+    "order": 4,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-email-html.md",
+    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-html.md",
+    "toc": true,
+    "formats": ["email"]
+  },
+  {
+    "title": "AMP for Email Supported CSS",
+    "order": 5,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-email-css.md",
+    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md",
+    "toc": true,
+    "formats": ["email"]
   }
 ]
