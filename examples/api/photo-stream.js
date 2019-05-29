@@ -53,7 +53,7 @@ examples.all('/photo-stream', (req, res) => {
     items = items[0];
   }
 
-  const nextUrl = '/photo-stream?items=' +
+  const nextUrl = req.baseUrl + '/photo-stream?items=' +
     numberOfItems + '&left=' + JSON.stringify(pagesLeft - 1);
 
   const randomFalsy = () => {
