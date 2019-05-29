@@ -5,13 +5,12 @@
   class="ap--ampsidebar"
   layout="nodisplay"
   side="left">
+  {% include '/views/partials/format-toggle.j2' %}
   <nav toolbar="(min-width: 768px)"
     toolbar-target="ap--sidebar-content">
     <ul>
       <section>
         <div class="ap-o-sidebar">
-          {% include '/views/partials/format-toggle.j2' %}
-
           <div class="nav">
             {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
             {% for category, examples in categories %}
