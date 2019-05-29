@@ -227,6 +227,16 @@
           {{#values}}
           <div class="value">
             <label for="{{key}}">{{{label}}}</label>
+            {{#valueCheckbox}}
+            <input id="{{key}}" value="{{value}}" type="checkbox" on="input-debounced:codeSnippet.changeToLayoutContainer,AMP.setState({
+              config: {
+                {{id}}: {
+                  {{key}}: event.checked
+                }
+              }
+            })">
+            {{/valueCheckbox}}
+            {{^valueCheckbox}}
             <input id="{{key}}" value="{{value}}" type="text" on="input-debounced:codeSnippet.changeToLayoutContainer,AMP.setState({
               config: {
                 {{id}}: {
@@ -234,6 +244,7 @@
                 }
               }
             })">
+            {{/valueCheckbox}}
           </div>
           {{/values}}
         </div>
@@ -264,17 +275,17 @@
           {{/formats}}
           <section [hidden]="!config.serviceworker.selected">
             <h3>Serviceworker Iframe</h3>
-            <p>The webdocument that <a href="https://www.ampproject.org/docs/reference/components/amp-install-serviceworker#data-iframe-src-(optional)">installs your service worker</a>. Copy this code and serve it together with your serviceworker implemenation.</p>
+            <p>The webdocument that <a href="https://amp.dev/documentation/components/amp-install-serviceworker#attributes">installs your service worker</a>. Copy this code and serve it together with your serviceworker implementation.</p>
             <div class="ap-m-code-snippet"><pre><code>{{{templates.serviceworkerIframe}}}</code></pre></div>
           </section>
           <section [hidden]="!config.serviceworker.selected">
             <h3>Serviceworker Boilerplate</h3>
-            <p>A sample serviceworker implementation using <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>. Copy this code and from the specified path.</p>
+            <p>A sample serviceworker implementation using the <a href="https://github.com/ampproject/amp-sw/">AMP Service Worker</a>. Copy this code and serve it from the specified path.</p>
             <div class="ap-m-code-snippet"><pre><code>{{{templates.serviceworkerJs}}}</code></pre></div>
           </section>
           <section [hidden]="config.format != 'stories'">
             <h3>Bookend Sample</h3>
-            <p>A sample <a href="https://www.ampproject.org/docs/reference/components/amp-story#bookend:-amp-story-bookend">AMP Story bookend</a> JSON configuration.</p>
+            <p>A sample <a href="https://amp.dev/documentation/components/amp-story#bookend:-amp-story-bookend">AMP Story bookend</a> JSON configuration.</p>
             <div class="ap-m-code-snippet"><pre><code>{{{templates.bookend}}}</code></pre></div>
           </section>
         </template>
