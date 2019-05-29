@@ -1,10 +1,11 @@
 \{{#googleAnalytics.selected}}
+<amp-analytics type="gtag" data-credentials="include">
 <script type="application/json">
 {
   "vars" : {
-    "gtag_id": "{{ googleAnalytics.trackingId }}",
+    "gtag_id": "\{{ googleAnalytics.trackingId }}",
     "config" : {
-      "{{ googleAnalytics.trackingId }}": {
+      "\{{ googleAnalytics.trackingId }}": {
         "groups": "default"
       }
     }

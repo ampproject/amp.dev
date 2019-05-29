@@ -32,7 +32,7 @@ nav[toolbar] {
     overflow: auto;
     max-height: calc(100vh - 168px);
   }
-  
+
   &::-webkit-scrollbar {
     width: 2px;
   }
@@ -48,12 +48,8 @@ nav[toolbar] {
 }
 
 .#{utility('ampsidebar')} {
-  max-width: 100vw;
-  @media (max-width: 767px) {
-    nav {
-      width: 100vw;
-    }
-  }
+  width: 100%;
+  max-width: 90vw;
 }
 
 .#{organism('component-sidebar')} {
