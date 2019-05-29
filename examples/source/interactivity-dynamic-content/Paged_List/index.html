@@ -55,24 +55,6 @@ author: cvializ
 
       --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     }
-    amp-list.paged-amp-list {
-      min-width: 320px;
-    }
-    @media (min-width: 320px) {
-      amp-list.paged-amp-list {
-        min-width: 260px;
-      }
-    }
-    @media (min-width: 480px) {
-      amp-list.paged-amp-list {
-        min-width: 480px;
-      }
-    }
-    @media (min-width: 600px) {
-      amp-list.paged-amp-list {
-        min-width: 600px;
-      }
-    }
     .info {
       text-align: right;
       padding: 0 var(--space-1);
@@ -92,6 +74,11 @@ author: cvializ
       border-radius: 5px;
       overflow: hidden;
       box-shadow: var(--box-shadow-1);
+    }
+    @media(min-width: 480px) {
+      .item {
+        max-width: calc(50% - var(--space-1) - var(--space-1));
+      }
     }
     .item > .title,
     .item > .copy {
@@ -148,8 +135,8 @@ author: cvializ
   <amp-list class="paged-amp-list"
             layout="fixed-height"
             height="720"
-            src="<% hosts.backend %>/advanced/paged_list/search"
-            [src]="'<% hosts.backend %>/advanced/paged_list/search?page=' + pageNumber"
+            src="search"
+            [src]="'search?page=' + pageNumber"
             binding="no"
             reset-on-refresh
             single-item>
@@ -183,8 +170,8 @@ author: cvializ
     </button>
   </div>
   <amp-state id="page"
-             src="/advanced/paged_list/search"
-             [src]="'/advanced/paged_list/search?page=' + pageNumber">
+             src="search"
+             [src]="'search?page=' + pageNumber">
   </amp-state>
 </div>
 </body>
