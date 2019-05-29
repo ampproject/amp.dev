@@ -41,6 +41,9 @@ nav[toolbar] {
 .#{utility('ampsidebar')} {
   width: 100%;
   max-width: 90vw;
+
+  & + .close-sidebar { display: none; }
+  &[open] + .close-sidebar { @include close-sidebar; }
 }
 
 .#{organism('sidebar')} {
