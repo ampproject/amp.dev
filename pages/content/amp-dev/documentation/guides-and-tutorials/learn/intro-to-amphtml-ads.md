@@ -55,7 +55,7 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 1.  The ad network responds with the AMPHTML ad and the AMP Runtime renders the ad on the AMP page.
 
 [tip type="note"]
-No special integration is needed to serve AMPHTML to non-AMP pages. Check with your ad network to see if they support AMPHTML ads.
+No special integration is needed to serve AMPHTML ads to non-AMP pages. Check with your ad network to see if they support AMPHTML ads.
 [/tip]
 
 ## Serving AMPHTML ads
