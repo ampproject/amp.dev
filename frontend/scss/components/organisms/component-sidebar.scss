@@ -51,6 +51,12 @@ nav[toolbar] {
   width: 100%;
   max-width: 90vw;
 
+  .#{molecule('format-toggle')} {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
   & + .close-sidebar { display: none; }
   &[open] + .close-sidebar { @include close-sidebar; }
 }
