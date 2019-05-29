@@ -1,9 +1,6 @@
-$title@: Tests
 $view: /views/default.j2
 $path: /unit-tests/{base}.html
 $localization:
   path: /{locale}/unit-tests/{base}.html
 $order: 90
 
-flyout:
-    - /content/amp-dev/test/examples/index.html
