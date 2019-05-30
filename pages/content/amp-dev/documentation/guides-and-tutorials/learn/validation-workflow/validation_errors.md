@@ -319,7 +319,7 @@ The following is the list of blacklisted CSS data
 [filter formats="websites, stories, ads"]
 * `"@viewport"`
 [/filter]
-
+[filter formats="websites, stories, ads"]
 ### Disallowed property inside attribute in tag
 
 <table>
@@ -340,7 +340,6 @@ The following is the list of blacklisted CSS data
 This error occurs when the property name inside an attribute is not allowed.
 The term property in this context means the structured key/value data inside an attribute.
 
-[filter formats="websites, stories, ads"]
 For example,
 the following would result in an error:
 
@@ -453,6 +452,7 @@ This error occurs for tags that have an `href` or `src`
 that must be set to certain protocols.
 For example, many tags require `https`.
 
+[filter formats="websites, stories, ads"]
 ### Mandatory property missing from attribute
 
 <table>
@@ -480,6 +480,7 @@ They refer to expected tags:
 
 * `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
 * `<meta name=viewport content="width=device-width;minimum-scale=1">`
+[/filter]
 
 ### Mutually exclusive attributes
 
@@ -614,6 +615,7 @@ are missing their `mandatory_ancestor` (tag, ancestor):
 * `audio` must be a descendant of `noscript`.
 * `noscript` must be a descendant of `body`.
 
+[filter formats="websites, stories, ads"]
 ### Mandatory tag ancestor with hint
 
 <table>
@@ -638,6 +640,7 @@ and isn't properly nested in its mandatory parent:
 * `video` isn't within `noscript` parent.
 * `audio` isn't within `noscript` parent.
 * `noscript` isn't within `body` parent.
+[/filter]
 
 ### Duplicate unique tag
 
