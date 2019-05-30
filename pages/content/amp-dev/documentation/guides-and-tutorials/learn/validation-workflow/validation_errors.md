@@ -75,7 +75,6 @@ The following tags must be present in all AMP emails:
 * <a name="doctype"></a>`<!doctype html>`
 * <a name="html"></a>`<html amp4email> or <html ⚡4email>`
 * <a name="head"></a>`<head>`
-* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
 * <a name="utf"></a>`<meta charset="utf-8">`
 * <a name="boilerplate"></a>`<style amp4email-boilerplate>body{visibility:hidden}</style>`
 * <a name="body"></a>`<body>`
@@ -340,14 +339,13 @@ The following is the list of blacklisted CSS data
 This error occurs when the property name inside an attribute is not allowed.
 The term property in this context means the structured key/value data inside an attribute.
 
+[filter formats="websites, stories, ads"]
 For example,
 the following would result in an error:
 
 `<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
 
 It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
-
-[filter formats="websites, stories, ads"]
 As another example, in
 
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
