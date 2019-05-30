@@ -77,6 +77,7 @@ The following tags must be present in all AMP emails:
 * <a name="head"></a>`<head>`
 * <a name="utf"></a>`<meta charset="utf-8">`
 * <a name="boilerplate"></a>`<style amp4email-boilerplate>body{visibility:hidden}</style>`
+* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 [/filter]
 
