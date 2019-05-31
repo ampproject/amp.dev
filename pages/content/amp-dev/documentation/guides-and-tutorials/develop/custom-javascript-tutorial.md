@@ -192,7 +192,8 @@ function initCheckPassword(element) {
   element.addEventListener("keyup", checkPassword);
   // is called if user pastes into input 
   element.addEventListener("change", checkPassword); 
-  };  
+  };
+};    
 ```
 
 
