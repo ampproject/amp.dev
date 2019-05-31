@@ -127,23 +127,23 @@ The script file will hold all of our password requirement logic by using [regula
 const passwordChecks = [
   {
     test: (password) => (password.search(/[a-z]/) >= 0),
-    text: "lowercase"
+    elementId: "lowercase"
   },
   {
     test: (password) => (password.search(/[A-Z]/) >= 0),
-    text: "capital"
+    elementId: "capital"
   },
   {
     test: (password) => (password.search(/[0-9]/) >= 0),
-    text: "number"
+    elementId: "number"
   },
   {
     test: (password) => (password.search(/[^a-z0-9]/i) >= 0),
-    text: "special"
+    elementId: "special"
   },
   {
     test: (password) => (password.length >= 8),
-    text: "eight"
+    elementId: "eight"
   }
 ]
 
@@ -204,8 +204,7 @@ function initCheckPassword(element) {
     passwordChecks.forEach((item) => {
       let passed = item.test(element.value);
       // captures element
-      let checkText = document.getElementById(item.text)
-      console.log(item.text)
+      let checkText = document.getElementById(item.elementId)
        // passed/fail logic 
        checkText.classList.toggle('pass', passed)
     });
@@ -253,6 +252,9 @@ Refresh the page and type into the password input. The elements corresponding th
 Ensure you call to `initCheckPassword` in `script.js` and pass it `passwordBox` as an argument to setup the event handlers.
 Our logic is now complete!
 
+```js
+initCheckPassword(passwordBox);
+```
 
 # Congratulations! 
 
