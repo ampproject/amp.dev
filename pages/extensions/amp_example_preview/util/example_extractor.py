@@ -3,10 +3,7 @@ import re
 EXAMPLE_PATTERN = re.compile(r'\[\s*example(\s[^\]]*)?\](.*?\n```html *\n(.*?)\n```.*?)\[\s*/\s*example\s*\]',
                              re.IGNORECASE | re.MULTILINE | re.DOTALL)
 
-PREVIEW_ATTRIBUTE_PATTERN = re.compile(r'\spreview\s*=\s*"([^"]+)"')
-PLAYGROUND_ATTRIBUTE_PATTERN = re.compile(r'\splayground\s*=\s*"([^"]+)"')
-IMPORT_ATTRIBUTE_PATTERN = re.compile(r'\simports\s*=\s*"([^"]+)"')
-TEMPLATE_ATTRIBUTE_PATTERN = re.compile(r'\stemplate\s*=\s*"([^"]+)"')
+ATTRIBUTE_PATTERN = re.compile(r'(?:^|\s+)([\w-]+)\s*=\s*"([^"]+)"')
 
 
 class InlineExample(object):
@@ -45,17 +42,15 @@ class SourceCodeExtractor(object):
         while match:
             count = count + 1
 
-            attribute_string = match.group(1)
+            attributes = self._get_attributes(match.group(1))
 
             inline_example = InlineExample(match.group(3), count)
 
-            inline_example.preview = self._get_attribute_value(PREVIEW_ATTRIBUTE_PATTERN, attribute_string)
-            inline_example.playground = \
-                self._get_attribute_value(PLAYGROUND_ATTRIBUTE_PATTERN, attribute_string).lower() != 'false'
-            inline_example.imports = set(
-                self._get_attribute_value(IMPORT_ATTRIBUTE_PATTERN, attribute_string).split(','))
+            inline_example.preview = attributes.get('preview', 'none')
+            inline_example.playground = 'playground' not in attributes or attributes['playground'].lower() != 'false'
+            inline_example.imports = set(attributes.get('imports', '').split(','))
             inline_example.imports.discard('')  # in case the import is empty
-            inline_example.template = self._get_attribute_value(TEMPLATE_ATTRIBUTE_PATTERN, attribute_string)
+            inline_example.template = attributes.get('template', '')
 
             inline_example_match = InlineExampleMatch(inline_example)
             inline_example_match.startTagStart = match.start(0)
@@ -71,12 +66,11 @@ class SourceCodeExtractor(object):
 
         return result
 
-    def _get_attribute_value(self, pattern, attributesString):
-        if attributesString is None:
-            return ''
-
-        match = pattern.search(attributesString)
-        if match:
-            return match.group(1)
-        return ''
+    def _get_attributes(self, attributesString):
+        result = {}
+        match = ATTRIBUTE_PATTERN.search(attributesString)
+        while match:
+            result[match.group(1)] = match.group(2)
+            match = ATTRIBUTE_PATTERN.search(attributesString, match.end(0))
+        return result
 

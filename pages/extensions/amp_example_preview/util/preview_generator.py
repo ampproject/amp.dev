@@ -1,12 +1,14 @@
 import re
+import os
 import requests
+from jinja2 import Template
+
+from .preview import ExamplePreview, ExamplePreviewMatch
+from .constants import *
 
 COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
 
 COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
-
-PREVIEW_TRIGGER = '<!-- preview'
-PREVIEW_PATTERN = re.compile(r'<!--\s*preview(\s+[^\n]+)?\s*\n(.*?)-->(.*?)<!--\s*/\s*preview\s*-->', re.DOTALL)
 
 # find existing imports
 IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=\s*"?([^"\s>/]+)',
@@ -15,9 +17,21 @@ IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=
 AMP_CUSTOM_DEPENDENCY_TEMPLATE = '<script async custom-{type}="{dependency}" ' \
                               'src="https://cdn.ampproject.org/v0/{dependency}-{version}.js"></script>'
 
+TEMPLATE_PATH = os.getcwd() + '/views/partials/code-preview/code-preview.j2'
+
+
+def get_preview_template(template_path):
+    with open(template_path, 'r') as template_file:
+        file_contents = template_file.read()
+        template = Template(file_contents)
+        return template
+
+
+PREVIEW_TEMPLATE = get_preview_template(TEMPLATE_PATH)
+
 
 def trigger(doc, original_body, content):
-    if PREVIEW_TRIGGER in original_body:
+    if ExamplePreviewMatch.has_preview(content):
         return _transform(doc, original_body, content)
     return content
 
@@ -33,42 +47,34 @@ def _transform(doc, original_body, content):
     output = output + content[0:pos]
     output = output + get_dependency_scripts(doc, content)
 
-    match = PREVIEW_PATTERN.search(content)
-    while match:
-        settings = match.group(1)
-        doc.pod.logger.debug('generate preview' + settings)
-
-        output = output + content[pos:match.start(0)]
-
-        inline_preview = 'mode=inline' in settings
-        if inline_preview:
-            output = output + '<div class="ap-o-code-preview">\n' \
-                              '  <div class="ap-o-code-preview-preview">\n'
-            output = output + match.group(2)
-            output = output + '\n' \
-                              '  </div>\n'
-
-        output = output + match.group(3)
-
-        if inline_preview:
-            output = output + '\n</div>'
-
-        pos = match.end(0)
-        match = PREVIEW_PATTERN.search(content, pos)
+    matches = ExamplePreviewMatch.extract_previews(content)
+    for match in matches:
+        output = output + content[pos:match.start_tag_start]
+        output = output + generate_preview(content, match)
+        pos = match.end_tag_end
 
     output = output + content[pos:]
+    return output
 
+
+def generate_preview(content, match):
+    output = ''
+    preview = match.preview
+
+    output = output + PREVIEW_TEMPLATE.render(
+            preview=preview,
+            content=content[match.start_tag_end:match.end_tag_start])
     return output
 
 
 def get_dependency_scripts(doc, content):
     output = ''
 
-    if not hasattr(doc, 'example_imports'):
+    if not hasattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS):
         return output
 
-    amp_imports = getattr(doc, 'example_imports')
-    amp_templates = getattr(doc, 'example_templates')
+    amp_imports = getattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS)
+    amp_templates = getattr(doc, ATTRIBUTE_EXAMPLE_TEMPLATES)
 
     if (amp_imports is not None and len(amp_imports) > 0
         or amp_templates is not None and len(amp_templates) > 0):
@@ -96,3 +102,4 @@ def get_dependency_scripts(doc, content):
                     type='template', dependency=custom_template, version=version)
 
     return output
+

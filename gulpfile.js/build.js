@@ -427,4 +427,4 @@ exports.buildFinalize = gulp.series(fetchArtifacts,
 exports.build = gulp.series(clean, buildPrepare, buildPages,
     gulp.parallel(collectStatics, persistBuildInfo));
 
-exports.buildForUnitTests = gulp.series(buildBoilerplate, buildPages);
+exports.buildForGrowTests = gulp.series(buildBoilerplate, buildPages);

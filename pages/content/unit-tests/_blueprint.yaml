@@ -1,6 +1,0 @@
-$view: /views/default.j2
-$path: /unit-tests/{base}.html
-$localization:
-  path: /{locale}/unit-tests/{base}.html
-$order: 90
-

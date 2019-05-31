@@ -5,7 +5,7 @@ $order: 4
 
 Start
 
-[example  preview="false" playground="true"]
+[example preview="none" playground="true"]
 
 ```html
 <h1>Headline</h1>

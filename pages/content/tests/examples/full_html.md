@@ -5,7 +5,7 @@ $order: 8
 
 Start
 
-[example preview="inline" playground="true"]
+[example preview="none" playground="true"]
 ```html
 <!doctype html>
 <html amp lang="en">

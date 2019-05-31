@@ -5,7 +5,7 @@ $order: 7
 
 Start
 
-[example  preview="inline" playground="true"]
+[example  preview="none" playground="true"]
 
 ```html
 <head>

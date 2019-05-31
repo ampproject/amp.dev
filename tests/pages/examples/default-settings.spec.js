@@ -20,7 +20,7 @@ require('module-alias/register');
 const fs = require('fs');
 const cheerio = require('cheerio');
 const project = require('@lib/utils/project');
-const filePath = project.paths.GROW_BUILD_DEST + '/unit-tests/examples/default_settings.html';
+const filePath = project.paths.GROW_BUILD_DEST + '/tests/examples/default_settings.html';
 
 describe('config', () => {
   const generatedContent = fs.readFileSync(filePath);

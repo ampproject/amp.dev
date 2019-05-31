@@ -18,7 +18,7 @@
     "build:local": "gulp build --env local",
     "build:staging": "gulp build --env staging",
     "build:prod": "gulp build --env production",
-		"build:unittests" : "gulp buildForUnitTests --env test --locales en --include_paths unit-tests",
+		"build:growtests" : "gulp buildForGrowTests --env test --locales en --include_paths tests",
     "log:staging": "gcloud app logs tail -s default --project amp-dev-staging",
     "posttest": "npm run lint",
     "start:local": "cd platform && NODE_ENV=local node serve.js",
