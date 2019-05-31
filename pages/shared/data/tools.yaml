@@ -1,8 +1,9 @@
 creation:
   - name: Adobe Animate
     official: true
-    description: The AMPHTML Ad plugin for Adobe Animate allows the creation of rich, eye-catching marketing content with Adobe Animate.
+    description: Allows the creation of rich, eye-catching marketing content with Adobe Animate.
     url: https://www.adobeexchange.com/creativecloud.details.101647.amphtml-ad.html
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/adobe_animate.jpg
       width: 700
@@ -13,6 +14,7 @@ creation:
     official: true
     description: The AMP for WordPress plugin now comes with a fully integrated story editor.
     url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/amp_stories_for_wordpress.jpg
       width: 700
@@ -22,24 +24,28 @@ creation:
   - name: Google Web Designer
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/google_web_designer.jpg
       width: 700
       height: 549
     formats:
       - ads
-  - name: Jumprope
-    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
-    url: https://www.jumprope.com/
+  - name: Instapage
+    description: Instapage automates the creation, optimization, and personalization of post-click experiences at scale.
+    url: https://instapage.com
+    type: landing pages
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
-      width: 5
-      height: 3
+      src: /static/img/tools/instapage.svg
+      width: 598
+      height: 124
+      fit: contain
     formats:
-      - stories
+      - websites
   - name: MakeStories
     description: WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
     url: https://makestories.io/
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/makestories.jpg
       width: 701
@@ -49,6 +55,7 @@ creation:
   - name: Newsroom AI
     description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
     url: https://www.nws.studio/the-stories-platform.html
+    type: WYSIWYG Editor
     image:
       src: /static/img/teaser-placeholder-5x3.jpg
       width: 5
@@ -62,18 +69,34 @@ creation:
       src: /static/img/tools/sparkpost.png
       width: 1034
       height: 269
+      fit: contain
     formats:
       - email
-  - name: Tick. Done.
-    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
-    url: http://tick.co/
+  - name: Unbounce
+    description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
+    url: https://unbounce.com
+    type: landing pages
     image:
-      src: /static/img/tools/amp-story-tick.jpg
-      width: 700
-      height: 407
+      src: /static/img/tools/unbounce.svg
+      width: 1162
+      height: 442
+      fit: contain
+      bgcolor: "#004e73"
     formats:
-      - stories
+      - websites
 platforms:
+  - name: AMP for WordPress
+    official: true
+    type: cms
+    description: AMP-first content creation with the power and flexibility of WordPress.
+    url: https://amp-wp.org/
+    image:
+      src: /static/img/tools/amp_for_wordpress.jpg
+      width: 700
+      height: 499
+    formats:
+      - websites
+      - stories
   - name: Google Search Console
     type: debugging
     description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
@@ -88,6 +111,7 @@ platforms:
   - name: Google AMP Test
     description: Test if and how your AMP page appears in Google Search.
     url: https://search.google.com/test/amp
+    type: testing
     image:
       src: /static/img/tools/google_amp_test.jpg
       width: 925
@@ -105,17 +129,25 @@ platforms:
       height: 619
     formats:
       - email
-  - name: AMP for WordPress
-    official: true
-    type: cms
-    description: AMP-first content creation with the power and flexibility of WordPress.
-    url: https://amp-wp.org/
+  - name: Jumprope
+    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
+    url: https://www.jumprope.com/
+    type: Content Platform
     image:
-      src: /static/img/tools/amp_for_wordpress.jpg
-      width: 700
-      height: 499
+      src: /static/img/teaser-placeholder-5x3.jpg
+      width: 5
+      height: 3
     formats:
-      - websites
+      - stories
+  - name: Tick. Done.
+    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
+    url: http://tick.co/
+    type: Content Platform
+    image:
+      src: /static/img/tools/amp-story-tick.jpg
+      width: 700
+      height: 407
+    formats:
       - stories
 developer:
   - name: AMP Validator
