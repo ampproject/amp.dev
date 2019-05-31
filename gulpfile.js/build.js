@@ -252,6 +252,12 @@ async function buildPages(done) {
             .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
       },
       // eslint-disable-next-line prefer-arrow-callback
+      function sitemap() {
+        // Copy XML files written by Grow
+        return gulp.src(`${project.paths.GROW_BUILD_DEST}/**/*.xml`)
+            .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
+      },
+      // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifacts() {
         // ... and again if on Travis store all built files for a later stage to pick up
         if (travis.onTravis()) {
@@ -272,7 +278,7 @@ async function buildPages(done) {
 async function transformPages() {
   let paths = await globby([
     `${project.paths.GROW_BUILD_DEST}/**/*.html`,
-    `!${project.paths.GROW_BUILD_DEST}/shared/*.html`,
+    `!${project.paths.GROW_BUILD_DEST}/{*/shared,shared}/*.html`,
   ]);
   const shardCount = os.cpus().length;
   const shardPathCount = Math.trunc(paths.length / shardCount);
