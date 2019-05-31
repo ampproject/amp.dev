@@ -5,7 +5,7 @@ EXAMPLE_PATTERN = re.compile(r'\[\s*example(\s[^\]]*)?\](.*?\n```html *\n(.*?)\n
 
 PREVIEW_ATTRIBUTE_PATTERN = re.compile(r'\spreview\s*=\s*"([^"]+)"')
 PLAYGROUND_ATTRIBUTE_PATTERN = re.compile(r'\splayground\s*=\s*"([^"]+)"')
-IMPORT_ATTRIBUTE_PATTERN = re.compile(r'\simport\s*=\s*"([^"]+)"')
+IMPORT_ATTRIBUTE_PATTERN = re.compile(r'\simports\s*=\s*"([^"]+)"')
 TEMPLATE_ATTRIBUTE_PATTERN = re.compile(r'\stemplate\s*=\s*"([^"]+)"')
 
 
@@ -34,7 +34,7 @@ class SourceCodeExtractor(object):
 
     def find_examples_in_markdown(self, content):
         """
-          @type content: string
+          @type content: str
         """
         count = 0
         pos = 0

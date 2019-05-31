@@ -7,7 +7,7 @@ Start
 
 [example 
      preview="inline" playground="true"
-     import="amp-date-display"
+     imports="amp-date-display"
      template="amp-mustache"]
 
 ```html

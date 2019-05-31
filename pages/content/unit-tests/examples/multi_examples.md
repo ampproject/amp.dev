@@ -8,7 +8,7 @@ First
 [example 
      preview="inline" 
      playground="true"
-     import="amp-accordion"]
+     imports="amp-accordion"]
 ```html
 <amp-accordion class="sample">
   <section expanded>

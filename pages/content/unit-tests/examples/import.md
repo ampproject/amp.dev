@@ -5,7 +5,7 @@ $order: 5
 
 Start
 
-[example  preview="inline" playground="true" import="amp-accordion"]
+[example  preview="inline" playground="true" imports="amp-accordion"]
 
 ```html
 <amp-accordion class="sample">
