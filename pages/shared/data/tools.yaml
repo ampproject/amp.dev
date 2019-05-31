@@ -10,6 +10,16 @@ creation:
       height: 506
     formats:
       - ads
+  - name: Bannersnack
+    description: Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes.
+    url: https://www.bannersnack.com/amp-ads.html
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/bannersnack.png
+      width: 700
+      height: 549
+    formats:
+      - ads
   - name: AMP Stories for WordPress (Beta)
     official: true
     description: The AMP for WordPress plugin now comes with a fully integrated story editor.
