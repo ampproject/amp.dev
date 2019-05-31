@@ -1,63 +1,15 @@
 # -*- coding: utf-8 -*-
 import re
+import requests
 
 from grow import extensions
 from grow.documents import document, static_document
 from grow.extensions import hooks
 
-# See: https://www.ampproject.org/docs/reference/components
-# TODO: Add remaining Media dependencies
-VALID_DEPENDENCIES = {
-    'amp-access': True,
-    'amp-animation': True,
-    'amp-anim': True,
-    'amp-access-laterpay': True,
-    'amp-accordion': True,
-    'amp-ad': True,
-    'amp-ad-exit': True,
-    'amp-analytics': True,
-    'amp-app-banner': True,
-    'amp-auto-ads': True,
-    'amp-audio': True,
-    'amp-bind': True,
-    'amp-byside-content': True,
-    'amp-call-tracking': True,
-    'amp-carousel': True,
-    'amp-consent': True,
-    'amp-date-picker': True,
-    'amp-experiment': True,
-    'amp-form': True,
-    'amp-font': True,
-    'amp-facebook': True,
-    'amp-facebook-like': True,
-    'amp-fx-collection': True,
-    'amp-fx-flying-carpet': True,
-    'amp-fit-text': True,
-    'amp-geo': True,
-    'amp-gist': True,
-    'amp-google-document-embed': True,
-    'amp-iframe': True,
-    'amp-image-lightbox': True,
-    'amp-install-serviceworker': True,
-    'amp-lightbox': True,
-    'amp-lightbox-gallery': True,
-    'amp-list': True,
-    'amp-live-list': True,
-    'amp-mustache': True,
-    'amp-next-page': True,
-    'amp-orientation-observer': True,
-    'amp-pixel': True,
-    'amp-position-observer': True,
-    'amp-selector': True,
-    'amp-sidebar': True,
-    'amp-story': True,
-    'amp-sticky-ad': True,
-    'amp-user-notification': True,
-    'amp-video': True,
-    'amp-vimeo': True,
-    'amp-youtube': True,
-    'amp-web-push': True,
-}
+
+COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
+
+COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
 
 BUILT_INS = [
     'amp-layout',
@@ -167,17 +119,15 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def verify_dependencies(self, dependencies, doc):
         """Verifies that the found dependencies are valid components
         and filters out duplicates."""
-        seen_dependencies = {}
         valid_dependencies = []
         for dependency in dependencies:
-            if dependency in seen_dependencies: continue
+            if dependency in valid_dependencies: continue
             if dependency in BUILT_INS: continue
             if dependency in FALSE_POSITIVES: continue
-            if dependency not in VALID_DEPENDENCIES:
+            if dependency not in COMPONENT_VERSIONS:
                 self.pod.logger.warning('{} uses unknown AMP dependency: {}'.format(doc, dependency))
                 continue
 
-            seen_dependencies[dependency] = True
             valid_dependencies.append(dependency)
         return valid_dependencies
 
@@ -189,8 +139,8 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
                                           re.IGNORECASE)
             if not existing_pattern.search(content):
 
-                # TODO: Handle different versions, URL and type within VALID_DEPENDENCIES
-                src = 'https://cdn.ampproject.org/v0/{}-0.1.js'.format(dependency)
+                version = COMPONENT_VERSIONS[dependency]
+                src = 'https://cdn.ampproject.org/v0/{dependency}-{version}.js'.format(dependency=dependency, version=version)
 
                 tag = '<script custom-{type}="{dependency}" src="{src}" async></script>'.format(
                   type=dep_type, dependency=dependency, src=src)

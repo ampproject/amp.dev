@@ -1,4 +1,9 @@
 import re
+import requests
+
+COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
+
+COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
 
 PREVIEW_TRIGGER = '<!-- preview'
 PREVIEW_PATTERN = re.compile(r'<!--\s*preview(\s+[^\n]+)?\s*\n(.*?)-->(.*?)<!--\s*/\s*preview\s*-->', re.DOTALL)
@@ -10,6 +15,7 @@ IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=
 AMP_CUSTOM_DEPENDENCY_TEMPLATE = '<script async custom-{type}="{dependency}" ' \
                               'src="https://cdn.ampproject.org/v0/{dependency}-{version}.js"></script>'
 
+
 def trigger(doc, original_body, content):
     if PREVIEW_TRIGGER in original_body:
         return _transform(doc, original_body, content)
@@ -19,8 +25,8 @@ def trigger(doc, original_body, content):
 def _transform(doc, original_body, content):
     output = ''
 
+    # find the end of the head section to insert the dependency scripts there
     pos = content.index('</head>')
-
     if pos < 0:
         return content
 
@@ -61,7 +67,6 @@ def get_dependency_scripts(doc, content):
     if not hasattr(doc, 'example_imports'):
         return output
 
-
     amp_imports = getattr(doc, 'example_imports')
     amp_templates = getattr(doc, 'example_templates')
 
@@ -78,15 +83,16 @@ def get_dependency_scripts(doc, content):
 
             existing_import = IMPORT_PATTERN.search(content, existing_import.end(0))
 
-    # TODO: support different custom element and template versions
-
     if amp_imports is not None and len(amp_imports) > 0:
         for custom_element in amp_imports:
+            version = COMPONENT_VERSIONS[custom_element] if custom_element in COMPONENT_VERSIONS else '0.1'
             output = output + AMP_CUSTOM_DEPENDENCY_TEMPLATE.format(
-                    type='element', dependency=custom_element, version='0.1')
+                    type='element', dependency=custom_element, version=version)
 
     if amp_templates is not None and len(amp_templates) > 0:
         for custom_template in amp_templates:
+            version = COMPONENT_VERSIONS[custom_template] if custom_template in COMPONENT_VERSIONS else '0.1'
             output = output + AMP_CUSTOM_DEPENDENCY_TEMPLATE.format(
-                    type='template', dependency=custom_template, version='0.2')
+                    type='template', dependency=custom_template, version=version)
+
     return output
