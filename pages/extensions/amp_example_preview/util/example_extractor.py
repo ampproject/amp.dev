@@ -68,9 +68,10 @@ class SourceCodeExtractor(object):
 
     def _get_attributes(self, attributesString):
         result = {}
-        match = ATTRIBUTE_PATTERN.search(attributesString)
-        while match:
-            result[match.group(1)] = match.group(2)
-            match = ATTRIBUTE_PATTERN.search(attributesString, match.end(0))
+        if attributesString:
+            match = ATTRIBUTE_PATTERN.search(attributesString)
+            while match:
+                result[match.group(1)] = match.group(2)
+                match = ATTRIBUTE_PATTERN.search(attributesString, match.end(0))
         return result
 
