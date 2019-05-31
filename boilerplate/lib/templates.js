@@ -38,7 +38,7 @@ Handlebars.registerHelper('scss', (scssPath) => {
         file: templatePath,
         includePaths: INCLUDE_PATHS,
       });
-      return new Handlebars.SafeString(result.css.toString());
+      return new Handlebars.SafeString(result.css.toString().replace('@charset "UTF-8";', ''));
     }
   }
   throw new Error('File not found ' + scssPath);
