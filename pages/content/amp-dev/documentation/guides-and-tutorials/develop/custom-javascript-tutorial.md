@@ -107,21 +107,15 @@ HTML elements inside of the `<amp-script>` component tags are treated as web doc
 
 ## Declare elements
 
-Our password checker wants to interact with each of our password requirements. Inside `script.js` we’ll declare them. 
+Our password checker need to capture the password input box, declare it inside `script.js`. 
 
 
 ```js
 const passwordBox = document.getElementById("passwordBox");
-const lowerCheck = document.getElementById("lowercase");
-const upperCheck = document.getElementById("capital");
-const numberCheck = document.getElementById("number");
-const specialCheck = document.getElementById("special");
-const lengthCheck = document.getElementById("eight");
-const submitButton = document.getElementById("submitButton");
 ```
 
 
-Like non-AMP pages, we can test if they were captured correctly by logging elements into the console. 
+Like non-AMP pages, we can test if it was captured correctly by logging elements into the console. 
 
 
 ## Set checks
@@ -132,24 +126,24 @@ The script file will hold all of our password requirement logic by using [regula
 ```js
 const passwordChecks = [
   {
-    checkRegEx: (password) => (password.search(/[a-z]/) >= 0),
-    text: lowerCheck
+    test: (password) => (password.search(/[a-z]/) >= 0),
+    text: "lowercase"
   },
   {
-    checkRegEx: (password) => (password.search(/[A-Z]/) >= 0),
-    text: upperCheck
+    test: (password) => (password.search(/[A-Z]/) >= 0),
+    text: "capital"
   },
   {
-    checkRegEx: (password) => (password.search(/[0-9]/) >= 0),
-    text: numberCheck
+    test: (password) => (password.search(/[0-9]/) >= 0),
+    text: "number"
   },
   {
-    checkRegEx: (password) => (password.search(/[^a-z0-9]/i) >= 0),
-    text: specialCheck
+    test: (password) => (password.search(/[^a-z0-9]/i) >= 0),
+    text: "special"
   },
   {
-    checkRegEx: (password) => (password.length >= 8),
-    text: lengthCheck
+    test: (password) => (password.length >= 8),
+    text: "eight"
   }
 ]
 
@@ -176,8 +170,8 @@ We’ll then see if the element we pass as our argument can pass the defined che
 function initCheckPassword(element) {
  const checkPassword = () => {
     passwordChecks.forEach((item) => {
-      let passed = item.checkRegEx(element.value);
-       // passed logic 
+      let passed = item.test(element.value);
+       // passed/fail logic 
     });
 };
 ```
@@ -191,44 +185,31 @@ Our function will listen for two events, [`keyup`](https://developer.mozilla.org
 function initCheckPassword(element) {
  const checkPassword = () => {
     passwordChecks.forEach((item) => {
-      let passed = item.checkRegEx(element.value);
-       // passed logic 
+      let passed = item.test(element.value);
+       // passed/fail logic 
     });
-}; 
-// is called when user types in input
-element.addEventListener("keyup", checkPassword);
-// is called if user pastes into input 
-element.addEventListener("change", checkPassword);  
+    // is called when user types in input
+  element.addEventListener("keyup", checkPassword);
+  // is called if user pastes into input 
+  element.addEventListener("change", checkPassword); 
+  };  
 ```
 
 
-Inside the `checkPassword` function, we’ll call two more:
-
-
-
-*   If the password passes a defined check, it will call `checkMet`, turning the font green. 
-*   If the password failed a defined check, it will call `checkRemoved`, turning the font red.
+Inside the `checkPassword` function, we’ll toggle a class that changes our text to green if the check is passed.
 
 ```js
 function initCheckPassword(element) {
-  // removes invalid class and replaced with valid if check is met
-  const checkMet = (listItem) => {
-    listItem.classList.remove("checkFail");
-    listItem.classList.add("checkPass");
-  };
-  // removes valid class and replaced with valid if check is deleted
-  const checkRemoved = (listItem) => {
-    listItem.classList.remove("checkPass");
-    listItem.classList.add("checkFail");
-  }
-  // function goes over each check to see if its been met
   const checkPassword = () => {
-    let successTest = passwordChecks.forEach((item) => {
-      let passed = item.checkRegEx(element.value);
-      // calls checkMet or checkRemoved
-        passed ? checkMet(item.text) : checkRemoved(item.text);
+    passwordChecks.forEach((item) => {
+      let passed = item.test(element.value);
+      // captures element
+      let checkText = document.getElementById(item.text)
+      console.log(item.text)
+       // passed/fail logic 
+       checkText.classList.toggle('pass', passed)
     });
- }
+  } 
     // is called when user types in input
     element.addEventListener("keyup", checkPassword);
     // is called if user pastes into input 
@@ -236,34 +217,28 @@ function initCheckPassword(element) {
 };
 ```
 
-
-
-Both of our check functions add and remove classes from the password requirement list items within the `rules` div. The `checkFailed` class will make our text red and the `checkPassed` will change it to green. 
-
-Just like non-AMP pages, once the `amp-script` logic adds or removes a class it will be reflected in the DOM. These classes are treated the same as all other CSS that don't work with `amp-script`. 
-
-For this to work, we will need to add the `checkFail` class to all the items and define both `checkPass` and `checkFailed` within the `<style amp-custom>` tag in the page head. 
+For this to work, we will need to add a `check` class to all the items and define both `check` and `pass` within the `<style amp-custom>` tag in the page head. 
 
 
 ```html
 <ul>
-    <li id="lowercase" class="checkFail">Lowercase letter</li>
-    <li id="capital" class="checkFail">Capital letter</li>
-    <li id="number" class="checkFail">Number</li>
-    <li id="special" class="checkFail">Special character (@$!%*?&)</li>
-    <li id="eight" class="checkFail">At least 8 characters long</li>
+  <li id="lowercase" class="check">Lowercase letter</li>
+  <li id="capital" class="check">Capital letter</li>
+  <li id="number" class="check">Number</li>
+  <li id="special" class="check">Special character (@$!%*?&)</li>
+  <li id="eight" class="check">At least 8 characters long</li>
 </ul> 
 ```
 
 
 
 ```css
-.checkPass {
-    color: #2d7b1f;
-} 
-.checkFail {
-    color:#c11136;
+.check {
+  color:#c11136;
 }
+.check.pass {
+  color: #2d7b1f;
+} 
 ```
 
 
@@ -275,6 +250,7 @@ Refresh the page and type into the password input. The elements corresponding th
   </amp-video>
 </figure>
 
+Ensure you call to `initCheckPassword` in `script.js` and pass it `passwordBox` as an argument to setup the event handlers.
 Our logic is now complete!
 
 
