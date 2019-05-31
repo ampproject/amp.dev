@@ -57,7 +57,7 @@ Like nearly all AMP components, `<amp-script>` requires a script tag. Open `inde
 </head>
 ```
 
-The `amp-script` tags must be wrapped around the elements it wishes to mutate and interact with. `amp-script` is unable to mutate or interact with anything that is not a direct child of it.
+The `amp-script` component must be wrapped around the elements it wishes to mutate and interact with. `amp-script` is unable to mutate or interact with anything that is not a direct child of it.
 
 Our functionality relays and changes the DOM of our `form`. Place the `<form>` element inside the `<amp-script>` component. 
 
