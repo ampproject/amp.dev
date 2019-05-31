@@ -175,7 +175,7 @@ We’ll then see if the element we pass as our argument can pass the defined che
 ```js
 function initCheckPassword(element) {
  const checkPassword = () => {
-    let successTest = passwordChecks.forEach((item) => {
+    passwordChecks.forEach((item) => {
       let passed = item.checkRegEx(element.value);
        // passed logic 
     });
@@ -190,7 +190,7 @@ Our function will listen for two events, [`keyup`](https://developer.mozilla.org
 ```js
 function initCheckPassword(element) {
  const checkPassword = () => {
-    let successTest = passwordChecks.forEach((item) => {
+    passwordChecks.forEach((item) => {
       let passed = item.checkRegEx(element.value);
        // passed logic 
     });
@@ -226,7 +226,7 @@ function initCheckPassword(element) {
     let successTest = passwordChecks.forEach((item) => {
       let passed = item.checkRegEx(element.value);
       // calls checkMet or checkRemoved
-      return passed ? checkMet(item.text) : checkRemoved(item.text);
+        passed ? checkMet(item.text) : checkRemoved(item.text);
     });
  }
     // is called when user types in input
