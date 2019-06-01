@@ -130,7 +130,7 @@
     "wade": "0.3.3",
     "webpack": "4.32.2",
     "webpack-cli": "3.3.2",
-    "webpack-dev-server": "3.4.1",
+    "webpack-dev-server": "3.5.1",
     "write": "1.0.3",
     "write-yaml": "1.0.0"
   },
