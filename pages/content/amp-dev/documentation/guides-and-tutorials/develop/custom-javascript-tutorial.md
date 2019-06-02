@@ -39,7 +39,7 @@ After selecting the password input element, the [AMP `on="tap:rules.show"` actio
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image2.jpg', 500, 604, layout='intrinsic', alt='Image of basic amp script tutorial starter app with password requirements', align='' ) }}
 
-Play around with different passwords! If you press the submit button before all requirements are met `<amp-form>`’s [`pattern`](https://amp.dev/documentation/components/amp-form?format=websites#verification) attribute will throw an error.
+Play around with different passwords! If you press the submit button before all requirements are met `<amp-form>`’s [`pattern`]({{g.doc('/content/amp-dev/documentation/components/amp-form.md', locale=doc.locale).url.path}}?format=websites#verification) attribute will throw an error.
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image3.jpg', 500, 605, layout='intrinsic', alt='Image of basic amp script tutorial starter app with unhelpful error', align='' ) }}
 
@@ -84,7 +84,7 @@ The `src` attribute points to the filepath `http://localhost:8080/js/script.js`.
 Open the newly created `script.js` file and add `console.log("amp-script here")`. Reload the page and open the [DevTools console](https://developers.google.com/web/tools/chrome-devtools/) to verify it successfully logged "amp-script here". 
 
 [tip type="important"]
-**Important**: amp-script is still in experimental mode. You will need to enable it inside the console by running `AMP.toggleExperiment('amp-script')` and confirming that it returns `true`. Read more about experimental components [here](https://amp.dev/documentation/guides-and-tutorials/learn/experimental). 
+**Important**: amp-script is still in experimental mode. You will need to enable it inside the console by running `AMP.toggleExperiment('amp-script')` and confirming that it returns `true`. Read more about experimental components [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}?format=websites). 
 [/tip]
 
 Imported script logic from the `amp-script` `src` attribute is debugged in the console, same as JavaScript inside non-AMP pages.
@@ -93,7 +93,7 @@ Imported script logic from the `amp-script` `src` attribute is debugged in the c
 
 Now that we’ve confirmed our `script.js` file is being injected correctly, let’s add functionality!
 
-HTML elements within the `<amp-script>` tag are now accessible via standard DOM methods from within `script.js`, minus [a few small caveats](https://amp.dev/documentation/guides-and-tutorials/develop/custom-javascript?format=websites#api-restrictions).
+HTML elements within the `<amp-script>` tag are now accessible via standard DOM methods from within `script.js`, minus [a few small caveats]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript.md', locale=doc.locale).url.path}}?format=websites#api-restrictions).
 
 ## Declare elements
 
