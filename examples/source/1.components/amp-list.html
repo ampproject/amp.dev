@@ -119,10 +119,11 @@ author: kul3r4
     ]
   }
   ```
-  The list content is rendered via an [amp-mustache template]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). The template can be specified either by id, or by using a nested element.
+  The list content is rendered via an [amp-mustache template]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). The template can be specified either by id, or by using a nested element. For performance reasons, we're adding `binding="no"` as we're not using `amp-bind`. 
   -->
   <amp-list layout="fixed-height" height="100"
-      src="/static/samples/json/examples.json">
+      src="/static/samples/json/examples.json"
+      binding="no">
     <template type="amp-mustache">
       <div><a href="{{url}}">{{title}}</a></div>
     </template>
@@ -138,7 +139,8 @@ The template can also be specified using an ID of an existing `template` element
     </template>
     <amp-list layout="fixed-height" height="100"
         src="/static/samples/json/examples.json"
-        template="amp-template-id">
+        template="amp-template-id"
+        binding="no">
     </amp-list>
   </div>
 
@@ -147,7 +149,8 @@ The template can also be specified using an ID of an existing `template` element
    If the `amp-list` content requires more space than available, the AMP runtime will display the overflow element (if specified).
   -->
   <amp-list layout="fixed-height" height="48"
-    src="/static/samples/json/examples.json">
+    src="/static/samples/json/examples.json"
+    binding="no">
     <div overflow role="button" aria-label="Show more" class="list-overflow">
       Show more
     </div>
@@ -163,7 +166,8 @@ The template can also be specified using an ID of an existing `template` element
   <div>
     <amp-list layout="fixed-height" height="100"
         src="/static/samples/json/examples.json"
-       [src]="srcUrl" >
+       [src]="srcUrl"
+       binding="no">
       <template type="amp-mustache">
         <div><a href="{{url}}">{{title}}</a></div>
       </template>
@@ -187,7 +191,8 @@ The template can also be specified using an ID of an existing `template` element
         [src]="items"
         [height]="items.length * 24"
         single-item
-        items=".">
+        items="."
+        binding="no">
       <template type="amp-mustache">
         <div>{{ . }}</div>
       </template>
@@ -206,7 +211,8 @@ The template can also be specified using an ID of an existing `template` element
       [src]="emptyListSampleSrc || '/static/samples/json/examples-empty.json'"
       single-item
       items="."
-      reset-on-refresh>
+      reset-on-refresh
+      binding="no">
     <template type="amp-mustache">
       {{#items}}
         <div><a href="{{url}}">{{title}}</a></div>
@@ -231,7 +237,8 @@ The template can also be specified using an ID of an existing `template` element
             reset-on-refresh
             layout="fixed-height"
             height="654"
-            src="<% hosts.backend %>/samples_templates/slow-json-with-items/?delay=10000">
+            src="<% hosts.backend %>/samples_templates/slow-json-with-items/?delay=10000"
+            binding="no">
     <div placeholder>
       <div class="product"></div>
       <div class="product"></div>
@@ -265,7 +272,8 @@ The template can also be specified using an ID of an existing `template` element
             reset-on-refresh
             layout="fixed-height"
             height="600"
-            src="<% hosts.backend %>/samples_templates/slow-json-with-items/?delay=1000">
+            src="<% hosts.backend %>/samples_templates/slow-json-with-items/?delay=1000"
+            binding="no">
     <template type="amp-mustache">
         <div class="product">
             <amp-img width="150"

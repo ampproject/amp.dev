@@ -208,6 +208,7 @@ author: aghassemi
                   autosuggest.endpoint + autosuggest.query :
                   autosuggest.emptyAndInitialTemplateJson"
                 id="autosuggest-list"
+                binding=refresh
               >
                 <template type="amp-mustache">
                   <amp-selector
@@ -378,6 +379,7 @@ author: aghassemi
                     layout="fixed-height"
                     src="<% hosts.backend %>/samples_templates/products?sortChoiceValue=price-descendent&searchColor=all&_=RANDOM'"
                     [src]="products.listSrc"
+                    binding="no"
                     class="grid">
             <template type="amp-mustache">
               <a class="products" href="<% hosts.backend %>/samples_templates/product/[[$.Mode]]">
@@ -459,7 +461,8 @@ author: aghassemi
                   width="auto"
                   height="160"
                   layout="fixed-height"
-                  src="/static/samples/json/related_products.json">
+                  src="/static/samples/json/related_products.json"
+                  binding="no">
           <template type="amp-mustache">
             <a href="/samples_templates/product/preview/">
               <amp-img width="640"

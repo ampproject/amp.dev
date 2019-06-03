@@ -179,7 +179,8 @@ author: sebastianbenz
                   layout="fixed-height"
                   credentials="include"
                   src="shoppingcart?clientId=CLIENT_ID(cart)"
-                  [src]="shoppingCart.src">
+                  [src]="shoppingCart.src"
+                  binding="no">
           <template type="amp-mustache">
             <div class="shopping-cart">
               <div class="item header">
@@ -265,7 +266,8 @@ author: sebastianbenz
                         items="."
                         single-item
                         credentials="include"
-                        src="/static/samples/json/addresses.json">
+                        src="/static/samples/json/addresses.json"
+                        binding="no">
                 <template type="amp-mustache">
                   <ul class="list-reset">
                     {{#addresses}}
@@ -367,7 +369,8 @@ author: sebastianbenz
                           items="."
                           single-item
                           credentials="include"
-                          src="/static/samples/json/credit-cards.json">
+                          src="/static/samples/json/credit-cards.json"
+                          binding="no">
                   <template type="amp-mustache">
                     <ul class="list-reset">
                       {{#cards}}

@@ -64,6 +64,7 @@ author: cvializ
     <amp-list layout="fixed-height"
               height="25"
               src="/static/samples/json/linked_dropdowns.json"
+              binding="refresh"
               single-item items="." noloading>
       <template type="amp-mustache">
         <label for="country">Country:</label>
@@ -87,7 +88,9 @@ author: cvializ
               height="25"
               [src]="cities || '/static/samples/json/linked_dropdowns.json'"
               src="/static/samples/json/linked_dropdowns.json"
-              single-item items="." noloading>
+              binding="refresh"
+              single-item items="."
+              noloading>
       <template type="amp-mustache">
         <label for="city">City:</label>
         <select [disabled]="!cities" disabled id="city">

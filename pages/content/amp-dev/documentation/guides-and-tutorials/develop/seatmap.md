@@ -106,7 +106,7 @@ For reference, here's the final HTML for the seatmap:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" items="." single-item noloading>
+  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
     <template type="amp-mustache">
       <amp-pan-zoom layout="fill" class="seatmap">
         <amp-selector multiple on="select:AMP.setState({

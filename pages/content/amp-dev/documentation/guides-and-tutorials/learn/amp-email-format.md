@@ -186,7 +186,7 @@ The following is a fictional email that includes an updated list of featured pro
 </head>
 <body>
   Check out these latest deals from our store!
-  <amp-list src="https://ampbyexample.com/json/cart.json" layout="fixed-height" height="80">
+  <amp-list src="https://ampbyexample.com/json/cart.json" binding="no" layout="fixed-height" height="80">
     <template type="amp-mustache">
       <div id="cart">
         <!-- These items (and their prices) can be updated dynamically. -->
