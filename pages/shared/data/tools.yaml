@@ -72,16 +72,6 @@ creation:
       height: 3
     formats:
       - stories
-  - name: Amazon SES
-    url: https://aws.amazon.com/ses/
-    type: Email Service Provider
-    image:
-      src: /static/img/tools/aws-ses.svg
-      width: 2140
-      height: 2500
-      fit: contain
-    formats:
-      - email
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service Provider
