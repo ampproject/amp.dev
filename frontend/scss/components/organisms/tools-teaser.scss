@@ -204,6 +204,10 @@ main.#{template('tools')} {
           amp-img img {
             object-fit: cover;
           }
+
+          amp-img.contain img {
+            object-fit: contain;
+          }
   
           > a {
             display: flex;

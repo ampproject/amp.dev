@@ -28,12 +28,6 @@ body {
 
 ページを**更新**して、新しい外観を確認します。また、AMP 検証ツールの出力をチェックして、この外部スタイルシートのリクエストに関するエラーが出ていないことを確認します。
 
-[tip type="note"]
-ドキュメントにフォントを含めるために、コンポーネントを追加する必要はありません。ただし、[`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) という名前のコンポーネントが存在します。[`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) コンポーネントはウェブフォントの読み込みには使用されません。このコンポーネントは、ウェブフォントが正しく読み込まれたかどうかを検出し、必要に応じて適切な応答を行うために使用できます。
-
-[`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) を使用して、フォントが完全に読み込まれるまでテキストを非表示にしておけば、表示中のテキストが一時的なフォントから本来のフォントに途中で切り替わることがなくなります。また、フォントを読み込めなかった場合は一時的なフォントでテキストが表示されるようにしておくことをおすすめします。そうすることで、ユーザーにテキストが何も表示されないという最悪のシナリオを回避できます。詳しくは、[`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) のリファレンス ドキュメントをご覧ください。
-[/tip]
-
 これで AMP のニュース記事は完成です。ページは次のようになります。
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='完成したニュース記事') }}

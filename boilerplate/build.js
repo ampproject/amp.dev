@@ -23,7 +23,6 @@ const io = require('./lib/io');
 const templates = require('./lib/templates');
 
 const DIST_DIR = 'dist';
-const AMP_PATH = 'amp';
 const INPUT_FILE = 'templates/index.html';
 
 const generatorTemplate = io.readFile(INPUT_FILE);
@@ -57,7 +56,6 @@ function initConfig() {
 async function generateOptimizedAmpFiles(output) {
   const optimized = await optimizeAmp(output);
   io.writeFile(DIST_DIR, 'index.html', optimized);
-  io.writeFile(DIST_DIR, AMP_PATH, 'index.html', output);
 }
 
 async function optimizeAmp(html) {

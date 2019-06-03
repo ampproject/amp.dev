@@ -31,9 +31,7 @@ body {
 **Refresh** your page and check out your page’s new look. Also, inspect the AMP validator’s output.  There should be no errors for this external stylesheet request.
 
 [tip type="note"]
-Including a font in your document doesn’t require any additional components. Having said that, there is a component named [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}). The [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) component isn’t used to load web fonts, instead you can use it to detect whether a web font has successfully loaded or not and respond appropriately, if necessary.
-
-You can use [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) to hide your text until your font is fully loaded so that the user doesn’t see the text snap from its temporary font to its true font. In the case where the font fails to load, you might want to just reveal the temporary font instead. After all, the worst scenario would be if the user didn’t get to read any text! Learn more by reading the [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) reference documentation.
+Web fonts can be detrimental to a web site's performance, even on an otherwise fast AMP site. Use the [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) CSS property to optimize the loading behaviour of your fonts.
 [/tip]
 
 You've completed your AMP news article! Here's what it should look like:
