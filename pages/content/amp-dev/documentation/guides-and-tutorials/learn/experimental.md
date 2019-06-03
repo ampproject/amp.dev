@@ -14,6 +14,21 @@ are released features not yet ready for wide use, so they are protected by an **
 Developers and users can opt-in to using these features before they are fully released.
 But they should be used with caution, as they may contain bugs or have unexpected side effects.
 
+[tip type="important"]
+There is a risk that some experiments will never ship as features on the AMP Project.
+[/tip]
+
+{% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %}
+{% if experimental_components|length %}
+The following is a list of components that are currently in experimental status and are ready to be tested by developers for first user feedback:
+
+<ul>
+{% for component in experimental_components %}
+  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
 ## Opt into the AMP Dev Channel
 
 The AMP Dev Channel is a way to opt a browser into using a newer version of the AMP JS libraries.
@@ -74,19 +89,14 @@ Traditionally, a feature in experimental mode can be used in development, but ca
 - The test is for a limited time.
 - The feature will likely undergo some changes after origin trials.
 
-[tip type="important"]
-There is a risk that some experiments will never ship as features on the AMP Project.
-[/tip]
-
 Origin trials present an opportunity to impliment and benifit from a new feature before it’s fully live. The feature will live on the develop's site, rather than guarded by an experiment, and feedback can directly influence the direction of the feature.
 
 ### Enable an origin trial
 
-Include the following `<meta>` tag within the `<head>` tag on each page that uses the origin trial experiment: 
-  
+Include the following `<meta>` tag within the `<head>` tag on each page that uses the origin trial experiment:
+
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}"> 
+<meta name="amp-experiment-token" content="{copy your token here}">
 ```
 
 Note: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.
-
