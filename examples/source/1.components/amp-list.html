@@ -119,7 +119,7 @@ author: kul3r4
     ]
   }
   ```
-  The list content is rendered via an [amp-mustache template]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). The template can be specified either by id, or by using a nested element.
+  The list content is rendered via an [amp-mustache template]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). The template can be specified either by id, or by using a nested element. For performance reasons, we're adding `binding="no"` as we're not using `amp-bind`. 
   -->
   <amp-list layout="fixed-height" height="100"
       src="/static/samples/json/examples.json"
