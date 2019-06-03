@@ -89,7 +89,18 @@ Traditionally, a feature in experimental mode can be used in development, but ca
 - The test is for a limited time.
 - The feature will likely undergo some changes after origin trials.
 
-Origin trials present an opportunity to impliment and benifit from a new feature before it’s fully live. The feature will live on the develop's site, rather than guarded by an experiment, and feedback can directly influence the direction of the feature.
+Origin trials present an opportunity to implement and benefit from a new feature before it’s fully live. The feature will live on the developer's site, rather than guarded by an experiment, and feedback can directly influence the direction of the feature.
+
+{% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %}
+{% if trial_components|length %}
+Components in the following list can currently be tested via an origin trial:
+
+<ul>
+{% for component in trial_components %}
+  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
 
 ### Enable an origin trial
 
