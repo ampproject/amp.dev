@@ -18,6 +18,8 @@
 @import '_sidebar.scss';
 
 amp-sidebar {
+  width: 100%;
+  max-width: 90vw;
   background: color('whisper');
 }
 
@@ -45,11 +47,6 @@ nav[toolbar] {
     margin: 0;
     padding: 0;
   }
-}
-
-.#{utility('ampsidebar')} {
-  width: 100%;
-  max-width: 90vw;
 }
 
 .#{organism('component-sidebar')} {
