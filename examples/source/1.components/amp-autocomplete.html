@@ -284,11 +284,7 @@ preview: default
         <amp-state id="initialInventory">
             <script type="application/json">
               { "items" : [
-                { "isInitial": "true", 
-                  "header": 
-                  "true", 
-                  "name": "Popular groceries" 
-                }, { "isInitial": "true", 
+               { "isInitial": "true", 
                   "name": "apple"
                 }, { "isInitial": "true", 
                   "name": "grapes"
@@ -302,15 +298,10 @@ preview: default
         </amp-state>
         <template type="amp-mustache">
             {{#isInitial}}
-                {{#header}}
-                <div class="header" data-disabled>{{name}}</div>
-                {{/header}}
-                {{^header}}
-                <div class="product" data-value="{{name}}">
-                  <amp-img class="trending" width="24" height="24" src="/static/samples/img/trending.png"></amp-img>
-                  <span class="name-and-description">{{name}}</span>
-                </div>
-                {{/header}}
+              <div class="product" data-value="{{name}}">
+                <amp-img class="trending" width="24" height="24" src="/static/samples/img/trending.png"></amp-img>
+                <span class="name-and-description">{{name}}</span>
+              </div>
             {{/isInitial}}
             {{^isInitial}}
               <div data-value="{{name}}" class="product">
