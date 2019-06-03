@@ -1,5 +1,6 @@
 import re
 import json
+from xml.sax.saxutils import escape, unescape
 
 PREVIEW_START_BEGINNING = '<!-- preview\n'
 PREVIEW_END_TAG = r'<!-- /preview -->'
@@ -8,9 +9,12 @@ PREVIEW_PATTERN = re.compile(PREVIEW_START_BEGINNING + r'(.*?)\n-->\n(.*?)' + PR
 
 class ExamplePreview(object):
 
+    def __init__(self, iterable=(), **kwargs):
+        self.__dict__.update(iterable, **kwargs)
+
     def get_start_tag(self):
         jsonData = json.dumps(self.__dict__)
-        return PREVIEW_START_BEGINNING + escape_html(jsonData) + '\n-->\n'
+        return PREVIEW_START_BEGINNING + escape(jsonData) + '\n-->\n'
 
     def get_end_tag(self):
         return PREVIEW_END_TAG
@@ -21,60 +25,14 @@ class ExamplePreview(object):
         :type jsonData: str
         """
         result = ExamplePreview()
-        result.__dict__ = json.loads(unescape_html(jsonData))
+        result.__dict__ = json.loads(unescape(jsonData))
         return result
-
-    @staticmethod
-    def for_attributes(index, mode, playground, source):
-        """
-        :type index: int
-        :type mode: str
-        :type playground: bool
-        :type source: str
-        """
-        result = ExamplePreview()
-        result.index = index
-        result.mode = mode
-        result.playground = playground
-        result.source = source
-        return result
-
-def escape_html(content):
-    """
-    :type content: str
-    """
-    result = content.replace('&', '&amp;')\
-                    .replace('<', '&lt;')\
-                    .replace('>', '&gt;')
-    return result
-
-
-def unescape_html(content):
-    """
-    :type content: str
-    """
-    result = content \
-        .replace('&gt;', '>') \
-        .replace('&lt;', '<') \
-        .replace('&amp;', '&')
-    return result
 
 
 class ExamplePreviewMatch(object):
 
-    def __init__(self, preview, start_tag_start, start_tag_end, end_tag_start, end_tag_end):
-        """
-        :type preview: ExamplePreview
-        :type start_tag_start: int
-        :type start_tag_end: int
-        :type end_tag_start: int
-        :type end_tag_end: int
-        """
-        self.preview = preview
-        self.start_tag_start = start_tag_start
-        self.start_tag_end = start_tag_end
-        self.end_tag_start = end_tag_start
-        self.end_tag_end = end_tag_end
+    def __init__(self, iterable=(), **kwargs):
+       self.__dict__.update(iterable, **kwargs)
 
     @staticmethod
     def has_preview(content):
@@ -87,11 +45,11 @@ class ExamplePreviewMatch(object):
         while match:
             preview = ExamplePreview.from_json(match.group(1))
             entry = ExamplePreviewMatch(
-                preview,
-                match.start(0),
-                match.start(2),
-                match.end(2),
-                match.end(0),
+                preview=preview,
+                start_tag_start=match.start(0),
+                start_tag_end=match.start(2),
+                end_tag_start=match.end(2),
+                end_tag_end=match.end(0),
             )
             result.append(entry)
             match = PREVIEW_PATTERN.search(content, match.end(0))

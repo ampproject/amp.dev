@@ -1,3 +1,4 @@
+import os
 from grow.documents import document
 from .example_extractor import *
 from .preview import ExamplePreview
@@ -35,10 +36,10 @@ def _transform(doc, content):
 
         result = result + content[pos:match.startTagStart]
 
-        preview = ExamplePreview.for_attributes(inline_example.index,
-                                                inline_example.preview,
-                                                inline_example.playground,
-                                                inline_example.source)
+        preview = ExamplePreview(index=inline_example.index,
+                                 mode=inline_example.preview,
+                                 playground=inline_example.playground,
+                                 source=inline_example.source)
 
         result = result + preview.get_start_tag()
         result = result + content[match.startTagEnd:match.endTagStart]
