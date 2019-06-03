@@ -21,3 +21,5 @@
 ### Other redirects
 # Put here redirects for pages that have been moved, etc
 # Add new entries in alphabetical order
+/examples/components/amp-autocomplete: /documentation/examples/interactivity-dynamic-content/simple_autosuggest/
+/examples/components/amp-autocomplete: /documentation/examples/interactivity-dynamic-content/autosuggest_form/
