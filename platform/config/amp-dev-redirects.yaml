@@ -23,5 +23,5 @@
 # Put here redirects for pages that have been moved, etc
 # Add new entries in alphabetical order in the format /path/to/old/url: /path/to/new/url
 
-/documentation/examples/interactivity-dynamic-content/autosuggest_form/: /examples/components/amp-autocomplete
-/documentation/examples/interactivity-dynamic-content/simple_autosuggest/: /examples/components/amp-autocomplete
+/documentation/examples/interactivity-dynamic-content/autosuggest_form/: /documentation/examples/components/amp-autocomplete
+/documentation/examples/interactivity-dynamic-content/simple_autosuggest/: /documentation/examples/components/amp-autocomplete
