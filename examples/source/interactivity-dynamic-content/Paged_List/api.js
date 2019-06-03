@@ -22,28 +22,6 @@ const examples = express.Router();
 const MAX_PAGE_COUNT = 5;
 const ITEMS_PER_PAGE = 4;
 
-class ProductListing {
-  constructor(title, image, copy) {
-    this.title = title;
-    this.image = image;
-    this.copy = copy;
-  }
-}
-
-class PagedResponse {
-  constructor(currentPage, pageCount, products) {
-    this.currentPage = currentPage;
-    this.pageCount = pageCount;
-    this.products = products;
-  }
-}
-
-class AmpListResponse {
-  constructor(items) {
-    this.items = items;
-  }
-}
-
 examples.get('/search', (request, response) => {
   let page = Number(request.query.page);
   if (page < 1 || !page) {
@@ -69,19 +47,25 @@ function generatePagedResponse(page) {
     '/static/samples/img/product6_640x424.jpg',
   ];
 
-  const response = new PagedResponse(page, MAX_PAGE_COUNT, []);
+  const response = {
+    currentPage: page,
+    pageCount: MAX_PAGE_COUNT,
+    products: [],
+  };
 
   for (let i = 0; i < ITEMS_PER_PAGE; i++) {
     const itemIndex = ITEMS_PER_PAGE*(page-1) + i + 1;
-    const item = new ProductListing(
-        `Food ${itemIndex}`,
-        IMAGES[itemIndex % IMAGES.length],
-        `Lorem ipsum dolor sit ${itemIndex} amet consequitur sine nice fun`
-    );
-    response.products.push(item);
+    const productListing = {
+      title: `Food ${itemIndex}`,
+      image: IMAGES[itemIndex % IMAGES.length - 1],
+      copy: `Lorem ipsum dolor sit ${itemIndex} amet consequitur sine nice fun`,
+    };
+    response.products.push(productListing);
   }
 
-  return new AmpListResponse(response);
+  return {
+    items: response,
+  };
 }
 
 module.exports = examples;
