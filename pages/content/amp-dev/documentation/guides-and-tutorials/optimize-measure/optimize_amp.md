@@ -194,7 +194,7 @@ In Safari, there is a key difference to how service workers are implemented -- i
 
 With AMP there are a few things that you can do to optimize your font loading ([most of them are actually not specific to AMP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)):
 
-*   If possible, use [`amp-font` with timeout set to 0]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}#timeout) (this will only use the font if it's already in the cache). Fall back to the system font if your custom font has not been loaded yet. This is a similar behavior to [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+*   If possible, use [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): This will only use the font if it's already in the cache, and falls back to the system font if your custom font has not been loaded yet.
 *   Optimize your web fonts (for example, serve custom fonts using WOFF2).
 *   Preload custom fonts: [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]

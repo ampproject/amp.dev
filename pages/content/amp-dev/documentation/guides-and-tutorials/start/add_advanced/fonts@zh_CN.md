@@ -28,12 +28,6 @@ body {
 
 **刷新**网页后，您即会看到焕然一新的网页外观。此外，请检查 AMP 验证工具的输出结果。这项外部样式表请求不应有任何错误。
 
-[tip type="note"]
-向文档中添加字体并不需要使用任何其他组件。话虽如此，您仍可使用一款名为 [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) 的组件。[`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) 组件不是用于加载网页字体，而是用于检测网页字体是否已成功加载，并在必要时予以适当的响应。
-
-在您的字体加载完毕之前，您可以使用 [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) 将文字隐藏起来，这样用户就不会看到文字从临时字体转变为最终字体这一过程。如果字体未能成功加载，您可能需要改为仅显示临时字体。毕竟，用户看不到任何文字才是最糟糕的情形！要想了解详情，请参阅 [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) 参考文档。
-[/tip]
-
 至此，您的 AMP 新闻报道便已完成了！它看起来应该会如下所示：
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='完成后的新闻报道') }}

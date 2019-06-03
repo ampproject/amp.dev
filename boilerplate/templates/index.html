@@ -26,7 +26,7 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
       <link rel="manifest" href="/manifest.json">
       <link rel="shortcut icon" href="/static/img/favicon.png">
-      <link rel="canonical" href="https://ampbyexample.com/boilerplate/">
+      <link rel="canonical" href="https://amp.dev/boilerplate/">
       <title>AMP Boilerplate Generator</title>
       <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
       <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
@@ -39,11 +39,11 @@
       <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-      <meta name="apple-mobile-web-app-title" content="AMP by Example">
+      <meta name="apple-mobile-web-app-title" content="AMP Boilerplate Generator">
       <link rel="icon" type="image/png" sizes="228x228" href="/favicons/coast-228x228.png">
       <meta name="mobile-web-app-capable" content="yes">
       <meta name="theme-color" content="#ffffff">
-      <meta name="application-name" content="AMP by Example">
+      <meta name="application-name" content="AMP Boilerplate Generator">
       <link rel="yandex-tableau-widget" href="/favicons/yandex-browser-manifest.json">
       <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
@@ -125,7 +125,7 @@
     <header class="ap--header ap--header-fixed">
       <div class="ap-o-header">
         <a class="ap-o-header-home" href="/boilerplate">
-          <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg> 
+          <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
           <span class="ap-o-header-home-title">AMP</span> <span class="ap-o-header-home-sub-title">Boilerplate Generator</span>
         </a>
         <a class="ap-m-homepage-link" href="/">amp.dev
@@ -155,7 +155,7 @@
         </button>
         <div class="ap-m-format-toggle-formats">
           {{#formats}}
-            <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}" 
+            <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} {{^default}}inactive{{/default}} {{#default}}active{{/default}}"
               [class]="'ap-m-format-toggle-link ap-m-format-toggle-link-{{id}} ' + (config.format == '{{id}}' ? 'active' : 'inactive')"
             on="tap:AMP.setState({
                 config: {
@@ -188,7 +188,7 @@
       {{#options}}
       <div class="option">
         {{#checkbox}}
-        <input id="{{id}}" type="checkbox" on="change:{{id}}-values.toggleVisibility,codeSnippet.changeToLayoutContainer,AMP.setState({
+        <input id="{{id}}" type="checkbox" on="change:{{id}}-values.toggleVisibility,AMP.setState({
           config: {
             {{id}}: {
               selected: event.checked
@@ -201,7 +201,7 @@
         })">
         {{/checkbox}}
         {{#radio}}
-        <input id="{{id}}" type="radio" name="{{categoryId}}" on="change:{{id}}-values.toggleVisibility,codeSnippet.changeToLayoutContainer,AMP.setState({
+        <input id="{{id}}" type="radio" name="{{categoryId}}" on="change:{{id}}-values.toggleVisibility,AMP.setState({
           config: {
             {{#options}}
               {{id}}: {
@@ -228,7 +228,7 @@
           <div class="value">
             <label for="{{key}}">{{{label}}}</label>
             {{#valueCheckbox}}
-            <input id="{{key}}" value="{{value}}" type="checkbox" on="input-debounced:codeSnippet.changeToLayoutContainer,AMP.setState({
+            <input id="{{key}}" value="{{value}}" type="checkbox" on="input-debounced:AMP.setState({
               config: {
                 {{id}}: {
                   {{key}}: event.checked
@@ -237,7 +237,7 @@
             })">
             {{/valueCheckbox}}
             {{^valueCheckbox}}
-            <input id="{{key}}" value="{{value}}" type="text" on="input-debounced:codeSnippet.changeToLayoutContainer,AMP.setState({
+            <input id="{{key}}" value="{{value}}" type="text" on="input-debounced:AMP.setState({
               config: {
                 {{id}}: {
                   {{key}}: event.value
@@ -263,12 +263,14 @@
       <div class="ap-m-code-snippet"><pre  [hidden]="config.changed"><code>{{{initialCode}}}</code></pre></div>
       <amp-list id="codeSnippet"
                 width="auto"
-                height="3240"
+                [height]="1"
                 layout="fixed-height"
                 [src]="config"
                 single-item
                 items="config"
-                hidden [hidden]="!config.changed">
+                hidden [hidden]="!config.changed"
+                binding="refresh"
+                [is-layout-container]="config.changed">
         <template type="amp-mustache">
           {{#formats}}
           <div class="ap-m-code-snippet"><pre hidden [hidden]="config.format != '{{id}}'"><code>{{{template}}}</code></pre></div>
@@ -293,8 +295,8 @@
       </amp-list>
     </section>
     </main>
-    <div id="scrollToBoilerplate" 
-         tabindex="0" 
+    <div id="scrollToBoilerplate"
+         tabindex="0"
          role="button"
          on="tap:boilerplate.scrollTo(duration=200)"
          class="fab">View Code</div>

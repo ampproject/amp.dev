@@ -124,12 +124,6 @@
     {% include 'views/partials/footer.j2' %}
     {% endblock %}
 
-    {% block fonts %}
-    <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
-    <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
-    <amp-font layout="nodisplay" font-family="Fira Mono" timeout="3000"></amp-font>
-    {% endblock %}
-
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}

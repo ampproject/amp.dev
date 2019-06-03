@@ -262,6 +262,7 @@ The remaining rules set the style and layout of the form fields.
               [src]="query ?
                 autosuggest.endpoint + query :
                 autosuggest.emptyAndInitialTemplateJson"
+              binding=refresh
               id="autosuggest-list"
             >
               <template type="amp-mustache">
