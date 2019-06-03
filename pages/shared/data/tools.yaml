@@ -72,13 +72,33 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Amazon SES
+    url: https://aws.amazon.com/ses/
+    type: Email Service Provider
+    image:
+      src: /static/img/tools/aws-ses.svg
+      width: 2140
+      height: 2500
+      fit: contain
+    formats:
+      - email
   - name: Sparkpost
-    description: SparkPost is the first predictive email intelligence platform and the world's largest sender, delivering 37% of the world's B2C and B2B email.
     url: https://www.sparkpost.com/
+    type: Email Service Provider
     image:
       src: /static/img/tools/sparkpost.png
       width: 1034
       height: 269
+      fit: contain
+    formats:
+      - email
+  - name: Twilio Sendgrid
+    url: https://www.twilio.com/sendgrid
+    type: Email Service Provider
+    image:
+      src: /static/img/tools/sendgrid.png
+      width: 348
+      height: 148
       fit: contain
     formats:
       - email
