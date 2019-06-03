@@ -45,8 +45,10 @@ class AmpListResponse {
 }
 
 examples.get('/search', (request, response) => {
-  const {query} = request;
-  const page = Number(query.page) > 0 ? Number(query.page) : 1;
+  let page = Number(request.query.page);
+  if (page < 1 || !page) {
+    page = 1;
+  }
 
   if (page <= MAX_PAGE_COUNT && page > 0) {
     response.json(generatePagedResponse(page));
