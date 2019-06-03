@@ -34,7 +34,7 @@ Let's take a closer look at the individual changes:
 <html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
 ```
 
-Note: **Note:** AMP caches use a different transformed flag, for example, the Google AMP caches adds `transformed=self;v1`.
+Note: **Note:** AMP caches use a different transformed flag, for example, the Google AMP caches adds `transformed=google;v1`.
 
 &#8291;**2. Remove the AMP boilerplate (when possible):** The [amp-boilerplate code](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate) has been removed. This means that page content is no longer hidden initially and renders straight away. This greatly increases the perceived performance of an AMP page. It's not always possible to remove the AMP boilerplate. For example, some AMP components, such as `amp-experiment` or `amp-dynamic-css-classes`, modify the page layout based on the user agent, which cannot be server-side rendered. In order to avoid content jumps, these need to be loaded before the page content can be displayed, which requires the AMP boilerplate code to initially hide the content of the page.
 
@@ -58,7 +58,7 @@ Note: **Note:** AMP caches use a different transformed flag, for example, the Go
 </amp-img>
 ```
 
-Note: Note: not all AMP layouts currently support server-side rendering. For example, the intrinsic layout will still be rendered client-side and requires the AMP boilerplate code to be present (see this [feature request](https://github.com/ampproject/amphtml/issues/17686) for the current status).
+Note: **Note:** not all AMP layouts currently support server-side rendering. For example, the intrinsic layout will still be rendered client-side and requires the AMP boilerplate code to be present (see this [feature request](https://github.com/ampproject/amphtml/issues/17686) for the current status).
 
 ## How to server-side render AMP pages?
 
