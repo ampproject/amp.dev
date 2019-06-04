@@ -4,12 +4,11 @@
   side="left">
   <nav toolbar="(min-width: 768px)"
     toolbar-target="ap--sidebar-content">
+    {% include '/views/partials/format-toggle.j2' %}
     <ul>
       <section class="ap-o-sidebar-section">
         {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
         <div class="ap-o-sidebar">
-          {% include '/views/partials/format-toggle.j2' %}
-
           <div class="nav">
             {% macro nav_tree(root, iteration=1, depth=None) -%}
             {% if not depth or iteration <= depth %}
