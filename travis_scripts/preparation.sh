@@ -16,9 +16,6 @@
 
 set -e
 
-unbuffer gulp buildSamples
-unbuffer gulp lintAll
-
 if [ "${TRAVIS_BRANCH}" = "production" ]; then
   echo "Preparing build ..."
   unbuffer gulp buildPrepare
