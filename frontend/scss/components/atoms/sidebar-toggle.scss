@@ -6,15 +6,28 @@
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
 
+#sidebar-left[aria-hidden="false"] {
+  &~.ap--main {
+    .ap-a-sidebar-mobile-toggle-label {
+      z-index: 9999999999;
+      right: 0;
+
+      .label-icon {
+        svg {
+          transform: rotate(0);
+        }
+      }
+
+      .label-title {
+        display: none;
+      }
+    }
+  }
+}
+
 .#{utility('sidebar-toggle-observer')} {
   position: absolute;
   top: 50px;
-}
-
-.#{utility('sidebar-toggle-visibility-observer')} {
-  position: absolute;
-  top: 85%;
-  height: 15%;
 }
 
 .#{atom('sidebar-toggle')} {
@@ -23,26 +36,10 @@
     position: fixed;
     top: -99px;
   }
-}
-
-.#{atom('sidebar-mobile-toggle')} {
-
-  &-input {
-    position: fixed;
-    top: -99px;
-    &~.ap--content {
-      .#{atom('sidebar-mobile-toggle-label')} {
-        transition: 0.2s;
-      }
-    }
-
-  }
 
   &-label {
     position: fixed;
-    z-index: 21;
-    margin-top: -52px;
-    margin-left: -25px;
+    z-index: 16;
     font-size: 12px;
     @include txt-font-accent;
     color: color('white');
@@ -51,13 +48,10 @@
     display: flex;
     align-items: center;
 
-    @media (min-width: 768px) {
-      display: none;
-    }
-
     &:focus {
       outline: none;
     }
+
     .label-icon {
       border-radius: 4px;
       background: color('blue-ribbon');
@@ -71,10 +65,12 @@
       svg {
         height: 14px;
         width: 14px;
-        transform: rotate(180deg);
       }
     }
     .label-title {
+      position: absolute;
+      left: 32px;
+      white-space: nowrap;
       padding: 5px 10px 5px 5px;
       opacity: 0;
       margin-left: -5px;
@@ -86,6 +82,33 @@
       box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
     }
   }
+}
+
+.#{atom('sidebar-mobile-toggle')} {
+  &-input {
+    position: fixed;
+    top: -99px;
+    &~.ap--content {
+      .#{atom('sidebar-mobile-toggle-label')} {
+        transition: 0.2s;
+      }
+    }
+
+  }
+
+  &-label {
+    transform: translate(-25px, -52px);
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    .label-icon {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
 
   @media (min-width: 768px) {
     display: none;
@@ -93,7 +116,6 @@
 }
 
 .#{atom('sidebar-desktop-toggle')} {
-
   display: none;
 
   &-input {
@@ -106,8 +128,13 @@
   }
 
   @media (min-width: 768px) and (max-width: 1440px) {
+    display: inline-block;
 
-  display: inline-block;
+    &-label {
+      display: flex;
+      margin-top: -52px;
+      margin-left: -40px;
+    }
 
     &-input {
       &:checked {
@@ -151,51 +178,5 @@
         }
       }
     }
-
-    &-label {
-      position: fixed;
-      z-index: 16;
-      margin-top: -52px;
-      margin-left: -40px;
-      font-size: 12px;
-      @include txt-font-accent;
-      color: color('white');
-      fill: color('white');
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-
-
-      &:focus {
-        outline: none;
-      }
-      .label-icon {
-        border-radius: 4px;
-        background: color('blue-ribbon');
-        height: 35px;
-        width: 32px;
-        padding-left: 2px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
-        svg {
-          height: 14px;
-          width: 14px;
-        }
-      }
-      .label-title {
-        padding: 5px 10px 5px 5px;
-        opacity: 0;
-        margin-left: -5px;
-        border-radius: 0 4px 4px 0;
-        background: color('blue-ribbon');
-        height: 35px;
-        display: flex;
-        align-items: center;
-        box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
-      }
-    }
   }
-
 }
