@@ -28,7 +28,7 @@ examples.get('/slow-iframe', slowIframe);
 function getDelay(request) {
   let delay = Number(request.query.delay);
   if (delay < 0 || !delay) {
-    delay = 0;
+    delay = 1000;
   }
   return delay;
 }
