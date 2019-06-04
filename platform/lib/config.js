@@ -26,6 +26,7 @@ const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspe
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 
 const ENV_DEV = 'development';
+const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
 const AVAILABLE_LOCALES = [
   'en',
@@ -82,6 +83,13 @@ class Config {
    */
   isDevMode() {
     return this.environment === ENV_DEV;
+  }
+
+  /**
+   * Returns true if staging mode is active.
+   */
+  isStageMode() {
+    return this.environment === ENV_STAGE;
   }
 
   /**
