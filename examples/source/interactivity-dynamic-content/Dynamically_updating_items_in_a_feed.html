@@ -69,11 +69,11 @@ to "refresh" a single item, by making a new server request.
   </template>
 
   <!--
-    ## Initial list of cards
+    ## Initial list of items
 
-    Define a template for the initial cards and their layout and give it an `id`. This template is used by `amp-list` for initially fetching several items from the server.
+    We define a template for the initial items and their layout and give it an `id`, allowing us to use it subsequently in an amp-list. This template is used by `amp-list` for fetching the initial up-to-date contents from the server.
 
-    It contains in itself an `amp-form` for each item which references the template defined above referred by its `id`. This allows us to use a template inside another template.
+    It contains in itself an `amp-form` for each item which references the template defined above referred by its `id`. By using a different template for the `amp-form`, we're able to "refresh" a part of the content, namely the image in this case.
 
     Note: This template contains the same markup (in this case, a single `amp-img`) as used in the template above to render the initial items. This is wrapped inside `<div class="initial-content">` which becomes hidden the first time the user submits the form.
   -->
@@ -90,7 +90,7 @@ to "refresh" a single item, by making a new server request.
   </template>
 
   <!--
-    Use `amp-list` to render the initial items from the server using the template defined above referred by its `id`.
+    We use `amp-list` to render the initial items from the server using the template defined above referred by its `id`.
 
     The height matches the combined height of our cards and their margins. The initial server response defines the number of cards to be displayed (in this case four).
   -->
