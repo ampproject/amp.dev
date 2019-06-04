@@ -39,7 +39,7 @@ async function slowJson(request, response) {
     items: [
       {
         // eslint-disable-next-line max-len
-        title: `This JSON response was delayed ${getDelay(request)} milliseconds. Hard-refresh the page (Ctrl/Cmd+Shift+R) if you didn't see the spinner.`
+        title: `This JSON response was delayed ${getDelay(request)} milliseconds. Hard-refresh the page (Ctrl/Cmd+Shift+R) if you didn't see the spinner.`,
       },
     ],
   });
