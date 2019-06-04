@@ -280,7 +280,10 @@ async function transformPages() {
     `${project.paths.GROW_BUILD_DEST}/**/*.html`,
     `!${project.paths.GROW_BUILD_DEST}/{*/shared,shared}/*.html`,
   ]);
-  const shardCount = os.cpus().length;
+  let shardCount = os.cpus().length;
+  if (paths.length < shardCount) {
+    shardCount = paths.length;
+  }
   const shardPathCount = Math.trunc(paths.length / shardCount);
 
   // If there is no shard option it means this is the initial call to the task
@@ -429,3 +432,5 @@ exports.buildFinalize = gulp.series(fetchArtifacts,
 
 exports.build = gulp.series(clean, buildPrepare, buildPages,
     gulp.parallel(collectStatics, persistBuildInfo));
+
+exports.buildForGrowTests = gulp.series(buildBoilerplate, buildPages);

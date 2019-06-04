@@ -1,0 +1,12 @@
+$path: /tests/examples/{base}.html
+$view: /views/detail/docs-detail.j2
+$order: 0
+$localization:
+  path: /{locale}/tests/examples/{base}.html
+$title@: Example Source Code
+
+chaptered: true
+tutorial: true
+
+formats:
+  - websites
