@@ -9,11 +9,6 @@
 @mixin sidebar {
 
   @media (min-width: 768px) {
-    position: -webkit-sticky;
-    position: sticky;
-    z-index: 1;
-    top: 118px;
-    left: auto;
     width: auto;
     min-height: 400px;
     padding-bottom: 0;
@@ -21,10 +16,6 @@
     margin-left: -10px;
     background: none;
     box-shadow: none;
-  }
-
-  @media (min-width: 1024px) {
-    top: 120px;
   }
 }
 
