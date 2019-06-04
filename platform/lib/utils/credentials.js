@@ -37,26 +37,25 @@ const datastore = new Datastore();
  * @return {Promise}
  */
 function get(key) {
+  const credential = process.env[`${ENV_PREFIX}${key.toUpperCase()}`];
+  if (credential) {
+    return Promise.resolve(credential);
+  }
+
+  if (!config.isProdMode() && !config.isStageMode()) {
+    return Promise.error(`Environment variable ${ENV_PREFIX}${key.toUpperCase()} is not set.`);
+  }
+
   return new Promise((resolve, reject) => {
-    let credential = process.env[`${ENV_PREFIX}${key.toUpperCase()}`];
+    const datastoreKey = datastore.key([CREDENTIAL_ENTITY, key]);
+    datastore.get(datastoreKey, (e, entity) => {
+      if (e) {
+        reject(e);
+        return;
+      }
 
-    // Staging and production environments are assumed to run on Google Cloud
-    // and therefore have access to GCloud Datastore
-    if (!credential && (config.isProdMode() || config.isStageMode())) {
-      const datastoreKey = datastore.key([CREDENTIAL_ENTITY, key]);
-      datastore.get(datastoreKey, (e, entity) => {
-        if (!e) {
-          credential = entity.credential;
-        }
-      });
-    }
-
-    if (credential) {
-      resolve(credential);
-      return;
-    }
-
-    reject(Error(`No credential with key ${key}`));
+      resolve(entity.credential);
+    });
   });
 }
 
