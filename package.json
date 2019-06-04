@@ -18,7 +18,7 @@
     "build:local": "gulp build --env local",
     "build:staging": "gulp build --env staging",
     "build:prod": "gulp build --env production",
-		"build:grow-tests" : "gulp buildForGrowTests --env test --locales en --include_paths tests",
+    "build:grow-tests": "gulp buildForGrowTests --env test --locales en --include_paths tests",
     "log:staging": "gcloud app logs tail -s default --project amp-dev-staging",
     "posttest": "npm run lint",
     "start:local": "cd platform && NODE_ENV=local node serve.js",
@@ -43,12 +43,14 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
+    "@google-cloud/datastore": "4.0.0",
     "amp-toolbox-cors": "0.2.5",
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
     "cookie-parser": "1.4.4",
     "cors": "2.8.5",
     "express": "4.17.1",
+    "feedparser": "^2.2.9",
     "http-proxy": "1.17.0",
     "iltorb": "2.4.3",
     "js-yaml": "3.13.1",
@@ -61,8 +63,7 @@
     "node-zopfli-es": "1.0.3",
     "nunjucks": "3.2.0",
     "shrink-ray-current": "4.0.0",
-    "signale": "1.4.0",
-    "feedparser": "^2.2.9"
+    "signale": "1.4.0"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
