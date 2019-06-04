@@ -40,7 +40,7 @@ author: kul3r4
   }
 
   /* Hides all inputs after successful form submission */
-  .sample-form form.amp-form-submit-success.hide-inputs > input {
+  form.amp-form-submit-success.sample-form.hide-inputs > input {
     display: none;
   }
 
@@ -261,7 +261,7 @@ author: kul3r4
     }
     ```
   -->
-  <form class="sample-form" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr" target="_top">
+  <form class="sample-form hide-inputs" method="post" action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr" target="_top">
     <input type="text" name="name" placeholder="Name..." required>
     <input type="submit" value="Subscribe">
     <div submit-success>
