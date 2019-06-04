@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /shared
+Disallow: /tests/
 
 Sitemap: https://amp.dev/sitemap.xml
