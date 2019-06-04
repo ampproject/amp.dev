@@ -24,7 +24,7 @@ const examples = express.Router();
 
 const ERROR_CASE_AMP_FORM = 'error';
 
-examples.all('/submit-form', submitForm);
+examples.get('/submit-form', submitForm);
 examples.post('/submit-form-xhr', upload.none(), submitFormXHR);
 examples.post('/submit-form-input-text-xhr', upload.none(), submitFormXHRInputText);
 examples.post('/verify-form-input-text-xhr', upload.none(), verifyFormXHRInputText);
