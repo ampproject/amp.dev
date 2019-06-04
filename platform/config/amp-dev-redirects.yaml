@@ -12,6 +12,7 @@
 # Add new entries in alphabetical order
 /ads: /about/ads
 /docs: /documentation/guides-and-tutorials/
+/documentation/guides-and-tutorials/learn/amp-email-format: /documentation/guides-and-tutorials/learn/email-spec/amp-email-format
 /email: /about/email
 /learn: /documentation/courses/
 /samples: /documentation/examples/
