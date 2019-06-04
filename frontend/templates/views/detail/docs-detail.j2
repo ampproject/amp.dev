@@ -6,6 +6,10 @@
 {% do doc.styles.addCssFile('css/components/molecules/table.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
+{% if doc.has_inline_preview %}
+  {% do doc.styles.addCssFile('css/components/organisms/code-preview.css') %}
+{% endif %}
+
 {% do doc.styles.addCssFile('css/components/templates/docs-detail.css') %}
 {% endblock %}
 
@@ -59,6 +63,5 @@
     {% include 'views/partials/author.j2' %}
 
   </div>
-{% include 'views/partials/sidebar-toggle-visibility-observer.j2' %}
 </main>
 {% endblock %}

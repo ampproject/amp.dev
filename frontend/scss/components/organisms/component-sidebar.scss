@@ -18,11 +18,13 @@
 @import '_sidebar.scss';
 
 amp-sidebar {
+  width: 100%;
+  max-width: 90vw;
   background: color('whisper');
 }
 
 nav[toolbar] {
-  top: 120px;
+  top: 36px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 
@@ -45,11 +47,6 @@ nav[toolbar] {
     margin: 0;
     padding: 0;
   }
-}
-
-.#{utility('ampsidebar')} {
-  width: 100%;
-  max-width: 90vw;
 }
 
 .#{organism('component-sidebar')} {

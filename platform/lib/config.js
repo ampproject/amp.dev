@@ -26,6 +26,7 @@ const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspe
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 
 const ENV_DEV = 'development';
+const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
 const AVAILABLE_LOCALES = [
   'en',
@@ -82,6 +83,13 @@ class Config {
    */
   isDevMode() {
     return this.environment === ENV_DEV;
+  }
+
+  /**
+   * Returns true if staging mode is active.
+   */
+  isStageMode() {
+    return this.environment === ENV_STAGE;
   }
 
   /**
@@ -149,6 +157,22 @@ class Config {
         'env': podspec['env'],
       },
     };
+
+    if (this.options.include_paths || this.options.ignore_paths) {
+      const filter = {};
+      if (this.options.ignore_paths) {
+        filter.ignore_paths = this.options.ignore_paths.split(',');
+      } else {
+        // in grow include only works against ignore. So we ignore all if we only have include
+        filter.ignore_paths = ['.*'];
+      }
+      if (this.options.include_paths) {
+        filter.include_paths = this.options.include_paths.split(',');
+      }
+      podspec.deployments[this.environment] = {
+        'filter': filter,
+      };
+    }
 
     podspec.localization.locales = AVAILABLE_LOCALES;
     // Check if specific languages have been configured to be built

@@ -1,0 +1,12 @@
+{% if preview.mode == 'inline' %}
+<div class="ap-o-code-preview">
+  <div class="ap-o-code-preview-preview">
+     {{preview.source}}
+  </div>
+{% endif %}
+
+{{content}}
+
+{% if preview.mode == 'inline' %}
+</div>
+{% endif %}
