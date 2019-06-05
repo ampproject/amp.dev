@@ -88,12 +88,6 @@
   &-input {
     position: fixed;
     top: -99px;
-    &~.ap--content {
-      .#{atom('sidebar-mobile-toggle-label')} {
-        transition: 0.2s;
-      }
-    }
-
   }
 
   &-label {
@@ -108,10 +102,6 @@
         transform: rotate(180deg);
       }
     }
-  }
-
-  @media (min-width: 768px) {
-    display: none;
   }
 }
 
