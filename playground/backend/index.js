@@ -18,6 +18,7 @@ const path = require('path');
 const express = require('express');
 const {setImmutable} = require('@lib/utils/cacheHelpers.js');
 const resourceFallbackHandler = require('@lib/routers/resourceFallbackHandler.js');
+const robots = require('@lib/routers/robots.js');
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
@@ -32,6 +33,8 @@ playground.use(express.static(
 ));
 
 playground.use('/api', require('./api.js'));
+
+playground.use(robots('allow_all.txt'));
 
 // The fallback handler has to be last (kick in only if the request was not handled)
 playground.use( resourceFallbackHandler(BASE_DIR));
