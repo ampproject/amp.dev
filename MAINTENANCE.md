@@ -110,6 +110,23 @@ The Link is optional and will create a button inside the stage.
 
 A list of links that will expand to a row of cards that link to the document.
 
+### Code Samples 
+Code samples are placed inside sets of three backticks. The sourcecode language specified at the end of the first backtick set.
+
+<pre>
+```html
+  // code sample
+```  
+
+```css
+  // code sample
+```
+
+```js
+  // code sample
+```
+</pre>
+
 ### SUCCESS STORY (EXAMPLE STRUCTURE)
 
 Arrays can contain multiple elements. The media source can be `image_src` or `video_src`.
