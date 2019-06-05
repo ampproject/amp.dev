@@ -155,7 +155,7 @@
             grid-column: 2 / 25;
           }
         }
-        &~ .ap--toc + .ap--content  {
+        &~ .ap--toc ~ .ap--content  {
           padding-left: 80px;
           padding-right: 80px;
           grid-column: 2 / 20;
