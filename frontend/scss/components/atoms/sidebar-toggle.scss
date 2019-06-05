@@ -6,23 +6,44 @@
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
 
-#sidebar-left[aria-hidden="false"] {
-  &~.ap--main {
-    .ap-a-sidebar-mobile-toggle-label {
-      z-index: 9999999999;
-      right: 0;
+$originalSpeed: 0.233s;
+$originalEasing: cubic-bezier(0,0,.21,1);
 
-      .label-icon {
-        svg {
-          transform: rotate(0);
-        }
-      }
+#sidebar-left[aria-hidden="true"]:not([hidden]) ~ .ap--main  {
+  .ap-a-sidebar-mobile-toggle-label {
+    animation: moveSidebarToggleBackwards $originalSpeed $originalEasing forwards;
 
-      .label-title {
-        display: none;
-      }
-    }
+    .label-icon svg { transform: rotate(180deg); }
+    .label-title { transform: translateX(0) scaleX(1); transform-origin: left center; }
   }
+}
+
+#sidebar-left[open] ~ .ap--main {
+  .ap-a-sidebar-mobile-toggle-label {
+    left: 0;
+    margin-left: 0;
+    animation: moveSidebarToggleForwards $originalSpeed $originalEasing forwards;
+
+    .label-icon svg { transform: rotate(0); }
+    .label-title { transform: translateX(-150vw) scaleX(0); transform-origin: left center; }
+  }
+}
+
+#sidebar-left[open] ~ .ap--main,
+#sidebar-left[aria-hidden="true"]:not([hidden]) ~ .ap--main {
+  .ap-a-sidebar-mobile-toggle-label {
+    z-index: 9999999999;
+  }
+}
+
+@keyframes moveSidebarToggleBackwards {
+  from { transform: translateX(calc(90vw - 50%)); }
+  to { transform: translateX(0); }
+}
+
+@keyframes moveSidebarToggleForwards {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(90vw - 50%)); }
 }
 
 .#{utility('sidebar-toggle-observer')} {
@@ -31,7 +52,6 @@
 }
 
 .#{atom('sidebar-toggle')} {
-
   &-input {
     position: fixed;
     top: -99px;
@@ -65,8 +85,10 @@
       svg {
         height: 14px;
         width: 14px;
+        transition: transform $originalSpeed $originalEasing;
       }
     }
+
     .label-title {
       position: absolute;
       left: 32px;
@@ -80,6 +102,7 @@
       display: flex;
       align-items: center;
       box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
+      transition: transform $originalSpeed $originalEasing;
     }
   }
 }
