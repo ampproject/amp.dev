@@ -127,6 +127,22 @@ Code samples are placed inside sets of three backticks. The sourcecode language 
 ```
 </pre>
 
+**Code samples in lists**
+
+Python-Markdown has some limitations. Use the following syntac when including code samples in lists:
+<pre>
+  <code>
+  1. First: 
+    [sourcecode:html]
+      &lt;html&gt;
+          &lt;p&gt;Indented content.&lt;/p&gt;
+      &lt;/html&gt;
+    [/sourcecode]
+  2. Second
+  3. Third
+  </code>
+</pre>
+
 ### SUCCESS STORY (EXAMPLE STRUCTURE)
 
 Arrays can contain multiple elements. The media source can be `image_src` or `video_src`.
