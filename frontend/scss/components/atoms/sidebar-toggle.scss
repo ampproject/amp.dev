@@ -132,11 +132,9 @@
 
     &-label {
       position: sticky;
-      top: 86px;
-      display: flex;
-      margin-top: -52px;
-      margin-left: -40px;
-      padding-bottom: 26px;
+      top: 138px;
+      display: inline-flex;
+      transform: translate(-40px, -52px);
     }
 
     &-input {
