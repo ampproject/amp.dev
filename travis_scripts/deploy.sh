@@ -20,7 +20,7 @@
 set -e
 
 # The production deployment relies on gcloud utils beta components
-if [ "${TRAVIS_BRANCH}" = "production" ]; then
+if [ "${TRAVIS_BRANCH}" = "production-amp-dev" ]; then
   echo "Installing gcloud beta components ..."
 
   rm -rf $HOME/google-cloud-sdk
@@ -38,9 +38,8 @@ echo "Finalizing build ..."
 unbuffer gulp buildFinalize
 
 echo "Starting deployment ..."
-if [ "${TRAVIS_BRANCH}" = "production" ]; then
+if [ "${TRAVIS_BRANCH}" = "production-amp-dev" ]; then
   unbuffer gulp deploy
 elif [ "${TRAVIS_BRANCH}" = "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then
-  echo "Preparing build ..."
   gcloud app deploy --project=amp-dev-staging --quiet
 fi

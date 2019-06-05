@@ -16,12 +16,12 @@
 
 set -e
 
-if [ "${TRAVIS_BRANCH}" = "production" ]; then
-  echo "Preparing build ..."
-  unbuffer gulp buildPrepare
-elif [ "${TRAVIS_BRANCH}" = "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then
-  echo "Preparing build ..."
-  unbuffer gulp buildPrepare
-else
+if [ $TRAVIS_PULL_REQUEST == "true" ]; then
   echo "Skipping build preparation."
+  exit 0
+fi
+
+if [ "${TRAVIS_BRANCH}" = "future" ] && [ "${TRAVIS_BRANCH}" = "production-amp-dev" ]; then
+  echo "Preparing build ..."
+  unbuffer gulp buildPrepare
 fi
