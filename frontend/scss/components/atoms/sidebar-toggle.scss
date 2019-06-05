@@ -131,9 +131,12 @@
     display: inline-block;
 
     &-label {
+      position: sticky;
+      top: 86px;
       display: flex;
       margin-top: -52px;
       margin-left: -40px;
+      padding-bottom: 26px;
     }
 
     &-input {
@@ -141,9 +144,7 @@
         &~ .ap--sidebar {
           grid-column: 1 / 2;
           nav {
-            ul {
-              display: none;
-            }
+            display: none;
           }
           svg {
             transform: rotate(180deg);
