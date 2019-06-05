@@ -91,7 +91,8 @@
   }
 
   &-label {
-    transform: translate(-25px, -52px);
+    margin-top: -52px;
+    margin-left: -25px;
 
     @media (min-width: 768px) {
       display: none;
