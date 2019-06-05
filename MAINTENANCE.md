@@ -129,7 +129,7 @@ Code samples are placed inside sets of three backticks. The sourcecode language 
 
 **Code samples in lists**
 
-Python-Markdown has some limitations. Use the following syntac when including code samples in lists:
+Python-Markdown has some limitations. Use the following syntax when including code samples in lists:
 <pre>
   <code>
   1. First: 
