@@ -74,6 +74,13 @@
     align-items: center;
     justify-content: space-between;
     outline: 0;
+
+    @media (min-width: 1024px) {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background: #fafafc;
+    }
   }
 
   ul {
