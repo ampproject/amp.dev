@@ -18,6 +18,7 @@
 
 const express = require('express');
 const LogFormatter = require('../runtime-log/HtmlFormatter.js');
+const robots = require('./robots');
 
 const Templates = require('../templates/');
 
@@ -49,6 +50,8 @@ runtimeLog.get('/', async (request, response) => {
     response.status(404).send('Message not found');
   }
 });
+
+runtimeLog.use(robots('allow_all.txt'));
 
 function isValidLogRequest(logRequest) {
   return regexIsNumber.test(logRequest.version) && regexIsNumber.test(logRequest.id);
