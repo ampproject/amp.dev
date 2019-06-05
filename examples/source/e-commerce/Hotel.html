@@ -144,9 +144,13 @@ author: aghassemi
     `amp-list` content takes the entire height on the page from the `height` attribute; after filtering, it could take unused space: we are resizing by binding the `height` attribute to the result of the height of the image plus the margins multiplied by the length of the list.
   -->
   <amp-list class="rooms"
-  layout="fixed-height" height="800"
-  src="https://amp-by-example-live.glitch.me/rooms" [src]="filteredRooms()" items="."
-  [height]="(80 + (16*2)) * filteredRooms().length">
+            layout="fixed-height"
+            height="800"
+            src="https://amp-by-example-live.glitch.me/rooms"
+            [src]="filteredRooms()"
+            items="."
+            [height]="(80 + (16*2)) * filteredRooms().length"
+            binding="refresh">
     <template type="amp-mustache">
     <amp-img width="108" height="80" src="/static/samples/{{img}}" lightbox alt="{{name}}-{{desc}}"></amp-img>
     <div>{{name}} {{#petFriendly}}&#128062;{{/petFriendly}}</div>

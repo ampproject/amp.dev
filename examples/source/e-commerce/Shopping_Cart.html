@@ -59,7 +59,7 @@ author: demianrenzulli
         2. Clicking on the "remove" button, updates an state object (`cartItem`), which, in turn, update two hidden fields on the form `form-cart-delete`, and also triggers a form submission. This form will call the server to update the cart, and update the `cartItemsList` object with the response.
         2. The `amp-list` component contains the expression `[src]="cartItemsList.items"`, so that, when the `cartItemsList` object changes, as a result of the previous action, the list gets refreshed with the content of the updated cart.
         -->
-        <amp-list credentials="include" layout="responsive" height="100px" width="500px" src="https://abe-cart-service.glitch.me/cart_items" [src]="cartItemsList.items">
+        <amp-list credentials="include" layout="responsive" height="100px" width="500px" src="https://abe-cart-service.glitch.me/cart_items" [src]="cartItemsList.items" binding="no">
             <template type="amp-mustache" id="cart-items">
                 {{#isEmpty}}
                 <h3>Your Basket is Empty. </h3>

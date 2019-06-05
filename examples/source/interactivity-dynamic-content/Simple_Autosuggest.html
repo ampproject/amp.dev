@@ -168,8 +168,9 @@ take a look at [this sample](/documentation/examples/interactivity-dynamic-conte
                     items="."
                     layout="fixed-height"
                     height="0"
-                   [src]="filteredCities"
-                   [height]="filteredCities.length * 34">
+                    [src]="filteredCities"
+                    [height]="filteredCities.length * 34"
+                    binding="refresh">
             <template type="amp-mustache">
               <div option="{{.}}">{{.}}</div>
             </template>

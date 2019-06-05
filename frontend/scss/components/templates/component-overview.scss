@@ -23,17 +23,6 @@ body {
 }
 
 .#{template('component-overview')} {
-
-  :target::before {
-    height: 145px;
-    margin-top: -145px;
-
-    @media (min-width: 1024px) {
-      height: 180px;
-      margin-top: -180px;
-    }
-  }
-
   .#{utility('container')} {
     @include container;
     @include container-nogap;

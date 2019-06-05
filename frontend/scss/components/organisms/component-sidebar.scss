@@ -18,19 +18,20 @@
 @import '_sidebar.scss';
 
 amp-sidebar {
+  width: 100%;
+  max-width: 90vw;
   background: color('whisper');
 }
 
 nav[toolbar] {
-  top: 120px;
-  overflow: auto;
+  top: 86px;
   -webkit-overflow-scrolling: touch;
 
   @media (min-width: 768px){
     height: 100vh;
     position: sticky;
     overflow: auto;
-    max-height: calc(100vh - 168px);
+    max-height: calc(100vh - 86px);
   }
 
   &::-webkit-scrollbar {
@@ -47,9 +48,8 @@ nav[toolbar] {
   }
 }
 
-.#{utility('ampsidebar')} {
-  width: 100%;
-  max-width: 90vw;
+.#{utility('sidebar')} {
+  margin-top: 10px;
 }
 
 .#{organism('component-sidebar')} {

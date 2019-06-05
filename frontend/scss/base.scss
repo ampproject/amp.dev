@@ -25,14 +25,18 @@ html, body {
 :target::before {
   content: '';
   display: block;
-  height: 145px;
-  margin-top: -145px;
   visibility: hidden;
+  height: 120px;
+  margin-top: -120px;
+}
 
-  @media (min-width: 1024px) {
-    height: 110px;
-    margin-top: -110px;
-  }
+@media (min-width: 1024px) {
+  h1:target::before { height: 75px; margin-top: -75px; }
+  h2:target::before { height: 81px; margin-top: -81px; }
+  h3:target::before { height: 87px; margin-top: -87px; }
+  h4:target::before { height: 90px; margin-top: -90px; }
+  h5:target::before { height: 93px; margin-top: -93px; }
+  h6:target::before { height: 97px; margin-top: -97px; }
 }
 
 /* Custom loader for media elements */

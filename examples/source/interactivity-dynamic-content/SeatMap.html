@@ -116,7 +116,7 @@ how to dynamically select and unselect seats.
     <div>
      <h1>Seat map</h1>
      <div class="seatmap-container">
-      <amp-list layout="fill" src="/static/samples/json/seats.json" items="." single-item noloading>
+      <amp-list layout="fill" src="/static/samples/json/seats.json" binding="refresh" items="." single-item noloading>
         <!--~
         The seatmap with the availability of the seats is rendered via `amp-list` so that we make sure always the latest
         data are available to the user.

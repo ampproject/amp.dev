@@ -1,63 +1,15 @@
 # -*- coding: utf-8 -*-
 import re
+import requests
 
 from grow import extensions
 from grow.documents import document, static_document
 from grow.extensions import hooks
 
-# See: https://www.ampproject.org/docs/reference/components
-# TODO: Add remaining Media dependencies
-VALID_DEPENDENCIES = {
-    'amp-access': True,
-    'amp-animation': True,
-    'amp-anim': True,
-    'amp-access-laterpay': True,
-    'amp-accordion': True,
-    'amp-ad': True,
-    'amp-ad-exit': True,
-    'amp-analytics': True,
-    'amp-app-banner': True,
-    'amp-auto-ads': True,
-    'amp-audio': True,
-    'amp-bind': True,
-    'amp-byside-content': True,
-    'amp-call-tracking': True,
-    'amp-carousel': True,
-    'amp-consent': True,
-    'amp-date-picker': True,
-    'amp-experiment': True,
-    'amp-form': True,
-    'amp-font': True,
-    'amp-facebook': True,
-    'amp-facebook-like': True,
-    'amp-fx-collection': True,
-    'amp-fx-flying-carpet': True,
-    'amp-fit-text': True,
-    'amp-geo': True,
-    'amp-gist': True,
-    'amp-google-document-embed': True,
-    'amp-iframe': True,
-    'amp-image-lightbox': True,
-    'amp-install-serviceworker': True,
-    'amp-lightbox': True,
-    'amp-lightbox-gallery': True,
-    'amp-list': True,
-    'amp-live-list': True,
-    'amp-mustache': True,
-    'amp-next-page': True,
-    'amp-orientation-observer': True,
-    'amp-pixel': True,
-    'amp-position-observer': True,
-    'amp-selector': True,
-    'amp-sidebar': True,
-    'amp-story': True,
-    'amp-sticky-ad': True,
-    'amp-user-notification': True,
-    'amp-video': True,
-    'amp-vimeo': True,
-    'amp-youtube': True,
-    'amp-web-push': True,
-}
+
+COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
+
+COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
 
 BUILT_INS = [
     'amp-layout',
@@ -71,6 +23,13 @@ FALSE_POSITIVES = [
     'amp-story-grid-layer',
     'amp-story-bookend',
 ]
+
+AMP_BIND_MARKERS_REGEX = re.compile(r"(<amp-state|<amp-bind-macro|\s\[(text|class|hidden|width|height|src|title|alt|srcset|open|selected|controls|loop|poster|preload|disabled|href|type|value)\]=)")
+PRE_CODE_REGEX = re.compile(r"<pre(?:\s[^>]*)?>.+?</pre>|<code(?:\s[^>]*)?>.+?</code>")
+ELEMENT_REGEX = re.compile(r"<(amp-\S*?)(>|\s)")
+COMMENTS_REGEX = re.compile(r"<!--.*?-->", re.DOTALL | re.MULTILINE)
+
+IMPORT_REGEX_TEMPLATE = r'<script(?:\s[^>]*)?\scustom-{type}\s*=\s*"?{dependency}[\s">]'
 
 
 class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
@@ -121,15 +80,13 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def find_dependencies(self, content):
         """Checks the generated output for possible AMP dependencies."""
         # Remove code snippets from content before searching for deps
-        PRE_CODE_REGEX = r"<pre[^>]*>.+</pre>|<code[^>]*>.+</code>"
-        stripped_content = content
-        for pre_code in re.findall(PRE_CODE_REGEX, content):
-          stripped_content = stripped_content.replace(pre_code, '')
+        stripped_content = re.sub(PRE_CODE_REGEX, '', content)
+        # Remove html comments
+        stripped_content = re.sub(COMMENTS_REGEX, '', stripped_content)
 
         dependencies = []
 
         # Finds all <amp-*> tags that may introduce a dependency to a component
-        ELEMENT_REGEX = r"<(amp-\S*?)(>|\s)"
         for element in re.findall(ELEMENT_REGEX, stripped_content):
             # The first capturing group will be the component name
             component_name = element[0]
@@ -142,7 +99,6 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
         # Checks if document depends on <amp-bind>, also see:
         # https://www.ampproject.org/docs/reference/components/amp-bind#element-specific-attributes
         # TODO: Add remainig bindable values
-        AMP_BIND_MARKERS_REGEX = r"(<amp-state|<amp-bind-macro|\s\[(text|class|hidden|width|height|src|title|alt|srcset|open|selected|controls|loop|poster|preload|disabled|href|type|value)\]=)"
         if re.search(AMP_BIND_MARKERS_REGEX, stripped_content):
             dependencies.append('amp-bind')
 
@@ -163,29 +119,32 @@ class AmpDependencyInjectorPostRenderHook(hooks.PostRenderHook):
     def verify_dependencies(self, dependencies, doc):
         """Verifies that the found dependencies are valid components
         and filters out duplicates."""
-        seen_dependencies = {}
         valid_dependencies = []
         for dependency in dependencies:
-            if dependency in seen_dependencies: continue
+            if dependency in valid_dependencies: continue
             if dependency in BUILT_INS: continue
             if dependency in FALSE_POSITIVES: continue
-            if dependency not in VALID_DEPENDENCIES:
+            if dependency not in COMPONENT_VERSIONS:
                 self.pod.logger.warning('{} uses unknown AMP dependency: {}'.format(doc, dependency))
                 continue
 
-            seen_dependencies[dependency] = True
             valid_dependencies.append(dependency)
         return valid_dependencies
 
     def inject_dependencies(self, dependencies, content):
         script_tags = []
         for dependency in dependencies:
-            # TODO: Handle different versions, URL and type within VALID_DEPENDENCIES
-            src = 'https://cdn.ampproject.org/v0/{}-0.1.js'.format(dependency)
-            type = 'element' if dependency is not 'amp-mustache' else 'template'
+            dep_type = 'element' if dependency != 'amp-mustache' else 'template'
+            existing_pattern = re.compile(IMPORT_REGEX_TEMPLATE.format(type=dep_type, dependency=dependency),
+                                          re.IGNORECASE)
+            if not existing_pattern.search(content):
 
-            tag = '<script custom-{type}="{dependency}" src="{src}" async></script>'.format(type=type, dependency=dependency, src=src)
-            script_tags.append(tag)
+                version = COMPONENT_VERSIONS[dependency]
+                src = 'https://cdn.ampproject.org/v0/{dependency}-{version}.js'.format(dependency=dependency, version=version)
+
+                tag = '<script custom-{type}="{dependency}" src="{src}" async></script>'.format(
+                  type=dep_type, dependency=dependency, src=src)
+                script_tags.append(tag)
 
         # Add tags to end of <head>
         script_tags.append('</head>')

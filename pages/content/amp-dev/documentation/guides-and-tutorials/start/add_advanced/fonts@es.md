@@ -28,12 +28,6 @@ body {
 
 **Actualice** su página y echa un vistazo a la nueva imagen de tu página. Además, inspeccione la salida del validador AMP. No debe haber errores para esta solicitud de hoja de estilo externa.
 
-[tip]
-La inclusión de una fuente en el documento no requiere ningún componente adicional. Dicho esto, hay un componente llamado [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}). El componente [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) no se utiliza para cargar fuentes web, sino que puede utilizarlo para detectar si una fuente web ha cargado correctamente o no y responder adecuadamente, si es necesario.
-
-Puede utilizar [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) para ocultar su texto hasta que su fuente esté completamente cargada para que el usuario no vea el texto de su fuente temporal a su fuente verdadera. En el caso de que la fuente no se cargue, es posible que desee revelar la fuente temporal en su lugar. Después de todo, el peor escenario sería si el usuario no llegó a leer ningún texto! Obtenga más información leyendo la documentación de referencia de [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}).
-[/tip]
-
 ¡Has completado tu artículo de noticias de AMP! Así es como debería ser:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='Artículo completado') }}

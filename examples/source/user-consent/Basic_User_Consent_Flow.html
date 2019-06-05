@@ -107,7 +107,8 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
         <p>This is some more information about this choice. Here's a list of items related to this choice.</p>
         <amp-list height="132"
                   layout="fixed-height"
-                  src="/static/samples/json/consent-items.json">
+                  src="/static/samples/json/consent-items.json"
+                  binding="no">
           <template type="amp-mustache">
             <li>{{.}}</li>
           </template>
