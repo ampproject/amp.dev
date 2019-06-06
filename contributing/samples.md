@@ -2,7 +2,7 @@
 
 Samples live in `examples/source`. Pick one of the existing category folders. 
 
-If you sample can live in a single html file, create a new `*.html` in  one of the sample category folders:
+If your sample can live in a single html file, create a new `*.html` in  one of the sample category folders:
 
 ```shell
 $ vim examples/source/1.components/amp-awesome.html
@@ -222,8 +222,7 @@ This will make the `<input>` element clickable, with the additional explanation 
 
 Before writing your own API endpoint, please take a look at the [existing generic API endpoints](https://github.com/ampproject/docs/tree/future/examples/api), maybe you can re-use one of them.
 
-Sample specific backend endpoints live in a JS file inside the sample folder. They are implemented via [Express routing](using Sample routes are implemented using Express 
-). You can address your API endpoints relative to your sample location, e.g. `<amp-list src="you-api-route' ...>`.
+Sample specific backend endpoints live in a JS file inside the sample folder. They are implemented via [Express routing](https://expressjs.com/en/guide/routing.html). You can address your API endpoints relative to your sample location, e.g. `<amp-list src="you-api-route' ...>`.
 
 Here is a template to get you started. 
 
