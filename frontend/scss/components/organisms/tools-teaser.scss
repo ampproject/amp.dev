@@ -25,25 +25,13 @@ The tools cards on the tools page and in widget form.
 main.#{template('tools')} {
 
     .#{organism('tool-section')} {
+      margin-bottom: 2em;
 
       @media (min-width: 768px) {
         margin-top: 4em;
       }
-      margin-bottom: 2em;
 
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: top right;
-
-      @media (max-width: 768px) {
-        margin-left: 40px;
-        margin-right: 40px;
-      }
-
-      h2 {
-        grid-column: 3 / 23;
-      }
-
+      &-title { grid-column: 3 / 23; }
     }
 
     .#{organism('tool-format-filter-container')} {

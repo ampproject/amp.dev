@@ -92,23 +92,21 @@ tools: !g.yaml /shared/data/tools.yaml
 
 {% for category in doc.categories %}
 
-  <section class="ap-o-tool-section">
-    <div class="ap--container">
-        <h2 id="{{ category }}">
-          {% if category == 'creation' %}
-          Creation &amp; Design
-          {% elif category == 'platforms'  %}
-          CMS &amp; Platforms
-          {% elif category == 'developer' %}
-          Developer Tools
-          {% elif category == 'emailservices' %}
-          Email service providers
-          {% endif %}
-        </h2>
+  <section class="ap-o-tool-section ap--container">
+    <div class="ap-o-tool-section-title">
+      <h2 id="{{ category }}">
+        {% if category == 'creation' %}
+        Creation &amp; Design
+        {% elif category == 'platforms'  %}
+        CMS &amp; Platforms
+        {% elif category == 'developer' %}
+        Developer Tools
+        {% elif category == 'emailservices' %}
+        Email service providers
+        {% endif %}
+      </h2>
     </div>
-  </section>
-  
-  <section class="ap--teaser-grid ap--container">
+
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list">
         {% for tool in doc.tools[category] %}
