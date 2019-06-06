@@ -27,11 +27,11 @@
                 <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
               </div>
             {% endif %}
-    
+
             <h4 class="ap-m-teaser-headline">{% if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') %}<svg class="ap-m-teaser-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>{% endif %}{{ teaser.name }}</h4>
             <p>{{ teaser.description }}</p>
           </div>
-    
+
           {% if teaser.type %}
           <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type }}">{{ teaser.type }}</div>
           {% endif %}

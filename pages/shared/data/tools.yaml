@@ -210,7 +210,7 @@ developer:
       width: 5
       height: 3
     formats:
-      - websites     
+      - websites
   - name: AMP Insights
     official: true
     type: debugging
@@ -232,7 +232,7 @@ developer:
       width: 5
       height: 3
     formats:
-      - websites    
+      - websites
   - name: AMP Boilerplate Generator
     official: true
     type: development
