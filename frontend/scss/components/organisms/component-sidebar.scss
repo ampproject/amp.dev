@@ -28,7 +28,7 @@ nav[toolbar] {
   -webkit-overflow-scrolling: touch;
 
   @media (min-width: 768px){
-    height: 100vh;
+    height: auto;
     position: sticky;
     overflow: auto;
     max-height: calc(100vh - 86px);
