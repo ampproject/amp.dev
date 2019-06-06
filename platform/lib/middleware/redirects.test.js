@@ -6,8 +6,10 @@ const request = require('supertest');
 const VALID_LANGUAGE_SHORT = 'en';
 const VALID_LANGUAGE_LONG = 'pt_br';
 
-const UNIT_TEST_REDIRECTS = '/shortcut: /some/deep/link/\n' +
-    '/' + VALID_LANGUAGE_SHORT + '/old/link: /new/link/target';
+const UNIT_TEST_REDIRECTS = `
+/shortcut: /some/deep/link/
+/${VALID_LANGUAGE_SHORT}/old/link: /new/link/target
+`;
 
 jest.mock('js-yaml');
 const yaml = require('js-yaml');
@@ -30,15 +32,15 @@ test('redirect for shortcut in default language', (done) => {
 
 test('redirect for shortcut in specific short language', (done) => {
   request(app)
-      .get('/' + VALID_LANGUAGE_SHORT + '/shortcut')
-      .expect('Location', 'http://localhost:8080/' + VALID_LANGUAGE_SHORT + '/some/deep/link/')
+      .get(`/${VALID_LANGUAGE_SHORT}/shortcut`)
+      .expect('Location', `http://localhost:8080/${VALID_LANGUAGE_SHORT}/some/deep/link/`)
       .expect(302, done);
 });
 
 test('redirect for shortcut in specific long language', (done) => {
   request(app)
-      .get('/' + VALID_LANGUAGE_LONG + '/shortcut')
-      .expect('Location', 'http://localhost:8080/' + VALID_LANGUAGE_LONG + '/some/deep/link/')
+      .get(`/${VALID_LANGUAGE_LONG}/shortcut`)
+      .expect('Location', `http://localhost:8080/${VALID_LANGUAGE_LONG}/some/deep/link/`)
       .expect(302, done);
 });
 
@@ -58,14 +60,14 @@ test('redirect for shortcut in default language with param', (done) => {
 
 test('redirect for shortcut in specific short language with params', (done) => {
   request(app)
-      .get('/' + VALID_LANGUAGE_SHORT + '/shortcut?format=website&foo=bar')
-      .expect('Location', 'http://localhost:8080/' + VALID_LANGUAGE_SHORT + '/some/deep/link/?format=website&foo=bar')
+      .get(`/${VALID_LANGUAGE_SHORT}/shortcut?format=website&foo=bar`)
+      .expect('Location', `http://localhost:8080/${VALID_LANGUAGE_SHORT}/some/deep/link/?format=website&foo=bar`)
       .expect(302, done);
 });
 
 test('redirect for language specific link', (done) => {
   request(app)
-      .get('/' + VALID_LANGUAGE_SHORT + '/old/link')
+      .get(`/${VALID_LANGUAGE_SHORT}/old/link`)
       .expect('Location', 'http://localhost:8080/new/link/target')
       .expect(302, done);
 });
@@ -79,7 +81,7 @@ test('no redirect for language specific link in default language', (done) => {
 
 test('no redirect for language specific link in other language', (done) => {
   request(app)
-      .get('/' + VALID_LANGUAGE_LONG + '/old/link')
+      .get(`/${VALID_LANGUAGE_LONG}/old/link`)
       .set('x-forwarded-proto', 'https')
       .expect(404, done);
 });
