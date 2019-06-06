@@ -161,6 +161,9 @@ main.#{template('tools')} {
           &:before {
             display: none;
           }
+          &.contain {
+            padding: 15px 30px;
+          }
         }
 
         .#{molecule('teaser-card-essential')}{
