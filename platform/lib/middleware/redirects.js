@@ -50,8 +50,9 @@ function getRedirectLink(req) {
       }
     }
   }
-  if (result && req.query) {
-    result = result + '?' + url.parse(req.url).query;
+  const queryString = url.parse(req.url).query;
+  if (result && queryString) {
+    result = result + '?' + queryString;
   }
   return result;
 }
