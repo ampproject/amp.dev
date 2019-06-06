@@ -14,6 +14,7 @@ filters:
 categories:
 - creation
 - platforms
+- providers
 - developer
 
 stage:
@@ -100,6 +101,8 @@ tools: !g.yaml /shared/data/tools.yaml
           CMS &amp; Platforms
           {% elif category == 'developer' %}
           Developer Tools
+          {% elif category == 'emailservices' %}
+          Email service providers
           {% endif %}
         </h2>
     </div>
