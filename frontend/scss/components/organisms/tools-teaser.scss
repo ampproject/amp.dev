@@ -32,6 +32,8 @@ main.#{template('tools')} {
       }
 
       &-title { grid-column: 3 / 23; }
+      &-title > h2 { opacity: 0.35; }
+      &-title > .show ~ .hide ~ h2, .show + h2 { opacity: 1; }
     }
 
     .#{organism('tool-format-filter-container')} {

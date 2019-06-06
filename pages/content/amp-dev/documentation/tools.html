@@ -94,6 +94,10 @@ tools: !g.yaml /shared/data/tools.yaml
 
   <section class="ap-o-tool-section ap--container">
     <div class="ap-o-tool-section-title">
+      {% for tool in doc.tools[category] %}
+      <span hidden class="show" [class]="activeFilter.chosenFilter == 'none' || activeFilter.chosenFilter != 'none' && {{ tool.formats }}.includes(activeFilter.chosenFilter) ? 'show' : 'hide'"></span>
+      {% endfor %}
+
       <h2 id="{{ category }}">
         {% if category == 'creation' %}
         Creation &amp; Design
