@@ -122,7 +122,7 @@
     </div>
     <form class="sample-form"
       method="post"
-      action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+      action-xhr="/documentation/examples/api/submit-form-input-text-xhr"
       target="_top">
       <div class="input-field">
         <amp-autocomplete filter="substring" min-characters="0"
@@ -164,7 +164,7 @@
   -->
   <form class="sample-form"
     method="post"
-    action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+    action-xhr="/documentation/examples/api/submit-form-input-text-xhr"
     target="_top">
     <label>
         <span>Search for</span>
@@ -215,7 +215,7 @@
   <div>
     <form class="sample-form"
     method="post"
-    action-xhr="<% hosts.backend %>/components/amp-form/submit-form-input-text-xhr"
+    action-xhr="/documentation/examples/api/submit-form-input-text-xhr"
     target="_top">
       <amp-autocomplete filter="substring" min-characters="0" [src]="manualFilterData" >
           <input type="text" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 

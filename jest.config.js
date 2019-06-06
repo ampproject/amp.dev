@@ -76,7 +76,11 @@ module.exports = {
   // ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    // TODO: improve: jest will not work with 'module-alias', so we have define the alias here again!
+    // see https://github.com/ilearnio/module-alias/issues/46
+    '^@lib/(.*?)(\.js)?$': '<rootDir>/platform/lib/$1.js',
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],

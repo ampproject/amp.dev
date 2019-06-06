@@ -1,0 +1,6 @@
+$view: /views/default.j2
+$path: /tests/{base}.html
+$localization:
+  path: /{locale}/tests/{base}.html
+$order: 90
+
