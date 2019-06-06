@@ -32,7 +32,7 @@ You can think of a server that provides data as a file cabinet. A server has an 
 We will retrieve and display server data using the [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) component. The `<amp-list>` component reaches out to the remote JSON API endpoint at a given URL to retrieve data. The `<amp-list>` component also contains an `<amp-mustache>` template. Each entry in the data returned from the server is applied individually to the `<amp-mustache>` template, and the result is added to the page. For example, the following code will retrieve a list of names and display them on the page as a collection of `<p>` tags:
 
 [sourcecode:html]
-{% raw %}<amp-list width="auto" height="100" layout="fixed-height" src="https://some.url/data.json">
+{% raw %}<amp-list width="auto" height="100" layout="fixed-height" src="https://some.url/data.json" binding="refresh">
     <template type="amp-mustache">
         <p>{{name}}</p>
     </template>
@@ -73,7 +73,7 @@ The output from an `<amp-list>` template is not exempt from the layout optimizat
 Because requests to the server take time and are not guaranteed to succeed, we may want to detect when our requests are in progress or when they fail. This would allow us to display notifications that we're loading data or to show an error message. For that purpose, AMP provides the `placeholder` and `fallback` attributes. In the following example, after the `<amp-list>` makes the request for data from the server but has not yet heard back, it displays the element marked with the `placeholder` attribute. If the request to the server did not return in time or returned an error code, then the element with the `fallback` attribute would be displayed:
 
 [sourcecode:html]
-{% raw %}<amp-list src="https://foo.com/list.json">
+{% raw %}<amp-list src="https://foo.com/list.json" binding="refresh">
     <div placeholder>Loading ...</div>
     <div fallback>Failed to load data.</div>
 </amp-list>
@@ -166,7 +166,7 @@ The solution can be found in [this](https://glitch.com/edit/#!/potent-custard) G
 [sourcecode:html]
 {% raw %}<main>
     <h2>Recommended</h2>
-    <amp-list width="auto" height="600" layout="fixed-height" src="videos">
+    <amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
         <template type="amp-mustache">
             <div class="video">
                 <amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
@@ -189,7 +189,7 @@ If you added skeleton loading to your solution, it should look like this:
 [sourcecode:html]
 {% raw %}<main>
     <h2>Recommended</h2>
-    <amp-list width="auto" height="600" layout="fixed-height" src="videos">
+    <amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
         <div placeholder>
             <div class="placeholder-container">
                 <div class="placeholder-vid">
@@ -287,7 +287,8 @@ The following example shows how to combine `<amp-list>` with property bindings a
 <amp-list src="https://pathto.ourserver.com/api/v1/products"
           [src]="'https://pathto.ourserver.com/api/v1/products' +
                  ‘?category=' + productSettings.category +
-                 ‘&sort=' + productSettings.sort">
+                 ‘&sort=' + productSettings.sort"
+          binding="refresh">
     <template type="amp-mustache">
         ...
     </template>
@@ -405,7 +406,8 @@ The portion of the page containing the product list should now look like this:
         <amp-list id="amp-list-bikes" class="product-list" width="auto"
             height="600" layout="fixed-height" src="/products/filter"
             [src]="'/products/filter?sort=' + products.sort +
-                   '&category=' + products.category">
+                   '&category=' + products.category"
+            binding="refresh">
             <template type="amp-mustache">
                 <div class="product-card">
                     <amp-img

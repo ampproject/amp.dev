@@ -5,6 +5,7 @@ description: 'The AMP runtime is optimized for speed and if your AMP pages are s
 
 formats:
   - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -194,7 +195,7 @@ In Safari, there is a key difference to how service workers are implemented -- i
 
 With AMP there are a few things that you can do to optimize your font loading ([most of them are actually not specific to AMP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)):
 
-*   If possible, use [`amp-font` with timeout set to 0]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}#timeout) (this will only use the font if it's already in the cache). Fall back to the system font if your custom font has not been loaded yet. This is a similar behavior to [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+*   If possible, use [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): This will only use the font if it's already in the cache, and falls back to the system font if your custom font has not been loaded yet.
 *   Optimize your web fonts (for example, serve custom fonts using WOFF2).
 *   Preload custom fonts: [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
@@ -206,11 +207,7 @@ Last but not least, try to minimize the number of custom fonts that you use on y
 
 ### Server-Side Rendering
 
-[Server-side-rendering](https://docs.google.com/document/d/1gViU1hxtGXwMSTNnum2zY_p9ZWvFwMKoachNdIRUgh0/edit) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
-
-[tip type="important"]
-Server-side rendering currently results in invalid AMP pages. Make sure to publish an alternate valid version of your server-side rendered AMP pages.
-[/tip]
+[Server-side-rendering]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering.md', locale=doc.locale).url.path}}) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
 
 If you're interested in using server-side-rendering, check out the [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) tool.  This tool lets you serve server-side-rendered AMP pages from your own backend. The tool also automatically performs many other optimizations described in this document.
 

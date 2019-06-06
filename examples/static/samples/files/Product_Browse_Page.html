@@ -285,8 +285,8 @@ author: aghassemi
       <amp-lightbox id="filter-lightbox" layout="nodisplay">
         <div class="filter-section">
           <h3>Filter results</h3>
-          <h4>Color</h4>      
-          <div>     
+          <h4>Color</h4>
+          <div>
             <label> yellow <input type="radio" name="colorFilter" value="Yellow" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'yellow' : '',
@@ -298,13 +298,13 @@ author: aghassemi
               searchColor: event.checked == true ? 'orange' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
               }
-              }), filter-lightbox.close"></label>            
+              }), filter-lightbox.close"></label>
             <label> green <input type="radio" name="colorFilter" value="Green" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'green' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
               }
-              }), filter-lightbox.close"> </label>            
+              }), filter-lightbox.close"> </label>
             <label> all <input type="radio" name="colorFilter" value="all" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'all' : '',
@@ -332,26 +332,26 @@ author: aghassemi
               searchColor: event.checked == true ? 'yellow' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'yellow' : '') +'&_=RANDOM'
               }
-              })"> yellow </label></div>           
+              })"> yellow </label></div>
               <div><label><input type="radio" id="orange" name="colorFilter" value="Orange" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'orange' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
               }
-              })"> orange </label></div> 
-            
+              })"> orange </label></div>
+
               <div><label><input type="radio" id="green" name="colorFilter"  value="Green" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'green' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
               }
-              })"> green </label></div>          
+              })"> green </label></div>
               <div><label><input type="radio" id="all" name="colorFilter"  value="all" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'all' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'all' : '') +'&_=RANDOM'
               }
-              })"> all </label></div> 
+              })"> all </label></div>
         </div>
         <div class="content">
           <div id="info-wrap">
@@ -367,7 +367,7 @@ author: aghassemi
                 </option>
                 <option value="price-ascendent">Price low to high
                 </option>
-              </select>              
+              </select>
             </div>
             <button class="filter-mobile" on="tap:filter-lightbox">
               Filter
@@ -378,6 +378,7 @@ author: aghassemi
                     layout="fixed-height"
                     src="/samples_templates/products?sortChoiceValue=price-descendent&searchColor=all&_=RANDOM'"
                     [src]="products.listSrc"
+                    binding="refresh"
                     class="grid">
             <template type="amp-mustache">
               <a class="products" href="/samples_templates/product/[[$.Mode]]">
@@ -396,7 +397,7 @@ author: aghassemi
       <!-- ## Offers & highlights -->
       <!-- The `amp-carousel` supports also a more traditional carousel mode.   -->
       <div class="recommendations">
-        <h3>Recommendations</h3>      
+        <h3>Recommendations</h3>
         <amp-carousel width="auto" height="160" layout="fixed-height" type="carousel">
           <a href="#" role="listitem">
             <amp-img width="640" height="426" layout="responsive" alt="Apple" src="/static/samples/img/product1_640x426.jpg"></amp-img>
@@ -459,7 +460,8 @@ author: aghassemi
                   width="auto"
                   height="160"
                   layout="fixed-height"
-                  src="/json/related_products.json">
+                  src="/json/related_products.json"
+                  binding="no">
           <template type="amp-mustache">
             <a href="/samples_templates/product/preview/">
               <amp-img width="640"

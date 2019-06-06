@@ -19,7 +19,7 @@
       },
       {
         "id": "serviceworker",
-        "label": "<a href=\"https://www.ampproject.org/docs/reference/components/amp-install-serviceworker\">amp-install-serviceworker</a>",
+        "label": "<a href=\"https://amp.dev/documentation/components/amp-install-serviceworker\">amp-install-serviceworker</a>",
         "default": false,
         "values": [
           {
@@ -29,13 +29,25 @@
           },
           {
             "key": "js",
-            "label": "JS Filename",
+            "label": "Filename",
             "value": "sw.js"
           },
           {
             "key": "iframe",
             "label": "Iframe Filename",
             "value": "install-sw.html"
+          },
+          {
+            "key": "assetCaching",
+            "label": "Asset Caching",
+            "valueCheckbox": true,
+            "default": "true"
+          },
+          {
+            "key": "offlinePage",
+            "label": "Offline Page",
+            "valueCheckbox": true,
+            "default": "true"
           }
         ]
       }

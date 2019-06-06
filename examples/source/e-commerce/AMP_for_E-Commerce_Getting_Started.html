@@ -117,7 +117,7 @@ author: sebastianbenz
 
     Here is a sample how to render product name and price using amp-list:
   -->
-  <amp-list height="24" layout="fixed-height" src="/static/samples/json/product.json" class="m1">
+  <amp-list height="24" layout="fixed-height" src="/static/samples/json/product.json" binding="no" class="m1">
     <template type="amp-mustache">
       {{name}}: ${{price}}
     </template>
@@ -133,7 +133,7 @@ author: sebastianbenz
   ```
 
   -->
-  <amp-list width="auto" height="400" layout="fixed-height" src="/static/samples/json/product-single-item.json">
+  <amp-list width="auto" height="400" layout="fixed-height" src="/static/samples/json/product-single-item.json" binding="no">
     <template type="amp-mustache">
       <amp-carousel height="400" layout="fixed-height" type="carousel">
         {{#values}}
@@ -167,7 +167,7 @@ author: sebastianbenz
     An easy way to provide personalized content in AMPs is to use `amp-list`. You can either use cookies (using the attribute `credentials="include"`) or AMP's [client id](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id):
   -->
 
-  <amp-list credentials="include" height="24" layout="fixed-height" src="/static/samples/json/product.json?clientId=CLIENT_ID(myCookieId)" class="m1">
+  <amp-list credentials="include" height="24" layout="fixed-height" src="/static/samples/json/product.json?clientId=CLIENT_ID(myCookieId)" binding="no" class="m1">
     <template type="amp-mustache">
       Your personal offer: ${{price}}
     </template>

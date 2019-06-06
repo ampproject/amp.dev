@@ -20,8 +20,8 @@ const express = require('express');
 const config = require('@lib/config.js');
 const {join} = require('path');
 const {readFileSync} = require('fs');
-const notFound = require('./notFound.js');
 const URL = require('url').URL;
+const robots = require('./robots');
 
 const GO_LINKS_DEFINITION = join(__dirname, '../../config/go-links.yaml');
 
@@ -33,7 +33,9 @@ const goLinks = yaml.safeLoad(readFileSync(GO_LINKS_DEFINITION));
 go.use((request, response, next) => {
   const target = goLinks[request.path];
   if (!target) {
-    notFound(request, response, next);
+    // The request is handled by the default sub domain 404 handler and redirects to amp.dev
+    // We cannot use the 404.html directly since its links are relative
+    next();
     return;
   }
   try {
@@ -45,5 +47,7 @@ go.use((request, response, next) => {
     notFound(request, response, next);
   }
 });
+
+go.use(robots('allow_all.txt'));
 
 module.exports = go;

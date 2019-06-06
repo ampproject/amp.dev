@@ -26,6 +26,7 @@ const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspe
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 
 const ENV_DEV = 'development';
+const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
 const AVAILABLE_LOCALES = [
   'en',
@@ -85,10 +86,26 @@ class Config {
   }
 
   /**
+   * Returns true if staging mode is active.
+   */
+  isStageMode() {
+    return this.environment === ENV_STAGE;
+  }
+
+  /**
    * Returns true if production mode is active.
    */
   isProdMode() {
     return this.environment === ENV_PROD;
+  }
+
+  /**
+   * Returns an array with the locale ids.
+   * (e.g. 'en', 'pt_BR', ...)
+   * These locale ids are used
+   */
+  getAvailableLocales() {
+    return AVAILABLE_LOCALES.slice(0); // clone our internal array
   }
 
   /**
@@ -149,6 +166,22 @@ class Config {
         'env': podspec['env'],
       },
     };
+
+    if (this.options.include_paths || this.options.ignore_paths) {
+      const filter = {};
+      if (this.options.ignore_paths) {
+        filter.ignore_paths = this.options.ignore_paths.split(',');
+      } else {
+        // in grow include only works against ignore. So we ignore all if we only have include
+        filter.ignore_paths = ['.*'];
+      }
+      if (this.options.include_paths) {
+        filter.include_paths = this.options.include_paths.split(',');
+      }
+      podspec.deployments[this.environment] = {
+        'filter': filter,
+      };
+    }
 
     podspec.localization.locales = AVAILABLE_LOCALES;
     // Check if specific languages have been configured to be built

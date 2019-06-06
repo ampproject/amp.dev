@@ -10,20 +10,20 @@ addons:
 cache:
 - pip
 - npm
-before_install:
-- openssl aes-256-cbc -K $encrypted_b44033ffb787_key -iv $encrypted_b44033ffb787_iv
-  -in .prod.key.json.enc -out .prod.key.json -d
-- openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv
-  -in .staging.key.json.enc -out .staging.key.json -d
-- gcloud auth activate-service-account --key-file=.staging.key.json
 install:
 - npm ci
+before_install:
+- |
+  if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then
+    openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv -in .staging.key.json.enc -out .staging.key.json -d
+    gcloud auth activate-service-account --key-file=.staging.key.json
+  fi
 stages:
 - preparation
 - name: build
-  if: branch = future
+  if: branch = future AND type != pull_request
 - name: deploy
-  if: branch = future
+  if: branch = future AND type != pull_request
 jobs:
   include:
   - stage: preparation
@@ -33,7 +33,7 @@ jobs:
     - unbuffer gulp buildSamples
     - unbuffer gulp lintAll
     script:
-    - if [ $TRAVIS_BRANCH == "future" ]; then unbuffer gulp buildPrepare; fi
+    - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then unbuffer gulp buildPrepare; fi
   - stage: build
     env: APP_ENV=staging
     install: &1

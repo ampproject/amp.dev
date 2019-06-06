@@ -29,6 +29,11 @@
 
   &.mainmenuopen {
     z-index: 1004;
+
+    & ~ .#{utility('main')} {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
   }
 
   @media (min-width: 1024px) {

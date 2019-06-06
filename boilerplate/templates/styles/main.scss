@@ -138,6 +138,12 @@ section {
     }
     input[type=text] {
       padding: 0 8px;
+      border: none;
+    }
+    input[type=checkbox] {
+      margin-right: auto;
+      margin-left: 1rem;
+      margin-top: 0.3rem;
     }
   }
   input {

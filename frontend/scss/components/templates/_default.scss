@@ -3,11 +3,6 @@
   padding-bottom: 3rem;
 }
 
-.#{utility('main')} {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 @mixin container {
   position: relative;
   display: flex;
@@ -182,7 +177,7 @@
     background: color('whisper');
     grid-column: 20 / 25;
     grid-row: span 3;
-    padding-top: 46px;
+    padding-top: 93px;
     padding-bottom: 60px;
 
     & ~ .#{utility('content')} {

@@ -40,11 +40,6 @@
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 {% endif %}
 
-{# Include amp-font #}
-{% if 'amp-font' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
-{% endif %}
-
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
 {% for used_component in doc.used_components %}
@@ -167,7 +162,7 @@
       {% endif %}
 
       {% for section in doc.example.document.sections %}
-      {{ doc.pod.amp_dev.transform_markdown(section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
+      {{ doc.pod.amp_dev.transform_markdown(section.doc_, section.doc_.strip(), section.doc_.strip())|markdown|render|safe }}
 
       {% set render_code = section.doc_.strip() and section.code.strip() %}
       {% if render_code %}
@@ -231,7 +226,6 @@
 
     {% include 'views/partials/author.j2' %}
   </div>
-{% include 'views/partials/sidebar-toggle-visibility-observer.j2' %}
 </main>
 
 {% if doc.example.document.metadata.experiments %}
