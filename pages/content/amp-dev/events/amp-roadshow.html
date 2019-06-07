@@ -63,8 +63,19 @@ section_links:
 
   <div class="ap-o-cities ap--content-wide">
     <h3 class="ap-o-cities-headline">Cities</h3>
+    <h4>Your coordinates: <span [text]="coords"></span></h4>
     <div class="ap-m-jumbo ap-m-jumbo-cities">
       <div class="ap-a-ico">
+        {% if doc.pod.env.dev %}
+        {% do doc.styles.addCssFile('/css/components/atoms/roadshow-map-helper-grid.css') %}
+        <aside class="ap-a-roadshow-map-helper-grid">
+        {% for row in range(0,50) %}
+          {% for col in range(0,110) %}
+            <input type="radio" name="coords" on="tap:AMP.setState({ coords: '{{row}}x{{col}}' })"/>
+          {% endfor %}
+        {% endfor %}
+        </aside>
+        {% endif %}
         {% do doc.icons.useIcon('/icons/cities-map.svg') %}
         {% do doc.icons.useIcon('/icons/gradient-map.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cities-map"></use></svg>
@@ -221,5 +232,3 @@ section_links:
     </div>
   </div>
 </section>
-
-
