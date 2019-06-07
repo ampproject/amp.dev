@@ -60,16 +60,6 @@ test('Url with xml extension is not rewritten to .html at the end', (done) => {
       .end(done);
 });
 
-test('Url with dot but no real extension is rewritten to .html at the end', (done) => {
-  request(app)
-      .get('/nonexisting/file.foo_bar')
-      .expect(200, 'next')
-      .expect(() => {
-        expect(lastRequest.url).toBe('/nonexisting/file.foo_bar.html');
-      })
-      .end(done);
-});
-
 test('Url with / at the end is rewritten to index.html at the end', (done) => {
   request(app)
       .get('/nonexisting/')
