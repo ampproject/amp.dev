@@ -20,8 +20,9 @@ const express = require('express');
 const config = require('@lib/config');
 const {Signale} = require('signale');
 const {isFilterableRoute} = require('@lib/common/filteredPage');
-const {project} = require('@lib/utils');
+const project = require('@lib/utils/project');
 
+const PATH_HAS_FILE_EXTENSION_PATTERN = /\/[^\/]+\.[a-z0-9]{1,5}$/i;
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -56,7 +57,7 @@ function ensureFileExtension(path) {
     return path += 'index.html';
   }
 
-  if (!path.endsWith('.html')) {
+  if (!PATH_HAS_FILE_EXTENSION_PATTERN.test(path)) {
     return path += '.html';
   }
 
