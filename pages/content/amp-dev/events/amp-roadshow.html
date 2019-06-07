@@ -71,7 +71,7 @@ section_links:
         <aside class="ap-a-roadshow-map-helper-grid">
         {% for row in range(0,50) %}
           {% for col in range(0,110) %}
-            <input type="radio" name="coords" on="tap:AMP.setState({ coords: '{{row}}x{{col}}' })"/>
+            <input type="radio" name="coords" on="tap:AMP.setState({ coords: '{{row}}x{{col}}' })" tabindex="0" role="dot"/>
           {% endfor %}
         {% endfor %}
         </aside>
