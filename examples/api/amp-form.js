@@ -57,7 +57,7 @@ function verifyFormXHRInputText(request, response) {
     response.status(400).json({
       verifyErrors: [
         {
-          message: `The username ${name} is already taken`,
+          message: `The username ${username} is already taken`,
           username,
         },
       ],
