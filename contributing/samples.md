@@ -18,9 +18,11 @@ $ vim examples/source/1.components/amp-awesome/api.js
 
 If your sample, does not fit into one of the existing categories, please [create an issue](https://github.com/ampproject/docs/issues/new) first and ask for feedback.
 
+[Here is a sample template](https://gist.github.com/sebastianbenz/45d3dae499f35dedb65e01546356ff7a) you can use to get started. 
+
 ## Frontmatter
 
-Samples can define a YAML-based frontmatter. Here is a template to get you started:
+Samples can define additional metadata (such as author name or supported AMP formats) via a YAML frontmatter. Here is a template to get you started:
 
 ```
 <!---
@@ -32,11 +34,11 @@ Samples can define a YAML-based frontmatter. Here is a template to get you start
 
 **Note the triple dash `<!---`!**. Also make sure to list all supported formats (websites,ads,email,stories).
 
-If your sample is specific to an AMP Format, please define it as well:
+You must list all the supported AMP formats for your sample. If your sample is specific AMP format, define that single format.
 
 ```
 - formats
-  - websites
+  - email
 ```
 
 Please list all experimental components that your sample uses:
@@ -49,18 +51,18 @@ experiments:
 Other supported flags are:
 
 ```yaml
-- formats [default: websites,ads,email,stories]:
+- formats # [default: websites,ads,email,stories]:
   - websites
   - ads
   - email
   - stories
-- validAmp [default: true]
+- validAmp # [default: true]
   - true
   - false
-- draft [default: true]
+- draft # [default: true]
   - true
   - false
-- tags [default: '']
+- tags # [default: '']
   - ads-analytics
   - dynamic-content
   - layout
@@ -72,7 +74,7 @@ Other supported flags are:
 
 ## Writing the sample
 
-Samples are annotated HTML files. Use HTML comments (`<!-- ... -->`) to document your sample code:
+Add documentation to your sample's code by wrapping text in HTML comments:
 
 ```html
 <!-- Look! Images in AMP. -->
