@@ -48,13 +48,14 @@
     position: sticky;
     z-index: 1;
     padding: 0 10px 0 0;
+    margin: 0;
     height: auto;
-    top: 114px;
+    top: 90px;
     right: auto;
     background: none;
     box-shadow: none;
     overflow-y: scroll;
-    max-height: calc(100vh - 214px);
+    max-height: calc(100vh - 90px);
   }
 
   &-hl {
@@ -73,6 +74,13 @@
     align-items: center;
     justify-content: space-between;
     outline: 0;
+
+    @media (min-width: 1024px) {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background: #fafafc;
+    }
   }
 
   ul {
