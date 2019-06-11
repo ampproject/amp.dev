@@ -44,8 +44,6 @@ const AVAILABLE_LOCALES = [
   'zh_CN',
 ];
 
-const TEST_CONTENT_PATH_REGEX = '^/tests/';
-
 class Config {
   constructor(environment = ENV_DEV) {
     if (environment === 'test') {
@@ -131,9 +129,16 @@ class Config {
 
   /**
    * Builds a podspec for the current environment and writes it to the Grow pod
+   * @param {Object} settings Options to filter grow pages (optional). Can be overwritten by command line options.
    * @return {undefined}
    */
-  configureGrow() {
+  configureGrow(settings) {
+    const options = {};
+    if (settings) {
+      Object.assign(options, settings);
+    }
+    Object.assign(options, this.options);
+
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
     podspec = yaml.safeLoad(podspec);
 
@@ -170,26 +175,16 @@ class Config {
       },
     };
 
-    // The default is we do not deploy test files on prod
-    // and in test mode we deploy only the test files
-    if (!this.options.include_paths && !this.options.ignore_paths) {
-      if (this.isTestMode()) {
-        this.options.include_paths = TEST_CONTENT_PATH_REGEX;
-      } else if (this.isProdMode()) {
-        this.options.ignore_paths = TEST_CONTENT_PATH_REGEX;
-      }
-    }
-
-    if (this.options.include_paths || this.options.ignore_paths) {
+    if (options.include_paths || options.ignore_paths) {
       const filter = {};
-      if (this.options.ignore_paths) {
-        filter.ignore_paths = this.options.ignore_paths.split(',');
+      if (options.ignore_paths) {
+        filter.ignore_paths = options.ignore_paths.split(',');
       } else {
         // in grow include only works against ignore. So we ignore all if we only have include
         filter.ignore_paths = ['.*'];
       }
-      if (this.options.include_paths) {
-        filter.include_paths = this.options.include_paths.split(',');
+      if (options.include_paths) {
+        filter.include_paths = options.include_paths.split(',');
       }
       podspec.deployments[this.environment] = {
         'filter': filter,
@@ -199,10 +194,10 @@ class Config {
 
     podspec.localization.locales = AVAILABLE_LOCALES;
     // Check if specific languages have been configured to be built
-    if (this.options.locales) {
-      const locales = this.options.locales.split(',');
+    if (options.locales) {
+      const locales = options.locales.split(',');
       if (!locales.every((locale) => AVAILABLE_LOCALES.includes(locale))) {
-        signale.fatal('Invalid set of locales given:', this.options.locales);
+        signale.fatal('Invalid set of locales given:', options.locales);
         signale.info('Available locales are', AVAILABLE_LOCALES.join(', '));
         process.exit(1);
       }
@@ -212,7 +207,7 @@ class Config {
         'locales': locales,
       };
 
-      signale.info('Only building locales', this.options.locales);
+      signale.info('Only building locales', options.locales);
     }
 
     try {
