@@ -1,7 +1,7 @@
 $title: Fastcommerce
 $category: e-commerce
 $date: 2017-06-12
-description: As publishers around the world began adopting Accelerated Mobile Pages (AMP) to speed up page load times on mobile devices, Rudnitzki and his team identified
+description: As publishers around the world began adopting AMP to speed up page load times on mobile devices, Rudnitzki and his team identified
 
 formats:
   - websites
@@ -52,7 +52,7 @@ contents:
     type: mobile
     alt: Fastcommerce
     headline: Solution
-    text: As publishers around the world began adopting Accelerated Mobile Pages (AMP) to speed up page load times on mobile devices, Rudnitzki and his team identified AMP’s potential to provide real value to Fastcommerce’s platform. At first, the company considered only implementing AMP into product list pages like some other e-commerce operations, but then went a step further. In December 2016, the company integrated AMP for every step on their platform until checkout.<br><br>With AMP built into product and category pages, customers on Fastcommerce-hosted site move from AMP page to AMP page. Only when shoppers land on a page that requires an additional level of code—for instance JavaScript during checkout—do they leave the AMP experience. “In our vision, our clients’ customers should have the lightning-fast AMP experience as long as possible,” Rudnitzki says.
+    text: As publishers around the world began adopting AMP to speed up page load times on mobile devices, Rudnitzki and his team identified AMP’s potential to provide real value to Fastcommerce’s platform. At first, the company considered only implementing AMP into product list pages like some other e-commerce operations, but then went a step further. In December 2016, the company integrated AMP for every step on their platform until checkout.<br><br>With AMP built into product and category pages, customers on Fastcommerce-hosted site move from AMP page to AMP page. Only when shoppers land on a page that requires an additional level of code—for instance JavaScript during checkout—do they leave the AMP experience. “In our vision, our clients’ customers should have the lightning-fast AMP experience as long as possible,” Rudnitzki says.
     direction: left-flat
 
   - layout: text-button
