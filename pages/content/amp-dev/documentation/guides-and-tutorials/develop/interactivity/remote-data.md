@@ -19,7 +19,7 @@ You can also bind the `src` attribute for the [`<amp-state>`]({{g.doc('/content/
 
 ## Fetching available sizes for a shirt
 
-Let's make use of the ability to fetch remote data to look up prices of SKUs in our sample. Our Express.js development server in `app.js` already has an endpoint `/shirts/sizes?shirt=<sku>` which, given a shirt SKU, returns the available sizes and price for each size. It sends the response with an artificial delay of one second to simulate network latency.
+Let's make use of the ability to fetch remote data to look up prices of SKUs in our sample. Our Express.js development server in `app.js` already has an endpoint `/shirts/sizesAndPrices?shirt=<sku>` which, given a shirt SKU, returns the available sizes and price for each size. It sends the response with an artificial delay of one second to simulate network latency.
 
 |  Request                              |  Response |
 |---------------------------------------|-----------|
