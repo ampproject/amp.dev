@@ -17,11 +17,11 @@
 'use strict';
 
 const express = require('express');
+const path = require('path');
 const config = require('@lib/config');
 const {Signale} = require('signale');
 const {isFilterableRoute} = require('@lib/common/filteredPage');
-const {project} = require('@lib/utils');
-
+const project = require('@lib/utils/project');
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -48,19 +48,20 @@ function getFilteredFormat(request) {
 /**
  * Checks if a path ends on a directory and appends index.html if that's
  * the case, otherwise appends .html extension
- * @param  {String} path
+ * @param  {String} filePath
  * @return {String}
  */
-function ensureFileExtension(path) {
-  if (path.endsWith('/')) {
-    return path += 'index.html';
+function ensureFileExtension(filePath) {
+  if (filePath.endsWith('/')) {
+    return filePath += 'index.html';
   }
 
-  if (!path.endsWith('.html')) {
-    return path += '.html';
+  const extension = path.extname(filePath);
+  if (!extension) {
+    return filePath += '.html';
   }
 
-  return path;
+  return filePath;
 }
 
 

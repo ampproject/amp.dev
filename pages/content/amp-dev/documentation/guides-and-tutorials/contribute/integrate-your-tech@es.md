@@ -11,7 +11,7 @@ Existen 4 maneras principales de integrarse con AMP:
 
 ## 1. Agregue su soporte a la extensión `amp-analytics`
 
-AMP Analytics le permite enviar eventos de vuelta a su servidor basado en disparadores configurados por usted. Hemos escrito una [guía de integración de análisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/configure_analytics.md', locale=doc.locale).url.path}}) para empezar.
+AMP Analytics le permite enviar eventos de vuelta a su servidor basado en disparadores configurados por usted. Hemos escrito una [guía de integración de análisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) para empezar.
 
 Si solo necesita agregar un píxel de seguimiento con parámetros dinámicos a su URL de seguimiento, eche un vistazo a [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}). Asegúrese de documentar el uso en sus páginas de soporte para los desarrolladores que deseen utilizar su tecnología con AMP.
 
