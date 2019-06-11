@@ -49,7 +49,7 @@ contents:
     height: 5
     type: mobile
     alt: Washington Post
-    text: With nearly 55% of their traffic coming from mobile devices, The Washington Post knows that providing a great reading experience on mobile devices is critical to their long-term success.<br><br>In particular, The Post is focused on making their mobile content load as quickly as possible, because data shows that people abandon websites after just three seconds if the content doesn’t load quickly.<br><br>In June 2015, The Washington Post joined a group of publishers and technology companies to create the Accelerated Mobile Pages Project, a new open standard for publishing content which loads instantly, anywhere across the mobile web.
+    text: With nearly 55% of their traffic coming from mobile devices, The Washington Post knows that providing a great reading experience on mobile devices is critical to their long-term success.<br><br>In particular, The Post is focused on making their mobile content load as quickly as possible, because data shows that people abandon websites after just three seconds if the content doesn’t load quickly.<br><br>In June 2015, The Washington Post joined a group of publishers and technology companies to create the AMP Project, a new open standard for publishing content which loads instantly, anywhere across the mobile web.
     direction: left-flat
 
   - layout: quote

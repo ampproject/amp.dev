@@ -78,10 +78,10 @@ Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue some
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Projeto de Accelerated Mobile Pages</title>
+  <title>Projeto de AMP</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
   <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
