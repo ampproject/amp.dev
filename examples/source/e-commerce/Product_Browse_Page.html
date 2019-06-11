@@ -72,6 +72,56 @@ author: aghassemi
          .filter-mobile {
            display: none;
          }
+
+           /* global style in order to bind global style in the iframe*/
+
+           html, body {
+             font-size: 16px;
+             font-family: 'Noto Sans', sans-serif;
+             color: #48525C;
+           }
+
+         p {
+           line-height: 1.6rem;
+           font-weight: 400;
+           color: #48525c;
+           display: block;
+           margin-top: 1.1em;
+           margin-bottom: 0;
+           font-size: 1rem;
+         }
+
+
+         a {
+           font-weight: bold;
+           text-decoration: none;
+           color: #005AF0;
+         }
+
+         .ap--content a {
+           position: relative;
+           z-index: 10;
+         }
+
+         amp-selector.ampTabContainer.ampstart-headerbar-nav.i-amphtml-element.i-amphtml-layout-container.i-amphtml-layout {
+           display: flex;
+         }
+
+         .tabButton.h4.ampstart-nav-item {
+           /* custom styling, feel free to change */
+           text-align: center;
+           padding: 0.5rem;
+         }
+
+         input[type="submit"] {
+           margin-bottom: 40px;
+         }
+
+         .ampstart-btn {
+           margin-bottom: 40px;
+         }
+
+
          @media (min-width: 600px) {
            .refine {
              display:inline;
