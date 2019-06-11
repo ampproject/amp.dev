@@ -28,6 +28,7 @@ const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const ENV_DEV = 'development';
 const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
+
 const AVAILABLE_LOCALES = [
   'en',
   'fr',
@@ -42,6 +43,8 @@ const AVAILABLE_LOCALES = [
   'tr',
   'zh_CN',
 ];
+
+const TEST_CONTENT_PATH_REGEX = '^/tests/';
 
 class Config {
   constructor(environment = ENV_DEV) {
@@ -167,6 +170,16 @@ class Config {
       },
     };
 
+    // The default is we do not deploy test files on prod
+    // and in test mode we deploy only the test files
+    if (!this.options.include_paths && !this.options.ignore_paths) {
+      if (this.isTestMode()) {
+        this.options.include_paths = TEST_CONTENT_PATH_REGEX;
+      } else if (this.isProdMode()) {
+        this.options.ignore_paths = TEST_CONTENT_PATH_REGEX;
+      }
+    }
+
     if (this.options.include_paths || this.options.ignore_paths) {
       const filter = {};
       if (this.options.ignore_paths) {
@@ -181,6 +194,7 @@ class Config {
       podspec.deployments[this.environment] = {
         'filter': filter,
       };
+      signale.info('Add path filter for grow ', filter);
     }
 
     podspec.localization.locales = AVAILABLE_LOCALES;
