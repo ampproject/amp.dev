@@ -17,6 +17,7 @@
 'use strict';
 
 const {readFileSync} = require('fs');
+const url = require('url');
 const {join} = require('path');
 const yaml = require('js-yaml');
 const config = require('@lib/config.js');
@@ -27,6 +28,34 @@ const WWW_PREFIX = 'www.';
 
 const REDIRECT_LINKS_DEFINITION = join(__dirname, '../../config/amp-dev-redirects.yaml');
 const redirectLinks = yaml.safeLoad(readFileSync(REDIRECT_LINKS_DEFINITION));
+
+const AVAILABLE_LOCALES = config.getAvailableLocales();
+const LANGUAGE_PATH_PATTERN = /^\/([a-z]{2}(_[a-z]{2})?)\//;
+
+/**
+ *
+ * @param req
+ * @returns The redirect link or undefined if none was found.
+ */
+function getRedirectLink(req) {
+  let result = redirectLinks[req.path];
+  if (!result) {
+    const langMatch = req.path.match(LANGUAGE_PATH_PATTERN);
+    if (langMatch && AVAILABLE_LOCALES.findIndex(
+        (item) => langMatch[1] === item.toLowerCase()) >= 0) {
+      const noLangPath = req.path.substr(langMatch[1].length + 1);
+      result = redirectLinks[noLangPath];
+      if (result) {
+        result = '/' + langMatch[1] + result;
+      }
+    }
+  }
+  const queryString = url.parse(req.url).query;
+  if (result && queryString) {
+    result = result + '?' + queryString;
+  }
+  return result;
+}
 
 /**
  * Implements redirects:
@@ -41,7 +70,7 @@ module.exports = (req, res, next) => {
     return next();
   }
 
-  const redirectTarget = redirectLinks[req.path];
+  const redirectTarget = getRedirectLink(req);
   if (redirectTarget) {
     try {
       const targetUrl = new URL(redirectTarget, config.hosts.platform.base);

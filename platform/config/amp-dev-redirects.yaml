@@ -1,5 +1,7 @@
 # Redirects for amp.dev
 # External targets are possible
+# The paths specified as source will work with all configured locales.
+# Request query parameters of the original request are appended to the redirect
 #
 # The first section contains basic shortcuts
 # (For shortened deep links please use go.amp.dev/shortcut and the file 'go-links.yaml')
@@ -12,7 +14,6 @@
 # Add new entries in alphabetical order
 /ads: /about/ads
 /docs: /documentation/guides-and-tutorials/
-/documentation/guides-and-tutorials/learn/amp-email-format: /documentation/guides-and-tutorials/learn/email-spec/amp-email-format
 /email: /about/email
 /learn: /documentation/courses/
 /samples: /documentation/examples/
@@ -22,3 +23,9 @@
 ### Other redirects
 # Put here redirects for pages that have been moved, etc
 # Add new entries in alphabetical order
+/documentation/guides-and-tutorials/learn/amp-email-format: /documentation/guides-and-tutorials/learn/email-spec/amp-email-format
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/deep_dive_analytics
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/use_cases

@@ -9,7 +9,7 @@ $title: 将您的技术与 AMP 集成
 您可通过下述 4 种主要方法与 AMP 集成：
 
 ## 1. 添加对 amp-analytics 扩展组件的支持
-AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/configure_analytics.md', locale=doc.locale).url.path}})来帮助您着手使用这款组件。
+AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})来帮助您着手使用这款组件。
 
 如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
 

@@ -100,6 +100,15 @@ class Config {
   }
 
   /**
+   * Returns an array with the locale ids.
+   * (e.g. 'en', 'pt_BR', ...)
+   * These locale ids are used
+   */
+  getAvailableLocales() {
+    return AVAILABLE_LOCALES.slice(0); // clone our internal array
+  }
+
+  /**
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
    * @return {String} The full URL
    */
