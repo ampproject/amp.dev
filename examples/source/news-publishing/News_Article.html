@@ -256,7 +256,7 @@ author: aghassemi
       <!-- It's a good idea to recommend related content to your readers. With `amp-list` it is possible to dynamically include personalized content into your AMPs. It's a good idea to link to the AMP version of related content in order to keep the user in the fast AMP world. Learn more about `amp-list` [here](/documentation/components/amp-list) -->
       <amp-list width="300" height="75" layout="responsive" src="/static/samples/json/related_articles.json" binding="no">
         <template type="amp-mustache">
-          <a class="related" href="{{url}}"><amp-img width="101" height="75" src="<% hosts.backend %>{{thumbnail}}"></amp-img><span>{{title}}</span></a>
+          <a class="related" href="{{url}}"><amp-img width="101" height="75" src="{{thumbnail}}"></amp-img><span>{{title}}</span></a>
         </template>
       </amp-list>
       </main>
