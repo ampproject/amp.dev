@@ -20,7 +20,7 @@ const express = require('express');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.post('/getConsent', (request, response) => {
+examples.post('/get-consent', (request, response) => {
   response.json({
     promptIfUnknown: true,
   });
