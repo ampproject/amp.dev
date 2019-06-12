@@ -129,13 +129,13 @@ class Config {
 
   /**
    * Builds a podspec for the current environment and writes it to the Grow pod
-   * @param {Object} settings Options to filter grow pages (optional). Can be overwritten by command line options.
+   * @param {Object} growOptions Options to filter grow pages (optional). Can be overwritten by command line options.
    * @return {undefined}
    */
-  configureGrow(settings) {
+  configureGrow(growOptions) {
     const options = {};
-    if (settings) {
-      Object.assign(options, settings);
+    if (growOptions) {
+      Object.assign(options, growOptions);
     }
     Object.assign(options, this.options);
 
