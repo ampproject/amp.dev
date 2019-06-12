@@ -16,13 +16,11 @@
 'use strict';
 
 const express = require('express');
-const multer = require('multer');
-const upload = multer();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.post('/getConsent', upload.none(), (request, response) => {
+examples.post('/getConsent', (request, response) => {
   response.json({
     promptIfUnknown: true,
   });
