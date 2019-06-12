@@ -49,7 +49,7 @@ Since the AMP for Email library is a subset of the AMP HTML library, many of the
 
 #### Images
 
-To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/amp-imd.md', locale=doc.locale).url.path}}). The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system]
+To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/amp-img.md', locale=doc.locale).url.path}}). The `<amp-img>` tag requires a defined width and height and supports [AMP's layout system]
 ({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})
 
 
@@ -64,12 +64,12 @@ To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](
 The `<amp-img>` tag comes with powerful, built-in ways to control responsive design and set fallbacks.
 
 [tip type="note"]
-    Read more about using the AMP [layout and media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and how to set [image fallbacks](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.html?format=email). 
+    Read more about using the AMP [layout and media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and how to set [image fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). 
 [/tip]
 
 #### GIFs
 
-AMP has created [`<amp-anim>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
+AMP has created [`<amp-anim>`]({{g.doc('/content/amp-dev/documentation/components/amp-anim.md', locale=doc.locale).url.path}}), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
 
 ```
 <amp-anim 
