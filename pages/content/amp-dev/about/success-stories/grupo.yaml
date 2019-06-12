@@ -53,7 +53,7 @@ contents:
     type: mobile
     alt: Grupo Expansión
     headline: Solution
-    text: Grupo Expansión sought to enhance the user experience on their mobile websites, so they decided to implement a solution using the Accelerated Mobile Pages (AMP) framework. The publisher’s in-house development team took a phased approach through their content management system (Brightspot), with the first stage of development taking only two weeks. During this time, they converted existing content across both articles and galleries—where 90% of their traffic resides. Grupo Expansión then began making improvements based on best practices, including adding links to related content at the bottom of each article as well as applying a robust advertising strategy to ensure their AMP pages are profitable.
+    text: Grupo Expansión sought to enhance the user experience on their mobile websites, so they decided to implement a solution using the AMP framework. The publisher’s in-house development team took a phased approach through their content management system (Brightspot), with the first stage of development taking only two weeks. During this time, they converted existing content across both articles and galleries—where 90% of their traffic resides. Grupo Expansión then began making improvements based on best practices, including adding links to related content at the bottom of each article as well as applying a robust advertising strategy to ensure their AMP pages are profitable.
     direction: left-flat
 
   - layout: quote

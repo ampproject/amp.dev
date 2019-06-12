@@ -44,6 +44,9 @@ const test = require('./test.js');
 // The Google Cloud Storage bucket used to store build job artifacts
 const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
 
+// Path of the grow test pages for filtering in the grow podspec.yaml
+const TEST_CONTENT_PATH_REGEX = '^/tests/';
+
 
 /**
  * Cleans all directories/files that get created by any of the following
@@ -241,7 +244,14 @@ async function buildPages(done) {
   gulp.series(fetchArtifacts, buildFrontend,
       // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
-        config.configureGrow();
+        const options = {};
+        if (config.isTestMode()) {
+          options.include_paths = TEST_CONTENT_PATH_REGEX;
+          options.locales = 'en';
+        } else if (config.isProdMode()) {
+          options.ignore_paths = TEST_CONTENT_PATH_REGEX;
+        }
+        config.configureGrow(options);
         await grow('deploy --noconfirm --threaded');
       }, transformPages,
       // eslint-disable-next-line prefer-arrow-callback

@@ -14,7 +14,7 @@ Também é possível vincular o atributo `src` do elemento [`<amp-state>`]({{g.d
 
 ## Buscar os tamanhos disponíveis de uma camiseta
 
-Vamos fazer uso da capacidade de busca de dados remotos para pesquisar os preços dos SKUs no exemplo. O servidor de desenvolvimento Express.js em `app.js` já tem um ponto de extremidade `/shirts/sizes?shirt=<sku>` que, ao receber o SKU de uma camiseta, retorna os tamanhos disponíveis e o preço de cada tamanho. A resposta é enviada com um atraso artificial de um segundo, para simular a latência da rede.
+Vamos fazer uso da capacidade de busca de dados remotos para pesquisar os preços dos SKUs no exemplo. O servidor de desenvolvimento Express.js em `app.js` já tem um ponto de extremidade `/shirts/sizesAndPrices?shirt=<sku>` que, ao receber o SKU de uma camiseta, retorna os tamanhos disponíveis e o preço de cada tamanho. A resposta é enviada com um atraso artificial de um segundo, para simular a latência da rede.
 
 |  Solicitação                              |  Resposta |
 |---------------------------------------|-----------|

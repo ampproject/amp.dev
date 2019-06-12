@@ -44,7 +44,7 @@ kpis:
 contents:
 
   - layout: text
-    text: "Founded in 2008, New Delhi-based Jagran New Media (JNM) is a leading digital-media platform in India with over 85 million users. Their internet portfolio includes nine websites covering various genres, such as news, education, blogging, health, classifieds, youth, and videos. Jagran.com is the largest Hindi portal for news and information, attracting 29 million monthly unique visitors and 230 million pageviews.<br><br>JNM was an early adopter of Accelerated Mobile Pages (AMP) and wanted to expand on early success by optimizing their mobile site for users and increasing monetization."
+    text: "Founded in 2008, New Delhi-based Jagran New Media (JNM) is a leading digital-media platform in India with over 85 million users. Their internet portfolio includes nine websites covering various genres, such as news, education, blogging, health, classifieds, youth, and videos. Jagran.com is the largest Hindi portal for news and information, attracting 29 million monthly unique visitors and 230 million pageviews.<br><br>JNM was an early adopter of AMP and wanted to expand on early success by optimizing their mobile site for users and increasing monetization."
     direction: left-flat
 
   - layout: text-media

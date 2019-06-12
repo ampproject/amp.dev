@@ -4,8 +4,8 @@
   side="left">
   <nav toolbar="(min-width: 768px)"
     toolbar-target="ap--sidebar-content">
-    {% include '/views/partials/format-toggle.j2' %}
     <ul>
+      {% include '/views/partials/format-toggle.j2' %}
       <section class="ap-o-sidebar-section">
         {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
         <div class="ap-o-sidebar">

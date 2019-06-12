@@ -14,7 +14,7 @@ Anda juga dapat mengikat atribut `src` untuk elemen [`<amp-state>`]({{g.doc('/co
 
 ## Mengambil ukuran kemeja yang tersedia
 
-Mari kita manfaatkan kemampuan pengambilan data jarak jauh untuk mencari harga SKU di contoh. Server pengembangan Express.js di `app.js` telah memiliki titik akhir `/shirts/sizes?shirt=<sku>` yang, jika diberi SKU kemeja, menampilkan ukuran yang tersedia dan harga untuk setiap ukuran. Server pengembangan ini mengirimkan respons dengan penundaan buatan selama 1 detik untuk menyimulasikan latensi jaringan.
+Mari kita manfaatkan kemampuan pengambilan data jarak jauh untuk mencari harga SKU di contoh. Server pengembangan Express.js di `app.js` telah memiliki titik akhir `/shirts/sizesAndPrices?shirt=<sku>` yang, jika diberi SKU kemeja, menampilkan ukuran yang tersedia dan harga untuk setiap ukuran. Server pengembangan ini mengirimkan respons dengan penundaan buatan selama 1 detik untuk menyimulasikan latensi jaringan.
 
 |  Permintaan                              |  Respons |
 |---------------------------------------|-----------|
