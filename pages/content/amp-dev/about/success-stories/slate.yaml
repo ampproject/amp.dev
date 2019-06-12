@@ -45,7 +45,7 @@ kpis:
 contents:
 
   - layout: text
-    text: Slate.com, the current affairs magazine covering news, politics, technology, and culture, began publishing Accelerated Mobile Pages (AMP) at the beginning of this year. Slate consistently strives to create a great overall user experience and the decision to implement AMP was a straightforward one.
+    text: Slate.com, the current affairs magazine covering news, politics, technology, and culture, began publishing AMP at the beginning of this year. Slate consistently strives to create a great overall user experience and the decision to implement AMP was a straightforward one.
     direction: left-flat
 
   - layout: text-media
