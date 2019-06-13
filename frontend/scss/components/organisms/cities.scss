@@ -183,6 +183,11 @@
       display: flex;
       flex-wrap: wrap;
       margin: 20px 0 60px;
+
+      .#{molecule('event')} {
+        flex: 1 0 auto;
+        min-width: 0;
+      }
     }
 
     &-checkback {
