@@ -25,8 +25,8 @@
 # Put here redirects for pages that have been moved, etc
 # Add new entries in alphabetical order in the format /path/to/old/url: /path/to/new/url
 
-/documentation/examples/interactivity-dynamic-content/autosuggest_form/: /documentation/examples/components/amp-autocomplete
-/documentation/examples/interactivity-dynamic-content/simple_autosuggest/: /documentation/examples/components/amp-autocomplete
+/documentation/examples/interactivity-dynamic-content/autosuggest_form/: /documentation/examples/components/amp-autocomplete/
+/documentation/examples/interactivity-dynamic-content/simple_autosuggest/: /documentation/examples/components/amp-autocomplete/
 /documentation/guides-and-tutorials/learn/amp-email-format: /documentation/guides-and-tutorials/learn/email-spec/amp-email-format
 /documentation/guides-and-tutorials/optimize-measure/configure-analytics/: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/
 /documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors
