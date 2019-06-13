@@ -6,7 +6,6 @@
 
 */
 
-
 @import '_extends.scss';
 @import '_functions.scss';
 @import '_mixins.scss';
@@ -22,14 +21,134 @@
     margin-top: 0px;
   }
 
-  .#{molecule('jumbo-cities')} {
-    height: 0;
-    overflow: hidden;
-    padding-top: 48%;
-    position: relative;
-    margin-top: 20px;
+  .#{molecule('tip')} {
+    max-width: 60%;
 
-    .#{atom('ico')} {
+    button {
+      float: right;
+    }
+  }
+
+  &-map {
+    height: 0;
+    padding-top: 45.45454545%;
+    position: relative;
+    margin: 20px 0 60px;
+
+    &-grid {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(110, 1fr);
+      grid-template-rows: repeat(50, 1fr);
+      grid-gap: 1px;
+      z-index: 1;
+      pointer-events: none;
+
+      &.dev {
+        grid-gap: 0;
+      }
+    }
+
+    &-pin {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+      border-radius: 30px;
+      cursor: pointer;
+      pointer-events: auto;
+      box-shadow: 1px 1px 2px rgba(black,.5);
+
+      &-next {
+        background-color: #fff;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 30px;
+          background: #fff;
+          animation: pulsePin 2s infinite cubic-bezier(.55,0,.1,1);
+        }
+
+        @keyframes pulsePin {
+          from { transform: scale(1); opacity: 1; }
+          to { transform: scale(2); opacity: 0; }
+        }
+      }
+
+      &-past {
+        background-color: #c3c3c3;
+      }
+
+      &-tooltip {
+        display: none;
+        position: absolute;
+        left: -7px;
+        bottom: calc(100% + 5px);
+        padding: 3px 7px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+        text-transform: uppercase;
+        background: #fff;
+        box-shadow: 1px 2px 5px 0 rgba(black, .25);
+        border-radius: 3px;
+        z-index: 2;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 7px;
+          bottom: -5px;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid #fff;
+        }
+      }
+
+      &:hover &-tooltip {
+        display: block;
+      }
+    }
+
+    &-control {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+      line-height: 0;
+      border: none;
+      outline: none;
+      box-shadow: -1px -1px 0 rgba(0,0,0,0.15);
+      cursor: default;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      pointer-events: auto;
+
+      &:checked {
+        padding-top: 50%;
+        border-radius: 30px;
+        background-color: color('red');
+      }
+    }
+
+    &-background {
+      display: flex;
       position: absolute;
       top: 0;
       left: 0;
