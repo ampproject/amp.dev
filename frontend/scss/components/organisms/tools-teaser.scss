@@ -26,6 +26,7 @@ main.#{template('tools')} {
 
     .#{organism('tool-section')} {
       margin-bottom: 2em;
+      padding: 0 30px;
 
       @media (min-width: 768px) {
         margin-top: 4em;
@@ -37,9 +38,8 @@ main.#{template('tools')} {
     }
 
     .#{organism('tool-format-filter-container')} {
+      grid-row-gap: 0;
       margin-top: 0;
-
-      & > .#{utility('container')} { grid-row-gap: 0; }
     }
 
     .#{organism('tool-format-filter-caption')} {
@@ -52,8 +52,8 @@ main.#{template('tools')} {
       list-style: none;
       display: flex;
       align-items: center;
-      padding: 15px 25px 35px 55px;
-      margin: 0 -40px 0 -55px;
+      padding: 15px 30px 35px;
+      margin: 0 -30px;
       overflow-y: auto;
 
       li {
@@ -107,7 +107,7 @@ main.#{template('tools')} {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 60px 30px;
-        margin: 0 40px;
+        margin: 0;
         align-items: stretch;
 
         @media (min-width: 768px) {
@@ -143,16 +143,29 @@ main.#{template('tools')} {
           margin-right: 2px;
         }
 
+        .#{molecule('teaser-headline')}.single {
+          text-align: center;
+          font-size: 20px;
+        }
+
         .#{molecule('teaser-image')}{
-          @media (max-width: 768px) {
+          box-shadow: inset 0 -1px 0 #f0f0f0;
+
+          @media (max-width: 767px) {
             width: 30%;
             flex: 1 0 auto;
           }
+          &.contain {
+            amp-img {
+              margin: 0 10px;
+
+              @media (min-width: 768px) {
+                margin: 15px 30px;
+              }
+            }
+          }
           &:before {
             display: none;
-          }
-          &.contain {
-            padding: 15px 30px;
           }
         }
 

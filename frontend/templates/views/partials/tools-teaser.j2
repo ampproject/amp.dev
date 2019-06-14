@@ -23,13 +23,20 @@
       <div>
           <div class="ap-m-teaser-content">
             {% if teaser.logo %}
-              <div class="ap-a-img ap-m-teaser-logo fixed-container">
-                <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
-              </div>
+            <div class="ap-a-img ap-m-teaser-logo fixed-container">
+              <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
+            </div>
             {% endif %}
 
-            <h4 class="ap-m-teaser-headline">{% if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') %}<svg class="ap-m-teaser-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>{% endif %}{{ teaser.name }}</h4>
+            <h4 class="ap-m-teaser-headline {{ 'single' if not teaser.description }}">
+            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') -%}
+              <svg class="ap-m-teaser-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+            {%- endif -%}
+            {{- teaser.name -}}
+            </h4>
+            {% if teaser.description %}
             <p>{{ teaser.description }}</p>
+            {% endif %}
           </div>
 
           {% if teaser.type %}
