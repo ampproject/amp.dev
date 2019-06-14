@@ -38,6 +38,10 @@
 
   @media (min-width: 1024px) {
     top: 0px;
+
+    &.has-banner {
+      top: -#{$bannerHeight};
+    }
   }
 }
 
