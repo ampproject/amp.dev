@@ -198,19 +198,23 @@
   }
 
   &-visited-list {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
     list-style: none;
-    column-fill: balance;
     padding-left: 0;
-    column-count: 2;
     margin-top: 50px;
 
     @media (min-width: 480px) {
-      column-count: 3;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media (min-width: 1200px) {
-      column-count: 5;
+      grid-template-columns: repeat(5, 1fr);
     }
-
   }
 }

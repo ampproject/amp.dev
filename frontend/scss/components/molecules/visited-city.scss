@@ -14,9 +14,6 @@
 @import 'components/atoms/_text.scss';
 
 .#{molecule('visited-city')} {
-  margin-bottom: 35px;
-  padding: 0 15px;
-
   &-group {
     display: inline-block;
     white-space: nowrap;
