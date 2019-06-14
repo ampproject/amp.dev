@@ -278,7 +278,7 @@ developer:
 providers:
   - name: Sparkpost
     url: https://www.sparkpost.com/
-    type: Email Service Provider
+    type: Email Service
     image:
       src: /static/img/tools/sparkpost.png
       width: 1034
@@ -288,7 +288,7 @@ providers:
       - email
   - name: Twilio Sendgrid
     url: https://www.twilio.com/sendgrid
-    type: Email Service Provider
+    type: Email Service
     image:
       src: /static/img/tools/sendgrid.png
       width: 348
