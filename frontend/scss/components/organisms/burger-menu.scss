@@ -77,7 +77,7 @@
       }
 
       & ~ .ap--main {
-        max-height: 100vh;
+        max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
       }
 
       & ~ .ap--footer {
