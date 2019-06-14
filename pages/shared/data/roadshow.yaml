@@ -1,6 +1,6 @@
 nextstop:
   - title: berlin, de
-    coords: 57x11
+    coords: 57x12
     location: Google Berlin
     time: 09:00–18:00
     day: 7
@@ -45,7 +45,7 @@ past:
     coords: 103x44
     date: OCT 13, 2017
   - title: MUNICH
-    coords: 56x12
+    coords: 56x13
     date: NOV 7, 2017
   - title: PARIS
     coords: 54x14
