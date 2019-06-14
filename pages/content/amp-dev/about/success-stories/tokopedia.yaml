@@ -54,7 +54,7 @@ contents:
     type: mobile
     alt: Tokopedia
     headline: Solution
-    text: "In a highly competitive e-commerce market, it’s critical to provide the best user experience (UX) for customers, including for those using low-end smartphones on 3G or 2G connections. As Tokopedia’s mobile traffic grew, the company saw an opportunity to acquire new users and improve mobile conversions through this valuable channel.<br><br>They built Accelerated Mobile Pages (AMP) versions of their top three types of organic landing pages types: product, category, and trending. Overall, this resulted in 3.6 million AMP pages optimized for organic search, their biggest product-discovery funnel. The AMP pages also transitioned users to a Progressive Web App (PWA), ensuring consistent speed and a great UX."
+    text: "In a highly competitive e-commerce market, it’s critical to provide the best user experience (UX) for customers, including for those using low-end smartphones on 3G or 2G connections. As Tokopedia’s mobile traffic grew, the company saw an opportunity to acquire new users and improve mobile conversions through this valuable channel.<br><br>They built AMP versions of their top three types of organic landing pages types: product, category, and trending. Overall, this resulted in 3.6 million AMP pages optimized for organic search, their biggest product-discovery funnel. The AMP pages also transitioned users to a Progressive Web App (PWA), ensuring consistent speed and a great UX."
     direction: left-flat
 
   - layout: text-button

@@ -22,7 +22,7 @@ AMP stories are a great way to reach your audience with visual, immersive storyt
 
 Keep your reader engaged with your story. Don’t require them to click links to other websites to get essential information.
 
-This [AMP story](https://mic.com/stories/327/what-happens-in-your-brain-when-you-listen-to-music) from Mic.com is a good example of using minimal text and full screen portrait images and video to give the reader a good understanding of the topic.
+This [AMP story](https://www-washingtonpost-com.cdn.ampproject.org/c/s/www.washingtonpost.com/world/2018/07/16/amp-stories/why-india-has-million-stray-cows-roaming-country/) from The Washington Post is a good example of using minimal text and full screen portrait images and video to give the reader a good understanding of the topic.
 
 ### Use video and animation
 
@@ -33,7 +33,7 @@ USA Today’s [AMP story](https://www.usatoday.com/amp-stories/beyonce-rule-the-
 ### Include branding and a date in your stories
 Help users understand who created the story and when it was published. Including brand attribution and a publication date on the cover page can help foster trust.
 
-This [AMP story](https://mic.com/stories/500/did-you-know-these-fun-facts-about-stan-lee) from Mic.com about Stan Lee makes it easy to see at-a-glance who published the story and how recent it is.
+This [AMP story](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) from CNN about traveling in Italy makes it easy to see at-a-glance who published the story and how recent it is.
 
 Keep reading for additional tips on making the most of your AMP stories.
 
@@ -600,5 +600,3 @@ The system header contains controls such as the mute and share icons, appears at
 #### Aspect ratio
 
 The page height varies across different browsers and devices. When designing assets on the page, use full-bleed assets based on a 9:16 aspect ratio. Don't leave any essential content close to the edge of the page as it may be  cropped on  some devices.
-
-

@@ -54,7 +54,7 @@ contents:
     type: mobile
     alt: TransUnion
     headline: Solution
-    text: To enhance the mobile experience, TransUnion turned to Accelerated Mobile Pages (AMP)—recommended by the brand’s marketing consultant, <a href="https://www.brightedge.com/" target="_blank">BrightEdge</a>—with the hope of increasing mobile conversions at an efficient cost per order. Because the site was already mobile-friendly, TransUnion didn’t have to redesign the content. This allowed the bureau to go live with AMP in less than a week—a quick turnaround.
+    text: To enhance the mobile experience, TransUnion turned to AMP—recommended by the brand’s marketing consultant, <a href="https://www.brightedge.com/" target="_blank">BrightEdge</a>—with the hope of increasing mobile conversions at an efficient cost per order. Because the site was already mobile-friendly, TransUnion didn’t have to redesign the content. This allowed the bureau to go live with AMP in less than a week—a quick turnaround.
     direction: left-flat
 
   - layout: text-button
