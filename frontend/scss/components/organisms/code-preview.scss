@@ -18,7 +18,7 @@
 
 .#{organism('code-preview')} {
   position: relative;
-  background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
+  background: color('ebony-clay');
 
   &-reload {
     position: absolute;
