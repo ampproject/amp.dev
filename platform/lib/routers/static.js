@@ -18,6 +18,7 @@
 
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
+const {join} = require('path');
 const config = require('@lib/config');
 const project = require('@lib/utils/project');
 const robots = require('./robots');
@@ -28,7 +29,7 @@ const staticRouter = express.Router();
 staticRouter.use('/static', express.static(project.paths.STATICS_DEST));
 
 if (config.isProdMode()) {
-  staticRouter.use('/', express.static('static/sitemap'));
+  staticRouter.use('/', express.static(join(project.paths.STATICS_DEST, 'sitemap')));
 }
 
 staticRouter.get('/serviceworker.js', (request, response) => {

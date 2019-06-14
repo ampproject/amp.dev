@@ -2,11 +2,23 @@
 
 [![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=future)](https://travis-ci.org/ampproject/docs)
 
-This repository is meant to work towards the relaunch of the official website
-of [ampproject.org](https://www.ampproject.org/) until we reach a progress
-that makes a merge over to the original repository beneficial.
+The official homepage of the AMP Project.
 
-## Requirements
+## Contributing
+
+We welcome contributons to amp.dev.
+
+* **Bug reports and feature requests:** something missing or not working on https://amp.dev? Please file an issue [here](https://github.com/ampproject/docs/issues/new).
+* **Documentation & Guides:** see [this guide](./contributing/documentation.md) for more information on how to contribute documentation to amp.dev.
+* **Code samples & demos:** see [this guide](./contributing/samples.md) for more information on how to contribute sample code to amp.dev.
+
+**Note:** fixing spelling mistakes and other small changes are often easiest by directly editing a file on Github.
+
+<img width="669" alt="Inline editing on Github" src="https://user-images.githubusercontent.com/380472/59018008-2d8f5580-8845-11e9-8160-e2890e2c7944.png">
+
+## Setup
+
+### Requirements
 
 1.  Install the LTS version of [NodeJS](https://nodejs.org). An easy way to do so is with `nvm`. (Mac and Linux: [here](https://github.com/creationix/nvm), Windows: [here](https://github.com/coreybutler/nvm-windows))
     ```sh
@@ -23,7 +35,8 @@ that makes a merge over to the original repository beneficial.
     $ npm install
     ```
 
-## Develop
+### Develop
+
 If it's your first time working on amp.dev it is recommended to bootstrap your local environment. To do so make sure you have setup a valid [GitHub access token](https://github.com/settings/tokens) in an environment variable named `AMP_DOC_TOKEN` like:
 
 ```sh
@@ -48,8 +61,6 @@ This command prints a lot to the shell and will most probably end on `Server rea
 
 #### Documents
 Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
-
-Also see MAINTENANCE.md for a more detailed explanation of the various frontmatter keys used throughout the project.
 
 #### Samples
 Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development only changed samples are rebuilt. To freshly build *all* samples you can run `gulp develop --clean-samples`.

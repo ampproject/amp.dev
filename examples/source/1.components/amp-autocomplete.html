@@ -1,9 +1,3 @@
-<!---
-experiments:
-  - amp-autocomplete
-preview: default
---->
-
 <!--
   ## Introduction
 
@@ -80,14 +74,19 @@ preview: default
     display: inline-block;
     vertical-align: middle;
   }
-  .trending-fruits {
-    padding-top: 6px;
+  .product {
+    align-items: center;
+    line-height: 36px;
+  }
+  form {
+    padding: 10px;
   }
   </style>
 
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
+  <h2>Basic usage</h2>
   <!-- 
     ## Basic usage 
 
@@ -96,9 +95,11 @@ preview: default
 
     A **datasource** must be a JSON object containing an array property `items`, and can be specified inline with a child `script type="application/json"` tag, or a server endpoint specified with a `src` attribute.
   -->
-  <form>
-    <amp-autocomplete filter="substring" min-characters="0">
-      <input type="text">
+  <form class="sample-form" method="post"
+        action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
+        target="_top">
+    <amp-autocomplete filter="substring">
+      <input>
       <script type="application/json">
         {
           "items": ["apple", "orange", "banana"]
@@ -110,12 +111,15 @@ preview: default
   <!-- 
     Alternatively, a datasource can also be provided as remote data through the `src` attribute.
   -->
-  <form>
-    <amp-autocomplete filter="substring" min-characters="0" src="/static/samples/json/amp-autocomplete-cities.json">
-      <input type="text">
+  <form class="sample-form" method="post"
+        action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
+        target="_top">
+    <amp-autocomplete filter="substring" src="/static/samples/json/amp-autocomplete-cities.json">
+      <input>
     </amp-autocomplete>
-</form>
+  </form>
 
+  <h2>Dynamic <code>src</code></h2>
   <!-- 
     ## Dynamic `src`
 
@@ -128,13 +132,13 @@ preview: default
     </div>
     <form class="sample-form"
       method="post"
-      action-xhr="/documentation/examples/api/submit-form-input-text-xhr"
+      action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
       target="_top">
       <div class="input-field">
         <amp-autocomplete filter="substring" min-characters="0"
             src="/static/samples/json/amp-autocomplete-cities.json"
             [src]="srcUrl">
-            <input type="text" name="name" required>
+            <input name="name" required>
         </amp-autocomplete>
         <input name="submit-button" type="submit" value="Submit"><br>      
       </div>
@@ -146,23 +150,42 @@ preview: default
     </form>
   </div>
 
+  <h2>Suggesting rich content</h2>
   <!-- 
     ## Suggesting rich content
 
     More complicated data can be passed into autocompleted with an array of JsonObjects in "items".
 
     ```json
-    {
-      "items": [{
-        "id": 1,
-        "img": "/img/product1_640x426.jpg",
-        "name": "Apple",
-        "price": "1.99",
-        "color": "green"
-      }, 
-      ...
-      }]
-    }
+    { "items" : [
+        {
+            "city" : "Albany",
+            "state" : "New York", 
+            "areaCode" : 518,
+            "population" : 98251
+        }, {
+            "city" : "Annapolis",
+            "state" : "Maryland",
+            "areaCode" : 410,
+            "population" : 39321
+        }, {
+            "city" : "Trenton",
+            "state" : "New Jersey",
+            "areaCode" : 609,
+            "population" : 84964
+        }
+    ] }
+    ```
+
+    The corresponding display of these data in the `amp-autocomplete` can be specified through a template.
+
+    ```html
+    <template type="amp-mustache" id="amp-template-custom">
+      <div class="city-item" data-value="{{city}}, {{state}}">
+          <div>{{city}}, {{state}}</div>
+          <div class="custom-population">Population: {{population}}</div>        
+      </div>
+    </template>
     ```
 
     By default, `amp-autocomplete` will suggest items by matching on the "value" property of each JsonObject, but for more specified data, an attribute `filter-value` can be provided to signify the appropriate property to search on. 
@@ -170,12 +193,12 @@ preview: default
   -->
   <form class="sample-form"
     method="post"
-    action-xhr="/documentation/examples/api/submit-form-input-text-xhr"
+    action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
     target="_top">
     <label>
         <span>Search for</span>
         <amp-autocomplete filter="token-prefix" filter-value="city" min-characters="0">
-          <input type="text" name="term">
+          <input type="search" name="city">
             <script type="application/json">
                 { "items" : [
                     {
@@ -206,55 +229,88 @@ preview: default
     </label>
     <input type="submit" value="Search">
     <div submit-success>
-      Success!
+      <template type="amp-mustache">
+        Successfully submitted {{city}}!
+      </template>
     </div>
     <div submit-error>
       Error!
     </div>
 </form>
 
+  <h2>Display default items</h2>
   <!-- 
-    ## Default state
+    ## Displaying default items
 
-    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating. 
+    Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating and the `min-characters` attribute on `amp-autocomplete`.
+
+    Additionally, because the `data-disabled` attribute on a template-rendered item allows it to be displayed but not searched against or selected, it can be useful for constructing a "header" within the results list that can serve to organize selectable items into categories. In the example below, "Popular groceries" acts as an example of the disabled item because it is not an item that you actually want to treat as a product.
   -->
   <div>
+    <amp-state id="generalInventory">
+        <script type="application/json">
+          { "items" : [{
+            "name": "apple",
+            "emoji": "🍎",
+            "price": "$1"
+          }, {
+            "name": "grapes",
+            "emoji": "🍇",
+            "price": "$2"
+          }, {
+            "name": "whole milk",
+            "emoji": "🥛",
+            "price": "$4"
+          }, {
+            "name": "banana",
+            "emoji": "🍌",
+            "price": "$0.50"
+          }] }
+        </script>
+    </amp-state>
     <form class="sample-form"
-    method="post"
-    action-xhr="/documentation/examples/api/submit-form-input-text-xhr"
-    target="_top">
-      <amp-autocomplete filter="substring" min-characters="0" [src]="manualFilterData" >
-          <input type="text" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
-            initialInventory : { 'items' : [ 'apple', 'orange', 'banana' ]} })">
-            <amp-state id="initialInventory">
-                <script type="application/json">
-                  { "items" : [ { "value" : "", 
-                            "isInitial": "true", 
-                            "produce": [ "apple", "orange", "banana" ] } ] }
-                </script>
-            </amp-state>
-          <template type="amp-mustache">
+      method="post"
+      action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
+      target="_top">
+      <amp-autocomplete filter="substring" min-characters="0" filter-value="name" [src]="manualFilterData">
+        <input type="search" name="product" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
+            initialInventory : generalInventory })">
+        <amp-state id="initialInventory">
+            <script type="application/json">
+              { "items" : [
+               { "isInitial": "true", 
+                  "name": "apple"
+                }, { "isInitial": "true", 
+                  "name": "grapes"
+                }, { "isInitial": "true", 
+                  "name": "whole milk"
+                }, { "isInitial": "true", 
+                  "name": "banana"
+                } ] 
+              }
+            </script>
+        </amp-state>
+        <template type="amp-mustache">
             {{#isInitial}}
-              <div data-value="">
-                <b>Recommended Fruit</b>
-              {{#produce}}
-              <div class="trending-fruits">
+              <div class="product" data-value="{{name}}">
                 <amp-img class="trending" width="24" height="24" src="/static/samples/img/trending.png"></amp-img>
-                <span class="trending">{{.}}</span>
-              </div>
-              {{/produce}}
+                <span class="name-and-description">{{name}}</span>
               </div>
             {{/isInitial}}
             {{^isInitial}}
-              <div data-value="{{.}}">
-                {{.}}    
+              <div data-value="{{name}}" class="product">
+                <div class="name-and-description">
+                    <div class="product-name">{{emoji}} <b>{{name}}</b> <i>{{price}}</i></div>
+                </div>
               </div>
             {{/isInitial}}
           </template> 
         </amp-autocomplete>
       <input type="submit" value="Search">
       <div submit-success>
-        Success!
+        <template type="amp-mustache">
+          Success! Added <strong>{{product}}</strong> to your cart.
+        </template>
       </div>
       <div submit-error>
         Error!

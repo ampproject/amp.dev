@@ -58,7 +58,7 @@ function verifyFormXHRInputText(request, response) {
       verifyErrors: [
         {
           message: `The username ${username} is already taken`,
-          username,
+          name: 'username',
         },
       ],
     });

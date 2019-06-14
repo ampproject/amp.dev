@@ -16,26 +16,30 @@ amp-sidebar {
 
 nav[toolbar] {
   top: 86px;
-  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  max-height: calc(100vh - 86px);
 
   @media (min-width: 768px){
-    height: auto;
     position: sticky;
-    overflow: auto;
-    max-height: calc(100vh - 86px);
-  }
-
-  &::-webkit-scrollbar {
-    width: 2px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(color('black'), 0.10);
   }
 
   & > ul {
+    -webkit-overflow-scrolling: touch;
     margin: 0;
     padding: 0;
+
+    @media (min-width: 768px){
+      overflow: auto;
+      max-height: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(color('black'), 0.10);
+    }
   }
 }
 

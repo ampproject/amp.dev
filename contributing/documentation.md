@@ -1,4 +1,5 @@
-# Maintenance
+# Writing documentation and guides
+
 This document holds all the information that is relevant to maintain and contribute the content for each if its packages.
 
 ## Collections
