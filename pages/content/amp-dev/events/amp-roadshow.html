@@ -90,7 +90,7 @@ section_links:
 
     <div class="ap-o-cities-map">
       {% if doc.pod.env.dev %}
-      <aside class="ap-o-cities-map-grid dev" hidden [hidden]="!coordsGridToggled">
+      <aside class="ap-o-cities-map-grid ap-o-cities-map-grid-dev" hidden [hidden]="!coordsGridToggled">
       {% for row in range(0,50) %}
         {% for col in range(0,110) %}
           <input
@@ -111,8 +111,12 @@ section_links:
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
-          <div class="ap-o-cities-map-pin ap-o-cities-map-pin-next" style="grid-column: {{col}} / {{col + 2}}; grid-row: {{row}} / {{row + 2}};">
-            <div class="ap-o-cities-map-pin-tooltip">{{ place.title }}</div>
+          <div class="ap-o-cities-map-grid-cell" style="grid-column: {{col}}; grid-row: {{row}};">
+            <div class="ap-o-cities-map-pin ap-o-cities-map-pin-next">
+              {% do doc.icons.useIcon('/icons/cities-map-pin.svg') %}
+              <div class="ap-a-ico ap-o-cities-map-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cities-map-pin"></use></svg></div>
+            </div>
+            <div class="ap-o-cities-map-tooltip">{{ place.title }}</div>
           </div>
           {% endif %}
         {% endfor %}
@@ -121,8 +125,9 @@ section_links:
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
-          <div class="ap-o-cities-map-pin ap-o-cities-map-pin-past" style="grid-column: {{col}}; grid-row: {{row}};">
-            <div class="ap-o-cities-map-pin-tooltip">{{ place.title }}</div>
+          <div class="ap-o-cities-map-grid-cell" style="grid-column: {{col}}; grid-row: {{row}};">
+            <div class="ap-o-cities-map-pin ap-o-cities-map-pin-past"></div>
+            <div class="ap-o-cities-map-tooltip">{{ place.title }}</div>
           </div>
           {% endif %}
         {% endfor %}
