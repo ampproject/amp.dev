@@ -181,11 +181,11 @@ section_links:
       <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
       <ul class="ap-o-cities-visited-list">
 
-        {% for visited in doc.roadshow.past %}
+        {% for visited in doc.roadshow.past|sort(True, attribute='date') %}
           <li class="ap-m-visited-city">
             <div class="ap-m-visited-city-group">
               <div class="ap-m-visited-city-title">{{ visited.title }}</div>
-              <div class="ap-m-visited-city-date">{{ visited.date }}</div>
+              <div class="ap-m-visited-city-date">{{ visited.date|datetime('MMM d, Y') }}</div>
             </div>
           </li>
         {% endfor %}
