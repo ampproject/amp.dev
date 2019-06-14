@@ -20,7 +20,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 .#{molecule('code-snippet')} {
 
   overflow-x: auto;
-  margin: 1.1rem -15px 0 0;
+  margin: 1.1rem 0 0 0;
   padding: 0 1em;
   color: color('white');
   line-height: 1.3em;
@@ -41,10 +41,6 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   @media (min-width: 768px) {
     max-width: 100%;
     margin-right: -30px;
-  }
-
-  @media (min-width: 1024px) {
-    margin-right: 0;
   }
 
   pre {
