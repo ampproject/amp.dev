@@ -16,14 +16,12 @@
 'use strict';
 
 const express = require('express');
-const multer = require('multer');
-const upload = multer();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-examples.post('/submit-form-bookmark', upload.none(), (request, response) => {
-  const id = request.body ? request.body.id : '';
+examples.post('/submit-form-bookmark', (request, response) => {
+  const id = request.query ? request.query.id : '';
   response.json({
     result: `Item with ID ${id} bookmarked.`,
   });
