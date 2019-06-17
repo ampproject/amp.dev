@@ -23,6 +23,7 @@ const config = require('@lib/config');
 const project = require('@lib/utils/project');
 const URL = require('url').URL;
 const fetch = require('node-fetch');
+const nunjucks = require('nunjucks');
 
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
@@ -115,6 +116,17 @@ function readPageFromDisk(searchPath) {
   });
 }
 
+const nunjucksEnvironment = new nunjucks.Environment(null, {
+  tags: {
+    blockStart: '<!--%',
+    blockEnd: '%-->',
+    variableStart: '<!--[[',
+    variableEnd: ']]-->',
+    commentStart: '<!--#',
+    commentEnd: '#-->',
+  }
+});
+
 // eslint-disable-next-line new-cap
 const pages = express.Router();
 
@@ -126,7 +138,21 @@ pages.get('/*', async (req, res, next) => {
   }
 
   const page = await getPageContents(url.pathname);
-  res.send(page);
+  // Compile a template from the retrieved page
+  const template = nunjucks.compile(page, nunjucksEnvironment);
+
+  try {
+    // Render the template with sanitized, relevant GET parameters
+    const renderedPage = template.render({
+      format: req.query.format || 'websites',
+      category: req.query.category || null,
+    });
+
+    res.send(renderedPage);
+    return;
+  } catch(e) {
+    next(e);
+  }
 });
 
 module.exports = pages;
