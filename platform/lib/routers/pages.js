@@ -17,12 +17,12 @@
 'use strict';
 
 const express = require('express');
-const got = require('got');
 const fs = require('fs');
 const path = require('path');
 const config = require('@lib/config');
 const project = require('@lib/utils/project');
 const URL = require('url').URL;
+const fetch = require('node-fetch');
 
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
@@ -63,7 +63,7 @@ async function getPageContents(pagePath) {
 
   // TODO(matthiasrohmer): Implement LRU cache to speed up resolving
 
-  // The page path has been ensure to always have a trailing slash which isn't
+  // The page path has been ensured to always have a trailing slash which isn't
   // needed to find a matching page file
   pagePath = pagePath.slice(0, -1);
 
@@ -89,13 +89,11 @@ async function getPageContents(pagePath) {
  * @return {null|String}  The pages contents if it can be found
  */
 async function fetchPageFromGrow(searchPath) {
-  const response = await got(searchPath, {
-    baseUrl: config.hosts.pages.base,
-    throwHttpErrors: false,
-  });
+  const searchUrl = new URL(searchPath, config.hosts.pages.base);
+  const response = await fetch(searchUrl.toString());
 
-  if (!response.error && response.statusCode !== 404 && response.body) {
-    return response.body;
+  if (response.status && response.status !== 404) {
+    return response.text();
   }
 }
 
