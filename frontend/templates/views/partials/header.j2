@@ -10,9 +10,11 @@
 
 {# Simply set to False to disable banner #}
 {% set show_banner = True %}
-{% set banner %}
-{% include '/views/partials/banner.j2' %}
-{% endset %}
+{% if show_banner %}
+  {% set banner %}
+  {% include '/views/partials/banner.j2' %}
+  {% endset %}
+{% endif %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
 <header class="ap--header{{' has-banner' if show_banner}}" [class]="mainmenuopen ? 'ap--header{{' has-banner' if show_banner}} mainmenuopen' : 'ap--header{{' has-banner' if show_banner}}'">
