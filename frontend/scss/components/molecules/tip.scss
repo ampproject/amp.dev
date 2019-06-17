@@ -132,6 +132,10 @@ $borderSize: 5px;
       color: color('red')
     }
 
+    p {
+      margin-top: 0;
+    }
+
     .#{molecule('tip')} {
       &-content:before {
         @extend %pseudo-base;
