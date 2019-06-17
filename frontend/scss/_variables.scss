@@ -20,6 +20,13 @@ $sizes: (
   xl: '5',
 );
 
+/* This variables where used in the following files:
+- frontend/scss/components/molecules/banner.scss
+- frontend/scss/components/organisms/header.scss
+- frontend/scss/components/organisms/burger-menu.scss
+
+The calculations of the height and top values of banner, header and burger-menu
+are based on this variables. If you change them, these it automatically fits. */
 $mobileHeaderHeight: 55px;
 $bannerHeight: 31px;
 
