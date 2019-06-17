@@ -12,8 +12,9 @@ Start
 <!--
   test comment
 -->
-<p>Text &amp; 'entities'</p>
-
+<p>Text & 'entities'</p>
+{% set test = 1 %}
+<p>{{test + 1}}</p>
 ```
 
 [/example]

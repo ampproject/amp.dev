@@ -2,9 +2,16 @@ const express = require('express');
 const request = require('supertest');
 
 // We want to unit test the prod mode
+// and the filteredPages module needs some settings and methods
 jest.setMock('@lib/config', {
   isDevMode: () => {
     return false;
+  },
+  getHost: () => {
+    return 'http://localhost';
+  },
+  hosts: {
+    preview: 'preview',
   },
 });
 
