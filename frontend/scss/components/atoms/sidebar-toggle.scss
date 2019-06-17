@@ -147,6 +147,7 @@ $originalEasing: cubic-bezier(0,0,.21,1);
     display: inline-block;
 
     &-label {
+      position: -webkit-sticky;
       position: sticky;
       top: 138px;
       display: inline-flex;
