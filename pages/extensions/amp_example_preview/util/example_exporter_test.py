@@ -14,13 +14,16 @@ from grow.pods import pods
 
 class SourceCodeExporterTestCase(unittest.TestCase):
 
+
+  def test_example_unknown_format_type(self):
+    example_doc = self.get_example_export('<h1>headline</h1>', 'invalid')
+    self.assertEqual(None, example_doc)
+
   def test_example_body_only(self):
     example_doc = self.get_example_export('<h1>headline</h1>')
-
     self.assertEqual('Test', example_doc.title)
     self.assertEqual('websites', example_doc.type_id)
     self.assertEqual('/test/bar.example.1.html', example_doc.file_path)
-
 
   def test_generate_html(self):
     exporter = self.get_exporter(

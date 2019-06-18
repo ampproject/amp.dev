@@ -75,7 +75,8 @@ class ExampleExporter(object):
 
   def get_example_export(self, type_name):
     if not type_name in FORMAT_TYPE_IDS:
-      raise Exception('Unsupported format type: {}'.format(type))
+      self.doc.pod.logger.error('Unknown format \'{}\' defined in file {}'.format(type_name, self.doc.pod_path))
+      return None
     example_export = ExampleExport(self.doc, self.example_document, type_name)
     return example_export
 
@@ -95,10 +96,10 @@ class ExampleExporter(object):
 
     for type_name in formats:
       example_export = self.get_example_export(type_name)
-      self.write_example(example_export, examples_dir)
-      if preview_url is None:
-        preview_url = example_export.url_without_format
-
+      if example_export:
+        self.write_example(example_export, examples_dir)
+        if preview_url is None:
+          preview_url = example_export.url_without_format
     return preview_url
 
 
