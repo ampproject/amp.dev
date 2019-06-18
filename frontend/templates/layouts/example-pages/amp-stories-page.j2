@@ -1,16 +1,16 @@
 <!doctype html>
 <html amp lang="en">
 <head>
-{%- if not example.has_head_tag('meta', 'charset') %}
+{%- if not example.has_tag_in_head('meta', 'charset') %}
   <meta charset="utf-8">
 {%- endif -%}
-{%- if not example.has_head_tag('title') %}
+{%- if not example.has_tag_in_head('title') %}
   <title>{{export.title|e}} - Example {{example.index}}</title>
 {%- endif -%}
 {%- if not example.has_amp_script() %}
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 {%- endif -%}
-{%- if not example.has_head_tag('script', 'custom-element', 'amp-story') %}
+{%- if not example.has_tag_in_head('script', 'custom-element', 'amp-story') %}
   <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
 {%- endif -%}
 {%- for dependency in example.imports if dependency -%}
@@ -21,10 +21,10 @@
 {%- if example.template and not example.has_import_in_head(example.template) %}
   <script custom-template="{{example.template.name}}" src="https://cdn.ampproject.org/v0/{{example.template.name}}-{{example.template.version}}.js" async></script>
 {%- endif -%}
-{%- if not example.has_head_tag('link', 'rel', 'canonical') %}
+{%- if not example.has_tag_in_head('link', 'rel', 'canonical') %}
   <link rel="canonical" href="{{export.canonical}}">
 {%- endif -%}
-{%- if not example.has_head_tag('meta', 'name', 'viewport') %}
+{%- if not example.has_tag_in_head('meta', 'name', 'viewport') %}
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 {%- endif -%}
 {%- if not example.has_boilerplate() %}

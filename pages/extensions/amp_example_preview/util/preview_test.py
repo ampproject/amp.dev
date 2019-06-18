@@ -6,7 +6,7 @@ import os
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from preview import *
+from preview import ExamplePreview, ExamplePreviewMatch
 
 
 class PreviewTestCase(unittest.TestCase):

@@ -6,7 +6,7 @@ import os
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from example_document import *
+from example_document import ExampleDocument
 
 
 class SourceCodeExporterTestCase(unittest.TestCase):
@@ -69,23 +69,23 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       '</head>\n'
       '<body><h1>Headline</h1></body>\n',
       {'preview':'inline'})
-    self.assertTrue(example_doc.has_head_tag('title'))
-    self.assertTrue(example_doc.has_head_tag('meta', 'charset'))
-    self.assertTrue(example_doc.has_head_tag('meta', 'charset', 'utf-8'))
-    self.assertFalse(example_doc.has_head_tag('meta', 'charse'))
-    self.assertFalse(example_doc.has_head_tag('meta', 'harset'))
-    self.assertTrue(example_doc.has_head_tag('style', 'amp-boilerplate'))
-    self.assertTrue(example_doc.has_head_tag('style', r'amp[\da-z]*-boilerplate'))
-    self.assertTrue(example_doc.has_head_tag('script', 'src'))
-    self.assertTrue(example_doc.has_head_tag('meta', 'content'))
-    self.assertFalse(example_doc.has_head_tag('h1'))
+    self.assertTrue(example_doc.has_tag_in_head('title'))
+    self.assertTrue(example_doc.has_tag_in_head('meta', 'charset'))
+    self.assertTrue(example_doc.has_tag_in_head('meta', 'charset', 'utf-8'))
+    self.assertFalse(example_doc.has_tag_in_head('meta', 'charse'))
+    self.assertFalse(example_doc.has_tag_in_head('meta', 'harset'))
+    self.assertTrue(example_doc.has_tag_in_head('style', 'amp-boilerplate'))
+    self.assertTrue(example_doc.has_tag_in_head('style', r'amp[\da-z]*-boilerplate'))
+    self.assertTrue(example_doc.has_tag_in_head('script', 'src'))
+    self.assertTrue(example_doc.has_tag_in_head('meta', 'content'))
+    self.assertFalse(example_doc.has_tag_in_head('h1'))
     self.assertTrue(example_doc.has_boilerplate())
     self.assertTrue(example_doc.has_amp_script())
     self.assertTrue(example_doc.has_import_in_head('amp-date-display'))
     self.assertTrue(example_doc.has_import_in_head('amp-mustache'))
     self.assertFalse(example_doc.has_import_in_head('amp-accordion'))
     # the custom style should be removed from the head
-    self.assertFalse(example_doc.has_head_tag('style', 'amp-custom'))
+    self.assertFalse(example_doc.has_tag_in_head('style', 'amp-custom'))
     self.assertEquals('h1 {color:red;}', example_doc.custom_style.strip())
     self.assertEquals('none', example_doc.preview)  # inline preview should be overwritten because of the head
 
@@ -96,14 +96,14 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       ' <script async custom-element="amp-date-display" src="https://cdn.ampproject.org/v0/amp-date-display-0.1.js"></script>\n'
       '</head>\n'
       '<body><h1>Headline</h1></body>\n')
-    self.assertFalse(example_doc.has_head_tag('title'))
-    self.assertFalse(example_doc.has_head_tag('meta', 'charset'))
-    self.assertFalse(example_doc.has_head_tag('meta', 'charset', 'utf-8'))
-    self.assertFalse(example_doc.has_head_tag('style', 'amp-boilerplate'))
-    self.assertFalse(example_doc.has_head_tag('style', r'amp[\da-z]*-boilerplate'))
-    self.assertTrue(example_doc.has_head_tag('script', 'src'))
-    self.assertFalse(example_doc.has_head_tag('meta', 'content'))
-    self.assertFalse(example_doc.has_head_tag('h1'))
+    self.assertFalse(example_doc.has_tag_in_head('title'))
+    self.assertFalse(example_doc.has_tag_in_head('meta', 'charset'))
+    self.assertFalse(example_doc.has_tag_in_head('meta', 'charset', 'utf-8'))
+    self.assertFalse(example_doc.has_tag_in_head('style', 'amp-boilerplate'))
+    self.assertFalse(example_doc.has_tag_in_head('style', r'amp[\da-z]*-boilerplate'))
+    self.assertTrue(example_doc.has_tag_in_head('script', 'src'))
+    self.assertFalse(example_doc.has_tag_in_head('meta', 'content'))
+    self.assertFalse(example_doc.has_tag_in_head('h1'))
     self.assertFalse(example_doc.has_boilerplate())
     self.assertFalse(example_doc.has_amp_script())
     self.assertTrue(example_doc.has_import_in_head('amp-date-display'))
@@ -146,13 +146,14 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       '        ]\n'
       '      }\n'
       '    </script>\n'
-      '    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>\n'
       '  </head>\n'
       '  <body>\n'
       '    <h1>Welcome to the mobile web</h1>\n'
       '  </body>\n'
       '</html>\n')
     self.assertEquals('<h1>Welcome to the mobile web</h1>', example_doc.body.strip())
+    self.assertFalse(example_doc.has_boilerplate())
+    self.assertTrue(example_doc.has_amp_script())
 
   @staticmethod
   def get_example_document(example_code, attributes={}, index=1):

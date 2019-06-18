@@ -1,5 +1,5 @@
-from example_extractor import *
-from example_exporter import *
+from example_extractor import SourceCodeExtractor
+from example_exporter import ExampleExporter
 from preview import ExamplePreview
 from constants import *
 

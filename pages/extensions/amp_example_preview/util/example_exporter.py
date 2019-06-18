@@ -1,10 +1,10 @@
-import sys
+import os
 import urlparse
 import errno
 from grow.documents import document
 
 from example_document import ExampleDocument
-from templates import *
+from templates import load_template
 
 
 FORMAT_TYPE_IDS = {

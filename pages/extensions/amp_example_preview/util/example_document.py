@@ -1,6 +1,6 @@
 import re
 
-from amp_component_versions import *
+from amp_component_versions import get_component, get_components
 
 PREVIEW_INLINE = 'inline'
 PREVIEW_NONE = 'none'
@@ -37,7 +37,7 @@ class ExampleDocument(object):
     self.template = get_component(export_attributes.get('template'))
 
     self.preview = export_attributes.get('preview', PREVIEW_NONE)
-    if self.preview == PREVIEW_INLINE and (self.head or self.custom_style)\
+    if self.preview == PREVIEW_INLINE and (self.head or self.custom_style) \
       or self.preview not in PREVIEW_MODES:
       # no inline preview supported if head elements are present
       self.preview = PREVIEW_NONE
@@ -45,10 +45,10 @@ class ExampleDocument(object):
     self.playground = 'playground' not in export_attributes or export_attributes['playground'].lower() != 'false'
 
   def has_amp_script(self):
-    return self.has_head_tag('style', 'amp[\da-z]*-boilerplate')
+    return self.has_tag_in_head('script', 'src', 'https://cdn\\.ampproject\\.org/v\\d+(?:\\.\\d+)*\\.js')
 
   def has_boilerplate(self):
-    return self.has_head_tag('style', 'amp[\da-z]*-boilerplate')
+    return self.has_tag_in_head('style', 'amp[\da-z]*-boilerplate')
 
   def has_import_in_head(self, dependency):
     if not self.head:
@@ -56,7 +56,7 @@ class ExampleDocument(object):
     regex = re.compile(r'<script(?:\s[^>]*)?\scustom-[a-z]+\s*=\s*"?{dependency}[\s">]'.format(dependency=dependency))
     return regex.search(self.head) is not None
 
-  def has_head_tag(self, tag_name, attribute_name_re='', attribute_value_re=''):
+  def has_tag_in_head(self, tag_name, attribute_name_re='', attribute_value_re=''):
     code_block = self.head
     return self.has_tag(code_block, tag_name, attribute_name_re, attribute_value_re)
 

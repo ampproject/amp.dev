@@ -2,7 +2,7 @@
 <html ⚡4ads>
 <head>
   <meta charset="utf-8">
-{%- if not example.has_head_tag('title') %}
+{%- if not example.has_tag_in_head('title') %}
   <title>{{export.title|e}} - Example {{example.index}}</title>
 {%- else %}
   <title>{{example.get_tag_content(example.head, 'title')|e}}</title>
