@@ -1,9 +1,7 @@
 ---
 name: 🚀 Feature Request
 about: I have a suggestion (and may want to implement it 🙂)!
-labels:
- - 'Type: Bug'
- - 'Status: Pending Triage'
+labels: 'Type: Bug,Status: Pending Triage'
 ---
 
 ## Feature Request

@@ -1,9 +1,7 @@
 ---
 name: 🐛 Bug Report
 about: If something isn't working as expected 🤔.
-labels:
- - 'Type: Bug'
- - 'Status: Pending Triage'
+labels: 'Type: Bug,Status: Pending Triage'
 ---
 
 ## Bug Report

@@ -1,9 +1,7 @@
 ---
 name: 🛠 Add a tool/vendor
 about: I want to add my third-party tool, service, platform or ad vendor to amp.dev
-labels:
- - 'Type: New'
- - 'Status: Pending Triage'
+labels: 'Type: New,Status: Pending Triage'
 ---
 
 ## Request to add third-party tool/service/platform/vendor
