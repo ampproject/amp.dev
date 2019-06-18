@@ -26,7 +26,7 @@ $sizes: (
 - frontend/scss/components/organisms/burger-menu.scss
 
 The calculations of the height and top values of banner, header and burger-menu
-are based on this variables. If you change them, these it automatically fits. */
+are based on this variables. If you change them, they automatically adjust. */
 $mobileHeaderHeight: 55px;
 $bannerHeight: 31px;
 
