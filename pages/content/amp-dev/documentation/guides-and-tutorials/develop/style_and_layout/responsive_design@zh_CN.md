@@ -151,5 +151,5 @@ $title: 制作自适应 AMP 网页
 #### AMP 项目提供的制作资源
 
 - [Examples：示例和模板]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [AMP Start 模板](https://www.ampstart.com/)
+- [模板]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [AMP Conf Workshop Codelab：如何制作精美的 AMP 网页](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

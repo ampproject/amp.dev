@@ -151,5 +151,5 @@ HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재
 #### AMP 제작
 
 - [예제별 AMP: 샘플 및 템플릿]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [AMP 시작 템플릿](https://www.ampstart.com/)
+- [템플릿]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [AMP Conf Workshop Codelab: 멋진 AMP 만들기](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

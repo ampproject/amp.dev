@@ -151,5 +151,5 @@ HTML では `picture` タグを使うことで、異なる画像形式を配信�
 #### AMP によるページ作成の参考情報
 
 - [Examples:  サンプルとテンプレート]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [AMP Start のテンプレート](https://www.ampstart.com/)
+- [Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [AMP Conf ワークショップ コードラボ: 美しい AMP の作成](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
