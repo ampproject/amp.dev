@@ -8,9 +8,17 @@
 {% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}
 {%- endmacro %}
 
-{% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
-<header class="ap--header" [class]="mainmenuopen ? 'ap--header mainmenuopen' : 'ap--header'">
+{# Simply set to False to disable banner #}
+{% set show_banner = False %}
+{% if show_banner %}
+  {% set banner %}
   {% include '/views/partials/banner.j2' %}
+  {% endset %}
+{% endif %}
+
+{% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
+<header class="ap--header{{' has-banner' if show_banner}}" [class]="mainmenuopen ? 'ap--header{{' has-banner' if show_banner}} mainmenuopen' : 'ap--header{{' has-banner' if show_banner}}'">
+  {{ banner if show_banner }}
 
   <div class="ap-o-header">
     <a class="ap-o-header-home" href="{{g.doc('/content/amp-dev/index.html', locale=doc.locale).url.path}}">
