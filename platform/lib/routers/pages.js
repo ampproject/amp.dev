@@ -28,7 +28,7 @@ const nunjucks = require('nunjucks');
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
  * doesn't have a HTML file extension
- * @param  {String} The original URL
+ * @param  {String} originalUrl
  * @return {URL}    The eventually rewritten URL
  */
 function ensureUrlScheme(originalUrl) {
@@ -55,7 +55,7 @@ function ensureUrlScheme(originalUrl) {
 /**
  * Fetches the requested document's either by requesting the Grow development
  * server (during development) or the pages build destination (all other environments)
- * @param  {String}       The request path of where the page can potentially be found
+ * @param  {String}       pagePath Where the page can potentially be found
  * @return {null|String}  The pages contents if it can be found
  */
 async function getPageContents(pagePath) {
@@ -86,7 +86,7 @@ async function getPageContents(pagePath) {
 
 /**
  * Fetches a path from the Grow development server
- * @param  {String}       The request path of where the page can potentially be found
+ * @param  {String}       searchPath Path of where the page can potentially be found
  * @return {null|String}  The pages contents if it can be found
  */
 async function fetchPageFromGrow(searchPath) {
@@ -100,7 +100,7 @@ async function fetchPageFromGrow(searchPath) {
 
 /**
  * Reads a page from disk
- * @param  {String}       The file path of where the page can potentially be found
+ * @param  {String}       searchPath Path of where the page can potentially be found
  * @return {null|String}  The pages contents if it can be found
  */
 function readPageFromDisk(searchPath) {
@@ -114,6 +114,25 @@ function readPageFromDisk(searchPath) {
       resolve(data);
     });
   });
+}
+
+/**
+ * Builds a context object from the ongoing request to render templates
+ * @param  {expressjs.Request} req Request to build the context from
+ * @return {Object}  The template context
+ */
+function buildContext(req) {
+  const context = {};
+
+  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
+  context['format'] = (req.query.format || '').toLowerCase();
+  if (!ALLOWED_FORMATS.includes(context.format)) {
+    context.format = ALLOWED_FORMATS[0]
+  }
+
+  context['category'] = (req.query.category || '').toLowerCase();
+
+  return context;
 }
 
 const nunjucksEnvironment = new nunjucks.Environment(null, {
@@ -138,15 +157,16 @@ pages.get('/*', async (req, res, next) => {
   }
 
   const page = await getPageContents(url.pathname);
-  // Compile a template from the retrieved page
-  const template = nunjucks.compile(page, nunjucksEnvironment);
+  if (!page) {
+    next();
+    return;
+  }
 
   try {
+    // Compile a template from the retrieved page
+    const template = nunjucks.compile(page, nunjucksEnvironment);
     // Render the template with sanitized, relevant GET parameters
-    const renderedPage = template.render({
-      format: req.query.format || 'websites',
-      category: req.query.category || null,
-    });
+    const renderedPage = template.render(buildContext(req));
 
     res.send(renderedPage);
     return;
