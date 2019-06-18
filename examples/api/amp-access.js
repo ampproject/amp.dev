@@ -36,9 +36,9 @@ const POWER_USERS = {
   'Jane@gmail.com': true,
 };
 
-examples.get('/amp-access/authorization', handleAuthorization);
-examples.get('/amp-access/login', handleLogin);
-examples.get('/amp-access/logout', handleLogout);
+examples.all('/amp-access/authorization', handleAuthorization);
+examples.all('/amp-access/login', handleLogin);
+examples.all('/amp-access/logout', handleLogout);
 examples.post('/amp-access/submit', upload.none(), handleSubmit);
 
 function handleAuthorization(request, response) {
