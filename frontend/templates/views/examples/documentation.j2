@@ -191,8 +191,8 @@
         {{ markdown.convert('```html\n' + section.code + '\n```')|safe }}
       </div>
 
-      {% if not playground_disabled and doc.example.document.metadata.standaloneSnippets %}
-      <a href="{{ playground_url }}{{ section.id }}" class="ap-m-lnk ap--playground-link">
+      {% if section.inBody and not playground_disabled and doc.example.document.metadata.standaloneSnippets %}
+      <a href="{{ playground_url }}/{{ section.id }}" class="ap-m-lnk ap--playground-link">
           <div class="ap-a-ico ap-m-lnk-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
