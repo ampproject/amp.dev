@@ -64,7 +64,7 @@ creation:
       - stories
   - name: Newsroom AI
     description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
-    url: https://www.nws.studio/the-stories-platform.html
+    url: https://www.nws.ai/
     type: WYSIWYG Editor
     image:
       src: /static/img/tools/newsroom.png
@@ -293,6 +293,16 @@ providers:
       src: /static/img/tools/sendgrid.png
       width: 348
       height: 148
+      fit: contain
+    formats:
+      - email
+  - name: Litmus
+    url: https://litmus.com/
+    type: Email Service
+    image:
+      src: /static/img/tools/litmus.png
+      width: 1223
+      height: 450
       fit: contain
     formats:
       - email
