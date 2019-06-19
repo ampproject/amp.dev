@@ -24,6 +24,7 @@ const project = require('@lib/utils/project');
 const URL = require('url').URL;
 const fetch = require('node-fetch');
 const nunjucks = require('nunjucks');
+const LRU = require('lru-cache');
 
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
@@ -52,6 +53,10 @@ function ensureUrlScheme(originalUrl) {
   return url;
 }
 
+const pageCache = new LRU({
+  max: 100
+});
+
 /**
  * Fetches the requested document's either by requesting the Grow development
  * server (during development) or the pages build destination (all other environments)
@@ -62,21 +67,29 @@ async function getPageContents(pagePath) {
   const AVAILABLE_STUBS = ['.html', '/index.html', ''];
   let contents = null;
 
-  // TODO(matthiasrohmer): Implement LRU cache to speed up resolving
-
   // The page path has been ensured to always have a trailing slash which isn't
   // needed to find a matching page file
   pagePath = pagePath.slice(0, -1);
 
   for (const stub of AVAILABLE_STUBS) {
-    const searchPath = `${pagePath}${stub}`;
+    let searchPath = `${pagePath}${stub}`;
     if (config.isDevMode()) {
+      // During development the LRU cache keeps the (possibly) already resolved
+      // path for quicker look ups
+      searchPath = pageCache.get(pagePath) || searchPath;
       contents = await fetchPageFromGrow(searchPath);
     } else {
-      contents = await readPageFromDisk(searchPath);
+      // In all other environments the cache holds the actual page
+      contents = pageCache.get(pagePath) || await readPageFromDisk(searchPath);
     }
 
     if (contents) {
+      if (config.isDevMode()) {
+        pageCache.set(pagePath, searchPath);
+      } else {
+        pageCache.set(pagePath, contents);
+      }
+
       break;
     }
   }
