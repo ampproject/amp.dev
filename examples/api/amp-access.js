@@ -15,11 +15,11 @@
  */
 'use strict';
 
-const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const nunjucks = require('nunjucks');
 const URL = require('url');
+const utils = require('@lib/utils');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -68,7 +68,8 @@ function handleLogin(request, response) {
     response.status(500).send('Invalid return URL');
     return;
   }
-  const filePath = path.join(__dirname, '../static/samples/files/login.html');
+  const filePath = utils.project.absolute('/examples/static/samples/files/login.html');
+
   response.send(nunjucks.render(filePath, {returnurl: returnUrl}));
 }
 
