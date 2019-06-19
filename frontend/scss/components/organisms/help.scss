@@ -22,6 +22,8 @@
 
 .#{organism('help')} {
 
+  padding-top: 32px;
+
   &-hl {
     @include hl;
     @include hl-h2;

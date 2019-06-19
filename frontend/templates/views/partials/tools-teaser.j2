@@ -14,24 +14,31 @@
         <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="2" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
       {% elif teaser.image %}
-      <div class="ap-a-img ap-m-teaser-image">
-        <amp-img {% if teaser.image.bgcolor %}style="background-color: {{teaser.image.bgcolor}};"{% endif %} class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" media="(min-width: 768px)" layout="responsive" width="2" height="1" alt="{{ teaser.image.alt }}"></amp-img>
-        <amp-img {% if teaser.image.bgcolor %}style="background-color: {{teaser.image.bgcolor}};"{% endif %} class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" media="(max-width: 767px)" layout="fill"  alt="{{ teaser.image.alt }}"></amp-img>
+      <div class="ap-a-img ap-m-teaser-image{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" {% if teaser.image.bgcolor %}style="background-color: {{teaser.image.bgcolor}};"{% endif %}>
+        <amp-img class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" media="(min-width: 768px)" layout="responsive" width="2" height="1" alt="{{ teaser.image.alt }}"></amp-img>
+        <amp-img class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" media="(max-width: 767px)" layout="fill"  alt="{{ teaser.image.alt }}"></amp-img>
       </div>
       {% endif %}
 
       <div>
           <div class="ap-m-teaser-content">
             {% if teaser.logo %}
-              <div class="ap-a-img ap-m-teaser-logo fixed-container">
-                <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
-              </div>
+            <div class="ap-a-img ap-m-teaser-logo fixed-container">
+              <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
+            </div>
             {% endif %}
-    
-            <h4 class="ap-m-teaser-headline">{% if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') %}<svg class="ap-m-teaser-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>{% endif %}{{ teaser.name }}</h4>
+
+            <h4 class="ap-m-teaser-headline {{ 'single' if not teaser.description }}">
+            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') -%}
+              <svg class="ap-m-teaser-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+            {%- endif -%}
+            {{- teaser.name -}}
+            </h4>
+            {% if teaser.description %}
             <p>{{ teaser.description }}</p>
+            {% endif %}
           </div>
-    
+
           {% if teaser.type %}
           <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type }}">{{ teaser.type }}</div>
           {% endif %}

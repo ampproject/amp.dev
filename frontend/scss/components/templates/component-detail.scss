@@ -33,6 +33,8 @@ body {
   .#{utility('help')} {
     @include content;
     @include content-white-bg;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .#{utility('sidebar')} {
@@ -46,5 +48,15 @@ body {
   .#{utility('sidebar')} + .#{utility('content')},
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
+  }
+}
+
+@media (min-width: 768px){
+  .#{template('component-detail')} {
+    .#{utility('content')},
+    .#{utility('help')} {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 }

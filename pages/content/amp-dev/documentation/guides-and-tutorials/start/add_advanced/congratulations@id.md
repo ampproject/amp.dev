@@ -21,7 +21,7 @@ Untuk lebih meningkatkan keahlian Anda terkait AMP, lihat resource berikut:
 
 - Tutorial [Membuat halaman AMP interaktif]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}): Pelajari cara menggunakan [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) untuk membuat halaman AMP interaktif
 - [Menggabungkan AMP dengan PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}): Pelajari bagaimana Progressive Web App dan halaman AMP saling melengkapi satu sama lain
-- [AMP Start](https://www.ampstart.com/): Sesuaikan halaman Anda menggunakan komponen dan template yang telah diberi gaya sebelumnya
+- [AMP Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}): Sesuaikan halaman Anda menggunakan komponen dan template yang telah diberi gaya sebelumnya
 - [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}): Pelajari dari contoh dan demo langsung
 - [Channel AMP di YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Pelajari dengan menonton video khusus AMP
 - [Komponen AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): Pelajari detail tentang semua komponen AMP

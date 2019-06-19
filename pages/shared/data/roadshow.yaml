@@ -1,5 +1,6 @@
 nextstop:
   - title: berlin, de
+    coords: 57x12
     location: Google Berlin
     time: 09:00–18:00
     day: 7
@@ -7,6 +8,7 @@ nextstop:
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-berlin/
   - title: atlanta, usa
+    coords: 22x17
     location: refactr.tech
     time: 09:00–18:00
     day: 5
@@ -16,71 +18,104 @@ nextstop:
 
 past:
   - title: NAIROBI
-    date: MAR 22, 2019  
+    coords: 65x33
+    date: 2019-03-22
   - title: LAGOS
-    date: MAR 19, 2019  
+    coords: 54x32
+    date: 2019-03-19
   - title: CAPE TOWN
-    date: MAR 15, 2019  
+    coords: 59x46
+    date: 2019-03-15
   - title: JOHANNESBURG
-    date: MAR 12, 2019  
+    coords: 63x43
+    date: 2019-03-12
   - title: HO CHI MINH CITY
-    date: DEC 14, 2018
+    coords: 88x24
+    date: 2018-12-14
   - title: TORONTO
-    date: AUG 30, 2017
+    coords: 24x12
+    date: 2017-08-30
   - title: SINGAPORE
-    date: OCT 6, 2017
+    coords: 86x26
+    date: 2017-10-06
   - title: JAKARTA
-    date: OCT 9, 2017
+    coords: 89x32
+    date: 2017-10-09
   - title: SYDNEY
-    date: OCT 13, 2017
+    coords: 103x44
+    date: 2017-10-13
   - title: MUNICH
-    date: NOV 7, 2017
+    coords: 56x13
+    date: 2017-11-07
   - title: PARIS
-    date: NOV 10, 2017
+    coords: 54x14
+    date: 2017-11-10
   - title: MADRID
-    date: NOV 14, 2017
+    coords: 51x17
+    date: 2017-11-14
   - title: LONDON
-    date: NOV 16, 2017
+    coords: 50x12
+    date: 2017-11-16
   - title: BEIJING
-    date: DEC 5, 2017
+    coords: 90x19
+    date: 2017-12-05
   - title: SHANGHAI
-    date: DEC 8, 2017
+    coords: 90x21
+    date: 2017-12-08
   - title: BUENOS AIRES
-    date: MAR 13, 2018
+    coords: 24x42
+    date: 2018-03-13
   - title: BOGOTA
-    date: MAR 16, 2018
+    coords: 20x28
+    date: 2018-03-16
   - title: MEXICO CITY
-    date: MAR 21, 2018
+    coords: 15x22
+    date: 2018-03-21
   - title: CHICAGO
-    date: MAR 27, 2018
+    coords: 20x13
+    date: 2018-03-27
   - title: SUNNYVALE
-    date: APR 4, 2018
+    coords: 8x16
+    date: 2018-04-04
   - title: TAIPEI
-    date: APR 24, 2018
+    coords: 90x27
+    date: 2018-04-24
   - title: TOKYO
-    date: APR 27, 2018
+    coords: 99x17
+    date: 2018-04-27
   - title: LOS ANGELES
-    date: JUN 6, 2018
+    coords: 9x18
+    date: 2018-06-06
   - title: SEATTLE
-    date: JUN 12, 2018
+    coords: 8x13
+    date: 2018-06-12
   - title: AUSTIN
-    date: JUL 11, 2018
+    coords: 16x19
+    date: 2018-07-11
   - title: NEW YORK
-    date: JUL 24, 2018
-  - title: CAMBRIDGE
-    date: AUG 7, 2018
+    coords: 26x15
+    date: 2018-07-24
+  - title: BOSTON
+    coords: 28x13
+    date: 2018-08-07
   - title: SÃO PAULO
-    date: AUG 21, 2018
+    coords: 31x35
+    date: 2018-08-21
   - title: PORTO ALEGRE
-    date: AUG 23, 2018
+    coords: 28x38
+    date: 2018-08-23
   - title: SEOUL
-    date: SEP 11, 2018
+    coords: 93x18
+    date: 2018-09-11
   - title: BANGALORE
-    date: OCT 24, 2018
+    coords: 77x26
+    date: 2018-10-24
   - title: MUMBAI
-    date: OCT 27, 2018
+    coords: 74x23
+    date: 2018-10-27
   - title: GURGAON
-    date: OCT 30, 2018
+    coords: 77x21
+    date: 2018-10-30
 
 agenda:
   - title: Intro + Keynote

@@ -63,13 +63,83 @@ section_links:
 
   <div class="ap-o-cities ap--content-wide">
     <h3 class="ap-o-cities-headline">Cities</h3>
-    <div class="ap-m-jumbo ap-m-jumbo-cities">
-      <div class="ap-a-ico">
+
+    {% if doc.pod.env.dev %}
+    {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+    {% do doc.icons.useIcon('icons/map.svg') %}
+    <div class="ap-m-tip ap-m-tip-note">
+      <div class="ap-m-tip-content">
+        <div class="ap-a-ico ap-m-tip-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
+        </div>
+        <h4>Want to add cities?
+        <button
+          on="tap:AMP.setState({coordsGridToggled: !coordsGridToggled})"
+          [text]="coordsGridToggled ? 'Hide grid' : 'Show grid'"
+          type="button">
+          Show grid
+        </button>
+        </h4>
+        <div hidden [hidden]="!coordsGridToggled">
+          <strong><code>Coordinates: <span [text]="coords"></span></code></strong>
+          <p>You can copy these coordinates and use them in <strong>roadshow.yaml</strong> <em>(pages/shared/data/roadshow.yaml)</em></p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="ap-o-cities-map">
+      {% if doc.pod.env.dev %}
+      <aside class="ap-o-cities-map-grid ap-o-cities-map-grid-dev" hidden [hidden]="!coordsGridToggled">
+      {% for row in range(0,50) %}
+        {% for col in range(0,110) %}
+          <input
+            class="ap-o-cities-map-control"
+            type="radio"
+            name="coords"
+            on="tap:AMP.setState({ coords: '{{col}}x{{row}}' })"
+            tabindex="0"
+            role="pin-box"
+          />
+        {% endfor %}
+      {% endfor %}
+      </aside>
+      {% endif %}
+
+      <aside class="ap-o-cities-map-grid">
+        {% for place in doc.roadshow.nextstop %}
+          {% if place.coords %}
+          {% set col = place.coords.split('x')[0]|int + 1 %}
+          {% set row = place.coords.split('x')[1]|int + 1 %}
+          <div class="ap-o-cities-map-grid-cell" style="grid-column: {{col}}; grid-row: {{row}};">
+            <div class="ap-o-cities-map-pin ap-o-cities-map-pin-next">
+              {% do doc.icons.useIcon('/icons/cities-map-pin.svg') %}
+              <div class="ap-a-ico ap-o-cities-map-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cities-map-pin"></use></svg></div>
+            </div>
+            <div class="ap-o-cities-map-tooltip">{{ place.title }}</div>
+          </div>
+          {% endif %}
+        {% endfor %}
+
+        {% for place in doc.roadshow.past %}
+          {% if place.coords %}
+          {% set col = place.coords.split('x')[0]|int + 1 %}
+          {% set row = place.coords.split('x')[1]|int + 1 %}
+          <div class="ap-o-cities-map-grid-cell" style="grid-column: {{col}}; grid-row: {{row}};">
+            <div class="ap-o-cities-map-pin ap-o-cities-map-pin-past"></div>
+            <div class="ap-o-cities-map-tooltip">{{ place.title }}</div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </aside>
+
+      <div class="ap-o-cities-map-background">
         {% do doc.icons.useIcon('/icons/cities-map.svg') %}
         {% do doc.icons.useIcon('/icons/gradient-map.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cities-map"></use></svg>
       </div>
     </div>
+
     <span class="ap-o-cities-sub-headline">Where we're going next</span>
 
       <div class="ap-o-cities-next-events">
@@ -111,11 +181,11 @@ section_links:
       <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
       <ul class="ap-o-cities-visited-list">
 
-        {% for visited in doc.roadshow.past %}
+        {% for visited in doc.roadshow.past|sort(True, attribute='date') %}
           <li class="ap-m-visited-city">
             <div class="ap-m-visited-city-group">
               <div class="ap-m-visited-city-title">{{ visited.title }}</div>
-              <div class="ap-m-visited-city-date">{{ visited.date }}</div>
+              <div class="ap-m-visited-city-date">{{ visited.date|datetime('MMM d, Y') }}</div>
             </div>
           </li>
         {% endfor %}
@@ -221,5 +291,3 @@ section_links:
     </div>
   </div>
 </section>
-
-

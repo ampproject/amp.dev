@@ -27,7 +27,7 @@ For example, by applying the following optimization techniques:
 *   [Preloaded hero image](#preload-hero-images) (the image size/encoding itself has not been changed)
 *   [Optimizes custom fonts](#optimize-custom-fonts) (in this case, Google fonts)
 
-the ["The Scenic" AMPStart template](https://www.ampstart.com/templates) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
+the ["The Scenic" template]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
 
 If you want to skip the details, check out the [AMP Boilerplate generator](/boilerplate), which you can use to generate custom optimized AMP pages.
 
