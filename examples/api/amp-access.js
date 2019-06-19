@@ -36,9 +36,9 @@ const POWER_USERS = {
 };
 const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
 
-examples.all('/amp-access/authorization', handleAuthorization);
-examples.all('/amp-access/login', handleLogin);
-examples.all('/amp-access/logout', handleLogout);
+examples.get('/amp-access/authorization', handleAuthorization);
+examples.get('/amp-access/login', handleLogin);
+examples.get('/amp-access/logout', handleLogout);
 examples.post('/amp-access/submit', handleSubmit);
 
 function handleAuthorization(request, response) {
