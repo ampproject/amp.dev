@@ -34,7 +34,7 @@
 
                 {% set formats = collection.formats or [] %}
                 <!--% if format in {{ formats|tojson }} %-->
-                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
                   {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
                   {% if doc.pod.file_exists(collection_index) %}
                   {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
@@ -84,7 +84,7 @@
                 {% set formats = document.formats or document.collection.formats or [] %}
                 {% set activeDocument = true if document.url == doc.url %}
                 <!--% if format in {{ formats|tojson }} %-->
-                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
                   {# If the document is part of a tutorial render progress #}
                   {% if document.collection.tutorial %}
                   {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
