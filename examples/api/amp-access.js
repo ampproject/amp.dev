@@ -18,14 +18,13 @@
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const multer = require('multer');
-const upload = multer();
 const nunjucks = require('nunjucks');
 const URL = require('url');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 examples.use(cookieParser());
+examples.use(express.urlencoded());
 
 const AMP_ACCESS_COOKIE = 'ABE_LOGGED_IN';
 const VALID_USERS = {
@@ -40,7 +39,7 @@ const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
 examples.all('/amp-access/authorization', handleAuthorization);
 examples.all('/amp-access/login', handleLogin);
 examples.all('/amp-access/logout', handleLogout);
-examples.post('/amp-access/submit', upload.none(), handleSubmit);
+examples.post('/amp-access/submit', handleSubmit);
 
 function handleAuthorization(request, response) {
   const cookie = request.cookies[AMP_ACCESS_COOKIE];
