@@ -63,11 +63,7 @@ function handleAuthorization(request, response) {
 }
 
 function handleLogin(request, response) {
-  const returnUrl = request.query ? request.query.return : '';
-  if (!isValidURL(returnUrl)) {
-    response.status(500).send('Invalid return URL');
-    return;
-  }
+  const returnUrl = request.query.return;
   const filePath = utils.project.absolute('/examples/static/samples/files/login.html');
 
   response.send(nunjucks.render(filePath, {returnurl: returnUrl}));
