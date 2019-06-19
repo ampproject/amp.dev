@@ -35,6 +35,7 @@ const VALID_USERS = {
 const POWER_USERS = {
   'Jane@gmail.com': true,
 };
+const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
 
 examples.all('/amp-access/authorization', handleAuthorization);
 examples.all('/amp-access/login', handleLogin);
@@ -89,7 +90,7 @@ function handleSubmit(request, response) {
     response.status(401).send('Invalid email');
     return;
   }
-  response.cookie(AMP_ACCESS_COOKIE, {email}, {expires: new Date(Date.now() + 24*60*60*1000)});
+  response.cookie(AMP_ACCESS_COOKIE, {email}, {expires: new Date(Date.now() + EXPIRATION_DATE)});
   let returnUrl = request.body.returnurl;
   if (!isValidURL(returnUrl)) {
     response.status(500).send('Invalid return URL');
