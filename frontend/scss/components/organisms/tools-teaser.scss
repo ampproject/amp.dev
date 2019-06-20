@@ -124,6 +124,15 @@ main.#{template('tools')} {
 
         }
 
+        .#{molecule('teaser-tag')}{
+          right: 13px;
+          top: auto;
+          bottom: 10px;
+          padding: 0 20px;
+          line-height: 35px;
+          border-radius: 20px;
+        }
+
         .#{molecule('teaser-logo')}{
           margin: 0;
           width: 12px;
