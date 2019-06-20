@@ -23,6 +23,7 @@ The tools cards on the tools page and in widget form.
 @import '../templates/_default';
 
 main.#{template('tools')} {
+  padding: 0 25px;
 
     .#{organism('tool-section')} {
       margin-bottom: 2em;
@@ -32,7 +33,7 @@ main.#{template('tools')} {
         margin-top: 4em;
       }
 
-      &-title { grid-column: 3 / 23; }
+      &-title { grid-column: 1 / -1; }
       &-title > h2 { opacity: 0.35; }
       &-title > .show ~ .hide ~ h2, .show + h2 { opacity: 1; }
     }
@@ -43,12 +44,12 @@ main.#{template('tools')} {
     }
 
     .#{organism('tool-format-filter-caption')} {
-      grid-column: 3 / 23;
+      grid-column: 1 / -1;
       margin: 0;
     }
 
     .#{organism('tool-format-filter')} {
-      grid-column: 3 / 23;
+      grid-column: 1 / -1;
       list-style: none;
       display: flex;
       align-items: center;
@@ -99,7 +100,7 @@ main.#{template('tools')} {
     }
 
     .#{organism('teaser-grid')} {
-      grid-column: 3 / 23;
+      grid-column: 1 / -1;
       width: 100%;
       margin-bottom: 2em;
 
