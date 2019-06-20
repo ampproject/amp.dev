@@ -169,8 +169,11 @@ main.#{template('tools')} {
 
         .#{molecule('teaser-card-essential')}{
           .#{molecule('teaser-card')}{
-            border: 4px solid #0059f0;
+            background-color: color('limed-spruce');
 
+            .#{molecule('teaser-content')} > * {
+              color: #fff;
+            }
           }
         }
 
@@ -184,7 +187,6 @@ main.#{template('tools')} {
           border-top: 2px solid color('gallery');
 
           &-essential {
-            background: #0058f0;
             color: #fff;
           }
         }
