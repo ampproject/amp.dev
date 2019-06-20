@@ -1,7 +1,6 @@
 import re
 import json
-from cgi import escape  # we use cgi.escape since we do not want to escape any quotes
-from xml.sax.saxutils import unescape
+from xml.sax.saxutils import escape, unescape
 
 PREVIEW_START_BEGINNING = '<!-- preview\n'
 PREVIEW_END_TAG = r'<!-- /preview -->'
@@ -14,9 +13,13 @@ class ExamplePreview(object):
     self.__dict__.update(iterable, **kwargs)
 
   def get_start_tag(self):
-    json_data = json.dumps(self.__dict__)
+    data = json.dumps(self.__dict__)
+    data = escape(data)
+    # Extra escape the curly brace to prevent jinja2 markup evaluation
+    data = data.replace('{', '&#123;')
+
     # the newline at the end is needed to ensure we are not inside a paragraph
-    return '\n' + PREVIEW_START_BEGINNING + escape(json_data) + '\n-->\n'
+    return '\n' + PREVIEW_START_BEGINNING + data + '\n-->\n'
 
   def get_end_tag(self):
     return PREVIEW_END_TAG
@@ -27,7 +30,11 @@ class ExamplePreview(object):
     :type json_data: str
     """
     result = ExamplePreview()
-    result.__dict__ = json.loads(unescape(json_data))
+
+    # the saxutils will not decode the numbered entities, so do it first
+    data = json_data.replace('&#123;', '{')
+    data = unescape(data)
+    result.__dict__ = json.loads(data)
     return result
 
 

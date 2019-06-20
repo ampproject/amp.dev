@@ -1,7 +1,7 @@
 {% if preview.mode == 'inline' %}
 <div class="ap-o-code-preview">
   <div class="ap-o-code-preview-preview">
-     {{preview.source|safe}}
+     {{preview.source|render|safe}}
   </div>
 {% endif %}
 

@@ -1,8 +1,7 @@
 import re
-
 from preview import ExamplePreviewMatch
-from constants import *
-from templates import *
+from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS
+from templates import load_template
 
 # find existing imports
 IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=\s*"?([^"\s>/]+)',
@@ -21,7 +20,6 @@ def trigger(doc, original_body, content):
 
 def _transform(doc, original_body, content):
   output = ''
-
   # find the end of the head section to insert the dependency scripts there
   pos = content.index('</head>')
   if pos < 0:
@@ -33,25 +31,20 @@ def _transform(doc, original_body, content):
   matches = ExamplePreviewMatch.extract_previews(content)
   for match in matches:
     output = output + content[pos:match.start_tag_start]
-    output = output + generate_preview(doc, content, match)
+    output = output + generate_preview(doc, content[match.start_tag_end:match.end_tag_start], match.preview)
     pos = match.end_tag_end
 
   output = output + content[pos:]
   return output
 
 
-def generate_preview(doc, content, match):
+def generate_preview(doc, content, preview):
   output = ''
-
-  # use the env from grow with all functions present
-  env = doc.pod.render_pool.get_jinja_env(doc.locale)['env']
-  preview_template = load_template(TEMPLATE_PATH, doc, env)
-
-  preview = match.preview
+  preview_template = load_template(TEMPLATE_PATH, doc)
   output = output + preview_template.render(
     preview=preview,
     podspec=doc.pod.podspec,
-    content=content[match.start_tag_end:match.end_tag_start])
+    content=content)
   return output
 
 

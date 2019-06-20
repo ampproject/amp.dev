@@ -13,7 +13,7 @@ class PreviewTestCase(unittest.TestCase):
 
   def test_preview_wrap_and_extract(self):
 
-    example_code = '<h1>test\'</h1>'
+    example_code = '<h1>test {% test = "test" %} {{ test + \'123\' }}</h1>'
 
     preview_created = ExamplePreview(index=2,
                              mode='inline',

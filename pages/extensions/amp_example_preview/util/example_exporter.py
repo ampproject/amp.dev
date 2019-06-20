@@ -2,27 +2,18 @@ import os
 import urlparse
 import errno
 from grow.documents import document
-
+from constants import FORMAT_TYPE_IDS, DEFAULT_FORMAT
 from example_document import ExampleDocument
 from templates import load_template
 
 
-FORMAT_TYPE_IDS = {
-  'websites',
-  'email',
-  'ads',
-  'stories',
-}
-
-DEFAULT_FORMAT = 'websites'
-
 TEMPLATE_PATH = 'layouts/example-pages/'
 
-TEMPLATES = {
-  'websites': load_template(TEMPLATE_PATH + 'amp-websites-page.j2'),
-  'stories': load_template(TEMPLATE_PATH + 'amp-stories-page.j2'),
-  'ads': load_template(TEMPLATE_PATH + 'amp-ads-page.j2'),
-  'email': load_template(TEMPLATE_PATH + 'amp-email-page.j2'),
+TEMPLATE_FILES = {
+  'websites': TEMPLATE_PATH + 'amp-websites-page.j2',
+  'stories': TEMPLATE_PATH + 'amp-stories-page.j2',
+  'ads': TEMPLATE_PATH + 'amp-ads-page.j2',
+  'email': TEMPLATE_PATH + 'amp-email-page.j2',
 }
 
 
@@ -104,8 +95,13 @@ class ExampleExporter(object):
 
 
   def write_example(self, example_export, examples_dir):
-    template = TEMPLATES[example_export.type_id]
-    content = template.render(export=example_export, example=example_export.example, doc=self.doc).encode('utf8')
+    template = load_template(TEMPLATE_FILES[example_export.type_id], self.doc)
+    server_for_email = example_export.base_url if example_export.type_id == 'email' else ''
+    content = template.render(export=example_export,
+                              example=example_export.example,
+                              doc=self.doc,
+                              format=example_export.type_id,
+                              server_for_email = server_for_email).encode('utf8')
 
     file_path = os.path.join(examples_dir, example_export.file_path.lstrip('/'))
     dir_name = os.path.dirname(file_path)

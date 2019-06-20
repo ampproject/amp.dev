@@ -1,11 +1,6 @@
-grow_version: '>=0.7.4'
-home: /content/amp-dev/index.html
 env:
   name: local
   host: localhost
-  scheme: http
-  port: '8080'
-gaTrackingId: UA-67833617-1
 base_urls:
   repository: 'https://github.com/ampproject/docs/blob/future/'
   playground: 'http://localhost:8082'
@@ -16,8 +11,4 @@ deployments:
   default:
     name: default
     destination: local
-    env:
-      name: local
-      host: localhost
-      scheme: http
-      port: '8080'
+
