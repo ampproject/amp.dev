@@ -3,9 +3,9 @@
 {{ caller() }}
 {% else %}
 {% set formats = formats.split(',') %}
-<!--% if format in {{ formats|map('trim')|list|tojson }} %-->
+[% if format in {{ formats|map('trim')|list|tojson }} %]
 {{ caller() }}
-<!--% endif %-->
+[% endif %]
 {% endif %}
 {%- endmacro %}
 
