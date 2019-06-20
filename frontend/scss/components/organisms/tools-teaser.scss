@@ -22,9 +22,7 @@ The tools cards on the tools page and in widget form.
 
 @import '../templates/_default';
 
-main.#{template('tools')} {
-  padding: 0 25px;
-
+section.#{utility('tools')} {
     .#{organism('tool-section')} {
       margin-bottom: 2em;
       padding: 0 30px;
