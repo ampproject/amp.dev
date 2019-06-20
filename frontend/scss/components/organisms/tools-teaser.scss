@@ -51,11 +51,8 @@ main.#{template('tools')} {
     .#{organism('tool-format-filter')} {
       grid-column: 1 / -1;
       list-style: none;
-      display: flex;
-      align-items: center;
-      padding: 15px 30px 35px;
-      margin: 0 -30px;
-      overflow-y: auto;
+      padding: 0;
+      margin: 0 -10px;
 
       li {
         display: inline-block;
