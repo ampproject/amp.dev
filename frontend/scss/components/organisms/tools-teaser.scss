@@ -45,7 +45,6 @@ main.#{template('tools')} {
 
     .#{organism('tool-format-filter-caption')} {
       grid-column: 1 / -1;
-      margin: 0;
     }
 
     .#{organism('tool-format-filter')} {
@@ -240,7 +239,7 @@ main.#{template('tools')} {
           height: 55px;
           padding: 0 120px 0 15px;
           @include txt-3;
-          color: #6D7278;
+          color: color('river-bed');
           border-top: 2px solid color('gallery');
 
           &-essential {
