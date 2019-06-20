@@ -4,7 +4,12 @@
 
     {% if tool.formats and tool.formats|length == 1 and not format %}
     {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-    <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag">{{ tool.formats[0] }}</div>
+    <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag">
+      <div class="ap-m-teaser-tag-icon ap-m-teaser-tag-{{tool.formats[0]}} ap-a-ico">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{tool.formats[0]}}"></use></svg>
+      </div>
+      {{ tool.formats[0]|title }}
+    </div>
     {% endif %}
 
     <div class="ap-m-teaser-card">

@@ -51,30 +51,33 @@ main.#{template('tools')} {
       grid-column: 1 / -1;
       list-style: none;
       padding: 0;
-      margin: 0 -10px;
+      margin: 0 -8px;
 
       li {
         display: inline-block;
-        margin: 10px;
+        margin: 10px 8px;
       }
     }
 
     .#{molecule('filter-bubble')} {
       position: relative;
       display: inline-block;
-      padding: 5px 15px;
+      padding: 5px 20px;
       margin: 0;
+      font-size: 12px;
+      font-family: 'Noto Sans', sans-serif;
       color: color('black');
       background: color('white');
       transition: 200ms;
 
-      &.websites .#{atom('ico')} { fill: #000; font-size: 20px; }
-      &.ads .#{atom('ico')} { fill: #000; font-size: 20px; }
-      &.stories .#{atom('ico')} { fill: #000; font-size: 20px; }
-      &.email .#{atom('ico')} { fill: #000; font-size: 20px; }
+      &.websites .#{atom('ico')} { fill: #000; font-size: 21px; }
+      &.ads .#{atom('ico')} { fill: #000; font-size: 19px; }
+      &.stories .#{atom('ico')} { fill: #000; font-size: 19px; }
+      &.email .#{atom('ico')} { fill: #000; font-size: 19px; }
 
       &.chosen {
-        padding-right: 30px;
+        padding-left: 12px;
+        padding-right: 28px;
       }
 
       &.hover,
@@ -102,7 +105,7 @@ main.#{template('tools')} {
 
       &-icon {
         display: inline-flex;
-        margin-right: 0.3em;
+        margin: 0 2px 2px 0;
         vertical-align: middle;
       }
 
@@ -185,16 +188,35 @@ main.#{template('tools')} {
             display: flex;
             flex-direction: row;
           }
+        }
 
+        .#{molecule('teaser-content')} {
+          padding-left: 15px;
+          padding-right: 15px;
         }
 
         .#{molecule('teaser-tag')}{
           right: 13px;
           top: auto;
           bottom: 10px;
-          padding: 0 20px;
-          line-height: 35px;
+          padding: 5px 20px;
+          line-height: 1.6rem;
+          font-size: 12px;
+          font-family: 'Noto Sans', sans-serif;
+          font-weight: bold;
           border-radius: 20px;
+
+          &-icon {
+            display: inline-flex;
+            margin: 0 2px 2px 0;
+            vertical-align: middle;
+            font-size: 19px;
+          }
+
+          &-websites { fill: color('white'); }
+          &-stories { fill: color('pigment-indigo'); }
+          &-ads { fill: color('white'); }
+          &-email { fill: color('ultramarine'); }
         }
 
         .#{molecule('teaser-logo')}{
