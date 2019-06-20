@@ -59,24 +59,91 @@ main.#{template('tools')} {
 
       li {
         display: inline-block;
-        button {
-          margin: 5px;
-          &:first-child {
-            margin-left: 0;
-          }
-          padding: 5px 20px;
-          display: inline-block;
-          div {
-            display: inline-flex;
-            width: 1em;
-            height: 1em;
-            margin-right: 0.3em;
-            vertical-align: sub;
-            @media (max-width: 645px) {
-              display: none;
-            }
+        margin: 10px;
+      }
+    }
+
+    .#{molecule('filter-bubble')} {
+      position: relative;
+      display: inline-block;
+      padding: 5px 15px;
+      margin: 0;
+      color: color('black');
+      background: color('white');
+      transition: 200ms;
+
+      &.websites .#{atom('ico')} { fill: #000; font-size: 20px; }
+      &.ads .#{atom('ico')} { fill: #000; font-size: 20px; }
+      &.stories .#{atom('ico')} { fill: #000; font-size: 20px; }
+      &.email .#{atom('ico')} { fill: #000; font-size: 20px; }
+
+      &.chosen {
+        padding-right: 30px;
+      }
+
+      &.hover,
+      &.active {
+        &.websites {
+          @include gradient-websites; color: color('white');
+          .#{atom('ico')} { fill: color('white'); }
+        }
+
+        &.stories {
+          @include gradient-stories; color: color('pigment-indigo');
+          .#{atom('ico')} { fill: color('pigment-indigo'); }
+        }
+
+        &.ads {
+          @include gradient-ads; color: color('white');
+          .#{atom('ico')} { fill: color('white'); }
+        }
+
+        &.email {
+          @include gradient-e-mails; color: color('ultramarine');
+          .#{atom('ico')} { fill: color('ultramarine'); }
+        }
+      }
+
+      &-icon {
+        display: inline-flex;
+        margin-right: 0.3em;
+        vertical-align: middle;
+      }
+
+      &-reset {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+
+        svg {
+          width: 8px;
+          height: 8px;
+          margin: 1px -10px 0 0;
+          opacity: 0;
+          transition: 200ms;
+        }
+
+        &.show {
+          width: 100%;
+
+          svg {
+            margin-right: 10px;
+            opacity: 1;
           }
         }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &:focus {
+        outline: none;
       }
     }
 
