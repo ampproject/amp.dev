@@ -9,5 +9,3 @@ bucket: true
 formats:
   - websites
   - email
-  - ads
-  - stories
