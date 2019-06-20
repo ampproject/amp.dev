@@ -174,12 +174,14 @@ main.#{template('tools')} {
         }
 
         .#{molecule('teaser-type')}{
-          text-align: center;
-          background: #f0f0f0;
-          text-transform: uppercase;
-          padding: 6px 0;
-          border-bottom-right-radius: 6px;
-          border-bottom-left-radius: 6px;
+          display: flex;
+          align-items: center;
+          height: 55px;
+          padding: 0 120px 0 15px;
+          @include txt-3;
+          color: #6D7278;
+          border-top: 2px solid color('gallery');
+
           &-essential {
             background: #0058f0;
             color: #fff;
