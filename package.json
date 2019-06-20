@@ -78,6 +78,7 @@
     "amp-by-example": "0.2.11",
     "amp-toolbox-optimizer": "1.2.0-alpha.2",
     "amp-toolbox-runtime-version": "0.2.7",
+    "amphtml-validator": "1.0.23",
     "archiver": "3.0.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.6",
