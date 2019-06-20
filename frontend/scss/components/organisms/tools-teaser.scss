@@ -80,23 +80,10 @@ main.#{template('tools')} {
       }
     }
 
-    h1 {
+    h1, h2 {
       @include hl;
       @include hl-h1;
-    }
-
-    h2 {
       margin-top: 0;
-
-      &:before {
-        background: linear-gradient(to right, color('blue-ribbon'), color('robins-egg'));
-        content: '';
-        display: block;
-        height: 10px;
-        margin-bottom: 20px;
-        width: 80px;
-        border-radius: 100px;
-      }
     }
 
     .#{organism('teaser-grid')} {
