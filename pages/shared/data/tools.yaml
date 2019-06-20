@@ -275,6 +275,17 @@ developer:
       - email
       - ads
       - stories
+  - name: React Storefront
+    official: true
+    type: development
+    description: React framework that generates AMP and PWA pages from a single codebase.
+    url: https://pwa.moovweb.com
+    image:
+      src: /static/img/docs/tools/react-storefront.jpg
+      width: 1125
+      height: 2436
+    formats:
+      - websites
 providers:
   - name: Sparkpost
     url: https://www.sparkpost.com/
