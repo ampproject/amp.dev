@@ -67,11 +67,18 @@ async function loadTemplate(templatePath) {
   // needed to find a matching page file
   templatePath = templatePath.slice(0, -1);
 
+  const resolvedPath = pathCache.get(templatePath);
+  // If the path has already been tried to resolve but never found
+  // do not try to resolve it again
+  if (resolvedPath === false) {
+    return template;
+  }
+
+  // As the request path is not the actual path to the template it is somehow
+  // guessed by testing all of AVAILABLE_STUBS ...
   for (const stub of AVAILABLE_STUBS) {
-    // As the request path is not the actual path to the template it is somehow
-    // guessed by testing all of AVAILABLE_STUBS, therefore the resolved
-    // paths gets cached
-    const searchPath = pathCache.get(templatePath) || `${templatePath}${stub}`;
+    // Othwerwise try the first stub or the already resolved path if there is one
+    const searchPath = resolvedPath || `${templatePath}${stub}`;
     try {
       template = await Templates.get(searchPath);
     } catch(e) {
@@ -79,11 +86,13 @@ async function loadTemplate(templatePath) {
     }
 
     if (template) {
+      // ... therefore a resolved path gets cached
       pathCache.set(templatePath, searchPath);
       break;
     }
   }
 
+  pathCache.set(templatePath, false);
   return template;
 }
 
