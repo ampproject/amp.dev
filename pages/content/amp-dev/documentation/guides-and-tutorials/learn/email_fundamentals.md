@@ -64,12 +64,12 @@ To paint the page effectively, all `<img>` tags are replaced with [`<amp-img>`](
 The `<amp-img>` tag comes with powerful, built-in ways to control responsive design and set fallbacks.
 
 [tip type="note"]
-    Read more about using the AMP [layout and media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and how to set [image fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). 
+    Read more about using the AMP [layout and media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}?format=email) and how to set [image fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). 
 [/tip]
 
 #### GIFs
 
-AMP has created [`<amp-anim>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
+AMP has created [`<amp-anim>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}?format=email), a specific tag for GIF images that allows the AMP runtime to reduce CPU usage when the animation is off-screen. Similar to `<amp-img>` the width and height is defined and the element must include a closing tag.
 
 ```
 <amp-anim 
@@ -181,20 +181,20 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
   </tr>
   <tr>
    <td>
-    <code>[amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})</code>
+    <code>[amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
-   <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <code>[&lt;template type="amp-mustache"&gt;]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})</code> to render a response.
+   <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <code>[&lt;template type="amp-mustache"&gt;]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}?format=email)</code> to render a response.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-selector]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-selector]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>Represents a control that presents a menu of options and lets the user choose from it.
    </td>
   </tr>
   <tr>
    <td>
-    <code>[amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})</code> and <code>amp-state</code>
+    <code>[amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}?format=email)</code> and <code>amp-state</code>
    </td>
    <td>
     Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.
@@ -203,16 +203,16 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
    </td>
   </tr>
   <tr>
-   <td><code>[amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>
-    Remotely fetches JSON data that will be rendered by an <code>[&lt;amp-mustache&gt;]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})</code>.
+    Remotely fetches JSON data that will be rendered by an <code>[&lt;amp-mustache&gt;]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}?format=email)</code>.
     <strong>Note:</strong> Binding to the <code>[src]</code> attribute is not allowed. Including user credentials with <code>credentials="include"</code> is also prohibited.
    </td>
   </tr>
   <tr>
    <td>
-    <code>[&lt;template type="amp-mustache"&gt;]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})</code>
+    <code>[&lt;template type="amp-mustache"&gt;]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A Mustache template markup to render the results of an <code>amp-list</code> call and the <code>&lt;div submit-success&gt;</code> and <code>&lt;div submit-error&gt;</code> of <code>amp-form</code>.
    </td>
@@ -229,43 +229,43 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
    </td>
   </tr>
   <tr>
-   <td><code>[amp-accordion]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-accordion]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A UI element that facilitates showing/hiding different sections.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-carousel]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-carousel]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A carousel UI component.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A sidebar for navigational purposes.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-image-lightbox]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-image-lightbox]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A lightbox for containing images.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-lightbox]({{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-lightbox]({{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A lightbox for containing content.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-fit-text]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-fit-text]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>A helper component for fitting text within a certain area.
    </td>
   </tr>
   <tr>
-   <td><code>[amp-timeago]({{g.doc('/content/amp-dev/documentation/components/reference/amp-timeago.md', locale=doc.locale).url.path}})</code>
+   <td><code>[amp-timeago]({{g.doc('/content/amp-dev/documentation/components/reference/amp-timeago.md', locale=doc.locale).url.path}}?format=email)</code>
    </td>
    <td>Provides a convenient way of rendering timestamps.
    </td>
