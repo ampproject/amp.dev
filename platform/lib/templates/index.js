@@ -27,11 +27,32 @@ const {pagePath, paths} = require('../utils/project');
 
 let templates = null;
 
+/**
+ * Builds a Object that adds mandatory variables to the render context
+ * that are needed to successfully SSR the pages
+ * @param  {expressjs.Request} request
+ * @return {Object}
+ */
+function context(request, base) {
+  request = request || {'query': {}};
+  const context = {} || base;
+
+  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
+  context['format'] = (request.query.format || '').toLowerCase();
+  if (!ALLOWED_FORMATS.includes(context.format)) {
+    context.format = ALLOWED_FORMATS[0]
+  }
+
+  context['category'] = (request.query.category || '').toLowerCase();
+
+  return context;
+}
+
 class Templates {
   /**
    * Loads a template from cache (if not in dev mode). Otherwise
    * it'll load the template from the pages directory.
-   * @param (string} templatePath The relative path to the template
+   * @param {String} templatePath The relative path to the template
    * @param {Function} [loader] Optional function providing
    * a string for the given templatePath.
    * @returns {Template} a Nunjucks template instance
@@ -66,6 +87,7 @@ class Templates {
    */
   async load(templatePath) {
     return this.compile(templatePath, async () => {
+      console.log('Looking in ', templatePath);
       if (config.isTestMode()) {
         // fetch original doc page from filesystem for testing
         return readFileAsync(join(paths.PAGES_SRC, templatePath), 'utf-8');
@@ -96,9 +118,16 @@ class Templates {
 
   async fetchTemplate_(templatePath) {
     const templateUrl = new URL(templatePath, config.hosts.pages.base);
+    console.log('Fetching from ', templateUrl.toString());
     const fetchResponse = await fetch(templateUrl);
-    return fetchResponse.text();
+
+    if (fetchResponse.status && fetchResponse.status !== 404) {
+      return fetchResponse.text();
+    }
   }
 }
 
-module.exports = Templates;
+module.exports = {
+  context,
+  Templates,
+};

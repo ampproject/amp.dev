@@ -17,14 +17,10 @@
 'use strict';
 
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const config = require('@lib/config');
-const project = require('@lib/utils/project');
 const URL = require('url').URL;
-const fetch = require('node-fetch');
-const nunjucks = require('nunjucks');
 const LRU = require('lru-cache');
+const config = require('@lib/config');
+const {Templates, context} = require('@lib/templates/');
 
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
@@ -53,111 +49,43 @@ function ensureUrlScheme(originalUrl) {
   return url;
 }
 
-const pageCache = new LRU({
-  max: 100
+// Used to speed up resolving of path stubs to valid paths
+const pathCache = new LRU({
+  max: 500
 });
 
 /**
- * Fetches the requested document's either by requesting the Grow development
- * server (during development) or the pages build destination (all other environments)
- * @param  {String}       pagePath Where the page can potentially be found
- * @return {null|String}  The pages contents if it can be found
+ * Fetches a template matching the requested path
+ * @param  {String}             templatePath The path where the template can be found
+ * @return {nunjucks.Template|null}
  */
-async function getPageContents(pagePath) {
-  const AVAILABLE_STUBS = ['.html', '/index.html', ''];
-  let contents = null;
+async function loadTemplate(templatePath) {
+  const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
+  let template = null;
 
-  // The page path has been ensured to always have a trailing slash which isn't
+  // The path has been ensured to always have a trailing slash which isn't
   // needed to find a matching page file
-  pagePath = pagePath.slice(0, -1);
+  templatePath = templatePath.slice(0, -1);
 
   for (const stub of AVAILABLE_STUBS) {
-    let searchPath = `${pagePath}${stub}`;
-    if (config.isDevMode()) {
-      // During development the LRU cache keeps the (possibly) already resolved
-      // path for quicker look ups
-      searchPath = pageCache.get(pagePath) || searchPath;
-      contents = await fetchPageFromGrow(searchPath);
-    } else {
-      // In all other environments the cache holds the actual page
-      contents = pageCache.get(pagePath) || await readPageFromDisk(searchPath);
+    // As the request path is not the actual path to the template it is somehow
+    // guessed by testing all of AVAILABLE_STUBS, therefore the resolved
+    // paths gets cached
+    const searchPath = pathCache.get(templatePath) || `${templatePath}${stub}`;
+    try {
+      template = await Templates.get(searchPath);
+    } catch(e) {
+      continue;
     }
 
-    if (contents) {
-      if (config.isDevMode()) {
-        pageCache.set(pagePath, searchPath);
-      } else {
-        pageCache.set(pagePath, contents);
-      }
-
+    if (template) {
+      pathCache.set(templatePath, searchPath);
       break;
     }
   }
 
-  return contents;
+  return template;
 }
-
-/**
- * Fetches a path from the Grow development server
- * @param  {String}       searchPath Path of where the page can potentially be found
- * @return {null|String}  The pages contents if it can be found
- */
-async function fetchPageFromGrow(searchPath) {
-  const searchUrl = new URL(searchPath, config.hosts.pages.base);
-  const response = await fetch(searchUrl.toString());
-
-  if (response.status && response.status !== 404) {
-    return response.text();
-  }
-}
-
-/**
- * Reads a page from disk
- * @param  {String}       searchPath Path of where the page can potentially be found
- * @return {null|String}  The pages contents if it can be found
- */
-function readPageFromDisk(searchPath) {
-  return new Promise((resolve) => {
-    fs.readFile(path.join(project.paths.PAGES_DEST, searchPath), (err, data) => {
-      if (err) {
-        resolve(null);
-        return;
-      }
-
-      resolve(data);
-    });
-  });
-}
-
-/**
- * Builds a context object from the ongoing request to render templates
- * @param  {expressjs.Request} req Request to build the context from
- * @return {Object}  The template context
- */
-function buildContext(req) {
-  const context = {};
-
-  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  context['format'] = (req.query.format || '').toLowerCase();
-  if (!ALLOWED_FORMATS.includes(context.format)) {
-    context.format = ALLOWED_FORMATS[0]
-  }
-
-  context['category'] = (req.query.category || '').toLowerCase();
-
-  return context;
-}
-
-const nunjucksEnvironment = new nunjucks.Environment(null, {
-  tags: {
-    blockStart: '<!--%',
-    blockEnd: '%-->',
-    variableStart: '<!--[[',
-    variableEnd: ']]-->',
-    commentStart: '<!--#',
-    commentEnd: '#-->',
-  }
-});
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
@@ -169,20 +97,15 @@ pages.get('/*', async (req, res, next) => {
     return;
   }
 
-  const page = await getPageContents(url.pathname);
-  if (!page) {
+  const template = await loadTemplate(url.pathname);
+  if (!template) {
     next();
     return;
   }
 
   try {
-    // Compile a template from the retrieved page
-    const template = nunjucks.compile(page, nunjucksEnvironment);
-    // Render the template with sanitized, relevant GET parameters
-    const renderedPage = template.render(buildContext(req));
-
-    res.send(renderedPage);
-    return;
+    const renderedTemplate = template.render(context(req));
+    res.send(renderedTemplate);
   } catch(e) {
     next(e);
   }

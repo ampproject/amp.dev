@@ -19,6 +19,7 @@
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
+const {context} = require('@lib/templates/');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
@@ -39,13 +40,13 @@ const blogItems = [
 SampleRenderer.use(router, (request, response, template) => {
   // set max-age to 15 s - the minimum refresh time for an amp-live-list
   setMaxAge(response, 15);
-  response.send(template.render({
+  response.send(template.render(context(request, {
     // render the current time
     time: new Date().toLocaleTimeString(),
     timestamp: Number(new Date()),
     // send a random list of blog items to make it also work on the cache
     blogItems: blogItems.filter(() => Math.floor(Math.random() * Math.floor(2))),
-  }));
+  })));
 });
 
 function newPost(text, img, id) {
@@ -58,5 +59,3 @@ function newPost(text, img, id) {
 }
 
 module.exports = router;
-
-
