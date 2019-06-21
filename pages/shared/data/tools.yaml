@@ -276,7 +276,6 @@ developer:
       - ads
       - stories
   - name: React Storefront
-    official: false
     type: development
     description: React framework that generates AMP and PWA pages from a single codebase.
     url: https://pwa.moovweb.com
