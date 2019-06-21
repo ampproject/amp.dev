@@ -151,5 +151,5 @@ Veja alguns exemplos para inspirar você a criar páginas AMP responsivas (pági
 #### Criado pela AMP
 
 - [Examples: modelos e amostras]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [Modelos da AMP Start](https://www.ampstart.com/)
+- [Modelos]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [Codelab do workshop da conferência sobre AMP: como criar lindas páginas AMP](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

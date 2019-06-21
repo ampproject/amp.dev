@@ -31,7 +31,7 @@
   &-label {
     position: fixed;
     z-index: 17;
-    top: 45px;
+    top: 12px;
     right: 20px;
     cursor: pointer;
     &:focus {
@@ -39,6 +39,9 @@
     }
     &.mainmenuopen {
       z-index: 1004;
+    }
+    .has-banner + & {
+      top: calc(12px + #{$bannerHeight});
     }
 
     @media (min-width: 768px) {
@@ -74,7 +77,7 @@
       }
 
       & ~ .ap--main {
-        max-height: 100vh;
+        max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
       }
 
       & ~ .ap--footer {

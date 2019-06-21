@@ -21,7 +21,7 @@ Para ampliar seu conhecimento de AMP, veja estes recursos:
 
 - Tutorial sobre [como criar páginas AMP interativas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}): saiba como usar [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) para criar páginas AMP interativas.
 - [Combinar AMP com Progressive Web Apps]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}): saiba como Progressive Web Apps e páginas AMP se complementam.
-- [AMP Start](https://www.ampstart.com/): crie páginas usando modelos e componentes com estilos predefinidos.
+- [AMP Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}): crie páginas usando modelos e componentes com estilos predefinidos.
 - [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}): veja demonstrações e amostras ativas.
 - [The AMP Channel no YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): aprenda com vídeos específicos sobre AMP.
 - [Componentes / tags]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): saiba mais sobre todos os componentes AMP.

@@ -43,6 +43,7 @@ send a request to the server without the user leaving their e-mail client.
     <h1>Sample article</h1>
     <p>This is a short summary of a sample article. The user can choose to continue reading on the website or bookmark it to their account for later.</p>
   </div>
+  
   <!--
     We show a "bookmark" button under the article, which sends a bookmark request to the server asynchronously via `amp-form`.
 
@@ -50,7 +51,7 @@ send a request to the server without the user leaving their e-mail client.
     In this example, this token is represented with `123abc`. In a real-life scenario, this hidden input field `auth_token` would contain a real server-side validated limited-use access token.
   -->
   <div>
-    <form action-xhr="<% hosts.backend %>/amphtml-email/submit-form-bookmark" method="post">
+    <form action-xhr="submit-form-bookmark" method="post">
       <input type="hidden"
               name="id"
               value="ARTICLE_UNIQUE_ID">

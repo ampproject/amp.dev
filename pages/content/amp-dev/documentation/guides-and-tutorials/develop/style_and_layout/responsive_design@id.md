@@ -151,5 +151,5 @@ Berikut beberapa contoh yang dapat Anda gunakan sebagai inspirasi untuk membuat 
 #### Dibuat oleh AMP
 
 - [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [Template AMP Start](https://www.ampstart.com/)
+- [Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [Workshop Konferensi AMP Codelab: Membuat AMP yang menarik](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

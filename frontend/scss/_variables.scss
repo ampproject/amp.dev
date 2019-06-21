@@ -20,6 +20,16 @@ $sizes: (
   xl: '5',
 );
 
+/* This variables are used in the following files:
+- frontend/scss/components/molecules/banner.scss
+- frontend/scss/components/organisms/header.scss
+- frontend/scss/components/organisms/burger-menu.scss
+
+The calculations of the height and top values of banner, header and burger-menu
+are based on this variables. If you change them, they automatically adjust. */
+$mobileHeaderHeight: 55px;
+$bannerHeight: 31px;
+
 /* The following map contains every color that is used inside the project. The
 names are identified by using the http://chir.ag/projects/name-that-color to
 prevent double colors and/or hirarchy dicussions */

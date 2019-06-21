@@ -21,7 +21,7 @@ $title: 恭喜！
 
 - [创建交互式 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}})教程：学习如何使用 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 制作交互式 AMP 网页
 - [将 AMP 与 PWA 相结合]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})：了解渐进式网页应用如何与 AMP 网页相辅相成
-- [AMP Start](https://www.ampstart.com/)：使用已预设样式的模板和组件来设置网页样式
+- [AMP Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})：使用已预设样式的模板和组件来设置网页样式
 - [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})：从实例和在线演示中学习相关知识
 - [YouTube 上的 AMP 频道](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw)：通过观看与 AMP 相关的视频学习相关知识
 - [AMP 组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})：详细了解所有 AMP 组件

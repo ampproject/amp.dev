@@ -151,5 +151,5 @@ Aquí hay algunos ejemplos que esperamos te inspiren para crear páginas AMP res
 #### Hecho con AMP
 
 - [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [AMP Start templates](https://www.ampstart.com/)
+- [Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

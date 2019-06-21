@@ -184,5 +184,5 @@ Here are some examples that we hope inspire you to create responsive AMP pages:
 #### Made by AMP
 
 - [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [AMP Start templates](https://www.ampstart.com/)
+- [Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
