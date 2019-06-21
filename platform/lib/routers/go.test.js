@@ -11,3 +11,16 @@ test('redirects simple golink', (done) => {
       .expect(302)
       .expect('Location', /\/documentation\/tools$/, done);
 });
+
+test('redirects regex golink', (done) => {
+  request(app)
+      .get('/c/amp-fit-text')
+      .expect(302)
+      .expect('Location', /\/documentation\/components\/amp-fit-text$/, done);
+});
+
+test('returns 404 on invalid golink', (done) => {
+  request(app)
+      .get('/invalid')
+      .expect(404, done);
+});
