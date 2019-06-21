@@ -17,17 +17,15 @@ $title: Как добавлять сторонний контент
 В результате пропорции твита будут изменены автоматически в соответствии с заданными вами размерами, однако его внешний вид может быть неоптимальным.
 В этом случае вручную укажите более подходящие значения ширины и высоты твита или используйте атрибут media, чтобы соотношение сторон менялось в зависимости от ширины экрана.
 
-<!-- embedded twitter example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-twitter"]
+```html
+<amp-twitter width="500"
+  height="583"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+[/example]
 
 ## Как добавлять изображения из Instagram
 
@@ -42,17 +40,15 @@ $title: Как добавлять сторонний контент
 Затем вставьте код data-shortcode из URL изображения. Например, в URL `https://instagram.com/p/fBwFP` он выглядит так: `fBwFP`.
 В адаптивных макетах Instagram используется фиксированное соотношение сторон, поэтому значения ширины и высоты должны быть соответствующими:
 
-<!-- embedded Instagram example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-instagram"]
+```html
+<amp-instagram data-shortcode="fBwFP"
+  width="320"
+  height="392"
+  layout="responsive">
+</amp-instagram>
+```
+[/example]
 
 ## Как добавлять записи или видео Facebook
 
@@ -110,17 +106,15 @@ Preview:
 
 Добавьте элемент `layout="responsive"`, чтобы макеты для видео с соотношением сторон 16:9 создавались корректно:
 
-<!-- embedded youtube example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 ## Как добавлять объявления
 
@@ -134,30 +128,33 @@ Preview:
 а также тип рекламной сети с помощью атрибута `type`, который определяет ее шаблон.
 У разных типов объявлений должны быть различные атрибуты `data-*`.
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="212"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+</amp-ad>
+```
+[/example]
 
 Если показ объявлений выполнить нельзя, но рекламная сеть поддерживает атрибут `placeholder`, вставьте его, чтобы проверить код:
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="232"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  <div placeholder>Have a great day!</div>
+</amp-ad>
+```
+[/example]
 
 Технология AMP поддерживает множество рекламных сетей. Ознакомьтесь с их [полным списком]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

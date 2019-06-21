@@ -36,7 +36,17 @@ A pesar de que usted puede hacer fácilmente elementos responsivos con `"layout=
 
 En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.
 
-<div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<div class="resp-img">
+  <amp-img alt="flowers"
+    src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+    layout="responsive"
+    width="640"
+    height="427"></amp-img>
+</div>
+```
+[/example]
 
 Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, configuramos un ancho máximo con `max-width` de 700 px a través de una personalización de CSS en el `head`, así:
 
@@ -67,8 +77,15 @@ Cuando incluya un video en su página web, desea asegurarse de que el usuario pu
 
 En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que responda al tamaño y orientación de la pantalla donde se muestre. Agregando el atributo `"layout=responsive"` al elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), el video cambia su tamaño para ajustarse a la pantalla, y su aspecto de radio es mantenido por las especificaciones de tamaños que se hayan realizado sobre `width` y `height`.
 
-<div>
-<amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div> <div placeholder></div> </amp-iframe></div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) -en inglés.
 
@@ -94,8 +111,23 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
 - Un viewport de ancho hasta 900 px, renderizar la imagen al 75% del ancho del viewport.
 - Para cualquier tamaño por debajo de 900 px, renderizar la imagen a 600 px de ancho.
 
-<div>
-<amp-iframe height=326 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.resolution.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="apple"
+  src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
+  height="596"
+  width="900"
+  srcset="{{server_for_email}}/static/inline-examples/images/apple-900.jpg 900w,
+            {{server_for_email}}/static/inline-examples/images/apple-800.jpg 800w,
+            {{server_for_email}}/static/inline-examples/images/apple-700.jpg 700w,
+            {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
+            {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
+            {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
+  sizes="(max-width: 400px) 100vw, 
+            (max-width: 900px) 75vw, 600px">
+</amp-img>
+```
+[/example]
 
 Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 * .75 * 2.6), que pasa a ser `apple-800.jpg`.
 
@@ -115,7 +147,25 @@ En el ejemplo siguiente, tenemos 3 imágenes recortadas diferentes de un gato qu
 
 Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
-<div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="grey cat"
+    media="(min-width: 670px)"
+    width="650"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(min-width: 470px) and (max-width: 669px)"
+    width="450"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(max-width: 469px)"
+    width="226"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"></amp-img>
+```
+[/example]
 
 Leer más: Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 
@@ -131,8 +181,22 @@ Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholder
 
 En el ejemplo siguiente, si el navegador admite WebP, sirva mountains.webp, de lo contrario sirva mountains.jpg.
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Show full code</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Como un buen bono, algunas cachés, como el caché de Google AMP, comprimen y convierten automáticamente imágenes a WebP y las resoluciones correctas si no lo hacen. Sin embargo, no todas las plataformas utilizan cachés, por lo que todavía debe optimizar imágenes manualmente.
 

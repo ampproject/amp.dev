@@ -36,7 +36,17 @@ $title: 반응형 AMP 페이지 만들기
 
 아래 예에서는 모든 화면 크기에 표시하려는 꽃 이미지(640x427px)에 `width` 및 `height`를 지정하고 레이아웃을 `responsive`로 설정합니다.
 
-<div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<div class="resp-img">
+  <amp-img alt="flowers"
+    src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+    layout="responsive"
+    width="640"
+    height="427"></amp-img>
+</div>
+```
+[/example]
 
 이때, 이미지가 원하는 크기 이상으로 늘어나지 않도록 하기 위해 다음과 같이 맞춤 CSS를 사용하여 컨테이너의 `max-width`를 700px로 설정합니다.
 
@@ -67,8 +77,15 @@ $title: 반응형 AMP 페이지 만들기
 
 아래 예에서는 삽입된 YouTube 동영상이 기기 화면의 크기와 방향에 따라 반응하는 것을 보여드리겠습니다. [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 요소에 `"layout=responsive"`를 추가하면 창에 맞춰 동영상 크기가 조정되며 가로세로 비율은 `width` 및 `height`에 지정된 값으로 유지됩니다.
 
-<div>
-<amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div> <div placeholder></div> </amp-iframe></div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) 목록을 참조하세요.
 
@@ -94,8 +111,23 @@ $title: 반응형 AMP 페이지 만들기
 - 표시 영역 너비가 최대 900px인 경우, 표시 영역 너비의 75%로 이미지를 렌더링합니다.
 - 표시 영역 너비가 900px을 넘는 경우, 600px의 너비로 이미지를 렌더링합니다.
 
-<div>
-<amp-iframe height=326 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.resolution.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="apple"
+  src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
+  height="596"
+  width="900"
+  srcset="{{server_for_email}}/static/inline-examples/images/apple-900.jpg 900w,
+            {{server_for_email}}/static/inline-examples/images/apple-800.jpg 800w,
+            {{server_for_email}}/static/inline-examples/images/apple-700.jpg 700w,
+            {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
+            {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
+            {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
+  sizes="(max-width: 400px) 100vw, 
+            (max-width: 900px) 75vw, 600px">
+</amp-img>
+```
+[/example]
 
 표시 영역의 너비가 412px이고 DPR이 2.6인 기기가 있다고 가정해 보겠습니다. 위의 코드에 따라 이미지가 표시 영역 너비의 75%로 표시되어야 하므로 브라우저에서는 803px(412 * .75 * 2.6)에 가까운 `apple-800.jpg` 이미지를 선택합니다.
 
@@ -115,7 +147,25 @@ $title: 반응형 AMP 페이지 만들기
 
 참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?']({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
 
-<div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="grey cat"
+    media="(min-width: 670px)"
+    width="650"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(min-width: 470px) and (max-width: 669px)"
+    width="450"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(max-width: 469px)"
+    width="226"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"></amp-img>
+```
+[/example]
 
 읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
 
@@ -131,8 +181,22 @@ HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재
 
 아래 예에서는 브라우저가 WebP를 지원하면 mountains.webp를 게재하고, 지원하지 않으면 mountains.jpg를 게재합니다.
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 한 가지 보너스 기능으로, Google AMP 캐시와 같은 일부 캐시는 사용자가 직접 수행하지 않는 경우 자동으로 이미지를 압축하고 WebP 및 적절한 해상도로 변환합니다. 그러나 모든 플랫폼에서 캐시를 사용하는 것은 아니므로, 캐시를 사용하지 않는 플랫폼에서는 수동으로 이미지를 최적화해야 합니다.
 

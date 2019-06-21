@@ -17,17 +17,15 @@ $title: 이미지 및 동영상 삽입
 
  다음과 같이 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소를 사용하여 페이지에 이미지를 삽입합니다.
 
-<!--embedded example - fixed size image -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A beautiful sunset"
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+</amp-img>
+```
+[/example]
 
 이는 가장 기본적인 예로, 이미지는 지정된 높이와 너비로 고정되어 표시됩니다. 최소한 너비와 높이가 명시적으로 설정되어 있어야 합니다.
 
@@ -35,33 +33,32 @@ $title: 이미지 및 동영상 삽입
 
  As `<amp-img>`  는 자바스크립트를 사용하므로, 사용자가 스크립트를 사용 중지한 경우 이미지가 표시되지 않습니다. 이 경우, 다음과 같이 `<img>`, `<noscript>` 를 사용하여 이미지 대신 표시할 내용을 지정해야 합니다.
 
-<!--embedded example - img with noscript -->
-<div>
-<amp-iframe height="215"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+  <noscript>
+    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+  </noscript>
+</amp-img>
+```
+[/example]
 
 ### 고급 레이아웃
 
  AMP 에서는 표준 CSS/HTML 에서보다 훨씬 쉽게 완전 반응형 이미지를 생성할 수 있습니다. 아래는 가장 기본적인 형식으로, `layout="responsive"` 를 추가하기만 하면 됩니다.
 
-<!--embedded example - basic responsive image -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 읽어보기: Learn more about [고급 레이아웃 기술]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
 에 관해 자세히 알아보세요.
@@ -76,17 +73,19 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
  The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 요소는 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
 
-<!--embedded amp-anim basic example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim width="400"
+  height="300"
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
+  <amp-img placeholder
+    width="400"
+    height="300"
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 참고: 이 구성요소를 사용하려면` <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 를 페이지 헤드에 삽입하세요.
 
@@ -98,17 +97,19 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 동영상이 시작하기 전에 플레이스홀더를 삽입하고, 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## 오디오
 
@@ -118,16 +119,22 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 오디오가 시작하기 전에 플레이스홀더를 삽입하고, 브라우저에서 HTML5 오디오를 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-<!--embedded audio example  -->
-<div>
-<amp-iframe height="314"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-audio"]
+```html
+<amp-audio width="400"
+  height="200"
+  {% if format == 'stories' %}  layout="nodisplay" autoplay
+  {% endif %}
+  src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <div fallback>
+    <p>Your browser doesn’t support HTML5 audio.</p>
+  </div>
+  <source type="audio/mpeg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <source type="audio/ogg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
+</amp-audio>
+```
+[/example]
 
 참고: 이 구성요소를 사용하려면 `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` 를 페이지 헤드에 삽입하세요.

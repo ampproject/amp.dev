@@ -13,17 +13,19 @@ de marcador de posición del elemento AMP principal.
 Si se indica un elemento `placeholder`, este debe ser un elemento secundario directo del elemento AMP.
 Los elementos marcados como `placeholder` siempre llenarán el elemento AMP principal.
 
-<!--Elemento amp-anim adaptable insertado de ejemplo-->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Mostrar más">Mostrar todo el código</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 De forma predeterminada, el marcador de posición de los elementos AMP se muestra inmediatamente,
 aunque no se hayan descargado ni inicializado los recursos de estos elementos.
@@ -50,24 +52,40 @@ Puedes añadir el atributo `fallback` en cualquier elemento HTML, no solo en los
 
 En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los usuarios que su navegador no es compatible con una función concreta:
 
-<!--ejemplo de vídeo insertado-->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Mostrar más">Mostrar todo el código</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### Ejemplo: servir formatos de imagen diferentes
 
 En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que utilice el archivo JPEG si no admite el formato WebP. 
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar todo">Mostrar todo el código</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## Cómo interactúan los marcadores de posición y los respaldos
 
