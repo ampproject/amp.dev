@@ -250,7 +250,7 @@ section.#{utility('tools')} {
               }
             }
             &:before {
-              display: none;
+              opacity: 0.5;
             }
           }
         }
