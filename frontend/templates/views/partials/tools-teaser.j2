@@ -33,8 +33,8 @@
             {% endif %}
 
             <h4 class="ap-m-teaser-headline">
-            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') -%}
-              <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></div>
+            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
+              <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
             {%- endif -%}
             {{- teaser.name -}}
             </h4>

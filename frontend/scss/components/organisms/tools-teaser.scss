@@ -218,36 +218,25 @@ section.#{utility('tools')} {
           position: absolute;
           left: 30px;
           bottom: 100%;
-          margin: 0;
-          width: 12px;
-          height: 12px;
-          box-sizing: content-box;
-          padding: 4px;
-          border-radius: 20px 20px 0 0;
-          background-color: #fff;
-          z-index: 1;
+          margin: 0 0 4px;
+          width: 14px;
+          height: 14px;
+          fill: color('blue-ribbon');
 
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            height: 12px;
-            width: 12px;
+          svg {
+            z-index: 2;
           }
 
           &::before {
-            left: -12px;
-            background: linear-gradient(135deg, transparent 10px, #fff 0) top left;
-            background-image: radial-gradient(circle at 0 0, rgba(204,0,0,0) 12px, #fff 12px);
-            background-repeat: no-repeat;
-          }
-
-          &::after {
-            right: -12px;
-            background: linear-gradient(135deg, transparent 10px, #fff 0) top right;
-            background-image: radial-gradient(circle at 100% 0, rgba(204,0,0,0) 12px, #fff 12px);
-            background-repeat: no-repeat;
+            content: '';
+            position: absolute;
+            left: 7px;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 58px;
+            height: 23px;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 23'%3E%3Cpath d='M29,0h0C12,0,19.25,22,0,22v1H58V22C38.75,22,46,0,29,0Z' fill='%23fff'/%3E%3C/svg%3E%0A");
           }
         }
 
@@ -275,16 +264,11 @@ section.#{utility('tools')} {
             }
 
             .#{molecule('teaser-logo')} {
+              fill: #fff;
               background-color: color('limed-spruce');
 
               &::before {
-                background: linear-gradient(135deg, transparent 10px, color('limed-spruce') 0) top left;
-                background-image: radial-gradient(circle at 0 0, rgba(204,0,0,0) 12px, color('limed-spruce') 12px);
-              }
-
-              &::after {
-                background: linear-gradient(135deg, transparent 10px, color('limed-spruce') 0) top right;
-                background-image: radial-gradient(circle at 100% 0, rgba(204,0,0,0) 12px, color('limed-spruce') 12px);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 23'%3E%3Cpath d='M29,0h0C12,0,19.25,22,0,22v1H58V22C38.75,22,46,0,29,0Z' fill='%23333D47'/%3E%3C/svg%3E%0A");
               }
             }
           }
