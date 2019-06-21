@@ -41,9 +41,9 @@ tools: !g.yaml /shared/data/tools.yaml
 ---
 
 <section class="ap--stage ap--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/stage-tools.css') %}
+  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-  <div class="ap-o-stage ap-o-stage-amp-conf all">
+  <div class="ap-o-stage">
     <div class="ap--container-fluid">
       <div class="ap-o-stage-content">
           <h1 class="ap-o-stage-content-headline">Tools</h1>
@@ -52,6 +52,7 @@ tools: !g.yaml /shared/data/tools.yaml
     </div>
   </div>
 
+  {% include 'views/partials/tools-visual.j2' %}
 </section>
 
 <section class="ap--tools">
