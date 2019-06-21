@@ -128,6 +128,16 @@ Code samples are placed inside sets of three backticks. The sourcecode language 
 ```
 </pre>
 
+If your code contains double curly braces, which often is the case if you use amp-mustache templates, you have to wrap the code part:
+
+<pre>
+```html
+{% raw %}
+  // code with double curly braces
+{% endraw %}
+```
+</pre>
+
 **Code samples in lists**
 
 Python-Markdown has some limitations. Use the following syntax when including code samples in lists:
@@ -141,6 +151,46 @@ Python-Markdown has some limitations. Use the following syntax when including co
     [/sourcecode]
   2. Second
   3. Third
+  </code>
+</pre>
+
+**Code samples with preview**
+
+You can let a code sample have a preview or a link to open the code sample in the AMP Playground:
+
+<pre>
+  <code>
+[example preview="default: none|inline"
+         playground="default: true|false"
+         imports="&lt;custom-element-1&gt;,&lt;custom-element-2&gt;,..."
+         template="&lt;custom-template&gt;"]
+```html
+  // code sample
+```
+[/example]
+  </code>
+</pre>
+
+An inline preview is only possible if the code does not contain any head elements.
+For email content with resource links use the placeholder `{{server_for_email}}`.
+
+<pre>
+  <code>
+[example preview="inline"
+         playground="true"
+         imports="amp-list"
+         template="amp-mustache"]
+```html
+&lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
+  src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
+  &lt;template type=&quot;amp-mustache&quot;&gt;{% raw %}
+    &lt;div class=&quot;url-entry&quot;&gt;
+      &lt;a href=&quot;{{url}}&quot;&gt;{{title}}&lt;/a&gt;
+    &lt;/div&gt;
+  {% endraw %}&lt;/template&gt;
+&lt;/amp-list&gt;
+```
+[/example]
   </code>
 </pre>
 

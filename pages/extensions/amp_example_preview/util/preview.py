@@ -9,48 +9,57 @@ PREVIEW_PATTERN = re.compile(PREVIEW_START_BEGINNING + r'(.*?)\n-->\n(.*?)' + PR
 
 class ExamplePreview(object):
 
-    def __init__(self, iterable=(), **kwargs):
-        self.__dict__.update(iterable, **kwargs)
+  def __init__(self, iterable=(), **kwargs):
+    self.__dict__.update(iterable, **kwargs)
 
-    def get_start_tag(self):
-        jsonData = json.dumps(self.__dict__)
-        return PREVIEW_START_BEGINNING + escape(jsonData) + '\n-->\n'
+  def get_start_tag(self):
+    data = json.dumps(self.__dict__)
+    data = escape(data)
+    # Extra escape the curly brace to prevent jinja2 markup evaluation
+    data = data.replace('{', '&#123;')
 
-    def get_end_tag(self):
-        return PREVIEW_END_TAG
+    # the newline at the end is needed to ensure we are not inside a paragraph
+    return '\n' + PREVIEW_START_BEGINNING + data + '\n-->\n'
 
-    @staticmethod
-    def from_json(jsonData):
-        """
-        :type jsonData: str
-        """
-        result = ExamplePreview()
-        result.__dict__ = json.loads(unescape(jsonData))
-        return result
+  def get_end_tag(self):
+    return PREVIEW_END_TAG
+
+  @staticmethod
+  def from_json(json_data):
+    """
+    :type json_data: str
+    """
+    result = ExamplePreview()
+
+    # the saxutils will not decode the numbered entities, so do it first
+    data = json_data.replace('&#123;', '{')
+    data = unescape(data)
+    result.__dict__ = json.loads(data)
+    return result
 
 
 class ExamplePreviewMatch(object):
 
-    def __init__(self, iterable=(), **kwargs):
-       self.__dict__.update(iterable, **kwargs)
+  def __init__(self, iterable=(), **kwargs):
+    self.__dict__.update(iterable, **kwargs)
 
-    @staticmethod
-    def has_preview(content):
-        return PREVIEW_START_BEGINNING in content
+  @staticmethod
+  def has_preview(content):
+    return PREVIEW_START_BEGINNING in content
 
-    @staticmethod
-    def extract_previews(content):
-        result = []
-        match = PREVIEW_PATTERN.search(content)
-        while match:
-            preview = ExamplePreview.from_json(match.group(1))
-            entry = ExamplePreviewMatch(
-                preview=preview,
-                start_tag_start=match.start(0),
-                start_tag_end=match.start(2),
-                end_tag_start=match.end(2),
-                end_tag_end=match.end(0),
-            )
-            result.append(entry)
-            match = PREVIEW_PATTERN.search(content, match.end(0))
-        return result
+  @staticmethod
+  def extract_previews(content):
+    result = []
+    match = PREVIEW_PATTERN.search(content)
+    while match:
+      preview = ExamplePreview.from_json(match.group(1))
+      entry = ExamplePreviewMatch(
+        preview=preview,
+        start_tag_start=match.start(0),
+        start_tag_end=match.start(2),
+        end_tag_start=match.end(2),
+        end_tag_end=match.end(0),
+      )
+      result.append(entry)
+      match = PREVIEW_PATTERN.search(content, match.end(0))
+    return result

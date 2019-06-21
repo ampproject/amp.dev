@@ -1,12 +1,20 @@
 {% if preview.mode == 'inline' %}
 <div class="ap-o-code-preview">
   <div class="ap-o-code-preview-preview">
-     {{preview.source}}
+     {{preview.source|render|safe}}
   </div>
 {% endif %}
 
-{{content}}
+{{content|safe}}
 
 {% if preview.mode == 'inline' %}
 </div>
 {% endif %}
+{%- if preview.playground %}
+<a href="{{podspec.base_urls.playground}}/?url={{preview.url|urlencode}}" class="ap-m-lnk ap--playground-link">
+  <div class="ap-a-ico ap-m-lnk-icon">
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+  </div>
+  <span class="ap-m-lnk-text">{{_('Open this snippet in playground')}}</span>
+</a>
+{%- endif -%}

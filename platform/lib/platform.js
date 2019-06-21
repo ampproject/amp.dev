@@ -32,6 +32,7 @@ const routers = {
     embeds: require('@lib/routers/example/embeds.js'),
     sources: require('@lib/routers/example/sources.js'),
     static: require('@lib/routers/example/static.js'),
+    inline: require('@lib/routers/inlineExamples.js'),
   },
   log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
@@ -122,6 +123,7 @@ class Platform {
       routers.example.static,
       routers.example.embeds,
       routers.example.sources,
+      routers.example.inline,
     ])));
   }
 

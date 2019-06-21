@@ -1,6 +1,11 @@
 ---
 $title: Example with style
 $order: 7
+formats:
+ - websites
+ - email
+ - stories
+ - ads
 ---
 
 Start
@@ -10,12 +15,12 @@ Start
 ```html
 <head>
   <style amp-custom>
-      h1: color:red;
+      h1 { color:red; }
   </style>
 </head>
-<bod>
+<body>
     <h1>Red Headline</h1>
-</bod>
+</body>
 ```
 
 [/example]

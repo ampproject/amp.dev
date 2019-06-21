@@ -1,6 +1,11 @@
 ---
 $title: Full document example
 $order: 8
+formats:
+ - websites
+ - email
+ - stories
+ - ads
 ---
 
 Start
