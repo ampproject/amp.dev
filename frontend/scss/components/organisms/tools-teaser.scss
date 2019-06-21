@@ -24,7 +24,7 @@ The tools cards on the tools page and in widget form.
 
 section.#{utility('tools')} {
     .#{organism('tool-section')} {
-      margin-bottom: 2em;
+      margin-bottom: 3em;
       padding: 0 30px;
 
       @media (min-width: 768px) {
@@ -159,11 +159,11 @@ section.#{utility('tools')} {
       &-list {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 60px 30px;
+        grid-gap: 20px 30px;
         margin: 0;
         align-items: stretch;
 
-        @media (min-width: 768px) {
+        @media (min-width: 575px) {
           grid-template-columns: repeat(12, 1fr);
           /*grid-auto-rows: 1fr;*/ /*looks a little better when multiple rows are present but wastes space */
           margin: 0;
@@ -173,6 +173,7 @@ section.#{utility('tools')} {
           display: flex;
           flex-direction: column;
           width: 100%;
+          margin: 0;
           border-radius: 4px;
 
           > div:last-child {
@@ -180,12 +181,6 @@ section.#{utility('tools')} {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-          }
-
-          @media (max-width: 768px) {
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: row;
           }
         }
 
@@ -257,10 +252,6 @@ section.#{utility('tools')} {
         }
 
         .#{molecule('teaser-image')}{
-          @media (max-width: 767px) {
-            width: 30%;
-            flex: 1 0 auto;
-          }
           &.contain {
             amp-img {
               margin: 0 10px;
@@ -317,6 +308,10 @@ section.#{utility('tools')} {
           grid-column: 1;
           margin: 0;
           display: flex;
+
+          @media (min-width: 575px) {
+            grid-column: span 6;
+          }
 
           @media (min-width: 768px) {
             grid-column: span 4;
