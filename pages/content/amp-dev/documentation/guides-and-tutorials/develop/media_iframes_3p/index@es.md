@@ -19,17 +19,15 @@ y no podrás aprovechar todas las ventajas que aporta AMP.
 
  Para incluir una imagen en tu página, utiliza el elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), como se muestra a continuación:
 
-<!--embedded example - fixed size image -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A beautiful sunset"
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+</amp-img>
+```
+[/example]
 
 En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fijas especificadas. Hay que especificar, como mínimo, unos valores determinados de anchura y altura.
 
@@ -37,33 +35,32 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 
  Como `<amp-img>` depende de JavaScript, si el usuario elige inhabilitar las secuencias de comandos, no se mostrarán las imágenes. En este caso, debes proporcionar una alternativa a la imagen usando `<img>` y `<noscript>`, como se muestra a continuación:
 
-<!--embedded example - img with noscript -->
-<div>
-<amp-iframe height="215"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+  <noscript>
+    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+  </noscript>
+</amp-img>
+```
+[/example]
 
 ### Diseños avanzados
 
  Crear imágenes totalmente adaptables es mucho más fácil con AMP que con páginas en CSS/HTML estándar. En su forma más básica, solo tienes que añadir `layout="responsive"`:
 
-<!--embedded example - basic responsive image -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 Leer más: Consulta más información sobre [las técnicas de diseño avanzadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
@@ -77,17 +74,19 @@ Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición p
 
  El elemento [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}})  es muy parecido al elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) y ofrece una función diferente a la hora de gestionar la carga y la reproducción de archivos GIF y de otros tipos de imágenes animadas.
 
-<!--embedded amp-anim basic example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim width="400"
+  height="300"
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
+  <amp-img placeholder
+    width="400"
+    height="300"
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 Nota: Incluye`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` en el encabezado de la página para usar este componente.
 
@@ -99,17 +98,19 @@ Nota: Incluye`<script async custom-element="amp-anim" src="https://cdn.ampprojec
 
 Incluye un marcador de posición antes del inicio del video y una alternativa, si el navegador no admite videos en HTML5, por ejemplo:
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## Audio
 
@@ -119,16 +120,22 @@ Incluye un marcador de posición antes del inicio del video y una alternativa, s
 
 Incluye un marcador de posición antes del inicio del audio y una alternativa, si el navegador no admite audios en HTML5, por ejemplo:
 
-<!--embedded audio example  -->
-<div>
-<amp-iframe height="314"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-audio"]
+```html
+<amp-audio width="400"
+  height="200"
+  {% if format == 'stories' %}  layout="nodisplay" autoplay
+  {% endif %}
+  src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <div fallback>
+    <p>Your browser doesn’t support HTML5 audio.</p>
+  </div>
+  <source type="audio/mpeg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <source type="audio/ogg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
+</amp-audio>
+```
+[/example]
 
 Nota: Incluye`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` en el encabezado de la página para usar este componente.

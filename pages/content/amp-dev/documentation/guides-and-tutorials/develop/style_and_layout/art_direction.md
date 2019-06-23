@@ -25,17 +25,18 @@ In this simple example,
 The `w` descriptor tells the browser the width
 of each image in the list:
 
-<!--embedded amp-img example using srcset -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  layout="responsive"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+</amp-img>
+```
+[/example]
 
 [tip type="note"]
 **NOTE –**  AMP supports srcset with the `w` descriptor across all browsers.
@@ -55,17 +56,18 @@ the user agent selects the most relative source supplied by the `srcset` attribu
 
 Consider the following example:
 
-<!--embedded amp-img example using sizes -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+  sizes="(min-width: 650px) 50vw, 100vw">
+</amp-img>
+```
+[/example]
 
 The `sizes` attribute defines the element’s width to be 50% the size of the viewport
 when the viewport is 650px or more.
@@ -96,17 +98,16 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 
 An example:
 
-<!--embedded amp-img example using heights -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="AMP"
+  src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%">
+</amp-img>
+```
+[/example]
 
 In this example, the height of the element by default will be 80% of the width, but for the viewport
 wider than `500px` it will be capped at `200px`.

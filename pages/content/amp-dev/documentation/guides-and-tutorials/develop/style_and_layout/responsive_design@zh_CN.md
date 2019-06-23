@@ -36,7 +36,17 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，我们希望在屏幕尺寸各异的设备上显示一张花卉图片（640 x 427 像素），因此我们指定了 `width` 和 `height`，并将布局设为 `responsive`。
 
-<div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<div class="resp-img">
+  <amp-img alt="flowers"
+    src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+    layout="responsive"
+    width="640"
+    height="427"></amp-img>
+</div>
+```
+[/example]
 
 不过，我们不希望过度拉伸该图片以致于超出其目标尺寸，因此我们通过自定义 CSS 将容器的 `max-width` 设为 700 像素：
 
@@ -67,8 +77,15 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
 
-<div>
-<amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div> <div placeholder></div> </amp-iframe></div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})列表。
 
@@ -94,8 +111,23 @@ $title: 制作自适应 AMP 网页
 - 在视口宽度不超过 900 像素的情况，以 75% 的视口宽度呈现图片。
 - 在视口宽度超过 900 像素的所有情况下，以 600 像素的宽度呈现图片。
 
-<div>
-<amp-iframe height=326 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.resolution.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="apple"
+  src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
+  height="596"
+  width="900"
+  srcset="{{server_for_email}}/static/inline-examples/images/apple-900.jpg 900w,
+            {{server_for_email}}/static/inline-examples/images/apple-800.jpg 800w,
+            {{server_for_email}}/static/inline-examples/images/apple-700.jpg 700w,
+            {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
+            {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
+            {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
+  sizes="(max-width: 400px) 100vw, 
+            (max-width: 900px) 75vw, 600px">
+</amp-img>
+```
+[/example]
 
 例如，假设我们的某部设备的视口宽度为 412 像素，DPR 为 2.6。根据上面的代码，图片必须以 75% 的视口宽度显示，因此浏览器会选择一张接近 803 像素 (412 * .75 * 2.6) 的图片，而 `apple-800.jpg` 正好符合条件。
 
@@ -115,7 +147,25 @@ $title: 制作自适应 AMP 网页
 
 注意: 由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#如果未定义宽度和高度，会怎样？)。
 
-<div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="grey cat"
+    media="(min-width: 670px)"
+    width="650"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(min-width: 470px) and (max-width: 669px)"
+    width="450"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(max-width: 469px)"
+    width="226"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"></amp-img>
+```
+[/example]
 
 继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})指南。
 
@@ -131,8 +181,22 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，如果浏览器支持 WebP，便提供 mountains.webp；否则，就提供 mountains.jpg。
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 特别棒的是，某些缓存（如 Google AMP 缓存）会自动将图片压缩成 WebP 格式并将其画质转换成合适的分辨率（如果您没有这样做的话）。不过，并非所有平台都使用缓存，因此您仍应自行手动优化图片。
 

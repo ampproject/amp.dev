@@ -1,3 +1,4 @@
+{% set body_contains_story = example.body and example.has_tag(example.body, 'amp-story') %}
 <!doctype html>
 <html amp lang="en">
 <head>
@@ -5,7 +6,7 @@
   <meta charset="utf-8">
 {% endif %}
 {% if not example.has_tag_in_head('title') %}
-  <title>{{export.title|e}} - Example {{example.index}}</title>
+  <title>{{export.title|e}} - {{_('Example')}} {{example.index}}</title>
 {% endif %}
 {% if not example.has_amp_script() %}
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -33,29 +34,39 @@
 {% if example.head %}
 {{example.head|render|safe}}
 {% endif %}
-{% if example.custom_style %}
+{% if example.custom_style or not body_contains_story %}
   <style amp-custom>
+  {% if not body_contains_story %}
+    amp-story {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI ", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji ", "Segoe UI Emoji ", "Segoe UI Symbol ";
+    }
+    amp-story-page * {
+      color: white;
+      text-align: center;
+    }
+  {% endif %}
+  {% if example.custom_style %}
     {{example.custom_style|render|safe}}
+  {% endif %}
   </style>
 {% endif %}
 </head>
 <body>
-{% if example.body and example.has_tag(example.body, 'amp-story') %}
+{% if body_contains_story %}
 {{example.body|render|safe}}
 {% else %}
   <amp-story standalone
-    title="Stories in AMP - Hello World"
+    title="{{export.title|e}} - {{_('Example')}} {{example.index}}"
     publisher="AMP Project"
-    publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
-    poster-portrait-src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg"
-    poster-square-src="https://amp.dev/static/samples/img/story_dog2_square.jpg"
-    poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg">
-
+    publisher-logo-src="https://amp.dev/static/samples/img/favicon.png"
+    poster-portrait-src="https://amp.dev/static/samples/img/amp.jpg">
     <amp-story-page id="page-1">
       <amp-story-grid-layer template="vertical">
+
 {% if example.body %}
 {{example.body|render|safe}}
 {% endif %}
+
       </amp-story-grid-layer>
     </amp-story-page>
   </amp-story>
