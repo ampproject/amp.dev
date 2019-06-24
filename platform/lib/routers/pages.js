@@ -41,6 +41,11 @@ function ensureUrlScheme(originalUrl) {
     url.pathname = url.pathname.slice(0, -5);
   }
 
+  // Get rid of index in the URL
+  if (url.pathname.endsWith('index')) {
+    url.pathname = url.pathname.slice(0, -5);
+  }
+
   // Ensure there is a trailing slash
   if (!url.pathname.endsWith('/')) {
     url.pathname = `${url.pathname}/`;
