@@ -29,6 +29,5 @@ ext:
 - extensions.amp_dependencies.AmpDependenciesExtension
 - extensions.amp_dev.AmpDevExtension
 - extensions.amp_example_preview.AmpExamplePreviewExtension
-- extensions.amp_dependency_injector.AmpDependencyInjectorExtension
 - extensions.url_beautifier.UrlBeautifierExtension
 - extensions.jinja2_optimized_codehilite.Jinja2OptimizedCodehiliteExtension
