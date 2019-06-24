@@ -92,8 +92,39 @@ async function loadTemplate(templatePath) {
     }
   }
 
-  pathCache.set(templatePath, false);
+  // If no template could be found, mark this as unresolvable
+  if (!template) {
+    pathCache.set(templatePath, false);
+  }
+
   return template;
+}
+
+/**
+ * Takes the rendered template and rewrites all hrefs in anchor tags
+ * to have the currently selected format
+ * @param  {String} html
+ * @return {String}
+ */
+function rewriteLinks(canonical, html, format) {
+  const DOCUMENTATION_ROUTE_PATTERN = /\/documentation\/*/;
+  if (!DOCUMENTATION_ROUTE_PATTERN.test(canonical)) {
+    return html;
+  }
+
+  const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm
+  html = html.replace(A_HREF_PATTERN, (match, p1, p2) => {
+    if (!DOCUMENTATION_ROUTE_PATTERN.test(p2)) {
+      return match;
+    }
+
+    const url = new URL(p2, config.hosts.platform.base);
+    url.searchParams.set('format', format);
+
+    return match.replace(p2, url.toString());
+  });
+
+  return html;
 }
 
 // eslint-disable-next-line new-cap
@@ -101,7 +132,9 @@ const pages = express.Router();
 
 pages.get('/*', async (req, res, next) => {
   const url = ensureUrlScheme(req.originalUrl);
-  if (url.pathname !== req.path) {
+  // Redirect rewritten paths, but only if they haven't been unsuccessfully
+  // tried to be resolved before
+  if (url.pathname !== req.path && pathCache.get(url.pathname) !== false) {
     res.redirect(url.toString());
     return;
   }
@@ -112,12 +145,21 @@ pages.get('/*', async (req, res, next) => {
     return;
   }
 
+  const templateContext = context(req);
+  let renderedTemplate = null;
   try {
-    const renderedTemplate = template.render(context(req));
-    res.send(renderedTemplate);
+    renderedTemplate = template.render(templateContext);
   } catch(e) {
     next(e);
+    return;
   }
+
+  // The documentation pages rely on passing along their currently
+  // selected format via GET paramters. The static URLs need to be rewritten
+  // for this use case
+  renderedTemplate = rewriteLinks(url.pathname, renderedTemplate, templateContext.format);
+
+  res.send(renderedTemplate);
 });
 
 module.exports = pages;
