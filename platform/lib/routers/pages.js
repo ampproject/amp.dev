@@ -133,10 +133,17 @@ function rewriteLinks(canonical, html, format) {
 const pages = express.Router();
 
 pages.get('/*', async (req, res, next) => {
+  // Let known file extensions automatically fallthrough as if they could not
+  // been resolved by the preceeding middleware the pages router can't
+  // resolve them either
+  const KNOWN_FILE_EXTENSIONS = /\.(jpg|png|css|js|map)$/
+  if (KNOWN_FILE_EXTENSIONS.test(req.path)) {
+    next();
+    return;
+  }
+
   const url = ensureUrlScheme(req.originalUrl);
-  // Redirect rewritten paths, but only if they haven't been unsuccessfully
-  // tried to be resolved before
-  if (url.pathname !== req.path && pathCache.get(url.pathname) !== false) {
+  if (url.pathname !== req.path) {
     res.redirect(url.toString());
     return;
   }
