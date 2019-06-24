@@ -22,7 +22,14 @@
 
 .#{organism('help')} {
 
-  padding-top: 32px;
+  padding-top: 84px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &-hl {
     @include hl;
@@ -44,5 +51,12 @@
 
   &-divider {
     @include divider-header-mobile;
+  }
+}
+
+/* if the ap-o-help is inside an ap--content, it has too much padding to the top. */
+@media (min-width: 768px) {
+  .ap--content > .#{organism('help')} {
+    padding-top: 22px;
   }
 }
