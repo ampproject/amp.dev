@@ -86,6 +86,8 @@
       {{ doc.styles.emit() }}
     </style>
     <link rel="manifest" href="/manifest.json">
+
+    {{ doc.amp_dependencies.emit() }}
   </head>
   {# The body tag needs an empty class attribute in order to add the filter class.
   It is a block solely for the purpose to be overridable by the samples. #}

@@ -26,6 +26,7 @@ ext:
           method: 'addCssFile'
         - name: 'icons'
           method: 'useIcon'
+- extensions.amp_dependencies.AmpDependenciesExtension
 - extensions.amp_dev.AmpDevExtension
 - extensions.amp_example_preview.AmpExamplePreviewExtension
 - extensions.amp_dependency_injector.AmpDependencyInjectorExtension
