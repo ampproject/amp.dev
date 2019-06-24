@@ -119,7 +119,9 @@ function rewriteLinks(canonical, html, format) {
     }
 
     const url = new URL(p2, config.hosts.platform.base);
-    url.searchParams.set('format', format);
+    if (!url.searchParams.has('format')) {
+      url.searchParams.set('format', format);
+    }
 
     return match.replace(p2, url.toString());
   });
