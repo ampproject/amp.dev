@@ -1,15 +1,29 @@
 const express = require('express');
 const request = require('supertest');
 
+const GO_LINKS_YAML = `
+/email: /about/email
+/websites: /about/websites
+^/c/amp-([a-z-]+)$:
+  url: /documentation/components/amp-$1
+  useRegex: true
+`;
+
+jest.mock('js-yaml');
+const yaml = require('js-yaml');
+const {safeLoad} = jest.requireActual('js-yaml');
+const goLinks = safeLoad(GO_LINKS_YAML);
+yaml.safeLoad.mockReturnValue(goLinks);
+
 const app = express();
 const router = require('./go.js');
 app.use(router);
 
 test('redirects simple golink', (done) => {
   request(app)
-      .get('/tools')
+      .get('/email')
       .expect(302)
-      .expect('Location', /\/documentation\/tools$/, done);
+      .expect('Location', /\/about\/email$/, done);
 });
 
 test('redirects regex golink', (done) => {
