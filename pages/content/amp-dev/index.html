@@ -52,6 +52,9 @@ success_stories:
   - !g.doc /content/amp-dev/about/success-stories/carved.yaml
 ---
 {% do doc.styles.addCssFile('css/components/templates/home.css') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
+{% do doc.amp_dependencies.add('amp-animation', '0.1') %}
+{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 <main class="ap--main ap-t-home">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}

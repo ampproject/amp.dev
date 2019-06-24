@@ -1,4 +1,5 @@
 {% macro filter(formats='websites, ads, stories, email') -%}
+{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
 {% if not formats.strip() %}
 {{ caller() }}
 {% else %}

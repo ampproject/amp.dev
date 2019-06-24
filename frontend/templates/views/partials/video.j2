@@ -1,4 +1,6 @@
 {% do doc.styles.addCssFile('css/components/atoms/video.css') %}
+{% do doc.amp_dependencies.add('amp-video', '0.1') %}
+{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 
 <figure class="ap-a-video">
   {% if youtube_id %}

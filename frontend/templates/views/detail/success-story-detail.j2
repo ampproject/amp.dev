@@ -1,4 +1,6 @@
 {% extends '/layouts/default.j2' %}
+{% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
+{% do doc.amp_dependencies.add('amp-video', '0.1') %}
 
 {% block styles %}
 {{ super() }}
