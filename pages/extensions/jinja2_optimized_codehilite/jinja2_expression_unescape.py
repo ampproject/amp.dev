@@ -23,7 +23,7 @@ def unescape_quotes(value):
   # undo the entities used by pygments/formatters/html.py
   result = result.replace('&quot;', '"')
   result = result.replace('&#39;', '\'')
-  result = result.replace('&lt;', '          <        ')
-  result = result.replace('&gt;', '          >      ')
+  result = result.replace('&lt;', '<')
+  result = result.replace('&gt;', '>')
 
   return result
