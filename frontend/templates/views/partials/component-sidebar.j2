@@ -30,9 +30,11 @@
                   {% endif %}
                   {% set formats = component.formats or [] %}
                   {% set activeDocument = true if component.url == doc.url %}
+                  [% if format in {{ formats|tojson }} %]
                   <li {% if activeDocument %}autoscroll {% endif %} class="nav-item {% if activeDocument %}active {% endif %} level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
                     <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
                   </li>
+                  [% endif %]
                   {% endfor %}
                 </ul>
               </li>
