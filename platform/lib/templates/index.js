@@ -87,7 +87,6 @@ class Templates {
    */
   async load(templatePath) {
     return this.compile(templatePath, async () => {
-      console.log('Looking in ', templatePath);
       if (config.isTestMode()) {
         // fetch original doc page from filesystem for testing
         return readFileAsync(join(paths.PAGES_SRC, templatePath), 'utf-8');
@@ -118,7 +117,6 @@ class Templates {
 
   async fetchTemplate_(templatePath) {
     const templateUrl = new URL(templatePath, config.hosts.pages.base);
-    console.log('Fetching from ', templateUrl.toString());
     const fetchResponse = await fetch(templateUrl);
 
     if (fetchResponse.status && fetchResponse.status !== 404) {
