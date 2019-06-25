@@ -6,14 +6,15 @@ formats:
   - email
 ---
 
-Email clients looking to support AMP for Email should implement a viewer to host their sender’s AMP emails. A viewer built with the AMP viewer library encapsulates an AMP document and enables capabilities that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
+Email clients looking to support AMP for Email should implement a [viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP viewer library](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
+More details regarding the Viewer and AMP document API [here](http:/).
 
 ## Viewer XHR interception
 
 The AMP viewer library’s xhrInterceptor capability allows for the viewer to intercept outgoing XHR requests. The AMP viewer can introspect a request for its validity and intent to ensure the protection and privacy of it users.
 
 #### XHR requests
-AMP components such [`<amp-list>`](https://amp.dev/documentation/components/amp-list.html?format=email) and [`<amp-form>`](https://amp.dev/documentation/components/amp-form.html?format=email), require calls to endpoints to post or retrieve  data. These calls classify as XHR requests.
+AMP components such [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) and [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=email), require calls to endpoints to post or retrieve  data. These calls classify as XHR requests.
 
 ### Enabling XHR intercepting
 
@@ -29,7 +30,7 @@ Enable xhr intercepting by opting the viewer into the xhrInterceptor capability 
 
 ## Viewer server side template rendering
 
-The viewerRenderTemplate capability allows the viewer to manage [`<amp-list>`](https://amp.dev/documentation/components/amp-list.html?format=email) and [`<amp-form>`](https://amp.dev/documentation/components/amp-form.html?format=email) template  rendering. With this enabled, the AMP runtime proxies a request containing the original XHR call, template data, and any other details required for rendering the component contents to the viewer.  This allows the viewer to introspect the endpoint data content and manage the mustache rendering of the templates to verify and sanitize the data. Note that if this capability is enabled along with the xhrInterceptor, in the amp-form and amp-list component, the viewerRenderTemplate capability which also proxies requests to the viewer will trump that of the xhrInterceptor.
+The viewerRenderTemplate capability allows the viewer to manage [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) and [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=email) template  rendering. With this enabled, the AMP runtime proxies a request containing the original XHR call, template data, and any other details required for rendering the component contents to the viewer.  This allows the viewer to introspect the endpoint data content and manage the mustache rendering of the templates to verify and sanitize the data. Note that if this capability is enabled along with the xhrInterceptor, in the amp-form and amp-list component, the viewerRenderTemplate capability which also proxies requests to the viewer will trump that of the xhrInterceptor.
 
 The viewer.html example shows how one might handle the viewerRenderTemplate message sent from the AMP doc. In that example, the Viewer.prototype.processRequest_ catches the viewerRenderTemplate message and based on the amp component type available in the request, sends back the html to be rendered in the following JSON format.
 
@@ -51,10 +52,17 @@ return Promise.resolve({
 
 This is a trivial example where there is no mustache library dependency or sanitization of the content.
 
-The diagram below illustrates a more real world example of how an AMP document in an email client viewer with a viewerRenderTemplate capability could handle the rendering of the  amp-list template.
+The diagram below illustrates a more real world example of how an AMP document in an email client viewer with a viewerRenderTemplate capability could handle the rendering of the [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) template.
 
+[sourcecode:html]
+<amp-img alt="AMP for Email MIME Parts Diagram"
+    layout="responsive"
+    width="752" height="246"
+    src="https://github.com/ampproject/docs/pages/content/amp-dev/documentation/guides-and-tutorials/learn/viewerRenderTemplate-diagram.png">
+</amp-img>
+[/sourcecode]
 
-The AMP runtime would proxy the [`<amp-list>`](https://amp.dev/documentation/components/amp-list.html?format=email) component data fetch request to the viewer, which in turn would forward this request to an email client server. The server would feed this URL and results of the URL fetch through various services, possibly inspecting the URL validity, the contents of the data returned from that URL and render the mustache templates with that data. It would then return that rendered template and send it back to the viewer in the following JSON response format.
+The AMP runtime would proxy the [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) component data fetch request to the viewer, which in turn would forward this request to an email client server. The server would feed this URL and results of the URL fetch through various services, possibly inspecting the URL validity, the contents of the data returned from that URL and render the mustache templates with that data. It would then return that rendered template and send it back to the viewer in the following JSON response format.
 
 ```
 {
