@@ -92,3 +92,24 @@ The AMP runtime would proxy the [`<amp-list>`]({{g.doc('/content/amp-dev/documen
 }
 ```
 The html value in the JSON payload will be what is injected into the AMP document for rendering.
+
+The table below outlines the capabilities and the affected components:
+
+<table>
+  <thead>
+    <tr>
+      <th width="30%">Viewer capability</th>
+      <th>Affected components</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>xhrInterceptor</td>
+      <td><code>[amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=email), [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email), [amp-state](https://amp.dev/documentation/components/amp-bind?format=email#initializing-state-with-amp-state)</code></td>
+    </tr>
+     <tr>
+       <td>viewerRenderTemplate</td>
+       <td><code>[amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=email), [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email)</code></td>
+    </tr>
+  </tbody>  
+</table>
