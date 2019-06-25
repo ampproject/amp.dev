@@ -21,8 +21,12 @@
 
 
 .#{organism('help')} {
+  padding: 84px 15px 0;
 
-  padding-top: 32px;
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &-hl {
     @include hl;
