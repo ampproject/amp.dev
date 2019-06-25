@@ -1,31 +1,31 @@
 entries:
 
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2019/06/courses_hero.jpg"
+  headline: "Learn web development with AMP!"
+  date: "June 20, 2019"
+  url: "https://blog.amp.dev/2019/06/20/learn-web-development-with-amp/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2019/06/cf_hero.png"
+  headline: "Introducing Cloudflare AMP Real URL"
+  date: "June 17, 2019"
+  url: "https://blog.amp.dev/2019/06/17/introducing-cloudflare-amp-real-url/"
+
+- title: "Blog"
+  image: ""
+  headline: "Innovation in navigation on the web platform"
+  date: "June 5, 2019"
+  url: "https://blog.amp.dev/2019/06/05/innovation-in-navigation-on-the-web-platform/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2018/10/img_20180926_163001-01.jpeg"
+  headline: "Save the Date &#8211; AMP Contributor Summit 2019"
+  date: "June 3, 2019"
+  url: "https://blog.amp.dev/2019/06/03/save-the-date-amp-contributor-summit-2019/"
+
 - title: "Video"
   image: "https://i2.ytimg.com/vi/eHfzqcCH-gE/hqdefault.jpg"
   headline: "How to make your AMP pages even faster"
-  date: "May 23, 2019"
+  date: "May 24, 2019"
   url: "https://www.youtube.com/watch?v=eHfzqcCH-gE"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/05/GettyImages-883707802.jpg"
-  headline: "Debunking Common AMP Myths"
-  date: "May 23, 2019"
-  url: "https://blog.amp.dev/2019/05/23/debunking-common-amp-myths/"
-
-- title: "Blog"
-  image: ""
-  headline: "Privacy-preserving instant loading for all web content"
-  date: "May 22, 2019"
-  url: "https://blog.amp.dev/2019/05/22/privacy-preserving-instant-loading-for-all-web-content/"
-
-- title: "Blog"
-  image: ""
-  headline: "A year into contributing back lessons learned from AMP to the whole web"
-  date: "May 21, 2019"
-  url: "https://blog.amp.dev/2019/05/21/contributing-back-lessons-learned-part-1/"
-
-- title: "Blog"
-  image: ""
-  headline: "Signed-Exchange: Solving the AMP URLs Display Problem"
-  date: "May 15, 2019"
-  url: "https://blog.amp.dev/2019/05/15/signed-exchange-solving-the-amp-urls-display-problem/"
