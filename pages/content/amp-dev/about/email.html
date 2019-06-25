@@ -29,7 +29,7 @@ benefits: !g.yaml /shared/data/benefits.yaml
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
           <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_email.md', locale=doc.locale).url.path }}?format=email" class="ap-o-stage-content-button ap-a-btn">Start developing</a>
-          <a href="#stories" class="ap-o-stage-content-button ap-a-btn">Send emails</a>
+          <a href="#send-mails" class="ap-o-stage-content-button ap-a-btn">Send emails</a>
         </div>
     </div>
   </div>
@@ -164,7 +164,8 @@ benefits: !g.yaml /shared/data/benefits.yaml
 
   </div>
 </section>
-
-{% with format = 'email', group = 'platforms' %}
-{% include 'views/partials/tools-widget.j2' %}
-{% endwith %}
+<section id="send-mails">
+  {% with format = 'email', group = 'platforms' %}
+  {% include 'views/partials/tools-widget.j2' %}
+  {% endwith %}
+</section>
