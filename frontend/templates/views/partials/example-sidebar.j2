@@ -14,6 +14,7 @@
           <div class="nav">
             {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
             {% for category, examples in categories %}
+            [% if format in {{ examples|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
             <ul class="nav-list level-1">
               <li class="nav-item level-1 {% if doc.category == category %}active{% endif %}">
                 <span class="nav-link">
@@ -29,15 +30,18 @@
                 <ul class="nav-list level-2">
                   {% for example in examples %}
                   {% if not example.draft or doc.pod.env.dev %}
+                  [% if format in {{ example.formats|tojson }} %]
                   {% set active = true if example == doc %}
-                  <li class="nav-item level-2 {% if active %}active{% endif %} {% for format in example.formats %}ap--{{ format }} {% endfor %}" {% if active %}autoscroll{% endif %}>
+                  <li class="nav-item level-2 {% if active %}active{% endif %}" {% if active %}autoscroll{% endif %}>
                     <a class="nav-link" href="{{ example.url.path }}">{{ example.title }}</a>
                   </li>
+                  [% endif %]
                   {% endif %}
                   {% endfor %}
                 </ul>
               </li>
             </ul>
+            [% endif %]
             {% endfor %}
           </div>
 
