@@ -50,6 +50,7 @@ class SpecImporter {
         doc.order = importDoc.order;
         doc.toc = importDoc.toc;
         doc.formats = importDoc.formats;
+        doc.importPath = importDoc.from;
 
         // Remove the double heading and rewrite relative links
         doc.stripInlineTitle();
