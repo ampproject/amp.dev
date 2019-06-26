@@ -16,7 +16,7 @@
 
 set -e
 
-if [ "${TRAVIS_BRANCH}" = "production" ]; then
+if [ "${TRAVIS_BRANCH}" = "production-amp-dev" ]; then
   echo "Authenticating for production environment ..."
   openssl aes-256-cbc -K $encrypted_b44033ffb787_key -iv $encrypted_b44033ffb787_iv -in .prod.key.json.enc -out .prod.key.json -d
   gcloud auth activate-service-account --key-file=.prod.key.json
