@@ -1,8 +1,10 @@
 import re
 from example_document import ExampleDocument
 
-EXAMPLE_PATTERN = re.compile(r'\[\s*example(\s[^\]]*)?\](.*?\n```html *\n(.*?)\n```.*?)\[\s*/\s*example\s*\]',
-                             re.IGNORECASE | re.MULTILINE | re.DOTALL)
+EXAMPLE_PATTERN = re.compile(
+  r'\[\s*example(\s[^\]]*)?\](.*?(?:\n```html *\n(.*?)\n```' +
+  r'|\[sourcecode:html\](.*?)\[/sourcecode\]).*?)\[\s*/\s*example\s*\]',
+  re.IGNORECASE | re.MULTILINE | re.DOTALL)
 
 ATTRIBUTE_PATTERN = re.compile(r'(?:^|\s+)([\w-]+)\s*=\s*"([^"]+)"')
 
@@ -35,15 +37,18 @@ class SourceCodeExtractor(object):
     while match:
       count = count + 1
 
+      # group 3 is for a ``` block, group 4 is for a [sourcecode] block
+      code_match_index = 3 if match.group(3) else 4
+
       attributes = self._get_attributes(match.group(1))
 
-      inline_example = ExampleDocument(match.group(3), attributes, count)
+      inline_example = ExampleDocument(match.group(code_match_index), attributes, count)
 
       inline_example_match = InlineExampleMatch(inline_example)
       inline_example_match.startTagStart = match.start(0)
       inline_example_match.startTagEnd = match.start(2)
-      inline_example_match.sourceBlockStart = match.start(3)
-      inline_example_match.sourceBlockEnd = match.end(3)
+      inline_example_match.sourceBlockStart = match.start(code_match_index)
+      inline_example_match.sourceBlockEnd = match.end(code_match_index)
       inline_example_match.endTagStart = match.end(2)
       inline_example_match.endTagEnd = match.end(0)
 
