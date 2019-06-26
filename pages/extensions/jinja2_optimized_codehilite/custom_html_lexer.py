@@ -5,14 +5,13 @@
 
 import re
 
-from pygments.lexer import RegexLexer, ExtendedRegexLexer, include, bygroups, \
-    default, using
+from pygments.lexer import RegexLexer, bygroups, using
 from pygments.lexers import html
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
     Punctuation
 from pygments.util import looks_like_xml, html_doctype_matches
 
-from pygments.lexers.javascript import JavascriptLexer
+from custom_js_lexer import CustomJavascriptLexer
 from pygments.lexers.css import CssLexer
 
 
@@ -72,7 +71,7 @@ class CustomHtmlLexer(RegexLexer):
       (r'(<)(\s*)(/)(\s*)(script)(\s*)(>)',
        bygroups(Punctuation, Text, Punctuation, Text, Name.Tag, Text,
                 Punctuation), '#pop'),
-      (r'.+?(?=<\s*/\s*script\s*>)', using(JavascriptLexer)),
+      (r'.+?(?=<\s*/\s*script\s*>)', using(CustomJavascriptLexer)),
     ],
     'style-content': [
       (r'(<)(\s*)(/)(\s*)(style)(\s*)(>)',
