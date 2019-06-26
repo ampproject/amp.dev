@@ -27,13 +27,6 @@ section_links:
         </div>
       </div>
     </div>
-
-    {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
-    <div class="ap-m-roadshow-video">
-      <div class="ap-m-roadshow-video-block">
-        <amp-youtube data-videoid="OpXrSc3Yie0" layout="responsive" height="9" width="16"></amp-youtube>
-      </div>
-    </div>
 </section>
 
 {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
@@ -60,56 +53,6 @@ section_links:
   </p>
 </section>
 
-{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
-<section class="ap--container">
-  <div class="ap--content-x-wide">
-    <h2 class="ap-o-video-slider-text">Discover all exciting news from Day 1</h2>
-    <p class="ap-o-video-slider-text">You couldn't make it to Tokyo but still want to know about all the exciting things happening around AMP? Checkout the highlights of Day 1 and even witness the AMP team unleashing the kraken!</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      '1vwOFt9FBm4',
-      'sYXkVOiz77I',
-      'BrDBsS1Sko0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
-
-    <a href="https://www.youtube.com/watch?v=W7T5tMgrrFs&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">See all of Day 1</span>
-    </a>
-  </div>
-´</section>
-
-{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
-<section class="ap--container">
-  <div class="ap--content-x-wide">
-    <h2 class="ap-o-video-slider-text">Recap the highlights from Day 2</h2>
-    <p class="ap-o-video-slider-text">The second day of the conference also had a lot of awesome speakers and talks. Don't miss out on the latest news around Advertising & AMP, in depth details on Signed exchanges and many more!</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      'Q6BmFx7ivNg',
-      'tlWT_D0XJtE',
-      'Ez_wOEmH1P0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
-
-    <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">See all of Day 2</span>
-    </a>
-  </div>
-´</section>
-
 <section class="ap--container" id="Schedule">
   {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
   {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
@@ -121,7 +64,7 @@ section_links:
   <div class="ap--content-x-wide">
     <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
-        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1</div>
+        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1 (Optional)</div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
