@@ -56,7 +56,7 @@ function ensureUrlScheme(originalUrl) {
 
 // Used to speed up resolving of path stubs to valid paths
 const pathCache = new LRU({
-  max: 500
+  max: 500,
 });
 
 /**
@@ -86,7 +86,7 @@ async function loadTemplate(templatePath) {
     const searchPath = resolvedPath || `${templatePath}${stub}`;
     try {
       template = await Templates.get(searchPath);
-    } catch(e) {
+    } catch (e) {
       continue;
     }
 
@@ -117,7 +117,7 @@ function rewriteLinks(canonical, html, format) {
     return html;
   }
 
-  const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm
+  const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm;
   html = html.replace(A_HREF_PATTERN, (match, p1, p2) => {
     if (!DOCUMENTATION_ROUTE_PATTERN.test(p2)) {
       return match;
@@ -141,7 +141,7 @@ pages.get('/*', async (req, res, next) => {
   // Let known file extensions automatically fallthrough as if they could not
   // been resolved by the preceeding middleware the pages router can't
   // resolve them either
-  const KNOWN_FILE_EXTENSIONS = /\.(jpg|png|css|js|map)$/
+  const KNOWN_FILE_EXTENSIONS = /\.(jpg|png|css|js|map)$/;
   if (KNOWN_FILE_EXTENSIONS.test(req.path)) {
     next();
     return;
@@ -163,7 +163,7 @@ pages.get('/*', async (req, res, next) => {
   let renderedTemplate = null;
   try {
     renderedTemplate = template.render(templateContext);
-  } catch(e) {
+  } catch (e) {
     next(e);
     return;
   }

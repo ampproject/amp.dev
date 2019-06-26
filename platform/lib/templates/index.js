@@ -40,7 +40,7 @@ function context(request, base) {
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
   context['format'] = (request.query.format || '').toLowerCase();
   if (!ALLOWED_FORMATS.includes(context.format)) {
-    context.format = ALLOWED_FORMATS[0]
+    context.format = ALLOWED_FORMATS[0];
   }
 
   context['category'] = (request.query.category || '').toLowerCase();
