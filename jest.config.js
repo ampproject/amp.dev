@@ -79,6 +79,7 @@ module.exports = {
   moduleNameMapper: {
     // TODO: improve: jest will not work with 'module-alias', so we have define the alias here again!
     // see https://github.com/ilearnio/module-alias/issues/46
+    '^@lib/utils$': '<rootDir>/platform/lib/utils/index.js',
     '^@lib/(.*?)(\.js)?$': '<rootDir>/platform/lib/$1.js',
   },
 
@@ -152,9 +153,9 @@ module.exports = {
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
     '/node_modules/',
-    'dist',
-    'build',
-    'gulpfile.js',
+    '<rootDir>/dist',
+    '<rootDir>/build',
+    '<rootDir>/gulpfile.js',
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
