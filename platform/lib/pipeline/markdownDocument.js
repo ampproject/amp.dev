@@ -34,7 +34,7 @@ const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source
     + '|'
-    + /\[\s*sourcecode[^\]]*\].*?\[\s*\/\s*sourcecode\s*\]/.source
+    + /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/.source
     + '|'
     + /`[^`]*`/.source, 'g');
 

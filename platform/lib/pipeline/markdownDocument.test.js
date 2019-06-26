@@ -9,7 +9,9 @@ test('Test escape mustache tags', async (done) => {
       '</template>' +
       '```\n' +
       'Known jinja2 expression `{{server_for_email}}`.\n' +
-      '[sourcecode:css att="value"]{{foo}}[/sourcecode]\n' +
+      '[sourcecode:css att="value"]\n' +
+      '  {{foo}}\n' +
+      '[/sourcecode]\n' +
       'Test no raw `{{`\n' +
       'Test raw outside {% raw %}`{{`{% endraw %}\n'+
       'Test raw inside `{% raw %}{{{% endraw %}`');
@@ -23,7 +25,9 @@ test('Test escape mustache tags', async (done) => {
       '</template>' +
       '```\n' +
       'Known jinja2 expression `{{server_for_email}}`.\n' +
-      '[sourcecode:css att="value"]{% raw %}{{foo}}{% endraw %}[/sourcecode]\n' +
+      '[sourcecode:css att="value"]\n' +
+      '  {% raw %}{{foo}}{% endraw %}\n' +
+      '[/sourcecode]\n' +
       'Test no raw `{% raw %}{{{% endraw %}`\n' +
       'Test raw outside {% raw %}`{{`{% endraw %}\n' +
       'Test raw inside `{% raw %}{{{% endraw %}`'
