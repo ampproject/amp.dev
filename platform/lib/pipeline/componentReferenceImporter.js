@@ -70,7 +70,7 @@ class ComponentReferenceImporter {
       if (!document) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
-        document.importPath = extension.html_url + '/' + extension.name + '.md';
+        document.importPath = `${extension.html_url}/${extension.name}.md`;
         this._setMetadata(extension.name, document);
         this._rewriteRelativePaths(extension.path, document);
 

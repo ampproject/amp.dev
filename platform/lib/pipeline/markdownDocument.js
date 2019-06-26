@@ -224,14 +224,14 @@ class MarkdownDocument {
     let content = frontmatter + this._contents;
 
     if (this._importPath) {
-      const IMPORTED_TEXT = '<!-- \n' +
-      'This file is imported from https://github.com/ampproject/amphtml/blob/master/' + this.importPath +
-      '. \n' +
-      'Please do not change this file. \n'+
-      'If you have found a bug or an issue please \n'+
-      'have a look and request a pull request there. \n' +
-      '--> \n\n';
-      content = frontmatter + IMPORTED_TEXT + this._contents;
+      const importedText = `
+<!--
+This file is imported from ${this.importPath}.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+--> \n\n`;
+      content = frontmatter + importedText + this._contents;
     }
 
     path = path ? path : this._path;
