@@ -29,6 +29,7 @@ const t = require('exectimer');
 const Tick = t.Tick;
 const AmpOptimizer = require('amp-toolbox-optimizer');
 const {filterPage, isFilterableRoute, FORMATS} = require('@lib/common/filteredPage');
+const {htmlContent} = require('@lib/utils/cheerio');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const {project} = require('@lib/utils');
@@ -246,17 +247,7 @@ class PageTransformer {
       return;
     }
 
-    let filteredHtml = dom.html();
-
-    // As cheerio has problems with XML syntax in HTML documents the
-    // markup for the icons needs to be restored
-    filteredHtml = filteredHtml.replace(
-        'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-    filteredHtml = filteredHtml.replace(
-        /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-    return filteredHtml;
+    return htmlContent(dom);
   }
 
   async optimize(html) {
