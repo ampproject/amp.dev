@@ -2,6 +2,7 @@ import re
 from preview import ExamplePreviewMatch
 from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS
 from templates import load_template
+from amp_component_versions import remove_component_from_set
 
 # find existing imports
 IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=\s*"?([^"\s>/]+)',
@@ -64,9 +65,9 @@ def get_dependency_scripts(doc, content):
 
     while existing_import:
       if existing_import.group(1) == 'element':
-        amp_imports.discard(existing_import.group(2))
+        remove_component_from_set(existing_import.group(2), amp_imports)
       else:
-        amp_templates.discard(existing_import.group(2))
+        remove_component_from_set(existing_import.group(2), amp_templates)
 
       existing_import = IMPORT_PATTERN.search(content, existing_import.end(0))
 

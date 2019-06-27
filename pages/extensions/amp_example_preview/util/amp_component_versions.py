@@ -42,3 +42,16 @@ def get_components(names):
         result.append(component)
 
   return result
+
+
+def remove_component_from_set(name, component_set):
+  """
+  Will remove the component with the specified name from the set with components,
+  regardless of the version.
+  :type name: str
+  :type component_set: set
+  """
+  for component in component_set:
+    if (component.name == name):
+      component_set.discard(component)
+      break
