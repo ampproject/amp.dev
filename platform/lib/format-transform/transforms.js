@@ -22,7 +22,7 @@ function absoluteUrl(url) {
   if (!url.match(/^https?:\/\//)) {
     url = host + url;
   }
-  return url.replace('http:', 'https:');
+  return url;
 }
 
 const amp4emailTransform = {
