@@ -221,7 +221,12 @@ class MarkdownDocument {
    */
   save(path) {
     const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
-    let content = frontmatter + this._contents;
+    path = path ? path : this._path;
+
+    /**
+    * check if file is imported and if so add a comment in order to inform that
+    * the file should not be changed in the amp.dev/docs - repro
+    */
 
     if (this._importPath) {
       const importedText = `
@@ -230,16 +235,21 @@ This file is imported from ${this.importPath}.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
---> \n\n`;
-      content = frontmatter + importedText + this._contents;
-    }
+-->
 
-    path = path ? path : this._path;
-    return writeFile.promise(path, content).then(() => {
-      LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
-    }).catch((e) => {
-      LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
-    });
+`;
+      return writeFile.promise(path, frontmatter + importedText + this._contents).then(() => {
+        LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+      }).catch((e) => {
+        LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
+      });
+    } else {
+      return writeFile.promise(path, frontmatter + this._contents).then(() => {
+        LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+      }).catch((e) => {
+        LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
+      });
+    }
   }
 }
 
