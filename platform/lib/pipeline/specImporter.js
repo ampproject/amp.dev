@@ -50,7 +50,7 @@ class SpecImporter {
         doc.order = importDoc.order;
         doc.toc = importDoc.toc;
         doc.formats = importDoc.formats;
-        doc.importPath = 'https://github.com/ampproject/amphtml/blob/master/' + importDoc.from;
+        doc.importURL = 'https://github.com/ampproject/amphtml/blob/master/' + importDoc.from;
 
         // Remove the double heading and rewrite relative links
         doc.stripInlineTitle();
