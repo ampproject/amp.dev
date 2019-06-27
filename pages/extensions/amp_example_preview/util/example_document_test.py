@@ -8,6 +8,13 @@ sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
 from example_document import ExampleDocument
 
+import amp_component_versions
+
+amp_component_versions.COMPONENT_VERSIONS = {
+  'amp-mustache': '0.2',
+  'amp-accordion': '0.3',
+  'amp-date-display': '1.2',
+}
 
 class SourceCodeExporterTestCase(unittest.TestCase):
 
@@ -24,25 +31,29 @@ class SourceCodeExporterTestCase(unittest.TestCase):
     example_doc = self.get_example_document('<h1>headline</h1>', {
       'preview':'inline',
       'template': 'amp-mustache',
-      'imports': 'amp-accordion,amp-date-display',
+      'imports': 'amp-accordion:0.9,amp-date-display',
     })
     self.assertEquals('inline', example_doc.preview)
     self.assertEquals(2, len(example_doc.imports))
     self.assertEquals('amp-accordion', example_doc.imports[0].name)
+    self.assertEquals('0.9', example_doc.imports[0].version)
     self.assertEquals('amp-date-display', example_doc.imports[1].name)
+    self.assertEquals('1.2', example_doc.imports[1].version) # 0.1 is always the default
     self.assertEquals('amp-mustache', example_doc.template.name)
     self.assertEquals('0.2', example_doc.template.version)
 
   def test_different_attributes(self):
     example_doc = self.get_example_document('<h1>headline</h1>', {
       'preview':'none',
-      'template': 'amp-mustache',
+      'template': 'amp-mustache:0.9',
       'imports': 'amp-accordion',
     })
     self.assertEquals('none', example_doc.preview)
     self.assertEquals(1, len(example_doc.imports))
     self.assertEquals('amp-accordion', example_doc.imports[0].name)
+    self.assertEquals('0.3', example_doc.imports[0].version)
     self.assertEquals('amp-mustache', example_doc.template.name)
+    self.assertEquals('0.9', example_doc.template.version)
 
   def test_unknown_attributes(self):
     example_doc = self.get_example_document('<h1>headline</h1>', {
@@ -51,8 +62,10 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       'imports': 'amp-foo-baz',
     })
     self.assertEquals('none', example_doc.preview)
-    self.assertEquals(0, len(example_doc.imports))
-    self.assertEquals(None, example_doc.template)
+    self.assertEquals('amp-foo-baz', example_doc.imports[0].name)
+    self.assertEquals('0.1', example_doc.imports[0].version)
+    self.assertEquals('amp-foo-bar', example_doc.template.name)
+    self.assertEquals('0.1', example_doc.template.version)
 
   def test_has_head_tag_with_head_tags(self):
     example_doc = self.get_example_document(
