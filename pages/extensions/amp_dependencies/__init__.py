@@ -22,6 +22,9 @@ class AmpDependencies(object):
     self._pod = doc.pod
     # Stores registered dependencies
     self._dependencies = Set()
+    # Can be used to determine if the deps have already been injected
+    self.injected = False
+
 
   def __repr__(self):
     return '<AmpDependencies>'
@@ -41,9 +44,10 @@ class AmpDependencies(object):
 
   def inject(self, content):
     # Check wether the content has the placeholder
-    if PLACEHOLDER not in content:
+    if PLACEHOLDER not in content or self.injected:
       return content
 
+    self.injected = True
     dependencies = ''.join(self._dependencies)
     return content.replace(PLACEHOLDER, dependencies)
 
