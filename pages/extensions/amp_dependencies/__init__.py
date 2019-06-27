@@ -31,6 +31,7 @@ class AmpDependencies(object):
 
   def add(self, name, version=None, type='element'):
     if version is None:
+      self._pod.logger.warning('Adding an AMP dependency ({}) without a specific version is not recommended.'.format(name))
       version = COMPONENT_VERSIONS.get(name, DEFAULT_VERSION)
 
     src = 'https://cdn.ampproject.org/v0/{name}-{version}.js'.format(name=name, version=version)
