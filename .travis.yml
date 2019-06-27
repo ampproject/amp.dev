@@ -10,72 +10,94 @@ addons:
 cache:
 - pip
 - npm
-before_install: travis_scripts/before_install.sh
 install:
 - npm ci
+before_install:
+- |
+  if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then
+    openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv -in .staging.key.json.enc -out .staging.key.json -d
+    gcloud auth activate-service-account --key-file=.staging.key.json
+  fi
 stages:
 - preparation
 - name: build
-  if: (branch = future OR branch = production-amp-dev) AND type != pull_request
+  if: branch = future AND type != pull_request
 - name: deploy
-  if: (branch = future OR branch = production-amp-dev) AND type != pull_request
+  if: branch = future AND type != pull_request
 jobs:
   include:
   - stage: preparation
+    env: APP_ENV=staging
     name: Check code, import documents, build samples, playground & boilerplate
     before_script:
     - unbuffer gulp buildSamples
     - unbuffer gulp lintAll
-    script: travis_scripts/preparation.sh
+    script:
+    - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then unbuffer gulp buildPrepare; fi
   - stage: build
+    env: APP_ENV=staging
     install: &1
     - npm ci
     - pip install grow==0.7.4 --user
     name: Build Pages (EN)
     script: unbuffer gulp buildPages --locales en
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (FR)
     script: unbuffer gulp buildPages --locales fr
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (AR)
     script: unbuffer gulp buildPages --locales ar
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (ES)
     script: unbuffer gulp buildPages --locales es
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (IT)
     script: unbuffer gulp buildPages --locales it
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (ID)
     script: unbuffer gulp buildPages --locales id
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (JA)
     script: unbuffer gulp buildPages --locales ja
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (KO)
     script: unbuffer gulp buildPages --locales ko
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (BR)
     script: unbuffer gulp buildPages --locales pt_BR
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (RU)
     script: unbuffer gulp buildPages --locales ru
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (TR)
     script: unbuffer gulp buildPages --locales tr
   - stage: build
+    env: APP_ENV=staging
     install: *1
     name: Build Pages (CN)
     script: unbuffer gulp buildPages --locales zh_CN
   - stage: deploy
-    script: travis_scripts/deploy.sh
+    env: APP_ENV=staging
+    script:
+    - unbuffer gulp buildFinalize
+    - gcloud app deploy --project=amp-dev-staging --quiet
