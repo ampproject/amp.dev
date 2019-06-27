@@ -22,7 +22,7 @@ $title: تضمين المحتوى من جهات خارجية
 يمكنك تعديل العرض والارتفاع المقدمين يدويًا أو استخدام سمة الوسائط
 لتحديد نسبة العرض إلى الارتفاع بناءً على عرض الشاشة.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -50,7 +50,7 @@ $title: تضمين المحتوى من جهات خارجية
 كما يستخدم Instagram أيضًا نسبة ثابتة للعرض إلى الارتفاع للتنسيقات سريعة الاستجابة،
 وهكذا يجب أن تكون قيمة العرض والارتفاع عامة.
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -120,7 +120,7 @@ $title: تضمين المحتوى من جهات خارجية
 
 استخدم `layout="responsive"` لعرض التنسيقات الصحيحة لمقاطع الفيديو بنسبة عرض إلى ارتفاع تبلغ 16:9:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -145,7 +145,7 @@ $title: تضمين المحتوى من جهات خارجية
 ويُحدد `type` نموذج الشبكة الإعلانية.
 وتتطلب أنواع الإعلانات المختلفة سمات `data-*` مختلفة.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -162,7 +162,7 @@ $title: تضمين المحتوى من جهات خارجية
 يمكنك تضمين `placeholder`
 لعرضه إذا لم يكن الإعلان متاحًا:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

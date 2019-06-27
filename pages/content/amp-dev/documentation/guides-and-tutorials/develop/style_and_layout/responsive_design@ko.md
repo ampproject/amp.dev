@@ -77,7 +77,7 @@ $title: 반응형 AMP 페이지 만들기
 
 아래 예에서는 삽입된 YouTube 동영상이 기기 화면의 크기와 방향에 따라 반응하는 것을 보여드리겠습니다. [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 요소에 `"layout=responsive"`를 추가하면 창에 맞춰 동영상 크기가 조정되며 가로세로 비율은 `width` 및 `height`에 지정된 값으로 유지됩니다.
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"

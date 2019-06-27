@@ -34,7 +34,7 @@ but this may yield less than the ideal appearance.
 Manually tweak the provided width and height or use the media attribute
 to select the aspect ratio based on screen width.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -67,7 +67,7 @@ For example, in `https://instagram.com/p/fBwFP`,
 Also, Instagram uses a fixed aspect ratio for responsive layouts,
 so the value for width and height should be universal.
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -147,7 +147,7 @@ For example, in `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 
 Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -176,7 +176,7 @@ You must specify the ad width and height, and the ad network type.
 The `type` identifies the ad network's template.
 Different ad types require different `data-*` attributes.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -193,7 +193,7 @@ If supported by the ad network,
 include a `placeholder`
 to be shown if no ad is available:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

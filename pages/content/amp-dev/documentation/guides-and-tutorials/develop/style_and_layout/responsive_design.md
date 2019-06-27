@@ -98,7 +98,7 @@ When you include a video in your web page, you want to ensure that the user can 
 
 In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"

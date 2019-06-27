@@ -22,7 +22,7 @@ mas isso pode gerar uma aparência não muito boa.
 Ajuste manualmente a largura e a altura fornecidas ou use o atributo de mídia
 para selecionar a proporção com base na largura da tela.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -52,7 +52,7 @@ Por exemplo, em `https://instagram.com/p/fBwFP`,
 Além disso, o Instagram usa uma proporção fixa para os layouts responsivos,
 de modo que os valores de largura e altura são universais.
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -126,7 +126,7 @@ Por exemplo, em `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 
 Use `layout="responsive"` para gerar layouts de forma correta para vídeos com proporção de 16:9.
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -153,7 +153,7 @@ Você precisa especificar a largura e a altura do anúncio e o tipo de rede de a
 O `type` identifica o modelo da rede de anúncios.
 Diferentes tipos de anúncios exigem diferentes atributos `data-*`.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -170,7 +170,7 @@ Se compatível com a rede de anúncios,
 inclua um `placeholder`
 para ser mostrado quando nenhum anúncio estiver disponível:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
