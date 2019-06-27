@@ -20,7 +20,7 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <title>Tic-tac-toe</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="canonical" href="<% canonical %>">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -111,9 +111,9 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
   <!-- ## Initial game state -->
   <!-- We use an `amp-state` called `gameState` to keep the state of play. Additionally, some state values are not initialized but are explained below: -->
   <!--
-       *   `currentPlayer`: Can be 1 or -1, for ⚡ and O respectively.
-       *   `board`: Stores the state of the board. This object has 9 properties, from `a` to `i`, for the tiles from top-left to bottom-right.
-       *   `tr`,`mr`,`br`,`lc`,`mc`,`rc`,`fd`,`bd`: Read as **T**op **R**ow, **M**iddle **R**ow, and so on, these 8 values hold the _tallies_ towards each of the possible winning states.
+           *   `currentPlayer`: Can be 1 or -1, for ⚡ and O respectively.
+           *   `board`: Stores the state of the board. This object has 9 properties, from `a` to `i`, for the tiles from top-left to bottom-right.
+           *   `tr`,`mr`,`br`,`lc`,`mc`,`rc`,`fd`,`bd`: Read as **T**op **R**ow, **M**iddle **R**ow, and so on, these 8 values hold the _tallies_ towards each of the possible winning states.
 
   -->
   <amp-state id="gameState">
@@ -139,15 +139,15 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
     <!-- ## Handling a player's turn -->
     <!-- Each tile of the playing board is a button. When a move is played, state is updated:
 
-         *   The appropriate tallies are incremented or decremented. For example, playing top-left alters the tally for 3 possible winning states: `tr`,`lc` and `bd` (top row, left column and backward diagonal).
-         *   The state of the `board` is updated, to record that this tile has been filled.
-         *   The game play is switched to the other play by multiplying the current player by `-1`.
+             *   The appropriate tallies are incremented or decremented. For example, playing top-left alters the tally for 3 possible winning states: `tr`,`lc` and `bd` (top row, left column and backward diagonal).
+             *   The state of the `board` is updated, to record that this tile has been filled.
+             *   The game play is switched to the other play by multiplying the current player by `-1`.
 
          Display attributes for each tile are updated based on this change in state:
 
-         *   `[text]`: Each tile either contains nothing, or the appropriate value from `board`.
-         *   `[class]`: If any of the winning states for this tile has been reached, the background is changed accordingly.
-         *   `[disabled]`: This button must be disabled if either a win has occurred, or the tile already played.
+             *   `[text]`: Each tile either contains nothing, or the appropriate value from `board`.
+             *   `[class]`: If any of the winning states for this tile has been reached, the background is changed accordingly.
+             *   `[disabled]`: This button must be disabled if either a win has occurred, or the tile already played.
     -->
     <div class="board-component">
       <table>
