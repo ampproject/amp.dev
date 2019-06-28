@@ -63,6 +63,7 @@
     "node-fetch": "2.6.0",
     "node-zopfli-es": "1.0.3",
     "nunjucks": "3.2.0",
+    "randomstring": "1.1.5",
     "shrink-ray-current": "4.0.0",
     "signale": "1.4.0"
   },

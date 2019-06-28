@@ -1,4 +1,4 @@
-<!---
+ <!---
 
 preview: default
 teaserImage: '/static/samples/img/teaser/oauth2_login.jpg'
@@ -38,13 +38,13 @@ to allow an OAuth2-based login flow on your AMP pages, such as Google, Facebook 
     -->
     <script id="amp-access" type="application/json">
     {
-        "authorization": "<% hosts.backend %>/oauth/status?_=RANDOM",
+        "authorization": "/documentation/examples/personalization/oauth2_login/status?_=RANDOM",
         "noPingback": "true",
         "login": {
-          "facebook-sign-in": "<% hosts.backend %>/oauth/login/facebook",
-          "google-sign-in": "<% hosts.backend %>/oauth/login/google",
-          "github-sign-in": "<% hosts.backend %>/oauth/login/github",
-          "sign-out": "<% hosts.backend %>/oauth/logout"
+          "facebook-sign-in": "/documentation/examples/personalization/oauth2_login/login/facebook",
+          "google-sign-in": "/documentation/examples/personalization/oauth2_login/login/google",
+          "github-sign-in": "/documentation/examples/personalization/oauth2_login/login/github",
+          "sign-out": "/documentation/examples/personalization/oauth2_login/logout"
         },
         "authorizationFallbackResponse": {
             "error": true,
