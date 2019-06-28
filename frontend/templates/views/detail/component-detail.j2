@@ -8,6 +8,7 @@
 
 {% if doc.has_inline_preview %}
   {% do doc.styles.addCssFile('css/components/organisms/code-preview.css') %}
+  {% do doc.icons.useIcon('icons/reload.svg') %}
 {% endif %}
 
 {% do doc.styles.addCssFile('css/components/templates/component-detail.css') %}

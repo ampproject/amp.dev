@@ -3,10 +3,14 @@ import re
 from amp_component_versions import get_component, get_components
 
 PREVIEW_INLINE = 'inline'
+PREVIEW_TOP_FRAME = 'top-frame'
+PREVIEW_SIDE_FRAME = 'side-frame'
 PREVIEW_NONE = 'none'
 
 PREVIEW_MODES = [
   PREVIEW_INLINE,
+  PREVIEW_TOP_FRAME,
+  PREVIEW_SIDE_FRAME,
   PREVIEW_NONE,
 ]
 

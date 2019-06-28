@@ -22,15 +22,25 @@
 
   &-reload {
     position: absolute;
+    z-index: 1;
     top: 1em;
     right: 1em;
     @include unset-button;
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: 649px) {
+      display: none;
+    }
 
     .#{atom('ico')} {
       fill: #FFF;
     }
   }
 
+  /* inline preview above */
   &-preview {
     position: relative;
     top: 1em;
@@ -39,19 +49,103 @@
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
   }
 
+  /* iframe preview above */
   &-preview-iframe {
     display: flex;
     justify-content: center;
     position: relative;
     top: 1em;
     margin: 1em;
+
+    @media (max-width: 649px) {
+      display: none;
+    }
   }
 
-    &-iframe {
-      background: color('white');
-      box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
-      margin-bottom: 1em;
+  /* side preview like playground embed mode */
+  &-side-preview {
+
+    position: absolute;
+    top: 1rem;
+    bottom: 0;
+    left: 70%;
+    right: 1rem;
+    margin: auto;
+    width: auto;
+    height: auto;
+
+    @media (max-width: 767px) {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
     }
+
+    &-sizer {
+      padding-top: 177.78%;
+
+      @media (max-width: 767px) {
+        display:none;
+      }
+    }
+
+    &-frame {
+      position: relative;
+      max-height: 100%;
+      background-color: white;
+
+      @media (max-width: 767px) {
+
+        display: none;
+
+        &.show {
+          display:block;
+          height:100%;
+        }
+
+      }
+    }
+
+    &-fab {
+      display: none;
+      border-radius: 50%;
+      margin: auto;
+      transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+      z-index: 10000;
+      height: 56px;
+      width: 56px;
+      min-width: 56px;
+      bottom: 16px;
+      right: 16px;
+      background-color: #005af0;
+      color: #fff;
+      border: none;
+      //transform: scale(0);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 56px;
+      text-align: center;
+      outline: none;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      @media (max-width: 767px) {
+        display:block;
+      }
+    }
+
+  }
+
+  &-iframe {
+    background: color('white');
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+    margin-bottom: 1em;
+  }
 
   .#{molecule('code-snippet')} {
     background: none;

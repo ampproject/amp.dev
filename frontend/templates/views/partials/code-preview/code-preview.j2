@@ -1,20 +1,64 @@
-{% if preview.mode == 'inline' %}
+{% if preview.mode != 'none' %}
 <div class="ap-o-code-preview">
+{% endif %}
+
+  {% if preview.mode == 'inline' %}
   <div class="ap-o-code-preview-preview">
      {{preview.source|render|safe}}
   </div>
-{% endif %}
+  {% endif %}
+
+  {% if preview.mode == 'top-frame' %}
+  <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
+    <div class="ap-a-ico">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+    </div>
+  </button>
+  <div class="ap-o-code-preview-preview-iframe">
+    <amp-iframe class="ap-o-code-preview-iframe" src="{{ preview.url }}" [src]="example{{ preview.index }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0">
+      <div placeholder></div>
+    </amp-iframe>
+  </div>
+  {% endif %}
 
 {{content|safe}}
 
-{% if preview.mode == 'inline' %}
+  {% if preview.mode == 'side-frame' %}
+
+  <div class="ap-o-code-preview-side-preview">
+    <button class="ap-o-code-preview-side-preview-fab"
+            [hidden]="hidePreview{{ preview.index }} != 1"
+            on="tap:AMP.setState({ hidePreview{{ preview.index }}: 0 }),previewIframe{{ preview.index }}.toggleClass(class='show')">
+      &#x25B6&#xFE0E;
+    </button>
+    <button class="ap-o-code-preview-side-preview-fab" hidden
+            [hidden]="hidePreview{{ preview.index }} == 1"
+            on="tap:AMP.setState({ hidePreview{{ preview.index }}: 1 }),previewIframe{{ preview.index }}.toggleClass(class='show')">
+      &#x2715&#xFE0E;
+    </button>
+    <div class="ap-o-code-preview-side-preview-frame" id="previewIframe{{ preview.index }}">
+      <div class="ap-o-code-preview-side-preview-sizer"></div>
+      <amp-iframe layout="fill"
+                  sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+                  allowfullscreen allowpaymentrequest frameborder="0"
+                  src="{{preview.url}}"
+                  class="i-amphtml-layout-fill i-amphtml-layout-size-defined" i-amphtml-layout="fill">
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+  </div>
+
+  {% endif %}
+
+{% if preview.mode != 'none' %}
 </div>
 {% endif %}
-{%- if preview.playground %}
+
+{% if preview.playground %}
 <a href="{{podspec.base_urls.playground}}/?url={{preview.url|urlencode}}" class="ap-m-lnk ap--playground-link">
   <div class="ap-a-ico ap-m-lnk-icon">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
   </div>
   <span class="ap-m-lnk-text">{{_('Open this snippet in playground')}}</span>
 </a>
-{%- endif -%}
+{% endif %}
