@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from sets import Set
 import requests
 
 from grow import extensions
@@ -21,7 +20,7 @@ class AmpDependencies(object):
     self._doc = doc
     self._pod = doc.pod
     # Stores registered dependencies
-    self._dependencies = Set()
+    self._dependencies = {}
     # Can be used to determine if the deps have already been injected
     self.injected = False
 
@@ -30,6 +29,13 @@ class AmpDependencies(object):
     return '<AmpDependencies>'
 
   def add(self, name, version=None, type='element'):
+    tag, _version = self._dependencies.get(name, (None, version))
+    if not _version == version:
+        raise RuntimeError('Using two versions ({}, {}) of the same dependency ({}) is not supported.'.format(version, _version, name))
+    elif version == version and tag:
+        # No need to construct the tag if is already saved
+        return ''
+
     if version is None:
       self._pod.logger.warning('Adding an AMP dependency ({}) without a specific version is not recommended.'.format(name))
       version = COMPONENT_VERSIONS.get(name, DEFAULT_VERSION)
@@ -37,7 +43,7 @@ class AmpDependencies(object):
     src = 'https://cdn.ampproject.org/v0/{name}-{version}.js'.format(name=name, version=version)
     tag = '<script custom-{type}="{name}" src="{src}" async></script>'.format(type=type, name=name, src=src)
 
-    self._dependencies.add(tag)
+    self._dependencies[name] = (tag, version)
     return ''
 
   def emit(self):
@@ -49,7 +55,12 @@ class AmpDependencies(object):
       return content
 
     self.injected = True
-    dependencies = ''.join(self._dependencies)
+
+    dependencies = ''
+    for name, details in self._dependencies.iteritems():
+      # details[0] holds the actual <script> tag
+      dependencies = dependencies + details[0]
+
     return content.replace(PLACEHOLDER, dependencies)
 
 
