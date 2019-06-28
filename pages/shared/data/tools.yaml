@@ -280,7 +280,7 @@ developer:
     description: React framework that generates AMP and PWA pages from a single codebase.
     url: https://pwa.moovweb.com
     image:
-      src: /static/img/docs/tools/react-storefront.png
+      src: /static/img/tools/react-storefront.png
       width: 1125
       height: 1303
     formats:
