@@ -289,6 +289,7 @@ providers:
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service
+    description: Delivery and Analytics for Better Email Performance.
     image:
       src: /static/img/tools/sparkpost.png
       width: 1034
@@ -299,6 +300,7 @@ providers:
   - name: Twilio Sendgrid
     url: https://www.twilio.com/sendgrid
     type: Email Service
+    description: Reach customers using a flexible email API and marketing tools to increase customer engagement.
     image:
       src: /static/img/tools/sendgrid.png
       width: 348
@@ -309,6 +311,7 @@ providers:
   - name: Litmus
     url: https://litmus.com/
     type: Email Service
+    description: Litmus makes it easy to build, test, and monitor every email for the best results.
     image:
       src: /static/img/tools/litmus.png
       width: 1223
