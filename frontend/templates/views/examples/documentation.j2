@@ -43,7 +43,7 @@
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
 {% for used_component in doc.used_components %}
-{% do doc.amp_dependencies.add(used_component, doc.used_components[used_component]) %}
+{% do doc.amp_dependencies.add(used_component, doc.used_components[used_component].version, doc.used_components[used_component].type) %}
 {% endfor %}
 {% endif %}
 {% endblock %}
