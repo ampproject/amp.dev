@@ -227,9 +227,9 @@ section.#{utility('tools')} {
           position: absolute;
           left: 30px;
           bottom: 100%;
-          margin: 0 0 4px;
-          width: 14px;
-          height: 14px;
+          margin: 0 0 3px;
+          width: 20px;
+          height: 20px;
           fill: color('blue-ribbon');
 
           svg {
@@ -239,11 +239,11 @@ section.#{utility('tools')} {
           &::before {
             content: '';
             position: absolute;
-            left: 7px;
+            left: 10px;
             bottom: -5px;
             transform: translateX(-50%);
-            width: 58px;
-            height: 23px;
+            width: 70px;
+            height: 28px;
             z-index: 1;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 23'%3E%3Cpath d='M29,0h0C12,0,19.25,22,0,22v1H58V22C38.75,22,46,0,29,0Z' fill='%23fff'/%3E%3C/svg%3E%0A");
           }
