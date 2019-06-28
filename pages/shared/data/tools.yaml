@@ -134,7 +134,7 @@ platforms:
     url: https://www.jumprope.com/
     type: Content Platform
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/jumprope.jpg
       width: 5
       height: 3
     formats:
@@ -184,7 +184,7 @@ developer:
     description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
     url: https://amptagtest.appspot.com/
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/placeholder.jpg
       width: 5
       height: 3
     formats:
@@ -206,7 +206,7 @@ developer:
     description: Validation tool that offers additional debug information on top of the AMP validator.
     url: https://ampbench.appspot.com
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/ampbench.jpg
       width: 5
       height: 3
     formats:
@@ -228,7 +228,7 @@ developer:
     description: Chrome extension that helps you understand the feasibility of converting your site to AMP.
     url: https://chrome.google.com/webstore/detail/amp-readiness-tool/fadclbipdhchagpdkjfcpippejnekimg?hl=en
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/readiness.jpg
       width: 5
       height: 3
     formats:
