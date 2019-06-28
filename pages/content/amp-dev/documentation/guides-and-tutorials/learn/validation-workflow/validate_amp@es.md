@@ -87,7 +87,7 @@ de color.
 </table>
 
 Extensión del validador de AMP para
-[Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) y [Opera] (https://addons.opera.com/en-gb/extensions/details/amp-validator/).
+[Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) y [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/).
 
 ### Paquetes de NPM para CI
 

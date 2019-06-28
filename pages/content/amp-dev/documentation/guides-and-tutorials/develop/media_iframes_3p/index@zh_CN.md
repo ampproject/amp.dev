@@ -19,17 +19,15 @@ $title: 添加图片和视频
 
  使用 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素向您的网页中添加图片，如下所示：
 
-<!--embedded example - fixed size image -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A beautiful sunset"
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+</amp-img>
+```
+[/example]
 
 在这个最基本的示例中，图片会以指定的固定高度和宽度显示。至少要设置明确的宽度和高度。
 
@@ -37,33 +35,32 @@ $title: 添加图片和视频
 
  由于 `<amp-img>` 依赖于 JavaScript，因此如果用户选择停用脚本，图片将不会显示。在这种情况下，您应该使用 `<img>` 和 `<noscript>` 来提供后备图片，如下所示：
 
-<!--embedded example - img with noscript -->
-<div>
-<amp-iframe height="215"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+  <noscript>
+    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+  </noscript>
+</amp-img>
+```
+[/example]
 
 ### 高级布局
 
  与使用标准 CSS/HTML 相比，使用 AMP 可以更轻松地创建完全自适应的图片。您只需向其最基本的形式中添加 `layout="responsive"` 即可：
 
-<!--embedded example - basic responsive image -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 阅读: 详细了解 [高级布局技术]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})。
 
@@ -77,17 +74,19 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
  The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 元素与 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素非常相似，且前者提供额外功能，可以管理 GIF 等动画图片的加载和播放。
 
-<!--embedded amp-anim basic example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim width="400"
+  height="300"
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
+  <amp-img placeholder
+    width="400"
+    height="300"
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 注意: 您需要在网页的标头部分添加 `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` 才能使用此组件。
 
@@ -100,17 +99,19 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 在视频开始播放前添加占位符，如果浏览器不支持 HTML5 视频，则添加后备视频，例如：
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## 音频
 
@@ -121,16 +122,22 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 在音频开始播放前添加占位符，如果浏览器不支持 HTML5 音频，则添加后备音频，例如：
 
-<!--embedded audio example  -->
-<div>
-<amp-iframe height="314"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-audio"]
+```html
+<amp-audio width="400"
+  height="200"
+  {% if format == 'stories' %}  layout="nodisplay" autoplay
+  {% endif %}
+  src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <div fallback>
+    <p>Your browser doesn’t support HTML5 audio.</p>
+  </div>
+  <source type="audio/mpeg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <source type="audio/ogg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
+</amp-audio>
+```
+[/example]
 
 注意: 您需要在网页的标头部分添加 ` <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` 才能使用此组件。

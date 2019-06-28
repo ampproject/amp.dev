@@ -13,17 +13,19 @@ como um marcador para o elemento AMP pai.
 Se um elemento `placeholder` for especificado, ele terá que ser um filho direto do elemento AMP.
 Os elementos marcados como `placeholder` sempre terão a função `fill` em relação ao elemento AMP pai.
 
-<!--embedded amp-anim responsive example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Mostrar mais">Mostrar código completo</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 Por padrão, o marcador do elemento AMP é mostrado imediatamente,
 mesmo que os recursos desse elemento não tenham sido inicializados nem transferidos por download.
@@ -50,24 +52,40 @@ O atributo `fallback` pode ser definido em *qualquer* elemento HTML, e não some
 
 No exemplo abaixo, o atributo `fallback` é usado para comunicar ao usuário que o navegador não é compatível com um determinado recurso:
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Mostrar mais">Mostrar código completo</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### Exemplo: como exibir diferentes formatos de imagem
 
 No exemplo abaixo, o atributo `fallback` é usado para instruir o navegador a usar o arquivo JPEG se o formato WebP não for compatível. 
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar mais">Mostrar código completo</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## Interação entre marcadores e substitutos
 

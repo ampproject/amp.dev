@@ -20,17 +20,15 @@ Actualmente, los tuits se adaptan de forma automática y proporcional a escala
 para encajar en el tamaño indicado, pero es posible que la apariencia resultante no sea la ideal.
 Ajusta la anchura y la altura de forma manual o usa el atributo de medios para seleccionar la relación de aspecto en función de la anchura de la pantalla.
 
-<!-- embedded twitter example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-twitter"]
+```html
+<amp-twitter width="500"
+  height="583"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+[/example]
 
 [tip type="tip"]
 **TIP –** Puedes encontrar más ejemplos de [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-twitter.html', locale=doc.locale).url.path}}).
@@ -50,17 +48,15 @@ Incluye el código abreviado de datos de Instagram que se encuentra en la URL de
 Por ejemplo, en `https://instagram.com/p/fBwFP`, el código abreviado de datos es `fBwFP`.
 Además, Instagram utiliza una relación de aspecto fija para los diseños adaptables, por lo que los valores de anchura y altura deben ser universales
 
-<!-- embedded Instagram example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-instagram"]
+```html
+<amp-instagram data-shortcode="fBwFP"
+  width="320"
+  height="392"
+  layout="responsive">
+</amp-instagram>
+```
+[/example]
 
 [tip type="tip"]
 **TIP –** Puedes encontrar más ejemplos de [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-instagram.html', locale=doc.locale).url.path}}).
@@ -128,17 +124,15 @@ el ID de vídeo es `Z1q71gFeRqM`.
 
 Utiliza `layout="responsive"` para producir diseños correctos para los vídeos con una relación de aspecto de 16:9:
 
-<!-- embedded youtube example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 [tip type="tip"]
 **TIP –** Puedes encontrar más ejemplos de [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-youtube.html', locale=doc.locale).url.path}}).
@@ -158,30 +152,33 @@ Debes especificar la anchura y la altura del anuncio y el tipo de red publicitar
 El atributo `type` identifica la plantilla de la red publicitaria.
 Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="212"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+</amp-ad>
+```
+[/example]
 Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre si no hay anuncios disponibles:
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="232"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  <div placeholder>Have a great day!</div>
+</amp-ad>
+```
+[/example]
 
 AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
 

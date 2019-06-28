@@ -272,7 +272,7 @@ async function buildPages(done) {
         // ... and again if on Travis store all built files for a later stage to pick up
         if (travis.onTravis()) {
           const archive = `build/pages-${travis.build.job}.tar.gz`;
-          await sh(`tar cfj ${archive} ./dist/pages`);
+          await sh(`tar cfj ${archive} ./dist/pages ./dist/inline-examples`);
           await sh(`gsutil cp ${archive} ` +
             `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
         }

@@ -1,73 +1,67 @@
-import os
-from grow.documents import document
-from .example_extractor import *
-from .preview import ExamplePreview
-from .constants import *
-
-import os
+from example_extractor import SourceCodeExtractor
+from example_exporter import ExampleExporter
+from preview import ExamplePreview
+from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS, ATTRIBUTE_HAS_INLINE_PREVIEW
 
 EXAMPLE_TRIGGER = '[example'
 
 
 def trigger(doc, original_body, content):
-    if EXAMPLE_TRIGGER in original_body:
-        return _transform(doc, content)
-    return content
+  if EXAMPLE_TRIGGER in original_body:
+    return _transform(doc, content)
+  return content
 
 
 def _transform(doc, content):
+  source_extractor = SourceCodeExtractor()
+  example_matches = source_extractor.find_examples_in_markdown(content)
 
-    source_extractor = SourceCodeExtractor()
-    example_matches = source_extractor.find_examples_in_markdown(content)
+  all_imports = set()
+  all_templates = set()
 
-    all_imports = set()
-    all_templates = set()
+  pos = 0
+  count = 0
+  result = ''
+  for match in example_matches:
+    count = count + 1
 
-    pos = 0
-    count = 0
-    result = ''
-    for match in example_matches:
+    example_document = match.inlineExample
+    doc.pod.logger.info('Found example {} in {}'.format(example_document.index, doc.pod_path))
 
-        inline_example = match.inlineExample
+    extract_url = extract_preview_file(doc, example_document)
 
-        count = count + 1
+    result = result + content[pos:match.startTagStart]
 
-        doc.pod.logger.debug('Found example {} in {}'.format(inline_example.index, doc.pod_path))
+    preview = ExamplePreview(index=example_document.index,
+                             mode=example_document.preview,
+                             url=extract_url,
+                             playground=example_document.playground,
+                             source=example_document.body)
 
-        result = result + content[pos:match.startTagStart]
+    result = result + preview.get_start_tag()
+    result = result + content[match.startTagEnd:match.endTagStart]
+    result = result + preview.get_end_tag()
 
-        preview = ExamplePreview(index=inline_example.index,
-                                 mode=inline_example.preview,
-                                 playground=inline_example.playground,
-                                 source=inline_example.source)
+    all_imports.update(example_document.imports)
 
-        result = result + preview.get_start_tag()
-        result = result + content[match.startTagEnd:match.endTagStart]
-        result = result + preview.get_end_tag()
+    if example_document.template:
+      all_templates.add(example_document.template)
 
-        all_imports = all_imports.union(inline_example.imports)
+    pos = match.endTagEnd
 
-        if inline_example.template:
-            all_templates.add(inline_example.template)
+  result = result + content[pos:]
 
-        write_preview_file(doc, inline_example)
+  # transfer the dependencies to the post processor
+  setattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS, all_imports)
+  setattr(doc, ATTRIBUTE_EXAMPLE_TEMPLATES, all_templates)
 
-        pos = match.endTagEnd
+  if count > 0:
+    # we set this attribute, so that the page template knows it must include additional css
+    setattr(doc, ATTRIBUTE_HAS_INLINE_PREVIEW, True)
 
-    result = result + content[pos:]
-
-    # transfer the dependencies to the post processor
-    setattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS, all_imports)
-    setattr(doc, ATTRIBUTE_EXAMPLE_TEMPLATES, all_templates)
-
-    if count > 0:
-        # we set this attribute, so that the page template knows it must include additional css
-        setattr(doc, ATTRIBUTE_HAS_INLINE_PREVIEW, True)
-
-    return result
+  return result
 
 
-def write_preview_file(doc, inline_example):
-    # TODO: implement
-    base_path = doc.pod.root
-    doc_path = document.Document.clean_localized_path(doc.pod_path, doc.locale)
+def extract_preview_file(doc, inline_example):
+  exporter = ExampleExporter(doc, inline_example)
+  return exporter.generate_html()

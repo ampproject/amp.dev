@@ -13,17 +13,19 @@ $title: 占位符和后备行为
 如果指定，则 `placeholder` 元素必须是 AMP 元素的直接子级。
 标记为 `placeholder` 的元素将始终 `fill`（填充）父级 AMP 元素。
 
-<!--嵌入式 amp-anim 自适应示例 -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 默认情况下，即使 AMP 元素的资源尚未下载或初始化，
 与该 AMP 元素对应的占位符也会立即显示。
@@ -50,24 +52,40 @@ $title: 占位符和后备行为
 
 在以下示例中，我们使用 `fallback` 属性告知用户，浏览器不支持特定功能：
 
-<!--嵌入式视频示例 -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### 示例：提供不同格式的图片
 
 在以下示例中，我们使用 `fallback` 属性告知浏览器，在 WebP 格式不受支持时使用 JPEG 文件。
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## 占位符和后备行为的互动
 

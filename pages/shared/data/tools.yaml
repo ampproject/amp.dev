@@ -275,6 +275,16 @@ developer:
       - email
       - ads
       - stories
+  - name: React Storefront
+    type: development
+    description: React framework that generates AMP and PWA pages from a single codebase.
+    url: https://pwa.moovweb.com
+    image:
+      src: /static/img/docs/tools/react-storefront.png
+      width: 1125
+      height: 1303
+    formats:
+      - websites
 providers:
   - name: Sparkpost
     url: https://www.sparkpost.com/
@@ -303,6 +313,16 @@ providers:
       src: /static/img/tools/litmus.png
       width: 1223
       height: 450
+      fit: contain
+    formats:
+      - email
+  - name: Mailgun
+    url: https://www.mailgun.com/
+    type: Email Service
+    image:
+      src: /static/img/tools/mailgun.png
+      width: 2430
+      height: 672
       fit: contain
     formats:
       - email

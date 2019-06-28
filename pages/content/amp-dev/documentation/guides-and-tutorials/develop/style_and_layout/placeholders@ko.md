@@ -13,17 +13,19 @@ $title: 자리표시자 및 대체 콘텐츠
 지정된 경우 `placeholder` 요소는 AMP 요소의 직접 하위 요소여야 합니다.
 `placeholder`로 표시된 요소는 항상 상위 AMP 요소를 `fill`합니다.
 
-<!--embedded amp-anim responsive example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않아도
 자리표시자는 AMP 요소에 즉시 표시됩니다.
@@ -50,24 +52,40 @@ $title: 자리표시자 및 대체 콘텐츠
 
 다음 예에서 `fallback` 속성을 사용하여 사용자에게 브라우저가 특정 기능을 지원하지 않음을 알립니다.
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### 예: 다른 이미지 형식 게재
 
 다음 예에서 `fallback` 속성을 사용하여 WebP 형식이 지원되지 않으면 JPEG 파일을 사용하라고 브라우저에 알립니다. 
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## 자리표시자 및 대체 콘텐츠 상호작용
 

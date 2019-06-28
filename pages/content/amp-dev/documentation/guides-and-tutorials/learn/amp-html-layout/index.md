@@ -8,6 +8,13 @@ formats:
   - ads
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 <!---
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 

@@ -19,17 +19,15 @@ Modifiez manuellement la largeur et la hauteur fournies ou utilisez l'attribut m
 
 Exemple d'élément [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) tiré de [twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html) :
 
-<!-- embedded twitter example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-twitter"]
+```html
+<amp-twitter width="500"
+  height="583"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+[/example]
 
 ## Intégrer une publication Instagram
 
@@ -44,17 +42,15 @@ Pour inclure une publication Instagram, incluez d'abord le script suivant dans l
 Incluez le code court d'Instagram figurant dans l'URL de la photo Instagram. Ainsi, dans `https://instagram.com/p/fBwFP`, `fBwFP` est le code court.
 De plus, Instagram utilise un format fixe pour les mises en page responsives. Ainsi, les valeurs de largeur et de hauteur doivent être universelles.
 
-<!-- embedded Instagram example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-instagram"]
+```html
+<amp-instagram data-shortcode="fBwFP"
+  width="320"
+  height="392"
+  layout="responsive">
+</amp-instagram>
+```
+[/example]
 
 ## Afficher un post ou une vidéo Facebook
 
@@ -106,17 +102,15 @@ L'élément `data-videoid` YouTube figure dans l'URL de chaque page de vidéo Yo
 
 Utilisez `layout="responsive"` pour obtenir une mise en page correcte des vidéos au format 16:9 :
 
-<!-- embedded youtube example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 ## Afficher une annonce
 
@@ -130,30 +124,33 @@ Vous devez préciser la largeur et la hauteur de l'annonce, et le type de résea
 Le `type` identifie le modèle de réseau publicitaire.
 Des types d'annonces différents nécessitent des attributs `data-*` différents.
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="212"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+</amp-ad>
+```
+[/example]
 
 Si le réseau publicitaire le permet, incluez un `placeholder` à afficher si aucune annonce n'est disponible :
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="232"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  <div placeholder>Have a great day!</div>
+</amp-ad>
+```
+[/example]
 
 AMP accepte un large éventail de réseaux publicitaires. [Consultez la liste complète]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).

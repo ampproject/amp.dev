@@ -171,6 +171,7 @@ class Config {
         'name': 'default',
         'destination': 'local',
         'out_dir': utils.project.paths.GROW_BUILD_DEST,
+        'extracted_examples_dir': utils.project.paths.INLINE_EXAMPLES_DEST,
         'env': podspec['env'],
       },
     };

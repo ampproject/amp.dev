@@ -22,3 +22,11 @@
 /tools: /documentation/tools
 /vision-mission: /about/mission-and-vision
 /websites: /about/websites
+
+# Regex-based entries
+^/c/amp-([a-z-]+)$:
+  url: /documentation/components/amp-$1
+  useRegex: true
+^/s/amp-([a-z-]+)$:
+  url: /documentation/examples/components/amp-$1
+  useRegex: true

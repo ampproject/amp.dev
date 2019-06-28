@@ -36,7 +36,17 @@ $title: レスポンシブな AMP ページを作成する
 
 以下の例では、花の画像（640 x 427 px）を表示します。あらゆる画面サイズでこの画像を表示したいので、`width` と `height` を指定し、レイアウトを `responsive` に設定しています。
 
-<div><amp-iframe height=213 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.basic-image.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<div class="resp-img">
+  <amp-img alt="flowers"
+    src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+    layout="responsive"
+    width="640"
+    height="427"></amp-img>
+</div>
+```
+[/example]
 
 ただし、所定のサイズ以上に画像が広がらないよう、カスタム CSS を介してコンテナの `max-width` を 700 px に設定しています。
 
@@ -67,8 +77,15 @@ $title: レスポンシブな AMP ページを作成する
 
 以下の例では、埋め込んだ YouTube 動画を、端末の画面のサイズと向きに合わせて表示します。[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 要素に `"layout=responsive"` を追加することで、動画はウィンドウに収まるようにサイズ変更され、指定された `width` と `height` に沿ってアスペクト比が保たれます。
 
-<div>
-<amp-iframe height="174" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html"> <div overflow tabindex="0" role="button" aria-label="さらに表示">コードをすべて表示</div> <div placeholder></div> </amp-iframe></div>
+[example preview="inline" playground="true" imports="amp-youtube"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 AMP ページには数多くの種類の動画を追加できます。詳しくは、利用可能な[メディア コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})の一覧をご覧ください。
 
@@ -94,8 +111,23 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 - ビューポートの幅が 900 px 以下の場合、画像をビューポートの幅の 75% で表示します。
 - 900 px より大きい場合、画像を 600 px の幅で表示します。
 
-<div>
-<amp-iframe height=326 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.resolution.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="apple"
+  src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
+  height="596"
+  width="900"
+  srcset="{{server_for_email}}/static/inline-examples/images/apple-900.jpg 900w,
+            {{server_for_email}}/static/inline-examples/images/apple-800.jpg 800w,
+            {{server_for_email}}/static/inline-examples/images/apple-700.jpg 700w,
+            {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
+            {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
+            {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
+  sizes="(max-width: 400px) 100vw, 
+            (max-width: 900px) 75vw, 600px">
+</amp-img>
+```
+[/example]
 
 たとえば、端末のビューポートの幅が 412 px で DPR が 2.6 の場合、上記のコードに基づいて画像をビューポートの幅の 75% で表示する必要があるため、ブラウザは 803 px（412 * 0.75 * 2.6）に近い画像である `apple-800.jpg` を選択します。
 
@@ -115,7 +147,25 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 注: 画像のサイズを固定する（つまり、歪みが生じないようにする）必要があるため、レイアウトの値は指定していません。幅と高さが設定されているため、デフォルトで `layout=fixed` に設定されます。詳しくは、[「layout 属性が指定されていない場合」]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性が指定されていない場合)をご覧ください。
 
-<div><amp-iframe height=407 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.breakpoints.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="grey cat"
+    media="(min-width: 670px)"
+    width="650"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(min-width: 470px) and (max-width: 669px)"
+    width="450"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"></amp-img>
+  <amp-img alt="grey cat"
+    media="(max-width: 469px)"
+    width="226"
+    height="340"
+    src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"></amp-img>
+```
+[/example]
 
 詳細情報: AMP でのアート ディレクションについて詳しくは、[srcset、sizes、heights を使ったレスポンシブな画像]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})をご覧ください。
 
@@ -131,8 +181,22 @@ HTML では `picture` タグを使うことで、異なる画像形式を配信�
 
 以下の例では、ブラウザが WebP に対応している場合は mountains.webp を配信し、対応していない場合は mountains.jpg を配信します。
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="さらに表示">コードをすべて表示</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 便利なことに、Google AMP Cache など一部のキャッシュでは、画像が自動的に圧縮されて WebP 形式や適切な解像度に変換されます。ただし、キャッシュを利用していないプラットフォームもあるため、デベロッパーの側でも手動で画像を最適化する必要があります。
 
