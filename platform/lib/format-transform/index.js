@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-const {htmlContent} = require('@lib/utils/cheerio');
-const {filterPage, FORMATS} = require('@lib/common/filteredPage');
 const cheerio = require('cheerio');
+const {htmlContent} = require('@lib/utils/cheerio');
 const transforms = require('./transforms');
 
 class FormatTransform {
