@@ -1,22 +1,20 @@
-nextstop:
-  - title: berlin, de
-    coords: 57x12
-    location: Google Berlin
-    time: 09:00–18:00
-    day: 7
-    month: jun
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-berlin/
-  - title: atlanta, usa
-    coords: 22x17
-    location: refactr.tech
-    time: 09:00–18:00
-    day: 5
-    month: jun
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-atlanta/
+# nextstop:
+  # - title: California, US
+  #   coords: 9x9
+  #   location: Menlo Park
+  #   time: 09:00–18:00
+  #   day: 4
+  #   month: sep
+  #   year: 1998
+  #   link: https://google.com/
 
 past:
+  - title: BERLIN
+    coords: 57x12
+    date: 2019-06-07
+  - title: ATLANTA
+    coords: 22x17
+    date: 2019-06-05
   - title: NAIROBI
     coords: 65x33
     date: 2019-03-22
