@@ -6,6 +6,10 @@
 {% do doc.styles.addCssFile('css/components/molecules/table.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
+{% if doc.has_inline_preview %}
+  {% do doc.styles.addCssFile('css/components/organisms/code-preview.css') %}
+{% endif %}
+
 {% do doc.styles.addCssFile('css/components/templates/component-detail.css') %}
 {% endblock %}
 

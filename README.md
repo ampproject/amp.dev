@@ -6,7 +6,7 @@ The official homepage of the AMP Project.
 
 ## Contributing
 
-We welcome contributons to amp.dev.
+We welcome contributions to amp.dev.
 
 * **Bug reports and feature requests:** something missing or not working on https://amp.dev? Please file an issue [here](https://github.com/ampproject/docs/issues/new).
 * **Documentation & Guides:** see [this guide](./contributing/documentation.md) for more information on how to contribute documentation to amp.dev.

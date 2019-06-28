@@ -18,17 +18,15 @@ Perhatian: Meski tidak didukung, pasangan HTML default*akan*  dirender, tetapi A
 
  Sertakan gambar pada halaman Anda menggunakan elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) seperti berikut:
 
-<!--embedded example - fixed size image -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A beautiful sunset"
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+</amp-img>
+```
+[/example]
 
 Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan tinggi tetap yang telah ditentukan. Setidaknya, lebar dan tinggi minimum secara eksplisit perlu ditetapkan.
 
@@ -36,33 +34,32 @@ Pada sebagian besar contoh dasar ini, gambar akan ditampilkan dengan lebar dan t
 
  Karena `<amp-img>`  bergantung pada JavaScript, jika pengguna memilih menonaktifkan skrip, gambar tidak akan ditampilkan. Dalam hal ini, Anda harus memberikan penggantian pada gambar menggunakan `<img>`  dan `<noscript>`, seperti berikut:
 
-<!--embedded example - img with noscript -->
-<div>
-<amp-iframe height="215"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+  <noscript>
+    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+  </noscript>
+</amp-img>
+```
+[/example]
 
 ### Tata letak lanjutan
 
  Dibandingkan CSS/HTML standar, AMP memudahkan pembuatan gambar yang benar-benar responsif. Pada sebagian besar bentuk dasarnya, Anda hanya perlu menambahkan `layout="responsive"`:
 
-<!--embedded example - basic responsive image -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 Baca juga: Pelajari lebih lanjut tentang [teknik tata letak lanjutan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
@@ -76,17 +73,19 @@ Baca juga: Pelajari cara [memberikan penggantian dan placeholder untuk gambar]({
 
  Elemen [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) sangat mirip dengan elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), kedua elemen ini memberikan fungsi tambahan untuk mengelola pemuatan dan pemutaran gambar animasi seperti GIF.
 
-<!--embedded amp-anim basic example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim width="400"
+  height="300"
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
+  <amp-img placeholder
+    width="400"
+    height="300"
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 Catatan: Sertakan `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` pada bagian atas halaman untuk menggunakan komponen ini.
 
@@ -98,17 +97,19 @@ Catatan: Sertakan `<script async custom-element="amp-anim" src="https://cdn.ampp
 
 Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak mendukung video HTML5, misalnya:
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## Audio
 
@@ -118,16 +119,22 @@ Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak 
 
 Sertakan placeholder sebelum audio dimulai, dan penggantian, jika browser tidak mendukung audio HTML5, misalnya:
 
-<!--embedded audio example  -->
-<div>
-<amp-iframe height="314"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-audio"]
+```html
+<amp-audio width="400"
+  height="200"
+  {% if format == 'stories' %}  layout="nodisplay" autoplay
+  {% endif %}
+  src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <div fallback>
+    <p>Your browser doesn’t support HTML5 audio.</p>
+  </div>
+  <source type="audio/mpeg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <source type="audio/ogg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
+</amp-audio>
+```
+[/example]
 
 Catatan: Sertakan `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` pada bagian atas halaman untuk menggunakan komponen ini.

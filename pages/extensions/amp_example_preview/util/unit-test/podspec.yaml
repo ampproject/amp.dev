@@ -1,0 +1,14 @@
+env:
+  name: local
+  host: localhost
+base_urls:
+  repository: 'https://github.com/ampproject/docs/blob/future/'
+  playground: 'http://localhost:8082'
+  platform: 'http://localhost:8080'
+  api: 'http://localhost:8082'
+  preview: 'http://localhost:8082'
+deployments:
+  default:
+    name: default
+    destination: local
+

@@ -17,17 +17,15 @@ AMP は、メディアの表示に使用されるデフォルトの HTML タグ�
 
 画像をページに追加するには [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素を使用します。たとえば次のようになります。
 
-<!--embedded example - fixed size image -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fixed.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A beautiful sunset"
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+</amp-img>
+```
+[/example]
 
 こちらのごく基本的な例では、画像は、指定した固定の高さと幅で表示されます。少なくとも、幅と高さを明確に設定する必要があります。
 
@@ -35,33 +33,32 @@ AMP は、メディアの表示に使用されるデフォルトの HTML タグ�
 
 As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリプトを無効にすると画像は表示されなくなります。このような場合、その画像のフォールバックを、`<img>` と `<noscript>` を使って指定する必要があります。たとえば次のようになります。
 
-<!--embedded example - img with noscript -->
-<div>
-<amp-iframe height="215"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.noscript.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+  width="264"
+  height="195">
+  <noscript>
+    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+  </noscript>
+</amp-img>
+```
+[/example]
 
 ### 高度なレイアウト
 
  AMP では、標準の CSS や HTML を使う場合よりもかなり簡単に、完全にレスポンシブな画像を作成できます。最も基本的な形式では、必要な作業は次のように `layout="responsive" `を追加することだけです。
 
-<!--embedded example - basic responsive image -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 参考情報: 詳しくは、[高度なレイアウトの手法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
 
@@ -75,17 +72,19 @@ AMP HTML のランタイムでは、画像のリソースを効果的に管理�
 
 The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 要素は[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素とよく似ています。この要素では、アニメーション画像（GIF など）の読み込みや再生を管理する機能を追加できます。
 
-<!--embedded amp-anim basic example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim"]
+```html
+<amp-anim width="400"
+  height="300"
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
+  <amp-img placeholder
+    width="400"
+    height="300"
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 注: このコンポーネントを使用するには、`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` をページの先頭に追加します。
 
@@ -97,17 +96,19 @@ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/am
 
 動画が開始する前のプレースホルダと、ブラウザが HTML5 の動画に対応していない場合のフォールバックを追加します。たとえば次のようになります。
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## 音声
 
@@ -117,16 +118,22 @@ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/am
 
 音声が開始する前のプレースホルダと、ブラウザが HTML5 の音声に対応していない場合のフォールバックを追加します。たとえば次のようになります。
 
-<!--embedded audio example  -->
-<div>
-<amp-iframe height="314"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaudio.basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-audio"]
+```html
+<amp-audio width="400"
+  height="200"
+  {% if format == 'stories' %}  layout="nodisplay" autoplay
+  {% endif %}
+  src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <div fallback>
+    <p>Your browser doesn’t support HTML5 audio.</p>
+  </div>
+  <source type="audio/mpeg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
+  <source type="audio/ogg"
+    src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
+</amp-audio>
+```
+[/example]
 
 注: このコンポーネントを使用するには、`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` をページの先頭に追加します。

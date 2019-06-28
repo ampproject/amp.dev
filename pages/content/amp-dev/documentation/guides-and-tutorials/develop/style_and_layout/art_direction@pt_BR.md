@@ -8,17 +8,18 @@ $title: Imagens responsivas com os atributos "srcset", "sizes" e "heights"
 
 Neste exemplo simples, o `srcset` especifica qual imagem usar com base na largura da tela. O descritor `w` informa ao navegador a largura de cada imagem na lista:
 
-<!--embedded amp-img example using srcset -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  layout="responsive"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+</amp-img>
+```
+[/example]
 
 Observação: As AMPs oferecem suporte ao atributo srcset com o descritor `w` em todos os navegadores.
 
@@ -30,17 +31,18 @@ Também é possível usar o atributo `sizes` junto com o `srcset`. O atributo `s
 
 Veja o seguinte exemplo:
 
-<!--embedded amp-img example using sizes -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+  sizes="(min-width: 650px) 50vw, 100vw">
+</amp-img>
+```
+[/example]
 
 O atributo `sizes` define a largura do elemento como 50% do tamanho da janela de visualização, quando ela tiver 650 px ou mais. Por exemplo, se a janela de visualização tiver 800 px, a largura do elemento será definida como 400 px. Em seguida, o navegador seleciona o recurso `srcset` relativo a 400 px, assumindo que a proporção de pixels do dispositivo seja 1, que neste caso é `narrow.jpg` (320 px).
 
@@ -59,17 +61,16 @@ Quando o atributo `heights` for especificado juntamente com `width` e `height`, 
 
 Exemplo:
 
-<!--embedded amp-img example using heights -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="AMP"
+  src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%">
+</amp-img>
+```
+[/example]
 
 Neste exemplo, a altura do elemento será 80% da largura por padrão, mas para as janelas de visualização maiores que `500px`, ela será limitada a `200px`.
 

@@ -72,6 +72,33 @@ author: aghassemi
          .filter-mobile {
            display: none;
          }
+
+           /* global style in order to bind global style in the iframe*/
+
+         html, body {
+           font-size: 16px;
+           font-family: 'Noto Sans', sans-serif;
+           color: #48525C;
+         }
+         p {
+           font-weight: 400;
+           color: #48525c;
+         }
+         a {
+           font-weight: bold;
+           text-decoration: none;
+           color: #005AF0;
+         }
+         label {
+           margin: 20px;
+         }
+         .ampstart-btn {
+           margin-bottom: 40px;
+         }
+         p.name + p.star {
+           color: gold;
+         }
+
          @media (min-width: 600px) {
            .refine {
              display:inline;
@@ -116,6 +143,7 @@ author: aghassemi
            overflow: hidden;
          }
          #info-wrap {
+           display: flex;
            overflow: hidden;
            margin: var(--space-2)
          }

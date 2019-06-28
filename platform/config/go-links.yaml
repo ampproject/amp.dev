@@ -7,6 +7,7 @@
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
 /docs: /documentation/guides-and-tutorials/
 /email: /about/email
+/email-tools: /documentation/tools
 /governance: /community/governance
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
@@ -18,5 +19,14 @@
 /stories: /about/stories
 /sxg: /documentation/guides-and-tutorials/optimize-and-measure/signed-exchange
 /templates: /documentation/templates/
+/tools: /documentation/tools
 /vision-mission: /about/mission-and-vision
 /websites: /about/websites
+
+# Regex-based entries
+^/c/amp-([a-z-]+)$:
+  url: /documentation/components/amp-$1
+  useRegex: true
+^/s/amp-([a-z-]+)$:
+  url: /documentation/examples/components/amp-$1
+  useRegex: true
