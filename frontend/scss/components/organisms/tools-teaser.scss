@@ -164,7 +164,7 @@ section.#{utility('tools')} {
       &-list {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 20px 30px;
+        grid-gap: 50px;
         margin: 0;
         align-items: stretch;
 
@@ -172,6 +172,10 @@ section.#{utility('tools')} {
           grid-template-columns: repeat(12, 1fr);
           /*grid-auto-rows: 1fr;*/ /*looks a little better when multiple rows are present but wastes space */
           margin: 0;
+        }
+
+        @media (min-width: 768px) {
+          grid-gap: 30px;
         }
 
         .#{molecule('teaser-card')}{
