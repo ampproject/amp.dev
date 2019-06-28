@@ -512,11 +512,11 @@ class SamplesBuilder {
    */
   _getUsedComponents(parsedSample) {
     // Dirty RegEx to quickly parse component names from head
-    const COMPONENT_PATTERN = /<script.*?custom-.*?="(?<name>.*?)".*?<\/script>/g;
+    const COMPONENT_PATTERN = /<script.*?custom-.*?="(?<name>.*?)".*?src=".*?-(?=\d)(?<version>.*?)\.js".*?><\/script>/g;
 
     const usedComponents = {};
-    parsedSample.document.head.replace(COMPONENT_PATTERN, (script, name) => {
-      usedComponents[name] = script.replace(/\"/g, '\"');
+    parsedSample.document.head.replace(COMPONENT_PATTERN, (script, name, version) => {
+      usedComponents[name] = version
     });
 
     return usedComponents;

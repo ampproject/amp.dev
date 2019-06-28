@@ -27,7 +27,7 @@
 {% endif %}
 {% endif %}
 {% if 'amp-analytics' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-analytics', '0.1') %}
 {% endif %}
 
 {# Include amp-install-serviceworker #}
@@ -43,7 +43,7 @@
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
 {% for used_component in doc.used_components %}
-{{ doc.used_components[used_component]|safe }}
+{% do doc.amp_dependencies.add(used_component, doc.used_components[used_component]) %}
 {% endfor %}
 {% endif %}
 {% endblock %}
