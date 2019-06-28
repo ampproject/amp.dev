@@ -40,8 +40,8 @@
     box-shadow: 30px 90px 60px -40px rgba(0, 0, 0, 0.5);
 
     @media (prefers-reduced-motion: reduce) {
-      // animation: none;
-      // -webkit-animation: none;
+      animation: none;
+      -webkit-animation: none;
     }
 
     &-1 {
