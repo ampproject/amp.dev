@@ -77,7 +77,7 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"

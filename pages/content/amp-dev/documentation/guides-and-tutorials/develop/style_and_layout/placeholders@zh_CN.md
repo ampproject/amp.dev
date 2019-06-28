@@ -13,7 +13,7 @@ $title: 占位符和后备行为
 如果指定，则 `placeholder` 元素必须是 AMP 元素的直接子级。
 标记为 `placeholder` 的元素将始终 `fill`（填充）父级 AMP 元素。
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
@@ -52,7 +52,7 @@ $title: 占位符和后备行为
 
 在以下示例中，我们使用 `fallback` 属性告知用户，浏览器不支持特定功能：
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"

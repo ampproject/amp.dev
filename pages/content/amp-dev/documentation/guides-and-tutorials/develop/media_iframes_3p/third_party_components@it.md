@@ -17,7 +17,7 @@ Per includere un tweet nella pagina, inserisci innanzitutto lo script seguente n
 Attualmente i tweet vengono ridimensionati automaticamente e proporzionalmente in base alle dimensioni specificate, ma questo comportamento potrebbe portare a un aspetto non ottimale.
 Regola manualmente la larghezza e l'altezza fornite oppure utilizza l'attributo media per selezionare le proporzioni in base alla larghezza dello schermo.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -40,7 +40,7 @@ Per includere una foto di Instagram, inserisci innanzitutto lo script seguente n
 Includi l'elemento data-shortcode di Instagram indicato nell'URL della foto del servizio. Ad esempio, nell'URL `https://instagram.com/p/fBwFP` l'elemento data-shortcode Ã¨ `fBwFP`.
 Inoltre, Instagram utilizza proporzioni fisse per i layout reattivi, quindi il valore di larghezza e altezza dovrebbe essere universale.
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -107,7 +107,7 @@ Ad esempio, nell'URL `https://www.youtube.com/watch?v=Z1q71gFeRqM`, l'ID video Ã
 
 Utilizza `layout="responsive"` per ottenere i layout corretti per video con proporzioni 16:9:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -129,7 +129,7 @@ Devi specificare la larghezza e l'altezza dell'annuncio, oltre al tipo di rete p
 L'attributo `type` identifica il modello della rete pubblicitaria.
 Tipi di annunci diversi richiedono attributi `data-*` differenti.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -144,7 +144,7 @@ Tipi di annunci diversi richiedono attributi `data-*` differenti.
 
 Includi un attributo `placeholder` (se supportato dalla rete pubblicitaria) da mostrare se non ci sono annunci disponibili:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

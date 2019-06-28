@@ -25,7 +25,7 @@ as a placeholder for the parent AMP element.
 If specified, a `placeholder` element must be a direct child of the AMP element.
 An element marked as a `placeholder` will always `fill` the parent AMP element.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
@@ -61,7 +61,7 @@ You can set the `fallback` attribute on *any* HTML element, not just AMP element
 
 In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"

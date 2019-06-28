@@ -13,7 +13,7 @@ de marcador de posición del elemento AMP principal.
 Si se indica un elemento `placeholder`, este debe ser un elemento secundario directo del elemento AMP.
 Los elementos marcados como `placeholder` siempre llenarán el elemento AMP principal.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
@@ -52,7 +52,7 @@ Puedes añadir el atributo `fallback` en cualquier elemento HTML, no solo en los
 
 En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los usuarios que su navegador no es compatible con una función concreta:
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
