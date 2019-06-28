@@ -231,8 +231,7 @@ class MarkdownDocument {
     */
 
     if (this._importURL) {
-      const importedText = `
-<!--
+      const importedText = `<!--
 This file is imported from ${this.importURL}.
 Please do not change this file.
 If you have found a bug or an issue please
