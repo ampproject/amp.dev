@@ -229,7 +229,6 @@ class MarkdownDocument {
     * check if file is imported and if so add a comment in order to inform that
     * the file should not be changed in the amp.dev/docs - repro
     */
-
     if (this._importURL) {
       const importedText = `<!--
 This file is imported from ${this.importURL}.
