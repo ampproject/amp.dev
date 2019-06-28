@@ -317,12 +317,12 @@ providers:
     formats:
       - email
   - name: Mailgun
-    url: https://mailgun.com/
+    url: https://www.mailgun.com/
     type: Email Service
     image:
       src: /static/img/tools/mailgun.png
-      width: 1223
-      height: 450
+      width: 2430
+      height: 672
       fit: contain
     formats:
       - email
