@@ -316,3 +316,13 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Mailgun
+    url: https://www.mailgun.com/
+    type: Email Service
+    image:
+      src: /static/img/tools/mailgun.png
+      width: 2430
+      height: 672
+      fit: contain
+    formats:
+      - email
