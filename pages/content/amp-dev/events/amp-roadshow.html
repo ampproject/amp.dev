@@ -107,7 +107,7 @@ section_links:
       {% endif %}
 
       <aside class="ap-o-cities-map-grid">
-        {% for place in doc.roadshow.nextstop %}
+        {% for place in doc.roadshow.nextstop if doc.roadshow.nextstop %}
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
@@ -121,7 +121,7 @@ section_links:
           {% endif %}
         {% endfor %}
 
-        {% for place in doc.roadshow.past %}
+        {% for place in doc.roadshow.past if doc.roadshow.past %}
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
