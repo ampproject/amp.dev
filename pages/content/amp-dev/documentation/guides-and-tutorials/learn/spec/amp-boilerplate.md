@@ -6,7 +6,6 @@ formats:
   - stories
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md.
 Please do not change this file.

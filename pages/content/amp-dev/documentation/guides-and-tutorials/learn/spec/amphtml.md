@@ -5,7 +5,6 @@ formats:
   - websites
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md.
 Please do not change this file.

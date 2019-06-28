@@ -6,7 +6,6 @@ formats:
   - ads
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
 Please do not change this file.

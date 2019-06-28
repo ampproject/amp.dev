@@ -6,7 +6,6 @@ formats:
   - email
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
 Please do not change this file.

@@ -9,7 +9,6 @@ formats:
   - ads
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md.
 Please do not change this file.

@@ -12,7 +12,6 @@ toc: true
 $title: amp-accordion
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/tree/1906191709480/extensions/amp-accordion/amp-accordion.md.
 Please do not change this file.

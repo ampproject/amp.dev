@@ -6,7 +6,6 @@ formats:
   - ads
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.

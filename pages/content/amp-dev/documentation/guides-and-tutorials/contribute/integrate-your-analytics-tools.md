@@ -7,7 +7,6 @@ formats:
   - stories
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
 Please do not change this file.

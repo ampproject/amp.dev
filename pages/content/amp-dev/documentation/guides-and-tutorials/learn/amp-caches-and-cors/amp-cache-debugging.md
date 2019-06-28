@@ -7,7 +7,6 @@ formats:
   - ads
 ---
 
-
 <!--
 This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
 Please do not change this file.
