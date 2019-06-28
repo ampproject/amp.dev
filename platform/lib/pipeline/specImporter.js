@@ -50,13 +50,14 @@ class SpecImporter {
         doc.order = importDoc.order;
         doc.toc = importDoc.toc;
         doc.formats = importDoc.formats;
-        doc.importURL = 'https://github.com/ampproject/amphtml/blob/master/' + importDoc.from;
+        doc.baseURL = `https://github.com/${importDoc.repo}/blob/master/`;
+        doc.importURL = doc.baseURL + importDoc.from;
+        console.log(doc.importURL);
 
         // Remove the double heading and rewrite relative links
         doc.stripInlineTitle();
 
-        const relativeBase = 'https://github.com/' +
-            `${importDoc.repo}/blob/master/${path.dirname(importDoc.from)}`;
+        const relativeBase = `${doc.baseURL}${path.dirname(importDoc.from)}`;
         doc.rewriteRelativePaths(relativeBase);
 
         importedDocs.push(doc.save());
