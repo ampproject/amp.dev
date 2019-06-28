@@ -74,6 +74,14 @@ class MarkdownDocument {
     this._path = path;
   }
 
+  get importURL() {
+    return this._importURL;
+  }
+
+  set importURL(importURL) {
+    this._importURL = importURL;
+  }
+
   set title(title) {
     this._frontmatter['$title'] = title;
   }
@@ -245,10 +253,30 @@ class MarkdownDocument {
    * @return {Promise}
    */
   save(path) {
+    let content = '';
     const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
+    content += frontmatter;
+
+    /**
+    * check if file is imported and if so add a comment in order to inform that
+    * the file should not be changed in the amp.dev/docs - repro
+    */
+    if (this._importURL) {
+      const importedText = `<!--
+This file is imported from ${this.importURL}.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
+`;
+      content += importedText;
+    }
+
+    content += this._contents;
 
     path = path ? path : this._path;
-    return writeFile.promise(path, frontmatter + this._contents).then(() => {
+    return writeFile.promise(path, content).then(() => {
       LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
     }).catch((e) => {
       LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);

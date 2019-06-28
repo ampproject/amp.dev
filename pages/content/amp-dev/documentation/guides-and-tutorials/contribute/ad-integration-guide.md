@@ -6,10 +6,17 @@ formats:
   - ads
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 
 
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
-To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to the AMP project, please see [here](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to AMP, please see [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
 
 ## Ad Server
 
