@@ -214,6 +214,18 @@ section.#{utility('tools')} {
           font-family: 'Noto Sans', sans-serif;
           font-weight: bold;
           border-radius: 20px;
+          transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+          cursor: pointer;
+
+          &:hover {
+            & + a {
+              transform: translateY(-2px);
+
+              .#{molecule('teaser-card')} {
+                box-shadow: inset 0 0 0 1px color('athens-gray'), 0 25px 60px 0px rgba(0,0,0,0.1);
+              }
+            }
+          }
 
           &-icon {
             display: inline-flex;
@@ -226,6 +238,12 @@ section.#{utility('tools')} {
           &-stories { fill: color('pigment-indigo'); }
           &-ads { fill: color('white'); }
           &-email { fill: color('ultramarine'); }
+        }
+
+        .#{molecule('teaser')}:hover {
+          .#{molecule('teaser-tag')} {
+            transform: translateY(-2px);
+          }
         }
 
         .#{molecule('teaser-logo')}{
