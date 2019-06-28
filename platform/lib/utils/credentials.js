@@ -48,7 +48,7 @@ function get(key) {
   }
 
   return new Promise((resolve, reject) => {
-    const datastoreKey = datastore.key([CREDENTIAL_ENTITY, key]);
+    const datastoreKey = datastore.key([CREDENTIAL_ENTITY, key.toUpperCase()]);
     datastore.get(datastoreKey, (e, entity) => {
       if (e) {
         reject(e);
