@@ -322,6 +322,7 @@ providers:
   - name: Mailgun
     url: https://www.mailgun.com/
     type: Email Service
+    description: Mailgun's leading API-based email delivery service allows you to send dynamic email effortlessly.
     image:
       src: /static/img/tools/mailgun.png
       width: 2430
