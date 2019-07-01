@@ -22,17 +22,16 @@ The tools cards on the tools page and in widget form.
 
 @import '../templates/_default';
 
-main.#{template('tools')} {
-
+section.#{utility('tools')} {
     .#{organism('tool-section')} {
-      margin-bottom: 2em;
+      margin-bottom: 3em;
       padding: 0 30px;
 
       @media (min-width: 768px) {
         margin-top: 4em;
       }
 
-      &-title { grid-column: 3 / 23; }
+      &-title { grid-column: 1 / -1; }
       &-title > h2 { opacity: 0.35; }
       &-title > .show ~ .hide ~ h2, .show + h2 { opacity: 1; }
     }
@@ -43,83 +42,153 @@ main.#{template('tools')} {
     }
 
     .#{organism('tool-format-filter-caption')} {
-      grid-column: 3 / 23;
-      margin: 0;
+      grid-column: 1 / -1;
     }
 
     .#{organism('tool-format-filter')} {
-      grid-column: 3 / 23;
+      grid-column: 1 / -1;
       list-style: none;
-      display: flex;
-      align-items: center;
-      padding: 15px 30px 35px;
-      margin: 0 -30px;
-      overflow-y: auto;
+      padding: 0;
+      margin: 0 -8px;
 
       li {
         display: inline-block;
-        button {
-          margin: 5px;
-          &:first-child {
-            margin-left: 0;
-          }
-          padding: 5px 20px;
-          display: inline-block;
-          div {
-            display: inline-flex;
-            width: 1em;
-            height: 1em;
-            margin-right: 0.3em;
-            vertical-align: sub;
-            @media (max-width: 645px) {
-              display: none;
-            }
-          }
+        margin: 10px 8px;
+      }
+    }
+
+    .#{molecule('filter-bubble')} {
+      position: relative;
+      display: inline-block;
+      padding: 5px 20px;
+      margin: 0;
+      font-size: 12px;
+      font-family: 'Noto Sans', sans-serif;
+      color: color('silver');
+      background: color('white');
+      transition: 200ms;
+      box-shadow: 0 5px 25px 0px rgba(0,0,0,0.25);
+
+      &:hover {
+        box-shadow: 0 15px 35px 0px rgba(0,0,0,0.15);
+      }
+
+      &.websites .#{atom('ico')} { fill: #CCC; font-size: 21px; }
+      &.ads .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+      &.stories .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+      &.email .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+
+      &.chosen {
+        padding-left: 12px;
+        padding-right: 28px;
+      }
+
+      &.hover,
+      &.active {
+        &.websites {
+          @include gradient-websites; color: color('white');
+          .#{atom('ico')} { fill: color('white'); }
+        }
+
+        &.stories {
+          @include gradient-stories; color: color('pigment-indigo');
+          .#{atom('ico')} { fill: color('pigment-indigo'); }
+        }
+
+        &.ads {
+          @include gradient-ads; color: color('white');
+          .#{atom('ico')} { fill: color('white'); }
+        }
+
+        &.email {
+          @include gradient-e-mails; color: color('ultramarine');
+          .#{atom('ico')} { fill: color('ultramarine'); }
         }
       }
+
+      &-icon {
+        display: inline-flex;
+        margin: 0 2px 2px 0;
+        vertical-align: middle;
+      }
+
+      &-reset {
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+
+        svg {
+          width: 8px;
+          height: 8px;
+          margin: 1px -10px 0 0;
+          opacity: 0;
+          transition: 200ms;
+        }
+
+        &.show {
+          width: 100%;
+
+          svg {
+            margin-right: 10px;
+            opacity: 1;
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
 
-    h1 {
+    h1, h2 {
       @include hl;
       @include hl-h1;
-    }
-
-    h2 {
       margin-top: 0;
-
-      &:before {
-        background: linear-gradient(to right, color('blue-ribbon'), color('robins-egg'));
-        content: '';
-        display: block;
-        height: 10px;
-        margin-bottom: 20px;
-        width: 80px;
-        border-radius: 100px;
-      }
     }
 
     .#{organism('teaser-grid')} {
-      grid-column: 3 / 23;
+      grid-column: 1 / -1;
       width: 100%;
       margin-bottom: 2em;
 
       &-list {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 60px 30px;
+        grid-gap: 50px;
         margin: 0;
         align-items: stretch;
 
-        @media (min-width: 768px) {
+        @media (min-width: 575px) {
           grid-template-columns: repeat(12, 1fr);
           /*grid-auto-rows: 1fr;*/ /*looks a little better when multiple rows are present but wastes space */
           margin: 0;
+        }
+
+        @media (min-width: 768px) {
+          grid-gap: 30px;
         }
 
         .#{molecule('teaser-card')}{
           display: flex;
           flex-direction: column;
           width: 100%;
+          margin: 0;
+          border-radius: 4px;
+          box-shadow: 0 30px 75px -13px rgba(0,0,0,.25);
+
+          &:hover {
+            box-shadow: 0 40px 100px -13px rgba(0,0,0,0.15);
+          }
 
           > div:last-child {
             flex: 1 1 auto;
@@ -127,34 +196,83 @@ main.#{template('tools')} {
             flex-direction: column;
             justify-content: space-between;
           }
+        }
 
-          @media (max-width: 768px) {
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: row;
+        .#{molecule('teaser-content')} {
+          position: relative;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .#{molecule('teaser-tag')}{
+          right: 13px;
+          top: auto;
+          bottom: 10px;
+          padding: 5px 20px;
+          line-height: 1.6rem;
+          font-size: 12px;
+          font-family: 'Noto Sans', sans-serif;
+          font-weight: bold;
+          border-radius: 20px;
+          transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+          cursor: pointer;
+
+          &:hover {
+            & + a {
+              transform: translateY(-2px);
+
+              & > .#{molecule('teaser-card')} {
+                box-shadow: 0 25px 60px 0px rgba(0,0,0,0.1);
+              }
+            }
           }
 
+          &-icon {
+            display: inline-flex;
+            margin: 0 2px 2px 0;
+            vertical-align: middle;
+            font-size: 19px;
+          }
+
+          &-websites { fill: color('white'); }
+          &-stories { fill: color('pigment-indigo'); }
+          &-ads { fill: color('white'); }
+          &-email { fill: color('ultramarine'); }
+        }
+
+        .#{molecule('teaser')}:hover {
+          .#{molecule('teaser-tag')} {
+            transform: translateY(-2px);
+          }
         }
 
         .#{molecule('teaser-logo')}{
-          margin: 0;
-          width: 12px;
-          height: 12px;
-          margin-right: 2px;
-        }
+          position: absolute;
+          left: 30px;
+          bottom: 100%;
+          margin: 0 0 3px;
+          width: 20px;
+          height: 20px;
+          fill: color('blue-ribbon');
 
-        .#{molecule('teaser-headline')}.single {
-          text-align: center;
-          font-size: 20px;
+          svg {
+            z-index: 2;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            bottom: -4px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 28px;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 28'%3E%3Cpath d='M35 0.4v0c-20.5 0-11.8 26.6-35 26.6v1h70v-1c-23.2 0-14.5-26.6-35-26.6z' fill='%23fff'/%3E%3C/svg%3E");
+          }
         }
 
         .#{molecule('teaser-image')}{
-          box-shadow: inset 0 -1px 0 #f0f0f0;
-
-          @media (max-width: 767px) {
-            width: 30%;
-            flex: 1 0 auto;
-          }
           &.contain {
             amp-img {
               margin: 0 10px;
@@ -163,28 +281,41 @@ main.#{template('tools')} {
                 margin: 15px 30px;
               }
             }
-          }
-          &:before {
-            display: none;
+            &:before {
+              opacity: 0.5;
+            }
           }
         }
 
         .#{molecule('teaser-card-essential')}{
           .#{molecule('teaser-card')}{
-            border: 4px solid #0059f0;
+            background-color: color('limed-spruce');
 
+            .#{molecule('teaser-content')} > * {
+              color: #fff;
+            }
+
+            .#{molecule('teaser-logo')} {
+              fill: #fff;
+              background-color: color('limed-spruce');
+
+              &::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 28'%3E%3Cpath d='M35 0.4v0c-20.5 0-11.8 26.6-35 26.6v1h70v-1c-23.2 0-14.5-26.6-35-26.6z' fill='%23333D47'/%3E%3C/svg%3E");
+              }
+            }
           }
         }
 
         .#{molecule('teaser-type')}{
-          text-align: center;
-          background: #f0f0f0;
-          text-transform: uppercase;
-          padding: 6px 0;
-          border-bottom-right-radius: 6px;
-          border-bottom-left-radius: 6px;
+          display: flex;
+          align-items: center;
+          height: 55px;
+          padding: 0 120px 0 15px;
+          @include txt-3;
+          color: color('river-bed');
+          border-top: 2px solid color('gallery');
+
           &-essential {
-            background: #0058f0;
             color: #fff;
           }
         }
@@ -193,6 +324,10 @@ main.#{template('tools')} {
           grid-column: 1;
           margin: 0;
           display: flex;
+
+          @media (min-width: 575px) {
+            grid-column: span 6;
+          }
 
           @media (min-width: 768px) {
             grid-column: span 4;
