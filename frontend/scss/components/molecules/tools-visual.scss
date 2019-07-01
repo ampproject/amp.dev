@@ -27,9 +27,14 @@
   @media (min-width: 768px) {
     grid-column: 12 / -1;
     position: static;
+    margin-top: -60%;
+    max-width: 85%;
+    padding: 0;
+  }
+
+  @media (min-width: 1024px) {
     margin-top: -50%;
     max-width: 75%;
-    padding: 0;
   }
 
   &-image {
