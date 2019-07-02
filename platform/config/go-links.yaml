@@ -27,6 +27,6 @@
 ^/c/amp-([a-z-]+)$:
   url: /documentation/components/amp-$1
   useRegex: true
-^/s/amp-([a-z-]+)$:
-  url: /documentation/examples/components/amp-$1
+^/e/amp-([a-z-]+)$:
+  url: /documentation/examples/components/amp-$1/
   useRegex: true
