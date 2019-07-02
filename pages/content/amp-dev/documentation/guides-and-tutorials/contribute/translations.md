@@ -1,7 +1,7 @@
 ---
 $title: Add translations
 $order: 2
-description: "AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and heath."
+description: "AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and health."
 
 formats:
   - websites
@@ -11,7 +11,7 @@ formats:
 ---
 Welcome to the AMP Translation Initiative!
 
-AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and heath.
+AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and health.
 
 The AMP Translation Initiative is working to create a network of native speakers to ensure our documentation is localized with clarity and efficiency. We can't thank you for taking an interest in AMP and your assistance in making the web a content ecosystem for everyone.
 
