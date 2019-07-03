@@ -50,12 +50,13 @@ class SpecImporter {
         doc.order = importDoc.order;
         doc.toc = importDoc.toc;
         doc.formats = importDoc.formats;
+        const baseURL = `https://github.com/${importDoc.repo}/blob/master/`;
+        doc.importURL = baseURL + importDoc.from;
 
         // Remove the double heading and rewrite relative links
         doc.stripInlineTitle();
 
-        const relativeBase = 'https://github.com/' +
-            `${importDoc.repo}/blob/master/${path.dirname(importDoc.from)}`;
+        const relativeBase = `${baseURL}${path.dirname(importDoc.from)}`;
         doc.rewriteRelativePaths(relativeBase);
 
         importedDocs.push(doc.save());

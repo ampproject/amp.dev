@@ -38,6 +38,8 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
     self.assertEqual(0, len(inline_example.imports))
     self.assertEqual(None, inline_example.template)
 
+    self.assertEqual('<h1>headline</h1>', inline_example.body.strip())
+
   def test_two_examples_with_positions(self):
     extractor = SourceCodeExtractor()
     matches = extractor.find_examples_in_markdown(
@@ -155,3 +157,12 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
     self.assertEqual(1, len(inline_example.imports))
     self.assertEqual('amp-accordion', inline_example.imports[0].name)
     self.assertEqual(None, inline_example.template)
+
+  def test_example_with_sourcecode_tag(self):
+    extractor = SourceCodeExtractor()
+    matches = extractor.find_examples_in_markdown(
+      '\ntest [example][sourcecode:html]\n'
+      '<h1>headline</h1>[/sourcecode][/example]\n')
+
+    inline_example = matches[0].inlineExample
+    self.assertEqual('<h1>headline</h1>', inline_example.body.strip())

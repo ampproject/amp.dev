@@ -9,6 +9,13 @@ formats:
   - ads
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/meta/blob/master/GOVERNANCE.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 
 
 ## Glossary
@@ -49,7 +56,7 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 
 * The TSC's primary role is setting AMP's technical & product direction based on the [project guidelines](https://www.ampproject.org/about/amp-design-principles/).
 * Creates a product roadmap in consultation with the Working Groups.
-* Creates Working Groups and sets the initial membership & Facilitator of the Working Groups.  The TSC may initiate the creation of Working Groups or a group of people with a common interest may request recognition as a Working Group.
+* Creates Working Groups and sets the initial membership & initial Facilitator of the Working Groups.  The TSC may initiate the creation of Working Groups or a group of people with a common interest may request recognition as a Working Group.
 * Approves new Collaborators.
 * Sets and maintains the project guidelines.
 * Sets and maintains the project’s feature and bug fix process.
@@ -73,7 +80,7 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 * A Working Group is a segment of the community with knowledge/interest in specific areas of AMP (e.g. UI, Runtime, Infrastructure, documentation) recognized by the TSC.
 * The TSC defines each Working Group's mandate, which may include responsibility for certain AMP features, systems and/or code.  A Working Group generally operates independently on the area(s) in which it has a mandate while adhering to AMP's [project guidelines](https://github.com/ampproject/amphtml/tree/master/contributing), [vision/mission](https://www.ampproject.org/about/mission/) and [technical/product roadmaps](https://github.com/ampproject/amphtml/projects/43).
 * Each Working Group is made up of a set of Collaborators with knowledge/interest in that particular area + other interested parties.
-* Each Working Group may have a Facilitator as designated by the Technical Steering Committee.  The Facilitator is responsible for:
+* Each Working Group's Facilitator is responsible for:
   * Facilitating consensus-based decisions within the Working Group.
   * Representing the Working Group to the TSC.
   * Choosing designate(s) from within the Working Group for these responsibilities as needed.
@@ -81,7 +88,7 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 
 #### Membership
 * The TSC creates Working Groups and assigns initial members.  Membership should include some Committers but may include other interested parties.
-* A Working Group may add or remove members by using the consensus-based approach.
+* A Working Group may add or remove members and change the Facilitator by using the consensus-based approach.
 * It is acceptable & expected that groups of people with a common interest will work together without requiring a formal Working Group.  These groups may choose to be officially recognized as a Working Group by making a proposal (including its purpose and proposed membership) to the TSC.
 * The TSC may disband/reorganize Working Groups as needed.
 
