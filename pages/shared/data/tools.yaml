@@ -44,7 +44,7 @@ creation:
   - name: Instapage
     description: Instapage automates the creation, optimization, and personalization of post-click experiences at scale.
     url: https://instapage.com
-    type: landing pages
+    type: Landing pages
     image:
       src: /static/img/tools/instapage.svg
       width: 598
@@ -75,7 +75,7 @@ creation:
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
-    type: landing pages
+    type: Landing pages
     image:
       src: /static/img/tools/unbounce.svg
       width: 1162
@@ -87,7 +87,7 @@ creation:
 platforms:
   - name: AMP for WordPress
     official: true
-    type: cms
+    type: CMS
     description: AMP-first content creation with the power and flexibility of WordPress.
     url: https://amp-wp.org/
     image:
@@ -98,7 +98,7 @@ platforms:
       - websites
       - stories
   - name: Google Search Console
-    type: debugging
+    type: Debugging
     description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
     url: https://search.google.com/search-console/about
     image:
@@ -111,7 +111,7 @@ platforms:
   - name: Google AMP Test
     description: Test if and how your AMP page appears in Google Search.
     url: https://search.google.com/test/amp
-    type: testing
+    type: Testing
     image:
       src: /static/img/tools/google_amp_test.jpg
       width: 925
@@ -120,7 +120,7 @@ platforms:
       - websites
       - stories
   - name: Gmail Playground
-    type: testing
+    type: Testing
     description: Draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
     url: https://developers.google.com/gmail/ampemail/testing-dynamic-email
     image:
@@ -134,7 +134,7 @@ platforms:
     url: https://www.jumprope.com/
     type: Content Platform
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/jumprope.jpg
       width: 5
       height: 3
     formats:
@@ -149,10 +149,20 @@ platforms:
       height: 407
     formats:
       - stories
+  - name: Mail.ru AMP Playground
+    type: testing
+    description: Draft AMP emails, see a live preview, and have your emails sent to your Mail.ru account.
+    url: https://postmaster.mail.ru/amp/
+    image:
+      src: /static/img/tools/mailru_playground.png
+      width: 1000
+      height: 691
+    formats:
+      - email
 developer:
   - name: AMP Validator
     official: true
-    type: essential
+    type: Essential
     description: Essential component for AMP development and available in a variety of versions.
     url: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
     image:
@@ -166,7 +176,7 @@ developer:
       - stories
   - name: Experiment Configurator
     official: true
-    type: essential
+    type: Essential
     description: Beta-test new features of AMP before they're available for everyone.
     url: https://cdn.ampproject.org/experiments.html
     image:
@@ -175,23 +185,22 @@ developer:
       height: 7
     formats:
       - websites
-      - email
       - ads
       - stories
   - name: AMP Tag Test
     official: true
-    type: analytics
+    type: Analytics
     description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
     url: https://amptagtest.appspot.com/
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/placeholder.jpg
       width: 5
       height: 3
     formats:
       - websites
   - name: AMP Toolbox
     official: true
-    type: optimization
+    type: Optimization
     description: A collection of AMP tools making it easier to publish and host AMP pages.
     url: https://github.com/ampproject/amp-toolbox
     image:
@@ -202,18 +211,18 @@ developer:
       - websites
   - name: AMP Bench
     official: true
-    type: debugging
+    type: Debugging
     description: Validation tool that offers additional debug information on top of the AMP validator.
     url: https://ampbench.appspot.com
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/ampbench.jpg
       width: 5
       height: 3
     formats:
       - websites
   - name: AMP Insights
     official: true
-    type: debugging
+    type: Debugging
     description: Pre-built Google Analytics dashboard template that helps you get to your analytics insights faster.
     url: http://bit.ly/amp-insights
     image:
@@ -224,18 +233,18 @@ developer:
       - websites
   - name: AMP Readiness
     official: true
-    type: debugging
+    type: Debugging
     description: Chrome extension that helps you understand the feasibility of converting your site to AMP.
     url: https://chrome.google.com/webstore/detail/amp-readiness-tool/fadclbipdhchagpdkjfcpippejnekimg?hl=en
     image:
-      src: /static/img/teaser-placeholder-5x3.jpg
+      src: /static/img/tools/readiness.jpg
       width: 5
       height: 3
     formats:
       - websites
   - name: AMP Boilerplate Generator
     official: true
-    type: development
+    type: Development
     description: Generate custom templates for your AMP websites, stories, emails or ads.
     url: https://amp.dev/boilerplate/
     image:
@@ -249,7 +258,7 @@ developer:
       - stories
   - name: AMP Playground
     official: true
-    type: development
+    type: Development
     description: Start prototyping in an interactive online editor with the ability to use templates and our examples.
     url: https://playground.amp.dev/
     image:
@@ -263,7 +272,7 @@ developer:
       - stories
   - name: VS Code Extension
     official: true
-    type: development
+    type: Development
     description: Makes authoring AMP easy by validating for errors/warnings as you type within VS Code.
     url: https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator
     image:
@@ -276,11 +285,11 @@ developer:
       - ads
       - stories
   - name: React Storefront
-    type: development
+    type: Development
     description: React framework that generates AMP and PWA pages from a single codebase.
     url: https://pwa.moovweb.com
     image:
-      src: /static/img/docs/tools/react-storefront.png
+      src: /static/img/tools/react-storefront.png
       width: 1125
       height: 1303
     formats:
@@ -289,6 +298,7 @@ providers:
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service
+    description: Delivery and Analytics for Better Email Performance.
     image:
       src: /static/img/tools/sparkpost.png
       width: 1034
@@ -299,6 +309,7 @@ providers:
   - name: Twilio Sendgrid
     url: https://www.twilio.com/sendgrid
     type: Email Service
+    description: Reach customers using a flexible email API and marketing tools to increase customer engagement.
     image:
       src: /static/img/tools/sendgrid.png
       width: 348
@@ -309,10 +320,22 @@ providers:
   - name: Litmus
     url: https://litmus.com/
     type: Email Service
+    description: Litmus makes it easy to build, test, and monitor every email for the best results.
     image:
       src: /static/img/tools/litmus.png
       width: 1223
       height: 450
+      fit: contain
+    formats:
+      - email
+  - name: Mailgun
+    url: https://www.mailgun.com/
+    type: Email Service
+    description: Mailgun's leading API-based email delivery service allows you to send dynamic email effortlessly.
+    image:
+      src: /static/img/tools/mailgun.png
+      width: 2430
+      height: 672
       fit: contain
     formats:
       - email

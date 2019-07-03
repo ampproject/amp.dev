@@ -8,6 +8,13 @@ formats:
   - ads
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 

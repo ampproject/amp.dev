@@ -2,7 +2,11 @@ import re
 import json
 from xml.sax.saxutils import escape, unescape
 
-PREVIEW_START_BEGINNING = '<!-- preview\n'
+# We enforce a new paragraph for the code block, since otherwise we cannot ensure that
+# start tag and end tag are on the same level
+# For example for a source block inside the last list item the preview end tag would be after the closing list tag
+# TODO: Support examples inside lists (see comment above)
+PREVIEW_START_BEGINNING = '\n<!-- preview\n'
 PREVIEW_END_TAG = r'<!-- /preview -->'
 PREVIEW_PATTERN = re.compile(PREVIEW_START_BEGINNING + r'(.*?)\n-->\n(.*?)' + PREVIEW_END_TAG, re.DOTALL)
 

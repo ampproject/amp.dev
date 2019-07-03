@@ -25,6 +25,29 @@ const TOC_MARKER = '[TOC]';
 // therefore have one shared one
 const LOG = new Signale({'scope': 'Markdown Documents'});
 
+// This expression matches a {% raw %}...{% endraw %} block
+const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
+
+// we search for ALL code blocks, and at the same time for raw blocks
+// to ensure we do not match something that belongs to different code blocks
+// or we add raw tags to existing raw blocks
+const MARKDOWN_BLOCK_PATTERN = new RegExp(
+    JINJA2_RAW_BLOCK.source
+    + '|'
+    + /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/.source
+    + '|'
+    + /`[^`]*`/.source, 'g');
+
+// Inside code blocks we search for mustache expressions
+// The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
+// TODO: Avoid the need to distinguish between mustache and jinja2
+const MUSTACHE_PATTERN = new RegExp(
+    '('
+    + JINJA2_RAW_BLOCK.source
+    + '|'
+    + /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source
+    + ')', 'g');
+
 class MarkdownDocument {
   constructor(path, contents) {
     this._contents = contents.trim();
@@ -49,6 +72,14 @@ class MarkdownDocument {
 
   set path(path) {
     this._path = path;
+  }
+
+  get importURL() {
+    return this._importURL;
+  }
+
+  set importURL(importURL) {
+    this._importURL = importURL;
   }
 
   set title(title) {
@@ -136,12 +167,26 @@ class MarkdownDocument {
   }
 
   /**
-   * Escapes mustache style tags to not interfer with Jinja2
+   * Escapes mustache style tags in code blocks to not interfer with Jinja2
    * @param  {String} contents
    * @return {String}          The rewritten input
    */
   static escapeMustacheTags(contents) {
-    return contents.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
+    return contents.replace(MARKDOWN_BLOCK_PATTERN, (block) => {
+      // check for mustache tags only if we have no raw block
+      if (!block.startsWith('{')) {
+        block = block.replace(
+            MUSTACHE_PATTERN,
+            (part) => {
+              // again, only if it is a mustache block wrap it with raw
+              if (part.startsWith('{{')) {
+                part = '{% raw %}' + part + '{% endraw %}';
+              }
+              return part;
+            });
+      }
+      return block;
+    });
   }
 
   /**
@@ -167,21 +212,17 @@ class MarkdownDocument {
   }
 
   /**
-   * Rewrites code fences to python-markdown syntax while also checking
-   * if {{ }} need to be fenced to not interfer with jinja2
+   * Rewrites code fences to python-markdown syntax.
    * @param  {String} contents
    * @return {String}          The rewritten content
    */
   static rewriteCodeBlocks(contents) {
     // Rewrite code blocks in fence syntax
     contents =
-      contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
-      // Fence curly braces to not mess with Grow/jinja2
-        if (p4.indexOf('{{') > -1) {
-          p4 = '{% raw %}' + p4 + '{% endraw %}';
-        }
-        return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
-      });
+      contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
+          (match, p1, p2, p3, p4) => {
+            return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
+          });
 
     return contents;
   }
@@ -212,10 +253,30 @@ class MarkdownDocument {
    * @return {Promise}
    */
   save(path) {
+    let content = '';
     const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
+    content += frontmatter;
+
+    /**
+    * check if file is imported and if so add a comment in order to inform that
+    * the file should not be changed in the amp.dev/docs - repro
+    */
+    if (this._importURL) {
+      const importedText = `<!--
+This file is imported from ${this.importURL}.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
+`;
+      content += importedText;
+    }
+
+    content += this._contents;
 
     path = path ? path : this._path;
-    return writeFile.promise(path, frontmatter + this._contents).then(() => {
+    return writeFile.promise(path, content).then(() => {
       LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
     }).catch((e) => {
       LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
