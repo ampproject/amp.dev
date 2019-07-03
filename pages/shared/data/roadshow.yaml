@@ -1,6 +1,6 @@
 nextstop:
   - title: tel aviv
-    coords: 64x21
+    coords: 66x22
     location: tba
     time: 09:00–18:00
     day: 22
@@ -16,15 +16,15 @@ nextstop:
     year: 2019
     link: #
   - title: dubai
-    coords: 72x25
+    coords: 70x23
     location: tba
     time: 09:00–18:00
     day: 29
     month: sep
     year: 2019
     link: #
-  - title: cairo
-    coords: 62x23
+  - title: karachi
+    coords: 74x23
     location: tba
     time: 09:00–18:00
     day: 2
@@ -133,7 +133,7 @@ past:
     coords: 77x26
     date: 2018-10-24
   - title: MUMBAI
-    coords: 74x23
+    coords: 75x24
     date: 2018-10-27
   - title: GURGAON
     coords: 77x21
