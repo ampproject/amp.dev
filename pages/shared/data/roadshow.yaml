@@ -1,12 +1,36 @@
-# nextstop:
-  # - title: California, US
-  #   coords: 9x9
-  #   location: Menlo Park
-  #   time: 09:00–18:00
-  #   day: 4
-  #   month: sep
-  #   year: 1998
-  #   link: https://google.com/
+nextstop:
+  - title: tel aviv
+    coords: 66x22
+    location: tba
+    time: 09:00–18:00
+    day: 22
+    month: sep
+    year: 2019
+    link: #
+  - title: istanbul
+    coords: 64x19
+    location: tba
+    time: 09:00–18:00
+    day: 25
+    month: sep
+    year: 2019
+    link: #
+  - title: dubai
+    coords: 70x23
+    location: tba
+    time: 09:00–18:00
+    day: 29
+    month: sep
+    year: 2019
+    link: #
+  - title: karachi
+    coords: 74x23
+    location: tba
+    time: 09:00–18:00
+    day: 2
+    month: oct
+    year: 2019
+    link: #
 
 past:
   - title: BERLIN
@@ -109,7 +133,7 @@ past:
     coords: 77x26
     date: 2018-10-24
   - title: MUMBAI
-    coords: 74x23
+    coords: 75x24
     date: 2018-10-27
   - title: GURGAON
     coords: 77x21
@@ -119,38 +143,45 @@ agenda:
   - title: Intro + Keynote
     time: "09:30"
     type: keynote
-  - title: "AMP: A library for beautiful, responsive sites"
-    time: "09:45"
+  - title: "AMP: A library for rich content experiences"
+    time: "09:50"
     type: session
   - title: Advanced interactivity with AMP
-    time: "10:15"
+    time: "10:20"
     type: session
-  - title: Coffee Break
-    time: "10:45"
+  - title: Coffee break
+    time: "10:50"
     type: break
-  - title: AMP in Production
-    time: "11:00"
+  - title: "Tutorial: Your first AMP site!"
+    time: "11:10"
+    type: tutorial
+  - title: Creating an excellent AMP
+    time: "11:40"
     type: session
-  - title: Monetizing AMP pages
-    time: "11:30"
-    type: session
-  - title: Progressive Web AMPs
-    time: "12:00"
+  - title: Letting your AMP into the world
+    time: "12:10"
     type: session
   - title: Lunch
-    time: "12:30"
+    time: "12:40"
     type: break
   - title: Mystery talk
-    time: "13:30"
-    type: keynote
+    time: "13:40"
+    type: session
+  - title: AMP everywhere
+    time: "14:10"
+    type: session
   - title: What's next in AMP
-    time: "14:15"
-    type: keynote
-  - title: Q&A with speakers
-    time: "14:30"
-  - title: Amplify live!
+    time: "14:40"
+    type: session
+  - title: Coffee break
     time: "15:00"
+    type: break
+  - title: Q&A with AMP team
+    time: "15:15"
     type: panel
+  - title: "Tutorial: Do more with AMP"
+    time: "16:00"
+    type: tutorial
   - title: Happy hour
     time: "17:00"
     type: break

@@ -142,57 +142,73 @@ section_links:
 
     <span class="ap-o-cities-sub-headline">Where we're going next</span>
 
-      <div class="ap-o-cities-next-events">
-        <div class="ap-o-cities-next-events-list">
+    <div class="ap-o-cities-next-events">
+      <div class="ap-o-cities-next-events-list">
 
-        {% for nextstop in doc.roadshow.nextstop %}
-          <div class="ap-m-event">
-            <div class="ap-m-event-content ap-m-event-content-date">
-              <div class="ap-m-event-content-date-year">{{nextstop.year}}</div>
-              <div class="ap-m-event-content-date-month-day">
-                <p>{{nextstop.month}}</p>
-                <p>{{nextstop.day}}</p>
-              </div>
-            </div>
-            <div class="ap-m-event-content">
-              <a href="{{nextstop.link}}" class="ap-m-event-content-city">{{nextstop.title}}</a>
-              <div class="ap-m-event-content-details-time">
-                <div class="ap-m-event-content-details-icon">
-                  {% do doc.icons.useIcon('/icons/time.svg') %}
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use></svg>
-                </div>
-                {{ nextstop.time }}
-              </div>
-              <div class="ap-m-event-content-details-location">
-                <div class="ap-m-event-content-details-icon">
-                  {% do doc.icons.useIcon('/icons/map.svg') %}
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
-                </div>
-                {{ nextstop.location }}
-              </div>
+      {% for nextstop in doc.roadshow.nextstop %}
+        <div class="ap-m-event">
+          <div class="ap-m-event-content ap-m-event-content-date">
+            <div class="ap-m-event-content-date-year">{{nextstop.year}}</div>
+            <div class="ap-m-event-content-date-month-day">
+              <p>{{nextstop.month}}</p>
+              <p>{{nextstop.day}}</p>
             </div>
           </div>
-        {% endfor %}
-
-        </div>
-        <span class="ap-o-cities-next-events-checkback">Your city not on the list? Check back soon for additional dates and cities.</span>
-      </div>
-
-      <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
-      <ul class="ap-o-cities-visited-list">
-
-        {% for visited in doc.roadshow.past|sort(True, attribute='date') %}
-          <li class="ap-m-visited-city">
-            <div class="ap-m-visited-city-group">
-              <div class="ap-m-visited-city-title">{{ visited.title }}</div>
-              <div class="ap-m-visited-city-date">{{ visited.date|datetime('MMM d, Y') }}</div>
+          <div class="ap-m-event-content">
+            {% if nextstop.link %}
+            <a href="{{nextstop.link}}" class="ap-m-event-content-city">{{nextstop.title}}</a>
+            {% else %}
+            <span class="ap-m-event-content-city">{{nextstop.title}}</span>
+            {% endif %}
+            <div class="ap-m-event-content-details-time">
+              <div class="ap-m-event-content-details-icon">
+                {% do doc.icons.useIcon('/icons/time.svg') %}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time"></use></svg>
+              </div>
+              {{ nextstop.time }}
             </div>
-          </li>
-        {% endfor %}
+            <div class="ap-m-event-content-details-location">
+              <div class="ap-m-event-content-details-icon">
+                {% do doc.icons.useIcon('/icons/map.svg') %}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
+              </div>
+              {{ nextstop.location }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
 
-      </ul>
-
+      </div>
+      <div class="ap-o-cities-next-events-checkback">
+        <p>Your city isn't on the list? Check back soon for additional dates and cities. Or...</p>
+        <h4>Want the AMP Roadshow to visit your area?</h4>
+        <p>That's very kind. Fill out
+            <a href="https://docs.google.com/forms/d/14B75eV89S1KaceNTG46ranAOPCj3wCLzgD3mxuGeUtU" target="_blank">this form</a>
+            and we’ll see what we can do!
+        </p>
+        <h4>Want to host your own AMP Roadshow?</h4>
+        <p>Why not? Fill out
+          <a href="https://docs.google.com/forms/d/1PMWCq1MTqg-AslvBMvMlU_ozjyZK7WZ-4fUVs0UlheE" target="_blank">this form</a>,
+          and we’ll share with you our talks and all the materials you need to do it yourself!
+        </p>
+      </div>
     </div>
+
+    <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
+    <ul class="ap-o-cities-visited-list">
+
+      {% for visited in doc.roadshow.past|sort(True, attribute='date') %}
+        <li class="ap-m-visited-city">
+          <div class="ap-m-visited-city-group">
+            <div class="ap-m-visited-city-title">{{ visited.title }}</div>
+            <div class="ap-m-visited-city-date">{{ visited.date|datetime('MMM d, Y') }}</div>
+          </div>
+        </li>
+      {% endfor %}
+
+    </ul>
+
+  </div>
 </section>
 
 <section id="Agenda" class="ap--container ap--container-float-right">

@@ -230,6 +230,11 @@
       @include txt;
       grid-column: 1 / -1;
       margin: 0 auto;
+      text-align: left;
+    }
+
+    h4 {
+      margin-top: 2.5rem;
     }
   }
 
