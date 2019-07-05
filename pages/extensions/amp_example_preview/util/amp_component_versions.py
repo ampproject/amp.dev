@@ -1,6 +1,8 @@
 import json
+import os
 
-COMPONENT_VERSIONS_FILE = 'extensions/amp-component-versions.json'
+COMPONENT_VERSIONS_FILE = os.path.normpath(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), '../../amp-component-versions.json'))
 COMPONENT_VERSIONS = {}
 
 with open(COMPONENT_VERSIONS_FILE) as f:
