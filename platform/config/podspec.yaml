@@ -18,6 +18,7 @@ markdown:
   - kind: markdown.extensions.codehilite
     classes: True
     class_name: ap-m-code-snippet
+  - kind: markdown.extensions.extra
 
 ext:
 - extensions.inline_text_assets.InlineTextAssetsExtension:
