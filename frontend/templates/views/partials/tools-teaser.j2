@@ -1,12 +1,16 @@
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type }} {% for format in tool.formats %}ap--{{ format }}{% endfor %}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+  {% if tool.formats and tool.formats|length == 1 and not format %}
+  {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
+  <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag" role="filter" tabindex="0"
+       on="tap:AMP.setState({activeFilter: {chosenFilter: '{{tool.formats[0]|slug}}' } })">
+    <div class="ap-m-teaser-tag-icon ap-m-teaser-tag-{{tool.formats[0]}} ap-a-ico">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{tool.formats[0]}}"></use></svg>
+    </div>
+    {{ tool.formats[0]|title }}
+  </div>
+  {% endif %}
   <a href="{{ tool.url }}">
-
-    {% if tool.formats and tool.formats|length == 1 and not format %}
-    {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-    <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag">{{ tool.formats[0] }}</div>
-    {% endif %}
-
     <div class="ap-m-teaser-card">
       {% set teaser = tool or {} %}
       {% if teaser.video %}
@@ -15,8 +19,7 @@
       </div>
       {% elif teaser.image %}
       <div class="ap-a-img ap-m-teaser-image{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" {% if teaser.image.bgcolor %}style="background-color: {{teaser.image.bgcolor}};"{% endif %}>
-        <amp-img class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" media="(min-width: 768px)" layout="responsive" width="2" height="1" alt="{{ teaser.image.alt }}"></amp-img>
-        <amp-img class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" media="(max-width: 767px)" layout="fill"  alt="{{ teaser.image.alt }}"></amp-img>
+        <amp-img class="ap--media{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" src="{{ teaser.image.src }}" layout="responsive" width="2" height="1" alt="{{ teaser.image.alt }}"></amp-img>
       </div>
       {% endif %}
 
@@ -28,9 +31,9 @@
             </div>
             {% endif %}
 
-            <h4 class="ap-m-teaser-headline {{ 'single' if not teaser.description }}">
-            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo.svg') -%}
-              <svg class="ap-m-teaser-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+            <h4 class="ap-m-teaser-headline">
+            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
+              <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
             {%- endif -%}
             {{- teaser.name -}}
             </h4>
@@ -40,7 +43,7 @@
           </div>
 
           {% if teaser.type %}
-          <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type }}">{{ teaser.type }}</div>
+          <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ teaser.type }}</div>
           {% endif %}
       </div>
 

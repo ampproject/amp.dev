@@ -133,6 +133,22 @@ class Config {
    * @return {undefined}
    */
   configureGrow(growOptions) {
+    const podSpec = this.buildGrowPodSpec(growOptions);
+    try {
+      fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podSpec, {'noRefs': true}));
+      signale.success('Configured Grow!');
+    } catch (err) {
+      signale.fatal('Could not configure Grow', err);
+      process.exit(1);
+    }
+  }
+
+  /**
+   * Builds a podspec for the current environment.
+   * @param {Object} growOptions Options to filter grow pages (optional). Can be overwritten by command line options.
+   * @return {Object} the podspec object
+   */
+  buildGrowPodSpec(growOptions) {
     const options = {};
     if (growOptions) {
       Object.assign(options, growOptions);
@@ -203,21 +219,18 @@ class Config {
         process.exit(1);
       }
 
+      // we need the blacklist filter, because otherwise the sitemap will not be created
+      const skippedLocales = AVAILABLE_LOCALES.filter((locale) => {
+        return !locales.includes(locale);
+      });
       podspec.deployments.default['filters'] = {
-        'type': 'whitelist',
-        'locales': locales,
+        'type': 'blacklist',
+        'locales': skippedLocales,
       };
 
       signale.info('Only building locales', options.locales);
     }
-
-    try {
-      fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podspec, {'noRefs': true}));
-      signale.success('Configured Grow!');
-    } catch (err) {
-      signale.fatal('Could not configure Grow', err);
-      process.exit(1);
-    }
+    return podspec;
   }
 }
 

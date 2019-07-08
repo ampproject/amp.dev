@@ -30,16 +30,11 @@ The page with all AMP tools.
     margin-bottom: 50px;
 
     &-content {
-      margin: 20em 0 4em;
+      margin: 15em 0 2em;
       @media (min-width: 768px) {
         margin: 7vw 0 11vw;
       }
     }
-
-    &-content-roadshow {
-      margin: 5vw 0 5vw;
-    }
-
   }
 
   & + .#{utility('content')} {
@@ -68,4 +63,8 @@ The page with all AMP tools.
 
 .#{utility('stage')} {
   overflow: visible;
+}
+
+.#{utility('tools')} {
+  padding: 0 25px;
 }
