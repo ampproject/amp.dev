@@ -9,6 +9,19 @@
         }
       }
     }
+{% if '/courses/' in doc.pod_path and doc.title == 'Teachers' %}
+    ,
+      "triggers": {
+        "button": {
+          "selector": "#get-courses",
+          "on": "click",
+          "vars": {
+            "category": "courses",
+            "action": "download"
+          }
+        }
+      }
+{% endif %}
   }
   </script>
 </amp-analytics>
