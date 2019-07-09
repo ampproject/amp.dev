@@ -93,7 +93,7 @@
     "eslint": "5.16.0",
     "eslint-config-google": "0.13.0",
     "exectimer": "2.2.1",
-    "fetch-mock": "7.3.3",
+    "fetch-mock": "7.3.6",
     "file-loader": "3.0.1",
     "globby": "10.0.1",
     "google-closure-compiler": "20190618.0.0",
