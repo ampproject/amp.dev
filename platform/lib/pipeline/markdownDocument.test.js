@@ -1,6 +1,6 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
-test('Test escape mustache tags', async (done) => {
+test('Test escape mustache tags', () => {
   const result = MarkdownDocument.escapeMustacheTags(
       'The [`link`]({{notincode}}) test `code`.\n' +
       '```html\n' +
@@ -32,7 +32,26 @@ test('Test escape mustache tags', async (done) => {
       'Test raw outside {% raw %}`{{`{% endraw %}\n' +
       'Test raw inside `{% raw %}{{{% endraw %}`'
   );
-
-  done();
 });
 
+test('Test add markdown attribute to tables', () => {
+  const content = MarkdownDocument.enableMarkdownInHtmlTables(`
+  <table><tr><td>table no attribs</td></tr></table>
+  <table width="100"><tr><td>table with attribs</td></tr></table>
+  <table markdown><tr><td>table with markdown 1</td></tr></table>
+  <table markdown="1"><tr><td>table with markdown 2</td></tr></table>
+  [sourcecode:html]
+  <table><tr><td>table in code</td></tr></table>
+  [/sourcecode]
+  Inline \`<table>\`
+  `);
+
+  expect(content.trim()).toBe(`<table markdown="1"><tr><td>table no attribs</td></tr></table>
+  <table markdown="1" width="100"><tr><td>table with attribs</td></tr></table>
+  <table markdown><tr><td>table with markdown 1</td></tr></table>
+  <table markdown="1"><tr><td>table with markdown 2</td></tr></table>
+  [sourcecode:html]
+  <table><tr><td>table in code</td></tr></table>
+  [/sourcecode]
+  Inline \`<table>\``);
+});
