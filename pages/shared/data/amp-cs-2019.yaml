@@ -1,0 +1,23 @@
+speakers:
+    TBA:
+      name: To Be Announced
+      company: AMP Contributors Summit
+      bio:
+      pic: /static/img/amp-conf/speakers/amp.png
+
+agenda:
+  day_1:
+    - title: New Contributors Day
+      time: "0000"
+  day_2:
+    - title: "Talks"
+      time: "0000"
+      type: session
+      speakers:
+      description:
+  day_3:
+    - title: "Breakout discussions"
+      time: "0000"
+      type: session
+      speakers:
+      description:

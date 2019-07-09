@@ -5,9 +5,13 @@ from grow import extensions
 from grow.documents import document, static_document
 from grow.extensions import hooks
 
-COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
-# The latest component versions if no explicit version is set
-COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
+COMPONENT_VERSIONS_FILE = 'extensions/amp-component-versions.json'
+COMPONENT_VERSIONS = {}
+
+with open(COMPONENT_VERSIONS_FILE) as f:
+  # The latest component versions if no explicit version is set
+  COMPONENT_VERSIONS = json.load(f)
+
 # Default version to use if it is not in the set of known components
 DEFAULT_VERSION = '0.1'
 

@@ -7,7 +7,8 @@
 @import './_color';
 
 
-.#{utility('content')} {
+.#{utility('content')},
+.#{utility('section')} {
   .intro {
     @include txt-1;
     padding: 0;
@@ -47,8 +48,8 @@
     white-space: pre-wrap;
   }
 
-  ul,
-  ol {
+  & > ul,
+  & > ol {
     @include txt;
     @include txt-p;
     padding-left: 2em;
@@ -56,6 +57,7 @@
 
     ul,
     ol {
+      padding-left: 2em;
       margin: 0;
     }
 

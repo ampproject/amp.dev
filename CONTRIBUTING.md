@@ -23,9 +23,9 @@ accept your pull requests.
 1. The repo owner will respond to your issue promptly.
 1. If your proposed change is accepted, and you haven't already done so, sign a
    Contributor License Agreement (see details above).
-1. Fork the desired repo, develop and test your changes. See instructions for ["How to Build site"](README.md#how-to-build-the-site) so that you can test your changes.
+1. Fork the desired repo, develop and test your changes. See instructions for ["how to build the site"](README.md#build) so that you can test your changes.
 1. Submit a pull request.
 
-### Adding an embedded sample to a document
+## Read more
 
-If you want to improve the documentation by adding an embedded sample, see [How to: Include embedded samples in AMP docs](contributing/adding-embedded-samples-in-docs.md).
+Please also have a look at the contribution section in our project ["readme"](README.md#contributing).

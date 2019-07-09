@@ -1,8 +1,12 @@
-import requests
+import json
+import os
 
-COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
+COMPONENT_VERSIONS_FILE = os.path.normpath(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), '../../amp-component-versions.json'))
+COMPONENT_VERSIONS = {}
 
-COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
+with open(COMPONENT_VERSIONS_FILE) as f:
+  COMPONENT_VERSIONS = json.load(f)
 
 class AmpComponent:
 

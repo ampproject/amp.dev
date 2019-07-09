@@ -9,6 +9,13 @@ formats:
   - ads
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -43,8 +50,6 @@ aspects of using CORS in AMP.  To learn about CORS itself, see the
       - [3) Restrict requests to source origins](#3-restrict-requests-to-source-origins)
     + [Send CORS response headers](#send-cors-response-headers)
         * [Access-Control-Allow-Origin: &lt;origin&gt;](#access-control-allow-origin-origin)
-        * [AMP-Access-Control-Allow-Source-Origin: &lt;source-origin&gt;](#amp-access-control-allow-source-origin-source-origin)
-        * [Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin](#access-control-expose-headers-amp-access-control-allow-source-origin)
     + [Processing state changing requests](#processing-state-changing-requests)
   * [Example walkthrough: Handing CORS requests and responses](#example-walkthrough-handing-cors-requests-and-responses)
   * [Testing CORS in AMP](#testing-cors-in-amp)
@@ -108,7 +113,7 @@ author to set the credential mode through the `credentials` attribute.
 
 [sourcecode:html]
 {% raw %}<amp-list credentials="include"
-    src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)" binding="no">
+    src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
   <template type="amp-mustache">
     Your personal offer: ${{price}}
   </template>
@@ -204,15 +209,6 @@ Although the W3 CORS spec allows the value of <code>*</code> to be returned in t
 
 
 * If the `Origin` header is present, validate and echo the value of the <code>`Origin`</code> header.
-* If the `Origin` header isn't present, validate and echo the value of the <code>"__amp_source_origin"</code>.
-
-##### AMP-Access-Control-Allow-Source-Origin: &lt;source-origin&gt;
-
-This header allows the specified <code>source-origin</code> to read the authorization response. The <code>source-origin</code> is the value specified and verified in the <code>"__amp_source_origin"</code> URL parameter (for example, <code>"https://publisher1.com"</code>).
-
-##### Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-
-This header simply allows the CORS response to contain the <code>AMP-Access-Control-Allow-Source-Origin</code> header.</dd>
 
 ### Processing state changing requests
 
@@ -231,14 +227,14 @@ following:
 
 1.  If the origin does not match one of the following values, stop and return an error
     response:
-    - `*.ampproject.org`
-    - `*.amp.cloudflare.com`
+    - `<publisher's domain>.cdn.ampproject.org`
+    - `<publisher's domain>.amp.cloudflare.com`
     - the publisher's origin (aka yours)
 
     where `*` represents a wildcard match, and not an actual asterisk ( * ).
 
-2.  If the value of the `__amp_source_origin` query parameter is not the
-    publisher's origin, stop and return an error response.
+2.  Optionally check the value of the `__amp_source_origin` query parameter if present.
+    If it is not the publisher's origin, stop and return an error response.
 3.  If the two checks above pass, process the request.
 
 **If the `Origin` header is NOT set**:
@@ -269,7 +265,6 @@ Based on what we know about CORS and AMP (from [Verify CORS requests](#verify-co
 * `example.com` ---  Publisher's domain
 * `example-com.cdn.ampproject.org` --- Google AMP Cache subdomain
 * `example.com.amp.cloudflare.com`--- Cloudflare AMP Cache subdomain
-* `cdn.ampproject.org` --- Google's legacy AMP Cache domain
 
 ### Response headers for allowed requests
 
@@ -277,8 +272,6 @@ For requests from the allowed origins, our response will contain the following h
 
 [sourcecode:text]
 Access-Control-Allow-Origin: <origin>
-AMP-Access-Control-Allow-Source-Origin: <source-origin>
-Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
 [/sourcecode]
 
 These are additional response headers we might include in our CORS response:
@@ -339,11 +332,6 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', origin);
-  res.setHeader('Access-Control-Expose-Headers',
-      ['AMP-Access-Control-Allow-Source-Origin']
-          .concat(opt_exposeHeaders || []).join(', '));
-  res.setHeader('AMP-Access-Control-Allow-Source-Origin', sourceOrigin);
-
 }
 [/sourcecode]
 
@@ -374,8 +362,6 @@ Our response headers would be:
 [sourcecode:text]
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example.com
-Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-AMP-Access-Control-Allow-Source-Origin: https://example.com
 [/sourcecode]
 
 ### Scenario 2:  Get request from cached AMP page
@@ -403,8 +389,6 @@ Our response headers would be:
 [sourcecode:text]
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
-Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin
-AMP-Access-Control-Allow-Source-Origin: https://example.com
 [/sourcecode]
 
 ## Testing CORS in AMP
@@ -448,9 +432,7 @@ HTTP/2 200
 access-control-allow-headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token
 access-control-allow-credentials: true
 access-control-allow-origin: https://ampbyexample.com
-amp-access-control-allow-source-origin: https://ampbyexample.com
 access-control-allow-methods: POST, GET, OPTIONS
-access-control-expose-headers: AMP-Access-Control-Allow-Source-Origin
 [/sourcecode]
 
 #### Test request from cached AMP page
@@ -470,7 +452,5 @@ HTTP/2 200
 access-control-allow-headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token
 access-control-allow-credentials: true
 access-control-allow-origin: https://ampbyexample-com.cdn.ampproject.org
-amp-access-control-allow-source-origin: https://ampbyexample.com
 access-control-allow-methods: POST, GET, OPTIONS
-access-control-expose-headers: AMP-Access-Control-Allow-Source-Origin
 ```

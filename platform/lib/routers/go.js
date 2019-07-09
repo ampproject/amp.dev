@@ -28,10 +28,19 @@ const GO_LINKS_DEFINITION = join(__dirname, '../../config/go-links.yaml');
 // eslint-disable-next-line new-cap
 const go = express.Router();
 
-const goLinks = yaml.safeLoad(readFileSync(GO_LINKS_DEFINITION));
+const goLinks = initGoLinks(yaml.safeLoad(readFileSync(GO_LINKS_DEFINITION)));
 
 go.use((request, response, next) => {
-  const target = goLinks[request.path];
+  let target;
+  if (goLinks.simple[request.path]) {
+    target = goLinks.simple[request.path];
+  } else {
+    const match = goLinks.regex.find((regex) => request.path.match(regex.pattern));
+    if (match) {
+      target = request.path.replace(match.pattern, match.url);
+    }
+  }
+
   if (!target) {
     // The request is handled by the default sub domain 404 handler and redirects to amp.dev
     // We cannot use the 404.html directly since its links are relative
@@ -49,5 +58,32 @@ go.use((request, response, next) => {
 });
 
 go.use(robots('allow_all.txt'));
+
+function initGoLinks(config) {
+  const simple = {};
+  const regex = [];
+  for (const key of Object.keys(config)) {
+    let value = config[key];
+    if (typeof value !== 'object') {
+      value = {url: value};
+    }
+    if (typeof value.url !== 'string') {
+      throw new Error('Invalid URL or no URL specified in golink');
+    }
+
+    if (value.useRegex) {
+      regex.push({
+        pattern: new RegExp(key),
+        url: value.url,
+      });
+    } else {
+      simple[key] = value.url;
+    }
+  }
+  return {
+    simple,
+    regex,
+  };
+}
 
 module.exports = go;
