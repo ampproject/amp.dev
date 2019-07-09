@@ -1,0 +1,100 @@
+<!---
+
+preview: amp4email
+author: fstanis
+
+--->
+
+<!--
+## Introduction
+
+This sample demonstrates how to display a feed of data, allowing the user to go through
+a large number of items in an email without having to scroll.
+
+The sample uses a combination of [`amp-list`](/documentation/components/amp-list),
+to fetch the initial items from the server and [`amp-form`](/documentation/components/amp-form),
+to "refresh" a single item, by making a new server request.
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡4email>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+
+  <!--
+    ## Styles
+
+    We use CSS to hide the initially fetched item after the form is first submitted.
+
+    We also define a layout that allows us to have fixed card sizes, to ensure form submissions don't result in content jumps.
+  -->
+  <style amp-custom>
+    .amp-form-submit-success .initial-content,
+    .amp-form-submitting .initial-content,
+    .amp-form-submit-error .initial-content {
+      display: none;
+    }
+
+    .card {
+      width: 160px;
+      height: 120px;
+      margin: 10px;
+      float: left;
+      position: relative;
+    }
+
+    .card .next-button {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    ## Single item template
+
+    Define a template for a single item inside a card and give it an `id`. This template is used by `amp-form` for displaying new items.
+
+    In this case, we use a single `amp-img`.
+  -->
+  <template id="item-template" type="amp-mustache">
+    <amp-img src="{{items.imageUrl}}" layout="fixed" width="160" height="90"></amp-img>
+  </template>
+
+  <!--
+    ## Initial list of items
+
+    We define a template for the initial items and their layout and give it an `id`, allowing us to use it subsequently in an amp-list. This template is used by `amp-list` for fetching the initial up-to-date contents from the server.
+
+    It contains in itself an `amp-form` for each item which references the template defined above referred by its `id`. By using a different template for the `amp-form`, we're able to "refresh" a part of the content, namely the image in this case.
+
+    Note: This template contains the same markup (in this case, a single `amp-img`) as used in the template above to render the initial items. This is wrapped inside `<div class="initial-content">` which becomes hidden the first time the user submits the form.
+  -->
+  <template id="list-template" type="amp-mustache">
+    <form class="card" method="post" action-xhr="<% hosts.platform %>/documentation/examples/api/photo-stream?single&width=160&height=90">
+      <div class="initial-content">
+        <amp-img src="{{imageUrl}}" layout="fixed" width="160" height="90"></amp-img>
+      </div>
+
+      <div submit-success template="item-template"></div>
+
+      <input class="next-button" type="submit" value="Next">
+    </form>
+  </template>
+
+  <!--
+    We use `amp-list` to render the initial items from the server using the template defined above referred by its `id`.
+
+    The height matches the combined height of our cards and their margins. The initial server response defines the number of cards to be displayed (in this case four).
+  -->
+  <amp-list template="list-template" src="<% hosts.platform %>/documentation/examples/api/photo-stream?width=160&height=90&items=4" layout="fixed" width="360" height="280">
+  </amp-list>
+</body>
+</html>
