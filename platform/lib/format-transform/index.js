@@ -15,32 +15,39 @@
  */
 
 const cheerio = require('cheerio');
-const {htmlContent} = require('@lib/utils/cheerio');
-const transforms = require('./transforms');
+const {htmlContent} = require('@lib/utils/cheerioHelper');
+const formats = require('./formats');
 
 class FormatTransform {
-  constructor() {
-    this.transforms = transforms;
+  constructor(formats) {
+    this.formats = formats;
   }
 
   supportsFormat(target) {
-    return target in this.transforms;
+    return target in this.formats;
   }
 
   getSupportedFormats() {
-    return Object.keys(this.transforms);
+    return Object.keys(this.formats);
+  }
+
+  getValidatorRuntime(format) {
+    if (!this.supportsFormat(format)) {
+      throw new Error(`Unsupported format: ${format}`);
+    }
+    return this.formats[format].validatorRuntime || null;
   }
 
   transform(input, target) {
-    if (!this.transforms[target]) {
+    if (!this.supportsFormat(target)) {
       return input;
     }
-    const transform = this.transforms[target];
+    const {transforms} = this.formats[target];
     const $ = cheerio.load(input);
-    for (const selector of Object.keys(transform)) {
+    for (const selector of Object.keys(transforms)) {
       const elements = $(selector);
       elements.each((i, el) => {
-        this.transformElement_($(el), transform[selector]);
+        this.transformElement_($(el), transforms[selector]);
       });
     }
     return htmlContent($);
@@ -48,45 +55,17 @@ class FormatTransform {
 
   transformElement_(el, transform) {
     if (transform === null) {
-      this.removeElement_(el);
-      return;
+      transform = '';
     }
 
     if (typeof transform === 'function') {
       transform(el);
     } else if (typeof transform === 'string') {
       el.replaceWith(transform);
-    }
-  }
-
-  removeElement_(el) {
-    if (el.parent().is('div')) {
-      el = el.parent();
-    }
-    this.removePrecedingComments_(el);
-    this.removePrecedingHeading_(el);
-    el.replaceWith('');
-  }
-
-  removePrecedingComments_(el) {
-    for (let node = el.get(0).prev; node != null; node = node.prev) {
-      if (node.type === 'comment') {
-        node.type = null;
-        node.data = null;
-      } else if (node.type === 'text') {
-        continue;
-      } else {
-        break;
-      }
-    }
-  }
-
-  removePrecedingHeading_(el) {
-    const prev = el.prev();
-    if (prev.get(0) && prev.get(0).tagName.match(/^h[0-9]$/)) {
-      prev.replaceWith('');
+    } else {
+      throw new Error(`Invalid transformation: ${transform}`);
     }
   }
 }
 
-module.exports = new FormatTransform();
+module.exports = new FormatTransform(formats);
