@@ -20,7 +20,7 @@ Actualmente, los tuits se adaptan de forma automática y proporcional a escala
 para encajar en el tamaño indicado, pero es posible que la apariencia resultante no sea la ideal.
 Ajusta la anchura y la altura de forma manual o usa el atributo de medios para seleccionar la relación de aspecto en función de la anchura de la pantalla.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -48,7 +48,7 @@ Incluye el código abreviado de datos de Instagram que se encuentra en la URL de
 Por ejemplo, en `https://instagram.com/p/fBwFP`, el código abreviado de datos es `fBwFP`.
 Además, Instagram utiliza una relación de aspecto fija para los diseños adaptables, por lo que los valores de anchura y altura deben ser universales
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -124,7 +124,7 @@ el ID de vídeo es `Z1q71gFeRqM`.
 
 Utiliza `layout="responsive"` para producir diseños correctos para los vídeos con una relación de aspecto de 16:9:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -152,7 +152,7 @@ Debes especificar la anchura y la altura del anuncio y el tipo de red publicitar
 El atributo `type` identifica la plantilla de la red publicitaria.
 Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -166,7 +166,7 @@ Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
 [/example]
 Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre si no hay anuncios disponibles:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

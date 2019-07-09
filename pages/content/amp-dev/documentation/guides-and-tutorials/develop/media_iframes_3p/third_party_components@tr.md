@@ -17,7 +17,7 @@ Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>
 Şu anda tweet'ler, sağlanan boyuta sığmaları için otomatik olarak belirli bir oranda ölçeklenmektedir, ancak bu ideal bir görünüm sağlamayabilir.
 Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy oranını, ekran genişliğine göre seçmek için medya özniteliğini kullanabilirsiniz.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -40,7 +40,7 @@ Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki ko
 Instagram fotoğrafı URL'sinde bulunan Instagram kısa veri kodunu ekleyin. Örneğin, `https://instagram.com/p/fBwFP` URL'sindeki `fBwFP`, veri kısa kodudur.
 Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. Bu yüzden, genişlik ve yükseklik değeri evrensel olmalıdır
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -106,7 +106,7 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
 
 16:9 en boy oranlı videolar için doğru düzenleri sağlamak üzere `layout="responsive"` kodunu kullanın:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -128,7 +128,7 @@ Reklam genişliği ve yüksekliği ile reklam ağı türünü belirtmeniz gereki
 `type`, reklam ağının şablonunu tanımlar.
 Farklı reklam türleri, farklı `data-*` öznitelikleri gerektirir.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -143,7 +143,7 @@ Farklı reklam türleri, farklı `data-*` öznitelikleri gerektirir.
 
 Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında gösterilmesi için bir `placeholder` ekleyin:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

@@ -13,7 +13,7 @@ sebagai placeholder untuk elemen AMP induk.
 Jika ditentukan, elemen `placeholder` harus merupakan turunan langsung dari elemen AMP itu.
 Elemen yang ditandai sebagai `placeholder` akan selalu `fill` (mengisi) elemen AMP induk.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
@@ -52,7 +52,7 @@ Anda dapat menetapkan atribut `fallback` pada elemen HTML *apa pun*, bukan hanya
 
 Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu pengguna bahwa browser tidak mendukung fitur tertentu:
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"

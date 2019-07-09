@@ -16,7 +16,7 @@ $title: 包含第三方内容
 
 目前，Twitter 微博可自动按比例调整以适应指定尺寸，不过外观的效果可能不太理想。您可以手动调整指定的宽度和高度，也可以使用媒体属性以根据屏幕宽度选择宽高比。
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -40,7 +40,7 @@ $title: 包含第三方内容
 
 包含 Instagram 照片网址中的 Instagram data-shortcode。例如，在 `https://instagram.com/p/fBwFP` 中，`fBwFP` 是 data-shortcode。此外，Instagram 使用固定宽高比来创建自适应布局，因此宽度和高度值应该是通用的
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -110,7 +110,7 @@ Preview:
 
 使用 `layout="responsive"`，使宽高比为 16:9 的视频呈现正确的布局：
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -130,7 +130,7 @@ AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时�
 
 您必须指定广告的宽度和高度以及广告网络类型。`type` 会标识广告网络的模板。不同的广告类型要求不同的 `data-*` 属性。
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -145,7 +145,7 @@ AMP 文档中不得运行任何广告网络提供的 JavaScript。AMP 运行时�
 
 如果受到广告网络的支持，请添加 `placeholder`，以便在没有广告可用时显示。
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

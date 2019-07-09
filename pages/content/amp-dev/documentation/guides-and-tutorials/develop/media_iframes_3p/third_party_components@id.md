@@ -22,7 +22,7 @@ namun tindakan ini dapat menghasilkan tampilan yang kurang ideal.
 Sesuaikan lebar dan tinggi yang diberikan secara manual atau gunakan atribut media
 untuk memilih rasio aspek berdasarkan lebar layar.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -54,7 +54,7 @@ Misalnya, pada `https://instagram.com/p/fBwFP`,
 Instagram juga menggunakan rasio aspek tetap untuk tata letak responsif,
 sehingga nilai lebar dan tinggi harus universal
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -132,7 +132,7 @@ Misalnya, pada `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 
 Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk video dengan rasio aspek 16:9:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -161,7 +161,7 @@ Anda harus menentukan lebar, tinggi, dan jenis jaringan iklan.
 `type` mengidentifikasi template jaringan iklan.
 Jenis iklan yang berbeda membutuhkan atribut `data-*` yang berbeda.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -178,7 +178,7 @@ Jika didukung oleh jaringan iklan,
 sertakan `placeholder`
 untuk ditampilkan jika tidak ada iklan yang tersedia:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
