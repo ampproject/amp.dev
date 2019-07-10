@@ -2,7 +2,11 @@
 $title@: Platform and Technology Company Involvement
 $order: 2
 teaser:
-  icon: community
+  image:
+    src: '/static/img/faq/faq-platform-involvement.jpg'
+    width: 570
+    height: 320
+    alt: FAQ – Platform and Technology Company Involvement
   label: Learn more
 faq: !g.yaml /shared/data/faq.yaml
 ---

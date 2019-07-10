@@ -2,7 +2,11 @@
 $title@: Supported Platforms
 $order: 4
 teaser:
-  icon: rocket
+  image:
+    src: '/static/img/faq/faq-platform-and-vendor-partners.jpg'
+    width: 570
+    height: 320
+    alt: FAQ – Supported Platforms
   label: Learn more
 faq: !g.yaml /shared/data/faq.yaml
 ---

@@ -2,7 +2,11 @@
 $title@: Publisher Monetization
 $order: 3
 teaser:
-  icon: money
+  image:
+    src: '/static/img/faq/faq-publisher-monetization.jpg'
+    width: 570
+    height: 320
+    alt: FAQ – Publisher Monetization
   label: Learn more
 faq: !g.yaml /shared/data/faq.yaml
 ---

@@ -2,7 +2,11 @@
 $title@: AMP Overview
 $order: 1
 teaser:
-  icon: logo-transparent
+  image:
+    src: '/static/img/faq/faq-overview.jpg'
+    width: 570
+    height: 320
+    alt: FAQ – AMP Overview
   label: Learn more
 faq: !g.yaml /shared/data/faq.yaml
 ---

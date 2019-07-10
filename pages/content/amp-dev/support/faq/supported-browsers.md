@@ -2,7 +2,11 @@
 $title@: Supported Browsers
 $order: 5
 teaser:
-  icon: browser
+  image:
+    src: '/static/img/faq/faq-supported-browsers.jpg'
+    width: 570
+    height: 320
+    alt: FAQ – Supported Browsers
   label: Learn more
 faq: !g.yaml /shared/data/faq.yaml
 ---
