@@ -74,7 +74,7 @@ Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición p
 
  El elemento [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}})  es muy parecido al elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) y ofrece una función diferente a la hora de gestionar la carga y la reproducción de archivos GIF y de otros tipos de imágenes animadas.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim width="400"
   height="300"
@@ -98,7 +98,7 @@ Nota: Incluye`<script async custom-element="amp-anim" src="https://cdn.ampprojec
 
 Incluye un marcador de posición antes del inicio del video y una alternativa, si el navegador no admite videos en HTML5, por ejemplo:
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -120,7 +120,7 @@ Incluye un marcador de posición antes del inicio del video y una alternativa, s
 
 Incluye un marcador de posición antes del inicio del audio y una alternativa, si el navegador no admite audios en HTML5, por ejemplo:
 
-[example preview="inline" playground="true" imports="amp-audio"]
+[example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
 <amp-audio width="400"
   height="200"

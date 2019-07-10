@@ -1,4 +1,5 @@
 {% do doc.styles.addCssFile('/css/components/organisms/burger-menu.css') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 {% macro active_class(search_path) -%}
 {% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}

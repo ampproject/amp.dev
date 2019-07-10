@@ -74,7 +74,7 @@ Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens
 
  O elemento [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) é muito similar ao elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) e fornece funcionalidades adicionais para gerenciar o carregamento e a reprodução de imagens animadas, como GIFs.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim width="400"
   height="300"
@@ -98,7 +98,7 @@ Observação: Para usar esse componente, inclua `<script async custom-element="a
 
 Inclua um marcador de posição antes do começo do vídeo e um fallback, caso o navegador não seja compatível com vídeo HTML5, por exemplo:
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -120,7 +120,7 @@ Inclua um marcador de posição antes do começo do vídeo e um fallback, caso o
 
 Inclua um marcador de posição antes do começo do áudio e um fallback, caso o navegador não seja compatível com áudio HTML5, por exemplo:
 
-[example preview="inline" playground="true" imports="amp-audio"]
+[example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
 <amp-audio width="400"
   height="200"

@@ -73,7 +73,7 @@ Baca juga: Pelajari cara [memberikan penggantian dan placeholder untuk gambar]({
 
  Elemen [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) sangat mirip dengan elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), kedua elemen ini memberikan fungsi tambahan untuk mengelola pemuatan dan pemutaran gambar animasi seperti GIF.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim width="400"
   height="300"
@@ -97,7 +97,7 @@ Catatan: Sertakan `<script async custom-element="amp-anim" src="https://cdn.ampp
 
 Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak mendukung video HTML5, misalnya:
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -119,7 +119,7 @@ Sertakan placeholder sebelum video dimulai, dan penggantian, jika browser tidak 
 
 Sertakan placeholder sebelum audio dimulai, dan penggantian, jika browser tidak mendukung audio HTML5, misalnya:
 
-[example preview="inline" playground="true" imports="amp-audio"]
+[example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
 <amp-audio width="400"
   height="200"

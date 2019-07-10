@@ -24,6 +24,7 @@
 {%- endmacro %}
 
 {% macro anim(src, width, height, poster, layout='responsive', alt='', align='', margin='') -%}
+{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
 <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
   <amp-anim src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"><amp-img placeholder width="{{ width }}" height="{{ height }}" src="{{ poster }}"></amp-img></amp-anim>
 </figure>
@@ -86,6 +87,8 @@
       {{ doc.styles.emit() }}
     </style>
     <link rel="manifest" href="/manifest.json">
+
+    {{ doc.amp_dependencies.emit() }}
   </head>
   {# The body tag needs an empty class attribute in order to add the filter class.
   It is a block solely for the purpose to be overridable by the samples. #}
