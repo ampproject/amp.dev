@@ -1,0 +1,126 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_icon.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+
+.#{utility('stage')} {
+  overflow: hidden;
+}
+
+.#{organism('stage')} {
+  grid-column: 1 / -1;
+  position: relative;
+  width: 100%;
+  margin-left: 30px;
+  border-bottom-left-radius: 4em;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
+  background-color: color('charade');
+  background-repeat: no-repeat;
+  background-position: right;
+
+  @media (min-width: 768px) {
+    margin-left: 64px;
+    border-bottom-left-radius: 6.250em;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
+  }
+
+
+  div.#{utility('container-fluid')} {
+    padding: 0 2em;
+
+    @media (min-width: 768px) {
+      padding: 0 2.5em;
+      margin-left: -64px;
+    }
+  }
+
+	&-content {
+    position: relative;
+    margin: 10vw 0 22vw;
+
+
+    @media (min-width: 768px) {
+      grid-column: 3 / 13;
+      margin: 7vw 0 11vw 3em;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 3 / 19;
+      margin-left: 5em;
+    }
+
+    @media (min-width: 1280px) {
+      grid-column: 3 / 16;
+    }
+
+    &-icon {
+      @include ico;
+      @include ico-2;
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 1em);
+      padding: 0.5em;
+      border: 1px solid color('white');
+      border-radius: 50%;
+
+      @media (min-width: 768px) {
+        left: auto;
+        bottom: auto;
+        right: calc(100% + 0.75em);
+        top: -0.6em;
+      }
+
+      @media (min-width: 1024px) {
+        width: 3em;
+        height: 3em;
+        right: calc(100% + 1em);
+        top: -1.5em;
+        padding: 1em;
+        border-width: 2px;
+      }
+    }
+
+    &-headline {
+      @include hl;
+      @include hl-xlrg;
+      @include color-white;
+      margin: 0;
+
+      br {
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+
+    &-subline {
+      @include txt;
+      @include txt-1;
+      @include color-white;
+      margin-top: 0;
+
+      @media (min-width: 768px) {
+        @include txt-2;
+      }
+
+      @media (min-width: 1024px) {
+        @include txt-lrg;
+      }
+    }
+
+    &-button {
+      background: color('white');
+      color: color('river-bed');
+      margin-top: 20px;
+    }
+  }
+
+
+}

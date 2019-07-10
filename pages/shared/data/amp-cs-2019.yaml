@@ -7,17 +7,31 @@ speakers:
 
 agenda:
   day_1:
-    - title: New Contributors Day
-      time: "0000"
+    - title: "Track 1: New Contributor Day"
+      description: If you're a new contributor, we invite you to learn everything required to contribute on this optional program before Day 1.
+      time: "0900"
+    - title: "Track: Hackathon"
+      description: If you're not a new contributor but already in town on Day 0, come join us on a fun hackathon with the AMP team. More details coming soon!
+      time: "0900"
   day_2:
     - title: "Talks"
-      time: "0000"
+      time: "0900"
       type: session
       speakers:
       description:
+    - title: "Breakouts"
+      time: "1500"
+      type: panel
+      speakers:
+      description:
   day_3:
-    - title: "Breakout discussions"
-      time: "0000"
+    - title: "Talks"
+      time: "0900"
       type: session
+      speakers:
+      description:
+    - title: "Breakouts"
+      time: "1500"
+      type: panel
       speakers:
       description:
