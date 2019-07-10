@@ -2,6 +2,7 @@ import re
 from preview import ExamplePreviewMatch
 from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS
 from templates import load_template
+from amp_component_versions import remove_component_from_set
 
 # find existing imports
 IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=\s*"?([^"\s>/]+)',
@@ -26,7 +27,15 @@ def _transform(doc, original_body, content):
     return content
 
   output = output + content[0:pos]
-  output = output + get_dependency_scripts(doc, content)
+
+  amp_dependencies = getattr(doc, 'amp_dependencies')
+  if amp_dependencies and not amp_dependencies.injected:
+    add_amp_dependencies(amp_dependencies, doc)
+  else:
+    if amp_dependencies:
+      doc.pod.logger.warn('The AmpDependenciesExtension has already written the imports.\n'
+                          'Please configure the AmpExamplePreviewExtension before the AmpDependenciesExtension.')
+    output = output + get_dependency_scripts(doc, content)
 
   matches = ExamplePreviewMatch.extract_previews(content)
   for match in matches:
@@ -37,7 +46,6 @@ def _transform(doc, original_body, content):
   output = output + content[pos:]
   return output
 
-
 def generate_preview(doc, content, preview):
   output = ''
   preview_template = load_template(TEMPLATE_PATH, doc)
@@ -47,6 +55,15 @@ def generate_preview(doc, content, preview):
     content=content)
   return output
 
+def add_amp_dependencies(amp_dependencies, doc):
+  amp_imports = getattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS)
+  amp_templates = getattr(doc, ATTRIBUTE_EXAMPLE_TEMPLATES)
+  if amp_imports is not None and len(amp_imports) > 0:
+    for custom_element in amp_imports:
+      amp_dependencies.add(custom_element.name, version=custom_element.version)
+  if amp_templates is not None and len(amp_templates) > 0:
+    for custom_template in amp_templates:
+      amp_dependencies.add(custom_element.name, version=custom_element.version, type='template')
 
 def get_dependency_scripts(doc, content):
   output = ''
@@ -64,9 +81,9 @@ def get_dependency_scripts(doc, content):
 
     while existing_import:
       if existing_import.group(1) == 'element':
-        amp_imports.discard(existing_import.group(2))
+        remove_component_from_set(existing_import.group(2), amp_imports)
       else:
-        amp_templates.discard(existing_import.group(2))
+        remove_component_from_set(existing_import.group(2), amp_templates)
 
       existing_import = IMPORT_PATTERN.search(content, existing_import.end(0))
 

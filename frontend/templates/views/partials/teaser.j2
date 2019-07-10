@@ -12,6 +12,7 @@
     <div class="ap-m-teaser-card">
       {% set teaser = teaser or teaser_doc.teaser or {} %}
       {% if teaser.video %}
+      {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="1" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
@@ -61,6 +62,7 @@
 
     <div class="ap-m-teaser-card">
       {% if teaser.video %}
+      {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="{{ teaser.video.width }}" height="{{ teaser.video.height }}" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>

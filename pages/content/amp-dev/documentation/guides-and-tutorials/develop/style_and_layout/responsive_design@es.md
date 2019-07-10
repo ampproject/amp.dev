@@ -77,7 +77,7 @@ Cuando incluya un video en su página web, desea asegurarse de que el usuario pu
 
 En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que responda al tamaño y orientación de la pantalla donde se muestre. Agregando el atributo `"layout=responsive"` al elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), el video cambia su tamaño para ajustarse a la pantalla, y su aspecto de radio es mantenido por las especificaciones de tamaños que se hayan realizado sobre `width` y `height`.
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"

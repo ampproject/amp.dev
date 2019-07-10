@@ -22,7 +22,7 @@ $title: 써드 파티 콘텐츠 가져오기
 수동으로 width와 height를 제공하여 조정하거나,
 스크린 width에 기반한 해상도를 선택하는 media 속성을 사용할 수 있습니다.
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -53,7 +53,7 @@ $title: 써드 파티 콘텐츠 가져오기
 또한 인스타그램은 반응형 레이아웃을 위한 고정 해상도를 사용하기 때문에,
 width와 height 값은 전역으로 사용해야합니다.
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -129,7 +129,7 @@ Z1q71gFeRqM가 video id입니다.
 
 16:9 해상도 비디오의 정확한 레이아웃을 위해 `layout="responsive"`를 사용하길 바랍니다:
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -155,7 +155,7 @@ AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 �
 `type` 식별자는 광고 네트워크의 템플릿입니다.
 다른 광고 타입은 다른 `data-*` 속성을 필요로 합니다.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -171,7 +171,7 @@ AMP 문서 내에서 자바스크립트로 제공하는 광고 네트워크는 �
 만약 광고 네트워크가 지원한다면,
 `placeholder`를 넣어서 광고가 불가한 경우에 보여줄 수 있습니다:
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

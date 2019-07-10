@@ -19,7 +19,7 @@ Modifiez manuellement la largeur et la hauteur fournies ou utilisez l'attribut m
 
 Exemple d'élément [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) tiré de [twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html) :
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -42,7 +42,7 @@ Pour inclure une publication Instagram, incluez d'abord le script suivant dans l
 Incluez le code court d'Instagram figurant dans l'URL de la photo Instagram. Ainsi, dans `https://instagram.com/p/fBwFP`, `fBwFP` est le code court.
 De plus, Instagram utilise un format fixe pour les mises en page responsives. Ainsi, les valeurs de largeur et de hauteur doivent être universelles.
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -102,7 +102,7 @@ L'élément `data-videoid` YouTube figure dans l'URL de chaque page de vidéo Yo
 
 Utilisez `layout="responsive"` pour obtenir une mise en page correcte des vidéos au format 16:9 :
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -124,7 +124,7 @@ Vous devez préciser la largeur et la hauteur de l'annonce, et le type de résea
 Le `type` identifie le modèle de réseau publicitaire.
 Des types d'annonces différents nécessitent des attributs `data-*` différents.
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -139,7 +139,7 @@ Des types d'annonces différents nécessitent des attributs `data-*` différents
 
 Si le réseau publicitaire le permet, incluez un `placeholder` à afficher si aucune annonce n'est disponible :
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

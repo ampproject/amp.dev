@@ -16,7 +16,7 @@ $title: サードパーティ コンテンツを追加する
 
 現在、ツイートは自動的に、用意されたサイズに合わせて均等に拡大縮小されますが、そのために標準の外観から少し外れる場合があります。用意された幅と高さを手動で調整するか、または、media 属性を使用して、画面の幅に基づくアスペクト比を選択してください。
 
-[example preview="inline" playground="true" imports="amp-twitter"]
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
 <amp-twitter width="500"
   height="583"
@@ -40,7 +40,7 @@ Instagram を埋め込むには、最初に次のスクリプトを `<head>` に
 
 Instagram の写真 URL にある data-shortcode を指定します。たとえば、`https://instagram.com/p/fBwFP` の場合、`fBwFP` が data-shortcode です。また、Instagram ではレスポンシブ レイアウトに対して固定のアスペクト比を使用しているため、幅と高さの値は共通になります。
 
-[example preview="inline" playground="true" imports="amp-instagram"]
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -111,7 +111,7 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 
 `layout="responsive"` を使用すると、アスペクト比 16:9 の動画に対する正しいレイアウトが生成されます。
 
-[example preview="inline" playground="true" imports="amp-youtube"]
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -131,7 +131,7 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 
 広告の幅と高さ、広告ネットワークのタイプを指定する必要があります。`type` では広告ネットワークのテンプレートを指定します。広告のタイプごとに別々の `data-*` 属性が必要です。
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"
@@ -146,7 +146,7 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 
 広告ネットワークでサポートされている場合は、使用できる広告がない場合に表示される `placeholder` を追加します。
 
-[example preview="inline" playground="true" imports="amp-ad"]
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
 <amp-ad width="300"
   height="250"

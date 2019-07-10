@@ -13,7 +13,7 @@ $title: 자리표시자 및 대체 콘텐츠
 지정된 경우 `placeholder` 요소는 AMP 요소의 직접 하위 요소여야 합니다.
 `placeholder`로 표시된 요소는 항상 상위 AMP 요소를 `fill`합니다.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
@@ -52,7 +52,7 @@ $title: 자리표시자 및 대체 콘텐츠
 
 다음 예에서 `fallback` 속성을 사용하여 사용자에게 브라우저가 특정 기능을 지원하지 않음을 알립니다.
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
