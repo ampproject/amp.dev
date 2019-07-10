@@ -1,6 +1,6 @@
 ---
 $title: AMP for Email Viewer 
-$order: 1
+$order: 5
 author: alabiaga
 formats:
   - email
@@ -67,13 +67,11 @@ This is a trivial example where there is no [mustache](https://mustache.github.i
 
 The diagram below illustrates a more real world example of how an AMP document in an email client viewer with a `viewerRenderTemplate` capability could handle the rendering of the [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) template.
 
-[sourcecode:html]
 <amp-img alt="Viewer render template diagram"
     layout="responsive"
     width="372" height="279"
-    src="https://github.com/ampproject/docs/pages/content/amp-dev/documentation/guides-and-tutorials/learn/viewerRenderTemplate-diagram.png">
+    src="/static/img/docs/viewer_render_template_diagram.png">
 </amp-img>
-[/sourcecode]
 
 The AMP runtime would proxy the [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) component data fetch request to the viewer, which in turn would forward this request to an email client server. The server would feed this URL and results of the URL fetch through various services, possibly inspecting the URL validity, the contents of the data returned from that URL and render the [mustache](https://mustache.github.io/) templates with that data. It would then return that rendered template and send it back to the viewer in the following JSON response format.
 
