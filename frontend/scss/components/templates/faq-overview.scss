@@ -1,0 +1,31 @@
+/*
+
+###################################
+### TEMPLATE: FAQ overview page ###
+###################################
+
+### INFO:
+
+The FAQ overview page
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../templates/_default';
+
+.#{template('faq-overview')} {
+  .#{utility('container')} {
+    @include container;
+
+    @media (max-width: 767px) {
+      padding: 0 55px;
+    }
+  }
+
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+}
