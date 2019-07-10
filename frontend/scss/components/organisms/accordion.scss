@@ -12,9 +12,17 @@
   grid-column: 2 / 24;
   width: 100%;
 
-  section[expanded] {
-    .#{atom('ico')} {
-      transform: scale(-1);
+  section {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &[expanded] {
+      .#{atom('ico')} {
+        transform: scale(-1);
+      }
     }
   }
 
@@ -29,13 +37,13 @@
     border-radius: 4px;
     box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    
+
     &:hover {
       transform: translateY(-0.125em);
       box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
     }
   }
-  
+
   &-title {
     display: flex;
     align-items: center;
