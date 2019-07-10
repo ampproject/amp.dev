@@ -17,7 +17,7 @@ next.get('/*', async (req, res) => {
 app.use(next);
 
 function url(path) {
-  return new URL(path, config.hosts.platform.base).toString()
+  return new URL(path, config.hosts.platform.base).toString();
 }
 
 test('URL with / at the end is not redirected', (done) => {
