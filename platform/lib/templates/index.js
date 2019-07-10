@@ -125,6 +125,10 @@ class Templates {
     if (fetchResponse.status && fetchResponse.status !== 404) {
       return fetchResponse.text();
     }
+
+    // As this will only ever be called in development return a plain-text
+    // information if Grow did not return a page
+    return 'Requested page doesn\'t exist in Grow pod';
   }
 }
 
