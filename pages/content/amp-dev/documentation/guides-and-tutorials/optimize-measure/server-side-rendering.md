@@ -70,5 +70,5 @@ There are currently two Open Source implementations available, which can either 
 
 ## See Also
 
-*   [Optimize your hosted AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp.md', locale=doc.locale).url.path}})
+*   [Optimize your hosted AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md', locale=doc.locale).url.path}})
 *   [How to make AMP even faster](https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/)
