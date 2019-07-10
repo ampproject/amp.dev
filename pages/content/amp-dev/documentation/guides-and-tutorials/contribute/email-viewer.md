@@ -1,10 +1,7 @@
 ---
 $title: AMP for Email Viewer 
-$order: 1
+$order: 5
 author: alabiaga
-$titles:
-  navigation: Contribute
-$path: /documentation/guides-and-tutorials/contribute/email-viewer.md
 formats:
   - email
 ---
