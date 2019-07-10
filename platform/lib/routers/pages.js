@@ -20,7 +20,7 @@ const express = require('express');
 const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
-const {Templates, context} = require('@lib/templates/');
+const {Templates, context} = require('@lib/templates/index.js');
 
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
@@ -149,7 +149,7 @@ pages.get('/*', async (req, res, next) => {
 
   const url = ensureUrlScheme(req.originalUrl);
   if (url.pathname !== req.path) {
-    res.redirect(url.toString());
+    res.redirect(301, url.toString());
     return;
   }
 
