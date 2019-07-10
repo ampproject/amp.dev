@@ -28,20 +28,15 @@ const LOG = new Signale({'scope': 'Markdown Documents'});
 // This expression matches a {% raw %}...{% endraw %} block
 const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
 
-// This expression matches a [sourcecode] block
-const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
-
-const INLINE_CODE_BLOCK = /`[^`]*`/;
-
 // we search for ALL code blocks, and at the same time for raw blocks
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source
     + '|'
-    + SOURCECODE_BLOCK.source
+    + /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/.source
     + '|'
-    + INLINE_CODE_BLOCK.source, 'g');
+    + /`[^`]*`/.source, 'g');
 
 // Inside code blocks we search for mustache expressions
 // The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
@@ -52,15 +47,6 @@ const MUSTACHE_PATTERN = new RegExp(
     + '|'
     + /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source
     + ')', 'g');
-
-// Match code blocks to skip them and table tags to add the markdown attribute
-const TABLE_MARKDOWN_ATTRIB_PATTERN = new RegExp(
-    SOURCECODE_BLOCK.source
-    + '|'
-    + INLINE_CODE_BLOCK.source
-    + '|'
-    + /(<\s*table)((?:[^>](?!markdown))*>)/.source
-    , 'g');
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -171,21 +157,13 @@ class MarkdownDocument {
   }
 
 
-  /**
-   * Will add the markdown="1" attribute for table tags in order to
-   * let the markdown.extensions.extra of grow evaluate markdown inside the table.
-   * Needed because often code blocks are inside the table.
-   * @param  {String} contents
-   * @return {String} The rewritten input
-   */
-  static enableMarkdownInHtmlTables(contents) {
-    return contents.replace(TABLE_MARKDOWN_ATTRIB_PATTERN, (match, p1, p2) => {
-      // only if we are not in a code block set the markdown attribute
-      if (p1) {
-        return p1 + ' markdown="1"' + p2;
-      }
-      return match;
-    });
+  _convertSyntax() {
+    this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
+    this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
+    this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
+
+    // Replace dividers (---) as they will break front matter
+    this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
   }
 
   /**
@@ -209,16 +187,6 @@ class MarkdownDocument {
       }
       return block;
     });
-  }
-
-  _convertSyntax() {
-    this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
-    this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
-    this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
-    this._contents = MarkdownDocument.enableMarkdownInHtmlTables(this._contents);
-
-    // Replace dividers (---) as they will break front matter
-    this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
   }
 
   /**
@@ -271,10 +239,12 @@ class MarkdownDocument {
 
   /**
    * Removes the first heading to avoid double titles
+   * @return {String}          The rewritten input
    */
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
+    return true;
   }
 
   /**
