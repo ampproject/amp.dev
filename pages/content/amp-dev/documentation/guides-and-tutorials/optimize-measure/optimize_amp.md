@@ -27,7 +27,7 @@ For example, by applying the following optimization techniques:
 *   [Preloaded hero image](#preload-hero-images) (the image size/encoding itself has not been changed)
 *   [Optimizes custom fonts](#optimize-custom-fonts) (in this case, Google fonts)
 
-the ["The Scenic" AMPStart template](https://www.ampstart.com/templates) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
+the ["The Scenic" template]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
 
 If you want to skip the details, check out the [AMP Boilerplate generator](/boilerplate), which you can use to generate custom optimized AMP pages.
 
@@ -207,7 +207,7 @@ Last but not least, try to minimize the number of custom fonts that you use on y
 
 ### Server-Side Rendering
 
-[Server-side-rendering]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering.md', locale=doc.locale).url.path}}) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
+[Server-side-rendering]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/server-side-rendering.md', locale=doc.locale).url.path}}) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
 
 If you're interested in using server-side-rendering, check out the [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) tool.  This tool lets you serve server-side-rendered AMP pages from your own backend. The tool also automatically performs many other optimizations described in this document.
 

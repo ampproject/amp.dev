@@ -41,6 +41,7 @@ stage:
       alt: image
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 <main class="ap--main ap-t-template">
   <section class="ap--stage ap--container-fluid">
@@ -74,6 +75,7 @@ stage:
             {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
             <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
               {% if device.video_src %}
+              {% do doc.amp_dependencies.add('amp-video', '0.1') %}
               <amp-video
                 width="{{device.width}}"
                 height="{{device.height}}"

@@ -6,6 +6,7 @@ $view: /views/overview/custom-content.j2
 {% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/accordion.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/copy.css') %}
+{% do doc.amp_dependencies.add('amp-accordion', '0.1') %}
 
 <div class="ap--container">
   <div class="ap-m-copy ap-m-copy-left">

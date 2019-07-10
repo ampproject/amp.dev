@@ -7,8 +7,8 @@ Start
 
 [example 
      preview="inline" playground="true"
-     imports="amp-date-display"
-     template="amp-mustache"]
+     imports="amp-date-display:0.1"
+     template="amp-mustache:0.2"]
 
 ```html
 {% raw %}<amp-date-display timestamp-seconds="2147483648" layout="fixed-height" height="20">

@@ -44,6 +44,14 @@ This sample showcases how to build a product page in AMP HTML.
     #product-description {
       clear: both;
     }
+
+    .ap-o-sampler--tab {
+      cursor: pointer;
+      padding: 1.125em 1.75em;
+      border-right: 1px solid color('bright-gray');
+      background: color('ebony-clay');
+    }
+
     amp-lightbox {
       background: rgba(0,0,0,0.8);
       width: 100%;
@@ -162,6 +170,49 @@ This sample showcases how to build a product page in AMP HTML.
 
     form#order amp-selector[name=color] div:not([selected]):not([disabled]) {
       opacity: 0.6;
+    }
+
+    /* global style in order to bind global style in the iframe */
+
+    html, body {
+      font-size: 16px;
+      font-family: 'Noto Sans', sans-serif;
+      color: #48525C;
+    }
+    p {
+      line-height: 1.6rem;
+    }
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #005AF0;
+    }
+    .tabButton.h4.ampstart-nav-item {
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .ampstart-btn {
+      margin-top: 1.5rem;
+      margin-bottom: .75em;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2em;
+      font-size: 1em;
+      color: #fff;
+      display: inline-block;
+      padding: 0.75em 1.75em;
+      border-radius: 3px;
+      background-color: #005AF0;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 15px 35px -5px rgba(0,0,0,0.25);
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    p.name + p.star {
+      color: gold;
+    }
+    button.info-button {
+      border: none;
     }
     @keyframes fadeIn {
       0% {opacity: 0;}
@@ -409,10 +460,10 @@ This sample showcases how to build a product page in AMP HTML.
     We use [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to update the page selecting the gallery and image preview
     corresponding to the selected colour. We realized the color selection by using `amp-selector`. Find more the doc and info in The Product Page section below.
 
-    <p>The green colour is the default color for the gallery when the page loads.
-    Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"`.</p>
+    The green colour is the default color for the gallery when the page loads.
+    Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"`.
 
-    <p>See below for more informations on how we use`amp-bind`.</p> -->
+    See below for more informations on how we use `amp-bind` . -->
   <div class="product-gallery">
     <ul [hidden]="product.selectedColor != 'green'">
       <li>
@@ -592,15 +643,14 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- We use [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to update the price of the product
       depending on the selected colour.
 
-    <p>We bind the `text` attribute to the
-      value of expression `product[product.selectedColor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.</p>
+    We bind the `text` attribute to the value of expression `product[product.selectedColor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.
 
     <p>Notice how we set $1.99 value as the default for the price:  expressions
       will not be evaluated at the page load.</p>
 
-    <p>We use `amp-selector` together with `amp-bind` to update the page for showing the price, the size availability, the gallery and preview of images.
+    We use `amp-selector` together with `amp-bind` to update the page for showing the price, the size availability, the gallery and preview of images.
     Every time you select a color, we call `AMP.setState` with `{selectedColor: event.targetOption}`. This is triggering
-    all the attributes and elements binded to `selectedColor` to update: the price (binded with the attribute `[text]`), the gallery, the image preview and the size selector (all binded with `[class]`).</p> -->
+    all the attributes and elements binded to `selectedColor` to update: the price (binded with the attribute `[text]`), the gallery, the image preview and the size selector (all binded with `[class]`). -->
       <p class="price-description">Price:
         <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
     </p>
@@ -609,7 +659,7 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- The add-to-cart action action is implemented using  [amp-form](/documentation/components/reference/amp-form/). In our sample we use the [amp-selector](/components/amp-selector.html) for selecting different product properties.
     Pressing the `ADD TO CART` button adds the product to a shopping cart page using the properties you have selected. Notice that the button URL contains the query `clientId={{ClientId}}`.
     If an item is successfully added to the shopping cart, we redirect the user to the shopping cart page.
-    <p>The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):</p>
+    The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):
 
       <p>access-control-expose-headers:AMP-Access-Control-Allow-Source-Origin,AMP-Redirect-To
       amp-redirect-to:<a href="http://ampbyexample.com/shopping_cart/?clientid=amp-123456789">http://ampbyexample.com/shopping_cart/?clientid=amp-123456789</a></p>
@@ -695,7 +745,7 @@ This sample showcases how to build a product page in AMP HTML.
 
     <!-- ## Tab panels -->
     <!-- Use `amp-selector` styled as tab panels to add additional data about your product.
-    Learn how to implement tabs in AMP [here](/advanced/tab_panels_with_amp-selector/preview/). -->
+    Learn how to implement tabs in AMP [here](/documentation/examples/style-layout/tab_panels_with_amp-selector/). -->
   <amp-selector role="tablist"
   layout="container"
   class="ampTabContainer ampstart-headerbar-nav" keyboard-select-mode="select">
@@ -766,9 +816,9 @@ This sample showcases how to build a product page in AMP HTML.
     <!--
     While infinite scrolling is not possible at the moment in AMP, you can use `amp-bind` to dynamically change the
     src of `amp-list` and add more items to the page.
-    <p>We bind the `src` attribute to the id of an `amp-state` component so that the `amp-list` will use the items
+    We bind the `src` attribute to the id of an `amp-state` component so that the `amp-list` will use the items
     from that component as a `src`. The `amp-state` initial value is set by setting the `src` value
-    to the same endpoint used by `amp-list`. We append items to the `amp-state` everytime the user click on the Show more button, see below for more info.</p>
+    to the same endpoint used by `amp-list`. We append items to the `amp-state` everytime the user click on the Show more button, see below for more info.
     -->
     <amp-state id="myState" src="/static/samples/json/related_products.json">
     </amp-state>

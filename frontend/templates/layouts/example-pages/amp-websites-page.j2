@@ -1,0 +1,44 @@
+<!doctype html>
+<html ⚡>
+<head>
+{% if not example.has_tag_in_head('meta', 'charset') %}
+  <meta charset="utf-8">
+{% endif %}
+{% if not example.has_tag_in_head('title') %}
+  <title>{{export.title|e}} - {{_('Example')}} {{example.index}}</title>
+{% endif %}
+{% if not example.has_amp_script() %}
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+{% endif %}
+{% for dependency in example.imports if dependency %}
+{% if not example.has_import_in_head(dependency) %}
+  <script custom-element="{{dependency.name}}" src="https://cdn.ampproject.org/v0/{{dependency.name}}-{{dependency.version}}.js" async></script>
+{% endif %}
+{% endfor %}
+{% if example.template and not example.has_import_in_head(example.template) %}
+  <script custom-template="{{example.template.name}}" src="https://cdn.ampproject.org/v0/{{example.template.name}}-{{example.template.version}}.js" async></script>
+{% endif %}
+{% if not example.has_tag_in_head('link', 'rel', 'canonical') %}
+  <link rel="canonical" href="{{export.canonical}}">
+{% endif %}
+{% if not example.has_tag_in_head('meta', 'name', 'viewport') %}
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+{% endif %}
+{% if not example.has_boilerplate() %}
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+{% endif %}
+{% if example.head %}
+{{example.head|render|safe}}
+{% endif %}
+{% if example.custom_style %}
+  <style amp-custom>
+    {{example.custom_style|render|safe}}
+  </style>
+{% endif %}
+</head>
+<body>
+{% if example.body %}
+{{example.body|render|safe}}
+{% endif %}
+</body>
+</html>

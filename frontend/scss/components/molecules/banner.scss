@@ -15,7 +15,12 @@
 @import 'components/atoms/_headline.scss';
 
 .#{molecule('banner')} {
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $bannerHeight;
+  padding: 0 5px;
+  line-height: 1;
   text-align: center;
   color: color('whisper');
   @include txt-font-accent;
@@ -29,7 +34,7 @@
       width: 0.9em;
       height: 0.9em;
       margin-right: 5px;
-      vertical-align: middle;
+      vertical-align: bottom;
       fill: currentColor;
     }
   }

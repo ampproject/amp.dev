@@ -12,17 +12,18 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 `srcset`은 화면 너비(screen width)를 기준으로 image를 정의합니다.
 `w` 설명자는 브라우저에서 리스트 내 각 이미지의 width를 말해줍니다.
 
-<!--embedded amp-img example using srcset -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  layout="responsive"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+</amp-img>
+```
+[/example]
 
 노트: AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니다.
 
@@ -37,17 +38,18 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 아래 예제를 참고하길 바랍니다:
 
-<!--embedded amp-img example using sizes -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+  sizes="(min-width: 650px) 50vw, 100vw">
+</amp-img>
+```
+[/example]
 
 `sizes` 속성은 viewport가 650px이거나 그 이상인 경우,
 요소의 너비를 viewport 사이즈의 50%로 정의합니다.
@@ -75,17 +77,16 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 예:
 
-<!--embedded amp-img example using heights -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="none" playground="true"]
+```html
+<amp-img alt="AMP"
+  src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%">
+</amp-img>
+```
+[/example]
 
 이 예제에서 요소의 height는 width의 80%로 정의되어있지만,
 viewport가 `500px`보다 큰 경우 `200px`이 됩니다.

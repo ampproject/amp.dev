@@ -32,7 +32,10 @@ const FILTERED_ROUTES = [
   /\/documentation\/guides-and-tutorials.*/,
   /\/documentation\/components.*/,
   /\/documentation\/examples.*/,
+  /\/tests\//,
 ];
+
+const previewHost = config.getHost(config.hosts.preview);
 
 /**
  * Applies the format filter to the dom
@@ -170,6 +173,14 @@ class Filter {
       if (!url.searchParams.get('format') && isFilterableRoute(url.pathname)) {
         url.searchParams.set('format', this._format);
         a.attr('href', url.toString());
+      } else if (url.searchParams.get('url')) {
+        // playground url parameters also need the filter parameter for inline examples
+        const codeUrl = new URL(decodeURI(url.searchParams.get('url')));
+        if (!codeUrl.searchParams.get('format') && codeUrl.href.startsWith(previewHost)) {
+          codeUrl.searchParams.set('format', this._format);
+          url.searchParams.set('url', encodeURI(codeUrl.toString()));
+          a.attr('href', url.toString());
+        }
       }
     });
   }

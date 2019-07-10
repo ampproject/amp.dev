@@ -16,7 +16,7 @@
 .cm-s-monokai.CodeMirror {
   font-size: 14px;
   height: 100%;
-  background: linear-gradient(45deg, #48525c, #101923);
+  background: color('ebony-clay');
   pre {
     @include txt-mono;
     line-height: 1.25em;

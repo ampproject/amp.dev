@@ -29,6 +29,7 @@ nav[toolbar] {
   max-height: calc(100vh - 86px);
 
   @media (min-width: 768px){
+    position: -webkit-sticky;
     position: sticky;
   }
 

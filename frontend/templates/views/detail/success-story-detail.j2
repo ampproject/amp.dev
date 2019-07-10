@@ -44,6 +44,7 @@
               <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
                 {% if device.video_src %}
                 {% if device.video_id %}
+                {% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
                 <amp-vimeo
                   data-videoid="{{device.video_id}}"
                   layout="responsive"
@@ -51,6 +52,7 @@
                   height="9">
                 </amp-vimeo>
                 {% else %}
+                {% do doc.amp_dependencies.add('amp-video', '0.1') %}
                 <amp-video
                     width="{{device.width}}"
                     height="{{device.height}}"
@@ -137,6 +139,7 @@
                 <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
                 {% if content.video_src %}
                 {% if content.video_id %}
+                {% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
                 <amp-vimeo
                   data-videoid="{{content.video_id}}"
                   layout="responsive"
@@ -144,6 +147,7 @@
                   height="{{content.height}}">
                 </amp-vimeo>
                 {% else %}
+                {% do doc.amp_dependencies.add('amp-video', '0.1') %}
                 <amp-video
                     class="ap--media"
                     width="{{content.width}}"
@@ -192,6 +196,7 @@
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
+              {% do doc.amp_dependencies.add('amp-video', '0.1') %}
               <amp-video
                   class="ap--media"
                   width="{{content.width}}"

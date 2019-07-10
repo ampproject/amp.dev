@@ -22,6 +22,7 @@
   grid-column: 5 / 21;
   background: color('white');
   border-radius: 4px;
+  flex: 1 1 auto;
 
   &-block {
     width: 100%;
@@ -45,6 +46,11 @@
       color: fade_out(color('limed-spruce'), 0.57);
       background: color('athens-gray');
 
+      small {
+        display: block;
+        font-size: 12pt;
+      }
+
       &+.#{organism('agenda')} {
         display: none;
       }
@@ -62,6 +68,14 @@
           order: 1;
         }
 
+      }
+
+      &.ampcs[option][selected] {
+        background: color('charade');
+      }
+
+      &.ampcs {
+        flex: 1 1 33%;
       }
     }
   }

@@ -59,7 +59,7 @@ $originalEasing: cubic-bezier(0,0,.21,1);
 
   &-label {
     position: fixed;
-    z-index: 16;
+    z-index: 15;
     font-size: 12px;
     @include txt-font-accent;
     color: color('white');
@@ -147,6 +147,7 @@ $originalEasing: cubic-bezier(0,0,.21,1);
     display: inline-block;
 
     &-label {
+      position: -webkit-sticky;
       position: sticky;
       top: 138px;
       display: inline-flex;
