@@ -28,4 +28,20 @@ The FAQ overview page
   .#{utility('container-fluid')} {
     @include container-fluid;
   }
+
+  .#{utility('teaser-grid')} {
+    @media (min-width: 768px) {
+      grid-column: 3 / 23;
+    }
+
+    @media (min-width: 1280px) {
+      grid-column: 5 / 21;
+    }
+  }
+
+  .#{organism('teaser-grid-list')} {
+    flex-wrap: wrap;
+    overflow: visible;
+    margin: 0;
+  }
 }
