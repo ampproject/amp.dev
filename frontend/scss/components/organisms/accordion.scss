@@ -1,12 +1,10 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
-@import '../atoms/_text.scss';
-@import '../atoms/_headline.scss';
-@import '../atoms/_icon.scss';
-@import '../atoms/_color.scss';
+@import 'components/atoms/_text';
+@import 'components/atoms/_icon';
 
 .#{organism('accordion')} {
   grid-column: 2 / 24;

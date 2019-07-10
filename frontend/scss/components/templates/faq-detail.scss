@@ -9,12 +9,12 @@
 The FAQ detail page
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
-@import '../templates/_default';
+@import 'components/templates/_default';
 
 .#{template('faq-detail')} {
   top: 0;

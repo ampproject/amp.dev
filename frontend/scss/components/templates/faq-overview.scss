@@ -9,14 +9,14 @@
 The FAQ overview page
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
-@import '../templates/_default';
 @import 'components/atoms/_headline';
 
+@import 'components/templates/_default';
 
 .#{template('faq-overview')} {
   .#{organism('stage')} {
