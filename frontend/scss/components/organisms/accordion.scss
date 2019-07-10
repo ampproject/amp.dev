@@ -12,12 +12,20 @@
 
   section {
     margin-bottom: 50px;
+    border-radius: 8px;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     &[expanded] {
+      background-color: color('white');
+      box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
+
+      .#{organism('accordion-header')} {
+        border-color: transparent;
+      }
+
       .#{atom('ico')} {
         transform: scale(-1);
       }
@@ -26,19 +34,17 @@
 
   &-header {
     padding: 30px;
-    margin-bottom: 1em;
+    margin-bottom: 0;
     background: none;
-    background-color: color('white');
-    border: 1px solid color('whisper');
-    border-left: none;
-    border-right: none;
-    border-radius: 4px;
-    box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border: 2px solid #E8E8E8;
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &:hover {
       transform: translateY(-0.125em);
-      box-shadow: 0 25px 60px 0px rgba(0, 0, 0, 0.10);
+      border-color: transparent;
+      background-color: color('white');
+      box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -48,6 +54,7 @@
 
     h4 {
       margin: 0;
+      color: color('river-bed');
     }
 
     .#{atom('ico')} {
@@ -60,17 +67,17 @@
     }
   }
 
+  &-content {
+    padding: 0 30px 30px;
+  }
+
   &-list {
     list-style: none;
     columns: 2;
-    padding-left: 30px;
+    padding-left: 0;
 
     @media (min-width: 768px) {
       columns: 3;
-    }
-
-    @media (min-width: 1024px) {
-      columns: 4;
     }
 
     &-item {
