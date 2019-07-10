@@ -1,12 +1,10 @@
 ---
-$title@: AMP Supported Browsers
-$order: 4
-toc: false
-formats:
-  - websites
-  - stories
-  - ads
-browsers: !g.yaml /shared/data/supported-browsers.yaml
+$title@: Supported Browsers
+$order: 5
+teaser:
+  icon: browser
+  label: Learn more
+faq: !g.yaml /shared/data/faq.yaml
 ---
 
 # AMP Supported Browsers
@@ -14,7 +12,7 @@ browsers: !g.yaml /shared/data/supported-browsers.yaml
 {% do doc.styles.addCssFile('css/components/organisms/browsers.css') %}
 
 <div class="ap-o-browsers">
-{% for browser in doc.browsers.list %}
+{% for browser in doc.faq.supported_browsers %}
   <div class="browser">
     <amp-img width="75"
         height="75"
