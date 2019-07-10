@@ -15,8 +15,27 @@ The FAQ overview page
 @import '../../variables';
 
 @import '../templates/_default';
+@import 'components/atoms/_headline';
+
 
 .#{template('faq-overview')} {
+  .#{organism('stage')} {
+    margin-bottom: 50px;
+
+    &-content {
+      margin: 12em 0 4em;
+
+      @media (min-width: 768px) {
+        margin: 12vw 0 10vw;
+      }
+
+      &-headline {
+        @include hl-lrg;
+        margin: 0;
+      }
+    }
+  }
+
   .#{utility('container')} {
     @include container;
 
