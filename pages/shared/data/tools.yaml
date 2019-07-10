@@ -339,3 +339,14 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Clang
+    url: https://www.e-village.com/clang/
+    type: Email Service
+    description: Clang is a complete omnichannel marketing platform for email marketing and marketing automation.
+    image:
+      src: /static/img/tools/clang.png
+      width: 254
+      height: 255
+      fit: contain
+    formats:
+      - email
