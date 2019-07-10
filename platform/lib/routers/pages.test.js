@@ -35,14 +35,6 @@ test('URL without extension gets trailing slash', (done) => {
       .end(done);
 });
 
-test('URL with double / at the end gets one removed', (done) => {
-  request(app)
-      .get('/nonexisting//')
-      .expect(301)
-      .expect('Location', url('/nonexisting/'))
-      .end(done);
-});
-
 test('URL with .html extension gets .html removed and trailing slash added', (done) => {
   request(app)
       .get('/nonexisting/file.html')
