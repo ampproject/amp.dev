@@ -119,6 +119,9 @@ class Templates {
     const templateUrl = new URL(templatePath, config.hosts.pages.base);
     const fetchResponse = await fetch(templateUrl);
 
+    // Not checking for Response.ok here as Grow might return an error
+    // page with status 500 that holds debug information that should
+    // still be shown to the user
     if (fetchResponse.status && fetchResponse.status !== 404) {
       return fetchResponse.text();
     }
