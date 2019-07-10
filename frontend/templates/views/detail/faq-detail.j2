@@ -9,6 +9,7 @@
 {% block main %}
 <main class="ap--main ap-t-faq-detail">
   <div class="ap--container">
+    {% include '/views/partials/breadcrumbs.j2' %}
     <section class="ap--content">
       {{ doc.html|render|safe }}
     </section>

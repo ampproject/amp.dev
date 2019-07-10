@@ -33,6 +33,11 @@ The FAQ detail page
     }
   }
 
+  .#{molecule('breadcrumbs')} {
+    grid-column: 4 / 22;
+    margin-top: 6rem;
+  }
+
   .#{utility('content')} {
     grid-column: 1;
     position: relative;
