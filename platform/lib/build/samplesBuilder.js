@@ -326,7 +326,7 @@ class SamplesBuilder {
         flag: 'wx+',
       });
       this._log.success('Wrote sample sitemap.');
-    } catch () {
+    } catch (_) {
       this._log.info('Samples sitemap already exists');
     }
   }
