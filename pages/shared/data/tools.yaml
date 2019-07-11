@@ -315,6 +315,7 @@ providers:
   - name: AWeber
     url: https://www.aweber.com/
     type: Email Service
+    description: Aweber's platform and API allows you to create and send emails your customers will love.
     image:
       src: /static/img/tools/aweber.png
       width: 335
