@@ -33,17 +33,14 @@ let templates = null;
  * @param  {expressjs.Request} request
  * @return {Object}
  */
-function context(request, base) {
-  request = request || {'query': {}};
-  const context = {} || base;
-
+function createRequestContext(request={'query': {}}, context={}) {
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  context['format'] = (request.query.format || '').toLowerCase();
+  context.format = (request.query.format || '').toLowerCase();
   if (!ALLOWED_FORMATS.includes(context.format)) {
     context.format = ALLOWED_FORMATS[0];
   }
 
-  context['category'] = (request.query.category || '').toLowerCase();
+  context.category = (request.query.category || '').toLowerCase();
 
   return context;
 }
@@ -133,6 +130,6 @@ class Templates {
 }
 
 module.exports = {
-  context,
+  createRequestContext,
   Templates,
 };

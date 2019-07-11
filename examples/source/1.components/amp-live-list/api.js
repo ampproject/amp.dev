@@ -19,7 +19,7 @@
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
-const {context} = require('@lib/templates/');
+const {createRequestContext} = require('@lib/templates/');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
@@ -40,7 +40,7 @@ const blogItems = [
 SampleRenderer.use(router, (request, response, template) => {
   // set max-age to 15 s - the minimum refresh time for an amp-live-list
   setMaxAge(response, 15);
-  response.send(template.render(context(request, {
+  response.send(template.render(createRequestContext(request, {
     // render the current time
     time: new Date().toLocaleTimeString(),
     timestamp: Number(new Date()),
