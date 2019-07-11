@@ -123,9 +123,9 @@ class Templates {
       return fetchResponse.text();
     }
 
-    // As this will only ever be called in development return a plain-text
-    // information if Grow did not return a page
-    return 'Requested page doesn\'t exist in Grow pod';
+    // As this will only ever be called in development throw an error
+    // if Grow did not return a page
+    throw Error('Requested page doesn\'t exist in Grow pod');
   }
 }
 
