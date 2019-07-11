@@ -252,24 +252,17 @@ class MarkdownDocument {
    * if none is set
    * @return {Promise}
    */
-  save(path) {
+  save(path, skipFrontmatter) {
     let content = '';
-    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
-    content += frontmatter;
+    if (!skipFrontmatter) {
+      const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
+      content += frontmatter;
+    }
 
-    /**
-    * check if file is imported and if so add a comment in order to inform that
-    * the file should not be changed in the amp.dev/docs - repro
-    */
+    // For imported files add a short notice where the original file can
+    // be found and edited
     if (this._importURL) {
-      const importedText = `<!--
-This file is imported from ${this.importURL}.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
-`;
+      const importedText = `<!-- This file is imported from ${this.importURL}. -->\n`;
       content += importedText;
     }
 
