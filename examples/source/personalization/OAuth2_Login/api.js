@@ -251,18 +251,17 @@ async function callbackForConfig(request, response, providerConfig, provider) {
  * @param {Object} options
  * @return {Object}
  */
-function fetchJson(url, options = {}) {
+async function fetchJson(url, options = {}) {
   if (!url) return;
-  return fetch(url, options)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Could not read response.');
-        }
-        return res.json();
-      })
-      .catch((err) => {
-        throw new Error(`An error occured fetching data: ${err.message}`);
-      });
+  try {
+    const res = await fetch(url, options);
+    if (!res.ok) {
+      throw new Error('Could not read response.');
+    }
+    return res.json();
+  } catch (err) {
+    throw new Error(`An error occured fetching data: ${err.message}`);
+  }
 }
 
 function oAuthStatus(request, response) {
