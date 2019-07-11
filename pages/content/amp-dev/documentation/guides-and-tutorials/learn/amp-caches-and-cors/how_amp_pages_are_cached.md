@@ -4,7 +4,6 @@ $order: 0
 description: In this document, you'll learn about the role of the AMP Cache in the AMP ecosystem, and how your AMP page gets cached.
 formats:
   - websites
-  - email
   - stories
   - ads
 ---
@@ -18,7 +17,9 @@ An AMP Cache is a proxy-based content delivery network (CDN) for delivering vali
 2.  Allow AMP pages to be preloaded efficiently and safely.
 3.  Perform additional user-beneficial performance optimizations to content.
 
-Note: AMP for Email documents are exempt from the AMP cache.
+[tip type="note"]
+AMP for Email documents are exempt from the AMP cache.
+[/tip]
 
 Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456) blog post.
 
