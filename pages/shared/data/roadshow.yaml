@@ -1,4 +1,20 @@
 nextstop:
+  - title: sydney
+    coords: 103x42
+    location: Maritime Museum
+    time: 09:30–17:00
+    day: 27
+    month: aug
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-sydney/
+  - title: melbourne
+    coords: 100x44
+    location: Maritime Museum
+    time: 09:30–17:00
+    day: 30
+    month: aug
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-melbourne/
   - title: tel aviv
     coords: 66x22
     location: tba
@@ -64,7 +80,7 @@ past:
     coords: 89x32
     date: 2017-10-09
   - title: SYDNEY
-    coords: 103x44
+    coords: 103x41
     date: 2017-10-13
   - title: MUNICH
     coords: 56x13
