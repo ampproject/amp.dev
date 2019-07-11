@@ -18,7 +18,7 @@ An AMP Cache is a proxy-based content delivery network (CDN) for delivering vali
 3.  Perform additional user-beneficial performance optimizations to content.
 
 [tip type="note"]
-AMP for Email documents are exempt from the AMP cache.
+AMP email documents are exempt from the AMP cache.
 [/tip]
 
 Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456) blog post.
