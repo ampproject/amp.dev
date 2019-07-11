@@ -82,8 +82,7 @@ class SamplesBuilder {
   }
 
   /**
-   * Parse a sample source file into a JSON using the parser from the
-   * ampbyexample.com package and while doing so updates some fields
+   * Builds samples and previews, optionally watching for changes.
    * @param {boolean} watch  Watch for changes
    * @return {Promise<void>} Resolves when build is done
    */
