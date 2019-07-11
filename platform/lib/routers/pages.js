@@ -20,7 +20,16 @@ const express = require('express');
 const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
-const {Templates, context} = require('@lib/templates/index.js');
+const {Templates, createRequestContext} = require('@lib/templates/index.js');
+
+/* Potential path stubs that are used to find a matching file */
+const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
+
+/* Matches all documentation routes */
+const DOCUMENTATION_ROUTE_PATTERN = /\/documentation\/*/;
+
+/* Matches <a> tags with the href-attribute value as its first matching group */
+const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm;
 
 /**
  * Transforms a request URL to match the defined scheme: has trailing slash,
@@ -65,7 +74,6 @@ const pathCache = new LRU({
  * @return {nunjucks.Template|null}
  */
 async function loadTemplate(templatePath) {
-  const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
   let template = null;
 
   // The path has been ensured to always have a trailing slash which isn't
@@ -112,12 +120,10 @@ async function loadTemplate(templatePath) {
  * @return {String}
  */
 function rewriteLinks(canonical, html, format) {
-  const DOCUMENTATION_ROUTE_PATTERN = /\/documentation\/*/;
   if (!DOCUMENTATION_ROUTE_PATTERN.test(canonical)) {
     return html;
   }
 
-  const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm;
   html = html.replace(A_HREF_PATTERN, (match, p1, p2) => {
     if (!DOCUMENTATION_ROUTE_PATTERN.test(p2)) {
       return match;
@@ -159,7 +165,7 @@ pages.get('/*', async (req, res, next) => {
     return;
   }
 
-  const templateContext = context(req);
+  const templateContext = createRequestContext(req);
   let renderedTemplate = null;
   try {
     renderedTemplate = template.render(templateContext);
