@@ -185,12 +185,113 @@
     </div>
   </a>
 </div>
-{% endif %}
-
+{% elif teaser_doc.view == '/views/overview/guides.j2' %}
 {# guides and tutorials #}
+{% do doc.styles.addCssFile('css/components/molecules/teaser-highlight-guides.css') %}
+<section class="ap--section">
+  <div class="ap-m-teaser-highlight-guides">
+    <h2>Highlighted Guides & Tutorials</h2>
+    <div class="ap-m-teaser-container">
+      {% for guide in doc.highlight_guides %}
+      {% if loop.index is odd %}
+      <div class="ap-m-teaser ap-m-teaser-column-box">
+        {% endif %}
+        <div class="ap-m-teaser ap-m-teaser-highlighted">
+          <div class="ap-m-teaser-double-teaser">
+            <div class="ap-m-teaser-tags">
+              {% for tag in guide.tags %}
+              <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
+              {% endfor %}
+            </div>
+            {% if guide.image %}
+            <div class="ap-a-img ap-m-teaser-image">
+              <amp-img class="ap--media" src="{{ guide.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ guide.image.alt }}"></amp-img>
+            </div>
+            {% endif %}
+            <a href="{{ guide.url }}">
+              <div class="ap-m-teaser-content">
+                <div class="ap-m-teaser-content-text">
+                  <h4>{{ guide.title }}</h4>
+                  <p>{{ guide.description }}</p>
+                </div>
+                <div class="guide-tag">
+                  <div class="guide-tag-icon guide-tag-icon-{{ guide.icon }}" >
+                    {% if guide.icon == "guide" %}
+                    {% do doc.icons.useIcon('icons/guide.svg') %}
+                    {% else %}
+                    {% do doc.icons.useIcon('icons/glasses.svg') %}
+                    {% endif %}
+                    <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{guide.icon}}"></use>
+                    </svg>
+                  </div>
+                  <span class="guide-tag-text">{{ guide.tagName }}</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% if loop.index is even %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="ap--section">
+  <div class="ap-m-teaser-highlight-guides">
+    <h2>Recent Guides & Tutorials</h2>
+    <div class="ap-m-teaser-container">
+      {% for guide in doc.recent_guides %}
+      {% if loop.index is odd %}
+      <div class="ap-m-teaser ap-m-teaser-column-box">
+        {% endif %}
+        <div class="ap-m-teaser ap-m-teaser-highlighted">
+          <div class="ap-m-teaser-double-teaser">
+            <div class="ap-m-teaser-tags">
+              {% for tag in guide.tags %}
+              <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
+              {% endfor %}
+            </div>
+            {% if guide.image %}
+            <div class="ap-a-img ap-m-teaser-image">
+              <amp-img class="ap--media" src="{{ guide.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ guide.image.alt }}"></amp-img>
+            </div>
+            {% endif %}
+            <a href="{{ guide.url }}">
+              <div class="ap-m-teaser-content">
+                <div class="ap-m-teaser-content-text">
+                  <h4>{{ guide.title }}</h4>
+                  <p>{{ guide.description }}</p>
+                </div>
+                <div class="guide-tag">
+                  <div class="guide-tag-icon guide-tag-icon-{{ guide.icon }}" >
+                    {% if guide.icon == "guide" %}
+                    {% do doc.icons.useIcon('icons/guide.svg') %}
+                    {% else %}
+                    {% do doc.icons.useIcon('icons/glasses.svg') %}
+                    {% endif %}
+                    <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{guide.icon}}"></use>
+                    </svg>
+                  </div>
+                  <span class="guide-tag-text">{{ guide.tagName }}</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% if loop.index is even %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{# custom teaser #}
 {%
-  if teaser_doc.view == '/views/overview/guides.j2' or
-  teaser_doc.view == '/views/detail/docs-detail.j2' or
+   if teaser_doc.view == '/views/detail/docs-detail.j2' or
   teaser_doc.view == '/views/custom.j2'
 %}
   {% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}

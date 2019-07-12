@@ -1,0 +1,25 @@
+{% for item in card_grid_items %}
+<div class="ap-o-card-grid-card">
+  <div class="ap-a-ico ap-o-card-grid-card-icon">
+    {% do doc.icons.useIcon('/icons/' + item.icon_name + '.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ item.icon_name }}"></use></svg>
+  </div>
+  <h4 class="ap-o-card-grid-card-headline">{{ item.headline }}</h4>
+  {% if item.text %}
+  <p class="ap-o-card-grid-card-copy">{{item.text}}</p>
+  {% endif %}
+  {% if item.strong %}
+  <p><strong>{{ item.strong }}</strong></p>
+  {% endif %}
+  {% for link in item.links %}
+  <a href="{{ link.url }}"
+    class="ap-m-lnk">
+    <div class="ap-a-ico ap-m-lnk-icon">
+      {% do doc.icons.useIcon('icons/internal.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    </div>
+    <span class="ap-m-lnk-text">{{ link.text }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endfor %}

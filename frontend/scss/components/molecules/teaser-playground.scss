@@ -1,0 +1,54 @@
+/*
+
+###################################
+### MOLECULE: teaser-playground ###
+###################################
+
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color';
+
+.#{molecule('teaser-playground')} {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -60px;
+  padding: 0 60px;
+  background-color: color('whisper');
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    @media (min-width: 1024px) {
+      width: 45%;
+      max-width: 330px;
+    }
+
+    h2 {
+      margin-bottom: 11px;
+    }
+    p {
+      margin: 0 0 15px;
+    }
+  }
+  &-image {
+    width: 80%;
+    @media (min-width: 1024px) {
+      width: 55%;
+    }
+  }
+}

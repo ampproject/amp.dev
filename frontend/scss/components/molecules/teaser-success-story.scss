@@ -8,71 +8,71 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-@import 'teaser';
+@import 'components/molecules/_teaser.scss';
 
 .#{molecule('teaser-success-story')} {
-	&.#{molecule('teaser')} {
-		@include teaser;
-		margin-bottom: 20px;
+  &.#{molecule('teaser')} {
+    @include teaser;
+    margin-bottom: 20px;
 
-		& > a {
-			@include teaser-linking;
+    & > a {
+      @include teaser-linking;
 
-			&:hover {
-				@include teaser-linking-hover;
+      &:hover {
+        @include teaser-linking-hover;
 
-				.#{molecule('teaser')}-card {
-					@include teaser-card-hover;
-				}
-			}
-		}
-	}
+        .#{molecule('teaser')}-card {
+          @include teaser-card-hover;
+        }
+      }
+    }
+  }
 
-	.#{molecule('teaser')} {
-		&-tag {
-			@include teaser-tag;
-		}
+  .#{molecule('teaser')} {
+    &-tag {
+      @include teaser-tag;
+    }
 
-		&-card {
-			@include teaser-card;
+    &-card {
+      @include teaser-card;
 
-			@media (max-width: 767px) {
-				margin-bottom: 60px;
-			}
+      @media (max-width: 767px) {
+        margin-bottom: 60px;
+      }
 
-			.#{molecule('teaser')} {
+      .#{molecule('teaser')} {
 
-				&-logo {
-					width: 100%;
-					max-width: 100px;
-					position: relative;
-		      width: 110px;
-		      height: 30px;
-					margin-bottom: 1em;
-		      
-		      amp-img.contain img {
-		        object-fit: contain;
-		        object-position: left center;
-		      }
-				}
-			}
-		}
+        &-logo {
+          width: 100%;
+          max-width: 100px;
+          position: relative;
+          width: 110px;
+          height: 30px;
+          margin-bottom: 1em;
 
-		&-content {
-			@include teaser-content;
-		}
+          amp-img.contain img {
+            object-fit: contain;
+            object-position: left center;
+          }
+        }
+      }
+    }
 
-		&-image {
-			@include teaser-image;
-		}
+    &-content {
+      @include teaser-content;
+    }
 
-		&-headline {
-			@include teaser-headline;
-		}
-	}
+    &-image {
+      @include teaser-image;
+    }
+
+    &-headline {
+      @include teaser-headline;
+    }
+  }
 }
