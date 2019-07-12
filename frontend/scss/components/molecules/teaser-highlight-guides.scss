@@ -42,6 +42,10 @@
       border: solid 1px #e8e8e8;
       margin-bottom: 20px;
 
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
+
       &:hover {
         transform: translate3d(0,-2px,0);
         box-shadow: 0 25px 60px 0 transparentize(color('black'), 0.9);
