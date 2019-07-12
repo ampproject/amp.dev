@@ -1,0 +1,46 @@
+{
+	"items": [
+		{
+			"name": "Chain set",
+			"description": "Silver alloy construction for durability.",
+			"price": 867,
+			"image": "/img/e-commerce/product/product-3.jpg",
+			"category": "accessories"
+		},
+		{
+			"name": "Red Cruiser",
+			"description": "Smooth ride for enjoyable cruising.",
+			"price": 688,
+			"image": "/img/e-commerce/product/product-6.jpg",
+			"category": "accessories"
+		},
+		{
+			"name": "Road Bike",
+			"description": "Built with lightweight aluminum for speed.",
+			"price": 644,
+			"image": "/img/e-commerce/product/product-9.jpg",
+			"category": "accessories"
+		},
+		{
+			"name": "Fixie Blue",
+			"description": "Designed to get you there.",
+			"price": 643,
+			"image": "/img/e-commerce/product/product-2.jpg",
+			"category": "accessories"
+		},
+		{
+			"name": "16-Speed",
+			"description": "Smooth shifting through all gears for city riding.",
+			"price": 524,
+			"image": "/img/e-commerce/product/product-5.jpg",
+			"category": "accessories"
+		},
+		{
+			"name": "Leather Saddle",
+			"description": "Firm, yet comfortable for long leisurely rides.",
+			"price": 476,
+			"image": "/img/e-commerce/product/product-4.jpg",
+			"category": "accessories"
+		}
+	]
+}
