@@ -57,22 +57,30 @@
       color: color('blue-ribbon');
     }
 
-    &--tip {
+    &-tip {
       background-color: transparent;
       box-shadow: none;
       padding: 0;
       margin: 10px 0 10px 0;
+      grid-column: span 12;
 
-      @media (min-width: 768px) {
-        margin: auto 0 10px 0;
+      @media (min-width: 600px) {
+        grid-column: span 6;
+        margin: auto auto;
       }
+
       @media (min-width: 1024px) {
+        grid-column: span 4;
         padding: 0 22.5px;
       }
 
       .#{molecule('tip')}-default {
-        margin: 0 0 20px 0;
+        margin: auto auto;
         border-radius: 4px;
+
+        @media (min-width: 1024px) and (max-width: 1280px) {
+          margin: 20px 0;
+        }
 
         &:before {
           left: 47.5%;
