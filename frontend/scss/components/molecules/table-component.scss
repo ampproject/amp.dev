@@ -45,7 +45,7 @@
     padding: 20px 60px;
     background-color: color('white');
     z-index: 11;
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
+    box-shadow: 0 2px 5px 0 transparentize(color('black'), 0.93);
     line-height: 2;
 
     h2 {
