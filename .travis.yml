@@ -34,7 +34,7 @@ jobs:
     env: APP_ENV=staging
     install: &1
     - npm ci
-    - pip install grow==0.7.4 --user
+    - pip install grow==0.8.7 --user
     name: Build Pages (EN)
     script: gulp buildPages --locales en
   - stage: build
