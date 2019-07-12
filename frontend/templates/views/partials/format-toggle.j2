@@ -1,6 +1,8 @@
 {% do doc.styles.addCssFile('css/components/atoms/format-backgrounds.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/format-toggle.css') %}
 
+{# Courses are not format togglable #}
+{% if not '/courses/' in doc.pod_path %}
 {% set formats = ['websites', 'stories', 'ads', 'email'] %}
 
 {# Define various landing pages for sections #}
@@ -38,3 +40,4 @@
     {% endfor %}
   </div>
 </div>
+{% endif %}
