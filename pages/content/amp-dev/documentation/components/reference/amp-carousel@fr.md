@@ -8,7 +8,7 @@ teaser:
   text: Afficher plusieurs éléments de contenu similaires le long d'un axe horizontal.
 ---
 
-<!---
+<!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

@@ -6,7 +6,7 @@ teaser:
   text: 원격으로 제공되는 구성 파일을 사용하여 AMP 페이지에 동적으로 광고를 삽입합니다.
 ---
 
-<!---
+<!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

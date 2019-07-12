@@ -13,7 +13,7 @@ teaser:
 Adiciona interatividade personalizada com expressões e vinculação de dados.
 
 
-<!---
+<!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

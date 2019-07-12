@@ -14,7 +14,7 @@ AMP 액세스 또는 'AMP 페이월 및 구독 지원'을 통해 게시자는 �
 
 
 
-<!---
+<!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

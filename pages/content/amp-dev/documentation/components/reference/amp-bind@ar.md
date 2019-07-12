@@ -15,7 +15,7 @@ teaser:
 يضيف المكوِّن تفاعلاً مخصصًا باستخدام ربط البيانات والتعبيرات.
 
 
-<!---
+<!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

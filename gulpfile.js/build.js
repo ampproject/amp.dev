@@ -47,7 +47,6 @@ const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
 
-
 /**
  * Cleans all directories/files that get created by any of the following
  * tasks
@@ -230,8 +229,14 @@ async function fetchArtifacts() {
   await sh('mkdir -p build');
   if (travis.onTravis() || config.options['travis-build']) {
     const buildNumber = config.options['travis-build'] || travis.build.number;
-    await sh(`gsutil cp -r ${TRAVIS_GCS_PATH}${buildNumber} ${project.paths.BUILD}`);
-    await sh('find build -type f -exec tar xf {} \;');
+    try {
+      await sh(`gsutil cp -r ${TRAVIS_GCS_PATH}${buildNumber} ${project.paths.BUILD}`);
+      await sh('find build -type f -exec tar xf {} \;');
+    } catch(e) {
+      // If fetching the pages fails, force exit here to make sure
+      // especially Travis gets the correct exit code
+      process.exit(1);
+    }
   }
 }
 
@@ -252,7 +257,14 @@ async function buildPages(done) {
           options.ignore_paths = TEST_CONTENT_PATH_REGEX;
         }
         config.configureGrow(options);
-        await grow('deploy --noconfirm --threaded');
+
+        try {
+          await grow('deploy --noconfirm --threaded');
+        } catch(e) {
+          // If building the pages fails, force exit here to make sure
+          // especially Travis gets the correct exit code
+          process.exit(1);
+        }
       }, transformPages,
       // eslint-disable-next-line prefer-arrow-callback
       function sharedPages() {

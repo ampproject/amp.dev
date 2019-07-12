@@ -17,7 +17,7 @@ teaser:
 Спецификации `amp-ad` и `amp-embed` могут значительно измениться со временем. Текущий подход нацелен на то, чтобы формат AMP обеспечивал показ объявлений.
 [/tip]
 
-<!---
+<!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

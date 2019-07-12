@@ -4,12 +4,12 @@ formats:
   - websites
   - ads
   - stories
-  teaser:
-      text:  페이지 조회수를 계산하는 추적 픽셀입니다.
+teaser:
+  text: "페이지 조회수를 계산하는 추적 픽셀입니다."
 ---
 
 
-<!---
+<!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
        Licensed under the Apache License, Version 2.0 (the "License");

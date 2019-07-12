@@ -6,7 +6,7 @@ teaser:
   text: 게시자가 LaterPay 소액결제 플랫폼과 손쉽게 통합할 수 있습니다.
 ---
 
-<!---
+<!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

@@ -18,7 +18,7 @@ teaser:
 [/tip]
 
 
-<!---
+<!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

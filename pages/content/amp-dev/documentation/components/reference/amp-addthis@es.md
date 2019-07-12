@@ -6,7 +6,7 @@ teaser:
   text: Muestra un elemento insertado de las herramientas del sitio web AddThis.
 ---
 
-<!---
+<!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

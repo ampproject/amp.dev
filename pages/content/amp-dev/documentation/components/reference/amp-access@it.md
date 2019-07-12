@@ -14,7 +14,7 @@ L'Accesso AMP o il "supporto per l'abbonamento e il paywall AMP" offrono ai publ
 
 
 
-<!---
+<!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");

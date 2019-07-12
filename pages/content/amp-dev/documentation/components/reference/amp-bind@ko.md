@@ -7,12 +7,8 @@ formats:
 teaser:
   text: 사용자 작업 또는 데이터 변경에 따라 데이터 결합 및 JS와 같은 단순한 식을 통해 요소의 변경을 허용합니다.
 ---
-# amp-bind
----
-데이터 결합 및 식과 함께 맞춤형 상호작용을 추가합니다.
 
-
-<!---
+<!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +24,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
+# amp-bind
+데이터 결합 및 식과 함께 맞춤형 상호작용을 추가합니다.
 
 <table>
   <tr>
