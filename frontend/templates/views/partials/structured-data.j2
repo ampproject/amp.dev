@@ -1,7 +1,7 @@
 {# Set needed data for all meta tags #}
 {% set description = doc.description or (doc.teaser.text if doc.teaser else None) %}
 {# Mark the description as safe if it is SSR #}
-{% if '[[' in description %}
+{% if description and '[[' in description %}
 {% set description = description|safe %}
 {% endif %}
 
