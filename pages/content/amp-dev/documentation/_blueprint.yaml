@@ -6,6 +6,7 @@ $localization:
 $order: 2
 
 flyout:
+    - /content/amp-dev/documentation/index.html
     - /content/amp-dev/documentation/guides-and-tutorials/index.html
     - /content/amp-dev/documentation/components/index.html
     - /content/amp-dev/documentation/examples/index.html
