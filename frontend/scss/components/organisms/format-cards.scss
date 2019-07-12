@@ -15,93 +15,111 @@
 @import 'components/atoms/_text.scss';
 
 .#{utility('format-cards')} {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-
-  @media (min-width: 600px) {
-    flex-direction: row;
-  }
-  @media (min-width: 768px) {
-    flex-direction: column;
-  }
-  @media (min-width: 930px) {
-    padding: 0 60px 75px 60px;
-  }
-  @media (min-width: 1024px) {
-    flex-direction: row;
-  }
+  grid-column: 3 / 23;
 }
+
 .#{organism('format-cards')} {
-  &-text {
-    width: 100%;
-  }
+  display: grid;
+  grid-column-gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: stretch;
+  margin-top: 20px;
 
   &-card {
-    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 15px 25px;
-    margin: 20px 0;
+    $format-card: &;
     position: relative;
-    transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    grid-column: span 12;
+    margin: 25px 0 0;
+    border-radius: 10px;
     background-color: color('white');
-
-    &:hover {
-      box-shadow: 12px 18px 80px 10px rgba(0,0,0,0.05);
-    }
-
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,.15);
+    transition: transform 0.3s cubic-bezier(.25,.1,.25,1), box-shadow 0.3s cubic-bezier(.25,.1,.25,1);
     @media (min-width: 600px) {
-      max-width: 31%;
-    }
-    @media (min-width: 768px) {
-      max-width: 100%;
+      grid-column: span 6;
     }
     @media (min-width: 1024px) {
-      max-width: 31%;
+      grid-column: span 3;
     }
 
-    &-text {
-      width: 100%;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 25px 60px 0 rgba(0,0,0,.1);
+    }
+
+    &-body {
+      height: calc(100% - 47px);
+      min-height: 145px;
+      padding: 25px;
     }
 
     &-icon {
       position: absolute;
-      left: -10px;
-      top: -10px;
-      height: 60px;
-      width: 60px;
-      border-radius: 50%;
-
-      &-websites {
-        @include gradient-websites;
-        fill: color('white');
-      }
-      &-stories {
-        @include gradient-stories;
-        fill: color('ultramarine');
-      }
-      &-ads {
-        @include gradient-ads;
-        fill: color('white');
-      }
-      &-emails {
-        @include gradient-e-mails;
-        fill: color('ultramarine');
-      }
-      svg {
-        width: 50%;
-      }
+      left: 23px;
+      top: 23px;
+      height: 35px;
+      width: 35px;
     }
+
     &-headline {
       @include txt-font-accent;
-      margin: auto auto 35px 40px;
+      margin: 6px auto 20px 45px;
     }
-    .ap-m-lnk {
-      padding: 0;
-      margin-left: -5px;
+
+    &-link {
+      height: 47px;
+      padding: 10px;
+      background-color: color('white');
+      border-radius: 0 0 9px 9px;
+
+      svg {
+        fill: color('blue-ribbon');
+      }
+
+      &.#{molecule('lnk')}:hover {
+        .#{molecule('lnk')}-icon,
+        .#{molecule('lnk')}-text {
+          transform: none;
+        }
+      }
+    }
+
+    &-ads,
+    &-websites {
+      #{$format-card}-copy,
+      #{$format-card}-headline {
+        color: color('white');
+      }
+      #{$format-card}-icon {
+        fill: color('white');
+      }
+    }
+
+    &-email,
+    &-stories {
+      #{$format-card}-copy,
+      #{$format-card}-headline {
+        color: color('ultramarine');
+      }
+
+      #{$format-card}-icon {
+        fill: color('ultramarine');
+      }
+    }
+
+    &-websites {
+      @include gradient-websites;
+    }
+
+    &-stories {
+      @include gradient-stories;
+    }
+
+    &-ads {
+      @include gradient-ads;
+    }
+
+    &-email {
+      @include gradient-e-mails;
     }
   }
-
 }

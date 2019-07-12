@@ -29,6 +29,10 @@
   background-position: top right;
   background-attachment: fixed;
 
+  .#{utility('sidebar')} {
+    @include sidebar;
+  }
+
   .#{utility('container')} {
     @include container;
     @include container-nogap;
@@ -47,36 +51,21 @@
     h1, h2 {
       margin-bottom: .5em;
     }
-
-    @media (min-width: 930px) {
-      .ap-m-breadcrumbs {
-        margin-left: 60px;
-      }
-    }
-  }
-
-  .#{utility('section')} {
-    @media (min-width: 930px) {
-      margin: 0 60px;
-    }
-  }
-
-  .#{utility('sidebar')} {
-    @include sidebar;
-  }
-
-  .#{utility('toc')} {
-    @include toc-white-bg;
-  }
-
-  .#{utility('sidebar')} + .#{utility('content')},
-  .#{utility('toc')} + .#{utility('content')} {
-    @include content-with-sidebar;
   }
 
   section {
     &.#{utility('content')} {
-      @include content-white-bg;
+      padding: 62px 15px;
+      background-color: color('white');
+      @include content-shadow;
+      @media (min-width: 768px) {
+        padding: 62px;
+      }
+    }
+  }
+  .#{utility('card-grid')} {
+    @media (min-width: 930px) {
+      padding: 40px 30px 90px;
     }
   }
 }

@@ -1,0 +1,221 @@
+---
+$title: Get Started
+$titles:
+  navigation: Get started
+$view: /views/custom.j2
+$path: /documentation/index.html
+$localization:
+  path: /{locale}/documentation/index.html
+$order: 1
+$hidden: true
+flyout:
+  description: Get started
+  icon: start
+
+format_cards:
+  - title: AMP Websites
+    description: Create flawless websites. Compelling, smooth and instant.
+    type: websites
+    link:
+        text: Build your first AMP Website
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/create/?format=websites
+  - title: AMP Stories
+    description: Create snackable, immersive and immediate stories on your website.
+    type: stories
+    link:
+        text: Build your first AMP Story
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/?format=stories
+  - title: AMP Ads
+    description: Extend your website with a fast and lightweight ad experiences.
+    type: ads
+    link:
+        text: Build your first AMP Ad
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/?format=ads
+  - title: AMP Emails
+    description: Create emails, that allow your recipients to interact dynamically with content.
+    type: email
+    link:
+        text: Build your first AMP Email
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/create_email?format=email
+
+resources_formats:
+  - websites
+  - stories
+  - ads
+  - email
+resources_cards:
+  - title: Guides and Tutorials
+    description: Here you can find everything you need to build AMP experiences.
+    icon: guides-documents
+    link: /content/amp-dev/documentation/guides-and-tutorials/index.html
+  - title: Components
+    description: The complete documented AMP library and its referencees.
+    icon: code
+    link: /content/amp-dev/documentation/components/index.html
+  - title: Examples
+    description: The fastest way to learn is to peak over the tangible examples.
+    icon: examples-flyout
+    link: /content/amp-dev/documentation/examples/index.html
+  - title: Templates
+    description: Don't want to start from scratch? Start with a ready-made design.
+    icon: template
+    link: /content/amp-dev/documentation/templates/index.html
+  - title: Tools
+    description: Begin Building for creation, design and development.
+    icon: wrench
+    link: /content/amp-dev/documentation/tools.html
+
+---
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
+{% do doc.styles.addCssFile('/css/components/templates/overview.css') %}
+
+
+{% block main %}
+  <main class="ap--main ap-t-overview">
+    <div class="ap--container">
+      <div class="ap--content">
+
+        {% do doc.styles.addCssFile('/css/components/molecules/overview-title.css') %}
+        <section class="ap--section">
+          <div class="ap--overview-title">
+            <div class="ap-m-overview-title">
+              {% include '/views/partials/breadcrumbs.j2' %}
+              <h1>{{ doc.title }}</h1>
+              <p>Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:</p>
+            </div>
+          </div>
+        </section>
+
+        {% do doc.styles.addCssFile('/css/components/organisms/format-cards.css') %}
+        <section class="ap--section">
+          <div class="ap--format-cards">
+            <div class="ap-o-format-cards">
+              {% for card in doc.format_cards %}
+              <a href="{{g.doc(card.link.url, locale=doc.locale).url.path}}" class="ap-o-format-cards-card ap-o-format-cards-card-{{ card.type }}">
+                <div class="ap-o-format-cards-card-body">
+                  <div class="ap-a-ico ap-o-format-cards-card-icon">
+                    <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ card.type }}"></use>
+                    </svg>
+                  </div>
+                  <h4 class="ap-o-format-cards-card-headline">{{ card.title }}</h4>
+                  <p class="ap-o-format-cards-card-copy">{{ card.description }}</p>
+                </div>
+                <div class="ap-o-format-cards-card-link ap-m-lnk">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% do doc.icons.useIcon('icons/internal.svg') %}
+                    <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                    </svg>
+                  </div>
+                  <span class="ap-m-lnk-text">{{ card.link.text }}</span>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+
+        {% do doc.styles.addCssFile('/css/components/organisms/resources-overview.css') %}
+        <amp-state id="chosenFormat" class="i-amphtml-layout-container i-amphtml-element" i-amphtml-layout="container" hidden="" aria-hidden="true">
+          <script type="application/json">
+            {
+              "activeFormat": "websites"
+            }
+          </script>
+        </amp-state>
+        <section class="ap--section-fullscreen">
+          <div class="ap--resources-overview">
+            <div class="ap-o-resources-overview ap-o-resources-overview-websites" [class]="'ap-o-resources-overview ap-o-resources-overview-' + chosenFormat.activeFormat">
+              {% for format in doc.resources_formats %}
+              <div class="ap--format-background ap--format-background-{{ format }}"
+                [class]="chosenFormat.activeFormat == '{{ format }}' ? 'ap--format-background ap--format-background-{{ format }} active' : 'ap--format-background ap--format-background-{{ format }}'"></div>
+              {% endfor %}
+              <div class="ap-format-content">
+                <div class="ap-info-box">
+                  <div class="ap-info-box-text">
+                    <h4>Choose your destination</h4>
+                    <p><strong>NOTE –</strong> Throughout the AMP documentation you will find a switch on the upper left side to quickly change the AMP format you’re working on.</p>
+                  </div>
+                  <div class="ap-format-toggle">
+                    {% for format in doc.resources_formats %}
+                    <button class="ap-format-toggle-button ap-format-toggle-button-{{ format }} {{'active' if format == 'websites' }}"
+                      [class]="chosenFormat.activeFormat == '{{ format }}' ? 'ap-format-toggle-button ap-format-toggle-button-{{ format }} active' : 'ap-format-toggle-button ap-format-toggle-button-{{ format }}'"
+                      on="tap:AMP.setState({chosenFormat: {activeFormat: '{{ format }}'}})">
+                      <span class="ap-a-ico">
+                        <svg>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use>
+                        </svg>
+                      </span>
+                      <span>{{ format }}</span>
+                    </button>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% do doc.styles.addCssFile('/css/components/organisms/resources-grid.css') %}
+                <div class="ap-o-resources-grid">
+                  <h2>Useful resources</h2>
+                  <div class="ap-o-resources-grid-cards">
+                    {% for card in doc.resources_cards %}
+                    <a class="ap-o-resources-grid-card" href="{{g.doc(card.link, locale=doc.locale).url.path}}" [href]="'{{g.doc(card.link, locale=doc.locale).url.path}}?format=' + chosenFormat.activeFormat">
+                      <div class="ap-a-ico ap-o-resources-grid-card-icon">
+                        {% do doc.icons.useIcon('/icons/' + card.icon + '.svg') %}
+                        <svg>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ card.icon }}"></use>
+                        </svg>
+                      </div>
+                      <h4 class="ap-o-resources-grid-card-headline">{{ card.title }}</h4>
+                      <p class="ap-o-resources-grid-card-copy">{{ card.description }}</p>
+                    </a>
+                    {% endfor %}
+
+                    {% do doc.styles.addCssFile('/css/components/molecules/tip.css') %}
+                    <div class="ap-o-resources-grid-card ap-o-resources-grid-card--tip">
+                      <div class="ap-m-tip ap-m-tip-default">
+                        <div class="ap-m-tip-content">
+                          <h4>Using a CMS?</h4>
+                          <p>AMP integrates with many publishing platforms and content management systems! Find the full list under <a
+                              href="{{g.doc('/content/amp-dev/community/platform-and-vendor-partners.html', locale=doc.locale).url.path}}">Platform
+                              and Vendor Partners.</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+        <section class="ap--section">
+          <div class="ap--video-slider">
+            <h2 class="ap-o-video-slider-text">Featured Videos</h2>
+            <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
+            {% with %}
+            {% set youtube_video_ids = [
+            '4f9KU5VJpOU',
+            'axwrgJGkrNU',
+            'NySyeCLrnSA'
+            ]
+            %}
+            {% include '/views/partials/video-carousel.j2' %}
+            {% endwith %}
+          </div>
+        </section>
+
+        {% do doc.styles.addCssFile('/css/components/organisms/banner.css') %}
+        <section class="ap--section-fullscreen">
+          <div class="ap--banner">
+            <div class="ap-o-banner">
+              <h2 class="ap-o-banner-headline">Get Involved</h2>
+              <p class="ap-o-banner-copy">AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to
+                make
+                the web suck less.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+{% endblock %}

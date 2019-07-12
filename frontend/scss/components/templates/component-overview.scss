@@ -30,8 +30,21 @@ body {
 
   .#{utility('content')},
   .#{utility('help')} {
-    @include content;
-    @include content-white-bg;
+    grid-column: 1;
+    position: relative;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    background: color('white');
+    @include content-shadow;
+
+    @media (min-width: 768px) {
+      grid-column: 9 / 25;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 6 / 25;
+    }
   }
 
   .#{utility('sidebar')} {
@@ -112,6 +125,29 @@ body {
           height: 0;
           margin: 0;
         }
+      }
+    }
+    &-grid {
+      margin-bottom: 10px;
+    }
+  }
+
+  .#{utility('card-grid')} {
+    padding: 40px 0;
+    margin: 0;
+
+    h2 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  .#{organism('card-grid')} {
+    &-card {
+      .#{molecule('lnk')} {
+        padding: 0;
+      }
+      .#{molecule('lnk')}:last-of-type {
+        padding: 0 0 10px 0;
       }
     }
   }

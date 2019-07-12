@@ -1,7 +1,7 @@
 /*
 
 #############################
-### ORGANISM: code-grid ########
+### ORGANISM: resources-grid ########
 #############################
 
 */
@@ -16,66 +16,70 @@
 @import 'components/atoms/_text.scss';
 
 .#{utility('resources-grid')} {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 40px 0;
-
-  @media (min-width: 600px) {
-    flex-direction: row;
-  }
-  @media (min-width: 768px) {
-    flex-direction: column;
-  }
-  @media (min-width: 930px) {
-    margin: 0 60px 30px 60px;
-  }
-  @media (min-width: 1024px) {
-    flex-direction: row;
-  }
+  grid-column: 3 / 23;
 }
 .#{organism('resources-grid')} {
-  &-text {
-    width: 100%;
-    padding-bottom: 20px;
+  &-cards {
+    display: grid;
+    grid-gap: 0;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
   }
 
   &-card {
-    margin: 10px 0;
-    padding: 10px 20px;
+    margin: 15px 0;
+    padding: 20px 20px;
     border-radius: 10px;
     background-color: color('white');
-    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.07);
+    box-shadow: 6px 9px 40px 0 transparentize(color('black'), 0.85);
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    grid-column: span 12;
+
+    @media (min-width: 600px) {
+      grid-column: span 6;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: span 4;
+    }
 
     &:hover {
       transform: translateY(-2px);
     }
 
-    @media (min-width: 600px) {
-      max-width: 32%;
-    }
-    @media (min-width: 768px) {
-      max-width: 100%;
-    }
-    @media (min-width: 1024px) {
-      max-width: 32%;
-    }
-
     &-icon {
       height: 65px;
       width: 65px;
-      margin: 25px 0px 35px 0;
+      margin: 10px 0;
     }
 
     &-headline {
       color: color('blue-ribbon');
     }
 
+    &--tip {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin: 10px 0 10px 0;
 
+      @media (min-width: 768px) {
+        margin: auto 0 10px 0;
+      }
+      @media (min-width: 1024px) {
+        padding: 0 22.5px;
+      }
+
+      .#{molecule('tip')}-default {
+        margin: 0 0 20px 0;
+        border-radius: 4px;
+
+        &:before {
+          left: 47.5%;
+          bottom: -10px;
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
   }
-
-
-
 }

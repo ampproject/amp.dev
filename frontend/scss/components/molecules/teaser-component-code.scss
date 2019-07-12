@@ -1,8 +1,8 @@
 /*
 
-##################################
-### ORGANISM: teaser component ###
-##################################
+#######################################
+### MOLECULE: teaser-component-code ###
+#######################################
 
 ### INFO:
 
@@ -13,7 +13,7 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
-@import 'teaser';
+@import 'components/molecules/_teaser.scss';
 
 .#{molecule('teaser-component')} {
   &.#{molecule('teaser')} {
@@ -41,6 +41,7 @@
       align-items: stretch;
       margin-top: 20px;
     }
+
     &-tags {
       @include teaser-tag-zero;
     }
@@ -58,6 +59,43 @@
       &-title {
         @include teaser-header-title;
         font-weight: bold;
+      }
+    }
+
+    &-code {
+      box-shadow: 0 15px 30px 0 transparentize(color('black'), 0.85);
+      margin-bottom: 20px;
+      grid-column: span 12;
+      transition: transform .3s cubic-bezier(.25,.1,.25,1), box-shadow .3s cubic-bezier(.25,.1,.25,1);
+
+      &:hover {
+        transform: translate3d(0,-2px,0);
+        box-shadow: 0 25px 60px 0 rgba(0,0,0,.1);
+      }
+
+      @media (min-width: 600px) {
+        grid-column: span 6;
+      }
+
+      @media (min-width: 1024px) {
+        grid-column: span 4;
+      }
+
+      .#{molecule('teaser')}-card {
+        overflow: hidden;
+        position: relative;
+        background-color: white;
+        box-shadow: none;
+      }
+
+      code {
+        font-size: 1.125em;
+        font-weight: bold;
+        color: color('charade');
+      }
+
+      p {
+        font-size: 0.75em;
       }
     }
 
