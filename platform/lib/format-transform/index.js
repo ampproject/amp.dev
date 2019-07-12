@@ -40,7 +40,7 @@ class FormatTransform {
 
   transform(input, target) {
     if (!this.supportsFormat(target)) {
-      return input;
+      throw new Error(`Unsupported transform format: ${target}`);
     }
     const {transforms} = this.formats[target];
     const $ = cheerio.load(input);
@@ -54,6 +54,7 @@ class FormatTransform {
   }
 
   transformElement_(el, transform) {
+    // Transforming to null should result in element deletion.
     if (transform === null) {
       transform = '';
     }

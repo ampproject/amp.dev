@@ -23,32 +23,27 @@ describe('formatTransform', () => {
     expect(formatTransform.transform(input, 'email')).toBe(want);
   });
 
-  it('removes tags with unsupported attributes', () => {
+  it('makes URLs absolute', () => {
     const input = `<html ⚡><head></head><body>
-<div>This should stay</div>
-<amp-img [src]="something"></amp-img>
-<div>This should stay</div>
+<a href="/something">Link</a>
+<amp-img src="/something"></amp-img>
+<form action-xhr="/something"></form>
 </body></html>`;
     const want = `<html ⚡4email><head></head><body>
-<div>This should stay</div>
-
-<div>This should stay</div>
+<a href="http://localhost:8080/something">Link</a>
+<amp-img src="http://localhost:8080/something"></amp-img>
+<form action-xhr="http://localhost:8080/something"></form>
 </body></html>`;
     expect(formatTransform.transform(input, 'email')).toBe(want);
   });
 
-  it('removes comments and headings', () => {
-    const input = `<html ⚡><head></head><body>
-<h1>This should stay</h1>
-<h2>Test</h2>
-<!-- Some explanation -->
-<amp-img [src]="something"></amp-img>
-<div>This should stay</div>
-</body></html>`;
-    const want = `<html ⚡4email><head></head><body>
-<h1>This should stay</h1>
-<div>This should stay</div>
-</body></html>`;
+  it('replaces boilerplate', () => {
+    const input = `<html ⚡4email><head>
+<style amp-boilerplate></style>
+</head><body></body></html>`;
+    const want = `<html ⚡4email><head>
+<style amp4email-boilerplate>body{visibility:hidden}</style>
+</head><body></body></html>`;
     expect(formatTransform.transform(input, 'email')).toBe(want);
   });
 });

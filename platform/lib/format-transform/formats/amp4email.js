@@ -15,14 +15,7 @@
  */
 
 const config = require('@lib/config.js');
-const host = config.getHost(config.hosts.platform);
-
-function absoluteUrl(url) {
-  if (!url.match(/^https?:\/\//)) {
-    url = host + url;
-  }
-  return url;
-}
+const host = config.hosts.platform;
 
 module.exports = {
   validatorRuntime: 'AMP4EMAIL',
@@ -35,20 +28,21 @@ module.exports = {
     'form, a': (el) => {
       el.removeAttr('target');
     },
-    'amp-list': (el) => {
-      el.removeAttr('reset-on-refresh');
-      el.removeAttr('binding');
-    },
     'form[action-xhr]': (el) => {
-      el.attr('action-xhr', absoluteUrl(el.attr('action-xhr')));
+      el.attr('action-xhr', config.absoluteUrl(host, el.attr('action-xhr')));
     },
     'a[href]': (el) => {
-      el.attr('href', absoluteUrl(el.attr('href')));
+      el.attr('href', config.absoluteUrl(host, el.attr('href')));
     },
     'amp-img[src], amp-anim[src], amp-list[src]': (el) => {
-      el.attr('src', absoluteUrl(el.attr('src')));
+      el.attr('src', config.absoluteUrl(host, el.attr('src')));
     },
     'head > style[amp-boilerplate]':
       '<style amp4email-boilerplate>body{visibility:hidden}</style>',
+
+    'head > title': null,
+    'head > link': null,
+    'head > meta:not([charset])': null,
+    'noscript': null,
   },
 };
