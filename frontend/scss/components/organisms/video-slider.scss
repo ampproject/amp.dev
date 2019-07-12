@@ -17,7 +17,7 @@
 
 .#{utility('video-slider')} {
   @media (min-width: 930px) {
-    padding: 40px 60px 80px 60px;
+    padding: 40px 0;
   }
 }
 .#{organism('video-slider')} {
@@ -26,8 +26,10 @@
   }
 
   &-carousel {
-    margin: 30px 0 50px 0;
-    box-shadow: 6px 9px 40px 0px rgba(0,0,0,0.15);
+    amp-youtube {
+      box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.16);
+      margin: 30px 0 70px 20px;
+    }
 
     .amp-carousel-button {
       width: 3em;
@@ -35,7 +37,7 @@
       border-radius: 50%;
       box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
       transition: 400ms;
-      background-color: #F3F3F3;
+      background-color: color('concrete');
       outline: none;
 
       &-prev {

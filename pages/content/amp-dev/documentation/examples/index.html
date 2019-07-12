@@ -30,30 +30,193 @@ teaser:
     <span id="ap--sidebar-content" class="ap--sidebar"></span>
     <section class="ap--content">
       {% include '/views/partials/sidebar-toggle-button.j2' %}
+      {% include '/views/partials/breadcrumbs.j2' %}
+
       <h1>Learn AMP by example</h1>
-
-      <amp-state id="activeFilter">
-        <script type="application/json">
-          {
-            "chosenFilter": "none"
-          }
-        </script>
-      </amp-state>
-
       <p>A hands-on introduction to AMP focusing on code and live samples. Learn how to create AMP pages and see examples for all AMP components.</p>
 
-      {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
-      {% include '/views/partials/category-filter.j2' %}
+      {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
+      <section class="ap--card-grid">
+        <h2 class="ap-o-card-grid-text">AMP’s examples</h2>
 
-      {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-      <div class="ap-o-teaser-grid">
-        {# Hardcode to a length of 9 teasers as there will be at least that much #}
-        <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-          {% for teaser_doc in g.collection('/content/amp-dev/documentation/examples/documentation').list_docs(locale=doc.locale, order_by='title') %}
+
+        {% with %}
+        {% set card_grid_items = [
+          {
+            "icon_name": "code",
+            "headline": "Components",
+            "text": "Create every content, layout and feature on your website with a amp component.",
+            "strong": "These are the most used components:",
+            "links": [
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "amp-3d-gltf"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "amp-ad"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "amp-carousel"
+              }
+            ]
+          },
+          {
+            "icon_name": "content-modules",
+            "headline": "Cohesive experiences",
+            "text": "Build on these user first web experiences, immersive stories, e-commerce systems and dynamic email examples.",
+            "links":[
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Multi Page Flow"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "DoubleClick AMP Story Ads"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Payments in AMP"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Advanced Server Request"
+              }
+            ]
+          },
+          {
+            "icon_name": "optimize-board",
+            "headline": "Design & Layout",
+            "text": "Find examples for modern responsive and modern web pages:",
+            "links":[
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Tab Panels with amp-selector"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Animated Snackbar"
+              }
+            ]
+          },
+          {
+            "icon_name": "content-modules-wide",
+            "headline": "Uses cases",
+            "text": "This examples of AMP e-commerce pages, and articels demonstrates how to build an immersive reading experience by adding animations.",
+            "links":[
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "E-Commerce"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Magazine article"
+              },
+              {
+                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
+                "text": "Band page"
+              }
+            ]
+          }
+        ]
+        %}
+        {% include '/views/partials/card-grid.j2' %}
+        {% endwith %}
+
+      </section>
+
+
+      {% do doc.styles.addCssFile('/css/components/molecules/teaser-playground.css') %}
+      <section class="ap-m-teaser-playground">
+        <div class="ap-m-teaser-playground-text">
+          <h2>AMP Playground</h2>
+          <p>
+            Try it yourself with the AMP Playground. Test your ideas directly in the browser and get instant feedback.
+          </p>
+          <a class="ap-m-lnk ap-m-lnk-square ap--newsletter-double" href="https://playground.amp.dev/">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </div>
+            <span class="ap-m-lnk-text">Open in AMP Playground</span>
+          </a>
+        </div>
+        <div class="ap-m-teaser-playground-image">
+          <amp-img alt="Playground Teaser image"
+                   src="/static/img/playground-teaser@3x.png"
+                   class="ap--media"
+                   layout="responsive"
+                   width="1668px"
+                   height="1236px"
+                   srcset="/static/img/playground-teaser@3x.png 1600w,
+                           /static/img/playground-teaser@2x.png 1100w,
+                           /static/img/playground-teaser.png 500w">
+          </amp-img>
+        </div>
+      </section>
+      <section class="ap-m-table-component-container">
+        {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
+
+
+        {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+        {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
+
+        <div class="ap-m-table-component-navigation">
+          <h2>Categories</h2>
+          <div class="ap-m-table-component-navigation-links">
+            {% for category, docs in categories %}
+              {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+              <a href="#{{category}}">{{ _(category) }}</a>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% for category, documents in categories %}
+        {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+        <h4 id="{{ category }}">{{ _(category) }}</h4>
+        <div class="ap-o-teaser-grid">
+          {# Hardcode to a length of 9 teasers as there will be at least that much #}
+          <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
+          {% for document in documents if document.teaser %}
+            {% with teaser_doc = document %}
             {% include '/views/partials/teaser.j2' %}
+            {% endwith %}
+          {% endfor %}
+          </div>
+        </div>
+        <div class="ap-m-table-component">
+          {% for document in documents if not document.teaser %}
+          <a class="ap-m-table-component-link" href="{{ document.url.path }}">
+            <div class="ap-m-table-component-row">
+              {% if document.formats %}
+              {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+              <div class="ap-m-table-component-tags">
+                {% for format in document.formats %}
+                <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-table-component-tag"></div>
+                {% endfor %}
+              </div>
+              {% endif %}
+              <div class="ap-m-table-component-name ap-m-table-component-name-example">
+                <span class="ap-m-table-component-name-title">{{ document.titles('teaser') }}</span>
+              </div>
+              <div class="ap-m-table-component-info">
+                <div class="ap-m-table-component-used-components">
+                  {% if document.used_components %}
+                  {% for component in document.used_components %}
+                  <code>{{ component }}</code>
+                  {% endfor %}
+                  {% else %}
+                  <p> </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </a>
           {% endfor %}
         </div>
-      </div>
+        {% endfor %}
+      </section>
     </section>
   </div>
 </main>
