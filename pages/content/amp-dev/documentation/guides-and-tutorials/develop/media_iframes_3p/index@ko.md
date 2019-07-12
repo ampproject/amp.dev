@@ -73,7 +73,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
  The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 요소는 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소와 아주 유사하며, GIF 와 같은 애니메이션 이미지의 로드 및 재생을 관리하는 추가 기능을 제공합니다.
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim width="400"
   height="300"
@@ -97,7 +97,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 동영상이 시작하기 전에 플레이스홀더를 삽입하고, 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -119,7 +119,7 @@ AMP HTML 런타임은 이미지 리소스를 효과적으로 관리하여 표시
 
 오디오가 시작하기 전에 플레이스홀더를 삽입하고, 브라우저에서 HTML5 오디오를 지원하지 않는 경우 대체할 내용을 삽입합니다. 예를 들면 다음과 같습니다.
 
-[example preview="inline" playground="true" imports="amp-audio"]
+[example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
 <amp-audio width="400"
   height="200"

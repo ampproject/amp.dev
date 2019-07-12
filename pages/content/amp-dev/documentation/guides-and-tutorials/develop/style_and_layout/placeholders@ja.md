@@ -13,7 +13,7 @@ $title: プレースホルダとフォールバック
 指定する場合、`placeholder` 要素は AMP 要素の直接の子にする必要があります。
 `placeholder` として指定された要素は常に親 AMP 要素の中に入ります（`fill`）。
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
@@ -52,7 +52,7 @@ $title: プレースホルダとフォールバック
 
 次の例では、`fallback` 属性を使用して、ブラウザが特定の機能に対応していないことをユーザーに伝えます。
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"

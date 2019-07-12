@@ -81,6 +81,11 @@ class SamplesBuilder {
     this._sitemap = {};
   }
 
+  /**
+   * Builds samples and previews, optionally watching for changes.
+   * @param {boolean} watch  Watch for changes
+   * @return {Promise<void>} Resolves when build is done
+   */
   async build(watch) {
     // Configure cache
     this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
@@ -133,8 +138,10 @@ class SamplesBuilder {
       }
 
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
-        this._log.await(`Building sample ${sample.relative} ...`);
-        await this._parseSample(sample).then((parsedSample) => {
+        try {
+          this._log.await(`Building sample ${sample.relative} ...`);
+          const parsedSample = await this._parseSample(sample);
+
           // Skip samples that are drafts for alle envs except development
           if (parsedSample.document.metadata.draft && config.environment !== 'development') {
             callback();
@@ -160,12 +167,10 @@ class SamplesBuilder {
           for (const file of files) {
             stream.push(file);
           }
-
-          callback();
-        }).catch((e) => {
-          this._log.error(e);
-          callback();
-        });
+        } catch (error) {
+          this._log.error(error);
+        }
+        callback();
       }));
 
       stream.pipe(gulp.dest((file) => {
@@ -201,7 +206,8 @@ class SamplesBuilder {
   /**
    * Parse a sample source file into a JSON using the parser from the
    * ampbyexample.com package and while doing so updates some fields
-   * @return {Promise}
+   * @param {Vinyl} sample     The file from which the sample is parsed
+   * @return {Promise<Object>} The sample parsed by abe.com
    */
   async _parseSample(sample) {
     const samplePath = sample.path;
@@ -210,7 +216,7 @@ class SamplesBuilder {
       sample.path = path.dirname(sample.path) + '.html';
     }
     const platformHost = config.getHost(config.hosts.platform);
-    return await abe.parseSample(samplePath, {
+    const parsedSample = await abe.parseSample(samplePath, {
       'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
@@ -220,58 +226,58 @@ class SamplesBuilder {
         'backend': BACKEND_HOST,
         'preview': config.hosts.preview.base,
       },
-    }).then((parsedSample) => {
-      // parsedSample.filePath is absolute but needs to be relative in order
-      // to use it to build a URL to GitHub
-      parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
+    }, sample.contents.toString());
 
-      // Add the delivery path of the manual for preview rendering
-      parsedSample.route = this._getDocumentationRoute(sample);
+    // parsedSample.filePath is absolute but needs to be relative in order
+    // to use it to build a URL to GitHub
+    parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
 
-      // Rewrite some markdown to be consumable by Grow
-      for (const index in parsedSample.document.sections) {
-        // Replace GitHub sourcecode syntax by python-markdown
-        let markdown = parsedSample.document.sections[index].doc_;
-        markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
-        markdown = MarkdownDocument.escapeMustacheTags(markdown);
+    // Add the delivery path of the manual for preview rendering
+    parsedSample.route = this._getDocumentationRoute(sample);
 
-        // Splice out sourcecode blocks to preserve whitespace
-        const codeBlocks = {};
-        const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms;
-        markdown = markdown.replace(CODE_BLOCK_PATTERN, (match) => {
-          // Hash and save the code block for later restore
-          let hash = crypto.createHash('sha1');
-          hash.update(match);
-          hash = hash.digest('base64');
+    // Rewrite some markdown to be consumable by Grow
+    for (const index in parsedSample.document.sections) {
+      // Replace GitHub sourcecode syntax by python-markdown
+      let markdown = parsedSample.document.sections[index].doc_;
+      markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
+      markdown = MarkdownDocument.escapeMustacheTags(markdown);
 
-          codeBlocks[hash] = match;
-          return hash;
-        });
+      // Splice out sourcecode blocks to preserve whitespace
+      const codeBlocks = {};
+      const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms;
+      markdown = markdown.replace(CODE_BLOCK_PATTERN, (match) => {
+        // Hash and save the code block for later restore
+        let hash = crypto.createHash('sha1');
+        hash.update(match);
+        hash = hash.digest('base64');
 
-        // Replace empty lines with leading space with just a new line
-        markdown = markdown.replace(/^\s+/gm, '\n');
+        codeBlocks[hash] = match;
+        return hash;
+      });
 
-        // Replace new lines with following space or multiple new lines
-        // by just a new line
-        markdown = markdown.replace(/(\n +|\n{2,})/gm, '\n\n');
+      // Replace empty lines with leading space with just a new line
+      markdown = markdown.replace(/^\s+/gm, '\n');
 
-        // Restore codeblocks
-        /* eslint-disable guard-for-in */
-        for (const hash of Object.keys(codeBlocks)) {
-          markdown = markdown.replace(hash, codeBlocks[hash]);
-        }
+      // Replace new lines with following space or multiple new lines
+      // by just a new line
+      markdown = markdown.replace(/(\n +|\n{2,})/gm, '\n\n');
 
-        parsedSample.document.sections[index].doc_ = markdown;
+      // Restore codeblocks
+      /* eslint-disable guard-for-in */
+      for (const hash of Object.keys(codeBlocks)) {
+        markdown = markdown.replace(hash, codeBlocks[hash]);
       }
 
-      return parsedSample;
-    });
+      parsedSample.document.sections[index].doc_ = markdown;
+    }
+
+    return parsedSample;
   }
 
   /**
    * Adds a sample to the sitemap object for the playground to then render
    * a list of available samples
-   * @param {Vinyl} sample       The file from which the sample is parsed
+   * @param {Vinyl} sample        The file from which the sample is parsed
    * @param {Object} parsedSample The parsed sample
    */
   _addToSitemap(sample, parsedSample) {
@@ -298,7 +304,7 @@ class SamplesBuilder {
    * the gulp stream that is usable by the playground
    * @type {Vinyl}
    */
-  _generateSitemap() {
+  async _generateSitemap() {
     for (const [format, categories] of Object.entries(this._sitemap)) {
       this._sitemap[format] = {
         'title': format,
@@ -314,25 +320,23 @@ class SamplesBuilder {
       }
     }
 
-    return writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap), {
-      flag: 'wx+',
-    }).then(() => {
+    try {
+      await writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap), {
+        flag: 'wx+',
+      });
       this._log.success('Wrote sample sitemap.');
-    }).catch(() => {
-      // An existing sitemap is okay as it is assumed that every other write
-      // results from a watch-build and would not contain all samples
+    } catch (_) {
       this._log.info('Samples sitemap already exists');
-      return;
-    });
+    }
   }
 
 
   /**
    * Parses the category from a sample path which is the first level
    * directory name after the base path
-   * @param  {Vinyl} sample The sample from the gulp stream
-   * @param  {Boolean} ordered Flag if the ordinal number should be included
-   * @return {String}       The category
+   * @param  {Vinyl}   sample    The sample from the gulp stream
+   * @param  {Boolean} [ordered] Flag if the ordinal number should be included
+   * @return {string}            The category
    */
   _getCategory(sample, ordered = false) {
     // Check if the category has already been computed
@@ -356,7 +360,7 @@ class SamplesBuilder {
    * Takes the path of the sample vinyl and creates a server relative URL
    * to use for routing and build other URLs
    * @param  {Vinyl} sample The sample from the gulp stream
-   * @return {String}       The route
+   * @return {string}       The route
    */
   _getBaseRoute(sample) {
     return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
@@ -366,7 +370,7 @@ class SamplesBuilder {
    * Takes the path of the sample vinyl and creates a server relative URL
    * to use for routing and source canonical
    * @param  {Vinyl} sample The sample from the gulp stream
-   * @return {String}       The route
+   * @return {string}       The route
    */
   _getDocumentationRoute(sample) {
     let base = this._getBaseRoute(sample);
@@ -380,7 +384,7 @@ class SamplesBuilder {
    * Takes the path of the sample vinyl and creates a server relative URL
    * to use for the previews
    * @param  {Vinyl} sample The sample from the gulp stream
-   * @return {String}       The route
+   * @return {string}       The route
    */
   _getPreviewRoute(sample) {
     return this._getBaseRoute(sample) +
@@ -391,7 +395,7 @@ class SamplesBuilder {
    * Takes the path of the sample vinyl and creates a server relative URL
    * to use for the source files
    * @param  {Vinyl} sample The sample from the gulp stream
-   * @return {String}       The route
+   * @return {string}       The route
    */
   _getSourceRoute(sample) {
     return `${this._getBaseRoute(sample)}`;
@@ -401,7 +405,7 @@ class SamplesBuilder {
    * Takes the path of the sample vinyl and creates a server relative URL
    * to use for the source files
    * @param  {Vinyl} sample The sample from the gulp stream
-   * @return {String}       The route
+   * @return {string}       The route
    */
   _getEmbedRoute(sample) {
     return `${this._getBaseRoute(sample)}/embed`;
@@ -469,7 +473,7 @@ class SamplesBuilder {
    * Builds a YAML string that is added to the manual document to
    * build a nice teaser for the sample
    * @param  {Object} parsedSample
-   * @return {String}
+   * @return {string}
    */
   _getTeaserData(parsedSample) {
     const teaserData = {};
@@ -488,7 +492,7 @@ class SamplesBuilder {
   /**
    * Used to determine the sample format by string
    * @param  {Object} parsedSample
-   * @return {String}
+   * @return {string}
    */
   _getSampleFormat(parsedSample) {
     if (parsedSample.document.isAmpStory) {
@@ -508,15 +512,18 @@ class SamplesBuilder {
   /**
    * Parses all components used in sample and gives them back as an Array
    * @param  {Object} parsedSample
-   * @return {Array}
+   * @return {Object}
    */
   _getUsedComponents(parsedSample) {
     // Dirty RegEx to quickly parse component names from head
-    const COMPONENT_PATTERN = /<script.*?custom-.*?="(?<name>.*?)".*?<\/script>/g;
+    const COMPONENT_PATTERN = /<script[^>]*?custom-(?<type>[a-z]+)="(?<name>[^"]+)"[^>]*src="[^"]+-(?<version>\d+(\.\d+)*)\.js"[^>]*>\s*<\/script>/g;
 
     const usedComponents = {};
-    parsedSample.document.head.replace(COMPONENT_PATTERN, (script, name) => {
-      usedComponents[name] = script.replace(/\"/g, '\"');
+    parsedSample.document.head.replace(COMPONENT_PATTERN, (script, type, name, version) => {
+      usedComponents[name] = {
+        version,
+        type,
+      }
     });
 
     return usedComponents;
@@ -525,9 +532,9 @@ class SamplesBuilder {
   /**
    * Creates various HTML documents that are then served statically for
    * use in playground and its embeds
-   * @param  {Vinyl} sample The sample from the gulp stream
+   * @param  {Vinyl}  sample       The sample from the gulp stream
    * @param  {Object} parsedSample The sample parsed by abe.com
-   * @return {Array} An array of Vinyl files to write
+   * @return {Array<Vynyl>}        An array of Vinyl files to write
    */
   _buildRawSources(sample, parsedSample) {
     const sources = [];
@@ -588,7 +595,7 @@ class SamplesBuilder {
    * that need a JS snippet attached
    * @param  {Vinyl} sample
    * @param  {Object} parsedSample
-   * @return {Array}
+   * @return {Array<Object>}
    */
   _renderEmbed(sample, parsedSample) {
     // Render embed file for stories enabling to jump to a stories page given

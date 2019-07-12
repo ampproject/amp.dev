@@ -1,5 +1,5 @@
 ---
-$title: AMP Contributors Summit 2019
+$title: AMP Contributor Summit 2019
 $order: 1
 $view: /views/overview/events.j2
 
@@ -13,16 +13,20 @@ section_links:
   - FAQ
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
+{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
+{% do doc.amp_dependencies.add('amp-selector', '0.1') %}
+{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
+{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 <section class="ap--stage ap--container-fluid">
-    {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
+    {% do doc.styles.addCssFile('css/components/organisms/stage-cs.css') %}
 
     <div class="ap-o-stage ap-o-stage-amp-conf all">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content ap-o-stage-content-roadshow">
 
             <h2 class="ap-o-stage-content-subline">October 8 - 10</h2>
-            <h1 class="ap-o-stage-content-headline">AMP Contributors Summit 2019</h1>
+            <h1 class="ap-o-stage-content-headline">AMP Contributor Summit 2019</h1>
             <h2 class="ap-o-stage-content-subline">New York City</h2>
         </div>
       </div>
@@ -49,7 +53,10 @@ section_links:
 
 <section class="ap--container">
   <p class="ap--content-default">
-    The AMP team and community brought their yearly Contributors Summit to New York City for 3 full days with a goal to encorage more contributors, growing community, spread knowledge of current best practicies and solidify governance changes with TSC/AC/WG face-to-face meetings.
+    The AMP Contributor Summit is our annual opportunity for the AMP open source community to meet face-to-face to discuss the latest in AMP and where AMP is going.  This technical summit consists of a mix of different formats, including talks, breakout sessions and many opportunities for informal conversations.
+  </p>
+  <p class="ap--content-default">
+    Please <a href="https://events.withgoogle.com/ampcs2019/registrations/new/">apply to attend the AMP Contributor Summit</a> by July 22, 2019! 
   </p>
 </section>
 
@@ -64,7 +71,7 @@ section_links:
   <div class="ap--content-x-wide">
     <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
-        <div class="ap-o-agenda-selector-button" selected role="tab" tabindex="0" option="a">Day 1 (Optional)</div>
+        <div class="ap-o-agenda-selector-button ampcs" selected role="tab" tabindex="0" option="a">Day 0<small>Optional</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -123,7 +130,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">Day 2</div>
+        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Day 1<small>Talks + Breakouts</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -184,7 +191,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">Day 3</div>
+        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Day 2<small>Talks + Breakouts</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -294,11 +301,9 @@ section_links:
         </div>
       </div>
       <div class="ap-m-conf-location-content">
-        <a class="ap-m-conf-location-content-link" href="http://forum.academyhills.com/roppongi/en/">New York City</a>
         <p class="ap-m-conf-location-content-text">
-          New York
+          New York City, New York, USA
         </p>
-        <p class="ap-m-conf-location-content-text">..and live-streamed around the world.</p>
       </div>
     </div>
   </div>
@@ -311,18 +316,15 @@ section_links:
       <div class="ap-m-faq-content">
         <p class="ap-m-faq-content-question">Does it cost anything?</p>
         <p class="ap-m-faq-content-answer">No - tickets are free of charge.</p>
-        <p class="ap-m-faq-content-question">What language will the talks be in?</p>
-        <p class="ap-m-faq-content-answer"> All talks are being simultaneously presented and streamed in English and Japanese.</p>
-        <p class="ap-m-faq-content-question">Do I have to register for the live-stream?</p>
-        <p class="ap-m-faq-content-answer"> No! The registration is only for on-site attendees that physically attend the conference. Come back here to this site on April 17th for a link and embed of the live-stream.</p>
         <p class="ap-m-faq-content-question">Who is the event for?</p>
-        <p class="ap-m-faq-content-answer"> Web developers and designers who have used AMP and want to create even better AMP experiences, who haven't used AMP and are curious or want to contribute to AMP to make it better for everyone, and the web at large.</p>
-        <p class="ap-m-faq-content-question">Does registering mean I am all set to attend?</p>
-        <p class="ap-m-faq-content-answer">Not yet. While your chances of getting a seat are pretty good, we will confirm attendees on a case-by-case basis to ensure we attract the right audience. Note that your seat is not confirmed until you receive a confirmation code.</p>
+        <p class="ap-m-faq-content-answer">Anyone contributing to AMP today, or who wants to contribute to AMP, whether it be through code, outreach or other forms of contributions.</p>
+        <p class="ap-m-faq-content-question">I'm excited about using AMP or I have questions about using AMP, is this the right conference for me?</p>
+        <p class="ap-m-faq-content-answer">This summit is a technical summit for people who are contributing to the AMP open source project in some way (whether through code, documentation or some other way) or who want to start contributing.  Our contributors often start as users of AMP because they see something that they want to make better, and if this describes you then you might consider applying to attend.  If you're looking for more information about how to use AMP but aren't yet considering contributing to AMP you may prefer to attend one of our Roadshows instead.</p>
+        <p class="ap-m-faq-content-question">Does applying mean I am all set to attend?</p>
+        <p class="ap-m-faq-content-answer">Unfortunately, we have a limited number of spaces available for the summit, so not everyone who applies will be able to attend.</p>
         <p class="ap-m-faq-content-question">When will I hear back if I have a spot?</p>
-        <p class="ap-m-faq-content-answer">We'll try to confirm you within less than a week!</p>
-        <p class="ap-m-faq-content-question">What determines if I have a spot?</p>
-        <p class="ap-m-faq-content-answer">The AMP Conf is a mainly developer and designer focused event (read: the people actually creating AMP experiences). If you're non-technical, you may still apply but you'll have a slimmer chance of getting through (and you'll enjoy the conf less!).</p>
+        <p class="ap-m-faq-content-answer">Our goal is to confirm within a couple of weeks from the application deadline.</p>
+</p>
       </div>
     </div>
 </section>
@@ -341,7 +343,7 @@ section_links:
           <a class="ap-m-jumpto-item-link" href="{{g.doc('/content/amp-dev/events/amp-conf/accessibility.html', locale=doc.locale).url.path}}">Accessibility</a>
         </li>
         <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="mailto:amp-conf@google.com">Contact</a>
+          <a class="ap-m-jumpto-item-link" href="mailto:wg-outreach@amp.dev">Contact</a>
         </li>
       </ul>
     </div>

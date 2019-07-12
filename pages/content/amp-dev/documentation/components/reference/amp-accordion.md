@@ -13,7 +13,7 @@ $title: amp-accordion
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/tree/1906191709480/extensions/amp-accordion/amp-accordion.md.
+This file is imported from https://github.com/ampproject/amphtml/tree/1907022322580/extensions/amp-accordion/amp-accordion.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ Provides a way for viewers to glance at the content outline and jump to any sect
 <table>
   <tr>
     <td class="col-fourty"><strong>Required Script</strong></td>
-    <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Supported Layouts</a></strong></td>
@@ -139,6 +139,10 @@ The events below will be triggered on `section`s of `accordion`.
   <tr>
     <td width="40%"><strong><code>expand-single-section</code></strong></td>
     <td>Set this attribute on the <code>&lt;amp-accordion&gt;</code> to only allow one <code>&lt;section&gt;</code> to be expanded at a time. If the user focuses on one <code>&lt;section&gt;</code> any other previously expanded <code>&lt;section&gt;</code> will be collapsed.</td>
+  </tr>
+  <tr>
+    <td width="40%"><strong><code>[data-expand]</code></strong></td>
+    <td>Bind this attribute on a <code>&lt;section&gt;</code> to expand or collapse the section. An expression that evaluates to <code>false</code> will collapse the section if it is expanded, and anything else will expand the section if it is collapsed.</td>
   </tr>
 </table>
 

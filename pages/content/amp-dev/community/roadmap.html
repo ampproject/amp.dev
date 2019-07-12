@@ -5,6 +5,7 @@ $view: /views/custom.j2
 roadmap: !g.json /content/amp-dev/community/roadmap.json
 ---
 {% do doc.styles.addCssFile('css/components/templates/roadmap.css') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 <main class="ap--main ap-t-roadmap">
   <div class="ap--container">
