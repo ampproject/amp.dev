@@ -232,7 +232,7 @@ async function fetchArtifacts() {
     try {
       await sh(`gsutil cp -r ${TRAVIS_GCS_PATH}${buildNumber} ${project.paths.BUILD}`);
       await sh('find build -type f -exec tar xf {} \;');
-    } catch(e) {
+    } catch (e) {
       // If fetching the pages fails, force exit here to make sure
       // especially Travis gets the correct exit code
       process.exit(1);
@@ -260,7 +260,7 @@ async function buildPages(done) {
 
         try {
           await grow('deploy --noconfirm --threaded');
-        } catch(e) {
+        } catch (e) {
           // If building the pages fails, force exit here to make sure
           // especially Travis gets the correct exit code
           process.exit(1);
