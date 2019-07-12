@@ -89,7 +89,7 @@
       }
 
       code {
-        font-size: 1.125em;
+        font-size: 1em;
         font-weight: bold;
         color: color('charade');
       }
@@ -101,6 +101,10 @@
 
     &-content {
       @include teaser-content;
+
+      &-text {
+        margin-top: 10px;
+      }
     }
 
     &-image {
