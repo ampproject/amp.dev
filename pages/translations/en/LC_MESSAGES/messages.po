@@ -543,134 +543,56 @@ msgid ""
 "Overflow."
 msgstr ""
 
-#: /content/amp-dev/documentation/components/reference/amp-ad-exit.md
-#: /content/amp-dev/documentation/components/reference/amp-ad.md
-#: /content/amp-dev/documentation/components/reference/amp-analytics.md
-#: /content/amp-dev/documentation/components/reference/amp-auto-ads.md
-#: /content/amp-dev/documentation/components/reference/amp-call-tracking.md
-#: /content/amp-dev/documentation/components/reference/amp-experiment.md
-#: /content/amp-dev/documentation/components/reference/amp-mraid.md
-#: /content/amp-dev/documentation/components/reference/amp-share-tracking.md
-#: /content/amp-dev/documentation/components/reference/amp-smartlinks.md
-#: /content/amp-dev/documentation/components/reference/amp-social-share.md
-#: /content/amp-dev/documentation/components/reference/amp-sticky-ad.md
+msgid "introduction"
+msgstr "Introduction"
+
+msgid "components"
+msgstr "Components"
+
+msgid "guides"
+msgstr "Guides"
+
+msgid "advertising-analytics"
+msgstr "Advertising & Analytics"
+
 msgid "ads-analytics"
 msgstr "Advertising & Analytics"
 
-#: /content/amp-dev/documentation/components/reference/amp-access-laterpay.md
-#: /content/amp-dev/documentation/components/reference/amp-access-poool.md
-#: /content/amp-dev/documentation/components/reference/amp-access.md
-#: /content/amp-dev/documentation/components/reference/amp-action-macro.md
-#: /content/amp-dev/documentation/components/reference/amp-bind.md
-#: /content/amp-dev/documentation/components/reference/amp-byside-content.md
-#: /content/amp-dev/documentation/components/reference/amp-consent.md
-#: /content/amp-dev/documentation/components/reference/amp-date-picker.md
-#: /content/amp-dev/documentation/components/reference/amp-form.md
-#: /content/amp-dev/documentation/components/reference/amp-geo.md
-#: /content/amp-dev/documentation/components/reference/amp-gist.md
-#: /content/amp-dev/documentation/components/reference/amp-google-document-embed.md
-#: /content/amp-dev/documentation/components/reference/amp-install-serviceworker.md
-#: /content/amp-dev/documentation/components/reference/amp-list.md
-#: /content/amp-dev/documentation/components/reference/amp-live-list.md
-#: /content/amp-dev/documentation/components/reference/amp-mustache.md
-#: /content/amp-dev/documentation/components/reference/amp-next-page.md
-#: /content/amp-dev/documentation/components/reference/amp-script.md
-#: /content/amp-dev/documentation/components/reference/amp-selector.md
-#: /content/amp-dev/documentation/components/reference/amp-subscriptions-google.md
-#: /content/amp-dev/documentation/components/reference/amp-subscriptions.md
-#: /content/amp-dev/documentation/components/reference/amp-user-notification.md
-#: /content/amp-dev/documentation/components/reference/amp-video-docking.md
-#: /content/amp-dev/documentation/components/reference/amp-viewer-assistance.md
-#: /content/amp-dev/documentation/components/reference/amp-web-push.md
+msgid "e-commerce"
+msgstr "E-Commerce"
+
 msgid "dynamic-content"
 msgstr "Dynamic Content"
 
-#: /content/amp-dev/documentation/components/reference/amp-accordion.md
-#: /content/amp-dev/documentation/components/reference/amp-app-banner.md
-#: /content/amp-dev/documentation/components/reference/amp-base-carousel.md
-#: /content/amp-dev/documentation/components/reference/amp-carousel.md
-#: /content/amp-dev/documentation/components/reference/amp-fx-collection.md
-#: /content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md
-#: /content/amp-dev/documentation/components/reference/amp-iframe.md
-#: /content/amp-dev/documentation/components/reference/amp-image-lightbox.md
-#: /content/amp-dev/documentation/components/reference/amp-image-slider.md
-#: /content/amp-dev/documentation/components/reference/amp-layout.md
-#: /content/amp-dev/documentation/components/reference/amp-lightbox-gallery.md
-#: /content/amp-dev/documentation/components/reference/amp-lightbox.md
-#: /content/amp-dev/documentation/components/reference/amp-orientation-observer.md
-#: /content/amp-dev/documentation/components/reference/amp-position-observer.md
-#: /content/amp-dev/documentation/components/reference/amp-sidebar.md
+msgid "interactivity-dynamic-content"
+msgstr "Interactivity & Dynamic Content"
+
+msgid "media"
+msgstr "Media"
+
+msgid "multimedia-animations"
+msgstr "Multimedia & Animations"
+
+msgid "news-publishing"
+msgstr "News & Publishing"
+
+msgid "personalization"
+msgstr "Personalization"
+
+msgid "social"
+msgstr "Social"
+
 msgid "layout"
 msgstr "Layout"
 
-#: /content/amp-dev/documentation/components/reference/amp-3d-gltf.md
-#: /content/amp-dev/documentation/components/reference/amp-3q-player.md
-#: /content/amp-dev/documentation/components/reference/amp-anim.md
-#: /content/amp-dev/documentation/components/reference/amp-apester-media.md
-#: /content/amp-dev/documentation/components/reference/amp-audio.md
-#: /content/amp-dev/documentation/components/reference/amp-bodymovin-animation.md
-#: /content/amp-dev/documentation/components/reference/amp-brid-player.md
-#: /content/amp-dev/documentation/components/reference/amp-brightcove.md
-#: /content/amp-dev/documentation/components/reference/amp-dailymotion.md
-#: /content/amp-dev/documentation/components/reference/amp-delight-player.md
-#: /content/amp-dev/documentation/components/reference/amp-embedly-card.md
-#: /content/amp-dev/documentation/components/reference/amp-google-vrview-image.md
-#: /content/amp-dev/documentation/components/reference/amp-hulu.md
-#: /content/amp-dev/documentation/components/reference/amp-ima-video.md
-#: /content/amp-dev/documentation/components/reference/amp-imgur.md
-#: /content/amp-dev/documentation/components/reference/amp-izlesene.md
-#: /content/amp-dev/documentation/components/reference/amp-jwplayer.md
-#: /content/amp-dev/documentation/components/reference/amp-kaltura-player.md
-#: /content/amp-dev/documentation/components/reference/amp-mowplayer.md
-#: /content/amp-dev/documentation/components/reference/amp-nexxtv-player.md
-#: /content/amp-dev/documentation/components/reference/amp-o2-player.md
-#: /content/amp-dev/documentation/components/reference/amp-ooyala-player.md
-#: /content/amp-dev/documentation/components/reference/amp-playbuzz.md
-#: /content/amp-dev/documentation/components/reference/amp-powr-player.md
-#: /content/amp-dev/documentation/components/reference/amp-reach-player.md
-#: /content/amp-dev/documentation/components/reference/amp-recaptcha-input.md
-#: /content/amp-dev/documentation/components/reference/amp-skimlinks.md
-#: /content/amp-dev/documentation/components/reference/amp-soundcloud.md
-#: /content/amp-dev/documentation/components/reference/amp-springboard-player.md
-#: /content/amp-dev/documentation/components/reference/amp-video-iframe.md
-#: /content/amp-dev/documentation/components/reference/amp-video.md
-#: /content/amp-dev/documentation/components/reference/amp-vimeo.md
-#: /content/amp-dev/documentation/components/reference/amp-viqeo-player.md
-#: /content/amp-dev/documentation/components/reference/amp-wistia-player.md
-#: /content/amp-dev/documentation/components/reference/amp-yotpo.md
-#: /content/amp-dev/documentation/components/reference/amp-youtube.md
-msgid "media"
-msgstr "Multimedia"
+msgid "style-layout"
+msgstr "Style & Layout"
 
-#: /content/amp-dev/documentation/components/reference/amp-animation.md
-#: /content/amp-dev/documentation/components/reference/amp-date-countdown.md
-#: /content/amp-dev/documentation/components/reference/amp-date-display.md
-#: /content/amp-dev/documentation/components/reference/amp-dynamic-css-classes.md
-#: /content/amp-dev/documentation/components/reference/amp-fit-text.md
-#: /content/amp-dev/documentation/components/reference/amp-font.md
-#: /content/amp-dev/documentation/components/reference/amp-mathml.md
-#: /content/amp-dev/documentation/components/reference/amp-pan-zoom.md
-#: /content/amp-dev/documentation/components/reference/amp-story-auto-ads.md
-#: /content/amp-dev/documentation/components/reference/amp-story.md
-#: /content/amp-dev/documentation/components/reference/amp-timeago.md
-#: /content/amp-dev/documentation/components/reference/amp-viz-vega.md
 msgid "presentation"
 msgstr "Presentation"
 
-#: /content/amp-dev/documentation/components/reference/amp-addthis.md
-#: /content/amp-dev/documentation/components/reference/amp-beopinion.md
-#: /content/amp-dev/documentation/components/reference/amp-facebook-comments.md
-#: /content/amp-dev/documentation/components/reference/amp-facebook-like.md
-#: /content/amp-dev/documentation/components/reference/amp-facebook-page.md
-#: /content/amp-dev/documentation/components/reference/amp-facebook.md
-#: /content/amp-dev/documentation/components/reference/amp-gfycat.md
-#: /content/amp-dev/documentation/components/reference/amp-instagram.md
-#: /content/amp-dev/documentation/components/reference/amp-pinterest.md
-#: /content/amp-dev/documentation/components/reference/amp-reddit.md
-#: /content/amp-dev/documentation/components/reference/amp-riddle-quiz.md
-#: /content/amp-dev/documentation/components/reference/amp-twitter.md
-#: /content/amp-dev/documentation/components/reference/amp-vine.md
-#: /content/amp-dev/documentation/components/reference/amp-vk.md
-msgid "social"
-msgstr "Social & Sharing"
+msgid "user-consent"
+msgstr "User Consent"
 
+msgid "visual-effects"
+msgstr "Visual & Effects"
