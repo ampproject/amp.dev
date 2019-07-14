@@ -24,6 +24,7 @@ const {readFile} = require('fs');
 const readFileAsync = promisify(readFile);
 const fetch = require('node-fetch');
 const {pagePath, paths} = require('../utils/project');
+const LRU = require('lru-cache');
 
 let templates = null;
 
@@ -75,7 +76,11 @@ class Templates {
         commentEnd: '#]',
       }});
 
-    this.cache_ = new Map();
+    // One locale has ~860 pages with each weighing ~92KB. The cache therefore
+    // maxes out at ~224MB to be safe
+    this.cache_ = new LRU({
+      max: 2500,
+    });
   }
 
   /**
