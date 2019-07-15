@@ -135,8 +135,8 @@ platforms:
     type: Content Platform
     image:
       src: /static/img/tools/jumprope.jpg
-      width: 5
-      height: 3
+      width: 1500
+      height: 1000
     formats:
       - stories
   - name: Tick. Done.
