@@ -356,3 +356,14 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Stripo email editor
+    url: https://stripo.email/amp-support/
+    type: Email Service
+    description: Create interactive email templates fast with Drag-n-Drop & HTML editor. Try free library of ready-to-use modules and templates.
+    image:
+      src: /static/img/tools/stripo.png
+      width: 442
+      height: 184
+      fit: contain
+    formats:
+      - email
