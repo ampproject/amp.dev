@@ -28,7 +28,6 @@ const rcs = require('rcs-core');
 const t = require('exectimer');
 const Tick = t.Tick;
 const AmpOptimizer = require('amp-toolbox-optimizer');
-const {filterPage, isFilterableRoute, FORMATS} = require('@lib/common/filteredPage');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const {project} = require('@lib/utils');
@@ -129,17 +128,7 @@ class PageTransformer {
 
           canonicalPage.contents = Buffer.from(optimizedHtml);
 
-          let filteredPages = [];
-          if (isFilterableRoute(canonicalPage.path)) {
-            timer = new Tick('filtering');
-            timer.start();
-            filteredPages = scope._filterPages(canonicalPage);
-            timer.stop();
-          }
-
-          for (const page of [canonicalPage, ...filteredPages]) {
-            this.push(page);
-          }
+          this.push(canonicalPage);
 
           scope._log.success(`Transformed ${canonicalPage.relative}`);
           callback();
@@ -148,115 +137,13 @@ class PageTransformer {
   }
 
   done() {
-    ['minifying', 'optimizing', 'filtering'].forEach((key) => {
+    ['minifying', 'optimizing'].forEach((key) => {
       const results = t.timers[key];
       if (!results) {
         return;
       }
       this._log.info(`[PAGE_TRANSFORMER] ${key} mean time: ${results.parse(results.mean())}`);
     });
-  }
-
-  /**
-   * Verifies a given page should be filtered
-   *
-   * @param  {Vinyl}
-   * @return {undefined}
-   */
-  _isManuallyFiltered(page) {
-    // Skip pages that have been manually filtered and therefore have a path like
-    // - guides-and-tutorials/index.websites.html
-    // - guides-and-tutorials/index.email.amp.html
-    // But still the matching format should be filtered, therefore pass it back
-    const format = page.path.match(/\.(websites|stories|ads|email)(\.amp)?\.html/);
-    if (format) {
-      return format[1];
-    }
-  }
-
-  /**
-   * Checks if a filtered variant already for a specific format already exists
-   * on disc
-   *
-   * @param  {Vinyl}
-   * @param  {String}
-   * @return {undefined}
-   */
-  _hasManualFiltered(page, format) {
-    // Do not filter pages that have a manually filtered equivalent as they
-    // are also somewhere in the stream and shouldn't be overwritten
-    let path = page.path.replace('.amp.html', '.html');
-    path = path.replace('.html', `.${format}.html`);
-    if (fs.existsSync(path)) {
-      return true;
-    }
-
-    return false;
-  }
-
-  /**
-   * Filters the given pages by the formats defined in data-available-formats
-   *
-   * @param  {Array} ...pages
-   * @return {Array}
-   */
-  _filterPages(...pages) {
-    const filteredPages = [];
-    for (const page of pages) {
-      const html = page.contents.toString();
-      const manualFormat = this._isManuallyFiltered(page);
-      if (manualFormat) {
-        const filteredHtml = this.filterHtml(html, manualFormat, true);
-        page.contents = Buffer.from(filteredHtml);
-        continue;
-      }
-
-      for (const format of FORMATS) {
-        if (this._hasManualFiltered(page, format)) {
-          continue;
-        }
-
-        const filteredHtml = this.filterHtml(html, format);
-        if (filteredHtml) {
-          const filteredPage = page.clone();
-          filteredPage.contents = Buffer.from(filteredHtml);
-
-          // As websites is the default those files can be overwritten and
-          // don't need an extra name
-          if (format !== 'websites') {
-            const suffix = filteredPage.basename.endsWith('.amp.html') ? '.amp.html' : '.html';
-            filteredPage.basename = filteredPage.basename.replace(suffix, `.${format}${suffix}`);
-          }
-
-          filteredPages.push(filteredPage);
-        }
-      }
-    }
-
-    return filteredPages;
-  }
-
-  /**
-   * @param  {String} html
-   * @return {String}
-   */
-  filterHtml(html, format, force) {
-    const dom = cheerio.load(html);
-    if (!filterPage(format, dom, force)) {
-      return;
-    }
-
-    let filteredHtml = dom.html();
-
-    // As cheerio has problems with XML syntax in HTML documents the
-    // markup for the icons needs to be restored
-    filteredHtml = filteredHtml.replace(
-        'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-        'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-    filteredHtml = filteredHtml.replace(
-        /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-        'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=');
-    return filteredHtml;
   }
 
   async optimize(html) {
