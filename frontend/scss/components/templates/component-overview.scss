@@ -45,6 +45,15 @@ body {
     @media (min-width: 1024px) {
       grid-column: 6 / 25;
     }
+
+    .#{atom('sidebar-toggle-label')}{
+      margin-left: -25px;
+
+      @media (min-width: 768px) {
+        margin-left: -30px;
+      }
+    }
+
   }
 
   .#{utility('sidebar')} {

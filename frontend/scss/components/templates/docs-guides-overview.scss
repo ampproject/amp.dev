@@ -51,6 +51,14 @@
     h1, h2 {
       margin-bottom: .5em;
     }
+    
+    .#{atom('sidebar-toggle-label')}{
+      margin-left: -25px;
+
+      @media (min-width: 768px) {
+        margin-left: -30px;
+      }
+    }
   }
 
   section {
