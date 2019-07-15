@@ -110,62 +110,6 @@ Like all email clients, AMP allows for inline `style` attributes, but also suppo
     AMP enforces a size limit of 50,000 bytes for styling.
 [/tip]    
 
-In Gmail, AMP email supports attributes and pseudo-classes disallowed in other email MIME types. 
-
-### Additional CSS Attributes
-
-*   align-items
-*   box-shadow
-*   cursor 
-    *   only "initial" and "cursor" values are allowed
-*   justify-content
-*   overflow-wrap
-*   position
-    *   top
-    *   bottom
-    *   right
-    *   left
-*   resize 
-*   visibility
-    *   only "initial", "visible" and "hidden" values are allowed
-*   z-index 
-    *   only values from -100-100 are allowed
-
-
-### CSS Pseudo-classes
-
-*   active
-*   checked
-*   disabled
-*   enabled
-*   first-child
-*   first-of-type
-*   focus
-*   focus-within
-*   hover
-*   in-range
-*   invalid
-*   last-child
-*   last-of-type
-*   last-of-type
-*   not
-*   nth-child
-*   nth-last-child
-*   nth-last-of-type
-*   nth-of-type
-*   only-child
-*   only-of-type
-*   optional
-*   out-of-range
-*   read-only
-*   read-write
-*   required
-*   valid
-
-### Media query features
-
-*   [pointer](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
-
 ## Allowed AMP Components
 
 The dynamic, visual, and interactivity features of AMP components is what takes AMP Emails into the future of email. The AMP Email components sub-sect is divided into dynamic content and layout elements. 

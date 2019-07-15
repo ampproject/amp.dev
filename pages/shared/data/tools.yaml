@@ -295,6 +295,12 @@ developer:
     formats:
       - websites
 providers:
+  - name: Amazon Simple Email Service (SES)
+    url: https://aws.amazon.com/ses/
+    type: Email Service
+    description: Cloud-based email sending service designed to help digital marketers and application developers send emails.
+    formats:
+      - email
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service

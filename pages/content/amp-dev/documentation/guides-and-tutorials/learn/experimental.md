@@ -48,13 +48,16 @@ To opt your browser into the AMP Dev Channel, go to [the AMP experiments page](h
 
 #### Served from cdn.ampproject.org
 
-For content served from [https://cdn.ampproject.org](https://cdn.ampproject.org),
-go to the [AMP experiments page](https://cdn.ampproject.org/experiments.html)
-and enable (or disable) any experimental component by toggling them on (or off). Opting in will set a cookie on your browser that will enable the experiment on all AMP pages served through the Google AMP Cache.
+For content served from `https://*.cdn.ampproject.org`,
+go to `/experiments.html` on a Google AMP Cache subdomain and enable (or disable) any experimental component by toggling them on (or off).
+
+For example, to enable experiments on cached AMP pages whose source origin is `www.example.com`, go to `www-example-com.cdn.ampproject.org/experiments.html`.
+
+Experiment opt-ins are saved to `localStorage` and only enables the experiment on AMP pages served from the current domain.
 
 #### Served from other domains
 
-For content served from any other domain, experiments can be toggled in the devtools console when development mode is enabled using:
+For content served from non-CDN domains, experiments can be toggled in the devtools console using:
 
 ```js
 AMP.toggleExperiment('experiment')
