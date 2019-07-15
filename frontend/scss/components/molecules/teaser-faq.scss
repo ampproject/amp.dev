@@ -1,0 +1,90 @@
+/*
+
+############################
+### MOLECULE: FAQ teaser ###
+############################
+
+### INFO:
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_icon.scss';
+
+@import 'teaser';
+
+.#{molecule('teaser-faq')} {
+  &.#{molecule('teaser')} {
+    @include teaser;
+    flex-basis: 100%;
+    margin: 0 0 2rem;
+
+    & > a {
+      @include teaser-linking;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        @include teaser-linking-hover;
+      }
+    }
+  }
+
+  .#{molecule('teaser')} {
+    &-card {
+      @include teaser-card;
+      border-radius: 0;
+      height: 100%;
+    }
+
+    &-content {
+      @include teaser-content;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-image {
+      @include teaser-image;
+    }
+
+    &-headline {
+      @include teaser-headline;
+    }
+
+    &-copy {
+      @include teaser-copy;
+    }
+
+    &-link {
+      padding-bottom: 0;
+      margin-top: 2.5rem;
+    }
+
+    &-icon {
+      @include box-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+
+      .#{atom('ico')} {
+        @include ico-10;
+        fill: color('white');
+
+        svg {
+          padding: 1.75rem 0;
+        }
+      }
+    }
+  }
+}

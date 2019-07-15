@@ -191,7 +191,7 @@
 {%
   if teaser_doc.view == '/views/overview/guides.j2' or
   teaser_doc.view == '/views/detail/docs-detail.j2' or
-  teaser_doc.view == '/views/custom.j2'
+  teaser_doc.view == '/views/custom.j2' and teaser
 %}
   {% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}
   {% set teaser = teaser_doc.teaser or {} %}
@@ -238,6 +238,52 @@
           {% endif %}
           {% if teaser.label %}
             <span class="ap-m-lnk">
+              <span class="ap-a-ico ap-m-lnk-icon">
+                {% do doc.icons.useIcon('icons/internal.svg') %}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              </span>
+              <span class="ap-m-lnk-text">{{ teaser.label }}</span>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </div>
+{% endif %}
+
+{# FAQ teaser #}
+{% if teaser_doc.view == '/views/detail/faq-detail.j2' %}
+  {% do doc.styles.addCssFile('/css/components/molecules/teaser-faq.css') %}
+  {% set teaser = teaser_doc.teaser or {} %}
+  <div class="ap-m-teaser ap-m-teaser-faq">
+    <a href="{{ teaser_doc.url.path }}">
+      {% if teaser.image %}
+        <div class="ap-a-img ap-m-teaser-image">
+          <amp-img src="{{ teaser.image.src }}"
+                   layout="responsive"
+                   width="{{ teaser.image.width }}"
+                   height="{{ teaser.image.height }}"
+                   alt="{{ teaser.image.alt }}">
+          </amp-img>
+        </div>
+      {% else %}
+        <div class="ap-m-teaser-icon">
+          {% set teaser_icon = teaser.icon if teaser.icon else 'example-default' %}
+          {% do doc.icons.useIcon('icons/' + teaser_icon + '.svg') %}
+          <div class="ap-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser_icon }}"></use></svg>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="ap-m-teaser-card">
+        <div class="ap-m-teaser-content">
+          <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+          {% if teaser.text or teaser_doc.description %}
+            <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
+          {% endif %}
+          {% if teaser.label %}
+            <span class="ap-m-lnk ap-m-teaser-link">
               <span class="ap-a-ico ap-m-lnk-icon">
                 {% do doc.icons.useIcon('icons/internal.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>

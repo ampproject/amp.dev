@@ -1,0 +1,66 @@
+/*
+
+###################################
+### TEMPLATE: FAQ overview page ###
+###################################
+
+### INFO:
+
+The FAQ overview page
+
+*/
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+@import 'components/atoms/_headline';
+
+@import 'components/templates/_default';
+
+.#{template('faq-overview')} {
+  .#{organism('stage')} {
+    margin-bottom: 50px;
+
+    &-content {
+      margin: 12em 0 4em;
+
+      @media (min-width: 768px) {
+        margin: 12vw 0 10vw;
+      }
+
+      &-headline {
+        @include hl-lrg;
+        margin: 0;
+      }
+    }
+  }
+
+  .#{utility('container')} {
+    @include container;
+
+    @media (max-width: 767px) {
+      padding: 0 55px;
+    }
+  }
+
+  .#{utility('container-fluid')} {
+    @include container-fluid;
+  }
+
+  .#{utility('teaser-grid')} {
+    @media (min-width: 768px) {
+      grid-column: 3 / 23;
+    }
+
+    @media (min-width: 1280px) {
+      grid-column: 5 / 21;
+    }
+  }
+
+  .#{organism('teaser-grid-list')} {
+    flex-wrap: wrap;
+    overflow: visible;
+    margin: 0;
+  }
+}
