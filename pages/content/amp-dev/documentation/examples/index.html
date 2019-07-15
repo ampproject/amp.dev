@@ -166,23 +166,24 @@ teaser:
           <h2>Categories</h2>
           <div class="ap-m-table-component-navigation-links">
             {% for category, docs in categories %}
-              {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
-              <a href="#{{category}}">{{ _(category) }}</a>
+            {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+            <a href="#{{category}}">{{ _(category) }}</a>
             {% endfor %}
           </div>
         </div>
 
         {% for category, documents in categories %}
         {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+        {% if category != 'components' %}
         <h4 id="{{ category }}">{{ _(category) }}</h4>
         <div class="ap-o-teaser-grid">
           {# Hardcode to a length of 9 teasers as there will be at least that much #}
           <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-          {% for document in documents if document.teaser %}
+            {% for document in documents if document.teaser %}
             {% with teaser_doc = document %}
             {% include '/views/partials/teaser.j2' %}
             {% endwith %}
-          {% endfor %}
+            {% endfor %}
           </div>
         </div>
         <div class="ap-m-table-component">
@@ -215,6 +216,28 @@ teaser:
           </a>
           {% endfor %}
         </div>
+        {% else %}
+        <h4 id="{{ category }}">{{ _(category) }}</h4>
+        <div class="ap-m-table-component-components">
+        {% for document in documents if not document.teaser %}
+          <a class="ap-m-table-component-link ap-m-table-component-link" href="{{ document.url.path }}">
+            <div class="ap-m-table-component-row">
+              {% if document.formats %}
+              {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+              <div class="ap-m-table-component-tags">
+                {% for format in document.formats %}
+                <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-table-component-tag"></div>
+                {% endfor %}
+              </div>
+              {% endif %}
+              <div class="ap-m-table-component-name ap-m-table-component-name-example">
+                <span class="ap-m-table-component-name-title">{{ document.titles('teaser') }}</span>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+        {% endif %}
         {% endfor %}
       </section>
     </section>

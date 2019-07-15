@@ -215,4 +215,45 @@
     color: color('river-bed');
     font-weight: normal;
   }
+
+  &-components {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+    .#{molecule('table-component')}{
+      &-link{
+        display: flex;
+        width: 50%;
+        padding-right: 30px;
+        border: none;
+
+        &:nth-of-type(2n) {
+          border-left: 2px solid rgba(0,0,0,0.05);
+          padding-left: 30px;
+          padding-right: 0;
+        }
+
+        &:nth-child(1), &:nth-child(2) {
+          .#{molecule('table-component')}{
+            &-row {
+              border-top: 1px solid transparentize(color('black'), 0.95);
+            }
+          }
+        }
+      }
+      &-row {
+        grid-template-columns: 5% 85%;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding: 10px 0;
+      }
+
+      &-name {
+        &-example:hover {
+          background-color: inherit;
+        }
+      }
+    }
+  }
 }
