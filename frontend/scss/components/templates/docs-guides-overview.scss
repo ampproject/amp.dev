@@ -51,7 +51,7 @@
     h1, h2 {
       margin-bottom: .5em;
     }
-    
+
     .#{atom('sidebar-toggle-label')}{
       margin-left: -25px;
 
@@ -74,6 +74,14 @@
   .#{utility('card-grid')} {
     @media (min-width: 930px) {
       padding: 40px 30px 90px;
+    }
+  }
+
+  .#{organism('video-slider')} {
+    &-carousel {
+      amp-youtube {
+        box-shadow: 0 15px 15px -10px rgba(0,0,0,0.3);
+      }
     }
   }
 }
