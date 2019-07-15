@@ -23,6 +23,8 @@
 
   &-container {
     background-color: color('white');
+    margin-top: 40px;
+    
     h4 {
       margin: 40px 0 18px;
 
@@ -45,7 +47,7 @@
     padding: 20px 60px;
     background-color: color('white');
     z-index: 11;
-    box-shadow: 0 2px 5px 0 transparentize(color('black'), 0.93);
+    box-shadow: 0 3px 5px 0 transparentize(color('black'), 0.93);
     line-height: 2;
 
     h2 {
@@ -110,7 +112,7 @@
 
       &-components {
         display: grid;
-        grid-template-columns: 5% 40% 55%;
+        grid-template-columns: 10% 40% 50%;
         justify-content: start;
       }
       &-components:hover {
