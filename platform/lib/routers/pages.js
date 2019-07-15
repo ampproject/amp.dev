@@ -88,7 +88,7 @@ async function loadTemplate(templatePath) {
     return await Templates.get(resolvedPath);
   } else {
     // Otherwise search for the template
-    return await searchTemplate(templatePath)
+    return await searchTemplate(templatePath);
   }
 }
 
