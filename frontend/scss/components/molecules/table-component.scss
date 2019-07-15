@@ -24,7 +24,7 @@
   &-container {
     background-color: color('white');
     margin-top: 40px;
-    
+
     h4 {
       margin: 40px 0 18px;
 
@@ -112,7 +112,7 @@
 
       &-components {
         display: grid;
-        grid-template-columns: 10% 40% 50%;
+        grid-template-columns: 15% 45% 40%;
         justify-content: start;
       }
       &-components:hover {
@@ -125,6 +125,14 @@
     }
     &-name, &-header, &-copy, &-info, &-link {
       align-self: center;
+    }
+  }
+
+  @media (min-width: 1024px){
+    &-row {
+      &-components {
+        grid-template-columns: 10% 40% 55%;
+      }
     }
   }
 
