@@ -220,6 +220,21 @@ If you'd like to add additional information about a single element inside a sect
 
 This will make the `<input>` element clickable, with the additional explanation appearing on click.
 
+#### Filtering
+
+If a section is only applicable to one format, use `@format(comma-separated-list)`
+anywhere in the section comment to indicate that section is only applicable to
+the format(s) listed.
+
+```html
+<!--
+  The following code only applies to AMP emails.
+
+  @format(email)
+-->
+<p>Hello, world!</p>
+```
+
 ### Adding backend functionality
 
 Before writing your own API endpoint, please take a look at the [existing generic API endpoints](https://github.com/ampproject/docs/tree/future/examples/api), maybe you can re-use one of them.
