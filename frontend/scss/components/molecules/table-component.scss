@@ -61,11 +61,12 @@
 
       &::-webkit-scrollbar {
         width: 2px;
-        height: 4px;
+        height: 2px;
+        padding-bottom: 8px;
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: color('oslo-gray');
+        background-color: #cecece;
       }
 
       @media (min-width: 1024px) {
@@ -74,7 +75,7 @@
 
       a {
         @include txt-2;
-        padding-right: 40px;
+        padding: 0 40px 8px 0;
         font-weight: bold;
         white-space: nowrap;
         color: color('blue-ribbon');
