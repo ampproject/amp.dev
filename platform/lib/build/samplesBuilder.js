@@ -503,7 +503,6 @@ class SamplesBuilder {
    */
   _getSampleFormats(parsedSample) {
     if (parsedSample.document.metadata.formats) {
-      console.log(parsedSample.document.metadata.formats);
       return parsedSample.document.metadata.formats;
     }
 
