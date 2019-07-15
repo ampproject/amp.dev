@@ -36,9 +36,12 @@ let templates = null;
  */
 function createRequestContext(request={'query': {}}, context={}) {
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  context.format = (request.query.format || '').toLowerCase();
-  if (!ALLOWED_FORMATS.includes(context.format)) {
+
+  if (!ALLOWED_FORMATS.includes(request.query.format)) {
     context.format = ALLOWED_FORMATS[0];
+    context.forceFiltered = true;
+  } else {
+    context.format = request.query.format;
   }
 
   context.category = (request.query.category || '').toLowerCase();
