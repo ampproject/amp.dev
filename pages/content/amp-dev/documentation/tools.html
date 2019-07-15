@@ -98,7 +98,7 @@ tools: !g.yaml /shared/data/tools.yaml
     <div class="ap-o-tool-section-title">
       {% for tool in doc.tools[category] %}
       <span hidden
-        [% if format not in '{{tool.formats}}' %]class="hide"[% else %]class="show"[% endif %]
+        [% if format not in '{{tool.formats}}'  and forceFiltered != true %]class="hide"[% else %]class="show"[% endif %]
         [class]="activeFilter.chosenFilter == 'none' || activeFilter.chosenFilter != 'none' && {{ tool.formats }}.includes(activeFilter.chosenFilter) ? 'show' : 'hide'">
       </span>
       {% endfor %}
