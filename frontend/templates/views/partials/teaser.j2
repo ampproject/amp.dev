@@ -191,7 +191,7 @@
 {%
   if teaser_doc.view == '/views/overview/guides.j2' or
   teaser_doc.view == '/views/detail/docs-detail.j2' or
-  teaser_doc.view == '/views/custom.j2'
+  teaser_doc.view == '/views/custom.j2' and teaser
 %}
   {% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}
   {% set teaser = teaser_doc.teaser or {} %}
