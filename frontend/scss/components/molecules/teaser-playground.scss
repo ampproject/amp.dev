@@ -44,11 +44,25 @@
     p {
       margin: 0 0 15px;
     }
+
+    .#{molecule('lnk')} {
+      &-square {
+        border-bottom: none;
+
+        @media (min-width: 1024px){
+          border-bottom: 1px solid color('athens-gray');
+        }
+      }
+    }
   }
+
   &-image {
     width: 80%;
+    margin-top: 20px;
+
     @media (min-width: 1024px) {
       width: 55%;
+      margin-top: 0;
     }
   }
 }
