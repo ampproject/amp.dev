@@ -1,0 +1,25 @@
+{
+	"items": [
+		{
+			"name": "Wheel Set",
+			"description": "Ride Sally, ride.",
+			"price": 603,
+			"image": "/img/e-commerce/product/product-10.jpg",
+			"category": "components"
+		},
+		{
+			"name": "Caliper Brakes",
+			"description": "Fits most wheel sizes and designed to last long.",
+			"price": 776,
+			"image": "/img/e-commerce/product/product-8.jpg",
+			"category": "components"
+		},
+		{
+			"name": "Horn Handles",
+			"description": "Grippingly durable and stylish.",
+			"price": 838,
+			"image": "/img/e-commerce/product/product-7.jpg",
+			"category": "components"
+		}
+	]
+}
