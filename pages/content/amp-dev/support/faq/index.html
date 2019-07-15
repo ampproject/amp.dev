@@ -2,8 +2,11 @@
 $title: FAQ
 $titles:
   navigation: FAQ
-$view: /views/overview/faq-overview.j2
+$view: /views/custom.j2
 ---
+{% do doc.styles.addCssFile('/css/components/templates/faq-overview.css') %}
+
+<main class="ap--main ap-t-faq-overview">
 
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
@@ -33,3 +36,5 @@ $view: /views/overview/faq-overview.j2
   </div>
 
 </section>
+
+</main>
