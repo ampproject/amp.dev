@@ -61,7 +61,7 @@ tools: !g.yaml /shared/data/tools.yaml
 <amp-state id="activeFilter">
   <script type="application/json">
     {
-      "chosenFilter": "none"
+      "chosenFilter": "[[ format if format else 'none' ]]"
     }
   </script>
 </amp-state>
@@ -73,15 +73,15 @@ tools: !g.yaml /shared/data/tools.yaml
     {% for link in doc.filters %}
       <li>
         <button
-          class="ap-m-filter-bubble {{link|slug}} active"
+          class="ap-m-filter-bubble {{link|slug}} [% if format|lower == '{{link}}'|lower %]active chosen[% elif forceFiltered %]active[% endif %]"
           [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble {{link|slug}} active' : activeFilter.chosenFilter == '{{link|slug}}' ? 'ap-m-filter-bubble {{link|slug}} active chosen' : 'ap-m-filter-bubble {{link|slug}}'"
           on="tap:AMP.setState({activeFilter: {chosenFilter: '{{link|slug}}' } })">
           <div class="ap-m-filter-bubble-icon ap-a-ico {{link|lower}}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{link|lower}}"></use></svg>
           </div>
-          {{ link }}
+          {{- link -}}
           <div tabindex=0 role="reset"
-            class="ap-m-filter-bubble-reset ap-a-ico"
+            class="ap-m-filter-bubble-reset ap-a-ico [% if format|lower == '{{link}}'|lower and not forceFiltered %]show[% endif %]"
             [class]="activeFilter.chosenFilter == '{{link|slug}}' ? 'ap-m-filter-bubble-reset ap-a-ico show': 'ap-m-filter-bubble-reset ap-a-ico'"
             on="tap:AMP.setState({activeFilter: {chosenFilter: 'none' }})">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
@@ -97,7 +97,10 @@ tools: !g.yaml /shared/data/tools.yaml
   <section class="ap-o-tool-section ap--container">
     <div class="ap-o-tool-section-title">
       {% for tool in doc.tools[category] %}
-      <span hidden class="show" [class]="activeFilter.chosenFilter == 'none' || activeFilter.chosenFilter != 'none' && {{ tool.formats }}.includes(activeFilter.chosenFilter) ? 'show' : 'hide'"></span>
+      <span hidden
+        [% if format not in '{{tool.formats}}' %]class="hide"[% else %]class="show"[% endif %]
+        [class]="activeFilter.chosenFilter == 'none' || activeFilter.chosenFilter != 'none' && {{ tool.formats }}.includes(activeFilter.chosenFilter) ? 'show' : 'hide'">
+      </span>
       {% endfor %}
 
       <h2 id="{{ category }}">
