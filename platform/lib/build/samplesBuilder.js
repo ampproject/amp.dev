@@ -242,12 +242,6 @@ class SamplesBuilder {
       markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
       markdown = MarkdownDocument.escapeMustacheTags(markdown);
 
-      const filterMatch = markdown.match(/@filter\(([^)]+)\)/);
-      if (filterMatch) {
-        section.filters = filterMatch[1].split(',');
-        markdown = markdown.replace(filterMatch[0], '');
-      }
-
       // Splice out sourcecode blocks to preserve whitespace
       const codeBlocks = {};
       const CODE_BLOCK_PATTERN = /\[sourcecode.*?\[\/sourcecode]/gms;
