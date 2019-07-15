@@ -17,22 +17,22 @@ chaptered: true|false
 The documents inside the *pages* package are Grow documents that use the [built-in fields](http://grow.io/docs/documents/#built-in-fields) and some additional ones that are used to categorize them:
 
 ```yaml
-- formats [default: websites,ads,email,stories]:
+formats [default: websites,ads,email,stories]:
   - websites
   - ads
   - email
   - stories
-- status [default: production]:
+status [default: production]:
   - experimental
   - canary
   - production
-- validAmp [default: true]
+validAmp [default: true]
   - true
   - false
-- draft [default: true]
+draft [default: true]
   - true
   - false
-- tags [default: '']
+tags [default: '']
   - ads-analytics
   - dynamic-content
   - layout
@@ -47,9 +47,9 @@ By the categorization via the `formats` list in the frontmatter the user is able
 
 If the document has a specific path that is not getting inherited from the `_blueprint.yaml` also make sure to set a matching path. Same example: `index.md` has `$path: /category.html` then `index.ads.md` needs to have `$path: /category.ads.html`. Otherwise the build process is not able to match the base and the filtered variant. To not have double navigation items make sure to also give `$hidden: true` to the filtered variant.
 
-### Format filtered paragraphs 
+### Format filtered paragraphs
 Documents will be relevant to multiple formats on a broad scope, but may contain sections and paragraphs that are not accurate for all formats listed in the frontmatter. You can wrap paragraphs in a filter to hide or show them, depending on what format the user has selected.
- 
+
 ```
 [filter formats="websites"]
 This is only visible for [websites](?format=websites).
@@ -111,13 +111,13 @@ The Link is optional and will create a button inside the stage.
 
 A list of links that will expand to a row of cards that link to the document.
 
-### Code Samples 
+### Code Samples
 Code samples are placed inside sets of three backticks. The sourcecode language specified at the end of the first backtick set.
 
 <pre>
 ```html
   // code sample
-```  
+```
 
 ```css
   // code sample
@@ -143,7 +143,7 @@ If your code contains double curly braces, which often is the case if you use am
 Python-Markdown has some limitations. Use the following syntax when including code samples in lists:
 <pre>
   <code>
-  1. First: 
+  1. First:
     [sourcecode:html]
       &lt;html&gt;
           &lt;p&gt;Indented content.&lt;/p&gt;

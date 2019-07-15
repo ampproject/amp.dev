@@ -1,6 +1,6 @@
 ## Creating a new sample
 
-Samples live in `examples/source`. Pick one of the existing category folders. 
+Samples live in `examples/source`. Pick one of the existing category folders.
 
 If your sample can live in a single html file, create a new `*.html` in  one of the sample category folders:
 
@@ -18,7 +18,7 @@ $ vim examples/source/1.components/amp-awesome/api.js
 
 If your sample, does not fit into one of the existing categories, please [create an issue](https://github.com/ampproject/docs/issues/new) first and ask for feedback.
 
-[Here is a sample template](https://gist.github.com/sebastianbenz/45d3dae499f35dedb65e01546356ff7a) you can use to get started. 
+[Here is a sample template](https://gist.github.com/sebastianbenz/45d3dae499f35dedb65e01546356ff7a) you can use to get started.
 
 ## Frontmatter
 
@@ -26,8 +26,8 @@ Samples can define additional metadata (such as author name or supported AMP for
 
 ```
 <!---
-- author: your-github-user-name
-- formats
+author: your-github-user-name
+formats:
   - websites
 --->
 ```
@@ -37,7 +37,7 @@ Samples can define additional metadata (such as author name or supported AMP for
 You must list all the supported AMP formats for your sample. If your sample is specific AMP format, define that single format.
 
 ```
-- formats
+formats
   - email
 ```
 
@@ -51,18 +51,18 @@ experiments:
 Other supported flags are:
 
 ```yaml
-- formats # [default: websites,ads,email,stories]:
+formats # [default: websites,ads,email,stories]:
   - websites
   - ads
   - email
   - stories
-- validAmp # [default: true]
+validAmp # [default: true]
   - true
   - false
-- draft # [default: true]
+draft # [default: true]
   - true
   - false
-- tags # [default: '']
+tags # [default: '']
   - ads-analytics
   - dynamic-content
   - layout
@@ -226,7 +226,7 @@ Before writing your own API endpoint, please take a look at the [existing generi
 
 Sample specific backend endpoints live in a JS file inside the sample folder. They are implemented via [Express routing](https://expressjs.com/en/guide/routing.html). You can address your API endpoints relative to your sample location, e.g. `<amp-list src="you-api-route' ...>`.
 
-Here is a template to get you started. 
+Here is a template to get you started.
 
 ```
 /**

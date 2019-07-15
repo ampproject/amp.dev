@@ -236,11 +236,17 @@ class SamplesBuilder {
     parsedSample.route = this._getDocumentationRoute(sample);
 
     // Rewrite some markdown to be consumable by Grow
-    for (const index in parsedSample.document.sections) {
+    for (const section of parsedSample.document.sections) {
       // Replace GitHub sourcecode syntax by python-markdown
-      let markdown = parsedSample.document.sections[index].doc_;
+      let markdown = section.doc_;
       markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
       markdown = MarkdownDocument.escapeMustacheTags(markdown);
+
+      const filterMatch = markdown.match(/@filter\(([^)]+)\)/);
+      if (filterMatch) {
+        section.filters = filterMatch[1].split(',');
+        markdown = markdown.replace(filterMatch[0], '');
+      }
 
       // Splice out sourcecode blocks to preserve whitespace
       const codeBlocks = {};
@@ -268,7 +274,7 @@ class SamplesBuilder {
         markdown = markdown.replace(hash, codeBlocks[hash]);
       }
 
-      parsedSample.document.sections[index].doc_ = markdown;
+      section.doc_ = markdown;
     }
 
     return parsedSample;
@@ -281,22 +287,23 @@ class SamplesBuilder {
    * @param {Object} parsedSample The parsed sample
    */
   _addToSitemap(sample, parsedSample) {
-    const format = this._getSampleFormat(parsedSample);
-    const formatCategories = this._sitemap[format] || {};
+    for (const format of this._getSampleFormats(parsedSample)) {
+      const formatCategories = this._sitemap[format] || {};
 
-    const category = require(path.join(SAMPLE_SRC, this._getCategory(sample, true), 'index.json'));
-    const categorySamples = formatCategories[category.publicName] || {
-      'name': category.publicName,
-      'examples': [],
-    };
-    categorySamples.examples.push({
-      'title': parsedSample.document.title,
-      'url': `${config.getHost(config.hosts.preview)}` +
-          this._getSourceRoute(sample),
-    });
+      const category = require(path.join(SAMPLE_SRC, this._getCategory(sample, true), 'index.json'));
+      const categorySamples = formatCategories[category.publicName] || {
+        'name': category.publicName,
+        'examples': [],
+      };
+      categorySamples.examples.push({
+        'title': parsedSample.document.title,
+        'url': `${config.getHost(config.hosts.preview)}` +
+            this._getSourceRoute(sample),
+      });
 
-    formatCategories[category.publicName] = categorySamples;
-    this._sitemap[format] = formatCategories;
+      formatCategories[category.publicName] = categorySamples;
+      this._sitemap[format] = formatCategories;
+    }
   }
 
   /**
@@ -477,7 +484,7 @@ class SamplesBuilder {
    */
   _getTeaserData(parsedSample) {
     const teaserData = {};
-    teaserData.formats = [this._getSampleFormat(parsedSample)];
+    teaserData.formats = this._getSampleFormats(parsedSample);
     teaserData.used_components = this._getUsedComponents(parsedSample);
 
     if (parsedSample.document.metadata.teaserImage) {
@@ -492,21 +499,26 @@ class SamplesBuilder {
   /**
    * Used to determine the sample format by string
    * @param  {Object} parsedSample
-   * @return {string}
+   * @return {Array<string>}
    */
-  _getSampleFormat(parsedSample) {
+  _getSampleFormats(parsedSample) {
+    if (parsedSample.document.metadata.formats) {
+      console.log(parsedSample.document.metadata.formats);
+      return parsedSample.document.metadata.formats;
+    }
+
     if (parsedSample.document.isAmpStory) {
-      return 'stories';
+      return ['stories'];
     }
     if (parsedSample.document.isAmpAds) {
-      return 'ads';
+      return ['ads'];
     }
     if (parsedSample.document.isAmpEmail) {
-      return 'email';
+      return ['email'];
     }
 
     // Use websites as fallback as isAmpWebsites could be true for all formats
-    return 'websites';
+    return ['websites'];
   }
 
   /**
@@ -657,7 +669,7 @@ class SamplesBuilder {
         '$localization': {
           'path': `/{locale}${this._getPreviewRoute(sample)}`,
         },
-        'formats': [this._getSampleFormat(parsedSample)],
+        'formats': this._getSampleFormats(parsedSample),
         'source': this._getSourceRoute(sample),
         'embed': this._getEmbedRoute(sample),
       }, {'lineWidth': 500}),
