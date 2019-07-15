@@ -1,6 +1,6 @@
 $title: Guides & Tutorials
-$path: /documentation/guides-and-tutorials/{base}
+$path: /documentation/guides-and-tutorials/{base}.html
 $view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/{base}
+  path: /{locale}/documentation/guides-and-tutorials/{base}.html
 $order: 1

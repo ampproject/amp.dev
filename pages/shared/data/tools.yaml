@@ -295,6 +295,12 @@ developer:
     formats:
       - websites
 providers:
+  - name: Amazon Simple Email Service (SES)
+    url: https://aws.amazon.com/ses/
+    type: Email Service
+    description: Cloud-based email sending service designed to help digital marketers and application developers send emails.
+    formats:
+      - email
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service
@@ -347,6 +353,17 @@ providers:
       src: /static/img/tools/clang.png
       width: 254
       height: 255
+      fit: contain
+    formats:
+      - email
+  - name: Stripo email editor
+    url: https://stripo.email/amp-support/
+    type: Email Service
+    description: Create interactive email templates fast with Drag-n-Drop & HTML editor. Try free library of ready-to-use modules and templates.
+    image:
+      src: /static/img/tools/stripo.png
+      width: 442
+      height: 184
       fit: contain
     formats:
       - email

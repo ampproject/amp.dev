@@ -1,0 +1,18 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/faq-detail.css') %}
+{% endblock %}
+
+{% block main %}
+<main class="ap--main ap-t-faq-detail">
+  <div class="ap--container">
+    {% include '/views/partials/breadcrumbs.j2' %}
+    <section class="ap--content">
+      {{ doc.html|render|safe }}
+    </section>
+  </div>
+</main>
+{% endblock %}
