@@ -74,27 +74,42 @@ const pathCache = new LRU({
  * @return {nunjucks.Template|null}
  */
 async function loadTemplate(templatePath) {
-  let template = null;
-
   // The path has been ensured to always have a trailing slash which isn't
   // needed to find a matching page file
   templatePath = templatePath.slice(0, -1);
 
   const resolvedPath = pathCache.get(templatePath);
-  // If the path has already been tried to resolve but never found
-  // do not try to resolve it again
   if (resolvedPath === false) {
-    return template;
+    // If the path has already been tried to resolve but never found
+    // do not try to resolve it again
+    return null;
+  } else if (resolvedPath) {
+    // If the path has been resolved before get the template
+    return await Templates.get(resolvedPath);
+  } else {
+    // Otherwise search for the template
+    return await searchTemplate(templatePath);
   }
+}
 
+/**
+ * Tries to complete a template path with one of AVAILABLE_STUBS to find
+ * an actual template
+ * @param  {String} path
+ * @return {nunjucks.Template|null}
+ */
+async function searchTemplate(templatePath) {
   // As the request path is not the actual path to the template it is somehow
   // guessed by testing all of AVAILABLE_STUBS ...
+  let template = null;
   for (const stub of AVAILABLE_STUBS) {
     // Othwerwise try the first stub or the already resolved path if there is one
-    const searchPath = resolvedPath || `${templatePath}${stub}`;
+    const searchPath = `${templatePath}${stub}`;
     try {
       template = await Templates.get(searchPath);
     } catch (e) {
+      // Getting a template will throw an error if no template has been found
+      // which is fine as we're testing locations
       continue;
     }
 
