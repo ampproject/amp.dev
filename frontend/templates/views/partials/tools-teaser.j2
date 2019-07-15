@@ -1,5 +1,7 @@
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}"
+    [% if format not in '{{tool.formats}}' and forceFiltered != true %]hidden[% endif %]
+    [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
   {% if tool.formats and tool.formats|length == 1 and not format %}
   {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
   <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag" role="filter" tabindex="0"
