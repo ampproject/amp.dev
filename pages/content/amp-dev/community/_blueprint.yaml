@@ -7,6 +7,5 @@ $order: 3
 
 flyout:
     - /content/amp-dev/documentation/guides-and-tutorials/contribute/index.md
-    - /content/amp-dev/community/platform-and-vendor-partners.html
     - /content/amp-dev/community/roadmap.html
     - /content/amp-dev/community/governance.md

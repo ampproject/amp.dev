@@ -1,0 +1,54 @@
+/*
+
+#################################
+### TEMPLATE: FAQ detail page ###
+#################################
+
+### INFO:
+
+The FAQ detail page
+
+*/
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+@import 'components/templates/_default';
+
+.#{template('faq-detail')} {
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top right;
+  background-attachment: fixed;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+
+  .#{utility('container')} {
+    @include container;
+
+    @media (max-width: 767px) {
+      padding: 0 20px;
+    }
+  }
+
+  .#{molecule('breadcrumbs')} {
+    grid-column: 4 / 22;
+    margin-top: 6rem;
+  }
+
+  .#{utility('content')} {
+    grid-column: 1;
+    position: relative;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      grid-column: 4 / 20;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 6 / 18;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+  <!-- The AMP Story runtime is responsible for rendering the call to action button.
+  The call to action button must be configured from a predefined set of [choices](https://www.ampproject.org/docs/ads/story_ads_best_practices). -->
+  <meta name="amp-cta-type" content="LEARN_MORE">
+  <!-- amp-cta-url specifies where the user is directed once clicking upon the call to action button. -->
+  <meta name="amp-cta-url" content="https://www.amp.dev">
+
+  <style amp-custom>
+    @font-face {
+        font-family: 'Philosopher';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v10/vEFV2_5QCwIS4_Dhez5jcWBuT0020Nqf.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v6/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .hero video {
+      object-fit: cover;
+    }
+
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: flex-end;
+      width: 100vw;
+    }
+
+    .logo img{
+      height: 8vh;
+    }
+
+    .bottom {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .heading-text-box {
+      font-family: 'Philosopher', serif;
+      letter-spacing: 1px;
+      height: 8vh;
+      margin-bottom: 2vh;
+      margin-top: 2vh;
+      position: relative;
+      text-align: center;
+      width: 80vw;
+    }
+
+    .subtitle-text-box {
+      font-family: 'Poppins', serif;
+      letter-spacing: 6px;
+      height: 2.5vh;
+      margin-bottom: calc(68px + 5vh);
+      position: relative;
+      text-align: center;
+      width: 80vw;
+    }
+
+    #subtitle-fit-text > div {
+      justify-content: flex-start;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Recommended video file format types are: mp4, .mov, H.264 encoded. Video size should be less than 20mb.
+  In order to see the video, run this sample on a local webserver -->
+ <amp-video
+        class="hero"
+        width="1080"
+        height="1920"
+        layout="fill"
+        autoplay loop>
+        <source src="http://localhost:8000/videos/single-video-1080x1920.mp4" type="video/mp4" />
+</amp-video>
+  <div class="container">
+    <div class="bottom">
+      <!-- Recommended logo aspect ratio is 1:1. Replace logo-single-video.png with your own logo. -->
+      <amp-img alt="logo"
+        class="logo"
+        src="logo-single-video.png"
+        width="146"
+        height="146"
+        layout="intrinsic">
+      </amp-img>
+      <!-- Recommended text font size for heading is min 16pt and max 50pt. Color can be flexible. -->
+      <div class="heading-text-box">
+        <amp-fit-text
+          id="heading-fit-text"
+          width="80"
+          height="15"
+          layout="fill"
+          min-font-size="16"
+          max-font-size="50">
+          Explore the Sea
+      </amp-fit-text>
+    </div>
+    <!-- Recommended text font size for subtitle is min 12pt and max 16pt. Color can be flexible. -->
+    <div class="subtitle-text-box">
+      <amp-fit-text
+        id="subtitle-fit-text"
+        width="80"
+        height="10"
+        layout="fill"
+        min-font-size="12"
+        max-font-size="16">
+        DISCOVER THE UNKNOWN
+      </amp-fit-text>
+    </div>
+  </div>
+</body>
+</html>
