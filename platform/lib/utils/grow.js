@@ -33,8 +33,15 @@ function exec(args, opts = {}) {
 }
 
 async function version() {
-  const version = await exec('--version', { quiet: true });
-  return version.trim();
+  try {
+    const version = await exec('--version', { quiet: true });
+    return version.trim();
+  } catch (error) {
+    if (error.message.match(/process exited with code 127$/)) {
+      return null;
+    }
+    throw error;
+  }
 }
 
 module.exports = {
