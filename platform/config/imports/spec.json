@@ -58,7 +58,7 @@
     "formats": ["websites","email","stories", "ads"]
   },
   {
-    "title": "Support",
+    "title": "Help",
     "order": 1,
 		"repo": "ampproject/amphtml",
 		"from": "SUPPORT.md",
