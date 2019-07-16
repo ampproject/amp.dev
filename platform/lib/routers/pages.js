@@ -190,11 +190,11 @@ pages.get('/*', async (req, res, next) => {
     if (config.isDevMode()) {
       res.set('content-type', 'text/plain');
       res.send(
-        `SSR error: ${e}\n\n` +
+          `SSR error: ${e}\n\n` +
         template.tmplStr
-          .split('\n')
-          .map((line, index) => `${index + 1} ${line}`)
-          .join('\n'));
+            .split('\n')
+            .map((line, index) => `${index + 1} ${line}`)
+            .join('\n'));
       console.error(e);
       return;
     }
