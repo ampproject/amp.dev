@@ -1,16 +1,16 @@
 ---
-$title: AMP for Email Viewer 
+$title: Using the AMP Viewer to render emails
 $order: 5
 author: alabiaga
 formats:
   - email
 ---
 
-Email clients looking to support AMP for Email should implement a [viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP viewer library](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
+Email clients looking to support AMP for Email should use the [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP Viewer library](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
 
 ## Viewer XHR interception
 
-The AMP viewer library’s `xhrInterceptor` capability allows for the viewer to intercept outgoing XHR requests. The AMP viewer can introspect a request for its validity and intent to ensure the protection and privacy of it users.
+The AMP Viewer library’s `xhrInterceptor` capability allows for the viewer to intercept outgoing XHR requests. The AMP Viewer can introspect a request for its validity and intent to ensure the protection and privacy of it users.
 
 #### XHR requests
 AMP components such [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) and [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=email), require calls to endpoints to post or retrieve  data. These calls classify as XHR requests.
