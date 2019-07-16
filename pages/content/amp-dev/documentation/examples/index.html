@@ -168,8 +168,11 @@ teaser:
 
         {% for category, documents in categories %}
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+
         <div [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ category|slug }}'">
+          [% if format in {{ documents|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
           <h4 id="{{ category }}">{{ _(category_name) }}</h4>
+          [% endif %]
           <div class="ap-o-teaser-grid">
             {# Hardcode to a length of 9 teasers as there will be at least that much #}
             <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
@@ -182,7 +185,7 @@ teaser:
           </div>
           <div class="ap-m-table-component{{'-components' if category_name == 'components'}}">
             {% for document in documents if not document.teaser %}
-            <a class="ap-m-table-component-link" href="{{ document.url.path }}">
+            <a class="ap-m-table-component-link" href="{{ document.url.path }}" [% if format not in '{{ document.formats }}' and forcedFiltered != true %]hidden[% endif %]>
               <div class="ap-m-table-component-row">
                 {% if document.formats %}
                 {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}

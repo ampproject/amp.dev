@@ -147,13 +147,21 @@ highlight_teaser:
 
 
         {% for category, docs in categories %}
+        {% set scope = namespace(collectedFormats = []) %}
+
+        {% for doc in docs %}
+          {% set formats = doc.formats or ['websites'] %}
+          {% set scope.collectedFormats = scope.collectedFormats + formats %}
+        {% endfor %}
 
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
         <div [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ category|slug }}'">
           <div id="{{ category }}" class="ap-m-table-component">
-            <h4>{{ _(category_name) }}</h4>
+            [% if format in '{{ scope.collectedFormats|unique|list }}' %]
+            <h4 id="{{ category }}">{{ _(category_name) }}</h4>
+            [% endif %]
             {% for component in docs %}
-            <a class="ap-m-table-component-link" href="{{ component.url.path }}">
+            <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in '{{ component.formats }}' and forcedFiltered != true %]hidden[% endif %]>
               <div class="ap-m-table-component-row-components">
                 {% if component.formats %}
                 {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
