@@ -100,4 +100,4 @@ jobs:
     env: APP_ENV=staging
     script:
     - scripts/unbuffer.sh gulp buildFinalize
-    - gcloud app deploy --project=amp-dev-staging --quiet
+    - gcloud app deploy --project=amp-dev-staging --quiet --version=1

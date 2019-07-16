@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,173 +17,184 @@
 'use strict';
 
 const express = require('express');
-const path = require('path');
+const URL = require('url').URL;
+const LRU = require('lru-cache');
 const config = require('@lib/config');
-const {Signale} = require('signale');
-const {isFilterableRoute} = require('@lib/common/filteredPage');
-const project = require('@lib/utils/project');
+const {Templates, createRequestContext} = require('@lib/templates/index.js');
+
+/* Potential path stubs that are used to find a matching file */
+const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
+
+/* Matches all documentation routes */
+const DOCUMENTATION_ROUTE_PATTERN = /\/documentation\/*/;
+
+/* Matches <a> tags with the href-attribute value as its first matching group */
+const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm;
+
+/**
+ * Transforms a request URL to match the defined scheme: has trailing slash,
+ * doesn't have a HTML file extension
+ * @param  {String} originalUrl
+ * @return {URL}    The eventually rewritten URL
+ */
+function ensureUrlScheme(originalUrl) {
+  const url = new URL(originalUrl, config.hosts.platform.base);
+
+  // Get rid of former .amp.html file extension for legacy support
+  if (url.pathname.endsWith('.amp.html')) {
+    url.pathname = url.pathname.slice(0, -9);
+  }
+
+  // Get rid of .html file extension
+  if (url.pathname.endsWith('.html')) {
+    url.pathname = url.pathname.slice(0, -5);
+  }
+
+  // Get rid of index in the URL
+  if (url.pathname.endsWith('index')) {
+    url.pathname = url.pathname.slice(0, -5);
+  }
+
+  // Ensure there is a trailing slash
+  if (!url.pathname.endsWith('/')) {
+    url.pathname = `${url.pathname}/`;
+  }
+
+  return url;
+}
+
+// Used to speed up resolving of path stubs to valid paths
+const pathCache = new LRU({
+  max: 500,
+});
+
+/**
+ * Fetches a template matching the requested path
+ * @param  {String}             templatePath The path where the template can be found
+ * @return {nunjucks.Template|null}
+ */
+async function loadTemplate(templatePath) {
+  // The path has been ensured to always have a trailing slash which isn't
+  // needed to find a matching page file
+  templatePath = templatePath.slice(0, -1);
+
+  const resolvedPath = pathCache.get(templatePath);
+  if (resolvedPath === false) {
+    // If the path has already been tried to resolve but never found
+    // do not try to resolve it again
+    return null;
+  } else if (resolvedPath) {
+    // If the path has been resolved before get the template
+    return await Templates.get(resolvedPath);
+  } else {
+    // Otherwise search for the template
+    return await searchTemplate(templatePath);
+  }
+}
+
+/**
+ * Tries to complete a template path with one of AVAILABLE_STUBS to find
+ * an actual template
+ * @param  {String} path
+ * @return {nunjucks.Template|null}
+ */
+async function searchTemplate(templatePath) {
+  // As the request path is not the actual path to the template it is somehow
+  // guessed by testing all of AVAILABLE_STUBS ...
+  let template = null;
+  for (const stub of AVAILABLE_STUBS) {
+    // Othwerwise try the first stub or the already resolved path if there is one
+    const searchPath = `${templatePath}${stub}`;
+    try {
+      template = await Templates.get(searchPath);
+    } catch (e) {
+      // Getting a template will throw an error if no template has been found
+      // which is fine as we're testing locations
+      continue;
+    }
+
+    if (template) {
+      // ... therefore a resolved path gets cached
+      pathCache.set(templatePath, searchPath);
+      break;
+    }
+  }
+
+  // If no template could be found, mark this as unresolvable
+  if (!template) {
+    pathCache.set(templatePath, false);
+  }
+
+  return template;
+}
+
+/**
+ * Takes the rendered template and rewrites all hrefs in anchor tags
+ * to have the currently selected format
+ * @param  {String} html
+ * @return {String}
+ */
+function rewriteLinks(canonical, html, format) {
+  if (!DOCUMENTATION_ROUTE_PATTERN.test(canonical)) {
+    return html;
+  }
+
+  html = html.replace(A_HREF_PATTERN, (match, p1, p2) => {
+    if (!DOCUMENTATION_ROUTE_PATTERN.test(p2)) {
+      return match;
+    }
+
+    const url = new URL(p2, config.hosts.platform.base);
+    if (!url.searchParams.has('format')) {
+      url.searchParams.set('format', format);
+    }
+
+    return match.replace(p2, url.toString());
+  });
+
+  return html;
+}
 
 // eslint-disable-next-line new-cap
 const pages = express.Router();
 
-/**
- * Inspects a incoming request (either proxied or not) for its GET args
- * and URL and checks if its valid to filter and if so has a valid filter
- * @param  {expressjs.Request} request
- * @return {null|String}       A valid filter
- */
-function getFilteredFormat(request) {
-  const QUERY_PARAMETER_NAME = 'format';
-  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-
-  const activeFormat = request.query[QUERY_PARAMETER_NAME] || 'websites';
-  if (ALLOWED_FORMATS.indexOf(activeFormat.toLowerCase()) == -1) {
-    // If the format to filter by is invalid or none use websites
-    return 'websites';
-  }
-
-  return activeFormat;
-}
-
-/**
- * Checks if a path ends on a directory and appends index.html if that's
- * the case, otherwise appends .html extension
- * @param  {String} filePath
- * @return {String}
- */
-function ensureFileExtension(filePath) {
-  if (filePath.endsWith('/')) {
-    return filePath += 'index.html';
-  }
-
-  const extension = path.extname(filePath);
-  if (!extension) {
-    return filePath += '.html';
-  }
-
-  return filePath;
-}
-
-
-// Setup a proxy over to Grow during development
-if (config.isDevMode()) {
-  // Only import the stuff needed for proxying during development
-  const modifyResponse = require('http-proxy-response-rewrite');
-  const got = require('got');
-  const {pageTransformer} = require('@lib/build/pageTransformer');
-
-  // Also create a logger during development since you want to know
-  // what's going on
-  const log = new Signale({
-    'interactive': false,
-    'scope': 'Grow (Proxy)',
-  });
-
-  /**
-   * Queries Grow for a manually filtered page variant to eventually rewrite
-   * request to this one
-   * @param  {Request}  request The original request
-   * @param  {String}  format  The format to test for
-   * @return {Boolean}
-   */
-  async function hasManualFormatVariant(request, format) {
-    const path = request.url.replace('.html', `.${format}.html`);
-
-    const page = await got(`${config.hosts.pages.base}${path}`).catch(() => {
-      return {};
-    });
-
-    if (!page.error && page.body) {
-      return true;
-    }
-
-    return false;
-  }
-
-  // During development all requests should be proxied over
-  // to Grow and be handled there, therfore create one
-  const HttpProxy = require('http-proxy');
-  const proxy = new HttpProxy();
-
-  // As the filtering will happen on content from the proxy (which will end
-  // expressjs' native middleware chain) we need to hook into the proxy
-  proxy.on('proxyRes', async (proxyResponse, request, response) => {
-    // Check if this response should be filtered
-    const activeFormat = getFilteredFormat(request);
-    if (activeFormat && isFilterableRoute(request.originalUrl)) {
-      log.await(`Filtering the ongoing request by format: ${activeFormat}`);
-      modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        try {
-          const html = pageTransformer.filterHtml(body, activeFormat) || body;
-          response.setHeader('content-length', html.length.toString());
-          return html;
-        } catch (e) {
-          log.warn('Could not filter request', e);
-          return body;
-        }
-      });
-    }
-
-    // Check if the request should be minified on the fly
-    if (request.query['minify']) {
-      log.await('Minifying request ...');
-      modifyResponse(response, proxyResponse.headers['content-encoding'], (body) => {
-        const minifiedPage = pageTransformer.minifyPage(body, request.url);
-        response.setHeader('content-length', minifiedPage.length.toString());
-        return minifiedPage;
-      });
-    }
-  });
-
-  pages.get('/*', async (request, response, next) => {
-    request.url = ensureFileExtension(request.path);
-
-    // Check if there is a manually filtered variant of the requested page
-    // and if so rewrite the request to this URL
-    const activeFormat = getFilteredFormat(request);
-    if (activeFormat && isFilterableRoute(request.path)) {
-      log.info('Checking for manual variant of requested page ...');
-      if (await hasManualFormatVariant(request, activeFormat)) {
-        const url = request.url.replace('.html', `.${activeFormat}.html`);
-        log.success(`Manually filtered variant exists - rewriting request to ${url}`);
-        request.url = url;
-      }
-    }
-
+pages.get('/*', async (req, res, next) => {
+  // Let known file extensions automatically fallthrough as if they could not
+  // been resolved by the preceeding middleware the pages router can't
+  // resolve them either
+  const KNOWN_FILE_EXTENSIONS = /\.(jpg|png|css|js|map)$/;
+  if (KNOWN_FILE_EXTENSIONS.test(req.path)) {
     next();
-  }, (request, response, next) => {
-    proxy.web(request, response, {
-      'target': config.hosts.pages.base,
-    }, next);
-  });
-}
+    return;
+  }
 
-if (!config.isDevMode()) {
-  const staticMiddleware = express.static(project.paths.PAGES_DEST, {
-    'extensions': ['html'],
-  });
+  const url = ensureUrlScheme(req.originalUrl);
+  if (url.pathname !== req.path) {
+    res.redirect(301, url.toString());
+    return;
+  }
 
+  const template = await loadTemplate(url.pathname);
+  if (!template) {
+    next();
+    return;
+  }
 
-  pages.get('/*', async (request, response, next) => {
-    request.url = ensureFileExtension(request.path);
-    if (request.path.endsWith('.amp.html')) {
-      let redirectUrl;
-      if (request.originalUrl.endsWith('index.amp.html')) {
-        redirectUrl = request.originalUrl.replace('index.amp.html', '');
-      } else {
-        redirectUrl = request.originalUrl.replace('.amp.html', '');
-      }
-      console.log('redirecting valid amp page to', redirectUrl);
-      response.redirect(redirectUrl);
-      return;
-    }
+  const templateContext = createRequestContext(req);
+  let renderedTemplate = null;
+  try {
+    renderedTemplate = template.render(templateContext);
+  } catch (e) {
+    next(e);
+    return;
+  }
 
-    const format = getFilteredFormat(request);
-    if (format && format !== 'websites') {
-      request.url = request.path.replace('.html', `.${format}.html`);
-    }
-    return staticMiddleware(request, response, next);
-  });
-}
+  // The documentation pages rely on passing along their currently
+  // selected format via GET paramters. The static URLs need to be rewritten
+  // for this use case
+  renderedTemplate = rewriteLinks(url.pathname, renderedTemplate, templateContext.format);
+
+  res.send(renderedTemplate);
+});
 
 module.exports = pages;

@@ -7,7 +7,7 @@ class BeautifiedUrl(urls._Url):
 
     def __init__(self, path, host=None, port=None, scheme=None):
         super(BeautifiedUrl, self).__init__(path, host=host, port=port, scheme=scheme)
-        self.path = self.path.replace('/index.html', '/').replace('.html', '')
+        self.path = self.path.replace('/index.html', '/').replace('.html', '/')
 
 urls.Url = BeautifiedUrl
 
