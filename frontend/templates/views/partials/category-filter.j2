@@ -17,7 +17,7 @@
   </button>
   {% for category, components in categories %}
   {% if category %}
-  <button class="ap-m-filter-bubble" data-category="{{ category|slug }}"
+  <button class="ap-m-filter-bubble"
     [class]="activeFilter.chosenFilter == '{{ category|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
     on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
     {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
