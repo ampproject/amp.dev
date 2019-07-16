@@ -19,7 +19,7 @@ AMP components such [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/compo
 
 The protocol used for communication between the viewer and AMP doc is achieved via [postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).  The following is a trivial example of postMessage at work in the XHR intercepting use case, where the a viewer handles the xhr postMessage sent from an AMP doc and returns a custom response.
 
-```
+```js
 // The viewer iframe that will host the amp doc.
 viewerIframe = document.createElement('iframe');
 viewerIframe.contentWindow.onMessage = xhrRequestIntercepted => {
