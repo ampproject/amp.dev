@@ -185,6 +185,20 @@ pages.get('/*', async (req, res, next) => {
   try {
     renderedTemplate = template.render(templateContext);
   } catch (e) {
+    // If there was a rendering error show the unrendered template with line
+    // count to the user to figure out what's wrong
+    if (config.isDevMode()) {
+      res.set('content-type', 'text/plain');
+      res.send(
+        `SSR error: ${e}\n\n` +
+        template.tmplStr
+          .split('\n')
+          .map((line, index) => `${index + 1} ${line}`)
+          .join('\n'));
+      console.error(e);
+      return;
+    }
+
     next(e);
     return;
   }
