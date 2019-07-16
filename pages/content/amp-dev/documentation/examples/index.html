@@ -162,10 +162,9 @@ teaser:
         {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
 
-        <div class="ap-m-table-component-navigation">
-          <h2>Categories</h2>
-          {% include '/views/partials/category-filter.j2'%}
-        </div>
+
+        <h2>Categories</h2>
+        {% include '/views/partials/category-filter.j2'%}
 
         {% for category, documents in categories %}
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
