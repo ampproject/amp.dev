@@ -111,7 +111,7 @@ section_links:
       <aside class="ap-o-cities-map-grid">
         {% set next_cities = [] %}
         {% for place in doc.roadshow.nextstop if doc.roadshow.nextstop %}
-          {% set push = next_cities.append(place.title|slug) %}
+          {% do next_cities.append(place.title|slug) %}
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
