@@ -447,10 +447,10 @@ async function verifyGrowVersion() {
   }
   const version = await grow.version();
   if (version === null) {
-    throw new Error(`Grow doesn't seem to be installed - see the README for more information`);
+    throw new Error('Grow doesn\'t seem to be installed - see the README for more information');
   }
   if (!semver.satisfies(version, config.shared.growVersion)) {
-    throw new Error(`Invalid Grow version: found ${version} required is ${config.shared.growVersion}`);
+    throw new Error(`Invalid Grow version: found ${version}, need ${config.shared.growVersion}`);
   }
 }
 
