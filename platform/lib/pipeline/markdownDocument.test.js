@@ -43,10 +43,10 @@ test('Test escape SSR tags', async (done) => {
       '[/sourcecode]\n' +
       '\n' +
       'Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part\n'
-);
+  );
 
   expect(result).toBe(
-    '[sourcecode:javascript]\n' +
+      '[sourcecode:javascript]\n' +
     'eventName:targetId[.methodName[(arg1=value, arg2=value)]﻿]\n' +
     '[/sourcecode]\n' +
     '\n' +
