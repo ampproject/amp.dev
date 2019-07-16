@@ -97,7 +97,7 @@
     "fetch-mock": "7.3.6",
     "file-loader": "4.0.0",
     "globby": "10.0.1",
-    "google-closure-compiler": "20190618.0.0",
+    "google-closure-compiler": "20190709.0.0",
     "got": "9.6.0",
     "gulp": "4.0.2",
     "gulp-amphtml-validator": "1.0.2",
