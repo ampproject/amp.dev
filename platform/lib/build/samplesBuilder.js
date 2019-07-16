@@ -281,7 +281,7 @@ class SamplesBuilder {
    * @param {Object} parsedSample The parsed sample
    */
   _addToSitemap(sample, parsedSample) {
-    for (const format of this._getSampleFormats(parsedSample)) {
+    for (const format of parsedSample.document.formats()) {
       const formatCategories = this._sitemap[format] || {};
 
       const category = require(path.join(SAMPLE_SRC, this._getCategory(sample, true), 'index.json'));
@@ -478,7 +478,7 @@ class SamplesBuilder {
    */
   _getTeaserData(parsedSample) {
     const teaserData = {};
-    teaserData.formats = this._getSampleFormats(parsedSample);
+    teaserData.formats = parsedSample.document.formats();
     teaserData.used_components = this._getUsedComponents(parsedSample);
 
     if (parsedSample.document.metadata.teaserImage) {
@@ -488,30 +488,6 @@ class SamplesBuilder {
     }
 
     return yaml.safeDump(teaserData, {'lineWidth': 500});
-  }
-
-  /**
-   * Used to determine the sample format by string
-   * @param  {Object} parsedSample
-   * @return {Array<string>}
-   */
-  _getSampleFormats(parsedSample) {
-    if (parsedSample.document.metadata.formats) {
-      return parsedSample.document.metadata.formats;
-    }
-
-    if (parsedSample.document.isAmpStory) {
-      return ['stories'];
-    }
-    if (parsedSample.document.isAmpAds) {
-      return ['ads'];
-    }
-    if (parsedSample.document.isAmpEmail) {
-      return ['email'];
-    }
-
-    // Use websites as fallback as isAmpWebsites could be true for all formats
-    return ['websites'];
   }
 
   /**
@@ -662,7 +638,7 @@ class SamplesBuilder {
         '$localization': {
           'path': `/{locale}${this._getPreviewRoute(sample)}`,
         },
-        'formats': this._getSampleFormats(parsedSample),
+        'formats': parsedSample.document.formats(),
         'source': this._getSourceRoute(sample),
         'embed': this._getEmbedRoute(sample),
       }, {'lineWidth': 500}),
