@@ -33,9 +33,10 @@ function develop() {
   gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), run)();
 }
 
-function run() {
+async function run() {
+  await build.verifyGrowVersion();
   config.configureGrow();
-  grow(`run --port ${config.hosts.pages.port}`).catch(() => {
+  grow.exec(`run --port ${config.hosts.pages.port}`).catch(() => {
     signale.fatal('Grow had an error starting up. There probably is a broken' +
       'document in the project. See the log above for details.');
     process.exit(1);

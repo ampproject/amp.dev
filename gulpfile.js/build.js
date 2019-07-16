@@ -29,6 +29,7 @@ const globby = require('globby');
 const through = require('through2');
 const archiver = require('archiver');
 const yaml = require('js-yaml');
+const semver = require('semver');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
 const {project, travis} = require('@lib/utils');
 const git = require('@lib/utils/git');
@@ -188,6 +189,7 @@ function importAll() {
  */
 function buildPrepare(done) {
   gulp.series(
+      verifyGrowVersion,
       test.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
@@ -259,7 +261,7 @@ async function buildPages(done) {
         config.configureGrow(options);
 
         try {
-          await grow('deploy --noconfirm --threaded');
+          await grow.exec('deploy --noconfirm --threaded');
         } catch (e) {
           // If building the pages fails, force exit here to make sure
           // especially Travis gets the correct exit code
@@ -434,6 +436,21 @@ function persistBuildInfo(done) {
   fs.writeFile(project.paths.BUILD_INFO, yaml.safeDump(buildInfo), done);
 }
 
+/**
+ * Verifies that the Grow version installed is correct.
+ *
+ * @return {Promise<undefined>}
+ */
+async function verifyGrowVersion() {
+  if (config.options['skip-grow-version-check']) {
+    return;
+  }
+  const version = await grow.version();
+  if (!semver.satisfies(version, config.shared.growVersion)) {
+    throw new Error(`Invalid Grow version: found ${version} required is ${config.shared.growVersion}`);
+  }
+}
+
 exports.clean = clean;
 exports.sass = sass;
 exports.icons = icons;
@@ -456,3 +473,4 @@ exports.build = gulp.series(clean, buildPrepare, buildPages,
     gulp.parallel(collectStatics, persistBuildInfo));
 
 exports.buildForGrowTests = gulp.series(buildBoilerplate, buildPages);
+exports.verifyGrowVersion = verifyGrowVersion;

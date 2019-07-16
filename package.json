@@ -127,6 +127,7 @@
     "rcs-core": "2.6.0",
     "recursive-search": "1.0.1",
     "sass-loader": "7.1.0",
+    "semver": "6.2.0",
     "style-loader": "0.23.1",
     "supertest": "4.0.2",
     "through2": "3.0.1",

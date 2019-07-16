@@ -23,13 +23,21 @@ const {project} = require('@lib/utils');
  * Will execute grow in the configured pod path "project.paths.GROW_POD"
  * @param args the arguments for grow in a string
  */
-function exec(args) {
+function exec(args, opts = {}) {
   return sh(
       // to support local execution where grow is often not in the path, we add the default install path ~/bin
       ['sh', '-c', `PATH=$PATH:~/bin && grow ${args}`],
-      {
+      Object.assign({}, opts, {
         workingDir: project.paths.GROW_POD,
-      });
+      }));
 }
 
-module.exports = exec;
+async function version() {
+  const version = await exec('--version', { quiet: true });
+  return version.trim();
+}
+
+module.exports = {
+  exec,
+  version
+};

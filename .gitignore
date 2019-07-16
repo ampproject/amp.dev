@@ -8,6 +8,7 @@
 *.log
 node_modules
 .com.apple.timemachine.supported
+.grow
 
 dist
 /build
