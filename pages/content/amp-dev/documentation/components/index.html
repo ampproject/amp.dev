@@ -157,7 +157,7 @@ highlight_teaser:
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
         <div [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ category|slug }}'">
           <div id="{{ category }}" class="ap-m-table-component">
-            [% if format in '{{ scope.collectedFormats|unique|list }}' %]
+            [% if format in '{{ scope.collectedFormats|unique|list|tojson }}' %]
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
             [% endif %]
             {% for component in docs %}
