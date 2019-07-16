@@ -26,20 +26,22 @@ none
 @import 'components/atoms/_icon.scss';
 
 
-
 .#{molecule('event')} {
+
   @include roadshow-event-shadow;
+  flex: 0 0 calc(100% - 15px);
   display: flex;
   background-color: color('white');
   margin: 10px 0;
-  padding: 20px 30px;
-  min-width: 100%;
+  padding: 20px 15px 20px 30px;
 
   @media (min-width: 768px) {
-    max-width: 350px;
-    min-width: 350px;
-    margin: 20px;
-    margin-left: 0;
+    flex: 0 0 calc(50% - 10px);
+    margin: 20px 0;
+  }
+
+  @media (min-width: 1024px) {
+    flex: 0 0 calc(33.33333333% - 20px);
   }
 
 	&-date {
@@ -91,6 +93,7 @@ none
       @include txt-hl;
       @include color-blue-ribbon;
 
+      margin-top: 0;
       margin-bottom: 0.5em;
     }
 
@@ -102,6 +105,7 @@ none
 
         display: inline-flex;
         align-items: center;
+        white-space: nowrap;
         line-height: 1.4rem;
       }
 
@@ -111,7 +115,7 @@ none
 
         display: inline-flex;
         align-items: center;
-        line-height: 1.4rem;
+        line-height: 1.4;
       }
 
       &-icon {
