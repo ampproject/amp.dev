@@ -68,7 +68,7 @@
     "signale": "1.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.5.0",
+    "@babel/cli": "7.5.5",
     "@babel/core": "7.5.4",
     "@babel/node": "7.5.0",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
