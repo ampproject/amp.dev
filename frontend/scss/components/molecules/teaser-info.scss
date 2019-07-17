@@ -1,7 +1,7 @@
 /*
 
 ###################################
-### MOLECULE: teaser-playground ###
+### MOLECULE: teaser-info ###
 ###################################
 
 
@@ -14,7 +14,7 @@
 
 @import 'components/atoms/_color';
 
-.#{molecule('teaser-playground')} {
+.#{molecule('teaser-info')} {
   position: relative;
   display: flex;
   flex-direction: column-reverse;
