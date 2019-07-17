@@ -19,6 +19,7 @@
 const gulp = require('gulp');
 const {sh} = require('@lib/utils/sh');
 const grow = require('@lib/utils/grow');
+const mkdirp = require('mkdirp').sync;
 const config = require('@lib/config');
 const signale = require('signale');
 const del = require('del');
@@ -111,7 +112,7 @@ function sass() {
  * @return {Stream}
  */
 function templates() {
-  return gulp.src(`${project.paths.TEMPLATES}/**/*`)
+  return gulp.src(`${project.paths.FRONTEND_TEMPLATES}/**/*`)
       .pipe(gulp.dest(project.paths.GROW_POD));
 }
 
@@ -163,6 +164,33 @@ function buildSamples() {
   return samplesBuilder.build(true);
 }
 
+/**
+ * Zips templates for download.
+ */
+function zipTemplates() {
+  const templateDir = path.join(project.paths.DIST, 'static/files/templates/');
+  mkdirp(templateDir);
+  return gulp.src(project.paths.TEMPLATES + '/*/*/')
+      .pipe(through.obj(async (file, encoding, callback) => {
+        const archive = archiver('zip', {
+          'zlib': {'level': 9},
+        });
+        const zipFilePath = path.join(templateDir, file.basename + '.zip');
+        const zipFileStream = fs.createWriteStream(zipFilePath);
+        archive.directory(file.path + '/', false)
+            .pipe(zipFileStream)
+            .on('close', () => {
+              signale.success(`Zipped template ${zipFilePath}`);
+              callback();
+            })
+            .on('error', (e) => {
+              signale.error(`Writing template zip ${zipFilePath} failed`, e);
+              callback(e);
+            });
+        archive.finalize();
+      }));
+}
+
 
 /**
  * Runs all importers
@@ -191,7 +219,7 @@ function buildPrepare(done) {
       test.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
-      gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll),
+      gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll, zipTemplates),
       // TODO: Fix working but malformatted references before reenabling
       // test.lintGrow,
       // eslint-disable-next-line prefer-arrow-callback
@@ -216,7 +244,7 @@ function buildPrepare(done) {
         await sh('mkdir -p build');
         await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
         await sh(`gsutil cp ${SETUP_ARCHIVE} ` +
-          `${TRAVIS_GCS_PATH}${travis.build.number}/setup.tar.gz`);
+        `${TRAVIS_GCS_PATH}${travis.build.number}/setup.tar.gz`);
       })(done);
 }
 
@@ -261,32 +289,32 @@ async function buildPages(done) {
         try {
           await grow('deploy --noconfirm --threaded');
         } catch (e) {
-          // If building the pages fails, force exit here to make sure
-          // especially Travis gets the correct exit code
+        // If building the pages fails, force exit here to make sure
+        // especially Travis gets the correct exit code
           process.exit(1);
         }
       }, transformPages,
       // eslint-disable-next-line prefer-arrow-callback
       function sharedPages() {
-        // Copy shared pages separated from PageTransformer as they should
-        // not be transformed
+      // Copy shared pages separated from PageTransformer as they should
+      // not be transformed
         return gulp.src(`${project.paths.GROW_BUILD_DEST}/shared/*.html`)
             .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
       },
       // eslint-disable-next-line prefer-arrow-callback
       function sitemap() {
-        // Copy XML files written by Grow
+      // Copy XML files written by Grow
         return gulp.src(`${project.paths.GROW_BUILD_DEST}/**/*.xml`)
             .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
       },
       // eslint-disable-next-line prefer-arrow-callback
       async function storeArtifacts() {
-        // ... and again if on Travis store all built files for a later stage to pick up
+      // ... and again if on Travis store all built files for a later stage to pick up
         if (travis.onTravis()) {
           const archive = `build/pages-${travis.build.job}.tar.gz`;
           await sh(`tar cfj ${archive} ./dist/pages ./dist/inline-examples`);
           await sh(`gsutil cp ${archive} ` +
-            `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
+          `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
         }
       })(done);
 }
@@ -443,6 +471,7 @@ exports.buildPlayground = buildPlayground;
 exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
+exports.zipTemplates = zipTemplates;
 exports.buildPages = buildPages;
 
 exports.buildPrepare = buildPrepare;
