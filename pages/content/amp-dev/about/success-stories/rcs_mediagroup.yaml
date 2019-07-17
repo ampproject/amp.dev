@@ -25,7 +25,7 @@ stage:
   layout: mobile
   subline: JUL 16, 2019
   devices:
-    - image_src: '/static/img/success-stories/rcs/rcs_1.jpg'
+    - image_src: '/static/img/success-stories/rcs/rcs1.jpg'
       width: 3
       height: 5
       type: mobile
@@ -48,7 +48,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: '/static/img/success-stories/rcs/rcs_1.jpg'
+    image_src: '/static/img/success-stories/rcs/rcs1.jpg'
     width: 3
     height: 5
     type: mobile
