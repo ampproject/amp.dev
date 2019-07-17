@@ -21,31 +21,11 @@ teaser:
   text: Each component reference page provides detailed information on how to integrate.
 
 
-highlight_teaser:
-  - title: amp-bodymovin-animation
-    description: A container to display an ad.
-    url: /documentation/components/amp-bodymovin-animation
-    tags:
-    - websites
-    - email
+highlighted_components:
+  - /content/amp-dev/documentation/components/reference/amp-analytics.md
+  - /content/amp-dev/documentation/components/reference/amp-autocomplete.md
+  - /content/amp-dev/documentation/components/reference/amp-carousel.md
 
-  - title: amp-fx-flying-carpet
-    description: Wraps its children in a unique full-screen scrolling container allowing you to display a...
-    url: /documentation/components/amp-fx-flying-carpet
-    tags:
-    - websites
-    - stories
-    - ads
-    - email
-
-  - title: amp-fx-collection
-    description: Provides a collection of preset visual effects, such as parallax.
-    url: /documentation/components/amp-fx-collection
-    tags:
-    - websites
-    - stories
-    - ads
-    - email
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
@@ -113,24 +93,11 @@ highlight_teaser:
         <h2>Highlighted Components</h2>
         <div class="ap-m-teaser-component">
           <div class="ap-m-teaser-container">
-            {% for teaser in doc.highlight_teaser %}
-            <div class="ap-m-teaser ap-m-teaser-code">
-              <a href="{{ teaser.url }}">
-                <div class="ap-m-teaser-card">
-                  <div class="ap-m-teaser-tags">
-                    {% for tag in teaser.tags %}
-                    <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
-                    {% endfor %}
-                  </div>
-                  <div class="ap-m-teaser-content">
-                    <div class="ap-m-teaser-content-text">
-                      <code><span>{{ teaser.title }}</span></code>
-                      <p>{{ teaser.description }}</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+            {% for teaser_doc in doc.highlighted_components %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            [% if format in '{{ teaser_doc.formats }}'%]
+            {% include 'views/partials/teaser.j2' %}
+            [% endif %]
             {% endfor %}
           </div>
         </div>
@@ -147,17 +114,17 @@ highlight_teaser:
 
 
         {% for category, docs in categories %}
-        {% set scope = namespace(collectedFormats = []) %}
+        {% set scope = namespace(categoryFormats = []) %}
 
         {% for doc in docs %}
           {% set formats = doc.formats or ['websites'] %}
-          {% set scope.collectedFormats = scope.collectedFormats + formats %}
+          {% set scope.categoryFormats = scope.categoryFormats + formats %}
         {% endfor %}
 
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
         <div [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ category|slug }}'">
           <div id="{{ category }}" class="ap-m-table-component">
-            [% if format in '{{ scope.collectedFormats|unique|list|tojson }}' %]
+            [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
             [% endif %]
             {% for component in docs %}
