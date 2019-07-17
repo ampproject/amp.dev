@@ -352,7 +352,7 @@ providers:
       - email
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
-    type: WYSIWYG Editor
+    type: Email Templates Editor
     description: Create interactive email templates fast with Drag-n-Drop & HTML editor. Try free library of ready-to-use modules and templates.
     image:
       src: /static/img/tools/stripo.png
