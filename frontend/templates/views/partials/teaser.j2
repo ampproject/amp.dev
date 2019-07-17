@@ -79,34 +79,23 @@
 </div>
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
-{% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
-{% set formats = teaser_doc.formats or ['websites', 'stories', 'ads', 'email'] %}
-[% if ({{ formats|tojson }}).includes(format) %]
-<div class="ap-m-teaser ap-m-teaser-component" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
-  <a href="{{ teaser_doc.url.path }}">
+<div class="ap-m-teaser ap-m-teaser-code">
+  <a href="{{ teaser_doc }}">
     <div class="ap-m-teaser-card">
-      {% if teaser_doc.formats %}
-      {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
       <div class="ap-m-teaser-tags">
-        {% for format in formats %}
-        <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
+        {% for tag in teaser_doc.formats %}
+        <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
         {% endfor %}
       </div>
-      {% endif %}
-
-      <div class="ap-m-teaser-header">
-        <h4 class="ap-m-teaser-header-title">{{ teaser_doc.title }}</h4>
-      </div>
-
-      {% if teaser_doc.teaser and teaser_doc.teaser.text %}
       <div class="ap-m-teaser-content">
-        <p class="ap-m-teaser-copy">{{ teaser_doc.teaser.text|truncate(100, false, '...') }}</p>
+        <div class="ap-m-teaser-content-text">
+          <code><span>{{ teaser_doc.title }}</span></code>
+          <p>{{ teaser_doc.teaser.text }}</p>
+        </div>
       </div>
-      {% endif %}
     </div>
   </a>
 </div>
-[% endif %]
 {% elif teaser_doc.view == '/views/examples/documentation.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
