@@ -1,5 +1,6 @@
 {% do doc.styles.addCssFile('css/components/organisms/footer.css') %}
 {% do doc.icons.useIcon('icons/internal.svg') %}
+{% do doc.icons.useIcon('icons/download.svg') %}
 
 {% macro footer() -%}
 <footer class="ap--footer">
@@ -68,6 +69,11 @@
         <h5 class="ap-o-footer-nav-title">{{_('Events')}}</h5>
         <ul class="ap-o-footer-nav-menu">
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('AMP Conf 2019')}}</a></li>
+        </ul>
+        <h5 class="ap-o-footer-nav-title">{{_('AMP Brand Materials')}}</h5>
+        <ul class="ap-o-footer-nav-menu">
+          <li class="ap-o-footer-nav-item"><a href="/static/files/brand-material/AMP_Mini_Styleguide.pdf" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use></svg></div>{{_('Styleguide')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a href="/static/files/brand-material/AMP_Logo_Rebrush.zip" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use></svg></div>{{_('Logos')}}</a></li>
         </ul>
       </div>
     </div>
