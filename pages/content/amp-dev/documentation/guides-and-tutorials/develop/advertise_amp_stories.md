@@ -20,6 +20,8 @@ The [`amp-story-auto-ads`]({{g.doc('/content/amp-dev/documentation/components/re
 
 The AMP runtime makes the ad call as early as possible and places the first one sometime after the first two pages, and never as the last page.
 
+{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
+
 <amp-anim width=360 height=640 src="/static/img/docs/stampads/stamp_gif_ad.gif">
   <amp-img placeholder width=360 height=640 src="/static/img/docs/stampads/stamp_gif_still.png">
   </amp-img>

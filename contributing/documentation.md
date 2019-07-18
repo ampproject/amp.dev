@@ -111,6 +111,14 @@ The Link is optional and will create a button inside the stage.
 
 A list of links that will expand to a row of cards that link to the document.
 
+**Importing AMP Components**
+
+Import AMP components via:
+
+```md
+{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
+```
+
 ### Code Samples
 Code samples are placed inside sets of three backticks. The sourcecode language specified at the end of the first backtick set.
 
