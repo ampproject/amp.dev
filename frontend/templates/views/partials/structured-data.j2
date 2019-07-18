@@ -1,11 +1,16 @@
 {# Set needed data for all meta tags #}
 {% set description = doc.description or (doc.teaser.text if doc.teaser else None) %}
 {# Mark the description as safe if it is SSR #}
-{% if description and '[[' in description %}
+{% if description and '[=' in description %}
 {% set description = description|safe %}
 {% endif %}
 
-{% set title = doc.title %}
+{% set title = doc.title|string %}
+{# Mark the title as safe if it is SSR #}
+{% if title and '[=' in title %}
+{% set title = title|safe %}
+{% endif %}
+
 {% set base_url = podspec.base_urls.platform %}
 {% set canonical = doc.url %}
 
@@ -51,7 +56,7 @@
 {% set title_prefix = _('Success Story: ') %}
 {% endif %}
 
-<title>{{ title_prefix }}{{ doc.title }} - amp.dev</title>
+<title>{{ title_prefix }}{{ title }} - amp.dev</title>
 
 {% if description %}
 <meta name="description" content="{{ description }}">

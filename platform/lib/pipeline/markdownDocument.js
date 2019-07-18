@@ -156,27 +156,13 @@ class MarkdownDocument {
     };
   }
 
-
   _convertSyntax() {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
     this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
-    this._contents = MarkdownDocument.escapeSsrTags(this._contents);
 
     // Replace dividers (---) as they will break front matter
     this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
-  }
-
-  /**
-   * Escapes syntax used for amp.dev's SSR layer ('[[' and ']]')
-   * @param  {String} contents
-   * @return {String}
-   */
-  static escapeSsrTags(contents) {
-    // Beware: the following replace statements contain a hidden
-    // zero width no-break space
-    return contents.replace(/\[\[/gm, '[﻿[');
-    return contents.replace(/\]\]/gm, ']﻿]');
   }
 
   /**
