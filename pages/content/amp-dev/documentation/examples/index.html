@@ -128,14 +128,40 @@ examples:
         - /content/amp-dev/documentation/examples/previews/Dynamically_updating_items_in_a_feed.html
 
 highlight_examples:
-  - /content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.html
-  - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
-  - /content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html
+  websites:
+    - /content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.html
+    - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+    - /content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html
+  stories:
+    - /content/amp-dev/documentation/examples/previews/Doubleclick_AMP_Story_Ads.html
+    - /content/amp-dev/documentation/examples/previews/Supported_media_types_in_AMP_Stories.html
+    - /content/amp-dev/documentation/examples/previews/Ken_Burns.html
+  ads:
+    - /content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.html
+    - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+    - /content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html
+  email:
+    - /content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.html
+    - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+    - /content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html
 
 recent_examples:
-  - /content/amp-dev/documentation/examples/documentation/Hotel.html
-  - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
-  - /content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.html
+  websites:
+    - /content/amp-dev/documentation/examples/documentation/Hotel.html
+    - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+    - /content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.html
+  stories:
+    - /content/amp-dev/documentation/examples/previews/Doubleclick_AMP_Story_Ads.html
+    - /content/amp-dev/documentation/examples/previews/Supported_media_types_in_AMP_Stories.html
+    - /content/amp-dev/documentation/examples/previews/Ken_Burns.html
+  ads:
+    - /content/amp-dev/documentation/examples/documentation/Hotel.html
+    - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+    - /content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.html
+  email:
+    - /content/amp-dev/documentation/examples/documentation/Hotel.html
+    - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+    - /content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.html
 
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
@@ -169,8 +195,7 @@ recent_examples:
           %}
           {% include '/views/partials/card-grid.j2' %}
           {% endwith %}
-        [% endif %]
-        [% if format == 'stories' %]
+        [% elif format == 'stories' %]
           {% with %}
           {% set card_grid_items_custom = [
             doc.examples.stories.components,
@@ -180,8 +205,7 @@ recent_examples:
           %}
           {% include '/views/partials/card-grid.j2' %}
           {% endwith %}
-        [% endif %]
-        [% if format == 'ads' %]
+        [% elif format == 'ads' %]
           {% with %}
           {% set card_grid_items_custom = [
             doc.examples.ads.components,
@@ -191,8 +215,7 @@ recent_examples:
           %}
           {% include '/views/partials/card-grid.j2' %}
           {% endwith %}
-        [% endif %]
-        [% if format == 'email' %]
+        [% elif format == 'email' %]
           {% with %}
           {% set card_grid_items_custom = [
             doc.examples.email.components,
@@ -235,14 +258,32 @@ recent_examples:
         </div>
       </section>
 
+
       <section>
         <h2>Highlighted Examples</h2>
         <div class="ap-o-teaser-grid">
           <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-            {% for teaser_doc in doc.highlight_examples %}
+            [% if format == 'websites' %]
+            {% for teaser_doc in doc.highlight_examples.websites %}
             {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
             {% include '/views/partials/teaser.j2' %}
             {% endfor %}
+            [% elif format == 'stories' %]
+            {% for teaser_doc in doc.highlight_examples.stories %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            {% include '/views/partials/teaser.j2' %}
+            {% endfor %}
+            [% elif format == 'ads' %]
+            {% for teaser_doc in doc.highlight_examples.ads %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            {% include '/views/partials/teaser.j2' %}
+            {% endfor %}
+            [% elif format == 'email' %]
+            {% for teaser_doc in doc.highlight_examples.email %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            {% include '/views/partials/teaser.j2' %}
+            {% endfor %}
+            [% endif %]
           </div>
         </div>
       </section>
@@ -251,10 +292,27 @@ recent_examples:
         <h2>Recent Examples</h2>
         <div class="ap-o-teaser-grid">
           <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-            {% for teaser_doc in doc.recent_examples %}
+            [% if format == 'websites' %]
+            {% for teaser_doc in doc.recent_examples.websites %}
             {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
             {% include '/views/partials/teaser.j2' %}
             {% endfor %}
+            [% elif format == 'stories' %]
+            {% for teaser_doc in doc.recent_examples.stories %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            {% include '/views/partials/teaser.j2' %}
+            {% endfor %}
+            [% elif format == 'ads' %]
+            {% for teaser_doc in doc.recent_examples.ads %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            {% include '/views/partials/teaser.j2' %}
+            {% endfor %}
+            [% elif format == 'email' %]
+            {% for teaser_doc in doc.recent_examples.email %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            {% include '/views/partials/teaser.j2' %}
+            {% endfor %}
+            [% endif %]
           </div>
         </div>
       </section>
