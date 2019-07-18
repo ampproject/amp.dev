@@ -137,54 +137,21 @@ guides:
   <div class="ap-m-teaser-highlight-guides">
     <h2>Highlighted Guides & Tutorials</h2>
     <div class="ap-m-teaser-container">
-    [% if format == 'websites'%]
-      {% for columns in doc.highlight_guides.websites|slice(3) %}
-      <div class="ap-m-teaser ap-m-teaser-column-box">
-        {% for teaser_doc in columns %}
-        {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-          [% if format in '{{ teaser_doc.formats }}' %]
-            {% include 'views/partials/teaser.j2'%}
-          [% endif %]
-        {% endfor %}
-      </div>
+      {% for format in doc.highlight_guides %}
+      [% if format == '{{ format }}' %]
+        {% set columns = doc.highlight_guides[format] %}
+        {% for columns in doc.highlight_guides[format]|slice(3)%}
+        <div class="ap-m-teaser ap-m-teaser-column-box">
+          {% for teaser_doc in columns %}
+          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            [% if format in '{{ teaser_doc.formats }}' %]
+              {% include 'views/partials/teaser.j2'%}
+            [% endif %]
+          {% endfor %}
+        </div>
+        {% endfor%}
+      [% endif%]
       {% endfor %}
-    [% endif %]
-    [% if format == 'stories'%]
-      {% for columns in doc.highlight_guides.stories|slice(3) %}
-      <div class="ap-m-teaser ap-m-teaser-column-box">
-        {% for teaser_doc in columns %}
-        {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-          [% if format in '{{ teaser_doc.formats }}' %]
-            {% include 'views/partials/teaser.j2'%}
-          [% endif %]
-        {% endfor %}
-      </div>
-      {% endfor %}
-    [% endif %]
-    [% if format == 'ads'%]
-      {% for columns in doc.highlight_guides.ads|slice(3) %}
-      <div class="ap-m-teaser ap-m-teaser-column-box">
-        {% for teaser_doc in columns %}
-        {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-          [% if format in '{{ teaser_doc.formats }}' %]
-            {% include 'views/partials/teaser.j2'%}
-          [% endif %]
-        {% endfor %}
-      </div>
-      {% endfor %}
-    [% endif %]
-    [% if format == 'email'%]
-      {% for columns in doc.highlight_guides.email|slice(3) %}
-      <div class="ap-m-teaser ap-m-teaser-column-box">
-        {% for teaser_doc in columns %}
-        {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-          [% if format in '{{ teaser_doc.formats }}' %]
-            {% include 'views/partials/teaser.j2'%}
-          [% endif %]
-        {% endfor %}
-      </div>
-      {% endfor %}
-    [% endif %]
     </div>
   </div>
 </section>
@@ -192,8 +159,10 @@ guides:
   <div class="ap-m-teaser-highlight-guides">
     <h2>Recent Guides & Tutorials</h2>
     <div class="ap-m-teaser-container">
-      [% if format == 'websites'%]
-        {% for columns in doc.recent_guides.websites|slice(3) %}
+      {% for format in doc.recent_guides %}
+      [% if format == '{{ format }}' %]
+        {% set columns = doc.recent_guides[format] %}
+        {% for columns in doc.recent_guides[format]|slice(3)%}
         <div class="ap-m-teaser ap-m-teaser-column-box">
           {% for teaser_doc in columns %}
           {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
@@ -202,44 +171,9 @@ guides:
             [% endif %]
           {% endfor %}
         </div>
-        {% endfor %}
-      [% endif %]
-      [% if format == 'stories'%]
-        {% for columns in doc.recent_guides.stories|slice(3) %}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% for teaser_doc in columns %}
-          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}' %]
-              {% include 'views/partials/teaser.j2'%}
-            [% endif %]
-          {% endfor %}
-        </div>
-        {% endfor %}
-      [% endif %]
-      [% if format == 'ads'%]
-        {% for columns in doc.recent_guides.ads|slice(3) %}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% for teaser_doc in columns %}
-          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}' %]
-              {% include 'views/partials/teaser.j2'%}
-            [% endif %]
-          {% endfor %}
-        </div>
-        {% endfor %}
-      [% endif %]
-      [% if format == 'email'%]
-        {% for columns in doc.recent_guides.email|slice(3) %}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% for teaser_doc in columns %}
-          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}' %]
-              {% include 'views/partials/teaser.j2'%}
-            [% endif %]
-          {% endfor %}
-        </div>
-        {% endfor %}
-      [% endif %]
+        {% endfor%}
+      [% endif%]
+      {% endfor %}
     </div>
   </div>
 </section>
