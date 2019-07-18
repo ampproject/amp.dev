@@ -18,6 +18,114 @@ teaser:
     height: 1
     alt: lorem ipsum
   text: AMP By Example provides hands-on samples and a playground for using AMP components.
+
+examples:
+  websites:
+    components:
+      icon_name: code
+      headline: Components
+      text: Create every content, layout and feature on your website with a amp component.
+      strong: "These are the most used components:"
+      links:
+        - /content/amp-dev/documentation/examples/documentation/amp-autocomplete.html
+        - /content/amp-dev/documentation/examples/documentation/amp-bind.html
+        - /content/amp-dev/documentation/examples/documentation/amp-carousel.html
+        - /content/amp-dev/documentation/examples/documentation/amp-form.html
+    layout:
+      icon_name: optimize-board
+      headline: Design & Layout
+      text: "Find examples for modern responsive and modern web pages:"
+      links:
+        - /content/amp-dev/documentation/examples/previews/Tab_Panels_with_amp-selector.html
+        - /content/amp-dev/documentation/examples/previews/Scroll_to_top.html
+        - /content/amp-dev/documentation/examples/previews/Animated_Snackbar.html
+        - /content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html
+    interactivity:
+      icon_name: content-modules
+      headline: Advanced Interactivity
+      text: Create every content, layout and feature on your website with a amp component.
+      links:
+        - /content/amp-dev/documentation/examples/documentation/Favorite_Button.html
+        - /content/amp-dev/documentation/examples/previews/Multi_Page_Flow.html
+        - /content/amp-dev/documentation/examples/previews/OAuth2_Login.html
+        - /content/amp-dev/documentation/examples/previews/Advanced_Video_Docking.html
+  stories:
+    components:
+      icon_name: code
+      headline: Components
+      text: Create every content, layout and feature on your website with a amp component.
+      strong: "These are the most used components:"
+      links:
+        - /content/amp-dev/documentation/examples/documentation/Stories_in_AMP.html
+        - /content/amp-dev/documentation/examples/documentation/amp-video.html
+        - /content/amp-dev/documentation/examples/documentation/amp-img.html
+        - /content/amp-dev/documentation/examples/documentation/amp-analytics.html
+    layout:
+      icon_name: optimize-board
+      headline: Design & Layout
+      text: "Find examples for modern responsive and modern web pages:"
+      links:
+        - /content/amp-dev/documentation/examples/previews/AMP_Story_Layouts.html
+        - /content/amp-dev/documentation/examples/previews/Desktop_and_Landscape_Mode_Support.html
+        - /content/amp-dev/documentation/examples/previews/AMP_Story_Animations.html
+        - /content/amp-dev/documentation/examples/previews/Ken_Burns.html
+    analytics:
+      icon_name: bar-chart-money
+      headline: Monetization & Analytics
+      text: Make more out of your AMP pages through analytics, optimal delivery and caching.
+      links:
+        - /content/amp-dev/documentation/examples/previews/Story_User_Consent.html
+        - /content/amp-dev/documentation/examples/previews/Doubleclick_AMP_Story_Ads.html
+        - /content/amp-dev/documentation/examples/previews/Publisher_Served_AMP_Story_Ads.html
+  ads:
+    components:
+      icon_name: code
+      headline: Components
+      text: Create every content, layout and feature on your website with a amp component.
+      strong: "These are the most used components:"
+      links:
+        - /content/amp-dev/documentation/examples/documentation/amp-bind.html
+        - /content/amp-dev/documentation/examples/documentation/amp-carousel.html
+        - /content/amp-dev/documentation/examples/documentation/amp-video.html
+        - /content/amp-dev/documentation/examples/documentation/amp-img.html
+    layout:
+      icon_name: optimize-board
+      headline: Design & Layout
+      text: "Find examples for modern responsive and modern web pages:"
+      links:
+        - /content/amp-dev/documentation/examples/previews/Banner_Ad.html
+        - /content/amp-dev/documentation/examples/previews/Carousel_Ad.html
+        - /content/amp-dev/documentation/examples/previews/Lightbox_Ad.html
+        - /content/amp-dev/documentation/examples/previews/Video_Ad.html
+    dynamicContent:
+      icon_name: interaction
+      headline: Interactivity & Dynamic Content
+      text: Create every content, layout and feature on your website with a amp component.
+      links:
+        - /content/amp-dev/documentation/examples/previews/Slides_Ad.html
+        - /content/amp-dev/documentation/examples/previews/Stack_With_Bind_Ad.html
+        - /content/amp-dev/documentation/examples/previews/Scrollbound_Animation_Ad.html
+        - /content/amp-dev/documentation/examples/previews/Scrollbound_Video_Ad.html
+  email:
+    components:
+      icon_name: code
+      headline: Components
+      text: Create every content, layout and feature on your website with a amp component.
+      strong: "These are the most used components:"
+      links:
+        - /content/amp-dev/documentation/examples/previews/amp-accordion.html
+        - /content/amp-dev/documentation/examples/documentation/amp-bind.html
+        - /content/amp-dev/documentation/examples/documentation/amp-carousel.html
+        - /content/amp-dev/documentation/examples/previews/amp-form.html
+    dynamicContent:
+      icon_name: interaction
+      headline: Interactivity & Dynamic Content
+      text: Create every content, layout and feature on your website with a amp component.
+      links:
+        - /content/amp-dev/documentation/examples/previews/Advanced_Server_Request.html
+        - /content/amp-dev/documentation/examples/previews/Article_Bookmark_Email.html
+        - /content/amp-dev/documentation/examples/previews/Conference_Service_Email.html
+        - /content/amp-dev/documentation/examples/previews/Dynamically_updating_items_in_a_feed.html
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
@@ -40,89 +148,49 @@ teaser:
         <h2 class="ap-o-card-grid-text">AMP’s examples</h2>
 
 
-        {% with %}
-        {% set card_grid_items = [
-          {
-            "icon_name": "code",
-            "headline": "Components",
-            "text": "Create every content, layout and feature on your website with a amp component.",
-            "strong": "These are the most used components:",
-            "links": [
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "amp-3d-gltf"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "amp-ad"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "amp-carousel"
-              }
+        [% if format == 'websites' %]
+          {% with %}
+          {% set card_grid_items_custom = [
+            doc.examples.websites.components,
+            doc.examples.websites.layout,
+            doc.examples.websites.interactivity
             ]
-          },
-          {
-            "icon_name": "content-modules",
-            "headline": "Cohesive experiences",
-            "text": "Build on these user first web experiences, immersive stories, e-commerce systems and dynamic email examples.",
-            "links":[
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Multi Page Flow"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "DoubleClick AMP Story Ads"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Payments in AMP"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Advanced Server Request"
-              }
+          %}
+          {% include '/views/partials/card-grid.j2' %}
+          {% endwith %}
+        [% endif %]
+        [% if format == 'stories' %]
+          {% with %}
+          {% set card_grid_items_custom = [
+            doc.examples.stories.components,
+            doc.examples.stories.layout,
+            doc.examples.stories.analytics
             ]
-          },
-          {
-            "icon_name": "optimize-board",
-            "headline": "Design & Layout",
-            "text": "Find examples for modern responsive and modern web pages:",
-            "links":[
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Tab Panels with amp-selector"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Animated Snackbar"
-              }
+          %}
+          {% include '/views/partials/card-grid.j2' %}
+          {% endwith %}
+        [% endif %]
+        [% if format == 'ads' %]
+          {% with %}
+          {% set card_grid_items_custom = [
+            doc.examples.ads.components,
+            doc.examples.ads.layout,
+            doc.examples.ads.dynamicContent
             ]
-          },
-          {
-            "icon_name": "content-modules-wide",
-            "headline": "Uses cases",
-            "text": "This examples of AMP e-commerce pages, and articels demonstrates how to build an immersive reading experience by adding animations.",
-            "links":[
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "E-Commerce"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Magazine article"
-              },
-              {
-                "url": g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path,
-                "text": "Band page"
-              }
+          %}
+          {% include '/views/partials/card-grid.j2' %}
+          {% endwith %}
+        [% endif %]
+        [% if format == 'email' %]
+          {% with %}
+          {% set card_grid_items_custom = [
+            doc.examples.email.components,
+            doc.examples.email.dynamicContent
             ]
-          }
-        ]
-        %}
-        {% include '/views/partials/card-grid.j2' %}
-        {% endwith %}
+          %}
+          {% include '/views/partials/card-grid.j2' %}
+          {% endwith %}
+        [% endif %]
 
       </section>
 
