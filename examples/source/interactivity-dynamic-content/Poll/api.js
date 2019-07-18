@@ -39,7 +39,7 @@ const CLIENTID_ENTITY_NAME = 'clientId';
 // initialize datastore
 const datastore = new Datastore();
 
-examples.post('/submit', upload.none(), async (request, response) => {
+examples.post('/submit-poll', upload.none(), async (request, response) => {
   setNoCache(response);
 
   const {answer, clientId} = request.body;
