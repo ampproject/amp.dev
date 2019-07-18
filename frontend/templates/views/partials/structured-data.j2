@@ -5,10 +5,10 @@
 {% set description = description|safe %}
 {% endif %}
 
-{% set title = doc.title %}
+{% set title = doc.title|string %}
 {# Mark the title as safe if it is SSR #}
 {% if title and '[=' in title %}
-{% set title = title|string|safe %}
+{% set title = title|safe %}
 {% endif %}
 
 {% set base_url = podspec.base_urls.platform %}
