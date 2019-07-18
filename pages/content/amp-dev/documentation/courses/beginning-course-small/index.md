@@ -23,7 +23,7 @@ The Glitch code editor environment looks like this:
 
 The red box above indicates the online editor where you will be typing HTML and CSS. The green box indicates the button that will take you to the live version of the page you are creating. The yellow box is the button that lets you create a copy of this project and edit it. The blue box indicates the files that you have available. In the assets folder, you can find your images.
 
-Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the “copy” button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
+Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the "copy" button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
 
 {{ image('/static/img/courses/beginner/image8.png', 1686, 936,  align='center', caption='The assets view in Glitch') }}
 
@@ -31,7 +31,7 @@ Throughout these courses, you will need various images to complete the exercises
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an `index.html` file with a title and a single image.
 
-Open [this](https://glitch.com/edit/#!/nosy-leech) project to begin. Click the “Remix This” button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
+Open [this](https://glitch.com/edit/#!/nosy-leech) project to begin. Click the "Remix This" button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
 
 You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 

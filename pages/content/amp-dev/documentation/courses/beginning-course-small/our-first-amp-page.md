@@ -221,4 +221,4 @@ Next, if you open the AMP Validator extension, it shows that we're down to the l
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 ```
 
-This is an important error to understand. Some HTML tags are not allowed in AMP documents. In some cases, AMP requires you to use an alternative. We call these custom, non-standard HTML tags “components,” and we’ll discuss them at greater length later in the next section of this training.
+This is an important error to understand. Some HTML tags are not allowed in AMP documents. In some cases, AMP requires you to use an alternative. We call these custom, non-standard HTML tags "components," and we’ll discuss them at greater length later in the next section of this training.
