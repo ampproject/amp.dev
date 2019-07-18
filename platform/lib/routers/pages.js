@@ -214,7 +214,7 @@ pages.get('/*', async (req, res, next) => {
   // Pipe the rendered template through the AMP optimizer
   try {
     renderedTemplate = await optimizer.transformHtml(renderedTemplate);
-  } catch(e) {
+  } catch (e) {
     console.error('[OPTIMIZER]', e);
   }
 
