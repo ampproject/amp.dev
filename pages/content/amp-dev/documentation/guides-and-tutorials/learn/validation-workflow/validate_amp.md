@@ -4,7 +4,6 @@ $order: 0
 description: 'Watch our video about the various validation options. The key strength of AMP isn’t just that it makes your pages fast, but that it makes your pages ...'
 formats:
   - websites
-  - email
   - stories
   - ads
 ---

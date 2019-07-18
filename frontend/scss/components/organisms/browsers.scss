@@ -12,19 +12,25 @@
 
 .#{organism('browsers')} {
   display: flex;
-  justify-content: space-between;
-  margin: 30px auto;
+  flex-wrap: wrap;
+  margin: 20px 0;
   padding: 0 20px;
   text-align: center;
 
-  @media only screen and (max-width: 956px) {
-    flex-wrap: wrap;
-    margin: 20px 0;
+  @media (min-width: 768px) {
+    max-width: 800px;
+    margin: 30px auto;
   }
 
   .browser {
-    flex: 0 1 75px;
+    flex: 0 0 auto;
+    width: 75px;
     margin: 10px;
+    padding: 0;
+
+    @media (min-width: 768px) {
+      width: calc(16.6666666667% - 20px);
+    }
 
     .browser-title {
       @include txt;

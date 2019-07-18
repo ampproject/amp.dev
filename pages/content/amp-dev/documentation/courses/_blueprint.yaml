@@ -5,3 +5,9 @@ $localization:
   path: /{locale}/documentation/courses/{base}.html
 $order: 4
 bucket: true
+
+formats:
+  - websites
+  - stories
+  - ads
+  - email

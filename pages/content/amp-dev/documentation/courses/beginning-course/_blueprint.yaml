@@ -7,3 +7,8 @@ $order: 2
 
 chaptered: true
 tutorial: true
+formats:
+  - websites
+  - stories
+  - ads
+  - email
