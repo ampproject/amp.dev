@@ -75,7 +75,7 @@ Because dynamically loading and displaying data is so important to modern web de
 
 ## Case Study: Building a Video Site
 
-To get a better understanding of how to build sites with dynamic content from the server, let’s consider a video site. Every visitor to a video site sees the same layout, but nearly all of the videos that fill in that layout are unique to the user. So, for example, all users might see the recommended video section, but the videos in that section are different for each user, provided by a server.
+To get a better understanding of how to build sites with dynamic content from the server, let's consider a video site. Every visitor to a video site sees the same layout, but nearly all of the videos that fill in that layout are unique to the user. So, for example, all users might see the recommended video section, but the videos in that section are different for each user, provided by a server.
 
 {{ image('/static/img/courses/advanced/image8.png', 624, 425, caption='A video site layout example') }}
 
@@ -85,12 +85,12 @@ A video site is generally made up of groups of videos that match a particular th
 
 We can see the template more clearly when the video site first loads. Notice that all of the rows of videos are missing titles. Note, too, that all of the videos have empty thumbnails and solid boxes instead of titles, creator names, or any other information. This type of strategy is called “skeleton loading.”
 
-So what’s the main takeaway from our video site example? When developing a site that relies heavily on dynamic content, the objective is to focus on the structure of the site that is identical for all users. This includes the layout of the page, the navigation and menu system, and the look and feel of the containers that will hold the dynamic content. In AMP, once we have the static elements of the page laid out, we use `<amp-list>`to load the dynamic content into the slots that we’ve set up.
+So what's the main takeaway from our video site example? When developing a site that relies heavily on dynamic content, the objective is to focus on the structure of the site that is identical for all users. This includes the layout of the page, the navigation and menu system, and the look and feel of the containers that will hold the dynamic content. In AMP, once we have the static elements of the page laid out, we use `<amp-list>`to load the dynamic content into the slots that we've set up.
 
 ## Exercise 3: Recreate a Video Site
 
-To start working with `<amp-list>`, let’s recreate a small piece of a video site: the recommended video collection. Our collection of recommended videos is going to have six videos selected for our users by our server. We’ll use `<amp-youtube>` for the videos on our site. While our site is contacting the server to retrieve the video information, we’re going to use skeleton loading to show structure to our users and to indicate that something is happening.
-We’re not going to build this product page inside of our Chico’s Cheese Bikes project. Instead, you can use [this](https://glitch.com/edit/#!/snapdragon-melody) Glitch as a starting point for this exercise. Note: Don’t forget to remix it so you can edit! The Glitch contains:
+To start working with `<amp-list>`, let's recreate a small piece of a video site: the recommended video collection. Our collection of recommended videos is going to have six videos selected for our users by our server. We'll use `<amp-youtube>` for the videos on our site. While our site is contacting the server to retrieve the video information, we're going to use skeleton loading to show structure to our users and to indicate that something is happening.
+We're not going to build this product page inside of our Chico's Cheese Bikes project. Instead, you can use [this](https://glitch.com/edit/#!/snapdragon-melody) Glitch as a starting point for this exercise. Note: Don't forget to remix it so you can edit! The Glitch contains:
 
 - Some basic CSS and HTML to lay out the recommended video page.
 
@@ -100,7 +100,7 @@ We’re not going to build this product page inside of our Chico’s Cheese Bike
 
 [tip type="read-on"]
 **Note**:
-Note: While it is not necessary for you to create a server to complete this exercise, you do have to follow the instructions on the README included in the linked Glitch sample. The README will walk you through how to update the environment configuration that the server uses in its CORS configuration. If you find that your exercise solution isn’t working even when everything else seems to be right, you probably need to update the address in the environment variables as the README instructs. If you’re interested in learning more about what CORS is and why it is important, read [this]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) documentation.
+Note: While it is not necessary for you to create a server to complete this exercise, you do have to follow the instructions on the README included in the linked Glitch sample. The README will walk you through how to update the environment configuration that the server uses in its CORS configuration. If you find that your exercise solution isn't working even when everything else seems to be right, you probably need to update the address in the environment variables as the README instructs. If you're interested in learning more about what CORS is and why it is important, read [this]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) documentation.
 [/tip]
 
 Let's discuss the structure of the video data that we retrieve from the server:
@@ -256,7 +256,7 @@ Next, we need a way to tell the server to sort the results it returns to us. We 
 https://pathto.ourserver.com/api/v1/products?category=bikes&sort=price-asc
 ```
 
-Now we know how to get the list of filtered and/or sorted products from the server, but it’s still not clear what to put into the `src` property of the `<amp-list>` component. As users change the filtering and sorting settings, they expect the page to update automatically. We need to update the `src` property in response to user actions. This sounds like a perfect job for state variables and property bindings!
+Now we know how to get the list of filtered and/or sorted products from the server, but it's still not clear what to put into the `src` property of the `<amp-list>` component. As users change the filtering and sorting settings, they expect the page to update automatically. We need to update the `src` property in response to user actions. This sounds like a perfect job for state variables and property bindings!
 
 The following example shows how to combine `<amp-list>` with property bindings and state variables to complete the above examples:
 
@@ -286,9 +286,9 @@ The first time the page loads, it will call the server to get all of the product
 
 ## Exercise 4: Creating a Filterable Product List
 
-Now it’s time to add the products page to our Chico’s Cheese Bikes example! If you’re using any of the Chico’s Cheese Bikes Glitch examples that we’ve linked throughout previous courses, you already have the server code necessary to complete this exercise. All you need to do is to make sure you’ve followed the README instructions to set the address in your environment variables. If you haven’t done this yet, the site we build won’t be able to download information from the server.
+Now it's time to add the products page to our Chico's Cheese Bikes example! If you're using any of the Chico's Cheese Bikes Glitch examples that we've linked throughout previous courses, you already have the server code necessary to complete this exercise. All you need to do is to make sure you've followed the README instructions to set the address in your environment variables. If you haven't done this yet, the site we build won't be able to download information from the server.
 
-The first thing we need to do is make our products page accessible from our homepage. We’re going to add a link in the slide-out menu. In the navigation on `index.html`, below “Our Story,” add the following code:
+The first thing we need to do is make our products page accessible from our homepage. We're going to add a link in the slide-out menu. In the navigation on `index.html`, below “Our Story,” add the following code:
 
 [sourcecode:html]
 {% raw %}<li class="nav-item">
@@ -309,7 +309,7 @@ Examine the `products.html` page. The products page already includes:
 
 To complete this exercise, we have to connect the select inputs to their corresponding state variables, bind the state variables to the `<amp-list>`component, and develop the template for our products. For now, the template will include an image of the product, the product name, the customer rating of the product, and the price.
 
-Let’s look at the structure of the product data that we retrieve from the server:
+Let's look at the structure of the product data that we retrieve from the server:
 
 [sourcecode:json]
 {
@@ -329,7 +329,7 @@ Let’s look at the structure of the product data that we retrieve from the serv
 }
 [/sourcecode]
 
-The `id` and `type` fields are only really used by the server, so you can ignore them for this exercise. The `url` field represents the address of the product page for this product. We won’t be implementing these pages in this exercise. The `img` field contains a URL to a picture of this product. The `stars` field indicates the starred user ratings for this product. The `price` field is the price of this product in dollars. Lastly, the `description` field is marketing copy that we will not use in this exercise, but which is used in one of the optional exercises for this training.
+The `id` and `type` fields are only really used by the server, so you can ignore them for this exercise. The `url` field represents the address of the product page for this product. We won't be implementing these pages in this exercise. The `img` field contains a URL to a picture of this product. The `stars` field indicates the starred user ratings for this product. The `price` field is the price of this product in dollars. Lastly, the `description` field is marketing copy that we will not use in this exercise, but which is used in one of the optional exercises for this training.
 
 Using the documentation for `<amp-bind>`, `<amp-list>`, and all of the descriptions above, create a product listing page that fulfills the following requirements:
 
@@ -351,13 +351,13 @@ Recommended style guidelines:
 
 - The product name, rating, and price can be placed in `<p>` tags with assigned classes `product-name`, `star-rank`, and `product-price`, respectively.
 
-Once you’ve finished, your page should look like this:
+Once you've finished, your page should look like this:
 
 {{ image('/static/img/courses/advanced/image7.png', 1512, 1162, caption='The result') }}
 
 ### Solution
 
-The portion of the page containing the product list should now look like this:
+The portion of the page containing the product list should now look like this:co
 
 [sourcecode:html]
 {% raw %}<main>
