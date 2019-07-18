@@ -180,176 +180,117 @@
   </a>
 </div>
 [% endif %]
-{% elif teaser_doc.view == '/views/overview/guides.j2' %}
+{% elif teaser_doc.view == '/views/detail/docs-detail.j2' %}
 {# guides and tutorials #}
-{% do doc.styles.addCssFile('css/components/molecules/teaser-highlight-guides.css') %}
-<section class="ap--section">
-  <div class="ap-m-teaser-highlight-guides">
-    <h2>Highlighted Guides & Tutorials</h2>
-    <div class="ap-m-teaser-container">
-      {% for guide in doc.highlight_guides %}
-      {% if loop.index is odd %}
-      <div class="ap-m-teaser ap-m-teaser-column-box">
-        {% endif %}
-        <div class="ap-m-teaser ap-m-teaser-highlighted">
-          <div class="ap-m-teaser-double-teaser">
-            <div class="ap-m-teaser-tags">
-              {% for tag in guide.tags %}
-              <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
-              {% endfor %}
-            </div>
-            {% if guide.image %}
-            <div class="ap-a-img ap-m-teaser-image">
-              <amp-img class="ap--media" src="{{ guide.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ guide.image.alt }}"></amp-img>
-            </div>
-            {% endif %}
-            <a href="{{ guide.url }}">
-              <div class="ap-m-teaser-content">
-                <div class="ap-m-teaser-content-text">
-                  <h4>{{ guide.title }}</h4>
-                  <p>{{ guide.description }}</p>
-                </div>
-                <div class="guide-tag">
-                  <div class="guide-tag-icon guide-tag-icon-{{ guide.icon }}" >
-                    {% if guide.icon == "guide" %}
-                    {% do doc.icons.useIcon('icons/guide.svg') %}
-                    {% else %}
-                    {% do doc.icons.useIcon('icons/tutorial-nav.svg') %}
-                    {% endif %}
-                    <svg>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{guide.icon}}"></use>
-                    </svg>
-                  </div>
-                  <span class="guide-tag-text">{{ guide.tagName }}</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        {% if loop.index is even %}
-      </div>
-      {% endif %}
+<div class="ap-m-teaser ap-m-teaser-highlighted">
+  <div class="ap-m-teaser-double-teaser">
+    <div class="ap-m-teaser-tags">
+      {% for tag in teaser_doc.formats %}
+      <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
       {% endfor %}
     </div>
-  </div>
-</section>
-<section class="ap--section">
-  <div class="ap-m-teaser-highlight-guides">
-    <h2>Recent Guides & Tutorials</h2>
-    <div class="ap-m-teaser-container">
-      {% for guide in doc.recent_guides %}
-      {% if loop.index is odd %}
-      <div class="ap-m-teaser ap-m-teaser-column-box">
-        {% endif %}
-        <div class="ap-m-teaser ap-m-teaser-highlighted">
-          <div class="ap-m-teaser-double-teaser">
-            <div class="ap-m-teaser-tags">
-              {% for tag in guide.tags %}
-              <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
-              {% endfor %}
-            </div>
-            {% if guide.image %}
-            <div class="ap-a-img ap-m-teaser-image">
-              <amp-img class="ap--media" src="{{ guide.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ guide.image.alt }}"></amp-img>
-            </div>
-            {% endif %}
-            <a href="{{ guide.url }}">
-              <div class="ap-m-teaser-content">
-                <div class="ap-m-teaser-content-text">
-                  <h4>{{ guide.title }}</h4>
-                  <p>{{ guide.description }}</p>
-                </div>
-                <div class="guide-tag">
-                  <div class="guide-tag-icon guide-tag-icon-{{ guide.icon }}" >
-                    {% if guide.icon == "guide" %}
-                    {% do doc.icons.useIcon('icons/guide.svg') %}
-                    {% else %}
-                    {% do doc.icons.useIcon('icons/tutorial-nav.svg') %}
-                    {% endif %}
-                    <svg>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{guide.icon}}"></use>
-                    </svg>
-                  </div>
-                  <span class="guide-tag-text">{{ guide.tagName }}</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        {% if loop.index is even %}
-      </div>
-      {% endif %}
-      {% endfor %}
+    {% if teaser_doc.image %}
+    <div class="ap-a-img ap-m-teaser-image">
+      <amp-img class="ap--media" src="{{ teaser_doc.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ teaser_doc.image.alt }}"></amp-img>
     </div>
-  </div>
-</section>
-{% endif %}
-{# custom teaser #}
-{%
-   if teaser_doc.view == '/views/detail/docs-detail.j2' or
-  teaser_doc.view == '/views/custom.j2' and teaser
-%}
-  {% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}
-  {% set teaser = teaser_doc.teaser or {} %}
-  {% set formats = teaser_doc.formats or ['websites'] %}
-  [% if ({{ formats|tojson }}).includes(format) %]
-  <div class="ap-m-teaser ap-m-teaser-guide-tutorial">
+    {% endif %}
     <a href="{{ teaser_doc.url.path }}">
-
-      {# tags #}
-      {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
-      <div class="ap-m-teaser-tags">
-        {% for format in formats %}
-        <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
-        {% endfor %}
-      </div>
-
-      {# image #}
-      {% if teaser.image %}
-        <div class="ap-a-img ap-m-teaser-image {% if teaser_doc.view == '/views/custom.j2' %} no-shadow {% endif %}">
-          <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
-        </div>
-      {% elif teaser.icon %}
-        <div class="ap-m-teaser-icon">
-          {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
-          <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
-          </div>
-        </div>
-      {% else %}
-        <div class="ap-m-teaser-icon">
-          {% do doc.icons.useIcon('icons/example-default.svg') %}
-          <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example-default"></use></svg>
-          </div>
-        </div>
-      {% endif %}
-
-      {# card container #}
-      <div class="ap-m-teaser-card">
-        <div class="ap-m-teaser-content">
-          <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
-          {% if teaser.text or teaser_doc.description %}
-            <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
+      <div class="ap-m-teaser-content">
+        <div class="ap-m-teaser-content-text">
+          <h4>{{ teaser_doc.title }}</h4>
+          {% if teaser_doc.description %}
+          <p>{{ teaser_doc.description }}</p>
+          {% else %}
+          <p>Discover more...</p>
           {% endif %}
-          {% if teaser.label %}
-            <span class="ap-m-lnk">
-              <span class="ap-a-ico ap-m-lnk-icon">
-                {% do doc.icons.useIcon('icons/internal.svg') %}
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-              </span>
-              <span class="ap-m-lnk-text">{{ teaser.label }}</span>
-            </span>
+        </div>
+        <div class="guide-tag">
+          {% if teaser_doc.collection.tutorial %}
+          <div class="guide-tag-icon guide-tag-icon-tutorial" >
+            {% do doc.icons.useIcon('icons/tutorial-nav.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use>
+            </svg>
+          </div>
+          <span class="guide-tag-text">Tutorial</span>
+          {% else %}
+          <div class="guide-tag-icon guide-tag-icon-guide" >
+            {% do doc.icons.useIcon('icons/guide.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#guide"></use>
+            </svg>
+          </div>
+          <span class="guide-tag-text">Guide</span>
           {% endif %}
         </div>
       </div>
     </a>
   </div>
-  [% endif %]
-{% endif %}
+</div>
+{%
+  elif teaser_doc.view == '/views/detail/docs-detail.j2' or
+  teaser_doc.view == '/views/custom.j2' and teaser
+  %}
+{# custom teaser #}
+{% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}
+{% set teaser = teaser_doc.teaser or {} %}
+{% set formats = teaser_doc.formats or ['websites'] %}
+[% if ({{ formats|tojson }}).includes(format) %]
+<div class="ap-m-teaser ap-m-teaser-guide-tutorial">
+  <a href="{{ teaser_doc.url.path }}">
 
+    {# tags #}
+    {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+    <div class="ap-m-teaser-tags">
+      {% for format in formats %}
+      <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
+      {% endfor %}
+    </div>
+
+    {# image #}
+    {% if teaser.image %}
+      <div class="ap-a-img ap-m-teaser-image {% if teaser_doc.view == '/views/custom.j2' %} no-shadow {% endif %}">
+        <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
+      </div>
+    {% elif teaser.icon %}
+      <div class="ap-m-teaser-icon">
+        {% do doc.icons.useIcon('icons/' + teaser.icon + '.svg') %}
+        <div class="ap-a-ico">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
+        </div>
+      </div>
+    {% else %}
+      <div class="ap-m-teaser-icon">
+        {% do doc.icons.useIcon('icons/example-default.svg') %}
+        <div class="ap-a-ico">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#example-default"></use></svg>
+        </div>
+      </div>
+    {% endif %}
+
+    {# card container #}
+    <div class="ap-m-teaser-card">
+      <div class="ap-m-teaser-content">
+        <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+        {% if teaser.text or teaser_doc.description %}
+          <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
+        {% endif %}
+        {% if teaser.label %}
+          <span class="ap-m-lnk">
+            <span class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </span>
+            <span class="ap-m-lnk-text">{{ teaser.label }}</span>
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>
+[% endif %]
+{% elif teaser_doc.view == '/views/detail/faq-detail.j2' %}
 {# FAQ teaser #}
-{% if teaser_doc.view == '/views/detail/faq-detail.j2' %}
   {% do doc.styles.addCssFile('/css/components/molecules/teaser-faq.css') %}
   {% set teaser = teaser_doc.teaser or {} %}
   <div class="ap-m-teaser ap-m-teaser-faq">
