@@ -150,7 +150,7 @@ platforms:
     formats:
       - stories
   - name: Mail.ru AMP Playground
-    type: testing
+    type: Testing
     description: Draft AMP emails, see a live preview, and have your emails sent to your Mail.ru account.
     url: https://postmaster.mail.ru/amp/
     image:
@@ -270,6 +270,17 @@ developer:
       - email
       - ads
       - stories
+  - name: Litmus
+    url: https://litmus.com/
+    type: Development
+    description: Litmus makes it easy to build, test, and monitor every email for the best results.
+    image:
+      src: /static/img/tools/litmus.png
+      width: 1223
+      height: 450
+      fit: contain
+    formats:
+      - email
   - name: VS Code Extension
     official: true
     type: Development
@@ -301,6 +312,17 @@ providers:
     description: Cloud-based email sending service designed to help digital marketers and application developers send emails.
     formats:
       - email
+  - name: AWeber
+    url: https://www.aweber.com/
+    type: Email Service
+    description: Aweber's platform and API allows you to create and send emails your customers will love.
+    image:
+      src: /static/img/tools/aweber.png
+      width: 335
+      height: 70
+      fit: contain
+    formats:
+      - email
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service
@@ -320,17 +342,6 @@ providers:
       src: /static/img/tools/sendgrid.png
       width: 348
       height: 148
-      fit: contain
-    formats:
-      - email
-  - name: Litmus
-    url: https://litmus.com/
-    type: Email Service
-    description: Litmus makes it easy to build, test, and monitor every email for the best results.
-    image:
-      src: /static/img/tools/litmus.png
-      width: 1223
-      height: 450
       fit: contain
     formats:
       - email

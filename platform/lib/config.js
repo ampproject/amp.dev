@@ -111,6 +111,7 @@ class Config {
 
   /**
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
+   * @param {Object} hostConfig One of configs in from the hosts property
    * @return {String} The full URL
    */
   getHost(hostConfig) {
@@ -125,6 +126,15 @@ class Config {
       url += `:${hostConfig.port}`;
     }
     return url;
+  }
+
+  /**
+   * Turns a given relative URL to an absolute URL for the given hostConfig.
+   * @param {Object} hostConfig One of configs in from the hosts property
+   * @return {String} The absolute URL
+   */
+  absoluteUrl(hostConfig, url) {
+    return new URL(url, this.getHost(hostConfig)).toString();
   }
 
   /**
