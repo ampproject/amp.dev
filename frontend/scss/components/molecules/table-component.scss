@@ -155,6 +155,11 @@
   }
 
   @media (min-width: 768px) {
+    .#{molecule('tag')} {
+      &:empty {
+        min-width: 8px;
+      }
+    }
     &-tags {
       height: 8px;
       align-self: center;
@@ -239,6 +244,13 @@
           .#{molecule('table-component')}{
             &-row {
               border-top: 1px solid transparentize(color('black'), 0.95);
+            }
+          }
+        }
+        @media (min-width: 768px) {
+          .#{molecule('tag')} {
+            &:empty {
+              min-width: 8px;
             }
           }
         }

@@ -241,9 +241,7 @@ recent_examples:
           <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
             {% for teaser_doc in doc.highlight_examples %}
             {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}'%]
             {% include '/views/partials/teaser.j2' %}
-            [% endif %]
             {% endfor %}
           </div>
         </div>
@@ -255,9 +253,7 @@ recent_examples:
           <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
             {% for teaser_doc in doc.recent_examples %}
             {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}'%]
             {% include '/views/partials/teaser.j2' %}
-            [% endif %]
             {% endfor %}
           </div>
         </div>
@@ -293,7 +289,7 @@ recent_examples:
             </div>
           </div>
           [% endif %]
-          <div class="ap-m-table-component{{'-components' if category_name == 'components'}}" [% if format not in {{ documents|map(attribute='formats')|sum(start=[])|unique|list|tojson }}%]style="display:none;"[% endif %]>
+          <div class="ap-m-table-component{{'-components' if category_name == 'components'}}" [% if format not in {{ documents|map(attribute='formats')|sum(start=[])|unique|list|tojson }}%]hidden[% endif %]>
             {% for document in documents if not document.teaser %}
             <a class="ap-m-table-component-link" href="{{ document.url.path }}" [% if format not in '{{ document.formats }}' and forcedFiltered != true %]hidden[% endif %]>
               <div class="ap-m-table-component-row">
