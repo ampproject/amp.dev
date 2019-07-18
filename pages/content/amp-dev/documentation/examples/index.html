@@ -126,6 +126,17 @@ examples:
         - /content/amp-dev/documentation/examples/previews/Article_Bookmark_Email.html
         - /content/amp-dev/documentation/examples/previews/Conference_Service_Email.html
         - /content/amp-dev/documentation/examples/previews/Dynamically_updating_items_in_a_feed.html
+
+highlight_examples:
+  - /content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.html
+  - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+  - /content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html
+
+recent_examples:
+  - /content/amp-dev/documentation/examples/documentation/Hotel.html
+  - /content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html
+  - /content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.html
+
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
@@ -223,6 +234,35 @@ examples:
           </amp-img>
         </div>
       </section>
+
+      <section>
+        <h2>Highlighted Examples</h2>
+        <div class="ap-o-teaser-grid">
+          <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
+            {% for teaser_doc in doc.highlight_examples %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            [% if format in '{{ teaser_doc.formats }}'%]
+            {% include '/views/partials/teaser.j2' %}
+            [% endif %]
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Recent Examples</h2>
+        <div class="ap-o-teaser-grid">
+          <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
+            {% for teaser_doc in doc.recent_examples %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+            [% if format in '{{ teaser_doc.formats }}'%]
+            {% include '/views/partials/teaser.j2' %}
+            [% endif %]
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
       <section class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
 
