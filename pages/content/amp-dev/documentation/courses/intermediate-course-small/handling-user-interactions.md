@@ -29,12 +29,12 @@ In AMP, we handle events by using the on property. For example, imagine a button
 
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
-<button onclick="document.getElementById(‘warning’).hidden = true;">
+<button onclick="document.getElementById(‘warning').hidden = true;">
 Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
-If you’ve ever used jQuery, the equivalent would be the following:
+If you've ever used jQuery, the equivalent would be the following:
 
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
@@ -54,11 +54,11 @@ Hide Warning
 
 In the `on` attribute above, we see `tap:warning.hide`. In this case, `tap` is the event, `warning` is the ID of the element to act upon, and `hide` is the action to perform. Note that `hide` is one of the [generic actions]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) that is available on every AMP component and even other HTML elements. The documentation for an AMP component will usually contain a list of actions that can be performed on that component.
 
-Some actions take the form of functions and may accept arguments. In other cases, actions can be omitted entirely if the action is obvious. In each case, details can be found in the documentation for that component. We’ll see examples of each of these types of actions later in this course.
+Some actions take the form of functions and may accept arguments. In other cases, actions can be omitted entirely if the action is obvious. In each case, details can be found in the documentation for that component. We'll see examples of each of these types of actions later in this course.
 
 ## Exercise 1: Building The Menu
 
-Now it’s time to implement the navigation menu in our site using the `<amp-sidebar>` component. `<amp-sidebar>` is a panel of content that is initially hidden off-screen. When the sidebar is opened, the panel of content slides into view. The sidebar is opened by calling an action on the component. It can open on either the right or left side of the screen. The side the component appears on is controlled via the `side` attribute (default value is `left`). The sidebar remains on-screen until it is closed via an action, or until a user clicks outside of the component.
+Now it's time to implement the navigation menu in our site using the `<amp-sidebar>` component. `<amp-sidebar>` is a panel of content that is initially hidden off-screen. When the sidebar is opened, the panel of content slides into view. The sidebar is opened by calling an action on the component. It can open on either the right or left side of the screen. The side the component appears on is controlled via the `side` attribute (default value is `left`). The sidebar remains on-screen until it is closed via an action, or until a user clicks outside of the component.
 
 A sidebar with the ID `sidebar1` can be opened with the following actions:
 
@@ -80,7 +80,7 @@ Now, using the documentation for [`<amp-sidebar>`]({{g.doc('/content/amp-dev/doc
 
 - Add an `<amp-sidebar>` component with the `id` `sidebar1` that displays on the left-hand side of the screen.
 
-- Add a list of four items to the menu that all link to `#` for now (it’s a link that goes nowhere, but we’ll add the actual URLs in a future step): Our Story, Our Bikes, Latest Models, and Contact.
+- Add a list of four items to the menu that all link to `#` for now (it's a link that goes nowhere, but we'll add the actual URLs in a future step): Our Story, Our Bikes, Latest Models, and Contact.
 
 - We need to make one button that opens the menu and another that closes it. At the top of sidebar, add a `<div>` containing an X that toggles the sidebar.
 
@@ -156,7 +156,7 @@ Two different errors appear here, duplicated for each of the clickable elements 
 
 Remember that AMP enforces best practices on the web. In this case, AMP is making sure that your pages are accessible to users who use assistive technologies, such as screen readers.
 
-Let’s see the first one:
+Let's see the first one:
 
 ```
 The attribute 'role' in tag ‘div' is missing or incorrect, but required by attribute 'on'.
@@ -176,10 +176,10 @@ Some of our `<div>`s function as buttons, so they ought to be focusable via keyb
 
 Uh-oh! Our product manager calls and says that the marketing team has requested too many types of cheese bikes for the site to display in the menu as one single list. (After all, we recently added soft cheeses to our product inventory.) The manager suggests that it would be better to organize the extra sections into sub-menus.
 
-The documentation for <`amp-sidebar>` doesn’t explain how to implement a nested sub-menu. We need to find another component that we could use in conjunction with `<amp-sidebar>` that would give us the ability to add a collapsible sub-menu to our sidebar. Looking through the [list]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) of AMP components, in the layout section, we find an `<amp-accordion>` component that matches our needs. We can place the `<amp-accordion>` component inside of the `<amp-sidebar>` component just as we put `<ul>`, `<li>`, and `<a>` tags inside of the `<amp-sidebar>` in the previous exercise.
+The documentation for <`amp-sidebar>` doesn't explain how to implement a nested sub-menu. We need to find another component that we could use in conjunction with `<amp-sidebar>` that would give us the ability to add a collapsible sub-menu to our sidebar. Looking through the [list]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) of AMP components, in the layout section, we find an `<amp-accordion>` component that matches our needs. We can place the `<amp-accordion>` component inside of the `<amp-sidebar>` component just as we put `<ul>`, `<li>`, and `<a>` tags inside of the `<amp-sidebar>` in the previous exercise.
 
 [tip type="read-on"]
-**Note**: We’ve actually already practiced putting AMP components inside of other components. Remember when we created our first image carousel by placing `<amp-img>` components inside of the `<amp-carousel>` component? Placing components inside of other components is one way that they can work together effectively. We’ll look at other ways to combine components later in this course.
+**Note**: We've actually already practiced putting AMP components inside of other components. Remember when we created our first image carousel by placing `<amp-img>` components inside of the `<amp-carousel>` component? Placing components inside of other components is one way that they can work together effectively. We'll look at other ways to combine components later in this course.
 [/tip]
 
 {{ image('/static/img/courses/intermediate/image4.png', 465, 387, caption='Two-level navigation menu on the AMP website') }}
