@@ -27,9 +27,6 @@ const crypto = require('crypto');
 const rcs = require('rcs-core');
 const t = require('exectimer');
 const Tick = t.Tick;
-const AmpOptimizer = require('amp-toolbox-optimizer');
-const cheerio = require('cheerio');
-const fs = require('fs');
 const {project} = require('@lib/utils');
 
 const config = require('@lib/config');
@@ -70,7 +67,7 @@ const SELECTOR_REWRITE_EXCLUDED_PATHS =
   /\/documentation\/examples.*|\/documentation\/components\.html/;
 
 class PageTransformer {
-  constructor(optimizer = AmpOptimizer.create()) {
+  constructor() {
     this._log = new Signale({
       'interactive': false,
       'scope': 'Page transformer',
@@ -92,8 +89,6 @@ class PageTransformer {
 
     // Holds CSS by hash that has already been minified
     this._minifiedCssCache = {};
-
-    this._optimizer = optimizer;
   }
 
   /**
@@ -121,11 +116,6 @@ class PageTransformer {
           html = scope.minifyPage(html, canonicalPage.path);
           timer.stop();
 
-          timer = new Tick('optimizing');
-          timer.start();
-          const optimizedHtml = await scope.optimize(html);
-          timer.stop();
-
           canonicalPage.contents = Buffer.from(optimizedHtml);
 
           this.push(canonicalPage);
@@ -137,17 +127,13 @@ class PageTransformer {
   }
 
   done() {
-    ['minifying', 'optimizing'].forEach((key) => {
+    ['minifying'].forEach((key) => {
       const results = t.timers[key];
       if (!results) {
         return;
       }
       this._log.info(`[PAGE_TRANSFORMER] ${key} mean time: ${results.parse(results.mean())}`);
     });
-  }
-
-  async optimize(html) {
-    return this._optimizer.transformHtml(html);
   }
 
   /**

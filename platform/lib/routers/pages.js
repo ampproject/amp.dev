@@ -21,6 +21,7 @@ const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
+const AmpOptimizer = require('amp-toolbox-optimizer');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -158,6 +159,8 @@ function rewriteLinks(canonical, html, format) {
 // eslint-disable-next-line new-cap
 const pages = express.Router();
 
+const optimizer = AmpOptimizer.create();
+
 pages.get('/*', async (req, res, next) => {
   // Let known file extensions automatically fallthrough as if they could not
   // been resolved by the preceeding middleware the pages router can't
@@ -207,6 +210,13 @@ pages.get('/*', async (req, res, next) => {
   // selected format via GET paramters. The static URLs need to be rewritten
   // for this use case
   renderedTemplate = rewriteLinks(url.pathname, renderedTemplate, templateContext.format);
+
+  // Pipe the rendered template through the AMP optimizer
+  try {
+    renderedTemplate = await optimizer.transformHtml(renderedTemplate);
+  } catch (e) {
+    console.error('[OPTIMIZER]', e);
+  }
 
   res.send(renderedTemplate);
 });
