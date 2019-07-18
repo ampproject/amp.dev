@@ -158,9 +158,7 @@ Remember to include the `<amp-selector>` library in the `<head>`:
 
 ## Exercise 7: Zooming In On a Carousel Image
 
-Lastly, we want to zoom in on a carousel image when a user clicks on it so that it shows up in more detail. A popular way to achieve this is with a lightbox. A lightbox component takes an element such as an image and places it above the rest of the content on the page. So you can focus on that image or element, the rest of the page gets partially obscured by a semi-transparent background.
-
-The [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) is a full-screen popup component that implements the lightbox pattern. If you include the ID of an `<amp-image-lightbox>` in an event-handler of an `<amp-img>` component, then a lightbox containing that image appears and expands until the lightbox fills the entire screen. For example, add the following code to the large image at the top of our page to see how the lightbox approach works:
+Lastly, we want to zoom in on a carousel image when a user clicks on it so that it shows up in more detail. A popular way to achieve this is with a lightbox.  [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) is a full-screen popup component that implements this pattern. Open a lightbox by including the ID of an `<amp-image-lightbox>` in an event-handler of an `<amp-img>` component. For example, add the following code to the large image at the top of our page to see how the lightbox approach works:
 
 [sourcecode:html]
 {% raw %}<amp-image-lightbox id="ricotta-racer-lightbox" layout="nodisplay"></amp-image-lightbox>
