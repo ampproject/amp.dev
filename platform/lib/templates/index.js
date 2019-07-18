@@ -73,8 +73,8 @@ class Templates {
       tags: {
         blockStart: '[%',
         blockEnd: '%]',
-        variableStart: '[[',
-        variableEnd: ']]',
+        variableStart: '[=',
+        variableEnd: '=]',
         commentStart: '[#',
         commentEnd: '#]',
       }});
