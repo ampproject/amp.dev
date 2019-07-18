@@ -231,9 +231,9 @@ Let's discuss the structure of the product information that is loaded in an `<am
 </amp-state>
 {% endraw %}[/sourcecode]
 
-First, notice that the ID of the `<amp-state>` component is `productData`. That means that the base price of the item (\$14) can be referenced in binding expressions as `productData.basePrice`. Next, in the `upcharges` section, we list the various options for the t-shirt and how they raise the price of the item.
+First, notice that the ID of the `<amp-state>` component is `productData`. That means that the base price of the item (\$14) can be referenced in binding expressions as `productData.basePrice`. Next, in the `upcharges` section, we list the various options for the t-shirt and how they raise the item's price.
 
-For example, referencing `productData.upcharges.size.Medium` in an expression would return the upcharge price of a medium t-shirt (\$2). (An upcharge is an additional price paid for a product customization.) We simply add the upcharge price to the base price of the t-shirt (`productData.basePrice` + `productData.upcharges.size.Medium` = $14 + $2 = \$16) to get the final price for the shirt. Finally, the `images` section contains the different URLs that point to images for each color of our shirt.
+For example, referencing `productData.upcharges.size.Medium` in an expression would return the upcharge price of a medium t-shirt (\$2). (An upcharge is an additional price paid for a product customization.) We simply add the upcharge price to the base price of the t-shirt (`productData.basePrice` + `productData.upcharges.size.Medium` = $14 + $2 = \$16) to get the final price for the shirt. Finally, the `images` section contains the different URLs that point to images for each shirt color.
 
 Using the documentation for [`<amp-bind>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), and the descriptions above, update the given basic product page to meet the following requirements:
 
@@ -244,10 +244,6 @@ Using the documentation for [`<amp-bind>`]({{g.doc('/content/amp-dev/documentati
 - The `<p>` tag containing the product description (Fit: Men - Size: Small - Color: Red) should be updated to reflect the currently selected product options.
 
 - The `<span>` tag containing the dollar portion of the product price should be updated to reflect the base price of the item and any upcharges related to currently selected product options.
-
-[tip type="read-on"]
-**Hint**: An important skill to complete this exercise is using one set of state variables to retrieve data from another state variable. In this case, we will frequently be using the variables in the `optionsData` state variable to retrieve information from the `productData` state variable. For example, to figure out what the upcharge is for the currently selected t-shirt size, we'd reference `productData.upcharges.size[optionsData.size]` in our binding expression. If `optionsData.size` is currently set to `Small`, then the previous expression is equivalent to `productData.upcharges.size.Small`. You can read more about this approach to referencing information in JSON [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors).
-[/tip]
 
 ### Solution
 
