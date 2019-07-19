@@ -45,23 +45,6 @@ author: sebastianbenz
       text-decoration: none;
       word-wrap: normal;
     }
-    .abe-viewer-preview {
-      display: flex;
-    }
-    .www-component-desc>.ampstart-mobile-frame {
-      width: 380px;
-      height: 669px;
-      margin: 1rem auto;
-      border-radius: 17px;
-      position: relative;
-    }
-    .ampstart-mobile-frame amp-iframe {
-      margin: 1px;
-      top: 54px;
-      bottom: 56px;
-      left: 31px;
-      right: 30px;
-    }
   </style>
 </head>
 
@@ -82,7 +65,7 @@ author: sebastianbenz
     It's possible with AMP to create beautiful and interactive product pages. [This sample](/documentation/examples/e-commerce/product_page/preview/) demonstrates how to build a complex product page with dynamic product configuration and an add-to-cart flow. With the introduction of [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) it's now possible to create truly interactive AMP pages: it can be used to coordinate page state based on user interaction to show and hide arbitrary `div`s.
 
     <div class="ap-o-code-preview-preview-iframe">
-      <amp-iframe class="ap-o-code-preview-iframe" media="(min-width: 650px)" src="<% hosts.preview %>/documentation/examples/e-commerce/product_page" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
+      <amp-iframe class="ap-o-code-preview-iframe" src="<% hosts.preview %>/documentation/examples/e-commerce/product_page" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
     </div>
 
     These samples help you get started with building a product landing page with AMP:
@@ -99,7 +82,7 @@ author: sebastianbenz
     As popular landing pages for users, product category pages are well suited for AMP. They are often a mix of editorial content and the hero-style presentation of products. [Here](/documentation/examples/e-commerce/product_browse_page/preview/) is a working sample of a product pages demonstrating common features of a category pages such as product listings or search.
 
     <div class="ap-o-code-preview-preview-iframe">
-      <amp-iframe class="ap-o-code-preview-iframe" media="(min-width: 650px)" src="<% hosts.preview %>/documentation/examples/e-commerce/product_browse_page" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
+      <amp-iframe class="ap-o-code-preview-iframe" src="<% hosts.preview %>/documentation/examples/e-commerce/product_browse_page" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
     </div>
 
     Creating category pages with AMP is possible:
@@ -117,7 +100,7 @@ author: sebastianbenz
 
     Here is a sample how to render product name and price using amp-list:
   -->
-  <amp-list height="24" layout="fixed-height" src="/static/samples/json/product.json" binding="no" class="m1">
+  <amp-list height="24" layout="fixed-height" src="/static/samples/json/product.json" binding="no">
     <template type="amp-mustache">
       {{name}}: ${{price}}
     </template>
@@ -150,7 +133,7 @@ author: sebastianbenz
 
     Another approach is to use [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md',locale=doc.locale).url.path}}) with a JSON endpoint, This works well if up-to-date data needs to be available after an user interaction, for example, a hotel page displays room availability when the user selects specific dates.
   -->
-  <div class="p1">
+  <div>
     <amp-state id="products" src="/static/samples/json/products.json"></amp-state>
     <amp-img on="tap:AMP.setState({ productId: 0})" src="/static/samples/img/red_apple_1_60x40.jpg" width="60" height="40" role="button" tabindex="0">
     </amp-img>
