@@ -18,25 +18,25 @@ format_cards:
     type: websites
     link:
         text: Build your first AMP Website
-        url: /content/amp-dev/documentation/guides-and-tutorials/start/create/?format=websites
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/create.md
   - title: AMP Stories
     description: Create snackable, immersive and immediate stories on your website.
     type: stories
     link:
         text: Build your first AMP Story
-        url: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/?format=stories
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story.md
   - title: AMP Ads
     description: Extend your website with a fast and lightweight ad experiences.
     type: ads
     link:
         text: Build your first AMP Ad
-        url: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/?format=ads
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad.md
   - title: AMP Email
     description: Create emails, that allow your recipients to interact dynamically with content.
     type: email
     link:
         text: Build your first AMP Email
-        url: /content/amp-dev/documentation/guides-and-tutorials/start/create_email?format=email
+        url: /content/amp-dev/documentation/guides-and-tutorials/start/create_email.md
 
 resources_formats:
   - websites
@@ -117,7 +117,7 @@ resources_cards:
         </section>
 
         {% do doc.styles.addCssFile('/css/components/organisms/resources-overview.css') %}
-        <amp-state id="chosenFormat" class="i-amphtml-layout-container i-amphtml-element" i-amphtml-layout="container" hidden="" aria-hidden="true">
+        <amp-state id="chosenFormat" class="layout-container element" layout="container" hidden="" aria-hidden="true">
           <script type="application/json">
             {
               "activeFormat": "websites"
