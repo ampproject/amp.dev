@@ -15,9 +15,8 @@ contributors:
 ---
 
 [filter formats="email"]
-Note: This document is in addition to rules specific to AMP for Email. See
-[AMP for Email Supported CSS]({{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md', locale=doc.locale).url.path }})
-for more information.
+Note: AMP for Email specifies additional CSS constraints which are described in
+[AMP for Email Supported CSS]({{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md', locale=doc.locale).url.path }}).
 [/filter]
 
 Like all web pages, AMP pages are styled with CSS,
