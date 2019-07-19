@@ -51,11 +51,11 @@ author: sebastianbenz
         This sample allows an user to login and logout using either email/password or [Google sign in](https://developers.google.com/identity/sign-in/web/). Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-page).  -->
           <script id="amp-access" type="application/json">
             {
-                "authorization": "<% hosts.backend %>/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+                "authorization": "/documentation/examples/api/amp-access/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
                 "noPingback": "true",
                 "login": {
-                  "sign-in": "<% hosts.backend %>/samples_templates/comment_section/login?rid=READER_ID",
-                  "sign-out": "<% hosts.backend %>/samples_templates/comment_section/logout?rid=READER_ID"
+                  "sign-in": "/documentation/examples/api/amp-access/login?rid=READER_ID",
+                  "sign-out": "/documentation/examples/api/amp-access/logout?rid=READER_ID"
                 },
                 "authorizationFallbackResponse": {
                     "error": true,
