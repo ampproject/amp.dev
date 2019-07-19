@@ -58,10 +58,10 @@ tools: !g.yaml /shared/data/tools.yaml
 <section class="ap--tools">
 {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
 
-<amp-state id="activeFilter">
+<amp-state id="filter">
   <script type="application/json">
     {
-      "chosenFilter": "none"
+      "format": "none"
     }
   </script>
 </amp-state>
@@ -69,21 +69,21 @@ tools: !g.yaml /shared/data/tools.yaml
 <section class="ap-o-tool-section ap-o-tool-format-filter-container ap--container">
   <p class="ap-o-tool-format-filter-caption">Find the right tools to build</p>
   {% do doc.icons.useIcon('icons/close.svg') %}
-  <ul class="ap-o-tool-format-filter none" [class]="activeFilter.chosenFilter != 'none' ? 'ap-o-tool-format-filter filtered' : 'ap-o-tool-format-filter none' ">
+  <ul class="ap-o-tool-format-filter none" [class]="filter.format != 'none' ? 'ap-o-tool-format-filter filtered' : 'ap-o-tool-format-filter none' ">
     {% for link in doc.filters %}
       <li>
         <button
-          class="ap-m-filter-bubble {{link|slug}} active"
-          [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble {{link|slug}} active' : activeFilter.chosenFilter == '{{link|slug}}' ? 'ap-m-filter-bubble {{link|slug}} active chosen' : 'ap-m-filter-bubble {{link|slug}}'"
-          on="tap:AMP.setState({activeFilter: {chosenFilter: '{{link|slug}}' } })">
+          class="ap-m-filter-bubble {{link|slug}} [% if format|lower == '{{link}}'|lower %]active chosen[% elif forceFiltered %]active[% endif %]"
+          [class]="filter.format == 'none' ? 'ap-m-filter-bubble {{link|slug}} active' : filter.format == '{{link|slug}}' ? 'ap-m-filter-bubble {{link|slug}} active chosen' : 'ap-m-filter-bubble {{link|slug}}'"
+          on="tap:AMP.setState({filter: {format: '{{link|slug}}' } })">
           <div class="ap-m-filter-bubble-icon ap-a-ico {{link|lower}}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{link|lower}}"></use></svg>
           </div>
           {{ link }}
           <div tabindex=0 role="reset"
             class="ap-m-filter-bubble-reset ap-a-ico"
-            [class]="activeFilter.chosenFilter == '{{link|slug}}' ? 'ap-m-filter-bubble-reset ap-a-ico show': 'ap-m-filter-bubble-reset ap-a-ico'"
-            on="tap:AMP.setState({activeFilter: {chosenFilter: 'none' }})">
+            [class]="filter.format == '{{link|slug}}' ? 'ap-m-filter-bubble-reset ap-a-ico show': 'ap-m-filter-bubble-reset ap-a-ico'"
+            on="tap:AMP.setState({filter: {format: 'none' }})">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
           </div>
         </button>
@@ -97,7 +97,11 @@ tools: !g.yaml /shared/data/tools.yaml
   <section class="ap-o-tool-section ap--container">
     <div class="ap-o-tool-section-title">
       {% for tool in doc.tools[category] %}
-      <span hidden class="show" [class]="activeFilter.chosenFilter == 'none' || activeFilter.chosenFilter != 'none' && {{ tool.formats }}.includes(activeFilter.chosenFilter) ? 'show' : 'hide'"></span>
+      [% if format not in {{ tool.formats|tojson }} and not forceFiltered %]
+      <span hidden class="hide" [class]="filter.format == 'none' || filter.format != 'none' && {{ tool.formats }}.includes(filter.format) ? 'show' : 'hide'"></span>
+      [% else %]
+      <span hidden class="show" [class]="filter.format == 'none' || filter.format != 'none' && {{ tool.formats }}.includes(filter.format) ? 'show' : 'hide'"></span>
+      [% endif %]
       {% endfor %}
 
       <h2 id="{{ category }}">
