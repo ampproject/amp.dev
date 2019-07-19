@@ -35,4 +35,3 @@ test('Test escape mustache tags', async (done) => {
 
   done();
 });
-

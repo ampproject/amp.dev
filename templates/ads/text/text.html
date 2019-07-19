@@ -1,0 +1,180 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+  <!-- The AMP Story runtime is responsible for rendering the call to action button. 
+  The call to action button must be configured from a predefined set of [choices](https://www.ampproject.org/docs/ads/story_ads_best_practices). -->  
+  <meta name="amp-cta-type" content="EXPLORE">
+   <!-- amp-cta-url specifies where the user is directed once clicking upon the call to action button. -->
+  <meta name="amp-cta-url" content="https://www.amp.dev">
+
+  <style amp-custom>
+    @font-face {
+        font-family: 'Monoton';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Monoton'), local('Monoton-Regular'), url(https://fonts.gstatic.com/s/monoton/v8/5h1aiZUrOngCibe4TkHLQka4BU4.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v6/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .hero img {
+      object-fit: cover;
+    }
+
+    /* Background is implemented in css; can be replaced by an image, if using an image the recommended background aspect ratio is  9:16 & 16:9.
+     Items should always be center aligned to the viewport */
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: space-between;
+      width: 100vw;
+      background-image: repeating-linear-gradient(150deg, #2E2B5E 0 86px, #5617D7 86px 172px);
+    }
+
+    .gradient {
+      align-items: center;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+      display: flex;
+      flex-direction: column;
+      height: 30vh;
+      justify-content: flex-end;
+      width: 100vw;
+      z-index: 1;
+    }
+
+    .logo-container {
+      display: flex;
+      height: 7vh;
+      justify-content: center;
+      margin-top: 7vh;
+    }
+
+    .logo img{
+      max-height: 7vh;
+    }
+
+    .bottom {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .heading-text-box {
+      font-family: 'Monoton', serif;
+      font-size: 52pt;
+      line-height: 30%;
+      height: 30vh;
+      margin-bottom: 2vh;
+      position: relative;
+      text-align: left;
+      width: 70vw;
+      opacity: 0;
+    }
+
+    .subtitle-text-box {
+      font-family: 'Poppins', serif;
+      font-size: 20pt;
+      line-height: 28%;
+      height: 11.5vh;
+      position: relative;
+      text-align: left;
+      width: 70vw;
+      opacity: 0;
+    }
+
+    #heading-fit-text > div {
+      justify-content: flex-end;
+    }
+
+    #subtitle-fit-text > div {
+      justify-content: flex-start;
+    }
+
+    /* The animation duration can be adjustable */
+    body[amp-story-visible] .heading-text-box,
+    body[amp-story-visible] .subtitle-text-box {
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-name: add-content;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    body[amp-story-visible] .subtitle-text-box {
+      animation-delay: 1s;
+    }
+
+    @keyframes add-content {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<!-- In order to see this ads as a standalone AMP page please add the amp-story-visible attribute to the body tag here. 
+  Please remember to remove this attribute before uploading your ad to an ad-server. -->
+<body>
+    <div class="container">
+        <!-- Recommended logo aspect ratio is 4:1. Replace text_logo.png with your own logo. 
+        Recommended image format type for images are jpg, png. Images should not be bigger than 5 mb.-->
+        <div class="logo-container">
+            <amp-img alt="logo"
+                class="logo"
+                src="text_logo.png"
+                width="93"
+                height="52"
+                layout="intrinsic">
+            </amp-img>
+        </div>
+    <div class="bottom">
+        <!-- Recommended text font size for heading is min 16pt and max 64pt. Color can be flexible. -->
+        <div class="heading-text-box">
+            <amp-fit-text
+                id="heading-fit-text"
+                width="80"
+                height="15"
+                layout="fill"
+                min-font-size="16"
+                max-font-size="64">
+                GREAT AUTUMN SALE
+            </amp-fit-text>
+        </div>
+        <!-- Recommended text font size for subtitle is min 16pt and max 22pt. Color can be flexible. -->
+        <div class="subtitle-text-box">
+            <amp-fit-text
+                id="subtitle-fit-text"
+                width="80"
+                height="10"
+                layout="fill"
+                min-font-size="16"
+                max-font-size="22">
+                Enjoy the start of the holiday season with our special sale discount.
+            </amp-fit-text>
+        </div>
+        <div class="gradient">
+        </div>
+    </div>
+  </div>  
+</body>
+</html>

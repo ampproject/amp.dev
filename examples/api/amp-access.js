@@ -24,7 +24,9 @@ const utils = require('@lib/utils');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 examples.use(cookieParser());
-examples.use(express.urlencoded());
+examples.use(express.urlencoded({
+  extended: true,
+}));
 
 const AMP_ACCESS_COOKIE = 'ABE_LOGGED_IN';
 const VALID_USERS = {

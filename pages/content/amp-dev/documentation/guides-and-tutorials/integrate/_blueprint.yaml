@@ -6,3 +6,6 @@ $localization:
 $order: 3
 
 bucket: true
+formats:
+  - websites
+  - email

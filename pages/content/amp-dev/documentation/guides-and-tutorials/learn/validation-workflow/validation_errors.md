@@ -4,8 +4,8 @@ $order: 1
 description: 'Valid AMP documents must not include any validation errors. The purpose of this document is to help you better understand and fix any validation errors ...'
 formats:
   - websites
-  - email
   - stories
+  - emails
   - ads
 ---
 
@@ -51,8 +51,15 @@ see the [AMP validator specification](https://github.com/ampproject/amphtml/blob
   </tr>
 </table>
 
+[filter formats="websites, stories, ads"]
 The following tags must be present in all AMP docs:
+[/filter]
 
+[filter formats="email"]
+The following tags must be present in all AMP emails:
+[/filter]
+
+[filter formats="websites, stories, ads"]
 * <a name="doctype"></a>`<!doctype html>`
 * <a name="html"></a>`<html amp> or <html ⚡>`
 * <a name="head"></a>`<head>`
@@ -62,6 +69,17 @@ The following tags must be present in all AMP docs:
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
+[/filter]
+
+[filter formats="email"]
+* <a name="doctype"></a>`<!doctype html>`
+* <a name="html"></a>`<html amp4email> or <html ⚡4email>`
+* <a name="head"></a>`<head>`
+* <a name="utf"></a>`<meta charset="utf-8">`
+* <a name="boilerplate"></a>`<style amp4email-boilerplate>body{visibility:hidden}</style>`
+* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+* <a name="body"></a>`<body>`
+[/filter]
 
 These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator spec</a>;
 they are also referenced in the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}).
@@ -264,7 +282,9 @@ Detailed messages for this can be one of the following:
 * "Disallowed @supports in CSS"
 * "Disallowed @document in CSS"
 * "Disallowed @page in CSS"
+[filter formats="websites, stories, ads"]
 * "Disallowed @viewport in CSS"
+[/filter]
 
 ### Disallowed text inside tag
 
@@ -296,8 +316,10 @@ The following is the list of blacklisted CSS data
 * `"@namespace"`
 * `"@document"`
 * `"@page"`
+[filter formats="websites, stories, ads"]
 * `"@viewport"`
-
+[/filter]
+[filter formats="websites, stories, ads"]
 ### Disallowed property inside attribute in tag
 
 <table>
@@ -315,22 +337,27 @@ The following is the list of blacklisted CSS data
   </tr>
 </table>
 
-This error occurs when the property name inside an attribute isn't allowed.
+This error occurs when the property name inside an attribute is not allowed.
 The term property in this context means the structured key/value data inside an attribute.
-For example, in
+
+For example,
+the following would result in an error:
+
+`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
+
+It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
+As another example, in
+
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `width` and `minimum-scale` are property names.
 
 The following results in a DISALLOWED_PROPERTY_IN_ATTR_VALUE error:
 
 `<meta name="viewport content="width=device-width;invalidfoo=1">`
+[/filter]
 
-As another example,
-the following would result in an error:
 
-`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
 
-It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 ### Invalid property value
 
@@ -351,6 +378,8 @@ It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 This error occurs when the property value inside an attribute is invalid.
 The term property in this context means the structured key/value data inside an attribute.
+
+[filter formats="websites, stories, ads"]
 For example, in
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `device-width` and `1` are property values.
@@ -360,6 +389,7 @@ The following results in a INVALID_PROPERTY_VALUE_IN_ATTR_VALUE error:
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
 Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.) component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
+[/filter]
 
 ### Missing URL
 
@@ -422,6 +452,7 @@ This error occurs for tags that have an `href` or `src`
 that must be set to certain protocols.
 For example, many tags require `https`.
 
+[filter formats="websites, stories, ads"]
 ### Mandatory property missing from attribute
 
 <table>
@@ -449,6 +480,7 @@ They refer to expected tags:
 
 * `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
 * `<meta name=viewport content="width=device-width;minimum-scale=1">`
+[/filter]
 
 ### Mutually exclusive attributes
 
@@ -583,6 +615,7 @@ are missing their `mandatory_ancestor` (tag, ancestor):
 * `audio` must be a descendant of `noscript`.
 * `noscript` must be a descendant of `body`.
 
+[filter formats="websites, stories, ads"]
 ### Mandatory tag ancestor with hint
 
 <table>
@@ -607,6 +640,7 @@ and isn't properly nested in its mandatory parent:
 * `video` isn't within `noscript` parent.
 * `audio` isn't within `noscript` parent.
 * `noscript` isn't within `body` parent.
+[/filter]
 
 ### Duplicate unique tag
 
@@ -636,7 +670,9 @@ The full list of unique tags is known:
 * `<link rel=canonical href=...>`
 * `<link rel=amphtml href=...>`
 * `<meta charset="utf-8">`
+[filter formats="websites, stories, ads"]
 * `<meta viewport>`
+[/filter]
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`

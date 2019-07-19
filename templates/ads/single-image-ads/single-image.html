@@ -1,0 +1,168 @@
+<!doctype html>
+<html ⚡4ads>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+  <style amp4ads-boilerplate>body{visibility:hidden}</style>
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+  <!-- The AMP Story runtime is responsible for rendering the call to action button. 
+  The call to action button must be configured from a predefined set of [choices](https://www.ampproject.org/docs/ads/story_ads_best_practices). -->  
+  <meta name="amp-cta-type" content="EXPLORE">
+  <!-- amp-cta-url specifies where the user is directed once clicking upon the call to action button. -->
+  <meta name="amp-cta-url" content="https://www.amp.dev">
+
+  <style amp-custom>
+    @font-face {
+      font-family: 'Libre Baskerville';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Libre Baskerville Bold'), local('LibreBaskerville-Bold'), url(https://fonts.gstatic.com/s/librebaskerville/v5/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY5KcC-wLOjAUw.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .hero img {
+      object-fit: cover;
+    }
+
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: space-between;
+      width: 100vw;
+    }
+
+    .logo-container {
+      display: flex;
+      height: 7vh;
+      justify-content: center;
+      margin-top: 7vh;
+      width: 28vh;
+    }
+
+    .logo img{
+      max-height: 7vh;
+    }
+
+    .bottom {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .heading-text-box {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      height: 15vh;
+      margin-bottom: 2vh;
+      opacity: 0;
+      position: relative;
+      text-align: center;
+      width: 80vw;
+    }
+
+    .subtitle-text-box {
+      font-family: 'Libre Baskerville', serif;
+      height: 10vh;
+      margin-bottom: calc(68px + 3vh);
+      opacity: 0;
+      position: relative;
+      text-align: center;
+      width: 80vw;
+    }
+    /* The animation duration can be adjustable */
+    body[amp-story-visible] .heading-text-box,
+    body[amp-story-visible] .subtitle-text-box {
+      animation-duration: 600ms;
+      animation-fill-mode: forwards;
+      animation-name: text-animation;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    body[amp-story-visible] .subtitle-text-box{
+      animation-delay: 600ms;
+    }
+
+    #heading-fit-text > div {
+      justify-content: flex-end;
+    }
+
+    #subtitle-fit-text > div {
+      justify-content: flex-start;
+    }
+
+    @keyframes text-animation {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<!-- In order to see this ads as a standalone AMP page please add the amp-story-visible attribute to the body tag here. 
+  Please remember to remove this attribute before uploading your ad to an ad-server. -->
+<body>
+  <!-- Recommended image format type for images are jpg, png. Images should not be bigger than 5 mb.
+  Replace cool-shirt-blurred.png with your own asset. -->
+  <amp-img alt="shirt on display"
+    class="hero"
+    src="cool-shirt-blurred.png"
+    width="600"
+    height="1200"
+    layout="fill">
+  </amp-img>
+  <div class="container">
+    <!-- Recommended logo aspect ratio is 4:1. Replace single-image-logo.png with your own logo. -->
+    <div class="logo-container">
+      <amp-img alt="logo"
+        class="logo"
+        src="single-image-logo.png"
+        width="208"
+        height="88"
+        layout="intrinsic">
+      </amp-img>
+    </div>
+    <div class="bottom">
+      <!-- Recommended text font size for heading is min 16pt and max 64pt. Color can be flexible. -->
+      <div class="heading-text-box">
+        <amp-fit-text
+          id="heading-fit-text"
+          layout="fill"
+          min-font-size="16"
+          max-font-size="64">
+          Annual Clothing Sale
+        </amp-fit-text>
+      </div>
+      <!-- Recommended text font size for subtitle is min 16pt and max 22pt. Color can be flexible. -->
+      <div class="subtitle-text-box">
+        <amp-fit-text
+          id="subtitle-fit-text"
+          layout="fill"
+          min-font-size="16"
+          max-font-size="22">
+          Spice up your wardrobe and style with our new collection.
+        </amp-fit-text>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

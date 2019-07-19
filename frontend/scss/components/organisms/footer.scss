@@ -116,6 +116,12 @@
       padding: 0;
     }
 
+    &-menu + &-title {
+      @media (min-width: 768px) {
+        margin-top: 2.5em;
+      }
+    }
+
     &-item {
       position: relative;
     }

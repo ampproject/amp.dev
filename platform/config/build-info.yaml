@@ -1,8 +1,7 @@
-# This file will be modified during build time if project is built via CI
-# inspect it during runtime by visiting /who-am-i
-at: NOW
-by: USER
-number: TRAVIS_BUILD_NUMBER
+number: null
+at: 2019-07-15T08:03:12.456Z
+by: Sebastian Benz
+environment: production
 commit:
-  sha: TRAVIS_COMMIT
-  message: TRAVIS_COMMIT_MESSAGE
+  sha: 7b1b22b844ec7c04da2e51b8fc6d847959ae9a0a
+  message: "✨ Migrate oauth backend (#2392)\n\n* ✨ Migrate oauth backend\r\n\r\n* ♻️ Merge handlers into one\r\n\r\n* ♻️ Use async/await pattern\r\n\r\n* ♻️ Remove try/catch block"

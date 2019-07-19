@@ -34,7 +34,8 @@
                 {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
                 {% set formats = collection.formats or [] %}
-                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                [% if format in {{ formats|tojson }} %]
+                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
                   {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
                   {% if doc.pod.file_exists(collection_index) %}
                   {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
@@ -76,13 +77,15 @@
                   </div>
                   {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
                 </li>
+                [% endif %]
                 {# Check if the item is b) document #}
                 {% elif '<Document' in item|pprint %}
                 {% set document = item %}
                 {% if not document.hidden %}
                 {% set formats = document.formats or document.collection.formats or [] %}
                 {% set activeDocument = true if document.url == doc.url %}
-                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                [% if format in {{ formats|tojson }} %]
+                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
                   {# If the document is part of a tutorial render progress #}
                   {% if document.collection.tutorial %}
                   {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
@@ -97,6 +100,7 @@
                     {% endif %}
                   </a>
                 </li>
+                [% endif %]
                 {% endif %}
                 {% endif %}
                 {% endif %}

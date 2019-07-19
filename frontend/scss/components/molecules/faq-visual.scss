@@ -1,0 +1,53 @@
+/*
+
+############################
+### MOLECULE: faq-visual ###
+############################
+
+*/
+
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+.#{molecule('faq-visual')} {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 17em;
+  padding: 1.5em 0;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    grid-column: 12 / -1;
+    position: static;
+    margin-top: -55%;
+    max-width: 85%;
+    padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: -50%;
+    max-width: 75%;
+  }
+
+  &-image {
+    width: 60%;
+    height: auto;
+    margin: 0 0 0 auto;
+    animation: 10s ease-in-out infinite bounce -4s;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      -webkit-animation: none;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translate(0%, 4%); }
+  50% { transform: translate(0%, -4%); }
+  100% { transform: translate(0%, 4%); }
+}
