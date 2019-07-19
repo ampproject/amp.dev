@@ -91,7 +91,7 @@ resources_cards:
           <div class="ap--format-cards">
             <div class="ap-o-format-cards">
               {% for card in doc.format_cards %}
-              <a href="{{g.doc(card.link.url, locale=doc.locale).url.path}}" class="ap-o-format-cards-card ap-o-format-cards-card-{{ card.type }}">
+              <a href="{{g.doc(card.link.url, locale=doc.locale).url.path}}?format={{card.type}}" class="ap-o-format-cards-card ap-o-format-cards-card-{{ card.type }}">
                 <div class="ap-o-format-cards-card-body">
                   <div class="ap-a-ico ap-o-format-cards-card-icon">
                     <svg>
