@@ -76,11 +76,11 @@ preview: default
     <button update on="tap:amp-live-list-insert-blog.update">You have updates</button>
     <div items>
       [% for item in  blogItems %]
-          <div id="[[ item.id ]]" data-sort-time="[[ item.timestamp ]]" class="blog-item">
-              <amp-img src="[[ item.img ]]"
+          <div id="[= item.id =]" data-sort-time="[= item.timestamp =]" class="blog-item">
+              <amp-img src="[= item.img =]"
                   layout="responsive" width="1280" height="853">
               </amp-img>
-              <div>[[ item.text ]]</div>
+              <div>[= item.text =]</div>
           </div>
         [% endfor %]
     </div>
@@ -100,8 +100,8 @@ preview: default
         id="amp-live-list-update">
       <button update on="tap:amp-live-list-insert-blog.update">You have updates</button>
       <div items>
-        <div id="time" data-sort-time="1234567" data-update-time="[[ timestamp ]]" class="time">
-          The time is: <time>[[ time ]]</time>
+        <div id="time" data-sort-time="1234567" data-update-time="[= timestamp =]" class="time">
+          The time is: <time>[= time =]</time>
         </div>
       </div>
   </amp-live-list>
