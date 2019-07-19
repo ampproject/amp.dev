@@ -25,7 +25,6 @@ The page with all AMP tools.
 @import '../organisms/tools-teaser';
 
 .#{utility('stage')} {
-
   .#{organism('stage')} {
     margin-bottom: 50px;
 
@@ -65,6 +64,139 @@ The page with all AMP tools.
   overflow: visible;
 }
 
-.#{utility('tools')} {
+section.#{utility('tools')} {
   padding: 0 25px;
+
+  .#{organism('tool-section')} {
+    margin-bottom: 3em;
+    padding: 0 30px;
+
+    @media (min-width: 768px) {
+      margin-top: 4em;
+    }
+
+    &-title { grid-column: 1 / -1; }
+    &-title > h2 { opacity: 0.35; }
+    &-title > .show ~ .hide ~ h2, .show + h2 { opacity: 1; }
+  }
+
+  .#{organism('tool-format-filter-container')} {
+    grid-row-gap: 0;
+    margin-top: 0;
+  }
+
+  .#{organism('tool-format-filter-caption')} {
+    grid-column: 1 / -1;
+  }
+
+  .#{organism('tool-format-filter')} {
+    grid-column: 1 / -1;
+    list-style: none;
+    padding: 0;
+    margin: 0 -8px;
+
+    li {
+      display: inline-block;
+      margin: 10px 8px;
+    }
+  }
+
+  .#{molecule('filter-bubble')} {
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Noto Sans', sans-serif;
+    color: color('silver');
+    background: color('white');
+    transition: 200ms;
+    box-shadow: 0 5px 25px 0px rgba(0,0,0,0.25);
+
+    &:hover {
+      box-shadow: 0 15px 35px 0px rgba(0,0,0,0.15);
+    }
+
+    &.websites .#{atom('ico')} { fill: #CCC; font-size: 21px; }
+    &.ads .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+    &.stories .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+    &.email .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+
+    &.chosen {
+      padding-left: 12px;
+      padding-right: 28px;
+    }
+
+    &.hover,
+    &.active {
+      &.websites {
+        @include gradient-websites; color: color('white');
+        .#{atom('ico')} { fill: color('white'); }
+      }
+
+      &.stories {
+        @include gradient-stories; color: color('pigment-indigo');
+        .#{atom('ico')} { fill: color('pigment-indigo'); }
+      }
+
+      &.ads {
+        @include gradient-ads; color: color('white');
+        .#{atom('ico')} { fill: color('white'); }
+      }
+
+      &.email {
+        @include gradient-e-mails; color: color('ultramarine');
+        .#{atom('ico')} { fill: color('ultramarine'); }
+      }
+    }
+
+    &-icon {
+      display: inline-flex;
+      margin: 0 2px 2px 0;
+      vertical-align: middle;
+    }
+
+    &-reset {
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: absolute;
+      width: 0;
+      height: 100%;
+      top: 0;
+      right: 0;
+
+      svg {
+        width: 8px;
+        height: 8px;
+        margin: 1px -10px 0 0;
+        opacity: 0;
+        transition: 200ms;
+      }
+
+      &.show {
+        width: 100%;
+
+        svg {
+          margin-right: 10px;
+          opacity: 1;
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  h1, h2 {
+    @include hl;
+    @include hl-h1;
+    margin-top: 0;
+  }
 }

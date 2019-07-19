@@ -1,0 +1,60 @@
+/*
+
+##############################
+### ORGANISM: tools widget ###
+##############################
+
+### INFO:
+
+The tools cards in widget form on the bottom of the about pages.
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color';
+@import '../atoms/_headline';
+@import '../atoms/_text';
+
+section.#{utility('tools-widget')} {
+  margin-bottom: 0;
+
+  .#{organism('teaser-grid')} {
+    margin-bottom: 0;
+
+    &-list {
+      display: flex;
+      overflow: auto;
+      margin: -40px 0 -120px;
+      padding: 0 10px 70px;
+
+      @media (min-width: 768px) {
+        padding: 0 0 70px;
+      }
+
+      .#{molecule('teaser')} {
+        display: flex;
+        margin: 40px 20px;
+        max-width: 300px;
+
+        @media (min-width: 768px) {
+          &:first-child {
+            margin-left: calc((((100vw - (30px * 23)) / 24) * 3) + (30px * 3));
+          }
+        }
+      }
+    }
+  }
+}
+
+section.#{utility('tools')} {
+  .#{utility('content')} {
+    margin-bottom: 2em;
+  }
+
+  .#{organism('component-visual-link')} {
+    grid-column: 4 / 25;
+  }
+}
