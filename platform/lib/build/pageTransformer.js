@@ -116,7 +116,7 @@ class PageTransformer {
           html = scope.minifyPage(html, canonicalPage.path);
           timer.stop();
 
-          canonicalPage.contents = Buffer.from(optimizedHtml);
+          canonicalPage.contents = Buffer.from(html);
 
           this.push(canonicalPage);
 
