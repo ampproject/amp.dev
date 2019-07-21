@@ -33,6 +33,19 @@ function develop() {
   gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), run)();
 }
 
+function extract() {
+  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), () => {
+    config.configureGrow();
+
+    grow('translations extract')
+        .catch(() => {
+          signale.fatal('Grow had an error starting up. There probably is a broken' +
+            'document in the project. See the log above for details.');
+          process.exit(1);
+        });
+  })();
+}
+
 function run() {
   config.configureGrow();
   grow(`run --port ${config.hosts.pages.port}`).catch(() => {
@@ -52,3 +65,4 @@ function run() {
 
 exports.bootstrap = bootstrap;
 exports.develop = develop;
+exports.extract = extract;
