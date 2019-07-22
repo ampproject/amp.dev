@@ -28,7 +28,7 @@ jobs:
     - scripts/unbuffer.sh gulp buildSamples
     - scripts/unbuffer.sh gulp lintAll
     script:
-    - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
+    scripts/unbuffer.sh gulp buildPrepare
   - stage: build
     env: APP_ENV=staging
     install: &1
