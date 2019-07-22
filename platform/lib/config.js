@@ -52,6 +52,7 @@ class Config {
     } else {
       this.test = false;
     }
+    console.log(`Config [env=${environment}, test=${this.test}]`);
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
