@@ -4,7 +4,7 @@ $order: 1
 description: 'The first time you land on the page, you can see 2 comments and a login button. If you look for the login button in the code, you will find ...'
 ---
 
-The first time you land on the [page]({{g.doc('/content/amp-dev/documentation/examples/previews/Comment_Section.html', locale=doc.locale).url.path}}), you can see 2 comments and a login button.
+The first time you land on the [page]({{g.doc(/documentation/examples/interactivity-dynamic-content/comment_section/preview/?format=websites).url.path}}), you can see 2 comments and a login button.
 
 <amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
