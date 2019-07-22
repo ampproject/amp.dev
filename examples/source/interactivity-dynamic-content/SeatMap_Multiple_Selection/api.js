@@ -26,11 +26,7 @@ const seats = require(utils.project.absolute('/examples/static/samples/json/seat
 const router = express.Router();
 
 SampleRenderer.use(router, (request, response, template) => {
-  response.send(template.render(createRequestContext(request, {
-    seats: seats.seats,
-    width: seats.width,
-    height: seats.height,
-  })));
+  response.send(template.render(createRequestContext(request, seats)));
 });
 
 module.exports = router;
