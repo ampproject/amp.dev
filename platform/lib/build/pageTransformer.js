@@ -113,7 +113,7 @@ class PageTransformer {
 
           let timer = new Tick('minifying');
           timer.start();
-          html = scope.minifyPage(html, canonicalPage.path);
+          // html = scope.minifyPage(html, canonicalPage.path);
           timer.stop();
 
           canonicalPage.contents = Buffer.from(html);
