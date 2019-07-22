@@ -30,3 +30,4 @@ ext:
 - extensions.amp_dev.AmpDevExtension
 - extensions.url_beautifier.UrlBeautifierExtension
 - extensions.jinja2_optimized_codehilite.Jinja2OptimizedCodehiliteExtension
+- extensions.markdown_toc_patch.MarkdownTocPatchExtension
