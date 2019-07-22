@@ -1,4 +1,12 @@
 nextstop:
+  - title: porto alegre
+    coords: 28x38
+    location: BarraShoppingSul
+    time: 13:00-18:00
+    day: 22
+    month: aug
+    year: 2019
+    link: https://braziljs.org/eventos/amp-roadshow/2019/
   - title: sydney
     coords: 103x42
     location: Maritime Museum
@@ -15,6 +23,14 @@ nextstop:
     month: aug
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-melbourne/
+  - title: auckland
+    coords: 108x42
+    location: Generator@GridAKL
+    time: 09:00-14:30
+    day: 2
+    month: sep
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-auckland/
   - title: tel aviv
     coords: 66x22
     location: tba
