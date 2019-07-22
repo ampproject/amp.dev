@@ -30,9 +30,8 @@ jobs:
     env: APP_ENV=staging
     name: Check code, import documents, build samples, playground & boilerplate
     before_script:
-    - gulp buildSamples
-    - npm test
     - scripts/unbuffer.sh gulp buildSamples
+    - npm test
     - scripts/unbuffer.sh gulp lintAll
     script:
     - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi

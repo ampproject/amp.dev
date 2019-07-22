@@ -48,3 +48,4 @@ function lintGrow() {
 exports.lintNode = lintNode;
 exports.lintYaml = lintYaml;
 exports.lintGrow = lintGrow;
+exports.lintAll = gulp.parallel(lintNode, lintYaml, lintGrow);
