@@ -18,6 +18,8 @@ before_install:
     openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv -in .staging.key.json.enc -out .staging.key.json -d
     gcloud auth activate-service-account --key-file=.staging.key.json
   fi
+test:
+- npm test
 stages:
 - preparation
 - name: build
