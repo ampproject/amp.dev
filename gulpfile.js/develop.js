@@ -57,7 +57,7 @@ function run() {
   signale.info('Watching icons, templates, styles and samples ...');
   samplesBuilder.build();
   gulp.watch(`${project.paths.ICONS}/**/*.svg`, build.icons);
-  gulp.watch(`${project.paths.TEMPLATES}/**/*.j2`, build.templates);
+  gulp.watch(`${project.paths.FRONTEND_TEMPLATES}/**/*.j2`, build.templates);
   gulp.watch(`${project.paths.SCSS}/**/*.scss`, build.sass);
 
   new Platform().start();
