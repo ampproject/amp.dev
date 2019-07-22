@@ -40,7 +40,7 @@ For example, if we had the following carousel:
 
 [sourcecode:html]
 {% raw %}<amp-carousel id="myCustomCarousel" type="slides" ...>
-...
+    ...
 </amp-carousel>
 {% endraw %}[/sourcecode]
 
@@ -48,7 +48,7 @@ Then clicking the following button would set the above carousel to its second sl
 
 [sourcecode:html]
 {% raw %}<button on="tap:myCustomCarousel.goToSlide(index=1)">
-Set Carousel To Second Slide (Index 1)
+   Set Carousel To Second Slide (Index 1)
 </button>
 {% endraw %}[/sourcecode]
 
@@ -80,19 +80,19 @@ Once you are done, your page should look like this:
 
 [sourcecode:html]
 {% raw %}<amp-carousel layout="responsive" width="412" height="309" type="slides" loop id="carousel">
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
         on="tap:carousel.goToSlide(index=0)" width="96" height="72" layout="fixed" role="button" tabindex="0"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
         on="tap:carousel.goToSlide(index=1)" width="96" height="72" layout="fixed" role="button" tabindex="1"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
         on="tap:carousel.goToSlide(index=2)" width="96" height="72" layout="fixed" role="button" tabindex="2"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
@@ -128,25 +128,25 @@ Once you have finished, the result should look like this:
 [sourcecode:html]
 {% raw %}<amp-carousel on="slideChange:ampSelector.toggle(index=event.index)"
     layout="responsive" width="412" height="309" type="slides" loop id="carousel">
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-selector layout="container" name="single_image_select" id="ampSelector">
-<amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+    <amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
+        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
             option="0" selected on="tap:carousel.goToSlide(index=0)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
             option="1" on="tap:carousel.goToSlide(index=1)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
             option="2" on="tap:carousel.goToSlide(index=2)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-</amp-carousel>
+    </amp-carousel>
 </amp-selector>
 {% endraw %}[/sourcecode]
 
@@ -184,11 +184,11 @@ To implement the lightbox effect on our larger carousel:
 [sourcecode:html]
 {% raw %}<amp-carousel on="slideChange:ampSelector.toggle(index=event.index)"
     layout="responsive" width="412" height="309" type="slides" loop id="carousel" lightbox>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]

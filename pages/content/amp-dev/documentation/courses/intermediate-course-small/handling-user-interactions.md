@@ -29,8 +29,8 @@ In AMP, we handle events by using the on property. For example, imagine a button
 
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
-<button onclick="document.getElementById(‘warning').hidden = true;">
-Hide Warning
+<button onclick="document.getElementById(‘warning’).hidden = true;">
+    Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -39,7 +39,7 @@ If you've ever used jQuery, the equivalent would be the following:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button onclick="$('#warning').hide();">
-Hide Warning
+    Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -48,7 +48,7 @@ In AMP, meanwhile, it would look like this:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button on="tap:warning.hide">
-Hide Warning
+    Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -114,10 +114,8 @@ The portion of the page containing the sidebar should look like this:
 
 [sourcecode:html]
 {% raw %}<header class="headerbar">
-
-<div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">☰</div>
-<h2>Chico's Cheese Bicycles</h2>
-
+    <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">☰</div>
+    <h2>Chico's Cheese Bicycles</h2>
 </header>
 <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
     <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">X</div>

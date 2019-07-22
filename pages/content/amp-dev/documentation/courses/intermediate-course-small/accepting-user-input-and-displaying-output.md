@@ -74,7 +74,6 @@ Once you have finished, your page should look like this:
 
 [sourcecode:html]
 {% raw %}<h2 class="main-heading">Subscribe to our Newsletter</h2>
-
 <div class="subscribe-card-container">
     <div class="subscribe-card">
         <form method="post" action-xhr="/submit-form" target="_top" class="main-form">
@@ -110,8 +109,8 @@ For example, when given the following data:
 
 [sourcecode:json]
 {
-"name": "Bob",
-"job": "builder"
+    "name": "Bob",
+    "job": "builder"
 }
 [/sourcecode]
 
@@ -119,8 +118,7 @@ And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-
-<p>{{name}} is an excellent {{job}}!</p>
+    <p>{{name}} is an excellent {{job}}!</p>
 </template>
 {% endraw %}[/sourcecode]
 
@@ -134,10 +132,10 @@ Mustache variables can replace more than just text. You can use mustache variabl
 
 [sourcecode:json]
 {
-"description": "Picture of a tiger",
-"url": "tiger.jpg",
-"width": 200,
-"height": 200
+    "description": "Picture of a tiger",
+    "url": "tiger.jpg",
+    "width": 200,
+    "height": 200
 }
 [/sourcecode]
 
@@ -145,12 +143,12 @@ And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-<amp-img alt="{{description}}"
+    <amp-img alt="{{description}}"
         src="images/{{url}}"
         width="{{width}}"
         height="{{height}}"
         layout="responsive">
-</amp-img>
+    </amp-img>
 </template>
 {% endraw %}[/sourcecode]
 

@@ -1,6 +1,6 @@
 ---
 $title: Our First AMP Page
-$order: 2
+$order: 3
 ---
 
 ## Starting Our Journey
@@ -13,7 +13,6 @@ In [your](https://glitch.com/edit/#!/nosy-leech) Glitch project, open `index.htm
 
 [sourcecode:html]
 {% raw %}<!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -149,7 +148,7 @@ The AMP boilerplate must be copied and pasted as-is. The code is minified above,
 
 ## CSS and AMP
 
-To ensure good performance and to let AMP do what it needs to, AMP places some restrictions on the use of CSS: 
+To ensure good performance and to let AMP do what it needs to, AMP places some restrictions on the use of CSS:
 
 - Styles may only live in the head of the document inside a `<style amp-custom>` tag, or as inline `style` attributes where needed. This limitation prevents loading an external stylesheet, but it also saves a network request, enables caching, and improves performance.
 
@@ -164,23 +163,22 @@ To ensure good performance and to let AMP do what it needs to, AMP places some r
 
 [sourcecode:html]
 {% raw %}<style amp-custom>
-body {
-font-family: sans-serif;
-line-height: 1.5rem;
-padding: 20px;
-}
-p, h2 {
-border: 1px dotted red;
-}
+    body {
+        font-family: sans-serif;
+        line-height: 1.5rem;
+        padding: 20px;
+    }
+    p, h2 {
+        border: 1px dotted red;
+    }
 </style>
-
 {% endraw %}[/sourcecode]
 
 {{ image('/static/img/courses/beginner/image10.png', 738, 1290, align='center third', caption='Custom CSS affecting our page.') }}
 
 ## Exercise 2: Converting the rest of our HTML Page
 
-Now it’s time to correct the validation errors on our site that we discovered in the previous exercise. To do this, we have to add the missing parts of the AMP boilerplate template to our basic HTML site. 
+Now it’s time to correct the validation errors on our site that we discovered in the previous exercise. To do this, we have to add the missing parts of the AMP boilerplate template to our basic HTML site.
 
 For this and all future exercises, we’re going to apply what we’ve learned to implement real code changes to our site in Glitch. Try to complete the exercises yourself, but if you’re stuck or need hints, feel free to copy from the solution sections. At the start and end of each of these courses, we’ll provide a Glitch template that includes all of the code we’ve completed to that point.
 
@@ -192,7 +190,6 @@ The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch exa
 
 [sourcecode:html]
 {% raw %}<head>
-
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>

@@ -1,6 +1,6 @@
 ---
 $title: Thinking in Components
-$order: 3
+$order: 4
 ---
 
 There is only one validation error remaining in our site, and we’ll fix it by using an `<amp-img>` **component** instead of an `<img>` tag.
@@ -77,7 +77,7 @@ After you have made the change, take a look at your page. The image has the corr
 
 {{ image('/static/img/courses/beginner/image26.png', 311, 550,  align='center third', caption='Image of bicycle with correct aspect ratio') }}
 
-There are other layout types beyond responsive (at least 8 in total). 
+There are other layout types beyond responsive (at least 8 in total).
 
 For example, the `fixed` layout indicates that the component should never be resized from the height and width that are assigned to it. The `intrinsic` layout is similar to the `responsive` layout, except that it has the concept of an intrinsic height and width that cannot be exceeded by the component. Some layouts can only be applied to certain components. The documentation for each component will specify which layouts are valid for that component. You can read about the rest of the layout types [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}).
 

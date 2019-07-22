@@ -1,6 +1,6 @@
 ---
 $title: Finding the Right Component
-$order: 4
+$order: 5
 ---
 
 ## Navigating the AMP Component Documentation
@@ -103,11 +103,11 @@ Here is how the code you added might look in your project:
 
 [sourcecode:html]
 {% raw %}<amp-carousel layout="responsive" width="412" height="309" type="slides" loop>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
              width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
              width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
              width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
@@ -147,11 +147,10 @@ After you have completed this task, your page should contain buttons for the use
 
 [sourcecode:html]
 {% raw %}<div class="social-bar">
-<amp-social-share type="email" width="44" height="44"></amp-social-share>
-<amp-social-share type="linkedin" width="44" height="44"></amp-social-share>
-<amp-social-share type="tumblr" width="44" height="44"></amp-social-share>
-<amp-social-share type="twitter" width="44" height="44"></amp-social-share>
-
+  <amp-social-share type="email" width="44" height="44"></amp-social-share>
+  <amp-social-share type="linkedin" width="44" height="44"></amp-social-share>
+  <amp-social-share type="tumblr" width="44" height="44"></amp-social-share>
+  <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
 </div>
 {% endraw %}[/sourcecode]
 

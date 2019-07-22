@@ -23,7 +23,7 @@ But how do we set the value of a state variable? The AMP runtime provides an act
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({wasPressed: true})">
-Press Me
+    Press Me
 </button>
 {% endraw %}[/sourcecode]
 
@@ -35,15 +35,14 @@ It's possible to set initial values for your state variables. (If you don't, the
 
 [sourcecode:html]
 {% raw %}<amp-state id="accordionState"/>
-
-<script type="application/json">
-{
-"isOpen": false
-}
-</script>
+    <script type="application/json">
+        {
+            "isOpen": false
+        }
+    </script>
 <amp-state>
 <button on="tap:AMP.setState({ accordionState: { isOpen: !accordionState.isOpen }})">
-Open/Close All Sections
+    Open/Close All Sections
 </button>
 {% endraw %}[/sourcecode]
 
@@ -62,10 +61,9 @@ In AMP, we define a bound property by surrounding it with brackets. We set that 
 For example, if we want to control an element's text, we can bind to the `text` property of an element. In the code below, pressing the button will cause the paragraph tag to contain the text “Hello AMP!”:
 
 [sourcecode:html]
-{% raw %}<button on="tap:AMP.setState({message: ‘Hello AMP!'})">
-Say Hello!
+{% raw %}<button on="tap:AMP.setState({message: ‘Hello AMP!’})">
+    Say Hello!
 </button>
-
 <p [text]="message"></p>
 {% endraw %}[/sourcecode]
 
@@ -78,10 +76,9 @@ It's important to note that bindings don't change until the values of state vari
 To add a default value for a bound property, include the property both with and without the brackets around it. When the page loads, it will use the default property. Whenever the binding is triggered by changes to relevant state variables, the default property will be overriden. For example, in the following code, the color of the text will be blue on initial page load, but change to red after the button is pressed.
 
 [sourcecode:html]
-{% raw %}<button on="tap:AMP.setState({messageClass: ‘text-color-red'})">
-Change to Red!
+{% raw %}<button on="tap:AMP.setState({messageClass: ‘text-color-red’})">
+    Change to Red!
 </button>
-
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
@@ -94,7 +91,6 @@ For example, this code shows how to create an error message during account creat
     on="change:AMP.setState({ firstPassword: event.value })" />
 <input type="text" placeholder="Re-Enter Password"
     on="change:AMP.setState({ secondPassword: event.value })" />
-
 <p hidden [hidden]="firstPassword == secondPassword">
     The passwords don't match!
 </p>
@@ -131,36 +127,34 @@ The portion of the page containing the carousel should look like this:
 [sourcecode:html]
 {% raw %}
 <amp-state id="carousel">
-
-<script type="application/json">
-{
-"selectedSlide": 0
-}
-</script>
+    <script type="application/json">
+        {
+            "selectedSlide": 0
+        }
+    </script>
 </amp-state>
 <amp-carousel on="slideChange:AMP.setState({carousel: {selectedSlide:event.index}})"
-[slide]="carousel.selectedSlide" lightbox id="imageSlides" layout="responsive"
-width="412" height="309" type="slides" loop>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+    [slide]="carousel.selectedSlide" lightbox id="imageSlides" layout="responsive"
+    width="412" height="309" type="slides" loop>
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-selector id="ampSelector" [selected]="carousel.selectedSlide"
-on="select:AMP.setState({carousel: {selectedSlide:event.targetOption}})">
-<amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+    on="select:AMP.setState({carousel: {selectedSlide:event.targetOption}})">
+    <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
             option="0" selected role="button" tabindex="1" width="96" height="72" layout="fixed"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
             option="1" role="button" tabindex="1"  width="96" height="72" layout="fixed"></amp-img>
-<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
             option="2" role="button" tabindex="1" width="96" height="72" layout="fixed"></amp-img>
-</amp-carousel>
+    </amp-carousel>
 </amp-selector>
-
-<p [text]="'Slide ‘ + (carousel.selectedSlide + 1) + ‘ of 3'">
+<p [text]="’Slide ‘ + (carousel.selectedSlide + 1) + ‘ of 3’">
     Slide 1 of 3
 </p>
 {% endraw %}[/sourcecode]
@@ -201,33 +195,32 @@ Let's discuss the structure of the product information that is loaded in an `<am
 
 [sourcecode:html]
 {% raw %}<amp-state id="productData">
-
-<script type="application/json">
-{
-"basePrice": 14
-"upcharges": {
-"fit": {
-"Men": 0,
-"Women": 3
-},
-"size": {
-"Small": 0,
-"Medium": 2,
-"Large": 5
-},
-"color": {
-"Red": 0,
-"Blue": 1,
-"Green": 0
-}
-},
-"images": {
-"Red": "https://...redtshirt.jpg",
-"Blue": "https://...Blue_Tshirt.jpg",
-"Green": "https://...greentshirt.png"
-}
-}
-</script>
+    <script type="application/json">
+        {
+            "basePrice": 14
+            "upcharges": {
+                "fit": {
+                    "Men": 0,
+                    "Women": 3
+                },
+                "size": {
+                    "Small": 0,
+                    "Medium": 2,
+                    "Large": 5
+                },
+                "color": {
+                    "Red": 0,
+                    "Blue": 1,
+                    "Green": 0
+                }
+            },
+            "images": {
+                "Red": "https://...redtshirt.jpg",
+                "Blue": "https://...Blue_Tshirt.jpg",
+                "Green": "https://...greentshirt.png"
+            }
+        }
+    </script>
 </amp-state>
 {% endraw %}[/sourcecode]
 
@@ -251,7 +244,6 @@ The solution can be found in this Glitch example. The portion of the page contai
 
 [sourcecode:html]
 {% raw %}
-
 <main>
     <h2>Tina's T-Shirts</h2>
     <div class="filter-sort-selectors">

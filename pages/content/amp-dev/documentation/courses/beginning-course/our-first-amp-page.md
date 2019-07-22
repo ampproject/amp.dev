@@ -175,7 +175,6 @@ To practice adding custom styles to your AMP page, add the following `<style amp
         border: 1px dotted red;
     }
 </style>
-
 {% endraw %}[/sourcecode]
 
 {{ image('/static/img/courses/beginner/image10.png', 738, 1290, align='center third', caption='Custom CSS affecting our page.') }}
