@@ -1,4 +1,5 @@
 {% set tools = g.yaml('/shared/data/tools.yaml') %}
+{% do doc.styles.addCssFile('css/components/organisms/tools-widget.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/tools-teaser.css') %}
 
 <section class="ap--tools">
@@ -12,7 +13,7 @@
   </div>
 </section>
 
-<section class="ap--content ap--tools-widget ap--teaser-grid">
+<section class="ap--tools-widget ap--teaser-grid">
     <div class="ap-o-teaser-grid">
         <div class="ap-o-teaser-grid-list">
         {% for tool in tools[group] %}
