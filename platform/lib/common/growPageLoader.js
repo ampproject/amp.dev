@@ -37,7 +37,7 @@ async function fetchPage(pageUrlPath) {
     // fetch doc from proxy
     return fetchPageFromGrowServer(pageUrlPath);
   } else {
-    // fetch comiled doc page from filesystem
+    // fetch generated doc page from filesystem
     return readFileAsync(pagePath(pageUrlPath), 'utf-8');
   }
 }
