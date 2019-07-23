@@ -4,11 +4,12 @@ from __future__ import unicode_literals
 import re
 
 FILTER_TRIGGER = '[filter'
-FILTER_START_TAG_PATTERN = re.compile(r'(\[filter( formats=(?:\"|\')(.*?)(?:\"|\'))?\])',
+FILTER_START_TAG_PATTERN = re.compile(r'(\[filter( (formats|level)=(?:\"|\')(.*?)(?:\"|\'))?\])',
                                    re.MULTILINE)
 FILTER_END_TAG_PATTERN = '[/filter]'
 
 DEFAULT_FORMATS = ['websites', 'ads', 'stories', 'email']
+DEFAULT_LEVEL = ['beginner', 'advanced']
 
 def trigger(original_body, content):
   if FILTER_TRIGGER in original_body:
@@ -18,8 +19,9 @@ def trigger(original_body, content):
 
 def _transform(content):
   for match in FILTER_START_TAG_PATTERN.findall(content):
-    formats = match[2] or DEFAULT_FORMATS
-    content = content.replace(match[0], '{% call filter(formats=\'' + match[2] + '\') %}\n')
+    formats = match[3] or DEFAULT_FORMATS
+    level = match[3] or DEFAULT_LEVEL
+    content = content.replace(match[0], '{% call filter(formats=\'' + match[3] + '\' + level=\'' + match[3] + '\') %}\n')
   # Then also replace end tags
   content = content.replace(FILTER_END_TAG_PATTERN, '\n{% endcall %}')
   return content

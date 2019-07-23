@@ -36,12 +36,19 @@ let templates = null;
  */
 function createRequestContext(request={'query': {}}, context={}) {
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
+  const ALLOWED_LEVEL = ['advanced', 'beginner'];
 
   if (!ALLOWED_FORMATS.includes(request.query.format)) {
     context.format = ALLOWED_FORMATS[0];
     context.forceFiltered = true;
   } else {
     context.format = request.query.format;
+  }
+
+  if (!ALLOWED_LEVEL.includes(request.query.level)) {
+    context.level = ALLOWED_LEVEL[0];
+  } else {
+    context.level = request.query.level;
   }
 
   context.category = (request.query.category || '').toLowerCase();
