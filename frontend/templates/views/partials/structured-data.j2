@@ -55,7 +55,7 @@
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples/previews/') %}
 {% set title_prefix = _('Demo: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/components/reference/') %}
-{% set title_prefix = _('Component: ') %}
+{% set title_prefix = _('Documentation: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/about/success-stories/') and not 'index.html' in doc.pod_path %}
 {% set title_prefix = _('Success Story: ') %}
 {% endif %}
