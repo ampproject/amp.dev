@@ -31,7 +31,7 @@ determinada pela largura e pela altura fornecidas. Faça um teste redimensionand
 
 [tip type="success"]
 
-Veja demonstrações ao vivo lado a lado de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demonstrações ao vivo no site AMP By Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Veja demonstrações ao vivo lado a lado de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demonstrações ao vivo no site AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 

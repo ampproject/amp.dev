@@ -31,7 +31,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 
 [tip type="success"]
 
-查看并排显示的 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 在线演示：[AMP By Example 上的在线演示]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})。
+查看并排显示的 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 在线演示：[AMP By Example 上的在线演示]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}})。
 
 [/tip]
 

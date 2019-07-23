@@ -137,8 +137,8 @@ $title: 在您的 AMP 网页中利用广告获利
     *   [灯箱广告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   以及[更多类型]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **使直销型广告采用新格式**，以便为您的销售团队提供效果显著的创新广告产品：
-    *   [粘性广告]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}})
-    *   [飞毯]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}})
+    *   [粘性广告]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [飞毯]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## 其他资源
 

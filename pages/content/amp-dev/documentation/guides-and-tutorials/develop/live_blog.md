@@ -86,7 +86,7 @@ You can add the disabled attribute to  the hosted page to prevent the polling me
 
 ### Deeplinking
 
-When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), deep linking is possible by simply using the `id` of the blog item. For example, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}#post3) allows you to navigate directly to the blog post with the `post3` id.
+When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), deep linking is possible by simply using the `id` of the blog item. For example, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3) allows you to navigate directly to the blog post with the `post3` id.
 
 AMP By Example uses a cookie to in the [live blog sample]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) to generate fresh content, so if it’s the first time you are landing on the page, the post with id “post3” might not be available, in that case, you are redirected to the first post.
 

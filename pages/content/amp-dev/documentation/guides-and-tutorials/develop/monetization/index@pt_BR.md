@@ -137,8 +137,8 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
     *   [anúncios em um lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   e [muito mais]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Implemente novos formatos de anúncios de venda direta** para que sua equipe de vendas ofereça produtos de anúncios inovadores e de alto impacto:
-    *   [anúncios fixos]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}})
-    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}})
+    *   [anúncios fixos]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Outros recursos
 

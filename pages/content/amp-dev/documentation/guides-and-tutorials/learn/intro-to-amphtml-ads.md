@@ -86,7 +86,7 @@ To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`]({{g.doc('/
 
 ## Creating AMPHTML ads
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [Examples]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
+**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  For demos and examples, see the open-source AMPHTML ad templates on [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
 
 **Using tools**: You can use any of the following tools to build AMPHTML creatives:
 
@@ -114,7 +114,7 @@ For SSPs and ad exchanges that want to support AMPHTML ads in a Real-Time Biddin
 
 #### Are there any AMPHTML ad samples?
 
-Yes. A number of great looking AMPHTML ad templates can be found on [Examples]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}). These samples use advanced components in AMP.
+Yes. A number of great looking AMPHTML ad templates can be found on [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). These samples use advanced components in AMP.
 
 #### Do AMPHTML ads support 3rd party verification and viewability detection?
 
