@@ -88,13 +88,14 @@
 
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
-      <button class="ap-m-language-selector-toggle" aria-label="{{ _('Select a language') }}">
+      <span class="ap-m-language-selector-label" aria-label="{{ _('Select a language') }}" tabindex="-1">
         <span class="ap-m-nav-link">{{ doc.locale.language|upper }}</span>
         {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <div class="ap-a-ico ap-m-language-selector-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
         </div>
-      </button>
+      </span>
+      <input class="ap-m-language-selector-toggle" type="checkbox" name="language-selector">
       <div class="ap-m-language-selector-list" role="list">
         {% for locale in doc.locales if not locale == doc.locale  %}
         {% set localized_doc = doc.localize(locale) %}
