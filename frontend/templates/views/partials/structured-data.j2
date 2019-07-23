@@ -10,6 +10,10 @@
 {% if title and '[=' in title %}
 {% set title = title|safe %}
 {% endif %}
+{% if doc.base.startswith('amp-') and not '_' in doc.base and not ' ' in doc.base %}
+{% set title = '<' + doc.base + '>' %}
+{% endif %}
+
 
 {% set base_url = podspec.base_urls.platform %}
 {% set canonical = doc.url %}
@@ -49,7 +53,7 @@
 {% if doc.pod_path.startswith('/content/amp-dev/documentation/examples/documentation/') %}
 {% set title_prefix = _('Example: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples/previews/') %}
-{% set title_prefix = _('Example preview: ') %}
+{% set title_prefix = _('Demo: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/components/reference/') %}
 {% set title_prefix = _('Component: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/about/success-stories/') and not 'index.html' in doc.pod_path %}
