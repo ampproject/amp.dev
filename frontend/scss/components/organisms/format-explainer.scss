@@ -45,7 +45,7 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.4s cubic-bezier(.55,0,.1,1), visibility 0.4s cubic-bezier(.55,0,.1,1), transform 0.4s cubic-bezier(.55,0,.1,1);
-      
+
       &.active {
         opacity: 1;
         visibility: visible;
@@ -144,10 +144,6 @@
     @media (min-width: 1024px) {
       margin: 0 0 1em 0;
       background: none transparent;
-    }
-
-    &:focus {
-      outline: none;
     }
 
     &.active {
