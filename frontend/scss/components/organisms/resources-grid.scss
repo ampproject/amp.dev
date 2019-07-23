@@ -26,6 +26,12 @@
     grid-template-columns: repeat(12, 1fr);
   }
 
+  h2 {
+    span {
+      text-transform: capitalize;
+    }
+  }
+
   &-card {
     margin: 15px 0;
     padding: 20px 20px;
@@ -48,9 +54,14 @@
     }
 
     &-icon {
-      height: 65px;
-      width: 65px;
-      margin: 10px 0;
+      height: 35px;
+      width: 35px;
+
+      @media (min-width: 768px ) {
+        height: 65px;
+        width: 65px;
+        margin: 10px 0;
+      }
     }
 
     &-headline {

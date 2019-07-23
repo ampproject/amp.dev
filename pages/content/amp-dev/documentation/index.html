@@ -14,25 +14,25 @@ flyout:
 
 format_cards:
   - title: AMP Websites
-    description: Create flawless websites. Compelling, smooth and instant.
+    description: Create complessing, silky smooth and instant loading websites.
     type: websites
     link:
         text: Build your first AMP Website
         url: /content/amp-dev/documentation/guides-and-tutorials/start/create.md
   - title: AMP Stories
-    description: Create snackable, immersive and immediate stories on your website.
+    description: Create snackable, immersive and tappable stories on your website.
     type: stories
     link:
         text: Build your first AMP Story
         url: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story.md
   - title: AMP Ads
-    description: Extend your website with a fast and lightweight ad experiences.
+    description: Extend your website with fast and lightweight ad experience.
     type: ads
     link:
         text: Build your first AMP Ad
         url: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad.md
   - title: AMP Email
-    description: Create emails, that allow your recipients to interact dynamically with content.
+    description: Create emails that encourage readers to interact dynamically with content.
     type: email
     link:
         text: Build your first AMP Email
@@ -44,7 +44,7 @@ resources_formats:
   - ads
   - email
 resources_cards:
-  - title: Guides and Tutorials
+  - title: Guides & Tutorials
     description: Here you can find everything you need to build AMP experiences.
     icon: guides-documents
     link: /content/amp-dev/documentation/guides-and-tutorials/index.html
@@ -61,7 +61,7 @@ resources_cards:
     icon: template
     link: /content/amp-dev/documentation/templates/index.html
   - title: Tools
-    description: Begin Building for creation, design and development.
+    description: Begin building for creation, design and development.
     icon: wrench
     link: /content/amp-dev/documentation/tools.html
 
@@ -124,6 +124,13 @@ resources_cards:
             }
           </script>
         </amp-state>
+        <amp-state id="formatText" class="" layout="container" hidden="" aria-hidden="true">
+          <script type="application/json">
+            {
+              "format": "[= format =]"
+            }
+          </script>
+        </amp-state>
         <section class="ap--section-fullscreen">
           <div class="ap--resources-overview">
             <div class="ap-o-resources-overview ap-o-resources-overview-[= format =]" [class]="'ap-o-resources-overview ap-o-resources-overview-' + filter.format">
@@ -135,13 +142,13 @@ resources_cards:
                 <div class="ap-info-box">
                   <div class="ap-info-box-text">
                     <h4>Choose your destination</h4>
-                    <p><strong>NOTE –</strong> Throughout the AMP documentation you will find a switch on the upper left side to quickly change the AMP format you’re working on.</p>
+                    <p>Throughout the AMP documentation you will find a switch on the upper left side to quickly change the AMP format you’re working on.</p>
                   </div>
                   <div class="ap-format-toggle">
                     {% for format in doc.resources_formats %}
                     <button class="ap-format-toggle-button ap-format-toggle-button-{{ format }} [= 'active' if format == '{{ format }}' =]"
                       [class]="filter.format == '{{ format }}' ? 'ap-format-toggle-button ap-format-toggle-button-{{ format }} active' : 'ap-format-toggle-button ap-format-toggle-button-{{ format }}'"
-                      on="tap:AMP.setState({filter: {format: '{{ format }}'}})">
+                      on="tap:AMP.setState({filter: {format: '{{ format }}'}, formatText: '{{ format }}'})">
                       <span class="ap-a-ico">
                         <svg>
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use>
@@ -154,7 +161,7 @@ resources_cards:
                 </div>
                 {% do doc.styles.addCssFile('/css/components/organisms/resources-grid.css') %}
                 <div class="ap-o-resources-grid">
-                  <h2>Useful resources</h2>
+                  <h2><span [text]="formatText" [class]="'formatText.format' + 'format-span'">[= format =]</span> resources</h2>
                   <div class="ap-o-resources-grid-cards">
                     {% for card in doc.resources_cards %}
                     <a class="ap-o-resources-grid-card" href="{{g.doc(card.link, locale=doc.locale).url.path}}" [href]="'{{g.doc(card.link, locale=doc.locale).url.path}}?format=' + filter.format">
