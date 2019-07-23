@@ -20,7 +20,7 @@ const express = require('express');
 const LogFormatter = require('../runtime-log/HtmlFormatter.js');
 const robots = require('./robots');
 
-const Templates = require('../templates/');
+const {Templates} = require('../templates/');
 
 // eslint-disable-next-line new-cap
 const runtimeLog = express.Router();

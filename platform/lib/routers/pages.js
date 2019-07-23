@@ -174,7 +174,7 @@ pages.get('/*', async (req, res, next) => {
 
   // the grow sitemap.xml must not be processed as template
   if (/\.xml/.test(req.path)) {
-    const result = await growPageLoader.fetchPage(req.path)
+    const result = await growPageLoader.fetchPage(req.path);
     res.send(result);
     return;
   }

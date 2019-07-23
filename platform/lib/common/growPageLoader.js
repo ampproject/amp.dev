@@ -27,18 +27,18 @@ const {pagePath, paths} = require('../utils/project');
 /**
  * Will return the content of the grow generated page.
  * In dev mode the page is loaded from the running grow server.
- * @param pagePath
+ * @param pageUrlPath The path to the page
  */
-async function fetchPage(pagePath) {
+async function fetchPage(pageUrlPath) {
   if (config.isTestMode()) {
     // fetch original doc page from filesystem for testing
-    return readFileAsync(join(paths.PAGES_SRC, pagePath), 'utf-8');
+    return readFileAsync(join(paths.PAGES_SRC, pageUrlPath), 'utf-8');
   } else if (config.isDevMode()) {
     // fetch doc from proxy
-    return fetchPageFromGrowServer(pagePath);
+    return fetchPageFromGrowServer(pageUrlPath);
   } else {
     // fetch comiled doc page from filesystem
-    return readFileAsync(pagePath(pagePath), 'utf-8');
+    return readFileAsync(pagePath(pageUrlPath), 'utf-8');
   }
 }
 
