@@ -9,8 +9,7 @@
   "private": true,
   "scripts": {
     "develop": "gulp develop",
-    "lint": "npm-run-all lint:* --aggregate-output --parallel",
-    "lint:grow": "cd platform && node lib/tools/growReferenceChecker.js",
+    "lint": "gulp lintAll",
     "lint:node": "eslint \"**/*.js\"",
     "fix:node": "eslint \"**/*.js\" --fix",
     "build:boilerplate": "cd boilerplate && node build.js",

@@ -31,8 +31,7 @@ jobs:
     name: Check code, import documents, build samples, playground & boilerplate
     before_script:
     - scripts/unbuffer.sh gulp buildSamples
-    - npm test
-    - scripts/unbuffer.sh gulp lintAll
+    - scripts/unbuffer.sh npm test
     script:
     - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
   - stage: build
