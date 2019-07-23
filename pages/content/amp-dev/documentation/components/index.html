@@ -25,6 +25,9 @@ highlighted_components:
   - /content/amp-dev/documentation/components/reference/amp-analytics.md
   - /content/amp-dev/documentation/components/reference/amp-autocomplete.md
   - /content/amp-dev/documentation/components/reference/amp-carousel.md
+  - /content/amp-dev/documentation/components/reference/amp-ad.md
+  - /content/amp-dev/documentation/components/reference/amp-list.md
+  - /content/amp-dev/documentation/components/reference/amp-story.md
 
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
@@ -40,7 +43,7 @@ highlighted_components:
       {% include '/views/partials/sidebar-toggle-button.j2' %}
       {% include '/views/partials/breadcrumbs.j2' %}
 
-      <h1>The AMP component catalogue</h1>
+      <h1>The AMP Component Catalogue</h1>
       <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
 
       {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
@@ -102,7 +105,6 @@ highlighted_components:
           </div>
         </div>
       </section>
-
 
       <section class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
