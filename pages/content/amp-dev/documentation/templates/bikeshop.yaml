@@ -12,4 +12,6 @@ teaser:
     height: 4
     alt: Bike Shop
 
+  preview_url: '/documentation/templates/preview/websites/e-commerce/templates/landing.amp.html'
   download_url: '/static/files/templates/e-commerce.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/e-commerce'

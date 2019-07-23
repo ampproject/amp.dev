@@ -12,4 +12,6 @@ teaser:
     height: 4
     alt: Gallery
 
+  preview_url: '/documentation/templates/preview/websites/gallery/templates/gallery.amp.html'
   download_url: '/static/files/templates/gallery.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/gallery'

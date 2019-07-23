@@ -12,4 +12,6 @@ teaser:
     height: 1
     alt: Lune
 
+  preview_url: '/documentation/templates/preview/websites/lune/templates/lune.amp.html'
   download_url: '/static/files/templates/lune.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/lune'

@@ -11,6 +11,12 @@ flyout:
   description: Ready to use
   icon: template
 
+filters:
+  - Websites
+  - Stories
+  - Ads
+  - Email
+
 teaser:
   image:
     src: 'https://placehold.it/400x400'
@@ -47,10 +53,10 @@ stage:
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-    <amp-state id="activeFilter">
+    <amp-state id="filter">
         <script type="application/json">
           {
-            "chosenFilter": "none"
+            "format": "none"
           }
         </script>
       </amp-state>
@@ -106,38 +112,45 @@ stage:
     {% endif %}
   </section>
 
-  {% set categories = g.categories('/content/amp-dev/documentation/templates', locale=doc.locale) %}
-  <section class="ap--intro ap--container">
-    <div class="ap--content">
-      <p>{{ _('Get started quickly with a ready-made design. Templates designed to work with all devices - mobile, tablet and desktop.') }}</p>
-    </div>
 
-    {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-    <div class="ap-o-filter-bubbles-list">
-      <button class="ap-m-filter-bubble filtered"
-        [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-        on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
-        All
-      </button>
-      {% for category, stories in categories %}
-      <button class="ap-m-filter-bubble"
-        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-        on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
-        {{ category }}
-      </button>
-      {% endfor %}
-    </div>
+  <amp-state id="filter">
+    <script type="application/json">
+      {
+        "format": "none"
+      }
+    </script>
+  </amp-state>
+
+  <section class="ap-o-template-section ap-o-template-format-filter-container ap--container">
+    <p class="ap-o-template-format-filter-caption">{{ _('Get started quickly with a ready-made design. Templates designed to work with all devices - mobile, tablet and desktop.') }}</p>
+    {% include '/views/partials/format-filter.j2' %}
   </section>
 
-  <section class="ap--teaser-grid ap--container">
+
+  {% set categories = g.categories('/content/amp-dev/documentation/templates', locale=doc.locale) %}
+  {% for category, stories in categories %}
+  <section class="ap-o-template-section ap--teaser-grid ap--container">
+    <div class="ap-o-template-section-title">
+      {% for story in stories %}
+      [% if format not in {{ story.formats|tojson }} and not forceFiltered %]
+      <span hidden class="hide" [class]="filter.format == 'none' || filter.format != 'none' && {{ story.formats }}.includes(filter.format) ? 'show' : 'hide'"></span>
+      [% else %]
+      <span hidden class="show" [class]="filter.format == 'none' || filter.format != 'none' && {{ story.formats }}.includes(filter.format) ? 'show' : 'hide'"></span>
+      [% endif %]
+      {% endfor %}
+
+      <h2 id="{{ category }}">
+        {{- category -}}
+      </h2>
+    </div>
+
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list">
-        {% for category, stories in categories %}
         {% for teaser_doc in stories %}
         {% include '/views/partials/teaser.j2' %}
-        {% endfor %}
         {% endfor %}
       </div>
     </div>
   </section>
+  {% endfor %}
 </main>

@@ -1,6 +1,6 @@
 $title: Video
 $view: /views/detail/template-detail.j2
-$category: Story Ads
+$category: E-Commerce
 $order: 5
 formats:
   - ads
@@ -16,4 +16,6 @@ teaser:
     width: 9
     height: 16
 
+  preview_url: '/documentation/templates/preview/ads/single-video/single-video/single-video.html'
   download_url: '/static/files/templates/single-video.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/ads/single-video'

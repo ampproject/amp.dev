@@ -12,4 +12,6 @@ teaser:
     height: 1
     alt: Travel
 
+  preview_url: '/documentation/templates/preview/websites/travel/templates/travel.amp.html'
   download_url: '/static/files/templates/travel.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/travel'

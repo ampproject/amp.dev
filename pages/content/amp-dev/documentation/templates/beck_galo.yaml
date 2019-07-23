@@ -12,4 +12,6 @@ teaser:
     height: 1
     alt: Beck & Galo
 
+  preview_url: '/documentation/templates/preview/websites/themes_2/templates/home.amp.html'
   download_url: '/static/files/templates/themes_2.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/themes_2'

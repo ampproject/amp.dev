@@ -12,4 +12,6 @@ teaser:
     height: 1
     alt: Simple Article
 
+  preview_url: '/documentation/templates/preview/websites/article/templates/article.amp.html'
   download_url: '/static/files/templates/article.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/article'

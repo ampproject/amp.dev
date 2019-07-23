@@ -12,4 +12,6 @@ teaser:
     height: 4
     alt: Simple Blog
 
+  preview_url: '/documentation/templates/preview/websites/blog/templates/blog.amp.html'
   download_url: '/static/files/templates/blog.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/blog'

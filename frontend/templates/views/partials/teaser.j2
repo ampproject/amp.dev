@@ -53,8 +53,10 @@
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-template.css') %}
 {% set teaser = teaser_doc.teaser or {} %}
 {% set square = (teaser.image.width / teaser.image.height == 1) %}
-<div class="ap-m-teaser ap-m-teaser-template ap-m-teaser-template-{{ teaser_doc.formats[0] }}{{ ' ap-m-teaser-square' if square }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
-  <a href="{{ teaser_doc.teaser.download_url }}">
+<div class="ap-m-teaser ap-m-teaser-template ap-m-teaser-template-{{ teaser_doc.formats[0] }}{{ ' ap-m-teaser-square' if square }}"
+    [% if format not in {{ teaser_doc.formats|tojson }} and not forceFiltered %]hidden[% endif %]
+    [hidden]="filter.format != 'none' && filter.format != '{{ teaser_doc.formats[0]|slug }}'" >
+  <a href="{{ teaser_doc.teaser.preview_url }}">
     {% if teaser_doc.formats %}
     {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
     <div class="ap-m-tag ap-m-tag-{{ teaser_doc.formats[0] }} ap-m-teaser-tag">{{ teaser_doc.formats[0] }}</div>
@@ -74,6 +76,18 @@
     </div>
     <div class="ap-m-teaser-content">
       <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+      <a href="{{ teaser_doc.teaser.download_url }}">
+        {% do doc.icons.useIcon('icons/download-dark.svg') %}
+        <div class="ap-a-ico">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download-dark"></use></svg>
+        </div>
+      </a>
+      <a href="{{ teaser_doc.teaser.github_url }}">
+        {% do doc.icons.useIcon('icons/github-dark.svg') %}
+        <div class="ap-a-ico">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-dark"></use></svg>
+        </div>
+      </a>
     </div>
   </a>
 </div>

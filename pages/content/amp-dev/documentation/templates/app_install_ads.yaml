@@ -1,6 +1,6 @@
 $title: App Install
 $view: /views/detail/template-detail.j2
-$category: Story Ads
+$category: E-Commerce
 $order: 5
 formats:
   - ads
@@ -12,4 +12,7 @@ teaser:
     height: 16
     alt: App Install
 
+
+  preview_url: '/documentation/templates/preview/ads/app_install_ads/app-install.html'
   download_url: '/static/files/templates/app_install_ads.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/ads/app_install_ads'

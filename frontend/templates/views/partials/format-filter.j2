@@ -1,0 +1,23 @@
+{% do doc.styles.addCssFile('css/components/organisms/format-filter.css') %}
+{% do doc.icons.useIcon('icons/close.svg') %}
+<ul class="ap-o-format-filter none" [class]="filter.format != 'none' ? 'ap-o-format-filter filtered' : 'ap-o-format-filter none' ">
+  {% for link in doc.filters %}
+  <li>
+    <button
+    class="ap-m-format-filter-bubble {{link|slug}} [% if format|lower == '{{link}}'|lower and not forceFiltered %]active chosen[% elif forceFiltered %]active[% endif %]"
+    [class]="filter.format == 'none' ? 'ap-m-format-filter-bubble {{link|slug}} active' : filter.format == '{{link|slug}}' ? 'ap-m-format-filter-bubble {{link|slug}} active chosen' : 'ap-m-format-filter-bubble {{link|slug}}'"
+    on="tap:AMP.setState({filter: {format: '{{link|slug}}' } })">
+      <div class="ap-m-format-filter-bubble-icon ap-a-ico {{link|lower}}">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{link|lower}}"></use></svg>
+      </div>
+      {{ link }}
+      <div tabindex=0 role="reset"
+        class="ap-m-format-filter-bubble-reset ap-a-ico [% if format|lower == '{{link}}'|lower and not forceFiltered %]show[% endif %]"
+        [class]="filter.format == '{{link|slug}}' ? 'ap-m-format-filter-bubble-reset ap-a-ico show': 'ap-m-format-filter-bubble-reset ap-a-ico'"
+        on="tap:AMP.setState({filter: {format: 'none' }})">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </div>
+    </button>
+  </li>
+  {% endfor %}
+</ul>

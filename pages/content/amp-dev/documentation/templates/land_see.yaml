@@ -12,4 +12,6 @@ teaser:
     height: 4
     alt: Land & See
 
+  preview_url: '/documentation/templates/preview/websites/land-see/templates/land-see.amp.html'
   download_url: '/static/files/templates/land-see.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/land-see'

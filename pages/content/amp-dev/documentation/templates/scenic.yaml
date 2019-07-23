@@ -12,4 +12,6 @@ teaser:
     height: 1
     alt: The Scenic
 
+  preview_url: '/documentation/templates/preview/websites/themes_1/templates/template_1_article.amp.html'
   download_url: '/static/files/templates/themes_1.zip'
+  github_url: 'https://github.com/ampproject/amp.dev/tree/future/templates/websites/themes_1'

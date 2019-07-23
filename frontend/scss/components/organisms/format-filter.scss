@@ -1,0 +1,132 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../atoms/_text';
+@import '../../variables';
+@import '../atoms/_color';
+
+
+/*
+
+#############################
+### ORGANSIM: format-filter ###
+#############################
+
+
+### MODIFIERS:
+  currently no modifiers.
+*/
+
+
+.#{organism('format-filter')} {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 -8px;
+
+
+  li {
+    display: inline-block;
+    margin: 10px 8px;
+  }
+}
+
+.#{molecule('format-filter-bubble')} {
+  @include txt;
+  @include txt-3;
+  @include txt-strong;
+
+  position: relative;
+  display: flex;
+  padding: 5px 20px;
+  margin: 0;
+  border-radius: 25px;
+  border: none;
+  font-size: 12px;
+  font-family: 'Noto Sans', sans-serif;
+  color: color('silver');
+  background: color('white');
+  cursor: pointer;
+  box-shadow: 0 5px 25px 0px rgba(0,0,0,0.25);
+  transition: 200ms;
+
+  &:hover {
+    box-shadow: 0 15px 35px 0px rgba(0,0,0,0.15);
+  }
+
+  &.websites .#{atom('ico')} { fill: #CCC; font-size: 21px; }
+  &.ads .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+  &.stories .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+  &.email .#{atom('ico')} { fill: #CCC; font-size: 19px; }
+
+  &.chosen {
+    padding-left: 12px;
+    padding-right: 28px;
+  }
+
+  &.hover,
+  &.active {
+    &.websites {
+      @include gradient-websites; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &.stories {
+      @include gradient-stories; color: color('pigment-indigo');
+      .#{atom('ico')} { fill: color('pigment-indigo'); }
+    }
+
+    &.ads {
+      @include gradient-ads; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
+    }
+
+    &.email {
+      @include gradient-e-mails; color: color('ultramarine');
+      .#{atom('ico')} { fill: color('ultramarine'); }
+    }
+  }
+
+  &-icon {
+    display: inline-flex;
+    margin: 0 2px 2px 0;
+    vertical-align: middle;
+  }
+
+  &-reset {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    svg {
+      width: 8px;
+      height: 8px;
+      margin: 1px -10px 0 0;
+      opacity: 0;
+      transition: 200ms;
+    }
+
+    &.show {
+      width: 100%;
+
+      svg {
+        margin-right: 10px;
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
