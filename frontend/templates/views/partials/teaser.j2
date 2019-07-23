@@ -80,7 +80,7 @@
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
 <div class="ap-m-teaser ap-m-teaser-code">
-  <a href="{{ teaser_doc }}">
+  <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       <div class="ap-m-teaser-tags">
         {% for tag in teaser_doc.formats %}
