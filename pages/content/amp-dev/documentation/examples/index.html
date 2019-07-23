@@ -24,8 +24,7 @@ examples:
     - components:
       icon_name: code
       headline: Components
-      text: Create every content, layout and feature on your website with a amp component.
-      strong: "These are the most used components:"
+      text: Create every content, layout and feature on your website with an AMP component.
       links:
         - /content/amp-dev/documentation/examples/documentation/amp-autocomplete.html
         - /content/amp-dev/documentation/examples/documentation/amp-bind.html
@@ -34,7 +33,7 @@ examples:
     - layout:
       icon_name: optimize-board
       headline: Design & Layout
-      text: "Find examples for modern responsive and modern web pages:"
+      text: "Examples for modern responsive and modern web pages:"
       links:
         - /content/amp-dev/documentation/examples/previews/Tab_Panels_with_amp-selector.html
         - /content/amp-dev/documentation/examples/previews/Scroll_to_top.html
@@ -43,7 +42,7 @@ examples:
     - interactivity:
       icon_name: content-modules
       headline: Advanced Interactivity
-      text: Create every content, layout and feature on your website with a amp component.
+      text: Build on these user first web experiences, immersive stories, e-commerce systems and dynamic email examples.
       links:
         - /content/amp-dev/documentation/examples/documentation/Favorite_Button.html
         - /content/amp-dev/documentation/examples/previews/Multi_Page_Flow.html
@@ -53,8 +52,7 @@ examples:
     - components:
       icon_name: code
       headline: Components
-      text: Create every content, layout and feature on your website with a amp component.
-      strong: "These are the most used components:"
+      text: Create every content, layout and feature on your website with an AMP component.
       links:
         - /content/amp-dev/documentation/examples/documentation/Stories_in_AMP.html
         - /content/amp-dev/documentation/examples/documentation/amp-video.html
@@ -63,7 +61,7 @@ examples:
     - layout:
       icon_name: optimize-board
       headline: Design & Layout
-      text: "Find examples for modern responsive and modern web pages:"
+      text: "Examples for modern responsive and modern web pages:"
       links:
         - /content/amp-dev/documentation/examples/previews/AMP_Story_Layouts.html
         - /content/amp-dev/documentation/examples/previews/Desktop_and_Landscape_Mode_Support.html
@@ -81,8 +79,7 @@ examples:
     - components:
       icon_name: code
       headline: Components
-      text: Create every content, layout and feature on your website with a amp component.
-      strong: "These are the most used components:"
+      text: Create every content, layout and feature on your website with an AMP component.
       links:
         - /content/amp-dev/documentation/examples/documentation/amp-bind.html
         - /content/amp-dev/documentation/examples/documentation/amp-carousel.html
@@ -91,7 +88,7 @@ examples:
     - layout:
       icon_name: optimize-board
       headline: Design & Layout
-      text: "Find examples for modern responsive and modern web pages:"
+      text: "Examples for modern responsive and modern web pages:"
       links:
         - /content/amp-dev/documentation/examples/previews/Banner_Ad.html
         - /content/amp-dev/documentation/examples/previews/Carousel_Ad.html
@@ -100,7 +97,7 @@ examples:
     - dynamicContent:
       icon_name: interaction
       headline: Interactivity & Dynamic Content
-      text: Create every content, layout and feature on your website with a amp component.
+      text: Build on these user first web experiences, immersive stories, e-commerce systems and dynamic email examples.
       links:
         - /content/amp-dev/documentation/examples/previews/Slides_Ad.html
         - /content/amp-dev/documentation/examples/previews/Stack_With_Bind_Ad.html
@@ -110,8 +107,7 @@ examples:
     - components:
       icon_name: code
       headline: Components
-      text: Create every content, layout and feature on your website with a amp component.
-      strong: "These are the most used components:"
+      text: Create every content, layout and feature on your website with an AMP component.
       links:
         - /content/amp-dev/documentation/examples/previews/amp-accordion.html
         - /content/amp-dev/documentation/examples/documentation/amp-bind.html
@@ -120,7 +116,7 @@ examples:
     - dynamicContent:
       icon_name: interaction
       headline: Interactivity & Dynamic Content
-      text: Create every content, layout and feature on your website with a amp component.
+      text: Build on these user first web experiences, immersive stories, e-commerce systems and dynamic email examples.
       links:
         - /content/amp-dev/documentation/examples/previews/Advanced_Server_Request.html
         - /content/amp-dev/documentation/examples/previews/Article_Bookmark_Email.html
@@ -177,12 +173,10 @@ recent_examples:
       {% include '/views/partials/sidebar-toggle-button.j2' %}
       {% include '/views/partials/breadcrumbs.j2' %}
 
-      <h1>Learn AMP by example</h1>
-      <p>A hands-on introduction to AMP focusing on code and live samples. Learn how to create AMP pages and see examples for all AMP components.</p>
+      <h1>Learn AMP By Example</h1>
 
       {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
       <section class="ap--card-grid">
-        <h2 class="ap-o-card-grid-text">AMP’s examples</h2>
         {% for format in doc.examples %}
         [% if format == '{{ format }}' %]
           {% for item in doc.examples[format] %}
@@ -221,39 +215,6 @@ recent_examples:
                            /static/img/playground-teaser@2x.png 1100w,
                            /static/img/playground-teaser.png 500w">
           </amp-img>
-        </div>
-      </section>
-
-
-      <section>
-        <h2>Highlighted Examples</h2>
-        <div class="ap-o-teaser-grid">
-          <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-            {% for format in doc.highlight_examples %}
-              [% if format == '{{format}}' %]
-                {% for teaser_doc in doc.highlight_examples[format] %}
-                  {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-                  {% include '/views/partials/teaser.j2' %}
-                {% endfor %}
-              [% endif %]
-            {% endfor %}
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Recent Examples</h2>
-        <div class="ap-o-teaser-grid">
-          <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-9">
-            {% for format in doc.recent_examples %}
-              [% if format == '{{format}}' %]
-                {% for teaser_doc in doc.recent_examples[format] %}
-                  {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-                  {% include '/views/partials/teaser.j2' %}
-                {% endfor %}
-              [% endif %]
-            {% endfor %}
-          </div>
         </div>
       </section>
 
