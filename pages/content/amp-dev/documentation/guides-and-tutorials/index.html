@@ -141,7 +141,9 @@ guides:
           {% for teaser_doc in columns %}
           {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
             [% if format in '{{ teaser_doc.formats }}' %]
-              {% include 'views/partials/teaser.j2'%}
+              {% with highlightedTeaser = True %}
+              {% include 'views/partials/teaser.j2' %}
+              {% endwith %}
             [% endif %]
           {% endfor %}
         </div>
@@ -163,7 +165,9 @@ guides:
           {% for teaser_doc in columns %}
           {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
             [% if format in '{{ teaser_doc.formats }}' %]
-              {% include 'views/partials/teaser.j2'%}
+              {% with highlightedTeaser = True %}
+              {% include 'views/partials/teaser.j2' %}
+              {% endwith %}
             [% endif %]
           {% endfor %}
         </div>

@@ -99,7 +99,9 @@ highlighted_components:
             {% for teaser_doc in doc.highlighted_components %}
             {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
               [% if format in '{{ teaser_doc.formats }}'%]
+                {% with highlightedTeaser = True %}
                 {% include 'views/partials/teaser.j2' %}
+                {% endwith %}
               [% endif %]
             {% endfor %}
           </div>
