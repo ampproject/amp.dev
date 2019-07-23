@@ -1,7 +1,9 @@
 {# Success story teaser #}
 {% if teaser_doc.view == '/views/detail/success-story-detail.j2' %}
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
+<div class="ap-m-teaser ap-m-teaser-success-story"
+    [% if category in {{ doc.collection.list_docs(locale=doc.locale)|map(attribute='category')|unique|list|tojson }} and category not in '{{ teaser_doc.category|slug }}' %]hidden[% endif %]
+    [hidden]="filter.category != 'none' && filter.category != '{{ teaser_doc.category|slug }}'">
   <a href="{{ teaser_doc.url.path }}">
 
     {% if teaser_doc.formats %}
