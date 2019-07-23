@@ -21,6 +21,7 @@ const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
+const growPageLoader = require('../common/growPageLoader');
 const AmpOptimizer = require('amp-toolbox-optimizer');
 
 /* Potential path stubs that are used to find a matching file */
@@ -171,6 +172,13 @@ pages.get('/*', async (req, res, next) => {
     return;
   }
 
+  // the grow sitemap.xml must not be processed as template
+  if (/\.xml/.test(req.path)) {
+    const result = await growPageLoader.fetchPage(req.path)
+    res.send(result);
+    return;
+  }
+
   const url = ensureUrlScheme(req.originalUrl);
   if (url.pathname !== req.path) {
     res.redirect(301, url.toString());
@@ -194,10 +202,10 @@ pages.get('/*', async (req, res, next) => {
       res.set('content-type', 'text/plain');
       res.send(
           `SSR error: ${e}\n\n` +
-        template.tmplStr
-            .split('\n')
-            .map((line, index) => `${index + 1} ${line}`)
-            .join('\n'));
+          template.tmplStr
+              .split('\n')
+              .map((line, index) => `${index + 1} ${line}`)
+              .join('\n'));
       console.error(e);
       return;
     }
