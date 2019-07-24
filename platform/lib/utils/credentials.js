@@ -43,11 +43,12 @@ function get(key) {
   }
 
   if (!config.isProdMode() && !config.isStageMode()) {
-    return Promise.error(`Environment variable ${ENV_PREFIX}${key.toUpperCase()} is not set.`);
+    return Promise.reject(
+        new Error(`Environment variable ${ENV_PREFIX}${key.toUpperCase()} is not set.`));
   }
 
   return new Promise((resolve, reject) => {
-    const datastoreKey = datastore.key([CREDENTIAL_ENTITY, key]);
+    const datastoreKey = datastore.key([CREDENTIAL_ENTITY, key.toUpperCase()]);
     datastore.get(datastoreKey, (e, entity) => {
       if (e) {
         reject(e);

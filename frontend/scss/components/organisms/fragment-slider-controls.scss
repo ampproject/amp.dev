@@ -13,9 +13,6 @@
 
 
 .#{organism('fragment-slider')} {
-  input:focus {
-    outline: none;
-  }
   button {
     position: absolute;
     height: 50px;
@@ -50,9 +47,6 @@
       margin: 0;
       transform: rotate(180deg);
     }
-    &:focus {
-      outline: none;
-    }
     &.slide1 {
       display: none;
     }
@@ -62,9 +56,6 @@
     right: 10px;
     div {
       margin: 0;
-    }
-    &:focus {
-      outline: none;
     }
     &.slide3 {
       display: none;

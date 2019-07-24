@@ -72,7 +72,7 @@ AMP HTML のランタイムでは、画像のリソースを効果的に管理�
 
 The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 要素は[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素とよく似ています。この要素では、アニメーション画像（GIF など）の読み込みや再生を管理する機能を追加できます。
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim width="400"
   height="300"
@@ -96,7 +96,7 @@ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/am
 
 動画が開始する前のプレースホルダと、ブラウザが HTML5 の動画に対応していない場合のフォールバックを追加します。たとえば次のようになります。
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -118,7 +118,7 @@ The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/am
 
 音声が開始する前のプレースホルダと、ブラウザが HTML5 の音声に対応していない場合のフォールバックを追加します。たとえば次のようになります。
 
-[example preview="inline" playground="true" imports="amp-audio"]
+[example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
 <amp-audio width="400"
   height="200"

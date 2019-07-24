@@ -22,6 +22,7 @@
   grid-column: 5 / 21;
   background: color('white');
   border-radius: 4px;
+  flex: 1 1 auto;
 
   &-block {
     width: 100%;
@@ -41,9 +42,13 @@
       padding: 10px 30px 15px;
       margin-bottom: 0;
       flex-grow: 1;
-      outline: none;
       color: fade_out(color('limed-spruce'), 0.57);
       background: color('athens-gray');
+
+      small {
+        display: block;
+        font-size: 12pt;
+      }
 
       &+.#{organism('agenda')} {
         display: none;
@@ -51,7 +56,6 @@
 
       &[option][selected] {
         @include agenda-button-shadow;
-        outline: none;
         border: none;
         color: color('white');
         background: color('carnation');
@@ -62,6 +66,14 @@
           order: 1;
         }
 
+      }
+
+      &.ampcs[option][selected] {
+        background: color('charade');
+      }
+
+      &.ampcs {
+        flex: 1 1 33%;
       }
     }
   }

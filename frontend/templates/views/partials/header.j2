@@ -35,8 +35,8 @@
         (g.collection('/content/amp-dev/documentation/'), None),
         (g.collection('/content/amp-dev/community/'), None),
         (g.collection('/content/amp-dev/events/'), None),
-        ('external', ('Blog', 'https://blog.amp.dev')),
-        (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
+        ('external', (_('Blog'), 'https://blog.amp.dev')),
+        (g.collection('/content/amp-dev/support/'), None)
       ] %}
 
       {% for section, homepage in sections %}
@@ -44,10 +44,10 @@
         {% if section == 'external' %}
         <a class="ap-o-header-main-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
         {% elif not section %}
-        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path }}">{{ homepage.titles('navigation') }}</a>
+        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path }}">{{_(homepage.titles('navigation'))}}</a>
         {% else %}
         <button class="ap-o-header-main-link ap-m-nav-link {{ active_class(section.pod_path) }}">
-          {{ section.title }}
+          {{_(section.title)}}
           <div class="ap-a-ico ap-o-header-main-link-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
@@ -69,14 +69,14 @@
               </div>
 
               <div class="ap-o-header-flyout-primary-item-link-info{% if flyout.format %} ap-o-header-flyout-primary-item-link-info-{{ flyout.format }}{% endif %}">
-                <div class="ap-o-header-flyout-item-title">{{ flyout_doc.titles('navigation') }}</div>
-                <div class="ap-o-header-flyout-item-description">{{ flyout.description }}</div>
+                <div class="ap-o-header-flyout-item-title">{{_(flyout_doc.titles('navigation'))}}</div>
+                <div class="ap-o-header-flyout-item-description">{{_(flyout.description)}}</div>
               </div>
             </a>
           </li>
           {% else %}
           <li class="ap-o-header-flyout-item-secondary">
-            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{ flyout_doc.titles('navigation') }}</a>
+            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{_(flyout_doc.titles('navigation'))}}</a>
           </li>
           {% endif %}
           {% endfor %}
@@ -88,13 +88,14 @@
 
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
-      <button class="ap-m-language-selector-toggle" aria-label="{{ _('Select a language') }}">
+      <span class="ap-m-language-selector-label" aria-label="{{ _('Select a language') }}" tabindex="-1">
         <span class="ap-m-nav-link">{{ doc.locale.language|upper }}</span>
         {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <div class="ap-a-ico ap-m-language-selector-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
         </div>
-      </button>
+      </span>
+      <input class="ap-m-language-selector-toggle" type="checkbox" name="language-selector">
       <div class="ap-m-language-selector-list" role="list">
         {% for locale in doc.locales if not locale == doc.locale  %}
         {% set localized_doc = doc.localize(locale) %}

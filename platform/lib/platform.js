@@ -20,7 +20,7 @@ const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const cors = require('cors');
-const ampCors = require('amp-toolbox-cors');
+const ampCors = require('@ampproject/toolbox-cors');
 const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
 const subdomain = require('./middleware/subdomain.js');
@@ -42,6 +42,7 @@ const routers = {
   pages: require('@lib/routers/pages.js'),
   playground: require('../../playground/backend/'),
   static: require('@lib/routers/static.js'),
+  templates: require('@lib/routers/templates.js'),
   whoAmI: require('@lib/routers/whoAmI.js'),
 };
 
@@ -134,6 +135,7 @@ class Platform {
     this.server.use(routers.example.api);
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);
+    this.server.use(routers.templates);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }

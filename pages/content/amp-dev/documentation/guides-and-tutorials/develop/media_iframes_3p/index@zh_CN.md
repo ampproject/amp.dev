@@ -74,7 +74,7 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
  The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) 元素与 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素非常相似，且前者提供额外功能，可以管理 GIF 等动画图片的加载和播放。
 
-[example preview="inline" playground="true" imports="amp-anim"]
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
 <amp-anim width="400"
   height="300"
@@ -99,7 +99,7 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 在视频开始播放前添加占位符，如果浏览器不支持 HTML5 视频，则添加后备视频，例如：
 
-[example preview="inline" playground="true" imports="amp-video"]
+[example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -122,7 +122,7 @@ AMP HTML 运行时可有效管理图片资源，从而可使您根据视口位�
 
 在音频开始播放前添加占位符，如果浏览器不支持 HTML5 音频，则添加后备音频，例如：
 
-[example preview="inline" playground="true" imports="amp-audio"]
+[example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
 <amp-audio width="400"
   height="200"

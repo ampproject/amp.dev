@@ -1,8 +1,12 @@
-import requests
+import json
+import os
 
-COMPONENT_VERSIONS_URL = 'https://playground.amp.dev/api/amp-component-versions'
+COMPONENT_VERSIONS_FILE = os.path.normpath(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), '../../amp-component-versions.json'))
+COMPONENT_VERSIONS = {}
 
-COMPONENT_VERSIONS = requests.get(COMPONENT_VERSIONS_URL).json()
+with open(COMPONENT_VERSIONS_FILE) as f:
+  COMPONENT_VERSIONS = json.load(f)
 
 class AmpComponent:
 
@@ -22,23 +26,48 @@ class AmpComponent:
   def __str__(self):
     return "{}:{}".format(self.name, self.version)
 
-def get_component(name):
-  if name and name in COMPONENT_VERSIONS:
-    return AmpComponent(name, COMPONENT_VERSIONS[name])
+def get_component(identifier):
+  """
+  Returns an AmpComponent object with version info for the identifier.
+  If the identifier does not contain a version, the latest version is used.
+  :type identifier: str
+  """
+  if identifier:
+    name = identifier
+    version = '0.1'
+    if ':' in identifier:
+      name = identifier[:identifier.index(':')]
+      version = identifier[len(name)+1:]
+    elif name in COMPONENT_VERSIONS:
+      version = COMPONENT_VERSIONS[name]
+    return AmpComponent(name, version)
   return None
 
-def get_components(names):
+def get_components(identifiers):
   result = []
 
-  if names:
-    if isinstance(names, basestring):
-      collection = names.split(',')
+  if identifiers:
+    if isinstance(identifiers, basestring):
+      collection = identifiers.split(',')
     else:
-      collection = names
+      collection = identifiers
 
-    for name in collection:
-      component = get_component(name.strip())
+    for identifier in collection:
+      component = get_component(identifier.strip())
       if component:
         result.append(component)
 
   return result
+
+
+def remove_component_from_set(name, component_set):
+  """
+  Will remove the component with the specified name from the set with components,
+  regardless of the version.
+  :type name: str
+  :type component_set: set
+  """
+  for component in component_set:
+    if component.name == name:
+      component_set.discard(component)
+      break

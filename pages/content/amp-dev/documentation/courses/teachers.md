@@ -15,7 +15,7 @@ These courses provide an excellent way to teach modern website development patte
 
 The course syllabus and texts are available as Google Docs. It also comes with a complete slide deck, available as Google Slides. All materials can also be downloaded as PDFs.
 
-<a href="https://drive.google.com/drive/folders/1QE_C-RmOjG8Sa_DGKQNzcOytXnEE5qoA" target="_blank" style="margin: 1.5em" class="ap-a-btn">{{ _('Get the courses') }}</a>
+<a id="get-courses" href="https://drive.google.com/drive/folders/1QE_C-RmOjG8Sa_DGKQNzcOytXnEE5qoA" target="_blank" style="margin: 1.5em" class="ap-a-btn">{{ _('Get the courses') }}</a>
 
 You can find the starting Glitch repository [here](https://glitch.com/~enshrined-eyebrow).
 

@@ -1,22 +1,76 @@
 nextstop:
-  - title: berlin, de
-    coords: 57x12
-    location: Google Berlin
-    time: 09:00–18:00
-    day: 7
-    month: jun
+  - title: porto alegre
+    coords: 28x38
+    location: BarraShoppingSul
+    time: 13:00-18:00
+    day: 22
+    month: aug
     year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-berlin/
-  - title: atlanta, usa
-    coords: 22x17
-    location: refactr.tech
-    time: 09:00–18:00
-    day: 5
-    month: jun
+    link: https://braziljs.org/eventos/amp-roadshow/2019/
+  - title: sydney
+    coords: 103x42
+    location: Maritime Museum
+    time: 09:30–17:00
+    day: 27
+    month: aug
     year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-atlanta/
+    link: https://events.withgoogle.com/amp-roadshow-sydney/
+  - title: melbourne
+    coords: 100x44
+    location: Rendezvous Hotel
+    time: 09:30–17:00
+    day: 30
+    month: aug
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-melbourne/
+  - title: auckland
+    coords: 108x42
+    location: Generator@GridAKL
+    time: 09:00-14:30
+    day: 2
+    month: sep
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-auckland/
+  - title: tel aviv
+    coords: 66x22
+    location: tba
+    time: 09:00–18:00
+    day: 22
+    month: sep
+    year: 2019
+    link: #
+  - title: istanbul
+    coords: 64x19
+    location: tba
+    time: 09:00–18:00
+    day: 25
+    month: sep
+    year: 2019
+    link: #
+  - title: dubai
+    coords: 70x23
+    location: tba
+    time: 09:00–18:00
+    day: 29
+    month: sep
+    year: 2019
+    link: #
+  - title: karachi
+    coords: 74x23
+    location: tba
+    time: 09:00–18:00
+    day: 2
+    month: oct
+    year: 2019
+    link: #
 
 past:
+  - title: BERLIN
+    coords: 57x12
+    date: 2019-06-07
+  - title: ATLANTA
+    coords: 22x17
+    date: 2019-06-05
   - title: NAIROBI
     coords: 65x33
     date: 2019-03-22
@@ -42,7 +96,7 @@ past:
     coords: 89x32
     date: 2017-10-09
   - title: SYDNEY
-    coords: 103x44
+    coords: 103x41
     date: 2017-10-13
   - title: MUNICH
     coords: 56x13
@@ -111,7 +165,7 @@ past:
     coords: 77x26
     date: 2018-10-24
   - title: MUMBAI
-    coords: 74x23
+    coords: 75x24
     date: 2018-10-27
   - title: GURGAON
     coords: 77x21
@@ -121,38 +175,45 @@ agenda:
   - title: Intro + Keynote
     time: "09:30"
     type: keynote
-  - title: "AMP: A library for beautiful, responsive sites"
-    time: "09:45"
+  - title: "AMP: A library for rich content experiences"
+    time: "09:50"
     type: session
   - title: Advanced interactivity with AMP
-    time: "10:15"
+    time: "10:20"
     type: session
-  - title: Coffee Break
-    time: "10:45"
+  - title: Coffee break
+    time: "10:50"
     type: break
-  - title: AMP in Production
-    time: "11:00"
+  - title: "Tutorial: Your first AMP site!"
+    time: "11:10"
+    type: tutorial
+  - title: Creating an excellent AMP
+    time: "11:40"
     type: session
-  - title: Monetizing AMP pages
-    time: "11:30"
-    type: session
-  - title: Progressive Web AMPs
-    time: "12:00"
+  - title: Letting your AMP into the world
+    time: "12:10"
     type: session
   - title: Lunch
-    time: "12:30"
+    time: "12:40"
     type: break
   - title: Mystery talk
-    time: "13:30"
-    type: keynote
+    time: "13:40"
+    type: session
+  - title: AMP everywhere
+    time: "14:10"
+    type: session
   - title: What's next in AMP
-    time: "14:15"
-    type: keynote
-  - title: Q&A with speakers
-    time: "14:30"
-  - title: Amplify live!
+    time: "14:40"
+    type: session
+  - title: Coffee break
     time: "15:00"
+    type: break
+  - title: Q&A with AMP team
+    time: "15:15"
     type: panel
+  - title: "Tutorial: Do more with AMP"
+    time: "16:00"
+    type: tutorial
   - title: Happy hour
     time: "17:00"
     type: break

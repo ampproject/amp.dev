@@ -6,44 +6,44 @@
 
 {# Always include amp-bind for the header and TOC if the sample doesn't include it #}
 {% if 'amp-bind' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% endif %}
 
 {# Include all components needed for sidebar #}
 {% if 'amp-sidebar' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 {% endif %}
 {% if 'amp-animation' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-animation', '0.1') %}
 {% endif %}
 {% if 'amp-position-observer' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-position-observer', '0.1') %}
 {% endif %}
 
 {% if 'amp-consent' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-consent', '0.1') %}
 {% if 'amp-geo' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-geo', '0.1') %}
 {% endif %}
 {% endif %}
 {% if 'amp-analytics' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-analytics', '0.1') %}
 {% endif %}
 
 {# Include amp-install-serviceworker #}
-{% if 'amp-serviceworker' not in doc.used_components or not inline_preview %}
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+{% if 'amp-install-serviceworker' not in doc.used_components or not inline_preview %}
+{% do doc.amp_dependencies.add('amp-install-serviceworker', '0.1') %}
 {% endif %}
 
 {# Include amp-iframe for story previews #}
 {% if doc.example.document.isAmpStory %}
-<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 {% endif %}
 
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
 {% for used_component in doc.used_components %}
-{{ doc.used_components[used_component]|safe }}
+{% do doc.amp_dependencies.add(used_component, doc.used_components[used_component].version, doc.used_components[used_component].type) %}
 {% endfor %}
 {% endif %}
 {% endblock %}
@@ -179,10 +179,16 @@
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
           </div>
         </button>
-        <div class="ap-o-code-preview-preview-iframe">
-          <amp-iframe class="ap-o-code-preview-iframe" src="{{ story_preview_embed }}" [src]="section{{ section.id }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0">
-            <div placeholder></div>
-          </amp-iframe>
+        <div class="ap-o-code-preview-preview-iframe{% if doc.example.document.metadata.landscape %} landscape{% endif %}">
+          <div>
+            <amp-iframe class="ap-o-code-preview-iframe" src="{{ story_preview_embed }}" [src]="{{ section.id }}"
+            {% if doc.example.document.metadata.landscape %}
+            width="16" height="9" layout="responsive"
+            {% else %}
+            layout="flex-item"
+            {% endif %}
+            sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"><div placeholder></div></amp-iframe>
+          </div>
         </div>
         {% elif not doc.example.document.isAmpStory and show_preview %}
         <div class="ap-o-code-preview-preview">

@@ -7,6 +7,13 @@ formats:
   - stories
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 
 
 ## Overview
@@ -74,5 +81,5 @@ To take this approach, review the documentation for publishers' integration with
  * [comScore](https://github.com/ampproject/amphtml/pull/1608)
  * [Parsely](https://github.com/ampproject/amphtml/pull/1595)
 * [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
-* [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics) reference documentation
+* [amp-analytics](https://amp.dev/documentation/components/amp-analytics) reference documentation
 * [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) reference documentation

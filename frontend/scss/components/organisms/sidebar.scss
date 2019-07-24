@@ -123,6 +123,14 @@ nav[toolbar] {
 
     &-item-tutorial-divider {
       @include sidebar-nav-item-tutorial-divider;
+
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: none;
+      }
     }
 
     &-link {

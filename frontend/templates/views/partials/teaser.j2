@@ -12,6 +12,7 @@
     <div class="ap-m-teaser-card">
       {% set teaser = teaser or teaser_doc.teaser or {} %}
       {% if teaser.video %}
+      {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="1" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
@@ -61,6 +62,7 @@
 
     <div class="ap-m-teaser-card">
       {% if teaser.video %}
+      {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="{{ teaser.video.width }}" height="{{ teaser.video.height }}" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
@@ -78,13 +80,15 @@
 {% elif teaser_doc.view == '/views/detail/component-detail.j2' %}
 {# Component teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-component.css') %}
-<div class="ap-m-teaser ap-m-teaser-component {% for format in teaser_doc.formats %}ap--{{ format }} {% endfor %}" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
+{% set formats = teaser_doc.formats or ['websites', 'stories', 'ads', 'email'] %}
+[% if ({{ formats|tojson }}).includes(format) %]
+<div class="ap-m-teaser ap-m-teaser-component" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   <a href="{{ teaser_doc.url.path }}">
     <div class="ap-m-teaser-card">
       {% if teaser_doc.formats %}
       {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
       <div class="ap-m-teaser-tags">
-        {% for format in teaser_doc.formats %}
+        {% for format in formats %}
         <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
         {% endfor %}
       </div>
@@ -102,10 +106,13 @@
     </div>
   </a>
 </div>
+[% endif %]
 {% elif teaser_doc.view == '/views/examples/documentation.j2' %}
 {# Example teaser #}
 {% do doc.styles.addCssFile('/css/components/molecules/teaser-example.css') %}
-<div class="ap-m-teaser ap-m-teaser-example ap--{{ teaser_doc.formats[0] }}" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
+{% set formats = teaser_doc.formats or ['websites'] %}
+[% if ({{ formats|tojson }}).includes(format) %]
+<div class="ap-m-teaser ap-m-teaser-example" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ap-m-teaser-info-trigger">
     <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used
@@ -183,28 +190,29 @@
     </div>
   </a>
 </div>
+[% endif %]
 {% endif %}
 
 {# guides and tutorials #}
 {%
   if teaser_doc.view == '/views/overview/guides.j2' or
   teaser_doc.view == '/views/detail/docs-detail.j2' or
-  teaser_doc.view == '/views/custom.j2'
+  teaser_doc.view == '/views/custom.j2' and teaser
 %}
   {% do doc.styles.addCssFile('/css/components/molecules/teaser-guide-tutorial.css') %}
   {% set teaser = teaser_doc.teaser or {} %}
+  {% set formats = teaser_doc.formats or ['websites'] %}
+  [% if ({{ formats|tojson }}).includes(format) %]
   <div class="ap-m-teaser ap-m-teaser-guide-tutorial">
     <a href="{{ teaser_doc.url.path }}">
 
       {# tags #}
-      {% if teaser_doc.formats %}
-        {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
-        <div class="ap-m-teaser-tags">
-          {% for format in teaser_doc.formats %}
-          <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+      <div class="ap-m-teaser-tags">
+        {% for format in formats %}
+        <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-teaser-tag"></div>
+        {% endfor %}
+      </div>
 
       {# image #}
       {% if teaser.image %}
@@ -236,6 +244,53 @@
           {% endif %}
           {% if teaser.label %}
             <span class="ap-m-lnk">
+              <span class="ap-a-ico ap-m-lnk-icon">
+                {% do doc.icons.useIcon('icons/internal.svg') %}
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              </span>
+              <span class="ap-m-lnk-text">{{ teaser.label }}</span>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </div>
+  [% endif %]
+{% endif %}
+
+{# FAQ teaser #}
+{% if teaser_doc.view == '/views/detail/faq-detail.j2' %}
+  {% do doc.styles.addCssFile('/css/components/molecules/teaser-faq.css') %}
+  {% set teaser = teaser_doc.teaser or {} %}
+  <div class="ap-m-teaser ap-m-teaser-faq">
+    <a href="{{ teaser_doc.url.path }}">
+      {% if teaser.image %}
+        <div class="ap-a-img ap-m-teaser-image">
+          <amp-img src="{{ teaser.image.src }}"
+                   layout="responsive"
+                   width="{{ teaser.image.width }}"
+                   height="{{ teaser.image.height }}"
+                   alt="{{ teaser.image.alt }}">
+          </amp-img>
+        </div>
+      {% else %}
+        <div class="ap-m-teaser-icon">
+          {% set teaser_icon = teaser.icon if teaser.icon else 'example-default' %}
+          {% do doc.icons.useIcon('icons/' + teaser_icon + '.svg') %}
+          <div class="ap-a-ico">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser_icon }}"></use></svg>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="ap-m-teaser-card">
+        <div class="ap-m-teaser-content">
+          <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+          {% if teaser.text or teaser_doc.description %}
+            <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
+          {% endif %}
+          {% if teaser.label %}
+            <span class="ap-m-lnk ap-m-teaser-link">
               <span class="ap-a-ico ap-m-lnk-icon">
                 {% do doc.icons.useIcon('icons/internal.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>

@@ -1,5 +1,6 @@
 {% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
 {% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 
 <amp-sidebar id="sidebar-left"
   class="ap--ampsidebar"
@@ -16,8 +17,8 @@
             {% set scope = namespace(initial=components[0].title[4]) %}
             <ul class="nav-list level-1">
               <li class="nav-item level-1 ">
-                <span class="nav-link">{{ scope.initial|upper }}</span>
                 <ul class="nav-list level-2">
+                  <li class="nav-link">{{ scope.initial|upper }}</li>
                   {% for component in components %}
                   {% set initial = component.title[4] %}
                   {% if scope.initial != initial %}
@@ -25,14 +26,16 @@
                 </ul>
               </li>
               <li class="nav-item level-1 ">
-                <span class="nav-link">{{ scope.initial|upper }}</span>
                 <ul class="nav-list level-2">
+                  <li class="nav-link">{{ scope.initial|upper }}</li>
                   {% endif %}
                   {% set formats = component.formats or [] %}
                   {% set activeDocument = true if component.url == doc.url %}
-                  <li {% if activeDocument %}autoscroll {% endif %} class="nav-item {% if activeDocument %}active {% endif %} level-2 {% for format in formats %}ap--{{ format }} {% endfor %}">
+                  [% if format in {{ formats|tojson }} %]
+                  <li {% if activeDocument %}autoscroll {% endif %} class="nav-item {% if activeDocument %}active {% endif %} level-2">
                     <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
                   </li>
+                  [% endif %]
                   {% endfor %}
                 </ul>
               </li>

@@ -8,6 +8,8 @@ $order: 4
 bucket: true
 formats:
   - websites
-  - email
+  # Currently there are no documents for Optimization and Measurement
+  # around AMP for Email
+  # - email
   - ads
   - stories

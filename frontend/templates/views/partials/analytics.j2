@@ -1,3 +1,4 @@
+{% do doc.amp_dependencies.add('amp-analytics', '0.1') %}
 <amp-analytics type="gtag" data-credentials="include">
   <script type="application/json">
   {
@@ -9,6 +10,20 @@
         }
       }
     }
+{% if doc.pod_path == '/content/amp-dev/documentation/courses/teachers.md' %}
+    ,
+      "triggers": {
+        "button": {
+          "selector": "#get-courses",
+          "on": "click",
+          "vars": {
+            "event_name": "courses",
+            "event_category": "courses",
+            "event_action": "download"
+            }
+        }
+      }
+{% endif %}
   }
   </script>
 </amp-analytics>
