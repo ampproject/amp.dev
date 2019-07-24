@@ -36,6 +36,7 @@ const routers = {
   },
   log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
+  growXmls: require('@lib/routers/growXmls.js'),
   healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
@@ -136,6 +137,8 @@ class Platform {
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);
     this.server.use(routers.templates);
+    // grow xml files need to be after static xml
+    this.server.use(routers.growXmls);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.pages);
   }

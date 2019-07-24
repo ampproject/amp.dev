@@ -21,7 +21,6 @@ const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
-const growPageLoader = require('../common/growPageLoader');
 const AmpOptimizer = require('amp-toolbox-optimizer');
 
 /* Potential path stubs that are used to find a matching file */
@@ -166,16 +165,9 @@ pages.get('/*', async (req, res, next) => {
   // Let known file extensions automatically fallthrough as if they could not
   // been resolved by the preceeding middleware the pages router can't
   // resolve them either
-  const KNOWN_FILE_EXTENSIONS = /\.(jpg|png|css|js|map)$/;
+  const KNOWN_FILE_EXTENSIONS = /\.(jpg|png|css|js|xml|map)$/;
   if (KNOWN_FILE_EXTENSIONS.test(req.path)) {
     next();
-    return;
-  }
-
-  // the grow sitemap.xml must not be processed as template
-  if (/\.xml/.test(req.path)) {
-    const result = await growPageLoader.fetchPage(req.path);
-    res.send(result);
     return;
   }
 

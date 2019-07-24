@@ -42,9 +42,9 @@ async function fetchPage(pageUrlPath) {
   }
 }
 
-async function fetchPageFromGrowServer(templatePath) {
-  const templateUrl = new URL(templatePath, config.hosts.pages.base);
-  const fetchResponse = await fetch(templateUrl);
+async function fetchPageFromGrowServer(path) {
+  const pageUrl = new URL(path, config.hosts.pages.base);
+  const fetchResponse = await fetch(pageUrl);
 
   // Not checking for Response.ok here as Grow might return an error
   // page with status 500 that holds debug information that should
