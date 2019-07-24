@@ -40,7 +40,7 @@ const BlogImporter = require('@lib/pipeline/blogImporter');
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const {pageTransformer} = require('@lib/build/pageTransformer');
 const gulpSass = require('gulp-sass');
-const test = require('./test.js');
+const lint = require('./lint.js');
 
 // The Google Cloud Storage bucket used to store build job artifacts
 const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
@@ -216,7 +216,7 @@ function importAll() {
  */
 function buildPrepare(done) {
   gulp.series(
-      test.lintNode,
+      lint.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
       gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll, zipTemplates),
