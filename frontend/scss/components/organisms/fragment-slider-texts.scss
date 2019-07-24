@@ -49,6 +49,12 @@
         div {
           opacity: 1;
         }
+
+        .#{organism('fragment-slider-component')},
+        .#{organism('fragment-slider-ctas')} a {
+          visibility: visible;
+          transition-delay: 0s;
+        }
       }
     }
 
@@ -86,21 +92,29 @@
     padding-bottom: 30px;
   }
 
-    &-component {
-      flex: 1 0 50%;
-      line-height: 1.8em;
-    }
+  &-component {
+    visibility: hidden;
+    flex: 1 0 50%;
+    line-height: 1.8em;
+    transition-delay: 400ms;
+  }
 
   &-preheadline {
     margin: 0;
   }
 
   &-ctas {
-      display: flex;
+    display: flex;
 
-      a {
-         padding: 0 1.5em 1.5em 0
+    a {
+      visibility: hidden;
+      padding: 0 1.5em 1.5em 0;
+      transition-delay: 400ms;
+
+      div {
+        transition-delay: 0s;
       }
+    }
   }
 
   &-headline {

@@ -68,10 +68,6 @@ $originalEasing: cubic-bezier(0,0,.21,1);
     display: flex;
     align-items: center;
 
-    &:focus {
-      outline: none;
-    }
-
     .label-icon {
       border-radius: 4px;
       background: color('blue-ribbon');

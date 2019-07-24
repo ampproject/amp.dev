@@ -39,7 +39,7 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
           <button class="ap-m-filter-bubble {{ label | slug}} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label | slug}}' } })"
           [class]="roadmapfilter.activefilter == 'all' || roadmapfilter.activefilter == '{{label|slug}}' ? 'ap-m-filter-bubble {{ label | slug}} active' : 'ap-m-filter-bubble {{ label | slug}}'">
             {{ label }}
-            <span tabindex=0 role="reset" class="ap-m-filter-bubble-reset" [class]="roadmapfilter.activefilter == '{{ label | slug}}' ? 'ap-m-filter-bubble-reset show': 'ap-m-filter-bubble-reset'" on="tap:AMP.setState({roadmapfilter: {activefilter: 'all' }})">
+            <span tabindex="-1" role="reset" class="ap-m-filter-bubble-reset" [class]="roadmapfilter.activefilter == '{{ label | slug}}' ? 'ap-m-filter-bubble-reset show': 'ap-m-filter-bubble-reset'" on="tap:AMP.setState({roadmapfilter: {activefilter: 'all' }})">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
             </span>
           </button>
