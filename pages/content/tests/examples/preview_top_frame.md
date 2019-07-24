@@ -10,7 +10,7 @@ formats:
 
 Start
 
-[example preview="top-frame" playground="true" template="amp-mustache"
+[example preview="top-frame" playground="true" template="amp-mustache" orientation="landscape"
          imports="amp-list,amp-carousel,amp-bind,amp-lightbox-gallery" ]
 
 ```html

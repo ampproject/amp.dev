@@ -12,7 +12,10 @@ It supports the following attributes:
    * **inline** The preview is integrated in the page above the code. 
      Only possible if the code does not use anything in the head
    * **top-frame** Preview in an iframe above the code (like used for stories in examples)
-   * **top-frame** Preview in an iframe on the right of the code (like used for an embedded playground)
+   * **side-frame** Preview in an iframe on the right of the code (like used for an embedded playground)
+ * **orientation** Intended to define the orientation for the selected preview modes. 
+   The values are not defined in this extension itself, but rather by the use in the `code-preview.j2` template. 
+   At the time of writing the `top-frame` preview supported `landscape`, `portrait` and `responsive`
  * **playground**
    * **true** A link to open the example in the playground will be shown below the example code (default)
    * **false** No playground link will be shown
