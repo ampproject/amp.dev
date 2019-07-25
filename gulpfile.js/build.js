@@ -281,6 +281,7 @@ async function buildPages(done) {
         if (config.isTestMode()) {
           options.include_paths = TEST_CONTENT_PATH_REGEX;
           options.locales = 'en';
+          options.noSitemap = true;
         } else if (config.isProdMode()) {
           options.ignore_paths = TEST_CONTENT_PATH_REGEX;
         }

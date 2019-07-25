@@ -168,6 +168,11 @@ class Config {
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
     podspec = yaml.safeLoad(podspec);
 
+    // disable sitemap (useful for test builds)
+    if (options.noSitemap) {
+      delete podspec.sitemap;
+    }
+
     // Add environment specific information to configuration needed for URLs
     podspec['env'] = {
       'name': this.environment,
