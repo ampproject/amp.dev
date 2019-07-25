@@ -92,7 +92,6 @@
     "del": "5.0.0",
     "eslint": "6.1.0",
     "eslint-config-google": "0.13.0",
-    "exectimer": "2.2.1",
     "fetch-mock": "7.3.9",
     "file-loader": "4.1.0",
     "globby": "10.0.1",

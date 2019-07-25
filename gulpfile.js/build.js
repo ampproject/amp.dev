@@ -24,9 +24,7 @@ const config = require('@lib/config');
 const signale = require('signale');
 const del = require('del');
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
-const globby = require('globby');
 const through = require('through2');
 const archiver = require('archiver');
 const yaml = require('js-yaml');
@@ -38,15 +36,49 @@ const SpecImporter = require('@lib/pipeline/specImporter');
 const BlogImporter = require('@lib/pipeline/blogImporter');
 // TODO: Fails on Travis with HttpError: Requires authentication
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
-const {pageTransformer} = require('@lib/build/pageTransformer');
 const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
+const CleanCSS = require('clean-css');
+const rcs = require('rcs-core');
+
 
 // The Google Cloud Storage bucket used to store build job artifacts
 const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
+
+// Holds a little configuration for shortening the CSS selectors
+const SELECTOR_REWRITE_SETTINGS = {
+  excludedPaths: /\/documentation\/examples.*|\/documentation\/components\.html/,
+  safeSelectors: [
+    'ap--container',
+    'ap--quote',
+    'ap-m-banner',
+    'ap-m-breadcrumbs',
+    'ap-m-language-selector',
+    'ap-m-rolling-formats',
+    'ap-m-lnk',
+    'ap-m-nav-link',
+    'ap-m-shift-card',
+    'ap-m-teaser',
+    'ap-m-quote',
+    'ap-m-benefit',
+    'ap-m-code-snippet',
+    'ap-m-code-snippet',
+    'ap-o-component-visual',
+    'ap-o-news-item',
+    'ap-o-benefits',
+    'ap-o-case-band',
+    'ap-o-case-grid',
+    'ap-o-consent',
+    'ap-o-footer',
+    'ap-o-header',
+    'ap-o-stage',
+    'ap-o-teaser-grid',
+    'ap-t-what-is-amp',
+  ],
+};
 
 /**
  * Cleans all directories/files that get created by any of the following
@@ -274,7 +306,7 @@ async function fetchArtifacts() {
  * @return {Promise}
  */
 async function buildPages(done) {
-  gulp.series(fetchArtifacts, buildFrontend,
+  return gulp.series(fetchArtifacts, buildFrontend,
       // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
         const options = {};
@@ -294,7 +326,7 @@ async function buildPages(done) {
         // especially Travis gets the correct exit code
           process.exit(1);
         }
-      }, transformPages,
+      }, minifyPages,
       // eslint-disable-next-line prefer-arrow-callback
       function sharedPages() {
       // Copy shared pages separated from PageTransformer as they should
@@ -317,60 +349,57 @@ async function buildPages(done) {
           await sh(`gsutil cp ${archive} ` +
           `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
         }
-      })(done);
+      }, done)();
 }
 
 /**
- * Transforms already built pages and does so while spawning multiple child
- * processes to speed up processing
+ * Removes unnecessary whitespace from rendered pages and minifies their CSS
  *
  * @return {Promise}
  */
-async function transformPages() {
-  let paths = await globby([
-    `${project.paths.GROW_BUILD_DEST}/**/*.html`,
-    `!${project.paths.GROW_BUILD_DEST}/{*/shared,shared}/*.html`,
-  ]);
-  let shardCount = os.cpus().length;
-  if (paths.length < shardCount) {
-    shardCount = paths.length;
-  }
-  const shardPathCount = Math.trunc(paths.length / shardCount);
-
-  // If there is no shard option it means this is the initial call to the task
-  // that spawns the subprocesses
-  if (config.options.shard === undefined) {
-    signale.info(`Spawning ${shardCount} processes to transform ${paths.length} pages ...`);
-    const shards = [];
-
-    while (shards.length < shardCount) {
-      const shardId = shards.length;
-      const shard = sh(`gulp transformPages --env ${config.environment} \
-          --shard ${shardId}`);
-      signale.success(`Started shard ${shardId} ...`);
-      shards.push(shard);
-    }
-
-    return Promise.all(shards);
-  }
-
-  // Otherwise it's the actual shard processing a subset of paths
-  const shardId = config.options.shard;
-  const startIndex = shardId * shardPathCount;
-  const endIndex = shardId == shardCount - 1 ? paths.length : (shardId + 1) * shardPathCount;
-  paths = paths.slice(startIndex, endIndex);
-
-  signale.await(`Shard ${shardId} [${startIndex} - ${endIndex}]: \
-      processing ${paths.length} files ...`);
-  // After the pages have been built by Grow create transformed versions
-  return new Promise((resolve, reject) => {
-    const stream = pageTransformer.start(paths, {
-      'base': `${project.paths.GROW_BUILD_DEST}`,
-    });
-
-    stream.on('end', resolve);
-    stream.on('error', reject);
+function minifyPages() {
+  // Configure CleanCSS to use a more aggressive set of rules to achieve better
+  // results
+  const cleanCss = new CleanCSS({
+    2: {
+      all: true,
+      mergeSemantically: true,
+      restructureRules: true,
+    },
   });
+
+  // Only shorten selectors that are actually safe to be rewritten (i.e. are
+  // not used inside `amp-bind` statements for example)
+  rcs.selectorLibrary.setExclude(
+      new RegExp('^(?!' + SELECTOR_REWRITE_SETTINGS.safeSelectors.join('|') + ').*$')
+  );
+
+  return gulp.src(`${project.paths.GROW_BUILD_DEST}/**/*.html`)
+      .pipe(through.obj(async function(page, encoding, callback) {
+        let html = page.contents.toString();
+
+        // Compress multiple spaces down to only one
+        html = html.replace(/\s{2,}/gm, ' ');
+
+        // Extract the CSS in order to minify it
+        const css = html.match(/<style amp-custom>(.*?)<\/style>/ms);
+        if (css) {
+          const minifiedCss = cleanCss.minify(css[1]).styles;
+          html = html.replace(css[1], minifiedCss);
+
+          // Shorten selectors
+          rcs.fillLibraries(minifiedCss, {prefix: '-'});
+          html = rcs.replace.html(html);
+        }
+
+        console.log(`Minified ${page.relative}`);
+
+        page.contents = Buffer.from(html);
+        // eslint-disable-next-line no-invalid-this
+        this.push(page);
+        callback();
+      }))
+      .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
 }
 
 /**
@@ -476,7 +505,7 @@ exports.zipTemplates = zipTemplates;
 exports.buildPages = buildPages;
 
 exports.buildPrepare = buildPrepare;
-exports.transformPages = transformPages;
+exports.minifyPages = minifyPages;
 exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildFinalize = gulp.series(fetchArtifacts,
