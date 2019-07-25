@@ -86,11 +86,22 @@ class Templates {
    * it'll load the template from the pages directory.
    */
   async load(templatePath) {
-    let compiledTemplate = this.cache_.get(templatePath);
+    return this.compile(templatePath, async () => {
+      return growPageLoader.fetchPage(templatePath);
+    });
+  }
+
+  /**
+   * Loads a template from cache (if not in dev mode). If the template
+   * is not cached, it will use the provided callback to retrieve the
+   * template string and compile it.
+   */
+  async compile(key, fn) {
+    let compiledTemplate = this.cache_.get(key);
     if (config.isDevMode() || !compiledTemplate) {
-      const template = await growPageLoader.fetchPage(templatePath);
+      const template = await fn();
       compiledTemplate = nunjucks.compile(template, this.nunjucksEnv_);
-      this.cache_.set(templatePath, compiledTemplate);
+      this.cache_.set(key, compiledTemplate);
     }
     return compiledTemplate;
   }
