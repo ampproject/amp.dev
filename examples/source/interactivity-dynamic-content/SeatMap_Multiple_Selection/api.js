@@ -18,7 +18,7 @@
 
 const express = require('express');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
-const {createRequestContext} = require('@lib/templates/');
+const {createRequestContext} = require('@lib/templates/index.js');
 const utils = require('@lib/utils');
 const seats = require(utils.project.absolute('/examples/static/samples/json/seats.json'));
 

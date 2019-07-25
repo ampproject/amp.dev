@@ -28,6 +28,7 @@ const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const ENV_DEV = 'development';
 const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
+const ENV_LOCAL = 'local';
 
 const AVAILABLE_LOCALES = [
   'en',
@@ -52,6 +53,7 @@ class Config {
     } else {
       this.test = false;
     }
+    signale.info(`Config: environment=${environment} test=${this.test}`);
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
@@ -84,6 +86,13 @@ class Config {
    */
   isDevMode() {
     return this.environment === ENV_DEV;
+  }
+
+  /**
+   * Returns true if local mode is active.
+   */
+  isLocalMode() {
+    return this.environment === ENV_LOCAL;
   }
 
   /**
