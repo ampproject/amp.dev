@@ -127,7 +127,12 @@
 
   &-main-link:hover ~ &-flyout,
   &-main-link:focus ~ &-flyout,
-  &-flyout:hover,
+  &-flyout:hover {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
   &-flyout:focus-within {
     opacity: 1;
     pointer-events: all;

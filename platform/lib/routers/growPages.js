@@ -21,7 +21,7 @@ const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
-const AmpOptimizer = require('amp-toolbox-optimizer');
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];

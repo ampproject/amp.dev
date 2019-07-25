@@ -38,8 +38,8 @@ runtimeLog.get('/', async (request, response) => {
     response.status(400).send('Invalid request');
     return;
   }
-  const messageTemplate = await Templates.get('message.html');
   try {
+    const messageTemplate = await Templates.get('message.html');
     const html = await logFormatter.apply(message);
     response.send(messageTemplate.render({
       title: 'Log',
