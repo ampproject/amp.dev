@@ -63,7 +63,7 @@ def add_amp_dependencies(amp_dependencies, doc):
       amp_dependencies.add(custom_element.name, version=custom_element.version)
   if amp_templates is not None and len(amp_templates) > 0:
     for custom_template in amp_templates:
-      amp_dependencies.add(custom_element.name, version=custom_element.version, type='template')
+      amp_dependencies.add(custom_template.name, version=custom_template.version, type='template')
 
 def get_dependency_scripts(doc, content):
   output = ''
