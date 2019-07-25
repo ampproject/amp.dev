@@ -387,12 +387,16 @@ function minifyPages() {
           const minifiedCss = cleanCss.minify(css[1]).styles;
           html = html.replace(css[1], minifiedCss);
 
-          // Shorten selectors
-          rcs.fillLibraries(minifiedCss, {prefix: '-'});
-          html = rcs.replace.html(html);
+          try {
+            // Shorten selectors
+            rcs.fillLibraries(minifiedCss, {prefix: '-'});
+            html = rcs.replace.html(html);
+            console.log(`[MINIFY_PAGES]: Minified ${page.relative}`);
+          } catch (e) {
+            console.error('[MINIFY_PAGES]:', page.relative, e);
+          }
         }
 
-        console.log(`Minified ${page.relative}`);
 
         page.contents = Buffer.from(html);
         // eslint-disable-next-line no-invalid-this
