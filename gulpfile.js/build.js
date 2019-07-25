@@ -247,7 +247,7 @@ function importAll() {
  * @return {undefined}
  */
 function buildPrepare(done) {
-  gulp.series(
+  return gulp.series(
       lint.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
@@ -305,7 +305,7 @@ async function fetchArtifacts() {
  *
  * @return {Promise}
  */
-async function buildPages(done) {
+function buildPages(done) {
   return gulp.series(fetchArtifacts, buildFrontend,
       // eslint-disable-next-line prefer-arrow-callback
       async function buildGrow() {
@@ -349,7 +349,7 @@ async function buildPages(done) {
           await sh(`gsutil cp ${archive} ` +
           `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`);
         }
-      }, done)();
+      })(done);
 }
 
 /**
