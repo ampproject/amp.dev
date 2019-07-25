@@ -162,7 +162,7 @@ const growPages = express.Router();
 const optimizer = AmpOptimizer.create();
 
 // only match urls with slash at the end or html extension or no extension
-growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.+\/)$/, async (req, res, next) => {
+growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   const url = ensureUrlScheme(req.originalUrl);
   if (url.pathname !== req.path) {
     res.redirect(301, url.toString());
