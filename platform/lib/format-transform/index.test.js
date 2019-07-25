@@ -16,6 +16,8 @@
 
 const formatTransform = require('./index');
 
+const PLATFORM_HOST = require('../config.js').hosts.platform.base;
+
 describe('formatTransform', () => {
   it('changes html tag and cleans up head', () => {
     const input = '<html ⚡><head><link><meta><noscript></noscript></head><body></body></html>';
@@ -30,9 +32,9 @@ describe('formatTransform', () => {
 <form action-xhr="/something"></form>
 </body></html>`;
     const want = `<html ⚡4email><head></head><body>
-<a href="http://localhost:8080/something">Link</a>
-<amp-img src="http://localhost:8080/something"></amp-img>
-<form action-xhr="http://localhost:8080/something"></form>
+<a href="${PLATFORM_HOST}/something">Link</a>
+<amp-img src="${PLATFORM_HOST}/something"></amp-img>
+<form action-xhr="${PLATFORM_HOST}/something"></form>
 </body></html>`;
     expect(formatTransform.transform(input, 'email')).toBe(want);
   });

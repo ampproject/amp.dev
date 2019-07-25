@@ -18,12 +18,7 @@
 
 const nunjucks = require('nunjucks');
 const config = require('../config.js');
-const {promisify} = require('util');
-const {join} = require('path');
-const {readFile} = require('fs');
-const readFileAsync = promisify(readFile);
-const fetch = require('node-fetch');
-const {pagePath, paths} = require('../utils/project');
+const growPageLoader = require('../common/growPageLoader');
 const LRU = require('lru-cache');
 
 let templates = null;
@@ -91,49 +86,13 @@ class Templates {
    * it'll load the template from the pages directory.
    */
   async load(templatePath) {
-    return this.compile(templatePath, async () => {
-      if (config.isTestMode()) {
-        // fetch original doc page from filesystem for testing
-        return readFileAsync(join(paths.PAGES_SRC, templatePath), 'utf-8');
-      } else if (config.isDevMode()) {
-        // fetch doc from proxy
-        return this.fetchTemplate_(templatePath);
-      } else {
-        // fetch comiled doc page from filesystem
-        return readFileAsync(pagePath(templatePath), 'utf-8');
-      }
-    });
-  }
-
-  /**
-   * Loads a template from cache (if not in dev mode). If the template
-   * is not cached, it will use the provided callback to retrieve the
-   * template string.
-   */
-  async compile(key, fn) {
-    let compiledTemplate = this.cache_.get(key);
+    let compiledTemplate = this.cache_.get(templatePath);
     if (config.isDevMode() || !compiledTemplate) {
-      const template = await fn();
+      const template = await growPageLoader.fetchPage(templatePath);
       compiledTemplate = nunjucks.compile(template, this.nunjucksEnv_);
-      this.cache_.set(key, compiledTemplate);
+      this.cache_.set(templatePath, compiledTemplate);
     }
     return compiledTemplate;
-  }
-
-  async fetchTemplate_(templatePath) {
-    const templateUrl = new URL(templatePath, config.hosts.pages.base);
-    const fetchResponse = await fetch(templateUrl);
-
-    // Not checking for Response.ok here as Grow might return an error
-    // page with status 500 that holds debug information that should
-    // still be shown to the user
-    if (fetchResponse.status && fetchResponse.status !== 404) {
-      return fetchResponse.text();
-    }
-
-    // As this will only ever be called in development throw an error
-    // if Grow did not return a page
-    throw Error('Requested page doesn\'t exist in Grow pod');
   }
 }
 
