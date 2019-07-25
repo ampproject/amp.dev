@@ -80,7 +80,7 @@ tools: !g.yaml /shared/data/tools.yaml
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{link|lower}}"></use></svg>
           </div>
           {{ link }}
-          <div tabindex=0 role="reset"
+          <div tabindex="-1" role="reset"
             class="ap-m-filter-bubble-reset ap-a-ico"
             [class]="activeFilter.chosenFilter == '{{link|slug}}' ? 'ap-m-filter-bubble-reset ap-a-ico show': 'ap-m-filter-bubble-reset ap-a-ico'"
             on="tap:AMP.setState({activeFilter: {chosenFilter: 'none' }})">

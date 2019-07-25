@@ -11,7 +11,7 @@
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
   </div>
 </label>
-<input id="burger-menu" class="ap-o-burger-menu-input" type="checkbox" autocomplete="off"/>
+
 <nav class="ap-o-burger-menu" [class]="mainmenuopen ? 'ap-o-burger-menu mainmenuopen' : 'ap-o-burger-menu'">
   <ul class="ap-o-burger-menu-items">
     {# Sections #}
@@ -21,7 +21,7 @@
       (g.collection('/content/amp-dev/documentation/'), None),
       (g.collection('/content/amp-dev/community/'), None),
       (g.collection('/content/amp-dev/events/'), None),
-      ('external', ('Blog', 'https://blog.amp.dev')),
+      ('external', (_('Blog'), 'https://blog.amp.dev')),
       (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
     ] %}
 
@@ -31,11 +31,11 @@
       <a class="ap-o-burger-menu-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
       {% elif not section and homepage %}
       <a class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path}}">
-        {{ homepage.titles('navigation') }}
+        {{_(homepage.titles('navigation'))}}
       </a>
       {% else %}
       <label class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section.pod_path) }}">
-        {{ section.title }}
+        {{_(section.title)}}
       </label>
       <input class="ap-o-burger-menu-item-trigger" type="checkbox" aria-label="{{ section.title }}"/>
       {# The icons direction depends on the inputs checked state #}
@@ -49,7 +49,7 @@
         <li class="ap-o-burger-menu-item">
           {% set second_level_doc = g.doc(path, locale=doc.locale) %}
           <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc.pod_path) }}" href="{{ second_level_doc.url.path }}">
-            {{ second_level_doc.titles('navigation') }}
+            {{_(second_level_doc.titles('navigation'))}}
           </a>
         </li>
         {% endfor %}
