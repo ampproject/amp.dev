@@ -36,7 +36,7 @@ let templates = null;
  */
 function createRequestContext(request={'query': {}}, context={}) {
   const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  const ALLOWED_LEVEL = ['advanced', 'beginner'];
+  const ALLOWED_LEVEL = ['beginner', 'advanced'];
 
   if (!ALLOWED_FORMATS.includes(request.query.format)) {
     context.format = ALLOWED_FORMATS[0];
