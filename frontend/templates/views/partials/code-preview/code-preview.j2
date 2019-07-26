@@ -12,6 +12,27 @@
   <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
     <div class="ap-a-ico">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+  {% set initial_orientation = preview.orientation if preview.orientation else 'responsive' %}
+  <amp-state id="orientation">
+    <script type="application/json">
+      "{{ initial_orientation }}"
+    </script>
+  </amp-state>
+  <div class="ap-o-code-preview-top-preview">
+    <div class="ap-m-orientation-toggle">
+      {% set orientations = ['portrait', 'landscape', 'responsive'] %}
+
+      {% for orientation in orientations %}
+      {% do doc.icons.useIcon('/icons/orientation-' + orientation + '.svg') %}
+      <button class="ap-m-orientation-toggle-button {% if orientation == initial_orientation %}active{% endif %}"
+              [class]="orientation == '{{ orientation }}' ? 'ap-m-orientation-toggle-button active' : 'ap-m-orientation-toggle-button'"
+              on="tap:AMP.setState({orientation: '{{ orientation }}'})">
+        <svg class="ap-a-ico ap-m-orientation-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-{{ orientation }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
     </div>
   </button>
   <div class="ap-o-code-preview-preview-iframe">
@@ -24,6 +45,11 @@
 {{content|safe}}
 
   {% if preview.mode == 'side-frame' %}
+  <amp-state id="orientation">
+    <script type="application/json">
+      "portrait"
+    </script>
+  </amp-state>
 
   <div class="ap-o-code-preview-side-preview">
     <button class="ap-o-code-preview-side-preview-fab"
@@ -35,6 +61,21 @@
             [hidden]="hidePreview{{ preview.index }} == 1"
             on="tap:AMP.setState({ hidePreview{{ preview.index }}: 1 }),previewIframe{{ preview.index }}.toggleClass(class='show')">
       &#x2715&#xFE0E;
+    <div class="ap-m-orientation-toggle">
+      {% set orientations = ['portrait', 'landscape'] %}
+
+      {% for orientation in orientations %}
+      {% do doc.icons.useIcon('/icons/orientation-' + orientation + '.svg') %}
+      <button class="ap-m-orientation-toggle-button {% if orientation == 'portrait' %}active{% endif %}"
+              [class]="orientation == '{{ orientation }}' ? 'ap-m-orientation-toggle-button active' : 'ap-m-orientation-toggle-button'"
+              on="tap:AMP.setState({orientation: '{{ orientation }}'})">
+        <svg class="ap-a-ico ap-m-orientation-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-{{ orientation }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+
     </button>
     <div class="ap-o-code-preview-side-preview-frame" id="previewIframe{{ preview.index }}">
       <div class="ap-o-code-preview-side-preview-sizer"></div>
