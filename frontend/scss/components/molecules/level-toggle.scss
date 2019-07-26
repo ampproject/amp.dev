@@ -1,0 +1,170 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text';
+
+$borderSize: 5px;
+$cornerSize: 40px;
+
+%pseudo-base {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.#{molecule('level-toggle')} {
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 330px;
+  padding: 14px 10px;
+
+  background-color: color('blue-ribbon');
+  color: color('white');
+  border-radius: 4px;
+  @media (min-width: 768px){
+    width: 500px;
+  }
+  h5 {
+    color: color('white');
+    margin: 0 0 0 10px;
+    font-size: 0.875em;
+  }
+
+  .disabled-headline {
+    opacity: 0.5;
+  }
+
+  svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  &-elements {
+    display: flex;
+    align-items: center;
+
+    button {
+      background-color: color('blue-ribbon');
+      font-weight: 700;
+      border: none;
+      padding: 0 10px;
+    }
+
+    button:focus {
+      outline:none;
+    }
+    .toggle-button {
+      position: relative;
+      display: flex;
+
+      input[type=checkbox]{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 10;
+      }
+
+      &-switch {
+        display: flex;
+        width: 50px;
+        background-color: #2773f1;
+        background-color: lighten(color('blue-ribbon'),8%);
+
+        div {
+          flex: 0 0 50%;
+          text-align: center;
+          transition: transform .15s ease-out;
+        }
+
+        .active {
+          background: color('white');
+        }
+
+      }
+      input[type="checkbox"] {
+        & + .toggle-button-switch {
+          .off.active { transform: translateX(100%); }
+        }
+        &:checked + .toggle-button-switch {
+          .on.active { transform: translateX(-100%); }
+          .off.active { transform: translateX(0); }
+        }
+      }
+    }
+  }
+  .show-tip {
+    display: block;
+  }
+  .hide-tip {
+    display: none;
+  }
+
+  .#{molecule('tip')} {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: calc(100% + 10px);
+    padding: $cornerSize/2 ($cornerSize - 10px);
+    margin-bottom: 50px;
+    background-color: color('white');
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+
+    &-content {
+      h4 {
+        @include txt-1;
+        margin: 0 0 0.75em;
+      }
+
+      p,
+      ul,
+      ol {
+        @include txt-2;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+    &-default {
+      border-right: $borderSize solid color('malachite');
+      border-radius: 0 $borderSize $borderSize 0;
+      word-break: break-word;
+      margin: 0;
+
+      &:before {
+        @extend %pseudo-base;
+        top: -12px;
+        left: calc(100% - 30px);
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid color('white');
+      }
+    }
+    @media(min-width: 768px) {
+      top: 0;
+      width: 40%;
+      left: calc(100% + 10px);
+
+      &-default {
+        &:before {
+          top: 10px;
+          left: -12px;
+          border-top: 12px solid transparent;
+          border-right: 12px solid color('white');
+          border-bottom: 12px solid transparent;
+          border-left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{% do doc.styles.addCssFile('css/components/molecules/level-toggle.css') %}
+{% set level = doc.level %}
+{% set url = doc.url.path %}
+
+
+
+<amp-state id="filter" class="" layout="container" hidden="" aria-hidden="true">
+  <script type="application/json">
+  {
+    "level": "[= level =]"
+  }
+  </script>
+</amp-state>
+
+
+<div class="ap-m-level-toggle">
+  <div class="ap-m-level-toggle-elements">
+    <div class="toggle-button">
+      <input
+      [% if level == 'advanced' %]
+      on="change:AMP.navigateTo(url='{{url}}?level=beginner')"
+      [% elif level != 'advanced' %]
+      on="change:AMP.navigateTo(url='{{url}}?level=advanced')"
+      [% endif %]
+      type="checkbox"
+      [% if level == 'advanced' %] checked [% endif %]
+      id="switch" />
+      <div class="toggle-button-switch">
+        <div class="off[% if level == "advanced" %] active[% endif %]">&#x25CB;</div>
+        <div class="on[% if level == "beginner" %] active[% endif %]">&#x23D0;</div>
+      </div>
+    </div>
+    [% if level == 'advanced' %]
+    <h5>Expertmode is enabled</h5>
+    [% else %]
+    <h5 class="disabled">Expertmode is disabled</h5>
+    [% endif %]
+  </div>
+  {% do doc.icons.useIcon('/icons/questionmark.svg') %}
+  <svg
+  on="tap:AMP.setState({visible: !visible})">
+  ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use></svg>
+  <div [class]="visible ? 'show-tip ap-m-tip ap-m-tip-default' : 'hide-tip'" class="hide-tip">
+    <div class="ap-m-tip-content">
+      <h4>Expertmode</h4>
+      <p>Already familiar with development in AMP? Use the expert mode to hide sections about basic AMP functionality.</p>
+    </div>
+  </div>
+</div>
