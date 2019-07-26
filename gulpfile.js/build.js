@@ -378,9 +378,6 @@ function minifyPages() {
       .pipe(through.obj(function(page, encoding, callback) {
         let html = page.contents.toString();
 
-        // Compress multiple spaces down to only one
-        html = html.replace(/\s{2,}/gm, ' ');
-
         // Minify the CSS
         const css = html.match(/(?<=<style amp-custom>).*?(?=<\/style>)/ms);
         if (css) {
