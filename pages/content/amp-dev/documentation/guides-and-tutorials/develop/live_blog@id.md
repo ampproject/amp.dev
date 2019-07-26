@@ -78,7 +78,7 @@ Anda dapat menambahkan atribut yang dinonaktifkan ke halaman yang dihosting untu
 
 ### Deeplinking
 
-Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
+Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan [`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}), deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
 
 AMP By Example menggunakan cookie di [contoh blog langsung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}) untuk membuat konten terkini. Karena itu, jika ini pertama kalinya Anda membuka halaman, postingan dengan ID “post3” mungkin tidak tersedia, dan Anda akan diarahkan ke postingan pertama.
 

@@ -135,12 +135,12 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 ### Innovation: Offer the most engaging ad products
 
 *   **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    *   [Ads in a carousel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md', locale=doc.locale).url.path}})
-    *   [Ads in a lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md', locale=doc.locale).url.path}})
+    *   [Ads in a carousel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
+    *   [Ads in a lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
     *   ... and [more]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    *   [Sticky Ads]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}})
-    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}})
+    *   [Sticky Ads]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
+    *   [Flying Carpet]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
 
 ## Additional resources
 

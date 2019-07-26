@@ -31,7 +31,7 @@ yang ditetapkan oleh atribut width dan height yang ditentukan. Cobalah dengan me
 
 [tip type="success"]
 
-Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
 
 [/tip]
 
