@@ -16,7 +16,7 @@
 
 'use strict';
 
-const AmpOptimizer = require('amp-toolbox-optimizer');
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const path = require('path');
 
 const io = require('./lib/io');

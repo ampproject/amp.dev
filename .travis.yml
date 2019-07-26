@@ -29,7 +29,7 @@ jobs:
     name: Check code, import documents, build samples, playground & boilerplate
     before_script:
     - scripts/unbuffer.sh gulp buildSamples
-    - scripts/unbuffer.sh gulp lintAll
+    - scripts/unbuffer.sh npm test
     script:
     - if [ $TRAVIS_BRANCH == "production-amp-dev" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
   - stage: build

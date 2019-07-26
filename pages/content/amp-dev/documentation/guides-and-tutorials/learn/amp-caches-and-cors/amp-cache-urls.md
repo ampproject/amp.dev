@@ -8,6 +8,7 @@ formats:
   - ads
 author: sebastianbenz
 ---
+{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 In this document, you'll learn about the AMP Cache URL format and how it handles requests. 
 
@@ -18,7 +19,7 @@ When possible, the Google AMP Cache will create a subdomain for each AMP documen
 You can use this URL calculator to convert an URL into an AMP cache version:
 
 <div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts allow-same-origin allow-popups" src="{{ doc.pod.podspec.base_urls.preview }}/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
   <div placeholder></div>
 </amp-iframe>
 </div>
