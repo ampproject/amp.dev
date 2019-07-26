@@ -199,7 +199,7 @@ author: aghassemi
         </a>
         <input name="search" type="text" placeholder="Search" on="change:AMP.setState({
           products: {
-          listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ event.value +'&sort='+ products.sortChoiceValue +'&searchColor='+ products.searchColor +'&_=RANDOM',
+          listSrc: '/documentation/examples/api/products?searchProduct='+ event.value +'&sort='+ products.sortChoiceValue +'&searchColor='+ products.searchColor +'&_=RANDOM',
           searchProduct: event.value
         }});
           input-debounced:
@@ -231,7 +231,7 @@ author: aghassemi
                 class="autosuggest-box"
                 layout="fixed-height"
                 height="120"
-                src="<% hosts.backend %>/samples_templates/products_autosuggest"
+                src="/documentation/examples/api/products_autosuggest"
                 [src]="autosuggest.query ?
                   autosuggest.endpoint + autosuggest.query :
                   autosuggest.emptyAndInitialTemplateJson"
@@ -307,7 +307,7 @@ author: aghassemi
               "sortChoiceValue": "price-descendent",
               "searchProduct": "",
               "searchColor": "all",
-              "listSrc": "<% hosts.backend %>/samples_templates/products?sortChoiceValue=price-descendent&searchColor=all&_=RANDOM"
+              "listSrc": "/documentation/examples/api/products?sort=price-descendent&searchColor=all&_=RANDOM"
             }
         </script>
       </amp-state>
@@ -319,25 +319,25 @@ author: aghassemi
             <label> yellow <input type="radio" name="colorFilter" value="Yellow" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'yellow' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'yellow' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'yellow' : '') +'&_=RANDOM'
               }
               }), filter-lightbox.close"></label>
             <label> orange <input type="radio" name="colorFilter" value="Orange" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'orange' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
               }
               }), filter-lightbox.close"></label>
             <label> green <input type="radio" name="colorFilter" value="Green" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'green' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
               }
               }), filter-lightbox.close"> </label>
             <label> all <input type="radio" name="colorFilter" value="all" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'all' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'all' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'all' : '') +'&_=RANDOM'
               }
               }), filter-lightbox.close"> </label>
               </div>
@@ -359,26 +359,26 @@ author: aghassemi
             <div><label><input type="radio" id="yellow" name="colorFilter" value="Yellow" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'yellow' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'yellow' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'yellow' : '') +'&_=RANDOM'
               }
               })"> yellow </label></div>
               <div><label><input type="radio" id="orange" name="colorFilter" value="Orange" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'orange' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
               }
               })"> orange </label></div>
 
               <div><label><input type="radio" id="green" name="colorFilter"  value="Green" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'green' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
               }
               })"> green </label></div>
               <div><label><input type="radio" id="all" name="colorFilter"  value="all" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'all' : '',
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'all' : '') +'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'all' : '') +'&_=RANDOM'
               }
               })"> all </label></div>
         </div>
@@ -389,7 +389,7 @@ author: aghassemi
               <select id="sort" on="change:AMP.setState({
               products: {
               sortChoiceValue: event.value,
-              listSrc: '<% hosts.backend %>/samples_templates/products?searchProduct='+products.searchProduct+'&sort='+event.value+'&searchColor='+products.searchColor+'&_=RANDOM'
+              listSrc: '/documentation/examples/api/products?searchProduct='+products.searchProduct+'&sort='+event.value+'&searchColor='+products.searchColor+'&_=RANDOM'
               }
               })">
                 <option value="price-descendent">Price high to low
@@ -405,10 +405,11 @@ author: aghassemi
           <amp-list width="auto"
                     height="600"
                     layout="fixed-height"
-                    src="<% hosts.backend %>/samples_templates/products?sortChoiceValue=price-descendent&searchColor=all&_=RANDOM'"
+                    src="/documentation/examples/api/products?sort=price-descendent&searchColor=all&_=RANDOM'"
                     [src]="products.listSrc"
                     binding="no"
-                    class="grid">
+                    class="grid"
+                    data-amp-replace="RANDOM">
             <template type="amp-mustache">
               <a class="products" href="<% hosts.backend %>/samples_templates/product/[[$.Mode]]">
                 <amp-img width="150"
@@ -512,7 +513,7 @@ author: aghassemi
     <amp-state id="autosuggest">
         <script type="application/json">
         {
-          "endpoint": "<% hosts.backend %>/samples_templates/products_autosuggest?q=",
+          "endpoint": "/documentation/examples/api/products_autosuggest?q=",
           "emptyAndInitialTemplateJson": [{
             "query": "",
             "results": []
