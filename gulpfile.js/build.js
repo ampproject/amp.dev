@@ -375,17 +375,17 @@ function minifyPages() {
   );
 
   return gulp.src(`${project.paths.GROW_BUILD_DEST}/**/*.html`)
-      .pipe(through.obj(async function(page, encoding, callback) {
+      .pipe(through.obj(function(page, encoding, callback) {
         let html = page.contents.toString();
 
         // Compress multiple spaces down to only one
         html = html.replace(/\s{2,}/gm, ' ');
 
-        // Extract the CSS in order to minify it
-        const css = html.match(/<style amp-custom>(.*?)<\/style>/ms);
+        // Minify the CSS
+        const css = html.match(/(?<=<style amp-custom>).*?(?=<\/style>)/ms);
         if (css) {
-          const minifiedCss = cleanCss.minify(css[1]).styles;
-          html = html.replace(css[1], minifiedCss);
+          const minifiedCss = cleanCss.minify(css[0]).styles;
+          html = html.slice(0, css.index) + minifiedCss + html.slice(css.index + css[0].length);
 
           try {
             // Shorten selectors
