@@ -133,12 +133,12 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 ### Innovación: ofrece los productos publicitarios que generan más interacción
 
 *   **Implementa anuncios en páginas AMP complementarias** para generar ingresos incrementales:
-    *   [Anuncios en un carrusel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [Anuncios en un lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [Anuncios en un carrusel]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md', locale=doc.locale).url.path}})
+    *   [Anuncios en un lightbox]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md', locale=doc.locale).url.path}})
     *   [Anuncios avanzados]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **Utiliza formatos nuevos con los anuncios de venta directa** para proporcionar al equipo de ventas productos publicitarios innovadores y de elevado impacto:
-    *   [Anuncios fijos]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [Alfombra voladora]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [Anuncios fijos]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}})
+    *   [Alfombra voladora]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}})
 
 ## Recursos adicionales
 

@@ -54,7 +54,7 @@ When loading your AMP pages in an AMP Cache, check via your [browser’s develop
 
 Learn more about AMP caches:
 
-*   [Using the Google AMP Cache]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.html', locale=doc.locale).url.path}}?format=websites)
+*   [Using the Google AMP Cache]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.md', locale=doc.locale).url.path}}?format=websites)
 *   [AMP on Google, Google AMP Cache](https://developers.google.com/amp/cache/overview)]
 *   [Debug AMP Cache issues]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md', locale=doc.locale).url.path}}?format=websites)
 *   [AMP Cache URL Format and Request Handling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md', locale=doc.locale).url.path}}?format=websites)

@@ -133,12 +133,12 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 ### イノベーション: 高い魅力を持った広告プロダクトを提供する
 
 *   **付随的な AMP ページで広告を実装**することで増収を図ります。
-    *   [カルーセル内の広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [ライトボックス内の広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html', locale=doc.locale).url.path}})
+    *   [カルーセル内の広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md', locale=doc.locale).url.path}})
+    *   [ライトボックス内の広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md', locale=doc.locale).url.path}})
     *   [その他]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
 *   **直接販売の広告に新しいフォーマットを導入**し、セールスチームが影響力の強い革新的な広告プロダクトを販売できるようにします。
-    *   [追尾広告]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [フライングカーペット]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [追尾広告]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sticky-ad.md', locale=doc.locale).url.path}})
+    *   [フライングカーペット]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fx-flying-carpet.md', locale=doc.locale).url.path}})
 
 ## その他のリソース
 

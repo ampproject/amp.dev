@@ -21,7 +21,7 @@ Los anuncios AMP HTML se escriben en lenguaje AMP HTML, de acuerdo con las [espe
 
 ### Formatos
 
-Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar diversos formatos de creatividad, como carrusel, paralaje y lightbox, entre otros. Para empezar a utilizar los anuncios AMP HTML, puedes usar las plantillas de software libre de [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
+Los anuncios AMP HTML son flexibles y dinámicos, lo que te permite utilizar diversos formatos de creatividad, como carrusel, paralaje y lightbox, entre otros. Para empezar a utilizar los anuncios AMP HTML, puedes usar las plantillas de software libre de [Examples]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 <table class="nocolor">
   <tr>
@@ -78,7 +78,7 @@ Para publicar anuncios AMP HTML en páginas AMP, debes crear una extensión [`am
 
 ## Crear anuncios AMP HTML
 
-**Desde cero:** estos anuncios deben seguir las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Para consultar demostraciones y ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
+**Desde cero:** estos anuncios deben seguir las [especificaciones de anuncios AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Para consultar demostraciones y ejemplos de este tipo de anuncios, utiliza las plantillas de software libre de [AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 **Con herramientas:** puedes utilizar cualquiera de las herramientas que se incluyen a continuación para desarrollar creatividades AMP HTML.
 
@@ -108,7 +108,7 @@ En el caso de las plataformas de oferta y los canales de intercambio de anuncios
 
 #### ¿Hay algún ejemplo de anuncios AMP HTML?
 
-Sí. Puedes consultar una serie de magníficas plantillas de anuncios AMP HTML en [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). Estos ejemplos utilizan componentes avanzados de AMP.
+Sí. Puedes consultar una serie de magníficas plantillas de anuncios AMP HTML en [Examples]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}). Estos ejemplos utilizan componentes avanzados de AMP.
 
 #### ¿Los anuncios AMP HTML admiten la verificación de terceros y la detección de visibilidad?
 

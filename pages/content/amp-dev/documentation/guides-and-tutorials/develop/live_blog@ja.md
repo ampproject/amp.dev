@@ -74,7 +74,7 @@ $title: ライブブログを作成する
 
 ### ディープリンク
 
-ブログ投稿を公開する際は、共有などの機能を利用できるようにするため、投稿へのディープリンクをできるようにすることが重要です。[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) では、ブログ項目の `id` を使うだけでディープリンクできます。たとえば、[https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/examples/previews/Live_Blog.html', locale=doc.locale).url.path}}#post3) とすると、ID が `post3` のブログ投稿に直接移動できます。
+ブログ投稿を公開する際は、共有などの機能を利用できるようにするため、投稿へのディープリンクをできるようにすることが重要です。[`amp-live-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-live-list.md', locale=doc.locale).url.path}}) では、ブログ項目の `id` を使うだけでディープリンクできます。たとえば、[https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md', locale=doc.locale).url.path}}#post3) とすると、ID が `post3` のブログ投稿に直接移動できます。
 
 AMP by Example の[ライブブログのサンプル](https://www.ampbyexample.com/samples_templates/live_blog/)では、Cookie を使用して新しいコンテンツを生成しているため、初めてページを表示したときには、ID “post3” の投稿にアクセスできない可能性があります。その場合は、最初の投稿にリダイレクトされます。
 

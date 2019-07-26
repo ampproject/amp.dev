@@ -25,7 +25,7 @@
     "start:playground": "cd playground && webpack-dev-server --mode development",
     "start": "cd platform && NODE_ENV=production node serve.js",
     "test": "npm-run-all test:* --aggregate-output --parallel",
-    "test:platform": "APP_ENV=test jest --testPathIgnorePatterns smoke-tests",
+    "test:platform": "APP_ENV=test jest --testPathIgnorePatterns smoke-tests tests",
     "test:grow-extensions": "cd pages/extensions && if which grow; then python -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
   },
   "keywords": [

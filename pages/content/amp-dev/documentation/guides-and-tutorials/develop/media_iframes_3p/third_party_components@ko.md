@@ -32,7 +32,7 @@ $title: 써드 파티 콘텐츠 가져오기
 ```
 [/example]
 
-도움말: [AMP By Example],[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-twitter.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 인스타그램 가져오기
 
@@ -63,7 +63,7 @@ width와 height 값은 전역으로 사용해야합니다.
 ```
 [/example]
 
-도움말: [AMP By Example],[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-instagram.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 페이스북 포스트나 비디오 보여주기
 
@@ -109,7 +109,7 @@ width와 height 값은 전역으로 사용해야합니다.
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-도움말: [AMP By Example],[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-facebook.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 유튜브 비디오 가져오기
 
@@ -139,7 +139,7 @@ Z1q71gFeRqM가 video id입니다.
 ```
 [/example]
 
-도움말: [AMP By Example],[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-youtube.html', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
+도움말: [AMP By Example],[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).url.path}}) 예시를 확인하세요.
 
 ## 광고 보여주기
 
