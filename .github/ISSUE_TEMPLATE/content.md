@@ -1,7 +1,10 @@
 ---
-name: 📖 Missing or out-of-date documentation
+name: "\U0001F4D6 Missing or out-of-date documentation"
 about: I found a gap in the docs or about pages.
-labels: 'Category: Content,Status: Pending Triage'
+title: ''
+labels: 'Category: Content, Status: Pending Triage'
+assignees: ''
+
 ---
 
 ## 📖 Missing or out-of-date documentation
