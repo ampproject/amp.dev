@@ -75,7 +75,7 @@
     "@babel/plugin-transform-runtime": "7.5.5",
     "@babel/preset-env": "7.5.5",
     "@babel/runtime": "7.5.5",
-    "@octokit/rest": "16.28.6",
+    "@octokit/rest": "16.28.7",
     "absolutify": "0.1.0",
     "amp-by-example": "0.2.16",
     "amp-toolbox-runtime-version": "0.2.7",
