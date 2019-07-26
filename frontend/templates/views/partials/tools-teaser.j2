@@ -1,9 +1,11 @@
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}"
+    [% if format not in {{ tool.formats|tojson }} and not forceFiltered %]hidden[% endif %]
+    [hidden]="filter.format != 'none' && !{{ tool.formats }}.includes(filter.format)">
   {% if tool.formats and tool.formats|length == 1 and not format %}
   {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
   <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag" role="filter" tabindex="0"
-       on="tap:AMP.setState({activeFilter: {chosenFilter: '{{tool.formats[0]|slug}}' } })">
+       on="tap:AMP.setState({filter: {format: '{{tool.formats[0]|slug}}' } })">
     <div class="ap-m-teaser-tag-icon ap-m-teaser-tag-{{tool.formats[0]}} ap-a-ico">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{tool.formats[0]}}"></use></svg>
     </div>
