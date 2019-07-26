@@ -1,5 +1,5 @@
 {% if preview.mode != 'none' %}
-<div class="ap-o-code-preview">
+<div class="ap-o-code-preview {{ preview.mode if preview.mode != 'none' }}">
 {% endif %}
 
   {% if preview.mode == 'inline' %}
