@@ -104,11 +104,18 @@
     &-landscape,
     &-responsive {
       width: 100%;
+      padding: 1em;
       margin: 0 auto;
+      top: 0;
+
+      @media (min-width: 768px) {
+        padding: 0 1em;
+      }
 
       amp-iframe {
         width: auto;
         height: auto;
+        margin: 0;
       }
     }
 
@@ -135,9 +142,6 @@
 
   /* top preview like playground embed mode */
   &-top-preview {
-    padding-bottom: 30px;
-    background-color: darken(color('ebony-clay'), 2%);
-
     @media (min-width: 768px) {
       & + div.#{molecule('code-snippet')} {
         width: 100%;
