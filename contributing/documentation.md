@@ -168,7 +168,7 @@ You can let a code sample have a preview or a link to open the code sample in th
 
 <pre>
   <code>
-[example preview="default: none|inline"
+[example preview="default: none|inline|top-frame|side-frame"
          playground="default: true|false"
          imports="&lt;custom-element-1&gt;,&lt;custom-element-2&gt;,..."
          template="&lt;custom-template&gt;"]
@@ -179,15 +179,35 @@ You can let a code sample have a preview or a link to open the code sample in th
   </code>
 </pre>
 
-An inline preview is only possible if the code does not contain any head elements.
-For email content with resource links use the placeholder `{{server_for_email}}`.
+Use the `preview` attribute to define how the preview is generated:
+- **none**: No preview will be generated
+
+- **inline**: The example is included directly in the page above the source code display.
+  An inline preview is only possible for normal website examples if the code does not contain any head elements.
+  Use this option for small examples that do not need any styling or other head elements
+  (imports do not count, since they are specified via the `imports` attribute).
+  
+- **top-frame**: The preview is shown above the example in an iframe and supports switching the orientation.
+  You can select the default orientation by specifying the additional attribute...
+  - **orientation**: `default: responsive|portrait|landscape`
+  
+    The `responsive` mode shows the preview over the full width of the content.
+    `portrait` and `landscape` show the preview like a mobile device would. 
+
+- **side-frame**: The preview is shown next to the source code in portrait mode. 
+  For small screen sizes the preview is hidden and can be shown with a button click.
+
+If custom elements are needed, specify them in the imports attribute as a comma separated list
+with the name of the component followed by a colon and the version.
+
+For email content with resource links use the placeholder `{{server_for_email}}` in the source.
 
 <pre>
   <code>
-[example preview="inline"
+[example preview="top-frame" orientation="portrait"
          playground="true"
-         imports="amp-list"
-         template="amp-mustache"]
+         imports="amp-list:0.1"
+         template="amp-mustache:0.2"]
 ```html
 &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
   src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
