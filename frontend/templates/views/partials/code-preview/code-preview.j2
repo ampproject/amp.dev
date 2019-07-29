@@ -9,26 +9,22 @@
   {% endif %}
 
   {% if preview.mode == 'top-frame' %}
-  {% set initial_orientation = preview.orientation if preview.orientation else 'responsive' %}
+  {% set initial_orientation = preview.orientation if preview.orientation else 'landscape' %}
+  {% set is_landscape = True if initial_orientation == 'landscape' else False %}
   <amp-state id="orientation{{ preview.index }}">
     <script type="application/json">
-      "{{ initial_orientation }}"
+      {{ is_landscape|lower }}
     </script>
   </amp-state>
   <div class="ap-o-code-preview-top-preview">
     <div class="ap-m-orientation-toggle">
-      {% set orientations = ['portrait', 'landscape', 'responsive'] %}
-
-      {% for orientation in orientations %}
-      {% do doc.icons.useIcon('/icons/orientation-' + orientation + '.svg') %}
-      <button class="ap-m-orientation-toggle-button {% if orientation == initial_orientation %}active{% endif %}"
-              [class]="orientation{{ preview.index }} == '{{ orientation }}' ? 'ap-m-orientation-toggle-button active' : 'ap-m-orientation-toggle-button'"
-              on="tap:AMP.setState({orientation{{ preview.index }}: '{{ orientation }}'})">
+      {% do doc.icons.useIcon('/icons/orientation-toggle.svg') %}
+      <button class="ap-m-orientation-toggle-button"
+              on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}})">
         <svg class="ap-a-ico ap-m-orientation-toggle-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-{{ orientation }}"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use>
         </svg>
       </button>
-      {% endfor %}
     </div>
 
     <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
@@ -39,7 +35,7 @@
 
     {% set base_class = 'ap-o-code-preview-preview-iframe' %}
     <div class="{{ base_class }} ap-o-code-preview-preview-iframe-{{ initial_orientation }}"
-         [class]="'{{ base_class }} ap-o-code-preview-preview-iframe-' + orientation{{ preview.index }}">
+         [class]="orientation{{ preview.index }} ? '{{ base_class }} ap-o-code-preview-preview-iframe-landscape' : '{{ base_class }} ap-o-code-preview-preview-iframe-portrait'">
       <amp-iframe class="ap-o-code-preview-iframe"
                   src="{{ preview.url }}"
                   [src]="example{{ preview.index }}"
