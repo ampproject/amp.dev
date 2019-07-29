@@ -136,7 +136,7 @@ $cornerSize: 40px;
     width: 100%;
     height: auto;
     left: 0;
-    top: calc(100% + 10px);
+    top: calc(100% + 5px);
     padding: $cornerSize/2 ($cornerSize - 10px);
     margin-bottom: 50px;
     background-color: color('white');
@@ -172,7 +172,7 @@ $cornerSize: 40px;
       &:before {
         @extend %pseudo-base;
         top: -12px;
-        left: calc(100% - 30px);
+        left: calc(100% - 40px);
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         border-bottom: 12px solid color('white');
