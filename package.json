@@ -20,11 +20,12 @@
     "build:grow-tests": "gulp buildForGrowTests --env test",
     "log:staging": "gcloud app logs tail -s default --project amp-dev-staging",
     "posttest": "npm run lint",
+    "smoke-test": "APP_ENV=local jest smoke-tests --forceExit",
     "start:local": "cd platform && NODE_ENV=local node serve.js",
     "start:playground": "cd playground && webpack-dev-server --mode development",
     "start": "cd platform && NODE_ENV=production node serve.js",
     "test": "npm-run-all test:* --aggregate-output --parallel",
-    "test:platform": "APP_ENV=test jest --testPathIgnorePatterns integration-tests",
+    "test:platform": "APP_ENV=test jest --testPathIgnorePatterns smoke-tests tests",
     "test:grow-extensions": "cd pages/extensions && if which grow; then python -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
   },
   "keywords": [
@@ -43,8 +44,8 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
-    "@ampproject/toolbox-cors": "1.0.0-beta.6",
-    "@ampproject/toolbox-optimizer": "1.0.0-beta.6",
+    "@ampproject/toolbox-cors": "1.0.0-beta.7",
+    "@ampproject/toolbox-optimizer": "1.0.0-beta.7",
     "@google-cloud/datastore": "4.1.4",
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
@@ -92,7 +93,6 @@
     "del": "5.0.0",
     "eslint": "6.1.0",
     "eslint-config-google": "0.13.0",
-    "exectimer": "2.2.1",
     "fetch-mock": "7.3.9",
     "file-loader": "4.1.0",
     "globby": "10.0.1",

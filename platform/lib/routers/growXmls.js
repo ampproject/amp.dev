@@ -17,16 +17,22 @@
 'use strict';
 
 const express = require('express');
-const SampleRenderer = require('@examples/lib/SampleRenderer');
-const {createRequestContext} = require('@lib/templates/index.js');
-const utils = require('@lib/utils');
-const seats = require(utils.project.absolute('/examples/static/samples/json/seats.json'));
+const growPageLoader = require('../common/growPageLoader');
 
 // eslint-disable-next-line new-cap
-const router = express.Router();
+const xmlPages = express.Router();
 
-SampleRenderer.use(router, (request, response, template) => {
-  response.send(template.render(createRequestContext(request, seats)));
+xmlPages.get('/*.xml', async (req, res, next) => {
+  // this page handler is mainly for the sitemap.xml
+  // but since we do not know where exactly it is located we handle all xml files
+  // Because of that this router should come after the static files
+  try {
+    const result = await growPageLoader.fetchPage(req.path);
+    res.send(result);
+  } catch (e) {
+    // page not found
+    next();
+  }
 });
 
-module.exports = router;
+module.exports = xmlPages;

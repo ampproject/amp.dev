@@ -19,7 +19,7 @@
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
-const {createRequestContext} = require('@lib/templates/');
+const {createRequestContext} = require('@lib/templates/index.js');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();

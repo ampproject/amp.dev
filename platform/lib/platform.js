@@ -36,10 +36,11 @@ const routers = {
   },
   log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
+  growPages: require('@lib/routers/growPages.js'),
+  growXmls: require('@lib/routers/growXmls.js'),
   healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
-  pages: require('@lib/routers/pages.js'),
   playground: require('../../playground/backend/'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
@@ -51,16 +52,17 @@ const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
+    signale.info('Starting platform');
     return new Promise(async (resolve, reject) => {
       try {
-        this._createServer();
-        const httpServer = this.server.listen(PORT, () => {
+        await this._createServer();
+        this.httpServer = this.server.listen(PORT, () => {
           signale.success(`server listening on ${PORT}!`);
           resolve();
         });
         // Increase keep alive timeout
         // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
-        httpServer.keepAliveTimeout = 700 * 1000;
+        this.httpServer.keepAliveTimeout = 700 * 1000;
       } catch (err) {
         reject(err);
       }
@@ -68,11 +70,13 @@ class Platform {
   }
 
   stop() {
-    return Promise.resolve();
-    // TODO
+    signale.info('Stopping platform');
+    return new Promise(async (resolve, reject) => {
+      this.httpServer.close(() => resolve());
+    });
   }
 
-  _createServer() {
+  async _createServer() {
     signale.await(`Starting platform with environment ${config.environment} on ${HOST} ...`);
     this.server = express();
 
@@ -80,7 +84,7 @@ class Platform {
     this.server.set('trust proxy', true);
 
     this._configureMiddlewares();
-    this._configureSubdomains();
+    await this._configureSubdomains();
     this._configureRouters();
     this._configureErrorHandlers();
   }
@@ -114,12 +118,12 @@ class Platform {
     });
   }
 
-  _configureSubdomains() {
-    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
-    this.server.use(subdomain.map(config.hosts.go, routers.go));
-    this.server.use(subdomain.map(config.hosts.log, routers.log));
+  async _configureSubdomains() {
+    this.server.use(await subdomain.map(config.hosts.playground, routers.playground));
+    this.server.use(await subdomain.map(config.hosts.go, routers.go));
+    this.server.use(await subdomain.map(config.hosts.log, routers.log));
     // eslint-disable-next-line new-cap
-    this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
+    this.server.use(await subdomain.map(config.hosts.preview, express.Router().use([
       routers.example.api,
       routers.example.static,
       routers.example.embeds,
@@ -136,8 +140,10 @@ class Platform {
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);
     this.server.use(routers.templates);
+    // grow xml files need to be after static xml
+    this.server.use(routers.growXmls);
     // Register the following router at last as it works as a catch-all
-    this.server.use(routers.pages);
+    this.server.use(routers.growPages);
   }
 
   _configureErrorHandlers() {

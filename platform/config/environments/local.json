@@ -4,7 +4,7 @@
     "pages": {
       "scheme": "http",
       "host": "localhost",
-      "port": "8080"
+      "port": "8081"
     },
     "api": {
       "scheme": "http",
@@ -20,27 +20,27 @@
       "scheme": "http",
       "subdomain": "playground",
       "host": "localhost",
-      "port": "8082"
+      "port": "8083"
     },
     "preview": {
       "scheme": "http",
       "subdomain": "preview",
       "host": "localhost",
-      "port": "8082"
+      "port": "8084"
     },
     "go": {
       "scheme": "http",
       "subdomain": "go",
       "host": "localhost",
-      "port": "8082"
-    },
+      "port": "8086"
+		},
     "log": {
       "scheme": "http",
-      "subdomain": "go",
+      "subdomain": "log",
       "host": "localhost",
       "port": "8087"
-    },
-    "packager": {
+		},
+		"packager": {
       "scheme": "https",
       "host": "amp-dev-sxg.appspot.com",
       "port": ""
