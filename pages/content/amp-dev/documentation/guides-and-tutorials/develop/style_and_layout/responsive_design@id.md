@@ -36,7 +36,7 @@ Meskipun Anda dapat membuat elemen responsif dengan mudah menggunakan `"layout=r
 
 Pada contoh berikut, kami memiliki gambar bunga (640x427 piksel) yang ingin ditampilkan di semua ukuran layar, jadi kami menentukan `width` dan `height`, lalu menetapkan tata letak ke `responsive`.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -77,7 +77,7 @@ Saat menyertakan video di halaman, Anda ingin memastikan bahwa pengguna dapat me
 
 Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat disesuaikan dengan ukuran dan orientasi layar perangkat. Dengan menambahkan `"layout=responsive"` ke elemen [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), ukuran video akan berubah agar sesuai dengan ukuran layar perangkat, dan rasio tinggi lebar video akan disesuaikan dengan `width` dan `height` yang ditentukan.
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -111,7 +111,7 @@ Pada contoh berikut, ada beberapa file gambar yang memiliki rasio tinggi lebar y
 - Untuk lebar viewport hingga 900 piksel, render gambar 75% dari lebar viewport.
 - Untuk lebar viewport di atas 900 piksel, render gambar dengan lebar 600 piksel.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -147,7 +147,7 @@ Pada contoh berikut, kami memiliki 3 gambar kucing yang di-crop berbeda, yang in
 
 Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#bagaimana-jika-atributlayout-tidak-ditetapkan?).
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -181,7 +181,7 @@ Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat pandua
 
 Pada contoh berikut, apabila browser mendukung WebP, tampilkan mountains.webp, jika tidak menampilkan mountains.jpg.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"
