@@ -28,6 +28,8 @@ const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
 
 /* Matches all documentation routes */
 const DOCUMENTATION_ROUTE_PATTERN = /\/documentation\/*/;
+/* Matches all courses routes */
+const COURSES_ROUTE_PATTERN = /\/courses\/*/;
 
 /* Matches <a> tags with the href-attribute value as its first matching group */
 const A_HREF_PATTERN = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/gm;
@@ -135,7 +137,7 @@ async function searchTemplate(templatePath) {
  * @param  {String} html
  * @return {String}
  */
-function rewriteLinks(canonical, html, format) {
+function rewriteLinks(canonical, html, format, level) {
   if (!DOCUMENTATION_ROUTE_PATTERN.test(canonical)) {
     return html;
   }
@@ -146,8 +148,17 @@ function rewriteLinks(canonical, html, format) {
     }
 
     const url = new URL(p2, config.hosts.platform.base);
-    if (!url.searchParams.has('format')) {
-      url.searchParams.set('format', format);
+
+    if (DOCUMENTATION_ROUTE_PATTERN.test(p2)) {
+      if (!url.searchParams.has('format')) {
+        url.searchParams.set('format', format);
+      }
+    }
+
+    if (COURSES_ROUTE_PATTERN.test(p2)) {
+      if (!url.searchParams.has('level')) {
+        url.searchParams.set('level', level);
+      }
     }
 
     return match.replace(p2, url.toString());
@@ -201,7 +212,8 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   // The documentation pages rely on passing along their currently
   // selected format via GET paramters. The static URLs need to be rewritten
   // for this use case
-  renderedTemplate = rewriteLinks(url.pathname, renderedTemplate, templateContext.format);
+  renderedTemplate = rewriteLinks(url.pathname, renderedTemplate,
+      templateContext.format, templateContext.level);
 
   // Pipe the rendered template through the AMP optimizer
   try {
