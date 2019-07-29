@@ -1,6 +1,6 @@
 ---
 $title: AMP terminology 
-$order: 1
+$order: 2
 description: 'AMP terminology guidelines'
 formats:
   - websites
