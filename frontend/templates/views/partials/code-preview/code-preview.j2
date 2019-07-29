@@ -22,21 +22,22 @@
     </script>
   </amp-state>
   <div class="ap-o-code-preview-top-preview">
-    <div class="ap-m-orientation-toggle">
-      {% do doc.icons.useIcon('/icons/orientation-toggle.svg') %}
-      <button class="ap-m-orientation-toggle-button"
+
+    <div class="ap-o-code-preview-controls">
+      <button class="ap-o-code-preview-controls-button"
               on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}})">
-        <svg class="ap-a-ico ap-m-orientation-toggle-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use>
-        </svg>
+        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
+        </div>
+      </button>
+
+      <button class="ap-o-code-preview-controls-button"
+              on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
+        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+        </div>
       </button>
     </div>
-
-    <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
-      <div class="ap-a-ico">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
-      </div>
-    </button>
 
     {% set base_class = 'ap-o-code-preview-preview-iframe' %}
     <div class="{{ base_class }} ap-o-code-preview-preview-iframe-{{ initial_orientation }}"

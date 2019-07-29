@@ -20,41 +20,44 @@
   margin: 1rem 0;
   background: color('ebony-clay');
 
-  &-reload {
-    position: absolute;
-    z-index: 1;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    @include unset-button;
+  &-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px 0;
 
-    @media (max-width: 649px) {
-      display: none;
+    &-button {
+      position: relative;
+      margin: 0 6px;
+      cursor: pointer;
+      @include unset-button;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        pointer-events: none;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.16);
+        transform: scale(0);
+        transition: transform 280ms cubic-bezier(.4,0,.2,1);
+      }
+
+      &:hover::before,
+      &:focus::before {
+        transform: scale(1);
+      }
     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: calc(50% - 100%);
-      left: calc(50% - 100%);
-      width: 200%;
-      height: 200%;
-      pointer-events: none;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.16);
-      transform: scale(0);
-      transition: transform 280ms cubic-bezier(.4,0,.2,1);
-    }
-
-    &:hover::before,
-    &:focus::before {
-      transform: scale(1)
-    }
-
-    .#{atom('ico')} {
-      width: 20px;
-      height: 20px;
-      fill: #FFF;
+    &-icon {
+      width: 22px;
+      height: 22px;
+      fill: color('white');
     }
   }
 
