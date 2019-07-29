@@ -7,7 +7,6 @@
 @import 'components/atoms/_text';
 
 $borderSize: 5px;
-$cornerSize: 40px;
 
 %pseudo-base {
   content: '';
@@ -17,31 +16,29 @@ $cornerSize: 40px;
 }
 
 .#{molecule('level-toggle')} {
-
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 330px;
   height: 61px;
   padding: 14px 10px;
-
   background-color: color('blue-ribbon');
   color: color('white');
   border-radius: 4px;
+
   @media (min-width: 768px){
     width: 500px;
     height: auto;
 
     h5 {
-      margin: 0 0 0 10px;
       font-size: 0.875em;
     }
   }
+
   h5 {
-    color: color('white');
     margin: 0 0 0 10px;
+    color: color('white');
     font-size: 1em;
   }
 
@@ -59,16 +56,6 @@ $cornerSize: 40px;
     display: flex;
     align-items: center;
 
-    button {
-      background-color: color('blue-ribbon');
-      font-weight: 700;
-      border: none;
-      padding: 0 10px;
-    }
-
-    button:focus {
-      outline:none;
-    }
     .toggle-button {
       position: relative;
       display: flex;
@@ -93,21 +80,19 @@ $cornerSize: 40px;
           height: 24px;
         }
 
-
         div {
           flex: 0 0 45%;
-          text-align: center;
           transition: transform .2s cubic-bezier(0, 0, 0.27, 1);
         }
 
         .active {
-          background: color('white');
           margin: 2px;
           border-radius: 1px;
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+          background: color('white');
         }
-
       }
+
       input[type="checkbox"] {
         & + .toggle-button-switch {
           .off.active { transform: translateX(100%); }
@@ -118,13 +103,14 @@ $cornerSize: 40px;
           .off.active { transform: translateX(0); }
         }
       }
+
       .on {
         .line {
           height: 12px;
-          margin-top: 11px;
           width: 1px;
-          background-color: color('white');
           margin-left: 50%;
+          margin-top: 11px;
+          background-color: color('white');
 
           @media (min-width: 768px) {
             height: 7px;
@@ -133,13 +119,14 @@ $cornerSize: 40px;
           }
         }
       }
+
       .off {
         .circle {
           height: 12px;
           width: 12px;
+          margin: 11px 0 0 11px;
           border: 1px solid;
           border-radius: 50%;
-          margin: 11px 0 0 11px;
 
           @media (min-width: 768px) {
             height: 7px;
@@ -150,21 +137,23 @@ $cornerSize: 40px;
       }
     }
   }
+
   .show-tip {
     display: block;
   }
+
   .hide-tip {
     display: none;
   }
 
   .#{molecule('tip')} {
     position: absolute;
-    width: 100%;
+    left: 5px;
+    top: 95%;
+    width: 98%;
     height: auto;
-    left: 0;
-    top: calc(100% + 5px);
-    padding: 20px;
     margin-bottom: 50px;
+    padding: 20px;
     background-color: color('white');
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
 
@@ -184,12 +173,13 @@ $cornerSize: 40px;
         }
       }
     }
+
     &-default {
+      margin: 0;
       border-bottom: $borderSize solid color('malachite');
       border-right: none;
       border-radius: 0 $borderSize $borderSize 0;
       word-break: break-word;
-      margin: 0;
       @media(min-width: 768px) {
         border-right: $borderSize solid color('malachite');
         border-bottom: none;
@@ -198,20 +188,15 @@ $cornerSize: 40px;
       &:before {
         @extend %pseudo-base;
         top: -12px;
-        left: calc(100% - 40px);
+        left: calc(100% - 37px);
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         border-bottom: 12px solid color('white');
-      }
-    }
-    @media(min-width: 1024px) {
-      top: 5px;
-      width: 50%;
-      z-index: 1;
-      left: 99%;
 
-      &-default {
-        &:before {
+        @media (min-width: 768px) {
+          left: calc(100% - 30px);
+        }
+        @media (min-width: 1024px) {
           top: 10px;
           left: -12px;
           border-top: 12px solid transparent;
@@ -221,6 +206,17 @@ $cornerSize: 40px;
         }
       }
     }
+
+    @media(min-width: 1024px) {
+      top: 5px;
+      left: 99%;
+      width: 50%;
+      z-index: 1;
+
+      &-default {
+      }
+    }
+
     @media(min-width: 1440px) {
       width: 70%;
     }
