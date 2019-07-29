@@ -45,6 +45,7 @@ $cornerSize: 40px;
   svg {
     height: 16px;
     width: 16px;
+    margin-right: 10px;
   }
 
   &-elements {
@@ -76,17 +77,21 @@ $cornerSize: 40px;
       &-switch {
         display: flex;
         width: 50px;
-        background-color: #2773f1;
+        height: 24px;
+        border-radius: 2px;
         background-color: lighten(color('blue-ribbon'),8%);
 
         div {
-          flex: 0 0 50%;
+          flex: 0 0 45%;
           text-align: center;
-          transition: transform .15s ease-out;
+          transition: transform .3s ease-out;
         }
 
         .active {
           background: color('white');
+          margin: 2px;
+          border-radius: 2px;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
         }
 
       }
@@ -95,8 +100,26 @@ $cornerSize: 40px;
           .off.active { transform: translateX(100%); }
         }
         &:checked + .toggle-button-switch {
+          background-color: #0048c0;
           .on.active { transform: translateX(-100%); }
           .off.active { transform: translateX(0); }
+        }
+      }
+      .on {
+        .line {
+          height: 12px;
+          width: 50%;
+          margin-top: 6px;
+          border-right: 1px solid;
+        }
+      }
+      .off {
+        .circle {
+          height: 12px;
+          width: 12px;
+          border: 1px solid;
+          border-radius: 50%;
+          margin: 6px 0 0 6px;
         }
       }
     }
@@ -136,10 +159,15 @@ $cornerSize: 40px;
       }
     }
     &-default {
-      border-right: $borderSize solid color('malachite');
+      border-bottom: $borderSize solid color('malachite');
+      border-right: none;
       border-radius: 0 $borderSize $borderSize 0;
       word-break: break-word;
       margin: 0;
+      @media(min-width: 768px) {
+        border-right: $borderSize solid color('malachite');
+        border-bottom: none;
+      }
 
       &:before {
         @extend %pseudo-base;
@@ -152,8 +180,9 @@ $cornerSize: 40px;
     }
     @media(min-width: 768px) {
       top: 0;
-      width: 40%;
-      left: calc(100% + 10px);
+      width: 70%;
+      z-index: 1;
+      left: 100%;
 
       &-default {
         &:before {

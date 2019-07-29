@@ -26,8 +26,12 @@
       [% if level == 'advanced' %] checked [% endif %]
       id="switch" />
       <div class="toggle-button-switch">
-        <div class="off[% if level == "advanced" %] active[% endif %]">&#x25CB;</div>
-        <div class="on[% if level == "beginner" %] active[% endif %]">&#x23D0;</div>
+        <div class="off[% if level == "advanced" %] active[% endif %]">
+          <div class="circle"></div>
+        </div>
+        <div class="on[% if level == "beginner" %] active[% endif %]">
+          <div class="line"></div>
+        </div>
       </div>
     </div>
     [% if level == 'advanced' %]
