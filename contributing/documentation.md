@@ -168,7 +168,7 @@ You can let a code sample have a preview or a link to open the code sample in th
 
 <pre>
   <code>
-[example preview="default: none|inline|top-frame|side-frame"
+[example preview="default: none|inline|top-frame"
          playground="default: true|false"
          imports="&lt;custom-element-1&gt;,&lt;custom-element-2&gt;,..."
          template="&lt;custom-template&gt;"]
@@ -189,13 +189,10 @@ Use the `preview` attribute to define how the preview is generated:
   
 - **top-frame**: The preview is shown above the example in an iframe and supports switching the orientation.
   You can select the default orientation by specifying the additional attribute...
-  - **orientation**: `default: responsive|portrait|landscape`
+  - **orientation**: `default: landscape|portrait`
   
     The `responsive` mode shows the preview over the full width of the content.
     `portrait` and `landscape` show the preview like a mobile device would. 
-
-- **side-frame**: The preview is shown next to the source code in portrait mode. 
-  For small screen sizes the preview is hidden and can be shown with a button click.
 
 If custom elements are needed, specify them in the imports attribute as a comma separated list
 with the name of the component followed by a colon and the version.
