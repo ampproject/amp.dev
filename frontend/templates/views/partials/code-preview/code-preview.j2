@@ -16,6 +16,11 @@
       {{ is_landscape|lower }}
     </script>
   </amp-state>
+  <amp-state id="example{{ preview.index }}">
+    <script type="application/json">
+      "{{ preview.url }}"
+    </script>
+  </amp-state>
   <div class="ap-o-code-preview-top-preview">
     <div class="ap-m-orientation-toggle">
       {% do doc.icons.useIcon('/icons/orientation-toggle.svg') %}
