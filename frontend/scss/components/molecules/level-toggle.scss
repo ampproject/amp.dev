@@ -24,6 +24,7 @@ $cornerSize: 40px;
   align-items: center;
 
   width: 330px;
+  height: 61px;
   padding: 14px 10px;
 
   background-color: color('blue-ribbon');
@@ -31,11 +32,17 @@ $cornerSize: 40px;
   border-radius: 4px;
   @media (min-width: 768px){
     width: 500px;
+    height: auto;
+
+    h5 {
+      margin: 0 0 0 10px;
+      font-size: 0.875em;
+    }
   }
   h5 {
     color: color('white');
     margin: 0 0 0 10px;
-    font-size: 0.875em;
+    font-size: 1em;
   }
 
   .disabled-headline {
@@ -76,21 +83,27 @@ $cornerSize: 40px;
 
       &-switch {
         display: flex;
-        width: 50px;
-        height: 24px;
+        width: 70px;
+        height: 35px;
         border-radius: 2px;
-        background-color: lighten(color('blue-ribbon'),8%);
+        background-color: #2773F1;
+
+        @media (min-width: 768px) {
+          width: 50px;
+          height: 24px;
+        }
+
 
         div {
           flex: 0 0 45%;
           text-align: center;
-          transition: transform .3s ease-out;
+          transition: transform .2s cubic-bezier(0, 0, 0.27, 1);
         }
 
         .active {
           background: color('white');
           margin: 2px;
-          border-radius: 2px;
+          border-radius: 1px;
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
         }
 
@@ -108,9 +121,16 @@ $cornerSize: 40px;
       .on {
         .line {
           height: 12px;
-          width: 50%;
-          margin-top: 6px;
-          border-right: 1px solid;
+          margin-top: 11px;
+          width: 1px;
+          background-color: color('white');
+          margin-left: 50%;
+
+          @media (min-width: 768px) {
+            height: 7px;
+            width: 1px;
+            margin-top: 9px;
+          }
         }
       }
       .off {
@@ -119,7 +139,13 @@ $cornerSize: 40px;
           width: 12px;
           border: 1px solid;
           border-radius: 50%;
-          margin: 6px 0 0 6px;
+          margin: 11px 0 0 11px;
+
+          @media (min-width: 768px) {
+            height: 7px;
+            width: 7px;
+            margin: 9px 0 0 9px;
+          }
         }
       }
     }
@@ -137,7 +163,7 @@ $cornerSize: 40px;
     height: auto;
     left: 0;
     top: calc(100% + 5px);
-    padding: $cornerSize/2 ($cornerSize - 10px);
+    padding: 20px;
     margin-bottom: 50px;
     background-color: color('white');
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
@@ -178,11 +204,11 @@ $cornerSize: 40px;
         border-bottom: 12px solid color('white');
       }
     }
-    @media(min-width: 768px) {
-      top: 0;
-      width: 70%;
+    @media(min-width: 1024px) {
+      top: 5px;
+      width: 50%;
       z-index: 1;
-      left: 100%;
+      left: 99%;
 
       &-default {
         &:before {
@@ -194,6 +220,9 @@ $cornerSize: 40px;
           border-left: 0;
         }
       }
+    }
+    @media(min-width: 1440px) {
+      width: 70%;
     }
   }
 }
