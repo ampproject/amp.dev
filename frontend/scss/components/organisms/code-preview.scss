@@ -142,12 +142,13 @@
         width: 100%;
         min-height: 0;
         margin-top: 0;
+        padding-bottom: 2em;
 
         &::before {
           content: '';
           display: block;
           width: calc(100% + 2em);
-          height: 50px;
+          height: 2em;
           position: sticky;
           position: -webkit-sticky;
           top: 0;
