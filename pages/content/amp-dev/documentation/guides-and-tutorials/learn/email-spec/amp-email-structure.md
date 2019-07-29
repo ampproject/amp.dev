@@ -55,7 +55,7 @@ The `multipart/alternative` must contain at least one non-AMP (`text/plain` or `
 `text/x-amp-html` node. This will be displayed to users whose email clients don't support AMP or who opted out via
 their email provider's settings.
 
-Note: Some email clients[﻿[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part,
+Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part,
 so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
 
 ### Replying/forwarding semantics
