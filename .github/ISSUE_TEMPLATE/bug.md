@@ -1,7 +1,10 @@
 ---
-name: 🐛 Bug Report
-about: If something isn't working as expected 🤔.
-labels: 'Type: Bug,Status: Pending Triage'
+name: "\U0001F41B Bug Report"
+about: "If something isn't working as expected \U0001F914."
+title: ''
+labels: 'Status: Pending Triage, Type: Bug'
+assignees: ''
+
 ---
 
 ## Bug Report
@@ -26,5 +29,3 @@ Please provide the steps to reproduce the issue:
 
 What browser are you using?
 What O/S are you using?
-
-
