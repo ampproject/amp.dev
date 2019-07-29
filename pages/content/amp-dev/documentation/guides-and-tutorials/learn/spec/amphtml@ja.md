@@ -1,8 +1,5 @@
 ---
 $title: AMP HTML 仕様
-$order: 3
-formats:
-  - websites
 ---
 
 <!--
