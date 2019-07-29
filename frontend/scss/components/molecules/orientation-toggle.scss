@@ -30,16 +30,16 @@
     cursor: pointer;
   }
 
-    &-icon {
-      width: 28px;
-      height: 28px;
-      margin: 0 6px;
-      stroke: color('oslo-gray');
-      fill: color('oslo-gray');
+  &-icon {
+    width: 28px;
+    height: 28px;
+    margin: 0 6px;
+    stroke: color('oslo-gray');
+    fill: color('oslo-gray');
 
-      .active & {
-        stroke: color('white');
-        fill: color('white');
-      }
+    .active & {
+      stroke: color('white');
+      fill: color('white');
     }
+  }
 }
