@@ -35,13 +35,13 @@ class Subdomain {
    * Creates a subdomain middleware matching subdomain
    * requests to the router.
    */
-  map(hostConfig, router) {
+  async map(hostConfig, router) {
     if (!hostConfig.subdomain) {
       throw new Error('host does not specify a subdomain');
     }
     let middleware;
-    if (config.isDevMode()) {
-      middleware = this.startDevServer_(hostConfig, router);
+    if (config.isDevMode() || config.isLocalMode()) {
+      middleware = await this.startDevServer_(hostConfig, router);
     } else {
       middleware = this.createSubdomainMiddleware_(hostConfig.subdomain, router);
     }
@@ -50,23 +50,24 @@ class Subdomain {
   }
 
   startDevServer_(hostConfig, router) {
-    let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
-    if (!subdomainApp) {
-      subdomainApp = express();
-      subdomainApp.use(cors());
-      subdomainApp.use(ampCors({
-        'verifyOrigin': false,
-      }));
-      subdomainApp.listen(hostConfig.port, () => {
-        signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
-      });
+    return new Promise((resolve, reject) => {
+      let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
+      if (!subdomainApp) {
+        subdomainApp = express();
+        subdomainApp.use(cors());
+        subdomainApp.use(ampCors({
+          'verifyOrigin': false,
+        }));
+        subdomainApp.listen(hostConfig.port, () => {
+          signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+          // return a dummy middleware
+          resolve((request, response, next) => next());
+        });
 
-      this.subdomainApps_[hostConfig.subdomain] = subdomainApp;
-    }
-    subdomainApp.use(router);
-
-    // return a dummy middleware
-    return (request, response, next) => next();
+        this.subdomainApps_[hostConfig.subdomain] = subdomainApp;
+      }
+      subdomainApp.use(router);
+    });
   }
 
   createSubdomainMiddleware_(subdomain, router) {

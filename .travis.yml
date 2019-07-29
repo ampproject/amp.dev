@@ -108,4 +108,5 @@ jobs:
     - gcloud config set project amp-dev-230314
     script:
     - scripts/unbuffer.sh gulp buildFinalize
+    - scripts/unbuffer.sh npm run smoke-test
     - scripts/unbuffer.sh gulp deploy
