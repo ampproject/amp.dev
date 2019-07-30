@@ -180,7 +180,7 @@ limitations under the License.
 
 # تعديل الحالة باستخدام `AMP.setState()`
 
-يُدمِج الإجراء [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-ents.md#amp) كائنًا حرفيًا في الحالة. عند الضغط على الزر أدناه مثلاً، سيعمل `AMP.setState()` على [الدمج العميق](#deep-merge-with-ampsetstate) للكائن الحرفي مع الحالة.
+يُدمِج الإجراء [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) كائنًا حرفيًا في الحالة. عند الضغط على الزر أدناه مثلاً، سيعمل `AMP.setState()` على [الدمج العميق](#deep-merge-with-ampsetstate) للكائن الحرفي مع الحالة.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ limitations under the License.
 
 # تعديل السجلّ باستخدام `AMP.pushState()`
 
-يشبه الإجراء [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-ents.md#amp) الإجراء `AMP.setState()` إلا أنه يدفع إدخالاً جديدًا في حِزم سجلّ التصفُّح. يؤدي دفع إدخال السجلّ هذا (بالانتقال إلى الخلف مثلاً) إلى استعادة القيمة السابقة للمتغيرات التي عينها `AMP.pushState()`.
+يشبه الإجراء [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) الإجراء `AMP.setState()` إلا أنه يدفع إدخالاً جديدًا في حِزم سجلّ التصفُّح. يؤدي دفع إدخال السجلّ هذا (بالانتقال إلى الخلف مثلاً) إلى استعادة القيمة السابقة للمتغيرات التي عينها `AMP.pushState()`.
 
 على سبيل المثال:
 ```html
