@@ -183,7 +183,7 @@
         </div>
         <div class="ap-o-code-preview-preview-iframe{% if doc.example.document.metadata.landscape %} landscape{% endif %}">
           <div>
-            <amp-iframe class="ap-o-code-preview-iframe" src="{{ story_preview_embed }}" [src]="{{ section.id }}"
+            <amp-iframe class="ap-o-code-preview-iframe" src="{{ story_preview_embed }}" [src]="section{{ section.id }}"
             {% if doc.example.document.metadata.landscape %}
             width="16" height="9" layout="responsive"
             {% else %}
