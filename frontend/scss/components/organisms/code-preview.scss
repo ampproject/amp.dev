@@ -94,13 +94,8 @@
     &-portrait,
     &-landscape {
       width: 100%;
-      padding: 1em;
       margin: 0 auto;
       top: 0;
-
-      @media (min-width: 768px) {
-        padding: 0 1em;
-      }
 
       amp-iframe {
         width: auto;
@@ -110,7 +105,7 @@
     }
 
     &-portrait {
-      max-width: 411px;
+      max-width: 56.25%;
 
       amp-iframe {
         padding-top: 177.78%;
@@ -118,7 +113,7 @@
     }
 
     &-landscape {
-      max-width: 731px;
+      max-width: 100%;
 
       amp-iframe {
         padding-top: 56.25%;
@@ -129,27 +124,30 @@
   /* top preview like playground embed mode */
   &-top-preview {
     position: relative;
+    padding: 0 1em;
     z-index: 1;
 
-    @media (min-width: 768px) {
-      & + div.#{molecule('code-snippet')} {
-        position: relative;
-        width: 100%;
-        min-height: 0;
-        margin-top: 0;
-        padding-bottom: 2em;
+    @media (min-width: 1024px) {
+      padding: 0 15%;
+    }
 
-        &::before {
-          content: '';
-          display: block;
-          width: calc(100% + 2em);
-          height: 2em;
-          position: sticky;
-          position: -webkit-sticky;
-          top: 0;
-          margin-left: -1em;
-          background: linear-gradient(0deg, rgba(color('ebony-clay'), 0) 0%, color('ebony-clay') 50%);
-        }
+    & + div.#{molecule('code-snippet')} {
+      position: relative;
+      width: 100%;
+      min-height: 0;
+      margin-top: 0;
+      padding-bottom: 2em;
+
+      &::before {
+        content: '';
+        display: block;
+        width: calc(100% + 2em);
+        height: 2em;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        margin-left: -1em;
+        background: linear-gradient(0deg, rgba(color('ebony-clay'), 0) 0%, color('ebony-clay') 50%);
       }
     }
   }
