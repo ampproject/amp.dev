@@ -671,8 +671,8 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
 
       <form id="order" method="POST"
-            action="<% hosts.platform %>/documentation/examples/e-commerce/shopping_cart/add_to_cart"
-            action-xhr="<% hosts.platform %>/documentation/examples/e-commerce/shopping_cart/add_to_cart"
+            action="/documentation/examples/e-commerce/shopping_cart/add_to_cart"
+            action-xhr="/documentation/examples/e-commerce/shopping_cart/add_to_cart"
             target="_top" class="flex flex-wrap m1">
         <div class="items-center flex">
           <label for="color">Color:</label>
@@ -738,7 +738,7 @@ This sample showcases how to build a product page in AMP HTML.
           <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
         </div>
         <input type="hidden" name="name" value="Apple">
-        <input type="hidden" name="price" value="$1.99">
+        <input type="hidden" name="price" value="$1.99" [value]="product[product.selectedColor].sizes[product.selectedSize]">
         <input type="hidden" name="id" value="1" [value]="product[product.selectedColor].id">
         <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
         <div submit-error>

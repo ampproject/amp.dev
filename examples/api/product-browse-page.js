@@ -17,7 +17,6 @@
 
 const express = require('express');
 const utils = require('@lib/utils');
-const config = require('@lib/config');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -33,7 +32,7 @@ examples.get('/json/more_related_products_page', handleLoadMoreRequest);
 
 function handleSearchRequest(request, response) {
   const searchQuery = request.query.search;
-  response.redirect(301, `${config.hosts.platform.base}${request.baseUrl}?SEARCH=${searchQuery}`);
+  response.redirect(301, `${request.protocol}://${request.get('host')}${request.baseUrl}?SEARCH=${searchQuery}`);
 }
 
 function handleProductsRequest(request, response) {

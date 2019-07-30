@@ -20,7 +20,6 @@ const formidableMiddleware = require('express-formidable');
 const cookieParser = require('cookie-parser');
 const sessions = require('client-sessions');
 const serializer = require('serialize-javascript');
-const config = require('@lib/config');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -48,18 +47,18 @@ function addToCartHandlerPost(req, res) {
   const quantity = req.fields.quantity;
   const origin = req.get('origin');
 
-  // If comes from the cache
+  // // If comes from the cache
   if (req.headers['amp-same-origin'] !== 'true') {
     // transfrom POST into GET and redirect to /add_to_cart, to complete the request from the origin, with access to the session.
     const queryString = 'id=' + id + '&name=' + encodeURIComponent(name) + '&price=' + price
         + '&color=' + color + '&size=' + size + '&quantity=' + quantity + '&origin='
         + encodeURIComponent(origin);
-    res.header('AMP-Redirect-To', config.hosts.platform.base +
+    res.header('AMP-Redirect-To', req.protocol + '://' + req.get('host') +
         `/documentation/examples/e-commerce/add_to_cart?${queryString}`);
   } else {
     // Complete the request from the origin
     updateShoppingCartOnSession(req, id, name, price, color, size, quantity);
-    res.header('AMP-Redirect-To', config.hosts.platform.base +
+    res.header('AMP-Redirect-To', req.protocol + '://' + req.get('host') +
         '/documentation/examples/e-commerce/shopping_cart/');
   }
 
@@ -76,7 +75,7 @@ function addToCartHandlerGet(req, res) {
   const quantity = req.query.quantity;
 
   updateShoppingCartOnSession(req, id, name, price, color, size, quantity);
-  res.redirect(config.hosts.platform.base + '/documentation/examples/e-commerce/shopping_cart/');
+  res.redirect(req.protocol + '://' + req.get('host') + '/documentation/examples/e-commerce/shopping_cart/');
 };
 
 function cartItemsHandler(req, res) {
@@ -135,7 +134,6 @@ function updateShoppingCartOnSession(req, id, name, price, color, size, quantity
 
 
 function createCartItem(id, name, price, color, size, quantity) {
-  console.log(id);
   const cartProduct = {};
   cartProduct.id = id;
   cartProduct.name = name;
