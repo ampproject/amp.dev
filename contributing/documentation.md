@@ -182,13 +182,14 @@ You can let a code sample have a preview or a link to open the code sample in th
 Use the `preview` attribute to define how the preview is generated:
 - **none**: No preview will be generated
 
-- **inline**: The example is included directly in the page above the source code display.
+- **inline**: The example preview is displayed above the source code.
   An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
   Use this option for small examples that do not need any styling or other `head` elements
   (imports do not count, since they are specified via the `imports` attribute).
   
-- **top-frame**: The preview is shown above the example in an iframe and supports switching the orientation.
-  You can select the default orientation by specifying the additional attribute...
+- **top-frame**: The example preview is displayed above the source code inside an iframe.
+  The orientation can be toggled between `portrait` and `landscape` mode.
+  You can preselect the orientation by specifying the additional attribute:
   - **orientation**: `default: landscape|portrait`
 
 If custom elements are needed, specify them in the imports attribute as a comma separated list
