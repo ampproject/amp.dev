@@ -33,7 +33,7 @@ This is a sample template for implementing live blogs in AMP.
         {
           "@context": "http://schema.org",
           "@type": "LiveBlogPosting",
-          "url": "<% hosts.backend %>/samples_templates/live_blog/",
+          "url": "<% hosts.platform %>/documentation/examples/news-publishing/live_blog/",
           "articleBody": "This is the initial text in the blog post",
           "datePublished": "2016-09-08T23:04:28.24337",
           "about": {
@@ -42,7 +42,7 @@ This is a sample template for implementing live blogs in AMP.
             "startDate": "2016-07-23T13:00:00-07:00",
             "endDate": "2016-07-23T15:00:00-07:00",
             "name": "An AMP Live Blog",
-            "url": "<% hosts.backend %>/samples_templates/live_blog/",
+            "url": "<% hosts.platform %>/documentation/examples/news-publishing/live_blog/",
             "location": {
               "@type": "EventVenue",
               "name": "The Venue Name",
@@ -81,7 +81,7 @@ This is a sample template for implementing live blogs in AMP.
           "coverageEndTime": "2016-07-23T16:00:00-07:00",
           "headline": "An AMP Live Blog",
           "description": "A Live Blog implementation with AMP",
-          "liveBlogUpdate": [[.BlogMetadata]]
+          "liveBlogUpdate": "[% for blogItem in blogMetaData %][= blogItem | dump(2) =][% endfor %]"
         }
       </script>
       <style amp-custom>
@@ -176,7 +176,7 @@ This is a sample template for implementing live blogs in AMP.
     <!-- Use amp-live-list to implement a live blog. The amp-live-list component regularly polls the host document for updated content and updates the end user's browser as new items become available. This means that every time a new post needs to be added, the host document should be updated by the CMS to include the update both the body and the metadata section. Find an amp-live-list example [here](/documentation/examples/components/amp-live-list/).
 
     Long blogs could use pagination to improve performance by limiting the number of blog items to be displayed on a page. To implement pagination, amp-live-list allows to add the `<div pagination></div>` element, to then insert any markup needed for pagination, for example the page number, a link to the next and previous page. -->
-    <amp-live-list [[.Disabled]]
+    <amp-live-list
     class="live-list"
     layout="container"
     data-poll-interval="15000"
@@ -185,36 +185,36 @@ This is a sample template for implementing live blogs in AMP.
 
       <button id ="live-list-update-button" update on="tap:amp-live-list-insert-blog.update">You have updates</button>
       <div items>
-        [[range .BlogItems]]
-            <div id="[[.ID]]" data-sort-time="[[.Timestamp]]">
+        [% for item in blogItems %]
+            <div id="[= item.id =]" data-sort-time="[= item.timestamp =]">
               <div class="blog">
-                <amp-img src="[[.Image]]"
+                <amp-img src="[= item.img =]"
                     layout="responsive" width="1280" height="853">
                 </amp-img>
-                <h4 class="title">[[.Heading]]</h4>
-                <p class="date">[[.Date]]</p>
-                <p class="text">[[.Text]]</p>
+                <h4 class="title">[= item.heading =]</h4>
+                <p class="date">[= item.date =]</p>
+                <p class="text">[= item.text =]</p>
                 <p class="social-share">
-                  <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#[[.ID]]"></amp-social-share>
-                  <amp-social-share type="facebook" width="45" height="33" data-attribution="254325784911610" data-param-url="AMPDOC_URL#[[.ID]]"></amp-social-share>
-                  <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#[[.ID]]"></amp-social-share>
-                  <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#[[.ID]]"></amp-social-share>
-                  <amp-social-share type="pinterest" width="45" height="33" data-param-url="AMPDOC_URL#[[.ID]]"></amp-social-share>
+                  <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="facebook" width="45" height="33" data-attribution="254325784911610" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="pinterest" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
                 </p>
               </div>
             </div>
-          [[end]]
+          [% endfor %]
       </div>
       <div pagination>
         <nav aria-label="amp live list pagination">
           <ul class="pagination">
-            [[if .PrevPageURL]]
-              <li><a href="[[.PrevPageURL]]">Prev</a></li>
-            [[end]]
-            <li>[[.PageNumber]]</li>
-            [[if .NextPageURL]]
-              <li><a href="[[.NextPageURL]]">Next</a></li>
-            [[end]]
+            [% if prevPageUrl %]
+              <li><a href="[= prevPageUrl =]">Prev</a></li>
+            [% endif %]
+            <li>[= pageNumber =]</li>
+            [% if nextPageUrl %]
+              <li><a href="[= nextPageUrl =]">Next</a></li>
+            [% endif %]
           </ul>
         </nav>
       </div>
