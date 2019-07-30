@@ -183,8 +183,8 @@ Use the `preview` attribute to define how the preview is generated:
 - **none**: No preview will be generated
 
 - **inline**: The example is included directly in the page above the source code display.
-  An inline preview is only possible for normal website examples if the code does not contain any head elements.
-  Use this option for small examples that do not need any styling or other head elements
+  An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
+  Use this option for small examples that do not need any styling or other `head` elements
   (imports do not count, since they are specified via the `imports` attribute).
   
 - **top-frame**: The preview is shown above the example in an iframe and supports switching the orientation.
