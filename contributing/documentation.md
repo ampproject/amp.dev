@@ -190,9 +190,6 @@ Use the `preview` attribute to define how the preview is generated:
 - **top-frame**: The preview is shown above the example in an iframe and supports switching the orientation.
   You can select the default orientation by specifying the additional attribute...
   - **orientation**: `default: landscape|portrait`
-  
-    The `responsive` mode shows the preview over the full width of the content.
-    `portrait` and `landscape` show the preview like a mobile device would. 
 
 If custom elements are needed, specify them in the imports attribute as a comma separated list
 with the name of the component followed by a colon and the version.
