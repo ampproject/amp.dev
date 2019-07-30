@@ -10,6 +10,17 @@ creation:
       height: 506
     formats:
       - ads
+  - name: Stripo Email Editor
+    url: https://stripo.email/amp-support/
+    type: Email Templates Editor
+    description: Create interactive email templates fast with Drag-n-Drop & HTML editor. Try free library of ready-to-use modules and templates.
+    image:
+      src: /static/img/tools/stripo.png
+      width: 442
+      height: 184
+      fit: contain
+    formats:
+      - email
   - name: Bannersnack
     description: Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes.
     url: https://www.bannersnack.com/amp-ads.html
@@ -364,17 +375,6 @@ providers:
       src: /static/img/tools/clang.png
       width: 254
       height: 255
-      fit: contain
-    formats:
-      - email
-  - name: Stripo Email Editor
-    url: https://stripo.email/amp-support/
-    type: Email Templates Editor
-    description: Create interactive email templates fast with Drag-n-Drop & HTML editor. Try free library of ready-to-use modules and templates.
-    image:
-      src: /static/img/tools/stripo.png
-      width: 442
-      height: 184
       fit: contain
     formats:
       - email
