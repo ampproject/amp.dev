@@ -41,11 +41,11 @@
       fill: color('white');
       opacity: .75;
       transition: opacity .25s ease-out;
+    }
 
-      &:hover,
-      &:focus {
-        opacity: 1;
-      }
+    &-button:hover &-icon,
+    &-button:focus &-icon {
+      opacity: 1;
     }
   }
 
