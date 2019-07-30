@@ -97,7 +97,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 
 ## 清除所选内容
 
-要在用户点按或点击某个元素后清除所有所选内容，请在相应元素上设置 [`on`](../../spec/amp-actions-and-events.md) 操作属性，然后使用 `clear` 操作方法指定 AMP 选择器 `id`。
+要在用户点按或点击某个元素后清除所有所选内容，请在相应元素上设置 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 操作属性，然后使用 `clear` 操作方法指定 AMP 选择器 `id`。
 
 示例：
 
@@ -150,7 +150,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 
 事件可以使用 `on` 属性触发其他 AMP 组件上的操作。例如，`on="select: my-tab.show"`
 
-详细了解 [AMP 操作和事件](../../spec/amp-actions-and-events.md)。
+详细了解 [AMP 操作和事件](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)。
 
 <table>
   <tr>

@@ -180,7 +180,7 @@ i contenuti dello stato.
 
 # Aggiornare lo stato con `AMP.setState()`
 
-L'azione [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
+L'azione [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ Quando attivato da certi eventi, `AMP.setState()` può anche accedere ai dati co
 
 # Modificare la cronologia con `AMP.pushState()`
 
-L'azione [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
+L'azione [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
 nell'elenco della cronologia di navigazione. Accedendo a questa voce della cronologia, ad esempio, tornando indietro, viene ripristinato
 il valore precedente delle variabili impostate da `AMP.pushState()`.
 
@@ -225,7 +225,7 @@ Le espressioni sono simili a JavaScript, con alcune differenze importanti.
 * Le variabili non definite e l'indice della matrice fuori intervallo restituiscono `null` anziché `undefined` o degli errori.
 * Per garantire buone prestazioni, in una singola espressione possono attualmente essere presenti un massimo di 50 operandi. Nel caso in cui siano insufficienti per il tuo caso d'uso, [non esitare a contattarci](https://github.com/ampproject/amphtml/issues/new).
 
-La grammatica completa e l'implementazione delle espressioni sono riportate in [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) e [bind-expression.js](./0.1/bind-expression.js).
+La grammatica completa e l'implementazione delle espressioni sono riportate in [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Esempi
 

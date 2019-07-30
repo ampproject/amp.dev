@@ -110,7 +110,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Requer a extensão <code>amp-video-docking</code>.</strong> Se o atributo estiver presente e o vídeo for reproduzido manualmente, o vídeo será "minimizado" e fixado a um canto ou elemento quando o usuário rolar para fora da área visual do componente de vídeo.
-            Para mais detalhes, consulte a <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentação sobre a extensão de âncora</a> (link em inglês).</td>
+            Para mais detalhes, consulte a <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentação sobre a extensão de âncora</a> (link em inglês).</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>

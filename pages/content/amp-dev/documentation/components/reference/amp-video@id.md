@@ -110,7 +110,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Memerlukan ekstensi <code>amp-video-docking</code>.</strong> Jika atribut ini ada dan video diputar secara manual, video akan "diminimalkan" dan dikunci ke suatu sudut atau elemen saat pengguna men-scroll keluar dari area visual komponen video.
-            Untuk penjelasan selengkapnya, lihat <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">dokumentasi ekstensi dok.</a></td>
+            Untuk penjelasan selengkapnya, lihat <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">dokumentasi ekstensi dok.</a></td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>

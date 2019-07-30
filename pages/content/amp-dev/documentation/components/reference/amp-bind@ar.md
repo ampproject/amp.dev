@@ -180,7 +180,7 @@ limitations under the License.
 
 # تعديل الحالة باستخدام `AMP.setState()`
 
-يُدمِج الإجراء [`AMP.setState()`](../../spec/amp-actions-and-ents.md#amp) كائنًا حرفيًا في الحالة. عند الضغط على الزر أدناه مثلاً، سيعمل `AMP.setState()` على [الدمج العميق](#deep-merge-with-ampsetstate) للكائن الحرفي مع الحالة.
+يُدمِج الإجراء [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-ents.md#amp) كائنًا حرفيًا في الحالة. عند الضغط على الزر أدناه مثلاً، سيعمل `AMP.setState()` على [الدمج العميق](#deep-merge-with-ampsetstate) للكائن الحرفي مع الحالة.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ limitations under the License.
 
 # تعديل السجلّ باستخدام `AMP.pushState()`
 
-يشبه الإجراء [`AMP.pushState()`](../../spec/amp-actions-and-ents.md#amp) الإجراء `AMP.setState()` إلا أنه يدفع إدخالاً جديدًا في حِزم سجلّ التصفُّح. يؤدي دفع إدخال السجلّ هذا (بالانتقال إلى الخلف مثلاً) إلى استعادة القيمة السابقة للمتغيرات التي عينها `AMP.pushState()`.
+يشبه الإجراء [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-ents.md#amp) الإجراء `AMP.setState()` إلا أنه يدفع إدخالاً جديدًا في حِزم سجلّ التصفُّح. يؤدي دفع إدخال السجلّ هذا (بالانتقال إلى الخلف مثلاً) إلى استعادة القيمة السابقة للمتغيرات التي عينها `AMP.pushState()`.
 
 على سبيل المثال:
 ```html
@@ -223,7 +223,7 @@ limitations under the License.
 * المتغيرات غير المحددة وarray-index-out-of-bound تعرض `null` بدلاً من `undefined` أو إظهار الأخطاء.
 * للتعبير الواحد حاليًا حد قيمته 50 معاملًا بغرض جودة الأداء. يرجى [الاتصال بنا](https://github.com/ampproject/amphtml/issues/new) إذا لم يكن هذا كافيًا لحالة الاستخدام لديك.
 
-يمكن العثور على القواعد الكاملة للتعبيرات وتنفيذها في [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) و[bind-expression.js](./0.1/bind-expression.js).
+يمكن العثور على القواعد الكاملة للتعبيرات وتنفيذها في [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) و[bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # أمثلة
 

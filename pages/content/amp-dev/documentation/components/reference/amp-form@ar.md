@@ -198,7 +198,7 @@ limitations under the License.
 
 ```
 
-يمكن الاطّلاع على [المثال بالكامل هنا](../../examples/forms.amp.html).
+يمكن الاطّلاع على [المثال بالكامل هنا](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # أحداث الإدخال
 
@@ -230,7 +230,7 @@ limitations under the License.
 ```
 [/example]
 
-يمكن الاطّلاع على [المثال بالكامل هنا](../../examples/forms.amp.html).
+يمكن الاطّلاع على [المثال بالكامل هنا](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # مشغلات التحليلات
 
@@ -390,7 +390,7 @@ limitations under the License.
 {% endraw %}
 ```
 
-يمكن الاطّلاع على [المثال بالكامل هنا](../../examples/forms.amp.html).
+يمكن الاطّلاع على [المثال بالكامل هنا](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # لعرض استجابة ناجحة باستخدام ربط البيانات
 
@@ -506,7 +506,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 ```
 [/example]
 
-لمزيد من الأمثلة، راجِع [examples/forms.amp.html](../../examples/forms.amp.html).
+لمزيد من الأمثلة، راجِع [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 بالنسبة إلى رسائل التحقق من صحة البيانات، إذا كان العنصر لا يتضمن محتوى نصيًا، ستعمل AMP على ملئه بالرسالة التلقائية للمتصفح للتحقق من صحة البيانات. في المثال أعلاه، عندما يكون الإدخال `name5` فارغًا ويتم بدء التحقق من صحة البيانات (حاول المستخدِم مثلاً إرسال النموذج)، ستملأ AMP `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` برسالة التحقق للمتصفح وتعرض العلامة `span` هذه للمستخدِم.
 
@@ -601,11 +601,11 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 لإزالة حقل من طلب `verify-xhr`، أضِف السمة `no-verify` إلى عنصر الإدخال.
 
-لمزيد من الأمثلة، راجِع [examples/forms.amp.html](../../examples/forms.amp.html).
+لمزيد من الأمثلة، راجِع [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # استبدال المتغيرات
 
-تتيح الإضافة `amp-form` [استبدال المتغيرات في المنصة](../../spec/amp-var-substitutions.md) للإدخالات المخفية والتي تحتوي على السمة `data-amp-replace`. عند كل عملية إرسال للنموذج، يعثر `amp-form` على كل `input[type=hidden][data-amp-replace]` في النموذج ويطبق استبدال المتغيرات على السمة `value` ويغيّرها بنتيجة الاستبدال.
+تتيح الإضافة `amp-form` [استبدال المتغيرات في المنصة](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) للإدخالات المخفية والتي تحتوي على السمة `data-amp-replace`. عند كل عملية إرسال للنموذج، يعثر `amp-form` على كل `input[type=hidden][data-amp-replace]` في النموذج ويطبق استبدال المتغيرات على السمة `value` ويغيّرها بنتيجة الاستبدال.
 
 عليك تقديم المتغيرات التي تستخدمها لكل استبدال في كل إدخال عن طريق تحديد سلسلة مفصول بينها بمسافات من المتغيرات المستخدَمة في `data-amp-replace` (انظر المثال أدناه). لن تستبدل AMP المتغيرات التي لم يتم تحديدها بشكل صريح.
 
@@ -640,7 +640,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 لاحظ أنه لم يتم استبدال `CANONICAL_HOSTNAME` في المثال أعلاه لأنه لم يكن في القائمة البيضاء من خلال السمة `data-amp-replace` في الحقل الأول.
 
-ستحدث عمليات الاستبدال عند كل إرسال لاحق. يمكنك قراءة المزيد عن [عمليات استبدال المتغيرات في AMP](../../spec/amp-var-substitutions.md).
+ستحدث عمليات الاستبدال عند كل إرسال لاحق. يمكنك قراءة المزيد عن [عمليات استبدال المتغيرات في AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 # تعويض الميزات المفقودة من المتصفحات
 
@@ -690,7 +690,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 يمكن للناشرين استخدام هذه الفئات لتصميم الإدخالات والحقول بحيث تتجاوب مع إجراءات المستخدِم (مثل تمييز إدخال غير صالح بحد أحمر بعد تعتيم المستخدِم له).
 
-انظر [المثال الكامل هنا](../../examples/forms.amp.html) لهذا الاستخدام.
+انظر [المثال الكامل هنا](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) لهذا الاستخدام.
 
 [tip type="success"]
 

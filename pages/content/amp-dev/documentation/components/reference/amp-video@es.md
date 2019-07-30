@@ -110,7 +110,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Requiere la extensión <code>amp-video-docking</code>.</strong> Si este atributo está presente y el vídeo se reproduce de forma manual, se minimizará y permanecerá fijado en una esquina o en un elemento cuando el usuario se desplace fuera del área visual del componente de vídeo.
-            Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentación de la propia extensión</a>.</td>
+            Para obtener más información, consulta la <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentación de la propia extensión</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>

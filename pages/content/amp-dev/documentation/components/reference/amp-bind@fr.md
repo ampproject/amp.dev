@@ -178,7 +178,7 @@ L'action `refresh` est compatible avec ce composant. Elle peut être utilisée p
 
 # Mise à jour de l'état avec `AMP.setState()`
 
-L'action [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) fusionne un littéral d'objet dans l'état. Par exemple, lorsque l'on appuie sur le bouton ci-dessous, `AMP.setState()` [effectue une fusion profonde](#deep-merge-with-ampsetstate) du littéral d'objet avec l'état.
+L'action [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) fusionne un littéral d'objet dans l'état. Par exemple, lorsque l'on appuie sur le bouton ci-dessous, `AMP.setState()` [effectue une fusion profonde](#deep-merge-with-ampsetstate) du littéral d'objet avec l'état.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Lorsqu'elle est déclenchée par certains événements, l'action `AMP.setState()
 
 # Modification de l'historique avec `AMP.pushState()`
 
-L'action [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) est semblable à `AMP.setState()`, si ce n'est qu'elle envoie une nouvelle entrée dans la pile d'historique du navigateur. Faire apparaître cette entrée d'historique (en revenant en arrière, par exemple) a pour effet de rétablir la valeur précédente des variables définie par `AMP.pushState()`.
+L'action [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) est semblable à `AMP.setState()`, si ce n'est qu'elle envoie une nouvelle entrée dans la pile d'historique du navigateur. Faire apparaître cette entrée d'historique (en revenant en arrière, par exemple) a pour effet de rétablir la valeur précédente des variables définie par `AMP.pushState()`.
 
 Exemple :
 ```html
@@ -221,7 +221,7 @@ Les expressions sont semblables à JavaScript, avec toutefois quelques différen
 * Les variables non définies et les exceptions array-index-out-of-bounds renvoient la valeur `null` au lieu de renvoyer `undefined` ou de générer des erreurs.
 * Une expression unique est actuellement limitée à 50 opérandes afin d'optimiser les performances. N'hésitez pas à [nous contacter](https://github.com/ampproject/amphtml/issues/new) si cela s'avère insuffisant dans votre cas.
 
-Pour consulter toute la mise en œuvre et la grammaire complète de l'expression, reportez-vous aux pages [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) et [bind-expression.js](./0.1/bind-expression.js).
+Pour consulter toute la mise en œuvre et la grammaire complète de l'expression, reportez-vous aux pages [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) et [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Exemples
 

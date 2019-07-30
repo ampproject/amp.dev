@@ -107,7 +107,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       </tr>
       <tr>
         <td width="40%"><strong>dock</strong></td>
-        <td><strong><code>amp-video-docking</code> 拡張機能が必要です。</strong> この属性が存在していて、動画を手動で再生している場合、ユーザーが動画コンポーネントの表示領域からスクロール アウトすると、動画は「最小化」され、角または要素に固定されます。詳細については、<a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">ドッキング拡張機能のドキュメント</a>をご覧ください。</td>
+        <td><strong><code>amp-video-docking</code> 拡張機能が必要です。</strong> この属性が存在していて、動画を手動で再生している場合、ユーザーが動画コンポーネントの表示領域からスクロール アウトすると、動画は「最小化」され、角または要素に固定されます。詳細については、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">ドッキング拡張機能のドキュメント</a>をご覧ください。</td>
       </tr>
       <tr>
         <td width="40%"><strong>loop</strong></td>

@@ -97,7 +97,7 @@ AMP seçici, seçeneklerin bir listesini sunan ve kullanıcının bir veya daha 
 
 ## Seçimleri temizleme
 
-Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri temizlemek için öğede [`on`](../../spec/amp-actions-and-events.md) işlem özelliğini ayarlayın ve AMP Seçici `id` bilgisini `clear` işlem yöntemiyle belirtin.
+Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri temizlemek için öğede [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) işlem özelliğini ayarlayın ve AMP Seçici `id` bilgisini `clear` işlem yöntemiyle belirtin.
 
 Örnek:
 
@@ -151,7 +151,7 @@ Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri tem
 Etkinlikler, `on` özelliğini kullanan diğer AMP bileşenlerinde işlemleri tetikleyebilir.
 Ör. `on="select: my-tab.show"`
 
-[AMP İşlemleri ve Etkinlikler](../../spec/amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
+[AMP İşlemleri ve Etkinlikler](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
 
 <table>
   <tr>

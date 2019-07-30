@@ -134,7 +134,7 @@ teaser:
 
 [/tip]
 
-هناك بعض الاختلافات بين استخدام `amp-lightbox` في مستندات AMP العادية و[الإعلانات المكتوبة باللغة AMPHTML](../amp-a4a/amp-a4a-format.md):
+هناك بعض الاختلافات بين استخدام `amp-lightbox` في مستندات AMP العادية و[الإعلانات المكتوبة باللغة AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md):
 
 ### السمة close-button مطلوبة
 

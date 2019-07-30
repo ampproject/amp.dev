@@ -127,7 +127,7 @@ teaser:
 Компонент `amp-lightbox`, используемый в объявлениях HTML с технологией AMP, является [экспериментальным](https://www.ampproject.org/docs/reference/experimental) и находится в стадии активной разработки. Чтобы использовать ``его в таких объявлениях, [включите эксперимент `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Ниже описывается, чем отличается использование `amp-lightbox` в обычных документах AMP от использования в [объявлениях, написанных для HTML с технологией AMP](../amp-a4a/amp-a4a-format.md).
+Ниже описывается, чем отличается использование `amp-lightbox` в обычных документах AMP от использования в [объявлениях, написанных для HTML с технологией AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
 
 ### Обязательный атрибут close-button
 

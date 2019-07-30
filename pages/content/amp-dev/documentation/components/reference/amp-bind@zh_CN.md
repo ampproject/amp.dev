@@ -177,7 +177,7 @@ limitations under the License.
 
 # 通过 `AMP.setState()` 更新状态
 
-[`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
+[`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
 
 ```html
 <!-- 与 JavaScript 类似，您可以在
@@ -197,7 +197,7 @@ limitations under the License.
 
 # 通过 `AMP.pushState()` 修改历史记录
 
-[`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
+[`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
 
 例如：
 ```html
@@ -220,7 +220,7 @@ limitations under the License.
 * 未定义的变量和 array-index-out-of-bound 会返回 `null`，而不是 `undefined`，也不会引发错误。
 * 为了确保性能，单个表达式中目前最多可以使用 50 个操作数。如果这无法满足您的使用需求，请[与我们联系](https://github.com/ampproject/amphtml/issues/new)。
 
-如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) 和 [bind-expression.js](./0.1/bind-expression.js)。
+如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 和 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)。
 
 # 示例
 

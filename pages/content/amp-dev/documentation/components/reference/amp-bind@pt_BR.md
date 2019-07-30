@@ -178,7 +178,7 @@ A ação `refresh` é compatível com este componente e pode ser usada para atua
 
 # Atualizar o estado com `AMP.setState()`
 
-A ação [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) mescla o literal de um objeto ao estado. Por exemplo, quando o botão abaixo for pressionado, o `AMP.setState()` [mesclará](#deep-merge-with-ampsetstate) o literal do objeto com o estado.
+A ação [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) mescla o literal de um objeto ao estado. Por exemplo, quando o botão abaixo for pressionado, o `AMP.setState()` [mesclará](#deep-merge-with-ampsetstate) o literal do objeto com o estado.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Quando acionado por determinados eventos, o `AMP.setState()` também pode acessa
 
 # Modificar o histórico com `AMP.pushState()`
 
-A ação [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) é semelhante à `AMP.setState()`, mas também envia uma nova entrada para a pilha do histórico do navegador. Abrir essa entrada do histórico (por exemplo, navegando de volta) restaura o valor anterior de variáveis definidas por `AMP.pushState()`.
+A ação [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) é semelhante à `AMP.setState()`, mas também envia uma nova entrada para a pilha do histórico do navegador. Abrir essa entrada do histórico (por exemplo, navegando de volta) restaura o valor anterior de variáveis definidas por `AMP.pushState()`.
 
 Por exemplo:
 ```html
@@ -221,7 +221,7 @@ As expressões são semelhantes às do JavaScript, mas têm algumas diferenças 
 * Variáveis indefinidas e array-index-out-of-bounds retornam `null`, em vez de `undefined` ou de gerar erros.
 * Uma expressão única atualmente está limitada a 50 operandos, por motivos de desempenho. [Fale conosco](https://github.com/ampproject/amphtml/issues/new) se esse número for insuficiente para seu caso de uso.
 
-A gramática e a implementação completas da expressão podem ser encontradas em [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) e [bind-expression.js](./0.1/bind-expression.js).
+A gramática e a implementação completas da expressão podem ser encontradas em [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Exemplos
 

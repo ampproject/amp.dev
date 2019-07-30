@@ -109,7 +109,7 @@ teaser:
       </tr>
       <tr>
         <td width="40%"><strong>dock</strong></td>
-        <td><strong>需要 <code>amp-video-docking</code> 扩展。</strong> 如果此属性存在并且视频通过手动方式播放，则当用户滚动到视频组件的可视区域以外时，视频将“最小化”并固定到角落或某个元素。如需了解更多详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">关于 docking 扩展的文档</a>。</td>
+        <td><strong>需要 <code>amp-video-docking</code> 扩展。</strong> 如果此属性存在并且视频通过手动方式播放，则当用户滚动到视频组件的可视区域以外时，视频将“最小化”并固定到角落或某个元素。如需了解更多详情，请参阅<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">关于 docking 扩展的文档</a>。</td>
       </tr>
       <tr>
         <td width="40%"><strong>loop</strong></td>

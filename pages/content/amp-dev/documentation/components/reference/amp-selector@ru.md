@@ -97,7 +97,7 @@ teaser:
 
 ## Отмена выделения
 
-Чтобы отменить все выделения при нажатии на элемент, используйте атрибут действия [`on`](../../spec/amp-actions-and-events.md) в элементе и укажите идентификатор `id` селектора AMP с методом `clear`.
+Чтобы отменить все выделения при нажатии на элемент, используйте атрибут действия [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) в элементе и укажите идентификатор `id` селектора AMP с методом `clear`.
 
 Пример:
 
@@ -150,7 +150,7 @@ teaser:
 События могут активировать действия для компонентов AMP с помощью атрибута `on`,
 например `on="select: my-tab.show"`.
 
-Подробнее [о действиях и событиях AMP](../../spec/amp-actions-and-events.md)…
+Подробнее [о действиях и событиях AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)…
 
 <table>
   <tr>

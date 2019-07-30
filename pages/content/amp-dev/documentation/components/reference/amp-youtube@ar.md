@@ -113,7 +113,7 @@ teaser:
   <tr>
     <td width="40%"><strong>dock</strong></td>
     <td><strong>تتطلب هذه السمة الإضافة <code>amp-video-docking</code>.</strong> في حال توفّر هذه السمة وتشغيل الفيديو يدويًا، سيتم "تصغير" الفيديو وتثبيته في زاوية أو عنصر عند تمرير المستخدم إلى خارج المنطقة المرئية لمكّوِن الفيديو.
-      لمزيد من التفاصيل، راجع <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">المستندات المتعلقة بإضافة الإرساء نفسها</a>.</td>
+      لمزيد من التفاصيل، راجع <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">المستندات المتعلقة بإضافة الإرساء نفسها</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>credentials (اختيارية)</strong></td>

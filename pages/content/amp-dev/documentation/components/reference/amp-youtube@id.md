@@ -110,7 +110,7 @@ Dengan tata letak responsive, lebar dan tinggi dari contoh berikut akan menghasi
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Memerlukan ekstensi <code>amp-video-docking</code>.</strong> Jika atribut ini ada dan video sedang diputar secara manual, video akan "diminimalkan" dan dikunci ke suatu sudut atau elemen saat pengguna men-scroll keluar dari area visual komponen video.
-            Untuk detail lebih lanjut, lihat <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">dokumentasi tentang ekstensi docking</a>.</td>
+            Untuk detail lebih lanjut, lihat <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">dokumentasi tentang ekstensi docking</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (opsional)</strong></td>

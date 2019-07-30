@@ -58,7 +58,7 @@ Anda dapat menentukan template melalui salah satu dari dua cara berikut:
 * atribut `template` yang mereferensikan ID dari elemen `template` atau `script` yang sudah ada.
 * elemen `template` atau `script` yang bersarang langsung di dalam elemen `amp-list`.
 
-Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](../../spec/amp-html-templates.md).
+Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Contoh: Menampilkan daftar dinamis*
 
@@ -312,7 +312,7 @@ Kami memperkenalkan eksperimen `amp-list-load-more` sebagai implementasi untuk p
 
 ```
 
-Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Atribut
 
@@ -423,7 +423,7 @@ Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/com
 ## Substitusi
 
 `<amp-list>` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](../../spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Misalnya:
 ```html

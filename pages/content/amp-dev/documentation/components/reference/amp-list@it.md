@@ -58,7 +58,7 @@ Puoi specificare un modello in uno dei due modi seguenti:
 * un attributo `template` che fa riferimento a un ID di un elemento `template` o `script` esistente.
 * un elemento `template` o `script` nidificato direttamente all'interno dell'elemento `amp-list`.
 
-Per ulteriori informazioni sui modelli, consulta [Modelli HTML AMP](../../spec/amp-html-templates.md).
+Per ulteriori informazioni sui modelli, consulta [Modelli HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Esempio: visualizzazione di un elenco dinamico*
 
@@ -312,7 +312,7 @@ Abbiamo introdotto l'esperimento `amp-list-load-more` come implementazione per l
 
 ```
 
-Per esempi pratici, consulta [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) e [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Per esempi pratici, consulta [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) e [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Attributi
 
@@ -424,7 +424,7 @@ Questo elemento include [attributi comuni](https://www.ampproject.org/docs/refer
 ## Sostituzioni
 
 `<amp-list>` consente tutte le sostituzioni di variabili URL standard.
-Per ulteriori informazioni, consulta la [Guida alle sostituzioni](../../spec/amp-var-substitutions.md).
+Per ulteriori informazioni, consulta la [Guida alle sostituzioni](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Ad esempio:
 ```html

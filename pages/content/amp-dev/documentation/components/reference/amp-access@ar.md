@@ -50,7 +50,7 @@ limitations under the License.
 
 ## العلاقة بالإضافة `amp-subscriptions`
 
-توفر الإضافة [`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) ميزات مشابهة لميزات `amp-access`. ومع ذلك، فهي تتيح عمل بروتوكول وصول أكثر تخصصًا لنظام حظر الاشتراك غير المدفوع. في ما يلي بعض أهم الاختلافات:
+توفر الإضافة [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) ميزات مشابهة لميزات `amp-access`. ومع ذلك، فهي تتيح عمل بروتوكول وصول أكثر تخصصًا لنظام حظر الاشتراك غير المدفوع. في ما يلي بعض أهم الاختلافات:
 
 1. استجابة استحقاقات `amp-subscriptions` مشابهة لتفويض amp-access
 لكنها محددة وموحدة بشكل صارم.
@@ -500,7 +500,7 @@ RETURN_URL#success=true|false
 
 ## التكامل مع *amp-analytics*
 
-يتم توثيق التكامل مع *amp-analytics* في [amp-access-analytics.md](./amp-access-analytics.md).
+يتم توثيق التكامل مع *amp-analytics* في [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## أمان أصل CORS
 
@@ -565,7 +565,7 @@ RETURN_URL#success=true|false
 
 ## الملحق أ: قواعد تعبيرات "amp-access"
 
-يوفر الملف [access-expr-impl.jison](./0.1/access-expr-impl.jison) أحدث قواعد BNF.
+يوفر الملف [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) أحدث قواعد BNF.
 
 في ما يلي المقتطف الأساسي لهذه القواعد:
 ```javascript

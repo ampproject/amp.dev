@@ -74,8 +74,8 @@ limitations under the License.
 
 ## 지원되는 광고 네트워크
 
-* [애드센스](../../ads/google/adsense.md)
-* [DoubleClick (experimental)](../../ads/google/doubleclick.md)
+* [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 속성
 

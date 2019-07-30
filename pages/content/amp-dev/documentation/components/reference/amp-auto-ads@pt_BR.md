@@ -75,8 +75,8 @@ O tipo de rede de publicidade e qualquer outra informação (exigida pela rede) 
 
 ## Redes de publicidade compatíveis
 
-* [Google AdSense](../../ads/google/adsense.md)
-* [DoubleClick (experimental)](../../ads/google/doubleclick.md)
+* [Google AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Atributos
 

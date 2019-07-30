@@ -58,7 +58,7 @@ teaser:
 * Добавить атрибут `template`, который ссылается на идентификатор существующего элемента `template` или `script`.
 * Добавить вложенный элемент `template` или `script` непосредственно в элемент `amp-list`.
 
-Более подробные сведения о шаблонах приведены в разделе [Шаблоны AMPHTML](../../spec/amp-html-templates.md).
+Более подробные сведения о шаблонах приведены в разделе [Шаблоны AMPHTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Пример динамического списка*
 
@@ -312,7 +312,7 @@ URL удаленной конечной точки, которая возвра�
 
 ```
 
-Рабочие примеры можно найти по ссылкам: [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) и [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Рабочие примеры можно найти по ссылкам: [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) и [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Атрибуты
 
@@ -424,7 +424,7 @@ URL удаленной конечной точки, которая возвра�
 ## Замены
 
 Элемент `<amp-list>` поддерживает все стандартные варианты замены переменных URL.
-Подробная информация приведена в [этом руководстве](../../spec/amp-var-substitutions.md).
+Подробная информация приведена в [этом руководстве](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Пример:
 ```html

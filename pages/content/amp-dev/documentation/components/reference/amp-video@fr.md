@@ -110,7 +110,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Nécessite l'extension <code>amp-video-docking</code>.</strong> Si cet attribut est utilisé et que la vidéo est lue manuellement, cette dernière est" "réduite" et ancrée à un coin ou à un élément de la page lorsque l'utilisateur fait défiler la page au-delà la zone visuelle du composant vidéo.
-            Pour en savoir plus, consultez la <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentation relative à l'extension d'ancrage</a>.</td>
+            Pour en savoir plus, consultez la <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentation relative à l'extension d'ancrage</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>

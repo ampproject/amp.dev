@@ -97,7 +97,7 @@ Exemple :
 
 ## Effacer les sélections
 
-Pour effacer toutes les sélections lorsque l'utilisateur clique ou appuie sur un élément, définissez l'attribut d'action [`on`](../../spec/amp-actions-and-events.md) sur l'élément en question et spécifiez ensuite l'`id` du sélecteur AMP avec la méthode d'action `clear`.
+Pour effacer toutes les sélections lorsque l'utilisateur clique ou appuie sur un élément, définissez l'attribut d'action [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) sur l'élément en question et spécifiez ensuite l'`id` du sélecteur AMP avec la méthode d'action `clear`.
 
 Exemple :
 
@@ -152,7 +152,7 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
 Les événements peuvent déclencher des actions sur d'autres composants AMP à l'aide de l'attribut `on`.
 Par exemple : `on="select: my-tab.show"`
 
-En savoir plus sur les [actions et événements AMP](../../spec/amp-actions-and-events.md)
+En savoir plus sur les [actions et événements AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)
 
 <table>
   <tr>

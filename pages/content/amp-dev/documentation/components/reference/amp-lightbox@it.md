@@ -132,7 +132,7 @@ Puoi modificare lo stile ad `amp-lightbox` con CSS standard.
 il componente `amp-lightbox` da utilizzare negli annunci HTML AMP è [sperimentale](https://www.ampproject.org/docs/reference/experimental) e attualmente in fase di sviluppo. Per utilizzare `amp-lightbox` in annunci HTML AMP, [attiva l'esperimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Vi sono alcune differenze tra l'uso di `amp-lightbox` in normali documenti AMP e in [annunci scritti in HTML AMP](../amp-a4a/amp-a4a-format.md):
+Vi sono alcune differenze tra l'uso di `amp-lightbox` in normali documenti AMP e in [annunci scritti in HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md):
 
 ### Richiede close-button
 

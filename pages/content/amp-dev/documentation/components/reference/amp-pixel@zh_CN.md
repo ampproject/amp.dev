@@ -84,7 +84,7 @@ AMP4ADS 广告素材中使用的此属性表示：作为验证后转换的一部
 
 ## 替换
 
-`amp-pixel` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](../spec/amp-var-substitutions.md)。
+`amp-pixel` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md)。
 
 在下面的示例中，系统可能会向 `https://foo.com/pixel?0.8390278471201` 等对象发出请求，其中 RANDOM 值是在每次展示时随机生成的。
 

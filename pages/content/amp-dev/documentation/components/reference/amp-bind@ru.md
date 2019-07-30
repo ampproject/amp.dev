@@ -178,7 +178,7 @@ limitations under the License.
 
 # Обновление состояния с помощью `AMP.setState()`
 
-Действие [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) объединяет объектный литерал с состоянием. Например, при нажатии кнопки ниже `AMP.setState()` выполняется [глубокое слияние](#deep-merge-with-ampsetstate) объектного литерала и состояния.
+Действие [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) объединяет объектный литерал с состоянием. Например, при нажатии кнопки ниже `AMP.setState()` выполняется [глубокое слияние](#deep-merge-with-ampsetstate) объектного литерала и состояния.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ limitations under the License.
 
 # Изменение истории с помощью `AMP.pushState()`
 
-Действие [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
+Действие [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
 
 Пример:
 ```html
@@ -221,7 +221,7 @@ limitations under the License.
 * Неопределенные переменные и индекс, который выходит за границы массива, возвращают значение `null` вместо `undefined` или ошибок.
 * Для повышения эффективности в настоящее время каждое выражение поддерживает не более 50 операндов. Если вам требуется больше, [свяжитесь с нами](https://github.com/ampproject/amphtml/issues/new).
 
-Грамматика и реализация полного выражения представлены в [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) и [bind-expression.js](./0.1/bind-expression.js).
+Грамматика и реализация полного выражения представлены в [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) и [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Примеры
 

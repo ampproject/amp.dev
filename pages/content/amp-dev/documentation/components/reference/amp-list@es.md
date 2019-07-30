@@ -58,7 +58,7 @@ Puedes especificar una plantilla de dos formas:
 * Mediante un atributo `template` que haga referencia al ID de un elemento `template` o `script` existente.
 * Mediante un elemento `template` o `script` anidado directamente en `amp-list`.
 
-Para obtener más información sobre las plantillas, consulta el documento sobre [plantillas AMP HTML](../../spec/amp-html-templates.md).
+Para obtener más información sobre las plantillas, consulta el documento sobre [plantillas AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Ejemplo: Mostrar una lista dinámica*
 
@@ -312,7 +312,7 @@ Hemos introducido los atributos `load-more` con las opciones [manual](https://cd
 
 ```
 
-Para ver ejemplos prácticos, consulta las páginas [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) y [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Para ver ejemplos prácticos, consulta las páginas [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) y [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Atributos
 
@@ -424,7 +424,7 @@ Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/refere
 ## Sustituciones
 
 `<amp-list>` admite todas las sustituciones estándar de variables de URL.
-Para obtener más información, consulta la [guía de sustituciones](../../spec/amp-var-substitutions.md).
+Para obtener más información, consulta la [guía de sustituciones](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Por ejemplo:
 ```html

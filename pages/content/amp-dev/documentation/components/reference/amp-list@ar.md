@@ -61,7 +61,7 @@ teaser:
 * السمة `template` التي تشير إلى معرّف `template` حالي أو إلى عنصر `script` حالي
 * `template` أو عنصر `script` مدمج مباشرة داخل العنصر `amp-list`
 
-راجِع [نماذج رمز HTML لصفحات AMP](../../spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
+راجِع [نماذج رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
 
 *مثال: عرض قائمة ديناميكية*
 
@@ -317,7 +317,7 @@ amp-list div[role="list"] {
 
 ```
 
-للحصول على أمثلة عملية، يرجى الاطّلاع على [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) و[test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+للحصول على أمثلة عملية، يرجى الاطّلاع على [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) و[test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### السمات
 
@@ -430,7 +430,7 @@ amp-list div[role="list"] {
 ## الاستبدالات
 
 يتيح `<amp-list>` جميع استبدالات متغيرات عناوين URL القياسية.
-اطّلِع على [دليل الاستبدالات](../../spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
+اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
 
 مثال:
 ```html

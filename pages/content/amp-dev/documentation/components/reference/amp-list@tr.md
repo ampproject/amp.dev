@@ -58,7 +58,7 @@ Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
 * mevcut bir `template` veya `script` öğesinin bir kimliğine başvuran `template` özelliği.
 * doğrudan `amp-list` öğesinin içine yerleştirilmiş bir `template` veya `script` öğesi.
 
-Şablonlar hakkında daha fazla bilgi için [AMP HTML Şablonları](../../spec/amp-html-templates.md) bölümüne bakın.
+Şablonlar hakkında daha fazla bilgi için [AMP HTML Şablonları](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) bölümüne bakın.
 
 *Örnek: Dinamik liste görüntüleme*
 
@@ -313,7 +313,7 @@ Daha hızlı performans için `binding="no"` veya `binding="refresh"` kullanılm
 
 ```
 
-Çalışan örnekler için lütfen [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) ve [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) sayfalarına bakın.
+Çalışan örnekler için lütfen [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) ve [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) sayfalarına bakın.
 
 ### Özellikler
 
@@ -425,7 +425,7 @@ Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](https://www.am
 ## Değişiklikler
 
 `<amp-list>` tüm standart URL değişkeni değişikliklerine izin verir.
-Daha fazla bilgi için [Değişiklik Kılavuzu](../../spec/amp-var-substitutions.md) dokümanına bakın.
+Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dokümanına bakın.
 
 Örneğin:
 ```html
