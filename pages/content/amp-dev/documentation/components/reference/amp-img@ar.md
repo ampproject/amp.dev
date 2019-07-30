@@ -53,7 +53,7 @@ limitations under the License.
 يجب إعطاء مكونات `amp-img`، شأنها شأن مثل جميع موارد AMP التي يتم جلبها من الخارج، حجمًا صريحًا (كما في `width` / `height`) بشكل مسبق، بحيث يمكن التعرّف على نسبة العرض إلى الارتفاع بدون جلب الصورة. يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 
 [tip type="read-on"]
-تعرّف على المزيد من المعلومات عن التنسيقات في مواصفات [نظام تنسيقات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) و[التنسيقات المعتمدة](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+تعرّف على المزيد من المعلومات عن التنسيقات في مواصفات [نظام تنسيقات رمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) و[التنسيقات المعتمدة](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 
 [/tip]
 
@@ -78,7 +78,7 @@ limitations under the License.
 
 [/tip]
 
-في حال تعذُّر تحميل المورد الذي يطلبه المكوِّن `amp-img`، ستكون المساحة فارغة ما لم يتم توفير عنصر [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) الثانوي. يتم تنفيذ العنصر الاحتياطي على التنسيق الأولي أما تغييرات src اللاحقة بعد التنسيق الأولي (من خلال تغيير الحجم + srcset مثلاً) لن يكون لها عنصر احتياطي منعًا للآثار المترتبة على الأداء.
+في حال تعذُّر تحميل المورد الذي يطلبه المكوِّن `amp-img`، ستكون المساحة فارغة ما لم يتم توفير عنصر [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) الثانوي. يتم تنفيذ العنصر الاحتياطي على التنسيق الأولي أما تغييرات src اللاحقة بعد التنسيق الأولي (من خلال تغيير الحجم + srcset مثلاً) لن يكون لها عنصر احتياطي منعًا للآثار المترتبة على الأداء.
 
 # مثال: تحديد صورة احتياطية
 

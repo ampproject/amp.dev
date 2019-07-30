@@ -58,7 +58,7 @@ Entegre AMP Analytics tedarikçi firmaları için:
 1. `<amp-analytics>` etiketine, `type` özelliğini ekleyin ve değerini, belirtilen [tedarikçi firma](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) bilgisine ayarlayın.
 1. Yakalamak ve izlemek istediğiniz verileri belirleyin ve bu ayrıntıları, yapılandırma verilerinde belirtin. Analiz verilerinin nasıl yakalanacağıyla ilgili talimatlar için tedarikçi firmanın dokümanlarına bakın.
 
-Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
+Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
 
 *Örnek: Verileri bir üçüncü taraf analiz tedarikçi firmasına gönderme*
 
@@ -168,7 +168,7 @@ Bu kaynakların birden fazlasına ait yapılandırma verileri kullanılırsa yap
 
 #### Uzak yapılandırma yükleme
 
-Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md) uygun olmalıdır.
+Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) uygun olmalıdır.
 
 Bu örnekte, belirtilen URL'den yapılandırma verilerini yüklemek için `config` özelliğini belirtiriz.
 
@@ -835,7 +835,7 @@ Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarik�
 
 **config**
 
-Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanılabilen isteğe bağlı bir özelliktir. Belirtilen URL, HTTPS şemasını kullanmalıdır. Ayrıca, aşağıdaki `data-include-credentials` özelliğine bakın. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Yanıt, [AMP CORS güvenlik yönergelerine](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md) uygun olmalıdır.
+Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanılabilen isteğe bağlı bir özelliktir. Belirtilen URL, HTTPS şemasını kullanmalıdır. Ayrıca, aşağıdaki `data-include-credentials` özelliğine bakın. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Yanıt, [AMP CORS güvenlik yönergelerine]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) uygun olmalıdır.
 
 Örnek:
 

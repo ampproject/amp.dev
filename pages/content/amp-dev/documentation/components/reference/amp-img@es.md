@@ -51,7 +51,7 @@ El tiempo de ejecución puede retrasar o priorizar la carga de recursos basándo
 Se debe proporcionar a los componentes `amp-img`, como al resto de los recursos AMP obtenidos de forma externa, un tamaño explícito (`width` y `height`) de antemano, para que se conozca la relación de aspecto sin haber recuperado la imagen. El atributo `layout` es el que determina el comportamiento real del diseño.
 
 [tip type="read-on"]
-Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) y la lista de [formatos compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) y la lista de [formatos compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Ejemplo: Mostrar una imagen adaptable
@@ -73,7 +73,7 @@ En el siguiente ejemplo, hacemos que se muestre una imagen que se adapta al tama
 Para obtener más información sobre las páginas AMP adaptables, consulta la guía sobre [cómo crear páginas AMP adaptables](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.
+Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.
 
 # Ejemplo: Especificar una imagen de respaldo
 

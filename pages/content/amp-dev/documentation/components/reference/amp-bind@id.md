@@ -178,7 +178,7 @@ Tindakan `refresh` didukung oleh komponen ini dan dapat digunakan untuk me-refre
 
 # Mengubah status dengan `AMP.setState()`
 
-Tindakan [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) menggabungkan literal objek ke dalam status. Misalnya, saat tombol di bawah ditekan, `AMP.setState()` akan [menggabungkan secara mendalam](#deep-merge-with-ampsetstate) literal objek dengan status.
+Tindakan [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) menggabungkan literal objek ke dalam status. Misalnya, saat tombol di bawah ditekan, `AMP.setState()` akan [menggabungkan secara mendalam](#deep-merge-with-ampsetstate) literal objek dengan status.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Jika dipicu oleh peristiwa tertentu, `AMP.setState()` juga dapat mengakses data 
 
 # Mengubah histori dengan `AMP.pushState()`
 
-Tindakan [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
+Tindakan [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
 
 Misalnya:
 ```html

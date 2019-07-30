@@ -176,7 +176,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 # `AMP.setState()`로 상태 업데이트
 
-[`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) 작업은 개체 리터럴을 상태로 병합합니다. 예를 들어, 아래의 버튼을 누르면 `AMP.setState()`는 개체 리터럴을 상태와 [심층 병합](#deep-merge-with-ampsetstate)합니다.
+[`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) 작업은 개체 리터럴을 상태로 병합합니다. 예를 들어, 아래의 버튼을 누르면 `AMP.setState()`는 개체 리터럴을 상태와 [심층 병합](#deep-merge-with-ampsetstate)합니다.
 
 ```html
 <!-- 자바스크립트와 마찬가지로 개체 리터럴
@@ -195,7 +195,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 # `AMP.pushState()`로 기록 수정
 
-브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
+브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
 
 예:
 ```html

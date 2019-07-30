@@ -178,7 +178,7 @@ Kod ek açıklamalarının yer aldığı bu örnek için [**canlı demoyu** dene
 
 # Durumu `AMP.setState()` ile güncelleme
 
-[`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) işlemi, bir nesne değişmez değerini durumla birleştirir. Örneğin, aşağıdaki düğmeye basıldığında `AMP.setState()` öğesi, nesne değişmez değerini durum ile [derinden birleştirir](#deep-merge-with-ampsetstate).
+[`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) işlemi, bir nesne değişmez değerini durumla birleştirir. Örneğin, aşağıdaki düğmeye basıldığında `AMP.setState()` öğesi, nesne değişmez değerini durum ile [derinden birleştirir](#deep-merge-with-ampsetstate).
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 
 # `AMP.pushState()` ile geçmişi değiştirme
 
-[`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) işlemi, tarayıcı geçmiş yığınına yeni bir giriş de aktarması haricinde `AMP.setState()` işlemine benzer. Bu geçmiş girişine dönülmesi (geri gidilerek), `AMP.pushState()` tarafından ayarlanan değişkenlerin önceki değerini geri yükler.
+[`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) işlemi, tarayıcı geçmiş yığınına yeni bir giriş de aktarması haricinde `AMP.setState()` işlemine benzer. Bu geçmiş girişine dönülmesi (geri gidilerek), `AMP.pushState()` tarafından ayarlanan değişkenlerin önceki değerini geri yükler.
 
 Örneğin:
 ```html

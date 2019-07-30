@@ -58,7 +58,7 @@ Untuk vendor Analytics AMP terintegrasi:
 1. Pada tag `<amp-analytics>`, tambahkan atribut `type` dan tetapkan nilainya ke [vendor](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) yang ditentukan.
 1. Tentukan data yang ingin Anda ambil dan pantau, dan tetapkan detail tersebut dalam data konfigurasi. Lihat dokumentasi vendor untuk mengetahui cara mengambil data analisis.
 
-Jika vendor analisis belum terintegrasi dengan AMP, hubungi vendor untuk meminta dukungan mereka. Sebaiknya Anda juga mengajukan masalah di project AMP dan meminta agar vendor tersebut ditambahkan. Lihat juga [Mengintegrasikan fitur analisis di HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md). Cara lainnya, lakukan kerja sama dengan vendor untuk mengirim data ke URL yang mereka tentukan. Pelajari lebih lanjut di bagian [Mengirim data secara internal](#sending-data-in-house) di bawah.
+Jika vendor analisis belum terintegrasi dengan AMP, hubungi vendor untuk meminta dukungan mereka. Sebaiknya Anda juga mengajukan masalah di project AMP dan meminta agar vendor tersebut ditambahkan. Lihat juga [Mengintegrasikan fitur analisis di HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Cara lainnya, lakukan kerja sama dengan vendor untuk mengirim data ke URL yang mereka tentukan. Pelajari lebih lanjut di bagian [Mengirim data secara internal](#sending-data-in-house) di bawah.
 
 *Contoh: Mengirim data ke penyedia analisis pihak ketiga*
 
@@ -168,7 +168,7 @@ Jika data konfigurasi dari beberapa sumber digunakan, objek konfigurasi (variabe
 
 #### Memuat konfigurasi jarak jauh
 
-Untuk memuat konfigurasi jarak jauh, dalam elemen `<amp-analytics>`, tentukan atribut `config` dan URL untuk data konfigurasi. URL yang ditentukan harus menggunakan skema HTTPS. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Untuk mengakses cookie, lihat atribut [`data-credentials`](#data-credentials). Responsnya harus mengikuti [panduan keamanan CORS AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md).
+Untuk memuat konfigurasi jarak jauh, dalam elemen `<amp-analytics>`, tentukan atribut `config` dan URL untuk data konfigurasi. URL yang ditentukan harus menggunakan skema HTTPS. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Untuk mengakses cookie, lihat atribut [`data-credentials`](#data-credentials). Responsnya harus mengikuti [panduan keamanan CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 Dalam contoh ini, kami menentukan atribut `config` untuk memuat data konfigurasi dari URL yang ditentukan.
 
@@ -835,7 +835,7 @@ Contoh:
 
 **config**
 
-Ini adalah atribut opsional yang dapat digunakan untuk memuat konfigurasi dari URL jarak jauh yang ditentukan. URL yang ditentukan harus menggunakan skema HTTPS. Lihat juga atribut `data-include-credentials` di bawah. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Responsnya harus mengikuti [panduan keamanan CORS AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md).
+Ini adalah atribut opsional yang dapat digunakan untuk memuat konfigurasi dari URL jarak jauh yang ditentukan. URL yang ditentukan harus menggunakan skema HTTPS. Lihat juga atribut `data-include-credentials` di bawah. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Responsnya harus mengikuti [panduan keamanan CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 Contoh:
 

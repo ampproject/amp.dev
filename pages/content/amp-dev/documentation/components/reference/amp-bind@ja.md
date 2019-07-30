@@ -175,7 +175,7 @@ teaser:
 
 # `AMP.setState()` による状態の更新
 
-[`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) アクションは、オブジェクト リテラルを状態にマージします。たとえば、下のボタンを押すと、`AMP.setState()` によってオブジェクト リテラルが状態に[ディープマージ](#deep-merge-with-ampsetstate)されます。
+[`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) アクションは、オブジェクト リテラルを状態にマージします。たとえば、下のボタンを押すと、`AMP.setState()` によってオブジェクト リテラルが状態に[ディープマージ](#deep-merge-with-ampsetstate)されます。
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -195,7 +195,7 @@ teaser:
 
 # `AMP.pushState()` による履歴の変更
 
-[`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) アクションは、新しいエントリもブラウザの履歴スタックにプッシュすることを除き、`AMP.setState()` に似ています。この履歴エントリを（戻るなどの操作によって）ポップすると、`AMP.pushState()` で設定された以前の変数の値が復元されます。
+[`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) アクションは、新しいエントリもブラウザの履歴スタックにプッシュすることを除き、`AMP.setState()` に似ています。この履歴エントリを（戻るなどの操作によって）ポップすると、`AMP.pushState()` で設定された以前の変数の値が復元されます。
 
 例:
 ```html

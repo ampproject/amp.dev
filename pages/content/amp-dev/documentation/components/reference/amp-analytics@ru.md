@@ -57,7 +57,7 @@ limitations under the License.
 1. Добавьте в тег `<amp-analytics>` атрибут `type` и в качестве значения укажите название [поставщика](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
 1. Определитесь с тем, какие данные вы хотите отслеживать, и соответствующим образом настройте конфигурацию. Более подробную информацию можно найти в документации поставщика.
 
-Если ваш поставщик не поддерживает AMP, обратитесь за помощью к его представителям. Мы также рекомендуем вам сообщить авторам проекта AMP о том, что необходимо добавить нового поставщика. Ознакомьтесь с [руководством по интеграции аналитических инструментов с AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md). Кроме того, вы можете совместно с поставщиком настроить отправку данных на определенный URL. См. раздел [Отправка данных внутри компании](#sending-data-in-house) ниже.
+Если ваш поставщик не поддерживает AMP, обратитесь за помощью к его представителям. Мы также рекомендуем вам сообщить авторам проекта AMP о том, что необходимо добавить нового поставщика. Ознакомьтесь с [руководством по интеграции аналитических инструментов с AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Кроме того, вы можете совместно с поставщиком настроить отправку данных на определенный URL. См. раздел [Отправка данных внутри компании](#sending-data-in-house) ниже.
 
 *Пример: отправка данных стороннему поставщику аналитических решений*
 
@@ -167,7 +167,7 @@ limitations under the License.
 
 #### Загрузка удаленной конфигурации
 
-Чтобы загрузить удаленную конфигурацию, в элементе `<amp-analytics>` разместите атрибут `config` и добавьте URL данных конфигурации. URL должен начинаться с HTTPS и может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Чтобы получить доступ к файлам cookie, воспользуйтесь атрибутом [`data-credentials`](#data-credentials). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md).
+Чтобы загрузить удаленную конфигурацию, в элементе `<amp-analytics>` разместите атрибут `config` и добавьте URL данных конфигурации. URL должен начинаться с HTTPS и может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Чтобы получить доступ к файлам cookie, воспользуйтесь атрибутом [`data-credentials`](#data-credentials). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 Вот пример атрибута `config` для загрузки данных с указанного URL:
 
@@ -838,7 +838,7 @@ visibilitySpec: {
 
 **config**
 
-Это необязательный атрибут, который можно использовать для загрузки конфигурации с указанного удаленного URL, защищенного протоколом HTTPS. Ознакомьтесь также с описанием атрибута `data-include-credentials` ниже. URL может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md).
+Это необязательный атрибут, который можно использовать для загрузки конфигурации с указанного удаленного URL, защищенного протоколом HTTPS. Ознакомьтесь также с описанием атрибута `data-include-credentials` ниже. URL может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 Пример:
 

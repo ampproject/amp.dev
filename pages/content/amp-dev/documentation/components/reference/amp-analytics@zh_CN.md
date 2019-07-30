@@ -58,7 +58,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 1. 在 `<amp-analytics>` 标记中，添加 `type` 属性，并将其值设为指定的[供应商](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)。
 1. 确定要捕获和跟踪哪些数据，并在配置数据中指定这些详细信息。有关如何捕获分析数据的说明，请参阅供应商的文档。
 
-如果分析服务供应商未集成 AMP，请与其联系以寻求支持。另外，我们建议您在 AMP 项目中创建一个问题，以请求添加相应供应商。另请参阅[在 AMP HTML 中集成您的分析工具](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。您也可以与供应商合作，以将数据发送到他们指定的网址。如需了解详情，请参阅下面的[在内部发送数据](#sending-data-in-house)部分。
+如果分析服务供应商未集成 AMP，请与其联系以寻求支持。另外，我们建议您在 AMP 项目中创建一个问题，以请求添加相应供应商。另请参阅[在 AMP HTML 中集成您的分析工具]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})。您也可以与供应商合作，以将数据发送到他们指定的网址。如需了解详情，请参阅下面的[在内部发送数据](#sending-data-in-house)部分。
 
 *示例：将数据发送到第三方分析服务提供商*
 
@@ -168,7 +168,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 
 #### 加载远程配置
 
-要加载远程配置，请在 `<amp-analytics>` 元素中指定配置数据的 `config` 属性和网址。指定的网址应使用 HTTPS 架构。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。要访问 Cookie，请参阅 [`data-credentials`](#data-credentials) 属性。响应必须遵循 [AMP CORS 安全指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md)。
+要加载远程配置，请在 `<amp-analytics>` 元素中指定配置数据的 `config` 属性和网址。指定的网址应使用 HTTPS 架构。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。要访问 Cookie，请参阅 [`data-credentials`](#data-credentials) 属性。响应必须遵循 [AMP CORS 安全指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})。
 
 在以下示例中，我们指定了 `config` 属性，以便从指定网址加载配置数据。
 
@@ -831,7 +831,7 @@ transport: {
 
 **config**
 
-这是一个可选属性，可用于从指定的远程网址加载配置。指定的网址应使用 HTTPS 架构。另请参阅下面的 `data-include-credentials` 属性。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。响应必须遵循 [AMP CORS 安全指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md)。
+这是一个可选属性，可用于从指定的远程网址加载配置。指定的网址应使用 HTTPS 架构。另请参阅下面的 `data-include-credentials` 属性。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。响应必须遵循 [AMP CORS 安全指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})。
 
 示例：
 

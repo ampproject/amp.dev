@@ -126,7 +126,7 @@ O `amp-lightbox` expõe as seguintes ações em que você pode usar [a sintaxe A
 o componente `amp-lightbox` para uso em anúncios HTML para AMP é [experimental](https://www.ampproject.org/docs/reference/experimental) e está em desenvolvimento. Para usar o `amp-lightbox` em anúncios HTML para AMP, [ative o experimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Há algumas diferenças entre o uso de `amp-lightbox` em documentos AMP normais e em [anúncios escritos em HTML para AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md):
+Há algumas diferenças entre o uso de `amp-lightbox` em documentos AMP normais e em [anúncios escritos em HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}):
 
 ### Botão de fechar obrigatório
 

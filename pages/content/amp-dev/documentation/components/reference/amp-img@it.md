@@ -50,7 +50,7 @@ Il runtime può decidere di ritardare o dare priorità al caricamento delle riso
 I componenti `amp-img`, come tutte le risorse AMP recuperate dall'esterno, devono già avere una dimensione esplicita (come `width`/`height`), in modo che le proporzioni possano essere riconosciute senza dover recuperare l'immagine. L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
 
 [tip type="read-on"]
-Ulteriori informazioni sui layout nelle specifiche [Sistema layout AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) e in [Layout supportati](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Ulteriori informazioni sui layout nelle specifiche [Sistema layout AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) e in [Layout supportati](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Esempio: visualizzazione di un'immagine responsive
@@ -72,7 +72,7 @@ Nel seguente esempio viene mostrata un'immagine che si adatta alle dimensioni de
 Ulteriori informazioni sulle pagine AMP nella guida [Creazione di pagine AMP responsive](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.
+Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.
 
 # Esempio: specificare un'immagine di riserva
 

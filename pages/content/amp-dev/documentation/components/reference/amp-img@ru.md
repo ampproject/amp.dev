@@ -50,7 +50,7 @@ limitations under the License.
 Для компонентов `amp-img`, как и для всех получаемых извне ресурсов AMP, должен быть задан конкретный размер (например `width`/`height`). Это необходимо, чтобы соотношение сторон можно было узнать, не извлекая изображение. Поведение макета определяется атрибутом `layout`.
 
 [tip type="read-on"]
-Более подробную информацию можно найти в спецификации [системы макетов AMPHTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) и в списке [поддерживаемых макетов](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Более подробную информацию можно найти в спецификации [системы макетов AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) и в списке [поддерживаемых макетов](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Пример: показ адаптивного изображения
@@ -72,7 +72,7 @@ limitations under the License.
 Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Если ресурс, запрошенный компонентом `amp-img` не загружается, а дочерний элемент [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) отсутствует, пространство будет пустым. Резервное изображение показывается только в исходном макете. При последующих изменениях src, например с помощью resize + srcset, оно не используется. Это позволяет повысить эффективность.
+Если ресурс, запрошенный компонентом `amp-img` не загружается, а дочерний элемент [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) отсутствует, пространство будет пустым. Резервное изображение показывается только в исходном макете. При последующих изменениях src, например с помощью resize + srcset, оно не используется. Это позволяет повысить эффективность.
 
 # Пример: показ резервного изображения
 

@@ -57,7 +57,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 1. `<amp-analytics>` タグに `type` 属性を追加して、その値を指定されている[ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)に設定します。
 1. どのデータを収集してトラッキングするかを決め、設定データにその詳細を指定します。アナリティクス データの収集方法については、ベンダーのドキュメントをご覧ください。
 
-アナリティクス ベンダーが AMP を統合していない場合は、ベンダーに問い合わせてサポートを依頼してください。AMP プロジェクトに問題を報告し、ベンダーを追加するようリクエストすることをおすすめします。また、[AMP HTML にアナリティクス ツールを統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)方法もご確認ください。さらに、指定された URL にデータを送信する際には、ベンダーと協力してください。詳しくは、以下の[社内へのデータの送信](#sending-data-in-house)をご覧ください。
+アナリティクス ベンダーが AMP を統合していない場合は、ベンダーに問い合わせてサポートを依頼してください。AMP プロジェクトに問題を報告し、ベンダーを追加するようリクエストすることをおすすめします。また、[AMP HTML にアナリティクス ツールを統合する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})方法もご確認ください。さらに、指定された URL にデータを送信する際には、ベンダーと協力してください。詳しくは、以下の[社内へのデータの送信](#sending-data-in-house)をご覧ください。
 
 *例: 第三者アナリティクス プロバイダへのデータの送信*
 
@@ -164,7 +164,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 
 #### リモート設定の読み込み
 
-リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md)に準拠する必要があります。
+リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})に準拠する必要があります。
 
 次の例では、指定した URL から設定データを読み込むように `config` 属性を指定しています。
 
@@ -830,7 +830,7 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 **config**
 
-このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。URL の指定では HTTPS スキームを使用する必要があります。以下の `data-include-credentials` 属性もご確認ください。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。レスポンスは [AMP CORS セキュリティ ガイドライン](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md)に準拠する必要があります。
+このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。URL の指定では HTTPS スキームを使用する必要があります。以下の `data-include-credentials` 属性もご確認ください。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。レスポンスは [AMP CORS セキュリティ ガイドライン]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})に準拠する必要があります。
 
 例:
 

@@ -125,7 +125,7 @@ teaser:
 AMPHTML 広告内で使用する `amp-lightbox` コンポーネントは[試験運用中](https://www.ampproject.org/docs/reference/experimental)であり、現時点でも開発が続けられています。AMPHTML 広告内で `amp-lightbox` を使用するには、[`amp-lightbox-a4a-proto` テストを有効](http://cdn.ampproject.org/experiments.html)にします。
 [/tip]
 
-[AMPHTML で記述された広告](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)の場合、通常の AMP ドキュメントの場合と比べて、`amp-lightbox` の使用に関して以下のような相違点があります。
+[AMPHTML で記述された広告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})の場合、通常の AMP ドキュメントの場合と比べて、`amp-lightbox` の使用に関して以下のような相違点があります。
 
 ### 閉じるボタンが必要となる
 

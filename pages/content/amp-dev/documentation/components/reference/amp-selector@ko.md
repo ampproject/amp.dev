@@ -96,7 +96,7 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 
 ## 선택 항목 지우기
 
-요소를 탭하거나 클릭할 때 선택 항목을 모두 지우려면 요소에서 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 작업 속성을 설정하고 `clear` 작업 방법으로 AMP 선택기 `id`를 지정합니다.
+요소를 탭하거나 클릭할 때 선택 항목을 모두 지우려면 요소에서 [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) 작업 속성을 설정하고 `clear` 작업 방법으로 AMP 선택기 `id`를 지정합니다.
 
 예:
 
@@ -150,7 +150,7 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 이벤트에서 `on` 속성을 사용하여 다른 AMP 구성요소에서 작업을 트리거할 수 있습니다.
 예: `on="select: my-tab.show"`
 
-[AMP 작업 및 이벤트](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)에 관해 자세히 읽어보세요.
+[AMP 작업 및 이벤트]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})에 관해 자세히 읽어보세요.
 
 <table>
   <tr>

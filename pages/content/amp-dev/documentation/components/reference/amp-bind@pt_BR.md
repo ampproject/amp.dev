@@ -178,7 +178,7 @@ A ação `refresh` é compatível com este componente e pode ser usada para atua
 
 # Atualizar o estado com `AMP.setState()`
 
-A ação [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) mescla o literal de um objeto ao estado. Por exemplo, quando o botão abaixo for pressionado, o `AMP.setState()` [mesclará](#deep-merge-with-ampsetstate) o literal do objeto com o estado.
+A ação [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) mescla o literal de um objeto ao estado. Por exemplo, quando o botão abaixo for pressionado, o `AMP.setState()` [mesclará](#deep-merge-with-ampsetstate) o literal do objeto com o estado.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Quando acionado por determinados eventos, o `AMP.setState()` também pode acessa
 
 # Modificar o histórico com `AMP.pushState()`
 
-A ação [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) é semelhante à `AMP.setState()`, mas também envia uma nova entrada para a pilha do histórico do navegador. Abrir essa entrada do histórico (por exemplo, navegando de volta) restaura o valor anterior de variáveis definidas por `AMP.pushState()`.
+A ação [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) é semelhante à `AMP.setState()`, mas também envia uma nova entrada para a pilha do histórico do navegador. Abrir essa entrada do histórico (por exemplo, navegando de volta) restaura o valor anterior de variáveis definidas por `AMP.pushState()`.
 
 Por exemplo:
 ```html

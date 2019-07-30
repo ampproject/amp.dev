@@ -178,7 +178,7 @@ limitations under the License.
 
 # Обновление состояния с помощью `AMP.setState()`
 
-Действие [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) объединяет объектный литерал с состоянием. Например, при нажатии кнопки ниже `AMP.setState()` выполняется [глубокое слияние](#deep-merge-with-ampsetstate) объектного литерала и состояния.
+Действие [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) объединяет объектный литерал с состоянием. Например, при нажатии кнопки ниже `AMP.setState()` выполняется [глубокое слияние](#deep-merge-with-ampsetstate) объектного литерала и состояния.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ limitations under the License.
 
 # Изменение истории с помощью `AMP.pushState()`
 
-Действие [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
+Действие [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
 
 Пример:
 ```html

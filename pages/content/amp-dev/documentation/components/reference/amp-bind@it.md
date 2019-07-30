@@ -180,7 +180,7 @@ i contenuti dello stato.
 
 # Aggiornare lo stato con `AMP.setState()`
 
-L'azione [`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
+L'azione [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ Quando attivato da certi eventi, `AMP.setState()` può anche accedere ai dati co
 
 # Modificare la cronologia con `AMP.pushState()`
 
-L'azione [`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
+L'azione [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
 nell'elenco della cronologia di navigazione. Accedendo a questa voce della cronologia, ad esempio, tornando indietro, viene ripristinato
 il valore precedente delle variabili impostate da `AMP.pushState()`.
 

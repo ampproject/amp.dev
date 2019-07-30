@@ -51,7 +51,7 @@ limitations under the License.
 与所有外部抓取的 AMP 资源一样，必须提前为 `amp-img` 组件指定确切尺寸（以 `width`/`height` 的方式指定），这样一来，浏览器即使不抓取图片，也能知道宽高比。实际布局行为由 `layout` 属性决定。
 
 [tip type="read-on"]
-详细了解 [AMP HTML 布局系统](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)规范中的布局以及[支持的布局](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)。
+详细了解 [AMP HTML 布局系统]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})规范中的布局以及[支持的布局](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)。
 [/tip]
 
 # 示例：显示自适应图片
@@ -73,7 +73,7 @@ limitations under the License.
 如需了解自适应 AMP 网页，请参阅[制作自适应 AMP 网页](https://www.ampproject.org/docs/guides/responsive/responsive_design.html)指南。
 [/tip]
 
-如果 `amp-img` 组件请求的资源未能成功加载，则该资源所对应的空间将为空白，除非提供了 [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) 子级。仅对初始布局执行后备操作；如果在初始布局完成之后进行后续的 src 更改（例如，通过调整大小和 srcset），则不会执行后备操作，以免影响性能。
+如果 `amp-img` 组件请求的资源未能成功加载，则该资源所对应的空间将为空白，除非提供了 [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 子级。仅对初始布局执行后备操作；如果在初始布局完成之后进行后续的 src 更改（例如，通过调整大小和 srcset），则不会执行后备操作，以免影响性能。
 
 # 示例：指定后备图片
 

@@ -51,7 +51,7 @@ Runtime dapat memilih untuk menunda atau memprioritaskan pemuatan resource berda
 Komponen `amp-img`, seperti semua resource AMP yang diambil secara eksternal, harus diberi ukuran eksplisit (seperti dalam `width` / `height`) terlebih dahulu, sehingga rasio tinggi lebar dapat diketahui tanpa mengambil gambar. Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 
 [tip type="read-on"]
-Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) dan [Tata Letak yang Didukung](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) dan [Tata Letak yang Didukung](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Contoh: Menampilkan gambar yang responsif
@@ -73,7 +73,7 @@ Pada contoh berikut, kami menampilkan gambar yang merespons ukuran viewport deng
 Pelajari tentang halaman AMP responsif dalam panduan [Membuat Halaman AMP yang Responsif](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan kosong kecuali jika turunan [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) disediakan. Fallback hanya dijalankan pada tata letak awal dan perubahan src berikutnya setelah fakta (misalnya, melalui pengubahan ukuran + srcset) tidak akan memiliki fallback untuk implikasi performa.
+Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan kosong kecuali jika turunan [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) disediakan. Fallback hanya dijalankan pada tata letak awal dan perubahan src berikutnya setelah fakta (misalnya, melalui pengubahan ukuran + srcset) tidak akan memiliki fallback untuk implikasi performa.
 
 # Contoh: Menentukan gambar fallback
 

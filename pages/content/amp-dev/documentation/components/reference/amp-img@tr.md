@@ -51,7 +51,7 @@ limitations under the License.
 Dışarıdan getirilen tüm AMP kaynakları gibi `amp-img` bileşenlerine de önceden açık bir boyut (`witdh`/`height` gibi) verilmelidir. Böylece, resim getirilmeden en boy oranı bilinebilir. Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
 
 [tip type="read-on"]
-[AMP HTML Düzeni Sistemi](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) spesifikasyonundaki düzenler [Desteklenen Düzenler](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute) hakkında daha fazla bilgi edinin.
+[AMP HTML Düzeni Sistemi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) spesifikasyonundaki düzenler [Desteklenen Düzenler](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Örnek: Duyarlı bir resim gösterme
@@ -73,7 +73,7 @@ Aşağıdaki örnekte, `layout=responsive` öğesini ayarlayarak görüntü alan
 [Duyarlı AMP Sayfaları Oluşturma](https://www.ampproject.org/docs/guides/responsive/responsive_design.html) kılavuzunda, duyarlı AMP sayfaları hakkında bilgi edinin.
 [/tip]
 
-`amp-img` bileşeni tarafından istenen kaynak yüklenemezse bir [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) alt öğesi sağlanıncaya kadar alan boş kalır. Bir yedek yalnızca başlangıç düzeninde oluşturulur ve olaydan sonraki src değişikliklerinin (örneğin, yeniden boyutlandırma + srcset aracılığıyla) performans sonuçları için bir yedeği olmaz.
+`amp-img` bileşeni tarafından istenen kaynak yüklenemezse bir [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) alt öğesi sağlanıncaya kadar alan boş kalır. Bir yedek yalnızca başlangıç düzeninde oluşturulur ve olaydan sonraki src değişikliklerinin (örneğin, yeniden boyutlandırma + srcset aracılığıyla) performans sonuçları için bir yedeği olmaz.
 
 # Örnek: Bir yedek resim belirtme
 

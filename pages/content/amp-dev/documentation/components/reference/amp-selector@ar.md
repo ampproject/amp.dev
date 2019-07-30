@@ -99,7 +99,7 @@ teaser:
 
 ## محو الاختيارات
 
-لمحو جميع الاختيارات عند النقر على العنصر، عيِّن سمة الإجراء [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) على العنصر وحدِد المعرّف `id` للعنصر AMP Selector بطريقة الإجراء `clear`.
+لمحو جميع الاختيارات عند النقر على العنصر، عيِّن سمة الإجراء [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) على العنصر وحدِد المعرّف `id` للعنصر AMP Selector بطريقة الإجراء `clear`.
 
 مثال:
 
@@ -155,7 +155,7 @@ teaser:
 قد تؤدي الأحداث إلى تشغيل الإجراءات على مكونات AMP الأخرى باستخدام السمة `on`.
 مثال: `on="select: my-tab.show"`
 
-يمكنك قراءة المزيد عن [الإجراءات والأحداث في AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md).
+يمكنك قراءة المزيد عن [الإجراءات والأحداث في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 <table>
   <tr>

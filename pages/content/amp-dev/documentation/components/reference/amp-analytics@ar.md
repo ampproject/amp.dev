@@ -59,7 +59,7 @@ limitations under the License.
 1. في العلامة `<amp-analytics>`، أضِف السمة `type` وعيّن قيمتها على [المورد](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) المحدد.
 2. حدِد البيانات التي تريد استخلاصها وتتبعها، وحدِد تلك التفاصيل في بيانات التهيئة. راجع وثائق المورد للحصول على تعليمات بشأن استخلاص بيانات التحليلات.
 
-في حال عدم تكامل مورد التحليلات مع AMP، تواصل معه لطلب الدعم. ونشجعك أيضًا على إنشاء موضوع في مشروع AMP لطلب إضافة هذا المورد. يمكنك كذلك الاطّلاع على [تكامل أدوات التحليلات برمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md). أو اعمل مع المورد على إرسال البيانات إلى عناوين URL محددة لديه. تعرّف على مزيد من المعلومات في القسم [إرسال البيانات إلى حلول داخلية](#sending-data-in-house) أدناه.
+في حال عدم تكامل مورد التحليلات مع AMP، تواصل معه لطلب الدعم. ونشجعك أيضًا على إنشاء موضوع في مشروع AMP لطلب إضافة هذا المورد. يمكنك كذلك الاطّلاع على [تكامل أدوات التحليلات برمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). أو اعمل مع المورد على إرسال البيانات إلى عناوين URL محددة لديه. تعرّف على مزيد من المعلومات في القسم [إرسال البيانات إلى حلول داخلية](#sending-data-in-house) أدناه.
 
 *مثال: إرسال البيانات إلى موفر خارجي لخدمات التحليلات*
 

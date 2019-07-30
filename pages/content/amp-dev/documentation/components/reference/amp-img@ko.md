@@ -51,7 +51,7 @@ limitations under the License.
 이미지를 가져오지 않고도 가로세로 비율을 알 수 있도록, 외부에서 가져온 모든 AMP 리소스와 같은 `amp-img` 구성요소에는 명시적으로 미리 크기를 지정해야 합니다(`width`/`height` 사용). 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 
 [tip type="read-on"]
-[AMP HTML 레이아웃 시스템](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) 사양과 [지원되는 레이아웃](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
+[AMP HTML 레이아웃 시스템]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) 사양과 [지원되는 레이아웃](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
 [/tip]
 
 # 예: 반응형 이미지 표시
@@ -73,7 +73,7 @@ limitations under the License.
 [반응형 AMP 페이지 만들기](https://www.ampproject.org/docs/guides/responsive/responsive_design.html) 가이드에서 반응형 AMP 페이지에 관해 알아보세요.
 [/tip]
 
-`amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.
+`amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.
 
 # 예: 대체 이미지 지정
 

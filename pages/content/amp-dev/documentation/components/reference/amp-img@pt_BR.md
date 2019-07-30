@@ -51,7 +51,7 @@ O ambiente de execução pode optar por atrasar ou priorizar o carregamento de r
 Os componentes de `amp-img`, assim como todos os recursos de AMP buscados externamente, precisam receber um tamanho explícito (como em `width`/`height`) com antecedência para que a proporção seja conhecida sem buscar a imagem. O comportamento real do layout é determinado pelo atributo `layout`.
 
 [tip type="read-on"]
-saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) (link em inglês) e em [Layouts compatíveis](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) (link em inglês) e em [Layouts compatíveis](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Exemplo: como exibir uma imagem responsiva
@@ -73,7 +73,7 @@ No exemplo a seguir, mostramos uma imagem que responde ao tamanho da janela de v
 saiba mais sobre páginas AMP responsivas no guia [Criar páginas AMP responsivas](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço ficará em branco, a menos que um [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) filho seja fornecido. Um substituto (fallback) é executado somente no layout inicial. As alterações src subsequentes após o fato (por meio de resize + srcset, por exemplo) não terão um substituto para implicações de desempenho.
+Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço ficará em branco, a menos que um [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) filho seja fornecido. Um substituto (fallback) é executado somente no layout inicial. As alterações src subsequentes após o fato (por meio de resize + srcset, por exemplo) não terão um substituto para implicações de desempenho.
 
 # Exemplo: especificar uma imagem substituta
 

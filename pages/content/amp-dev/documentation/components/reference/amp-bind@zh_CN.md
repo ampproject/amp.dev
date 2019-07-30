@@ -177,7 +177,7 @@ limitations under the License.
 
 # 通过 `AMP.setState()` 更新状态
 
-[`AMP.setState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
+[`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
 
 ```html
 <!-- 与 JavaScript 类似，您可以在
@@ -197,7 +197,7 @@ limitations under the License.
 
 # 通过 `AMP.pushState()` 修改历史记录
 
-[`AMP.pushState()`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
+[`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
 
 例如：
 ```html

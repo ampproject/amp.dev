@@ -58,7 +58,7 @@ Per i fornitori di soluzioni di analisi integrate con Analytics per AMP:
 1. Nel tag `<amp-analytics>`, aggiungi l'attributo `type` e imposta il valore sul [fornitore](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) specificato.
 1. Determina i dati da acquisire e monitorare e specifica questi dettagli nei dati di configurazione. Consulta la documentazione del fornitore per istruzioni su come acquisire i dati di analisi.
 
-Se le soluzioni di analisi del fornitore non sono integrate con AMP, contatta il fornitore per chiedere assistenza. Ti invitiamo inoltre a segnalare un problema relativo al progetto AMP richiedendo l'aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md). In alternativa, contatta il fornitore per inviare i dati all'URL specificato. Per ulteriori informazioni, consulta la sezione [Invio interno di dati](#sending-data-in-house) di seguito.
+Se le soluzioni di analisi del fornitore non sono integrate con AMP, contatta il fornitore per chiedere assistenza. Ti invitiamo inoltre a segnalare un problema relativo al progetto AMP richiedendo l'aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). In alternativa, contatta il fornitore per inviare i dati all'URL specificato. Per ulteriori informazioni, consulta la sezione [Invio interno di dati](#sending-data-in-house) di seguito.
 
 *Esempio: invio di dati a un fornitore di soluzioni di analisi di terze parti*
 
@@ -169,7 +169,7 @@ Se vengono utilizzati dati di configurazione provenienti da più di una di quest
 
 #### Caricamento configurazione remota
 
-Per caricare una configurazione remota, nell'elemento `<amp-analytics>`, specifica l'attributo `config` e l'URL dei dati di configurazione. L'URL specificato deve utilizzare lo schema HTTPS. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Per accedere ai cookie, vedi l'attributo [`data-credentials`](#data-credentials). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md).
+Per caricare una configurazione remota, nell'elemento `<amp-analytics>`, specifica l'attributo `config` e l'URL dei dati di configurazione. L'URL specificato deve utilizzare lo schema HTTPS. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Per accedere ai cookie, vedi l'attributo [`data-credentials`](#data-credentials). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 In questo esempio, viene specificato l'attributo `config` per caricare i dati di configurazione dall'URL specificato.
 
@@ -838,7 +838,7 @@ Esempi:
 
 **config**
 
-È un attributo facoltativo, che può essere utilizzato per caricare una configurazione da un URL remoto specificato. L'URL specificato deve utilizzare lo schema HTTPS. Vedi anche l'attributo `data-include-credentials` di seguito. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md).
+È un attributo facoltativo, che può essere utilizzato per caricare una configurazione da un URL remoto specificato. L'URL specificato deve utilizzare lo schema HTTPS. Vedi anche l'attributo `data-include-credentials` di seguito. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 Esempi:
 

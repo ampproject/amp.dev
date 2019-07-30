@@ -50,7 +50,7 @@ teaser:
 
 `amp-img` コンポーネントは、外部で取得されるすべての AMP リソースと同様に、画像を取得しなくてもアスペクト比を把握できるよう、（`width` / `height` のような）明示的なサイズをあらかじめ指定しておく必要があります。実際のレイアウトの動作は `layout` 属性によって決まります。
 
-[tip type="read-on"] レイアウトについて詳しくは、[AMP HTML レイアウト システム](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md)の仕様と[サポートされるレイアウト](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)をご覧ください。
+[tip type="read-on"] レイアウトについて詳しくは、[AMP HTML レイアウト システム]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})の仕様と[サポートされるレイアウト](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)をご覧ください。
 [/tip]
 
 # 例: レスポンシブ画像の表示
@@ -71,7 +71,7 @@ teaser:
 [tip type="read-on"] レスポンシブな AMP ページについて詳しくは、[レスポンシブな AMP ページの作成](https://www.ampproject.org/docs/guides/responsive/responsive_design.html)ガイドをご覧ください。
 [/tip]
 
-`amp-img` コンポーネントからリクエストされたリソースを読み込むことができない場合、[`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) 子要素が指定されている場合を除き、スペースが空白になります。フォールバックは初期レイアウトでのみ実行され、サイズ変更と srcset の設定などが行われた後の src 変更では、パフォーマンスへの影響によりフォールバックは行われません。
+`amp-img` コンポーネントからリクエストされたリソースを読み込むことができない場合、[`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 子要素が指定されている場合を除き、スペースが空白になります。フォールバックは初期レイアウトでのみ実行され、サイズ変更と srcset の設定などが行われた後の src 変更では、パフォーマンスへの影響によりフォールバックは行われません。
 
 # 例: フォールバック画像の指定
 

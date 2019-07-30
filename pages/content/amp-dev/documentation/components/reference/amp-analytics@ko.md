@@ -58,7 +58,7 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 1. `<amp-analytics>` 태그에서 `type` 속성을 추가하고 값을 지정된 [공급업체](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)로 설정합니다.
 1. 어떤 데이터를 확보 및 추적할지 결정하고 구성 데이터에서 세부정보를 지정합니다. 애널리틱스 데이터를 확보하는 방법에 관한 정보는 공급업체의 도움말을 참조하세요.
 
-애널리틱스 공급업체가 AMP와 통합되지 않은 경우 공급업체에 연락하여 지원을 요청하세요. 또한 AMP 프로젝트에서 공급업체의 추가를 요청하는 이슈를 생성할 것을 권장합니다. [AMP HTML에서 애널리틱스 도구 통합](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)도 참조하세요. 아니면 공급업체와 작업하여 데이터를 지정된 URL로 전송하세요. 아래의 [사내 데이터 전송](#sending-data-in-house) 섹션에서 자세히 알아보세요.
+애널리틱스 공급업체가 AMP와 통합되지 않은 경우 공급업체에 연락하여 지원을 요청하세요. 또한 AMP 프로젝트에서 공급업체의 추가를 요청하는 이슈를 생성할 것을 권장합니다. [AMP HTML에서 애널리틱스 도구 통합]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})도 참조하세요. 아니면 공급업체와 작업하여 데이터를 지정된 URL로 전송하세요. 아래의 [사내 데이터 전송](#sending-data-in-house) 섹션에서 자세히 알아보세요.
 
 *예: 타사 애널리틱스 제공업체로 데이터 전송*
 
@@ -168,7 +168,7 @@ AMP와 통합되지 않은 애널리틱스 공급업체와의 작업이 사내 �
 
 #### 원격 구성 로드
 
-원격 구성을 로드하려면 `<amp-analytics>` 요소에서 구성 데이터에 대한 `config` 속성 및 URL을 지정합니다. 지정된 URL은 HTTPS 체계를 사용해야 합니다. URL에는 [AMP URL 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)가 포함될 수 있습니다. 쿠키에 액세스하려면 [`data-credentials`](#data-credentials) 속성을 참조하세요. 응답은 [AMP CORS 보안 지침](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md)을 따라야 합니다.
+원격 구성을 로드하려면 `<amp-analytics>` 요소에서 구성 데이터에 대한 `config` 속성 및 URL을 지정합니다. 지정된 URL은 HTTPS 체계를 사용해야 합니다. URL에는 [AMP URL 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)가 포함될 수 있습니다. 쿠키에 액세스하려면 [`data-credentials`](#data-credentials) 속성을 참조하세요. 응답은 [AMP CORS 보안 지침]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})을 따라야 합니다.
 
 이 예에서는 지정된 URL에서 구성 데이터를 로드하기 위해 `config` 속성을 지정합니다.
 
@@ -836,7 +836,7 @@ AMP 유효성 검사 도구 사양의 [amp-analytics rules](https://github.com/a
 
 **config**
 
-지정된 원격 URL에서 구성을 로드하는 데 사용할 수 있는 선택적 속성입니다. 지정된 URL은 HTTPS 체계를 사용해야 합니다. 아래의 `data-include-credentials` 속성도 참조하세요. URL에는 [AMP URL 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)가 포함될 수 있습니다. 응답은 [AMP CORS 보안 지침](https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md)을 따라야 합니다.
+지정된 원격 URL에서 구성을 로드하는 데 사용할 수 있는 선택적 속성입니다. 지정된 URL은 HTTPS 체계를 사용해야 합니다. 아래의 `data-include-credentials` 속성도 참조하세요. URL에는 [AMP URL 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)가 포함될 수 있습니다. 응답은 [AMP CORS 보안 지침]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})을 따라야 합니다.
 
 예:
 

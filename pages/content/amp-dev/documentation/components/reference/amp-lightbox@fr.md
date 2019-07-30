@@ -126,7 +126,7 @@ Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher a
 Le composant `amp-lightbox` à utiliser dans les annonces AMP HTML est proposé à titre [expérimental](https://www.ampproject.org/docs/reference/experimental) et est actuellement en cours de développement. Pour utiliser `amp-lightbox` dans des annonces AMP HTML, [activez le test `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Notons quelques différences selon que le composant `amp-lightbox` est utilisé dans des documents AMP standards ou dans des [annonces écrites dans le langage AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) :
+Notons quelques différences selon que le composant `amp-lightbox` est utilisé dans des documents AMP standards ou dans des [annonces écrites dans le langage AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) :
 
 ### Attribut close-button obligatoire
 
