@@ -17,6 +17,7 @@ markdown:
   - kind: markdown.extensions.codehilite
     classes: True
     class_name: ap-m-code-snippet
+  - kind: markdown.extensions.extra
 
 ext:
 - extensions.inline_text_assets.InlineTextAssetsExtension:
@@ -30,3 +31,6 @@ ext:
 - extensions.amp_dev.AmpDevExtension
 - extensions.url_beautifier.UrlBeautifierExtension
 - extensions.jinja2_optimized_codehilite.Jinja2OptimizedCodehiliteExtension
+- extensions.markdown_toc_patch.MarkdownTocPatchExtension
+- extensions.markdown_in_html.MarkdownInHtmlExtension:
+    prevent_markdown_extra_auto_loading_other: true

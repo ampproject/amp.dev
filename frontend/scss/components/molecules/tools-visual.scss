@@ -22,7 +22,7 @@
   max-width: 17em;
   padding: 1.5em 0;
   margin: 0;
-  transform: rotate3d(-50, 25, 5, 25deg);
+  transform: skewX(-4.5deg) scale(.98, .92);
 
   @media (min-width: 768px) {
     grid-column: 12 / -1;

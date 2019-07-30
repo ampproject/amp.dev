@@ -51,17 +51,28 @@ experiments:
 Other supported flags are:
 
 ```yaml
-formats # [default: websites,ads,email,stories]:
-  - websites
-  - ads
-  - email
-  - stories
+**validAmp:** marks the sample as intentionally invalid AMP skipping validation during build.
 validAmp # [default: true]
   - true
   - false
+```
+
+**draft:** marks the sample as draft and it won't be linked from the homepage, but is still accessible via URL.
+```yaml
 draft # [default: true]
   - true
   - false
+```
+
+**landscape (only for AMP Stories):** use landscape mode previews.
+```yaml
+draft # [default: false]
+  - true
+  - false
+```
+
+**tags:** for assign the sample to multiple categories.
+```yaml
 tags # [default: '']
   - ads-analytics
   - dynamic-content

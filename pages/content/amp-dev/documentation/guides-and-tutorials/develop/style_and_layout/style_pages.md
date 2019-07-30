@@ -14,6 +14,11 @@ contributors:
   - choumx
 ---
 
+[filter formats="email"]
+Note: AMP for Email specifies additional CSS constraints which are described in
+[AMP for Email Supported CSS]({{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md', locale=doc.locale).url.path }}).
+[/filter]
+
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
@@ -56,9 +61,9 @@ The following styles aren’t allowed in AMP pages:
   </tbody>
 </table>
 
-## Performance recommendations 
+## Performance recommendations
 
-These allowed styles should restrict values to the following for an optimal performance: 
+These allowed styles should restrict values to the following for an optimal performance:
 
 <table>
   <thead>
