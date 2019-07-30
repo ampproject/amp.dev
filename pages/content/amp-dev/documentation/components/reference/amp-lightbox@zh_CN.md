@@ -127,7 +127,7 @@ teaser:
 用于 AMPHTML 广告的 `amp-lightbox` 组件是[实验性组件](https://www.ampproject.org/docs/reference/experimental)，仍处于积极开发阶段。要在 AMPHTML 广告中使用 `amp-lightbox`，请[启用 `amp-lightbox-a4a-proto` 实验](http://cdn.ampproject.org/experiments.html)。
 [/tip]
 
-在常规 AMP 文档与在[用 AMPHTML 编写的广告](../amp-a4a/amp-a4a-format.md)中使用 `amp-lightbox` 存在一些差异：
+在常规 AMP 文档与在[用 AMPHTML 编写的广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})中使用 `amp-lightbox` 存在一些差异：
 
 ### 需要使用 close-button
 

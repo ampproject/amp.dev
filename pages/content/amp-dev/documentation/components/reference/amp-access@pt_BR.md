@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Relacionamento com `amp-subscriptions`
 
-A extensão [`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) oferece recursos semelhantes a `amp-access`. No entanto, ela é compatível com um protocolo de paywall de acesso mais especializado. Algumas diferenças notáveis são:
+A extensão [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) oferece recursos semelhantes a `amp-access`. No entanto, ela é compatível com um protocolo de paywall de acesso mais especializado. Algumas diferenças notáveis são:
 
 1. A resposta de direitos `amp-subscriptions` é semelhante à autorização de amp-access, mas é definida e padronizada de forma rígida.
 1. A extensão `amp-subscriptions` permite que vários serviços sejam configurados para que a página participe das decisões de acesso/paywall. Eles são executados simultaneamente e priorizados com base no serviço que retorna a resposta positiva.
@@ -505,7 +505,7 @@ A AMP não faz distinção entre login e assinatura. Essa distinção pode ser c
 
 ## Integração com *amp-analytics*
 
-A integração com *amp-analytics* está documentada em [amp-access-analytics.md](./amp-access-analytics.md).
+A integração com *amp-analytics* está documentada em [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## Segurança de origem do CORS
 
@@ -579,7 +579,7 @@ Como de costume, o código do leitor precisa ser incluído na chamada para a pá
 
 ## Apêndice A: gramática de expressões “amp-access”
 
-A gramática BNF mais recente está disponível no arquivo [access-expr-impl.jison](./0.1/access-expr-impl.jison).
+A gramática BNF mais recente está disponível no arquivo [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
 
 O principal trecho dessa gramática é este:
 

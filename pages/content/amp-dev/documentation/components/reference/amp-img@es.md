@@ -51,36 +51,48 @@ El tiempo de ejecución puede retrasar o priorizar la carga de recursos basándo
 Se debe proporcionar a los componentes `amp-img`, como al resto de los recursos AMP obtenidos de forma externa, un tamaño explícito (`width` y `height`) de antemano, para que se conozca la relación de aspecto sin haber recuperado la imagen. El atributo `layout` es el que determina el comportamiento real del diseño.
 
 [tip type="read-on"]
-Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) y la lista de [formatos compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) y la lista de [formatos compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Ejemplo: Mostrar una imagen adaptable
 
 En el siguiente ejemplo, hacemos que se muestre una imagen que se adapta al tamaño del viewport; para ello, definimos `layout=responsive`.  La imagen se expande y se oculta según la relación de aspecto definida en `width` y `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 Para obtener más información sobre las páginas AMP adaptables, consulta la guía sobre [cómo crear páginas AMP adaptables](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.
+Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.
 
 # Ejemplo: Especificar una imagen de respaldo
 
 En el siguiente ejemplo, si el navegador no es compatible con WebP, se mostrará la imagen JPG de respaldo:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Se puede establecer un color de fondo de marcador de posición u otro elemento visual mediante un selector de CSS y aplicar un estilo en el propio elemento.
 
@@ -167,12 +179,16 @@ Para las imágenes adaptables, `width` y `height` no tienen que coincidir exacta
 
 Por ejemplo, en lugar de definir `width="900"` y `height="675"`, puedes especificar `width="1.33"` y `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Configurar varios archivos de origen para diferentes resoluciones de pantalla
 

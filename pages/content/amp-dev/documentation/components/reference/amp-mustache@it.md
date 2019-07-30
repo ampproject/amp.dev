@@ -64,7 +64,7 @@ Mustache è una sintassi template che non utilizza la logica. Per ulteriori info
 
 ## Utilizzo
 
-Il modello `amp-mustache` deve essere definito e utilizzato secondo le [specifiche del modello AMP](../../spec/amp-html-templates.md).
+Il modello `amp-mustache` deve essere definito e utilizzato secondo le [specifiche del modello AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 In primo luogo, `amp-mustache` deve essere dichiarato/caricato come segue:
 
@@ -91,7 +91,7 @@ oppure
 
 Dove possibile, utilizza il tag `template`, poiché la convalida AMP fornisce utili suggerimenti dev-x. Utilizza il modello `script` per casi limite e problemi relativi ai modelli nel contesto delle tabelle. Consulta la sezione "Tabelle" di seguito.
 
-Il modo in cui vengono scoperti i modelli, quando ne viene effettuato il rendering, come vengono forniti i dati: tutto viene deciso dall'elemento AMP target, che utilizza questo modello per renderizzarne i contenuti (ad esempio in un [amp-list](../amp-list/amp-list.md), [amp-form](../amp-form/amp-form.md) e così via).
+Il modo in cui vengono scoperti i modelli, quando ne viene effettuato il rendering, come vengono forniti i dati: tutto viene deciso dall'elemento AMP target, che utilizza questo modello per renderizzarne i contenuti (ad esempio in un [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) e così via).
 
 ## Restrizioni
 

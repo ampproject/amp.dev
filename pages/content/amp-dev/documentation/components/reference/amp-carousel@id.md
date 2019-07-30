@@ -59,14 +59,22 @@ Carousel terdiri dari sejumlah item, juga panah navigasi opsional untuk maju ata
 
 Carousel berpindah-pindah item jika pengguna menggeser, menggunakan tombol panah, atau mengklik panah navigasi opsional.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="313" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel width="450"
+  height="300">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]
 
 # Berpindah ke slide tertentu
 
@@ -74,14 +82,51 @@ Apabila metode untuk atribut `on` pada suatu elemen ditetapkan ke `tap:carousel-
 
 Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di bawah carousel. Saat pengguna mengklik salah satu tombol, item carousel yang terkait akan ditampilkan.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="878" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.advance-slide.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel id="carousel-with-preview"
+    width="450"
+    height="300"
+    layout="responsive"
+    type="slides">
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="apples"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="lemons"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="blueberries"></amp-img>
+  </amp-carousel>
+  <div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+        width="60"
+        height="40"
+        alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+        width="60"
+        height="40"
+        alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+        width="60"
+        height="40"
+        alt="blueberries"></amp-img>
+    </button>
+  </div>
+```
+[/example]
 
 # Atribut
 
@@ -140,13 +185,30 @@ Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di ba
           <td width="40%"><strong>loop (opsional)</strong></td>
           <td>Memungkinkan pengguna berpindah melewati item pertama atau item akhir. Harus ada minimal 3 slide agar loop dapat dilakukan. Atribut <code>loop</code> hanya berlaku untuk carousel dengan <code>type=slides</code>.
             <em>Contoh: Menampilkan carousel slide dengan kontrol, loop, dan autoplay tertunda.</em>
-            <!--embedded example - displays in ampproject.org -->
-            <div>
-              <amp-iframe height="446" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.controls.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-                <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-                <div placeholder=""></div>
-              </amp-iframe>
-            </div></td>
+
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel type="slides"
+  width="450"
+  height="300"
+  controls
+  loop
+  {% if not format=='email'%}  autoplay
+  delay="3000"{% endif %}
+  data-next-button-aria-label="Go to next slide"
+  data-previous-button-aria-label="Go to previous slide">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]</td>
           </tr>
           <tr>
             <td width="40%"><strong>atribut umum</strong></td>

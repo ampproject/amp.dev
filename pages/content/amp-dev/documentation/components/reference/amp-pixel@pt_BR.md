@@ -87,7 +87,7 @@ Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/referenc
 ## Substituições
 
 O `amp-pixel` permite todas as substituições de variáveis de URL padrão.
-Consulte o [Guia de substituições](../spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
+Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
 
 No exemplo a seguir, uma solicitação pode ser feita para algo como `https://foo.com/pixel?0.8390278471201`, em que o valor ALEATÓRIO é gerado de forma aleatória em cada impressão.
 

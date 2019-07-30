@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Relation avec `amp-subscriptions`
 
-L'extension [`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) offre des fonctionnalités semblables à celles d'`amp-access`. Cependant, elle est compatible avec un protocole de paywall d'accès plus spécialisé. Voici un aperçu des différences les plus importantes :
+L'extension [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) offre des fonctionnalités semblables à celles d'`amp-access`. Cependant, elle est compatible avec un protocole de paywall d'accès plus spécialisé. Voici un aperçu des différences les plus importantes :
 
 1. La réponse concernant les droits `amp-subscriptions` est semblable à l'autorisation amp-access, mais elle est strictement définie et standardisée.
 1. L'extension `amp-subscriptions` permet de configurer plusieurs services pour que la page prenne part aux décisions relatives à l'accès et au paywall. Elles sont exécutées simultanément et classées par ordre de priorité en fonction du service qui renvoie la réponse positive.
@@ -494,7 +494,7 @@ AMP ne fait aucune distinction entre la connexion et l'abonnement. Cette distinc
 
 ## Intégration à *amp-analytics*
 
-L'intégration à *amp-analytics* est décrite à la page [amp-access-analytics.md](./amp-access-analytics.md).
+L'intégration à *amp-analytics* est décrite à la page [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## Sécurité de l'origine CORS
 
@@ -559,7 +559,7 @@ Comme d'habitude, l'ID d'utilisateur doit être inclus dans l'appel vers la page
 
 ## Annexe A : Grammaire de l'expression "amp-access"
 
-La grammaire BNF la plus récente est disponible dans le fichier [access-expr-impl.jison](./0.1/access-expr-impl.jison).
+La grammaire BNF la plus récente est disponible dans le fichier [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
 
 Voici un extrait de cette grammaire :
 ```javascript

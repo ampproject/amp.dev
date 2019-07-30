@@ -97,7 +97,7 @@ Contoh:
 
 ## Menghapus pilihan
 
-Untuk menghapus semua pilihan saat sebuah elemen di-tap atau diklik, tetapkan atribut tindakan [`on`](../../spec/amp-actions-and-events.md) pada elemen tersebut, dan tentukan `id` AMP Selector dengan metode tindakan `clear`.
+Untuk menghapus semua pilihan saat sebuah elemen di-tap atau diklik, tetapkan atribut tindakan [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) pada elemen tersebut, dan tentukan `id` AMP Selector dengan metode tindakan `clear`.
 
 Contoh:
 
@@ -151,7 +151,7 @@ Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-
 Peristiwa dapat memicu tindakan pada komponen AMP lain yang menggunakan atribut `on`.
 Misalnya `on="select: my-tab.show"`
 
-Baca lebih lanjut tentang [Tindakan dan Peristiwa AMP](../../spec/amp-actions-and-events.md).
+Baca lebih lanjut tentang [Tindakan dan Peristiwa AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 <table>
   <tr>

@@ -74,8 +74,8 @@ limitations under the License.
 
 ## サポートされている広告ネットワーク
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick（試験運用版）](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 属性
 

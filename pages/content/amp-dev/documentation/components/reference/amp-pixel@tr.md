@@ -87,7 +87,7 @@ Bu öğe, genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/r
 ## Değişiklikler
 
 `amp-pixel`, tüm standart URL değişkeni değişikliklerine izin verir.
-Daha fazla bilgi için [Değişiklik Kılavuzu](../spec/amp-var-substitutions.md) dokümanına bakın.
+Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) dokümanına bakın.
 
 Aşağıdaki örnekte, `https://foo.com/pixel?0.8390278471201` gibi bir istekte bulunabilir. Burada, RANDOM değeri, her gösterimden sonra rastgele oluşturulur.
 

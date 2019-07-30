@@ -178,7 +178,7 @@ Tindakan `refresh` didukung oleh komponen ini dan dapat digunakan untuk me-refre
 
 # Mengubah status dengan `AMP.setState()`
 
-Tindakan [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) menggabungkan literal objek ke dalam status. Misalnya, saat tombol di bawah ditekan, `AMP.setState()` akan [menggabungkan secara mendalam](#deep-merge-with-ampsetstate) literal objek dengan status.
+Tindakan [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) menggabungkan literal objek ke dalam status. Misalnya, saat tombol di bawah ditekan, `AMP.setState()` akan [menggabungkan secara mendalam](#deep-merge-with-ampsetstate) literal objek dengan status.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Jika dipicu oleh peristiwa tertentu, `AMP.setState()` juga dapat mengakses data 
 
 # Mengubah histori dengan `AMP.pushState()`
 
-Tindakan [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
+Tindakan [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
 
 Misalnya:
 ```html
@@ -221,7 +221,7 @@ Ekspresi mirip dengan JavaScript dengan beberapa perbedaan penting.
 * Indeks array melebihi batas dan variabel yang tidak ditentukan akan menampilkan `null`, bukan `undefined` atau memunculkan error.
 * Ekspresi tunggal saat ini dibatasi 50 operand untuk menjaga performa. Harap [hubungi kami](https://github.com/ampproject/amphtml/issues/new) jika alokasi ini tidak memadai untuk kasus penggunaan Anda.
 
-Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) dan [bind-expression.js](./0.1/bind-expression.js).
+Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) dan [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Contoh
 

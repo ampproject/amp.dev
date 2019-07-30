@@ -51,36 +51,48 @@ limitations under the License.
 이미지를 가져오지 않고도 가로세로 비율을 알 수 있도록, 외부에서 가져온 모든 AMP 리소스와 같은 `amp-img` 구성요소에는 명시적으로 미리 크기를 지정해야 합니다(`width`/`height` 사용). 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 
 [tip type="read-on"]
-[AMP HTML 레이아웃 시스템](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) 사양과 [지원되는 레이아웃](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
+[AMP HTML 레이아웃 시스템]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) 사양과 [지원되는 레이아웃](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
 [/tip]
 
 # 예: 반응형 이미지 표시
 
 다음 예에서는 `layout=responsive`를 설정하여 표시 영역의 크기에 반응하는 이미지를 표시합니다.  `width`와 `height`로 지정된 가로세로 비율에 따라 이미지가 확장되고 줄어듭니다.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 [반응형 AMP 페이지 만들기](https://www.ampproject.org/docs/guides/responsive/responsive_design.html) 가이드에서 반응형 AMP 페이지에 관해 알아보세요.
 [/tip]
 
-`amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.
+`amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.
 
 # 예: 대체 이미지 지정
 
 다음 예에서 브라우저가 WebP를 지원하지 않는 경우 대체 JPG 이미지가 표시됩니다.
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 자리표시자 배경색 또는 기타 시각적 요소 자체에서 CSS 선택기와 스타일을 사용하여 설정할 수 있습니다.
 
@@ -168,12 +180,16 @@ amp-img {
 
 예를 들어 `width="900"`과 `height="675"`를 지정하지 않고 `width="1.33"`과 `height="1"`을 지정할 수 있습니다.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # 여러 다른 화면 해상도에 맞게 여러 소스 파일 설정
 
