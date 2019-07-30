@@ -173,7 +173,7 @@
         {% if story_preview %}
         {% set story_preview_embed = podspec.base_urls.preview + doc.source + '/embed?id=' + section.storyPageId %}
         {# Storys should be repeatable, therefore render reload icon #}
-        <div class="ap-o-code-preview-controls#">
+        <div class="ap-o-code-preview-controls">
           <button class="ap-o-code-preview-controls-button" on="tap:AMP.setState({'section{{ section.id }}': '{{ story_preview_embed + '&' }}' + random()})">
             <div class="ap-a-ico ap-o-code-preview-controls-icon">
               {% do doc.icons.useIcon('icons/reload.svg') %}

@@ -69,8 +69,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    top: 1em;
-    margin: 1em;
+    margin: 0 1em;
 
     amp-iframe {
       @media screen and (max-width: 412px) {
