@@ -61,18 +61,42 @@ limitations under the License.
 
 فيما يلي مثال لنموذج أساسي:
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-<amp-iframe height="671"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # السمات
 
@@ -182,14 +206,29 @@ limitations under the License.
 
 من بين حالات الاستخدام الشائعة مثلاً إرسال نموذج عند تغير الإدخال (تحديد زر الاختيار للإجابة على استطلاع أو اختيار اللغة من الإدخال `select` لترجمة الصفحة، وغير ذلك).
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-<amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
 يمكن الاطّلاع على [المثال بالكامل هنا](../../examples/forms.amp.html).
 
@@ -268,8 +307,8 @@ limitations under the License.
 
 # لعرض الاستجابات باستخدام النماذج، يمكنك:
 
-* تطبيق سمة استجابة على *أي عنصر ثانوي مباشر* للعنصر `&lt;form&gt;`
-* عرض الاستجابة في العنصر الثانوي من خلال إدراج نموذج عبر العلامة `&lt;template&gt;&lt;/template&gt;` أو `&lt;script type="text/plain"&gt;&lt;/script&gt;` داخل العنصر أو بالإشارة إلى النموذج باستخدام السمة `template="id_of_other_template"`
+* تطبيق سمة استجابة على *أي عنصر ثانوي مباشر* للعنصر `<form>`
+* عرض الاستجابة في العنصر الثانوي من خلال إدراج نموذج عبر العلامة `<template></template>` أو `<script type="text/plain"></script>` داخل العنصر أو بالإشارة إلى النموذج باستخدام السمة `template="id_of_other_template"`
 * توفير كائن JSON صالح للاستجابة للسمة `submit-success` و`submit-error`. يجب أن تحتوي استجابات النجاح والخطأ على الرأس `Content-Type: application/json`.
 
 <a id="example-submitting"></a>
@@ -426,18 +465,46 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 وفي ما يلي مثال لذلك:
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-<amp-iframe height="748"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
 لمزيد من الأمثلة، راجِع [examples/forms.amp.html](../../examples/forms.amp.html).
 
@@ -478,8 +545,8 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 <form
   method="post"
   action-xhr="/form/verify-json/post"
-  verify-xhr="/form/verify-json/post"
-  target="_blank">
+  verify-xhr="/form/verify-json/post"{% if not format=='email'%}  
+  target="_blank"{% endif %}>
     <fieldset>
         <label>
             <span>Email</span>

@@ -60,14 +60,37 @@ limitations under the License.
 
 #### 例: 複数の広告の表示
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="522" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampad.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad"]
+```html
+<amp-ad type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+    width="300"
+    height="250"
+    data-aax_size="300x250"
+    data-aax_pubname="test123"
+    data-aax_src="302">
+  </amp-ad>
+  <amp-ad width="300"
+    height="250"
+    type="industrybrains"
+    data-width="300"
+    data-height="250"
+    data-cid="19626-3798936394">
+  </amp-ad>
+  <amp-embed type="taboola"
+    width="400"
+    height="300"
+    layout="responsive"
+    data-publisher="amp-demo"
+    data-mode="thumbnails-a"
+    data-placement="Ads Example"
+    data-article="auto">
+  </amp-embed>
+```
+[/example]
 
 ## 属性
 

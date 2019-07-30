@@ -57,12 +57,16 @@ teaser:
 
 次の例では、`layout=responsive` を設定することにより、ビューポートのサイズに合わせて画像を表示します。画像は、`width` と `height` で指定されたアスペクト比に従って伸縮します。
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"] レスポンシブな AMP ページについて詳しくは、[レスポンシブな AMP ページの作成](https://www.ampproject.org/docs/guides/responsive/responsive_design.html)ガイドをご覧ください。
 [/tip]
@@ -73,12 +77,20 @@ teaser:
 
 次の例では、ブラウザが WebP をサポートしていない場合、JPG のフォールバック画像が表示されます。
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 プレースホルダの背景色やその他のビジュアルは、要素自体の CSS セレクタとスタイルを使用して設定できます。
 
@@ -162,12 +174,16 @@ amp-img {
 
 たとえば、`width="900"` と `height="675"` を指定する代わりに、`width="1.33"` と `height="1"` を指定できます。
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # 各種の画面解像度に複数のソースファイルを設定する
 

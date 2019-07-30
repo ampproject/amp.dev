@@ -57,12 +57,16 @@ limitations under the License.
 
 В примере ниже показывается изображение, которое реагирует на размер области просмотра благодаря настройке `layout=responsive`.  Оно растягивается и сжимается в соответствии с соотношением сторон, заданным с помощью свойств `width` и `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
@@ -74,12 +78,20 @@ limitations under the License.
 
 В этом примере, если браузер не поддерживает WebP, показывается резервное изображение JPG:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Цвет фона и другие графические элементы для резервного изображения можно задать с помощью селектора CSS и стиля самого элемента.
 
@@ -166,12 +178,16 @@ amp-img {
 
 Например, вместо `width="900"` и `height="675"` можно задать `width="1.33"` and `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Настройка нескольких исходных файлов для разных разрешений экрана
 

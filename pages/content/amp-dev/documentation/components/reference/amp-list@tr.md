@@ -64,14 +64,20 @@ Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
 
 Aşağıdaki örnekte, URL'ler ve başlıklar içeren JSON verilerini alıp içeriği, iç içe yerleştirilmiş bir [amp-mustache şablonunda](https://www.ampproject.org/docs/reference/components/amp-mustache) oluşturuyoruz.
 
-<!--yerleşik örnek - ampproject.org'da görüntülenir -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Burada, kullandığımız JSON dosyasını görebilirsiniz:
 
@@ -128,14 +134,27 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
 
 Aşağıdaki örnekte, resimlerin ve başlıkların bir listesi gösterilmektedir. `<amp-list>` içeriği, kullanılabilir olandan daha fazla alan gerektirdiğinden AMP Çalışma Zamanı, taşma öğesini görüntüler.
 
-<!--yerleşik örnek - ampproject.org'da görüntülenir -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Burada, `overflow` için CSS'yi görebilirsiniz:
 

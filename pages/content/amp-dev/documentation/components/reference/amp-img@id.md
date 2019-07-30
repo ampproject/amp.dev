@@ -58,12 +58,16 @@ Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP](
 
 Pada contoh berikut, kami menampilkan gambar yang merespons ukuran viewport dengan menetapkan `layout=responsive`.  Gambar membentang dan menyusut sesuai dengan rasio tinggi lebar yang ditentukan oleh `width` dan `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 Pelajari tentang halaman AMP responsif dalam panduan [Membuat Halaman AMP yang Responsif](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
@@ -75,12 +79,20 @@ Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan koso
 
 Pada contoh berikut, jika browser tidak mendukung WebP, gambar JPG fallback akan ditampilkan:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Warna latar belakang placeholder atau visual lainnya dapat ditetapkan menggunakan pemilih CSS dan gaya pada elemen itu sendiri.
 
@@ -89,8 +101,8 @@ Fitur gambar tambahan seperti teks dapat diimplementasikan dengan HTML standar (
 [tip type="read-on"]
 Pelajari lebih lanjut penggunaan `amp-img` dari resource berikut:
 
-* [Placeholder &amp; fallback](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Menyertakan Gambar &amp; Video](https://www.ampproject.org/docs/media/amp_replacements)
+* [Placeholder & fallback](https://www.ampproject.org/docs/design/responsive/placeholders)
+* [Menyertakan Gambar & Video](https://www.ampproject.org/docs/media/amp_replacements)
 [/tip]
 
 # Atribut
@@ -108,7 +120,7 @@ Sama seperti atribut `srcset` pada tag `img`. Untuk browser yang tidak mendukung
 Sama seperti atribut `sizes` pada tag `img`.
 
 [tip type="read-on"]
-Lihat [Gambar responsif dengan srcset, size &amp; height](https://www.ampproject.org/docs/design/responsive/art_direction) untuk penggunaan `sizes` dan `srcset`.
+Lihat [Gambar responsif dengan srcset, size & height](https://www.ampproject.org/docs/design/responsive/art_direction) untuk penggunaan `sizes` dan `srcset`.
 [/tip]
 
 **alt**
@@ -137,7 +149,7 @@ amp-img {
   }
 ```
 
-# Tips &amp; Trik
+# Tips & Trik
 
 # Menskalakan gambar hingga lebar maksimum
 
@@ -167,12 +179,16 @@ Untuk gambar responsif, `width` dan `height` tidak harus sama persis dengan leba
 
 Misalnya, bukannya menetapkan `width="900"` dan `height="675"`, Anda cukup menetapkan `width="1.33"` dan `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Menetapkan beberapa file sumber untuk resolusi layar yang berbeda
 

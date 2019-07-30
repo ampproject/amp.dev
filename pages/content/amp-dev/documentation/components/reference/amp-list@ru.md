@@ -64,14 +64,20 @@ teaser:
 
 В примере ниже мы извлекаем данные JSON с URL и заголовками, а затем отображаем этот контент во вложенном [шаблоне amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache).
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Вот файл JSON, который мы использовали:
 
@@ -128,14 +134,27 @@ amp-list div[role="list"] {
 
 В примере ниже показывается список изображений с подписями. Поскольку контент элемента `<amp-list>` требует больше пространства, чем доступно, библиотека AMP отображает атрибут overflow.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Вот код CSS для `overflow`:
 

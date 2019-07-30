@@ -63,14 +63,20 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 
 次の例では、URL とタイトルを含む JSON データを取得し、ネストされた [amp-mustache テンプレート](https://www.ampproject.org/docs/reference/components/amp-mustache)でコンテンツをレンダリングします。
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 以下に、使用した JSON ファイルを示します。
 
@@ -127,14 +133,27 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 次の例では、画像とタイトルのリストを表示します。`<amp-list>` のコンテンツで追加のスペースが必要なため、AMP ランタイムによってオーバーフロー要素が表示されます。
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 以下に、`overflow` の CSS を示します。
 
