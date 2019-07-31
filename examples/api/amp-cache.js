@@ -25,7 +25,7 @@ const examples = express.Router();
 
 const filePath = utils.project.absolute('/examples/static/samples/files/get-example.html');
 
-examples.get('/g', (request, response) => {
+examples.get('/g/timestamp', (request, response) => {
   setMaxAge(response, 0);
 
   const value = request.query.value;
