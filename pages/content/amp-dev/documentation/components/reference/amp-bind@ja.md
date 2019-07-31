@@ -175,7 +175,7 @@ teaser:
 
 # `AMP.setState()` による状態の更新
 
-[`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) アクションは、オブジェクト リテラルを状態にマージします。たとえば、下のボタンを押すと、`AMP.setState()` によってオブジェクト リテラルが状態に[ディープマージ](#deep-merge-with-ampsetstate)されます。
+[`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) アクションは、オブジェクト リテラルを状態にマージします。たとえば、下のボタンを押すと、`AMP.setState()` によってオブジェクト リテラルが状態に[ディープマージ](#deep-merge-with-ampsetstate)されます。
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -195,7 +195,7 @@ teaser:
 
 # `AMP.pushState()` による履歴の変更
 
-[`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) アクションは、新しいエントリもブラウザの履歴スタックにプッシュすることを除き、`AMP.setState()` に似ています。この履歴エントリを（戻るなどの操作によって）ポップすると、`AMP.pushState()` で設定された以前の変数の値が復元されます。
+[`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) アクションは、新しいエントリもブラウザの履歴スタックにプッシュすることを除き、`AMP.setState()` に似ています。この履歴エントリを（戻るなどの操作によって）ポップすると、`AMP.pushState()` で設定された以前の変数の値が復元されます。
 
 例:
 ```html
@@ -218,7 +218,7 @@ teaser:
 * 未定義の変数と array-index-out-of-bounds は、`undefined` を返したりエラーをスローしたりするのではなく、`null` を返します。
 * パフォーマンスの向上のために、現在は 1 つの式で使用できるオペランドの数が 50 個に制限されています。不十分な場合は[お問い合わせください](https://github.com/ampproject/amphtml/issues/new)。
 
-式の文法と実装について詳しくは、[bind-expr-impl.jison](./0.1/bind-expr-impl.jison) と [bind-expression.js](./0.1/bind-expression.js) をご覧ください。
+式の文法と実装について詳しくは、[bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) と [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js) をご覧ください。
 
 # 例
 

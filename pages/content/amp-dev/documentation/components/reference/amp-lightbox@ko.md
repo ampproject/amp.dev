@@ -132,7 +132,7 @@ teaser:
 AMPHTML 광고에서 사용할 `amp-lightbox` 구성요소는 [실험적](https://www.ampproject.org/docs/reference/experimental)이며 현재 개발 중입니다. AMPHTML 광고에서 `amp-lightbox`를 사용하려면 [`amp-lightbox-a4a-proto` 실험을 사용 설정](http://cdn.ampproject.org/experiments.html)하세요.
 [/tip]
 
-일반 AMP 문서에서 `amp-lightbox` 사용과 [AMPHTML로 작성된 광고](../amp-a4a/amp-a4a-format.md)를 사용하는 데는 몇 가지 차이점이 있습니다.
+일반 AMP 문서에서 `amp-lightbox` 사용과 [AMPHTML로 작성된 광고]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})를 사용하는 데는 몇 가지 차이점이 있습니다.
 
 ### close-button 필요
 

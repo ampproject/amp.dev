@@ -59,7 +59,7 @@ limitations under the License.
 1. في العلامة `<amp-analytics>`، أضِف السمة `type` وعيّن قيمتها على [المورد](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) المحدد.
 2. حدِد البيانات التي تريد استخلاصها وتتبعها، وحدِد تلك التفاصيل في بيانات التهيئة. راجع وثائق المورد للحصول على تعليمات بشأن استخلاص بيانات التحليلات.
 
-في حال عدم تكامل مورد التحليلات مع AMP، تواصل معه لطلب الدعم. ونشجعك أيضًا على إنشاء موضوع في مشروع AMP لطلب إضافة هذا المورد. يمكنك كذلك الاطّلاع على [تكامل أدوات التحليلات برمز HTML لصفحات AMP](../amp-analytics/integrating-analytics.md). أو اعمل مع المورد على إرسال البيانات إلى عناوين URL محددة لديه. تعرّف على مزيد من المعلومات في القسم [إرسال البيانات إلى حلول داخلية](#sending-data-in-house) أدناه.
+في حال عدم تكامل مورد التحليلات مع AMP، تواصل معه لطلب الدعم. ونشجعك أيضًا على إنشاء موضوع في مشروع AMP لطلب إضافة هذا المورد. يمكنك كذلك الاطّلاع على [تكامل أدوات التحليلات برمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). أو اعمل مع المورد على إرسال البيانات إلى عناوين URL محددة لديه. تعرّف على مزيد من المعلومات في القسم [إرسال البيانات إلى حلول داخلية](#sending-data-in-house) أدناه.
 
 *مثال: إرسال البيانات إلى موفر خارجي لخدمات التحليلات*
 
@@ -169,7 +169,7 @@ limitations under the License.
 
 #### تحميل التهيئة عن بُعد
 
-لتحميل التهيئة عن بُعد، حدِد السمة `config` وعنوان URL لبيانات التهيئة في العنصر `<amp-analytics>`. يجب أن يتبع عنوان URL المحدد مخطط HTTPS. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](../../spec/amp-var-subutions.md). ويمكنك الاطّلاع على السمة [`data-credentials`](#data-credentials) للوصول إلى ملف تعريف الارتباط. ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](../../specs-requests.md).
+لتحميل التهيئة عن بُعد، حدِد السمة `config` وعنوان URL لبيانات التهيئة في العنصر `<amp-analytics>`. يجب أن يتبع عنوان URL المحدد مخطط HTTPS. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md). ويمكنك الاطّلاع على السمة [`data-credentials`](#data-credentials) للوصول إلى ملف تعريف الارتباط. ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/specs-requests.md).
 
 في هذا المثال، نحدِد السمة `config` لتحميل بيانات التهيئة من عنوان URL المحدد.
 
@@ -203,7 +203,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 "مجموعات المتغيرات" هي ميزة تسمح لموفري خدمات التحليلات بتجميع مجموعة محددة مسبقًا من المتغيرات التي يمكن للمستخدِم تفعيلها بسهولة. وسيتم بعد ذلك حل هذه المتغيرات وإرسالها إلى نقطة نهاية `configRewriter` المحددة.
 
-يحتاج موفرو خدمات التحليلات إلى إنشاء كائن `varGroups` جديد في التهيئة `configRewriter` لتفعيل هذه الميزة. ويمكن للناشرين بعد ذلك تضمين `varGroups` التي أنشأها موفر معين والمراد تفعليها في تهيئة التحليلات لديهم. يمكن استخدام جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](../../spec/amp-var-subutions.md). *ملاحظة مهمة*: لن تعمل الصيغ ${varName}.
+يحتاج موفرو خدمات التحليلات إلى إنشاء كائن `varGroups` جديد في التهيئة `configRewriter` لتفعيل هذه الميزة. ويمكن للناشرين بعد ذلك تضمين `varGroups` التي أنشأها موفر معين والمراد تفعليها في تهيئة التحليلات لديهم. يمكن استخدام جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md). *ملاحظة مهمة*: لن تعمل الصيغ ${varName}.
 
 قد يكون هناك مثلاً مورد تأخذ تهيئته الشكل التالي:
 ```js
@@ -345,7 +345,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 #### الكائن Vars
 
-يعرّف المكوِّن `amp-analytics` العديد من المتغيرات الأساسية التي يمكن استخدامها في الطلبات. تتوفر قائمة بجميع هذه المتغيرات في [دليل متغيرات `amp-analytics`](./analytics-vars.md). بالإضافة إلى ذلك، تُقبل جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](../../spec/amp-var-subutions.md).
+يعرّف المكوِّن `amp-analytics` العديد من المتغيرات الأساسية التي يمكن استخدامها في الطلبات. تتوفر قائمة بجميع هذه المتغيرات في [دليل متغيرات `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). بالإضافة إلى ذلك، تُقبل جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md).
 
 يمكن استخدام كائن التهيئة `vars` لتحديد أزواج المفتاح/القيمة الجديدة أو لإلغاء المتغيرات الحالية التي يمكن الإشارة إليها في قيم `request`. وتستخدم المتغيرات الجديدة بشكل شائع لتحديد معلومات معينة عن الناشر.  ويمكن استخدام المصفوفات لتحديد قائمة من القيم التي يجب أن يكون عنوان URL مشفرًا بشكل منفصل مع الحفاظ على مُحدِد الفاصلة.
 
@@ -383,7 +383,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 يوضح كائن التهيئة `triggers` متى يجب إرسال طلب التحليلات. تحتوي السمة `triggers` على زوج المفتاح/القيمة trigger-name وtrigger-configuration. يمكن أن يكون trigger-name أي سلسلة تتكون من أحرف أبجدية رقمية (a-zA-Z0-9). تلغي المشغلات من التهيئة ذات الأولوية الأعلى المشغلات التي تحمل الأسماء نفسها من التهيئة ذات الأولوية الأقل.
 
-* `on` (مطلوبة): هذه السمة هي الحدث الذي سينشط له المشغِل. وقيمها الصالحة هي: `render-start` و`ini-load` و`click` و`scroll` و`timer` و`visible` و`hidden` و`user-error` و[`access-*`](../amp-access/amp-access-analytics.md) و[`video-*`](./amp-video-analytics.md).
+* `on` (مطلوبة): هذه السمة هي الحدث الذي سينشط له المشغِل. وقيمها الصالحة هي: `render-start` و`ini-load` و`click` و`scroll` و`timer` و`visible` و`hidden` و`user-error` و[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) و[`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 * `request` (مطلوبة): هذه السمة هي اسم الطلب الذي سيتم إرساله (كما هو محدد في القسم `requests`).
 * `vars`: كائن يحتوي على أزواج المفتاح/القيمة ويُستخدَم لإلغاء `vars` المحددة في التهيئة ذات المستوى الأعلى أو لتحديد المتغيرات الفريدة لهذا المشغِل.
 * يمكن تحديد `important` للعمل مع الطلبات التي تتيح سلوك التجميع أو نافذة الإبلاغ. يمكن أن يساعد تعيين `important` على `true` في تدفق صف الطلبات المجمعة مع بعض المشغلات المعينة. في هذه الحالة، من الممكن تقليل عدد فحص اتصالات الطلبات بدون فقد أحداث المشغلات المهمة. يمكن أن يؤدي تعيين `important` على `true` أيضًا إلى إلغاء قيمة `reportWindow` للطلب وإرسال فحص اتصالات الطلبات المهمة.
@@ -393,7 +393,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 * `sampleSpec` يتم استخدام هذا الكائن لتحديد أسلوب جمع عينات من الطلبات قبل إرسالها. يسمح هذا الإعداد بجمع العينات استنادًا إلى الإدخال العشوائي أو إلى المتغيرات الأخرى التي تتيحها المنصة. يحتوي الكائن على تهيئة لتحديد إدخال يُستخدَم لإنشاء تجزئة وعتبة يجب على التجزئة الوصول إليها.
     * `sampleOn` يتم توسيع نموذج السلسلة هذا عن طريق ملء المتغيرات في المنصة ثم تجزئتها لإنشاء رقم لأغراض منطق العينات الموضح أسفل العتبة أدناه.
     * `threshold` يتم استخدام هذه التهيئة لفلترة الطلبات التي لا تلبي معايير معينة: يجب أن يكون المنطق التالي صحيحًا `HASH(sampleOn) < threshold` حتى يتم إرسال الطلب إلى مورد التحليلات.</li>
-* `videoSpec` (تُستخدَم عند تعيين `on` على `video-*`) يتم استخدام هذه التهيئة بالتزامن مع المشغلات [`video-*`](./amp-video-analytics.md).
+* `videoSpec` (تُستخدَم عند تعيين `on` على `video-*`) يتم استخدام هذه التهيئة بالتزامن مع المشغلات [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
 يمكن استخدام التهيئة التالية مثلاً لجمع عينة قدرها 50٪ من الطلبات بناءً على الإدخال العشوائي أو قدرها 1٪ بناءً على معرّف العميل.
 
@@ -593,7 +593,7 @@ visibilitySpec: {
 }
 ```
 
-بالإضافة إلى الشروط المذكورة أعلاه، تعمل `visibilitySpec` أيضًا على تفعيل بعض المتغيرات الموثقة [هنا](./analytics-vars.md#visibility-variables).
+بالإضافة إلى الشروط المذكورة أعلاه، تعمل `visibilitySpec` أيضًا على تفعيل بعض المتغيرات الموثقة [هنا](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#visibility-variables).
 
 ```javascript
 "triggers": {
@@ -612,7 +612,7 @@ visibilitySpec: {
 }
 ```
 
-بالإضافة إلى المتغيرات المقدَمة كجزء من المشغلات، يمكنك أيضًا تحديد [متغيرات إضافية كسمة بيانات](./analytics-vars.md#variables-as-dattribute) أو تحديد ما يُلغيها. وإذا تم استخدام سمات البيانات هذه، يجب أن تكون جزءًا من العنصر التي تم تعيينه ليكون [`selector`](#element-selector).
+بالإضافة إلى المتغيرات المقدَمة كجزء من المشغلات، يمكنك أيضًا تحديد [متغيرات إضافية كسمة بيانات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-dattribute) أو تحديد ما يُلغيها. وإذا تم استخدام سمات البيانات هذه، يجب أن تكون جزءًا من العنصر التي تم تعيينه ليكون [`selector`](#element-selector).
 
 ##### مشغِل النقر
 
@@ -635,11 +635,11 @@ visibilitySpec: {
 }
 ```
 
-بالإضافة إلى المتغيرات المقدَمة كجزء من المشغلات، يمكنك أيضًا تحديد [متغيرات إضافية كسمة بيانات](./analytics-vars.md#variables-as-dattribute) أو تحديد ما يُلغيها. وإذا تم استخدام سمات البيانات هذه، يجب أن تكون جزءًا من العنصر التي تم تعيينه ليكون `selector`.
+بالإضافة إلى المتغيرات المقدَمة كجزء من المشغلات، يمكنك أيضًا تحديد [متغيرات إضافية كسمة بيانات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-dattribute) أو تحديد ما يُلغيها. وإذا تم استخدام سمات البيانات هذه، يجب أن تكون جزءًا من العنصر التي تم تعيينه ليكون `selector`.
 
 ##### مشغِل التمرير
 
-استخدِم مشغِل التمرير (`"on": "scroll"`) لتنشيط طلب عند تمرير الصفحة بشروط معينة. يوفر هذا المشغِل [متغيرات خاصة](./analytics-vars.md#interaction) تشير إلى الحدود التي أدت إلى إرسال الطلب. استخدِم `scrollSpec` للتحكم في وقت تنشيط هذا المشغِل:
+استخدِم مشغِل التمرير (`"on": "scroll"`) لتنشيط طلب عند تمرير الصفحة بشروط معينة. يوفر هذا المشغِل [متغيرات خاصة](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) تشير إلى الحدود التي أدت إلى إرسال الطلب. استخدِم `scrollSpec` للتحكم في وقت تنشيط هذا المشغِل:
 - `scrollSpec`: يمكن أن يحتوي هذا الكائن على `verticalBoundaries` و`horizontalBoundaries`. ويلزم توفير خاصية على الأقل من الخاصيتين حتى ينشط حدث التمرير. يجب أن تكون قيم الخاصيتين مصفوفات أرقام تحتوي على الحدود التي يتم عندها إنشاء حدث التمرير. في مقتطف الرمز التالي مثلاً، سيتم تنشيط حدث التمرير عند تمرير الصفحة رأسيًا بنسبة 25٪ و50٪ و90٪. بالإضافة إلى ذلك، سيتم أيضًا تنشيط الحدث عند تمرير الصفحة أفقيًا إلى 90٪ من عرض التمرير. ويتم تقريب حدود التمرير إلى أقرب مضاعفات `5` للحفاظ على أداء الصفحة.
 
 ```javascript
@@ -739,11 +739,11 @@ visibilitySpec: {
 
 ##### مشغلات الوصول
 
-يصدِّر نظام AMP Access الكثير من الأحداث لحالات مختلفة في تدفق الوصول. ويمكنك الاطّلاع على [AMP Access وAnalytics](../amp-access/amp-access-analytics.md) للحصول على تفاصيل حول مشغلات الوصول (`"on": "access-*"`).
+يصدِّر نظام AMP Access الكثير من الأحداث لحالات مختلفة في تدفق الوصول. ويمكنك الاطّلاع على [AMP Access وAnalytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) للحصول على تفاصيل حول مشغلات الوصول (`"on": "access-*"`).
 
 #### مشغلات تحليلات الفيديو
 
-توفر تحليلات الفيديو العديد من المشغلات (`"on": "video-*"`) التي يمكن للناشرين استخدامها لتتبع الأحداث المختلفة التي تحدث أثناء عمر الفيديو. تتوفر المزيد من التفاصيل في [تحليلات فيديو AMP](./amp-video-analytics.md).
+توفر تحليلات الفيديو العديد من المشغلات (`"on": "video-*"`) التي يمكن للناشرين استخدامها لتتبع الأحداث المختلفة التي تحدث أثناء عمر الفيديو. تتوفر المزيد من التفاصيل في [تحليلات فيديو AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
 #### الكائن Transport
 
@@ -802,17 +802,17 @@ visibilitySpec: {
 
 #### الميزة Linkers
 
-تُستخدم الميزة `linkers` لتفعيل مزامنة المعرفات عبر النطاقات. ستستخدم `amp-analytics` [كائن تهيئة](./linker-id-forwarding.md#format) لإنشاء "سلسلة رابط" يتم إلحاقها بالروابط الصادرة المحددة على الصفحة باعتبارها معلَمة عنوان URL. عندما ينقر المستخدِم على أحد هذه الروابط، ستقرأ الصفحة الوجهة سلسلة الرابط من معلَمة عنوان URL لإجراء مزامنة المعرفات. يستخدم هذا عادةً للانضمام إلى جلسات المستخدِم عبر نطاق خادم AMP الوكيل ونطاق الناشر.
+تُستخدم الميزة `linkers` لتفعيل مزامنة المعرفات عبر النطاقات. ستستخدم `amp-analytics` [كائن تهيئة](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format) لإنشاء "سلسلة رابط" يتم إلحاقها بالروابط الصادرة المحددة على الصفحة باعتبارها معلَمة عنوان URL. عندما ينقر المستخدِم على أحد هذه الروابط، ستقرأ الصفحة الوجهة سلسلة الرابط من معلَمة عنوان URL لإجراء مزامنة المعرفات. يستخدم هذا عادةً للانضمام إلى جلسات المستخدِم عبر نطاق خادم AMP الوكيل ونطاق الناشر.
 
-يتم توضيح التفاصيل المتعلقة بإعداد تهيئة الرابط في [إعادة توجيه معرفات الرابط](./linker-id-forwarding.md).
+يتم توضيح التفاصيل المتعلقة بإعداد تهيئة الرابط في [إعادة توجيه معرفات الرابط](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md).
 
-إذا كنت بحاجة إلى استيعاب هذه المعلَمة، توفّر صفحة [تلقي معرفات الرابط](./linker-id-receiving.md) المعلومات المتعلقة بكيفية إنشاء هذه المعلمة.
+إذا كنت بحاجة إلى استيعاب هذه المعلَمة، توفّر صفحة [تلقي معرفات الرابط](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md) المعلومات المتعلقة بكيفية إنشاء هذه المعلمة.
 
 #### الميزة Cookies
 
-تتيح الميزة `cookies` كتابة ملف تعريف الارتباط إلى النطاق الأصل من خلال استخلاص المعلومات [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) و[`LINKER_PARAM`](./linker-id-receiving.md#linker-param) من عنوان URL للمستند. ويمكن استخدامها مع ميزات `linkers` لإجراء مزامنة المعرفات من نطاق خادم AMP الوكيل مع صفحات AMP على نطاق الناشر.
+تتيح الميزة `cookies` كتابة ملف تعريف الارتباط إلى النطاق الأصل من خلال استخلاص المعلومات [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) و[`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) من عنوان URL للمستند. ويمكن استخدامها مع ميزات `linkers` لإجراء مزامنة المعرفات من نطاق خادم AMP الوكيل مع صفحات AMP على نطاق الناشر.
 
-يمكن العثور على تفاصيل حول إعداد تهيئة `cookies` في [تلقي معلمات الروابط على صفحات AMP.](./linker-id-receiving.md#receiving-linker-params-on-amp-pages)
+يمكن العثور على تفاصيل حول إعداد تهيئة `cookies` في [تلقي معلمات الروابط على صفحات AMP.](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
 ## التحقق
 
@@ -834,7 +834,7 @@ visibilitySpec: {
 
 **config**
 
-هذه سمة اختيارية يمكن استخدامها لتحميل تهيئة من عنوان URL بعيد محدد. يجب أن يستخدم عنوان URL المحدد المخطط HTTPS. يمكنك أيضًا مراجعة السمة `data-include-credentials` أدناه. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](../../spec/amp-var-subutions.md). ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](../../specs-requests.md).
+هذه سمة اختيارية يمكن استخدامها لتحميل تهيئة من عنوان URL بعيد محدد. يجب أن يستخدم عنوان URL المحدد المخطط HTTPS. يمكنك أيضًا مراجعة السمة `data-include-credentials` أدناه. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md). ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/specs-requests.md).
 
 مثال:
 
@@ -848,8 +848,8 @@ visibilitySpec: {
 
 **data-consent-notification-id**
 
-إذا تم توفير هذه السمة، لن تعالج الصفحة طلبات التحليلات إلى أن يؤكد (يقبل) المستخدِم [amp-user-notification](../../extensions/amp-user-notification/amp-user-notification.md) الذي به معرّف عنصر HTML المحدد. وهذه السمة اختيارية.
+إذا تم توفير هذه السمة، لن تعالج الصفحة طلبات التحليلات إلى أن يؤكد (يقبل) المستخدِم [amp-user-notification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}) الذي به معرّف عنصر HTML المحدد. وهذه السمة اختيارية.
 
 ## التحليلات لمكونات AMP
 
-يمكن لمطوري مكونات AMP تنفيذ مجموعة من البيانات باستخدام AMP Analytics. ويُرجى الرجوع إلى [تنفيذ التحليلات لمكونات AMP](./amp-components-analytics.md) للحصول على المزيد من المعلومات.
+يمكن لمطوري مكونات AMP تنفيذ مجموعة من البيانات باستخدام AMP Analytics. ويُرجى الرجوع إلى [تنفيذ التحليلات لمكونات AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md) للحصول على المزيد من المعلومات.

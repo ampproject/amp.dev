@@ -78,8 +78,8 @@ limitations under the License.
 
 ## شبكات الإعلانات المتوافقة
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (تجريبية)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (تجريبية)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## السمات
 

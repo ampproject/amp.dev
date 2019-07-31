@@ -60,14 +60,42 @@ Bir `<form>` oluşturmadan önce, `<amp-form>` uzantısı için gerekli komut do
 
 Temel bir form örneğini burada bulabilirsiniz:
 
-<!-- ampproject.org üzerinde oluşturulan yerleştirilmiş örnek -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # Özellikler
 
@@ -165,7 +193,7 @@ Bu etkinlikler, [`on` özelliği](https://www.ampproject.org/docs/fundamentals/s
 
 ```
 
-[Tam örneği burada](../../examples/forms.amp.html) görebilirsiniz.
+[Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
 
 # Giriş etkinlikleri
 
@@ -173,16 +201,31 @@ AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gö
 
 Örneğin, giriş değişikliğinde (bir anketi yanıtlamak için bir radyo düğmesinin seçilmesi, bir sayfanın çevirisini yapmak için `select` girişinden bir dilin seçilmesi vb.) bir form gönderilmesi yaygın bir kullanım örneğidir.
 
-<!-- ampproject.org üzerinde oluşturulan yerleştirilmiş örnek -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-[Tam örneği burada](../../examples/forms.amp.html) görebilirsiniz.
+[Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
 
 # Analiz tetikleyicileri
 
@@ -340,7 +383,7 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 {% endraw %}
 ```
 
-[Tam örneği burada](../../examples/forms.amp.html) görebilirsiniz.
+[Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
 
 # Veri bağlama ile bir başarılı yanıtı oluşturmak için
 
@@ -413,16 +456,48 @@ Formunuzda özel doğrulamayı belirtmek için:
 
 Aşağıda bir örnek verilmiştir:
 
-<!-- ampproject.org üzerinde oluşturulan yerleştirilmiş örnek -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Daha fazla örnek için [examples/forms.amp.html](../../examples/forms.amp.html) sayfasına bakın.
+Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) sayfasına bakın.
 
 Doğrulama mesajlarında, öğenizin içinde herhangi bir metin içeriği yoksa AMP, öğenizi tarayıcının varsayılan doğrulama mesajıyla doldurur. Yukarıdaki örnekte `name5` girişi boş olduğunda ve doğrulama işlemi başlatıldığında (ör. kullanıcı, formu göndermeyi denediğinde) AMP, `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` öğesini, tarayıcının doğrulama mesajıyla doldurur ve bu `span` öğesini kullanıcıya gösterir.
 
@@ -457,7 +532,7 @@ HTML5 doğrulaması, yalnızca sayfada bulunan bir değerin belirli bir kalıpla
 Burada, bir örneği görebilirsiniz:
 ```html
 {% raw %}<h4>Doğrulama örneği</h4>
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
   <fieldset>
     <label>
       <span>E-posta</span>
@@ -512,11 +587,11 @@ Bir hata yanıtının doğrulama için nasıl görüneceği burada gösterilmekt
 
 `verify-xhr` isteğinden bir alanı kaldırmak için giriş öğesine `no-verify` özelliğini ekleyin.
 
-Daha fazla örnek için [examples/forms.amp.html](../../examples/forms.amp.html) sayfasına bakın.
+Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) sayfasına bakın.
 
 # Değişken değişiklikleri
 
-`amp-form` uzantısı, gizli olan ve `data-amp-replace` özelliğine sahip girişler için [platform değişken değişikliklerine](../../spec/amp-var-substitutions.md) olanak tanır. Her form gönderiminde `amp-form`, formun içindeki tüm `input[type=hidden][data-amp-replace]` öğelerini bulur ve değişken değişikliklerini `value` özelliğine uygulayıp bunu, değişikliğin sonucuyla değiştirir.
+`amp-form` uzantısı, gizli olan ve `data-amp-replace` özelliğine sahip girişler için [platform değişken değişikliklerine](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) olanak tanır. Her form gönderiminde `amp-form`, formun içindeki tüm `input[type=hidden][data-amp-replace]` öğelerini bulur ve değişken değişikliklerini `value` özelliğine uygulayıp bunu, değişikliğin sonucuyla değiştirir.
 
 Her bir girişte, `data-amp-replace` öğesinde kullanılan boşlukla ayrılmış değişken dizesini belirterek her değişiklik için kullandığınız değişkenleri sağlamanız gerekir (aşağıdaki örneğe bakın). AMP, açıkça belirtilmeyen değişkenleri değiştirmez.
 
@@ -551,7 +626,7 @@ Kullanıcı formu göndermeyi denedikten sonra, AMP değişkenleri çözmeye ve 
 
 Yukarıdaki `CANONICAL_HOSTNAME` öğesinin, ilk alandaki `data-amp-replace` özelliği aracılığıyla beyaz listeye alınmadığı için değiştirilmemiş olmasına dikkat edin.
 
-Değişiklikler, bir sonraki gönderimde gerçekleşir. [AMP'deki değişken değişiklikleri](../../spec/amp-var-substitutions.md) hakkında daha fazla bilgi edinin.
+Değişiklikler, bir sonraki gönderimde gerçekleşir. [AMP'deki değişken değişiklikleri](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) hakkında daha fazla bilgi edinin.
 
 # Çoklu dolgular
 
@@ -601,7 +676,7 @@ Aşağıdaki sınıflar, [kullanıcı etkileşimi sözde sınıfları için bir 
 
 Yayıncılar, girişlerini ve alan ayarlarını kullanıcı işlemlerine duyarlı olacak (ör. kullanıcı ayrıldıktan sonra sonra geçersiz bir girişi kırmızı bir kenarlık ile vurgulama) biçimde şekillendirmek için bu sınıfları kullanabilir.
 
-Bunların kullanımıyla ilgili [tam örneği burada](../../examples/forms.amp.html) bulabilirsiniz.
+Bunların kullanımıyla ilgili [tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) bulabilirsiniz.
 
 [tip type="success"]
 AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş AMP formu öğeleri için [AMP Start](https://ampstart.com/components#form-elements) sayfasını ziyaret edin.

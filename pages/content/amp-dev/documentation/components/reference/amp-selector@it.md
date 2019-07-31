@@ -97,7 +97,7 @@ Esempio:
 
 ## Annullare le selezioni
 
-Per fare in modo che tutte le selezioni vengano annullate quando l'utente fa clic o tocca un elemento, imposta l'attributo di azione [`on`](../../spec/amp-actions-and-events.md) sull'attributo e specifica l'`id` del selettore AMP con il metodo di azione `clear`.
+Per fare in modo che tutte le selezioni vengano annullate quando l'utente fa clic o tocca un elemento, imposta l'attributo di azione [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) sull'attributo e specifica l'`id` del selettore AMP con il metodo di azione `clear`.
 
 Esempio:
 
@@ -151,7 +151,7 @@ guarda le demo dal vivo sul sito [AMP By Example](https://ampbyexample.com/compo
 Gli eventi possono attivare delle azioni in altri componenti AMP utilizzando l'attributo `on`,
 ad esempio `on="select: my-tab.show"`
 
-Ulteriori informazioni su [azioni ed eventi AMP](../../spec/amp-actions-and-events.md).
+Ulteriori informazioni su [azioni ed eventi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 <table>
   <tr>

@@ -127,7 +127,7 @@ Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`](https://www.ampp
 `amp-lightbox` bileşeninin AMPHTML reklamlarında kullanılması [deneme aşamasındadır](https://www.ampproject.org/docs/reference/experimental) ve etkin bir şekilde geliştirilmektedir. AMPHTML reklamlarında `amp-lightbox` özelliğini kullanmak [`amp-lightbox-a4a-proto` denemesini etkinleştirin](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-`amp-lightbox` özelliğinin normal AMP dokümanlarında kullanılması ile [AMPHTML'de yazılmış reklamlar](../amp-a4a/amp-a4a-format.md) arasında bazı farklar vardır:
+`amp-lightbox` özelliğinin normal AMP dokümanlarında kullanılması ile [AMPHTML'de yazılmış reklamlar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) arasında bazı farklar vardır:
 
 ### close-button gerektirir
 

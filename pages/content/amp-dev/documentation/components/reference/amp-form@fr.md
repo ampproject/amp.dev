@@ -60,14 +60,42 @@ Avant de créer une balise `<form>`, vous devez inclure le script requis pour l'
 
 Voici un exemple de formulaire de base :
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # Attributs
 
@@ -165,7 +193,7 @@ Par exemple, le code suivant écoute les événements `submit-success` et `submi
 
 ```
 
-Pour afficher l'intégralité du code, [cliquez ici](../../examples/forms.amp.html).
+Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Événements de saisie
 
@@ -173,16 +201,31 @@ AMP expose les événements `change` et `input-debounced` sur les éléments `<i
 
 Par exemple, il est courant d'envoyer un formulaire lors de la modification d'une entrée : sélection d'une case d'option pour répondre à un sondage, choix d'une langue dans une entrée `select` pour traduire une page, etc.
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Pour afficher l'intégralité du code, [cliquez ici](../../examples/forms.amp.html).
+Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Déclencheurs d'analyse
 
@@ -338,7 +381,7 @@ Vous pouvez afficher les réponses dans un modèle référencé défini précéd
 </form>
 {% endraw %}[/sourcecode]
 
-Pour afficher l'intégralité du code, [cliquez ici](../../examples/forms.amp.html).
+Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Afficher une réponse positive avec la liaison de données
 
@@ -411,16 +454,48 @@ Pour spécifier une validation personnalisée sur votre formulaire, procédez co
 
 Exemple :
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](../../examples/forms.amp.html).
+Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 Dans le cas des messages de validation, si votre élément est dépourvu de contenu textuel, AMP y indique le message de validation par défaut du navigateur. Dans l'exemple ci-dessus, lorsque l'entrée `name5` est vide et que la validation est lancée (en d'autres termes, l'utilisateur a essayé d'envoyer le formulaire), AMP indique `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` avec le message de validation du navigateur et présente cet élément `span` à l'utilisateur.
 
@@ -455,7 +530,7 @@ Les commentaires fournis par la validation HTML5 reposent uniquement sur les in
 Exemple :
 [sourcecode:html]
 {% raw %}<h4>Verification example</h4>
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_ blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_ blank"{% endif %}>
 
   <fieldset>
     <label>
@@ -511,11 +586,11 @@ Voici un aperçu d'une réponse d'erreur pour la validation :
 
 Pour supprimer un champ de la requête `verify-xhr`, ajoutez l'attribut `no-verify` à l'élément d'entrée.
 
-Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](../../examples/forms.amp.html).
+Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Substitutions de variables
 
-L'extension `amp-form` autorise les [substitutions de variables de plate-forme](../../spec/amp-var-substitutions.md) pour les entrées qui sont masquées et qui comportent l'attribut `data-amp-replace`. À chaque envoi de formulaire, `amp-form` recherche tous les attributs `input[type=hidden][data-amp-replace]` dans le formulaire, applique des substitutions de variables à son attribut `value`, puis le remplace par le résultat de la substitution.
+L'extension `amp-form` autorise les [substitutions de variables de plate-forme](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) pour les entrées qui sont masquées et qui comportent l'attribut `data-amp-replace`. À chaque envoi de formulaire, `amp-form` recherche tous les attributs `input[type=hidden][data-amp-replace]` dans le formulaire, applique des substitutions de variables à son attribut `value`, puis le remplace par le résultat de la substitution.
 
 Vous devez fournir les variables que vous utilisez pour chaque substitution sur chaque entrée en spécifiant une chaîne des variables utilisées dans `data-amp-replace` (voir l'exemple ci-dessous). Les variables de cette chaîne doivent être séparées par des espaces. AMP ne remplace pas les variables qui ne sont pas spécifiées explicitement.
 
@@ -550,7 +625,7 @@ Une fois que l'utilisateur tente d'envoyer le formulaire, AMP essaie de résoudr
 
 Notez que l'élément `CANONICAL_HOSTNAME` ci-dessus n'a pas été remplacé, car il ne figurait pas dans la liste blanche jusqu'à l'attribut `data-amp-replace` dans le premier champ.
 
-Les remplacements seront effectués lors de chaque envoi ultérieur. En savoir plus sur les [substitutions de variables dans AMP](../../spec/amp-var-substitutions.md)
+Les remplacements seront effectués lors de chaque envoi ultérieur. En savoir plus sur les [substitutions de variables dans AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
 
 # Polyfills
 
@@ -600,7 +675,7 @@ Les classes suivantes constituent un [polyfill pour les pseudo-classes d'interac
 
 Ces classes permettent aux éditeurs d'appliquer un style à leurs entrées et jeux de champs, de telle sorte qu'ils interagissent avec les actions des utilisateurs (il peut s'agir, par exemple, de la mise en évidence d'une entrée non valide avec une bordure rouge après que l'utilisateur l'a floutée).
 
-Pour en savoir plus sur l'utilisation de ces classes, consultez l'[intégralité du code](../../examples/forms.amp.html).
+Pour en savoir plus sur l'utilisation de ces classes, consultez l'[intégralité du code](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 [tip type="success"]
 Rendez-vous sur [AMP Start](https://ampstart.com/components#form-elements) pour découvrir des éléments de formulaire mis en forme et réactifs que vous pouvez utiliser dans vos pages AMP.

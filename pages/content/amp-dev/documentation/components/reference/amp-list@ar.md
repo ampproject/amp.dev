@@ -61,24 +61,26 @@ teaser:
 * السمة `template` التي تشير إلى معرّف `template` حالي أو إلى عنصر `script` حالي
 * `template` أو عنصر `script` مدمج مباشرة داخل العنصر `amp-list`
 
-راجِع [نماذج رمز HTML لصفحات AMP](../../spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
+راجِع [نماذج رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
 
 *مثال: عرض قائمة ديناميكية*
 
 في المثال التالي، نسترد بيانات JSON التي تحتوي على عناوين URL وعناوين رئيسية ونعرض المحتوى في [نموذج amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) مدمج.
 
-<!--مثال مدمج - للعرض في ampproject.org -->
-
-<div>
-<amp-iframe height="259"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 في ما يلي ملف JSON الذي استخدمناه:
 
@@ -135,17 +137,27 @@ amp-list div[role="list"] {
 
 في المثال التالي، نعرض قائمة بصور وعناوين. يعرض "وقت تشغيل AMP" عنصر overflow لأن محتوى `<amp-list>` يتطلب مساحة أكبر من المساحة المتاحة.
 
-<!--مثال مدمج - للعرض في ampproject.org -->
-
-<div>
-<amp-iframe height="213"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 في ما يلي ترميز CSS للعنصر `overflow`:
 
@@ -305,7 +317,7 @@ amp-list div[role="list"] {
 
 ```
 
-للحصول على أمثلة عملية، يرجى الاطّلاع على [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) و[test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+للحصول على أمثلة عملية، يرجى الاطّلاع على [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) و[test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### السمات
 
@@ -418,7 +430,7 @@ amp-list div[role="list"] {
 ## الاستبدالات
 
 يتيح `<amp-list>` جميع استبدالات متغيرات عناوين URL القياسية.
-اطّلِع على [دليل الاستبدالات](../../spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
+اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
 
 مثال:
 ```html
