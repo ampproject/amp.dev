@@ -41,6 +41,8 @@ class AutoDependencyInjector(object):
     if content is None:
       return False
 
+    content = content.encode('utf-8')
+
     # Check that it's not a StaticDocument
     if isinstance(doc, static_document.StaticDocument):
       return False
