@@ -33,12 +33,13 @@ We hope you'll become an ongoing participant in our open source community, but w
 To get started with contributing code to the AMP Project read through [the CONTRIBUTING file](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), which includes details of the process by which a feature or bug fix goes from concept to submission and how you can participate in technical designs and discussions.  If you're new to open source we have some [tips for getting started](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
 
 ### Providing content contributions to AMP 
+Content on [amp.dev](https://amp.dev) is how developers learn to build successful web experiences with AMP. We appreciate you're interest in updating, creating, and requesting useful documentation! 
 
 #### Helping with documentation
 
-Documentation is important for the entire AMP community, and we would appreciate your help in making our documentation better!  We've got all sorts of documentation--examples for users of AMP, docs to help AMP Project contributors, etc.
+ Documentation? We've got all sorts -- examples for users of AMP, tutorials to get developers started, and guides to explore AMP's features. 
 
-[amp.dev](https://amp.dev) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!)
+[amp.dev](https://amp.dev) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!
 
 Get started by reading our [content contribution guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/contribute-documentation.md', locale=doc.locale).url.path}}?format=websites).
 
