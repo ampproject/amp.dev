@@ -35,3 +35,7 @@ If you see out of date, misplaced, or incorrect information, you can fix it! We 
 ## Writing content 
 
 Want a guide or tutorial but don’t see it on amp.dev? You can write it! Start by reviewing the [types of content we accept](https://docs.google.com/document/d/1C3ZyrqybWkL7co0BzC5fkgGjaT1Bv1uvrDYFFmZ26NQ/edit) and [submitting a content proposal](https://docs.google.com/document/d/1crPU7KoFYqpXAewYzbQm7RkU7hz-UiYEcqE8cso7Yc4/edit#heading=h.vg7gibbb5yw). Once your proposal has been accepted, get familiar with the[ AMP terminology guide](https://docs.google.com/document/d/1esM3fMlh_n8chjAyPYm6ljDjb2j0wjBHUqJuIFAP01g/edit?ts=5d2e0677#) and [documentation formatting guidelines](https://docs.google.com/document/d/1esM3fMlh_n8chjAyPYm6ljDjb2j0wjBHUqJuIFAP01g/edit#heading=h.4poc86duk583). Look[ here for information on contributing examples](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).   
+
+## Creating samples 
+
+Create something cool and useful? Want to share it with the AMP community? Please do so by creating [an AMP sample]({{g.doc('/content/amp-dev/documentation/examples.md', locale=doc.locale).url.path}}?format=websites). Get started by reading our [sample contribution guide](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md). 
