@@ -249,6 +249,10 @@ author: aghassemi
                           autosuggest: {
                             query: event.targetOption,
                             showDropdown: false
+                          },
+                          products: {
+                            listSrc: '/documentation/examples/api/products?searchProduct='+ event.targetOption +'&sort='+ products.sortChoiceValue +'&searchColor='+ products.searchColor +'&_=RANDOM',
+                            searchProduct: event.targetOption
                           }
                         }),
                         autosuggest-list.hide"
