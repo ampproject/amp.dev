@@ -19,6 +19,10 @@ html, body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 240px) {
+    font-size: 14px;
+  }
 }
 
 /* Used to jump before an anchor and not beneath it */
