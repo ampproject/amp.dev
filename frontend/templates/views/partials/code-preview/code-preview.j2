@@ -21,11 +21,29 @@
       "{{ preview.url }}"
     </script>
   </amp-state>
-  <div class="ap-o-code-preview-top-preview">
+
+  <amp-animation id="animation{{ preview.index }}" layout="nodisplay">
+    <script type="application/json">
+    [
+      {
+        "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} amp-iframe",
+        "duration": 650,
+        "fill": "backwards",
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "keyframes": {
+          "opacity": ["0", "1"],
+          "transform": ["rotate(-75deg)", "rotate(0)"]
+        }
+      }
+    ]
+    </script>
+  </amp-animation>
+
+  <div class="ap-o-code-preview-top-preview ap-o-code-preview-top-preview-{{ preview.index }}">
 
     <div class="ap-o-code-preview-controls">
       <button class="ap-o-code-preview-controls-button"
-              on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}})">
+              on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}}),animation{{ preview.index }}.start">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
