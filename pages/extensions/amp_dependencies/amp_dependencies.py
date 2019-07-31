@@ -29,15 +29,15 @@ class AmpDependencies(object):
     return '<AmpDependencies>'
 
   def add(self, name, version=None, type='element', no_version_warn=False):
+    if version is None and not no_version_warn:
+      self._pod.logger.warning('Adding an AMP dependency ({}) without a specific version is not recommended.'.format(name))
+
     _version, dep_type = self._dependencies.get(name, (version, None))
     if not _version == version and _version is not None and version is not None:
         raise RuntimeError('Using two versions ({}, {}) of the same dependency ({}) is not supported.'.format(version, _version, name))
     elif _version is not None and dep_type:
         # component is already known
         return ''
-
-    if version is None and not no_version_warn:
-      self._pod.logger.warning('Adding an AMP dependency ({}) without a specific version is not recommended.'.format(name))
 
     self._dependencies[name] = (version, type)
     return ''
