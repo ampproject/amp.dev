@@ -97,7 +97,7 @@ Ejemplo:
 
 ## Borrar selecciones
 
-Para borrar todas las selecciones cuando se toca o se hace clic en un elemento, define el atributo de acción [`on`](../../spec/amp-actions-and-events.md) en el elemento y especifica el `id` de AMP Selector con el método de acción `clear`.
+Para borrar todas las selecciones cuando se toca o se hace clic en un elemento, define el atributo de acción [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) en el elemento y especifica el `id` de AMP Selector con el método de acción `clear`.
 
 Ejemplo:
 
@@ -151,7 +151,7 @@ Puedes ver ejemplos en [AMP By Example](https://ampbyexample.com/components/am
 Los eventos pueden activar acciones en otros componentes de AMP mediante el atributo `on`,
 por ejemplo, `on="select: my-tab.show"`.
 
-Más información sobre [las acciones y los eventos de AMP](../../spec/amp-actions-and-events.md)
+Más información sobre [las acciones y los eventos de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})
 
 <table>
   <tr>

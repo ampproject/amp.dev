@@ -111,7 +111,7 @@ Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero pr
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Richiede l'estensione <code>amp-video-docking</code>.</strong> Se questo attributo è presente e il video viene riprodotto manualmente, il video viene "ridotto a icona" e fissato a un angolo o un elemento quando l'utente scorre all'esterno dell'area di visualizzazione del componente video.
-            Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentazione relativa all'estensione amp-video-docking</a>.</td>
+            Per ulteriori informazioni, consulta la <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentazione relativa all'estensione amp-video-docking</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (facoltativo)</strong></td>

@@ -58,20 +58,26 @@ Anda dapat menentukan template melalui salah satu dari dua cara berikut:
 * atribut `template` yang mereferensikan ID dari elemen `template` atau `script` yang sudah ada.
 * elemen `template` atau `script` yang bersarang langsung di dalam elemen `amp-list`.
 
-Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](../../spec/amp-html-templates.md).
+Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Contoh: Menampilkan daftar dinamis*
 
 Pada contoh berikut, kami mengambil data JSON yang berisi URL dan judul, dan merender konten dalam [template amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) bersarang.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Berikut ini file JSON yang kami gunakan:
 
@@ -128,14 +134,27 @@ Secara opsional, elemen `<amp-list>` dapat memuat elemen dengan atribut `overflo
 
 Pada contoh berikut, kami menampilkan daftar gambar dan judul. Karena konten `<amp-list>` memerlukan lebih banyak ruang dibandingkan ruang yang tersedia, AMP Runtime akan menampilkan elemen overflow.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Berikut ini CSS untuk `overflow`:
 
@@ -293,7 +312,7 @@ Kami memperkenalkan eksperimen `amp-list-load-more` sebagai implementasi untuk p
 
 ```
 
-Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Atribut
 
@@ -404,7 +423,7 @@ Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/com
 ## Substitusi
 
 `<amp-list>` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](../../spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Misalnya:
 ```html

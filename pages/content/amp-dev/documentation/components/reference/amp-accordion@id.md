@@ -60,14 +60,26 @@ Komponen `amp-accordion` memungkinkan Anda menampilkan bagian konten yang dapat 
 
 Dalam contoh ini, kami menampilkan tiga bagian. Bagian ketiga diluaskan saat halaman dimuat.  Selain itu, kami tidak mempertahankan status yang diciutkan/diluaskan dengan menetapkan `disable-session-states`.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="395" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaccordion.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-accordion"]
+```html
+<amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
+  <section>
+    <h2>Section 1</h2>
+    <p>Content in section 1.</p>
+  </section>
+  <section>
+    <h2>Section 2</h2>
+    <div>Content in section 2.</div>
+  </section>
+  <section expanded>
+    <h2>Section 3</h2>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/squirrel.jpg"
+      width="320"
+      height="256"></amp-img>
+  </section>
+</amp-accordion>
+```
+[/example]
 
 [tip type="success"]
 Untuk melihat demo `amp-accordion` lainnya, buka [AMP By Example](https://ampbyexample.com/components/amp-accordion/).

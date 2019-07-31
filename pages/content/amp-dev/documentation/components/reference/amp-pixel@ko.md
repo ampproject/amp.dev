@@ -85,7 +85,7 @@ teaser:
 ## 대체
 
 `amp-pixel`을 사용하면 모든 표준 URL 변수를 대체할 수 있습니다.
-자세한 정보는 [대체 가이드](../spec/amp-var-substitutions.md)를 참조하세요.
+자세한 정보는 [대체 가이드](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md)를 참조하세요.
 
 다음 예에서는 `https://foo.com/pixel?0.8390278471201`와 같은 사이트에 요청을 할 수 있으며 여기서는 노출할 때마다 RANDOM 값이 무작위로 생성됩니다.
 

@@ -62,19 +62,23 @@ teaser:
 
 #### مثال
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-<amp-iframe height="293"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.basic.embed.html"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  layout="responsive"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.webm"
+    type="video/webm" />
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+    type="video/mp4" />
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## التحليلات
 
@@ -108,7 +112,7 @@ teaser:
   <tr>
     <td width="40%"><strong>dock</strong></td>
     <td><strong>تتطلب هذه السمة الإضافة <code>amp-video-docking</code>.</strong> في حال توفّر هذه السمة وتشغيل الفيديو يدويًا، سيتم "تصغير" الفيديو وتثبيته في زاوية أو عنصر عند تمرير المستخدم إلى خارج المنطقة المرئية لمكّوِن الفيديو.
-      لمزيد من التفاصيل، راجع <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">المستندات المتعلقة بإضافة الإرساء نفسها</a>.</td>
+      لمزيد من التفاصيل، راجع <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">المستندات المتعلقة بإضافة الإرساء نفسها</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>loop</strong></td>

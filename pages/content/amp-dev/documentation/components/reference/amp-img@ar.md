@@ -53,7 +53,7 @@ limitations under the License.
 يجب إعطاء مكونات `amp-img`، شأنها شأن مثل جميع موارد AMP التي يتم جلبها من الخارج، حجمًا صريحًا (كما في `width` / `height`) بشكل مسبق، بحيث يمكن التعرّف على نسبة العرض إلى الارتفاع بدون جلب الصورة. يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 
 [tip type="read-on"]
-تعرّف على المزيد من المعلومات عن التنسيقات في مواصفات [نظام تنسيقات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) و[التنسيقات المعتمدة](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+تعرّف على المزيد من المعلومات عن التنسيقات في مواصفات [نظام تنسيقات رمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) و[التنسيقات المعتمدة](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 
 [/tip]
 
@@ -61,12 +61,16 @@ limitations under the License.
 
 في المثال التالي، نعرض صورة تستجيب لحجم إطار العرض عن طريق تعيين `layout=responsive`.  فالصورة تمتد وتتقلص وفقًا لنسبة العرض إلى الارتفاع التي تحددها سماتا `width` و `height`.
 
-<div>
-<amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 
@@ -74,18 +78,26 @@ limitations under the License.
 
 [/tip]
 
-في حال تعذُّر تحميل المورد الذي يطلبه المكوِّن `amp-img`، ستكون المساحة فارغة ما لم يتم توفير عنصر [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) الثانوي. يتم تنفيذ العنصر الاحتياطي على التنسيق الأولي أما تغييرات src اللاحقة بعد التنسيق الأولي (من خلال تغيير الحجم + srcset مثلاً) لن يكون لها عنصر احتياطي منعًا للآثار المترتبة على الأداء.
+في حال تعذُّر تحميل المورد الذي يطلبه المكوِّن `amp-img`، ستكون المساحة فارغة ما لم يتم توفير عنصر [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) الثانوي. يتم تنفيذ العنصر الاحتياطي على التنسيق الأولي أما تغييرات src اللاحقة بعد التنسيق الأولي (من خلال تغيير الحجم + srcset مثلاً) لن يكون لها عنصر احتياطي منعًا للآثار المترتبة على الأداء.
 
 # مثال: تحديد صورة احتياطية
 
 في المثال التالي، إذا كان المتصفح لا يتيح عمل WebP، سيتم عرض صورة JPG الاحتياطية:
 
-<div>
-<amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 يمكن تعيين لون خلفية أو تأثير مرئي آخر لعنصر نائب باستخدام المحدِّد CSS والنمط على العنصر نفسه.
 
@@ -178,16 +190,16 @@ amp-img {
 
 على سبيل المثال، بدلاً من تحديد `width="900"` و`height="675"`، يمكنك فقط تحديد `width="1.33"` و`height="1"`.
 
-<div>
-<amp-iframe height="193"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # تعيين ملفات مصدر متعددة للحصول على درجات دقة للشاشات المختلفة
 

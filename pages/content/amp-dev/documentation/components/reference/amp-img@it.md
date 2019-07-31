@@ -50,36 +50,48 @@ Il runtime può decidere di ritardare o dare priorità al caricamento delle riso
 I componenti `amp-img`, come tutte le risorse AMP recuperate dall'esterno, devono già avere una dimensione esplicita (come `width`/`height`), in modo che le proporzioni possano essere riconosciute senza dover recuperare l'immagine. L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
 
 [tip type="read-on"]
-Ulteriori informazioni sui layout nelle specifiche [Sistema layout AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) e in [Layout supportati](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Ulteriori informazioni sui layout nelle specifiche [Sistema layout AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) e in [Layout supportati](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
 [/tip]
 
 # Esempio: visualizzazione di un'immagine responsive
 
 Nel seguente esempio viene mostrata un'immagine che si adatta alle dimensioni dell'area visibile con le impostazioni `layout=responsive`.  L'immagine si allarga e si restringe in base alle proporzioni specificate da `width` e `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 Ulteriori informazioni sulle pagine AMP nella guida [Creazione di pagine AMP responsive](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
 [/tip]
 
-Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.
+Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.
 
 # Esempio: specificare un'immagine di riserva
 
 Nel seguente esempio, se il browser non supporta WebP verrà visualizzata l'immagine JPG di riserva:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Utilizzando il selettore CSS e lo stile sull'elemento stesso, possono essere impostati un colore di sfondo segnaposto o un altro elemento visivo.
 
@@ -166,12 +178,16 @@ Per le immagini responsive, `width` e `height` non devono necessariamente corris
 
 Ad esempio, invece di specificare `width="900"` e `height="675"`, puoi specificare `width="1.33"` e `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Impostazione di più file di origine per diverse risoluzioni dello schermo
 

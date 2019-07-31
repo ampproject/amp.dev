@@ -59,14 +59,22 @@ limitations under the License.
 
 如果用户滑动、使用箭头键或点击可选导航箭头，则轮播界面会在两个项之间前进。
 
-<!--嵌入式示例 - 在 ampproject.org 中展示-->
-
-<div>
-  <amp-iframe height="313" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="展开" overflow="" tabindex="0" role="button">显示完整代码</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel width="450"
+  height="300">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]
 
 # 前往某张特定幻灯片
 
@@ -74,14 +82,51 @@ limitations under the License.
 
 在以下示例中，我们提供了一个包含三张图片的轮播界面，轮播界面下方是预览按钮。当用户点击其中一个按钮时，系统会显示相应的轮播项。
 
-<!--嵌入式示例 - 在 ampproject.org 中展示-->
-
-<div>
-  <amp-iframe height="878" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.advance-slide.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="展开" overflow="" tabindex="0" role="button">显示完整代码</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel id="carousel-with-preview"
+    width="450"
+    height="300"
+    layout="responsive"
+    type="slides">
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="apples"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="lemons"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="blueberries"></amp-img>
+  </amp-carousel>
+  <div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+        width="60"
+        height="40"
+        alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+        width="60"
+        height="40"
+        alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+        width="60"
+        height="40"
+        alt="blueberries"></amp-img>
+    </button>
+  </div>
+```
+[/example]
 
 # 属性
 
@@ -137,13 +182,30 @@ limitations under the License.
       <td width="40%"><strong>loop（可选）</strong></td>
       <td>允许用户跳过第一个项或最后一个项。必须至少有 3 张幻灯片才能循环播放。<code>loop</code> 属性仅适用于具有 <code>type=slides</code> 属性的轮播界面。
         <em>示例：显示带有控制、循环播放和延迟自动播放功能的幻灯片轮播界面。</em>
-        <!--嵌入式示例 - 在 ampproject.org 中展示-->
-        <div>
-          <amp-iframe height="446" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.controls.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-            <div aria-label="展开" overflow="" tabindex="0" role="button">显示完整代码</div>
-            <div placeholder=""></div>
-          </amp-iframe>
-        </div></td>
+
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel type="slides"
+  width="450"
+  height="300"
+  controls
+  loop
+  {% if not format=='email'%}  autoplay
+  delay="3000"{% endif %}
+  data-next-button-aria-label="Go to next slide"
+  data-previous-button-aria-label="Go to previous slide">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]</td>
       </tr>
       <tr>
         <td width="40%"><strong>常见属性</strong></td>

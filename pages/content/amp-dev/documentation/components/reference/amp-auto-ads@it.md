@@ -80,8 +80,8 @@ devono essere specificati nel tag.
 
 ## Reti pubblicitarie supportate
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (sperimentale)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (sperimentale)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Attributi
 

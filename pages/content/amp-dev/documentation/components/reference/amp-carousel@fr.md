@@ -58,14 +58,22 @@ Le carrousel se compose d'un nombre arbitraire d'éléments, ainsi que de flèch
 
 Le carrousel change d'élément lorsque l'utilisateur balaie l'écran, utilise les touches fléchées ou clique sur une flèche de navigation facultative.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="313" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel width="450"
+  height="300">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]
 
 # Accéder à une diapositive spécifique
 
@@ -73,14 +81,51 @@ Si vous définissez une méthode pour l'attribut `on` d'un élément sur `tap:ca
 
 L'exemple suivant illustre un carrousel de trois images, sous lequel sont disposés des boutons d'aperçu. Lorsqu'un utilisateur clique sur l'un des boutons, l'élément de carrousel correspondant s'affiche.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="878" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.advance-slide.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel id="carousel-with-preview"
+    width="450"
+    height="300"
+    layout="responsive"
+    type="slides">
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="apples"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="lemons"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="blueberries"></amp-img>
+  </amp-carousel>
+  <div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+        width="60"
+        height="40"
+        alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+        width="60"
+        height="40"
+        alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+        width="60"
+        height="40"
+        alt="blueberries"></amp-img>
+    </button>
+  </div>
+```
+[/example]
 
 # Attributs
 
@@ -139,13 +184,30 @@ L'exemple suivant illustre un carrousel de trois images, sous lequel sont dispos
           <td width="40%"><strong>loop (facultatif)</strong></td>
           <td>Permet à l'utilisateur d'aller au-delà du premier ou du dernier élément. Le carrousel doit contenir au moins trois diapositives pour que la lecture en boucle soit effectuée. L'attribut <code>loop</code> s'applique uniquement aux carrousels dont le paramètre est <code>type=slides</code>.
             <em>Exemple : Affiche un carrousel de diapositives avec les attributs "controls", "looping" et "autoplay" différé.</em>
-            <!--embedded example - displays in ampproject.org -->
-            <div>
-              <amp-iframe height="446" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.controls.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-                <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-                <div placeholder=""></div>
-              </amp-iframe>
-            </div></td>
+
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel type="slides"
+  width="450"
+  height="300"
+  controls
+  loop
+  {% if not format=='email'%}  autoplay
+  delay="3000"{% endif %}
+  data-next-button-aria-label="Go to next slide"
+  data-previous-button-aria-label="Go to previous slide">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]</td>
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>

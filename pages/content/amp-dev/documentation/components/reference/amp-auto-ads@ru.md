@@ -75,8 +75,8 @@ limitations under the License.
 
 ## Поддерживаемые рекламные сети
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (эксперимент)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (эксперимент)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Атрибуты
 

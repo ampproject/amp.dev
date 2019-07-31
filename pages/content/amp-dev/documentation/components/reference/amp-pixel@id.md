@@ -86,7 +86,7 @@ Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/com
 ## Substitusi
 
 Komponen `amp-pixel` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](../spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Pada contoh berikut, permintaan dapat dibuat untuk sesuatu seperti `https://foo.com/pixel?0.8390278471201` di mana nilai RANDOM dibuat secara acak pada setiap tayangan.
 
