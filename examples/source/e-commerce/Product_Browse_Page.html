@@ -42,6 +42,20 @@ author: aghassemi
       <link rel="canonical" href="<% canonical %>">
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
       <style amp-custom>
+          :root {
+            --color-text-light: #fff;
+            --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            --space-1: .5rem;  /* 8px */
+            --space-2: 1rem; /* 16px */
+            --space-3: 1.5rem; /* 24px */
+          }
+          .menu-wrap {
+            display: flex;
+            align-items: center;
+          }
+          .menu-wrap > * {
+            margin: 0 10px;
+          }
           article#preview {
             background: var(--color-text-light);
           }
@@ -89,7 +103,7 @@ author: aghassemi
            text-decoration: none;
            color: #005AF0;
          }
-         label {
+         label[for=sort] {
            margin: 20px;
          }
          .ampstart-btn {
@@ -144,6 +158,8 @@ author: aghassemi
          }
          #info-wrap {
            display: flex;
+           justify-content: space-between;
+           align-items: center;
            overflow: hidden;
            margin: var(--space-2)
          }
@@ -170,8 +186,13 @@ author: aghassemi
             background-color: var(--color-text-light);
             box-shadow: var(--box-shadow-1);
           }
-        .recommendations, .bestsellers, filter-section {
+        .recommendations, .bestsellers, .filter-section {
           margin: var(--space-2);
+        }
+        .filter-section > div:first-of-type {
+          display: flex;
+          justify-content: space-between;
+          margin: 20px;
         }
       </style>
       <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
@@ -194,33 +215,36 @@ author: aghassemi
 
       AMP doesn't support custom Javascript, but you can use CSS3 animations to enrich your page. The expanding text field when the search box is focused is implemented with CSS only. -->
       <div class="header">
-        <a id="sample-menu" on="tap:drawermenu.toggle">
-          <amp-img srcset="/static/samples/img/ic_menu_white_1x_web_24dp.png 1x, /static/samples/img/ic_menu_white_2x_web_24dp.png 2x" width="24" height="24" alt="navigation"></amp-img>
-        </a>
-        <input name="search" type="text" placeholder="Search" on="change:AMP.setState({
-          products: {
-          listSrc: '/documentation/examples/api/products?searchProduct='+ event.value +'&sort='+ products.sortChoiceValue +'&searchColor='+ products.searchColor +'&_=RANDOM',
-          searchProduct: event.value
-        }});
-          input-debounced:
-            AMP.setState({
-              autosuggest: {
-                query: event.value,
-                showDropdown: event.value
-              }
-            }),
-          autosuggest-list.show;
-          tap:
-            AMP.setState({
-              autosuggest: {
-                query: autosuggest.query == null ? '' : autosuggest.query,
-                showDropdown: 'true'
-              }
-            }),
-            autosuggest-list.show"
-          [value]="autosuggest.query || ''"
-          value="">
-        <a id="sample-logo" href="/">Products</a>
+        <div class="menu-wrap">
+          <a id="sample-menu" on="tap:drawermenu.toggle">
+            <amp-img srcset="/static/samples/img/ic_menu_black_1x_web_24dp.png 1x, /static/samples/img/ic_menu_black_2x_web_24dp.png 2x" width="24" height="24" alt="navigation"></amp-img>
+          </a>
+          <input name="search" type="text" placeholder="Search" on="change:AMP.setState({
+            products: {
+            listSrc: '/documentation/examples/api/products?searchProduct='+ event.value +'&sort='+ products.sortChoiceValue +'&searchColor='+ products.searchColor +'&_=RANDOM',
+            searchProduct: event.value
+          }});
+            input-debounced:
+              AMP.setState({
+                autosuggest: {
+                  query: event.value,
+                  showDropdown: event.value
+                }
+              }),
+            autosuggest-list.show;
+            tap:
+              AMP.setState({
+                autosuggest: {
+                  query: autosuggest.query == null ? '' : autosuggest.query,
+                  showDropdown: 'true'
+                }
+              }),
+              autosuggest-list.show"
+            [value]="autosuggest.query || ''"
+            value="">
+          <!--~ Keep this just for creating the change event ~-->
+          <input type="submit" value="Search">
+        </div>
         <div class="suggest">
             <div
               class="autosuggest-container"
@@ -275,8 +299,6 @@ author: aghassemi
               </amp-list>
             </div>
           </div>
-        <!--~ Keep this just for creating the change event ~-->
-        <input type="submit" value="">
       </div>
       <!-- ## A hero slider -->
       <!-- The `amp-carousel` component can be used to quickly create full-bleed, auto-advancing slideshows showcasing your latest promotions. We
