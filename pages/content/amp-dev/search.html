@@ -1,0 +1,149 @@
+---
+$title: Search
+$order: 1
+description: Search amp.dev.
+$view: /views/overview/custom-content.j2
+---
+{% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
+
+
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
+
+{% do doc.amp_dependencies.add('amp-autocomplete', '0.1') %}
+{% do doc.amp_dependencies.add('amp-form', '0.1') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
+{% do doc.amp_dependencies.add('amp-list', '0.1') %}
+{% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
+
+
+
+<section class="ap--container">
+
+  <div class="ap-m-copy ap-m-copy-center-small ap-m-biggy-background">
+    <h1>Search</h1>
+    <p>Try it out.</p>
+    <form action="#" class="search-form" target="_top">
+      <amp-autocomplete filter="substring"
+                        min-characters="0"
+                        on="select:AMP.setState({ tempQuery: event.value, query: event.value, pageNumber: 1 })"
+                        src="/search/autosuggest"
+      >
+        <input on="change:AMP.setState({ tempQuery: event.value })">
+      </amp-autocomplete>
+    </form>
+    <button class=""
+            on="tap: AMP.setState({ query: tempQuery, pageNumber: 1  })">
+      Search
+    </button>
+
+    <div [hidden]="pageNumber < 1" hidden>
+
+      <amp-list [height]="(80) * page.result.pages.length"
+                [src]="'/search/do?q=' + query + '&page=' + pageNumber + '&locale={{ doc.locale }}'"
+                binding="no"
+                class="paged-amp-list"
+                height="10"
+                items="result"
+                layout="fixed-height"
+                load-more="auto"
+                load-more-bookmark="nextUrl"
+                reset-on-refresh
+                single-item>
+        {% raw %}
+        <template type="amp-mustache">
+          <p class="info">Page {{currentPage}} of {{pageCount}}</p>
+
+          <div class="component-item">
+            {{#components}}
+            <div class="item">
+              <a href="{{url}}">
+                <strong class="title">{{title}}</strong>
+                <p class="copy">{{description}}</p>
+              </a>
+              {{#exampleUrl}}
+              <a href="{{exampleUrl}}">Show Example</a>
+              {{/exampleUrl}}
+              {{#playgroundUrl}}
+              <a href="{{playgroundUrl}}">Show example in playground</a>
+              {{/playgroundUrl}}
+            </div>
+            {{/components}}
+          </div>
+
+          <div class="items">
+            {{#pages}}
+            <div class="item">
+              <a href="{{url}}">
+                <strong class="title">{{title}}</strong>
+                <p class="copy">{{description}}</p>
+              </a>
+            </div>
+            {{/pages}}
+          </div>
+        </template>
+        <div overflow>
+          <button>Show more</button>
+        </div>
+        {% endraw %}
+
+        <amp-list-load-more load-more-failed>
+          ERROR
+        </amp-list-load-more>
+
+        <amp-list-load-more load-more-end>
+          END
+        </amp-list-load-more>
+
+      </amp-list>
+    </div>
+
+    <!-- Search result is needed in amp list and amp bind. So add the same URL as state. Amp will only load it once -->
+    <amp-state [src]="'/search/do?q=' + query + '&page=' + pageNumber + '&locale={{ doc.locale }}'"
+               id="page">
+    </amp-state>
+    <amp-state id="pageNumber">
+      <script type="application/json">
+        0
+      </script>
+    </amp-state>
+    <amp-state id="tempQuery">
+      <script type="application/json">
+        ""
+      </script>
+    </amp-state>
+    <amp-state id="query">
+      <script type="application/json">
+        ""
+      </script>
+    </amp-state>
+  </div>
+
+  <div class="ap--divider"></div>
+
+</section>
+
+
+<section [hidden]="pageNumber > 0" class="ap--container">
+
+  <div class="ap-m-copy ap-m-copy-center-small ap-m-biggy-background">
+    <h1>Important AMP components</h1>
+    <p>Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it.</p>
+  </div>
+
+  <div class="ap--divider"></div>
+
+</section>
+
+<section [hidden]="pageNumber > 0" class="ap--container">
+
+  <div class="ap-m-copy no-margin ap-m-copy-center-small ap-m-biggy-background">
+    <h1>Popular Articles</h1>
+    <p>These design principles are meant to guide the ongoing design and development of AMP. They should help us make internally consistent decisions.</p>
+  </div>
+
+  <div class="ap--divider"></div>
+
+
+</section>
