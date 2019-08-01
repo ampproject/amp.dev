@@ -4,7 +4,7 @@
 
 
 
-<amp-state id="filter" class="" layout="container" hidden="" aria-hidden="true">
+<amp-state id="filter" class="" hidden="" aria-hidden="true">
   <script type="application/json">
   {
     "level": "[= level =]"
@@ -40,10 +40,12 @@
     <h5 class="disabled-headline">Expert mode off</h5>
     [% endif %]
   </div>
+  <div class="info-button" on="tap:AMP.setState({visible: !visible})" role="button" tabindex="0">
   {% do doc.icons.useIcon('/icons/questionmark.svg') %}
-  <svg
-  on="tap:AMP.setState({visible: !visible})">
-  ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use></svg>
+    <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use>
+    </svg>
+  </div>
   <div [class]="visible ? 'show-tip ap-m-tip ap-m-tip-default' : 'hide-tip'" class="hide-tip">
     <div class="ap-m-tip-content">
       <h4>Expertmode</h4>
