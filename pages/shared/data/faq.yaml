@@ -576,8 +576,10 @@ platform_and_vendor_partners:
         url: https://github.com/Kentico/kentico-amp
       - label: Marfeel
         url: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
+      - label: Quintype
+        url: https://www.quintype.com/
       - label: Rabbit
-        url: https://gomobile.jp/rabbit/
+        url: https://gomobile.jp/rabbit/        
       - label: Squarespace
         url: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
       - label: Textpattern
