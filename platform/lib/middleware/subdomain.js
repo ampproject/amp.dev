@@ -56,7 +56,7 @@ class Subdomain {
         subdomainApp = express();
         subdomainApp.use(cors());
         subdomainApp.use(ampCors({
-          'verifyOrigin': false,
+          email: true,
         }));
         subdomainApp.listen(hostConfig.port, () => {
           signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
