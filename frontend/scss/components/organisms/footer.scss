@@ -78,7 +78,7 @@
       @include ico-3;
       @include ico-white;
 
-      @media (max-width: 240px) {
+      @media (max-width: $minDeviceWidth) {
         font-size: 14px;
       }
     }

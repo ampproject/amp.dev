@@ -25,7 +25,7 @@
   z-index: 16;
   background-color: color('white');
 
-  @media (max-width: 240px) {
+  @media (max-width: $minDeviceWidth) {
     padding: 37px 20px 0;
 
     .has-banner ~ & {
@@ -90,7 +90,7 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
-    @media (max-width: 240px) {
+    @media (max-width: $minDeviceWidth) {
       padding: 1rem 0;
     }
 

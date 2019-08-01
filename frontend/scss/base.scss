@@ -11,7 +11,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  min-width: 240px;
+  min-width: $minDeviceWidth;
   color: color('river-bed');
   background-color: #fff;
   font-size: 16px;
@@ -20,7 +20,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 240px) {
+  @media (max-width: $minDeviceWidth) {
     font-size: 14px;
   }
 }
