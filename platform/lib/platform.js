@@ -96,7 +96,7 @@ class Platform {
     this.server.use(require('./middleware/caching.js'));
     this.server.use(cors());
     this.server.use(ampCors({
-      'verifyOrigin': false,
+      email: true,
     }));
     // debug computing times
     this.server.use((req, res, next) => {
