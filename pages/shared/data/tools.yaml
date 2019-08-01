@@ -108,6 +108,16 @@ platforms:
     formats:
       - websites
       - stories
+  - name: Bold by Quintype
+    type: CMS
+    description: Bold by Quintype is a headless CMS built for enterprise publishers with built-in support for AMP.
+    url: https://www.quintype.com
+    image:
+      src: /static/img/tools/quintype.png
+      width: 800
+      height: 400
+    formats:
+      - websites
   - name: Google Search Console
     type: Debugging
     description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
