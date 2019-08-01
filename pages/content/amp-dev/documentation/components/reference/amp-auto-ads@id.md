@@ -75,8 +75,8 @@ Jenis jaringan iklan dan informasi tambahan apa pun (yang diperlukan oleh jaring
 
 ## Jaringan iklan yang didukung
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (eksperimental)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (eksperimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Atribut
 

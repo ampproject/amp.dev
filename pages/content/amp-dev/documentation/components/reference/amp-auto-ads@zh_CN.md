@@ -73,8 +73,8 @@ limitations under the License.
 
 ## 支持的广告联盟
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick（实验性）](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 属性
 

@@ -59,20 +59,26 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 * 기존 `template` 또는 `script` 요소의 ID를 참조하는 `template` 속성
 * `amp-list` 요소 내에 직접 중첩된 `template` 또는 `script` 요소
 
-템플릿에 관한 자세한 내용은 [AMP HTML 템플릿](../../spec/amp-html-templates.md)을 참조하세요.
+템플릿에 관한 자세한 내용은 [AMP HTML 템플릿](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)을 참조하세요.
 
 *예: 동적 목록 표시*
 
 다음 예에서는 URL과 제목을 포함하는 JSON 데이터를 검색하고 중첩된 [amp-mustache template](https://www.ampproject.org/docs/reference/components/amp-mustache)의 콘텐츠를 렌더링합니다.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 다음은 사용한 JSON 파일입니다.
 
@@ -135,14 +141,27 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 다음 예에서는 이미지와 제목의 목록을 표시합니다. `<amp-list>` 콘텐츠에 사용 가능한 것보다 많은 공간이 필요하면 AMP 런타임에서 오버플로 요소를 표시합니다.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 다음은 `overflow`의 CSS입니다.
 
@@ -301,7 +320,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 ```
 
-작동 예를 보려면 [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) 및 [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html)을 참조하세요.
+작동 예를 보려면 [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) 및 [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html)을 참조하세요.
 
 ### 속성
 
@@ -413,7 +432,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 ## 대체
 
 `<amp-list>`를 사용하면 모든 표준 URL 변수를 대체할 수 있습니다.
-자세한 정보는 [대체 가이드](../../spec/amp-var-substitutions.md)를 참조하세요.
+자세한 정보는 [대체 가이드](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 참조하세요.
 
 예를 들어 다음과 같습니다.
 ```html

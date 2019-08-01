@@ -60,14 +60,42 @@ Sebelum membuat `<form>`, Anda harus menyertakan skrip yang diperlukan untuk eks
 
 Berikut adalah contoh formulir dasar:
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # Atribut
 
@@ -165,7 +193,7 @@ Misalnya, berikut berikut mendeteksi peristiwa `submit-success` dan juga `submit
 
 ```
 
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Peristiwa input
 
@@ -173,16 +201,31 @@ AMP memperlihatkan peristiwa `change` dan `input-debounced` pada elemen `<input>
 
 Misalnya, salah satu kasus penggunaan umum adalah mengirimkan formulir saat terjadi perubahan input (memilih tombol pilihan untuk menjawab polling, memilih bahasa dari input `select` untuk menerjemahkan halaman, dll.).
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Pemicu analisis
 
@@ -339,7 +382,7 @@ untuk mengonfirmasi! Setelah itu, kami akan mulai mengirim artikel mingguan tent
 </form>
 {% endraw %}
 ```
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Untuk merender respons berhasil dengan data binding
 
@@ -410,16 +453,48 @@ Untuk menentukan validasi kustom pada formulir:
 
 Berikut contohnya:
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Untuk contoh lainnya, lihat [examples/forms.amp.html](../../examples/forms.amp.html).
+Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 Untuk pesan validasi, jika elemen Anda tidak berisi konten teks, AMP akan mengisinya dengan pesan validasi default browser. Pada contoh di atas, jika input `name5` kosong dan validasi dimulai (artinya, pengguna mencoba mengirimkan formulir), AMP akan mengisi `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` dengan pesan validasi browser dan menampilkan `span` tersebut kepada pengguna.
 
@@ -456,7 +531,7 @@ Berikut ini contohnya:
 
 {% raw %}<h4>Contoh verifikasi</h4>
 
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
 <fieldset>
 <label>
   <span>Email</span>
@@ -510,7 +585,7 @@ Berikut adalah tampilan respons error untuk verifikasi:
 
 Untuk menghapus kolom dari permintaan `verify-xhr`, tambahkan atribut `no-verify` ke elemen input.
 
-Untuk contoh lainnya, lihat [examples/forms.amp.html](../../examples/forms.amp.html).
+Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Substitusi variabel
 
@@ -598,7 +673,7 @@ Class berikut adalah [polyfill untuk pseudo-class interaksi pengguna](#user-inte
 
 Penayang dapat menggunakan class ini untuk menata gaya input dan kolom mereka agar responsif terhadap tindakan pengguna (misalnya, menyoroti input yang tidak valid dengan batas merah setelah pengguna memburamkannya).
 
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html) tentang cara menggunakannya.
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) tentang cara menggunakannya.
 
 [tip type="success"]
 Kunjungi [AMP Start](https://ampstart.com/components#form-elements) untuk melihat elemen formulir AMP responsif dan telah ditata gayanya yang dapat Anda gunakan di halaman AMP.

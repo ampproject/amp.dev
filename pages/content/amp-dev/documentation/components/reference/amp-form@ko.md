@@ -60,14 +60,42 @@ limitations under the License.
 
 다음은 기본 양식의 예입니다.
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # 속성
 
@@ -165,7 +193,7 @@ XHR 엔드포인트에서 [CORS 보안](https://www.ampproject.org/docs/fundamen
 
 ```
 
-[여기에서 전체 예](../../examples/forms.amp.html)를 참조하세요.
+[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
 # 입력 이벤트
 
@@ -173,16 +201,31 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 
 예를 들어, 일반적인 사용 사례는 입력 변경 시 양식을 제출하는 것입니다(설문조사에 응답하기 위해 라디오 버튼 선택, 페이지를 번역하기 위해 `select` 입력에서 언어 선택 등).
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-[여기에서 전체 예](../../examples/forms.amp.html)를 참조하세요.
+[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
 # 애널리틱스 트리거
 
@@ -338,7 +381,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 {% endraw %}
 ```
 
-[여기에서 전체 예](../../examples/forms.amp.html)를 참조하세요.
+[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
 # 데이터 결합을 사용하여 성공 응답 렌더링하기
 
@@ -411,16 +454,48 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 예를 들면 다음과 같습니다.
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-더 많은 예는 [examples/forms.amp.html](../../examples/forms.amp.html)을 참조하세요.
+더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)을 참조하세요.
 
 유효성 검사 메시지의 경우 요소에 텍스트 콘텐츠가 포함되지 않은 경우 AMP에서 브라우저의 기본 유효성 검사 메시지로 요소를 채웁니다. 위의 예에서 `name5` 입력이 비어 있으며 유효성 검사가 시작된 경우(즉, 사용자가 양식을 제출하려고 시도함) AMP에서 `<span visible-when-invalid="valueMissing" validation-for="name5"></span>`을 브라우저의 유효성 검사 메시지로 채우고 사용자에게 `span`을 표시합니다.
 
@@ -455,7 +530,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 예를 들어 다음과 같습니다.
 ```html
 {% raw %}<h4>확인 예제</h4>
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
   <fieldset>
     <label>
       <span>이메일</span>
@@ -510,11 +585,11 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 `verify-xhr` 요청에서 필드를 제거하려면 `no-verify` 속성을 입력 요소에 추가합니다.
 
-더 많은 예는 [examples/forms.amp.html](../../examples/forms.amp.html)을 참조하세요.
+더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)을 참조하세요.
 
 # 대체 변수
 
-`amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](../../spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
+`amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
 
 `data-amp-replace`에서 사용한 변수의 공백으로 구분된 문자열을 지정하여 각 입력에서 각 대체에 사용할 변수를 제공해야 합니다(아래 예 참조). AMP에서는 명시적으로 지정되지 않은 변수는 대체하지 않습니다.
 
@@ -549,7 +624,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 위의 `CANONICAL_HOSTNAME`은 첫 번째 필드의 `data-amp-replace` 속성을 통해 허용 목록에 포함되지 않았으므로 대체되지 않았습니다.
 
-후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](../../spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
+후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
 
 # Polyfill
 
@@ -599,7 +674,7 @@ AMP 양식은 `<textarea>` 요소에 `autoexpand` 속성을 제공합니다. 그
 
 게시자가 이 클래스를 사용하여 사용자의 작업에 응답하도록 입력과 필드 세트의 스타일을 지정할 수 있습니다(예: 사용자가 흐리게 표시한 후 잘못된 입력을 빨간색 테두리로 강조표시).
 
-이 클래스의 사용 방법은 [여기에서 전체 예](../../examples/forms.amp.html)를 참조하세요.
+이 클래스의 사용 방법은 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
 [tip type="success"]
 AMP 페이지에서 사용할 수 있는 사전에 스타일이 지정된 응답형 AMP 양식 요소는 [AMP 시작](https://ampstart.com/components#form-elements)을 방문하세요.

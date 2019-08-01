@@ -75,8 +75,8 @@ Debe especificarse en la etiqueta el tipo de red publicitaria y cualquier otra i
 
 ## Redes publicitarias admitidas
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (experimental)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Atributos
 

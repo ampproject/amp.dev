@@ -97,7 +97,7 @@ Exemplo:
 
 ## Apagar seleções
 
-Para limpar todas as seleções quando se toca ou clica em um elemento, defina o atributo de ação [`on`](../../spec/amp-actions-and-events.md) no elemento e especifique o `id` seletor de AMP com o método de ação `clear`.
+Para limpar todas as seleções quando se toca ou clica em um elemento, defina o atributo de ação [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) no elemento e especifique o `id` seletor de AMP com o método de ação `clear`.
 
 Exemplo:
 
@@ -151,7 +151,7 @@ veja demonstrações ativas no [AMP By Example](https://ampbyexample.com/compone
 Os eventos podem acionar ações em outros componentes AMP usando o atributo `on`.
 Por exemplo, `on="select: my-tab.show"`
 
-Leia mais sobre [ações e eventos de AMP](../../spec/amp-actions-and-events.md).
+Leia mais sobre [ações e eventos de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 
 <table>
   <tr>

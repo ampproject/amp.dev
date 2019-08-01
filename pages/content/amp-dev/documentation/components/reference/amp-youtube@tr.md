@@ -113,7 +113,7 @@ Duyarlı düzenle, örnekteki genişlik ve yükseklik, 16:9 en boy oranlı video
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong><code>amp-video-docking</code> uzantısını gerektirir.</strong> Bu özellik mevcutsa ve video manuel olarak oynatılıyorsa kullanıcı, video bileşeninin görsel alanını görünüm alanının dışına kaydırdığında video “küçültülür” ve bir köşeye veya bir öğeye sabitlenir.
-            Daha ayrıntılı bilgi için <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">yuvaya yerleştirme uzantısının kendisiyle ilgili dokümanlara</a> bakın.</td>
+            Daha ayrıntılı bilgi için <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">yuvaya yerleştirme uzantısının kendisiyle ilgili dokümanlara</a> bakın.</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (isteğe bağlı)</strong></td>
