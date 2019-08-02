@@ -48,12 +48,10 @@ function addToCartHandlerPost(req, res) {
   };
   const origin = req.get('origin');
 
-  // // If comes from the cache
+  // If comes from the cache
   if (req.headers['amp-same-origin'] !== 'true') {
     // transfrom POST into GET and redirect to /add_to_cart, to complete the request from the origin, with access to the session.
-    const queryString = 'id=' + id + '&name=' + encodeURIComponent(name) + '&price=' + price
-        + '&color=' + color + '&size=' + size + '&quantity=' + quantity + '&origin='
-        + encodeURIComponent(origin);
+    const queryString = new URLSearchParams({...cartItem, origin}).toString();
     res.header('AMP-Redirect-To', req.protocol + '://' + req.get('host') +
         `/documentation/examples/e-commerce/add_to_cart?${queryString}`);
   } else {
