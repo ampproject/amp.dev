@@ -33,9 +33,9 @@ examples.use(sessions({
   activeDuration: 1000 * 60 * 5, // 5 minutes
 }));
 
-examples.post('/add_to_cart', addToCartHandlerPost);
-examples.get('/add_to_cart', addToCartHandlerGet);
-examples.get('/cart_items', cartItemsHandler);
+examples.post('/add-to-cart', addToCartHandlerPost);
+examples.get('/add-to-cart', addToCartHandlerGet);
+examples.get('/cart-items', cartItemsHandler);
 examples.post('/delete-cart-item', deleteCartItemHandler);
 
 function addToCartHandlerPost(req, res) {

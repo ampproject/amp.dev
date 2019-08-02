@@ -27,7 +27,7 @@ let hasMorePages = false;
 
 examples.get('/search', handleSearchRequest);
 examples.get('/products', handleProductsRequest);
-examples.get('/products_autosuggest', handleProductsAutosuggestRequest);
+examples.get('/products-autosuggest', handleProductsAutosuggestRequest);
 examples.get('/json/more_related_products_page', handleLoadMoreRequest);
 
 function handleSearchRequest(request, response) {
