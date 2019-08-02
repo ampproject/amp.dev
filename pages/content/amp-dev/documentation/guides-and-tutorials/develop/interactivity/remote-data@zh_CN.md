@@ -38,7 +38,7 @@ $title: 使用远程数据
 
 ### 指明不可用的尺寸
 
-接下来，我们将为所选 SKU 清晰地标明不可用的尺寸。`"unavailable"` CSS 类会在相应元素上划一条对角线 - 我们可将它添加到 `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 内与不可用尺寸对应的元素中：
+接下来，我们将为所选 SKU 清晰地标明不可用的尺寸。`"unavailable"` CSS 类会在相应元素上划一条对角线 - 我们可将它添加到 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 内与不可用尺寸对应的元素中：
 
 ```html
 <amp-selector name="size">

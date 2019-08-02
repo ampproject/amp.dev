@@ -38,7 +38,7 @@ $title: リモートデータの使用
 
 ### 購入できないサイズを示す
 
-次に、特定の SKU について購入できないサイズを明示しましょう。`"unavailable"` CSS クラスは、要素に斜線を追加します。これは、購入できないサイズに対応する `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 内の要素に追加することが可能です。
+次に、特定の SKU について購入できないサイズを明示しましょう。`"unavailable"` CSS クラスは、要素に斜線を追加します。これは、購入できないサイズに対応する [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 内の要素に追加することが可能です。
 
 ```html
 <amp-selector name="size">
