@@ -11,11 +11,11 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 {% endif %}
 {% for dependency in example.imports if dependency %}
-{% if not example.has_import_in_head(dependency) %}
+{% if not example.has_import_in_head(dependency.name) %}
   <script custom-element="{{dependency.name}}" src="https://cdn.ampproject.org/v0/{{dependency.name}}-{{dependency.version}}.js" async></script>
 {% endif %}
 {% endfor %}
-{% if example.template and not example.has_import_in_head(example.template) %}
+{% if example.template and not example.has_import_in_head(example.template.name) %}
   <script custom-template="{{example.template.name}}" src="https://cdn.ampproject.org/v0/{{example.template.name}}-{{example.template.version}}.js" async></script>
 {% endif %}
 {% if not example.has_tag_in_head('link', 'rel', 'canonical') %}
