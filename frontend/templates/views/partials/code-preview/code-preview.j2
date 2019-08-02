@@ -27,12 +27,30 @@
     [
       {
         "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} amp-iframe",
-        "duration": 650,
+        "duration": 250,
+        "delay": 250,
         "fill": "backwards",
+        "easing": "linear",
+        "keyframes": {
+          "opacity": ["0", "1"]
+        }
+      },
+      {
+        "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-landscape .ap-o-code-preview-preview-iframe-background",
+        "duration": 250,
+        "fill": "forwards",
         "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
         "keyframes": {
-          "opacity": ["0", "1"],
-          "transform": ["rotate(-75deg)", "rotate(0)"]
+          "transform": ["scale(.5625, 1.7778)", "scale(1, 1)"]
+        }
+      },
+      {
+        "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-portrait .ap-o-code-preview-preview-iframe-background",
+        "duration": 250,
+        "fill": "forwards",
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "keyframes": {
+          "transform": ["scale(1, 1)", "scale(.5625, 1.7778)"]
         }
       }
     ]
@@ -43,7 +61,7 @@
 
     <div class="ap-o-code-preview-controls">
       <button class="ap-o-code-preview-controls-button"
-              on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}}),animation{{ preview.index }}.start">
+              on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}}),animation{{ preview.index }}.restart">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
@@ -68,6 +86,7 @@
                   frameborder="0">
         <div placeholder></div>
       </amp-iframe>
+      <div class="ap-o-code-preview-preview-iframe-background"></div>
     </div>
   </div>
   {% endif %}

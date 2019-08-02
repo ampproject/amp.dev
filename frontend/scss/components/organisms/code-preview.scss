@@ -92,17 +92,16 @@
 
     &-portrait,
     &-landscape {
-      overflow: hidden;
       width: 100%;
       margin: 0 auto;
       top: 0;
-      background-color: color('black');
-      box-shadow: 0 40px 40px -15px rgba(0,0,0,0.5);
 
       amp-iframe {
         width: auto;
         height: auto;
         margin: 0;
+        z-index: 1;
+        box-shadow: 0 40px 40px -15px rgba(0,0,0,0.5);
       }
     }
 
@@ -120,6 +119,29 @@
       amp-iframe {
         padding-top: 56.25%;
       }
+    }
+
+    &-background {
+      height: auto;
+      position: absolute;
+      left: auto;
+      top: auto;
+      background: #fff;
+      transform-origin: top;
+
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%;
+      }
+    }
+
+    &-portrait &-background {
+      width: 177.78%;
+    }
+
+    &-landscape &-background {
+      width: 100%;
     }
   }
 
