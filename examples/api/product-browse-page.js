@@ -61,19 +61,19 @@ function handleProductsRequest(request, response) {
   });
 }
 
-function findProducts(queries = []) {
-  return productDescs.filter((prod) => {
-    const haystack = `${prod.name} ${prod.color}`.toLowerCase();
+function findProducts(queries = {name: '', color: 'all'}) {
+  const queryKeys = Object.keys(queries);
+  return products.items.filter((prod) => {
     const matches = [];
-    queries.filter((q) => {
-      if (haystack.includes(q.toLowerCase()) || q === 'all') {
+    queryKeys.filter((key) => {
+      if (prod[key].toLowerCase().includes(queries[key].toLowerCase()) || queries[key] === 'all') {
         matches.push(true);
       } else {
         matches.push(false);
       }
     });
     // return only true if all queries for a product have been matched
-    return matches.every((value) => value);
+    return matches.every((match) => match);
   });
 }
 
