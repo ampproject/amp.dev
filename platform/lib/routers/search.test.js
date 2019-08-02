@@ -1,13 +1,31 @@
 const express = require('express');
 const request = require('supertest');
-
+const fs = require('fs');
+const path = require('path');
+const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
+
 jest.mock('@lib/utils/googleSearch.js');
 
 const app = express();
 const router = require('./search.js');
 app.use(router);
 
+const EXAMPLE_FOLDER_PATH = path.join(project.paths.DIST, '/examples/sources/components/');
+const TEST_EXAMPLE_FILE_PATH = path.join(EXAMPLE_FOLDER_PATH, 'amp-test-example.html');
+
+beforeAll(() => {
+  // ensure there is an example file for 'amp-test-example' since mocking fs does not work
+  if (!fs.existsSync(EXAMPLE_FOLDER_PATH)) {
+    fs.mkdirSync(EXAMPLE_FOLDER_PATH, {recursive: true});
+  }
+  fs.writeFileSync(TEST_EXAMPLE_FILE_PATH, '');
+});
+
+afterAll(() => {
+  // delete the special unit test file
+  fs.unlinkSync(TEST_EXAMPLE_FILE_PATH);
+});
 
 function createItem(index, isComponent) {
   const link = isComponent ? 'https://amp.dev/documentation/components/amp-comp-' + index + '/'
@@ -49,7 +67,7 @@ test('returns a first page with component highlights and no next link', (done) =
   googleSearch.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=pt_BR&page=1')
+      .get('/search/do?q=query&locale=en&page=1')
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
@@ -65,13 +83,29 @@ test('returns a first page with no component highlights and next link', (done) =
   googleSearch.mockResolvedValue(searchResult);
 
   request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        expect(res.body.result.components.length).toBe(0);
+        expect(res.body.result.pages.length).toBe(10);
+        expect(res.body.nextUrl).toBe('/search/do?q=query&page=2&locale=en');
+        done();
+      });
+});
+
+test('returns a first page with no component highlights and next link', (done) => {
+  const searchResult = createSearchResult(0, 10, 11);
+  googleSearch.mockResolvedValue(searchResult);
+
+  request(app)
       .get('/search/do?q=query&locale=pt_BR&page=1')
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
         expect(res.body.result.components.length).toBe(0);
         expect(res.body.result.pages.length).toBe(10);
-        expect(res.body.nextUrl).toBe('/search/do?q=query&locale=pt_BR&page=2');
+        expect(res.body.nextUrl).toBe('/search/do?q=query&page=2&locale=pt_BR');
         done();
       });
 });
@@ -81,7 +115,7 @@ test('returns a second page with no component highlights and no next link', (don
   googleSearch.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=pt_BR&page=2')
+      .get('/search/do?q=query&locale=en&page=2')
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
@@ -92,13 +126,40 @@ test('returns a second page with no component highlights and no next link', (don
       });
 });
 
+test('title and description are correct', (done) => {
+  const searchResult = createSearchResult(2, 2, 4);
+  delete searchResult.items[0].pagemap.metatags[0]['twitter:title'];
+  delete searchResult.items[1].pagemap.metatags[0]['twitter:description'];
+  delete searchResult.items[2].pagemap.metatags[0]['twitter:title'];
+  googleSearch.mockResolvedValue(searchResult);
+
+  request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        // all items will use the title from the metatags if available
+        // components always should have the meta description if available
+        expect(res.body.result.components[0].title).toBe('long-title-0');
+        expect(res.body.result.components[0].description).toBe('description-0');
+        expect(res.body.result.components[1].title).toBe('short-title-1');
+        expect(res.body.result.components[1].description).toBe('snipped-1');
+        // pages always have the snipped as description
+        expect(res.body.result.pages[0].title).toBe('long-title-2');
+        expect(res.body.result.pages[0].description).toBe('snipped-2');
+        expect(res.body.result.pages[1].title).toBe('short-title-3');
+        expect(res.body.result.pages[1].description).toBe('snipped-3');
+        done();
+      });
+});
+
 test('amp.dev urls are converted to server relative', (done) => {
   const searchResult = createSearchResult(2, 3, 5);
   searchResult.items[2].link = 'https://blog.amp.dev/some/path';
   googleSearch.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=pt_BR&page=1')
+      .get('/search/do?q=query&locale=en&page=1')
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
@@ -112,8 +173,35 @@ test('amp.dev urls are converted to server relative', (done) => {
 
 test('components with example get example and playground urls', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
-  searchResult.items[0].link = 'https://amp.dev/documentation/components/amp-accordion/';
-  searchResult.items[1].link = 'https://amp.dev/documentation/components/amp-non-existing/';
+  searchResult.items[0].link = 'https://amp.dev/documentation/components/amp-test-example/';
+  searchResult.items[1].link = 'https://amp.dev/documentation/components/amp-no-example/';
+  googleSearch.mockResolvedValue(searchResult);
+
+  request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        expect(res.body.result.components[0].url)
+            .toBe('/documentation/components/amp-test-example/');
+        expect(res.body.result.components[0].exampleUrl)
+            .toContain('/documentation/examples/components/amp-test-example/');
+        expect(res.body.result.components[0].playgroundUrl).toMatch(
+            // the url parameter must not have a locale, but start directly with /documentation
+            // eslint-disable-next-line max-len
+            /^https?:\/\/[^/]+\/.*?url=https?%3A%2F%2F(.(?!%2F))+.%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example/);
+        expect(res.body.result.components[1].url)
+            .toBe('/documentation/components/amp-no-example/');
+        expect(res.body.result.components[1].exampleUrl).toBe(undefined);
+        expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
+        done();
+      });
+});
+
+test('components with example get example with locale and playground url without', (done) => {
+  const searchResult = createSearchResult(2, 0, 2);
+  searchResult.items[0].link = 'https://amp.dev/pt_br/documentation/components/amp-test-example/';
+  searchResult.items[1].link = 'https://amp.dev/pt_br/documentation/components/amp-no-example/';
   googleSearch.mockResolvedValue(searchResult);
 
   request(app)
@@ -121,14 +209,16 @@ test('components with example get example and playground urls', (done) => {
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
-        expect(res.body.result.components[0].url).toBe('/documentation/components/amp-accordion/');
+        expect(res.body.result.components[0].url)
+            .toBe('/pt_br/documentation/components/amp-test-example/');
         expect(res.body.result.components[0].exampleUrl)
-            .toContain('/documentation/examples/components/amp-accordion/');
+            .toContain('/pt_br/documentation/examples/components/amp-test-example/');
         expect(res.body.result.components[0].playgroundUrl).toMatch(
+            // the url parameter must not have a locale, but start directly with /documentation
             // eslint-disable-next-line max-len
-            /^https?:\/\/[^/]+\/.*?url=https?%3A%2F%2F.*%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-accordion/);
+            /^https?:\/\/[^/]+\/.*?url=https?%3A%2F%2F(.(?!%2F))+.%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example/);
         expect(res.body.result.components[1].url)
-            .toBe('/documentation/components/amp-non-existing/');
+            .toBe('/pt_br/documentation/components/amp-no-example/');
         expect(res.body.result.components[1].exampleUrl).toBe(undefined);
         expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
         done();
@@ -139,8 +229,39 @@ test('exception handling', (done) => {
   googleSearch.mockImplementation(async () => {
     throw Error('Expected');
   });
-
   request(app)
       .get('/search/do?q=query&locale=pt_BR&page=1')
       .expect(500, done);
+});
+
+
+test('autosuggest should return an ordered list with components,' +
+    ' build ins and some important included elements', (done) => {
+  request(app)
+      .get('/search/autosuggest')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        // build in components
+        expect(res.body.items.indexOf('amp-img')).not.toBeLessThan(0);
+        // important included elements
+        expect(res.body.items.indexOf('amp-state')).not.toBeLessThan(0);
+        expect(res.body.items.indexOf('amp-story-page')).not.toBeLessThan(0);
+        // other components
+        expect(res.body.items.indexOf('amp-bind')).not.toBeLessThan(0);
+        expect(res.body.items.indexOf('amp-story')).not.toBeLessThan(0);
+        expect(res.body.items.indexOf('amp-youtube')).not.toBeLessThan(0);
+        // sort order
+        expect(res.body.items.indexOf('amp-bind'))
+            .toBeLessThan(res.body.items.indexOf('amp-img'));
+        expect(res.body.items.indexOf('amp-img'))
+            .toBeLessThan(res.body.items.indexOf('amp-state'));
+        expect(res.body.items.indexOf('amp-state'))
+            .toBeLessThan(res.body.items.indexOf('amp-story'));
+        expect(res.body.items.indexOf('amp-story'))
+            .toBeLessThan(res.body.items.indexOf('amp-story-page'));
+        expect(res.body.items.indexOf('amp-story-page'))
+            .toBeLessThan(res.body.items.indexOf('amp-youtube'));
+        done();
+      });
 });

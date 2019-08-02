@@ -40,7 +40,7 @@ $view: /views/overview/custom-content.j2
 
     <div [hidden]="pageNumber < 1" hidden>
 
-      <amp-list [height]="(80) * page.result.pages.length"
+      <amp-list [height]="(100) * page.result.components.length + (80) * page.result.pages.length"
                 [src]="'/search/do?q=' + query + '&page=' + pageNumber + '&locale={{ doc.locale }}'"
                 binding="no"
                 class="paged-amp-list"
@@ -97,6 +97,11 @@ $view: /views/overview/custom-content.j2
         </amp-list-load-more>
 
       </amp-list>
+
+      <div [hidden]="page.result.totalResults <= 100" hidden>
+        This result list is truncated.
+      </div>
+
     </div>
 
     <!-- Search result is needed in amp list and amp bind. So add the same URL as state. Amp will only load it once -->

@@ -17,26 +17,43 @@
 'use strict';
 
 const fetch = require('node-fetch');
+const credentials = require('@lib/utils/credentials');
 
-const CSE_ID = 'TODO';
-const API_KEY = 'TODO';
 const CSE_BASE_URL = 'https://www.googleapis.com/customsearch/v1';
+const CSE_ID = '14077439351665726204:s4tidjx0agu';
+let API_KEY = undefined;
+
+credentials.get('GOOGLE_CSE_API_KEY').then((key) => {
+  API_KEY = key;
+}).catch((err) => {
+  console.error('ERROR: Google site search will not be available!',
+      err.message ? err.message : err);
+});
 
 async function search(query, locale, page) {
+  if (!API_KEY) {
+    throw Error('Custom search api key not initialized! Check log for errors on startup.');
+  }
+
   const startIndex = (page - 1) * 10 + 1;
+  query = encodeURIComponent(query);
   let language = locale;
   if (language.length > 2) {
     language = language.substr(0, 2);
   }
-  language = language.toLowerCase();
+  language = encodeURIComponent(language.toLowerCase());
 
   const url = `${CSE_BASE_URL}?cx=${CSE_ID}&key=${API_KEY}&hl=${language}` +
       `&lr=lang_${language}&q=${query}&start=${startIndex}`;
+
+  // console.log('Google cse query: ' + url);
 
   const fetchResponse = await fetch(url);
   if (fetchResponse.status == 200) {
     return await fetchResponse.json();
   }
+
+  console.log(`CSE Error ${fetchResponse.status} for url ${url}: `, await fetchResponse.text());
   throw Error('Invalid response for search query');
 }
 

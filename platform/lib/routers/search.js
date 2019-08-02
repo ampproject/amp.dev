@@ -24,12 +24,14 @@ const googleSearch = require('@lib/utils/googleSearch.js');
 
 // google custom search does not support a page size > 10
 const PAGE_SIZE = 10;
+// google custom search json api does not support loading more than 100 results
+const LAST_PAGE = 10;
 
 const COMPONENT_REFERENCE_DOC_PATTERN =
     /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
 const EXAMPLE_URL_PATH = '/documentation/examples/components/';
-const EXAMPLE_FILE_PATH = path.join(project.paths.DIST, '/examples/sources/components/');
+const EXAMPLE_FOLDER_PATH = path.join(project.paths.DIST, '/examples/sources/components/');
 
 const REMOVE_HOST_PATTERN = /^https?:\/\/amp\.dev(?=\/)/;
 
@@ -40,190 +42,77 @@ const PLAYGROUND_URL = config.hosts.playground.base;
 const TITLE_META_TAG = 'twitter:title';
 const DESCRIPTION_META_TAG = 'twitter:description';
 
-
 // eslint-disable-next-line new-cap
 const examples = express.Router();
-const MAX_RESULT_SIZE = 400;
-const US_CAPITAL_CITIES = [
-  // build im
+
+const BUILD_IN_COMPONENTS = [
   'amp-layout',
   'amp-img',
   'amp-pixel',
-  // FALSE_POSITIVES
+];
+
+const IMPORTANT_INCLUDED_ELEMENTS = [
   'amp-state',
+  'amp-list-load-more',
   'amp-story-page',
   'amp-story-grid-layer',
   'amp-story-bookend',
-  // components from amp-component-versions
-  'amp-3d-gltf',
-  'amp-3q-player',
-  'amp-a4a',
-  'amp-access',
-  'amp-access-laterpay',
-  'amp-access-poool',
-  'amp-access-scroll',
-  'amp-accordion',
-  'amp-action-macro',
-  'amp-ad',
-  'amp-ad-custom',
-  'amp-ad-exit',
-  'amp-addthis',
-  'amp-analytics',
-  'amp-anim',
-  'amp-animation',
-  'amp-apester-media',
-  'amp-app-banner',
-  'amp-audio',
-  'amp-auto-ads',
-  'amp-auto-lightbox',
-  'amp-autocomplete',
-  'amp-base-carousel',
-  'amp-beopinion',
-  'amp-bind',
-  'amp-bodymovin-animation',
-  'amp-brid-player',
-  'amp-brightcove',
-  'amp-byside-content',
-  'amp-call-tracking',
-  'amp-carousel',
-  'amp-connatix-player',
-  'amp-consent',
-  'amp-crypto-polyfill',
-  'amp-dailymotion',
-  'amp-date-countdown',
-  'amp-date-display',
-  'amp-date-picker',
-  'amp-delight-player',
-  'amp-dynamic-css-classes',
-  'amp-embedly-card',
-  'amp-experiment',
-  'amp-facebook',
-  'amp-facebook-comments',
-  'amp-facebook-like',
-  'amp-facebook-page',
-  'amp-fit-text',
-  'amp-font',
-  'amp-form',
-  'amp-fx-collection',
-  'amp-fx-flying-carpet',
-  'amp-geo',
-  'amp-gfycat',
-  'amp-gist',
-  'amp-google-document-embed',
-  'amp-google-vrview-image',
-  'amp-gwd-animation',
-  'amp-hulu',
-  'amp-iframe',
-  'amp-ima-video',
-  'amp-image-lightbox',
-  'amp-image-slider',
-  'amp-image-viewer',
-  'amp-imgur',
-  'amp-inputmask',
-  'amp-instagram',
-  'amp-install-serviceworker',
-  'amp-izlesene',
-  'amp-jwplayer',
-  'amp-kaltura-player',
-  'amp-lightbox',
-  'amp-lightbox-gallery',
-  'amp-link-rewriter',
-  'amp-list',
-  'amp-live-list',
-  'amp-mathml',
-  'amp-mowplayer',
-  'amp-mraid',
-  'amp-mustache',
-  'amp-next-page',
-  'amp-nexxtv-player',
-  'amp-o2-player',
-  'amp-ooyala-player',
-  'amp-orientation-observer',
-  'amp-pan-zoom',
-  'amp-payment-google-button',
-  'amp-payment-google-inline',
-  'amp-payment-google-inline-async',
-  'amp-pinterest',
-  'amp-playbuzz',
-  'amp-position-observer',
-  'amp-powr-player',
-  'amp-reach-player',
-  'amp-recaptcha-input',
-  'amp-reddit',
-  'amp-riddle-quiz',
-  'amp-script',
-  'amp-selector',
-  'amp-share-tracking',
-  'amp-sidebar',
-  'amp-skimlinks',
-  'amp-slides',
-  'amp-smartlinks',
-  'amp-social-share',
-  'amp-soundcloud',
-  'amp-springboard-player',
-  'amp-sticky-ad',
-  'amp-story',
-  'amp-story-auto-ads',
-  'amp-subscriptions',
-  'amp-subscriptions-google',
-  'amp-timeago',
-  'amp-truncate-text',
-  'amp-twitter',
-  'amp-user-location',
-  'amp-user-notification',
-  'amp-video',
-  'amp-video-docking',
-  'amp-video-iframe',
-  'amp-viewer-assistance',
-  'amp-viewer-integration',
-  'amp-vimeo',
-  'amp-vine',
-  'amp-viqeo-player',
-  'amp-viz-vega',
-  'amp-vk',
-  'amp-web-push',
-  'amp-wistia-player',
-  'amp-yotpo',
-  'amp-youtube',
 ];
+
+const COMPONENT_VERSIONS_PATH = path.join(project.paths.GROW_POD,
+    '/extensions/amp-component-versions.json');
+
+function getAutosuggestComponents() {
+  let result = [];
+  const components = require(COMPONENT_VERSIONS_PATH);
+  for (const component in components) {
+    if (components.hasOwnProperty(component)) {
+      result.push(component);
+    }
+  }
+  result = result.concat(BUILD_IN_COMPONENTS);
+  result = result.concat(IMPORTANT_INCLUDED_ELEMENTS);
+  return result.sort();
+}
+
+const AUTOSUGGEST_COMPONENTS = getAutosuggestComponents();
 
 examples.get('/search/autosuggest', handleAutosuggestRequest);
 examples.get('/search/do', handleSearchRequest);
 
 function handleAutosuggestRequest(request, response) {
-  const query = request.query ? request.query.q : '';
-
-  let results = US_CAPITAL_CITIES;
-
-  if (query) {
-    results = results.filter((key) => {
-      return key.toUpperCase().includes(query.toUpperCase());
-    });
-  }
-
-  if (results.length > MAX_RESULT_SIZE) {
-    results = results.slice(0, MAX_RESULT_SIZE);
-  }
-
   const items = ({
-    items: results,
+    items: AUTOSUGGEST_COMPONENTS,
   });
-
   response.json(items);
-};
+}
+
+function hasExample(component) {
+  const filePath = path.join(EXAMPLE_FOLDER_PATH, component + '.html');
+  return fs.existsSync(filePath);
+}
+
+function getCseItemMetaTagValue(item, metaTag) {
+  // since pagemap has always key:array the metatags dictionary is always the first element in the array
+  if (item.pagemap && item.pagemap.metatags && item.pagemap.metatags.length > 0
+      && item.pagemap.metatags[0][metaTag]) {
+    return item.pagemap.metatags[0][metaTag];
+  }
+  return null;
+}
+
 
 function createPageObject(csePageItem) {
-  let title = csePageItem.title;
-  if (csePageItem.pagemap && csePageItem.pagemap.metatags
-      && csePageItem.pagemap.metatags[TITLE_META_TAG]) {
-    title = csePageItem.pagemap.metatags[TITLE_META_TAG];
+  let title = getCseItemMetaTagValue(csePageItem, TITLE_META_TAG);
+  if (!title) {
+    title = csePageItem.title;
   }
 
   const page = {
     title: title,
     description: csePageItem.snippet,
     url: csePageItem.link,
-  }
+  };
 
   const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
   if (hostMatch) {
@@ -233,14 +122,10 @@ function createPageObject(csePageItem) {
   return page;
 }
 
-function hasExample(component) {
-  const filePath = path.join(EXAMPLE_FILE_PATH, component + '.html');
-  return fs.existsSync(filePath);
-}
-
-function enrichComponentPageObject(item, page) {
-  if (item.pagemap && item.pagemap.metatags && item.pagemap.metatags[DESCRIPTION_META_TAG]) {
-    page.description = item.pagemap.metatags[DESCRIPTION_META_TAG];
+function enrichComponentPageObject(item, page, locale) {
+  const description = getCseItemMetaTagValue(item, DESCRIPTION_META_TAG);
+  if (description) {
+    page.description = description;
   }
 
   if (page.url) {
@@ -249,14 +134,26 @@ function enrichComponentPageObject(item, page) {
       page.exampleUrl = EXAMPLE_URL_PATH + componentName + '/';
       page.playgroundUrl = PLAYGROUND_URL + '/?url='
         + encodeURIComponent(PREVIEW_HOST + page.exampleUrl);
+      // the preview link must not have the locale, but the example doc page has to have it:
+      if (locale != config.getDefaultLocale()) {
+        page.exampleUrl = '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
+      }
     }
   }
 }
 
-async function handleSearchRequest(request, response) {
+async function handleSearchRequest(request, response, next) {
   const query = request.query && request.query.q ? request.query.q : '';
   const page = request.query && request.query.page ? parseInt(request.query.page) : 1;
-  const locale = request.query && request.query.locale.toLowerCase() ? request.query.locale : 'en';
+  const locale = request.query && request.query.locale ?
+      request.query.locale : config.getDefaultLocale();
+
+  if (isNaN(page)) {
+    const error = 'Invalid search page param ' + request.query.page;
+    console.log(error);
+    next(error);
+    return;
+  }
 
   // TODO remove together with test method
   if (query.includes('test')) {
@@ -265,7 +162,14 @@ async function handleSearchRequest(request, response) {
 
   const highlightComponents = page == 1;
 
-  const cseResult = await googleSearch(query, locale, page);
+  let cseResult = undefined;
+  try {
+    cseResult = await googleSearch(query, locale, page);
+  } catch (err) {
+    // problem was logged before, so simply forward the error
+    next(err);
+    return;
+  }
 
   const totalResults = parseInt(cseResult.searchInformation.totalResults);
   const pageCount = Math.ceil(totalResults / PAGE_SIZE);
@@ -276,7 +180,7 @@ async function handleSearchRequest(request, response) {
     const page = createPageObject(item);
 
     if (highlightComponents && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
-      enrichComponentPageObject(item, page);
+      enrichComponentPageObject(item, page, locale);
       components.push(page);
     } else {
       pages.push(page);
@@ -285,6 +189,7 @@ async function handleSearchRequest(request, response) {
 
   const result = ({
     result: {
+      totalResults: totalResults,
       currentPage: page,
       pageCount: pageCount,
       components: components,
@@ -292,8 +197,9 @@ async function handleSearchRequest(request, response) {
     },
   });
 
-  if (page < pageCount) {
-    result.nextUrl = '/search/do?q=' + query + '&locale=' + locale + '&page=' + (page + 1);
+  if (page < pageCount && page < LAST_PAGE) {
+    result.nextUrl = '/search/do?q=' + encodeURIComponent(query)
+        + '&page=' + (page + 1) + '&locale=' + encodeURIComponent(locale);
   }
   response.json(result);
 }
@@ -302,18 +208,26 @@ async function handleSearchRequest(request, response) {
 function handleTestSearchRequest(request, response) {
   const query = request.query && request.query.q ? request.query.q : '';
   const page = request.query && request.query.page ? parseInt(request.query.page) : 1;
-  const language = request.query && request.query.lang ? request.query.lang : 'en';
+  const locale = request.query && request.query.locale ?
+      request.query.locale : config.getDefaultLocale();
 
   if (query.includes('error') && page > 1) {
     throw Error('test error');
   }
 
+  let lastPage = LAST_PAGE;
+  const pageQuery = query.match(/(\d+)-pages/);
+  if (pageQuery) {
+    lastPage = parseInt(pageQuery[1]);
+  }
+  const totalResults = (lastPage -1) * PAGE_SIZE + 3;
+
   const pages = [];
-  const itemCount = page == 10 ? 3 : 10;
+  const itemCount = page == lastPage ? 3 : PAGE_SIZE;
   for (let i=1; i <= itemCount; i++) {
     pages.push({
-      title: 'test ' + query + ' a ' + ((page-1) * 10 + i),
-      description: 'description page a ' + ((page-1) * 10 + i),
+      title: 'test ' + query + ' a ' + ((page-1) * PAGE_SIZE + i),
+      description: 'description page a ' + ((page-1) * PAGE_SIZE + i),
       url: 'http://amp.dev',
     });
   }
@@ -333,19 +247,20 @@ function handleTestSearchRequest(request, response) {
 
   const result = ({
     result: {
+      totalResults: totalResults,
       currentPage: page,
-      pageCount: 10,
-      language: language,
+      pageCount: lastPage,
       components: components,
       pages: pages,
     },
   });
 
-  if (page < 10) {
-    result.nextUrl = '/search/do?q=' + query + '&page=' + (page + 1) + '&lang=' + language;
+  if (page < lastPage && page < LAST_PAGE) {
+    result.nextUrl = '/search/do?q=' + encodeURIComponent(query)
+        + '&page=' + (page + 1) + '&locale=' + encodeURIComponent(locale);
   }
 
   response.json(result);
-};
+}
 
 module.exports = examples;
