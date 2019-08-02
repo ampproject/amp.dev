@@ -23,6 +23,9 @@ const examples = express.Router();
 const products = require(
     utils.project.absolute('/examples/static/samples/json/related_products.json')
 );
+const productNames = products.items.map((item) => {
+  return item.name;
+});
 let hasMorePages = false;
 
 examples.get('/search', handleSearchRequest);
@@ -77,13 +80,14 @@ function findProducts(queries = []) {
   return productDescs.filter((prod) => {
     const haystack = `${prod.name} ${prod.color}`.toLowerCase();
     const matches = [];
-    for (const query of queries) {
-      if (haystack.includes(query.toLowerCase()) || query === 'all') {
+    queries.filter((q) => {
+      if (haystack.includes(q.toLowerCase()) || q === 'all') {
         matches.push(true);
       } else {
         matches.push(false);
       }
-    }
+    });
+    // return only true if all queries for a product have been matched
     return matches.every((value) => value);
   });
 }
@@ -91,23 +95,17 @@ function findProducts(queries = []) {
 function handleProductsAutosuggestRequest(request, response) {
   const query = request.query.q;
 
-  const productDescs = products.items.map((item) => {
-    return item.name;
-  });
-
   // filter array of productnames by query
-  const filteredStrs = productDescs.filter((desc) => {
+  const filteredStrs = productNames.filter((desc) => {
     return desc.toLowerCase().includes(query.toLowerCase());
   });
 
-  if (filteredStrs.length > 0) {
-    response.json({
-      items: [{
-        query,
-        results: filteredStrs.splice(0, 4),
-      }],
-    });
-  }
+  response.json({
+    items: [{
+      query,
+      results: filteredStrs.splice(0, 4),
+    }],
+  });
 }
 
 function handleLoadMoreRequest(request, response) {
@@ -115,11 +113,7 @@ function handleLoadMoreRequest(request, response) {
   const productsFile = require(utils.project.absolute(
       `/examples/static/samples/json/more_related_products_page${moreItemsPageIndex}.json`));
 
-  if (Number(moreItemsPageIndex) === 1) {
-    hasMorePages = false;
-  } else {
-    hasMorePages = true;
-  }
+  hasMorePages = Number(moreItemsPageIndex) !== 1;
 
   response.json({
     items: productsFile.items,
