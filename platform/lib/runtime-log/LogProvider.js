@@ -17,13 +17,10 @@
 'use strict';
 
 const {format} = require('util');
-const config = require('../config.js');
 const nodeFetch = require('node-fetch');
 const LRU = require('lru-cache');
 
-// Logs are hosted on cdn.ampproject.org
-// TODO: replace with final URL
-const LOG_HOST = `${config.hosts.platform.base}/static/files/log-messages-v%s.json`;
+const LOG_HOST = 'https://cdn.ampproject.org/rtv/%s/log-messages.json';
 const MAX_CACHE_SIZE = 10;
 
 /**
