@@ -387,7 +387,7 @@ function minifyPages() {
           try {
             // Shorten selectors
             rcs.fillLibraries(minifiedCss, {prefix: '-'});
-            html = rcs.replace.string(html);
+            html = rcs.replace.html(html);
             console.log(`[MINIFY_PAGES]: Minified ${page.relative}`);
           } catch (e) {
             console.error('[MINIFY_PAGES]:', page.relative, e);
