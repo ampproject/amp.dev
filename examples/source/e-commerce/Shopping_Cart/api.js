@@ -19,7 +19,6 @@ const express = require('express');
 const formidableMiddleware = require('express-formidable');
 const cookieParser = require('cookie-parser');
 const sessions = require('client-sessions');
-const serializer = require('serialize-javascript');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
