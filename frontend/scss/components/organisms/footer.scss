@@ -77,6 +77,10 @@
     &-icon {
       @include ico-3;
       @include ico-white;
+
+      @media (max-width: $minDeviceWidth) {
+        font-size: 14px;
+      }
     }
   }
 
