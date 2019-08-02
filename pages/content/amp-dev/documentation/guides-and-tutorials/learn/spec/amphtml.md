@@ -227,6 +227,11 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
     <td width="30%">svg</td>
     <td>Most SVG elements are allowed.</td>
   </tr>
+  
+  <tr>
+    <td width="30%">canvas</td>
+    <td>Canvas element is only allowed when enclosed within an <a href="https://amp.dev/documentation/components/amp-script">amp-script</a> block.</td>
+  </tr>
 </table>
 
 Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
