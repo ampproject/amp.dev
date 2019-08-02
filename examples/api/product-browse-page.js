@@ -43,13 +43,7 @@ function handleProductsRequest(request, response) {
   const colorQuery = !!request.query.searchColor ? request.query.searchColor : '';
 
   // find products that match the query
-  const tempProducts = findProducts([productQuery, colorQuery]);
-  // filter products
-  const responseProducts = products.items.filter((prod) => {
-    for (const temp of tempProducts) {
-      if (prod.name === temp.name) return true;
-    };
-  });
+  const responseProducts = findProducts({name: productQuery, color: colorQuery});
 
   // sort products
   const sortQuery = !!request.query.sort ? request.query.sort : '';
@@ -68,13 +62,6 @@ function handleProductsRequest(request, response) {
 }
 
 function findProducts(queries = []) {
-  const productDescs = products.items.map((item) => {
-    return {
-      name: item.name,
-      color: item.color,
-    };
-  });
-
   return productDescs.filter((prod) => {
     const haystack = `${prod.name} ${prod.color}`.toLowerCase();
     const matches = [];
