@@ -22,46 +22,54 @@
     </script>
   </amp-state>
 
-  <amp-animation id="animation{{ preview.index }}" layout="nodisplay">
-    <script type="application/json">
-    [
-      {
-        "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} amp-iframe",
-        "duration": 250,
-        "delay": 250,
-        "fill": "backwards",
-        "easing": "linear",
-        "keyframes": {
-          "opacity": ["0", "1"]
-        }
-      },
-      {
-        "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-landscape .ap-o-code-preview-preview-iframe-background",
-        "duration": 250,
-        "fill": "forwards",
-        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
-        "keyframes": {
-          "transform": ["scale(.5625, 1.7778)", "scale(1, 1)"]
-        }
-      },
-      {
-        "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-portrait .ap-o-code-preview-preview-iframe-background",
-        "duration": 250,
-        "fill": "forwards",
-        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
-        "keyframes": {
-          "transform": ["scale(1, 1)", "scale(.5625, 1.7778)"]
-        }
+  <amp-animation id="fadeAnimation{{ preview.index }}" layout="nodisplay">
+    <script type="application/json">{
+      "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} amp-iframe",
+      "duration": 250,
+      "delay": 250,
+      "fill": "backwards",
+      "easing": "linear",
+      "keyframes": {
+        "opacity": ["0", "1"]
       }
-    ]
-    </script>
+    }</script>
+  </amp-animation>
+  <amp-animation id="morphAnimation{{ preview.index }}" layout="nodisplay">
+    <script type="application/json">{
+      "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-background",
+      "duration": 250,
+      "fill": "both",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "keyframes": {
+        "transform": ["scale(.5625, 1.7778)", "scale(1, 1)"]
+      }
+    }</script>
   </amp-animation>
 
   <div class="ap-o-code-preview-top-preview ap-o-code-preview-top-preview-{{ preview.index }}">
 
     <div class="ap-o-code-preview-controls">
-      <button class="ap-o-code-preview-controls-button"
-              on="tap:AMP.setState({orientation{{ preview.index }}: !orientation{{ preview.index }}}),animation{{ preview.index }}.restart">
+      <button {{ 'hidden' if not is_landscape }} [hidden]="!orientation{{ preview.index }}"
+              class="ap-o-code-preview-controls-button"
+              on="tap:
+                  AMP.setState({orientation{{ preview.index }}: false}),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
+                  fadeAnimation{{ preview.index }}.restart,
+                  morphAnimation{{ preview.index }}.restart,
+                  morphAnimation{{ preview.index }}.reverse">
+        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
+        </div>
+      </button>
+      <button {{ 'hidden' if is_landscape }} [hidden]="orientation{{ preview.index }}"
+              class="ap-o-code-preview-controls-button"
+              on="tap:
+                  AMP.setState({orientation{{ preview.index }}: true}),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
+                  fadeAnimation{{ preview.index }}.restart,
+                  morphAnimation{{ preview.index }}.restart">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
@@ -75,9 +83,7 @@
       </button>
     </div>
 
-    {% set base_class = 'ap-o-code-preview-preview-iframe' %}
-    <div class="{{ base_class }} ap-o-code-preview-preview-iframe-{{ initial_orientation }}"
-         [class]="orientation{{ preview.index }} ? '{{ base_class }} ap-o-code-preview-preview-iframe-landscape' : '{{ base_class }} ap-o-code-preview-preview-iframe-portrait'">
+    <div id="iframeContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe ap-o-code-preview-preview-iframe-{{ initial_orientation }}">
       <amp-iframe class="ap-o-code-preview-iframe"
                   src="{{ preview.url }}"
                   [src]="example{{ preview.index }}"
