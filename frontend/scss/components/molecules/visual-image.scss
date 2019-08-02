@@ -1,16 +1,14 @@
 /*
 
-######################
+##############################
 ### MOLECULE: visual-image ###
-######################
+##############################
 
 ### INFO:
 
 visual image molecule includes repsonsive amp images, one with a framed broder from the component-frame atom. It also includes two code snippets that
 include the amp-img components.
 
-### MODIFIERS:
- none
 */
 
 @import '../atoms/_color.scss';
@@ -51,7 +49,7 @@ include the amp-img components.
   &-code-small {
     grid-column: 4 / 6;
     grid-row: 5 / 8;
-    
+
     .#{molecule('code-snippet')} {
       @include txt-3;
     }
