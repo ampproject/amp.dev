@@ -38,12 +38,14 @@ examples.get('/cart-items', cartItemsHandler);
 examples.post('/delete-cart-item', deleteCartItemHandler);
 
 function addToCartHandlerPost(req, res) {
-  const id = req.fields.id;
-  const name = req.fields.name;
-  const price = req.fields.price;
-  const color = req.fields.color;
-  const size = req.fields.size;
-  const quantity = req.fields.quantity;
+  const cartItem = {
+    id: req.fields.id,
+    name: req.fields.name,
+    price: req.fields.price,
+    color: req.fields.color,
+    size: req.fields.size,
+    quantity: parseInt(req.fields.quantity),
+  };
   const origin = req.get('origin');
 
   // // If comes from the cache
@@ -56,7 +58,7 @@ function addToCartHandlerPost(req, res) {
         `/documentation/examples/e-commerce/add_to_cart?${queryString}`);
   } else {
     // Complete the request from the origin
-    updateShoppingCartOnSession(req, id, name, price, color, size, quantity);
+    updateShoppingCartOnSession(req, cartItem);
     res.header('AMP-Redirect-To', req.protocol + '://' + req.get('host') +
         '/documentation/examples/e-commerce/shopping_cart/');
   }
@@ -65,14 +67,16 @@ function addToCartHandlerPost(req, res) {
 };
 
 function addToCartHandlerGet(req, res) {
-  const id = req.query.id;
-  const name = req.query.name;
-  const price = req.query.price;
-  const color = req.query.color;
-  const size = req.query.size;
-  const quantity = req.query.quantity;
+  const cartItem = {
+    id: req.fields.id,
+    name: req.fields.name,
+    price: req.fields.price,
+    color: req.fields.color,
+    size: req.fields.size,
+    quantity: parseInt(req.fields.quantity),
+  };
 
-  updateShoppingCartOnSession(req, id, name, price, color, size, quantity);
+  updateShoppingCartOnSession(req, cartItem);
   res.redirect(req.protocol + '://' + req.get('host') + '/documentation/examples/e-commerce/shopping_cart/');
 };
 
@@ -115,8 +119,7 @@ function deleteCartItemHandler(req, res) {
   res.send(shoppingCartResponse);
 };
 
-function updateShoppingCartOnSession(req, id, name, price, color, size, quantity) {
-  const cartProduct = createCartItem(id, name, price, color, size, quantity);
+function updateShoppingCartOnSession(req, cartItem) {
   let shoppingCart = req.session.shoppingCart;
 
   if (shoppingCart) {
@@ -125,8 +128,8 @@ function updateShoppingCartOnSession(req, id, name, price, color, size, quantity
     shoppingCart = createCart();
   }
 
-  shoppingCart.addItem(cartProduct);
   req.session.shoppingCart = serializer(shoppingCart);
+  shoppingCart.addItem(cartItem);
 }
 
 
