@@ -54,15 +54,13 @@ function handleProductsRequest(request, response) {
   // sort products
   const sortQuery = !!request.query.sort ? request.query.sort : '';
   if (sortQuery !== '') {
+    let comparator;
     if (sortQuery === 'price-descendent') {
-      responseProducts.sort((a, b) => {
-        return Number(b.price) - Number(a.price);
-      });
+      comparator = (a, b) => Number(b.price) - Number(a.price);
     } else {
-      responseProducts.sort((a, b) => {
-        return Number(a.price) - Number(b.price);
-      });
+      comparator = (a, b) => Number(a.price) - Number(b.price);
     }
+    responseProducts.sort(comparator);
   }
   response.json({
     items: responseProducts,
