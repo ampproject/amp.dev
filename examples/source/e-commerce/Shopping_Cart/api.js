@@ -83,12 +83,12 @@ function cartItemsHandler(req, res) {
 
   // cookie exists, but cart is empty
   if (shoppingCart) {
-    shoppingCart = deserialize(shoppingCart);
     console.log('Session exists.');
+    shoppingCart = new ShoppingCart(JSON.parse(shoppingCart));
   } else {
-    shoppingCart = createCart();
-    req.session.shoppingCart = serializer(shoppingCart);
     console.log('Session doesn\'t exist.');
+    shoppingCart = new ShoppingCart();
+    req.session.shoppingCart = JSON.stringify(shoppingCart);
   }
 
   // wrap the shopping cart into an 'items' array, so it can be consumed with amp-list.
@@ -107,9 +107,9 @@ function deleteCartItemHandler(req, res) {
   let shoppingCart = req.session.shoppingCart;
 
   if (shoppingCart) {
-    shoppingCart = deserialize(shoppingCart);
+    shoppingCart = new ShoppingCart(JSON.parse(shoppingCart));
     shoppingCart.removeItem(id, size);
-    req.session.shoppingCart = serializer(shoppingCart);
+    req.session.shoppingCart = JSON.stringify(shoppingCart);
     shoppingCartResponse.items.push(shoppingCart);
   }
 
@@ -121,63 +121,48 @@ function updateShoppingCartOnSession(req, cartItem) {
   let shoppingCart = req.session.shoppingCart;
 
   if (shoppingCart) {
-    shoppingCart = deserialize(shoppingCart);
+    shoppingCart = new ShoppingCart(JSON.parse(shoppingCart));
   } else {
-    shoppingCart = createCart();
+    shoppingCart = new ShoppingCart();
   }
 
-  req.session.shoppingCart = serializer(shoppingCart);
   shoppingCart.addItem(cartItem);
+  req.session.shoppingCart = JSON.stringify(shoppingCart);
 }
 
+class ShoppingCart {
+  constructor(obj = {cartItems: [], isEmpty: true}) {
+    this.cartItems = obj.cartItems;
+    this.isEmpty = obj.isEmpty;
+  }
 
-function createCartItem(id, name, price, color, size, quantity) {
-  const cartProduct = {};
-  cartProduct.id = id;
-  cartProduct.name = name;
-  cartProduct.price = price;
-  cartProduct.color = color;
-  cartProduct.size = size;
-  cartProduct.quantity = parseInt(quantity);
+  addItem(item) {
+    // check if item exists in cart before pushing
+    const foundItem = this.cartItems.filter((elem) => {
+      return (elem.id == item.id && elem.size == item.size);
+    });
 
-  return cartProduct;
-}
+    if (foundItem.length > 0) {
+      foundItem[0].quantity += item.quantity;
+    } else {
+      this.cartItems.push(item);
+    }
 
-function createCart() {
-  const shoppingCart = {
-    cartItems: [],
-    isEmpty: true,
-    addItem: function(item) {
-      // check if item exists in cart before pushing
-      const foundItem = this.cartItems.filter((elem) => {
-        return (elem.id == item.id && elem.size == item.size);
-      });
-
-      if (foundItem.length > 0) {
-        foundItem[0].quantity += item.quantity;
-      } else {
-        this.cartItems.push(item);
-      }
-
-      this.isEmpty = false;
-    },
-    removeItem: function(id, size) {
-      for (let i = 0; i < this.cartItems.length; i++) {
-        if (this.cartItems[i].id === id && this.cartItems[i].size === size) {
-          // remove item
-          this.cartItems.splice(i, 1);
-
-          if (this.cartItems.length == 0) {
-            this.isEmpty = true;
-          }
-        }
-      }
-    },
+    this.isEmpty = false;
   };
 
-  return shoppingCart;
-}
+  removeItem(id, size) {
+    for (let i = 0; i < this.cartItems.length; i++) {
+      if (this.cartItems[i].id === id && this.cartItems[i].size === size) {
+        // remove item
+        this.cartItems.splice(i, 1);
 
+        if (this.cartItems.length == 0) {
+          this.isEmpty = true;
+        }
+      }
+    }
+  };
 
 // Helper function for serialize-javascript package
 function deserialize(serializedJavascript) {
