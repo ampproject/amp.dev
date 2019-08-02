@@ -14,7 +14,7 @@ flyout:
 
 format_cards:
   - title: AMP Websites
-    description: Create complessing, silky smooth and instant loading websites.
+    description: Create compelling, silky smooth and instant loading websites.
     type: websites
     link:
         text: Build your first AMP Website
@@ -176,21 +176,20 @@ resources_cards:
                     </a>
                     {% endfor %}
 
-                    {% do doc.styles.addCssFile('/css/components/molecules/tip.css') %}
                     <div class="ap-o-resources-grid-card-tip">
-                      <div class="ap-m-tip ap-m-tip-default">
-                        <div class="ap-m-tip-content">
-                          <h4>Using a CMS?</h4>
-                          <p>AMP integrates with many publishing platforms and content management systems! Find the full list under <a
-                              href="{{g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path}}">Platform
-                              and Vendor Partners.</a></p>
-                        </div>
+                      <div class="ap-m-tip-content">
+                        <h4>CMS User?</h4>
+                        <p>AMP integrates with many publishing platforms and content management systems! Find the full list under <a
+                          href="{{g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path}}">Platform
+                          and Vendor Partners.</a>
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </section>
 
         {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
