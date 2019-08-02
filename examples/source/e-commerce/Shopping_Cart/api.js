@@ -61,7 +61,6 @@ function addToCartHandlerPost(req, res) {
         '/documentation/examples/e-commerce/shopping_cart/');
   }
 
-  enableCors(req, res);
   res.json({});
 };
 
@@ -94,7 +93,6 @@ function cartItemsHandler(req, res) {
   const shoppingCartResponse = {items: []};
   shoppingCartResponse.items.push(shoppingCart);
 
-  enableCors(req, res);
   res.send(shoppingCartResponse);
 };
 
@@ -179,18 +177,6 @@ function createCart() {
   return shoppingCart;
 }
 
-function enableCors(req, res) {
-  // set to all for dev purposes only, change it by configuration to final domain
-  const sourceOrigin = req.query.__amp_source_origin;
-  const origin = req.get('origin') || sourceOrigin;
-
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Origin', origin);
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Expose-Headers',
-      'AMP-Access-Control-Allow-Source-Origin,AMP-Redirect-To');
-  res.header('AMP-Access-Control-Allow-Source-Origin', sourceOrigin);
-}
 
 // Helper function for serialize-javascript package
 function deserialize(serializedJavascript) {
