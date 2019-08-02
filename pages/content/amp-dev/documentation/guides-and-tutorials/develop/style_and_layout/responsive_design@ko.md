@@ -36,7 +36,7 @@ $title: 반응형 AMP 페이지 만들기
 
 아래 예에서는 모든 화면 크기에 표시하려는 꽃 이미지(640x427px)에 `width` 및 `height`를 지정하고 레이아웃을 `responsive`로 설정합니다.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -77,7 +77,7 @@ $title: 반응형 AMP 페이지 만들기
 
 아래 예에서는 삽입된 YouTube 동영상이 기기 화면의 크기와 방향에 따라 반응하는 것을 보여드리겠습니다. [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 요소에 `"layout=responsive"`를 추가하면 창에 맞춰 동영상 크기가 조정되며 가로세로 비율은 `width` 및 `height`에 지정된 값으로 유지됩니다.
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -111,7 +111,7 @@ $title: 반응형 AMP 페이지 만들기
 - 표시 영역 너비가 최대 900px인 경우, 표시 영역 너비의 75%로 이미지를 렌더링합니다.
 - 표시 영역 너비가 900px을 넘는 경우, 600px의 너비로 이미지를 렌더링합니다.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -147,7 +147,7 @@ $title: 반응형 AMP 페이지 만들기
 
 참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?']({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -181,7 +181,7 @@ HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재
 
 아래 예에서는 브라우저가 WebP를 지원하면 mountains.webp를 게재하고, 지원하지 않으면 mountains.jpg를 게재합니다.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"

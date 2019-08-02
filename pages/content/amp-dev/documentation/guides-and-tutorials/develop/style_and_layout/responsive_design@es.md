@@ -36,7 +36,7 @@ A pesar de que usted puede hacer fácilmente elementos responsivos con `"layout=
 
 En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -77,7 +77,7 @@ Cuando incluya un video en su página web, desea asegurarse de que el usuario pu
 
 En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que responda al tamaño y orientación de la pantalla donde se muestre. Agregando el atributo `"layout=responsive"` al elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), el video cambia su tamaño para ajustarse a la pantalla, y su aspecto de radio es mantenido por las especificaciones de tamaños que se hayan realizado sobre `width` y `height`.
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -111,7 +111,7 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
 - Un viewport de ancho hasta 900 px, renderizar la imagen al 75% del ancho del viewport.
 - Para cualquier tamaño por debajo de 900 px, renderizar la imagen a 600 px de ancho.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -147,7 +147,7 @@ En el ejemplo siguiente, tenemos 3 imágenes recortadas diferentes de un gato qu
 
 Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -181,7 +181,7 @@ Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholder
 
 En el ejemplo siguiente, si el navegador admite WebP, sirva mountains.webp, de lo contrario sirva mountains.jpg.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"

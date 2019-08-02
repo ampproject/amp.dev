@@ -44,7 +44,7 @@ Now, let's apply this to our e-commerce example. First let's fetch this shirt da
 
 ### Indicate unavailable sizes
 
-Next, let's clearly mark unavailable sizes as such for a given SKU. The `"unavailable"` CSS class adds a diagonal line through an element -- we can add it to the elements within `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` corresponding to unavailable sizes:
+Next, let's clearly mark unavailable sizes as such for a given SKU. The `"unavailable"` CSS class adds a diagonal line through an element -- we can add it to the elements within [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) corresponding to unavailable sizes:
 
 ```html
 <amp-selector name="size">
