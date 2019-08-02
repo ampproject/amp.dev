@@ -19,8 +19,6 @@ include the amp-img components.
 @import '../atoms/_icon.scss';
 @import '../atoms/component-frame';
 
-
-@include viewboxGradientAnimation;
 @include rollingAnimation;
 
 .#{molecule('visual-image')} {
