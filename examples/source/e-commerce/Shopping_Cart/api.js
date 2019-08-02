@@ -83,10 +83,8 @@ function cartItemsHandler(req, res) {
 
   // cookie exists, but cart is empty
   if (shoppingCart) {
-    console.log('Session exists.');
     shoppingCart = new ShoppingCart(JSON.parse(shoppingCart));
   } else {
-    console.log('Session doesn\'t exist.');
     shoppingCart = new ShoppingCart();
     req.session.shoppingCart = JSON.stringify(shoppingCart);
   }
