@@ -111,7 +111,6 @@ function deleteCartItemHandler(req, res) {
     shoppingCartResponse.items.push(shoppingCart);
   }
 
-  enableCors(req, res);
   res.send(shoppingCartResponse);
 };
 
