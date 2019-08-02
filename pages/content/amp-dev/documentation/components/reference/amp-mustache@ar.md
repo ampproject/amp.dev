@@ -65,7 +65,7 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 
 ## الاستخدام
 
-يجب تعريف نموذج `amp-mustache` واستخدامه وفقًا [لمواصفات نماذج AMP](../../spec/amp-html-templates.md).
+يجب تعريف نموذج `amp-mustache` واستخدامه وفقًا [لمواصفات نماذج AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 يجب أولاً إعلان/تحميل `amp-mustache` على هذا النحو:
 
@@ -95,7 +95,7 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 
 استخدِم علامة `template` متى أمكن حيث يوفر التحقق من صحة AMP تلميحات مفيدة عن dev-x. استخدام النموذج `script` لحالات الحافة ومشاكل إنشاء النموذج في سياق الجداول. راجِع قسم "الجداول" أدناه.
 
-يتم تحديد أسلوب اكتشاف النموذج وموعد عرضه وكيفية توفير البيانات من قبِل عنصر AMP الهدف الذي يستخدم هذا النموذج لعرض محتواه (في شكل [amp-list](../amp-list/amp-list.md) مثلاً أو [amp-form](../amp-form/amp-form.md) أو غيره).
+يتم تحديد أسلوب اكتشاف النموذج وموعد عرضه وكيفية توفير البيانات من قبِل عنصر AMP الهدف الذي يستخدم هذا النموذج لعرض محتواه (في شكل [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) مثلاً أو [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) أو غيره).
 
 ## القيود
 

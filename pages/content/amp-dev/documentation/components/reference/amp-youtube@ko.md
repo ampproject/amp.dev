@@ -111,7 +111,7 @@ teaser:
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong><code>amp-video-docking</code> 확장 프로그램이 필요합니다.</strong> 이 속성이 있고 동영상을 수동으로 재생하는 경우 사용자가 동영상 구성요소의 시각적 영역 밖으로 스크롤하면 동영상이 '최소화'되고 모서리 또는 요소에 고정됩니다.
-            자세한 내용은 <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">도킹 확장 프로그램 자체에 관한 문서</a>를 참조하세요.</td>
+            자세한 내용은 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">도킹 확장 프로그램 자체에 관한 문서</a>를 참조하세요.</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials(선택사항)</strong></td>

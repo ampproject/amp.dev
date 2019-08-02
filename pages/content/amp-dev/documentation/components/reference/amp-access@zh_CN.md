@@ -50,7 +50,7 @@ limitations under the License.
 
 ## 与 `amp-subscriptions` 的关系
 
-[`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) 扩展提供与 `amp-access` 类似的功能。不过，它支持更专业的访问付费墙协议。以下是一些值得注意的显著差异：
+[`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) 扩展提供与 `amp-access` 类似的功能。不过，它支持更专业的访问付费墙协议。以下是一些值得注意的显著差异：
 
 1. `amp-subscriptions` 授权响应与 amp-access 授权类似，但它经过了严格定义和标准化处理。
 1. `amp-subscriptions` 扩展允许为网页配置多项服务，以参与访问/付费墙决策。系统会同时执行这些服务，并根据返回肯定响应的服务设置它们的优先级。
@@ -500,7 +500,7 @@ AMP 不区分登录和订阅。发布商可以使用多个登录网址/链接或
 
 ## 与 amp-analytics 集成**
 
-[amp-access-analytics.md](./amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。**
+[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。**
 
 ## CORS 网域安全性
 
@@ -567,7 +567,7 @@ AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动�
 
 ## 附录 A：“amp-access”表达式语法
 
-[access-expr-impl.jison](./0.1/access-expr-impl.jison) 文件中提供了最新的 BNF 语法。
+[access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 文件中提供了最新的 BNF 语法。
 
 下面摘录了此语法的主要内容：
 ```javascript

@@ -126,7 +126,7 @@ Anda dapat mengatur gaya `amp-lightbox` dengan CSS standar.
 Komponen `amp-lightbox` untuk digunakan dalam ikan AMPHTML masih bersifat [eksperimental](https://www.ampproject.org/docs/reference/experimental) dan terus mengalami pengembangan. Untuk menggunakan `amp-lightbox` dalam iklan AMPHTML, [aktifkan eksperimen `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Ada beberapa perbedaan antara menggunakan `amp-lightbox` dalam dokumen AMP normal dengan [iklan yang ditulis dalam AMPHTML](../amp-a4a/amp-a4a-format.md):
+Ada beberapa perbedaan antara menggunakan `amp-lightbox` dalam dokumen AMP normal dengan [iklan yang ditulis dalam AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}):
 
 ### Memerlukan close-button
 

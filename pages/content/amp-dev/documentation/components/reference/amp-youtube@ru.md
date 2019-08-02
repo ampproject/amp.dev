@@ -111,7 +111,7 @@ teaser:
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Требуется расширение <code>amp-video-docking</code>.</strong> Если этот атрибут указан и воспроизведение ролика включено пользователем, то когда видео при прокрутке выходит из зоны видимости, оно уменьшается и закрепляется в углу экрана или в заданном месте.
-          <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">Подробнее…</a></td>
+          <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">Подробнее…</a></td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (необязательно)</strong></td>

@@ -58,20 +58,26 @@ Vous pouvez spécifier un modèle de deux façons différentes :
 * Attribut `template` faisant référence à un ID d'un élément `template` ou `script` existant
 * Élément `template` ou `script` imbriqué directement dans l'élément `amp-list`
 
-Pour en savoir plus sur les modèles, reportez-vous à la section [Modèles AMP HTML](../../spec/amp-html-templates.md).
+Pour en savoir plus sur les modèles, reportez-vous à la section [Modèles AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Exemple : Affichage d'une liste dynamique*
 
 Dans l'exemple suivant, nous allons récupérer des données JSON contenant des URL et des titres, et afficher le contenu dans un modèle [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) imbriqué.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Voici le fichier JSON que nous avons utilisé :
 
@@ -128,14 +134,27 @@ Vous pouvez utiliser l'attribut [`items`](#items-optional) dans `<amp-list>` pou
 
 Dans l'exemple suivant, nous allons afficher une liste d'images et de titres. Étant donné que le contenu `<amp-list>` nécessite davantage d'espace que ce qui est disponible, l'exécution AMP affiche l'élément "overflow".
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Voici le code CSS de l'élément `overflow` :
 
@@ -293,7 +312,7 @@ Les attributs `load-more` sont proposés avec les options "manual" et "auto" pou
 
 ```
 
-Pour obtenir des exemples fonctionnels, consultez les fichiers suivants : [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) et [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Pour obtenir des exemples fonctionnels, consultez les fichiers suivants : [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) et [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Attributs
 
@@ -405,7 +424,7 @@ Cet élément inclut des [attributs communs](https://www.ampproject.org/docs/ref
 ## Substitutions
 
 Le composant `<amp-list>` autorise toutes les substitutions de variables d'URL standards.
-Pour plus d'informations, consultez le [Guide des substitutions](../../spec/amp-var-substitutions.md).
+Pour plus d'informations, consultez le [Guide des substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Par exemple :
 ```html

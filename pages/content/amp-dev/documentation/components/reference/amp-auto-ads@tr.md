@@ -76,8 +76,8 @@ Reklam ağı türü ve (reklam ağının gerektirdiği) ek bilgiler etikette bel
 
 ## Desteklenen reklam ağları
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (deneysel)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (deneysel)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Özellikler
 

@@ -96,7 +96,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 
 ## 選択を解除する
 
-要素に対してタップやクリックが行われたときにすべての選択を解除するには、要素内に [`on`](../../spec/amp-actions-and-events.md) action 属性を設定し、`clear` action メソッドで AMP セレクタ `id` を指定します。
+要素に対してタップやクリックが行われたときにすべての選択を解除するには、要素内に [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) action 属性を設定し、`clear` action メソッドで AMP セレクタ `id` を指定します。
 
 例:
 
@@ -149,7 +149,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 
 `on` 属性を使用したイベントにより、他の AMP コンポーネントに対してアクションをトリガーできます。たとえば、`on="select: my-tab.show"` のように指定します。
 
-詳細については、[AMP のアクションとイベント](../../spec/amp-actions-and-events.md)をご覧ください。
+詳細については、[AMP のアクションとイベント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})をご覧ください。
 
 <table>
   <tr>

@@ -18,8 +18,6 @@ before_install:
     openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv -in .staging.key.json.enc -out .staging.key.json -d
     gcloud auth activate-service-account --key-file=.staging.key.json
   fi
-test:
-- npm test
 stages:
 - preparation
 - name: build
@@ -33,7 +31,7 @@ jobs:
     name: Check code, import documents, build samples, playground & boilerplate
     before_script:
     - scripts/unbuffer.sh gulp buildSamples
-    - scripts/unbuffer.sh gulp lintAll
+    - scripts/unbuffer.sh npm test
     script:
     - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
   - stage: build
@@ -102,4 +100,5 @@ jobs:
     env: APP_ENV=staging
     script:
     - scripts/unbuffer.sh gulp buildFinalize
+    - scripts/unbuffer.sh npm run smoke-test
     - gcloud app deploy --project=amp-dev-staging --quiet --version=1

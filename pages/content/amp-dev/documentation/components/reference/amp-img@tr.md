@@ -51,36 +51,48 @@ limitations under the License.
 Dışarıdan getirilen tüm AMP kaynakları gibi `amp-img` bileşenlerine de önceden açık bir boyut (`witdh`/`height` gibi) verilmelidir. Böylece, resim getirilmeden en boy oranı bilinebilir. Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
 
 [tip type="read-on"]
-[AMP HTML Düzeni Sistemi](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) spesifikasyonundaki düzenler [Desteklenen Düzenler](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute) hakkında daha fazla bilgi edinin.
+[AMP HTML Düzeni Sistemi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) spesifikasyonundaki düzenler [Desteklenen Düzenler](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Örnek: Duyarlı bir resim gösterme
 
 Aşağıdaki örnekte, `layout=responsive` öğesini ayarlayarak görüntü alanının boyutuna yanıt veren bir resim görüntülenmektedir.  Resim, `width` ve `height` tarafından belirtilen en boy oranına göre uzar ve küçülür.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
 [Duyarlı AMP Sayfaları Oluşturma](https://www.ampproject.org/docs/guides/responsive/responsive_design.html) kılavuzunda, duyarlı AMP sayfaları hakkında bilgi edinin.
 [/tip]
 
-`amp-img` bileşeni tarafından istenen kaynak yüklenemezse bir [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) alt öğesi sağlanıncaya kadar alan boş kalır. Bir yedek yalnızca başlangıç düzeninde oluşturulur ve olaydan sonraki src değişikliklerinin (örneğin, yeniden boyutlandırma + srcset aracılığıyla) performans sonuçları için bir yedeği olmaz.
+`amp-img` bileşeni tarafından istenen kaynak yüklenemezse bir [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) alt öğesi sağlanıncaya kadar alan boş kalır. Bir yedek yalnızca başlangıç düzeninde oluşturulur ve olaydan sonraki src değişikliklerinin (örneğin, yeniden boyutlandırma + srcset aracılığıyla) performans sonuçları için bir yedeği olmaz.
 
 # Örnek: Bir yedek resim belirtme
 
 Aşağıdaki örnekte, tarayıcı WebP'yi desteklemiyorsa yedek JPG resmi görüntülenir:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Yer tutucu arka plan rengi veya diğer görseller, CSS seçim aracı ve öğenin kendisinde stil belirtilerek ayarlanabilir.
 
@@ -167,12 +179,16 @@ Duyarlı resimlerde, `width` ve `height` değerlerinin `amp-img` etiketinin geni
 
 Örneğin, `width="900"` ve `height="675"` değerlerini belirtmek yerine sadece `width="1.33"` ve `height="1"` değerlerini belirtebilirsiniz.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Farklı ekran çözünürlükleri için birden fazla kaynak dosyası ayarlama
 

@@ -60,15 +60,23 @@ teaser:
 
 #### Пример
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="293" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  layout="responsive"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.webm"
+    type="video/webm" />
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+    type="video/mp4" />
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## Статистика
 
@@ -102,7 +110,7 @@ teaser:
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Для работы требуется расширение <code>amp-video-docking</code>.</strong> Если этот атрибут указан, то запущенное вручную видео, оказавшееся вне зоны видимости в результате прокрутки страницы, уменьшается и закрепляется в углу экрана или в заданном месте.
-            Дополнительные сведения вы найдете в <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">документации по расширению amp-video-docking</a>.</td>
+            Дополнительные сведения вы найдете в <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">документации по расширению amp-video-docking</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>

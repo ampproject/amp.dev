@@ -17,18 +17,6 @@
 const config = require('./config');
 
 describe('config', () => {
-  it('Should be in test mode', () => {
-    expect(config.isTestMode()).toBe(true);
-  });
-
-  it('Should also be in dev mode', () => {
-    expect(config.isDevMode()).toBe(true);
-  });
-
-  it('Should not be in prod mode', () => {
-    expect(config.isProdMode()).toBe(false);
-  });
-
   // We use the regular project podspec for testing as long as we only use attributes that are not likely to change
   it('Should build a grow podspec with languages, but without filter', () => {
     const podSpec = config.buildGrowPodSpec();

@@ -1,7 +1,10 @@
 ---
-name: 🛠 Add a tool/vendor
+name: "\U0001F6E0 Add a tool/vendor"
 about: I want to add my third-party tool, service, platform or ad vendor to amp.dev
-labels: 'Type: New,Status: Pending Triage'
+title: ''
+labels: 'Status: Pending Triage, Type: New'
+assignees: ''
+
 ---
 
 ## Request to add third-party tool/service/platform/vendor

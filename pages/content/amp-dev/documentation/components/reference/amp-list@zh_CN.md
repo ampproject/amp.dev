@@ -58,20 +58,26 @@ teaser:
 * 利用 `template` 属性引用现有 `template` 或 `script` 元素的 ID。
 * 在 `amp-list` 元素中直接嵌套 `template` 或 `script` 元素。
 
-如需详细了解模板，请参阅 [AMP HTML 模板](../../spec/amp-html-templates.md)。
+如需详细了解模板，请参阅 [AMP HTML 模板](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)。
 
 *示例：显示动态列表*
 
 在以下示例中，我们将检索包含网址和标题的 JSON 数据，并在嵌套的 [amp-mustache 模板](https://www.ampproject.org/docs/reference/components/amp-mustache)中呈现内容。
 
-<!--嵌入式示例 - 显示在 ampproject.org 中-->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">显示完整代码</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 以下是我们使用的 JSON 文件：
 
@@ -128,14 +134,27 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 在下面的示例中，我们显示了一系列图片和标题。由于 `<amp-list>` 内容需要的空间多于可用空间，AMP runtime 将显示 overflow 元素。
 
-<!--嵌入式示例 - 摘自 ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">显示完整代码</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 以下是 `overflow` 的 CSS：
 
@@ -291,7 +310,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ```
 
-如需查看有用示例，请访问 [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) 和 [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html)。
+如需查看有用示例，请访问 [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) 和 [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html)。
 
 ### 属性
 
@@ -402,7 +421,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ## 替换
 
-`<amp-list>` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](../../spec/amp-var-substitutions.md)。
+`<amp-list>` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。
 
 例如：
 ```html
