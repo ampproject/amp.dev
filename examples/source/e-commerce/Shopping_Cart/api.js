@@ -38,14 +38,7 @@ examples.get('/cart-items', cartItemsHandler);
 examples.post('/delete-cart-item', deleteCartItemHandler);
 
 function addToCartHandlerPost(req, res) {
-  const cartItem = {
-    id: req.fields.id,
-    name: req.fields.name,
-    price: req.fields.price,
-    color: req.fields.color,
-    size: req.fields.size,
-    quantity: parseInt(req.fields.quantity),
-  };
+  const cartItem = createCartItem(req);
   const origin = req.get('origin');
 
   // If comes from the cache
@@ -65,7 +58,14 @@ function addToCartHandlerPost(req, res) {
 };
 
 function addToCartHandlerGet(req, res) {
-  const cartItem = {
+  const cartItem = createCartItem(req);
+
+  updateShoppingCartOnSession(req, cartItem);
+  res.redirect(req.protocol + '://' + req.get('host') + '/documentation/examples/e-commerce/shopping_cart/');
+};
+
+function createCartItem(req) {
+  return {
     id: req.fields.id,
     name: req.fields.name,
     price: req.fields.price,
@@ -73,10 +73,7 @@ function addToCartHandlerGet(req, res) {
     size: req.fields.size,
     quantity: parseInt(req.fields.quantity),
   };
-
-  updateShoppingCartOnSession(req, cartItem);
-  res.redirect(req.protocol + '://' + req.get('host') + '/documentation/examples/e-commerce/shopping_cart/');
-};
+}
 
 function cartItemsHandler(req, res) {
   let shoppingCart = req.session.shoppingCart;
