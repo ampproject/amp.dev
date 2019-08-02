@@ -161,10 +161,6 @@ class ShoppingCart {
       }
     }
   };
-
-// Helper function for serialize-javascript package
-function deserialize(serializedJavascript) {
-  return eval('(' + serializedJavascript + ')');
 }
 
 module.exports = examples;
