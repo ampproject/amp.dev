@@ -50,15 +50,41 @@
     }
 
     &-code-snippet {
-      &-highlight:before {
-        content: 'right';
+      &-highlight {
+        position: relative;
         color: #e6db74;
-        animation: 10s ease-in-out 3.5s infinite both highlight-code;
+
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: calc(100% - 25px);
+            height: 100%;
+            top: -1px;
+            left: 8px;
+            z-index: -1;
+            background-color: color('pink-flamingo');
+            animation: 10s ease-in-out 3.5s infinite both handleCodeMarker;
+          }
+
+          &::after {
+            content: '>';
+            color: #fff;
+          }
+
+          &:nth-child(1) { animation: 10s ease-in-out 3.5s infinite both handleValueRight; }
+          &:nth-child(2) { animation: 10s ease-in-out 3.5s infinite both handleValueEmpty; }
+          &:nth-child(3) { animation: 10s ease-in-out 3.5s infinite both handleValueLeft; }
+        }
       }
     }
   }
 }
-
 
 @keyframes slide {
   0%, 9%, 18%, 36%, 90%, 100% { transform: translateX(0); }
@@ -70,13 +96,30 @@
   45%, 54%, 63%, 72%, 81% { transform: rotate(-10deg) scale(1, 1.1) skew(-22deg); }
 }
 
-@keyframes highlight-code {
-  0%, 90%, 100% { content: 'right'; background-color: transparent; }
-  9% { content: 'right'; background-color: color('pink-flamingo'); }
-  18% { content: " "; background-color: color('pink-flamingo'); }
-  36% { content: 'left'; background-color: color('pink-flamingo'); }
-  45%, 54% { content: 'left'; background-color: transparent; }
-  63% { content: 'left'; background-color: color('pink-flamingo'); }
-  72% { content: " "; background-color: color('pink-flamingo'); }
-  81% { content: 'right'; background-color: color('pink-flamingo'); }
+@keyframes handleValueRight {
+  0%, 18% { opacity: 1; }
+  18.01%, 81% { opacity: 0; }
+  81.01%, 100% { opacity: 1; }
+}
+
+@keyframes handleValueEmpty {
+  0%, 18% { opacity: 0; }
+  18.01%, 36% { opacity: 1; }
+  36.01%, 72% { opacity: 0; }
+  72.01%, 81% { opacity: 1; }
+  81.01%, 100% { opacity: 0; }
+}
+
+@keyframes handleValueLeft {
+  0%, 36% { opacity: 0; }
+  36.01%, 72% { opacity: 1; }
+  72.01%, 100% { opacity: 0; }
+}
+
+@keyframes handleCodeMarker {
+  0% { opacity: 0; }
+  9%, 36% { opacity: 1; }
+  45%, 54% { opacity: 0; }
+  63%, 81% { opacity: 1; }
+  90%, 100% { opacity: 0; }
 }
