@@ -130,7 +130,11 @@ content-type: application/signed-exchange;v=b3
 ```
 
 [tip type="important"]
-The `v=b3` version string is the current version. This version will change. 
+The `v="1..100"` in the request will change. Do not match on this exact string; instead split on `;` and look for `google`.
+[/tip]
+
+[tip type="important"]
+The `v=b3` version string in the response is the current version as of August 2019. This version will change. 
 [/tip]
 
 The bulk of the response should be your AMP page (in plaintext). There's a small binary header, and, if the page is >16kb, a few binary bytes sprinkled throughout.
