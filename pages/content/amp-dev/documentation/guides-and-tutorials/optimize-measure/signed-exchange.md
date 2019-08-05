@@ -117,10 +117,10 @@ See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/
 
 ### Testing
 
-Verify that your staging site returns the content with the added MIME type `application/signed-exchange` when provided with the correct request headers. In the below example, replace `staging.example.com` with your staging server.
+Verify that your staging site responds with content of MIME type `application/signed-exchange` when specified by the HTTP request. In the below example, replace `staging.example.com` with your staging server.
 
 ```sh
-$ curl -si -H 'amp-cache-transform: google' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
+$ curl -si -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
 ```
 
 This command should return this line (amongst others):
@@ -135,21 +135,27 @@ The `v=b3` version string is the current version. This version will change.
 
 The bulk of the response should be your AMP page (in plaintext). There's a small binary header, and, if the page is >16kb, a few binary bytes sprinkled throughout.
 
-You can also test with the more complete accept header sent by Chrome:
-
-```sh
-$ curl -si -H 'amp-cache-transform: google' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' https://staging.example.com/ | less
-```
-
 The [`dump-signedexchange` tool](https://github.com/WICG/webpackage/blob/master/go/signedexchange/README.md#installation) can be used to inspect the response:
 
 ```sh
-$ curl -s --output - -H 'amp-cache-transform: google' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ > example.sxg
+$ curl -s --output - -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ > example.sxg
 $ dump-signedexchange -i example.sxg
 format version: 1b3
 ```
 
 (Note that the `-verify` switch will not work at this point because the required certificates are not on the `https://example.com/` server.)
+
+Verify that the response *always* include the `Vary` header with the value `Accept,AMP-Cache-Transform` (irrespective of whether the MIME type is `text/html`, `application/signed-exchange`, or something else:
+
+```sh
+$ curl -si https://staging.example.com/ | less
+```
+
+This command should return this line (amongst others):
+
+```txt
+Vary: Accept,AMP-Cache-Transform
+```
 
 ## Deploy packager to production
 
