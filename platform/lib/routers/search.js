@@ -176,14 +176,16 @@ async function handleSearchRequest(request, response, next) {
   const pages = [];
   const components = [];
 
-  for (const item of cseResult.items) {
-    const page = createPageObject(item);
+  if (totalResults > 0) {
+    for (const item of cseResult.items) {
+      const page = createPageObject(item);
 
-    if (highlightComponents && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
-      enrichComponentPageObject(item, page, locale);
-      components.push(page);
-    } else {
-      pages.push(page);
+      if (highlightComponents && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
+        enrichComponentPageObject(item, page, locale);
+        components.push(page);
+      } else {
+        pages.push(page);
+      }
     }
   }
 
