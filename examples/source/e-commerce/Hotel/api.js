@@ -22,9 +22,6 @@ const rooms = require(utils.project.absolute('/examples/static/samples/json/room
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
-examples.use(express.urlencoded({
-  extended: true,
-}));
 
 examples.all('/rooms', (request, response) => {
   setMaxAge(response, 0);
