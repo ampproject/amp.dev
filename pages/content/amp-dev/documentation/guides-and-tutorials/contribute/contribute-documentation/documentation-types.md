@@ -1,7 +1,7 @@
 ---
 $title: Documentation types 
 $order: 1
-description: 'Types of documentaion contributions accepted on amp.dev'
+description: 'Types of documentation contributions accepted on amp.dev'
 formats:
   - websites
   - stories
@@ -11,15 +11,11 @@ author: CrystalOnScript
 ---
 Below is a brief outline of the types of documentation contributions accepted on amp.dev. 
 
-
 ## Introductory tutorial
 
 Introductory tutorials help the developer understand the general idea of the technology. It starts them off coding and ends with a complete basic “Hello World” project. Introductory tutorials demonstrate how to build a key feature of AMP in a step-by-step process. Pair Introductory tutorials with inline code samples and a downloadable sample, that requires minimal tweaks by the developer to run.
 
 amp.dev examples:
-
-
-
 *   [Create your first AMP page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create.md', locale=doc.locale).url.path}}?format=websites)
 *   [Create your first AMP story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story.md', locale=doc.locale).url.path}}?format=stories)
 *   [Create your first AMPHTML ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad.md', locale=doc.locale).url.path}}?format=ads)
@@ -35,7 +31,7 @@ amp.dev examples:
   <tr>
    <td>Provide guidance with brief explanations and minimal steps. 
    </td>
-   <td>Dive deep into project nuances. There may be many ways to accomplish the tutorial, but we are presenting <em>this</em> way.
+   <td>Dive deep into project nuances. There may be many was to accomplish the outcome of the tutorial, but the point isn't to show every route, but a single, good route.
    </td>
   </tr>
   <tr>
@@ -71,9 +67,6 @@ amp.dev examples:
 Advanced tutorials help developers accomplish a specific task. It assumes the developer has some familiarity with AMP. It should demonstrate how to build an experience, integrate a feature, or address implementation tasks. 
 
 amp.dev examples:
-
-
-
 *   [How to configure basic analytics for your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.md', locale=doc.locale).url.path}}?format=websites)
 *   [Add custom JavaScript to AMP pages with amp-script]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript-tutorial.md', locale=doc.locale).url.path}}?format=websites)
 *   [Turn your AMP site into a PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.md', locale=doc.locale).url.path}}?format=websites)
@@ -106,16 +99,11 @@ amp.dev examples:
   </tr>
 </table>
 
-
-
 ## Introductory Guide
 
-An introductory guide provides an overview of relevant information to get started with AMP. It should identify the feature, describe what it is, and finish with what it does. Introductory guides will introduce a developer to the basic requirements of the feature without directing them to implement something in a specific way. If you’re walking through a process step by step with code samples, you’re probably writing a tutorial. 
+An introductory guide provides an overview of relevant information to get started with AMP. It should identify the feature, describe what it is, and finish with what it does. Introductory guides will introduce a developer to the basic requirements of the feature without directing them to implement something in a specific way. If you’re walking through a process step by step with code samples, you’re probably writing a tutorial. If you're outlining all the programmatic elements for an AMP component, you're probably writing a reference document.
 
 amp.dev examples:
-
-
-
 *   [AMP email fundamentals]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md', locale=doc.locale).url.path}}?format=email)
 *   [Common element attributes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}?format=websites)
 *   [Best practices for creating an AMP story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}}?format=stories)
@@ -135,15 +123,15 @@ amp.dev examples:
    </td>
   </tr>
   <tr>
-   <td>Introduce features and concepts.
+   <td>Introduce features and concepts. Link to reference docs for advanced usage details.
    </td>
    <td>Describe in exhaustive detail. 
    </td>
   </tr>
   <tr>
-   <td>Provide code samples and real-world examples.
+   <td>Provide code samples and real-world examples. 
    </td>
-   <td>Create an entire app.
+   <td>Create an entire app. Link to examples or demos instead for further exploration.
    </td>
   </tr>
   <tr>
@@ -154,16 +142,11 @@ amp.dev examples:
   </tr>
 </table>
 
-
-
 ## Concept Guide
 
 Concept guides help developers build a deeper understanding of AMP. A concept guide is like a topographic map. It shows the various trails in the area with details such as elevation changes, but it doesn’t prescribe a specific route through the terrain. Explain what a feature is and how it functions rather than how to build a feature.
 
 amp.dev examples:
-
-
-
 *   [Animate & transition]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md', locale=doc.locale).url.path}}?format=websites)
 *   [Track engagement with analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics.md', locale=doc.locale).url.path}}?format=websites)
 *   [Style & layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout.md', locale=doc.locale).url.path}}?format=websites)
@@ -191,7 +174,7 @@ amp.dev examples:
   <tr>
    <td>Include visual aids, such as diagrams or screenshots.
    </td>
-   <td>Overthink this, you can request help for visual aids.
+   <td>Overthink this, you can request help for visual aids from the [outreach working group](https://github.com/ampproject/wg-outreach).
    </td>
   </tr>
   <tr>
@@ -202,13 +185,15 @@ amp.dev examples:
   </tr>
 </table>
 
-
-
 ## Reference Documentation
 
-Reference documentation lists all the programmatic elements for an AMP component. It provides detailed behavioral information and designed for scanning. Reference documentation should include exemplary code samples and demonstrate use-cases.   
+Reference documentation lists all the programmatic elements for an AMP component. It provides detailed behavioral information and is designed for scanning. Reference documentation should include exemplary code samples and demonstrate use-cases.   
 
-amp.dev examples are found under [the AMP component catalogue]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}?format=websites).
+amp.dev reference documents are found under [the AMP component catalogue]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}?format=websites).
+
+[tip type="important"]
+AMP reference documentation is contributed to the [AMPHTML repository](https://github.com/ampproject/amphtml).
+[/tip]
 
 <table>
   <tr>
@@ -237,14 +222,11 @@ amp.dev examples are found under [the AMP component catalogue]({{g.doc('/content
   </tr>
 </table>
 
-
-
 ## Examples
 
 Examples are a code focused introduction to AMP components and AMP concepts. AMP examples demonstrate the different components and attributes used to create them without describing a step by step process to build an end product. Examples are a fantastic way to see how AMP can and is being used on the open web.
 
-amp.dev examples are under examples in[ learn AMP by example]({{g.doc('/content/amp-dev/documentation/examples.md', locale=doc.locale).url.path}}?format=websites).
-
+amp.dev examples are located under examples in[ learn AMP by example]({{g.doc('/content/amp-dev/documentation/examples.md', locale=doc.locale).url.path}}?format=websites).
 
 <table>
   <tr>
@@ -266,7 +248,7 @@ amp.dev examples are under examples in[ learn AMP by example]({{g.doc('/content/
    </td>
   </tr>
   <tr>
-   <td>Include embedded through and complete code samples.
+   <td>Include complete code samples.
    </td>
    <td>Link out to downloadable code. 
    </td>

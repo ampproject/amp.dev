@@ -10,7 +10,7 @@ formats:
 author: CrystalOnScript
 ---
 
-Documentation is the starting point for developers learn how to build successful websites, stories, ads, and dynamic emails with AMP. The core AMP content team is a small one, but our responsibility is big. We appreciate your help! Contributors can fix typos, correct out of date information, and write fresh content. Use this page to get started learning the ins and outs of becoming a content contributor. 
+Documentation is the starting point for developers to learn how to build successful websites, stories, ads, and dynamic emails with AMP. The core AMP content team is a small one, but our responsibility is big. We appreciate your help! Contributors can fix typos, correct out of date information, and write fresh content. Use this page to get started learning the ins and outs of becoming a content contributor. 
 
 Thanks for your interest in contributing to the AMP Project, welcome to the team! 
 
@@ -18,11 +18,11 @@ Thanks for your interest in contributing to the AMP Project, welcome to the team
 
 amp.dev hosts our documentation and the AMP team collaborates on [GitHub](https://github.com/ampproject). Follow the amp.dev [repository’s README](https://github.com/ampproject/amp.dev) to run amp.dev on your local machine. This is essential for ensuring correct asset rendering and formatting. However, for simple fixes, such as typos, you can edit the file directly on GitHub.
 
-Join the [AMP Project Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) and let us know what you’re working on and if you have any questions. 
+Join the [AMP Project Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) [outreach working group](https://github.com/ampproject/wg-outreach) and let us know what you’re working on! 
 
 # Content contribution types 
 
-There are several ways to contribute content to amp.dev. We’ve outlined a few to get started. If you would like to contribute in a different way, please do not hesitate to reach out and ask if we can accept it! 
+There are several ways to contribute content to amp.dev. We’ve outlined a few to get started. If you would like to contribute in a different way, please do not hesitate to [reach out](https://github.com/ampproject/wg-outreach) and ask if we can accept it! 
 
 ## Good first issues
 
@@ -34,7 +34,7 @@ If you see out of date, misplaced, or incorrect information, you can fix it! We 
 
 ## Writing content 
 
-Want a guide or tutorial but don’t see it on amp.dev? You can write it! Start by reviewing the [types of content we accept](https://docs.google.com/document/d/1C3ZyrqybWkL7co0BzC5fkgGjaT1Bv1uvrDYFFmZ26NQ/edit) and [submitting a content proposal](https://docs.google.com/document/d/1crPU7KoFYqpXAewYzbQm7RkU7hz-UiYEcqE8cso7Yc4/edit#heading=h.vg7gibbb5yw). Once your proposal has been accepted, get familiar with the[ AMP terminology guide](https://docs.google.com/document/d/1esM3fMlh_n8chjAyPYm6ljDjb2j0wjBHUqJuIFAP01g/edit?ts=5d2e0677#) and [documentation formatting guidelines](https://docs.google.com/document/d/1esM3fMlh_n8chjAyPYm6ljDjb2j0wjBHUqJuIFAP01g/edit#heading=h.4poc86duk583). Look[ here for information on contributing examples](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).   
+Want a guide or tutorial but don’t see it on amp.dev? You can write it! Start by reviewing the [types of content we accept](https://docs.google.com/document/d/1C3ZyrqybWkL7co0BzC5fkgGjaT1Bv1uvrDYFFmZ26NQ/edit) and [submitting a content proposal](https://docs.google.com/document/d/1crPU7KoFYqpXAewYzbQm7RkU7hz-UiYEcqE8cso7Yc4/edit#heading=h.vg7gibbb5yw). Once your proposal has been accepted, get familiar with the[ AMP terminology guide]({{g.doc('/content/amp-dev/documentation/contributing/contribute-documentation/formatting.md', locale=doc.locale).url.path}}?format=websites) and [documentation formatting guidelines](https://docs.google.com/document/d/1esM3fMlh_n8chjAyPYm6ljDjb2j0wjBHUqJuIFAP01g/edit#heading=h.4poc86duk583). Look[ here for information on contributing examples](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).   
 
 ## Creating samples 
 

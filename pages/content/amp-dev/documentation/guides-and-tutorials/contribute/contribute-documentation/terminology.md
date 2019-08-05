@@ -96,7 +96,7 @@ Examples include: amp-form, amp-img, amp-video, ect.
    </td>
    <td><ul>
 
-<li>An AMP story format is free and part of the open web.
+<li>The AMP story format is free and part of the open web.
 <li>AMP stories immerse readers in fast-loading full-screen experiences.  </li></ul>
 
    </td>
@@ -108,7 +108,7 @@ Examples include: amp-form, amp-img, amp-video, ect.
    </td>
    <td><ul>
 
-<li>AMP ads greatly improve the mobile internet through their intelligent design and pre-loading features.</li></ul>
+<li>AMP ads greatly improve the mobile web through their intelligent design and pre-loading features.</li></ul>
 
    </td>
   </tr>

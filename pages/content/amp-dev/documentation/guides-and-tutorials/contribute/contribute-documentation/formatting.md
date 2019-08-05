@@ -12,12 +12,9 @@ author: CrystalOnScript
 
 Guides and tutorials are submitted in [Markdown](https://www.markdownguide.org/), with an additional frontmatter and shortcode formatting. 
 
-
 ## Documentation locations
 
-Content on amp.dev is pulled from two repositories, amp.dev and AMPHTML. All reference documentation under components is pulled from AMPHTML, either from builtins or extensions. 
-
-
+Content on amp.dev is pulled from two repositories, [amp.dev](https://github.com/ampproject/amp.dev) and [AMPHTML](https://github.com/ampproject/amphtml). All reference documentation under components is pulled from AMPHTML, either from builtins or extensions. 
 
 *   [Built-in components ](https://github.com/ampproject/amphtml/tree/master/builtins)
 *   [Components](https://github.com/ampproject/amphtml/tree/master/extensions) 
@@ -25,8 +22,7 @@ Content on amp.dev is pulled from two repositories, amp.dev and AMPHTML. All ref
 *   [Examples](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 *   [Guides & tutorials](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)
 
-There are several other documents that are imported to amp.dev from AMPHTML. They are [listed in this file](https://github.com/ampproject/amp.dev/blob/future/platform/config/imports/spec.json)._ If you update any of these documents in the amp.dev repository it will be re-written on the next build_.  
-
+There are several other documents that are imported to amp.dev from AMPHTML. They are [listed in this file](https://github.com/ampproject/amp.dev/blob/future/platform/config/imports/spec.json). Don't update these documents in the amp.dev repository – your changes will get overwritten on subsequent builds!  
 
 ## Frontmatter 
 
@@ -44,6 +40,7 @@ contributors:
   - fstanis
 description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
 ```
+
 <table>
   <tr>
    <td>
@@ -66,7 +63,7 @@ description: For web experiences requiring a high amount of customization AMP ha
    <td>List the AMP experiences your document is relevant to. If your document was relevant to AMP websites and AMP stories, but not AMP ads or AMP email, your frontmatter would like the following:
     ```yaml
         formats:
-          - websties 
+          - websites 
           - stories
     ```  
    </td>
@@ -151,8 +148,8 @@ Read-on
 </pre>
 </div>
 
-## Code samples
-Place code samples inside sets of three backticks, specify the language at the end of the first set of backticks.
+## Code snippets
+Place code snippets inside sets of three backticks, specify the language at the end of the first set of backticks.
 
 <div class="ap-m-code-snippet">
 <pre>
@@ -182,8 +179,8 @@ If your code contains double curly braces, which often is the case if you use [`
 </pre>
 </div>
 
-### Code samples in lists
-Python-Markdown has some limitations. Use the following syntax when including code samples in lists:
+### Code snippets in lists
+Python-Markdown has some limitations. Use the following syntax when including code snippets in lists:
 
 <div class="ap-m-code-snippet">
 <pre>
