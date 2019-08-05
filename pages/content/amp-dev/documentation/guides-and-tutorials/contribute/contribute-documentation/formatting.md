@@ -195,6 +195,62 @@ Python-Markdown has some limitations. Use the following syntax when including co
 </pre>
 </div>
 
+## Preview code samples
+You can let a code sample have a preview or a link to open the code sample in the [AMP Playground](https://playground.amp.dev/):
+
+<div class="ap-m-code-snippet">
+  <pre>
+  &lsqb;example preview="default: none|inline|top-frame"
+          playground="default: true|false"
+          imports="&lt;custom-element-1&gt;,&lt;custom-element-2&gt;,..."
+          template="&lt;custom-template&gt;"]
+  ```html
+    // code sample
+  ```
+  &lsqb;/example]
+  </pre>
+</div>
+
+Use the `preview` attribute to define how the preview is generated:
+
+- **none**: No preview will be generated
+
+- **inline**: The example preview is displayed above the source code.
+  An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
+  Use this option for small examples that do not need any styling or other `head` elements
+  (imports do not count, since they are specified via the `imports` attribute).
+  
+- **top-frame**: The example preview is displayed above the source code inside an iframe.
+  The orientation can be toggled between `portrait` and `landscape` mode.
+  You can preselect the orientation by specifying the additional attribute:
+
+- **orientation**: `default: landscape|portrait`
+
+If custom elements are needed, specify them in the imports attribute as a comma separated list
+with the name of the component followed by a colon and the version.
+
+For email content with resource links use the placeholder <code>&#123;&#123;server_for_email}}</code> in the source.
+
+<div class="ap-m-code-snippet">
+  <pre>
+  [example preview="top-frame" orientation="portrait"
+          playground="true"
+          imports="amp-list:0.1"
+          template="amp-mustache:0.2"]
+  ```html
+  &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
+    src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
+    &lt;template type=&quot;amp-mustache&quot;&gt;{% raw %}
+      &lt;div class=&quot;url-entry&quot;&gt;
+        &lt;a href=&quot;{{url}}&quot;&gt;{{title}}&lt;/a&gt;
+      &lt;/div&gt;
+    {% endraw %}&lt;/template&gt;
+  &lt;/amp-list&gt;
+  ```
+  [/example]
+  </pre>
+</div>
+
 ## Links
 Guides and tutorials are filterable by AMP format, such as AMP websites or AMP stories. Readers who filter their content often want to keep it this way. When linking out to a different guide or tutorial, use the following structure:
 
