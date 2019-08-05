@@ -43,7 +43,7 @@ function handleProductsRequest(request, response) {
   const colorQuery = !!request.query.searchColor ? request.query.searchColor : '';
 
   // find products that match the query
-  const responseProducts = findProducts({name: productQuery, color: colorQuery});
+  const responseProducts = findProducts(productQuery, colorQuery);
 
   // sort products
   const sortQuery = !!request.query.sort ? request.query.sort : '';
@@ -61,19 +61,13 @@ function handleProductsRequest(request, response) {
   });
 }
 
-function findProducts(queries = {name: '', color: 'all'}) {
-  const queryKeys = Object.keys(queries);
+function findProducts(name = '', color = 'all') {
+  color = color.toLowerCase();
+  name = name.toLowerCase();
+
   return products.items.filter((prod) => {
-    const matches = [];
-    queryKeys.filter((key) => {
-      if (prod[key].toLowerCase().includes(queries[key].toLowerCase()) || queries[key] === 'all') {
-        matches.push(true);
-      } else {
-        matches.push(false);
-      }
-    });
-    // return only true if all queries for a product have been matched
-    return matches.every((match) => match);
+    return prod.name.toLowerCase().includes(name) &&
+          (prod.color.toLowerCase().includes(color) || color === 'all');
   });
 }
 
