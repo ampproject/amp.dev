@@ -132,7 +132,7 @@ Using the [documentation](../../../documentation/components/reference/amp-bind.m
 
 Once you have finished, the result should look like this:
 
-{{ image('/static/img/courses/advanced/image4.png', 752, 1336, align='center third', caption='Image of the styled thumbnail carousel') }}
+{{ image('/static/img/courses/advanced/image4.png', 225, 400, align='center third', caption='Image of the styled thumbnail carousel') }}
 
 ### Solution
 
@@ -183,7 +183,7 @@ Remember to include the `<amp-bind>` library in the `<head>`:
 
 Binding and state management are important to e-commerce pages. Imagine going to a shopping site looking to buy a new t-shirt. You search through the lists of options before settling on a style and brand that you really like. Navigating to the product page, you see lists of additional options. You might be able to select among different fits, sizes, or colors.
 
-{{ image('/static/img/courses/advanced/image12.png', 1999, 1001, align='center', caption='Online shopping product page example') }}
+{{ image('/static/img/courses/advanced/image12.png', 550, 275, align='center', caption='Online shopping product page example') }}
 
 Often, as we select these options, the page changes to match our selection. The picture might update to a green women’s shirt or to a red men’s shirt. The price might change as we pick a different t-shirt fit or size. Other options might be sold out entirely, causing an error message to appear!
 
