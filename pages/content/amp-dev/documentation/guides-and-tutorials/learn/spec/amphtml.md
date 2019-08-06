@@ -230,7 +230,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   
   <tr>
     <td width="30%">canvas</td>
-    <td>Canvas element is only allowed when enclosed within an <a href="https://amp.dev/documentation/components/amp-script">amp-script</a> block.</td>
+    <td>Canvas element is only allowed when enclosed within an [amp-script]({{g.doc('/content/amp-dev/documentation/components/reference/amp-script.md', locale=doc.locale).url.path}}?format=websites) block.</td>
   </tr>
 </table>
 
