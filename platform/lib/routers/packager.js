@@ -58,11 +58,14 @@ const packager = (request, response, next) => {
     next();
     return;
   }
+  // sign https://amp.dev instead of https://amp.dev/
+  const urlToSign = request.url === '/' ? '' : request.url;
   // Hard-code amp.dev as it has to match the cert
   const searchParams = new URLSearchParams({
-    sign: 'https://amp.dev' + request.url,
+    sign: 'https://amp.dev' + urlToSign,
   }).toString();
   const url = `/priv/doc?${searchParams}`;
+  console.log('sign', url);
   // Serve webpackage via packager
   sxgProxy(request, response, url, next);
 };
