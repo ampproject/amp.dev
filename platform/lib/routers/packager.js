@@ -65,7 +65,6 @@ const packager = (request, response, next) => {
     sign: 'https://amp.dev' + urlToSign,
   }).toString();
   const url = `/priv/doc?${searchParams}`;
-  console.log('sign', url);
   // Serve webpackage via packager
   sxgProxy(request, response, url, next);
 };
