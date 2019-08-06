@@ -5,8 +5,15 @@
 <section class="ap--content">
   {% include '/views/partials/sidebar-toggle-button.j2' %}
   {% include '/views/partials/breadcrumbs.j2' %}
+
   {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
   <h1>{{ doc.title }}</h1>
+  {% endif %}
+
+  
+  {# Add the level toggle button, if the document hast a level: true in the frontmatter #}
+  {% if doc.filter %}
+  {% include '/views/partials/level-toggle.j2' %}
   {% endif %}
 
   {{ doc.html|render|safe }}
