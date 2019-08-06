@@ -117,7 +117,7 @@
     "jasmine": "3.4.0",
     "jest": "24.8.0",
     "jimp": "0.6.4",
-    "js-beautify": "1.10.1",
+    "js-beautify": "1.10.2",
     "keymaster": "1.6.2",
     "mini-css-extract-plugin": "0.8.0",
     "node-sass": "4.12.0",
