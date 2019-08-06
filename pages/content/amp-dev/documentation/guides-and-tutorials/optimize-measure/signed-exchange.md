@@ -117,24 +117,24 @@ See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/
 
 ### Testing
 
-Verify that your staging site responds with content of MIME type `application/signed-exchange` when specified by the HTTP request. In the below example, replace `staging.example.com` with your staging server.
+Verify that your staging site responds with content of MIME type `application/signed-exchange` when specified by the HTTP request. For example (replace `staging.example.com` with your staging server):
 
 ```sh
 $ curl -si -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
 ```
 
-This command should return this line (amongst others):
+The output must include this line:
 
 ```txt
 content-type: application/signed-exchange;v=b3
 ```
 
 [tip type="important"]
-The `v="1..100"` in the request will change. Do not match on this exact string; instead split on `;` and look for `google`.
+The `v="1..100"` in the request is a placeholder. Do not match on this exact value; instead, as [described in the amppackager installation instructions](https://github.com/ampproject/amppackager/blob/master/README.md#productionizing), check for the existence of the `amp-cache-transform` header only, and ignore the value.
 [/tip]
 
 [tip type="important"]
-The `v=b3` version string in the response is the current version as of August 2019. This version will change. 
+The `v=b3` version string in the response is the version as of August 2019. This version will change. 
 [/tip]
 
 The bulk of the response should be your AMP page (in plaintext). There's a small binary header, and, if the page is >16kb, a few binary bytes sprinkled throughout.
@@ -155,10 +155,10 @@ Verify that the response *always* include the `Vary` header with the value `Acce
 $ curl -si https://staging.example.com/ | less
 ```
 
-This command should return this line (amongst others):
+This output must include this line:
 
 ```txt
-Vary: Accept,AMP-Cache-Transform
+vary: Accept,AMP-Cache-Transform
 ```
 
 ## Deploy packager to production
