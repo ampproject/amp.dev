@@ -128,7 +128,7 @@
     "rcs-core": "2.6.2",
     "recursive-search": "1.0.1",
     "sass-loader": "7.1.0",
-    "style-loader": "0.23.1",
+    "style-loader": "1.0.0",
     "supertest": "4.0.2",
     "through2": "3.0.1",
     "url-loader": "2.1.0",
