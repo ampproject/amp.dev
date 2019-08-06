@@ -1,7 +1,7 @@
 ---
 $title: Remembering What The User Has Done
 $order: 1
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

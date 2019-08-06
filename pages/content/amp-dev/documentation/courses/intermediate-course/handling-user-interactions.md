@@ -1,7 +1,7 @@
 ---
 $title: Handling User Interactions
 $order: 2
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

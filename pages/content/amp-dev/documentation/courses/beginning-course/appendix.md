@@ -1,7 +1,7 @@
 ---
 $title: Appendix
 $order: 7
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

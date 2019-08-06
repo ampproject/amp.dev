@@ -1,7 +1,7 @@
 ---
 $title: Loading and Displaying Server Content
 $order: 2
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

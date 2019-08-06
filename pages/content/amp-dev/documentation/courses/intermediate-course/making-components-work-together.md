@@ -1,7 +1,7 @@
 ---
 $title: Making Components Work Together
 $order: 4
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

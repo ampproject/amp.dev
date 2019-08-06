@@ -1,7 +1,7 @@
 ---
 $title: Course Introduction
 $order: 2
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

@@ -1,7 +1,7 @@
 ---
 $title: Thinking in Components
 $order: 4
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

@@ -7,7 +7,7 @@ teaser:
   icon: paperplane
   label: Start now
 description: 'Learn to combine components and create simple user interactions.'
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

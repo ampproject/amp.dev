@@ -1,7 +1,7 @@
 ---
 $title: Finding the Right Component
 $order: 5
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

@@ -1,7 +1,7 @@
 ---
 $title: Accepting User Input and Displaying Output
 $order: 3
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

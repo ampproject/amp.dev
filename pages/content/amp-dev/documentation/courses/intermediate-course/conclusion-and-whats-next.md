@@ -1,7 +1,7 @@
 ---
 $title: Conclusion and What’s Next
 $order: 5
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

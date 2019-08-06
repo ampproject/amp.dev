@@ -7,7 +7,7 @@ teaser:
   label: Start now
 description: 'Learn to create advanced user interactions and use server content.'
 $order: 1
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

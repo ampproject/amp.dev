@@ -1,7 +1,7 @@
 ---
 $title: Our First AMP Page
 $order: 3
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]

@@ -7,7 +7,7 @@ teaser:
   icon: airplane
   label: Start now
 description: 'Learn about AMP and how it helps. Create your first AMP page!'
-filter: true
+leveled: true
 ---
 
 [filter level="beginner"]
