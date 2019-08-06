@@ -231,35 +231,3 @@ AMP reference documentation is contributed to the [AMPHTML repository](https://g
    </td>
   </tr>
 </table>
-
-<!-- 
-Examples are a code focused introduction to AMP components and AMP concepts. AMP examples demonstrate the different components and attributes used to create them without describing a step by step process to build an end product. Examples are a fantastic way to see how AMP can and is being used on the open web.
-
-amp.dev examples are located under examples in[ learn AMP by example]({{g.doc('/content/amp-dev/documentation/examples.md', locale=doc.locale).url.path}}?format=websites).
-
-<table>
-  <tr>
-   <td><strong>Do</strong>
-   </td>
-   <td><strong>Don’t</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Provide an introduction on what component(s) are/is being used.
-   </td>
-   <td>List alternate components or methods.
-   </td>
-  </tr>
-  <tr>
-   <td>Explain requirements and the use case.
-   </td>
-   <td>Go beyond the demo. Only write about what’s in front of the developers. 
-   </td>
-  </tr>
-  <tr>
-   <td>Include complete code samples.
-   </td>
-   <td>Link out to downloadable code. 
-   </td>
-  </tr>
-</table>  -->

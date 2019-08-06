@@ -102,6 +102,15 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 For a list of shortcodes and their uses, please view [documentation.md on GitHub](https://github.com/ampproject/amp.dev/blob/future/contributing/documentation.md#shortcodes).
 
+## Images
+amp.dev is built with AMP! Therefore our images must match the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/amp-img.md', locale=doc.locale).url.path}}?format=websites) criteria. The build process uses the following syntact to convert images to proper `amp-img` format. 
+
+<div class="ap-m-code-snippet">
+<pre>
+&#123;&#123; image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
+</pre>
+</div>
+
 ## Filtering sections
 Some documents may be relevant for multiple AMP formats, but certain formats may need further explanation or information that is not relevant to the others. You can filter these sections by wrapping them in the following shortcode.
 
