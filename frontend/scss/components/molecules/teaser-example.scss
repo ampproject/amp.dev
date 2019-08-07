@@ -135,10 +135,13 @@
       background-color: color('white');
       margin-top: auto;
       padding: 1em 20px;
+      text-align: left;
+      border: none;
       border-top: solid 1px color('silver');
       cursor: pointer;
       transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
+      &:focus,
       &:hover {
         & + .#{molecule('teaser-info-content')} {
           transform: translate3d(0, 8px, 0);
@@ -167,7 +170,20 @@
       transform: translate3d(0, 100%, 0);
       transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
+      &:focus,
       &:hover {
+        transform: translate3d(0, 8px, 0);
+
+        & + .#{molecule('teaser-linking')} {
+          .#{molecule('teaser-placeholder')} {
+            transform: translate3d(0, -100%, 0);
+
+            &:before { transform: translate3d(0, 0, 0); }
+          }
+        }
+      }
+
+      &:focus-within {
         transform: translate3d(0, 8px, 0);
 
         & + .#{molecule('teaser-linking')} {
