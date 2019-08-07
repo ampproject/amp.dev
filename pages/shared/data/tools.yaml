@@ -291,6 +291,17 @@ developer:
       - email
       - ads
       - stories
+  - name: AMP Prototyper
+    official: true
+    type: Development
+    description: A prototyping tool that automatically converts a HTML page to AMP for demonstrating performance gains with AMP.
+    url: https://github.com/jonchenn/amp-prototyper
+    image:
+      src: /static/img/docs/tools/amp-prototyper.jpg
+      width: 700
+      height: 471
+    formats:
+      - websites
   - name: Litmus
     url: https://litmus.com/
     type: Development
