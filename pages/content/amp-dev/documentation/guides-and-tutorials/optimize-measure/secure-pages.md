@@ -8,7 +8,7 @@ author: CrystalOnScript
 
 Take measures to protect your site and users from security vulnerabilities on the web. One of the most sinister is [cross-site scripting](https://www.google.com/about/appsecurity/learning/xss/) (XSS). XSS is a security bug that can allow an attacker to inject malicious code onto the HTML pages displayed to users. 
 
-Protect against these types of attacks by adopting a [Content Security Policy (CSP)](https://csp.withgoogle.com/docs/index.html). AMP already adds a CSP to cached AMP pages! However, pages lack this additional layer of protection when users circumvent the cached version, if you do not add your own CSP. 
+Protect against these types of attacks by adopting a [Content Security Policy (CSP)](https://csp.withgoogle.com/docs/index.html). AMP caches like the Google AMP Cache already add CSP to your pages! However, pages lack this additional layer of protection when users circumvent the cached version, if you do not add your own CSP. 
 
 
 # Implement AMP’s CSP
