@@ -1,5 +1,5 @@
 ---
-$title: Support
+$title: Help
 $order: 1
 formats:
   - websites

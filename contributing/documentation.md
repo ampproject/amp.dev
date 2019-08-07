@@ -17,22 +17,22 @@ chaptered: true|false
 The documents inside the *pages* package are Grow documents that use the [built-in fields](http://grow.io/docs/documents/#built-in-fields) and some additional ones that are used to categorize them:
 
 ```yaml
-- formats [default: websites,ads,email,stories]:
+formats [default: websites,ads,email,stories]:
   - websites
   - ads
   - email
   - stories
-- status [default: production]:
+status [default: production]:
   - experimental
   - canary
   - production
-- validAmp [default: true]
+validAmp [default: true]
   - true
   - false
-- draft [default: true]
+draft [default: true]
   - true
   - false
-- tags [default: '']
+tags [default: '']
   - ads-analytics
   - dynamic-content
   - layout
@@ -47,9 +47,9 @@ By the categorization via the `formats` list in the frontmatter the user is able
 
 If the document has a specific path that is not getting inherited from the `_blueprint.yaml` also make sure to set a matching path. Same example: `index.md` has `$path: /category.html` then `index.ads.md` needs to have `$path: /category.ads.html`. Otherwise the build process is not able to match the base and the filtered variant. To not have double navigation items make sure to also give `$hidden: true` to the filtered variant.
 
-### Format filtered paragraphs 
+### Format filtered paragraphs
 Documents will be relevant to multiple formats on a broad scope, but may contain sections and paragraphs that are not accurate for all formats listed in the frontmatter. You can wrap paragraphs in a filter to hide or show them, depending on what format the user has selected.
- 
+
 ```
 [filter formats="websites"]
 This is only visible for [websites](?format=websites).
@@ -111,13 +111,21 @@ The Link is optional and will create a button inside the stage.
 
 A list of links that will expand to a row of cards that link to the document.
 
-### Code Samples 
+**Importing AMP Components**
+
+Import AMP components via:
+
+```md
+{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
+```
+
+### Code Samples
 Code samples are placed inside sets of three backticks. The sourcecode language specified at the end of the first backtick set.
 
 <pre>
 ```html
   // code sample
-```  
+```
 
 ```css
   // code sample
@@ -143,7 +151,7 @@ If your code contains double curly braces, which often is the case if you use am
 Python-Markdown has some limitations. Use the following syntax when including code samples in lists:
 <pre>
   <code>
-  1. First: 
+  1. First:
     [sourcecode:html]
       &lt;html&gt;
           &lt;p&gt;Indented content.&lt;/p&gt;
@@ -160,7 +168,7 @@ You can let a code sample have a preview or a link to open the code sample in th
 
 <pre>
   <code>
-[example preview="default: none|inline"
+[example preview="default: none|inline|top-frame"
          playground="default: true|false"
          imports="&lt;custom-element-1&gt;,&lt;custom-element-2&gt;,..."
          template="&lt;custom-template&gt;"]
@@ -171,15 +179,30 @@ You can let a code sample have a preview or a link to open the code sample in th
   </code>
 </pre>
 
-An inline preview is only possible if the code does not contain any head elements.
-For email content with resource links use the placeholder `{{server_for_email}}`.
+Use the `preview` attribute to define how the preview is generated:
+- **none**: No preview will be generated
+
+- **inline**: The example preview is displayed above the source code.
+  An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
+  Use this option for small examples that do not need any styling or other `head` elements
+  (imports do not count, since they are specified via the `imports` attribute).
+  
+- **top-frame**: The example preview is displayed above the source code inside an iframe.
+  The orientation can be toggled between `portrait` and `landscape` mode.
+  You can preselect the orientation by specifying the additional attribute:
+  - **orientation**: `default: landscape|portrait`
+
+If custom elements are needed, specify them in the imports attribute as a comma separated list
+with the name of the component followed by a colon and the version.
+
+For email content with resource links use the placeholder `{{server_for_email}}` in the source.
 
 <pre>
   <code>
-[example preview="inline"
+[example preview="top-frame" orientation="portrait"
          playground="true"
-         imports="amp-list"
-         template="amp-mustache"]
+         imports="amp-list:0.1"
+         template="amp-mustache:0.2"]
 ```html
 &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
   src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;

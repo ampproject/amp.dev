@@ -18,20 +18,37 @@
 
 const nunjucks = require('nunjucks');
 const config = require('../config.js');
-const {promisify} = require('util');
-const {join} = require('path');
-const {readFile} = require('fs');
-const readFileAsync = promisify(readFile);
-const fetch = require('node-fetch');
-const {pagePath, paths} = require('../utils/project');
+const growPageLoader = require('../common/growPageLoader');
+const LRU = require('lru-cache');
 
 let templates = null;
+
+/**
+ * Builds a Object that adds mandatory variables to the render context
+ * that are needed to successfully SSR the pages
+ * @param  {expressjs.Request} request
+ * @return {Object}
+ */
+function createRequestContext(request={'query': {}}, context={}) {
+  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
+
+  if (!ALLOWED_FORMATS.includes(request.query.format)) {
+    context.format = ALLOWED_FORMATS[0];
+    context.forceFiltered = true;
+  } else {
+    context.format = request.query.format;
+  }
+
+  context.category = (request.query.category || '').toLowerCase();
+
+  return context;
+}
 
 class Templates {
   /**
    * Loads a template from cache (if not in dev mode). Otherwise
    * it'll load the template from the pages directory.
-   * @param (string} templatePath The relative path to the template
+   * @param {String} templatePath The relative path to the template
    * @param {Function} [loader] Optional function providing
    * a string for the given templatePath.
    * @returns {Template} a Nunjucks template instance
@@ -51,13 +68,17 @@ class Templates {
       tags: {
         blockStart: '[%',
         blockEnd: '%]',
-        variableStart: '[[',
-        variableEnd: ']]',
+        variableStart: '[=',
+        variableEnd: '=]',
         commentStart: '[#',
         commentEnd: '#]',
       }});
 
-    this.cache_ = new Map();
+    // One locale has ~860 pages with each weighing ~92KB. The cache therefore
+    // maxes out at ~224MB to be safe
+    this.cache_ = new LRU({
+      max: 2500,
+    });
   }
 
   /**
@@ -66,23 +87,14 @@ class Templates {
    */
   async load(templatePath) {
     return this.compile(templatePath, async () => {
-      if (config.isTestMode()) {
-        // fetch original doc page from filesystem for testing
-        return readFileAsync(join(paths.PAGES_SRC, templatePath), 'utf-8');
-      } else if (config.isDevMode()) {
-        // fetch doc from proxy
-        return this.fetchTemplate_(templatePath);
-      } else {
-        // fetch comiled doc page from filesystem
-        return readFileAsync(pagePath(templatePath), 'utf-8');
-      }
+      return growPageLoader.fetchPage(templatePath);
     });
   }
 
   /**
    * Loads a template from cache (if not in dev mode). If the template
    * is not cached, it will use the provided callback to retrieve the
-   * template string.
+   * template string and compile it.
    */
   async compile(key, fn) {
     let compiledTemplate = this.cache_.get(key);
@@ -93,12 +105,9 @@ class Templates {
     }
     return compiledTemplate;
   }
-
-  async fetchTemplate_(templatePath) {
-    const templateUrl = new URL(templatePath, config.hosts.pages.base);
-    const fetchResponse = await fetch(templateUrl);
-    return fetchResponse.text();
-  }
 }
 
-module.exports = Templates;
+module.exports = {
+  createRequestContext,
+  Templates,
+};

@@ -1,6 +1,20 @@
 {# Set needed data for all meta tags #}
 {% set description = doc.description or (doc.teaser.text if doc.teaser else None) %}
-{% set title = doc.title %}
+{# Mark the description as safe if it is SSR #}
+{% if description and '[=' in description %}
+{% set description = description|safe %}
+{% endif %}
+
+{% set title = doc.title|string %}
+{# Mark the title as safe if it is SSR #}
+{% if title and '[=' in title %}
+{% set title = title|safe %}
+{% endif %}
+{% if title.startswith('amp-') and not '_' in title and not ' ' in title %}
+{% set title = '<' + title + '>' %}
+{% endif %}
+
+
 {% set base_url = podspec.base_urls.platform %}
 {% set canonical = doc.url %}
 
@@ -39,14 +53,14 @@
 {% if doc.pod_path.startswith('/content/amp-dev/documentation/examples/documentation/') %}
 {% set title_prefix = _('Example: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples/previews/') %}
-{% set title_prefix = _('Example preview: ') %}
+{% set title_prefix = _('Demo: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/components/reference/') %}
-{% set title_prefix = _('Component: ') %}
+{% set title_prefix = _('Documentation: ') %}
 {% elif doc.pod_path.startswith('/content/amp-dev/about/success-stories/') and not 'index.html' in doc.pod_path %}
 {% set title_prefix = _('Success Story: ') %}
 {% endif %}
 
-<title>{{ title_prefix }}{{ doc.title }} - amp.dev</title>
+<title>{{ title_prefix }}{{ title }} - amp.dev</title>
 
 {% if description %}
 <meta name="description" content="{{ description }}">

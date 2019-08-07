@@ -3,9 +3,9 @@
 {{ caller() }}
 {% else %}
 {% set formats = formats.split(',') %}
-<div class="{% for format in formats %}ap--{{ format.strip() }} {% endfor %}">
+[% if format in {{ formats|map('trim')|list|tojson }} %]
 {{ caller() }}
-</div>
+[% endif %]
 {% endif %}
 {%- endmacro %}
 
@@ -46,7 +46,7 @@
 
     <link rel="canonical" href="{{ doc.url }}"/>
     <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
-    {% for locale in doc.locales if not locale == doc.locale  %}
+    {% for locale in doc.locales if not locale == doc.locale %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
@@ -90,11 +90,9 @@
 
     {{ doc.amp_dependencies.emit() }}
   </head>
-  {# The body tag needs an empty class attribute in order to add the filter class.
-  It is a block solely for the purpose to be overridable by the samples. #}
+  {# The body tag is a block solely for the purpose to be overridable by the samples. #}
   {% block body %}
-  {% set formats = doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email'] %}
-  <body data-available-formats="{{ ' '.join(formats) }}">
+  <body class="[= 'ap--' + format if format =]">
   {% endblock %}
     {% block icons %}
 	  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

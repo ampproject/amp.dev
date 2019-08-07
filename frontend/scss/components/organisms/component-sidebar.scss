@@ -31,6 +31,7 @@ nav[toolbar] {
   @media (min-width: 768px){
     position: -webkit-sticky;
     position: sticky;
+    overflow: auto;
   }
 
   & > ul {
@@ -97,6 +98,14 @@ nav[toolbar] {
           word-break: break-all;
           pointer-events: auto;
           color: color('alto');
+
+          /* Used to hide empty letter lists */
+          &:only-child:not(a) {
+            margin: -20px;
+            font-size: 0;
+            pointer-events: none;
+            z-index: -1;
+          }
         }
 
         & > .nav-link {

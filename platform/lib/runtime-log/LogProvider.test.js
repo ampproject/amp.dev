@@ -17,7 +17,6 @@
 'use strict';
 
 const LogProvider = require('./LogProvider.js');
-const config = require('../config.js');
 
 const fetch = require('fetch-mock').sandbox();
 let logProvider;
@@ -91,5 +90,5 @@ test('caches messages.json', async () => {
 });
 
 function logUrl(version) {
-  return `${config.hosts.platform.base}/static/files/log-messages-v${version}.json`;
+  return `https://cdn.ampproject.org/rtv/${version}/log-messages.json`;
 }

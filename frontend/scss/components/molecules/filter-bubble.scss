@@ -49,7 +49,10 @@ The filter-bubble molecule is a simple button used to filter content based on th
     background: color('blue-ribbon');
     color: color('white');
   }
-  &:focus {
-    outline: none;
+
+  &-reset {
+    &:focus {
+      outline: none;
+    }
   }
 }

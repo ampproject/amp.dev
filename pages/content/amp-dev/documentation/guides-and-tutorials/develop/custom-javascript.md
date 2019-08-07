@@ -1,5 +1,5 @@
 ---
-$title: Include Custom JavaScript in AMP Pages
+$title: Include custom JavaScript in AMP pages
 $order: 7
 formats:
   - websites

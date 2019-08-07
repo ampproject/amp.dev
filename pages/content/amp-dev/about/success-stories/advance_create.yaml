@@ -8,7 +8,7 @@ formats:
 
 teaser:
   image:
-    src: 'static/img/success-stories/advance_create/advance_create_teaser.jpg'
+    src: '/static/img/success-stories/advance_create/advance_create_teaser.jpg'
     width: 150
     height: 51
     alt: Advance Create

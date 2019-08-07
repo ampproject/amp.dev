@@ -12,7 +12,7 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 `srcset`은 화면 너비(screen width)를 기준으로 image를 정의합니다.
 `w` 설명자는 브라우저에서 리스트 내 각 이미지의 width를 말해줍니다.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -38,7 +38,7 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 아래 예제를 참고하길 바랍니다:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -77,7 +77,7 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 예:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

@@ -1,0 +1,68 @@
+$title: RCS MediaGroup
+$category: publishers
+$date: 2019-07-16
+description: RCS MediaGroup’s tech team had already identified AMP as the technology for keeping pace with the mobile industry. ...
+
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/rcs/rcs_teaser.jpg'
+    width: 1
+    height: 1
+    alt: RCS MediaGroup
+  logo:
+    src: '/static/img/success-stories/rcs/rcs_logo.png'
+    width: 200
+    height: 20
+    alt: RCS MediaGroup
+  text: RCS MediaGroup reports good news with AMP and PWA
+
+
+stage:
+  headline: RCS MediaGroup reports good news with AMP and PWA
+  layout: mobile
+  subline: JUL 16, 2019
+  devices:
+    - image_src: '/static/img/success-stories/rcs/rcs1.jpg'
+      width: 3
+      height: 5
+      type: mobile
+      alt: RCS MediaGroup
+
+kpis:
+  - value: 119%
+    text: More pageviews
+
+  - value: 98%
+    text: More unique users
+
+  - value: 72%
+    text: Faster page load times
+
+contents:
+
+  - layout: text
+    text: The story of RCS MediaGroup began with Angelo Rizzoli’s one-man printing shop in Milan in the early 1900s. Today they’re one of Europe’s top multimedia groups, publishing newspapers,  magazines and online content primarily in Italy and Spain. Their newspapers include Corriere della Sera, La Gazzetta dello Sport,  and El Mundo, and their magazines include Oggi, Amica, Io Donna, Living, Style Magazine, Dove, Abitare, Sette and Sport Week. With so many content assets online (and increasingly accessed by mobile device users), they knew that AMP could help engage readers with a faster, higher-performing experience.
+    direction: left-flat
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/rcs/rcs1.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: RCS MediaGroup
+    headline: Solution
+    text: RCS MediaGroup’s tech team had already identified AMP as the technology for keeping pace with the mobile industry. “The decision to develop in AMP came as a natural shift towards the latest industry developments, considering the increasing number of readers accessing from mobile devices” says Michela Colamussi - Head of Digital Corriere della Sera.  An in-house development team worked with a vendor over six months in 2018, implementing AMP across all their digital properties. The company soon began using Progressive Web App (PWA) technology as well, mainly for notifications, bookmarks, and offline access so that users could read their content from anywhere. RCS MediaGroup now uses AMP on all their top properties, including Corriere.it and Gazzetta.
+    direction: left-flat
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/rcs/rcs_2.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: RCS MediaGroup
+    headline: Result
+    text: The company quickly saw impressive results. Unique users grew 98 percent, month over month, with 119 percent more pageviews, and load times were 72 percent faster on AMP optimized pages. “We’re still exploring the monetization approach to understand which ad formats are the most effective,” Fabio Napoli - Head of Business Digital News says. “And we’re thinking about focusing future developments on both AMP and PWA.”
+    direction: left-flat

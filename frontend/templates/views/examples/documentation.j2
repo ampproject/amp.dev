@@ -173,14 +173,24 @@
         {% if story_preview %}
         {% set story_preview_embed = podspec.base_urls.preview + doc.source + '/embed?id=' + section.storyPageId %}
         {# Storys should be repeatable, therefore render reload icon #}
-        <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'{{ section.storyPageId }}': '{{ story_preview_embed + '&' }}' + random()})">
-          <div class="ap-a-ico">
-            {% do doc.icons.useIcon('icons/reload.svg') %}
+        <div class="ap-o-code-preview-controls">
+          <button class="ap-o-code-preview-controls-button" on="tap:AMP.setState({'section{{ section.id }}': '{{ story_preview_embed + '&' }}' + random()})">
+            <div class="ap-a-ico ap-o-code-preview-controls-icon">
+              {% do doc.icons.useIcon('icons/reload.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+            </div>
+          </button>
+        </div>
+        <div class="ap-o-code-preview-preview-iframe{% if doc.example.document.metadata.landscape %} landscape{% endif %}">
+          <div>
+            <amp-iframe class="ap-o-code-preview-iframe" src="{{ story_preview_embed }}" [src]="section{{ section.id }}"
+            {% if doc.example.document.metadata.landscape %}
+            width="16" height="9" layout="responsive"
+            {% else %}
+            layout="flex-item"
+            {% endif %}
+            sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"><div placeholder></div></amp-iframe>
           </div>
-        </button>
-        <div class="ap-o-code-preview-preview-iframe">
-          <amp-iframe class="ap-o-code-preview-iframe" media="(min-width: 650px)" src="{{ story_preview_embed }}" [src]="{{ section.storyPageId }}" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
         </div>
         {% elif not doc.example.document.isAmpStory and show_preview %}
         <div class="ap-o-code-preview-preview">

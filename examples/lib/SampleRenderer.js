@@ -18,7 +18,7 @@
 
 const {join} = require('path');
 const utils = require('@lib/utils');
-const Templates = require('@lib/templates/');
+const {Templates} = require('@lib/templates/index.js');
 const config = require('@lib/config.js');
 const fetch = require('node-fetch');
 const {promisify} = require('util');

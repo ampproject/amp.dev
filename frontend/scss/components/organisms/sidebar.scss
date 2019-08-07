@@ -22,6 +22,7 @@ nav[toolbar] {
   @media (min-width: 768px){
     position: -webkit-sticky;
     position: sticky;
+    overflow: auto;
   }
 
   & > ul {
@@ -123,6 +124,14 @@ nav[toolbar] {
 
     &-item-tutorial-divider {
       @include sidebar-nav-item-tutorial-divider;
+
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: none;
+      }
     }
 
     &-link {

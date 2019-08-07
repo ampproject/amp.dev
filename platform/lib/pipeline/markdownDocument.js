@@ -156,7 +156,6 @@ class MarkdownDocument {
     };
   }
 
-
   _convertSyntax() {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);

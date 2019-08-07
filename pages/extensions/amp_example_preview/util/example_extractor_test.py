@@ -101,7 +101,7 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
   def test_example_with_specific_settings(self):
     extractor = SourceCodeExtractor()
     matches = extractor.find_examples_in_markdown(
-      '[example preview="inline" playground="false"'
+      '[example preview="top-frame" orientation="landscape" playground="false"'
       ' imports="amp-date-display, amp-accordion" template="amp-mustache"]\n'
       '```html\n'
       '<h1>headline</h1>\n'
@@ -109,7 +109,8 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
       '[/example]')
 
     inline_example = matches[0].inlineExample
-    self.assertEqual('inline', inline_example.preview)
+    self.assertEqual('top-frame', inline_example.preview)
+    self.assertEqual('landscape', inline_example.orientation)
     self.assertEqual(False, inline_example.playground)
     self.assertEqual(2, len(inline_example.imports))
     self.assertEqual('amp-date-display', inline_example.imports[0].name)

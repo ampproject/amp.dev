@@ -109,7 +109,9 @@ section_links:
       {% endif %}
 
       <aside class="ap-o-cities-map-grid">
+        {% set next_cities = [] %}
         {% for place in doc.roadshow.nextstop if doc.roadshow.nextstop %}
+          {% do next_cities.append(place.title|slug) %}
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
@@ -123,7 +125,7 @@ section_links:
           {% endif %}
         {% endfor %}
 
-        {% for place in doc.roadshow.past if doc.roadshow.past %}
+        {% for place in doc.roadshow.past if doc.roadshow.past and place.title|slug not in next_cities %}
           {% if place.coords %}
           {% set col = place.coords.split('x')[0]|int + 1 %}
           {% set row = place.coords.split('x')[1]|int + 1 %}
@@ -185,12 +187,12 @@ section_links:
         <p>Your city isn't on the list? Check back soon for additional dates and cities. Or...</p>
         <h4>Want the AMP Roadshow to visit your area?</h4>
         <p>That's very kind. Fill out
-            <a href="https://docs.google.com/forms/d/14B75eV89S1KaceNTG46ranAOPCj3wCLzgD3mxuGeUtU" target="_blank">this form</a>
+            <a href="https://docs.google.com/forms/d/14B75eV89S1KaceNTG46ranAOPCj3wCLzgD3mxuGeUtU/viewform" target="_blank">this form</a>
             and we’ll see what we can do!
         </p>
         <h4>Want to host your own AMP Roadshow?</h4>
         <p>Why not? Fill out
-          <a href="https://docs.google.com/forms/d/1PMWCq1MTqg-AslvBMvMlU_ozjyZK7WZ-4fUVs0UlheE" target="_blank">this form</a>,
+          <a href="https://docs.google.com/forms/d/1PMWCq1MTqg-AslvBMvMlU_ozjyZK7WZ-4fUVs0UlheE/viewform" target="_blank">this form</a>,
           and we’ll share with you our talks and all the materials you need to do it yourself!
         </p>
       </div>

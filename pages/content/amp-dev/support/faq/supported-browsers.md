@@ -1,12 +1,14 @@
 ---
-$title@: AMP Supported Browsers
-$order: 4
-toc: false
-formats:
-  - websites
-  - stories
-  - ads
-browsers: !g.yaml /shared/data/supported-browsers.yaml
+$title@: Supported Browsers
+$order: 5
+teaser:
+  image:
+    src: '/static/img/faq/faq-supported-browsers.jpg'
+    width: 570
+    height: 320
+    alt: FAQ – Supported Browsers
+  label: Learn more
+faq: !g.yaml /shared/data/faq.yaml
 ---
 
 # AMP Supported Browsers
@@ -14,7 +16,7 @@ browsers: !g.yaml /shared/data/supported-browsers.yaml
 {% do doc.styles.addCssFile('css/components/organisms/browsers.css') %}
 
 <div class="ap-o-browsers">
-{% for browser in doc.browsers.list %}
+{% for browser in doc.faq.supported_browsers %}
   <div class="browser">
     <amp-img width="75"
         height="75"
@@ -29,4 +31,4 @@ In general we support the latest two versions of major browsers like Chrome, Fir
 
 Beyond that, the core AMP library and built-in elements should aim for very wide browser support and we accept fixes for all browsers with market share greater than 1 percent.
 
-In particular, we try to maintain "it might not be perfect but isn't broken"-support for the Android 4.0 system browser and Chrome 28+ on phones.
+In particular, we try to maintain "it might not be perfect but isn't broken"-support for IE 11, iOS 8, the Android 4.0 system browser and Chrome 41.

@@ -28,6 +28,7 @@ const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const ENV_DEV = 'development';
 const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
+const ENV_LOCAL = 'local';
 
 const AVAILABLE_LOCALES = [
   'en',
@@ -52,6 +53,7 @@ class Config {
     } else {
       this.test = false;
     }
+    signale.info(`Config: environment=${environment} test=${this.test}`);
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
@@ -87,6 +89,13 @@ class Config {
   }
 
   /**
+   * Returns true if local mode is active.
+   */
+  isLocalMode() {
+    return this.environment === ENV_LOCAL;
+  }
+
+  /**
    * Returns true if staging mode is active.
    */
   isStageMode() {
@@ -111,6 +120,7 @@ class Config {
 
   /**
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
+   * @param {Object} hostConfig One of configs in from the hosts property
    * @return {String} The full URL
    */
   getHost(hostConfig) {
@@ -125,6 +135,15 @@ class Config {
       url += `:${hostConfig.port}`;
     }
     return url;
+  }
+
+  /**
+   * Turns a given relative URL to an absolute URL for the given hostConfig.
+   * @param {Object} hostConfig One of configs in from the hosts property
+   * @return {String} The absolute URL
+   */
+  absoluteUrl(hostConfig, url) {
+    return new URL(url, this.getHost(hostConfig)).toString();
   }
 
   /**
@@ -157,6 +176,11 @@ class Config {
 
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
     podspec = yaml.safeLoad(podspec);
+
+    // disable sitemap (useful for test builds)
+    if (options.noSitemap) {
+      delete podspec.sitemap;
+    }
 
     // Add environment specific information to configuration needed for URLs
     podspec['env'] = {

@@ -77,6 +77,10 @@
     &-icon {
       @include ico-3;
       @include ico-white;
+
+      @media (max-width: $minDeviceWidth) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -114,6 +118,12 @@
     &-menu {
       list-style: none;
       padding: 0;
+    }
+
+    &-menu + &-title {
+      @media (min-width: 768px) {
+        margin-top: 2.5em;
+      }
     }
 
     &-item {
