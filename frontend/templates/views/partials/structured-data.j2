@@ -113,3 +113,8 @@
 <meta property="og:image" content="{{ base_url }}{{ sharing_images.wide }}">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="314">
+
+{# meta tags for amp.dev search filtering #}
+{% set supported_formats = ','.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
+<meta name="amp-supported-formats" content="{{supported_formats}}">
+<meta name="amp-dev-locale" content="{{doc.locale}}">
