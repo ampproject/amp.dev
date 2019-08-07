@@ -72,8 +72,8 @@ author: sebastianbenz
       id="my-notification-with-server-endpoint"
       class="sample-notification"
       layout="nodisplay"
-      data-show-if-href="https://rocky-sierra-1919.herokuapp.com/amp-user-notification/api/show?timestamp=TIMESTAMP"
-      data-dismiss-href="https://rocky-sierra-1919.herokuapp.com/amp-user-notification/api/echo/post">
+      data-show-if-href="<% base_path %>/show?timestamp=TIMESTAMP"
+      data-dismiss-href="<% base_path %>/echo/post">
       This is an amp-user-notification. It uses a backend service to verify if the notification has to be shown.
       <button on="tap:my-notification.dismiss">I accept</button>
   </amp-user-notification>
