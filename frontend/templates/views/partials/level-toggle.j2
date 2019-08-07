@@ -17,11 +17,7 @@
   <div class="ap-m-level-toggle-elements">
     <div class="toggle-button">
       <input
-      [% if level == 'advanced' %]
-      on="change:AMP.navigateTo(url='{{url}}?level=beginner')"
-      [% elif level != 'advanced' %]
-      on="change:AMP.navigateTo(url='{{url}}?level=advanced')"
-      [% endif %]
+      on="change:AMP.navigateTo(url='{{url}}?level=[% if level == 'advanced' %]beginner'[% else %]advanced'[% endif %])"
       type="checkbox"
       [% if level == 'advanced' %] checked [% endif %]
       id="switch" />
