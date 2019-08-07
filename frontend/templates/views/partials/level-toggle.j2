@@ -46,7 +46,7 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use>
     </svg>
   </div>
-  <div [class]="visible ? 'show-tip ap-m-tip ap-m-tip-default' : 'hide-tip'" class="hide-tip">
+  <div hidden [hidden]="!visible" class="ap-m-tip ap-m-tip-default">
     <div class="ap-m-tip-content">
       <h4>Expert mode</h4>
       <p>Use expert mode to hide web development guidance that's intended for beginners.</p>

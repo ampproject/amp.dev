@@ -41,7 +41,7 @@ $borderSize: 5px;
       font-size: 0.875em;
     }
   }
-  
+
   .disabled-headline {
     opacity: 0.5;
   }
@@ -136,14 +136,6 @@ $borderSize: 5px;
         }
       }
     }
-  }
-
-  .show-tip {
-    display: block;
-  }
-
-  .hide-tip {
-    display: none;
   }
 
   .#{molecule('tip')} {
