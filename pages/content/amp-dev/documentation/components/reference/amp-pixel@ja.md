@@ -35,7 +35,7 @@ teaser:
     <td>ページビューをカウントする一般的なトラッキング ピクセルとして使用できます。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a></strong></td>
     <td>fixed、nodisplay</td>
   </tr>
   <tr>

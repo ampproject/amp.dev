@@ -34,7 +34,7 @@ limitations under the License.
     <td>Remplacement de la balise <code>img</code> HTML géré par l'environnement d'exécution.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ L'environnement d'exécution peut différer le chargement des ressources ou le t
 Le composant `amp-img`, à l'instar de toutes les ressources AMP récupérées en externe, doit se voir attribuer au préalable une taille explicite (avec les attributs `width`/`height`), de sorte que les proportions puissent être déterminées sans qu'il faille récupérer l'image. Le comportement de la mise en page est déterminé par l'attribut `layout`.
 
 [tip type="read-on"]
-Pour en savoir plus sur les mises en page, consultez la spécification [AMP HTML Layout System]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) et la section [Mises en page compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Pour en savoir plus sur les mises en page, consultez la spécification [AMP HTML Layout System]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) et la section [Mises en page compatibles]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute).
 [/tip]
 
 # Exemple : Affichage d'une image responsive

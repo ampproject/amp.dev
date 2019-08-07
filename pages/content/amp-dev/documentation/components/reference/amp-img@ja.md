@@ -34,7 +34,7 @@ teaser:
     <td>HTML の <code>img</code> タグに代わるランタイム管理コンポーネント。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、intrinsic、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ teaser:
 
 `amp-img` コンポーネントは、外部で取得されるすべての AMP リソースと同様に、画像を取得しなくてもアスペクト比を把握できるよう、（`width` / `height` のような）明示的なサイズをあらかじめ指定しておく必要があります。実際のレイアウトの動作は `layout` 属性によって決まります。
 
-[tip type="read-on"] レイアウトについて詳しくは、[AMP HTML レイアウト システム]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})の仕様と[サポートされるレイアウト](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)をご覧ください。
+[tip type="read-on"] レイアウトについて詳しくは、[AMP HTML レイアウト システム]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})の仕様と[サポートされるレイアウト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)をご覧ください。
 [/tip]
 
 # 例: レスポンシブ画像の表示

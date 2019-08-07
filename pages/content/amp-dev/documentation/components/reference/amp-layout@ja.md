@@ -33,7 +33,7 @@ $title: amp-layout
     <td>任意の要素に AMP の高度な<a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">レイアウト</a>機能を適用できる汎用の多目的コンテナ要素。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a></strong></td>
     <td>container、fill、fixed、fixed-height、flex-item、intrinsic、responsive</td>
   </tr>
 </table>

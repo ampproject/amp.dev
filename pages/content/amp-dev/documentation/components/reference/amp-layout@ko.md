@@ -33,7 +33,7 @@ $title: amp-layout
     <td>AMP의 강력한 <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">레이아웃</a>을 모든 요소에 적용하는 일반적인 다목적 컨테이너 요소입니다.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, intrinsic, responsive</td>
   </tr>
 </table>

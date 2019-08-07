@@ -34,7 +34,7 @@ limitations under the License.
     <td>HTML <code>img</code> etiketi için çalışma zamanı tarafından yönetilen bir yedek.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ limitations under the License.
 Dışarıdan getirilen tüm AMP kaynakları gibi `amp-img` bileşenlerine de önceden açık bir boyut (`witdh`/`height` gibi) verilmelidir. Böylece, resim getirilmeden en boy oranı bilinebilir. Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
 
 [tip type="read-on"]
-[AMP HTML Düzeni Sistemi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) spesifikasyonundaki düzenler [Desteklenen Düzenler](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute) hakkında daha fazla bilgi edinin.
+[AMP HTML Düzeni Sistemi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) spesifikasyonundaki düzenler [Desteklenen Düzenler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Örnek: Duyarlı bir resim gösterme

@@ -46,7 +46,7 @@ limitations under the License.
   <tr>
     <td class="col-fourty">
     <strong>
-      <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+      <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">
       التنسيقات المعتمدة
       </a>
     </strong>

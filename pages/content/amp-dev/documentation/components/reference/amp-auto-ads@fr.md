@@ -44,7 +44,7 @@ Ce composant injecte des annonces de manière dynamique dans une page AMP en uti
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">
             Mises en page compatibles
           </a>
         </strong>

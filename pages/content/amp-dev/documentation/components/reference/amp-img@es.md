@@ -34,7 +34,7 @@ limitations under the License.
     <td>Sustitución de la etiqueta <code>img</code> de HTML gestionada por el tiempo de ejecución.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay y responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ El tiempo de ejecución puede retrasar o priorizar la carga de recursos basándo
 Se debe proporcionar a los componentes `amp-img`, como al resto de los recursos AMP obtenidos de forma externa, un tamaño explícito (`width` y `height`) de antemano, para que se conozca la relación de aspecto sin haber recuperado la imagen. El atributo `layout` es el que determina el comportamiento real del diseño.
 
 [tip type="read-on"]
-Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) y la lista de [formatos compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) y la lista de [formatos compatibles]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute).
 [/tip]
 
 # Ejemplo: Mostrar una imagen adaptable

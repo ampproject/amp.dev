@@ -42,7 +42,7 @@ Funciona como sustituto de la etiqueta `video` de HTML5. Solo se utiliza para in
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Superposición de reproducción por clic (click-to-play) para amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay y responsive</td>
     </tr>
   </table>

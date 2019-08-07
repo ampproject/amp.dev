@@ -33,7 +33,7 @@ $title: amp-layout
     <td>Conteneur générique polyvalent qui permet d'appliquer les <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">mises en page</a> AMP enrichies à n'importe quel élément.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, intrinsic, responsive</td>
   </tr>
 </table>

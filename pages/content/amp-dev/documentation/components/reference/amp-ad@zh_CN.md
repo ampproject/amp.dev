@@ -44,7 +44,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>注意：如果没有此脚本，amp-ad 也许仍可以工作，但我们强烈建议使用该脚本，以保证未来的兼容性。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">支持的布局</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、intrinsic、nodisplay、responsive</td>
   </tr>
   <tr>

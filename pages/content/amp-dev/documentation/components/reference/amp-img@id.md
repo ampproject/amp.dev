@@ -34,7 +34,7 @@ teaser:
     <td>Penggantian yang dikelola runtime untuk tag <code>img</code> HTML.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Tata Letak yang Didukung</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ Runtime dapat memilih untuk menunda atau memprioritaskan pemuatan resource berda
 Komponen `amp-img`, seperti semua resource AMP yang diambil secara eksternal, harus diberi ukuran eksplisit (seperti dalam `width` / `height`) terlebih dahulu, sehingga rasio tinggi lebar dapat diketahui tanpa mengambil gambar. Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 
 [tip type="read-on"]
-Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) dan [Tata Letak yang Didukung](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) dan [Tata Letak yang Didukung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute).
 [/tip]
 
 # Contoh: Menampilkan gambar yang responsif

@@ -33,7 +33,7 @@ $title: amp-layout
     <td>AMP'nin güçlü <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">düzenlerini</a> herhangi bir öğeye getiren genel, çok amaçlı bir kapsayıcı öğesi.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, intrinsic, responsive</td>
   </tr>
 </table>

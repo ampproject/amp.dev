@@ -33,7 +33,7 @@ $title: amp-layout
     <td>一个常规的多用途容器元素，可将 AMP 强大的<a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">布局</a>功能运用到任何元素上。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">支持的布局</a></strong></td>
     <td>container、fill、fixed、fixed-height、flex-item、intrinsic、responsive</td>
   </tr>
 </table>

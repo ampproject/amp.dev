@@ -34,7 +34,7 @@ limitations under the License.
     <td>Uma substituição gerenciada pelo ambiente de execução para a tag <code>img</code> de HTML.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ O ambiente de execução pode optar por atrasar ou priorizar o carregamento de r
 Os componentes de `amp-img`, assim como todos os recursos de AMP buscados externamente, precisam receber um tamanho explícito (como em `width`/`height`) com antecedência para que a proporção seja conhecida sem buscar a imagem. O comportamento real do layout é determinado pelo atributo `layout`.
 
 [tip type="read-on"]
-saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) (link em inglês) e em [Layouts compatíveis](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) (link em inglês) e em [Layouts compatíveis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute).
 [/tip]
 
 # Exemplo: como exibir uma imagem responsiva

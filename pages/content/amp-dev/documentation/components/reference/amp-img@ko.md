@@ -34,7 +34,7 @@ limitations under the License.
     <td>HTML <code>img</code> 태그의 런타임 관리 대체입니다.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ limitations under the License.
 이미지를 가져오지 않고도 가로세로 비율을 알 수 있도록, 외부에서 가져온 모든 AMP 리소스와 같은 `amp-img` 구성요소에는 명시적으로 미리 크기를 지정해야 합니다(`width`/`height` 사용). 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 
 [tip type="read-on"]
-[AMP HTML 레이아웃 시스템]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) 사양과 [지원되는 레이아웃](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
+[AMP HTML 레이아웃 시스템]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) 사양과 [지원되는 레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
 [/tip]
 
 # 예: 반응형 이미지 표시

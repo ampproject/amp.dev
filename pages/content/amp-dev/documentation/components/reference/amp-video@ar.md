@@ -44,7 +44,7 @@ teaser:
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">تراكب النقر للتشغيل للمكون amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
       <td>fill وfixed وfixed-height وflex-item وnodisplay وresponsive</td>
     </tr>
   </table>

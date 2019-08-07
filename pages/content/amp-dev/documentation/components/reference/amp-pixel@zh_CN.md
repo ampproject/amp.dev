@@ -34,7 +34,7 @@ teaser:
     <td>可用作典型的跟踪像素来统计网页浏览量。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">支持的布局</a></strong></td>
     <td>fixed、nodisplay</td>
   </tr>
   <tr>

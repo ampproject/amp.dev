@@ -33,7 +33,7 @@ limitations under the License.
     <td>Замена для HTML-тега <code>img</code>. Можно управлять в среде выполнения.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые макеты</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ limitations under the License.
 Для компонентов `amp-img`, как и для всех получаемых извне ресурсов AMP, должен быть задан конкретный размер (например `width`/`height`). Это необходимо, чтобы соотношение сторон можно было узнать, не извлекая изображение. Поведение макета определяется атрибутом `layout`.
 
 [tip type="read-on"]
-Более подробную информацию можно найти в спецификации [системы макетов AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) и в списке [поддерживаемых макетов](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Более подробную информацию можно найти в спецификации [системы макетов AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) и в списке [поддерживаемых макетов]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute).
 [/tip]
 
 # Пример: показ адаптивного изображения

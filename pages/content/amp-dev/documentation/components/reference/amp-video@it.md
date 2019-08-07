@@ -42,7 +42,7 @@ Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli 
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Overlay click-to-play per amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layout supportati</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
