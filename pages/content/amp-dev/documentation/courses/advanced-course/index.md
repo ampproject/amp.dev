@@ -96,7 +96,7 @@ That's what we'll do in this course. Here, you will learn how to:
 
 - Dynamically change the content on screen (i.e., filtering and sorting data).
 
-{{ image('/static/img/courses/advanced/image2.png', 744, 1328, align='center third', caption='Our Chico's Cheese Bikes Site So Far') }}
+{{ image('/static/img/courses/advanced/image2.png', 744, 1328, align='center third', caption='Our Chico\'s Cheese Bikes Site So Far') }}
 
 {{ image('/static/img/courses/advanced/image10.png', 738, 1324, align='center third', caption='Site With Menu Opened') }}
 

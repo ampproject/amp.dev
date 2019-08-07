@@ -481,7 +481,7 @@ With what we have learned about state variables and bindings, we now start to se
 
 Our next goal is to recreate a basic online product page like the one we discussed in our case study. Our product is going to be a t-shirt that comes in various options: men's or women's; small, medium, or large; and red, blue, or green. The product's base price will change based on the user's selections. Finally, the image of the t-shirt will update when the user selects a color.
 
-{{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we're building') }}
+{{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we\'re building') }}
 
 We're not going to build this product page inside of our Chico's Cheese Bikes shop project. Instead, you can use [this](https://glitch.com/~rustic-musician) Glitch as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
 
