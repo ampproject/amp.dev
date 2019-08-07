@@ -36,7 +36,7 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，我们希望在屏幕尺寸各异的设备上显示一张花卉图片（640 x 427 像素），因此我们指定了 `width` 和 `height`，并将布局设为 `responsive`。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -77,7 +77,7 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -111,7 +111,7 @@ $title: 制作自适应 AMP 网页
 - 在视口宽度不超过 900 像素的情况，以 75% 的视口宽度呈现图片。
 - 在视口宽度超过 900 像素的所有情况下，以 600 像素的宽度呈现图片。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -147,7 +147,7 @@ $title: 制作自适应 AMP 网页
 
 注意: 由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#如果未定义宽度和高度，会怎样？)。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -181,7 +181,7 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，如果浏览器支持 WebP，便提供 mountains.webp；否则，就提供 mountains.jpg。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"

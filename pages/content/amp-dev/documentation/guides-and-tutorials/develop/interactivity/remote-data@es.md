@@ -38,7 +38,7 @@ Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos
 
 ### Indicar tamaños no disponibles
 
-A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]`  correspondientes a tamaños no disponibles:
+A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})  correspondientes a tamaños no disponibles:
 
 ```html
 <amp-selector name="size">

@@ -36,7 +36,7 @@ $title: レスポンシブな AMP ページを作成する
 
 以下の例では、花の画像（640 x 427 px）を表示します。あらゆる画面サイズでこの画像を表示したいので、`width` と `height` を指定し、レイアウトを `responsive` に設定しています。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -77,7 +77,7 @@ $title: レスポンシブな AMP ページを作成する
 
 以下の例では、埋め込んだ YouTube 動画を、端末の画面のサイズと向きに合わせて表示します。[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 要素に `"layout=responsive"` を追加することで、動画はウィンドウに収まるようにサイズ変更され、指定された `width` と `height` に沿ってアスペクト比が保たれます。
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -111,7 +111,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 - ビューポートの幅が 900 px 以下の場合、画像をビューポートの幅の 75% で表示します。
 - 900 px より大きい場合、画像を 600 px の幅で表示します。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -147,7 +147,7 @@ AMP ページには数多くの種類の動画を追加できます。詳しく�
 
 注: 画像のサイズを固定する（つまり、歪みが生じないようにする）必要があるため、レイアウトの値は指定していません。幅と高さが設定されているため、デフォルトで `layout=fixed` に設定されます。詳しくは、[「layout 属性が指定されていない場合」]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性が指定されていない場合)をご覧ください。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -181,7 +181,7 @@ HTML では `picture` タグを使うことで、異なる画像形式を配信�
 
 以下の例では、ブラウザが WebP に対応している場合は mountains.webp を配信し、対応していない場合は mountains.jpg を配信します。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"

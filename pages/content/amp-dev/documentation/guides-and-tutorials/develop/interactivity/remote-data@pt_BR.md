@@ -38,7 +38,7 @@ Agora, aplique isso ao exemplo de comércio eletrônico. Primeiro, busque os dad
 
 ### Indicar os tamanhos indisponíveis
 
-Em seguida, marque claramente os tamanhos indisponíveis de um determinado SKU. A classe CSS `"unavailable"` adicionará uma linha diagonal por meio de um elemento. É possível incluí-la nos elementos de `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]`, correspondentes aos tamanhos indisponíveis:
+Em seguida, marque claramente os tamanhos indisponíveis de um determinado SKU. A classe CSS `"unavailable"` adicionará uma linha diagonal por meio de um elemento. É possível incluí-la nos elementos de [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}), correspondentes aos tamanhos indisponíveis:
 
 ```html
 <amp-selector name="size">

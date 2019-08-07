@@ -50,6 +50,7 @@ def generate_preview(doc, content, preview):
   output = ''
   preview_template = load_template(TEMPLATE_PATH, doc)
   output = output + preview_template.render(
+    doc=doc,
     preview=preview,
     podspec=doc.pod.podspec,
     content=content)

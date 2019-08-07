@@ -10,8 +10,8 @@
 {% if title and '[=' in title %}
 {% set title = title|safe %}
 {% endif %}
-{% if doc.base.startswith('amp-') and not '_' in doc.base and not ' ' in doc.base %}
-{% set title = '<' + doc.base + '>' %}
+{% if title.startswith('amp-') and not '_' in title and not ' ' in title %}
+{% set title = '<' + title + '>' %}
 {% endif %}
 
 

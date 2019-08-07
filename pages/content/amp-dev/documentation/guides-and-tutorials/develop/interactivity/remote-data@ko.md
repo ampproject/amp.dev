@@ -38,7 +38,7 @@ $title: 원격 데이터 사용하기
 
 ### 주문할 수 없는 사이즈 표시
 
-다음으로, 주어진 SKU에서 주문할 수 없는 사이즈를 명확하게 표시해 보겠습니다. `"unavailable"` CSS 클래스는 요소를 관통하는 대각선을 추가합니다. 이 클래스를 주문할 수 없는 사이즈인 `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 내의 요소에 추가할 수 있습니다.
+다음으로, 주어진 SKU에서 주문할 수 없는 사이즈를 명확하게 표시해 보겠습니다. `"unavailable"` CSS 클래스는 요소를 관통하는 대각선을 추가합니다. 이 클래스를 주문할 수 없는 사이즈인 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 내의 요소에 추가할 수 있습니다.
 
 ```html
 <amp-selector name="size">
