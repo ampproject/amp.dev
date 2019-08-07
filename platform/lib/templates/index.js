@@ -40,10 +40,10 @@ function createRequestContext(request={'query': {}}, context={}) {
     context.format = request.query.format;
   }
 
-  if (!ALLOWED_LEVEL.includes(request.query.level)) {
-    context.level = ALLOWED_LEVEL[0];
-  } else {
+  if (ALLOWED_LEVEL.includes(request.query.level)) {
     context.level = request.query.level;
+  } else {
+    context.level = ALLOWED_LEVEL[0];
   }
 
   context.category = (request.query.category || '').toLowerCase();
