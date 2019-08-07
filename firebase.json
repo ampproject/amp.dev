@@ -20,6 +20,52 @@
     ],
     "redirects": [
       {
+        "source": "/support/faqs",
+        "destination": "https://amp.dev/support/faq/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/support/faqs",
+        "destination": "https://amp.dev/:lang/support/faq/",
+        "type": 301
+      },
+      {
+        "source": "/support/faqs/overview",
+        "destination": "https://amp.dev/support/faq/overview/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/support/faqs/overview",
+        "destination": "https://amp.dev/:lang/support/faq/overview/",
+        "type": 301
+      },
+      {
+        "source": "/support/faqs/platform-involvement",
+        "destination": "https://amp.dev/support/faq/platform-involvement/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/support/faqs/platform-involvement",
+        "destination": "https://amp.dev/:lang/support/faq/platform-involvement/",
+        "type": 301
+      },
+      {
+        "source": "/support/faqs/publisher-monetization",
+        "destination": "https://amp.dev/support/faq/publisher-monetization/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/support/faqs/publisher-monetization",
+        "destination": "https://amp.dev/:lang/support/faq/publisher-monetization/",
+        "type": 301
+      },
+
+      {
+        "source": "/:lang/docs/community/governance",
+        "destination": "https://amp.dev/:lang/community/governance?referrer=ampproject.org",
+        "type": 301
+      },
+      {
         "source": "/docs/community/governance",
         "destination": "https://amp.dev/community/governance?referrer=ampproject.org",
         "type": 301
