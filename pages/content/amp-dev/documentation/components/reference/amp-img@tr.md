@@ -101,8 +101,8 @@ Altyazılar gibi ek resim özellikleri, standart HTML ile uygulanabilir (örneğ
 [tip type="read-on"]
 Şu kaynaklardan, `amp-img` kullanma hakkında daha fazla bilgi edinin:
 
-* [Yer tutucular ve yedekler](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Resim ve Video Ekleme](https://www.ampproject.org/docs/media/amp_replacements)
+* [Yer tutucular ve yedekler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [Resim ve Video Ekleme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 [/tip]
 
 # Özellikler
@@ -120,7 +120,7 @@ Bu özellik, `img` etiketindeki `src` özelliğine benzer. Değer, genel olarak 
 `img` etiketinde `sizes` özelliği ile aynıdır.
 
 [tip type="read-on"]
-`sizes` ve `srcset` kullanımıyla ilgili olarak [srcset, sizes ve heights özelliklerine sahip duyarlı resimler](https://www.ampproject.org/docs/design/responsive/art_direction) konusuna bakın.
+`sizes` ve `srcset` kullanımıyla ilgili olarak [srcset, sizes ve heights özelliklerine sahip duyarlı resimler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) konusuna bakın.
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ AMP çalışma zamanı tarafından, resmi getirmeden en boy oranını belirlemek
 
 **common attributes**
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) içerirç
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) içerirç
 
 # Stil
 
@@ -170,7 +170,7 @@ Resminizin sabit bir boyutta görüntülenmesini isterseniz:
 1. `width` ve `height` değerlerini belirtin.
 
 [tip type="read-on"]
-`layout` özelliğini belirtmeyecekseniz [tahmin edilen düzen](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) hakkında bilgi edinin.
+`layout` özelliğini belirtmeyecekseniz [tahmin edilen düzen]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?) hakkında bilgi edinin.
 [/tip]
 
 # En boy oranını ayarlama
@@ -194,13 +194,13 @@ Duyarlı resimlerde, `width` ve `height` değerlerinin `amp-img` etiketinin geni
 
 Aynı resmin tamamında aynı en boy oranına sahip farklı çözünürlüklerini sağlamak için [`srcset`](#attributes) özelliği kullanılmalıdır. Tarayıcı, kullanıcının cihazının ekran çözünürlüğüne ve genişliğine göre en uygun dosyayı `srcset` özelliğinden otomatik olarak seçer.
 
-Buna karşılık, [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) özelliği AMP bileşenlerini gösterir veya gizler ve duyarlı düzenler tasarlanırken kullanılmalıdır. Farklı en boy oranlarına sahip resimleri görüntülemenin uygun yolu, birden çok `<amp-img>` bileşeni kullanmak ve bu bileşenlerin her birinde, her bir örneğin gösterileceği ekran genişlikleriyle eşleşen bir `media` özelliği bulundurmaktır.
+Buna karşılık, [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) özelliği AMP bileşenlerini gösterir veya gizler ve duyarlı düzenler tasarlanırken kullanılmalıdır. Farklı en boy oranlarına sahip resimleri görüntülemenin uygun yolu, birden çok `<amp-img>` bileşeni kullanmak ve bu bileşenlerin her birinde, her bir örneğin gösterileceği ekran genişlikleriyle eşleşen bir `media` özelliği bulundurmaktır.
 
-Daha ayrıntılı bilgi için [duyarlı AMP sayfaları oluşturma](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images) ile ilgili kılavuza bakın.
+Daha ayrıntılı bilgi için [duyarlı AMP sayfaları oluşturma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images) ile ilgili kılavuza bakın.
 
 # Bilinmeyen boyutları olan resimler için en boy oranını koruma
 
-AMP düzen sistemi, bir resmin en boy oranının resim getirilmeden önce bilinmesini gerektirir; ancak, bazı durumlarda resmin boyutlarını bilmiyor olabilirsiniz. Bilinmeyen boyutlara sahip resimleri görüntülemek ve en boy oranlarını korumak için [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS özelliği ile AMP'nin [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) düzenini birleştirin. Daha fazla bilgi için Örneklerle AMP [Bilinmeyen boyutlara sahip resimleri destekleme](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) sayfasına bakın.
+AMP düzen sistemi, bir resmin en boy oranının resim getirilmeden önce bilinmesini gerektirir; ancak, bazı durumlarda resmin boyutlarını bilmiyor olabilirsiniz. Bilinmeyen boyutlara sahip resimleri görüntülemek ve en boy oranlarını korumak için [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS özelliği ile AMP'nin [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) düzenini birleştirin. Daha fazla bilgi için Örneklerle AMP [Bilinmeyen boyutlara sahip resimleri destekleme](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) sayfasına bakın.
 
 # Doğrulama
 

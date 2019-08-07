@@ -50,7 +50,7 @@ teaser:
 `<amp-list>` 组件可从 CORS JSON 端点获取动态内容。端点的响应包含在指定模板中呈现的数据。
 
 [tip type="important"]
-端点必须符合 [AMP 中的 CORS 请求](https://www.ampproject.org/docs/fundamentals/amp-cors-requests)规范中规定的要求。
+端点必须符合 [AMP 中的 CORS 请求]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})规范中规定的要求。
 [/tip]
 
 您可以通过以下两种方式之一指定模板：
@@ -62,7 +62,7 @@ teaser:
 
 *示例：显示动态列表*
 
-在以下示例中，我们将检索包含网址和标题的 JSON 数据，并在嵌套的 [amp-mustache 模板](https://www.ampproject.org/docs/reference/components/amp-mustache)中呈现内容。
+在以下示例中，我们将检索包含网址和标题的 JSON 数据，并在嵌套的 [amp-mustache 模板]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})中呈现内容。
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -224,10 +224,10 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 将返回 JSON（会在此 `<amp-list>` 中呈现）的远程端点的网址。这必须是 CORS HTTP 服务。网址的协议必须为 HTTPS。
 
 [tip type="important"]
-端点必须符合 [AMP 中的 CORS 请求](https://www.ampproject.org/docs/fundamentals/amp-cors-requests)规范中规定的要求。
+端点必须符合 [AMP 中的 CORS 请求]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})规范中规定的要求。
 [/tip]
 
-如果 `[src]` 属性存在，则可省略 `src` 属性。使用 [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind) 时，在依据用户手势（而不是页面加载）呈现内容时，这非常有用。
+如果 `[src]` 属性存在，则可省略 `src` 属性。使用 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 时，在依据用户手势（而不是页面加载）呈现内容时，这非常有用。
 
 ##### credentials（可选）
 
@@ -236,7 +236,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 * 支持的值：`omit`、`include`
 * 默认值：`omit`
 
-要发送凭据，请传递 `include` 值。如果设置了此值，则响应必须遵循 [AMP CORS 安全准则](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)。
+要发送凭据，请传递 `include` 值。如果设置了此值，则响应必须遵循 [AMP CORS 安全准则]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)。
 
 以下示例指定在列表中包含凭据，以显示个性化内容：
 
@@ -417,7 +417,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ##### 常见属性
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})。
 
 ## 替换
 

@@ -101,8 +101,8 @@ D'autres caractéristiques d'image, comme des légendes, peuvent être mises en 
 [tip type="read-on"]
 Pour en savoir plus sur l'utilisation du composant `amp-img`, consultez les ressources suivantes :
 
-* [Espaces réservés et créations de remplacement](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Inclure des images et des vidéos](https://www.ampproject.org/docs/media/amp_replacements)
+* [Espaces réservés et créations de remplacement]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [Inclure des images et des vidéos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 [/tip]
 
 # Attributs
@@ -120,7 +120,7 @@ Identique à l'attribut `srcset` sur la balise `img`. Pour les navigateurs qui n
 Identique à l'attribut `sizes` dans la balise `img`.
 
 [tip type="read-on"]
-Consultez la section [Images responsives avec les attributs srcset, sizes et heights](https://www.ampproject.org/docs/design/responsive/art_direction) pour en savoir plus sur l'utilisation des attributs `sizes` et `srcset`.
+Consultez la section [Images responsives avec les attributs srcset, sizes et heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) pour en savoir plus sur l'utilisation des attributs `sizes` et `srcset`.
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ Taille explicite de l'image utilisée par l'exécution AMP pour déterminer les 
 
 **common attributes**
 
-Cet élément comprend des [attributs communs](https://www.ampproject.org/docs/reference/common_attributes) étendus aux composants AMP.
+Cet élément comprend des [attributs communs]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) étendus aux composants AMP.
 
 # Application d'un style
 
@@ -170,7 +170,7 @@ Pour que votre image soit affichée à une taille fixe, procédez comme suit :
 1. Spécifiez les attributs `width` et `height`.
 
 [tip type="read-on"]
-En savoir plus sur la [mise en page déduite](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) si vous ne spécifiez pas l'attribut `layout`
+En savoir plus sur la [mise en page déduite]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?) si vous ne spécifiez pas l'attribut `layout`
 [/tip]
 
 # Définir les proportions
@@ -194,13 +194,13 @@ Par exemple, au lieu de spécifier `width="900"` et `height="675"`, vous pouvez 
 
 L'attribut [`srcset`](#attributes) doit être utilisé pour fournir différentes résolutions de la même image, ayant toutes les mêmes proportions. Le navigateur choisit automatiquement le fichier le plus approprié à partir de l'attribut `srcset` en fonction de la résolution d'écran et de la largeur d'écran de l'appareil de l'utilisateur.
 
-En revanche, l'attribut [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) affiche ou masque les composants AMP et doit être utilisé lors de la conception de mises en page responsives. Pour afficher des images avec des proportions différentes, vous devez utiliser plusieurs composants `<amp-img>`, chacun avec un attribut `media` correspondant aux largeurs d'écran auxquelles chaque instance doit être affichée.
+En revanche, l'attribut [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) affiche ou masque les composants AMP et doit être utilisé lors de la conception de mises en page responsives. Pour afficher des images avec des proportions différentes, vous devez utiliser plusieurs composants `<amp-img>`, chacun avec un attribut `media` correspondant aux largeurs d'écran auxquelles chaque instance doit être affichée.
 
-Pour plus d'informations, consultez le guide sur la [création de pages AMP responsives](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images).
+Pour plus d'informations, consultez le guide sur la [création de pages AMP responsives]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images).
 
 # Conserver les proportions des images de dimensions inconnues
 
-Le système de mise en page AMP doit connaître les proportions d'une image avant de la récupérer. Toutefois, dans certains cas, il se peut que vous ne connaissiez pas les dimensions de l'image. Pour afficher des images de dimensions inconnues et conserver les proportions, associez la mise en page [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) d'AMP à la propriété CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Pour en savoir plus, consultez la page [How to support images with unknown dimensions](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) sur AMP By Example.
+Le système de mise en page AMP doit connaître les proportions d'une image avant de la récupérer. Toutefois, dans certains cas, il se peut que vous ne connaissiez pas les dimensions de l'image. Pour afficher des images de dimensions inconnues et conserver les proportions, associez la mise en page [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) d'AMP à la propriété CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Pour en savoir plus, consultez la page [How to support images with unknown dimensions](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) sur AMP By Example.
 
 # Validation
 

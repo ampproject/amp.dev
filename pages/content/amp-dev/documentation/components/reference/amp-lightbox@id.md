@@ -61,7 +61,7 @@ Menekan tombol escape pada keyboard akan menutup lightbox. Cara lainnya, menetap
 ```
 
 [tip type="read"]
-Untuk menampilkan gambar di lightbox, ada juga komponen [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox).
+Untuk menampilkan gambar di lightbox, ada juga komponen [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Atribut
@@ -123,7 +123,7 @@ Anda dapat mengatur gaya `amp-lightbox` dengan CSS standar.
 ## <a id="a4a"></a>Menggunakan `amp-lightbox` dalam iklan AMPHTML
 
 [tip type="note"]
-Komponen `amp-lightbox` untuk digunakan dalam ikan AMPHTML masih bersifat [eksperimental](https://www.ampproject.org/docs/reference/experimental) dan terus mengalami pengembangan. Untuk menggunakan `amp-lightbox` dalam iklan AMPHTML, [aktifkan eksperimen `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+Komponen `amp-lightbox` untuk digunakan dalam ikan AMPHTML masih bersifat [eksperimental]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) dan terus mengalami pengembangan. Untuk menggunakan `amp-lightbox` dalam iklan AMPHTML, [aktifkan eksperimen `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
 Ada beberapa perbedaan antara menggunakan `amp-lightbox` dalam dokumen AMP normal dengan [iklan yang ditulis dalam AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}):

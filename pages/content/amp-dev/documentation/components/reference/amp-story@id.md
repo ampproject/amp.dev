@@ -1268,9 +1268,9 @@ Kolom ini harus berisi string, di mana setiap string mewakili nama penyedia laya
 
 Jika parameter tambahan diperlukan, objek yang memiliki key-value pair harus digunakan. Objek ini harus memuat kunci `provider` dengan nilai yang sesuai dengan nama penyedia (misalnya `facebook`). Key-value berikutnya akan bergantung pada penyedia layanan berbagi.
 
-Daftar penyedia layanan yang tersedia sama dengan yang ada di komponen [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+Daftar penyedia layanan yang tersedia sama dengan yang ada di komponen [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
 
-Masing-masing penyedia layanan ini memiliki kumpulan parameter yang tersedia yang berbeda ([lihat `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). Objek konfigurasi menggunakan parameter tersebut tanpa awalan `data-param-` (misalnya, `data-param-app_id` akan muncul dalam objek konfigurasi sebagai `app_id`).
+Masing-masing penyedia layanan ini memiliki kumpulan parameter yang tersedia yang berbeda ([lihat `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). Objek konfigurasi menggunakan parameter tersebut tanpa awalan `data-param-` (misalnya, `data-param-app_id` akan muncul dalam objek konfigurasi sebagai `app_id`).
 
 #### Konfigurasi JSON
 
@@ -1318,10 +1318,10 @@ Komponen `<amp-story-bookend>` harus memiliki atribut `src` yang mengarah ke kon
 
 Berikut adalah komponen lain yang dapat digunakan dalam artikel AMP yang memerlukan beberapa penjelasan khusus artikel.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-Untuk mengetahui komponen lain yang umumnya dapat digunakan, lihat [daftar turunan yang diizinkan](https://www.ampproject.org/docs/reference/components/amp-story#children).
+Untuk mengetahui komponen lain yang umumnya dapat digunakan, lihat [daftar turunan yang diizinkan]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
 
 ## Validasi
 

@@ -285,7 +285,7 @@ Bu özellik, alt `<nav toolbar="(media-query)" toolbar-target="elementID">` öğ
 
 ##### common attributes<a name="common"></a>
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) içerir.
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) içerir.
 
 ## Stil
 

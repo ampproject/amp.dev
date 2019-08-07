@@ -57,7 +57,7 @@ $title: amp-layout
 
 ## Атрибуты
 
-Этот элемент содержит [распространенные атрибуты](https://www.ampproject.org/docs/reference/common_attributes), расширенные до компонентов AMP.
+Этот элемент содержит [распространенные атрибуты]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}), расширенные до компонентов AMP.
 
 ## Проверка
 

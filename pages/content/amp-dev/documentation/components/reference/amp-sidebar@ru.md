@@ -285,7 +285,7 @@ $title: amp-sidebar
 
 ##### универсальные атрибуты<a name="common"></a>
 
-[Атрибуты](https://www.ampproject.org/docs/reference/common_attributes), которые поддерживаются большинством компонентов AMP.
+[Атрибуты]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}), которые поддерживаются большинством компонентов AMP.
 
 ## Поддержка стилей
 

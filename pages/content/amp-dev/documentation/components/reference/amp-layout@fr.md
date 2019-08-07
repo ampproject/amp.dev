@@ -57,7 +57,7 @@ Dans l'exemple ci-dessous, le composant `amp-layout` est utilisé pour créer un
 
 ## Attributs
 
-Cet élément inclut des [attributs communs](https://www.ampproject.org/docs/reference/common_attributes) étendus aux composants AMP.
+Cet élément inclut des [attributs communs]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) étendus aux composants AMP.
 
 ## Validation
 

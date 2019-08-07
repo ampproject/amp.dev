@@ -1281,9 +1281,9 @@ URL аудиофайла, который воспроизводится, пок�
 
 Если необходимы дополнительные параметры, используйте объект с парами "ключ-значение". В нем должен быть ключ `provider` со значением, соответствующим названию поставщика (например, `facebook`). Дальнейшие ключи и значения зависят от поставщика.
 
-Поддерживаются те же поставщики, что и для компонента [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+Поддерживаются те же поставщики, что и для компонента [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
 
-У каждого из поставщиков свой список поддерживаемых параметров ([см. `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). Объект конфигурации принимает эти параметры без префикса `data-param-`. Например, `data-param-app_id` отображается в нем как `app_id`.
+У каждого из поставщиков свой список поддерживаемых параметров ([см. `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). Объект конфигурации принимает эти параметры без префикса `data-param-`. Например, `data-param-app_id` отображается в нем как `app_id`.
 
 #### Конфигурация JSON
 
@@ -1331,10 +1331,10 @@ URL аудиофайла, который воспроизводится, пок�
 
 Вот ещё пара полезных компонентов для AMP-историй:
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-Более широко используемые компоненты перечислены в [списке допустимых дочерних элементов](https://www.ampproject.org/docs/reference/components/amp-story#children).
+Более широко используемые компоненты перечислены в [списке допустимых дочерних элементов]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
 
 ## Валидация
 

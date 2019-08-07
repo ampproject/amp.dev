@@ -50,7 +50,7 @@ Busca conteúdo dinamicamente a partir de um endpoint JSON CORS e o renderiza us
 O componente `<amp-list>` busca conteúdo dinâmico de um endpoint JSON CORS. A resposta do endpoint contém dados, que são renderizados no modelo especificado.
 
 [tip type="important"]
-seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests) (link em inglês).
+seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) (link em inglês).
 [/tip]
 
 Você pode especificar um modelo de duas maneiras:
@@ -62,7 +62,7 @@ Para ver mais detalhes sobre modelos, consulte [Modelos HTML para AMP](https://g
 
 *Exemplo: exibição de uma lista dinâmica*
 
-No exemplo a seguir, recuperamos dados JSON que contêm URLs e títulos e renderizamos o conteúdo em um [modelo amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) aninhado.
+No exemplo a seguir, recuperamos dados JSON que contêm URLs e títulos e renderizamos o conteúdo em um [modelo amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) aninhado.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -224,10 +224,10 @@ Essa ação está disponível de modo experimental em `amp-list-resizable-childr
 O URL do endpoint remoto que retorna o JSON que será renderizado dentro do `<amp-list>`. Ele precisa ser um serviço HTTP CORS. O protocolo do URL precisa ser HTTPS.
 
 [tip type="important"]
-seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests) (link em inglês).
+seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) (link em inglês).
 [/tip]
 
-O atributo `src` pode ser omitido se o atributo `[src]` existir. Isso é útil ao renderizar conteúdo como resultado de um gesto do usuário, e não de um carregamento de página, ao trabalhar com [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind).
+O atributo `src` pode ser omitido se o atributo `[src]` existir. Isso é útil ao renderizar conteúdo como resultado de um gesto do usuário, e não de um carregamento de página, ao trabalhar com [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 ##### credentials (opcional)
 
@@ -236,7 +236,7 @@ Define uma opção de `credentials`, conforme especificado pela [API Fetch](http
 * Valores aceitos: `omit`, `include`
 * Padrão: `omit`
 
-Para enviar credenciais, transmita o valor de `include`. Se esse valor for definido, a resposta precisará seguir as [diretrizes de segurança do AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Para enviar credenciais, transmita o valor de `include`. Se esse valor for definido, a resposta precisará seguir as [diretrizes de segurança do AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 Veja um exemplo que especifica a inclusão de credenciais para exibir conteúdo personalizado em uma lista:
 
@@ -421,7 +421,7 @@ Este elemento não é fornecido por padrão, mas se um elemento `<amp-list-load-
 
 ##### common attributes
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estendidos a componentes de AMP.
 
 ## Substituições
 

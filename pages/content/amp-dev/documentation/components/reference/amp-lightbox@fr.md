@@ -61,7 +61,7 @@ La touche Échap permet de fermer le mode Lightbox. Vous pouvez également défi
 ```
 
 [tip type="read"]
-Pour afficher des images dans une annonce Lightbox, vous pouvez également utiliser le composant [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox).
+Pour afficher des images dans une annonce Lightbox, vous pouvez également utiliser le composant [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Attributs
@@ -123,7 +123,7 @@ Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher a
 ## <a id="a4a"></a> Utiliser `amp-lightbox` dans des annonces AMP HTML
 
 [tip type="note"]
-Le composant `amp-lightbox` à utiliser dans les annonces AMP HTML est proposé à titre [expérimental](https://www.ampproject.org/docs/reference/experimental) et est actuellement en cours de développement. Pour utiliser `amp-lightbox` dans des annonces AMP HTML, [activez le test `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+Le composant `amp-lightbox` à utiliser dans les annonces AMP HTML est proposé à titre [expérimental]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) et est actuellement en cours de développement. Pour utiliser `amp-lightbox` dans des annonces AMP HTML, [activez le test `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
 Notons quelques différences selon que le composant `amp-lightbox` est utilisé dans des documents AMP standards ou dans des [annonces écrites dans le langage AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) :

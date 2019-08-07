@@ -52,7 +52,7 @@ teaser:
 
 [tip type="important"]
 
-يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -65,7 +65,7 @@ teaser:
 
 *مثال: عرض قائمة ديناميكية*
 
-في المثال التالي، نسترد بيانات JSON التي تحتوي على عناوين URL وعناوين رئيسية ونعرض المحتوى في [نموذج amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) مدمج.
+في المثال التالي، نسترد بيانات JSON التي تحتوي على عناوين URL وعناوين رئيسية ونعرض المحتوى في [نموذج amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) مدمج.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -228,11 +228,11 @@ amp-list div[role="list"] {
 
 [tip type="important"]
 
-يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
-قد يتم حذف السمة `src` في حال توفر السمة `[src]`. ويفيد هذا عند عرض المحتوى نتيجة إيماءة من المستخدِم بدلاً من تحميل الصفحة عند العمل باستخدام [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind).
+قد يتم حذف السمة `src` في حال توفر السمة `[src]`. ويفيد هذا عند عرض المحتوى نتيجة إيماءة من المستخدِم بدلاً من تحميل الصفحة عند العمل باستخدام [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 ##### credentials (اختياريّة)
 
@@ -241,7 +241,7 @@ amp-list div[role="list"] {
 * القيم المسموح بها: `omit` و`include`
 * القيمة التلقائية: `omit`
 
-لإرسال بيانات الاعتماد، مرِر القيمة `include`. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة [إرشادات الأمان AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+لإرسال بيانات الاعتماد، مرِر القيمة `include`. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة [إرشادات الأمان AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 في ما يلي مثال يحدد تضمين بيانات الاعتماد لعرض محتوى مخصص في قائمة:
 
@@ -425,7 +425,7 @@ amp-list div[role="list"] {
 
 ##### السمات المشتركة
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) التي تشمل مكونات AMP.
 
 ## الاستبدالات
 

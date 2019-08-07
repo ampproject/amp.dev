@@ -76,7 +76,7 @@ Untuk melihat demo `amp-iframe` lainnya, buka [AMP By Example](https://ampbyexam
 
 `amp-iframe` **tidak boleh** digunakan dengan maksud utama untuk menampilkan iklan. Anda BOLEH menggunakan `amp-iframe` untuk menampilkan video, di mana bagian dari video tersebut merupakan iklan. Kebijakan AMP ini dapat diberlakukan dengan tidak merender iframe yang terkait.
 
-Untuk kasus penggunaan iklan, gunakan [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad).
+Untuk kasus penggunaan iklan, gunakan [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 Alasan penggunaan kebijakan ini adalah:
 
@@ -221,7 +221,7 @@ Pesan intersection akan dikirim oleh induk ke iframe saat iframe bergerak masuk 
 
 # iframe pelacakan/analisis
 
-Kami sangat merekomendasikan penggunaan [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) untuk keperluan analisis, karena solusi ini jauh lebih tangguh, lengkap, dan efisien yang dapat dikonfigurasi untuk berbagai vendor analisis.
+Kami sangat merekomendasikan penggunaan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) untuk keperluan analisis, karena solusi ini jauh lebih tangguh, lengkap, dan efisien yang dapat dikonfigurasi untuk berbagai vendor analisis.
 
 AMP hanya mengizinkan satu iframe yang digunakan untuk keperluan pelacakan dan analisis, per halaman. Untuk menghemat resource, iframe ini akan dihapus dari DOM 5 detik setelah dimuat, yang mestinya cukup untuk menyelesaikan pekerjaan apa pun yang perlu dilakukan.
 
@@ -229,7 +229,7 @@ iframe diidentifikasi sebagai iframe pelacakan/analisis jika tampaknya tidak mem
 
 # Panduan: Prioritaskan komponen AMP yang ada daripada amp-iframe
 
-Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP](https://www.ampproject.org/docs/reference/components) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
+Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
 
 * Pengelolaan dan performa resource yang lebih baik
 * Pada kasus tertentu, komponen kustom dapat memberikan gambar placeholder built-in. Dengan begitu pengguna dapat, misalnya, mendapatkan thumbnail video yang tepat sebelum video dimuat, dan mengurangi upaya coding untuk menambahkan placeholder secara manual.

@@ -25,7 +25,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-Memungkinkan penayang untuk berintegrasi lebih mudah dengan platform pembayaran mikro [LaterPay](https://www.laterpay.net). `amp-access-laterpay` didasarkan pada, dan memerlukan [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access).
+Memungkinkan penayang untuk berintegrasi lebih mudah dengan platform pembayaran mikro [LaterPay](https://www.laterpay.net). `amp-access-laterpay` didasarkan pada, dan memerlukan [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ Anda dapat membaca dokumentasi tentang cara mengonfigurasi [Konektor LaterPay](h
 
 Daftar yang dihasilkan dapat diberi gaya dan ditampilkan sesuai dengan preferensi penayang.
 
-Komponen ini juga mengandalkan [Markup Konten Akses](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup) untuk menampilkan dan menyembunyikan konten.
+Komponen ini juga mengandalkan [Markup Konten Akses]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#access-content-markup) untuk menampilkan dan menyembunyikan konten.
 
 ## Konfigurasi
 
@@ -274,7 +274,7 @@ Kunci pesan berikut dapat diterjemahkan atau disesuaikan, tetapi perhatikan bahw
 
 ## Analisis
 
-Karena didasarkan pada `amp-access`, `amp-access-laterpay` mendukung semua [peristiwa analisis](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics) yang dikirim oleh `amp-access`.
+Karena didasarkan pada `amp-access`, `amp-access-laterpay` mendukung semua [peristiwa analisis]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#integration-with-amp-analytics) yang dikirim oleh `amp-access`.
 
 Semua contoh di [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) dikonfigurasi untuk mengirimkan peristiwa analisis ini jika Anda ingin melihat contoh lengkap penggunaan sebenarnya.
 
@@ -282,9 +282,9 @@ Semua contoh di [https://ampexample.laterpay.net/](https://ampexample.laterpay.n
 
 Jika sudah memiliki sistem langganan dan ingin menggunakan LaterPay hanya untuk penjualan artikel tertentu, Anda dapat menerapkan kedua metode penjualan di halaman yang sama, menggunakan AMP Access dan LaterPay AMP Access bersama.
 
-Pertama-tama, pelajari dokumentasi [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access) untuk mengetahui cara mengonfigurasi AMP Access dengan paywall yang ada.
+Pertama-tama, pelajari dokumentasi [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) untuk mengetahui cara mengonfigurasi AMP Access dengan paywall yang ada.
 
-Bagian [banyak penyedia](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers) menjelaskan cara menyiapkan banyak penyedia dengan namespace.
+Bagian [banyak penyedia]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#multiple-access-providers) menjelaskan cara menyiapkan banyak penyedia dengan namespace.
 
 Saat menggunakannya dengan LaterPay dan integrasi paywall yang ada, konfigurasi yang diperlukan dapat terlihat seperti ini:
 
@@ -339,7 +339,7 @@ Anda dapat menemukan contoh yang lebih lengkap di [https://ampexample.laterpay.n
 
 ## Dokumentasi Terkait
 
-* [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)
+* [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: Cara kami menjalankan Pembayaran Mikro](https://docs.laterpay.net/how_we_do_micropayments/)
 * [Konektor LaterPay](https://connectormwi.laterpay.net/docs/index.html) - Mirip dengan AMP Access LaterPay tetapi untuk halaman non-AMP.

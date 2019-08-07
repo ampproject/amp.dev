@@ -57,7 +57,7 @@ Bu örnekte, satır içi SVG ile çizilmiş bir dairenin çevresinde duyarlı bi
 
 ## Özellikler
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) içerir.
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) içerir.
 
 ## Doğrulama
 

@@ -1288,9 +1288,9 @@ url: "example.com/subscribe"
 
 عند الحاجة إلى معلَمات إضافية، يجب استخدام كائن له أزواج المفتاح/القيمة. يجب أن يحتوي الكائن على `provider` رئيسي بقيمة (مثل `facebook`) يتوافق مع اسم الموفر. تعتمد أزواج المفتاح/القيمة التالية على موفر خدمة المشاركة.
 
-قائمة الموفرين المتاحين هي نفس القائمة للمكوِّن [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+قائمة الموفرين المتاحين هي نفس القائمة للمكوِّن [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
 
-يحتوي كل من هؤلاء الموفرين على مجموعة مختلفة من المعلَمات المتاحة ([اطّلع على `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). يأخذ كائن التهيئة هذه المعلَمات بدون البادئة `data-param-` (مثال: ستظهر `data-param-app_id` في كائن التهيئة باسم `app_id`).
+يحتوي كل من هؤلاء الموفرين على مجموعة مختلفة من المعلَمات المتاحة ([اطّلع على `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). يأخذ كائن التهيئة هذه المعلَمات بدون البادئة `data-param-` (مثال: ستظهر `data-param-app_id` في كائن التهيئة باسم `app_id`).
 
 #### التهيئة JSON
 
@@ -1335,10 +1335,10 @@ url: "example.com/subscribe"
 
 في ما يلي المكونات الأخرى التي يمكن استخدامها في سجلات AMP والتي تتطلب بعض التحذيرات الخاصة بالسجل.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-لمعرفة المزيد عن المكونات المستخدَمة عمومًا، يمكنك الاطّلاع على [قائمة العناصر الثانوية المسموح بها](https://www.ampproject.org/docs/reference/components/amp-story#children).
+لمعرفة المزيد عن المكونات المستخدَمة عمومًا، يمكنك الاطّلاع على [قائمة العناصر الثانوية المسموح بها]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
 
 ## التحقق
 

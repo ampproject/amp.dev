@@ -57,7 +57,7 @@ Contoh ini menggunakan `amp-layout` untuk membuat container responsif di sekitar
 
 ## Atribut
 
-Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/common_attributes) yang diperluas ke komponen AMP.
+Elemen ini mencakup [atribut umum]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) yang diperluas ke komponen AMP.
 
 ## Validasi
 

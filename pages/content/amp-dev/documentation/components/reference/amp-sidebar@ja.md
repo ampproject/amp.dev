@@ -281,7 +281,7 @@ $title: amp-sidebar
 
 ##### 共通の属性<a name="common"></a>
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})が含まれます。
 
 ## スタイル設定
 

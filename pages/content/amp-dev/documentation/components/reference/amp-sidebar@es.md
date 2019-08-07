@@ -282,7 +282,7 @@ Este atributo se encuentra en elementos `<nav toolbar="(media-query)" toolbar-ta
 
 ##### atributos comunes<a name="common"></a>
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que también se usan en componentes AMP.
+Este elemento incluye [atributos comunes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) que también se usan en componentes AMP.
 
 ## Estilo
 

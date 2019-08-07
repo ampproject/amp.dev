@@ -75,7 +75,7 @@ iframe を表示します。
 
 `amp-iframe` は、広告の表示を主な目的として使用**しないでください**。広告が含まれている動画を表示する目的で `amp-iframe` を使用することについては問題ありません。この AMP ポリシーを適用するには、個々の iframe をレンダリングしないようにします。
 
-広告のユースケースでは、代わりに [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad) を使用してください。
+広告のユースケースでは、代わりに [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) を使用してください。
 
 このポリシーを適用する理由を以下に示します。
 
@@ -216,7 +216,7 @@ window.addEventListener('message', function(event) {
 
 # トラッキング / アナリティクス用の iframe
 
-[`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) は幅広いアナリティクス ベンダー向けに設定可能な、堅牢性と効率性に優れた包括的なソリューションであるため、アナリティクスの目的ではこのコンポーネントを使用することを強くおすすめします。
+[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) は幅広いアナリティクス ベンダー向けに設定可能な、堅牢性と効率性に優れた包括的なソリューションであるため、アナリティクスの目的ではこのコンポーネントを使用することを強くおすすめします。
 
 AMP でアナリティクスやトラッキングの目的で使用できる iframe は、1 ページにつき 1 つだけです。リソースを節約するために、これらの iframe は、読み込まれてから 5 秒後に DOM から削除されます（5 秒あれば、必要な作業を完了できるはずです）。
 
@@ -224,7 +224,7 @@ iframe は、ユーザーの直接の目的を果たさないように思える�
 
 # ガイドライン: amp-iframe を介して既存の AMP コンポーネントを使用する
 
-必要なユーザー エクスペリエンスを AMP の他の手段では実現できない場合、つまり、ユースケースに適した既存の [AMP コンポーネント](https://www.ampproject.org/docs/reference/components)がない場合、代わりに `amp-iframe` コンポーネントを使用することを検討してください。その理由は、特定のユースケース用に調整された AMP コンポーネントを使用することには、以下のようなさまざまなメリットがあるためです。
+必要なユーザー エクスペリエンスを AMP の他の手段では実現できない場合、つまり、ユースケースに適した既存の [AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}})がない場合、代わりに `amp-iframe` コンポーネントを使用することを検討してください。その理由は、特定のユースケース用に調整された AMP コンポーネントを使用することには、以下のようなさまざまなメリットがあるためです。
 
 * リソース管理を改善し、パフォーマンスを向上させることができます。
 * 場合によっては、カスタム コンポーネントで組み込みのプレースホルダ画像を提供できます。つまり、動画の読み込みの前に適切な動画のサムネイルを取得できます。また、プレースホルダを手動で追加するためのコーディング作業を減らすことができます。

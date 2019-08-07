@@ -1281,9 +1281,9 @@ AMP 뷰어에 표시되는 문서에서 링크는 대개 `_top`을 탐색하거�
 
 추가 매개변수가 필요하면 키-값 쌍이 있는 개체를 사용해야 합니다. 개체에는 제공자의 이름에 해당하는 값(예: `facebook`)이 있는 `provider` 키가 있어야 합니다. 다음 키-값은 공유 제공자에 따라 다릅니다.
 
-사용 가능한 제공자 목록은 [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) 구성요소에 있는 목록과 같습니다.
+사용 가능한 제공자 목록은 [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) 구성요소에 있는 목록과 같습니다.
 
-이러한 제공자의 사용 가능한 매개변수 조합은 각각 다릅니다([`data-param-*` 참조](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). 구성 개체에서는 `data-param-` 접두사 없이 해당 매개변수를 사용합니다(예: `data-param-app_id`는 구성 개체에서 `app_id`로 표시됨).
+이러한 제공자의 사용 가능한 매개변수 조합은 각각 다릅니다([`data-param-*` 참조]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). 구성 개체에서는 `data-param-` 접두사 없이 해당 매개변수를 사용합니다(예: `data-param-app_id`는 구성 개체에서 `app_id`로 표시됨).
 
 #### JSON 구성
 
@@ -1331,10 +1331,10 @@ AMP 뷰어에 표시되는 문서에서 링크는 대개 `_top`을 탐색하거�
 
 다음은 스토리별 주의사항이 있는 AMP 스토리에서 사용 가능한 기타 구성요소입니다.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-더 일반적으로 사용할 수 있는 구성요소는 [허용된 하위 요소 목록](https://www.ampproject.org/docs/reference/components/amp-story#children)을 참조하세요.
+더 일반적으로 사용할 수 있는 구성요소는 [허용된 하위 요소 목록]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children)을 참조하세요.
 
 ## 유효성 검사
 

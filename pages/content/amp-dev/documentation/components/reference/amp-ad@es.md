@@ -58,7 +58,7 @@ limitations under the License.
 
 Los anuncios se cargan en los documentos AMP como cualquier otro recurso mediante un elemento personalizado especial llamado `<amp-ad>`. No se puede ejecutar JavaScript proporcionado por redes publicitarias en documentos AMP. En su lugar, el tiempo de ejecución de AMP cargará un iframe desde otro origen (a través de una zona de pruebas de iframe) como documento AMP y ejecutará el JS de la red publicitaria dentro de dicha zona de pruebas.
 
-`<amp-ad>` requiere que se definan valores de anchura y altura de acuerdo con la [regla](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) correspondiente a su tipo de diseño, así como un argumento `type` que seleccione la red publicitaria que se mostrará. Todos los atributos `data-*` de la etiqueta se transfieren automáticamente como argumentos al código que renderiza el anuncio. Los atributos `data-` que se necesitan para un determinado tipo de red varían en función de la red publicitaria, y deben consultarse en la documentación de cada una de ellas.
+`<amp-ad>` requiere que se definan valores de anchura y altura de acuerdo con la [regla]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) correspondiente a su tipo de diseño, así como un argumento `type` que seleccione la red publicitaria que se mostrará. Todos los atributos `data-*` de la etiqueta se transfieren automáticamente como argumentos al código que renderiza el anuncio. Los atributos `data-` que se necesitan para un determinado tipo de red varían en función de la red publicitaria, y deben consultarse en la documentación de cada una de ellas.
 
 #### Ejemplo: Mostrar algunos anuncios
 
@@ -165,13 +165,13 @@ Ejemplo con un respaldo:
 
 Hay 3 formas de monetizar anuncios de vídeo en AMP:
 
-1. AMP admite de forma nativa ciertos reproductores de vídeo que se pueden utilizar para monetizar anuncios, como BrightCove, DailyMotion, etc. Para obtener una lista completa, consulta los componentes [multimedia](https://www.ampproject.org/docs/reference/components#media).
+1. AMP admite de forma nativa ciertos reproductores de vídeo que se pueden utilizar para monetizar anuncios, como BrightCove, DailyMotion, etc. Para obtener una lista completa, consulta los componentes [multimedia]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media).
 
 2. Utiliza el componente [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}), que incluye un SDK de IMA y un reproductor de vídeo HTML5 integrados.
 3. Si utilizas un reproductor de vídeo que no es compatible con AMP, puedes incluirlo mediante [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 Si usas este método, ten en cuenta que:
 
-    * Debe haber una imagen de póster si cargas el reproductor en el primer viewport. [Más información](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder)
+    * Debe haber una imagen de póster si cargas el reproductor en el primer viewport. [Más información]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)
     * Tanto el vídeo como la imagen de póster se deben servir a través de HTTPS.</li>
 
 ## Publicar anuncios desde un dominio personalizado
@@ -203,7 +203,7 @@ La aplicación de los orígenes se puede llevar a cabo con el tercer argumento d
 
 Esto es completamente opcional: a veces se puede querer mejorar la solicitud de anuncio antes de enviarla al servidor de anuncios.
 
-Si tu red publicitaria admite [Fast Fetch](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation), utiliza entonces la función [Real-Time Config (RTC)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (por ejemplo, las integraciones de DoubleClick y AdSense admiten Fast Fetch y RTC).
+Si tu red publicitaria admite [Fast Fetch]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation), utiliza entonces la función [Real-Time Config (RTC)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (por ejemplo, las integraciones de DoubleClick y AdSense admiten Fast Fetch y RTC).
 
 Si tu red de anuncios utiliza Delayed Fetch, puedes transferir una retrollamada a la llamada a la función `draw3p` en el archivo [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). La retrollamada recibe la configuración entrante como primer argumento y, a continuación, recibe otra retrollamada como segundo argumento (denominada `done` en el ejemplo que aparece más abajo). Se debe ejecutar esta retrollamada con la configuración actualizada para que se lleve a cabo el renderizado de anuncios.
 

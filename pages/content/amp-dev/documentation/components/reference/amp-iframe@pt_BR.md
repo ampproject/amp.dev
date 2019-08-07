@@ -76,7 +76,7 @@ para ver mais demonstrações do `amp-iframe`, visite o site [AMP By Example](ht
 
 O `amp-iframe` **não pode** ser usado com a finalidade principal de exibir publicidade. Não há problema em usar o `amp-iframe` para exibir vídeos que contenham publicidade em parte deles. Essa política de AMP pode ser aplicada ao não renderizar os respectivos iframes.
 
-Os casos de uso de publicidade precisam usar o [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad).
+Os casos de uso de publicidade precisam usar o [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 Os motivos dessa política são os seguintes:
 
@@ -221,7 +221,7 @@ A mensagem de interseção seria enviada ao iframe pelo pai quando o iframe entr
 
 # Iframes de rastreamento/análise
 
-Recomendamos o uso do [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) para fins de análise, porque ele é significativamente mais robusto, completo e uma solução eficiente que pode ser configurada para uma ampla gama de fornecedores de análise.
+Recomendamos o uso do [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) para fins de análise, porque ele é significativamente mais robusto, completo e uma solução eficiente que pode ser configurada para uma ampla gama de fornecedores de análise.
 
 As AMP permitem apenas um iframe por página, que é usado para fins de análise e rastreamento. Para economizar recursos, esses iframes serão removidos do DOM cinco segundos depois de serem carregados, o que é tempo suficiente para concluir qualquer trabalho que precise ser feito.
 
@@ -229,7 +229,7 @@ Os iframes são identificados como de rastreamento/análise se não parecem aten
 
 # Diretriz: usar componentes AMP existentes sobre amp-iframe
 
-O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP](https://www.ampproject.org/docs/reference/components) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
+O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
 
 * Melhor gerenciamento de recursos e desempenho.
 * Componentes personalizados podem fornecer imagens de marcadores incorporadas em alguns casos. Isso significa conseguir, digamos, a miniatura de vídeo correta antes do carregamento de um vídeo, reduzindo o esforço de codificação para adicionar um marcador manualmente.

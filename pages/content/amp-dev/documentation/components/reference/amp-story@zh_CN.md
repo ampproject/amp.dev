@@ -1277,9 +1277,9 @@ bookend 由各种组件构成。这些组件可以是文章、号召性用语链
 
 当需要额外的参数时，应使用具有键值对的对象。该对象应包含一个 `provider` 键，其值（例如 `facebook`）对应于服务提供商的名称。下一个键值对将取决于分享服务提供商。
 
-可用服务提供商的列表与 [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) 组件中相同。
+可用服务提供商的列表与 [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) 组件中相同。
 
-这些服务提供商中的每一个都有一组不同的可用参数（[请参阅 `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)）。配置对象采用这些参数时不使用 `data-param-` 前缀（例如，`data-param-app_id` 在配置对象中显示为 `app_id`）。
+这些服务提供商中的每一个都有一组不同的可用参数（[请参阅 `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)）。配置对象采用这些参数时不使用 `data-param-` 前缀（例如，`data-param-app_id` 在配置对象中显示为 `app_id`）。
 
 #### JSON 配置
 
@@ -1327,10 +1327,10 @@ bookend 由各种组件构成。这些组件可以是文章、号召性用语链
 
 以下是 AMP 故事中可用的其他组件，需要满足一些仅适用于故事的要求。
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-如需了解更常用的组件，请参阅[允许使用的子级列表](https://www.ampproject.org/docs/reference/components/amp-story#children)。
+如需了解更常用的组件，请参阅[允许使用的子级列表]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children)。
 
 ## 验证
 

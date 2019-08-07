@@ -57,7 +57,7 @@ In questo esempio viene utilizzato `amp-layout` per creare un contenitore adatta
 
 ## Attributi
 
-Questo elemento include [attributi comuni](https://www.ampproject.org/docs/reference/common_attributes) estesi ai componenti AMP.
+Questo elemento include [attributi comuni]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estesi ai componenti AMP.
 
 ## Convalida
 

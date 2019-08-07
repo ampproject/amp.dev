@@ -101,8 +101,8 @@ Las funciones de imagen adicionales, como los subtítulos, se pueden implementar
 [tip type="read-on"]
 Para obtener más información sobre cómo utilizar `amp-img`, consulta estos recursos:
 
-* [Marcadores de posición y respaldos](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Incluir imágenes y vídeos](https://www.ampproject.org/docs/media/amp_replacements)
+* [Marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [Incluir imágenes y vídeos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 [/tip]
 
 # Atributos
@@ -120,7 +120,7 @@ Funciona igual que el atributo `srcset` de la etiqueta `img`. En los navegadores
 Funciona igual que el atributo `sizes` de la etiqueta `img`.
 
 [tip type="read-on"]
-Para obtener más información sobre el uso de `sizes` y `srcset`, consulta el documento sobre [imágenes adaptables con srcset, sizes y heights](https://www.ampproject.org/docs/design/responsive/art_direction).
+Para obtener más información sobre el uso de `sizes` y `srcset`, consulta el documento sobre [imágenes adaptables con srcset, sizes y heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ Tamaño de imagen explícito que utiliza el tiempo de ejecución de AMP para det
 
 **atributos comunes**
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) que se aplican a los componentes de AMP.
 
 # Estilo
 
@@ -170,7 +170,7 @@ Si quieres que la imagen siempre se muestre con un tamaño fijo:
 1. Define `width` y `height`.
 
 [tip type="read-on"]
-Obtén más información sobre los [diseños que se aplican](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) si no especificas el atributo `layout`.
+Obtén más información sobre los [diseños que se aplican]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?) si no especificas el atributo `layout`.
 [/tip]
 
 # Definir la relación de aspecto
@@ -194,13 +194,13 @@ Por ejemplo, en lugar de definir `width="900"` y `height="675"`, puedes especifi
 
 El atributo [`srcset`](#attributes) debe utilizarse para proporcionar distintas resoluciones para una misma imagen, todas con la misma relación de aspecto. El navegador elegirá automáticamente el archivo más apropiado de `srcset` en función de la resolución de la pantalla y de la anchura del dispositivo del usuario.
 
-Por otro lado, el atributo [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) muestra u oculta los componentes de AMP y debe utilizarse al crear diseños adaptables. La forma adecuada de hacer que se muestren imágenes con diferentes relaciones de aspecto es utilizar varios componentes `<amp-img>`, cada uno con un atributo `media` que coincida con la anchura de la pantalla en la que se mostrará cada instancia.
+Por otro lado, el atributo [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) muestra u oculta los componentes de AMP y debe utilizarse al crear diseños adaptables. La forma adecuada de hacer que se muestren imágenes con diferentes relaciones de aspecto es utilizar varios componentes `<amp-img>`, cada uno con un atributo `media` que coincida con la anchura de la pantalla en la que se mostrará cada instancia.
 
-Para obtener más información, consulta la guía sobre [cómo crear páginas AMP adaptables](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images).
+Para obtener más información, consulta la guía sobre [cómo crear páginas AMP adaptables]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images).
 
 # Mantener la relación de aspecto de las imágenes con dimensiones desconocidas
 
-El sistema de diseño de AMP requiere conocer la relación de aspecto de una imagen antes de poder recuperarla; sin embargo, en algunos casos puede que no conozcas las dimensiones de la imagen. Para mostrar imágenes con dimensiones desconocidas y que se mantengan las relaciones de aspecto, combina el diseño [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) de AMP con la propiedad [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) de CSS. Para obtener más información, consulta el documento sobre [cómo admitir imágenes con dimensiones desconocidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) de AMP By Example.
+El sistema de diseño de AMP requiere conocer la relación de aspecto de una imagen antes de poder recuperarla; sin embargo, en algunos casos puede que no conozcas las dimensiones de la imagen. Para mostrar imágenes con dimensiones desconocidas y que se mantengan las relaciones de aspecto, combina el diseño [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) de AMP con la propiedad [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) de CSS. Para obtener más información, consulta el documento sobre [cómo admitir imágenes con dimensiones desconocidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) de AMP By Example.
 
 # Validación
 

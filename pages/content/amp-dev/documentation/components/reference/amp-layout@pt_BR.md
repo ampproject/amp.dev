@@ -57,7 +57,7 @@ Este exemplo usa o `amp-layout` para criar um contêiner responsivo em torno de 
 
 ## Atributos
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estendidos a componentes de AMP.
 
 ## Validação
 

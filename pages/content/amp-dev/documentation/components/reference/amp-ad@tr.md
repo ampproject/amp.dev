@@ -57,7 +57,7 @@ limitations under the License.
 
 Reklamlar, AMP dokümanlarındaki diğer tüm kaynaklar gibi `<amp-ad>` adlı özel bir öğeyle yüklenir. Reklam ağları tarafından sağlanan JavaScript'in AMP dokümanı içinde çalıştırılmasına izin verilmez. Bunun yerine, AMP çalışma zamanı AMP dokümanından farklı bir kaynaktan (iframe korumalı alanı aracılığıyla) bir iframe yükler ve reklam ağının JS'sini o iframe korumalı alanı içinde yürütür.
 
-`<amp-ad>`, düzen türünün [kuralına](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) göre belirtilecek genişlik ve yükseklik değerlerinin bildirilmesini gerektirir. Hangi reklam ağının görüntüleneceğini seçen bir `type` bağımsız değişkeni gerektirir. Etiketteki tüm `data-*` özellikleri, sonunda reklamı oluşturan kodu otomatik olarak bağımsız değişken biçiminde geçirir. Belirli bir ağ türü için hangi `data-` özelliklerinin gerekli olduğu değişiklik gösterir ve reklam ağıyla belgelenmelidir.
+`<amp-ad>`, düzen türünün [kuralına]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) göre belirtilecek genişlik ve yükseklik değerlerinin bildirilmesini gerektirir. Hangi reklam ağının görüntüleneceğini seçen bir `type` bağımsız değişkeni gerektirir. Etiketteki tüm `data-*` özellikleri, sonunda reklamı oluşturan kodu otomatik olarak bağımsız değişken biçiminde geçirir. Belirli bir ağ türü için hangi `data-` özelliklerinin gerekli olduğu değişiklik gösterir ve reklam ağıyla belgelenmelidir.
 
 #### Örnek: Birkaç reklam görüntüleme
 
@@ -164,13 +164,13 @@ Yedek içeren örnek:
 
 Video reklamlarla AMP'deki videolardan para kazanmanın 3 yolu vardır:
 
-1. AMP, reklamlardan para kazanabilen BrightCove, DailyMotion gibi çeşitli video oynatıcıları destekler. Tam liste için [medya](https://www.ampproject.org/docs/reference/components#media) bileşenlerine bakın.
+1. AMP, reklamlardan para kazanabilen BrightCove, DailyMotion gibi çeşitli video oynatıcıları destekler. Tam liste için [medya]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media) bileşenlerine bakın.
 
 1. Yerleşik bir IMA SDK ve HTML5 video oynatıcısıyla gelen [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) bileşenini kullanın
 1. AMP'de desteklenmeyen bir video oynatıcı kullanıyorsanız özel oynatıcınızı, [amp-iframe](https://ampbyexample.com/components/amp-iframe/) kullanarak sunabilirsiniz.
 `amp-iframe` yaklaşımını kullanırken:
 
-    * Oynatıcıyı ilk görüntü alanına yüklüyorsanız bir poster olduğundan emin olun. [Ayrıntılar](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder).
+    * Oynatıcıyı ilk görüntü alanına yüklüyorsanız bir poster olduğundan emin olun. [Ayrıntılar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
     * Video ve poster, HTTPS üzerinden sunulmalıdır.</li>
 
 ## Reklamları bir özel alandan yayınlama
@@ -202,7 +202,7 @@ Kaynakların uygulanması `draw3p` için 3. bağımsız değişkenle yapılabili
 
 Bu tamamen isteğe bağlıdır: Bazen reklam isteğini reklam sunucusuna göndermeden önce reklam isteğinin geliştirilmesi istenir.
 
-Reklam ağınız [hızlı getirmeyi](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation) destekliyorsa lütfen [Gerçek Zamanlı Yapılandırmayı](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC) kullanın. (ör. DoubleClick ve AdSense entegrasyonları, hızlı getirme ve RTC'yi destekler)
+Reklam ağınız [hızlı getirmeyi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation) destekliyorsa lütfen [Gerçek Zamanlı Yapılandırmayı](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC) kullanın. (ör. DoubleClick ve AdSense entegrasyonları, hızlı getirme ve RTC'yi destekler)
 
 Reklam ağınızda gecikmeli getirme kullanılıyorsa [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) dosyasındaki `draw3p` işlev çağrısına bir geri çağırma geçirebilirsiniz. Geri çağırma, gelen yapılandırmayı ilk bağımsız değişken ve daha sonra, bir başka geri çağırmayı ikinci bağımsız değişken olarak alır (aşağıdaki örnekte `done` olarak gösterilmiştir). Reklam oluşturmanın devam etmesi için bu geri çağırma, güncellenmiş yapılandırma ile yapılmalıdır.
 

@@ -1272,9 +1272,9 @@ Esse campo precisa conter uma string que represente o nome de um provedor de com
 
 Quando parâmetros extras forem necessários, um objeto com pares de chave-valor precisará ser usado. O objeto precisa conter uma chave `provider` com um valor (por exemplo, `facebook`) correspondente ao nome do provedor. As próximas chave-valor dependerão do provedor de compartilhamento.
 
-A lista de provedores disponíveis é a mesma do componente [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+A lista de provedores disponíveis é a mesma do componente [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
 
-Cada um desses provedores tem um conjunto diferente de parâmetros disponíveis ([consulte `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). O objeto de configuração usa esses parâmetros sem o prefixo `data-param-` (por exemplo, o `data-param-app_id` apareceria no objeto de configuração como `app_id`).
+Cada um desses provedores tem um conjunto diferente de parâmetros disponíveis ([consulte `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). O objeto de configuração usa esses parâmetros sem o prefixo `data-param-` (por exemplo, o `data-param-app_id` apareceria no objeto de configuração como `app_id`).
 
 #### Configuração JSON
 
@@ -1322,10 +1322,10 @@ O `<amp-story-bookend>` precisa ter um atributo `src` que aponte para a configur
 
 Veja abaixo outros componentes que podem ser usados em histórias em AMP que exigem algumas ressalvas específicas para a história.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-Para ver os componentes gerais mais utilizáveis, consulte a [lista de filhos permitidos](https://www.ampproject.org/docs/reference/components/amp-story#children).
+Para ver os componentes gerais mais utilizáveis, consulte a [lista de filhos permitidos]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
 
 ## Validação
 

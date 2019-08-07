@@ -56,7 +56,7 @@ limitations under the License.
 
 يتم تحميل الإعلانات مثل جميع الموارد الأخرى في مستندات AMP، مع عنصر مخصص خاص يُسمى `<amp-ad>`. لا يُسمح بتشغيل جافا سكريبت مقدم من شبكة إعلانات في مستند AMP. وبدلاً من ذلك، يحمّل وقت تشغيل AMP إطار iframe من أصل مختلف (من خلال وضع حماية إطارات iframe) مثل مستند AMP، ويعمل على تنفيذ جافا سكريبت المقدمة من شبكة الإعلانات داخل وضع حماية إطارات iframe هذا.
 
-يتطلب العنصر `<amp-ad>` تحديد قيم العرض والارتفاع وفق [قاعدة](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) نوع التنسيق التابع له. ويتطلب أيضًا الوسيطة `type` التي تحدد شبكة الإعلانات التي يتم عرضها. يتم تلقائيًا تمرير جميع سمات `data-*` الموجودة على العلامة كوسيطات إلى الترميز الذي يعرض الإعلان في النهاية. وتختلف سمات `data-` المطلوبة حسب نوع الشبكة المعين كما يجب توثيقها باستخدام الشبكة.
+يتطلب العنصر `<amp-ad>` تحديد قيم العرض والارتفاع وفق [قاعدة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) نوع التنسيق التابع له. ويتطلب أيضًا الوسيطة `type` التي تحدد شبكة الإعلانات التي يتم عرضها. يتم تلقائيًا تمرير جميع سمات `data-*` الموجودة على العلامة كوسيطات إلى الترميز الذي يعرض الإعلان في النهاية. وتختلف سمات `data-` المطلوبة حسب نوع الشبكة المعين كما يجب توثيقها باستخدام الشبكة.
 
 #### مثال: عرض بعض الإعلانات
 
@@ -163,13 +163,13 @@ limitations under the License.
 
 هناك 3 طرق لتحقيق الربح من الفيديوهات في AMP من خلال إعلانات الفيديو:
 
-1. تتيح AMP أصلاً عمل عدد من مشغلات الفيديو، مثل BrightCove وDailyMotion وغيرهما والتي يمكنها تحقيق الربح من الإعلانات. للحصول على القائمة الكاملة، راجع مكونات [الوسائط](https://www.ampproject.org/docs/reference/components#media).
+1. تتيح AMP أصلاً عمل عدد من مشغلات الفيديو، مثل BrightCove وDailyMotion وغيرهما والتي يمكنها تحقيق الربح من الإعلانات. للحصول على القائمة الكاملة، راجع مكونات [الوسائط]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media).
 
 2. استخدِم المكوِّن [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) الذي يأتي مع أداة تطوير البرامج لإعلانات الوسائط التفاعلية المضمّنة ومشغل فيديو HTML5.
 3. إذا كنت تستخدم مشغل فيديو غير متوافق في AMP، يمكنك عرض مشغلك المخصص باستخدام [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 عند استخدام الأسلوب `amp-iframe`:
 
-    * تأكد من وجود ملصق إذا تم تحميل المشغل في إطار العرض الأول. [يمكنك معرفة التفاصيل](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder).
+    * تأكد من وجود ملصق إذا تم تحميل المشغل في إطار العرض الأول. [يمكنك معرفة التفاصيل]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
     * يجب عرض الفيديو والملصق عبر HTTPS.</li>
 
 ## تشغيل الإعلانات من نطاق خاص
@@ -201,7 +201,7 @@ limitations under the License.
 
 هذا العمل اختياري تمامًا: نسعى أحيانًا إلى تحسين طلب الإعلان قبل إرساله إلى خادم الإعلانات.
 
-إذا كانت شبكة الإعلانات تتيح [الجلب السريع](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation)، يُرجى استخدام [تهيئة الوقت الفعلي](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC). (تتيح عمليات تكامل DoubleClick وAdSense الجلب السريع وتهيئة الوقت الفعلي).
+إذا كانت شبكة الإعلانات تتيح [الجلب السريع]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation)، يُرجى استخدام [تهيئة الوقت الفعلي](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC). (تتيح عمليات تكامل DoubleClick وAdSense الجلب السريع وتهيئة الوقت الفعلي).
 
 إذا كانت شبكة إعلاناتك تستخدم الجلب المؤجل، يمكنك إرسال رد اتصال على اتصال الوظيفة `draw3p` في الملف [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). يتلقى رد الاتصال التهيئة الواردة كوسيطة أولى ثم يتلقى رد اتصال آخر كوسيطة ثانية (تحمل اسم `done` في المثال أدناه). يجب إجراء رد الاتصال هذا بالتهيئة المحدّثة حتى يتسنى استكمال عرض الإعلانات.
 

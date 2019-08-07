@@ -65,7 +65,7 @@ teaser:
 ```
 
 [tip type="read-on"]
-يوجد أيضًا المكوِّن [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) لعرض الصور في العرض المبسط.
+يوجد أيضًا المكوِّن [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) لعرض الصور في العرض المبسط.
 [/tip]
 
 ## السمات
@@ -130,7 +130,7 @@ teaser:
 
 [tip type="note"]
 
-إن استخدام المكوِّن `amp-lightbox` في إعلانات AMPHTML [تجريبي](https://www.ampproject.org/docs/reference/experimental) وخاضع للتطوير المستمر. لاستخدام `amp-lightbox` في إعلانات AMPHTML، [فعِّل التجربة `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+إن استخدام المكوِّن `amp-lightbox` في إعلانات AMPHTML [تجريبي]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) وخاضع للتطوير المستمر. لاستخدام `amp-lightbox` في إعلانات AMPHTML، [فعِّل التجربة `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 
 [/tip]
 

@@ -80,7 +80,7 @@ AMP4ADS 广告素材中使用的此属性表示：作为验证后转换的一部
 
 ##### 常见属性
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})。
 
 ## 替换
 

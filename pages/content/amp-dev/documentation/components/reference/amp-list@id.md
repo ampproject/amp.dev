@@ -50,7 +50,7 @@ Mengambil konten secara dinamis dari endpoint CORS JSON dan merendernya mengguna
 Komponen `<amp-list>` mengambil konten dinamis dari endpoint CORS JSON. Respons dari endpoint berisi data, yang dirender dalam template yang ditentukan.
 
 [tip type="important"]
-Endpoint Anda harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi [Permintaan CORS di AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+Endpoint Anda harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi [Permintaan CORS di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Anda dapat menentukan template melalui salah satu dari dua cara berikut:
@@ -62,7 +62,7 @@ Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https:
 
 *Contoh: Menampilkan daftar dinamis*
 
-Pada contoh berikut, kami mengambil data JSON yang berisi URL dan judul, dan merender konten dalam [template amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) bersarang.
+Pada contoh berikut, kami mengambil data JSON yang berisi URL dan judul, dan merender konten dalam [template amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) bersarang.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -224,10 +224,10 @@ Tindakan ini tersedia secara eksperimental dalam `amp-list-resizable-children`.
 URL endpoint jarak jauh yang menampilkan JSON yang akan dirender dalam `<amp-list>` ini. Harus berupa layanan HTTP CORS. Protokol URL harus berupa HTTPS.
 
 [tip type="important"]
-Endpoint Anda harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi [Permintaan CORS di AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+Endpoint Anda harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi [Permintaan CORS di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 [/tip]
 
-Atribut `src` dapat dihilangkan jika atribut `[src]` ada. Hal ini berguna saat merender konten sebagai akibat dari gestur pengguna, bukan saat memuat halaman ketika bekerja dengan [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind).
+Atribut `src` dapat dihilangkan jika atribut `[src]` ada. Hal ini berguna saat merender konten sebagai akibat dari gestur pengguna, bukan saat memuat halaman ketika bekerja dengan [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 ##### credentials (opsional)
 
@@ -236,7 +236,7 @@ Menentukan opsi `credentials` seperti yang ditentukan oleh [Fetch API](https://f
 * Nilai yang didukung: `omit`, `include`
 * Default: `omit`
 
-Untuk mengirim kredensial, teruskan nilai `include`. Jika nilai ini ditetapkan, respons harus mengikuti [panduan keamanan CORS AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Untuk mengirim kredensial, teruskan nilai `include`. Jika nilai ini ditetapkan, respons harus mengikuti [panduan keamanan CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 Berikut ini contoh yang menentukan kredensial include untuk menampilkan konten yang dipersonalisasi dalam daftar:
 
@@ -418,7 +418,7 @@ Elemen ini tidak disediakan secara default, tetapi jika elemen `<amp-list-load-m
 
 ##### atribut umum
 
-Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/common_attributes) yang diperluas ke komponen AMP.
+Elemen ini mencakup [atribut umum]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) yang diperluas ke komponen AMP.
 
 ## Substitusi
 

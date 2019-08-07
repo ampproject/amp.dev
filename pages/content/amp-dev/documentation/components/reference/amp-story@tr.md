@@ -1277,9 +1277,9 @@ Bu alan, bir dize içermelidir. Her bir dize bir paylaşım sağlayıcısının 
 
 Fazladan parametreler gerekli olduğunda, anahtar/değer çiftlerine sahip bir nesne kullanılmalıdır. Nesne, sağlayıcının adına karşılık gelen bir değere (ör. `facebook`) sahip bir anahtar `provider` öğesi içermelidir. Sonraki anahtar/değer çiftleri, paylaşım sağlayıcıya bağlıdır.
 
-Kullanılabilir sağlayıcıların listesi, [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) bileşenindekilerle aynıdır.
+Kullanılabilir sağlayıcıların listesi, [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) bileşenindekilerle aynıdır.
 
-Bu sağlayıcıların her biri, farklı kullanılabilir parametre gruplarına sahiptir ([`data-param-*` bölümüne bakın](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). Yapılandırma nesnesi, bu parametreleri `data-param-` öneki olmadan alır (örneğin, `data-param-app_id` parametresi, yapılandırma nesnesinde `app_id` olarak görünür).
+Bu sağlayıcıların her biri, farklı kullanılabilir parametre gruplarına sahiptir ([`data-param-*` bölümüne bakın]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). Yapılandırma nesnesi, bu parametreleri `data-param-` öneki olmadan alır (örneğin, `data-param-app_id` parametresi, yapılandırma nesnesinde `app_id` olarak görünür).
 
 #### JSON yapılandırması
 
@@ -1327,10 +1327,10 @@ Bu sağlayıcıların her biri, farklı kullanılabilir parametre gruplarına sa
 
 Aşağıda, AMP hikayelerinde kullanılabilecek ve hikayeye özel bazı uyarıların yapılmasını gerektiren diğer bileşenler bulunmaktadır.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-Genel olarak kullanılabilir daha fazla bileşen için [izin verilen alt öğeler listesine](https://www.ampproject.org/docs/reference/components/amp-story#children) bakın.
+Genel olarak kullanılabilir daha fazla bileşen için [izin verilen alt öğeler listesine]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children) bakın.
 
 ## Doğrulama
 

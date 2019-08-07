@@ -100,8 +100,8 @@ limitations under the License.
 [tip type="read-on"]
 Ознакомьтесь со статьями об использовании `amp-img`:
 
-* [Заполнители и резервные изображения](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Добавление изображений и видео](https://www.ampproject.org/docs/media/amp_replacements)
+* [Заполнители и резервные изображения]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [Добавление изображений и видео]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 [/tip]
 
 # Атрибуты
@@ -119,7 +119,7 @@ limitations under the License.
 Аналог атрибута `sizes` в теге `img`.
 
 [tip type="read-on"]
-Подробные сведения об использовании `sizes` и `srcset` можно найти в [этой статье](https://www.ampproject.org/docs/design/responsive/art_direction).
+Подробные сведения об использовании `sizes` и `srcset` можно найти в [этой статье]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
 [/tip]
 
 **alt**
@@ -136,7 +136,7 @@ limitations under the License.
 
 **common attributes**
 
-Этот элемент содержит [распространенные атрибуты](https://www.ampproject.org/docs/reference/common_attributes), расширенные до компонентов AMP.
+Этот элемент содержит [распространенные атрибуты]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}), расширенные до компонентов AMP.
 
 # Поддержка стилей
 
@@ -169,7 +169,7 @@ amp-img {
 1. Укажите значения для `width` и `height`.
 
 [tip type="read-on"]
-Узнайте, [какие шаблоны выводятся](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?), если атрибут `layout` не задан.
+Узнайте, [какие шаблоны выводятся]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?), если атрибут `layout` не задан.
 [/tip]
 
 # Установка соотношения сторон
@@ -193,13 +193,13 @@ amp-img {
 
 Чтобы добавить варианты изображения с разным разрешением но одним и тем же соотношением сторон, используйте атрибут [`srcset`](#attributes). Браузер будет автоматически выбирать наиболее подходящий файл из списка `srcset`, учитывая разрешение и размер пользовательского экрана.
 
-Атрибут [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) наоборот показывает или скрывает компоненты AMP. Его следует применять при создании адаптивных макетов. Чтобы добавить изображения с разным соотношением сторон, используйте несколько компонентов `<amp-img>`. В каждый из них необходимо добавить атрибут `media`, соответствующий ширине экрана для показа экземпляра.
+Атрибут [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) наоборот показывает или скрывает компоненты AMP. Его следует применять при создании адаптивных макетов. Чтобы добавить изображения с разным соотношением сторон, используйте несколько компонентов `<amp-img>`. В каждый из них необходимо добавить атрибут `media`, соответствующий ширине экрана для показа экземпляра.
 
-Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images).
+Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images).
 
 # Сохранение соотношения сторон для изображений с неизвестными размерами
 
-Системе макетов AMP необходимо знать соотношение сторон изображения до его извлечения. Однако в некоторых случаях размеры недоступны. Чтобы показать такие изображения и сохранить соотношение сторон, используйте AMP-шаблон [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) вместе со свойством CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/)/ Ознакомьтесь со статьей о том, [как обеспечить поддержку изображений с неизвестными размерами](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) на сайте AMP By Example.
+Системе макетов AMP необходимо знать соотношение сторон изображения до его извлечения. Однако в некоторых случаях размеры недоступны. Чтобы показать такие изображения и сохранить соотношение сторон, используйте AMP-шаблон [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) вместе со свойством CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/)/ Ознакомьтесь со статьей о том, [как обеспечить поддержку изображений с неизвестными размерами](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) на сайте AMP By Example.
 
 # Валидация
 

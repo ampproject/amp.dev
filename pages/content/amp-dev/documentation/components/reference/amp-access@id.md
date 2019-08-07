@@ -501,7 +501,7 @@ Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md
 
 ## Keamanan Asal CORS
 
-Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 ## Pengukuran
 

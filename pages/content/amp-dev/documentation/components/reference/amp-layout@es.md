@@ -57,7 +57,7 @@ En este ejemplo se utiliza `amp-layout` para crear un contenedor adaptable alred
 
 ## Atributos
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) que se aplican a los componentes de AMP.
 
 ## Validación
 

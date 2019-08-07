@@ -82,7 +82,7 @@ Isso significa que as macros no URL NÃO serão expandidas, então use-as soment
 
 ##### common attributes
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estendidos a componentes de AMP.
 
 ## Substituições
 

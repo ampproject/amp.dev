@@ -62,7 +62,7 @@ Premendo il tasto Esc sulla tastiera si chiude la lightbox. In alternativa, se i
 ```
 
 [tip type="read"]
-per mostrare immagini in una lightbox, puoi usare anche il componente [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox).
+per mostrare immagini in una lightbox, puoi usare anche il componente [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Attributi
@@ -129,7 +129,7 @@ Puoi modificare lo stile ad `amp-lightbox` con CSS standard.
 ## <a id="a4a"></a> Utilizzare `amp-lightbox` in annunci HTML AMP
 
 [tip type="note"]
-il componente `amp-lightbox` da utilizzare negli annunci HTML AMP è [sperimentale](https://www.ampproject.org/docs/reference/experimental) e attualmente in fase di sviluppo. Per utilizzare `amp-lightbox` in annunci HTML AMP, [attiva l'esperimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+il componente `amp-lightbox` da utilizzare negli annunci HTML AMP è [sperimentale]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) e attualmente in fase di sviluppo. Per utilizzare `amp-lightbox` in annunci HTML AMP, [attiva l'esperimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
 Vi sono alcune differenze tra l'uso di `amp-lightbox` in normali documenti AMP e in [annunci scritti in HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}):

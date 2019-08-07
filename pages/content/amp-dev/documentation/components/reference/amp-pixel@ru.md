@@ -82,7 +82,7 @@ teaser:
 
 ##### common attributes
 
-Этот элемент содержит [распространенные атрибуты](https://www.ampproject.org/docs/reference/common_attributes), которые поддерживаются компонентами AMP.
+Этот элемент содержит [распространенные атрибуты]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}), которые поддерживаются компонентами AMP.
 
 ## Замены
 

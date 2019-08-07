@@ -82,7 +82,7 @@ Bunun, URL içindeki makroların GENİŞLETİLMEYECEĞİ anlamına gelir. Bu ned
 
 ##### common attributes
 
-Bu öğe, genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) AMP bileşenlerine ekler.
+Bu öğe, genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) AMP bileşenlerine ekler.
 
 ## Değişiklikler
 

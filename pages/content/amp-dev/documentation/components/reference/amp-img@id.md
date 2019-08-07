@@ -101,8 +101,8 @@ Fitur gambar tambahan seperti teks dapat diimplementasikan dengan HTML standar (
 [tip type="read-on"]
 Pelajari lebih lanjut penggunaan `amp-img` dari resource berikut:
 
-* [Placeholder & fallback](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Menyertakan Gambar & Video](https://www.ampproject.org/docs/media/amp_replacements)
+* [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [Menyertakan Gambar & Video]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 [/tip]
 
 # Atribut
@@ -120,7 +120,7 @@ Sama seperti atribut `srcset` pada tag `img`. Untuk browser yang tidak mendukung
 Sama seperti atribut `sizes` pada tag `img`.
 
 [tip type="read-on"]
-Lihat [Gambar responsif dengan srcset, size & height](https://www.ampproject.org/docs/design/responsive/art_direction) untuk penggunaan `sizes` dan `srcset`.
+Lihat [Gambar responsif dengan srcset, size & height]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) untuk penggunaan `sizes` dan `srcset`.
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ Ukuran eksplisit gambar, yang digunakan oleh AMP runtime untuk menentukan rasio 
 
 **atribut umum**
 
-Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/common_attributes) yang diperluas ke komponen AMP.
+Elemen ini mencakup [atribut umum]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) yang diperluas ke komponen AMP.
 
 # Penataan gaya
 
@@ -170,7 +170,7 @@ Jika Anda ingin gambar ditampilkan dalam ukuran tetap:
 1. Tentukan `width` dan `height`.
 
 [tip type="read-on"]
-Pelajari tentang [inferred layout](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) jika Anda tidak menentukan atribut `layout`.
+Pelajari tentang [inferred layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?) jika Anda tidak menentukan atribut `layout`.
 [/tip]
 
 # Menetapkan rasio tinggi lebar
@@ -194,13 +194,13 @@ Misalnya, bukannya menetapkan `width="900"` dan `height="675"`, Anda cukup menet
 
 Atribut [`srcset`](#attributes) digunakan untuk memberikan resolusi berbeda dari gambar yang sama, yang semuanya memiliki rasio tinggi lebar yang sama. Browser akan otomatis memilih file yang paling sesuai dari `srcset` berdasarkan resolusi layar dan lebar perangkat pengguna.
 
-Sebaliknya, atribut [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) menampilkan atau menyembunyikan komponen AMP, dan digunakan saat mendesain tata letak responsif. Cara yang tepat untuk menampilkan gambar dengan rasio tinggi lebar yang berbeda-beda adalah dengan menggunakan beberapa komponen `<amp-img>`, yang masing-masing memiliki atribut `media` yang cocok dengan lebar layar tempat setiap instance akan ditampilkan.
+Sebaliknya, atribut [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) menampilkan atau menyembunyikan komponen AMP, dan digunakan saat mendesain tata letak responsif. Cara yang tepat untuk menampilkan gambar dengan rasio tinggi lebar yang berbeda-beda adalah dengan menggunakan beberapa komponen `<amp-img>`, yang masing-masing memiliki atribut `media` yang cocok dengan lebar layar tempat setiap instance akan ditampilkan.
 
-Lihat panduan cara [membuat halaman AMP yang responsif](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images) untuk penjelasan selengkapnya.
+Lihat panduan cara [membuat halaman AMP yang responsif]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images) untuk penjelasan selengkapnya.
 
 # Mempertahankan rasio tinggi lebar untuk gambar dengan dimensi yang tidak diketahui
 
-Sistem tata letak AMP memerlukan rasio tinggi lebar gambar sebelum mengambil gambar; namun, dalam beberapa kasus, dimensi gambar mungkin tidak diketahui. Untuk menampilkan gambar dengan dimensi yang tidak diketahui dan mempertahankan rasio tinggi lebar, kombinasikan tata letak [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) AMP dengan properti CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Untuk informasi selengkapnya, lihat [Cara mendukung gambar dengan dimensi yang tidak diketahui](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) di AMP By Example.
+Sistem tata letak AMP memerlukan rasio tinggi lebar gambar sebelum mengambil gambar; namun, dalam beberapa kasus, dimensi gambar mungkin tidak diketahui. Untuk menampilkan gambar dengan dimensi yang tidak diketahui dan mempertahankan rasio tinggi lebar, kombinasikan tata letak [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) AMP dengan properti CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Untuk informasi selengkapnya, lihat [Cara mendukung gambar dengan dimensi yang tidak diketahui](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) di AMP By Example.
 
 # Validasi
 

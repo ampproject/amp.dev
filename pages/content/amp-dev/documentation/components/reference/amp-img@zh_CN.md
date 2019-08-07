@@ -101,8 +101,8 @@ limitations under the License.
 [tip type="read-on"]
 如需详细了解如何使用 `amp-img`，请参阅以下资源：
 
-* [占位符和后备元素](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [添加图片和视频](https://www.ampproject.org/docs/media/amp_replacements)
+* [占位符和后备元素]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [添加图片和视频]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 [/tip]
 
 # 属性
@@ -120,7 +120,7 @@ limitations under the License.
 与 `img` 标记中的 `sizes` 属性相同。
 
 [tip type="read-on"]
-如需了解 `sizes` 和 `srcset` 的用法，请参阅[通过 srcset、sizes 和 heights 设置自适应图片](https://www.ampproject.org/docs/design/responsive/art_direction)。
+如需了解 `sizes` 和 `srcset` 的用法，请参阅[通过 srcset、sizes 和 heights 设置自适应图片]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})。
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ limitations under the License.
 
 **常见属性**
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})。
 
 # 样式设置
 
@@ -170,7 +170,7 @@ amp-img {
 1. 指定 `width` 和 `height`。
 
 [tip type="read-on"]
-如果您没有指定 `layout` 属性，可了解一下[推断布局](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?)。
+如果您没有指定 `layout` 属性，可了解一下[推断布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?)。
 [/tip]
 
 # 设置宽高比
@@ -194,13 +194,13 @@ amp-img {
 
 要提供同一张图片的不同分辨率，应使用 [`srcset`](#attributes) 属性，这些分辨率的宽高比要全部相同。浏览器将根据用户设备的屏幕分辨率和宽度，通过 `srcset` 自动选择最适合的文件。
 
-相比之下，[`media`](https://www.ampproject.org/docs/reference/common_attributes#media) 属性用于显示或隐藏 AMP 组件，并且应在设计自适应布局时使用。要显示宽高比不同的图片，适当的方法是使用多个 `<amp-img>` 组件，每个组件的 `media` 属性都与显示每个实例的屏幕宽度一致。
+相比之下，[`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) 属性用于显示或隐藏 AMP 组件，并且应在设计自适应布局时使用。要显示宽高比不同的图片，适当的方法是使用多个 `<amp-img>` 组件，每个组件的 `media` 属性都与显示每个实例的屏幕宽度一致。
 
-如需了解详情，请参阅[制作自适应 AMP 网页](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images)指南。
+如需了解详情，请参阅[制作自适应 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images)指南。
 
 # 使尺寸未知的图片的宽高比保持不变
 
-AMP 布局系统需要提前知道图片的宽高比，然后才能抓取图片；但在某些情况下，您可能不知道图片的尺寸。要显示尺寸未知的图片并使其宽高比保持不变，请将 AMP 的 [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) 布局与 [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS 属性结合使用。如需了解详情，请参阅 AMP By Example 的[如何支持尺寸未知的图片](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions)。
+AMP 布局系统需要提前知道图片的宽高比，然后才能抓取图片；但在某些情况下，您可能不知道图片的尺寸。要显示尺寸未知的图片并使其宽高比保持不变，请将 AMP 的 [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) 布局与 [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS 属性结合使用。如需了解详情，请参阅 AMP By Example 的[如何支持尺寸未知的图片](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions)。
 
 # 验证
 

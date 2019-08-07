@@ -56,7 +56,7 @@ limitations under the License.
 
 Iklan dimuat seperti semua resource lainnya dalam dokumen AMP, dengan elemen kustom khusus yang disebut `<amp-ad>`. Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk dijalankan di dalam dokumen AMP. Sebagai gantinya, AMP runtime memuat iframe dari asal yang berbeda (melalui sandbox iframe) sebagai dokumen AMP dan menjalankan JavaScript jaringan iklan di dalam sandbox iframe tersebut.
 
-`<amp-ad>` membutuhkan nilai lebar dan tinggi yang akan ditentukan sesuai [aturan](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) jenis tata letaknya. Argumen `type` diperlukan untuk memilih jenis jaringan iklan yang akan ditampilkan. Semua atribut `data-*` pada tag ini otomatis diteruskan sebagai argumen ke kode yang nantinya merender iklan. Atribut `data-` apa saja yang diperlukan untuk jenis jaringan tertentu bergantung pada, dan harus didokumentasikan bersama, jaringan iklannya.
+`<amp-ad>` membutuhkan nilai lebar dan tinggi yang akan ditentukan sesuai [aturan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) jenis tata letaknya. Argumen `type` diperlukan untuk memilih jenis jaringan iklan yang akan ditampilkan. Semua atribut `data-*` pada tag ini otomatis diteruskan sebagai argumen ke kode yang nantinya merender iklan. Atribut `data-` apa saja yang diperlukan untuk jenis jaringan tertentu bergantung pada, dan harus didokumentasikan bersama, jaringan iklannya.
 
 #### Contoh: Menampilkan beberapa iklan
 
@@ -163,13 +163,13 @@ Contoh dengan fallback:
 
 Ada 3 cara untuk memonetisasi video di AMP dengan iklan video:
 
-1. AMP secara native mendukung sejumlah pemutar video seperti BrightCove, DailyMotion, dll. yang dapat memonetisasi iklan. Untuk daftar lengkapnya, lihat komponen [media](https://www.ampproject.org/docs/reference/components#media).
+1. AMP secara native mendukung sejumlah pemutar video seperti BrightCove, DailyMotion, dll. yang dapat memonetisasi iklan. Untuk daftar lengkapnya, lihat komponen [media]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media).
 
 2. Gunakan komponen [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) yang dilengkapi dengan IMA SDK dan pemutar video HTML5 built-in
 3. Jika Anda menggunakan pemutar video yang tidak didukung di AMP, Anda dapat menayangkan pemutar kustom menggunakan [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 Saat menggunakan pendekatan `amp-iframe`:
 
-    * Pastikan ada poster jika memuat pemutar di viewport pertama. [Detail](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder).
+    * Pastikan ada poster jika memuat pemutar di viewport pertama. [Detail]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
     * Video dan poster harus ditayangkan melalui HTTPS.</li>
 
 ## Menjalankan iklan dari domain kustom
@@ -201,7 +201,7 @@ Penerapan asal dapat dilakukan dengan argumen ke-3 pada `draw3p` dan harus dilak
 
 Konfigurasi ini sepenuhnya opsional: Terkadang, permintaan iklan perlu diperkaya sebelum permintaan iklan dibuat ke server iklan.
 
-Jika jaringan iklan Anda mendukung [fast fetch](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation), gunakan [Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC). (Sebagai contoh, integrasi DoubleClick dan AdSense keduanya mendukung fast fetch dan RTC)
+Jika jaringan iklan Anda mendukung [fast fetch]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation), gunakan [Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC). (Sebagai contoh, integrasi DoubleClick dan AdSense keduanya mendukung fast fetch dan RTC)
 
 Jika jaringan iklan Anda menggunakan delayed fetch, Anda dapat meneruskan callback ke panggilan fungsi `draw3p` dalam file [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). Callback ini akan menerima konfigurasi yang masuk sebagai argumen pertama, kemudian menerima callback lain sebagai argumen kedua (Disebut `done` pada contoh di bawah). Callback ini harus dipanggil dengan konfigurasi yang telah diperbarui agar rendering iklan dapat dilanjutkan.
 

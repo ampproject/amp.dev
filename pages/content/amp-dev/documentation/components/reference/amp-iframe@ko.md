@@ -75,7 +75,7 @@ iframe을 표시합니다.
 
 `amp-iframe`을 광고 표시의 주용도로 사용해서는 **안 됩니다**. 일부가 광고인 동영상을 표시하는 용도로 `amp-iframe`을 사용하는 것은 괜찮습니다. 이 AMP 정책은 각 iframe을 렌더링하지 않아도 적용될 수 있습니다.
 
-광고 사용 사례에서는 대신 [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad)를 사용해야 합니다.
+광고 사용 사례에서는 대신 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})를 사용해야 합니다.
 
 이 정책의 이유는 다음과 같습니다.
 
@@ -222,7 +222,7 @@ window.addEventListener('message', function(event) {
 
 # 추적/분석 iframe
 
-분석 용도로는 [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics)를 사용하는 것이 가장 좋습니다. 다양한 분석 공급업체에 맞게 구성할 수 있는 훨씬 더 강력하고 완전하며 효율적인 솔루션이기 때문입니다.
+분석 용도로는 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})를 사용하는 것이 가장 좋습니다. 다양한 분석 공급업체에 맞게 구성할 수 있는 훨씬 더 강력하고 완전하며 효율적인 솔루션이기 때문입니다.
 
 AMP에서는 페이지당 분석 및 추적 용도로 사용하는 단일 iframe만 허용합니다. 리소스를 절약하기 위해 iframe은 로드한 후 5초 후에 DOM에서 삭제되며, 이 시간은 필요한 모든 작업을 완료하는 데 충분해야 합니다.
 
@@ -230,7 +230,7 @@ iframe이 사용자 숨기기 또는 작게 표시와 같이 직접적으로 사
 
 # 지침: amp-iframe을 통해 기존 AMP 구성요소 사용
 
-AMP의 다른 방법으로 필수 사용자 환경을 사용할 수 없는 경우, 즉 사용 사례에 맞는 기존 [AMP 구성요소](https://www.ampproject.org/docs/reference/components)가 아직 없다면 `amp-iframe` 구성요소를 대체로 고려해야 합니다. 다음과 같이 특정 사용 사례에 맞게 조정된 AMP 구성요소를 사용하면 많은 이점이기 때문입니다.
+AMP의 다른 방법으로 필수 사용자 환경을 사용할 수 없는 경우, 즉 사용 사례에 맞는 기존 [AMP 구성요소]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}})가 아직 없다면 `amp-iframe` 구성요소를 대체로 고려해야 합니다. 다음과 같이 특정 사용 사례에 맞게 조정된 AMP 구성요소를 사용하면 많은 이점이기 때문입니다.
 
 * 리소스 관리 및 성능 향상
 * 경우에 따라 맞춤 구성요소에서 기본 제공 자리표시자 이미지를 제공할 수 있습니다. 즉, 동영상을 로드하기 전에 올바른 동영상 미리보기 이미지를 가져오고 수동으로 자리표시자를 추가하는 코딩 작업을 줄여줍니다.

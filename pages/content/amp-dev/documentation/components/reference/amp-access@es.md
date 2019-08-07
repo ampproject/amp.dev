@@ -503,7 +503,7 @@ La integración con *amp-analytics* está explicada en [amp-access-analytics.md]
 
 ## Seguridad de origen de CORS
 
-Los puntos de conexión de autorización y de pingback son de tipo CORS y deben implementar el protocolo de seguridad descrito en la [especificación de seguridad de AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Los puntos de conexión de autorización y de pingback son de tipo CORS y deben implementar el protocolo de seguridad descrito en la [especificación de seguridad de AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 ## Cupo por usuario
 

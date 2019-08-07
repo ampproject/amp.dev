@@ -285,7 +285,7 @@ Cet attribut est présent sur l'élément `<nav toolbar="(media-query)" toolbar-
 
 ##### common attributes<a name="common"></a>
 
-Cet élément inclut des [attributs communs](https://www.ampproject.org/docs/reference/common_attributes) étendus aux composants AMP.
+Cet élément inclut des [attributs communs]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) étendus aux composants AMP.
 
 ## Application d'un style
 

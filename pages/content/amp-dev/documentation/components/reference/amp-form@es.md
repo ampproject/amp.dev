@@ -53,7 +53,7 @@ limitations under the License.
 La extensión `amp-form` permite crear formularios (`<form>`) para añadir campos de entrada a un documento AMP. ``Además, proporciona [polyfills](#polyfills) para algunos comportamientos que no están incluidos en los navegadores.
 
 [tip type="important"]
-Si envías datos en un formulario, el punto de conexión del servidor debe implementar los [requisitos de seguridad de CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Si envías datos en un formulario, el punto de conexión del servidor debe implementar los [requisitos de seguridad de CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 [/tip]
 
 Antes de crear un `<form>`, debes incluir la secuencia de comandos obligatoria de la extensión `<amp-form>`; de lo contrario, el documento no será válido. Si utilizas etiquetas `input` para fines distintos a enviar sus valores (p. ej., campos de entrada que no estén dentro de un `<form>`), no necesitas cargar la extensión `amp-form`.
@@ -119,7 +119,7 @@ Los atributos `target` y `action` solo se utilizan para las solicitudes GET que 
 Especifica el punto de conexión del servidor que procesará los datos introducidos en el formulario y los enviará mediante XMLHttpRequest (XHR). Las solicitudes XHR (a veces denominadas "solicitudes AJAX") son aquellas en las que el navegador lleva a cabo la solicitud sin cargar del todo la página o sin abrir una página nueva. Los navegadores la envían en segundo plano mediante la [API de Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), si está disponible, y con la [API de XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) en los navegadores más antiguos.
 
 [tip type="important"]
-El punto de conexión XHR debe implementar los [requisitos de seguridad de CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+El punto de conexión XHR debe implementar los [requisitos de seguridad de CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 [/tip]
 
 Este atributo es obligatorio para `method=POST` y opcional para `method=GET`.
@@ -144,7 +144,7 @@ Para obtener más información, consulta la sección [Validaciones personalizada
 
 * Otros elementos relacionados con los formularios, como `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>`, etc.
 * `<input type=password>` y `<input type=file>` dentro de `<form method=POST action-xhr>`
-* [`amp-selector`](https://www.ampproject.org/docs/reference/components/amp-selector)
+* [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})
 
 **No se admiten:**
 
@@ -182,7 +182,7 @@ Obtén más información sobre las [acciones y los eventos en AMP](https://www.a
 | `valid` | El estado de validación del formulario cambia a "valid" (de acuerdo con su [estrategia para informar de la validación](#reporting-strategies)). |
 | `invalid` | El estado de validación del formulario cambia a "invalid" (de acuerdo con su [estrategia para informar de la validación](#reporting-strategies)). |
 
-Estos eventos se pueden utilizar mediante el [atributo `on`](https://www.ampproject.org/docs/fundamentals/spec#on).
+Estos eventos se pueden utilizar mediante el [atributo `on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on).
 
 En este ejemplo, el código tiene en cuenta los eventos `submit-success` y `submit-error`, y muestra diferentes lightboxes en función del evento:
 
@@ -197,7 +197,7 @@ Consulta el [ejemplo completo](https://github.com/ampproject/amphtml/blob/master
 
 # Eventos de entrada
 
-AMP expone los eventos `input-debounced` y `change` a los elementos `<input>` secundarios, lo que te permite utilizar el [atributo `on`](https://www.ampproject.org/docs/fundamentals/spec#on) para ejecutar una acción en cualquier elemento cuando cambia un valor de entrada.
+AMP expone los eventos `input-debounced` y `change` a los elementos `<input>` secundarios, lo que te permite utilizar el [atributo `on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on) para ejecutar una acción en cualquier elemento cuando cambia un valor de entrada.
 
 Por ejemplo, un caso práctico habitual es enviar un formulario cuando se produce un cambio en un campo de entrada (se selecciona un botón de selección para responder a una encuesta, se elige un idioma en una lista desplegable `select` para traducir una página, etc.).
 
@@ -229,7 +229,7 @@ Consulta el [ejemplo completo](https://github.com/ampproject/amphtml/blob/master
 
 # Activadores de analíticas
 
-La extensión `amp-form` activa los siguientes eventos, que puedes monitorizar en tu configuración de [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics):
+La extensión `amp-form` activa los siguientes eventos, que puedes monitorizar en tu configuración de [amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 | Evento                     | Se activa cuando                        |
 |---------------------------|-----------------------------------|
@@ -290,7 +290,7 @@ Cuando se activan los eventos `amp-form-submit`, `amp-form-submit-success` o `am
 
 # Renderizar las respuestas procesadas correctamente o con errores
 
-Puedes renderizar en el formulario las respuestas procesadas correctamente o que tengan errores mediante las [plantillas ampliadas](https://www.ampproject.org/docs/fundamentals/spec#extended-templates), como [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache). También puedes representar las respuestas procesadas correctamente utilizando un data binding de [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) y los siguientes atributos de respuesta:
+Puedes renderizar en el formulario las respuestas procesadas correctamente o que tengan errores mediante las [plantillas ampliadas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#extended-templates), como [amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). También puedes representar las respuestas procesadas correctamente utilizando un data binding de [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) y los siguientes atributos de respuesta:
 
 | Atributo de respuesta | Descripción |
 |-----------|---------------------|
@@ -387,11 +387,11 @@ Consulta el [ejemplo completo](https://github.com/ampproject/amphtml/blob/master
 
 # Para renderizar una respuesta procesada con éxito mediante data binding:
 
-* Utiliza el [atributo on](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events) para vincular el atributo de formulario *submit-success* con [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate%28%29).
+* Utiliza el [atributo on]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) para vincular el atributo de formulario *submit-success* con [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-amp.setstate%28%29).
 * Utiliza la propiedad `event` para capturar los datos de respuesta.
 * Añade el atributo de estado al elemento deseado para vincularlo con la respuesta del formulario.
 
-El siguiente ejemplo muestra una respuesta de formulario `submit-success` utilizando [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind):
+El siguiente ejemplo muestra una respuesta de formulario `submit-success` utilizando [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}):
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -432,7 +432,7 @@ A continuación, `amp-bind` actualiza el texto del elemento `<p>` para que coinc
 
 Puedes redirigir a los usuarios a una página nueva después de que se envíe correctamente el formulario definiendo el encabezado de respuesta `AMP-Redirect-To` y especificando una URL de redirección. Dicha URL debe ser HTTPS; de lo contrario, se producirá un error con AMP y no se hará la redirección.  Los encabezados de respuesta de HTTP se configuran en tu servidor.
 
-Asegúrate de actualizar el encabezado de respuesta `Access-Control-Expose-Headers` para incluir `AMP-Redirect-To` en la lista de encabezados permitidos.  Obtén más información sobre estos encabezados en [Seguridad de CORS en AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)
+Asegúrate de actualizar el encabezado de respuesta `Access-Control-Expose-Headers` para incluir `AMP-Redirect-To` en la lista de encabezados permitidos.  Obtén más información sobre estos encabezados en [Seguridad de CORS en AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)
 
 *Ejemplo de encabezado de respuesta:*
 

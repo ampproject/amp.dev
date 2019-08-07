@@ -60,7 +60,7 @@ elemento personalizzato chiamato `<amp-ad>`. All'interno del documento AMP non �
 un'origine diversa (tramite la sandbox iframe) come documento AMP ed esegue il codice
 JavaScript della rete pubblicitaria all'interno della sandbox iframe.
 
-`<amp-ad>` richiede che i valori di larghezza e altezza siano specificati in base alla [regola](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) del suo tipo di layout. Richiede un argomento `type` che selezioni quale rete pubblicitaria mostrare. Tutti gli attributi `data-*` nel tag sono trasmessi automaticamente come argomenti al codice che fa visualizzare l'annuncio. Quali attributi `data-` sono necessari per un determinato tipo di rete dipende dalla rete pubblicitaria e devono essere specificati.
+`<amp-ad>` richiede che i valori di larghezza e altezza siano specificati in base alla [regola]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) del suo tipo di layout. Richiede un argomento `type` che selezioni quale rete pubblicitaria mostrare. Tutti gli attributi `data-*` nel tag sono trasmessi automaticamente come argomenti al codice che fa visualizzare l'annuncio. Quali attributi `data-` sono necessari per un determinato tipo di rete dipende dalla rete pubblicitaria e devono essere specificati.
 
 #### Esempio: visualizzazione di alcuni annunci
 
@@ -167,13 +167,13 @@ Esempio con elemento di riserva:
 
 Sono tre i modi per monetizzare video in AMP con gli annunci video:
 
-1. AMP supporta in modo nativo diversi video player, come BrightCove, DailyMotion e altri in grado di monetizzare gli annunci. Per un elenco completo, consulta i componenti [multimediali](https://www.ampproject.org/docs/reference/components#media).
+1. AMP supporta in modo nativo diversi video player, come BrightCove, DailyMotion e altri in grado di monetizzare gli annunci. Per un elenco completo, consulta i componenti [multimediali]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media).
 
 2. Utilizza il componente [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) che include un SDK IMA incorporato e un video player HTML5
 3. Se il tuo video player non è supportato in AMP, puoi pubblicare il tuo video player personalizzato con [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 Se utilizzi `amp-iframe`:
 
-    * Assicurati che ci sia un poster se il player viene caricato nella prima area visibile. [Ulteriori dettagli](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder).
+    * Assicurati che ci sia un poster se il player viene caricato nella prima area visibile. [Ulteriori dettagli]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
     * Video e poster devono essere pubblicati tramite HTTPS.</li>
 
 ## Pubblicare annunci da un dominio personalizzato
@@ -205,7 +205,7 @@ L'applicazione delle origini può essere effettuata con il terzo argomento di `d
 
 Questa operazione è completamente facoltativa. Potresti voler migliorare la richiesta di annuncio prima che questa venga effettuata all'ad server.
 
-Se la rete pubblicitaria supporta il [recupero veloce](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation), utilizza la [Configurazione in tempo reale (RTC, Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md); ad esempio, le integrazioni DoubleClick e AdSense supportano entrambe il recupero veloce e la Configurazione in tempo reale.
+Se la rete pubblicitaria supporta il [recupero veloce]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation), utilizza la [Configurazione in tempo reale (RTC, Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md); ad esempio, le integrazioni DoubleClick e AdSense supportano entrambe il recupero veloce e la Configurazione in tempo reale.
 
 Se la rete pubblicitaria utilizza il recupero ritardato, puoi trasmettere un callback alla chiamata funzione `draw3p` all'interno del file [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). Il callback riceve la configurazione in entrata come primo argomento, quindi riceve un altro callback come secondo argomento (chiamato `done` nell'esempio di seguito). Questo callback deve essere chiamato con la configurazione aggiornata affinché la visualizzazione dell'annuncio possa proseguire.
 

@@ -57,7 +57,7 @@ limitations under the License.
 
 Les annonces sont chargées comme toutes les autres ressources dans les documents AMP, avec un élément personnalisé spécial appelé `<amp-ad>`. Aucun code JavaScript fourni par un réseau publicitaire ne peut être exécuté dans le document AMP. À la place, l'exécution AMP charge un iFrame d'une autre origine (via le bac à sable iFrame) et exécute le code JavaScript du réseau publicitaire dans ce bac à sable iFrame.
 
-L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient spécifiées conformément à la [règle](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) relative à son type de mise en page. Il nécessite un argument `type` qui sélectionne le réseau publicitaire à afficher. Tous les attributs `data-*` de la balise sont automatiquement transmis, en tant qu'arguments, au code qui diffuse finalement l'annonce. Les attributs `data-` requis pour un type de réseau publicitaire donné dépendent de ce dernier et doivent être documentés avec celui-ci.
+L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient spécifiées conformément à la [règle]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) relative à son type de mise en page. Il nécessite un argument `type` qui sélectionne le réseau publicitaire à afficher. Tous les attributs `data-*` de la balise sont automatiquement transmis, en tant qu'arguments, au code qui diffuse finalement l'annonce. Les attributs `data-` requis pour un type de réseau publicitaire donné dépendent de ce dernier et doivent être documentés avec celui-ci.
 
 #### Exemple : Diffusion de quelques annonces
 
@@ -164,13 +164,13 @@ Exemple avec création de remplacement :
 
 Il existe trois méthodes permettant de monétiser des vidéos dans AMP avec des annonces vidéo :
 
-1. AMP est compatible, en mode natif, avec plusieurs lecteurs vidéo (BrightCove, DailyMotion, etc.) permettant de monétiser des annonces. Pour obtenir la liste complète, consultez les composants [multimédias](https://www.ampproject.org/docs/reference/components#media).
+1. AMP est compatible, en mode natif, avec plusieurs lecteurs vidéo (BrightCove, DailyMotion, etc.) permettant de monétiser des annonces. Pour obtenir la liste complète, consultez les composants [multimédias]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media).
 
 2. Utilisez le composant [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) fourni avec le SDK IMA et le lecteur vidéo HTML5 intégrés.
 3. Si vous utilisez un lecteur vidéo non compatible avec AMP, vous pouvez diffuser votre lecteur personnalisé à l'aide du composant [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 Si vous optez pour la méthode `amp-iframe` :
 
-    * Assurez-vous qu'il existe un élément poster en cas de chargement du lecteur dans la première fenêtre d'affichage. [Détails](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder).
+    * Assurez-vous qu'il existe un élément poster en cas de chargement du lecteur dans la première fenêtre d'affichage. [Détails]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
     * La vidéo et l'élément poster doivent être diffusés via HTTPS.</li>
 
 ## Diffuser des annonces à partir d'un domaine personnalisé
@@ -202,7 +202,7 @@ Pour appliquer les origines, le troisième argument de la fonction `draw3p` peut
 
 Cette opération est totalement facultative. Parfois, il est souhaitable d'améliorer la demande d'annonce avant de la transmettre au serveur publicitaire.
 
-Si votre réseau publicitaire est compatible avec la [récupération rapide](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation), veuillez utiliser [RTC (Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (les intégrations DoubleClick et AdSense, par exemple, sont toutes deux compatibles avec la récupération rapide et RTC).
+Si votre réseau publicitaire est compatible avec la [récupération rapide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation), veuillez utiliser [RTC (Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (les intégrations DoubleClick et AdSense, par exemple, sont toutes deux compatibles avec la récupération rapide et RTC).
 
 Si la récupération retardée est utilisée sur votre réseau publicitaire, vous pouvez transmettre un rappel à la fonction `draw3p` dans le fichier [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). Le rappel reçoit la configuration entrante en tant que premier argument, puis reçoit un autre rappel en tant que deuxième argument (appelé `done` dans l'exemple ci-dessous). Ce rappel doit être appelé avec la configuration mise à jour pour que le rendu de l'annonce puisse avoir lieu.
 

@@ -277,7 +277,7 @@ $title: amp-sidebar
 
 ##### 공통 속성<a name="common"></a>
 
-이 요소에는 AMP 구성요소로 확장된 [공통 속성](https://www.ampproject.org/docs/reference/common_attributes)이 포함됩니다.
+이 요소에는 AMP 구성요소로 확장된 [공통 속성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})이 포함됩니다.
 
 ## 스타일 지정
 

@@ -1266,9 +1266,9 @@ AMP ドキュメントがストーリーであることを示します。
 
 追加のパラメータが必要な場合は、Key-Value ペアを持つオブジェクトを使用します。このオブジェクトには、プロバイダの名前に対応する値（`facebook` など）が指定されたキー `provider` を含める必要があります。次の Key-Value は共有プロバイダによって決まります。
 
-使用できるプロバイダのリストは [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) コンポーネントと同じです。
+使用できるプロバイダのリストは [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) コンポーネントと同じです。
 
-使用できるパラメータのセットはプロバイダごとに異なります（[`data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a) を参照）。設定オブジェクトでは、`data-param-` プレフィックスのないパラメータが使用されます（たとえば `data-param-app_id` は、設定オブジェクトでは `app_id` と表示されます）。
+使用できるパラメータのセットはプロバイダごとに異なります（[`data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a) を参照）。設定オブジェクトでは、`data-param-` プレフィックスのないパラメータが使用されます（たとえば `data-param-app_id` は、設定オブジェクトでは `app_id` と表示されます）。
 
 #### JSON 設定
 
@@ -1316,10 +1316,10 @@ AMP ドキュメントがストーリーであることを示します。
 
 以下に、AMP ストーリーで使用できるその他のコンポーネントを示します。ただし、ストーリーに固有の注意すべき点がいくつかあります。
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-一般に使用可能なその他のコンポーネントについては、[使用可能な子のリスト](https://www.ampproject.org/docs/reference/components/amp-story#children)をご覧ください。
+一般に使用可能なその他のコンポーネントについては、[使用可能な子のリスト]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children)をご覧ください。
 
 ## 検証
 

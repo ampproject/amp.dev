@@ -286,7 +286,7 @@ $title: amp-sidebar
 
 ##### السمات المشتركة<a name="common"></a>
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) التي تشمل مكونات AMP.
 
 ## التصميم
 

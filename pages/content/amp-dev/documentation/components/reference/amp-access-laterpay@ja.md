@@ -25,7 +25,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-このコンポーネントにより、サイト運営者は [LaterPay](https://www.laterpay.net) マイクロペイメント プラットフォームと簡単に統合できます。`amp-access-laterpay` は [amp-access](https://www.ampproject.org/docs/reference/components/amp-access) をベースとしているため、amp-access は必須です。
+このコンポーネントにより、サイト運営者は [LaterPay](https://www.laterpay.net) マイクロペイメント プラットフォームと簡単に統合できます。`amp-access-laterpay` は [amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) をベースとしているため、amp-access は必須です。
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ amp-access と組み合わせて使用したい独自のペイウォール サ�
 
 作成したリストは、サイト運営者の好みに合わせてスタイルを設定し、表示することができます。
 
-また、このコンポーネントで[アクセス コンテンツ マークアップ](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup)を使用して、コンテンツの表示と非表示を切り替えることができます。
+また、このコンポーネントで[アクセス コンテンツ マークアップ]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#access-content-markup)を使用して、コンテンツの表示と非表示を切り替えることができます。
 
 ## 設定
 
@@ -272,7 +272,7 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 
 ## アナリティクス
 
-`amp-access-laterpay` は `amp-access` をベースとしているため、`amp-access` から送信された[アナリティクス イベント](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics)をすべてサポートします。
+`amp-access-laterpay` は `amp-access` をベースとしているため、`amp-access` から送信された[アナリティクス イベント]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#integration-with-amp-analytics)をすべてサポートします。
 
 実際のページの詳細な例については、[https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) をご覧ください。この例は、アナリティクス イベントを送信するように設定されています。
 
@@ -280,9 +280,9 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 
 既存のサブスクリプション システムがあり、LaterPay を個々の記事の販売用にのみ使用する予定の場合は、amp-access と amp-access-laterpay を同時に使用して、同一ページ内に両方の販売方法を共存させることができます。
 
-まず、[amp-access](https://www.ampproject.org/docs/reference/components/amp-access) のドキュメントを参照して、既存のペイウォールで amp-access を設定する方法を確認してください。
+まず、[amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) のドキュメントを参照して、既存のペイウォールで amp-access を設定する方法を確認してください。
 
-[複数のプロバイダ](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers)のセクションで、名前空間を使用して複数のプロバイダを設定する方法が説明されています。
+[複数のプロバイダ]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#multiple-access-providers)のセクションで、名前空間を使用して複数のプロバイダを設定する方法が説明されています。
 
 LaterPay と既存のペイウォールを統合して使用する場合、次のような設定が必要になります。
 
@@ -337,7 +337,7 @@ LaterPay と既存のペイウォールを統合して使用する場合、次�
 
 ## 関連ドキュメント
 
-* [amp-access](https://www.ampproject.org/docs/reference/components/amp-access)
+* [amp-access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: マイクロペイメントの使用方法](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html): amp-access-laterpay に似ていますが、非 AMP ページが対象です。

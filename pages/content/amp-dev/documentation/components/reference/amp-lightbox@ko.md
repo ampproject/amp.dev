@@ -62,7 +62,7 @@ teaser:
 ```
 
 [tip type="read"]
-라이트박스에 이미지를 표시하는 데 [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) 구성요소도 사용할 수 있습니다.
+라이트박스에 이미지를 표시하는 데 [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) 구성요소도 사용할 수 있습니다.
 [/tip]
 
 ## 속성
@@ -129,7 +129,7 @@ teaser:
 ## <a id="a4a"></a> AMPHTML 광고에서 `amp-lightbox` 사용
 
 [tip type="note"]
-AMPHTML 광고에서 사용할 `amp-lightbox` 구성요소는 [실험적](https://www.ampproject.org/docs/reference/experimental)이며 현재 개발 중입니다. AMPHTML 광고에서 `amp-lightbox`를 사용하려면 [`amp-lightbox-a4a-proto` 실험을 사용 설정](http://cdn.ampproject.org/experiments.html)하세요.
+AMPHTML 광고에서 사용할 `amp-lightbox` 구성요소는 [실험적]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}})이며 현재 개발 중입니다. AMPHTML 광고에서 `amp-lightbox`를 사용하려면 [`amp-lightbox-a4a-proto` 실험을 사용 설정](http://cdn.ampproject.org/experiments.html)하세요.
 [/tip]
 
 일반 AMP 문서에서 `amp-lightbox` 사용과 [AMPHTML로 작성된 광고]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})를 사용하는 데는 몇 가지 차이점이 있습니다.

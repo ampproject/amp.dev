@@ -1271,9 +1271,9 @@ Questo campo deve contenere una stringa. Ciascuna stringa rappresenta il nome di
 
 Nel caso in cui siano necessari parametri aggiuntivi, deve essere utilizzato un oggetto con coppie chiave-valore. L'oggetto deve contenere una chiave `provider` con un valore (ad esempio, `facebook`) corrispondente al nome del fornitore. Le successive coppie chiave-valore dipenderanno dal fornitore di condivisione.
 
-L'elenco di fornitori disponibili è lo stesso del componente [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+L'elenco di fornitori disponibili è lo stesso del componente [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
 
-Ciascuno di questi provider dispone di una serie differente di parametri disponibili ([vedi `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). L'oggetto di configurazione accetta questi parametri senza il prefisso `data-param-` (ad esempio, `data-param-app_id` comparirà nell'oggetto della configurazione come `app_id`).
+Ciascuno di questi provider dispone di una serie differente di parametri disponibili ([vedi `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). L'oggetto di configurazione accetta questi parametri senza il prefisso `data-param-` (ad esempio, `data-param-app_id` comparirà nell'oggetto della configurazione come `app_id`).
 
 #### Configurazione JSON
 
@@ -1321,10 +1321,10 @@ Ciascuno di questi provider dispone di una serie differente di parametri disponi
 
 Di seguito sono riportati altri componenti utilizzabili nelle storie AMP che richiedono determinate condizioni a seconda della storia.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-Per componenti più generalmente utilizzabili, consulta l'[elenco degli elementi secondari consentiti](https://www.ampproject.org/docs/reference/components/amp-story#children).
+Per componenti più generalmente utilizzabili, consulta l'[elenco degli elementi secondari consentiti]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
 
 ## Convalida
 

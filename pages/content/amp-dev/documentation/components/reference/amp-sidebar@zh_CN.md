@@ -284,7 +284,7 @@ $title: amp-sidebar
 
 ##### 常见属性<a name="common"></a>
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})。
 
 ## 样式设置
 

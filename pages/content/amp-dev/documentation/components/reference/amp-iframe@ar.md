@@ -77,7 +77,7 @@ limitations under the License.
 
 **يجب عدم** استخدام `amp-iframe` لعرض الإعلانات كغرض أساسي. فلا بأس من استخدام `amp-iframe` لعرض فيديوهات تكون الإعلانات جزءًا منها. قد يتم تنفيذ سياسة AMP هذه بعدم عرض إطارات iframe المعنّية.
 
-يجب أن تستخدم الإعلانات [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad) بدلاً من ذلك.
+يجب أن تستخدم الإعلانات [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) بدلاً من ذلك.
 
 في ما يلي أسباب هذه السياسة:
 
@@ -223,7 +223,7 @@ window.addEventListener('message', function(event) {
 
 # تتبع/تحليلات iframe
 
-ننصح بشدة باستخدام المكوِّن [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
+ننصح بشدة باستخدام المكوِّن [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
 
 لا تسمح AMP إلا باستخدام إطار iframe واحد لكل صفحة لأغراض التحليل والتتبع. للحفاظ على الموارد، ستتم إزالة إطارات iframe هذه من DOM بعد 5 ثوان من تحميلها، ويعتبر هذا وقتًا كافيًا لإكمال أي عمل مطلوب إنجازه.
 
@@ -231,7 +231,7 @@ window.addEventListener('message', function(event) {
 
 # إرشادات: استخدِم مكونات AMP بدلاً من amp-iframe
 
-يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP](https://www.ampproject.org/docs/reference/components) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
+يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
 
 * تحسين إدارة أفضل الموارد والأداء
 * يمكن أن توفر المكونات المخصصة صور عناصر نائبة مضمّنة في بعض الحالات. يعني هذا الحصول مثلاً على الصورة المصغرة الصحيحة للفيديو قبل تحميله كما يقلل من الجهد المبذول في الترميز لإضافة عنصر نائب يدويًا.
