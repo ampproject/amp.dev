@@ -27,6 +27,12 @@ $borderSize: 5px;
   color: color('white');
   border-radius: 4px;
 
+  h5 {
+    margin: 0 0 0 10px;
+    color: color('white');
+    font-size: 1em;
+  }
+
   @media (min-width: 768px){
     width: 500px;
     height: auto;
@@ -35,13 +41,7 @@ $borderSize: 5px;
       font-size: 0.875em;
     }
   }
-
-  h5 {
-    margin: 0 0 0 10px;
-    color: color('white');
-    font-size: 1em;
-  }
-
+  
   .disabled-headline {
     opacity: 0.5;
   }
@@ -73,7 +73,7 @@ $borderSize: 5px;
         width: 70px;
         height: 35px;
         border-radius: 2px;
-        background-color: #2773F1;
+        background-color: lighten(color('blue-ribbon'), 8%);
 
         @media (min-width: 768px) {
           width: 50px;
