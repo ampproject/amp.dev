@@ -239,6 +239,11 @@ As a nice bonus, some caches, like the Google AMP Cache, automatically compress 
 **READ ON –** To learn more about the image optimizations that the Google AMP Cache applies, see the ["Google AMP Cache, AMP Lite, and the need for speed"](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html) blog post.
 [/tip]
 
+##### Performance optomization 
+Developers using WebP images can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate `Content-Type` header.
+This avoids the browser from downloading image types it does not support.     
+
+
 ## Examples to inspire you
 
 Here are some examples that we hope inspire you to create responsive AMP pages:
