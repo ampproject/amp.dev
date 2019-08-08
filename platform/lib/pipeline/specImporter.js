@@ -19,10 +19,16 @@ require('module-alias/register');
 const path = require('path');
 const project = require('@lib/utils/project');
 
-const {GitHubImporter, log} = require('./gitHubImporter');
+const MarkdownDocument = require('@lib/pipeline/markdownDocument');
+const {GitHubImporter, log} = require('@lib/pipeline/gitHubImporter');
 
-// Where to save the documents to
-const DESTINATION_BASE_PATH = project.absolute('pages/content/amp-dev');
+const DESTINATION_BASE_PATH = project.absolute('pages');
+
+// Where to save the document that embeds the source to
+const EMBED_POD_PATH = 'content/amp-dev';
+
+// Where to save the source of the document to
+const SOURCE_POD_PATH = 'shared/imports';
 
 class SpecImporter {
   constructor(githubImporter = new GitHubImporter()) {
@@ -45,21 +51,31 @@ class SpecImporter {
     for (const importDoc of importDocs) {
       try {
         const doc = await this.githubImporter_.fetchDocument(importDoc.from, importDoc.repo, true);
-        doc.path = path.join(DESTINATION_BASE_PATH, importDoc.to);
-        doc.title = importDoc.title;
-        doc.order = importDoc.order;
-        doc.toc = importDoc.toc;
-        doc.formats = importDoc.formats;
-        const baseURL = `https://github.com/${importDoc.repo}/blob/master/`;
-        doc.importURL = baseURL + importDoc.from;
+        doc.path = path.join(DESTINATION_BASE_PATH, SOURCE_POD_PATH, importDoc.to);
 
         // Remove the double heading and rewrite relative links
         doc.stripInlineTitle();
 
+        const baseURL = `https://github.com/${importDoc.repo}/blob/master/`;
         const relativeBase = `${baseURL}${path.dirname(importDoc.from)}`;
         doc.rewriteRelativePaths(relativeBase);
+        importedDocs.push(doc.save(undefined, true));
 
-        importedDocs.push(doc.save());
+        // Create a second docment that's embedding the one created priorly
+        const embedDoc = new MarkdownDocument(
+            path.join(DESTINATION_BASE_PATH, EMBED_POD_PATH, importDoc.to),
+            `[include('${path.join(SOURCE_POD_PATH, importDoc.to)}')]`
+        );
+        embedDoc.path = path.join(DESTINATION_BASE_PATH, EMBED_POD_PATH, importDoc.to);
+        embedDoc.title = importDoc.title;
+        embedDoc.order = importDoc.order;
+        embedDoc.toc = importDoc.toc;
+        embedDoc.formats = importDoc.formats;
+
+        // Add a hint where to finde the original document
+        embedDoc.importURL = baseURL + importDoc.from;
+
+        importedDocs.push(embedDoc.save());
       } catch (err) {
         log.warn(`Fetching for '${importDoc.title}' failed.`, err);
         continue;
