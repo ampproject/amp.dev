@@ -116,5 +116,5 @@
 
 {# meta tags for amp.dev search filtering #}
 {% set supported_formats = ','.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
-<meta name="amp-supported-formats" content="{{supported_formats}}">
-<meta name="amp-dev-locale" content="{{doc.locale}}">
+<meta name="supported-amp-formats" content="{{supported_formats}}">
+<meta name="page-locale" content="{{doc.locale}}">
