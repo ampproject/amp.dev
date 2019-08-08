@@ -44,7 +44,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;</code><br>참고: amp-ad는 이 스크립트가 없어도 작동할 수 있지만 향후 호환성을 위해 사용하는 것이 좋습니다.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -58,7 +58,7 @@ limitations under the License.
 광고는 AMP 문서의 다른 모든 리소스와 마찬가지로
 `<amp-ad>`라는 특별한 맞춤 요소와 함께 로드됩니다. 광고 네트워크에서 제공하는 자바스크립트는 AMP 문서 내에서 실행할 수 없습니다. 대신 AMP 런타임에서는 AMP 문서로 iframe 샌드박스를 통해 다른 원본에서 iframe을 로드하고 그 iframe 샌드박스 내에서는 광고 네트워크의 JS를 실행합니다.
 
-`<amp-ad>`를 사용하려면 레이아웃 유형의 [규칙](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)에 따라 너비와 높이 값을 지정해야 합니다. 이를 위해 표시할 광고 네트워크를 선택하는 `type` 인수가 필요합니다. 태그의 모든 `data-*` 속성은 이후에 광고를 렌더링하는 코드에 인수로 자동 전달됩니다. 특정 네트워크 유형에 필요한 `data-` 속성은 상황에 따라 다르며 광고 네트워크에서 문서화되어야 합니다.
+`<amp-ad>`를 사용하려면 레이아웃 유형의 [규칙]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)에 따라 너비와 높이 값을 지정해야 합니다. 이를 위해 표시할 광고 네트워크를 선택하는 `type` 인수가 필요합니다. 태그의 모든 `data-*` 속성은 이후에 광고를 렌더링하는 코드에 인수로 자동 전달됩니다. 특정 네트워크 유형에 필요한 `data-` 속성은 상황에 따라 다르며 광고 네트워크에서 문서화되어야 합니다.
 
 #### 예: 몇 가지 광고 표시
 
@@ -132,13 +132,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>공통 속성</strong></td>
-    <td>이 요소에는 AMP 구성요소로 확장된 <a href="https://www.ampproject.org/docs/reference/common_attributes">공통 속성</a>이 포함됩니다.</td>
+    <td>이 요소에는 AMP 구성요소로 확장된 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">공통 속성</a>이 포함됩니다.</td>
   </tr>
 </table>
 
 ## 자리표시자
 
-필요한 경우 `amp-ad`는 `placeholder` 속성으로 하위 요소를 지원합니다. 광고 네트워크에서 지원하는 경우 게재할 수 있는 광고가 없으면 이 요소가 표시됩니다. [자리표시자 및 대체 동작](https://www.ampproject.org/docs/guides/responsive/placeholders)에서 자세히 알아보세요.
+필요한 경우 `amp-ad`는 `placeholder` 속성으로 하위 요소를 지원합니다. 광고 네트워크에서 지원하는 경우 게재할 수 있는 광고가 없으면 이 요소가 표시됩니다. [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
 ```html
 <amp-ad width=300 height=250
@@ -165,13 +165,13 @@ limitations under the License.
 
 다음 3가지 방법으로 동영상 광고로 AMP에서 수익을 창출할 수 있습니다.
 
-1. AMP에서는 기본적으로 BrightCove, DailyMotion 등 광고로 수익을 창출할 수 있는 여러 동영상 플레이어를 지원합니다. 전체 목록은 [media](https://www.ampproject.org/docs/reference/components#media) 구성요소를 참조하세요.
+1. AMP에서는 기본적으로 BrightCove, DailyMotion 등 광고로 수익을 창출할 수 있는 여러 동영상 플레이어를 지원합니다. 전체 목록은 [media]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media) 구성요소를 참조하세요.
 
 1. 내장 IMA SDK 및 HTML5 동영상 플레이어와 함께 제공되는 [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) 구성요소를 사용합니다.
 1. AMP에서 지원되지 않는 동영상 플레이어를 사용하는 경우 [amp-iframe](https://ampbyexample.com/components/amp-iframe/)을 사용해 맞춤 플레이어를 제공할 수 있습니다.
 `amp-iframe` 접근 방식을 사용하는 경우 다음 안내를 따르세요.
 
-    * 첫 번째 표시 영역에 플레이어를 로드하는 경우 포스터가 있어야 합니다. [자세히 알아보기](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder)
+    * 첫 번째 표시 영역에 플레이어를 로드하는 경우 포스터가 있어야 합니다. [자세히 알아보기]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)
     * 동영상과 포스터는 HTTPS를 통해 제공되어야 합니다.</li>
 
 ## 맞춤 도메인에서 광고 게재
@@ -203,7 +203,7 @@ AMP 캐시의 경우 '소스 원본'(cdn.ampproject.org에서 제공한 문서�
 
 완전히 선택사항입니다. 광고 서버로 광고 요청을 하기 전에 광고 요청을 향상하는 것이 바람직한 경우가 있습니다.
 
-광고 네트워크에서 [빠른 가져오기](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation)를 지원하는 경우 [RTC(Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)를 사용하세요. 예를 들어 DoubleClick과 애드센스 통합에서는 빠른 가져오기와 RTC를 모두 지원합니다.
+광고 네트워크에서 [빠른 가져오기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation)를 지원하는 경우 [RTC(Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)를 사용하세요. 예를 들어 DoubleClick과 애드센스 통합에서는 빠른 가져오기와 RTC를 모두 지원합니다.
 
 광고 네트워크에서 지연된 가져오기를 사용하는 경우 [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) 파일의 `draw3p` 함수 호출에 콜백을 전달할 수 있습니다. 콜백은 수신 구성을 첫 번째 인수로 받은 다음 다른 콜백을 두 번째 인수(아래 예에서 `done`이라고 불림)로 받습니다. 광고 렌더링을 진행하려면 업데이트된 구성으로 이 콜백을 호출해야 합니다.
 

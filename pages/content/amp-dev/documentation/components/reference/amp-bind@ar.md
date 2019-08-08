@@ -54,7 +54,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>البرامج التعليمية</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">إنشاء صفحات AMP التفاعلية</a></td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">إنشاء صفحات AMP التفاعلية</a></td>
   </tr>
 </table>
 
@@ -394,7 +394,7 @@ null || 'default' // 'default'
     <td>يجب أن تكون تعبيرًا منطقيًا.</td>
   </tr>
   <tr>
-    <td>حجم <a href="https://www.ampproject.org/docs/reference/components">عناصر AMP</a></td>
+    <td>حجم <a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">عناصر AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>تغيّر عرض و/أو ارتفاع عنصر AMP.</td>
   </tr>
@@ -457,7 +457,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>عند الربط بـ <code>[src]</code>، احرص أيضًا على الربط بـ <code>[srcset]</code> لجعل الربط يعمل على ذاكرة التخزين المؤقت.<br>اطّلِع على <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">سمات amp-img</a> المقابلة.</td>
+    <td>عند الربط بـ <code>[src]</code>، احرص أيضًا على الربط بـ <code>[srcset]</code> لجعل الربط يعمل على ذاكرة التخزين المؤقت.<br>اطّلِع على <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">سمات amp-img</a> المقابلة.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -486,7 +486,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>اطّلِع على <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">سمات amp-video</a> المقابلة.</td>
+    <td>اطّلِع على <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">سمات amp-video</a> المقابلة.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -659,7 +659,7 @@ AMP ترسل XMLHttpRequests (XHRs) إلى نقاط نهاية JSON في دفع�
     <td>هي عنوان URL لنقطة النهاية البعيدة التي ستعرض JSON الذي سيعمل على تعديل <code>amp-state</code> هذا. ويجب أن تكون خدمة CORS HTTP.
       تتيح السمة <code>src</code> جميع استبدالات متغيرات عنوان URL القياسية. اطّلِع على <a href="../../spec/amp-var-substitutions.md">دليل الاستبدالات</a> للحصول على المزيد من المعلومات.
       [tip type="important"]
-      يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">طلبات CORS في AMP</a>.
+      يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">طلبات CORS في AMP</a>.
       [/tip]
     </td>
   </tr>
@@ -670,7 +670,7 @@ AMP ترسل XMLHttpRequests (XHRs) إلى نقاط نهاية JSON في دفع�
         <li>القيم المسموح بها: `omit` و`include`</li>
         <li>القيمة التلقائية: `omit`</li>
       </ul>
-      لإرسال بيانات الاعتماد، مرِر قيمة <code>include</code>. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">إرشادات الأمان AMP CORS</a>.</td>
+      لإرسال بيانات الاعتماد، مرِر قيمة <code>include</code>. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">إرشادات الأمان AMP CORS</a>.</td>
     </tr>
   </table>
 

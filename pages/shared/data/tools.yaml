@@ -307,7 +307,7 @@ developer:
     description: A prototyping tool that automatically converts a HTML page to AMP for demonstrating performance gains with AMP.
     url: https://github.com/jonchenn/amp-prototyper
     image:
-      src: /static/img/docs/tools/amp-prototyper.jpg
+      src: /static/img/tools/amp-prototyper.jpg
       width: 700
       height: 471
     formats:

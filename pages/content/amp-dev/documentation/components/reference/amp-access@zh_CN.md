@@ -504,7 +504,7 @@ AMP 不区分登录和订阅。发布商可以使用多个登录网址/链接或
 
 ## CORS 网域安全性
 
-授权端点和 Pingback 端点属于 CORS 端点，它们必须实现 [AMP CORS 安全规范](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)中所述的安全协议。
+授权端点和 Pingback 端点属于 CORS 端点，它们必须实现 [AMP CORS 安全规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)中所述的安全协议。
 
 ## 计量供给
 

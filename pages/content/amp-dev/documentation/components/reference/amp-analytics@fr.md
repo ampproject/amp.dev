@@ -47,16 +47,16 @@ Ce composant capture des données d'analyse à partir d'un document AMP.
 Avant d'utiliser les analyses AMP sur votre site, vous devez déterminer si vous utiliserez des outils d'analyse tiers pour évaluer l'intérêt des utilisateurs ou votre propre solution interne.
 
 [tip type="read-on"]
-Pour tout savoir sur les analyses AMP, consultez le guide [Configuration des analyses](https://www.ampproject.org/docs/guides/analytics_amp).
+Pour tout savoir sur les analyses AMP, consultez le guide [Configuration des analyses]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ### Transmettre les données à un fournisseur de solutions d'analyse <a name="analytics-vendors"></a>
 
-Les analyses AMP sont spécialement conçues pour mesurer une seule fois et transmettre ces mesures à autant de destinataires que nécessaire. Si vous travaillez déjà avec un ou plusieurs fournisseurs de solutions d'analyse, consultez la liste des [fournisseurs de solutions d'analyse](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) pour savoir s'ils ont intégré leur solution à AMP.
+Les analyses AMP sont spécialement conçues pour mesurer une seule fois et transmettre ces mesures à autant de destinataires que nécessaire. Si vous travaillez déjà avec un ou plusieurs fournisseurs de solutions d'analyse, consultez la liste des [fournisseurs de solutions d'analyse]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) pour savoir s'ils ont intégré leur solution à AMP.
 
 Fournisseurs ayant intégré leur solution à AMP :
 
-1. Dans la balise `<amp-analytics>`, ajoutez l'attribut `type` et définissez sa valeur sur le [fournisseur](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) spécifié.
+1. Dans la balise `<amp-analytics>`, ajoutez l'attribut `type` et définissez sa valeur sur le [fournisseur]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) spécifié.
 1. Déterminez les données dont vous souhaitez effectuer la capture et le suivi, puis indiquez ces informations dans les données de configuration. Consultez la documentation du fournisseur pour obtenir des instructions sur la façon de recueillir des données d'analyse.
 
 Si le fournisseur de solutions d'analyse n'a pas intégré AMP, contactez son service d'assistance. Nous vous invitons également à créer un ticket d'incident dans le projet AMP pour demander à ce que le fournisseur soit ajouté. Consultez également l'article relatif à l'[intégration de vos outils d'analyse dans AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Vous pouvez aussi contacter votre fournisseur pour lui envoyer les données à l'URL qu'il vous a indiquée. Pour en savoir plus, consultez la section [Envoyer des données en interne](#sending-data-in-house) ci-dessous.
@@ -122,7 +122,7 @@ Voici un exemple simple de suivi des pages vues.  Chaque fois qu'une page est vi
 ```
 
   [tip type="success"]
-Pour certains scénarios de suivi courants (pages vues, clics sur une page, défilement, etc.), consultez la page [Analytics : Cas d'utilisation](https://www.ampproject.org/docs/guides/analytics/use_cases).
+Pour certains scénarios de suivi courants (pages vues, clics sur une page, défilement, etc.), consultez la page [Analytics : Cas d'utilisation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Spécifier les données de configuration
@@ -829,7 +829,7 @@ Voici les attributs valides pour le composant `amp-analytics` :
 
 **type**
 
-Indique le type de fournisseur.  Pour plus d'informations, consultez la liste des [fournisseurs de solutions d'analyse](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
+Indique le type de fournisseur.  Pour plus d'informations, consultez la liste des [fournisseurs de solutions d'analyse]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Exemple
 

@@ -36,7 +36,7 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -49,7 +49,7 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 
 `<amp-list>` コンポーネントは、CORS JSON エンドポイントから動的コンテンツを取得します。エンドポイントからのレスポンスには、指定したテンプレートでレンダリングされるデータが含まれます。
 
-[tip type="important"] エンドポイントは、[AMP の CORS リクエスト](https://www.ampproject.org/docs/fundamentals/amp-cors-requests)の仕様で指定されている要件を満たしている必要があります。
+[tip type="important"] エンドポイントは、[AMP の CORS リクエスト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})の仕様で指定されている要件を満たしている必要があります。
 [/tip]
 
 テンプレートは次の 2 種類の方法で指定できます。
@@ -61,7 +61,7 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 
 *例: 動的リストの表示*
 
-次の例では、URL とタイトルを含む JSON データを取得し、ネストされた [amp-mustache テンプレート](https://www.ampproject.org/docs/reference/components/amp-mustache)でコンテンツをレンダリングします。
+次の例では、URL とタイトルを含む JSON データを取得し、ネストされた [amp-mustache テンプレート]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})でコンテンツをレンダリングします。
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -82,25 +82,25 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 以下に、取得したコンテンツのスタイル設定を示します。
 
@@ -173,7 +173,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 * プレースホルダ**は、`placeholder` 属性が設定された子要素です。この要素は、`<amp-list>` による読み込みが成功するまで表示されます。フォールバックも指定されている場合、`<amp-list>` が読み込みに失敗すると、プレースホルダが表示されなくなります。
 * フォールバック**は、`fallback` 属性が設定された子要素です。この要素は、`<amp-list>` が読み込みに失敗すると表示されます。
 
-詳しくは、[プレースホルダとフォールバック](https://www.ampproject.org/docs/guides/responsive/placeholders)をご覧ください。子要素にプレースホルダとフォールバックの両方を指定することはできません。
+詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。子要素にプレースホルダとフォールバックの両方を指定することはできません。
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -222,10 +222,10 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 `<amp-list>` 内でレンダリングされる JSON を返すリモート エンドポイントの URL。この属性には CORS HTTP サービスを指定する必要があります。また、URL のプロトコルは HTTPS である必要があります。
 
-[tip type="important"] エンドポイントは、[AMP の CORS リクエスト](https://www.ampproject.org/docs/fundamentals/amp-cors-requests)の仕様で指定されている要件を満たしている必要があります。
+[tip type="important"] エンドポイントは、[AMP の CORS リクエスト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})の仕様で指定されている要件を満たしている必要があります。
 [/tip]
 
-`[src]` 属性が存在する場合、`src` 属性を省略できることがあります。この属性は、[`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind) を使用している場合に、ページ読み込みではなくユーザー操作の結果としてコンテンツをレンダリングするのに便利です。
+`[src]` 属性が存在する場合、`src` 属性を省略できることがあります。この属性は、[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) を使用している場合に、ページ読み込みではなくユーザー操作の結果としてコンテンツをレンダリングするのに便利です。
 
 ##### credentials（オプション）
 
@@ -234,7 +234,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 * サポートされている値: `omit`、`include`
 * デフォルト値: `omit`
 
-認証情報を送信するには、`include` を渡します。この値が設定されている場合、レスポンスは [AMP CORS セキュリティ ガイドライン](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)に準拠する必要があります。
+認証情報を送信するには、`include` を渡します。この値が設定されている場合、レスポンスは [AMP CORS セキュリティ ガイドライン]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)に準拠する必要があります。
 
 以下の例では、カスタマイズされたコンテンツをリストで表示するための認証情報などが指定されています。
 
@@ -415,7 +415,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ##### 共通の属性
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})が含まれます。
 
 ## 置換
 

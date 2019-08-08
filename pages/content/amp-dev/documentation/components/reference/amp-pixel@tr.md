@@ -35,7 +35,7 @@ teaser:
     <td>Sayfa görüntülemelerini saymak için tipik bir izleme pikseli olarak kullanılabilir.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -82,7 +82,7 @@ Bunun, URL içindeki makroların GENİŞLETİLMEYECEĞİ anlamına gelir. Bu ned
 
 ##### common attributes
 
-Bu öğe, genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) AMP bileşenlerine ekler.
+Bu öğe, genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) AMP bileşenlerine ekler.
 
 ## Değişiklikler
 

@@ -500,7 +500,7 @@ amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/a
 
 ## CORS のオリジンのセキュリティ
 
-承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
+承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
 
 ## メータリング
 

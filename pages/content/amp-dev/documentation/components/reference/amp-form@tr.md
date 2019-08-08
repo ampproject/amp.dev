@@ -38,7 +38,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Desteklenen Düzenler</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Desteklenen Düzenler</a></strong></td>
     <td>Yok</td>
   </tr>
   <tr>
@@ -53,7 +53,7 @@ limitations under the License.
 `amp-form` uzantısı, bir AMP belgesindeki giriş alanlarını göndermek için formlar (`<form>`) oluşturmanıza olanak tanır. `amp-form` uzantısı, tarayıcılardaki bazı eksik davranışlar için [çoklu dolgular](#polyfills) da sağlar.
 
 [tip type="important"]
-Formunuzda veri gönderiyorsanız sunucu uç noktanız, [CORS güvenliği](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp) gerekliliklerini uygulamalıdır.
+Formunuzda veri gönderiyorsanız sunucu uç noktanız, [CORS güvenliği]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp) gerekliliklerini uygulamalıdır.
 [/tip]
 
 Bir `<form>` oluşturmadan önce, `<amp-form>` uzantısı için gerekli komut dosyasını eklemeniz gerekir; aksi takdirde, dokümanınız geçersiz olur. `input` etiketlerini, değerlerini (ör. `<form>` içinde olmayan girişler) gönderme dışında başka amaçlarla kullanıyorsanız `amp-form` uzantısını yüklemeniz gerekmez.
@@ -119,7 +119,7 @@ Form girişini işlemek için bir sunucu uç noktası belirtir. Değer bir `http
 Form girişini işlemek ve XMLHttpRequest (XHR) aracılığıyla formu göndermek için bir sunucu uç noktası belirtir. Bir XHR isteği (bazen AJAX isteği olarak da bilinir), tarayıcının sayfa tam yüklenmeden veya yeni bir sayfa açılmadan istekte bulunmasına neden olur. Tarayıcılar, uygun durumlarda isteği [Getirme API'sini](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) kullanarak arka planda gönderir ve eski tarayıcılar için [XMLHttpRequest API'sini](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) kullanır.
 
 [tip type="important"]
-XHR uç noktanız, [CORS güvenliği](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp) gerekliliklerini uygulamalıdır.
+XHR uç noktanız, [CORS güvenliği]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp) gerekliliklerini uygulamalıdır.
 [/tip]
 
 Bu özellik `method=POST` için gereklidir ve `method=GET` için isteğe bağlıdır.
@@ -144,7 +144,7 @@ Daha ayrıntılı bilgi için [Özel Doğrulama](#custom-validations) bölümün
 
 * Formla ilgili diğer öğeler; örneğin: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` vb.
 * `<form method=POST action-xhr>` içindeki `<input type=password>` ve `<input type=file>`.
-* [`amp-selector`](https://www.ampproject.org/docs/reference/components/amp-selector)
+* [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})
 
 **İzin Verilmeyenler**:
 
@@ -165,7 +165,7 @@ Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spe
 | `clear` | Formdaki her bir girişin değerlerini boşaltır. Bu, kullanıcıların formları ikinci kez hızlıca doldurmalarına olanak tanıyabilir. |
 
 [tip type="read-on"]
-[AMP'de İşlemler ve Etkinlikler](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html) hakkında daha fazla bilgi edinin.
+[AMP'de İşlemler ve Etkinlikler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Etkinlikler
@@ -182,7 +182,7 @@ Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spe
 | `valid` | Formun doğrulama durumu "geçerli" olarak değiştiğinde ([raporlama stratejisine](#reporting-strategies) uygun olarak). |
 | `invalid` | Formun doğrulaması "geçersiz" durumunda olduğunda ([raporlama stratejisine](#reporting-strategies) uygun olarak). |
 
-Bu etkinlikler, [`on` özelliği](https://www.ampproject.org/docs/fundamentals/spec#on) aracılığıyla kullanılabilir.
+Bu etkinlikler, [`on` özelliği]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on) aracılığıyla kullanılabilir.
 
 Örneğin, aşağıdakiler hem `submit-success` hem de `submit-error` etkinliklerini dinler ve etkinliğe bağlı olarak farklı lightbox'lar gösterir:
 
@@ -197,7 +197,7 @@ Bu etkinlikler, [`on` özelliği](https://www.ampproject.org/docs/fundamentals/s
 
 # Giriş etkinlikleri
 
-AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gösterir. Bu, bir giriş değeri değiştiğinde herhangi bir öğede bir işlemi yürütmek için [`on` özelliğini](https://www.ampproject.org/docs/fundamentals/spec#on) kullanmanıza olanak tanır.
+AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gösterir. Bu, bir giriş değeri değiştiğinde herhangi bir öğede bir işlemi yürütmek için [`on` özelliğini]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on) kullanmanıza olanak tanır.
 
 Örneğin, giriş değişikliğinde (bir anketi yanıtlamak için bir radyo düğmesinin seçilmesi, bir sayfanın çevirisini yapmak için `select` girişinden bir dilin seçilmesi vb.) bir form gönderilmesi yaygın bir kullanım örneğidir.
 
@@ -229,7 +229,7 @@ AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gö
 
 # Analiz tetikleyicileri
 
-`amp-form` uzantısı, [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics) yapılandırmanızda izleyebileceğiniz aşağıdaki etkinlikleri tetikler:
+`amp-form` uzantısı, [amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) yapılandırmanızda izleyebileceğiniz aşağıdaki etkinlikleri tetikler:
 
 | Etkinlik                     | Tetiklenme zamanı                        |
 |---------------------------|-----------------------------------|
@@ -290,7 +290,7 @@ Bu üç etkinlik de belirli bir forma ve formdaki alanlara karşılık gelen bir
 
 # Başarı/hata yanıtı oluşturma
 
-Formunuzdaki başarı veya hata yanıtlarını, [amp-moustache](https://www.ampproject.org/docs/reference/components/amp-mustache) gibi [genişletilmiş şablonları](https://www.ampproject.org/docs/fundamentals/spec#extended-templates) kullanarak veya başarı yanıtlarını, verileri, [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) ve aşağıdaki yanıt özellikleriyle bağlayarak oluşturabilirsiniz:
+Formunuzdaki başarı veya hata yanıtlarını, [amp-moustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) gibi [genişletilmiş şablonları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#extended-templates) kullanarak veya başarı yanıtlarını, verileri, [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) ve aşağıdaki yanıt özellikleriyle bağlayarak oluşturabilirsiniz:
 
 | Yanıt özelliği | Açıklama |
 |-----------|---------------------|
@@ -387,11 +387,11 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 
 # Veri bağlama ile bir başarılı yanıtı oluşturmak için
 
-* Form *submit-success* özelliğini [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate%28%29) yöntemine bağlamak için [on özelliğini](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events) kullanın.
+* Form *submit-success* özelliğini [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-amp.setstate%28%29) yöntemine bağlamak için [on özelliğini]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) kullanın.
 * Yanıt verilerini yakalamak için `event` özelliğini kullanın.
 * Form yanıtını bağlamak için durum özelliğini istediğiniz öğeye ekleyin.
 
-Aşağıdaki örnekte [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind) özelliğiyle oluşturulmuş bir form `submit-success` yanıtı gösterilmektedir:
+Aşağıdaki örnekte [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) özelliğiyle oluşturulmuş bir form `submit-success` yanıtı gösterilmektedir:
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -432,7 +432,7 @@ Ardından, `amp-bind` özelliği `<p>` öğesinin metnini `subscibe` durumuyla e
 
 `AMP-Redirect-To` yanıt üstbilgisini ayarlayarak ve bir yönlendirme URL'si belirterek, başarılı bir form gönderildikten sonra kullanıcıları yeni bir sayfaya yönlendirebilirsiniz. Yönlendirme URL'si bir HTTPS URL'si olmalıdır; aksi takdirde, AMP bir hata bildirir ve yönlendirme gerçekleşmez.  HTTP yanıtı üstbilgileri, sunucunuz aracılığıyla yapılandırılır.
 
-`AMP-Redirect-To` yanıt üstbilgisini izin verilen üstbilgiler listesine eklemek için `Access-Control-Expose-Headers` yanıt üstbilginizi güncellediğinizden emin olun.  Bu başlıklar hakkında daha fazla bilgiyi [AMP'de CORS Güvenliği](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp) sayfasında edinebilirsiniz.
+`AMP-Redirect-To` yanıt üstbilgisini izin verilen üstbilgiler listesine eklemek için `Access-Control-Expose-Headers` yanıt üstbilginizi güncellediğinizden emin olun.  Bu başlıklar hakkında daha fazla bilgiyi [AMP'de CORS Güvenliği]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp) sayfasında edinebilirsiniz.
 
 *Örnek yanıt üstbilgileri:*
 
@@ -686,7 +686,7 @@ AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş A
 
 # XSRF'ye karşı koruma
 
-Bir saldırganın, kullanıcının bilgisi olmadan geçerli kullanıcı oturumunu kullanarak yetkisiz komutlar yürütebildiği [XSRF saldırılarına](https://en.wikipedia.org/wiki/Cross-site_request_forgery) karşı koruma sağlamak için [AMP CORS spesifikasyonundaki](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html) ayrıntıları uygulamaya ek olarak, lütfen ["Durum değiştirme isteklerini işleme"](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) konulu bölüme de dikkat edin.
+Bir saldırganın, kullanıcının bilgisi olmadan geçerli kullanıcı oturumunu kullanarak yetkisiz komutlar yürütebildiği [XSRF saldırılarına](https://en.wikipedia.org/wiki/Cross-site_request_forgery) karşı koruma sağlamak için [AMP CORS spesifikasyonundaki]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) ayrıntıları uygulamaya ek olarak, lütfen ["Durum değiştirme isteklerini işleme"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) konulu bölüme de dikkat edin.
 
 Genel olarak, kullanıcıdan gelen girişleri kabul ederken aşağıdaki noktaları göz önünde bulundurun:
 

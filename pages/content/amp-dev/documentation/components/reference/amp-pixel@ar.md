@@ -36,7 +36,7 @@ teaser:
     <td>مكوِّن يمكن استخدامه كبكسل تتبع نموذجي لحساب مرات مشاهدة الصفحة.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
     <td>fixed وnodisplay</td>
   </tr>
   <tr>
@@ -83,7 +83,7 @@ teaser:
 
 ##### السمات المشتركة
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) التي تشمل مكونات AMP.
 
 ## الاستبدالات
 

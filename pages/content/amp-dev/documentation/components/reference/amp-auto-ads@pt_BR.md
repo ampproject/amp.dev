@@ -44,7 +44,7 @@ Insere anúncios em páginas AMP de maneira dinâmica usando um arquivo de confi
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">
             Layouts compatíveis
           </a>
         </strong>
@@ -91,7 +91,7 @@ O tipo de rede de publicidade e qualquer outra informação (exigida pela rede) 
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+    <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
   </tr>
 </table>
 

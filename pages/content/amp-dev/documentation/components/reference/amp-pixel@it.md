@@ -34,7 +34,7 @@ teaser:
     <td>Può essere utilizzato come un tipico pixel di monitoraggio per conteggiare le visualizzazioni di pagina</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layout supportati</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -84,7 +84,7 @@ quindi utilizzale solo se non sono presenti macro nell'src.
 
 ##### common attributes
 
-Questo elemento include [attributi comuni](https://www.ampproject.org/docs/reference/common_attributes) estesi ai componenti AMP.
+Questo elemento include [attributi comuni]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estesi ai componenti AMP.
 
 ## Sostituzioni
 

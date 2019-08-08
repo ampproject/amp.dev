@@ -35,7 +35,7 @@ teaser:
     <td>Ce composant peut être utilisé comme pixel de suivi standard pour comptabiliser les pages vues.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -82,7 +82,7 @@ Cela signifie que les macros contenues dans l'URL ne seront PAS développées. P
 
 ##### common attributes
 
-Cet élément inclut des [attributs communs](https://www.ampproject.org/docs/reference/common_attributes) étendus aux composants AMP.
+Cet élément inclut des [attributs communs]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) étendus aux composants AMP.
 
 ## Substitutions
 
