@@ -1,0 +1,1190 @@
+{
+  "/content/amp-dev/about/ads.html": [
+    "/content/amp-dev/about/success-stories/teads.yaml",
+    "/content/amp-dev/about/success-stories/triplelift.yaml",
+    "/shared/data/benefits.yaml"
+  ],
+  "/content/amp-dev/about/email.html": [
+    "/shared/data/benefits.yaml"
+  ],
+  "/content/amp-dev/about/stories.html": [
+    "/shared/data/benefits.yaml"
+  ],
+  "/content/amp-dev/about/websites.html": [
+    "/content/amp-dev/about/success-stories/gizmodo.yaml",
+    "/content/amp-dev/about/success-stories/indiatoday.yaml",
+    "/content/amp-dev/about/success-stories/washingtonpost.yaml",
+    "/shared/data/benefits.yaml"
+  ],
+  "/content/amp-dev/community/roadmap.html": [
+    "/content/amp-dev/community/roadmap.json"
+  ],
+  "/content/amp-dev/documentation/components/index.html": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/components/reference/amp-img.md",
+    "/content/amp-dev/documentation/components/reference/amp-img@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-pixel.md",
+    "/content/amp-dev/documentation/components/reference/amp-pixel@es.md",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/category-filter.j2",
+    "/views/partials/component-sidebar.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/teaser.j2"
+  ],
+  "/content/amp-dev/documentation/components/reference/amp-form.md": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/component-sidebar.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/tip.j2",
+    "/views/partials/toc.j2"
+  ],
+  "/content/amp-dev/documentation/components/reference/amp-form@es.md": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/components/reference/amp-analytics@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-bind@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-mustache@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-selector@es.md",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/faq/platform-and-vendor-partners.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/component-sidebar.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/tip.j2",
+    "/views/partials/toc.j2"
+  ],
+  "/content/amp-dev/documentation/components/reference/amp-story@es.md": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/components/reference/amp-consent.md",
+    "/content/amp-dev/documentation/components/reference/amp-sidebar@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-social-share@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-story@es.md",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/experimental@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index@es.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/component-sidebar.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/tip.j2",
+    "/views/partials/toc.j2"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/AMPHTML_Ads_Hello_World.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMPHTML_Ads_Hello_World.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/AMPHTML_ads_vs_non_AMP_ads.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMPHTML_ads_vs_non_AMP_ads.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/AMP_Story_Animations.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMP_Story_Animations.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/AMP_Story_Layouts.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMP_Story_Layouts.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/AMP_for_E-Commerce_Getting_Started.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMP_for_E-Commerce_Getting_Started.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Advanced_Server_Request.html": [
+    "/content/amp-dev/documentation/examples/documentation/Advanced_Server_Request.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Advanced_User_Consent_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Advanced_User_Consent_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.html": [
+    "/content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Animated_Snackbar.html": [
+    "/content/amp-dev/documentation/examples/documentation/Animated_Snackbar.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Article_Bookmark_Email.html": [
+    "/content/amp-dev/documentation/examples/documentation/Article_Bookmark_Email.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Banner_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Banner_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Basics_of_orientation_effects.html": [
+    "/content/amp-dev/documentation/examples/documentation/Basics_of_orientation_effects.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Basics_of_scrollbound_effects.html": [
+    "/content/amp-dev/documentation/examples/documentation/Basics_of_scrollbound_effects.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Carousel_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Carousel_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Checkout_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Checkout_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Click-to-play_overlay_for_amp-video.html": [
+    "/content/amp-dev/documentation/examples/documentation/Click-to-play_overlay_for_amp-video.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Client-side_filtering.html": [
+    "/content/amp-dev/documentation/examples/documentation/Client-side_filtering.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/ComboBox.html": [
+    "/content/amp-dev/documentation/examples/documentation/ComboBox.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Comment_Section.html": [
+    "/content/amp-dev/documentation/examples/documentation/Comment_Section.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Conference_Survey_Email.html": [
+    "/content/amp-dev/documentation/examples/documentation/Conference_Survey_Email.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Copy_Button.html": [
+    "/content/amp-dev/documentation/examples/documentation/Copy_Button.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Custom_Loading_Indicators.html": [
+    "/content/amp-dev/documentation/examples/documentation/Custom_Loading_Indicators.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Desktop_and_Landscape_Mode_Support.html": [
+    "/content/amp-dev/documentation/examples/documentation/Desktop_and_Landscape_Mode_Support.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Doubleclick_AMP_Story_Ads.html": [
+    "/content/amp-dev/documentation/examples/documentation/Doubleclick_AMP_Story_Ads.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Dynamic_Content_After_User-Interaction.html": [
+    "/content/amp-dev/documentation/examples/documentation/Dynamic_Content_After_User-Interaction.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Dynamically_updating_items_in_a_feed.html": [
+    "/content/amp-dev/documentation/examples/documentation/Dynamically_updating_items_in_a_feed.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/External_User_Consent_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/External_User_Consent_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Favorite_Button.html": [
+    "/content/amp-dev/documentation/examples/documentation/Favorite_Button.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Geolocation_with_amp-list.html": [
+    "/content/amp-dev/documentation/examples/documentation/Geolocation_with_amp-list.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Hello_World.html": [
+    "/content/amp-dev/documentation/examples/documentation/Hello_World.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Hello_World_Email.html": [
+    "/content/amp-dev/documentation/examples/documentation/Hello_World_Email.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Hotel.html": [
+    "/content/amp-dev/documentation/examples/documentation/Hotel.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Housing.html": [
+    "/content/amp-dev/documentation/examples/documentation/Housing.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.html": [
+    "/content/amp-dev/documentation/examples/documentation/How_to_support_Images_with_unknown_Dimensions.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.html": [
+    "/content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Integrating_Videos_in_AMP_an_Overview.html": [
+    "/content/amp-dev/documentation/examples/documentation/Integrating_Videos_in_AMP_an_Overview.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Internationalization.html": [
+    "/content/amp-dev/documentation/examples/documentation/Internationalization.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Joining_Analytics_Sessions.html": [
+    "/content/amp-dev/documentation/examples/documentation/Joining_Analytics_Sessions.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Ken_Burns.html": [
+    "/content/amp-dev/documentation/examples/documentation/Ken_Burns.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Linked_Dropdowns.html": [
+    "/content/amp-dev/documentation/examples/documentation/Linked_Dropdowns.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Live_Blog.html": [
+    "/content/amp-dev/documentation/examples/documentation/Live_Blog.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Mixing_Dynamic_and_Cached_Data.html": [
+    "/content/amp-dev/documentation/examples/documentation/Mixing_Dynamic_and_Cached_Data.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Multi_Page_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Multi_Page_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/News_Article.html": [
+    "/content/amp-dev/documentation/examples/documentation/News_Article.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/OAuth2_Login.html": [
+    "/content/amp-dev/documentation/examples/documentation/OAuth2_Login.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Paged_List.html": [
+    "/content/amp-dev/documentation/examples/documentation/Paged_List.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Payments_in_AMP.html": [
+    "/content/amp-dev/documentation/examples/documentation/Payments_in_AMP.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Poll.html": [
+    "/content/amp-dev/documentation/examples/documentation/Poll.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Product_Browse_Page.html": [
+    "/content/amp-dev/documentation/examples/documentation/Product_Browse_Page.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Product_Page.html": [
+    "/content/amp-dev/documentation/examples/documentation/Product_Page.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Publisher_Served_AMP_Story_Ads.html": [
+    "/content/amp-dev/documentation/examples/documentation/Publisher_Served_AMP_Story_Ads.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Recipe.html": [
+    "/content/amp-dev/documentation/examples/documentation/Recipe.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Rich_Media_Notifications.html": [
+    "/content/amp-dev/documentation/examples/documentation/Rich_Media_Notifications.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Scroll_to_top.html": [
+    "/content/amp-dev/documentation/examples/documentation/Scroll_to_top.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Scrollbound_Animation_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Scrollbound_Animation_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Scrollbound_Video_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Scrollbound_Video_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/SeatMap.html": [
+    "/content/amp-dev/documentation/examples/documentation/SeatMap.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/SeatMap_Multiple_Selection.html": [
+    "/content/amp-dev/documentation/examples/documentation/SeatMap_Multiple_Selection.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Shopping_Cart.html": [
+    "/content/amp-dev/documentation/examples/documentation/Shopping_Cart.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Show_More_Button.html": [
+    "/content/amp-dev/documentation/examples/documentation/Show_More_Button.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Slides_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Slides_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Stack_With_Bind_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Stack_With_Bind_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Star_Rating.html": [
+    "/content/amp-dev/documentation/examples/documentation/Star_Rating.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Stories_in_AMP.html": [
+    "/content/amp-dev/documentation/examples/documentation/Stories_in_AMP.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Story_User_Consent.html": [
+    "/content/amp-dev/documentation/examples/documentation/Story_User_Consent.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Supported_media_types_in_AMP_Stories.html": [
+    "/content/amp-dev/documentation/examples/documentation/Supported_media_types_in_AMP_Stories.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Tab_Panels_with_amp-selector.html": [
+    "/content/amp-dev/documentation/examples/documentation/Tab_Panels_with_amp-selector.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Tic_Tac_Toe.html": [
+    "/content/amp-dev/documentation/examples/documentation/Tic_Tac_Toe.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html": [
+    "/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.html": [
+    "/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Video_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Video_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Video_Carousels_with_amp-carousel.html": [
+    "/content/amp-dev/documentation/examples/documentation/Video_Carousels_with_amp-carousel.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.html": [
+    "/content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-3d-gltf.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-3d-gltf.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-access-laterpay.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-access-laterpay.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-access.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-access.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-accordion.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-accordion.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-addthis.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-addthis.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-analytics.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-analytics.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-anim.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-anim.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-app-banner.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-app-banner.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-audio.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-audio.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-autocomplete.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-autocomplete.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-bind.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-bind.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-bodymovin-animation.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-bodymovin-animation.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-brid-player.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-brid-player.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-brightcove.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-brightcove.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-call-tracking.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-call-tracking.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-carousel.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-carousel.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-dailymotion.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-dailymotion.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-date-countdown.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-date-countdown.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-date-display.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-date-display.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-date-picker.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-date-picker.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-dynamic-css-classes.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-dynamic-css-classes.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-experiment.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-experiment.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-facebook-comments.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-facebook-comments.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-facebook-like.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-facebook-like.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-facebook-page.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-facebook-page.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-facebook.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-facebook.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-fit-text.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-fit-text.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-font.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-font.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-form.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-form.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-fx-collection.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-fx-collection.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-geo.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-geo.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-gfycat.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-gfycat.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-gist.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-gist.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-google-document-embed.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-google-document-embed.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-google-vrview-image.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-google-vrview-image.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-hulu.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-hulu.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-iframe.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-iframe.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-ima-video.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-ima-video.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-image-lightbox.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-image-lightbox.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-image-slider.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-image-slider.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-img.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-img.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-inputmask.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-inputmask.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-instagram.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-instagram.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-install-serviceworker.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-install-serviceworker.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-jwplayer.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-jwplayer.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-kaltura-player.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-kaltura-player.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-lightbox-gallery.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-lightbox-gallery.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-lightbox.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-lightbox.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-list.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-list.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-live-list.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-live-list.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-mustache.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-mustache.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-next-page.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-next-page.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-o2-player.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-o2-player.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-pinterest.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-pinterest.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-pixel.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-pixel.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-reach-player.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-reach-player.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-recaptcha-input.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-recaptcha-input.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-reddit.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-reddit.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-selector.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-selector.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-sidebar.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-sidebar.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-social-share.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-social-share.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-soundcloud.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-soundcloud.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-springboard-player.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-springboard-player.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-timeago.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-timeago.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-twitter.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-twitter.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-user-notification.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-user-notification.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-video-iframe.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-video-iframe.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-video.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-video.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-vimeo.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-vimeo.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-vine.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-vine.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-web-push.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-web-push.json"
+  ],
+  "/content/amp-dev/documentation/examples/documentation/amp-youtube.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-youtube.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/AMPHTML_Ads_Hello_World.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMPHTML_Ads_Hello_World.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/AMPHTML_ads_vs_non_AMP_ads.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMPHTML_ads_vs_non_AMP_ads.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/AMP_Story_Animations.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMP_Story_Animations.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/AMP_Story_Layouts.html": [
+    "/content/amp-dev/documentation/examples/documentation/AMP_Story_Layouts.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Advanced_Server_Request.html": [
+    "/content/amp-dev/documentation/examples/documentation/Advanced_Server_Request.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Advanced_Video_Docking.html": [
+    "/content/amp-dev/documentation/examples/documentation/Advanced_Video_Docking.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Animated_Snackbar.html": [
+    "/content/amp-dev/documentation/examples/documentation/Animated_Snackbar.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Article_Bookmark_Email.html": [
+    "/content/amp-dev/documentation/examples/documentation/Article_Bookmark_Email.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Banner_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Banner_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Basic_User_Consent_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Basics_of_orientation_effects.html": [
+    "/content/amp-dev/documentation/examples/documentation/Basics_of_orientation_effects.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Carousel_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Carousel_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Checkout_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Checkout_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/ComboBox.html": [
+    "/content/amp-dev/documentation/examples/documentation/ComboBox.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Comment_Section.html": [
+    "/content/amp-dev/documentation/examples/documentation/Comment_Section.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Conference_Survey_Email.html": [
+    "/content/amp-dev/documentation/examples/documentation/Conference_Survey_Email.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Copy_Button.html": [
+    "/content/amp-dev/documentation/examples/documentation/Copy_Button.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Custom_Loading_Indicators.html": [
+    "/content/amp-dev/documentation/examples/documentation/Custom_Loading_Indicators.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Desktop_and_Landscape_Mode_Support.html": [
+    "/content/amp-dev/documentation/examples/documentation/Desktop_and_Landscape_Mode_Support.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Doubleclick_AMP_Story_Ads.html": [
+    "/content/amp-dev/documentation/examples/documentation/Doubleclick_AMP_Story_Ads.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Dynamically_updating_items_in_a_feed.html": [
+    "/content/amp-dev/documentation/examples/documentation/Dynamically_updating_items_in_a_feed.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Geolocation_with_amp-list.html": [
+    "/content/amp-dev/documentation/examples/documentation/Geolocation_with_amp-list.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Hello_World.html": [
+    "/content/amp-dev/documentation/examples/documentation/Hello_World.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Hello_World_Email.html": [
+    "/content/amp-dev/documentation/examples/documentation/Hello_World_Email.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Hotel.html": [
+    "/content/amp-dev/documentation/examples/documentation/Hotel.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Housing.html": [
+    "/content/amp-dev/documentation/examples/documentation/Housing.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Image_Galleries_with_amp-carousel.html": [
+    "/content/amp-dev/documentation/examples/documentation/Image_Galleries_with_amp-carousel.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Integrating_Videos_in_AMP_an_Overview.html": [
+    "/content/amp-dev/documentation/examples/documentation/Integrating_Videos_in_AMP_an_Overview.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Ken_Burns.html": [
+    "/content/amp-dev/documentation/examples/documentation/Ken_Burns.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Lightbox_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Linked_Dropdowns.html": [
+    "/content/amp-dev/documentation/examples/documentation/Linked_Dropdowns.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Live_Blog.html": [
+    "/content/amp-dev/documentation/examples/documentation/Live_Blog.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Multi_Page_Flow.html": [
+    "/content/amp-dev/documentation/examples/documentation/Multi_Page_Flow.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/News_Article.html": [
+    "/content/amp-dev/documentation/examples/documentation/News_Article.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/OAuth2_Login.html": [
+    "/content/amp-dev/documentation/examples/documentation/OAuth2_Login.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Paged_List.html": [
+    "/content/amp-dev/documentation/examples/documentation/Paged_List.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Payments_in_AMP.html": [
+    "/content/amp-dev/documentation/examples/documentation/Payments_in_AMP.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Poll.html": [
+    "/content/amp-dev/documentation/examples/documentation/Poll.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Product_Browse_Page.html": [
+    "/content/amp-dev/documentation/examples/documentation/Product_Browse_Page.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Product_Page.html": [
+    "/content/amp-dev/documentation/examples/documentation/Product_Page.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Publisher_Served_AMP_Story_Ads.html": [
+    "/content/amp-dev/documentation/examples/documentation/Publisher_Served_AMP_Story_Ads.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Recipe.html": [
+    "/content/amp-dev/documentation/examples/documentation/Recipe.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Scroll_to_top.html": [
+    "/content/amp-dev/documentation/examples/documentation/Scroll_to_top.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Scrollbound_Animation_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Scrollbound_Animation_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Scrollbound_Video_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Scrollbound_Video_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/SeatMap.html": [
+    "/content/amp-dev/documentation/examples/documentation/SeatMap.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/SeatMap_Multiple_Selection.html": [
+    "/content/amp-dev/documentation/examples/documentation/SeatMap_Multiple_Selection.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Show_More_Button.html": [
+    "/content/amp-dev/documentation/examples/documentation/Show_More_Button.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Slides_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Slides_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Stack_With_Bind_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Stack_With_Bind_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Star_Rating.html": [
+    "/content/amp-dev/documentation/examples/documentation/Star_Rating.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Stories_in_AMP.html": [
+    "/content/amp-dev/documentation/examples/documentation/Stories_in_AMP.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Story_User_Consent.html": [
+    "/content/amp-dev/documentation/examples/documentation/Story_User_Consent.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Supported_media_types_in_AMP_Stories.html": [
+    "/content/amp-dev/documentation/examples/documentation/Supported_media_types_in_AMP_Stories.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Tab_Panels_with_amp-selector.html": [
+    "/content/amp-dev/documentation/examples/documentation/Tab_Panels_with_amp-selector.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Tic_Tac_Toe.html": [
+    "/content/amp-dev/documentation/examples/documentation/Tic_Tac_Toe.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Video_Ad.html": [
+    "/content/amp-dev/documentation/examples/documentation/Video_Ad.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Video_Carousels_with_amp-carousel.html": [
+    "/content/amp-dev/documentation/examples/documentation/Video_Carousels_with_amp-carousel.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/Video_rotate_to_fullscreen_with_hint.html": [
+    "/content/amp-dev/documentation/examples/documentation/Video_rotate_to_fullscreen_with_hint.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-accordion.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-accordion.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-date-display.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-date-display.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-form.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-form.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-fx-flying-carpet.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-google-document-embed.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-google-document-embed.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-google-vrview-image.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-google-vrview-image.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-inputmask.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-inputmask.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-live-list.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-live-list.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-next-page.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-next-page.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-sidebar.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-sidebar.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-video-iframe.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-video-iframe.json"
+  ],
+  "/content/amp-dev/documentation/examples/previews/amp-web-push.html": [
+    "/content/amp-dev/documentation/examples/documentation/amp-web-push.json"
+  ],
+  "/content/amp-dev/documentation/guides-and-tutorials/index.html": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactive_widget/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/integrate/add-email.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/tracking-engagement.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/converting/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create_email.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index@es.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/faq/platform-and-vendor-partners.md",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/resources-grid.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/sidebar.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/toc.j2",
+    "/views/partials/video-carousel.j2"
+  ],
+  "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactive_widget/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/converting/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index@es.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/author.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/sidebar.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/tip.j2",
+    "/views/partials/toc.j2"
+  ],
+  "/content/amp-dev/documentation/guides-and-tutorials/learn/experimental@es.md": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactive_widget/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/converting/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index@es.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/author.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/sidebar.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/toc.j2"
+  ],
+  "/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp@es.md": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/components/reference/amp-ad@es.md",
+    "/content/amp-dev/documentation/components/reference/amp-img@es.md",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactive_widget/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/converting/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create/index@es.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index@es.md",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/author.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/breadcrumbs.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/content.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/format-toggle.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/sidebar-toggle-button.j2",
+    "/views/partials/sidebar-toggle-observer.j2",
+    "/views/partials/sidebar-toggle.j2",
+    "/views/partials/sidebar.j2",
+    "/views/partials/structured-data.j2",
+    "/views/partials/toc.j2",
+    "/views/partials/video.j2"
+  ],
+  "/content/amp-dev/documentation/tools.html": [
+    "/shared/data/tools.yaml"
+  ],
+  "/content/amp-dev/events/amp-conf-2019.html": [
+    "/shared/data/amp-conf.yaml"
+  ],
+  "/content/amp-dev/events/amp-conf-2019@ja.html": [
+    "/shared/data/amp-conf.yaml"
+  ],
+  "/content/amp-dev/events/amp-cs-2019.html": [
+    "/shared/data/amp-cs-2019.yaml"
+  ],
+  "/content/amp-dev/events/amp-roadshow.html": [
+    "/shared/data/roadshow.yaml"
+  ],
+  "/content/amp-dev/index.html": [
+    "/content/amp-dev/about/success-stories/carved.yaml",
+    "/content/amp-dev/about/success-stories/teads.yaml",
+    "/content/amp-dev/about/success-stories/washingtonpost.yaml",
+    "/content/amp-dev/about/success-stories/wompmobile.yaml",
+    "/shared/data/benefits.yaml",
+    "/shared/data/blog.yaml"
+  ],
+  "/content/amp-dev/offline.html": [
+    "/content/amp-dev/about/ads.html",
+    "/content/amp-dev/about/email.html",
+    "/content/amp-dev/about/how-amp-works.html",
+    "/content/amp-dev/about/mission-and-vision.html",
+    "/content/amp-dev/about/stories.html",
+    "/content/amp-dev/about/success-stories/index.html",
+    "/content/amp-dev/about/use-cases.html",
+    "/content/amp-dev/about/websites.html",
+    "/content/amp-dev/community/governance.md",
+    "/content/amp-dev/community/roadmap.html",
+    "/content/amp-dev/documentation/components/index.html",
+    "/content/amp-dev/documentation/courses/index.html",
+    "/content/amp-dev/documentation/examples/index.html",
+    "/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md",
+    "/content/amp-dev/documentation/guides-and-tutorials/index.html",
+    "/content/amp-dev/documentation/templates/index.html",
+    "/content/amp-dev/documentation/tools.html",
+    "/content/amp-dev/events/amp-conf-2019.html",
+    "/content/amp-dev/events/amp-cs-2019.html",
+    "/content/amp-dev/events/amp-roadshow.html",
+    "/content/amp-dev/index.html",
+    "/content/amp-dev/support/faq/index.html",
+    "/content/amp-dev/support/faq/platform-and-vendor-partners.html",
+    "/content/amp-dev/support/index.md",
+    "/views/partials/analytics.j2",
+    "/views/partials/banner.j2",
+    "/views/partials/burger-menu.j2",
+    "/views/partials/consent.j2",
+    "/views/partials/footer.j2",
+    "/views/partials/header.j2",
+    "/views/partials/service-worker.j2",
+    "/views/partials/structured-data.j2"
+  ],
+  "/content/amp-dev/support/faq/overview.md": [
+    "/shared/data/faq.yaml"
+  ],
+  "/content/amp-dev/support/faq/platform-and-vendor-partners.md": [
+    "/shared/data/faq.yaml"
+  ],
+  "/content/amp-dev/support/faq/platform-involvement.md": [
+    "/shared/data/faq.yaml"
+  ],
+  "/content/amp-dev/support/faq/publisher-monetization.md": [
+    "/shared/data/faq.yaml"
+  ],
+  "/content/amp-dev/support/faq/supported-browsers.md": [
+    "/shared/data/faq.yaml"
+  ]
+}
