@@ -131,13 +131,13 @@ L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient sp�
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Cet élément inclut des <a href="https://www.ampproject.org/docs/reference/common_attributes">attributs communs</a> étendus aux composants AMP.</td>
+    <td>Cet élément inclut des <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">attributs communs</a> étendus aux composants AMP.</td>
   </tr>
 </table>
 
 ## Espace réservé
 
-Le composant `amp-ad` peut, si nécessaire, accepter un élément enfant avec l'attribut `placeholder`. Si le réseau publicitaire le permet, cet élément reste affiché jusqu'à ce que l'annonce soit disponible pour consultation. Pour en savoir plus, consultez la section [Espaces réservés et créations de remplacement](https://www.ampproject.org/docs/guides/responsive/placeholders).
+Le composant `amp-ad` peut, si nécessaire, accepter un élément enfant avec l'attribut `placeholder`. Si le réseau publicitaire le permet, cet élément reste affiché jusqu'à ce que l'annonce soit disponible pour consultation. Pour en savoir plus, consultez la section [Espaces réservés et créations de remplacement]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

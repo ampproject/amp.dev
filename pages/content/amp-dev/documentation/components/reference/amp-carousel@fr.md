@@ -211,7 +211,7 @@ L'exemple suivant illustre un carrousel de trois images, sous lequel sont dispos
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Cet élément inclut des <a href="https://www.ampproject.org/docs/reference/common_attributes">attributs communs</a> étendus aux composants AMP.</td>
+            <td>Cet élément inclut des <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">attributs communs</a> étendus aux composants AMP.</td>
           </tr>
         </table>
 

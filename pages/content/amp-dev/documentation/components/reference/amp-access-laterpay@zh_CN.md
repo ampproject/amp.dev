@@ -140,7 +140,7 @@ limitations under the License.
         <tr>
           <td><code>sandbox</code></td>
           <td>布尔值</td>
-          <td>仅在使用沙盒模式测试服务器配置时才需要此属性。此外，您还需要使用 AMP 的<a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">开发模式</a>。</td>
+          <td>仅在使用沙盒模式测试服务器配置时才需要此属性。此外，您还需要使用 AMP 的<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">开发模式</a>。</td>
         </tr>
       </table>
 

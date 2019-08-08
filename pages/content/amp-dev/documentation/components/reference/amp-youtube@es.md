@@ -125,7 +125,7 @@ Con el diseño responsive (es decir, adaptable), la anchura y la altura del ejem
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento incluye <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comunes</a> que se aplican a los componentes de AMP.</td>
+            <td>Este elemento incluye <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comunes</a> que se aplican a los componentes de AMP.</td>
           </tr>
         </table>
 

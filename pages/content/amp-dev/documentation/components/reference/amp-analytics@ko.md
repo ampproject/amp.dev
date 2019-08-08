@@ -46,16 +46,16 @@ AMP 문서에서 애널리틱스 데이터를 캡처합니다.
 사이트에서 AMP 애널리틱스를 사용하기 전에, 타사 애널리틱스 도구를 사용하여 사용자 참여도를 분석할지 아니면 자체적인 사내 솔루션을 사용할지를 결정해야 합니다.
 
 [tip type="read-on"]
-[애널리틱스 구성](https://www.ampproject.org/docs/guides/analytics_amp) 가이드에서 AMP 애널리틱스에 대해 자세히 알아보세요.
+[애널리틱스 구성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) 가이드에서 AMP 애널리틱스에 대해 자세히 알아보세요.
 [/tip]
 
 ### 애널리틱스 공급업체로 데이터 전송 <a name="analytics-vendors"></a>
 
-AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별히 설계되었습니다. 하나 이상의 애널리틱스 공급업체와 이미 작업하고 있는 경우, 솔루션이 AMP와 통합되었는지 알아보려면 [애널리틱스 공급업체](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)의 목록을 검토하세요.
+AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별히 설계되었습니다. 하나 이상의 애널리틱스 공급업체와 이미 작업하고 있는 경우, 솔루션이 AMP와 통합되었는지 알아보려면 [애널리틱스 공급업체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})의 목록을 검토하세요.
 
 통합된 AMP 애널리틱스 공급업체의 경우:
 
-1. `<amp-analytics>` 태그에서 `type` 속성을 추가하고 값을 지정된 [공급업체](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)로 설정합니다.
+1. `<amp-analytics>` 태그에서 `type` 속성을 추가하고 값을 지정된 [공급업체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})로 설정합니다.
 1. 어떤 데이터를 확보 및 추적할지 결정하고 구성 데이터에서 세부정보를 지정합니다. 애널리틱스 데이터를 확보하는 방법에 관한 정보는 공급업체의 도움말을 참조하세요.
 
 애널리틱스 공급업체가 AMP와 통합되지 않은 경우 공급업체에 연락하여 지원을 요청하세요. 또한 AMP 프로젝트에서 공급업체의 추가를 요청하는 이슈를 생성할 것을 권장합니다. [AMP HTML에서 애널리틱스 도구 통합]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})도 참조하세요. 아니면 공급업체와 작업하여 데이터를 지정된 URL로 전송하세요. 아래의 [사내 데이터 전송](#sending-data-in-house) 섹션에서 자세히 알아보세요.
@@ -122,7 +122,7 @@ AMP와 통합되지 않은 애널리틱스 공급업체와의 작업이 사내 �
 ```
 
 [tip type="success"]
-일반적인 몇 가지 추적 사용 사례를 보려면(예: 페이지 조회수, 페이지 클릭수, 스크롤링 등) [애널리틱스: 사용 사례](https://www.ampproject.org/docs/guides/analytics/use_cases)를 참조하세요.
+일반적인 몇 가지 추적 사용 사례를 보려면(예: 페이지 조회수, 페이지 클릭수, 스크롤링 등) [애널리틱스: 사용 사례]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}})를 참조하세요.
 [/tip]
 
 ## 구성 데이터 지정
@@ -826,7 +826,7 @@ AMP 유효성 검사 도구 사양의 [amp-analytics rules](https://github.com/a
 
 **type**
 
-공급업체 유형을 지정합니다.  자세한 내용은 [애널리틱스 공급업체](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)의 목록을 참조하세요.
+공급업체 유형을 지정합니다.  자세한 내용은 [애널리틱스 공급업체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})의 목록을 참조하세요.
 
 예:
 

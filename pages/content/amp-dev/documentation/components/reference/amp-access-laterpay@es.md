@@ -141,7 +141,7 @@ Se pueden asignar los siguientes valores al objeto de configuración `laterpay`:
         <tr>
           <td><code>sandbox</code></td>
           <td>booleano</td>
-          <td>Solo se necesita si estás utilizando el modo de zona de pruebas para probar la configuración de tu servidor. Debes utilizar también el <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">modo de desarrollo</a> de AMP.</td>
+          <td>Solo se necesita si estás utilizando el modo de zona de pruebas para probar la configuración de tu servidor. Debes utilizar también el <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">modo de desarrollo</a> de AMP.</td>
         </tr>
       </table>
 

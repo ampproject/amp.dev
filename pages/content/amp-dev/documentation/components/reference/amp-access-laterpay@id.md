@@ -140,7 +140,7 @@ Nilai berikut dapat ditetapkan dalam objek konfigurasi `laterpay`:
         <tr>
           <td><code>sandbox</code></td>
           <td>boolean</td>
-          <td>Hanya diperlukan jika Anda menggunakan mode sandbox untuk menguji konfigurasi server. Anda juga harus menggunakan <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">mode pengembangan</a> AMP.</td>
+          <td>Hanya diperlukan jika Anda menggunakan mode sandbox untuk menguji konfigurasi server. Anda juga harus menggunakan <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">mode pengembangan</a> AMP.</td>
         </tr>
       </table>
 

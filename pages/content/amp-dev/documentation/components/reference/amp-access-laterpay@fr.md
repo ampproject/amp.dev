@@ -140,7 +140,7 @@ Les valeurs suivantes peuvent être définies dans l'objet de configuration `lat
         <tr>
           <td><code>sandbox</code></td>
           <td>valeur booléenne</td>
-          <td>Cette propriété n'est nécessaire que si vous utilisez le mode bac à sable pour tester la configuration de votre serveur. Vous devez également utiliser le <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">mode de développement</a> d'AMP.</td>
+          <td>Cette propriété n'est nécessaire que si vous utilisez le mode bac à sable pour tester la configuration de votre serveur. Vous devez également utiliser le <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">mode de développement</a> d'AMP.</td>
         </tr>
       </table>
 

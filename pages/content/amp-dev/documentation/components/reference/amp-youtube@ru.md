@@ -125,7 +125,7 @@ teaser:
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Этот элемент содержит <a href="https://www.ampproject.org/docs/reference/common_attributes">распространенные атрибуты</a>, расширенные до компонентов AMP.</td>
+            <td>Этот элемент содержит <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">распространенные атрибуты</a>, расширенные до компонентов AMP.</td>
           </tr>
         </table>
 

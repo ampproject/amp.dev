@@ -132,13 +132,13 @@ Los anuncios se cargan en los documentos AMP como cualquier otro recurso mediant
   </tr>
   <tr>
     <td width="40%"><strong>atributos comunes</strong></td>
-    <td>Este elemento incluye <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comunes</a> que se aplican a los componentes de AMP.</td>
+    <td>Este elemento incluye <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comunes</a> que se aplican a los componentes de AMP.</td>
   </tr>
 </table>
 
 ## Marcador de posición
 
-De forma opcional, `amp-ad` admite un elemento secundario con el atributo `placeholder`. Si la red publicitaria lo admite, este elemento se mostrará hasta que el anuncio esté disponible para publicarse. Obtén más información sobre los [marcadores de posición y los respaldos](https://www.ampproject.org/docs/guides/responsive/placeholders).
+De forma opcional, `amp-ad` admite un elemento secundario con el atributo `placeholder`. Si la red publicitaria lo admite, este elemento se mostrará hasta que el anuncio esté disponible para publicarse. Obtén más información sobre los [marcadores de posición y los respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

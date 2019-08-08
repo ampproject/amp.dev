@@ -174,7 +174,7 @@ Burada, `overflow` için CSS'yi görebilirsiniz:
 * *Yer tutucu*, `placeholder` özelliğine sahip bir alt öğedir. Bu öğe, `<amp-list>` başarıyla yükleninceye kadar gösterilir. Ayrıca bir yedek sağlanmışsa `<amp-list>` yüklenemediğinde yer tutucu gizlenir.
 * *Yedek*, `fallback` özelliğine sahip bir alt öğedir. Bu öğe, `<amp-list>` yüklenemezse gösterilir.
 
-[Yer Tutucu ve Yedekler](https://www.ampproject.org/docs/guides/responsive/placeholders) hakkında daha fazla bilgi edinin. Bir alt öğenin hem yer tutucu hem de yedek olamayacağını unutmayın.
+[Yer Tutucu ve Yedekler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) hakkında daha fazla bilgi edinin. Bir alt öğenin hem yer tutucu hem de yedek olamayacağını unutmayın.
 
 ```html
 <amp-list src="https://foo.com/list.json">

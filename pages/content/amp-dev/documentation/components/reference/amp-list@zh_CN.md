@@ -174,7 +174,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 * 占位符是具有 `placeholder` 属性的子元素。**在 `<amp-list>` 加载成功前，此元素会一直显示。如果还提供了后备元素，则占位符会在 `<amp-list>` 无法加载时隐藏。
 * 后备元素是具有 `fallback` 属性的子元素。**此元素会在 `<amp-list>` 无法加载时显示。
 
-如需了解详情，请参阅[占位符和后备行为](https://www.ampproject.org/docs/guides/responsive/placeholders)。请注意，子元素不能既是占位符又是后备元素。
+如需了解详情，请参阅[占位符和后备行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。请注意，子元素不能既是占位符又是后备元素。
 
 ```html
 <amp-list src="https://foo.com/list.json">

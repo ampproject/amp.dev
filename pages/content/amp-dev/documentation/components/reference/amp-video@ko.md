@@ -141,7 +141,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
             </tr>
             <tr>
               <td width="40%"><strong>공통 속성</strong></td>
-              <td>이 요소에는 AMP 구성요소로 확장된 <a href="https://www.ampproject.org/docs/reference/common_attributes">공통 속성</a>이 포함됩니다.</td>
+              <td>이 요소에는 AMP 구성요소로 확장된 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">공통 속성</a>이 포함됩니다.</td>
             </tr>
           </table>
 

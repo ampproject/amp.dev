@@ -46,16 +46,16 @@ Bir AMP dokümanındaki analiz verilerini yakalar.
 Sitenizde AMP Analytics'i kullanmaya başlamadan önce, kullanıcı etkileşimini analiz etmek için üçüncü taraf analiz araçlarını mı yoksa kendi şirket içi çözümünüzü mü kullanacağınıza karar vermeniz gerekir.
 
 [tip type="read-on"]
-[Analytics'i Yapılandırma](https://www.ampproject.org/docs/guides/analytics_amp) kılavuzunda AMP Analytics ile ilgili tüm bilgileri bulabilirsiniz.
+[Analytics'i Yapılandırma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) kılavuzunda AMP Analytics ile ilgili tüm bilgileri bulabilirsiniz.
 [/tip]
 
 ### Bir analiz tedarikçi firmasına veri gönderme <a name="analytics-vendors"></a>
 
-AMP Analytics, bir kez ölçmek ve çok sayıda kullanıcıya rapor göndermek üzere özel olarak tasarlanmıştır. Bir veya daha fazla analiz tedarikçi firmasıyla çalışıyorsanız çözümlerini AMP ile entegre edip etmediklerini öğrenmek için [Analiz Tedarikçi Firmaları](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) listesine bakın.
+AMP Analytics, bir kez ölçmek ve çok sayıda kullanıcıya rapor göndermek üzere özel olarak tasarlanmıştır. Bir veya daha fazla analiz tedarikçi firmasıyla çalışıyorsanız çözümlerini AMP ile entegre edip etmediklerini öğrenmek için [Analiz Tedarikçi Firmaları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) listesine bakın.
 
 Entegre AMP Analytics tedarikçi firmaları için:
 
-1. `<amp-analytics>` etiketine, `type` özelliğini ekleyin ve değerini, belirtilen [tedarikçi firma](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) bilgisine ayarlayın.
+1. `<amp-analytics>` etiketine, `type` özelliğini ekleyin ve değerini, belirtilen [tedarikçi firma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) bilgisine ayarlayın.
 1. Yakalamak ve izlemek istediğiniz verileri belirleyin ve bu ayrıntıları, yapılandırma verilerinde belirtin. Analiz verilerinin nasıl yakalanacağıyla ilgili talimatlar için tedarikçi firmanın dokümanlarına bakın.
 
 Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
@@ -122,7 +122,7 @@ Burada, sayfa görüntülemelerini izleyen basit bir örnek verilmiştir.  Bir s
 ```
 
   [tip type="success"]
-Bazı yaygın izleme kullanım alanları (ör. sayfa görüntülemeleri, sayfa tıklamaları, kaydırma vb.) için [Analytics: Kullanım Alanları](https://www.ampproject.org/docs/guides/analytics/use_cases) konusuna bakın.
+Bazı yaygın izleme kullanım alanları (ör. sayfa görüntülemeleri, sayfa tıklamaları, kaydırma vb.) için [Analytics: Kullanım Alanları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}) konusuna bakın.
 [/tip]
 
 ## Yapılandırma verilerini belirtme
@@ -825,7 +825,7 @@ Bunlar, `amp-analytics` bileşeninin geçerli özellikleridir:
 
 **type**
 
-Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarikçi firmaları](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) listesine bakın.
+Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarikçi firmaları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) listesine bakın.
 
 Örnek:
 

@@ -134,13 +134,13 @@ JavaScript della rete pubblicitaria all'interno della sandbox iframe.
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Questo elemento include <a href="https://www.ampproject.org/docs/reference/common_attributes">attributi comuni</a> estesi ai componenti AMP.</td>
+    <td>Questo elemento include <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">attributi comuni</a> estesi ai componenti AMP.</td>
   </tr>
 </table>
 
 ## Segnaposto
 
-Facoltativamente, `amp-ad` può supportare un elemento secondario con l'attributo `placeholder`. Se supportato dalla rete pubblicitaria, questo elemento viene mostrato finché l'annuncio è disponibile per la visualizzazione. Per ulteriori informazioni, consulta l'articolo relativo a [segnaposto e fallback](https://www.ampproject.org/docs/guides/responsive/placeholders).
+Facoltativamente, `amp-ad` può supportare un elemento secondario con l'attributo `placeholder`. Se supportato dalla rete pubblicitaria, questo elemento viene mostrato finché l'annuncio è disponibile per la visualizzazione. Per ulteriori informazioni, consulta l'articolo relativo a [segnaposto e fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

@@ -174,7 +174,7 @@ Secara opsional, `<amp-list>` mendukung placeholder dan/atau fallback.
 * *Placeholder* adalah elemen turunan dengan atribut `placeholder`. Elemen ini ditampilkan hingga `<amp-list>` berhasil dimuat. Jika fallback juga disediakan, placeholder disembunyikan saat `<amp-list>` gagal dimuat.
 * *Fallback* adalah elemen turunan dengan atribut `fallback`. Elemen ini ditampilkan saat `<amp-list>` gagal dimuat.
 
-Pelajari lebih lanjut di [Placeholder &amp; Fallback](https://www.ampproject.org/docs/guides/responsive/placeholders). Perhatikan bahwa sebuah elemen turunan tidak boleh menjadi placeholder sekaligus fallback.
+Pelajari lebih lanjut di [Placeholder &amp; Fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). Perhatikan bahwa sebuah elemen turunan tidak boleh menjadi placeholder sekaligus fallback.
 
 ```html
 <amp-list src="https://foo.com/list.json">

@@ -91,7 +91,7 @@ Debe especificarse en la etiqueta el tipo de red publicitaria y cualquier otra i
   </tr>
   <tr>
     <td width="40%"><strong>atributos comunes</strong></td>
-    <td>Este elemento incluye <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comunes</a> que se aplican a los componentes de AMP.</td>
+    <td>Este elemento incluye <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comunes</a> que se aplican a los componentes de AMP.</td>
   </tr>
 </table>
 

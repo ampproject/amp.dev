@@ -140,7 +140,7 @@ Yapılandırma, AMP Access'e benzer ancak yetkilendirme, geriye pingleme ve giri
         <tr>
           <td><code>sandbox</code></td>
           <td>boole</td>
-          <td>Yalnızca sunucu yapılandırmanızı test etmek için korumalı alan modunu kullanıyorsanız gereklidir. AMP'nin <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">geliştirme modunu</a> kullanmanız da gerekir.</td>
+          <td>Yalnızca sunucu yapılandırmanızı test etmek için korumalı alan modunu kullanıyorsanız gereklidir. AMP'nin <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">geliştirme modunu</a> kullanmanız da gerekir.</td>
         </tr>
       </table>
 

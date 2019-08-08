@@ -89,7 +89,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>常见属性</strong></td>
-    <td>此元素包含扩展到 AMP 组件的<a href="https://www.ampproject.org/docs/reference/common_attributes">常见属性</a>。</td>
+    <td>此元素包含扩展到 AMP 组件的<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">常见属性</a>。</td>
   </tr>
 </table>
 

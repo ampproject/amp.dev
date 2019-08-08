@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>教程</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">制作交互式 AMP 网页</a></td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">制作交互式 AMP 网页</a></td>
   </tr>
 </table>
 
@@ -452,7 +452,7 @@ null || 'default' // 'default'
     <tr>
       <td><code>&lt;amp-img&gt;</code></td>
       <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-      <td>绑定到 <code>[src]</code> 时，请务必同时绑定到 <code>[srcset]</code>，以便绑定在缓存中正常发挥作用。<br>请参阅相应的 <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">amp-img 属性</a>。</td>
+      <td>绑定到 <code>[src]</code> 时，请务必同时绑定到 <code>[srcset]</code>，以便绑定在缓存中正常发挥作用。<br>请参阅相应的 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">amp-img 属性</a>。</td>
     </tr>
     <tr>
       <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -482,7 +482,7 @@ null || 'default' // 'default'
     <tr>
       <td><code>&lt;amp-video&gt;</code></td>
       <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-      <td>请参阅相应的 <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">amp-video 属性</a>。</td>
+      <td>请参阅相应的 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">amp-video 属性</a>。</td>
     </tr>
     <tr>
       <td><code>&lt;amp-youtube&gt;</code></td>
@@ -653,7 +653,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
     <td>远程端点的网址，该端点将返回 JSON，以便更新此 <code>amp-state</code>。这必须是 CORS HTTP 服务。
       <code>src</code> 属性支持所有标准网址变量替换。如需了解详情，请参阅<a href="../../spec/amp-var-substitutions.md">替换指南</a>。
           [tip type="important"]
-        该端点必须符合 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">AMP 中的 CORS 请求</a>规范中规定的要求。
+        该端点必须符合 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">AMP 中的 CORS 请求</a>规范中规定的要求。
         [/tip]</td>
     </tr>
     <tr>
@@ -663,7 +663,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
           <li>支持的值：`omit`、`include`</li>
           <li>默认值：`omit`</li>
         </ul>
-        要发送凭据，请传递 <code>include</code> 的值。如果此值已设置，响应必须遵循 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">AMP CORS 安全指南</a>。</td>
+        要发送凭据，请传递 <code>include</code> 的值。如果此值已设置，响应必须遵循 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">AMP CORS 安全指南</a>。</td>
       </tr>
     </table>
 

@@ -174,7 +174,7 @@ Opcionalmente, o `<amp-list>` é compatível com o uso de um marcador e/ou subst
 * Um *marcador* é um elemento filho com o atributo `placeholder`. Esse elemento é mostrado até que o `<amp-list>` seja carregado. Se um substituto também for fornecido, o marcador ficará oculto quando `<amp-list>` não for carregado.
 * Um *substituto* é um elemento filho com o atributo `fallback`. Esse elemento é exibido se há falha no carregamento do `<amp-list>`.
 
-Saiba mais sobre [marcadores e substitutos](https://www.ampproject.org/docs/guides/responsive/placeholders). Um elemento filho não pode ser um marcador e um substituto ao mesmo tempo.
+Saiba mais sobre [marcadores e substitutos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). Um elemento filho não pode ser um marcador e um substituto ao mesmo tempo.
 
 ```html
 <amp-list src="https://foo.com/list.json">

@@ -138,7 +138,7 @@ amp-access と組み合わせて使用したい独自のペイウォール サ�
         <tr>
           <td><code>sandbox</code></td>
           <td>ブール値</td>
-          <td>サンドボックス モードを使用してサーバー設定をテストする場合にのみ指定する必要があります。また、AMP の<a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">開発モード</a>を使用する必要もあります。</td>
+          <td>サンドボックス モードを使用してサーバー設定をテストする場合にのみ指定する必要があります。また、AMP の<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">開発モード</a>を使用する必要もあります。</td>
         </tr>
       </table>
 

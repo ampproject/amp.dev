@@ -174,7 +174,7 @@ L'utilisation d'espaces réservés et/ou de créations de remplacement est possi
 * Un *espace réservé* est un élément enfant contenant l'attribut `placeholder`. Cet élément est affiché jusqu'au chargement du composant `<amp-list>`. Si une création de remplacement est également fournie, l'espace réservé est masqué en cas d'échec de chargement du composant `<amp-list>`.
 * Une *création de remplacement* est un élément enfant contenant l'attribut `fallback`. Cet élément est affiché en cas d'échec de chargement du composant `<amp-list>`.
 
-Pour en savoir plus sur les espaces réservés et les créations de remplacement, [cliquez ici](https://www.ampproject.org/docs/guides/responsive/placeholders). Notez qu'un élément enfant ne peut pas être à la fois un espace réservé et une création de remplacement.
+Pour en savoir plus sur les espaces réservés et les créations de remplacement, [cliquez ici]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). Notez qu'un élément enfant ne peut pas être à la fois un espace réservé et une création de remplacement.
 
 ```html
 <amp-list src="https://foo.com/list.json">

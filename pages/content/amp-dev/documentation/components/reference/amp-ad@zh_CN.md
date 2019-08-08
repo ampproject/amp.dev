@@ -131,13 +131,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>常见属性</strong></td>
-    <td>此元素包含扩展到 AMP 组件的<a href="https://www.ampproject.org/docs/reference/common_attributes">常见属性</a>。</td>
+    <td>此元素包含扩展到 AMP 组件的<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">常见属性</a>。</td>
   </tr>
 </table>
 
 ## 占位符
 
-`amp-ad` 可能支持包含 `placeholder` 属性的子元素。如果广告网络支持此元素，此元素会在广告可供查看之前一直显示。如需了解详情，请参阅[占位符和后备行为](https://www.ampproject.org/docs/guides/responsive/placeholders)。
+`amp-ad` 可能支持包含 `placeholder` 属性的子元素。如果广告网络支持此元素，此元素会在广告可供查看之前一直显示。如需了解详情，请参阅[占位符和后备行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。
 
 ```html
 <amp-ad width=300 height=250

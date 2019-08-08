@@ -130,13 +130,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
-    <td>يتضمن هذا العنصر <a href="https://www.ampproject.org/docs/reference/common_attributes">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+    <td>يتضمن هذا العنصر <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
   </tr>
 </table>
 
 ## العنصر النائب
 
-يتيح `amp-ad` اختياريًا عنصرًا ثانويًا من خلال السمة `placeholder`. إذا كانت شبكة الإعلانات متوافقة، سيتم عرض هذا العنصر إلى أن يتوفر الإعلان للعرض. يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية](https://www.ampproject.org/docs/guides/responsive/placeholders).
+يتيح `amp-ad` اختياريًا عنصرًا ثانويًا من خلال السمة `placeholder`. إذا كانت شبكة الإعلانات متوافقة، سيتم عرض هذا العنصر إلى أن يتوفر الإعلان للعرض. يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

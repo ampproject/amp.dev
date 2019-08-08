@@ -173,7 +173,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 * プレースホルダ**は、`placeholder` 属性が設定された子要素です。この要素は、`<amp-list>` による読み込みが成功するまで表示されます。フォールバックも指定されている場合、`<amp-list>` が読み込みに失敗すると、プレースホルダが表示されなくなります。
 * フォールバック**は、`fallback` 属性が設定された子要素です。この要素は、`<amp-list>` が読み込みに失敗すると表示されます。
 
-詳しくは、[プレースホルダとフォールバック](https://www.ampproject.org/docs/guides/responsive/placeholders)をご覧ください。子要素にプレースホルダとフォールバックの両方を指定することはできません。
+詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。子要素にプレースホルダとフォールバックの両方を指定することはできません。
 
 ```html
 <amp-list src="https://foo.com/list.json">

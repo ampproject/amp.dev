@@ -130,13 +130,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>共通の属性</strong></td>
-    <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+    <td>この要素には、AMP コンポーネントに拡張された<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">共通の属性</a>が含まれます。</td>
   </tr>
 </table>
 
 ## プレースホルダ
 
-`amp-ad` は必要に応じて、`placeholder` 属性が設定された子要素をサポートします。広告ネットワークでこの子要素がサポートされている場合、広告を表示できるようになるまでこの子要素が表示されます。詳しくは、[プレースホルダとフォールバック](https://www.ampproject.org/docs/guides/responsive/placeholders)をご覧ください。
+`amp-ad` は必要に応じて、`placeholder` 属性が設定された子要素をサポートします。広告ネットワークでこの子要素がサポートされている場合、広告を表示できるようになるまでこの子要素が表示されます。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
 
 ```html
 <amp-ad width=300 height=250

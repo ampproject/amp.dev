@@ -177,7 +177,7 @@ amp-list div[role="list"] {
 * *العنصر النائب* هو عنصر ثانوي له السمة `placeholder`. ويظهر هذا العنصر حتى يتم تحميل `<amp-list>` بنجاح. في حال توفير عنصر احتياطي، فسيتم إخفاء العنصر النائب عند تعذّر تحميل `<amp-list>`.
 * *العنصر الاحتياطي* هو عنصر ثانوي له السمة `fallback`. ويظهر هذا العنصر إذا تعذّر تحميل `<amp-list>`.
 
-يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية](https://www.ampproject.org/docs/guides/responsive/placeholders). وتجدر ملاحظة أن العنصر الثانوي الواحد لا يمكن أن يكون عنصرًا نائبًا واحتياطيًا معًا.
+يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). وتجدر ملاحظة أن العنصر الثانوي الواحد لا يمكن أن يكون عنصرًا نائبًا واحتياطيًا معًا.
 
 ```html
 <amp-list src="https://foo.com/list.json">

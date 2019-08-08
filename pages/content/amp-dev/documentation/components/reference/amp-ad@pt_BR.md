@@ -131,13 +131,13 @@ O `<amp-ad>` exige que os valores de largura e altura sejam especificados de aco
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+    <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
   </tr>
 </table>
 
 ## Marcador
 
-O `amp-ad` também pode ser compatível com um elemento filho com o atributo `placeholder`. Se for compatível com a rede de publicidade, esse elemento será exibido até que o anúncio esteja disponível para visualização. Saiba mais sobre [marcadores e substitutos](https://www.ampproject.org/docs/guides/responsive/placeholders).
+O `amp-ad` também pode ser compatível com um elemento filho com o atributo `placeholder`. Se for compatível com a rede de publicidade, esse elemento será exibido até que o anúncio esteja disponível para visualização. Saiba mais sobre [marcadores e substitutos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

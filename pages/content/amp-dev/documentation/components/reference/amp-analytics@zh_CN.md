@@ -46,16 +46,16 @@ limitations under the License.
 开始对您的网站使用 AMP 分析组件之前，您需要决定是要使用第三方分析工具来分析用户互动情况，还是使用您自己的内部解决方案。
 
 [tip type="read-on"]
-参阅[配置分析工具](https://www.ampproject.org/docs/guides/analytics_amp)指南，全面了解 AMP 分析。
+参阅[配置分析工具]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})指南，全面了解 AMP 分析。
 [/tip]
 
 ### 将数据发送到分析服务供应商<a name="analytics-vendors"></a>
 
-AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在与一个或多个分析服务供应商合作，请查阅[分析服务供应商](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)列表，看看他们是否已将自己的解决方案与 AMP 集成。
+AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在与一个或多个分析服务供应商合作，请查阅[分析服务供应商]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表，看看他们是否已将自己的解决方案与 AMP 集成。
 
 对于已集成 AMP 的分析服务供应商：
 
-1. 在 `<amp-analytics>` 标记中，添加 `type` 属性，并将其值设为指定的[供应商](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)。
+1. 在 `<amp-analytics>` 标记中，添加 `type` 属性，并将其值设为指定的[供应商]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})。
 1. 确定要捕获和跟踪哪些数据，并在配置数据中指定这些详细信息。有关如何捕获分析数据的说明，请参阅供应商的文档。
 
 如果分析服务供应商未集成 AMP，请与其联系以寻求支持。另外，我们建议您在 AMP 项目中创建一个问题，以请求添加相应供应商。另请参阅[在 AMP HTML 中集成您的分析工具]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})。您也可以与供应商合作，以将数据发送到他们指定的网址。如需了解详情，请参阅下面的[在内部发送数据](#sending-data-in-house)部分。
@@ -122,7 +122,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 ```
 
   [tip type="success"]
-对于一些常见的跟踪用例（例如网页浏览、网页点击、滚动等），请参阅[分析：用例](https://www.ampproject.org/docs/guides/analytics/use_cases)。
+对于一些常见的跟踪用例（例如网页浏览、网页点击、滚动等），请参阅[分析：用例]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}})。
 [/tip]
 
 ## 指定配置数据
@@ -821,7 +821,7 @@ transport: {
 
 **type**
 
-用于指定供应商的类型。有关详情，请参阅[分析服务供应商](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)列表。
+用于指定供应商的类型。有关详情，请参阅[分析服务供应商]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表。
 
 示例：
 

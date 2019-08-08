@@ -132,13 +132,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>공통 속성</strong></td>
-    <td>이 요소에는 AMP 구성요소로 확장된 <a href="https://www.ampproject.org/docs/reference/common_attributes">공통 속성</a>이 포함됩니다.</td>
+    <td>이 요소에는 AMP 구성요소로 확장된 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">공통 속성</a>이 포함됩니다.</td>
   </tr>
 </table>
 
 ## 자리표시자
 
-필요한 경우 `amp-ad`는 `placeholder` 속성으로 하위 요소를 지원합니다. 광고 네트워크에서 지원하는 경우 게재할 수 있는 광고가 없으면 이 요소가 표시됩니다. [자리표시자 및 대체 동작](https://www.ampproject.org/docs/guides/responsive/placeholders)에서 자세히 알아보세요.
+필요한 경우 `amp-ad`는 `placeholder` 속성으로 하위 요소를 지원합니다. 광고 네트워크에서 지원하는 경우 게재할 수 있는 광고가 없으면 이 요소가 표시됩니다. [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에서 자세히 알아보세요.
 
 ```html
 <amp-ad width=300 height=250

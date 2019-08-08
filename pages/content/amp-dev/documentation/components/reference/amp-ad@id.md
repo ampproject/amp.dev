@@ -130,13 +130,13 @@ Iklan dimuat seperti semua resource lainnya dalam dokumen AMP, dengan elemen kus
   </tr>
   <tr>
     <td width="40%"><strong>atribut umum</strong></td>
-    <td>Elemen ini mencakup <a href="https://www.ampproject.org/docs/reference/common_attributes">atribut umum</a> yang diperluas ke komponen AMP.</td>
+    <td>Elemen ini mencakup <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atribut umum</a> yang diperluas ke komponen AMP.</td>
   </tr>
 </table>
 
 ## Placeholder
 
-Secara opsional, `amp-ad` mendukung elemen turunan dengan atribut `placeholder`. Jika didukung oleh jaringan iklan, elemen ini diperlihatkan hingga iklan tersedia untuk ditampilkan. Pelajari lebih lanjut di [Placeholder &amp; Fallback](https://www.ampproject.org/docs/guides/responsive/placeholders).
+Secara opsional, `amp-ad` mendukung elemen turunan dengan atribut `placeholder`. Jika didukung oleh jaringan iklan, elemen ini diperlihatkan hingga iklan tersedia untuk ditampilkan. Pelajari lebih lanjut di [Placeholder &amp; Fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

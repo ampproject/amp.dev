@@ -138,7 +138,7 @@ AMP 액세스와 함께 사용하려는 자체 페이월 서비스가 있고 동
         <tr>
           <td><code>sandbox</code></td>
           <td>부울</td>
-          <td>샌드박스 모드를 사용해 서버 구성을 테스트하는 경우에만 필요합니다. AMP의 <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">개발 모드</a>도 사용해야 합니다.</td>
+          <td>샌드박스 모드를 사용해 서버 구성을 테스트하는 경우에만 필요합니다. AMP의 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">개발 모드</a>도 사용해야 합니다.</td>
         </tr>
       </table>
 

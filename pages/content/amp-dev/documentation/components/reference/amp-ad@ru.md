@@ -130,13 +130,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Этот элемент содержит <a href="https://www.ampproject.org/docs/reference/common_attributes">распространенные атрибуты</a>, расширенные до компонентов AMP.</td>
+    <td>Этот элемент содержит <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">распространенные атрибуты</a>, расширенные до компонентов AMP.</td>
   </tr>
 </table>
 
 ## Тег
 
-Элемент `amp-ad` может поддерживать дочерний элемент с атрибутом `placeholder`. Если такая возможность предусмотрена в рекламной сети, этот элемент показывается до тех пор, пока объявление доступно для просмотра. Подробные сведения о заполнителях и резервных атрибутах можно найти в [этой статье](https://www.ampproject.org/docs/guides/responsive/placeholders).
+Элемент `amp-ad` может поддерживать дочерний элемент с атрибутом `placeholder`. Если такая возможность предусмотрена в рекламной сети, этот элемент показывается до тех пор, пока объявление доступно для просмотра. Подробные сведения о заполнителях и резервных атрибутах можно найти в [этой статье]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
 
 ```html
 <amp-ad width=300 height=250

@@ -131,13 +131,13 @@ Reklamlar, AMP dokümanlarındaki diğer tüm kaynaklar gibi `<amp-ad>` adlı ö
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="https://www.ampproject.org/docs/reference/common_attributes">ortak özellikleri</a> içerir.</td>
+    <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">ortak özellikleri</a> içerir.</td>
   </tr>
 </table>
 
 ## Yer Tutucu
 
-İsteğe bağlı olarak `amp-ad`, `placeholder` özelliğine sahip bir alt öğeyi destekler. Reklam ağı tarafından desteklenirse bu öğe, reklam görüntülenmeye hazır olana kadar gösterilir. [Yer Tutucu ve Yedekler](https://www.ampproject.org/docs/guides/responsive/placeholders) hakkında daha fazla bilgi edinin.
+İsteğe bağlı olarak `amp-ad`, `placeholder` özelliğine sahip bir alt öğeyi destekler. Reklam ağı tarafından desteklenirse bu öğe, reklam görüntülenmeye hazır olana kadar gösterilir. [Yer Tutucu ve Yedekler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) hakkında daha fazla bilgi edinin.
 
 ```html
 <amp-ad width=300 height=250

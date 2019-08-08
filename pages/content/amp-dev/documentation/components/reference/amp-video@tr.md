@@ -138,7 +138,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="https://www.ampproject.org/docs/reference/common_attributes">ortak özellikleri</a> içerir.</td>
+          <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">ortak özellikleri</a> içerir.</td>
         </tr>
       </table>
 

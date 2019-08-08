@@ -174,7 +174,7 @@ Este es el CSS de `overflow`:
 * Un *marcador de posición* es un elemento secundario con el atributo `placeholder`. Este elemento se muestra hasta que `<amp-list>` se carga correctamente. Si también se proporciona un respaldo, el marcador de posición se oculta si no se carga `<amp-list>`.
 * Un *respaldo* es un elemento secundario con el atributo `fallback`. Este elemento se muestra si no se carga `<amp-list>`.
 
-Obtén más información sobre los [marcadores de posición y los respaldos](https://www.ampproject.org/docs/guides/responsive/placeholders). Ten en cuenta que un elemento secundario no puede funcionar a la vez como marcador de posición y como respaldo.
+Obtén más información sobre los [marcadores de posición y los respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). Ten en cuenta que un elemento secundario no puede funcionar a la vez como marcador de posición y como respaldo.
 
 ```html
 <amp-list src="https://foo.com/list.json">

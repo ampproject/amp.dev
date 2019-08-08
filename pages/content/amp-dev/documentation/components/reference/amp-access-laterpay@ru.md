@@ -139,7 +139,7 @@ limitations under the License.
         <tr>
           <td><code>sandbox</code></td>
           <td>boolean</td>
-          <td>Требуется только в том случае, если вы используете тестовую среду для проверки конфигурации сервера. Вам также необходимо применить <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">режим разработчика</a> AMP.</td>
+          <td>Требуется только в том случае, если вы используете тестовую среду для проверки конфигурации сервера. Вам также необходимо применить <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">режим разработчика</a> AMP.</td>
         </tr>
       </table>
 

@@ -174,7 +174,7 @@ Facoltativamente, `<amp-list>` supporta un segnaposto e/o un fallback.
 * Un *segnaposto* è un elemento secondario con l'attributo `placeholder`. Questo elemento viene mostrato finché il caricamento `<amp-list>` non viene completato. Se viene fornito anche un fallback, il segnaposto viene nascosto quando `<amp-list>` non viene caricato.
 * Un *fallback* è un elemento secondario con l'attributo `fallback`. Questo elemento viene visualizzato se `<amp-list>` non viene caricato.
 
-Per ulteriori informazioni, consulta l'articolo relativo a [segnaposto e fallback](https://www.ampproject.org/docs/guides/responsive/placeholders). Tieni presente che un elemento secondario non può essere contemporaneamente un segnaposto e un fallback.
+Per ulteriori informazioni, consulta l'articolo relativo a [segnaposto e fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). Tieni presente che un elemento secondario non può essere contemporaneamente un segnaposto e un fallback.
 
 ```html
 <amp-list src="https://foo.com/list.json">

@@ -212,7 +212,7 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+            <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
           </tr>
         </table>
 

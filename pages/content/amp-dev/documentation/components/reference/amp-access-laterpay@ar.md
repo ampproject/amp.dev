@@ -145,7 +145,7 @@ limitations under the License.
   <tr>
     <td><code>sandbox</code></td>
     <td>منطقي</td>
-    <td>تكون مطلوبة فقط إذا كنت تستخدم وضع الحماية لاختبار تهيئة الخادم. تحتاج أيضًا إلى استخدام <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">وضع مطوّر البرامج</a> في AMP.</td>
+    <td>تكون مطلوبة فقط إذا كنت تستخدم وضع الحماية لاختبار تهيئة الخادم. تحتاج أيضًا إلى استخدام <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">وضع مطوّر البرامج</a> في AMP.</td>
   </tr>
 </table>
 

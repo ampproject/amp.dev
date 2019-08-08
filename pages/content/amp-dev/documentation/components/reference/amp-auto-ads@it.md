@@ -96,7 +96,7 @@ devono essere specificati nel tag.
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Questo elemento include <a href="https://www.ampproject.org/docs/reference/common_attributes">attributi comuni</a> estesi ai componenti AMP.</td>
+    <td>Questo elemento include <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">attributi comuni</a> estesi ai componenti AMP.</td>
   </tr>
 </table>
 

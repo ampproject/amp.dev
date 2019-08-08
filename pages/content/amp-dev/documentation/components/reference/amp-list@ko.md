@@ -181,7 +181,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 * *자리표시자*는 `placeholder` 속성을 사용하는 하위 요소입니다. 이 요소는 `<amp-list>`가 성공적으로 로드될 때까지 표시됩니다. 대체도 제공되는 경우 `<amp-list>`를 로드하지 못하면 자리표시자를 숨깁니다.
 * *대체*는 `fallback` 속성을 사용하는 하위 요소입니다. `<amp-list>`를 로드하지 못하면 이 요소가 표시됩니다.
 
-[자리표시자 및 대체](https://www.ampproject.org/docs/guides/responsive/placeholders)에 관해 자세히 알아보세요. 하위 요소는 자리표시자와 대체 중 하나여야 합니다.
+[자리표시자 및 대체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에 관해 자세히 알아보세요. 하위 요소는 자리표시자와 대체 중 하나여야 합니다.
 
 ```html
 <amp-list src="https://foo.com/list.json">

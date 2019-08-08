@@ -45,16 +45,16 @@ AMP ドキュメントからアナリティクス データを収集します。
 
 サイトで AMP アナリティクスを使い始める前に、ユーザー エンゲージメント分析にサードパーティのアナリティクス ツールを使用するか、社内のソリューションを使用するかを決める必要があります。
 
-[tip type="read-on"] AMP アナリティクスについて詳しくは、[アナリティクスの設定](https://www.ampproject.org/docs/guides/analytics_amp)ガイドをご覧ください。
+[tip type="read-on"] AMP アナリティクスについて詳しくは、[アナリティクスの設定]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})ガイドをご覧ください。
 [/tip]
 
 ### アナリティクス ベンダーへのデータの送信<a name="analytics-vendors"></a>
 
-AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。すでに 1 社以上のアナリティクス ベンダーを利用している場合は、[アナリティクス ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
+AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。すでに 1 社以上のアナリティクス ベンダーを利用している場合は、[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
 
 統合型 AMP アナリティクス ベンダーの場合:
 
-1. `<amp-analytics>` タグに `type` 属性を追加して、その値を指定されている[ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)に設定します。
+1. `<amp-analytics>` タグに `type` 属性を追加して、その値を指定されている[ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})に設定します。
 1. どのデータを収集してトラッキングするかを決め、設定データにその詳細を指定します。アナリティクス データの収集方法については、ベンダーのドキュメントをご覧ください。
 
 アナリティクス ベンダーが AMP を統合していない場合は、ベンダーに問い合わせてサポートを依頼してください。AMP プロジェクトに問題を報告し、ベンダーを追加するようリクエストすることをおすすめします。また、[AMP HTML にアナリティクス ツールを統合する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})方法もご確認ください。さらに、指定された URL にデータを送信する際には、ベンダーと協力してください。詳しくは、以下の[社内へのデータの送信](#sending-data-in-house)をご覧ください。
@@ -118,7 +118,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 </amp-analytics>
 ```
 
-[tip type="success"] トラッキングの一般的なユースケース（ページの視聴回数、ページのクリック数、スクロールなど）については、[アナリティクス: ユースケース](https://www.ampproject.org/docs/guides/analytics/use_cases)をご覧ください、
+[tip type="success"] トラッキングの一般的なユースケース（ページの視聴回数、ページのクリック数、スクロールなど）については、[アナリティクス: ユースケース]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}})をご覧ください、
 [/tip]
 
 ## 設定データの指定
@@ -820,7 +820,7 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 **type**
 
-ベンダーのタイプを指定します。詳しくは、[アナリティクス ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)のリストをご覧ください。
+ベンダーのタイプを指定します。詳しくは、[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})のリストをご覧ください。
 
 例:
 

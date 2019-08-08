@@ -109,7 +109,7 @@ limitations under the License.
                 </tr>
                 <tr>
                   <td width="40%"><strong>common attributes</strong></td>
-                  <td><a href="https://www.ampproject.org/docs/reference/common_attributes">Атрибуты</a>, которые поддерживаются большинством компонентов AMP.</td>
+                  <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">Атрибуты</a>, которые поддерживаются большинством компонентов AMP.</td>
                 </tr>
               </table>
 
