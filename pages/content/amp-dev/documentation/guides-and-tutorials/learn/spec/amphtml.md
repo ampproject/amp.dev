@@ -449,13 +449,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 See the [AMP versioning policy](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
 
 
-### Extended templates
+### Templates
 
 Templates render HTML content based on the language-specific template and provided JSON data.
 
 See the [AMP template spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) for details about supported templates.
 
-Extended templates are not shipped with the AMP runtime and have to be downloaded just as with extended elements.
+Templates are not shipped with the AMP runtime and have to be downloaded just as with extended elements.
 Extended components are loaded by including a `<script>` tag in the head of the document like this:
 
 [sourcecode:html]
@@ -480,7 +480,7 @@ The `id` attribute is optional. Individual AMP elements discover their own templ
 
 The syntax within the template element depends on the specific template language. However, the template language could be restricted within AMP. For instance, in accordance with the "template" element, all productions have to be over a valid well-formed DOM. All of the template outputs are also subject to sanitizing to ensure AMP-valid output.
 
-To learn about the syntax and restrictions for an extended template, visit the [extended template's documentation](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
+To learn about the syntax and restrictions for an template, visit the [template's documentation](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
 
 ##### URL
 
