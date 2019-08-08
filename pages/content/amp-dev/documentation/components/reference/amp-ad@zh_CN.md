@@ -44,7 +44,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>注意：如果没有此脚本，amp-ad 也许仍可以工作，但我们强烈建议使用该脚本，以保证未来的兼容性。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">支持的布局</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、intrinsic、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -57,7 +57,7 @@ limitations under the License.
 
 与 AMP 文档中的所有其他资源一样，广告会随一个名为 `<amp-ad>` 的特殊自定义元素一起加载。AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AMP runtime 会通过 iframe 沙盒将来自另一个来源的 iframe 加载为 AMP 文档，并且会在该 iframe 沙盒内执行相应广告网络的 JS。
 
-`<amp-ad>` 要求根据其布局类型需要遵从的[规则](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)指定宽度值和高度值，并要求提供 `type` 参数，以便选择展示哪个广告网络。标记上的所有 `data-*` 属性会自动作为参数传递给最终呈现广告的代码。给定类型的广告网络所需的 `data-` 属性取决于广告网络，并且必须与广告网络一起记录。
+`<amp-ad>` 要求根据其布局类型需要遵从的[规则]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)指定宽度值和高度值，并要求提供 `type` 参数，以便选择展示哪个广告网络。标记上的所有 `data-*` 属性会自动作为参数传递给最终呈现广告的代码。给定类型的广告网络所需的 `data-` 属性取决于广告网络，并且必须与广告网络一起记录。
 
 #### 示例：展示一些广告
 
@@ -131,13 +131,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>常见属性</strong></td>
-    <td>此元素包含扩展到 AMP 组件的<a href="https://www.ampproject.org/docs/reference/common_attributes">常见属性</a>。</td>
+    <td>此元素包含扩展到 AMP 组件的<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">常见属性</a>。</td>
   </tr>
 </table>
 
 ## 占位符
 
-`amp-ad` 可能支持包含 `placeholder` 属性的子元素。如果广告网络支持此元素，此元素会在广告可供查看之前一直显示。如需了解详情，请参阅[占位符和后备行为](https://www.ampproject.org/docs/guides/responsive/placeholders)。
+`amp-ad` 可能支持包含 `placeholder` 属性的子元素。如果广告网络支持此元素，此元素会在广告可供查看之前一直显示。如需了解详情，请参阅[占位符和后备行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。
 
 ```html
 <amp-ad width=300 height=250
@@ -164,12 +164,12 @@ limitations under the License.
 
 有 3 种方式可通过视频广告在 AMP 中利用视频获利。
 
-1. AMP 自动支持一些可通过广告获利的视频播放器，例如 BrightCove、DailyMotion 等。如需完整列表，请参阅[媒体](https://www.ampproject.org/docs/reference/components#media)组件。
+1. AMP 自动支持一些可通过广告获利的视频播放器，例如 BrightCove、DailyMotion 等。如需完整列表，请参阅[媒体]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media)组件。
 
 1. 使用内置 IMA SDK 和 HTML5 视频播放器的 [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) 组件。
 1. 如果使用的视频播放器在 AMP 中不受支持，则可以使用 [amp-iframe](https://ampbyexample.com/components/amp-iframe/) 提供自定义播放器。使用 `amp-iframe` 方法时，请注意以下事项：
 
-    * 如果在第一个视口中加载播放器，请确保有一张海报。[详细信息](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder)。
+    * 如果在第一个视口中加载播放器，请确保有一张海报。[详细信息]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)。
     * 必须通过 HTTPS 投放视频和海报。</li>
 
 ## 从自定义网域投放广告
@@ -201,7 +201,7 @@ iframe 还应强制规定它们只能 iframe 到预期的来源。来源为：
 
 是否进行此项优化完全由您自己决定：有时需要先优化广告请求，然后再向广告服务器发出广告请求。
 
-如果您的广告网络支持[快速获取](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation)，请使用[实时配置](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC)。（例如，DoubleClick 和 AdSense 集成均支持快速获取和 RTC）
+如果您的广告网络支持[快速获取]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation)，请使用[实时配置](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC)。（例如，DoubleClick 和 AdSense 集成均支持快速获取和 RTC）
 
 如果您的广告网络使用延迟获取，您可以将回调传递给 [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) 文件中的 `draw3p` 函数调用。该回调会接收传入配置作为第一个参数，然后接收另一个回调作为第二个参数（在下面的示例中，调用了 `done`）。必须使用更新后的配置调用该回调，广告呈现才会继续。
 

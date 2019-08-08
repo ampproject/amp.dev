@@ -39,7 +39,7 @@ Muestra un botón para compartir contenido en redes sociales.
     </td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, nodisplay y responsive</td>
   </tr>
   <tr>

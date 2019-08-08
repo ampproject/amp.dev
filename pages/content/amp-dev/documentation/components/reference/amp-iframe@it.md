@@ -34,7 +34,7 @@ Mostra un iframe.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layout supportati</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@ Per vedere altre demo relative ad `amp-iframe`, visita il sito [AMP By Example](
 
 `amp-iframe` **non deve** essere usato principalmente per pubblicare annunci. `amp-iframe` può essere utilizzato per mostrare video all'interno dei quali compaiono degli annunci. Questa norma AMP può essere applicata non visualizzando i rispettivi iframe.
 
-I casi d'uso pubblicitari dovrebbero invece utilizzare [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad).
+I casi d'uso pubblicitari dovrebbero invece utilizzare [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
 
 I motivi di questa norma sono i seguenti:
 
@@ -112,7 +112,7 @@ I motivi di questa norma sono i seguenti:
                 </tr>
                 <tr>
                   <td width="40%"><strong>common attributes</strong></td>
-                  <td>Questo elemento include <a href="https://www.ampproject.org/docs/reference/common_attributes">attributi comuni</a> estesi ai componenti AMP.</td>
+                  <td>Questo elemento include <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">attributi comuni</a> estesi ai componenti AMP.</td>
                 </tr>
               </table>
 
@@ -225,7 +225,7 @@ Il messaggio di intersezione verrà inviato dall'elemento principale all'iframe 
 
 # Iframe di monitoraggio/analisi
 
-Consigliamo vivamente di utilizzare [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) a scopo di analisi. Si tratta infatti di una soluzione molto più solida, completa ed efficiente che puoi configurare per una vasta gamma di fornitori di dati analitici.
+Consigliamo vivamente di utilizzare [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) a scopo di analisi. Si tratta infatti di una soluzione molto più solida, completa ed efficiente che puoi configurare per una vasta gamma di fornitori di dati analitici.
 
 AMP consente di utilizzare un solo iframe per pagina a scopi di analisi e monitoraggio. Per risparmiare risorse, questi iframe saranno rimossi dal DOM 5 secondi dopo il loro caricamento, tempo che dovrebbe essere sufficiente al completamento di qualsiasi operazione.
 
@@ -233,7 +233,7 @@ Gli iframe sono identificati come iframe di monitoraggio/analisi se non sembrano
 
 # Linee guida: utilizzare i componenti AMP esistenti anziché amp-iframe
 
-Puoi utilizzare il componente `amp-iframe` come metodo alternativo, nel caso in cui l'esperienza utente richiesta non sia possibile in altri modi in AMP, ossia se non è già presente un [componente AMP](https://www.ampproject.org/docs/reference/components) adatto al caso d'uso. Questo perché l'utilizzo di un componente AMP progettato per uno specifico caso d'uso offre numerosi vantaggi, ad esempio:
+Puoi utilizzare il componente `amp-iframe` come metodo alternativo, nel caso in cui l'esperienza utente richiesta non sia possibile in altri modi in AMP, ossia se non è già presente un [componente AMP]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) adatto al caso d'uso. Questo perché l'utilizzo di un componente AMP progettato per uno specifico caso d'uso offre numerosi vantaggi, ad esempio:
 
 * Migliore gestione e prestazioni delle risorse.
 * In alcuni casi, i componenti personalizzati possono fornire immagini segnaposto integrate. Ciò significa, ad esempio, ottenere la miniatura video corretta prima del caricamento di un video e ridurre lo sviluppo di ulteriore codice per aggiungere manualmente un segnaposto.

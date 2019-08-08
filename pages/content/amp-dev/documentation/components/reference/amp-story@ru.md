@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Доступность</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Экспериментальная функция</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Экспериментальная функция</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Скрипт</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые шаблоны</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые шаблоны</a></strong></td>
     <td>Нет</td>
   </tr>
   <tr>
     <td width="40%"><strong>Примеры</strong></td>
     <td><ul>
       <li>Пример кода <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> на сайте AMP By Example.</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">Руководство</a> по созданию визуальных AMP-историй.</li>
+      <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">Руководство</a> по созданию визуальных AMP-историй.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ teaser:
 
 ### Обязательная разметка для amp-story
 
-К формату HTML для AMP-историй применимы те же [требования](https://www.ampproject.org/docs/reference/spec#required-markup), что и к обычным документам AMPHTML. Есть также несколько дополнительных правил:
+К формату HTML для AMP-историй применимы те же [требования]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup), что и к обычным документам AMPHTML. Есть также несколько дополнительных правил:
 
 | ПРАВИЛО | ОПИСАНИЕ |
 |----|---|
@@ -723,7 +723,7 @@ URL аудиофайла, который воспроизводится, пок�
     <div class="content" grid-area="lower-third">Paragraph 3</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">Outlink here!</a>
+    <a href="https://amp.dev" class="button">Outlink here!</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```
@@ -1281,9 +1281,9 @@ URL аудиофайла, который воспроизводится, пок�
 
 Если необходимы дополнительные параметры, используйте объект с парами "ключ-значение". В нем должен быть ключ `provider` со значением, соответствующим названию поставщика (например, `facebook`). Дальнейшие ключи и значения зависят от поставщика.
 
-Поддерживаются те же поставщики, что и для компонента [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+Поддерживаются те же поставщики, что и для компонента [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
 
-У каждого из поставщиков свой список поддерживаемых параметров ([см. `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). Объект конфигурации принимает эти параметры без префикса `data-param-`. Например, `data-param-app_id` отображается в нем как `app_id`.
+У каждого из поставщиков свой список поддерживаемых параметров ([см. `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). Объект конфигурации принимает эти параметры без префикса `data-param-`. Например, `data-param-app_id` отображается в нем как `app_id`.
 
 #### Конфигурация JSON
 
@@ -1331,10 +1331,10 @@ URL аудиофайла, который воспроизводится, пок�
 
 Вот ещё пара полезных компонентов для AMP-историй:
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
+* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
 
-Более широко используемые компоненты перечислены в [списке допустимых дочерних элементов](https://www.ampproject.org/docs/reference/components/amp-story#children).
+Более широко используемые компоненты перечислены в [списке допустимых дочерних элементов]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
 
 ## Валидация
 
@@ -1371,8 +1371,8 @@ URL аудиофайла, который воспроизводится, пок�
 
 ## Ресурсы по теме
 
-* [Руководство по созданию визуальных AMP-историй](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Руководство по созданию визуальных AMP-историй]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [Примеры на сайте AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Рекомендации по созданию AMP-истории](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [Рекомендации по созданию AMP-истории]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

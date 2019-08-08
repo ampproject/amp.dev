@@ -42,7 +42,7 @@ teaser:
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Оверлей для запуска воспроизведения по клику</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые макеты</a></strong></td>
+      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые макеты</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -138,7 +138,7 @@ teaser:
         </tr>
         <tr>
           <td width="40%"><strong>универсальные атрибуты</strong></td>
-          <td><a href="https://www.ampproject.org/docs/reference/common_attributes">Атрибуты</a>, которые поддерживаются большинством компонентов AMP.</td>
+          <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">Атрибуты</a>, которые поддерживаются большинством компонентов AMP.</td>
         </tr>
       </table>
 

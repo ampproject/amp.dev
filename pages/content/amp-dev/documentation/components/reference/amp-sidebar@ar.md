@@ -44,7 +44,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -215,7 +215,7 @@ $title: amp-sidebar
 
 ## الشريط الجانبي للقصص
 
-من المقبول استخدام `amp-sidebar` داخل [المكوِّن](https://www.ampproject.org/stories/) `amp-story`.
+من المقبول استخدام `amp-sidebar` داخل [المكوِّن]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### السلوك
 
@@ -243,7 +243,7 @@ $title: amp-sidebar
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a href="https://www.ampproject.org"> External Link </a></li>
+      <li><a href="https://amp.dev"> External Link </a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -286,7 +286,7 @@ $title: amp-sidebar
 
 ##### السمات المشتركة<a name="common"></a>
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) التي تشمل مكونات AMP.
 
 ## التصميم
 

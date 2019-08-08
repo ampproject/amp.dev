@@ -37,7 +37,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ Pressionar a tecla Esc no teclado fecha o lightbox. Como alternativa, definir o 
 ```
 
 [tip type="read"]
-para mostrar imagens em um lightbox, há também o componente [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox).
+para mostrar imagens em um lightbox, há também o componente [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Atributos
@@ -103,7 +103,7 @@ para mostrar imagens em um lightbox, há também o componente [`<amp-image-light
 
 ## Ações
 
-O `amp-lightbox` expõe as seguintes ações em que você pode usar [a sintaxe AMP para acionar](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+O `amp-lightbox` expõe as seguintes ações em que você pode usar [a sintaxe AMP para acionar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}):
 
 <table>
   <tr>
@@ -123,7 +123,7 @@ O `amp-lightbox` expõe as seguintes ações em que você pode usar [a sintaxe A
 ## <a id="a4a"></a>Usar o `amp-lightbox` em anúncios HTML para AMP
 
 [tip type="note"]
-o componente `amp-lightbox` para uso em anúncios HTML para AMP é [experimental](https://www.ampproject.org/docs/reference/experimental) e está em desenvolvimento. Para usar o `amp-lightbox` em anúncios HTML para AMP, [ative o experimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+o componente `amp-lightbox` para uso em anúncios HTML para AMP é [experimental]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) e está em desenvolvimento. Para usar o `amp-lightbox` em anúncios HTML para AMP, [ative o experimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
 Há algumas diferenças entre o uso de `amp-lightbox` em documentos AMP normais e em [anúncios escritos em HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}):

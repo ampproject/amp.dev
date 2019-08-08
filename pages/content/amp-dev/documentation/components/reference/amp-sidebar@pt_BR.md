@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -214,7 +214,7 @@ veja demonstrações ao vivo no [AMP By Example](https://ampbyexample.com/compon
 
 ## Barra lateral para matérias
 
-O uso do `amp-sidebar` é compatível com o [componente](https://www.ampproject.org/stories/) `amp-story`.
+O uso do `amp-sidebar` é compatível com o [componente]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### Comportamento
 
@@ -242,7 +242,7 @@ O exemplo a seguir mostra um `amp-sidebar` simples dentro de um `amp-story`.
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a "href=https://www.ampproject.org"> External Link </a></li>
+      <li><a href="https://amp.dev"> External Link </a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -285,7 +285,7 @@ Este atributo está presente no `<nav toolbar="(media-query)" toolbar-target="el
 
 ##### common attributes<a name="common"></a>
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estendidos a componentes de AMP.
 
 ## Estilo
 

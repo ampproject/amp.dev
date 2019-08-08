@@ -35,7 +35,7 @@ Carrusel genérico que muestra varios fragmentos de contenido similares en un ej
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
     <td>
       <ul>
         <li>carousel: fixed, fixed-height y nodisplay</li>
@@ -212,7 +212,7 @@ En el siguiente ejemplo, tenemos un carrusel de tres imágenes con botones de vi
           </tr>
           <tr>
             <td width="40%"><strong>atributos comunes</strong></td>
-            <td>Este elemento incluye <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comunes</a> que se aplican a los componentes de AMP.</td>
+            <td>Este elemento incluye <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comunes</a> que se aplican a los componentes de AMP.</td>
           </tr>
         </table>
 

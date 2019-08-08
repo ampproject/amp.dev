@@ -34,7 +34,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">支持的布局</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、intrinsic、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@ limitations under the License.
 
 `amp-iframe` **不得** 用于以展示广告为主要目的的用途。您可以将 `amp-iframe` 用于展示其中部分内容是广告的视频。系统可能会强制实施此 AMP 政策：不呈现相应 iframe。
 
-用于广告时应改用 [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad)。
+用于广告时应改用 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})。
 
 实施此政策的原因如下：
 
@@ -106,7 +106,7 @@ limitations under the License.
               </tr>
               <tr>
                 <td width="40%"><strong>常见属性</strong></td>
-                <td>此元素包含扩展到 AMP 组件的<a href="https://www.ampproject.org/docs/reference/common_attributes">常见属性</a>。</td>
+                <td>此元素包含扩展到 AMP 组件的<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">常见属性</a>。</td>
               </tr>
             </table>
 
@@ -217,7 +217,7 @@ window.addEventListener('message', function(event) {
 
 # 跟踪/分析 iframe
 
-我们强烈建议将 [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) 用于分析，因为该解决方案显然更加强大、全面和高效，可为各种分析服务供应商进行配置。
+我们强烈建议将 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 用于分析，因为该解决方案显然更加强大、全面和高效，可为各种分析服务供应商进行配置。
 
 AMP 仅允许每个页面使用一个 iframe 进行分析和跟踪。为了节约资源，这些 iframe 会在加载 5 秒后从 DOM 中移除，这一时间应该足以完成任何需要完成的工作。
 
@@ -225,7 +225,7 @@ AMP 仅允许每个页面使用一个 iframe 进行分析和跟踪。为了节�
 
 # 准则：使用现有 AMP 组件而非 amp-iframe
 
-如果在 AMP 中无法通过其他方法获取所需的用户体验，则应将 `amp-iframe` 组件视为备用方法，也就是说，对于这种用例，现在还没有相应的 [AMP 组件](https://www.ampproject.org/zh_cn/docs/reference/components)。这是因为针对特定用例使用 AMP 组件有诸多益处，例如：
+如果在 AMP 中无法通过其他方法获取所需的用户体验，则应将 `amp-iframe` 组件视为备用方法，也就是说，对于这种用例，现在还没有相应的 [AMP 组件]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}})。这是因为针对特定用例使用 AMP 组件有诸多益处，例如：
 
 * 更好地进行资源管理和提升性能
 * 在某些情况下，自定义组件可提供内置占位符图片。这意味着，比如说，在视频加载之前获取正确的视频缩略图，还可减少手动添加占位符所需的编码工作。

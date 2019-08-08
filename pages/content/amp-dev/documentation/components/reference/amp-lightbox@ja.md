@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -60,7 +60,7 @@ teaser:
 ```
 
 [tip type="read"]
-ライトボックス内に画像を表示するための [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) コンポーネントもあります。
+ライトボックス内に画像を表示するための [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) コンポーネントもあります。
 [/tip]
 
 ## 属性
@@ -102,7 +102,7 @@ teaser:
 
 ## アクション
 
-`amp-lightbox` は、[AMP on 構文を使用してトリガー](https://www.ampproject.org/docs/reference/amp-actions-and-events)できる以下のアクションをエクスポーズします。
+`amp-lightbox` は、[AMP on 構文を使用してトリガー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})できる以下のアクションをエクスポーズします。
 
 <table>
   <tr>
@@ -122,7 +122,7 @@ teaser:
 ## <a id="a4a"></a>AMPHTML 広告内で `amp-lightbox` を使用する
 
 [tip type="note"]
-AMPHTML 広告内で使用する `amp-lightbox` コンポーネントは[試験運用中](https://www.ampproject.org/docs/reference/experimental)であり、現時点でも開発が続けられています。AMPHTML 広告内で `amp-lightbox` を使用するには、[`amp-lightbox-a4a-proto` テストを有効](http://cdn.ampproject.org/experiments.html)にします。
+AMPHTML 広告内で使用する `amp-lightbox` コンポーネントは[試験運用中]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}})であり、現時点でも開発が続けられています。AMPHTML 広告内で `amp-lightbox` を使用するには、[`amp-lightbox-a4a-proto` テストを有効](http://cdn.ampproject.org/experiments.html)にします。
 [/tip]
 
 [AMPHTML で記述された広告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})の場合、通常の AMP ドキュメントの場合と比べて、`amp-lightbox` の使用に関して以下のような相違点があります。

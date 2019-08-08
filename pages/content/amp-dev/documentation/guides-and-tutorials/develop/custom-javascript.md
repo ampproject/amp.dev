@@ -43,7 +43,7 @@ The `amp-script` component sends messages between the Web Worker thread and the 
 
 ## Custom scripts caching
 
-The [AMP cache](https://www.ampproject.org/docs/fundamentals/how_cached) serves custom JavaScript files inserted with `<amp-script>` same as AMP component scripts. This ensures that any custom JavaScript will not slow the speed of an AMP document.
+The [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) serves custom JavaScript files inserted with `<amp-script>` same as AMP component scripts. This ensures that any custom JavaScript will not slow the speed of an AMP document.
 
 The AMP cache proxies the JavaScript files and then delivers them. Users can expect the same performance experience from a page using `<amp-script>` as a page that doesn't include it.
 

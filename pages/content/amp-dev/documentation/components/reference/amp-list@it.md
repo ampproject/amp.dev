@@ -36,7 +36,7 @@ Recupera i contenuti in modo dinamico da un endpoint CORS JSON e li visualizza u
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layout supportati</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ Recupera i contenuti in modo dinamico da un endpoint CORS JSON e li visualizza u
 Il componente `<amp-list>` recupera i contenuti dinamici da un endpoint CORS JSON. La risposta dall'endpoint contiene dati, che vengono visualizzati nel modello specificato.
 
 [tip type="important"]
-l'endpoint deve implementare i requisiti indicati nella specifica [Requisiti CORS in AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+l'endpoint deve implementare i requisiti indicati nella specifica [Requisiti CORS in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Puoi specificare un modello in uno dei due modi seguenti:
@@ -62,7 +62,7 @@ Per ulteriori informazioni sui modelli, consulta [Modelli HTML AMP](https://gith
 
 *Esempio: visualizzazione di un elenco dinamico*
 
-Nel seguente esempio, vengono recuperati i dati JSON contenenti URL e titoli e vengono visualizzati i contenuti in un [modello amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) nidificato.
+Nel seguente esempio, vengono recuperati i dati JSON contenenti URL e titoli e vengono visualizzati i contenuti in un [modello amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) nidificato.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -83,25 +83,25 @@ Ecco il file JSON che abbiamo utilizzato:
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-    "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Ecco lo stile in cui abbiamo riportato i contenuti recuperati:
 
@@ -174,7 +174,7 @@ Facoltativamente, `<amp-list>` supporta un segnaposto e/o un fallback.
 * Un *segnaposto* è un elemento secondario con l'attributo `placeholder`. Questo elemento viene mostrato finché il caricamento `<amp-list>` non viene completato. Se viene fornito anche un fallback, il segnaposto viene nascosto quando `<amp-list>` non viene caricato.
 * Un *fallback* è un elemento secondario con l'attributo `fallback`. Questo elemento viene visualizzato se `<amp-list>` non viene caricato.
 
-Per ulteriori informazioni, consulta l'articolo relativo a [segnaposto e fallback](https://www.ampproject.org/docs/guides/responsive/placeholders). Tieni presente che un elemento secondario non può essere contemporaneamente un segnaposto e un fallback.
+Per ulteriori informazioni, consulta l'articolo relativo a [segnaposto e fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}). Tieni presente che un elemento secondario non può essere contemporaneamente un segnaposto e un fallback.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -224,10 +224,10 @@ Questa azione è disponibile anche in modalità sperimantale in `amp-list-resiza
 L'URL dell'endpoint remoto che restituisce il JSON che verrà visualizzato in questo `<amp-list>`. Deve essere un servizio HTTP CORS. Il protocollo dell'URL deve essere HTTPS.
 
 [tip type="important"]
-l'endpoint deve implementare i requisiti indicati nella specifica [Requisiti CORS in AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+l'endpoint deve implementare i requisiti indicati nella specifica [Requisiti CORS in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
 [/tip]
 
-L'attributo `src` può essere omesso se è presente l'attributo `[src]`. Questa funzione è utile per il rendering di contenuti in seguito al gesto di un utente anziché come risultato del caricamento della pagina quando si utilizza [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind).
+L'attributo `src` può essere omesso se è presente l'attributo `[src]`. Questa funzione è utile per il rendering di contenuti in seguito al gesto di un utente anziché come risultato del caricamento della pagina quando si utilizza [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
 
 ##### credentials (facoltativo)
 
@@ -236,7 +236,7 @@ Definisce un'opzione `credentials` specificata [dall'API di recupero](https://fe
 * Valori supportati: `omit`, `include`
 * Valore predefinito: `omit`
 
-Per inviare le credenziali, passa il valore di `include`. Se questo valore è impostato, la risposta deve rispettare le [linee guida per la sicurezza CORS AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Per inviare le credenziali, passa il valore di `include`. Se questo valore è impostato, la risposta deve rispettare le [linee guida per la sicurezza CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 Ecco un esempio che specifica le credenziali di inclusione per visualizzare contenuti personalizzati in un elenco:
 
@@ -419,7 +419,7 @@ Questo elemento non viene fornito per impostazione predefinita, ma se un element
 
 ##### attributi comuni
 
-Questo elemento include [attributi comuni](https://www.ampproject.org/docs/reference/common_attributes) estesi ai componenti AMP.
+Questo elemento include [attributi comuni]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estesi ai componenti AMP.
 
 ## Sostituzioni
 

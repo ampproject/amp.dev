@@ -48,7 +48,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>가이드</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">대화형 AMP 페이지 만들기</a></td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">대화형 AMP 페이지 만들기</a></td>
   </tr>
 </table>
 
@@ -389,7 +389,7 @@ null || 'default' // 'default'
     <td>부울 식이어야 합니다.</td>
   </tr>
   <tr>
-    <td><a href="https://www.ampproject.org/docs/reference/components">AMP 요소</a>의 크기</td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">AMP 요소</a>의 크기</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 요소의 너비 및/또는 높이를 변경합니다.</td>
   </tr>
@@ -451,7 +451,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td><code>[src]</code>에 결합할 때 캐시에서 결합이 작동하도록 하려면 <code>[srcset]</code>에도 결합해야 합니다.<br>해당하는 <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">amp-img 속성</a>을 참조하세요.</td>
+    <td><code>[src]</code>에 결합할 때 캐시에서 결합이 작동하도록 하려면 <code>[srcset]</code>에도 결합해야 합니다.<br>해당하는 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">amp-img 속성</a>을 참조하세요.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -480,7 +480,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>해당하는 <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">amp-video 속성</a>을 참조하세요.</td>
+    <td>해당하는 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">amp-video 속성</a>을 참조하세요.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -649,7 +649,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
     <td>이 <code>amp-state</code>를 업데이트할 JSON을 반환하는 원격 엔드포인트의 URL. CORS HTTP 서비스여야 합니다.
       <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="../../spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
           [tip type="important"]
-        엔드포인트는 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
+        엔드포인트는 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
         [/tip]</td>
     </tr>
     <tr>
@@ -659,7 +659,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
           <li>지원 값: `omit`, `include`</li>
           <li>기본값: `omit`</li>
         </ul>
-        사용자 인증 정보를 보내려면 <code>include</code>의 값을 전달하세요. 이 값이 설정된 경우 응답에서는 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">AMP CORS 보안 지침</a>을 따라야 합니다.</td>
+        사용자 인증 정보를 보내려면 <code>include</code>의 값을 전달하세요. 이 값이 설정된 경우 응답에서는 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">AMP CORS 보안 지침</a>을 따라야 합니다.</td>
       </tr>
     </table>
 

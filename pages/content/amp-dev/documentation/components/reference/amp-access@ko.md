@@ -501,7 +501,7 @@ AMP는 로그인과 구독을 구분하지 않습니다. 이러한 구분은 다
 
 ## CORS 오리진 보안
 
-승인 및 핑백 엔드포인트는 CORS 엔드포인트이며 [AMP CORS 보안 사양](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)에 설명된 보안 프로토콜을 구현해야 합니다.
+승인 및 핑백 엔드포인트는 CORS 엔드포인트이며 [AMP CORS 보안 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)에 설명된 보안 프로토콜을 구현해야 합니다.
 
 ## 한도 측정
 

@@ -42,7 +42,7 @@ Penggantian untuk tag `video` HTML5; digunakan hanya untuk sematan file video HT
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Overlay klik-untuk-putar untuk amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Tata Letak yang Didukung</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -138,7 +138,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
         </tr>
         <tr>
           <td width="40%"><strong>atribut umum</strong></td>
-          <td>Elemen ini mencakup <a href="https://www.ampproject.org/docs/reference/common_attributes">atribut umum</a> yang diperluas ke komponen AMP.</td>
+          <td>Elemen ini mencakup <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atribut umum</a> yang diperluas ke komponen AMP.</td>
         </tr>
       </table>
 

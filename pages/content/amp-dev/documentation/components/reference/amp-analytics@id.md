@@ -46,16 +46,16 @@ Mengambil data analisis dari dokumen AMP.
 Sebelum mulai menggunakan Analytics AMP di situs, Anda harus memutuskan apakah akan menggunakan fitur analisis pihak ketiga atau solusi internal Anda sendiri untuk menganalisis interaksi pengguna.
 
 [tip type="read-on"]
-Pelajari semua tentang Analytics AMP di panduan [Mengonfigurasi Analytics](https://www.ampproject.org/docs/guides/analytics_amp).
+Pelajari semua tentang Analytics AMP di panduan [Mengonfigurasi Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ### Mengirim data ke vendor analisis <a name="analytics-vendors"></a>
 
-Analytics AMP dirancang khusus untuk mengukur sekali dan melaporkan hasilnya ke banyak pihak. Jika Anda sudah menggunakan satu atau beberapa vendor analisis, periksa daftar [Vendor Analisis](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
+Analytics AMP dirancang khusus untuk mengukur sekali dan melaporkan hasilnya ke banyak pihak. Jika Anda sudah menggunakan satu atau beberapa vendor analisis, periksa daftar [Vendor Analisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
 
 Untuk vendor Analytics AMP terintegrasi:
 
-1. Pada tag `<amp-analytics>`, tambahkan atribut `type` dan tetapkan nilainya ke [vendor](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) yang ditentukan.
+1. Pada tag `<amp-analytics>`, tambahkan atribut `type` dan tetapkan nilainya ke [vendor]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) yang ditentukan.
 1. Tentukan data yang ingin Anda ambil dan pantau, dan tetapkan detail tersebut dalam data konfigurasi. Lihat dokumentasi vendor untuk mengetahui cara mengambil data analisis.
 
 Jika vendor analisis belum terintegrasi dengan AMP, hubungi vendor untuk meminta dukungan mereka. Sebaiknya Anda juga mengajukan masalah di project AMP dan meminta agar vendor tersebut ditambahkan. Lihat juga [Mengintegrasikan fitur analisis di HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Cara lainnya, lakukan kerja sama dengan vendor untuk mengirim data ke URL yang mereka tentukan. Pelajari lebih lanjut di bagian [Mengirim data secara internal](#sending-data-in-house) di bawah.
@@ -122,7 +122,7 @@ Berikut adalah contoh sederhana yang memantau kunjungan halaman.  Setiap kali ha
 ```
 
 [tip type="success"]
-Untuk beberapa kasus umum penggunaan pemantauan (misalnya, kunjungan halaman, klik halaman, scroll, dll.) Lihat [Analytics: Kasus Penggunaan](https://www.ampproject.org/docs/guides/analytics/use_cases).
+Untuk beberapa kasus umum penggunaan pemantauan (misalnya, kunjungan halaman, klik halaman, scroll, dll.) Lihat [Analytics: Kasus Penggunaan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Menentukan data konfigurasi
@@ -825,7 +825,7 @@ Berikut adalah atribut yang valid untuk komponen `amp-analytics`:
 
 **type**
 
-Menentukan jenis vendor.  Untuk detailnya, lihat daftar [Vendor analisis](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
+Menentukan jenis vendor.  Untuk detailnya, lihat daftar [Vendor analisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Contoh:
 

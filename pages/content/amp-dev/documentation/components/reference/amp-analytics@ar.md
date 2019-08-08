@@ -47,16 +47,16 @@ limitations under the License.
 قيل البدء في استخدام AMP Analytics على موقعك، تحتاج أولاً إلى اتخاذ قرار بشأن هل ستستخدم أدوات تحليلات خارجية لتحليل تفاعل المستخدم أم ستستخدم حل مملوك لك.
 
 [tip type="read-on"]
-احصل على المعلومات الكاملة عن AMP Analytics في دليل [تهيئة التحليلات](https://www.ampproject.org/docs/guides/analytics_amp).
+احصل على المعلومات الكاملة عن AMP Analytics في دليل [تهيئة التحليلات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ### إرسال البيانات إلى مورد التحليلات <a name="analytics-vendors"></a>
 
-تم تصميم AMP Analytics خصيصًا لإجراء القياس مرة واحدة وإعداد الكثير من التقارير بناء عليه. فإذا كنت تعمل مع مورد واحد للتحليلات أو أكثر، راجِع قائمة [موردي التحليلات](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) لتعرف مدى تكامل حلولهم مع AMP.
+تم تصميم AMP Analytics خصيصًا لإجراء القياس مرة واحدة وإعداد الكثير من التقارير بناء عليه. فإذا كنت تعمل مع مورد واحد للتحليلات أو أكثر، راجِع قائمة [موردي التحليلات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) لتعرف مدى تكامل حلولهم مع AMP.
 
 بالنسبة إلى موردي التحليلات المتكاملة مع صفحات AMP:
 
-1. في العلامة `<amp-analytics>`، أضِف السمة `type` وعيّن قيمتها على [المورد](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) المحدد.
+1. في العلامة `<amp-analytics>`، أضِف السمة `type` وعيّن قيمتها على [المورد]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) المحدد.
 2. حدِد البيانات التي تريد استخلاصها وتتبعها، وحدِد تلك التفاصيل في بيانات التهيئة. راجع وثائق المورد للحصول على تعليمات بشأن استخلاص بيانات التحليلات.
 
 في حال عدم تكامل مورد التحليلات مع AMP، تواصل معه لطلب الدعم. ونشجعك أيضًا على إنشاء موضوع في مشروع AMP لطلب إضافة هذا المورد. يمكنك كذلك الاطّلاع على [تكامل أدوات التحليلات برمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). أو اعمل مع المورد على إرسال البيانات إلى عناوين URL محددة لديه. تعرّف على مزيد من المعلومات في القسم [إرسال البيانات إلى حلول داخلية](#sending-data-in-house) أدناه.
@@ -123,7 +123,7 @@ limitations under the License.
 ```
 
 [tip type="success"]
-يمكنك الاطّلاع على [التحليلات: حالات الاستخدام](https://www.ampproject.org/docs/guides/analytics/use_cases) لمعرفة بعض من حالات استخدام التتبع الشائعة (مثل مشاهدات الصفحة والنقرات على الصفحة والتمرير وغيرها).
+يمكنك الاطّلاع على [التحليلات: حالات الاستخدام]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}) لمعرفة بعض من حالات استخدام التتبع الشائعة (مثل مشاهدات الصفحة والنقرات على الصفحة والتمرير وغيرها).
 [/tip]
 
 ## تحديد بيانات التهيئة
@@ -824,7 +824,7 @@ visibilitySpec: {
 
 **type**
 
-تحدد هذه السمة نوع المورد.  ويمكنك مراجعة قائمة [موردي التحليلات](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) للحصول على التفاصيل.
+تحدد هذه السمة نوع المورد.  ويمكنك مراجعة قائمة [موردي التحليلات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) للحصول على التفاصيل.
 
 مثال:
 

@@ -51,7 +51,7 @@ teaser:
   </tr>
   <tr>
     <td class="col-fourty"><strong>チュートリアル</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">インタラクティブな AMP ページを作成する</a></td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">インタラクティブな AMP ページを作成する</a></td>
   </tr>
 </table>
 
@@ -388,7 +388,7 @@ null || 'default' // 'default'
     <td>ブール式である必要があります。</td>
   </tr>
   <tr>
-    <td><a href="https://www.ampproject.org/docs/reference/components">AMP 要素</a>のサイズ</td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">AMP 要素</a>のサイズ</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 要素の幅または高さ（あるいはその両方）を変更します。</td>
   </tr>
@@ -447,7 +447,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td><code>[src]</code> にバインドする場合、キャッシュ上でバインドを行うには、<code>[srcset]</code> にもバインドします。<br>対応する <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">amp-img 属性</a>をご確認ください。</td>
+    <td><code>[src]</code> にバインドする場合、キャッシュ上でバインドを行うには、<code>[srcset]</code> にもバインドします。<br>対応する <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">amp-img 属性</a>をご確認ください。</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -474,7 +474,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>対応する <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">amp-video 属性</a>をご確認ください。</td>
+    <td>対応する <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">amp-video 属性</a>をご確認ください。</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -646,7 +646,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
     <td width="40%"><strong>src</strong></td>
     <td><code>amp-state</code> を更新する JSON を返すリモート エンドポイントの URL。この属性には CORS HTTP サービスを指定する必要があります。
       <code>src</code> 属性では、標準的な URL 変数の置換をすべて使用できます。詳しくは、<a href="../../spec/amp-var-substitutions.md">置換ガイド</a>をご覧ください。
-          [tip type="important"] エンドポイントは、<a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">AMP の CORS リクエスト</a>の仕様で指定されている要件を満たしている必要があります。
+          [tip type="important"] エンドポイントは、<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">AMP の CORS リクエスト</a>の仕様で指定されている要件を満たしている必要があります。
           [/tip]</td>
       </tr>
       <tr>
@@ -656,7 +656,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
             <li>サポートされている値: 「omit」、「include」</li>
             <li>デフォルト値: 「omit」</li>
           </ul>
-          認証情報を送信するには、<code>include</code> を渡します。この値が設定されている場合、レスポンスは <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">AMP CORS セキュリティ ガイドライン</a>に準拠する必要があります。</td>
+          認証情報を送信するには、<code>include</code> を渡します。この値が設定されている場合、レスポンスは <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">AMP CORS セキュリティ ガイドライン</a>に準拠する必要があります。</td>
         </tr>
       </table>
 

@@ -45,16 +45,16 @@ limitations under the License.
 Прежде чем изучать показатели AMP на своем сайте, определитесь, какие инструменты для анализа поведения пользователей вы будете применять: сторонние или собственные.
 
 [tip type="read-on"]
-приведена в [руководстве по настройке](https://www.ampproject.org/docs/guides/analytics_amp) на сайте для разработчиков.
+приведена в [руководстве по настройке]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) на сайте для разработчиков.
 [/tip]
 
 ### Отправка данных поставщику <a name="analytics-vendors"></a>
 
-Сервис Google Analytics для AMP специально создан, чтобы можно было проанализировать данные один раз и отправить отчет всем заинтересованным лицам. Если вы уже сотрудничаете с одним или несколькими поставщиками аналитических решений, убедитесь, что они есть в нашем [списке](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) тех, кто поддерживает технологию AMP.
+Сервис Google Analytics для AMP специально создан, чтобы можно было проанализировать данные один раз и отправить отчет всем заинтересованным лицам. Если вы уже сотрудничаете с одним или несколькими поставщиками аналитических решений, убедитесь, что они есть в нашем [списке]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) тех, кто поддерживает технологию AMP.
 
 Если все в порядке, выполните следующие действия:
 
-1. Добавьте в тег `<amp-analytics>` атрибут `type` и в качестве значения укажите название [поставщика](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
+1. Добавьте в тег `<amp-analytics>` атрибут `type` и в качестве значения укажите название [поставщика]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 1. Определитесь с тем, какие данные вы хотите отслеживать, и соответствующим образом настройте конфигурацию. Более подробную информацию можно найти в документации поставщика.
 
 Если ваш поставщик не поддерживает AMP, обратитесь за помощью к его представителям. Мы также рекомендуем вам сообщить авторам проекта AMP о том, что необходимо добавить нового поставщика. Ознакомьтесь с [руководством по интеграции аналитических инструментов с AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Кроме того, вы можете совместно с поставщиком настроить отправку данных на определенный URL. См. раздел [Отправка данных внутри компании](#sending-data-in-house) ниже.
@@ -121,7 +121,7 @@ limitations under the License.
 ```
 
   [tip type="success"]
-О распространенных вариантах отслеживания, таких как просмотры, клики, прокрутка и т. д., читайте в [этом руководстве](https://www.ampproject.org/docs/guides/analytics/use_cases).
+О распространенных вариантах отслеживания, таких как просмотры, клики, прокрутка и т. д., читайте в [этом руководстве]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Определение данных конфигурации
@@ -828,7 +828,7 @@ visibilitySpec: {
 
 **type**
 
-Определяет тип поставщика.  Более подробная информация представлена в [списке поставщиков](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
+Определяет тип поставщика.  Более подробная информация представлена в [списке поставщиков]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Пример:
 
