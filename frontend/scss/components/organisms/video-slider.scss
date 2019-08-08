@@ -16,6 +16,8 @@
 @import 'components/atoms/_text.scss';
 
 .#{utility('video-slider')} {
+  overflow-x: hidden;
+  
   @media (min-width: 930px) {
     padding: 40px 0;
   }
