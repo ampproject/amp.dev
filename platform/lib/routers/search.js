@@ -143,9 +143,10 @@ async function handleSearchRequest(request, response, next) {
     return;
   }
 
-  // TODO remove together with test method
-  if (query.includes('test')) {
-    return handleTestSearchRequest(request, response);
+  // TODO remove together with test method?
+  if (!config.isProdMode() && query.includes('test')) {
+    handleTestSearchRequest(request, response, next);
+    return;
   }
 
   const highlightComponents = page == 1;
@@ -195,14 +196,19 @@ async function handleSearchRequest(request, response, next) {
 }
 
 
-function handleTestSearchRequest(request, response) {
+async function handleTestSearchRequest(request, response, next) {
   const query = request.query && request.query.q ? request.query.q : '';
   const page = request.query && request.query.page ? parseInt(request.query.page) : 1;
   const locale = request.query && request.query.locale ?
       request.query.locale : config.getDefaultLocale();
 
-  if (query.includes('error') && page > 1) {
-    throw Error('test error');
+  const errorQuery = query.match(/(:?(\d+)-?)?error/);
+  if (errorQuery) {
+    const errorPage = errorQuery[1] ? parseInt(errorQuery[1]) : 3;
+    if (page == errorPage) {
+      next(Error('test error'));
+      return;
+    }
   }
 
   let lastPage = LAST_PAGE;
