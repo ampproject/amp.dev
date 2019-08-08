@@ -19,6 +19,12 @@
 const fetch = require('node-fetch');
 const credentials = require('@lib/utils/credentials');
 
+// google custom search does not support a page size > 10
+const PAGE_SIZE = 10;
+
+// google custom search json api does not support loading more than 100 results
+const MAX_PAGE = 10;
+
 const CSE_BASE_URL = 'https://www.googleapis.com/customsearch/v1';
 const CSE_ID = '14077439351665726204:s4tidjx0agu';
 let API_KEY = undefined;
@@ -35,7 +41,7 @@ async function search(query, locale, page) {
     throw Error('Custom search api key not initialized! Check log for errors on startup.');
   }
 
-  const startIndex = (page - 1) * 10 + 1;
+  const startIndex = (page - 1) * PAGE_SIZE + 1;
   query = encodeURIComponent(query);
   let language = locale;
   if (language.length > 2) {
@@ -46,15 +52,17 @@ async function search(query, locale, page) {
   const url = `${CSE_BASE_URL}?cx=${CSE_ID}&key=${API_KEY}&hl=${language}` +
       `&lr=lang_${language}&q=${query}&start=${startIndex}`;
 
-  // console.log('Google cse query: ' + url);
-
   const fetchResponse = await fetch(url);
-  if (fetchResponse.status == 200) {
-    return await fetchResponse.json();
+  if (!fetchResponse.ok) {
+    console.log(`CSE Error ${fetchResponse.status} for url ${url}: `, await fetchResponse.text());
+    throw Error('Invalid response for search query');
   }
 
-  console.log(`CSE Error ${fetchResponse.status} for url ${url}: `, await fetchResponse.text());
-  throw Error('Invalid response for search query');
+  return await fetchResponse.json();
 }
 
-module.exports=search;
+module.exports={
+  search,
+  PAGE_SIZE,
+  MAX_PAGE,
+};

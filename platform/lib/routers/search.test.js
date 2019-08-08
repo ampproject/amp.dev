@@ -64,7 +64,7 @@ function createSearchResult(numComponents, numPages, totalResults) {
 
 test('returns a first page with component highlights and no next link', (done) => {
   const searchResult = createSearchResult(2, 8, 10);
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=en&page=1')
@@ -80,7 +80,7 @@ test('returns a first page with component highlights and no next link', (done) =
 
 test('returns a first page with no component highlights and next link', (done) => {
   const searchResult = createSearchResult(0, 10, 11);
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=en&page=1')
@@ -96,7 +96,7 @@ test('returns a first page with no component highlights and next link', (done) =
 
 test('returns a first page with no component highlights and next link', (done) => {
   const searchResult = createSearchResult(0, 10, 11);
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=pt_BR&page=1')
@@ -112,7 +112,7 @@ test('returns a first page with no component highlights and next link', (done) =
 
 test('returns a second page with no component highlights and no next link', (done) => {
   const searchResult = createSearchResult(2, 6, 18);
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=en&page=2')
@@ -131,7 +131,7 @@ test('title and description are correct', (done) => {
   delete searchResult.items[0].pagemap.metatags[0]['twitter:title'];
   delete searchResult.items[1].pagemap.metatags[0]['twitter:description'];
   delete searchResult.items[2].pagemap.metatags[0]['twitter:title'];
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=en&page=1')
@@ -156,7 +156,7 @@ test('title and description are correct', (done) => {
 test('amp.dev urls are converted to server relative', (done) => {
   const searchResult = createSearchResult(2, 3, 5);
   searchResult.items[2].link = 'https://blog.amp.dev/some/path';
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=en&page=1')
@@ -175,7 +175,7 @@ test('components with example get example and playground urls', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].link = 'https://amp.dev/documentation/components/amp-test-example/';
   searchResult.items[1].link = 'https://amp.dev/documentation/components/amp-no-example/';
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=en&page=1')
@@ -202,7 +202,7 @@ test('components with example get example with locale and playground url without
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].link = 'https://amp.dev/pt_br/documentation/components/amp-test-example/';
   searchResult.items[1].link = 'https://amp.dev/pt_br/documentation/components/amp-no-example/';
-  googleSearch.mockResolvedValue(searchResult);
+  googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
       .get('/search/do?q=query&locale=pt_BR&page=1')
@@ -225,8 +225,17 @@ test('components with example get example with locale and playground url without
       });
 });
 
+test('Invalid search', (done) => {
+  googleSearch.search.mockImplementation(async () => {
+    throw Error('Should not be called');
+  });
+  request(app)
+      .get('/search/do')
+      .expect(400, done);
+});
+
 test('exception handling', (done) => {
-  googleSearch.mockImplementation(async () => {
+  googleSearch.search.mockImplementation(async () => {
     throw Error('Expected');
   });
   request(app)

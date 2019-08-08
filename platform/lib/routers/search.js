@@ -22,10 +22,10 @@ const config = require('@lib/config.js');
 const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
 
-// google custom search does not support a page size > 10
-const PAGE_SIZE = 10;
-// google custom search json api does not support loading more than 100 results
-const LAST_PAGE = 10;
+const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/AmpConstants.js');
+
+const PAGE_SIZE = googleSearch.PAGE_SIZE;
+const LAST_PAGE = googleSearch.MAX_PAGE;
 
 const COMPONENT_REFERENCE_DOC_PATTERN =
     /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
@@ -45,46 +45,33 @@ const DESCRIPTION_META_TAG = 'twitter:description';
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-const BUILD_IN_COMPONENTS = [
-  'amp-layout',
-  'amp-img',
-  'amp-pixel',
-];
-
-const IMPORTANT_INCLUDED_ELEMENTS = [
-  'amp-state',
-  'amp-list-load-more',
-  'amp-story-page',
-  'amp-story-grid-layer',
-  'amp-story-bookend',
-];
-
 const COMPONENT_VERSIONS_PATH = path.join(project.paths.GROW_POD,
     '/extensions/amp-component-versions.json');
 
-function getAutosuggestComponents() {
-  let result = [];
-  const components = require(COMPONENT_VERSIONS_PATH);
-  for (const component in components) {
-    if (components.hasOwnProperty(component)) {
-      result.push(component);
+function buildAutosuggestComponentResult() {
+  let components = [];
+  const componentVersions = require(COMPONENT_VERSIONS_PATH);
+  for (const component in componentVersions) {
+    if (componentVersions.hasOwnProperty(component)) {
+      components.push(component);
     }
   }
-  result = result.concat(BUILD_IN_COMPONENTS);
-  result = result.concat(IMPORTANT_INCLUDED_ELEMENTS);
-  return result.sort();
+  components = components.concat(BUILD_IN_COMPONENTS);
+  components = components.concat(IMPORTANT_INCLUDED_ELEMENTS);
+  components.sort();
+  const result = ({
+    items: components,
+  });
+  return result;
 }
 
-const AUTOSUGGEST_COMPONENTS = getAutosuggestComponents();
+const AUTOSUGGEST_COMPONENT_RESULT = buildAutosuggestComponentResult();
 
 examples.get('/search/autosuggest', handleAutosuggestRequest);
 examples.get('/search/do', handleSearchRequest);
 
 function handleAutosuggestRequest(request, response) {
-  const items = ({
-    items: AUTOSUGGEST_COMPONENTS,
-  });
-  response.json(items);
+  response.json(AUTOSUGGEST_COMPONENT_RESULT);
 }
 
 function hasExample(component) {
@@ -94,9 +81,10 @@ function hasExample(component) {
 
 function getCseItemMetaTagValue(item, metaTag) {
   // since pagemap has always key:array the metatags dictionary is always the first element in the array
-  if (item.pagemap && item.pagemap.metatags && item.pagemap.metatags.length > 0
-      && item.pagemap.metatags[0][metaTag]) {
-    return item.pagemap.metatags[0][metaTag];
+  const pagemap = item.pagemap;
+  if (pagemap && pagemap.metatags && pagemap.metatags.length > 0
+      && pagemap.metatags[0][metaTag]) {
+    return pagemap.metatags[0][metaTag];
   }
   return null;
 }
@@ -143,15 +131,15 @@ function enrichComponentPageObject(item, page, locale) {
 }
 
 async function handleSearchRequest(request, response, next) {
-  const query = request.query && request.query.q ? request.query.q : '';
-  const page = request.query && request.query.page ? parseInt(request.query.page) : 1;
-  const locale = request.query && request.query.locale ?
-      request.query.locale : config.getDefaultLocale();
+  const query = request.query.q ? request.query.q.trim() : '';
+  const page = request.query.page ? parseInt(request.query.page) : 1;
+  const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
 
-  if (isNaN(page)) {
-    const error = 'Invalid search page param ' + request.query.page;
+  if (isNaN(page) || page < 1 || query.length == 0) {
+    const error = 'Invalid search params (q='
+        + request.query.q + ', page=' + request.query.page + ')';
     console.log(error);
-    next(error);
+    response.json(400, {error: error});
     return;
   }
 
@@ -164,7 +152,7 @@ async function handleSearchRequest(request, response, next) {
 
   let cseResult = undefined;
   try {
-    cseResult = await googleSearch(query, locale, page);
+    cseResult = await googleSearch.search(query, locale, page);
   } catch (err) {
     // problem was logged before, so simply forward the error
     next(err);
