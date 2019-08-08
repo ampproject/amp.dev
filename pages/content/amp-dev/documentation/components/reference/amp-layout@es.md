@@ -30,7 +30,7 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>Descripción</strong></td>
-    <td>Elemento contenedor genérico y multipropósito que aporta <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">diseños</a> de AMP de gran utilidad</td>
+    <td>Elemento contenedor genérico y multipropósito que aporta <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">diseños</a> de AMP de gran utilidad</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
@@ -40,7 +40,7 @@ $title: amp-layout
 
 ## Descripción general
 
-El componente `amp-layout` permite aplicar a cualquier elemento diseños adaptables basados en la relación de aspecto. Funciona de forma similar al atributo [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) en los componentes AMP disponibles, pero admite cualquier etiqueta HTML como elemento secundario. Todos los demás diseños admitidos funcionan con `amp-layout` (por ejemplo, fixed-height, fixed, etc.).
+El componente `amp-layout` permite aplicar a cualquier elemento diseños adaptables basados en la relación de aspecto. Funciona de forma similar al atributo [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) en los componentes AMP disponibles, pero admite cualquier etiqueta HTML como elemento secundario. Todos los demás diseños admitidos funcionan con `amp-layout` (por ejemplo, fixed-height, fixed, etc.).
 
 **Ejemplo**
 

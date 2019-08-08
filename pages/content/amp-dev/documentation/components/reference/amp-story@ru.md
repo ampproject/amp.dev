@@ -33,7 +33,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Доступность</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Экспериментальная функция</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Экспериментальная функция</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Скрипт</strong></td>
@@ -47,7 +47,7 @@ teaser:
     <td width="40%"><strong>Примеры</strong></td>
     <td><ul>
       <li>Пример кода <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> на сайте AMP By Example.</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">Руководство</a> по созданию визуальных AMP-историй.</li>
+      <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">Руководство</a> по созданию визуальных AMP-историй.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ teaser:
 
 ### Обязательная разметка для amp-story
 
-К формату HTML для AMP-историй применимы те же [требования](https://www.ampproject.org/docs/reference/spec#required-markup), что и к обычным документам AMPHTML. Есть также несколько дополнительных правил:
+К формату HTML для AMP-историй применимы те же [требования]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup), что и к обычным документам AMPHTML. Есть также несколько дополнительных правил:
 
 | ПРАВИЛО | ОПИСАНИЕ |
 |----|---|
@@ -1371,8 +1371,8 @@ URL аудиофайла, который воспроизводится, пок�
 
 ## Ресурсы по теме
 
-* [Руководство по созданию визуальных AMP-историй](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Руководство по созданию визуальных AMP-историй]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [Примеры на сайте AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Рекомендации по созданию AMP-истории](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [Рекомендации по созданию AMP-истории]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

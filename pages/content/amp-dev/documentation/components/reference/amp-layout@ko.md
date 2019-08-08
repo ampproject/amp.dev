@@ -30,7 +30,7 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>설명</strong></td>
-    <td>AMP의 강력한 <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">레이아웃</a>을 모든 요소에 적용하는 일반적인 다목적 컨테이너 요소입니다.</td>
+    <td>AMP의 강력한 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">레이아웃</a>을 모든 요소에 적용하는 일반적인 다목적 컨테이너 요소입니다.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
@@ -40,7 +40,7 @@ $title: amp-layout
 
 ## 개요
 
-`amp-layout` 구성요소를 사용하면 가로세로 비율 기반 반응형 레이아웃을 모든 요소에 적용할 수 있습니다. `amp-layout` 구성요소는 기존 AMP 구성요소의 [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) 속성과 비슷하게 작동하지만 HTML 마크업을 하위 요소로 지원합니다. 기타 지원되는 모든 레이아웃은 모두 `amp-layout`과 함께 작동합니다(예: fixed-height, fixed 등).
+`amp-layout` 구성요소를 사용하면 가로세로 비율 기반 반응형 레이아웃을 모든 요소에 적용할 수 있습니다. `amp-layout` 구성요소는 기존 AMP 구성요소의 [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) 속성과 비슷하게 작동하지만 HTML 마크업을 하위 요소로 지원합니다. 기타 지원되는 모든 레이아웃은 모두 `amp-layout`과 함께 작동합니다(예: fixed-height, fixed 등).
 
 **예**
 

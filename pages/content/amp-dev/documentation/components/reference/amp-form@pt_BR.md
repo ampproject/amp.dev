@@ -38,7 +38,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Layouts compatíveis</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Layouts compatíveis</a></strong></td>
     <td>N/A</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ O elemento `amp-form` expõe as seguintes ações:
 | `clear` | Esvazia os valores de cada entrada do formulário. Isso permite que os usuários preencham formulários rapidamente pela segunda vez. |
 
 [tip type="read-on"]
-saiba mais sobre [ações e eventos em AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html).
+saiba mais sobre [ações e eventos em AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 [/tip]
 
 # Eventos
@@ -391,7 +391,7 @@ Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master
 * Use a propriedade `event` para capturar os dados da resposta.
 * Adicione o atributo de estado ao elemento desejado para vincular a resposta do formulário.
 
-O exemplo a seguir demonstra uma resposta <code>submit-success</code> do formulário com o <a href="https://www.ampproject.org/docs/reference/components/amp-bind"><code>amp-bind</code></a>:
+O exemplo a seguir demonstra uma resposta <code>submit-success</code> do formulário com o <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}"><code>amp-bind</code></a>:
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -686,7 +686,7 @@ visite o site [AMP Start](https://ampstart.com/components#form-elements) para os
 
 # Proteção contra XSRF
 
-Além de seguir os detalhes das [especificações CORP AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), preste atenção especial à seção [Processar solicitações de alteração de estado](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) (link em inglês) para se proteger contra [ataques XSRF](https://pt.wikipedia.org/wiki/Cross-site_request_forgery), em que um invasor pode executar comandos não autorizados usando a sessão atual do usuário sem o conhecimento dele.
+Além de seguir os detalhes das [especificações CORP AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}), preste atenção especial à seção [Processar solicitações de alteração de estado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) (link em inglês) para se proteger contra [ataques XSRF](https://pt.wikipedia.org/wiki/Cross-site_request_forgery), em que um invasor pode executar comandos não autorizados usando a sessão atual do usuário sem o conhecimento dele.
 
 Em geral, lembre-se dos seguintes pontos ao aceitar informações do usuário:
 

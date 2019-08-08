@@ -70,7 +70,7 @@ En el siguiente ejemplo, hacemos que se muestre una imagen que se adapta al tama
 [/example]
 
 [tip type="read-on"]
-Para obtener más información sobre las páginas AMP adaptables, consulta la guía sobre [cómo crear páginas AMP adaptables](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Para obtener más información sobre las páginas AMP adaptables, consulta la guía sobre [cómo crear páginas AMP adaptables]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.

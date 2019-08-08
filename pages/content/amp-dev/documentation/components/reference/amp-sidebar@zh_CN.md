@@ -213,7 +213,7 @@ $title: amp-sidebar
 
 ## 故事的边栏
 
-`amp-story` [组件](https://www.ampproject.org/stories/)支持使用 `amp-sidebar`。
+`amp-story` [组件]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}})支持使用 `amp-sidebar`。
 
 ### 行为
 

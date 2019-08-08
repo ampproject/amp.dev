@@ -37,7 +37,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Поддерживаемые макеты</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Поддерживаемые макеты</a></strong></td>
     <td>–</td>
   </tr>
   <tr>
@@ -164,7 +164,7 @@ limitations under the License.
 | `clear` | Очищает все значения в форме. Благодаря этому пользователи могут быстро заполнять формы во второй раз. |
 
 [tip type="read-on"]
-[Действия и события в AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html)
+[Действия и события в AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})
 [/tip]
 
 # События
@@ -685,7 +685,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 # Защита от XSRF-атак
 
-Помимо [спецификации AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html) настоятельно рекомендуем ознакомиться со статьей [об обработке запросов на изменение состояния](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests). Это необходимо для защиты от [XSRF-атак](https://en.wikipedia.org/wiki/Cross-site_request_forgery), когда злоумышленники выполняют неавторизованные команды в текущем сеансе пользователя без его ведома.
+Помимо [спецификации AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) настоятельно рекомендуем ознакомиться со статьей [об обработке запросов на изменение состояния]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests). Это необходимо для защиты от [XSRF-атак](https://en.wikipedia.org/wiki/Cross-site_request_forgery), когда злоумышленники выполняют неавторизованные команды в текущем сеансе пользователя без его ведома.
 
 Вот основные правила:
 

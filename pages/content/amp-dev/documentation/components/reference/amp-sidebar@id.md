@@ -213,7 +213,7 @@ Pada contoh berikut, kami menampilkan `toolbar` jika lebar jendela kurang dari a
 
 ## Sidebar untuk Artikel
 
-Penggunaan `amp-sidebar` didukung dalam [komponen](https://www.ampproject.org/stories/) `amp-story`.
+Penggunaan `amp-sidebar` didukung dalam [komponen]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### Perilaku
 

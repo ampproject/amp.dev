@@ -214,7 +214,7 @@ veja demonstrações ao vivo no [AMP By Example](https://ampbyexample.com/compon
 
 ## Barra lateral para matérias
 
-O uso do `amp-sidebar` é compatível com o [componente](https://www.ampproject.org/stories/) `amp-story`.
+O uso do `amp-sidebar` é compatível com o [componente]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### Comportamento
 

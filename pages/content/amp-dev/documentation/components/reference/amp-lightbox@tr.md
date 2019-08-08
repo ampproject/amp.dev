@@ -104,7 +104,7 @@ Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`]({{g.doc('/conten
 
 ## İşlemler
 
-`amp-lightbox`, [söz diziminde AMP kullanabileceğiniz aşağıdaki işlemlerin tetiklenmesini](https://www.ampproject.org/docs/reference/amp-actions-and-events) sağlar:
+`amp-lightbox`, [söz diziminde AMP kullanabileceğiniz aşağıdaki işlemlerin tetiklenmesini]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) sağlar:
 
 <table>
   <tr>

@@ -206,7 +206,7 @@ $title: amp-sidebar
 
 ## 스토리용 사이드바
 
-`amp-sidebar` 사용은 `amp-story` [구성요소](https://www.ampproject.org/stories/)에서 지원됩니다.
+`amp-sidebar` 사용은 `amp-story` [구성요소]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}})에서 지원됩니다.
 
 ### 동작
 

@@ -70,7 +70,7 @@ Dans l'exemple suivant, l'image affichée répond à la taille de la fenêtre d'
 [/example]
 
 [tip type="read-on"]
-Pour en savoir plus sur les pages AMP responsives, consultez le guide [Créer des pages AMP responsives](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Pour en savoir plus sur les pages AMP responsives, consultez le guide [Créer des pages AMP responsives]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 En cas d'échec de chargement de la ressource demandée par le composant `amp-img`, l'espace est vide, sauf si un élément enfant [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) est fourni. Une création de remplacement n'est exécutée que sur la mise en page initiale et aucune création de ce type n'est affectée aux modifications ultérieures de l'attribut src (à l'aide de resize + srcset, par exemple) pour des raisons de performances.

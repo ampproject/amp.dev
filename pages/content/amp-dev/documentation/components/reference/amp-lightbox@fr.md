@@ -103,7 +103,7 @@ Vous pouvez appliquer un style au composant `amp-lightbox` à l'aide d'une feuil
 
 ## Actions
 
-Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher avec la syntaxe de l'attribut "on" d'AMP](https://www.ampproject.org/docs/reference/amp-actions-and-events) :
+Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher avec la syntaxe de l'attribut "on" d'AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) :
 
 <table>
   <tr>

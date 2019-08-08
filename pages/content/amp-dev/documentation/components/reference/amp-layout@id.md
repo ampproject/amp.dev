@@ -30,7 +30,7 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>Deskripsi</strong></td>
-    <td>Elemen container serbaguna generik yang menghadirkan <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">tata letak</a> AMP yang canggih ke semua elemen.</td>
+    <td>Elemen container serbaguna generik yang menghadirkan <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">tata letak</a> AMP yang canggih ke semua elemen.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Tata Letak yang Didukung</a></strong></td>
@@ -40,7 +40,7 @@ $title: amp-layout
 
 ## Ringkasan
 
-Komponen `amp-layout` memungkinkan Anda menerapkan tata letak responsive berbasis rasio tinggi lebar ke semua elemen. Komponen `amp-layout` berfungsi dengan cara yang mirip untuk atribut [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) pada komponen AMP yang ada, tetapi mendukung semua markup HTML sebagai turunan. Tata letak lain yang didukung semuanya dapat digunakan dengan `amp-layout` (misalnya, fixed-height, fixed, dll.).
+Komponen `amp-layout` memungkinkan Anda menerapkan tata letak responsive berbasis rasio tinggi lebar ke semua elemen. Komponen `amp-layout` berfungsi dengan cara yang mirip untuk atribut [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) pada komponen AMP yang ada, tetapi mendukung semua markup HTML sebagai turunan. Tata letak lain yang didukung semuanya dapat digunakan dengan `amp-layout` (misalnya, fixed-height, fixed, dll.).
 
 **Contoh**
 

@@ -109,7 +109,7 @@ Puoi modificare lo stile ad `amp-lightbox` con CSS standard.
 
 ## Azioni
 
-`amp-lightbox` ti permette di attivare le seguenti azioni utilizzando [AMP on-syntax per attivare](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+`amp-lightbox` ti permette di attivare le seguenti azioni utilizzando [AMP on-syntax per attivare]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}):
 
 <table>
   <tr>

@@ -108,7 +108,7 @@ teaser:
 
 ## الإجراءات
 
-يعرض `amp-lightbox` الإجراءات التالية التي يمكنك استخدام [بنية on في AMP لتشغيلها](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+يعرض `amp-lightbox` الإجراءات التالية التي يمكنك استخدام [بنية on في AMP لتشغيلها]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}):
 
 <table>
   <tr>

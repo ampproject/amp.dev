@@ -70,7 +70,7 @@ Aşağıdaki örnekte, `layout=responsive` öğesini ayarlayarak görüntü alan
 [/example]
 
 [tip type="read-on"]
-[Duyarlı AMP Sayfaları Oluşturma](https://www.ampproject.org/docs/guides/responsive/responsive_design.html) kılavuzunda, duyarlı AMP sayfaları hakkında bilgi edinin.
+[Duyarlı AMP Sayfaları Oluşturma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}) kılavuzunda, duyarlı AMP sayfaları hakkında bilgi edinin.
 [/tip]
 
 `amp-img` bileşeni tarafından istenen kaynak yüklenemezse bir [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) alt öğesi sağlanıncaya kadar alan boş kalır. Bir yedek yalnızca başlangıç düzeninde oluşturulur ve olaydan sonraki src değişikliklerinin (örneğin, yeniden boyutlandırma + srcset aracılığıyla) performans sonuçları için bir yedeği olmaz.

@@ -38,7 +38,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Layout supportati</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Layout supportati</a></strong></td>
     <td>N/D</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ L'elemento `amp-form` espone le seguenti azioni:
 | `clear` | Elimina i valori da ogni input nel modulo. In questo modo gli utenti possono compilare rapidamente i moduli una seconda volta. |
 
 [tip type="read-on"]
-ulteriori informazioni su [Azioni ed eventi in AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html).
+ulteriori informazioni su [Azioni ed eventi in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 [/tip]
 
 # Eventi
@@ -687,7 +687,7 @@ visita [AMP Start](https://ampstart.com/components#form-elements) per elementi d
 
 # Protezione contro XSRF
 
-Oltre a seguire le istruzioni nella [specifica CORS AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), presta particolare attenzione alla sezione ["Elaborazione delle richieste di modifica dello stato"](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) per la protezione dagli [attacchi XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) in cui un utente malintenzionato può eseguire comandi non autorizzati utilizzando la sessione utente corrente all'insaputa di quest'ultimo.
+Oltre a seguire le istruzioni nella [specifica CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}), presta particolare attenzione alla sezione ["Elaborazione delle richieste di modifica dello stato"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) per la protezione dagli [attacchi XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) in cui un utente malintenzionato può eseguire comandi non autorizzati utilizzando la sessione utente corrente all'insaputa di quest'ultimo.
 
 In generale, tieni presente i seguenti punti quando accetti l'input da parte dell'utente:
 

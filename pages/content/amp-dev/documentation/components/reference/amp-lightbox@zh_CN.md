@@ -104,7 +104,7 @@ teaser:
 
 ## 操作
 
-`amp-lightbox` 提供以下操作，它们可以使用 [AMP on 语法触发](https://www.ampproject.org/docs/reference/amp-actions-and-events)：
+`amp-lightbox` 提供以下操作，它们可以使用 [AMP on 语法触发]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})：
 
 <table>
   <tr>

@@ -215,7 +215,7 @@ $title: amp-sidebar
 
 ## الشريط الجانبي للقصص
 
-من المقبول استخدام `amp-sidebar` داخل [المكوِّن](https://www.ampproject.org/stories/) `amp-story`.
+من المقبول استخدام `amp-sidebar` داخل [المكوِّن]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### السلوك
 

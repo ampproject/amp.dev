@@ -30,7 +30,7 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>Description</strong></td>
-    <td>Conteneur générique polyvalent qui permet d'appliquer les <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">mises en page</a> AMP enrichies à n'importe quel élément.</td>
+    <td>Conteneur générique polyvalent qui permet d'appliquer les <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">mises en page</a> AMP enrichies à n'importe quel élément.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
@@ -40,7 +40,7 @@ $title: amp-layout
 
 ## Aperçu
 
-Le composant `amp-layout` vous permet d'appliquer à n'importe quel élément des mises en page réactives basées sur le format. Ce composant fonctionne de la même manière que l'attribut [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) sur les composants AMP existants, si ce n'est qu'il accepte des balises HTML comme éléments enfants. Les autres mises en page compatibles fonctionnent toutes avec `amp-layout` (fixed-height, fixed, etc.).
+Le composant `amp-layout` vous permet d'appliquer à n'importe quel élément des mises en page réactives basées sur le format. Ce composant fonctionne de la même manière que l'attribut [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) sur les composants AMP existants, si ce n'est qu'il accepte des balises HTML comme éléments enfants. Les autres mises en page compatibles fonctionnent toutes avec `amp-layout` (fixed-height, fixed, etc.).
 
 **Exemple**
 

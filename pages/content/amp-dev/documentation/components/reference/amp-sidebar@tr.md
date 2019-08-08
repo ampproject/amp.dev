@@ -214,7 +214,7 @@ Aşağıdaki örnekte, pencere genişliği 767 pikselden az veya bu değere eşi
 
 ## Haberler için Kenar Çubuğu
 
-`amp-story` [bileşeni](https://www.ampproject.org/stories/) içinde `amp-sidebar` kullanımı desteklenir.
+`amp-story` [bileşeni]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) içinde `amp-sidebar` kullanımı desteklenir.
 
 ### Davranış
 

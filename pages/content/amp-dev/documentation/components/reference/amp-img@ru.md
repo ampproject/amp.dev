@@ -69,7 +69,7 @@ limitations under the License.
 [/example]
 
 [tip type="read-on"]
-Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Если ресурс, запрошенный компонентом `amp-img` не загружается, а дочерний элемент [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) отсутствует, пространство будет пустым. Резервное изображение показывается только в исходном макете. При последующих изменениях src, например с помощью resize + srcset, оно не используется. Это позволяет повысить эффективность.

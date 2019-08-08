@@ -33,7 +33,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Disponibilidade</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Experimental</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Experimental</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Script obrigatório</strong></td>
@@ -47,7 +47,7 @@ teaser:
     <td width="40%"><strong>Exemplos</strong></td>
     <td><ul>
       <li>Veja uma amostra de <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> no site AMP By Example.</li>
-      <li>Aprenda com o tutorial <a href="https://www.ampproject.org/docs/tutorials/visual_story">Criar uma história visual com AMP</a>.</li>
+      <li>Aprenda com o tutorial <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">Criar uma história visual com AMP</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ O conteúdo do corpo cria uma história com duas páginas.  Cada página tem uma
 
 ### Marcação obrigatória para amp-story
 
-O formato HTML da história em AMP segue os [mesmos requisitos de marcação de um documento HTML para AMP válido](https://www.ampproject.org/docs/reference/spec#required-markup), além dos seguintes requisitos adicionais:
+O formato HTML da história em AMP segue os [mesmos requisitos de marcação de um documento HTML para AMP válido]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup), além dos seguintes requisitos adicionais:
 
 | REGRA | DESCRIÇÃO |
 |----|---|
@@ -1362,8 +1362,8 @@ Além disso, para idiomas escritos da direita para a esquerda, você pode inclui
 
 ## Recursos relacionados
 
-* [Tutorial: criar uma história visual com AMP](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Tutorial: criar uma história visual com AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [Amostras no site AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Práticas recomendadas para criar uma história AMP](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [Práticas recomendadas para criar uma história AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

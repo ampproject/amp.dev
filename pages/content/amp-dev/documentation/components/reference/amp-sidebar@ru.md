@@ -214,7 +214,7 @@ $title: amp-sidebar
 
 ## Боковая панель для AMP-историй
 
-Боковую панель `amp-sidebar` можно использовать в [компоненте](https://www.ampproject.org/stories/) `amp-story`.
+Боковую панель `amp-sidebar` можно использовать в [компоненте]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### Принципы работы
 

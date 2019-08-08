@@ -74,7 +74,7 @@ limitations under the License.
 
 [tip type="read-on"]
 
-تعرّف على صفحات AMP المتجاوبة في دليل [إنشاء صفحات AMP متجاوبة](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+تعرّف على صفحات AMP المتجاوبة في دليل [إنشاء صفحات AMP متجاوبة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 
 [/tip]
 

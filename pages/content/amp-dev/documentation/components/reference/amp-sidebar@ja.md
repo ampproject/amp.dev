@@ -210,7 +210,7 @@ $title: amp-sidebar
 
 ## ストーリー向けサイドバー
 
-`amp-sidebar` は、[`amp-story` コンポーネント](https://www.ampproject.org/stories/)内でも使用できます。
+`amp-sidebar` は、[`amp-story` コンポーネント]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}})内でも使用できます。
 
 ### 動作
 

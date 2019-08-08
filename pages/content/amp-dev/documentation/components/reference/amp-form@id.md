@@ -38,7 +38,7 @@ $title: amp-form
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Tata Letak yang Didukung</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Tata Letak yang Didukung</a></strong></td>
     <td>T/A</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ Elemen `amp-form` memperlihatkan tindakan berikut:
 | `clear` | Mengosongkan nilai dari setiap input dalam formulir. Dengan tindakan ini, pengguna dapat melengkapi formulir dengan cepat untuk kedua kalinya. |
 
 [tip type="read-on"]
-Pelajari [Tindakan dan Peristiwa di AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html) lebih lanjut.
+Pelajari [Tindakan dan Peristiwa di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) lebih lanjut.
 [/tip]
 
 # Peristiwa
@@ -683,7 +683,7 @@ Kunjungi [AMP Start](https://ampstart.com/components#form-elements) untuk meliha
 
 # Melindungi dari serangan XSRF
 
-Selain mengikuti detail dalam [spesifikasi CORP AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), harap perhatikan lebih lanjut bagian [“Memproses permintaan yang mengubah status”](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) untuk melindungi dari [serangan XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) di mana penyerang dapat menjalankan perintah yang tidak sah menggunakan sesi pengguna aktif tanpa sepengetahuan mereka.
+Selain mengikuti detail dalam [spesifikasi CORP AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}), harap perhatikan lebih lanjut bagian [“Memproses permintaan yang mengubah status”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) untuk melindungi dari [serangan XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) di mana penyerang dapat menjalankan perintah yang tidak sah menggunakan sesi pengguna aktif tanpa sepengetahuan mereka.
 
 Secara umum, perhatikan hal-hal berikut ketika menerima input dari pengguna:
 

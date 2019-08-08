@@ -70,7 +70,7 @@ limitations under the License.
 [/example]
 
 [tip type="read-on"]
-[반응형 AMP 페이지 만들기](https://www.ampproject.org/docs/guides/responsive/responsive_design.html) 가이드에서 반응형 AMP 페이지에 관해 알아보세요.
+[반응형 AMP 페이지 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}) 가이드에서 반응형 AMP 페이지에 관해 알아보세요.
 [/tip]
 
 `amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.

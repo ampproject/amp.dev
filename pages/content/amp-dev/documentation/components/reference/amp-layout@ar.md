@@ -31,7 +31,7 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>الوصف</strong></td>
-    <td>عنصر حاوية عام متعدد الأغراض يطبّق <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">تنسيقات</a> AMP القوية على أي عنصر.</td>
+    <td>عنصر حاوية عام متعدد الأغراض يطبّق <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">تنسيقات</a> AMP القوية على أي عنصر.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
@@ -41,7 +41,7 @@ $title: amp-layout
 
 ## نظرة عامة
 
-يتيح لك المكّوِن `amp-layout` تطبيق تصميمات استجابة تستند إلى نسبة العرض إلى الارتفاع على أي عنصر. يعمل المكوِّن `amp-layout` بشكل مشابه للسمة [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) على مكونات AMP الموجودة لكنه يتيح عمل ترميز HTML كعناصر ثانوية. وتعمل جميع التنسيقات الأخرى مع `amp-layout` (مثل fixed-height وfixed وغيرها).
+يتيح لك المكّوِن `amp-layout` تطبيق تصميمات استجابة تستند إلى نسبة العرض إلى الارتفاع على أي عنصر. يعمل المكوِّن `amp-layout` بشكل مشابه للسمة [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) على مكونات AMP الموجودة لكنه يتيح عمل ترميز HTML كعناصر ثانوية. وتعمل جميع التنسيقات الأخرى مع `amp-layout` (مثل fixed-height وfixed وغيرها).
 
 **مثال**
 

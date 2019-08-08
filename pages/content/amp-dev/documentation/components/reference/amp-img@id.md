@@ -70,7 +70,7 @@ Pada contoh berikut, kami menampilkan gambar yang merespons ukuran viewport deng
 [/example]
 
 [tip type="read-on"]
-Pelajari tentang halaman AMP responsif dalam panduan [Membuat Halaman AMP yang Responsif](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Pelajari tentang halaman AMP responsif dalam panduan [Membuat Halaman AMP yang Responsif]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan kosong kecuali jika turunan [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) disediakan. Fallback hanya dijalankan pada tata letak awal dan perubahan src berikutnya setelah fakta (misalnya, melalui pengubahan ukuran + srcset) tidak akan memiliki fallback untuk implikasi performa.

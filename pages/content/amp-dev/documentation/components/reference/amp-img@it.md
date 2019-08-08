@@ -69,7 +69,7 @@ Nel seguente esempio viene mostrata un'immagine che si adatta alle dimensioni de
 [/example]
 
 [tip type="read-on"]
-Ulteriori informazioni sulle pagine AMP nella guida [Creazione di pagine AMP responsive](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Ulteriori informazioni sulle pagine AMP nella guida [Creazione di pagine AMP responsive]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.

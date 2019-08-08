@@ -102,7 +102,7 @@ teaser:
 
 ## アクション
 
-`amp-lightbox` は、[AMP on 構文を使用してトリガー](https://www.ampproject.org/docs/reference/amp-actions-and-events)できる以下のアクションをエクスポーズします。
+`amp-lightbox` は、[AMP on 構文を使用してトリガー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})できる以下のアクションをエクスポーズします。
 
 <table>
   <tr>

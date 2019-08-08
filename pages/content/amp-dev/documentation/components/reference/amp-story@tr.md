@@ -33,7 +33,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Durum</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Deneysel</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Deneysel</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
@@ -47,7 +47,7 @@ teaser:
     <td width="40%"><strong>Örnekler</strong></td>
     <td><ul>
       <li>Örneklerle AMP'de <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Merhaba Dünya</a> örneğine bakın.</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">Görsel AMP hikayesi oluşturma</a> eğiticisinden bilgi edinin.</li>
+      <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">Görsel AMP hikayesi oluşturma</a> eğiticisinden bilgi edinin.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ Gövdedeki içerik, iki sayfalı bir hikaye oluşturur.  Her sayfada, tam çerç
 
 ### amp-story için zorunlu işaretleme
 
-AMP hikayesi HTML biçimi, [geçerli bir AMP HTML dokümanıyla aynı işaretleme gereksinimlerinin](https://www.ampproject.org/docs/reference/spec#required-markup) yanı sıra aşağıdaki ek gereksinimlere uygundur:
+AMP hikayesi HTML biçimi, [geçerli bir AMP HTML dokümanıyla aynı işaretleme gereksinimlerinin]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup) yanı sıra aşağıdaki ek gereksinimlere uygundur:
 
 | KURAL | AÇIKLAMA |
 |----|---|
@@ -1367,8 +1367,8 @@ Buna ek olarak, sağdan sola diller için hikayenizin `<html>` etiketine `dir="r
 
 ## İlgili kaynaklar
 
-* [Eğitici: Bir görsel AMP hikayesi oluşturma](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Eğitici: Bir görsel AMP hikayesi oluşturma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [Örneklerle AMP'deki örnekler](https://ampbyexample.com/stories/#stories/introduction)
-* [AMP hikayesi oluşturmak için en iyi uygulamalar](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [AMP hikayesi oluşturmak için en iyi uygulamalar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

@@ -103,7 +103,7 @@ Puedes aplicar estilo a `amp-lightbox` con CSS estándar.
 
 ## Acciones
 
-El componente `amp-lightbox` muestra las acciones que se pueden [activar con AMP on-syntax](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+El componente `amp-lightbox` muestra las acciones que se pueden [activar con AMP on-syntax]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}):
 
 <table>
   <tr>

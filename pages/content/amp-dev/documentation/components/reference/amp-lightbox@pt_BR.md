@@ -103,7 +103,7 @@ para mostrar imagens em um lightbox, há também o componente [`<amp-image-light
 
 ## Ações
 
-O `amp-lightbox` expõe as seguintes ações em que você pode usar [a sintaxe AMP para acionar](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+O `amp-lightbox` expõe as seguintes ações em que você pode usar [a sintaxe AMP para acionar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}):
 
 <table>
   <tr>

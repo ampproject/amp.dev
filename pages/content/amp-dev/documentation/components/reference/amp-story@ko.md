@@ -34,7 +34,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>지원 대상</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">실험용</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">실험용</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>필수 스크립트</strong></td>
@@ -48,7 +48,7 @@ teaser:
     <td width="40%"><strong>예</strong></td>
     <td><ul>
       <li>AMP By Example의 <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> 샘플을 참조하세요.</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">시각적 AMP 스토리 작성하기</a> 가이드에서 알아보세요.</li>
+      <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">시각적 AMP 스토리 작성하기</a> 가이드에서 알아보세요.</li>
     </ul></td>
   </tr>
 </table>
@@ -250,7 +250,7 @@ amp-stories 북엔드에 새 기능을 추가했으므로, 더 풍부한 구성�
 
 ### amp-story의 필수 마크업
 
-AMP 스토리 HTML 형식은 [유효한 AMP HTML 문서와 동일한 마크업 요구사항](https://www.ampproject.org/docs/reference/spec#required-markup)과 다음 추가 요구사항을 따릅니다.
+AMP 스토리 HTML 형식은 [유효한 AMP HTML 문서와 동일한 마크업 요구사항]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)과 다음 추가 요구사항을 따릅니다.
 
 | 규칙 | 설명 |
 |----|---|
@@ -1371,8 +1371,8 @@ AMP 유효성 검사기 사양에서 [amp-story 규칙](https://github.com/amppr
 
 ## 관련 리소스
 
-* [가이드: 시각적 AMP 스토리 작성하기](https://www.ampproject.org/docs/tutorials/visual_story)
+* [가이드: 시각적 AMP 스토리 작성하기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [AMP By Example의 샘플](https://ampbyexample.com/stories/#stories/introduction)
-* [AMP 스토리 작성하기 권장사항](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [AMP 스토리 작성하기 권장사항]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

@@ -38,7 +38,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">支持的布局</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">支持的布局</a></strong></td>
     <td>无</td>
   </tr>
   <tr>
@@ -164,7 +164,7 @@ limitations under the License.
 | `submit` | 允许您针对特定操作（例如，点按链接，或[更改输入时提交表单](#input-events)）触发表单提交。 |
 | `clear` | 清空表单里每个输入中的值。这样一来，用户可以再次快速填写表单。 |
 
-[tip type="read-on"]：详细了解 [AMP 中的操作和事件](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html)。
+[tip type="read-on"]：详细了解 [AMP 中的操作和事件]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})。
 [/tip]
 
 # 事件
@@ -683,7 +683,7 @@ AMP 表单会为 `<textarea>` 元素提供 `autoexpand` 属性。这样一来，
 
 # 抵御 XSRF
 
-除了遵循 [AMP CORS 规范](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html)中的详细规定之外，还请特别注意[处理状态更改请求](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests)部分，以抵御 [XSRF 攻击](https://en.wikipedia.org/wiki/Cross-site_request_forgery)（即攻击者会在用户不知情的情况下使用当前用户会话执行未经授权的命令）。
+除了遵循 [AMP CORS 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})中的详细规定之外，还请特别注意[处理状态更改请求]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests)部分，以抵御 [XSRF 攻击](https://en.wikipedia.org/wiki/Cross-site_request_forgery)（即攻击者会在用户不知情的情况下使用当前用户会话执行未经授权的命令）。
 
 一般来说，在接受用户输入时，请注意以下几点：
 

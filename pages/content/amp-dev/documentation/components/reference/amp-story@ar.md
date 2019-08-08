@@ -33,7 +33,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>مدى التوفّر</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">تجريبي</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">تجريبي</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>النص البرمجي المطلوب</strong></td>
@@ -47,7 +47,7 @@ teaser:
     <td width="40%"><strong>أمثلة</strong></td>
     <td><ul>
       <li>يمكنك الاطلّاع على مثال <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> في الموقع "AMP بالمثال".</li>
-      <li>يمكنك التعلم من البرنامج التعليمي <a href="https://www.ampproject.org/docs/tutorials/visual_story">إنشاء سجل AMP مرئي</a>.</li>
+      <li>يمكنك التعلم من البرنامج التعليمي <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">إنشاء سجل AMP مرئي</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -258,7 +258,7 @@ teaser:
 
 ### الترميز المطلوب للعنصر amp-story
 
-يتّبع تنسيق HTML لسجلات AMP [متطلبات الترميز نفسها لمستند صالح برمز HTML لصفحات AMP](https://www.ampproject.org/docs/reference/spec#required-markup)، إلى جانب المتطلبات الإضافية التالية:
+يتّبع تنسيق HTML لسجلات AMP [متطلبات الترميز نفسها لمستند صالح برمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)، إلى جانب المتطلبات الإضافية التالية:
 
 | القاعدة | الوصف |
 |----|---|
@@ -1375,8 +1375,8 @@ url: "example.com/subscribe"
 
 ## موارد ذات الصلة
 
-* [البرنامج التعليمي: إنشاء سجلّ AMP مرئي](https://www.ampproject.org/docs/tutorials/visual_story)
+* [البرنامج التعليمي: إنشاء سجلّ AMP مرئي]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [أمثلة من موقع "AMP بالمثال"](https://ampbyexample.com/stories/#stories/introduction)
-* [أفضل الممارسات لإنشاء سجلّ AMP](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [أفضل الممارسات لإنشاء سجلّ AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

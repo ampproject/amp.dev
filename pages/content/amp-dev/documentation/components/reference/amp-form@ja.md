@@ -38,7 +38,7 @@ $title: amp-form
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">サポートされるレイアウト</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">サポートされるレイアウト</a></strong></td>
     <td>なし</td>
   </tr>
   <tr>
@@ -161,7 +161,7 @@ $title: amp-form
 | `submit` | 特定のアクション（リンクのタップ、[入力の変更に基づくフォームの送信](#input-events)など）が行われたときにフォームの送信をトリガーできます。 |
 | `clear` | フォームの各入力の値を空にします。これにより、フォームの入力を簡単にやり直すことができます。 |
 
-[tip type="read-on"] [AMP のアクションとイベント](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html)の詳細をご確認ください。
+[tip type="read-on"] [AMP のアクションとイベント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})の詳細をご確認ください。
 [/tip]
 
 # イベント
@@ -680,7 +680,7 @@ amp-form では、`<textarea>` 要素に `autoexpand` 属性を指定できま�
 
 # XSRF に対する保護
 
-[AMP CORS 仕様](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html)を遵守するだけでなく、[状態の変化に関するリクエストの処理](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests)のセクションに特に注意して、[XSRF 攻撃](https://en.wikipedia.org/wiki/Cross-site_request_forgery)から保護してください。この攻撃では、攻撃者が現在のユーザー セッションを利用して、ユーザーが気付かないうちに不正なコマンドを実行できます。
+[AMP CORS 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})を遵守するだけでなく、[状態の変化に関するリクエストの処理]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests)のセクションに特に注意して、[XSRF 攻撃](https://en.wikipedia.org/wiki/Cross-site_request_forgery)から保護してください。この攻撃では、攻撃者が現在のユーザー セッションを利用して、ユーザーが気付かないうちに不正なコマンドを実行できます。
 
 一般に、ユーザーからの入力を受け付ける場合は以下の点に注意してください。
 

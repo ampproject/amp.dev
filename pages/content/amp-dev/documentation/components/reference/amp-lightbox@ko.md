@@ -109,7 +109,7 @@ teaser:
 
 ## 작업
 
-`amp-lightbox`에서는 [AMP on-syntax를 사용하여 트리거](https://www.ampproject.org/docs/reference/amp-actions-and-events)할 수 있는 다음 작업을 공개합니다.
+`amp-lightbox`에서는 [AMP on-syntax를 사용하여 트리거]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})할 수 있는 다음 작업을 공개합니다.
 
 <table>
   <tr>

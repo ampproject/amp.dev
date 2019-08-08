@@ -38,7 +38,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Desteklenen Düzenler</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Desteklenen Düzenler</a></strong></td>
     <td>Yok</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spe
 | `clear` | Formdaki her bir girişin değerlerini boşaltır. Bu, kullanıcıların formları ikinci kez hızlıca doldurmalarına olanak tanıyabilir. |
 
 [tip type="read-on"]
-[AMP'de İşlemler ve Etkinlikler](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html) hakkında daha fazla bilgi edinin.
+[AMP'de İşlemler ve Etkinlikler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Etkinlikler
@@ -686,7 +686,7 @@ AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş A
 
 # XSRF'ye karşı koruma
 
-Bir saldırganın, kullanıcının bilgisi olmadan geçerli kullanıcı oturumunu kullanarak yetkisiz komutlar yürütebildiği [XSRF saldırılarına](https://en.wikipedia.org/wiki/Cross-site_request_forgery) karşı koruma sağlamak için [AMP CORS spesifikasyonundaki](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html) ayrıntıları uygulamaya ek olarak, lütfen ["Durum değiştirme isteklerini işleme"](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) konulu bölüme de dikkat edin.
+Bir saldırganın, kullanıcının bilgisi olmadan geçerli kullanıcı oturumunu kullanarak yetkisiz komutlar yürütebildiği [XSRF saldırılarına](https://en.wikipedia.org/wiki/Cross-site_request_forgery) karşı koruma sağlamak için [AMP CORS spesifikasyonundaki]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) ayrıntıları uygulamaya ek olarak, lütfen ["Durum değiştirme isteklerini işleme"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) konulu bölüme de dikkat edin.
 
 Genel olarak, kullanıcıdan gelen girişleri kabul ederken aşağıdaki noktaları göz önünde bulundurun:
 

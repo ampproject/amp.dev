@@ -37,7 +37,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">التنسيقات المعتمدة</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">التنسيقات المعتمدة</a></strong></td>
     <td>لا ينطبق</td>
   </tr>
   <tr>
@@ -170,7 +170,7 @@ limitations under the License.
 | `clear` | يعمل على تفريغ القيم من كل الإدخالات في النموذج. ويسمح هذا للمستخدِمين بسرعة ملء النماذج مرة ثانية. |
 
 [tip type="read-on"]
-تعرّف عن [الإجراءات والأحداث في AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html).
+تعرّف عن [الإجراءات والأحداث في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 [/tip]
 
 # الأحداث
@@ -702,7 +702,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 # الحماية من XSRF
 
-بالإضافة إلى اتباع التفاصيل الواردة في [مواصفات AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html)، يُرجى توجيه العناية الفائقة للقسم ["معالجة طلبات تغيير الحالة" ](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) للحماية من [هجمات XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) التي ينفذ فيها المهاجم أوامر غير مصرح بها باستخدام الجلسة الحالية للمستخدِم بدون علمه.
+بالإضافة إلى اتباع التفاصيل الواردة في [مواصفات AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})، يُرجى توجيه العناية الفائقة للقسم ["معالجة طلبات تغيير الحالة" ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) للحماية من [هجمات XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) التي ينفذ فيها المهاجم أوامر غير مصرح بها باستخدام الجلسة الحالية للمستخدِم بدون علمه.
 
 ضع في اعتبارك النقاط التالية بشكل عام عند قبول إدخال من المستخدِم:
 

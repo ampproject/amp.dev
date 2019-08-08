@@ -103,7 +103,7 @@ Anda dapat mengatur gaya `amp-lightbox` dengan CSS standar.
 
 ## Tindakan
 
-`amp-lightbox` menampilkan tindakan berikut yang dapat Anda gunakan pada [AMP on-syntax untuk memicu](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+`amp-lightbox` menampilkan tindakan berikut yang dapat Anda gunakan pada [AMP on-syntax untuk memicu]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}):
 
 <table>
   <tr>

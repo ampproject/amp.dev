@@ -31,7 +31,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>提供状況</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">試験運用版</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">試験運用版</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>必要なスクリプト</strong></td>
@@ -45,7 +45,7 @@ teaser:
     <td width="40%"><strong>例</strong></td>
     <td><ul>
       <li>AMP By Example の <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> のサンプルをご覧ください。</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">ビジュアルに訴える AMP ストーリーを作成する</a>方法についてのチュートリアルをご覧ください。</li>
+      <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">ビジュアルに訴える AMP ストーリーを作成する</a>方法についてのチュートリアルをご覧ください。</li>
     </ul></td>
   </tr>
 </table>
@@ -242,7 +242,7 @@ AMP ストーリーのブックエンドに新機能が追加されました。�
 
 ### amp-story に必要なマークアップ
 
-AMP ストーリーの HTML 形式は、[有効な AMP HTML ドキュメントと同じマークアップ要件](https://www.ampproject.org/docs/reference/spec#required-markup)と以下の追加要件に準拠します。
+AMP ストーリーの HTML 形式は、[有効な AMP HTML ドキュメントと同じマークアップ要件]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)と以下の追加要件に準拠します。
 
 | ルール | 説明 |
 |----|---|
@@ -1356,8 +1356,8 @@ AMP 検証ツールの仕様で [amp-story のルール](https://github.com/ampp
 
 ## 関連リソース
 
-* [チュートリアル: ビジュアルに訴える AMP ストーリーを作成する](https://www.ampproject.org/docs/tutorials/visual_story)
+* [チュートリアル: ビジュアルに訴える AMP ストーリーを作成する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [AMP By Example のサンプル](https://ampbyexample.com/stories/#stories/introduction)
-* [AMP ストーリーのおすすめの作成方法](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [AMP ストーリーのおすすめの作成方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

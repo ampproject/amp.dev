@@ -70,7 +70,7 @@ limitations under the License.
 [/example]
 
 [tip type="read-on"]
-如需了解自适应 AMP 网页，请参阅[制作自适应 AMP 网页](https://www.ampproject.org/docs/guides/responsive/responsive_design.html)指南。
+如需了解自适应 AMP 网页，请参阅[制作自适应 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}})指南。
 [/tip]
 
 如果 `amp-img` 组件请求的资源未能成功加载，则该资源所对应的空间将为空白，除非提供了 [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 子级。仅对初始布局执行后备操作；如果在初始布局完成之后进行后续的 src 更改（例如，通过调整大小和 srcset），则不会执行后备操作，以免影响性能。

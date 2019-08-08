@@ -33,7 +33,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>提供方式</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">实验性组件</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">实验性组件</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>必需的脚本</strong></td>
@@ -47,7 +47,7 @@ teaser:
     <td width="40%"><strong>示例</strong></td>
     <td><ul>
       <li>请参阅 AMP By Example 的 <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> 示例。</li>
-      <li>学习<a href="https://www.ampproject.org/docs/tutorials/visual_story">创建一个视觉效果丰富的 AMP 故事</a>教程。</li>
+      <li>学习<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">创建一个视觉效果丰富的 AMP 故事</a>教程。</li>
     </ul></td>
   </tr>
 </table>
@@ -248,7 +248,7 @@ body 中的内容创建了一个包含两个网页的故事。每个网页都包
 
 ### amp-story 的必需标记
 
-AMP 故事 HTML 格式遵循[与有效 AMP HTML 文档相同的标记要求](https://www.ampproject.org/docs/reference/spec#required-markup)，以及下面这些附加要求：
+AMP 故事 HTML 格式遵循[与有效 AMP HTML 文档相同的标记要求]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)，以及下面这些附加要求：
 
 | 规则 | 说明 |
 |----|---|
@@ -1367,8 +1367,8 @@ bookend 由各种组件构成。这些组件可以是文章、号召性用语链
 
 ## 相关资源
 
-* [教程：创建一个视觉效果丰富的 AMP 故事](https://www.ampproject.org/docs/tutorials/visual_story)
+* [教程：创建一个视觉效果丰富的 AMP 故事]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [AMP By Example 中的示例](https://ampbyexample.com/stories/#stories/introduction)
-* [创作 AMP 故事的最佳做法](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [创作 AMP 故事的最佳做法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>

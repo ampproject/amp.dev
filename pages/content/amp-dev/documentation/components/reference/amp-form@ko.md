@@ -38,7 +38,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">지원되는 레이아웃</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">지원되는 레이아웃</a></strong></td>
     <td>해당 사항 없음</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ XHR 엔드포인트에서 [CORS 보안]({{g.doc('/content/amp-dev/documentation/
 | `clear` | 양식의 각 입력에 있는 값을 비웁니다. 그러면 사용자가 다시 양식을 빠르게 채울 수 있습니다. |
 
 [tip type="read-on"]
-[AMP의 작업 및 이벤트](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html)에 관해 자세히 알아보세요.
+[AMP의 작업 및 이벤트]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})에 관해 자세히 알아보세요.
 [/tip]
 
 # 이벤트
@@ -684,7 +684,7 @@ AMP 페이지에서 사용할 수 있는 사전에 스타일이 지정된 응답
 
 # XSRF로부터 보호
 
-[AMP CORS 사양](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html)의 세부정보를 따르는 것 외에도 ['상태 변경 요청 처리'](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) 섹션에 각별히 유의하여 [XSRF 공격](https://en.wikipedia.org/wiki/Cross-site_request_forgery)으로부터 보호하세요. 이 공격에서는 공격자가 사용자 몰래 현재 사용자 세션을 사용하여 무단 명령을 실행할 수 있습니다.
+[AMP CORS 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})의 세부정보를 따르는 것 외에도 ['상태 변경 요청 처리']({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) 섹션에 각별히 유의하여 [XSRF 공격](https://en.wikipedia.org/wiki/Cross-site_request_forgery)으로부터 보호하세요. 이 공격에서는 공격자가 사용자 몰래 현재 사용자 세션을 사용하여 무단 명령을 실행할 수 있습니다.
 
 사용자의 입력을 받을 때 일반적으로 다음과 같은 점에 유의하세요.
 

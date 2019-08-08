@@ -70,7 +70,7 @@ No exemplo a seguir, mostramos uma imagem que responde ao tamanho da janela de v
 [/example]
 
 [tip type="read-on"]
-saiba mais sobre páginas AMP responsivas no guia [Criar páginas AMP responsivas](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+saiba mais sobre páginas AMP responsivas no guia [Criar páginas AMP responsivas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 [/tip]
 
 Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço ficará em branco, a menos que um [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) filho seja fornecido. Um substituto (fallback) é executado somente no layout inicial. As alterações src subsequentes após o fato (por meio de resize + srcset, por exemplo) não terão um substituto para implicações de desempenho.

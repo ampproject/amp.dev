@@ -214,7 +214,7 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
 
 ## Barre latérale pour les stories
 
-`amp-sidebar` peut être utilisé dans le [composant](https://www.ampproject.org/stories/) `amp-story`.
+`amp-sidebar` peut être utilisé dans le [composant]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
 
 ### Comportement
 

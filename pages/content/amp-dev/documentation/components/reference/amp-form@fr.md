@@ -38,7 +38,7 @@ limitations under the License.
   <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Mises en page compatibles</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Mises en page compatibles</a></strong></td>
     <td>N/A</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ L'élément `amp-form` expose les actions suivantes :
 | `clear` | Efface les valeurs de chaque entrée du formulaire. Cela permet aux utilisateurs de procéder rapidement à un nouveau remplissage des formulaires. |
 
 [tip type="read-on"]
-[Actions et événements dans AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html)
+[Actions et événements dans AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})
 [/tip]
 
 # Événements
@@ -685,7 +685,7 @@ Rendez-vous sur [AMP Start](https://ampstart.com/components#form-elements) pour
 
 # Protection contre les attaques XSRF
 
-Outre les consignes de la [spécification AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), prêtez une attention particulière aux informations de la section ["Processing state changing requests"](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) pour vous protéger comme les [attaques XSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery) au cours desquelles un pirate informatique peut exécuter des commandes non autorisées à l'aide de la session utilisateur en cours, à l'insu de l'utilisateur.
+Outre les consignes de la [spécification AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}), prêtez une attention particulière aux informations de la section ["Processing state changing requests"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) pour vous protéger comme les [attaques XSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery) au cours desquelles un pirate informatique peut exécuter des commandes non autorisées à l'aide de la session utilisateur en cours, à l'insu de l'utilisateur.
 
 Veuillez garder à l'esprit les points suivants lorsque vous acceptez des entrées de l'utilisateur :
 

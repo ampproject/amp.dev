@@ -104,7 +104,7 @@ teaser:
 
 ## Действия
 
-Компонент `amp-lightbox` поддерживает следующие действия ([подробнее…](https://www.ampproject.org/docs/reference/amp-actions-and-events)):
+Компонент `amp-lightbox` поддерживает следующие действия ([подробнее…]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})):
 
 <table>
   <tr>

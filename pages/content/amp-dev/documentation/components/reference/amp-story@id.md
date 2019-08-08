@@ -33,7 +33,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Ketersediaan</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Eksperimental</a></div></td>
+    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Eksperimental</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
@@ -47,7 +47,7 @@ teaser:
     <td width="40%"><strong>Contoh</strong></td>
     <td><ul>
       <li>Lihat sampel <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> di AMP By Example.</li>
-      <li>Belajar dari tutorial <a href="https://www.ampproject.org/docs/tutorials/visual_story">Membuat artikel AMP visual</a>.</li>
+      <li>Belajar dari tutorial <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">Membuat artikel AMP visual</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -248,7 +248,7 @@ Isi kode di atas menghasilkan artikel dengan dua halaman.  Setiap halaman memili
 
 ### Markup yang diperlukan untuk amp-story
 
-Format HTML artikel AMP mematuhi [persyaratan markup yang sama dengan dokumen HTML AMP yang valid](https://www.ampproject.org/docs/reference/spec#required-markup), beserta persyaratan tambahan berikut:
+Format HTML artikel AMP mematuhi [persyaratan markup yang sama dengan dokumen HTML AMP yang valid]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup), beserta persyaratan tambahan berikut:
 
 | ATURAN | DESKRIPSI |
 |----|---|
@@ -1358,8 +1358,8 @@ Selain itu, untuk bahasa yang penulisannya dari kanan ke kiri, Anda dapat menyer
 
 ## Referensi terkait
 
-* [Tutorial: Membuat artikel AMP visual](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Tutorial: Membuat artikel AMP visual]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
 * [Sampel di AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Praktik terbaik untuk membuat artikel AMP](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [Praktik terbaik untuk membuat artikel AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
 
 </amp-story></body>
