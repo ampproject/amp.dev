@@ -82,25 +82,25 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 以下に、取得したコンテンツのスタイル設定を示します。
 

@@ -92,16 +92,16 @@ teaser:
      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
    },
    {
-     "title": "AMPproject.org",
-     "url": "https://www.ampproject.org/"
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
    },
    {
-     "title": "AMP By Example",
-     "url": "https://ampbyexample.com/"
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
    },
    {
-     "title": "AMP Start",
-     "url": "https://ampstart.com/"
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
    }
  ]
 }

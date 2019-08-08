@@ -83,25 +83,25 @@ teaser:
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Вот как стилизован извлеченный контент:
 

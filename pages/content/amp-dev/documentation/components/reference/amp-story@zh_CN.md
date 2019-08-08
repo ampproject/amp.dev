@@ -721,7 +721,7 @@ AMP 故事 HTML 格式遵循[与有效 AMP HTML 文档相同的标记要求]({{g
     <div class="content" grid-area="lower-third">第 3 段</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">在此处放置出链！</a>
+    <a href="https://www.amp.dev" class="button">在此处放置出链！</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```

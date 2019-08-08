@@ -241,7 +241,7 @@ $title: amp-sidebar
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a "href=https://www.ampproject.org">外部链接</a></li>
+      <li><a "href=https://www.amp.dev">外部链接</a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
