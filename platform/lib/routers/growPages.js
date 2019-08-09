@@ -22,6 +22,7 @@ const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
+const CssTransformer = require('@lib/utils/cssTransformer');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -159,7 +160,12 @@ function rewriteLinks(canonical, html, format) {
 // eslint-disable-next-line new-cap
 const growPages = express.Router();
 
-const optimizer = AmpOptimizer.create();
+const optimizer = AmpOptimizer.create({
+  transformations: [
+    CssTransformer,
+    ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,
+  ],
+});
 
 // only match urls with slash at the end or html extension or no extension
 growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
