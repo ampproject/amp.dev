@@ -44,7 +44,9 @@ jest.mock('../../../dist/static/samples/samples.json', () => (
       ],
     },
   }
-));
+), {
+  virtual: true,
+});
 
 test('getExamplePreviewUrl', () => {
   const link = samples.getExamplePreviewUrl('http://localhost:8080/documentation/examples/introduction/stories_in_amp/?format=websites');
