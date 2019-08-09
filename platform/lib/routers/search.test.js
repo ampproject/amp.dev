@@ -1,31 +1,22 @@
 const express = require('express');
 const request = require('supertest');
-const fs = require('fs');
-const path = require('path');
-const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
+const samples = require('@lib/common/samples.js');
 
 jest.mock('@lib/utils/googleSearch.js');
+jest.mock('@lib/common/samples.js');
+
+samples.getComponentExampleMap.mockReturnValue({
+  'amp-test-example': {
+    exampleUrl: '/documentation/examples/components/amp-test-example/',
+    playgroundUrl: 'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example',
+  },
+});
 
 const app = express();
 const router = require('./search.js');
 app.use(router);
 
-const EXAMPLE_FOLDER_PATH = path.join(project.paths.DIST, '/examples/sources/components/');
-const TEST_EXAMPLE_FILE_PATH = path.join(EXAMPLE_FOLDER_PATH, 'amp-test-example.html');
-
-beforeAll(() => {
-  // ensure there is an example file for 'amp-test-example' since mocking fs does not work
-  if (!fs.existsSync(EXAMPLE_FOLDER_PATH)) {
-    fs.mkdirSync(EXAMPLE_FOLDER_PATH, {recursive: true});
-  }
-  fs.writeFileSync(TEST_EXAMPLE_FILE_PATH, '');
-});
-
-afterAll(() => {
-  // delete the special unit test file
-  fs.unlinkSync(TEST_EXAMPLE_FILE_PATH);
-});
 
 function createItem(index, isComponent) {
   const link = isComponent ? 'https://amp.dev/documentation/components/amp-comp-' + index + '/'
@@ -185,11 +176,9 @@ test('components with example get example and playground urls', (done) => {
         expect(res.body.result.components[0].url)
             .toBe('/documentation/components/amp-test-example/');
         expect(res.body.result.components[0].exampleUrl)
-            .toContain('/documentation/examples/components/amp-test-example/');
-        expect(res.body.result.components[0].playgroundUrl).toMatch(
-            // the url parameter must not have a locale, but start directly with /documentation
-            // eslint-disable-next-line max-len
-            /^https?:\/\/[^/]+\/.*?url=https?%3A%2F%2F(.(?!%2F))+.%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example/);
+            .toBe('/documentation/examples/components/amp-test-example/');
+        expect(res.body.result.components[0].playgroundUrl)
+            .toBe('http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example');
         expect(res.body.result.components[1].url)
             .toBe('/documentation/components/amp-no-example/');
         expect(res.body.result.components[1].exampleUrl).toBe(undefined);
@@ -212,11 +201,9 @@ test('components with example get example with locale and playground url without
         expect(res.body.result.components[0].url)
             .toBe('/pt_br/documentation/components/amp-test-example/');
         expect(res.body.result.components[0].exampleUrl)
-            .toContain('/pt_br/documentation/examples/components/amp-test-example/');
-        expect(res.body.result.components[0].playgroundUrl).toMatch(
-            // the url parameter must not have a locale, but start directly with /documentation
-            // eslint-disable-next-line max-len
-            /^https?:\/\/[^/]+\/.*?url=https?%3A%2F%2F(.(?!%2F))+.%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example/);
+            .toBe('/pt_br/documentation/examples/components/amp-test-example/');
+        expect(res.body.result.components[0].playgroundUrl)
+            .toBe('http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example');
         expect(res.body.result.components[1].url)
             .toBe('/pt_br/documentation/components/amp-no-example/');
         expect(res.body.result.components[1].exampleUrl).toBe(undefined);

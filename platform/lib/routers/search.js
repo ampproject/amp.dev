@@ -16,11 +16,11 @@
 'use strict';
 
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
 const config = require('@lib/config.js');
 const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
+const samples = require('@lib/common/samples.js');
 
 const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/AmpConstants.js');
 
@@ -30,53 +30,38 @@ const LAST_PAGE = googleSearch.MAX_PAGE;
 const COMPONENT_REFERENCE_DOC_PATTERN =
     /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
-const EXAMPLE_URL_PATH = '/documentation/examples/components/';
-const EXAMPLE_FOLDER_PATH = path.join(project.paths.DIST, '/examples/sources/components/');
-
 const REMOVE_HOST_PATTERN = /^https?:\/\/amp\.dev(?=\/)/;
-
-const PREVIEW_HOST = config.hosts.preview.base;
-const PLAYGROUND_URL = config.hosts.playground.base;
 
 // use the twitter title if available since it does not contain the site name
 const TITLE_META_TAG = 'twitter:title';
 const DESCRIPTION_META_TAG = 'twitter:description';
 
-// eslint-disable-next-line new-cap
-const examples = express.Router();
+const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 
 const COMPONENT_VERSIONS_PATH = path.join(project.paths.GROW_POD,
     '/extensions/amp-component-versions.json');
 
 function buildAutosuggestComponentResult() {
-  let components = [];
   const componentVersions = require(COMPONENT_VERSIONS_PATH);
-  for (const component in componentVersions) {
-    if (componentVersions.hasOwnProperty(component)) {
-      components.push(component);
-    }
-  }
-  components = components.concat(BUILD_IN_COMPONENTS);
-  components = components.concat(IMPORTANT_INCLUDED_ELEMENTS);
+  const components = Object.keys(componentVersions)
+      .concat(BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS);
   components.sort();
-  const result = ({
+  return ({
     items: components,
   });
-  return result;
 }
 
 const AUTOSUGGEST_COMPONENT_RESULT = buildAutosuggestComponentResult();
 
-examples.get('/search/autosuggest', handleAutosuggestRequest);
-examples.get('/search/do', handleSearchRequest);
+// eslint-disable-next-line new-cap
+const search = express.Router();
+
+search.get('/search/autosuggest', handleAutosuggestRequest);
+search.get('/search/do', handleSearchRequest);
+
 
 function handleAutosuggestRequest(request, response) {
   response.json(AUTOSUGGEST_COMPONENT_RESULT);
-}
-
-function hasExample(component) {
-  const filePath = path.join(EXAMPLE_FOLDER_PATH, component + '.html');
-  return fs.existsSync(filePath);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
@@ -88,7 +73,6 @@ function getCseItemMetaTagValue(item, metaTag) {
   }
   return null;
 }
-
 
 function createPageObject(csePageItem) {
   let title = getCseItemMetaTagValue(csePageItem, TITLE_META_TAG);
@@ -118,10 +102,11 @@ function enrichComponentPageObject(item, page, locale) {
 
   if (page.url) {
     const componentName = page.url.match(COMPONENT_REFERENCE_DOC_PATTERN)[1];
-    if (hasExample(componentName)) {
-      page.exampleUrl = EXAMPLE_URL_PATH + componentName + '/';
-      page.playgroundUrl = PLAYGROUND_URL + '/?url='
-        + encodeURIComponent(PREVIEW_HOST + page.exampleUrl);
+    const example = COMPONENT_EXAMPLES[componentName];
+    if (example) {
+      page.exampleUrl = example.exampleUrl;
+      page.playgroundUrl = example.playgroundUrl;
+
       // the preview link must not have the locale, but the example doc page has to have it:
       if (locale != config.getDefaultLocale()) {
         page.exampleUrl = '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
@@ -259,4 +244,4 @@ async function handleTestSearchRequest(request, response, next) {
   response.json(result);
 }
 
-module.exports = examples;
+module.exports = search;
