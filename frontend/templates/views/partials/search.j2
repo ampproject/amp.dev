@@ -7,7 +7,7 @@
 {% do doc.amp_dependencies.add('amp-list', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
-<div class="ap-o-search">
+<div class="ap-o-search" tabindex="0">
 
 {% raw %}
 <template id="search_results_template" type="amp-mustache">
@@ -59,7 +59,7 @@
                         submit-on-enter="false"
                         src="/search/autosuggest"
       >
-        <input name="q" placeholder="What are you looking for?" required>
+        <input name="q" placeholder="What are you looking for?" tabindex="1" required>
       </amp-autocomplete>
       <input name="locale" type="hidden" value="{{ doc.locale }}">
       <button type="submit">Search</button>

@@ -23,4 +23,16 @@
   z-index: 16;
   background-color: color('whisper');
   box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
