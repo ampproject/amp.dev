@@ -1,0 +1,23 @@
+/*
+
+#############################
+### ORGANISM: link group ####
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+/* A group of links should be close together, not spaced apart. */
+
+.#{organism('link-group')} {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .#{molecule('lnk')} {
+    padding-bottom: 0;
+  }
+}
