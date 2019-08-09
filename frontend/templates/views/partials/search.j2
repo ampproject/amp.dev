@@ -1,5 +1,4 @@
 {% do doc.styles.addCssFile('/css/components/organisms/search.css') %}
-{% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
 
 {% do doc.amp_dependencies.add('amp-autocomplete', '0.1') %}
 {% do doc.amp_dependencies.add('amp-form', '0.1') %}
@@ -8,7 +7,6 @@
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
 <div id="searchLayer" class="ap-o-search">
-
   <div class="ap-m-search-trigger" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus" role="button" tabindex="0">
     {% do doc.icons.useIcon('/icons/close.svg') %}
     <div class="ap-a-ico ap-m-search-trigger-icon">
@@ -53,11 +51,8 @@
 </template>
 {% endraw %}
 
-<section class="ap--container">
-
-  <div class="ap-m-copy ap-m-copy-center-small ap-m-biggy-background">
-    <h1>Search</h1>
-    <form action-xhr="/search/do" class="search-form" id="searchForm" method="GET"
+  <div class="ap-o-search-field">
+    <form action-xhr="/search/do" class="ap-o-search-form" id="searchForm" method="GET"
           on="input-throttled:searchLayer.toggleClass(class='active', force=true);
               submit-success: AMP.setState({'showResults': true, 'search': event.response, 'totalResults': event.response.result.totalResults})"
           target="_top">
@@ -67,12 +62,12 @@
                         submit-on-enter="false"
                         src="/search/autosuggest"
       >
-        <input id="searchInput" name="q" placeholder="What are you looking for?" tabindex="1" required>
+        <input id="searchInput" class="ap-o-search-input" name="q" placeholder="What are you looking for?" tabindex="1" required>
       </amp-autocomplete>
       <input name="locale" type="hidden" value="{{ doc.locale }}">
       <button type="submit">Search</button>
 
-      <p [text]="totalResults + ' results found'" class="info"></p>
+      <p [text]="totalResults + ' results found'" class="ap-o-search-info"></p>
 
       <div submit-success template="search_results_template"></div>
       <div submit-error>
@@ -80,11 +75,9 @@
         We apologize for the inconvenience caused.<br>
         Please try again later.
       </div>
-
     </form>
 
     <div [hidden]="totalResults <= 10" hidden>
-
       <amp-list [height]="(100) * search.result.components.length + (80) * search.result.pages.length"
                 [src]="search.nextUrl"
                 binding="no"
@@ -96,8 +89,8 @@
                 load-more-bookmark="nextUrl"
                 template="search_results_template"
                 reset-on-refresh
-                single-item>
-
+                single-item
+      >
         <div overflow>
           <button>Show more</button>
         </div>
@@ -111,41 +104,23 @@
         <amp-list-load-more load-more-end>
           You have reached the end of the results.
         </amp-list-load-more>
-
       </amp-list>
 
       <div [hidden]="totalResults <= 100" hidden>
         Although there are <span [text]="totalResults">&gt; 100</span> hits in total we can not show more than 100.
       </div>
-
     </div>
   </div>
 
-  <div class="ap--divider"></div>
+  <div [hidden]="showResults" class="ap-o-search-teaser-list">
+    <div class="ap-o-search-teaser-item">
+      <h1>Important AMP components</h1>
+      <p>Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it.</p>
+    </div>
 
-</section>
-
-
-<section [hidden]="showResults" class="ap--container">
-
-  <div class="ap-m-copy ap-m-copy-center-small ap-m-biggy-background">
-    <h1>Important AMP components</h1>
-    <p>Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it.</p>
+    <div class="ap-o-search-teaser-item">
+      <h1>Popular Articles</h1>
+      <p>These design principles are meant to guide the ongoing design and development of AMP. They should help us make internally consistent decisions.</p>
+    </div>
   </div>
-
-  <div class="ap--divider"></div>
-
-</section>
-
-<section [hidden]="showResults" class="ap--container">
-
-  <div class="ap-m-copy no-margin ap-m-copy-center-small ap-m-biggy-background">
-    <h1>Popular Articles</h1>
-    <p>These design principles are meant to guide the ongoing design and development of AMP. They should help us make internally consistent decisions.</p>
-  </div>
-
-  <div class="ap--divider"></div>
-
-
-</section>
 </div>
