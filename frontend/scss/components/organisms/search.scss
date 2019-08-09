@@ -1,0 +1,26 @@
+/*
+
+########################
+### ORGANISM: search ###
+########################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+
+.#{organism('search')} {
+  width: 100%;
+  height: 77.777vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 5rem 21rem;
+  z-index: 16;
+  background-color: color('whisper');
+  box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
+}

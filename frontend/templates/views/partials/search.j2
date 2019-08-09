@@ -1,3 +1,4 @@
+{% do doc.styles.addCssFile('/css/components/organisms/search.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
 
 {% do doc.amp_dependencies.add('amp-autocomplete', '0.1') %}
@@ -5,6 +6,8 @@
 {% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% do doc.amp_dependencies.add('amp-list', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
+
+<div class="ap-o-search">
 
 {% raw %}
 <template id="search_results_template" type="amp-mustache">
@@ -137,3 +140,4 @@
 
 
 </section>
+</div>
