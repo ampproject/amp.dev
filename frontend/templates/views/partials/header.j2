@@ -86,6 +86,14 @@
       {% endfor %}
     </nav>
 
+    {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
+    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLayer.toggleClass(class='active'),searchInput.focus" role="button"  tabindex="0">
+      {% do doc.icons.useIcon('/icons/search.svg') %}
+      <div class="ap-a-ico ap-m-search-trigger-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+      </div>
+    </div>
+
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
       <span class="ap-m-language-selector-label" aria-label="{{ _('Select a language') }}" tabindex="-1">

@@ -1,0 +1,22 @@
+/*
+
+#################################
+### MOLECULES: search-trigger ###
+#################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('search-trigger')} {
+  margin-left: auto;
+  padding: 0 20px 9px 0;
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
