@@ -24,9 +24,9 @@ Introductory tutorials help the developer understand the general idea of the tec
 
 amp.dev examples:
 
-- [Create your first AMP page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create.md', locale=doc.locale).url.path}}?format=websites)
-- [Create your first AMP story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story.md', locale=doc.locale).url.path}}?format=stories)
-- [Create your first AMPHTML ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad.md', locale=doc.locale).url.path}}?format=ads)
+- [Create your first AMP page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/index.md', locale=doc.locale).url.path}}?format=websites)
+- [Create your first AMP story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/index.md', locale=doc.locale).url.path}}?format=stories)
+- [Create your first AMPHTML ad]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/index.md', locale=doc.locale).url.path}}?format=ads)
 
 <table>
   <tr>
@@ -76,9 +76,9 @@ Advanced tutorials help developers accomplish a specific task. It assumes the de
 
 amp.dev examples:
 
-- [How to configure basic analytics for your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.md', locale=doc.locale).url.path}}?format=websites)
+- [How to configure basic analytics for your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/tracking-engagement.md', locale=doc.locale).url.path}}?format=websites)
 - [Add custom JavaScript to AMP pages with amp-script]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript-tutorial.md', locale=doc.locale).url.path}}?format=websites)
-- [Turn your AMP site into a PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.md', locale=doc.locale).url.path}}?format=websites)
+- [Turn your AMP site into a PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md', locale=doc.locale).url.path}}?format=websites)
 
 <table>
   <tr>
@@ -158,8 +158,8 @@ Concept guides help developers build a deeper understanding of AMP. A concept gu
 amp.dev examples:
 
 - [Animate & transition]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md', locale=doc.locale).url.path}}?format=websites)
-- [Track engagement with analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics.md', locale=doc.locale).url.path}}?format=websites)
-- [Style & layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout.md', locale=doc.locale).url.path}}?format=websites)
+- [Track engagement with analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-and-measure/index.md', locale=doc.locale).url.path}}?format=websites)
+- [Style & layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/indexs.md', locale=doc.locale).url.path}}?format=websites)
 
 <table>
   <tr>
@@ -199,7 +199,7 @@ amp.dev examples:
 
 Reference documentation lists all the programmatic elements for an AMP component. It provides detailed behavioral information and is designed for scanning. Reference documentation should include exemplary code samples and demonstrate use-cases.   
 
-amp.dev reference documents are found under [the AMP component catalogue]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}?format=websites).
+amp.dev reference documents are found under [the AMP component catalogue]({{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}?format=websites).
 
 [tip type="important"]
 AMP reference documentation is contributed to the [AMPHTML repository](https://github.com/ampproject/amphtml).

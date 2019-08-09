@@ -103,7 +103,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 For a list of shortcodes and their uses, please view [documentation.md on GitHub](https://github.com/ampproject/amp.dev/blob/future/contributing/documentation.md#shortcodes).
 
 ## Images
-amp.dev is built with AMP! Therefore our images must match the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/amp-img.md', locale=doc.locale).url.path}}?format=websites) criteria. The build process uses the following syntact to convert images to proper `amp-img` format. 
+amp.dev is built with AMP! Therefore our images must match the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}?format=websites) criteria. The build process uses the following syntact to convert images to proper `amp-img` format. 
 
 <div class="ap-m-code-snippet">
 <pre>
@@ -176,7 +176,7 @@ Place code snippets inside sets of three backticks, specify the language at the 
 </pre>
 </div>
 
-If your code contains double curly braces, which often is the case if you use [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/amp-mustache.md', locale=doc.locale).url.path}}?format=websites) templates, you have to wrap the code part:
+If your code contains double curly braces, which often is the case if you use [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}?format=websites) templates, you have to wrap the code part:
 
 <div class="ap-m-code-snippet">
 <pre>
