@@ -38,7 +38,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Layout supportati</a></strong></td>
+    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">Layout supportati</a></strong></td>
     <td>N/D</td>
   </tr>
   <tr>
@@ -53,7 +53,7 @@ limitations under the License.
 L'estensione `amp-form` consente di creare moduli (`<form>`) per inviare campi di inserimento in un documento AMP. L'estensione `amp-form` fornisce anche il [polyfill](#polyfills) per alcuni comportamenti mancanti nei browser.
 
 [tip type="important"]
-se invii dati nel modulo, l'endpoint del server deve implementare i requisiti per la [sicurezza CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+se invii dati nel modulo, l'endpoint del server deve implementare i requisiti per la [sicurezza CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 [/tip]
 
 Prima di creare un `<form>`, devi includere lo script richiesto per l'estensione `<amp-form>`, altrimenti il documento non sarà valido. Se utilizzi tag `input` per scopi diversi dall'invio dei loro valori (ad esempio, gli input non all'interno di un `<form>`), non devi caricare l'estensione `amp-form`.
@@ -119,7 +119,7 @@ Gli attributi `target` e `action` vengono utilizzati solo per le richieste GET n
 Specifica un endpoint del server per gestire l'input del modulo e inviarlo tramite XMLHttpRequest (XHR). Una richiesta XHR (a volte chiamata richiesta AJAX) è quella in cui il browser effettua la richiesta senza caricare completamente la pagina o aprirne una nuova. I browser invieranno la richiesta in background utilizzando l'[API Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) quando disponibile e le procedure di riserva all'[API XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) per i browser meno recenti.
 
 [tip type="important"]
-l'endpoint XHR deve implementare i requisiti per la [sicurezza CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+l'endpoint XHR deve implementare i requisiti per la [sicurezza CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 [/tip]
 
 Questo attributo è obbligatorio per `method=POST` ed è facoltativo per `method=GET`.
@@ -144,7 +144,7 @@ Per ulteriori dettagli, consulta la sezione [Convalida personalizzata](#custom-v
 
 * Altri elementi relativi ai moduli, tra cui: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` e così via.
 * `<input type=password>` e `<input type=file>` all'interno di `<form method=POST action-xhr>`.
-* [`amp-selector`](https://www.ampproject.org/docs/reference/components/amp-selector)
+* [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})
 
 **Non consentiti**:
 
@@ -165,7 +165,7 @@ L'elemento `amp-form` espone le seguenti azioni:
 | `clear` | Elimina i valori da ogni input nel modulo. In questo modo gli utenti possono compilare rapidamente i moduli una seconda volta. |
 
 [tip type="read-on"]
-ulteriori informazioni su [Azioni ed eventi in AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html).
+ulteriori informazioni su [Azioni ed eventi in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
 [/tip]
 
 # Eventi
@@ -182,7 +182,7 @@ ulteriori informazioni su [Azioni ed eventi in AMP](https://www.ampproject.org/d
 | `valid` | Lo stato di convalida del modulo diventa "valido" (in conformità alla sua [strategia di generazione rapporti](#reporting-strategies)). |
 | `invalid` | Lo stato di convalida del modulo diventa "invalido" (in conformità alla sua [strategia di generazione rapporti](#reporting-strategies)). |
 
-Questi eventi possono essere utilizzati tramite l'[attributo `on`](https://www.ampproject.org/docs/fundamentals/spec#on).
+Questi eventi possono essere utilizzati tramite l'[attributo `on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on).
 
 Ad esempio, quanto segue prende in considerazione gli eventi `submit-success` e `submit-error` e mostra lightbox diversi a seconda dell'evento:
 
@@ -197,7 +197,7 @@ Vedi l'[esempio completo qui](https://github.com/ampproject/amphtml/blob/master/
 
 # Eventi di input
 
-AMP espone gli eventi `change` e `input-debounced` sugli elementi `<input>` secondari. Ciò consente di utilizzare l'[attributo `on`](https://www.ampproject.org/docs/fundamentals/spec#on) per eseguire un'azione su qualsiasi elemento quando un valore di input cambia.
+AMP espone gli eventi `change` e `input-debounced` sugli elementi `<input>` secondari. Ciò consente di utilizzare l'[attributo `on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on) per eseguire un'azione su qualsiasi elemento quando un valore di input cambia.
 
 Ad esempio, un caso d'uso comune è inviare un modulo alla modifica dell'input (selezionare un pulsante di opzione per rispondere a un sondaggio, scegliere una lingua da un input `select` per tradurre una pagina e così via).
 
@@ -229,7 +229,7 @@ Vedi l'[esempio completo qui](https://github.com/ampproject/amphtml/blob/master/
 
 # Trigger di Analytics
 
-L'estensione `amp-form` attiva i seguenti eventi che puoi monitorare nella configurazione [Analytics per AMP](https://www.ampproject.org/docs/reference/components/amp-analytics):
+L'estensione `amp-form` attiva i seguenti eventi che puoi monitorare nella configurazione [Analytics per AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
 
 | Evento                     | Attivato quando                        |
 |---------------------------|-----------------------------------|
@@ -290,7 +290,7 @@ Quando si attiva l'evento `amp-form-submit`, `amp-form-submit-success` o `amp-fo
 
 # Visualizzazione di risposta positiva o di errore
 
-Puoi eseguire la visualizzazione delle risposte positive o di errore nel modulo utilizzando [modelli estesi](https://www.ampproject.org/docs/fundamentals/spec#extended-templates), ad esempio [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache), o risposte positive tramite associazione di dati con [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) e i seguenti attributi di risposta:
+Puoi eseguire la visualizzazione delle risposte positive o di errore nel modulo utilizzando [modelli estesi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#extended-templates), ad esempio [amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}), o risposte positive tramite associazione di dati con [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) e i seguenti attributi di risposta:
 
 | Attributo di risposta | Descrizione |
 |-----------|---------------------|
@@ -385,11 +385,11 @@ Vedi l'[esempio completo qui](https://github.com/ampproject/amphtml/blob/master/
 
 # Eseguire la visualizzazione di una risposta positiva con associazione dati
 
-* Utilizza l'[attributo on](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events) per associare l'attributo del modulo *submit-success* ad [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate%28%29).
+* Utilizza l'[attributo on]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) per associare l'attributo del modulo *submit-success* ad [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-amp.setstate%28%29).
 * Utilizza la proprietà `event` per acquisire i dati della risposta.
 * Aggiungi l'attributo di stato all'elemento desiderato per associare la risposta del modulo.
 
-Nel seguente esempio è riportata una risposta `submit-success` con modulo con [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind):
+Nel seguente esempio è riportata una risposta `submit-success` con modulo con [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}):
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -430,7 +430,7 @@ Quindi `amp-bind` aggiorna il testo dell'elemento `<p>` per farlo corrispondere 
 
 Dopo che gli utenti hanno inviato correttamente il modulo puoi reindirizzarli su una nuova pagina impostando l'intestazione di risposta `AMP-Redirect-To` e specificando un URL di reindirizzamento. L'URL di reindirizzamento deve essere un URL HTTPS, altrimenti AMP genererà un errore e il reindirizzamento non si verificherà.  Le intestazioni delle risposte HTTP sono configurate tramite il server.
 
-Assicurati di aggiornare la risposta `Access-Control-Expose-Headers` per includere `AMP-Redirect-To` nell'elenco delle intestazioni consentite.  Ulteriori informazioni sulle intestazioni in [Sicurezza CORS in AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Assicurati di aggiornare la risposta `Access-Control-Expose-Headers` per includere `AMP-Redirect-To` nell'elenco delle intestazioni consentite.  Ulteriori informazioni sulle intestazioni in [Sicurezza CORS in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 *Esempi di intestazioni di risposta:*
 
@@ -687,7 +687,7 @@ visita [AMP Start](https://ampstart.com/components#form-elements) per elementi d
 
 # Protezione contro XSRF
 
-Oltre a seguire le istruzioni nella [specifica CORS AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), presta particolare attenzione alla sezione ["Elaborazione delle richieste di modifica dello stato"](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) per la protezione dagli [attacchi XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) in cui un utente malintenzionato può eseguire comandi non autorizzati utilizzando la sessione utente corrente all'insaputa di quest'ultimo.
+Oltre a seguire le istruzioni nella [specifica CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}), presta particolare attenzione alla sezione ["Elaborazione delle richieste di modifica dello stato"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) per la protezione dagli [attacchi XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) in cui un utente malintenzionato può eseguire comandi non autorizzati utilizzando la sessione utente corrente all'insaputa di quest'ultimo.
 
 In generale, tieni presente i seguenti punti quando accetti l'input da parte dell'utente:
 

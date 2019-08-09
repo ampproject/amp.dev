@@ -37,7 +37,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -62,7 +62,7 @@ Klavyedeki çıkış tuşuna basıldığında lightbox kapanır. Alternatif olar
 ```
 
 [tip type="read"]
-Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) bileşeni de vardır.
+Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) bileşeni de vardır.
 [/tip]
 
 ## Özellikler
@@ -104,7 +104,7 @@ Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`](https://www.ampp
 
 ## İşlemler
 
-`amp-lightbox`, [söz diziminde AMP kullanabileceğiniz aşağıdaki işlemlerin tetiklenmesini](https://www.ampproject.org/docs/reference/amp-actions-and-events) sağlar:
+`amp-lightbox`, [söz diziminde AMP kullanabileceğiniz aşağıdaki işlemlerin tetiklenmesini]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) sağlar:
 
 <table>
   <tr>
@@ -124,7 +124,7 @@ Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`](https://www.ampp
 ## <a id="a4a"></a> AMPHTML reklamlarında `amp-lightbox` özelliğini kullanma
 
 [tip type="note"]
-`amp-lightbox` bileşeninin AMPHTML reklamlarında kullanılması [deneme aşamasındadır](https://www.ampproject.org/docs/reference/experimental) ve etkin bir şekilde geliştirilmektedir. AMPHTML reklamlarında `amp-lightbox` özelliğini kullanmak [`amp-lightbox-a4a-proto` denemesini etkinleştirin](http://cdn.ampproject.org/experiments.html).
+`amp-lightbox` bileşeninin AMPHTML reklamlarında kullanılması [deneme aşamasındadır]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) ve etkin bir şekilde geliştirilmektedir. AMPHTML reklamlarında `amp-lightbox` özelliğini kullanmak [`amp-lightbox-a4a-proto` denemesini etkinleştirin](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
 `amp-lightbox` özelliğinin normal AMP dokümanlarında kullanılması ile [AMPHTML'de yazılmış reklamlar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) arasında bazı farklar vardır:

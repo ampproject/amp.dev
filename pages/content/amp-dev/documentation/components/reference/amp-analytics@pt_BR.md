@@ -47,16 +47,16 @@ Registra dados de análise de documentos AMP.
 Antes de começar a usar o AMP Analytics no seu site, é preciso decidir se você usará ferramentas de análise de terceiros para examinar o engajamento dos usuários ou sua própria solução interna.
 
 [tip type="read-on"]
-saiba tudo sobre o AMP Analytics no guia [Configurar Analytics](https://www.ampproject.org/docs/guides/analytics_amp).
+saiba tudo sobre o AMP Analytics no guia [Configurar Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ### Enviar dados para um fornecedor de análise <a name="analytics-vendors"></a>
 
-O AMP Analytics foi criado especialmente para fazer a avaliação uma vez e gerar relatórios para vários destinos. Se você já está trabalhando com um ou mais fornecedores de análise, verifique a lista de [Fornecedores de análise](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) para ver se eles integraram as respectivas soluções às AMP.
+O AMP Analytics foi criado especialmente para fazer a avaliação uma vez e gerar relatórios para vários destinos. Se você já está trabalhando com um ou mais fornecedores de análise, verifique a lista de [Fornecedores de análise]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) para ver se eles integraram as respectivas soluções às AMP.
 
 Para fornecedores integrados ao AMP Analytics:
 
-1. Na tag `<amp-analytics>`, adicione o atributo `type` e defina o valor dele para o [fornecedor](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) especificado.
+1. Na tag `<amp-analytics>`, adicione o atributo `type` e defina o valor dele para o [fornecedor]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) especificado.
 1. Determine quais dados você quer coletar e rastrear e especifique esses detalhes nos dados de configuração. Consulte a documentação do fornecedor para ver instruções sobre como coletar os dados de análise.
 
 Se o fornecedor de análise não tiver feito a integração com as AMP, entre em contato com ele para receber suporte. Também recomendamos que você abra um chamado no projeto AMP, pedindo que o fornecedor seja adicionado. Consulte também [Integrar suas ferramentas de análise em HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) (link em inglês). Ou você pode pedir para seu fornecedor enviar os dados ao URL especificado. Saiba mais na seção [Enviar dados internamente](#sending-data-in-house) abaixo.
@@ -123,7 +123,7 @@ Veja um exemplo simples que rastreia visualizações de página.  Sempre que uma
 ```
 
 [tip type="success"]
-para alguns casos de uso comuns de rastreamento (por exemplo, visualizações de página, cliques em páginas, rolagem etc.), consulte [Analytics: casos de uso](https://www.ampproject.org/docs/guides/analytics/use_cases).
+para alguns casos de uso comuns de rastreamento (por exemplo, visualizações de página, cliques em páginas, rolagem etc.), consulte [Analytics: casos de uso]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## Especificar dados de configuração
@@ -833,7 +833,7 @@ Estes são os atributos válidos para o componente `amp-analytics`:
 
 **type**
 
-Especifica o tipo de fornecedor.  Para ver detalhes, consulte a lista de [fornecedores do Analytics](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
+Especifica o tipo de fornecedor.  Para ver detalhes, consulte a lista de [fornecedores do Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
 
 Exemplo:
 

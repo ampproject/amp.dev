@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Tutoriales</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">Crear páginas de AMP interactivas</a></td>
+    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">Crear páginas de AMP interactivas</a></td>
   </tr>
 </table>
 
@@ -391,7 +391,7 @@ Cuando el **estado** cambia, las expresiones se vuelven a evaluar y las propieda
     <td>Debe ser una expresión booleana.</td>
   </tr>
   <tr>
-    <td>Tamaño de los <a href="https://www.ampproject.org/es/docs/reference/components">elementos AMP</a></td>
+    <td>Tamaño de los <a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">elementos AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Cambia la anchura o la altura del elemento AMP.</td>
   </tr>
@@ -453,7 +453,7 @@ Solo se admiten los bindings a los siguientes componentes y atributos:
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>Al hacer un binding a <code>[src]</code>, asegúrate de hacerlo también a <code>[srcset]</code> para que el funcione en caché.<br>Consulta los <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">atributos de "amp-img"</a> correspondientes.</td>
+    <td>Al hacer un binding a <code>[src]</code>, asegúrate de hacerlo también a <code>[srcset]</code> para que el funcione en caché.<br>Consulta los <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">atributos de "amp-img"</a> correspondientes.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -482,7 +482,7 @@ Solo se admiten los bindings a los siguientes componentes y atributos:
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>Consulta los <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">atributos de "amp-video"</a> correspondientes.</td>
+    <td>Consulta los <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">atributos de "amp-video"</a> correspondientes.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -655,7 +655,7 @@ AMP envía XMLHttpRequests (XHR) por lotes a puntos de conexión JSON. Es decir,
     <td>URL del punto de conexión remoto que devolverá el JSON que actualizará este <code>amp-state</code>. Debe ser un servicio CORS HTTP.
         El atributo <code>src</code> admite todas las sustituciones estándar de variables de URL. Para obtener más información, consulta la <a href="../../spec/amp-var-substitutions.md">guía de sustituciones</a>.
         [tip type="important"]
-      El punto de conexión debe implementar los requisitos que se detallan en la <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">especificación de las solicitudes CORS de AMP</a>.
+      El punto de conexión debe implementar los requisitos que se detallan en la <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">especificación de las solicitudes CORS de AMP</a>.
       [/tip]</td>
   </tr>
   <tr>
@@ -665,7 +665,7 @@ AMP envía XMLHttpRequests (XHR) por lotes a puntos de conexión JSON. Es decir,
         <li>Valores admitidos: `omit` e `include`</li>
         <li>Valores predeterminados: `omit`</li>
       </ul>
-      Para enviar credenciales, transfiere el valor de <code>include</code>. Si se define este valor, la respuesta debe seguir las <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">directrices de seguridad de AMP CORS</a>.</td>
+      Para enviar credenciales, transfiere el valor de <code>include</code>. Si se define este valor, la respuesta debe seguir las <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">directrices de seguridad de AMP CORS</a>.</td>
     </tr>
   </table>
 

@@ -25,7 +25,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-可让发布商轻松集成 [LaterPay](https://www.laterpay.net) 微支付平台。`amp-access-laterpay` 基于 [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)，而且必须使用该组件。
+可让发布商轻松集成 [LaterPay](https://www.laterpay.net) 微支付平台。`amp-access-laterpay` 基于 [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})，而且必须使用该组件。
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ limitations under the License.
 
 可以根据发布商的偏好对生成的列表进行样式设置以及呈现该列表。
 
-该组件还依赖于 [Access Content Markup](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup) 来显示和隐藏内容。
+该组件还依赖于 [Access Content Markup]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#access-content-markup) 来显示和隐藏内容。
 
 ## 配置
 
@@ -140,7 +140,7 @@ limitations under the License.
         <tr>
           <td><code>sandbox</code></td>
           <td>布尔值</td>
-          <td>仅在使用沙盒模式测试服务器配置时才需要此属性。此外，您还需要使用 AMP 的<a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">开发模式</a>。</td>
+          <td>仅在使用沙盒模式测试服务器配置时才需要此属性。此外，您还需要使用 AMP 的<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">开发模式</a>。</td>
         </tr>
       </table>
 
@@ -274,7 +274,7 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 ## 分析
 
-由于 `amp-access-laterpay` 基于 `amp-access`，因此它支持 `amp-access` 发送的所有[分析事件](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics)。
+由于 `amp-access-laterpay` 基于 `amp-access`，因此它支持 `amp-access` 发送的所有[分析事件]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#integration-with-amp-analytics)。
 
 如果您想通过更完整的示例来了解这在实践中会是什么样子，请参阅 [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) 中的示例，它们均配置为发送这些分析事件。
 
@@ -282,9 +282,9 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 如果您已有订阅系统，且打算仅将 LaterPay 用于单个文章销售，则可以在同一网页中同时使用两种销售方法，即同时使用 AMP Access 和 AMP Access LaterPay。
 
-首先，请参阅 [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access) 文档，了解如何使用现有的付费墙配置 AMP Access。
+首先，请参阅 [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 文档，了解如何使用现有的付费墙配置 AMP Access。
 
-[多个提供商](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers)部分介绍了如何使用命名空间设置多个提供商。
+[多个提供商]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#multiple-access-providers)部分介绍了如何使用命名空间设置多个提供商。
 
 将该组件与 LaterPay 和现有的付费墙集成结合使用时，必要的配置大致如下所示：
 
@@ -339,7 +339,7 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 ## 相关文档
 
-* [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)
+* [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay：我们如何进行微支付](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - 与 AMP Access LaterPay 类似，但适用于非 AMP 网页。

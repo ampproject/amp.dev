@@ -10,8 +10,8 @@
 {% if title and '[=' in title %}
 {% set title = title|safe %}
 {% endif %}
-{% if doc.base.startswith('amp-') and not '_' in doc.base and not ' ' in doc.base %}
-{% set title = '<' + doc.base + '>' %}
+{% if title.startswith('amp-') and not '_' in title and not ' ' in title %}
+{% set title = '<' + title + '>' %}
 {% endif %}
 
 
@@ -113,3 +113,8 @@
 <meta property="og:image" content="{{ base_url }}{{ sharing_images.wide }}">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="314">
+
+{# meta tags for amp.dev search filtering #}
+{% set supported_formats = ','.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
+<meta name="supported-amp-formats" content="{{supported_formats}}">
+<meta name="page-locale" content="{{doc.locale}}">

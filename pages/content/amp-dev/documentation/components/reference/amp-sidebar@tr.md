@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -214,7 +214,7 @@ Aşağıdaki örnekte, pencere genişliği 767 pikselden az veya bu değere eşi
 
 ## Haberler için Kenar Çubuğu
 
-`amp-story` [bileşeni](https://www.ampproject.org/stories/) içinde `amp-sidebar` kullanımı desteklenir.
+`amp-story` [bileşeni]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) içinde `amp-sidebar` kullanımı desteklenir.
 
 ### Davranış
 
@@ -242,7 +242,7 @@ Aşağıdaki örnekte, `amp-story` içindeki basit bir `amp-sidebar` gösterilme
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a "href=https://www.ampproject.org"> External Link </a></li>
+      <li><a href="https://amp.dev"> External Link </a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -285,7 +285,7 @@ Bu özellik, alt `<nav toolbar="(media-query)" toolbar-target="elementID">` öğ
 
 ##### common attributes<a name="common"></a>
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) içerir.
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) içerir.
 
 ## Stil
 

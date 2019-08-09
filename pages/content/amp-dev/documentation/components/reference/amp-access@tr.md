@@ -504,7 +504,7 @@ AMP, giriş yapma ve abone olma arasında bir ayrım yapmaz. Bu ayrım, birden �
 
 ## CORS Kaynak Güvenliği
 
-Yetkilendirme ve Pingback uç noktaları, CORS uç noktalarıdır ve [AMP CORS Güvenlik Spesifikasyonu](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)'nda açıklanan güvenlik protokolünü uygulamalıdır.
+Yetkilendirme ve Pingback uç noktaları, CORS uç noktalarıdır ve [AMP CORS Güvenlik Spesifikasyonu]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)'nda açıklanan güvenlik protokolünü uygulamalıdır.
 
 ## Ölçme
 

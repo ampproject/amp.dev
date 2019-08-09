@@ -11,7 +11,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  min-width: 320px;
+  min-width: $minDeviceWidth;
   color: color('river-bed');
   background-color: #fff;
   font-size: 16px;
@@ -19,6 +19,10 @@ html, body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: $minDeviceWidth) {
+    font-size: 14px;
+  }
 }
 
 /* Used to jump before an anchor and not beneath it */

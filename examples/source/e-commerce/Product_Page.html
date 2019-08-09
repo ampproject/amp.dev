@@ -403,7 +403,7 @@ This sample showcases how to build a product page in AMP HTML.
                   width="24" height="24"
                   alt="navigation"></amp-img>
         </a>
-        <form method="GET" action="/samples_templates/product_browse_page[[.Mode]]/search" target="_top">
+        <form method="GET" action="<% hosts.platform %>/documentation/examples/api/search" target="_top">
           <input name="search" type="search" placeholder="Search">
           <a id="sample-logo" href="/">Product</a>
           <input type="submit" value="">
@@ -612,6 +612,7 @@ This sample showcases how to build a product page in AMP HTML.
       "moreItemsPageIndex": 0,
       "hasMorePages": true,
       "green": {
+        "id": "1",
         "sizes": {
           "S": "$5.99",
           "M": "$5.99",
@@ -620,6 +621,7 @@ This sample showcases how to build a product page in AMP HTML.
         "defaultSize": "S"
       },
       "golden": {
+        "id": "2",
         "sizes": {
           "S": "$9.99",
           "M": "unavailable",
@@ -628,6 +630,7 @@ This sample showcases how to build a product page in AMP HTML.
         "defaultSize": "L"
       },
       "red": {
+        "id": "3",
         "sizes": {
           "S": "$7.99",
           "M": "$7.99",
@@ -668,7 +671,7 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
 
       <form id="order" method="POST"
-            action-xhr="https://abe-cart-service.glitch.me/add_to_cart"
+            action-xhr="/documentation/examples/e-commerce/shopping_cart/add-to-cart"
             target="_top" class="flex flex-wrap m1">
         <div class="items-center flex">
           <label for="color">Color:</label>
@@ -734,7 +737,8 @@ This sample showcases how to build a product page in AMP HTML.
           <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
         </div>
         <input type="hidden" name="name" value="Apple">
-        <input type="hidden" name="price" value="$1.99">
+        <input type="hidden" name="price" value="$1.99" [value]="product[product.selectedColor].sizes[product.selectedSize]">
+        <input type="hidden" name="id" value="1" [value]="product[product.selectedColor].id">
         <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
         <div submit-error>
           <template type="amp-mustache">
@@ -801,7 +805,7 @@ This sample showcases how to build a product page in AMP HTML.
               id="show-more-list">
       <template type="amp-mustache">
         <a class="text-decoration-none p1"
-          href="/samples_templates/product_page/preview/">
+          href="/documentation/examples/e-commerce/product_page/preview/">
           <amp-img width="70.31"
                    height="46.8"
                    layout="fixed"
@@ -827,8 +831,8 @@ This sample showcases how to build a product page in AMP HTML.
     how we set the `hasMorePages` variable to false based on the server response.
     -->
     <form method="GET"
-        action="/json/more_related_products_page"
-        action-xhr="/json/more_related_products_page"
+        action="/documentation/examples/api/json/more_related_products_page"
+        action-xhr="/documentation/examples/api/json/more_related_products_page"
         target="_top"
         on="submit-success: AMP.setState({
           myState: { items: myState.items.concat(event.response.items)},
