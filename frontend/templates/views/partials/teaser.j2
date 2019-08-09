@@ -54,7 +54,12 @@
 {% set teaser = teaser_doc.teaser or {} %}
 {% set square = (teaser.image.width / teaser.image.height == 1) %}
 <div class="ap-m-teaser ap-m-teaser-template ap-m-teaser-template-{{ teaser_doc.formats[0] }}{{ ' ap-m-teaser-square' if square }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'" >
-  <a href="{{ teaser_doc.teaser.download_url }}">
+  {% if teaser_doc.url.path %}
+    {% set navigation_url = teaser_doc.url.path %}
+  {% else %}
+    {% set navigation_url = teaser_doc.teaser.download_url %}
+  {% endif %}
+  <a href="{{ navigation_url }}">
     {% if teaser_doc.formats %}
     {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
     <div class="ap-m-tag ap-m-tag-{{ teaser_doc.formats[0] }} ap-m-teaser-tag">{{ teaser_doc.formats[0] }}</div>
