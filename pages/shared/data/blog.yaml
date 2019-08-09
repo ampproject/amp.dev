@@ -1,6 +1,12 @@
 entries:
 
 - title: "Blog"
+  image: ""
+  headline: "Announcing AMP Toolbox 1.0"
+  date: "August 8, 2019"
+  url: "https://blog.amp.dev/2019/08/08/announcing-amp-toolbox-1-0/"
+
+- title: "Blog"
   image: "https://blog.amp.dev/wp-content/uploads/2019/08/cropped-ssr_code.png"
   headline: "Faster AMP on the origin: AMP + SSR = ⚡"
   date: "August 7, 2019"
@@ -23,9 +29,3 @@ entries:
   headline: "AMP Contributor Summit 2019 Applications Now Open"
   date: "July 10, 2019"
   url: "https://blog.amp.dev/2019/07/10/amp-contributor-summit-2019-applications-now-open/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/06/courses_hero.jpg"
-  headline: "Learn web development with AMP!"
-  date: "June 20, 2019"
-  url: "https://blog.amp.dev/2019/06/20/learn-web-development-with-amp/"

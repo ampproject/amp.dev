@@ -126,7 +126,8 @@ function instanceTemplateCreate() {
   return sh(`gcloud compute instance-templates create-with-container ${config.instance.template} \
                  --container-image ${config.image.current} \
                  --machine-type ${config.instance.machine} \
-                 --tags http-server,https-server`);
+                 --tags http-server,https-server \
+                 --scopes default,datastore`);
 }
 
 /**
