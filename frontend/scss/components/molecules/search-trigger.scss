@@ -12,8 +12,13 @@
 @import '_variables.scss';
 
 .#{molecule('search-trigger')} {
-  margin-left: auto;
   padding: 0 20px 9px 0;
+
+  &-close {
+    position: absolute;
+    right: 2rem;
+    top: 10rem;
+  }
 
   &-icon {
     width: 20px;

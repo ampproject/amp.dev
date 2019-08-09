@@ -7,7 +7,7 @@
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
 <div id="searchLayer" class="ap-o-search">
-  <div class="ap-m-search-trigger" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus" role="button" tabindex="0">
+  <div class="ap-m-search-trigger ap-m-search-trigger-close" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus" role="button" tabindex="0">
     {% do doc.icons.useIcon('/icons/close.svg') %}
     <div class="ap-a-ico ap-m-search-trigger-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
@@ -16,9 +16,9 @@
 
 {% raw %}
 <template id="search_results_template" type="amp-mustache">
-  <div class="component-item">
+  <div class="ap-o-search-result-list">
     {{#result.components}}
-    <div class="item">
+    <div class="ap-o-search-result-item ap-o-search-result-item-component">
       <a href="{{url}}">
         <strong class="title">{{title}}</strong>
         <p class="copy">{{description}}</p>
@@ -34,13 +34,12 @@
       </a>
       {{/playgroundUrl}}
     </div>
-    <hr>
     {{/result.components}}
-  </div>
 
-  <div class="items">
+    <hr>
+
     {{#result.pages}}
-    <div class="item">
+    <div class="ap-o-search-result-item">
       <a href="{{url}}">
         <strong class="title">{{title}}</strong>
         <p class="copy">{{description}}</p>
@@ -56,14 +55,20 @@
           on="input-throttled:searchLayer.toggleClass(class='active', force=true);
               submit-success: AMP.setState({'showResults': true, 'search': event.response, 'totalResults': event.response.result.totalResults})"
           target="_top">
-      <amp-autocomplete filter="substring"
+      <amp-autocomplete class="ap-o-search-autocomplete"
+                        filter="substring"
                         min-characters="0"
                         on="select:searchForm.submit"
                         submit-on-enter="false"
                         src="/search/autosuggest"
       >
+        {% do doc.icons.useIcon('/icons/search.svg') %}
+        <div class="ap-a-ico ap-o-search-input-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+        </div>
         <input id="searchInput" class="ap-o-search-input" name="q" placeholder="What are you looking for?" tabindex="1" required>
       </amp-autocomplete>
+
       <input name="locale" type="hidden" value="{{ doc.locale }}">
 
       <p [text]="totalResults + ' results found'" class="ap-o-search-info"></p>

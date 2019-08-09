@@ -11,15 +11,19 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
 @import 'components/atoms/_color.scss';
 
 .#{organism('search')} {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 77.777vh;
   position: fixed;
   left: 0;
   top: 0;
-  padding: 5rem 21rem;
+  padding: 10rem 20rem;
   z-index: 16;
   background-color: color('whisper');
   box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
@@ -34,5 +38,74 @@
   &:focus-within {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  &-field {
+    width: 100%;
+  }
+
+  &-autocomplete {
+    width: 100%;
+
+    div[class*="-results"] {
+      width: 100%;
+      max-height: 210px;
+      margin-top: -4px;
+      margin-left: 0;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 60px;
+        top: 0;
+        width: calc(100% - 120px);
+        height: 1px;
+        background-color: transparentize(color('black'), .8);
+        z-index: 1;
+      }
+
+      div[class*="-item"] {
+        padding: 14px 60px;
+        @include txt-font-accent;
+        color: color('charade');
+      }
+
+      div[class*="-item"]:hover,
+      div[class*="-item-active"] {
+        color: color('blue-ribbon');
+        background: none;
+      }
+    }
+  }
+
+  &-input {
+    @include hl;
+    @include hl-h1;
+    width: 100%;
+    padding: 25px 60px;
+    margin: 0;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+
+    &::-webkit-input-placeholder { color: transparentize(color('black'), .8); }
+    &::-moz-placeholder { color: transparentize(color('black'), .8); }
+    &:-ms-input-placeholder { color: transparentize(color('black'), .8); }
+    &:-moz-placeholder { color: transparentize(color('black'), .8); }
+
+    &:focus {
+      outline: none;
+      background: color('white');
+      box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &-icon {
+      position: absolute;
+      left: 30px;
+      top: 40px;
+    }
   }
 }
