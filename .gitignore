@@ -20,6 +20,7 @@ pages/podspec.yaml
 pages/css
 pages/icons
 pages/macros
+pages/.grow
 pages/partials
 pages/templates
 pages/layouts
