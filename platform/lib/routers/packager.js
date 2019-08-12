@@ -52,6 +52,11 @@ const packager = (request, response, next) => {
     next();
     return;
   }
+  // SXG is only supported for html requests
+  if (!request.header('accept').includes('text/html')) {
+    next();
+    return;
+  }
   // Tell browsers that we support SXG
   response.set('vary', 'Accept, AMP-Cache-Transform');
   if (!request.header('amp-cache-transform')) {
