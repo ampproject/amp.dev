@@ -38,7 +38,7 @@ Sekarang, mari kita terapkan hal ini ke contoh e-commerce. Pertama-tama, ambil d
 
 ### Menunjukkan ukuran yang tidak tersedia
 
-Selanjutnya, mari tandai dengan jelas ukuran yang tidak tersedia untuk SKU tertentu. Kelas CSS `"unavailable"` menambahkan garis diagonal pada elemen -- kita dapat menambahkannya ke elemen dalam `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` yang terkait dengan ukuran yang tidak tersedia:
+Selanjutnya, mari tandai dengan jelas ukuran yang tidak tersedia untuk SKU tertentu. Kelas CSS `"unavailable"` menambahkan garis diagonal pada elemen -- kita dapat menambahkannya ke elemen dalam [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) yang terkait dengan ukuran yang tidak tersedia:
 
 ```html
 <amp-selector name="size">

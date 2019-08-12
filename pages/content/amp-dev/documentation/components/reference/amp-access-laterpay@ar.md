@@ -26,7 +26,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-يتيح المكوِّن `amp-access-laterpay` للناشرين سهولة التكامل مع منصة [LaterPay](https://www.laterpay.net) للدفعات الصغيرة. ويستند المكّوِن إلى [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access) كما يتطلبه أيضًا.
+يتيح المكوِّن `amp-access-laterpay` للناشرين سهولة التكامل مع منصة [LaterPay](https://www.laterpay.net) للدفعات الصغيرة. ويستند المكّوِن إلى [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) كما يتطلبه أيضًا.
 
 <table>
   <tr>
@@ -72,7 +72,7 @@ limitations under the License.
 
 يمكن تصميم القائمة التي تم إنشاؤها وعرضها وفقًا لتفضيلات الناشر.
 
-يعتمد هذا المكّوِن أيضًا على [ترميز المحتوى المتوفر بحق الوصول](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup) لإظهار المحتوى وإخفائه.
+يعتمد هذا المكّوِن أيضًا على [ترميز المحتوى المتوفر بحق الوصول]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#access-content-markup) لإظهار المحتوى وإخفائه.
 
 ## التهيئة
 
@@ -145,7 +145,7 @@ limitations under the License.
   <tr>
     <td><code>sandbox</code></td>
     <td>منطقي</td>
-    <td>تكون مطلوبة فقط إذا كنت تستخدم وضع الحماية لاختبار تهيئة الخادم. تحتاج أيضًا إلى استخدام <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">وضع مطوّر البرامج</a> في AMP.</td>
+    <td>تكون مطلوبة فقط إذا كنت تستخدم وضع الحماية لاختبار تهيئة الخادم. تحتاج أيضًا إلى استخدام <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">وضع مطوّر البرامج</a> في AMP.</td>
   </tr>
 </table>
 
@@ -279,7 +279,7 @@ limitations under the License.
 
 ## التحليلات
 
-بالنظر إلى استناد `amp-access-laterpay` إلى `amp-access`، فإنه يتيح جميع [أحداث التحليلات](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics) التي أرسلها `amp-access`.
+بالنظر إلى استناد `amp-access-laterpay` إلى `amp-access`، فإنه يتيح جميع [أحداث التحليلات]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#integration-with-amp-analytics) التي أرسلها `amp-access`.
 
 تمت تهيئة جميع الأمثلة على [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) لإرسال أحداث التحليلات لذا يمكنك الاطّلاع عليها للحصول على أمثلة أكثر اكتمالًا عن شكل هذا عمليًا.
 
@@ -287,9 +287,9 @@ limitations under the License.
 
 إذا كان لديك نظام اشتراك حالي وتعتزم استخدام LaterPay فقط لمبيعات المقالات الفردية، من الممكن أن تتعايش طريقتا البيع على نفس الصفحة، باستخدام كل من AMP Access وAMP Access LaterPay معًا.
 
-يُرجى أولاً الرجوع إلى مستندات [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access) لمعرفة خطوات تهيئة "AMP Access" باستخدام "نظام حظر الاشتراك غير المدفوع" الحالي.
+يُرجى أولاً الرجوع إلى مستندات [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) لمعرفة خطوات تهيئة "AMP Access" باستخدام "نظام حظر الاشتراك غير المدفوع" الحالي.
 
-يشرح القسم [تعدد موفري خدمات الوصول](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers) كيفية إعداد عدة موفري خدمات باستخدام مساحات الأسماء.
+يشرح القسم [تعدد موفري خدمات الوصول]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#multiple-access-providers) كيفية إعداد عدة موفري خدمات باستخدام مساحات الأسماء.
 
 عند استخدامه مع LaterPay ومع تكامل مع "نظام حظر الاشتراك غير المدفوع"، يمكن أن تبدو التهيئة الضرورية كما يلي:
 
@@ -344,7 +344,7 @@ limitations under the License.
 
 ## مستندات ذات صلة
 
-* [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)
+* [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: كيف تجري الدفعات الصغيرة؟](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - يشبه AMP Access LaterPay لكنه يُستخدم للصفحات غير AMP.

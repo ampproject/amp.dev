@@ -1,0 +1,122 @@
+[
+  {
+    "id": 0,
+    "name": "Room 1",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room1_tn.jpg",
+    "img": "/img/room1.jpg",
+    "petFriendly": false,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  },
+  {
+    "id": 1,
+    "name": "Room 2",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room2_tn.jpg",
+    "img": "/img/room2.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  },
+  {
+    "id": 2,
+    "name": "Room 3",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room3_tn.jpg",
+    "img": "/img/room3.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "2019-08-01",
+      "to": "2019-08-31"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Room 4",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room4_tn.jpg",
+    "img": "/img/room4.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  },
+  {
+    "id": 4,
+    "name": "Room 5",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room5_tn.jpg",
+    "img": "/img/room5.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  },
+  {
+    "id": 5,
+    "name": "Room 6",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room6_tn.jpg",
+    "img": "/img/room6.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "2019-08-10",
+      "to": "2019-08-17"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Room 7",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room7_tn.jpg",
+    "img": "/img/room7.jpg",
+    "petFriendly": false,
+    "booked": {
+      "from": "2019-09-21",
+      "to": "2019-09-28"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Room 8",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room8_tn.jpg",
+    "img": "/img/room8.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  },
+  {
+    "id": 8,
+    "name": "Room 9",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room9_tn.jpg",
+    "img": "/img/room9.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  },
+  {
+    "id": 9,
+    "name": "Room 10",
+    "desc": "This is a rather nice room",
+    "thumbnail": "room10_tn.jpg",
+    "img": "/img/room10.jpg",
+    "petFriendly": true,
+    "booked": {
+      "from": "",
+      "to": ""
+    }
+  }
+]

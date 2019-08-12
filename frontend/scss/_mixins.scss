@@ -99,47 +99,6 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	}
 }
 
-@mixin viewboxGradientAnimation {
-	@keyframes gradientChange {
-
-		0% {
-			background-position: 0% 0%
-		}
-
-		24% {
-			background-position: 0% 0%
-		}
-
-		28% {
-			background-position: 24% 0%;
-		}
-
-		50% {
-			background-position: 24% 0%;
-		}
-
-		54% {
-			background-position: 48% 0%;
-		}
-
-		76% {
-			background-position: 48% 0%;
-		}
-
-		80% {
-			background-position: 72% 0%;
-		}
-
-		98% {
-			background-position: 72% 0%;
-		}
-
-		100% {
-			background-position: 100% 0%;
-		}
-	}
-}
-
 @mixin rollingAnimation {
 	@keyframes roll {
 

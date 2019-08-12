@@ -42,6 +42,13 @@ describe('Routes', () => {
     const response = await fetch(config.hosts.playground.base);
     expect(response.status).toBe(200);
   });
+  it('serves logs', async () => {
+    const sampleLogUrl = new URL(
+        '?v=011907301630320&id=2y&s[]=amp-video&s[]=amp-video',
+        config.hosts.log.base);
+    const response = await fetch(sampleLogUrl);
+    expect(response.status).toBe(200);
+  });
   it('serves health check', async () => {
     const response = await fetch(HEALTH_CHECK_PATH);
     expect(response.status).toBe(200);

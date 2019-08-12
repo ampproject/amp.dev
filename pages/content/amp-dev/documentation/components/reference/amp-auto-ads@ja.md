@@ -44,7 +44,7 @@ limitations under the License.
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a>
+          <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a>
         </strong>
       </td>
       <td>なし</td>
@@ -90,7 +90,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>共通の属性</strong></td>
-    <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+    <td>この要素には、AMP コンポーネントに拡張された<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">共通の属性</a>が含まれます。</td>
   </tr>
 </table>
 

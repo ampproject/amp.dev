@@ -5,27 +5,30 @@ CODE_BLOCK = r'^```[^\n][\s\S]*?^```'
 INLINE_CODE_BLOCK = r'`[^`]*`'
 TABLE_WITHOUT_MARKDOWN_BLOCK = r'(<\s*table)((?:[^>](?!markdown))*>)'
 
-TABLE_MARKDOWN_ATTRIB_PATTERN = re.compile(
+TABLE_WITHOUT_MARKDOWN_PATTERN = re.compile(
   SOURCECODE_BLOCK + '|' + CODE_BLOCK + '|' + INLINE_CODE_BLOCK + '|' + TABLE_WITHOUT_MARKDOWN_BLOCK,
   re.IGNORECASE | re.MULTILINE)
+
+TABLE_WITH_MARKDOWN_PATTERN = re.compile(r'<\s*table[^>]*(\smarkdown="span")')
 
 
 class HtmlBlockProcessor(object):
   """
     This class searches for html tags and adds the markdown="span" attribute
-    To support markdown in html block element when the markdown extra extension is active.
+    to support markdown in html block element when the markdown extra extension is active.
+    Because the markdown attribute is not valid amp, this processor also removes these from the finished pages.
     Currently only table tags are supported, but idea is that the tag names can easily be
     specified in the configuration.
   """
 
-  def addMarkdownAttributes(self, content):
+  def add_markdown_attributes(self, content):
     """
       Add the markdown attribute to all table tags without this attribute
       @type content: str
     """
     output = ''
     pos = 0
-    match = TABLE_MARKDOWN_ATTRIB_PATTERN.search(content)
+    match = TABLE_WITHOUT_MARKDOWN_PATTERN.search(content)
     while match:
 
       output = output + content[pos:match.start(0)]
@@ -39,7 +42,20 @@ class HtmlBlockProcessor(object):
         output = output + match.group(0)
 
       pos = match.end(0)
-      match = TABLE_MARKDOWN_ATTRIB_PATTERN.search(content, pos)
+      match = TABLE_WITHOUT_MARKDOWN_PATTERN.search(content, pos)
+
+    output = output + content[pos:]
+    return output
+
+  def remove_markdown_attributes(self, content):
+    output = ''
+    pos = 0
+
+    match = TABLE_WITH_MARKDOWN_PATTERN.search(content)
+    while match:
+      output = output + content[pos:match.start(1)]
+      pos = match.end(0)
+      match = TABLE_WITH_MARKDOWN_PATTERN.search(content, pos)
 
     output = output + content[pos:]
     return output
