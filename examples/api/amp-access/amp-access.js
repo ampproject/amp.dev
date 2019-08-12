@@ -38,10 +38,10 @@ const POWER_USERS = {
 };
 const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
 
-examples.get('/amp-access/authorization', handleAuthorization);
-examples.get('/amp-access/login', handleLogin);
-examples.get('/amp-access/logout', handleLogout);
-examples.post('/amp-access/submit', handleSubmit);
+examples.get('/authorization', handleAuthorization);
+examples.get('/login', handleLogin);
+examples.get('/logout', handleLogout);
+examples.post('/submit', handleSubmit);
 
 function handleAuthorization(request, response) {
   const cookie = request.cookies[AMP_ACCESS_COOKIE];
@@ -66,7 +66,7 @@ function handleAuthorization(request, response) {
 
 function handleLogin(request, response) {
   const returnUrl = request.query.return;
-  const filePath = utils.project.absolute('/examples/static/samples/files/login.html');
+  const filePath = utils.project.absolute('/examples/api/amp-access/login.html');
 
   response.send(nunjucks.render(filePath, {returnurl: returnUrl}));
 }
