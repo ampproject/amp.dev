@@ -6,6 +6,10 @@ from pod_internal_link_rewriter import PodInternalLinkRewriter
 class PodInternalLinkPostRenderHook(hooks.PostRenderHook):
   """Handle the post-render hook."""
 
+  def __init__(self, extension):
+    super(PodInternalLinkPostRenderHook, self).__init__(extension)
+    self.link_cache = extension.pod.podcache.get_object_cache('pod_site_link_map')
+
   def should_trigger(self, previous_result, doc, original_body, *_args,
                      **_kwargs):
     content = previous_result if previous_result else original_body
@@ -21,7 +25,7 @@ class PodInternalLinkPostRenderHook(hooks.PostRenderHook):
   def trigger(self, previous_result, doc, raw_content, *_args, **_kwargs):
     content = previous_result if previous_result else raw_content
 
-    link_rewriter = PodInternalLinkRewriter(doc);
+    link_rewriter = PodInternalLinkRewriter(doc, self.link_cache);
     content = link_rewriter.rewrite_pod_internal_links(content)
 
     return content
