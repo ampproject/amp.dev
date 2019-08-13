@@ -21,18 +21,18 @@ const SampleRenderer = require('@examples/lib/SampleRenderer');
 const {createRequestContext} = require('@lib/templates/index.js');
 const randomString = require('randomstring');
 const nunjucks = require('nunjucks');
+const path = require('path');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 examples.use(cookieParser());
-nunjucks.configure(__dirname);
 
 // TODO check if cookie is really necessary
 const AMP_ANALYTICS_COOKIE = 'cid-scope';
 const EVENTS = {};
 const USER_CHANGE_LISTENERS = {};
 const GLOBAL_ANALYTICS = '__all_users__';
-const embedFilePath = './embed.html';
+const embedFilePath = path.join(__dirname, 'embed.html');
 const analyticsTemplate = nunjucks.compile(`
     <table>
     <tr>
