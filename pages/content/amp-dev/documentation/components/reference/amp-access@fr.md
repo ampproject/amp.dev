@@ -498,7 +498,7 @@ L'intégration à *amp-analytics* est décrite à la page [amp-access-analytics.
 
 ## Sécurité de l'origine CORS
 
-Autorisation et Pingback sont des points de terminaison CORS. Ils doivent mettre en œuvre le protocole de sécurité décrit dans la [spécification de sécurité CORS dans AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Autorisation et Pingback sont des points de terminaison CORS. Ils doivent mettre en œuvre le protocole de sécurité décrit dans la [spécification de sécurité CORS dans AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 ## Mesure
 

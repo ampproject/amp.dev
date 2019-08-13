@@ -1,20 +1,175 @@
-{% if preview.mode == 'inline' %}
-<div class="ap-o-code-preview">
+{% if preview.mode != 'none' %}
+<div class="ap-o-code-preview {{ preview.mode if preview.mode != 'none' }}">
+{% endif %}
+
+  {% if preview.mode == 'inline' %}
   <div class="ap-o-code-preview-preview">
      {{preview.source|render|safe}}
   </div>
-{% endif %}
+  {% endif %}
+
+  {% if preview.mode == 'top-frame' %}
+  {% set initial_orientation = preview.orientation if preview.orientation else 'landscape' %}
+  {% set is_landscape = True if initial_orientation == 'landscape' else False %}
+  <amp-state id="orientation{{ preview.index }}">
+    <script type="application/json">
+      {{ is_landscape|lower }}
+    </script>
+  </amp-state>
+  <amp-state id="example{{ preview.index }}">
+    <script type="application/json">
+      "{{ preview.url }}"
+    </script>
+  </amp-state>
+
+  <amp-animation id="fadeAnimation{{ preview.index }}" layout="nodisplay">
+    <script type="application/json">{
+      "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} amp-iframe",
+      "duration": 250,
+      "delay": 250,
+      "fill": "backwards",
+      "easing": "linear",
+      "keyframes": {
+        "opacity": ["0", "1"]
+      }
+    }</script>
+  </amp-animation>
+  <amp-animation id="morphAnimation{{ preview.index }}" layout="nodisplay">
+    <script type="application/json">{
+      "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-background",
+      "duration": 250,
+      "fill": "both",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "keyframes": {
+        "transform": ["scale(.5625, 1.7778)", "scale(1, 1)"]
+      }
+    }</script>
+  </amp-animation>
+
+  <div class="ap-o-code-preview-top-preview ap-o-code-preview-top-preview-{{ preview.index }}">
+
+    <div class="ap-o-code-preview-controls">
+      <button {{ 'hidden' if not is_landscape }} [hidden]="!orientation{{ preview.index }}"
+              class="ap-o-code-preview-controls-button"
+              on="tap:
+                  AMP.setState({orientation{{ preview.index }}: false}),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
+                  fadeAnimation{{ preview.index }}.restart,
+                  morphAnimation{{ preview.index }}.restart,
+                  morphAnimation{{ preview.index }}.reverse">
+        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
+        </div>
+      </button>
+      <button {{ 'hidden' if is_landscape }} [hidden]="orientation{{ preview.index }}"
+              class="ap-o-code-preview-controls-button"
+              on="tap:
+                  AMP.setState({orientation{{ preview.index }}: true}),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
+                  fadeAnimation{{ preview.index }}.restart,
+                  morphAnimation{{ preview.index }}.restart">
+        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
+        </div>
+      </button>
+
+      <button class="ap-o-code-preview-controls-button"
+              on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
+        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+        </div>
+      </button>
+    </div>
+
+    <div id="iframeContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe ap-o-code-preview-preview-iframe-{{ initial_orientation }}">
+      <amp-iframe class="ap-o-code-preview-iframe"
+                  src="{{ preview.url }}"
+                  [src]="example{{ preview.index }}"
+                  layout="flex-item"
+                  sandbox="allow-scripts allow-popups allow-same-origin"
+                  frameborder="0">
+        <div placeholder></div>
+      </amp-iframe>
+      <div class="ap-o-code-preview-preview-iframe-background"></div>
+    </div>
+  </div>
+  {% endif %}
 
 {{content|safe}}
 
-{% if preview.mode == 'inline' %}
+  {% if preview.mode == 'side-frame' %}
+  <amp-state id="orientation{{ preview.index }}">
+    <script type="application/json">
+      "portrait"
+    </script>
+  </amp-state>
+  <amp-state id="example{{ preview.index }}">
+    <script type="application/json">
+      "{{ preview.url }}"
+    </script>
+  </amp-state>
+  {% set base_class = 'ap-o-code-preview-side-preview' %}
+  <div class="{{base_class}}"
+       [class]="hidePreview{{ preview.index }} != 1 ? '{{base_class}} {{base_class}}-active' : '{{base_class}}'">
+
+    <button class="ap-a-fab ap-a-fab-show"
+            [class]="hidePreview{{ preview.index }} != 1 ? 'ap-a-fab ap-a-fab-hide' : 'ap-a-fab ap-a-fab-show'"
+            on="tap:AMP.setState({ hidePreview{{ preview.index }}: 0 }),previewIframe{{ preview.index }}.toggleClass(class='show')"
+    >&#x25B6&#xFE0E;</button>
+    <button class="ap-a-fab ap-a-fab-hide"
+            [class]="hidePreview{{ preview.index }} == 1 ? 'ap-a-fab ap-a-fab-hide' : 'ap-a-fab ap-a-fab-show'"
+            on="tap:AMP.setState({ hidePreview{{ preview.index }}: 1 }),previewIframe{{ preview.index }}.toggleClass(class='show')"
+    >&#x2715&#xFE0E;</button>
+
+    <div class="ap-m-orientation-toggle">
+      {% set orientations = ['portrait', 'landscape'] %}
+
+      {% for orientation in orientations %}
+      {% do doc.icons.useIcon('/icons/orientation-' + orientation + '.svg') %}
+      <button class="ap-m-orientation-toggle-button {% if orientation == 'portrait' %}active{% endif %}"
+              [class]="orientation{{ preview.index }} == '{{ orientation }}' ? 'ap-m-orientation-toggle-button active' : 'ap-m-orientation-toggle-button'"
+              on="tap:AMP.setState({orientation{{ preview.index }}: '{{ orientation }}'})">
+        <svg class="ap-a-ico ap-m-orientation-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-{{ orientation }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+
+    <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
+      <div class="ap-a-ico">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
+      </div>
+    </button>
+
+    <div id="previewIframe{{ preview.index }}"
+         class="ap-o-code-preview-side-preview-frame ap-o-code-preview-side-preview-frame-portrait"
+         [class]="'ap-o-code-preview-side-preview-frame ap-o-code-preview-side-preview-frame-' + orientation{{ preview.index }}">
+      <div class="ap-o-code-preview-side-preview-sizer"></div>
+      <amp-iframe layout="fill"
+                  sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+                  allowfullscreen allowpaymentrequest frameborder="0"
+                  src="{{ preview.url }}"
+                  [src]="example{{ preview.index }}"
+                  class="i-amphtml-layout-fill i-amphtml-layout-size-defined" i-amphtml-layout="fill">
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+  </div>
+
+  {% endif %}
+
+{% if preview.mode != 'none' %}
 </div>
 {% endif %}
-{%- if preview.playground %}
-<a href="{{podspec.base_urls.playground}}/?url={{preview.url|urlencode}}" class="ap-m-lnk ap--playground-link">
+
+{% if preview.playground %}
+<a href="{{podspec.base_urls.playground}}/?url={{preview.url|urlencode}}%3Fformat%3D[= format =]" class="ap-m-lnk ap--playground-link">
   <div class="ap-a-ico ap-m-lnk-icon">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
   </div>
   <span class="ap-m-lnk-text">{{_('Open this snippet in playground')}}</span>
 </a>
-{%- endif -%}
+{% endif %}

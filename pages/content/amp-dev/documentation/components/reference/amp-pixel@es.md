@@ -34,7 +34,7 @@ teaser:
     <td>Se puede utilizar como un píxel de seguimiento típico para contar las páginas vistas.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
     <td>fixed y nodisplay</td>
   </tr>
   <tr>
@@ -81,7 +81,7 @@ Ten en cuenta que, como consecuencia, no se expandirán las macros que contenga 
 
 ##### atributos comunes
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) que se aplican a los componentes de AMP.
 
 ## Sustituciones
 

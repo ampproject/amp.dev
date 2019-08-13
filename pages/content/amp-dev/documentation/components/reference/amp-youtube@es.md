@@ -35,7 +35,7 @@ Muestra un vídeo de [YouTube](https://www.youtube.com/).
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay y responsive</td>
   </tr>
   <tr>
@@ -125,7 +125,7 @@ Con el diseño responsive (es decir, adaptable), la anchura y la altura del ejem
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento incluye <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comunes</a> que se aplican a los componentes de AMP.</td>
+            <td>Este elemento incluye <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comunes</a> que se aplican a los componentes de AMP.</td>
           </tr>
         </table>
 

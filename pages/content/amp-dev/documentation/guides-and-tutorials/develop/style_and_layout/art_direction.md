@@ -25,7 +25,7 @@ In this simple example,
 The `w` descriptor tells the browser the width
 of each image in the list:
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -56,7 +56,7 @@ the user agent selects the most relative source supplied by the `srcset` attribu
 
 Consider the following example:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -98,7 +98,7 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 
 An example:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

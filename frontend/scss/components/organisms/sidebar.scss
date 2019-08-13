@@ -22,6 +22,7 @@ nav[toolbar] {
   @media (min-width: 768px){
     position: -webkit-sticky;
     position: sticky;
+    overflow: auto;
   }
 
   & > ul {

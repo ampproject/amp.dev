@@ -8,7 +8,7 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 
 次の例では、`srcset` が画面の幅に基づいて使用される画像を指定しています。`w` 記述子は、リスト内の各画像の幅をブラウザに伝えます。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -31,7 +31,7 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 
 次の例をご覧ください。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -61,7 +61,7 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 
 次の例をご覧ください。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

@@ -35,7 +35,7 @@ teaser:
     <td>Pode ser usado como um pixel de rastreamento típico para contar visualizações de páginas.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -82,7 +82,7 @@ Isso significa que as macros no URL NÃO serão expandidas, então use-as soment
 
 ##### common attributes
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) estendidos a componentes de AMP.
 
 ## Substituições
 

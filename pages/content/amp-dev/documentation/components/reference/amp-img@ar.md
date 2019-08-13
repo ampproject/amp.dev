@@ -35,7 +35,7 @@ limitations under the License.
     <td>بديل للعلامة HTML <code>img</code> يديره وقت التشغيل.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
     <td>fill وfixed وfixed-height وflex-item وintrinsic وnodisplay وresponsive</td>
   </tr>
   <tr>
@@ -53,7 +53,7 @@ limitations under the License.
 يجب إعطاء مكونات `amp-img`، شأنها شأن مثل جميع موارد AMP التي يتم جلبها من الخارج، حجمًا صريحًا (كما في `width` / `height`) بشكل مسبق، بحيث يمكن التعرّف على نسبة العرض إلى الارتفاع بدون جلب الصورة. يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 
 [tip type="read-on"]
-تعرّف على المزيد من المعلومات عن التنسيقات في مواصفات [نظام تنسيقات رمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) و[التنسيقات المعتمدة](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+تعرّف على المزيد من المعلومات عن التنسيقات في مواصفات [نظام تنسيقات رمز HTML لصفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) و[التنسيقات المعتمدة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute).
 
 [/tip]
 
@@ -74,7 +74,7 @@ limitations under the License.
 
 [tip type="read-on"]
 
-تعرّف على صفحات AMP المتجاوبة في دليل [إنشاء صفحات AMP متجاوبة](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+تعرّف على صفحات AMP المتجاوبة في دليل [إنشاء صفحات AMP متجاوبة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}).
 
 [/tip]
 
@@ -107,8 +107,8 @@ limitations under the License.
 
 تعرّف على مزيد من المعلومات عن استخدام `amp-img` من الموارد التالية:
 
-* [العناصر النائبة والعناصر الاحتياطية](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [تضمين الصور والفيديوهات](https://www.ampproject.org/docs/media/amp_replacements)
+* [العناصر النائبة والعناصر الاحتياطية]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
+* [تضمين الصور والفيديوهات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
 
 [/tip]
 
@@ -128,7 +128,7 @@ limitations under the License.
 
 [tip type="read-on"]
 
-يمكنك الاطّلاع على [الصور المتجاوبة باستخدام السمات srcset وsizes وheights](https://www.ampproject.org/docs/design/responsive/art_direction) لمعرفة استخدام `sizes` و`srcset`.
+يمكنك الاطّلاع على [الصور المتجاوبة باستخدام السمات srcset وsizes وheights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) لمعرفة استخدام `sizes` و`srcset`.
 
 [/tip]
 
@@ -146,7 +146,7 @@ limitations under the License.
 
 **السمات المشتركة**
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) التي تشمل مكونات AMP.
 
 # التصميم
 
@@ -180,7 +180,7 @@ amp-img {
 
 [tip type="read-on"]
 
-تعرّف على المزيد عن [التنسيق المُستنتَج](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) في حال عدم تحديد السمة `layout`.
+تعرّف على المزيد عن [التنسيق المُستنتَج]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?) في حال عدم تحديد السمة `layout`.
 
 [/tip]
 
@@ -205,13 +205,13 @@ amp-img {
 
 يجب استخدام السمة [`srcset`](#attributes) لتوفير درجات دقة مختلفة للصورة نفسها، والتي لها جميعها نسبة العرض إلى الارتفاع نفسها. سيختار المتصفح تلقائيًا الملف الأنسب من `srcset` استنادًا إلى درجة دقة الشاشة وعرض جهاز المستخدِم.
 
-في المقابل، تعرض السمة [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) مكونات AMP أو تخفيها، ويجب استخدامها عند تصميم التنسيقات المتجاوبة. تتمثل الطريقة المناسبة لعرض الصور بنسب عرض إلى ارتفاع مختلفة في استخدام عدة مكونات `<amp-img>` لكل منها سمة `media` تتوافق مع عرض الشاشة المراد ظهور كل مثيل عليها.
+في المقابل، تعرض السمة [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) مكونات AMP أو تخفيها، ويجب استخدامها عند تصميم التنسيقات المتجاوبة. تتمثل الطريقة المناسبة لعرض الصور بنسب عرض إلى ارتفاع مختلفة في استخدام عدة مكونات `<amp-img>` لكل منها سمة `media` تتوافق مع عرض الشاشة المراد ظهور كل مثيل عليها.
 
-راجِع دليل [إنشاء صفحات AMP المتجاوبة](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images) للحصول على مزيد من التفاصيل.
+راجِع دليل [إنشاء صفحات AMP المتجاوبة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images) للحصول على مزيد من التفاصيل.
 
 # الحفاظ على نسبة العرض إلى الارتفاع للصور ذات الأبعاد غير المعروفة
 
-يتطلب نظام تنسيقات AMP نسبة العرض إلى الارتفاع للصورة مسبقًا قبل جلبها، ومع ذلك قد تكون أبعاد الصورة غير معروفة في بعض الحالات. ولعرض صور ذات أبعاد غير معروفة والحفاظ على نسب العرض إلى الارتفاع، ادمج التنسيق [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) لصفحات AMP مع الخاصية [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) للغة CSS. ويمكن الاطّلاع على [خطوات إتاحة الصور غير معروفة الأبعاد](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) في الموقع "AMP بالمثال" للحصول على المزيد من المعلومات.
+يتطلب نظام تنسيقات AMP نسبة العرض إلى الارتفاع للصورة مسبقًا قبل جلبها، ومع ذلك قد تكون أبعاد الصورة غير معروفة في بعض الحالات. ولعرض صور ذات أبعاد غير معروفة والحفاظ على نسب العرض إلى الارتفاع، ادمج التنسيق [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) لصفحات AMP مع الخاصية [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) للغة CSS. ويمكن الاطّلاع على [خطوات إتاحة الصور غير معروفة الأبعاد](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) في الموقع "AMP بالمثال" للحصول على المزيد من المعلومات.
 
 # التحقق
 

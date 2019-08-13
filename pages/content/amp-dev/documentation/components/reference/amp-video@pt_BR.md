@@ -42,7 +42,7 @@ Um substituto para a tag `video` de HTML5; para ser usado apenas em incorporaç�
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Sobreposição de reprodução com um clique para amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -138,7 +138,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+          <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
         </tr>
       </table>
 

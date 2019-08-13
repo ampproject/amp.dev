@@ -509,7 +509,7 @@ A integração com *amp-analytics* está documentada em [amp-access-analytics.md
 
 ## Segurança de origem do CORS
 
-Os endpoints de autorização e pingback são endpoints CORS e precisam implementar o protocolo de segurança descrito nas [Especificações de segurança de AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Os endpoints de autorização e pingback são endpoints CORS e precisam implementar o protocolo de segurança descrito nas [Especificações de segurança de AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 ## Limite
 

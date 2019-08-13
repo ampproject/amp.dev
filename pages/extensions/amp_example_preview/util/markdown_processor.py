@@ -1,6 +1,7 @@
 from example_extractor import SourceCodeExtractor
 from example_exporter import ExampleExporter
 from preview import ExamplePreview
+from amp_component_versions import get_component
 from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS, ATTRIBUTE_HAS_INLINE_PREVIEW
 
 EXAMPLE_TRIGGER = '[example'
@@ -19,6 +20,8 @@ def _transform(doc, content):
   all_imports = set()
   all_templates = set()
 
+  import_iframe = False
+
   pos = 0
   count = 0
   result = ''
@@ -34,6 +37,7 @@ def _transform(doc, content):
 
     preview = ExamplePreview(index=example_document.index,
                              mode=example_document.preview,
+                             orientation=example_document.orientation,
                              url=extract_url,
                              playground=example_document.playground,
                              source=example_document.body)
@@ -41,6 +45,9 @@ def _transform(doc, content):
     result = result + preview.get_start_tag()
     result = result + content[match.startTagEnd:match.endTagStart]
     result = result + preview.get_end_tag()
+
+    if example_document.has_iframe_preview:
+      import_iframe = True
 
     all_imports.update(example_document.imports)
 
@@ -50,6 +57,14 @@ def _transform(doc, content):
     pos = match.endTagEnd
 
   result = result + content[pos:]
+
+  # use any existing iframe or import the latest version
+  if import_iframe:
+    for component in all_imports:
+      if component.name == 'amp-iframe':
+        import_iframe = False
+  if import_iframe:
+    all_imports.add(get_component('amp-iframe'))
 
   # transfer the dependencies to the post processor
   setattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS, all_imports)

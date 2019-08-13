@@ -505,7 +505,7 @@ RETURN_URL#success=true|false
 ## أمان أصل CORS
 
 نقاط نهاية "التفويض" و"الرد على فحص الاتصال" هي نقاط نهاية CORS ويجب أن تنفذ بروتوكول الأمان الموضح في
-[مواصفات أمان CORS في صفحات AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+[مواصفات أمان CORS في صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
 
 ## قياس حصة القراءة المجانية
 
