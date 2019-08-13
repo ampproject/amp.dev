@@ -19,7 +19,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
 const {createRequestContext} = require('@lib/templates/index.js');
-const randomString = require('randomstring');
+const uuid = require('uuid');
 const nunjucks = require('nunjucks');
 const path = require('path');
 
@@ -27,11 +27,11 @@ const path = require('path');
 const examples = express.Router();
 examples.use(cookieParser());
 
-// TODO check if cookie is really necessary
-const AMP_ANALYTICS_COOKIE = 'cid-scope';
+const AMP_ANALYTICS_COOKIE = 'userId';
 const EVENTS = {};
 const USER_CHANGE_LISTENERS = {};
 const GLOBAL_ANALYTICS = '__all_users__';
+const EXPIRES = 60 * 60 * 24 * 365; // 1 year
 const embedFilePath = path.join(__dirname, 'embed.html');
 const analyticsTemplate = nunjucks.compile(`
     <table>
@@ -51,7 +51,8 @@ const analyticsTemplate = nunjucks.compile(`
 SampleRenderer.use(examples, (request, response, template) => {
   let user = request.cookies[AMP_ANALYTICS_COOKIE];
   if (!user) {
-    user = randomString.generate(8);
+    user = uuid.v4();
+    response.cookie(AMP_ANALYTICS_COOKIE, user, {maxAge: EXPIRES, httpOnly: true});
   }
   response.send(template.render(createRequestContext(request, {user})));
 });
