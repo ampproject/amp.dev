@@ -1,8 +1,8 @@
 /*
 
-########################################
-### ORGANISM: teaser guide & tuorial ###
-########################################
+######################################
+### MOLECULE: teaser-guide-tuorial ###
+######################################
 
 ### INFO:
 
@@ -18,55 +18,51 @@
 @import 'teaser';
 
 .#{molecule('teaser-guide-tutorial')} {
-	&.#{molecule('teaser')} {
-		@include teaser;
+  &.#{molecule('teaser')} {
+    @include teaser;
 
-		& > a {
-			@include teaser-linking;
-			height: 100%;
+    & > a {
+      @include teaser-linking;
+      height: 100%;
 
-			&:hover {
-				@include teaser-linking-hover;
-			}
-		}
-	}
+      &:hover {
+        @include teaser-linking-hover;
+      }
+    }
+  }
 
-	.#{molecule('teaser')} {
-		&-tags {
-			font-size: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-			z-index: 1;
-		}
+  .#{molecule('teaser')} {
+    &-tags {
+      @include teaser-tag-zero;
+    }
 
-		&-card {
-			@include teaser-card;
-			border-radius: 0;
-			height: 100%;
-		}
+    &-card {
+      @include teaser-card;
+      border-radius: 0;
+      height: 100%;
+    }
 
-		&-content {
-			@include teaser-content;
-			padding-top: 39px;
-		}
+    &-content {
+      @include teaser-content;
+      padding-top: 39px;
+    }
 
-		&-video-length {
-			@include video-length;
-		}
+    &-video-length {
+      @include video-length;
+    }
 
-		&-image {
-			@include teaser-image;
-		}
+    &-image {
+      @include teaser-image;
+    }
 
-		&-headline {
-			@include teaser-headline;
-			margin-bottom: 0.65em;
-		}
+    &-headline {
+      @include teaser-headline;
+      margin-bottom: 0.65em;
+    }
 
-		&-copy {
-			@include teaser-copy;
-		}
+    &-copy {
+      @include teaser-copy;
+    }
 
     &-icon {
       @include box-shadow;
@@ -89,6 +85,5 @@
         }
       }
     }
-
-	}
+  }
 }
