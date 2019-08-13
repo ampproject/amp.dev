@@ -3,18 +3,18 @@ $title: AMP for Email best practices
 $order: 1
 $category: Develop
 formats:
-    - email
+    - emails
 ---
 
-AMP allows for exciting new types of immersive and engaging content in email! When designing emails, keep in mind the following best practices to ensure they are performant, reliable across platforms, and work as your users expect. 
+AMP allows for exciting new types of immersive and engaging content in email! When designing emails, keep in mind the following best practices to ensure they are performant, reliable across platforms, and work as your users expect.
 
 #Speed
 
-When using [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) to dynamically fetch content, include a placeholder to keep the integrity of the components structure. The placeholder should be as similar in layout as possible to the document after it's returned the requested data. This ensures the message size isn't changing or mutating the layout significantly. 
+When using [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=email) to dynamically fetch content, include a placeholder to keep the integrity of the components structure. The placeholder should be as similar in layout as possible to the document after it's returned the requested data. This ensures the message size isn't changing or mutating the layout significantly.
 
 #Mobile
 
-Ensure your message looks good on all screen sizes by using [CSS media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}?format=email) to identify the device. Messages should be tested on mobile devices to ensure the layout is correct and components work as expected. Because swiping is a common action on mobile email apps, take proper steps to ensure your users can interact with your content. Components such as [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}?format=email) can include the [`controls`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}?format=email#controls-(optional)) attribute to make the navigation buttons always visible on mobile. 
+Ensure your message looks good on all screen sizes by using [CSS media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}?format=email) to identify the device. Messages should be tested on mobile devices to ensure the layout is correct and components work as expected. Because swiping is a common action on mobile email apps, take proper steps to ensure your users can interact with your content. Components such as [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}?format=email) can include the [`controls`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}?format=email#controls-(optional)) attribute to make the navigation buttons always visible on mobile.
 
 #Other Gotchas
 

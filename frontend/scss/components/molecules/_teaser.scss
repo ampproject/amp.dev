@@ -50,6 +50,14 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	font-family: 'Poppins';
 }
 
+@mixin teaser-tag-zero {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 0;
+	z-index: 1;
+}
+
 @mixin teaser-card {
 	overflow: hidden;
 	position: relative;
