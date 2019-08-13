@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 require('module-alias/register');
+const fs = require('fs');
+const path = require('path');
 
 const {GitHubImporter} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
@@ -64,17 +66,23 @@ class ComponentReferenceImporter {
 
     // Keep track of all saved documents (as promises) to complete function
     const savedDocuments = [];
+let index = 5;
     for (const extension of extensions) {
-      const document = await this._findExtensionDoc(extension);
+if (--index < 0) {
+  break;
+}
+      const documents = await this._findExtensionDocs(extension);
 
-      if (!document) {
+      if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
-        document.importURL = `${extension.html_url}/${extension.name}.md`;
-        this._setMetadata(extension.name, document);
-        this._rewriteRelativePaths(extension.path, document);
 
-        savedDocuments.push(this._saveDocument(extension.name, document));
+        documents.forEach((document) => {
+          // TODO: importUrl
+          this._setMetadata(extension.name, document);
+          this._rewriteRelativePaths(extension.path, document);
+          savedDocuments.push(this._saveDocument(extension.name, document));
+        });
       }
     }
 
@@ -151,7 +159,12 @@ class ComponentReferenceImporter {
   _saveDocument(extensionName, document) {
     // Set the documents title
     document.title = extensionName;
-    const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}.md`;
+    const documentDir = `${DESTINATION_BASE_PATH}/${extensionName}`;
+    const documentPath = path.join(documentDir, `${extensionName}.md`);
+
+    if (!fs.existsSync(documentDir)) {
+      fs.mkdirSync(documentDir);
+    }
 
     return document.save(documentPath);
   }
@@ -160,24 +173,28 @@ class ComponentReferenceImporter {
    * Checks a specific extension/component for documents
    * @return {Promise} [description]
    */
-  async _findExtensionDoc(extension) {
+  async _findExtensionDocs(extension) {
+    let documents = [];
     let files = await this.githubImporter_.fetchJson(extension.path);
     files = files[0];
 
     // Find the Markdown document that is named like the extension
-    let documentPath = '';
     for (let i = 0; i < files.length; i++) {
-      if (files[i].type === 'file' && files[i].name === extension.name + '.md') {
-        documentPath = files[i].path;
-        break;
+      if (files[i].type === 'file') {
+        if (files[i].name === extension.name + '.md') {
+          const documentPath = files[i].path;
+          documents.push(await this.githubImporter_.fetchDocument(documentPath));
+        }
+      } else {
+        if (parseFloat(files[i].name).constructor !== NaN) {
+          // Look into the version folder for documents
+          files[i].name = extension.name;
+          documents = documents.concat(await this._findExtensionDocs(files[i]));
+        }
       }
     }
 
-    if (!documentPath) {
-      return;
-    }
-
-    return this.githubImporter_.fetchDocument(documentPath);
+    return documents;
   }
 }
 
