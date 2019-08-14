@@ -3,7 +3,7 @@ $title: AMPHTML Layout System
 $order: 1
 formats:
   - websites
-  - emails
+  - email
   - stories
   - ads
 ---

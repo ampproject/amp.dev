@@ -1,7 +1,7 @@
 ---
 $title: Integrate your ad technologies into AMP
 toc: true
-$order: 4
+$order: 3
 formats:
   - ads
 ---

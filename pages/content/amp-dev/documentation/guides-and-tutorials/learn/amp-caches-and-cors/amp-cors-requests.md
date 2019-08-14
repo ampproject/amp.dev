@@ -4,7 +4,7 @@ toc: true
 $order: 12
 formats:
   - websites
-  - emails
+  - email
   - stories
   - ads
 ---
