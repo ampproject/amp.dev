@@ -7,7 +7,7 @@
             "classes": "cover",
             "alt-text": "Good eats.",
             "width": 196, "height": 249, "layout": "responsive",
-            "src": "../../img/land-see/content/burger-200px.jpg"
+            "src": "../img/land-see/content/burger-200px.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-arts-culture-anim",
@@ -23,7 +23,7 @@
             "classes": "cover",
             "alt-text": "Creating with clay.",
             "width": 196, "height": 187, "layout": "responsive",
-            "src": "../../img/land-see/content/kaneko-200px.jpg"
+            "src": "../img/land-see/content/kaneko-200px.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-arts-culture-anim",
@@ -39,7 +39,7 @@
             "classes": "cover",
             "alt-text": "Silhouettes.",
             "width": 196, "height": 249, "layout": "responsive",
-            "src": "../../img/land-see/content/black-white-2-250px.jpg"
+            "src": "../img/land-see/content/black-white-2-250px.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-arts-culture-anim xs-hide",
@@ -55,7 +55,7 @@
             "classes": "cover",
             "alt-text": "Fall colors.",
             "width": 196, "height": 187, "layout": "responsive",
-            "src": "../../img/land-see/content/fall-festivals-200px.jpg"
+            "src": "../img/land-see/content/fall-festivals-200px.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-arts-culture-anim xs-hide sm-hide",
