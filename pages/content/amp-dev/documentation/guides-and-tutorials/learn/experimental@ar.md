@@ -29,5 +29,5 @@ AMP.toggleExperiment('experiment')
 [/sourcecode]
 
 أي ملف من ملفات AMP يتضمن ميزات تجريبية سيخفق في إجراء
-[التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+[التحقق من صحة صفحات AMP](validation-workflow/validate_amp.md).
 أزل هذه المكوّنات التجريبية بالنسبة إلى مستندات AMP الجاهزة للإنتاج.

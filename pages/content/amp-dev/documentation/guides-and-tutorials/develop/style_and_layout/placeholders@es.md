@@ -4,7 +4,7 @@ $title: Marcadores de posición y respaldos
 
 En cuanto al rendimiento percibido y la mejora progresiva, en AMP se recomienda incluir marcadores de posición y respaldos donde sea posible.
 
-Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en ['<amp-iframe>']({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
+Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en ['<amp-iframe>'](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
 
 ## Marcadores de posición
 
@@ -89,7 +89,7 @@ En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que u
 
 ## Cómo interactúan los marcadores de posición y los respaldos
 
-En el caso de los componentes AMP que dependen de contenido dinámico (por ejemplo, [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), los respaldos y los marcadores de posición interactúan de la siguiente manera:
+En el caso de los componentes AMP que dependen de contenido dinámico (por ejemplo, [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), los respaldos y los marcadores de posición interactúan de la siguiente manera:
 
 <ol>
   <li>Se muestra el marcador de posición mientras se carga el contenido.</li>

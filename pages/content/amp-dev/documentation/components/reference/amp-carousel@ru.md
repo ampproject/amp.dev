@@ -34,7 +34,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
     <td>
       <ul>
         <li>Карусель: fixed, fixed-height, nodisplay.</li>
@@ -211,7 +211,7 @@ limitations under the License.
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Этот элемент содержит <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
+            <td>Этот элемент содержит <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
           </tr>
         </table>
 

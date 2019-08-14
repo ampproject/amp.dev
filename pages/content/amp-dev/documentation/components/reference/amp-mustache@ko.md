@@ -91,7 +91,7 @@ Mustache는 로직이 없는 템플릿 구문입니다. 자세한 내용은 [Mus
 
 AMP 유효성 검사기에서 유용한 dev-x 힌트를 제공하므로 가능할 때마다 `template` 태그를 사용합니다. 표 컨텍스트에서 템플릿을 생성하는 것과 관련된 문제와 예외 사례에는 `script` 템플릿을 사용합니다. 자세한 정보는 아래 '표' 섹션을 참조하세요.
 
-템플릿 탐색 방법, 템플릿 렌더링 시기, 데이터 제공 방식은 모두 이 템플릿을 사용하여 콘텐츠를 렌더링(예: [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 등에서)하는 타겟 AMP 요소를 통해 결정합니다.
+템플릿 탐색 방법, 템플릿 렌더링 시기, 데이터 제공 방식은 모두 이 템플릿을 사용하여 콘텐츠를 렌더링(예: [amp-list](amp-list.md), [amp-form](amp-form.md) 등에서)하는 타겟 AMP 요소를 통해 결정합니다.
 
 ## 제한사항
 

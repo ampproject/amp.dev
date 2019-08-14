@@ -34,16 +34,16 @@ AMP 网页的基本框架如下所示：
 
 AMP 组件可提供额外的功能和界面组件，为 AMP 网页增添丰富的互动方式。入门代码使用了以下 AMP 组件：
 
-- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})：用于实现图片轮换展示内容，以展示相应商品的多个视图。
-- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})：用于实现模板化系统，以呈现来自 [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 的服务器响应。
-- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})：用于为 AMP 网页所需的 `<form>` 元素添加特殊功能。
-- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})：用于提供一种语义方式，以从一组元素中选择一个或多个元素。可用作 [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 的输入源。
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)：用于实现图片轮换展示内容，以展示相应商品的多个视图。
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md)：用于实现模板化系统，以呈现来自 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 的服务器响应。
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md)：用于为 AMP 网页所需的 `<form>` 元素添加特殊功能。
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)：用于提供一种语义方式，以从一组元素中选择一个或多个元素。可用作 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 的输入源。
 
 ## 基本的互动方式
 
 入门代码可提供一些基本的互动方式：
 
-- 图片轮换展示内容 ([`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})) 可展示相应商品的多个视图。
-- 相应商品可被添加到用户的购物车中（通过 [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})）- 用户只需点按网页底部的“加入购物车”按钮即可完成此操作。
+- 图片轮换展示内容 ([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) 可展示相应商品的多个视图。
+- 相应商品可被添加到用户的购物车中（通过 [`amp-form`](../../../../documentation/components/reference/amp-form.md)）- 用户只需点按网页底部的“加入购物车”按钮即可完成此操作。
 
 **试试看**：滑动图片轮换展示内容，然后点按“加入购物车”按钮。

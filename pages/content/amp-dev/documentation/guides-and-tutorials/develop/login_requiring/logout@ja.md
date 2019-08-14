@@ -2,13 +2,13 @@
 $title: ログアウト
 ---
 
-ログアウト ボタンも、ログインボタンと同じように [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) コンポーネントの状態に応じて表示が切り替わります。
+ログアウト ボタンも、ログインボタンと同じように [`amp-access`](../../../../documentation/components/reference/amp-access.md) コンポーネントの状態に応じて表示が切り替わります。
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-Logout ボタンをクリックすると、[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) JSON 設定の login オブジェクトの一部として指定した URL にリダイレクトされます。
+Logout ボタンをクリックすると、[`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON 設定の login オブジェクトの一部として指定した URL にリダイレクトされます。
 
 [sourcecode:json]
 {

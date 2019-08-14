@@ -457,7 +457,7 @@ This sample showcases how to build a product page in AMP HTML.
       </amp-lightbox>
     <!-- ## Slides preview Gallery -->
     <!--On desktop we've added a film strip like slide preview. Each product colour has its own image gallery and slide preview.
-    We use [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to update the page selecting the gallery and image preview
+    We use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md) to update the page selecting the gallery and image preview
     corresponding to the selected colour. We realized the color selection by using `amp-selector`. Find more the doc and info in The Product Page section below.
 
     The green colour is the default color for the gallery when the page loads.
@@ -598,7 +598,7 @@ This sample showcases how to build a product page in AMP HTML.
 
   </div>
   <!-- ## Product Configuration -->
-  <!-- We use the `amp-state` component (part of [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}))
+  <!-- We use the `amp-state` component (part of [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md))
       to configure the product price depending on the color and the size. We also configure the `defaultSize`
       for each product when you switch between colours and the size you previously selected is not available for the new color -->
   <amp-state id="product">
@@ -643,7 +643,7 @@ This sample showcases how to build a product page in AMP HTML.
   </amp-state>
 
     <!-- ## Product price -->
-    <!-- We use [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to update the price of the product
+    <!-- We use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md) to update the price of the product
       depending on the selected colour.
 
     We bind the `text` attribute to the value of expression `product[product.selectedColor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.

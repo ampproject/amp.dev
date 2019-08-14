@@ -14,4 +14,4 @@ Berikutnya, pastikan bahwa halaman AMP Anda **benar-benar merupakan halaman AMP 
   1. Tambahkan "`#development=1`" ke URL, misalnya, `http://localhost:8000/released.amp.html#development=1`.
   1. Buka [konsol Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) dan periksa kesalahan validasi.
 
-[Ketahui selengkapnya mengenai validasi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.
+[Ketahui selengkapnya mengenai validasi](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), dan tindakan yang harus Anda lakukan jika menjumpai kesalahan.

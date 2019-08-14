@@ -2,11 +2,11 @@
 $title: Adicionar carrosséis
 ---
 
-Outra funcionalidade comum das páginas para dispositivos móveis são os carrosséis.  Pode adicionar facilmente carrosséis a páginas AMP ao utilizar o componente [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}). Vamos começar com um exemplo simples, como um carrossel de imagens.
+Outra funcionalidade comum das páginas para dispositivos móveis são os carrosséis.  Pode adicionar facilmente carrosséis a páginas AMP ao utilizar o componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md). Vamos começar com um exemplo simples, como um carrossel de imagens.
 
 ## Carrossel simples de imagens
 
-Não se esqueça de incluir a biblioteca do componente [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) **ao adicionar** o seguinte pedido de JavaScript à etiqueta `<head>` do seu documento:
+Não se esqueça de incluir a biblioteca do componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) **ao adicionar** o seguinte pedido de JavaScript à etiqueta `<head>` do seu documento:
 
 ```html
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
@@ -26,15 +26,15 @@ Em seguida, vamos incorporar um carrossel simples de imagens com um esquema adap
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-simple.png', 412, 403, align='center half', caption='Carrossel de imagens simples') }}
 
-O componente [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) pode ser configurado de várias formas.  Vamos alterar a IU para mostrar apenas uma imagem de cada vez e tornar o esquema do carrossel adaptável.
+O componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) pode ser configurado de várias formas.  Vamos alterar a IU para mostrar apenas uma imagem de cada vez e tornar o esquema do carrossel adaptável.
 
-Para o fazer, primeiro, **altere** o `type` do [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) de `carousel` para `slides`, **altere** o `layout` para `responsive` e **defina** a `width` para 300 (assegure-se de que são definidas a `height` e a `width`).  **Adicione** o atributo `"layout=responsive"` aos elementos secundários [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) secundário do [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Para o fazer, primeiro, **altere** o `type` do [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) de `carousel` para `slides`, **altere** o `layout` para `responsive` e **defina** a `width` para 300 (assegure-se de que são definidas a `height` e a `width`).  **Adicione** o atributo `"layout=responsive"` aos elementos secundários [`amp-img`](../../../../documentation/components/reference/amp-img.md) secundário do [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 **Atualize** a página. Agora, em vez de uma lista de elementos para percorrer, verá um elemento de cada vez. Experimente **deslizar rapidamente** na horizontal para percorrer os elementos. Se deslizar rapidamente para o terceiro elemento, não poderá deslizar mais.
 
 Em seguida, **adicione** o atributo `loop`. **Atualize** a página e tente deslizar rapidamente para a esquerda de imediato. O carrossel repete-se infinitamente.
 
-Por último, vamos fazer com que este carrossel seja reproduzido automaticamente a cada 2 segundos. **Adicione** o atributo `autoplay` e o atributo `delay` com um valor de `2000` (por exemplo, `delay="2000"`) ao [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Por último, vamos fazer com que este carrossel seja reproduzido automaticamente a cada 2 segundos. **Adicione** o atributo `autoplay` e o atributo `delay` com um valor de `2000` (por exemplo, `delay="2000"`) ao [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 O resultado final deverá ser semelhante ao seguinte:
 
@@ -48,13 +48,13 @@ O resultado final deverá ser semelhante ao seguinte:
 
 **Atualize** a página e experimente!
 
-Nota: Deverá ter reparado que, quando o [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) tinha o tipo `carousel`, utilizámos o tipo de esquema `fixed-height`.  Os tipos de esquema suportados para o tipo `carousel` são limitados. Por exemplo, o tipo `carousel` não suporta o esquema `responsive`.  Tal como o nome sugere, os elementos de altura fixa ocupam o espaço disponível para os mesmos, mas mantêm a altura inalterada. Para elementos de altura fixa, tem de definir o atributo `height`, enquanto o atributo `width` deve estar definido como `auto` ou deve ser deixado por definir.
+Nota: Deverá ter reparado que, quando o [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) tinha o tipo `carousel`, utilizámos o tipo de esquema `fixed-height`.  Os tipos de esquema suportados para o tipo `carousel` são limitados. Por exemplo, o tipo `carousel` não suporta o esquema `responsive`.  Tal como o nome sugere, os elementos de altura fixa ocupam o espaço disponível para os mesmos, mas mantêm a altura inalterada. Para elementos de altura fixa, tem de definir o atributo `height`, enquanto o atributo `width` deve estar definido como `auto` ou deve ser deixado por definir.
 
 ## Conteúdo misto do carrossel
 
-Os carrosséis de imagens são fantásticos. Mas, e se quisermos que apareçam conteúdos mais complexos no nosso carrossel? Vamos tentar misturar um pouco as coisas ao colocar um anúncio, algum texto e uma imagem, tudo num único carrossel. O [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) conseguirá processar tudo isto de uma só vez? Sem dúvida!
+Os carrosséis de imagens são fantásticos. Mas, e se quisermos que apareçam conteúdos mais complexos no nosso carrossel? Vamos tentar misturar um pouco as coisas ao colocar um anúncio, algum texto e uma imagem, tudo num único carrossel. O [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) conseguirá processar tudo isto de uma só vez? Sem dúvida!
 
-Primeiro, vamos **adicionar** este estilo ao seu `<style amp-custom>` para assegurar que os componentes [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) e [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) funcionam bem em conjunto:
+Primeiro, vamos **adicionar** este estilo ao seu `<style amp-custom>` para assegurar que os componentes [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) e [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) funcionam bem em conjunto:
 
 ```css
 amp-fit-text {
@@ -84,6 +84,6 @@ Agora, **substitua** o seu carrossel simples pelo seguinte:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='Um carrossel de conteúdo misto') }}
 
-Para saber mais, consulte a documentação de referência do componente [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Para saber mais, consulte a documentação de referência do componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
-Nota: No nosso último exemplo, deverá ter reparado que o componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Nota: No nosso último exemplo, deverá ter reparado que o componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) incluía um elemento `div` secundário com o atributo `placeholder`. Anteriormente, no tutorial, deparámo-nos com um cenário semelhante com o [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) a utilizar um `fallback`. Qual é a diferença entre um marcador de posição e um alternativo? Os elementos `fallback` surgem quando ocorre uma falha ao carregar o elemento superior, ou seja, se não houver nenhum anúncio disponível. Os elementos `placeholder` aparecem em vez do elemento superior, enquanto este é carregado. De certo modo, estes elementos suportam o processo de carregamento do elemento superior. Pode saber mais no guia [Marcadores de posição e alternativos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).

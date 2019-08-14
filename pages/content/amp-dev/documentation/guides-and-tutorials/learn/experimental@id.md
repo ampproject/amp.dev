@@ -40,7 +40,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 File AMP apa pun yang menyertakan fitur eksperimental akan gagal
-saat [validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+saat [validasi AMP](validation-workflow/validate_amp.md).
 Hapus komponen eksperimental ini dari dokumen AMP yang siap produksi.
 
 ## Aktifkan eksperimen untuk dokumen tertentu

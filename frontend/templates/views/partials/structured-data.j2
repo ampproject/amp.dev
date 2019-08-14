@@ -118,3 +118,7 @@
 {% set supported_formats = ','.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
 <meta name="supported-amp-formats" content="{{supported_formats}}">
 <meta name="page-locale" content="{{doc.locale}}">
+
+{% if doc.parent %}
+<meta name="page-context" content="{{doc.parent.titles('navigation')}}">
+{% endif %}

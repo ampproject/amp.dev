@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Relation avec `amp-subscriptions`
 
-L'extension [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) offre des fonctionnalités semblables à celles d'`amp-access`. Cependant, elle est compatible avec un protocole de paywall d'accès plus spécialisé. Voici un aperçu des différences les plus importantes :
+L'extension [`amp-subscriptions`](amp-subscriptions.md) offre des fonctionnalités semblables à celles d'`amp-access`. Cependant, elle est compatible avec un protocole de paywall d'accès plus spécialisé. Voici un aperçu des différences les plus importantes :
 
 1. La réponse concernant les droits `amp-subscriptions` est semblable à l'autorisation amp-access, mais elle est strictement définie et standardisée.
 1. L'extension `amp-subscriptions` permet de configurer plusieurs services pour que la page prenne part aux décisions relatives à l'accès et au paywall. Elles sont exécutées simultanément et classées par ordre de priorité en fonction du service qui renvoie la réponse positive.
@@ -498,7 +498,7 @@ L'intégration à *amp-analytics* est décrite à la page [amp-access-analytics.
 
 ## Sécurité de l'origine CORS
 
-Autorisation et Pingback sont des points de terminaison CORS. Ils doivent mettre en œuvre le protocole de sécurité décrit dans la [spécification de sécurité CORS dans AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
+Autorisation et Pingback sont des points de terminaison CORS. Ils doivent mettre en œuvre le protocole de sécurité décrit dans la [spécification de sécurité CORS dans AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 ## Mesure
 

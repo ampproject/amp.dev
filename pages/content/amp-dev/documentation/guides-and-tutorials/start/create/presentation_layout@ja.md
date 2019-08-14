@@ -19,10 +19,10 @@ AMP はウェブページなので、ページやその中に含まれる要素�
 </style>
 [/sourcecode]
 
-各 AMP ページで使える埋め込みスタイルシートは 1 つだけで、使用できないセレクターもいくつかあります。[スタイリングの詳細については、こちらをご確認ください]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})。
+各 AMP ページで使える埋め込みスタイルシートは 1 つだけで、使用できないセレクターもいくつかあります。[スタイリングの詳細については、こちらをご確認ください](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)。
 
 ## レイアウトを制御する
 
 AMP は厳密な規則に従って、ページ上に要素を配置します。通常の HTML ページは CSS を使って要素を配置することがほとんどですが、AMP ではパフォーマンスを上げるために、すべての要素のサイズを最初から明示的に設定する必要があります。
 
-AMP ページのレンダリングやレイアウトの方法、レイアウトの変更方法については[レイアウトの制御方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})をご覧ください。
+AMP ページのレンダリングやレイアウトの方法、レイアウトの変更方法については[レイアウトの制御方法](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)をご覧ください。

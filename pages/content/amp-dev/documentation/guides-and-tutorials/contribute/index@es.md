@@ -24,6 +24,6 @@ La documentación es algo muy importante para toda la comunidad AMP, así que ag
 
 [amp.dev](https://amp.dev) es una página con información para familiarizarse con AMP. Para aportar documentación, accede a la [sección de documentos de ampproject del proyecto GitHub](https://github.com/ampproject/docs). Incluso puedes [aportar mejoras a la página](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) que estás leyendo.
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})  incluye ejemplos sobre cómo utilizar AMP. Puedes aportar mejoras en la [sección amp-by-example del proyecto GitHub](https://github.com/ampproject/amp-by-example/).
+[ampbyexample.com](../../../documentation/examples/index.html)  incluye ejemplos sobre cómo utilizar AMP. Puedes aportar mejoras en la [sección amp-by-example del proyecto GitHub](https://github.com/ampproject/amp-by-example/).
 
  Para ayudar a otros colaboradores del proyecto AMP, puedes mejorar nuestra documentación en la [sección amphtml del proyecto GitHub](https://github.com/ampproject/amphtml).

@@ -46,19 +46,19 @@ Bir AMP dokümanındaki analiz verilerini yakalar.
 Sitenizde AMP Analytics'i kullanmaya başlamadan önce, kullanıcı etkileşimini analiz etmek için üçüncü taraf analiz araçlarını mı yoksa kendi şirket içi çözümünüzü mü kullanacağınıza karar vermeniz gerekir.
 
 [tip type="read-on"]
-[Analytics'i Yapılandırma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) kılavuzunda AMP Analytics ile ilgili tüm bilgileri bulabilirsiniz.
+[Analytics'i Yapılandırma](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md) kılavuzunda AMP Analytics ile ilgili tüm bilgileri bulabilirsiniz.
 [/tip]
 
 ### Bir analiz tedarikçi firmasına veri gönderme <a name="analytics-vendors"></a>
 
-AMP Analytics, bir kez ölçmek ve çok sayıda kullanıcıya rapor göndermek üzere özel olarak tasarlanmıştır. Bir veya daha fazla analiz tedarikçi firmasıyla çalışıyorsanız çözümlerini AMP ile entegre edip etmediklerini öğrenmek için [Analiz Tedarikçi Firmaları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) listesine bakın.
+AMP Analytics, bir kez ölçmek ve çok sayıda kullanıcıya rapor göndermek üzere özel olarak tasarlanmıştır. Bir veya daha fazla analiz tedarikçi firmasıyla çalışıyorsanız çözümlerini AMP ile entegre edip etmediklerini öğrenmek için [Analiz Tedarikçi Firmaları](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) listesine bakın.
 
 Entegre AMP Analytics tedarikçi firmaları için:
 
-1. `<amp-analytics>` etiketine, `type` özelliğini ekleyin ve değerini, belirtilen [tedarikçi firma]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) bilgisine ayarlayın.
+1. `<amp-analytics>` etiketine, `type` özelliğini ekleyin ve değerini, belirtilen [tedarikçi firma](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) bilgisine ayarlayın.
 1. Yakalamak ve izlemek istediğiniz verileri belirleyin ve bu ayrıntıları, yapılandırma verilerinde belirtin. Analiz verilerinin nasıl yakalanacağıyla ilgili talimatlar için tedarikçi firmanın dokümanlarına bakın.
 
-Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
+Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
 
 *Örnek: Verileri bir üçüncü taraf analiz tedarikçi firmasına gönderme*
 
@@ -122,7 +122,7 @@ Burada, sayfa görüntülemelerini izleyen basit bir örnek verilmiştir.  Bir s
 ```
 
   [tip type="success"]
-Bazı yaygın izleme kullanım alanları (ör. sayfa görüntülemeleri, sayfa tıklamaları, kaydırma vb.) için [Analytics: Kullanım Alanları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}) konusuna bakın.
+Bazı yaygın izleme kullanım alanları (ör. sayfa görüntülemeleri, sayfa tıklamaları, kaydırma vb.) için [Analytics: Kullanım Alanları](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md) konusuna bakın.
 [/tip]
 
 ## Yapılandırma verilerini belirtme
@@ -168,7 +168,7 @@ Bu kaynakların birden fazlasına ait yapılandırma verileri kullanılırsa yap
 
 #### Uzak yapılandırma yükleme
 
-Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) uygun olmalıdır.
+Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
 
 Bu örnekte, belirtilen URL'den yapılandırma verilerini yüklemek için `config` özelliğini belirtiriz.
 
@@ -825,7 +825,7 @@ Bunlar, `amp-analytics` bileşeninin geçerli özellikleridir:
 
 **type**
 
-Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarikçi firmaları]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) listesine bakın.
+Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarikçi firmaları](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) listesine bakın.
 
 Örnek:
 
@@ -835,7 +835,7 @@ Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarik�
 
 **config**
 
-Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanılabilen isteğe bağlı bir özelliktir. Belirtilen URL, HTTPS şemasını kullanmalıdır. Ayrıca, aşağıdaki `data-include-credentials` özelliğine bakın. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Yanıt, [AMP CORS güvenlik yönergelerine]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) uygun olmalıdır.
+Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanılabilen isteğe bağlı bir özelliktir. Belirtilen URL, HTTPS şemasını kullanmalıdır. Ayrıca, aşağıdaki `data-include-credentials` özelliğine bakın. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
 
 Örnek:
 
@@ -849,7 +849,7 @@ Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanıla
 
 **data-consent-notification-id**
 
-Değer sağlanırsa sayfa, belirtilen HTML öğesi kimliğine sahip bir [amp-user-notification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}) kullanıcı tarafından onaylanıncaya (kabul edilinceye) kadar analiz isteklerini işlemez. Bu, isteğe bağlı bir özelliktir.
+Değer sağlanırsa sayfa, belirtilen HTML öğesi kimliğine sahip bir [amp-user-notification](amp-user-notification.md) kullanıcı tarafından onaylanıncaya (kabul edilinceye) kadar analiz isteklerini işlemez. Bu, isteğe bağlı bir özelliktir.
 
 ## AMP bileşenleri için analiz
 

@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Tutorial</strong></td>
-    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">Creare pagine AMP interattive</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">Creare pagine AMP interattive</a></td>
   </tr>
 </table>
 
@@ -180,7 +180,7 @@ i contenuti dello stato.
 
 # Aggiornare lo stato con `AMP.setState()`
 
-L'azione [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
+L'azione [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ Quando attivato da certi eventi, `AMP.setState()` può anche accedere ai dati co
 
 # Modificare la cronologia con `AMP.pushState()`
 
-L'azione [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
+L'azione [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
 nell'elenco della cronologia di navigazione. Accedendo a questa voce della cronologia, ad esempio, tornando indietro, viene ripristinato
 il valore precedente delle variabili impostate da `AMP.pushState()`.
 
@@ -396,7 +396,7 @@ Quando lo **stato** cambia, le espressioni vengono rivalutate e le proprietà de
     <td>Deve essere un'espressione booleana.</td>
   </tr>
   <tr>
-    <td>Dimensione degli <a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">elementi AMP</a></td>
+    <td>Dimensione degli <a href="../../../documentation/components/index.md">elementi AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Modifica la larghezza e/o l'altezza dell'elemento AMP.</td>
   </tr>
@@ -458,7 +458,7 @@ Note sulle associazioni:
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>Quando effettui un'associazione a <code>[src]</code>, assicurati di associare anche a <code>[srcset]</code> in modo che l'associazione funzioni su cache.<br>Vedi gli <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">attributi amp-img</a> corrispondenti.</td>
+    <td>Quando effettui un'associazione a <code>[src]</code>, assicurati di associare anche a <code>[srcset]</code> in modo che l'associazione funzioni su cache.<br>Vedi gli <a href="amp-img.md#attributes">attributi amp-img</a> corrispondenti.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -488,7 +488,7 @@ Note sulle associazioni:
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>Vedi gli <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">attributi amp-video</a> corrispondenti.</td>
+    <td>Vedi gli <a href="amp-video.md#attributes">attributi amp-video</a> corrispondenti.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -662,7 +662,7 @@ AMP raggruppa le XMLHttpRequests (XHR) negli endpoint JSON, ovvero puoi utilizza
     <td>L'URL dell'endpoint remoto che restituirà il JSON per aggiornare questo <code>amp-state</code>. Deve essere un servizio HTTP CORS.
         L'attributo <code>src</code> consente tutte le sostituzioni di variabili URL standard. Per ulteriori informazioni, consulta la <a href="../../spec/amp-var-substitutions.md">Guida alle sostituzioni</a>.
         [tip type="important"]
-      L'endpoint deve implementare i requisiti specificati nella specifica <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">Richieste CORS in AMP</a>.
+      L'endpoint deve implementare i requisiti specificati nella specifica <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Richieste CORS in AMP</a>.
       [/tip]</td>
   </tr>
   <tr>
@@ -672,7 +672,7 @@ AMP raggruppa le XMLHttpRequests (XHR) negli endpoint JSON, ovvero puoi utilizza
         <li>Valori supportati: `omit`, `include`</li>
         <li>Impostazione predefinita: `omit`</li>
       </ul>
-      Per inviare le credenziali, trasmetti il valore di <code>include</code>. Se questo valore è impostato, la risposta deve rispettare le <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">norme sulla sicurezza AMP CORS</a>.</td>
+      Per inviare le credenziali, trasmetti il valore di <code>include</code>. Se questo valore è impostato, la risposta deve rispettare le <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">norme sulla sicurezza AMP CORS</a>.</td>
     </tr>
   </table>
 

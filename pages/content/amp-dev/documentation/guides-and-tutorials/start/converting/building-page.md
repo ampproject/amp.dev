@@ -60,7 +60,7 @@ When you inspect the JavaScript output in the Developer Console (make sure you h
 Powered by AMP ⚡ HTML
 ```
 
-The AMP library includes an [AMP validator]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
+The AMP library includes an [AMP validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
 
 ```text
 #development=1

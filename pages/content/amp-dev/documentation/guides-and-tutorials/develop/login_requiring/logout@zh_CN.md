@@ -2,13 +2,13 @@
 $title: 退出
 ---
 
-与“登录”按钮相似，是否显示“退出”按钮应取决于 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 组件的状态：
+与“登录”按钮相似，是否显示“退出”按钮应取决于 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 组件的状态：
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-当您点击“退出”按钮后，系统会将您定向到您在 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) JSON 配置中指定的网址（作为登录对象的一部分）：
+当您点击“退出”按钮后，系统会将您定向到您在 [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON 配置中指定的网址（作为登录对象的一部分）：
 
 [sourcecode:json]
 {

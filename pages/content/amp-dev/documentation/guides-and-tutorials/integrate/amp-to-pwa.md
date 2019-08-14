@@ -10,7 +10,7 @@ author: pbakaus
 A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
 
 * All content “leaf” pages (those that have specific content, not overview pages) are published as AMPs for that nearly instant loading experience.
-* These AMPs use AMP’s special element [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) to warm up a cache and the PWA shell while the user is enjoying your content.
+* These AMPs use AMP’s special element [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) to warm up a cache and the PWA shell while the user is enjoying your content.
 * When the user clicks another link on your website (for example, the call to action at the bottom for a more app-like experience), the service worker intercepts the request, takes over the page and loads the PWA shell instead.
 
 Read on to learn why, and how to use this development pattern.
@@ -19,7 +19,7 @@ Read on to learn why, and how to use this development pattern.
 
 ### AMP for initial user acquisition
 
-AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
+AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering](../../../about/how-amp-works.html), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
 
 ### PWA for rich interactivity and engagement
 
@@ -35,7 +35,7 @@ AMP has the ability to install the Service Worker of your Progressive Web App fr
 **TIP –** If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899).
 [/tip]
 
-First, install the service worker on all of your AMP Pages using [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}), by first including the component via its script in the `<head>` of your page:
+First, install the service worker on all of your AMP Pages using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), by first including the component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -79,7 +79,7 @@ self.addEventListener('install', function(event) {
 
 ## Make all links on an AMP Page navigate to the PWA
 
-Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
+Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
 
 ### 1. If you pair your canonical pages with AMP pages
 
@@ -105,7 +105,7 @@ self.addEventListener('fetch', event => {
 
 What’s especially interesting about this technique is that you are now using progressive enhancement to go from AMP to PWA. However, this also means that, as is, browsers that don’t yet support service workers will jump from AMP to AMP and will never actually navigate to the PWA.
 
-AMP solves this with something called [shell URL rewriting]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}#shell-url-rewrite). By adding a fallback URL pattern to the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
+AMP solves this with something called [shell URL rewriting](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). By adding a fallback URL pattern to the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -119,5 +119,5 @@ AMP solves this with something called [shell URL rewriting]({{g.doc('/content/am
 With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
 [tip type="read-on"]
-**READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).
+**READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](amp-in-pwa.md).
 [/tip]

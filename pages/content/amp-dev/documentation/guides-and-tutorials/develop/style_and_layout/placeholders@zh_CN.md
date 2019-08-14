@@ -4,7 +4,7 @@ $title: 占位符和后备行为
 
 为了提高用户感知的性能并实现渐进增强效果，AMP 中的最佳做法是尽可能提供占位符和后备行为。
 
-一些元素甚至通过放宽限制来鼓励您这样做。例如，如果您为 [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder) 提供占位符，则可以将该组件用在网页顶部附近（如果不使用占位符，网页将无法正常运行）。
+一些元素甚至通过放宽限制来鼓励您这样做。例如，如果您为 [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) 提供占位符，则可以将该组件用在网页顶部附近（如果不使用占位符，网页将无法正常运行）。
 
 ## 占位符
 
@@ -89,7 +89,7 @@ $title: 占位符和后备行为
 
 ## 占位符和后备行为的互动
 
-对于依赖于动态内容的 AMP 组件（例如 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})、[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})），后备行为和占位符的互动方式如下：
+对于依赖于动态内容的 AMP 组件（例如 [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)、[`amp-list`](../../../../documentation/components/reference/amp-list.md)），后备行为和占位符的互动方式如下：
 
 <ol>
   <li>在加载内容时显示占位符。</li>

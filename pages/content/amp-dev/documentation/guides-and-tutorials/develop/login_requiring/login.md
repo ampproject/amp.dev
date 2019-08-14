@@ -4,7 +4,7 @@ $order: 1
 description: 'The first time you land on the page, you can see 2 comments and a login button. If you look for the login button in the code, you will find ...'
 ---
 
-The first time you land on the [page]({{g.doc('/content/amp-dev/documentation/examples/previews/Comment_Section.html', locale=doc.locale).url.path}}), you can see 2 comments and a login button.
+The first time you land on the [page](../../../../documentation/examples/previews/Comment_Section.html), you can see 2 comments and a login button.
 
 <amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
@@ -17,7 +17,7 @@ If you look for the login button in the code, you will find:
 </span>
 [/sourcecode]
 
-The behaviour of [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) related attributes are dependent on a page-wide configuration for [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}), in our case, this one:
+The behaviour of [`amp-access`](../../../../documentation/components/reference/amp-access.md) related attributes are dependent on a page-wide configuration for [`amp-access`](../../../../documentation/components/reference/amp-access.md), in our case, this one:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -70,5 +70,5 @@ As a quick recap:
 - The server should orchestrate the response once the user clicks on the login button
 
 [tip type="tip"]
-**TIP –** A more detailed explanation about this flow can also be found in the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+**TIP –** A more detailed explanation about this flow can also be found in the [`amp-access`](../../../../documentation/components/reference/amp-access.md).
 [/tip]

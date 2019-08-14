@@ -35,7 +35,7 @@ Representa un control que muestra un menú de varias opciones entre las que el u
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>Todos</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ Ejemplo:
 
 ## Borrar selecciones
 
-Para borrar todas las selecciones cuando se toca o se hace clic en un elemento, define el atributo de acción [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) en el elemento y especifica el `id` de AMP Selector con el método de acción `clear`.
+Para borrar todas las selecciones cuando se toca o se hace clic en un elemento, define el atributo de acción [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) en el elemento y especifica el `id` de AMP Selector con el método de acción `clear`.
 
 Ejemplo:
 
@@ -151,7 +151,7 @@ Puedes ver ejemplos en [AMP By Example](https://ampbyexample.com/components/am
 Los eventos pueden activar acciones en otros componentes de AMP mediante el atributo `on`,
 por ejemplo, `on="select: my-tab.show"`.
 
-Más información sobre [las acciones y los eventos de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})
+Más información sobre [las acciones y los eventos de AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
 <table>
   <tr>
