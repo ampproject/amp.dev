@@ -4,7 +4,7 @@ $title: Gambar responsif dengan atribut srcset, sizes & heights
 
 ## srcset
 
- Gunakan atribut `srcset` untuk mengontrol aset elemen berdasarkan berbagai ekspresi media. Secara khusus, gunakan atribut ini untuk semua tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) guna menentukan aset gambar yang akan dipakai berdasarkan berbagai ukuran layar.
+ Gunakan atribut `srcset` untuk mengontrol aset elemen berdasarkan berbagai ekspresi media. Secara khusus, gunakan atribut ini untuk semua tag [`amp-img`](../../../../documentation/components/reference/amp-img.md) guna menentukan aset gambar yang akan dipakai berdasarkan berbagai ukuran layar.
 
 Dalam contoh sederhana ini, `srcset` menentukan gambar yang akan digunakan berdasarkan lebar layar. Deskriptor `w` memberi tahu browser tentang lebar setiap gambar dalam daftar:
 

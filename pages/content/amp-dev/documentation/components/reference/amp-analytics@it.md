@@ -46,19 +46,19 @@ Consente di acquisire dati di analisi da un documento AMP.
 Prima di iniziare a utilizzare Analytics per AMP sul tuo sito, devi decidere se utilizzare strumenti di analisi di terze parti per analizzare il coinvolgimento degli utenti o le tue soluzioni interne.
 
 [tip type="read-on"]
-scopri tutto su Analytics per AMP nella guida [Configurazione di Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}).
+scopri tutto su Analytics per AMP nella guida [Configurazione di Analytics](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md).
 [/tip]
 
 ### Invio dei dati a un fornitore di soluzioni di analisi <a name="analytics-vendors"></a>
 
-Analytics per AMP è specificamente progettato per eseguire le misurazioni una sola volta e generare rapporti per diversi utenti. Se collabori già con uno o più fornitori di soluzioni di analisi, consulta l'elenco dei [fornitori di soluzioni di analisi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) per sapere se hanno integrato AMP nelle loro soluzioni.
+Analytics per AMP è specificamente progettato per eseguire le misurazioni una sola volta e generare rapporti per diversi utenti. Se collabori già con uno o più fornitori di soluzioni di analisi, consulta l'elenco dei [fornitori di soluzioni di analisi](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) per sapere se hanno integrato AMP nelle loro soluzioni.
 
 Per i fornitori di soluzioni di analisi integrate con Analytics per AMP:
 
-1. Nel tag `<amp-analytics>`, aggiungi l'attributo `type` e imposta il valore sul [fornitore]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) specificato.
+1. Nel tag `<amp-analytics>`, aggiungi l'attributo `type` e imposta il valore sul [fornitore](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) specificato.
 1. Determina i dati da acquisire e monitorare e specifica questi dettagli nei dati di configurazione. Consulta la documentazione del fornitore per istruzioni su come acquisire i dati di analisi.
 
-Se le soluzioni di analisi del fornitore non sono integrate con AMP, contatta il fornitore per chiedere assistenza. Ti invitiamo inoltre a segnalare un problema relativo al progetto AMP richiedendo l'aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). In alternativa, contatta il fornitore per inviare i dati all'URL specificato. Per ulteriori informazioni, consulta la sezione [Invio interno di dati](#sending-data-in-house) di seguito.
+Se le soluzioni di analisi del fornitore non sono integrate con AMP, contatta il fornitore per chiedere assistenza. Ti invitiamo inoltre a segnalare un problema relativo al progetto AMP richiedendo l'aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). In alternativa, contatta il fornitore per inviare i dati all'URL specificato. Per ulteriori informazioni, consulta la sezione [Invio interno di dati](#sending-data-in-house) di seguito.
 
 *Esempio: invio di dati a un fornitore di soluzioni di analisi di terze parti*
 
@@ -123,7 +123,7 @@ Ecco un semplice esempio che monitora le visualizzazioni di pagina.  Ogni volta 
 ```
 
   [tip type="success"]
-per alcuni casi d'uso comuni relativi al monitoraggio (ad esempio visualizzazioni di pagina, clic su pagine, scorrimento e così via), consulta [Analytics: casi d'uso]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
+per alcuni casi d'uso comuni relativi al monitoraggio (ad esempio visualizzazioni di pagina, clic su pagine, scorrimento e così via), consulta [Analytics: casi d'uso](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md).
 [/tip]
 
 ## Specificare i dati di configurazione
@@ -169,7 +169,7 @@ Se vengono utilizzati dati di configurazione provenienti da più di una di quest
 
 #### Caricamento configurazione remota
 
-Per caricare una configurazione remota, nell'elemento `<amp-analytics>`, specifica l'attributo `config` e l'URL dei dati di configurazione. L'URL specificato deve utilizzare lo schema HTTPS. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Per accedere ai cookie, vedi l'attributo [`data-credentials`](#data-credentials). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
+Per caricare una configurazione remota, nell'elemento `<amp-analytics>`, specifica l'attributo `config` e l'URL dei dati di configurazione. L'URL specificato deve utilizzare lo schema HTTPS. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Per accedere ai cookie, vedi l'attributo [`data-credentials`](#data-credentials). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 In questo esempio, viene specificato l'attributo `config` per caricare i dati di configurazione dall'URL specificato.
 
@@ -828,7 +828,7 @@ Questi sono gli attributi validi per il componente `amp-analytics`:
 
 **type**
 
-Specifica il tipo di fornitore.  Per ulteriori dettagli, consulta l'elenco dei [fornitori di soluzioni di analisi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
+Specifica il tipo di fornitore.  Per ulteriori dettagli, consulta l'elenco dei [fornitori di soluzioni di analisi](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
 
 Esempi:
 
@@ -838,7 +838,7 @@ Esempi:
 
 **config**
 
-È un attributo facoltativo, che può essere utilizzato per caricare una configurazione da un URL remoto specificato. L'URL specificato deve utilizzare lo schema HTTPS. Vedi anche l'attributo `data-include-credentials` di seguito. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
+È un attributo facoltativo, che può essere utilizzato per caricare una configurazione da un URL remoto specificato. L'URL specificato deve utilizzare lo schema HTTPS. Vedi anche l'attributo `data-include-credentials` di seguito. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Esempi:
 
@@ -852,7 +852,7 @@ Se impostato su `include`, attiva la possibilità di leggere e scrivere cookie s
 
 **data-consent-notification-id**
 
-Se è specificato, la pagina non elabora le richieste di analisi finché non viene confermata (accettata) dall'utente una [amp-user-notification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}) con l'ID elemento HTML specificato. È un attributo facoltativo.
+Se è specificato, la pagina non elabora le richieste di analisi finché non viene confermata (accettata) dall'utente una [amp-user-notification](amp-user-notification.md) con l'ID elemento HTML specificato. È un attributo facoltativo.
 
 ## Analytics per i componenti AMP
 

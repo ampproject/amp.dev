@@ -13,7 +13,7 @@ contributors:
 Seatmaps are important parts of ticketers' web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by using a combination of available AMP components.
 
 [tip]
-A live sample implementing the practices described below is available [here]({{g.doc('/content/amp-dev/documentation/examples/documentation/SeatMap.html', locale=doc.locale).url.path}}).
+A live sample implementing the practices described below is available [here](../../../documentation/examples/documentation/SeatMap.html).
 [/tip]
 
 ## AMP Components needed
@@ -21,16 +21,16 @@ A live sample implementing the practices described below is available [here]({{g
 Let's start by reviewing the components needed:
 
 ### amp-pan-zoom
-[`amp-pan-zoom`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pan-zoom.md', locale=doc.locale).url.path}}) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
+[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
 
 ### amp-list
-[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
+[`amp-list`](../../../documentation/components/reference/amp-list.md) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
 
 ### amp-bind
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
+[`amp-bind`](../../../documentation/components/reference/amp-bind.md) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
 
 ### amp-selector
-[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
+[`amp-selector`](../../../documentation/components/reference/amp-selector.md) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
 
 ```css
 rect[selected].seat {
@@ -46,7 +46,7 @@ rect[selected].seat {
 
 ## Drawing the seatmap
 
-The seatmap is rendered via [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) and [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). After receiving the data from the [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) call, you can use said data to iterate through the seats:
+The seatmap is rendered via [`amp-list`](../../../documentation/components/reference/amp-list.md) and [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). After receiving the data from the [`amp-list`](../../../documentation/components/reference/amp-list.md) call, you can use said data to iterate through the seats:
 
 [sourcecode:html]
 {% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
@@ -71,14 +71,14 @@ An alternative, more verbose approach is to repeat the tags as following:
 
 ## Sizing your seatmap
 
-Unless your seatmap's size is fixed, it's difficult to size the [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) containing the seatmap. [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
+Unless your seatmap's size is fixed, it's difficult to size the [`amp-list`](../../../documentation/components/reference/amp-list.md) containing the seatmap. [`amp-list`](../../../documentation/components/reference/amp-list.md) needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
 
-1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}).
+1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the [`amp-list`](../../../documentation/components/reference/amp-list.md).
 2. Use a flex layout when knowing the height of the page layout.
 
 ## Styling amp-pan-zoom
 
-If using the approach described in the previous section, [`amp-pan-zoom`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pan-zoom.md', locale=doc.locale).url.path}}) needs to use `layout="fill"` as well.
+If using the approach described in the previous section, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) needs to use `layout="fill"` as well.
 
 [tip type="tip"]
 **TIP –** To keep some white space around the seatmap and still make it part of the pinch and zooming area:
@@ -93,12 +93,12 @@ If you don’t have a wrapping div and add margin to the SVG instead, it won't m
 
 When users click on different seats, it’s possible to keep track of the selected seat `id`s in a variable by using `amp-state`, either by:
 
-- Adding an [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) expression for every seat to add the selected seat to a list
-- Or using [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
+- Adding an [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat to add the selected seat to a list
+- Or using [`amp-selector`](../../../documentation/components/reference/amp-selector.md) with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
 
-While the first approach doesn’t require the additional component [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}), it can make the seatmap very slow because every [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) expression will be evaluated at every seat selection/deselection.
+While the first approach doesn’t require the additional component [`amp-selector`](../../../documentation/components/reference/amp-selector.md), it can make the seatmap very slow because every [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression will be evaluated at every seat selection/deselection.
 
-The second approach also allows you to reduce the duplication of the [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) expression for every seat that will be rendered by the template.
+The second approach also allows you to reduce the duplication of the [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat that will be rendered by the template.
 
 ## Final HTML structure
 

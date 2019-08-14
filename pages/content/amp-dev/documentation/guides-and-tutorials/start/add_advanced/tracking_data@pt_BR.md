@@ -4,7 +4,7 @@ $title: Acompanhar o engajamento com análises
 
 Em geral, as plataformas de análise são integradas aos sites por meio de snippets de JavaScript in-line e chamadas de função, que acionam eventos retornados ao sistema de análise. A tecnologia AMP oferece uma sintaxe de configuração JSON flexível para reproduzir esse processo em diversos parceiros de análise.
 
-A seguir, veja um exemplo do acompanhamento tradicional do Google Analytics com base em JavaScript. O conteúdo será reescrito no formato JSON [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Antes disso, veja a abordagem tradicional:
+A seguir, veja um exemplo do acompanhamento tradicional do Google Analytics com base em JavaScript. O conteúdo será reescrito no formato JSON [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Antes disso, veja a abordagem tradicional:
 
 ```html
 <script>
@@ -20,13 +20,13 @@ ga('send', 'pageview');
 
 Esse JavaScript é bem simples. Ele envia uma notificação para acompanhar o evento de exibição de página.
 
-Para reproduzir esse recurso em uma página AMP, primeiro é preciso **incluir** a biblioteca de componentes [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) no `<head>` do documento:
+Para reproduzir esse recurso em uma página AMP, primeiro é preciso **incluir** a biblioteca de componentes [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) no `<head>` do documento:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Agora, é preciso **adicionar** o componente [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) ao final do `body` do documento:
+Agora, é preciso **adicionar** o componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ao final do `body` do documento:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -49,11 +49,11 @@ Agora, é preciso **adicionar** o componente [`amp-analytics`]({{g.doc('/content
 </amp-analytics>
 ```
 
-Assim como o exemplo de JavaScript no início desta página, esse snippet [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) enviará uma notificação para o Google Analytics indicando que uma página foi exibida.
+Assim como o exemplo de JavaScript no início desta página, esse snippet [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) enviará uma notificação para o Google Analytics indicando que uma página foi exibida.
 
 Para especificar isso, definimos `type` como `googleanalytics`. No JSON, criamos um acionador chamado de "default pageview".  Esse acionador é disparado quando a página é exibida (devido a `"on": "visible"`). Ao ser disparado, ele envia uma solicitação de análise `pageview` para o Google Analytics com os `vars` especificados.
 
-O JSON usado para configurar [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) é um formato muito flexível para descrever quais dados de análise devem ser enviados e quando.  Veja informações completas sobre o formato no artigo sobre [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+O JSON usado para configurar [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) é um formato muito flexível para descrever quais dados de análise devem ser enviados e quando.  Veja informações completas sobre o formato no artigo sobre [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 Usando o exemplo acima, é possível **adicionar** outro acionador chamado `"click on #header trigger"`:
 
@@ -89,8 +89,8 @@ Usando o exemplo acima, é possível **adicionar** outro acionador chamado `"cli
 
 Como você já deve imaginar pelo nome desse novo acionador, ele será disparado quando o usuário clicar no elemento com o código `"header"` (especificado por `"on": "click"` e `"selector": "#header"`).  Nesse momento, enviaremos uma solicitação `event` ao nosso provedor de análise, especificando algumas variáveis para inclusão na solicitação.
 
-Se você tiver uma plataforma personalizada de acompanhamento para integração, ainda poderá usar [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) e definir pontos de extremidade do URL personalizados que receberão os dados de acompanhamento. Saiba mais nos documentos de referência do componente [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Se você tiver uma plataforma personalizada de acompanhamento para integração, ainda poderá usar [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) e definir pontos de extremidade do URL personalizados que receberão os dados de acompanhamento. Saiba mais nos documentos de referência do componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 Observação: `“UA-YYYY-Y”` é uma conta de exemplo do Google Analytics. Se você usar esse exemplo, substitua esse valor pelo código de acompanhamento do Google Analytics do seu site.
 
-Dica: Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}).
+Dica: Se você estiver interessado em um sistema de acompanhamento mais simples, dê uma olhada em [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).

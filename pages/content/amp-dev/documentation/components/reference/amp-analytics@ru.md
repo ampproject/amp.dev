@@ -45,19 +45,19 @@ limitations under the License.
 Прежде чем изучать показатели AMP на своем сайте, определитесь, какие инструменты для анализа поведения пользователей вы будете применять: сторонние или собственные.
 
 [tip type="read-on"]
-приведена в [руководстве по настройке]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}}) на сайте для разработчиков.
+приведена в [руководстве по настройке](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md) на сайте для разработчиков.
 [/tip]
 
 ### Отправка данных поставщику <a name="analytics-vendors"></a>
 
-Сервис Google Analytics для AMP специально создан, чтобы можно было проанализировать данные один раз и отправить отчет всем заинтересованным лицам. Если вы уже сотрудничаете с одним или несколькими поставщиками аналитических решений, убедитесь, что они есть в нашем [списке]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) тех, кто поддерживает технологию AMP.
+Сервис Google Analytics для AMP специально создан, чтобы можно было проанализировать данные один раз и отправить отчет всем заинтересованным лицам. Если вы уже сотрудничаете с одним или несколькими поставщиками аналитических решений, убедитесь, что они есть в нашем [списке](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) тех, кто поддерживает технологию AMP.
 
 Если все в порядке, выполните следующие действия:
 
-1. Добавьте в тег `<amp-analytics>` атрибут `type` и в качестве значения укажите название [поставщика]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
+1. Добавьте в тег `<amp-analytics>` атрибут `type` и в качестве значения укажите название [поставщика](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
 1. Определитесь с тем, какие данные вы хотите отслеживать, и соответствующим образом настройте конфигурацию. Более подробную информацию можно найти в документации поставщика.
 
-Если ваш поставщик не поддерживает AMP, обратитесь за помощью к его представителям. Мы также рекомендуем вам сообщить авторам проекта AMP о том, что необходимо добавить нового поставщика. Ознакомьтесь с [руководством по интеграции аналитических инструментов с AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Кроме того, вы можете совместно с поставщиком настроить отправку данных на определенный URL. См. раздел [Отправка данных внутри компании](#sending-data-in-house) ниже.
+Если ваш поставщик не поддерживает AMP, обратитесь за помощью к его представителям. Мы также рекомендуем вам сообщить авторам проекта AMP о том, что необходимо добавить нового поставщика. Ознакомьтесь с [руководством по интеграции аналитических инструментов с AMPHTML](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). Кроме того, вы можете совместно с поставщиком настроить отправку данных на определенный URL. См. раздел [Отправка данных внутри компании](#sending-data-in-house) ниже.
 
 *Пример: отправка данных стороннему поставщику аналитических решений*
 
@@ -121,7 +121,7 @@ limitations under the License.
 ```
 
   [tip type="success"]
-О распространенных вариантах отслеживания, таких как просмотры, клики, прокрутка и т. д., читайте в [этом руководстве]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
+О распространенных вариантах отслеживания, таких как просмотры, клики, прокрутка и т. д., читайте в [этом руководстве](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md).
 [/tip]
 
 ## Определение данных конфигурации
@@ -167,7 +167,7 @@ limitations under the License.
 
 #### Загрузка удаленной конфигурации
 
-Чтобы загрузить удаленную конфигурацию, в элементе `<amp-analytics>` разместите атрибут `config` и добавьте URL данных конфигурации. URL должен начинаться с HTTPS и может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Чтобы получить доступ к файлам cookie, воспользуйтесь атрибутом [`data-credentials`](#data-credentials). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
+Чтобы загрузить удаленную конфигурацию, в элементе `<amp-analytics>` разместите атрибут `config` и добавьте URL данных конфигурации. URL должен начинаться с HTTPS и может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Чтобы получить доступ к файлам cookie, воспользуйтесь атрибутом [`data-credentials`](#data-credentials). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Вот пример атрибута `config` для загрузки данных с указанного URL:
 
@@ -828,7 +828,7 @@ visibilitySpec: {
 
 **type**
 
-Определяет тип поставщика.  Более подробная информация представлена в [списке поставщиков]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}).
+Определяет тип поставщика.  Более подробная информация представлена в [списке поставщиков](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
 
 Пример:
 
@@ -838,7 +838,7 @@ visibilitySpec: {
 
 **config**
 
-Это необязательный атрибут, который можно использовать для загрузки конфигурации с указанного удаленного URL, защищенного протоколом HTTPS. Ознакомьтесь также с описанием атрибута `data-include-credentials` ниже. URL может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
+Это необязательный атрибут, который можно использовать для загрузки конфигурации с указанного удаленного URL, защищенного протоколом HTTPS. Ознакомьтесь также с описанием атрибута `data-include-credentials` ниже. URL может включать [переменные AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Ответ должен быть оформлен в соответствии с [требованиями по безопасности в отношении CORS и AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Пример:
 
@@ -852,7 +852,7 @@ visibilitySpec: {
 
 **data-consent-notification-id**
 
-Если вы добавите этот атрибут, страница не будет обрабатывать аналитические запросы до тех пор, пока пользователь не подтвердит уведомление [amp-user-notification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}) с указанным идентификатором элемента HTML. Это необязательный атрибут.
+Если вы добавите этот атрибут, страница не будет обрабатывать аналитические запросы до тех пор, пока пользователь не подтвердит уведомление [amp-user-notification](amp-user-notification.md) с указанным идентификатором элемента HTML. Это необязательный атрибут.
 
 ## Аналитика для компонентов AMP
 

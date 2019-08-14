@@ -92,7 +92,7 @@ ou
 
 Use a tag `template` sempre que possível, porque a validação de AMP fornece dicas úteis sobre dev-x. Use o modelo `script` para casos extremos e problemas com modelos no contexto de tabelas. Veja a seção "Tabelas" abaixo.
 
-A maneira como os modelos são descobertos, quando são renderizados e a forma como os dados são fornecidos é algo decidido pelo elemento AMP de destino que usa esse modelo para renderizar o conteúdo (por exemplo, em [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) etc.).
+A maneira como os modelos são descobertos, quando são renderizados e a forma como os dados são fornecidos é algo decidido pelo elemento AMP de destino que usa esse modelo para renderizar o conteúdo (por exemplo, em [amp-list](amp-list.md), [amp-form](amp-form.md) etc.).
 
 ## Restrições
 

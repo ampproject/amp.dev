@@ -95,7 +95,7 @@ atau
 
 Gunakan tag `template` jika memungkinkan, karena validasi AMP memberikan petunjuk dev-x yang berguna. Gunakan template `script` untuk kasus dan masalah ekstrem terkait penerapan template dalam konteks tabel. Lihat bagian "Tabel" di bawah.
 
-Bagaimana template ditemukan, kapan template dirender, dan bagaimana data disediakan, semuanya ditentukan oleh elemen AMP target yang menggunakan template ini untuk merender kontennya (misalnya, dalam [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}), dll.).
+Bagaimana template ditemukan, kapan template dirender, dan bagaimana data disediakan, semuanya ditentukan oleh elemen AMP target yang menggunakan template ini untuk merender kontennya (misalnya, dalam [amp-list](amp-list.md), [amp-form](amp-form.md), dll.).
 
 ## Batasan
 

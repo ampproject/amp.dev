@@ -8,22 +8,22 @@ You’ve finished the "Add advanced AMP features" tutorial and successfully expl
 
 In this tutorial, you learned to:
 
-- Display ads by using [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
-- Embed YouTube videos by using [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})
-- Embed Twitter cards by using [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})
-- Include responsive text elements by using [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}})
-- Build carousels by using [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
-- Track simple analytic patterns by using [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
-- Add site navigation by using [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), and [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
+- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
+- Embed YouTube videos by using [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md)
+- Embed Twitter cards by using [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)
+- Include responsive text elements by using [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md)
+- Build carousels by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
+- Track simple analytic patterns by using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Add site navigation by using [`amp-img`](../../../../documentation/components/reference/amp-img.md), and [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 - Use custom fonts in AMP
 
 ## Next steps
 
 To further advance your AMP expertise, check out these resources:
 
-- [Create interactive AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}) tutorial : Learn how to use [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) to build interactive AMP pages
-- [Combine AMP with PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}): Learn how Progressive Web Apps and AMP pages complement each other
-- [AMP Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}): Style your pages with pre-styled templates and components
-- [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}): Learn from live samples and demos
+- [Create interactive AMP pages](../../../../documentation/guides-and-tutorials/develop/interactivity/index.md) tutorial : Learn how to use [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) to build interactive AMP pages
+- [Combine AMP with PWA](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md): Learn how Progressive Web Apps and AMP pages complement each other
+- [AMP Templates](../../../../documentation/templates/index.html): Style your pages with pre-styled templates and components
+- [Examples](../../../../documentation/examples/index.html): Learn from live samples and demos
 - [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Learn by watching AMP-specific videos
-- [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}): Get details on all of the AMP components
+- [AMP components](../../../../documentation/components/index.html): Get details on all of the AMP components

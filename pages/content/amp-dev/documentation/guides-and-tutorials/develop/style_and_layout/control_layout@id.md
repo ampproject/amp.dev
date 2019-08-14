@@ -7,7 +7,7 @@ AMP mendukung **kueri media** &amp; **kueri elemen**, juga disertai cara bawaan 
 ## Membuat gambar responsif dengan mudah
 
 Buat gambar responsif dengan menetapkan atribut `width` dan `height`, menyetel tata letak ke `responsive`,
-dan menunjukkan dengan [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+dan menunjukkan dengan [`srcset`](art_direction.md)
 aset gambar mana yang akan digunakan berdasarkan ukuran layar yang berbeda-beda:
 
 [sourcecode:html]
@@ -22,7 +22,7 @@ aset gambar mana yang akan digunakan berdasarkan ukuran layar yang berbeda-beda:
 </amp-img>
 [/sourcecode]
 
-Elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) ini melakukan penyesuaian otomatis dengan lebar
+Elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) ini melakukan penyesuaian otomatis dengan lebar
 elemen penampungnya,
 dan tingginya otomatis ditetapkan sesuai rasio tinggi lebar
 yang ditetapkan oleh atribut width dan height yang ditentukan. Cobalah dengan mengubah ukuran jendela browser ini:
@@ -31,7 +31,7 @@ yang ditetapkan oleh atribut width dan height yang ditentukan. Cobalah dengan me
 
 [tip type="success"]
 
-Lihat demo langsung berdampingan tentang [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}): [Demo Langsung AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
+Lihat demo langsung berdampingan tentang [`amp-img`](../../../../documentation/components/reference/amp-img.md): [Demo Langsung AMP by Example](../../../../documentation/examples/documentation/amp-img.html).
 
 [/tip]
 
@@ -57,22 +57,22 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
     <tr>
       <td data-th="Layout type"><code>nodisplay</code></td>
       <td data-th="Description">Tidak</td>
-      <td data-th="Behavior">Elemen tidak ditampilkan. Tata letak ini dapat diterapkan ke setiap elemen AMP. Komponen tersebut tidak menggunakan ruang sama sekali di layar karena tidak memiliki gaya tampilan. Diasumsikan bahwa elemen ini dapat tampil dengan sendirinya di tindakan pengguna, misalnya, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">Elemen tidak ditampilkan. Tata letak ini dapat diterapkan ke setiap elemen AMP. Komponen tersebut tidak menggunakan ruang sama sekali di layar karena tidak memiliki gaya tampilan. Diasumsikan bahwa elemen ini dapat tampil dengan sendirinya di tindakan pengguna, misalnya, <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed</code></td>
       <td data-th="Description">Ya</td>
-      <td data-th="Behavior">Elemen memiliki lebar dan tinggi yang tetap tetapi tidak mendukung responsivitas. Satu-satunya pengecualian adalah elemen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> dan <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">Elemen memiliki lebar dan tinggi yang tetap tetapi tidak mendukung responsivitas. Satu-satunya pengecualian adalah elemen <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> dan <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
       <td data-th="Description">Ya</td>
-      <td data-th="Behavior">Elemen disesuaikan dengan lebar elemen penampungnya dan tingginya otomatis diubah sesuai rasio tinggi lebar yang ditentukan oleh atribut width dan height. Tata letak ini berfungsi sangat baik untuk sebagian besar elemen AMP, termasuk <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> dan <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>. Ruang yang tersedia bergantung pada elemen induk dan juga dapat disesuaikan menggunakan CSS <code>max-width</code>.<p><strong>Catatan</strong>: Elemen dengan <code>"layout=responsive"</code> tidak memiliki ukuran intrinsik. Ukuran elemen ini ditentukan dari elemen penampungnya. Untuk memastikan elemen AMP Anda ditampilkan, Anda harus menetapkan lebar dan tinggi untuk elemen penampungnya. Jangan tetapkan <code>"display:table"</code> pada elemen penampung karena ini akan menggantikan tampilan elemen AMP, yang membuat elemen AMP menjadi tidak terlihat.</p></td>
+      <td data-th="Behavior">Elemen disesuaikan dengan lebar elemen penampungnya dan tingginya otomatis diubah sesuai rasio tinggi lebar yang ditentukan oleh atribut width dan height. Tata letak ini berfungsi sangat baik untuk sebagian besar elemen AMP, termasuk <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> dan <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. Ruang yang tersedia bergantung pada elemen induk dan juga dapat disesuaikan menggunakan CSS <code>max-width</code>.<p><strong>Catatan</strong>: Elemen dengan <code>"layout=responsive"</code> tidak memiliki ukuran intrinsik. Ukuran elemen ini ditentukan dari elemen penampungnya. Untuk memastikan elemen AMP Anda ditampilkan, Anda harus menetapkan lebar dan tinggi untuk elemen penampungnya. Jangan tetapkan <code>"display:table"</code> pada elemen penampung karena ini akan menggantikan tampilan elemen AMP, yang membuat elemen AMP menjadi tidak terlihat.</p></td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">Hanya tinggi</td>
-      <td data-th="Behavior">Elemen menempati ruang yang disediakan, tapi tingginya tidak diubah. Tata letak ini berfungsi dengan baik untuk elemen seperti <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> yang menggunakan konten yang diposisikan secara horizontal. Atribut <code>width</code> harus tidak ada atau sama dengan <code>auto</code>.</td>
+      <td data-th="Behavior">Elemen menempati ruang yang disediakan, tapi tingginya tidak diubah. Tata letak ini berfungsi dengan baik untuk elemen seperti <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> yang menggunakan konten yang diposisikan secara horizontal. Atribut <code>width</code> harus tidak ada atau sama dengan <code>auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -92,14 +92,14 @@ Nilai berikut dapat digunakan untuk atribut `layout`:
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
       <td data-th="Description">Ya</td>
-      <td data-th="Behavior">Elemen ini menempati ruang yang disediakan untuknya dan ukuran tingginya otomatis diubah sesuai rasio tinggi lebar yang ditentukan oleh atribut <code>width</code> dan <code>height</code> <em>hingga</em> mencapai ukuran yang wajar untuk elemen itu atau mencapai batasan CSS (misalnya max-width). Atribut width dan height harus ada. Tata letak ini berfungsi sangat baik untuk sebagian besar elemen AMP, termasuk <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>, dll. Ruang yang tersedia bergantung pada elemen induk dan juga dapat disesuaikan menggunakan CSS <code>max-width</code>. Tata letak ini berbeda dengan <code>responsive</code> karena memiliki tinggi dan lebar intrinsik. Hal ini terlihat jelas pada elemen mengambang di mana tata letak <code>responsive</code> akan merender 0x0, sedangkan tata letak <code>intrinsic</code> akan menyusut ke ukuran yang lebih kecil dari ukuran wajarnya atau ke batas ukuran CSS. </td>
+      <td data-th="Behavior">Elemen ini menempati ruang yang disediakan untuknya dan ukuran tingginya otomatis diubah sesuai rasio tinggi lebar yang ditentukan oleh atribut <code>width</code> dan <code>height</code> <em>hingga</em> mencapai ukuran yang wajar untuk elemen itu atau mencapai batasan CSS (misalnya max-width). Atribut width dan height harus ada. Tata letak ini berfungsi sangat baik untuk sebagian besar elemen AMP, termasuk <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>, <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>, dll. Ruang yang tersedia bergantung pada elemen induk dan juga dapat disesuaikan menggunakan CSS <code>max-width</code>. Tata letak ini berbeda dengan <code>responsive</code> karena memiliki tinggi dan lebar intrinsik. Hal ini terlihat jelas pada elemen mengambang di mana tata letak <code>responsive</code> akan merender 0x0, sedangkan tata letak <code>intrinsic</code> akan menyusut ke ukuran yang lebih kecil dari ukuran wajarnya atau ke batas ukuran CSS. </td>
     </tr>
   </tbody>
 </table>
 
 [tip type="success"]
 
-Kunjungi halaman [Mendemonstrasikan tata letak AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar.
+Kunjungi halaman [Mendemonstrasikan tata letak AMP](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) untuk melihat bagaimana berbagai tata letak merespons perubahan ukuran layar.
 
 [/tip]
 
@@ -108,8 +108,8 @@ Kunjungi halaman [Mendemonstrasikan tata letak AMP]({{g.doc('/content/amp-dev/do
 Dalam beberapa kasus, jika `width` atau `height` tidak ditentukan,
 AMP runtime dapat menetapkan nilai berikut sebagai default:
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): Lebar dan tinggi ditetapkan secara default ke 0.
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): Lebar dan tinggi default disimpulkan dari browser.
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Lebar dan tinggi ditetapkan secara default ke 0.
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Lebar dan tinggi default disimpulkan dari browser.
 
 ### Bagaimana jika atribut <code>layout</code> tidak ditentukan?
 

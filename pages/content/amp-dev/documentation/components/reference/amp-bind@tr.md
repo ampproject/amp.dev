@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Eğiticiler</strong></td>
-    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">Etkileşimli AMP sayfaları oluşturma</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">Etkileşimli AMP sayfaları oluşturma</a></td>
   </tr>
 </table>
 
@@ -178,7 +178,7 @@ Kod ek açıklamalarının yer aldığı bu örnek için [**canlı demoyu** dene
 
 # Durumu `AMP.setState()` ile güncelleme
 
-[`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) işlemi, bir nesne değişmez değerini durumla birleştirir. Örneğin, aşağıdaki düğmeye basıldığında `AMP.setState()` öğesi, nesne değişmez değerini durum ile [derinden birleştirir](#deep-merge-with-ampsetstate).
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) işlemi, bir nesne değişmez değerini durumla birleştirir. Örneğin, aşağıdaki düğmeye basıldığında `AMP.setState()` öğesi, nesne değişmez değerini durum ile [derinden birleştirir](#deep-merge-with-ampsetstate).
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 
 # `AMP.pushState()` ile geçmişi değiştirme
 
-[`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) işlemi, tarayıcı geçmiş yığınına yeni bir giriş de aktarması haricinde `AMP.setState()` işlemine benzer. Bu geçmiş girişine dönülmesi (geri gidilerek), `AMP.pushState()` tarafından ayarlanan değişkenlerin önceki değerini geri yükler.
+[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) işlemi, tarayıcı geçmiş yığınına yeni bir giriş de aktarması haricinde `AMP.setState()` işlemine benzer. Bu geçmiş girişine dönülmesi (geri gidilerek), `AMP.pushState()` tarafından ayarlanan değişkenlerin önceki değerini geri yükler.
 
 Örneğin:
 ```html
@@ -392,7 +392,7 @@ Bir makro, <i>kendisinden önce tanımlanan</i> diğer makroları da çağırabi
     <td>Bir boole ifadesi olmalıdır.</td>
   </tr>
   <tr>
-    <td><a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">AMP öğelerinin</a> boyutu</td>
+    <td><a href="../../../documentation/components/index.md">AMP öğelerinin</a> boyutu</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP öğesinin genişliğini ve/veya yüksekliğini değiştirir.</td>
   </tr>
@@ -454,7 +454,7 @@ Yalnızca aşağıdaki bileşenlere ve özelliklere bağlamaya izin verilir:
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td><code>[src]</code> öğesine bağlanırken, bağlamanın önbellekte çalışması için <code>[srcset]</code> öğesine de bağlama yaptığınızdan emin olun.<br>İlgili <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">amp-img özelliklerine</a> bakın.</td>
+    <td><code>[src]</code> öğesine bağlanırken, bağlamanın önbellekte çalışması için <code>[srcset]</code> öğesine de bağlama yaptığınızdan emin olun.<br>İlgili <a href="amp-img.md#attributes">amp-img özelliklerine</a> bakın.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -484,7 +484,7 @@ Yalnızca aşağıdaki bileşenlere ve özelliklere bağlamaya izin verilir:
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>İlgili <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">amp-video özelliklerine</a> bakın.</td>
+    <td>İlgili <a href="amp-video.md#attributes">amp-video özelliklerine</a> bakın.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -657,7 +657,7 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
     <td>Bu <code>amp-state</code> öğesini güncelleyecek olan JSON değerini döndürecek uzak uç noktanın URL'si. Bu bir CORS HTTP hizmeti olmalıdır.
       <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="../../spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
           [tip type="important"]
-        Uç nokta, <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">AMP'de CORS İstekleri</a> spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
+        Uç nokta, <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP'de CORS İstekleri</a> spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
         [/tip]</td>
     </tr>
     <tr>
@@ -667,7 +667,7 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
           <li>Desteklenen değerler: `omit`, `include`</li>
           <li>Varsayılan değer: `omit`</li>
         </ul>
-        Kimlik bilgilerini göndermek için <code>include</code> değerini geçirin. Bu değer ayarlanırsa yanıt, <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">AMP CORS güvenlik yönergelerine</a> uygun olmalıdır.</td>
+        Kimlik bilgilerini göndermek için <code>include</code> değerini geçirin. Bu değer ayarlanırsa yanıt, <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">AMP CORS güvenlik yönergelerine</a> uygun olmalıdır.</td>
       </tr>
     </table>
 

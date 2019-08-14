@@ -54,7 +54,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>البرامج التعليمية</strong></td>
-    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">إنشاء صفحات AMP التفاعلية</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">إنشاء صفحات AMP التفاعلية</a></td>
   </tr>
 </table>
 
@@ -180,7 +180,7 @@ limitations under the License.
 
 # تعديل الحالة باستخدام `AMP.setState()`
 
-يُدمِج الإجراء [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) كائنًا حرفيًا في الحالة. عند الضغط على الزر أدناه مثلاً، سيعمل `AMP.setState()` على [الدمج العميق](#deep-merge-with-ampsetstate) للكائن الحرفي مع الحالة.
+يُدمِج الإجراء [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) كائنًا حرفيًا في الحالة. عند الضغط على الزر أدناه مثلاً، سيعمل `AMP.setState()` على [الدمج العميق](#deep-merge-with-ampsetstate) للكائن الحرفي مع الحالة.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ limitations under the License.
 
 # تعديل السجلّ باستخدام `AMP.pushState()`
 
-يشبه الإجراء [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) الإجراء `AMP.setState()` إلا أنه يدفع إدخالاً جديدًا في حِزم سجلّ التصفُّح. يؤدي دفع إدخال السجلّ هذا (بالانتقال إلى الخلف مثلاً) إلى استعادة القيمة السابقة للمتغيرات التي عينها `AMP.pushState()`.
+يشبه الإجراء [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) الإجراء `AMP.setState()` إلا أنه يدفع إدخالاً جديدًا في حِزم سجلّ التصفُّح. يؤدي دفع إدخال السجلّ هذا (بالانتقال إلى الخلف مثلاً) إلى استعادة القيمة السابقة للمتغيرات التي عينها `AMP.pushState()`.
 
 على سبيل المثال:
 ```html
@@ -394,7 +394,7 @@ null || 'default' // 'default'
     <td>يجب أن تكون تعبيرًا منطقيًا.</td>
   </tr>
   <tr>
-    <td>حجم <a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">عناصر AMP</a></td>
+    <td>حجم <a href="../../../documentation/components/index.md">عناصر AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>تغيّر عرض و/أو ارتفاع عنصر AMP.</td>
   </tr>
@@ -457,7 +457,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>عند الربط بـ <code>[src]</code>، احرص أيضًا على الربط بـ <code>[srcset]</code> لجعل الربط يعمل على ذاكرة التخزين المؤقت.<br>اطّلِع على <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">سمات amp-img</a> المقابلة.</td>
+    <td>عند الربط بـ <code>[src]</code>، احرص أيضًا على الربط بـ <code>[srcset]</code> لجعل الربط يعمل على ذاكرة التخزين المؤقت.<br>اطّلِع على <a href="amp-img.md#attributes">سمات amp-img</a> المقابلة.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -486,7 +486,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>اطّلِع على <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">سمات amp-video</a> المقابلة.</td>
+    <td>اطّلِع على <a href="amp-video.md#attributes">سمات amp-video</a> المقابلة.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -659,7 +659,7 @@ AMP ترسل XMLHttpRequests (XHRs) إلى نقاط نهاية JSON في دفع�
     <td>هي عنوان URL لنقطة النهاية البعيدة التي ستعرض JSON الذي سيعمل على تعديل <code>amp-state</code> هذا. ويجب أن تكون خدمة CORS HTTP.
       تتيح السمة <code>src</code> جميع استبدالات متغيرات عنوان URL القياسية. اطّلِع على <a href="../../spec/amp-var-substitutions.md">دليل الاستبدالات</a> للحصول على المزيد من المعلومات.
       [tip type="important"]
-      يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">طلبات CORS في AMP</a>.
+      يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">طلبات CORS في AMP</a>.
       [/tip]
     </td>
   </tr>
@@ -670,7 +670,7 @@ AMP ترسل XMLHttpRequests (XHRs) إلى نقاط نهاية JSON في دفع�
         <li>القيم المسموح بها: `omit` و`include`</li>
         <li>القيمة التلقائية: `omit`</li>
       </ul>
-      لإرسال بيانات الاعتماد، مرِر قيمة <code>include</code>. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">إرشادات الأمان AMP CORS</a>.</td>
+      لإرسال بيانات الاعتماد، مرِر قيمة <code>include</code>. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">إرشادات الأمان AMP CORS</a>.</td>
     </tr>
   </table>
 

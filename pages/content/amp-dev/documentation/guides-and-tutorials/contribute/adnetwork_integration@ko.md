@@ -6,7 +6,7 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 
 ## 개요
 
-광고 서버에서는 AMP와 통합하여 기본 HTML 광고를 AMP 페이지에 게재할 뿐 아니라 [AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}) 광고를 게재할 수 있습니다.
+광고 서버에서는 AMP와 통합하여 기본 HTML 광고를 AMP 페이지에 게재할 뿐 아니라 [AMP HTML](../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) 광고를 게재할 수 있습니다.
 
 ##### 기본 HTML 광고를 게재하고 싶나요?
 
@@ -19,7 +19,7 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 
 ## AMP 광고 구현 만들기
 
-광고 서버로서 지원되는 게시자는 제공된 JavaScript 라이브러리를 포함하며, JavaScript 라이브러리를 사용하여 광고를 가져온 다음 게시자의 웹사이트에 렌더링하는 다양한 '광고 스니펫'을 배치합니다. 게시자는 AMP를 사용하여 임의의 JavaScript를 실행할 수 없으므로 AMP 오픈소스 코드를 작성하여 [`AMP 광고`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 태그를 통해 광고 서버에서 광고를 요청하도록 허용해야 합니다.
+광고 서버로서 지원되는 게시자는 제공된 JavaScript 라이브러리를 포함하며, JavaScript 라이브러리를 사용하여 광고를 가져온 다음 게시자의 웹사이트에 렌더링하는 다양한 '광고 스니펫'을 배치합니다. 게시자는 AMP를 사용하여 임의의 JavaScript를 실행할 수 없으므로 AMP 오픈소스 코드를 작성하여 [`AMP 광고`](../../../documentation/components/reference/amp-ad.md) 태그를 통해 광고 서버에서 광고를 요청하도록 허용해야 합니다.
 
 [tip type="note"]
 이 AMP 광고 구현을 사용하여 기본 HTML 광고 **및** AMP HTML 광고를 표시할 수 있습니다.
@@ -57,5 +57,5 @@ $title: AMP와 통합하여 디스플레이 광고 게재
 ## 관련 리소스
 
 *   [모든 AMP 광고 확장에 대한 GitHub 디렉토리](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [지원되는 광고 공급업체 목록]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
+*   [지원되는 광고 공급업체 목록](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
 *   [빠른 가져오기 출시 관련 블로그 항목](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

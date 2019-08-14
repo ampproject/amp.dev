@@ -35,7 +35,7 @@ Exibe um vídeo do [YouTube](https://www.youtube.com/).
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -111,7 +111,7 @@ Com o layout responsivo, a largura e a altura do exemplo geram layouts corretos 
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Requer a extensão <code>amp-video-docking</code>.</strong> Se esse atributo estiver presente e o vídeo estiver sendo reproduzido manualmente, o vídeo será minimizado e fixado em um canto ou elemento quando o usuário rolar para fora da área visual do componente de vídeo.
-            Para mais detalhes, consulte a <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentação sobre a extensão de âncora</a> (link em inglês).</td>
+            Para mais detalhes, consulte a <a href="amp-video-docking.md">documentação sobre a extensão de âncora</a> (link em inglês).</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (opcional)</strong></td>
@@ -125,7 +125,7 @@ Com o layout responsivo, a largura e a altura do exemplo geram layouts corretos 
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
+            <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
           </tr>
         </table>
 

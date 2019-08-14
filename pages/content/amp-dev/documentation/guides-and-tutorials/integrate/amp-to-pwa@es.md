@@ -5,7 +5,7 @@ $title: Precargar una aplicación web progresiva (PWA) desde páginas AMP
 Una buena estrategia es definir que **una página AMP sea el punto de entrada de los usuarios a tu sitio web** y después **preparar la PWA en segundo plano** y dirigirlos a ella durante el resto de la visita:
 
 * Todas las páginas de producto con contenido (las que tienen contenido específico, no las principales) se publican en AMP para obtener esta experiencia de carga casi instantánea.
-* Estas páginas AMP usan un elemento especial de AMP [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) para preparar una caché y el esqueleto de la PWA mientras el usuario está disfrutando del contenido.
+* Estas páginas AMP usan un elemento especial de AMP [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para preparar una caché y el esqueleto de la PWA mientras el usuario está disfrutando del contenido.
 * Cuando el usuario hace clic en otro enlace de tu sitio web (por ejemplo, en la llamada a la acción de la parte inferior, para obtener una experiencia más similar a una aplicación), el componente service worker intercepta la solicitud, toma el control de la página y carga el esqueleto de la PWA en su lugar.
 
 Sigue leyendo para saber por qué y cómo usar este patrón de desarrollo.
@@ -14,7 +14,7 @@ Sigue leyendo para saber por qué y cómo usar este patrón de desarrollo.
 
 ### Utilizar páginas AMP en la adquisición de usuarios inicial
 
-AMP es una solución ideal en el caso de las denominadas **páginas de producto**: páginas de contenido que tus usuarios descubren de forma natural mediante un motor de búsqueda, a través de un enlace compartido por un amigo o por un enlace de otro sitio web. La tecnología AMP tiene un [renderizado especializado previo]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) que posibilita una carga extremadamente rápida de las páginas AMP, lo que reduce mucho el porcentaje de abandono (el último [estudio de DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) muestra que **más del 53 % de los usuarios abandonan después de tres segundos**).
+AMP es una solución ideal en el caso de las denominadas **páginas de producto**: páginas de contenido que tus usuarios descubren de forma natural mediante un motor de búsqueda, a través de un enlace compartido por un amigo o por un enlace de otro sitio web. La tecnología AMP tiene un [renderizado especializado previo](../../../about/how-amp-works.html) que posibilita una carga extremadamente rápida de las páginas AMP, lo que reduce mucho el porcentaje de abandono (el último [estudio de DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) muestra que **más del 53 % de los usuarios abandonan después de tres segundos**).
 
 ### Mejorar la interactividad y la interacción con PWA
 
@@ -28,7 +28,7 @@ AMP puede instalar el componente service worker de tu aplicación web progresiva
 
 Consejo: Si todavía no estás familiarizado con Service Worker, te recomendamos este [curso de Udacity](https://www.udacity.com/course/offline-web-applications--ud899) de Jake Archibald.
 
-En primer lugar, instala el componente service worker en todas tus páginas AMP con [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}), incluyéndolo junto a su secuencia de comandos en la sección `<head>` de la página:
+En primer lugar, instala el componente service worker en todas tus páginas AMP con [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), incluyéndolo junto a su secuencia de comandos en la sección `<head>` de la página:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -70,7 +70,7 @@ Consejo: Hay formas más sencillas de trabajar con un service worker. Echa un vi
 
 ## Redirigir a la PWA todos los enlaces de una página AMP
 
-Es posible que la mayoría de los enlaces de tus páginas AMP dirijan a otras páginas de contenido. Se pueden seguir dos estrategias distintas para asegurarse de que los clics a otros enlaces provoquen una "actualización" de la aplicación web progresiva, [según cómo utilices AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}):
+Es posible que la mayoría de los enlaces de tus páginas AMP dirijan a otras páginas de contenido. Se pueden seguir dos estrategias distintas para asegurarse de que los clics a otros enlaces provoquen una "actualización" de la aplicación web progresiva, [según cómo utilices AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
 
 ### 1. Si emparejas tus páginas canónicas con páginas AMP
 
@@ -96,7 +96,7 @@ self.addEventListener('fetch', event => {
 
 Lo que es especialmente interesante de esta técnica es que ahora estás utilizando una mejora progresiva para pasar de AMP a PWA. Sin embargo, esto también significa que los navegadores que todavía no son compatibles con service workers saltarán de una página AMP a otra y nunca llegarán a la PWA.
 
-AMP resuelve esta cuestión [reescribiendo la URL del esqueleto]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}#shell-url-rewrite). Al añadir un patrón de URL alternativa a la etiqueta [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}), das instrucciones a AMP para que, si no hay compatibilidad con service worker, vuelva a escribir todos los enlaces coincidentes en una página determinada, de forma que dirijan a la URL de un esqueleto antiguo en su lugar. De este modo:
+AMP resuelve esta cuestión [reescribiendo la URL del esqueleto](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). Al añadir un patrón de URL alternativa a la etiqueta [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), das instrucciones a AMP para que, si no hay compatibilidad con service worker, vuelva a escribir todos los enlaces coincidentes en una página determinada, de forma que dirijan a la URL de un esqueleto antiguo en su lugar. De este modo:
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -109,4 +109,4 @@ AMP resuelve esta cuestión [reescribiendo la URL del esqueleto]({{g.doc('/conte
 
 Después de colocar todos estos atributos, los clics a enlaces posteriores de una página AMP llevarán al usuario a tu PWA, independientemente de si se cuenta con un componente service worker.
 
-Más información: Una vez que ya has llegado hasta aquí, ¿por qué no reutilizas tus páginas AMP para construir la PWA? [Descubre cómo se hace]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).
+Más información: Una vez que ya has llegado hasta aquí, ¿por qué no reutilizas tus páginas AMP para construir la PWA? [Descubre cómo se hace](amp-in-pwa.md).

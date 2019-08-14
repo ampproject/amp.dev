@@ -34,7 +34,7 @@ limitations under the License.
     <td>HTML <code>img</code> 태그의 런타임 관리 대체입니다.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ limitations under the License.
 이미지를 가져오지 않고도 가로세로 비율을 알 수 있도록, 외부에서 가져온 모든 AMP 리소스와 같은 `amp-img` 구성요소에는 명시적으로 미리 크기를 지정해야 합니다(`width`/`height` 사용). 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 
 [tip type="read-on"]
-[AMP HTML 레이아웃 시스템]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) 사양과 [지원되는 레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
+[AMP HTML 레이아웃 시스템](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) 사양과 [지원되는 레이아웃](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)에서 레이아웃에 관해 자세히 알아보세요.
 [/tip]
 
 # 예: 반응형 이미지 표시
@@ -70,10 +70,10 @@ limitations under the License.
 [/example]
 
 [tip type="read-on"]
-[반응형 AMP 페이지 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}) 가이드에서 반응형 AMP 페이지에 관해 알아보세요.
+[반응형 AMP 페이지 만들기](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md) 가이드에서 반응형 AMP 페이지에 관해 알아보세요.
 [/tip]
 
-`amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.
+`amp-img` 구성요소에서 요청한 리소스를 로드하지 못하면, [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) 하위 요소를 제공하지 않은 경우 공간이 비게 됩니다. 대체(예: 크기 조정 + srcset를 통한) 사실이 성능에 영향을 미치지 않는 한 초기 레이아웃과 후속 src 변경에서만 대체가 실행됩니다.
 
 # 예: 대체 이미지 지정
 
@@ -101,8 +101,8 @@ limitations under the License.
 [tip type="read-on"]
 다음 리소스에서 `amp-img` 사용에 관해 자세히 알아보세요.
 
-* [자리표시자 및 대체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})
-* [이미지 및 동영상 포함]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})
+* [자리표시자 및 대체](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+* [이미지 및 동영상 포함](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
 # 속성
@@ -120,7 +120,7 @@ limitations under the License.
 `img` 태그의 `sizes` 속성과 같습니다.
 
 [tip type="read-on"]
-`sizes` 및 `srcset` 사용은 [srcset, sizes 및 heights를 사용하는 반응형 이미지]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
+`sizes` 및 `srcset` 사용은 [srcset, sizes 및 heights를 사용하는 반응형 이미지](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)를 참조하세요.
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ limitations under the License.
 
 **공통 속성**
 
-이 요소에는 AMP 구성요소로 확장된 [공통 속성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})이 포함됩니다.
+이 요소에는 AMP 구성요소로 확장된 [공통 속성](../../../documentation/guides-and-tutorials/learn/common_attributes.md)이 포함됩니다.
 
 # 스타일 지정
 
@@ -171,7 +171,7 @@ amp-img {
 1. `width` 및 `height`를 지정합니다.
 
 [tip type="read-on"]
-`layout` 속성을 지정하지 않는 경우 [유추된 레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn%E2%80%99t-specified?)에 관해 알아보세요.
+`layout` 속성을 지정하지 않는 경우 [유추된 레이아웃](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?)에 관해 알아보세요.
 [/tip]
 
 # 가로세로 비율 설정
@@ -195,13 +195,13 @@ amp-img {
 
 같은 이미지에 대해 가로세로 비율이 모두 동일한 여러 다른 해상도를 제공하기 위해 [`srcset`](#attributes) 속성을 사용해야 합니다. 브라우저에서 사용자 기기의 화면 해상도와 너비를 기반으로 `srcset`에서 가장 적합한 파일을 자동으로 선택합니다.
 
-대조적으로 [`media`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}#media) 속성에서는 AMP 구성요소를 표시하거나 숨기므로 반응형 레이아웃을 디자인할 때 사용해야 합니다. 가로세로 비율이 서로 다른 이미지를 표시하려면 여러 `<amp-img>` 구성요소를 사용하는 것이 적합합니다. 이때 각 구성요소에서는 각 인스턴스를 표시할 화면 너비에 맞는 `media` 속성을 사용합니다.
+대조적으로 [`media`](../../../documentation/guides-and-tutorials/learn/common_attributes.md#media) 속성에서는 AMP 구성요소를 표시하거나 숨기므로 반응형 레이아웃을 디자인할 때 사용해야 합니다. 가로세로 비율이 서로 다른 이미지를 표시하려면 여러 `<amp-img>` 구성요소를 사용하는 것이 적합합니다. 이때 각 구성요소에서는 각 인스턴스를 표시할 화면 너비에 맞는 `media` 속성을 사용합니다.
 
-자세한 내용은 [반응형 AMP 페이지 만들기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md', locale=doc.locale).url.path}}#displaying-responsive-images)의 가이드를 참조하세요.
+자세한 내용은 [반응형 AMP 페이지 만들기](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images)의 가이드를 참조하세요.
 
 # 크기를 알 수 없는 이미지의 가로세로 비율 유지
 
-AMP 레이아웃 시스템에서 이미지를 가져오기 전에 이미지의 가로세로 비율을 미리 알고 있어야 합니다. 그러나 경우에 따라 이미지의 크기를 알지 못할 수 있습니다. 크기를 알 수 없는 이미지를 표시하고 가로세로 비율을 유지하려면 AMP의 [`fill`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) 레이아웃을 [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS 속성과 결합합니다. 자세한 정보는 AMP By Example의 [크기를 알 수 없는 이미지 지원 방법](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions)을 참조하세요.
+AMP 레이아웃 시스템에서 이미지를 가져오기 전에 이미지의 가로세로 비율을 미리 알고 있어야 합니다. 그러나 경우에 따라 이미지의 크기를 알지 못할 수 있습니다. 크기를 알 수 없는 이미지를 표시하고 가로세로 비율을 유지하려면 AMP의 [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) 레이아웃을 [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS 속성과 결합합니다. 자세한 정보는 AMP By Example의 [크기를 알 수 없는 이미지 지원 방법](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions)을 참조하세요.
 
 # 유효성 검사
 

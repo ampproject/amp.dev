@@ -12,7 +12,7 @@ Ada beberapa cara untuk memvalidasi dokumen AMP. Semua cara akan
 memberikan hasil yang sama persis, jadi gunakan cara mana saja yang paling sesuai
 dengan gaya pengembangan Anda.
 
-Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) oleh platform pihak ketiga.
+Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP Anda [dapat ditemukan](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) oleh platform pihak ketiga.
 
 ### Developer Console Browser
 
@@ -253,15 +253,15 @@ Setiap fitur memberikan beberapa informasi:
      yang pada beberapa antarmuka dapat diklik untuk menyorot lokasi tersebut. Pada
      kasus ini, masalah terjadi di baris 11, kolom 2.
   2. Baris teks yang menjelaskan error itu. Pada kasus ini, teks menunjukkan bahwa
-     kita menggunakan tag `<img>`, saat seharusnya menggunakan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+     kita menggunakan tag `<img>`, saat seharusnya menggunakan tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
   3. Link ke dokumen yang relevan tentang error itu. Pada kasus ini,
-     dokumentasi untuk tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Tidak semua error menghasilkan
+     dokumentasi untuk tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Tidak semua error menghasilkan
      link dokumentasi.
 
-Dengan membaca ulang [spek]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Dengan membaca ulang [spek](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
 Untuk memahami daftar lengkap potensi error dengan lebih baik,
-baca [panduan Error Validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+baca [panduan Error Validasi AMP](validation_errors.md).
 Jika masih mengalami masalah setelah menjalankan evaluasi dengan cermat, [ajukan
 pertanyaan](http://stackoverflow.com/questions/tagged/amp-html) dan kami akan
 mencoba untuk membantu.

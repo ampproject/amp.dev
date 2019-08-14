@@ -35,7 +35,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -111,7 +111,7 @@ teaser:
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Требуется расширение <code>amp-video-docking</code>.</strong> Если этот атрибут указан и воспроизведение ролика включено пользователем, то когда видео при прокрутке выходит из зоны видимости, оно уменьшается и закрепляется в углу экрана или в заданном месте.
-          <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">Подробнее…</a></td>
+          <a href="amp-video-docking.md">Подробнее…</a></td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (необязательно)</strong></td>
@@ -125,7 +125,7 @@ teaser:
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Этот элемент содержит <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">распространенные атрибуты</a>, расширенные до компонентов AMP.</td>
+            <td>Этот элемент содержит <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">распространенные атрибуты</a>, расширенные до компонентов AMP.</td>
           </tr>
         </table>
 

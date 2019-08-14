@@ -7,11 +7,11 @@ $title: インタラクティブ性の向上
 - インジケーターを追加して、現在のスライドとスライドの総数を表示する。
 - ユーザーが別のシャツの色を選択したら、画像カルーセルを変更して、選択された色のシャツの画像を表示する。
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) コンポーネントの導入以前は、こうした機能の追加は不可能でした。実際に [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) を使用して、こうした新機能をサンプルコードに追加してみましょう。
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) コンポーネントの導入以前は、こうした機能の追加は不可能でした。実際に [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) を使用して、こうした新機能をサンプルコードに追加してみましょう。
 
 ## `amp-bind` 拡張機能のインストール
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) は、データ バインディングと JavaScript に似た式を使用して独自のインタラクティブ性を提供する、新しい AMP コンポーネントです。[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) を使用するには、ページへのインストールが必要です。
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) は、データ バインディングと JavaScript に似た式を使用して独自のインタラクティブ性を提供する、新しい AMP コンポーネントです。[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) を使用するには、ページへのインストールが必要です。
 
 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) ファイルを開き、ページの `<head>` セクションにある AMP コンポーネントのリストに、下記のスクリプトを追加します。
 
@@ -22,7 +22,7 @@ $title: インタラクティブ性の向上
 
 ## スライドのインジケーターの追加
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) は、要素の属性をカスタムの式にバインドすることで機能します。こうした式では「ステータス」（可変の JSON データ）を参照できます。このステータスは [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) に含まれる [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) コンポーネントを通じて初期化できます。
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) は、要素の属性をカスタムの式にバインドすることで機能します。こうした式では「ステータス」（可変の JSON データ）を参照できます。このステータスは [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) に含まれる [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) コンポーネントを通じて初期化できます。
 
 ### スライドのステータスを初期化する
 
@@ -38,7 +38,7 @@ $title: インタラクティブ性の向上
 </amp-state>
 ```
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素内のデータには、要素に関連付けられている ID を使ってアクセスできます。たとえば、次の式フラグメントを使ってこの変数を参照できます。
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素内のデータには、要素に関連付けられている ID を使ってアクセスできます。たとえば、次の式フラグメントを使ってこの変数を参照できます。
 
 ```javascript
 selected.slide // Evaluates to 0.
@@ -46,14 +46,14 @@ selected.slide // Evaluates to 0.
 
 ### スライドのステータスを更新する
 
-次に、ユーザーがカルーセルのスライドを変更したときにこの変数を更新しましょう。これを行うには、既存の [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 要素に下記の `"on"` アクションを追加します。
+次に、ユーザーがカルーセルのスライドを変更したときにこの変数を更新しましょう。これを行うには、既存の [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 要素に下記の `"on"` アクションを追加します。
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
     on="slideChange:AMP.setState({selected: {slide: event.index}})">
 ```
 
-これで、[`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) に表示されているスライドが変わるたびに、アクション `AMP.setState` が下記の引数付きで呼び出されます。
+これで、[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) に表示されているスライドが変わるたびに、アクション `AMP.setState` が下記の引数付きで呼び出されます。
 
 ```javascript
 {
@@ -65,7 +65,7 @@ selected.slide // Evaluates to 0.
 
 `event.index` の評価結果は新しいスライドのインデックスになり、`AMP.setState()` アクションによってこのオブジェクト リテラルが現在のステータスにマージされます。これにより、`selected.slide` の現在の値が `event.index` の値に置き換えられます。
 
-ヒント: `AMP.setState()` は、ネストされたオブジェクト リテラルのディープマージを行います。詳しくは、[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) のドキュメントをご覧ください。
+ヒント: `AMP.setState()` は、ネストされたオブジェクト リテラルのディープマージを行います。詳しくは、[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) のドキュメントをご覧ください。
 
 ### インジケーターの要素をバインドする
 
@@ -97,17 +97,17 @@ selected.slide // Evaluates to 0.
 
 [tip type="success"]
 
-ユーザーがスライドのインジケーターのドットをタップしたときに、選択された項目で画像カルーセルを更新する、という機能を追加できるかどうか考えてみましょう。ヒントとしては、[`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) で `tap` イベントと `[slide]` バインドを使用します。
+ユーザーがスライドのインジケーターのドットをタップしたときに、選択された項目で画像カルーセルを更新する、という機能を追加できるかどうか考えてみましょう。ヒントとしては、[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) で `tap` イベントと `[slide]` バインドを使用します。
 
 [/tip]
 
 ## カルーセルの画像の変更
 
-色の選択を変えたときに別の色のシャツの画像が表示されるようになると便利です。[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) を使って、[`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 内の [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素で `[src]` をバインドすることでこの処理を実装できます。
+色の選択を変えたときに別の色のシャツの画像が表示されるようになると便利です。[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) を使って、[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 内の [`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素で `[src]` をバインドすることでこの処理を実装できます。
 
 ### SKU ステータスを初期化する
 
-まず、ステータス データを、各色のシャツの画像のソース URL で初期化する必要があります。新しい [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素を使ってこの処理を行います。
+まず、ステータス データを、各色のシャツの画像のソース URL で初期化する必要があります。新しい [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素を使ってこの処理を行います。
 
 ```html
 <!-- Available shirts. Maps unique string identifier to color and image URL string. -->
@@ -151,13 +151,13 @@ selected.slide // Evaluates to 0.
 </amp-state>
 ```
 
-この [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素には、シャツの ID 文字列（つまり、SKU）を、対応するシャツの色と画像 URL にマッピングする JSON オブジェクトが含まれています。ここには JSON 配列を使用することもできますが、オブジェクトを使用すると、後で紹介する便利な処理が可能になります。
+この [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素には、シャツの ID 文字列（つまり、SKU）を、対応するシャツの色と画像 URL にマッピングする JSON オブジェクトが含まれています。ここには JSON 配列を使用することもできますが、オブジェクトを使用すると、後で紹介する便利な処理が可能になります。
 
 これで、シャツの ID を使って画像 URL にアクセスできるようになりました。たとえば、`shirts['10014'].color` の評価結果は `"dark green"` になり、`shirts['10030'].image` は `"wine"` 色のシャツの画像 URL を返します。
 
 ### 選択されている SKU をトラッキングする
 
-選択されている SKU をトラッキングする別のステータス変数を追加すれば、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素に式をバインドして、選択されている SKU が変わったときに `src` 属性が更新されるようにすることができます。次のように、既存の `amp-state#selected` 要素の JSON に新しい `sku` キーを追加します。
+選択されている SKU をトラッキングする別のステータス変数を追加すれば、[`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素に式をバインドして、選択されている SKU が変わったときに `src` 属性が更新されるようにすることができます。次のように、既存の `amp-state#selected` 要素の JSON に新しい `sku` キーを追加します。
 
 ```html
 <amp-state id="selected">
@@ -172,18 +172,18 @@ selected.slide // Evaluates to 0.
 
 ### SKU のステータスを更新する
 
-[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) に "on" アクションを追加します。このアクションは、別の色が選択されるたびに `selected.sku` 変数を更新します。
+[`amp-selector`](../../../../documentation/components/reference/amp-selector.md) に "on" アクションを追加します。このアクションは、別の色が選択されるたびに `selected.sku` 変数を更新します。
 
 ```html
 <amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-ヒント: この処理は、[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 内の各 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 下位要素に `on="tap:AMP.setState(...)` を追加することによっても実装できます。[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) の利点の 1 つは、上記のような方法でマークアップを簡素化できることです。
+ヒント: この処理は、[`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 内の各 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 下位要素に `on="tap:AMP.setState(...)` を追加することによっても実装できます。[`amp-selector`](../../../../documentation/components/reference/amp-selector.md) の利点の 1 つは、上記のような方法でマークアップを簡素化できることです。
 
 ### 画像要素をバインドする
 
-次に、[`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 内の [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素にバインドを追加します（`<!-- TODO: "Changing images in amp-carousel-->"` を検索してください）。
+次に、[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 内の [`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素にバインドを追加します（`<!-- TODO: "Changing images in amp-carousel-->"` を検索してください）。
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->

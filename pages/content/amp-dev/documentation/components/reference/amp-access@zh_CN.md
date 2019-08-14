@@ -50,7 +50,7 @@ limitations under the License.
 
 ## 与 `amp-subscriptions` 的关系
 
-[`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) 扩展提供与 `amp-access` 类似的功能。不过，它支持更专业的访问付费墙协议。以下是一些值得注意的显著差异：
+[`amp-subscriptions`](amp-subscriptions.md) 扩展提供与 `amp-access` 类似的功能。不过，它支持更专业的访问付费墙协议。以下是一些值得注意的显著差异：
 
 1. `amp-subscriptions` 授权响应与 amp-access 授权类似，但它经过了严格定义和标准化处理。
 1. `amp-subscriptions` 扩展允许为网页配置多项服务，以参与访问/付费墙决策。系统会同时执行这些服务，并根据返回肯定响应的服务设置它们的优先级。
@@ -504,7 +504,7 @@ AMP 不区分登录和订阅。发布商可以使用多个登录网址/链接或
 
 ## CORS 网域安全性
 
-授权端点和 Pingback 端点属于 CORS 端点，它们必须实现 [AMP CORS 安全规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)中所述的安全协议。
+授权端点和 Pingback 端点属于 CORS 端点，它们必须实现 [AMP CORS 安全规范](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)中所述的安全协议。
 
 ## 计量供给
 

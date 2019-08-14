@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 在浏览器中重新加载您的故事网页，然后验证并确保该横幅会快速飞入。
 
-接下来，让我们将所有图片都设为淡入。为每个 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素分别添加 `animate-in="fade-in"`；待添加完毕后，代码将会如下所示：
+接下来，让我们将所有图片都设为淡入。为每个 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 元素分别添加 `animate-in="fade-in"`；待添加完毕后，代码将会如下所示：
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -217,7 +217,7 @@ Pets can lower your stress levels!</p>
 
 此时，如果您刷新并重新加载该网页，则所有图片都会淡入。虽然设置成功了，但这种效果却不易察觉，因为所有图片都是同时淡入的！我们可通过更改这些动画的时间设置来改进视觉效果。
 
-我们将第一张图片的入场时间延迟一下（例如延迟 0.4 秒），使其等到文本横幅的入场行为快要完成时再开始入场。其余 3 张图片可分别比上一张图片晚 0.2 秒再开始入场。为每个 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素分别添加 `animate-in-delay=""`，并设置适当的时间延迟值。待添加完毕后，代码应该会如下所示：
+我们将第一张图片的入场时间延迟一下（例如延迟 0.4 秒），使其等到文本横幅的入场行为快要完成时再开始入场。其余 3 张图片可分别比上一张图片晚 0.2 秒再开始入场。为每个 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 元素分别添加 `animate-in-delay=""`，并设置适当的时间延迟值。待添加完毕后，代码应该会如下所示：
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Pets can lower your stress levels!</p>
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-您可以采用诸多形式（例如动画组合、动画链）在 AMP 故事中实现动画效果，本教程只是浅谈则止。若想详细了解动画，请查阅 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 参考文档。
+您可以采用诸多形式（例如动画组合、动画链）在 AMP 故事中实现动画效果，本教程只是浅谈则止。若想详细了解动画，请查阅 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 参考文档。

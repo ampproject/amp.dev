@@ -12,7 +12,7 @@ Existen varias formas de validar un documento AMP. Todas ellas
 producen exactamente el mismo resultado, por lo que puedes utilizar la que más se ajuste
 a tu estilo de desarrollo.
 
-Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) para las plataformas de terceros.
+Además de la validación de AMP, también es posible que quieras confirmar que tu documento AMP sea [visible](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) para las plataformas de terceros.
 
 ### Developers Console para el navegador
 
@@ -253,15 +253,15 @@ Cada herramienta ofrece varios fragmentos de información:
      el error; es posible hacer clic en algunas interfaces para resaltar esa ubicación. En este
      caso, el problema se produce en la línea 11, columna 2.
   2. Línea de texto en la que se describe el error. En este caso, en el texto se indica que
-     usamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+     usamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
   3. Enlace a un documento relevante relativo al error. En este caso, la
-     documentación para la etiqueta [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). No todos los errores generan
+     documentación para la etiqueta [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). No todos los errores generan
      enlaces de documentación.
 
-Al leer de nuevo la [especificación]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) atentamente, nos damos cuenta de que utilizamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Al leer de nuevo la [especificación](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) atentamente, nos damos cuenta de que utilizamos una etiqueta `<img>`, cuando deberíamos haber utilizado una etiqueta [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
 Para entender mejor la lista completa de los posibles errores,
-consulta la [guía Errores de validación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+consulta la [guía Errores de validación de AMP](validation_errors.md).
 Si sigues sin encontrar la solución después de evaluar los errores atentamente,
 [pregúntanos](http://stackoverflow.com/questions/tagged/amp-html) e intentaremos
 ayudarte.

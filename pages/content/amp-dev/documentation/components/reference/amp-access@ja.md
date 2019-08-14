@@ -50,7 +50,7 @@ limitations under the License.
 
 ## `amp-subscriptions` との関係
 
-[`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) 拡張機能は `amp-access` と同様の機能を備えています。ただしこの拡張機能は、特殊用途向けのアクセス ペイウォール プロトコルをサポートしています。この 2 つのコンポーネントの主な違いを以下に示します。
+[`amp-subscriptions`](amp-subscriptions.md) 拡張機能は `amp-access` と同様の機能を備えています。ただしこの拡張機能は、特殊用途向けのアクセス ペイウォール プロトコルをサポートしています。この 2 つのコンポーネントの主な違いを以下に示します。
 
 1. `amp-subscriptions` の利用資格の応答は amp-access の承認に似ていますが、厳密に定義および標準化されています。
 1. `amp-subscriptions` 拡張機能を使用すると、ページに複数のサービスを設定して、アクセスやペイウォールに関する意思決定に参加することができます。これらのサービスは同時に実行され、どのサービスが肯定的な応答を返すかに応じて優先順位付けされます。
@@ -500,7 +500,7 @@ amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/a
 
 ## CORS のオリジンのセキュリティ
 
-承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
+承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
 
 ## メータリング
 

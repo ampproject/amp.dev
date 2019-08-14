@@ -8,7 +8,7 @@ author: CrystalOnScript
 description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
 ---
 
-AMP strives to provide solutions that get developers where they want to be quickly and hassle free. However, some types of functionality are too tailored to individual use cases or require custom JavaScript. The AMP framework is expanding to accommodate these needs with [`<amp-script>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-script.md', locale=doc.locale).url.path}}?format=websites). The `amp-script` component allows AMP developers to introduce custom JavaScript that expand page features and render as valid AMP.
+AMP strives to provide solutions that get developers where they want to be quickly and hassle free. However, some types of functionality are too tailored to individual use cases or require custom JavaScript. The AMP framework is expanding to accommodate these needs with [`<amp-script>`](../../../documentation/components/reference/amp-script.md?format=websites). The `amp-script` component allows AMP developers to introduce custom JavaScript that expand page features and render as valid AMP.
 
 This tutorial will help you build an element with `amp-script` that communicates password requirements to end users. 
 
@@ -31,16 +31,16 @@ Or download the [starter code here](https://github.com/CrystalOnScript/vanilla-j
 
 ## Test the app
 
-Run `npm start` and open the browser window to `http://localhost:8080/`. Our base application is an [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=websites) component that requires an email and password for user signups. It includes some basic styling and layout. 
+Run `npm start` and open the browser window to `http://localhost:8080/`. Our base application is an [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) component that requires an email and password for user signups. It includes some basic styling and layout. 
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app', align='' ) }}
 
-After selecting the password input element, the [AMP `on="tap:rules.show"` action]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}?format=websites) is triggered. This reveals the [`<div id="rules" hidden>`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}?format=websites#*-(all-elements)) element, where our password requirements are listed. 
+After selecting the password input element, the [AMP `on="tap:rules.show"` action](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md?format=websites) is triggered. This reveals the [`<div id="rules" hidden>`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md?format=websites#*-(all-elements)) element, where our password requirements are listed. 
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image2.jpg', 500, 604, layout='intrinsic', alt='Image of basic amp script tutorial starter app with password requirements', align='' ) }}
 
-Play around with different passwords! If you press the submit button before all requirements are met `<amp-form>`’s [`pattern`]({{g.doc('/content/amp-dev/documentation/components/reference
-/amp-form.md', locale=doc.locale).url.path}}?format=websites#verification) attribute will throw an error.
+Play around with different passwords! If you press the submit button before all requirements are met `<amp-form>`’s [`pattern`](../../../documentation/components/reference
+/amp-form.md?format=websites#verification) attribute will throw an error.
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image3.jpg', 500, 605, layout='intrinsic', alt='Image of basic amp script tutorial starter app with unhelpful error', align='' ) }}
 
@@ -85,7 +85,7 @@ The `src` attribute points to the filepath `http://localhost:8080/js/script.js`.
 Open the newly created `script.js` file and add `console.log("amp-script here")`. Reload the page and open the [DevTools console](https://developers.google.com/web/tools/chrome-devtools/) to verify it successfully logged "amp-script here". 
 
 [tip type="important"]
-**Important**: amp-script is still in experimental mode. You will need to enable it inside the console by running `AMP.toggleExperiment('amp-script')` and confirming that it returns `true`. Read more about experimental components [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}?format=websites). 
+**Important**: amp-script is still in experimental mode. You will need to enable it inside the console by running `AMP.toggleExperiment('amp-script')` and confirming that it returns `true`. Read more about experimental components [here](../../../documentation/guides-and-tutorials/learn/experimental.md?format=websites). 
 [/tip]
 
 Imported script logic from the `amp-script` `src` attribute is debugged in the console, same as JavaScript inside non-AMP pages.
@@ -94,7 +94,7 @@ Imported script logic from the `amp-script` `src` attribute is debugged in the c
 
 Now that we’ve confirmed our `script.js` file is being injected correctly, let’s add functionality!
 
-HTML elements within the `<amp-script>` tag are now accessible via standard DOM methods from within `script.js`, minus [a few small caveats]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript.md', locale=doc.locale).url.path}}?format=websites#api-restrictions).
+HTML elements within the `<amp-script>` tag are now accessible via standard DOM methods from within `script.js`, minus [a few small caveats](custom-javascript.md?format=websites#api-restrictions).
 
 ## Declare elements
 
@@ -158,8 +158,8 @@ function initCheckPassword(element) {
 };
 ```
 
-User actions can trigger [mutations within the `amp-script` component ]({{g.doc('/content/amp-dev/documentation/reference/
-components/amp-script.md', locale=doc.locale).url.path}}?format=websites#mutations-and-user-actions), allowing `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener). 
+User actions can trigger [mutations within the `amp-script` component ](../../../documentation/reference/
+components/amp-script.md?format=websites#mutations-and-user-actions), allowing `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener). 
 
 Our function will listen for two events, [`keyup`](https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event) for when a user types into the input box, and [`change`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) in case our user pastes their password.
 

@@ -6,7 +6,7 @@ Ahora que ya has añadido todas las páginas, veamos la última pantalla de la h
 
 La información de la pantalla del enmarcado se extrae de un archivo JSON especificado en la etiqueta `<amp-story-bookend>`. Para este tutorial ya tenemos un archivo JSON ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) que contiene los datos del enmarcado.
 
-La etiqueta `<amp-story-bookend>` debe ser la última etiqueta de [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). Así pues, **vamos a añadir** `<amp-story-bookend></amp-story-bookend>` justo antes del final de la etiqueta `</amp-story>`.  En la etiqueta `amp-story-bookend`, dirige el atributo `src` al archivo `bookend.json` y define `layout="nodisplay"`:
+La etiqueta `<amp-story-bookend>` debe ser la última etiqueta de [`amp-story`](../../../../documentation/components/reference/amp-story.md). Así pues, **vamos a añadir** `<amp-story-bookend></amp-story-bookend>` justo antes del final de la etiqueta `</amp-story>`.  En la etiqueta `amp-story-bookend`, dirige el atributo `src` al archivo `bookend.json` y define `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -26,7 +26,7 @@ Cada pantalla del enmarcado requiere una `bookendVersion`, que en este tutorial 
 "bookendVersion": "v1.0",
 ```
 
-Los lectores pueden compartir tu contenido en las redes sociales, como Twitter, Facebook, Pinterest y otros, mediante los botones para compartir. Especifica tus proveedores de redes sociales en el objeto shareProviders y crea una matriz que contenga los [nombres de tipo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers) de cada una de las plataformas sociales.
+Los lectores pueden compartir tu contenido en las redes sociales, como Twitter, Facebook, Pinterest y otros, mediante los botones para compartir. Especifica tus proveedores de redes sociales en el objeto shareProviders y crea una matriz que contenga los [nombres de tipo](../../../../documentation/components/reference/amp-social-share.md#pre-configured-providers) de cada una de las plataformas sociales.
 
 Para este tutorial, hemos escogido Facebook, Twitter y el correo electrónico como proveedores para compartir contenido:
 
@@ -143,6 +143,6 @@ Hay varios componentes que se pueden usar para mostrar contenidos y enlaces rela
 </tbody>
 </table>
 
-Puedes aprender más sobre el componente bookend. Para obtener más información, consulta la documentación de referencia de [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+Puedes aprender más sobre el componente bookend. Para obtener más información, consulta la documentación de referencia de [`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
 Nuestra historia está casi terminada.  Antes de poder publicar nuestro contenido, comprobaremos que el HTML de nuestro AMP es válido.

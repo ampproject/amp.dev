@@ -7,7 +7,7 @@ $title: Configuração
 Para usar este tutorial, você precisará do seguinte:
 
 - conhecimento básico de HTML, CSS e JavaScript
-- entendimento básico dos principais conceitos da tecnologia AMP (consulte o tutorial ["Converter HTML para AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}))
+- entendimento básico dos principais conceitos da tecnologia AMP (consulte o tutorial ["Converter HTML para AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md))
 - um navegador de sua preferência
 - um editor de texto de sua preferência
 

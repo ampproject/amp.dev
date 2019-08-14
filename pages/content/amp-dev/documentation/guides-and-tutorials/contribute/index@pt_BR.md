@@ -24,6 +24,6 @@ A documentação é importante para a comunidade AMP, e adoraríamos contar com 
 
 [A amp.dev]({{doc.url}}) é onde a maioria das pessoas se familiariza com as AMP. Você pode contribuir com as documentações no [projeto do GitHub para documentos do ampproject](https://github.com/ampproject/docs). Você pode até [melhorar a página que](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) está lendo.
 
-[A ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) oferece exemplos de como usar as AMP. É possível aperfeiçoá-las no [projeto do GitHub amp-by-example](https://github.com/ampproject/amp-by-example/).
+[A ampbyexample.com](../../../documentation/examples/index.html) oferece exemplos de como usar as AMP. É possível aperfeiçoá-las no [projeto do GitHub amp-by-example](https://github.com/ampproject/amp-by-example/).
 
  Também é possível melhorar certos elementos para outros colaboradores do Projeto AMP aprimorando a documentação no [projeto do GitHub amphtml](https://github.com/ampproject/amphtml).
