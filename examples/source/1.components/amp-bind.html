@@ -148,11 +148,11 @@ author: choumx
       -->
 
         <div>
-          <amp-state id="time" src="/components/time"></amp-state>
-          <button on="tap:time.refresh">
+          <amp-state id="currentTime" src="/documentation/examples/api/time"></amp-state>
+          <button on="tap:currentTime.refresh">
             Refresh
           </button>
-          <div [text]="time"></div>
+          <div [text]="currentTime.time"></div>
         </div>
         <!--
           ## Push State
