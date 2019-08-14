@@ -35,7 +35,7 @@ teaser:
     <td>ページビューをカウントする一般的なトラッキング ピクセルとして使用できます。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>fixed、nodisplay</td>
   </tr>
   <tr>
@@ -81,7 +81,7 @@ AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の
 
 ##### 共通の属性
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)が含まれます。
 
 ## 置換
 

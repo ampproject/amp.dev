@@ -1,6 +1,6 @@
 ---
 $title: AMP for Email - Email Provider integration
-$order: 4
+$order: 5
 desccription: 'The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.'
 formats:
   - email
@@ -10,13 +10,13 @@ This document is aimed at email providers, such as email and webmail clients, th
 
 AMP is an open source initiative that enables the creation of consistently fast, beautiful, and high-performing web experiences across devices and distribution platforms. The AMPHTML library is a set of components, backed by carefully curated JavaScript, that enables functionality beyond HTML, with a focus on performance and security.
 
-There are [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMP emails to interact dynamically with content directly in the message.
+There are [AMP components](../../../documentation/components/index.html) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints. The AMPHTML Email format provides a subset of AMPHTML components for use in email messages, that allows recipients of AMP emails to interact dynamically with content directly in the message.
 
-This guide is a high-level overview of implementing support for the AMP for Email format, aimed at  Email Providers. For further technical details, please see [the spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md', locale=doc.locale).url.path}}).
+This guide is a high-level overview of implementing support for the AMP for Email format, aimed at  Email Providers. For further technical details, please see [the spec](../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md).
 
 ## AMP for Email Specification
 
-The [AMP for Email Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md', locale=doc.locale).url.path}}) has been added to the AMPHTML project. It covers AMP for Email in detail and includes answers to specific questions and provides guidelines for general AMP Email developers.
+The [AMP for Email Specification](../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md) has been added to the AMPHTML project. It covers AMP for Email in detail and includes answers to specific questions and provides guidelines for general AMP Email developers.
 
 ## Validate AMP Emails
 It is important to user security and experience that emails sent with AMP HTML are validated as proper AMP documents. The [AMP validator](https://github.com/ampproject/amphtml/tree/master/validator) ensures that AMP Emails are respecting the AMP for Email (`AMP4Email` or `⚡4email`) spec and make proper use of AMP components. Email Providers are highly encouraged to run the validator prior to rendering the message as a sanity check. In case the AMP part of the email is not valid, the HTML version can be used as rendering fallback.
@@ -30,12 +30,12 @@ The AMP project has published [two versions of the AMP Viewer](https://github.co
 While the AMP Validator will only allow [whitelisted components](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-format.md#amp-components) through, a spam checker should analyze and sanitize an email containing AMP much like it would analyze a regular HTML email. The system should also ensure the email passes at minimum DKIM, DMARC, and SPF checks. Furthermore, a sender whitelist is also a strong way to mitigate risks.
 
 ## Include a Proxy Server
-A proxy server is fundamental and should be responsible for handling XHR requests that originate from the AMP Email (e.g. from [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}), etc) and perform spam checks and sanitization on the content fetched by these requests.
+A proxy server is fundamental and should be responsible for handling XHR requests that originate from the AMP Email (e.g. from [`amp-list`](../../../documentation/components/reference/amp-list.md), [`amp-form`](../../../documentation/components/reference/amp-form.md), etc) and perform spam checks and sanitization on the content fetched by these requests.
 
 Some dynamic elements in an AMP Email may rely on remote content. Additional steps should be taken to prevent user data, such as IP address, cookies, and type of device, from being leaked to third party endpoints and giving rewrite access to parts of the AMP Email.
 
 ##Update CORS Headers
-Since the requests go through a proxy server, the AMP Email CORS requirements are slightly different than the existing [AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) requirements.
+Since the requests go through a proxy server, the AMP Email CORS requirements are slightly different than the existing [AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) requirements.
 
 The following describes what headers to expect in a request from each source and the headers that should be included in the response by the server.
 

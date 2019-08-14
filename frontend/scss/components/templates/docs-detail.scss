@@ -61,14 +61,18 @@ body {
     @include content-with-sidebar;
   }
 
+  .#{utility('sidebar')} ~ .#{utility('content')},
+  .#{utility('toc')} ~ .#{utility('content')} {
+    @media (max-width: 767px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
   .#{utility('content')} {
 
     amp-anim {
       @include box-shadow;
-    }
-
-    amp-iframe {
-      margin-top: 1.1rem;
     }
 
     figure {

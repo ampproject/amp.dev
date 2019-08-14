@@ -6,12 +6,12 @@ $title: 总结
 
 您已学习了:
 
-- 如何使用 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 提取商品信息(颜色、尺寸、库存状况)。
-- 如何使用 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 创建跨元素互动性。
+- 如何使用 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 提取商品信息(颜色、尺寸、库存状况)。
+- 如何使用 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 创建跨元素互动性。
 - 如何使用 AMP 组件提供畅快且丰富的用户体验!
 
 如果您遇到了问题，请参阅 [`static/final.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/final.html) 文件以获取完整的解决方案。
 
 ## 后续步骤
 
-查看 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 文档和其他[动态 AMP 组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})，详细了解创建互动式 AMP 网页可带来的卓越性能和超凡灵活度。
+查看 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 文档和其他[动态 AMP 组件](../../../../documentation/components/index.html)，详细了解创建互动式 AMP 网页可带来的卓越性能和超凡灵活度。

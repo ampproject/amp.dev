@@ -4,7 +4,7 @@ $title: 添加评论
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-此时，用户可以使用 [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 库添加评论。请注意，相应表单能否被显示出来是有条件的（取决于 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 组件的状态）：
+此时，用户可以使用 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 库添加评论。请注意，相应表单能否被显示出来是有条件的（取决于 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 组件的状态）：
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -22,7 +22,7 @@ $title: 添加评论
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-表单组件会通过使用 [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) 模板来仅将上述值显示在该网页内：
+表单组件会通过使用 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) 模板来仅将上述值显示在该网页内：
 
 [sourcecode:html]
 <div submit-success>

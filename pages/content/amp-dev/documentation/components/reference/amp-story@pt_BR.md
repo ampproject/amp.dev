@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Disponibilidade</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Experimental</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">Experimental</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Script obrigatório</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>nenhum</td>
   </tr>
   <tr>
     <td width="40%"><strong>Exemplos</strong></td>
     <td><ul>
       <li>Veja uma amostra de <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> no site AMP By Example.</li>
-      <li>Aprenda com o tutorial <a href="https://www.ampproject.org/docs/tutorials/visual_story">Criar uma história visual com AMP</a>.</li>
+      <li>Aprenda com o tutorial <a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">Criar uma história visual com AMP</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ O conteúdo do corpo cria uma história com duas páginas.  Cada página tem uma
 
 ### Marcação obrigatória para amp-story
 
-O formato HTML da história em AMP segue os [mesmos requisitos de marcação de um documento HTML para AMP válido](https://www.ampproject.org/docs/reference/spec#required-markup), além dos seguintes requisitos adicionais:
+O formato HTML da história em AMP segue os [mesmos requisitos de marcação de um documento HTML para AMP válido](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup), além dos seguintes requisitos adicionais:
 
 | REGRA | DESCRIÇÃO |
 |----|---|
@@ -720,7 +720,7 @@ O componente `<amp-story-cta-layer>` permite o uso de elementos `<a>` e `<button
     <div class="content" grid-area="lower-third">Paragraph 3</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">Outlink here!</a>
+    <a href="https://amp.dev" class="button">Outlink here!</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```
@@ -1272,9 +1272,9 @@ Esse campo precisa conter uma string que represente o nome de um provedor de com
 
 Quando parâmetros extras forem necessários, um objeto com pares de chave-valor precisará ser usado. O objeto precisa conter uma chave `provider` com um valor (por exemplo, `facebook`) correspondente ao nome do provedor. As próximas chave-valor dependerão do provedor de compartilhamento.
 
-A lista de provedores disponíveis é a mesma do componente [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+A lista de provedores disponíveis é a mesma do componente [amp-social-share](amp-social-share.md).
 
-Cada um desses provedores tem um conjunto diferente de parâmetros disponíveis ([consulte `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). O objeto de configuração usa esses parâmetros sem o prefixo `data-param-` (por exemplo, o `data-param-app_id` apareceria no objeto de configuração como `app_id`).
+Cada um desses provedores tem um conjunto diferente de parâmetros disponíveis ([consulte `data-param-*`](amp-social-share.md#data-param-%2a)). O objeto de configuração usa esses parâmetros sem o prefixo `data-param-` (por exemplo, o `data-param-app_id` apareceria no objeto de configuração como `app_id`).
 
 #### Configuração JSON
 
@@ -1322,10 +1322,10 @@ O `<amp-story-bookend>` precisa ter um atributo `src` que aponte para a configur
 
 Veja abaixo outros componentes que podem ser usados em histórias em AMP que exigem algumas ressalvas específicas para a história.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-Para ver os componentes gerais mais utilizáveis, consulte a [lista de filhos permitidos](https://www.ampproject.org/docs/reference/components/amp-story#children).
+Para ver os componentes gerais mais utilizáveis, consulte a [lista de filhos permitidos](amp-story.md#children).
 
 ## Validação
 
@@ -1362,8 +1362,8 @@ Além disso, para idiomas escritos da direita para a esquerda, você pode inclui
 
 ## Recursos relacionados
 
-* [Tutorial: criar uma história visual com AMP](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Tutorial: criar uma história visual com AMP](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [Amostras no site AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Práticas recomendadas para criar uma história AMP](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [Práticas recomendadas para criar uma história AMP](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

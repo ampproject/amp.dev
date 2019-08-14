@@ -29,7 +29,7 @@ Ahora, echemos un vistazo al siguiente error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}).
+Cada documento de AMP necesita tener un vínculo que haga referencia a la página canónica. La página canónica puede ser la propia página de AMP o una página que no sea de AMP. En este tutorial, el artículo HTML original es la página canónica. Aprenderemos más acerca de la vinculación canónica en cómo [hacer que tu página sea detectable](discoverable.md).
 
 Adelante, **agregue** el siguiente código debajo de la etiqueta `<meta charset="utf-8" />`:
 
@@ -123,7 +123,7 @@ Una vez más, **vuelva a cargar** la página y verifique que el error stylesheet
 
 Nota: No sólo se requiere estilo en línea, sino que hay un límite de tamaño de archivo de 50 kilobytes para toda la información de estilo. Debe utilizar preprocesadores CSS como [SASS](http://sass-lang.com/) para minimizar su CSS antes de insertar el CSS en sus páginas AMP.
 
-Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+Importante: Sólo puede tener una etiqueta de estilo en todo el documento de AMP. Si tiene varias hojas de estilo externas referenciadas por sus páginas AMP, tendrá que agrupar estas hojas de estilo en un solo conjunto de reglas. Para saber qué reglas CSS son válidas en AMP, lea [Formato CSS admitido](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
 ## Excluir JavaScript de terceros
 
@@ -140,7 +140,7 @@ En AMP, los scripts generados por el usuario no están permitidos. Los scripts e
 
 Esto descarta efectivamente el uso de todos los JavaScript de terceros; Sin embargo, hay una excepción: JavaScript de terceros se puede utilizar en iframes.
 
-Importante: Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). Exploraremos nuestro primer componente de AMP en la siguiente sección.
+Importante: Incluir JavaScript en un iframe debe considerarse una medida de último recurso. Siempre que sea posible, la funcionalidad de JavaScript se debe reemplazar mediante [AMP components](../../../../documentation/components/index.html). Exploraremos nuestro primer componente de AMP en la siguiente sección.
 
 Intente abrir el archivo [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) externo. ¿Que ves? El archivo debe estar vacío de cualquier código JavaScript y sólo incluir un comentario de información como este:
 
@@ -194,24 +194,24 @@ AMP no admite las contrapartes HTML predeterminadas para mostrar medios, lo que 
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP tiene un componente web específicamente diseñado para reemplazar la etiqueta `<img>`, es la etiqueta [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
+AMP tiene un componente web específicamente diseñado para reemplazar la etiqueta `<img>`, es la etiqueta [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Reemplace** la etiqueta `<img>` con la etiqueta [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) anterior y vuelva a ejecutar el validador. Debería recibir varios errores nuevos:
+**Reemplace** la etiqueta `<img>` con la etiqueta [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) anterior y vuelva a ejecutar el validador. Debería recibir varios errores nuevos:
 
 <pre class="error-text">
 AMP-IMG# Layout not supported for: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-¿Por qué se produjo otro error en [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})? Porque [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) no es un sustituto directo de la tradicional etiqueta HTML img. Hay requisitos adicionales cuando se usa [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+¿Por qué se produjo otro error en [`amp-img`](../../../../documentation/components/reference/amp-img.md)? Porque [`amp-img`](../../../../documentation/components/reference/amp-img.md) no es un sustituto directo de la tradicional etiqueta HTML img. Hay requisitos adicionales cuando se usa [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
 ### Sistema de distribución AMP
 
-El error de diseño nos dice que [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) no es compatible con el tipo de diseño del `container`. Uno de los conceptos más importantes en el diseño de AMP es su enfoque en la reducción de la cantidad de DOM reflujo necesario para procesar sus páginas web.
+El error de diseño nos dice que [`amp-img`](../../../../documentation/components/reference/amp-img.md) no es compatible con el tipo de diseño del `container`. Uno de los conceptos más importantes en el diseño de AMP es su enfoque en la reducción de la cantidad de DOM reflujo necesario para procesar sus páginas web.
 
 Para reducir el reflujo de DOM, AMP incluye un sistema de disposición para asegurar que el diseño de la página sea lo más rígido posible, tan pronto como sea posible en el ciclo de vida de descarga y representación de la página.
 
@@ -219,11 +219,11 @@ El sistema de disposición permite que los elementos de una página se posicione
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption='Cómo AMP establece el contenido') }}
 
-En nuestro caso, el sistema de diseño inferido nuestro tipo de diseño para el [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) como el tipo `container`. Sin embargo, el tipo de `container` sólo es aplicable a elementos que contienen elementos de niños. El tipo `container` es incompatible con la etiqueta [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), que es la razón de este error.
+En nuestro caso, el sistema de diseño inferido nuestro tipo de diseño para el [`amp-img`](../../../../documentation/components/reference/amp-img.md) como el tipo `container`. Sin embargo, el tipo de `container` sólo es aplicable a elementos que contienen elementos de niños. El tipo `container` es incompatible con la etiqueta [`amp-img`](../../../../documentation/components/reference/amp-img.md), que es la razón de este error.
 
-¿Por qué se dedujo el tipo `container`? Porque no especificamos un atributo `height` para la etiqueta [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). En HTML, el reflujo puede reducirse siempre especificando un ancho y una altura fija para los elementos de una página. En AMP, es necesario definir el ancho y la altura de los elementos de amplificador-img para que AMP pueda pre-determinar la relación de aspecto del elemento.
+¿Por qué se dedujo el tipo `container`? Porque no especificamos un atributo `height` para la etiqueta [`amp-img`](../../../../documentation/components/reference/amp-img.md). En HTML, el reflujo puede reducirse siempre especificando un ancho y una altura fija para los elementos de una página. En AMP, es necesario definir el ancho y la altura de los elementos de amplificador-img para que AMP pueda pre-determinar la relación de aspecto del elemento.
 
-**Añada** el `width` y la `height` a su etiqueta [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) de la siguiente manera:
+**Añada** el `width` y la `height` a su etiqueta [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) de la siguiente manera:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -244,7 +244,7 @@ Voila! Nuestra imagen está en la relación de aspecto correcta y responde respo
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Nuestra imagen es ahora responsive!") }}
 
-Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+Leer más: Aprenda más sobre el sistema de distribución de AMP en [AMP Layout Specification](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md).
 
 ## ¡Éxito!
 
@@ -315,5 +315,5 @@ AMP validation successful.
 ### Preguntas frecuentes
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [¿Qué ocurre si el atributo layout no está definido?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
-- [¿Qué ocurre si width y height no están definidos?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#¿qué-ocurre-si-width-y-height-no-están-definidos?)
+- [¿Qué ocurre si el atributo layout no está definido?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
+- [¿Qué ocurre si width y height no están definidos?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#¿qué-ocurre-si-width-y-height-no-están-definidos?)

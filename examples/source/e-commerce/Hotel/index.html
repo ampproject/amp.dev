@@ -85,13 +85,13 @@ author: aghassemi
   Here we are using `type=range` as we need 2 dates: the arriving and leaving date of an hotel reservation. Upon receiving a `submit-succes` event from the form response, we set the value of a global variable `rooms` to the form response. We are using the variable `rooms` throughout the sample to access the response from other AMP components.
   -->
   <form method="GET"
-        action="https://amp-by-example-live.glitch.me/rooms"
-        action-xhr="https://amp-by-example-live.glitch.me/rooms"
+        action-xhr="/documentation/examples/e-commerce/hotel/rooms"
         target="_top"
         on="submit-success:AMP.setState({
               rooms: event.response
           })">
       <amp-date-picker id="picker"
+                        layout="container"
                         type="range"
                         mode="overlay"
                         locale="en"
@@ -100,11 +100,11 @@ author: aghassemi
                         month-format="MMM"
                         start-input-selector="#arriving"
                         end-input-selector="#leaving">
-          <input placeholder="arriving" id="arriving"/>
-          <input placeholder="leaving" id="leaving"/>
+          <input name="start" id="arriving">
+          <input name="end" id="leaving">
           <button on="tap: picker.clear">Clear</button>
       </amp-date-picker>
-      <button>Check Availability</button>
+      <input type="submit" value="Check Availability">
     </form>
 
     <!-- ## Client-side filtering -->
@@ -133,7 +133,7 @@ author: aghassemi
 
     Both, `amp-list` and `amp-state`, use the same endpoint.
   -->
-  <amp-state id="rooms" src="https://amp-by-example-live.glitch.me/rooms"></amp-state>
+  <amp-state id="rooms" src="/documentation/examples/e-commerce/hotel/rooms"></amp-state>
 
   <!-- ## Room list -->
   <!--
@@ -146,15 +146,15 @@ author: aghassemi
   <amp-list class="rooms"
             layout="fixed-height"
             height="800"
-            src="https://amp-by-example-live.glitch.me/rooms"
+            src="/documentation/examples/e-commerce/hotel/rooms"
             [src]="filteredRooms()"
             items="."
             [height]="(80 + (16*2)) * filteredRooms().length"
             binding="refresh">
     <template type="amp-mustache">
-    <amp-img width="108" height="80" src="/static/samples/{{img}}" lightbox alt="{{name}}-{{desc}}"></amp-img>
-    <div>{{name}} {{#petFriendly}}&#128062;{{/petFriendly}}</div>
-    <button>book</button>
+      <amp-img width="108" height="80" src="/static/samples/{{img}}" lightbox alt="{{name}}-{{desc}}"></amp-img>
+      <div>{{name}} {{#petFriendly}}&#128062;{{/petFriendly}}</div>
+      <button>book</button>
     </template>
   </amp-list>
     <!-- ## Handling empty list content -->

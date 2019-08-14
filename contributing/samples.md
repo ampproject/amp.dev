@@ -187,7 +187,7 @@ You can use [markdown](https://help.github.com/articles/github-flavored-markdown
 
 ```html
 <!--
-  A simple [responsive](https://www.ampproject.org/docs/guides/responsive/control_layout.html)
+  A simple [responsive]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
   image - *width* and *height* are used to determine the aspect ratio.
 -->
 <amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>

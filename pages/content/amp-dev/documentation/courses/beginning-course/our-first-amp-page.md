@@ -81,7 +81,7 @@ When users request your AMP site, they may be sent the site from an AMP cache se
 
 - Fixing HTML issues that might result in inconsistent rendering in various browsers; i.e., closing all tags, lowercasing attribute names, or escaping text
 
-As you build websites with AMP and work through the exercises in these trainings, check to make sure that your sites are valid. To track validation errors, we’ll use the AMP Validator that we installed in the [course introduction]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/course-introduction.md', locale=doc.locale).url.path}}#setting-up-the-amp-validator).
+As you build websites with AMP and work through the exercises in these trainings, check to make sure that your sites are valid. To track validation errors, we’ll use the AMP Validator that we installed in the [course introduction](course-introduction.md#setting-up-the-amp-validator).
 
 ## Exercise 1: Using the AMP Validator
 
@@ -98,7 +98,7 @@ For the entry about the `<img>` tag:
 `The tag <img> may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?`
 
 Click the “Debug” link at the end of the entry. The Debug link takes you directly to the line of code on your page that contains the listed error. This helps you find the errors that occur in your files, and helps provide the context necessary to understand how to fix the errors.
-And don’t worry: This message might seem unclear now, but it’s an easy fix. We need to use the AMP component `<amp-img>` instead of the HTML tag `<img>`. In the [Thinking in Components]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/thinking-in-components.md', locale=doc.locale).url.path}}) section of this course, we will explore why this error appears, what `<amp-img>` is, and how to fix it.
+And don’t worry: This message might seem unclear now, but it’s an easy fix. We need to use the AMP component `<amp-img>` instead of the HTML tag `<img>`. In the [Thinking in Components](thinking-in-components.md) section of this course, we will explore why this error appears, what `<amp-img>` is, and how to fix it.
 
 {{ image('/static/img/courses/beginner/image16.png', 1999, 798, align='center', caption='AMP debugger showing an error inline.') }}
 
@@ -107,7 +107,7 @@ For any other validation error entries, click the link labeled “Learn more.”
 {{ image('/static/img/courses/beginner/image21.webp', 1024, 684, align='center', caption='AMP documentation reached via the “Learn more” link in the AMP Validator.') }}
 
 [tip type="read-on"]
-**Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+**Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here](../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md).
 [/tip]
 
 The next step is to fix these validation errors. To do that, we need to learn a little more about the required elements of an AMP page. We need to do more than add a thunderbolt to our HTML to create a valid AMP page.
@@ -116,7 +116,7 @@ The next step is to fix these validation errors. To do that, we need to learn a 
 
 Every AMP page starts with the same basic template. Then, we customize and build the page out from there. This starter template is sometimes called the AMP boilerplate. The boilerplate is a combination of tags that set up the AMP runtime and help AMP pages run smoothly.
 
-In this section, we’re going to explain a little bit about each part of the AMP boilerplate. However, you don’t need to remember to add these tags on every page you make with AMP. You can simply start your future AMP pages with [this]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}) boilerplate.
+In this section, we’re going to explain a little bit about each part of the AMP boilerplate. However, you don’t need to remember to add these tags on every page you make with AMP. You can simply start your future AMP pages with [this](../../../documentation/guides-and-tutorials/start/create/basic_markup.md) boilerplate.
 
 The following tags are required in AMP pages. Valid AMP pages must:
 
@@ -146,7 +146,7 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
 {% endraw %}[/sourcecode]
 
 [tip type="note"]
-**Note**: The AMP boilerplate code must be copied and pasted as-is. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
+**Note**: The AMP boilerplate code must be copied and pasted as-is. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix](appendix.md).
 [/tip]
 
 ## CSS and AMP
@@ -162,7 +162,7 @@ CSS customizes the look of your websites. You will almost always add custom styl
 - The `!important` rule is restricted.
 
 - For more disallowed or restricted CSS rules, check the documentation
-  [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+  [here](../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
 To practice adding custom styles to your AMP page, add the following `<style amp-custom>` tag to your page in the `<head>` and see what happens. Once you’re finished, you can remove the styles from your page.
 
@@ -189,7 +189,7 @@ For this and all future exercises, we’re going to apply what we’ve learned t
 
 Additionally, at the start and end of each of these courses, we’ll provide a Glitch template that includes all of the code we’ve completed to that point. If you ever lose your current Glitch page or want to start from our solutions, you can copy code from those Glitch examples, or simply remix those examples and move forward from there.
 
-Using the [documentation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}) for the AMP boilerplate and the comments above, update your Glitch project so that only the `<img>` tag validation error persists. Additionally, to help us build Chico’s Cheese Bikes site, we’ve provided some CSS to use throughout the trainings. If you open [this](https://pastebin.com/vNws2bA1) page, the `<style amp-custom>` tag is there with the styles you need. You should copy these styles to the project you’ve been working with.
+Using the [documentation](../../../documentation/guides-and-tutorials/start/create/basic_markup.md) for the AMP boilerplate and the comments above, update your Glitch project so that only the `<img>` tag validation error persists. Additionally, to help us build Chico’s Cheese Bikes site, we’ve provided some CSS to use throughout the trainings. If you open [this](https://pastebin.com/vNws2bA1) page, the `<style amp-custom>` tag is there with the styles you need. You should copy these styles to the project you’ve been working with.
 
 ### Solution
 
@@ -229,7 +229,7 @@ This is an important error to understand. Some HTML tags are not allowed in AMP 
 
 [tip type="note"]
 
-**Note**: You can start your future AMP pages using the HTML [here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}}) as a starting point. This HTML includes the AMP boilerplate from above. It contains all the required tags and elements we’ve covered so far. Alternatively, you can customize your starting point with additional features using the boilerplate generation tool [here](https://amp.dev/boilerplate).
+**Note**: You can start your future AMP pages using the HTML [here](../../../documentation/guides-and-tutorials/start/create/basic_markup.md) as a starting point. This HTML includes the AMP boilerplate from above. It contains all the required tags and elements we’ve covered so far. Alternatively, you can customize your starting point with additional features using the boilerplate generation tool [here](https://amp.dev/boilerplate).
 
 [/tip]
 [/filter]

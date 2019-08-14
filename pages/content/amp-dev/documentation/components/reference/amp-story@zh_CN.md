@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>提供方式</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">实验性组件</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">实验性组件</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>必需的脚本</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>无</td>
   </tr>
   <tr>
     <td width="40%"><strong>示例</strong></td>
     <td><ul>
       <li>请参阅 AMP By Example 的 <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> 示例。</li>
-      <li>学习<a href="https://www.ampproject.org/docs/tutorials/visual_story">创建一个视觉效果丰富的 AMP 故事</a>教程。</li>
+      <li>学习<a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">创建一个视觉效果丰富的 AMP 故事</a>教程。</li>
     </ul></td>
   </tr>
 </table>
@@ -248,7 +248,7 @@ body 中的内容创建了一个包含两个网页的故事。每个网页都包
 
 ### amp-story 的必需标记
 
-AMP 故事 HTML 格式遵循[与有效 AMP HTML 文档相同的标记要求](https://www.ampproject.org/docs/reference/spec#required-markup)，以及下面这些附加要求：
+AMP 故事 HTML 格式遵循[与有效 AMP HTML 文档相同的标记要求](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup)，以及下面这些附加要求：
 
 | 规则 | 说明 |
 |----|---|
@@ -721,7 +721,7 @@ AMP 故事 HTML 格式遵循[与有效 AMP HTML 文档相同的标记要求](htt
     <div class="content" grid-area="lower-third">第 3 段</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">在此处放置出链！</a>
+    <a href="https://www.amp.dev" class="button">在此处放置出链！</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```
@@ -1277,9 +1277,9 @@ bookend 由各种组件构成。这些组件可以是文章、号召性用语链
 
 当需要额外的参数时，应使用具有键值对的对象。该对象应包含一个 `provider` 键，其值（例如 `facebook`）对应于服务提供商的名称。下一个键值对将取决于分享服务提供商。
 
-可用服务提供商的列表与 [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) 组件中相同。
+可用服务提供商的列表与 [amp-social-share](amp-social-share.md) 组件中相同。
 
-这些服务提供商中的每一个都有一组不同的可用参数（[请参阅 `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)）。配置对象采用这些参数时不使用 `data-param-` 前缀（例如，`data-param-app_id` 在配置对象中显示为 `app_id`）。
+这些服务提供商中的每一个都有一组不同的可用参数（[请参阅 `data-param-*`](amp-social-share.md#data-param-%2a)）。配置对象采用这些参数时不使用 `data-param-` 前缀（例如，`data-param-app_id` 在配置对象中显示为 `app_id`）。
 
 #### JSON 配置
 
@@ -1327,10 +1327,10 @@ bookend 由各种组件构成。这些组件可以是文章、号召性用语链
 
 以下是 AMP 故事中可用的其他组件，需要满足一些仅适用于故事的要求。
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-如需了解更常用的组件，请参阅[允许使用的子级列表](https://www.ampproject.org/docs/reference/components/amp-story#children)。
+如需了解更常用的组件，请参阅[允许使用的子级列表](amp-story.md#children)。
 
 ## 验证
 
@@ -1367,8 +1367,8 @@ bookend 由各种组件构成。这些组件可以是文章、号召性用语链
 
 ## 相关资源
 
-* [教程：创建一个视觉效果丰富的 AMP 故事](https://www.ampproject.org/docs/tutorials/visual_story)
+* [教程：创建一个视觉效果丰富的 AMP 故事](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [AMP By Example 中的示例](https://ampbyexample.com/stories/#stories/introduction)
-* [创作 AMP 故事的最佳做法](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [创作 AMP 故事的最佳做法](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

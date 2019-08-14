@@ -93,7 +93,7 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 
 可能な限り `template` タグを使用してください。AMP 検証によって有用な dev-x ヒントを得ることができます。テーブルのコンテキストでテンプレートを使用する際のエッジケースや問題に関しては、`script` テンプレートを使用してください。詳細については、下記の「テーブル」をご覧ください。
 
-テンプレートの検出方法や、レンダリングのタイミング、データの提供方法は、このテンプレートを使用してコンテンツをレンダリングするターゲット AMP 要素によってすべて決定されます（[amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})、[amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) など）。
+テンプレートの検出方法や、レンダリングのタイミング、データの提供方法は、このテンプレートを使用してコンテンツをレンダリングするターゲット AMP 要素によってすべて決定されます（[amp-list](amp-list.md)、[amp-form](amp-form.md) など）。
 
 ## 制限事項
 

@@ -17,7 +17,7 @@ Studies show that every dollar spent on email marketing corresponds to several d
 
 - If the form submission succeeds, a welcome message with the user’s name should be displayed.
 
-In a non-AMP page, we might reach for a basic HTML form element to collect our users’ information. AMP provides an [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) component, but this component actually uses the element name "form" as well. So, what’s the difference?
+In a non-AMP page, we might reach for a basic HTML form element to collect our users’ information. AMP provides an [`<amp-form>`](../../../documentation/components/reference/amp-form.md) component, but this component actually uses the element name "form" as well. So, what’s the difference?
 
 In this section, we’ll explore what a traditional website form is, how AMP forms differ from traditional forms, and how to handle the response from the server when submitting AMP forms.
 
@@ -31,17 +31,17 @@ AMP forms extend the behavior of normal HTML forms by providing easier ways to p
 
 AMP forms also provide additional possibilities on the inputs that make up the forms. For example, AMP adds `change` and `input-debounced` events to each input field to make it easier to track when users change information. AMP provides additional CSS hooks to make styling your forms easier. Lastly, AMP provides some polyfills that make sure your forms work well in all browsers.
 
-AMP provides a great deal of versatility for building forms. It’s worth spending some time browsing the documentation for [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) to absorb all of the various features that AMP provides.
+AMP provides a great deal of versatility for building forms. It’s worth spending some time browsing the documentation for [`<amp-form>`](../../../documentation/components/reference/amp-form.md) to absorb all of the various features that AMP provides.
 
 ## Exercise 3: Building the Subscription Form
 
-First, let's add a heading for our new subscription form. Add the following snippet just below the [`<amp-youtube>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) component:
+First, let's add a heading for our new subscription form. Add the following snippet just below the [`<amp-youtube>`](../../../documentation/components/reference/amp-youtube.md) component:
 
 [sourcecode:html]
 {% raw %}<h2 class="main-heading">Subscribe to our Newsletter</h2>
 {% endraw %}[/sourcecode]
 
-Using the documentation for [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}), add a form below your new header that matches the following specifications:
+Using the documentation for [`<amp-form>`](../../../documentation/components/reference/amp-form.md), add a form below your new header that matches the following specifications:
 
 The form should:
 
@@ -111,7 +111,7 @@ At this point, our subscription form submits the user’s name and email, but th
 
 The contents of elements tagged with `submit-success` and `submit-error` are treated differently by AMP than the contents of other components we’ve seen and used so far. That is because these elements contain templates. Templates are a way to convert dynamic data (usually generated from a server) into pieces of HTML that get inserted into the page.
 
-The most common type of template used in AMP pages is [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}). This is based on the Mustache.js syntax. You can think of mustache templates as "Mad Libs" for websites. Mad Libs are stories in which certain words are missing and have to be supplied by the reader. For example, given the phrase "there are many `{adjective}` ways to pick a `{noun}` to read," a reader could choose the words "useful" and "magazine" and turn the phrase into "there are many useful ways to pick a magazine to read." (Usually, the results are a lot goofier, but we’ll try to keep it professional here.)
+The most common type of template used in AMP pages is [`<amp-mustache>`](../../../documentation/components/reference/amp-mustache.md). This is based on the Mustache.js syntax. You can think of mustache templates as "Mad Libs" for websites. Mad Libs are stories in which certain words are missing and have to be supplied by the reader. For example, given the phrase "there are many `{adjective}` ways to pick a `{noun}` to read," a reader could choose the words "useful" and "magazine" and turn the phrase into "there are many useful ways to pick a magazine to read." (Usually, the results are a lot goofier, but we’ll try to keep it professional here.)
 
 Similarly, mustache templates describe HTML content in which sections are missing and need to be filled in with information from a server. The templates are written in HTML, and the missing sections are identified by `{% raw %}{{ }}{% endraw %}` mustache braces. When data arrives from the server and the template is evaluated by AMP, the mustache variables are replaced with information from the server. The resultant HTML is displayed on the screen in the place where the template was defined.
 
@@ -174,11 +174,11 @@ The results will look like this:
 {% endraw %}[/sourcecode]
 
 [tip type="read-on"]
-**Note**: Mustache templates have a wide range of other capabilities. You can iterate over a collection of values to display things like lists or tables of data. You can show content only if a particular variable is defined (or only if it’s not defined). You can also display unescaped HTML content. To learn more, read the [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) documentation![/tip]
+**Note**: Mustache templates have a wide range of other capabilities. You can iterate over a collection of values to display things like lists or tables of data. You can show content only if a particular variable is defined (or only if it’s not defined). You can also display unescaped HTML content. To learn more, read the [`<amp-mustache>`](../../../documentation/components/reference/amp-mustache.md) documentation![/tip]
 
 ## Exercise 4: Confirming Newsletter Subscriptions
 
-Now it’s time to add success and error handling to our subscription form as well. Use the [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) and [Success/Error Response Rendering]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}#success/error-response-rendering) documentation to add success and error messages to your subscription form that meet the following requirements:
+Now it’s time to add success and error handling to our subscription form as well. Use the [`<amp-mustache>`](../../../documentation/components/reference/amp-mustache.md) and [Success/Error Response Rendering](../../../documentation/components/reference/amp-form.md#success/error-response-rendering) documentation to add success and error messages to your subscription form that meet the following requirements:
 
 * The success message should thank the user by name for subscribing. **HINT**: The property from the server response to use in the template is `{% raw %}{{{% endraw %}name}}`.
 

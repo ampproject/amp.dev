@@ -22,6 +22,7 @@ nav[toolbar] {
   @media (min-width: 768px){
     position: -webkit-sticky;
     position: sticky;
+    overflow: auto;
   }
 
   & > ul {
@@ -148,6 +149,11 @@ nav[toolbar] {
 
     &-trigger {
       @include sidebar-nav-trigger-state;
+
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
     }
 
     &-icon .#{atom('ico')} {

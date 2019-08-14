@@ -34,21 +34,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>지원 대상</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">실험용</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">실험용</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>필수 스크립트</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>없음</td>
   </tr>
   <tr>
     <td width="40%"><strong>예</strong></td>
     <td><ul>
       <li>AMP By Example의 <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> 샘플을 참조하세요.</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">시각적 AMP 스토리 작성하기</a> 가이드에서 알아보세요.</li>
+      <li><a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">시각적 AMP 스토리 작성하기</a> 가이드에서 알아보세요.</li>
     </ul></td>
   </tr>
 </table>
@@ -250,7 +250,7 @@ amp-stories 북엔드에 새 기능을 추가했으므로, 더 풍부한 구성�
 
 ### amp-story의 필수 마크업
 
-AMP 스토리 HTML 형식은 [유효한 AMP HTML 문서와 동일한 마크업 요구사항](https://www.ampproject.org/docs/reference/spec#required-markup)과 다음 추가 요구사항을 따릅니다.
+AMP 스토리 HTML 형식은 [유효한 AMP HTML 문서와 동일한 마크업 요구사항](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup)과 다음 추가 요구사항을 따릅니다.
 
 | 규칙 | 설명 |
 |----|---|
@@ -723,7 +723,7 @@ AMP 문서가 스토리임을 식별합니다.
     <div class="content" grid-area="lower-third">Paragraph 3</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">Outlink here!</a>
+    <a href="https://amp.dev" class="button">Outlink here!</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```
@@ -1281,9 +1281,9 @@ AMP 뷰어에 표시되는 문서에서 링크는 대개 `_top`을 탐색하거�
 
 추가 매개변수가 필요하면 키-값 쌍이 있는 개체를 사용해야 합니다. 개체에는 제공자의 이름에 해당하는 값(예: `facebook`)이 있는 `provider` 키가 있어야 합니다. 다음 키-값은 공유 제공자에 따라 다릅니다.
 
-사용 가능한 제공자 목록은 [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) 구성요소에 있는 목록과 같습니다.
+사용 가능한 제공자 목록은 [amp-social-share](amp-social-share.md) 구성요소에 있는 목록과 같습니다.
 
-이러한 제공자의 사용 가능한 매개변수 조합은 각각 다릅니다([`data-param-*` 참조](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). 구성 개체에서는 `data-param-` 접두사 없이 해당 매개변수를 사용합니다(예: `data-param-app_id`는 구성 개체에서 `app_id`로 표시됨).
+이러한 제공자의 사용 가능한 매개변수 조합은 각각 다릅니다([`data-param-*` 참조](amp-social-share.md#data-param-%2a)). 구성 개체에서는 `data-param-` 접두사 없이 해당 매개변수를 사용합니다(예: `data-param-app_id`는 구성 개체에서 `app_id`로 표시됨).
 
 #### JSON 구성
 
@@ -1331,10 +1331,10 @@ AMP 뷰어에 표시되는 문서에서 링크는 대개 `_top`을 탐색하거�
 
 다음은 스토리별 주의사항이 있는 AMP 스토리에서 사용 가능한 기타 구성요소입니다.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-더 일반적으로 사용할 수 있는 구성요소는 [허용된 하위 요소 목록](https://www.ampproject.org/docs/reference/components/amp-story#children)을 참조하세요.
+더 일반적으로 사용할 수 있는 구성요소는 [허용된 하위 요소 목록](amp-story.md#children)을 참조하세요.
 
 ## 유효성 검사
 
@@ -1371,8 +1371,8 @@ AMP 유효성 검사기 사양에서 [amp-story 규칙](https://github.com/amppr
 
 ## 관련 리소스
 
-* [가이드: 시각적 AMP 스토리 작성하기](https://www.ampproject.org/docs/tutorials/visual_story)
+* [가이드: 시각적 AMP 스토리 작성하기](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [AMP By Example의 샘플](https://ampbyexample.com/stories/#stories/introduction)
-* [AMP 스토리 작성하기 권장사항](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [AMP 스토리 작성하기 권장사항](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

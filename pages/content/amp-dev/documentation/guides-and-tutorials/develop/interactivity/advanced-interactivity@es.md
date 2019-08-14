@@ -8,11 +8,11 @@ El código de inicio proporciona una experiencia de usuario bastante básico. Ha
 - Añada un indicador que muestre la diapositiva actual y el número total de diapositivas.
 - Cuando un usuario selecciona un color de camisa diferente, cambia el carrusel de imagen para mostrar imágenes de camisetas en el color seleccionado.
 
-Antes de la introducción del componente [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), no era posible añadir funciones como estas. Vamos a tener una experiencia práctica con [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) y añadir estas nuevas características a nuestro código de ejemplo!
+Antes de la introducción del componente [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), no era posible añadir funciones como estas. Vamos a tener una experiencia práctica con [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) y añadir estas nuevas características a nuestro código de ejemplo!
 
 ## Instalar la extensión `amp-bind`
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) es un nuevo componente de AMP que ofrece interactividad personalizada a través de enlace de datos y expresiones similares a JS. Para usar [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), debe instalarlo en la página.
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) es un nuevo componente de AMP que ofrece interactividad personalizada a través de enlace de datos y expresiones similares a JS. Para usar [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), debe instalarlo en la página.
 
 Abra el archivo [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), y agregue el siguiente script a la lista de componentes de AMP en la sección `<head>` de la página:
 
@@ -23,7 +23,7 @@ Abra el archivo [`static/index.html`](https://github.com/googlecodelabs/advanced
 
 ## Añadir un indicador de diapositiva
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) funciona vinculando atributos de elementos a expresiones personalizadas. Estas expresiones pueden hacer referencia al "estado" (mutable JSON data). Podemos inicializar este estado a través del componente [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) incluido con [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) funciona vinculando atributos de elementos a expresiones personalizadas. Estas expresiones pueden hacer referencia al "estado" (mutable JSON data). Podemos inicializar este estado a través del componente [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) incluido con [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 ### Inicializar el estado de diapositiva
 
@@ -39,7 +39,7 @@ Vamos a inicializar una variable de estado para realizar un seguimiento del índ
 </amp-state>
 ```
 
-Los datos dentro de los elementos [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) son accesibles por su ID asociado. Por ejemplo, podemos referirnos a esta variable con la siguiente expresión:
+Los datos dentro de los elementos [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) son accesibles por su ID asociado. Por ejemplo, podemos referirnos a esta variable con la siguiente expresión:
 
 ```javascript
 selected.slide // Evaluates to 0.
@@ -47,14 +47,14 @@ selected.slide // Evaluates to 0.
 
 ### Actualizar el estado de diapositiva
 
-A continuación, actualizamos esta variable cuando el usuario cambia las diapositivas en el carrusel añadiendo la siguiente acción `"on"` al elemento existente de [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}):
+A continuación, actualizamos esta variable cuando el usuario cambia las diapositivas en el carrusel añadiendo la siguiente acción `"on"` al elemento existente de [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md):
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
     on="slideChange:AMP.setState({selected: {slide: event.index}})">
 ```
 
-Ahora, siempre que la diapositiva mostrada para el [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) cambie, la acción `AMP.setState` será llamada con el siguiente argumento:
+Ahora, siempre que la diapositiva mostrada para el [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) cambie, la acción `AMP.setState` será llamada con el siguiente argumento:
 
 ```javascript
 {
@@ -67,7 +67,7 @@ Ahora, siempre que la diapositiva mostrada para el [`amp-carousel`]({{g.doc('/co
 La expresión `event.index` se evalúa al nuevo índice de diapositivas y la acción `AMP.setState()` fusiona este literal de objeto en el estado actual. Esto reemplaza el valor actual de `selected.slide` con el valor de `event.index`.
 
 [tip type="tip"]
-**TIP –** `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+**TIP –** `AMP.setState()` realiza una fusión profunda de literales de objetos anidados. Para obtener más detalles, consulte la documentación [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 [/tip]
 
 ### Vincular los elementos indicadores
@@ -99,13 +99,13 @@ Cambiando la diapositiva del carrusel:
 
 [tip type="success"]
 
-Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Compruebe si puede agregar funcionalidad para que cuando un usuario toque en el punto indicador de una diapositiva, actualice el carrusel de imagen con el elemento seleccionado. Como sugerencia, utilice el evento `tap` y el enlace `[slide]` en [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 [/tip]
 
 ## Cambiar las imágenes en el carrusel
 
-Sería agradable si pudiéramos ver imágenes de diferentes colores de camisa cuando cambiamos el color seleccionado. Con [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) podemos hacer esto uniendo `[src]` en los elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) dentro del [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Sería agradable si pudiéramos ver imágenes de diferentes colores de camisa cuando cambiamos el color seleccionado. Con [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) podemos hacer esto uniendo `[src]` en los elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md) dentro del [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 ### Inicializar el estado SKU
 
@@ -152,13 +152,13 @@ Primero, necesitamos inicializar los datos del estado con las URL de la fuente d
   </script>
 </amp-state>
 ```
-Este elemento [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) contiene un objeto JSON que asigna una cadena de identificador de camisa (es decir, una SKU) al URL de color e imagen de la camisa correspondiente. Una matriz JSON también funcionaría aquí, pero el uso de un objeto nos permite hacer algunas cosas más interesantes que veremos pronto.
+Este elemento [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) contiene un objeto JSON que asigna una cadena de identificador de camisa (es decir, una SKU) al URL de color e imagen de la camisa correspondiente. Una matriz JSON también funcionaría aquí, pero el uso de un objeto nos permite hacer algunas cosas más interesantes que veremos pronto.
 
 Ahora podemos acceder a la URL de la imagen con el identificador de la camiseta. Por ejemplo, el `shirts['10014'].color` se evalúa como `"dark green"` y la `shirts['10030'].image` devuelve la URL de la imagen para el color de la camisa `"wine"`.
 
 ### Seguimiento del SKU seleccionado
 
-Si añadimos otra variable de estado que rastrea la SKU seleccionada, podemos vincular una expresión a los elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) para actualizar sus atributos `src` cuando cambia el SKU seleccionado. Agregue una nueva clave `sku` al existente `amp-state#selected` del elemento JSON:
+Si añadimos otra variable de estado que rastrea la SKU seleccionada, podemos vincular una expresión a los elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md) para actualizar sus atributos `src` cuando cambia el SKU seleccionado. Agregue una nueva clave `sku` al existente `amp-state#selected` del elemento JSON:
 
 ```html
 <amp-state id="selected">
@@ -173,7 +173,7 @@ Si añadimos otra variable de estado que rastrea la SKU seleccionada, podemos vi
 
 ### Actualizar el estado SKU
 
-Agregue una acción "on" al [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
+Agregue una acción "on" al [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
 
 ```html
 <amp-selector name="color"
@@ -181,12 +181,12 @@ Agregue una acción "on" al [`amp-selector`]({{g.doc('/content/amp-dev/documenta
 ```
 
 [tip type="tip"]
-**TIP –** Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) secundario dentro del [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}). Una de las grandes cosas sobre [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) es que simplifica el marcado
+**TIP –** Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada [`amp-img`](../../../../documentation/components/reference/amp-img.md) secundario dentro del [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Una de las grandes cosas sobre [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) es que simplifica el marcado
 [/tip]
 
 ### Vincular los elementos de la imagen
 
-A continuación, agregue enlaces a los elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
+A continuación, agregue enlaces a los elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md):
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->

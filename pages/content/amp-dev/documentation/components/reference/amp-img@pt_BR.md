@@ -34,7 +34,7 @@ limitations under the License.
     <td>Uma substituição gerenciada pelo ambiente de execução para a tag <code>img</code> de HTML.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ O ambiente de execução pode optar por atrasar ou priorizar o carregamento de r
 Os componentes de `amp-img`, assim como todos os recursos de AMP buscados externamente, precisam receber um tamanho explícito (como em `width`/`height`) com antecedência para que a proporção seja conhecida sem buscar a imagem. O comportamento real do layout é determinado pelo atributo `layout`.
 
 [tip type="read-on"]
-saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}) (link em inglês) e em [Layouts compatíveis](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) (link em inglês) e em [Layouts compatíveis](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 [/tip]
 
 # Exemplo: como exibir uma imagem responsiva
@@ -70,10 +70,10 @@ No exemplo a seguir, mostramos uma imagem que responde ao tamanho da janela de v
 [/example]
 
 [tip type="read-on"]
-saiba mais sobre páginas AMP responsivas no guia [Criar páginas AMP responsivas](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+saiba mais sobre páginas AMP responsivas no guia [Criar páginas AMP responsivas](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
 [/tip]
 
-Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço ficará em branco, a menos que um [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) filho seja fornecido. Um substituto (fallback) é executado somente no layout inicial. As alterações src subsequentes após o fato (por meio de resize + srcset, por exemplo) não terão um substituto para implicações de desempenho.
+Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço ficará em branco, a menos que um [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) filho seja fornecido. Um substituto (fallback) é executado somente no layout inicial. As alterações src subsequentes após o fato (por meio de resize + srcset, por exemplo) não terão um substituto para implicações de desempenho.
 
 # Exemplo: especificar uma imagem substituta
 
@@ -101,8 +101,8 @@ Outros recursos de imagem, como legendas, podem ser implementados com HTML padr�
 [tip type="read-on"]
 saiba mais sobre como utilizar o `amp-img`:
 
-* [Marcadores e substitutos](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Incluir imagens e vídeo](https://www.ampproject.org/docs/media/amp_replacements)
+* [Marcadores e substitutos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+* [Incluir imagens e vídeo](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
 # Atributos
@@ -120,7 +120,7 @@ Igual ao atributo `srcset` na tag `img`. Para navegadores não compatíveis com 
 Igual ao atributo `sizes` da tag `img`.
 
 [tip type="read-on"]
-consulte [Imagens responsivas com os atributos "srcset", "sizes" e "heights"](https://www.ampproject.org/docs/design/responsive/art_direction) para ver o uso de `sizes` e `srcset`.
+consulte [Imagens responsivas com os atributos "srcset", "sizes" e "heights"](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md) para ver o uso de `sizes` e `srcset`.
 [/tip]
 
 **alt**
@@ -137,7 +137,7 @@ Um tamanho explícito da imagem, que é usado pelo ambiente de tempo de execuç�
 
 **common attributes**
 
-Esse elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Esse elemento inclui [atributos comuns](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estendidos a componentes de AMP.
 
 # Estilo
 
@@ -170,7 +170,7 @@ Se você quiser que sua imagem seja exibida em um tamanho fixo:
 1. Especifique `width` e `height`.
 
 [tip type="read-on"]
-saiba mais sobre o [layout inferido](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) caso você não especifique o atributo `layout`.
+saiba mais sobre o [layout inferido](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?) caso você não especifique o atributo `layout`.
 [/tip]
 
 # Definir a proporção
@@ -194,13 +194,13 @@ Por exemplo, em vez de especificar `width="900"` e `height="675"`, você pode si
 
 O atributo [`srcset`](#attributes) precisa ser usado para fornecer resoluções diferentes da mesma imagem, todas com a mesma proporção. O navegador escolherá automaticamente o arquivo mais apropriado de `srcset` com base na resolução da tela e na largura do dispositivo do usuário.
 
-Por outro lado, o atributo [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) mostra ou oculta componentes de AMP e precisa ser usado ao projetar layouts responsivos. A maneira apropriada de exibir imagens com proporções diferentes é usar vários componentes `<amp-img>`, cada um com um atributo `media` que corresponda às larguras de tela em que cada instância será mostrada.
+Por outro lado, o atributo [`media`](../../../documentation/guides-and-tutorials/learn/common_attributes.md#media) mostra ou oculta componentes de AMP e precisa ser usado ao projetar layouts responsivos. A maneira apropriada de exibir imagens com proporções diferentes é usar vários componentes `<amp-img>`, cada um com um atributo `media` que corresponda às larguras de tela em que cada instância será mostrada.
 
-Consulte o guia sobre como [criar páginas AMP responsivas](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images) para ver mais detalhes.
+Consulte o guia sobre como [criar páginas AMP responsivas](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images) para ver mais detalhes.
 
 # Manter a proporção para imagens com dimensões desconhecidas
 
-O sistema de layout AMP requer a proporção de uma imagem antes de buscar essa imagem. No entanto, em alguns casos, você pode não saber as dimensões dela. Para exibir imagens com dimensões desconhecidas e manter as proporções, combine o layout [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) de AMP com a propriedade CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Para ver mais informações, consulte [Como oferecer compatibilidade com imagens de dimensões desconhecidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) (link em inglês) no site AMP By Example.
+O sistema de layout AMP requer a proporção de uma imagem antes de buscar essa imagem. No entanto, em alguns casos, você pode não saber as dimensões dela. Para exibir imagens com dimensões desconhecidas e manter as proporções, combine o layout [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) de AMP com a propriedade CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Para ver mais informações, consulte [Como oferecer compatibilidade com imagens de dimensões desconhecidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) (link em inglês) no site AMP By Example.
 
 # Validação
 

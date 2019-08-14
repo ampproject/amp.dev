@@ -19,7 +19,7 @@ We can do something similar with our websites. We can store information in varia
 
 So, for our carousel example, we could create a variable containing the currently selected slide. Whenever a user changes the slide on one of the carousels, we update the variable's value. Finally, we rework each carousel to update their selected slide whenever the variable we created is updated. In our "Expand All Sections" example, we could cause the button press to update a variable, and we could update each accordion to be open whenever the variable was updated.
 
-These types of variables are called "state variables," and the process of updating a component when a state variable is changed is called "binding." Fittingly, developers manage state variables in AMP using the `<amp-state>` [component]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), and update components when state variables change using the `<amp-bind>` [component]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+These types of variables are called "state variables," and the process of updating a component when a state variable is changed is called "binding." Fittingly, developers manage state variables in AMP using the `<amp-state>` [component](../../../documentation/components/reference/amp-bind.md#state), and update components when state variables change using the `<amp-bind>` [component](../../../documentation/components/reference/amp-bind.md).
 
 ## Storing Information in Application State
 
@@ -34,7 +34,7 @@ But how do we set the value of a state variable? As we learned in the intermedia
 {% endraw %}[/sourcecode]
 
 [tip type="read-on"]
-**Note**: If your state contains more than one state variable, you only need to pass the `setState` method to the variable(s) that you want to update. AMP will intelligently merge the given JSON object into the existing state, so there's no need to try to merge the values yourself or pass every state variable each time. If you're interested, you can read more about how AMP merges these values in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/advanced-course/appendix.md', locale=doc.locale).url.path}}).
+**Note**: If your state contains more than one state variable, you only need to pass the `setState` method to the variable(s) that you want to update. AMP will intelligently merge the given JSON object into the existing state, so there's no need to try to merge the values yourself or pass every state variable each time. If you're interested, you can read more about how AMP merges these values in the [appendix](appendix.md).
 [/tip]
 
 It's possible to set initial values for your state variables. To do this, create an `<amp-state>` component with a particular ID. State we create in that `<amp-state>` component is stored as an object with that ID as a key. Next, inside of that `<amp-state>` component, add a script tag with a type of `application/json`. Then, you can add to that script tag a JSON object which represents the state's initial values.
@@ -57,7 +57,7 @@ The example below shows how to set initial state. Notice how we use the ID of th
 The above code matches the earlier "Expand All Sections" example. We created a state variable (`isOpen`) for an accordion (not shown above). The ID of the `<amp-state>` component is `accordionState`. When we set the value of `isOpen`, we set it inside of an object with the name `accordionState`. When we reference the value of `isOpen`, we have to reference it as `accordionState.isOpen`. Clear naming conventions are important to helping your developers keep track of the meaning of your state variables. This clarity will make your code easier to understand and likelier to be error-free.
 
 [tip type="read-on"]
-**Note**: `<amp-state>` has additional features that are outside the scope of this training. It's even possible to set the initial values of state with data downloaded from a remote server! Or, you can print out the current value of the state to the developer console in your browser. Check out the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) on `<amp-state>` for more information.
+**Note**: `<amp-state>` has additional features that are outside the scope of this training. It's even possible to set the initial values of state with data downloaded from a remote server! Or, you can print out the current value of the state to the developer console in your browser. Check out the [documentation](../../../documentation/components/reference/amp-bind.md#state) on `<amp-state>` for more information.
 [/tip]
 
 ## Connecting State To Elements With Bindings
@@ -77,7 +77,7 @@ For example, if we want to control an element's text, we can bind to the `text` 
 
 The `[text]` is the bound property that will be changed whenever the state variable `message` is changed. In this case, the expression simply sets the text of the paragraph element to the value of the `message` variable.
 
-The `text` attribute is bindable on any element or component that supports text content. Other such attributes include `width`, `height`, `hidden`, and `class`. Most AMP components also provide custom properties that can be bound to state variables. For example, we can bind to the `slides` property of the `<amp-carousel>` component to control the active slide, the `selected` property of the `<amp-selector>` component to control the selected item, and the `src` property of the `<amp-img>` component to change the displayed image. The complete list of bindable properties can be found in the `<amp-bind>` [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+The `text` attribute is bindable on any element or component that supports text content. Other such attributes include `width`, `height`, `hidden`, and `class`. Most AMP components also provide custom properties that can be bound to state variables. For example, we can bind to the `slides` property of the `<amp-carousel>` component to control the active slide, the `selected` property of the `<amp-selector>` component to control the selected item, and the `src` property of the `<amp-img>` component to change the displayed image. The complete list of bindable properties can be found in the `<amp-bind>` [documentation](../../../documentation/components/reference/amp-bind.md).
 
 It’s important to note that bindings don't change until the values of state variables do. Bindings are not evaluated when the page is first loaded. In the previous "Hello AMP" example, the paragraph was empty on the initial page load, even if we loaded an initial value for the `message` state variable using an `<amp-state>` component. Therefore, to make sure your components look reasonable on page load, always include a default value for a bound property.
 
@@ -90,7 +90,7 @@ To add a default value for a bound property, include the property both with and 
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
-So far, we’ve used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of white-listed functions. The [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#expressions) gives a rundown of the values that can be added to an expression.
+So far, we’ve used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of white-listed functions. The [documentation](../../../documentation/components/reference/amp-bind.md#expressions) gives a rundown of the values that can be added to an expression.
 
 The value of a bound property is set to the value that's returned when an expression is evaluated. For example, this code shows how to create an error message during account creation. The following case checks whether a user's two entered passwords match:
 
@@ -118,7 +118,7 @@ When using only events and actions, we had to know how a single user action woul
 
 To practice what we’ve learned so far, let’s convert our carousels from using events and actions to using state and bindings to stay in sync with each other. **Hint**: We should no longer use the `<amp-carousel>` action `goToSlide` and the `<amp-selector>` action `toggle`, as we did in the previous course. Additionally, let’s add some text below the thumbnail that tracks what slide we have selected.
 
-Using the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) for `<amp-state>` and `<amp-bind>`, try to complete each of the following requirements:
+Using the [documentation](../../../documentation/components/reference/amp-bind.md) for `<amp-state>` and `<amp-bind>`, try to complete each of the following requirements:
 
 * When a user changes the slide in either the larger carousel or the thumbnail carousel, the slide of the other carousel should also change to the same slide.
 
@@ -244,7 +244,7 @@ First, notice that the ID of the `<amp-state>` component is `productData`. That 
 
 For example, referencing `productData.upcharges.size.Medium` in an expression would return the upcharge price of a medium t-shirt ($2). (An upcharge is an additional price paid for a product customization.) We simply add the upcharge price to the base price of the t-shirt (`productData.basePrice` + `productData.upcharges.size.Medium` = $14 + $2 = $16) to get the final price for the shirt. Finally, the `images` section contains the different URLs that point to images for each color of our shirt.
 
-Using the documentation for [`<amp-bind>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), and the descriptions above, update the given basic product page to meet the following requirements:
+Using the documentation for [`<amp-bind>`](../../../documentation/components/reference/amp-bind.md), [`<amp-state>`](../../../documentation/components/reference/amp-bind.md#state), and the descriptions above, update the given basic product page to meet the following requirements:
 
 * When the fit, size, and color select boxes are updated, they should store their new selected value into the corresponding state variable in the `<amp-state>` component with ID `optionsData`.
 

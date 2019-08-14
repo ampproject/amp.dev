@@ -92,7 +92,7 @@ o
 
 Utiliza la etiqueta `template` siempre que sea posible, ya que la herramienta de validación de AMP proporciona sugerencias útiles de dev-x. Utiliza la plantilla `script` para casos especiales y cuando hay problemas al generar plantillas a partir de tablas. Consulta la sección "Tablas" que aparece más abajo.
 
-El elemento AMP que utiliza esta plantilla para renderizar su contenido (por ejemplo, [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}), etc.) decide cómo se descubren las plantillas, cuándo se renderizan y cómo se proporcionan los datos.
+El elemento AMP que utiliza esta plantilla para renderizar su contenido (por ejemplo, [amp-list](amp-list.md), [amp-form](amp-form.md), etc.) decide cómo se descubren las plantillas, cuándo se renderizan y cómo se proporcionan los datos.
 
 ## Restricciones
 

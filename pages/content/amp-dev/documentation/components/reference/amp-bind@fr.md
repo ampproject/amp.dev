@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Didacticiels</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">Créer des pages AMP interactives</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">Créer des pages AMP interactives</a></td>
   </tr>
 </table>
 
@@ -178,7 +178,7 @@ L'action `refresh` est compatible avec ce composant. Elle peut être utilisée p
 
 # Mise à jour de l'état avec `AMP.setState()`
 
-L'action [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) fusionne un littéral d'objet dans l'état. Par exemple, lorsque l'on appuie sur le bouton ci-dessous, `AMP.setState()` [effectue une fusion profonde](#deep-merge-with-ampsetstate) du littéral d'objet avec l'état.
+L'action [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) fusionne un littéral d'objet dans l'état. Par exemple, lorsque l'on appuie sur le bouton ci-dessous, `AMP.setState()` [effectue une fusion profonde](#deep-merge-with-ampsetstate) du littéral d'objet avec l'état.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Lorsqu'elle est déclenchée par certains événements, l'action `AMP.setState()
 
 # Modification de l'historique avec `AMP.pushState()`
 
-L'action [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) est semblable à `AMP.setState()`, si ce n'est qu'elle envoie une nouvelle entrée dans la pile d'historique du navigateur. Faire apparaître cette entrée d'historique (en revenant en arrière, par exemple) a pour effet de rétablir la valeur précédente des variables définie par `AMP.pushState()`.
+L'action [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) est semblable à `AMP.setState()`, si ce n'est qu'elle envoie une nouvelle entrée dans la pile d'historique du navigateur. Faire apparaître cette entrée d'historique (en revenant en arrière, par exemple) a pour effet de rétablir la valeur précédente des variables définie par `AMP.pushState()`.
 
 Exemple :
 ```html
@@ -391,7 +391,7 @@ Lorsque l'**état** change, les expressions sont réévaluées et les propriét�
     <td>Il doit s'agir d'une expression booléenne.</td>
   </tr>
   <tr>
-    <td>Taille des <a href="https://www.ampproject.org/docs/reference/components">éléments AMP</a></td>
+    <td>Taille des <a href="../../../documentation/components/index.md">éléments AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Modifie la largeur et/ou la hauteur de l'élément AMP.</td>
   </tr>
@@ -453,7 +453,7 @@ Seule la liaison aux composants et attributs suivants est autorisée :
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>En cas de liaison à <code>[src]</code>, veillez également à lier <code>[srcset]</code> pour que la liaison fonctionne sur le cache.<br>Voir les <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">attributs amp-img</a> correspondants.</td>
+    <td>En cas de liaison à <code>[src]</code>, veillez également à lier <code>[srcset]</code> pour que la liaison fonctionne sur le cache.<br>Voir les <a href="amp-img.md#attributes">attributs amp-img</a> correspondants.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -483,7 +483,7 @@ Seule la liaison aux composants et attributs suivants est autorisée :
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>Voir les <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">attributs amp-video</a> correspondants.</td>
+    <td>Voir les <a href="amp-video.md#attributes">attributs amp-video</a> correspondants.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -659,7 +659,7 @@ AMP regroupe les requêtes XHR (XMLHttpRequest) dans des points de terminaison J
     <td>URL du point de terminaison distant qui renvoie le fichier JSON qui mettra à jour cet élément <code>amp-state</code>. Il doit s'agir d'un service HTTP CORS.
         L'attribut <code>src</code> autorise toutes les substitutions de variables d'URL standards. Pour plus d'informations, consultez le <a href="../../spec/amp-var-substitutions.md">Guide des substitutions</a>.
         [tip type="important"]
-      Le point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">Requêtes CORS dans AMP</a>.
+      Le point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Requêtes CORS dans AMP</a>.
       [/tip]</td>
   </tr>
   <tr>
@@ -669,7 +669,7 @@ AMP regroupe les requêtes XHR (XMLHttpRequest) dans des points de terminaison J
         <li>Valeurs acceptées : `omit`, `include`</li>
         <li>Valeur par défaut : `omit`</li>
       </ul>
-      Pour envoyer des identifiants, transmettez la valeur <code>include</code>. Si cette valeur est définie, la réponse doit respecter les <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">consignes de sécurité CORS dans AMP</a>.</td>
+      Pour envoyer des identifiants, transmettez la valeur <code>include</code>. Si cette valeur est définie, la réponse doit respecter les <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">consignes de sécurité CORS dans AMP</a>.</td>
     </tr>
   </table>
 

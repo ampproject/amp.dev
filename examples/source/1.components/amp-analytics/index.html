@@ -15,7 +15,7 @@ The `amp-analytics` element can be used to measure activity on an AMP document. 
 * AMP Carousel changes
 * Form
 
-This sample demonstrates which events can be measured and how they can be configured. For a complete overview of all available options and parameters, have a look at the [official documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+This sample demonstrates which events can be measured and how they can be configured. For a complete overview of all available options and parameters, have a look at the [official documentation](/content/amp-dev/documentation/components/reference/amp-analytics.md).
 -->
 <!-- -->
 <!doctype html>
@@ -69,7 +69,7 @@ This sample demonstrates which events can be measured and how they can be config
         height="180" layout="fixed"
         sandbox="allow-scripts allow-same-origin"
         frameborder="0"
-        src="https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/embed?user=[[.]]&account=ampbyexample">
+        src="<% hosts.preview %>/documentation/examples/components/amp-analytics/embed?user=[= user =]&account=ampdev">
       <amp-img src="/static/samples/img/pixel-white.png"
           layout="fixed-height"
           height="350"
@@ -88,7 +88,7 @@ This sample demonstrates which events can be measured and how they can be config
   <script type="application/json">
   {
     "requests": {
-      "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+      "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
     },
     "triggers": {
       "trackPageview": {
@@ -110,7 +110,7 @@ This sample demonstrates which events can be measured and how they can be config
   <script type="application/json">
   {
     "requests": {
-      "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+      "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
     },
     "triggers": {
       "trackPageview": {
@@ -152,7 +152,7 @@ This sample demonstrates which events can be measured and how they can be config
       <script type="application/json">
       {
         "requests": {
-          "elementShown": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+          "elementShown": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
         },
         "triggers": {
           "defaultPageview": {
@@ -176,7 +176,7 @@ This sample demonstrates which events can be measured and how they can be config
   <script type="application/json">
   {
     "requests": {
-      "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+      "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
     },
     "triggers": {
       "trackAnchorClicks": {
@@ -205,7 +205,7 @@ This sample demonstrates which events can be measured and how they can be config
     <script type="application/json">
     {
       "requests": {
-        "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+        "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
       },
       "triggers": {
         "trackAnchorClicks": {
@@ -232,7 +232,7 @@ This sample demonstrates which events can be measured and how they can be config
     <script type="application/json">
     {
       "requests": {
-        "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+        "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
       },
       "triggers": {
         "scrollPings": {
@@ -257,7 +257,7 @@ This sample demonstrates which events can be measured and how they can be config
     <script type="application/json">
     {
       "requests": {
-        "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+        "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
       },
       "triggers": {
         "pageTimer": {
@@ -277,7 +277,7 @@ This sample demonstrates which events can be measured and how they can be config
   </amp-analytics>
   <!-- ## AMP Carousel Tracking-->
   <!--
- It is possible to track [amp-carousel]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) events with amp-analytics (this works only for  `type="slides"`). Here is a sample carousel:
+ It is possible to track [amp-carousel](/content/amp-dev/documentation/components/reference/amp-carousel.md) events with amp-analytics (this works only for  `type="slides"`). Here is a sample carousel:
   -->
   <amp-carousel width="400" height="300" layout="responsive" type="slides">
     <div class="slide" data-slide-id="slide1">Slide 1</div>
@@ -295,7 +295,7 @@ The `amp-carousel-change` event is issued when there is any change in the slide 
     <script type="application/json">
     {
       "requests": {
-        "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+        "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
       },
       "triggers": {
         "ampCarouselChange": {
@@ -316,7 +316,7 @@ The `amp-carousel-next` event is issued when there is a traversal to the next sl
     <script type="application/json">
     {
       "requests": {
-        "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+        "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
       },
       "triggers": {
         "ampCarouselNext": {
@@ -336,7 +336,7 @@ The `amp-carousel-prev` event is issued when there is a traversal to the previou
     <script type="application/json">
     {
       "requests": {
-        "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+        "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
       },
       "triggers": {
         "ampCarouselPrev": {
@@ -351,13 +351,13 @@ The `amp-carousel-prev` event is issued when there is a traversal to the previou
     </script>
   </amp-analytics>
   <!-- ## Form -->
-  <!-- You can track events triggered by `amp-form`. Find a list of supported event [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}#analytics-triggers)-->
+  <!-- You can track events triggered by `amp-form`. Find a list of supported event [here](/content/amp-dev/documentation/components/reference/amp-form.md#analytics-triggers)-->
   <div>
     <amp-analytics>
       <script type="application/json">
         {
           "requests": {
-            "event": "https://amp-publisher-samples-staging.herokuapp.com/amp-analytics/ping?user=[[.]]&account=ampbyexample&event=${eventId}"
+            "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}"
           },
           "triggers": {
             "formSubmit": {

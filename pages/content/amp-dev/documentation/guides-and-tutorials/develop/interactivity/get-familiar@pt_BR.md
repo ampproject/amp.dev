@@ -34,16 +34,16 @@ O código inicial do tutorial ([`static/index.html`](https://github.com/googleco
 
 Os componentes AMP oferecem elementos de IU e recursos adicionais que dão uma interatividade avançada às páginas AMP. O código inicial usa os seguintes componentes AMP:
 
-- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): é um carrossel de imagens que exibe várias visualizações do produto.
-- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): é um sistema de modelos que renderiza as respostas do servidor de amp-form.
-- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): adiciona aos elementos `<form>` recursos especiais que são necessários paras as páginas AMP.
-- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): oferece uma forma semântica de selecionar um ou mais elementos de um grupo. Pode ser usado como origem de entrada para amp-form.
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): é um carrossel de imagens que exibe várias visualizações do produto.
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): é um sistema de modelos que renderiza as respostas do servidor de amp-form.
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md): adiciona aos elementos `<form>` recursos especiais que são necessários paras as páginas AMP.
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): oferece uma forma semântica de selecionar um ou mais elementos de um grupo. Pode ser usado como origem de entrada para amp-form.
 
 ## Interatividade básica
 
 O código inicial oferece alguns elementos de interatividade básica:
 
-- O carrossel de imagens ([`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})) exibe várias visualizações do produto.
-- O produto será adicionado ao carrinho do usuário (por [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})) quando ele clicar no botão "Adicionar ao carrinho" na parte inferior da página.
+- O carrossel de imagens ([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) exibe várias visualizações do produto.
+- O produto será adicionado ao carrinho do usuário (por [`amp-form`](../../../../documentation/components/reference/amp-form.md)) quando ele clicar no botão "Adicionar ao carrinho" na parte inferior da página.
 
 **Faça um teste**: deslize o carrossel de imagens e toque no botão "Adicionar ao carrinho".

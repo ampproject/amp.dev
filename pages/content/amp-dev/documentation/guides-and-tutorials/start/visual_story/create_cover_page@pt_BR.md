@@ -2,9 +2,9 @@
 $title: Criar a página de abertura
 ---
 
-As páginas de histórias AMP são representadas pelo componente `<amp-story-page>`. Em um [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}), é possível ter um ou mais componentes `<amp-story-page>` com cada uma das telas da história. A primeira página que você especificar na ordem do documento será a primeira página exibida na história.
+As páginas de histórias AMP são representadas pelo componente `<amp-story-page>`. Em um [`amp-story`](../../../../documentation/components/reference/amp-story.md), é possível ter um ou mais componentes `<amp-story-page>` com cada uma das telas da história. A primeira página que você especificar na ordem do documento será a primeira página exibida na história.
 
-Para criar uma página, **adicione** o elemento `<amp-story-page>` como filho de um [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). **Atribua** um código exclusivo à página. Para nossa primeira página, que será a de abertura, atribuiremos um código exclusivo chamado `cover`:
+Para criar uma página, **adicione** o elemento `<amp-story-page>` como filho de um [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Atribua** um código exclusivo à página. Para nossa primeira página, que será a de abertura, atribuiremos um código exclusivo chamado `cover`:
 
 ```html hl_lines="6 7"
 <amp-story standalone
@@ -33,7 +33,7 @@ Nossa página de abertura é composta por duas camadas:
 
 Vamos adicionar a primeira camada à página de abertura. Essa camada contém uma imagem que preenche a tela.
 
-Crie essa camada adicionando o elemento `<amp-story-grid-layer>` como filho de `<amp-story-page>`. Como a ideia é que a imagem preencha a tela, especifique o atributo `template="fill"` para `amp-story-grid-layer`. Dentro da camada, adicione um elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) ao arquivo `cover.jpg` e certifique-se de que ele seja responsivo (ou seja, `layout="responsive"`) com as dimensões de 720 x 1280 px da imagem.  A camada terá esta aparência:
+Crie essa camada adicionando o elemento `<amp-story-grid-layer>` como filho de `<amp-story-page>`. Como a ideia é que a imagem preencha a tela, especifique o atributo `template="fill"` para `amp-story-grid-layer`. Dentro da camada, adicione um elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) ao arquivo `cover.jpg` e certifique-se de que ele seja responsivo (ou seja, `layout="responsive"`) com as dimensões de 720 x 1280 px da imagem.  A camada terá esta aparência:
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">

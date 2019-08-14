@@ -35,7 +35,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>
       <ul>
         <li>캐러셀: fixed, fixed-height, nodisplay</li>
@@ -212,7 +212,7 @@ limitations under the License.
           </tr>
           <tr>
             <td width="40%"><strong>공통 속성</strong></td>
-            <td>이 요소에는 AMP 구성요소로 확장된 <a href="https://www.ampproject.org/docs/reference/common_attributes">공통 속성</a>이 포함됩니다.</td>
+            <td>이 요소에는 AMP 구성요소로 확장된 <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">공통 속성</a>이 포함됩니다.</td>
           </tr>
         </table>
 

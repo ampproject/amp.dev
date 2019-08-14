@@ -1,0 +1,28 @@
+/*
+
+########################
+### MOLECULE: overview-title ###
+########################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('overview-title')} {
+  max-width: 870px;
+  margin-top: 1.5em;
+
+  @media (min-width: 600px) {
+    margin-top: 3em;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+}

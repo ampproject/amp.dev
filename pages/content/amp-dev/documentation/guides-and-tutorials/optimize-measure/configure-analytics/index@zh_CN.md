@@ -22,7 +22,7 @@ $title: 配置分析工具
 
 AMP 分析的设计宗旨是“一次衡量，多方报告”。
 如果您已在与一个或多个分析服务供应商合作，
-请查阅[分析服务供应商]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})列表，看看他们是否已将自己的解决方案与 AMP 集成。
+请查阅[分析服务供应商](analytics-vendors.md)列表，看看他们是否已将自己的解决方案与 AMP 集成。
 如果已与 AMP 集成，请查看相应供应商的配置详情并按照说明操作。
 
 倘若分析服务供应商未与 AMP 集成，
@@ -40,13 +40,13 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 关于数据，您需要考虑以下几个要点：
 
 * 您是想仅跟踪网页浏览量，还是也要跟踪用户互动模式
-（另请参阅 [amp-pixel 或 amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#使用-amp-pixel-还是-amp-analytics）？
+（另请参阅 [amp-pixel 或 amp-analytics](analytics_basics.md#使用-amp-pixel-还是-amp-analytics）？
 * 您要获取与您的用户、您的内容、
-设备或浏览器相关的哪些类型的数据（另请参阅[变量替换]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#变量替换)）？
-* 您将如何识别您的用户（另请参阅[用户识别]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#用户识别)）？
+设备或浏览器相关的哪些类型的数据（另请参阅[变量替换](analytics_basics.md#变量替换)）？
+* 您将如何识别您的用户（另请参阅[用户识别](analytics_basics.md#用户识别)）？
 
 [tip type="read-on"]
 
-若想进一步了解与分析相关的信息，请参阅[分析：基础知识]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})。
+若想进一步了解与分析相关的信息，请参阅[分析：基础知识](analytics_basics.md)。
 
 [/tip]

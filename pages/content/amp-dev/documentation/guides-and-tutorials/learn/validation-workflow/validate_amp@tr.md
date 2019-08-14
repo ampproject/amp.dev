@@ -8,7 +8,7 @@ AMP'nin temel gücü sadece sayfalarınızı hızlandırması değil, aynı zama
 
 Bir AMP dokümanını doğrulamanın çeşitli yolları vardır. Bu yolların tümü tam olarak aynı sonucu verir. Bu yüzden, geliştirme stiliniz için en uygun yolu kullanın.
 
-AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) de onaylamak isteyebilirsiniz.
+AMP'nin geçerliliğine ek olarak, AMP dokümanınızın üçüncü taraf platformları için [bulunabilirliğini](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) de onaylamak isteyebilirsiniz.
 
 ### Tarayıcı Developer Console.
 
@@ -82,8 +82,8 @@ Bu sayfanın geçerli bir AMP HTML sayfası olması şaşırtıcı değildir. Ş
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -151,10 +151,10 @@ AMP doğrulama hatasının farklı araçlardaki gösterimi şu şekilde olur:
 Her araç çeşitli bilgiler sağlar:
 
 1. HTML dokümanında, hatanın ortaya çıktığı konum (satır ve sütun) bazı arayüzlerde ilgili konumun vurgulanması için tıklanabilir. Bu örnekte, sorun 11. satır, 2. sütunda ortaya çıkmıştır.
-1. Hatayı açıklayan bir metin satırı. Bu örnekte, metin `<img>` etiketi kullandığımızı, ancak onun yerine bir [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketi kullanmış olmamız gerektiğini belirtmektedir.
-1. Hatayla ilgili bir dokümanın bağlantısı. Bu örnekte, [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketine ilişkin dokümanlar. Tüm hatalarda doküman bağlantıları oluşturulmaz.
+1. Hatayı açıklayan bir metin satırı. Bu örnekte, metin `<img>` etiketi kullandığımızı, ancak onun yerine bir [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) etiketi kullanmış olmamız gerektiğini belirtmektedir.
+1. Hatayla ilgili bir dokümanın bağlantısı. Bu örnekte, [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) etiketine ilişkin dokümanlar. Tüm hatalarda doküman bağlantıları oluşturulmaz.
 
-Bu spesifikasyonu dikkatlice yeniden okuduğumuzda, [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketi kullanmamız gerekirken bir `<img>` etiketi kullandığımızı fark ederiz.
+Bu spesifikasyonu dikkatlice yeniden okuduğumuzda, [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) etiketi kullanmamız gerekirken bir `<img>` etiketi kullandığımızı fark ederiz.
 
-Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}) bakın.
+Potansiyel hataların tam listesini daha iyi anlamak için [AMP Doğrulama Hataları kılavuzuna](validation_errors.md) bakın.
 Dikkatli bir değerlendirmeden sonra ilerleme kaydedemezseniz [bir soru sorun](http://stackoverflow.com/questions/tagged/amp-html), size yardımcı olmaya çalışalım.

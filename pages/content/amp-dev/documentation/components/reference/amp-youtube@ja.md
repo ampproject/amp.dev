@@ -34,7 +34,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -105,7 +105,7 @@ teaser:
     </tr>
     <tr>
       <td width="40%"><strong>dock</strong></td>
-      <td><strong><code>amp-video-docking</code> 拡張機能が必要です。</strong> この属性が存在していて、動画を手動で再生している場合、ユーザーが動画コンポーネントの表示領域からスクロール アウトすると、動画は「最小化」され、角または要素に固定されます。詳細については、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">ドッキング拡張機能のドキュメント</a>をご覧ください。</td>
+      <td><strong><code>amp-video-docking</code> 拡張機能が必要です。</strong> この属性が存在していて、動画を手動で再生している場合、ユーザーが動画コンポーネントの表示領域からスクロール アウトすると、動画は「最小化」され、角または要素に固定されます。詳細については、<a href="amp-video-docking.md">ドッキング拡張機能のドキュメント</a>をご覧ください。</td>
     </tr>
     <tr>
       <td width="40%"><strong>credentials（省略可）</strong></td>
@@ -118,7 +118,7 @@ teaser:
       </tr>
       <tr>
         <td width="40%"><strong>共通の属性</strong></td>
-        <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+        <td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
       </tr>
     </table>
 

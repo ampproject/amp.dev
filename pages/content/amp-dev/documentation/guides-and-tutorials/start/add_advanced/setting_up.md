@@ -10,7 +10,7 @@ $parent: /content/docs/fundamentals/add_advanced.md
 **Before starting** this tutorial, you'll need the following:
 
 - A basic knowledge of HTML, CSS, and JavaScript
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial)
+- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial)
 - A browser of your choice that can inspect the JavaScript console
 - A text editor of your choice
 

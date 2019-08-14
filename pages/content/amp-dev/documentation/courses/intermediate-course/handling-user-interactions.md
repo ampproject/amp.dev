@@ -15,7 +15,7 @@ Users need a way to navigate websites with many pages. In many sites and apps yo
 
 - The menu should contain several links that navigate to other pages when clicked.
 
-From the [list]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) of AMP components, we decide on the following:
+From the [list](../../../documentation/components/index.html) of AMP components, we decide on the following:
 
 - The menu will be implemented using `<amp-sidebar>`.
 
@@ -64,7 +64,7 @@ In AMP, meanwhile, it would look like this:
 </button>
 {% endraw %}[/sourcecode]
 
-In the `on` attribute above, we see `tap:warning.hide`. In this case, `tap` is the event, `warning` is the ID of the element to act upon, and `hide` is the action to perform. Note that `hide` is one of the [generic actions]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) that is available on every AMP component and even other HTML elements. The documentation for an AMP component will usually contain a list of actions that can be performed on that component.
+In the `on` attribute above, we see `tap:warning.hide`. In this case, `tap` is the event, `warning` is the ID of the element to act upon, and `hide` is the action to perform. Note that `hide` is one of the [generic actions](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) that is available on every AMP component and even other HTML elements. The documentation for an AMP component will usually contain a list of actions that can be performed on that component.
 
 Some actions take the form of functions and may accept arguments. In other cases, actions can be omitted entirely if the action is obvious. In each case, details can be found in the documentation for that component. We’ll see examples of each of these types of actions later in this course.
 
@@ -86,7 +86,7 @@ Once open, a sidebar with the ID `sidebar1` can be closed with the following act
 
 - `sidebar1.toggle`
 
-Now, using the documentation for [`<amp-sidebar>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) and the list of [AMP Events and Actions]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}), add a navigation menu that matches the following specifications:
+Now, using the documentation for [`<amp-sidebar>`](../../../documentation/components/reference/amp-sidebar.md) and the list of [AMP Events and Actions](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md), add a navigation menu that matches the following specifications:
 
 - In the `<header>` element of the page, add a `<div>` containing the text icon ☰ that toggles the sidebar when tapped.
 
@@ -190,7 +190,7 @@ The documentation for <`amp-sidebar>` doesn’t explain how to implement a neste
 
 If we go to Google and search for "ui collapsible content," we see several search results about how to build an "accordion." We realize after looking through the results that an accordion is exactly what we need. But does AMP provide something that can work as an accordion?
 
-Looking through the [list]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) of AMP components, in the layout section we find that there is indeed an [`<amp-accordion>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}}) component that matches our needs.
+Looking through the [list](../../../documentation/components/index.html) of AMP components, in the layout section we find that there is indeed an [`<amp-accordion>`](../../../documentation/components/reference/amp-accordion.md) component that matches our needs.
 
 We can place the `<amp-accordion>` component inside of the `<amp-sidebar>` component just as we put `<ul>`, `<li>`, and `<a>` tags inside of the `<amp-sidebar>` in the previous exercise. When the menu is open, the accordion components will display in their default collapsed condition. Then the accordions can be expanded or closed by interacting with them. When the menu is closed, the accordions will disappear with all of the rest of the content in the menu. With `<amp-sidebar>` and `<amp-accordion>` working together, we can create a slide-out nested navigation menu!
 
@@ -200,7 +200,7 @@ We can place the `<amp-accordion>` component inside of the `<amp-sidebar>` compo
 
 {{ image('/static/img/courses/intermediate/image4.png', 465, 387, caption='Two-level navigation menu on the AMP website') }}
 
-Using the documentation for [`<amp-accordion>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-accordion.md', locale=doc.locale).url.path}}), enhance your sidebar navigation to add sub-menus with the following specifications:
+Using the documentation for [`<amp-accordion>`](../../../documentation/components/reference/amp-accordion.md), enhance your sidebar navigation to add sub-menus with the following specifications:
 
 
 * Convert the "Our Bikes" list item in the `<amp-sidebar>` into an expandable list that contains Chico's Cheese Bicycles' available bikes: Ricotta Racer, Cheddar Chase, and Parmesan Pacer.

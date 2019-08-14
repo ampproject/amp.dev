@@ -67,11 +67,11 @@ This course is intended to be a continuation of the beginner and intermediate co
 
 * Handling user inputs using events and actions
 
-If any of these topics are unfamiliar, we suggest reviewing the material from the beginner course found [here]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale).url.path}}) and/or the intermediate course found [here]({{g.doc('/content/amp-dev/documentation/courses/intermediate-course/index.md', locale=doc.locale).url.path}}).
+If any of these topics are unfamiliar, we suggest reviewing the material from the beginner course found [here](../../../documentation/courses/beginning-course/index.md) and/or the intermediate course found [here](../../../documentation/courses/intermediate-course/index.md).
 
 ## Getting Set Up
 
-In this course, we will continue using [Glitch](https://glitch.com/) to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~enshrined-eyebrow) one, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/advanced-course/appendix.md', locale=doc.locale).url.path}}).
+In this course, we will continue using [Glitch](https://glitch.com/) to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~enshrined-eyebrow) one, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix](appendix.md).
 
 This course will also require the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting AMP’s full performance benefits. The validator is primarily accessed via a Chrome extension. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 

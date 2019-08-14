@@ -48,7 +48,7 @@ author: sebastianbenz
 
         <!-- We use `amp-access` to integrate login and to show and hide a login button depending on whether the user is logged in. [amp-access](/documentation/examples/components/amp-access/) requires the definition of 3 endpoints as documented [here](/documentation/components/amp-access).
 
-        This sample allows an user to login and logout using either email/password or [Google sign in](https://developers.google.com/identity/sign-in/web/). Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#login-page).  -->
+        This sample allows an user to login and logout using either email/password or [Google sign in](https://developers.google.com/identity/sign-in/web/). Logout is implemented by configuring a second endpoint in the login property `sign-out`, find more [here](/content/amp-dev/documentation/components/reference/amp-access.md#login-page).  -->
           <script id="amp-access" type="application/json">
             {
                 "authorization": "/documentation/examples/api/amp-access/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -235,7 +235,7 @@ author: sebastianbenz
 
         <!-- ## The Checkout Form -->
         <!-- This is the actual checkout form. Form submission takes place via XHR. Once the form has been successfully submitted, we set the
-          `checkoutSuccess` variable to `true`. This enables us to hide the forms once the checkout is done. Another option would have be to [redirect]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}#redirecting-after-a-submission) to a new page on successful checkout. -->
+          `checkoutSuccess` variable to `true`. This enables us to hide the forms once the checkout is done. Another option would have be to [redirect](/content/amp-dev/documentation/components/reference/amp-form.md#redirecting-after-a-submission) to a new page on successful checkout. -->
           <form  id="checkout-form"
                  method="post"
                  [hidden]="checkoutSuccess"

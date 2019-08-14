@@ -50,7 +50,7 @@ limitations under the License.
 
 ## العلاقة بالإضافة `amp-subscriptions`
 
-توفر الإضافة [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) ميزات مشابهة لميزات `amp-access`. ومع ذلك، فهي تتيح عمل بروتوكول وصول أكثر تخصصًا لنظام حظر الاشتراك غير المدفوع. في ما يلي بعض أهم الاختلافات:
+توفر الإضافة [`amp-subscriptions`](amp-subscriptions.md) ميزات مشابهة لميزات `amp-access`. ومع ذلك، فهي تتيح عمل بروتوكول وصول أكثر تخصصًا لنظام حظر الاشتراك غير المدفوع. في ما يلي بعض أهم الاختلافات:
 
 1. استجابة استحقاقات `amp-subscriptions` مشابهة لتفويض amp-access
 لكنها محددة وموحدة بشكل صارم.
@@ -505,7 +505,7 @@ RETURN_URL#success=true|false
 ## أمان أصل CORS
 
 نقاط نهاية "التفويض" و"الرد على فحص الاتصال" هي نقاط نهاية CORS ويجب أن تنفذ بروتوكول الأمان الموضح في
-[مواصفات أمان CORS في صفحات AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+[مواصفات أمان CORS في صفحات AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 ## قياس حصة القراءة المجانية
 

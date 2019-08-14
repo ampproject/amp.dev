@@ -30,6 +30,7 @@ ext:
 - extensions.amp_dependencies.AmpDependenciesExtension
 - extensions.amp_dev.AmpDevExtension
 - extensions.url_beautifier.UrlBeautifierExtension
+- extensions.internal_links.PodInternalLinkExtension
 - extensions.jinja2_optimized_codehilite.Jinja2OptimizedCodehiliteExtension
 - extensions.markdown_toc_patch.MarkdownTocPatchExtension
 - extensions.markdown_in_html.MarkdownInHtmlExtension:

@@ -61,13 +61,13 @@ This course is intended to be a continuation of the beginning course. As such, i
 
 - the AMP cache
 
-If any of these topics are unfamiliar to you, we suggest reviewing the material from the beginning course [here]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale).url.path}}).
+If any of these topics are unfamiliar to you, we suggest reviewing the material from the beginning course [here](../../../documentation/courses/beginning-course/index.md).
 
 ## Getting Set Up
 
 In this course, we will continue using [Glitch](https://glitch.com). If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~aquamarine-baritone) one, which has all of the code already implemented.
 
-Want to learn more about Glitch? You can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
+Want to learn more about Glitch? You can read about it in the [appendix](../../../documentation/courses/beginning-course/appendix.md).
 
 This course also requires the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. The Chrome extension provides one convenient way to access the validator. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 

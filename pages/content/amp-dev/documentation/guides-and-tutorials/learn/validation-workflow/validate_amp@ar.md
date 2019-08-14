@@ -10,7 +10,7 @@ $title: التحقق من صحة صفحات AMP
 إلى النتيجة ذاتها، فيمكنك استخدام أي طريقة تناسب
 نمط التطوير لديك بشكل أكبر.
 
-بالإضافة إلى صلاحية AMP، قد تحتاج أيضًا إلى التأكد من أن مستند AMP [قابل للاكتشاف]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) لدى الأنظمة الأساسية التابعة لجهات خارجية.
+بالإضافة إلى صلاحية AMP، قد تحتاج أيضًا إلى التأكد من أن مستند AMP [قابل للاكتشاف](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) لدى الأنظمة الأساسية التابعة لجهات خارجية.
 
 ### وحدة تحكم Developer Console بالمتصفّح.
 
@@ -96,8 +96,8 @@ https://amp.dev/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -168,14 +168,14 @@ $ amphtml-validator --help
      ، حيث يمكن النقر عليه في بي بضع الواجهات لتمييز الموقع. وفي هذه الحالة
      ، تظهر المشكلة في السطر 11، بالعمود 2.
   1. سطر نصّي يصف الخطأ. وفي هذه الحالة، يشير النص إلى
-     استخدامنا لعلامة `<img>` في حين كان يجب استخدام علامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+     استخدامنا لعلامة `<img>` في حين كان يجب استخدام علامة [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
   1. رابط إلى مستند ذي صلة يتعلق بالخطأ. في هذه الحالة،
-     مستندات لعلامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). ولا تنشئ كل الأخطاء
+     مستندات لعلامة [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). ولا تنشئ كل الأخطاء
      روابط للمستندات.
 
-بعد إعادة قراءة المواصفات بعناية، تبيّن لنا أننا نستخدم علامة `<img>`، في حين كان يجب استخدم علامة [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+بعد إعادة قراءة المواصفات بعناية، تبيّن لنا أننا نستخدم علامة `<img>`، في حين كان يجب استخدم علامة [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
 لفهم القائمة الكاملة للأخطاء المحتملة بشكل أفضل،
-راجع [دليل أخطاء التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+راجع [دليل أخطاء التحقق من صحة صفحات AMP](validation_errors.md).
 إذا كنت لا تزال تعاني من مشكلات بعد التقييم بعناية، يمكنك <a href="http://stackoverflow.com/questions/tagged/amp-html">طرح
 سؤال</a> وسنحاول المساعدة.

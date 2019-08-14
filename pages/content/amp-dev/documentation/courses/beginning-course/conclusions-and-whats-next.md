@@ -3,7 +3,6 @@ $title: Conclusion and What’s Next
 $order: 6
 leveled: true
 ---
-
 [filter level="beginner"]
 Congratulations! You’ve finished the introduction to AMP beginners’ course and have successfully created your first AMP page.
 
@@ -17,18 +16,14 @@ In our next course, we’ll learn how to handle user input and events, how to in
 
 The following are some additional topics and links to explore:
 
-- [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-
-- [All about Page Discovery]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})
-
-- [Disallowed HTML Tags]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#html-tags)
-
-- [Restricted CSS Rules & Animations]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})
-
-- [The AMP Boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}})
-
-- [List of available AMP Components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
+- [AMP By Example](../../../documentation/examples/index.html)
+- [All about Page Discovery](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)
+- [Disallowed HTML Tags](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#html-tags)
+- [Restricted CSS Rules & Animations](../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)
+- [The AMP Boilerplate](../../../documentation/guides-and-tutorials/start/create/basic_markup.md)
+- [List of available AMP Components](../../../documentation/components/index.html)
 [/filter]
+
 [filter level="advanced"]
 Congratulations! You’ve finished the introduction to AMP beginners’ course and have successfully created your first AMP page.
 
@@ -43,14 +38,11 @@ In our next course, we’ll learn how to handle user input and events, how to in
 The following are some additional topics and links to explore:
 
 - [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-
 - [All about Page Discovery]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})
-
 - [Disallowed HTML Tags]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#html-tags)
-
 - [Restricted CSS Rules & Animations]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})
-
 - [The AMP Boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}})
-
 - [List of available AMP Components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
 [/filter]
+=======
+- [List of available AMP Components](../../../documentation/components/index.html)

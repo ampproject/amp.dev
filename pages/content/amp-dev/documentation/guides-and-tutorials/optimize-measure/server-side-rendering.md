@@ -12,7 +12,7 @@ Sever-side rendering is an optimization technique for AMP pages improving page l
 
 ## Why is it faster?
 
-In order to avoid content jumps, AMP requires websites to add the [AMP-boilerplate code]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}) in the header.  The AMP-boilerplate hides the page content by setting the page body's opacity to 0.  Once AMP has been loaded, it is able to calculate the layout of the page. After that, AMP sets the body's opacity to 1 making the page content visible.
+In order to avoid content jumps, AMP requires websites to add the [AMP-boilerplate code](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) in the header.  The AMP-boilerplate hides the page content by setting the page body's opacity to 0.  Once AMP has been loaded, it is able to calculate the layout of the page. After that, AMP sets the body's opacity to 1 making the page content visible.
 
 This way AMP is able to avoid content jumps during page load.  However, the downside of this approach is that the first render of the page doesn't happen until the AMP framework has been downloaded and executed.
 
@@ -70,5 +70,5 @@ There are currently two Open Source implementations available, which can either 
 
 ## See Also
 
-*   [Optimize your hosted AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md', locale=doc.locale).url.path}})
+*   [Optimize your hosted AMP pages](optimize_amp.md)
 *   [How to make AMP even faster](https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/)

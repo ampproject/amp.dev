@@ -24,7 +24,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-Позволяет издателям легко обеспечивать интеграцию с платформой для микроплатежей [LaterPay](https://www.laterpay.net). Для работы с `amp-access-laterpay` необходимо использовать [amp-access](https://www.ampproject.org/docs/reference/components/amp-access).
+Позволяет издателям легко обеспечивать интеграцию с платформой для микроплатежей [LaterPay](https://www.laterpay.net). Для работы с `amp-access-laterpay` необходимо использовать [amp-access](amp-access.md).
 
 <table>
   <tr>
@@ -69,7 +69,7 @@ limitations under the License.
 
 Список, который создается компонентом, можно стилизовать, чтобы он выглядел так, как нужно издателю.
 
-При работе компонента также применяется [разметка контента для доступа](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup). Она позволяет скрывать и показывать контент.
+При работе компонента также применяется [разметка контента для доступа](amp-access.md#access-content-markup). Она позволяет скрывать и показывать контент.
 
 ## Конфигурация
 
@@ -139,7 +139,7 @@ limitations under the License.
         <tr>
           <td><code>sandbox</code></td>
           <td>boolean</td>
-          <td>Требуется только в том случае, если вы используете тестовую среду для проверки конфигурации сервера. Вам также необходимо применить <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">режим разработчика</a> AMP.</td>
+          <td>Требуется только в том случае, если вы используете тестовую среду для проверки конфигурации сервера. Вам также необходимо применить <a href="../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime">режим разработчика</a> AMP.</td>
         </tr>
       </table>
 
@@ -273,7 +273,7 @@ limitations under the License.
 
 ## Аналитика
 
-Поскольку в основе `amp-access-laterpay` лежит `amp-access`, этот компонент поддерживает все [события аналитики](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics), которые отправляет `amp-access`.
+Поскольку в основе `amp-access-laterpay` лежит `amp-access`, этот компонент поддерживает все [события аналитики](amp-access.md#integration-with-amp-analytics), которые отправляет `amp-access`.
 
 Подробные практические примеры можно найти на сайте [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/). Все они настроены так, чтобы отправлять эти события.
 
@@ -281,9 +281,9 @@ limitations under the License.
 
 Если у вас есть собственная система подписки и вы собираетесь использовать LaterPay только для продажи отдельных статей, можно сочетать AMP Access LaterPay и AMP Access на одной странице.
 
-Для начала ознакомьтесь с [документацией по AMP Access](https://www.ampproject.org/docs/reference/components/amp-access) и узнайте, как настроить этот компонент для работы с вашим платным доступом.
+Для начала ознакомьтесь с [документацией по AMP Access](amp-access.md) и узнайте, как настроить этот компонент для работы с вашим платным доступом.
 
-В разделе о [нескольких поставщиках](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers) объясняется, как настроить несколько поставщиков, используя пространства имен.
+В разделе о [нескольких поставщиках](amp-access.md#multiple-access-providers) объясняется, как настроить несколько поставщиков, используя пространства имен.
 
 В сочетании с LaterPay и существующей системой платного доступа конфигурация будет выглядеть примерно так:
 
@@ -338,7 +338,7 @@ limitations under the License.
 
 ## Статьи по теме
 
-* [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)
+* [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: как мы работаем с микроплатежами](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) – решение, похожее на AMP Access LaterPay, но созданное для обычных страниц без AMP.

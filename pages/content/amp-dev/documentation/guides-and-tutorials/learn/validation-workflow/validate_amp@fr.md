@@ -8,7 +8,7 @@ La principale force de l'AMP n'est pas seulement d'accélérer le chargement de 
 
 Il existe plusieurs façons de valider un document AMP. Elles produiront toutes le même résultat. Vous pouvez donc utiliser la plus adaptée à votre style de développement.
 
-En plus d'être valide, votre document AMP doit également être [visible]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) par les plates-formes tierces.
+En plus d'être valide, votre document AMP doit également être [visible](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) par les plates-formes tierces.
 
 ### Developer Console dans le navigateur
 
@@ -81,8 +81,8 @@ Cette page AMP HTML est valide. Rien de surprenant à cela. Intéressons-nous à
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -150,10 +150,10 @@ Elle génère cette erreur de validation AMP, présentée dans ces différents o
 Chaque outil donne plusieurs informations :
 
   * L'endroit (ligne et colonne) où l'erreur est survenue dans le document HTML. Certaines interfaces permettent de cliquer dessus pour mettre en surbrillance cet endroit. Dans le cas présent, le problème se trouve à la ligne 11, colonne 2.
-  * Une ligne de texte décrivant l'erreur. Dans le cas présent, le texte indique que nous utilisons une balise `<img>`, alors que nous aurions dû utiliser une balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
-  * Un lien vers un document pertinent à propos de l'erreur. Dans le cas présent, il s'agit de la documentation concernant la balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Toutes les erreurs ne génèrent pas de liens vers la documentation connexe.
+  * Une ligne de texte décrivant l'erreur. Dans le cas présent, le texte indique que nous utilisons une balise `<img>`, alors que nous aurions dû utiliser une balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
+  * Un lien vers un document pertinent à propos de l'erreur. Dans le cas présent, il s'agit de la documentation concernant la balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Toutes les erreurs ne génèrent pas de liens vers la documentation connexe.
 
-En relisant attentivement la spécification, nous réalisons que nous utilisons une balise `<img>` au lieu d'une balise [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+En relisant attentivement la spécification, nous réalisons que nous utilisons une balise `<img>` au lieu d'une balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
-Pour mieux comprendre la liste complète des erreurs potentielles, consultez le [guide des erreurs de validation AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+Pour mieux comprendre la liste complète des erreurs potentielles, consultez le [guide des erreurs de validation AMP](validation_errors.md).
 Si vous êtes toujours bloqué après un examen minutieux du guide, [posez-nous votre question](http://stackoverflow.com/questions/tagged/amp-html) et nous essaierons de vous aider.

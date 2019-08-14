@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 유효한 AMP 문서에는 유효성 검사 오류가 있어서는 안 됩니다.
-이 문서의 목적은 [AMP 페이지의 유효성을 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})할 때
+이 문서의 목적은 [AMP 페이지의 유효성을 검사](validate_amp.md)할 때
 발견할 수 있는 모든 유효성 검사 오류를 더 잘 이해하고
 해결할 수 있도록 도움을 드리는 것입니다.
 유효성 검사 오류에 관한 전체 내용을 대략적으로 살펴보려면
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
-이러한 태그는 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})에서도 언급됩니다.
+이러한 태그는 [AMP 사양](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)에서도 언급됩니다.
 
 ### 다른 태그에 필요한 태그 누락
 
@@ -81,7 +81,7 @@ limitations under the License.
 이에 상응하는 `<script>`를 찾을 수 없을 때
 `TAG_REQUIRED_BY_MISSING` 오류를 표시합니다.
 
-[확장 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})는
+[확장 구성요소](../../../../documentation/components/index.html)는
 맞춤 요소로서 AMP 문서에 명시적으로 포함되어야 합니다.
 이 오류를 해결하려면 확장 구성요소의 참조 페이지로 이동한 다음
 필요한 스크립트를 복사하여 AMP 문서 `<head>`에 붙여넣으세요.
@@ -104,7 +104,7 @@ limitations under the License.
 </table>
 
 태그는 허용된 것만 사용할 수 있기 때문에 허용되지 않는 모든 태그를
-나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})에서
+나열한 목록은 존재하지 않습니다. 하지만 [AMP 사양](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)에서
 허용되지 않는 태그의 광범위한 목록을 확인할 수 있습니다.
 
 ### 맞춤 자바스크립트는 허용되지 않음
@@ -127,7 +127,7 @@ limitations under the License.
 AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립트 파일이 아닌
 맞춤 자바스크립트를 페이지에 추가할 수 없습니다. 일반적으로 필요한 자바스크립트는
 대부분 HTML 라이브러리에서 상응하는 구현 방식을 찾을 수 있습니다. [AMP
-구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})에서 AMP HTML 페이지를
+구성요소](../../../../documentation/components/index.html)에서 AMP HTML 페이지를
 향상하는 데 사용할 수 있는 구성요소를 확인하세요.
 
 필요한 자바스크립트 사용 사례를 찾을 수 없다면 AMP 프로젝트에
@@ -352,7 +352,7 @@ CDATA가 필수인 태그는 다음과 같습니다.
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-참고: 값이 없는 속성(예: [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 구성요소의 `autoplay`, `controls`, `loop` 속성)을 출력하려고 할 때 HTML 개발 과정에서 `true`와 같이 기본값이지만 유효하지 않은 값(예: React를 사용하면 [기본적으로](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ...>`가 생성되는 경우)이 생성되는 경우 속성 이름을 값으로 출력하면 해결됩니다. 예를 들어 다음과 같습니다. `<amp-video autoplay="autoplay" ...>`
+참고: 값이 없는 속성(예: [`amp-video`](../../../../documentation/components/reference/amp-video.md) 구성요소의 `autoplay`, `controls`, `loop` 속성)을 출력하려고 할 때 HTML 개발 과정에서 `true`와 같이 기본값이지만 유효하지 않은 값(예: React를 사용하면 [기본적으로](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ...>`가 생성되는 경우)이 생성되는 경우 속성 이름을 값으로 출력하면 해결됩니다. 예를 들어 다음과 같습니다. `<amp-video autoplay="autoplay" ...>`
 
 ### URL 누락
 
@@ -463,8 +463,8 @@ URL이 잘못된 경우에 발생합니다.
 이 오류는 태그에 상호 배타적인 속성이 포함되어 있을 때 발생합니다.
 예를 들어 다음 태그에서는 하나의 속성만 허용됩니다:
 
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` 또는 `srcdoc`
-* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` 또는 `data-playlist-id`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` 또는 `srcdoc`
+* [`amp-jwplayer`](../../../../documentation/components/reference/amp-jwplayer.md): `data-media-id` 또는 `data-playlist-id`
 
 ### 목록에서 필수 속성 누락
 
@@ -487,10 +487,10 @@ URL이 잘못된 경우에 발생합니다.
 하나의 필수 속성이 누락된 경우 발생합니다.
 예를 들어 다음 태그의 경우 두 가지 필수 속성 중에 하나가 포함되어야 합니다:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` 또는 `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` 또는 `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` 또는 `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` 또는 `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` 또는 `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` 또는 `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` 또는 `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` 또는 `data-videoid`
 
 ### 잘못된 상위 태그
 
@@ -523,7 +523,7 @@ URL이 잘못된 경우에 발생합니다.
 * `style`에는 상위 태그 `boilerplate(noscript)`가 필요합니다.
 * `noscript`에는 상위 태그 `head`가 필요합니다.
 * `script`에는 상위 태그 `head`가 필요합니다.
-* `source`에는 미디어 태그([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 등)가 필요합니다.
+* `source`에는 미디어 태그([`amp-audio`](../../../../documentation/components/reference/amp-audio.md), [`amp-video`](../../../../documentation/components/reference/amp-video.md) 등)가 필요합니다.
 
 ### 허용되지 않는 태그 상위 요소
 
@@ -639,8 +639,8 @@ URL이 잘못된 경우에 발생합니다.
 
 스타일과 레이아웃 오류를 살펴보기 전에
 AMP에서
-[스타일링]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})과
-[레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})이 어떻게 작동하는지 알아보는 것이 좋습니다.
+[스타일링](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)과
+[레이아웃](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)이 어떻게 작동하는지 알아보는 것이 좋습니다.
 AMP 페이지는 HTML 페이지이기 때문에 HTML 페이지와 스타일링이 거의 유사합니다.
 하지만 페이지가 빨리 로드되게 하기 위해 몇 가지 제한사항이 있으며
 AMP 유효성 검사 도구는 이러한 제한사항을 적용합니다.
@@ -724,7 +724,7 @@ CSS를 실행해 보시기 바랍니다.
 
 이 오류는 AMP에서 몇 가지 규칙만이 허용되는
 CSS 내 @ 규칙을 말합니다.
-[AMP 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})도 참조하세요.
+[AMP 사양](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)도 참조하세요.
 예를 들어 <code>@import</code>는 허용되지 않습니다.
 이 유효성 오류는
 잘못된 규칙이 무엇인지 구체적으로 알려 주기 때문에
@@ -754,8 +754,8 @@ CSS 내 @ 규칙을 말합니다.
 
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
-[레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
+[레이아웃 제어 방법](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) 및
+[AMP HTML 레이아웃 시스템 사양](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)을 참조하시기 바랍니다.
 
 **참고:** 레이아웃을 지정하지 않고
 `width` 및 `height` 값을 포함하지 않으면
@@ -786,7 +786,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정하지 않았을 때
 암시적 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)에 설명되어 있습니다.
 
 ### AMP 태그가 지정된 레이아웃을 지원하지 않음
 
@@ -812,8 +812,8 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
 레이아웃이 작동하는 방법을 자세히 알아보려면
-[레이아웃 제어 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하시기 바랍니다.
+[레이아웃 제어 방법](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) 및
+[AMP HTML 레이아웃 시스템 사양](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)을 참조하시기 바랍니다.
 
 ### 지정된 레이아웃에서 허용되지 않는 속성
 
@@ -836,7 +836,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 이 오류는 AMP 태그에 특정 레이아웃을 지정했는데
 레이아웃에 허용되지 않는 속성이 포함되어 있을 때 발생합니다.
 레이아웃 유형별로 허용되지 않는 속성은
-[AMP HTML 레이아웃 시스템 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})에 설명되어 있습니다.
+[AMP HTML 레이아웃 시스템 사양](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)에 설명되어 있습니다.
 
 ### 레이아웃에서 필요로 하는 속성 값이 잘못됨
 
@@ -857,7 +857,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 
 이 오류는 속성 값이 지정된 레이아웃에 맞지 않을 때 발생합니다.
 이 오류가 발생하는 이유를 이해하려면
-[레이아웃의 다양한 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)을
+[레이아웃의 다양한 동작](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)을
 숙지해야 합니다.
 
 레이아웃을 `fixed-height`으로 설정하고
@@ -890,19 +890,19 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 예를 들어 `<amp-img src="" layout="responsive" width="42px" height="42rem">`의 경우
 다음의 오류 메시지가 표시됩니다:
 
-'태그 '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 의 너비와 높이 단위가 일치하지 않습니다. 너비는 'px'로 지정되어 있으며 높이는 'rem'으로 지정되어 있습니다.'
+'태그 '[`amp-img`](../../../../documentation/components/reference/amp-img.md) 의 너비와 높이 단위가 일치하지 않습니다. 너비는 'px'로 지정되어 있으며 높이는 'rem'으로 지정되어 있습니다.'
 
 ### 템플릿 오류
 
 AMP 태그 내 구문이
-[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})
+[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md)
 등의 템플릿을 포함하도록 설계되어 있는 경우가 아니라면
 AMP 페이지는 템플릿 구문을 포함할 수 없습니다.
 
 소스 파일에서 생성된 결과에
 템플릿이 포함되어 있지 않다면
 소스 파일에 템플릿을 포함해도 괜찮습니다.
-[CSS 프리프로세서 사용]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors) 방법을 참조하세요.
+[CSS 프리프로세서 사용](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors) 방법을 참조하세요.
 
 ### 속성에 템플릿 구문 포함
 

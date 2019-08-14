@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 Muat ulang halaman artikel Anda di browser, dan pastikan banner bergerak cepat.
 
-Selanjutnya, mari kita buat semua gambar muncul perlahan. Tambahkan `animate-in="fade-in"` ke setiap elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) agar kode tampak seperti ini:
+Selanjutnya, mari kita buat semua gambar muncul perlahan. Tambahkan `animate-in="fade-in"` ke setiap elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) agar kode tampak seperti ini:
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -217,7 +217,7 @@ Selanjutnya, mari kita buat semua gambar muncul perlahan. Tambahkan `animate-in=
 
 Jika Anda memuat ulang halaman, masing-masing gambar akan muncul perlahan.  Itu akan tampak bagus, tetapi Anda hampir tidak dapat melihat efeknya karena semua gambar muncul perlahan secara bersamaan. Kita dapat meningkatkan efek visual dengan mengubah pengaturan waktu animasi ini.
 
-Mari kita tunda masuknya gambar pertama sehingga gambar akan dimunculkan setelah banner teks masuk, misalnya .4s (0,4 detik). Tiga gambar yang tersisa dapat muncul .2s (0,2 detik) setelah gambar sebelumnya masuk. Untuk setiap elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  tambahkan `animate-in-delay=""` dengan nilai waktu tunda yang sesuai. Kode Anda akan terlihat seperti ini:
+Mari kita tunda masuknya gambar pertama sehingga gambar akan dimunculkan setelah banner teks masuk, misalnya .4s (0,4 detik). Tiga gambar yang tersisa dapat muncul .2s (0,2 detik) setelah gambar sebelumnya masuk. Untuk setiap elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md)  tambahkan `animate-in-delay=""` dengan nilai waktu tunda yang sesuai. Kode Anda akan terlihat seperti ini:
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Muat ulang artikel Anda.  Halaman terakhir Anda akan terlihat seperti ini:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-Ada banyak kemungkinan yang bisa dilakukan pada animasi dalam artikel AMP (misalnya, menggabungkan animasi, membuat animasi berantai), dan tutorial ini hanya menjelaskan sebagian kecil saja. Untuk mempelajari animasi lebih lanjut, lihat dokumentasi referensi [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+Ada banyak kemungkinan yang bisa dilakukan pada animasi dalam artikel AMP (misalnya, menggabungkan animasi, membuat animasi berantai), dan tutorial ini hanya menjelaskan sebagian kecil saja. Untuk mempelajari animasi lebih lanjut, lihat dokumentasi referensi [`amp-story`](../../../../documentation/components/reference/amp-story.md).

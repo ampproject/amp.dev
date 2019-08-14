@@ -31,7 +31,7 @@ Before we can discover how to retrieve server data with AMP, let's discuss how s
 
 You can think of a server that provides data as a file cabinet. A server has an API (Application Program Interface) that is built of one or more endpoints. Each endpoint can be accessed via a unique URL and returns a different collection of data. In our analogy, the API would be the collection of folders inside of the cabinet, the endpoints would be individual folders in the cabinet, and the URL addresses would be the labels affixed to the top of each folder to make it easier to find.
 
-We will retrieve and display server data using the [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) component. The `<amp-list>` component reaches out to the remote JSON API endpoint at a given URL to retrieve data. The `<amp-list>` component also contains an `<amp-mustache>` template. Each entry in the data returned from the server is applied individually to the `<amp-mustache>` template, and the result is added to the page. For example, the following code will retrieve a list of names and display them on the page as a collection of `<p>` tags:
+We will retrieve and display server data using the [`<amp-list>`](../../../documentation/components/reference/amp-list.md) component. The `<amp-list>` component reaches out to the remote JSON API endpoint at a given URL to retrieve data. The `<amp-list>` component also contains an `<amp-mustache>` template. Each entry in the data returned from the server is applied individually to the `<amp-mustache>` template, and the result is added to the page. For example, the following code will retrieve a list of names and display them on the page as a collection of `<p>` tags:
 
 [sourcecode:html]
 {% raw %}<amp-list width="auto" height="100" layout="fixed-height" src="https://some.url/data.json" binding="refresh">
@@ -68,7 +68,7 @@ The src property of `<amp-list>` contains the URL for the server endpoint that p
 
 The templates we use with `<amp-list>` are `<amp-mustache>` templates. This means that we don't use the property binding bracket syntax to display text. Instead, we can embed values into our templates using the double-brace (or mustache) syntax. The variable names included in the mustache templates are in the context of each individual element returned by the server. So, in our above example, the `{% raw %}{{{% endraw %}name}}` refers specifically to the `name` property of each object in the returned `items` array. We can use the mustache syntax to insert variables into both our tags and our attributes (e.g. the `src` property of an `<amp-img>` component).
 
-We discussed `<amp-mustache>` templates at length in the intermediate course. If necessary, refer to the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) of `<amp-mustache>` or the previous [course]({{g.doc('/content/amp-dev/documentation/courses/intermediate-course/accepting-user-input-and-displaying-output.md', locale=doc.locale).url.path}}) to review this templating style.
+We discussed `<amp-mustache>` templates at length in the intermediate course. If necessary, refer to the [documentation](../../../documentation/components/reference/amp-mustache.md) of `<amp-mustache>` or the previous [course](../../../documentation/courses/intermediate-course/accepting-user-input-and-displaying-output.md) to review this templating style.
 
 The output from an `<amp-list>` template is not exempt from the layout optimizations of AMP. This means that before any server data is even requested, AMP reserves a particular amount of space on the page to place the results. If the data returned from the server cannot be displayed in the available space, AMP will try to allocate additional space. To make it more likely that AMP will allow an `<amp-list>` to expand, make the `<amp-list>` component the last thing on your page.
 
@@ -81,7 +81,7 @@ Because requests to the server take time and are not guaranteed to succeed, we m
 </amp-list>
 {% endraw %}[/sourcecode]
 
-Because dynamically loading and displaying data is so important to modern web development, `<amp-list>` has numerous features. It's worth spending some time reviewing the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) of `<amp-list>` to learn about some of the additional configuration options.
+Because dynamically loading and displaying data is so important to modern web development, `<amp-list>` has numerous features. It's worth spending some time reviewing the [documentation](../../../documentation/components/reference/amp-list.md) of `<amp-list>` to learn about some of the additional configuration options.
 
 ## Case Study: Building a Video Site
 
@@ -112,7 +112,7 @@ We're not going to build this product page inside of our Chico's Cheese Bikes pr
 * A pre-built server with a video data API endpoint and an `<amp-list>` component pre-configured to look at that endpoint.
 
 [tip type="read-on"]
-**Note**: While it is not necessary for you to create a server to complete this exercise, you do have to follow the instructions on the README included in the linked Glitch sample. The README will walk you through how to update the environment configuration that the server uses in its CORS configuration. If you find that your exercise solution isn't working even when everything else seems to be right,  you probably need to update the address in the environment variables as the README instructs. If you're interested in learning more about what CORS is and why it is important, read [this]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) documentation.
+**Note**: While it is not necessary for you to create a server to complete this exercise, you do have to follow the instructions on the README included in the linked Glitch sample. The README will walk you through how to update the environment configuration that the server uses in its CORS configuration. If you find that your exercise solution isn't working even when everything else seems to be right,  you probably need to update the address in the environment variables as the README instructs. If you're interested in learning more about what CORS is and why it is important, read [this](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) documentation.
 [/tip]
 
 Let's discuss the structure of the video data that we retrieve from the server:
@@ -135,7 +135,7 @@ Let's discuss the structure of the video data that we retrieve from the server:
 
 The `id` field refers to the YouTube video ID for this video. The `img` field is a link to a thumbnail that can be used as a placeholder while the YouTube video initializes. The `title`, `creator`, and `duration` are details about the video itself. Finally, the `date` is the day the video was first published.
 
-Using the documentation for [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [`<amp-youtube>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), and the descriptions above, update the recommended video page to meet the following requirements:
+Using the documentation for [`<amp-list>`](../../../documentation/components/reference/amp-list.md), [`<amp-youtube>`](../../../documentation/components/reference/amp-youtube.md), and the descriptions above, update the recommended video page to meet the following requirements:
 
 * The template for a recommended video should include an `<amp-youtube>` component, a title, the creator, the video duration, and the video's publication date.
 
@@ -345,7 +345,7 @@ Let’s look at the structure of the product data that we retrieve from the serv
 
 The `id` and `type` fields are only really used by the server, so you can ignore them for this exercise. The `url` field represents the address of the product page for this product. We won’t be implementing these pages in this exercise. The `img` field contains a URL to a picture of this product. The `stars` field indicates the starred user ratings for this product. The `price` field is the price of this product in dollars. Lastly, the `description` field is marketing copy that we will not use in this exercise, but which is used in one of the optional exercises for this training.
 
-Using the documentation for [`<amp-bind>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), and all of the descriptions above, create a product listing page that fulfills the following requirements:
+Using the documentation for [`<amp-bind>`](../../../documentation/components/reference/amp-bind.md), [`<amp-list>`](../../../documentation/components/reference/amp-list.md), and all of the descriptions above, create a product listing page that fulfills the following requirements:
 
 * When the Product Type select input is updated, it should store its new selected value into the `category` state variable in the `<amp-state>` component with ID `products`.
 

@@ -6,7 +6,7 @@ Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin
 
 ## Tweet Yerleştirme
 
-[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
+[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) öğesini kullanarak bir Twitter Tweet'ini sayfanıza yerleştirebilirsiniz.
 
 Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -29,7 +29,7 @@ Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy
 
 ## Instagram Fotoğrafı Yerleştirme
 
-[`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
+[`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) öğesini kullanarak bir Instagram fotoğrafını sayfanıza yerleştirebilirsiniz.
 
 Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
@@ -52,7 +52,7 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
 
 ## Facebook yayını veya videosu gösterme
 
-[`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
+[`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) öğesini kullanarak bir Facebook yayınını veya videosunu sayfanızda gösterebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -94,7 +94,7 @@ Preview:
 
 ## YouTube videosu ekleme
 
-[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
+[`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) öğesini kullanarak bir YouTube videosunu sayfanıza ekleyebilirsiniz.
 
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
@@ -118,7 +118,7 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
 
 ## Reklam gösterme
 
-[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) öğesini kullanarak sayfanızda bir reklam gösterin.
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) öğesini kullanarak sayfanızda bir reklam gösterin.
 Yalnızca HTTPS aracılığıyla sunulan reklamlar desteklenir.
 
 Reklam ağları tarafından sağlanan JavaScript'in AMP dokümanı içinde çalıştırılmasına izin verilmez.
@@ -157,4 +157,4 @@ Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında 
 ```
 [/example]
 
-AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks) bakın.
+AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks) bakın.
