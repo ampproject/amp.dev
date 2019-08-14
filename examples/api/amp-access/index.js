@@ -19,7 +19,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const nunjucks = require('nunjucks');
 const URL = require('url');
-const utils = require('@lib/utils');
+const path = require('path');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -37,11 +37,12 @@ const POWER_USERS = {
   'Jane@gmail.com': true,
 };
 const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
+const LOGIN_FILE_PATH = path.join(__dirname, 'login.html');
 
-examples.get('/amp-access/authorization', handleAuthorization);
-examples.get('/amp-access/login', handleLogin);
-examples.get('/amp-access/logout', handleLogout);
-examples.post('/amp-access/submit', handleSubmit);
+examples.get('/authorization', handleAuthorization);
+examples.get('/login', handleLogin);
+examples.get('/logout', handleLogout);
+examples.post('/submit', handleSubmit);
 
 function handleAuthorization(request, response) {
   const cookie = request.cookies[AMP_ACCESS_COOKIE];
@@ -66,9 +67,8 @@ function handleAuthorization(request, response) {
 
 function handleLogin(request, response) {
   const returnUrl = request.query.return;
-  const filePath = utils.project.absolute('/examples/static/samples/files/login.html');
 
-  response.send(nunjucks.render(filePath, {returnurl: returnUrl}));
+  response.send(nunjucks.render(LOGIN_FILE_PATH, {returnurl: returnUrl}));
 }
 
 function handleLogout(request, response) {
