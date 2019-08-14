@@ -1,7 +1,7 @@
 ---
 formats:
   - websites
-  - email
+  - emails
   - ads
   - stories
 $path: /documentation/guides-and-tutorials/develop/style_and_layout/index.html

@@ -17,7 +17,13 @@ require('module-alias/register');
 const fs = require('fs');
 const path = require('path');
 
-const {GitHubImporter} = require('./gitHubImporter');
+// By default, reference docs are imported from the latest release tag.
+// If a doc is broken in a release, add it to this this list to fetch from master instead.
+//
+// DON'T FORGET TO REMOVE ONCE IT'S FIXED
+const DOCS_TO_FETCH_FROM_MASTER = ['amp-next-page'];
+
+const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
 

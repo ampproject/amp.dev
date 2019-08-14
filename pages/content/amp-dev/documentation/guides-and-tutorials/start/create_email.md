@@ -3,7 +3,7 @@ $title: Create your first AMP Email
 $order: 0
 tutorial: true
 formats:
-  - email
+  - emails
 author: CrystalOnScript
 ---
 

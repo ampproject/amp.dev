@@ -25,7 +25,7 @@ In addition to AMP validity, you may also want to confirm that your AMP document
 The AMP Validator comes bundled with the AMP JS library, so it is available on every AMP page out of the box. To validate:
 
   1. Open your AMP page in your browser.
-  1. Append "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
+  1. Append "`#development=[1,actions,amp,amp4ads,amp4email]`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1` is the legacy means of validating the `AMP` format. The following URL, `http://localhost:8000/released.amp.html#development=amp4email` will validate the document against the AMP for email spec.
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
 Developer Console errors will look similar to this:
