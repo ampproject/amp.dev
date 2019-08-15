@@ -123,40 +123,40 @@
       </form>
 
       <div class="empty" [class]="query.length == 0 ? 'empty' : ''">
-      <div class="ap-o-search-result">
+        <div class="ap-o-search-result">
 
-        <amp-state id="search" [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
-        <amp-list [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
-                  binding="no"
-                  class="paged-amp-list"
-                  items="."
-                  height="10"
-                  layout="fixed-height"
-                  [is-layout-container]="query.length"
-                  load-more="auto"
-                  load-more-bookmark="nextUrl"
-                  template="search_results_template"
-                  reset-on-refresh
-                  single-item
-        >
-          <amp-list-load-more load-more-button>
-            <div class="ap-o-search-result-load-button" overflow>
-              <button class="ap-a-btn">{{_('Load more')}}</button>
-            </div>
-          </amp-list-load-more>
+          <amp-state id="search" [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
+          <amp-list [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
+                    binding="no"
+                    class="paged-amp-list"
+                    items="."
+                    height="10"
+                    layout="fixed-height"
+                    [is-layout-container]="query.length"
+                    load-more="auto"
+                    load-more-bookmark="nextUrl"
+                    template="search_results_template"
+                    reset-on-refresh
+                    single-item
+          >
+            <amp-list-load-more load-more-button>
+              <div class="ap-o-search-result-load-button" overflow>
+                <button class="ap-a-btn">{{_('Load more')}}</button>
+              </div>
+            </amp-list-load-more>
 
-          <amp-list-load-more class="ap-o-search-result-load-hint" load-more-failed>
-            {{_('An internal server error occurred while trying to load more search results.')}}<br>
-            {{_('We apologize for the inconvenience caused.')}}<br>
-            {{_('Please try again later.')}}
-          </amp-list-load-more>
+            <amp-list-load-more class="ap-o-search-result-load-hint" load-more-failed>
+              {{_('An internal server error occurred while trying to load more search results.')}}<br>
+              {{_('We apologize for the inconvenience caused.')}}<br>
+              {{_('Please try again later.')}}
+            </amp-list-load-more>
 
-          <amp-list-load-more class="ap-o-search-result-load-hint" load-more-end>
-            {{_('You have reached the end of the results.')}}
-          </amp-list-load-more>
-        </amp-list>
+            <amp-list-load-more class="ap-o-search-result-load-hint" load-more-end>
+              {{_('You have reached the end of the results.')}}
+            </amp-list-load-more>
+          </amp-list>
 
-      </div>
+        </div>
       </div>
     </div>
 
