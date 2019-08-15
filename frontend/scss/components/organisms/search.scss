@@ -30,6 +30,14 @@
   opacity: 0;
   pointer-events: none;
 
+  @media (max-width: 1023px) {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    padding-top: calc(#{$mobileHeaderHeight} + #{$bannerHeight});
+    z-index: 1003;
+  }
+
   &.active {
     opacity: 1;
     pointer-events: auto;
@@ -49,8 +57,18 @@
     font-size: .75rem;
     padding: 0 25px;
 
+    @media (min-width: 1024px) {
+      padding: 0 60px;
+    }
+  }
+
   &-autocomplete {
     width: 100%;
+
+    @media (max-width: 1023px) {
+      width: calc(100% - 20px);
+      left: 10px;
+    }
 
     div[role="listbox"] {
       width: 100%;
@@ -72,6 +90,10 @@
         background-color: transparentize(color('black'), .8);
         z-index: 1;
 
+        @media (min-width: 1024px) {
+          left: 60px;
+          width: calc(100% - 120px);
+        }
       }
     }
 
@@ -80,6 +102,8 @@
       @include txt-font-accent;
       color: color('charade');
 
+      @media (max-width: 1023px) {
+        padding: 14px 40px;
       }
     }
 
@@ -87,6 +111,7 @@
     div[role="option"][aria-selected="true"] {
       color: color('blue-ribbon');
       background: none;
+    }
   }
 
   &-input {
@@ -98,6 +123,11 @@
     border: none;
     border-radius: 4px;
     background-color: transparent;
+
+    @media (max-width: 1023px) {
+      font-size: 1.75rem;
+      padding: 25px 35px 25px 40px;
+    }
 
     &::-webkit-input-placeholder { color: transparentize(color('black'), .8); }
     &::-moz-placeholder { color: transparentize(color('black'), .8); }
@@ -114,11 +144,20 @@
       position: absolute;
       left: 30px;
       top: 40px;
+
+      @media (max-width: 1023px) {
+        width: 21px;
+        height: 21px;
+        left: 10px;
+        top: 31px;
+      }
     }
   }
 
   &-result {
     padding: 0 0 30px;
+
+    @media (min-width: 1024px) {
       overflow-x: hidden;
       overflow-y: auto;
       max-height: 50vh;
@@ -151,6 +190,7 @@
       &::-webkit-scrollbar-corner {
         background-color: transparent;
       }
+    }
 
     &-list {
       &:last-child {
@@ -162,10 +202,18 @@
       padding: 0 25px;
       margin-bottom: 0;
       color: transparentize(color('charade'), .5);
+
+      @media (min-width: 1024px) {
+        padding: 0 60px;
+      }
     }
 
     &-item {
       margin: 5px 10px;
+
+      @media (min-width: 1024px) {
+        margin: 5px 30px;
+      }
 
       &:hover {
         background: #fff;
@@ -177,6 +225,10 @@
       display: block;
       padding: 15px;
       @include txt;
+
+      @media (min-width: 1024px) {
+        padding: 15px 30px;
+      }
     }
 
     &-linklist {
@@ -184,6 +236,11 @@
       padding: 10px 0;
       margin: 0 15px;
       border-top: .5px solid transparentize(color('charade'), .8);
+
+      @media (min-width: 1024px) {
+        justify-content: flex-end;
+        margin: 0 30px;
+      }
 
       &:empty {
         display: none;
@@ -194,6 +251,10 @@
 
         &:last-child {
           margin-left: 1rem;
+
+          @media (min-width: 1024px) {
+            margin-left: 2.5rem;
+          }
         }
       }
     }
@@ -229,6 +290,10 @@
       &-hint {
         padding: 0 25px;
         font-size: .75rem;
+
+        @media (min-width: 1024px) {
+          padding: 0 60px;
+        }
       }
     }
   }
@@ -236,6 +301,10 @@
   &-teaser {
     &-list {
       padding: 0 10px;
+
+      @media (min-width: 1024px) {
+        padding: 0 60px;
+      }
     }
   }
 }

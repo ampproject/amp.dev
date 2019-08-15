@@ -16,7 +16,10 @@
   padding: 5px 0;
 
   .#{organism('header')} & {
+    @media (max-width: 1023px) {
       padding: 0;
+      display: none;
+    }
   }
 
   &-close {
@@ -24,6 +27,18 @@
     right: 2rem;
     top: 10rem;
     z-index: 1;
+
+    @media (max-width: 1023px) {
+      top: 7.5rem;
+      right: 0;
+    }
+  }
+
+  &-close &-icon {
+    @media (max-width: 1023px) {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   &-icon {
