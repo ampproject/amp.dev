@@ -27,12 +27,12 @@
 
   {% raw %}
   <template id="search_results_template" type="amp-mustache">
-
-    {{^prevUrl}}
-    <p class="ap-o-search-info">{{result.totalResults}} {% endraw %}{{_('results found')}}{% raw %}</p>
-    {{/prevUrl}}
-
     <div class="ap-o-search-result-list">
+
+      {{^prevUrl}}
+      <p class="ap-o-search-info">{{result.totalResults}} {% endraw %}{{_('results found')}}{% raw %}</p>
+      {{/prevUrl}}
+
       {{^prevUrl}}
       {{#result.components.length}}
       <h3 class="ap-o-search-result-category">{% endraw %}{{_('Components')}}{% raw %}</h3>
