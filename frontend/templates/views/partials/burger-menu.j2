@@ -5,7 +5,7 @@
 {% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}
 {%- endmacro %}
 
-<label class="ap-o-burger-menu-label" on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})" [class]="mainmenuopen ? 'ap-o-burger-menu-label mainmenuopen' : 'ap-o-burger-menu-label'" for="burger-menu" tabindex="0" role="button" aria-label="{{ _('Burger Menu') }}">
+<label class="ap-o-burger-menu-label" on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState}),searchLayer.toggleClass(class='active', force=false)" [class]="mainmenuopen ? 'ap-o-burger-menu-label mainmenuopen' : 'ap-o-burger-menu-label'" for="burger-menu" tabindex="0" role="button" aria-label="{{ _('Burger Menu') }}">
   <div class="ap-a-ico ap-o-burger-menu-icon">
     {% do doc.icons.useIcon('/icons/menu.svg') %}
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
@@ -57,5 +57,15 @@
       {% endif %}
     </li>
     {% endfor %}
+
+    <li>
+      {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
+      <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLayer.toggleClass(class='active', force=true),searchInput.focus" role="button"  tabindex="0">
+        {% do doc.icons.useIcon('/icons/search.svg') %}
+        <div class="ap-a-ico ap-m-search-trigger-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+        </div>
+      </div>
+    </li>
   </ul>
 </nav>
