@@ -157,6 +157,13 @@
   &-result {
     padding: 0 0 30px;
 
+    &.empty {
+      height: 0;
+      padding: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+
     @media (min-width: 1024px) {
       overflow-x: hidden;
       overflow-y: auto;
