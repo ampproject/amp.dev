@@ -107,6 +107,8 @@
     {% include 'views/partials/burger-menu.j2' %}
     {% endblock %}
 
+    {% include 'views/partials/search.j2' %}
+
     {% block main %}
     {# Only render the grid toggle during development #}
     {% include 'views/partials/content.j2' %}
@@ -115,8 +117,6 @@
     {% block footer %}
     {% include 'views/partials/footer.j2' %}
     {% endblock %}
-
-    {% include 'views/partials/search.j2' %}
 
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
