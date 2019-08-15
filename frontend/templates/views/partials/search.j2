@@ -4,6 +4,13 @@
 {% do doc.icons.useIcon('icons/internal.svg') %}
 {% do doc.icons.useIcon('/icons/close.svg') %}
 
+{# TODO:
+   Change hard coded icon injection in <amp-mustache> to svg <use> again, asap!
+   See feature request: https://github.com/ampproject/amphtml/issues/18958
+#}
+{% import 'icons/internal.svg' as iconMarkupRaw %}
+{% set iconMarkupChanged = iconMarkupRaw|replace('symbol', 'svg')|safe %}
+
 {% do doc.amp_dependencies.add('amp-autocomplete', '0.1') %}
 {% do doc.amp_dependencies.add('amp-form', '0.1') %}
 {% do doc.amp_dependencies.add('amp-bind', '0.1') %}
@@ -41,7 +48,7 @@
           {{-#exampleUrl-}}
           <a class="ap-o-search-result-linklist-item ap-m-lnk" href="{{exampleUrl}}">
             <div class="ap-a-ico ap-m-lnk-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              {% endraw %}{{ iconMarkupChanged }}{% raw %}
             </div>
             <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
           </a>
@@ -49,7 +56,7 @@
           {{-#playgroundUrl-}}
           <a class="ap-o-search-result-linklist-item ap-m-lnk"href="{{playgroundUrl}}">
             <div class="ap-a-ico ap-m-lnk-icon">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+              {% endraw %}{{ iconMarkupChanged }}{% raw %}
             </div>
             <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
           </a>
