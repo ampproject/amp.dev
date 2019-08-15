@@ -80,13 +80,15 @@ function getComponentExampleMap() {
   const samples = readSampleSitemap();
   for (const format of Object.keys(samples)) {
     for (const category of samples[format].categories) {
-      for (const example of category.examples) {
-        const match = example.url.match(EXAMPLE_COMPONENT_PATTERN);
-        if (match) {
-          _addComponentExample(result, match[1], example.url, format);
-        }
-        if (format === 'stories' && category.name === 'Introduction') {
-          _addComponentExample(result, 'amp-story', example.url, format);
+      if (category.examples) {
+        for (const example of category.examples) {
+          const match = example.url.match(EXAMPLE_COMPONENT_PATTERN);
+          if (match) {
+            _addComponentExample(result, match[1], example.url, format);
+          }
+          if (format === 'stories' && category.name === 'Introduction') {
+            _addComponentExample(result, 'amp-story', example.url, format);
+          }
         }
       }
     }
