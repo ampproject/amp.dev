@@ -123,6 +123,7 @@
       </form>
 
       <div class="empty" [class]="query.length == 0 ? 'empty' : ''">
+      <div class="ap-o-search-result">
 
         <amp-state id="search" [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
         <amp-list [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
@@ -156,9 +157,10 @@
         </amp-list>
 
       </div>
+      </div>
     </div>
 
-    <div [hidden]="query.length > 0" class="ap-o-search-result-list">
+    <div [hidden]="query.length > 0">
 
       <amp-list src="/static/files/search-promoted-pages/{{ doc.locale }}.json"
                 binding="no"
@@ -172,6 +174,7 @@
       >
         {% raw %}
         <template type="amp-mustache">
+        <div class="ap-o-search-result">
           <div class="ap-o-search-result-list">
             {{#components.length}}
             <h3 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h3>
@@ -197,6 +200,7 @@
             </div>
             {{/articles}}
           </div>
+        </div>
         </template>
         {% endraw %}
       </amp-list>
